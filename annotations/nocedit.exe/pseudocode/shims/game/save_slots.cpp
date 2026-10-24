@@ -589,17 +589,18 @@ extern "C" int nocturne_single_player_menu(void)
         // are localized and the language can change under the options screen.
         // Each row keeps its own index, so Continue's absence shifts nothing.
         menu_count    = 0;
-        continue_item = -1;
-        strcpy(continue_line,
-               support_newmsg_cpp_getLocalizedString_FUN_005441f0((char *)"C O N T I N U E"));
-        strcpy(start_line,
-               support_newmsg_cpp_getLocalizedString_FUN_005441f0((char *)"S T A R T"));
-        strcpy(load_line,
-               support_newmsg_cpp_getLocalizedString_FUN_005441f0((char *)"L O A D"));
+        snprintf(continue_line, sizeof(continue_line), "%s",
+                 support_newmsg_cpp_getLocalizedString_FUN_005441f0((char *)"C O N T I N U E"));
+        snprintf(start_line, sizeof(start_line), "%s",
+                 support_newmsg_cpp_getLocalizedString_FUN_005441f0((char *)"S T A R T"));
+        snprintf(load_line, sizeof(load_line), "%s",
+                 support_newmsg_cpp_getLocalizedString_FUN_005441f0((char *)"L O A D"));
 #if !NOCTURNE_AUTHENTIC_AUTOSAVE
         continue_item          = menu_count;
         menu_ptrs[menu_count]  = continue_line;
         menu_count             = menu_count + 1;
+#else
+        continue_item          = -1;    // no Continue row for a choice to match
 #endif
         start_item             = menu_count;
         menu_ptrs[menu_count]  = start_line;

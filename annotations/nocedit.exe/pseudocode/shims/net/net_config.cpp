@@ -206,7 +206,8 @@ int nocturne_net_port(int game_default) {
 
 int nocturne_net_apply_config(CNetGame *net_game, int game_default_port) {
     if (nocturne_net_player_name()[0] != '\0') {
-        strcpy(net_game->player_name, nocturne_net_player_name());
+        snprintf(net_game->player_name, sizeof(net_game->player_name), "%s",
+                 nocturne_net_player_name());
     }
     return nocturne_net_port(game_default_port);
 }

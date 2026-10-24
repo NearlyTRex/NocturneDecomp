@@ -13,16 +13,20 @@
 //
 
 #include "system/watcom.h"
+#include "system/dos.h"         // _find_t, which a search fills in
 #include "core/file_search.h"   // nocturne_find_files() — shared with kernel32
 #include "watcom/path.h"        // watcom_resolve_fs_path()
 
 #include <cerrno>
 #include <chrono>
+#include <climits>
 #include <cstdlib>
 #include <cstring>
 #include <filesystem>
+#include <mutex>
 #include <system_error>
 #include <thread>
+#include <unordered_map>
 // The descriptor-based half of Watcom's io.h — here just lseek and ftruncate.
 // A file descriptor is not POSIX-only: Windows' own runtime has both, as _lseek
 // and _chsize in <io.h>, so this is a spelling difference rather than a port.
@@ -82,10 +86,11 @@ void* __arrcopy(void* dest, void* src, int count, WatcomTypeInfo* ti) {
 
 WATCOM_TRAMPOLINE
 void* __arrdtor(WatcomTypeArrayInfo* info) {
-    char* p = (char*)info->obj_array + (info->obj_count - 1) * info->type_info->instance_size;
+    char* p = (char*)info->obj_array +
+              (ptrdiff_t)(info->obj_count - 1) * info->type_info->instance_size;
     for (int i = info->obj_count - 1; i >= 0; i--, p -= info->type_info->instance_size)
         if (info->type_info->dtor) (*info->type_info->dtor)(p, 0);
-    return info->obj_array;
+    return (void*)info->obj_array;
 }
 
 void* __arrfini(void* obj_array, int count, WatcomTypeInfo* ti) {
@@ -168,9 +173,26 @@ int chsize(int fd, long size) {
 #endif
 }
 
+// A buffer that is too small is ERANGE and no answer, never a cut-down path:
+// the caller would open what it was given. Without a buffer, one the size of
+// the answer is allocated and the length is not a limit.
+static char* copy_out(char* buffer, size_t room, const std::string& text) {
+#if defined(_WIN32)
+    if (buffer == 0) return _strdup(text.c_str());
+#else
+    if (buffer == 0) return strdup(text.c_str());
+#endif
+    if (text.size() + 1 > room) {
+        errno = ERANGE;
+        return 0;
+    }
+    memcpy(buffer, text.c_str(), text.size() + 1);
+    return buffer;
+}
+
 char* _fullpath(char* buffer, const char* path, size_t maxlen) {
-    if (buffer == 0) buffer = (char*)malloc(maxlen ? maxlen : 4096);
-    if (buffer == 0) return 0;
+    // No path at all is the working directory, as in Watcom.
+    if (path == 0 || *path == '\0') path = ".";
     // Watcom's _fullpath answers even for a path that does not exist yet, which
     // is what the game asks it for — a place to write. weakly_canonical does
     // the same, resolving as far as the filesystem goes and taking the rest
@@ -181,22 +203,17 @@ char* _fullpath(char* buffer, const char* path, size_t maxlen) {
     std::error_code ec;
     const std::filesystem::path full =
         std::filesystem::weakly_canonical(std::filesystem::path(watcom_resolve_fs_path(path)), ec);
-    const std::string text = ec ? std::string(path) : full.string();
-    const size_t room = maxlen ? maxlen : 4096;
-    if (text.size() + 1 > room) {
-        strcpy(buffer, path);
-        return buffer;
-    }
-    memcpy(buffer, text.c_str(), text.size() + 1);
-    return buffer;
+    return copy_out(buffer, maxlen, ec ? std::string(path) : full.string());
 }
 
 char* _getcwd(char* buffer, int size) {
     std::error_code ec;
     const std::string here = std::filesystem::current_path(ec).string();
-    if (ec || size <= 0 || here.size() + 1 > (size_t)size) return 0;
-    memcpy(buffer, here.c_str(), here.size() + 1);
-    return buffer;
+    if (ec) {
+        errno = ec.value();
+        return 0;
+    }
+    return copy_out(buffer, size > 0 ? (size_t)size : 0, here);
 }
 
 // =============================================================================
@@ -224,42 +241,77 @@ struct FindHandle {
     size_t current_index;
 };
 
+// What the caller reads back about each match: its name without the directory,
+// size, the directory and read-only bits, and when it was written. The host
+// keeps no creation or access time this can portably read, which is -1, as the
+// Microsoft runtime answers for a filesystem without them.
+void describe(const std::string& match, void* fileinfo) {
+    namespace fs = std::filesystem;
+    _find_t* out = (_find_t*)fileinfo;
+    if (out == 0) return;
+    memset(out, 0, sizeof(*out));
+    snprintf(out->name, sizeof(out->name), "%s", watcom_path_leaf(match.c_str()));
+    out->cr_time = -1;
+    out->ac_time = -1;
+
+    // Listed but not there to ask about, such as a link to nothing: the name is
+    // all there is.
+    const fs::path path(watcom_resolve_fs_path(match.c_str()));
+    std::error_code ec;
+    const uintmax_t size = fs::is_directory(path, ec) ? 0 : fs::file_size(path, ec);
+    const fs::file_time_type written = fs::last_write_time(path, ec);
+    if (ec) return;
+
+    out->attrib = (uchar)__getfileattr(match.c_str());
+    out->size = (long)size;
+    // C++17 has no conversion between the two clocks; their offset now is it.
+    const auto since = written - fs::file_time_type::clock::now();
+    out->wr_time = std::chrono::system_clock::to_time_t(
+        std::chrono::system_clock::now() +
+        std::chrono::duration_cast<std::chrono::system_clock::duration>(since));
+}
+
+// The handle is a `long`, which is 32 bits on Windows even in a 64-bit build,
+// so it cannot carry a pointer. Open searches live in a table instead, keyed
+// by a number that counts up from 1: never 0 or -1, which are not handles.
+std::mutex s_find_mutex;
+std::unordered_map<long, FindHandle> s_find_handles;
+long s_next_find_handle = 1;
+
 }  // namespace
 
 long _findfirst(const char* filespec, void* fileinfo) {
-    (void)fileinfo;
-
     std::vector<std::string> matches = nocturne_find_files(filespec);
     if (matches.empty()) return -1;
+    describe(matches[0], fileinfo);
 
-    FindHandle* handle = new FindHandle();
-    handle->matches = matches;
-    handle->current_index = 0;
-    return (long)(intptr_t)handle;
+    std::lock_guard<std::mutex> held(s_find_mutex);
+    const long handle_val = s_next_find_handle;
+    s_next_find_handle = s_next_find_handle % LONG_MAX + 1;
+    s_find_handles[handle_val] = FindHandle{std::move(matches), 0};
+    return handle_val;
 }
 
 // -1 is what _findfirst returns when it found nothing, so it is the value most
 // likely to arrive here by mistake — from a caller that did not check, or one
-// that passed the failure straight on. It is not a handle, and dereferencing it
-// is a fault rather than a wrong answer. Zero is not a handle either.
-static bool is_find_handle(long handle_val) {
-    return handle_val != -1 && handle_val != 0;
-}
-
+// that passed the failure straight on. Like any number _findfirst never handed
+// out, or one already closed, it is answered as no search at all.
 int _findnext(long handle_val, void* fileinfo) {
-    (void)fileinfo;
-    if (!is_find_handle(handle_val)) return -1;
-    FindHandle* handle = (FindHandle*)(intptr_t)handle_val;
+    std::lock_guard<std::mutex> held(s_find_mutex);
+    auto found = s_find_handles.find(handle_val);
+    if (found == s_find_handles.end()) return -1;
 
-    handle->current_index++;
-    if (handle->current_index >= handle->matches.size()) return -1;
+    FindHandle& handle = found->second;
+    // Held at the end, so a caller that keeps asking keeps hearing -1.
+    if (handle.current_index + 1 >= handle.matches.size()) return -1;
+    handle.current_index++;
+    describe(handle.matches[handle.current_index], fileinfo);
     return 0;
 }
 
 int _findclose(long handle_val) {
-    if (!is_find_handle(handle_val)) return -1;
-    delete (FindHandle*)(intptr_t)handle_val;
-    return 0;
+    std::lock_guard<std::mutex> held(s_find_mutex);
+    return s_find_handles.erase(handle_val) == 1 ? 0 : -1;
 }
 
 // =============================================================================
@@ -325,7 +377,8 @@ unsigned long __getfileattr(const char* filename) {
     std::error_code ec;
     const std::filesystem::path path(watcom_resolve_fs_path(filename));
     const std::filesystem::file_status status = std::filesystem::status(path, ec);
-    if (ec || !std::filesystem::exists(status)) return 0xFFFFFFFF;  // INVALID_FILE_ATTRIBUTES
+    // A status that could not be read is not known to exist.
+    if (!std::filesystem::exists(status)) return 0xFFFFFFFF;  // INVALID_FILE_ATTRIBUTES
 
     unsigned long attrs = 0;
     if (std::filesystem::is_directory(status)) attrs |= 0x10;  // DIRECTORY

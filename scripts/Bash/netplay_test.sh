@@ -19,6 +19,7 @@
 #   scripts/Bash/netplay_test.sh <name> <ip>       # anything else
 #
 #   NOCTURNE_EXE=... to pick a build (default: the asan x86_64 one)
+#   NOCTURNE_GAME_DIR=... to stage from another game directory (default: the repo)
 #   NOCTURNE_STAGE_ONLY=1 to prepare the directory without launching
 #
 # Then: host presses CTRL+H, client presses CTRL+J and enters the host's IP.
@@ -29,6 +30,7 @@ set -euo pipefail
 
 REPO_ROOT="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")/../.." && pwd -P)"
 EXE="${NOCTURNE_EXE:-${REPO_ROOT}/build/exe-linux-asan-x86_64/nocturne}"
+GAME_DIR="${NOCTURNE_GAME_DIR:-${REPO_ROOT}}"
 
 case "${1:-}" in
     host)   NAME="Host";   IP="127.0.0.1" ;;
@@ -48,7 +50,7 @@ if [[ ! -x "${EXE}" ]]; then
     exit 1
 fi
 
-RUN_DIR="${REPO_ROOT}/build/netplay/${NAME}"
+RUN_DIR="${GAME_DIR}/build/netplay/${NAME}"
 mkdir -p "${RUN_DIR}"
 
 # Drop every symlink from a previous staging, so entries that are now skipped
@@ -57,7 +59,9 @@ mkdir -p "${RUN_DIR}"
 find "${RUN_DIR}" -maxdepth 1 -type l -delete
 
 # Symlink everything the game reads. Skipped:
-#   SYSTEM  - copied instead; holds nocturne.ini and netplay.ini, both written
+#   system  - copied instead; holds nocturne.ini and netplay.ini, both written.
+#             The game resolves SYSTEM\ without regard to case, so either
+#             spelling on disk is the same directory to it.
 #   save    - copied instead; savegames are written
 #   build   - the binaries; not game data, and would nest this directory
 #   .git    - irrelevant and large
@@ -65,13 +69,13 @@ find "${RUN_DIR}" -maxdepth 1 -type l -delete
 #             leftover one aims both instances at the same file in the repo
 #             root, which silently merges their logs and loses exactly the
 #             evidence this harness exists to separate.
-for entry in "${REPO_ROOT}"/* "${REPO_ROOT}"/.[!.]*; do
+for entry in "${GAME_DIR}"/* "${GAME_DIR}"/.[!.]*; do
     [[ -e "${entry}" ]] || continue
     base="$(basename "${entry}")"
     # '$$UNDO$$.TMP' below is a literal file name, not an expansion.
     # shellcheck disable=SC2016
     case "${base}" in
-        SYSTEM|save|build|.git)     continue ;;
+        system|SYSTEM|save|build|.git) continue ;;
         nocturne_*.log)             continue ;;
         stderr.txt|gtfo.txt|console.txt|sounderr.txt) continue ;;
         '$$UNDO$$.TMP')             continue ;;
@@ -82,9 +86,9 @@ done
 # Per-instance writable state, copied so the two runs cannot corrupt each
 # other's settings. Refreshed only when missing, so edits made between runs
 # (netplay.ini in particular) survive.
-for writable in SYSTEM save; do
-    if [[ ! -e "${RUN_DIR}/${writable}" && -e "${REPO_ROOT}/${writable}" ]]; then
-        cp -r "${REPO_ROOT}/${writable}" "${RUN_DIR}/${writable}"
+for writable in system SYSTEM save; do
+    if [[ ! -e "${RUN_DIR}/${writable}" && -e "${GAME_DIR}/${writable}" ]]; then
+        cp -r "${GAME_DIR}/${writable}" "${RUN_DIR}/${writable}"
     fi
 done
 

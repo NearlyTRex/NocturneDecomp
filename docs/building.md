@@ -32,8 +32,8 @@ builds the `game` preset into `build/recreation/game` and runs the executable fr
 | Preset | Target | What it does |
 |---|---|---|
 | `check-linux-x86_64` | native 64-bit | per-file `-fsyntax-only`; no link, no shims, no SDL |
-| `exe-linux-x86_64` | native 64-bit | full executable |
-| `exe-linux-asan-x86_64` | native 64-bit | full executable + ASan/UBSan — **the default** |
+| `exe-linux-x86_64` | native 64-bit | full executable, the shims through clang-tidy |
+| `exe-linux-asan-x86_64` | native 64-bit | full executable + ASan/UBSan, the shims through clang-tidy — **the default** |
 | `check-windows-x86_64` | Windows 64-bit | syntax check against the Windows target, from Linux |
 | `exe-windows-x86_64` | Windows 64-bit | `nocturne.exe`, cross-compiled from Linux — **needs a cross toolchain** |
 | `check-windows-msys2` | Windows 64-bit | syntax check, run **on** Windows under MSYS2 |
@@ -87,6 +87,15 @@ sudo apt install libx11-dev libxext-dev libxcursor-dev libxi-dev libxfixes-dev \
     libegl-dev libdecor-0-dev libpulse-dev libasound2-dev
 ```
 
+**clang-tidy (the x86_64 Linux presets above, and the coverage one):** each shim is checked
+as it compiles, with `shims/.clang-tidy`, and a finding fails the build. The decompiled
+modules are other targets and are not checked. Configure stops if `clang-tidy` is missing;
+`-DNOCTURNE_SHIMS_TIDY=OFF` builds without it.
+
+```sh
+sudo apt install clang-tidy
+```
+
 That is the whole list for the Linux presets — no multilib, no `:i386` packages, and SDL2,
 SDL2_ttf and FFmpeg are built from source rather than taken from the system.
 
@@ -96,11 +105,15 @@ The Windows lane is **opt-in and needs nothing from a normal clone.** No other p
 a cross compiler, so if you are not building for Windows you can skip this section entirely.
 
 ```sh
-sudo apt install g++-mingw-w64-x86-64
+sudo apt install g++-mingw-w64-x86-64 lld
 ```
 
 It is the `g++` package and not `mingw-w64-x86-64-dev` because the shims are C++17 — the header
 -only package has no target `libstdc++` for `std::thread` and `std::filesystem` to come from.
+The lane links with `lld` rather than the mingw binutils `ld`, which writes a base relocation for
+every thread-local access: on Windows, where the exe never loads at its preferred base, the first
+one faults. [`cmake/toolchains/windows-x86_64.cmake`](../cmake/toolchains/windows-x86_64.cmake)
+has the details.
 These are architecture-independent packages with no `:i386` component, so unlike the multilib
 warning below they do not disturb an amd64 desktop.
 

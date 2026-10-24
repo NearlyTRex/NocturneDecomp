@@ -104,28 +104,17 @@ if(NOT CMAKE_CROSSCOMPILING)
         sh "${CMAKE_SOURCE_DIR}/cmake/ffmpeg_configure_msys2.sh")
 endif()
 
-function(nocturne_platform_finalize target)
-    # SDL2 and SDL2_ttf are built shared, and a PE resolves its imports from the
-    # directory the exe sits in. Put them there so the build output is something
-    # that runs when copied to a Windows machine, rather than something that
-    # needs a DLL hunt first. FFmpeg is static, so it needs nothing staged.
-    add_custom_command(TARGET ${target} POST_BUILD
-        COMMAND "${CMAKE_COMMAND}" -E copy_if_different
-                "$<TARGET_FILE:SDL2::SDL2>" "$<TARGET_FILE:SDL2_ttf::SDL2_ttf>"
-                "$<TARGET_FILE_DIR:${target}>"
-        COMMENT "Staging SDL DLLs beside ${target}.exe"
-        VERBATIM)
-    nocturne_package_runtime("$<TARGET_FILE:SDL2::SDL2>" "$<TARGET_FILE:SDL2_ttf::SDL2_ttf>")
-
-    # The gcc C++ runtime DLLs, on the two mingw lanes. Cross-compiling they
-    # come out of the Debian sysroot, which no Windows machine has, so they have
-    # to travel with the exe. Building natively under MSYS2 they are already
-    # installed and on PATH inside that shell — but only inside it, so they are
-    # staged there too and the output directory means the same thing on both
-    # lanes: a folder that runs. The compiler driver names each one, because a
-    # DLL from a different gcc runtime than the one linked lacks exports the exe
-    # imports and Windows refuses to start it. The clang-cl lane links the
-    # Microsoft runtime statically and stages none.
+# The gcc C++ runtime DLLs, on the two mingw lanes. Cross-compiling they come
+# out of the Debian sysroot, which no Windows machine has, so they have to travel
+# with whatever was built. Building natively under MSYS2 they are already
+# installed and on PATH inside that shell — but only inside it, so they are
+# staged there too and an output directory means the same thing on both lanes: a
+# folder that runs. The compiler driver names each one, because a DLL from a
+# different gcc runtime than the one linked lacks exports the exe imports and
+# Windows refuses to start it. The clang-cl lane links the Microsoft runtime
+# statically and has none. Sets <out> to the absolute paths found.
+function(nocturne_windows_runtime_dlls out)
+    set(_found "")
     set(_rt_dlls "")
     if(MINGW)
         set(_rt_dlls libstdc++-6.dll libwinpthread-1.dll libgcc_s_seh-1.dll)
@@ -144,16 +133,36 @@ function(nocturne_platform_finalize target)
             set(_rt_src "${_rt_bindir}/${_rt_dll}")
         endif()
         if(IS_ABSOLUTE "${_rt_src}" AND EXISTS "${_rt_src}")
-            add_custom_command(TARGET ${target} POST_BUILD
-                COMMAND "${CMAKE_COMMAND}" -E copy_if_different
-                        "${_rt_src}" "$<TARGET_FILE_DIR:${target}>"
-                VERBATIM)
-            nocturne_package_runtime("${_rt_src}")
+            list(APPEND _found "${_rt_src}")
         else()
             message(STATUS "windows lane: ${_rt_dll} not found — copy it "
                            "beside the exe by hand if the build does not "
                            "start on a machine without the toolchain")
         endif()
+    endforeach()
+    set(${out} "${_found}" PARENT_SCOPE)
+endfunction()
+
+function(nocturne_platform_finalize target)
+    # SDL2 and SDL2_ttf are built shared, and a PE resolves its imports from the
+    # directory the exe sits in. Put them there so the build output is something
+    # that runs when copied to a Windows machine, rather than something that
+    # needs a DLL hunt first. FFmpeg is static, so it needs nothing staged.
+    add_custom_command(TARGET ${target} POST_BUILD
+        COMMAND "${CMAKE_COMMAND}" -E copy_if_different
+                "$<TARGET_FILE:SDL2::SDL2>" "$<TARGET_FILE:SDL2_ttf::SDL2_ttf>"
+                "$<TARGET_FILE_DIR:${target}>"
+        COMMENT "Staging SDL DLLs beside ${target}.exe"
+        VERBATIM)
+    nocturne_package_runtime("$<TARGET_FILE:SDL2::SDL2>" "$<TARGET_FILE:SDL2_ttf::SDL2_ttf>")
+
+    nocturne_windows_runtime_dlls(_rt_dlls)
+    foreach(_rt_src IN LISTS _rt_dlls)
+        add_custom_command(TARGET ${target} POST_BUILD
+            COMMAND "${CMAKE_COMMAND}" -E copy_if_different
+                    "${_rt_src}" "$<TARGET_FILE_DIR:${target}>"
+            VERBATIM)
+        nocturne_package_runtime("${_rt_src}")
     endforeach()
 
     # Runs after the staging above: POST_BUILD commands run in order.

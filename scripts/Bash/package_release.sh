@@ -27,7 +27,8 @@
 set -euo pipefail
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-ROOT_DIR="$(cd "${SCRIPT_DIR}/../.." && pwd)"
+# Another checkout to package from; the tests point this at a fixture tree.
+ROOT_DIR="${NOCTURNE_SOURCE_DIR:-$(cd "${SCRIPT_DIR}/../.." && pwd)}"
 
 OUT_DIR="${ROOT_DIR}/dist"
 DO_BUILD=1
@@ -37,7 +38,7 @@ while [ $# -gt 0 ]; do
     case "$1" in
         --out-dir) OUT_DIR="$2"; shift 2 ;;
         --no-build) DO_BUILD=0; shift ;;
-        -h|--help) sed -n '2,25p' "${BASH_SOURCE[0]}" | sed 's/^# \{0,1\}//'; exit 0 ;;
+        -h|--help) sed -n '3,25p' "${BASH_SOURCE[0]}" | sed 's/^# \{0,1\}//'; exit 0 ;;
         -*) echo "package_release.sh: unknown option '$1'" >&2; exit 2 ;;
         *) PRESETS+=("$1"); shift ;;
     esac

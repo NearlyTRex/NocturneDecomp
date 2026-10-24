@@ -201,13 +201,16 @@ def decode_dib(blob, has_mask):
         height //= 2
     if width <= 0 or height <= 0:
         return None
+    if bpp not in (1, 4, 8, 16, 24, 32):
+        log("unsupported icon depth: %d bpp" % bpp)
+        return None
 
     palette = []
     off = hdr_size
     if bpp <= 8:
         entries = clr_used or (1 << bpp)
         for i in range(entries):
-            if off + 4 * i + 3 > len(blob):
+            if off + 4 * (i + 1) > len(blob):
                 return None
             b, g, r, _ = blob[off + 4 * i:off + 4 * i + 4]
             palette.append((r, g, b))
@@ -244,14 +247,8 @@ def decode_dib(blob, has_mask):
         if bpp == 24:
             b, g, r = xor[base + 3 * x:base + 3 * x + 3]
             return (r, g, b, 255)
-        if bpp == 32:
-            b, g, r, a = xor[base + 4 * x:base + 4 * x + 4]
-            return (r, g, b, a)
-        return None
-
-    if bpp not in (1, 4, 8, 16, 24, 32):
-        log("unsupported icon depth: %d bpp" % bpp)
-        return None
+        b, g, r, a = xor[base + 4 * x:base + 4 * x + 4]
+        return (r, g, b, a)
 
     # A 32bpp icon whose alpha channel is entirely zero predates per-pixel
     # alpha; its shape lives in the AND mask like every other depth.

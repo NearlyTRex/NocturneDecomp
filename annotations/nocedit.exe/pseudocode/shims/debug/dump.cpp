@@ -178,7 +178,7 @@ extern "C" int nocturne_dump_screenshot(const char *path)
     const unsigned char *base = (const unsigned char *)g_BackBuffer;
     if (g_BitsPerPixel == 32) {
         for (int y = 0; y < h; y++) {
-            const unsigned char *row = base + y * w * 4;
+            const unsigned char *row = base + (ptrdiff_t)y * w * 4;
             for (int x = 0; x < w; x++) {
                 // ARGB8888 SDL byte order: memory is [B, G, R, A].
                 unsigned char r = row[x * 4 + 2];
@@ -191,10 +191,10 @@ extern "C" int nocturne_dump_screenshot(const char *path)
         }
     } else {
         for (int y = 0; y < h; y++) {
-            const unsigned char *row = base + y * w * 2;
+            const unsigned char *row = base + (ptrdiff_t)y * w * 2;
             for (int x = 0; x < w; x++) {
-                unsigned int p =
-                    (unsigned int)row[x * 2] | ((unsigned int)row[x * 2 + 1] << 8);
+                unsigned int p = (unsigned int)row[(ptrdiff_t)x * 2] |
+                                 ((unsigned int)row[(ptrdiff_t)x * 2 + 1] << 8);
                 unsigned int r5 = (p >> 11) & 0x1F;
                 unsigned int g6 = (p >> 5)  & 0x3F;
                 unsigned int b5 =  p        & 0x1F;
@@ -301,12 +301,12 @@ extern "C" int nocturne_dump_zbuffer(const char *path)
         std::fprintf(m, "g_SoftwareZBuffer:         %p\n", g_SoftwareZBuffer);
         std::fprintf(m, "g_ZBufferScanlineArray[0]: %p\n", g_ZBufferScanlineArray[0]);
         std::fprintf(m, "\n");
+        // Never empty: the size was checked above.
         std::fprintf(m, "== Depth Stats ==\n");
         std::fprintf(m, "total pixels:    %d\n", total);
-        std::fprintf(m, "touched (d!=0):  %d (%.2f%%)\n",
-                     touched, total ? 100.0 * touched / total : 0.0);
+        std::fprintf(m, "touched (d!=0):  %d (%.2f%%)\n", touched, 100.0 * touched / total);
         std::fprintf(m, "untouched (d=0): %d (%.2f%%)\n",
-                     total - touched, total ? 100.0 * (total - touched) / total : 0.0);
+                     total - touched, 100.0 * (total - touched) / total);
         if (touched > 0) {
             std::fprintf(m, "min depth: 0x%08x (%u)\n", min_d, min_d);
             std::fprintf(m, "max depth: 0x%08x (%u)\n", max_d, max_d);
@@ -616,9 +616,10 @@ static void dump_cube_triangles(FILE *f, CDemonRaytrace *rt,
     if (cube == nullptr || cube->triangle_count <= 0) return;
     std::fprintf(f, "\n%s (x=%d, y=%d, z=%d, %d tris):\n",
                  label, xi, yi, zi, cube->triangle_count);
-    char *base = (char *)cube->triangle_buffer;
+    // Indexed as the game indexes it: 0x20 was the 32-bit size, and the vertex
+    // pointers inside make the entry larger at 64.
     for (int t = 0; t < cube->triangle_count; t++) {
-        CDemonCubeTriangle *ct = (CDemonCubeTriangle *)(base + t * 0x20);
+        CDemonCubeTriangle *ct = &cube->triangle_buffer[t];
         CVector3f *v0 = ct->triangle.vertices[0];
         CVector3f *v1 = ct->triangle.vertices[1];
         CVector3f *v2 = ct->triangle.vertices[2];
@@ -657,9 +658,9 @@ extern "C" int nocturne_dump_collision_grid(const char *path, CVector3f *pos)
 
     // Position-relative neighborhood: where is the position in the grid,
     // what triangles live around it.
-    int gx = (int)((pos->x - rt->bbox_min.x) / rt->cell_size.x + 0.5f);
-    int gy = (int)((pos->y - rt->bbox_min.y) / rt->cell_size.y + 0.5f);
-    int gz = (int)((pos->z - rt->bbox_min.z) / rt->cell_size.z + 0.5f);
+    int gx = (int)std::lround((pos->x - rt->bbox_min.x) / rt->cell_size.x);
+    int gy = (int)std::lround((pos->y - rt->bbox_min.y) / rt->cell_size.y);
+    int gz = (int)std::lround((pos->z - rt->bbox_min.z) / rt->cell_size.z);
     std::fprintf(f, "\n[Position lookup]\n");
     std::fprintf(f, "probe position: (%.4f, %.4f, %.4f)\n", pos->x, pos->y, pos->z);
     std::fprintf(f, "grid index:     (%d, %d, %d)\n", gx, gy, gz);
@@ -675,7 +676,7 @@ extern "C" int nocturne_dump_collision_grid(const char *path, CVector3f *pos)
         CDemonCube *cube = core_dtrace_cpp_CDemonRaytrace_getCubeAt_FUN_004952b0(
             rt, gx, yi, gz);
         if (cube == nullptr || cube->triangle_count == 0) continue;
-        float y0 = rt->bbox_min.y + yi * rt->cell_size.y;
+        float y0 = rt->bbox_min.y + (float)yi * rt->cell_size.y;
         float y1 = y0 + rt->cell_size.y;
         const char *marker = (yi == gy) ? " <-- probe here" : "";
         std::fprintf(f, "y=%-4d [%7.2f .. %7.2f]      %d%s\n",
@@ -1131,12 +1132,9 @@ extern "C" void nocturne_auto_capture(const char *path_template,
     char dl[256];
     std::snprintf(dl, sizeof(dl), "%s", ppm);
     char *dot = std::strrchr(dl, '.');
-    if (dot != nullptr && std::strcmp(dot, ".ppm") == 0) {
-        std::strcpy(dot, ".txt");
-    } else {
-        size_t len = std::strlen(dl);
-        if (len + 4 < sizeof(dl)) std::strcpy(dl + len, ".txt");
-    }
+    const size_t stem = (dot != nullptr && std::strcmp(dot, ".ppm") == 0)
+                            ? (size_t)(dot - dl) : std::strlen(dl);
+    std::snprintf(dl + stem, sizeof(dl) - stem, ".txt");
 
     nocturne_dump_screenshot(ppm);
     nocturne_dump_display_list(dl);
@@ -1147,9 +1145,8 @@ extern "C" void nocturne_auto_capture(const char *path_template,
 // Auto-dump actor — keyboard-driven continuous capture
 // =============================================================================
 //
-// Used by the user32 hotkeys to record a stream of per-frame actor state
-// while the user drives the game. Two slots so player + one NPC can run in
-// parallel.
+// Records a stream of per-frame actor state while the game is driven, armed
+// and ticked from gdb. Two slots so player + one NPC can run in parallel.
 
 namespace {
 
@@ -1197,26 +1194,6 @@ extern "C" int nocturne_auto_dump_is_armed(int slot)
 
 extern "C" void nocturne_auto_dump_tick(void)
 {
-    // Telemetry: confirm this is actually getting hit at frame rate during
-    // gameplay. Append to /tmp/auto_dump_tick.log on every 60th call. If
-    // dumps stop appearing during active play but this counter still climbs,
-    // the bug is in the slot-armed/dump path. If the counter also stalls,
-    // the host loop isn't pumping PeekMessageA's empty branch.
-    static int s_tick = 0;
-    s_tick++;
-    if ((s_tick % 60) == 0) {
-        FILE *log = std::fopen("/tmp/auto_dump_tick.log", "a");
-        if (log) {
-            time_t now = std::time(nullptr);
-            std::fprintf(log, "tick=%d slot0_armed=%d slot1_armed=%d t=%lld\n",
-                         s_tick,
-                         g_auto_dump_slots[0].armed ? 1 : 0,
-                         g_auto_dump_slots[1].armed ? 1 : 0,
-                         (long long)now);
-            std::fclose(log);
-        }
-    }
-
     for (int i = 0; i < 2; ++i) {
         AutoDumpSlot &s = g_auto_dump_slots[i];
         if (!s.armed) continue;
@@ -1300,7 +1277,10 @@ extern "C" void nocturne_dump_stream_pcm(const char *sample_name, const short *p
 
     // Written once per sample, not per batch: the first batch creates it, and
     // the "a" below then appends the rest of the stream to the raw file.
-    if (fopen(raw_path, "rb") == (FILE *)0) {
+    FILE *existing = fopen(raw_path, "rb");
+    if (existing != (FILE *)0) {
+        fclose(existing);
+    } else {
         FILE *txt = fopen(txt_path, "w");
         if (txt != (FILE *)0) {
             fprintf(txt, "name=%s\nchannels=%d\nbits=%d\nrate=%d\n",
@@ -1321,11 +1301,13 @@ extern "C" void nocturne_dump_stream_pcm(const char *sample_name, const short *p
 // Actor creation gates
 // =============================================================================
 
-// Names are fixed-width and not guaranteed terminated; copy through a bounded
-// buffer before printing one.
-static void copy_fixed_name(char *dest, size_t dest_size, const char *src, size_t src_size)
+// Names are fixed-width, 32 bytes, and not guaranteed terminated; copy through
+// a bounded buffer before printing one. A name handed in as a string may also
+// be shorter than the field, so the copy stops at its end.
+static void copy_fixed_name(char (&dest)[33], const char *src)
 {
-    size_t n = src_size < dest_size - 1 ? src_size : dest_size - 1;
+    size_t n = 0;
+    while (n < 32 && src[n] != '\0') n++;
     std::memcpy(dest, src, n);
     dest[n] = '\0';
 }
@@ -1338,13 +1320,15 @@ static void write_event_block(FILE *f, const char *label, const SEventNameBlock 
         std::fprintf(f, "  <negative count>\n");
         return;
     }
-    if (count > 100) {
-        std::fprintf(f, "  <count exceeds the 100-entry array; listing the first 100>\n");
-        count = 100;
+    const int capacity = (int)(sizeof(block->names) / sizeof(block->names[0]));
+    if (count > capacity) {
+        std::fprintf(f, "  <count exceeds the %d-entry array; listing the first %d>\n",
+                     capacity, capacity);
+        count = capacity;
     }
     for (int i = 0; i < count; i++) {
         char name[33];
-        copy_fixed_name(name, sizeof(name), block->names[i], 32);
+        copy_fixed_name(name, block->names[i]);
         std::fprintf(f, "  [%3d] %s\n", i, name);
     }
 }
@@ -1415,7 +1399,7 @@ extern "C" int nocturne_dump_create_gates(const char *path)
         gated++;
 
         char name[33];
-        copy_fixed_name(name, sizeof(name), a->actor_name, 32);
+        copy_fixed_name(name, a->actor_name);
 
         int cond = core_event_cpp_CEventList_evaluateCondition_FUN_004adca0(
                        g_CEventListPtr, a->create_event);
@@ -1451,13 +1435,16 @@ extern "C" int nocturne_dump_create_gates(const char *path)
     write_event_block(f, "game_flags", &events->game_flags);
     write_event_block(f, "persistent_events", &events->persistent_events);
 
+    // The timer block holds ten, where the name blocks hold a hundred.
     std::fprintf(f, "timers: count=%d\n", events->timers.count);
+    const int timer_capacity =
+        (int)(sizeof(events->timers.names) / sizeof(events->timers.names[0]));
     int timer_count = events->timers.count;
     if (timer_count > 0) {
-        if (timer_count > 100) timer_count = 100;
+        if (timer_count > timer_capacity) timer_count = timer_capacity;
         for (int i = 0; i < timer_count; i++) {
             char name[33];
-            copy_fixed_name(name, sizeof(name), events->timers.names[i], 32);
+            copy_fixed_name(name, events->timers.names[i]);
             std::fprintf(f, "  [%3d] %-32s %.3f\n", i, name,
                          (double)events->timers.durations[i]);
         }
@@ -1504,8 +1491,8 @@ extern "C" int nocturne_dump_flame_visibility(const char *path)
 
     // The re-test below goes through CBoundingBox3D::isVisible, which writes
     // both of these; put back what the frame had.
-    int saved_perspective = g_PerspectiveReciprocal;
-    int saved_solid_color = g_SolidColorMode;
+    const decltype(g_PerspectiveReciprocal) saved_perspective = g_PerspectiveReciprocal;
+    const decltype(g_SolidColorMode) saved_solid_color = g_SolidColorMode;
 
     std::fprintf(f, "%-20s  %5s  %5s  %4s  %6s  %5s  %4s  %4s  %-22s  %s\n",
                  "flame", "state", "check", "vis", "fresh", "frust", "wf", "gscl",
@@ -1523,7 +1510,7 @@ extern "C" int nocturne_dump_flame_visibility(const char *path)
         count++;
 
         char name[33];
-        copy_fixed_name(name, sizeof(name), a->actor_name, 32);
+        copy_fixed_name(name, a->actor_name);
 
         // Same bracket renderBackground uses, so the re-test sees the matrix it
         // would have seen there rather than whatever the actor transform left.
@@ -1606,15 +1593,18 @@ extern "C" void nocturne_probe_flame_draw_arm(const char *path, int rows)
                  "--------------------------------------------\n");
 }
 
+// The file is open only while rows of the budget are left.
 extern "C" void nocturne_probe_flame_draw(const char *name, int fog, int alpha)
 {
-    if (g_flame_draw_file == nullptr || g_flame_draw_rows <= 0) {
+    if (g_flame_draw_file == nullptr) {
         return;
     }
 
     // screen_x/screen_y are 16.16 fixed; report pixels. transformed_z decides
     // whether a vertex is in front of the camera at all, which is what tells a
     // clamped projection apart from a merely off-screen one.
+    // An entry is at most 33 characters — two 16.16 coordinates of eight, an
+    // int of eleven, and the punctuation — so four always fit.
     char quad[200];
     quad[0] = '\0';
     SRenderVertex *vb = g_CDemonRendererPtr2 ? g_CDemonRendererPtr2->vertex_buffer_ptr : nullptr;
@@ -1626,14 +1616,11 @@ extern "C" void nocturne_probe_flame_draw(const char *name, int fog, int alpha)
                                vb[i].projected_vertex.screen_y / 65536.0,
                                vb[i].projected_vertex.transformed_z,
                                i == 3 ? "" : " ");
-            if (n < 0 || (size_t)n >= sizeof(quad)) {
-                break;
-            }
         }
     }
 
     char leaf[33];
-    copy_fixed_name(leaf, sizeof(leaf), name, 32);
+    copy_fixed_name(leaf, name);
 
     std::fprintf(g_flame_draw_file, "%-20s  %7d  %7d  %5.1f%%   %s\n",
                  leaf, fog, alpha, (double)alpha * 100.0 / 65535.0, quad);
@@ -1678,10 +1665,8 @@ extern "C" int nocturne_dump_frontbuffer(const char *path)
         if (SDL_GetRendererOutputSize(renderer, &w, &h) != 0 || w <= 0 || h <= 0) {
             return -1;
         }
+        // A frame's worth is not refused.
         buf = (unsigned char *)malloc((size_t)w * 3 * (size_t)h);
-        if (buf == nullptr) {
-            return -1;
-        }
         // SDL_PIXELFORMAT_RGB24 is R,G,B order — exactly PPM order.
         if (SDL_RenderReadPixels(renderer, nullptr, SDL_PIXELFORMAT_RGB24, buf,
                                  (int)((size_t)w * 3)) != 0) {

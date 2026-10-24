@@ -39,7 +39,10 @@
 //
 // For a conditional log, write the condition out: `if (cond) DLOG(...);`
 //
-// All output is line-buffered and flushed immediately. Thread-safe via
+// Every message is flushed as it is written, so a crash keeps everything up to
+// it. That is spelled out per message rather than left to line buffering: the
+// Microsoft runtimes treat _IOLBF as full buffering, and on them a log cut
+// short by a crash stopped mid-line, a buffer's length in. Thread-safe via
 // fprintf (which holds the FILE lock internally on glibc). First-call file
 // registration is best-effort under contention; two threads racing to open
 // the same subsystem can cause a truncated handle to leak. This has not been
@@ -54,9 +57,15 @@
 
 #include "watcom/path.h"  // logs go where the other writes go
 
-// Strip the directory prefix from __FILE__ at compile time.
-#define _DLOG_FILE (__builtin_strrchr(__FILE__, '/') \
-    ? __builtin_strrchr(__FILE__, '/') + 1 : __FILE__)
+// Strip the directory prefix from __FILE__.
+constexpr const char* _dlog_leaf(const char* path) {
+    const char* leaf = path;
+    for (; *path; ++path) {
+        if (*path == '/' || *path == '\\') leaf = path + 1;
+    }
+    return leaf;
+}
+#define _DLOG_FILE _dlog_leaf(__FILE__)
 
 // Lookup/open FILE* for a subsystem name. Files are named "nocturne_<subsys>.log"
 // and truncated on the first call each run (matching the original DLOG behavior).
@@ -73,7 +82,7 @@ inline FILE* _dlog_get_file_named(const char* subsys) {
         if (s_names[i] == subsys) return s_files[i];
     }
     for (int i = 0; i < s_count; i++) {
-        if (s_names[i] && strcmp(s_names[i], subsys) == 0) return s_files[i];
+        if (strcmp(s_names[i], subsys) == 0) return s_files[i];
     }
     if (s_count >= _DLOG_MAX_LOGS) return nullptr;
 
@@ -93,6 +102,21 @@ inline FILE* _dlog_get_file_named(const char* subsys) {
 // Sink for the subsystem-less DWARN/DERROR → nocturne_debug.log.
 inline FILE* _dlog_get_file() {
     return _dlog_get_file_named("debug");
+}
+
+// One message to a log that may not have opened, flushed. A function rather than
+// the macros' own `if`, so that check is one branch here and not one at every
+// call site.
+#if defined(__GNUC__) || defined(__clang__)
+__attribute__((format(printf, 2, 3)))
+#endif
+inline void _dlog_write(FILE* f, const char* fmt, ...) {
+    if (!f) return;
+    va_list args;
+    va_start(args, fmt);
+    vfprintf(f, fmt, args);
+    va_end(args);
+    fflush(f);
 }
 
 // -- Symbolized backtrace -----------------------------------------------------
@@ -137,10 +161,8 @@ inline void _dlog_print_backtrace() {}
 #else
 
 // Write to a named subsystem log: nocturne_<subsys>.log
-#define DLOG(subsys, fmt, ...) do { \
-    FILE* _f = _dlog_get_file_named(subsys); \
-    if (_f) { fprintf(_f, "[%s:%d] " fmt "\n", _DLOG_FILE, __LINE__, ##__VA_ARGS__); } \
-} while(0)
+#define DLOG(subsys, fmt, ...) \
+    _dlog_write(_dlog_get_file_named(subsys), "[%s:%d] " fmt "\n", _DLOG_FILE, __LINE__, ##__VA_ARGS__)
 
 // Rate-limited log: log the first `first_n` calls, then every `every_n`-th call.
 // The tick number is prepended to the message as "#N ". Each call site has its
@@ -161,17 +183,13 @@ inline void _dlog_print_backtrace() {}
 #endif
 
 #define DWARN(fmt, ...) do { \
-    FILE* _f = _dlog_get_file(); \
-    if (_f) { fprintf(_f, "[WARN  %s:%d] " fmt "\n", _DLOG_FILE, __LINE__, ##__VA_ARGS__); } \
-    fprintf(stderr, "[WARN  %s:%d] " fmt "\n", _DLOG_FILE, __LINE__, ##__VA_ARGS__); \
-    fflush(stderr); \
+    _dlog_write(_dlog_get_file(), "[WARN  %s:%d] " fmt "\n", _DLOG_FILE, __LINE__, ##__VA_ARGS__); \
+    _dlog_write(stderr, "[WARN  %s:%d] " fmt "\n", _DLOG_FILE, __LINE__, ##__VA_ARGS__); \
     DBACKTRACE(); \
 } while(0)
 
 #define DERROR(fmt, ...) do { \
-    FILE* _f = _dlog_get_file(); \
-    if (_f) { fprintf(_f, "[ERROR %s:%d] " fmt "\n", _DLOG_FILE, __LINE__, ##__VA_ARGS__); } \
-    fprintf(stderr, "[ERROR %s:%d] " fmt "\n", _DLOG_FILE, __LINE__, ##__VA_ARGS__); \
-    fflush(stderr); \
+    _dlog_write(_dlog_get_file(), "[ERROR %s:%d] " fmt "\n", _DLOG_FILE, __LINE__, ##__VA_ARGS__); \
+    _dlog_write(stderr, "[ERROR %s:%d] " fmt "\n", _DLOG_FILE, __LINE__, ##__VA_ARGS__); \
     DBACKTRACE(); \
 } while(0)

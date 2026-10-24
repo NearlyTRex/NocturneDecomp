@@ -1,0 +1,48 @@
+# Pylint for the tests; pytest-testrex's meta suite runs it and fails on any message.
+#
+# pytest-testrex's shipped rcfile, plus the import path: the tests import the
+# scripts by name from scripts/Python, as the scripts import each other, and the
+# meta suite runs pylint from the repository root.
+#
+# Tests get pylint's deeper checks (fakes whose calls no longer match the real
+# signature, names a fixture never sets, unused results), minus the rules that
+# are pytest idioms rather than defects: a fixture is requested by naming it as
+# a parameter (redefined-outer-name, unused-argument), tests are described by
+# their names (docstrings, invalid-name), and a test reaches into the code under
+# test on purpose (protected-access).
+
+[MAIN]
+jobs = 0
+init-hook = import sys; sys.path.insert(0, "scripts/Python")
+
+[TYPECHECK]
+# Attributes of the MagicMocks tests swap in, which pylint may infer as the real object
+generated-members = assert_.*,return_value,side_effect,call_args,call_args_list,call_count,called,mock_calls,method_calls,reset_mock
+
+[MESSAGES CONTROL]
+disable =
+    too-many-arguments,
+    too-many-positional-arguments,
+    too-many-instance-attributes,
+    too-many-locals,
+    too-many-branches,
+    too-many-statements,
+    too-many-return-statements,
+    too-many-nested-blocks,
+    too-many-public-methods,
+    too-many-lines,
+    too-few-public-methods,
+    duplicate-code,
+    import-outside-toplevel,
+    broad-exception-caught,
+    broad-exception-raised,
+    missing-module-docstring,
+    missing-class-docstring,
+    missing-function-docstring,
+    redefined-outer-name,
+    unused-argument,
+    protected-access,
+    invalid-name,
+    attribute-defined-outside-init,
+    use-implicit-booleaness-not-comparison,
+    line-too-long,

@@ -1,5 +1,6 @@
 #include "system/mmsystem.h"
 #include <SDL.h>
+#include <algorithm>
 #include <cstring>
 #include <deque>
 
@@ -47,18 +48,38 @@ static std::deque<PendingChunk> s_audio_queue;
 // Shim implementations
 // ---------------------------------------------------------------------------
 
+// What initJoystick reads: the button count it keeps to eight, and whether a
+// POV hat is one of the controls. The axis ranges are the ones joyGetPos
+// reports in.
 static MMRESULT shim_joyGetDevCapsA(unsigned int uJoyID, LPJOYCAPSA pjc,
                                      unsigned int cbjc) {
     if (!pjc) return 1;
     memset(pjc, 0, cbjc);
     int numJoy = SDL_NumJoysticks();
     if ((int)uJoyID >= numJoy) return 1; // JOYERR_PARMS
+
+    // A valid index opens; a failure is answered as none of each.
+    SDL_Joystick* joy = SDL_JoystickOpen((int)uJoyID);
+    const UINT buttons = (UINT)std::max(SDL_JoystickNumButtons(joy), 0);
+    const UINT axes    = (UINT)std::max(SDL_JoystickNumAxes(joy), 0);
+    pjc->wNumButtons = buttons;
+    pjc->wMaxButtons = buttons;
+    pjc->wNumAxes = axes;
+    pjc->wMaxAxes = axes;
+    pjc->wXmax = pjc->wYmax = pjc->wZmax = 0xFFFF;
+    pjc->wCaps = SDL_JoystickNumHats(joy) > 0 ? 0x10u : 0u;   // JOYCAPS_HASPOV
+    SDL_JoystickClose(joy);
     return MMSYSERR_NOERROR;
 }
 
 static MMRESULT shim_joyGetPos(unsigned int uJoyID, LPJOYINFO pji) {
     if (!pji) return 1;
     memset(pji, 0, sizeof(joyinfo_tag));
+    // One that has been unplugged is let go, and the next poll looks again.
+    if (s_joystick && !SDL_JoystickGetAttached(s_joystick)) {
+        SDL_JoystickClose(s_joystick);
+        s_joystick = nullptr;
+    }
     if (!s_joystick) {
         if (SDL_NumJoysticks() > 0) {
             s_joystick = SDL_JoystickOpen((int)uJoyID);
@@ -157,12 +178,20 @@ static void SDLCALL shim_waveOutCallback(void* /*userdata*/, Uint8* stream, int 
         c.consumed += take;
         written += (int)take;
         if (c.consumed >= c.length) {
-            if (c.hdr) c.hdr->dwFlags |= SHIM_WHDR_DONE;
+            c.hdr->dwFlags |= SHIM_WHDR_DONE;
             s_audio_queue.pop_front();
         }
     }
     if (written < len) memset(stream + written, 0, len - written);
     SDL_UnlockMutex(s_audio_mtx);
+}
+
+// Every header still queued is done: its bytes will not be played. The game
+// waits on WHDR_DONE to reuse a buffer, so one left unmarked is never written
+// again. Called with the queue locked.
+static void finish_queued() {
+    for (auto& c : s_audio_queue) c.hdr->dwFlags |= SHIM_WHDR_DONE;
+    s_audio_queue.clear();
 }
 
 static MMRESULT shim_waveOutOpen(HWAVEOUT* phwo, unsigned int /*uDeviceID*/,
@@ -174,9 +203,13 @@ static MMRESULT shim_waveOutOpen(HWAVEOUT* phwo, unsigned int /*uDeviceID*/,
         return MMSYSERR_ERROR;
     }
     if (!s_audio_mtx) s_audio_mtx = SDL_CreateMutex();
+    // Reopening ends the old device and what was queued for it.
     if (s_audio_dev != 0) {
         SDL_CloseAudioDevice(s_audio_dev);
         s_audio_dev = 0;
+        SDL_LockMutex(s_audio_mtx);
+        finish_queued();
+        SDL_UnlockMutex(s_audio_mtx);
     }
     SDL_AudioSpec want = {};
     want.freq = (int)pwfx->nSamplesPerSec;
@@ -200,8 +233,7 @@ static MMRESULT shim_waveOutOpen(HWAVEOUT* phwo, unsigned int /*uDeviceID*/,
 static MMRESULT shim_waveOutClose(HWAVEOUT /*hwo*/) {
     if (s_audio_mtx) {
         SDL_LockMutex(s_audio_mtx);
-        for (auto& c : s_audio_queue) if (c.hdr) c.hdr->dwFlags |= SHIM_WHDR_DONE;
-        s_audio_queue.clear();
+        finish_queued();
         SDL_UnlockMutex(s_audio_mtx);
     }
     if (s_audio_dev != 0) {
@@ -218,8 +250,9 @@ static MMRESULT shim_waveOutGetDevCapsA(unsigned int uDeviceID,
     if (uDeviceID != 0 && uDeviceID != (unsigned int)-1) return MMSYSERR_BADDEVICEID;
     if (!SDL_WasInit(SDL_INIT_AUDIO)) SDL_InitSubSystem(SDL_INIT_AUDIO);
     memset(pwoc, 0, cbwoc);
+    // The first output's name, which the game lists as its sound device.
     const char* name = SDL_GetAudioDeviceName(0, 0);
-    if (!name || !*name) name = "SDL Audio";
+    if (!name) name = "SDL Audio";
     strncpy(pwoc->szPname, name, sizeof(pwoc->szPname) - 1);
     pwoc->wChannels = 2;
     pwoc->dwFormats = 0x000000FFu;  // common 11/22/44 kHz mono+stereo 8/16-bit
@@ -244,10 +277,8 @@ static MMRESULT shim_waveOutUnprepareHeader(HWAVEOUT /*hwo*/, LPWAVEHDR pwh,
 static MMRESULT shim_waveOutReset(HWAVEOUT /*hwo*/) {
     if (!s_audio_mtx) return MMSYSERR_NOERROR;
     SDL_LockMutex(s_audio_mtx);
-    for (auto& c : s_audio_queue) if (c.hdr) c.hdr->dwFlags |= SHIM_WHDR_DONE;
-    s_audio_queue.clear();
+    finish_queued();
     SDL_UnlockMutex(s_audio_mtx);
-    if (s_audio_dev != 0) SDL_ClearQueuedAudio(s_audio_dev);
     return MMSYSERR_NOERROR;
 }
 

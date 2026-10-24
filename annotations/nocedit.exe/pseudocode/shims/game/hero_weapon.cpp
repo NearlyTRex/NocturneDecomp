@@ -92,7 +92,7 @@ static CWeapon *hero_create_weapon(const char *class_name, const char *actor_nam
     weapon = (CWeapon *)core_actor_cpp_castToClassHash_FUN_0040c790
                                   (actor_ptr, g_CWeaponClassInfo.name_hash);
     if (weapon != (CWeapon *)0x0) {
-        strcpy(weapon->base.actor_name, actor_name);
+        snprintf(weapon->base.actor_name, sizeof(weapon->base.actor_name), "%s", actor_name);
     }
     return weapon;
 }

@@ -1,5 +1,6 @@
 import os
 from ghidra_annotations.util import *
+from ghidra.program.model.symbol import SourceType
 from ghidra.program.model.symbol import SymbolType
 
 def should_track_symbol_class(type_symbol):

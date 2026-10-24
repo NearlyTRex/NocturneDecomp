@@ -29,32 +29,21 @@ const Mode kModes[] = {
 
 const int kModeCount = (int)(sizeof(kModes) / sizeof(kModes[0]));
 
-} // namespace
-
-int nocturne_resolution_count(void) {
-    return kModeCount;
-}
-
-int nocturne_resolution_at(int index, int *width, int *height) {
-    if (index < 0 || index >= kModeCount) { return 0; }
-    if (width) { *width = kModes[index].width; }
-    if (height) { *height = kModes[index].height; }
-    return 1;
-}
-
-int nocturne_resolution_index_of(int width, int height) {
+// Index of an exact width/height match, or -1: "the current mode is in the
+// list" as against "the INI holds something we have to snap out of".
+int index_of(int width, int height) {
     for (int i = 0; i < kModeCount; ++i) {
         if (kModes[i].width == width && kModes[i].height == height) { return i; }
     }
     return -1;
 }
 
-int nocturne_resolution_step(int current_width, int current_height, int step,
-                             int max_height, int *out_width, int *out_height) {
+} // namespace
+
+void nocturne_resolution_step(int current_width, int current_height, int step,
+                              int max_height, int *out_width, int *out_height) {
     int index;
     int last;
-
-    if (kModeCount < 1) { return 0; }
 
     // The largest mode the caller will take. Everything past it is unreachable
     // as far as the stepping is concerned, so it is not a mode the selector can
@@ -64,7 +53,7 @@ int nocturne_resolution_step(int current_width, int current_height, int step,
         while (last > 0 && kModes[last].height > max_height) { --last; }
     }
 
-    index = nocturne_resolution_index_of(current_width, current_height);
+    index = index_of(current_width, current_height);
     if (index < 0) {
         // Not one of ours — an old INI, or the 400x300 the shipped chain could
         // land on but never leave cleanly. Snap to the nearest by height rather
@@ -95,9 +84,8 @@ int nocturne_resolution_step(int current_width, int current_height, int step,
         if (index > last) { index = 0; }
     }
 
-    if (out_width) { *out_width = kModes[index].width; }
-    if (out_height) { *out_height = kModes[index].height; }
-    return 1;
+    *out_width = kModes[index].width;
+    *out_height = kModes[index].height;
 }
 
 const char *nocturne_resolution_label(int width, int height) {

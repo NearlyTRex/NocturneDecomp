@@ -19,15 +19,16 @@
 //   Libraries:   renderer/builtin_dll.cpp — compiled in, nothing is loaded
 //
 // What is left of the host here is the descriptor-based file calls, which
-// Windows' own runtime spells the same way under underscored names, and asking
-// how much memory the machine has, which no language can. Both are marked where
-// they are.
+// Windows' own runtime spells the same way under underscored names. Asking how
+// much memory the machine has, which no language can, is core/host_memory's.
 //
 
 #include "system/kernel32.h"
 #include "globals/globals_610000.h"
+#include "globals/globals_3F90000.h"  // g_CommandLineBuffer, which GetCommandLineA fits
 #include "renderer/builtin_dll.h"
 #include "core/file_search.h"   // nocturne_find_files() — shared with _findfirst
+#include "core/host_memory.h"   // GlobalMemoryStatus's figures
 #include "watcom/path.h"        // the same path resolution and roots the CRT uses
 
 #include <SDL.h>
@@ -43,14 +44,6 @@
 #include <system_error>
 #include <thread>
 #include <sys/stat.h>
-// How much memory the machine has is the one question with no portable answer,
-// so its header is chosen the same way its implementation is. See host_memory.
-#if defined(__linux__)
-#include <sys/sysinfo.h>
-#elif defined(__APPLE__) || defined(__FreeBSD__) || defined(__OpenBSD__) || \
-      defined(__NetBSD__)
-#include <sys/sysctl.h>
-#endif
 #if defined(__APPLE__)
 #include <mach-o/dyld.h>    // _NSGetExecutablePath, for host_program_path
 #endif
@@ -142,6 +135,13 @@ static inline long tm_utc_offset(const struct tm* tm_buf) {
 // Convert fd to HANDLE and back
 #define FD_TO_HANDLE(fd) ((HANDLE)(intptr_t)(fd))
 #define HANDLE_TO_FD(h)  ((int)(intptr_t)(h))
+
+// A file handle is its descriptor, a small number; every other handle is the
+// address of a tagged object. No system maps the first 64 KB, so the value
+// alone says which, and a descriptor is never read as an object to find a tag.
+static bool is_object_handle(HANDLE h) {
+    return (uintptr_t)h >= 0x10000 && h != (HANDLE)(intptr_t)-1;
+}
 
 // Handle tag for identifying wrapper types
 enum HandleTag {
@@ -308,6 +308,10 @@ static HANDLE shim_CreateFileA(LPCSTR lpFileName, DWORD dwDesiredAccess,
     case WIN32_TRUNCATE_EXISTING:
         flags |= O_TRUNC;
         break;
+    default:
+        // A disposition Win32 does not define opens what is there, as
+        // OPEN_EXISTING does.
+        break;
     }
 
     // CreateFile has no text mode; the Windows CRT's descriptor layer does, and
@@ -364,38 +368,43 @@ static BOOL shim_WriteFile(HANDLE hFile, LPCVOID lpBuffer,
 
 static BOOL shim_CloseHandle(HANDLE hObject) {
     if (hObject == NULL || hObject == INVALID_HANDLE) return 0;
+    if (!is_object_handle(hObject)) return close(HANDLE_TO_FD(hObject)) == 0 ? 1 : 0;
 
     // Check if this is a tagged handle
     int* tagPtr = (int*)hObject;
     switch (*tagPtr) {
-    case HANDLE_TAG_THREAD: {
-        ThreadHandle* th = (ThreadHandle*)hObject;
+    case HANDLE_TAG_THREAD:
         // Closing a thread handle on Windows drops the caller's reference and
         // lets the thread run on. Detaching says the same thing. The handle
         // itself is deliberately not deleted: the thread body still holds it and
         // writes its exit code through it, and there is no way from here to know
         // whether it has finished. One leaked handle per thread, and the game
         // creates one.
-        if (th->thread.joinable()) th->thread.detach();
+        if (((ThreadHandle*)hObject)->thread.joinable()) ((ThreadHandle*)hObject)->thread.detach();
         return 1;
-    }
-    case HANDLE_TAG_MUTEX: {
+    case HANDLE_TAG_MUTEX:
         delete (MutexHandle*)hObject;
         return 1;
-    }
-    case HANDLE_TAG_EVENT: {
+    case HANDLE_TAG_EVENT:
         delete (EventHandle*)hObject;
         return 1;
-    }
-    case HANDLE_TAG_FIND: {
-        FindHandle* fh = (FindHandle*)hObject;
-        delete fh;
+    case HANDLE_TAG_FIND:
+        delete (FindHandle*)hObject;
         return 1;
-    }
     default:
-        // Assume file descriptor
-        return close(HANDLE_TO_FD(hObject)) == 0 ? 1 : 0;
+        // An object of no kind this file makes
+        return 0;
     }
+}
+
+// Seeks in 64 bits on every host. off_t is 32 bits on Windows, where lseek
+// cannot reach past 2 GB and shifting an off_t by 32 is undefined.
+static long long seek64(int fd, long long offset, int whence) {
+#if defined(_WIN32)
+    return _lseeki64(fd, offset, whence);
+#else
+    return (long long)lseek(fd, (off_t)offset, whence);
+#endif
 }
 
 static DWORD shim_SetFilePointer(HANDLE hFile, LONGVAL lDistanceToMove,
@@ -410,15 +419,15 @@ static DWORD shim_SetFilePointer(HANDLE hFile, LONGVAL lDistanceToMove,
     default: whence = SEEK_SET; break;
     }
 
-    off_t offset;
+    // With a high word the distance is one signed 64-bit value, the low word
+    // its unsigned bottom half; without one it is the low word, sign and all.
+    long long offset = (long long)lDistanceToMove;
     if (lpDistanceToMoveHigh) {
-        offset = ((off_t)(*lpDistanceToMoveHigh) << 32) | (off_t)(unsigned long)lDistanceToMove;
-    } else {
-        offset = (off_t)lDistanceToMove;
+        offset = (long long)*lpDistanceToMoveHigh * 0x100000000LL + (unsigned int)lDistanceToMove;
     }
 
-    off_t result = lseek(fd, offset, whence);
-    if (result == (off_t)-1) {
+    long long result = seek64(fd, offset, whence);
+    if (result == -1) {
         s_lastError = (DWORD)errno;
         return 0xFFFFFFFF;
     }
@@ -430,12 +439,12 @@ static DWORD shim_SetFilePointer(HANDLE hFile, LONGVAL lDistanceToMove,
 
 static BOOL shim_SetEndOfFile(HANDLE hFile) {
     int fd = HANDLE_TO_FD(hFile);
-    off_t pos = lseek(fd, 0, SEEK_CUR);
-    if (pos == (off_t)-1) { s_lastError = (DWORD)errno; return 0; }
+    long long pos = seek64(fd, 0, SEEK_CUR);
+    if (pos == -1) { s_lastError = (DWORD)errno; return 0; }
 #if defined(_WIN32)
-    if (_chsize(fd, (long)pos) != 0) { s_lastError = (DWORD)errno; return 0; }
+    if (_chsize_s(fd, pos) != 0) { s_lastError = (DWORD)errno; return 0; }
 #else
-    if (ftruncate(fd, pos) != 0) { s_lastError = (DWORD)errno; return 0; }
+    if (ftruncate(fd, (off_t)pos) != 0) { s_lastError = (DWORD)errno; return 0; }
 #endif
     return 1;
 }
@@ -550,35 +559,25 @@ static DWORD shim_GetFileType(HANDLE hFile) {
     return WIN32_FILE_TYPE_DISK;
 }
 
+// Win32 resolves against the working directory whether or not the file exists,
+// and follows no links — which is absolute() and lexical normalising, not
+// realpath. Like GetCurrentDirectoryA, a buffer too small is told the size it
+// needs, terminator included, and nothing is written.
 static DWORD shim_GetFullPathNameA(LPCSTR lpFileName, DWORD nBufferLength,
     LPSTR lpBuffer, LPSTR* lpFilePart)
 {
-    char resolved[4096];
-    // _fullpath is realpath with one difference that matters here: it does not
-    // require the file to exist, so the not-found branch below is dead on
-    // Windows and only fires for a malformed path. Both return NULL on failure.
-#if defined(_WIN32)
-    if (!_fullpath(resolved, lpFileName, sizeof(resolved))) {
-#else
-    if (!realpath(lpFileName, resolved)) {
-#endif
-        // If file doesn't exist, just copy the input
-        strncpy(lpBuffer, lpFileName, nBufferLength);
-        lpBuffer[nBufferLength - 1] = '\0';
-        if (lpFilePart) {
-            char* slash = strrchr(lpBuffer, '/');
-            *lpFilePart = slash ? slash + 1 : lpBuffer;
-        }
-        return (DWORD)strlen(lpBuffer);
+    std::error_code ec;
+    const std::filesystem::path full =
+        std::filesystem::absolute(std::filesystem::path(lpFileName), ec).lexically_normal();
+    if (ec) {
+        s_lastError = (DWORD)ec.value();
+        return 0;
     }
-    DWORD len = (DWORD)strlen(resolved);
-    if (len + 1 > nBufferLength) return len + 1;
-    strcpy(lpBuffer, resolved);
-    if (lpFilePart) {
-        char* slash = strrchr(lpBuffer, '/');
-        *lpFilePart = slash ? slash + 1 : lpBuffer;
-    }
-    return len;
+    const std::string text = full.string();
+    if (text.size() + 1 > (size_t)nBufferLength) return (DWORD)(text.size() + 1);
+    memcpy(lpBuffer, text.c_str(), text.size() + 1);
+    if (lpFilePart) *lpFilePart = lpBuffer + text.size() - full.filename().string().size();
+    return (DWORD)text.size();
 }
 
 static DWORD shim_GetCurrentDirectoryA(DWORD nBufferLength, LPSTR lpBuffer) {
@@ -656,7 +655,7 @@ static HANDLE shim_FindFirstFileA(LPCSTR lpFileName, LPWIN32_FIND_DATAA lpFindFi
 
 static BOOL shim_FindNextFileA(HANDLE hFindFile, LPWIN32_FIND_DATAA lpFindFileData) {
     FindHandle* fh = (FindHandle*)hFindFile;
-    if (!fh || fh == INVALID_HANDLE || fh->tag != HANDLE_TAG_FIND) return 0;
+    if (!is_object_handle(hFindFile) || fh->tag != HANDLE_TAG_FIND) return 0;
     if (fh->currentIndex >= fh->matches.size()) {
         s_lastError = 18; // ERROR_NO_MORE_FILES
         return 0;
@@ -668,7 +667,7 @@ static BOOL shim_FindNextFileA(HANDLE hFindFile, LPWIN32_FIND_DATAA lpFindFileDa
 
 static BOOL shim_FindClose(HANDLE hFindFile) {
     FindHandle* fh = (FindHandle*)hFindFile;
-    if (!fh || fh == INVALID_HANDLE || fh->tag != HANDLE_TAG_FIND) return 0;
+    if (!is_object_handle(hFindFile) || fh->tag != HANDLE_TAG_FIND) return 0;
     delete fh;
     return 1;
 }
@@ -824,7 +823,7 @@ static HANDLE shim_CreateMutexA(LPSECURITY_ATTRIBUTES lpMutexAttributes,
 
 static BOOL shim_ReleaseMutex(HANDLE hMutex) {
     MutexHandle* mh = (MutexHandle*)hMutex;
-    if (!mh || mh->tag != HANDLE_TAG_MUTEX) return 0;
+    if (!is_object_handle(hMutex) || mh->tag != HANDLE_TAG_MUTEX) return 0;
     mh->mutex.unlock();
     return 1;
 }
@@ -845,7 +844,7 @@ static HANDLE shim_CreateEventA(LPSECURITY_ATTRIBUTES lpEventAttributes,
 
 static BOOL shim_SetEvent(HANDLE hEvent) {
     EventHandle* eh = (EventHandle*)hEvent;
-    if (!eh || eh->tag != HANDLE_TAG_EVENT) return 0;
+    if (!is_object_handle(hEvent) || eh->tag != HANDLE_TAG_EVENT) return 0;
     {
         std::lock_guard<std::mutex> held(eh->mutex);
         eh->signaled = 1;
@@ -858,7 +857,7 @@ static BOOL shim_SetEvent(HANDLE hEvent) {
 }
 
 static DWORD shim_WaitForSingleObject(HANDLE hHandle, DWORD dwMilliseconds) {
-    if (!hHandle) return WIN32_WAIT_FAILED;
+    if (!is_object_handle(hHandle)) return WIN32_WAIT_FAILED;
 
     const std::chrono::milliseconds timeout((long long)dwMilliseconds);
     const bool forever = (dwMilliseconds == WIN32_INFINITE);
@@ -960,7 +959,17 @@ static BOOL shim_CreateProcessA(LPCSTR lpApplicationName, LPSTR lpCommandLine,
     return 0;
 }
 
+// Win32 ends the process here without unwinding, which is _exit. _exit also
+// skips the exit hook that writes a coverage build's profile, so that build
+// writes it first.
+#if defined(NOCTURNE_COVERAGE_BUILD)
+extern "C" int __llvm_profile_write_file(void);
+#endif
+
 static void shim_ExitProcess(UINT uExitCode) {
+#if defined(NOCTURNE_COVERAGE_BUILD)
+    __llvm_profile_write_file();
+#endif
     _exit((int)uExitCode);
 }
 
@@ -1088,171 +1097,10 @@ static BOOL shim_GlobalUnlock(HGLOBAL hMem) {
     return 1;
 }
 
-// Every MEMORYSTATUS field is capped at INT_MAX, because the game copies
-// dwTotalPhys and dwAvailPageFile into `int` globals (g_TotalPhysicalMemory /
-// g_AvailableSwapSpace) and then, in initializeGameSystems, compares them
-// SIGNED against 60 MB and 200 MB to decide whether to raise the "Nocturne
-// requires at least 64MB of system RAM" warning. A value past INT_MAX arrives
-// negative, trips both checks, and prints a negative megabyte figure — which
-// is exactly how this warning misfires on modern Windows, where the same
-// 32-bit-era API is documented to report -1 above 4 GB. Saturating keeps the
-// value positive and comfortably over both thresholds.
-static SIZE_T mem_status_clamp(unsigned long long bytes) {
-    const unsigned long long cap = 0x7FFFFFFFull;
-    return (SIZE_T)(bytes > cap ? cap : bytes);
-}
-
-// Linux counts reclaimable page cache as used, so sysinfo's freeram badly
-// understates what a process can actually obtain — on a normally-warm machine
-// it can sit under the 200 MB the swap warning tests against while gigabytes
-// are in fact available. MemAvailable is the kernel's own estimate of that and
-// is the honest number to judge those thresholds by. Returns 0 if unreadable.
-// How much memory the machine has, which the language does not know and cannot
-// be asked. Every host answers it differently, so this is the one place in the
-// shims that selects on the platform, and it is written so that a host nobody
-// has tried still compiles and still starts the game.
-struct HostMemory {
-    unsigned long long total_phys;
-    unsigned long long avail_phys;
-    unsigned long long total_commit;   // Windows' commit limit: RAM plus backing
-    unsigned long long avail_commit;
-};
-
-// The figures used when the host cannot be asked. Not zero: the game warns that
-// it "runs best with at least 200MB free" and would say so on every start, and
-// sizes caches from these. A modest machine is the safe thing to claim to be.
-static void host_memory_fallback(HostMemory *out) {
-    out->total_phys   = 256ull * 1024 * 1024;
-    out->avail_phys   = 128ull * 1024 * 1024;
-    out->total_commit = 512ull * 1024 * 1024;
-    out->avail_commit = 512ull * 1024 * 1024;
-}
-
-#if defined(__linux__)
-
-// MemAvailable is the kernel's own estimate of what a new allocation could
-// actually get, which is a better answer than free memory: most of a healthy
-// machine's RAM is cache it would give back.
-static unsigned long long linux_available_bytes(void) {
-    FILE* f = fopen("/proc/meminfo", "r");
-    if (!f) return 0;
-    char line[256];
-    unsigned long long kb = 0;
-    while (fgets(line, sizeof(line), f)) {
-        if (strncmp(line, "MemAvailable:", 13) == 0) {
-            if (sscanf(line + 13, "%llu", &kb) != 1) kb = 0;
-            break;
-        }
-    }
-    fclose(f);
-    return kb * 1024ull;
-}
-
-static void host_memory(HostMemory *out) {
-    struct sysinfo si;
-    if (sysinfo(&si) != 0) { host_memory_fallback(out); return; }
-
-    const unsigned long long unit = si.mem_unit ? si.mem_unit : 1;
-    out->total_phys = (unsigned long long)si.totalram * unit;
-    out->avail_phys = linux_available_bytes();
-    if (out->avail_phys == 0) {
-        out->avail_phys = ((unsigned long long)si.freeram +
-                           (unsigned long long)si.bufferram) * unit;
-    }
-    // The page-file fields are Windows' commit limit and remaining commit,
-    // which span RAM plus backing store — not the swap device alone. Match
-    // that: a swapless host would otherwise report a 0-byte page file and
-    // trip the "runs best with at least 200MB free" warning on every start.
-    out->total_commit = out->total_phys + (unsigned long long)si.totalswap * unit;
-    out->avail_commit = out->avail_phys + (unsigned long long)si.freeswap * unit;
-}
-
-#elif defined(_WIN32)
-
-// Declared here rather than included. <windows.h> would bring its own DWORD,
-// HANDLE and MEMORYSTATUS, and system/kernel32.h has already defined all three
-// with the layouts the decompiled binary expects — the two sets cannot coexist
-// in one TU. One struct and one import is a smaller thing to own than that
-// collision, and the layout is fixed ABI.
-extern "C" {
-struct NOC_MEMORYSTATUSEX {
-    DWORD              dwLength;
-    DWORD              dwMemoryLoad;
-    unsigned long long ullTotalPhys;
-    unsigned long long ullAvailPhys;
-    unsigned long long ullTotalPageFile;
-    unsigned long long ullAvailPageFile;
-    unsigned long long ullTotalVirtual;
-    unsigned long long ullAvailVirtual;
-    unsigned long long ullAvailExtendedVirtual;
-};
-__declspec(dllimport) int __stdcall GlobalMemoryStatusEx(NOC_MEMORYSTATUSEX *);
-}
-
-// Straight through: the game is asking a Windows question and this is a
-// Windows host, so the shim is the identity.
-static void host_memory(HostMemory *out) {
-    NOC_MEMORYSTATUSEX status;
-    status.dwLength = sizeof(status);
-    if (!GlobalMemoryStatusEx(&status)) { host_memory_fallback(out); return; }
-    out->total_phys   = status.ullTotalPhys;
-    out->avail_phys   = status.ullAvailPhys;
-    out->total_commit = status.ullTotalPageFile;
-    out->avail_commit = status.ullAvailPageFile;
-}
-
-#elif defined(__APPLE__) || defined(__FreeBSD__) || defined(__OpenBSD__) || \
-      defined(__NetBSD__)
-
-// The BSDs and macOS answer through sysctl. Total is asked for directly;
-// available is not reported in a form that means the same thing, so it is left
-// as a fraction of total rather than invented more precisely than it is known.
-static void host_memory(HostMemory *out) {
-    uint64_t total = 0;
-    size_t length = sizeof(total);
-#if defined(__APPLE__)
-    const char *name = "hw.memsize";
-#else
-    const char *name = "hw.physmem";
-#endif
-    if (sysctlbyname(name, &total, &length, NULL, 0) != 0 || total == 0) {
-        host_memory_fallback(out);
-        return;
-    }
-    out->total_phys   = total;
-    out->avail_phys   = total / 2;
-    out->total_commit = total;
-    out->avail_commit = total / 2;
-}
-
-#else
-
-// A host nobody has tried yet. It compiles, it starts, and the figures say a
-// modest machine — which is the honest answer to a question this build cannot
-// ask here.
-static void host_memory(HostMemory *out) { host_memory_fallback(out); }
-
-#endif
-
+// The figures and the 32-bit clamping are core/host_memory's.
 static void shim_GlobalMemoryStatus(LPMEMORYSTATUS lpBuffer) {
     if (!lpBuffer) return;
-    memset(lpBuffer, 0, sizeof(_MEMORYSTATUS));
-    lpBuffer->dwLength = sizeof(_MEMORYSTATUS);
-
-    HostMemory memory;
-    host_memory(&memory);
-
-    lpBuffer->dwTotalPhys     = mem_status_clamp(memory.total_phys);
-    lpBuffer->dwAvailPhys     = mem_status_clamp(memory.avail_phys);
-    lpBuffer->dwTotalPageFile = mem_status_clamp(memory.total_commit);
-    lpBuffer->dwAvailPageFile = mem_status_clamp(memory.avail_commit);
-    // Address space, not memory: the 2 GB user half of a 32-bit process.
-    lpBuffer->dwTotalVirtual = 0x7FFFFFFF;
-    lpBuffer->dwAvailVirtual = 0x7FFFFFFF;
-    lpBuffer->dwMemoryLoad =
-        (memory.total_phys != 0 && memory.avail_phys < memory.total_phys)
-            ? (DWORD)(((memory.total_phys - memory.avail_phys) * 100) / memory.total_phys)
-            : 0;
+    nocturne_memory_status(nocturne_host_memory(), lpBuffer);
 }
 
 // =============================================================================
@@ -1315,7 +1163,8 @@ static HMODULE shim_GetModuleHandleA(LPCSTR lpModuleName) {
     return (HMODULE)nocturne_builtin_dll_open(lpModuleName);
 }
 
-// The path of the running program, without a NUL. /proc/self/exe is Linux's
+// The path of the running program and its length; the caller terminates it,
+// since readlink does not. /proc/self/exe is Linux's
 // answer; Windows' runtime holds it in _pgmptr, which is what the real
 // GetModuleFileNameA would hand back and needs no Win32 header to read; macOS
 // has dyld's _NSGetExecutablePath, which fails rather than truncates.
@@ -1327,6 +1176,7 @@ static ssize_t host_program_path(char* out, size_t cap) {
     size_t len = strlen(path);
     if (len > cap - 1) len = cap - 1;
     memcpy(out, path, len);
+    out[len] = '\0';
     return (ssize_t)len;
 #elif defined(__APPLE__)
     uint32_t size = (uint32_t)cap;
@@ -1339,31 +1189,25 @@ static ssize_t host_program_path(char* out, size_t cap) {
 
 static DWORD shim_GetModuleFileNameA(HMODULE hModule, LPSTR lpFilename, DWORD nSize) {
     (void)hModule;
+    // A path that cannot be had, or no room for one, is 0 with nothing written.
     ssize_t len = host_program_path(lpFilename, nSize);
-    if (len < 0) {
-        if (nSize > 0) lpFilename[0] = '\0';
-        return 0;
-    }
+    if (len < 0) return 0;
     lpFilename[len] = '\0';
     return (DWORD)len;
 }
 
+// The narrow path widened a byte at a character, cut to nSize like the narrow
+// one. A failure there is an empty path here.
 static DWORD shim_GetModuleFileNameW(HMODULE hModule, LPWSTR lpFilename, DWORD nSize) {
-    (void)hModule;
-    char buf[4096];
-    ssize_t len = host_program_path(buf, sizeof(buf));
-    if (len < 0) {
-        if (nSize > 0) lpFilename[0] = L'\0';
-        return 0;
+    // No room even for the terminator.
+    if (nSize == 0) return 0;
+    char narrow[4096] = "";
+    const DWORD len = shim_GetModuleFileNameA(hModule, narrow,
+                                              nSize < sizeof(narrow) ? nSize : (DWORD)sizeof(narrow));
+    for (DWORD i = 0; i <= len; i++) {
+        lpFilename[i] = (wchar_t)(unsigned char)narrow[i];
     }
-    buf[len] = '\0';
-    // Simple ASCII->wchar conversion
-    DWORD i;
-    for (i = 0; i < (DWORD)len && i < nSize - 1; i++) {
-        lpFilename[i] = (wchar_t)buf[i];
-    }
-    lpFilename[i] = L'\0';
-    return i;
+    return len;
 }
 
 // =============================================================================
@@ -1552,11 +1396,14 @@ static BOOL shim_TlsFree(DWORD dwTlsIndex) {
     return 1;
 }
 
+// A slot can hold NULL, so Win32 clears the last error on success and sets it on
+// a bad index: that is how a caller tells an empty slot from a failure.
 static LPVOID shim_TlsGetValue(DWORD dwTlsIndex) {
     if (dwTlsIndex >= MAX_TLS_SLOTS || !s_tlsUsed[dwTlsIndex]) {
-        s_lastError = 0;
+        s_lastError = 87;   // ERROR_INVALID_PARAMETER
         return NULL;
     }
+    s_lastError = 0;
     return s_tlsValues[dwTlsIndex];
 }
 
@@ -1597,54 +1444,39 @@ static LONGVAL shim_UnhandledExceptionFilter(struct _EXCEPTION_POINTERS* Excepti
 // Environment / System Info Shims
 // =============================================================================
 
-static LPSTR shim_GetCommandLineA(void) {
-    static char cmdline[4096] = "";
-    if (cmdline[0] == '\0') {
-#if defined(_WIN32)
-        // The real GetCommandLineA is the function being shimmed, so it cannot
-        // be the source. __argv is the same argument vector the CRT built from
-        // the command line before main ran, which is as close as this gets
-        // without <windows.h>. Joining with spaces loses the original quoting,
-        // exactly as the /proc path below does.
-        size_t used = 0;
-        for (int i = 0; i < __argc && used + 1 < sizeof(cmdline); i++) {
-            const char* arg = __argv[i];
-            if (used) cmdline[used++] = ' ';
-            size_t room = sizeof(cmdline) - used - 1;
-            size_t len  = strlen(arg);
-            if (len > room) len = room;
-            memcpy(cmdline + used, arg, len);
-            used += len;
-        }
-        cmdline[used] = '\0';
-#else
-        // Read from /proc/self/cmdline
-        int fd = open("/proc/self/cmdline", O_RDONLY);
-        if (fd >= 0) {
-            ssize_t n = read(fd, cmdline, sizeof(cmdline) - 1);
-            close(fd);
-            if (n > 0) {
-                // Replace NUL separators with spaces
-                for (ssize_t i = 0; i < n - 1; i++) {
-                    if (cmdline[i] == '\0') cmdline[i] = ' ';
-                }
-                cmdline[n] = '\0';
-            }
-        }
-#endif
+// The command line as main received it, words joined by spaces. The real
+// GetCommandLineA is the function being shimmed, so the arguments are handed
+// in rather than asked of the host, the same way on every platform. Joining
+// loses the original quoting; the game splits on spaces.
+//
+// winMain strcpys it, unchecked, into the 256-byte g_CommandLineBuffer, so it
+// is cut to fit there. 255 characters also split into at most 128 words, the
+// size of g_ArgVector that winMain fills from it.
+static char s_commandLine[sizeof(g_CommandLineBuffer)] = "";
+static wchar_t s_commandLineW[sizeof(g_CommandLineBuffer)] = L"";
+
+void shims_set_command_line(int argc, char** argv) {
+    size_t used = 0;
+    for (int i = 0; i < argc && used + 1 < sizeof(s_commandLine); i++) {
+        if (i > 0) s_commandLine[used++] = ' ';
+        size_t len = strlen(argv[i]);
+        const size_t room = sizeof(s_commandLine) - used - 1;
+        if (len > room) len = room;
+        memcpy(s_commandLine + used, argv[i], len);
+        used += len;
     }
-    return cmdline;
+    s_commandLine[used] = '\0';
+    for (size_t i = 0; i <= used; i++) {
+        s_commandLineW[i] = (wchar_t)(unsigned char)s_commandLine[i];
+    }
+}
+
+static LPSTR shim_GetCommandLineA(void) {
+    return s_commandLine;
 }
 
 static LPWSTR shim_GetCommandLineW(void) {
-    static wchar_t wcmdline[4096] = {0};
-    if (wcmdline[0] == L'\0') {
-        LPSTR narrow = shim_GetCommandLineA();
-        for (int i = 0; narrow[i] && i < 4095; i++) {
-            wcmdline[i] = (wchar_t)narrow[i];
-        }
-    }
-    return wcmdline;
+    return s_commandLineW;
 }
 
 static LPSTR shim_GetEnvironmentStrings(void) {
@@ -1656,7 +1488,7 @@ static LPSTR shim_GetEnvironmentStrings(void) {
     }
     total++; // double null terminator
 
-    char* block = (char*)malloc(total);
+    char* block = new (std::nothrow) char[total];
     if (!block) return NULL;
 
     char* p = block;
@@ -1670,7 +1502,7 @@ static LPSTR shim_GetEnvironmentStrings(void) {
 }
 
 static BOOL shim_FreeEnvironmentStringsA(LPSTR penv) {
-    free(penv);
+    delete[] penv;
     return 1;
 }
 
@@ -1700,15 +1532,25 @@ static BOOL shim_SetEnvironmentVariableW(LPCWSTR lpName, LPCWSTR lpValue) {
     return 1;
 }
 
+// The name, and its length without the terminator in *nSize. A buffer too small
+// gets nothing, ERROR_BUFFER_OVERFLOW, and the size it needs in *nSize, as in
+// Win32 — rather than gethostname's truncation, which need not be terminated.
 static BOOL shim_GetComputerNameA(LPSTR lpBuffer, LPDWORD nSize) {
+    char name[256] = "";
     // Explicit cast picks the POSIX unistd.h overload (size_t) over the
     // winsock.h extern (int) — both are in scope because nocturne.h pulls
-    // in winsock.h and this shim also needs unistd.h directly.
-    if (gethostname(lpBuffer, (size_t)*nSize) == 0) {
-        *nSize = (DWORD)strlen(lpBuffer);
-        return 1;
+    // in winsock.h and this shim also needs unistd.h directly. It fails only
+    // for a bad buffer, and the name is terminated here either way.
+    gethostname(name, (size_t)(sizeof(name) - 1));
+    const size_t length = strlen(name);
+    if (length + 1 > (size_t)*nSize) {
+        *nSize = (DWORD)(length + 1);
+        s_lastError = 111;  // ERROR_BUFFER_OVERFLOW
+        return 0;
     }
-    return 0;
+    memcpy(lpBuffer, name, length + 1);
+    *nSize = (DWORD)length;
+    return 1;
 }
 
 static UINT shim_GetACP(void) {
@@ -1763,8 +1605,10 @@ static int shim_WideCharToMultiByte(UINT CodePage, DWORD dwFlags,
 {
     (void)CodePage;
     (void)dwFlags;
-    (void)lpDefaultChar;
 
+    // What stands in for a character the code page cannot hold, and whether it
+    // had to, as Win32 reports them.
+    const char fallback = lpDefaultChar ? *lpDefaultChar : '?';
     if (lpUsedDefaultChar) *lpUsedDefaultChar = 0;
 
     int len;
@@ -1780,8 +1624,13 @@ static int shim_WideCharToMultiByte(UINT CodePage, DWORD dwFlags,
 
     int count = (len < cbMultiByte) ? len : cbMultiByte;
     for (int i = 0; i < count; i++) {
-        wchar_t wc = lpWideCharStr[i];
-        lpMultiByteStr[i] = (wc < 256) ? (char)wc : '?';
+        const wchar_t wc = lpWideCharStr[i];
+        if (wc < 256) {
+            lpMultiByteStr[i] = (char)wc;
+        } else {
+            lpMultiByteStr[i] = fallback;
+            if (lpUsedDefaultChar) *lpUsedDefaultChar = 1;
+        }
     }
     return count;
 }
@@ -1790,7 +1639,20 @@ static int shim_WideCharToMultiByte(UINT CodePage, DWORD dwFlags,
 // Init Function
 // =============================================================================
 
+#if defined(_MSC_VER)
+// The Microsoft runtime ends the process when a descriptor call is handed one
+// that is not open, where Win32 and the other runtimes answer with an error —
+// CloseHandle on a closed file is FALSE, not a crash. Every descriptor call in
+// the shims checks for that error, so a handler that returns lets them see it.
+static void return_on_invalid_parameter(const wchar_t*, const wchar_t*, const wchar_t*,
+                                        unsigned int, uintptr_t) {}
+#endif
+
 void shims_init_kernel32(void) {
+#if defined(_MSC_VER)
+    _set_invalid_parameter_handler(return_on_invalid_parameter);
+#endif
+
     // File I/O
     g_CloseHandleFunc = shim_CloseHandle;
     g_CreateDirectoryAFunc = shim_CreateDirectoryA;

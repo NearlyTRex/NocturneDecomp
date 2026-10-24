@@ -31,7 +31,7 @@ if(NOT EXISTS "${NOCTURNE_WIN_SYSROOT}/include/windows.h")
     message(FATAL_ERROR
         "mingw-w64 sysroot not found at ${NOCTURNE_WIN_SYSROOT}.\n"
         "The Windows lane is opt-in and needs a cross toolchain:\n"
-        "    sudo apt install g++-mingw-w64-x86-64\n"
+        "    sudo apt install g++-mingw-w64-x86-64 lld\n"
         "(Fedora: mingw64-gcc-c++ / Arch: mingw-w64-gcc / macOS: brew install mingw-w64)\n"
         "No other preset requires it -- the Linux builds are unaffected.")
 endif()
@@ -71,10 +71,35 @@ set(_NOCTURNE_TARGET_FLAGS "--target=${NOCTURNE_WIN_TRIPLE}")
 
 set(CMAKE_C_FLAGS_INIT   "${_NOCTURNE_TARGET_FLAGS}")
 set(CMAKE_CXX_FLAGS_INIT "${_NOCTURNE_TARGET_FLAGS}")
-set(CMAKE_EXE_LINKER_FLAGS_INIT    "${_NOCTURNE_TARGET_FLAGS}")
-set(CMAKE_SHARED_LINKER_FLAGS_INIT "${_NOCTURNE_TARGET_FLAGS}")
+
+# Linked with lld, not the mingw binutils ld. clang compiles thread_local to
+# native PE TLS, whose accesses carry each variable's offset into the TLS block
+# as an IMAGE_REL_AMD64_SECREL fixup. GNU ld 2.41 resolves those and also emits
+# a base relocation for each, so when Windows loads the exe away from its
+# preferred base (ASLR, always) it adds the load delta to every TLS offset and
+# the first thread-local access faults. Loaded at the preferred base, as wine
+# does, nothing is relocated and the bug cannot show. lld emits no base
+# relocation for a SECREL. gcc-built code is unaffected: gcc on mingw uses
+# emulated TLS.
+find_program(NOCTURNE_LLD ld.lld)
+if(NOT NOCTURNE_LLD)
+    message(FATAL_ERROR
+        "ld.lld not found. The Windows lane links with lld:\n"
+        "    sudo apt install lld\n"
+        "See the note in cmake/toolchains/windows-x86_64.cmake for why.")
+endif()
+set(CMAKE_EXE_LINKER_FLAGS_INIT    "${_NOCTURNE_TARGET_FLAGS} -fuse-ld=lld")
+set(CMAKE_SHARED_LINKER_FLAGS_INIT "${_NOCTURNE_TARGET_FLAGS} -fuse-ld=lld")
 
 set(CMAKE_RC_COMPILER "${NOCTURNE_WIN_TRIPLE}-windres")
+
+# The unit tests are Windows executables too; with wine installed, ctest runs
+# them through it, so the shims' _WIN32 paths are exercised against a Windows
+# C runtime rather than only compiled. Without wine the tests still build.
+find_program(NOCTURNE_WINE wine)
+if(NOCTURNE_WINE AND NOT DEFINED CMAKE_CROSSCOMPILING_EMULATOR)
+    set(CMAKE_CROSSCOMPILING_EMULATOR "${NOCTURNE_WINE}")
+endif()
 
 set(CMAKE_FIND_ROOT_PATH "${NOCTURNE_WIN_SYSROOT}")
 set(CMAKE_FIND_ROOT_PATH_MODE_PROGRAM NEVER)

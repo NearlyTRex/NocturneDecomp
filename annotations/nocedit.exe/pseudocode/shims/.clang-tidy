@@ -1,0 +1,19 @@
+---
+# The checks that find bugs, held as errors over the hand-written shims. The
+# Win32 and Watcom entry points keep their documented signatures and names, so
+# parameter order is not the shims' to change and their leading underscores are
+# the runtime's own spelling. Struct padding is a memory-size suggestion, not a
+# bug, and the tables it would reorder are laid out to be read. The multi-level
+# pointer check reports the conversion inside an explicit cast as well, so in
+# clang-tidy 18 nothing written can satisfy it. Headers count only here: the
+# generated headers under include/ are not hand-written.
+Checks: >
+  -*,
+  bugprone-*,
+  -bugprone-easily-swappable-parameters,
+  -bugprone-multi-level-implicit-pointer-conversion,
+  -bugprone-reserved-identifier,
+  clang-analyzer-*,
+  -clang-analyzer-optin.performance.Padding
+WarningsAsErrors: '*'
+HeaderFilterRegex: '/pseudocode/shims/'

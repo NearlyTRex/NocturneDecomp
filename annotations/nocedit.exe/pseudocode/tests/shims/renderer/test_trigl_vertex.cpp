@@ -193,6 +193,17 @@ NOCTURNE_TEST(vertex_conversion_matches_build_tl_vertex) {
 // of the source would agree with a wrong scale as readily as a right one, so
 // these are worked out from the formats instead: screen coordinates carry 16
 // fractional bits, texture coordinates 24.
+// The palette may be absent when nothing reads it; a draw that would take its
+// colour from one then gets black, opaque, rather than a read through null.
+NOCTURNE_TEST(a_palette_colour_without_a_palette_is_black) {
+    NocturneTriglVertexContext ctx = base_context(0);
+    ctx.palette = nullptr;
+    const NocturneTriglVertexInput in = { 0, 0, 1, 0, 0, 0x1000, 0x2000, 0x3000, 0x8000 };
+    NocturneTriglScreenVertex out;
+    nocturne_trigl_convert_vertex(&ctx, &in, &out);
+    CHECK_EQ(out.diffuse, 0xff000000u);
+}
+
 NOCTURNE_TEST(fixed_point_scales) {
     NocturneTriglVertexContext ctx = base_context(0);
     NocturneTriglVertexInput in = {};

@@ -28,8 +28,8 @@ std::string sibling_ignoring_case(const std::string &parent, const std::string &
     // an error to propagate.
     std::filesystem::directory_iterator it(directory, ignored), end;
     if (ignored) return std::string();
+    // A failed step leaves the iterator at end, which is no match.
     for (; it != end; it.increment(ignored)) {
-        if (ignored) return std::string();
         const std::string name = it->path().filename().string();
         if (nocturne_ascii_iequals(name.c_str(), wanted.c_str())) return name;
     }
@@ -71,9 +71,9 @@ std::string resolve_case_insensitive(const std::string &slashed) {
         }
 
         std::string parent = result;
-        // The trailing separator goes before the scan, except at the root where
-        // it is the whole name.
-        if (parent.size() > 1 && parent.back() == '/') parent.pop_back();
+        // Anything built so far ends in a separator, which goes before the scan,
+        // except at the root where it is the whole name.
+        if (parent.size() > 1) parent.pop_back();
         const std::string matched = sibling_ignoring_case(parent, component);
 
         if (matched.empty()) {
@@ -133,8 +133,7 @@ std::string for_writing(const std::string &relative) {
     const WatcomPathRoots &r = roots();
     const std::string target = under(r.user, relative);
     std::error_code ignored;
-    const std::filesystem::path path(target);
-    if (path.has_parent_path()) std::filesystem::create_directories(path.parent_path(), ignored);
+    std::filesystem::create_directories(std::filesystem::path(target).parent_path(), ignored);
     if (!exists(target)) {
         const std::string shipped = r.data.empty() ? resolve_case_insensitive(relative)
                                                    : under(r.data, relative);

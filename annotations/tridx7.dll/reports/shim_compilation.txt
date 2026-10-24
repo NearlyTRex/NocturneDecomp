@@ -1,0 +1,36 @@
+================================================================================
+SHIM COMPILATION REPORT
+================================================================================
+
+Compiler: clang++
+Shims directory: annotations/tridx7.dll/pseudocode/shims
+Include directory: annotations/tridx7.dll/pseudocode/include
+SDL2 flags: -I/usr/include/SDL2 -D_REENTRANT -I/usr/include/harfbuzz -I/usr/include/freetype2 -I/usr/include/libpng16 -I/usr/include/glib-2.0 -I/usr/lib/x86_64-linux-gnu/glib-2.0/include -I/usr/include/x86_64-linux-gnu
+
+Summary: 1 passed, 3 failed out of 4 total (25.0% success)
+
+--------------------------------------------------------------------------------
+FAILED FILES (3)
+--------------------------------------------------------------------------------
+
+FILE: render_probe.cpp
+----------------------------------------
+annotations/tridx7.dll/pseudocode/shims/render_probe.cpp:20:10: fatal error: 'debug_log.h' file not found
+   20 | #include "debug_log.h"
+      |          ^~~~~~~~~~~~~
+1 error generated.
+
+FILE: gl_ddraw.cpp
+----------------------------------------
+annotations/tridx7.dll/pseudocode/shims/gl_ddraw.cpp:30:10: fatal error: 'gl_api.h' file not found
+   30 | #include "gl_api.h"
+      |          ^~~~~~~~~~
+1 error generated.
+
+FILE: apidll_exports.cpp
+----------------------------------------
+annotations/tridx7.dll/pseudocode/shims/apidll_exports.cpp:26:10: fatal error: 'builtin_dll.h' file not found
+   26 | #include "builtin_dll.h"
+      |          ^~~~~~~~~~~~~~~
+1 error generated.
+

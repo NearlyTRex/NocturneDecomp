@@ -37,10 +37,10 @@ int nocturne_net_menu_multiplayer(void)
 
         // Rebuilt every frame, as the main menu rebuilds its own: the strings
         // are localized and the language can change under the options screen.
-        strcpy(host_line,
-               support_newmsg_cpp_getLocalizedString_FUN_005441f0("H O S T   G A M E"));
-        strcpy(join_line,
-               support_newmsg_cpp_getLocalizedString_FUN_005441f0("J O I N   G A M E"));
+        snprintf(host_line, sizeof(host_line), "%s",
+                 support_newmsg_cpp_getLocalizedString_FUN_005441f0("H O S T   G A M E"));
+        snprintf(join_line, sizeof(join_line), "%s",
+                 support_newmsg_cpp_getLocalizedString_FUN_005441f0("J O I N   G A M E"));
 
         // From the main menu's own start-y, so the submenu's lines land where
         // the ones it replaced on screen were.

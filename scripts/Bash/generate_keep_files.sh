@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 # generate_keep_files.sh
 #
-# Copies .cpp/.c source files into .keep.cpp/.keep.c variants, adding the
-# MANUAL RECONSTRUCTION header line.  Skips:
+# Prepares a .keep.cpp/.keep.c for every .cpp/.c source file through
+# prepare_keep.sh, so a bulk keep is made exactly as a single one is.  Skips:
 #   - .mmx.cpp/.mmx.c   (inline assembly replacements)
 #   - .byval.cpp/.byval.c (pass-by-value struct fixing)
 #   - files that already have a .keep variant
@@ -15,6 +15,7 @@
 set -euo pipefail
 
 SRC_DIR="${1:-annotations/nocedit.exe/pseudocode/src}"
+SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
 
 if [ ! -d "$SRC_DIR" ]; then
     echo "ERROR: Source directory not found: $SRC_DIR" >&2
@@ -47,32 +48,18 @@ while IFS= read -r -d '' src_file; do
         continue
     fi
 
-    # Determine keep file path
+    # Skip if .keep already exists (find only yields .cpp and .c)
     if [[ "$src_file" == *.cpp ]]; then
         keep_file="${src_file%.cpp}.keep.cpp"
-    elif [[ "$src_file" == *.c ]]; then
-        keep_file="${src_file%.c}.keep.c"
     else
-        continue
+        keep_file="${src_file%.c}.keep.c"
     fi
-
-    # Skip if .keep already exists
     if [ -f "$keep_file" ]; then
         skipped_exists=$((skipped_exists + 1))
         continue
     fi
 
-    # Insert MANUAL RECONSTRUCTION after the // Address: line
-    awk '
-        /^\/\/ Address: [0-9a-fA-F]+$/ && !done {
-            print
-            print "// MANUAL RECONSTRUCTION"
-            done = 1
-            next
-        }
-        { print }
-    ' "$src_file" > "$keep_file"
-
+    "$SCRIPT_DIR/prepare_keep.sh" "$src_file" > /dev/null
     created=$((created + 1))
 done < <(find "$SRC_DIR" -type f \( -name '*.cpp' -o -name '*.c' \) -print0 | sort -z)
 

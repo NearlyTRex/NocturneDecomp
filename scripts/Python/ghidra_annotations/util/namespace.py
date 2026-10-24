@@ -1,6 +1,4 @@
-import os
-from ghidra_annotations.util.log import *
-from ghidra.program.model.symbol import SymbolType
+from ghidra_annotations.util.log import log_info
 from ghidra.program.model.symbol import SourceType
 
 def get_or_create_namespace(currentProgram, name, parent_name = None, created_cache = None):

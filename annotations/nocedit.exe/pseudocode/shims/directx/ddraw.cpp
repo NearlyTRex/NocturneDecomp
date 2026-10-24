@@ -10,15 +10,17 @@
 // obj->vtable points to our embedded vtable, and each method can cast
 // this_ptr back to the full shim struct to access internal SDL state.
 //
+// Only the methods the game calls are implemented (wddvmem.cpp: the display
+// mode, a primary flip chain and its back buffer, Lock/Unlock/Flip, a palette
+// it never reads back); the rest of each vtable is null.
+//
 
 #include <SDL.h>
-#include <cstdlib>
 #include <cstring>
 
 #include "system/ddraw.h"
 #include "directx/ddraw.h"
 #include "core/debug_log.h"
-#include "core/window_icon.h"
 #include "shim_config.h"
 #include "gl/gl_present.h"
 #include "gl/window_mode.h"
@@ -34,8 +36,6 @@ extern bool g_sdlWindowReadyToShow;
 #define DDERR_GENERIC           0x80004005
 #define DDERR_INVALIDPARAMS     0x80070057
 #define DDERR_OUTOFMEMORY       0x8007000E
-#define DDERR_UNSUPPORTED       0x80004001
-#define DDERR_SURFACELOST       0x887601C2
 
 // DDSD flags
 #define DDSD_CAPS               0x00000001
@@ -43,37 +43,19 @@ extern bool g_sdlWindowReadyToShow;
 #define DDSD_WIDTH              0x00000004
 #define DDSD_PITCH              0x00000008
 #define DDSD_PIXELFORMAT        0x00001000
-#define DDSD_BACKBUFFERCOUNT    0x00000020
 
 // DDSCAPS flags
 #define DDSCAPS_PRIMARYSURFACE  0x00000200
 #define DDSCAPS_BACKBUFFER      0x00000004
 #define DDSCAPS_FLIP            0x00000010
 #define DDSCAPS_COMPLEX         0x00000008
-#define DDSCAPS_OFFSCREENPLAIN  0x00000040
-#define DDSCAPS_SYSTEMMEMORY    0x00000800
-#define DDSCAPS_VIDEOMEMORY     0x00004000
 
 // DDSCL flags
 #define DDSCL_FULLSCREEN        0x00000001
 #define DDSCL_EXCLUSIVE         0x00000010
 
-// DDBLT flags
-#define DDBLT_COLORFILL         0x00000400
-
-// DDBLTFAST flags
-#define DDBLTFAST_SRCCOLORKEY   0x00000002
-#define DDBLTFAST_NOCOLORKEY    0x00000000
-
-// DDFLIP flags
-#define DDFLIP_WAIT             0x00000001
-
 // DDPF flags
 #define DDPF_RGB                0x00000040
-
-// DDLOCK flags
-#define DDLOCK_WAIT             0x00000001
-#define DDLOCK_SURFACEMEMORYPTR  0x00000000
 
 // =============================================================================
 // Internal shim data structures
@@ -86,12 +68,12 @@ struct DDSurface_ShimData;
 static void populate_ddraw_vtable(IDirectDraw_vtable* vt);
 static void populate_surface_vtable(IDirectDrawSurface_vtable* vt);
 
+// No reference count: the game never adds a reference, so its one Release
+// frees it.
 struct DDraw_ShimData {
     IDirectDraw_vtable* vtable;
     IDirectDraw_vtable vtable_data;
-    ULONG ref_count;
     SDL_Window* window;
-    int owns_window;
     SDL_Renderer* renderer;
     HWND cooperative_hwnd;
     DWORD cooperative_level;
@@ -111,8 +93,6 @@ struct DDSurface_ShimData {
     int is_primary;
     int is_locked;
     DDSurface_ShimData* back_buffer;
-    DDCOLORKEY src_color_key;
-    int has_color_key;
 };
 
 // Global reference to the ddraw shim (for surface -> renderer access)
@@ -122,50 +102,25 @@ static DDraw_ShimData* g_ddraw_shim = nullptr;
 // IUnknown methods (shared)
 // =============================================================================
 
-static HRESULT ddraw_QueryInterface(IDirectDraw* this_ptr, void* riid, void** ppvObject) {
-    (void)this_ptr; (void)riid; (void)ppvObject;
-    return DDERR_UNSUPPORTED;
-}
-
-static ULONG ddraw_AddRef(IDirectDraw* this_ptr) {
-    DDraw_ShimData* shim = reinterpret_cast<DDraw_ShimData*>(this_ptr);
-    return ++shim->ref_count;
-}
-
 static ULONG ddraw_Release(IDirectDraw* this_ptr) {
     DDraw_ShimData* shim = reinterpret_cast<DDraw_ShimData*>(this_ptr);
-    if (--shim->ref_count == 0) {
-        if (shim->renderer) SDL_DestroyRenderer(shim->renderer);
-        if (shim->window && shim->owns_window) {
-            if (g_sdlWindow == shim->window) g_sdlWindow = nullptr;
-            SDL_DestroyWindow(shim->window);
-        }
-        if (g_ddraw_shim == shim) g_ddraw_shim = nullptr;
-        free(shim);
-        return 0;
-    }
-    return shim->ref_count;
+    if (shim->renderer) SDL_DestroyRenderer(shim->renderer);
+    if (g_ddraw_shim == shim) g_ddraw_shim = nullptr;
+    delete shim;
+    return 0;
 }
 
-static HRESULT surface_QueryInterface(IDirectDrawSurface* this_ptr, void* riid, void** ppvObject) {
-    (void)this_ptr; (void)riid; (void)ppvObject;
-    return DDERR_UNSUPPORTED;
-}
-
-static ULONG surface_AddRef(IDirectDrawSurface* this_ptr) {
-    DDSurface_ShimData* shim = reinterpret_cast<DDSurface_ShimData*>(this_ptr);
-    return ++shim->ref_count;
-}
-
+// The back buffer GetAttachedSurface hands out holds a reference of its own,
+// which the game releases as well as the chain's.
 static ULONG surface_Release(IDirectDrawSurface* this_ptr) {
     DDSurface_ShimData* shim = reinterpret_cast<DDSurface_ShimData*>(this_ptr);
     if (--shim->ref_count == 0) {
         if (shim->sdl_texture) SDL_DestroyTexture(shim->sdl_texture);
-        if (shim->sdl_surface) SDL_FreeSurface(shim->sdl_surface);
+        SDL_FreeSurface(shim->sdl_surface);
         if (shim->back_buffer) {
             surface_Release(reinterpret_cast<IDirectDrawSurface*>(shim->back_buffer));
         }
-        free(shim);
+        delete shim;
         return 0;
     }
     return shim->ref_count;
@@ -175,21 +130,6 @@ static ULONG surface_Release(IDirectDrawSurface* this_ptr) {
 // IDirectDraw methods
 // =============================================================================
 
-static HRESULT ddraw_Compact(IDirectDraw* this_ptr) {
-    (void)this_ptr;
-    return DD_OK;
-}
-
-static HRESULT ddraw_CreateClipper(IDirectDraw* this_ptr, DWORD flags,
-                                    IDirectDrawClipper** clipper, IUnknown* outer) {
-    (void)this_ptr; (void)flags; (void)outer;
-    // Allocate a minimal clipper (not actively used in most paths)
-    IDirectDrawClipper* clip = (IDirectDrawClipper*)calloc(1, sizeof(IDirectDrawClipper));
-    if (!clip) return DDERR_OUTOFMEMORY;
-    *clipper = clip;
-    return DD_OK;
-}
-
 // Minimal palette stub — needs a vtable with at least Release so cleanup
 // code that does g_DirectDrawUnknown->vtable->Release() doesn't null-deref.
 struct PaletteShimData {
@@ -198,7 +138,7 @@ struct PaletteShimData {
 };
 
 static ULONG palette_Release(IUnknown* this_ptr) {
-    free(this_ptr);
+    delete reinterpret_cast<PaletteShimData*>(this_ptr);
     return 0;
 }
 
@@ -206,8 +146,7 @@ static HRESULT ddraw_CreatePalette(IDirectDraw* this_ptr, DWORD flags,
                                     PALETTEENTRY* entries, IDirectDrawPalette** palette,
                                     IUnknown* outer) {
     (void)this_ptr; (void)entries; (void)outer;
-    PaletteShimData* pal = (PaletteShimData*)calloc(1, sizeof(PaletteShimData));
-    if (!pal) return DDERR_OUTOFMEMORY;
+    PaletteShimData* pal = new PaletteShimData();
     pal->vtable_data.Release = palette_Release;
     pal->vtable = &pal->vtable_data;
     *palette = reinterpret_cast<IDirectDrawPalette*>(pal);
@@ -215,16 +154,14 @@ static HRESULT ddraw_CreatePalette(IDirectDraw* this_ptr, DWORD flags,
     return DD_OK;
 }
 
+static SDL_Texture* create_present_texture(DDraw_ShimData* ddraw, int width, int height,
+                                           int bpp);
+
+// Null if SDL cannot make a surface of that size. One that is `presented` (the
+// primary and its back buffer) gets a texture to be shown through.
 static DDSurface_ShimData* create_surface_shim(DDraw_ShimData* ddraw,
-                                                 int width, int height, int bpp) {
-    DDSurface_ShimData* surf = (DDSurface_ShimData*)calloc(1, sizeof(DDSurface_ShimData));
-    if (!surf) return nullptr;
-
-    populate_surface_vtable(&surf->vtable_data);
-    surf->vtable = &surf->vtable_data;
-    surf->ref_count = 1;
-    surf->ddraw = ddraw;
-
+                                                 int width, int height, int bpp,
+                                                 DWORD caps, bool presented) {
     // Create SDL surface with appropriate pixel format
     Uint32 rmask, gmask, bmask, amask;
     if (bpp == 16) {
@@ -235,12 +172,16 @@ static DDSurface_ShimData* create_surface_shim(DDraw_ShimData* ddraw,
         rmask = 0x00FF0000; gmask = 0x0000FF00; bmask = 0x000000FF; amask = 0xFF000000;
     }
 
-    surf->sdl_surface = SDL_CreateRGBSurface(0, width, height, bpp,
-                                              rmask, gmask, bmask, amask);
-    if (!surf->sdl_surface) {
-        free(surf);
-        return nullptr;
-    }
+    SDL_Surface* sdl_surface = SDL_CreateRGBSurface(0, width, height, bpp,
+                                                    rmask, gmask, bmask, amask);
+    if (!sdl_surface) return nullptr;
+
+    DDSurface_ShimData* surf = new DDSurface_ShimData();
+    populate_surface_vtable(&surf->vtable_data);
+    surf->vtable = &surf->vtable_data;
+    surf->ref_count = 1;
+    surf->ddraw = ddraw;
+    surf->sdl_surface = sdl_surface;
 
     // Fill in the surface description
     surf->desc.dwSize = sizeof(DDSURFACEDESC);
@@ -254,8 +195,28 @@ static DDSurface_ShimData* create_surface_shim(DDraw_ShimData* ddraw,
     surf->desc.ddpfPixelFormat.dwRedYMask.dwRBitMask = rmask;
     surf->desc.ddpfPixelFormat.dwGreenUMask.dwGBitMask = gmask;
     surf->desc.ddpfPixelFormat.dwBlueVMask.dwBBitMask = bmask;
+    surf->desc.ddsCaps.dwCaps = caps;
 
+    if (presented) surf->sdl_texture = create_present_texture(ddraw, width, height, bpp);
     return surf;
+}
+
+// The streaming texture a surface is presented through on the SDL renderer;
+// none while GL owns the window, which makes no renderer. Alpha is ignored:
+// the game writes alpha=0 in every pixel (MMX scanline / moon / font paths
+// don't populate the alpha byte), and with BLENDMODE_BLEND, the default on
+// some drivers, that pre-multiplies RGB by alpha and everything comes out
+// zeroed on the red/green channels.
+static SDL_Texture* create_present_texture(DDraw_ShimData* ddraw, int width, int height,
+                                           int bpp) {
+    if (!ddraw->renderer) return nullptr;
+    Uint32 format = (bpp == 16) ? SDL_PIXELFORMAT_RGB565 :
+                    (bpp == 24) ? SDL_PIXELFORMAT_RGB24 :
+                                  SDL_PIXELFORMAT_ARGB8888;
+    SDL_Texture* texture = SDL_CreateTexture(ddraw->renderer, format,
+                                             SDL_TEXTUREACCESS_STREAMING, width, height);
+    SDL_SetTextureBlendMode(texture, SDL_BLENDMODE_NONE);
+    return texture;
 }
 
 static HRESULT ddraw_CreateSurface(IDirectDraw* this_ptr, DDSURFACEDESC* desc,
@@ -267,118 +228,32 @@ static HRESULT ddraw_CreateSurface(IDirectDraw* this_ptr, DDSURFACEDESC* desc,
     int height = ddraw->display_height;
     int bpp = ddraw->display_bpp;
 
-    if (desc->dwFlags & DDSD_WIDTH) width = desc->dwWidth;
-    if (desc->dwFlags & DDSD_HEIGHT) height = desc->dwHeight;
+    if (desc->dwFlags & DDSD_WIDTH) width = (int)desc->dwWidth;
+    if (desc->dwFlags & DDSD_HEIGHT) height = (int)desc->dwHeight;
 
     DWORD caps = 0;
     if (desc->dwFlags & DDSD_CAPS) caps = desc->ddsCaps.dwCaps;
 
-    DDSurface_ShimData* surf = create_surface_shim(ddraw, width, height, bpp);
+    const bool primary = (caps & DDSCAPS_PRIMARYSURFACE) != 0;
+    DDSurface_ShimData* surf = create_surface_shim(ddraw, width, height, bpp, caps, primary);
     if (!surf) {
         DLOG("render","CreateSurface: OUT_OF_MEMORY (%dx%d bpp=%d caps=0x%x)",
                   width, height, bpp, (unsigned)caps);
         return DDERR_OUTOFMEMORY;
     }
-
-    surf->desc.ddsCaps.dwCaps = caps;
+    surf->is_primary = primary;
     DLOG("render","CreateSurface: %p %dx%d bpp=%d caps=0x%x flags=0x%x",
               (void*)surf, width, height, bpp,
               (unsigned)caps, (unsigned)desc->dwFlags);
 
-    if (caps & DDSCAPS_PRIMARYSURFACE) {
-        surf->is_primary = 1;
-
-        // Create an SDL texture for presenting to screen
-        Uint32 format = (bpp == 16) ? SDL_PIXELFORMAT_RGB565 :
-                        (bpp == 24) ? SDL_PIXELFORMAT_RGB24 :
-                                      SDL_PIXELFORMAT_ARGB8888;
-        surf->sdl_texture = SDL_CreateTexture(ddraw->renderer, format,
-                                               SDL_TEXTUREACCESS_STREAMING,
-                                               width, height);
-        // Game writes alpha=0 in every pixel (MMX scanline / moon / font paths
-        // don't populate the alpha byte). With BLENDMODE_BLEND default on some
-        // drivers that pre-multiplies RGB by alpha, everything comes out zeroed
-        // on the red/green channels and we see only what the clear + stale
-        // back-buffer leaves behind. Force NONE so alpha is ignored.
-        if (surf->sdl_texture) {
-            SDL_SetTextureBlendMode(surf->sdl_texture, SDL_BLENDMODE_NONE);
-        }
-
-        // If complex (has back buffer), create the back buffer
-        if ((caps & DDSCAPS_COMPLEX) && (caps & DDSCAPS_FLIP)) {
-            DDSurface_ShimData* back = create_surface_shim(ddraw, width, height, bpp);
-            if (back) {
-                back->desc.ddsCaps.dwCaps = DDSCAPS_BACKBUFFER;
-                back->sdl_texture = SDL_CreateTexture(ddraw->renderer, format,
-                                                       SDL_TEXTUREACCESS_STREAMING,
-                                                       width, height);
-                if (back->sdl_texture) {
-                    SDL_SetTextureBlendMode(back->sdl_texture, SDL_BLENDMODE_NONE);
-                }
-                surf->back_buffer = back;
-            }
-        }
+    // A flip chain is the primary and one back buffer, however many were asked
+    // for. One SDL could not make is missing, as GetAttachedSurface then says.
+    if (primary && (caps & DDSCAPS_COMPLEX) && (caps & DDSCAPS_FLIP)) {
+        surf->back_buffer = create_surface_shim(ddraw, width, height, bpp,
+                                                DDSCAPS_BACKBUFFER, true);
     }
 
     *surface = reinterpret_cast<IDirectDrawSurface*>(surf);
-    return DD_OK;
-}
-
-static HRESULT ddraw_DuplicateSurface(IDirectDraw* this_ptr, IDirectDrawSurface* src,
-                                       IDirectDrawSurface** dest) {
-    (void)this_ptr; (void)src; (void)dest;
-    return DDERR_UNSUPPORTED;
-}
-
-static HRESULT ddraw_FlipToGDISurface(IDirectDraw* this_ptr) {
-    (void)this_ptr;
-    return DD_OK;
-}
-
-static HRESULT ddraw_GetDisplayMode(IDirectDraw* this_ptr, DDSURFACEDESC* desc) {
-    DDraw_ShimData* ddraw = reinterpret_cast<DDraw_ShimData*>(this_ptr);
-    memset(desc, 0, sizeof(DDSURFACEDESC));
-    desc->dwSize = sizeof(DDSURFACEDESC);
-    desc->dwFlags = DDSD_HEIGHT | DDSD_WIDTH | DDSD_PIXELFORMAT;
-    desc->dwWidth = ddraw->display_width;
-    desc->dwHeight = ddraw->display_height;
-    desc->ddpfPixelFormat.dwSize = sizeof(DDPIXELFORMAT);
-    desc->ddpfPixelFormat.dwFlags = DDPF_RGB;
-    desc->ddpfPixelFormat.dwBitCount.dwRGBBitCount = ddraw->display_bpp;
-    return DD_OK;
-}
-
-static HRESULT ddraw_GetFourCCCodes(IDirectDraw* this_ptr, DWORD* num_codes, DWORD* codes) {
-    (void)this_ptr; (void)codes;
-    if (num_codes) *num_codes = 0;
-    return DD_OK;
-}
-
-static HRESULT ddraw_GetGDISurface(IDirectDraw* this_ptr, IDirectDrawSurface** surface) {
-    (void)this_ptr; (void)surface;
-    return DDERR_UNSUPPORTED;
-}
-
-static HRESULT ddraw_GetMonitorFrequency(IDirectDraw* this_ptr, DWORD* frequency) {
-    (void)this_ptr;
-    if (frequency) *frequency = 60;
-    return DD_OK;
-}
-
-static HRESULT ddraw_GetScanLine(IDirectDraw* this_ptr, DWORD* scan_line) {
-    (void)this_ptr;
-    if (scan_line) *scan_line = 0;
-    return DD_OK;
-}
-
-static HRESULT ddraw_GetVerticalBlankStatus(IDirectDraw* this_ptr, BOOL* is_in_vb) {
-    (void)this_ptr;
-    if (is_in_vb) *is_in_vb = 1;
-    return DD_OK;
-}
-
-static HRESULT ddraw_Initialize(IDirectDraw* this_ptr, GUID* guid) {
-    (void)this_ptr; (void)guid;
     return DD_OK;
 }
 
@@ -414,8 +289,14 @@ static HRESULT ddraw_SetCooperativeLevel(IDirectDraw* this_ptr, HWND window, DWO
     return DD_OK;
 }
 
-static HRESULT ddraw_SetDisplayMode(IDirectDraw* this_ptr, DWORD width, DWORD height, DWORD bpp) {
+static HRESULT ddraw_SetDisplayMode(IDirectDraw* this_ptr, DWORD requested_width,
+                                    DWORD requested_height, DWORD requested_bpp) {
     DDraw_ShimData* ddraw = reinterpret_cast<DDraw_ShimData*>(this_ptr);
+    // A display mode is a few thousand pixels and a few dozen bits; the rest of
+    // this works in the ints the shim data and SDL take.
+    const int width = (int)requested_width;
+    const int height = (int)requested_height;
+    const int bpp = (int)requested_bpp;
     DLOG("render","SetDisplayMode: %ux%u bpp=%u (prev=%dx%d bpp=%d)",
               (unsigned)width, (unsigned)height, (unsigned)bpp,
               ddraw->display_width, ddraw->display_height, ddraw->display_bpp);
@@ -434,34 +315,20 @@ static HRESULT ddraw_SetDisplayMode(IDirectDraw* this_ptr, DWORD width, DWORD he
     // each of them and grow again on the way out. Only when nothing has stated
     // a preference does the render resolution decide, which is the case for the
     // very first mode set of a fresh profile.
-    DWORD win_w = width * NOCTURNE_WINDOW_SCALE;
-    DWORD win_h = height * NOCTURNE_WINDOW_SCALE;
+    int win_w = width * NOCTURNE_WINDOW_SCALE;
+    int win_h = height * NOCTURNE_WINDOW_SCALE;
     {
         int pref_w = 0, pref_h = 0;
         if (nocturne_window_preferred_size(&pref_w, &pref_h)) {
-            win_w = (DWORD)pref_w;
-            win_h = (DWORD)pref_h;
+            win_w = pref_w;
+            win_h = pref_h;
         }
     }
 
     if (!ddraw->window) {
-        if (g_sdlWindow) {
-            ddraw->window = g_sdlWindow;
-            ddraw->owns_window = 0;
-        } else {
-            // As the CreateWindowExA shim makes its window (user32.cpp): GL can
-            // only take a window created with SDL_WINDOW_OPENGL.
-            Uint32 flags = SDL_WINDOW_HIDDEN;
-#if NOCTURNE_GL_PRESENT
-            flags |= SDL_WINDOW_OPENGL;
-#endif
-            ddraw->window = SDL_CreateWindow("Nocturne",
-                                              SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED,
-                                              win_w, win_h, flags);
-            if (!ddraw->window) return DDERR_GENERIC;
-            nocturne_apply_window_icon(ddraw->window);
-            ddraw->owns_window = 1;
-        }
+        // The game's window: winMain makes it before anything reaches
+        // DirectDraw, and quits if it cannot.
+        ddraw->window = g_sdlWindow;
         SDL_SetWindowSize(ddraw->window, win_w, win_h);
 
         // GL owns the window's pixels when it comes up; SDL_Renderer is only
@@ -486,7 +353,7 @@ static HRESULT ddraw_SetDisplayMode(IDirectDraw* this_ptr, DWORD width, DWORD he
         // costs a resize event and a visible flicker on some window managers.
         int cur_w = 0, cur_h = 0;
         SDL_GetWindowSize(ddraw->window, &cur_w, &cur_h);
-        if (cur_w != (int)win_w || cur_h != (int)win_h) {
+        if (cur_w != win_w || cur_h != win_h) {
             SDL_SetWindowSize(ddraw->window, win_w, win_h);
         }
         if (nocturne_gl_is_active()) {
@@ -501,18 +368,11 @@ static HRESULT ddraw_SetDisplayMode(IDirectDraw* this_ptr, DWORD width, DWORD he
     // size and fullscreen/borderless override it.
     nocturne_window_mode_apply(ddraw->window);
 
-    // Window was created hidden by user32/ddraw to suppress a flash at the
-    // default size; reveal it now that we're at the real game resolution.
+    // Window was created hidden by user32 to suppress a flash at the default
+    // size; reveal it now that we're at the real game resolution.
     g_sdlWindowReadyToShow = true;
     SDL_ShowWindow(ddraw->window);
 
-    return DD_OK;
-}
-
-static HRESULT ddraw_WaitForVerticalBlank(IDirectDraw* this_ptr, DWORD flags, HANDLE event) {
-    (void)this_ptr; (void)flags; (void)event;
-    // SDL's vsync handles this when renderer has PRESENTVSYNC
-    SDL_Delay(1);
     return DD_OK;
 }
 
@@ -520,157 +380,14 @@ static HRESULT ddraw_WaitForVerticalBlank(IDirectDraw* this_ptr, DWORD flags, HA
 // IDirectDrawSurface methods
 // =============================================================================
 
-static HRESULT surface_AddAttachedSurface(IDirectDrawSurface* this_ptr,
-                                            IDirectDrawSurface* attached_surface) {
-    DDSurface_ShimData* shim = reinterpret_cast<DDSurface_ShimData*>(this_ptr);
-    DDSurface_ShimData* attached = reinterpret_cast<DDSurface_ShimData*>(attached_surface);
-    shim->back_buffer = attached;
-    attached->ref_count++;
-    return DD_OK;
-}
-
-static HRESULT surface_AddOverlayDirtyRect(IDirectDrawSurface* this_ptr, RECT* dirty_rect) {
-    (void)this_ptr; (void)dirty_rect;
-    return DD_OK;
-}
-
-static HRESULT surface_Blt(IDirectDrawSurface* this_ptr, RECT* dest_rect,
-                            IDirectDrawSurface* src_surface, RECT* src_rect,
-                            DWORD flags, void* blt_fx) {
-    DDSurface_ShimData* dst = reinterpret_cast<DDSurface_ShimData*>(this_ptr);
-    {
-        int dw = dest_rect ? (dest_rect->right - dest_rect->left) : -1;
-        int dh = dest_rect ? (dest_rect->bottom - dest_rect->top) : -1;
-        DLOG_RL("render",8, 1000, "Blt dst=%p src=%p flags=0x%x dest=%dx%d colorfill=%d",
-                     (void*)dst, (void*)src_surface, (unsigned)flags,
-                     dw, dh, (int)((flags & DDBLT_COLORFILL) != 0));
-    }
-
-    // Color fill
-    if (flags & DDBLT_COLORFILL) {
-        if (blt_fx && dst->sdl_surface) {
-            // DDBLTFX.dwFillColor is at offset 76 in the DDBLTFX struct
-            DWORD fill_color = *((DWORD*)((char*)blt_fx + 76));
-            SDL_Rect sdl_rect;
-            if (dest_rect) {
-                sdl_rect.x = dest_rect->left;
-                sdl_rect.y = dest_rect->top;
-                sdl_rect.w = dest_rect->right - dest_rect->left;
-                sdl_rect.h = dest_rect->bottom - dest_rect->top;
-                SDL_FillRect(dst->sdl_surface, &sdl_rect, fill_color);
-            } else {
-                SDL_FillRect(dst->sdl_surface, nullptr, fill_color);
-            }
-        }
-        return DD_OK;
-    }
-
-    // Surface-to-surface blit
-    if (src_surface && dst->sdl_surface) {
-        DDSurface_ShimData* src = reinterpret_cast<DDSurface_ShimData*>(src_surface);
-        SDL_Rect src_sdl, dst_sdl;
-        SDL_Rect* src_ptr = nullptr;
-        SDL_Rect* dst_ptr = nullptr;
-
-        if (src_rect) {
-            src_sdl.x = src_rect->left;
-            src_sdl.y = src_rect->top;
-            src_sdl.w = src_rect->right - src_rect->left;
-            src_sdl.h = src_rect->bottom - src_rect->top;
-            src_ptr = &src_sdl;
-        }
-        if (dest_rect) {
-            dst_sdl.x = dest_rect->left;
-            dst_sdl.y = dest_rect->top;
-            dst_sdl.w = dest_rect->right - dest_rect->left;
-            dst_sdl.h = dest_rect->bottom - dest_rect->top;
-            dst_ptr = &dst_sdl;
-        }
-
-        SDL_BlitScaled(src->sdl_surface, src_ptr, dst->sdl_surface, dst_ptr);
-    }
-
-    return DD_OK;
-}
-
-static HRESULT surface_BltBatch(IDirectDrawSurface* this_ptr, void* blt_batch,
-                                 DWORD count, DWORD flags) {
-    (void)this_ptr; (void)blt_batch; (void)count; (void)flags;
-    return DDERR_UNSUPPORTED;
-}
-
-static HRESULT surface_BltFast(IDirectDrawSurface* this_ptr, DWORD dest_x, DWORD dest_y,
-                                IDirectDrawSurface* src_surface, RECT* src_rect, DWORD trans) {
-    DDSurface_ShimData* dst = reinterpret_cast<DDSurface_ShimData*>(this_ptr);
-    {
-        int sw = src_rect ? (src_rect->right - src_rect->left) : -1;
-        int sh = src_rect ? (src_rect->bottom - src_rect->top) : -1;
-        DLOG_RL("render",8, 1000, "BltFast dst=%p @(%u,%u) src=%p %dx%d trans=0x%x",
-                     (void*)dst, (unsigned)dest_x, (unsigned)dest_y,
-                     (void*)src_surface, sw, sh, (unsigned)trans);
-    }
-    if (!src_surface || !dst->sdl_surface) return DDERR_INVALIDPARAMS;
-
-    DDSurface_ShimData* src = reinterpret_cast<DDSurface_ShimData*>(src_surface);
-
-    SDL_Rect src_sdl;
-    SDL_Rect* src_ptr = nullptr;
-    if (src_rect) {
-        src_sdl.x = src_rect->left;
-        src_sdl.y = src_rect->top;
-        src_sdl.w = src_rect->right - src_rect->left;
-        src_sdl.h = src_rect->bottom - src_rect->top;
-        src_ptr = &src_sdl;
-    }
-
-    int w = src_ptr ? src_ptr->w : src->sdl_surface->w;
-    int h = src_ptr ? src_ptr->h : src->sdl_surface->h;
-    SDL_Rect dst_sdl = { (int)dest_x, (int)dest_y, w, h };
-
-    if (trans & DDBLTFAST_SRCCOLORKEY) {
-        if (src->has_color_key) {
-            SDL_SetColorKey(src->sdl_surface, SDL_TRUE, src->src_color_key.dwColorSpaceLowValue);
-        }
-    }
-
-    SDL_BlitSurface(src->sdl_surface, src_ptr, dst->sdl_surface, &dst_sdl);
-
-    if (trans & DDBLTFAST_SRCCOLORKEY) {
-        SDL_SetColorKey(src->sdl_surface, SDL_FALSE, 0);
-    }
-
-    return DD_OK;
-}
-
-static HRESULT surface_DeleteAttachedSurface(IDirectDrawSurface* this_ptr, DWORD flags,
-                                              IDirectDrawSurface* attached_surface) {
-    (void)flags;
-    DDSurface_ShimData* shim = reinterpret_cast<DDSurface_ShimData*>(this_ptr);
-    if (shim->back_buffer == reinterpret_cast<DDSurface_ShimData*>(attached_surface)) {
-        shim->back_buffer = nullptr;
-    }
-    return DD_OK;
-}
-
-static HRESULT surface_EnumAttachedSurfaces(IDirectDrawSurface* this_ptr, void* context,
-                                              void* enum_callback) {
-    (void)this_ptr; (void)context; (void)enum_callback;
-    return DD_OK;
-}
-
-static HRESULT surface_EnumOverlayZOrders(IDirectDrawSurface* this_ptr, DWORD flags,
-                                            void* context, void* enum_callback) {
-    (void)this_ptr; (void)flags; (void)context; (void)enum_callback;
-    return DD_OK;
-}
-
 // Puts `surface` on screen: through GL when it owns the window, otherwise by
-// streaming it into `texture` on the SDL renderer.
+// streaming it into `texture` on the SDL renderer. A texture is only made for
+// a renderer, which lasts as long as the DirectDraw object.
 static void present_surface(SDL_Surface* surface, SDL_Texture* texture, DDraw_ShimData* ddraw) {
     if (nocturne_gl_is_active()) {
         nocturne_gl_present_framebuffer(surface->pixels, surface->w, surface->h,
                                         surface->pitch, surface->format->BitsPerPixel);
-    } else if (texture && ddraw && ddraw->renderer) {
+    } else if (texture) {
         SDL_UpdateTexture(texture, nullptr, surface->pixels, surface->pitch);
         SDL_RenderClear(ddraw->renderer);
         SDL_RenderCopy(ddraw->renderer, texture, nullptr, nullptr);
@@ -689,17 +406,12 @@ static HRESULT surface_Flip(IDirectDrawSurface* this_ptr,
     } else if (shim->back_buffer) {
         source = shim->back_buffer;
     }
+    SDL_Texture* texture = source->sdl_texture ? source->sdl_texture : shim->sdl_texture;
     DLOG_RL("render",4, 300, "Flip surface=%p override=%p source=%p tex=%p flags=0x%x",
-                 (void*)shim, (void*)override_surface, (void*)source,
-                 (void*)(source->sdl_texture ? source->sdl_texture : shim->sdl_texture),
+                 (void*)shim, (void*)override_surface, (void*)source, (void*)texture,
                  (unsigned)flags);
 
-    if (source->sdl_surface) {
-        present_surface(source->sdl_surface,
-                        source->sdl_texture ? source->sdl_texture : shim->sdl_texture,
-                        shim->ddraw);
-    }
-
+    present_surface(source->sdl_surface, texture, shim->ddraw);
     return DD_OK;
 }
 
@@ -715,96 +427,15 @@ static HRESULT surface_GetAttachedSurface(IDirectDrawSurface* this_ptr, DDSCAPS*
     return DDERR_GENERIC;
 }
 
-static HRESULT surface_GetBltStatus(IDirectDrawSurface* this_ptr, DWORD flags) {
-    (void)this_ptr; (void)flags;
-    return DD_OK;
-}
-
-static HRESULT surface_GetCaps(IDirectDrawSurface* this_ptr, DDSCAPS* caps) {
-    DDSurface_ShimData* shim = reinterpret_cast<DDSurface_ShimData*>(this_ptr);
-    *caps = shim->desc.ddsCaps;
-    return DD_OK;
-}
-
-static HRESULT surface_GetClipper(IDirectDrawSurface* this_ptr, IDirectDrawClipper** clipper) {
-    (void)this_ptr; (void)clipper;
-    return DDERR_UNSUPPORTED;
-}
-
-static HRESULT surface_GetColorKey(IDirectDrawSurface* this_ptr, DWORD flags, void* color_key) {
-    (void)flags;
-    DDSurface_ShimData* shim = reinterpret_cast<DDSurface_ShimData*>(this_ptr);
-    if (shim->has_color_key && color_key) {
-        memcpy(color_key, &shim->src_color_key, sizeof(DDCOLORKEY));
-        return DD_OK;
-    }
-    return DDERR_GENERIC;
-}
-
-static HRESULT surface_GetDC(IDirectDrawSurface* this_ptr, void* device_context) {
-    (void)this_ptr; (void)device_context;
-    return DDERR_UNSUPPORTED;
-}
-
-static HRESULT surface_GetFlipStatus(IDirectDrawSurface* this_ptr, DWORD flags) {
-    (void)this_ptr; (void)flags;
-    return DD_OK;
-}
-
-static HRESULT surface_GetOverlayPosition(IDirectDrawSurface* this_ptr, DWORD* x_pos, DWORD* y_pos) {
-    (void)this_ptr;
-    if (x_pos) *x_pos = 0;
-    if (y_pos) *y_pos = 0;
-    return DD_OK;
-}
-
-static HRESULT surface_GetPalette(IDirectDrawSurface* this_ptr, IUnknown** palette) {
-    (void)this_ptr; (void)palette;
-    return DDERR_UNSUPPORTED;
-}
-
-static HRESULT surface_GetPixelFormat(IDirectDrawSurface* this_ptr, void* pixel_format) {
-    DDSurface_ShimData* shim = reinterpret_cast<DDSurface_ShimData*>(this_ptr);
-    memcpy(pixel_format, &shim->desc.ddpfPixelFormat, sizeof(DDPIXELFORMAT));
-    return DD_OK;
-}
-
-static HRESULT surface_GetSurfaceDesc(IDirectDrawSurface* this_ptr, DDSURFACEDESC* surface_desc) {
-    DDSurface_ShimData* shim = reinterpret_cast<DDSurface_ShimData*>(this_ptr);
-    memcpy(surface_desc, &shim->desc, sizeof(DDSURFACEDESC));
-    return DD_OK;
-}
-
-static HRESULT surface_Initialize(IDirectDrawSurface* this_ptr, void* dd_interface,
-                                   DDSURFACEDESC* surface_desc) {
-    (void)this_ptr; (void)dd_interface; (void)surface_desc;
-    return DD_OK;
-}
-
-static HRESULT surface_IsLost(IDirectDrawSurface* this_ptr) {
-    (void)this_ptr;
-    return DD_OK; // Never lost under SDL
-}
-
+// The pixels are the SDL surface's own: an RGB surface without RLE never
+// needs SDL_LockSurface, and these never have a color key to be RLE'd for.
+// The game always locks the whole surface.
 static HRESULT surface_Lock(IDirectDrawSurface* this_ptr, RECT* dest_rect,
                              DDSURFACEDESC* surface_desc, DWORD flags, void* unused) {
-    (void)unused;
+    (void)dest_rect; (void)unused;
     DDSurface_ShimData* shim = reinterpret_cast<DDSurface_ShimData*>(this_ptr);
-    {
-        int rw = dest_rect ? (dest_rect->right - dest_rect->left) : -1;
-        int rh = dest_rect ? (dest_rect->bottom - dest_rect->top) : -1;
-        DLOG_RL("render",8, 500, "Lock surface=%p rect=%dx%d flags=0x%x",
-                     (void*)shim, rw, rh, (unsigned)flags);
-    }
+    DLOG_RL("render",8, 500, "Lock surface=%p flags=0x%x", (void*)shim, (unsigned)flags);
 
-    if (!shim->sdl_surface) {
-        DLOG("render","  Lock FAIL: sdl_surface=NULL");
-        return DDERR_GENERIC;
-    }
-
-    if (SDL_MUSTLOCK(shim->sdl_surface)) {
-        SDL_LockSurface(shim->sdl_surface);
-    }
     shim->is_locked = 1;
 
     // Fill in the surface description with pixel access info
@@ -815,49 +446,12 @@ static HRESULT surface_Lock(IDirectDrawSurface* this_ptr, RECT* dest_rect,
     return DD_OK;
 }
 
-static HRESULT surface_ReleaseDC(IDirectDrawSurface* this_ptr, void* device_context) {
-    (void)this_ptr; (void)device_context;
-    return DD_OK;
-}
-
 static HRESULT surface_Restore(IDirectDrawSurface* this_ptr) {
     (void)this_ptr;
     return DD_OK; // No restore needed under SDL
 }
 
-static HRESULT surface_SetClipper(IDirectDrawSurface* this_ptr, IDirectDrawClipper* clipper) {
-    (void)this_ptr; (void)clipper;
-    return DD_OK;
-}
-
-static HRESULT surface_SetColorKey(IDirectDrawSurface* this_ptr, DWORD flags, void* color_key) {
-    DDSurface_ShimData* shim = reinterpret_cast<DDSurface_ShimData*>(this_ptr);
-    if (color_key) {
-        memcpy(&shim->src_color_key, color_key, sizeof(DDCOLORKEY));
-        shim->has_color_key = 1;
-        DLOG("render","SetColorKey: surface=%p flags=0x%x low=0x%x high=0x%x",
-                  (void*)shim, (unsigned)flags,
-                  (unsigned)shim->src_color_key.dwColorSpaceLowValue,
-                  (unsigned)shim->src_color_key.dwColorSpaceHighValue);
-        if (shim->sdl_surface) {
-            SDL_SetColorKey(shim->sdl_surface, SDL_TRUE,
-                           shim->src_color_key.dwColorSpaceLowValue);
-        }
-    } else {
-        shim->has_color_key = 0;
-        DLOG("render","SetColorKey: surface=%p CLEAR flags=0x%x", (void*)shim, (unsigned)flags);
-        if (shim->sdl_surface) {
-            SDL_SetColorKey(shim->sdl_surface, SDL_FALSE, 0);
-        }
-    }
-    return DD_OK;
-}
-
-static HRESULT surface_SetOverlayPosition(IDirectDrawSurface* this_ptr, DWORD x_pos, DWORD y_pos) {
-    (void)this_ptr; (void)x_pos; (void)y_pos;
-    return DD_OK;
-}
-
+// The palette is for 8-bit modes, which the game never sets.
 static HRESULT surface_SetPalette(IDirectDrawSurface* this_ptr, IUnknown* palette) {
     (void)this_ptr; (void)palette;
     return DD_OK;
@@ -867,10 +461,7 @@ static HRESULT surface_Unlock(IDirectDrawSurface* this_ptr, void* surface_ptr) {
     (void)surface_ptr;
     DDSurface_ShimData* shim = reinterpret_cast<DDSurface_ShimData*>(this_ptr);
 
-    if (shim->is_locked && shim->sdl_surface) {
-        if (SDL_MUSTLOCK(shim->sdl_surface)) {
-            SDL_UnlockSurface(shim->sdl_surface);
-        }
+    if (shim->is_locked) {
         shim->is_locked = 0;
 
         // A primary surface is the screen, so unlocking it presents.
@@ -882,98 +473,36 @@ static HRESULT surface_Unlock(IDirectDrawSurface* this_ptr, void* surface_ptr) {
     return DD_OK;
 }
 
-static HRESULT surface_UpdateOverlay(IDirectDrawSurface* this_ptr, RECT* src_rect,
-                                      IDirectDrawSurface* dest_surface, RECT* dest_rect,
-                                      DWORD flags, void* overlay_fx) {
-    (void)this_ptr; (void)src_rect; (void)dest_surface; (void)dest_rect;
-    (void)flags; (void)overlay_fx;
-    return DD_OK;
-}
-
-static HRESULT surface_UpdateOverlayDisplay(IDirectDrawSurface* this_ptr, DWORD flags) {
-    (void)this_ptr; (void)flags;
-    return DD_OK;
-}
-
-static HRESULT surface_UpdateOverlayZOrder(IDirectDrawSurface* this_ptr, DWORD flags,
-                                            IDirectDrawSurface* reference_surface) {
-    (void)this_ptr; (void)flags; (void)reference_surface;
-    return DD_OK;
-}
-
 // =============================================================================
 // Vtable population
 // =============================================================================
 
+// The slots the game does not call are left null.
 static void populate_ddraw_vtable(IDirectDraw_vtable* vt) {
-    vt->QueryInterface   = (IUnknown_QueryInterface*)ddraw_QueryInterface;
-    vt->AddRef           = (IUnknown_AddRef*)ddraw_AddRef;
-    vt->Release          = (IUnknown_Release*)ddraw_Release;
-    vt->Compact          = ddraw_Compact;
-    vt->CreateClipper    = ddraw_CreateClipper;
-    vt->CreatePalette    = ddraw_CreatePalette;
-    vt->CreateSurface    = ddraw_CreateSurface;
-    vt->DuplicateSurface = ddraw_DuplicateSurface;
-    vt->EnumDisplayModes = nullptr; // Not used
-    vt->EnumSurfaces     = nullptr; // Not used
-    vt->FlipToGDISurface = ddraw_FlipToGDISurface;
-    vt->GetCaps          = nullptr; // Not used
-    vt->GetDisplayMode   = ddraw_GetDisplayMode;
-    vt->GetFourCCCodes   = ddraw_GetFourCCCodes;
-    vt->GetGDISurface    = ddraw_GetGDISurface;
-    vt->GetMonitorFrequency   = ddraw_GetMonitorFrequency;
-    vt->GetScanLine           = ddraw_GetScanLine;
-    vt->GetVerticalBlankStatus = ddraw_GetVerticalBlankStatus;
-    vt->Initialize            = ddraw_Initialize;
+    vt->Release               = (IUnknown_Release*)ddraw_Release;
+    vt->CreatePalette         = ddraw_CreatePalette;
+    vt->CreateSurface         = ddraw_CreateSurface;
     vt->RestoreDisplayMode    = ddraw_RestoreDisplayMode;
     vt->SetCooperativeLevel   = ddraw_SetCooperativeLevel;
     vt->SetDisplayMode        = ddraw_SetDisplayMode;
-    vt->WaitForVerticalBlank  = ddraw_WaitForVerticalBlank;
 }
 
 static void populate_surface_vtable(IDirectDrawSurface_vtable* vt) {
-    vt->QueryInterface         = (IUnknown_QueryInterface*)surface_QueryInterface;
-    vt->AddRef                 = (IUnknown_AddRef*)surface_AddRef;
     vt->Release                = (IUnknown_Release*)surface_Release;
-    vt->AddAttachedSurface     = surface_AddAttachedSurface;
-    vt->AddOverlayDirtyRect    = surface_AddOverlayDirtyRect;
-    vt->Blt                    = surface_Blt;
-    vt->BltBatch               = surface_BltBatch;
-    vt->BltFast                = surface_BltFast;
-    vt->DeleteAttachedSurface  = surface_DeleteAttachedSurface;
-    vt->EnumAttachedSurfaces   = surface_EnumAttachedSurfaces;
-    vt->EnumOverlayZOrders     = surface_EnumOverlayZOrders;
     vt->Flip                   = surface_Flip;
     vt->GetAttachedSurface     = surface_GetAttachedSurface;
-    vt->GetBltStatus           = surface_GetBltStatus;
-    vt->GetCaps                = surface_GetCaps;
-    vt->GetClipper             = surface_GetClipper;
-    vt->GetColorKey            = surface_GetColorKey;
-    vt->GetDC                  = surface_GetDC;
-    vt->GetFlipStatus          = surface_GetFlipStatus;
-    vt->GetOverlayPosition     = surface_GetOverlayPosition;
-    vt->GetPalette             = surface_GetPalette;
-    vt->GetPixelFormat         = surface_GetPixelFormat;
-    vt->GetSurfaceDesc         = surface_GetSurfaceDesc;
-    vt->Initialize             = surface_Initialize;
-    vt->IsLost                 = surface_IsLost;
     vt->Lock                   = surface_Lock;
-    vt->ReleaseDC              = surface_ReleaseDC;
     vt->Restore                = surface_Restore;
-    vt->SetClipper             = surface_SetClipper;
-    vt->SetColorKey            = surface_SetColorKey;
-    vt->SetOverlayPosition     = surface_SetOverlayPosition;
     vt->SetPalette             = surface_SetPalette;
     vt->Unlock                 = surface_Unlock;
-    vt->UpdateOverlay          = surface_UpdateOverlay;
-    vt->UpdateOverlayDisplay   = surface_UpdateOverlayDisplay;
-    vt->UpdateOverlayZOrder    = surface_UpdateOverlayZOrder;
 }
 
 // =============================================================================
 // Public API - DirectDrawCreate
 // =============================================================================
 
+// The display mode is unset until SetDisplayMode, which the game makes before
+// any surface.
 HRESULT DirectDrawCreate(GUID* lpGUID, LPDIRECTDRAW* lplpDD, IUnknown* pUnkOuter) {
     (void)lpGUID; (void)pUnkOuter;
 
@@ -986,24 +515,9 @@ HRESULT DirectDrawCreate(GUID* lpGUID, LPDIRECTDRAW* lplpDD, IUnknown* pUnkOuter
         }
     }
 
-    DDraw_ShimData* shim = (DDraw_ShimData*)calloc(1, sizeof(DDraw_ShimData));
-    if (!shim) return DDERR_OUTOFMEMORY;
-
+    DDraw_ShimData* shim = new DDraw_ShimData();
     populate_ddraw_vtable(&shim->vtable_data);
     shim->vtable = &shim->vtable_data;
-    shim->ref_count = 1;
-
-    // Default display mode
-    SDL_DisplayMode mode;
-    if (SDL_GetCurrentDisplayMode(0, &mode) == 0) {
-        shim->display_width = mode.w;
-        shim->display_height = mode.h;
-        shim->display_bpp = SDL_BITSPERPIXEL(mode.format);
-    } else {
-        shim->display_width = 640;
-        shim->display_height = 480;
-        shim->display_bpp = 16;
-    }
 
     g_ddraw_shim = shim;
     *lplpDD = reinterpret_cast<IDirectDraw*>(shim);

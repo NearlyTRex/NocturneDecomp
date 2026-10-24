@@ -1,0 +1,178 @@
+==============================================================================
+SIGNATURE DRIFT: nocedit.exe -> nocturne.exe
+==============================================================================
+
+Functions matched by core name (TU prefix and _FUN_<addr> suffix
+removed). nocedit.exe is the authority; a difference means
+nocturne.exe needs fixing unless the verdict is AUTHORITY_UNSET.
+
+  nocedit.exe                7031 named functions
+  nocturne.exe               5395 named functions
+  paired by name             5134
+    of which agree           5128
+    of which drift              6
+  ambiguous (name reused)      25
+
+------------------------------------------------------------------------------
+BY VERDICT
+------------------------------------------------------------------------------
+      4  NO_SIGNATURE
+      2  PARAMS_LOST
+      6  (NEEDS_CUSTOM_STORAGE)
+
+------------------------------------------------------------------------------
+BY WHAT THE FIX TAKES
+------------------------------------------------------------------------------
+      0  apply    copy the authority's signature across
+      6  hand     nothing a ledger can carry -- CUSTOM_STORAGE (the applier is
+                  gated off these on purpose) or noreturn (it has no such field)
+      0  review   direction not settled -- the pair may not be the same function,
+                  or the target may be the side that is right
+
+------------------------------------------------------------------------------
+AGAINST THE ADDRESS MAPPING  (independent axis, drifting pairs)
+------------------------------------------------------------------------------
+      6  confirmed  the mapping pairs these same two addresses
+      0  unmapped   the mapping has no opinion; the name is the only evidence
+      0  conflict   the mapping pairs one of them with somebody else
+
+------------------------------------------------------------------------------
+BY TRANSLATION UNIT  (target-side TU, drifting pairs only)
+------------------------------------------------------------------------------
+      2  crt_heap.c
+      2  crt_math.c
+      1  crt_exception.c
+      1  crt_unknown.c
+
+------------------------------------------------------------------------------
+DETAIL  (6 of 6 drifting pairs)
+------------------------------------------------------------------------------
+
+installExceptionHandler
+    NO_SIGNATURE  [NEEDS_CUSTOM_STORAGE]
+    CURRENT (nocturne.exe, 0056eed8)
+        __cdecl undefined1 crt_exception.c_installExceptionHandler_FUN_0056eed8(void)
+    CHANGE TO (nocedit.exe, 0060aba8)
+        __cdecl void crt_exception.c_installExceptionHandler_FUN_0060aba8(ExceptionFrame* pExceptionFrame)  /* CUSTOM_STORAGE */
+    custom storage (ST0/ST1) must be copied by hand; the declaration alone is not enough
+
+AllocateFromFreeList
+    NO_SIGNATURE  [NEEDS_CUSTOM_STORAGE]
+    CURRENT (nocturne.exe, 00568b00)
+        __watcallRegister undefined1 crt_heap.c_AllocateFromFreeList_FUN_00568b00(void)
+    CHANGE TO (nocedit.exe, 00609410)
+        __watcallRegister void* crt_heap.c_AllocateFromFreeList_FUN_00609410(ulong size, HeapBlock* free_block, ushort ds_segment)  /* CUSTOM_STORAGE */
+    custom storage (ST0/ST1) must be copied by hand; the declaration alone is not enough
+
+ResizeBlockInPlace
+    NO_SIGNATURE  [NEEDS_CUSTOM_STORAGE]
+    CURRENT (nocturne.exe, 0056afe8)
+        __watcallRegister undefined1 crt_heap.c_ResizeBlockInPlace_FUN_0056afe8(void)
+    CHANGE TO (nocedit.exe, 006097b8)
+        __watcallRegister int crt_heap.c_ResizeBlockInPlace_FUN_006097b8(ushort segment, void* ptr, ulong new_size, ulong* pExtraNeeded)  /* CUSTOM_STORAGE */
+    custom storage (ST0/ST1) must be copied by hand; the declaration alone is not enough
+
+dispatch_divide
+    NO_SIGNATURE  [NEEDS_CUSTOM_STORAGE]
+    CURRENT (nocturne.exe, 0056bf9f)
+        __watcallRegister undefined1 crt_math.c_dispatch_divide_FUN_0056bf9f(void)
+    CHANGE TO (nocedit.exe, 00606aaf)
+        __watcallRegister float10 crt_math.c_dispatch_divide_FUN_00606aaf(void)  /* CUSTOM_STORAGE */
+    custom storage (ST0/ST1) must be copied by hand; the declaration alone is not enough
+
+pentiumFdivpWorkaround
+    PARAMS_LOST  +RET_DIFF,STORAGE_LOST  [NEEDS_CUSTOM_STORAGE]
+    CURRENT (nocturne.exe, 0056c403)
+        __fpustack_safe void crt_math.c_pentiumFdivpWorkaround_FUN_0056c403(void)
+    CHANGE TO (nocedit.exe, 00606f13)
+        __fpustack_safe float10 crt_math.c_pentiumFdivpWorkaround_FUN_00606f13(float10 dividend, float10 divisor)  /* CUSTOM_STORAGE */
+    custom storage (ST0/ST1) must be copied by hand; the declaration alone is not enough
+
+integer_power
+    PARAMS_LOST  +RET_DIFF,STORAGE_LOST  [NEEDS_CUSTOM_STORAGE]
+    CURRENT (nocturne.exe, 00565c12)
+        __fpureg void crt_unknown.c_integer_power_FUN_00565c12(void)
+    CHANGE TO (nocedit.exe, 005ffeb2)
+        __fpureg float10 crt_math.c_integer_power_FUN_005ffeb2(float10 base, ushort exponent)  /* CUSTOM_STORAGE */
+    TU: crt_math.c -> crt_unknown.c
+    custom storage (ST0/ST1) must be copied by hand; the declaration alone is not enough
+
+------------------------------------------------------------------------------
+AMBIGUOUS  (core name held by several functions; not compared)
+------------------------------------------------------------------------------
+  CCharacter_setWalkTimeout
+      nocedit.exe: 0042ca20 (core_charactr.cpp)
+      nocturne.exe: 00428bb0 (core_charactr.cpp), 00428ee0 (core_charactr.cpp)
+  CSfxOptions_dtor
+      nocedit.exe: 005ade30 (sound_sndmain.cpp)
+      nocturne.exe: 00529a40 (sound_sndmain.cpp), 00529a50 (sound_sndmain.cpp)
+  CriticalSectionStub
+      nocedit.exe: 00602434 (crt_sync.c), 00602458 (crt_sync.c)
+      nocturne.exe: 00567208 (crt_sync.c), 005671e4 (crt_sync.c)
+  WSACleanup
+      nocedit.exe: 00610ed4 (crt_wsock32.c)
+      nocturne.exe: 005492a0 (crt_wsock32.c), 00574bae (crt_wsock32.c)
+  __vec_new
+      nocedit.exe: 00601232 (crt_memory.c), 00601272 (crt_memory.c)
+      nocturne.exe: 00566234 (crt_memory.c), 005661f4 (crt_unknown.c)
+  _stricmp
+      nocedit.exe: 005fe7f0 (crt_string.c), 006020fc (crt_string.c)
+      nocturne.exe: 00564520 (crt_string.c), 00566fb0 (crt_string.c)
+  _utime
+      nocedit.exe: 00600c1e (crt_io.c), 00608160 (crt_io.c)
+      nocturne.exe: 00565dc6 (crt_io.c), 0056cb60 (crt_io.c)
+  atan2
+      nocedit.exe: 00608e14 (crt_math.c), 006013b1 (crt_math.c)
+      nocturne.exe: 00566c81 (crt_math.c), 0056dc98 (crt_math.c)
+  fclose
+      nocedit.exe: 00601ea0 (crt_stdio.c), 00601fd0 (crt_stdio.c)
+      nocturne.exe: 00563380 (crt_stdio.c), 005634b0 (crt_unknown.c)
+  fdiv_thunk
+      nocedit.exe: 00606e0f (crt_math.c), 00606b17 (crt_math.c), 00606d9f (crt_math.c), 00606bb3 (crt_math.c), 00606e43 (crt_math.c), 00606cc7 (crt_math.c), 00606ee7 (crt_math.c), 00606aeb (crt_math.c), 00606d6b (crt_math.c), 00606cfb (crt_math.c), 00606b7f (crt_math.c)
+      nocturne.exe: 0056c007 (crt_math.c), 0056c28f (crt_math.c), 0056c0a3 (crt_math.c), 0056c333 (crt_math.c), 0056c1b7 (crt_unknown.c), 0056c3d7 (crt_math.c), 0056bfdb (crt_unknown.c), 0056c25b (crt_unknown.c), 0056c1eb (crt_math.c), 0056c06f (crt_unknown.c), 0056c2ff (crt_unknown.c)
+  fflush
+      nocedit.exe: 00600e29 (crt_stdio.c), 00601540 (crt_stdio.c)
+      nocturne.exe: 0056dd60 (crt_stdio.c)
+  formatTwoDigits
+      nocedit.exe: 006002a0 (crt_stdio.c), 00601640 (crt_time.c)
+      nocturne.exe: 00566600 (crt_unknown.c)
+  fprintf
+      nocedit.exe: 006021c0 (crt_stdio.c), 005fe6d0 (crt_stdio.c)
+      nocturne.exe: 005644f0 (crt_stdio.c)
+  freeTextureCache
+      nocedit.exe: 004037a0 (wincore_wddvmem.cpp)
+      nocturne.exe: 00404490 (engine_3d.c)
+  fstreambase_ctor
+      nocedit.exe: 0060658f (crt_fstream.cpp), 00606456 (crt_fstream.cpp)
+      nocturne.exe: 0056b896 (crt_fstream.cpp), 0056b75d (crt_fstream.cpp)
+  getFileStat
+      nocedit.exe: 00600c18 (crt_io.c), 00607e64 (crt_io.c)
+      nocturne.exe: 00565dc0 (crt_io.c), 0056c864 (crt_io.c)
+  getcwd
+      nocedit.exe: 00608d20 (crt_watcom.c)
+      nocturne.exe: 00566440 (crt_watcom.c), 0056c5f0 (crt_watcom.c)
+  ifstream_ctor
+      nocedit.exe: 005ff664 (crt_fstream.cpp), 005ff8f0 (crt_fstream.cpp)
+      nocturne.exe: 00565072 (crt_fstream.cpp), 005652fe (crt_fstream.cpp)
+  initTextureCache
+      nocedit.exe: 00403790 (wincore_wddvmem.cpp)
+      nocturne.exe: 00404480 (engine_3d.c)
+  ofstream_ctor
+      nocedit.exe: 005ff710 (crt_fstream.cpp), 005ff95c (crt_fstream.cpp)
+      nocturne.exe: 0056511e (crt_fstream.cpp), 0056536a (crt_fstream.cpp)
+  remove
+      nocedit.exe: 00606600 (crt_stdio.c), 005ff9d0 (crt_stdio.c)
+      nocturne.exe: 005657c0 (crt_stdio.c), 0056bbf0 (crt_unknown.c)
+  seek_within_buffer
+      nocedit.exe: 005ffab4 (crt_stdio.c), 005ffa70 (crt_stdio.c)
+      nocturne.exe: 00565814 (crt_unknown.c), 005657d0 (crt_unknown.c)
+  staticInit
+      nocedit.exe: 00438b80 (core_cloth.cpp), 00535c30 (core_msnedit.cpp), 00576930 (core_setedit.cpp), 0050ee40 (shape_memdbg.cpp), 004417e0 (engine_console.cpp), 00514f70 (shape_meshlod.cpp)
+      nocturne.exe: 0043abb0 (core_console.cpp)
+  streambuf_seekoff
+      nocedit.exe: 00610ab0 (crt_iostream.cpp), 0060bb5f (crt_iostream.cpp)
+      nocturne.exe: 005701af (crt_iostream.cpp), 005747f0 (crt_iostream.cpp)
+  switchRenderer
+      nocedit.exe: 005b8120 (engine_special.cpp), 005b8140 (engine_special.cpp)
+      nocturne.exe: 00532f30 (engine_special.cpp), 00532f50 (engine_special.cpp)
+

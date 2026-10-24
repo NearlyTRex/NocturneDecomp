@@ -77,6 +77,7 @@ extern "C" void nocturne_focus_trace_arm(void)
     fprintf(s_log, "\n=== focus gain %d at %u ms, game frame %d\n", s_gains, SDL_GetTicks(),
             (g_CGamePtr != nullptr) ? g_CGamePtr->frame_counter : -1);
     log_backtrace();
+    fflush(s_log);
 }
 
 extern "C" void nocturne_focus_trace_event(const char *name)
@@ -95,6 +96,7 @@ extern "C" void nocturne_focus_trace_event(const char *name)
         (strcmp(name, "masterZBuffer") == 0 || strcmp(name, "toggle") == 0)) {
         log_backtrace();
     }
+    fflush(s_log);
 }
 
 extern "C" void nocturne_focus_trace_presented(void)

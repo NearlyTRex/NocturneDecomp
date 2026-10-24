@@ -17,6 +17,7 @@
 #include "gl/gl_api.h"
 #include "gl/gl_blit.h"
 #include "gl/gl_pixels.h"
+#include <cmath>
 #include <stdlib.h>
 #include <string.h>
 
@@ -105,24 +106,24 @@ bool ensure_texture(int width, int height, GLenum format, GLenum type) {
 // picture it started at, just with a bigger black border. Since the window can
 // now be any size (fullscreen, borderless, or a resolution the user picked),
 // filling it matters more than exact pixel multiples.
+//
+// The logical size is never empty: it is the frame's own, or the drawable's,
+// when none is set. Then a drawable of a pixel or more gives a quad of a pixel
+// or more, since the smaller of the two scales keeps both sides at least 1.
 void compute_viewport(int drawable_w, int drawable_h, int logical_w, int logical_h,
                       int *out_x, int *out_y, int *out_w, int *out_h) {
-    double scale = 1.0;
-    if (logical_w > 0 && logical_h > 0) {
-        double scale_x = (double)drawable_w / (double)logical_w;
-        double scale_y = (double)drawable_h / (double)logical_h;
-        scale = (scale_x < scale_y) ? scale_x : scale_y;
-        // Deliberately NOT clamped to >= 1 here. The window can now be smaller
-        // than the render (picking 512x384 while the menu still renders at
-        // 640x480), and forcing 1:1 in that case shows the middle of the frame
-        // with everything past the window edge cut off, rather than the whole
-        // frame shrunk to fit.
-        if (scale <= 0.0) scale = 1.0;
-    }
-    *out_w = (int)(logical_w * scale + 0.5);
-    *out_h = (int)(logical_h * scale + 0.5);
-    if (*out_w < 1) *out_w = 1;
-    if (*out_h < 1) *out_h = 1;
+    double scale_x = (double)drawable_w / (double)logical_w;
+    double scale_y = (double)drawable_h / (double)logical_h;
+    double scale = (scale_x < scale_y) ? scale_x : scale_y;
+    // Deliberately NOT clamped to >= 1 here. The window can now be smaller
+    // than the render (picking 512x384 while the menu still renders at
+    // 640x480), and forcing 1:1 in that case shows the middle of the frame
+    // with everything past the window edge cut off, rather than the whole
+    // frame shrunk to fit. A drawable of nothing, as a minimised window has,
+    // presents at 1:1 into it.
+    if (scale <= 0.0) scale = 1.0;
+    *out_w = (int)std::lround(logical_w * scale);
+    *out_h = (int)std::lround(logical_h * scale);
     *out_x = (drawable_w - *out_w) / 2;
     *out_y = (drawable_h - *out_h) / 2;
 }
@@ -132,15 +133,37 @@ void compute_viewport(int drawable_w, int drawable_h, int logical_w, int logical
 // nearest-neighbour makes pixel sizes visibly uneven, so linear is the better
 // pick there.
 int viewport_is_integer_scale(int vp_w, int logical_w) {
-    return (logical_w > 0) && (vp_w % logical_w == 0);
+    return vp_w % logical_w == 0;
+}
+
+// The leading "major.minor" of GL_VERSION, which an ES context prefixes with
+// "OpenGL ES ".
+void cache_version_short(const char *ver) {
+    g_gl_version_short[0] = '\0';
+    if (ver == nullptr) return;
+    static const char kEsPrefix[] = "OpenGL ES ";
+    if (strncmp(ver, kEsPrefix, sizeof(kEsPrefix) - 1) == 0) ver += sizeof(kEsPrefix) - 1;
+    size_t n = 0;
+    while (ver[n] != '\0' && n + 1 < sizeof(g_gl_version_short) &&
+           (ver[n] == '.' || (ver[n] >= '0' && ver[n] <= '9'))) {
+        ++n;
+    }
+    // Keep only major.minor: GL_VERSION is "4.6.0 NVIDIA 595.84" and the
+    // trailing ".0" and driver build add nothing here.
+    size_t dots = 0, cut = n;
+    for (size_t i = 0; i < n; ++i) {
+        if (ver[i] == '.' && ++dots == 2) { cut = i; break; }
+    }
+    memcpy(g_gl_version_short, ver, cut);
+    g_gl_version_short[cut] = '\0';
 }
 
 }  // namespace
 
+// Always given the game's one window: ddraw's SetDisplayMode and ensure_active
+// both pass it. So a context that is up is up on it.
 extern "C" int nocturne_gl_init(SDL_Window *window) {
-    if (window == nullptr) return 0;
-
-    if (g_gl.active && g_gl.window == window) {
+    if (g_gl.active) {
         return 1;
     }
 
@@ -200,25 +223,7 @@ extern "C" int nocturne_gl_init(SDL_Window *window) {
     // Cache the leading "major.minor" for the Graphics Options 3D API line.
     // Captured here rather than queried on demand because the menu can be drawn
     // with no context current, and glGetString would then return null.
-    {
-        const char *ver = (const char *)gl.GetString(GL_VERSION);
-        g_gl_version_short[0] = '\0';
-        if (ver != nullptr) {
-            size_t n = 0;
-            while (ver[n] != '\0' && n + 1 < sizeof(g_gl_version_short) &&
-                   (ver[n] == '.' || (ver[n] >= '0' && ver[n] <= '9'))) {
-                ++n;
-            }
-            // Keep only major.minor: GL_VERSION is "4.6.0 NVIDIA 595.84" and the
-            // trailing ".0" and driver build add nothing here.
-            size_t dots = 0, cut = n;
-            for (size_t i = 0; i < n; ++i) {
-                if (ver[i] == '.' && ++dots == 2) { cut = i; break; }
-            }
-            memcpy(g_gl_version_short, ver, cut);
-            g_gl_version_short[cut] = '\0';
-        }
-    }
+    cache_version_short((const char *)gl.GetString(GL_VERSION));
 
     DLOG("render","gl_present: context up — GL_VERSION=%s GL_RENDERER=%s",
               (const char *)gl.GetString(GL_VERSION),
@@ -235,16 +240,11 @@ extern "C" int nocturne_gl_is_active(void) {
 }
 
 // Create (or resize) the persistent scene target and make it current. Returns 0
-// if FBOs are unavailable, in which case callers keep using the default
-// framebuffer and the old non-persistent behaviour.
+// if the driver will not complete one, in which case callers keep using the
+// default framebuffer and the old non-persistent behaviour. The framebuffer
+// entry points are ones gl_api requires, so an active context has them.
 extern "C" int nocturne_gl_scene_target_bind(int width, int height) {
     if (!g_gl.active || width <= 0 || height <= 0) return 0;
-    if (gl.GenFramebuffers == nullptr || gl.BindFramebuffer == nullptr ||
-        gl.FramebufferTexture2D == nullptr || gl.CheckFramebufferStatus == nullptr ||
-        gl.GenRenderbuffers == nullptr || gl.BindRenderbuffer == nullptr ||
-        gl.RenderbufferStorage == nullptr || gl.FramebufferRenderbuffer == nullptr) {
-        return 0;
-    }
 
     if (g_gl.scene_fbo != 0 &&
         g_gl.scene_width == width && g_gl.scene_height == height) {
@@ -437,13 +437,13 @@ extern "C" void nocturne_gl_scene_upload(const void *pixels, int width, int heig
         DLOG_RL("render",4, 300, "gl_present: scene upload unsupported bpp=%d", bpp);
         return;
     }
-    if (!ensure_texture(width, height, format, type)) return;
 
     // This runs MID-FRAME: after the engine's CPU write, before the renderer's
     // draws. Unlike the present path, which runs at the frame boundary where the
     // renderer re-states its pipeline anyway, anything left changed here lands
     // directly on the actor draws. So read back exactly what this function is
-    // about to change, and put it back at the end.
+    // about to change, and put it back at the end — read before the frame
+    // texture is made or re-made, which binds it.
     GLint prev_depth_test = 0, prev_depth_mask = 0, prev_blend = 0;
     GLint prev_cull = 0, prev_scissor = 0, prev_texture = 0;
     GLint prev_viewport[4] = { 0, 0, 0, 0 };
@@ -457,6 +457,7 @@ extern "C" void nocturne_gl_scene_upload(const void *pixels, int width, int heig
     gl.GetIntegerv(GL_VIEWPORT, prev_viewport);
     gl.GetIntegerv(GL_UNPACK_ALIGNMENT, &prev_unpack_alignment);
 
+    if (!ensure_texture(width, height, format, type)) return;
     upload_frame(pixels, width, height, pitch, bpp, format, type);
 
     gl.BindFramebuffer(GL_FRAMEBUFFER, g_gl.scene_fbo);
@@ -491,29 +492,24 @@ extern "C" void nocturne_gl_scene_upload(const void *pixels, int width, int heig
 }
 
 extern "C" void nocturne_gl_present_scene(void) {
-    if (!g_gl.active || g_gl.scene_fbo == 0 || g_gl.scene_color == 0) return;
+    // The colour texture is made and dropped with the framebuffer.
+    if (!g_gl.active || g_gl.scene_fbo == 0) return;
 
     // A render target is drawn bottom-up, unlike an uploaded CPU image, so the
     // quad samples it the other way round.
     present_to_window(g_gl.scene_color, g_gl.scene_width, g_gl.scene_height, true);
 }
 
-extern "C" void nocturne_gl_swap_only(void) {
-    if (!g_gl.active) return;
-    SDL_GL_SwapWindow(g_gl.window);
-    restore_scene_target();
-}
-
 extern "C" int nocturne_gl_read_front(unsigned char **out_rgb, int *out_width, int *out_height) {
-    if (!g_gl.active || out_rgb == nullptr) return -1;
+    if (!g_gl.active) return -1;
 
     int drawable_w = 0, drawable_h = 0;
     SDL_GL_GetDrawableSize(g_gl.window, &drawable_w, &drawable_h);
     if (drawable_w <= 0 || drawable_h <= 0) return -1;
 
+    // malloc, since the caller frees it; a frame's worth is not refused.
     const size_t row_bytes = (size_t)drawable_w * 3;
     unsigned char *buf = (unsigned char *)malloc(row_bytes * (size_t)drawable_h);
-    if (buf == nullptr) return -1;
 
     // This must read the WINDOW. Between presents the scene FBO is bound, and
     // reading that instead returns the 640x480 scene target padded into a
@@ -534,16 +530,17 @@ extern "C" int nocturne_gl_read_front(unsigned char **out_rgb, int *out_width, i
     nocturne_gl_flip_rows(buf, (int)row_bytes, drawable_h);
 
     *out_rgb = buf;
-    if (out_width)  *out_width  = drawable_w;
-    if (out_height) *out_height = drawable_h;
+    *out_width  = drawable_w;
+    *out_height = drawable_h;
     return 0;
 }
 
 extern "C" void nocturne_gl_window_to_logical(int window_x, int window_y,
                                               int *out_x, int *out_y) {
-    if (out_x) *out_x = window_x;
-    if (out_y) *out_y = window_y;
-    if (!g_gl.active || g_gl.window == nullptr) return;
+    *out_x = window_x;
+    *out_y = window_y;
+    // An active context always has its window.
+    if (!g_gl.active) return;
 
     int win_w = 0, win_h = 0, drawable_w = 0, drawable_h = 0;
     SDL_GetWindowSize(g_gl.window, &win_w, &win_h);
@@ -561,7 +558,6 @@ extern "C" void nocturne_gl_window_to_logical(int window_x, int window_y,
     int vp_x = 0, vp_y = 0, vp_w = 0, vp_h = 0;
     compute_viewport(drawable_w, drawable_h, logical_w, logical_h,
                      &vp_x, &vp_y, &vp_w, &vp_h);
-    if (vp_w <= 0 || vp_h <= 0) return;
 
     double lx = (px - (double)vp_x) * (double)logical_w / (double)vp_w;
     double ly = (py - (double)vp_y) * (double)logical_h / (double)vp_h;
@@ -573,23 +569,23 @@ extern "C" void nocturne_gl_window_to_logical(int window_x, int window_y,
     if (lx > (double)(logical_w - 1)) lx = (double)(logical_w - 1);
     if (ly > (double)(logical_h - 1)) ly = (double)(logical_h - 1);
 
-    if (out_x) *out_x = (int)lx;
-    if (out_y) *out_y = (int)ly;
+    *out_x = (int)lx;
+    *out_y = (int)ly;
 }
 
+// The scene target goes with everything else: its names are the old context's,
+// and one left behind would be bound again as if it were the new one's. GL
+// ignores the name 0, so what was never made needs no check.
 extern "C" void nocturne_gl_shutdown(void) {
     if (!g_gl.active) return;
     nocturne_gl_blit_shutdown();
-    if (g_gl.framebuffer_texture != 0) {
-        gl.DeleteTextures(1, &g_gl.framebuffer_texture);
-        g_gl.framebuffer_texture = 0;
-    }
-    if (g_gl.context != nullptr) {
-        SDL_GL_DeleteContext(g_gl.context);
-        g_gl.context = nullptr;
-    }
-    g_gl.window = nullptr;
-    g_gl.active = false;
+    gl.DeleteTextures(1, &g_gl.framebuffer_texture);
+    gl.DeleteFramebuffers(1, &g_gl.scene_fbo);
+    gl.DeleteTextures(1, &g_gl.scene_color);
+    gl.DeleteRenderbuffers(1, &g_gl.scene_depth);
+    SDL_GL_DeleteContext(g_gl.context);
+    g_gl = GLPresentState();
+    g_gl_version_short[0] = '\0';
 }
 
 #else  // !NOCTURNE_GL_PRESENT
@@ -600,7 +596,6 @@ extern "C" int  nocturne_gl_scene_target_bind(int w, int h) { (void)w; (void)h; 
 extern "C" int  nocturne_gl_scene_target_active(void) { return 0; }
 extern "C" unsigned int nocturne_gl_scene_fbo(void) { return 0u; }
 extern "C" int  nocturne_gl_ensure_active(void) { return 0; }
-extern "C" void nocturne_gl_swap_only(void) {}
 extern "C" void nocturne_gl_present_scene(void) {}
 extern "C" void nocturne_gl_scene_upload(const void *, int, int, int, int) {}
 extern "C" void nocturne_gl_set_logical_size(int w, int h) { (void)w; (void)h; }
@@ -608,8 +603,8 @@ extern "C" void nocturne_gl_present_framebuffer(const void *p, int w, int h, int
     (void)p; (void)w; (void)h; (void)pitch; (void)bpp;
 }
 extern "C" void nocturne_gl_window_to_logical(int wx, int wy, int *ox, int *oy) {
-    if (ox) *ox = wx;
-    if (oy) *oy = wy;
+    *ox = wx;
+    *oy = wy;
 }
 extern "C" int nocturne_gl_read_front(unsigned char **rgb, int *w, int *h) {
     (void)rgb; (void)w; (void)h; return -1;

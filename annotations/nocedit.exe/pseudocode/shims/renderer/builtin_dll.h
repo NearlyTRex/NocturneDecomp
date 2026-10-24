@@ -17,10 +17,11 @@
 //
 // Adding another renderer later is a table edit, not a code change:
 //
-//   1. Declare the decompiled entry points (or include their header).
-//   2. Add a NOCTURNE_BUILTIN_EXPORT row per "APIDLL*" symbol to that
-//      module's export array in builtin_dll.cpp.
-//   3. Add one NOCTURNE_BUILTIN_MODULE row to g_BuiltinModules.
+//   1. Beside that renderer's sources, build its table of NocturneBuiltinExport
+//      rows, one per "APIDLL*" symbol, and hand it over through a provider
+//      (trigl_exports.cpp's nocturne_trigl_native_exports is one).
+//   2. Add one row naming the DLL and its provider to g_BuiltinModules in
+//      builtin_dll.cpp.
 //
 // Everything that asks "which renderers can this build actually use?" — the
 // Graphics Options 3D-API selector included — goes through the queries below,
@@ -52,24 +53,16 @@ typedef struct NocturneBuiltinModule {
     NocturneBuiltinExportProvider  exports;
 } NocturneBuiltinModule;
 
-// Non-zero if `dll_name` has a compiled-in implementation registered.
-//
 // Registration is independent of how complete the export table is: a module
-// with no exports yet still reports available, loads, and then fails its
-// APIDLLInformation lookup exactly like a real DLL missing that entry point —
-// which the game already handles by clearing g_UseDirect3D. That keeps a
-// half-hooked renderer selectable (and visible in the menu) while it is being
-// filled in.
-int nocturne_builtin_dll_available(const char *dll_name);
+// with no exports yet still loads, and then fails its APIDLLInformation lookup
+// exactly like a real DLL missing that entry point — which the game already
+// handles by clearing g_UseDirect3D. That keeps a half-hooked renderer
+// selectable (and visible in the menu) while it is being filled in.
 
-// Next registered DLL name after `current`, wrapping around; used to drive the
-// Graphics Options "3D API" cycle over exactly the renderers this build has.
-// Returns the first registered module when `current` is null/empty/unknown, and
-// null only when nothing at all is registered.
-const char *nocturne_builtin_dll_next(const char *current);
-
-// Writes into `path` (g_RendererDllPath) the next registered DLL after it:
-// the Graphics Options "3D API" step. Unchanged when nothing is registered.
+// Writes into `path` (g_RendererDllPath) the registered DLL after it, wrapping
+// round, or the first for one that is not registered: the Graphics Options
+// "3D API" step, over exactly the renderers this build has. Unchanged in the
+// authentic build, which has none.
 void nocturne_builtin_dll_step(char *path);
 
 // Leaves `path` alone when it names a registered DLL, and otherwise steps it to
@@ -77,8 +70,9 @@ void nocturne_builtin_dll_step(char *path);
 void nocturne_builtin_dll_snap(char *path);
 
 // LoadLibraryA / GetProcAddress / FreeLibrary backing. `open` returns an opaque
-// non-null handle (or null if unregistered); `is_handle` distinguishes it from
-// a real dlopen handle so the shims know which path to take on teardown.
+// non-null handle (or null if unregistered, or for no name); `is_handle` says
+// whether a handle is one of these, the only kind there is. `sym` takes only
+// such a handle, and answers null for a name it does not export or none.
 void *nocturne_builtin_dll_open(const char *dll_name);
 int   nocturne_builtin_dll_is_handle(void *handle);
 void *nocturne_builtin_dll_sym(void *handle, const char *proc_name);

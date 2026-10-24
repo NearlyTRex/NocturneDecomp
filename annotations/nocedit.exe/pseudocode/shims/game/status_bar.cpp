@@ -5,6 +5,8 @@
 #include "game/status_bar.h"
 #include "shim_config.h"
 
+#include <cmath>
+
 #include "nocturne.h"
 
 #if !NOCTURNE_AUTHENTIC_STATUS_BAR_WIDTH
@@ -66,7 +68,7 @@ extern "C" int nocturne_status_bar_right(char *name, int left, int right)
     if (entry == (Entry *)0) {
         return right;
     }
-    width = (int)((float)(right - left) * entry->scale + 0.5f);
+    width = (int)std::lround((float)(right - left) * entry->scale);
     // The bars sit at the left margin; keep a long one clear of the right one.
     limit = (g_WindowWidth - 1) - left;
     if (limit < left + width) {

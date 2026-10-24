@@ -40,12 +40,12 @@ extern "C" {
 int nocturne_dump_screenshot(const char *path);
 
 // Front buffer — writes <path> PPM of the ACTUAL presented image (what the
-// user sees on screen), read back from the SDL renderer / primary surface in
-// the DirectDraw shim. Unlike nocturne_dump_screenshot, this captures the
-// final, post-everything frame regardless of where in the frame you call it
-// (it reflects the last present), so it is the reliable way to capture a
-// visual bug. Implemented in shims/ddraw.cpp (needs SDL/surface access).
-// Returns 0 on success, -1 if the shim/surface isn't available.
+// user sees on screen), read back from the GL context when it owns the window
+// and from the DirectDraw shim's SDL renderer otherwise. Unlike
+// nocturne_dump_screenshot, this captures the final, post-everything frame
+// regardless of where in the frame you call it (it reflects the last present),
+// so it is the reliable way to capture a visual bug. Returns 0 on success, -1
+// if there is nothing presenting to read.
 int nocturne_dump_frontbuffer(const char *path);
 
 // Z-buffer — writes <path> PPM (grayscale, normalized) + <path>.txt metadata.
@@ -112,10 +112,9 @@ int nocturne_dump_lighting_state(const char *path);
 // lighting globals but produced different screen brightness will differ here.
 int nocturne_dump_bake_signature(const char *path, int tag);
 
-// Continuous per-frame actor-state auto-dump. Independent of gdb — meant to
-// be toggled at runtime from a keyboard hotkey (see user32 shim) so a session
-// can be recorded while the user drives the game. Two slots are exposed so
-// player and a chosen NPC can be dumped in parallel.
+// Continuous per-frame actor-state auto-dump, armed from gdb so a session can
+// be recorded while the user drives the game. Two slots are exposed so player
+// and a chosen NPC can be dumped in parallel.
 //
 //   slot:          0 or 1. Out-of-range calls are ignored.
 //   path_template: printf-style path with one `%d` for the frame counter

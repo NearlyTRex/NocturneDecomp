@@ -72,6 +72,19 @@ static int  s_mismatches = 0;
 // State capture
 // =============================================================================
 
+// Whether two positions are the same bit for bit, for the reason the hash
+// below is: -0 and 0, or two NaNs, are drift as much as any other change.
+static bool same_bits(const float (&a)[3], const float (&b)[3])
+{
+    for (int i = 0; i < 3; i++) {
+        uint x, y;
+        std::memcpy(&x, &a[i], sizeof(x));
+        std::memcpy(&y, &b[i], sizeof(y));
+        if (x != y) return false;
+    }
+    return true;
+}
+
 // FNV-1a over the raw bytes. The comparison is bit-exact on purpose: both
 // machines run the same binary on the same architecture, so a deterministic
 // simulation produces identical floats down to the last bit. A tolerance here
@@ -244,8 +257,7 @@ static void sync_fatal(const SNetPacket_SyncCheck *host_state,
 
     for (i = 0; (i < own->hero_count) && (used > 0) && (used < (int)sizeof(message)); i++) {
         if ((own->hero_area[i] == host_state->hero_area[i]) &&
-            (std::memcmp(own->hero_position[i], host_state->hero_position[i],
-                         sizeof(own->hero_position[i])) == 0)) {
+            same_bits(own->hero_position[i], host_state->hero_position[i])) {
             continue;
         }
         used = used + std::snprintf(
@@ -309,8 +321,7 @@ static void sync_report(const SNetPacket_SyncCheck *host_state,
 
     for (i = 0; i < own->hero_count; i++) {
         if ((own->hero_area[i] != host_state->hero_area[i]) ||
-            (std::memcmp(own->hero_position[i], host_state->hero_position[i],
-                         sizeof(own->hero_position[i])) != 0)) {
+            !same_bits(own->hero_position[i], host_state->hero_position[i])) {
             DLOG("netplay",
                     "  hero %d  host (%.3f, %.3f, %.3f) area %d  |  ours (%.3f, %.3f, %.3f) area %d",
                     i,
@@ -422,8 +433,7 @@ extern "C" void nocturne_net_sync_check(int sequence_number)
     heroes_differ = 0;
     for (i = 0; i < own.hero_count; i++) {
         if ((own.hero_area[i] != s_ring[slot].hero_area[i]) ||
-            (std::memcmp(own.hero_position[i], s_ring[slot].hero_position[i],
-                         sizeof(own.hero_position[i])) != 0)) {
+            !same_bits(own.hero_position[i], s_ring[slot].hero_position[i])) {
             heroes_differ = 1;
         }
     }

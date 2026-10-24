@@ -7,7 +7,8 @@
 #       [EXCLUDE <regex>]         # drop matching files from TESTS
 #       [SUBJECTS <file>...]      # code under test; relative = pseudocode/
 #       [SUPPORT <file>...]       # test helpers with no main(); relative = here
-#       [DEFINITIONS <def>...])
+#       [DEFINITIONS <def>...]
+#       [LIBRARIES <lib>...])     # linked into each test, e.g. ws2_32 on Windows
 #
 # tests/ mirrors pseudocode/: the test for shims/core/file_search.cpp is
 # tests/shims/core/test_file_search.cpp.
@@ -20,7 +21,7 @@
 
 function(nocturne_test_suite _suite)
     cmake_parse_arguments(PARSE_ARGV 1 _arg ""
-        "EXCLUDE" "TESTS;SUBJECTS;SUPPORT;DEFINITIONS")
+        "EXCLUDE" "TESTS;SUBJECTS;SUPPORT;DEFINITIONS;LIBRARIES")
 
     if(NOT _arg_TESTS)
         set(_arg_TESTS "test_*.cpp")
@@ -50,6 +51,10 @@ function(nocturne_test_suite _suite)
         set(_objlib nocturne_test_${_suite}_objs)
         add_library(${_objlib} OBJECT EXCLUDE_FROM_ALL ${_objects})
         _nocturne_test_setup(${_objlib} "${_arg_DEFINITIONS}")
+        # For the include paths the subjects need, such as SDL's.
+        if(_arg_LIBRARIES)
+            target_link_libraries(${_objlib} PRIVATE ${_arg_LIBRARIES})
+        endif()
     endif()
 
     foreach(_src IN LISTS _tests)
@@ -62,8 +67,17 @@ function(nocturne_test_suite _suite)
         if(_objlib)
             target_link_libraries(${_name} PRIVATE ${_objlib})
         endif()
+        if(_arg_LIBRARIES)
+            target_link_libraries(${_name} PRIVATE ${_arg_LIBRARIES})
+        endif()
         add_test(NAME ${_test} COMMAND ${_name})
         set_tests_properties(${_test} PROPERTIES LABELS "${_suite}")
+        # Under wine, the gcc runtime DLLs a test needs are the ones the
+        # platform file stages beside the exe, in the top of the build tree.
+        if(WIN32 AND CMAKE_CROSSCOMPILING_EMULATOR)
+            set_tests_properties(${_test} PROPERTIES
+                ENVIRONMENT "WINEPATH=${CMAKE_BINARY_DIR};WINEDEBUG=-all")
+        endif()
         add_dependencies(nocturne_tests ${_name})
         set_property(GLOBAL APPEND PROPERTY NOCTURNE_TEST_TARGETS ${_name})
     endforeach()
@@ -74,8 +88,12 @@ function(_nocturne_test_setup _target _defs)
         "${NOCTURNE_TESTS_DIR}" "${CMAKE_CURRENT_SOURCE_DIR}"
         "${NOCTURNE_SHIMS_DIR}" "${NOCTURNE_INCLUDE_DIR}" ${SDL2_INCLUDE_DIRS})
     target_compile_features(${_target} PRIVATE cxx_std_17)
-    target_compile_options(${_target} PRIVATE ${NOCTURNE_COMMON_WARNINGS})
+    target_compile_options(${_target} PRIVATE ${NOCTURNE_COMMON_WARNINGS} ${NOCTURNE_COVERAGE_FLAGS})
+    target_link_options(${_target} PRIVATE ${NOCTURNE_COVERAGE_FLAGS})
     if(_defs)
         target_compile_definitions(${_target} PRIVATE ${_defs})
+    endif()
+    if(TARGET sdl_headers_copy)
+        add_dependencies(${_target} sdl_headers_copy)
     endif()
 endfunction()

@@ -43,16 +43,6 @@
 extern "C" {
 #endif
 
-// How many modes the selector offers.
-int nocturne_resolution_count(void);
-
-// Mode `index` (0 = smallest). Writes nothing and returns 0 when out of range.
-int nocturne_resolution_at(int index, int *width, int *height);
-
-// Index of an exact width/height match, or -1. Used to tell "the current mode
-// is in the list" from "the INI holds something we have to snap out of".
-int nocturne_resolution_index_of(int width, int height);
-
 // Step from the current mode to the next one, wrapping at both ends. `step` is
 // +1 for a larger mode and -1 for a smaller one, matching the Options screen's
 // right/left. A current mode that is not in the table (400x300 from an old INI,
@@ -68,9 +58,9 @@ int nocturne_resolution_index_of(int width, int height);
 // right from the largest software mode reaches the smallest, and nothing is
 // ever selected only to be taken back.
 //
-// Returns 1 and writes the new mode, or 0 if the table is empty.
-int nocturne_resolution_step(int current_width, int current_height, int step,
-                             int max_height, int *out_width, int *out_height);
+// Writes the new mode.
+void nocturne_resolution_step(int current_width, int current_height, int step,
+                              int max_height, int *out_width, int *out_height);
 
 // "Resolution : 1024x768" for the Options line, built into static storage.
 // Never null, so the caller can hand it straight to the localiser.

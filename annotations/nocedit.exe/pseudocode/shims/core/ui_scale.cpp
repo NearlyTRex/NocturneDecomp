@@ -105,8 +105,9 @@ static void ui_blit_alpha_region(CAlphaBitmap *bmp, int dst_x, int dst_y,
     engine_alphabit_cpp_CAlphaBitmap_initPalette_FUN_00410cf0(bmp);
 
     for (src_row = 0; src_row < src_h; src_row++) {
-        const uchar *raw = (const uchar *)bmp->raw + (src_y + src_row) * bmp->width + src_x;
-        const uchar *opa = (const uchar *)bmp->opa + (src_y + src_row) * bmp->width + src_x;
+        const ptrdiff_t at = (ptrdiff_t)(src_y + src_row) * bmp->width + src_x;
+        const uchar *raw = (const uchar *)bmp->raw + at;
+        const uchar *opa = (const uchar *)bmp->opa + at;
 
         // Expand the source row once, then emit it `scale` times.
         for (col = 0; col < src_w; col++) {
@@ -267,7 +268,7 @@ static int ui_draw_char(CBitFont *font, int character_code, int x, int y,
     }
 
     for (src_row = 0; src_row < glyph_h; src_row++) {
-        const uchar *src = glyph + src_row * stride;
+        const uchar *src = glyph + (ptrdiff_t)src_row * stride;
 
         for (col = 0; col < glyph_w; col++) {
             for (rep = 0; rep < scale; rep++) { row_src[col * scale + rep] = src[col]; }
@@ -310,9 +311,9 @@ static int ui_draw_char(CBitFont *font, int character_code, int x, int y,
                     for (col = 0; col < count; col++) {
                         // Per-pixel coverage comes from the font's palette_data,
                         // scaled by the current global alpha.
-                        int cover = (g_CurrentAlphaValue *
-                                     (uint)(byte)font->palette_data[(uint)row_src[skip + col] * 3 +
-                                                                    bitmap_index * 0x300]) / 256;
+                        int cover = (int)((g_CurrentAlphaValue *
+                                           (uint)(byte)font->palette_data[(uint)row_src[skip + col] * 3 +
+                                                                          bitmap_index * 0x300]) / 256);
                         if (cover != 0) {
                             uint src_color =
                                 (color_mode == -1)

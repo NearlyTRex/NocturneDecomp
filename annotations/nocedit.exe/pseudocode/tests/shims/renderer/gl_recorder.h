@@ -69,6 +69,7 @@ struct State {
     int blend = 0;
     int cull = 0;
     int scissor = 0;
+    int viewport[4] = {0, 0, 0, 0};
 
     // Name allocators. Start at 1: zero means "none" throughout GL, and a fake
     // that handed out 0 would make "nothing bound" and "this object" identical.
@@ -84,6 +85,7 @@ struct State {
         memset(bound_texture, 0, sizeof(bound_texture));
         bound_program = bound_vao = 0;
         depth_test = blend = cull = scissor = 0;
+        memset(viewport, 0, sizeof(viewport));
         depth_write = 1;
         scene_fbo = 0;
         next_texture = next_buffer = next_vao = next_shader = next_program = 1;

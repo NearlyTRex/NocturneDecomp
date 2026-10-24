@@ -90,8 +90,11 @@ inline void watcom_stream_open(std::ofstream &fs, const char *path,
 //      end via strlen", which walks past the buffer end. Watcom's _ostrstream
 //      with size 0 is a silent-fail write sink; the wrapper emulates that by
 //      routing to a 1-byte fallback when the caller's buffer is full.
-//   3. The "decrement caller's remaining-size by tellp() at end of scope"
-//      bookkeeping that codec keeps repeat verbatim — handled by the dtor.
+//   3. The "decrement caller's remaining-size by what was written at end of
+//      scope" bookkeeping that codec keeps repeat verbatim — handled by the
+//      dtor. Counted with pcount() rather than tellp(): a write past the end
+//      fails the stream, and a failed stream's tellp() is -1, which would hand
+//      the caller back a byte it never had.
 //
 // Implicit conversion to _ostream*/_istream* lets the wrapper be passed directly
 // to vtable codec calls expecting Watcom stream pointers.
@@ -108,7 +111,7 @@ public:
                full_ ? 1 : *size_ptr,
                std::ios::out | std::ios::binary) {}
     ~watcom_buffer_ostream() {
-        if (!full_) *size_ptr_ -= (int)oss_.tellp();
+        if (!full_) *size_ptr_ -= (int)oss_.pcount();
     }
     operator _ostream *() { return watcom_ostream_from(oss_); }
 };

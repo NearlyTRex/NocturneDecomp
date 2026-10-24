@@ -20,13 +20,19 @@
 // the renderer gets there.
 
 #include "nocturne_test.h"
+#include "gl_present_support.h"
 #include "gl_recorder.h"
 
 #include "nocturne.h"
+#include "debug/focus_trace.h"
 #include "renderer/builtin_dll.h"
+#include "renderer/trigl_device.h"
 #include "renderer/trigl_gl.h"
+#include "renderer/trigl_state.h"
 
+#include <cstdio>
 #include <cstring>
+#include <filesystem>
 #include <string>
 #include <vector>
 
@@ -463,6 +469,595 @@ NOCTURNE_TEST(a_depth_box_clear_includes_its_right_and_bottom_edges) {
         CHECK(call.d == 10);
     }
     CHECK(scissors == 1);
+}
+
+// =============================================================================
+// Below: every entry point at its edges — no bridge, a bridge with nothing in
+// it, arguments the engine does not send but could, and the debugging reports.
+// =============================================================================
+
+namespace {
+
+typedef int(__cdecl *DrawPolygonFn)(SRenderVertex *, int, int);
+typedef int(__cdecl *DrawPolygon2Fn)(SRenderVertex **, int, int);
+typedef int(__cdecl *DrawPolyList2Fn)(SRenderVertex *, SInputFace **, int, int);
+typedef int(__cdecl *SetVideoModeFn)(void **);
+typedef int(__cdecl *IntFn)(int);
+typedef int(__cdecl *RestoreZFn)(int, int, int, int, int);
+typedef int(__cdecl *ColorTableFn)(uchar *, ushort *);
+typedef int(__cdecl *FogFn)(int, int, int);
+typedef void(__cdecl *InformationFn)(void *, CExternalRenderer *);
+typedef int(__cdecl *CardListFn)(int *, char **, char **, int *, int *);
+typedef int(__cdecl *VideoMemoryFn)(int *, int *, int *);
+typedef void(__cdecl *GetDcFn)(HDC *);
+typedef void(__cdecl *ReleaseDcFn)(HDC);
+typedef int(__cdecl *LineFn)(void *, void *, int);
+typedef int(__cdecl *ParticleFn)(void *, int);
+
+template <typename Fn>
+Fn api(const char *name) {
+    return (Fn)entry(name);
+}
+
+// Torn down and brought up again with `bridge`, or none, at a mode, in a scene.
+void restart(CExternalRendererBridge *bridge, int width = 640, int height = 480, int bpp = 32) {
+    api<VoidFn>("APIDLLkill")();
+    nocturne_trigl_gl_shutdown();
+    gl_recorder::install();
+    gl_present_support::presenter.reset();
+    CHECK_EQ(api<InitFn>("APIDLLinit")(nullptr, bridge), 1);
+    api<SetVideoMode2Fn>("APIDLLsetVideoMode2")(width, height, bpp, nullptr);
+    api<VoidIntFn>("APIDLLbeginScene")();
+    gl_recorder::state().calls.clear();
+}
+
+// `count` vertices around a centre, each at its own depth and coordinates.
+std::vector<SRenderVertex> fan(int count) {
+    std::vector<SRenderVertex> vertices((size_t)count);
+    for (int i = 0; i < count; ++i) {
+        SRenderVertex &v = vertices[(size_t)i];
+        v.projected_vertex.screen_x = (100 + (i % 7) * 10) << 16;
+        v.projected_vertex.screen_y = (100 + (i % 5) * 10) << 16;
+        v.projected_vertex.transformed_z = 0x10000 + ((i % 3) - 1) * 0x100;
+        v.u = (i % 4) << 20;
+        v.v = (i % 3) << 20;
+        v.r = v.g = v.b = v.a = 0xff00;
+    }
+    return vertices;
+}
+
+int draws() { return gl_recorder::state().count("DrawElements"); }
+
+std::string read_text(const std::string &path) {
+    std::string text;
+    FILE *f = fopen(path.c_str(), "rb");
+    if (f == nullptr) return text;
+    char chunk[512];
+    size_t got = 0;
+    while ((got = fread(chunk, 1, sizeof(chunk), f)) > 0) text.append(chunk, got);
+    fclose(f);
+    return text;
+}
+
+std::string temp_path(const char *leaf) {
+    return std::filesystem::temp_directory_path().string() + "/" + leaf;
+}
+
+}  // namespace
+
+// -----------------------------------------------------------------------------
+// Describing itself
+// -----------------------------------------------------------------------------
+
+// What loadExternalRenderer checks before it resolves anything: any API version,
+// feature bit 0, interface 1.x, sixteen functions with an empty table.
+NOCTURNE_TEST(the_renderer_describes_itself_as_the_engine_checks) {
+    api<InformationFn>("APIDLLInformation")(nullptr, nullptr);
+    std::vector<unsigned char> storage(sizeof(CExternalRenderer), 0xAB);
+    CExternalRenderer *info = (CExternalRenderer *)storage.data();
+    api<InformationFn>("APIDLLInformation")(nullptr, info);
+    CHECK_EQ((unsigned)info->api_version, 0xffffu);
+    CHECK_EQ((unsigned)info->interface_version >> 8, 1u);
+    CHECK_EQ(info->feature_flags.dword & 1u, 1u);
+    CHECK_EQ(info->function_count, 16u);
+    CHECK_EQ(info->function_table[15], 0u);
+    CHECK_EQ(std::string(info->description), std::string("OpenGL"));
+}
+
+// One card, named by the driver; every answer is optional to ask for.
+NOCTURNE_TEST(there_is_one_card_with_room_to_spare) {
+    CHECK_EQ(api<CardListFn>("APIDLLbuildCardList")(nullptr, nullptr, nullptr, nullptr, nullptr), 1);
+    int count = 0, vendor = -1, device = -1;
+    char *driver = nullptr;
+    char *name = nullptr;
+    CHECK_EQ(api<CardListFn>("APIDLLbuildCardList")(&count, &driver, &name, &vendor, &device), 1);
+    CHECK_EQ(count, 1);
+    CHECK_EQ(std::string(driver), std::string("OpenGL"));
+    CHECK(name != nullptr);
+    CHECK_EQ(vendor, 0);
+    CHECK_EQ(device, 0);
+    CHECK_EQ(api<IntFn>("APIDLLselectCard")(0), 1);
+
+    CHECK_EQ(api<VideoMemoryFn>("APIDLLgetVideoMemory")(nullptr, nullptr, nullptr), 1);
+    int total = 0, available = 0, type = -1;
+    CHECK_EQ(api<VideoMemoryFn>("APIDLLgetVideoMemory")(&total, &available, &type), 1);
+    CHECK_EQ(total, 256 * 1024 * 1024);
+    CHECK_EQ(available, total);
+    CHECK_EQ(type, 0);
+
+    // No device context of its own.
+    api<GetDcFn>("APIDLLGetDisplayContext")(nullptr);
+    HDC dc = (HDC)&dc;
+    api<GetDcFn>("APIDLLGetDisplayContext")(&dc);
+    CHECK(dc == nullptr);
+    api<ReleaseDcFn>("APIDLLReleaseDisplayContext")(nullptr);
+}
+
+// The registry row is the same table whether or not its length is asked for.
+NOCTURNE_TEST(the_export_table_is_there_without_its_length) {
+    int count = 0;
+    const NocturneBuiltinExport *counted = nocturne_trigl_native_exports(&count);
+    CHECK_EQ(count, 37);
+    CHECK(nocturne_trigl_native_exports(nullptr) == counted);
+}
+
+// What the shipped renderer accepts and leaves to the engine's CPU path.
+NOCTURNE_TEST(lines_particles_and_mip_levels_are_accepted_and_left_to_the_engine) {
+    restart(nullptr);
+    CHECK_EQ(api<LineFn>("APIDLLadd3dLine")(nullptr, nullptr, 0), 1);
+    CHECK_EQ(api<ParticleFn>("APIDLLaddParticle")(nullptr, 0), 1);
+    CHECK_EQ(api<VoidIntFn>("APIDLLflushLineList")(), 1);
+    CHECK_EQ(api<VoidIntFn>("APIDLLflushParticleList")(), 1);
+    CHECK_EQ(api<IntFn>("APIDLLsetMipMapLevel")(2), 1);
+    CHECK_EQ(api<VoidIntFn>("APIDLLrestoreVideoMode")(), 1);
+    CHECK_EQ(draws(), 0);
+    api<VoidFn>("APIDLLkill")();
+}
+
+// -----------------------------------------------------------------------------
+// Lifecycle and modes
+// -----------------------------------------------------------------------------
+
+NOCTURNE_TEST(without_a_device_the_renderer_does_not_start) {
+    api<VoidFn>("APIDLLkill")();
+    nocturne_trigl_gl_shutdown();
+    gl_recorder::install();
+    gl_present_support::presenter.reset();
+    gl_present_support::presenter.context = 0;
+    CHECK_EQ(api<InitFn>("APIDLLinit")(nullptr, nullptr), 0);
+    gl_present_support::presenter.reset();
+}
+
+// setVideoMode carries only the rows; the size is whatever setVideoMode2 last
+// recorded.
+NOCTURNE_TEST(set_video_mode_reuses_the_last_recorded_size) {
+    Engine engine;
+    restart(&engine.bridge, 320, 200, 16);
+    std::vector<void *> rows(200, nullptr);
+    CHECK_EQ(api<SetVideoModeFn>("APIDLLsetVideoMode")(rows.data()), 1);
+    CHECK_EQ(nocturne_trigl_device_width(), 320);
+    CHECK_EQ(nocturne_trigl_device_bpp(), 16);
+    CHECK(rows[0] != nullptr);
+    api<VoidFn>("APIDLLkill")();
+}
+
+// The frame, the hold buffer, the clears and master depth reach the device and
+// the hardware through these.
+NOCTURNE_TEST(the_frame_entry_points_reach_the_device) {
+    Engine engine;
+    restart(&engine.bridge, 640, 480, 16);
+    gl_recorder::State &s = gl_recorder::state();
+    CHECK_EQ(api<VoidIntFn>("APIDLLlockFrame")(), 1);
+    CHECK_EQ(api<VoidIntFn>("APIDLLunlockFrame")(), 1);
+    CHECK_EQ(api<VoidIntFn>("APIDLLlockHoldBuffer")(), 0);    // no rows handed over
+    CHECK_EQ(api<VoidIntFn>("APIDLLunlockHoldBuffer")(), 1);
+    CHECK_EQ(api<VoidIntFn>("APIDLLclear")(), 1);
+    CHECK_EQ(api<VoidIntFn>("APIDLLclearZBuffer")(), 1);
+    CHECK_EQ(s.count("Clear"), 2);
+    CHECK_EQ(api<VoidIntFn>("APIDLLsync")(), 1);
+
+    s.scene_fbo = 7;
+    CHECK_EQ(api<IntFn>("APIDLLmasterZBuffer")(0), 1);
+    CHECK_EQ(api<RestoreZFn>("APIDLLrestoreZBuffer")(0, 0, 0, 9, 9), 1);
+    CHECK_EQ(s.count("BlitFramebuffer"), 2);
+
+    CHECK_EQ(api<VoidIntFn>("APIDLLtoggle")(), 1);
+    CHECK_EQ(gl_present_support::presenter.presents, 1);
+    // The lock ended the scene to land its geometry, so there is none to end.
+    CHECK_EQ(api<VoidIntFn>("APIDLLendScene")(), 0);
+    api<VoidFn>("APIDLLkill")();
+}
+
+// The focus trace is told of each frame event while it is armed.
+NOCTURNE_TEST(an_armed_focus_trace_hears_every_frame_event) {
+    Engine engine;
+    restart(&engine.bridge);
+    g_nocturne_focus_trace_active = 1;
+    api<VoidIntFn>("APIDLLlockFrame")();
+    api<VoidIntFn>("APIDLLunlockFrame")();
+    api<VoidIntFn>("APIDLLlockHoldBuffer")();
+    api<VoidIntFn>("APIDLLunlockHoldBuffer")();
+    api<VoidIntFn>("APIDLLclear")();
+    api<VoidIntFn>("APIDLLclearZBuffer")();
+    typedef int(__cdecl *ClearZBoxFn)(int, int, int, int);
+    api<ClearZBoxFn>("APIDLLclearZBox")(0, 1, 0, 1);
+    api<IntFn>("APIDLLmasterZBuffer")(0);
+    api<RestoreZFn>("APIDLLrestoreZBuffer")(0, 0, 0, 1, 1);
+    api<VoidIntFn>("APIDLLtoggle")();
+    api<VoidIntFn>("APIDLLendScene")();
+    api<VoidIntFn>("APIDLLbeginScene")();
+    g_nocturne_focus_trace_active = 0;
+    api<VoidFn>("APIDLLkill")();
+}
+
+// -----------------------------------------------------------------------------
+// The colour table
+// -----------------------------------------------------------------------------
+
+namespace {
+
+struct PixelFormat {
+    int red_pos = -1, green_pos = -1, blue_pos = -1;
+    int red_scale = -1, green_scale = -1, blue_scale = -1;
+    int red_dither = -1, green_dither = -1, blue_dither = -1;
+
+    void point(CExternalRendererBridge &b) {
+        b.red_bit_position = &red_pos;
+        b.green_bit_position = &green_pos;
+        b.blue_bit_position = &blue_pos;
+        b.red_scale_factor = &red_scale;
+        b.green_scale_factor = &green_scale;
+        b.blue_scale_factor = &blue_scale;
+        b.red_dither_shift = &red_dither;
+        b.green_dither_shift = &green_dither;
+        b.blue_dither_shift = &blue_dither;
+    }
+};
+
+}  // namespace
+
+// The format the engine draws its 2D in is the CPU image's: RGB565 at 16 bits,
+// ARGB8888 otherwise, with the bits each channel loses as its dither shift.
+NOCTURNE_TEST(the_colour_table_is_built_in_the_images_format) {
+    Engine engine;
+    PixelFormat format;
+    format.point(engine.bridge);
+    std::vector<unsigned char> palette(768, 0);
+    palette[3] = 0xF8;  // entry 1: red
+    palette[4] = 0xFC;
+    palette[5] = 0x08;
+    std::vector<ushort> table(256, 0);
+
+    restart(&engine.bridge, 640, 480, 16);
+    CHECK_EQ(api<ColorTableFn>("APIDLLsetColorTable16")(palette.data(), table.data()), 1);
+    CHECK_EQ(format.red_pos, 11);
+    CHECK_EQ(format.green_scale, 4);
+    CHECK_EQ(format.red_dither, 3);
+    CHECK_EQ(format.green_dither, 2);
+    CHECK_EQ(format.blue_dither, 3);
+    CHECK_EQ((unsigned)table[1], (31u << 11) | (63u << 5) | 1u);
+
+    restart(&engine.bridge, 640, 480, 32);
+    CHECK_EQ(api<ColorTableFn>("APIDLLsetColorTable16")(palette.data(), nullptr), 1);
+    CHECK_EQ(format.red_pos, 16);
+    CHECK_EQ(format.red_scale, 1);
+    CHECK_EQ(format.red_dither, 0);
+
+    // No palette, no bridge, or a bridge with nowhere to write: nothing set.
+    format = PixelFormat();
+    format.point(engine.bridge);
+    CHECK_EQ(api<ColorTableFn>("APIDLLsetColorTable16")(nullptr, table.data()), 1);
+    CHECK_EQ(format.red_pos, -1);
+    CExternalRendererBridge empty{};
+    restart(&empty);
+    CHECK_EQ(api<ColorTableFn>("APIDLLsetColorTable16")(palette.data(), table.data()), 1);
+    restart(nullptr);
+    CHECK_EQ(api<ColorTableFn>("APIDLLsetColorTable16")(palette.data(), table.data()), 1);
+    api<VoidFn>("APIDLLkill")();
+}
+
+NOCTURNE_TEST(the_fog_colour_reaches_the_shader_in_unit_range) {
+    Engine engine;
+    restart(&engine.bridge);
+    CHECK_EQ(api<FogFn>("APIDLLsetFogColor")(255, 0, 51), 1);
+    Quad quad;
+    api<DrawPolyListFn>("APIDLLdrawPolyList")(quad.vertices, quad.list, 1,
+                                              kOpaque | NOCTURNE_TRIGL_FLAG_SOLIDALPHA);
+    api<VoidIntFn>("APIDLLendScene")();
+    CHECK(gl_recorder::state().count("Uniform3f") >= 1);
+    api<VoidFn>("APIDLLkill")();
+}
+
+// -----------------------------------------------------------------------------
+// Textures
+// -----------------------------------------------------------------------------
+
+// Nothing to upload without a record, pixels and a palette; nothing at a
+// dimension the renderer does not work at.
+NOCTURNE_TEST(a_texture_needs_its_pixels_and_a_dimension_in_range) {
+    Engine engine;
+    restart(&engine.bridge);
+    std::vector<unsigned char> palette(768, 0x40);
+    std::vector<unsigned char> pixels(256 * 256, 1);
+    SMRGLTextureBasic wall = named("wall.raw");
+    SelectTextureFn select = api<SelectTextureFn>("APIDLLselectTexture");
+    select(nullptr, 64, pixels.data(), palette.data(), nullptr);
+    select(&wall, 64, nullptr, palette.data(), nullptr);
+    select(&wall, 64, pixels.data(), nullptr, nullptr);
+    engine.texture_dimension = 0;
+    select(&wall, 0, pixels.data(), palette.data(), nullptr);
+    engine.texture_dimension = 512;
+    select(&wall, 512, pixels.data(), palette.data(), nullptr);
+    CHECK_EQ(gl_recorder::state().count("TexImage2D"), 0);
+
+    // Without a bridge there is no dimension to work at.
+    restart(nullptr);
+    select(&wall, 64, pixels.data(), palette.data(), nullptr);
+    CHECK_EQ(gl_recorder::state().count("TexImage2D"), 0);
+    api<VoidFn>("APIDLLkill")();
+}
+
+// A resident texture is not expanded again; an update is, and an opacity plane
+// gives every texel its own alpha, counted when it is none.
+NOCTURNE_TEST(an_update_reuploads_and_opacity_is_counted) {
+    Engine engine;
+    engine.texture_dimension = 8;
+    restart(&engine.bridge);
+    std::vector<unsigned char> palette(768, 0x40);
+    std::vector<unsigned char> pixels(64, 1);
+    std::vector<unsigned char> opacity(64, 0xFF);
+    for (int i = 0; i < 16; ++i) opacity[(size_t)i] = 0;
+    SMRGLTextureBasic wall = named("wall.raw");
+    SelectTextureFn select = api<SelectTextureFn>("APIDLLselectTexture");
+    SelectTextureFn update = api<SelectTextureFn>("APIDLLupdateTexture");
+
+    nocturne_trigl_stats_reset();
+    select(&wall, 8, pixels.data(), palette.data(), opacity.data());
+    select(&wall, 8, pixels.data(), palette.data(), opacity.data());
+    CHECK_EQ(nocturne_trigl_stats.uploads, 1u);
+    CHECK_EQ(nocturne_trigl_stats.uploads_with_opacity, 1u);
+    CHECK_EQ(nocturne_trigl_stats.texels_keyed, 16u);
+    update(&wall, 8, pixels.data(), palette.data(), nullptr);
+    CHECK_EQ(nocturne_trigl_stats.uploads, 2u);
+    CHECK_EQ(gl_recorder::state().count("TexImage2D"), 2);
+    api<VoidFn>("APIDLLkill")();
+}
+
+// The name a draw is reported by is kept to an entry's width, even when the
+// engine's record runs on past it.
+NOCTURNE_TEST(a_long_texture_name_is_kept_to_an_entry) {
+    Engine engine;
+    restart(&engine.bridge);
+    std::vector<unsigned char> record(sizeof(SMRGLTextureBasic) + 128, 0);
+    SMRGLTextureBasic *info = (SMRGLTextureBasic *)record.data();
+    memset(info->texture_name, 'w', 100);
+    std::vector<unsigned char> palette(768, 0x40);
+    std::vector<unsigned char> pixels(64 * 64, 1);
+    api<SelectTextureFn>("APIDLLselectTexture")(info, 64, pixels.data(), palette.data(), nullptr);
+    Quad quad;
+    api<DrawPolyListFn>("APIDLLdrawPolyList")(quad.vertices, quad.list, 1, kOpaque);
+    const std::string path = temp_path("nocturne_trigl_long_name.txt");
+    api<VoidIntFn>("APIDLLendScene")();
+    CHECK_EQ(nocturne_trigl_dump_draws(path.c_str()), 1);
+    const std::string text = read_text(path);
+    remove(path.c_str());
+    CHECK(text.find(std::string(63, 'w')) != std::string::npos);
+    CHECK(text.find(std::string(64, 'w')) == std::string::npos);
+    api<VoidFn>("APIDLLkill")();
+}
+
+// -----------------------------------------------------------------------------
+// Draws
+// -----------------------------------------------------------------------------
+
+// Outside a scene, or with nothing to draw, nothing is drawn.
+NOCTURNE_TEST(a_draw_needs_a_scene_and_something_to_draw) {
+    Engine engine;
+    restart(&engine.bridge);
+    std::vector<SRenderVertex> vertices = fan(4);
+    SRenderVertex *pointers[4] = {&vertices[0], &vertices[1], &vertices[2], &vertices[3]};
+    Quad quad;
+    SInputFace face{};
+    SInputFace *faces[1] = {&face};
+
+    CHECK_EQ(api<DrawPolygonFn>("APIDLLdrawPolygon")(nullptr, 4, kOpaque), 0);
+    CHECK_EQ(api<DrawPolygonFn>("APIDLLdrawPolygon")(vertices.data(), 0, kOpaque), 0);
+    CHECK_EQ(api<DrawPolygon2Fn>("APIDLLdrawPolygon2")(pointers, 0, kOpaque), 0);
+    CHECK_EQ(api<DrawPolyListFn>("APIDLLdrawPolyList")(nullptr, quad.list, 1, kOpaque), 0);
+    CHECK_EQ(api<DrawPolyList2Fn>("APIDLLdrawPolyList2")(nullptr, faces, 1, kOpaque), 0);
+
+    api<VoidIntFn>("APIDLLendScene")();
+    CHECK_EQ(api<DrawPolygon2Fn>("APIDLLdrawPolygon2")(pointers, 4, kOpaque), 0);
+    CHECK_EQ(api<DrawPolyListFn>("APIDLLdrawPolyList")(quad.vertices, quad.list, 1, kOpaque), 0);
+    CHECK_EQ(api<DrawPolyList2Fn>("APIDLLdrawPolyList2")(quad.vertices, faces, 1, kOpaque), 0);
+    CHECK_EQ(draws(), 0);
+    api<VoidFn>("APIDLLkill")();
+}
+
+// Every polygon form draws, at any vertex count, and a list skips the entries
+// that are not polygons.
+NOCTURNE_TEST(every_polygon_form_draws) {
+    Engine engine;
+    restart(&engine.bridge);
+    std::vector<SRenderVertex> vertices = fan(70);
+    CHECK_EQ(api<DrawPolygonFn>("APIDLLdrawPolygon")(vertices.data(), 70, kOpaque), 1);
+    CHECK_EQ(api<DrawPolygonFn>("APIDLLdrawPolygon")(vertices.data(), 5, kOpaque), 1);
+
+    // A record listing six vertices where its type declares four.
+    std::vector<unsigned char> record(sizeof(SMRGLPrimitiveQuad) + 2 * sizeof(SMRGLVertex), 0);
+    SMRGLPrimitiveQuad *six = (SMRGLPrimitiveQuad *)record.data();
+    six->base.base.count = 6;
+    SMRGLVertex *listed = six->vertices;
+    for (int i = 0; i < 6; ++i) listed[i].vertex_index = i;
+    SMRGLPrimitiveQuad two{};
+    two.base.base.count = 2;
+    SMRGLPrimitiveQuad *list[3] = {six, nullptr, &two};
+    CHECK_EQ(api<DrawPolyListFn>("APIDLLdrawPolyList")(vertices.data(), list, 3, kOpaque), 1);
+
+    SInputFace face{};
+    face.vertex_indices.vertex_index_1 = 1;
+    face.vertex_indices.vertex_index_2 = 2;
+    face.u_coord_1 = 0x100;
+    SInputFace *faces[2] = {&face, nullptr};
+    CHECK_EQ(api<DrawPolyList2Fn>("APIDLLdrawPolyList2")(vertices.data(), faces, 2, kOpaque), 1);
+    api<VoidIntFn>("APIDLLendScene")();
+    CHECK_EQ(nocturne_trigl_stats.polygons, 4u);
+    CHECK(draws() >= 1);
+    api<VoidFn>("APIDLLkill")();
+}
+
+// A polygon that does not fit what is queued draws the queue first; one larger
+// than a batch can ever hold is dropped rather than overrun it.
+NOCTURNE_TEST(a_polygon_too_big_for_the_batch_draws_it_first_or_is_dropped) {
+    Engine engine;
+    restart(&engine.bridge);
+    std::vector<SRenderVertex> vertices = fan(40000);
+    api<DrawPolygonFn>("APIDLLdrawPolygon")(vertices.data(), 3, kOpaque);
+    CHECK_EQ(draws(), 0);
+    // The queue first, then the polygon itself, which leaves no room for another.
+    api<DrawPolygonFn>("APIDLLdrawPolygon")(vertices.data(), 32767, kOpaque);
+    CHECK_EQ(draws(), 2);
+    nocturne_trigl_stats_reset();
+    api<DrawPolygonFn>("APIDLLdrawPolygon")(vertices.data(), 40000, kOpaque);
+    CHECK_EQ(nocturne_trigl_stats.polygons, 0u);
+    api<VoidFn>("APIDLLkill")();
+}
+
+// No bridge, or one with nothing behind it, reads every engine value as its
+// default; neither stops a draw.
+NOCTURNE_TEST(a_draw_without_engine_values_takes_the_defaults) {
+    Quad quad;
+    restart(nullptr);
+    CHECK_EQ(api<DrawPolyListFn>("APIDLLdrawPolyList")(quad.vertices, quad.list, 1, kOpaque), 1);
+    CExternalRendererBridge empty{};
+    restart(&empty, 800, 600, 32);
+    CHECK_EQ(api<DrawPolyListFn>("APIDLLdrawPolyList")(quad.vertices, quad.list, 1, kOpaque), 1);
+    api<VoidIntFn>("APIDLLendScene")();
+    CHECK_EQ(draws(), 1);
+    api<VoidFn>("APIDLLkill")();
+}
+
+// The depth curve follows the processor setting when the engine gives a draw
+// distance: a w-buffer on one, z on the other.
+NOCTURNE_TEST(depth_is_scaled_to_the_draw_distance_on_either_curve) {
+    Engine engine;
+    int far_depth = 4096;
+    int processor = 0;
+    engine.bridge.full_screen_quad_depth = &far_depth;
+    engine.bridge.processor_type = &processor;
+    Quad quad;
+    restart(&engine.bridge);
+    CHECK_EQ(api<DrawPolyListFn>("APIDLLdrawPolyList")(quad.vertices, quad.list, 1, kOpaque), 1);
+    processor = 1;
+    CHECK_EQ(api<DrawPolyListFn>("APIDLLdrawPolyList")(quad.vertices, quad.list, 1, kOpaque), 1);
+    api<VoidIntFn>("APIDLLendScene")();
+    CHECK(draws() >= 1);
+    api<VoidFn>("APIDLLkill")();
+}
+
+// The counters say how many draws blended, went untextured, or asked for a
+// texture and had none.
+NOCTURNE_TEST(the_draw_counters_say_what_each_draw_was) {
+    Engine engine;
+    Quad quad;
+    restart(&engine.bridge);
+    nocturne_trigl_stats_reset();
+    DrawPolyListFn draw = api<DrawPolyListFn>("APIDLLdrawPolyList");
+    draw(quad.vertices, quad.list, 1, kOpaque);            // textured, nothing selected
+    draw(quad.vertices, quad.list, 1, kOpaque & ~NOCTURNE_TRIGL_FLAG_TEXTURED);
+    draw(quad.vertices, quad.list, 1, kOpaque | NOCTURNE_TRIGL_FLAG_BLEND);
+    CHECK_EQ(nocturne_trigl_stats.draws, 3u);
+    CHECK_EQ(nocturne_trigl_stats.missing_texture_draws, 2u);
+    CHECK_EQ(nocturne_trigl_stats.untextured_draws, 1u);
+    CHECK(nocturne_trigl_stats.blended_draws >= 1u);
+    api<VoidFn>("APIDLLkill")();
+}
+
+// The marked texture can be let through the depth comparison, to see what an
+// overlay that loses it would have covered. Only the marked one, and only when
+// asked.
+NOCTURNE_TEST(the_marked_texture_can_skip_the_depth_comparison) {
+    Engine engine;
+    restart(&engine.bridge);
+    std::vector<unsigned char> palette(768, 0x40);
+    std::vector<unsigned char> pixels(64 * 64, 1);
+    SMRGLTextureBasic wall = named("wall.raw");
+    api<SelectTextureFn>("APIDLLselectTexture")(&wall, 64, pixels.data(), palette.data(), nullptr);
+    const unsigned texture = resolved("wall.raw", 64);
+    Quad quad;
+    DrawPolyListFn draw = api<DrawPolyListFn>("APIDLLdrawPolyList");
+    gl_recorder::State &s = gl_recorder::state();
+
+    nocturne_trigl_paint_depth = 1;
+    draw(quad.vertices, quad.list, 1, kOpaque);                 // nothing marked
+    nocturne_trigl_paint_texture = (int)(texture + 1);
+    draw(quad.vertices, quad.list, 1, kOpaque | NOCTURNE_TRIGL_FLAG_BLEND);  // another marked
+    nocturne_trigl_paint_texture = (int)texture;
+    s.calls.clear();
+    draw(quad.vertices, quad.list, 1, kOpaque);
+    CHECK_EQ(s.calls[(size_t)s.index_of_last("DepthFunc")].a, (unsigned)GL_ALWAYS);
+    nocturne_trigl_paint_depth = 0;
+    draw(quad.vertices, quad.list, 1, kOpaque | NOCTURNE_TRIGL_FLAG_BLEND);
+    nocturne_trigl_paint_texture = 0;
+    api<VoidFn>("APIDLLkill")();
+}
+
+// -----------------------------------------------------------------------------
+// The draw trace
+// -----------------------------------------------------------------------------
+
+// One line per draw, with the span of the image it sampled when it drew
+// anything, and a mark on a textured draw that had nothing bound.
+NOCTURNE_TEST(the_draw_trace_describes_the_frame_being_built) {
+    Engine engine;
+    restart(&engine.bridge);
+    std::vector<SRenderVertex> vertices = fan(6);
+    DrawPolygonFn polygon = api<DrawPolygonFn>("APIDLLdrawPolygon");
+    polygon(vertices.data(), 6, kOpaque);
+    polygon(vertices.data() + 1, 5, kOpaque);
+    SMRGLPrimitiveQuad *none[1] = {nullptr};
+    api<DrawPolyListFn>("APIDLLdrawPolyList")(vertices.data(), none, 1,
+                                              NOCTURNE_TRIGL_FLAG_DEPTH_TEST);
+
+    const std::string path = temp_path("nocturne_trigl_draws_test.txt");
+    CHECK_EQ(nocturne_trigl_dump_draws(path.c_str()), 2);
+    const std::string text = read_text(path);
+    remove(path.c_str());
+    CHECK(text.find("draws in the frame: 2") != std::string::npos);
+    CHECK(text.find("<- nothing bound") != std::string::npos);
+    CHECK(text.find("texture cache") != std::string::npos);
+
+    // No path is the temporary directory's; a path that cannot be written is
+    // nothing written.
+    CHECK_EQ(nocturne_trigl_dump_draws(nullptr), 2);
+    remove(temp_path("trigl_draws.txt").c_str());
+    CHECK_EQ(nocturne_trigl_dump_draws(temp_path("no/such/dir/x.txt").c_str()), 0);
+    api<VoidFn>("APIDLLkill")();
+}
+
+// A draw continuing the last frame's state starts no new entry, and a frame of
+// more draws than the trace holds says how many it lost.
+NOCTURNE_TEST(the_draw_trace_is_per_frame_and_bounded) {
+    Engine engine;
+    Quad quad;
+    restart(&engine.bridge);
+    DrawPolyListFn draw = api<DrawPolyListFn>("APIDLLdrawPolyList");
+    draw(quad.vertices, quad.list, 1, kOpaque);
+    api<VoidIntFn>("APIDLLendScene")();
+    api<VoidIntFn>("APIDLLbeginScene")();
+    draw(quad.vertices, quad.list, 1, kOpaque);
+    CHECK_EQ(nocturne_trigl_dump_draws(temp_path("nocturne_trigl_trace_a.txt").c_str()), 0);
+    remove(temp_path("nocturne_trigl_trace_a.txt").c_str());
+
+    for (int i = 0; i < 520; ++i) {
+        draw(quad.vertices, quad.list, 1, (i % 2) ? kOpaque : (kOpaque & ~0x080));
+    }
+    const std::string path = temp_path("nocturne_trigl_trace_b.txt");
+    CHECK_EQ(nocturne_trigl_dump_draws(path.c_str()), 512);
+    const std::string text = read_text(path);
+    remove(path.c_str());
+    CHECK(text.find("(+8 past the end of the trace)") != std::string::npos);
+    api<VoidFn>("APIDLLkill")();
 }
 
 NOCTURNE_TEST_MAIN()

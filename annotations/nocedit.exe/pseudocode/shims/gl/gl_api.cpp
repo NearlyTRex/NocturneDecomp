@@ -21,21 +21,15 @@ bool g_loaded = false;
 bool g_failed = false;
 
 // Resolve one entry point, recording the first failure so the caller can report
-// a specific missing symbol rather than a blanket "GL unavailable".
-template <typename Fn>
-void load_one(Fn *slot, const char *name, const char **first_missing) {
-    *slot = reinterpret_cast<Fn>(SDL_GL_GetProcAddress(name));
-    if (*slot == nullptr && *first_missing == nullptr) {
+// a specific missing symbol rather than a blanket "GL unavailable". An OPTIONAL
+// one is fetched with SDL_GL_GetProcAddress alone, since a null there must not
+// take the whole GL path down — its callers null-check and fall back.
+void *resolve(const char *name, const char **first_missing) {
+    void *proc = SDL_GL_GetProcAddress(name);
+    if (proc == nullptr && *first_missing == nullptr) {
         *first_missing = name;
     }
-}
-
-// Resolve one OPTIONAL entry point. Unlike load_one this never records a
-// missing symbol, because a null here must not take the whole GL path down —
-// callers are required to null-check and fall back.
-template <typename Fn>
-void load_optional(Fn *slot, const char *name) {
-    *slot = reinterpret_cast<Fn>(SDL_GL_GetProcAddress(name));
+    return proc;
 }
 
 #if NOCTURNE_GLES
@@ -57,8 +51,10 @@ void APIENTRY es_PolygonMode(GLenum, GLenum) {}
 
 }  // namespace
 
-#define NOCTURNE_GL_LOAD(field) load_one(&gl.field, "gl" #field, &missing)
-#define NOCTURNE_GL_LOAD_OPT(field) load_optional(&gl.field, "gl" #field)
+#define NOCTURNE_GL_LOAD(field) \
+    gl.field = reinterpret_cast<decltype(gl.field)>(resolve("gl" #field, &missing))
+#define NOCTURNE_GL_LOAD_OPT(field) \
+    gl.field = reinterpret_cast<decltype(gl.field)>(SDL_GL_GetProcAddress("gl" #field))
 
 extern "C" int nocturne_gl_load_api(void) {
     if (g_loaded) return 1;
@@ -88,9 +84,9 @@ extern "C" int nocturne_gl_load_api(void) {
     NOCTURNE_GL_LOAD(PolygonOffset);
 
 #if NOCTURNE_GLES
-    load_one(&s_ClearDepthf, "glClearDepthf", &missing);
-    load_one(&s_DepthRangef, "glDepthRangef", &missing);
-    load_one(&s_DrawBuffers, "glDrawBuffers", &missing);
+    s_ClearDepthf = reinterpret_cast<decltype(s_ClearDepthf)>(resolve("glClearDepthf", &missing));
+    s_DepthRangef = reinterpret_cast<decltype(s_DepthRangef)>(resolve("glDepthRangef", &missing));
+    s_DrawBuffers = reinterpret_cast<decltype(s_DrawBuffers)>(resolve("glDrawBuffers", &missing));
     gl.ClearDepth  = es_ClearDepth;
     gl.DepthRange  = es_DepthRange;
     gl.DrawBuffer  = es_DrawBuffer;

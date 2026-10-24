@@ -6,6 +6,8 @@
 
 #include "renderer/trigl_texture.h"
 
+#include <cstddef>
+
 namespace {
 
 const int kPaletteEntries = 256;
@@ -14,7 +16,7 @@ const int kPaletteEntries = 256;
 
 void nocturne_trigl_pack_palette(const unsigned char *palette, unsigned *out) {
     for (int i = 0; i < kPaletteEntries; ++i) {
-        const unsigned char *entry = palette + i * 3;
+        const unsigned char *entry = palette + (ptrdiff_t)i * 3;
         out[i] = ((unsigned)entry[0] << 16) |
                  ((unsigned)entry[1] << 8) |
                  (unsigned)entry[2];

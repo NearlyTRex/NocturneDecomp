@@ -23,8 +23,10 @@ GLuint g_program  = 0;
 GLuint g_vbo      = 0;
 GLuint g_vao      = 0;
 GLint  g_loc_tex  = -1;
-GLint  g_attr_pos = -1;
 GLint  g_attr_uv  = -1;
+
+// Pinned by nocturne_gl_build_program.
+const GLuint kAttrPos = 0;
 
 // #version 150 core: the earliest version with `in`/`out` and a declared
 // fragment output, which is what a core profile accepts. `#version 300 es`
@@ -80,16 +82,21 @@ bool have_entry_points() {
            gl.DeleteShader != nullptr && gl.CreateProgram != nullptr &&
            gl.AttachShader != nullptr && gl.LinkProgram != nullptr &&
            gl.GetProgramiv != nullptr && gl.UseProgram != nullptr &&
+           gl.DeleteProgram != nullptr &&
            gl.GetUniformLocation != nullptr && gl.Uniform1i != nullptr &&
            gl.GetIntegerv != nullptr &&
            gl.GenBuffers != nullptr && gl.BindBuffer != nullptr &&
-           gl.BufferData != nullptr && gl.GetAttribLocation != nullptr &&
+           gl.BufferData != nullptr && gl.DeleteBuffers != nullptr &&
+           gl.GetAttribLocation != nullptr &&
            gl.BindAttribLocation != nullptr &&
            gl.EnableVertexAttribArray != nullptr &&
            gl.VertexAttribPointer != nullptr && gl.DrawArrays != nullptr &&
-           gl.GenVertexArrays != nullptr && gl.BindVertexArray != nullptr;
+           gl.GenVertexArrays != nullptr && gl.BindVertexArray != nullptr &&
+           gl.DeleteVertexArrays != nullptr;
 }
 
+// Both shaders read what they declare, so the linker keeps u_tex and a_uv and
+// neither location is ever -1.
 bool build_program() {
     GLuint program = nocturne_gl_build_program(kVertexSource, kFragmentSource, "gl_blit");
     if (program == 0) {
@@ -97,7 +104,6 @@ bool build_program() {
     }
 
     g_loc_tex  = gl.GetUniformLocation(program, "u_tex");
-    g_attr_pos = 0;                           // pinned by nocturne_gl_build_program
     g_attr_uv  = gl.GetAttribLocation(program, "a_uv");
 
     gl.GenBuffers(1, &g_vbo);
@@ -105,7 +111,12 @@ bool build_program() {
     if (g_vbo == 0 || g_vao == 0) {
         DLOG("render","gl_blit: buffer=%u array=%u — quad unavailable",
                   (unsigned)g_vbo, (unsigned)g_vao);
-        if (gl.DeleteProgram != nullptr) gl.DeleteProgram(program);
+        // Whichever was made goes too; GL ignores the name 0.
+        gl.DeleteProgram(program);
+        gl.DeleteBuffers(1, &g_vbo);
+        gl.DeleteVertexArrays(1, &g_vao);
+        g_vbo = 0;
+        g_vao = 0;
         return false;
     }
 
@@ -122,21 +133,19 @@ bool build_program() {
     gl.BufferData(GL_ARRAY_BUFFER, (GLsizeiptr)sizeof(kQuad), kQuad, GL_STATIC_DRAW);
 
     const GLsizei stride = (GLsizei)(4 * sizeof(GLfloat));
-    gl.EnableVertexAttribArray((GLuint)g_attr_pos);
-    gl.VertexAttribPointer((GLuint)g_attr_pos, 2, GL_FLOAT, GL_FALSE, stride,
+    gl.EnableVertexAttribArray(kAttrPos);
+    gl.VertexAttribPointer(kAttrPos, 2, GL_FLOAT, GL_FALSE, stride,
                            (const void *)(intptr_t)0);
-    if (g_attr_uv >= 0) {
-        gl.EnableVertexAttribArray((GLuint)g_attr_uv);
-        gl.VertexAttribPointer((GLuint)g_attr_uv, 2, GL_FLOAT, GL_FALSE, stride,
-                               (const void *)(intptr_t)(2 * sizeof(GLfloat)));
-    }
+    gl.EnableVertexAttribArray((GLuint)g_attr_uv);
+    gl.VertexAttribPointer((GLuint)g_attr_uv, 2, GL_FLOAT, GL_FALSE, stride,
+                           (const void *)(intptr_t)(2 * sizeof(GLfloat)));
 
     gl.BindBuffer(GL_ARRAY_BUFFER, (GLuint)prev_buffer);
     gl.BindVertexArray((GLuint)prev_array);
 
     g_program = program;
-    DLOG("render","gl_blit: program linked (id=%u) attrs pos=%d uv=%d",
-              (unsigned)program, (int)g_attr_pos, (int)g_attr_uv);
+    DLOG("render","gl_blit: program linked (id=%u) attrs pos=%u uv=%d",
+              (unsigned)program, kAttrPos, (int)g_attr_uv);
     return true;
 }
 
@@ -165,7 +174,7 @@ int blit_quad(unsigned int texture, int first) {
     // error to show for it. The unit is 0, which is the one the caller bound the
     // texture on — nothing here calls glActiveTexture, and the fallback quad
     // assumes the same unit.
-    if (g_loc_tex >= 0) gl.Uniform1i(g_loc_tex, 0);
+    gl.Uniform1i(g_loc_tex, 0);
     gl.BindTexture(GL_TEXTURE_2D, (GLuint)texture);
 
     gl.BindVertexArray(g_vao);
@@ -186,14 +195,11 @@ extern "C" int nocturne_gl_blit_quad_flipped(unsigned int texture) {
     return blit_quad(texture, kQuadBottomUp);
 }
 
+// Only a built quad has anything to delete; a failed build leaves nothing.
 extern "C" void nocturne_gl_blit_shutdown(void) {
-    if (g_program != 0 && gl.DeleteProgram != nullptr) {
+    if (g_program != 0) {
         gl.DeleteProgram(g_program);
-    }
-    if (g_vbo != 0 && gl.DeleteBuffers != nullptr) {
         gl.DeleteBuffers(1, &g_vbo);
-    }
-    if (g_vao != 0 && gl.DeleteVertexArrays != nullptr) {
         gl.DeleteVertexArrays(1, &g_vao);
     }
     g_program = 0;

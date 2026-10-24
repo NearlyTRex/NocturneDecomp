@@ -14,6 +14,11 @@
 #include <cstring>
 #include <string>
 
+// The Microsoft runtime spells it with an underscore and a different name.
+#if defined(_MSC_VER)
+#define strcasecmp _stricmp
+#endif
+
 NOCTURNE_TEST(letters_fold_and_nothing_else_does) {
     CHECK_EQ(nocturne_ascii_lower('A'), 'a');
     CHECK_EQ(nocturne_ascii_lower('Z'), 'z');
@@ -84,6 +89,10 @@ NOCTURNE_TEST(nothing_is_handled_rather_than_crashed) {
     CHECK(nocturne_ascii_icompare(nullptr, "a") < 0);
     CHECK(nocturne_ascii_icompare("a", nullptr) > 0);
     CHECK(!nocturne_ascii_iequals(nullptr, "a"));
+    // And the bounded form the same way.
+    CHECK_EQ(nocturne_ascii_icompare_n(nullptr, nullptr, 3), 0);
+    CHECK(nocturne_ascii_icompare_n(nullptr, "a", 1) < 0);
+    CHECK(nocturne_ascii_icompare_n("a", nullptr, 1) > 0);
 }
 
 NOCTURNE_TEST_MAIN()

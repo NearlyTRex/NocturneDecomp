@@ -1,6 +1,5 @@
-import os
+from ghidra_annotations.util.log import log_error
 from ghidra.program.model.address import AddressSet
-from ghidra.program.model.data import Pointer
 from ghidra.program.disassemble import Disassembler
 from ghidra.util.task import TaskMonitor
 
@@ -35,46 +34,22 @@ def parse_address(currentProgram, addr_str):
     if not addr_str:
         return None
 
-    # Try different address formats
+    # Try different address formats, in order: as-is, with a 0x prefix, as a hex
+    # offset in the default space, and qualified with the default space's name
     addr_factory = currentProgram.getAddressFactory()
     default_space = addr_factory.getDefaultAddressSpace()
-
-    # First try the address as-is
-    try:
-        addr = addr_factory.getAddress(addr_str)
+    attempts = [lambda: addr_factory.getAddress(addr_str)]
+    if not addr_str.lower().startswith("0x"):
+        attempts.append(lambda: addr_factory.getAddress("0x" + addr_str))
+    attempts.append(lambda: default_space.getAddress(int(addr_str, 16)))
+    attempts.append(lambda: addr_factory.getAddress(default_space.getName() + ":" + addr_str))
+    for attempt in attempts:
+        try:
+            addr = attempt()
+        except Exception:
+            continue
         if addr:
             return addr
-    except:
-        pass
-
-    # Try with 0x prefix if it doesn't have one
-    try:
-        if not addr_str.startswith("0x") and not addr_str.startswith("0X"):
-            addr = addr_factory.getAddress("0x" + addr_str)
-            if addr:
-                return addr
-    except:
-        pass
-
-    # Try parsing as hex and creating address in default space
-    try:
-        if addr_str.startswith("0x") or addr_str.startswith("0X"):
-            hex_value = int(addr_str, 16)
-        else:
-            hex_value = int(addr_str, 16)
-        addr = default_space.getAddress(hex_value)
-        if addr:
-            return addr
-    except:
-        pass
-
-    # Try with explicit default space
-    try:
-        addr = addr_factory.getAddress(default_space.getName() + ":" + addr_str)
-        if addr:
-            return addr
-    except:
-        pass
     return None
 
 def get_addr_obj(currentProgram, addr_str, validate_memory = True):
@@ -101,7 +76,6 @@ def is_addr_disassembled(currentProgram, addr_obj):
         return instruction is not None
     except Exception as e:
         log_error("Unable to determine if address at %s is disassembled: %s" % (addr_obj, e))
-        return False
 
 def disassemble_at_addr(currentProgram, start_addr_obj, end_addr_obj, follow_flow = True):
 
