@@ -69,7 +69,7 @@ macros and a runner. This is those two things.
 |---|---|
 | `shims_core` | ASCII case handling, file search, host memory, FNV-1a, the clock, the debug log |
 | `shims_game` | Walk turning |
-| `shims_watcom` | Watcom CRT I/O and path resolution |
+| `shims_watcom` | Watcom CRT I/O, path resolution and the C++ runtime's array helpers |
 | `shims_win32` | `kernel32` entry points and the built-in DLL registry |
 | `shims_renderer` | `trigl` batching, state, texture, vertex handling |
 | `shims_renderer_gl` | `trigl` GL call sequences and golden traces (`test_*_sequence.cpp`) |
