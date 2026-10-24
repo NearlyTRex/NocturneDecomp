@@ -6,7 +6,8 @@
 // polling WHDR_DONE to know when it may refill one. So what matters is that
 // every buffer written is eventually marked done — played, reset or closed —
 // and none is marked before then. The joystick is SDL's virtual one; audio is
-// SDL's dummy driver, which consumes what it is given at the real rate.
+// SDL's dummy driver, which consumes what it is given at the real rate. A pad
+// plugged into the machine is hidden from it.
 //
 // The first case runs before SDL's audio is up, with a driver that does not
 // exist, so the cases are in the order they have to be.
@@ -72,6 +73,17 @@ HWAVEOUT open_out(int rate, int channels, int bits) {
     HWAVEOUT out = nullptr;
     CHECK_EQ(g_waveOutOpenFunc(&out, 0, &f, 0, 0, 0), kOk);
     return out;
+}
+
+// SDL's joysticks with only the virtual ones in them. Every host driver but
+// Windows' RawInput passes over a device whose ID is not on the allowed list,
+// and none is FFFF/FFFF (an XInput pad whose ID cannot be read is 0/0);
+// RawInput is turned off. The virtual driver never asks. SDL reads both as the
+// subsystem starts.
+void start_joysticks() {
+    SDL_SetHint(SDL_HINT_GAMECONTROLLER_IGNORE_DEVICES_EXCEPT, "0xFFFF/0xFFFF");
+    SDL_SetHint(SDL_HINT_JOYSTICK_RAWINPUT, "0");
+    SDL_InitSubSystem(SDL_INIT_JOYSTICK);
 }
 
 }  // namespace
@@ -221,7 +233,7 @@ NOCTURNE_TEST(the_clock_counts_milliseconds_and_takes_any_period) {
 
 NOCTURNE_TEST(with_no_joystick_there_are_no_capabilities_and_no_position) {
     shims_init_mmsystem();
-    SDL_InitSubSystem(SDL_INIT_JOYSTICK);
+    start_joysticks();
     tagJOYCAPSA caps;
     CHECK_EQ(g_joyGetDevCapsAFunc(0, &caps, sizeof(caps)), 1u);
     CHECK_EQ(g_joyGetDevCapsAFunc(0, nullptr, 0), 1u);
@@ -234,7 +246,7 @@ NOCTURNE_TEST(with_no_joystick_there_are_no_capabilities_and_no_position) {
 // position in Win32's 0..65535 with a bit per button held.
 NOCTURNE_TEST(a_joystick_reports_its_controls_and_where_they_are) {
     shims_init_mmsystem();
-    SDL_InitSubSystem(SDL_INIT_JOYSTICK);
+    start_joysticks();
     const int index = SDL_JoystickAttachVirtual(SDL_JOYSTICK_TYPE_GAMECONTROLLER, 3, 4, 1);
     if (index < 0) fprintf(stderr, "attach: %s\n", SDL_GetError());
     CHECK(index >= 0);
@@ -277,7 +289,7 @@ NOCTURNE_TEST(a_joystick_reports_its_controls_and_where_they_are) {
 // The button word has 32 bits; a stick with more reports the first 32.
 NOCTURNE_TEST(buttons_past_the_32nd_have_no_bit) {
     shims_init_mmsystem();
-    SDL_InitSubSystem(SDL_INIT_JOYSTICK);
+    start_joysticks();
     const int index = SDL_JoystickAttachVirtual(SDL_JOYSTICK_TYPE_GAMECONTROLLER, 2, 40, 0);
     SDL_Joystick *stick = SDL_JoystickOpen(index);
     SDL_JoystickSetVirtualButton(stick, 31, 1);
