@@ -5,4 +5,6 @@ nocturne_test_suite(shims_core
         shims/core/file_search.cpp
         # Where each root's copy of the directory is.
         shims/watcom/path.cpp
+        # Asks the host, and fills MEMORYSTATUS from any figures it is given.
+        shims/core/host_memory.cpp
 )

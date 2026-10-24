@@ -60,6 +60,7 @@ int main(int argc, char** argv)
     nocturne_install_crash_handler(nocturne_version_line());
     nocturne_init_path_roots(argc, argv);
     shims_init_all();
+    shims_set_command_line(argc, argv);
     runStaticInitializers();
 
     HINSTANCE hInstance     = (*g_GetModuleHandleAFunc)((LPCSTR)0);

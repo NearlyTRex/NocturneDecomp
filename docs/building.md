@@ -96,11 +96,15 @@ The Windows lane is **opt-in and needs nothing from a normal clone.** No other p
 a cross compiler, so if you are not building for Windows you can skip this section entirely.
 
 ```sh
-sudo apt install g++-mingw-w64-x86-64
+sudo apt install g++-mingw-w64-x86-64 lld
 ```
 
 It is the `g++` package and not `mingw-w64-x86-64-dev` because the shims are C++17 — the header
 -only package has no target `libstdc++` for `std::thread` and `std::filesystem` to come from.
+The lane links with `lld` rather than the mingw binutils `ld`, which writes a base relocation for
+every thread-local access: on Windows, where the exe never loads at its preferred base, the first
+one faults. [`cmake/toolchains/windows-x86_64.cmake`](../cmake/toolchains/windows-x86_64.cmake)
+has the details.
 These are architecture-independent packages with no `:i386` component, so unlike the multilib
 warning below they do not disturb an amd64 desktop.
 

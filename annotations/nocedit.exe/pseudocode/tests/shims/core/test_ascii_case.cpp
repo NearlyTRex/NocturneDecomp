@@ -14,6 +14,11 @@
 #include <cstring>
 #include <string>
 
+// The Microsoft runtime spells it with an underscore and a different name.
+#if defined(_MSC_VER)
+#define strcasecmp _stricmp
+#endif
+
 NOCTURNE_TEST(letters_fold_and_nothing_else_does) {
     CHECK_EQ(nocturne_ascii_lower('A'), 'a');
     CHECK_EQ(nocturne_ascii_lower('Z'), 'z');

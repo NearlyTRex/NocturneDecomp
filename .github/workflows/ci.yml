@@ -114,10 +114,11 @@ jobs:
         ci-phase Configure cmake --preset ${{ matrix.preset }}
         ci-phase Build cmake --build --preset ${{ matrix.preset }}
 
-  # Compiled and linked only: the test binaries would need the same staging as
-  # the exe. The Visual Studio environment the toolchain file checks for brings
-  # CMake and Ninja, and the runner's LLVM supplies clang-cl. No ccache: the
-  # workflow sets it up on Linux and macOS runners only.
+  # The clang-cl lane, against the Microsoft runtime linked statically, so its
+  # tests need nothing staged beside them; windows-tests-msvc runs them. The
+  # Visual Studio environment the toolchain file checks for brings CMake and
+  # Ninja, and the runner's LLVM supplies clang-cl. No ccache: the workflow sets
+  # it up on Linux and macOS runners only.
   build-windows:
     name: Build (${{ matrix.preset }})
     uses: NearlyTRex/Workflows/.github/workflows/cpp-build.yml@c84a2b6b942e42cf3f1c88119762f20cac536e3c # v0.2.22
@@ -147,6 +148,9 @@ jobs:
         export PATH="/c/msys64/usr/bin:$PATH"
         cmake --preset ${{ matrix.preset }}
         cmake --build --preset ${{ matrix.preset }}
+        cmake --build build/${{ matrix.preset }} --target nocturne_test_bundle
+      artifact: windows-tests-${{ matrix.preset }}
+      artifact-path: build/${{ matrix.preset }}/test-bundle
 
   # The unit tests as the release builds the Windows exe: cross-compiled on
   # Linux against mingw-w64, bundled with the runtime DLLs they need, then run
@@ -158,7 +162,7 @@ jobs:
     permissions:
       contents: read
     with:
-      apt-packages: cmake clang ninja-build pkg-config python3 g++-mingw-w64-x86-64
+      apt-packages: cmake clang lld ninja-build pkg-config python3 g++-mingw-w64-x86-64
       cache-paths: |
         build/exe-windows-x86_64/_deps
         build/exe-windows-x86_64/ffmpeg
@@ -172,19 +176,30 @@ jobs:
       build-command: |
         ci-phase Configure cmake --preset exe-windows-x86_64
         ci-phase "Build tests" cmake --build build/exe-windows-x86_64 --target nocturne_test_bundle
-      artifact: windows-tests
+      artifact: windows-tests-exe-windows-x86_64
       artifact-path: build/exe-windows-x86_64/test-bundle
 
-  # Each test under full page heap, so a heap overrun or a use after free faults
-  # where it happens, and a failure runs again under cdb for its stack.
+  # Each Windows build's tests on Windows, under full page heap, so a heap
+  # overrun or a use after free faults where it happens, and a failure runs
+  # again under cdb for its stack. One job per build, so the mingw tests do not
+  # wait for the slower MSVC build.
   windows-tests:
-    name: Windows tests
+    name: Windows tests (exe-windows-x86_64)
     needs: build-windows-tests
     uses: NearlyTRex/Workflows/.github/workflows/windows-test.yml@c84a2b6b942e42cf3f1c88119762f20cac536e3c # v0.2.22
     permissions:
       contents: read
     with:
-      artifact: windows-tests
+      artifact: windows-tests-exe-windows-x86_64
+
+  windows-tests-msvc:
+    name: Windows tests (exe-windows-msvc)
+    needs: build-windows
+    uses: NearlyTRex/Workflows/.github/workflows/windows-test.yml@c84a2b6b942e42cf3f1c88119762f20cac536e3c # v0.2.22
+    permissions:
+      contents: read
+    with:
+      artifact: windows-tests-exe-windows-msvc
 
   # The source recreation is a standalone CMake project that fetches and builds
   # its third-party libraries from source. Every header compiles on its own, the

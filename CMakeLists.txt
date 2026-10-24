@@ -32,7 +32,10 @@ option(NOCTURNE_ASAN
 option(NOCTURNE_COVERAGE "Instrument the exe and the tests for coverage" OFF)
 set(NOCTURNE_COVERAGE_FLAGS "")
 if(NOCTURNE_COVERAGE)
-    set(NOCTURNE_COVERAGE_FLAGS -fprofile-instr-generate -fcoverage-mapping)
+    # NOCTURNE_COVERAGE_BUILD lets code that leaves through _exit write the
+    # profile first, as the normal exit path would.
+    set(NOCTURNE_COVERAGE_FLAGS -fprofile-instr-generate -fcoverage-mapping
+        -DNOCTURNE_COVERAGE_BUILD=1)
 endif()
 # Who owns the window's pixels. ON (default) creates a GL context and presents
 # the 2D back buffer as a textured quad, which is what lets a decompiled 3D
@@ -685,9 +688,9 @@ if(NOCTURNE_COVERAGE)
 endif()
 
 # The Windows test binaries in one folder with what they need on a machine that
-# has none of the toolchain: the gcc runtime DLLs and the renderer's golden
-# traces, which the tests find in their working directory when the source tree is
-# not there. CI builds it on Linux and runs it on a Windows runner with
+# has none of the toolchain: the gcc runtime DLLs on the mingw lanes (the clang-cl
+# lane links its runtime statically) and the renderer's golden traces, which the
+# tests find in their working directory when the source tree is not there. CI builds it on Linux and runs it on a Windows runner with
 # Workflows' windows-test.
 if(COMMAND nocturne_windows_runtime_dlls)
     nocturne_windows_runtime_dlls(_bundle_dlls)

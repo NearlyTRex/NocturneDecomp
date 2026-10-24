@@ -67,7 +67,7 @@ macros and a runner. This is those two things.
 
 | Suite | Subject |
 |---|---|
-| `shims_core` | ASCII case handling, file search |
+| `shims_core` | ASCII case handling, file search, host memory |
 | `shims_game` | Walk turning |
 | `shims_watcom` | Watcom CRT I/O and path resolution |
 | `shims_win32` | `kernel32` entry points and the built-in DLL registry |
