@@ -34,8 +34,9 @@ SDL_Window *s_window = nullptr;
 int s_pref_width  = 0;
 int s_pref_height = 0;
 
+// A negative mode is a large unsigned one, so one comparison bounds both ends.
 int clamp_mode(int mode) {
-    if (mode < 0 || mode >= NOCTURNE_WINDOW_MODE_COUNT) {
+    if ((unsigned)mode >= (unsigned)NOCTURNE_WINDOW_MODE_COUNT) {
         return NOCTURNE_WINDOW_MODE_WINDOWED;
     }
     return mode;
@@ -51,7 +52,7 @@ int clamp_mode(int mode) {
 // SDL_SetWindowSize, and a resize event, per frame.
 void apply_pref_size() {
     if (s_window == nullptr) return;
-    if (s_pref_width <= 0 || s_pref_height <= 0) return;
+    if (s_pref_width <= 0) return;   // never set; it is set only whole
 
     int cur_w = 0, cur_h = 0;
     SDL_GetWindowSize(s_window, &cur_w, &cur_h);
@@ -85,25 +86,18 @@ extern "C" int nocturne_window_mode_get(void) {
     return s_mode;
 }
 
-extern "C" void nocturne_window_mode_set(int mode) {
-    mode = clamp_mode(mode);
-    s_mode = mode;
-    s_loaded = true;
-
-    nocturne_ini_set_int(kIniSection, kIniKey, mode);
-
-    DLOG("render", "set windowMode=%d (%s)", mode, nocturne_window_mode_name(mode));
-    nocturne_window_mode_apply(s_window);
-}
-
 extern "C" int nocturne_window_mode_cycle(int step) {
-    int next = nocturne_ini_cycle(nocturne_window_mode_get(), step, NOCTURNE_WINDOW_MODE_COUNT);
-    nocturne_window_mode_set(next);
+    const int next =
+        nocturne_ini_cycle(nocturne_window_mode_get(), step, NOCTURNE_WINDOW_MODE_COUNT);
+    s_mode = next;
+    nocturne_ini_set_int(kIniSection, kIniKey, next);
+    DLOG("render", "set windowMode=%d (%s)", next, nocturne_window_mode_name(next));
+    nocturne_window_mode_apply(s_window);
     return next;
 }
 
 extern "C" const char *nocturne_window_mode_name(int mode) {
-    switch (clamp_mode(mode)) {
+    switch (mode) {
     case NOCTURNE_WINDOW_MODE_FULLSCREEN: return "Fullscreen";
     case NOCTURNE_WINDOW_MODE_BORDERLESS: return "Borderless";
     default:                              return "Windowed";
@@ -166,10 +160,11 @@ extern "C" void nocturne_window_mode_apply(SDL_Window *window) {
             mode, win_w, win_h, draw_w, draw_h, display_mode.w, display_mode.h);
 }
 
+// The size is set only whole, so a width says there is one.
 extern "C" int nocturne_window_preferred_size(int *width, int *height) {
-    if (s_pref_width <= 0 || s_pref_height <= 0) return 0;
-    if (width  != nullptr) *width  = s_pref_width;
-    if (height != nullptr) *height = s_pref_height;
+    if (s_pref_width <= 0) return 0;
+    *width  = s_pref_width;
+    *height = s_pref_height;
     return 1;
 }
 

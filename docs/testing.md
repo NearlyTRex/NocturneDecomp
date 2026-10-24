@@ -73,7 +73,9 @@ macros and a runner. This is those two things.
 | `shims_win32` | `kernel32`, `advapi32`, Winsock on loopback, window messages and the built-in DLL registry |
 | `shims_win32_sdl` | `user32`, `wingdi`, `mmsystem`, MCI movies and `shim_init`, on SDL's dummy video and audio drivers; the movies are written by the tests with FFmpeg, and what no movie makes fail, `ffmpeg_faults.h` does |
 | `shims_directx` | DirectDraw's display mode, flip chain, Lock and Flip, through GL and through an SDL renderer, on SDL's dummy video driver; DirectSound's mixing, read back from SDL's disk audio driver |
-| `shims_gl` | Shader program building and the pixel-format helpers, against the recorder |
+| `shims_gl` | Shader program building, the present quad and the pixel-format helpers, against the recorder; the window mode and the resolution list, on SDL's dummy video driver, with the shim settings in `nocturne.ini` through a stand-in for the engine's CIni |
+| `shims_gl_api` | Loading the GL entry points, from a stand-in for `SDL_GL_GetProcAddress` |
+| `shims_gl_present` | The presenter: context, scene target, letterboxed presents and the mouse mapping, its GL calls to the recorder and SDL's GL calls to a stand-in |
 | `shims_renderer` | `trigl` batching, state, texture, vertex handling, and the built-in DLL registry |
 | `shims_renderer_gl` | `trigl` GL call sequences, the device and golden traces (`test_*_sequence.cpp`) |
 

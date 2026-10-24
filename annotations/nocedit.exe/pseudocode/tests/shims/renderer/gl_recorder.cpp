@@ -72,6 +72,20 @@ void APIENTRY r_GetIntegerv(GLenum name, GLint *out) {
         *out = (GLint)g_state.bound_texture[g_state.active_unit];
     } else if (name == GL_CURRENT_PROGRAM) {
         *out = (GLint)g_state.bound_program;
+    } else if (name == GL_VERTEX_ARRAY_BINDING) {
+        *out = (GLint)g_state.bound_vao;
+    } else if (name == GL_DEPTH_TEST) {
+        *out = g_state.depth_test;
+    } else if (name == GL_DEPTH_WRITEMASK) {
+        *out = g_state.depth_write;
+    } else if (name == GL_BLEND) {
+        *out = g_state.blend;
+    } else if (name == GL_CULL_FACE) {
+        *out = g_state.cull;
+    } else if (name == GL_SCISSOR_TEST) {
+        *out = g_state.scissor;
+    } else if (name == GL_VIEWPORT) {
+        for (int i = 0; i < 4; ++i) out[i] = g_state.viewport[i];
     } else {
         *out = 0;
     }
@@ -86,6 +100,11 @@ void APIENTRY r_DrawElements(GLenum, GLsizei count, GLenum, const void *) {
     call.depth_test = g_state.depth_test;
     call.depth_write = g_state.depth_write;
     call.blend = g_state.blend;
+}
+
+// The texture on unit 0, the first vertex and how many: what a quad drew.
+void APIENTRY r_DrawArrays(GLenum, GLint first, GLsizei count) {
+    note("DrawArrays", g_state.bound_texture[0], (unsigned)first, (unsigned)count);
 }
 
 GLuint APIENTRY r_CreateShader(GLenum) {
@@ -225,8 +244,13 @@ void APIENTRY r_PolygonOffset(GLfloat factor, GLfloat units) {
 }
 void APIENTRY r_CullFace(GLenum f) { note("CullFace", (unsigned)f); }
 void APIENTRY r_FrontFace(GLenum f) { note("FrontFace", (unsigned)f); }
-void APIENTRY r_Viewport(GLint, GLint, GLsizei w, GLsizei h) {
-    note("Viewport", (unsigned)w, (unsigned)h);
+// Width and height first, then where.
+void APIENTRY r_Viewport(GLint x, GLint y, GLsizei w, GLsizei h) {
+    g_state.viewport[0] = x;
+    g_state.viewport[1] = y;
+    g_state.viewport[2] = w;
+    g_state.viewport[3] = h;
+    note("Viewport", (unsigned)w, (unsigned)h, (unsigned)x, (unsigned)y);
 }
 void APIENTRY r_Scissor(GLint x, GLint y, GLsizei w, GLsizei h) {
     note("Scissor", (unsigned)x, (unsigned)y, (unsigned)w, (unsigned)h);
@@ -285,6 +309,9 @@ void APIENTRY r_RenderbufferStorage(GLenum, GLenum, GLsizei w, GLsizei h) {
 void APIENTRY r_FramebufferRenderbuffer(GLenum, GLenum, GLenum, GLuint rb) {
     note("FramebufferRenderbuffer", rb);
 }
+void APIENTRY r_FramebufferTexture2D(GLenum, GLenum, GLenum, GLuint texture, GLint) {
+    note("FramebufferTexture2D", texture);
+}
 void APIENTRY r_BlitFramebuffer(GLint, GLint, GLint, GLint, GLint, GLint, GLint,
                                 GLint, GLbitfield mask, GLenum) {
     note("BlitFramebuffer", (unsigned)mask);
@@ -330,6 +357,7 @@ void install() {
     gl.GetError = r_GetError;
     gl.GetString = r_GetString;
     gl.DrawElements = r_DrawElements;
+    gl.DrawArrays = r_DrawArrays;
 
     gl.ReadBuffer = r_ReadBuffer;
     gl.DrawBuffer = r_DrawBuffer;
@@ -347,6 +375,7 @@ void install() {
     gl.BindRenderbuffer = r_BindRenderbuffer;
     gl.RenderbufferStorage = r_RenderbufferStorage;
     gl.FramebufferRenderbuffer = r_FramebufferRenderbuffer;
+    gl.FramebufferTexture2D = r_FramebufferTexture2D;
     gl.BlitFramebuffer = r_BlitFramebuffer;
 
     gl.CreateShader = r_CreateShader;
@@ -398,10 +427,6 @@ void install() {
 }
 
 }  // namespace gl_recorder
-
-// The renderer draws into the scene framebuffer when there is one. There is none
-// unless a test asks for one, and 0 is the answer that means exactly that.
-extern "C" unsigned nocturne_gl_scene_fbo(void) { return gl_recorder::state().scene_fbo; }
 
 // The table the renderer reaches GL through. Owned by the recorder in a test
 // build, so gl_api.cpp — which would pull in SDL — stays out of the link.

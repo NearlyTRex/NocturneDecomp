@@ -11,6 +11,8 @@
 #include "globals/globals_610000.h"
 #include "win32/shim_init.h"
 
+// The test's own main(), which SDL would otherwise rename on Windows.
+#define SDL_MAIN_HANDLED
 #include <SDL.h>
 
 #include <string>

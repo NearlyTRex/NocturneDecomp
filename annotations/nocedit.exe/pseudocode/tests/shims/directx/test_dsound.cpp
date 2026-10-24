@@ -85,7 +85,13 @@ struct Sound {
         SDL_QuitSubSystem(SDL_INIT_AUDIO);
         set_env("SDL_AUDIODRIVER", "disk");
         set_env("SDL_DISKAUDIOFILE", file.string().c_str());
+        // As fast as it will go, a millisecond a buffer. Not on Windows: SDL's
+        // getenv there answers into one shared buffer, and the disk driver
+        // reads this after the file name, so the name becomes "1". There it
+        // runs at the speed of sound, and the cases wait for a voice to end.
+#if !defined(_WIN32)
         set_env("SDL_DISKAUDIODELAY", "1");
+#endif
         shims_init_dsound();
         CHECK_EQ((*g_DirectSoundCreateFunc)(nullptr, &ds, nullptr), kOk);
     }
@@ -161,6 +167,16 @@ void fill(IDirectSoundBuffer *buf, DWORD bytes, int bits, int channels, int valu
     CHECK_EQ((*buf->vtable->Unlock)(buf, p1, n1, p2, n2), kOk);
 }
 
+// Until `buf` has played out, which the mixer marks as it reaches the end, or
+// three seconds.
+void wait_until_played(IDirectSoundBuffer *buf) {
+    DWORD status = kStatusPlaying;
+    for (int i = 0; i < 300 && (status & kStatusPlaying) != 0; ++i) {
+        SDL_Delay(10);
+        (*buf->vtable->GetStatus)(buf, &status);
+    }
+}
+
 // How many output frames carried the voice, and the first of them.
 struct Heard {
     int frames = 0;
@@ -191,7 +207,7 @@ Heard play_once(Setup setup, int frames = 4410, int rate = 44100) {
     fill(buf, bytes, 16, 1, 1000, 1000);
     setup(sound, buf);
     CHECK_EQ((*buf->vtable->Play)(buf, 0, 0, 0), kOk);
-    SDL_Delay(150);
+    wait_until_played(buf);
     release(buf);
     return what_was_heard(sound.heard());
 }
@@ -215,7 +231,7 @@ NOCTURNE_TEST(a_buffer_plays_once_through_and_stops) {
     CHECK_EQ((*buf->vtable->Play)(buf, 0, 0, 0), kOk);
     CHECK_EQ((*buf->vtable->GetStatus)(buf, &status), kOk);
     CHECK_EQ(status, kStatusPlaying);
-    SDL_Delay(150);
+    wait_until_played(buf);
     CHECK_EQ((*buf->vtable->GetStatus)(buf, &status), kOk);
     CHECK_EQ(status, 0u);
     DWORD play = 1, write = 1;
@@ -233,7 +249,7 @@ NOCTURNE_TEST(each_depth_and_channel_count_comes_out_as_itself) {
     IDirectSoundBuffer *buf = sound.buffer(441 * 2, pcm(2, 8, 44100));
     fill(buf, 441 * 2, 8, 2, 64, -64);
     (*buf->vtable->Play)(buf, 0, 0, 0);
-    SDL_Delay(100);
+    wait_until_played(buf);
     release(buf);
     Heard h = what_was_heard(sound.heard());
     CHECK_EQ(h.frames, 441);
@@ -244,7 +260,7 @@ NOCTURNE_TEST(each_depth_and_channel_count_comes_out_as_itself) {
     buf = stereo16.buffer(441 * 4, pcm(2, 16, 44100));
     fill(buf, 441 * 4, 16, 2, 1234, -4321);
     (*buf->vtable->Play)(buf, 0, 0, 0);
-    SDL_Delay(100);
+    wait_until_played(buf);
     release(buf);
     h = what_was_heard(stereo16.heard());
     CHECK_EQ(h.left, 1234);
@@ -254,7 +270,7 @@ NOCTURNE_TEST(each_depth_and_channel_count_comes_out_as_itself) {
     buf = mono8.buffer(441, pcm(1, 8, 44100));
     fill(buf, 441, 8, 1, -32, -32);
     (*buf->vtable->Play)(buf, 0, 0, 0);
-    SDL_Delay(100);
+    wait_until_played(buf);
     release(buf);
     h = what_was_heard(mono8.heard());
     CHECK_EQ(h.left, -(32 << 8));
@@ -297,7 +313,8 @@ NOCTURNE_TEST(voices_are_summed_and_clipped) {
     fill(louder, 882, 16, 2, 30000, -30000);
     (*loud->vtable->Play)(loud, 0, 0, 0);
     (*louder->vtable->Play)(louder, 0, 0, 0);
-    SDL_Delay(100);
+    wait_until_played(loud);
+    wait_until_played(louder);
     release(loud);
     release(louder);
     const Heard h = what_was_heard(sound.heard());
@@ -382,7 +399,7 @@ NOCTURNE_TEST(a_duplicate_shares_its_originals_samples) {
     fill(original, 4410 * 2, 16, 1, 1000, 1000);
     release(original);
     CHECK_EQ((*dup->vtable->Play)(dup, 0, 0, 0), kOk);
-    SDL_Delay(150);
+    wait_until_played(dup);
     release(dup);
     const Heard h = what_was_heard(sound.heard());
     CHECK_EQ(h.frames, 4410);
@@ -413,10 +430,16 @@ NOCTURNE_TEST(without_an_output_buffers_play_unheard_until_there_is_one) {
     spec.format = AUDIO_S16SYS;
     spec.channels = 2;
     spec.samples = 1024;
+    // Each to a file of its own: Windows will not open one file for writing
+    // twice, which would end this before SDL runs out of devices.
     std::vector<SDL_AudioDeviceID> taken;
-    const fs::path elsewhere = fs::path(sound.file).replace_extension(".taken.raw");
-    set_env("SDL_DISKAUDIOFILE", elsewhere.string().c_str());
-    while (SDL_AudioDeviceID id = SDL_OpenAudioDevice(nullptr, 0, &spec, nullptr, 0)) {
+    std::vector<fs::path> elsewhere;
+    for (;;) {
+        elsewhere.push_back(fs::path(sound.file).replace_extension(
+            ".taken" + std::to_string(elsewhere.size()) + ".raw"));
+        set_env("SDL_DISKAUDIOFILE", elsewhere.back().string().c_str());
+        SDL_AudioDeviceID id = SDL_OpenAudioDevice(nullptr, 0, &spec, nullptr, 0);
+        if (id == 0) break;
         taken.push_back(id);
     }
     set_env("SDL_DISKAUDIOFILE", sound.file.string().c_str());
@@ -426,11 +449,11 @@ NOCTURNE_TEST(without_an_output_buffers_play_unheard_until_there_is_one) {
     CHECK_EQ((*buf->vtable->Play)(buf, 0, 0, 0), kOk);
     for (SDL_AudioDeviceID id : taken) SDL_CloseAudioDevice(id);
     CHECK_EQ((*buf->vtable->Play)(buf, 0, 0, 0), kOk);
-    SDL_Delay(100);
+    wait_until_played(buf);
     release(buf);
     CHECK_EQ(what_was_heard(sound.heard()).frames, 441);
     std::error_code ec;
-    fs::remove(elsewhere, ec);
+    for (const fs::path &file : elsewhere) fs::remove(file, ec);
 }
 
 // -----------------------------------------------------------------------------
@@ -489,7 +512,7 @@ NOCTURNE_TEST(a_positioned_voice_falls_off_with_distance) {
                                                 &property_set),
                  kUnsupported);
         (*buf->vtable->Play)(buf, 0, 0, 0);
-        SDL_Delay(100);
+        wait_until_played(buf);
         release(d3d);
         release(buf);
         if (listener != nullptr) release(listener);
@@ -521,7 +544,7 @@ NOCTURNE_TEST(the_3d_view_and_listener_go_in_either_order) {
     CHECK_EQ(release(listener), 0u);
     fill(first, 441 * 2, 16, 1, 1000, 1000);
     (*first->vtable->Play)(first, 0, 0, 0);
-    SDL_Delay(100);
+    wait_until_played(first);
     CHECK_EQ(release(first), 0u);
     CHECK_EQ(release(second), 0u);      // the buffer first
     CHECK_EQ(release(second_3d), 0u);
