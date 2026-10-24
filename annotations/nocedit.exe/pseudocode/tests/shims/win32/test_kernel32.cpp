@@ -626,7 +626,7 @@ NOCTURNE_TEST(a_file_reads_back_byte_for_byte) {
 }
 
 // A file handle is a descriptor, a small number. Closing it, or handing it to a
-// call meant for another kind of handle, used to read it as an object's address.
+// call meant for another kind of handle, must never read it as an object's address.
 NOCTURNE_TEST(a_file_handle_is_never_read_as_an_object) {
     Tree tree;
     HANDLE handle = open_file("afile.txt", kGenericRead, kOpenExisting);

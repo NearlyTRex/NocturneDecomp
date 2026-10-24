@@ -138,12 +138,15 @@ jobs:
         cmake/ffmpeg.cmake
         cmake/platforms/windows.cmake
       cache-key: ${{ matrix.preset }}
-      # FFmpeg's configure runs under the runner's MSYS2, which needs make.
+      # FFmpeg's configure runs under the runner's MSYS2, which needs make. With
+      # MSYS2 first on PATH, ci-phase's launcher would start under MSYS2's bash
+      # and the Visual Studio environment would not reach cmake, so the phases
+      # here are plain commands.
       build-command: |
         /c/msys64/usr/bin/pacman -S --noconfirm --needed make diffutils
         export PATH="/c/msys64/usr/bin:$PATH"
-        ci-phase Configure cmake --preset ${{ matrix.preset }}
-        ci-phase Build cmake --build --preset ${{ matrix.preset }}
+        cmake --preset ${{ matrix.preset }}
+        cmake --build --preset ${{ matrix.preset }}
 
   # The unit tests as the release builds the Windows exe: cross-compiled on
   # Linux against mingw-w64, bundled with the runtime DLLs they need, then run
