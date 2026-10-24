@@ -16,8 +16,9 @@
 #include "gl/gl_present.h"
 #include "core/debug_log.h"
 
-#include <stdlib.h>
 #include <string.h>
+
+#include <vector>
 
 namespace {
 
@@ -41,14 +42,14 @@ struct Device {
 
     // The CPU mirror of the target, and one pointer per row for the engine to
     // address it by. The engine keeps the pointer array it is given, so it is
-    // owned here for the life of the mode.
-    unsigned char *image      = nullptr;
-    int            pitch      = 0;
-    void         **scanlines  = nullptr;
+    // owned here for the life of the mode. Empty while there is no mode.
+    std::vector<unsigned char> image;
+    int                        pitch = 0;
+    std::vector<void *>        scanlines;
 
-    unsigned char *hold       = nullptr;
-    int            hold_pitch = 0;
-    void         **hold_lines = nullptr;
+    std::vector<unsigned char> hold;
+    int                        hold_pitch = 0;
+    std::vector<void *>        hold_lines;
 
     // The array the engine was handed at setVideoMode2 and goes on addressing
     // the frame through. Locking the hold buffer REPLACES its entries with the
@@ -73,26 +74,27 @@ struct Device {
     // pause menu among them, would never appear at all.
     bool target_ahead = false;
 
-    NocturneTriglScreenVertex *batch_vertices = nullptr;
-    unsigned short            *batch_indices  = nullptr;
-    NocturneTriglBatch         batch;
+    std::vector<NocturneTriglScreenVertex> batch_vertices;
+    std::vector<unsigned short>            batch_indices;
+    NocturneTriglBatch                     batch;
 };
 
 Device g_dev;
 
+// Emptied with its memory returned, which clear() alone does not promise.
+template <typename T>
+void release(std::vector<T> &storage) {
+    std::vector<T>().swap(storage);
+}
+
 void free_mode_storage() {
-    free(g_dev.image);
-    free((void *)g_dev.scanlines);
-    free(g_dev.hold);
-    free((void *)g_dev.hold_lines);
-    g_dev.image      = nullptr;
-    g_dev.scanlines  = nullptr;
-    g_dev.hold       = nullptr;
-    g_dev.hold_lines = nullptr;
+    release(g_dev.image);
+    release(g_dev.scanlines);
+    release(g_dev.hold);
+    release(g_dev.hold_lines);
     g_dev.engine_scanlines      = nullptr;
     g_dev.engine_scanline_count = 0;
 }
-
 
 }  // namespace
 
@@ -112,16 +114,10 @@ int nocturne_trigl_device_open(void) {
     }
     if (!nocturne_trigl_gl_init()) return 0;
 
-    g_dev.batch_vertices = (NocturneTriglScreenVertex *)malloc(
-        sizeof(NocturneTriglScreenVertex) * (size_t)kBatchVertices);
-    g_dev.batch_indices = (unsigned short *)malloc(
-        sizeof(unsigned short) * (size_t)kBatchIndices);
-    if (g_dev.batch_vertices == nullptr || g_dev.batch_indices == nullptr) {
-        DLOG("render","trigl_device: could not allocate the batch");
-        return 0;
-    }
-    g_dev.batch.vertices        = g_dev.batch_vertices;
-    g_dev.batch.indices         = g_dev.batch_indices;
+    g_dev.batch_vertices.resize((size_t)kBatchVertices);
+    g_dev.batch_indices.resize((size_t)kBatchIndices);
+    g_dev.batch.vertices        = g_dev.batch_vertices.data();
+    g_dev.batch.indices         = g_dev.batch_indices.data();
     g_dev.batch.vertex_capacity = kBatchVertices;
     g_dev.batch.index_capacity  = kBatchIndices;
     nocturne_trigl_batch_reset(&g_dev.batch);
@@ -133,12 +129,11 @@ int nocturne_trigl_device_open(void) {
 void nocturne_trigl_device_close(void) {
     nocturne_trigl_gl_shutdown();
     free_mode_storage();
-    free(g_dev.batch_vertices);
-    free(g_dev.batch_indices);
-    g_dev.batch_vertices = nullptr;
-    g_dev.batch_indices  = nullptr;
+    release(g_dev.batch_vertices);
+    release(g_dev.batch_indices);
     g_dev.in_scene     = false;
     g_dev.frame_locked = false;
+    g_dev.target_ahead = false;
     g_dev.open         = false;
     g_dev.width = g_dev.height = g_dev.bpp = 0;
 }
@@ -163,27 +158,22 @@ int nocturne_trigl_device_set_mode(int width, int height, int bpp, void **scanli
     g_dev.height = height;
     g_dev.bpp    = bpp;
     g_dev.pitch  = width * bytes;
-    g_dev.image  = (unsigned char *)calloc((size_t)g_dev.pitch * (size_t)height, 1);
-    g_dev.scanlines = (void **)calloc((size_t)height, sizeof(void *));
+    g_dev.image.assign((size_t)g_dev.pitch * (size_t)height, 0);
+    g_dev.scanlines.resize((size_t)height);
     g_dev.hold_pitch = kHoldWidth * bytes;
-    g_dev.hold       = (unsigned char *)calloc((size_t)g_dev.hold_pitch * (size_t)kHoldHeight, 1);
-    g_dev.hold_lines = (void **)calloc((size_t)kHoldHeight, sizeof(void *));
-    if (g_dev.image == nullptr || g_dev.scanlines == nullptr ||
-        g_dev.hold == nullptr || g_dev.hold_lines == nullptr) {
-        DLOG("render","trigl_device: could not allocate the %dx%d image", width, height);
-        free_mode_storage();
-        return 0;
-    }
+    g_dev.hold.assign((size_t)g_dev.hold_pitch * (size_t)kHoldHeight, 0);
+    g_dev.hold_lines.resize((size_t)kHoldHeight);
     for (int y = 0; y < height; ++y) {
-        g_dev.scanlines[y] = g_dev.image + (size_t)y * (size_t)g_dev.pitch;
+        g_dev.scanlines[(size_t)y] = g_dev.image.data() + (size_t)y * (size_t)g_dev.pitch;
     }
     for (int y = 0; y < kHoldHeight; ++y) {
-        g_dev.hold_lines[y] = g_dev.hold + (size_t)y * (size_t)g_dev.hold_pitch;
+        g_dev.hold_lines[(size_t)y] = g_dev.hold.data() + (size_t)y * (size_t)g_dev.hold_pitch;
     }
     g_dev.engine_scanlines      = scanlines;
     g_dev.engine_scanline_count = height;
     if (scanlines != nullptr) {
-        memcpy((void *)scanlines, (const void *)g_dev.scanlines, (size_t)height * sizeof(void *));
+        memcpy((void *)scanlines, (const void *)g_dev.scanlines.data(),
+               (size_t)height * sizeof(void *));
     }
 
     nocturne_trigl_gl_set_target_size(width, height);
@@ -236,7 +226,7 @@ void nocturne_trigl_device_flush(void) {
 }
 
 int nocturne_trigl_device_lock_frame(void) {
-    if (!g_dev.open || g_dev.image == nullptr) return 0;
+    if (!g_dev.open || g_dev.image.empty()) return 0;
     // Geometry has to have landed before the target can be read.
     if (g_dev.in_scene) nocturne_trigl_device_end_scene();
 
@@ -247,15 +237,16 @@ int nocturne_trigl_device_lock_frame(void) {
         return 1;
     }
 
+    // A depth set_mode accepted, so there is a format for it.
     GLenum format = 0, type = 0;
-    if (!nocturne_gl_format_for_bpp(g_dev.bpp, &format, &type)) return 0;
+    nocturne_gl_format_for_bpp(g_dev.bpp, &format, &type);
 
     // With a scene target bound the frame is in its colour attachment; GL_BACK
     // means the default framebuffer and would read the previous present.
     nocturne_gl_read_pixels(nocturne_gl_scene_target_active() ? GL_COLOR_ATTACHMENT0 : GL_BACK,
                             (GLsizei)g_dev.width, (GLsizei)g_dev.height, format, type,
-                            g_dev.image, g_dev.pitch);
-    nocturne_gl_flip_rows(g_dev.image, g_dev.pitch, g_dev.height);
+                            g_dev.image.data(), g_dev.pitch);
+    nocturne_gl_flip_rows(g_dev.image.data(), g_dev.pitch, g_dev.height);
 
     g_dev.target_ahead = false;
     g_dev.frame_locked = true;
@@ -268,7 +259,7 @@ int nocturne_trigl_device_unlock_frame(void) {
     // The CPU image is now the composited truth: the 3D read back at lock with
     // the engine's 2D drawn over it. It goes back so the target stays the one
     // place the finished frame lives.
-    nocturne_gl_scene_upload(g_dev.image, g_dev.width, g_dev.height,
+    nocturne_gl_scene_upload(g_dev.image.data(), g_dev.width, g_dev.height,
                              g_dev.pitch, g_dev.bpp);
     nocturne_trigl_gl_invalidate_state();
     g_dev.target_ahead = false;
@@ -278,7 +269,7 @@ int nocturne_trigl_device_unlock_frame(void) {
 int nocturne_trigl_device_frame_locked(void) { return g_dev.frame_locked ? 1 : 0; }
 
 int nocturne_trigl_device_lock_hold_buffer(void) {
-    if (!g_dev.open || g_dev.hold == nullptr) return 0;
+    if (!g_dev.open || g_dev.hold.empty()) return 0;
     if (g_dev.in_scene) nocturne_trigl_device_end_scene();
     if (g_dev.engine_scanlines == nullptr) return 0;
 
@@ -287,20 +278,20 @@ int nocturne_trigl_device_lock_hold_buffer(void) {
     // engine's to decide and writing past it lands in whatever global follows.
     int rows = kHoldHeight;
     if (rows > g_dev.engine_scanline_count) rows = g_dev.engine_scanline_count;
-    memcpy((void *)g_dev.engine_scanlines, (const void *)g_dev.hold_lines,
+    memcpy((void *)g_dev.engine_scanlines, (const void *)g_dev.hold_lines.data(),
            (size_t)rows * sizeof(void *));
     return 1;
 }
 
 int nocturne_trigl_device_unlock_hold_buffer(void) {
-    if (!g_dev.open || g_dev.hold == nullptr) return 0;
+    if (!g_dev.open || g_dev.hold.empty()) return 0;
     if (g_dev.engine_scanlines != nullptr) {
-        memcpy((void *)g_dev.engine_scanlines, (const void *)g_dev.scanlines,
+        memcpy((void *)g_dev.engine_scanlines, (const void *)g_dev.scanlines.data(),
                (size_t)g_dev.engine_scanline_count * sizeof(void *));
     }
     // Drawn across the whole target, which is the stretch the engine's own blit
     // performs from a 640x480 hold buffer to a larger screen.
-    nocturne_gl_scene_upload(g_dev.hold, kHoldWidth, kHoldHeight,
+    nocturne_gl_scene_upload(g_dev.hold.data(), kHoldWidth, kHoldHeight,
                              g_dev.hold_pitch, g_dev.bpp);
     nocturne_trigl_gl_invalidate_state();
     // The target is ahead: this upload came from the hold buffer, so the
@@ -321,8 +312,8 @@ void nocturne_trigl_device_clear_color(void) {
     gl.Clear(GL_COLOR_BUFFER_BIT);
     // While locked the CPU image is the frame (unlock uploads it over the
     // target), so it has to be cleared too.
-    if (g_dev.frame_locked && g_dev.image != nullptr) {
-        memset(g_dev.image, 0, (size_t)g_dev.pitch * (size_t)g_dev.height);
+    if (g_dev.frame_locked) {
+        memset(g_dev.image.data(), 0, g_dev.image.size());
         g_dev.target_ahead = false;
         return;
     }

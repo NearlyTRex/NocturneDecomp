@@ -14,6 +14,7 @@
 
 #include "gl/gl_api.h"
 
+#include <algorithm>
 #include <cstdlib>
 #include <cstring>
 
@@ -85,14 +86,9 @@ inline void nocturne_gl_read_pixels(GLenum read_buffer, GLsizei width, GLsizei h
 // Reverses the order of `rows` rows of `pitch` bytes, in place: a GL read is
 // bottom-up and the engine's image is top-down.
 inline void nocturne_gl_flip_rows(unsigned char *base, int pitch, int rows) {
-    unsigned char *scratch = (unsigned char *)malloc((size_t)pitch);
-    if (scratch == nullptr) return;
     for (int y = 0; y < rows / 2; ++y) {
         unsigned char *top    = base + (size_t)y * (size_t)pitch;
         unsigned char *bottom = base + (size_t)(rows - 1 - y) * (size_t)pitch;
-        memcpy(scratch, top, (size_t)pitch);
-        memcpy(top, bottom, (size_t)pitch);
-        memcpy(bottom, scratch, (size_t)pitch);
+        std::swap_ranges(top, top + pitch, bottom);
     }
-    free(scratch);
 }

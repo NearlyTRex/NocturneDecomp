@@ -71,8 +71,9 @@ macros and a runner. This is those two things.
 | `shims_game` | Walk turning |
 | `shims_watcom` | Watcom CRT I/O, path resolution and the C++ runtime's array helpers |
 | `shims_win32` | `kernel32` entry points and the built-in DLL registry |
+| `shims_gl` | Shader program building and the pixel-format helpers, against the recorder |
 | `shims_renderer` | `trigl` batching, state, texture, vertex handling |
-| `shims_renderer_gl` | `trigl` GL call sequences and golden traces (`test_*_sequence.cpp`) |
+| `shims_renderer_gl` | `trigl` GL call sequences, the device and golden traces (`test_*_sequence.cpp`) |
 
 The renderer suites are the interesting ones. They test **order**, not just answers: the
 renderer reaches GL through a single table of function pointers, which `gl_recorder.cpp` fills

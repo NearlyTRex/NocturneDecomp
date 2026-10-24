@@ -104,6 +104,21 @@ inline FILE* _dlog_get_file() {
     return _dlog_get_file_named("debug");
 }
 
+// One message to a log that may not have opened, flushed. A function rather than
+// the macros' own `if`, so that check is one branch here and not one at every
+// call site.
+#if defined(__GNUC__) || defined(__clang__)
+__attribute__((format(printf, 2, 3)))
+#endif
+inline void _dlog_write(FILE* f, const char* fmt, ...) {
+    if (!f) return;
+    va_list args;
+    va_start(args, fmt);
+    vfprintf(f, fmt, args);
+    va_end(args);
+    fflush(f);
+}
+
 // -- Symbolized backtrace -----------------------------------------------------
 // Under ASan we reuse its symbolizer (same output quality as ASan's own SEGV
 // reports). Otherwise fall back to glibc's execinfo, which only resolves
@@ -146,10 +161,8 @@ inline void _dlog_print_backtrace() {}
 #else
 
 // Write to a named subsystem log: nocturne_<subsys>.log
-#define DLOG(subsys, fmt, ...) do { \
-    FILE* _f = _dlog_get_file_named(subsys); \
-    if (_f) { fprintf(_f, "[%s:%d] " fmt "\n", _DLOG_FILE, __LINE__, ##__VA_ARGS__); fflush(_f); } \
-} while(0)
+#define DLOG(subsys, fmt, ...) \
+    _dlog_write(_dlog_get_file_named(subsys), "[%s:%d] " fmt "\n", _DLOG_FILE, __LINE__, ##__VA_ARGS__)
 
 // Rate-limited log: log the first `first_n` calls, then every `every_n`-th call.
 // The tick number is prepended to the message as "#N ". Each call site has its
@@ -170,17 +183,13 @@ inline void _dlog_print_backtrace() {}
 #endif
 
 #define DWARN(fmt, ...) do { \
-    FILE* _f = _dlog_get_file(); \
-    if (_f) { fprintf(_f, "[WARN  %s:%d] " fmt "\n", _DLOG_FILE, __LINE__, ##__VA_ARGS__); fflush(_f); } \
-    fprintf(stderr, "[WARN  %s:%d] " fmt "\n", _DLOG_FILE, __LINE__, ##__VA_ARGS__); \
-    fflush(stderr); \
+    _dlog_write(_dlog_get_file(), "[WARN  %s:%d] " fmt "\n", _DLOG_FILE, __LINE__, ##__VA_ARGS__); \
+    _dlog_write(stderr, "[WARN  %s:%d] " fmt "\n", _DLOG_FILE, __LINE__, ##__VA_ARGS__); \
     DBACKTRACE(); \
 } while(0)
 
 #define DERROR(fmt, ...) do { \
-    FILE* _f = _dlog_get_file(); \
-    if (_f) { fprintf(_f, "[ERROR %s:%d] " fmt "\n", _DLOG_FILE, __LINE__, ##__VA_ARGS__); fflush(_f); } \
-    fprintf(stderr, "[ERROR %s:%d] " fmt "\n", _DLOG_FILE, __LINE__, ##__VA_ARGS__); \
-    fflush(stderr); \
+    _dlog_write(_dlog_get_file(), "[ERROR %s:%d] " fmt "\n", _DLOG_FILE, __LINE__, ##__VA_ARGS__); \
+    _dlog_write(stderr, "[ERROR %s:%d] " fmt "\n", _DLOG_FILE, __LINE__, ##__VA_ARGS__); \
     DBACKTRACE(); \
 } while(0)

@@ -22,6 +22,11 @@
 #include <stdlib.h>
 #include <string.h>
 
+#include <filesystem>
+#include <string>
+#include <system_error>
+#include <vector>
+
 extern "C" int nocturne_trigl_vertex_fog = -1;
 extern "C" int nocturne_trigl_mipmaps = -1;
 extern "C" int nocturne_trigl_debug = -1;
@@ -248,8 +253,7 @@ GLint g_loc_debug          = -1;
 GLint g_loc_envmap         = -1;
 
 // Scratch for one batch's worth of hardware vertices.
-HardwareVertex *g_scratch = nullptr;
-size_t g_scratch_capacity = 0;
+std::vector<HardwareVertex> g_scratch;
 
 // The state the hardware currently has, so a run of draws sharing one costs
 // nothing to repeat. Initialised to values the first apply cannot match.
@@ -414,66 +418,68 @@ TextureSlot g_textures[kTextureSlots];
 unsigned    g_texture_clock = 0;
 int         g_texture_count = 0;
 
+// The characters of a name that count: as many as a slot stores, the entry width
+// less its terminator. A name longer than that is the same texture as its
+// stored copy, or it would never be found again and be uploaded afresh each time.
+const int kTextureNameSignificant = kTextureNameMax - 1;
+
 unsigned name_hash(const char *name, int dimension) {
-    // FNV-1a over the name plus the dimension. Bounded, so a record whose name
-    // is not terminated within the entry width cannot run away.
+    // FNV-1a over the name plus the dimension.
     unsigned h = NOCTURNE_FNV1A_BASIS;
-    for (int i = 0; i < kTextureNameMax; ++i) {
+    for (int i = 0; i < kTextureNameSignificant && name[i] != '\0'; ++i) {
         h = nocturne_fnv1a_step(h, (unsigned char)name[i]);
-        if (name[i] == '\0') break;
     }
     return (h ^ (unsigned)dimension) * 16777619u;
 }
 
 bool same_name(const char *a, const char *b) {
-    for (int i = 0; i < kTextureNameMax; ++i) {
+    for (int i = 0; i < kTextureNameSignificant; ++i) {
         if (a[i] != b[i]) return false;
         if (a[i] == '\0') return true;
     }
     return true;
 }
 
+// The table is never let fill (insert_slot evicts first), so a probe always
+// reaches a free slot.
 TextureSlot *find_slot(const char *name, int dimension) {
     unsigned index = name_hash(name, dimension) & (unsigned)(kTextureSlots - 1);
-    for (int probe = 0; probe < kTextureSlots; ++probe) {
+    for (;;) {
         TextureSlot &slot = g_textures[index];
         if (slot.dimension == 0) return nullptr;
         if (slot.dimension == dimension && same_name(slot.name, name)) return &slot;
         index = (index + 1u) & (unsigned)(kTextureSlots - 1);
     }
-    return nullptr;
 }
 
+// Called with the table all but full, so there is always an oldest.
 void evict_least_recently_used() {
     int oldest = -1;
     for (int i = 0; i < kTextureSlots; ++i) {
         if (g_textures[i].dimension == 0) continue;
         if (oldest < 0 || g_textures[i].used < g_textures[oldest].used) oldest = i;
     }
-    if (oldest < 0) return;
     if (g_textures[oldest].texture != 0 && gl.DeleteTextures != nullptr) {
         gl.DeleteTextures(1, &g_textures[oldest].texture);
     }
     // Clearing a slot in an open-addressed table would cut the probe chains
     // that run through it, so the whole table is rebuilt from the survivors.
-    TextureSlot *survivors = (TextureSlot *)malloc(sizeof(TextureSlot) * (size_t)kTextureSlots);
-    if (survivors == nullptr) return;
-    int count = 0;
+    std::vector<TextureSlot> survivors;
+    survivors.reserve((size_t)g_texture_count);
     for (int i = 0; i < kTextureSlots; ++i) {
-        if (i != oldest && g_textures[i].dimension != 0) survivors[count++] = g_textures[i];
+        if (i != oldest && g_textures[i].dimension != 0) survivors.push_back(g_textures[i]);
     }
     memset(g_textures, 0, sizeof(g_textures));
     g_texture_count = 0;
-    for (int i = 0; i < count; ++i) {
-        unsigned index = name_hash(survivors[i].name, survivors[i].dimension) &
+    for (const TextureSlot &survivor : survivors) {
+        unsigned index = name_hash(survivor.name, survivor.dimension) &
                          (unsigned)(kTextureSlots - 1);
         while (g_textures[index].dimension != 0) {
             index = (index + 1u) & (unsigned)(kTextureSlots - 1);
         }
-        g_textures[index] = survivors[i];
+        g_textures[index] = survivor;
         ++g_texture_count;
     }
-    free(survivors);
 }
 
 TextureSlot *insert_slot(const char *name, int dimension) {
@@ -488,7 +494,7 @@ TextureSlot *insert_slot(const char *name, int dimension) {
     // Terminated even when the source name is not: the comparison above stops at
     // the width, so a stored name must too.
     int length = 0;
-    while (length < kTextureNameMax - 1 && name[length] != '\0') {
+    while (length < kTextureNameSignificant && name[length] != '\0') {
         slot.name[length] = name[length];
         ++length;
     }
@@ -557,16 +563,6 @@ MasterDepth *ensure_master_depth(int slot, int width, int height) {
     return &m;
 }
 
-bool ensure_scratch(size_t vertices) {
-    if (vertices <= g_scratch_capacity) return true;
-    HardwareVertex *grown =
-        (HardwareVertex *)realloc(g_scratch, sizeof(HardwareVertex) * vertices);
-    if (grown == nullptr) return false;
-    g_scratch = grown;
-    g_scratch_capacity = vertices;
-    return true;
-}
-
 }  // namespace
 
 int nocturne_trigl_gl_init(void) {
@@ -596,11 +592,16 @@ void nocturne_trigl_gl_shutdown(void) {
     if (g_vbo != 0 && gl.DeleteBuffers != nullptr) gl.DeleteBuffers(1, &g_vbo);
     if (g_ibo != 0 && gl.DeleteBuffers != nullptr) gl.DeleteBuffers(1, &g_ibo);
     if (g_program != 0 && gl.DeleteProgram != nullptr) gl.DeleteProgram(g_program);
-    free(g_scratch);
-    g_scratch = nullptr;
-    g_scratch_capacity = 0;
+    std::vector<HardwareVertex>().swap(g_scratch);
     g_vao = g_vbo = g_ibo = g_program = 0;
     g_vbo_capacity = g_ibo_capacity = 0;
+    // What the program was told went with it: there is no target until the next
+    // one is told its size, it has no fog colour, and it starts with reflections
+    // off. The chained texture's name may be handed out again to another image.
+    g_target_width = g_target_height = 0;
+    g_fog_color_dirty = true;
+    g_envmap_mode = 0;
+    g_envmap_chained = 0;
     g_ready = false;
     g_tried = false;
     g_current_valid = false;
@@ -735,10 +736,7 @@ unsigned nocturne_trigl_gl_texture(const char *name, int dimension,
 
     TextureSlot *slot = find_slot(name, dimension);
     const bool fresh = (slot == nullptr);
-    if (fresh) {
-        slot = insert_slot(name, dimension);
-        if (slot == nullptr) return 0;
-    }
+    if (fresh) slot = insert_slot(name, dimension);
     slot->used = ++g_texture_clock;
     if (!fresh && !refresh) return slot->texture;
     if (rgba == nullptr) return slot->texture;
@@ -855,14 +853,7 @@ const char *nocturne_trigl_gl_renderer_name(void) {
     static char name[128] = "";
     if (name[0] == '\0' && gl.GetString != nullptr) {
         const char *reported = (const char *)gl.GetString(GL_RENDERER);
-        if (reported != nullptr) {
-            size_t n = 0;
-            while (reported[n] != '\0' && n + 1 < sizeof(name)) {
-                name[n] = reported[n];
-                ++n;
-            }
-            name[n] = '\0';
-        }
+        if (reported != nullptr) snprintf(name, sizeof(name), "%s", reported);
     }
     return (name[0] != '\0') ? name : "OpenGL";
 }
@@ -883,22 +874,20 @@ int nocturne_trigl_gl_dump_texture(const char *name, int dimension, const char *
     TextureSlot *slot = find_slot(name, dimension);
     if (slot == nullptr || slot->texture == 0) return 0;
 
-    unsigned char *pixels =
-        (unsigned char *)malloc((size_t)dimension * (size_t)dimension * 4u);
-    if (pixels == nullptr) return 0;
-
+    std::vector<unsigned char> pixels((size_t)dimension * (size_t)dimension * 4u);
     gl.ActiveTexture(GL_TEXTURE0);
     GLint previous = 0;
     gl.GetIntegerv(GL_TEXTURE_BINDING_2D, &previous);
     gl.BindTexture(GL_TEXTURE_2D, slot->texture);
-    gl.GetTexImage(GL_TEXTURE_2D, 0, GL_RGBA, GL_UNSIGNED_BYTE, pixels);
+    gl.GetTexImage(GL_TEXTURE_2D, 0, GL_RGBA, GL_UNSIGNED_BYTE, pixels.data());
     gl.BindTexture(GL_TEXTURE_2D, (GLuint)previous);
 
-    FILE *fp = fopen((path != nullptr) ? path : "/tmp/trigl_texture.ppm", "wb");
-    if (fp == nullptr) {
-        free(pixels);
-        return 0;
-    }
+    // Without a path, the host's temporary directory: /tmp is not one everywhere.
+    std::error_code ec;
+    const std::string fallback =
+        (std::filesystem::temp_directory_path(ec) / "trigl_texture.ppm").string();
+    FILE *fp = fopen((path != nullptr) ? path : fallback.c_str(), "wb");
+    if (fp == nullptr) return 0;
     // The alpha is carried in the comment rather than dropped silently: a colour
     // key that made the wrong texels transparent looks like foreign pixels on
     // the model, and would be invisible in an opaque dump.
@@ -912,7 +901,6 @@ int nocturne_trigl_gl_dump_texture(const char *name, int dimension, const char *
         fwrite(&pixels[(size_t)i * 4], 1, 3, fp);
     }
     fclose(fp);
-    free(pixels);
     return dimension;
 }
 
@@ -1004,16 +992,17 @@ void nocturne_trigl_gl_release_depth(void) {
 
 void nocturne_trigl_gl_draw_batch(const NocturneTriglBatch *batch) {
     if (!g_ready || batch->vertex_count <= 0 || batch->index_count <= 0) return;
-    if (!ensure_scratch((size_t)batch->vertex_count)) return;
-    if (g_target_width > 0 && g_target_height > 0) {
-        gl.Viewport(0, 0, g_target_width, g_target_height);
+    if (g_scratch.size() < (size_t)batch->vertex_count) {
+        g_scratch.resize((size_t)batch->vertex_count);
     }
+    // Set together, so a width means a target.
+    if (g_target_width > 0) gl.Viewport(0, 0, g_target_width, g_target_height);
 
     // Premultiply by w so the perspective divide reproduces the engine's own
     // projection and leaves the texture coordinates perspective correct.
     for (int i = 0; i < batch->vertex_count; ++i) {
         const NocturneTriglScreenVertex &src = batch->vertices[i];
-        HardwareVertex &dst = g_scratch[i];
+        HardwareVertex &dst = g_scratch[(size_t)i];
         const float w = (src.rhw != 0.0f) ? (1.0f / src.rhw) : 1.0f;
         dst.x = src.x * w;
         dst.y = src.y * w;
@@ -1036,16 +1025,16 @@ void nocturne_trigl_gl_draw_batch(const NocturneTriglBatch *batch) {
     const size_t vertex_bytes = sizeof(HardwareVertex) * (size_t)batch->vertex_count;
     gl.BindBuffer(GL_ARRAY_BUFFER, g_vbo);
     if (vertex_bytes > g_vbo_capacity) {
-        gl.BufferData(GL_ARRAY_BUFFER, (GLsizeiptr)vertex_bytes, g_scratch, GL_STREAM_DRAW);
+        gl.BufferData(GL_ARRAY_BUFFER, (GLsizeiptr)vertex_bytes, g_scratch.data(), GL_STREAM_DRAW);
         g_vbo_capacity = vertex_bytes;
     } else {
         // Orphan first: a fresh allocation lets the driver write without
         // waiting on the previous draw to retire.
         gl.BufferData(GL_ARRAY_BUFFER, (GLsizeiptr)g_vbo_capacity, nullptr, GL_STREAM_DRAW);
         if (gl.BufferSubData != nullptr) {
-            gl.BufferSubData(GL_ARRAY_BUFFER, 0, (GLsizeiptr)vertex_bytes, g_scratch);
+            gl.BufferSubData(GL_ARRAY_BUFFER, 0, (GLsizeiptr)vertex_bytes, g_scratch.data());
         } else {
-            gl.BufferData(GL_ARRAY_BUFFER, (GLsizeiptr)vertex_bytes, g_scratch, GL_STREAM_DRAW);
+            gl.BufferData(GL_ARRAY_BUFFER, (GLsizeiptr)vertex_bytes, g_scratch.data(), GL_STREAM_DRAW);
         }
     }
 

@@ -25,8 +25,12 @@
 #include "debug/focus_trace.h"
 
 #include <stdio.h>
-#include <stdlib.h>
 #include <string.h>
+
+#include <filesystem>
+#include <string>
+#include <system_error>
+#include <vector>
 
 namespace {
 
@@ -61,8 +65,14 @@ struct Renderer {
     unsigned                   state_epoch   = 0;
     bool                       state_valid   = false;
 
-    unsigned *expanded = nullptr;
-    unsigned  packed_palette[256];
+    std::vector<unsigned> expanded;
+    unsigned              packed_palette[256];
+
+    // Per-polygon scratch, kept so the draw path only allocates when a polygon
+    // is larger than every one before it.
+    std::vector<int>                      depths;
+    std::vector<NocturneTriglVertexInput> inputs;
+    std::vector<SRenderVertex *>          pointers;
 };
 
 Renderer g_r;
@@ -101,13 +111,13 @@ DrawTrace g_draw_trace[kDrawTraceMax];
 int       g_draw_trace_count = 0;
 int       g_draw_trace_dropped = 0;
 
+// From the engine's texture record, whose name runs past the 16 characters its
+// type declares, into a 64-character entry.
 void copy_texture_name(char *out, const char *name) {
     int i = 0;
-    if (name != nullptr) {
-        while (i < 63 && name[i] != '\0') {
-            out[i] = name[i];
-            ++i;
-        }
+    while (i < 63 && name[i] != '\0') {
+        out[i] = name[i];
+        ++i;
     }
     out[i] = '\0';
 }
@@ -168,11 +178,11 @@ void gather_vertex_context(unsigned effective_flags, int rhw_scale,
     // while the engine's own coordinate space never changed.
     ctx->screen_scale_x = 1.0f;
     ctx->screen_scale_y = 1.0f;
-    const int width  = nocturne_trigl_device_width();
     const int height = nocturne_trigl_device_height();
     if (height > 480) {
-        if (width  > 0) ctx->screen_scale_x = (float)width  / 640.0f;
-        if (height > 0) ctx->screen_scale_y = (float)height / 480.0f;
+        // A mode has both or neither.
+        ctx->screen_scale_x = (float)nocturne_trigl_device_width() / 640.0f;
+        ctx->screen_scale_y = (float)height / 480.0f;
     }
     ctx->current_alpha  = (b != nullptr) ? read_bridge(b->current_alpha, 255) : 255;
     ctx->palette_index  = (b != nullptr) ? (read_bridge(b->console_text_color, 0) & 0xff) : 0;
@@ -252,11 +262,10 @@ void begin_draw(unsigned render_flags, NocturneTriglPipelineState *out_state) {
 }
 
 // Convert and append one polygon, drawing the batch first if it cannot take it.
+// Reached only inside a scene, so the device is open and has a batch.
 void submit_polygon(const NocturneTriglVertexContext *ctx,
                     const NocturneTriglVertexInput *vertices, int count) {
     NocturneTriglBatch *batch = nocturne_trigl_device_batch();
-    if (batch == nullptr) return;
-
     NocturneTriglScreenVertex *slot = nocturne_trigl_batch_add_polygon(batch, count);
     if (slot == nullptr) {
         nocturne_trigl_device_flush();
@@ -328,14 +337,10 @@ unsigned resolve_texture(SMRGLTextureBasic *info, int refresh) {
         if (resident != 0) return resident;
     }
 
-    if (g_r.expanded == nullptr) {
-        g_r.expanded = (unsigned *)malloc(sizeof(unsigned) *
-                                          (size_t)(kMaxTextureDimension * kMaxTextureDimension));
-        if (g_r.expanded == nullptr) return 0;
-    }
+    g_r.expanded.resize((size_t)kMaxTextureDimension * (size_t)kMaxTextureDimension);
     nocturne_trigl_pack_palette(g_r.texture_palette, g_r.packed_palette);
     nocturne_trigl_expand_texture(g_r.texture_data, dimension * dimension,
-                                  g_r.packed_palette, g_r.texture_opacity, g_r.expanded);
+                                  g_r.packed_palette, g_r.texture_opacity, g_r.expanded.data());
 
     NocturneTriglStats &st = nocturne_trigl_stats;
     ++st.uploads;
@@ -343,12 +348,12 @@ unsigned resolve_texture(SMRGLTextureBasic *info, int refresh) {
     const int texels = dimension * dimension;
     st.texels_uploaded += (unsigned)texels;
     for (int i = 0; i < texels; ++i) {
-        if ((g_r.expanded[i] >> 24) == 0) ++st.texels_keyed;
+        if ((g_r.expanded[(size_t)i] >> 24) == 0) ++st.texels_keyed;
     }
 
-    CExternalRendererBridge *b = bridge();
-    const int mipmapped = (b != nullptr) ? read_bridge(b->rendering_quality, 0) : 0;
-    return nocturne_trigl_gl_texture(info->texture_name, dimension, g_r.expanded,
+    // A dimension came from the bridge, so there is one.
+    const int mipmapped = read_bridge(bridge()->rendering_quality, 0);
+    return nocturne_trigl_gl_texture(info->texture_name, dimension, g_r.expanded.data(),
                                      mipmapped, refresh);
 }
 
@@ -377,9 +382,12 @@ static int __cdecl trigl_init(HWND window, CExternalRendererBridge *interface) {
 static void __cdecl trigl_kill(void) {
     nocturne_trigl_gl_release_depth();
     nocturne_trigl_device_close();
-    free(g_r.expanded);
-    g_r.expanded = nullptr;
+    std::vector<unsigned>().swap(g_r.expanded);
     g_r.state_valid = false;
+    // The bridge points into the engine that initialised this renderer; the next
+    // init brings its own.
+    g_bridge_valid = false;
+    nocturne_trigl_device_set_bridge(nullptr);
 }
 
 // The mode the engine last asked for. setVideoMode2 records it and does the
@@ -670,54 +678,33 @@ static int __cdecl trigl_draw_polygon2(SRenderVertex **vertex_array, int vertex_
     begin_draw((unsigned)render_flags, &state);
 
     // One reciprocal-w scale for the whole polygon, from its farthest vertex.
-    int depths[64];
-    int scale;
-    if (vertex_count <= (int)(sizeof(depths) / sizeof(depths[0]))) {
-        for (int i = 0; i < vertex_count; ++i) {
-            depths[i] = vertex_array[i]->projected_vertex.transformed_z;
-        }
-        scale = nocturne_trigl_max_depth(depths, vertex_count);
-    } else {
-        scale = vertex_array[0]->projected_vertex.transformed_z;
-        for (int i = 1; i < vertex_count; ++i) {
-            const int z = vertex_array[i]->projected_vertex.transformed_z;
-            if (z > scale) scale = z;
-        }
+    g_r.depths.resize((size_t)vertex_count);
+    for (int i = 0; i < vertex_count; ++i) {
+        g_r.depths[(size_t)i] = vertex_array[i]->projected_vertex.transformed_z;
     }
+    const int scale = nocturne_trigl_max_depth(g_r.depths.data(), vertex_count);
 
     NocturneTriglStateInput in;
     gather_state((unsigned)render_flags, &in);
     NocturneTriglVertexContext ctx;
     gather_vertex_context(nocturne_trigl_effective_flags(&in), scale, &ctx);
 
-    NocturneTriglVertexInput converted[64];
-    NocturneTriglVertexInput *inputs = converted;
-    if (vertex_count > (int)(sizeof(converted) / sizeof(converted[0]))) {
-        inputs = (NocturneTriglVertexInput *)malloc(sizeof(NocturneTriglVertexInput) *
-                                                    (size_t)vertex_count);
-        if (inputs == nullptr) return 0;
-    }
+    g_r.inputs.resize((size_t)vertex_count);
     for (int i = 0; i < vertex_count; ++i) {
-        vertex_from_render_vertex(vertex_array[i], &inputs[i]);
+        vertex_from_render_vertex(vertex_array[i], &g_r.inputs[(size_t)i]);
     }
-    submit_polygon(&ctx, inputs, vertex_count);
-    if (inputs != converted) free(inputs);
+    submit_polygon(&ctx, g_r.inputs.data(), vertex_count);
     return 1;
 }
 
 static int __cdecl trigl_draw_polygon(SRenderVertex *vertices, int vertex_count,
                                       int render_flags) {
     if (vertices == nullptr || vertex_count <= 0) return 0;
-    SRenderVertex *stack_pointers[64];
-    SRenderVertex **pointers = stack_pointers;
-    if (vertex_count > (int)(sizeof(stack_pointers) / sizeof(stack_pointers[0]))) {
-        pointers = (SRenderVertex **)malloc(sizeof(SRenderVertex *) * (size_t)vertex_count);
-        if (pointers == nullptr) return 0;
-    }
-    for (int i = 0; i < vertex_count; ++i) pointers[i] = &vertices[i];
-    const int result = trigl_draw_polygon2(pointers, vertex_count, render_flags);
-    if (pointers != stack_pointers) free((void *)pointers);
-    return result;
+    // Its own array: drawPolygon2 resizes the renderer's others.
+    std::vector<SRenderVertex *> &pointers = g_r.pointers;
+    pointers.resize((size_t)vertex_count);
+    for (int i = 0; i < vertex_count; ++i) pointers[(size_t)i] = &vertices[i];
+    return trigl_draw_polygon2(pointers.data(), vertex_count, render_flags);
 }
 
 // The list forms submit a reciprocal-w scale of 256 rather than the polygon's
@@ -744,18 +731,22 @@ static int __cdecl trigl_draw_poly_list(SRenderVertex *vertex_buffer,
         const int count = poly->base.base.count;
         if (count < 3) continue;
 
-        NocturneTriglVertexInput inputs[64];
-        const int used = (count > 64) ? 64 : count;
-        for (int i = 0; i < used; ++i) {
-            const SMRGLVertex &pv = poly->vertices[i];
-            vertex_from_render_vertex(&vertex_buffer[pv.vertex_index], &inputs[i]);
+        // The record runs on past the four vertices its type declares, to as
+        // many as it counts, so they are reached through a pointer rather than
+        // as that array.
+        const SMRGLVertex *const listed = poly->vertices;
+        g_r.inputs.resize((size_t)count);
+        for (int i = 0; i < count; ++i) {
+            const SMRGLVertex &pv = listed[i];
+            NocturneTriglVertexInput &input = g_r.inputs[(size_t)i];
+            vertex_from_render_vertex(&vertex_buffer[pv.vertex_index], &input);
             // A polygon carries its own texture coordinates, overriding whatever
             // the shared vertex holds — the same position appears in several
             // polygons with different ones.
-            inputs[i].u = pv.texture_u;
-            inputs[i].v = pv.texture_v;
+            input.u = pv.texture_u;
+            input.v = pv.texture_v;
         }
-        submit_polygon(&ctx, inputs, used);
+        submit_polygon(&ctx, g_r.inputs.data(), count);
     }
     return 1;
 }
@@ -864,7 +855,11 @@ static const NocturneBuiltinExport g_TriglExports[] = {
 };
 
 extern "C" int nocturne_trigl_dump_draws(const char *path) {
-    FILE *fp = fopen((path != nullptr) ? path : "/tmp/trigl_draws.txt", "w");
+    // Without a path, the host's temporary directory: /tmp is not one everywhere.
+    std::error_code ec;
+    const std::string fallback =
+        (std::filesystem::temp_directory_path(ec) / "trigl_draws.txt").string();
+    FILE *fp = fopen((path != nullptr) ? path : fallback.c_str(), "w");
     if (fp == nullptr) return 0;
 
     const NocturneTriglStats &st = nocturne_trigl_stats;
