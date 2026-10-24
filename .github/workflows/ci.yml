@@ -28,7 +28,7 @@ jobs:
   # decompiled modules compile as in the release build and hit its ccache.
   build-linux:
     name: Build (${{ matrix.preset }})
-    uses: NearlyTRex/Workflows/.github/workflows/cpp-build.yml@c84a2b6b942e42cf3f1c88119762f20cac536e3c # v0.2.22
+    uses: NearlyTRex/Workflows/.github/workflows/cpp-build.yml@32d5879909bb8344868510909ec6476ed6d49afd # v0.2.23
     permissions:
       contents: read
     strategy:
@@ -91,7 +91,7 @@ jobs:
   # Apple clang's cross build works. Xcode's clang and CMake are on the runner.
   build-macos:
     name: Build (${{ matrix.preset }})
-    uses: NearlyTRex/Workflows/.github/workflows/cpp-build.yml@c84a2b6b942e42cf3f1c88119762f20cac536e3c # v0.2.22
+    uses: NearlyTRex/Workflows/.github/workflows/cpp-build.yml@32d5879909bb8344868510909ec6476ed6d49afd # v0.2.23
     permissions:
       contents: read
     strategy:
@@ -121,7 +121,7 @@ jobs:
   # it up on Linux and macOS runners only.
   build-windows:
     name: Build (${{ matrix.preset }})
-    uses: NearlyTRex/Workflows/.github/workflows/cpp-build.yml@c84a2b6b942e42cf3f1c88119762f20cac536e3c # v0.2.22
+    uses: NearlyTRex/Workflows/.github/workflows/cpp-build.yml@32d5879909bb8344868510909ec6476ed6d49afd # v0.2.23
     permissions:
       contents: read
     strategy:
@@ -158,7 +158,7 @@ jobs:
   # loader and heap are not Windows'.
   build-windows-tests:
     name: Build (exe-windows-x86_64 tests)
-    uses: NearlyTRex/Workflows/.github/workflows/cpp-build.yml@c84a2b6b942e42cf3f1c88119762f20cac536e3c # v0.2.22
+    uses: NearlyTRex/Workflows/.github/workflows/cpp-build.yml@32d5879909bb8344868510909ec6476ed6d49afd # v0.2.23
     permissions:
       contents: read
     with:
@@ -186,7 +186,7 @@ jobs:
   windows-tests:
     name: Windows tests (exe-windows-x86_64)
     needs: build-windows-tests
-    uses: NearlyTRex/Workflows/.github/workflows/windows-test.yml@c84a2b6b942e42cf3f1c88119762f20cac536e3c # v0.2.22
+    uses: NearlyTRex/Workflows/.github/workflows/windows-test.yml@32d5879909bb8344868510909ec6476ed6d49afd # v0.2.23
     permissions:
       contents: read
     with:
@@ -195,7 +195,7 @@ jobs:
   windows-tests-msvc:
     name: Windows tests (exe-windows-msvc)
     needs: build-windows
-    uses: NearlyTRex/Workflows/.github/workflows/windows-test.yml@c84a2b6b942e42cf3f1c88119762f20cac536e3c # v0.2.22
+    uses: NearlyTRex/Workflows/.github/workflows/windows-test.yml@32d5879909bb8344868510909ec6476ed6d49afd # v0.2.23
     permissions:
       contents: read
     with:
@@ -208,7 +208,7 @@ jobs:
   # a row of timings on the run's summary page.
   recreation:
     name: Recreation
-    uses: NearlyTRex/Workflows/.github/workflows/cpp-build.yml@c84a2b6b942e42cf3f1c88119762f20cac536e3c # v0.2.22
+    uses: NearlyTRex/Workflows/.github/workflows/cpp-build.yml@32d5879909bb8344868510909ec6476ed6d49afd # v0.2.23
     permissions:
       contents: read
     with:
@@ -244,7 +244,7 @@ jobs:
   # carries those results from run to run.
   recreation-tidy:
     name: Recreation tidy
-    uses: NearlyTRex/Workflows/.github/workflows/cpp-build.yml@c84a2b6b942e42cf3f1c88119762f20cac536e3c # v0.2.22
+    uses: NearlyTRex/Workflows/.github/workflows/cpp-build.yml@32d5879909bb8344868510909ec6476ed6d49afd # v0.2.23
     permissions:
       contents: read
     with:
@@ -274,7 +274,7 @@ jobs:
   # omit list in pyproject.toml; everything else is held to every line and branch.
   python:
     name: Python
-    uses: NearlyTRex/Workflows/.github/workflows/python-ci.yml@c84a2b6b942e42cf3f1c88119762f20cac536e3c # v0.2.22
+    uses: NearlyTRex/Workflows/.github/workflows/python-ci.yml@32d5879909bb8344868510909ec6476ed6d49afd # v0.2.23
     permissions:
       contents: read
     with:
@@ -289,7 +289,7 @@ jobs:
 
   lint:
     name: Lint
-    uses: NearlyTRex/Workflows/.github/workflows/lint.yml@c84a2b6b942e42cf3f1c88119762f20cac536e3c # v0.2.22
+    uses: NearlyTRex/Workflows/.github/workflows/lint.yml@32d5879909bb8344868510909ec6476ed6d49afd # v0.2.23
     permissions:
       contents: read
     with:

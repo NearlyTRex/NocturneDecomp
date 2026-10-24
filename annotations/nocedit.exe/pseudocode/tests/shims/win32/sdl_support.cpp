@@ -25,8 +25,9 @@ extern "C" {
 
 int nocturne_gl_is_active(void) { return stand.gl_active; }
 
-void nocturne_gl_present_framebuffer(const void *, int width, int height, int, int bpp) {
+void nocturne_gl_present_framebuffer(const void *pixels, int width, int height, int, int bpp) {
     ++stand.presents;
+    stand.present_first_byte = *(const unsigned char *)pixels;
     stand.present_width = width;
     stand.present_height = height;
     stand.present_bpp = bpp;

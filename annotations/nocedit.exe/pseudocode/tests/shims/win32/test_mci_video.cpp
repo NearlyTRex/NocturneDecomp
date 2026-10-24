@@ -6,9 +6,11 @@
 // its picture is, play it, pump, and wait for the notify that says it ended.
 // What matters is that a movie plays for its own length, shows its frames
 // through whichever presenter owns the window, resumes where it was paused, and
-// says once that it is done. The movies are written by movie_writer.h.
+// says once that it is done. The movies are written by movie_writer.h; what no
+// movie makes fail, ffmpeg_faults.h does.
 
 #include "nocturne_test.h"
+#include "ffmpeg_faults.h"
 #include "movie_writer.h"
 #include "sdl_support.h"
 
@@ -26,6 +28,7 @@
 #include <cstring>
 #include <filesystem>
 #include <string>
+#include <vector>
 
 namespace {
 
@@ -70,6 +73,7 @@ struct Dir {
     }
     ~Dir() {
         mci("close mov");
+        ffmpeg_faults::reset();
         std::error_code ec;
         fs::current_path(previous, ec);
         fs::remove_all(root, ec);
@@ -93,9 +97,32 @@ NOCTURNE_TEST(a_movie_opens_by_the_games_path_and_says_where_its_picture_is) {
     CHECK_EQ(std::string(reply), std::string("0 0 32 16"));
     CHECK_EQ(mci("status mov window handle", reply, sizeof(reply)), 0u);
     CHECK_EQ(atoi(reply), 1);
-    // Asked for nowhere to put it, nothing is written.
+    // Asked for nowhere to put it, or no room, nothing is written.
     CHECK_EQ(mci("where mov source"), 0u);
     CHECK_EQ(mci("status mov window handle"), 0u);
+    strcpy(reply, "x");
+    CHECK_EQ(mci("where mov source", reply, 0), 0u);
+    CHECK_EQ(mci("status mov window handle", reply, 0), 0u);
+    CHECK_EQ(std::string(reply), std::string("x"));
+}
+
+// The window handle is the game window's SDL id: the grabbed window's, else the
+// first made, whose id is 1.
+NOCTURNE_TEST(the_window_handle_is_the_game_windows) {
+    Dir dir;
+    SDL_InitSubSystem(SDL_INIT_VIDEO);
+    SDL_Window *first = SDL_CreateWindow("first", 0, 0, 64, 64, 0);
+    SDL_Window *second = SDL_CreateWindow("second", 0, 0, 64, 64, 0);
+    char reply[16];
+    CHECK_EQ(mci("status mov window handle", reply, sizeof(reply)), 0u);
+    CHECK_EQ(atoi(reply), 1);
+    SDL_RaiseWindow(second);
+    SDL_SetWindowGrab(second, SDL_TRUE);
+    CHECK_EQ(mci("status mov window handle", reply, sizeof(reply)), 0u);
+    CHECK_EQ(atoi(reply), (int)SDL_GetWindowID(second));
+    SDL_DestroyWindow(second);
+    SDL_DestroyWindow(first);
+    SDL_QuitSubSystem(SDL_INIT_VIDEO);
 }
 
 // No file named, one not there, one that is not a movie or has no picture: each
@@ -123,6 +150,58 @@ NOCTURNE_TEST(a_movie_that_cannot_be_opened_is_an_error_and_nothing_to_play) {
     CHECK_EQ(std::string(reply), std::string(""));
     CHECK_EQ(mci_video_pump_frame(), 0);
     CHECK_EQ(mci_video_is_playing(), 0);
+}
+
+// A picture in a codec there is no decoder for, or with no width or height, is
+// no movie.
+NOCTURNE_TEST(a_picture_that_cannot_be_decoded_is_an_error) {
+    Dir dir;
+    struct Patch {
+        size_t offset;   // into the BITMAPINFOHEADER
+        uint32_t value;
+        int size;
+    };
+    const Patch patches[] = {
+        {16, 0x5a5a5a5a, 4},   // biCompression: an unknown fourcc
+        {4, 0, 4},             // biWidth
+        {8, 0, 4},             // biHeight
+    };
+    for (const Patch &p : patches) {
+        CHECK(write_movie("Video/bad.avi", Movie()));
+        CHECK(movie_writer::patch_format("Video/bad.avi", "vids", p.offset, p.value, p.size));
+        CHECK_EQ(mci("open \"video\\bad.avi\" alias mov"), 1u);
+    }
+}
+
+// Each thing opening a movie makes, failing, fails the open and leaves nothing
+// behind to play.
+NOCTURNE_TEST(a_movie_whose_opening_fails_part_way_is_an_error) {
+    Dir dir;
+    CHECK(write_movie("Video/noc1.avi", Movie()));
+    struct Fault {
+        const char *call;
+        int pass;
+    };
+    const Fault faults[] = {
+        {"avformat_find_stream_info", 0},
+        {"avcodec_alloc_context3", 0},
+        {"avcodec_parameters_to_context", 0},
+        {"avcodec_open2", 0},
+        {"av_packet_alloc", 0},
+        {"av_frame_alloc", 0},   // the decode frame
+        {"av_frame_alloc", 1},   // the RGB one
+        {"av_frame_alloc", 2},   // the first of the queue
+        {"av_malloc", 0},
+        {"sws_getContext", 0},
+    };
+    for (const Fault &f : faults) {
+        ffmpeg_faults::fail(f.call, f.pass);
+        CHECK_EQ(mci("open \"video\\noc1.avi\" alias mov"), 1u);
+        CHECK_EQ(mci("play mov"), 1u);
+        ffmpeg_faults::reset();
+    }
+    // And with nothing failing, the same movie opens.
+    CHECK_EQ(mci("open \"video\\noc1.avi\" alias mov"), 0u);
 }
 
 // -----------------------------------------------------------------------------
@@ -278,6 +357,147 @@ NOCTURNE_TEST(without_a_sound_device_a_movie_plays_silent) {
     mci("play mov");
     CHECK_EQ(pump_until_done(3000), 1);
     SDL_setenv("SDL_AUDIODRIVER", "dummy", 1);
+}
+
+// Nor with every device SDL will open already taken.
+NOCTURNE_TEST(with_every_sound_device_taken_a_movie_plays_silent) {
+    Dir dir;
+    stand.gl_active = 1;
+    SDL_InitSubSystem(SDL_INIT_AUDIO);
+    SDL_AudioSpec spec;
+    SDL_zero(spec);
+    spec.freq = 22050;
+    spec.format = AUDIO_S16SYS;
+    spec.channels = 1;
+    spec.samples = 1024;
+    std::vector<SDL_AudioDeviceID> taken;
+    while (SDL_AudioDeviceID id = SDL_OpenAudioDevice(nullptr, 0, &spec, nullptr, 0)) {
+        taken.push_back(id);
+    }
+    CHECK(!taken.empty());
+    CHECK(write_movie("Video/quiet.avi", Movie()));
+    CHECK_EQ(mci("open \"video\\quiet.avi\" alias mov"), 0u);
+    mci("play mov");
+    CHECK_EQ(pump_until_done(3000), 1);
+    for (SDL_AudioDeviceID id : taken) SDL_CloseAudioDevice(id);
+}
+
+// Sound that cannot be decoded, or whose decoder or resampler fails to come up,
+// is left out, and the picture plays. (A rate of 0 FFmpeg turns away itself.)
+NOCTURNE_TEST(a_movie_whose_sound_cannot_be_played_plays_silent) {
+    Dir dir;
+    stand.gl_active = 1;
+    Movie movie;
+    movie.frames = 3;
+    struct Patch {
+        size_t offset;   // into the WAVEFORMATEX
+        uint32_t value;
+        int size;
+    };
+    const Patch patches[] = {
+        {0, 0x7777, 2},   // wFormatTag: no such codec
+        {2, 0, 2},        // nChannels
+    };
+    for (const Patch &p : patches) {
+        CHECK(write_movie("Video/mute.avi", movie));
+        CHECK(movie_writer::patch_format("Video/mute.avi", "auds", p.offset, p.value, p.size));
+        CHECK_EQ(mci("open \"video\\mute.avi\" alias mov"), 0u);
+        mci("play mov");
+        CHECK_EQ(pump_until_done(3000), 1);
+        mci("close mov");
+    }
+
+    CHECK(write_movie("Video/mute.avi", movie));
+    struct Fault {
+        const char *call;
+        int pass;
+    };
+    const Fault faults[] = {
+        {"avcodec_alloc_context3", 1},
+        {"avcodec_parameters_to_context", 1},
+        {"avcodec_open2", 1},
+        {"swr_alloc_set_opts2", 0},
+        {"swr_init", 0},
+    };
+    for (const Fault &f : faults) {
+        ffmpeg_faults::fail(f.call, f.pass);
+        CHECK_EQ(mci("open \"video\\mute.avi\" alias mov"), 0u);
+        mci("play mov");
+        CHECK_EQ(pump_until_done(3000), 1);
+        mci("close mov");
+        ffmpeg_faults::reset();
+    }
+}
+
+// Sound that runs on past the picture is waited for, but not forever: the end
+// comes a few seconds after the picture's whether or not the device has played
+// it out. The dummy device plays slower than real time, so it never has.
+NOCTURNE_TEST(sound_left_playing_after_the_picture_is_given_up_on) {
+    Dir dir;
+    stand.gl_active = 1;
+    Movie movie;
+    movie.frames = 1;
+    movie.sound_frames = 300;   // twenty seconds
+    CHECK(write_movie("Video/long.avi", movie));
+    CHECK_EQ(mci("open \"video\\long.avi\" alias mov"), 0u);
+    const Uint32 start = SDL_GetTicks();
+    mci("play mov");
+    CHECK_EQ(pump_until_done(8000), 1);
+    const Uint32 took = SDL_GetTicks() - start;
+    CHECK(took >= 3000);
+    CHECK(took < 6000);
+}
+
+// The frames a decoder holds back are given up at the end and shown, the last
+// of them the movie's last frame, though it comes out with no timestamp.
+NOCTURNE_TEST(the_frames_a_decoder_holds_back_are_shown_at_the_end) {
+    Dir dir;
+    stand.gl_active = 1;
+    Movie movie;
+    movie.video_codec = AV_CODEC_ID_MPEG4;
+    movie.b_frames = 2;
+    movie.frames = 10;
+    movie.audio = AV_CODEC_ID_NONE;
+    CHECK(write_movie("Video/bframes.avi", movie));
+    CHECK_EQ(mci("open \"video\\bframes.avi\" alias mov"), 0u);
+    mci("play mov");
+    CHECK_EQ(pump_until_done(3000), 1);
+    // Brightness 9 * 16 = 144, the last frame's; the one before is 128.
+    CHECK(stand.present_first_byte > 140);
+}
+
+// A movie whose container gives neither its rate nor its length plays all the
+// same.
+NOCTURNE_TEST(a_movie_that_does_not_say_its_rate_or_length_plays) {
+    Dir dir;
+    stand.gl_active = 1;
+    Movie movie;
+    movie.frames = 1;
+    movie.audio = AV_CODEC_ID_NONE;
+    movie.container = "nut";
+    CHECK(write_movie("Video/rate.nut", movie));
+    CHECK_EQ(mci("open \"video\\rate.nut\" alias mov"), 0u);
+    mci("play mov");
+    CHECK_EQ(pump_until_done(3000), 1);
+    CHECK_EQ(stand.presents, 1);
+}
+
+// Played again while playing, a movie carries on rather than starting its clock
+// over.
+NOCTURNE_TEST(playing_a_playing_movie_carries_on) {
+    Dir dir;
+    stand.gl_active = 1;
+    Movie movie;
+    movie.audio = AV_CODEC_ID_NONE;
+    CHECK(write_movie("Video/again.avi", movie));
+    CHECK_EQ(mci("open \"video\\again.avi\" alias mov"), 0u);
+    const Uint32 start = SDL_GetTicks();
+    mci("play mov");
+    SDL_Delay(500);
+    mci_video_pump_frame();
+    CHECK_EQ(mci("play mov"), 0u);
+    CHECK_EQ(pump_until_done(3000), 1);
+    CHECK(SDL_GetTicks() - start < 1400);   // a second's movie, not a second and a half
 }
 
 // -----------------------------------------------------------------------------

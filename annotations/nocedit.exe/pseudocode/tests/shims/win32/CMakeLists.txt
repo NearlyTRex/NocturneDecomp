@@ -55,6 +55,16 @@ if(NOCTURNE_FFMPEG_DEP)
     add_dependencies(nocturne_test_ffmpeg ${NOCTURNE_FFMPEG_DEP})
 endif()
 
+# The movie shim's FFmpeg calls that ffmpeg_faults.h can fail, renamed in this
+# directory's build of it only.
+set(_ffmpeg_faults
+    avformat_find_stream_info avcodec_alloc_context3 avcodec_parameters_to_context
+    avcodec_open2 av_packet_alloc av_frame_alloc av_malloc sws_getContext
+    swr_alloc_set_opts2 swr_init)
+list(TRANSFORM _ffmpeg_faults REPLACE "^(.+)$" "\\1=ffmpeg_faults_\\1")
+set_source_files_properties("${NOCTURNE_PSEUDOCODE_DIR}/shims/win32/mci_video.cpp"
+    PROPERTIES COMPILE_DEFINITIONS "${_ffmpeg_faults}")
+
 nocturne_test_suite(shims_win32_sdl
     TESTS ${_win32_sdl_tests}
     SUBJECTS
@@ -67,6 +77,7 @@ nocturne_test_suite(shims_win32_sdl
         shims/core/file_search.cpp
         src/globals/globals_610000.cpp
     SUPPORT
+        ffmpeg_faults.cpp
         movie_writer.cpp
         sdl_support.cpp
     LIBRARIES ${SDL2_LIBRARIES} ${SDL2TTF_LIBRARIES} nocturne_test_ffmpeg

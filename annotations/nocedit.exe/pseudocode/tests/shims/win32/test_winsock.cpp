@@ -128,7 +128,10 @@ NOCTURNE_TEST(socket_options_are_set_with_winsocks_numbers) {
     char *value = (char *)&on;
     CHECK_EQ(g_setsockoptFunc(s, kSolSocket, 0x0020, value, 4), 0);  // SO_BROADCAST
     CHECK_EQ(g_setsockoptFunc(s, kSolSocket, 0x0004, value, 4), 0);  // SO_REUSEADDR
-    CHECK_EQ(g_setsockoptFunc(s, kSolSocket, 0x0008, value, 4), 0);  // SO_KEEPALIVE
+    // SO_KEEPALIVE is a stream socket's: Winsock refuses it on a datagram one.
+    _SOCKET stream = g_socketFunc(kAfInet, kSockStream, 0);
+    CHECK_EQ(g_setsockoptFunc(stream, kSolSocket, 0x0008, value, 4), 0);
+    g_closesocketFunc(stream);
     int size = 65536;
     CHECK_EQ(g_setsockoptFunc(s, kSolSocket, 0x1001, (char *)&size, 4), 0);  // SO_SNDBUF
     CHECK_EQ(g_setsockoptFunc(s, kSolSocket, 0x1002, (char *)&size, 4), 0);  // SO_RCVBUF
