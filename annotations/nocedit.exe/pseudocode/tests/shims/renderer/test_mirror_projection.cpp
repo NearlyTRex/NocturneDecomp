@@ -9,22 +9,22 @@
 // a camera installed inside the window sets a real scale of its own, and that
 // one counts. See mirror_projection.h.
 
-#include "nocturne_test.h"
-
 #include "nocturne.h"
+#include "nocturne_test.h"
 
 namespace {
 
-const int kUnreconciled = 0x10000;   // what pushViewport leaves live
-const float kDefaultFov = 18.0f;     // the factor at that scale
+const int kUnreconciled = 0x10000; // what pushViewport leaves live
+const float kDefaultFov = 18.0f;   // the factor at that scale
 
 void at(int live_scale, int stack_depth, int pushed_over = 0) {
     g_ProjectionScale = live_scale;
     g_ViewportStackIndex = stack_depth;
-    if (stack_depth > 0) g_ViewportStack_ProjectionScale[stack_depth - 1] = pushed_over;
+    if (stack_depth > 0)
+        g_ViewportStack_ProjectionScale[stack_depth - 1] = pushed_over;
 }
 
-}  // namespace
+} // namespace
 
 // Outside a pushed viewport the live scale is the camera's.
 NOCTURNE_TEST(outside_a_pushed_viewport_the_live_scale_counts) {

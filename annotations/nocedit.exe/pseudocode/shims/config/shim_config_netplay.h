@@ -45,8 +45,7 @@
 // g_CurrentGameTime and last_arrival_time are 16.16 fixed-point seconds — see
 // CNetGame::syncPlayers, which scales their difference by 1/65536, and
 // addPlayer's 0x1e0000 (= 30s) ping backdate.
-#define NOCTURNE_NETPLAY_TIMEOUT_TICKS \
-    ((uint)(NOCTURNE_NETPLAY_TIMEOUT_SECONDS * 65536))
+#define NOCTURNE_NETPLAY_TIMEOUT_TICKS ((uint)(NOCTURNE_NETPLAY_TIMEOUT_SECONDS * 65536))
 
 // The guest waits longer before giving up on the host than the host does on a
 // guest. The host's limit is forced on it — the sim-frame history is filling
@@ -55,8 +54,7 @@
 // hitched for a few seconds from costing the guest the session, since the
 // guest's clock is its own wall clock and keeps running through a stall the
 // host is frozen in.
-#define NOCTURNE_NETPLAY_HOST_TIMEOUT_TICKS \
-    ((uint)(NOCTURNE_NETPLAY_TIMEOUT_SECONDS * 3 * 65536))
+#define NOCTURNE_NETPLAY_HOST_TIMEOUT_TICKS ((uint)(NOCTURNE_NETPLAY_TIMEOUT_SECONDS * 3 * 65536))
 
 // NOCTURNE_NETPLAY_SYNC_CHECK
 //   1: the host reports its hero positions and a hash of the active set once

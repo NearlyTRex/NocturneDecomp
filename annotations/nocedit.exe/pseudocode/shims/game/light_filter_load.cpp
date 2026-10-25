@@ -3,37 +3,35 @@
 // =============================================================================
 
 #include "game/light_filter_load.h"
+
 #include "core/ascii_case.h"
+#include "nocturne.h"
 #include "shim_config.h"
 
-#include "nocturne.h"
+#include <cctype>
 
 #if !NOCTURNE_AUTHENTIC_LIGHT_FILTER_LOAD
 
 namespace {
 
-bool is_ident_char(char c)
-{
-    return (c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z') ||
-           (c >= '0' && c <= '9') || c == '_';
+bool is_ident_char(char c) {
+    return std::isalnum((unsigned char)c) != 0 || c == '_';
 }
 
 // `text` starts with the command `name`, matched without case and not as the
 // prefix of a longer identifier.
-bool starts_with_command(const char *text, const char *name)
-{
+bool starts_with_command(const char *text, const char *name) {
     size_t n = strlen(name);
     return nocturne_ascii_icompare_n(text, name, n) == 0 && !is_ident_char(text[n]);
 }
 
 // The body of CScript::step's addLightFilter branch, without its error returns:
 // a line that fails to parse or names a missing light or file is skipped.
-void apply_add_light_filter(char *args)
-{
-    char       light_name[200];
-    char       filter_name[200];
-    float      duration = 0.0f;
-    int        consumed = -1;
+void apply_add_light_filter(char *args) {
+    char light_name[200];
+    char filter_name[200];
+    float duration = 0.0f;
+    int consumed = -1;
     C3DSLight *light = (C3DSLight *)0;
     CDemonLight *master_light = (CDemonLight *)0;
 
@@ -52,8 +50,7 @@ void apply_add_light_filter(char *args)
 
 } // namespace
 
-extern "C" void nocturne_light_filter_load_replay(CScript *script)
-{
+extern "C" void nocturne_light_filter_load_replay(CScript *script) {
     if (script == (CScript *)0 || script->parsed_lines == (SScriptLine *)0) {
         return;
     }
@@ -78,6 +75,8 @@ extern "C" void nocturne_light_filter_load_replay(CScript *script)
 
 #else
 
-extern "C" void nocturne_light_filter_load_replay(CScript *script) { (void)script; }
+extern "C" void nocturne_light_filter_load_replay(CScript *script) {
+    (void)script;
+}
 
 #endif // !NOCTURNE_AUTHENTIC_LIGHT_FILTER_LOAD

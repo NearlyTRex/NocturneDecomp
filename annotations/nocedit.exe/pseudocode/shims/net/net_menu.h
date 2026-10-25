@@ -33,8 +33,8 @@ extern "C" {
 #endif
 
 #define NOCTURNE_NET_MENU_CANCEL (-1)
-#define NOCTURNE_NET_MENU_HOST   0
-#define NOCTURNE_NET_MENU_JOIN   1
+#define NOCTURNE_NET_MENU_HOST 0
+#define NOCTURNE_NET_MENU_JOIN 1
 
 // Runs the multiplayer submenu until the player picks or backs out. Returns
 // NOCTURNE_NET_MENU_HOST, NOCTURNE_NET_MENU_JOIN, or NOCTURNE_NET_MENU_CANCEL

@@ -5,12 +5,12 @@
 // See net_friendly.h for what this is and why it zeroes rather than returns.
 
 #include "net/net_friendly.h"
+
 #include "nocturne.h"
 
 namespace {
 
-int actor_is_hero(CDemonActor *actor)
-{
+int actor_is_hero(CDemonActor *actor) {
     if (actor == (CDemonActor *)0x0) {
         return 0;
     }
@@ -22,8 +22,7 @@ int actor_is_hero(CDemonActor *actor)
 
 } // namespace
 
-extern "C" int nocturne_net_friendly_fire_blocked(CCharacter *victim, SDamageInfo *damage_info)
-{
+extern "C" int nocturne_net_friendly_fire_blocked(CCharacter *victim, SDamageInfo *damage_info) {
 #if NOCTURNE_AUTHENTIC_FRIENDLY_FIRE
     (void)victim;
     (void)damage_info;
@@ -40,16 +39,14 @@ extern "C" int nocturne_net_friendly_fire_blocked(CCharacter *victim, SDamageInf
     }
     // Either field naming a hero means a hero caused it - a weapon arrives as
     // attacker with the hero as its wielder, a punch as attacker alone.
-    if (actor_is_hero(damage_info->attacker) == 0 &&
-        actor_is_hero(damage_info->wielder) == 0) {
+    if (actor_is_hero(damage_info->attacker) == 0 && actor_is_hero(damage_info->wielder) == 0) {
         return 0;
     }
     return 1;
 #endif
 }
 
-extern "C" int nocturne_net_friendly_fire_block(CCharacter *victim, SDamageInfo *damage_info)
-{
+extern "C" int nocturne_net_friendly_fire_block(CCharacter *victim, SDamageInfo *damage_info) {
 #if NOCTURNE_AUTHENTIC_FRIENDLY_FIRE
     (void)victim;
     (void)damage_info;

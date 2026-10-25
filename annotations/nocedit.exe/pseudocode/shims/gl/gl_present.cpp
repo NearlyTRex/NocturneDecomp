@@ -6,9 +6,10 @@
 // SDL_Renderer.
 
 #include "gl/gl_present.h"
+
+#include "core/debug_log.h"
 #include "gl/gl_version.h"
 #include "shim_config.h"
-#include "core/debug_log.h"
 
 #include <SDL.h>
 
@@ -17,6 +18,7 @@
 #include "gl/gl_api.h"
 #include "gl/gl_blit.h"
 #include "gl/gl_pixels.h"
+
 #include <cmath>
 #include <stdlib.h>
 #include <string.h>
@@ -30,26 +32,26 @@ namespace {
 Uint64 s_swap_ticks = 0;
 
 struct GLPresentState {
-    SDL_Window   *window        = nullptr;
-    SDL_GLContext context       = nullptr;
-    GLuint        framebuffer_texture = 0;
-    int           texture_width  = 0;
-    int           texture_height = 0;
-    GLenum        texture_format = 0;  // GL_RGB / GL_BGRA
-    GLenum        texture_type   = 0;  // GL_UNSIGNED_BYTE / GL_UNSIGNED_SHORT_5_6_5
-    int           logical_width  = 0;
-    int           logical_height = 0;
-    bool          active         = false;
+    SDL_Window *window = nullptr;
+    SDL_GLContext context = nullptr;
+    GLuint framebuffer_texture = 0;
+    int texture_width = 0;
+    int texture_height = 0;
+    GLenum texture_format = 0; // GL_RGB / GL_BGRA
+    GLenum texture_type = 0;   // GL_UNSIGNED_BYTE / GL_UNSIGNED_SHORT_5_6_5
+    int logical_width = 0;
+    int logical_height = 0;
+    bool active = false;
 
     // Scene target. A DirectDraw back buffer and its Z buffer are persistent
     // memory that the renderer DLL clears only when it chooses; GL's default
     // framebuffer loses both on every SwapWindow. Everything the DLL draws goes
     // here instead, and this is blitted to the window at present time.
-    GLuint        scene_fbo      = 0;
-    GLuint        scene_color    = 0;
-    GLuint        scene_depth    = 0;
-    int           scene_width    = 0;
-    int           scene_height   = 0;
+    GLuint scene_fbo = 0;
+    GLuint scene_color = 0;
+    GLuint scene_depth = 0;
+    int scene_width = 0;
+    int scene_height = 0;
 };
 
 GLPresentState g_gl;
@@ -76,25 +78,26 @@ void set_sampling(GLuint texture, GLint filter) {
 // (Re)allocate the streaming texture when the resolution or format changes.
 // GL_NEAREST keeps the integer up-scale crisp, matching SDL_RenderSetIntegerScale.
 bool ensure_texture(int width, int height, GLenum format, GLenum type) {
-    if (g_gl.framebuffer_texture != 0 &&
-        g_gl.texture_width == width && g_gl.texture_height == height &&
-        g_gl.texture_format == format && g_gl.texture_type == type) {
+    if (g_gl.framebuffer_texture != 0 && g_gl.texture_width == width &&
+        g_gl.texture_height == height && g_gl.texture_format == format &&
+        g_gl.texture_type == type) {
         return true;
     }
 
     if (g_gl.framebuffer_texture == 0) {
         gl.GenTextures(1, &g_gl.framebuffer_texture);
-        if (g_gl.framebuffer_texture == 0) return false;
+        if (g_gl.framebuffer_texture == 0)
+            return false;
     }
 
     set_sampling(g_gl.framebuffer_texture, GL_NEAREST);
-    gl.TexImage2D(GL_TEXTURE_2D, 0, NOCTURNE_GL_INTERNAL_FOR(format), width, height, 0,
-                  format, type, nullptr);
+    gl.TexImage2D(GL_TEXTURE_2D, 0, NOCTURNE_GL_INTERNAL_FOR(format), width, height, 0, format,
+                  type, nullptr);
 
-    g_gl.texture_width  = width;
+    g_gl.texture_width = width;
     g_gl.texture_height = height;
     g_gl.texture_format = format;
-    g_gl.texture_type   = type;
+    g_gl.texture_type = type;
     return true;
 }
 
@@ -113,8 +116,8 @@ bool ensure_texture(int width, int height, GLenum format, GLenum type) {
 // The logical size is never empty: it is the frame's own, or the drawable's,
 // when none is set. Then a drawable of a pixel or more gives a quad of a pixel
 // or more, since the smaller of the two scales keeps both sides at least 1.
-void compute_viewport(int drawable_w, int drawable_h, int logical_w, int logical_h,
-                      int *out_x, int *out_y, int *out_w, int *out_h) {
+void compute_viewport(int drawable_w, int drawable_h, int logical_w, int logical_h, int *out_x,
+                      int *out_y, int *out_w, int *out_h) {
     double scale_x = (double)drawable_w / (double)logical_w;
     double scale_y = (double)drawable_h / (double)logical_h;
     double scale = (scale_x < scale_y) ? scale_x : scale_y;
@@ -124,7 +127,8 @@ void compute_viewport(int drawable_w, int drawable_h, int logical_w, int logical
     // with everything past the window edge cut off, rather than the whole
     // frame shrunk to fit. A drawable of nothing, as a minimised window has,
     // presents at 1:1 into it.
-    if (scale <= 0.0) scale = 1.0;
+    if (scale <= 0.0)
+        scale = 1.0;
     *out_w = (int)std::lround(logical_w * scale);
     *out_h = (int)std::lround(logical_h * scale);
     *out_x = (drawable_w - *out_w) / 2;
@@ -143,9 +147,11 @@ int viewport_is_integer_scale(int vp_w, int logical_w) {
 // "OpenGL ES ".
 void cache_version_short(const char *ver) {
     g_gl_version_short[0] = '\0';
-    if (ver == nullptr) return;
+    if (ver == nullptr)
+        return;
     static const char kEsPrefix[] = "OpenGL ES ";
-    if (strncmp(ver, kEsPrefix, sizeof(kEsPrefix) - 1) == 0) ver += sizeof(kEsPrefix) - 1;
+    if (strncmp(ver, kEsPrefix, sizeof(kEsPrefix) - 1) == 0)
+        ver += sizeof(kEsPrefix) - 1;
     size_t n = 0;
     while (ver[n] != '\0' && n + 1 < sizeof(g_gl_version_short) &&
            (ver[n] == '.' || (ver[n] >= '0' && ver[n] <= '9'))) {
@@ -155,13 +161,16 @@ void cache_version_short(const char *ver) {
     // trailing ".0" and driver build add nothing here.
     size_t dots = 0, cut = n;
     for (size_t i = 0; i < n; ++i) {
-        if (ver[i] == '.' && ++dots == 2) { cut = i; break; }
+        if (ver[i] == '.' && ++dots == 2) {
+            cut = i;
+            break;
+        }
     }
     memcpy(g_gl_version_short, ver, cut);
     g_gl_version_short[cut] = '\0';
 }
 
-}  // namespace
+} // namespace
 
 // Always given the game's one window: ddraw's SetDisplayMode and ensure_active
 // both pass it. So a context that is up is up on it.
@@ -197,11 +206,11 @@ extern "C" int nocturne_gl_init(SDL_Window *window) {
 
     g_gl.context = SDL_GL_CreateContext(window);
     if (g_gl.context == nullptr) {
-        DLOG("render","gl_present: SDL_GL_CreateContext failed: %s", SDL_GetError());
+        DLOG("render", "gl_present: SDL_GL_CreateContext failed: %s", SDL_GetError());
         return 0;
     }
     if (SDL_GL_MakeCurrent(window, g_gl.context) != 0) {
-        DLOG("render","gl_present: SDL_GL_MakeCurrent failed: %s", SDL_GetError());
+        DLOG("render", "gl_present: SDL_GL_MakeCurrent failed: %s", SDL_GetError());
         SDL_GL_DeleteContext(g_gl.context);
         g_gl.context = nullptr;
         return 0;
@@ -228,9 +237,8 @@ extern "C" int nocturne_gl_init(SDL_Window *window) {
     // with no context current, and glGetString would then return null.
     cache_version_short((const char *)gl.GetString(GL_VERSION));
 
-    DLOG("render","gl_present: context up — GL_VERSION=%s GL_RENDERER=%s",
-              (const char *)gl.GetString(GL_VERSION),
-              (const char *)gl.GetString(GL_RENDERER));
+    DLOG("render", "gl_present: context up — GL_VERSION=%s GL_RENDERER=%s",
+         (const char *)gl.GetString(GL_VERSION), (const char *)gl.GetString(GL_RENDERER));
     return 1;
 }
 
@@ -247,10 +255,10 @@ extern "C" int nocturne_gl_is_active(void) {
 // default framebuffer and the old non-persistent behaviour. The framebuffer
 // entry points are ones gl_api requires, so an active context has them.
 extern "C" int nocturne_gl_scene_target_bind(int width, int height) {
-    if (!g_gl.active || width <= 0 || height <= 0) return 0;
+    if (!g_gl.active || width <= 0 || height <= 0)
+        return 0;
 
-    if (g_gl.scene_fbo != 0 &&
-        g_gl.scene_width == width && g_gl.scene_height == height) {
+    if (g_gl.scene_fbo != 0 && g_gl.scene_width == width && g_gl.scene_height == height) {
         gl.BindFramebuffer(GL_FRAMEBUFFER, g_gl.scene_fbo);
         return 1;
     }
@@ -269,11 +277,9 @@ extern "C" int nocturne_gl_scene_target_bind(int width, int height) {
 #if NOCTURNE_GLES
     // Rendered to, never uploaded to, so the format has no pixels to describe;
     // RGBA8 is the one ES guarantees is renderable, and a BGRA texture is not.
-    gl.TexImage2D(GL_TEXTURE_2D, 0, GL_RGBA8, width, height, 0,
-                  GL_RGBA, GL_UNSIGNED_BYTE, nullptr);
+    gl.TexImage2D(GL_TEXTURE_2D, 0, GL_RGBA8, width, height, 0, GL_RGBA, GL_UNSIGNED_BYTE, nullptr);
 #else
-    gl.TexImage2D(GL_TEXTURE_2D, 0, GL_RGBA8, width, height, 0,
-                  GL_BGRA, GL_UNSIGNED_BYTE, nullptr);
+    gl.TexImage2D(GL_TEXTURE_2D, 0, GL_RGBA8, width, height, 0, GL_BGRA, GL_UNSIGNED_BYTE, nullptr);
 #endif
 
     gl.GenRenderbuffers(1, &g_gl.scene_depth);
@@ -283,13 +289,13 @@ extern "C" int nocturne_gl_scene_target_bind(int width, int height) {
 
     gl.GenFramebuffers(1, &g_gl.scene_fbo);
     gl.BindFramebuffer(GL_FRAMEBUFFER, g_gl.scene_fbo);
-    gl.FramebufferTexture2D(GL_FRAMEBUFFER, GL_COLOR_ATTACHMENT0,
-                            GL_TEXTURE_2D, g_gl.scene_color, 0);
-    gl.FramebufferRenderbuffer(GL_FRAMEBUFFER, GL_DEPTH_ATTACHMENT,
-                               GL_RENDERBUFFER, g_gl.scene_depth);
+    gl.FramebufferTexture2D(GL_FRAMEBUFFER, GL_COLOR_ATTACHMENT0, GL_TEXTURE_2D, g_gl.scene_color,
+                            0);
+    gl.FramebufferRenderbuffer(GL_FRAMEBUFFER, GL_DEPTH_ATTACHMENT, GL_RENDERBUFFER,
+                               g_gl.scene_depth);
 
     if (gl.CheckFramebufferStatus(GL_FRAMEBUFFER) != GL_FRAMEBUFFER_COMPLETE) {
-        DLOG("render","gl_present: scene FBO incomplete (%dx%d) — falling back", width, height);
+        DLOG("render", "gl_present: scene FBO incomplete (%dx%d) — falling back", width, height);
         gl.BindFramebuffer(GL_FRAMEBUFFER, 0);
         gl.DeleteFramebuffers(1, &g_gl.scene_fbo);
         gl.DeleteTextures(1, &g_gl.scene_color);
@@ -298,7 +304,7 @@ extern "C" int nocturne_gl_scene_target_bind(int width, int height) {
         return 0;
     }
 
-    g_gl.scene_width  = width;
+    g_gl.scene_width = width;
     g_gl.scene_height = height;
     // Start from a known state; from here on the contents persist exactly like
     // DirectDraw surface memory, cleared only when the DLL asks.
@@ -307,7 +313,7 @@ extern "C" int nocturne_gl_scene_target_bind(int width, int height) {
     gl.ClearDepth(1.0);
     gl.DepthMask(GL_TRUE);
     gl.Clear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-    DLOG("render","gl_present: scene FBO %dx%d ready", width, height);
+    DLOG("render", "gl_present: scene FBO %dx%d ready", width, height);
     return 1;
 }
 
@@ -329,13 +335,15 @@ extern "C" int nocturne_gl_ensure_active(void) {
     // The window is already up by then (nocedit creates it before loading the
     // renderer), and the HWND the engine passes around IS the SDL_Window, so
     // there is exactly one window to attach to.
-    if (g_gl.active) return 1;
-    if (g_sdlWindow == nullptr) return 0;
+    if (g_gl.active)
+        return 1;
+    if (g_sdlWindow == nullptr)
+        return 0;
     return nocturne_gl_init(g_sdlWindow);
 }
 
 extern "C" void nocturne_gl_set_logical_size(int width, int height) {
-    g_gl.logical_width  = width;
+    g_gl.logical_width = width;
     g_gl.logical_height = height;
 }
 
@@ -344,8 +352,8 @@ namespace {
 // Uploads a CPU image into the frame texture. Its pitch is not necessarily
 // width*bytes-per-pixel, so GL is told the real stride rather than the rows
 // being repacked on the CPU.
-void upload_frame(const void *pixels, int width, int height, int pitch, int bpp,
-                  GLenum format, GLenum type) {
+void upload_frame(const void *pixels, int width, int height, int pitch, int bpp, GLenum format,
+                  GLenum type) {
     const int bytes_per_pixel = bpp / 8;
     gl.PixelStorei(GL_UNPACK_ALIGNMENT, 1);
     gl.PixelStorei(GL_UNPACK_ROW_LENGTH, (pitch > 0) ? pitch / bytes_per_pixel : width);
@@ -376,11 +384,10 @@ void present_to_window(GLuint texture, int fallback_w, int fallback_h, bool flip
     int drawable_w = 0, drawable_h = 0;
     SDL_GL_GetDrawableSize(g_gl.window, &drawable_w, &drawable_h);
 
-    const int logical_w = (g_gl.logical_width  > 0) ? g_gl.logical_width  : fallback_w;
+    const int logical_w = (g_gl.logical_width > 0) ? g_gl.logical_width : fallback_w;
     const int logical_h = (g_gl.logical_height > 0) ? g_gl.logical_height : fallback_h;
     int vp_x = 0, vp_y = 0, vp_w = 0, vp_h = 0;
-    compute_viewport(drawable_w, drawable_h, logical_w, logical_h,
-                     &vp_x, &vp_y, &vp_w, &vp_h);
+    compute_viewport(drawable_w, drawable_h, logical_w, logical_h, &vp_x, &vp_y, &vp_w, &vp_h);
 
     // Letterbox bars stay black; the quad covers the rest.
     gl.Viewport(0, 0, drawable_w, drawable_h);
@@ -403,8 +410,8 @@ void present_to_window(GLuint texture, int fallback_w, int fallback_h, bool flip
     // included, since nothing else draws there. A failure here is a black window
     // and it says so, rather than being carried by a second path that would hide
     // a program that stopped building.
-    const int drawn = flipped ? nocturne_gl_blit_quad_flipped(texture)
-                              : nocturne_gl_blit_quad(texture);
+    const int drawn =
+        flipped ? nocturne_gl_blit_quad_flipped(texture) : nocturne_gl_blit_quad(texture);
     if (!drawn) {
         DLOG_RL("render", 1, 600, "gl_present: present quad unavailable — frame not drawn");
     }
@@ -419,27 +426,31 @@ void present_to_window(GLuint texture, int fallback_w, int fallback_h, bool flip
 
 extern "C" void nocturne_gl_present_framebuffer(const void *pixels, int width, int height,
                                                 int pitch, int bpp) {
-    if (!g_gl.active || pixels == nullptr || width <= 0 || height <= 0) return;
+    if (!g_gl.active || pixels == nullptr || width <= 0 || height <= 0)
+        return;
 
     GLenum format = 0, type = 0;
     if (!nocturne_gl_format_for_bpp(bpp, &format, &type)) {
-        DLOG_RL("render",4, 300, "gl_present: unsupported bpp=%d", bpp);
+        DLOG_RL("render", 4, 300, "gl_present: unsupported bpp=%d", bpp);
         return;
     }
-    if (!ensure_texture(width, height, format, type)) return;
+    if (!ensure_texture(width, height, format, type))
+        return;
 
     upload_frame(pixels, width, height, pitch, bpp, format, type);
     present_to_window(g_gl.framebuffer_texture, width, height, false);
 }
 
-extern "C" void nocturne_gl_scene_upload(const void *pixels, int width, int height,
-                                         int pitch, int bpp) {
-    if (!g_gl.active || g_gl.scene_fbo == 0) return;
-    if (pixels == nullptr || width <= 0 || height <= 0) return;
+extern "C" void nocturne_gl_scene_upload(const void *pixels, int width, int height, int pitch,
+                                         int bpp) {
+    if (!g_gl.active || g_gl.scene_fbo == 0)
+        return;
+    if (pixels == nullptr || width <= 0 || height <= 0)
+        return;
 
     GLenum format = 0, type = 0;
     if (!nocturne_gl_format_for_bpp(bpp, &format, &type)) {
-        DLOG_RL("render",4, 300, "gl_present: scene upload unsupported bpp=%d", bpp);
+        DLOG_RL("render", 4, 300, "gl_present: scene upload unsupported bpp=%d", bpp);
         return;
     }
 
@@ -451,7 +462,7 @@ extern "C" void nocturne_gl_scene_upload(const void *pixels, int width, int heig
     // texture is made or re-made, which binds it.
     GLint prev_depth_test = 0, prev_depth_mask = 0, prev_blend = 0;
     GLint prev_cull = 0, prev_scissor = 0, prev_texture = 0;
-    GLint prev_viewport[4] = { 0, 0, 0, 0 };
+    GLint prev_viewport[4] = {0, 0, 0, 0};
     GLint prev_unpack_alignment = 4;
     gl.GetIntegerv(GL_DEPTH_TEST, &prev_depth_test);
     gl.GetIntegerv(GL_DEPTH_WRITEMASK, &prev_depth_mask);
@@ -462,7 +473,8 @@ extern "C" void nocturne_gl_scene_upload(const void *pixels, int width, int heig
     gl.GetIntegerv(GL_VIEWPORT, prev_viewport);
     gl.GetIntegerv(GL_UNPACK_ALIGNMENT, &prev_unpack_alignment);
 
-    if (!ensure_texture(width, height, format, type)) return;
+    if (!ensure_texture(width, height, format, type))
+        return;
     upload_frame(pixels, width, height, pitch, bpp, format, type);
 
     gl.BindFramebuffer(GL_FRAMEBUFFER, g_gl.scene_fbo);
@@ -489,16 +501,29 @@ extern "C" void nocturne_gl_scene_upload(const void *pixels, int width, int heig
     gl.PixelStorei(GL_UNPACK_ALIGNMENT, prev_unpack_alignment);
     gl.BindTexture(GL_TEXTURE_2D, (GLuint)prev_texture);
     gl.Viewport(prev_viewport[0], prev_viewport[1], prev_viewport[2], prev_viewport[3]);
-    if (prev_scissor)    gl.Enable(GL_SCISSOR_TEST);  else gl.Disable(GL_SCISSOR_TEST);
-    if (prev_depth_test) gl.Enable(GL_DEPTH_TEST);    else gl.Disable(GL_DEPTH_TEST);
-    if (prev_blend)      gl.Enable(GL_BLEND);         else gl.Disable(GL_BLEND);
-    if (prev_cull)       gl.Enable(GL_CULL_FACE);     else gl.Disable(GL_CULL_FACE);
+    if (prev_scissor)
+        gl.Enable(GL_SCISSOR_TEST);
+    else
+        gl.Disable(GL_SCISSOR_TEST);
+    if (prev_depth_test)
+        gl.Enable(GL_DEPTH_TEST);
+    else
+        gl.Disable(GL_DEPTH_TEST);
+    if (prev_blend)
+        gl.Enable(GL_BLEND);
+    else
+        gl.Disable(GL_BLEND);
+    if (prev_cull)
+        gl.Enable(GL_CULL_FACE);
+    else
+        gl.Disable(GL_CULL_FACE);
     gl.DepthMask(prev_depth_mask ? GL_TRUE : GL_FALSE);
 }
 
 extern "C" void nocturne_gl_present_scene(void) {
     // The colour texture is made and dropped with the framebuffer.
-    if (!g_gl.active || g_gl.scene_fbo == 0) return;
+    if (!g_gl.active || g_gl.scene_fbo == 0)
+        return;
 
     // A render target is drawn bottom-up, unlike an uploaded CPU image, so the
     // quad samples it the other way round.
@@ -506,11 +531,13 @@ extern "C" void nocturne_gl_present_scene(void) {
 }
 
 extern "C" int nocturne_gl_read_front(unsigned char **out_rgb, int *out_width, int *out_height) {
-    if (!g_gl.active) return -1;
+    if (!g_gl.active)
+        return -1;
 
     int drawable_w = 0, drawable_h = 0;
     SDL_GL_GetDrawableSize(g_gl.window, &drawable_w, &drawable_h);
-    if (drawable_w <= 0 || drawable_h <= 0) return -1;
+    if (drawable_w <= 0 || drawable_h <= 0)
+        return -1;
 
     // malloc, since the caller frees it; a frame's worth is not refused.
     const size_t row_bytes = (size_t)drawable_w * 3;
@@ -535,24 +562,25 @@ extern "C" int nocturne_gl_read_front(unsigned char **out_rgb, int *out_width, i
     nocturne_gl_flip_rows(buf, (int)row_bytes, drawable_h);
 
     *out_rgb = buf;
-    *out_width  = drawable_w;
+    *out_width = drawable_w;
     *out_height = drawable_h;
     return 0;
 }
 
-extern "C" void nocturne_gl_window_to_logical(int window_x, int window_y,
-                                              int *out_x, int *out_y) {
+extern "C" void nocturne_gl_window_to_logical(int window_x, int window_y, int *out_x, int *out_y) {
     *out_x = window_x;
     *out_y = window_y;
     // An active context always has its window.
-    if (!g_gl.active) return;
+    if (!g_gl.active)
+        return;
 
     int win_w = 0, win_h = 0, drawable_w = 0, drawable_h = 0;
     SDL_GetWindowSize(g_gl.window, &win_w, &win_h);
     SDL_GL_GetDrawableSize(g_gl.window, &drawable_w, &drawable_h);
-    if (win_w <= 0 || win_h <= 0 || drawable_w <= 0 || drawable_h <= 0) return;
+    if (win_w <= 0 || win_h <= 0 || drawable_w <= 0 || drawable_h <= 0)
+        return;
 
-    const int logical_w = (g_gl.logical_width  > 0) ? g_gl.logical_width  : drawable_w;
+    const int logical_w = (g_gl.logical_width > 0) ? g_gl.logical_width : drawable_w;
     const int logical_h = (g_gl.logical_height > 0) ? g_gl.logical_height : drawable_h;
 
     // SDL reports mouse in window units; the viewport is in drawable units, and
@@ -561,18 +589,21 @@ extern "C" void nocturne_gl_window_to_logical(int window_x, int window_y,
     const double py = (double)window_y * (double)drawable_h / (double)win_h;
 
     int vp_x = 0, vp_y = 0, vp_w = 0, vp_h = 0;
-    compute_viewport(drawable_w, drawable_h, logical_w, logical_h,
-                     &vp_x, &vp_y, &vp_w, &vp_h);
+    compute_viewport(drawable_w, drawable_h, logical_w, logical_h, &vp_x, &vp_y, &vp_w, &vp_h);
 
     double lx = (px - (double)vp_x) * (double)logical_w / (double)vp_w;
     double ly = (py - (double)vp_y) * (double)logical_h / (double)vp_h;
 
     // Clamp into the render area so a click on a letterbox bar still resolves to
     // the nearest edge pixel rather than a negative or out-of-range coordinate.
-    if (lx < 0.0) lx = 0.0;
-    if (ly < 0.0) ly = 0.0;
-    if (lx > (double)(logical_w - 1)) lx = (double)(logical_w - 1);
-    if (ly > (double)(logical_h - 1)) ly = (double)(logical_h - 1);
+    if (lx < 0.0)
+        lx = 0.0;
+    if (ly < 0.0)
+        ly = 0.0;
+    if (lx > (double)(logical_w - 1))
+        lx = (double)(logical_w - 1);
+    if (ly > (double)(logical_h - 1))
+        ly = (double)(logical_h - 1);
 
     *out_x = (int)lx;
     *out_y = (int)ly;
@@ -582,7 +613,8 @@ extern "C" void nocturne_gl_window_to_logical(int window_x, int window_y,
 // and one left behind would be bound again as if it were the new one's. GL
 // ignores the name 0, so what was never made needs no check.
 extern "C" void nocturne_gl_shutdown(void) {
-    if (!g_gl.active) return;
+    if (!g_gl.active)
+        return;
     nocturne_gl_blit_shutdown();
     gl.DeleteTextures(1, &g_gl.framebuffer_texture);
     gl.DeleteFramebuffers(1, &g_gl.scene_fbo);
@@ -597,28 +629,55 @@ extern "C" unsigned long long nocturne_gl_swap_ticks(void) {
     return s_swap_ticks;
 }
 
-#else  // !NOCTURNE_GL_PRESENT
+#else // !NOCTURNE_GL_PRESENT
 
-extern "C" int  nocturne_gl_init(SDL_Window *w) { (void)w; return 0; }
-extern "C" int  nocturne_gl_is_active(void) { return 0; }
-extern "C" int  nocturne_gl_scene_target_bind(int w, int h) { (void)w; (void)h; return 0; }
-extern "C" int  nocturne_gl_scene_target_active(void) { return 0; }
-extern "C" unsigned int nocturne_gl_scene_fbo(void) { return 0u; }
-extern "C" int  nocturne_gl_ensure_active(void) { return 0; }
+extern "C" int nocturne_gl_init(SDL_Window *w) {
+    (void)w;
+    return 0;
+}
+extern "C" int nocturne_gl_is_active(void) {
+    return 0;
+}
+extern "C" int nocturne_gl_scene_target_bind(int w, int h) {
+    (void)w;
+    (void)h;
+    return 0;
+}
+extern "C" int nocturne_gl_scene_target_active(void) {
+    return 0;
+}
+extern "C" unsigned int nocturne_gl_scene_fbo(void) {
+    return 0u;
+}
+extern "C" int nocturne_gl_ensure_active(void) {
+    return 0;
+}
 extern "C" void nocturne_gl_present_scene(void) {}
 extern "C" void nocturne_gl_scene_upload(const void *, int, int, int, int) {}
-extern "C" void nocturne_gl_set_logical_size(int w, int h) { (void)w; (void)h; }
+extern "C" void nocturne_gl_set_logical_size(int w, int h) {
+    (void)w;
+    (void)h;
+}
 extern "C" void nocturne_gl_present_framebuffer(const void *p, int w, int h, int pitch, int bpp) {
-    (void)p; (void)w; (void)h; (void)pitch; (void)bpp;
+    (void)p;
+    (void)w;
+    (void)h;
+    (void)pitch;
+    (void)bpp;
 }
 extern "C" void nocturne_gl_window_to_logical(int wx, int wy, int *ox, int *oy) {
     *ox = wx;
     *oy = wy;
 }
 extern "C" int nocturne_gl_read_front(unsigned char **rgb, int *w, int *h) {
-    (void)rgb; (void)w; (void)h; return -1;
+    (void)rgb;
+    (void)w;
+    (void)h;
+    return -1;
 }
 extern "C" void nocturne_gl_shutdown(void) {}
-extern "C" unsigned long long nocturne_gl_swap_ticks(void) { return 0; }
+extern "C" unsigned long long nocturne_gl_swap_ticks(void) {
+    return 0;
+}
 
-#endif  // NOCTURNE_GL_PRESENT
+#endif // NOCTURNE_GL_PRESENT

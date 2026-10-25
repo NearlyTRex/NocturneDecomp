@@ -9,11 +9,10 @@
 // Compiled out, it does nothing. The log is read back from the working
 // directory, where it goes with no game directories set.
 
-#include "nocturne_test.h"
-#include "debug_support.h"
-
 #include "debug/net_trace.h"
+#include "debug_support.h"
 #include "nocturne.h"
+#include "nocturne_test.h"
 #include "shim_config.h"
 
 #include <filesystem>
@@ -51,7 +50,7 @@ CBoundingBox3D *unit_box(CDemonActor *, CBoundingBox3D *out) {
 
 #endif
 
-}  // namespace
+} // namespace
 
 #if NOCTURNE_NETPLAY_RNG_TRACE
 
@@ -77,7 +76,7 @@ NOCTURNE_TEST(each_change_in_the_view_is_logged_once) {
     own.base.base.location.area_id = 3;
     g_HeroActors[0] = &own;
     g_LocalHeroIndex = 0;
-    net.server_player_index = 9;     // no such player: the local one stands in
+    net.server_player_index = 9; // no such player: the local one stands in
     g_CNetGamePtr = &net;
     g_CScriptPtr = &script;
     g_CGamePtr = &game;

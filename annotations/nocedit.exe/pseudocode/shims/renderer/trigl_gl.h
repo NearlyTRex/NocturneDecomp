@@ -64,7 +64,6 @@ unsigned nocturne_trigl_gl_state_epoch(void);
 // records kept outside this file are stale as well.
 void nocturne_trigl_gl_enable_depth_write(void);
 
-
 // The colour a fully fogged fragment becomes. Components are 0..1.
 void nocturne_trigl_gl_set_fog_color(float r, float g, float b);
 
@@ -79,9 +78,8 @@ void nocturne_trigl_gl_set_fog_color(float r, float g, float b);
 //
 // Returns 0 if the texture could not be created, in which case the draw goes
 // out untextured rather than with someone else's image.
-unsigned nocturne_trigl_gl_texture(const char *name, int dimension,
-                                   const unsigned *rgba, int mipmapped,
-                                   int refresh);
+unsigned nocturne_trigl_gl_texture(const char *name, int dimension, const unsigned *rgba,
+                                   int mipmapped, int refresh);
 
 // Whether a texture is already resident, without uploading anything. Lets the
 // caller skip expanding an image the cache already holds — the expansion is the
@@ -180,8 +178,8 @@ const char *nocturne_trigl_gl_renderer_name(void);
 // bottom. Both are given the target height so the flip happens here rather than
 // at each call site.
 int nocturne_trigl_gl_save_depth(int slot, int width, int height);
-int nocturne_trigl_gl_restore_depth(int slot, int left, int top, int right, int bottom,
-                                    int width, int height);
+int nocturne_trigl_gl_restore_depth(int slot, int left, int top, int right, int bottom, int width,
+                                    int height);
 void nocturne_trigl_gl_release_depth(void);
 
 // --- drawing -----------------------------------------------------------------
@@ -200,8 +198,8 @@ typedef struct NocturneTriglStats {
     unsigned draws;
     unsigned blended_draws;
     unsigned untextured_draws;
-    unsigned missing_texture_draws;   // texturing on with nothing bound
-    int screen_min_x, screen_max_x;   // whole pixels, as submitted
+    unsigned missing_texture_draws; // texturing on with nothing bound
+    int screen_min_x, screen_max_x; // whole pixels, as submitted
     int screen_min_y, screen_max_y;
     // The largest depth-restore rectangle the engine has asked for, as it asked
     // for it. Compare against the target size: a rectangle that stops at 640x480

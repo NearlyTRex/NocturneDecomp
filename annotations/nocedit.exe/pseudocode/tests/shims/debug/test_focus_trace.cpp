@@ -8,11 +8,10 @@
 // trace is on is read at the first gain, so this is a run with it on and
 // test_focus_trace_off.cpp one with it off.
 
-#include "nocturne_test.h"
-#include "debug_support.h"
-
 #include "debug/focus_trace.h"
+#include "debug_support.h"
 #include "nocturne.h"
+#include "nocturne_test.h"
 #include "renderer/trigl_gl.h"
 
 #include <cstdlib>
@@ -42,7 +41,7 @@ bool has(const std::string &text, const std::string &part) {
     return text.find(part) != std::string::npos;
 }
 
-}  // namespace
+} // namespace
 
 // A gain arms the trace and is logged with the game frame, when there is a
 // game; the renderer's calls follow, each with the draws made since the last.
@@ -59,11 +58,11 @@ NOCTURNE_TEST(a_focus_gain_logs_the_calls_and_draws_after_it) {
     nocturne_focus_trace_arm();
     CHECK_EQ(g_nocturne_focus_trace_active, 1);
 
-    nocturne_focus_trace_event("beginScene");          // nothing drawn yet
+    nocturne_focus_trace_event("beginScene"); // nothing drawn yet
     nocturne_trigl_stats.draws = 10;
     nocturne_trigl_stats.untextured_draws = 2;
-    nocturne_focus_trace_event("masterZBuffer");       // with a backtrace
-    nocturne_trigl_stats.draws = 3;                    // the renderer restarted
+    nocturne_focus_trace_event("masterZBuffer"); // with a backtrace
+    nocturne_trigl_stats.draws = 3;              // the renderer restarted
     nocturne_trigl_stats.untextured_draws = 0;
     nocturne_focus_trace_event("toggle");
     const std::string text = log_text();
@@ -87,7 +86,7 @@ NOCTURNE_TEST(twelve_presents_are_dumped_and_then_it_stops) {
         g_CGamePtr = i < 6 ? nullptr : &game;
         g_CNetGamePtr = i < 6 ? nullptr : &net;
         stand.dump_result = i == 3 ? -1 : 0;
-        nocturne_focus_trace_event("present");        // not the first present's
+        nocturne_focus_trace_event("present"); // not the first present's
         nocturne_focus_trace_presented();
     }
     CHECK_EQ(g_nocturne_focus_trace_active, 0);

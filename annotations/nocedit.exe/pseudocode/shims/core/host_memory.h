@@ -9,12 +9,12 @@
 // sees of it is GlobalMemoryStatus, whose 32-bit fields nocturne_memory_status
 // fills from these figures.
 
-#include "system/kernel32.h"   // _MEMORYSTATUS
+#include "system/kernel32.h" // _MEMORYSTATUS
 
 struct HostMemory {
     unsigned long long total_phys;
     unsigned long long avail_phys;
-    unsigned long long total_commit;   // Windows' commit limit: RAM plus backing
+    unsigned long long total_commit; // Windows' commit limit: RAM plus backing
     unsigned long long avail_commit;
 };
 

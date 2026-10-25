@@ -2,9 +2,8 @@
 // GL PIXELS — the game's bit depths as GL formats, and its rows the other way up
 // =============================================================================
 
-#include "nocturne_test.h"
-
 #include "gl/gl_pixels.h"
+#include "nocturne_test.h"
 #include "shims/renderer/gl_recorder.h"
 
 #include <cstring>
@@ -31,25 +30,41 @@ NOCTURNE_TEST(each_depth_the_game_draws_at_has_a_format) {
     CHECK(!nocturne_gl_format_for_bpp(8, &format, &type));
 }
 
-NOCTURNE_TEST(a_pixel_is_packed_as_its_format_says) {
-    const unsigned char rgba[4] = {0x10, 0x80, 0xF0, 0x55};
-    unsigned char out[4] = {};
+// Each pixel of a row, in its format, and nothing past the row's end.
+NOCTURNE_TEST(a_row_is_packed_as_its_format_says) {
+    const unsigned char rgba[8] = {0x10, 0x80, 0xF0, 0x55, 0x01, 0x02, 0x03, 0x04};
+    unsigned char out[12];
 
-    nocturne_gl_pack_rgba(rgba, GL_BGRA, GL_UNSIGNED_BYTE, out);
-    CHECK_EQ((int)out[0], 0xF0);
-    CHECK_EQ((int)out[2], 0x10);
-    CHECK_EQ((int)out[3], 0x55);
+    memset(out, 0xEE, sizeof(out));
+    nocturne_gl_pack_rgba_row(rgba, 2, GL_BGRA, GL_UNSIGNED_BYTE, out);
+    const unsigned char bgra[] = {0xF0, 0x80, 0x10, 0x55, 0x03, 0x02, 0x01, 0x04, 0xEE};
+    CHECK(memcmp(out, bgra, sizeof(bgra)) == 0);
 
-    memset(out, 0, sizeof(out));
-    nocturne_gl_pack_rgba(rgba, GL_RGB, GL_UNSIGNED_BYTE, out);
-    CHECK_EQ((int)out[0], 0x10);
-    CHECK_EQ((int)out[2], 0xF0);
-    CHECK_EQ((int)out[3], 0);
+    memset(out, 0xEE, sizeof(out));
+    nocturne_gl_pack_rgba_row(rgba, 2, GL_RGB, GL_UNSIGNED_BYTE, out);
+    const unsigned char rgb[] = {0x10, 0x80, 0xF0, 0x01, 0x02, 0x03, 0xEE};
+    CHECK(memcmp(out, rgb, sizeof(rgb)) == 0);
 
     // To the nearest level: 0x10 is 1.94 of 31, 0x80 31.6 of 63, 0xF0 29.2 of 31.
-    unsigned short packed = 0;
-    nocturne_gl_pack_rgba(rgba, GL_RGB, GL_UNSIGNED_SHORT_5_6_5, (unsigned char *)&packed);
-    CHECK_EQ((unsigned)packed, (2u << 11) | (32u << 5) | 29u);
+    unsigned short packed[3] = {0, 0, 0xEEEE};
+    nocturne_gl_pack_rgba_row(rgba, 2, GL_RGB, GL_UNSIGNED_SHORT_5_6_5, (unsigned char *)packed);
+    CHECK_EQ((unsigned)packed[0], (2u << 11) | (32u << 5) | 29u);
+    CHECK_EQ((unsigned)packed[1], (0u << 11) | (0u << 5) | 0u);
+    CHECK_EQ((unsigned)packed[2], 0xEEEEu);
+
+    memset(out, 0xEE, sizeof(out));
+    nocturne_gl_pack_rgba_row(rgba, 0, GL_BGRA, GL_UNSIGNED_BYTE, out);
+    CHECK_EQ((int)out[0], 0xEE);
+}
+
+// Every byte value rounds to its nearest level.
+NOCTURNE_TEST(the_levels_are_the_nearest) {
+    const NocturneGlLevels &levels = nocturne_gl_levels();
+    for (unsigned i = 0; i < 256; ++i) {
+        CHECK_EQ((unsigned)levels.to5[i], (unsigned)(i * 31.0 / 255.0 + 0.5));
+        CHECK_EQ((unsigned)levels.to6[i], (unsigned)(i * 63.0 / 255.0 + 0.5));
+    }
+    CHECK(&nocturne_gl_levels() == &levels);
 }
 
 namespace {
@@ -61,7 +76,7 @@ void APIENTRY record_store(GLenum name, GLint value) {
     g_stores.push_back((int)value);
 }
 
-}  // namespace
+} // namespace
 
 // Desktop GL converts as it reads; the row length is the pitch in pixels, and it
 // is put back afterwards for whoever reads next.
@@ -72,7 +87,7 @@ NOCTURNE_TEST(a_read_asks_for_the_rows_the_pitch_apart) {
     unsigned char dst[64 * 4];
     nocturne_gl_read_pixels(GL_BACK, 10, 4, GL_RGB, GL_UNSIGNED_SHORT_5_6_5, dst, 64);
 
-    const std::vector<int> expected = {GL_PACK_ALIGNMENT, 1, GL_PACK_ROW_LENGTH, 32,
+    const std::vector<int> expected = {GL_PACK_ALIGNMENT,  1, GL_PACK_ROW_LENGTH, 32,
                                        GL_PACK_ROW_LENGTH, 0};
     CHECK(g_stores == expected);
     gl_recorder::State &s = gl_recorder::state();

@@ -5,10 +5,9 @@
 // The INI is read through a stand-in for the engine's CIni accessors, from a
 // game directory the test makes its working directory.
 
-#include "nocturne_test.h"
 #include "../gl/ini_support.h"
-
 #include "game/pad_tuning.h"
+#include "nocturne_test.h"
 #include "shim_config.h"
 
 #include <filesystem>
@@ -29,7 +28,7 @@ void enter_game_directory() {
     nocturne_pad_tuning_reload();
 }
 
-}  // namespace
+} // namespace
 
 // No INI yet: the build's defaults.
 NOCTURNE_TEST(without_an_ini_the_tuning_is_the_build_default) {

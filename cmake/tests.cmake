@@ -7,11 +7,21 @@
 # without being listed, and each test_*.cpp in it is a test binary. See
 # cmake/nocturne_tests.cmake.
 #
-# The binaries are EXCLUDE_FROM_ALL so an ordinary build does not pay for them,
-# and `ctest` only runs what is already built. This target builds them all.
+# The binaries are EXCLUDE_FROM_ALL so an ordinary build does not pay for them.
+# This target builds them all, and so does `ctest`: every test requires the
+# build_tests fixture, so none runs a binary older than its sources. A coverage
+# build also brings the exe up to date, since the gate reads it too.
 include("${CMAKE_SOURCE_DIR}/cmake/nocturne_tests.cmake")
 enable_testing()
 add_custom_target(nocturne_tests)
+set(_build_targets nocturne_tests)
+if(NOCTURNE_COVERAGE AND TARGET nocturne)
+    list(APPEND _build_targets nocturne)
+endif()
+add_test(NAME build_tests
+         COMMAND "${CMAKE_COMMAND}" --build "${CMAKE_BINARY_DIR}" --config $<CONFIG>
+                 --target ${_build_targets})
+set_tests_properties(build_tests PROPERTIES FIXTURES_SETUP nocturne_build)
 file(GLOB_RECURSE _test_suites CONFIGURE_DEPENDS "${NOCTURNE_TESTS_DIR}/CMakeLists.txt")
 foreach(_suite_list IN LISTS _test_suites)
     get_filename_component(_suite_dir "${_suite_list}" DIRECTORY)

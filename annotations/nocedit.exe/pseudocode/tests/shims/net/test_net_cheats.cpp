@@ -6,12 +6,11 @@
 // a guest adopts the table when it is the same size as its own, and the
 // setting either way. The packets are the host's own, played back.
 
-#include "nocturne_test.h"
-#include "net_support.h"
-
 #include "game/cheats.h"
 #include "net/net_cheats.h"
+#include "net_support.h"
 #include "nocturne.h"
+#include "nocturne_test.h"
 
 #include <cstring>
 #include <vector>
@@ -33,7 +32,7 @@ std::vector<unsigned char> host_packet() {
     return stand.sent.empty() ? std::vector<unsigned char>() : stand.sent[0].bytes;
 }
 
-}  // namespace
+} // namespace
 
 // Three copies to each guest; a guest announces nothing.
 NOCTURNE_TEST(the_host_announces_its_cheats_three_times) {

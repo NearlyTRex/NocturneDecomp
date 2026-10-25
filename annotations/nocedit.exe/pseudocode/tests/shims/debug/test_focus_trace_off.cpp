@@ -5,10 +5,9 @@
 // A gain arms nothing and nothing is written. Read at the first gain, as
 // test_focus_trace.cpp says, so a run of its own.
 
-#include "nocturne_test.h"
-#include "debug_support.h"
-
 #include "debug/focus_trace.h"
+#include "debug_support.h"
+#include "nocturne_test.h"
 
 #include <cstdlib>
 

@@ -13,25 +13,29 @@ namespace {
 // imposes, and a batch configured past it could emit an index that wraps.
 const int kMaxAddressableVertices = 65536;
 
-}  // namespace
+} // namespace
 
 void nocturne_trigl_batch_reset(NocturneTriglBatch *batch) {
     batch->vertex_count = 0;
-    batch->index_count  = 0;
+    batch->index_count = 0;
 }
 
 NocturneTriglScreenVertex *nocturne_trigl_batch_add_polygon(NocturneTriglBatch *batch,
                                                             int vertex_count) {
-    if (vertex_count <= 0) return nullptr;
+    if (vertex_count <= 0)
+        return nullptr;
 
     const int triangles = (vertex_count >= 3) ? (vertex_count - 2) : 0;
     const int needed_indices = triangles * 3;
 
     int vertex_limit = batch->vertex_capacity;
-    if (vertex_limit > kMaxAddressableVertices) vertex_limit = kMaxAddressableVertices;
+    if (vertex_limit > kMaxAddressableVertices)
+        vertex_limit = kMaxAddressableVertices;
 
-    if (batch->vertex_count + vertex_count > vertex_limit) return nullptr;
-    if (batch->index_count + needed_indices > batch->index_capacity) return nullptr;
+    if (batch->vertex_count + vertex_count > vertex_limit)
+        return nullptr;
+    if (batch->index_count + needed_indices > batch->index_capacity)
+        return nullptr;
 
     const unsigned short base = (unsigned short)batch->vertex_count;
     unsigned short *out = batch->indices + batch->index_count;
@@ -60,10 +64,12 @@ int nocturne_trigl_batch_should_flush(const NocturneTriglBatch *batch) {
 }
 
 int nocturne_trigl_max_depth(const int *depths, int count) {
-    if (count <= 0) return 0;
+    if (count <= 0)
+        return 0;
     int largest = depths[0];
     for (int i = 1; i < count; ++i) {
-        if (depths[i] > largest) largest = depths[i];
+        if (depths[i] > largest)
+            largest = depths[i];
     }
     return largest;
 }

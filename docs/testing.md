@@ -7,15 +7,15 @@ per-file compile/suspect checks described in
 ## Running them
 
 ```sh
-cmake --build build/<preset> --target nocturne_tests
 ctest --test-dir build/<preset>
 ```
 
-The test binaries are `EXCLUDE_FROM_ALL`, so an ordinary build does not pay for them — but
-`ctest` only runs what is already built, which means **building the target first is not
-optional**. A stale test binary will report a green run against code you have since changed.
+The test binaries are `EXCLUDE_FROM_ALL`, so an ordinary build does not pay for them. `ctest`
+builds them itself: every test requires the `build_tests` fixture, which builds the
+`nocturne_tests` target (and, in a coverage build, the exe the gate also reads) before any test
+runs, so no run is green against a binary older than its sources.
 
-`ctest -L <suite>` runs one suite.
+`ctest -L <suite>` runs one suite, still after the build.
 
 ## Adding tests
 
@@ -120,8 +120,8 @@ gated.
 ## The Python tooling
 
 The scripts in `scripts/Python`, `cmake/collect_sources.py` and `recreation/cmake/tidy.py` have
-their own pytest suite under `Tests/`, held to [pytest-testrex](https://github.com/NearlyTRex/TestRex)'s
-rules and to full line and branch coverage. [Tests/README.md](../Tests/README.md) has the layout
+their own pytest suite under `tests/`, held to [pytest-testrex](https://github.com/NearlyTRex/TestRex)'s
+rules and to full line and branch coverage. [tests/README.md](../tests/README.md) has the layout
 and how to run it.
 
 ## Beyond unit tests

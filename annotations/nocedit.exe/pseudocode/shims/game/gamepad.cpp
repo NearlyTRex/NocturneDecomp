@@ -6,11 +6,12 @@
 // none of the engine has to know about it.
 
 #include "game/gamepad.h"
+
+#include "core/debug_log.h"
 #include "game/automap.h"
 #include "game/pad_tuning.h"
-#include "shim_config.h"
-#include "core/debug_log.h"
 #include "nocturne.h"
+#include "shim_config.h"
 
 #include <SDL.h>
 #include <cstddef>
@@ -33,14 +34,12 @@ static_assert(SDL_CONTROLLER_BUTTON_MAX <= NOCTURNE_PAD_BUTTON_SPAN,
 // And the whole block has to stay inside the unreachable window between the
 // last keyboard code (DIK_APPS = 0x15D) and the first mouse code
 // (DIM_LBUTTON = 0x200).
-static_assert(NOCTURNE_PAD_BUTTON_BASE > DIK_APPS,
-              "pad codes overlap the keyboard");
+static_assert(NOCTURNE_PAD_BUTTON_BASE > DIK_APPS, "pad codes overlap the keyboard");
 static_assert(NOCTURNE_PAD_CODE_END <= DIM_LBUTTON,
               "pad codes overlap the mouse and joystick codes");
 
 SDL_GameController *s_pad = nullptr;
-SDL_JoystickID      s_pad_id = -1;
-bool                s_inited = false;
+bool s_inited = false;
 
 // Frames of navigation suppression still owed to CGame::playerControls. A
 // counter rather than a flag because a gameplay frame can present more than
@@ -69,14 +68,15 @@ bool s_prev[kSlotCount];
 // and Return do not repeat — a held button that re-confirms would walk through
 // a whole menu tree on one press — so their repeat entries stay unused.
 enum { kNavUp, kNavDown, kNavLeft, kNavRight, kNavConfirm, kNavCancel, kNavCount };
-const int kNavCode[kNavCount] = {
-    DIK_NUMPAD8, DIK_NUMPAD2, DIK_NUMPAD4, DIK_NUMPAD6, DIK_RETURN, DIK_ESCAPE
-};
-bool     s_nav_held[kNavCount];
-bool     s_nav_ours[kNavCount];
+const int kNavCode[kNavCount] = {DIK_NUMPAD8, DIK_NUMPAD2, DIK_NUMPAD4,
+                                 DIK_NUMPAD6, DIK_RETURN,  DIK_ESCAPE};
+bool s_nav_held[kNavCount];
+bool s_nav_ours[kNavCount];
 uint32_t s_nav_next_ms[kNavCount];
 
-int pad_slot(int code) { return code - NOCTURNE_PAD_BUTTON_BASE; }
+int pad_slot(int code) {
+    return code - NOCTURNE_PAD_BUTTON_BASE;
+}
 
 // The rule CGame::resetKeyState used, kept exactly: a code is cleared while
 // the control is released, and set on the frame it goes down. It is never
@@ -95,26 +95,26 @@ void apply_edge(int code, int slot, bool now) {
 // A trigger as a button, with hysteresis: pressed at the press threshold,
 // released only below the lower release threshold.
 bool trigger_down(int code, float pull) {
-    const float threshold = s_prev[pad_slot(code)] ? NOCTURNE_PAD_TRIGGER_RELEASE
-                                                   : NOCTURNE_PAD_TRIGGER_THRESHOLD;
+    const float threshold =
+        s_prev[pad_slot(code)] ? NOCTURNE_PAD_TRIGGER_RELEASE : NOCTURNE_PAD_TRIGGER_THRESHOLD;
     return pull >= threshold;
 }
 
 // Radial deadzone with the live range rescaled to 0..1, so a stick starts
-// moving the hero from a standstill rather than from the deadzone edge.
+// moving the hero from a standstill rather than from the deadzone edge. The
+// result never leaves the unit circle: a corner of a square gate is full
+// deflection in its direction, not full on both axes.
 void deadzone(float raw_x, float raw_y, float *out_x, float *out_y) {
     const float dz = nocturne_pad_tuning()->stick_deadzone;
-    float magnitude = SDL_sqrtf(raw_x * raw_x + raw_y * raw_y);
+    const float magnitude = SDL_sqrtf(raw_x * raw_x + raw_y * raw_y);
 
     if (magnitude <= dz) {
         *out_x = 0.0f;
         *out_y = 0.0f;
         return;
     }
-    if (magnitude > 1.0f) {
-        magnitude = 1.0f;
-    }
-    const float scaled = (magnitude - dz) / (1.0f - dz);
+    const float reach = (magnitude > 1.0f) ? 1.0f : magnitude;
+    const float scaled = (reach - dz) / (1.0f - dz);
     const float gain = scaled / magnitude;
     *out_x = raw_x * gain;
     *out_y = raw_y * gain;
@@ -134,26 +134,23 @@ float axis_unit(SDL_GameControllerAxis axis) {
     }
     const int raw = SDL_GameControllerGetAxis(s_pad, axis);
     // SDL's negative extent is one larger than its positive one; dividing both
-    // by the positive extent and clamping keeps full deflection at exactly 1.
+    // by the positive extent and clamping the negative keeps full deflection at
+    // exactly 1 either way.
     float unit = (float)raw / 32767.0f;
-    if (unit < -1.0f) unit = -1.0f;
-    if (unit >  1.0f) unit =  1.0f;
+    if (unit < -1.0f)
+        unit = -1.0f;
     return unit;
 }
 
+// The open pad, gone.
 void close_pad() {
-    if (s_pad != nullptr) {
-        SDL_GameControllerClose(s_pad);
-        s_pad = nullptr;
-        s_pad_id = -1;
-    }
+    SDL_GameControllerClose(s_pad);
+    s_pad = nullptr;
     memset(s_prev, 0, sizeof(s_prev));
 }
 
+// With none open.
 void open_first_pad() {
-    if (s_pad != nullptr) {
-        return;
-    }
     for (int i = 0; i < SDL_NumJoysticks(); i++) {
         if (!SDL_IsGameController(i)) {
             continue;
@@ -163,12 +160,11 @@ void open_first_pad() {
             continue;
         }
         s_pad = pad;
-        s_pad_id = SDL_JoystickInstanceID(SDL_GameControllerGetJoystick(pad));
         memset(s_prev, 0, sizeof(s_prev));
         DLOG("input", "controller opened: %s (%s)",
              SDL_GameControllerName(pad) ? SDL_GameControllerName(pad) : "?",
-             SDL_GameControllerGetType(pad) == SDL_CONTROLLER_TYPE_UNKNOWN
-                 ? "generic" : "known type");
+             SDL_GameControllerGetType(pad) == SDL_CONTROLLER_TYPE_UNKNOWN ? "generic"
+                                                                           : "known type");
         return;
     }
 }
@@ -205,36 +201,40 @@ LabelFamily label_family() {
 // the bottom one — so a Switch pad's rows are its own legends against those
 // positions, which is why A and B look swapped here. They are not: that is
 // what is printed on the plastic.
-struct ButtonLabels { const char *xbox, *playstation, *nintendo; };
-const ButtonLabels kButtonLabels[] = {
-    /* A             */ { "A",            "Cross",      "B"        },
-    /* B             */ { "B",            "Circle",     "A"        },
-    /* X             */ { "X",            "Square",     "Y"        },
-    /* Y             */ { "Y",            "Triangle",   "X"        },
-    /* BACK          */ { "Back",         "Share",      "Minus"    },
-    /* GUIDE         */ { "Guide",        "PS Button",  "Home"     },
-    /* START         */ { "Start",        "Options",    "Plus"     },
-    /* LEFTSTICK     */ { "L3",           "L3",         "L Stick"  },
-    /* RIGHTSTICK    */ { "R3",           "R3",         "R Stick"  },
-    /* LEFTSHOULDER  */ { "LB",           "L1",         "L"        },
-    /* RIGHTSHOULDER */ { "RB",           "R1",         "R"        },
-    /* DPAD_UP       */ { "D-Pad Up",     "D-Pad Up",    "D-Pad Up"    },
-    /* DPAD_DOWN     */ { "D-Pad Down",   "D-Pad Down",  "D-Pad Down"  },
-    /* DPAD_LEFT     */ { "D-Pad Left",   "D-Pad Left",  "D-Pad Left"  },
-    /* DPAD_RIGHT    */ { "D-Pad Right",  "D-Pad Right", "D-Pad Right" },
-    /* MISC1         */ { "Share",        "Microphone", "Capture"  },
-    /* PADDLE1       */ { "Paddle 1",     "Paddle 1",   "Paddle 1" },
-    /* PADDLE2       */ { "Paddle 2",     "Paddle 2",   "Paddle 2" },
-    /* PADDLE3       */ { "Paddle 3",     "Paddle 3",   "Paddle 3" },
-    /* PADDLE4       */ { "Paddle 4",     "Paddle 4",   "Paddle 4" },
-    /* TOUCHPAD      */ { "Touchpad",     "Touchpad",   "Touchpad" }
+struct ButtonLabels {
+    const char *xbox, *playstation, *nintendo;
 };
+const ButtonLabels kButtonLabels[] = {
+    /* A             */ {"A", "Cross", "B"},
+    /* B             */ {"B", "Circle", "A"},
+    /* X             */ {"X", "Square", "Y"},
+    /* Y             */ {"Y", "Triangle", "X"},
+    /* BACK          */ {"Back", "Share", "Minus"},
+    /* GUIDE         */ {"Guide", "PS Button", "Home"},
+    /* START         */ {"Start", "Options", "Plus"},
+    /* LEFTSTICK     */ {"L3", "L3", "L Stick"},
+    /* RIGHTSTICK    */ {"R3", "R3", "R Stick"},
+    /* LEFTSHOULDER  */ {"LB", "L1", "L"},
+    /* RIGHTSHOULDER */ {"RB", "R1", "R"},
+    /* DPAD_UP       */ {"D-Pad Up", "D-Pad Up", "D-Pad Up"},
+    /* DPAD_DOWN     */ {"D-Pad Down", "D-Pad Down", "D-Pad Down"},
+    /* DPAD_LEFT     */ {"D-Pad Left", "D-Pad Left", "D-Pad Left"},
+    /* DPAD_RIGHT    */ {"D-Pad Right", "D-Pad Right", "D-Pad Right"},
+    /* MISC1         */ {"Share", "Microphone", "Capture"},
+    /* PADDLE1       */ {"Paddle 1", "Paddle 1", "Paddle 1"},
+    /* PADDLE2       */ {"Paddle 2", "Paddle 2", "Paddle 2"},
+    /* PADDLE3       */ {"Paddle 3", "Paddle 3", "Paddle 3"},
+    /* PADDLE4       */ {"Paddle 4", "Paddle 4", "Paddle 4"},
+    /* TOUCHPAD      */ {"Touchpad", "Touchpad", "Touchpad"}};
 
 const char *pick(const ButtonLabels &row, LabelFamily family) {
     switch (family) {
-    case kPlayStation: return row.playstation;
-    case kNintendo:    return row.nintendo;
-    default:           return row.xbox;
+    case kPlayStation:
+        return row.playstation;
+    case kNintendo:
+        return row.nintendo;
+    default:
+        return row.xbox;
     }
 }
 
@@ -422,14 +422,12 @@ extern "C" void nocturne_gamepad_pump(void) {
 
     float move_x = 0.0f, move_y = 0.0f, look_x = 0.0f, look_y = 0.0f;
     float trigger_l = 0.0f, trigger_r = 0.0f;
-    nocturne_gamepad_axes(&move_x, &move_y, &look_x, &look_y,
-                          &trigger_l, &trigger_r);
+    nocturne_gamepad_axes(&move_x, &move_y, &look_x, &look_y, &trigger_l, &trigger_r);
 
     // Buttons, in SDL's order, straight onto their codes.
     for (int b = 0; b < SDL_CONTROLLER_BUTTON_MAX; b++) {
         const int code = NOCTURNE_PAD_BUTTON(b);
-        apply_edge(code, pad_slot(code),
-                   button_down((SDL_GameControllerButton)b));
+        apply_edge(code, pad_slot(code), button_down((SDL_GameControllerButton)b));
     }
 
     // Triggers and the right stick, thresholded so they can be bound as
@@ -449,10 +447,10 @@ extern "C" void nocturne_gamepad_pump(void) {
 
     // The left stick keeps the original joystick's four codes, so a config
     // written by the shipped game still means what it meant.
-    apply_edge(DIJ_LEFT,  kStickLeft,  move_x <= -NOCTURNE_PAD_MOVE_THRESHOLD);
+    apply_edge(DIJ_LEFT, kStickLeft, move_x <= -NOCTURNE_PAD_MOVE_THRESHOLD);
     apply_edge(DIJ_RIGHT, kStickRight, move_x >= NOCTURNE_PAD_MOVE_THRESHOLD);
-    apply_edge(DIJ_UP,    kStickUp,    move_y <= -NOCTURNE_PAD_MOVE_THRESHOLD);
-    apply_edge(DIJ_DOWN,  kStickDown,  move_y >= NOCTURNE_PAD_MOVE_THRESHOLD);
+    apply_edge(DIJ_UP, kStickUp, move_y <= -NOCTURNE_PAD_MOVE_THRESHOLD);
+    apply_edge(DIJ_DOWN, kStickDown, move_y >= NOCTURNE_PAD_MOVE_THRESHOLD);
 
     // What the shipped joystick path published, kept live so the screens that
     // read it still work: the Calibrate line in Control Options draws these,
@@ -463,8 +461,9 @@ extern "C" void nocturne_gamepad_pump(void) {
     g_JoyYPos = (DWORD)((move_y + 1.0f) * 32767.5f);
     g_JoyZPos = (DWORD)((look_y + 1.0f) * 32767.5f);
     g_JoyRPos = (DWORD)((look_x + 1.0f) * 32767.5f);
+    static_assert(SDL_CONTROLLER_BUTTON_MAX >= 10, "the shipped path reported ten buttons");
     g_JoyButtons = 0;
-    for (int b = 0; b < 10 && b < SDL_CONTROLLER_BUTTON_MAX; b++) {
+    for (int b = 0; b < 10; b++) {
         if (button_down((SDL_GameControllerButton)b)) {
             g_JoyButtons |= (1u << b);
         }
@@ -477,10 +476,22 @@ extern "C" void nocturne_gamepad_pump(void) {
     const bool nav_ok = (s_nav_suppressed == 0);
     const bool ui = nav_ok && !was_gameplay;
 
-    nav_repeating(kNavUp,    ui && (button_down(SDL_CONTROLLER_BUTTON_DPAD_UP)    || move_y <= -NOCTURNE_PAD_MOVE_THRESHOLD), now_ms);
-    nav_repeating(kNavDown,  ui && (button_down(SDL_CONTROLLER_BUTTON_DPAD_DOWN)  || move_y >=  NOCTURNE_PAD_MOVE_THRESHOLD), now_ms);
-    nav_repeating(kNavLeft,  ui && (button_down(SDL_CONTROLLER_BUTTON_DPAD_LEFT)  || move_x <= -NOCTURNE_PAD_MOVE_THRESHOLD), now_ms);
-    nav_repeating(kNavRight, ui && (button_down(SDL_CONTROLLER_BUTTON_DPAD_RIGHT) || move_x >=  NOCTURNE_PAD_MOVE_THRESHOLD), now_ms);
+    nav_repeating(kNavUp,
+                  ui && (button_down(SDL_CONTROLLER_BUTTON_DPAD_UP) ||
+                         move_y <= -NOCTURNE_PAD_MOVE_THRESHOLD),
+                  now_ms);
+    nav_repeating(kNavDown,
+                  ui && (button_down(SDL_CONTROLLER_BUTTON_DPAD_DOWN) ||
+                         move_y >= NOCTURNE_PAD_MOVE_THRESHOLD),
+                  now_ms);
+    nav_repeating(kNavLeft,
+                  ui && (button_down(SDL_CONTROLLER_BUTTON_DPAD_LEFT) ||
+                         move_x <= -NOCTURNE_PAD_MOVE_THRESHOLD),
+                  now_ms);
+    nav_repeating(kNavRight,
+                  ui && (button_down(SDL_CONTROLLER_BUTTON_DPAD_RIGHT) ||
+                         move_x >= NOCTURNE_PAD_MOVE_THRESHOLD),
+                  now_ms);
     const bool start_down = button_down(SDL_CONTROLLER_BUTTON_START);
     nav_once(kNavConfirm, button_down(SDL_CONTROLLER_BUTTON_A), ui);
     nav_once(kNavCancel, start_down || button_down(SDL_CONTROLLER_BUTTON_B),
@@ -491,22 +502,25 @@ extern "C" void nocturne_gamepad_pump(void) {
 // State
 // ---------------------------------------------------------------------------
 
-extern "C" void nocturne_gamepad_axes(float *move_x, float *move_y,
-                                      float *look_x, float *look_y,
+extern "C" void nocturne_gamepad_axes(float *move_x, float *move_y, float *look_x, float *look_y,
                                       float *left_trigger, float *right_trigger) {
     float mx = 0.0f, my = 0.0f, lx = 0.0f, ly = 0.0f;
 
     if (s_pad != nullptr) {
-        deadzone(axis_unit(SDL_CONTROLLER_AXIS_LEFTX),
-                 axis_unit(SDL_CONTROLLER_AXIS_LEFTY), &mx, &my);
-        deadzone(axis_unit(SDL_CONTROLLER_AXIS_RIGHTX),
-                 axis_unit(SDL_CONTROLLER_AXIS_RIGHTY), &lx, &ly);
+        deadzone(axis_unit(SDL_CONTROLLER_AXIS_LEFTX), axis_unit(SDL_CONTROLLER_AXIS_LEFTY), &mx,
+                 &my);
+        deadzone(axis_unit(SDL_CONTROLLER_AXIS_RIGHTX), axis_unit(SDL_CONTROLLER_AXIS_RIGHTY), &lx,
+                 &ly);
     }
 
-    if (move_x != nullptr) *move_x = mx;
-    if (move_y != nullptr) *move_y = my;
-    if (look_x != nullptr) *look_x = lx;
-    if (look_y != nullptr) *look_y = ly;
+    if (move_x != nullptr)
+        *move_x = mx;
+    if (move_y != nullptr)
+        *move_y = my;
+    if (look_x != nullptr)
+        *look_x = lx;
+    if (look_y != nullptr)
+        *look_y = ly;
 
     // Triggers rest at 0 and have no negative half, so they take the raw unit
     // value with a flat threshold rather than the radial deadzone.
@@ -534,10 +548,14 @@ extern "C" const char *nocturne_gamepad_code_name(int code) {
         return family == kPlayStation ? "L2" : family == kNintendo ? "ZL" : "LT";
     case NOCTURNE_PAD_RTRIGGER:
         return family == kPlayStation ? "R2" : family == kNintendo ? "ZR" : "RT";
-    case NOCTURNE_PAD_RSTICK_UP:    return "Right Stick Up";
-    case NOCTURNE_PAD_RSTICK_DOWN:  return "Right Stick Down";
-    case NOCTURNE_PAD_RSTICK_LEFT:  return "Right Stick Left";
-    case NOCTURNE_PAD_RSTICK_RIGHT: return "Right Stick Right";
+    case NOCTURNE_PAD_RSTICK_UP:
+        return "Right Stick Up";
+    case NOCTURNE_PAD_RSTICK_DOWN:
+        return "Right Stick Down";
+    case NOCTURNE_PAD_RSTICK_LEFT:
+        return "Right Stick Left";
+    case NOCTURNE_PAD_RSTICK_RIGHT:
+        return "Right Stick Right";
     default:
         // A button SDL does not enumerate yet, inside the reserved span.
         return "Button";
@@ -559,31 +577,31 @@ extern "C" void nocturne_gamepad_apply_defaults(CGame *game) {
 
     // Movement: both sticks, no modifier. "Strafe on" would only get in the
     // way of a stick that already strafes without one.
-    game->key_walk         = DIJ_UP;
-    game->key_backup       = DIJ_DOWN;
-    game->key_strafe_left  = DIJ_LEFT;
+    game->key_walk = DIJ_UP;
+    game->key_backup = DIJ_DOWN;
+    game->key_strafe_left = DIJ_LEFT;
     game->key_strafe_right = DIJ_RIGHT;
-    game->key_strafe       = INPUT_NONE;
-    game->key_left         = NOCTURNE_PAD_RSTICK_LEFT;
-    game->key_right        = NOCTURNE_PAD_RSTICK_RIGHT;
-    game->key_point_up     = NOCTURNE_PAD_RSTICK_UP;
-    game->key_point_down   = NOCTURNE_PAD_RSTICK_DOWN;
-    game->key_run          = NOCTURNE_PAD_BUTTON(SDL_CONTROLLER_BUTTON_LEFTSTICK);
+    game->key_strafe = INPUT_NONE;
+    game->key_left = NOCTURNE_PAD_RSTICK_LEFT;
+    game->key_right = NOCTURNE_PAD_RSTICK_RIGHT;
+    game->key_point_up = NOCTURNE_PAD_RSTICK_UP;
+    game->key_point_down = NOCTURNE_PAD_RSTICK_DOWN;
+    game->key_run = NOCTURNE_PAD_BUTTON(SDL_CONTROLLER_BUTTON_LEFTSTICK);
 
-    game->key_fire     = NOCTURNE_PAD_RTRIGGER;
-    game->key_draw     = NOCTURNE_PAD_LTRIGGER;
-    game->key_jump     = NOCTURNE_PAD_BUTTON(SDL_CONTROLLER_BUTTON_A);
+    game->key_fire = NOCTURNE_PAD_RTRIGGER;
+    game->key_draw = NOCTURNE_PAD_LTRIGGER;
+    game->key_jump = NOCTURNE_PAD_BUTTON(SDL_CONTROLLER_BUTTON_A);
     game->key_use_item = NOCTURNE_PAD_BUTTON(SDL_CONTROLLER_BUTTON_B);
-    game->key_light    = NOCTURNE_PAD_BUTTON(SDL_CONTROLLER_BUTTON_X);
+    game->key_light = NOCTURNE_PAD_BUTTON(SDL_CONTROLLER_BUTTON_X);
     game->key_infrared = NOCTURNE_PAD_BUTTON(SDL_CONTROLLER_BUTTON_Y);
 
     game->key_prev_weapon = NOCTURNE_PAD_BUTTON(SDL_CONTROLLER_BUTTON_LEFTSHOULDER);
     game->key_next_weapon = NOCTURNE_PAD_BUTTON(SDL_CONTROLLER_BUTTON_RIGHTSHOULDER);
-    game->key_prev_item   = NOCTURNE_PAD_BUTTON(SDL_CONTROLLER_BUTTON_DPAD_LEFT);
-    game->key_next_item   = NOCTURNE_PAD_BUTTON(SDL_CONTROLLER_BUTTON_DPAD_RIGHT);
-    game->key_next_ammo   = NOCTURNE_PAD_BUTTON(SDL_CONTROLLER_BUTTON_DPAD_UP);
-    game->key_weapon_5    = NOCTURNE_PAD_BUTTON(SDL_CONTROLLER_BUTTON_DPAD_DOWN);
-    game->key_item_desc   = NOCTURNE_PAD_BUTTON(SDL_CONTROLLER_BUTTON_GUIDE);
+    game->key_prev_item = NOCTURNE_PAD_BUTTON(SDL_CONTROLLER_BUTTON_DPAD_LEFT);
+    game->key_next_item = NOCTURNE_PAD_BUTTON(SDL_CONTROLLER_BUTTON_DPAD_RIGHT);
+    game->key_next_ammo = NOCTURNE_PAD_BUTTON(SDL_CONTROLLER_BUTTON_DPAD_UP);
+    game->key_weapon_5 = NOCTURNE_PAD_BUTTON(SDL_CONTROLLER_BUTTON_DPAD_DOWN);
+    game->key_item_desc = NOCTURNE_PAD_BUTTON(SDL_CONTROLLER_BUTTON_GUIDE);
 
     // The map, which does not live in CGame - see automap.h. Written here with
     // the rest of the pad defaults rather than in the automap shim, which has
@@ -611,16 +629,14 @@ int *binding_fields(CGame *game, int *count) {
     // key_walk is the first and key_next_ammo the last, and CGame declares
     // them contiguously (0x28..0x90), so the set is one run of ints. Asserted
     // rather than assumed, since a struct change would silently widen it.
-    static_assert(offsetof(CGame, key_next_ammo) - offsetof(CGame, key_walk)
-                      == 26 * sizeof(int),
+    static_assert(offsetof(CGame, key_next_ammo) - offsetof(CGame, key_walk) == 26 * sizeof(int),
                   "the key_* bindings are no longer one contiguous run");
     *count = 27;
     return &game->key_walk;
 }
 
 bool is_pad_binding(int code) {
-    return NOCTURNE_PAD_IS_CODE(code) ||
-           (code >= DIJ_BUTTON1 && code <= DIJ_BUTTON10) ||
+    return NOCTURNE_PAD_IS_CODE(code) || (code >= DIJ_BUTTON1 && code <= DIJ_BUTTON10) ||
            (code >= DIJ_LEFT && code <= DIJ_DOWN);
 }
 
@@ -687,8 +703,8 @@ extern "C" void nocturne_gamepad_seed_calibration(CGame *game) {
     // calibration screen to measure. These are the values it would have
     // recorded from a stick that centres and reaches both extents exactly, in
     // the 0..65535 range getJoystickState reports in.
-    game->x_center    = 0x8000;
-    game->y_center    = 0x8000;
+    game->x_center = 0x8000;
+    game->y_center = 0x8000;
     game->x_stick_min = 0;
     game->y_stick_min = 0;
     game->x_stick_max = 0xffff;
@@ -753,19 +769,30 @@ extern "C" int nocturne_gamepad_apply_analog(CGame *game, SPlayerInput *input) {
 extern "C" void nocturne_gamepad_init(void) {}
 extern "C" void nocturne_gamepad_pump(void) {}
 extern "C" void nocturne_gamepad_note_gameplay_frame(void) {}
-extern "C" void nocturne_gamepad_suppress_nav(int suppress) { (void)suppress; }
-extern "C" void nocturne_gamepad_withdraw_nav(int code) { (void)code; }
-extern "C" int  nocturne_gamepad_present(void) { return 0; }
+extern "C" void nocturne_gamepad_suppress_nav(int suppress) {
+    (void)suppress;
+}
+extern "C" void nocturne_gamepad_withdraw_nav(int code) {
+    (void)code;
+}
+extern "C" int nocturne_gamepad_present(void) {
+    return 0;
+}
 
-extern "C" void nocturne_gamepad_axes(float *move_x, float *move_y,
-                                      float *look_x, float *look_y,
+extern "C" void nocturne_gamepad_axes(float *move_x, float *move_y, float *look_x, float *look_y,
                                       float *left_trigger, float *right_trigger) {
-    if (move_x != nullptr)        *move_x = 0.0f;
-    if (move_y != nullptr)        *move_y = 0.0f;
-    if (look_x != nullptr)        *look_x = 0.0f;
-    if (look_y != nullptr)        *look_y = 0.0f;
-    if (left_trigger != nullptr)  *left_trigger = 0.0f;
-    if (right_trigger != nullptr) *right_trigger = 0.0f;
+    if (move_x != nullptr)
+        *move_x = 0.0f;
+    if (move_y != nullptr)
+        *move_y = 0.0f;
+    if (look_x != nullptr)
+        *look_x = 0.0f;
+    if (look_y != nullptr)
+        *look_y = 0.0f;
+    if (left_trigger != nullptr)
+        *left_trigger = 0.0f;
+    if (right_trigger != nullptr)
+        *right_trigger = 0.0f;
 }
 
 extern "C" const char *nocturne_gamepad_code_name(int code) {
@@ -773,12 +800,19 @@ extern "C" const char *nocturne_gamepad_code_name(int code) {
     return nullptr;
 }
 
-extern "C" void nocturne_gamepad_apply_defaults(CGame *game) { (void)game; }
-extern "C" void nocturne_gamepad_reseed_for_mode(CGame *game) { (void)game; }
-extern "C" void nocturne_gamepad_seed_calibration(CGame *game) { (void)game; }
+extern "C" void nocturne_gamepad_apply_defaults(CGame *game) {
+    (void)game;
+}
+extern "C" void nocturne_gamepad_reseed_for_mode(CGame *game) {
+    (void)game;
+}
+extern "C" void nocturne_gamepad_seed_calibration(CGame *game) {
+    (void)game;
+}
 
 extern "C" int nocturne_gamepad_apply_analog(CGame *game, SPlayerInput *input) {
-    (void)game; (void)input;
+    (void)game;
+    (void)input;
     return 0;
 }
 

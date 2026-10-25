@@ -33,8 +33,8 @@ extern "C" {
 
 // One exported symbol of a built-in module.
 typedef struct NocturneBuiltinExport {
-    const char *name;   // exported symbol name, e.g. "APIDLLinit"
-    void       *proc;   // address of the compiled-in implementation
+    const char *name; // exported symbol name, e.g. "APIDLLinit"
+    void *proc;       // address of the compiled-in implementation
 } NocturneBuiltinExport;
 
 // Returns a module's export table and its length.
@@ -49,8 +49,8 @@ typedef const NocturneBuiltinExport *(*NocturneBuiltinExportProvider)(int *count
 
 // One built-in module, keyed by the DLL name the game passes to LoadLibraryA.
 typedef struct NocturneBuiltinModule {
-    const char                    *dll_name;   // matched case-insensitively
-    NocturneBuiltinExportProvider  exports;
+    const char *dll_name; // matched case-insensitively
+    NocturneBuiltinExportProvider exports;
 } NocturneBuiltinModule;
 
 // Registration is independent of how complete the export table is: a module
@@ -74,7 +74,7 @@ void nocturne_builtin_dll_snap(char *path);
 // whether a handle is one of these, the only kind there is. `sym` takes only
 // such a handle, and answers null for a name it does not export or none.
 void *nocturne_builtin_dll_open(const char *dll_name);
-int   nocturne_builtin_dll_is_handle(void *handle);
+int nocturne_builtin_dll_is_handle(void *handle);
 void *nocturne_builtin_dll_sym(void *handle, const char *proc_name);
 
 #ifdef __cplusplus

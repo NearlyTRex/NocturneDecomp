@@ -1,6 +1,7 @@
 #include "net/net_input.h"
-#include "shim_config.h"
+
 #include "nocturne.h"
+#include "shim_config.h"
 
 #include <cstring>
 
@@ -18,20 +19,22 @@ enum { kUseItem, kLight, kDraw, kJump, kPulseCount };
 int s_local_count[kPulseCount];
 int s_delivered[NOCTURNE_HERO_SLOTS][kPulseCount];
 
-int *pulse_field(SPlayerInput *input, int field)
-{
+int *pulse_field(SPlayerInput *input, int field) {
     switch (field) {
-    case kUseItem: return &(input->action_state).use_item;
-    case kLight:   return &(input->action_state).light;
-    case kDraw:    return &(input->action_state).draw;
-    default:       return &(input->action_state).jump;
+    case kUseItem:
+        return &(input->action_state).use_item;
+    case kLight:
+        return &(input->action_state).light;
+    case kDraw:
+        return &(input->action_state).draw;
+    default:
+        return &(input->action_state).jump;
     }
 }
 
 } // namespace
 
-extern "C" void nocturne_net_input_note_local(const SPlayerInput *controls)
-{
+extern "C" void nocturne_net_input_note_local(const SPlayerInput *controls) {
     int field;
 
     if ((controls == (const SPlayerInput *)0x0) || (nocturne_net_session_is_guest() == 0)) {
@@ -44,8 +47,7 @@ extern "C" void nocturne_net_input_note_local(const SPlayerInput *controls)
     }
 }
 
-extern "C" void nocturne_net_input_encode(SPlayerInput *outgoing)
-{
+extern "C" void nocturne_net_input_encode(SPlayerInput *outgoing) {
     int field;
 
     for (field = 0; field < kPulseCount; field++) {
@@ -53,8 +55,7 @@ extern "C" void nocturne_net_input_encode(SPlayerInput *outgoing)
     }
 }
 
-extern "C" void nocturne_net_input_decode(int player, SPlayerInput *input)
-{
+extern "C" void nocturne_net_input_decode(int player, SPlayerInput *input) {
     int field;
 
     if ((player < 0) || (NOCTURNE_HERO_SLOTS <= player)) {
@@ -62,7 +63,7 @@ extern "C" void nocturne_net_input_decode(int player, SPlayerInput *input)
     }
     for (field = 0; field < kPulseCount; field++) {
         int *value = pulse_field(input, field);
-        int  ahead = *value - s_delivered[player][field];
+        int ahead = *value - s_delivered[player][field];
 
         if ((ahead < 0) || (INPUT_MAX_STEP < ahead)) {
             s_delivered[player][field] = *value;
@@ -71,15 +72,13 @@ extern "C" void nocturne_net_input_decode(int player, SPlayerInput *input)
         if (0 < ahead) {
             s_delivered[player][field] = s_delivered[player][field] + 1;
             *value = 1;
-        }
-        else {
+        } else {
             *value = 0;
         }
     }
 }
 
-extern "C" void nocturne_net_input_reset(void)
-{
+extern "C" void nocturne_net_input_reset(void) {
     std::memset(s_local_count, 0, sizeof(s_local_count));
     std::memset(s_delivered, 0, sizeof(s_delivered));
 }

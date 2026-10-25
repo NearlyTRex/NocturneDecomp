@@ -6,11 +6,10 @@
 // counts; each machine turns a count that moved on into one press for that
 // player, a frame at a time.
 
-#include "nocturne_test.h"
-#include "net_support.h"
-
 #include "net/net_input.h"
+#include "net_support.h"
 #include "nocturne.h"
+#include "nocturne_test.h"
 
 #include <cstring>
 
@@ -28,7 +27,7 @@ SPlayerInput input_with(int use_item, int light, int draw, int jump) {
     return input;
 }
 
-}  // namespace
+} // namespace
 
 // Counted only for a guest in play.
 NOCTURNE_TEST(a_guest_counts_its_presses) {

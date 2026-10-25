@@ -5,6 +5,7 @@
 // See win32/window_message.h for what this hook is for.
 
 #include "win32/window_message.h"
+
 #include "shim_config.h"
 
 // Wheel motion is accumulated rather than queued: the console reads it once a

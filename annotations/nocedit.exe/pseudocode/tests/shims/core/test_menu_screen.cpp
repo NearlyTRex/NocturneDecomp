@@ -5,17 +5,16 @@
 // The moon behind it, a frame at a time; where its lines start, pulled up so a
 // long menu still fits; and whether it was backed out of.
 
-#include "nocturne_test.h"
-#include "ui_support.h"
-
 #include "core/menu_screen.h"
 #include "nocturne.h"
+#include "nocturne_test.h"
+#include "ui_support.h"
 
 namespace {
 
 using ui_support::stand;
 
-}  // namespace
+} // namespace
 
 NOCTURNE_TEST(the_backdrop_moves_the_moon_on_a_frame) {
     stand.reset();

@@ -19,7 +19,8 @@ namespace {
 std::vector<unsigned short> oracle_fan(int base, int vertex_count) {
     std::vector<unsigned short> out;
     const int triangles = vertex_count - 2;
-    if (triangles <= 0) return out;
+    if (triangles <= 0)
+        return out;
     for (int i = 0; i < triangles; ++i) {
         out.push_back((unsigned short)base);
         out.push_back((unsigned short)(base + 1 + i));
@@ -34,15 +35,15 @@ struct Storage {
     NocturneTriglBatch batch;
 
     Storage(int vcap, int icap) : vertices(vcap), indices(icap) {
-        batch.vertices        = vertices.data();
-        batch.indices         = indices.data();
+        batch.vertices = vertices.data();
+        batch.indices = indices.data();
         batch.vertex_capacity = vcap;
-        batch.index_capacity  = icap;
+        batch.index_capacity = icap;
         nocturne_trigl_batch_reset(&batch);
     }
 };
 
-}  // namespace
+} // namespace
 
 NOCTURNE_TEST(fan_indices_match_the_engine) {
     Storage s(4096, 8192);
@@ -56,8 +57,7 @@ NOCTURNE_TEST(fan_indices_match_the_engine) {
         const std::vector<unsigned short> want = oracle_fan(base, n);
         CHECK_EQ_AT((int)(s.batch.index_count - before), (int)want.size(), at);
         for (size_t i = 0; i < want.size(); ++i) {
-            CHECK_EQ_AT(s.indices[before + (int)i], want[i],
-                        at + " index " + std::to_string(i));
+            CHECK_EQ_AT(s.indices[before + (int)i], want[i], at + " index " + std::to_string(i));
         }
         base += n;
         CHECK_EQ_AT(s.batch.vertex_count, base, at);
@@ -128,7 +128,7 @@ NOCTURNE_TEST(a_refused_polygon_leaves_the_batch_untouched) {
 // triangle-heavy polygons exhausts indices first.
 NOCTURNE_TEST(index_capacity_binds_on_its_own) {
     Storage s(4096, 6);
-    CHECK(nocturne_trigl_batch_add_polygon(&s.batch, 4) != nullptr);   // 2 triangles
+    CHECK(nocturne_trigl_batch_add_polygon(&s.batch, 4) != nullptr); // 2 triangles
     CHECK_EQ(s.batch.index_count, 6);
     CHECK(nocturne_trigl_batch_add_polygon(&s.batch, 3) == nullptr);
     // But a polygon that needs no indices still fits.
@@ -166,16 +166,16 @@ NOCTURNE_TEST(flush_is_signalled_before_the_batch_is_actually_full) {
 }
 
 NOCTURNE_TEST(rhw_scale_is_the_largest_depth) {
-    const int depths[] = { 400, 1200, 800, 90 };
+    const int depths[] = {400, 1200, 800, 90};
     CHECK_EQ(nocturne_trigl_max_depth(depths, 4), 1200);
 
     // Not the first, not the nearest.
-    const int ordered[] = { 5, 6, 7 };
+    const int ordered[] = {5, 6, 7};
     CHECK_EQ(nocturne_trigl_max_depth(ordered, 3), 7);
-    const int reversed[] = { 7, 6, 5 };
+    const int reversed[] = {7, 6, 5};
     CHECK_EQ(nocturne_trigl_max_depth(reversed, 3), 7);
 
-    const int one[] = { 42 };
+    const int one[] = {42};
     CHECK_EQ(nocturne_trigl_max_depth(one, 1), 42);
     CHECK_EQ(nocturne_trigl_max_depth(one, 0), 0);
 }

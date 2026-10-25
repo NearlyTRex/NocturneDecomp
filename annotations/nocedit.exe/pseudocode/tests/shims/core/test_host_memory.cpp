@@ -8,9 +8,8 @@
 // here; the host itself only for being self-consistent, since its numbers are
 // whatever the machine running the test has.
 
-#include "nocturne_test.h"
-
 #include "core/host_memory.h"
+#include "nocturne_test.h"
 
 #include <filesystem>
 #include <fstream>
@@ -48,7 +47,7 @@ HostMemory figures(unsigned long long total, unsigned long long avail,
     return memory;
 }
 
-}  // namespace
+} // namespace
 
 // -----------------------------------------------------------------------------
 // MemAvailable, read from a file in /proc/meminfo's format.
@@ -104,8 +103,8 @@ NOCTURNE_TEST(without_meminfo_the_host_still_reports_memory_available) {
 
 NOCTURNE_TEST(figures_that_fit_are_reported_as_they_are) {
     _MEMORYSTATUS status;
-    nocturne_memory_status(figures(512 * kMegabyte, 128 * kMegabyte, 1024 * kMegabyte,
-                                   256 * kMegabyte), &status);
+    nocturne_memory_status(
+        figures(512 * kMegabyte, 128 * kMegabyte, 1024 * kMegabyte, 256 * kMegabyte), &status);
     CHECK_EQ(status.dwLength, (DWORD)sizeof(_MEMORYSTATUS));
     CHECK_EQ(status.dwTotalPhys, (SIZE_T)(512 * kMegabyte));
     CHECK_EQ(status.dwAvailPhys, (SIZE_T)(128 * kMegabyte));

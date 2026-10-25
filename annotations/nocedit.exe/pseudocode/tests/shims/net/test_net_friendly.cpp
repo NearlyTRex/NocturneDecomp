@@ -2,11 +2,10 @@
 // NET FRIENDLY FIRE — in a network game, one hero cannot hurt another
 // =============================================================================
 
-#include "nocturne_test.h"
-#include "net_support.h"
-
 #include "net/net_friendly.h"
+#include "net_support.h"
 #include "nocturne.h"
+#include "nocturne_test.h"
 
 #include <cstring>
 
@@ -24,7 +23,7 @@ SDamageInfo hit(CDemonActor *attacker, CDemonActor *wielder, float amount) {
     return info;
 }
 
-}  // namespace
+} // namespace
 
 // A hero hit by a hero, directly or through a weapon, in a session.
 NOCTURNE_TEST(a_hero_hitting_a_hero_is_blocked_in_a_session) {
@@ -35,7 +34,7 @@ NOCTURNE_TEST(a_hero_hitting_a_hero_is_blocked_in_a_session) {
     CDemonActor *other = &heroes[1]->base.base;
 
     SDamageInfo punch = hit(other, nullptr, 5.0f);
-    CHECK_EQ(nocturne_net_friendly_fire_blocked(victim, &punch), 0);   // no session
+    CHECK_EQ(nocturne_net_friendly_fire_blocked(victim, &punch), 0); // no session
 
     net_support::start_session(CONNECTION_HOST, 2, 0);
     CHECK_EQ(nocturne_net_friendly_fire_blocked(victim, &punch), 1);

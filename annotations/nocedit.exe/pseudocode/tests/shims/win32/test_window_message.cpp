@@ -3,7 +3,6 @@
 // =============================================================================
 
 #include "nocturne_test.h"
-
 #include "win32/window_message.h"
 
 namespace {
@@ -14,7 +13,7 @@ unsigned long wheel(int clicks) {
     return (unsigned long)(unsigned short)(short)(clicks * NOCTURNE_WHEEL_DELTA) << 16;
 }
 
-}  // namespace
+} // namespace
 
 // Notches add up between reads, either way, and a read takes them all.
 NOCTURNE_TEST(wheel_notches_add_up_until_they_are_taken) {

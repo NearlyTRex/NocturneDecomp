@@ -8,8 +8,8 @@
 
 #if NOCTURNE_GL_PRESENT
 
-#include "gl/gl_api.h"
 #include "core/debug_log.h"
+#include "gl/gl_api.h"
 
 #include <SDL.h>
 
@@ -39,26 +39,34 @@ void *resolve(const char *name, const char **first_missing) {
 //   PolygonMode             nothing: ES fills every polygon, which is the only
 //                           mode the renderer sets
 //   GetTexImage             left null; its caller checks
-void (APIENTRY *s_ClearDepthf)(GLfloat) = nullptr;
-void (APIENTRY *s_DepthRangef)(GLfloat, GLfloat) = nullptr;
-void (APIENTRY *s_DrawBuffers)(GLsizei, const GLenum *) = nullptr;
+void(APIENTRY *s_ClearDepthf)(GLfloat) = nullptr;
+void(APIENTRY *s_DepthRangef)(GLfloat, GLfloat) = nullptr;
+void(APIENTRY *s_DrawBuffers)(GLsizei, const GLenum *) = nullptr;
 
-void APIENTRY es_ClearDepth(GLclampd depth) { s_ClearDepthf((GLfloat)depth); }
-void APIENTRY es_DepthRange(GLclampd n, GLclampd f) { s_DepthRangef((GLfloat)n, (GLfloat)f); }
-void APIENTRY es_DrawBuffer(GLenum mode) { s_DrawBuffers(1, &mode); }
+void APIENTRY es_ClearDepth(GLclampd depth) {
+    s_ClearDepthf((GLfloat)depth);
+}
+void APIENTRY es_DepthRange(GLclampd n, GLclampd f) {
+    s_DepthRangef((GLfloat)n, (GLfloat)f);
+}
+void APIENTRY es_DrawBuffer(GLenum mode) {
+    s_DrawBuffers(1, &mode);
+}
 void APIENTRY es_PolygonMode(GLenum, GLenum) {}
 #endif
 
-}  // namespace
+} // namespace
 
-#define NOCTURNE_GL_LOAD(field) \
+#define NOCTURNE_GL_LOAD(field)                                                                    \
     gl.field = reinterpret_cast<decltype(gl.field)>(resolve("gl" #field, &missing))
-#define NOCTURNE_GL_LOAD_OPT(field) \
+#define NOCTURNE_GL_LOAD_OPT(field)                                                                \
     gl.field = reinterpret_cast<decltype(gl.field)>(SDL_GL_GetProcAddress("gl" #field))
 
 extern "C" int nocturne_gl_load_api(void) {
-    if (g_loaded) return 1;
-    if (g_failed) return 0;
+    if (g_loaded)
+        return 1;
+    if (g_failed)
+        return 0;
 
     const char *missing = nullptr;
 
@@ -87,9 +95,9 @@ extern "C" int nocturne_gl_load_api(void) {
     s_ClearDepthf = reinterpret_cast<decltype(s_ClearDepthf)>(resolve("glClearDepthf", &missing));
     s_DepthRangef = reinterpret_cast<decltype(s_DepthRangef)>(resolve("glDepthRangef", &missing));
     s_DrawBuffers = reinterpret_cast<decltype(s_DrawBuffers)>(resolve("glDrawBuffers", &missing));
-    gl.ClearDepth  = es_ClearDepth;
-    gl.DepthRange  = es_DepthRange;
-    gl.DrawBuffer  = es_DrawBuffer;
+    gl.ClearDepth = es_ClearDepth;
+    gl.DepthRange = es_DepthRange;
+    gl.DrawBuffer = es_DrawBuffer;
     gl.PolygonMode = es_PolygonMode;
     gl.GetTexImage = nullptr;
 #else
@@ -166,7 +174,7 @@ extern "C" int nocturne_gl_load_api(void) {
     NOCTURNE_GL_LOAD_OPT(GenerateMipmap);
 
     if (missing != nullptr) {
-        DLOG("render","gl_api: failed to resolve %s — GL path unavailable", missing);
+        DLOG("render", "gl_api: failed to resolve %s — GL path unavailable", missing);
         g_failed = true;
         return 0;
     }
@@ -178,10 +186,12 @@ extern "C" int nocturne_gl_load_api(void) {
 #undef NOCTURNE_GL_LOAD
 #undef NOCTURNE_GL_LOAD_OPT
 
-#else  // !NOCTURNE_GL_PRESENT
+#else // !NOCTURNE_GL_PRESENT
 
 #include "gl/gl_api.h"
 struct NocturneGLApi gl;
-extern "C" int nocturne_gl_load_api(void) { return 0; }
+extern "C" int nocturne_gl_load_api(void) {
+    return 0;
+}
 
-#endif  // NOCTURNE_GL_PRESENT
+#endif // NOCTURNE_GL_PRESENT

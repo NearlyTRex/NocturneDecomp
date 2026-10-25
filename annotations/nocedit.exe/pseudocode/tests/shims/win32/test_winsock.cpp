@@ -6,9 +6,8 @@
 // makes, through the function pointers it calls them by, on loopback, and
 // checks what arrives.
 
-#include "nocturne_test.h"
-
 #include "globals/globals_610000.h"
+#include "nocturne_test.h"
 #include "system/winsock.h"
 #include "win32/shim_init.h"
 
@@ -23,9 +22,11 @@ const int kAfInet = 2;
 const int kSockStream = 1;
 const int kSockDgram = 2;
 const int kSolSocket = 0xffff;
-const long kFionbio = -0x7ffb9982;  // 0x8004667E, as the game spells it
+const long kFionbio = -0x7ffb9982; // 0x8004667E, as the game spells it
 
-ushort port_of(const SOCKADDR &address) { return ntohs(address.sin_port); }
+ushort port_of(const SOCKADDR &address) {
+    return ntohs(address.sin_port);
+}
 
 SOCKADDR loopback(ushort port) {
     SOCKADDR address;
@@ -54,7 +55,7 @@ void set_env(const char *name, const char *value) {
 #endif
 }
 
-}  // namespace
+} // namespace
 
 NOCTURNE_TEST(byte_order_is_network_order) {
     shims_init_winsock();
@@ -126,15 +127,15 @@ NOCTURNE_TEST(socket_options_are_set_with_winsocks_numbers) {
     _SOCKET s = bound_udp(&here);
     int on = 1;
     char *value = (char *)&on;
-    CHECK_EQ(g_setsockoptFunc(s, kSolSocket, 0x0020, value, 4), 0);  // SO_BROADCAST
-    CHECK_EQ(g_setsockoptFunc(s, kSolSocket, 0x0004, value, 4), 0);  // SO_REUSEADDR
+    CHECK_EQ(g_setsockoptFunc(s, kSolSocket, 0x0020, value, 4), 0); // SO_BROADCAST
+    CHECK_EQ(g_setsockoptFunc(s, kSolSocket, 0x0004, value, 4), 0); // SO_REUSEADDR
     // SO_KEEPALIVE is a stream socket's: Winsock refuses it on a datagram one.
     _SOCKET stream = g_socketFunc(kAfInet, kSockStream, 0);
     CHECK_EQ(g_setsockoptFunc(stream, kSolSocket, 0x0008, value, 4), 0);
     g_closesocketFunc(stream);
     int size = 65536;
-    CHECK_EQ(g_setsockoptFunc(s, kSolSocket, 0x1001, (char *)&size, 4), 0);  // SO_SNDBUF
-    CHECK_EQ(g_setsockoptFunc(s, kSolSocket, 0x1002, (char *)&size, 4), 0);  // SO_RCVBUF
+    CHECK_EQ(g_setsockoptFunc(s, kSolSocket, 0x1001, (char *)&size, 4), 0); // SO_SNDBUF
+    CHECK_EQ(g_setsockoptFunc(s, kSolSocket, 0x1002, (char *)&size, 4), 0); // SO_RCVBUF
     // An option with no counterpart is refused rather than taken as another.
     CHECK(g_setsockoptFunc(s, kSolSocket, 0x7777, value, 4) != 0);
     // Another level goes through as it is: IPPROTO_IP's TTL.

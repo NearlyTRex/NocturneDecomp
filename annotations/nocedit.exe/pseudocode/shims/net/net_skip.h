@@ -113,9 +113,9 @@ void nocturne_net_skip_poll(void);
 // and the dialog closes behind it: asking, then reopening the menu, offers the
 // withdrawal. The string is returned untranslated, for the caller to pass
 // through getLocalizedString like the entries around it.
-int         nocturne_net_skip_vote_available(void);
+int nocturne_net_skip_vote_available(void);
 const char *nocturne_net_skip_vote_label(void);
-void        nocturne_net_skip_toggle_vote(void);
+void nocturne_net_skip_toggle_vote(void);
 
 // Feeds one received packet to this module. Returns 1 when it was one of ours
 // and has been consumed. Reached from CNetGame::processPacket.

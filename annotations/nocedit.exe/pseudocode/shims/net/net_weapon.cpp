@@ -5,9 +5,10 @@
 // See net_weapon.h for why a weapon switch has to cross the wire at all.
 
 #include "net/net_weapon.h"
-#include "shim_config.h"
-#include "nocturne.h"
+
 #include "core/debug_log.h"
+#include "nocturne.h"
+#include "shim_config.h"
 
 #include <cstring>
 
@@ -43,15 +44,15 @@
 
 #pragma pack(push, 1)
 typedef struct SNetPacket_WeaponSelect {
-    SNetPacketHeader header;         // 0x0
-    int apply_sequence;              // 0x5   sim frame every machine applies on
-    int origin_player;               // 0x9   who pressed the key
-    int serial;                      // 0xd   per-origin, for de-duplication
-    int hero_index;                  // 0x11  whose inventory changes
-    int action;                      // 0x15  NOCTURNE_NET_WEAPON_*
-    int category;                    // 0x19  weapon category (SELECT only)
-    int direction;                   // 0x1d
-} SNetPacket_WeaponSelect;           // 0x21
+    SNetPacketHeader header; // 0x0
+    int apply_sequence;      // 0x5   sim frame every machine applies on
+    int origin_player;       // 0x9   who pressed the key
+    int serial;              // 0xd   per-origin, for de-duplication
+    int hero_index;          // 0x11  whose inventory changes
+    int action;              // 0x15  NOCTURNE_NET_WEAPON_*
+    int category;            // 0x19  weapon category (SELECT only)
+    int direction;           // 0x1d
+} SNetPacket_WeaponSelect;   // 0x21
 #pragma pack(pop)
 
 static SNetPacket_WeaponSelect s_pending[WEAPON_MAX_PENDING];
@@ -72,8 +73,7 @@ static int s_reported_late = 0;
 
 // The selection itself. Deliberately the only place that touches an inventory,
 // so the local and remote paths cannot drift apart.
-static void weapon_apply(int hero_index, int action, int category, int direction)
-{
+static void weapon_apply(int hero_index, int action, int category, int direction) {
     CHero *hero;
 
     if ((hero_index < 0) || (NOCTURNE_HERO_SLOTS <= hero_index)) {
@@ -85,27 +85,22 @@ static void weapon_apply(int hero_index, int action, int category, int direction
     }
 
     if (action == NOCTURNE_NET_WEAPON_SELECT) {
-        core_inv_cpp_CInventory_selectWeapon_FUN_004feb10(
-            &hero->inventory, (CDemonActor *)0x0, category, direction);
-    }
-    else if (action == NOCTURNE_NET_WEAPON_ITEM) {
+        core_inv_cpp_CInventory_selectWeapon_FUN_004feb10(&hero->inventory, (CDemonActor *)0x0,
+                                                          category, direction);
+    } else if (action == NOCTURNE_NET_WEAPON_ITEM) {
         core_inv_cpp_CInventory_selectItem_FUN_004fec10(&hero->inventory, direction);
-    }
-    else if (action == NOCTURNE_NET_WEAPON_AMMO) {
+    } else if (action == NOCTURNE_NET_WEAPON_AMMO) {
         core_inv_cpp_CInventory_cycleWeaponOfSameClass_FUN_004fed10(&hero->inventory, direction);
-    }
-    else if (action == NOCTURNE_NET_WEAPON_GOGGLES) {
+    } else if (action == NOCTURNE_NET_WEAPON_GOGGLES) {
         nocturne_hero_goggles_set(hero, direction);
     }
 }
 
-static void weapon_broadcast(const SNetPacket_WeaponSelect *request)
-{
+static void weapon_broadcast(const SNetPacket_WeaponSelect *request) {
     nocturne_net_session_broadcast((SNetPacketHeader *)&request->header);
 }
 
-static void weapon_queue(const SNetPacket_WeaponSelect *request)
-{
+static void weapon_queue(const SNetPacket_WeaponSelect *request) {
     if (WEAPON_MAX_PENDING <= s_pending_count) {
         DWARN("net_weapon: pending queue full, dropping a selection - the two "
               "machines will disagree about a weapon from here on");
@@ -133,13 +128,11 @@ static void weapon_queue(const SNetPacket_WeaponSelect *request)
 
 // -----------------------------------------------------------------------------
 
-extern "C" void nocturne_net_weapon_apply_local(int action, int category, int direction)
-{
+extern "C" void nocturne_net_weapon_apply_local(int action, int category, int direction) {
     weapon_apply(g_LocalHeroIndex, action, category, direction);
 }
 
-extern "C" void nocturne_net_weapon_request(int action, int category, int direction)
-{
+extern "C" void nocturne_net_weapon_request(int action, int category, int direction) {
     SNetPacket_WeaponSelect request;
 
     if (nocturne_net_session_playing() == 0) {
@@ -150,13 +143,13 @@ extern "C" void nocturne_net_weapon_request(int action, int category, int direct
     }
 
     nocturne_net_packet_init(&request, (int)sizeof(request), NOCTURNE_NET_PACKET_WEAPON);
-    request.apply_sequence  = nocturne_net_session_local_frame() + WEAPON_LEAD_FRAMES;
-    request.origin_player   = g_CNetGamePtr->local_player_index;
-    request.serial          = s_next_serial;
-    request.hero_index      = g_LocalHeroIndex;
-    request.action          = action;
-    request.category        = category;
-    request.direction       = direction;
+    request.apply_sequence = nocturne_net_session_local_frame() + WEAPON_LEAD_FRAMES;
+    request.origin_player = g_CNetGamePtr->local_player_index;
+    request.serial = s_next_serial;
+    request.hero_index = g_LocalHeroIndex;
+    request.action = action;
+    request.category = category;
+    request.direction = direction;
     s_next_serial = s_next_serial + 1;
 
     // Queued, not applied: this machine waits for the scheduled frame with
@@ -165,8 +158,7 @@ extern "C" void nocturne_net_weapon_request(int action, int category, int direct
     weapon_broadcast(&request);
 }
 
-extern "C" int nocturne_net_weapon_on_packet(const void *packet, int packet_size)
-{
+extern "C" int nocturne_net_weapon_on_packet(const void *packet, int packet_size) {
     const SNetPacket_WeaponSelect *incoming = (const SNetPacket_WeaponSelect *)packet;
 
     if (nocturne_net_packet_is(packet, packet_size, NOCTURNE_NET_PACKET_WEAPON,
@@ -174,7 +166,7 @@ extern "C" int nocturne_net_weapon_on_packet(const void *packet, int packet_size
         return 0;
     }
     if ((incoming->origin_player < 0) || (NOCTURNE_HERO_SLOTS <= incoming->origin_player)) {
-        return 1;               // ours by type, but not addressable - consumed
+        return 1; // ours by type, but not addressable - consumed
     }
 
     // Re-broadcasts repeat a serial we have already taken.
@@ -186,11 +178,10 @@ extern "C" int nocturne_net_weapon_on_packet(const void *packet, int packet_size
     return 1;
 }
 
-extern "C" void nocturne_net_weapon_apply_if_due(int sequence_number)
-{
+extern "C" void nocturne_net_weapon_apply_if_due(int sequence_number) {
     CNetGame *net_game = g_CNetGamePtr;
-    int       kept     = 0;
-    int       i;
+    int kept = 0;
+    int i;
 
     for (i = 0; i < s_pending_count; i++) {
         SNetPacket_WeaponSelect *request = &s_pending[i];
@@ -214,55 +205,51 @@ extern "C" void nocturne_net_weapon_apply_if_due(int sequence_number)
         if ((request->apply_sequence < sequence_number) && (s_reported_late == 0)) {
             s_reported_late = 1;
             DLOG("netplay",
-                    "net_weapon: a selection scheduled for frame %d arrived at %d and "
-                    "applied late - the machines disagreed about a weapon for %d frames. "
-                    "WEAPON_LEAD_FRAMES is too short for this connection",
-                    request->apply_sequence, sequence_number,
-                    sequence_number - request->apply_sequence);
+                 "net_weapon: a selection scheduled for frame %d arrived at %d and "
+                 "applied late - the machines disagreed about a weapon for %d frames. "
+                 "WEAPON_LEAD_FRAMES is too short for this connection",
+                 request->apply_sequence, sequence_number,
+                 sequence_number - request->apply_sequence);
         }
-        weapon_apply(request->hero_index, request->action,
-                     request->category, request->direction);
+        weapon_apply(request->hero_index, request->action, request->category, request->direction);
     }
     s_pending_count = kept;
 }
 
-extern "C" void nocturne_net_weapon_reset(void)
-{
+extern "C" void nocturne_net_weapon_reset(void) {
     s_pending_count = 0;
-    s_next_serial   = 1;
+    s_next_serial = 1;
     s_reported_late = 0;
     std::memset(s_serials, 0, sizeof(s_serials));
     nocturne_hero_goggles_reset();
 }
 
-#else  /* authentic: the shipped behaviour, local and immediate */
+#else /* authentic: the shipped behaviour, local and immediate */
 
-extern "C" void nocturne_net_weapon_apply_local(int action, int category, int direction)
-{
+extern "C" void nocturne_net_weapon_apply_local(int action, int category, int direction) {
     nocturne_net_weapon_request(action, category, direction);
 }
 
-extern "C" void nocturne_net_weapon_request(int action, int category, int direction)
-{
+extern "C" void nocturne_net_weapon_request(int action, int category, int direction) {
     CHero *hero = g_HeroActors[g_LocalHeroIndex];
 
     if (hero == (CHero *)0x0) {
         return;
     }
     if (action == NOCTURNE_NET_WEAPON_SELECT) {
-        core_inv_cpp_CInventory_selectWeapon_FUN_004feb10(
-            &hero->inventory, (CDemonActor *)0x0, category, direction);
-    }
-    else if (action == NOCTURNE_NET_WEAPON_ITEM) {
+        core_inv_cpp_CInventory_selectWeapon_FUN_004feb10(&hero->inventory, (CDemonActor *)0x0,
+                                                          category, direction);
+    } else if (action == NOCTURNE_NET_WEAPON_ITEM) {
         core_inv_cpp_CInventory_selectItem_FUN_004fec10(&hero->inventory, direction);
-    }
-    else if (action == NOCTURNE_NET_WEAPON_AMMO) {
+    } else if (action == NOCTURNE_NET_WEAPON_AMMO) {
         core_inv_cpp_CInventory_cycleWeaponOfSameClass_FUN_004fed10(&hero->inventory, direction);
     }
 }
 
-extern "C" int  nocturne_net_weapon_on_packet(const void *, int) { return 0; }
-extern "C" void nocturne_net_weapon_apply_if_due(int)            {}
-extern "C" void nocturne_net_weapon_reset(void)                  {}
+extern "C" int nocturne_net_weapon_on_packet(const void *, int) {
+    return 0;
+}
+extern "C" void nocturne_net_weapon_apply_if_due(int) {}
+extern "C" void nocturne_net_weapon_reset(void) {}
 
 #endif

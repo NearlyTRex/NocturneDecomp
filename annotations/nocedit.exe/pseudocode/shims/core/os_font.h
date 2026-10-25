@@ -28,10 +28,10 @@ extern "C" {
 // The shipped POD carries no msglist.txt, so under AUTO the file is absent,
 // readMessageFile returns before reading anything, and the global keeps its
 // zero — bitmap sheets, as today.
-#define NOCTURNE_OS_FONT_AUTO   0
+#define NOCTURNE_OS_FONT_AUTO 0
 #define NOCTURNE_OS_FONT_BITMAP 1
 #define NOCTURNE_OS_FONT_SYSTEM 2
-#define NOCTURNE_OS_FONT_COUNT  3
+#define NOCTURNE_OS_FONT_COUNT 3
 
 // The stored choice, read from [Graphics] osFont in system\nocturne.ini on
 // first use and cached after. Defaults to NOCTURNE_OS_FONT_AUTO.

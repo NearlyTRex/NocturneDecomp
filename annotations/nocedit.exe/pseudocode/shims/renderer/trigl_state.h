@@ -28,13 +28,13 @@ extern "C" {
 // Bit 8 upward select where a vertex's colour and alpha come from; they affect
 // vertices, not pipeline state, and are consumed in trigl_vertex.h.
 enum {
-    NOCTURNE_TRIGL_FLAG_TEXTURED    = 0x001,  // sample the bound texture
-    NOCTURNE_TRIGL_FLAG_BLEND       = 0x002,  // alpha blend and alpha test
-    NOCTURNE_TRIGL_FLAG_SMOOTH      = 0x004,  // gouraud rather than flat
-    NOCTURNE_TRIGL_FLAG_SOLIDALPHA  = 0x008,  // per-vertex fog factor is live
-    NOCTURNE_TRIGL_FLAG_LIGHTING    = 0x010,  // modulate by the current light level
-    NOCTURNE_TRIGL_FLAG_SRCALPHA    = 0x020,  // scale the source by its own alpha
-    NOCTURNE_TRIGL_FLAG_DEPTH_TEST  = 0x040,  // compare against the depth buffer
+    NOCTURNE_TRIGL_FLAG_TEXTURED = 0x001,     // sample the bound texture
+    NOCTURNE_TRIGL_FLAG_BLEND = 0x002,        // alpha blend and alpha test
+    NOCTURNE_TRIGL_FLAG_SMOOTH = 0x004,       // gouraud rather than flat
+    NOCTURNE_TRIGL_FLAG_SOLIDALPHA = 0x008,   // per-vertex fog factor is live
+    NOCTURNE_TRIGL_FLAG_LIGHTING = 0x010,     // modulate by the current light level
+    NOCTURNE_TRIGL_FLAG_SRCALPHA = 0x020,     // scale the source by its own alpha
+    NOCTURNE_TRIGL_FLAG_DEPTH_TEST = 0x040,   // compare against the depth buffer
     NOCTURNE_TRIGL_FLAG_DEPTH_WRITE = 0x080,  // write depth
     NOCTURNE_TRIGL_FLAG_VERTEX_ALPHA = 0x100, // alpha per vertex, not per draw
     NOCTURNE_TRIGL_FLAG_VERTEX_COLOR = 0x200  // colour per vertex, not per draw
@@ -48,22 +48,13 @@ enum {
     NOCTURNE_TRIGL_BLEND_INV_SRC_ALPHA
 };
 
-enum {
-    NOCTURNE_TRIGL_DEPTH_ALWAYS = 0,
-    NOCTURNE_TRIGL_DEPTH_LEQUAL
-};
+enum { NOCTURNE_TRIGL_DEPTH_ALWAYS = 0, NOCTURNE_TRIGL_DEPTH_LEQUAL };
 
 // Texture sampling, chosen by the engine's own quality settings rather than by
 // the draw.
-enum {
-    NOCTURNE_TRIGL_FILTER_NEAREST = 0,
-    NOCTURNE_TRIGL_FILTER_LINEAR
-};
+enum { NOCTURNE_TRIGL_FILTER_NEAREST = 0, NOCTURNE_TRIGL_FILTER_LINEAR };
 
-enum {
-    NOCTURNE_TRIGL_MIP_NONE = 0,
-    NOCTURNE_TRIGL_MIP_LINEAR
-};
+enum { NOCTURNE_TRIGL_MIP_NONE = 0, NOCTURNE_TRIGL_MIP_LINEAR };
 
 // --- input -------------------------------------------------------------------
 // Everything the mapping reads, gathered by the caller so this stays pure.
@@ -89,19 +80,19 @@ typedef struct NocturneTriglPipelineState {
     int texture_enabled;
     int blend_enabled;
     int alpha_test_enabled;
-    int src_blend;              // NOCTURNE_TRIGL_BLEND_*
+    int src_blend; // NOCTURNE_TRIGL_BLEND_*
     int dst_blend;
     int smooth_shading;
     int fog_enabled;
     int depth_test_enabled;
     int depth_write_enabled;
-    int depth_func;             // NOCTURNE_TRIGL_DEPTH_*
+    int depth_func; // NOCTURNE_TRIGL_DEPTH_*
     // The texture's alpha reaches the fragment's alpha only when set; otherwise
     // the texture contributes colour alone.
     int modulate_texture_alpha;
-    int min_filter;             // NOCTURNE_TRIGL_FILTER_*
+    int min_filter; // NOCTURNE_TRIGL_FILTER_*
     int mag_filter;
-    int mip_filter;             // NOCTURNE_TRIGL_MIP_*
+    int mip_filter; // NOCTURNE_TRIGL_MIP_*
 } NocturneTriglPipelineState;
 
 // The flag word a draw is actually rendered with. A textured draw with an
@@ -120,8 +111,8 @@ void nocturne_trigl_pipeline_state(const NocturneTriglStateInput *in,
 // than discarded, so an over-lit surface blows out toward white instead of
 // clamping to its own colour.
 typedef struct NocturneTriglLighting {
-    int alpha;      // 0..255, the grey the vertex colour carries
-    int overflow;   // 0..255, added on top
+    int alpha;    // 0..255, the grey the vertex colour carries
+    int overflow; // 0..255, added on top
 } NocturneTriglLighting;
 
 // The draw's light level, from CExternalRendererBridge::current_lighting. An

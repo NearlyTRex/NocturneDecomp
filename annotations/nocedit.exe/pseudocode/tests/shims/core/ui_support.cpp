@@ -17,7 +17,9 @@ namespace {
 std::vector<unsigned> s_pixels;
 int s_width = 0;
 
-int key_state(CKeys *, EInputCodeType code) { return stand.pressed.count((int)code) != 0; }
+int key_state(CKeys *, EInputCodeType code) {
+    return stand.pressed.count((int)code) != 0;
+}
 
 int key_take(CKeys *keys, EInputCodeType code) {
     const int was = key_state(keys, code);
@@ -28,9 +30,11 @@ int key_take(CKeys *keys, EInputCodeType code) {
 CKeys_vtable s_keys_vtable = {key_state, key_take, nullptr};
 CKeys s_keys;
 
-}  // namespace
+} // namespace
 
-void Stand::reset() { *this = Stand(); }
+void Stand::reset() {
+    *this = Stand();
+}
 
 void screen(int width, int height, int bits) {
     s_width = width;
@@ -49,10 +53,14 @@ void screen(int width, int height, int bits) {
     g_CKeysPtr = &s_keys;
 }
 
-unsigned pixel32(int x, int y) { return ((unsigned *)g_ScreenBufferArray[y])[x]; }
-unsigned pixel16(int x, int y) { return ((unsigned short *)g_ScreenBufferArray[y])[x]; }
+unsigned pixel32(int x, int y) {
+    return ((unsigned *)g_ScreenBufferArray[y])[x];
+}
+unsigned pixel16(int x, int y) {
+    return ((unsigned short *)g_ScreenBufferArray[y])[x];
+}
 
-}  // namespace ui_support
+} // namespace ui_support
 
 using ui_support::stand;
 
@@ -103,42 +111,41 @@ void __cdecl engine_alphabit_cpp_CAlphaBitmap_initPalette_FUN_00410cf0(CAlphaBit
 }
 
 void __cdecl engine_special_cpp_renderAlphaRow32_FUN_005b555c(uint *destPixels, uchar *srcIndices,
-                                                             uchar *, int globalAlpha,
-                                                             int pixelCount) {
+                                                              uchar *, int globalAlpha,
+                                                              int pixelCount) {
     stand.rows32.push_back({destPixels, pixelCount, globalAlpha, srcIndices[0]});
 }
 
-void __cdecl engine_special_cpp_renderAlphaRow16_FUN_005b55f7(ushort *destPixels,
-                                                             uchar *srcIndices, uchar *,
-                                                             int globalAlpha, int pixelCount) {
+void __cdecl engine_special_cpp_renderAlphaRow16_FUN_005b55f7(ushort *destPixels, uchar *srcIndices,
+                                                              uchar *, int globalAlpha,
+                                                              int pixelCount) {
     stand.rows16.push_back({destPixels, pixelCount, globalAlpha, srcIndices[0]});
 }
 
-void __cdecl engine_alphabit_cpp_CAlphaBitmap_display_FUN_00410950(CAlphaBitmap *, int, int,
-                                                                  int) {
+void __cdecl engine_alphabit_cpp_CAlphaBitmap_display_FUN_00410950(CAlphaBitmap *, int, int, int) {
     stand.displayed.push_back("display");
 }
 
 void __cdecl engine_alphabit_cpp_CAlphaBitmap_render_FUN_00410b00(CAlphaBitmap *, int, int, int,
-                                                                 int, int, int, int) {
+                                                                  int, int, int, int) {
     stand.displayed.push_back("render");
 }
 
-void __cdecl engine_font_cpp_drawAlphaBlendedPixels_FUN_004ce240(uint *dest_buffer, uchar *,
-                                                                uint *, int pixel_count,
-                                                                uint blend_color) {
+void __cdecl engine_font_cpp_drawAlphaBlendedPixels_FUN_004ce240(uint *dest_buffer, uchar *, uint *,
+                                                                 int pixel_count,
+                                                                 uint blend_color) {
     stand.blended.push_back({dest_buffer, pixel_count, 0, blend_color});
 }
 
 int __cdecl engine_font_cpp_CBitFont_wrapText_FUN_004d0010(CBitFont *, char *, char *, int, int,
-                                                          int max_pixel_width) {
+                                                           int max_pixel_width) {
     stand.wraps++;
     stand.wrap_width = max_pixel_width;
     return 2;
 }
 
 int __cdecl engine_font_cpp_CBitFont_drawText_FUN_004cda80(CBitFont *, char *text, int, int, int,
-                                                          int) {
+                                                           int) {
     stand.drawn.push_back(text);
     return (int)std::strlen(text) * 8;
 }
@@ -157,14 +164,19 @@ int __cdecl engine_font_cpp_CBitFont_getCharHeight_FUN_004d01d0(CBitFont *, int)
 
 // --- the menu backdrop -----------------------------------------------------------
 
-void __cdecl core_game_cpp_CGame_updateDT_FUN_004d7d90(CGame *) { stand.updates++; }
-void __cdecl core_moon_cpp_CMoon_update_FUN_00529d60(CMoon *, float) { stand.moon_frames++; }
+void __cdecl core_game_cpp_CGame_updateDT_FUN_004d7d90(CGame *) {
+    stand.updates++;
+}
+void __cdecl core_moon_cpp_CMoon_update_FUN_00529d60(CMoon *, float) {
+    stand.moon_frames++;
+}
 void __cdecl core_moon_cpp_CMoon_render_FUN_00529ed0(CMoon *) {}
 
 // --- the shims they call -----------------------------------------------------------
 
 int nocturne_mouse_wheel_take(void) {
-    if (stand.wheel.empty()) return 0;
+    if (stand.wheel.empty())
+        return 0;
     const int notches = stand.wheel.front();
     stand.wheel.erase(stand.wheel.begin());
     return notches;

@@ -10,10 +10,9 @@
 // against the recorder and the stand-in presenter and closes it again, so they
 // do not share a mode.
 
-#include "nocturne_test.h"
 #include "gl_present_support.h"
 #include "gl_recorder.h"
-
+#include "nocturne_test.h"
 #include "renderer/trigl_batch.h"
 #include "renderer/trigl_device.h"
 #include "renderer/trigl_gl.h"
@@ -36,13 +35,14 @@ gl_recorder::State &start() {
 struct Opened {
     std::vector<void *> rows;
 
-    explicit Opened(int width = 64, int height = 32, int bpp = 16)
-        : rows((size_t)height, nullptr) {
+    explicit Opened(int width = 64, int height = 32, int bpp = 16) : rows((size_t)height, nullptr) {
         CHECK_EQ(nocturne_trigl_device_open(), 1);
         CHECK_EQ(nocturne_trigl_device_set_mode(width, height, bpp, rows.data()), 1);
         gl_recorder::state().calls.clear();
     }
-    ~Opened() { nocturne_trigl_device_close(); }
+    ~Opened() {
+        nocturne_trigl_device_close();
+    }
 };
 
 // One triangle in the batch, so a flush has something to draw.
@@ -52,9 +52,11 @@ void queue_triangle() {
     memset(at, 0, 3 * sizeof(*at));
 }
 
-GLuint APIENTRY no_shader(GLenum) { return 0; }
+GLuint APIENTRY no_shader(GLenum) {
+    return 0;
+}
 
-}  // namespace
+} // namespace
 
 // -----------------------------------------------------------------------------
 // Opening and the mode

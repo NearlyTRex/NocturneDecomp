@@ -34,6 +34,15 @@ int __cdecl core_mission_cpp_CDemonMission_createOneHero_FUN_00524920(CDemonMiss
     nocturne_net_session_reset();
   }
 #endif
+#if !NOCTURNE_AUTHENTIC_HERO_ACTIONS
+  if (index == 0) {
+    nocturne_hero_shove_reset();
+    nocturne_hero_grab_reset();
+    nocturne_hero_gabriella_reset();
+    nocturne_moloch_reset();
+    nocturne_colonel_reset();
+  }
+#endif
   actor_ptr = this_ptr->first_actor;
   local_14 = (CHero *)0x0;
   do {

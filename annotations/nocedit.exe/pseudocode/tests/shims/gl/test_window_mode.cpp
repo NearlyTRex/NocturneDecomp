@@ -9,11 +9,10 @@
 // fullscreen. Here the ini does not exist yet when the mode is first asked for,
 // as on a first run.
 
-#include "nocturne_test.h"
-#include "ini_support.h"
-#include "window_stand.h"
-
 #include "gl/window_mode.h"
+#include "ini_support.h"
+#include "nocturne_test.h"
+#include "window_stand.h"
 
 #include <string>
 
@@ -27,11 +26,13 @@ Uint32 fullscreen_flags(SDL_Window *window) {
     return SDL_GetWindowFlags(window) & SDL_WINDOW_FULLSCREEN_DESKTOP;
 }
 
-std::string saved_mode() { return ini_support::values["Graphics/windowMode"]; }
+std::string saved_mode() {
+    return ini_support::values["Graphics/windowMode"];
+}
 
 SDL_Window *g_window = nullptr;
 
-}  // namespace
+} // namespace
 
 // With no ini yet the mode is windowed, and nothing is written until it is
 // changed; no size has been chosen.
@@ -56,7 +57,7 @@ NOCTURNE_TEST(each_mode_has_a_name) {
 // changes nothing.
 NOCTURNE_TEST(a_size_chosen_early_waits_for_the_window) {
     nocturne_window_mode_apply(nullptr);
-    nocturne_window_set_size(0, 600);   // no size at all: ignored
+    nocturne_window_set_size(0, 600); // no size at all: ignored
     nocturne_window_set_size(800, 0);
     int w = 0, h = 0;
     CHECK_EQ(nocturne_window_preferred_size(&w, &h), 0);
@@ -66,15 +67,15 @@ NOCTURNE_TEST(a_size_chosen_early_waits_for_the_window) {
     CHECK_EQ(h, 600);
 
     g_window = window_stand::open_window(640, 480);
-    nocturne_window_mode_apply(g_window);   // windowed already: nothing to do
-    nocturne_window_set_size(800, 600);     // the window is shown at it
+    nocturne_window_mode_apply(g_window); // windowed already: nothing to do
+    nocturne_window_set_size(800, 600);   // the window is shown at it
     SDL_GetWindowSize(g_window, &w, &h);
     CHECK_EQ(w, 800);
     CHECK_EQ(h, 600);
-    nocturne_window_set_size(800, 600);     // and asking again does not resize
+    nocturne_window_set_size(800, 600); // and asking again does not resize
     SDL_GetWindowSize(g_window, &w, &h);
     CHECK_EQ(w, 800);
-    nocturne_window_set_size(800, 700);     // the height alone
+    nocturne_window_set_size(800, 700); // the height alone
     SDL_GetWindowSize(g_window, &w, &h);
     CHECK_EQ(h, 700);
 }

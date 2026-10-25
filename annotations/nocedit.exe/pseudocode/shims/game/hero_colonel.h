@@ -89,6 +89,10 @@ int nocturne_colonel_death_state(struct CColonel *colonel, int shipped_state);
 // him: hits and shoves back every enemy within reach.
 void nocturne_colonel_push_off(struct CColonel *colonel);
 
+// Forgets every Colonel's aim. Called as a mission builds its heroes, so a
+// Colonel built where an old one stood starts with his gun away.
+void nocturne_colonel_reset(void);
+
 #ifdef __cplusplus
 }
 #endif

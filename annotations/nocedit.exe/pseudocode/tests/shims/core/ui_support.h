@@ -22,23 +22,23 @@ struct Row {
     void *dest;
     int count;
     int alpha;
-    unsigned first;       // the first source index, or the blend colour
+    unsigned first; // the first source index, or the blend colour
 };
 
 struct Stand {
-    std::vector<Row> rows32;           // renderAlphaRow32
-    std::vector<Row> rows16;           // renderAlphaRow16
-    std::vector<Row> blended;          // drawAlphaBlendedPixels
-    std::vector<std::string> displayed;   // CAlphaBitmap::display and render
-    std::vector<std::string> drawn;    // CBitFont::drawText
-    int palettes = 0;                  // CAlphaBitmap::initPalette
-    int wraps = 0;                     // CBitFont::wrapText, and the width it was given
+    std::vector<Row> rows32;            // renderAlphaRow32
+    std::vector<Row> rows16;            // renderAlphaRow16
+    std::vector<Row> blended;           // drawAlphaBlendedPixels
+    std::vector<std::string> displayed; // CAlphaBitmap::display and render
+    std::vector<std::string> drawn;     // CBitFont::drawText
+    int palettes = 0;                   // CAlphaBitmap::initPalette
+    int wraps = 0;                      // CBitFont::wrapText, and the width it was given
     int wrap_width = 0;
-    int char_height = 10;              // getCharHeight; text width is 8 a character
-    int updates = 0;                   // CGame::updateDT
-    int moon_frames = 0;               // CMoon::update and render, each
-    std::vector<int> wheel;            // nocturne_mouse_wheel_take, front first; 0 after
-    std::set<int> pressed;             // keys read once by getAndClearKeyState
+    int char_height = 10;   // getCharHeight; text width is 8 a character
+    int updates = 0;        // CGame::updateDT
+    int moon_frames = 0;    // CMoon::update and render, each
+    std::vector<int> wheel; // nocturne_mouse_wheel_take, front first; 0 after
+    std::set<int> pressed;  // keys read once by getAndClearKeyState
 
     void reset();
 };
@@ -53,4 +53,4 @@ void screen(int width, int height, int bits);
 unsigned pixel32(int x, int y);
 unsigned pixel16(int x, int y);
 
-}  // namespace ui_support
+} // namespace ui_support

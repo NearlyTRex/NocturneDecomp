@@ -5,6 +5,7 @@
 // See hero_fall.h for the Stranger's rule this applies.
 
 #include "game/hero_fall.h"
+
 #include "nocturne.h"
 
 #if !NOCTURNE_AUTHENTIC_HERO_ACTIONS
@@ -12,19 +13,18 @@
 namespace {
 
 // CStranger::processFrame's landing handler.
-const float k_safe_speed      = 20.0f;
+const float k_safe_speed = 20.0f;
 const float k_damage_per_unit = 5.0f;
-const float k_fatal_damage    = 100.0f;
-const float k_ground_margin   = 0.1f;
+const float k_fatal_damage = 100.0f;
+const float k_ground_margin = 0.1f;
 
 } // namespace
 
-extern "C" void nocturne_hero_fall_move(CHero *hero, CVector3f *step)
-{
+extern "C" void nocturne_hero_fall_move(CHero *hero, CVector3f *step) {
     CCharacter *character = &hero->base;
     SDamageInfo damage;
-    float       speed;
-    int         airborne;
+    float speed;
+    int airborne;
 
     // moveAndCollide leaves velocity.y at the distance it moved over the
     // frame, so the frame after a landing still carries the fall speed. Only
@@ -58,8 +58,8 @@ extern "C" void nocturne_hero_fall_move(CHero *hero, CVector3f *step)
     (*(((character->base).vtable._uc)->_uc).processDamage)(character, &damage);
 
     if (0.0f < character->hit_points) {
-        (*((character->base).vtable._ub)->processFootstepAtOffset)
-            (&character->base, &g_ZeroVector.f, speed * 0.025f + 1.0f);
+        (*((character->base).vtable._ub)->processFootstepAtOffset)(
+            &character->base, &g_ZeroVector.f, speed * 0.025f + 1.0f);
     }
 }
 
@@ -67,8 +67,7 @@ extern "C" void nocturne_hero_fall_move(CHero *hero, CVector3f *step)
 
 #if !NOCTURNE_AUTHENTIC_BOTTOMLESS_FALL
 
-extern "C" void nocturne_fall_out_of_world(CCharacter *character)
-{
+extern "C" void nocturne_fall_out_of_world(CCharacter *character) {
     SDamageInfo damage;
 
     if ((g_CDemonRaytraceInstance.cube_data == (CDemonCube *)0x0) ||
@@ -79,7 +78,7 @@ extern "C" void nocturne_fall_out_of_world(CCharacter *character)
     }
     core_charactr_cpp_SDamageInfo_ctor_FUN_00427db0(&damage);
     damage.damage_amount = 9999.0f;
-    damage.damage_type   = DAMAGE_TYPE_FALL;
+    damage.damage_type = DAMAGE_TYPE_FALL;
     if (core_actor_cpp_isOfClass_FUN_0040c6d0(&character->base, (char *)"CHero") != 0) {
         ((CHero *)character)->invincibility_timer = 0.0f;
     }
@@ -89,10 +88,10 @@ extern "C" void nocturne_fall_out_of_world(CCharacter *character)
     // plays it (state 0x12 in STRANGER.SKL). The other classes take the death
     // their processDamage plays.
     if ((character->hit_points <= 0.0f) &&
-        (core_actor_cpp_castToClassHash_FUN_0040c790
-             (&character->base, g_CStrangerClassInfo.name_hash) != (CDemonActor *)0x0)) {
-        core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
-            (&(character->model).base, 0x12, 1);
+        (core_actor_cpp_castToClassHash_FUN_0040c790(
+             &character->base, g_CStrangerClassInfo.name_hash) != (CDemonActor *)0x0)) {
+        core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00(&(character->model).base,
+                                                                       0x12, 1);
         (*((character->base).vtable._ub)->playSound)(&character->base, (char *)"fall-?.wav");
     }
 }

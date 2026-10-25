@@ -12,16 +12,14 @@
 // The first case runs before SDL's audio is up, with a driver that does not
 // exist, so the cases are in the order they have to be.
 
-#include "nocturne_test.h"
-
 #include "globals/globals_610000.h"
+#include "nocturne_test.h"
 #include "system/mmsystem.h"
 #include "win32/shim_init.h"
 
 // The test's own main(), which SDL would otherwise rename on Windows.
 #define SDL_MAIN_HANDLED
 #include <SDL.h>
-
 #include <cstdio>
 #include <cstring>
 #include <string>
@@ -62,14 +60,15 @@ struct Buffer {
 // Whether `header` is marked done within `ms`.
 bool done_within(const wavehdr_tag &header, int ms) {
     for (int waited = 0; waited < ms; waited += 5) {
-        if ((header.dwFlags & kDone) != 0) return true;
+        if ((header.dwFlags & kDone) != 0)
+            return true;
         SDL_Delay(5);
     }
     return (header.dwFlags & kDone) != 0;
 }
 
 HWAVEOUT open_out(int rate, int channels, int bits) {
-    tWAVEFORMATEX f =format(rate, channels, bits);
+    tWAVEFORMATEX f = format(rate, channels, bits);
     HWAVEOUT out = nullptr;
     CHECK_EQ(g_waveOutOpenFunc(&out, 0, &f, 0, 0, 0), kOk);
     return out;
@@ -86,7 +85,7 @@ void start_joysticks() {
     SDL_InitSubSystem(SDL_INIT_JOYSTICK);
 }
 
-}  // namespace
+} // namespace
 
 // -----------------------------------------------------------------------------
 // Before audio comes up
@@ -97,7 +96,7 @@ void start_joysticks() {
 NOCTURNE_TEST(without_an_audio_driver_wave_out_is_an_error) {
     shims_init_mmsystem();
     SDL_setenv("SDL_AUDIODRIVER", "no_such_driver", 1);
-    tWAVEFORMATEX f =format(22050, 1, 16);
+    tWAVEFORMATEX f = format(22050, 1, 16);
     HWAVEOUT out = nullptr;
     CHECK_EQ(g_waveOutOpenFunc(&out, 0, &f, 0, 0, 0), kError);
     tagWAVEOUTCAPSA caps;
@@ -124,7 +123,7 @@ NOCTURNE_TEST(a_written_buffer_is_marked_done_once_it_has_played) {
     Buffer first(8192), second(100);
     CHECK_EQ(g_waveOutPrepareHeaderFunc(out, &first.header, sizeof(first.header)), kOk);
     CHECK_EQ(first.header.dwFlags & kPrepared, kPrepared);
-    first.header.dwFlags |= kDone;   // left over from a previous pass
+    first.header.dwFlags |= kDone; // left over from a previous pass
     CHECK_EQ(g_waveOutWriteFunc(out, &first.header, sizeof(first.header)), kOk);
     CHECK_EQ(first.header.dwFlags & kDone, 0u);
     CHECK_EQ(g_waveOutWriteFunc(out, &second.header, sizeof(second.header)), kOk);
@@ -166,7 +165,7 @@ NOCTURNE_TEST(a_format_or_buffer_wave_out_cannot_take_is_refused) {
     tWAVEFORMATEX too_wide = format(22050, 9, 16);
     HWAVEOUT out = nullptr;
     CHECK_EQ(g_waveOutOpenFunc(&out, 0, &f24, 0, 0, 0), kError);
-    CHECK_EQ(g_waveOutOpenFunc(&out, 0, &too_wide, 0, 0, 0), kError);   // SDL takes up to 8
+    CHECK_EQ(g_waveOutOpenFunc(&out, 0, &too_wide, 0, 0, 0), kError); // SDL takes up to 8
     CHECK_EQ(g_waveOutOpenFunc(nullptr, 0, &f16, 0, 0, 0), kInvalidParam);
     CHECK_EQ(g_waveOutOpenFunc(&out, 0, nullptr, 0, 0, 0), kInvalidParam);
 
@@ -187,7 +186,7 @@ NOCTURNE_TEST(the_one_output_device_is_listed_by_name) {
     CHECK_EQ(g_waveOutGetDevCapsAFunc(0, &caps, sizeof(caps)), kOk);
     CHECK(caps.szPname[0] != '\0');
     CHECK_EQ((int)caps.wChannels, 2);
-    CHECK_EQ(g_waveOutGetDevCapsAFunc((UINT)-1, &caps, sizeof(caps)), kOk);   // WAVE_MAPPER
+    CHECK_EQ(g_waveOutGetDevCapsAFunc((UINT)-1, &caps, sizeof(caps)), kOk); // WAVE_MAPPER
     CHECK_EQ(g_waveOutGetDevCapsAFunc(3, &caps, sizeof(caps)), kBadDevice);
     CHECK_EQ(g_waveOutGetDevCapsAFunc(0, nullptr, 0), kInvalidParam);
 }
@@ -196,7 +195,7 @@ NOCTURNE_TEST(the_one_output_device_is_listed_by_name) {
 NOCTURNE_TEST(wave_in_is_accepted_and_records_nothing) {
     shims_init_mmsystem();
     HWAVEIN in = nullptr;
-    tWAVEFORMATEX f =format(11025, 1, 8);
+    tWAVEFORMATEX f = format(11025, 1, 8);
     CHECK_EQ(g_waveInOpenFunc(&in, 0, &f, 0, 0, 0), kOk);
     CHECK(in != nullptr);
     CHECK_EQ(g_waveInOpenFunc(nullptr, 0, &f, 0, 0, 0), kOk);
@@ -248,7 +247,8 @@ NOCTURNE_TEST(a_joystick_reports_its_controls_and_where_they_are) {
     shims_init_mmsystem();
     start_joysticks();
     const int index = SDL_JoystickAttachVirtual(SDL_JOYSTICK_TYPE_GAMECONTROLLER, 3, 4, 1);
-    if (index < 0) fprintf(stderr, "attach: %s\n", SDL_GetError());
+    if (index < 0)
+        fprintf(stderr, "attach: %s\n", SDL_GetError());
     CHECK(index >= 0);
     tagJOYCAPSA caps;
     CHECK_EQ(g_joyGetDevCapsAFunc((UINT)index, &caps, sizeof(caps)), kOk);

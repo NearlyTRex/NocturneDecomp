@@ -305,9 +305,6 @@ LAB_004e14f5:
           return;
         }
         core_mission_cpp_CDemonMission_run_FUN_00524420(g_CDemonMissionPtr);
-#if !NOCTURNE_AUTHENTIC_AUTOMAP
-        nocturne_automap_apply_loaded();
-#endif
         if (this_ptr->need_chapter_reload == 0) goto LAB_004e17ac;
         save_filename = local_20;
         this_ptr->need_chapter_reload = 0;

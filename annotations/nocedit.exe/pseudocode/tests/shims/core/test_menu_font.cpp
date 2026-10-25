@@ -7,11 +7,10 @@
 // list, are runs of their own (test_menu_font_saved.cpp,
 // test_menu_font_negative.cpp).
 
-#include "nocturne_test.h"
 #include "../gl/ini_support.h"
-
 #include "core/menu_font.h"
 #include "nocturne.h"
+#include "nocturne_test.h"
 
 #include <filesystem>
 #include <string>

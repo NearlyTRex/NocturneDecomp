@@ -12,7 +12,6 @@
 // The test's own main(), which SDL would otherwise rename on Windows.
 #define SDL_MAIN_HANDLED
 #include <SDL.h>
-
 #include <filesystem>
 #include <string>
 
@@ -39,4 +38,4 @@ inline SDL_Window *open_window(int width, int height) {
     return SDL_CreateWindow("Nocturne", 0, 0, width, height, SDL_WINDOW_HIDDEN);
 }
 
-}  // namespace window_stand
+} // namespace window_stand

@@ -8,8 +8,10 @@
 //
 
 #include "system/winsock.h"
+
 #include "core/debug_log.h"
 #include "net/net_config.h"
+
 #include <cstdlib>
 #include <cstring>
 
@@ -23,27 +25,27 @@
 
 // POSIX wrappers defined in winsock_posix.c
 extern "C" {
-    int nocturne_socket_socket(int domain, int type, int protocol);
-    int nocturne_socket_accept(int sockfd, void* addr, unsigned int* addrlen);
-    int nocturne_socket_bind(int sockfd, const void* addr, unsigned int addrlen);
-    int nocturne_socket_connect(int sockfd, const void* addr, unsigned int addrlen);
-    int nocturne_socket_getsockname(int sockfd, void* addr, unsigned int* addrlen);
-    int nocturne_socket_listen(int sockfd, int backlog);
-    int nocturne_socket_recv(int sockfd, void* buf, unsigned long len, int flags);
-    int nocturne_socket_recvfrom(int sockfd, void* buf, unsigned long len, int flags,
-                       void* from, unsigned int* fromlen);
-    int nocturne_socket_send(int sockfd, const void* buf, unsigned long len, int flags);
-    int nocturne_socket_sendto(int sockfd, const void* buf, unsigned long len, int flags,
-                     const void* to, unsigned int tolen);
-    int nocturne_socket_setsockopt(int sockfd, int level, int optname,
-                         const void* optval, unsigned int optlen);
-    int nocturne_socket_shutdown(int sockfd, int how);
-    int nocturne_socket_close(int fd);
-    int nocturne_socket_ioctl(int fd, unsigned long request, void* argp);
-    void* nocturne_socket_gethostbyname(const char* name);
-    unsigned long nocturne_socket_inet_addr(const char* cp);
-    int nocturne_socket_gethostname(char* name, unsigned long namelen);
-    void* nocturne_socket_getservbyport(int port, const char* proto);
+int nocturne_socket_socket(int domain, int type, int protocol);
+int nocturne_socket_accept(int sockfd, void *addr, unsigned int *addrlen);
+int nocturne_socket_bind(int sockfd, const void *addr, unsigned int addrlen);
+int nocturne_socket_connect(int sockfd, const void *addr, unsigned int addrlen);
+int nocturne_socket_getsockname(int sockfd, void *addr, unsigned int *addrlen);
+int nocturne_socket_listen(int sockfd, int backlog);
+int nocturne_socket_recv(int sockfd, void *buf, unsigned long len, int flags);
+int nocturne_socket_recvfrom(int sockfd, void *buf, unsigned long len, int flags, void *from,
+                             unsigned int *fromlen);
+int nocturne_socket_send(int sockfd, const void *buf, unsigned long len, int flags);
+int nocturne_socket_sendto(int sockfd, const void *buf, unsigned long len, int flags,
+                           const void *to, unsigned int tolen);
+int nocturne_socket_setsockopt(int sockfd, int level, int optname, const void *optval,
+                               unsigned int optlen);
+int nocturne_socket_shutdown(int sockfd, int how);
+int nocturne_socket_close(int fd);
+int nocturne_socket_ioctl(int fd, unsigned long request, void *argp);
+void *nocturne_socket_gethostbyname(const char *name);
+unsigned long nocturne_socket_inet_addr(const char *cp);
+int nocturne_socket_gethostname(char *name, unsigned long namelen);
+void *nocturne_socket_getservbyport(int port, const char *proto);
 }
 
 // =============================================================================
@@ -55,9 +57,7 @@ ushort htons(ushort hostshort) {
 }
 
 ulong htonl(ulong hostlong) {
-    return ((hostlong & 0xFF) << 24) |
-           ((hostlong & 0xFF00) << 8) |
-           ((hostlong >> 8) & 0xFF00) |
+    return ((hostlong & 0xFF) << 24) | ((hostlong & 0xFF00) << 8) | ((hostlong >> 8) & 0xFF00) |
            ((hostlong >> 24) & 0xFF);
 }
 
@@ -90,15 +90,17 @@ int WSACleanup(void) {
 // Socket Operations
 // =============================================================================
 
-_SOCKET accept(_SOCKET s, struct SOCKADDR* addr, int* addrlen) {
+_SOCKET accept(_SOCKET s, struct SOCKADDR *addr, int *addrlen) {
     unsigned int len = addrlen ? (unsigned int)*addrlen : 0;
     int result = nocturne_socket_accept((int)s, addr, addrlen ? &len : nullptr);
-    if (addrlen) *addrlen = (int)len;
-    if (result < 0) return (_SOCKET)-1;
+    if (addrlen)
+        *addrlen = (int)len;
+    if (result < 0)
+        return (_SOCKET)-1;
     return (_SOCKET)result;
 }
 
-int bind(_SOCKET s, const struct SOCKADDR* addr, int namelen) {
+int bind(_SOCKET s, const struct SOCKADDR *addr, int namelen) {
     // Inert unless [Network] bindAddress (or NOCTURNE_NET_BIND) is set; see
     // net_config.h.
     //
@@ -110,12 +112,12 @@ int bind(_SOCKET s, const struct SOCKADDR* addr, int namelen) {
     // real address instead of 0.0.0.0, which is what the lobby hands out as
     // the player's own address.
     if (addr != nullptr && addr->sin_addr == 0) {
-        const char* bind_ip = nocturne_net_bind_address();
+        const char *bind_ip = nocturne_net_bind_address();
         if (*bind_ip != '\0') {
             SOCKADDR local = *addr;
             local.sin_addr = (int)nocturne_socket_inet_addr(bind_ip);
             DLOG("netplay", "bind: INADDR_ANY -> %s port %u", bind_ip,
-                    (unsigned)ntohs(local.sin_port));
+                 (unsigned)ntohs(local.sin_port));
             return nocturne_socket_bind((int)s, &local, (unsigned int)namelen);
         }
     }
@@ -126,18 +128,19 @@ int closesocket(_SOCKET s) {
     return nocturne_socket_close((int)s);
 }
 
-int connect(_SOCKET s, const struct SOCKADDR* name, int namelen) {
+int connect(_SOCKET s, const struct SOCKADDR *name, int namelen) {
     return nocturne_socket_connect((int)s, name, (unsigned int)namelen);
 }
 
-int getsockname(_SOCKET s, struct SOCKADDR* name, int* namelen) {
+int getsockname(_SOCKET s, struct SOCKADDR *name, int *namelen) {
     unsigned int len = namelen ? (unsigned int)*namelen : 0;
     int result = nocturne_socket_getsockname((int)s, name, &len);
-    if (namelen) *namelen = (int)len;
+    if (namelen)
+        *namelen = (int)len;
     return result;
 }
 
-int ioctlsocket(_SOCKET s, long cmd, uint* argp) {
+int ioctlsocket(_SOCKET s, long cmd, uint *argp) {
     // Winsock ioctl codes are 32-bit _IOW values and the game passes them as
     // negative int literals — FIONBIO is 0x8004667E, i.e. -0x7ffb9982. `long`
     // is 64 bits here, so widening sign-extends that to 0xFFFFFFFF8004667E and
@@ -151,27 +154,28 @@ int listen(_SOCKET s, int backlog) {
     return nocturne_socket_listen((int)s, backlog);
 }
 
-int recv(_SOCKET s, char* buf, int len, int flags) {
+int recv(_SOCKET s, char *buf, int len, int flags) {
     return nocturne_socket_recv((int)s, buf, (unsigned long)len, flags);
 }
 
-int recvfrom(_SOCKET s, char* buf, int len, int flags, struct SOCKADDR* from, int* fromlen) {
+int recvfrom(_SOCKET s, char *buf, int len, int flags, struct SOCKADDR *from, int *fromlen) {
     unsigned int slen = fromlen ? (unsigned int)*fromlen : 0;
-    int result = nocturne_socket_recvfrom((int)s, buf, (unsigned long)len, flags,
-                                from, fromlen ? &slen : nullptr);
-    if (fromlen) *fromlen = (int)slen;
+    int result = nocturne_socket_recvfrom((int)s, buf, (unsigned long)len, flags, from,
+                                          fromlen ? &slen : nullptr);
+    if (fromlen)
+        *fromlen = (int)slen;
     return result;
 }
 
-int send(_SOCKET s, const char* buf, int len, int flags) {
+int send(_SOCKET s, const char *buf, int len, int flags) {
     return nocturne_socket_send((int)s, buf, (unsigned long)len, flags);
 }
 
-int sendto(_SOCKET s, const char* buf, int len, int flags, const struct SOCKADDR* to, int tolen) {
+int sendto(_SOCKET s, const char *buf, int len, int flags, const struct SOCKADDR *to, int tolen) {
     return nocturne_socket_sendto((int)s, buf, (unsigned long)len, flags, to, (unsigned int)tolen);
 }
 
-int setsockopt(_SOCKET s, int level, int optname, const char* optval, int optlen) {
+int setsockopt(_SOCKET s, int level, int optname, const char *optval, int optlen) {
     return nocturne_socket_setsockopt((int)s, level, optname, optval, (unsigned int)optlen);
 }
 
@@ -183,20 +187,20 @@ int shutdown(_SOCKET s, int how) {
 // Name Resolution
 // =============================================================================
 
-struct HOSTENT* gethostbyname(const char* name) {
-    return (struct HOSTENT*)nocturne_socket_gethostbyname(name);
+struct HOSTENT *gethostbyname(const char *name) {
+    return (struct HOSTENT *)nocturne_socket_gethostbyname(name);
 }
 
-ulong inet_addr(const char* cp) {
+ulong inet_addr(const char *cp) {
     return (ulong)nocturne_socket_inet_addr(cp);
 }
 
-int gethostname(char* name, int namelen) {
+int gethostname(char *name, int namelen) {
     return nocturne_socket_gethostname(name, (unsigned long)namelen);
 }
 
-struct SERVENT* getservbyport(int port, const char* proto) {
-    return (struct SERVENT*)nocturne_socket_getservbyport(port, proto);
+struct SERVENT *getservbyport(int port, const char *proto) {
+    return (struct SERVENT *)nocturne_socket_getservbyport(port, proto);
 }
 
 // =============================================================================
@@ -205,7 +209,8 @@ struct SERVENT* getservbyport(int port, const char* proto) {
 
 _SOCKET socket(int af, int type, int protocol) {
     int fd = nocturne_socket_socket(af, type, protocol);
-    if (fd < 0) return (_SOCKET)-1;
+    if (fd < 0)
+        return (_SOCKET)-1;
     return (_SOCKET)fd;
 }
 
@@ -217,18 +222,18 @@ _SOCKET socket(int af, int type, int protocol) {
 
 void shims_init_winsock() {
     g_acceptFunc = accept;
-    g_bindFunc = (BIND_FUNC*)bind;
+    g_bindFunc = (BIND_FUNC *)bind;
     g_closesocketFunc = closesocket;
-    g_connectFunc = (CONNECT_FUNC*)connect;
+    g_connectFunc = (CONNECT_FUNC *)connect;
     g_getsocknameFunc = getsockname;
     g_htonsFunc = htons;
-    g_ioctlsocketFunc = (IOCTL_SOCKET_FUNC*)ioctlsocket;
+    g_ioctlsocketFunc = (IOCTL_SOCKET_FUNC *)ioctlsocket;
     g_listenFunc = listen;
     g_recvFunc = recv;
     g_recvfromFunc = recvfrom;
-    g_sendFunc = (SEND_FUNC*)send;
-    g_sendtoFunc = (SEND_TO_FUNC*)sendto;
-    g_setsockoptFunc = (SET_SOCK_OPT_FUNC*)setsockopt;
+    g_sendFunc = (SEND_FUNC *)send;
+    g_sendtoFunc = (SEND_TO_FUNC *)sendto;
+    g_setsockoptFunc = (SET_SOCK_OPT_FUNC *)setsockopt;
     g_socketFunc = socket;
     g_ntohsFunc = ntohs;
     g_WSAStartupFunc = WSAStartup;

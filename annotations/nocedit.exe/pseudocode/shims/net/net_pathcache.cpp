@@ -3,13 +3,13 @@
 // =============================================================================
 
 #include "net/net_pathcache.h"
-#include "shim_config.h"
+
 #include "nocturne.h"
+#include "shim_config.h"
 
 #if !NOCTURNE_AUTHENTIC_NETPLAY
 
-extern "C" void nocturne_net_pathcache_rewind(void)
-{
+extern "C" void nocturne_net_pathcache_rewind(void) {
     int i;
 
     if (nocturne_net_session_active() == 0) {
@@ -21,8 +21,7 @@ extern "C" void nocturne_net_pathcache_rewind(void)
         g_PathMapCacheInitFlag = g_PathMapCacheInitFlag | 1;
         __arrinit(g_PathMapCache, 0xc, &g_CPathMapTypeInfo);
         _atexit(&g_PathMapCacheDestructorNode);
-    }
-    else {
+    } else {
         // What CPathMap::ctor sets up, without registering the entry again.
         for (i = 0; i < 0xc; i++) {
             g_PathMapCache[i].cached_voxel_coords.x = 0x7fffffff;

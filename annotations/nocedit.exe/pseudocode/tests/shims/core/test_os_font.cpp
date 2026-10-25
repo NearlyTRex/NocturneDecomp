@@ -5,11 +5,10 @@
 // Kept in nocturne.ini and read once; Auto leaves the engine's own choice as it
 // is, the other two set it.
 
-#include "nocturne_test.h"
 #include "../gl/ini_support.h"
-
 #include "core/os_font.h"
 #include "nocturne.h"
+#include "nocturne_test.h"
 
 #include <filesystem>
 #include <string>

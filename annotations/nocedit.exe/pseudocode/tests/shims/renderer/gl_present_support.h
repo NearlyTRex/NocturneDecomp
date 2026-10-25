@@ -10,21 +10,23 @@
 namespace gl_present_support {
 
 struct Presenter {
-    int context       = 1;  // nocturne_gl_ensure_active
-    int target_bind   = 1;  // nocturne_gl_scene_target_bind
-    int target_active = 1;  // nocturne_gl_scene_target_active
+    int context = 1;       // nocturne_gl_ensure_active
+    int target_bind = 1;   // nocturne_gl_scene_target_bind
+    int target_active = 1; // nocturne_gl_scene_target_active
 
     // The last image nocturne_gl_scene_upload was given, and how many it has been.
-    int         uploads       = 0;
+    int uploads = 0;
     const void *upload_pixels = nullptr;
-    int         upload_width  = 0;
-    int         upload_height = 0;
+    int upload_width = 0;
+    int upload_height = 0;
 
     int presents = 0;
 
-    void reset() { *this = Presenter(); }
+    void reset() {
+        *this = Presenter();
+    }
 };
 
 extern Presenter presenter;
 
-}  // namespace gl_present_support
+} // namespace gl_present_support

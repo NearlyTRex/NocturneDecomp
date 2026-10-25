@@ -86,7 +86,7 @@ def test_save_json_files_buckets_by_the_low_address_bits(tmp_path, capsys):
 # The bucket for a key with no hex address has to be the same in every process,
 # or each export would move it to another file
 def test_an_item_without_a_hex_address_lands_in_the_same_bucket_every_run(tmp_path):
-    script = ("import sys; sys.path[:0] = ['Tests', 'scripts/Python']; import ghidra_fake; ghidra_fake.install(); "
+    script = ("import sys; sys.path[:0] = ['tests', 'scripts/Python']; import ghidra_fake; ghidra_fake.install(); "
               "from ghidra_annotations.util import annotations; "
               "print(annotations.save_json_files(sys.argv[1], 'x', ['label'], lambda item: item, bucket_bits = 4))")
     runs = {subprocess.run([sys.executable, "-c", script, str(tmp_path / str(seed))], cwd = REPO_ROOT,

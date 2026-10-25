@@ -11,7 +11,6 @@
 // exports are found by their exact names.
 
 #include "nocturne_test.h"
-
 #include "renderer/builtin_dll.h"
 
 #include <cstring>
@@ -25,10 +24,12 @@ namespace {
 // g_RendererDllPath's size.
 struct Path {
     char text[256];
-    explicit Path(const char *initial) { strcpy(text, initial); }
+    explicit Path(const char *initial) {
+        strcpy(text, initial);
+    }
 };
 
-}  // namespace
+} // namespace
 
 // The game's name, in any case, with or without the directory pod.ini may give.
 NOCTURNE_TEST(a_registered_name_opens_however_it_is_spelled) {
@@ -85,7 +86,7 @@ NOCTURNE_TEST(the_3d_api_option_steps_round_the_renderers_there_are) {
     Path path("tri3dfx.dll");
     nocturne_builtin_dll_step(path.text);
     CHECK_EQ(std::string(path.text), std::string("trigl.dll"));
-    nocturne_builtin_dll_step(path.text);   // one renderer: round to itself
+    nocturne_builtin_dll_step(path.text); // one renderer: round to itself
     CHECK_EQ(std::string(path.text), std::string("trigl.dll"));
 }
 

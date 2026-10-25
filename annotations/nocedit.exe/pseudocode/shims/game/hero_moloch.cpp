@@ -1,4 +1,5 @@
 #include "game/hero_moloch.h"
+
 #include "nocturne.h"
 
 #include <cstring>
@@ -7,16 +8,10 @@ namespace {
 
 // MOLOCH_D.SKL state indices. MELEEFIGHT (9) is reachable too, but it only
 // waves the arms, so it is not used.
-enum {
-    MOLOCH_STATE_STAND         = 0,
-    MOLOCH_STATE_OVERHEADSMASH = 10,
-    MOLOCH_STATE_PUNCH         = 11
-};
+enum { MOLOCH_STATE_STAND = 0, MOLOCH_STATE_OVERHEADSMASH = 10, MOLOCH_STATE_PUNCH = 11 };
 
 // The order fire plays them in. Stand has a transition to each.
-const unsigned int kAttackStates[] = {
-    MOLOCH_STATE_PUNCH, MOLOCH_STATE_OVERHEADSMASH
-};
+const unsigned int kAttackStates[] = {MOLOCH_STATE_PUNCH, MOLOCH_STATE_OVERHEADSMASH};
 #define ATTACK_COUNT ((int)(sizeof(kAttackStates) / sizeof(kAttackStates[0])))
 
 // Frames the blow lands on. Neither motion carries a signal; these sit before
@@ -32,8 +27,7 @@ const float kClawRadius = 1.0f;
 // machine shares.
 unsigned char s_next_attack[NOCTURNE_HERO_SLOTS];
 
-int is_attack_state(int state)
-{
+int is_attack_state(int state) {
     int i;
 
     for (i = 0; i < ATTACK_COUNT; i++) {
@@ -46,8 +40,7 @@ int is_attack_state(int state)
 
 // CHaystack::checkMeleeHit, from a bone found by name so it survives the morph
 // re-initialising the model. Returns whether anyone was hit.
-int strike_from(CMoloch *moloch, CCharacter *target, const char *bone_name)
-{
+int strike_from(CMoloch *moloch, CCharacter *target, const char *bone_name) {
     CVector3f world_point;
     SDamageInfo damage;
 
@@ -57,15 +50,14 @@ int strike_from(CMoloch *moloch, CCharacter *target, const char *bone_name)
 
     core_charactr_cpp_SDamageInfo_ctor_FUN_00427db0(&damage);
     damage.damage_amount = kClawDamage;
-    damage.damage_type   = DAMAGE_TYPE_MELEE;
-    damage.attacker      = (CDemonActor *)moloch;
-    damage.wielder       = (CDemonActor *)moloch;
-    return (*(((target->base).vtable._uc)->_uc).checkCylinderCollisionWorld)
-               (target, &world_point, kClawRadius, &damage);
+    damage.damage_type = DAMAGE_TYPE_MELEE;
+    damage.attacker = (CDemonActor *)moloch;
+    damage.wielder = (CDemonActor *)moloch;
+    return (*(((target->base).vtable._uc)->_uc).checkCylinderCollisionWorld)(target, &world_point,
+                                                                             kClawRadius, &damage);
 }
 
-void strike(CMoloch *moloch)
-{
+void strike(CMoloch *moloch) {
     int i;
 
     for (i = 0; i < g_CDemonSetPtr->character_count; i++) {
@@ -83,8 +75,7 @@ void strike(CMoloch *moloch)
 
 } // namespace
 
-extern "C" unsigned int nocturne_moloch_fire(CMoloch *moloch, unsigned int desired_state)
-{
+extern "C" unsigned int nocturne_moloch_fire(CMoloch *moloch, unsigned int desired_state) {
     CHero *hero;
     CMotionController *controller;
     SMotion *motion;
@@ -107,10 +98,9 @@ extern "C" unsigned int nocturne_moloch_fire(CMoloch *moloch, unsigned int desir
     }
 
     // Fire while grabbed is the struggle; AI Moloch has no player to press it.
-    if (((hero->player_input).action_state.fire == 0) ||
-        (hero->control_type == HERO_CONTROL_AI) ||
-        ((hero->base).grabbed_by != (CDemonActor *)0x0) ||
-        (moloch->in_human_form != 0) || (moloch->morphing != 0)) {
+    if (((hero->player_input).action_state.fire == 0) || (hero->control_type == HERO_CONTROL_AI) ||
+        ((hero->base).grabbed_by != (CDemonActor *)0x0) || (moloch->in_human_form != 0) ||
+        (moloch->morphing != 0)) {
         return desired_state;
     }
 
@@ -131,8 +121,11 @@ extern "C" unsigned int nocturne_moloch_fire(CMoloch *moloch, unsigned int desir
     return kAttackStates[attack];
 }
 
-extern "C" void nocturne_moloch_attack_hit(CMoloch *moloch, int prev_state, float prev_frame)
-{
+extern "C" void nocturne_moloch_reset(void) {
+    std::memset(s_next_attack, 0, sizeof(s_next_attack));
+}
+
+extern "C" void nocturne_moloch_attack_hit(CMoloch *moloch, int prev_state, float prev_frame) {
     CCharacter *character;
     int state;
     float hit_frame;
@@ -144,11 +137,9 @@ extern "C" void nocturne_moloch_attack_hit(CMoloch *moloch, int prev_state, floa
     state = nocturne_hero_motion_state(character);
     if (state == MOLOCH_STATE_PUNCH) {
         hit_frame = kPunchHitFrame;
-    }
-    else if (state == MOLOCH_STATE_OVERHEADSMASH) {
+    } else if (state == MOLOCH_STATE_OVERHEADSMASH) {
         hit_frame = kSmashHitFrame;
-    }
-    else {
+    } else {
         return;
     }
     if (nocturne_hero_motion_crossed(character, state, prev_state, prev_frame, hit_frame) != 0) {
@@ -160,8 +151,7 @@ namespace {
 
 // CMoloch's processDamage slot. The NPC goes straight to the inherited
 // CCharacter::processDamage, as shipped.
-void moloch_process_damage(CCharacter *character, SDamageInfo *damage_info)
-{
+void moloch_process_damage(CCharacter *character, SDamageInfo *damage_info) {
     CHero *hero = (CHero *)character;
 
     if (nocturne_hero_slot(hero) < 0) {
@@ -206,8 +196,7 @@ int s_moloch_vtable_ready = 0;
 
 } // namespace
 
-extern "C" void nocturne_moloch_install_vtable(CMoloch *moloch)
-{
+extern "C" void nocturne_moloch_install_vtable(CMoloch *moloch) {
     if (s_moloch_vtable_ready == 0) {
         s_moloch_vtable = g_CMolochVTable;
         s_moloch_vtable._uc.processDamage = (CCharacter_processDamage *)moloch_process_damage;
@@ -216,11 +205,11 @@ extern "C" void nocturne_moloch_install_vtable(CMoloch *moloch)
     (moloch->base).base.base.vtable._ub = &s_moloch_vtable._ub;
 }
 
-extern "C" void nocturne_moloch_regenerate(CMoloch *moloch, float delta_time)
-{
+extern "C" void nocturne_moloch_regenerate(CMoloch *moloch, float delta_time) {
     CCharacter *character = &(moloch->base).base;
 
-    if ((nocturne_hero_slot(&moloch->base) < 0) || (character->max_hit_points <= character->hit_points)) {
+    if ((nocturne_hero_slot(&moloch->base) < 0) ||
+        (character->max_hit_points <= character->hit_points)) {
         return;
     }
     character->hit_points = character->hit_points + delta_time * MOLOCH_REGEN_PER_SECOND;
@@ -229,8 +218,7 @@ extern "C" void nocturne_moloch_regenerate(CMoloch *moloch, float delta_time)
     }
 }
 
-extern "C" int nocturne_moloch_is_attacking(CMoloch *moloch)
-{
+extern "C" int nocturne_moloch_is_attacking(CMoloch *moloch) {
     CMotionController *controller;
 
     if (moloch == (CMoloch *)0x0) {
@@ -238,6 +226,7 @@ extern "C" int nocturne_moloch_is_attacking(CMoloch *moloch)
     }
     controller = &(moloch->base).base.model.base;
     return (is_attack_state(controller->state_index) != 0) ||
-           (is_attack_state(core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
-                                (controller)->state_index) != 0);
+           (is_attack_state(
+                core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0(controller)
+                    ->state_index) != 0);
 }

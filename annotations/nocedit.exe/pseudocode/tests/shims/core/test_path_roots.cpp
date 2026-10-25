@@ -8,10 +8,9 @@
 // arrangement where one folder holds both. Each case runs in a directory of its
 // own and reads back what was handed to the resolver.
 
-#include "nocturne_test.h"
-#include "message_support.h"
-
 #include "core/path_roots.h"
+#include "message_support.h"
+#include "nocturne_test.h"
 #include "watcom/path.h"
 
 #include <cstdlib>
@@ -59,7 +58,9 @@ struct Run {
         watcom_set_path_roots({});
     }
 
-    std::string at(const char *relative) const { return (base / relative).generic_string(); }
+    std::string at(const char *relative) const {
+        return (base / relative).generic_string();
+    }
 
     void make(const char *relative) const {
         std::error_code ec;
@@ -77,7 +78,7 @@ struct Run {
     }
 };
 
-}  // namespace
+} // namespace
 
 // Nothing given: the compiled-in data directory, and no user directory.
 NOCTURNE_TEST(with_nothing_given_the_platform_default_is_the_data_directory) {
@@ -92,7 +93,7 @@ NOCTURNE_TEST(with_nothing_given_the_platform_default_is_the_data_directory) {
 // user directory is made if it is not there.
 NOCTURNE_TEST(the_command_line_names_both_directories) {
     Run run;
-    const char *args[] = {"nocturne", nullptr, "--data-directory", "x",
+    const char *args[] = {"nocturne",   nullptr, "--data-directory", "x",
                           "--data-dir", "game/", "--user-dir=saves"};
     Run::init(args);
     CHECK_EQ(watcom_path_roots().data, run.at("game"));

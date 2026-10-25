@@ -6,12 +6,11 @@
 // camera changes are scheduled a few frames ahead and applied on that frame on
 // every machine. The changes from a peer are written here as the wire has them.
 
-#include "nocturne_test.h"
-#include "net_support.h"
-
 #include "net/net_camera.h"
 #include "net/net_packets.h"
+#include "net_support.h"
 #include "nocturne.h"
+#include "nocturne_test.h"
 
 #include <cstring>
 
@@ -57,7 +56,7 @@ void playing(int frame) {
     net_support::set->selected_camera_index = 1;
 }
 
-}  // namespace
+} // namespace
 
 // The host's own cut is announced for twelve frames on, re-sent while it waits,
 // and counts from that frame.
@@ -83,7 +82,7 @@ NOCTURNE_TEST(a_peers_cut_is_taken_once_and_in_order) {
     CHECK_EQ(deliver(change(10, 1, 2, 0)), 1);
     nocturne_net_camera_apply_if_due(12);
     CHECK_EQ(nocturne_net_camera_is_current("Hall"), 1);
-    nocturne_net_camera_apply_if_due(13);   // nothing left, reported late once
+    nocturne_net_camera_apply_if_due(13); // nothing left, reported late once
 
     deliver(change(14, 1, 1, 1));
     nocturne_net_camera_apply_if_due(14);
@@ -121,7 +120,8 @@ NOCTURNE_TEST(a_packet_that_is_not_a_cut_is_not_taken) {
 // The queue holds 32; the rest are dropped with a warning.
 NOCTURNE_TEST(a_full_queue_drops_the_cut) {
     playing(0);
-    for (int serial = 1; serial <= 33; serial++) deliver(change(100, 1, serial, 0));
+    for (int serial = 1; serial <= 33; serial++)
+        deliver(change(100, 1, serial, 0));
     nocturne_net_camera_apply_if_due(100);
     CHECK_EQ(nocturne_net_camera_is_current("Hall"), 1);
 }

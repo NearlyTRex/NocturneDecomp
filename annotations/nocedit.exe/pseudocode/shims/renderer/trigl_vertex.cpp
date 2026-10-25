@@ -20,9 +20,7 @@ const float kTexcoordScale = 1.0f / 16777216.0f;
 // into the next field rather than being discarded, which is what the engine's
 // own packing does and what a caller feeding an out-of-range channel sees.
 unsigned pack_channels(int r, int g, int b) {
-    return ((unsigned)(r & 0xffffff00) << 8) |
-           ((unsigned)(g & 0xffffff00)) |
-           ((unsigned)b >> 8);
+    return ((unsigned)(r & 0xffffff00) << 8) | ((unsigned)(g & 0xffffff00)) | ((unsigned)b >> 8);
 }
 
 // A level repeated across R, G and B. Written as the engine writes it, without
@@ -35,7 +33,7 @@ unsigned pack_grey(int level) {
     return (v << 16) | (v << 8) | v;
 }
 
-}  // namespace
+} // namespace
 
 float nocturne_trigl_depth(const NocturneTriglVertexContext *ctx, float eye_z) {
     float scaled = eye_z * ctx->lod_scale;
@@ -44,15 +42,18 @@ float nocturne_trigl_depth(const NocturneTriglVertexContext *ctx, float eye_z) {
         // pixel's depth changes fastest across a triangle. The clamp keeps the
         // reciprocal inside 1/256..1 so the result stays in 0..1 whatever the
         // engine's draw distance is.
-        if (scaled < 1.0f) scaled = 1.0f;
-        if (scaled > 256.0f) scaled = 256.0f;
+        if (scaled < 1.0f)
+            scaled = 1.0f;
+        if (scaled > 256.0f)
+            scaled = 256.0f;
         return 1.0f - 1.0f / scaled;
     }
     // Linear in eye space, normalised by the draw distance. Only the far end is
     // clamped: geometry behind the camera has already been rejected, and
     // clamping the near end here would flatten everything in front of it
     // against the same plane.
-    if (scaled > 1.0f) scaled = 1.0f;
+    if (scaled > 1.0f)
+        scaled = 1.0f;
     return scaled;
 }
 
@@ -66,7 +67,7 @@ void nocturne_trigl_convert_vertex(const NocturneTriglVertexContext *ctx,
 
     const float eye_z = (float)in->transformed_z;
     out->rhw = ctx->rhw_scale / eye_z;
-    out->z   = nocturne_trigl_depth(ctx, eye_z);
+    out->z = nocturne_trigl_depth(ctx, eye_z);
 
     out->u = (float)in->u * kTexcoordScale;
     out->v = (float)in->v * kTexcoordScale;
@@ -94,8 +95,7 @@ void nocturne_trigl_convert_vertex(const NocturneTriglVertexContext *ctx,
             unsigned rgb = 0;
             if (ctx->palette != nullptr) {
                 const unsigned char *entry = ctx->palette + (size_t)index * 3u;
-                rgb = ((unsigned)entry[0] << 16) | ((unsigned)entry[1] << 8) |
-                      (unsigned)entry[2];
+                rgb = ((unsigned)entry[0] << 16) | ((unsigned)entry[1] << 8) | (unsigned)entry[2];
             }
             out->diffuse = 0xff000000u | rgb;
         } else {
@@ -113,9 +113,8 @@ void nocturne_trigl_convert_vertex(const NocturneTriglVertexContext *ctx,
 
     // Signed shifts throughout: the channels are signed 8.8, and an out-of-range
     // one has to carry the same way it does in the engine.
-    const int alpha = (flags & NOCTURNE_TRIGL_FLAG_VERTEX_ALPHA) != 0
-                          ? (in->a >> 8)
-                          : ctx->current_alpha;
+    const int alpha =
+        (flags & NOCTURNE_TRIGL_FLAG_VERTEX_ALPHA) != 0 ? (in->a >> 8) : ctx->current_alpha;
 
     if ((flags & NOCTURNE_TRIGL_FLAG_VERTEX_COLOR) != 0) {
         out->diffuse = ((unsigned)alpha << 24) | pack_channels(in->r, in->g, in->b);

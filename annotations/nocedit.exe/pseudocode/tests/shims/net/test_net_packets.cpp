@@ -6,17 +6,16 @@
 // serial seen, and a bit for each of the 32 below it, so a lost one re-sent
 // after a later one still gets in.
 
-#include "nocturne_test.h"
-
 #include "net/net_packets.h"
 #include "nocturne.h"
+#include "nocturne_test.h"
 
 NOCTURNE_TEST(each_serial_is_taken_once) {
     SNetSerialWindow window = {};
     CHECK_EQ(nocturne_net_serial_take(&window, 1), 1);
     CHECK_EQ(nocturne_net_serial_take(&window, 1), 0);
     CHECK_EQ(nocturne_net_serial_take(&window, 3), 1);
-    CHECK_EQ(window.seen_below, 1u << 1);   // 1, two below 3
+    CHECK_EQ(window.seen_below, 1u << 1); // 1, two below 3
 }
 
 // One that arrives after a later one is still taken, once.

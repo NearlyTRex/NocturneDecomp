@@ -6,9 +6,8 @@
 // registry key it can do without. The name comes from the environment; the
 // registry answers that nothing is stored and accepts what is written.
 
-#include "nocturne_test.h"
-
 #include "globals/globals_610000.h"
+#include "nocturne_test.h"
 #include "system/advapi32.h"
 #include "win32/shim_init.h"
 
@@ -41,7 +40,7 @@ std::string user_name(DWORD *length, BOOL *ok) {
     return buffer;
 }
 
-}  // namespace
+} // namespace
 
 // As Win32's: the length counts the terminator.
 NOCTURNE_TEST(the_user_is_named_by_the_environment) {
@@ -87,12 +86,13 @@ NOCTURNE_TEST(the_registry_holds_nothing_and_takes_anything) {
     CHECK_EQ(g_RegOpenKeyExAFunc(0x80000001ul, "Software\\Gathering", 0, 0, &key), 2L);
     CHECK_EQ(g_RegOpenKeyExAFunc(0x80000001ul, "Software\\Gathering", 0, 0, nullptr), 2L);
     DWORD disposition = 0;
-    CHECK_EQ(g_RegCreateKeyExAFunc(0x80000001ul, "Software\\Gathering", 0, nullptr, 0, 0,
-                                   nullptr, &key, &disposition), 0L);
+    CHECK_EQ(g_RegCreateKeyExAFunc(0x80000001ul, "Software\\Gathering", 0, nullptr, 0, 0, nullptr,
+                                   &key, &disposition),
+             0L);
     CHECK(key != nullptr);
-    CHECK_EQ(disposition, (DWORD)1);  // REG_CREATED_NEW_KEY
-    CHECK_EQ(g_RegCreateKeyExAFunc(0x80000001ul, "x", 0, nullptr, 0, 0, nullptr, nullptr,
-                                   nullptr), 0L);
+    CHECK_EQ(disposition, (DWORD)1); // REG_CREATED_NEW_KEY
+    CHECK_EQ(g_RegCreateKeyExAFunc(0x80000001ul, "x", 0, nullptr, 0, 0, nullptr, nullptr, nullptr),
+             0L);
     BYTE data[4] = {1, 2, 3, 4};
     DWORD size = sizeof(data);
     CHECK_EQ(g_RegQueryValueExAFunc(key, "Path", nullptr, nullptr, data, &size), 2L);

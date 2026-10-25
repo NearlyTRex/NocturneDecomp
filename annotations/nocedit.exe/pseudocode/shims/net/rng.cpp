@@ -5,11 +5,10 @@
 // See rng.h for the two streams and why simulation may only use one of them.
 
 #include "net/rng.h"
-#include "shim_config.h"
-
-#include "nocturne.h"
 
 #include "core/debug_log.h"
+#include "nocturne.h"
+#include "shim_config.h"
 
 #include <cstdint>
 #include <cstdio>
@@ -19,36 +18,44 @@
 // Authentic mode: every call site already compiles to a bare rand(), and these
 // exist only so a site that has not been converted still behaves as shipped.
 
-extern "C" unsigned int nocturne_rng_sim(void)      { return (unsigned int)rand(); }
-extern "C" unsigned int nocturne_rng_fx(void)       { return (unsigned int)rand(); }
-extern "C" unsigned int nocturne_rng_offframe(void) { return (unsigned int)rand(); }
-extern "C" unsigned int nocturne_rng_seed(void)     { return (unsigned int)rand(); }
+extern "C" unsigned int nocturne_rng_sim(void) {
+    return (unsigned int)rand();
+}
+extern "C" unsigned int nocturne_rng_fx(void) {
+    return (unsigned int)rand();
+}
+extern "C" unsigned int nocturne_rng_offframe(void) {
+    return (unsigned int)rand();
+}
+extern "C" unsigned int nocturne_rng_seed(void) {
+    return (unsigned int)rand();
+}
 
-extern "C" unsigned int nocturne_rng_game(void *)
-{
+extern "C" unsigned int nocturne_rng_game(void *) {
     return core_actor_cpp_generateRandomValue_FUN_0040cba0();
 }
 
-extern "C" float nocturne_rng_fx_range(float min_value, float max_value)
-{
+extern "C" float nocturne_rng_fx_range(float min_value, float max_value) {
     return core_actor_cpp_getRandomFloatFromRange_FUN_0040cc10(min_value, max_value);
 }
 
-extern "C" int nocturne_rng_fx_chance(float probability_threshold)
-{
+extern "C" int nocturne_rng_fx_chance(float probability_threshold) {
     return core_actor_cpp_randomChance_FUN_0040cd10(probability_threshold);
 }
 
-extern "C" int nocturne_rng_fx_int(int min_value, int max_value)
-{
+extern "C" int nocturne_rng_fx_int(int min_value, int max_value) {
     return core_actor_cpp_getRandomInt_FUN_0040cc70(min_value, max_value);
 }
 
-extern "C" unsigned int nocturne_rng_sim_draws(void)        { return 0; }
-extern "C" unsigned int nocturne_rng_undeclared_draws(void) { return 0; }
-extern "C" void         nocturne_rng_frame_reset(int)       {}
-extern "C" void         nocturne_rng_reset(void)             {}
-extern "C" void         nocturne_rng_note_raw_draw(void)     {}
+extern "C" unsigned int nocturne_rng_sim_draws(void) {
+    return 0;
+}
+extern "C" unsigned int nocturne_rng_undeclared_draws(void) {
+    return 0;
+}
+extern "C" void nocturne_rng_frame_reset(int) {}
+extern "C" void nocturne_rng_reset(void) {}
+extern "C" void nocturne_rng_note_raw_draw(void) {}
 
 #else
 
@@ -69,8 +76,8 @@ static int s_in_declared_draw = 0;
 // One line each per session. A desync source that fires every frame would
 // otherwise bury the report that named it.
 static int s_reported_undeclared = 0;
-static int s_reported_offframe   = 0;
-static int s_reported_stray_sim  = 0;
+static int s_reported_offframe = 0;
+static int s_reported_stray_sim = 0;
 
 // Per-draw attribution — a diagnostic, gated on NOCTURNE_NETPLAY_RNG_TRACE so
 // it can be compiled out without touching the partition above, which is a fix.
@@ -84,23 +91,20 @@ static int s_reported_stray_sim  = 0;
 
 #if NOCTURNE_NETPLAY_RNG_TRACE
 
-static FILE *s_draw_log     = (FILE *)0;
-static int   s_draw_failed  = 0;
-static int   s_frame        = -1;
+static FILE *s_draw_log = (FILE *)0;
+static int s_draw_failed = 0;
+static int s_frame = -1;
 static unsigned int s_draw_index = 0;
 
 // Caller addresses are useless across two processes - ASLR puts the image
 // somewhere different in each. Reported as a signed offset from a fixed
 // function in the same image instead, which is identical in both because it is
 // the same binary.
-static long rng_caller_offset(void *caller)
-{
-    return (long)((intptr_t)caller -
-                  (intptr_t)&core_actor_cpp_generateRandomValue_FUN_0040cba0);
+static long rng_caller_offset(void *caller) {
+    return (long)((intptr_t)caller - (intptr_t)&core_actor_cpp_generateRandomValue_FUN_0040cba0);
 }
 
-static FILE *rng_draw_log(void)
-{
+static FILE *rng_draw_log(void) {
     if ((s_draw_log == (FILE *)0) && (s_draw_failed == 0)) {
         s_draw_log = std::fopen(watcom_log_path("nocturne_rngtrace.log").c_str(), "w");
         if (s_draw_log == (FILE *)0) {
@@ -110,8 +114,7 @@ static FILE *rng_draw_log(void)
     return s_draw_log;
 }
 
-static void rng_note_draw(void *caller)
-{
+static void rng_note_draw(void *caller) {
     FILE *out;
 
     s_draw_index = s_draw_index + 1;
@@ -128,19 +131,17 @@ static void rng_note_draw(void *caller)
     std::fprintf(out, "%d %u %+ld\n", s_frame, s_draw_index, rng_caller_offset(caller));
 }
 
-static void rng_trace_frame(int sequence_number)
-{
+static void rng_trace_frame(int sequence_number) {
     s_draw_index = 0;
-    s_frame      = sequence_number;
+    s_frame = sequence_number;
     if (s_draw_log != (FILE *)0) {
         std::fflush(s_draw_log);
     }
 }
 
-static void rng_trace_reset(void)
-{
+static void rng_trace_reset(void) {
     s_draw_index = 0;
-    s_frame      = -1;
+    s_frame = -1;
     if (s_draw_log != (FILE *)0) {
         std::fclose(s_draw_log);
         s_draw_log = (FILE *)0;
@@ -148,24 +149,22 @@ static void rng_trace_reset(void)
     s_draw_failed = 0;
 }
 
-#else  /* diagnostics off: no file, no attribution, no per-draw work */
+#else /* diagnostics off: no file, no attribution, no per-draw work */
 
-static void rng_note_draw(void *)      {}
-static void rng_trace_frame(int)       {}
-static void rng_trace_reset(void)      {}
+static void rng_note_draw(void *) {}
+static void rng_trace_frame(int) {}
+static void rng_trace_reset(void) {}
 
 #endif
 
 // Whether a sim frame is running. Everything that reaches simulation state
 // happens between CGame::process setting this and clearing it again, and the
 // seed the whole frame draws from is set immediately after it goes up.
-static int rng_in_sim_frame(void)
-{
+static int rng_in_sim_frame(void) {
     return ((g_CGamePtr != (CGame *)0x0) && (g_CGamePtr->is_processing != 0));
 }
 
-static unsigned int rng_declared_rand(void)
-{
+static unsigned int rng_declared_rand(void) {
     unsigned int value;
 
     s_in_declared_draw = 1;
@@ -174,8 +173,7 @@ static unsigned int rng_declared_rand(void)
     return value;
 }
 
-extern "C" unsigned int nocturne_rng_sim(void)
-{
+extern "C" unsigned int nocturne_rng_sim(void) {
     if (nocturne_net_session_active() == 0) {
         return rng_declared_rand();
     }
@@ -187,8 +185,8 @@ extern "C" unsigned int nocturne_rng_sim(void)
     if ((rng_in_sim_frame() == 0) && (s_reported_stray_sim == 0)) {
         s_reported_stray_sim = 1;
         DLOG("netplay", "RNG: nocturne_rng_sim() called outside CGame::process - "
-                           "the sim seed is not authoritative here, so this draw may "
-                           "differ per machine");
+                        "the sim seed is not authoritative here, so this draw may "
+                        "differ per machine");
     }
 
     s_sim_draws = s_sim_draws + 1;
@@ -199,42 +197,37 @@ extern "C" unsigned int nocturne_rng_sim(void)
     return core_actor_cpp_generateRandomValue_FUN_0040cba0() & 0x7fffu;
 }
 
-extern "C" unsigned int nocturne_rng_game(void *caller)
-{
+extern "C" unsigned int nocturne_rng_game(void *caller) {
     s_sim_draws = s_sim_draws + 1;
     rng_note_draw(caller);
     return core_actor_cpp_generateRandomValue_FUN_0040cba0();
 }
 
-extern "C" unsigned int nocturne_rng_fx(void)
-{
+extern "C" unsigned int nocturne_rng_fx(void) {
     return rng_declared_rand();
 }
 
-extern "C" float nocturne_rng_fx_range(float min_value, float max_value)
-{
+extern "C" float nocturne_rng_fx_range(float min_value, float max_value) {
     // getRandomFloatFromRange's own off-frame arithmetic, verbatim.
     float fVar1 = (float)(int)rng_declared_rand() * 3.051851e-05f;
 
     return fVar1 * (max_value - min_value) + min_value;
 }
 
-extern "C" int nocturne_rng_fx_chance(float probability_threshold)
-{
+extern "C" int nocturne_rng_fx_chance(float probability_threshold) {
     // randomChance's own off-frame arithmetic, verbatim.
     float fVar1 = (float)(int)rng_declared_rand() * 3.051851e-05f;
 
     return (int)(unsigned int)(fVar1 < probability_threshold);
 }
 
-extern "C" int nocturne_rng_fx_int(int min_value, int max_value)
-{
+extern "C" int nocturne_rng_fx_int(int min_value, int max_value) {
     // getRandomInt's own off-frame arithmetic, including its out-of-range
     // fallback to max_value - reproduced rather than tidied, so the two modes
     // pick from the same distribution.
     double dVar1 = (double)(max_value - min_value) + 0.99999000000000005;
-    float  fVar2 = (float)(int)rng_declared_rand() * 3.051851e-05f;
-    int    iVar1 = (int)ROUND(ROUND((float)min_value + fVar2 * (float)dVar1));
+    float fVar2 = (float)(int)rng_declared_rand() * 3.051851e-05f;
+    int iVar1 = (int)ROUND(ROUND((float)min_value + fVar2 * (float)dVar1));
 
     // Below the range is the minimum and above it the maximum, as the original's
     // reuse of min_value for the second answer comes to.
@@ -244,30 +237,27 @@ extern "C" int nocturne_rng_fx_int(int min_value, int max_value)
     return min_value;
 }
 
-extern "C" unsigned int nocturne_rng_offframe(void)
-{
+extern "C" unsigned int nocturne_rng_offframe(void) {
     if ((nocturne_net_session_active() != 0) && (s_reported_offframe == 0)) {
         s_reported_offframe = 1;
         DLOG("netplay", "RNG: the game's RNG primitives took their "
-                           "is_processing == 0 fallback during a network game - a "
-                           "simulation decision made outside CGame::process draws "
-                           "from the per-machine libc stream");
+                        "is_processing == 0 fallback during a network game - a "
+                        "simulation decision made outside CGame::process draws "
+                        "from the per-machine libc stream");
     }
     return rng_declared_rand();
 }
 
-extern "C" unsigned int nocturne_rng_seed(void)
-{
+extern "C" unsigned int nocturne_rng_seed(void) {
     return rng_declared_rand();
 }
 
-extern "C" void nocturne_rng_note_raw_draw(void)
-{
+extern "C" void nocturne_rng_note_raw_draw(void) {
     if (s_in_declared_draw != 0) {
         return;
     }
     if (rng_in_sim_frame() == 0) {
-        return;                 // outside the frame nothing lockstep depends on it
+        return; // outside the frame nothing lockstep depends on it
     }
 
     s_undeclared_draws = s_undeclared_draws + 1;
@@ -275,36 +265,32 @@ extern "C" void nocturne_rng_note_raw_draw(void)
     if ((nocturne_net_session_active() != 0) && (s_reported_undeclared == 0)) {
         s_reported_undeclared = 1;
         DLOG("netplay", "RNG: bare rand() called inside a sim frame - a call site "
-                           "that has not been routed through rng.h. If its result "
-                           "reaches simulation state it is a desync source");
+                        "that has not been routed through rng.h. If its result "
+                        "reaches simulation state it is a desync source");
     }
 }
 
-extern "C" unsigned int nocturne_rng_sim_draws(void)
-{
+extern "C" unsigned int nocturne_rng_sim_draws(void) {
     return s_sim_draws;
 }
 
-extern "C" unsigned int nocturne_rng_undeclared_draws(void)
-{
+extern "C" unsigned int nocturne_rng_undeclared_draws(void) {
     return s_undeclared_draws;
 }
 
-extern "C" void nocturne_rng_frame_reset(int sequence_number)
-{
-    s_sim_draws        = 0;
+extern "C" void nocturne_rng_frame_reset(int sequence_number) {
+    s_sim_draws = 0;
     s_undeclared_draws = 0;
     rng_trace_frame(sequence_number);
 }
 
-extern "C" void nocturne_rng_reset(void)
-{
-    s_sim_draws           = 0;
-    s_undeclared_draws    = 0;
-    s_in_declared_draw    = 0;
+extern "C" void nocturne_rng_reset(void) {
+    s_sim_draws = 0;
+    s_undeclared_draws = 0;
+    s_in_declared_draw = 0;
     s_reported_undeclared = 0;
-    s_reported_offframe   = 0;
-    s_reported_stray_sim  = 0;
+    s_reported_offframe = 0;
+    s_reported_stray_sim = 0;
 
     rng_trace_reset();
 }

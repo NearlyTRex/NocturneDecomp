@@ -5,11 +5,11 @@
 // See path_roots.h.
 
 #include "core/path_roots.h"
+
 #include "core/crash_report.h"
 #include "watcom/path.h"
 
 #include <SDL.h>
-
 #include <cctype>
 #include <cstdio>
 #include <cstdlib>
@@ -25,9 +25,12 @@ const char *option(int argc, char **argv, const char *name) {
     const size_t length = strlen(name);
     for (int i = 1; i < argc; i++) {
         const char *arg = argv[i];
-        if (arg == nullptr || strncmp(arg, name, length) != 0) continue;
-        if (arg[length] == '=') return arg + length + 1;
-        if (arg[length] == '\0' && i + 1 < argc) return argv[i + 1];
+        if (arg == nullptr || strncmp(arg, name, length) != 0)
+            continue;
+        if (arg[length] == '=')
+            return arg + length + 1;
+        if (arg[length] == '\0' && i + 1 < argc)
+            return argv[i + 1];
     }
     return nullptr;
 }
@@ -35,31 +38,40 @@ const char *option(int argc, char **argv, const char *name) {
 std::string pick(const char *from_command_line, const char *environment_name,
                  const char *compiled_in) {
     const char *chosen = from_command_line;
-    if (chosen == nullptr) chosen = getenv(environment_name);
-    if (chosen == nullptr) chosen = compiled_in;
-    if (chosen == nullptr || chosen[0] == '\0') return std::string();
+    if (chosen == nullptr)
+        chosen = getenv(environment_name);
+    if (chosen == nullptr)
+        chosen = compiled_in;
+    if (chosen == nullptr || chosen[0] == '\0')
+        return std::string();
 
     std::error_code ignored;
     std::filesystem::path path = std::filesystem::absolute(chosen, ignored);
-    if (ignored) path = chosen;
+    if (ignored)
+        path = chosen;
     std::string result = path.lexically_normal().generic_string();
-    while (result.size() > 1 && result.back() == '/') result.pop_back();
+    while (result.size() > 1 && result.back() == '/')
+        result.pop_back();
     return result;
 }
 
 // The directory named on the first line of `dir`/data_dir.txt, or empty when
 // there is no such file or it names no directory that is there.
 std::string remembered_data_dir(const std::string &dir) {
-    if (dir.empty()) return std::string();
+    if (dir.empty())
+        return std::string();
     FILE *file = fopen((dir + "/data_dir.txt").c_str(), "rb");
-    if (file == nullptr) return std::string();
+    if (file == nullptr)
+        return std::string();
     char line[1024] = {0};
     const bool read = fgets(line, sizeof(line), file) != nullptr;
     fclose(file);
     std::string named = read ? line : "";
-    while (!named.empty() && isspace((unsigned char)named.back())) named.pop_back();
+    while (!named.empty() && isspace((unsigned char)named.back()))
+        named.pop_back();
     std::error_code ignored;
-    if (named.empty() || !std::filesystem::is_directory(named, ignored)) return std::string();
+    if (named.empty() || !std::filesystem::is_directory(named, ignored))
+        return std::string();
     return named;
 }
 
@@ -74,8 +86,10 @@ bool has_game_data(const std::string &dir) {
     std::error_code ignored;
     for (const auto &entry : std::filesystem::directory_iterator(dir, ignored)) {
         std::string extension = entry.path().extension().string();
-        for (char &c : extension) c = (char)tolower((unsigned char)c);
-        if (extension == ".pod") return true;
+        for (char &c : extension)
+            c = (char)tolower((unsigned char)c);
+        if (extension == ".pod")
+            return true;
     }
     return false;
 }
@@ -113,7 +127,7 @@ std::string file_url(const std::string &dir) {
 }
 #endif
 
-}  // namespace
+} // namespace
 
 void nocturne_init_path_roots(int argc, char **argv) {
 #if defined(NOCTURNE_DATA_DIR_FROM_SDL)
@@ -144,7 +158,8 @@ void nocturne_init_path_roots(int argc, char **argv) {
     WatcomPathRoots roots;
     roots.user = pick(option(argc, argv, "--user-dir"), "NOCTURNE_USER_DIR", default_user);
     const char *data_override = option(argc, argv, "--data-dir");
-    if (data_override == nullptr) data_override = getenv("NOCTURNE_DATA_DIR");
+    if (data_override == nullptr)
+        data_override = getenv("NOCTURNE_DATA_DIR");
     std::string remembered;
     s_pointer_dir.clear();
     if (data_override == nullptr) {
@@ -156,9 +171,11 @@ void nocturne_init_path_roots(int argc, char **argv) {
             s_pointer_dir = fallback;
             remembered = remembered_data_dir(fallback);
             // The folder that names the game files keeps what the game writes.
-            if (!remembered.empty()) roots.user = fallback;
+            if (!remembered.empty())
+                roots.user = fallback;
         }
-        if (!remembered.empty()) data_override = remembered.c_str();
+        if (!remembered.empty())
+            data_override = remembered.c_str();
     }
     roots.data = pick(data_override, "NOCTURNE_DATA_DIR", default_data);
 #if defined(NOCTURNE_DATA_DIR_FROM_SDL)
@@ -166,7 +183,8 @@ void nocturne_init_path_roots(int argc, char **argv) {
 #endif
     // One directory given as both is the default arrangement with a new working
     // directory, and needs no overlay.
-    if (roots.user == roots.data) roots.user.clear();
+    if (roots.user == roots.data)
+        roots.user.clear();
 
     if (!roots.user.empty()) {
         std::error_code ignored;
@@ -185,16 +203,20 @@ void nocturne_init_path_roots(int argc, char **argv) {
 
 int nocturne_check_game_data(void) {
     std::string dir = watcom_path_roots().data;
-    if (dir.empty()) dir = game_directory();
-    if (has_game_data(dir)) return 1;
+    if (dir.empty())
+        dir = game_directory();
+    if (has_game_data(dir))
+        return 1;
 
     std::string message =
-        "Nocturne could not find its game files in:\n\n" + dir + "\n\n"
+        "Nocturne could not find its game files in:\n\n" + dir +
+        "\n\n"
         "Copy everything from your Nocturne install folder (the .POD files and the "
         "rest) there, or start Nocturne with --data-dir and the folder they are in.";
     if (!s_pointer_dir.empty()) {
         message += "\n\nOr put the path of that folder on the first line of a file named "
-                   "data_dir.txt in:\n\n" + s_pointer_dir;
+                   "data_dir.txt in:\n\n" +
+                   s_pointer_dir;
     }
 #if defined(NOCTURNE_DATA_DIR_FROM_SDL)
     if (s_fill_by_hand) {
@@ -204,7 +226,8 @@ int nocturne_check_game_data(void) {
     fprintf(stderr, "nocturne: %s\n", message.c_str());
     SDL_ShowSimpleMessageBox(SDL_MESSAGEBOX_ERROR, "Nocturne", message.c_str(), nullptr);
 #if defined(NOCTURNE_DATA_DIR_FROM_SDL)
-    if (s_fill_by_hand) SDL_OpenURL(file_url(dir).c_str());
+    if (s_fill_by_hand)
+        SDL_OpenURL(file_url(dir).c_str());
 #endif
     return 0;
 }

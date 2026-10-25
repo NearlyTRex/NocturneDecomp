@@ -22,8 +22,7 @@ SCameraViewportState g_MirrorSceneCameraState = {};
 // camera installed inside the window sets a real scale and re-bakes, which the
 // per-actor mirror passes do. A live scale still at 0x10000 is what marks the
 // global and the matrix as unreconciled.
-float nocturne_mirror_projection_factor(void)
-{
+float nocturne_mirror_projection_factor(void) {
     int scale = g_ProjectionScale;
 
     if (scale == 0x10000 && g_ViewportStackIndex > 0) {

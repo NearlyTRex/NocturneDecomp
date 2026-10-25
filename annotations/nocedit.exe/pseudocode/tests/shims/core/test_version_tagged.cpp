@@ -5,9 +5,8 @@
 // The short form is asked on a tag and the full line with no git at all; the
 // other way round is test_version_untracked.cpp.
 
-#include "nocturne_test.h"
-
 #include "core/version.h"
+#include "nocturne_test.h"
 
 #include <string>
 

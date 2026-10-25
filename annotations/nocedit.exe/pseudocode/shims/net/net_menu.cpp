@@ -6,9 +6,9 @@
 // lines on the main menu.
 
 #include "net/net_menu.h"
-#include "shim_config.h"
 
 #include "nocturne.h"
+#include "shim_config.h"
 
 #include <cstring>
 
@@ -16,13 +16,12 @@
 
 #define NET_MENU_ITEMS 2
 
-int nocturne_net_menu_multiplayer(void)
-{
-    char  host_line[256];
-    char  join_line[256];
+int nocturne_net_menu_multiplayer(void) {
+    char host_line[256];
+    char join_line[256];
     char *menu_ptrs[NET_MENU_ITEMS];
-    int   selected = 0;
-    int   choice;
+    int selected = 0;
+    int choice;
 
     menu_ptrs[0] = host_line;
     menu_ptrs[1] = join_line;
@@ -45,9 +44,8 @@ int nocturne_net_menu_multiplayer(void)
         // From the main menu's own start-y, so the submenu's lines land where
         // the ones it replaced on screen were.
         choice = core_menu_cpp_renderMenuAndGetChoice_FUN_00510000(
-                     menu_ptrs, NET_MENU_ITEMS, &selected,
-                     nocturne_menu_start_y(NOCTURNE_MENU_ROWS_UNTITLED(NET_MENU_ITEMS)),
-                     (char *)0x0);
+            menu_ptrs, NET_MENU_ITEMS, &selected,
+            nocturne_menu_start_y(NOCTURNE_MENU_ROWS_UNTITLED(NET_MENU_ITEMS)), (char *)0x0);
         wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();
 
         if (choice >= 0) {
@@ -59,8 +57,7 @@ int nocturne_net_menu_multiplayer(void)
     }
 }
 
-void nocturne_net_menu_hotkeys(void)
-{
+void nocturne_net_menu_hotkeys(void) {
     if (((*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr, DIK_LCONTROL) != 0) &&
         ((*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr, DIK_H) != 0)) {
         core_sound_cpp_CSound_reset_FUN_005b39a0(g_CSoundPtr);
@@ -77,13 +74,10 @@ void nocturne_net_menu_hotkeys(void)
 
 #else
 
-int nocturne_net_menu_multiplayer(void)
-{
+int nocturne_net_menu_multiplayer(void) {
     return NOCTURNE_NET_MENU_CANCEL;
 }
 
-void nocturne_net_menu_hotkeys(void)
-{
-}
+void nocturne_net_menu_hotkeys(void) {}
 
 #endif

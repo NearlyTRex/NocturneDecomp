@@ -9,9 +9,8 @@
 // stream behind the Watcom pointer. The stream_compat.h adapters those
 // pointers come from are tested alongside them.
 
-#include "nocturne_test.h"
-
 #include "nocturne.h"
+#include "nocturne_test.h"
 #include "watcom/stream_compat.h"
 
 #include <filesystem>
@@ -133,7 +132,8 @@ NOCTURNE_TEST(a_buffer_stream_takes_what_it_wrote_off_the_room_left) {
     int small = 2;
     {
         watcom_buffer_ostream out(buffer, &small);
-        for (int i = 0; i < 4; ++i) crt_iostream_cpp_ostream_put_FUN_005ff2d7(out, 'x');
+        for (int i = 0; i < 4; ++i)
+            crt_iostream_cpp_ostream_put_FUN_005ff2d7(out, 'x');
     }
     CHECK_EQ(small, 0);
 

@@ -6,8 +6,8 @@
 
 namespace {
 
-const float kFullSpeedError = 0.5235988f;  // 30 degrees
-const float kStopError      = 1.5707964f;  // 90 degrees
+const float kFullSpeedError = 0.5235988f; // 30 degrees
+const float kStopError = 1.5707964f;      // 90 degrees
 
 } // namespace
 

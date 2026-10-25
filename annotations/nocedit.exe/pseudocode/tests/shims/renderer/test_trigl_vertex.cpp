@@ -22,8 +22,7 @@ struct OracleVertex {
     unsigned diffuse, specular;
 };
 
-OracleVertex oracle(const NocturneTriglVertexContext *ctx,
-                    const NocturneTriglVertexInput *in) {
+OracleVertex oracle(const NocturneTriglVertexContext *ctx, const NocturneTriglVertexInput *in) {
     OracleVertex o;
     const unsigned flags = ctx->render_flags;
 
@@ -34,7 +33,8 @@ OracleVertex oracle(const NocturneTriglVertexContext *ctx,
     o.rhw = ctx->rhw_scale / local;
 
     int fog = 0xff;
-    if ((flags & 8) != 0) fog = 0xff - (in->a >> 8);
+    if ((flags & 8) != 0)
+        fog = 0xff - (in->a >> 8);
 
     int light_alpha = ctx->light.alpha;
     int light_overflow = ctx->light.overflow;
@@ -44,7 +44,8 @@ OracleVertex oracle(const NocturneTriglVertexContext *ctx,
             light_alpha = (in->r - 0x100) >> 4;
             if (light_alpha > 0xff) {
                 light_overflow = light_alpha - 0x100;
-                if (light_overflow > 0xff) light_overflow = 0xff;
+                if (light_overflow > 0xff)
+                    light_overflow = 0xff;
                 light_alpha = 0xff;
             }
         } else {
@@ -56,18 +57,16 @@ OracleVertex oracle(const NocturneTriglVertexContext *ctx,
     if ((flags & 1) == 0) {
         unsigned diffuse;
         if ((flags & 0x200) == 0) {
-            unsigned index = (flags & 4) == 0
-                                 ? (unsigned)(ctx->palette_index & 0xff)
-                                 : (((unsigned)in->u & 0xff0000u) >> 16);
+            unsigned index = (flags & 4) == 0 ? (unsigned)(ctx->palette_index & 0xff)
+                                              : (((unsigned)in->u & 0xff0000u) >> 16);
             const unsigned char *p = ctx->palette + index * 3u;
-            diffuse = ((unsigned)(p[0] | 0xffffff00u) << 16) |
-                      ((unsigned)p[1] << 8) | (unsigned)p[2];
+            diffuse =
+                ((unsigned)(p[0] | 0xffffff00u) << 16) | ((unsigned)p[1] << 8) | (unsigned)p[2];
         } else {
-            diffuse = ((unsigned)(in->r & 0xffffff00) << 8) |
-                      (unsigned)(in->g & 0xffffff00) | ((unsigned)in->b >> 8) |
-                      0xff000000u;
+            diffuse = ((unsigned)(in->r & 0xffffff00) << 8) | (unsigned)(in->g & 0xffffff00) |
+                      ((unsigned)in->b >> 8) | 0xff000000u;
         }
-        o.diffuse  = diffuse;
+        o.diffuse = diffuse;
         o.specular = (unsigned)fog << 24;
     } else {
         o.specular = ((unsigned)((fog << 16) | light_overflow) << 8) |
@@ -79,24 +78,26 @@ OracleVertex oracle(const NocturneTriglVertexContext *ctx,
                             ((unsigned)light_alpha << 16) | (unsigned)light_alpha;
             } else {
                 int la = alpha * light_alpha / 0x100;
-                o.diffuse = ((unsigned)(la | 0xffff0000) << 8) |
-                            ((unsigned)la << 16) | (unsigned)la;
+                o.diffuse =
+                    ((unsigned)(la | 0xffff0000) << 8) | ((unsigned)la << 16) | (unsigned)la;
             }
         } else {
-            o.diffuse = ((unsigned)(in->r & 0xffffff00) << 8) |
-                        (unsigned)(in->g & 0xffffff00) | ((unsigned)in->b >> 8) |
-                        ((unsigned)alpha << 24);
+            o.diffuse = ((unsigned)(in->r & 0xffffff00) << 8) | (unsigned)(in->g & 0xffffff00) |
+                        ((unsigned)in->b >> 8) | ((unsigned)alpha << 24);
         }
     }
 
     if (ctx->w_buffer) {
         local = local * ctx->lod_scale;
-        if (local < 1.0f) local = 1.0f;
-        if (local > 256.0f) local = 256.0f;
+        if (local < 1.0f)
+            local = 1.0f;
+        if (local > 256.0f)
+            local = 256.0f;
         o.z = 1.0f - 1.0f / local;
     } else {
         o.z = local * ctx->lod_scale;
-        if (o.z > 1.0f) o.z = 1.0f;
+        if (o.z > 1.0f)
+            o.z = 1.0f;
     }
 
     o.u = (float)in->u * 5.9604645e-08f;
@@ -116,19 +117,19 @@ void fill_palette() {
 
 NocturneTriglVertexContext base_context(unsigned flags) {
     NocturneTriglVertexContext ctx;
-    ctx.render_flags    = flags;
-    ctx.rhw_scale       = 65536.0f;
-    ctx.screen_scale_x  = 1.0f;
-    ctx.screen_scale_y  = 1.0f;
-    ctx.current_alpha   = 0x80;
-    ctx.palette_index   = 0x21;
-    ctx.palette         = g_palette;
-    ctx.premultiply     = 0;
-    ctx.blend_mode      = 0;
-    ctx.light.alpha     = 0xc0;
-    ctx.light.overflow  = 0;
-    ctx.w_buffer        = 0;
-    ctx.lod_scale       = 1.0f / 4096.0f;
+    ctx.render_flags = flags;
+    ctx.rhw_scale = 65536.0f;
+    ctx.screen_scale_x = 1.0f;
+    ctx.screen_scale_y = 1.0f;
+    ctx.current_alpha = 0x80;
+    ctx.palette_index = 0x21;
+    ctx.palette = g_palette;
+    ctx.premultiply = 0;
+    ctx.blend_mode = 0;
+    ctx.light.alpha = 0xc0;
+    ctx.light.overflow = 0;
+    ctx.w_buffer = 0;
+    ctx.lod_scale = 1.0f / 4096.0f;
     return ctx;
 }
 
@@ -138,7 +139,7 @@ std::string label(unsigned flags, int which) {
     return std::string(buf);
 }
 
-}  // namespace
+} // namespace
 
 NOCTURNE_TEST(vertex_conversion_matches_build_tl_vertex) {
     fill_palette();
@@ -146,26 +147,27 @@ NOCTURNE_TEST(vertex_conversion_matches_build_tl_vertex) {
     // A spread that reaches every packing path: ordinary values, channels at
     // both ends of their range, and a depth on each side of the clamps.
     const NocturneTriglVertexInput inputs[] = {
-        {      0,       0,     1,        0,        0,      0,      0,      0,      0 },
-        { 0x1400000, 0xF0000, 4096, 0x00800000, 0x00400000, 0x1000, 0x2000, 0x3000, 0x8000 },
-        { -0x10000, 0x2A0000, 1,    0x7F000000, 0x00000001, 0xFF00, 0xFF00, 0xFF00, 0xFF00 },
-        { 0x28000000, -0x50000, 100000, 0x00ABCDEF, 0x00FEDCBA, 0x10FF, 0x0100, 0x08A0, 0x0180 },
+        {0, 0, 1, 0, 0, 0, 0, 0, 0},
+        {0x1400000, 0xF0000, 4096, 0x00800000, 0x00400000, 0x1000, 0x2000, 0x3000, 0x8000},
+        {-0x10000, 0x2A0000, 1, 0x7F000000, 0x00000001, 0xFF00, 0xFF00, 0xFF00, 0xFF00},
+        {0x28000000, -0x50000, 100000, 0x00ABCDEF, 0x00FEDCBA, 0x10FF, 0x0100, 0x08A0, 0x0180},
     };
 
     // Every combination of the bits the conversion reads.
-    const unsigned bits[] = { 0x001, 0x004, 0x008, 0x100, 0x200 };
+    const unsigned bits[] = {0x001, 0x004, 0x008, 0x100, 0x200};
     for (unsigned mask = 0; mask < 32; ++mask) {
         unsigned flags = 0;
         for (int b = 0; b < 5; ++b) {
-            if (mask & (1u << b)) flags |= bits[b];
+            if (mask & (1u << b))
+                flags |= bits[b];
         }
         for (int w = 0; w < 2; ++w) {
             for (int premul = 0; premul < 2; ++premul) {
                 for (int bmode = 0; bmode < 2; ++bmode) {
                     NocturneTriglVertexContext ctx = base_context(flags);
-                    ctx.w_buffer   = w;
+                    ctx.w_buffer = w;
                     ctx.premultiply = premul;
-                    ctx.blend_mode  = bmode;
+                    ctx.blend_mode = bmode;
 
                     int which = 0;
                     for (const NocturneTriglVertexInput &in : inputs) {
@@ -198,7 +200,7 @@ NOCTURNE_TEST(vertex_conversion_matches_build_tl_vertex) {
 NOCTURNE_TEST(a_palette_colour_without_a_palette_is_black) {
     NocturneTriglVertexContext ctx = base_context(0);
     ctx.palette = nullptr;
-    const NocturneTriglVertexInput in = { 0, 0, 1, 0, 0, 0x1000, 0x2000, 0x3000, 0x8000 };
+    const NocturneTriglVertexInput in = {0, 0, 1, 0, 0, 0x1000, 0x2000, 0x3000, 0x8000};
     NocturneTriglScreenVertex out;
     nocturne_trigl_convert_vertex(&ctx, &in, &out);
     CHECK_EQ(out.diffuse, 0xff000000u);
@@ -212,8 +214,8 @@ NOCTURNE_TEST(fixed_point_scales) {
     in.screen_x = 320 << 16;
     in.screen_y = 240 << 16;
     in.transformed_z = 1;
-    in.u = 1 << 24;             // one whole texture repeat
-    in.v = 1 << 23;             // half of one
+    in.u = 1 << 24; // one whole texture repeat
+    in.v = 1 << 23; // half of one
     nocturne_trigl_convert_vertex(&ctx, &in, &out);
     CHECK_EQ(out.x, 320.0f);
     CHECK_EQ(out.y, 240.0f);

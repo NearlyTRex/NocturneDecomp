@@ -18,26 +18,24 @@
 // can be waited for, and that thread-local slots are per thread. Timings are
 // generous — a test that fails when the machine is busy teaches nobody anything.
 
-#include "nocturne_test.h"
-
-#include "system/kernel32.h"
 #include "globals/globals_610000.h"
+#include "nocturne_test.h"
+#include "system/kernel32.h"
 
 #include <atomic>
 #include <chrono>
 #include <cstdlib>
 #include <cstring>
 #include <ctime>
+#include <fcntl.h>
 #include <filesystem>
 #include <fstream>
 #include <new>
 #include <string>
+#include <sys/stat.h>
 #include <system_error>
 #include <thread>
 #include <vector>
-
-#include <fcntl.h>
-#include <sys/stat.h>
 #if defined(_WIN32)
 #include <io.h>
 #include <process.h>
@@ -53,7 +51,7 @@ typedef long long ssize_t;
 #include <unistd.h>
 #endif
 
-#include "win32/shim_init.h"    // shims_init_kernel32 — C++ linkage, as declared
+#include "win32/shim_init.h" // shims_init_kernel32 — C++ linkage, as declared
 
 extern "C" void *nocturne_test_proc_one(void);
 
@@ -69,24 +67,43 @@ namespace {
 std::atomic<bool> g_refuse_allocation(false);
 
 struct RefusingAllocation {
-    RefusingAllocation() { g_refuse_allocation = true; }
-    ~RefusingAllocation() { g_refuse_allocation = false; }
+    RefusingAllocation() {
+        g_refuse_allocation = true;
+    }
+    ~RefusingAllocation() {
+        g_refuse_allocation = false;
+    }
 };
-}  // namespace
+} // namespace
 
 void *operator new(std::size_t size, const std::nothrow_t &) noexcept {
-    if (g_refuse_allocation) return nullptr;
-    try { return ::operator new(size); } catch (...) { return nullptr; }
+    if (g_refuse_allocation)
+        return nullptr;
+    try {
+        return ::operator new(size);
+    } catch (...) {
+        return nullptr;
+    }
 }
 
 void *operator new[](std::size_t size, const std::nothrow_t &) noexcept {
-    if (g_refuse_allocation) return nullptr;
-    try { return ::operator new[](size); } catch (...) { return nullptr; }
+    if (g_refuse_allocation)
+        return nullptr;
+    try {
+        return ::operator new[](size);
+    } catch (...) {
+        return nullptr;
+    }
 }
 
 void *operator new(std::size_t size, std::align_val_t alignment, const std::nothrow_t &) noexcept {
-    if (g_refuse_allocation) return nullptr;
-    try { return ::operator new(size, alignment); } catch (...) { return nullptr; }
+    if (g_refuse_allocation)
+        return nullptr;
+    try {
+        return ::operator new(size, alignment);
+    } catch (...) {
+        return nullptr;
+    }
 }
 
 namespace {
@@ -97,7 +114,10 @@ namespace fs = std::filesystem;
 struct Wired {
     Wired() {
         static bool done = false;
-        if (!done) { shims_init_kernel32(); done = true; }
+        if (!done) {
+            shims_init_kernel32();
+            done = true;
+        }
     }
 };
 
@@ -111,7 +131,7 @@ struct Tree : Wired {
         root = fs::temp_directory_path(ec) / fs::path("nocturne_kernel32_test");
         fs::remove_all(root, ec);
         fs::create_directories(root / "existing", ec);
-        std::ofstream(( root / "afile.txt").string().c_str()) << "x";
+        std::ofstream((root / "afile.txt").string().c_str()) << "x";
         fs::current_path(root, ec);
     }
     ~Tree() {
@@ -125,7 +145,7 @@ const DWORD kInfinite = 0xFFFFFFFFu;
 const DWORD kWaitObject0 = 0x00000000u;
 const DWORD kWaitTimeout = 0x00000102u;
 
-}  // namespace
+} // namespace
 
 // -----------------------------------------------------------------------------
 // Directories and files. Win32 says whether it did the thing, and the game asks.
@@ -140,7 +160,7 @@ NOCTURNE_TEST(creating_a_directory_reports_whether_it_created_one) {
     // Already there is a failure with a reason, not a quiet success. The
     // standard library calls this success, and the game does not.
     CHECK_EQ(g_CreateDirectoryAFunc("existing", nullptr), 0);
-    CHECK_EQ(g_GetLastErrorFunc(), 183u);   // ERROR_ALREADY_EXISTS
+    CHECK_EQ(g_GetLastErrorFunc(), 183u); // ERROR_ALREADY_EXISTS
 }
 
 NOCTURNE_TEST(deleting_a_file_reports_whether_it_deleted_one) {
@@ -150,7 +170,7 @@ NOCTURNE_TEST(deleting_a_file_reports_whether_it_deleted_one) {
     CHECK(!fs::exists(fs::path("afile.txt"), ec));
 
     CHECK_EQ(g_DeleteFileAFunc("afile.txt"), 0);
-    CHECK_EQ(g_GetLastErrorFunc(), 2u);     // ERROR_FILE_NOT_FOUND
+    CHECK_EQ(g_GetLastErrorFunc(), 2u); // ERROR_FILE_NOT_FOUND
 }
 
 NOCTURNE_TEST(the_working_directory_is_reported_and_can_be_moved) {
@@ -178,7 +198,7 @@ NOCTURNE_TEST(a_buffer_too_small_is_told_how_much_it_needed) {
     // Win32 reports the size required INCLUDING the terminator, and writes
     // nothing. Truncating instead would hand back a path naming a different
     // directory, which is worse than refusing.
-    char tiny[2] = { '\x7f', '\x7f' };
+    char tiny[2] = {'\x7f', '\x7f'};
     const DWORD asked = g_GetCurrentDirectoryAFunc(sizeof(tiny), tiny);
     CHECK(asked > needed);
     CHECK_EQ(tiny[0], '\x7f');
@@ -194,7 +214,7 @@ NOCTURNE_TEST(a_critical_section_can_be_entered_twice_by_its_owner) {
     _RTL_CRITICAL_SECTION section;
     g_InitializeCriticalSectionFunc(&section);
     g_EnterCriticalSectionFunc(&section);
-    g_EnterCriticalSectionFunc(&section);   // would deadlock if not recursive
+    g_EnterCriticalSectionFunc(&section); // would deadlock if not recursive
     g_LeaveCriticalSectionFunc(&section);
     g_LeaveCriticalSectionFunc(&section);
     g_DeleteCriticalSectionFunc(&section);
@@ -214,7 +234,7 @@ NOCTURNE_TEST(a_critical_section_keeps_another_thread_out) {
     });
 
     std::this_thread::sleep_for(std::chrono::milliseconds(50));
-    CHECK_EQ(got_in.load(), 0);     // still held here
+    CHECK_EQ(got_in.load(), 0); // still held here
     g_LeaveCriticalSectionFunc(&section);
 
     other.join();
@@ -252,7 +272,8 @@ NOCTURNE_TEST(setting_an_event_wakes_a_waiter) {
     HANDLE event = g_CreateEventAFunc(nullptr, 1, 0, nullptr);
     std::atomic<int> woke(0);
     std::thread waiter([&]() {
-        if (g_WaitForSingleObjectFunc(event, kInfinite) == kWaitObject0) woke = 1;
+        if (g_WaitForSingleObjectFunc(event, kInfinite) == kWaitObject0)
+            woke = 1;
     });
     std::this_thread::sleep_for(std::chrono::milliseconds(30));
     CHECK_EQ(woke.load(), 0);
@@ -315,14 +336,13 @@ DWORD test_thread_body(LPVOID parameter) {
     g_thread_ran = (int)(intptr_t)parameter;
     return 7;
 }
-}  // namespace
+} // namespace
 
 NOCTURNE_TEST(a_thread_runs_its_body_and_can_be_waited_for) {
     Wired wired;
     g_thread_ran = 0;
     DWORD id = 0;
-    HANDLE thread = g_CreateThreadFunc(nullptr, 0, test_thread_body,
-                                       (LPVOID)(intptr_t)42, 0, &id);
+    HANDLE thread = g_CreateThreadFunc(nullptr, 0, test_thread_body, (LPVOID)(intptr_t)42, 0, &id);
     CHECK(thread != nullptr);
     CHECK_EQ(g_WaitForSingleObjectFunc(thread, kInfinite), kWaitObject0);
     CHECK_EQ(g_thread_ran.load(), 42);
@@ -358,7 +378,7 @@ NOCTURNE_TEST(a_tls_slot_holds_a_value_per_thread) {
     CHECK_EQ((intptr_t)g_TlsGetValueFunc(slot), (intptr_t)111);
 
     CHECK(g_TlsFreeFunc(slot) != 0);
-    CHECK_EQ(g_TlsFreeFunc(slot), 0);       // freeing twice is a failure
+    CHECK_EQ(g_TlsFreeFunc(slot), 0); // freeing twice is a failure
 }
 
 NOCTURNE_TEST(tls_slots_are_handed_out_distinctly) {
@@ -391,8 +411,7 @@ NOCTURNE_TEST(the_performance_counter_only_moves_forwards) {
     CHECK(second.QuadPart > first.QuadPart);
 
     // And the elapsed time it reports is roughly the time that passed.
-    const double seconds =
-        (double)(second.QuadPart - first.QuadPart) / (double)frequency.QuadPart;
+    const double seconds = (double)(second.QuadPart - first.QuadPart) / (double)frequency.QuadPart;
     CHECK(seconds > 0.010);
     CHECK(seconds < 2.0);
 }
@@ -405,12 +424,12 @@ NOCTURNE_TEST(the_performance_counter_only_moves_forwards) {
 NOCTURNE_TEST(virtual_alloc_gives_zeroed_aligned_memory) {
     Wired wired;
     const DWORD kCommit = 0x1000, kReadWrite = 0x04;
-    unsigned char *memory =
-        (unsigned char *)g_VirtualAllocFunc(nullptr, 8192, kCommit, kReadWrite);
+    unsigned char *memory = (unsigned char *)g_VirtualAllocFunc(nullptr, 8192, kCommit, kReadWrite);
     CHECK(memory != nullptr);
     CHECK_EQ((uintptr_t)memory % 4096u, (uintptr_t)0);
-    for (int i = 0; i < 8192; ++i) CHECK_EQ(memory[i], (unsigned char)0);
-    memory[0] = 1;   // writable
+    for (int i = 0; i < 8192; ++i)
+        CHECK_EQ(memory[i], (unsigned char)0);
+    memory[0] = 1; // writable
     CHECK(g_VirtualFreeFunc(memory, 0, 0x8000) != 0);
 }
 
@@ -461,7 +480,7 @@ NOCTURNE_TEST(an_unregistered_module_is_refused_rather_than_sought) {
     // is a library this build does not have, and asking the host would only be
     // a second way to get the same no.
     CHECK(g_LoadLibraryAFunc("libc.so.6") == nullptr);
-    CHECK_EQ(g_GetLastErrorFunc(), 126u);       // ERROR_MOD_NOT_FOUND
+    CHECK_EQ(g_GetLastErrorFunc(), 126u); // ERROR_MOD_NOT_FOUND
     CHECK(g_LoadLibraryAFunc("winmm.dll") == nullptr);
     CHECK(g_GetModuleHandleAFunc("winmm.dll") == nullptr);
 }
@@ -476,7 +495,7 @@ NOCTURNE_TEST(an_export_is_looked_up_in_the_module_that_was_asked) {
     // through B — the lookup is per module, not a search of everything loaded.
     CHECK(g_GetProcAddressFunc(a, "ProcOne") != nullptr);
     CHECK(g_GetProcAddressFunc(b, "ProcOne") == nullptr);
-    CHECK_EQ(g_GetLastErrorFunc(), 127u);       // ERROR_PROC_NOT_FOUND
+    CHECK_EQ(g_GetLastErrorFunc(), 127u); // ERROR_PROC_NOT_FOUND
 
     CHECK(g_GetProcAddressFunc(a, "NoSuchProc") == nullptr);
     g_FreeLibraryFunc(a);
@@ -528,7 +547,7 @@ Walk walk(const char *spec) {
     return result;
 }
 
-}  // namespace
+} // namespace
 
 NOCTURNE_TEST(a_search_reports_every_match_then_no_more_files) {
     Pods pods;
@@ -542,7 +561,7 @@ NOCTURNE_TEST(a_search_reports_every_match_then_no_more_files) {
 NOCTURNE_TEST(the_found_name_is_the_name_alone) {
     Pods pods;
     for (const std::string &spec : {std::string("pods\\*.pod"), std::string("pods/*.pod"),
-                                     (pods.root / "pods").string() + "\\*.pod"}) {
+                                    (pods.root / "pods").string() + "\\*.pod"}) {
         for (const std::string &name : walk(spec.c_str()).names) {
             CHECK(name == "act1.pod" || name == "ENGLISH.POD" || name == "music.pod");
         }
@@ -665,11 +684,13 @@ std::string read_all(HANDLE handle, DWORD size) {
     return bytes;
 }
 
-}  // namespace
+} // namespace
 
 NOCTURNE_TEST(a_file_reads_back_byte_for_byte) {
     Tree tree;
-    const std::string written("pod\r\n\x1a" "after\0end", 15);
+    const std::string written("pod\r\n\x1a"
+                              "after\0end",
+                              15);
     std::ofstream("binary.pod", std::ios::binary) << written;
     HANDLE handle = open_file("binary.pod", kGenericRead, kOpenExisting);
     CHECK(handle != kInvalidHandle);
@@ -686,7 +707,7 @@ NOCTURNE_TEST(a_file_handle_is_never_read_as_an_object) {
     WIN32_FIND_DATAA data;
     CHECK_EQ(g_FindNextFileAFunc(handle, &data), 0);
     CHECK_EQ(g_FindCloseFunc(handle), 0);
-    CHECK_EQ(g_WaitForSingleObjectFunc(handle, 0), 0xFFFFFFFFu);  // WAIT_FAILED
+    CHECK_EQ(g_WaitForSingleObjectFunc(handle, 0), 0xFFFFFFFFu); // WAIT_FAILED
     CHECK(g_CloseHandleFunc(handle) != 0);
     // Closed once is closed: the descriptor is gone
     CHECK_EQ(g_CloseHandleFunc(handle), 0);
@@ -775,7 +796,7 @@ std::string contents_of(const char *name) {
     return std::string((std::istreambuf_iterator<char>(in)), std::istreambuf_iterator<char>());
 }
 
-}  // namespace
+} // namespace
 
 NOCTURNE_TEST(a_file_written_reports_what_it_wrote) {
     Tree tree;
@@ -994,7 +1015,7 @@ NOCTURNE_TEST(a_full_path_too_long_for_the_buffer_reports_the_size_it_needs) {
     Tree tree;
     char full[4096];
     const DWORD length = g_GetFullPathNameAFunc("afile.txt", sizeof(full), full, nullptr);
-    char tiny[4] = { '\x7f', '\x7f', '\x7f', '\x7f' };
+    char tiny[4] = {'\x7f', '\x7f', '\x7f', '\x7f'};
     CHECK_EQ(g_GetFullPathNameAFunc("afile.txt", sizeof(tiny), tiny, nullptr), length + 1);
     CHECK_EQ(tiny[0], '\x7f');
     // No buffer at all is the same question.
@@ -1049,7 +1070,7 @@ NOCTURNE_TEST(a_standard_handle_can_be_pointed_somewhere_else) {
     Tree tree;
     fflush(stdout);
     fflush(stderr);
-    const int saved[3] = { dup(0), dup(1), dup(2) };
+    const int saved[3] = {dup(0), dup(1), dup(2)};
     HANDLE file = open_file("console.txt", kGenericRead | kGenericWrite, kCreateAlways);
 
     const bool redirected = g_SetStdHandleFunc((DWORD)-11, file) != 0;
@@ -1061,7 +1082,8 @@ NOCTURNE_TEST(a_standard_handle_can_be_pointed_somewhere_else) {
     const bool closed = g_SetStdHandleFunc((DWORD)-11, closed_handle()) != 0;
 
     dup2(saved[1], 1);
-    for (int fd : saved) close(fd);
+    for (int fd : saved)
+        close(fd);
     g_CloseHandleFunc(file);
 
     CHECK(redirected);
@@ -1115,7 +1137,7 @@ DWORD wait_for_release(LPVOID) {
     g_WaitForSingleObjectFunc(g_release_event, kInfinite);
     return 3;
 }
-}  // namespace
+} // namespace
 
 NOCTURNE_TEST(a_running_thread_times_out_and_a_finished_one_does_not) {
     Wired wired;
@@ -1201,7 +1223,7 @@ NOCTURNE_TEST(each_call_refuses_a_handle_of_the_wrong_kind) {
 NOCTURNE_TEST(closing_something_that_is_no_handle_at_all_fails) {
     Wired wired;
     // An object at a real address whose tag is none of the kinds.
-    static int not_a_handle[16] = { 0x12345678 };
+    static int not_a_handle[16] = {0x12345678};
     CHECK_EQ(g_CloseHandleFunc((HANDLE)not_a_handle), 0);
     CHECK_EQ(g_CloseHandleFunc(nullptr), 0);
     CHECK_EQ(g_CloseHandleFunc(kInvalidHandle), 0);
@@ -1256,9 +1278,10 @@ NOCTURNE_TEST(a_critical_section_without_memory_does_nothing_harmful) {
 NOCTURNE_TEST(the_process_is_described_but_no_other_can_be_started) {
     Wired wired;
     CHECK_EQ(g_CreateProcessAFunc("game.exe", nullptr, nullptr, nullptr, 0, 0, nullptr, nullptr,
-                                  nullptr, nullptr), 0);
-    CHECK_EQ(g_GetLastErrorFunc(), 5u);    // ERROR_ACCESS_DENIED
-    CHECK(g_GetCurrentProcessFunc() == kInvalidHandle);   // the pseudo-handle is -1
+                                  nullptr, nullptr),
+             0);
+    CHECK_EQ(g_GetLastErrorFunc(), 5u);                 // ERROR_ACCESS_DENIED
+    CHECK(g_GetCurrentProcessFunc() == kInvalidHandle); // the pseudo-handle is -1
 #if defined(_WIN32)
     CHECK_EQ(g_GetCurrentProcessIdFunc(), (DWORD)_getpid());
 #else
@@ -1292,7 +1315,8 @@ NOCTURNE_TEST(exiting_the_process_ends_it_with_the_code_given) {
     Wired wired;
     fflush(stdout);
     const pid_t child = fork();
-    if (child == 0) g_ExitProcessFunc(7);
+    if (child == 0)
+        g_ExitProcessFunc(7);
     int status = 0;
     waitpid(child, &status, 0);
     CHECK(WIFEXITED(status));
@@ -1327,7 +1351,8 @@ NOCTURNE_TEST(global_memory_is_zeroed_fixed_memory) {
     Wired wired;
     unsigned char *block = (unsigned char *)g_GlobalAllocFunc(0, 32);
     CHECK(block != nullptr);
-    for (int i = 0; i < 32; ++i) CHECK_EQ(block[i], (unsigned char)0);
+    for (int i = 0; i < 32; ++i)
+        CHECK_EQ(block[i], (unsigned char)0);
     // Fixed memory: locking it is the address itself.
     CHECK(g_GlobalLockFunc(block) == block);
     CHECK(g_GlobalUnlockFunc(block) != 0);
@@ -1340,7 +1365,7 @@ NOCTURNE_TEST(global_memory_is_zeroed_fixed_memory) {
 
 NOCTURNE_TEST(the_memory_status_is_filled_in_and_never_negative) {
     Wired wired;
-    g_GlobalMemoryStatusFunc(nullptr);   // nowhere to write is not a crash
+    g_GlobalMemoryStatusFunc(nullptr); // nowhere to write is not a crash
     _MEMORYSTATUS status;
     std::memset(&status, 0xff, sizeof(status));
     g_GlobalMemoryStatusFunc(&status);
@@ -1373,7 +1398,8 @@ NOCTURNE_TEST(the_programs_path_is_reported_narrow_and_wide) {
 
     wchar_t wide[4096];
     CHECK_EQ(g_GetModuleFileNameWFunc(nullptr, wide, 4096), length);
-    for (DWORD i = 0; i <= length; ++i) CHECK_EQ((int)wide[i], (int)(unsigned char)narrow[i]);
+    for (DWORD i = 0; i <= length; ++i)
+        CHECK_EQ((int)wide[i], (int)(unsigned char)narrow[i]);
 }
 
 NOCTURNE_TEST(the_programs_path_is_cut_to_the_buffer_and_terminated) {
@@ -1418,7 +1444,7 @@ NOCTURNE_TEST(the_local_time_is_now) {
 NOCTURNE_TEST(the_time_zone_bias_is_minutes_to_add_to_local_time_for_utc) {
     Wired wired;
     _TIME_ZONE_INFORMATION zone;
-    CHECK_EQ(g_GetTimeZoneInformationFunc(&zone), 0u);   // TIME_ZONE_ID_UNKNOWN
+    CHECK_EQ(g_GetTimeZoneInformationFunc(&zone), 0u); // TIME_ZONE_ID_UNKNOWN
     // A local FILETIME plus the bias is the UTC one. Both are taken now: the
     // bias is today's, daylight saving included.
     const struct tm parts = utc_parts(time(nullptr));
@@ -1430,9 +1456,8 @@ NOCTURNE_TEST(the_time_zone_bias_is_minutes_to_add_to_local_time_for_utc) {
     FILETIME utc, local;
     g_SystemTimeToFileTimeFunc(&moment, &utc);
     g_FileTimeToLocalFileTimeFunc(&utc, &local);
-    const long long difference =
-        ((long long)local.dwHighDateTime << 32 | local.dwLowDateTime) -
-        ((long long)utc.dwHighDateTime << 32 | utc.dwLowDateTime);
+    const long long difference = ((long long)local.dwHighDateTime << 32 | local.dwLowDateTime) -
+                                 ((long long)utc.dwHighDateTime << 32 | utc.dwLowDateTime);
     CHECK_EQ((long long)zone.Bias, -difference / 600000000LL);
 }
 
@@ -1444,8 +1469,13 @@ NOCTURNE_TEST(the_version_is_windows_2000) {
 NOCTURNE_TEST(a_system_time_and_a_filetime_convert_both_ways) {
     Wired wired;
     SYSTEMTIME moment = {};
-    moment.wYear = 2001; moment.wMonth = 2; moment.wDay = 3;
-    moment.wHour = 4; moment.wMinute = 5; moment.wSecond = 6; moment.wMilliseconds = 789;
+    moment.wYear = 2001;
+    moment.wMonth = 2;
+    moment.wDay = 3;
+    moment.wHour = 4;
+    moment.wMinute = 5;
+    moment.wSecond = 6;
+    moment.wMilliseconds = 789;
     FILETIME file;
     CHECK(g_SystemTimeToFileTimeFunc(&moment, &file) != 0);
     SYSTEMTIME back;
@@ -1453,7 +1483,7 @@ NOCTURNE_TEST(a_system_time_and_a_filetime_convert_both_ways) {
     CHECK_EQ((int)back.wYear, 2001);
     CHECK_EQ((int)back.wMonth, 2);
     CHECK_EQ((int)back.wDay, 3);
-    CHECK_EQ((int)back.wDayOfWeek, 6);     // a Saturday
+    CHECK_EQ((int)back.wDayOfWeek, 6); // a Saturday
     CHECK_EQ((int)back.wHour, 4);
     CHECK_EQ((int)back.wMinute, 5);
     CHECK_EQ((int)back.wSecond, 6);
@@ -1461,7 +1491,9 @@ NOCTURNE_TEST(a_system_time_and_a_filetime_convert_both_ways) {
 
     // The Unix epoch is this many 100-nanosecond steps after 1601.
     SYSTEMTIME epoch = {};
-    epoch.wYear = 1970; epoch.wMonth = 1; epoch.wDay = 1;
+    epoch.wYear = 1970;
+    epoch.wMonth = 1;
+    epoch.wDay = 1;
     g_SystemTimeToFileTimeFunc(&epoch, &file);
     CHECK_EQ(((unsigned long long)file.dwHighDateTime << 32) | file.dwLowDateTime,
              116444736000000000ull);
@@ -1506,12 +1538,12 @@ NOCTURNE_TEST(a_tls_read_says_whether_it_failed_or_the_slot_was_empty) {
     const DWORD kInvalidParameter = 87;
     const DWORD slot = g_TlsAllocFunc();
     g_SetLastErrorFunc(5);
-    CHECK(g_TlsGetValueFunc(slot) == nullptr);     // empty, and that is no failure
+    CHECK(g_TlsGetValueFunc(slot) == nullptr); // empty, and that is no failure
     CHECK_EQ(g_GetLastErrorFunc(), 0u);
     CHECK(g_TlsGetValueFunc(9999) == nullptr);
     CHECK_EQ(g_GetLastErrorFunc(), kInvalidParameter);
     g_TlsFreeFunc(slot);
-    CHECK(g_TlsGetValueFunc(slot) == nullptr);     // freed is no slot either
+    CHECK(g_TlsGetValueFunc(slot) == nullptr); // freed is no slot either
     CHECK_EQ(g_GetLastErrorFunc(), kInvalidParameter);
     CHECK_EQ(g_TlsSetValueFunc(slot, nullptr), 0);
     CHECK_EQ(g_TlsSetValueFunc(9999, nullptr), 0);
@@ -1522,11 +1554,13 @@ NOCTURNE_TEST(tls_indices_run_out_and_come_back) {
     Wired wired;
     std::vector<DWORD> taken;
     DWORD slot;
-    while ((slot = g_TlsAllocFunc()) != 0xFFFFFFFFu) taken.push_back(slot);
+    while ((slot = g_TlsAllocFunc()) != 0xFFFFFFFFu)
+        taken.push_back(slot);
     CHECK(!taken.empty());
     CHECK(g_TlsFreeFunc(taken.back()) != 0);
     CHECK_EQ(g_TlsAllocFunc(), taken.back());
-    for (DWORD each : taken) g_TlsFreeFunc(each);
+    for (DWORD each : taken)
+        g_TlsFreeFunc(each);
 }
 
 // -----------------------------------------------------------------------------
@@ -1534,20 +1568,22 @@ NOCTURNE_TEST(tls_indices_run_out_and_come_back) {
 // -----------------------------------------------------------------------------
 
 namespace {
-LONGVAL some_filter(struct _EXCEPTION_POINTERS *) { return 1; }
-}  // namespace
+LONGVAL some_filter(struct _EXCEPTION_POINTERS *) {
+    return 1;
+}
+} // namespace
 
 NOCTURNE_TEST(the_unhandled_exception_filter_is_kept_and_handed_back) {
     Wired wired;
     LPTOP_LEVEL_EXCEPTION_FILTER before = g_SetUnhandledExceptionFilterFunc(some_filter);
     CHECK(g_SetUnhandledExceptionFilterFunc(before) == some_filter);
-    CHECK_EQ(g_UnhandledExceptionFilterFunc(nullptr), 0);   // EXCEPTION_CONTINUE_SEARCH
+    CHECK_EQ(g_UnhandledExceptionFilterFunc(nullptr), 0); // EXCEPTION_CONTINUE_SEARCH
 }
 
 NOCTURNE_TEST(the_command_line_is_the_arguments_main_was_given) {
     Wired wired;
     char program[] = "nocturne.exe", flag[] = "-window";
-    char *argv[] = { program, flag };
+    char *argv[] = {program, flag};
     shims_set_command_line(2, argv);
     CHECK_EQ(std::string(g_GetCommandLineAFunc()), std::string("nocturne.exe -window"));
     const LPWSTR wide = g_GetCommandLineWFunc();
@@ -1563,7 +1599,7 @@ NOCTURNE_TEST(a_command_line_too_long_for_the_game_is_cut_to_fit) {
     Wired wired;
     std::string long_word(300, 'a');
     char program[] = "nocturne.exe";
-    char *argv[] = { program, &long_word[0], &long_word[0] };
+    char *argv[] = {program, &long_word[0], &long_word[0]};
     shims_set_command_line(3, argv);
     CHECK_EQ(strlen(g_GetCommandLineAFunc()), (size_t)255);
     shims_set_command_line(0, nullptr);
@@ -1615,10 +1651,10 @@ NOCTURNE_TEST(the_computer_name_is_the_host_name) {
     CHECK_EQ((size_t)size, strlen(expected));
 
     // A buffer too small is told how much it needs, and gets nothing.
-    char tiny[1] = { '\x7f' };
+    char tiny[1] = {'\x7f'};
     DWORD tiny_size = 1;
     CHECK_EQ(g_GetComputerNameAFunc(tiny, &tiny_size), 0);
-    CHECK_EQ(g_GetLastErrorFunc(), 111u);  // ERROR_BUFFER_OVERFLOW
+    CHECK_EQ(g_GetLastErrorFunc(), 111u); // ERROR_BUFFER_OVERFLOW
     CHECK_EQ((size_t)tiny_size, strlen(expected) + 1);
     CHECK_EQ(tiny[0], '\x7f');
 }
@@ -1655,7 +1691,7 @@ NOCTURNE_TEST(narrow_text_widens_a_byte_at_a_character) {
 
 NOCTURNE_TEST(wide_text_narrows_and_marks_what_did_not_fit) {
     Wired wired;
-    const wchar_t text[] = { L'o', L'k', (wchar_t)0x263a, 0 };
+    const wchar_t text[] = {L'o', L'k', (wchar_t)0x263a, 0};
     CHECK_EQ(g_WideCharToMultiByteFunc(1252, 0, text, -1, nullptr, 0, nullptr, nullptr), 4);
     char narrow[8] = {};
     BOOL used_default = 1;

@@ -2,17 +2,16 @@
 // NET MENU — the multiplayer submenu, and Ctrl+H / Ctrl+J
 // =============================================================================
 
-#include "nocturne_test.h"
-#include "net_support.h"
-
 #include "net/net_menu.h"
+#include "net_support.h"
 #include "nocturne.h"
+#include "nocturne_test.h"
 
 namespace {
 
 using net_support::stand;
 
-}  // namespace
+} // namespace
 
 // The submenu is drawn over the menu backdrop each frame until a line is
 // picked or it is backed out of; the press that opened it is waited out first.

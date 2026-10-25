@@ -7,7 +7,7 @@ import sys
 import pytest
 
 # The scripts are run as `python3 scripts/Python/<name>.py`, which puts their own
-# directory first on sys.path; the tests import them the same way. Tests/ goes on
+# directory first on sys.path; the tests import them the same way. tests/ goes on
 # the path too, for the helpers the tests import by name, repo_paths among them.
 _tests = os.path.dirname(os.path.abspath(__file__))
 for _path in (_tests, os.path.join(os.path.dirname(_tests), "scripts", "Python")):
@@ -16,7 +16,7 @@ for _path in (_tests, os.path.join(os.path.dirname(_tests), "scripts", "Python")
 
 
 # The shell plugins resolve script paths from the rootdir, which -c would
-# otherwise make Tests/
+# otherwise make tests/
 def pytest_configure(config):
     repo_root = os.path.dirname(_tests)
     if str(config.rootpath) != repo_root:

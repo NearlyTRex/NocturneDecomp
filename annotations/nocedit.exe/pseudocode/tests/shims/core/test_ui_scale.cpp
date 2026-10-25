@@ -6,11 +6,10 @@
 // source pixel a square of the framebuffer, clipped as the engine clips; and a
 // small stack of clip rectangles for a box to draw inside.
 
-#include "nocturne_test.h"
-#include "ui_support.h"
-
 #include "core/ui_scale.h"
 #include "nocturne.h"
+#include "nocturne_test.h"
+#include "ui_support.h"
 
 #include <cstring>
 #include <memory>
@@ -53,8 +52,12 @@ struct Font {
         f.current_line_height = 4;
         f.line_spacing = 1;
     }
-    CBitFont *operator->() { return font.get(); }
-    CBitFont *get() { return font.get(); }
+    CBitFont *operator->() {
+        return font.get();
+    }
+    CBitFont *get() {
+        return font.get();
+    }
 };
 
 int draw(Font &font, const char *text, int x, int y, int mode, int value, int scale) {
@@ -63,7 +66,7 @@ int draw(Font &font, const char *text, int x, int y, int mode, int value, int sc
     return nocturne_ui_draw_text(font.get(), copy, x, y, mode, value, scale);
 }
 
-}  // namespace
+} // namespace
 
 // Rounded to the nearest whole multiple of 480, between one and four; the
 // goggles' to 320 x 240, up to eight.
@@ -139,7 +142,7 @@ NOCTURNE_TEST(an_alpha_bitmap_is_clipped_to_the_window) {
     stand.reset();
     Bitmap bitmap;
     nocturne_ui_blit_alpha(&bitmap.bmp, -2, -2, 255, 2);
-    CHECK_EQ(stand.rows32.size(), (size_t)2);           // rows -2 and -1 are off
+    CHECK_EQ(stand.rows32.size(), (size_t)2); // rows -2 and -1 are off
     CHECK(stand.rows32[0].dest == g_ScreenBufferArray[0]);
     CHECK_EQ(stand.rows32[0].count, 2);
     stand.rows32.clear();
@@ -148,7 +151,7 @@ NOCTURNE_TEST(an_alpha_bitmap_is_clipped_to_the_window) {
     CHECK_EQ(stand.rows32[0].count, 2);
 
     stand.rows32.clear();
-    nocturne_ui_blit_alpha(&bitmap.bmp, -4, 0, 255, 2);  // touches the edge only
+    nocturne_ui_blit_alpha(&bitmap.bmp, -4, 0, 255, 2); // touches the edge only
     nocturne_ui_blit_alpha(&bitmap.bmp, -5, 0, 255, 2);
     nocturne_ui_blit_alpha(&bitmap.bmp, 64, 0, 255, 2);
     nocturne_ui_blit_alpha(&bitmap.bmp, 0, -5, 255, 2);
@@ -274,7 +277,7 @@ NOCTURNE_TEST(a_blended_glyph_mixes_with_the_frame) {
     font->palettes_display[0][1] = 0xffff;
     draw(font, "A", 0, 0, -1, -1, 2);
     CHECK(ui_support::pixel16(0, 0) != 0u);
-    CHECK_EQ(ui_support::pixel16(2, 2), 0u);   // index 2 has no coverage
+    CHECK_EQ(ui_support::pixel16(2, 2), 0u); // index 2 has no coverage
     g_ColorTable16[7] = 0xffff;
     draw(font, "A", 10, 0, 7, -1, 2);
     CHECK(ui_support::pixel16(10, 0) != 0u);
@@ -293,7 +296,7 @@ NOCTURNE_TEST(a_glyph_is_clipped) {
     CHECK_EQ(ui_support::pixel32(0, 0), 0u);
     CHECK_EQ(ui_support::pixel32(1, 1), 0x111111u);
     CHECK_EQ(ui_support::pixel32(3, 3), 0u);
-    draw(font, "A", 10, 1, -1, -1, 2);           // right of the clip
+    draw(font, "A", 10, 1, -1, -1, 2); // right of the clip
     CHECK_EQ(ui_support::pixel32(10, 1), 0u);
 
     // A clip larger than the window still stops at the window.
@@ -380,8 +383,8 @@ NOCTURNE_TEST(clip_rectangles_nest) {
     CHECK_EQ(g_ClipLeft, 0);
     CHECK_EQ(g_ClipBottom, 63);
     nocturne_ui_push_clip(0, 0, 63, 63);
-    nocturne_ui_push_clip(30, 30, 31, 31);       // full: ignored
-    nocturne_ui_push_screen_clip();              // full: ignored
+    nocturne_ui_push_clip(30, 30, 31, 31); // full: ignored
+    nocturne_ui_push_screen_clip();        // full: ignored
     CHECK_EQ(g_ClipLeft, 0);
     nocturne_ui_pop_clip();
     nocturne_ui_pop_clip();

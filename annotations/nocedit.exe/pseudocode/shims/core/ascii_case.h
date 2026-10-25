@@ -32,22 +32,28 @@ inline char nocturne_ascii_lower(char c) {
 // in the "C" locale: the difference between the first pair of bytes that differ
 // after folding, as unsigned char.
 inline int nocturne_ascii_icompare(const char *a, const char *b) {
-    if (a == nullptr || b == nullptr) return (a == b) ? 0 : (a == nullptr ? -1 : 1);
+    if (a == nullptr || b == nullptr)
+        return (a == b) ? 0 : (a == nullptr ? -1 : 1);
     for (;; ++a, ++b) {
         const unsigned char x = (unsigned char)nocturne_ascii_lower(*a);
         const unsigned char y = (unsigned char)nocturne_ascii_lower(*b);
-        if (x != y) return (int)x - (int)y;
-        if (x == '\0') return 0;
+        if (x != y)
+            return (int)x - (int)y;
+        if (x == '\0')
+            return 0;
     }
 }
 
 inline int nocturne_ascii_icompare_n(const char *a, const char *b, size_t n) {
-    if (a == nullptr || b == nullptr) return (a == b) ? 0 : (a == nullptr ? -1 : 1);
+    if (a == nullptr || b == nullptr)
+        return (a == b) ? 0 : (a == nullptr ? -1 : 1);
     for (size_t i = 0; i < n; ++i, ++a, ++b) {
         const unsigned char x = (unsigned char)nocturne_ascii_lower(*a);
         const unsigned char y = (unsigned char)nocturne_ascii_lower(*b);
-        if (x != y) return (int)x - (int)y;
-        if (x == '\0') return 0;
+        if (x != y)
+            return (int)x - (int)y;
+        if (x == '\0')
+            return 0;
     }
     return 0;
 }

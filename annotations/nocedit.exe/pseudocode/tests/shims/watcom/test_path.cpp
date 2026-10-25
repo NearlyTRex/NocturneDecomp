@@ -18,7 +18,6 @@
 //     the way it always failed
 
 #include "nocturne_test.h"
-
 #include "watcom/path.h"
 
 #include <filesystem>
@@ -75,7 +74,7 @@ struct Tree {
     }
 };
 
-}  // namespace
+} // namespace
 
 // -----------------------------------------------------------------------------
 // The separator. The game spells every path with backslashes; on a filesystem
@@ -248,7 +247,8 @@ NOCTURNE_TEST(a_leading_dot_without_a_separator_is_part_of_the_name) {
 // any directory, so the test only means something for anyone else.
 NOCTURNE_TEST(a_directory_that_cannot_be_listed_is_not_searched) {
     Tree tree;
-    if (geteuid() == 0) return;
+    if (geteuid() == 0)
+        return;
     std::error_code ec;
     fs::create_directories(tree.root / "locked", ec);
     Tree::write(tree.root / "locked" / "Inner.txt");

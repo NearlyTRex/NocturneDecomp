@@ -5,35 +5,40 @@
 // See hero_death.h for how the DIE request is lost.
 
 #include "game/hero_death.h"
+
 #include "nocturne.h"
 
 #if !NOCTURNE_AUTHENTIC_HERO_ACTIONS
 
-extern "C" int nocturne_hero_regenerates(CHero *hero)
-{
-    if ((hero == (CHero *)0x0) || (0.0f < (hero->base).hit_points)) {
-        return 1;
-    }
-    return (nocturne_hero_is_player(hero) == 0) ? 1 : 0;
+namespace {
+
+// A player hero with no health left.
+bool player_at_zero(CHero *hero) {
+    return (hero != (CHero *)0x0) && !(0.0f < (hero->base).hit_points) &&
+           (nocturne_hero_is_player(hero) != 0);
 }
 
-extern "C" void nocturne_hero_check_death(CHero *hero)
-{
-    CCharacter *character;
-    int         desired;
-    int         die_state;
-    int         dead_state;
+} // namespace
 
-    if ((hero == (CHero *)0x0) || (0.0f < (hero->base).hit_points) ||
-        (nocturne_hero_is_player(hero) == 0)) {
+extern "C" int nocturne_hero_regenerates(CHero *hero) {
+    return player_at_zero(hero) ? 0 : 1;
+}
+
+extern "C" void nocturne_hero_check_death(CHero *hero) {
+    CCharacter *character;
+    int desired;
+    int die_state;
+    int dead_state;
+
+    if (!player_at_zero(hero)) {
         return;
     }
     character = &hero->base;
     if ((*(((character->base).vtable._uc)->_uc).getDeathState)(character) != DEATH_STATE_ALIVE) {
         return;
     }
-    desired    = (character->model).base.state_index;
-    die_state  = nocturne_hero_motion_find_state(character, "DIE");
+    desired = (character->model).base.state_index;
+    die_state = nocturne_hero_motion_find_state(character, "DIE");
     dead_state = nocturne_hero_motion_find_state(character, "DEAD");
     if ((die_state < 0) || (desired == die_state) ||
         ((0 <= dead_state) && (desired == dead_state))) {
@@ -44,11 +49,10 @@ extern "C" void nocturne_hero_check_death(CHero *hero)
 
 #endif
 
-extern "C" int nocturne_hero_revive(CHero *hero)
-{
+extern "C" int nocturne_hero_revive(CHero *hero) {
     CCharacter *character;
-    int         destroyed;
-    int         stand_state;
+    int destroyed;
+    int stand_state;
 
     if (hero == (CHero *)0x0) {
         return 0;
@@ -92,8 +96,7 @@ extern "C" int nocturne_hero_revive(CHero *hero)
     }
 
     character->hit_points = character->max_hit_points;
-    core_motion_cpp_CMotionController_jumpToMotion_FUN_0052dde0
-        (&(character->model).base, 0, 0.0f);
+    core_motion_cpp_CMotionController_jumpToMotion_FUN_0052dde0(&(character->model).base, 0, 0.0f);
 
     // Dying is a DESIRED state, not just an animation: every death path
     // ends in setDesiredState with a death state, and the controller
@@ -108,8 +111,8 @@ extern "C" int nocturne_hero_revive(CHero *hero)
     // elsewhere; CHero::releaseFromGrab does exactly this.
     stand_state = nocturne_hero_motion_find_state(character, "STAND");
     if (0 <= stand_state) {
-        core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
-            (&(character->model).base, stand_state, 1);
+        core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00(&(character->model).base,
+                                                                       stand_state, 1);
     }
     return 1;
 }

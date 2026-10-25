@@ -11,7 +11,7 @@ namespace {
 int s_depth = 0;
 bool s_started = false;
 
-}  // namespace
+} // namespace
 
 extern "C" void nocturne_text_input_begin(void) {
     if (s_depth++ == 0 && !SDL_IsTextInputActive()) {
@@ -21,7 +21,8 @@ extern "C" void nocturne_text_input_begin(void) {
 }
 
 extern "C" void nocturne_text_input_end(void) {
-    if (s_depth == 0) return;
+    if (s_depth == 0)
+        return;
     if (--s_depth == 0 && s_started) {
         SDL_StopTextInput();
         s_started = false;

@@ -4,13 +4,12 @@
 
 #include "dump_support.h"
 
-#include "nocturne.h"
 #include "directx/ddraw.h"
 #include "game/hero_slot.h"
 #include "gl/gl_present.h"
+#include "nocturne.h"
 
 #include <SDL.h>
-
 #include <cstdlib>
 #include <cstring>
 
@@ -83,18 +82,20 @@ void Stand::reset() {
     g_CFlameClassInfo.name_hash = kFlame;
 }
 
-void is_a(const CDemonActor *actor, std::set<unsigned> hashes) { stand.classes[actor] = hashes; }
+void is_a(const CDemonActor *actor, std::set<unsigned> hashes) {
+    stand.classes[actor] = hashes;
+}
 
-}  // namespace dump_support
+} // namespace dump_support
 
 using dump_support::stand;
 
 // --- the decompiled functions ------------------------------------------------
 
-CDemonActor *__cdecl core_actor_cpp_castToClassHash_FUN_0040c790(CDemonActor *actor,
-                                                                 uint hash) {
+CDemonActor *__cdecl core_actor_cpp_castToClassHash_FUN_0040c790(CDemonActor *actor, uint hash) {
     auto it = stand.classes.find(actor);
-    if (it == stand.classes.end() || it->second.count(hash) == 0) return nullptr;
+    if (it == stand.classes.end() || it->second.count(hash) == 0)
+        return nullptr;
     return actor;
 }
 
@@ -116,8 +117,8 @@ int __cdecl core_box_cpp_CBoundingBox3D_isVisibleWithCamera_FUN_00420680(CBoundi
     return stand.visible_with_camera;
 }
 
-CDemonCube *__cdecl core_dtrace_cpp_CDemonRaytrace_getCubeAt_FUN_004952b0(CDemonRaytrace *,
-                                                                          int x, int y, int z) {
+CDemonCube *__cdecl core_dtrace_cpp_CDemonRaytrace_getCubeAt_FUN_004952b0(CDemonRaytrace *, int x,
+                                                                          int y, int z) {
     auto it = stand.cubes.find(std::make_tuple(x, y, z));
     return it == stand.cubes.end() ? nullptr : it->second;
 }
@@ -130,22 +131,27 @@ int __cdecl core_event_cpp_CEventList_evaluateCondition_FUN_004adca0(CEventList 
 
 // The ground a unit below the probe, less the radius.
 float __cdecl core_setcolid_cpp_CDemonSet_processCollisionTypes_FUN_005716b0(CDemonSet *,
-                                                                            CVector3f *position,
-                                                                            float radius) {
+                                                                             CVector3f *position,
+                                                                             float radius) {
     return position->y - 1.0f - radius;
 }
 
 // --- the shims ---------------------------------------------------------------
 
-CHero *nocturne_hero_local(void) { return stand.local_hero; }
+CHero *nocturne_hero_local(void) {
+    return stand.local_hero;
+}
 
 extern "C" {
 
-int nocturne_gl_is_active(void) { return stand.gl_active; }
+int nocturne_gl_is_active(void) {
+    return stand.gl_active;
+}
 
 // A 2x1 frame, red then blue.
 int nocturne_gl_read_front(unsigned char **out_rgb, int *out_width, int *out_height) {
-    if (stand.gl_read_result != 0) return stand.gl_read_result;
+    if (stand.gl_read_result != 0)
+        return stand.gl_read_result;
     unsigned char *rgb = (unsigned char *)malloc(6);
     const unsigned char pixels[6] = {255, 0, 0, 0, 0, 255};
     memcpy(rgb, pixels, 6);
@@ -172,4 +178,4 @@ int dump_support_SDL_RenderReadPixels(SDL_Renderer *, const SDL_Rect *, Uint32, 
     return stand.read_pixels_result;
 }
 
-}  // extern "C"
+} // extern "C"

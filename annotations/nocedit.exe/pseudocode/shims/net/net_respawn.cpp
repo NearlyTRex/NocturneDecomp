@@ -6,11 +6,10 @@
 // sim frame instead of applied where it is requested.
 
 #include "net/net_respawn.h"
-#include "shim_config.h"
-
-#include "nocturne.h"
 
 #include "core/debug_log.h"
+#include "nocturne.h"
+#include "shim_config.h"
 
 #include <cmath>
 #include <cstring>
@@ -38,7 +37,7 @@
 
 // Candidates are taken from rings around the host. The innermost clears two
 // hero radii, the outermost stays inside a room.
-static const float k_ring_radius[] = { 2.0f, 3.0f, 4.5f, 6.0f };
+static const float k_ring_radius[] = {2.0f, 3.0f, 4.5f, 6.0f};
 #define RESPAWN_RING_COUNT ((int)(sizeof(k_ring_radius) / sizeof(k_ring_radius[0])))
 #define RESPAWN_RING_STEPS 16
 
@@ -49,52 +48,50 @@ static const float k_ring_radius[] = { 2.0f, 3.0f, 4.5f, 6.0f };
 
 #pragma pack(push, 1)
 typedef struct SNetPacket_HeroRespawn {
-    SNetPacketHeader header;                  // 0x0
-    int   apply_sequence;                     // 0x5  sim frame to apply on
-    int   hero_count;                         // 0x9
-    int   area_id;                            // 0xd
-    float position[RESPAWN_MAX_HEROES][3];    // 0x11
-    float orient[3];                          // 0x41  shared facing
-    int   hero_mask;                          // 0x4d  bit i: g_HeroActors[i] respawns
-} SNetPacket_HeroRespawn;                     // 0x51
+    SNetPacketHeader header;               // 0x0
+    int apply_sequence;                    // 0x5  sim frame to apply on
+    int hero_count;                        // 0x9
+    int area_id;                           // 0xd
+    float position[RESPAWN_MAX_HEROES][3]; // 0x11
+    float orient[3];                       // 0x41  shared facing
+    int hero_mask;                         // 0x4d  bit i: g_HeroActors[i] respawns
+} SNetPacket_HeroRespawn;                  // 0x51
 #pragma pack(pop)
 
 static SNetPacket_HeroRespawn s_pending;
 static int s_have_pending = 0;
 
 static CVector3f s_placeholder_pos;
-static int       s_placeholder_area = 0;
-static int       s_have_placeholder = 0;
+static int s_placeholder_area = 0;
+static int s_have_placeholder = 0;
 
 // The host's last position standing alive on floor, for reviving the host when
 // the place it died is not survivable (a pit). Host-side only: the positions it
 // feeds are broadcast, so no other machine needs it.
 #define RESPAWN_SAFE_SAMPLE_FRAMES 10
 static CVector3f s_safe_pos;
-static int       s_safe_area = 0;
-static int       s_have_safe = 0;
+static int s_safe_area = 0;
+static int s_have_safe = 0;
 
 // =============================================================================
 // Placeholder capture
 // =============================================================================
 
-extern "C" void nocturne_net_respawn_note_placeholder(float x, float y, float z, int area_id)
-{
+extern "C" void nocturne_net_respawn_note_placeholder(float x, float y, float z, int area_id) {
     if (s_have_placeholder) {
-        return;                 // first placeholder of the mission wins
+        return; // first placeholder of the mission wins
     }
     s_placeholder_pos.x = x;
     s_placeholder_pos.y = y;
     s_placeholder_pos.z = z;
-    s_placeholder_area  = area_id;
-    s_have_placeholder  = 1;
+    s_placeholder_area = area_id;
+    s_have_placeholder = 1;
 }
 
-extern "C" void nocturne_net_respawn_clear_placeholder(void)
-{
+extern "C" void nocturne_net_respawn_clear_placeholder(void) {
     s_have_placeholder = 0;
-    s_have_pending     = 0;
-    s_have_safe        = 0;
+    s_have_pending = 0;
+    s_have_safe = 0;
 }
 
 // =============================================================================
@@ -111,16 +108,15 @@ extern "C" void nocturne_net_respawn_clear_placeholder(void)
 // for a NaN probe position, which is worth refusing on the same grounds.
 #define RESPAWN_SWEEP_DEPTH 10.0f
 
-static int respawn_ground_height(const CVector3f *p, float radius, float *out_y)
-{
+static int respawn_ground_height(const CVector3f *p, float radius, float *out_y) {
     CVector3f probe = *p;
-    float height = core_setcolid_cpp_CDemonSet_processCollisionTypes_FUN_005716b0
-                       (g_CDemonSetPtr, &probe, radius);
+    float height = core_setcolid_cpp_CDemonSet_processCollisionTypes_FUN_005716b0(g_CDemonSetPtr,
+                                                                                  &probe, radius);
     if (height != height) {
         return 0;
     }
     if (height <= ((p->y - RESPAWN_SWEEP_DEPTH) + 0.01f)) {
-        return 0;                   // sweep bottomed out — a hole, or off the set
+        return 0; // sweep bottomed out — a hole, or off the set
     }
     *out_y = height;
     return 1;
@@ -135,8 +131,7 @@ static int respawn_ground_height(const CVector3f *p, float radius, float *out_y)
 // positive view depth — so `0 < z` is an exact visibility test rather than a
 // heuristic. Screen coordinates are 16.16 fixed point (see
 // CDemonCamera::beginScene, which offsets them by shake * 0x10000).
-static int respawn_screen_offset(const CVector3f *p, float *out_offset)
-{
+static int respawn_screen_offset(const CVector3f *p, float *out_offset) {
     CDemonCamera *camera = &g_CDemonCameraInstance;
     CVector3i world_fixed;
     CVector3i screen_fixed;
@@ -152,8 +147,8 @@ static int respawn_screen_offset(const CVector3f *p, float *out_offset)
     world_fixed.x = (int)ROUND(p->x * 256.0f);
     world_fixed.y = (int)ROUND(p->y * 256.0f);
     world_fixed.z = (int)ROUND(p->z * 256.0f);
-    core_dcamera_cpp_CDemonCamera_worldToScreenWithFrustumCull_FUN_0044d7d0
-        (camera, &world_fixed, &screen_fixed);
+    core_dcamera_cpp_CDemonCamera_worldToScreenWithFrustumCull_FUN_0044d7d0(camera, &world_fixed,
+                                                                            &screen_fixed);
     if (screen_fixed.z < 1) {
         return 0;
     }
@@ -175,27 +170,23 @@ static int respawn_screen_offset(const CVector3f *p, float *out_offset)
 // =============================================================================
 
 // 1 when nothing solid lies between the two footings at RESPAWN_LINE_HEIGHT.
-static int respawn_clear_line(const CVector3f *from, const CVector3f *to)
-{
+static int respawn_clear_line(const CVector3f *from, const CVector3f *to) {
     CVector3f start = *from;
-    CVector3f end   = *to;
+    CVector3f end = *to;
 
     start.y = start.y + RESPAWN_LINE_HEIGHT;
-    end.y   = end.y + RESPAWN_LINE_HEIGHT;
-    return core_setcolid_cpp_CDemonSet_testVoxelRaycast_FUN_00572510
-               (g_CDemonSetPtr, &start, &end) == 0;
+    end.y = end.y + RESPAWN_LINE_HEIGHT;
+    return core_setcolid_cpp_CDemonSet_testVoxelRaycast_FUN_00572510(g_CDemonSetPtr, &start,
+                                                                     &end) == 0;
 }
 
 // A spot with floor that still kills whoever is revived on it: a script's
 // hazard volume. One check, so another hazard joins here.
-static int respawn_spot_is_trap(const CVector3f *feet)
-{
+static int respawn_spot_is_trap(const CVector3f *feet) {
     return nocturne_net_sim_spot_in_gas(feet) != 0;
 }
 
-static int respawn_too_close(const CVector3f *candidate,
-                             const CVector3f *taken, int taken_count)
-{
+static int respawn_too_close(const CVector3f *candidate, const CVector3f *taken, int taken_count) {
     float min_gap = RESPAWN_HERO_RADIUS * 2.5f;
     int i;
 
@@ -211,14 +202,12 @@ static int respawn_too_close(const CVector3f *candidate,
 
 // Ring search around the host, scored towards the middle of the camera's frame.
 // Returns 0 when nothing qualifies, leaving the caller to fall back.
-static int respawn_find_spot(const CVector3f *anchor, float anchor_ground,
-                             const CVector3f *taken, int taken_count,
-                             CVector3f *out)
-{
+static int respawn_find_spot(const CVector3f *anchor, float anchor_ground, const CVector3f *taken,
+                             int taken_count, CVector3f *out) {
     float best_score = 0.0f;
-    int   found = 0;
-    int   ring;
-    int   step;
+    int found = 0;
+    int ring;
+    int step;
 
     for (ring = 0; ring < RESPAWN_RING_COUNT; ring++) {
         float radius = k_ring_radius[ring];
@@ -235,26 +224,26 @@ static int respawn_find_spot(const CVector3f *anchor, float anchor_ground,
             candidate.z = anchor->z + sinf(angle) * radius;
 
             if (respawn_ground_height(&candidate, RESPAWN_HERO_RADIUS, &ground_y) == 0) {
-                continue;                       // no floor — a hole or off the set
+                continue; // no floor — a hole or off the set
             }
             if (RESPAWN_MAX_STEP < fabsf(ground_y - anchor_ground)) {
-                continue;                       // a ledge or a shaft
+                continue; // a ledge or a shaft
             }
             candidate.y = ground_y;
 
             if (respawn_spot_is_trap(&candidate) != 0) {
-                continue;                       // floor inside a hazard
+                continue; // floor inside a hazard
             }
             if (respawn_too_close(&candidate, taken, taken_count) != 0) {
                 continue;
             }
-            footing   = *anchor;
+            footing = *anchor;
             footing.y = anchor_ground;
             if (respawn_clear_line(&footing, &candidate) == 0) {
-                continue;                       // behind a wall from the host
+                continue; // behind a wall from the host
             }
             if (respawn_screen_offset(&candidate, &offset) == 0) {
-                continue;                       // behind or outside the camera
+                continue; // behind or outside the camera
             }
 
             // Centre of frame dominates; the ring index only breaks ties, so a
@@ -274,13 +263,11 @@ static int respawn_find_spot(const CVector3f *anchor, float anchor_ground,
 // Scheduling and transport
 // =============================================================================
 
-static void respawn_broadcast(void)
-{
+static void respawn_broadcast(void) {
     nocturne_net_session_broadcast(&s_pending.header);
 }
 
-extern "C" int nocturne_net_respawn_available(void)
-{
+extern "C" int nocturne_net_respawn_available(void) {
     if ((nocturne_net_session_is_host() == 0) || (nocturne_net_session_playing() == 0)) {
         return 0;
     }
@@ -291,17 +278,15 @@ extern "C" int nocturne_net_respawn_available(void)
     return (1 < g_CNetGamePtr->player_count);
 }
 
-static int respawn_hero_alive(CHero *hero)
-{
+static int respawn_hero_alive(CHero *hero) {
     return (hero != (CHero *)0x0) && (0.0f < (hero->base).hit_points) &&
            ((hero->base).base.lifecycle_state != ACTOR_DESTROYED) &&
            (0 <= (hero->base).base.location.area_id);
 }
 
-extern "C" int nocturne_net_respawn_world_area(void)
-{
+extern "C" int nocturne_net_respawn_world_area(void) {
     CHero *local_hero;
-    int    i;
+    int i;
 
     if ((g_LocalHeroIndex < 0) || (RESPAWN_MAX_HEROES <= g_LocalHeroIndex)) {
         return 0;
@@ -322,8 +307,7 @@ extern "C" int nocturne_net_respawn_world_area(void)
     return 0;
 }
 
-extern "C" int nocturne_net_respawn_hero_in_world(CHero *hero)
-{
+extern "C" int nocturne_net_respawn_hero_in_world(CHero *hero) {
     if (hero == (CHero *)0x0) {
         return 0;
     }
@@ -340,17 +324,16 @@ extern "C" int nocturne_net_respawn_hero_in_world(CHero *hero)
     return (0 <= (hero->base).base.location.area_id) ? 1 : 0;
 }
 
-extern "C" int nocturne_net_respawn_request(int include_guests)
-{
-    CHero    *anchor;
+extern "C" int nocturne_net_respawn_request(int include_guests) {
+    CHero *anchor;
     CVector3f anchor_pos;
-    int       anchor_area;
-    int       anchor_index;
+    int anchor_area;
+    int anchor_index;
     CVector3f taken[RESPAWN_MAX_HEROES];
-    int       taken_count = 0;
-    float     anchor_ground;
-    int       hero_count;
-    int       i;
+    int taken_count = 0;
+    float anchor_ground;
+    int hero_count;
+    int i;
 
     if (nocturne_net_respawn_available() == 0) {
         return 0;
@@ -381,18 +364,16 @@ extern "C" int nocturne_net_respawn_request(int include_guests)
     if (anchor == (CHero *)0x0) {
         return 0;
     }
-    anchor_pos  = (anchor->base).base.location.position;
+    anchor_pos = (anchor->base).base.location.position;
     anchor_area = (anchor->base).base.location.area_id;
     if (0 <= anchor_index) {
-        anchor_pos  = (g_HeroActors[anchor_index]->base).base.location.position;
+        anchor_pos = (g_HeroActors[anchor_index]->base).base.location.position;
         anchor_area = (g_HeroActors[anchor_index]->base).base.location.area_id;
-    }
-    else if (s_have_safe != 0) {
-        anchor_pos  = s_safe_pos;
+    } else if (s_have_safe != 0) {
+        anchor_pos = s_safe_pos;
         anchor_area = s_safe_area;
-    }
-    else if (s_have_placeholder != 0) {
-        anchor_pos  = s_placeholder_pos;
+    } else if (s_have_placeholder != 0) {
+        anchor_pos = s_placeholder_pos;
         anchor_area = s_placeholder_area;
     }
 
@@ -401,11 +382,11 @@ extern "C" int nocturne_net_respawn_request(int include_guests)
     }
 
     nocturne_net_packet_init(&s_pending, (int)sizeof(s_pending), NOCTURNE_NET_PACKET_RESPAWN);
-    s_pending.hero_count  = hero_count;
-    s_pending.area_id     = anchor_area;
-    s_pending.orient[0]   = (anchor->base).base.orient.vec.x;
-    s_pending.orient[1]   = (anchor->base).base.orient.vec.y;
-    s_pending.orient[2]   = (anchor->base).base.orient.vec.z;
+    s_pending.hero_count = hero_count;
+    s_pending.area_id = anchor_area;
+    s_pending.orient[0] = (anchor->base).base.orient.vec.x;
+    s_pending.orient[1] = (anchor->base).base.orient.vec.y;
+    s_pending.orient[2] = (anchor->base).base.orient.vec.z;
 
     // A guest left where it is still occupies its spot, so the host is not
     // placed on top of it.
@@ -413,14 +394,14 @@ extern "C" int nocturne_net_respawn_request(int include_guests)
         for (i = 0; i < hero_count; i++) {
             if ((i != g_LocalHeroIndex) && (respawn_hero_alive(g_HeroActors[i]) != 0)) {
                 taken[taken_count] = (g_HeroActors[i]->base).base.location.position;
-                taken_count        = taken_count + 1;
+                taken_count = taken_count + 1;
             }
         }
     }
 
     for (i = 0; i < hero_count; i++) {
-        CHero      *hero = g_HeroActors[i];
-        CVector3f   spot;
+        CHero *hero = g_HeroActors[i];
+        CVector3f spot;
         const char *source = "ring";
 
         if (hero == (CHero *)0x0) {
@@ -431,11 +412,9 @@ extern "C" int nocturne_net_respawn_request(int include_guests)
         }
         s_pending.hero_mask = s_pending.hero_mask | (1 << i);
         if ((i == anchor_index) || ((anchor_index < 0) && (i == g_LocalHeroIndex))) {
-            spot   = anchor_pos;
+            spot = anchor_pos;
             source = "anchor";
-        }
-        else if (respawn_find_spot(&anchor_pos, anchor_ground,
-                                   taken, taken_count, &spot) == 0) {
+        } else if (respawn_find_spot(&anchor_pos, anchor_ground, taken, taken_count, &spot) == 0) {
             // The host's last safe footing is never in a hazard; another hero
             // takes it too when it is clear of the anchor and the heroes
             // placed so far, as when the anchor stands in a hazard of its own.
@@ -443,28 +422,27 @@ extern "C" int nocturne_net_respawn_request(int include_guests)
                 ((i == g_LocalHeroIndex) ||
                  ((respawn_too_close(&s_safe_pos, &anchor_pos, 1) == 0) &&
                   (respawn_too_close(&s_safe_pos, taken, taken_count) == 0)))) {
-                spot              = s_safe_pos;
+                spot = s_safe_pos;
                 s_pending.area_id = s_safe_area;
-                source            = "safe";
+                source = "safe";
             }
             // Nothing near the anchor qualified. The mission's own placeholder
             // is the one spot a designer placed a hero on, so it is the safest
             // thing left to offer — even though it may be across the map.
             else if (s_have_placeholder != 0) {
-                spot              = s_placeholder_pos;
+                spot = s_placeholder_pos;
                 s_pending.area_id = s_placeholder_area;
-                source            = "placeholder";
-            }
-            else {
-                spot   = anchor_pos;
+                source = "placeholder";
+            } else {
+                spot = anchor_pos;
                 source = "anchor";
             }
         }
         DLOG("netplay", "respawn hero %d at (%.2f, %.2f, %.2f) from %s, anchor (%.2f, %.2f, %.2f)",
-                i, spot.x, spot.y, spot.z, source, anchor_pos.x, anchor_pos.y, anchor_pos.z);
+             i, spot.x, spot.y, spot.z, source, anchor_pos.x, anchor_pos.y, anchor_pos.z);
 
         taken[taken_count] = spot;
-        taken_count        = taken_count + 1;
+        taken_count = taken_count + 1;
 
         s_pending.position[i][0] = spot.x;
         s_pending.position[i][1] = spot.y;
@@ -475,13 +453,12 @@ extern "C" int nocturne_net_respawn_request(int include_guests)
     s_have_pending = 1;
     respawn_broadcast();
 
-    DLOG("netplay", "respawn of %d heroes scheduled for sim frame %d",
-            hero_count, s_pending.apply_sequence);
+    DLOG("netplay", "respawn of %d heroes scheduled for sim frame %d", hero_count,
+         s_pending.apply_sequence);
     return 1;
 }
 
-extern "C" int nocturne_net_respawn_on_packet(const void *packet, int packet_size)
-{
+extern "C" int nocturne_net_respawn_on_packet(const void *packet, int packet_size) {
     const SNetPacket_HeroRespawn *incoming = (const SNetPacket_HeroRespawn *)packet;
 
     if (nocturne_net_packet_is(packet, packet_size, NOCTURNE_NET_PACKET_RESPAWN,
@@ -490,7 +467,7 @@ extern "C" int nocturne_net_respawn_on_packet(const void *packet, int packet_siz
     }
 
     // Re-sent every frame until it is due, so this is normally a duplicate.
-    s_pending      = *incoming;
+    s_pending = *incoming;
     s_have_pending = 1;
     return 1;
 }
@@ -499,42 +476,40 @@ extern "C" int nocturne_net_respawn_on_packet(const void *packet, int packet_siz
 // Application — the one hook both the server and client frame paths share
 // =============================================================================
 
-static void respawn_sample_safe(int sequence_number)
-{
+static void respawn_sample_safe(int sequence_number) {
     CHero *hero;
-    float  ground_y;
+    float ground_y;
 
     if ((nocturne_net_session_is_host() == 0) ||
-        ((sequence_number % RESPAWN_SAFE_SAMPLE_FRAMES) != 0) ||
-        (g_LocalHeroIndex < 0) || (RESPAWN_MAX_HEROES <= g_LocalHeroIndex)) {
+        ((sequence_number % RESPAWN_SAFE_SAMPLE_FRAMES) != 0) || (g_LocalHeroIndex < 0) ||
+        (RESPAWN_MAX_HEROES <= g_LocalHeroIndex)) {
         return;
     }
     hero = g_HeroActors[g_LocalHeroIndex];
     if (respawn_hero_alive(hero) == 0) {
         return;
     }
-    if (respawn_ground_height(&(hero->base).base.location.position,
-                              RESPAWN_HERO_RADIUS, &ground_y) == 0) {
+    if (respawn_ground_height(&(hero->base).base.location.position, RESPAWN_HERO_RADIUS,
+                              &ground_y) == 0) {
         return;
     }
     if (0.25f < fabsf((hero->base).base.location.position.y - ground_y)) {
-        return;                         // airborne: jumping, or already falling
+        return; // airborne: jumping, or already falling
     }
     {
         CVector3f feet = (hero->base).base.location.position;
         feet.y = ground_y;
         if (respawn_spot_is_trap(&feet) != 0) {
-            return;                     // alive in a hazard only for now
+            return; // alive in a hazard only for now
         }
     }
-    s_safe_pos   = (hero->base).base.location.position;
+    s_safe_pos = (hero->base).base.location.position;
     s_safe_pos.y = ground_y;
-    s_safe_area  = (hero->base).base.location.area_id;
-    s_have_safe  = 1;
+    s_safe_area = (hero->base).base.location.area_id;
+    s_have_safe = 1;
 }
 
-extern "C" void nocturne_net_respawn_apply_if_due(int sequence_number)
-{
+extern "C" void nocturne_net_respawn_apply_if_due(int sequence_number) {
     int i;
 
     respawn_sample_safe(sequence_number);
@@ -543,7 +518,7 @@ extern "C" void nocturne_net_respawn_apply_if_due(int sequence_number)
     }
     if (sequence_number < s_pending.apply_sequence) {
         if (nocturne_net_session_is_host() != 0) {
-            respawn_broadcast();        // UDP: a lost respawn would be a desync
+            respawn_broadcast(); // UDP: a lost respawn would be a desync
         }
         return;
     }
@@ -552,10 +527,10 @@ extern "C" void nocturne_net_respawn_apply_if_due(int sequence_number)
     // and since the positions are absolute both machines converge on the same
     // state either way.
     for (i = 0; i < s_pending.hero_count; i++) {
-        CHero    *hero = g_HeroActors[i];
+        CHero *hero = g_HeroActors[i];
         CVector3f position;
         CVector3f orient;
-        int       revived;
+        int revived;
 
         if ((hero == (CHero *)0x0) || ((s_pending.hero_mask & (1 << i)) == 0)) {
             continue;
@@ -563,9 +538,9 @@ extern "C" void nocturne_net_respawn_apply_if_due(int sequence_number)
         position.x = s_pending.position[i][0];
         position.y = s_pending.position[i][1];
         position.z = s_pending.position[i][2];
-        orient.x   = s_pending.orient[0];
-        orient.y   = s_pending.orient[1];
-        orient.z   = s_pending.orient[2];
+        orient.x = s_pending.orient[0];
+        orient.y = s_pending.orient[1];
+        orient.z = s_pending.orient[2];
 
         // Arcade continue, applied on the same sim frame on every machine,
         // exactly like the move.
@@ -583,8 +558,8 @@ extern "C" void nocturne_net_respawn_apply_if_due(int sequence_number)
             (*(((hero->base).base.vtable._uc)->_uc).releaseFromGrab)(&hero->base);
         }
 
-        (*((hero->base).base.vtable._ub)->setPositionAndOrientation)
-            (&(hero->base).base, &position, &orient);
+        (*((hero->base).base.vtable._ub)->setPositionAndOrientation)(&(hero->base).base, &position,
+                                                                     &orient);
 
         // CStranger::renderOpaque frees the coat once it draws him with his
         // torso gone, so only a machine that saw the body has lost it. Rebuild
@@ -593,14 +568,14 @@ extern "C" void nocturne_net_respawn_apply_if_due(int sequence_number)
         if ((revived != 0) && ((hero->base).cloth_list.count == 0) &&
             (core_actor_cpp_castToClassHash_FUN_0040c790(
                  &(hero->base).base, g_CStrangerClassInfo.name_hash) != (CDemonActor *)0x0)) {
-            core_cloth_cpp_CClothList_add_FUN_0043c0f0
-                (&(hero->base).cloth_list, (char *)"strcoat.cth");
+            core_cloth_cpp_CClothList_add_FUN_0043c0f0(&(hero->base).cloth_list,
+                                                       (char *)"strcoat.cth");
             core_cloth_cpp_CClothList_load_FUN_0043bfa0(&(hero->base).cloth_list);
-            core_cloth_cpp_CClothList_setup_FUN_0043c290
-                (&(hero->base).cloth_list, &position, &orient, &(hero->base).model);
-            core_cloth_cpp_CClothList_process_FUN_0043c2d0
-                (&(hero->base).cloth_list, &position, &orient, 0.05f,
-                 (hero->base).closest_distance_threshold, &(hero->base).model);
+            core_cloth_cpp_CClothList_setup_FUN_0043c290(&(hero->base).cloth_list, &position,
+                                                         &orient, &(hero->base).model);
+            core_cloth_cpp_CClothList_process_FUN_0043c2d0(
+                &(hero->base).cloth_list, &position, &orient, 0.05f,
+                (hero->base).closest_distance_threshold, &(hero->base).model);
         }
 
         // A hero created for a network guest is held out of the world with a
@@ -630,23 +605,21 @@ extern "C" void nocturne_net_respawn_apply_if_due(int sequence_number)
     DLOG("netplay", "respawn applied on sim frame %d", sequence_number);
 }
 
-extern "C" int nocturne_net_host_death_menu(void)
-{
+extern "C" int nocturne_net_host_death_menu(void) {
     CPickList list;
-    int       can_continue = nocturne_net_respawn_available();
-    int       choice;
+    int can_continue = nocturne_net_respawn_available();
+    int choice;
 
     shape_edittool_cpp_CPickList_ctor_FUN_004a3b90(&list);
     if (can_continue != 0) {
-        shape_edittool_cpp_CStrList_add_FUN_004a2b80
-            (&list.base, support_newmsg_cpp_getLocalizedString_FUN_005441f0((char *)"Continue"));
+        shape_edittool_cpp_CStrList_add_FUN_004a2b80(
+            &list.base, support_newmsg_cpp_getLocalizedString_FUN_005441f0((char *)"Continue"));
     }
-    shape_edittool_cpp_CStrList_add_FUN_004a2b80
-        (&list.base, support_newmsg_cpp_getLocalizedString_FUN_005441f0((char *)"Quit"));
+    shape_edittool_cpp_CStrList_add_FUN_004a2b80(
+        &list.base, support_newmsg_cpp_getLocalizedString_FUN_005441f0((char *)"Quit"));
     do {
-        choice = shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20
-            (&list, support_newmsg_cpp_getLocalizedString_FUN_005441f0((char *)"Game Over"),
-             -1, 0);
+        choice = shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20(
+            &list, support_newmsg_cpp_getLocalizedString_FUN_005441f0((char *)"Game Over"), -1, 0);
     } while (choice < 0);
     shape_edittool_cpp_CPickList_dtor_FUN_004a3c80(&list, 0);
 
@@ -657,24 +630,30 @@ extern "C" int nocturne_net_host_death_menu(void)
     return 0;
 }
 
-#else  /* NOCTURNE_AUTHENTIC_NETPLAY */
+#else /* NOCTURNE_AUTHENTIC_NETPLAY */
 
 extern "C" void nocturne_net_respawn_note_placeholder(float, float, float, int) {}
 extern "C" void nocturne_net_respawn_clear_placeholder(void) {}
-extern "C" int  nocturne_net_respawn_available(void) { return 0; }
+extern "C" int nocturne_net_respawn_available(void) {
+    return 0;
+}
 /* Authentic mode never holds a hero, so the local hero's own area always
    applies — but the callers read it through this, so answer honestly. */
-extern "C" int  nocturne_net_respawn_world_area(void)
-{
+extern "C" int nocturne_net_respawn_world_area(void) {
     return (g_HeroActors[g_LocalHeroIndex]->base).base.location.area_id;
 }
-extern "C" int  nocturne_net_respawn_hero_in_world(CHero *hero)
-{
+extern "C" int nocturne_net_respawn_hero_in_world(CHero *hero) {
     return (hero != (CHero *)0x0) ? 1 : 0;
 }
-extern "C" int  nocturne_net_respawn_request(int) { return 0; }
-extern "C" int  nocturne_net_respawn_on_packet(const void *, int) { return 0; }
+extern "C" int nocturne_net_respawn_request(int) {
+    return 0;
+}
+extern "C" int nocturne_net_respawn_on_packet(const void *, int) {
+    return 0;
+}
 extern "C" void nocturne_net_respawn_apply_if_due(int) {}
-extern "C" int  nocturne_net_host_death_menu(void) { return 0; }
+extern "C" int nocturne_net_host_death_menu(void) {
+    return 0;
+}
 
 #endif /* NOCTURNE_AUTHENTIC_NETPLAY */

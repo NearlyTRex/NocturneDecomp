@@ -12,20 +12,17 @@ namespace {
 
 const int kPaletteEntries = 256;
 
-}  // namespace
+} // namespace
 
 void nocturne_trigl_pack_palette(const unsigned char *palette, unsigned *out) {
     for (int i = 0; i < kPaletteEntries; ++i) {
         const unsigned char *entry = palette + (ptrdiff_t)i * 3;
-        out[i] = ((unsigned)entry[0] << 16) |
-                 ((unsigned)entry[1] << 8) |
-                 (unsigned)entry[2];
+        out[i] = ((unsigned)entry[0] << 16) | ((unsigned)entry[1] << 8) | (unsigned)entry[2];
     }
 }
 
 void nocturne_trigl_expand_texture(const unsigned char *indices, int pixel_count,
-                                   const unsigned *packed_palette,
-                                   const unsigned char *opacity,
+                                   const unsigned *packed_palette, const unsigned char *opacity,
                                    unsigned *out) {
     if (opacity != nullptr) {
         // Explicit alpha for every texel. No colour is special here, so a

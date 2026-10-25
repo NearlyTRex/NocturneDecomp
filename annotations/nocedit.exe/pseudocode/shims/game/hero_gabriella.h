@@ -417,10 +417,15 @@ void nocturne_hero_gabriella_render_carry_arc(struct CGabriella *gabriella);
 // and ejects the shell partway through it.
 void nocturne_hero_gabriella_fire_tick(struct CGabriella *gabriella, float delta_time);
 
+// Puts every hero slot's throw, switch, pump, mask, ladder and buffered
+// presses back at rest. Called as a mission builds its heroes, so nothing in
+// motion when the last one ended carries into the next.
+void nocturne_hero_gabriella_reset(void);
+
 #ifdef __cplusplus
 }
 #endif
 
 #define NOCTURNE_GABRIELLA_STRAFE_RATE 2.0f
 #define NOCTURNE_GABRIELLA_LADDER_RATE 1.75f
-#define NOCTURNE_GABRIELLA_TURN_RATE   0.8f
+#define NOCTURNE_GABRIELLA_TURN_RATE 0.8f

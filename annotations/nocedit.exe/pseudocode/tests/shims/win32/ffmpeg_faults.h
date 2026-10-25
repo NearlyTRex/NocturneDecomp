@@ -18,4 +18,4 @@ void fail(const char *name, int pass = 0);
 // Nothing fails.
 void reset();
 
-}  // namespace ffmpeg_faults
+} // namespace ffmpeg_faults

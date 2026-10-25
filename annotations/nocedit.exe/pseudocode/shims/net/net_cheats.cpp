@@ -6,12 +6,11 @@
 // why the host's wins rather than the join being refused.
 
 #include "net/net_cheats.h"
-#include "game/cheats.h"
-#include "shim_config.h"
-
-#include "nocturne.h"
 
 #include "core/debug_log.h"
+#include "game/cheats.h"
+#include "nocturne.h"
+#include "shim_config.h"
 
 #include <cstring>
 
@@ -19,10 +18,10 @@
 
 #pragma pack(push, 1)
 typedef struct SNetPacket_Cheats {
-    SNetPacketHeader header;                    // 0x0
-    int   count;                                // 0x5  how many bytes are real
-    unsigned char state[NOCTURNE_CHEAT_COUNT];  // 0x9  one per cheat
-    int   auto_use_health;                      //      the host's CGame::auto_use_health
+    SNetPacketHeader header;                   // 0x0
+    int count;                                 // 0x5  how many bytes are real
+    unsigned char state[NOCTURNE_CHEAT_COUNT]; // 0x9  one per cheat
+    int auto_use_health;                       //      the host's CGame::auto_use_health
 } SNetPacket_Cheats;
 #pragma pack(pop)
 
@@ -33,28 +32,26 @@ static int s_host_auto_use_health = -1;
 // at each of two points cannot realistically all be.
 #define CHEATS_SEND_REPEATS 3
 
-extern "C" void nocturne_net_cheats_announce(void)
-{
+extern "C" void nocturne_net_cheats_announce(void) {
     SNetPacket_Cheats packet;
-    int               repeat;
+    int repeat;
 
     if (nocturne_net_session_is_host() == 0) {
         return;
     }
 
     nocturne_net_packet_init(&packet, (int)sizeof(packet), NOCTURNE_NET_PACKET_CHEATS);
-    packet.count       = nocturne_cheats_pack(packet.state, (int)sizeof(packet.state));
+    packet.count = nocturne_cheats_pack(packet.state, (int)sizeof(packet.state));
     packet.auto_use_health = g_CGamePtr->auto_use_health;
 
     for (repeat = 0; repeat < CHEATS_SEND_REPEATS; repeat++) {
         nocturne_net_session_broadcast(&packet.header);
     }
-    DLOG("netplay", "CHEATS announce count=%d auto_use_health=%d",
-            packet.count, packet.auto_use_health);
+    DLOG("netplay", "CHEATS announce count=%d auto_use_health=%d", packet.count,
+         packet.auto_use_health);
 }
 
-extern "C" void nocturne_net_cheats_reset(void)
-{
+extern "C" void nocturne_net_cheats_reset(void) {
     if (nocturne_cheats_override_active() != 0) {
         DLOG("netplay", "CHEATS override dropped");
     }
@@ -62,8 +59,7 @@ extern "C" void nocturne_net_cheats_reset(void)
     s_host_auto_use_health = -1;
 }
 
-extern "C" int nocturne_net_cheats_auto_use_health(void)
-{
+extern "C" int nocturne_net_cheats_auto_use_health(void) {
     if (nocturne_net_session_active() && (nocturne_net_session_is_host() == 0) &&
         (0 <= s_host_auto_use_health)) {
         return s_host_auto_use_health;
@@ -71,8 +67,7 @@ extern "C" int nocturne_net_cheats_auto_use_health(void)
     return g_CGamePtr->auto_use_health;
 }
 
-extern "C" int nocturne_net_cheats_on_packet(const void *packet, int packet_size)
-{
+extern "C" int nocturne_net_cheats_on_packet(const void *packet, int packet_size) {
     const SNetPacket_Cheats *in = (const SNetPacket_Cheats *)packet;
 
     if (nocturne_net_packet_is(packet, packet_size, NOCTURNE_NET_PACKET_CHEATS,
@@ -86,8 +81,8 @@ extern "C" int nocturne_net_cheats_on_packet(const void *packet, int packet_size
     // count. Applying a short list would silently arm the wrong lines, so the
     // guest keeps its own and lets the desync detector speak instead.
     if (in->count != NOCTURNE_CHEAT_COUNT) {
-        DLOG("netplay", "CHEATS ignored: host sent %d entries, this build has %d",
-                in->count, NOCTURNE_CHEAT_COUNT);
+        DLOG("netplay", "CHEATS ignored: host sent %d entries, this build has %d", in->count,
+             NOCTURNE_CHEAT_COUNT);
         return 1;
     }
 
@@ -98,23 +93,17 @@ extern "C" int nocturne_net_cheats_on_packet(const void *packet, int packet_size
 
 #else
 
-extern "C" void nocturne_net_cheats_announce(void)
-{
-}
+extern "C" void nocturne_net_cheats_announce(void) {}
 
-extern "C" void nocturne_net_cheats_reset(void)
-{
-}
+extern "C" void nocturne_net_cheats_reset(void) {}
 
-extern "C" int nocturne_net_cheats_on_packet(const void *packet, int packet_size)
-{
+extern "C" int nocturne_net_cheats_on_packet(const void *packet, int packet_size) {
     (void)packet;
     (void)packet_size;
     return 0;
 }
 
-extern "C" int nocturne_net_cheats_auto_use_health(void)
-{
+extern "C" int nocturne_net_cheats_auto_use_health(void) {
     return g_CGamePtr->auto_use_health;
 }
 

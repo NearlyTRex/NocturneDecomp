@@ -2,10 +2,9 @@
 // MENU FONT, SAVED — a run after the first reads the small font back
 // =============================================================================
 
-#include "nocturne_test.h"
 #include "../gl/ini_support.h"
-
 #include "core/menu_font.h"
+#include "nocturne_test.h"
 
 #include <filesystem>
 #include <system_error>

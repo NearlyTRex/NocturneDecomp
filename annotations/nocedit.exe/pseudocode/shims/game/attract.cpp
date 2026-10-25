@@ -5,6 +5,7 @@
 // in game globals.
 
 #include "game/attract.h"
+
 #include "core/clock.h"
 #include "core/debug_log.h"
 
@@ -106,8 +107,8 @@ extern "C" void nocturne_attract_set_music_duration(float seconds) {
         s_music_period = 0.0;
         s_armed = 0;
     }
-    DLOG("frontend", "music_duration=%.2fs armed=%d (opening_played=%d)",
-            (double)seconds, s_armed, s_opening_played);
+    DLOG("frontend", "music_duration=%.2fs armed=%d (opening_played=%d)", (double)seconds, s_armed,
+         s_opening_played);
 }
 
 extern "C" int nocturne_attract_tick(void) {
@@ -129,28 +130,27 @@ extern "C" int nocturne_attract_tick(void) {
     // The track reached the end of a pass behind a screen that blocked the menu
     // loop, so nobody was at the main menu to be shown a movie. The music has
     // already wrapped and is playing on; let this pass go and wait for the end
-    // of the one now running.
-    if (gap > kMenuAwayGapSeconds && s_music_period > 0.0) {
+    // of the one now running. Armed means a pass has a length.
+    if (gap > kMenuAwayGapSeconds) {
         skipped = 0;
         do {
             s_music_deadline += s_music_period;
             skipped = skipped + 1;
         } while (s_music_deadline <= now);
-        DLOG("frontend", "%d pass(es) ended behind a %.2fs gap; next in %.2fs",
-                skipped, gap, s_music_deadline - now);
+        DLOG("frontend", "%d pass(es) ended behind a %.2fs gap; next in %.2fs", skipped, gap,
+             s_music_deadline - now);
         return 0;
     }
 
     // Disarm so this fires once; the caller plays the movie and restarts the
     // music, and CSound::configure registers a fresh duration to re-arm.
     s_armed = 0;
-    DLOG("frontend", "fired %.2fs after arming (deadline was %.2fs after)",
-            now - s_armed_at, s_music_deadline - s_armed_at);
+    DLOG("frontend", "fired %.2fs after arming (deadline was %.2fs after)", now - s_armed_at,
+         s_music_deadline - s_armed_at);
     s_music_deadline = 0.0;
     return 1;
 }
 
 extern "C" void nocturne_attract_pre_movie_pause(void) {
-    std::this_thread::sleep_for(
-        std::chrono::duration<double>(kPreMovieSilenceSeconds));
+    std::this_thread::sleep_for(std::chrono::duration<double>(kPreMovieSilenceSeconds));
 }

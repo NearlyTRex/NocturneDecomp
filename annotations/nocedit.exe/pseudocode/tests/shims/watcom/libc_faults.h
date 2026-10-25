@@ -11,7 +11,7 @@
 
 namespace libc_faults {
 
-extern bool fail_next_fopencookie;  // returns NULL, as on ENOMEM
-extern bool fail_next_localtime;    // returns NULL, as for a time it cannot represent
+extern bool fail_next_fopencookie; // returns NULL, as on ENOMEM
+extern bool fail_next_localtime;   // returns NULL, as for a time it cannot represent
 
-}  // namespace libc_faults
+} // namespace libc_faults

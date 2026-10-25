@@ -3,11 +3,11 @@
 // =============================================================================
 
 #include "game/status_bar.h"
+
+#include "nocturne.h"
 #include "shim_config.h"
 
 #include <cmath>
-
-#include "nocturne.h"
 
 #if !NOCTURNE_AUTHENTIC_STATUS_BAR_WIDTH
 
@@ -20,15 +20,14 @@ const float kReferenceMaxHealth = 100.0f;
 const int kEntryCount = 8;
 
 struct Entry {
-    char  name[sizeof(((CCharacter *)0)->descriptive_name)];
+    char name[sizeof(((CCharacter *)0)->descriptive_name)];
     float scale;
 };
 
 Entry g_Entries[kEntryCount];
-int   g_NextEntry;
+int g_NextEntry;
 
-Entry *find_entry(char *name)
-{
+Entry *find_entry(char *name) {
     for (int i = 0; i < kEntryCount; i++) {
         // setStatusDisplay matches bar names with _stricmp, so this does too.
         if (g_Entries[i].name[0] != '\0' && _stricmp(g_Entries[i].name, name) == 0) {
@@ -40,8 +39,7 @@ Entry *find_entry(char *name)
 
 } // namespace
 
-extern "C" void nocturne_status_bar_note(CCharacter *character)
-{
+extern "C" void nocturne_status_bar_note(CCharacter *character) {
     Entry *entry;
 
     if (character->descriptive_name[0] == '\0' || !(0.0f < character->max_hit_points) ||
@@ -58,11 +56,10 @@ extern "C" void nocturne_status_bar_note(CCharacter *character)
     entry->scale = character->max_hit_points / kReferenceMaxHealth;
 }
 
-extern "C" int nocturne_status_bar_right(char *name, int left, int right)
-{
+extern "C" int nocturne_status_bar_right(char *name, int left, int right) {
     Entry *entry;
-    int    width;
-    int    limit;
+    int width;
+    int limit;
 
     entry = find_entry(name);
     if (entry == (Entry *)0) {
@@ -83,6 +80,8 @@ extern "C" int nocturne_status_bar_right(char *name, int left, int right)
 #else
 
 extern "C" void nocturne_status_bar_note(CCharacter *) {}
-extern "C" int nocturne_status_bar_right(char *, int, int right) { return right; }
+extern "C" int nocturne_status_bar_right(char *, int, int right) {
+    return right;
+}
 
 #endif // !NOCTURNE_AUTHENTIC_STATUS_BAR_WIDTH

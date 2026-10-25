@@ -26,10 +26,10 @@ extern "C" {
 #endif
 
 enum {
-    NOCTURNE_WINDOW_MODE_WINDOWED   = 0,
-    NOCTURNE_WINDOW_MODE_FULLSCREEN = 1,  // real mode-setting fullscreen
-    NOCTURNE_WINDOW_MODE_BORDERLESS = 2,  // desktop-sized, no decorations
-    NOCTURNE_WINDOW_MODE_COUNT      = 3
+    NOCTURNE_WINDOW_MODE_WINDOWED = 0,
+    NOCTURNE_WINDOW_MODE_FULLSCREEN = 1, // real mode-setting fullscreen
+    NOCTURNE_WINDOW_MODE_BORDERLESS = 2, // desktop-sized, no decorations
+    NOCTURNE_WINDOW_MODE_COUNT = 3
 };
 
 // 1 where the window is the whole screen and nothing may size it: a console, a

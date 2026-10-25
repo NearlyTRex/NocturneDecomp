@@ -5,6 +5,7 @@
 // See hero_grab.h for why only the Stranger had this.
 
 #include "game/hero_grab.h"
+
 #include "nocturne.h"
 
 #if !NOCTURNE_AUTHENTIC_HERO_ACTIONS
@@ -25,7 +26,7 @@ const float k_hold_seconds = 1.5f;
 struct SGrabHold {
     CHero *hero;
     float held_for;
-    int escaping;   // the escape motion has been asked for
+    int escaping; // the escape motion has been asked for
 };
 
 // Past this, a hero not yet in GETGRABBED is put there directly; the class's
@@ -37,34 +38,28 @@ const float k_snap_seconds = 0.3f;
 // "gab hug begin" reaches after 2.5 seconds.
 const float k_escape_limit_seconds = 3.0f;
 
-CMotionController *controller(CHero *hero)
-{
+CMotionController *controller(CHero *hero) {
     return &(hero->base).model.base;
 }
 
-int find_state(CHero *hero, const char *name)
-{
+int find_state(CHero *hero, const char *name) {
     return nocturne_hero_motion_find_state(&hero->base, name);
 }
 
-SMotion *current_motion(CHero *hero)
-{
+SMotion *current_motion(CHero *hero) {
     return core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0(controller(hero));
 }
 
-float state_weight(CHero *hero, int state)
-{
-    if (state < 0) {
-        return 0.0f;
-    }
-    return core_motion_cpp_CMotionController_getStateBlendWeight_FUN_0052dd20
-        (controller(hero), state);
+// Asked only of states the hero has: GETGRABBED once found, and the escape once
+// escaping, which needs one.
+float state_weight(CHero *hero, int state) {
+    return core_motion_cpp_CMotionController_getStateBlendWeight_FUN_0052dd20(controller(hero),
+                                                                              state);
 }
 
 // Whether the current motion has a route to `state`. A desired state with no
 // route is never taken.
-int has_route(SMotion *motion, int state)
-{
+int has_route(SMotion *motion, int state) {
     for (int i = 0; i < motion->transition_count; i++) {
         if (motion->transitions[i].desired_state == state) {
             return 1;
@@ -73,11 +68,9 @@ int has_route(SMotion *motion, int state)
     return 0;
 }
 
-void request(CHero *hero, int state)
-{
+void request(CHero *hero, int state) {
     if (controller(hero)->state_index != state) {
-        core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
-            (controller(hero), state, 1);
+        core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00(controller(hero), state, 1);
     }
 }
 
@@ -85,8 +78,7 @@ void request(CHero *hero, int state)
 // to it (a run, for most classes) the request is dropped and the hero is
 // carried off still running. Go through STAND, which every locomotion motion
 // reaches, and if the class keeps steering elsewhere, jump.
-void steer_into_grabbed(CHero *hero, int grabbed_state, float held_for)
-{
+void steer_into_grabbed(CHero *hero, int grabbed_state, float held_for) {
     SMotion *motion;
 
     motion = current_motion(hero);
@@ -99,8 +91,7 @@ void steer_into_grabbed(CHero *hero, int grabbed_state, float held_for)
     }
     if (has_route(motion, grabbed_state) != 0) {
         request(hero, grabbed_state);
-    }
-    else {
+    } else {
         request(hero, find_state(hero, "STAND"));
     }
 }
@@ -111,8 +102,7 @@ SGrabHold g_holds[8];
 
 // The slot for `hero`, claiming a free one if it has none. Null when every
 // slot is taken, which the caller reads as "no escape this frame".
-SGrabHold *find_hold(CHero *hero)
-{
+SGrabHold *find_hold(CHero *hero) {
     SGrabHold *first_free;
     int i;
 
@@ -133,8 +123,7 @@ SGrabHold *find_hold(CHero *hero)
     return first_free;
 }
 
-void release_hold(CHero *hero)
-{
+void release_hold(CHero *hero) {
     int i;
 
     for (i = 0; i < GRAB_HOLD_COUNT; i++) {
@@ -149,10 +138,17 @@ void release_hold(CHero *hero)
 
 } // namespace
 
+extern "C" void nocturne_hero_grab_reset(void) {
+    int i;
+
+    for (i = 0; i < GRAB_HOLD_COUNT; i++) {
+        g_holds[i].hero = (CHero *)0x0;
+    }
+}
+
 #endif // !NOCTURNE_AUTHENTIC_HERO_ACTIONS
 
-extern "C" int nocturne_hero_grab_escape(CHero *hero, float delta_time)
-{
+extern "C" int nocturne_hero_grab_escape(CHero *hero, float delta_time) {
 #if NOCTURNE_AUTHENTIC_HERO_ACTIONS
     (void)hero;
     (void)delta_time;
@@ -214,14 +210,12 @@ extern "C" int nocturne_hero_grab_escape(CHero *hero, float delta_time)
         // neither it nor GETGRABBED is blended in, so a signal that hits the
         // grabber (Gabriella's kick, signal 6; Scat's 5 damage, signal 100)
         // finds it still holding on.
-        if ((hold->escaping != 0) &&
-            (hold->held_for < k_hold_seconds + k_escape_limit_seconds) &&
+        if ((hold->escaping != 0) && (hold->held_for < k_hold_seconds + k_escape_limit_seconds) &&
             (0.0f < state_weight(hero, grabbed_state) + state_weight(hero, escape_state))) {
             request(hero, escape_state);
             return 0;
         }
-    }
-    else if (hold->held_for < k_hold_seconds) {
+    } else if (hold->held_for < k_hold_seconds) {
         return 0;
     }
 
@@ -234,8 +228,7 @@ extern "C" int nocturne_hero_grab_escape(CHero *hero, float delta_time)
 #endif
 }
 
-extern "C" int nocturne_grab_carry_move(CDemonActor *victim, CVector3f *world_target)
-{
+extern "C" int nocturne_grab_carry_move(CDemonActor *victim, CVector3f *world_target) {
 #if NOCTURNE_AUTHENTIC_HERO_ACTIONS
     (void)victim;
     (void)world_target;
@@ -248,8 +241,8 @@ extern "C" int nocturne_grab_carry_move(CDemonActor *victim, CVector3f *world_ta
         return 0;
     }
     // moveAndCollide is CCharacter's. Anything else keeps the caller's write.
-    character = (CCharacter *)core_actor_cpp_castToClassHash_FUN_0040c790
-                                  (victim, g_CCharacterClassInfo.name_hash);
+    character = (CCharacter *)core_actor_cpp_castToClassHash_FUN_0040c790(
+        victim, g_CCharacterClassInfo.name_hash);
     if (character == (CCharacter *)0x0) {
         return 0;
     }

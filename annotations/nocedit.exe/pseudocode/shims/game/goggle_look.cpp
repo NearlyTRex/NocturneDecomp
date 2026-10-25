@@ -3,6 +3,7 @@
 // =============================================================================
 
 #include "game/goggle_look.h"
+
 #include "nocturne.h"
 
 #include <cmath>
@@ -44,9 +45,9 @@ extern "C" void nocturne_goggle_look_tick(float delta_time) {
         s_pitch = 0.0f;
     }
     if ((*(((hero->base).base.vtable._uc)->_uc).getDeathState)(&hero->base) == DEATH_STATE_ALIVE) {
-        s_pitch = nocturne_hero_look_pitch(s_pitch, hero->player_input.look_up_down_speed,
-                                           delta_time, NOCTURNE_STRANGER_PITCH_UP,
-                                           NOCTURNE_STRANGER_PITCH_DOWN);
+        s_pitch =
+            nocturne_hero_look_pitch(s_pitch, hero->player_input.look_up_down_speed, delta_time,
+                                     NOCTURNE_STRANGER_PITCH_UP, NOCTURNE_STRANGER_PITCH_DOWN);
     }
 }
 

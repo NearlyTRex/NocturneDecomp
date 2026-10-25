@@ -15,9 +15,8 @@
 //
 // Runs against gl_recorder.h: no context, no window, no driver.
 
-#include "nocturne_test.h"
 #include "gl_recorder.h"
-
+#include "nocturne_test.h"
 #include "renderer/trigl_batch.h"
 #include "renderer/trigl_gl.h"
 #include "renderer/trigl_vertex.h"
@@ -45,13 +44,15 @@ void begin() {
     gl_recorder::state().calls.clear();
 }
 
-void end() { nocturne_trigl_gl_shutdown(); }
+void end() {
+    nocturne_trigl_gl_shutdown();
+}
 
 unsigned bound_now() {
     return gl_recorder::state().bound_texture[0];
 }
 
-}  // namespace
+} // namespace
 
 // -----------------------------------------------------------------------------
 // The binding bug: an upload must not be a state change.
@@ -177,9 +178,12 @@ NOCTURNE_TEST(a_texture_without_a_chain_declares_one_level) {
 
     bool base = false, max = false;
     for (const gl_recorder::Call &call : gl_recorder::state().calls) {
-        if (call.name != "TexParameteri") continue;
-        if (call.a == GL_TEXTURE_BASE_LEVEL && call.b == 0) base = true;
-        if (call.a == GL_TEXTURE_MAX_LEVEL && call.b == 0) max = true;
+        if (call.name != "TexParameteri")
+            continue;
+        if (call.a == GL_TEXTURE_BASE_LEVEL && call.b == 0)
+            base = true;
+        if (call.a == GL_TEXTURE_MAX_LEVEL && call.b == 0)
+            max = true;
     }
     CHECK(base);
     CHECK(max);
@@ -270,7 +274,8 @@ int last_parameter(GLenum pname) {
     const gl_recorder::State &s = gl_recorder::state();
     for (int i = (int)s.calls.size() - 1; i >= 0; --i) {
         const gl_recorder::Call &call = s.calls[(size_t)i];
-        if (call.name == "TexParameteri" && call.a == (unsigned)pname) return (int)call.b;
+        if (call.name == "TexParameteri" && call.a == (unsigned)pname)
+            return (int)call.b;
     }
     return -1;
 }
@@ -280,7 +285,8 @@ int last_uniform(int location) {
     const gl_recorder::State &s = gl_recorder::state();
     for (int i = (int)s.calls.size() - 1; i >= 0; --i) {
         const gl_recorder::Call &call = s.calls[(size_t)i];
-        if (call.name == "Uniform1i" && call.a == (unsigned)location) return (int)call.b;
+        if (call.name == "Uniform1i" && call.a == (unsigned)location)
+            return (int)call.b;
     }
     return -1;
 }
@@ -314,33 +320,45 @@ NocturneTriglPipelineState every_field_changed() {
 }
 
 void APIENTRY no_names(GLsizei n, GLuint *out) {
-    for (GLsizei i = 0; i < n; ++i) out[i] = 0;
+    for (GLsizei i = 0; i < n; ++i)
+        out[i] = 0;
 }
 
 int g_buffers_left = 0;
 void APIENTRY names_then_none(GLsizei n, GLuint *out) {
-    for (GLsizei i = 0; i < n; ++i) out[i] = (g_buffers_left-- > 0) ? 7u : 0u;
+    for (GLsizei i = 0; i < n; ++i)
+        out[i] = (g_buffers_left-- > 0) ? 7u : 0u;
 }
 
 void APIENTRY the_same_name(GLsizei n, GLuint *out) {
-    for (GLsizei i = 0; i < n; ++i) out[i] = 42;
+    for (GLsizei i = 0; i < n; ++i)
+        out[i] = 42;
 }
 
-GLuint APIENTRY no_shader(GLenum) { return 0; }
-GLint APIENTRY no_uniforms(GLuint, const GLchar *) { return -1; }
+GLuint APIENTRY no_shader(GLenum) {
+    return 0;
+}
+GLint APIENTRY no_uniforms(GLuint, const GLchar *) {
+    return -1;
+}
 GLint APIENTRY only_a_pos(GLuint, const GLchar *name) {
     return strcmp(name, "a_pos") == 0 ? 0 : -1;
 }
 
-GLenum APIENTRY incomplete(GLenum) { return 0; }
+GLenum APIENTRY incomplete(GLenum) {
+    return 0;
+}
 
 // A 4x4 RGBA read-back whose first eight texels are opaque.
 void APIENTRY half_opaque(GLenum, GLint, GLenum, GLenum, void *pixels) {
     unsigned char *rgba = (unsigned char *)pixels;
-    for (int i = 0; i < 16; ++i) rgba[i * 4 + 3] = (i < 8) ? 0xFF : 0x00;
+    for (int i = 0; i < 16; ++i)
+        rgba[i * 4 + 3] = (i < 8) ? 0xFF : 0x00;
 }
 
-const GLubyte *APIENTRY no_string(GLenum) { return nullptr; }
+const GLubyte *APIENTRY no_string(GLenum) {
+    return nullptr;
+}
 const GLubyte *APIENTRY long_string(GLenum) {
     static const std::string text(200, 'r');
     return (const GLubyte *)text.c_str();
@@ -354,7 +372,7 @@ struct OneTriangle {
 
     OneTriangle() {
         vertices[0].rhw = 0.5f;
-        vertices[1].rhw = 0.0f;   // no depth: drawn as at w = 1
+        vertices[1].rhw = 0.0f; // no depth: drawn as at w = 1
         vertices[2].rhw = 2.0f;
         batch.vertices = vertices;
         batch.indices = indices;
@@ -368,15 +386,17 @@ struct OneTriangle {
 std::string read_file(const std::string &path) {
     std::string text;
     FILE *f = fopen(path.c_str(), "rb");
-    if (f == nullptr) return text;
+    if (f == nullptr)
+        return text;
     char chunk[512];
     size_t got = 0;
-    while ((got = fread(chunk, 1, sizeof(chunk), f)) > 0) text.append(chunk, got);
+    while ((got = fread(chunk, 1, sizeof(chunk), f)) > 0)
+        text.append(chunk, got);
     fclose(f);
     return text;
 }
 
-}  // namespace
+} // namespace
 
 // -----------------------------------------------------------------------------
 // Bringing the renderer up
@@ -386,11 +406,11 @@ std::string read_file(const std::string &path) {
 // is made, so a driver short of one is a renderer that is not there, not a
 // call through null. Each is taken away in turn.
 NOCTURNE_TEST(a_driver_missing_any_required_entry_point_brings_up_nothing) {
-#define TRIGL_TAKE_AWAY(member)                                   \
-    gl_recorder::install();                                       \
-    gl.member = nullptr;                                          \
-    CHECK_EQ(nocturne_trigl_gl_init(), 0);                        \
-    CHECK_EQ(gl_recorder::state().count("CreateProgram"), 0);     \
+#define TRIGL_TAKE_AWAY(member)                                                                    \
+    gl_recorder::install();                                                                        \
+    gl.member = nullptr;                                                                           \
+    CHECK_EQ(nocturne_trigl_gl_init(), 0);                                                         \
+    CHECK_EQ(gl_recorder::state().count("CreateProgram"), 0);                                      \
     nocturne_trigl_gl_shutdown();
     TRIGL_TAKE_AWAY(CreateShader)
     TRIGL_TAKE_AWAY(ShaderSource)
@@ -541,8 +561,9 @@ NOCTURNE_TEST(state_is_applied_whole_then_only_where_it_changed) {
 
     s.calls.clear();
     nocturne_trigl_gl_apply_state(&plain);
-    CHECK_EQ(s.count("Enable") + s.count("Disable") + s.count("BlendFunc") +
-                 s.count("DepthMask") + s.count("DepthFunc"), 0);
+    CHECK_EQ(s.count("Enable") + s.count("Disable") + s.count("BlendFunc") + s.count("DepthMask") +
+                 s.count("DepthFunc"),
+             0);
 
     nocturne_trigl_gl_set_fog_color(0.5f, 0.5f, 0.5f);
     s.calls.clear();
@@ -822,8 +843,8 @@ NOCTURNE_TEST(a_full_cache_lets_go_of_the_least_recently_used) {
     for (int i = 0; i < kHeld; ++i) {
         snprintf(name, sizeof(name), "n%d", i);
         // The second oldest is a name held without an image.
-        textures[(size_t)i] =
-            nocturne_trigl_gl_texture(name, dimension_of(i), (i == 1) ? nullptr : pixels.data(), 0, 0);
+        textures[(size_t)i] = nocturne_trigl_gl_texture(name, dimension_of(i),
+                                                        (i == 1) ? nullptr : pixels.data(), 0, 0);
     }
 
     // The oldest goes, and its texture with it.
@@ -847,7 +868,8 @@ NOCTURNE_TEST(a_full_cache_lets_go_of_the_least_recently_used) {
     int found = 0;
     for (int i = 3; i < kHeld; ++i) {
         snprintf(name, sizeof(name), "n%d", i);
-        if (nocturne_trigl_gl_texture_cached(name, dimension_of(i)) == textures[(size_t)i]) ++found;
+        if (nocturne_trigl_gl_texture_cached(name, dimension_of(i)) == textures[(size_t)i])
+            ++found;
     }
     CHECK_EQ(found, kHeld - 3);
     gl_recorder::install();
@@ -918,7 +940,8 @@ NOCTURNE_TEST(the_cache_report_lists_every_entry_and_any_shared_texture) {
     nocturne_trigl_gl_texture("two.raw", 4, pixels.data(), 0, 0);
     FILE *out = fopen(path.c_str(), "wb");
     CHECK(out != nullptr);
-    if (out == nullptr) return;
+    if (out == nullptr)
+        return;
     nocturne_trigl_gl_report_textures(out);
     fclose(out);
     const std::string text = read_file(path);
@@ -940,17 +963,17 @@ NOCTURNE_TEST(depth_is_saved_only_to_a_slot_that_can_be_made) {
     s.scene_fbo = 99;
     CHECK_EQ(nocturne_trigl_gl_save_depth(0, 64, 64), 0);
     begin();
-    CHECK_EQ(nocturne_trigl_gl_save_depth(0, 64, 64), 0);   // no scene target
+    CHECK_EQ(nocturne_trigl_gl_save_depth(0, 64, 64), 0); // no scene target
     s.scene_fbo = 99;
     CHECK_EQ(nocturne_trigl_gl_save_depth(-1, 64, 64), 0);
     CHECK_EQ(nocturne_trigl_gl_save_depth(8, 64, 64), 0);
 
-#define TRIGL_DEPTH_NEEDS(member)                                 \
-    {                                                             \
-        auto kept = gl.member;                                    \
-        gl.member = nullptr;                                      \
-        CHECK_EQ(nocturne_trigl_gl_save_depth(0, 64, 64), 0);     \
-        gl.member = kept;                                         \
+#define TRIGL_DEPTH_NEEDS(member)                                                                  \
+    {                                                                                              \
+        auto kept = gl.member;                                                                     \
+        gl.member = nullptr;                                                                       \
+        CHECK_EQ(nocturne_trigl_gl_save_depth(0, 64, 64), 0);                                      \
+        gl.member = kept;                                                                          \
     }
     TRIGL_DEPTH_NEEDS(GenFramebuffers)
     TRIGL_DEPTH_NEEDS(BindFramebuffer)

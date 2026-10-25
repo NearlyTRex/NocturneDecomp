@@ -7,9 +7,8 @@
 // by up to about 27 degrees on a diagonal, and it has to stop the character
 // before it walks sideways into a doorframe.
 
-#include "nocturne_test.h"
-
 #include "game/walk_turn.h"
+#include "nocturne_test.h"
 
 namespace {
 
@@ -37,8 +36,7 @@ NOCTURNE_TEST(scale_falls_linearly_to_a_stop_at_ninety) {
 }
 
 NOCTURNE_TEST(left_and_right_turns_scale_the_same) {
-    CHECK_EQ(nocturne_walk_turn_scale(1, -45.0f * kDeg),
-             nocturne_walk_turn_scale(1, 45.0f * kDeg));
+    CHECK_EQ(nocturne_walk_turn_scale(1, -45.0f * kDeg), nocturne_walk_turn_scale(1, 45.0f * kDeg));
     CHECK_EQ(nocturne_walk_turn_scale(1, -120.0f * kDeg), 0.0f);
 }
 

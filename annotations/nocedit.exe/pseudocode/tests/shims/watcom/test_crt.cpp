@@ -7,10 +7,9 @@
 // a _FILE whose flag byte says EOF and error, a 36-byte _tm. Each case builds a
 // directory, asks the way the game asks, and checks what comes back.
 
-#include "nocturne_test.h"
 #include "libc_faults.h"
+#include "nocturne_test.h"
 #include "rng_audit_support.h"
-
 #include "system/crt.h"
 #include "system/stdio.h"
 #include "system/time.h"
@@ -80,7 +79,7 @@ int format_through_va_list_t(char *out, const char *format, ...) {
 const unsigned kEof = 0x10;
 const unsigned kError = 0x20;
 
-}  // namespace
+} // namespace
 
 // -----------------------------------------------------------------------------
 // rand
@@ -198,7 +197,8 @@ NOCTURNE_TEST(a_file_opens_through_the_path_resolver_or_not_at_all) {
     Dir::write("Data/Notes.TXT", "line\r\n");
     _FILE *f = _fopen("data\\notes.txt", "rb");
     CHECK(f != nullptr);
-    if (f == nullptr) return;
+    if (f == nullptr)
+        return;
     CHECK(f->_link != nullptr);
     CHECK_EQ(f->_handle, fileno(_FILE_to_FILE(f)));
     CHECK_EQ(_fclose(f), 0);
@@ -214,7 +214,8 @@ NOCTURNE_TEST(a_text_file_is_read_without_its_carriage_returns) {
     Dir::write("Data/model.kfm", "first\r\nsecond\r\n");
     _FILE *f = _fopen("data\\model.kfm", "rt");
     CHECK(f != nullptr);
-    if (f == nullptr) return;
+    if (f == nullptr)
+        return;
     char line[32];
     CHECK(_fgets(line, sizeof(line), f) == line);
     CHECK_EQ(std::string(line), std::string("first\n"));
@@ -249,7 +250,8 @@ NOCTURNE_TEST(a_text_file_is_written_as_given) {
     Dir dir;
     _FILE *f = _fopen("data\\out.txt", "w");
     CHECK(f != nullptr);
-    if (f == nullptr) return;
+    if (f == nullptr)
+        return;
     CHECK(_fputs("abc\n", f) >= 0);
     CHECK_EQ(_fputc('z', f), 'z');
     CHECK_EQ(_fprintf(f, "%d", 42), 2);
@@ -280,7 +282,8 @@ NOCTURNE_TEST(the_flag_byte_follows_eof_and_error) {
     Dir::write("Data/two.bin", "ab");
     _FILE *f = _fopen("data\\two.bin", "rb");
     CHECK(f != nullptr);
-    if (f == nullptr) return;
+    if (f == nullptr)
+        return;
     CHECK_EQ(_fgetc(f), 'a');
     CHECK_EQ(_ungetc('a', f), 'a');
     char both[4] = {};
@@ -313,7 +316,8 @@ NOCTURNE_TEST(buffering_and_scanning_reach_the_stream) {
     Dir::write("Data/n.txt", "12 34");
     _FILE *f = _fopen("data\\n.txt", "rb");
     CHECK(f != nullptr);
-    if (f == nullptr) return;
+    if (f == nullptr)
+        return;
     static char buffer[BUFSIZ];
     CHECK_EQ(_setvbuf(f, nullptr, _IOFBF, 512), 0);
     _setbuf(f, buffer);
@@ -357,7 +361,8 @@ NOCTURNE_TEST(a_reopen_hands_back_the_stream_it_was_given) {
 
     _FILE *f = _fopen("data\\first.txt", "rb");
     CHECK(f != nullptr);
-    if (f == nullptr) return;
+    if (f == nullptr)
+        return;
     CHECK(_freopen("data\\second.txt", "rb", f) == f);
     CHECK_EQ(_fgetc(f), '2');
     CHECK(_freopen("data\\third.txt", "wb", f) == f);
@@ -429,7 +434,8 @@ NOCTURNE_TEST(time_goes_through_the_games_36_byte_tm) {
     CHECK(_time(nullptr) >= now);
     const _tm *local = _localtime(&now);
     CHECK(local != nullptr);
-    if (local != nullptr) CHECK(local->tm_year >= 120);
+    if (local != nullptr)
+        CHECK(local->tm_year >= 120);
 #if defined(__GLIBC__)
     libc_faults::fail_next_localtime = true;
     CHECK(_localtime(&now) == nullptr);

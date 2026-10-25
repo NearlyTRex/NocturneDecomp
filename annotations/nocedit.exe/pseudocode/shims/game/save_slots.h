@@ -52,10 +52,10 @@ extern "C" {
 // The single-player submenu
 // ---------------------------------------------------------------------------
 
-#define NOCTURNE_SP_MENU_CANCEL   (-1)
+#define NOCTURNE_SP_MENU_CANCEL (-1)
 #define NOCTURNE_SP_MENU_CONTINUE 0
-#define NOCTURNE_SP_MENU_START    1
-#define NOCTURNE_SP_MENU_LOAD     2
+#define NOCTURNE_SP_MENU_START 1
+#define NOCTURNE_SP_MENU_LOAD 2
 
 // Runs the submenu behind the main menu's PLAY entry until the player picks or
 // backs out. Returns one of the three above, or

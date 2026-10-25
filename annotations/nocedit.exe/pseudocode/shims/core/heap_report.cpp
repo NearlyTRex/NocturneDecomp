@@ -6,6 +6,7 @@
 // here and what these ones mean instead.
 
 #include "core/heap_report.h"
+
 #include "shim_config.h"
 
 #include <cstdio>
@@ -17,11 +18,11 @@
 // nothing is using any more and reads as a flat zero -- ask the sanitizer
 // instead. This is not a niche case: the default preset is the ASan one.
 #if defined(__SANITIZE_ADDRESS__)
-#  define NOCTURNE_HEAP_VIA_ASAN 1
+#define NOCTURNE_HEAP_VIA_ASAN 1
 #elif defined(__has_feature)
-#  if __has_feature(address_sanitizer)
-#    define NOCTURNE_HEAP_VIA_ASAN 1
-#  endif
+#if __has_feature(address_sanitizer)
+#define NOCTURNE_HEAP_VIA_ASAN 1
+#endif
 #endif
 
 #if defined(NOCTURNE_HEAP_VIA_ASAN)
@@ -30,8 +31,7 @@
 #include <malloc.h>
 #endif
 
-extern "C" void nocturne_heap_report(char *out, int out_size)
-{
+extern "C" void nocturne_heap_report(char *out, int out_size) {
     if ((out == (char *)0) || (out_size < 1)) {
         return;
     }
@@ -53,8 +53,8 @@ extern "C" void nocturne_heap_report(char *out, int out_size)
         // of the game's memory. Measured at 4 MB against 82 MB on a spread of
         // 20000 small blocks and 20 large ones.
         snprintf(out, (size_t)out_size, "Used: %.1fk Free: %.1fk Blocks: %lu",
-                 (double)(info.uordblks + info.hblkhd) / 1024.0,
-                 (double)info.fordblks / 1024.0, (unsigned long)info.ordblks);
+                 (double)(info.uordblks + info.hblkhd) / 1024.0, (double)info.fordblks / 1024.0,
+                 (unsigned long)info.ordblks);
     }
 #else
     // Not zeroes: a zero here would read as a measurement rather than as the
@@ -65,6 +65,6 @@ extern "C" void nocturne_heap_report(char *out, int out_size)
 
 #else
 
-extern "C" void nocturne_heap_report(char *, int) { }
+extern "C" void nocturne_heap_report(char *, int) {}
 
 #endif // !NOCTURNE_AUTHENTIC_HEAP_REPORT

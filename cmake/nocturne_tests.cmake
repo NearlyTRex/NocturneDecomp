@@ -71,12 +71,15 @@ function(nocturne_test_suite _suite)
             target_link_libraries(${_name} PRIVATE ${_arg_LIBRARIES})
         endif()
         add_test(NAME ${_test} COMMAND ${_name})
-        set_tests_properties(${_test} PROPERTIES LABELS "${_suite}")
+        set_tests_properties(${_test} PROPERTIES
+            LABELS "${_suite}" FIXTURES_REQUIRED nocturne_build)
         # Under wine, the gcc runtime DLLs a test needs are the ones the
         # platform file stages beside the exe, in the top of the build tree.
+        # With no display to reach, wine takes its null graphics driver and
+        # opens no window, whatever desktop the prefix is set to show.
         if(WIN32 AND CMAKE_CROSSCOMPILING_EMULATOR)
             set_tests_properties(${_test} PROPERTIES
-                ENVIRONMENT "WINEPATH=${CMAKE_BINARY_DIR};WINEDEBUG=-all")
+                ENVIRONMENT "WINEPATH=${CMAKE_BINARY_DIR};WINEDEBUG=-all;DISPLAY=;WAYLAND_DISPLAY=")
         endif()
         add_dependencies(nocturne_tests ${_name})
         set_property(GLOBAL APPEND PROPERTY NOCTURNE_TEST_TARGETS ${_name})

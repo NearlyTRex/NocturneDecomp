@@ -34,11 +34,12 @@ void send(AVFormatContext *out, Encoder &e, AVFrame *frame) {
     av_packet_free(&packet);
 }
 
-}  // namespace
+} // namespace
 
 bool write(const std::string &path, const Movie &m) {
     AVFormatContext *out = nullptr;
-    if (avformat_alloc_output_context2(&out, nullptr, m.container, path.c_str()) < 0) return false;
+    if (avformat_alloc_output_context2(&out, nullptr, m.container, path.c_str()) < 0)
+        return false;
 
     const AVPixelFormat pixels =
         m.video_codec == AV_CODEC_ID_RAWVIDEO ? AV_PIX_FMT_BGR24 : AV_PIX_FMT_YUV420P;
@@ -103,8 +104,10 @@ bool write(const std::string &path, const Movie &m) {
             av_frame_unref(sound);
         }
     }
-    if (m.video) send(out, video, nullptr);
-    if (m.audio != AV_CODEC_ID_NONE) send(out, audio, nullptr);
+    if (m.video)
+        send(out, video, nullptr);
+    if (m.audio != AV_CODEC_ID_NONE)
+        send(out, audio, nullptr);
     av_write_trailer(out);
     av_frame_free(&picture);
     av_frame_free(&sound);
@@ -128,13 +131,16 @@ bool patch_format(const std::string &path, const char *type, size_t offset, uint
     auto at = bytes.begin();
     for (;;) {
         at = std::search(at, bytes.end(), header.begin(), header.end());
-        if (bytes.end() - at < 12) return false;
-        if (std::equal(type, type + 4, at + 8)) break;
+        if (bytes.end() - at < 12)
+            return false;
+        if (std::equal(type, type + 4, at + 8))
+            break;
         at += 4;
     }
     const std::string format = "strf";
     at = std::search(at, bytes.end(), format.begin(), format.end());
-    if ((size_t)(bytes.end() - at) < 8 + offset + size) return false;
+    if ((size_t)(bytes.end() - at) < 8 + offset + size)
+        return false;
     for (int i = 0; i < size; ++i) {
         at[8 + offset + i] = (char)(value >> (8 * i));
     }
@@ -142,4 +148,4 @@ bool patch_format(const std::string &path, const char *type, size_t offset, uint
     return true;
 }
 
-}  // namespace movie_writer
+} // namespace movie_writer

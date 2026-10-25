@@ -8,21 +8,20 @@
 
 #if NOCTURNE_GL_PRESENT
 
-#include "renderer/trigl_gl.h"
-#include "renderer/trigl_vertex.h"
-#include "gl/gl_api.h"
-#include "gl/gl_program.h"
-#include "gl/gl_present.h"
 #include "core/debug_log.h"
 #include "core/fnv1a.h"
+#include "gl/gl_api.h"
+#include "gl/gl_present.h"
+#include "gl/gl_program.h"
+#include "renderer/trigl_gl.h"
+#include "renderer/trigl_vertex.h"
 
+#include <filesystem>
 #include <stddef.h>
 #include <stdint.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-
-#include <filesystem>
 #include <string>
 #include <system_error>
 #include <vector>
@@ -83,7 +82,7 @@ int overlay_bias() {
     if (nocturne_trigl_overlay_bias < 0) {
         const char *env = getenv("NOCTURNE_TRIGL_OVERLAY_BIAS");
         nocturne_trigl_overlay_bias =
-            (env != nullptr) ? atoi(env) : (NOCTURNE_AUTHENTIC_ENVMAP_OVERLAY ? 0 : 1);
+            (env != nullptr) ? atoi(env) : !NOCTURNE_AUTHENTIC_ENVMAP_OVERLAY;
     }
     return nocturne_trigl_overlay_bias;
 }
@@ -120,8 +119,7 @@ int debug_mode() {
 // engine's own projection while keeping texture coordinates perspective
 // correct. The engine has already projected the geometry; all this does is map
 // pixels onto clip space.
-const char *kVertexSource =
-    NOCTURNE_GLSL_VERSION
+const char *kVertexSource = NOCTURNE_GLSL_VERSION
     "in vec4 a_pos;\n"
     "in vec4 a_color;\n"
     "in vec4 a_specular;\n"
@@ -160,8 +158,7 @@ const char *kVertexSource =
 // The alpha test is a fixed one. The engine sets ALPHAFUNC to GREATER and
 // ALPHAREF to 0 once at device init and never changes either, so the test is
 // always "drop fully transparent fragments" and needs no uniform.
-const char *kFragmentSource =
-    NOCTURNE_GLSL_VERSION
+const char *kFragmentSource = NOCTURNE_GLSL_VERSION
     "uniform sampler2D u_tex;\n"
     "uniform int  u_tex_enabled;\n"
     "uniform int  u_modulate_alpha;\n"
@@ -223,34 +220,34 @@ const char *kFragmentSource =
 // loop cannot disagree.
 struct HardwareVertex {
     float x, y, z, w;
-    unsigned char diffuse[4];   // R, G, B, A
+    unsigned char diffuse[4]; // R, G, B, A
     unsigned char specular[4];
     float u, v;
 };
 
-bool   g_ready   = false;
-bool   g_tried   = false;
+bool g_ready = false;
+bool g_tried = false;
 GLuint g_program = 0;
-GLuint g_vao     = 0;
-GLuint g_vbo     = 0;
-GLuint g_ibo     = 0;
+GLuint g_vao = 0;
+GLuint g_vbo = 0;
+GLuint g_ibo = 0;
 size_t g_vbo_capacity = 0;
 size_t g_ibo_capacity = 0;
 
-GLint g_attr_pos      = -1;
-GLint g_attr_color    = -1;
+GLint g_attr_pos = -1;
+GLint g_attr_color = -1;
 GLint g_attr_specular = -1;
-GLint g_attr_uv       = -1;
+GLint g_attr_uv = -1;
 
-GLint g_loc_projection     = -1;
-GLint g_loc_tex            = -1;
-GLint g_loc_tex_enabled    = -1;
+GLint g_loc_projection = -1;
+GLint g_loc_tex = -1;
+GLint g_loc_tex_enabled = -1;
 GLint g_loc_modulate_alpha = -1;
-GLint g_loc_alpha_test     = -1;
-GLint g_loc_fog_enabled    = -1;
-GLint g_loc_fog_color      = -1;
-GLint g_loc_debug          = -1;
-GLint g_loc_envmap         = -1;
+GLint g_loc_alpha_test = -1;
+GLint g_loc_fog_enabled = -1;
+GLint g_loc_fog_color = -1;
+GLint g_loc_debug = -1;
+GLint g_loc_envmap = -1;
 
 // Scratch for one batch's worth of hardware vertices.
 std::vector<HardwareVertex> g_scratch;
@@ -281,24 +278,21 @@ unsigned g_state_epoch = 0;
 // whatever was current before it rather than the scene's. Neither is this
 // renderer's to depend on, and a viewport that disagrees with the projection
 // puts the whole scene in a corner of the target with no GL error.
-int g_target_width  = 0;
+int g_target_width = 0;
 int g_target_height = 0;
 
-float g_fog_color[3] = { 0.0f, 0.0f, 0.0f };
-bool  g_fog_color_dirty = true;
+float g_fog_color[3] = {0.0f, 0.0f, 0.0f};
+bool g_fog_color_dirty = true;
 
 bool have_entry_points() {
     return gl.CreateShader != nullptr && gl.ShaderSource != nullptr &&
-           gl.CompileShader != nullptr && gl.GetShaderiv != nullptr &&
-           gl.DeleteShader != nullptr && gl.CreateProgram != nullptr &&
-           gl.AttachShader != nullptr && gl.LinkProgram != nullptr &&
+           gl.CompileShader != nullptr && gl.GetShaderiv != nullptr && gl.DeleteShader != nullptr &&
+           gl.CreateProgram != nullptr && gl.AttachShader != nullptr && gl.LinkProgram != nullptr &&
            gl.GetProgramiv != nullptr && gl.UseProgram != nullptr &&
-           gl.GetUniformLocation != nullptr && gl.Uniform1i != nullptr &&
-           gl.Uniform3f != nullptr && gl.UniformMatrix4fv != nullptr &&
-           gl.GenBuffers != nullptr && gl.BindBuffer != nullptr &&
+           gl.GetUniformLocation != nullptr && gl.Uniform1i != nullptr && gl.Uniform3f != nullptr &&
+           gl.UniformMatrix4fv != nullptr && gl.GenBuffers != nullptr && gl.BindBuffer != nullptr &&
            gl.BufferData != nullptr && gl.GetAttribLocation != nullptr &&
-           gl.EnableVertexAttribArray != nullptr &&
-           gl.VertexAttribPointer != nullptr &&
+           gl.EnableVertexAttribArray != nullptr && gl.VertexAttribPointer != nullptr &&
            gl.GenVertexArrays != nullptr && gl.BindVertexArray != nullptr &&
            gl.ActiveTexture != nullptr && gl.DrawElements != nullptr;
 }
@@ -309,30 +303,31 @@ bool build_program() {
         return false;
     }
 
-    g_program       = program;
-    g_attr_pos      = 0;                      // pinned by nocturne_gl_build_program
-    g_attr_color    = gl.GetAttribLocation(program, "a_color");
+    g_program = program;
+    g_attr_pos = 0; // pinned by nocturne_gl_build_program
+    g_attr_color = gl.GetAttribLocation(program, "a_color");
     g_attr_specular = gl.GetAttribLocation(program, "a_specular");
-    g_attr_uv       = gl.GetAttribLocation(program, "a_uv");
+    g_attr_uv = gl.GetAttribLocation(program, "a_uv");
 
-    g_loc_projection     = gl.GetUniformLocation(program, "u_projection");
-    g_loc_tex            = gl.GetUniformLocation(program, "u_tex");
-    g_loc_tex_enabled    = gl.GetUniformLocation(program, "u_tex_enabled");
+    g_loc_projection = gl.GetUniformLocation(program, "u_projection");
+    g_loc_tex = gl.GetUniformLocation(program, "u_tex");
+    g_loc_tex_enabled = gl.GetUniformLocation(program, "u_tex_enabled");
     g_loc_modulate_alpha = gl.GetUniformLocation(program, "u_modulate_alpha");
-    g_loc_alpha_test     = gl.GetUniformLocation(program, "u_alpha_test");
-    g_loc_fog_enabled    = gl.GetUniformLocation(program, "u_fog_enabled");
-    g_loc_fog_color      = gl.GetUniformLocation(program, "u_fog_color");
-    g_loc_debug          = gl.GetUniformLocation(program, "u_debug");
-    g_loc_envmap         = gl.GetUniformLocation(program, "u_envmap");
+    g_loc_alpha_test = gl.GetUniformLocation(program, "u_alpha_test");
+    g_loc_fog_enabled = gl.GetUniformLocation(program, "u_fog_enabled");
+    g_loc_fog_color = gl.GetUniformLocation(program, "u_fog_color");
+    g_loc_debug = gl.GetUniformLocation(program, "u_debug");
+    g_loc_envmap = gl.GetUniformLocation(program, "u_envmap");
 
     // The sampler never moves off unit 0, so it is set once.
     gl.UseProgram(program);
-    if (g_loc_tex >= 0) gl.Uniform1i(g_loc_tex, 0);
+    if (g_loc_tex >= 0)
+        gl.Uniform1i(g_loc_tex, 0);
     gl.UseProgram(0);
 
-    DLOG("render","trigl_gl: program linked (id=%u) attrs pos=%d col=%d spec=%d uv=%d",
-              (unsigned)program, (int)g_attr_pos, (int)g_attr_color,
-              (int)g_attr_specular, (int)g_attr_uv);
+    DLOG("render", "trigl_gl: program linked (id=%u) attrs pos=%d col=%d spec=%d uv=%d",
+         (unsigned)program, (int)g_attr_pos, (int)g_attr_color, (int)g_attr_specular,
+         (int)g_attr_uv);
     return true;
 }
 
@@ -343,7 +338,7 @@ bool build_vertex_array() {
     gl.GenBuffers(1, &g_vbo);
     gl.GenBuffers(1, &g_ibo);
     if (g_vao == 0 || g_vbo == 0 || g_ibo == 0) {
-        DLOG("render","trigl_gl: could not create the vertex array or its buffers");
+        DLOG("render", "trigl_gl: could not create the vertex array or its buffers");
         return false;
     }
 
@@ -378,10 +373,14 @@ bool build_vertex_array() {
 
 GLenum blend_factor(int factor) {
     switch (factor) {
-        case NOCTURNE_TRIGL_BLEND_ZERO:          return GL_ZERO;
-        case NOCTURNE_TRIGL_BLEND_SRC_ALPHA:     return GL_SRC_ALPHA;
-        case NOCTURNE_TRIGL_BLEND_INV_SRC_ALPHA: return GL_ONE_MINUS_SRC_ALPHA;
-        default:                                 return GL_ONE;
+    case NOCTURNE_TRIGL_BLEND_ZERO:
+        return GL_ZERO;
+    case NOCTURNE_TRIGL_BLEND_SRC_ALPHA:
+        return GL_SRC_ALPHA;
+    case NOCTURNE_TRIGL_BLEND_INV_SRC_ALPHA:
+        return GL_ONE_MINUS_SRC_ALPHA;
+    default:
+        return GL_ONE;
     }
 }
 
@@ -405,18 +404,18 @@ GLenum blend_factor(int factor) {
 // changes one, so the linear scan the original does over its entries would cost
 // a string compare per cached texture per draw.
 const int kTextureSlots = 4096;
-const int kTextureNameMax = 64;   // the original's entry width
+const int kTextureNameMax = 64; // the original's entry width
 
 struct TextureSlot {
-    char     name[kTextureNameMax];
-    int      dimension;   // 0 marks a free slot
-    GLuint   texture;
-    unsigned used;        // for eviction when the table fills
+    char name[kTextureNameMax];
+    int dimension; // 0 marks a free slot
+    GLuint texture;
+    unsigned used; // for eviction when the table fills
 };
 
 TextureSlot g_textures[kTextureSlots];
-unsigned    g_texture_clock = 0;
-int         g_texture_count = 0;
+unsigned g_texture_clock = 0;
+int g_texture_count = 0;
 
 // The characters of a name that count: as many as a slot stores, the entry width
 // less its terminator. A name longer than that is the same texture as its
@@ -434,8 +433,10 @@ unsigned name_hash(const char *name, int dimension) {
 
 bool same_name(const char *a, const char *b) {
     for (int i = 0; i < kTextureNameSignificant; ++i) {
-        if (a[i] != b[i]) return false;
-        if (a[i] == '\0') return true;
+        if (a[i] != b[i])
+            return false;
+        if (a[i] == '\0')
+            return true;
     }
     return true;
 }
@@ -446,8 +447,10 @@ TextureSlot *find_slot(const char *name, int dimension) {
     unsigned index = name_hash(name, dimension) & (unsigned)(kTextureSlots - 1);
     for (;;) {
         TextureSlot &slot = g_textures[index];
-        if (slot.dimension == 0) return nullptr;
-        if (slot.dimension == dimension && same_name(slot.name, name)) return &slot;
+        if (slot.dimension == 0)
+            return nullptr;
+        if (slot.dimension == dimension && same_name(slot.name, name))
+            return &slot;
         index = (index + 1u) & (unsigned)(kTextureSlots - 1);
     }
 }
@@ -456,8 +459,10 @@ TextureSlot *find_slot(const char *name, int dimension) {
 void evict_least_recently_used() {
     int oldest = -1;
     for (int i = 0; i < kTextureSlots; ++i) {
-        if (g_textures[i].dimension == 0) continue;
-        if (oldest < 0 || g_textures[i].used < g_textures[oldest].used) oldest = i;
+        if (g_textures[i].dimension == 0)
+            continue;
+        if (oldest < 0 || g_textures[i].used < g_textures[oldest].used)
+            oldest = i;
     }
     if (g_textures[oldest].texture != 0 && gl.DeleteTextures != nullptr) {
         gl.DeleteTextures(1, &g_textures[oldest].texture);
@@ -467,13 +472,14 @@ void evict_least_recently_used() {
     std::vector<TextureSlot> survivors;
     survivors.reserve((size_t)g_texture_count);
     for (int i = 0; i < kTextureSlots; ++i) {
-        if (i != oldest && g_textures[i].dimension != 0) survivors.push_back(g_textures[i]);
+        if (i != oldest && g_textures[i].dimension != 0)
+            survivors.push_back(g_textures[i]);
     }
     memset(g_textures, 0, sizeof(g_textures));
     g_texture_count = 0;
     for (const TextureSlot &survivor : survivors) {
-        unsigned index = name_hash(survivor.name, survivor.dimension) &
-                         (unsigned)(kTextureSlots - 1);
+        unsigned index =
+            name_hash(survivor.name, survivor.dimension) & (unsigned)(kTextureSlots - 1);
         while (g_textures[index].dimension != 0) {
             index = (index + 1u) & (unsigned)(kTextureSlots - 1);
         }
@@ -500,7 +506,7 @@ TextureSlot *insert_slot(const char *name, int dimension) {
     }
     slot.name[length] = '\0';
     slot.dimension = dimension;
-    slot.texture   = 0;
+    slot.texture = 0;
     ++g_texture_count;
     return &slot;
 }
@@ -514,21 +520,23 @@ const int kMasterDepthSlots = 8;
 struct MasterDepth {
     GLuint fbo = 0;
     GLuint depth = 0;
-    int    width = 0;
-    int    height = 0;
+    int width = 0;
+    int height = 0;
 };
 
 MasterDepth g_master_depth[kMasterDepthSlots];
 
 MasterDepth *ensure_master_depth(int slot, int width, int height) {
-    if (slot < 0 || slot >= kMasterDepthSlots) return nullptr;
+    if (slot < 0 || slot >= kMasterDepthSlots)
+        return nullptr;
     if (gl.GenFramebuffers == nullptr || gl.BindFramebuffer == nullptr ||
         gl.GenRenderbuffers == nullptr || gl.RenderbufferStorage == nullptr ||
         gl.FramebufferRenderbuffer == nullptr || gl.BlitFramebuffer == nullptr) {
         return nullptr;
     }
     MasterDepth &m = g_master_depth[slot];
-    if (m.fbo != 0 && m.width == width && m.height == height) return &m;
+    if (m.fbo != 0 && m.width == width && m.height == height)
+        return &m;
 
     if (m.fbo != 0) {
         gl.DeleteFramebuffers(1, &m.fbo);
@@ -552,30 +560,34 @@ MasterDepth *ensure_master_depth(int slot, int width, int height) {
                               : (GLenum)GL_FRAMEBUFFER_COMPLETE;
     gl.BindFramebuffer(GL_FRAMEBUFFER, (GLuint)nocturne_gl_scene_fbo());
     if (status != GL_FRAMEBUFFER_COMPLETE) {
-        DLOG("render","trigl_gl: master depth slot %d incomplete at %dx%d", slot, width, height);
+        DLOG("render", "trigl_gl: master depth slot %d incomplete at %dx%d", slot, width, height);
         gl.DeleteFramebuffers(1, &m.fbo);
         gl.DeleteRenderbuffers(1, &m.depth);
         m.fbo = m.depth = 0;
         return nullptr;
     }
-    m.width  = width;
+    m.width = width;
     m.height = height;
     return &m;
 }
 
-}  // namespace
+} // namespace
 
 int nocturne_trigl_gl_init(void) {
-    if (g_ready) return 1;
-    if (g_tried) return 0;
+    if (g_ready)
+        return 1;
+    if (g_tried)
+        return 0;
     g_tried = true;
 
     if (!have_entry_points()) {
-        DLOG("render","trigl_gl: the driver is missing entry points the renderer needs");
+        DLOG("render", "trigl_gl: the driver is missing entry points the renderer needs");
         return 0;
     }
-    if (!build_program()) return 0;
-    if (!build_vertex_array()) return 0;
+    if (!build_program())
+        return 0;
+    if (!build_vertex_array())
+        return 0;
 
     memset(g_textures, 0, sizeof(g_textures));
     g_texture_count = 0;
@@ -584,14 +596,20 @@ int nocturne_trigl_gl_init(void) {
     return 1;
 }
 
-int nocturne_trigl_gl_ready(void) { return g_ready ? 1 : 0; }
+int nocturne_trigl_gl_ready(void) {
+    return g_ready ? 1 : 0;
+}
 
 void nocturne_trigl_gl_shutdown(void) {
     nocturne_trigl_gl_release_textures();
-    if (g_vao != 0 && gl.DeleteVertexArrays != nullptr) gl.DeleteVertexArrays(1, &g_vao);
-    if (g_vbo != 0 && gl.DeleteBuffers != nullptr) gl.DeleteBuffers(1, &g_vbo);
-    if (g_ibo != 0 && gl.DeleteBuffers != nullptr) gl.DeleteBuffers(1, &g_ibo);
-    if (g_program != 0 && gl.DeleteProgram != nullptr) gl.DeleteProgram(g_program);
+    if (g_vao != 0 && gl.DeleteVertexArrays != nullptr)
+        gl.DeleteVertexArrays(1, &g_vao);
+    if (g_vbo != 0 && gl.DeleteBuffers != nullptr)
+        gl.DeleteBuffers(1, &g_vbo);
+    if (g_ibo != 0 && gl.DeleteBuffers != nullptr)
+        gl.DeleteBuffers(1, &g_ibo);
+    if (g_program != 0 && gl.DeleteProgram != nullptr)
+        gl.DeleteProgram(g_program);
     std::vector<HardwareVertex>().swap(g_scratch);
     g_vao = g_vbo = g_ibo = g_program = 0;
     g_vbo_capacity = g_ibo_capacity = 0;
@@ -624,22 +642,35 @@ void nocturne_trigl_gl_enable_depth_write(void) {
     ++g_state_epoch;
 }
 
-
 void nocturne_trigl_gl_set_target_size(int width, int height) {
-    if (!g_ready || width <= 0 || height <= 0) return;
-    g_target_width  = width;
+    if (!g_ready || width <= 0 || height <= 0)
+        return;
+    g_target_width = width;
     g_target_height = height;
     // Pixels to clip space, column major. x grows right from 0, y grows DOWN
     // from 0 as the engine reports it, and depth arrives already normalised to
     // 0..1 where clip space wants -1..1.
     const float m[16] = {
-        2.0f / (float)width,  0.0f,                   0.0f,  0.0f,
-        0.0f,                -2.0f / (float)height,   0.0f,  0.0f,
-        0.0f,                 0.0f,                   2.0f,  0.0f,
-       -1.0f,                 1.0f,                  -1.0f,  1.0f,
+        2.0f / (float)width,
+        0.0f,
+        0.0f,
+        0.0f,
+        0.0f,
+        -2.0f / (float)height,
+        0.0f,
+        0.0f,
+        0.0f,
+        0.0f,
+        2.0f,
+        0.0f,
+        -1.0f,
+        1.0f,
+        -1.0f,
+        1.0f,
     };
     gl.UseProgram(g_program);
-    if (g_loc_projection >= 0) gl.UniformMatrix4fv(g_loc_projection, 1, GL_FALSE, m);
+    if (g_loc_projection >= 0)
+        gl.UniformMatrix4fv(g_loc_projection, 1, GL_FALSE, m);
     gl.UseProgram(0);
 }
 
@@ -651,19 +682,25 @@ void nocturne_trigl_gl_set_fog_color(float r, float g, float b) {
 }
 
 void nocturne_trigl_gl_apply_state(const NocturneTriglPipelineState *state) {
-    if (!g_ready) return;
+    if (!g_ready)
+        return;
     const bool first = !g_current_valid;
 
     if (first || state->blend_enabled != g_current.blend_enabled) {
-        if (state->blend_enabled) gl.Enable(GL_BLEND); else gl.Disable(GL_BLEND);
+        if (state->blend_enabled)
+            gl.Enable(GL_BLEND);
+        else
+            gl.Disable(GL_BLEND);
     }
     if (first || state->src_blend != g_current.src_blend ||
         state->dst_blend != g_current.dst_blend) {
         gl.BlendFunc(blend_factor(state->src_blend), blend_factor(state->dst_blend));
     }
     if (first || state->depth_test_enabled != g_current.depth_test_enabled) {
-        if (state->depth_test_enabled) gl.Enable(GL_DEPTH_TEST);
-        else                           gl.Disable(GL_DEPTH_TEST);
+        if (state->depth_test_enabled)
+            gl.Enable(GL_DEPTH_TEST);
+        else
+            gl.Disable(GL_DEPTH_TEST);
     }
     if (first || state->depth_write_enabled != g_current.depth_write_enabled) {
         gl.DepthMask(state->depth_write_enabled ? GL_TRUE : GL_FALSE);
@@ -681,8 +718,7 @@ void nocturne_trigl_gl_apply_state(const NocturneTriglPipelineState *state) {
     // hatched, which on Svetlana's blades is the black speckle that reaches the
     // screen. A bias toward the viewer settles the tie without changing how the
     // pass sorts against anything genuinely in front of or behind it.
-    const bool overlay = overlay_bias() && state->blend_enabled &&
-                         state->depth_test_enabled;
+    const bool overlay = overlay_bias() && state->blend_enabled && state->depth_test_enabled;
     if (first || overlay != g_overlay_biased) {
         if (overlay) {
             gl.Enable(GL_POLYGON_OFFSET_FILL);
@@ -697,7 +733,8 @@ void nocturne_trigl_gl_apply_state(const NocturneTriglPipelineState *state) {
     // not the pipeline's.
     gl.UseProgram(g_program);
     if (first || state->texture_enabled != g_current.texture_enabled) {
-        if (g_loc_tex_enabled >= 0) gl.Uniform1i(g_loc_tex_enabled, state->texture_enabled);
+        if (g_loc_tex_enabled >= 0)
+            gl.Uniform1i(g_loc_tex_enabled, state->texture_enabled);
     }
     if (first || state->modulate_texture_alpha != g_current.modulate_texture_alpha) {
         if (g_loc_modulate_alpha >= 0) {
@@ -705,13 +742,16 @@ void nocturne_trigl_gl_apply_state(const NocturneTriglPipelineState *state) {
         }
     }
     if (first || state->alpha_test_enabled != g_current.alpha_test_enabled) {
-        if (g_loc_alpha_test >= 0) gl.Uniform1i(g_loc_alpha_test, state->alpha_test_enabled);
+        if (g_loc_alpha_test >= 0)
+            gl.Uniform1i(g_loc_alpha_test, state->alpha_test_enabled);
     }
     const int fog = state->fog_enabled && vertex_fog();
     if (first || fog != (g_current.fog_enabled && vertex_fog())) {
-        if (g_loc_fog_enabled >= 0) gl.Uniform1i(g_loc_fog_enabled, fog);
+        if (g_loc_fog_enabled >= 0)
+            gl.Uniform1i(g_loc_fog_enabled, fog);
     }
-    if (g_loc_debug >= 0) gl.Uniform1i(g_loc_debug, debug_mode());
+    if (g_loc_debug >= 0)
+        gl.Uniform1i(g_loc_debug, debug_mode());
     if (g_fog_color_dirty && g_loc_fog_color >= 0) {
         gl.Uniform3f(g_loc_fog_color, g_fog_color[0], g_fog_color[1], g_fog_color[2]);
         g_fog_color_dirty = false;
@@ -722,28 +762,34 @@ void nocturne_trigl_gl_apply_state(const NocturneTriglPipelineState *state) {
 }
 
 unsigned nocturne_trigl_gl_texture_cached(const char *name, int dimension) {
-    if (!g_ready || name == nullptr || dimension <= 0) return 0;
+    if (!g_ready || name == nullptr || dimension <= 0)
+        return 0;
     TextureSlot *slot = find_slot(name, dimension);
-    if (slot == nullptr) return 0;
+    if (slot == nullptr)
+        return 0;
     slot->used = ++g_texture_clock;
     return slot->texture;
 }
 
-unsigned nocturne_trigl_gl_texture(const char *name, int dimension,
-                                   const unsigned *rgba, int mipmapped,
-                                   int refresh) {
-    if (!g_ready || name == nullptr || dimension <= 0) return 0;
+unsigned nocturne_trigl_gl_texture(const char *name, int dimension, const unsigned *rgba,
+                                   int mipmapped, int refresh) {
+    if (!g_ready || name == nullptr || dimension <= 0)
+        return 0;
 
     TextureSlot *slot = find_slot(name, dimension);
     const bool fresh = (slot == nullptr);
-    if (fresh) slot = insert_slot(name, dimension);
+    if (fresh)
+        slot = insert_slot(name, dimension);
     slot->used = ++g_texture_clock;
-    if (!fresh && !refresh) return slot->texture;
-    if (rgba == nullptr) return slot->texture;
+    if (!fresh && !refresh)
+        return slot->texture;
+    if (rgba == nullptr)
+        return slot->texture;
 
     if (slot->texture == 0) {
         gl.GenTextures(1, &slot->texture);
-        if (slot->texture == 0) return 0;
+        if (slot->texture == 0)
+            return 0;
     }
 
     // Uploading has to bind, and this runs between draws rather than as part of
@@ -755,13 +801,14 @@ unsigned nocturne_trigl_gl_texture(const char *name, int dimension,
     // binding is put back; an upload is not allowed to be a state change.
     gl.ActiveTexture(GL_TEXTURE0);
     GLint previous = 0;
-    if (gl.GetIntegerv != nullptr) gl.GetIntegerv(GL_TEXTURE_BINDING_2D, &previous);
+    if (gl.GetIntegerv != nullptr)
+        gl.GetIntegerv(GL_TEXTURE_BINDING_2D, &previous);
     gl.BindTexture(GL_TEXTURE_2D, slot->texture);
     gl.PixelStorei(GL_UNPACK_ALIGNMENT, 4);
     // The expansion produces 0xAARRGGBB words, which on a little-endian host is
     // B,G,R,A in memory — GL_BGRA, not GL_RGBA.
-    gl.TexImage2D(GL_TEXTURE_2D, 0, NOCTURNE_GL_INTERNAL_BGRA8, dimension, dimension, 0,
-                  GL_BGRA, GL_UNSIGNED_BYTE, rgba);
+    gl.TexImage2D(GL_TEXTURE_2D, 0, NOCTURNE_GL_INTERNAL_BGRA8, dimension, dimension, 0, GL_BGRA,
+                  GL_UNSIGNED_BYTE, rgba);
     if (mipmapped && mipmaps() && gl.GenerateMipmap != nullptr) {
         gl.GenerateMipmap(GL_TEXTURE_2D);
     } else {
@@ -771,17 +818,24 @@ unsigned nocturne_trigl_gl_texture(const char *name, int dimension,
         gl.TexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAX_LEVEL, 0);
         // An upload takes the chain away again, so a reflection that had one has
         // to be given it back rather than sampled as though it still had it.
-        if (slot->texture == g_envmap_chained) g_envmap_chained = 0;
+        if (slot->texture == g_envmap_chained)
+            g_envmap_chained = 0;
     }
     gl.BindTexture(GL_TEXTURE_2D, (GLuint)previous);
     return slot->texture;
 }
 
-void nocturne_trigl_envmap_pass_begin(void) { ++g_envmap_pass; }
-void nocturne_trigl_envmap_pass_end(void)   { if (g_envmap_pass > 0) --g_envmap_pass; }
+void nocturne_trigl_envmap_pass_begin(void) {
+    ++g_envmap_pass;
+}
+void nocturne_trigl_envmap_pass_end(void) {
+    if (g_envmap_pass > 0)
+        --g_envmap_pass;
+}
 
 void nocturne_trigl_gl_bind_texture(unsigned texture) {
-    if (!g_ready) return;
+    if (!g_ready)
+        return;
     gl.ActiveTexture(GL_TEXTURE0);
     gl.BindTexture(GL_TEXTURE_2D, (GLuint)texture);
     // Marking one texture is a question asked of a frame already on screen —
@@ -791,7 +845,8 @@ void nocturne_trigl_gl_bind_texture(unsigned texture) {
     // now, apply_state having run first, so the uniform lands on it.
     if (nocturne_trigl_paint_texture != 0 && g_loc_debug >= 0) {
         const int paint = ((unsigned)nocturne_trigl_paint_texture == texture)
-                              ? nocturne_trigl_paint_mode() : debug_mode();
+                              ? nocturne_trigl_paint_mode()
+                              : debug_mode();
         gl.Uniform1i(g_loc_debug, paint);
     }
 
@@ -813,8 +868,8 @@ void nocturne_trigl_gl_bind_texture(unsigned texture) {
         gl.TexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAX_LEVEL, 1000);
         gl.GenerateMipmap(GL_TEXTURE_2D);
         g_envmap_chained = texture;
-        DLOG("render","trigl_gl: built a mip chain for the reflection (texture %u)",
-                  (unsigned)texture);
+        DLOG("render", "trigl_gl: built a mip chain for the reflection (texture %u)",
+             (unsigned)texture);
     }
     if (texture != 0) {
         // A mip filter is only asked for when there is a chain to sample. With
@@ -830,12 +885,12 @@ void nocturne_trigl_gl_bind_texture(unsigned texture) {
         const GLint min_filter =
             chained
                 ? (blurred || g_current.min_filter == NOCTURNE_TRIGL_FILTER_LINEAR
-                       ? GL_LINEAR_MIPMAP_LINEAR : GL_NEAREST_MIPMAP_LINEAR)
-                : (g_current.min_filter == NOCTURNE_TRIGL_FILTER_LINEAR
-                       ? GL_LINEAR : GL_NEAREST);
-        const GLint mag_filter =
-            (blurred || g_current.mag_filter == NOCTURNE_TRIGL_FILTER_LINEAR)
-                ? GL_LINEAR : GL_NEAREST;
+                       ? GL_LINEAR_MIPMAP_LINEAR
+                       : GL_NEAREST_MIPMAP_LINEAR)
+                : (g_current.min_filter == NOCTURNE_TRIGL_FILTER_LINEAR ? GL_LINEAR : GL_NEAREST);
+        const GLint mag_filter = (blurred || g_current.mag_filter == NOCTURNE_TRIGL_FILTER_LINEAR)
+                                     ? GL_LINEAR
+                                     : GL_NEAREST;
         gl.TexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, min_filter);
         gl.TexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, mag_filter);
         // Clamped, which is the addressing mode the engine asks for: it sets
@@ -853,7 +908,8 @@ const char *nocturne_trigl_gl_renderer_name(void) {
     static char name[128] = "";
     if (name[0] == '\0' && gl.GetString != nullptr) {
         const char *reported = (const char *)gl.GetString(GL_RENDERER);
-        if (reported != nullptr) snprintf(name, sizeof(name), "%s", reported);
+        if (reported != nullptr)
+            snprintf(name, sizeof(name), "%s", reported);
     }
     return (name[0] != '\0') ? name : "OpenGL";
 }
@@ -870,9 +926,11 @@ void nocturne_trigl_gl_release_textures(void) {
 }
 
 int nocturne_trigl_gl_dump_texture(const char *name, int dimension, const char *path) {
-    if (!g_ready || name == nullptr || gl.GetTexImage == nullptr) return 0;
+    if (!g_ready || name == nullptr || gl.GetTexImage == nullptr)
+        return 0;
     TextureSlot *slot = find_slot(name, dimension);
-    if (slot == nullptr || slot->texture == 0) return 0;
+    if (slot == nullptr || slot->texture == 0)
+        return 0;
 
     std::vector<unsigned char> pixels((size_t)dimension * (size_t)dimension * 4u);
     gl.ActiveTexture(GL_TEXTURE0);
@@ -887,16 +945,18 @@ int nocturne_trigl_gl_dump_texture(const char *name, int dimension, const char *
     const std::string fallback =
         (std::filesystem::temp_directory_path(ec) / "trigl_texture.ppm").string();
     FILE *fp = fopen((path != nullptr) ? path : fallback.c_str(), "wb");
-    if (fp == nullptr) return 0;
+    if (fp == nullptr)
+        return 0;
     // The alpha is carried in the comment rather than dropped silently: a colour
     // key that made the wrong texels transparent looks like foreign pixels on
     // the model, and would be invisible in an opaque dump.
     int keyed = 0;
     for (int i = 0; i < dimension * dimension; ++i) {
-        if (pixels[i * 4 + 3] == 0) ++keyed;
+        if (pixels[i * 4 + 3] == 0)
+            ++keyed;
     }
-    fprintf(fp, "P6\n# %s dim=%d transparent_texels=%d\n%d %d\n255\n",
-            name, dimension, keyed, dimension, dimension);
+    fprintf(fp, "P6\n# %s dim=%d transparent_texels=%d\n%d %d\n255\n", name, dimension, keyed,
+            dimension, dimension);
     for (int i = 0; i < dimension * dimension; ++i) {
         fwrite(&pixels[(size_t)i * 4], 1, 3, fp);
     }
@@ -906,57 +966,65 @@ int nocturne_trigl_gl_dump_texture(const char *name, int dimension, const char *
 
 void nocturne_trigl_gl_report_textures(void *report_file) {
     FILE *fp = (FILE *)report_file;
-    if (fp == nullptr) return;
+    if (fp == nullptr)
+        return;
     fprintf(fp, "\ntexture cache: %d of %d resident\n", g_texture_count, kTextureSlots);
     fprintf(fp, "%-6s %-40s %5s %8s %10s\n", "slot", "name", "dim", "gl", "used");
     for (int i = 0; i < kTextureSlots; ++i) {
-        if (g_textures[i].dimension == 0) continue;
-        fprintf(fp, "%-6d %-40s %5d %8u %10u\n", i, g_textures[i].name,
-                g_textures[i].dimension, (unsigned)g_textures[i].texture,
-                g_textures[i].used);
+        if (g_textures[i].dimension == 0)
+            continue;
+        fprintf(fp, "%-6d %-40s %5d %8u %10u\n", i, g_textures[i].name, g_textures[i].dimension,
+                (unsigned)g_textures[i].texture, g_textures[i].used);
     }
     // Two entries sharing a GL texture would mean the cache handed the same
     // image to two names, which is the shape of an object wearing another
     // object's texture. Reported rather than left to be spotted by eye.
     for (int i = 0; i < kTextureSlots; ++i) {
-        if (g_textures[i].dimension == 0 || g_textures[i].texture == 0) continue;
+        if (g_textures[i].dimension == 0 || g_textures[i].texture == 0)
+            continue;
         for (int j = i + 1; j < kTextureSlots; ++j) {
-            if (g_textures[j].texture != g_textures[i].texture) continue;
+            if (g_textures[j].texture != g_textures[i].texture)
+                continue;
             fprintf(fp, "SHARED gl=%u between '%s'(%d) and '%s'(%d)\n",
-                    (unsigned)g_textures[i].texture, g_textures[i].name,
-                    g_textures[i].dimension, g_textures[j].name,
-                    g_textures[j].dimension);
+                    (unsigned)g_textures[i].texture, g_textures[i].name, g_textures[i].dimension,
+                    g_textures[j].name, g_textures[j].dimension);
         }
     }
 }
 
 int nocturne_trigl_gl_save_depth(int slot, int width, int height) {
-    if (!g_ready) return 0;
+    if (!g_ready)
+        return 0;
     const GLuint scene = (GLuint)nocturne_gl_scene_fbo();
-    if (scene == 0) return 0;
+    if (scene == 0)
+        return 0;
     MasterDepth *m = ensure_master_depth(slot, width, height);
-    if (m == nullptr) return 0;
+    if (m == nullptr)
+        return 0;
     ++nocturne_trigl_stats.depth_saves;
 
     gl.BindFramebuffer(GL_READ_FRAMEBUFFER, scene);
     gl.BindFramebuffer(GL_DRAW_FRAMEBUFFER, m->fbo);
-    gl.BlitFramebuffer(0, 0, width, height, 0, 0, width, height,
-                       GL_DEPTH_BUFFER_BIT, GL_NEAREST);
+    gl.BlitFramebuffer(0, 0, width, height, 0, 0, width, height, GL_DEPTH_BUFFER_BIT, GL_NEAREST);
     gl.BindFramebuffer(GL_FRAMEBUFFER, scene);
     return 1;
 }
 
-int nocturne_trigl_gl_restore_depth(int slot, int left, int top, int right, int bottom,
-                                    int width, int height) {
-    if (!g_ready) return 0;
+int nocturne_trigl_gl_restore_depth(int slot, int left, int top, int right, int bottom, int width,
+                                    int height) {
+    if (!g_ready)
+        return 0;
     const GLuint scene = (GLuint)nocturne_gl_scene_fbo();
-    if (scene == 0) return 0;
-    if (slot < 0 || slot >= kMasterDepthSlots) return 0;
+    if (scene == 0)
+        return 0;
+    if (slot < 0 || slot >= kMasterDepthSlots)
+        return 0;
     MasterDepth &m = g_master_depth[slot];
-    if (m.fbo == 0) return 0;
+    if (m.fbo == 0)
+        return 0;
 
     ++nocturne_trigl_stats.depth_restores;
-    if (right  > nocturne_trigl_stats.depth_rect_max_x) {
+    if (right > nocturne_trigl_stats.depth_rect_max_x) {
         nocturne_trigl_stats.depth_rect_max_x = right;
     }
     if (bottom > nocturne_trigl_stats.depth_rect_max_y) {
@@ -969,13 +1037,13 @@ int nocturne_trigl_gl_restore_depth(int slot, int left, int top, int right, int 
     const GLint x1 = right;
     const GLint y0 = height - bottom;
     const GLint y1 = height - top;
-    if (x1 <= x0 || y1 <= y0) return 1;
+    if (x1 <= x0 || y1 <= y0)
+        return 1;
     (void)width;
 
     gl.BindFramebuffer(GL_READ_FRAMEBUFFER, m.fbo);
     gl.BindFramebuffer(GL_DRAW_FRAMEBUFFER, scene);
-    gl.BlitFramebuffer(x0, y0, x1, y1, x0, y0, x1, y1,
-                       GL_DEPTH_BUFFER_BIT, GL_NEAREST);
+    gl.BlitFramebuffer(x0, y0, x1, y1, x0, y0, x1, y1, GL_DEPTH_BUFFER_BIT, GL_NEAREST);
     gl.BindFramebuffer(GL_FRAMEBUFFER, scene);
     return 1;
 }
@@ -983,20 +1051,24 @@ int nocturne_trigl_gl_restore_depth(int slot, int left, int top, int right, int 
 void nocturne_trigl_gl_release_depth(void) {
     for (int i = 0; i < kMasterDepthSlots; ++i) {
         MasterDepth &m = g_master_depth[i];
-        if (m.fbo != 0 && gl.DeleteFramebuffers != nullptr) gl.DeleteFramebuffers(1, &m.fbo);
-        if (m.depth != 0 && gl.DeleteRenderbuffers != nullptr) gl.DeleteRenderbuffers(1, &m.depth);
+        if (m.fbo != 0 && gl.DeleteFramebuffers != nullptr)
+            gl.DeleteFramebuffers(1, &m.fbo);
+        if (m.depth != 0 && gl.DeleteRenderbuffers != nullptr)
+            gl.DeleteRenderbuffers(1, &m.depth);
         m.fbo = m.depth = 0;
         m.width = m.height = 0;
     }
 }
 
 void nocturne_trigl_gl_draw_batch(const NocturneTriglBatch *batch) {
-    if (!g_ready || batch->vertex_count <= 0 || batch->index_count <= 0) return;
+    if (!g_ready || batch->vertex_count <= 0 || batch->index_count <= 0)
+        return;
     if (g_scratch.size() < (size_t)batch->vertex_count) {
         g_scratch.resize((size_t)batch->vertex_count);
     }
     // Set together, so a width means a target.
-    if (g_target_width > 0) gl.Viewport(0, 0, g_target_width, g_target_height);
+    if (g_target_width > 0)
+        gl.Viewport(0, 0, g_target_width, g_target_height);
 
     // Premultiply by w so the perspective divide reproduces the engine's own
     // projection and leaves the texture coordinates perspective correct.
@@ -1008,10 +1080,10 @@ void nocturne_trigl_gl_draw_batch(const NocturneTriglBatch *batch) {
         dst.y = src.y * w;
         dst.z = src.z * w;
         dst.w = w;
-        dst.diffuse[0]  = (unsigned char)((src.diffuse >> 16) & 0xff);
-        dst.diffuse[1]  = (unsigned char)((src.diffuse >> 8) & 0xff);
-        dst.diffuse[2]  = (unsigned char)(src.diffuse & 0xff);
-        dst.diffuse[3]  = (unsigned char)((src.diffuse >> 24) & 0xff);
+        dst.diffuse[0] = (unsigned char)((src.diffuse >> 16) & 0xff);
+        dst.diffuse[1] = (unsigned char)((src.diffuse >> 8) & 0xff);
+        dst.diffuse[2] = (unsigned char)(src.diffuse & 0xff);
+        dst.diffuse[3] = (unsigned char)((src.diffuse >> 24) & 0xff);
         dst.specular[0] = (unsigned char)((src.specular >> 16) & 0xff);
         dst.specular[1] = (unsigned char)((src.specular >> 8) & 0xff);
         dst.specular[2] = (unsigned char)(src.specular & 0xff);
@@ -1034,7 +1106,8 @@ void nocturne_trigl_gl_draw_batch(const NocturneTriglBatch *batch) {
         if (gl.BufferSubData != nullptr) {
             gl.BufferSubData(GL_ARRAY_BUFFER, 0, (GLsizeiptr)vertex_bytes, g_scratch.data());
         } else {
-            gl.BufferData(GL_ARRAY_BUFFER, (GLsizeiptr)vertex_bytes, g_scratch.data(), GL_STREAM_DRAW);
+            gl.BufferData(GL_ARRAY_BUFFER, (GLsizeiptr)vertex_bytes, g_scratch.data(),
+                          GL_STREAM_DRAW);
         }
     }
 
@@ -1045,11 +1118,9 @@ void nocturne_trigl_gl_draw_batch(const NocturneTriglBatch *batch) {
                       GL_STREAM_DRAW);
         g_ibo_capacity = index_bytes;
     } else {
-        gl.BufferData(GL_ELEMENT_ARRAY_BUFFER, (GLsizeiptr)g_ibo_capacity, nullptr,
-                      GL_STREAM_DRAW);
+        gl.BufferData(GL_ELEMENT_ARRAY_BUFFER, (GLsizeiptr)g_ibo_capacity, nullptr, GL_STREAM_DRAW);
         if (gl.BufferSubData != nullptr) {
-            gl.BufferSubData(GL_ELEMENT_ARRAY_BUFFER, 0, (GLsizeiptr)index_bytes,
-                             batch->indices);
+            gl.BufferSubData(GL_ELEMENT_ARRAY_BUFFER, 0, (GLsizeiptr)index_bytes, batch->indices);
         } else {
             gl.BufferData(GL_ELEMENT_ARRAY_BUFFER, (GLsizeiptr)index_bytes, batch->indices,
                           GL_STREAM_DRAW);
@@ -1063,7 +1134,7 @@ void nocturne_trigl_gl_draw_batch(const NocturneTriglBatch *batch) {
     gl.UseProgram(0);
 }
 
-#else  // !NOCTURNE_GL_PRESENT
+#else // !NOCTURNE_GL_PRESENT
 
 #include "renderer/trigl_gl.h"
 
@@ -1077,27 +1148,45 @@ extern "C" int nocturne_trigl_overlay_bias = 0;
 extern "C" int nocturne_trigl_envmap = 0;
 extern "C" NocturneTriglStats nocturne_trigl_stats = {};
 extern "C" void nocturne_trigl_stats_reset(void) {}
-int  nocturne_trigl_gl_init(void) { return 0; }
-int  nocturne_trigl_gl_ready(void) { return 0; }
+int nocturne_trigl_gl_init(void) {
+    return 0;
+}
+int nocturne_trigl_gl_ready(void) {
+    return 0;
+}
 void nocturne_trigl_gl_shutdown(void) {}
 void nocturne_trigl_gl_set_target_size(int, int) {}
 void nocturne_trigl_gl_set_fog_color(float, float, float) {}
 void nocturne_trigl_gl_apply_state(const NocturneTriglPipelineState *) {}
 void nocturne_trigl_gl_invalidate_state(void) {}
 void nocturne_trigl_gl_enable_depth_write(void) {}
-unsigned nocturne_trigl_gl_state_epoch(void) { return 0; }
-unsigned nocturne_trigl_gl_texture(const char *, int, const unsigned *, int, int) { return 0; }
-unsigned nocturne_trigl_gl_texture_cached(const char *, int) { return 0; }
+unsigned nocturne_trigl_gl_state_epoch(void) {
+    return 0;
+}
+unsigned nocturne_trigl_gl_texture(const char *, int, const unsigned *, int, int) {
+    return 0;
+}
+unsigned nocturne_trigl_gl_texture_cached(const char *, int) {
+    return 0;
+}
 void nocturne_trigl_gl_bind_texture(unsigned) {}
 void nocturne_trigl_envmap_pass_begin(void) {}
 void nocturne_trigl_envmap_pass_end(void) {}
 void nocturne_trigl_gl_release_textures(void) {}
 void nocturne_trigl_gl_report_textures(void *) {}
-int nocturne_trigl_gl_dump_texture(const char *, int, const char *) { return 0; }
-const char *nocturne_trigl_gl_renderer_name(void) { return "OpenGL"; }
-int  nocturne_trigl_gl_save_depth(int, int, int) { return 0; }
-int  nocturne_trigl_gl_restore_depth(int, int, int, int, int, int, int) { return 0; }
+int nocturne_trigl_gl_dump_texture(const char *, int, const char *) {
+    return 0;
+}
+const char *nocturne_trigl_gl_renderer_name(void) {
+    return "OpenGL";
+}
+int nocturne_trigl_gl_save_depth(int, int, int) {
+    return 0;
+}
+int nocturne_trigl_gl_restore_depth(int, int, int, int, int, int, int) {
+    return 0;
+}
 void nocturne_trigl_gl_release_depth(void) {}
 void nocturne_trigl_gl_draw_batch(const NocturneTriglBatch *) {}
 
-#endif  // NOCTURNE_GL_PRESENT
+#endif // NOCTURNE_GL_PRESENT

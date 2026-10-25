@@ -6,12 +6,11 @@
 // the desync packet.
 
 #include "net/sim_trace.h"
-#include "shim_config.h"
-
-#include "nocturne.h"
 
 #include "core/debug_log.h"
 #include "core/fnv1a.h"
+#include "nocturne.h"
+#include "shim_config.h"
 
 #include <cstdio>
 #include <cstring>
@@ -19,8 +18,8 @@
 #if !NOCTURNE_AUTHENTIC_NETPLAY && NOCTURNE_NETPLAY_SIM_TRACE
 
 static FILE *s_trace = (FILE *)0;
-static int   s_open_failed = 0;
-static int   s_reported_bad_victim = 0;
+static int s_open_failed = 0;
+static int s_reported_bad_victim = 0;
 
 // Last position/area emitted for each actor slot, so the actor pass below can
 // print only what moved. See the "A" lines in sim_trace.h: the character pass
@@ -30,30 +29,30 @@ static int   s_reported_bad_victim = 0;
 #define TRACE_MAX_ACTORS 4096
 
 static float s_last_pos[TRACE_MAX_ACTORS][3];
-static int   s_last_area[TRACE_MAX_ACTORS];
-static char  s_seen[TRACE_MAX_ACTORS];
+static int s_last_area[TRACE_MAX_ACTORS];
+static char s_seen[TRACE_MAX_ACTORS];
 
 // Previous frame's game-flag and timer name sets, so the event pass can print
 // transitions rather than the whole list every frame. Sized to the blocks in
 // CEventList (names[100][32] and names[10][32]).
-#define TRACE_MAX_FLAGS  100
+#define TRACE_MAX_FLAGS 100
 #define TRACE_MAX_TIMERS 10
 
 static char s_last_flags[TRACE_MAX_FLAGS][32];
-static int  s_last_flag_count = 0;
+static int s_last_flag_count = 0;
 static char s_last_timers[TRACE_MAX_TIMERS][32];
-static int  s_last_timer_count = 0;
+static int s_last_timer_count = 0;
 static unsigned int s_last_flag_fingerprint = 0;
 
 // How many times CGame::process has run, and the delta time it last ran with.
 // A machine that simulates a frame it never applied shows up as this pulling
 // ahead of the sequence number.
-static int   s_process_calls = 0;
+static int s_process_calls = 0;
 static float s_last_delta_time = 0.0f;
 
 // The frame the trace is currently on, so a probe firing from inside that frame
 // can tag its line with the same number the F/A/E lines carry.
-static int   s_last_sequence = 0;
+static int s_last_sequence = 0;
 
 // Truncate once per run and append from then on. nocturne_sim_trace_reset
 // closes the file at every mission start, and reopening with "w" threw away
@@ -63,8 +62,7 @@ static int   s_last_sequence = 0;
 // either way; it is only the file that carries over.
 static int s_trace_truncated = 0;
 
-static FILE *trace_file(void)
-{
+static FILE *trace_file(void) {
     if ((s_trace == (FILE *)0) && (s_open_failed == 0)) {
         s_trace = std::fopen(watcom_log_path("nocturne_simtrace.log").c_str(),
                              s_trace_truncated ? "a" : "w");
@@ -98,8 +96,7 @@ static FILE *trace_file(void)
 //         round-trips 0xff000000..0xffffffff through the file as raw hex rather
 //         than as an actor name precisely so cookies like this survive a save.
 //   -2    anything else that is not a character the set knows about
-static int trace_victim_slot(CCharacter *victim)
-{
+static int trace_victim_slot(CCharacter *victim) {
     int i;
 
     if (victim == (CCharacter *)0x0) {
@@ -117,8 +114,7 @@ static int trace_victim_slot(CCharacter *victim)
 }
 
 // Safe only for a slot that trace_victim_slot resolved (>= 0).
-static const char *trace_slot_name(int slot)
-{
+static const char *trace_slot_name(int slot) {
     CCharacter *character;
 
     if (slot == -1) {
@@ -144,19 +140,18 @@ static const char *trace_slot_name(int slot)
 // character per frame is enough to trip the host's lockstep guard.
 #define TRACE_CLASS_CACHE 128
 
-#define TRACE_ARMED_NONE      0
-#define TRACE_ARMED_STRANGER  1
-#define TRACE_ARMED_SCAT      2
+#define TRACE_ARMED_NONE 0
+#define TRACE_ARMED_STRANGER 1
+#define TRACE_ARMED_SCAT 2
 #define TRACE_ARMED_GABRIELLA 3
 
 static void *s_armed_vtable[TRACE_CLASS_CACHE];
 static unsigned char s_armed_kind[TRACE_CLASS_CACHE];
-static int   s_armed_count = 0;
+static int s_armed_count = 0;
 
 // guns_drawn is declared per class rather than on CHero, so each owner is asked
 // in turn. -1 for a hero class that has no such field.
-static int trace_guns_drawn(CHero *hero)
-{
+static int trace_guns_drawn(CHero *hero) {
     CDemonActor *actor = (CDemonActor *)hero;
     CDemonActor *cast;
 
@@ -183,11 +178,10 @@ static int trace_guns_drawn(CHero *hero)
     return -1;
 }
 
-static CWeapon *trace_weapon(CCharacter *character)
-{
+static CWeapon *trace_weapon(CCharacter *character) {
     void *vtable = (void *)character->base.vtable._ub;
-    int   kind   = TRACE_ARMED_NONE;
-    int   i;
+    int kind = TRACE_ARMED_NONE;
+    int i;
 
     for (i = 0; i < s_armed_count; i++) {
         if (s_armed_vtable[i] == vtable) {
@@ -196,23 +190,20 @@ static CWeapon *trace_weapon(CCharacter *character)
     }
     if (i < s_armed_count) {
         kind = (int)s_armed_kind[i];
-    }
-    else {
+    } else {
         if (core_actor_cpp_castToClassHash_FUN_0040c790(
                 &character->base, g_CStrangerClassInfo.name_hash) != (CDemonActor *)0x0) {
             kind = TRACE_ARMED_STRANGER;
-        }
-        else if (core_actor_cpp_castToClassHash_FUN_0040c790(
-                     &character->base, g_CScatClassInfo.name_hash) != (CDemonActor *)0x0) {
+        } else if (core_actor_cpp_castToClassHash_FUN_0040c790(
+                       &character->base, g_CScatClassInfo.name_hash) != (CDemonActor *)0x0) {
             kind = TRACE_ARMED_SCAT;
-        }
-        else if (core_actor_cpp_castToClassHash_FUN_0040c790(
-                     &character->base, g_CGabriellaClassInfo.name_hash) != (CDemonActor *)0x0) {
+        } else if (core_actor_cpp_castToClassHash_FUN_0040c790(
+                       &character->base, g_CGabriellaClassInfo.name_hash) != (CDemonActor *)0x0) {
             kind = TRACE_ARMED_GABRIELLA;
         }
         if (s_armed_count < TRACE_CLASS_CACHE) {
             s_armed_vtable[s_armed_count] = vtable;
-            s_armed_kind[s_armed_count]   = (unsigned char)kind;
+            s_armed_kind[s_armed_count] = (unsigned char)kind;
             s_armed_count++;
         }
     }
@@ -229,8 +220,7 @@ static CWeapon *trace_weapon(CCharacter *character)
     return (CWeapon *)0x0;
 }
 
-extern "C" void nocturne_sim_trace_reset(void)
-{
+extern "C" void nocturne_sim_trace_reset(void) {
     if (s_trace != (FILE *)0) {
         // A marker rather than a gap, so a mission boundary is findable in a
         // file that now spans several of them.
@@ -248,8 +238,7 @@ extern "C" void nocturne_sim_trace_reset(void)
     s_last_flag_fingerprint = 0;
 }
 
-static int trace_name_present(const char (*list)[32], int count, const char *name)
-{
+static int trace_name_present(const char (*list)[32], int count, const char *name) {
     int i;
 
     for (i = 0; i < count; i++) {
@@ -275,12 +264,11 @@ static int trace_name_present(const char (*list)[32], int count, const char *nam
 // only their arrival and departure is printed, with the duration they arrived
 // with; a timer that starts at a different value on the two machines is the kind
 // of thing being hunted.
-static void trace_event_changes(FILE *out, int sequence_number)
-{
+static void trace_event_changes(FILE *out, int sequence_number) {
     CEventList *event_list = g_CEventListPtr;
-    int         count;
-    int         flags_moved;
-    int         i;
+    int count;
+    int flags_moved;
+    int i;
 
     if (event_list == (CEventList *)0x0) {
         return;
@@ -300,8 +288,7 @@ static void trace_event_changes(FILE *out, int sequence_number)
         count = TRACE_MAX_FLAGS;
     }
     for (i = 0; i < count; i++) {
-        std::fprintf(out, "%d E pend  %s\n", sequence_number,
-                     (event_list->events).names[i]);
+        std::fprintf(out, "%d E pend  %s\n", sequence_number, (event_list->events).names[i]);
     }
 
     count = (event_list->game_flags).count;
@@ -352,11 +339,9 @@ static void trace_event_changes(FILE *out, int sequence_number)
         count = TRACE_MAX_TIMERS;
     }
     for (i = 0; i < count; i++) {
-        if (!trace_name_present(s_last_timers, s_last_timer_count,
-                                (event_list->timers).names[i])) {
+        if (!trace_name_present(s_last_timers, s_last_timer_count, (event_list->timers).names[i])) {
             std::fprintf(out, "%d E timer+ %s %.9g\n", sequence_number,
-                         (event_list->timers).names[i],
-                         (double)(event_list->timers).durations[i]);
+                         (event_list->timers).names[i], (double)(event_list->timers).durations[i]);
         }
     }
     for (i = 0; i < s_last_timer_count; i++) {
@@ -386,8 +371,7 @@ static void trace_event_changes(FILE *out, int sequence_number)
 // in net_sync.cpp walks, so the two agree on what "the same actor" means. An
 // actor being created or destroyed mid-list shifts every index after it and
 // makes this re-print the tail once; that is noise, not a false divergence.
-static void trace_actor_changes(FILE *out, int sequence_number)
-{
+static void trace_actor_changes(FILE *out, int sequence_number) {
     int count = g_CDemonSetPtr->actor_count;
     int i;
 
@@ -396,41 +380,38 @@ static void trace_actor_changes(FILE *out, int sequence_number)
     }
     for (i = 0; i < count; i++) {
         CDemonActor *actor = g_CDemonSetPtr->actors[i];
-        float        x, y, z;
-        int          area;
+        float x, y, z;
+        int area;
 
         if (actor == (CDemonActor *)0x0) {
             continue;
         }
-        x    = actor->location.position.x;
-        y    = actor->location.position.y;
-        z    = actor->location.position.z;
+        x = actor->location.position.x;
+        y = actor->location.position.y;
+        z = actor->location.position.z;
         area = actor->location.area_id;
 
         if ((s_seen[i] != 0) && (s_last_pos[i][0] == x) && (s_last_pos[i][1] == y) &&
             (s_last_pos[i][2] == z) && (s_last_area[i] == area)) {
             continue;
         }
-        s_seen[i]       = 1;
+        s_seen[i] = 1;
         s_last_pos[i][0] = x;
         s_last_pos[i][1] = y;
         s_last_pos[i][2] = z;
-        s_last_area[i]  = area;
+        s_last_area[i] = area;
 
-        std::fprintf(out, "%d A %04d %-24s pos=%.9g,%.9g,%.9g area=%d\n",
-                     sequence_number, i, actor->actor_name,
-                     (double)x, (double)y, (double)z, area);
+        std::fprintf(out, "%d A %04d %-24s pos=%.9g,%.9g,%.9g area=%d\n", sequence_number, i,
+                     actor->actor_name, (double)x, (double)y, (double)z, area);
     }
 }
 
-extern "C" void nocturne_sim_trace_note_process(float delta_time)
-{
-    s_process_calls   = s_process_calls + 1;
+extern "C" void nocturne_sim_trace_note_process(float delta_time) {
+    s_process_calls = s_process_calls + 1;
     s_last_delta_time = delta_time;
 }
 
-extern "C" int nocturne_sim_trace_process_calls(void)
-{
+extern "C" int nocturne_sim_trace_process_calls(void) {
     return s_process_calls;
 }
 
@@ -443,11 +424,10 @@ extern "C" int nocturne_sim_trace_process_calls(void)
 // Deliberately at entry to CCharacter::processDamage: the damage type decides
 // which of explode/dismember/shatter runs, so recording it before the branch is
 // what distinguishes "the same hit, one frame late" from "a different hit".
-extern "C" void nocturne_sim_trace_damage(CCharacter *target, SDamageInfo *info)
-{
+extern "C" void nocturne_sim_trace_damage(CCharacter *target, SDamageInfo *info) {
     CNetGame *net_game = g_CNetGamePtr;
-    FILE     *out;
-    int       slot;
+    FILE *out;
+    int slot;
 
     if ((net_game == (CNetGame *)0x0) || (net_game->network_mode != NET_MODE_PLAYING)) {
         return;
@@ -473,9 +453,8 @@ extern "C" void nocturne_sim_trace_damage(CCharacter *target, SDamageInfo *info)
     // per event is a syscall per hit on the frame path, which is the cost that
     // makes the host fall behind its own guard. The frame writer flushes, so a
     // line lands at the end of the frame after the one that wrote it.
-    std::fprintf(out, "%d D %-24s type=%d amount=%.9g hp=%.9g from=%d(%s)\n",
-                 s_last_sequence, target->base.actor_name,
-                 (int)info->damage_type, (double)info->damage_amount,
+    std::fprintf(out, "%d D %-24s type=%d amount=%.9g hp=%.9g from=%d(%s)\n", s_last_sequence,
+                 target->base.actor_name, (int)info->damage_type, (double)info->damage_amount,
                  (double)target->hit_points, slot, trace_slot_name(slot));
 }
 
@@ -491,10 +470,9 @@ extern "C" void nocturne_sim_trace_damage(CCharacter *target, SDamageInfo *info)
 // A dismemberment creates about a dozen parts at once, so the count on a frame is
 // as much of the signal as the names: one machine emitting a burst a frame before
 // the other is the phase error, and one emitting a burst alone is divergence.
-extern "C" void nocturne_sim_trace_bodypart(CDemonActor *part, CDemonActor *source)
-{
+extern "C" void nocturne_sim_trace_bodypart(CDemonActor *part, CDemonActor *source) {
     CNetGame *net_game = g_CNetGamePtr;
-    FILE     *out;
+    FILE *out;
 
     if ((net_game == (CNetGame *)0x0) || (net_game->network_mode != NET_MODE_PLAYING)) {
         return;
@@ -509,19 +487,16 @@ extern "C" void nocturne_sim_trace_bodypart(CDemonActor *part, CDemonActor *sour
     }
 
     // Not flushed: see the damage probe. The frame writer carries it.
-    std::fprintf(out, "%d B %-24s pos=%.9g,%.9g,%.9g from=%s\n",
-                 s_last_sequence, part->actor_name,
-                 (double)part->location.position.x,
-                 (double)part->location.position.y,
+    std::fprintf(out, "%d B %-24s pos=%.9g,%.9g,%.9g from=%s\n", s_last_sequence, part->actor_name,
+                 (double)part->location.position.x, (double)part->location.position.y,
                  (double)part->location.position.z,
                  (source != (CDemonActor *)0x0) ? source->actor_name : "-");
 }
 
-extern "C" void nocturne_sim_trace_frame(int sequence_number)
-{
+extern "C" void nocturne_sim_trace_frame(int sequence_number) {
     CNetGame *net_game = g_CNetGamePtr;
-    FILE     *out;
-    int       i;
+    FILE *out;
+    int i;
 
     // Held for the damage probe, which fires from inside the frame and has no
     // sequence number of its own to quote.
@@ -543,29 +518,25 @@ extern "C" void nocturne_sim_trace_frame(int sequence_number)
     // residue of the previous frame's sim draws — the fingerprint that says
     // whether the two machines drew the same things, not merely the same
     // number of things. See sim_trace.h.
-    std::fprintf(out, "%d F seed=%u netseed=%u draws=%u process=%d dt=%.9g\n",
-                 sequence_number,
-                 g_RandomSeedValue,
-                 (unsigned int)net_game->random_seed,
-                 nocturne_rng_sim_draws(),
-                 s_process_calls,
-                 (double)s_last_delta_time);
+    std::fprintf(out, "%d F seed=%u netseed=%u draws=%u process=%d dt=%.9g\n", sequence_number,
+                 g_RandomSeedValue, (unsigned int)net_game->random_seed, nocturne_rng_sim_draws(),
+                 s_process_calls, (double)s_last_delta_time);
 
     // Characters rather than the whole actor list: enemies and heroes are what
     // simulate, and the static scenery that fills most of the actor list cannot
     // diverge. Same order on every machine - the set's own list order, which is
     // itself part of what the sync hash checks.
     for (i = 0; i < g_CDemonSetPtr->character_count; i++) {
-        CCharacter  *character = g_CDemonSetPtr->characters[i];
-        CEnemy      *enemy;
-        int          victim_slot    = -1;
-        int          script_slot    = -1;
-        int          in_combat      = -1;
-        float        search_timer   = 0.0f;
-        unsigned int fire_bones     = 0;
-        float        fire_size      = 0.0f;
-        CWeapon     *weapon;
-        int          f;
+        CCharacter *character = g_CDemonSetPtr->characters[i];
+        CEnemy *enemy;
+        int victim_slot = -1;
+        int script_slot = -1;
+        int in_combat = -1;
+        float search_timer = 0.0f;
+        unsigned int fire_bones = 0;
+        float fire_size = 0.0f;
+        CWeapon *weapon;
+        int f;
 
         if (character == (CCharacter *)0x0) {
             std::fprintf(out, "%d %04d (null)\n", sequence_number, i);
@@ -574,12 +545,12 @@ extern "C" void nocturne_sim_trace_frame(int sequence_number)
 
         // The AI fields live on CEnemy; heroes and neutral characters are not
         // one, so ask rather than assume.
-        enemy = (CEnemy *)core_actor_cpp_castToClassHash_FUN_0040c790(
-                              &character->base, g_CEnemyClassInfo.name_hash);
+        enemy = (CEnemy *)core_actor_cpp_castToClassHash_FUN_0040c790(&character->base,
+                                                                      g_CEnemyClassInfo.name_hash);
         if (enemy != (CEnemy *)0x0) {
-            victim_slot  = trace_victim_slot(enemy->victim);
-            script_slot  = trace_victim_slot(enemy->script_victim);
-            in_combat    = enemy->is_in_combat;
+            victim_slot = trace_victim_slot(enemy->victim);
+            script_slot = trace_victim_slot(enemy->script_victim);
+            in_combat = enemy->is_in_combat;
             search_timer = enemy->victim_search_timer;
 
             // -3 (the script sentinel) is normal and expected. -2 is not: a
@@ -590,11 +561,11 @@ extern "C" void nocturne_sim_trace_frame(int sequence_number)
             if (((victim_slot == -2) || (script_slot == -2)) && (s_reported_bad_victim == 0)) {
                 s_reported_bad_victim = 1;
                 DLOG("netplay",
-                        "SIMTRACE: %s has a victim field that is neither null, the script "
-                        "sentinel, nor a live character - victim=%p script_victim=%p "
-                        "(a stale pointer, not a desync)",
-                        character->base.actor_name,
-                        (void *)enemy->victim, (void *)enemy->script_victim);
+                     "SIMTRACE: %s has a victim field that is neither null, the script "
+                     "sentinel, nor a live character - victim=%p script_victim=%p "
+                     "(a stale pointer, not a desync)",
+                     character->base.actor_name, (void *)enemy->victim,
+                     (void *)enemy->script_victim);
             }
         }
 
@@ -608,12 +579,9 @@ extern "C" void nocturne_sim_trace_frame(int sequence_number)
                      sequence_number, i, character->base.actor_name,
                      (double)character->base.location.position.x,
                      (double)character->base.location.position.y,
-                     (double)character->base.location.position.z,
-                     character->base.location.area_id,
-                     (double)character->hit_points,
-                     character->model.base.state_index,
-                     victim_slot, trace_slot_name(victim_slot),
-                     script_slot, trace_slot_name(script_slot),
+                     (double)character->base.location.position.z, character->base.location.area_id,
+                     (double)character->hit_points, character->model.base.state_index, victim_slot,
+                     trace_slot_name(victim_slot), script_slot, trace_slot_name(script_slot),
                      in_combat, (double)search_timer);
 
         // Burning kills without a damage call: CGunFlame::init ignites by
@@ -622,26 +590,22 @@ extern "C" void nocturne_sim_trace_frame(int sequence_number)
         // a different burn rate.
         for (f = 0; f < character->fire_count; f++) {
             fire_bones = fire_bones * 31u + (unsigned int)character->fires[f].bone_index;
-            fire_size  = fire_size + character->fires[f].size;
+            fire_size = fire_size + character->fires[f].size;
         }
         if ((character->fire_count != 0) || (character->is_fully_burned != 0)) {
             std::fprintf(out, "%d %04dF fire=%d bones=%08x size=%.9g burned=%d alpha=%.9g\n",
-                         sequence_number, i, character->fire_count, fire_bones,
-                         (double)fire_size, character->is_fully_burned,
-                         (double)character->burn_alpha);
+                         sequence_number, i, character->fire_count, fire_bones, (double)fire_size,
+                         character->is_fully_burned, (double)character->burn_alpha);
         }
 
         // The weapon's world position is where a shot or a flame starts.
         weapon = trace_weapon(character);
         if (weapon != (CWeapon *)0x0) {
-            std::fprintf(out, "%d %04dW weapon=%.9g,%.9g,%.9g orient=%.9g,%.9g,%.9g\n",
-                         sequence_number, i,
-                         (double)weapon->base.location.position.x,
-                         (double)weapon->base.location.position.y,
-                         (double)weapon->base.location.position.z,
-                         (double)weapon->base.orient.vec.x,
-                         (double)weapon->base.orient.vec.y,
-                         (double)weapon->base.orient.vec.z);
+            std::fprintf(
+                out, "%d %04dW weapon=%.9g,%.9g,%.9g orient=%.9g,%.9g,%.9g\n", sequence_number, i,
+                (double)weapon->base.location.position.x, (double)weapon->base.location.position.y,
+                (double)weapon->base.location.position.z, (double)weapon->base.orient.vec.x,
+                (double)weapon->base.orient.vec.y, (double)weapon->base.orient.vec.z);
         }
     }
 
@@ -651,8 +615,8 @@ extern "C" void nocturne_sim_trace_frame(int sequence_number)
     // Bounded by g_HeroActors' slots as well as the count, as net_sync is.
     for (i = 0; (i < g_HeroCount) && (i < NOCTURNE_HERO_SLOTS); i++) {
         CHero *hero = g_HeroActors[i];
-        int    shared = -1;
-        int    j;
+        int shared = -1;
+        int j;
 
         if (hero == (CHero *)0x0) {
             continue;
@@ -666,8 +630,7 @@ extern "C" void nocturne_sim_trace_frame(int sequence_number)
         }
         std::fprintf(out, "%d H%d %-24s in_draw=%d in_fire=%d drawn=%d wshare=%d\n",
                      sequence_number, i, hero->base.base.actor_name,
-                     (hero->player_input.action_state).draw,
-                     (hero->player_input.action_state).fire,
+                     (hero->player_input.action_state).draw, (hero->player_input.action_state).fire,
                      trace_guns_drawn(hero), shared);
     }
 
@@ -677,13 +640,15 @@ extern "C" void nocturne_sim_trace_frame(int sequence_number)
     std::fflush(out);
 }
 
-#else  /* disabled */
+#else /* disabled */
 
 extern "C" void nocturne_sim_trace_frame(int) {}
 extern "C" void nocturne_sim_trace_damage(CCharacter *, SDamageInfo *) {}
 extern "C" void nocturne_sim_trace_bodypart(CDemonActor *, CDemonActor *) {}
 extern "C" void nocturne_sim_trace_reset(void) {}
 extern "C" void nocturne_sim_trace_note_process(float) {}
-extern "C" int  nocturne_sim_trace_process_calls(void) { return 0; }
+extern "C" int nocturne_sim_trace_process_calls(void) {
+    return 0;
+}
 
 #endif

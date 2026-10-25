@@ -59,7 +59,8 @@ death and is still the last thing painted under the Game Over list. `strangerCan
 the hit-point test. See *It is a screen, not an overlay*.
 
 **Guide toggles a marker key in place of the heading**, with its swatches drawn through the map's
-own `draw_marker` so they cannot drift. See *The marker key*.
+own `draw_marker` so they cannot drift. Both are centred, and the band is as tall as the taller of
+the two, so toggling does not move the map. See *The marker key*.
 
 **OPEN — the band height is tuned to one level by eye.** `--below 2 --above 11` suits
 `CASTLE.geo`. It is content-dependent and wants a second level, ideally a dungeon, before it is
@@ -212,19 +213,25 @@ side." `allowed_sides` of 0 permits neither side. Only a door that clears that g
 the key test in `CHero::tryOpenDoor`.
 
 **`getMoveType` cannot be called to find out** — it plays the locked sound and puts a message on
-screen. Its side gate has to be reproduced: `worldToLocalPoint(door, &out, &hero_position)`, then
-bit 2 of `allowed_sides` when `out.z <= 0` and bit 1 otherwise. The key test, by contrast, is the
-real call: `checkHasMatchingKey(&hero->inventory, door->key_mask, 0)` returns 1 immediately when
-`key_mask` is 0, and `show_message` 0 makes it pure — no "You used a key.", no unlock sound.
+screen. The key test is the real call: `checkHasMatchingKey(&hero->inventory, door->key_mask, 0)`
+returns 1 immediately when `key_mask` is 0, and `show_message` 0 makes it pure — no "You used a
+key.", no unlock sound.
+
+**The side gate is a property of the door, not of where the player stands.** `getMoveType` takes
+the side from `worldToLocalPoint(door, &out, &hero_position)` — bit 2 of `allowed_sides` when
+`out.z <= 0`, bit 1 otherwise — and `tryOpenNearbyDoor` only gets that far within 4 units of the
+door's open position and 5 vertically, where the door's plane divides the two rooms. Away from
+the door the plane divides the whole level along an infinite line, so the answer says nothing
+about the room the player is in. A door that opens from one side only is coloured as its own
+kind; the shipped missions have 49 (`allowedSides` 1 or 2 on a `CDoor`), against 223 that open
+from both and 98 from neither.
 
 | Door state | Colour |
 | --- | --- |
-| `DOOR_STATE_CLOSED`, side allowed and key held | green |
-| `DOOR_STATE_CLOSED`, wrong side or no matching key | red |
+| `DOOR_STATE_CLOSED`, both sides allowed and key held | green |
+| `DOOR_STATE_CLOSED`, one side allowed and key held | amber |
+| `DOOR_STATE_CLOSED`, neither side allowed, or no matching key | red |
 | opening / open / closing | dim grey-green |
-
-The side test uses the player's current position, so a door can change colour as he walks around
-it. That is honest: it is answering "can I get through this from here", which is the question.
 
 **The sight ray must stop short of its target.** `testLineOcclusion` is `rayVoxelGridTest` and
 then `raycastAgainstActors` over the whole set, so a ray aimed at a character's own chest is
@@ -689,6 +696,17 @@ visited levels keeps them apart:
 Raw bits are unreadable in a plain-text save and inflate it. Run-length encoding them as
 hex-per-run costs a few lines and keeps the file diffable, which is worth having while
 `NOCTURNE_AUTHENTIC_SAVE` is 0 and saves are being inspected by hand.
+
+**Runs alternate unexplored, explored, starting unexplored**, on both sides. A level whose first
+cube is explored therefore opens with a run of 0.
+
+**The block is applied as it is read, against the level already up.** By the time
+`CGame::loadGame` reaches it, `CDemonMission::startMission` has loaded the save's set, and
+`CDemonSet::load` has reset the grid. Nothing after it rebuilds the grid: `CDemonMission::run`
+loads the same set again, and `CDemonSet::load` skips the geometry, and `nocturne_automap_reset`
+with it, when the `.GEO` is the one already loaded. `run` then plays the whole session in
+`CGame::runGameSession` and returns only once it is over, so nothing after `run` is in time
+either. `scripts/Python/noc_save.py` decompresses a `.NOC` to the text these blocks are read from.
 
 **This interacts with LZW.** At `NOCTURNE_AUTHENTIC_SAVE=1` the text is compressed into the real
 `.noc` behind an `EFD` magic. That is a whole-file wrapper, so the appended block compresses with

@@ -31,10 +31,9 @@ std::vector<CDemonActor *> grab_releases;
 namespace {
 
 std::unique_ptr<CDemonSet> s_set(new CDemonSet());
-std::unique_ptr<CHero> s_heroes[4] = {std::unique_ptr<CHero>(new CHero()),
-                                      std::unique_ptr<CHero>(new CHero()),
-                                      std::unique_ptr<CHero>(new CHero()),
-                                      std::unique_ptr<CHero>(new CHero())};
+std::unique_ptr<CHero> s_heroes[4] = {
+    std::unique_ptr<CHero>(new CHero()), std::unique_ptr<CHero>(new CHero()),
+    std::unique_ptr<CHero>(new CHero()), std::unique_ptr<CHero>(new CHero())};
 
 int key_state(CKeys *, EInputCodeType code) {
     return (stand.held.count((int)code) != 0 || stand.pressed.count((int)code) != 0) ? 1 : 0;
@@ -65,7 +64,7 @@ void release_grab(CCharacter *character) {
 
 CCharacter_full_vtable s_character_vtable;
 
-}  // namespace
+} // namespace
 
 CDemonSet *set = s_set.get();
 CHero *heroes[4] = {s_heroes[0].get(), s_heroes[1].get(), s_heroes[2].get(), s_heroes[3].get()};
@@ -78,7 +77,8 @@ void Stand::reset() {
     std::memset(&events, 0, sizeof(events));
     std::memset(&mission, 0, sizeof(mission));
     std::memset(set, 0, sizeof(*set));
-    for (CHero *hero : heroes) std::memset(hero, 0, sizeof(*hero));
+    for (CHero *hero : heroes)
+        std::memset(hero, 0, sizeof(*hero));
     std::memset(&box, 0, sizeof(box));
     grab_releases.clear();
 
@@ -96,7 +96,8 @@ void Stand::reset() {
     g_CDemonMissionPtr = &mission;
     g_CKeysPtr = &keys;
     g_CSoundPtr = nullptr;
-    for (int i = 0; i < 4; i++) g_HeroActors[i] = nullptr;
+    for (int i = 0; i < 4; i++)
+        g_HeroActors[i] = nullptr;
     g_HeroCount = 0;
     g_LocalHeroIndex = 0;
     g_SimFrameCount = 0;
@@ -118,7 +119,9 @@ void start_session(EConnectionType connection, int players, int local) {
     g_CNetGamePtr = &net;
 }
 
-void give_vtable(CDemonActor *actor) { actor->vtable._uc = &s_character_vtable; }
+void give_vtable(CDemonActor *actor) {
+    actor->vtable._uc = &s_character_vtable;
+}
 
 void place_heroes(int count) {
     for (int i = 0; i < count; i++) {
@@ -137,7 +140,7 @@ int type_of(const Sent &sent) {
     return (int)((const SNetPacketHeader *)sent.bytes.data())->type;
 }
 
-}  // namespace net_support
+} // namespace net_support
 
 using net_support::stand;
 
@@ -188,46 +191,57 @@ namespace {
 int s_array_inits = 0;
 int s_atexits = 0;
 int s_path_resets = 0;
-}  // namespace
+} // namespace
 
 void *__arrinit(void *array_start, int, WatcomTypeInfo *) {
     s_array_inits++;
     return array_start;
 }
 
-void _atexit(WatcomStaticDestructorNode *) { s_atexits++; }
+void _atexit(WatcomStaticDestructorNode *) {
+    s_atexits++;
+}
 
-void __cdecl core_path_cpp_CPathMap_reset_FUN_00548510(CPathMap *) { s_path_resets++; }
+void __cdecl core_path_cpp_CPathMap_reset_FUN_00548510(CPathMap *) {
+    s_path_resets++;
+}
 
 namespace net_support {
-int array_inits() { return s_array_inits; }
-int atexits() { return s_atexits; }
-int path_resets() { return s_path_resets; }
-}  // namespace net_support
+int array_inits() {
+    return s_array_inits;
+}
+int atexits() {
+    return s_atexits;
+}
+int path_resets() {
+    return s_path_resets;
+}
+} // namespace net_support
 
 // --- the socket --------------------------------------------------------------
 
 void __cdecl core_netgame_cpp_CNetGame_send_FUN_005411c0(CNetGame *, int player_index,
-                                                        SNetPacketHeader *packet) {
+                                                         SNetPacketHeader *packet) {
     const unsigned char *bytes = (const unsigned char *)packet;
-    stand.sent.push_back({player_index, (int)packet->type,
-                          std::vector<unsigned char>(bytes, bytes + packet->size)});
+    stand.sent.push_back(
+        {player_index, (int)packet->type, std::vector<unsigned char>(bytes, bytes + packet->size)});
 }
 
 void __cdecl core_netgame_cpp_CNetGame_sendDisconnectNotify_FUN_00543930(CNetGame *,
-                                                                        SNetworkAddr *dest_addr,
-                                                                        int) {
+                                                                         SNetworkAddr *dest_addr,
+                                                                         int) {
     stand.disconnect_notices.push_back(dest_addr);
 }
 
 void __cdecl core_netgame_cpp_CNetGame_updatePing_FUN_00541c80(CNetGame *, int player_index,
-                                                              float) {
+                                                               float) {
     stand.pings.push_back(player_index);
 }
 
 void __cdecl core_netgame_cpp_CNetGame_receivePackets_FUN_005405b0(CNetGame *) {
     stand.receives++;
-    if (stand.on_receive) stand.on_receive();
+    if (stand.on_receive)
+        stand.on_receive();
 }
 
 int __cdecl core_netgame_cpp_CNetGame_syncPlayers_FUN_005401e0(CNetGame *, int sync_stage) {
@@ -241,7 +255,9 @@ void __cdecl core_netgame_cpp_CNetGame_disconnect_FUN_0053fd00(CNetGame *, int) 
 
 // --- the game's generators -----------------------------------------------------
 
-uint __cdecl core_actor_cpp_generateRandomValue_FUN_0040cba0(void) { return stand.next_random++; }
+uint __cdecl core_actor_cpp_generateRandomValue_FUN_0040cba0(void) {
+    return stand.next_random++;
+}
 
 void __cdecl core_actor_cpp_setRandomSeed_FUN_0040cb90(uint seed_value) {
     stand.seeds.push_back(seed_value);
@@ -276,39 +292,45 @@ CVector3f *__cdecl core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_00408f10(
 
 // --- inventories -----------------------------------------------------------------
 
-void __cdecl core_inv_cpp_CInventory_selectWeapon_FUN_004feb10(CInventory *this_ptr,
-                                                              CDemonActor *, int weapon_category,
-                                                              int direction) {
+void __cdecl core_inv_cpp_CInventory_selectWeapon_FUN_004feb10(CInventory *this_ptr, CDemonActor *,
+                                                               int weapon_category, int direction) {
     stand.selections.push_back({"weapon", this_ptr, weapon_category, direction});
 }
 
-void __cdecl core_inv_cpp_CInventory_selectItem_FUN_004fec10(CInventory *this_ptr,
-                                                            int direction) {
+void __cdecl core_inv_cpp_CInventory_selectItem_FUN_004fec10(CInventory *this_ptr, int direction) {
     stand.selections.push_back({"item", this_ptr, 0, direction});
 }
 
 void __cdecl core_inv_cpp_CInventory_cycleWeaponOfSameClass_FUN_004fed10(CInventory *this_ptr,
-                                                                        int direction) {
+                                                                         int direction) {
     stand.selections.push_back({"ammo", this_ptr, 0, direction});
 }
 
 // --- screens ---------------------------------------------------------------------
 
-char *__cdecl support_newmsg_cpp_getLocalizedString_FUN_005441f0(char *key) { return key; }
+char *__cdecl support_newmsg_cpp_getLocalizedString_FUN_005441f0(char *key) {
+    return key;
+}
 
-void __cdecl engine_2d_c_clearInputAndWait_FUN_00403260(void) { stand.input_waits++; }
+void __cdecl engine_2d_c_clearInputAndWait_FUN_00403260(void) {
+    stand.input_waits++;
+}
 
-void __cdecl wincore_wddvmem_cpp_swapBuffers_FUN_005eda20(void) { stand.swaps++; }
+void __cdecl wincore_wddvmem_cpp_swapBuffers_FUN_005eda20(void) {
+    stand.swaps++;
+}
 
-void __cdecl engine_special_cpp_clearScreen_FUN_005b3e70(void) { stand.clears++; }
+void __cdecl engine_special_cpp_clearScreen_FUN_005b3e70(void) {
+    stand.clears++;
+}
 
 void __cdecl engine_2d_c_drawText_FUN_00401fd0(char *text, int, int) {
     stand.drawn.push_back(text);
 }
 
-int __cdecl core_menu_cpp_renderMenuAndGetChoice_FUN_00510000(char **, int, int *, int,
-                                                             char *) {
-    if (stand.menu_choices.empty()) return -1;
+int __cdecl core_menu_cpp_renderMenuAndGetChoice_FUN_00510000(char **, int, int *, int, char *) {
+    if (stand.menu_choices.empty())
+        return -1;
     const int choice = stand.menu_choices.front();
     stand.menu_choices.erase(stand.menu_choices.begin());
     return choice;
@@ -318,10 +340,18 @@ void __cdecl core_game_cpp_CGame_displayMessage_FUN_004d7f20(CGame *, char *mess
     stand.messages.push_back(message);
 }
 
-void __cdecl core_sound_cpp_CSound_reset_FUN_005b39a0(CSound *) { stand.sound_resets++; }
-void __cdecl core_sound_cpp_CSound_configure_FUN_005b3830(CSound *) { stand.sound_configures++; }
-void __cdecl core_game_cpp_hostNetworkGame_FUN_004e2f10(void) { stand.hosted++; }
-void __cdecl core_game_cpp_joinNetworkGame_FUN_004e2fc0(void) { stand.joined++; }
+void __cdecl core_sound_cpp_CSound_reset_FUN_005b39a0(CSound *) {
+    stand.sound_resets++;
+}
+void __cdecl core_sound_cpp_CSound_configure_FUN_005b3830(CSound *) {
+    stand.sound_configures++;
+}
+void __cdecl core_game_cpp_hostNetworkGame_FUN_004e2f10(void) {
+    stand.hosted++;
+}
+void __cdecl core_game_cpp_joinNetworkGame_FUN_004e2fc0(void) {
+    stand.joined++;
+}
 
 int __cdecl wincore_winrun_cpp_getTime_FUN_005f2dc0(void) {
     const int now = stand.time;
@@ -347,7 +377,8 @@ void __cdecl shape_edittool_cpp_CStrList_add_FUN_004a2b80(CStrList *, char *stri
 int __cdecl shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20(
     CPickList *, char *dialog_title, int, uint) {
     stand.pick_title = dialog_title;
-    if (stand.pick_choices.empty()) return 0;
+    if (stand.pick_choices.empty())
+        return 0;
     const int choice = stand.pick_choices.front();
     stand.pick_choices.erase(stand.pick_choices.begin());
     return choice;
@@ -368,14 +399,13 @@ int __cdecl core_event_cpp_CEventList_findPersistentEvent_FUN_004b0860(CEventLis
     return (std::strcmp(name, "choking") == 0 && stand.choking != 0) ? 0 : -1;
 }
 
-int __cdecl core_event_cpp_CEventList_executeCommands_FUN_004aabe0(CEventList *,
-                                                                  char *commands) {
+int __cdecl core_event_cpp_CEventList_executeCommands_FUN_004aabe0(CEventList *, char *commands) {
     stand.commands.push_back(commands);
     return 0;
 }
 
-CDemonActor *__cdecl core_mission_cpp_CDemonMission_findActorByName_FUN_00524030(
-    CDemonMission *, char *name) {
+CDemonActor *__cdecl core_mission_cpp_CDemonMission_findActorByName_FUN_00524030(CDemonMission *,
+                                                                                 char *name) {
     return std::strcmp(name, "TriggerGasRoom") == 0 ? stand.gas_room : nullptr;
 }
 
@@ -391,14 +421,14 @@ int __cdecl core_script_cpp_CScript_skipCinematic_FUN_005602e0(CScript *) {
 // --- collision and the camera ------------------------------------------------------
 
 float __cdecl core_setcolid_cpp_CDemonSet_processCollisionTypes_FUN_005716b0(CDemonSet *,
-                                                                            CVector3f *position,
-                                                                            float radius) {
+                                                                             CVector3f *position,
+                                                                             float radius) {
     return stand.ground ? stand.ground(*position, radius) : position->y;
 }
 
 int __cdecl core_setcolid_cpp_CDemonSet_testVoxelRaycast_FUN_00572510(CDemonSet *,
-                                                                     CVector3f *start_pos,
-                                                                     CVector3f *end_pos) {
+                                                                      CVector3f *start_pos,
+                                                                      CVector3f *end_pos) {
     return stand.blocked ? stand.blocked(*start_pos, *end_pos) : 0;
 }
 
@@ -423,44 +453,53 @@ void __cdecl core_cloth_cpp_CClothList_load_FUN_0043bfa0(CClothList *) {
 }
 
 void __cdecl core_cloth_cpp_CClothList_setup_FUN_0043c290(CClothList *, CVector3f *, CVector3f *,
-                                                         CDeformableModelInstance *) {
+                                                          CDeformableModelInstance *) {
     stand.cloth.push_back("setup");
 }
 
-void __cdecl core_cloth_cpp_CClothList_process_FUN_0043c2d0(CClothList *, CVector3f *,
-                                                           CVector3f *, float, float,
-                                                           CDeformableModelInstance *) {
+void __cdecl core_cloth_cpp_CClothList_process_FUN_0043c2d0(CClothList *, CVector3f *, CVector3f *,
+                                                            float, float,
+                                                            CDeformableModelInstance *) {
     stand.cloth.push_back("process");
 }
 
 // --- the shims they call -----------------------------------------------------------
 
 CHero *nocturne_hero_local(void) {
-    if (g_LocalHeroIndex < 0 || 4 <= g_LocalHeroIndex) return nullptr;
+    if (g_LocalHeroIndex < 0 || 4 <= g_LocalHeroIndex)
+        return nullptr;
     return g_HeroActors[g_LocalHeroIndex];
 }
 
 int nocturne_hero_slot(const void *actor) {
     for (int i = 0; i < 4; i++) {
-        if (actor != nullptr && (const void *)g_HeroActors[i] == actor) return i;
+        if (actor != nullptr && (const void *)g_HeroActors[i] == actor)
+            return i;
     }
     return -1;
 }
 
-int nocturne_hero_is_player(const void *actor) { return nocturne_hero_slot(actor) >= 0; }
+int nocturne_hero_is_player(const void *actor) {
+    return nocturne_hero_slot(actor) >= 0;
+}
 
 int nocturne_hero_revive(CHero *hero) {
     stand.revived.push_back(hero);
     return stand.revive_result;
 }
 
-void nocturne_hero_goggles_set(CHero *hero, int on) { stand.goggles.push_back({hero, on}); }
+void nocturne_hero_goggles_set(CHero *hero, int on) {
+    stand.goggles.push_back({hero, on});
+}
 
-void nocturne_hero_goggles_reset(void) { stand.goggles_resets++; }
+void nocturne_hero_goggles_reset(void) {
+    stand.goggles_resets++;
+}
 
 int nocturne_cheats_pack(unsigned char *out, int out_size) {
     const int count = (int)stand.cheats_packed.size();
-    for (int i = 0; i < count && i < out_size; i++) out[i] = stand.cheats_packed[(size_t)i];
+    for (int i = 0; i < count && i < out_size; i++)
+        out[i] = stand.cheats_packed[(size_t)i];
     return count;
 }
 
@@ -475,14 +514,21 @@ void nocturne_cheats_clear_override(void) {
     stand.cheat_overrides_cleared++;
 }
 
-int nocturne_cheats_override_active(void) { return stand.cheat_override_active; }
+int nocturne_cheats_override_active(void) {
+    return stand.cheat_override_active;
+}
 
-void nocturne_menu_backdrop_frame(void) { stand.backdrops++; }
+void nocturne_menu_backdrop_frame(void) {
+    stand.backdrops++;
+}
 
-int nocturne_menu_start_y(int rows) { return rows * 10; }
+int nocturne_menu_start_y(int rows) {
+    return rows * 10;
+}
 
 int nocturne_menu_cancelled(void) {
-    if (stand.menu_cancels.empty()) return 0;
+    if (stand.menu_cancels.empty())
+        return 0;
     const int cancelled = stand.menu_cancels.front();
     stand.menu_cancels.erase(stand.menu_cancels.begin());
     return cancelled;

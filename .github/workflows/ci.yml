@@ -48,7 +48,7 @@ jobs:
       # bundledlibs.cmake fails the configure without them. llvm has the
       # coverage tools.
       apt-packages: >-
-        cmake clang clang-tidy llvm ninja-build pkg-config python3
+        cmake clang clang-format clang-tidy llvm ninja-build pkg-config python3
         libx11-dev libxext-dev libxcursor-dev libxi-dev libxfixes-dev
         libxrandr-dev libxss-dev libwayland-dev libxkbcommon-dev
         wayland-protocols libegl-dev libdecor-0-dev libpulse-dev
@@ -69,12 +69,17 @@ jobs:
       ccache-max-size: 2G
       # Shared by the CI build and the release build of the same preset.
       cache-key: ${{ matrix.preset }}
-      # The test binaries are EXCLUDE_FROM_ALL, and ctest only runs what is
-      # already built, so they are built explicitly (see docs/testing.md).
+      # The test binaries are EXCLUDE_FROM_ALL. ctest's build_tests fixture
+      # would build them, but a phase of their own reports a compile error as a
+      # build failure and times it apart (see docs/testing.md).
       build-command: |
         ci-phase Configure cmake --preset ${{ matrix.preset }} -DNOCTURNE_COVERAGE=${{ matrix.coverage }}
         ci-phase Build cmake --build --preset ${{ matrix.preset }}
         ci-phase "Build tests" cmake --build build/${{ matrix.preset }} --target nocturne_tests
+        # The shims and their tests; one lane is enough (cmake/format.cmake).
+        if [ "${{ matrix.coverage }}" = ON ]; then
+          ci-phase Format cmake --build build/${{ matrix.preset }} --target format-check
+        fi
       # With coverage, the binaries and what counts come from the build (see
       # cmake/tests.cmake).
       test-command: |
@@ -279,9 +284,9 @@ jobs:
     permissions:
       contents: read
     with:
-      # The suite's pytest.ini lives in Tests/, but the rootdir must stay the
+      # The suite's pytest.ini lives in tests/, but the rootdir must stay the
       # repository; a file's tests share a worker, so its fixtures build once
-      test-command: pytest -q -c Tests/pytest.ini --rootdir=. -n auto --dist loadfile Tests/unit
+      test-command: pytest -q -c tests/pytest.ini --rootdir=. -n auto --dist loadfile tests/unit
       coverage-fail-under: "100"
       # Every shell statement, and every && / || handler, is run by the tests
       shell-coverage-source: scripts/Bash
@@ -298,5 +303,6 @@ jobs:
       # of formatting-only edits. Code-fence checking goes with it; turn both on
       # once the notes are cleaned up.
       markdown: false
-      # Decompiled code keeps the original's shape; don't format-check it.
+      # The shims and the recreation are format-checked in their builds, with
+      # the distribution's clang-format; this one pins a newer release.
       clang-format: false

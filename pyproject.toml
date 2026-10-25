@@ -17,13 +17,14 @@ requires-python = ">=3.12"
 packages = []
 
 [tool.testrex]
-# The meta suite and the hermetic seal, from pytest-testrex; see Tests/README.md
+# The meta suite and the hermetic seal, from pytest-testrex; see tests/README.md
+tests_dir = "tests"
 min_test_files = 1
 # integration/ joins when the first test against a real headless Ghidra lands
 suites = ["unit"]
 integration_suites = []
-pylint_rcfile = "Tests/pylintrc"
-# Run the Ghidra scripts against a real headless Ghidra; see Tests/conftest.py
+pylint_rcfile = "tests/pylintrc"
+# Run the Ghidra scripts against a real headless Ghidra; see tests/conftest.py
 requirement_markers = ["requires_ghidra"]
 # Raise privileges, reach another machine, or publish
 sealed_programs = [

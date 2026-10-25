@@ -5,9 +5,10 @@
 // See net_skip.h for why a skip has to cross the wire at all.
 
 #include "net/net_skip.h"
-#include "shim_config.h"
-#include "nocturne.h"
+
 #include "core/debug_log.h"
+#include "nocturne.h"
+#include "shim_config.h"
 
 #include <cstring>
 
@@ -25,32 +26,32 @@
 
 #pragma pack(push, 1)
 typedef struct SNetPacket_SkipVote {
-    SNetPacketHeader header;         // 0x0
-    int voter_player;                // 0x5   whose answer this is
-    int skip_label;                  // 0x9   which cinematic they mean
-    int wants_skip;                  // 0xd   their answer right now, not a change
-} SNetPacket_SkipVote;               // 0x11
+    SNetPacketHeader header; // 0x0
+    int voter_player;        // 0x5   whose answer this is
+    int skip_label;          // 0x9   which cinematic they mean
+    int wants_skip;          // 0xd   their answer right now, not a change
+} SNetPacket_SkipVote;       // 0x11
 
 typedef struct SNetPacket_SkipCommit {
-    SNetPacketHeader header;         // 0x0
-    int apply_sequence;              // 0x5   sim frame every machine skips on
-    int skip_label;                  // 0x9   which cinematic is being skipped
-} SNetPacket_SkipCommit;             // 0xd
+    SNetPacketHeader header; // 0x0
+    int apply_sequence;      // 0x5   sim frame every machine skips on
+    int skip_label;          // 0x9   which cinematic is being skipped
+} SNetPacket_SkipCommit;     // 0xd
 #pragma pack(pop)
 
 // Each player's current answer for the cinematic s_table_label names. Levels
 // rather than events, so a re-broadcast changes nothing and a withdrawal needs
 // no message of its own.
 static int s_votes[NOCTURNE_HERO_SLOTS];
-static int s_table_label = -2;       // no cinematic; -1 is a real label index
+static int s_table_label = -2; // no cinematic; -1 is a real label index
 
-static int s_local_voted    = 0;
+static int s_local_voted = 0;
 
 static int s_commit_pending = 0;
 static int s_commit_sequence = 0;
-static int s_commit_label   = 0;
+static int s_commit_label = 0;
 
-static int s_reported_late  = 0;
+static int s_reported_late = 0;
 
 // -----------------------------------------------------------------------------
 
@@ -63,8 +64,7 @@ static int s_reported_late  = 0;
 // mode 2 letterboxes the frame without making the sequence skippable, and only
 // mode 1 puts "Skip cinematic." on the menu. Both modes block hero controls and
 // disable saving, so mode is the only thing separating them.
-static int skip_current_label(void)
-{
+static int skip_current_label(void) {
     if ((g_CGamePtr == (CGame *)0x0) || (g_CScriptPtr == (CScript *)0x0)) {
         return -2;
     }
@@ -74,58 +74,50 @@ static int skip_current_label(void)
     return g_CScriptPtr->saved_cmd_index;
 }
 
-static void skip_clear_votes(void)
-{
+static void skip_clear_votes(void) {
     std::memset(s_votes, 0, sizeof(s_votes));
     s_local_voted = 0;
 }
 
-static void skip_notice(const char *text)
-{
+static void skip_notice(const char *text) {
     core_game_cpp_CGame_displayMessage_FUN_004d7f20(
-        g_CGamePtr,
-        support_newmsg_cpp_getLocalizedString_FUN_005441f0((char *)text),
+        g_CGamePtr, support_newmsg_cpp_getLocalizedString_FUN_005441f0((char *)text),
         SKIP_NOTICE_SECONDS);
 }
 
 // Said once when a skippable cinematic starts, because nothing else on screen
 // says the option is there. It names no control: the vote is cast from the
 // Escape dialog, which every control scheme already reaches.
-static void skip_announce_control(void)
-{
+static void skip_announce_control(void) {
     skip_notice("This cinematic can be skipped - see the pause menu");
 }
 
-static void skip_broadcast(SNetPacketHeader *packet)
-{
+static void skip_broadcast(SNetPacketHeader *packet) {
     nocturne_net_session_broadcast(packet);
 }
 
-static void skip_send_vote(int label, int wants_skip)
-{
+static void skip_send_vote(int label, int wants_skip) {
     SNetPacket_SkipVote vote;
 
     nocturne_net_packet_init(&vote, (int)sizeof(vote), NOCTURNE_NET_PACKET_SKIP_VOTE);
-    vote.voter_player  = g_CNetGamePtr->local_player_index;
-    vote.skip_label    = label;
-    vote.wants_skip    = wants_skip;
+    vote.voter_player = g_CNetGamePtr->local_player_index;
+    vote.skip_label = label;
+    vote.wants_skip = wants_skip;
     skip_broadcast(&vote.header);
 }
 
-static void skip_send_commit(void)
-{
+static void skip_send_commit(void) {
     SNetPacket_SkipCommit commit;
 
     nocturne_net_packet_init(&commit, (int)sizeof(commit), NOCTURNE_NET_PACKET_SKIP_COMMIT);
     commit.apply_sequence = s_commit_sequence;
-    commit.skip_label     = s_commit_label;
+    commit.skip_label = s_commit_label;
     skip_broadcast(&commit.header);
 }
 
-static int skip_everyone_voted(void)
-{
+static int skip_everyone_voted(void) {
     CNetGame *net_game = g_CNetGamePtr;
-    int       i;
+    int i;
 
     for (i = 0; i < net_game->player_count; i++) {
         if ((NOCTURNE_HERO_SLOTS <= i) || (s_votes[i] == 0)) {
@@ -136,28 +128,26 @@ static int skip_everyone_voted(void)
 }
 
 // The skip itself, run at the same sim frame on every machine.
-static void skip_run(void)
-{
+static void skip_run(void) {
     CGame *game = g_CGamePtr;
-    int    saved_is_processing;
-    int    jumped;
+    int saved_is_processing;
+    int jumped;
 
     // CScript::skipCinematic's loop is bounded by letterbox mode, so with the
     // cinematic already over it would fall straight through the loop and leave
     // next_cmd sitting on the skip label — a jump backwards into a scene that
     // has already played.
-    if ((game == (CGame *)0x0) || (g_CScriptPtr == (CScript *)0x0) ||
-        (game->letterbox_mode == 0)) {
+    if ((game == (CGame *)0x0) || (g_CScriptPtr == (CScript *)0x0) || (game->letterbox_mode == 0)) {
         return;
     }
 
     // See net_skip.h: dismember draws from getRandomFloatFromRange, which picks
     // the shared generator only while this flag is set, and this runs outside
     // CGame::process where it is clear.
-    saved_is_processing  = game->is_processing;
-    game->is_processing  = 1;
+    saved_is_processing = game->is_processing;
+    game->is_processing = 1;
     jumped = core_script_cpp_CScript_skipCinematic_FUN_005602e0(g_CScriptPtr);
-    game->is_processing  = saved_is_processing;
+    game->is_processing = saved_is_processing;
 
     // A cinematic with no setSkipLabel cannot be jumped, and the engine's own
     // fast-forward branch carries it instead. The menu path makes the same call.
@@ -166,15 +156,14 @@ static void skip_run(void)
 
 // -----------------------------------------------------------------------------
 
-extern "C" void nocturne_net_skip_poll(void)
-{
-    int       label;
-    int       local_index;
+extern "C" void nocturne_net_skip_poll(void) {
+    int label;
+    int local_index;
 
     if (nocturne_net_session_playing() == 0) {
         skip_clear_votes();
         s_commit_pending = 0;
-        s_table_label    = -2;
+        s_table_label = -2;
         return;
     }
 
@@ -184,14 +173,14 @@ extern "C" void nocturne_net_skip_poll(void)
         if (s_table_label != -2) {
             skip_clear_votes();
             s_commit_pending = 0;
-            s_table_label    = -2;
+            s_table_label = -2;
         }
         return;
     }
     if (label != s_table_label) {
         skip_clear_votes();
         s_commit_pending = 0;
-        s_table_label    = label;
+        s_table_label = label;
         skip_announce_control();
     }
 
@@ -208,8 +197,8 @@ extern "C" void nocturne_net_skip_poll(void)
 
     if (nocturne_net_session_is_host() != 0) {
         if ((s_commit_pending == 0) && (skip_everyone_voted() != 0)) {
-            s_commit_pending  = 1;
-            s_commit_label    = label;
+            s_commit_pending = 1;
+            s_commit_label = label;
             s_commit_sequence = nocturne_net_session_local_frame() + SKIP_LEAD_FRAMES;
         }
         if (s_commit_pending != 0) {
@@ -228,8 +217,7 @@ extern "C" void nocturne_net_skip_poll(void)
 // called, so they read the cinematic directly rather than trusting the table.
 // The label still has to match: a cinematic that ended while the dialog was open
 // leaves a table belonging to a scene that is over.
-static int skip_menu_label(void)
-{
+static int skip_menu_label(void) {
     int label;
 
     if (nocturne_net_session_playing() == 0) {
@@ -242,8 +230,7 @@ static int skip_menu_label(void)
     return label;
 }
 
-extern "C" int nocturne_net_skip_vote_available(void)
-{
+extern "C" int nocturne_net_skip_vote_available(void) {
     int local_index;
 
     if (skip_menu_label() == -2) {
@@ -261,13 +248,11 @@ extern "C" int nocturne_net_skip_vote_available(void)
     return 1;
 }
 
-extern "C" const char *nocturne_net_skip_vote_label(void)
-{
+extern "C" const char *nocturne_net_skip_vote_label(void) {
     return (s_local_voted != 0) ? "Withdraw skip vote." : "Vote to skip cinematic.";
 }
 
-extern "C" void nocturne_net_skip_toggle_vote(void)
-{
+extern "C" void nocturne_net_skip_toggle_vote(void) {
     int local_index;
 
     // Re-checked rather than assumed: the caller decided to draw the entry on an
@@ -277,19 +262,17 @@ extern "C" void nocturne_net_skip_toggle_vote(void)
     }
     local_index = g_CNetGamePtr->local_player_index;
 
-    s_local_voted        = (s_local_voted == 0) ? 1 : 0;
+    s_local_voted = (s_local_voted == 0) ? 1 : 0;
     s_votes[local_index] = s_local_voted;
 
     if (s_local_voted == 0) {
         skip_notice("Skip request withdrawn");
-    }
-    else if (skip_everyone_voted() == 0) {
+    } else if (skip_everyone_voted() == 0) {
         skip_notice("Skip requested - waiting for the other player");
     }
 }
 
-extern "C" int nocturne_net_skip_on_vote(const void *packet, int packet_size)
-{
+extern "C" int nocturne_net_skip_on_vote(const void *packet, int packet_size) {
     const SNetPacket_SkipVote *incoming = (const SNetPacket_SkipVote *)packet;
 
     if (nocturne_net_packet_is(packet, packet_size, NOCTURNE_NET_PACKET_SKIP_VOTE,
@@ -297,7 +280,7 @@ extern "C" int nocturne_net_skip_on_vote(const void *packet, int packet_size)
         return 0;
     }
     if ((incoming->voter_player < 0) || (NOCTURNE_HERO_SLOTS <= incoming->voter_player)) {
-        return 1;               // ours by type, but not addressable - consumed
+        return 1; // ours by type, but not addressable - consumed
     }
     // A vote only counts for the cinematic this machine is actually in.
     if (incoming->skip_label != skip_current_label()) {
@@ -316,8 +299,7 @@ extern "C" int nocturne_net_skip_on_vote(const void *packet, int packet_size)
     return 1;
 }
 
-extern "C" int nocturne_net_skip_on_commit(const void *packet, int packet_size)
-{
+extern "C" int nocturne_net_skip_on_commit(const void *packet, int packet_size) {
     const SNetPacket_SkipCommit *incoming = (const SNetPacket_SkipCommit *)packet;
 
     if (nocturne_net_packet_is(packet, packet_size, NOCTURNE_NET_PACKET_SKIP_COMMIT,
@@ -331,15 +313,14 @@ extern "C" int nocturne_net_skip_on_commit(const void *packet, int packet_size)
     // Re-sent every frame until it is due, so the first copy to arrive wins and
     // the rest describe the same frame.
     if (s_commit_pending == 0) {
-        s_commit_pending  = 1;
-        s_commit_label    = incoming->skip_label;
+        s_commit_pending = 1;
+        s_commit_label = incoming->skip_label;
         s_commit_sequence = incoming->apply_sequence;
     }
     return 1;
 }
 
-extern "C" void nocturne_net_skip_apply_if_due(int sequence_number)
-{
+extern "C" void nocturne_net_skip_apply_if_due(int sequence_number) {
     if (s_commit_pending == 0) {
         return;
     }
@@ -363,10 +344,10 @@ extern "C" void nocturne_net_skip_apply_if_due(int sequence_number)
     if ((s_commit_sequence < sequence_number) && (s_reported_late == 0)) {
         s_reported_late = 1;
         DLOG("netplay",
-                "net_skip: a skip scheduled for frame %d arrived at %d and ran late - "
-                "the machines were %d frames apart through the cinematic. "
-                "SKIP_LEAD_FRAMES is too short for this connection",
-                s_commit_sequence, sequence_number, sequence_number - s_commit_sequence);
+             "net_skip: a skip scheduled for frame %d arrived at %d and ran late - "
+             "the machines were %d frames apart through the cinematic. "
+             "SKIP_LEAD_FRAMES is too short for this connection",
+             s_commit_sequence, sequence_number, sequence_number - s_commit_sequence);
     }
 
     s_commit_pending = 0;
@@ -374,23 +355,30 @@ extern "C" void nocturne_net_skip_apply_if_due(int sequence_number)
     skip_run();
 }
 
-extern "C" void nocturne_net_skip_reset(void)
-{
+extern "C" void nocturne_net_skip_reset(void) {
     skip_clear_votes();
     s_commit_pending = 0;
-    s_table_label    = -2;
-    s_reported_late  = 0;
+    s_table_label = -2;
+    s_reported_late = 0;
 }
 
-#else  /* authentic: no netplay skip, and the pause menu keeps its own item */
+#else /* authentic: no netplay skip, and the pause menu keeps its own item */
 
-extern "C" void nocturne_net_skip_poll(void)                    {}
-extern "C" int  nocturne_net_skip_vote_available(void)          { return 0; }
-extern "C" const char *nocturne_net_skip_vote_label(void)       { return ""; }
-extern "C" void nocturne_net_skip_toggle_vote(void)             {}
-extern "C" int  nocturne_net_skip_on_vote(const void *, int)    { return 0; }
-extern "C" int  nocturne_net_skip_on_commit(const void *, int)  { return 0; }
-extern "C" void nocturne_net_skip_apply_if_due(int)             {}
-extern "C" void nocturne_net_skip_reset(void)                   {}
+extern "C" void nocturne_net_skip_poll(void) {}
+extern "C" int nocturne_net_skip_vote_available(void) {
+    return 0;
+}
+extern "C" const char *nocturne_net_skip_vote_label(void) {
+    return "";
+}
+extern "C" void nocturne_net_skip_toggle_vote(void) {}
+extern "C" int nocturne_net_skip_on_vote(const void *, int) {
+    return 0;
+}
+extern "C" int nocturne_net_skip_on_commit(const void *, int) {
+    return 0;
+}
+extern "C" void nocturne_net_skip_apply_if_due(int) {}
+extern "C" void nocturne_net_skip_reset(void) {}
 
 #endif

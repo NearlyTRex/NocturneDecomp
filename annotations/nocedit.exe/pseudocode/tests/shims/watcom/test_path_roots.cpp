@@ -6,9 +6,8 @@
 // one directory that cannot be written, saves and settings in another. Each case
 // builds both, asks for a path the way the game would, and checks where it lands.
 
-#include "nocturne_test.h"
-
 #include "core/file_search.h"
+#include "nocturne_test.h"
 #include "system/watcom.h"
 #include "watcom/path.h"
 
@@ -58,11 +57,15 @@ struct Install {
         return std::string(std::istreambuf_iterator<char>(in), std::istreambuf_iterator<char>());
     }
 
-    std::string in_user(const char *relative) const { return (user / relative).generic_string(); }
-    std::string in_data(const char *relative) const { return (data / relative).generic_string(); }
+    std::string in_user(const char *relative) const {
+        return (user / relative).generic_string();
+    }
+    std::string in_data(const char *relative) const {
+        return (data / relative).generic_string();
+    }
 };
 
-}  // namespace
+} // namespace
 
 NOCTURNE_TEST(a_read_finds_the_shipped_file_in_any_case) {
     Install install;
@@ -166,7 +169,8 @@ NOCTURNE_TEST(a_data_directory_alone_is_the_only_place) {
     CHECK(fs::equivalent(watcom_resolve_fs_path("act1.pod"), install.in_data("ACT1.POD")));
     const std::vector<std::string> dirs = watcom_resolve_fs_dirs("SAVE");
     CHECK_EQ(dirs.size(), (size_t)1);
-    if (dirs.size() == 1) CHECK(fs::equivalent(dirs[0], install.in_data("save")));
+    if (dirs.size() == 1)
+        CHECK(fs::equivalent(dirs[0], install.in_data("save")));
 }
 
 // "." is the root itself, and no directory at all lists both roots whole. A name
@@ -193,6 +197,47 @@ NOCTURNE_TEST(a_drive_letter_is_a_letter_and_a_colon) {
     const std::string data = install.data.generic_string();
     CHECK_EQ(watcom_resolve_fs_path("1:\\x"), data + "/1:/x");
     CHECK_EQ(watcom_resolve_fs_path("{:\\x"), data + "/{:/x");
+}
+
+// A read that found its file is answered the same way until something could
+// have changed it: a copy put in the user directory behind the resolver's back
+// is not seen until the game writes, or the roots are set again.
+NOCTURNE_TEST(a_found_read_holds_until_a_write_or_new_roots) {
+    Install install;
+    CHECK(fs::equivalent(watcom_resolve_fs_path("act1.pod"), install.in_data("ACT1.POD")));
+    Install::write(install.user / "ACT1.POD", "mine");
+    CHECK(fs::equivalent(watcom_resolve_fs_path("act1.pod"), install.in_data("ACT1.POD")));
+
+    watcom_resolve_fs_path("save\\other.noc", WatcomPathUse::Write);
+    CHECK(fs::equivalent(watcom_resolve_fs_path("act1.pod"), install.in_user("ACT1.POD")));
+
+    std::error_code ec;
+    fs::remove(install.user / "ACT1.POD", ec);
+    watcom_set_path_roots({install.data.generic_string(), install.user.generic_string()});
+    CHECK(fs::equivalent(watcom_resolve_fs_path("act1.pod"), install.in_data("ACT1.POD")));
+}
+
+// A read that found nothing is asked again, so a file that appears is found.
+NOCTURNE_TEST(a_missing_read_is_looked_for_again) {
+    Install install;
+    std::error_code ec;
+    CHECK(!fs::exists(fs::path(watcom_resolve_fs_path("save\\later.noc")), ec));
+    Install::write(install.data / "save" / "later.noc", "late");
+    CHECK(fs::equivalent(watcom_resolve_fs_path("save\\later.noc"),
+                         install.in_data("save/later.noc")));
+}
+
+// Past its limit the store starts over rather than growing, and what it forgot
+// is worked out again.
+NOCTURNE_TEST(a_full_store_starts_over) {
+    Install install;
+    std::string spelling = "act1.pod";
+    for (int i = 0; i <= 1024; ++i) {
+        watcom_resolve_fs_path(spelling.c_str());
+        spelling = ".\\" + spelling;
+    }
+    Install::write(install.user / "ACT1.POD", "mine");
+    CHECK(fs::equivalent(watcom_resolve_fs_path("act1.pod"), install.in_user("ACT1.POD")));
 }
 
 NOCTURNE_TEST(no_roots_is_the_working_directory) {

@@ -51,8 +51,8 @@ extern "C" {
 // screen_x/screen_y are the console's top-left corner, max_cols/max_rows the
 // caller's buffer limits. Writes the glyph scale to use and the grid that fits
 // at that scale. Never returns a scale below 1 or an empty grid.
-void nocturne_console_layout(int screen_x, int screen_y, int max_cols, int max_rows,
-                             int *out_scale, int *out_cols, int *out_rows);
+void nocturne_console_layout(int screen_x, int screen_y, int max_cols, int max_rows, int *out_scale,
+                             int *out_cols, int *out_rows);
 
 // One console glyph blitted at `scale`x, mirroring drawCharacterMaskedColor's
 // clip rule, palette lookup and 8/16/32bpp paths. Pixel-identical to it at

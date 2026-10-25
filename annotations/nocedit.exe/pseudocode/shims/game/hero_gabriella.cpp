@@ -3,9 +3,11 @@
 // =============================================================================
 
 #include "game/hero_gabriella.h"
+
 #include "nocturne.h"
 
 #include <cmath>
+#include <cstring>
 
 #if !NOCTURNE_AUTHENTIC_HERO_ACTIONS
 
@@ -16,30 +18,27 @@
 namespace {
 
 // GABRIELA.SKL's state list.
-const uint kStand     = 0x00;
-const uint kWalk      = 0x01;
-const uint kTurnLeft  = 0x10;
+const uint kStand = 0x00;
+const uint kWalk = 0x01;
+const uint kTurnLeft = 0x10;
 const uint kTurnRight = 0x11;
-const uint kKickDoor  = 0x13;
-const uint kStrafeL   = 0x14;
-const uint kStrafeR   = 0x15;
-const uint kLadder    = 0x16;
+const uint kKickDoor = 0x13;
+const uint kStrafeL = 0x14;
+const uint kStrafeR = 0x15;
+const uint kLadder = 0x16;
 
-float clamp(float x, float lo, float hi)
-{
+float clamp(float x, float lo, float hi) {
     if (x < lo) {
         return lo;
     }
     return (hi < x) ? hi : x;
 }
 
-float clamp01(float x)
-{
+float clamp01(float x) {
     return clamp(x, 0.0f, 1.0f);
 }
 
-uint current_state(CGabriella *gabriella)
-{
+uint current_state(CGabriella *gabriella) {
     return (uint)nocturne_hero_motion_state(&(gabriella->base).base);
 }
 
@@ -61,22 +60,22 @@ const int kFireCharging = 3;
 // at her hip rather than in her hand, and from kArmOut her arm leaves the draw
 // motion for the aim.
 const float kWeaponAtHip = 0.64f;
-const float kArmOut      = 0.82f;
+const float kArmOut = 0.82f;
 
 enum ERefetch {
     REFETCH_NONE,
-    REFETCH_LOWERING,   // hand going to her hip
-    REFETCH_RAISING     // coming back with the next stick
+    REFETCH_LOWERING, // hand going to her hip
+    REFETCH_RAISING   // coming back with the next stick
 };
 
 struct SThrow {
-    float    windup;        // weight of the wind-up pose
-    int      swinging;
-    float    swing_t;
-    float    swing_from;    // the wind-up weight the swing started from
-    int      released;      // the stick left her hand on this swing
-    int      thrown;        // released, and the follow-through has not ended
-    ERefetch refetch;       // the fetch of the next stick
+    float windup; // weight of the wind-up pose
+    int swinging;
+    float swing_t;
+    float swing_from; // the wind-up weight the swing started from
+    int released;     // the stick left her hand on this swing
+    int thrown;       // released, and the follow-through has not ended
+    ERefetch refetch; // the fetch of the next stick
 };
 
 SThrow s_throw[NOCTURNE_HERO_SLOTS];
@@ -85,16 +84,14 @@ SThrow s_throw[NOCTURNE_HERO_SLOTS];
 // not a player hero. Hero slots are shared by every machine, so per-slot state
 // stays in lockstep.
 template <typename T>
-T *slot_entry(CGabriella *gabriella, T *table)
-{
+T *slot_entry(CGabriella *gabriella, T *table) {
     int slot = nocturne_hero_slot((CDemonActor *)gabriella);
 
     return (slot < 0) ? (T *)0x0 : &table[slot];
 }
 
 // The swing takes over from the wind-up wherever it had got to.
-void start_swing(SThrow *t)
-{
+void start_swing(SThrow *t) {
     t->swinging = 1;
     t->swing_t = 0.0f;
     t->swing_from = t->windup;
@@ -106,22 +103,21 @@ void start_swing(SThrow *t)
 // CStranger::renderOpaque draws his: a raycast that ignores her and the
 // object, drawn as a laser path to the first hit or 10 seconds out.
 void draw_throw_arc(CGabriella *gabriella, CDemonActor *object, CVector3f *start,
-                    CVector3f *velocity)
-{
+                    CVector3f *velocity) {
     float hit_time;
 
     core_setcolid_cpp_CDemonSet_init_FUN_00574180(g_CDemonSetPtr);
     core_setcolid_cpp_CDemonSet_setRayType_FUN_00574230(g_CDemonSetPtr, 1);
     core_setcolid_cpp_CDemonSet_ignore_FUN_005741b0(g_CDemonSetPtr, (CDemonActor *)gabriella);
     core_setcolid_cpp_CDemonSet_ignore_FUN_005741b0(g_CDemonSetPtr, object);
-    hit_time = core_setcolid_cpp_CDemonSet_iterativeRaycast_FUN_00572800
-                   (g_CDemonSetPtr, start, velocity);
+    hit_time =
+        core_setcolid_cpp_CDemonSet_iterativeRaycast_FUN_00572800(g_CDemonSetPtr, start, velocity);
     if (hit_time < 0.0f) {
         hit_time = 10.0f;
     }
-    core_fire_cpp_CFireEffect_createLaserPath_FUN_004c7f80
-        (g_CFireEffectPtr, start, velocity, 1.0f, 1.0f,
-         &g_CDemonSetPtr->collision_normal, hit_time, 0xff, 0, 0);
+    core_fire_cpp_CFireEffect_createLaserPath_FUN_004c7f80(g_CFireEffectPtr, start, velocity, 1.0f,
+                                                           1.0f, &g_CDemonSetPtr->collision_normal,
+                                                           hit_time, 0xff, 0, 0);
     core_setcolid_cpp_CDemonSet_init_FUN_00574180(g_CDemonSetPtr);
 }
 
@@ -129,9 +125,9 @@ void draw_throw_arc(CGabriella *gabriella, CDemonActor *object, CVector3f *start
 // up). The wind-up raises the arm in front of her, above the shoulder; the
 // swing brings it forward and down to a follow-through just below level, and
 // the stick leaves her hand as the arm passes kReleasePitch.
-const float kWindupPitch  = -0.95f;
+const float kWindupPitch = -0.95f;
 const float kReleasePitch = -0.45f;
-const float kFollowPitch  = 0.25f;
+const float kFollowPitch = 0.25f;
 const float kSwingSeconds = 0.25f;
 // The last part of the swing over which the arm hands back to her held pose.
 const float kSwingFadeFraction = 0.3f;
@@ -159,25 +155,22 @@ const float kRefetchLow = 0.6f;
 const float kRefetchSpeed = 1.0f;
 const float kRefetchHipMarker = (kWeaponAtHip - 0.2f) / (1.0f - 0.2f);
 
-CDynamite *selected_dynamite(CGabriella *gabriella)
-{
-    return (CDynamite *)core_actor_cpp_castToClassHash_FUN_0040c790
-        ((CDemonActor *)(gabriella->base).inventory.selected_weapon,
-         g_CDynamiteClassInfo.name_hash);
+CDynamite *selected_dynamite(CGabriella *gabriella) {
+    return (CDynamite *)core_actor_cpp_castToClassHash_FUN_0040c790(
+        (CDemonActor *)(gabriella->base).inventory.selected_weapon, g_CDynamiteClassInfo.name_hash);
 }
 
 // Her throw, or null for a Gabriella who is not a player hero: an NPC throws
 // at once, with no swing or fetch.
-SThrow *throw_state(CGabriella *gabriella)
-{
+SThrow *throw_state(CGabriella *gabriella) {
     return slot_entry(gabriella, s_throw);
 }
 
-// Dynamite drawn with no stick in hand: thrown and not yet replaced, or none left.
-int empty_handed(CGabriella *gabriella)
-{
+// Dynamite drawn with no stick in hand: thrown and not yet replaced, or none
+// left. For the player hero in `slot`.
+int empty_handed(CGabriella *gabriella, int slot) {
     CDynamite *dynamite = selected_dynamite(gabriella);
-    const SThrow *t;
+    const SThrow *t = &s_throw[slot];
 
     if ((dynamite == (CDynamite *)0x0) || (gabriella->weapon_state_flags == 0)) {
         return 0;
@@ -185,23 +178,19 @@ int empty_handed(CGabriella *gabriella)
     if ((dynamite->base).ammo_count <= 0) {
         return 1;
     }
-    t = throw_state(gabriella);
-    return (t != (SThrow *)0x0) && ((t->thrown != 0) || (t->refetch != REFETCH_NONE));
+    return (t->thrown != 0) || (t->refetch != REFETCH_NONE);
 }
 
-float smoothstep01(float x)
-{
+float smoothstep01(float x) {
     x = clamp01(x);
     return x * x * (3.0f - 2.0f * x);
 }
 
-float swing_pitch(const SThrow *t)
-{
+float swing_pitch(const SThrow *t) {
     return kWindupPitch + (kFollowPitch - kWindupPitch) * smoothstep01(t->swing_t / kSwingSeconds);
 }
 
-float swing_weight(const SThrow *t)
-{
+float swing_weight(const SThrow *t) {
     float weight;
     float fade_start;
 
@@ -210,24 +199,24 @@ float swing_weight(const SThrow *t)
         weight = 1.0f;
     }
     fade_start = kSwingSeconds * (1.0f - kSwingFadeFraction);
+    // A swing stops once swing_t reaches kSwingSeconds, so the fade never
+    // passes zero.
     if (fade_start < t->swing_t) {
         weight = weight * (1.0f - (t->swing_t - fade_start) / (kSwingSeconds - fade_start));
     }
-    return (weight < 0.0f) ? 0.0f : weight;
+    return weight;
 }
 
 // How far her arm is out, from updateWeaponAndAimAnimation's aim weight: 0
 // until draw_blend passes kArmOut, 1 when fully drawn. Holstering lowers it,
 // so the throw pose goes down with the arm.
-float drawn_weight(const CGabriella *gabriella)
-{
+float drawn_weight(const CGabriella *gabriella) {
     return clamp01((gabriella->draw_blend - kArmOut) / (1.0f - kArmOut));
 }
 
 // Her pistol aim's arm placement, CGabriella::updateWeaponAndAimAnimation's
 // CGun branch: the orientation that points her right arm along (pitch, yaw).
-void right_arm_rotation(float pitch, float yaw, CQuaternion4f *arm)
-{
+void right_arm_rotation(float pitch, float yaw, CQuaternion4f *arm) {
     CQuaternion4f turn_z;
     CQuaternion4f turn_y;
     CQuaternion4f arm_out;
@@ -246,16 +235,14 @@ void right_arm_rotation(float pitch, float yaw, CQuaternion4f *arm)
 
 // Turns `bone` and the bones below it to `arm`, down the arm by
 // weaponDrawBlendWeightCallback.
-void blend_arm(CGabriella *gabriella, CQuaternion4f *arm, float weight, int bone)
-{
-    core_skeleton_cpp_CDeformableModelInstance_blendBoneRotations_FUN_0059f750
-        (&(gabriella->base).base.model, arm, weight, bone,
-         core_gabriela_cpp_weaponDrawBlendWeightCallback_FUN_004d29f0);
+void blend_arm(CGabriella *gabriella, CQuaternion4f *arm, float weight, int bone) {
+    core_skeleton_cpp_CDeformableModelInstance_blendBoneRotations_FUN_0059f750(
+        &(gabriella->base).base.model, arm, weight, bone,
+        core_gabriela_cpp_weaponDrawBlendWeightCallback_FUN_004d29f0);
 }
 
 // The right arm pointed along the throw's pitch and her aim's yaw.
-void point_throwing_arm(CGabriella *gabriella, float pitch, float weight)
-{
+void point_throwing_arm(CGabriella *gabriella, float pitch, float weight) {
     CQuaternion4f arm;
 
     right_arm_rotation(pitch, clamp(gabriella->aim_yaw, -1.7453293f, 1.7453293f), &arm);
@@ -264,8 +251,7 @@ void point_throwing_arm(CGabriella *gabriella, float pitch, float weight)
 
 // The left arm pointed along `pitch`, straight ahead: the right arm's
 // orientation reflected through her centre plane.
-void point_left_arm(CGabriella *gabriella, float pitch, float weight)
-{
+void point_left_arm(CGabriella *gabriella, float pitch, float weight) {
     CQuaternion4f arm;
 
     right_arm_rotation(pitch, 0.0f, &arm);
@@ -275,8 +261,7 @@ void point_left_arm(CGabriella *gabriella, float pitch, float weight)
 }
 
 // One frame of the wind-up, swing and fetch, with dynamite selected.
-void step_throw(CGabriella *gabriella, SThrow *t, CDynamite *dynamite, float delta_time)
-{
+void step_throw(CGabriella *gabriella, SThrow *t, CDynamite *dynamite, float delta_time) {
     if ((gabriella->weapon_state_flags & 2) == 0) {
         // Holstering cancels the throw. fire_state can stay kFireReleased with
         // the weapon away, as canFireWeapon refuses, so it must not hold the
@@ -307,11 +292,9 @@ void step_throw(CGabriella *gabriella, SThrow *t, CDynamite *dynamite, float del
         if (0 < (dynamite->base).ammo_count) {
             t->refetch = REFETCH_LOWERING;
         }
-    }
-    else if (gabriella->fire_state == kFireCharging) {
+    } else if (gabriella->fire_state == kFireCharging) {
         t->windup = clamp01(t->windup + kWindupRate * delta_time);
-    }
-    else if (gabriella->fire_state != kFireReleased) {
+    } else if (gabriella->fire_state != kFireReleased) {
         // Waiting on the throw holds the wind-up.
         t->windup = clamp01(t->windup - kWindupRate * delta_time);
     }
@@ -320,8 +303,7 @@ void step_throw(CGabriella *gabriella, SThrow *t, CDynamite *dynamite, float del
 // CStranger::processWeaponTick's drop: no velocity, so the toss explodes where
 // the stick is. fire() puts the fuse back to unlit only when it throws; the
 // reset after it keeps a refused throw from retrying.
-void drop_burned_out(CGabriella *gabriella, CDynamite *dynamite)
-{
+void drop_burned_out(CGabriella *gabriella, CDynamite *dynamite) {
     memset(&dynamite->toss_velocity, 0, sizeof(dynamite->toss_velocity));
     (*(((dynamite->base.base.vtable._uw)->_uw).fire))((CWeapon *)dynamite);
     dynamite->fuse_timer = -1.0f;
@@ -331,8 +313,8 @@ void drop_burned_out(CGabriella *gabriella, CDynamite *dynamite)
 
 } // namespace
 
-extern "C" void nocturne_hero_gabriella_charge_dynamite(CGabriella *gabriella, CDynamite *dynamite)
-{
+extern "C" void nocturne_hero_gabriella_charge_dynamite(CGabriella *gabriella,
+                                                        CDynamite *dynamite) {
     if ((gabriella == (CGabriella *)0x0) || (dynamite == (CDynamite *)0x0)) {
         return;
     }
@@ -345,8 +327,7 @@ extern "C" void nocturne_hero_gabriella_charge_dynamite(CGabriella *gabriella, C
     core_dynamite_cpp_CDynamite_lightFuse_FUN_0049cf20(dynamite);
 }
 
-extern "C" void nocturne_hero_gabriella_dynamite_tick(CGabriella *gabriella, float delta_time)
-{
+extern "C" void nocturne_hero_gabriella_dynamite_tick(CGabriella *gabriella, float delta_time) {
     CDynamite *dynamite;
     SThrow *t;
 
@@ -358,8 +339,7 @@ extern "C" void nocturne_hero_gabriella_dynamite_tick(CGabriella *gabriella, flo
     if (t != (SThrow *)0x0) {
         if (dynamite == (CDynamite *)0x0) {
             memset(t, 0, sizeof(*t));
-        }
-        else {
+        } else {
             step_throw(gabriella, t, dynamite, delta_time);
         }
     }
@@ -373,14 +353,12 @@ extern "C" void nocturne_hero_gabriella_dynamite_tick(CGabriella *gabriella, flo
     drop_burned_out(gabriella, dynamite);
 }
 
-extern "C" int nocturne_hero_gabriella_holds_dynamite(CGabriella *gabriella)
-{
+extern "C" int nocturne_hero_gabriella_holds_dynamite(CGabriella *gabriella) {
     return (gabriella != (CGabriella *)0x0) && (selected_dynamite(gabriella) != (CDynamite *)0x0);
 }
 
 extern "C" int nocturne_hero_gabriella_dynamite_aim(CGabriella *gabriella, float delta_time,
-                                                    int is_holstering)
-{
+                                                    int is_holstering) {
     const SThrow *t;
     int raised;
     float step;
@@ -391,10 +369,9 @@ extern "C" int nocturne_hero_gabriella_dynamite_aim(CGabriella *gabriella, float
     gabriella->aim_target = (CDemonActor *)0x0;
     // target_aim_pitch is the Stranger's aim_pitch, the look-driven aim;
     // aim_pitch is his target_pitch, which eases after it and is thrown along.
-    gabriella->target_aim_pitch =
-        nocturne_hero_look_pitch(gabriella->target_aim_pitch,
-                                 (gabriella->base).player_input.look_up_down_speed, delta_time,
-                                 NOCTURNE_STRANGER_PITCH_UP, NOCTURNE_STRANGER_PITCH_DOWN);
+    gabriella->target_aim_pitch = nocturne_hero_look_pitch(
+        gabriella->target_aim_pitch, (gabriella->base).player_input.look_up_down_speed, delta_time,
+        NOCTURNE_STRANGER_PITCH_UP, NOCTURNE_STRANGER_PITCH_DOWN);
     gabriella->target_aim_yaw = 0.0f;
 
     // Her aim weight carries both her raised arm and her head and body turning
@@ -403,21 +380,21 @@ extern "C" int nocturne_hero_gabriella_dynamite_aim(CGabriella *gabriella, float
     // throw - canFireWeapon needs it full - and otherwise falls, leaving the
     // stick in her hand at her side.
     t = throw_state(gabriella);
-    raised = (gabriella->weapon_state_flags != 0) && (is_holstering == 0) &&
-             ((gabriella->fire_state == kFireCharging) ||
-              (gabriella->fire_state == kFireReleased) ||
-              ((t != (SThrow *)0x0) && (t->swinging != 0)));
-    gabriella->aim_weight = clamp01(gabriella->aim_weight +
-                                    ((raised != 0) ? kAimWeightRate : -kAimWeightRate) * delta_time);
+    raised =
+        (gabriella->weapon_state_flags != 0) && (is_holstering == 0) &&
+        ((gabriella->fire_state == kFireCharging) || (gabriella->fire_state == kFireReleased) ||
+         ((t != (SThrow *)0x0) && (t->swinging != 0)));
+    gabriella->aim_weight = clamp01(
+        gabriella->aim_weight + ((raised != 0) ? kAimWeightRate : -kAimWeightRate) * delta_time);
 
     step = delta_time * kThrowAimRate;
-    gabriella->aim_pitch = nocturne_hero_approach(gabriella->aim_pitch, gabriella->target_aim_pitch, step);
+    gabriella->aim_pitch =
+        nocturne_hero_approach(gabriella->aim_pitch, gabriella->target_aim_pitch, step);
     gabriella->aim_yaw = nocturne_hero_approach(gabriella->aim_yaw, 0.0f, step);
     return 1;
 }
 
-extern "C" int nocturne_hero_gabriella_throw_ready(CGabriella *gabriella)
-{
+extern "C" int nocturne_hero_gabriella_throw_ready(CGabriella *gabriella) {
     SThrow *t;
 
     if ((gabriella == (CGabriella *)0x0) || (selected_dynamite(gabriella) == (CDynamite *)0x0)) {
@@ -439,8 +416,7 @@ extern "C" int nocturne_hero_gabriella_throw_ready(CGabriella *gabriella)
     return 0;
 }
 
-extern "C" void nocturne_hero_gabriella_pose_throw(CGabriella *gabriella)
-{
+extern "C" void nocturne_hero_gabriella_pose_throw(CGabriella *gabriella) {
     const SThrow *t;
     float drawn;
 
@@ -454,14 +430,12 @@ extern "C" void nocturne_hero_gabriella_pose_throw(CGabriella *gabriella)
     drawn = drawn_weight(gabriella);
     if (t->swinging != 0) {
         point_throwing_arm(gabriella, swing_pitch(t), swing_weight(t) * drawn);
-    }
-    else if (0.0f < t->windup) {
+    } else if (0.0f < t->windup) {
         point_throwing_arm(gabriella, kWindupPitch, t->windup * drawn);
     }
 }
 
-extern "C" int nocturne_hero_gabriella_refetch_dynamite(CGabriella *gabriella, float delta_time)
-{
+extern "C" int nocturne_hero_gabriella_refetch_dynamite(CGabriella *gabriella, float delta_time) {
     SThrow *t;
 
     if ((gabriella == (CGabriella *)0x0) || (selected_dynamite(gabriella) == (CDynamite *)0x0)) {
@@ -482,8 +456,7 @@ extern "C" int nocturne_hero_gabriella_refetch_dynamite(CGabriella *gabriella, f
             gabriella->draw_blend = kRefetchLow;
             t->refetch = REFETCH_RAISING;
         }
-    }
-    else {
+    } else {
         gabriella->draw_blend = gabriella->draw_blend + kRefetchSpeed * delta_time / 1.1f;
         if (1.0f <= gabriella->draw_blend) {
             gabriella->draw_blend = 1.0f;
@@ -494,8 +467,7 @@ extern "C" int nocturne_hero_gabriella_refetch_dynamite(CGabriella *gabriella, f
 }
 
 extern "C" int nocturne_hero_gabriella_refetch_pose(CGabriella *gabriella, float *weight,
-                                                    float *marker)
-{
+                                                    float *marker) {
     const SThrow *t;
 
     if ((gabriella == (CGabriella *)0x0) || (selected_dynamite(gabriella) == (CDynamite *)0x0)) {
@@ -510,8 +482,7 @@ extern "C" int nocturne_hero_gabriella_refetch_pose(CGabriella *gabriella, float
     return 1;
 }
 
-extern "C" int nocturne_hero_gabriella_weapon_hidden(CGabriella *gabriella)
-{
+extern "C" int nocturne_hero_gabriella_weapon_hidden(CGabriella *gabriella) {
     CDynamite *dynamite;
     const SThrow *t;
 
@@ -534,8 +505,8 @@ extern "C" int nocturne_hero_gabriella_weapon_hidden(CGabriella *gabriella)
            ((t->refetch == REFETCH_LOWERING) && (kWeaponAtHip <= gabriella->draw_blend));
 }
 
-extern "C" void nocturne_hero_gabriella_render_throw_arc(CGabriella *gabriella, CDynamite *dynamite)
-{
+extern "C" void nocturne_hero_gabriella_render_throw_arc(CGabriella *gabriella,
+                                                         CDynamite *dynamite) {
     // Only while charging: toss_velocity outlives the charge until the stick
     // is thrown, through the swing.
     if ((gabriella == (CGabriella *)0x0) || (dynamite == (CDynamite *)0x0) ||
@@ -560,25 +531,23 @@ namespace {
 const float kSwitchAt = 0.45f;
 
 struct SSwitch {
-    CWeapon *in_hand;   // the weapon her own code works with
-    CWeapon *chosen;    // the inventory's selection, kept while in_hand stands in
-    int      held;      // in_hand is standing in for the selection
-    int      switching;
-    int      redraw;    // she was drawn when the switch began
+    CWeapon *in_hand; // the weapon her own code works with
+    CWeapon *chosen;  // the inventory's selection, kept while in_hand stands in
+    int held;         // in_hand is standing in for the selection
+    int switching;
+    int redraw; // she was drawn when the switch began
 };
 
 SSwitch s_switch[NOCTURNE_HERO_SLOTS];
 
 // Her switch, or null for a Gabriella who is not a player hero, who swaps at
 // once as she always did.
-SSwitch *switch_state(CGabriella *gabriella)
-{
+SSwitch *switch_state(CGabriella *gabriella) {
     return slot_entry(gabriella, s_switch);
 }
 
 // By pointer only: `weapon` may be stale from an earlier mission.
-int in_inventory(CGabriella *gabriella, CWeapon *weapon)
-{
+int in_inventory(CGabriella *gabriella, CWeapon *weapon) {
     CInventory *inventory = &(gabriella->base).inventory;
     int i;
 
@@ -595,8 +564,7 @@ int in_inventory(CGabriella *gabriella, CWeapon *weapon)
 
 } // namespace
 
-extern "C" void nocturne_hero_gabriella_hold_weapon(CGabriella *gabriella)
-{
+extern "C" void nocturne_hero_gabriella_hold_weapon(CGabriella *gabriella) {
     SSwitch *s;
 
     if (gabriella == (CGabriella *)0x0) {
@@ -613,8 +581,7 @@ extern "C" void nocturne_hero_gabriella_hold_weapon(CGabriella *gabriella)
     }
 }
 
-extern "C" void nocturne_hero_gabriella_release_weapon(CGabriella *gabriella)
-{
+extern "C" void nocturne_hero_gabriella_release_weapon(CGabriella *gabriella) {
     SSwitch *s;
 
     if (gabriella == (CGabriella *)0x0) {
@@ -628,8 +595,7 @@ extern "C" void nocturne_hero_gabriella_release_weapon(CGabriella *gabriella)
     s->held = 0;
 }
 
-extern "C" void nocturne_hero_gabriella_switch_weapon(CGabriella *gabriella)
-{
+extern "C" void nocturne_hero_gabriella_switch_weapon(CGabriella *gabriella) {
     SSwitch *s;
 
     if (gabriella == (CGabriella *)0x0) {
@@ -680,22 +646,20 @@ const float kPumpSeconds = 0.8f;
 const float kPumpShellAt = 0.6f;
 
 struct SPump {
-    CWeapon *weapon;    // the weapon being pumped
-    float    elapsed;   // seconds since the shot; kPumpSeconds or more is done
-    int      ejected;
+    CWeapon *weapon; // the weapon being pumped
+    float elapsed;   // seconds since the shot; kPumpSeconds or more is done
+    int ejected;
 };
 
 SPump s_pump[NOCTURNE_HERO_SLOTS];
 
-SPump *pump_state(CGabriella *gabriella)
-{
+SPump *pump_state(CGabriella *gabriella) {
     return slot_entry(gabriella, s_pump);
 }
 
 } // namespace
 
-extern "C" void nocturne_hero_gabriella_fired(CGabriella *gabriella)
-{
+extern "C" void nocturne_hero_gabriella_fired(CGabriella *gabriella) {
     CWeapon *weapon;
     SPump *p;
 
@@ -714,8 +678,7 @@ extern "C" void nocturne_hero_gabriella_fired(CGabriella *gabriella)
     gabriella->fire_cooldown_timer = 1.0f;
 }
 
-extern "C" int nocturne_hero_gabriella_keep_pending_shot(CGabriella *gabriella)
-{
+extern "C" int nocturne_hero_gabriella_keep_pending_shot(CGabriella *gabriella) {
     CWeapon *weapon;
 
     if ((gabriella == (CGabriella *)0x0) || (nocturne_hero_slot((CDemonActor *)gabriella) < 0)) {
@@ -723,8 +686,8 @@ extern "C" int nocturne_hero_gabriella_keep_pending_shot(CGabriella *gabriella)
     }
     weapon = (gabriella->base).inventory.selected_weapon;
     if ((weapon == (CWeapon *)0x0) ||
-        (core_actor_cpp_castToClassHash_FUN_0040c790(&weapon->base, g_CDynamiteClassInfo.name_hash)
-         != (CDemonActor *)0x0)) {
+        (core_actor_cpp_castToClassHash_FUN_0040c790(
+             &weapon->base, g_CDynamiteClassInfo.name_hash) != (CDemonActor *)0x0)) {
         return 1;
     }
     // Waiting on her draw or aim, the shot is kept, as it always was. Waiting on
@@ -734,8 +697,7 @@ extern "C" int nocturne_hero_gabriella_keep_pending_shot(CGabriella *gabriella)
     return (*(((weapon->base).vtable._uw)->_uw).isReadyToFire)(weapon) != 0;
 }
 
-extern "C" int nocturne_hero_gabriella_pumping(CGabriella *gabriella)
-{
+extern "C" int nocturne_hero_gabriella_pumping(CGabriella *gabriella) {
     const SPump *p;
 
     if (gabriella == (CGabriella *)0x0) {
@@ -746,8 +708,7 @@ extern "C" int nocturne_hero_gabriella_pumping(CGabriella *gabriella)
            (p->weapon == (gabriella->base).inventory.selected_weapon);
 }
 
-extern "C" void nocturne_hero_gabriella_fire_tick(CGabriella *gabriella, float delta_time)
-{
+extern "C" void nocturne_hero_gabriella_fire_tick(CGabriella *gabriella, float delta_time) {
     SPump *p;
 
     if (gabriella == (CGabriella *)0x0) {
@@ -787,10 +748,10 @@ namespace {
 // again every frame, and a held press would repeat the action each time.
 int s_press_used[NOCTURNE_HERO_SLOTS];
 
-// Marks the press as used and clears it for the rest of this frame.
-void use_press(CGabriella *gabriella, int slot)
-{
-    if ((0 <= slot) && (slot < 4)) {
+// Marks the press as used and clears it for the rest of this frame. `slot` is
+// -1 for a Gabriella who is not a player hero.
+void use_press(CGabriella *gabriella, int slot) {
+    if (0 <= slot) {
         s_press_used[slot] = 1;
     }
     (gabriella->base).player_input.action_state.fire = 0;
@@ -801,11 +762,10 @@ void use_press(CGabriella *gabriella, int slot)
 // holster: action and fire share the button, and the held press would
 // otherwise shoot the moment the draw completes, or act once the weapon is
 // away. Nor may a press light a stick she does not have in hand yet.
-void filter_press(CGabriella *gabriella, int slot)
-{
+void filter_press(CGabriella *gabriella, int slot) {
     SPlayerInput *input = &(gabriella->base).player_input;
 
-    if ((slot < 0) || (4 <= slot)) {
+    if (slot < 0) {
         return;
     }
     if (input->action_state.fire == 0) {
@@ -816,7 +776,7 @@ void filter_press(CGabriella *gabriella, int slot)
         ((input->action_state.draw != 0) || (0.0f < gabriella->draw_blend))) {
         s_press_used[slot] = 1;
     }
-    if (empty_handed(gabriella) != 0) {
+    if (empty_handed(gabriella, slot) != 0) {
         s_press_used[slot] = 1;
     }
     if (s_press_used[slot] != 0) {
@@ -833,32 +793,31 @@ void filter_press(CGabriella *gabriella, int slot)
 namespace {
 
 const uint kPickupCarry = 0x04;
-const uint kPutDown     = 0x05;
+const uint kPutDown = 0x05;
 
 // CStranger::tryThrowDynamite and updateWeaponLayerActions: the throw's speed
 // starts at 10 and rises at 25 a second to 70 while the button is held.
 const float kCarryThrowStart = 10.0f;
-const float kCarryThrowRate  = 25.0f;
-const float kCarryThrowMax   = 70.0f;
+const float kCarryThrowRate = 25.0f;
+const float kCarryThrowMax = 70.0f;
 
 // A put-down pressed while she moves waits this long for her to stand.
 const float kPutDownBufferSeconds = 0.5f;
 
 struct SCarryThrow {
-    int    charging;
-    float  power;
-    float  target_pitch;    // the look-driven aim
-    float  pitch;           // eases after it; the throw goes along this
-    SThrow arm;             // the left arm's wind-up and swing
+    int charging;
+    float power;
+    float target_pitch; // the look-driven aim
+    float pitch;        // eases after it; the throw goes along this
+    SThrow arm;         // the left arm's wind-up and swing
 };
 
 // Per hero slot.
 SCarryThrow s_carry_throw[NOCTURNE_HERO_SLOTS];
-float       s_put_down_buffer[NOCTURNE_HERO_SLOTS];
+float s_put_down_buffer[NOCTURNE_HERO_SLOTS];
 
 // What her left hand carries that she may let go of: anything but her flashlight.
-CDemonActor *carried_object(CGabriella *gabriella)
-{
+CDemonActor *carried_object(CGabriella *gabriella) {
     CDemonActor *carried = (gabriella->base).base.carry_hands[0].carry_actor;
 
     if ((carried == (CDemonActor *)0x0) ||
@@ -869,8 +828,7 @@ CDemonActor *carried_object(CGabriella *gabriella)
     return carried;
 }
 
-int can_act(CGabriella *gabriella)
-{
+int can_act(CGabriella *gabriella) {
     const CCharacter *self = &(gabriella->base).base;
 
     return (self->grabbed_by == (CDemonActor *)0x0) && (0.0f < self->hit_points);
@@ -879,8 +837,7 @@ int can_act(CGabriella *gabriella)
 // CStranger::tryPlaceObject's free-floor test, from the object in her hand:
 // nothing within 1.5 units ahead of it, ground there within 1 unit of her
 // feet, and no crate within 2.
-int floor_takes(CGabriella *gabriella, CDemonActor *object)
-{
+int floor_takes(CGabriella *gabriella, CDemonActor *object) {
     CDemonActor *self = (CDemonActor *)gabriella;
     CVector3f unit;
     CVector3f ahead;
@@ -906,23 +863,23 @@ int floor_takes(CGabriella *gabriella, CDemonActor *object)
     feet = (self->location).position.y;
     unit.z = 1.5f;
     core_actor_cpp_CDemonActor_transformVector_FUN_00408e80(self, &step, &unit);
-    if (core_setcolid_cpp_CDemonSet_testCylinderCollision_FUN_00573470
-            (g_CDemonSetPtr, x, z, step.x, step.z, 1.0f, 0.1f, 3.0f) < 1.0f) {
+    if (core_setcolid_cpp_CDemonSet_testCylinderCollision_FUN_00573470(
+            g_CDemonSetPtr, x, z, step.x, step.z, 1.0f, 0.1f, 3.0f) < 1.0f) {
         core_setcolid_cpp_CDemonSet_init_FUN_00574180(g_CDemonSetPtr);
         return 0;
     }
     probe.x = x + step.x;
     probe.y = feet + step.y;
     probe.z = z + step.z;
-    ground = core_setcolid_cpp_CDemonSet_processCollisionTypes_FUN_005716b0
-                 (g_CDemonSetPtr, &probe, 0.5f);
+    ground = core_setcolid_cpp_CDemonSet_processCollisionTypes_FUN_005716b0(g_CDemonSetPtr, &probe,
+                                                                            0.5f);
     core_setcolid_cpp_CDemonSet_init_FUN_00574180(g_CDemonSetPtr);
     if (1.0f < std::fabs(ground - feet)) {
         return 0;
     }
     for (i = 0; i < g_CDemonSetPtr->actor_count; i++) {
-        CDemonActor *crate = (CDemonActor *)core_actor_cpp_castToClassHash_FUN_0040c790
-            (g_CDemonSetPtr->actors[i], g_CCrateClassInfo.name_hash);
+        CDemonActor *crate = (CDemonActor *)core_actor_cpp_castToClassHash_FUN_0040c790(
+            g_CDemonSetPtr->actors[i], g_CCrateClassInfo.name_hash);
 
         if (crate == (CDemonActor *)0x0) {
             continue;
@@ -937,30 +894,25 @@ int floor_takes(CGabriella *gabriella, CDemonActor *object)
     return 1;
 }
 
-// Asks for PUTDOWN if she stands on the ground and the floor takes what she carries.
-int try_start_put_down(CGabriella *gabriella)
-{
-    CDemonActor *object = carried_object(gabriella);
-
-    if ((object == (CDemonActor *)0x0) || ((gabriella->base).base.is_on_ground == 0) ||
-        (can_act(gabriella) == 0) || (current_state(gabriella) != kStand) ||
-        (floor_takes(gabriella, object) == 0)) {
+// Asks for PUTDOWN if she stands on the ground and the floor takes `object`,
+// which she carries.
+int try_start_put_down(CGabriella *gabriella, CDemonActor *object) {
+    if (((gabriella->base).base.is_on_ground == 0) || (can_act(gabriella) == 0) ||
+        (current_state(gabriella) != kStand) || (floor_takes(gabriella, object) == 0)) {
         return 0;
     }
-    core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
-        (&(gabriella->base).base.model.base, (int)kPutDown, 1);
+    core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00(
+        &(gabriella->base).base.model.base, (int)kPutDown, 1);
     return 1;
 }
 
-SCarryThrow *carry_throw_state(CGabriella *gabriella)
-{
+SCarryThrow *carry_throw_state(CGabriella *gabriella) {
     return slot_entry(gabriella, s_carry_throw);
 }
 
 // CStranger::getThrowDirection, with her throw's pitch and speed, in her
 // local space.
-void carry_throw_direction(const SCarryThrow *t, CVector3f *direction)
-{
+void carry_throw_direction(const SCarryThrow *t, CVector3f *direction) {
     CMatrix3x3f rotation;
     CVector3f euler;
     CVector3f speed;
@@ -976,22 +928,20 @@ void carry_throw_direction(const SCarryThrow *t, CVector3f *direction)
 }
 
 // dropCarriedObject takes the direction in her local space.
-void release_carried(CGabriella *gabriella, const SCarryThrow *t)
-{
+void release_carried(CGabriella *gabriella, const SCarryThrow *t) {
     CVector3f direction;
 
     if (carried_object(gabriella) == (CDemonActor *)0x0) {
         return;
     }
     carry_throw_direction(t, &direction);
-    (*((((gabriella->base).base.base.vtable._uc)->_uc).dropCarriedObject))
-        ((CCharacter *)gabriella, 0, &direction);
+    (*((((gabriella->base).base.base.vtable._uc)->_uc).dropCarriedObject))((CCharacter *)gabriella,
+                                                                           0, &direction);
 }
 
 // One frame of a carried throw: the charge while the button is held, then the
 // swing, which lets go of the object as the arm passes kReleasePitch.
-void step_carry_throw(CGabriella *gabriella, SCarryThrow *t, float delta_time)
-{
+void step_carry_throw(CGabriella *gabriella, SCarryThrow *t, float delta_time) {
     const SPlayerInput *input = &(gabriella->base).player_input;
     SThrow *arm = &t->arm;
     float step;
@@ -999,28 +949,25 @@ void step_carry_throw(CGabriella *gabriella, SCarryThrow *t, float delta_time)
     if (t->charging != 0) {
         if ((carried_object(gabriella) == (CDemonActor *)0x0) || (can_act(gabriella) == 0)) {
             t->charging = 0;
-        }
-        else if (input->action_state.fire != 0) {
+        } else if (input->action_state.fire != 0) {
             t->power = t->power + kCarryThrowRate * delta_time;
             if (kCarryThrowMax < t->power) {
                 t->power = kCarryThrowMax;
             }
             arm->windup = clamp01(arm->windup + kWindupRate * delta_time);
-        }
-        else {
+        } else {
             t->charging = 0;
             start_swing(arm);
         }
-    }
-    else if (arm->swinging == 0) {
+    } else if (arm->swinging == 0) {
         arm->windup = clamp01(arm->windup - kWindupRate * delta_time);
     }
 
     if ((t->charging != 0) || (arm->swinging != 0)) {
         // nocturne_hero_gabriella_dynamite_aim's look-driven pitch.
-        t->target_pitch = nocturne_hero_look_pitch(t->target_pitch, input->look_up_down_speed,
-                                                   delta_time, NOCTURNE_STRANGER_PITCH_UP,
-                                                   NOCTURNE_STRANGER_PITCH_DOWN);
+        t->target_pitch =
+            nocturne_hero_look_pitch(t->target_pitch, input->look_up_down_speed, delta_time,
+                                     NOCTURNE_STRANGER_PITCH_UP, NOCTURNE_STRANGER_PITCH_DOWN);
         step = delta_time * kThrowAimRate;
         t->pitch = nocturne_hero_approach(t->pitch, t->target_pitch, step);
     }
@@ -1041,8 +988,7 @@ void step_carry_throw(CGabriella *gabriella, SCarryThrow *t, float delta_time)
 
 } // namespace
 
-extern "C" int nocturne_hero_gabriella_throw_carried(CGabriella *gabriella)
-{
+extern "C" int nocturne_hero_gabriella_throw_carried(CGabriella *gabriella) {
     SCarryThrow *t;
     CDemonActor *object;
     uint state;
@@ -1058,7 +1004,8 @@ extern "C" int nocturne_hero_gabriella_throw_carried(CGabriella *gabriella)
         return 1;
     }
     object = carried_object(gabriella);
-    if ((object == (CDemonActor *)0x0) || (nocturne_hero_is_throwable(object) == 0) || (can_act(gabriella) == 0)) {
+    if ((object == (CDemonActor *)0x0) || (nocturne_hero_is_throwable(object) == 0) ||
+        (can_act(gabriella) == 0)) {
         return 0;
     }
     // Not while the pickup or put-down is still under way.
@@ -1075,8 +1022,7 @@ extern "C" int nocturne_hero_gabriella_throw_carried(CGabriella *gabriella)
     return 1;
 }
 
-extern "C" void nocturne_hero_gabriella_render_carry_arc(CGabriella *gabriella)
-{
+extern "C" void nocturne_hero_gabriella_render_carry_arc(CGabriella *gabriella) {
     const SCarryThrow *t;
     CDemonActor *object;
     CVector3f local;
@@ -1093,13 +1039,12 @@ extern "C" void nocturne_hero_gabriella_render_carry_arc(CGabriella *gabriella)
         return;
     }
     carry_throw_direction(t, &local);
-    core_actor_cpp_CDemonActor_transformVector_FUN_00408e80
-        ((CDemonActor *)gabriella, &velocity, &local);
+    core_actor_cpp_CDemonActor_transformVector_FUN_00408e80((CDemonActor *)gabriella, &velocity,
+                                                            &local);
     draw_throw_arc(gabriella, object, &(object->location).position, &velocity);
 }
 
-extern "C" int nocturne_hero_gabriella_put_down(CGabriella *gabriella)
-{
+extern "C" int nocturne_hero_gabriella_put_down(CGabriella *gabriella) {
     CDemonActor *object;
     int slot;
 
@@ -1111,23 +1056,20 @@ extern "C" int nocturne_hero_gabriella_put_down(CGabriella *gabriella)
     if ((slot < 0) || (object == (CDemonActor *)0x0)) {
         return 0;
     }
-    if (try_start_put_down(gabriella) != 0) {
+    if (try_start_put_down(gabriella, object) != 0) {
         s_put_down_buffer[slot] = 0.0f;
-    }
-    else if (((gabriella->base).base.is_on_ground != 0) && (can_act(gabriella) != 0) &&
-             (current_state(gabriella) != kPutDown) && (floor_takes(gabriella, object) != 0)) {
+    } else if (((gabriella->base).base.is_on_ground != 0) && (can_act(gabriella) != 0) &&
+               (current_state(gabriella) != kPutDown) && (floor_takes(gabriella, object) != 0)) {
         // Not standing yet: hold the press until she is.
         s_put_down_buffer[slot] = kPutDownBufferSeconds;
-    }
-    else {
+    } else {
         return 0;
     }
     use_press(gabriella, slot);
     return 1;
 }
 
-extern "C" void nocturne_hero_gabriella_use_item(CGabriella *gabriella)
-{
+extern "C" void nocturne_hero_gabriella_use_item(CGabriella *gabriella) {
     CHero *hero;
 
     if (gabriella == (CGabriella *)0x0) {
@@ -1160,42 +1102,39 @@ const float kMaskLowerSeconds = 0.4f;
 
 // The reach, in right_arm_rotation's angles: the upper arm down and across her
 // body, the forearm folded up to her face. Values to tune in play.
-const float kMaskUpperPitch   = 0.9f;
-const float kMaskUpperYaw     = 0.7f;
+const float kMaskUpperPitch = 0.9f;
+const float kMaskUpperYaw = 0.7f;
 const float kMaskForearmPitch = -1.3f;
-const float kMaskForearmYaw   = 1.4f;
+const float kMaskForearmYaw = 1.4f;
 
 // The mask's placement on her head and in her right hand, as
 // CStranger::renderOpaque places his: a position and euler angles in the
 // bone's frame. His values, except that on her smaller head the mask sits
 // kMaskOnHeadScale of his distance from the head bone.
 const float kMaskOnHeadScale = 0.8f;
-const CVector3f kMaskOnHeadPosition  = { 0.00604827f * kMaskOnHeadScale,
-                                         0.283614f * kMaskOnHeadScale,
-                                         0.537644f * kMaskOnHeadScale };
-const CVector3f kMaskOnHeadAngles    = { -0.140457f, -3.0786f, 0.0f };
-const CVector3f kMaskInHandPosition  = { 0.512623f, -0.0202601f, 0.130713f };
-const CVector3f kMaskInHandAngles    = { 1.16195f, 0.368073f, 0.0489636f };
+const CVector3f kMaskOnHeadPosition = {0.00604827f * kMaskOnHeadScale, 0.283614f * kMaskOnHeadScale,
+                                       0.537644f * kMaskOnHeadScale};
+const CVector3f kMaskOnHeadAngles = {-0.140457f, -3.0786f, 0.0f};
+const CVector3f kMaskInHandPosition = {0.512623f, -0.0202601f, 0.130713f};
+const CVector3f kMaskInHandAngles = {1.16195f, 0.368073f, 0.0489636f};
 
 struct SMaskArm {
-    float reach;    // 0 at her side, 1 at her face
-    int   moving;
-    int   raising;
+    float reach; // 0 at her side, 1 at her face
+    int moving;
+    int raising;
 };
 
 // Per hero slot.
 SMaskArm s_mask_arm[NOCTURNE_HERO_SLOTS];
 
 // The inventory's gas mask: CInventory::select stores it in light_gun_ptr.
-CGasMask *inventory_mask(CGabriella *gabriella)
-{
-    return (CGasMask *)core_actor_cpp_castToClassHash_FUN_0040c790
-        ((CDemonActor *)(gabriella->base).inventory.light_gun_ptr, g_CGasMaskClassInfo.name_hash);
+CGasMask *inventory_mask(CGabriella *gabriella) {
+    return (CGasMask *)core_actor_cpp_castToClassHash_FUN_0040c790(
+        (CDemonActor *)(gabriella->base).inventory.light_gun_ptr, g_CGasMaskClassInfo.name_hash);
 }
 
 // CInventory::select's toggle, which CGasMask keeps in `carrier`.
-int mask_wanted(CGabriella *gabriella)
-{
+int mask_wanted(CGabriella *gabriella) {
     CGasMask *mask = inventory_mask(gabriella);
 
     return (mask != (CGasMask *)0x0) && (mask->carrier != (CDemonActor *)0x0);
@@ -1203,8 +1142,7 @@ int mask_wanted(CGabriella *gabriella)
 
 } // namespace
 
-extern "C" void nocturne_hero_gabriella_mask_tick(CGabriella *gabriella, float delta_time)
-{
+extern "C" void nocturne_hero_gabriella_mask_tick(CGabriella *gabriella, float delta_time) {
     SMaskArm *m;
     int *wearing;
     int wanted;
@@ -1227,20 +1165,19 @@ extern "C" void nocturne_hero_gabriella_mask_tick(CGabriella *gabriella, float d
             (gabriella->weapon_state_flags == 0) && (gabriella->draw_blend <= 0.0f)) {
             m->moving = 1;
             m->raising = 1;
-            if ((*wearing == 0) && (wanted != 0)) {
+            // From 0 the arm only starts for a wanted mask.
+            if (*wearing == 0) {
                 *wearing = 1;
             }
         }
-    }
-    else if (m->raising != 0) {
+    } else if (m->raising != 0) {
         m->reach = m->reach + delta_time / kMaskRaiseSeconds;
         if (1.0f <= m->reach) {
             m->reach = 1.0f;
             m->raising = 0;
             *wearing = (wanted != 0) ? 2 : 1;
         }
-    }
-    else {
+    } else {
         m->reach = m->reach - delta_time / kMaskLowerSeconds;
         if (m->reach <= 0.0f) {
             m->reach = 0.0f;
@@ -1255,8 +1192,7 @@ extern "C" void nocturne_hero_gabriella_mask_tick(CGabriella *gabriella, float d
     }
 }
 
-extern "C" void nocturne_hero_gabriella_pose_arms(CGabriella *gabriella)
-{
+extern "C" void nocturne_hero_gabriella_pose_arms(CGabriella *gabriella) {
     const SCarryThrow *t;
     const SMaskArm *m;
     CQuaternion4f arm;
@@ -1273,8 +1209,7 @@ extern "C" void nocturne_hero_gabriella_pose_arms(CGabriella *gabriella)
     t = &s_carry_throw[slot];
     if (t->arm.swinging != 0) {
         point_left_arm(gabriella, swing_pitch(&t->arm), swing_weight(&t->arm));
-    }
-    else if (0.0f < t->arm.windup) {
+    } else if (0.0f < t->arm.windup) {
         point_left_arm(gabriella, kWindupPitch, t->arm.windup);
     }
 
@@ -1289,8 +1224,7 @@ extern "C" void nocturne_hero_gabriella_pose_arms(CGabriella *gabriella)
     blend_arm(gabriella, &arm, weight, g_GabriellaIndices[6]);
 }
 
-extern "C" void nocturne_hero_gabriella_render_mask(CGabriella *gabriella)
-{
+extern "C" void nocturne_hero_gabriella_render_mask(CGabriella *gabriella) {
     CDemonActor *self = (CDemonActor *)gabriella;
     CGasMask *mask;
     CVector3f position;
@@ -1312,22 +1246,21 @@ extern "C" void nocturne_hero_gabriella_render_mask(CGabriella *gabriella)
         position = kMaskOnHeadPosition;
         angles = kMaskOnHeadAngles;
         bone = g_GabriellaIndices[0];
-    }
-    else {
+    } else {
         position = kMaskInHandPosition;
         angles = kMaskInHandAngles;
         bone = g_GabriellaIndices[0x11];
     }
     core_actor_cpp_CDemonActor_setupRenderState_FUN_00408b00(self);
     core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_005f54c0(&offset, &position, &angles);
-    core_xform_cpp_multiplyMatrix3x4_FUN_005f4f10
-        (&offset, &(gabriella->base).base.model.bone_transform.bone_model_matrices[bone], &placed);
+    core_xform_cpp_multiplyMatrix3x4_FUN_005f4f10(
+        &offset, &(gabriella->base).base.model.bone_transform.bone_model_matrices[bone], &placed);
     core_xform_cpp_matrixToEulerAngles_FUN_005f5690(&placed, &angles);
     core_xform_cpp_getTranslation_FUN_005f6110(&placed, &position);
-    engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0
-        (g_CDemonRendererPtr2, &angles, &position);
-    core_dmodel_cpp_CKeyFramedModelInstance_prepareForRendering_FUN_00478d20
-        (&mask->model, 0.0f, -1);
+    engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0(g_CDemonRendererPtr2,
+                                                                        &angles, &position);
+    core_dmodel_cpp_CKeyFramedModelInstance_prepareForRendering_FUN_00478d20(&mask->model, 0.0f,
+                                                                             -1);
     engine_drender_cpp_CDemonRenderer_matrixPop_FUN_0048c640(g_CDemonRendererPtr2);
     core_actor_cpp_CDemonActor_restoreRenderState_FUN_00408b40(self);
 }
@@ -1340,13 +1273,13 @@ namespace {
 
 // The kick. The thigh peaks at frame 19 and the knee straightens on the way
 // down at 22-24; the motion exits at 29. Values to tune in play.
-const float kKickHitFrame   = 22.0f;
+const float kKickHitFrame = 22.0f;
 
 // Who the kick reaches: an enemy whose collision cylinder comes within this
 // distance of her, in front of her within 45 degrees widened by its radius, and
 // level with her. The same test starts the kick and lands it, so a kick that
 // starts connects unless the enemy has moved out of reach.
-const float kKickReach      = 1.5f;
+const float kKickReach = 1.5f;
 const float kKickHeightBand = 2.0f;
 
 // A press made while she is still settling into STAND (the end of a walk, a turn
@@ -1360,8 +1293,7 @@ const float kShoveDistance = 1.5f;
 float s_kick_buffer[NOCTURNE_HERO_SLOTS];
 
 // Whether `target` is a live enemy the kick reaches.
-int in_reach(CGabriella *gabriella, CCharacter *target)
-{
+int in_reach(CGabriella *gabriella, CCharacter *target) {
     CVector3f local;
     float distance;
 
@@ -1376,8 +1308,7 @@ int in_reach(CGabriella *gabriella, CCharacter *target)
     return distance <= kKickReach;
 }
 
-int enemy_in_reach(CGabriella *gabriella)
-{
+int enemy_in_reach(CGabriella *gabriella) {
     int i;
 
     for (i = 0; i < g_CDemonSetPtr->character_count; i++) {
@@ -1389,8 +1320,7 @@ int enemy_in_reach(CGabriella *gabriella)
 }
 
 // Asks for the kick if she stands and an enemy is in reach.
-int try_start_kick(CGabriella *gabriella)
-{
+int try_start_kick(CGabriella *gabriella) {
     CHero *hero = &gabriella->base;
 
     if (((hero->base).is_on_ground == 0) || ((hero->base).grabbed_by != (CDemonActor *)0x0)) {
@@ -1399,13 +1329,12 @@ int try_start_kick(CGabriella *gabriella)
     if ((current_state(gabriella) != kStand) || (enemy_in_reach(gabriella) == 0)) {
         return 0;
     }
-    core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
-        (&(hero->base).model.base, (int)kKickDoor, 1);
+    core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00(&(hero->base).model.base,
+                                                                   (int)kKickDoor, 1);
     return 1;
 }
 
-void land_kick(CGabriella *gabriella)
-{
+void land_kick(CGabriella *gabriella) {
     CVector3f foot;
     float amount;
     float dealt;
@@ -1430,23 +1359,21 @@ void land_kick(CGabriella *gabriella)
         if (dealt <= 0.0f) {
             continue;
         }
-        core_gore_cpp_CGore_spawnBloodBurst_FUN_004edbb0
-            (g_CGorePtr, &foot, (CVector3f *)0x0, (int)(dealt * 0.2f) + 1, 0);
-        (*(((CDemonActor *)gabriella)->vtable._ub)->playSound)
-            ((CDemonActor *)gabriella, (char *)"kick1.wav");
+        core_gore_cpp_CGore_spawnBloodBurst_FUN_004edbb0(g_CGorePtr, &foot, (CVector3f *)0x0,
+                                                         (int)(dealt * 0.2f) + 1, 0);
+        (*(((CDemonActor *)gabriella)->vtable._ub)->playSound)((CDemonActor *)gabriella,
+                                                               (char *)"kick1.wav");
         nocturne_hero_shove_start(&gabriella->base, target, kShoveDistance);
     }
 }
 
 // Whether the kick crossed its hit frame during the advance that just ran.
-int kick_crossed(CGabriella *gabriella, uint prev_state, float prev_frame)
-{
+int kick_crossed(CGabriella *gabriella, uint prev_state, float prev_frame) {
     return nocturne_hero_motion_crossed(&(gabriella->base).base, (int)kKickDoor, (int)prev_state,
                                         prev_frame, kKickHitFrame);
 }
 
-float motion_rate(CGabriella *gabriella)
-{
+float motion_rate(CGabriella *gabriella) {
     uint current;
 
     // tween_progress is negative when no crossfade is running.
@@ -1480,59 +1407,56 @@ namespace {
 // either side of its bounding box, facing along its axis within 15 degrees and
 // toward it.
 const float kLadderHeightBand = 5.0f;
-const float kLadderReach      = 4.0f;
-const float kLadderSideSlack  = 1.0f;
-const float kLadderFacingCos  = 0.96592582629f;    // cos 15 degrees
+const float kLadderReach = 4.0f;
+const float kLadderSideSlack = 1.0f;
+const float kLadderFacingCos = 0.96592582629f; // cos 15 degrees
 
 // Where she climbs from, in the ladder's frame: CGabriella::tryClimbLadder's
 // (0, 0, +-2). She is eased there and turned to face the ladder over this long
 // rather than snapped.
-const float kLadderStandOff      = 2.0f;
-const float kLadderBlendSeconds  = 0.5f;
+const float kLadderStandOff = 2.0f;
+const float kLadderBlendSeconds = 0.5f;
 
 // A press made while she settles into STAND waits this long for her.
 const float kClimbBufferSeconds = 0.5f;
 
 struct SLadderBlend {
-    CVector3f offset;       // world distance still to cover
-    float     facing;       // yaw to reach
-    float     remaining;    // seconds; 0 when done
+    CVector3f offset; // world distance still to cover
+    float facing;     // yaw to reach
+    float remaining;  // seconds; 0 when done
 };
 
 // Per hero slot.
 SLadderBlend s_ladder_blend[NOCTURNE_HERO_SLOTS];
-float        s_climb_buffer[NOCTURNE_HERO_SLOTS];
+float s_climb_buffer[NOCTURNE_HERO_SLOTS];
 
 // The first ladder she may take, and which face of it she is on (1 in front,
 // -1 behind).
-CLadder *find_ladder(CGabriella *gabriella, float *side)
-{
-    CVector3f       *position = &(gabriella->base).base.base.location.position;
-    CMatrix3x3f     *orient = &(gabriella->base).base.base.orient_matrix;
-    CBoundingBox3D   box;
-    CVector3f        local;
-    CVector3f        ahead;
-    CLadder         *ladder;
-    float            facing_dot;
-    int              i;
+CLadder *find_ladder(CGabriella *gabriella, float *side) {
+    CVector3f *position = &(gabriella->base).base.base.location.position;
+    CMatrix3x3f *orient = &(gabriella->base).base.base.orient_matrix;
+    CBoundingBox3D box;
+    CVector3f local;
+    CVector3f ahead;
+    CLadder *ladder;
+    float facing_dot;
+    int i;
 
     for (i = 0; i < g_CDemonSetPtr->actor_count; i++) {
-        ladder = (CLadder *)core_actor_cpp_castToClassHash_FUN_0040c790
-                     (g_CDemonSetPtr->actors[i], g_CLadderClassInfo.name_hash);
+        ladder = (CLadder *)core_actor_cpp_castToClassHash_FUN_0040c790(
+            g_CDemonSetPtr->actors[i], g_CLadderClassInfo.name_hash);
         if (ladder == (CLadder *)0x0) {
             continue;
         }
         if (std::fabs(position->y - (ladder->base).location.position.y) > kLadderHeightBand) {
             continue;
         }
-        core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_00408f10
-            (&ladder->base, &local, position);
+        core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_00408f10(&ladder->base, &local, position);
         if (std::fabs(local.z) > kLadderReach) {
             continue;
         }
         (*((ladder->base).vtable._ub)->getBoundingBox)(&ladder->base, &box);
-        if ((local.x > box.max.x + kLadderSideSlack) ||
-            (local.x < box.min.x - kLadderSideSlack)) {
+        if ((local.x > box.max.x + kLadderSideSlack) || (local.x < box.min.x - kLadderSideSlack)) {
             continue;
         }
         facing_dot = orient->m[0].z * (ladder->base).orient_matrix.m[0].z +
@@ -1541,8 +1465,8 @@ CLadder *find_ladder(CGabriella *gabriella, float *side)
         if (std::fabs(facing_dot) < kLadderFacingCos) {
             continue;
         }
-        core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_00408f10
-            ((CDemonActor *)gabriella, &ahead, &(ladder->base).location.position);
+        core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_00408f10(
+            (CDemonActor *)gabriella, &ahead, &(ladder->base).location.position);
         if (ahead.z <= 0.0f) {
             continue;
         }
@@ -1554,18 +1478,17 @@ CLadder *find_ladder(CGabriella *gabriella, float *side)
 
 // Puts her on `ladder`: CGabriella::tryClimbLadder's request and placement,
 // with the placement eased by ladder_tick.
-void start_climb(CGabriella *gabriella, int slot, CLadder *ladder, float side)
-{
-    CVector3f    *position = &(gabriella->base).base.base.location.position;
+void start_climb(CGabriella *gabriella, int slot, CLadder *ladder, float side) {
+    CVector3f *position = &(gabriella->base).base.base.location.position;
     SLadderBlend *blend = &s_ladder_blend[slot];
-    CVector3f     stand_off;
-    CVector3f     target;
-    CVector3f     to_ladder;
-    CVector3f     angles;
+    CVector3f stand_off;
+    CVector3f target;
+    CVector3f to_ladder;
+    CVector3f angles;
 
     (gabriella->base).ladder_to_climb = ladder;
-    core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
-        (&(gabriella->base).base.model.base, (int)kLadder, 1);
+    core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00(
+        &(gabriella->base).base.model.base, (int)kLadder, 1);
     stand_off.x = 0.0f;
     stand_off.y = 0.0f;
     stand_off.z = kLadderStandOff * side;
@@ -1583,11 +1506,10 @@ void start_climb(CGabriella *gabriella, int slot, CLadder *ladder, float side)
 
 // Starts the climb if she stands, on the ground and free, with her weapon away,
 // by a ladder she may take.
-int try_start_climb(CGabriella *gabriella, int slot)
-{
-    CHero   *hero = &gabriella->base;
+int try_start_climb(CGabriella *gabriella, int slot) {
+    CHero *hero = &gabriella->base;
     CLadder *ladder;
-    float    side;
+    float side;
 
     if (((hero->base).is_on_ground == 0) || ((hero->base).grabbed_by != (CDemonActor *)0x0) ||
         (hero->ladder_to_climb != (CLadder *)0x0) || (current_state(gabriella) != kStand) ||
@@ -1603,12 +1525,11 @@ int try_start_climb(CGabriella *gabriella, int slot)
 }
 
 // Whether LADDER is playing or being crossfaded into.
-int on_ladder_motion(CGabriella *gabriella)
-{
+int on_ladder_motion(CGabriella *gabriella) {
     CMotionController *controller = &(gabriella->base).base.model.base;
 
-    if (0.0f < core_motion_cpp_CMotionController_getStateBlendWeight_FUN_0052dd20
-                   (controller, (int)kLadder)) {
+    if (0.0f < core_motion_cpp_CMotionController_getStateBlendWeight_FUN_0052dd20(controller,
+                                                                                  (int)kLadder)) {
         return 1;
     }
     return (controller->in_transition != (SMotionTransition *)0x0) &&
@@ -1617,10 +1538,9 @@ int on_ladder_motion(CGabriella *gabriella)
 
 } // namespace
 
-extern "C" int nocturne_hero_gabriella_climb(CGabriella *gabriella)
-{
+extern "C" int nocturne_hero_gabriella_climb(CGabriella *gabriella) {
     float side;
-    int   slot;
+    int slot;
 
     if (gabriella == (CGabriella *)0x0) {
         return 0;
@@ -1631,25 +1551,22 @@ extern "C" int nocturne_hero_gabriella_climb(CGabriella *gabriella)
     }
     if (try_start_climb(gabriella, slot) != 0) {
         s_climb_buffer[slot] = 0.0f;
-    }
-    else if (((gabriella->base).base.is_on_ground != 0) &&
-             ((gabriella->base).ladder_to_climb == (CLadder *)0x0) &&
-             (find_ladder(gabriella, &side) != (CLadder *)0x0)) {
+    } else if (((gabriella->base).base.is_on_ground != 0) &&
+               ((gabriella->base).ladder_to_climb == (CLadder *)0x0) &&
+               (find_ladder(gabriella, &side) != (CLadder *)0x0)) {
         // Not standing yet: hold the press until she is.
         s_climb_buffer[slot] = kClimbBufferSeconds;
-    }
-    else {
+    } else {
         return 0;
     }
     use_press(gabriella, slot);
     return 1;
 }
 
-extern "C" int nocturne_hero_gabriella_ladder_tick(CGabriella *gabriella, float delta_time)
-{
+extern "C" int nocturne_hero_gabriella_ladder_tick(CGabriella *gabriella, float delta_time) {
     SLadderBlend *blend;
-    float         step;
-    int           slot;
+    float step;
+    int slot;
 
     if (gabriella == (CGabriella *)0x0) {
         return 1;
@@ -1671,8 +1588,7 @@ extern "C" int nocturne_hero_gabriella_ladder_tick(CGabriella *gabriella, float 
     if (blend->remaining <= delta_time) {
         step = 1.0f;
         blend->remaining = 0.0f;
-    }
-    else {
+    } else {
         step = delta_time / blend->remaining;
         blend->remaining = blend->remaining - delta_time;
     }
@@ -1683,13 +1599,13 @@ extern "C" int nocturne_hero_gabriella_ladder_tick(CGabriella *gabriella, float 
     blend->offset.y = blend->offset.y * (1.0f - step);
     blend->offset.z = blend->offset.z * (1.0f - step);
     (gabriella->base).base.turn_angle_accumulator =
-        core_actor_cpp_normalizeAngleToPi_FUN_0040cd70
-            (blend->facing - (gabriella->base).base.base.orient.vec.y) * step;
+        core_actor_cpp_normalizeAngleToPi_FUN_0040cd70(blend->facing -
+                                                       (gabriella->base).base.base.orient.vec.y) *
+        step;
     return 1;
 }
 
-extern "C" int nocturne_hero_gabriella_pickup(CGabriella *gabriella)
-{
+extern "C" int nocturne_hero_gabriella_pickup(CGabriella *gabriella) {
     CHero *hero;
 
     if (gabriella == (CGabriella *)0x0) {
@@ -1711,9 +1627,9 @@ extern "C" int nocturne_hero_gabriella_pickup(CGabriella *gabriella)
     return 1;
 }
 
-extern "C" float nocturne_hero_gabriella_pickup_reach(CGabriella *gabriella)
-{
-    if ((gabriella != (CGabriella *)0x0) && (nocturne_hero_is_player((CDemonActor *)gabriella) != 0)) {
+extern "C" float nocturne_hero_gabriella_pickup_reach(CGabriella *gabriella) {
+    if ((gabriella != (CGabriella *)0x0) &&
+        (nocturne_hero_is_player((CDemonActor *)gabriella) != 0)) {
         return 5.0f;
     }
     return 2.0f;
@@ -1735,18 +1651,17 @@ const float kTurnHoldSeconds = 0.15f;
 // step then plays in full, rather than going through its own exit to "gab
 // pause".
 const float kTurnChainFrames = 1.0f;
-const float kTurnChainTween  = 0.2f;
+const float kTurnChainTween = 0.2f;
 
 // Per hero slot: seconds turn input has lasted.
 float s_turn_held[NOCTURNE_HERO_SLOTS];
 
 // The turn state her turn input asks for, or STAND (0) for none.
-uint turn_wanted(CGabriella *gabriella, int slot)
-{
+uint turn_wanted(CGabriella *gabriella, int slot) {
     const SPlayerInput *input = &(gabriella->base).player_input;
 
-    if ((slot < 0) || (s_turn_held[slot] < kTurnHoldSeconds) ||
-        (input->action_state.fire != 0) || (std::fabs(input->turn_speed) <= 0.01f)) {
+    if ((slot < 0) || (s_turn_held[slot] < kTurnHoldSeconds) || (input->action_state.fire != 0) ||
+        (std::fabs(input->turn_speed) <= 0.01f)) {
         return kStand;
     }
     return (input->turn_speed < 0.0f) ? kTurnLeft : kTurnRight;
@@ -1754,12 +1669,11 @@ uint turn_wanted(CGabriella *gabriella, int slot)
 
 // Before her motion advances by `motion_delta` seconds: once a step nears its
 // exit with the same turn still wanted, crossfades into the step's start.
-void chain_turn(CGabriella *gabriella, int slot, float motion_delta)
-{
+void chain_turn(CGabriella *gabriella, int slot, float motion_delta) {
     CMotionController *controller = &(gabriella->base).base.model.base;
-    SMotionTransition  next;
-    SMotion           *motion;
-    uint               current;
+    SMotionTransition next;
+    SMotion *motion;
+    uint current;
 
     current = current_state(gabriella);
     if (((current != kTurnLeft) && (current != kTurnRight)) ||
@@ -1782,13 +1696,12 @@ void chain_turn(CGabriella *gabriella, int slot, float motion_delta)
 
 } // namespace
 
-extern "C" int nocturne_hero_gabriella_locomotion_state(CGabriella *gabriella, int chosen_state)
-{
+extern "C" int nocturne_hero_gabriella_locomotion_state(CGabriella *gabriella, int chosen_state) {
     SPlayerInput *input;
     float strafe_speed;
-    uint  wanted;
-    uint  current;
-    int   slot;
+    uint wanted;
+    uint current;
+    int slot;
 
     if (gabriella == (CGabriella *)0x0) {
         return chosen_state;
@@ -1813,11 +1726,9 @@ extern "C" int nocturne_hero_gabriella_locomotion_state(CGabriella *gabriella, i
     strafe_speed = input->strafe_speed;
     if (strafe_speed < -0.01f) {
         wanted = kStrafeL;
-    }
-    else if (0.01f < strafe_speed) {
+    } else if (0.01f < strafe_speed) {
         wanted = kStrafeR;
-    }
-    else {
+    } else {
         // Turning in place, for a player. A press still waiting for an action
         // holds her in STAND, where every action starts.
         if ((current != kStand) && (current != kTurnLeft) && (current != kTurnRight)) {
@@ -1831,8 +1742,7 @@ extern "C" int nocturne_hero_gabriella_locomotion_state(CGabriella *gabriella, i
     return (int)wanted;
 }
 
-extern "C" int nocturne_hero_gabriella_kick(CGabriella *gabriella)
-{
+extern "C" int nocturne_hero_gabriella_kick(CGabriella *gabriella) {
     int slot;
 
     if ((gabriella == (CGabriella *)0x0) || (enemy_in_reach(gabriella) == 0)) {
@@ -1843,24 +1753,21 @@ extern "C" int nocturne_hero_gabriella_kick(CGabriella *gabriella)
         if (slot >= 0) {
             s_kick_buffer[slot] = 0.0f;
         }
-    }
-    else if (slot >= 0) {
+    } else if (slot >= 0) {
         // Not standing yet: hold the press until she is.
         s_kick_buffer[slot] = kKickBufferSeconds;
-    }
-    else {
+    } else {
         return 0;
     }
     use_press(gabriella, slot);
     return 1;
 }
 
-extern "C" void nocturne_hero_gabriella_process_motion(CGabriella *gabriella, float delta_time)
-{
+extern "C" void nocturne_hero_gabriella_process_motion(CGabriella *gabriella, float delta_time) {
     CMotionController *controller;
-    uint  prev_state;
+    uint prev_state;
     float prev_frame;
-    int   slot;
+    int slot;
 
     if (gabriella == (CGabriella *)0x0) {
         return;
@@ -1874,15 +1781,14 @@ extern "C" void nocturne_hero_gabriella_process_motion(CGabriella *gabriella, fl
     if (slot >= 0) {
         if (std::fabs((gabriella->base).player_input.turn_speed) <= 0.01f) {
             s_turn_held[slot] = 0.0f;
-        }
-        else {
+        } else {
             s_turn_held[slot] = s_turn_held[slot] + delta_time;
         }
         chain_turn(gabriella, slot, delta_time * motion_rate(gabriella));
     }
 
-    core_gabriela_cpp_CGabriella_processMotionEvents_FUN_004d4890
-        (gabriella, delta_time * motion_rate(gabriella));
+    core_gabriela_cpp_CGabriella_processMotionEvents_FUN_004d4890(
+        gabriella, delta_time * motion_rate(gabriella));
 
     if (kick_crossed(gabriella, prev_state, prev_frame) != 0) {
         land_kick(gabriella);
@@ -1908,13 +1814,28 @@ extern "C" void nocturne_hero_gabriella_process_motion(CGabriella *gabriella, fl
     if (slot >= 0) {
         step_carry_throw(gabriella, &s_carry_throw[slot], delta_time);
         if (0.0f < s_put_down_buffer[slot]) {
+            CDemonActor *object = carried_object(gabriella);
+
             s_put_down_buffer[slot] = s_put_down_buffer[slot] - delta_time;
-            if ((carried_object(gabriella) == (CDemonActor *)0x0) ||
-                (try_start_put_down(gabriella) != 0)) {
+            if ((object == (CDemonActor *)0x0) || (try_start_put_down(gabriella, object) != 0)) {
                 s_put_down_buffer[slot] = 0.0f;
             }
         }
     }
+}
+
+extern "C" void nocturne_hero_gabriella_reset(void) {
+    std::memset(s_throw, 0, sizeof(s_throw));
+    std::memset(s_switch, 0, sizeof(s_switch));
+    std::memset(s_pump, 0, sizeof(s_pump));
+    std::memset(s_press_used, 0, sizeof(s_press_used));
+    std::memset(s_carry_throw, 0, sizeof(s_carry_throw));
+    std::memset(s_put_down_buffer, 0, sizeof(s_put_down_buffer));
+    std::memset(s_mask_arm, 0, sizeof(s_mask_arm));
+    std::memset(s_kick_buffer, 0, sizeof(s_kick_buffer));
+    std::memset(s_ladder_blend, 0, sizeof(s_ladder_blend));
+    std::memset(s_climb_buffer, 0, sizeof(s_climb_buffer));
+    std::memset(s_turn_held, 0, sizeof(s_turn_held));
 }
 
 #endif // !NOCTURNE_AUTHENTIC_HERO_ACTIONS

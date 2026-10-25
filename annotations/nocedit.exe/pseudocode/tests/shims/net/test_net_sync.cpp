@@ -9,13 +9,12 @@
 // up the game's error box. Here the host's own report is played back to a
 // guest whose world has been changed after it.
 
-#include "nocturne_test.h"
-#include "net_support.h"
-
 #include "net/net_packets.h"
 #include "net/net_sync.h"
 #include "net/rng.h"
+#include "net_support.h"
 #include "nocturne.h"
+#include "nocturne_test.h"
 
 #include <cmath>
 #include <cstdint>
@@ -87,7 +86,8 @@ SyncCheck host_report(int frame) {
     nocturne_net_sync_check(frame);
     SyncCheck report;
     std::memset(&report, 0, sizeof(report));
-    if (!stand.sent.empty()) std::memcpy(&report, stand.sent[0].bytes.data(), sizeof(report));
+    if (!stand.sent.empty())
+        std::memcpy(&report, stand.sent[0].bytes.data(), sizeof(report));
     return report;
 }
 
@@ -99,7 +99,7 @@ void guest_checks(const SyncCheck &report, int frame) {
     nocturne_net_sync_check(frame);
 }
 
-}  // namespace
+} // namespace
 
 // The host sends its report each frame, to each guest.
 NOCTURNE_TEST(the_host_reports_each_frame) {
@@ -112,8 +112,9 @@ NOCTURNE_TEST(the_host_reports_each_frame) {
     CHECK_EQ(report.hero_position[1][2], 3.0f);
     CHECK_EQ(report.actor_count, 13);
     int counted = 0;
-    for (int i = 0; i < 32; i++) counted += report.bucket_count[i];
-    CHECK_EQ(counted, 10);   // the flies are decoration
+    for (int i = 0; i < 32; i++)
+        counted += report.bucket_count[i];
+    CHECK_EQ(counted, 10); // the flies are decoration
 }
 
 // The same world is no desync.
@@ -179,7 +180,8 @@ NOCTURNE_TEST(an_actor_out_of_place_or_an_extra_draw_is_a_desync) {
     report = host_report(14);
     report.actor_count = 12;
     for (int i = 0; i < 32; i++) {
-        if (report.bucket_count[i] == 1) report.bucket_count[i] = 2;
+        if (report.bucket_count[i] == 1)
+            report.bucket_count[i] = 2;
     }
     guest_checks(report, 14);
     CHECK_EQ(stand.errors.size(), (size_t)1);
@@ -212,12 +214,14 @@ NOCTURNE_TEST(a_desync_that_stays_is_reported_less) {
 NOCTURNE_TEST(a_long_report_is_cut_to_fit_the_box) {
     world();
     net_support::place_heroes(4);
-    g_HeroCount = 6;   // only four are compared
+    g_HeroCount = 6; // only four are compared
     SyncCheck report = host_report(20);
-    for (int i = 0; i < 4; i++) heroes[i]->base.base.location.position = {3e38f, -3e38f, 3e38f};
+    for (int i = 0; i < 4; i++)
+        heroes[i]->base.base.location.position = {3e38f, -3e38f, 3e38f};
     guest_checks(report, 20);
     CHECK_EQ(stand.errors.size(), (size_t)1);
-    if (!stand.errors.empty()) CHECK_EQ(stand.errors[0].size(), (size_t)1023);
+    if (!stand.errors.empty())
+        CHECK_EQ(stand.errors[0].size(), (size_t)1023);
 }
 
 // A frame with no report — never sent, lost, or overwritten — compares nothing;
@@ -269,7 +273,8 @@ NOCTURNE_TEST(more_classes_than_the_cache_holds_are_still_answered) {
     }
     SyncCheck report = host_report(30);
     int counted = 0;
-    for (int i = 0; i < 32; i++) counted += report.bucket_count[i];
+    for (int i = 0; i < 32; i++)
+        counted += report.bucket_count[i];
     CHECK_EQ(counted, 140);
 }
 

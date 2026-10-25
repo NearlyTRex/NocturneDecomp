@@ -80,19 +80,19 @@ extern "C" {
 // The reserved button span, independent of the SDL actually linked.
 #define NOCTURNE_PAD_BUTTON_SPAN 26
 
-#define NOCTURNE_PAD_LTRIGGER    (NOCTURNE_PAD_BUTTON_BASE + NOCTURNE_PAD_BUTTON_SPAN + 0)
-#define NOCTURNE_PAD_RTRIGGER    (NOCTURNE_PAD_BUTTON_BASE + NOCTURNE_PAD_BUTTON_SPAN + 1)
-#define NOCTURNE_PAD_RSTICK_UP   (NOCTURNE_PAD_BUTTON_BASE + NOCTURNE_PAD_BUTTON_SPAN + 2)
+#define NOCTURNE_PAD_LTRIGGER (NOCTURNE_PAD_BUTTON_BASE + NOCTURNE_PAD_BUTTON_SPAN + 0)
+#define NOCTURNE_PAD_RTRIGGER (NOCTURNE_PAD_BUTTON_BASE + NOCTURNE_PAD_BUTTON_SPAN + 1)
+#define NOCTURNE_PAD_RSTICK_UP (NOCTURNE_PAD_BUTTON_BASE + NOCTURNE_PAD_BUTTON_SPAN + 2)
 #define NOCTURNE_PAD_RSTICK_DOWN (NOCTURNE_PAD_BUTTON_BASE + NOCTURNE_PAD_BUTTON_SPAN + 3)
 #define NOCTURNE_PAD_RSTICK_LEFT (NOCTURNE_PAD_BUTTON_BASE + NOCTURNE_PAD_BUTTON_SPAN + 4)
 #define NOCTURNE_PAD_RSTICK_RIGHT (NOCTURNE_PAD_BUTTON_BASE + NOCTURNE_PAD_BUTTON_SPAN + 5)
 
 // One past the last pad code. Everything in [BASE, END) is a pad code.
-#define NOCTURNE_PAD_CODE_END    (NOCTURNE_PAD_BUTTON_BASE + NOCTURNE_PAD_BUTTON_SPAN + 6)
+#define NOCTURNE_PAD_CODE_END (NOCTURNE_PAD_BUTTON_BASE + NOCTURNE_PAD_BUTTON_SPAN + 6)
 
 // True for any code this shim owns. The left stick is not among them: it keeps
 // the original DIJ_LEFT/RIGHT/UP/DOWN.
-#define NOCTURNE_PAD_IS_CODE(code) \
+#define NOCTURNE_PAD_IS_CODE(code)                                                                 \
     ((code) >= NOCTURNE_PAD_BUTTON_BASE && (code) < NOCTURNE_PAD_CODE_END)
 
 // ---------------------------------------------------------------------------
@@ -146,8 +146,7 @@ void nocturne_gamepad_withdraw_nav(int code);
 // Sticks are -1..1 with y positive downwards (SDL's sign, which is also the
 // engine's for look_up_down_speed); triggers are 0..1. Any pointer may be
 // null. All zero when no pad is present.
-void nocturne_gamepad_axes(float *move_x, float *move_y,
-                           float *look_x, float *look_y,
+void nocturne_gamepad_axes(float *move_x, float *move_y, float *look_x, float *look_y,
                            float *left_trigger, float *right_trigger);
 
 // The name to show for a pad code on the Customize Keys screen, in the labels

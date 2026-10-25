@@ -19,4 +19,4 @@ extern std::set<std::string> missing;
 // Every name asked for.
 extern std::set<std::string> asked;
 
-}  // namespace proc_address
+} // namespace proc_address

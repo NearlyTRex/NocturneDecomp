@@ -19,6 +19,13 @@ static void shims_configure_sdl(void) {
     // "Window not responding" dialog during long synchronous operations
     // (asset load, scene init, etc) when we can't pump events.
     SDL_SetHint(SDL_HINT_VIDEO_X11_NET_WM_PING, "0");
+
+    // On a scaled Windows display, draw at the monitor's own pixels rather than
+    // be stretched by Windows, which blurs the picture and can leave its last
+    // column short of the screen's edge. Window sizes stay in scaled points, so
+    // a window is the size it would be unscaled; the presenter already works in
+    // drawable pixels. Other platforms ignore it.
+    SDL_SetHint(SDL_HINT_WINDOWS_DPI_SCALING, "1");
 }
 
 void shims_init_all(void) {

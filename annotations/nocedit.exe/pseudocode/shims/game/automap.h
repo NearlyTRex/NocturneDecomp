@@ -240,17 +240,12 @@ struct _FILE;
 // Append the current level's reveal. Safe to call with no map data.
 void nocturne_automap_save(struct _FILE *file);
 
-// Stage a trailing block if one is present. EOF means "no map data", which is
-// also what a save written before this feature looks like. Nothing is applied
-// here: CGame::loadGame closes the save before CDemonMission::run builds the
-// level, so at this point the grid still belongs to the level being left.
+// Read the trailing block and apply it to the level now up, which is the save's
+// own: CGame::loadGame has already run CDemonMission::startMission, which loads
+// the save's set, and nothing after this rebuilds it. Clears to unexplored
+// first; EOF means "no map data", which is also what a save written before this
+// feature looks like.
 void nocturne_automap_load(struct _FILE *file);
-
-// Apply what nocturne_automap_load staged, once the level exists. Call it after
-// CDemonMission::run. Always clears to unexplored first, so a pre-Automap save,
-// a save from another level and a missing block all land on "not walked yet"
-// rather than inheriting whatever the previous level left in memory.
-void nocturne_automap_apply_loaded(void);
 
 // ---- state ------------------------------------------------------------------
 

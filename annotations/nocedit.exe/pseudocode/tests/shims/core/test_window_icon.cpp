@@ -7,11 +7,10 @@
 
 #define SDL_MAIN_HANDLED
 
-#include "nocturne_test.h"
-#include "sdl_support.h"
-
 #include "core/window_icon.h"
 #include "core/window_icon_moon.h"
+#include "nocturne_test.h"
+#include "sdl_support.h"
 
 #include <cstring>
 
@@ -19,7 +18,7 @@ namespace {
 
 using sdl_support::stand;
 
-}  // namespace
+} // namespace
 
 NOCTURNE_TEST(the_icon_goes_on_the_window) {
     stand.reset();

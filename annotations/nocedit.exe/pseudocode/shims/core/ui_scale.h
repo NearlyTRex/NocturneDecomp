@@ -66,15 +66,14 @@ void nocturne_ui_blit_alpha(struct CAlphaBitmap *bitmap, int x, int y, int alpha
 // health bar — scaled the same way. Note the engine's render() does no bounds
 // checking at all; this one clips, since a scaled rect can reach past an edge
 // the 1x source never could.
-void nocturne_ui_blit_alpha_rect(struct CAlphaBitmap *bitmap, int dest_x, int dest_y,
-                                 int left_x, int top_y, int right_x, int bottom_y,
-                                 int alpha, int scale);
+void nocturne_ui_blit_alpha_rect(struct CAlphaBitmap *bitmap, int dest_x, int dest_y, int left_x,
+                                 int top_y, int right_x, int bottom_y, int alpha, int scale);
 
 // CBitFont::drawText scaled the same way, newlines included. Returns the width
 // drawn, as the engine's does. 16 and 32bpp both scale; at 8bpp the text is
 // drawn unscaled (the engine never selects that depth here).
-int nocturne_ui_draw_text(struct CBitFont *font, char *text, int x, int y,
-                          int color_mode, int color_value, int scale);
+int nocturne_ui_draw_text(struct CBitFont *font, char *text, int x, int y, int color_mode,
+                          int color_value, int scale);
 
 // Scaled metrics, so callers lay out against what will actually be drawn.
 int nocturne_ui_text_width(struct CBitFont *font, char *text, int scale);
@@ -113,9 +112,8 @@ int nocturne_ui_box_scale(int num, int den);
 // will be drawn at `scale`. Wraps in glyph units, and returns the line count
 // with the line advance in screen pixels written to *line_pitch, so the wrap
 // width and the metrics cannot drift apart from the text.
-int nocturne_ui_wrap_to_width(struct CBitFont *font, char *text,
-                              char *lines, int max_lines, int line_stride,
-                              int box_width, int scale, int *line_pitch);
+int nocturne_ui_wrap_to_width(struct CBitFont *font, char *text, char *lines, int max_lines,
+                              int line_stride, int box_width, int scale, int *line_pitch);
 
 // The 2D clip rectangle (g_ClipLeft/Top/Right/Bottom), intersected with what is
 // already set and restored by the matching pop. Text drawn between the two

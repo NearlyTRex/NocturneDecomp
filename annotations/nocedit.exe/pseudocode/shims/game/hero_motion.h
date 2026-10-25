@@ -15,7 +15,7 @@ struct CCharacter;
 struct CVector3f;
 
 // CStranger::autoAimAtThreat's aim_pitch limits: up is negative.
-#define NOCTURNE_STRANGER_PITCH_UP   (-1.047198f)
+#define NOCTURNE_STRANGER_PITCH_UP (-1.047198f)
 #define NOCTURNE_STRANGER_PITCH_DOWN 1.22173f
 
 #ifdef __cplusplus
@@ -50,8 +50,8 @@ float nocturne_hero_approach(float value, float target, float step);
 
 // `pitch` turned by the look up/down input at the Stranger's rate (one full
 // turn a second at full deflection) and held within [up, down].
-float nocturne_hero_look_pitch(float pitch, float look_speed, float delta_time,
-                               float up, float down);
+float nocturne_hero_look_pitch(float pitch, float look_speed, float delta_time, float up,
+                               float down);
 
 #ifdef __cplusplus
 }

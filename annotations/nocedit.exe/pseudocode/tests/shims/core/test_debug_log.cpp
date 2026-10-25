@@ -6,9 +6,8 @@
 // share one directory and one table of subsystems, in the order they run. A
 // subsystem name is kept by pointer, so every new one here is a literal.
 
-#include "nocturne_test.h"
-
 #include "core/debug_log.h"
+#include "nocturne_test.h"
 
 #include <filesystem>
 #include <fstream>
@@ -43,7 +42,7 @@ bool has(const std::string &text, const char *part) {
     return text.find(part) != std::string::npos;
 }
 
-}  // namespace
+} // namespace
 
 NOCTURNE_TEST(a_message_goes_to_its_subsystems_file_with_where_it_came_from) {
     log_dir();
@@ -73,7 +72,8 @@ NOCTURNE_TEST(a_subsystem_is_its_name_not_its_pointer) {
 // The first few, then one in every so many, each numbered.
 NOCTURNE_TEST(a_rate_limited_message_is_thinned_out) {
     log_dir();
-    for (int i = 0; i < 10; ++i) DLOG_RL("beta", 2, 4, "tick");
+    for (int i = 0; i < 10; ++i)
+        DLOG_RL("beta", 2, 4, "tick");
     const std::string text = contents("beta");
     CHECK(has(text, "#1 tick"));
     CHECK(has(text, "#2 tick"));
@@ -110,7 +110,8 @@ NOCTURNE_TEST(a_log_that_cannot_be_opened_is_skipped) {
 NOCTURNE_TEST(a_full_table_turns_new_subsystems_away) {
     log_dir();
     static const char *const names[] = {"s1", "s2", "s3", "s4", "s5", "s6", "s7", "s8"};
-    for (const char *name : names) DLOG(name, "filling");
+    for (const char *name : names)
+        DLOG(name, "filling");
     std::error_code ec;
     CHECK(!fs::exists(log_dir() / "nocturne_s8.log", ec));
     DLOG("alpha", "still here");

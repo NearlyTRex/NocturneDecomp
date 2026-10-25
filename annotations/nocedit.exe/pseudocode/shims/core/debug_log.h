@@ -51,17 +51,18 @@
 // Define NOCTURNE_DISABLE_DLOG before including to compile out DLOG and
 // DLOG_RL. DWARN and DERROR always stay live.
 
-#include <cstdio>
+#include "watcom/path.h" // logs go where the other writes go
+
 #include <cstdarg>
+#include <cstdio>
 #include <cstring>
 
-#include "watcom/path.h"  // logs go where the other writes go
-
 // Strip the directory prefix from __FILE__.
-constexpr const char* _dlog_leaf(const char* path) {
-    const char* leaf = path;
+constexpr const char *_dlog_leaf(const char *path) {
+    const char *leaf = path;
     for (; *path; ++path) {
-        if (*path == '/' || *path == '\\') leaf = path + 1;
+        if (*path == '/' || *path == '\\')
+            leaf = path + 1;
     }
     return leaf;
 }
@@ -72,26 +73,30 @@ constexpr const char* _dlog_leaf(const char* path) {
 // Cache is a tiny fixed-size table — plenty for the handful of subsystems the
 // shims/game instrumentation will ever use. Strings are pointer-compared first
 // (fast path for string-literal call sites), then strcmp-compared as a fallback.
-inline FILE* _dlog_get_file_named(const char* subsys) {
+inline FILE *_dlog_get_file_named(const char *subsys) {
     enum { _DLOG_MAX_LOGS = 8 };
-    static const char* s_names[_DLOG_MAX_LOGS];
-    static FILE*       s_files[_DLOG_MAX_LOGS];
-    static int         s_count = 0;
+    static const char *s_names[_DLOG_MAX_LOGS];
+    static FILE *s_files[_DLOG_MAX_LOGS];
+    static int s_count = 0;
 
     for (int i = 0; i < s_count; i++) {
-        if (s_names[i] == subsys) return s_files[i];
+        if (s_names[i] == subsys)
+            return s_files[i];
     }
     for (int i = 0; i < s_count; i++) {
-        if (strcmp(s_names[i], subsys) == 0) return s_files[i];
+        if (strcmp(s_names[i], subsys) == 0)
+            return s_files[i];
     }
-    if (s_count >= _DLOG_MAX_LOGS) return nullptr;
+    if (s_count >= _DLOG_MAX_LOGS)
+        return nullptr;
 
     char path[128];
     snprintf(path, sizeof(path), "nocturne_%s.log", subsys);
-    FILE* f = fopen(watcom_log_path(path).c_str(), "w");
+    FILE *f = fopen(watcom_log_path(path).c_str(), "w");
     // A real size: the Microsoft runtimes reject 0 for _IOLBF as an invalid
     // parameter, which the statically linked UCRT treats as fatal.
-    if (f) setvbuf(f, nullptr, _IOLBF, BUFSIZ);
+    if (f)
+        setvbuf(f, nullptr, _IOLBF, BUFSIZ);
 
     s_names[s_count] = subsys;
     s_files[s_count] = f;
@@ -100,7 +105,7 @@ inline FILE* _dlog_get_file_named(const char* subsys) {
 }
 
 // Sink for the subsystem-less DWARN/DERROR → nocturne_debug.log.
-inline FILE* _dlog_get_file() {
+inline FILE *_dlog_get_file() {
     return _dlog_get_file_named("debug");
 }
 
@@ -110,8 +115,10 @@ inline FILE* _dlog_get_file() {
 #if defined(__GNUC__) || defined(__clang__)
 __attribute__((format(printf, 2, 3)))
 #endif
-inline void _dlog_write(FILE* f, const char* fmt, ...) {
-    if (!f) return;
+inline void
+_dlog_write(FILE *f, const char *fmt, ...) {
+    if (!f)
+        return;
     va_list args;
     va_start(args, fmt);
     vfprintf(f, fmt, args);
@@ -125,12 +132,12 @@ inline void _dlog_write(FILE* f, const char* fmt, ...) {
 // symbols when the main exe is linked with -rdynamic, but still prints addrs.
 
 #if defined(__has_feature)
-#  if __has_feature(address_sanitizer)
-#    define _DLOG_HAS_ASAN 1
-#  endif
+#if __has_feature(address_sanitizer)
+#define _DLOG_HAS_ASAN 1
+#endif
 #endif
 #if !defined(_DLOG_HAS_ASAN) && defined(__SANITIZE_ADDRESS__)
-#  define _DLOG_HAS_ASAN 1
+#define _DLOG_HAS_ASAN 1
 #endif
 
 // Walking your own stack is not something the language offers, so this is by
@@ -139,11 +146,13 @@ inline void _dlog_write(FILE* f, const char* fmt, ...) {
 // a host nobody has tried should not fail to compile over a diagnostic.
 #if defined(_DLOG_HAS_ASAN)
 extern "C" void __sanitizer_print_stack_trace(void);
-inline void _dlog_print_backtrace() { __sanitizer_print_stack_trace(); }
+inline void _dlog_print_backtrace() {
+    __sanitizer_print_stack_trace();
+}
 #elif defined(__GLIBC__) || defined(__APPLE__) || defined(__FreeBSD__)
 #include <execinfo.h>
 inline void _dlog_print_backtrace() {
-    void* frames[64];
+    void *frames[64];
     int n = backtrace(frames, 64);
     backtrace_symbols_fd(frames, n, 2 /* stderr */);
 }
@@ -161,8 +170,9 @@ inline void _dlog_print_backtrace() {}
 #else
 
 // Write to a named subsystem log: nocturne_<subsys>.log
-#define DLOG(subsys, fmt, ...) \
-    _dlog_write(_dlog_get_file_named(subsys), "[%s:%d] " fmt "\n", _DLOG_FILE, __LINE__, ##__VA_ARGS__)
+#define DLOG(subsys, fmt, ...)                                                                     \
+    _dlog_write(_dlog_get_file_named(subsys), "[%s:%d] " fmt "\n", _DLOG_FILE, __LINE__,           \
+                ##__VA_ARGS__)
 
 // Rate-limited log: log the first `first_n` calls, then every `every_n`-th call.
 // The tick number is prepended to the message as "#N ". Each call site has its
@@ -172,24 +182,29 @@ inline void _dlog_print_backtrace() {}
 //
 // Example:
 //   DLOG_RL("sound", 4, 200, "callback pc=%u", buf->play_cursor);
-#define DLOG_RL(subsys, first_n, every_n, fmt, ...) do { \
-    static int _rl_tick = 0; \
-    ++_rl_tick; \
-    if (_rl_tick <= (first_n) || (_rl_tick % (every_n)) == 0) { \
-        DLOG(subsys, "#%d " fmt, _rl_tick, ##__VA_ARGS__); \
-    } \
-} while(0)
+#define DLOG_RL(subsys, first_n, every_n, fmt, ...)                                                \
+    do {                                                                                           \
+        static int _rl_tick = 0;                                                                   \
+        ++_rl_tick;                                                                                \
+        if (_rl_tick <= (first_n) || (_rl_tick % (every_n)) == 0) {                                \
+            DLOG(subsys, "#%d " fmt, _rl_tick, ##__VA_ARGS__);                                     \
+        }                                                                                          \
+    } while (0)
 
 #endif
 
-#define DWARN(fmt, ...) do { \
-    _dlog_write(_dlog_get_file(), "[WARN  %s:%d] " fmt "\n", _DLOG_FILE, __LINE__, ##__VA_ARGS__); \
-    _dlog_write(stderr, "[WARN  %s:%d] " fmt "\n", _DLOG_FILE, __LINE__, ##__VA_ARGS__); \
-    DBACKTRACE(); \
-} while(0)
+#define DWARN(fmt, ...)                                                                            \
+    do {                                                                                           \
+        _dlog_write(_dlog_get_file(), "[WARN  %s:%d] " fmt "\n", _DLOG_FILE, __LINE__,             \
+                    ##__VA_ARGS__);                                                                \
+        _dlog_write(stderr, "[WARN  %s:%d] " fmt "\n", _DLOG_FILE, __LINE__, ##__VA_ARGS__);       \
+        DBACKTRACE();                                                                              \
+    } while (0)
 
-#define DERROR(fmt, ...) do { \
-    _dlog_write(_dlog_get_file(), "[ERROR %s:%d] " fmt "\n", _DLOG_FILE, __LINE__, ##__VA_ARGS__); \
-    _dlog_write(stderr, "[ERROR %s:%d] " fmt "\n", _DLOG_FILE, __LINE__, ##__VA_ARGS__); \
-    DBACKTRACE(); \
-} while(0)
+#define DERROR(fmt, ...)                                                                           \
+    do {                                                                                           \
+        _dlog_write(_dlog_get_file(), "[ERROR %s:%d] " fmt "\n", _DLOG_FILE, __LINE__,             \
+                    ##__VA_ARGS__);                                                                \
+        _dlog_write(stderr, "[ERROR %s:%d] " fmt "\n", _DLOG_FILE, __LINE__, ##__VA_ARGS__);       \
+        DBACKTRACE();                                                                              \
+    } while (0)

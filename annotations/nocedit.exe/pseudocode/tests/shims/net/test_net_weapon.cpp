@@ -7,12 +7,11 @@
 // that frame, in the same order. A peer's changes are written as the wire has
 // them.
 
-#include "nocturne_test.h"
-#include "net_support.h"
-
 #include "net/net_packets.h"
 #include "net/net_weapon.h"
+#include "net_support.h"
 #include "nocturne.h"
+#include "nocturne_test.h"
 
 #include <string>
 
@@ -63,11 +62,12 @@ void playing(int frame) {
 // The directions applied, in order.
 std::string directions() {
     std::string order;
-    for (const auto &s : stand.selections) order += std::to_string(s.direction);
+    for (const auto &s : stand.selections)
+        order += std::to_string(s.direction);
     return order;
 }
 
-}  // namespace
+} // namespace
 
 // Each kind of change goes to its own inventory call, on the local hero.
 NOCTURNE_TEST(out_of_play_a_change_applies_at_once) {
@@ -105,7 +105,7 @@ NOCTURNE_TEST(out_of_play_a_change_applies_at_once) {
 NOCTURNE_TEST(in_play_a_change_waits_for_its_frame) {
     playing(10);
     nocturne_net_weapon_request(NOCTURNE_NET_WEAPON_ITEM, 0, 1);
-    deliver(selection(30, 1, 1, 2));   // a peer's: not this machine's to re-send
+    deliver(selection(30, 1, 1, 2)); // a peer's: not this machine's to re-send
     CHECK(stand.selections.empty());
     CHECK_EQ(stand.sent.size(), (size_t)1);
     nocturne_net_weapon_apply_if_due(21);
@@ -125,10 +125,10 @@ NOCTURNE_TEST(changes_apply_in_the_order_they_were_made) {
     deliver(selection(4, 1, 3, 0));
     deliver(selection(6, 1, 4, 4));
     deliver(selection(5, 1, 5, 3));
-    nocturne_net_weapon_request(NOCTURNE_NET_WEAPON_ITEM, 0, 5);   // frame 12, player 0
+    nocturne_net_weapon_request(NOCTURNE_NET_WEAPON_ITEM, 0, 5); // frame 12, player 0
     Selection own_peer = selection(12, 1, 6, 6);
     deliver(own_peer);
-    Selection first = selection(12, 0, 9, 7);   // an earlier player on the same frame
+    Selection first = selection(12, 0, 9, 7); // an earlier player on the same frame
     first.hero_index = 0;
     deliver(first);
     nocturne_net_weapon_apply_if_due(20);
@@ -144,7 +144,8 @@ NOCTURNE_TEST(what_cannot_be_queued_is_not) {
     CHECK_EQ(nocturne_net_weapon_on_packet(&packet, (int)sizeof(packet) - 1), 0);
     CHECK_EQ(deliver(selection(1, -1, 1, 1)), 1);
     CHECK_EQ(deliver(selection(1, 4, 1, 1)), 1);
-    for (int serial = 1; serial <= 17; serial++) deliver(selection(50, 1, serial, 1));
+    for (int serial = 1; serial <= 17; serial++)
+        deliver(selection(50, 1, serial, 1));
 
     nocturne_net_weapon_request(NOCTURNE_NET_WEAPON_ITEM, 0, 1);
     g_CNetGamePtr = nullptr;

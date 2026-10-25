@@ -5,12 +5,11 @@
 // See net_config.h for the file format and why it exists.
 
 #include "net/net_config.h"
-#include "shim_config.h"
 
-#include "nocturne.h"
-
-#include "core/debug_log.h"
 #include "core/ascii_case.h"
+#include "core/debug_log.h"
+#include "nocturne.h"
+#include "shim_config.h"
 #include "watcom/path.h"
 
 #include <cstdio>
@@ -18,14 +17,14 @@
 #include <cstring>
 #include <string>
 
-#define NET_INI_PATH    "system\\netplay.ini"
+#define NET_INI_PATH "system\\netplay.ini"
 #define NET_INI_SECTION "Network"
 
-static int  s_loaded = 0;
+static int s_loaded = 0;
 static char s_bind_address[64];
 static char s_server_address[100];
-static char s_player_name[20];      // CNetGame::player_name is char[20]
-static int  s_port;                 // 0 until the ini names one
+static char s_player_name[20]; // CNetGame::player_name is char[20]
+static int s_port;             // 0 until the ini names one
 
 #if !NOCTURNE_AUTHENTIC_NET_CONFIG
 // Written out the first time the game looks for the file, so the settings are
@@ -75,16 +74,16 @@ static void net_write_template(const char *resolved_path) {
     }
     fputs(NET_INI_TEMPLATE, f);
     fclose(f);
-    DLOG("netplay", "netplay.ini: created '%s' with the shipped defaults",
-            resolved_path);
+    DLOG("netplay", "netplay.ini: created '%s' with the shipped defaults", resolved_path);
 }
 #endif
 
 static char *net_trim(char *s) {
-    while (*s == ' ' || *s == '\t') { s++; }
+    while (*s == ' ' || *s == '\t') {
+        s++;
+    }
     char *end = s + strlen(s);
-    while (end > s && (end[-1] == ' ' || end[-1] == '\t' ||
-                       end[-1] == '\r' || end[-1] == '\n')) {
+    while (end > s && (end[-1] == ' ' || end[-1] == '\t' || end[-1] == '\r' || end[-1] == '\n')) {
         end--;
     }
     *end = '\0';
@@ -94,20 +93,19 @@ static char *net_trim(char *s) {
 static void net_store(const char *key, const char *value) {
     if (nocturne_ascii_iequals(key, "bindAddress")) {
         snprintf(s_bind_address, sizeof(s_bind_address), "%s", value);
-    }
-    else if (nocturne_ascii_iequals(key, "serverAddress")) {
+    } else if (nocturne_ascii_iequals(key, "serverAddress")) {
         snprintf(s_server_address, sizeof(s_server_address), "%s", value);
-    }
-    else if (nocturne_ascii_iequals(key, "playerName")) {
+    } else if (nocturne_ascii_iequals(key, "playerName")) {
         // Truncated to the game's field width here rather than at the call
         // site, so the caller can copy it without a length check.
         snprintf(s_player_name, sizeof(s_player_name), "%s", value);
-    }
-    else if (nocturne_ascii_iequals(key, "port")) {
+    } else if (nocturne_ascii_iequals(key, "port")) {
         int port = atoi(value);
         // Leave s_port at 0 (meaning "use the caller's default") for anything
         // that is not a usable UDP port, rather than binding something absurd.
-        if (port > 0 && port < 65536) { s_port = port; }
+        if (port > 0 && port < 65536) {
+            s_port = port;
+        }
     }
 }
 
@@ -136,30 +134,39 @@ static void net_load(void) {
     int in_section = 0;
     while (fgets(line, sizeof(line), f) != nullptr) {
         char *p = net_trim(line);
-        if (*p == '\0' || *p == ';' || *p == '#') { continue; }
+        if (*p == '\0' || *p == ';' || *p == '#') {
+            continue;
+        }
         if (*p == '[') {
             char *end = strchr(p, ']');
-            if (end == nullptr) { continue; }
+            if (end == nullptr) {
+                continue;
+            }
             *end = '\0';
             in_section = nocturne_ascii_iequals(p + 1, NET_INI_SECTION);
             continue;
         }
-        if (!in_section) { continue; }
+        if (!in_section) {
+            continue;
+        }
         char *eq = strchr(p, '=');
-        if (eq == nullptr) { continue; }
+        if (eq == nullptr) {
+            continue;
+        }
         *eq = '\0';
         net_store(net_trim(p), net_trim(eq + 1));
     }
     fclose(f);
 
-    DLOG("netplay",
-            "netplay.ini: bindAddress='%s' serverAddress='%s' port=%d playerName='%s'",
-            s_bind_address, s_server_address, s_port, s_player_name);
+    DLOG("netplay", "netplay.ini: bindAddress='%s' serverAddress='%s' port=%d playerName='%s'",
+         s_bind_address, s_server_address, s_port, s_player_name);
 #endif
 }
 
 static void net_ensure_loaded(void) {
-    if (!s_loaded) { net_load(); }
+    if (!s_loaded) {
+        net_load();
+    }
 }
 
 void nocturne_net_reload(void) {

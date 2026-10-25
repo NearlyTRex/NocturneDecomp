@@ -25,7 +25,7 @@ struct NocturnePadTuning {
     float stick_deadzone;
     float turn_rate;
     float look_rate;
-    int   invert_look;
+    int invert_look;
 };
 
 #ifdef __cplusplus

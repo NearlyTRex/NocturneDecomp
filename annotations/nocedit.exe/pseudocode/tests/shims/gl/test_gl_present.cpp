@@ -12,12 +12,11 @@
 // that a click on the window means the same point in the game. SDL and the
 // driver are stood in for (sdl_gl_support.h, the renderer's gl_recorder.h).
 
-#include "nocturne_test.h"
-#include "sdl_gl_support.h"
-
 #include "gl/gl_api.h"
 #include "gl/gl_present.h"
 #include "gl/gl_version.h"
+#include "nocturne_test.h"
+#include "sdl_gl_support.h"
 #include "shims/renderer/gl_recorder.h"
 
 #include <cstdlib>
@@ -61,7 +60,8 @@ Viewport quad_viewport(const gl_recorder::State &s) {
     Viewport v = {0, 0, 0, 0};
     for (int i = 0; i < draw; ++i) {
         const gl_recorder::Call &c = s.calls[(size_t)i];
-        if (c.name == "Viewport") v = {c.a, c.b, c.c, c.d};
+        if (c.name == "Viewport")
+            v = {c.a, c.b, c.c, c.d};
     }
     return v;
 }
@@ -70,7 +70,8 @@ Viewport quad_viewport(const gl_recorder::State &s) {
 unsigned last_min_filter(const gl_recorder::State &s) {
     unsigned filter = 0;
     for (const gl_recorder::Call &c : s.calls) {
-        if (c.name == "TexParameteri" && c.a == GL_TEXTURE_MIN_FILTER) filter = c.b;
+        if (c.name == "TexParameteri" && c.a == GL_TEXTURE_MIN_FILTER)
+            filter = c.b;
     }
     return filter;
 }
@@ -84,12 +85,15 @@ void present(int width, int height, int bpp = 32) {
     nocturne_gl_present_framebuffer(pixels.data(), width, height, width * (bpp / 8), bpp);
 }
 
-GLenum APIENTRY incomplete(GLenum) { return GL_FRAMEBUFFER_UNSUPPORTED; }
+GLenum APIENTRY incomplete(GLenum) {
+    return GL_FRAMEBUFFER_UNSUPPORTED;
+}
 void APIENTRY no_texture(GLsizei n, GLuint *out) {
-    for (GLsizei i = 0; i < n; ++i) out[i] = 0;
+    for (GLsizei i = 0; i < n; ++i)
+        out[i] = 0;
 }
 
-}  // namespace
+} // namespace
 
 // -----------------------------------------------------------------------------
 // The context
@@ -173,7 +177,7 @@ NOCTURNE_TEST(first_use_brings_the_context_up_on_the_window) {
 // a new size, the old one let go.
 NOCTURNE_TEST(the_scene_target_is_made_once_per_size) {
     fresh();
-    CHECK_EQ(nocturne_gl_scene_target_bind(640, 480), 0);   // no context
+    CHECK_EQ(nocturne_gl_scene_target_bind(640, 480), 0); // no context
     CHECK_EQ(nocturne_gl_scene_target_active(), 0);
     CHECK_EQ(nocturne_gl_scene_fbo(), 0u);
     gl_recorder::State &s = up();
@@ -194,7 +198,7 @@ NOCTURNE_TEST(the_scene_target_is_made_once_per_size) {
     CHECK_EQ(nocturne_gl_scene_target_bind(800, 600), 1);
     CHECK_EQ(s.count("DeleteFramebuffers"), 1);
     CHECK_EQ(s.count("GenFramebuffers"), 2);
-    CHECK_EQ(nocturne_gl_scene_target_bind(800, 500), 1);   // the height alone
+    CHECK_EQ(nocturne_gl_scene_target_bind(800, 500), 1); // the height alone
     CHECK_EQ(s.count("GenFramebuffers"), 3);
 }
 
@@ -250,7 +254,7 @@ NOCTURNE_TEST(a_frame_is_letterboxed_onto_the_window_and_swapped) {
     CHECK_EQ(v.x, 240u);
     CHECK_EQ(v.y, 0u);
     CHECK_EQ(last_min_filter(s), (unsigned)GL_LINEAR);
-    CHECK_EQ(s.count("GenTextures"), 1);   // the same texture, re-used
+    CHECK_EQ(s.count("GenTextures"), 1); // the same texture, re-used
 
     // A window taller than the game has its bars above and below.
     stand.drawable_width = 640;
@@ -297,7 +301,7 @@ NOCTURNE_TEST(the_frame_texture_follows_the_frame) {
     gl_recorder::State &s = up();
     present(640, 480, 32);
     present(320, 240, 32);
-    present(320, 200, 32);   // the height alone
+    present(320, 200, 32); // the height alone
     present(320, 240, 16);
     present(320, 240, 24);
     CHECK_EQ(s.count("TexImage2D"), 5);
@@ -319,7 +323,8 @@ NOCTURNE_TEST(a_frame_that_cannot_be_shown_is_not) {
     std::vector<unsigned char> pixels = frame(4, 4, 32);
     nocturne_gl_present_framebuffer(pixels.data(), 0, 4, 0, 32);
     nocturne_gl_present_framebuffer(pixels.data(), 4, 0, 0, 32);
-    for (int i = 0; i < 300; ++i) nocturne_gl_present_framebuffer(pixels.data(), 4, 4, 4, 8);
+    for (int i = 0; i < 300; ++i)
+        nocturne_gl_present_framebuffer(pixels.data(), 4, 4, 4, 8);
     gl.GenTextures = no_texture;
     nocturne_gl_present_framebuffer(pixels.data(), 4, 4, 16, 32);
     CHECK_EQ(stand.swaps, 0);
@@ -330,7 +335,8 @@ NOCTURNE_TEST(a_frame_that_cannot_be_shown_is_not) {
 NOCTURNE_TEST(without_the_quad_a_frame_is_swapped_undrawn) {
     gl_recorder::State &s = up();
     gl.CreateShader = nullptr;
-    for (int i = 0; i < 600; ++i) present(4, 4);
+    for (int i = 0; i < 600; ++i)
+        present(4, 4);
     CHECK_EQ(stand.swaps, 600);
     CHECK_EQ(s.count("DrawArrays"), 0);
 }
@@ -357,7 +363,7 @@ NOCTURNE_TEST(the_scene_is_presented_from_its_target) {
     nocturne_gl_scene_target_bind(320, 240);
     nocturne_gl_present_scene();
     CHECK_EQ(stand.swaps, 1);
-    CHECK_EQ(s.calls[(size_t)s.index_of_last("DrawArrays")].b, 4u);   // bottom-up
+    CHECK_EQ(s.calls[(size_t)s.index_of_last("DrawArrays")].b, 4u); // bottom-up
     CHECK_EQ(quad_viewport(s).w, 640u);
     fresh();
     nocturne_gl_present_scene();
@@ -372,7 +378,10 @@ NOCTURNE_TEST(a_seed_leaves_the_pipeline_as_it_was) {
         nocturne_gl_scene_target_bind(640, 480);
         const unsigned fbo = nocturne_gl_scene_fbo();
         for (GLenum cap : {GL_DEPTH_TEST, GL_BLEND, GL_CULL_FACE, GL_SCISSOR_TEST}) {
-            if (on) gl.Enable(cap); else gl.Disable(cap);
+            if (on)
+                gl.Enable(cap);
+            else
+                gl.Disable(cap);
         }
         gl.DepthMask(on ? GL_TRUE : GL_FALSE);
         gl.Viewport(10, 20, 300, 200);
@@ -400,12 +409,13 @@ NOCTURNE_TEST(a_seed_that_cannot_be_made_is_not) {
     std::vector<unsigned char> pixels = frame(4, 4, 32);
     nocturne_gl_scene_upload(pixels.data(), 4, 4, 16, 32);
     gl_recorder::State &s = up();
-    nocturne_gl_scene_upload(pixels.data(), 4, 4, 16, 32);   // no target yet
+    nocturne_gl_scene_upload(pixels.data(), 4, 4, 16, 32); // no target yet
     nocturne_gl_scene_target_bind(4, 4);
     nocturne_gl_scene_upload(nullptr, 4, 4, 16, 32);
     nocturne_gl_scene_upload(pixels.data(), 0, 4, 16, 32);
     nocturne_gl_scene_upload(pixels.data(), 4, 0, 16, 32);
-    for (int i = 0; i < 300; ++i) nocturne_gl_scene_upload(pixels.data(), 4, 4, 4, 8);
+    for (int i = 0; i < 300; ++i)
+        nocturne_gl_scene_upload(pixels.data(), 4, 4, 4, 8);
     CHECK_EQ(s.count("TexSubImage2D"), 0);
     gl.GenTextures = no_texture;
     nocturne_gl_scene_upload(pixels.data(), 4, 4, 16, 32);
@@ -414,7 +424,8 @@ NOCTURNE_TEST(a_seed_that_cannot_be_made_is_not) {
     up();
     nocturne_gl_scene_target_bind(4, 4);
     gl.CreateShader = nullptr;
-    for (int i = 0; i < 600; ++i) nocturne_gl_scene_upload(pixels.data(), 4, 4, 16, 32);
+    for (int i = 0; i < 600; ++i)
+        nocturne_gl_scene_upload(pixels.data(), 4, 4, 16, 32);
     CHECK_EQ(gl_recorder::state().count("DrawArrays"), 0);
 }
 
@@ -455,22 +466,22 @@ NOCTURNE_TEST(the_window_is_read_back_at_its_size) {
 NOCTURNE_TEST(a_point_on_the_window_is_the_point_in_the_game) {
     int x = -1, y = -1;
     fresh();
-    nocturne_gl_window_to_logical(100, 50, &x, &y);   // no context: as given
+    nocturne_gl_window_to_logical(100, 50, &x, &y); // no context: as given
     CHECK_EQ(x, 100);
     CHECK_EQ(y, 50);
 
     up();
     nocturne_gl_set_logical_size(640, 480);
-    stand.window_width = 960;           // a HiDPI drawable of twice the window
+    stand.window_width = 960; // a HiDPI drawable of twice the window
     stand.window_height = 540;
     stand.drawable_width = 1920;
     stand.drawable_height = 1080;
-    nocturne_gl_window_to_logical(480, 270, &x, &y);   // the middle
+    nocturne_gl_window_to_logical(480, 270, &x, &y); // the middle
     CHECK_EQ(x, 320);
     CHECK_EQ(y, 240);
-    nocturne_gl_window_to_logical(10, 270, &x, &y);    // the left bar
+    nocturne_gl_window_to_logical(10, 270, &x, &y); // the left bar
     CHECK_EQ(x, 0);
-    nocturne_gl_window_to_logical(950, 600, &x, &y);   // past the right and bottom
+    nocturne_gl_window_to_logical(950, 600, &x, &y); // past the right and bottom
     CHECK_EQ(x, 639);
     CHECK_EQ(y, 479);
     nocturne_gl_window_to_logical(480, -5, &x, &y);

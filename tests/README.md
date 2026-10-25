@@ -12,10 +12,10 @@ python3 -m venv .venv
 .venv/bin/pip install --no-deps --no-build-isolation -e .
 
 # Everything, the way CI runs it
-.venv/bin/pytest -q -c Tests/pytest.ini --rootdir=. -n auto --dist loadfile Tests/unit
+.venv/bin/pytest -q -c tests/pytest.ini --rootdir=. -n auto --dist loadfile tests/unit
 
 # With the coverage floor
-.venv/bin/coverage run -m pytest -q -c Tests/pytest.ini --rootdir=. -n auto --dist loadfile Tests/unit
+.venv/bin/coverage run -m pytest -q -c tests/pytest.ini --rootdir=. -n auto --dist loadfile tests/unit
 .venv/bin/coverage combine && .venv/bin/coverage report --fail-under 100
 ```
 
@@ -27,9 +27,9 @@ The rootdir has to be the repository; `conftest.py` stops the run when it is not
 Test files mirror the path of the code they cover:
 
 ```text
-scripts/Python/make_icns.py                      → Tests/unit/scripts/Python/test_make_icns.py
-scripts/Python/ghidra_annotations/util/label.py  → Tests/unit/scripts/Python/ghidra_annotations/util/test_label.py
-cmake/collect_sources.py                         → Tests/unit/cmake/test_collect_sources.py
+scripts/Python/make_icns.py                      → tests/unit/scripts/Python/test_make_icns.py
+scripts/Python/ghidra_annotations/util/label.py  → tests/unit/scripts/Python/ghidra_annotations/util/test_label.py
+cmake/collect_sources.py                         → tests/unit/cmake/test_collect_sources.py
 ```
 
 `unit/` needs nothing outside the process. `integration/`, once it exists, holds the tests that

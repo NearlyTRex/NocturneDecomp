@@ -4,15 +4,14 @@
 
 #include "debug_support.h"
 
-#include "nocturne.h"
 #include "core/ui_scale.h"
 #include "debug/dump.h"
 #include "game/cheats.h"
 #include "net/net_session.h"
+#include "nocturne.h"
 #include "renderer/trigl_gl.h"
 
 #include <SDL.h>
-
 #include <cstdarg>
 #include <cstdio>
 
@@ -25,12 +24,16 @@ namespace {
 int g_micro_marker = 0;
 int g_small_marker = 0;
 
-}  // namespace
+} // namespace
 
-CBitFont *micro_font() { return (CBitFont *)&g_micro_marker; }
-CBitFont *small_font() { return (CBitFont *)&g_small_marker; }
+CBitFont *micro_font() {
+    return (CBitFont *)&g_micro_marker;
+}
+CBitFont *small_font() {
+    return (CBitFont *)&g_small_marker;
+}
 
-}  // namespace debug_support
+} // namespace debug_support
 
 using debug_support::stand;
 
@@ -63,13 +66,16 @@ CVector3f *__cdecl core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0(CDe
     return out;
 }
 
-int __cdecl core_setdir_cpp_CDemonSet_findVdirBoxAtPosition_FUN_00576870(CDemonSet *,
-                                                                         CVector3f *) {
+int __cdecl core_setdir_cpp_CDemonSet_findVdirBoxAtPosition_FUN_00576870(CDemonSet *, CVector3f *) {
     return stand.vdir_zone;
 }
 
-int nocturne_net_session_active(void) { return stand.session_active; }
-int nocturne_net_session_local_frame(void) { return stand.session_frame; }
+int nocturne_net_session_active(void) {
+    return stand.session_active;
+}
+int nocturne_net_session_local_frame(void) {
+    return stand.session_frame;
+}
 
 // --- the engine's console ----------------------------------------------------
 
@@ -88,14 +94,18 @@ int nocturne_cheat_local(int index) {
     return index == NOCTURNE_CHEAT_PERF_STATS ? stand.perf_stats : 0;
 }
 
-int nocturne_ui_scale(void) { return 1; }
+int nocturne_ui_scale(void) {
+    return 1;
+}
 
 // Eight pixels a character, ten a line.
 int nocturne_ui_text_width(CBitFont *, char *text, int scale) {
     return (int)std::string(text).size() * 8 * scale;
 }
 
-int nocturne_ui_char_height(CBitFont *, int, int scale) { return 10 * scale; }
+int nocturne_ui_char_height(CBitFont *, int, int scale) {
+    return 10 * scale;
+}
 
 int nocturne_ui_draw_text(CBitFont *font, char *text, int x, int y, int, int, int scale) {
     stand.drawn_font = font;
@@ -110,7 +120,13 @@ int nocturne_dump_frontbuffer(const char *path) {
 
 // --- the clock perf_overlay.cpp reads ----------------------------------------
 
-extern "C" Uint64 debug_support_SDL_GetPerformanceCounter(void) { return stand.counter; }
-extern "C" Uint64 debug_support_SDL_GetPerformanceFrequency(void) { return 1000; }
+extern "C" Uint64 debug_support_SDL_GetPerformanceCounter(void) {
+    return stand.counter;
+}
+extern "C" Uint64 debug_support_SDL_GetPerformanceFrequency(void) {
+    return 1000;
+}
 
-extern "C" unsigned long long nocturne_gl_swap_ticks(void) { return stand.swap_ticks; }
+extern "C" unsigned long long nocturne_gl_swap_ticks(void) {
+    return stand.swap_ticks;
+}

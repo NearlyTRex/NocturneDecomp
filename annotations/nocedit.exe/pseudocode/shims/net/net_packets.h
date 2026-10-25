@@ -14,14 +14,14 @@
 // is generated from Ghidra and is not ours to extend.
 
 enum {
-    NOCTURNE_NET_PACKET_SYNC_CHECK = 0x11,  // net_sync.h
-    NOCTURNE_NET_PACKET_WEAPON,             // net_weapon.h
-    NOCTURNE_NET_PACKET_MISSION,            // net_mission.h
-    NOCTURNE_NET_PACKET_CHEATS,             // net_cheats.h
-    NOCTURNE_NET_PACKET_RESPAWN,            // net_respawn.h
-    NOCTURNE_NET_PACKET_SKIP_VOTE,          // net_skip.h
-    NOCTURNE_NET_PACKET_SKIP_COMMIT,        // net_skip.h
-    NOCTURNE_NET_PACKET_CAMERA              // net_camera.h
+    NOCTURNE_NET_PACKET_SYNC_CHECK = 0x11, // net_sync.h
+    NOCTURNE_NET_PACKET_WEAPON,            // net_weapon.h
+    NOCTURNE_NET_PACKET_MISSION,           // net_mission.h
+    NOCTURNE_NET_PACKET_CHEATS,            // net_cheats.h
+    NOCTURNE_NET_PACKET_RESPAWN,           // net_respawn.h
+    NOCTURNE_NET_PACKET_SKIP_VOTE,         // net_skip.h
+    NOCTURNE_NET_PACKET_SKIP_COMMIT,       // net_skip.h
+    NOCTURNE_NET_PACKET_CAMERA             // net_camera.h
 };
 
 // The serials taken from one peer, for a change that is re-sent every frame
@@ -30,7 +30,7 @@ enum {
 // would refuse — leaving the two machines to disagree about it for good.
 // Zero-initialised means nothing taken.
 typedef struct SNetSerialWindow {
-    int          highest;
+    int highest;
     unsigned int seen_below;
 } SNetSerialWindow;
 

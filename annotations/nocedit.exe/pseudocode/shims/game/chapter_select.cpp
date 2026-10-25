@@ -5,9 +5,10 @@
 // See chapter_select.h for what this is and where the names come from.
 
 #include "game/chapter_select.h"
+
 #include "core/ini_setting.h"
-#include "watcom/path.h"
 #include "nocturne.h"
+#include "watcom/path.h"
 
 namespace {
 
@@ -18,9 +19,8 @@ namespace {
 // CGame::showChapterSelect lists the Epilogue only once all four acts have
 // been finished, which the game records as these values under [Game] in
 // nocturne.ini.
-int epilogue_unlocked(void)
-{
-    static const int codes[4] = { 0x331, 0x3cc, 0x3ac, 0xd6 };
+int epilogue_unlocked(void) {
+    static const int codes[4] = {0x331, 0x3cc, 0x3ac, 0xd6};
     char key[] = "Act1Code";
     int act;
 
@@ -44,14 +44,12 @@ const char *const k_volume_names[] = {
     "Volume 5 - 'Epilogue'",
 };
 
-#define CHAPTER_VOLUME_COUNT \
-    ((int)(sizeof(k_volume_names) / sizeof(k_volume_names[0])))
+#define CHAPTER_VOLUME_COUNT ((int)(sizeof(k_volume_names) / sizeof(k_volume_names[0])))
 
 // Indexed together with the mission table, so they have to describe the same
 // game.
 static_assert(CHAPTER_VOLUME_COUNT ==
-                  (int)(sizeof(g_ChapterMissionFiles) /
-                        sizeof(g_ChapterMissionFiles[0])),
+                  (int)(sizeof(g_ChapterMissionFiles) / sizeof(g_ChapterMissionFiles[0])),
               "k_volume_names must cover every volume in g_ChapterMissionFiles");
 
 // The chapter titles, cell for cell against g_ChapterMissionFiles, so
@@ -70,57 +68,38 @@ static_assert(CHAPTER_VOLUME_COUNT ==
 // missing. Chapter counts are uneven (5, 7, 11, 4, 1), so each row's unused tail
 // is null: the row length is g_ChapterMissionFiles's, not any volume's count.
 const char *const k_chapter_names[CHAPTER_VOLUME_COUNT][13] = {
-    { "Chapter 1 - 'Your New Partner'",
-      "Chapter 2 - 'Sentinels'",
-      "Chapter 3 - 'Werewolf Forest'",
-      "Chapter 4 - 'Castle Gaustadt'",
-      "Chapter 5 - 'Dungeon'" },
+    {"Chapter 1 - 'Your New Partner'", "Chapter 2 - 'Sentinels'", "Chapter 3 - 'Werewolf Forest'",
+     "Chapter 4 - 'Castle Gaustadt'", "Chapter 5 - 'Dungeon'"},
 
-    { "Chapter 1 - 'Train to Redeye'",
-      "Chapter 2 - 'Zombie Town'",
-      "Chapter 3 - 'Underground Mine'",
-      "Chapter 4 - 'Hidden Entrance'",
-      "Chapter 5 - 'Temple of the God'",
-      "Chapter 6 - 'Epilogue'",
-      "Chapter X - 'Failure'" },
+    {"Chapter 1 - 'Train to Redeye'", "Chapter 2 - 'Zombie Town'", "Chapter 3 - 'Underground Mine'",
+     "Chapter 4 - 'Hidden Entrance'", "Chapter 5 - 'Temple of the God'", "Chapter 6 - 'Epilogue'",
+     "Chapter X - 'Failure'"},
 
-    { "Chapter 1 - 'Headquarters'",
-      "Chapter 2 - 'Chicago River'",
-      "Chapter 3 - 'The Vendome'",
-      "Chapter 4 - 'Night on the Town'",
-      "Chapter 5 - 'Water Works'",
-      "Chapter 6 - 'Windy City'",
-      "Chapter 7 - 'Crescent Theater'",
-      "Chapter 8 - 'Rooftop to Rooftop'",
-      "Chapter 9 - 'Warehouse of Hell'",
-      "Chapter 10 - 'Mobster Factory'",
-      "Chapter 11 - 'Not You Again'" },
+    {"Chapter 1 - 'Headquarters'", "Chapter 2 - 'Chicago River'", "Chapter 3 - 'The Vendome'",
+     "Chapter 4 - 'Night on the Town'", "Chapter 5 - 'Water Works'", "Chapter 6 - 'Windy City'",
+     "Chapter 7 - 'Crescent Theater'", "Chapter 8 - 'Rooftop to Rooftop'",
+     "Chapter 9 - 'Warehouse of Hell'", "Chapter 10 - 'Mobster Factory'",
+     "Chapter 11 - 'Not You Again'"},
 
-    { "Chapter 1 - 'Headquarters'",
-      "Chapter 2 - 'Graveyard'",
-      "Chapter 3 - 'House of Hell'",
-      "Chapter 4 - 'Back from Hell'" },
+    {"Chapter 1 - 'Headquarters'", "Chapter 2 - 'Graveyard'", "Chapter 3 - 'House of Hell'",
+     "Chapter 4 - 'Back from Hell'"},
 
-    { "Chapter 1 - 'Headquarters'" },
+    {"Chapter 1 - 'Headquarters'"},
 };
 
 static_assert(sizeof(k_chapter_names[0]) / sizeof(k_chapter_names[0][0]) ==
-                  sizeof(g_ChapterMissionFiles[0]) /
-                      sizeof(g_ChapterMissionFiles[0][0]),
+                  sizeof(g_ChapterMissionFiles[0]) / sizeof(g_ChapterMissionFiles[0][0]),
               "k_chapter_names rows must be as long as g_ChapterMissionFiles's, "
               "so [volume][chapter] means the same thing in both");
 
 // Whether a mission file is present in world\, the test showChapterSelect uses
-// to decide which entries to grey out.
-int mission_exists(const char *mission_filename)
-{
+// to decide which entries to grey out. Asked only of a volume's first chapter,
+// which every volume has.
+int mission_exists(const char *mission_filename) {
     _FILE *handle;
 
-    if (mission_filename == (const char *)0x0) {
-        return 0;
-    }
-    handle = engine_dosio_cpp_getFile_FUN_00481a50
-                 ((char *)"world", (char *)mission_filename, (char *)"rt");
+    handle = engine_dosio_cpp_getFile_FUN_00481a50((char *)"world", (char *)mission_filename,
+                                                   (char *)"rt");
     if (handle == (_FILE *)0x0) {
         return 0;
     }
@@ -133,15 +112,9 @@ int mission_exists(const char *mission_filename)
 // spell it differently -- g_ChapterMissionFiles holds "castle1.msn", while
 // CDemonMission::readMissionFile fills mission_name from the .MSN's own
 // root-name line, which is the stem alone.
-void mission_stem(const char *name, char *out, int out_size)
-{
+void mission_stem(const char *name, char *out, int out_size) {
     const char *start;
     int i;
-
-    out[0] = '\0';
-    if (name == (const char *)0x0) {
-        return;
-    }
 
     // Last separator wins, so "world\castle1.msn" and "castle1.msn" agree.
     start = watcom_path_leaf(name);
@@ -154,8 +127,7 @@ void mission_stem(const char *name, char *out, int out_size)
 
 } // namespace
 
-extern "C" int nocturne_chapter_pick_mission(char *out, int out_size)
-{
+extern "C" int nocturne_chapter_pick_mission(char *out, int out_size) {
     CPickList list;
     CBitFont *saved_font;
     const char *title;
@@ -197,14 +169,17 @@ extern "C" int nocturne_chapter_pick_mission(char *out, int out_size)
 
     volume = -1;
     if (playable != 0) {
-        title = support_newmsg_cpp_getLocalizedString_FUN_005441f0((char *)"Choose a story to play");
-        volume = shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20
-                     (&list, (char *)title, -1, 0);
+        title =
+            support_newmsg_cpp_getLocalizedString_FUN_005441f0((char *)"Choose a story to play");
+        volume = shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20(
+            &list, (char *)title, -1, 0);
     }
     shape_edittool_cpp_CPickList_dtor_FUN_004a3c80(&list, 0);
     g_EditorFont = saved_font;
 
-    if (volume < 0 || volume >= CHAPTER_VOLUME_COUNT) {
+    // Escape, or nothing playable to choose. The list holds the volumes in
+    // order, the Epilogue last when it is there, so an index is a volume.
+    if (volume < 0) {
         return 0;
     }
 
@@ -226,22 +201,21 @@ extern "C" int nocturne_chapter_pick_mission(char *out, int out_size)
     return 1;
 }
 
-extern "C" char *nocturne_chapter_environment_name(const char *mission_name)
-{
+extern "C" char *nocturne_chapter_environment_name(const char *mission_name) {
     // The extracted name rather than the table string: the result is a slice of
     // a localized line and needs storage. One buffer suffices for a single
     // running mission; a caller that needs the name past the next call should
     // copy it.
     static char name[64];
 
-    char        wanted[64];
-    char        candidate[64];
+    char wanted[64];
+    char candidate[64];
     const char *line;
     const char *open_quote;
     const char *close_quote;
-    int         volume;
-    int         chapter;
-    int         length;
+    int volume;
+    int chapter;
+    int length;
 
     name[0] = '\0';
     mission_stem(mission_name, wanted, (int)sizeof(wanted));
@@ -250,19 +224,11 @@ extern "C" char *nocturne_chapter_environment_name(const char *mission_name)
     }
 
     line = (const char *)0x0;
-    for (volume = 0; volume < CHAPTER_VOLUME_COUNT && line == (const char *)0x0;
-         volume++) {
-        for (chapter = 0;
-             chapter < (int)(sizeof(g_ChapterMissionFiles[0]) /
-                             sizeof(g_ChapterMissionFiles[0][0]));
-             chapter++) {
-            // A null entry is the end of the volume's chapters, and the tail of
-            // the row past it is null too.
-            if (g_ChapterMissionFiles[volume][chapter] == (char *)0x0) {
-                break;
-            }
-            mission_stem(g_ChapterMissionFiles[volume][chapter], candidate,
-                         (int)sizeof(candidate));
+    for (volume = 0; volume < CHAPTER_VOLUME_COUNT && line == (const char *)0x0; volume++) {
+        // A null entry is the end of the volume's chapters. Every row has one:
+        // the longest volume is 11 chapters of the row's 13.
+        for (chapter = 0; g_ChapterMissionFiles[volume][chapter] != (char *)0x0; chapter++) {
+            mission_stem(g_ChapterMissionFiles[volume][chapter], candidate, (int)sizeof(candidate));
             // Case-insensitive: the shipped root names are inconsistent about
             // case (castle1, CHICAGO2, Mansion, HQ-ACT1), and the engine's own
             // name comparisons ignore it for the same reason.
@@ -274,7 +240,7 @@ extern "C" char *nocturne_chapter_environment_name(const char *mission_name)
     }
 
     if (line == (const char *)0x0) {
-        return (char *)0x0;      // an editor mission, or one of ours
+        return (char *)0x0; // an editor mission, or one of ours
     }
 
     line = support_newmsg_cpp_getLocalizedString_FUN_005441f0((char *)line);
@@ -283,10 +249,10 @@ extern "C" char *nocturne_chapter_environment_name(const char *mission_name)
     // are the game's own convention for the title within these lines. A
     // translation that omits them falls back to the whole line, which is still
     // correct information, only longer.
-    open_quote  = strchr(line, '\'');
+    open_quote = strchr(line, '\'');
     close_quote = strrchr(line, '\'');
     if (open_quote != (const char *)0x0 && close_quote > open_quote) {
-        line   = open_quote + 1;
+        line = open_quote + 1;
         length = (int)(close_quote - open_quote) - 1;
     } else {
         length = (int)strlen(line);

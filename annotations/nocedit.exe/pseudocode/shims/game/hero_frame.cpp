@@ -3,22 +3,21 @@
 // =============================================================================
 
 #include "game/hero_frame.h"
+
 #include "nocturne.h"
 
 #if !NOCTURNE_AUTHENTIC_HERO_ACTIONS
 
 namespace {
 
-int is_class(CHero *hero, CDemonActorType *class_info)
-{
-    return core_actor_cpp_castToClassHash_FUN_0040c790
-               (&(hero->base).base, class_info->name_hash) != (CDemonActor *)0x0;
+int is_class(CHero *hero, CDemonActorType *class_info) {
+    return core_actor_cpp_castToClassHash_FUN_0040c790(&(hero->base).base, class_info->name_hash) !=
+           (CDemonActor *)0x0;
 }
 
 } // namespace
 
-extern "C" void nocturne_hero_frame(CHero *hero, float delta_time)
-{
+extern "C" void nocturne_hero_frame(CHero *hero, float delta_time) {
     int is_moloch;
 
     if (hero == (CHero *)0x0) {

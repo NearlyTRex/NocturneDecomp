@@ -11,12 +11,11 @@
 // The first case runs before any window exists, so the cases are in the order
 // they have to be.
 
-#include "nocturne_test.h"
-#include "movie_writer.h"
-#include "sdl_support.h"
-
-#include "globals/globals_610000.h"
 #include "gl/window_mode.h"
+#include "globals/globals_610000.h"
+#include "movie_writer.h"
+#include "nocturne_test.h"
+#include "sdl_support.h"
 #include "system/user32.h"
 #include "win32/shim_init.h"
 #include "win32/text_input.h"
@@ -25,7 +24,6 @@
 // The test's own main(), which SDL would otherwise rename on Windows.
 #define SDL_MAIN_HANDLED
 #include <SDL.h>
-
 #include <cstdlib>
 #include <cstring>
 #include <filesystem>
@@ -46,7 +44,7 @@ using sdl_support::stand;
 
 const UINT kKeyDown = 0x0100, kKeyUp = 0x0101, kChar = 0x0102;
 const UINT kActivateApp = 0x001C, kDestroy = 0x0002, kQuit = 0x0012;
-const UINT kMouseMove = 0x0200, kMciNotify = 0x3b9;
+const UINT kMouseMove = 0x0200, kSetCursor = 0x0020, kMciNotify = 0x3b9;
 const UINT kRemove = 1;
 
 void start() {
@@ -61,11 +59,13 @@ void start() {
 std::vector<MSG> drain() {
     std::vector<MSG> got;
     MSG msg;
-    while (g_PeekMessageAFunc(&msg, 0, 0, 0, kRemove)) got.push_back(msg);
+    while (g_PeekMessageAFunc(&msg, 0, 0, 0, kRemove))
+        got.push_back(msg);
     return got;
 }
 
-void push_key(Uint32 type, SDL_Scancode scancode, SDL_Keycode sym, Uint16 mod = 0, Uint8 repeat = 0) {
+void push_key(Uint32 type, SDL_Scancode scancode, SDL_Keycode sym, Uint16 mod = 0,
+              Uint8 repeat = 0) {
     SDL_Event ev;
     memset(&ev, 0, sizeof(ev));
     ev.type = type;
@@ -86,13 +86,17 @@ Press press(SDL_Scancode scancode, SDL_Keycode sym, Uint16 mod = 0, Uint8 repeat
     push_key(SDL_KEYDOWN, scancode, sym, mod, repeat);
     Press p;
     for (const MSG &m : drain()) {
-        if (m.message == kKeyDown) p.lparam = (unsigned long)m.lParam;
-        if (m.message == kChar) p.typed = (int)m.wParam;
+        if (m.message == kKeyDown)
+            p.lparam = (unsigned long)m.lParam;
+        if (m.message == kChar)
+            p.typed = (int)m.wParam;
     }
     return p;
 }
 
-unsigned scancode_of(const Press &p) { return (unsigned)(p.lparam >> 16) & 0xffu; }
+unsigned scancode_of(const Press &p) {
+    return (unsigned)(p.lparam >> 16) & 0xffu;
+}
 
 // Answers with the message plus its wParam, so a test can see it was called
 // with both.
@@ -100,7 +104,7 @@ LRESULT echo_proc(HWND, UINT message, WPARAM wparam, LPARAM) {
     return (LRESULT)(message + wparam);
 }
 
-}  // namespace
+} // namespace
 
 // -----------------------------------------------------------------------------
 // Before there is a window
@@ -277,32 +281,79 @@ NOCTURNE_TEST(window_events_are_destroy_and_activation) {
 NOCTURNE_TEST(each_key_arrives_as_its_directinput_scancode) {
     start();
     drain();
-    struct Key { SDL_Scancode sc; unsigned dik; };
+    struct Key {
+        SDL_Scancode sc;
+        unsigned dik;
+    };
     const Key keys[] = {
-        {SDL_SCANCODE_A, 0x1E}, {SDL_SCANCODE_Z, 0x2C}, {SDL_SCANCODE_1, 0x02},
-        {SDL_SCANCODE_9, 0x0A}, {SDL_SCANCODE_0, 0x0B}, {SDL_SCANCODE_ESCAPE, 0x01},
-        {SDL_SCANCODE_RETURN, 0x1C}, {SDL_SCANCODE_BACKSPACE, 0x0E}, {SDL_SCANCODE_TAB, 0x0F},
-        {SDL_SCANCODE_SPACE, 0x39}, {SDL_SCANCODE_MINUS, 0x0C}, {SDL_SCANCODE_EQUALS, 0x0D},
-        {SDL_SCANCODE_LEFTBRACKET, 0x1A}, {SDL_SCANCODE_RIGHTBRACKET, 0x1B},
-        {SDL_SCANCODE_BACKSLASH, 0x2B}, {SDL_SCANCODE_SEMICOLON, 0x27},
-        {SDL_SCANCODE_APOSTROPHE, 0x28}, {SDL_SCANCODE_GRAVE, 0x29}, {SDL_SCANCODE_COMMA, 0x33},
-        {SDL_SCANCODE_PERIOD, 0x34}, {SDL_SCANCODE_SLASH, 0x35}, {SDL_SCANCODE_CAPSLOCK, 0x3A},
-        {SDL_SCANCODE_F1, 0x3B}, {SDL_SCANCODE_F2, 0x3C}, {SDL_SCANCODE_F3, 0x3D},
-        {SDL_SCANCODE_F4, 0x3E}, {SDL_SCANCODE_F5, 0x3F}, {SDL_SCANCODE_F6, 0x40},
-        {SDL_SCANCODE_F7, 0x41}, {SDL_SCANCODE_F8, 0x42}, {SDL_SCANCODE_F9, 0x43},
-        {SDL_SCANCODE_F10, 0x44}, {SDL_SCANCODE_F11, 0x57}, {SDL_SCANCODE_F12, 0x58},
-        {SDL_SCANCODE_INSERT, 0x52}, {SDL_SCANCODE_DELETE, 0x53}, {SDL_SCANCODE_HOME, 0x47},
-        {SDL_SCANCODE_END, 0x4F}, {SDL_SCANCODE_PAGEUP, 0x49}, {SDL_SCANCODE_PAGEDOWN, 0x51},
-        {SDL_SCANCODE_UP, 0x48}, {SDL_SCANCODE_DOWN, 0x50}, {SDL_SCANCODE_LEFT, 0x4B},
-        {SDL_SCANCODE_RIGHT, 0x4D}, {SDL_SCANCODE_LSHIFT, 0x2A}, {SDL_SCANCODE_RSHIFT, 0x36},
-        {SDL_SCANCODE_LCTRL, 0x1D}, {SDL_SCANCODE_RCTRL, 0x1D}, {SDL_SCANCODE_LALT, 0x38},
-        {SDL_SCANCODE_RALT, 0x38}, {SDL_SCANCODE_NUMLOCKCLEAR, 0x45},
-        {SDL_SCANCODE_KP_DIVIDE, 0x35}, {SDL_SCANCODE_KP_MULTIPLY, 0x37},
-        {SDL_SCANCODE_KP_MINUS, 0x4A}, {SDL_SCANCODE_KP_PLUS, 0x4E}, {SDL_SCANCODE_KP_ENTER, 0x1C},
-        {SDL_SCANCODE_KP_0, 0x52}, {SDL_SCANCODE_KP_1, 0x4F}, {SDL_SCANCODE_KP_2, 0x50},
-        {SDL_SCANCODE_KP_3, 0x51}, {SDL_SCANCODE_KP_4, 0x4B}, {SDL_SCANCODE_KP_5, 0x4C},
-        {SDL_SCANCODE_KP_6, 0x4D}, {SDL_SCANCODE_KP_7, 0x47}, {SDL_SCANCODE_KP_8, 0x48},
-        {SDL_SCANCODE_KP_9, 0x49}, {SDL_SCANCODE_KP_PERIOD, 0x53}, {SDL_SCANCODE_PRINTSCREEN, 0},
+        {SDL_SCANCODE_A, 0x1E},
+        {SDL_SCANCODE_Z, 0x2C},
+        {SDL_SCANCODE_1, 0x02},
+        {SDL_SCANCODE_9, 0x0A},
+        {SDL_SCANCODE_0, 0x0B},
+        {SDL_SCANCODE_ESCAPE, 0x01},
+        {SDL_SCANCODE_RETURN, 0x1C},
+        {SDL_SCANCODE_BACKSPACE, 0x0E},
+        {SDL_SCANCODE_TAB, 0x0F},
+        {SDL_SCANCODE_SPACE, 0x39},
+        {SDL_SCANCODE_MINUS, 0x0C},
+        {SDL_SCANCODE_EQUALS, 0x0D},
+        {SDL_SCANCODE_LEFTBRACKET, 0x1A},
+        {SDL_SCANCODE_RIGHTBRACKET, 0x1B},
+        {SDL_SCANCODE_BACKSLASH, 0x2B},
+        {SDL_SCANCODE_SEMICOLON, 0x27},
+        {SDL_SCANCODE_APOSTROPHE, 0x28},
+        {SDL_SCANCODE_GRAVE, 0x29},
+        {SDL_SCANCODE_COMMA, 0x33},
+        {SDL_SCANCODE_PERIOD, 0x34},
+        {SDL_SCANCODE_SLASH, 0x35},
+        {SDL_SCANCODE_CAPSLOCK, 0x3A},
+        {SDL_SCANCODE_F1, 0x3B},
+        {SDL_SCANCODE_F2, 0x3C},
+        {SDL_SCANCODE_F3, 0x3D},
+        {SDL_SCANCODE_F4, 0x3E},
+        {SDL_SCANCODE_F5, 0x3F},
+        {SDL_SCANCODE_F6, 0x40},
+        {SDL_SCANCODE_F7, 0x41},
+        {SDL_SCANCODE_F8, 0x42},
+        {SDL_SCANCODE_F9, 0x43},
+        {SDL_SCANCODE_F10, 0x44},
+        {SDL_SCANCODE_F11, 0x57},
+        {SDL_SCANCODE_F12, 0x58},
+        {SDL_SCANCODE_INSERT, 0x52},
+        {SDL_SCANCODE_DELETE, 0x53},
+        {SDL_SCANCODE_HOME, 0x47},
+        {SDL_SCANCODE_END, 0x4F},
+        {SDL_SCANCODE_PAGEUP, 0x49},
+        {SDL_SCANCODE_PAGEDOWN, 0x51},
+        {SDL_SCANCODE_UP, 0x48},
+        {SDL_SCANCODE_DOWN, 0x50},
+        {SDL_SCANCODE_LEFT, 0x4B},
+        {SDL_SCANCODE_RIGHT, 0x4D},
+        {SDL_SCANCODE_LSHIFT, 0x2A},
+        {SDL_SCANCODE_RSHIFT, 0x36},
+        {SDL_SCANCODE_LCTRL, 0x1D},
+        {SDL_SCANCODE_RCTRL, 0x1D},
+        {SDL_SCANCODE_LALT, 0x38},
+        {SDL_SCANCODE_RALT, 0x38},
+        {SDL_SCANCODE_NUMLOCKCLEAR, 0x45},
+        {SDL_SCANCODE_KP_DIVIDE, 0x35},
+        {SDL_SCANCODE_KP_MULTIPLY, 0x37},
+        {SDL_SCANCODE_KP_MINUS, 0x4A},
+        {SDL_SCANCODE_KP_PLUS, 0x4E},
+        {SDL_SCANCODE_KP_ENTER, 0x1C},
+        {SDL_SCANCODE_KP_0, 0x52},
+        {SDL_SCANCODE_KP_1, 0x4F},
+        {SDL_SCANCODE_KP_2, 0x50},
+        {SDL_SCANCODE_KP_3, 0x51},
+        {SDL_SCANCODE_KP_4, 0x4B},
+        {SDL_SCANCODE_KP_5, 0x4C},
+        {SDL_SCANCODE_KP_6, 0x4D},
+        {SDL_SCANCODE_KP_7, 0x47},
+        {SDL_SCANCODE_KP_8, 0x48},
+        {SDL_SCANCODE_KP_9, 0x49},
+        {SDL_SCANCODE_KP_PERIOD, 0x53},
+        {SDL_SCANCODE_PRINTSCREEN, 0},
     };
     for (const Key &k : keys) {
         const Press p = press(k.sc, 0);
@@ -316,12 +367,13 @@ NOCTURNE_TEST(extended_keys_carry_the_extended_bit) {
     start();
     drain();
     const SDL_Scancode extended[] = {
-        SDL_SCANCODE_INSERT, SDL_SCANCODE_DELETE, SDL_SCANCODE_HOME, SDL_SCANCODE_END,
-        SDL_SCANCODE_PAGEUP, SDL_SCANCODE_PAGEDOWN, SDL_SCANCODE_UP, SDL_SCANCODE_DOWN,
-        SDL_SCANCODE_LEFT, SDL_SCANCODE_RIGHT, SDL_SCANCODE_RCTRL, SDL_SCANCODE_RALT,
+        SDL_SCANCODE_INSERT,    SDL_SCANCODE_DELETE,   SDL_SCANCODE_HOME,  SDL_SCANCODE_END,
+        SDL_SCANCODE_PAGEUP,    SDL_SCANCODE_PAGEDOWN, SDL_SCANCODE_UP,    SDL_SCANCODE_DOWN,
+        SDL_SCANCODE_LEFT,      SDL_SCANCODE_RIGHT,    SDL_SCANCODE_RCTRL, SDL_SCANCODE_RALT,
         SDL_SCANCODE_KP_DIVIDE, SDL_SCANCODE_KP_ENTER,
     };
-    for (SDL_Scancode sc : extended) CHECK_EQ(press(sc, 0).lparam & 0x01000000ul, 0x01000000ul);
+    for (SDL_Scancode sc : extended)
+        CHECK_EQ(press(sc, 0).lparam & 0x01000000ul, 0x01000000ul);
     CHECK_EQ(press(SDL_SCANCODE_KP_8, 0).lparam & 0x01000000ul, 0ul);
 }
 
@@ -345,7 +397,7 @@ NOCTURNE_TEST(repeats_and_releases_carry_the_transition_bits) {
 // symbols, the number pad by Num Lock, and the control characters Win32 sends.
 NOCTURNE_TEST(a_key_types_what_win32_would_type) {
     start();
-    SDL_StopTextInput();   // what a console has outside a prompt
+    SDL_StopTextInput(); // what a console has outside a prompt
     drain();
     CHECK_EQ(press(SDL_SCANCODE_A, 'a').typed, (int)'a');
     CHECK_EQ(press(SDL_SCANCODE_A, 'a', KMOD_LSHIFT).typed, (int)'A');
@@ -366,7 +418,7 @@ NOCTURNE_TEST(a_key_types_what_win32_would_type) {
     CHECK_EQ(press(SDL_SCANCODE_KP_1, SDLK_KP_1, KMOD_NUM).typed, (int)'1');
     CHECK_EQ(press(SDL_SCANCODE_KP_0, SDLK_KP_0, KMOD_NUM).typed, (int)'0');
     CHECK_EQ(press(SDL_SCANCODE_KP_PERIOD, SDLK_KP_PERIOD, KMOD_NUM).typed, (int)'.');
-    CHECK_EQ(press(SDL_SCANCODE_KP_7, SDLK_KP_7).typed, 0);   // Num Lock off: Home
+    CHECK_EQ(press(SDL_SCANCODE_KP_7, SDLK_KP_7).typed, 0); // Num Lock off: Home
     CHECK_EQ(press(SDL_SCANCODE_KP_DIVIDE, SDLK_KP_DIVIDE).typed, (int)'/');
     CHECK_EQ(press(SDL_SCANCODE_KP_MULTIPLY, SDLK_KP_MULTIPLY).typed, (int)'*');
     CHECK_EQ(press(SDL_SCANCODE_KP_MINUS, SDLK_KP_MINUS).typed, (int)'-');
@@ -395,12 +447,14 @@ NOCTURNE_TEST(text_input_types_in_the_keyboards_own_layout) {
     // "a", e-acute, the euro sign, a lone continuation byte, a cut-short
     // two-byte lead, "Z", a four-byte emoji, DEL, a control character, then
     // "!".
-    const char text[] = "a\xc3\xa9\xe2\x82\xac\x80\xc3" "Z\xf0\x9f\x98\x80\x7f\x01!";
+    const char text[] = "a\xc3\xa9\xe2\x82\xac\x80\xc3"
+                        "Z\xf0\x9f\x98\x80\x7f\x01!";
     memcpy(ev.text.text, text, sizeof(text));
     SDL_PushEvent(&ev);
     std::vector<int> typed;
     for (const MSG &m : drain()) {
-        if (m.message == kChar) typed.push_back((int)m.wParam);
+        if (m.message == kChar)
+            typed.push_back((int)m.wParam);
     }
     CHECK_EQ(typed.size(), (size_t)4);
     if (typed.size() == 4) {
@@ -421,7 +475,7 @@ NOCTURNE_TEST(text_input_types_in_the_keyboards_own_layout) {
 NOCTURNE_TEST(a_prompt_asks_for_text_input_while_it_is_up) {
     start();
     SDL_StopTextInput();
-    nocturne_text_input_end();                 // nothing up: nothing to undo
+    nocturne_text_input_end(); // nothing up: nothing to undo
     CHECK(!SDL_IsTextInputActive());
     nocturne_text_input_begin();
     nocturne_text_input_begin();
@@ -454,14 +508,21 @@ NOCTURNE_TEST(the_mouse_reports_in_the_games_own_coordinates) {
     ev.motion.y = 100;
     SDL_PushEvent(&ev);
     std::vector<MSG> got = drain();
-    CHECK_EQ(got.size(), (size_t)1);
-    if (!got.empty()) {
-        CHECK_EQ(got[0].message, kMouseMove);
-        CHECK_EQ((long)got[0].lParam, (50L << 16) | 100L);
+    // WM_SETCURSOR comes first, over the client area for a mouse move.
+    CHECK_EQ(got.size(), (size_t)2);
+    if (got.size() == 2) {
+        CHECK_EQ(got[0].message, kSetCursor);
+        CHECK_EQ((long)got[0].lParam, ((long)kMouseMove << 16) | 1L);
+        CHECK_EQ(got[1].message, kMouseMove);
+        CHECK_EQ((long)got[1].lParam, (50L << 16) | 100L);
     }
 
     // Left, right and middle, down and up; another button is nothing.
-    struct Button { Uint8 button; UINT down; UINT up; };
+    struct Button {
+        Uint8 button;
+        UINT down;
+        UINT up;
+    };
     const Button buttons[] = {
         {SDL_BUTTON_LEFT, 0x0201, 0x0202},
         {SDL_BUTTON_RIGHT, 0x0204, 0x0205},
@@ -562,7 +623,8 @@ NOCTURNE_TEST(text_goes_through_the_clipboard_and_upper_cases_in_place) {
     CHECK(g_SetClipboardDataFunc(1, nullptr) == nullptr);
     const char *back = (const char *)g_GetClipboardDataFunc(1);
     CHECK(back != nullptr);
-    if (back != nullptr) CHECK_EQ(std::string(back), std::string(text));
+    if (back != nullptr)
+        CHECK_EQ(std::string(back), std::string(text));
     // Asked again, the last copy is let go and a new one handed back.
     CHECK(g_GetClipboardDataFunc(1) != nullptr);
     CHECK(g_CloseClipboardFunc());
@@ -589,7 +651,16 @@ NOCTURNE_TEST(text_goes_through_the_clipboard_and_upper_cases_in_place) {
     CHECK(g_UpdateWindowFunc(0));
     CHECK(g_LoadCursorAFunc(0, nullptr) != nullptr);
     CHECK(g_LoadIconAFunc(0, nullptr) != nullptr);
-    CHECK(g_SetCursorFunc(nullptr) != nullptr);
+}
+
+// No cursor hides the system's over the window, as the game asks on every
+// WM_SETCURSOR; one puts it back. Each answers the cursor before it.
+NOCTURNE_TEST(no_cursor_hides_the_systems_and_one_puts_it_back) {
+    start();
+    CHECK(g_SetCursorFunc(nullptr) == (HCURSOR)1);
+    CHECK_EQ(SDL_ShowCursor(SDL_QUERY), SDL_DISABLE);
+    CHECK(g_SetCursorFunc((HCURSOR)1) == nullptr);
+    CHECK_EQ(SDL_ShowCursor(SDL_QUERY), SDL_ENABLE);
 }
 
 #if !defined(_WIN32)

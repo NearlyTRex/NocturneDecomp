@@ -5,11 +5,10 @@
 // Compiled in only where NOCTURNE_NETPLAY_SIM_TRACE is set, the dev preset's
 // setting. Compiled out, every entry point does nothing and counts nothing.
 
-#include "nocturne_test.h"
-#include "net_support.h"
-
 #include "net/sim_trace.h"
+#include "net_support.h"
 #include "nocturne.h"
+#include "nocturne_test.h"
 #include "shim_config.h"
 
 #if NOCTURNE_NETPLAY_SIM_TRACE

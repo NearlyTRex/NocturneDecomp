@@ -3,9 +3,9 @@
 // =============================================================================
 
 #include "game/helper_death.h"
-#include "shim_config.h"
 
 #include "nocturne.h"
+#include "shim_config.h"
 
 #if !NOCTURNE_AUTHENTIC_HELPER_DEATH
 
@@ -15,16 +15,21 @@ int g_MissionFailedByEnd;
 
 } // namespace
 
-extern "C" void nocturne_helper_death_reset(void) { g_MissionFailedByEnd = 0; }
+extern "C" void nocturne_helper_death_reset(void) {
+    g_MissionFailedByEnd = 0;
+}
 
-extern "C" void nocturne_helper_death_note_end(void) { g_MissionFailedByEnd = 1; }
+extern "C" void nocturne_helper_death_note_end(void) {
+    g_MissionFailedByEnd = 1;
+}
 
-extern "C" int nocturne_helper_death_game_over(void) { return g_MissionFailedByEnd; }
+extern "C" int nocturne_helper_death_game_over(void) {
+    return g_MissionFailedByEnd;
+}
 
-extern "C" int nocturne_helper_death_hold_hero(void)
-{
+extern "C" int nocturne_helper_death_hold_hero(void) {
     CDemonActor *focus;
-    CCharacter  *character;
+    CCharacter *character;
 
     if (g_CScriptPtr == (CScript *)0) {
         return 0;
@@ -48,7 +53,11 @@ extern "C" int nocturne_helper_death_hold_hero(void)
 
 extern "C" void nocturne_helper_death_reset(void) {}
 extern "C" void nocturne_helper_death_note_end(void) {}
-extern "C" int nocturne_helper_death_game_over(void) { return 0; }
-extern "C" int nocturne_helper_death_hold_hero(void) { return 0; }
+extern "C" int nocturne_helper_death_game_over(void) {
+    return 0;
+}
+extern "C" int nocturne_helper_death_hold_hero(void) {
+    return 0;
+}
 
 #endif // !NOCTURNE_AUTHENTIC_HELPER_DEATH

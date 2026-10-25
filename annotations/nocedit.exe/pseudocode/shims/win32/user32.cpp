@@ -1,28 +1,30 @@
 #include "system/user32.h"
+
+#include "core/debug_log.h"
 #include "core/window_icon.h"
+#include "debug/focus_trace.h"
+#include "game/gamepad.h"
+#include "gl/gl_present.h"
+#include "shim_config.h"
 #include "win32/mci_video.h"
 #include "win32/window_message.h"
-#include "gl/gl_present.h"
-#include "game/gamepad.h"
-#include "debug/focus_trace.h"
-#include "core/debug_log.h"
-#include "shim_config.h"
+
 #include <SDL.h>
-#include <cstdio>
-#include <cstring>
 #include <csignal>
+#include <cstdio>
 #include <cstdlib>
+#include <cstring>
 #include <queue>
 
 // ---------------------------------------------------------------------------
 // State
 // ---------------------------------------------------------------------------
-SDL_Window* g_sdlWindow = nullptr;
+SDL_Window *g_sdlWindow = nullptr;
 // Set true once ddraw_SetDisplayMode has resized the window to the real game
 // resolution. Until then, shim_ShowWindow ignores SW_SHOW so we don't flash a
 // default-size window between CreateWindowExA and the DDraw setup.
 bool g_sdlWindowReadyToShow = false;
-static WNDPROC     s_wndProc   = nullptr;
+static WNDPROC s_wndProc = nullptr;
 static std::queue<MSG> s_msgQueue;
 
 // ---------------------------------------------------------------------------
@@ -31,82 +33,144 @@ static std::queue<MSG> s_msgQueue;
 static uint8_t sdlScancodeToWin32(SDL_Scancode sc) {
     // Letters: SDL_SCANCODE_A(4)..Z(29) → Win32 AT scancodes
     static const uint8_t letterMap[26] = {
-        0x1E,0x30,0x2E,0x20,0x12,0x21,0x22,0x23,0x17, // A-I
-        0x24,0x25,0x26,0x32,0x31,0x18,0x19,0x10,0x13,  // J-R
-        0x1F,0x14,0x16,0x2F,0x11,0x2D,0x15,0x2C         // S-Z
+        0x1E, 0x30, 0x2E, 0x20, 0x12, 0x21, 0x22, 0x23, 0x17, // A-I
+        0x24, 0x25, 0x26, 0x32, 0x31, 0x18, 0x19, 0x10, 0x13, // J-R
+        0x1F, 0x14, 0x16, 0x2F, 0x11, 0x2D, 0x15, 0x2C        // S-Z
     };
     if (sc >= SDL_SCANCODE_A && sc <= SDL_SCANCODE_Z)
         return letterMap[sc - SDL_SCANCODE_A];
     // Digits: SDL 30-39 → Win32 0x02-0x0B
     if (sc >= SDL_SCANCODE_1 && sc <= SDL_SCANCODE_9)
         return (uint8_t)(sc - SDL_SCANCODE_1 + 0x02);
-    if (sc == SDL_SCANCODE_0) return 0x0B;
+    if (sc == SDL_SCANCODE_0)
+        return 0x0B;
 
     switch (sc) {
-        case SDL_SCANCODE_ESCAPE:    return 0x01;
-        case SDL_SCANCODE_RETURN:    return 0x1C;
-        case SDL_SCANCODE_BACKSPACE: return 0x0E;
-        case SDL_SCANCODE_TAB:       return 0x0F;
-        case SDL_SCANCODE_SPACE:     return 0x39;
-        case SDL_SCANCODE_MINUS:     return 0x0C;
-        case SDL_SCANCODE_EQUALS:    return 0x0D;
-        case SDL_SCANCODE_LEFTBRACKET:  return 0x1A;
-        case SDL_SCANCODE_RIGHTBRACKET: return 0x1B;
-        case SDL_SCANCODE_BACKSLASH: return 0x2B;
-        case SDL_SCANCODE_SEMICOLON: return 0x27;
-        case SDL_SCANCODE_APOSTROPHE:return 0x28;
-        case SDL_SCANCODE_GRAVE:     return 0x29;
-        case SDL_SCANCODE_COMMA:     return 0x33;
-        case SDL_SCANCODE_PERIOD:    return 0x34;
-        case SDL_SCANCODE_SLASH:     return 0x35;
-        case SDL_SCANCODE_CAPSLOCK:  return 0x3A;
-        case SDL_SCANCODE_F1:        return 0x3B;
-        case SDL_SCANCODE_F2:        return 0x3C;
-        case SDL_SCANCODE_F3:        return 0x3D;
-        case SDL_SCANCODE_F4:        return 0x3E;
-        case SDL_SCANCODE_F5:        return 0x3F;
-        case SDL_SCANCODE_F6:        return 0x40;
-        case SDL_SCANCODE_F7:        return 0x41;
-        case SDL_SCANCODE_F8:        return 0x42;
-        case SDL_SCANCODE_F9:        return 0x43;
-        case SDL_SCANCODE_F10:       return 0x44;
-        case SDL_SCANCODE_F11:       return 0x57;
-        case SDL_SCANCODE_F12:       return 0x58;
-        case SDL_SCANCODE_INSERT:    return 0x52;
-        case SDL_SCANCODE_DELETE:    return 0x53;
-        case SDL_SCANCODE_HOME:      return 0x47;
-        case SDL_SCANCODE_END:       return 0x4F;
-        case SDL_SCANCODE_PAGEUP:    return 0x49;
-        case SDL_SCANCODE_PAGEDOWN:  return 0x51;
-        case SDL_SCANCODE_UP:        return 0x48;
-        case SDL_SCANCODE_DOWN:      return 0x50;
-        case SDL_SCANCODE_LEFT:      return 0x4B;
-        case SDL_SCANCODE_RIGHT:     return 0x4D;
-        case SDL_SCANCODE_LSHIFT:    return 0x2A;
-        case SDL_SCANCODE_RSHIFT:    return 0x36;
-        // DirectInput's DIK_ codes here have one Ctrl and one Alt.
-        case SDL_SCANCODE_LCTRL:
-        case SDL_SCANCODE_RCTRL:     return 0x1D;
-        case SDL_SCANCODE_LALT:
-        case SDL_SCANCODE_RALT:      return 0x38;
-        case SDL_SCANCODE_NUMLOCKCLEAR: return 0x45;
-        case SDL_SCANCODE_KP_DIVIDE: return 0x35;
-        case SDL_SCANCODE_KP_MULTIPLY: return 0x37;
-        case SDL_SCANCODE_KP_MINUS:  return 0x4A;
-        case SDL_SCANCODE_KP_PLUS:   return 0x4E;
-        case SDL_SCANCODE_KP_ENTER:  return 0x1C;
-        case SDL_SCANCODE_KP_0:      return 0x52;
-        case SDL_SCANCODE_KP_1:      return 0x4F;
-        case SDL_SCANCODE_KP_2:      return 0x50;
-        case SDL_SCANCODE_KP_3:      return 0x51;
-        case SDL_SCANCODE_KP_4:      return 0x4B;
-        case SDL_SCANCODE_KP_5:      return 0x4C;
-        case SDL_SCANCODE_KP_6:      return 0x4D;
-        case SDL_SCANCODE_KP_7:      return 0x47;
-        case SDL_SCANCODE_KP_8:      return 0x48;
-        case SDL_SCANCODE_KP_9:      return 0x49;
-        case SDL_SCANCODE_KP_PERIOD: return 0x53;
-        default: return 0;
+    case SDL_SCANCODE_ESCAPE:
+        return 0x01;
+    case SDL_SCANCODE_RETURN:
+        return 0x1C;
+    case SDL_SCANCODE_BACKSPACE:
+        return 0x0E;
+    case SDL_SCANCODE_TAB:
+        return 0x0F;
+    case SDL_SCANCODE_SPACE:
+        return 0x39;
+    case SDL_SCANCODE_MINUS:
+        return 0x0C;
+    case SDL_SCANCODE_EQUALS:
+        return 0x0D;
+    case SDL_SCANCODE_LEFTBRACKET:
+        return 0x1A;
+    case SDL_SCANCODE_RIGHTBRACKET:
+        return 0x1B;
+    case SDL_SCANCODE_BACKSLASH:
+        return 0x2B;
+    case SDL_SCANCODE_SEMICOLON:
+        return 0x27;
+    case SDL_SCANCODE_APOSTROPHE:
+        return 0x28;
+    case SDL_SCANCODE_GRAVE:
+        return 0x29;
+    case SDL_SCANCODE_COMMA:
+        return 0x33;
+    case SDL_SCANCODE_PERIOD:
+        return 0x34;
+    case SDL_SCANCODE_SLASH:
+        return 0x35;
+    case SDL_SCANCODE_CAPSLOCK:
+        return 0x3A;
+    case SDL_SCANCODE_F1:
+        return 0x3B;
+    case SDL_SCANCODE_F2:
+        return 0x3C;
+    case SDL_SCANCODE_F3:
+        return 0x3D;
+    case SDL_SCANCODE_F4:
+        return 0x3E;
+    case SDL_SCANCODE_F5:
+        return 0x3F;
+    case SDL_SCANCODE_F6:
+        return 0x40;
+    case SDL_SCANCODE_F7:
+        return 0x41;
+    case SDL_SCANCODE_F8:
+        return 0x42;
+    case SDL_SCANCODE_F9:
+        return 0x43;
+    case SDL_SCANCODE_F10:
+        return 0x44;
+    case SDL_SCANCODE_F11:
+        return 0x57;
+    case SDL_SCANCODE_F12:
+        return 0x58;
+    case SDL_SCANCODE_INSERT:
+        return 0x52;
+    case SDL_SCANCODE_DELETE:
+        return 0x53;
+    case SDL_SCANCODE_HOME:
+        return 0x47;
+    case SDL_SCANCODE_END:
+        return 0x4F;
+    case SDL_SCANCODE_PAGEUP:
+        return 0x49;
+    case SDL_SCANCODE_PAGEDOWN:
+        return 0x51;
+    case SDL_SCANCODE_UP:
+        return 0x48;
+    case SDL_SCANCODE_DOWN:
+        return 0x50;
+    case SDL_SCANCODE_LEFT:
+        return 0x4B;
+    case SDL_SCANCODE_RIGHT:
+        return 0x4D;
+    case SDL_SCANCODE_LSHIFT:
+        return 0x2A;
+    case SDL_SCANCODE_RSHIFT:
+        return 0x36;
+    // DirectInput's DIK_ codes here have one Ctrl and one Alt.
+    case SDL_SCANCODE_LCTRL:
+    case SDL_SCANCODE_RCTRL:
+        return 0x1D;
+    case SDL_SCANCODE_LALT:
+    case SDL_SCANCODE_RALT:
+        return 0x38;
+    case SDL_SCANCODE_NUMLOCKCLEAR:
+        return 0x45;
+    case SDL_SCANCODE_KP_DIVIDE:
+        return 0x35;
+    case SDL_SCANCODE_KP_MULTIPLY:
+        return 0x37;
+    case SDL_SCANCODE_KP_MINUS:
+        return 0x4A;
+    case SDL_SCANCODE_KP_PLUS:
+        return 0x4E;
+    case SDL_SCANCODE_KP_ENTER:
+        return 0x1C;
+    case SDL_SCANCODE_KP_0:
+        return 0x52;
+    case SDL_SCANCODE_KP_1:
+        return 0x4F;
+    case SDL_SCANCODE_KP_2:
+        return 0x50;
+    case SDL_SCANCODE_KP_3:
+        return 0x51;
+    case SDL_SCANCODE_KP_4:
+        return 0x4B;
+    case SDL_SCANCODE_KP_5:
+        return 0x4C;
+    case SDL_SCANCODE_KP_6:
+        return 0x4D;
+    case SDL_SCANCODE_KP_7:
+        return 0x47;
+    case SDL_SCANCODE_KP_8:
+        return 0x48;
+    case SDL_SCANCODE_KP_9:
+        return 0x49;
+    case SDL_SCANCODE_KP_PERIOD:
+        return 0x53;
+    default:
+        return 0;
     }
 }
 
@@ -117,17 +181,23 @@ static uint8_t sdlScancodeToWin32(SDL_Scancode sc) {
 // against g_KeyboardState.
 static uint32_t winExtendedKeyFlag(SDL_Scancode sc) {
     switch (sc) {
-        case SDL_SCANCODE_INSERT: case SDL_SCANCODE_DELETE:
-        case SDL_SCANCODE_HOME:   case SDL_SCANCODE_END:
-        case SDL_SCANCODE_PAGEUP: case SDL_SCANCODE_PAGEDOWN:
-        case SDL_SCANCODE_UP:     case SDL_SCANCODE_DOWN:
-        case SDL_SCANCODE_LEFT:   case SDL_SCANCODE_RIGHT:
-        case SDL_SCANCODE_RCTRL:  case SDL_SCANCODE_RALT:
-        case SDL_SCANCODE_KP_DIVIDE:
-        case SDL_SCANCODE_KP_ENTER:
-            return 0x01000000;
-        default:
-            return 0;
+    case SDL_SCANCODE_INSERT:
+    case SDL_SCANCODE_DELETE:
+    case SDL_SCANCODE_HOME:
+    case SDL_SCANCODE_END:
+    case SDL_SCANCODE_PAGEUP:
+    case SDL_SCANCODE_PAGEDOWN:
+    case SDL_SCANCODE_UP:
+    case SDL_SCANCODE_DOWN:
+    case SDL_SCANCODE_LEFT:
+    case SDL_SCANCODE_RIGHT:
+    case SDL_SCANCODE_RCTRL:
+    case SDL_SCANCODE_RALT:
+    case SDL_SCANCODE_KP_DIVIDE:
+    case SDL_SCANCODE_KP_ENTER:
+        return 0x01000000;
+    default:
+        return 0;
     }
 }
 
@@ -139,28 +209,50 @@ static uint32_t winExtendedKeyFlag(SDL_Scancode sc) {
 // glyphs.
 static char winShiftChar(char ch) {
     switch (ch) {
-        case '1': return '!';
-        case '2': return '@';
-        case '3': return '#';
-        case '4': return '$';
-        case '5': return '%';
-        case '6': return '^';
-        case '7': return '&';
-        case '8': return '*';
-        case '9': return '(';
-        case '0': return ')';
-        case '-': return '_';
-        case '=': return '+';
-        case '[': return '{';
-        case ']': return '}';
-        case '\\': return '|';
-        case ';': return ':';
-        case '\'': return '"';
-        case ',': return '<';
-        case '.': return '>';
-        case '/': return '?';
-        case '`': return '~';
-        default:  return ch;
+    case '1':
+        return '!';
+    case '2':
+        return '@';
+    case '3':
+        return '#';
+    case '4':
+        return '$';
+    case '5':
+        return '%';
+    case '6':
+        return '^';
+    case '7':
+        return '&';
+    case '8':
+        return '*';
+    case '9':
+        return '(';
+    case '0':
+        return ')';
+    case '-':
+        return '_';
+    case '=':
+        return '+';
+    case '[':
+        return '{';
+    case ']':
+        return '}';
+    case '\\':
+        return '|';
+    case ';':
+        return ':';
+    case '\'':
+        return '"';
+    case ',':
+        return '<';
+    case '.':
+        return '>';
+    case '/':
+        return '?';
+    case '`':
+        return '~';
+    default:
+        return ch;
     }
 }
 
@@ -168,25 +260,33 @@ static char winShiftChar(char ch) {
 // with Shift or Caps Lock but not both, other keys take Shift alone, and the
 // number pad types its digit with Num Lock on and its operators always. 0 for a
 // key that types nothing.
-static char winTypedChar(const SDL_Keysym& key) {
+static char winTypedChar(const SDL_Keysym &key) {
     const bool shift = (key.mod & KMOD_SHIFT) != 0;
     switch (key.scancode) {
-        case SDL_SCANCODE_KP_DIVIDE:   return '/';
-        case SDL_SCANCODE_KP_MULTIPLY: return '*';
-        case SDL_SCANCODE_KP_MINUS:    return '-';
-        case SDL_SCANCODE_KP_PLUS:     return '+';
-        case SDL_SCANCODE_KP_ENTER:    return '\r';
-        default: break;
+    case SDL_SCANCODE_KP_DIVIDE:
+        return '/';
+    case SDL_SCANCODE_KP_MULTIPLY:
+        return '*';
+    case SDL_SCANCODE_KP_MINUS:
+        return '-';
+    case SDL_SCANCODE_KP_PLUS:
+        return '+';
+    case SDL_SCANCODE_KP_ENTER:
+        return '\r';
+    default:
+        break;
     }
     if (key.scancode >= SDL_SCANCODE_KP_1 && key.scancode <= SDL_SCANCODE_KP_PERIOD) {
-        if ((key.mod & KMOD_NUM) == 0) return 0;
+        if ((key.mod & KMOD_NUM) == 0)
+            return 0;
         static const char pad[] = "1234567890.";
         return pad[key.scancode - SDL_SCANCODE_KP_1];
     }
     const SDL_Keycode sym = key.sym;
     const bool printable = sym >= 0x20 && sym < 0x7F;
     const bool control = sym == 0x08 || sym == 0x09 || sym == 0x0D || sym == 0x1B;
-    if (!printable && !control) return 0;
+    if (!printable && !control)
+        return 0;
     const char ch = (char)sym;
     if (ch >= 'a' && ch <= 'z') {
         const bool caps = (key.mod & KMOD_CAPS) != 0;
@@ -205,10 +305,13 @@ static void queueTypedText(MSG msg, const char *text) {
         unsigned cp = *p++;
         if (cp >= 0x80) {
             int more = (cp >= 0xF0) ? 3 : (cp >= 0xE0) ? 2 : (cp >= 0xC0) ? 1 : -1;
-            if (more < 0) continue;
+            if (more < 0)
+                continue;
             cp &= 0x3Fu >> more;
-            for (; more > 0 && (*p & 0xC0) == 0x80; more--) cp = (cp << 6) | (*p++ & 0x3Fu);
-            if (more != 0) continue;
+            for (; more > 0 && (*p & 0xC0) == 0x80; more--)
+                cp = (cp << 6) | (*p++ & 0x3Fu);
+            if (more != 0)
+                continue;
         }
         if ((cp >= 0x20 && cp < 0x7F) || (cp >= 0xA0 && cp <= 0xFF)) {
             msg.message = 0x0102; // WM_CHAR
@@ -223,8 +326,16 @@ static void queueTypedText(MSG msg, const char *text) {
 static const uint32_t kKeyWasDown = 0x40000000u;
 static const uint32_t kKeyReleased = 0x80000000u;
 
-// WM_MOUSEMOVE, at the point in the game's own coordinates.
-static void queueMouseMove(MSG msg, const SDL_MouseMotionEvent& motion) {
+// WM_MOUSEMOVE, at the point in the game's own coordinates, after the
+// WM_SETCURSOR Windows sends ahead of it: the hit test (HTCLIENT) low, the
+// message that moved it high. The game answers it with SetCursor(NULL).
+static void queueMouseMove(MSG msg, const SDL_MouseMotionEvent &motion) {
+    msg.message = 0x0020; // WM_SETCURSOR
+    msg.wParam = (WPARAM)msg.hwnd;
+    msg.lParam = (0x0200 << 16) | 1;
+    s_msgQueue.push(msg);
+    msg.wParam = 0;
+
     int mx = 0, my = 0;
     nocturne_gl_window_to_logical(motion.x, motion.y, &mx, &my);
     msg.message = 0x0200; // WM_MOUSEMOVE
@@ -236,18 +347,22 @@ static void queueMouseMove(MSG msg, const SDL_MouseMotionEvent& motion) {
 // report one — so it is delivered only when the extra-message hook is compiled
 // in to receive it. See win32/window_message.h. A movement of no whole notch is
 // nothing.
-static void queueMouseWheel(MSG msg, const SDL_MouseWheelEvent& wheel) {
+static void queueMouseWheel(MSG msg, const SDL_MouseWheelEvent &wheel) {
 #if NOCTURNE_AUTHENTIC_WINDOW_MESSAGES
     (void)msg;
     (void)wheel;
 #else
     int notches = wheel.y;
-    if (wheel.direction == SDL_MOUSEWHEEL_FLIPPED) { notches = -notches; }
-    if (notches == 0) { return; }
+    if (wheel.direction == SDL_MOUSEWHEEL_FLIPPED) {
+        notches = -notches;
+    }
+    if (notches == 0) {
+        return;
+    }
     msg.message = NOCTURNE_WM_MOUSEWHEEL;
     // Win32 puts a signed notch count in the high word of wParam.
-    msg.wParam = (WPARAM)((unsigned int)(unsigned short)(short)
-                          (notches * NOCTURNE_WHEEL_DELTA) << 16);
+    msg.wParam =
+        (WPARAM)((unsigned int)(unsigned short)(short)(notches * NOCTURNE_WHEEL_DELTA) << 16);
     int wx = 0, wy = 0;
     nocturne_gl_window_to_logical(wheel.mouseX, wheel.mouseY, &wx, &wy);
     msg.lParam = (wy << 16) | (wx & 0xFFFF);
@@ -255,7 +370,7 @@ static void queueMouseWheel(MSG msg, const SDL_MouseWheelEvent& wheel) {
 #endif
 }
 
-static void translateSdlEvent(const SDL_Event& ev) {
+static void translateSdlEvent(const SDL_Event &ev) {
     MSG msg;
     memset(&msg, 0, sizeof(msg));
     msg.hwnd = (HWND)(intptr_t)g_sdlWindow;
@@ -281,7 +396,8 @@ static void translateSdlEvent(const SDL_Event& ev) {
             msg.message = 0x0204; // WM_RBUTTONDOWN
         else if (ev.button.button == SDL_BUTTON_MIDDLE)
             msg.message = 0x0207; // WM_MBUTTONDOWN
-        else break;
+        else
+            break;
         {
             int bx = 0, by = 0;
             nocturne_gl_window_to_logical(ev.button.x, ev.button.y, &bx, &by);
@@ -297,7 +413,8 @@ static void translateSdlEvent(const SDL_Event& ev) {
             msg.message = 0x0205; // WM_RBUTTONUP
         else if (ev.button.button == SDL_BUTTON_MIDDLE)
             msg.message = 0x0208; // WM_MBUTTONUP
-        else break;
+        else
+            break;
         {
             int bx = 0, by = 0;
             nocturne_gl_window_to_logical(ev.button.x, ev.button.y, &bx, &by);
@@ -310,9 +427,9 @@ static void translateSdlEvent(const SDL_Event& ev) {
         uint8_t sc = sdlScancodeToWin32(ev.key.keysym.scancode);
         msg.message = 0x0100; // WM_KEYDOWN
         msg.wParam = ev.key.keysym.sym & 0xFF;
-        msg.lParam = (LPARAM)((uint32_t)sc << 16)
-                   | (LPARAM)winExtendedKeyFlag(ev.key.keysym.scancode)
-                   | (LPARAM)(ev.key.repeat ? kKeyWasDown : 0u);
+        msg.lParam = (LPARAM)((uint32_t)sc << 16) |
+                     (LPARAM)winExtendedKeyFlag(ev.key.keysym.scancode) |
+                     (LPARAM)(ev.key.repeat ? kKeyWasDown : 0u);
         s_msgQueue.push(msg);
         const char ch = winTypedChar(ev.key.keysym);
         // With SDL's text input on, the printable characters arrive as
@@ -337,9 +454,9 @@ static void translateSdlEvent(const SDL_Event& ev) {
         uint8_t sc = sdlScancodeToWin32(ev.key.keysym.scancode);
         msg.message = 0x0101; // WM_KEYUP
         msg.wParam = ev.key.keysym.sym & 0xFF;
-        msg.lParam = (LPARAM)((uint32_t)sc << 16)
-                   | (LPARAM)winExtendedKeyFlag(ev.key.keysym.scancode)
-                   | (LPARAM)(kKeyWasDown | kKeyReleased);
+        msg.lParam = (LPARAM)((uint32_t)sc << 16) |
+                     (LPARAM)winExtendedKeyFlag(ev.key.keysym.scancode) |
+                     (LPARAM)(kKeyWasDown | kKeyReleased);
         s_msgQueue.push(msg);
         break;
     }
@@ -370,13 +487,15 @@ static void translateSdlEvent(const SDL_Event& ev) {
 // ---------------------------------------------------------------------------
 
 static BOOL shim_BringWindowToTop(HWND hWnd) {
-    if (g_sdlWindow) SDL_RaiseWindow(g_sdlWindow);
+    if (g_sdlWindow)
+        SDL_RaiseWindow(g_sdlWindow);
     return 1;
 }
 
-static DWORD shim_CharUpperBuffA(char* lpsz, DWORD cchLength) {
+static DWORD shim_CharUpperBuffA(char *lpsz, DWORD cchLength) {
     for (DWORD i = 0; i < cchLength; i++) {
-        if (lpsz[i] >= 'a' && lpsz[i] <= 'z') lpsz[i] -= 32;
+        if (lpsz[i] >= 'a' && lpsz[i] <= 'z')
+            lpsz[i] -= 32;
     }
     return cchLength;
 }
@@ -385,11 +504,9 @@ static BOOL shim_CloseClipboard(void) {
     return 1;
 }
 
-static HWND shim_CreateWindowExA(DWORD dwExStyle, LPCSTR lpClassName,
-                                  LPCSTR lpWindowName, DWORD dwStyle,
-                                  int X, int Y, int nWidth, int nHeight,
-                                  HWND hWndParent, HMENU hMenu,
-                                  HINSTANCE hInstance, void* lpParam) {
+static HWND shim_CreateWindowExA(DWORD dwExStyle, LPCSTR lpClassName, LPCSTR lpWindowName,
+                                 DWORD dwStyle, int X, int Y, int nWidth, int nHeight,
+                                 HWND hWndParent, HMENU hMenu, HINSTANCE hInstance, void *lpParam) {
     // Created hidden — DDraw's SetDisplayMode resizes us shortly, and we want
     // to skip the flash of a default-size window between create and resize.
     // The window is shown from ddraw_SetDisplayMode once the real size is set.
@@ -402,17 +519,21 @@ static HWND shim_CreateWindowExA(DWORD dwExStyle, LPCSTR lpClassName,
 #endif
     // Where the window is the screen, it is made so, and SDL reports the
     // screen's size from the start.
-    if (g_nocturne_fixed_display != 0) flags |= SDL_WINDOW_FULLSCREEN_DESKTOP;
-    if (nWidth <= 0) nWidth = 640;
-    if (nHeight <= 0) nHeight = 480;
-    const char* title = lpWindowName ? lpWindowName : "NocturneDecomp";
+    if (g_nocturne_fixed_display != 0)
+        flags |= SDL_WINDOW_FULLSCREEN_DESKTOP;
+    if (nWidth <= 0)
+        nWidth = 640;
+    if (nHeight <= 0)
+        nHeight = 480;
+    const char *title = lpWindowName ? lpWindowName : "NocturneDecomp";
     // A host with no GL to put on a window still gets one: DirectDraw then
     // draws through an SDL_Renderer instead (ddraw.cpp), as it does whenever
     // GL does not come up.
     const Uint32 tries[2] = {flags, flags & ~(Uint32)SDL_WINDOW_OPENGL};
     g_sdlWindow = nullptr;
     for (int i = 0; g_sdlWindow == nullptr && i < 2; i++) {
-        if (i == 1) DWARN("CreateWindowExA: no GL window (%s); making one without", SDL_GetError());
+        if (i == 1)
+            DWARN("CreateWindowExA: no GL window (%s); making one without", SDL_GetError());
         g_sdlWindow = SDL_CreateWindow(title, SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED,
                                        nWidth, nHeight, tries[i]);
     }
@@ -429,12 +550,11 @@ static HWND shim_CreateWindowExA(DWORD dwExStyle, LPCSTR lpClassName,
     return (HWND)(intptr_t)g_sdlWindow;
 }
 
-static LRESULT shim_DefWindowProcA(HWND hWnd, unsigned int Msg,
-                                    WPARAM wParam, LPARAM lParam) {
+static LRESULT shim_DefWindowProcA(HWND hWnd, unsigned int Msg, WPARAM wParam, LPARAM lParam) {
     return 0;
 }
 
-static LRESULT shim_DispatchMessageA(const MSG* lpMsg) {
+static LRESULT shim_DispatchMessageA(const MSG *lpMsg) {
     if (s_wndProc && lpMsg) {
         return s_wndProc(lpMsg->hwnd, lpMsg->message, lpMsg->wParam, lpMsg->lParam);
     }
@@ -445,8 +565,9 @@ static HWND shim_FindWindowA(LPCSTR lpClassName, LPCSTR lpWindowName) {
     return (HWND)(intptr_t)g_sdlWindow;
 }
 
-static BOOL shim_GetClientRect(HWND hWnd, RECT* lpRect) {
-    if (!lpRect) return 0;
+static BOOL shim_GetClientRect(HWND hWnd, RECT *lpRect) {
+    if (!lpRect)
+        return 0;
     if (g_sdlWindow) {
         int w, h;
         SDL_GetWindowSize(g_sdlWindow, &w, &h);
@@ -465,13 +586,16 @@ static BOOL shim_GetClientRect(HWND hWnd, RECT* lpRect) {
 
 static HANDLE shim_GetClipboardData(unsigned int uFormat) {
     // uFormat 1 = CF_TEXT
-    static char* s_clipBuf = nullptr;
-    if (s_clipBuf) { SDL_free(s_clipBuf); s_clipBuf = nullptr; }
+    static char *s_clipBuf = nullptr;
+    if (s_clipBuf) {
+        SDL_free(s_clipBuf);
+        s_clipBuf = nullptr;
+    }
     s_clipBuf = SDL_GetClipboardText();
     return (HANDLE)s_clipBuf;
 }
 
-static int shim_GetKeyNameTextA(long lParam, char* lpString, int cchSize) {
+static int shim_GetKeyNameTextA(long lParam, char *lpString, int cchSize) {
     if (lpString && cchSize > 0) {
         lpString[0] = '\0';
     }
@@ -482,7 +606,7 @@ static HWND shim_GetLastActivePopup(HWND hWnd) {
     return hWnd;
 }
 
-static BOOL shim_InvalidateRect(HWND hWnd, const RECT* lpRect, BOOL bErase) {
+static BOOL shim_InvalidateRect(HWND hWnd, const RECT *lpRect, BOOL bErase) {
     return 1;
 }
 
@@ -499,16 +623,13 @@ static HICON shim_LoadIconA(HINSTANCE hInstance, LPCSTR lpIconName) {
     return (HICON)1;
 }
 
-static int shim_MessageBoxA(HWND hWnd, LPCSTR lpText, LPCSTR lpCaption,
-                             unsigned int uType) {
-    SDL_ShowSimpleMessageBox(SDL_MESSAGEBOX_INFORMATION,
-                             lpCaption ? lpCaption : "Message",
+static int shim_MessageBoxA(HWND hWnd, LPCSTR lpText, LPCSTR lpCaption, unsigned int uType) {
+    SDL_ShowSimpleMessageBox(SDL_MESSAGEBOX_INFORMATION, lpCaption ? lpCaption : "Message",
                              lpText ? lpText : "", g_sdlWindow);
     return 1; // IDOK
 }
 
-static BOOL shim_MoveWindow(HWND hWnd, int X, int Y, int nWidth, int nHeight,
-                              BOOL bRepaint) {
+static BOOL shim_MoveWindow(HWND hWnd, int X, int Y, int nWidth, int nHeight, BOOL bRepaint) {
     // Only the real top-level window may be moved or resized. winvideo.cpp
     // also calls MoveWindow on the *movie's* child window (the handle MCI
     // reported from "status mov window handle") to centre the video inside the
@@ -529,10 +650,8 @@ static BOOL shim_OpenClipboard(HWND hWndNewOwner) {
     return 1;
 }
 
-static BOOL shim_PeekMessageA(LPMSG lpMsg, HWND hWnd,
-                                unsigned int wMsgFilterMin,
-                                unsigned int wMsgFilterMax,
-                                unsigned int wRemoveMsg) {
+static BOOL shim_PeekMessageA(LPMSG lpMsg, HWND hWnd, unsigned int wMsgFilterMin,
+                              unsigned int wMsgFilterMax, unsigned int wRemoveMsg) {
     // Drain SDL events into our Win32 message queue
     SDL_Event ev;
     while (SDL_PollEvent(&ev)) {
@@ -565,8 +684,8 @@ static BOOL shim_PeekMessageA(LPMSG lpMsg, HWND hWnd,
         MSG done;
         memset(&done, 0, sizeof(done));
         done.hwnd = (HWND)(intptr_t)g_sdlWindow;
-        done.message = 0x3b9;   // MM_MCINOTIFY
-        done.wParam = 1;        // MCI_NOTIFY_SUCCESSFUL
+        done.message = 0x3b9; // MM_MCINOTIFY
+        done.wParam = 1;      // MCI_NOTIFY_SUCCESSFUL
         s_msgQueue.push(done);
     }
     return 0;
@@ -580,7 +699,7 @@ static void shim_PostQuitMessage(int nExitCode) {
     s_msgQueue.push(msg);
 }
 
-static ATOM shim_RegisterClassA(WNDCLASSA* lpWndClass) {
+static ATOM shim_RegisterClassA(WNDCLASSA *lpWndClass) {
     if (lpWndClass) {
         s_wndProc = lpWndClass->lpfnWndProc;
     }
@@ -589,17 +708,22 @@ static ATOM shim_RegisterClassA(WNDCLASSA* lpWndClass) {
 
 static HANDLE shim_SetClipboardData(unsigned int uFormat, HGLOBAL hMem) {
     if (hMem) {
-        SDL_SetClipboardText((const char*)hMem);
+        SDL_SetClipboardText((const char *)hMem);
     }
     return hMem;
 }
 
 static HCURSOR shim_SetCursor(HCURSOR hCursor) {
-    return (HCURSOR)1;
+    static HCURSOR s_cursor = (HCURSOR)1;
+    const HCURSOR previous = s_cursor;
+    s_cursor = hCursor;
+    SDL_ShowCursor(hCursor != nullptr ? SDL_ENABLE : SDL_DISABLE);
+    return previous;
 }
 
 static BOOL shim_SetCursorPos(int X, int Y) {
-    if (g_sdlWindow) SDL_WarpMouseInWindow(g_sdlWindow, X, Y);
+    if (g_sdlWindow)
+        SDL_WarpMouseInWindow(g_sdlWindow, X, Y);
     return 1;
 }
 
@@ -608,11 +732,12 @@ static HWND shim_SetFocus(HWND hWnd) {
 }
 
 static BOOL shim_SetForegroundWindow(HWND hWnd) {
-    if (g_sdlWindow) SDL_RaiseWindow(g_sdlWindow);
+    if (g_sdlWindow)
+        SDL_RaiseWindow(g_sdlWindow);
     return 1;
 }
 
-static BOOL shim_SetRectEmpty(RECT* lprc) {
+static BOOL shim_SetRectEmpty(RECT *lprc) {
     if (lprc) {
         lprc->left = 0;
         lprc->top = 0;
@@ -624,13 +749,15 @@ static BOOL shim_SetRectEmpty(RECT* lprc) {
 
 static BOOL shim_ShowWindow(HWND hWnd, int nCmdShow) {
     if (g_sdlWindow) {
-        if (nCmdShow == 0) SDL_HideWindow(g_sdlWindow);
-        else if (g_sdlWindowReadyToShow) SDL_ShowWindow(g_sdlWindow);
+        if (nCmdShow == 0)
+            SDL_HideWindow(g_sdlWindow);
+        else if (g_sdlWindowReadyToShow)
+            SDL_ShowWindow(g_sdlWindow);
     }
     return 1;
 }
 
-static BOOL shim_TranslateMessage(const MSG* lpMsg) {
+static BOOL shim_TranslateMessage(const MSG *lpMsg) {
     return 1;
 }
 

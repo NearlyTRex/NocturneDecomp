@@ -23,16 +23,17 @@
 // minus the explicit clear). Both functions return the previous platform mask.
 
 // Stable trap-bit values. Bitwise-OR to combine.
-#define NOCTURNE_FPU_TRAP_INVALID    0x01  // sqrt(neg), 0/0, Inf-Inf, NaN-arith
-#define NOCTURNE_FPU_TRAP_DIVBYZERO  0x02  // x/0 with x != 0 -> Inf
-#define NOCTURNE_FPU_TRAP_OVERFLOW   0x04  // result magnitude > max representable
-#define NOCTURNE_FPU_TRAP_UNDERFLOW  0x08  // result magnitude < min normal
+#define NOCTURNE_FPU_TRAP_INVALID 0x01   // sqrt(neg), 0/0, Inf-Inf, NaN-arith
+#define NOCTURNE_FPU_TRAP_DIVBYZERO 0x02 // x/0 with x != 0 -> Inf
+#define NOCTURNE_FPU_TRAP_OVERFLOW 0x04  // result magnitude > max representable
+#define NOCTURNE_FPU_TRAP_UNDERFLOW 0x08 // result magnitude < min normal
 
 // Convenience composites.
-#define NOCTURNE_FPU_TRAP_DEFAULT      NOCTURNE_FPU_TRAP_INVALID
-#define NOCTURNE_FPU_TRAP_NAN_AND_INF  (NOCTURNE_FPU_TRAP_INVALID | NOCTURNE_FPU_TRAP_DIVBYZERO)
-#define NOCTURNE_FPU_TRAP_ALL          (NOCTURNE_FPU_TRAP_INVALID | NOCTURNE_FPU_TRAP_DIVBYZERO | \
-                                        NOCTURNE_FPU_TRAP_OVERFLOW | NOCTURNE_FPU_TRAP_UNDERFLOW)
+#define NOCTURNE_FPU_TRAP_DEFAULT NOCTURNE_FPU_TRAP_INVALID
+#define NOCTURNE_FPU_TRAP_NAN_AND_INF (NOCTURNE_FPU_TRAP_INVALID | NOCTURNE_FPU_TRAP_DIVBYZERO)
+#define NOCTURNE_FPU_TRAP_ALL                                                                      \
+    (NOCTURNE_FPU_TRAP_INVALID | NOCTURNE_FPU_TRAP_DIVBYZERO | NOCTURNE_FPU_TRAP_OVERFLOW |        \
+     NOCTURNE_FPU_TRAP_UNDERFLOW)
 
 #ifdef __cplusplus
 extern "C" {

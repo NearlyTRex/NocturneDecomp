@@ -3,6 +3,7 @@
 // =============================================================================
 
 #include "game/hero_light.h"
+
 #include "nocturne.h"
 
 namespace {
@@ -19,8 +20,7 @@ CDemonGlobe s_coronas[NOCTURNE_HERO_SLOTS];
 bool s_light_built[NOCTURNE_HERO_SLOTS];
 
 // A non-local hero's slot, or -1 for the local hero and anyone else.
-int remote_slot(CHero *hero)
-{
+int remote_slot(CHero *hero) {
     if (hero == g_HeroActors[g_LocalHeroIndex]) {
         return -1;
     }
@@ -28,8 +28,7 @@ int remote_slot(CHero *hero)
 }
 
 // As CGame::runGameSession sets up g_CDemonLightInstance.
-CDemonLight *built_light(int slot)
-{
+CDemonLight *built_light(int slot) {
     CDemonLight *light = &s_lights[slot];
 
     if (!s_light_built[slot]) {
@@ -43,8 +42,7 @@ CDemonLight *built_light(int slot)
     return light;
 }
 
-bool is_remote_light(const CDemonLight *light)
-{
+bool is_remote_light(const CDemonLight *light) {
     for (int i = 0; i < NOCTURNE_HERO_SLOTS; i++) {
         if (s_light_built[i] && (light == &s_lights[i])) {
             return true;
@@ -55,8 +53,7 @@ bool is_remote_light(const CDemonLight *light)
 
 } // namespace
 
-extern "C" int *nocturne_hero_flashlight(CHero *hero)
-{
+extern "C" int *nocturne_hero_flashlight(CHero *hero) {
     if (hero == g_HeroActors[g_LocalHeroIndex]) {
         return &g_CGamePtr->flashlight_active;
     }
@@ -68,8 +65,7 @@ extern "C" int *nocturne_hero_flashlight(CHero *hero)
     return &s_flashlight[slot];
 }
 
-extern "C" int nocturne_hero_flashlight_lit(CDemonActor *carrier)
-{
+extern "C" int nocturne_hero_flashlight_lit(CDemonActor *carrier) {
     int slot = nocturne_hero_slot(carrier);
     if (slot < 0) {
         return 0;
@@ -77,20 +73,17 @@ extern "C" int nocturne_hero_flashlight_lit(CDemonActor *carrier)
     return *nocturne_hero_flashlight(g_HeroActors[slot]) != 0;
 }
 
-extern "C" CDemonLight *nocturne_hero_light(CHero *hero)
-{
+extern "C" CDemonLight *nocturne_hero_light(CHero *hero) {
     int slot = remote_slot(hero);
     return (slot < 0) ? &g_CDemonLightInstance : built_light(slot);
 }
 
-extern "C" CDemonGlobe *nocturne_hero_corona(CHero *hero)
-{
+extern "C" CDemonGlobe *nocturne_hero_corona(CHero *hero) {
     int slot = remote_slot(hero);
     return (slot < 0) ? &g_WeaponCoronaGlobe : &s_coronas[slot];
 }
 
-extern "C" int nocturne_hero_goggles(CHero *hero)
-{
+extern "C" int nocturne_hero_goggles(CHero *hero) {
     if (!nocturne_net_session_playing()) {
         return (hero == g_HeroActors[g_LocalHeroIndex]) && (g_CGamePtr->goggles_active != 0);
     }
@@ -98,16 +91,14 @@ extern "C" int nocturne_hero_goggles(CHero *hero)
     return (slot < 0) ? 0 : s_goggles[slot];
 }
 
-extern "C" void nocturne_hero_goggles_set(CHero *hero, int on)
-{
+extern "C" void nocturne_hero_goggles_set(CHero *hero, int on) {
     int slot = nocturne_hero_slot(hero);
     if (slot >= 0) {
         s_goggles[slot] = (on != 0);
     }
 }
 
-extern "C" void nocturne_hero_goggles_publish(void)
-{
+extern "C" void nocturne_hero_goggles_publish(void) {
     if (!nocturne_net_session_playing()) {
         return;
     }
@@ -118,16 +109,14 @@ extern "C" void nocturne_hero_goggles_publish(void)
     }
 }
 
-extern "C" void nocturne_hero_goggles_reset(void)
-{
+extern "C" void nocturne_hero_goggles_reset(void) {
     for (int i = 0; i < NOCTURNE_HERO_SLOTS; i++) {
         s_goggles[i] = 0;
     }
     s_published_goggles = 0;
 }
 
-extern "C" int nocturne_hero_light_make_room(CDemonLight *light)
-{
+extern "C" int nocturne_hero_light_make_room(CDemonLight *light) {
     if (is_remote_light(light)) {
         return 0;
     }
@@ -143,8 +132,7 @@ extern "C" int nocturne_hero_light_make_room(CDemonLight *light)
     return 1;
 }
 
-extern "C" void nocturne_hero_light_reset(void)
-{
+extern "C" void nocturne_hero_light_reset(void) {
     for (int i = 0; i < NOCTURNE_HERO_SLOTS; i++) {
         s_flashlight[i] = 0;
         if (s_light_built[i]) {

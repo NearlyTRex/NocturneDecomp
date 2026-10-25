@@ -69,8 +69,7 @@ void nocturne_gl_set_logical_size(int width, int height);
 // Upload `pixels` and draw it as a fullscreen quad, then swap. `bpp` selects the
 // source format: 16 = RGB565, 24 = RGB24 byte order, 32 = ARGB8888 (BGRA bytes).
 // This is the frame boundary — it is the only place that swaps.
-void nocturne_gl_present_framebuffer(const void *pixels, int width, int height,
-                                     int pitch, int bpp);
+void nocturne_gl_present_framebuffer(const void *pixels, int width, int height, int pitch, int bpp);
 
 // Draw the SCENE target onto the window and swap, letterboxed the same way an
 // uploaded frame is. For a renderer whose finished frame is already in the
@@ -89,8 +88,7 @@ void nocturne_gl_present_scene(void);
 // Depth is left alone on purpose: the master-Z restore runs before this and its
 // result must survive. Same row-order convention as the readback, so an
 // upload/readback round-trip is the identity. No-op when there is no scene FBO.
-void nocturne_gl_scene_upload(const void *pixels, int width, int height,
-                              int pitch, int bpp);
+void nocturne_gl_scene_upload(const void *pixels, int width, int height, int pitch, int bpp);
 
 // Read the presented frame back as tightly packed RGB24 at window resolution.
 // Caller frees *out_rgb with free(). Returns 0 on success. Backs
@@ -109,8 +107,7 @@ int nocturne_gl_read_front(unsigned char **out_rgb, int *out_width, int *out_hei
 // path has to do it here.
 //
 // Passes the input through unchanged when GL is not active.
-void nocturne_gl_window_to_logical(int window_x, int window_y,
-                                   int *out_x, int *out_y);
+void nocturne_gl_window_to_logical(int window_x, int window_y, int *out_x, int *out_y);
 
 // Drop the context and what was drawn with it; nocturne_gl_init brings it up
 // again.

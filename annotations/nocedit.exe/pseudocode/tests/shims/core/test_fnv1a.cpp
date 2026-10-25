@@ -5,9 +5,8 @@
 // The netplay sync check compares hashes taken on two machines, so the hash has
 // to be the standard one, byte for byte, and not merely a consistent one.
 
-#include "nocturne_test.h"
-
 #include "core/fnv1a.h"
+#include "nocturne_test.h"
 
 #include <cstring>
 
@@ -17,7 +16,7 @@ uint32_t of(const char *text) {
     return nocturne_fnv1a(NOCTURNE_FNV1A_BASIS, text, (int)std::strlen(text));
 }
 
-}  // namespace
+} // namespace
 
 NOCTURNE_TEST(it_gives_the_reference_values) {
     CHECK_EQ(of(""), 0x811c9dc5u);
@@ -31,7 +30,8 @@ NOCTURNE_TEST(a_hash_continues_where_it_left_off) {
     const uint32_t first = nocturne_fnv1a(NOCTURNE_FNV1A_BASIS, "foo", 3);
     CHECK_EQ(nocturne_fnv1a(first, "bar", 3), of("foobar"));
     uint32_t stepped = NOCTURNE_FNV1A_BASIS;
-    for (const char *p = "foobar"; *p; ++p) stepped = nocturne_fnv1a_step(stepped, (unsigned char)*p);
+    for (const char *p = "foobar"; *p; ++p)
+        stepped = nocturne_fnv1a_step(stepped, (unsigned char)*p);
     CHECK_EQ(stepped, of("foobar"));
 }
 

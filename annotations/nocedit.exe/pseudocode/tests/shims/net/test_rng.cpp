@@ -7,11 +7,10 @@
 // from the per-machine libc stream. A bare rand() inside a sim frame is
 // counted as undeclared, and in a session said once.
 
-#include "nocturne_test.h"
-#include "net_support.h"
-
 #include "net/rng.h"
+#include "net_support.h"
 #include "nocturne.h"
+#include "nocturne_test.h"
 
 #include <cstdlib>
 
@@ -26,7 +25,7 @@ void fresh() {
     srand(1);
 }
 
-}  // namespace
+} // namespace
 
 // Outside a session a sim draw is libc's, and not counted.
 NOCTURNE_TEST(outside_a_session_a_sim_draw_is_the_libc_streams) {

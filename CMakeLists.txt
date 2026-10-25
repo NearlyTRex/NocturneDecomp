@@ -62,3 +62,4 @@ if(NOCTURNE_BUILD_EXE)
 endif()
 
 include("${CMAKE_SOURCE_DIR}/cmake/tests.cmake")
+include("${CMAKE_SOURCE_DIR}/cmake/format.cmake")

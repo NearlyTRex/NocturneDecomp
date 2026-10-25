@@ -26,42 +26,42 @@
 
 // GDI object tag — distinguishes fonts, brushes, bitmaps, DCs in HGDIOBJ
 enum GdiObjectType {
-    GDI_OBJ_DC      = 1,
-    GDI_OBJ_FONT    = 2,
-    GDI_OBJ_BITMAP  = 3,
-    GDI_OBJ_BRUSH   = 4,
+    GDI_OBJ_DC = 1,
+    GDI_OBJ_FONT = 2,
+    GDI_OBJ_BITMAP = 3,
+    GDI_OBJ_BRUSH = 4,
 };
 
 struct GdiBitmap {
-    int tag;  // GDI_OBJ_BITMAP
-    SDL_Surface* surface;
-    void* pixels;  // == surface->pixels, exposed via ppvBits
+    int tag; // GDI_OBJ_BITMAP
+    SDL_Surface *surface;
+    void *pixels; // == surface->pixels, exposed via ppvBits
     int width;
     int height;
     int bpp;
 };
 
 struct GdiFont {
-    int tag;  // GDI_OBJ_FONT
-    TTF_Font* ttf_font;
+    int tag; // GDI_OBJ_FONT
+    TTF_Font *ttf_font;
     int height;
     char face_name[64];
 };
 
 struct GdiBrush {
-    int tag;  // GDI_OBJ_BRUSH
+    int tag; // GDI_OBJ_BRUSH
     COLORREF color;
 };
 
 struct GdiDC {
-    int tag;  // GDI_OBJ_DC
-    GdiBitmap* bitmap;      // selected bitmap (CreateDIBSection result)
-    GdiFont* font;          // selected font
-    GdiBrush* brush;        // selected brush
-    COLORREF text_color;    // SetTextColor
-    COLORREF bk_color;      // SetBkColor
-    int bk_mode;            // OPAQUE(2) or TRANSPARENT(1)
-    HGDIOBJ prev_font;      // previously selected font (for SelectObject return)
+    int tag;             // GDI_OBJ_DC
+    GdiBitmap *bitmap;   // selected bitmap (CreateDIBSection result)
+    GdiFont *font;       // selected font
+    GdiBrush *brush;     // selected brush
+    COLORREF text_color; // SetTextColor
+    COLORREF bk_color;   // SetBkColor
+    int bk_mode;         // OPAQUE(2) or TRANSPARENT(1)
+    HGDIOBJ prev_font;   // previously selected font (for SelectObject return)
     HGDIOBJ prev_bitmap;
     HGDIOBJ prev_brush;
 };
@@ -69,26 +69,25 @@ struct GdiDC {
 // A font that fails to open for want of it fails anyway, so a failed init needs
 // no answer of its own.
 static void ensure_ttf_init() {
-    if (!TTF_WasInit()) TTF_Init();
+    if (!TTF_WasInit())
+        TTF_Init();
 }
 
 // Where the monospace font every CWinFont is drawn in is looked for, first to
 // last, in the form of the host's PATH. NOCTURNE_OS_FONT_PATH replaces it.
 #if defined(_WIN32)
 static const char kFontPathSeparator = ';';
-static const char* const kDefaultFontPath =
-    "C:\\Windows\\Fonts\\consola.ttf;"
-    "C:\\Windows\\Fonts\\cour.ttf;"
-    "C:\\Windows\\Fonts\\lucon.ttf";
+static const char *const kDefaultFontPath = "C:\\Windows\\Fonts\\consola.ttf;"
+                                            "C:\\Windows\\Fonts\\cour.ttf;"
+                                            "C:\\Windows\\Fonts\\lucon.ttf";
 #elif defined(__APPLE__)
 static const char kFontPathSeparator = ':';
-static const char* const kDefaultFontPath =
-    "/System/Library/Fonts/Menlo.ttc:"
-    "/System/Library/Fonts/Supplemental/Courier New.ttf:"
-    "/Library/Fonts/Courier New.ttf";
+static const char *const kDefaultFontPath = "/System/Library/Fonts/Menlo.ttc:"
+                                            "/System/Library/Fonts/Supplemental/Courier New.ttf:"
+                                            "/Library/Fonts/Courier New.ttf";
 #else
 static const char kFontPathSeparator = ':';
-static const char* const kDefaultFontPath =
+static const char *const kDefaultFontPath =
     "/usr/share/fonts/truetype/dejavu/DejaVuSansMono.ttf:"
     "/usr/share/fonts/truetype/liberation/LiberationMono-Regular.ttf:"
     "/usr/share/fonts/truetype/freefont/FreeMono.ttf:"
@@ -107,15 +106,13 @@ static const char* const kDefaultFontPath =
 // Converting to UTF-8 and using the TTF_*UTF8_* entry points instead puts every
 // byte through the codepage the text was written in.
 static const unsigned short kCp1252High[32] = {
-    0x20AC, 0x0081, 0x201A, 0x0192, 0x201E, 0x2026, 0x2020, 0x2021,
-    0x02C6, 0x2030, 0x0160, 0x2039, 0x0152, 0x008D, 0x017D, 0x008F,
-    0x0090, 0x2018, 0x2019, 0x201C, 0x201D, 0x2022, 0x2013, 0x2014,
-    0x02DC, 0x2122, 0x0161, 0x203A, 0x0153, 0x009D, 0x017E, 0x0178
-};
+    0x20AC, 0x0081, 0x201A, 0x0192, 0x201E, 0x2026, 0x2020, 0x2021, 0x02C6, 0x2030, 0x0160,
+    0x2039, 0x0152, 0x008D, 0x017D, 0x008F, 0x0090, 0x2018, 0x2019, 0x201C, 0x201D, 0x2022,
+    0x2013, 0x2014, 0x02DC, 0x2122, 0x0161, 0x203A, 0x0153, 0x009D, 0x017E, 0x0178};
 
 // The first `in_len` bytes of `in`, up to a NUL. A NUL ends the text here as it
 // would have for GDI's renderer.
-static std::string cp1252_to_utf8(const char* in, int in_len) {
+static std::string cp1252_to_utf8(const char *in, int in_len) {
     std::string out;
     for (int i = 0; i < in_len && in[i] != '\0'; i++) {
         unsigned char ch = (unsigned char)in[i];
@@ -136,19 +133,23 @@ static std::string cp1252_to_utf8(const char* in, int in_len) {
 
 // GDI's height is in pixels and negative for a character height; 0 is "a
 // reasonable default".
-static TTF_Font* open_os_font(int height) {
-    if (height < 0) height = -height;
-    if (height == 0) height = 14;
+static TTF_Font *open_os_font(int height) {
+    if (height < 0)
+        height = -height;
+    if (height == 0)
+        height = 14;
 
-    const char* asked = getenv("NOCTURNE_OS_FONT_PATH");
+    const char *asked = getenv("NOCTURNE_OS_FONT_PATH");
     const std::string list = (asked != nullptr && asked[0] != '\0') ? asked : kDefaultFontPath;
     size_t start = 0;
     while (start <= list.size()) {
         size_t end = list.find(kFontPathSeparator, start);
-        if (end == std::string::npos) end = list.size();
+        if (end == std::string::npos)
+            end = list.size();
         const std::string path = list.substr(start, end - start);
-        TTF_Font* f = path.empty() ? nullptr : TTF_OpenFont(path.c_str(), height);
-        if (f) return f;
+        TTF_Font *f = path.empty() ? nullptr : TTF_OpenFont(path.c_str(), height);
+        if (f)
+            return f;
         start = end + 1;
     }
     return nullptr;
@@ -158,8 +159,8 @@ static TTF_Font* open_os_font(int height) {
 // GDI Shim Functions
 // =============================================================================
 
-static HBRUSH shim_CreateBrushIndirect(LOGBRUSH* plb) {
-    GdiBrush* brush = new GdiBrush();
+static HBRUSH shim_CreateBrushIndirect(LOGBRUSH *plb) {
+    GdiBrush *brush = new GdiBrush();
     brush->tag = GDI_OBJ_BRUSH;
     brush->color = plb ? plb->lbColor : 0;
     return (HBRUSH)brush;
@@ -167,20 +168,24 @@ static HBRUSH shim_CreateBrushIndirect(LOGBRUSH* plb) {
 
 static HDC shim_CreateCompatibleDC(HDC hdc) {
     (void)hdc;
-    GdiDC* dc = new GdiDC();
+    GdiDC *dc = new GdiDC();
     dc->tag = GDI_OBJ_DC;
-    dc->bk_mode = 2;  // OPAQUE
-    dc->bk_color = 0xFFFFFF;  // white
-    dc->text_color = 0x000000;  // black
+    dc->bk_mode = 2;           // OPAQUE
+    dc->bk_color = 0xFFFFFF;   // white
+    dc->text_color = 0x000000; // black
     return (HDC)dc;
 }
 
-static HBITMAP shim_CreateDIBSection(HDC hdc, BITMAPINFO* pbmi, UINT usage,
-                                      void** ppvBits, HANDLE hSection, DWORD offset) {
-    (void)hdc; (void)usage; (void)hSection; (void)offset;
+static HBITMAP shim_CreateDIBSection(HDC hdc, BITMAPINFO *pbmi, UINT usage, void **ppvBits,
+                                     HANDLE hSection, DWORD offset) {
+    (void)hdc;
+    (void)usage;
+    (void)hSection;
+    (void)offset;
     if (!pbmi) {
-        if (ppvBits) *ppvBits = nullptr;
-        return (HBITMAP)nullptr;
+        if (ppvBits)
+            *ppvBits = nullptr;
+        return (HBITMAP) nullptr;
     }
 
     int width = pbmi->bmiHeader.biWidth;
@@ -188,33 +193,45 @@ static HBITMAP shim_CreateDIBSection(HDC hdc, BITMAPINFO* pbmi, UINT usage,
     int bpp = pbmi->bmiHeader.biBitCount;
 
     // biHeight negative = top-down (which is what the game uses)
-    if (height < 0) height = -height;
+    if (height < 0)
+        height = -height;
     if (width <= 0 || height <= 0) {
-        if (ppvBits) *ppvBits = nullptr;
-        return (HBITMAP)nullptr;
+        if (ppvBits)
+            *ppvBits = nullptr;
+        return (HBITMAP) nullptr;
     }
 
     // Create SDL surface matching the requested format
     Uint32 rmask, gmask, bmask, amask;
     if (bpp == 16) {
         // 5-5-5 format (Windows default for 16bpp DIB)
-        rmask = 0x7C00; gmask = 0x03E0; bmask = 0x001F; amask = 0;
+        rmask = 0x7C00;
+        gmask = 0x03E0;
+        bmask = 0x001F;
+        amask = 0;
     } else if (bpp == 24) {
-        rmask = 0xFF0000; gmask = 0x00FF00; bmask = 0x0000FF; amask = 0;
+        rmask = 0xFF0000;
+        gmask = 0x00FF00;
+        bmask = 0x0000FF;
+        amask = 0;
     } else {
         // 32bpp
-        rmask = 0x00FF0000; gmask = 0x0000FF00; bmask = 0x000000FF; amask = 0;
-        if (bpp != 32) bpp = 32;
+        rmask = 0x00FF0000;
+        gmask = 0x0000FF00;
+        bmask = 0x000000FF;
+        amask = 0;
+        if (bpp != 32)
+            bpp = 32;
     }
 
-    SDL_Surface* surface = SDL_CreateRGBSurface(0, width, height, bpp,
-                                                  rmask, gmask, bmask, amask);
+    SDL_Surface *surface = SDL_CreateRGBSurface(0, width, height, bpp, rmask, gmask, bmask, amask);
     if (!surface) {
-        if (ppvBits) *ppvBits = nullptr;
-        return (HBITMAP)nullptr;
+        if (ppvBits)
+            *ppvBits = nullptr;
+        return (HBITMAP) nullptr;
     }
 
-    GdiBitmap* bmp = new GdiBitmap();
+    GdiBitmap *bmp = new GdiBitmap();
     bmp->tag = GDI_OBJ_BITMAP;
     bmp->surface = surface;
     bmp->pixels = surface->pixels;
@@ -233,25 +250,32 @@ static HBITMAP shim_CreateDIBSection(HDC hdc, BITMAPINFO* pbmi, UINT usage,
     // CWinFont::setColorAndDrawText tests against.
     SDL_FillRect(surface, nullptr, SDL_MapRGB(surface->format, 255, 0, 255));
 
-    if (ppvBits) *ppvBits = surface->pixels;
+    if (ppvBits)
+        *ppvBits = surface->pixels;
 
     return (HBITMAP)bmp;
 }
 
-static HFONT shim_CreateFontA(int cHeight, int cWidth, int cEscapement,
-                                int cOrientation, int cWeight, DWORD bItalic,
-                                DWORD bUnderline, DWORD bStrikeOut,
-                                DWORD iCharSet, DWORD iOutPrecision,
-                                DWORD iClipPrecision, DWORD iQuality,
-                                DWORD iPitchAndFamily, LPCSTR pszFaceName) {
-    (void)cWidth; (void)cEscapement; (void)cOrientation; (void)cWeight;
-    (void)bItalic; (void)bUnderline; (void)bStrikeOut; (void)iCharSet;
-    (void)iOutPrecision; (void)iClipPrecision; (void)iQuality;
+static HFONT shim_CreateFontA(int cHeight, int cWidth, int cEscapement, int cOrientation,
+                              int cWeight, DWORD bItalic, DWORD bUnderline, DWORD bStrikeOut,
+                              DWORD iCharSet, DWORD iOutPrecision, DWORD iClipPrecision,
+                              DWORD iQuality, DWORD iPitchAndFamily, LPCSTR pszFaceName) {
+    (void)cWidth;
+    (void)cEscapement;
+    (void)cOrientation;
+    (void)cWeight;
+    (void)bItalic;
+    (void)bUnderline;
+    (void)bStrikeOut;
+    (void)iCharSet;
+    (void)iOutPrecision;
+    (void)iClipPrecision;
+    (void)iQuality;
     (void)iPitchAndFamily;
 
     ensure_ttf_init();
 
-    GdiFont* font = new GdiFont();
+    GdiFont *font = new GdiFont();
     font->tag = GDI_OBJ_FONT;
     font->height = cHeight;
     if (pszFaceName) {
@@ -266,7 +290,7 @@ static HFONT shim_CreateFontA(int cHeight, int cWidth, int cEscapement,
 }
 
 static BOOL shim_DeleteDC(HDC hdc) {
-    GdiDC* dc = (GdiDC*)hdc;
+    GdiDC *dc = (GdiDC *)hdc;
     if (dc && dc->tag == GDI_OBJ_DC) {
         delete dc;
     }
@@ -274,21 +298,23 @@ static BOOL shim_DeleteDC(HDC hdc) {
 }
 
 static BOOL shim_DeleteObject(HGDIOBJ ho) {
-    if (!ho) return 1;
-    int tag = *(int*)ho;
+    if (!ho)
+        return 1;
+    int tag = *(int *)ho;
 
     // A DC is not deleted here, and anything else is not an object of ours.
     if (tag == GDI_OBJ_FONT) {
-        GdiFont* font = (GdiFont*)ho;
-        if (font->ttf_font) TTF_CloseFont(font->ttf_font);
+        GdiFont *font = (GdiFont *)ho;
+        if (font->ttf_font)
+            TTF_CloseFont(font->ttf_font);
         delete font;
     } else if (tag == GDI_OBJ_BITMAP) {
         // A bitmap is only made with its surface.
-        GdiBitmap* bmp = (GdiBitmap*)ho;
+        GdiBitmap *bmp = (GdiBitmap *)ho;
         SDL_FreeSurface(bmp->surface);
         delete bmp;
     } else if (tag == GDI_OBJ_BRUSH) {
-        delete (GdiBrush*)ho;
+        delete (GdiBrush *)ho;
     }
     return 1;
 }
@@ -298,10 +324,10 @@ static LPVOID shim_GetStockObject(int i) {
     return nullptr;
 }
 
-static BOOL shim_GetTextExtentPoint32A(HDC hdc, LPCSTR lpString, int c,
-                                        LPSIZE psizl) {
-    GdiDC* dc = (GdiDC*)hdc;
-    if (!psizl) return 0;
+static BOOL shim_GetTextExtentPoint32A(HDC hdc, LPCSTR lpString, int c, LPSIZE psizl) {
+    GdiDC *dc = (GdiDC *)hdc;
+    if (!psizl)
+        return 0;
 
     // Default values
     psizl->cx = c * 8;
@@ -321,13 +347,13 @@ static BOOL shim_GetTextExtentPoint32A(HDC hdc, LPCSTR lpString, int c,
 
 // A selected bitmap always has its surface: a section is only made with one.
 static BOOL shim_Rectangle(HDC hdc, int left, int top, int right, int bottom) {
-    GdiDC* dc = (GdiDC*)hdc;
+    GdiDC *dc = (GdiDC *)hdc;
     if (!dc || dc->tag != GDI_OBJ_DC || !dc->bitmap)
         return 1;
 
     // Fill rectangle with the current brush color
     COLORREF color = dc->brush ? dc->brush->color : dc->bk_color;
-    SDL_Surface* surf = dc->bitmap->surface;
+    SDL_Surface *surf = dc->bitmap->surface;
 
     // Convert COLORREF (0x00BBGGRR) to SDL pixel value
     Uint8 r = (Uint8)(color & 0xFF);
@@ -340,32 +366,39 @@ static BOOL shim_Rectangle(HDC hdc, int left, int top, int right, int bottom) {
     rect.y = (top < 0) ? 0 : top;
     rect.w = right - left;
     rect.h = (top < 0) ? bottom : bottom - top;
-    if (rect.w < 0) { rect.x += rect.w; rect.w = -rect.w; }
-    if (rect.h < 0) { rect.y += rect.h; rect.h = -rect.h; }
+    if (rect.w < 0) {
+        rect.x += rect.w;
+        rect.w = -rect.w;
+    }
+    if (rect.h < 0) {
+        rect.y += rect.h;
+        rect.h = -rect.h;
+    }
 
     SDL_FillRect(surf, &rect, pixel);
     return 1;
 }
 
 static HGDIOBJ shim_SelectObject(HDC hdc, HGDIOBJ h) {
-    GdiDC* dc = (GdiDC*)hdc;
-    if (!dc || dc->tag != GDI_OBJ_DC || !h) return nullptr;
+    GdiDC *dc = (GdiDC *)hdc;
+    if (!dc || dc->tag != GDI_OBJ_DC || !h)
+        return nullptr;
 
-    int tag = *(int*)h;
+    int tag = *(int *)h;
     HGDIOBJ prev = nullptr;
 
     switch (tag) {
     case GDI_OBJ_FONT:
         prev = (HGDIOBJ)dc->font;
-        dc->font = (GdiFont*)h;
+        dc->font = (GdiFont *)h;
         break;
     case GDI_OBJ_BITMAP:
         prev = (HGDIOBJ)dc->bitmap;
-        dc->bitmap = (GdiBitmap*)h;
+        dc->bitmap = (GdiBitmap *)h;
         break;
     case GDI_OBJ_BRUSH:
         prev = (HGDIOBJ)dc->brush;
-        dc->brush = (GdiBrush*)h;
+        dc->brush = (GdiBrush *)h;
         break;
     default:
         break;
@@ -375,35 +408,40 @@ static HGDIOBJ shim_SelectObject(HDC hdc, HGDIOBJ h) {
 }
 
 static COLORREF shim_SetBkColor(HDC hdc, COLORREF color) {
-    GdiDC* dc = (GdiDC*)hdc;
-    if (!dc || dc->tag != GDI_OBJ_DC) return 0;
+    GdiDC *dc = (GdiDC *)hdc;
+    if (!dc || dc->tag != GDI_OBJ_DC)
+        return 0;
     COLORREF old = dc->bk_color;
     dc->bk_color = color;
     return old;
 }
 
 static int shim_SetBkMode(HDC hdc, int mode) {
-    GdiDC* dc = (GdiDC*)hdc;
-    if (!dc || dc->tag != GDI_OBJ_DC) return 0;
+    GdiDC *dc = (GdiDC *)hdc;
+    if (!dc || dc->tag != GDI_OBJ_DC)
+        return 0;
     int old = dc->bk_mode;
     dc->bk_mode = mode;
     return old;
 }
 
 static COLORREF shim_SetTextColor(HDC hdc, COLORREF color) {
-    GdiDC* dc = (GdiDC*)hdc;
-    if (!dc || dc->tag != GDI_OBJ_DC) return 0;
+    GdiDC *dc = (GdiDC *)hdc;
+    if (!dc || dc->tag != GDI_OBJ_DC)
+        return 0;
     COLORREF old = dc->text_color;
     dc->text_color = color;
     return old;
 }
 
 static BOOL shim_TextOutA(HDC hdc, int x, int y, LPCSTR lpString, int c) {
-    GdiDC* dc = (GdiDC*)hdc;
-    if (!dc || dc->tag != GDI_OBJ_DC) return 0;
+    GdiDC *dc = (GdiDC *)hdc;
+    if (!dc || dc->tag != GDI_OBJ_DC)
+        return 0;
     if (!dc->font || !dc->font->ttf_font || !dc->bitmap)
-        return 1;  // No font or section — silently succeed
-    if (!lpString || c <= 0) return 1;
+        return 1; // No font or section — silently succeed
+    if (!lpString || c <= 0)
+        return 1;
 
     // Render text with SDL_ttf
     // COLORREF is 0x00BBGGRR, SDL_Color is {r, g, b, a}
@@ -424,8 +462,9 @@ static BOOL shim_TextOutA(HDC hdc, int x, int y, LPCSTR lpString, int c) {
     const std::string utf8 = cp1252_to_utf8(lpString, c);
     // Nothing to draw, such as a string that starts with its terminator, is no
     // surface.
-    SDL_Surface* text_surface = TTF_RenderUTF8_Solid(dc->font->ttf_font, utf8.c_str(), fg);
-    if (!text_surface) return 1;
+    SDL_Surface *text_surface = TTF_RenderUTF8_Solid(dc->font->ttf_font, utf8.c_str(), fg);
+    if (!text_surface)
+        return 1;
 
     // Blit text onto the DC's bitmap surface
     SDL_Rect dst_rect;
@@ -444,8 +483,7 @@ static BOOL shim_TextOutA(HDC hdc, int x, int y, LPCSTR lpString, int c) {
     if (dc->bk_mode == 2) {
         SDL_Rect clear_rect = dst_rect;
         SDL_FillRect(dc->bitmap->surface, &clear_rect,
-                     SDL_MapRGB(dc->bitmap->surface->format,
-                                (Uint8)(dc->bk_color & 0xFF),
+                     SDL_MapRGB(dc->bitmap->surface->format, (Uint8)(dc->bk_color & 0xFF),
                                 (Uint8)((dc->bk_color >> 8) & 0xFF),
                                 (Uint8)((dc->bk_color >> 16) & 0xFF)));
     }

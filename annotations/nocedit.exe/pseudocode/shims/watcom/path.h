@@ -47,8 +47,17 @@ inline WatcomPathRoots &watcom_path_roots_storage() {
     static WatcomPathRoots roots;
     return roots;
 }
-inline void watcom_set_path_roots(const WatcomPathRoots &roots) { watcom_path_roots_storage() = roots; }
-inline const WatcomPathRoots &watcom_path_roots() { return watcom_path_roots_storage(); }
+inline unsigned &watcom_path_roots_generation() {
+    static unsigned generation = 0;
+    return generation;
+}
+inline void watcom_set_path_roots(const WatcomPathRoots &roots) {
+    watcom_path_roots_storage() = roots;
+    watcom_path_roots_generation()++;
+}
+inline const WatcomPathRoots &watcom_path_roots() {
+    return watcom_path_roots_storage();
+}
 
 // Where a log file named `name` is written: the user directory, else the data
 // directory, else the working directory. Logs are never read back, so unlike
@@ -80,9 +89,11 @@ std::vector<std::string> watcom_resolve_fs_dirs(const char *directory);
 
 // Whether an fopen mode string can create or change the file.
 inline bool watcom_mode_writes(const char *mode) {
-    if (mode == nullptr) return false;
+    if (mode == nullptr)
+        return false;
     for (const char *p = mode; *p != '\0'; p++) {
-        if (*p == 'w' || *p == 'a' || *p == '+') return true;
+        if (*p == 'w' || *p == 'a' || *p == '+')
+            return true;
     }
     return false;
 }

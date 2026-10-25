@@ -8,4 +8,4 @@ namespace rng_audit_support {
 
 extern int raw_draws;
 
-}  // namespace rng_audit_support
+} // namespace rng_audit_support
