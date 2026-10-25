@@ -335,18 +335,19 @@ TEST_F(CMenuTest, TheSettingIsTheItemSelectedBeforeTheSelectionMoves) {
     EXPECT_EQ(selected, 1);
 }
 
+// The selected item is the last, below the rows checked, so its glow doesn't shift them.
 TEST_F(CMenuTest, ATitleIsDrawnWithTheItemsSingleSpacedTwoLinesUnder) {
-    int selected = 5;
-    choose({"XX", "XX"}, selected, "XXX");
+    int selected = 2;
+    choose({"XX", "XX", "XX"}, selected, "XXX");
     EXPECT_EQ(firstLit(letterRow(100)), 160);
+    EXPECT_EQ(firstLit(letterRow(100 + lineHeight())), -1);
     EXPECT_EQ(firstLit(letterRow(100 + (2 * lineHeight()))), 160);
     EXPECT_EQ(firstLit(letterRow(100 + (3 * lineHeight()))), 160);
-    EXPECT_EQ(firstLit(letterRow(100 + (4 * lineHeight()))), -1);
 }
 
 TEST_F(CMenuTest, WithoutATitleTheItemsAreDoubleSpaced) {
-    int selected = 5;
-    choose({"XX", "XX"}, selected);
+    int selected = 2;
+    choose({"XX", "XX", "XX"}, selected);
     EXPECT_EQ(firstLit(letterRow(100)), 160);
     EXPECT_EQ(firstLit(letterRow(100 + lineHeight())), -1);
     EXPECT_EQ(firstLit(letterRow(100 + (2 * lineHeight()))), 160);
