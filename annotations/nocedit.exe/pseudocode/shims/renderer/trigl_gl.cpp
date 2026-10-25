@@ -83,7 +83,7 @@ int overlay_bias() {
     if (nocturne_trigl_overlay_bias < 0) {
         const char *env = getenv("NOCTURNE_TRIGL_OVERLAY_BIAS");
         nocturne_trigl_overlay_bias =
-            (env != nullptr) ? atoi(env) : (NOCTURNE_AUTHENTIC_ENVMAP_OVERLAY ? 0 : 1);
+            (env != nullptr) ? atoi(env) : !NOCTURNE_AUTHENTIC_ENVMAP_OVERLAY;
     }
     return nocturne_trigl_overlay_bias;
 }

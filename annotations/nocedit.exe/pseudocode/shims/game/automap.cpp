@@ -68,6 +68,7 @@ const int kCoreRGB[3]   = { 255, 220, 200 };
 const int kDoorOpenRGB[3]   = { 110, 130, 110 };
 const int kDoorFreeRGB[3]   = {  60, 220,  90 };
 const int kDoorLockedRGB[3] = { 235,  60,  55 };
+const int kDoorOneWayRGB[3] = { 255, 140,  20 };
 
 // Character coloring. Enemies take a distinct hue rather than another red: the
 // player marker and a locked door are both red, and pick_color resolves to the
@@ -191,7 +192,7 @@ struct Segment {
 struct Edge {
     int ax, az, bx, bz;
     bool operator==(const Edge &o) const {
-        return ax == o.ax && az == o.az && bx == o.bx && bz == o.bz;
+        return std::memcmp(this, &o, sizeof(Edge)) == 0;   // four ints, no padding
     }
 };
 
@@ -246,9 +247,9 @@ int g_key_binding = DIK_M;
 // scaled into one screen is a diagram, not a map you navigate by.
 int g_zoom_percent = 320;
 
+// A cube of this level, or -1 for none: cube_at's answer outside the grid.
 inline bool revealed(int cube) {
-    return cube >= 0 && cube < g_cube_count &&
-           (g_revealed[(size_t)cube >> 3] & (1u << (cube & 7))) != 0;
+    return cube >= 0 && (g_revealed[(size_t)cube >> 3] & (1u << (cube & 7))) != 0;
 }
 
 inline bool down(int code) {
@@ -283,9 +284,7 @@ CDemonActor *local_hero(void) {
 // regardless of the controller, and a hero held at zero in such a mission is
 // still playing.
 bool hero_is_down(CDemonActor *hero) {
-    if (hero == nullptr) return false;
     CCharacter_full_vtable *vt = hero->vtable._uc;
-    if (vt == nullptr) return false;
     if ((*(vt->_uc).getDeathState)((CCharacter *)hero) != DEATH_STATE_ALIVE) {
         return true;
     }
@@ -332,11 +331,11 @@ int pick_color(const int rgb[3], int fallback)
 //
 // The frame underneath is still rendered -- skipping renderScene would be
 // cheaper but reaches into renderer state this has no business touching -- so
-// this covers it rather than preventing it.
+// this covers it rather than preventing it. Only reached with a map window to
+// draw in, so the screen has a size.
 void black_screen(void)
 {
     const int w = g_WindowWidth, h = g_WindowHeight;
-    if (w <= 0 || h <= 0) return;
 
     // Black is 0 in all three: zero bits at 16 and 32bpp, and palette entry 0
     // at 8bpp, which every palette in the game carries as black.
@@ -395,7 +394,9 @@ void fill_cross(int cx, int cy, int r, int x0, int y0, int x1, int y1)
                                              x0, y0, x1, y1);
 }
 
-// Scanline fill of a triangle in screen space.
+// Scanline fill of a triangle in screen space. Only the facing wedge is drawn
+// with it, and that is several pixels tall at every radius a marker has, so the
+// long edge always spans rows.
 void fill_triangle(float ax, float ay, float bx, float by, float qx, float qy,
                    int x0, int y0, int x1, int y1)
 {
@@ -403,16 +404,16 @@ void fill_triangle(float ax, float ay, float bx, float by, float qx, float qy,
     if (by < ay) { std::swap(ax, bx); std::swap(ay, by); }
     if (qy < ay) { std::swap(ax, qx); std::swap(ay, qy); }
     if (qy < by) { std::swap(bx, qx); std::swap(by, qy); }
-    if (qy - ay < 0.5f) return;
 
     for (int y = (int)std::ceil(ay); y <= (int)std::floor(qy); y++) {
         const float fy = (float)y;
         // The long edge a..q spans every row; the short side is a..b above b
-        // and b..q below it.
+        // and b..q below it. Above b, by is past fy and fy is not above ay, so
+        // a..b has height; b..q may not, when b and q share the row.
         const float xl = ax + (qx - ax) * (fy - ay) / (qy - ay);
         float xs;
         if (fy < by) {
-            xs = (by - ay < 1e-4f) ? bx : ax + (bx - ax) * (fy - ay) / (by - ay);
+            xs = ax + (bx - ax) * (fy - ay) / (by - ay);
         } else {
             xs = (qy - by < 1e-4f) ? bx : bx + (qx - bx) * (fy - by) / (qy - by);
         }
@@ -514,8 +515,7 @@ void draw_marker(MarkerShape shape, int color, int color_halo,
         fill_cross(cx, cy, r, x0, y0, x1, y1);
         break;
 
-    case MARK_DISC:
-    default:
+    default:   // MARK_DISC
         g_ActiveRenderColor = color;
         fill_disc(cx, cy, r, x0, y0, x1, y1);
         break;
@@ -588,6 +588,7 @@ const LegendItem k_legend[] = {
     { MARK_CROSS,   kBodyPartRGB,   kBodyPartRadius, "REMAINS"   },
     { MARK_BOX,     kDoorFreeRGB,   kDoorRadius,     "DOOR"      },
     { MARK_BOX,     kDoorLockedRGB, kDoorRadius,     "LOCKED"    },
+    { MARK_BOX,     kDoorOneWayRGB, kDoorRadius,     "ONE WAY"   },
     { MARK_BOX,     kDoorOpenRGB,   kDoorRadius,     "OPEN"      },
 };
 
@@ -605,6 +606,7 @@ struct LegendLayout {
     int rows;
     int row_h;
     int x[kLegendCount];
+    int w[kLegendCount];
     int row[kLegendCount];
     const LegendItem *item[kLegendCount];
 };
@@ -621,7 +623,7 @@ void legend_layout(LegendLayout *out, int ui, int avail)
     out->rows  = 1;
 
     // Row height is the taller of the text and the largest swatch at this
-    // scale.
+    // scale, so never less than a swatch.
     const int text_h = nocturne_ui_text_height(g_ThemeFont, (char *)"YOU", ui);
     int glyph_h = 0;
     for (i = 0; i < kLegendCount; i++) {
@@ -629,7 +631,6 @@ void legend_layout(LegendLayout *out, int ui, int avail)
         if (d > glyph_h) { glyph_h = d; }
     }
     out->row_h = (text_h > glyph_h) ? text_h : glyph_h;
-    if (out->row_h <= 0) { out->row_h = 12 * ui; }
 
     for (i = 0; i < kLegendCount; i++) {
         const LegendItem *it = &k_legend[i];
@@ -645,9 +646,19 @@ void legend_layout(LegendLayout *out, int ui, int avail)
         }
         out->item[out->count] = it;
         out->x[out->count]    = pen;
+        out->w[out->count]    = w;
         out->row[out->count]  = out->rows - 1;
         out->count++;
         pen += w + kLegendItemGap * ui;
+    }
+
+    // Centre each row on its own width, as the controls below the map are.
+    for (i = 0; i < out->count; ) {
+        int end = i;
+        while (end < out->count && out->row[end] == out->row[i]) { end++; }
+        int shift = (avail - (out->x[end - 1] + out->w[end - 1])) / 2;
+        if (shift < 0) { shift = 0; }
+        for (; i < end; i++) { out->x[i] += shift; }
     }
 }
 
@@ -698,9 +709,7 @@ int marker_index(CDemonActor *actor)
     CDemonActorType *type;
     int              i;
 
-    if (actor == (CDemonActor *)nullptr) { return -1; }
-
-    type = (*((actor->vtable)._ub)->getActorType)(actor);
+    type =(*((actor->vtable)._ub)->getActorType)(actor);
     for (; type != (CDemonActorType *)nullptr; type = type->parent_type) {
         // A class registers its hash on first construction, so a class no level
         // has used yet reads 0. Skipped, or every unregistered row would match.
@@ -727,10 +736,7 @@ struct HelpSeg {
 
 // Headroom over what the full line uses: 22, being a label and its names for
 // each of pan, zoom, the other floors, recentring, the legend and CLOSE, plus
-// the spaces inside a control that has more than one name.
-//
-// help_push drops segments silently once the cap is reached, so a cap the line
-// can reach loses controls off the end without saying so. Recount when adding
+// the spaces inside a control that has more than one name. Recount when adding
 // one.
 const int kHelpSegMax = 40;
 
@@ -768,7 +774,7 @@ int common_prefix_len(const char names[][40], int count)
 void help_push(HelpSeg *segs, int *count, const char *text, bool is_key,
                bool starts_control)
 {
-    if (*count >= kHelpSegMax || text[0] == '\0') { return; }
+    if (text[0] == '\0') { return; }
     std::snprintf(segs[*count].text, sizeof(segs[*count].text), "%s", text);
     segs[*count].is_key = is_key;
     segs[*count].starts_control = starts_control;
@@ -852,14 +858,15 @@ struct HelpLayout {
 // Flow the controls into as many rows as they need, breaking only between
 // controls so a label never ends a row with its binding names starting the
 // next. Each row is centred on its own width, and a control wider than the
-// whole screen still gets a row rather than being dropped.
+// whole screen still gets a row rather than being dropped. There is always at
+// least one control.
 void help_layout(HelpLayout *out, const HelpSeg *segs, int count, int ui,
                  int avail)
 {
     int i;
     int pen = 0;
 
-    out->rows = (count > 0) ? 1 : 0;
+    out->rows = 1;
 
     for (i = 0; i < count; i++) {
         if (segs[i].starts_control && i > 0) {
@@ -968,7 +975,7 @@ extern "C" void nocturne_automap_reset(void)
             g_has_wall[(size_t)c] = 1;
 
             int mat = (ground != nullptr) ? (int)ground[t] : GROUND_TYPE_DEFAULT;
-            if (mat < 0 || mat >= kGroundTypeCount) mat = GROUND_TYPE_DEFAULT;
+            if (mat >= kGroundTypeCount) mat = GROUND_TYPE_DEFAULT;
 
             for (int e = 0; e < 3; e++) {
                 const CVector3f *a = v[e], *b = v[(e + 1) % 3];
@@ -1012,19 +1019,16 @@ namespace {
 
 // The cube holding a world position, by getCubeAt's own index arithmetic so a
 // cell here is the same cell the collision system means. -1 when outside.
+// Asked only of a loaded level, whose cells have a size.
 int cube_at(const CVector3f &p)
 {
     CDemonRaytrace *rt = &g_CDemonRaytraceInstance;
-    if (rt->cell_size.x <= 0.0f || rt->cell_size.y <= 0.0f || rt->cell_size.z <= 0.0f) {
-        return -1;
-    }
     const int dimx = rt->grid_coord.x, dimy = rt->grid_coord.y, dimz = rt->grid_coord.z;
     const int x = (int)((p.x - rt->bbox_min.x) / rt->cell_size.x);
     const int y = (int)((p.y - rt->bbox_min.y) / rt->cell_size.y);
     const int z = (int)((p.z - rt->bbox_min.z) / rt->cell_size.z);
     if (x < 0 || x >= dimx || y < 0 || y >= dimy || z < 0 || z >= dimz) return -1;
-    const int c = x * dimy * dimz + y * dimz + z;
-    return (c >= 0 && c < g_cube_count) ? c : -1;
+    return x * dimy * dimz + y * dimz + z;
 }
 
 // Can the player see this character right now? The same occlusion test the
@@ -1036,11 +1040,9 @@ int cube_at(const CVector3f &p)
 // so a ray aimed at the character's own chest is occluded by that character and
 // the answer is always "no". Pulling the end back along the ray clears its
 // collision box while keeping everything in between, including closed doors,
-// blocking as it should.
+// blocking as it should. Asked only while there is a set to ask.
 bool in_sight(const CVector3f &eye, const CVector3f &target)
 {
-    if (g_CDemonSetPtr == nullptr) return false;
-
     CVector3f from = eye;
     CVector3f to = target;
     to.y += kMarkerEyeOffset;
@@ -1060,7 +1062,7 @@ bool in_sight(const CVector3f &eye, const CVector3f &target)
                g_CDemonSetPtr, &from, &to) == 0;
 }
 
-// Can the player get through this door from where he is standing?
+// What a closed door means to the player, from anywhere on the map.
 //
 // Two separate locks, and colouring by key_mask alone misses the commoner one.
 // CHero::tryOpenNearbyDoor calls CDoor::getMoveType, which refuses outright
@@ -1069,21 +1071,25 @@ bool in_sight(const CVector3f &eye, const CVector3f &target)
 // reach the key test in CHero::tryOpenDoor. allowed_sides of 0 permits neither
 // side and is a door that never opens to the player at all.
 //
-// getMoveType itself cannot be called to find out: it plays the locked sound
-// and puts a message on screen. So its side gate is reproduced here, and the
-// key test is the real call with show_message 0, which is a pure query -- it
-// returns 1 immediately for key_mask 0 and neither prints nor plays anything.
-bool door_is_passable(CDoor *door, CHero *hero)
+// The side is not asked of where the player stands. getMoveType asks it within
+// a few units of the door, where the door's plane divides the two rooms; asked
+// from anywhere else it divides the level along an infinite line, and the
+// colour would flip as the player crossed it in some other room. So a door that
+// opens from one side only is its own kind, whichever side he is on.
+//
+// The key test is the real call with show_message 0, which is a pure query --
+// it returns 1 immediately for key_mask 0 and neither prints nor plays anything.
+enum DoorKind { DOOR_FREE, DOOR_ONE_WAY, DOOR_LOCKED };
+
+DoorKind door_kind(CDoor *door, CHero *hero)
 {
-    CVector3f local;
-    core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_00408f10(
-        &door->base, &local, &(hero->base).base.location.position);
-
-    const int side_bit = (local.z <= 0.0f) ? 2 : 1;
-    if ((door->allowed_sides & side_bit) == 0) return false;
-
-    return core_inv_cpp_CInventory_checkHasMatchingKey_FUN_005013d0(
-               &hero->inventory, (uint)door->key_mask, 0) != 0;
+    const int sides = door->allowed_sides & 3;
+    if (sides == 0) return DOOR_LOCKED;
+    if (core_inv_cpp_CInventory_checkHasMatchingKey_FUN_005013d0(
+            &hero->inventory, (uint)door->key_mask, 0) == 0) {
+        return DOOR_LOCKED;
+    }
+    return (sides == 3) ? DOOR_FREE : DOOR_ONE_WAY;
 }
 
 void reveal_around(const CVector3f &p)
@@ -1119,7 +1125,6 @@ void reveal_around(const CVector3f &p)
                 // getCubeAt's own index arithmetic, so a cell here is the same
                 // cell the collision system means.
                 const int c = x * dimy * dimz + y * dimz + z;
-                if (c < 0 || c >= g_cube_count) continue;
                 if (revealed(c)) continue;
 
                 // Line of sight, so a room is not mapped through the wall or
@@ -1483,12 +1488,12 @@ extern "C" void nocturne_automap_render(void)
         help_layout(&help_rows, help, help_count, help_ui, avail);
     }
 
+    // Laid out whether or not it is showing: the heading band is as tall as the
+    // taller of the key and the title, so switching between them does not move
+    // the map.
     LegendLayout legend = {};
-    int legend_ui = ui;
-    if (g_legend) {
-        legend_ui = legend_fitting_scale(ui, avail);
-        legend_layout(&legend, legend_ui, avail);
-    }
+    const int legend_ui = legend_fitting_scale(ui, avail);
+    legend_layout(&legend, legend_ui, avail);
 
     int title_h = nocturne_ui_text_height(g_ThemeFont, title, ui);
     if (title_h <= 0) title_h = 12 * ui;
@@ -1498,7 +1503,8 @@ extern "C" void nocturne_automap_render(void)
                      : 0;
     if (help_count > 0 && help_h <= 0) help_h = 12 * help_ui;
 
-    int top_band = (g_legend ? legend.rows * legend.row_h : title_h) + pad * 2;
+    const int legend_h = legend.rows * legend.row_h;
+    int top_band = (legend_h > title_h ? legend_h : title_h) + pad * 2;
     int bottom_band = (help_h > 0) ? help_h * help_rows.rows + pad * 2 : kMargin;
     if (top_band < kMargin) top_band = kMargin;
     if (bottom_band < kMargin) bottom_band = kMargin;
@@ -1611,6 +1617,7 @@ extern "C" void nocturne_automap_render(void)
         const int color_door_open   = pick_color(kDoorOpenRGB,   color_wall);
         const int color_door_free   = pick_color(kDoorFreeRGB,   color_wall);
         const int color_door_locked = pick_color(kDoorLockedRGB, color_wall);
+        const int color_door_one_way = pick_color(kDoorOneWayRGB, color_wall);
         const int color_halo        = pick_color(kHaloRGB,       color_wall);
         const int color_item        = pick_color(kItemRGB,       color_wall);
         const int color_chest       = pick_color(kChestRGB,      color_wall);
@@ -1657,10 +1664,13 @@ extern "C" void nocturne_automap_render(void)
                                        a, g_CDoorClassInfo.name_hash);
             if (door != (CDoor *)nullptr) {
                 if (!g_complete && !revealed(cube_at(ap))) continue;
-                const int door_color =
-                    (door->door_state != DOOR_STATE_CLOSED) ? color_door_open
-                    : door_is_passable(door, (CHero *)hero) ? color_door_free
-                                                            : color_door_locked;
+                int door_color = color_door_open;
+                if (door->door_state == DOOR_STATE_CLOSED) {
+                    const DoorKind kind = door_kind(door, (CHero *)hero);
+                    door_color = (kind == DOOR_FREE)       ? color_door_free
+                               : (kind == DOOR_ONE_WAY)    ? color_door_one_way
+                                                           : color_door_locked;
+                }
                 draw_marker(MARK_BOX, door_color, color_halo,
                             mx, my, kDoorRadius * ui, x0, y0, x1, y1);
                 continue;
@@ -1752,13 +1762,11 @@ extern "C" void nocturne_automap_render(void)
             // Hero, enemy or neither, from the one table. A character always
             // matches CCharacter's row at minimum, since that cast is what
             // reached this branch.
-            if (row >= 0) {
-                draw_facing(a, marker_color[row], mx, my,
-                            marker_outer_radius(k_markers[row].shape, marker_radius[row]),
-                            x0, y0, x1, y1);
-                draw_marker(k_markers[row].shape, marker_color[row], color_halo,
-                            mx, my, marker_radius[row], x0, y0, x1, y1);
-            }
+            draw_facing(a, marker_color[row], mx, my,
+                        marker_outer_radius(k_markers[row].shape, marker_radius[row]),
+                        x0, y0, x1, y1);
+            draw_marker(k_markers[row].shape, marker_color[row], color_halo,
+                        mx, my, marker_radius[row], x0, y0, x1, y1);
         }
 
         // Any party hero the pass above did not reach. The set's actor list is
@@ -1783,17 +1791,16 @@ extern "C" void nocturne_automap_render(void)
 
             // Resolved per teammate rather than reusing the local hero's row:
             // the party is not all one class, so a row added for one hero class
-            // must not be applied to the others.
+            // must not be applied to the others. A hero always matches CHero's
+            // row at minimum.
             const int mate_row = marker_index((CDemonActor *)mate);
-            if (mate_row >= 0) {
-                draw_facing((CDemonActor *)mate, marker_color[mate_row], mx, my,
-                            marker_outer_radius(k_markers[mate_row].shape,
-                                                marker_radius[mate_row]),
-                            x0, y0, x1, y1);
-                draw_marker(k_markers[mate_row].shape, marker_color[mate_row],
-                            color_halo, mx, my, marker_radius[mate_row],
-                            x0, y0, x1, y1);
-            }
+            draw_facing((CDemonActor *)mate, marker_color[mate_row], mx, my,
+                        marker_outer_radius(k_markers[mate_row].shape,
+                                            marker_radius[mate_row]),
+                        x0, y0, x1, y1);
+            draw_marker(k_markers[mate_row].shape, marker_color[mate_row],
+                        color_halo, mx, my, marker_radius[mate_row],
+                        x0, y0, x1, y1);
         }
     }
 
@@ -1824,18 +1831,18 @@ extern "C" void nocturne_automap_render(void)
         // Swatches go through draw_marker, the call the map itself uses, so a
         // key entry stays consistent with the marker it explains. Clipped to
         // the heading band rather than the map window: the band sits above y0,
-        // where the map starts.
-        const int band_y1 = (top_band < g_WindowHeight) ? top_band
-                                                        : g_WindowHeight;
+        // where the map starts, and inside the screen since the map fitted.
+        const int band_y1 = top_band;
         // legend_ui throughout, matching the scale the layout was measured at.
         // The swatch radii take it too: a key drawn at the HUD scale beside text
         // fitted down to the width would not be the vocabulary it is explaining.
         const int text_h = nocturne_ui_text_height(g_ThemeFont, (char *)"YOU",
                                                    legend_ui);
 
+        const int legend_top = (top_band - legend_h) / 2;
         for (int i = 0; i < legend.count; i++) {
             const LegendItem *it = legend.item[i];
-            const int row_top = pad + legend.row[i] * legend.row_h;
+            const int row_top = legend_top + legend.row[i] * legend.row_h;
             const int r = it->radius * legend_ui;
             int pen = x0 + legend.x[i];
 
@@ -1850,7 +1857,9 @@ extern "C" void nocturne_automap_render(void)
                                   color_wall, -1, legend_ui);
         }
     } else {
-        nocturne_ui_draw_text(g_ThemeFont, title, x0, (top_band - title_h) / 2,
+        int title_x = x0 + (avail - nocturne_ui_text_width(g_ThemeFont, title, ui)) / 2;
+        if (title_x < x0) title_x = x0;
+        nocturne_ui_draw_text(g_ThemeFont, title, title_x, (top_band - title_h) / 2,
                               color_wall, -1, ui);
     }
 
@@ -1892,91 +1901,61 @@ extern "C" void nocturne_automap_save(_FILE *f)
     _fprintf(f, "%d,%d,%d,%d\n", rt->grid_coord.x, rt->grid_coord.y,
              rt->grid_coord.z, g_complete ? 1 : 0);
 
+    // Runs alternate unexplored, explored, ..., starting unexplored as the
+    // reader does, so a level whose first cube is explored opens with an empty
+    // run.
     int runs = 0;
+    bool v = false;
     for (int c = 0; c < g_cube_count; ) {
-        const bool v = revealed(c);
         int n = 0;
         while (c + n < g_cube_count && revealed(c + n) == v) n++;
         _fprintf(f, "%d ", n);
         c += n;
+        v = !v;
         if (++runs % 20 == 0) _fprintf(f, "\n");
     }
     _fprintf(f, "\n");
 }
 
-// Reading is split in two because the save file is closed before the level it
-// describes exists. CGame::loadGame parses its sections, closes the file, and
-// only then calls CDemonMission::run, which reaches CDemonSet::load and the
-// reset that rebuilds this grid -- so anything applied at parse time is either
-// wiped by that reset or matched against the OUTGOING level's dimensions. The
-// block is therefore staged here and applied once the level is up.
-struct PendingMap {
-    bool valid;
-    char geo[64];
-    int  gx, gy, gz;
-    int  complete;
-    std::vector<int> runs;
-};
-
-PendingMap g_pending;
-
+// Applied as it is read. CGame::loadGame reaches this block last, after
+// CDemonMission::startMission has loaded the save's set, so the grid is already
+// the level the block describes. Nothing later rebuilds it: CDemonMission::run
+// loads the same set again, and CDemonSet::load skips the geometry, and the
+// reset with it, when the file is the one already loaded.
+//
+// Unexplored first, always. A save written before the block existed, a save
+// from another level, and a corrupt block all mean the same thing: this level
+// has not been walked; the state left from before would show a reloaded save
+// as already explored.
 extern "C" void nocturne_automap_load(_FILE *f)
 {
-    // Cleared on every read, so a save with no block cannot be handed the
-    // previous save's staged data.
-    g_pending.valid = false;
-    g_pending.runs.clear();
+    std::fill(g_revealed.begin(), g_revealed.end(), 0);
+    g_complete = false;
+    g_percent = 0;
 
-    if (f == nullptr) { return; }
+    if (f == nullptr || g_cube_count == 0) { return; }
 
     char tag[64];
     if (_fscanf(f, "%63s\n", tag) != 1) { return; }   // EOF: pre-Automap save
     if (std::strcmp(tag, "Automap") != 0) { return; }
 
-    if (_fscanf(f, "%63s\n", g_pending.geo) != 1) { return; }
-    if (_fscanf(f, "%d,%d,%d,%d\n", &g_pending.gx, &g_pending.gy,
-                &g_pending.gz, &g_pending.complete) != 4) {
-        return;
-    }
-
-    int n = 0;
-    while (_fscanf(f, "%d", &n) == 1) {
-        g_pending.runs.push_back(n);
-    }
-    g_pending.valid = true;
-}
-
-extern "C" void nocturne_automap_apply_loaded(void)
-{
-    // Unexplored first, always. A save written before the block existed, a save
-    // from another level, and a corrupt block all mean the same thing: this
-    // level has not been walked. Leaving the previous state in place is what
-    // made a reloaded save look already-explored.
-    std::fill(g_revealed.begin(), g_revealed.end(), 0);
-    g_complete = false;
-
-    const bool staged = g_pending.valid;
-    PendingMap p;
-    if (staged) { p = g_pending; }
-    g_pending.valid = false;
-    g_pending.runs.clear();
-
-    if (!staged || g_cube_count == 0) { recount_explored(); return; }
+    char geo[64];
+    int gx = 0, gy = 0, gz = 0, complete = 0;
+    if (_fscanf(f, "%63s\n", geo) != 1) { return; }
+    if (_fscanf(f, "%d,%d,%d,%d\n", &gx, &gy, &gz, &complete) != 4) { return; }
 
     // A changed .GEO invalidates cleanly rather than smearing one level's
     // explored cells over another's grid.
     CDemonRaytrace *rt = &g_CDemonRaytraceInstance;
-    if (p.gx != rt->grid_coord.x || p.gy != rt->grid_coord.y ||
-        p.gz != rt->grid_coord.z ||
-        std::strcmp(p.geo, g_CDemonSetInstance.geometry_filename) != 0) {
-        recount_explored();
+    if (gx != rt->grid_coord.x || gy != rt->grid_coord.y || gz != rt->grid_coord.z ||
+        std::strcmp(geo, g_CDemonSetInstance.geometry_filename) != 0) {
         return;
     }
 
     bool v = false;
     int c = 0;
-    for (size_t r = 0; r < p.runs.size() && c < g_cube_count; r++) {
-        const int n = p.runs[r];
+    int n = 0;
+    while (c < g_cube_count && _fscanf(f, "%d", &n) == 1) {
         if (v) {
             for (int i = 0; i < n && c + i < g_cube_count; i++) {
                 const int k = c + i;
@@ -1986,7 +1965,7 @@ extern "C" void nocturne_automap_apply_loaded(void)
         c += n;
         v = !v;
     }
-    g_complete = (p.complete != 0);
+    g_complete = (complete != 0);
     recount_explored();
 }
 
@@ -1998,7 +1977,6 @@ extern "C" int  nocturne_automap_active(void) { return 0; }
 extern "C" void nocturne_automap_render(void) {}
 extern "C" void nocturne_automap_save(_FILE *file) { (void)file; }
 extern "C" void nocturne_automap_load(_FILE *file) { (void)file; }
-extern "C" void nocturne_automap_apply_loaded(void) {}
 extern "C" int  nocturne_automap_explored_percent(void) { return 0; }
 extern "C" int  nocturne_automap_owns_controls(void) { return 0; }
 extern "C" int  nocturne_automap_freezes_world(void) { return 0; }
