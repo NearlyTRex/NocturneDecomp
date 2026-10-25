@@ -176,6 +176,7 @@ suspect type, the recognition pattern, and the rewrite, indexed by the detector 
   recreation. The decompilation can be built for them already: see "Consoles and packaged
   apps" in [docs/porting.md](docs/porting.md).
 - **An improved netplay lobby** to replace the current text-only one.
+- **Supporting other Nocturne-engine games** like the original Blair Witch trilogy.
 
 ## Contributing
 
