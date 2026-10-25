@@ -3,15 +3,13 @@
 #include "common/text/scan.h"
 #include "common/text/scanformat.h"
 #include "core/actor/actor.h"
-#include "core/actor/actor_functions.h"
 #include "core/actor/demonactor.h"
-#include "core/actor/demonactortype.h"
-#include "core/actor/notported.h"
 #include "core/charactr/character.h"
+#include "core/event/eventchecks.h"
 #include "core/event/eventlist.h"
 #include "core/glass/glass.h"
 #include "core/hero/hero.h"
-#include "core/mission/demonmission.h"
+#include "core/script/script_functions.h"
 #include "core/set/demonset.h"
 
 #include <algorithm>
@@ -28,7 +26,7 @@
 namespace nocturne::core {
 namespace {
 
-using Result = CEventList::ConditionResult;
+using Result = CEventList::CheckResult;
 
 // How a cmp compares its two sides, numbered as the original numbers them.
 enum class EComparisonOp : std::uint8_t {
@@ -62,16 +60,7 @@ void skipSpaces(std::string_view expression, std::size_t &position) {
 }
 
 std::string trimmed(std::string_view text) {
-    const std::size_t first = text.find_first_not_of(common::kWhitespace);
-    if (first == std::string_view::npos) {
-        return {};
-    }
-    return std::string(text.substr(first, text.find_last_not_of(common::kWhitespace) - first + 1));
-}
-
-// nocedit 0x004b0f90
-bool isValidIdentifierChar(char c) {
-    return common::isAsciiAlnum(c) || c == '_' || c == '-';
+    return std::string(trimString(text));
 }
 
 // nocedit 0x004aa320
@@ -84,57 +73,9 @@ std::optional<EComparisonOp> parseComparisonOp(std::string_view op) {
     return static_cast<EComparisonOp>(found - kOps.begin());
 }
 
-// The actor an event names, of the class it needs. A null actor is one missing for now: "$"
-// without a hero. A name the mission doesn't hold, or an actor of another class, is an error.
-// deferred: an actor variable, missing when unset or of another class, with getActorByVarName
-// deferred: the hero "$" means in a network game, the gas room's unmasked hero else the first,
-//   with CNetGame's sessions
-// nocedit 0x004aa400
-std::expected<CDemonActor *, std::string>
-resolveActorByName(const CDemonMission &mission, std::string_view name,
-                   const CDemonActorType &expected_class) {
-    if (name.empty()) {
-        return std::unexpected("Must specify actor name");
-    }
-    if (name.starts_with('@')) {
-        quitNotPorted("CEventList", "getActorByVarName");
-    }
-    CDemonActor *actor = nullptr;
-    if (common::equalsIgnoringAsciiCase(name, "$")) {
-        actor = mission.getHero(0);
-        if (actor == nullptr) {
-            return nullptr;
-        }
-    } else {
-        actor = mission.findActorByName(name);
-        if (actor == nullptr) {
-            return std::unexpected(std::format("Actor \"{}\" does not exist.", name));
-        }
-    }
-    if (!isOfClassHash(actor, expected_class.name_hash)) {
-        return std::unexpected(
-            std::format("Actor \"{}\" is of type {}, this command requires an actor of type {}.",
-                        name, actor->getActorClassName(), expected_class.class_name));
-    }
-    return actor;
-}
-
 Result checkActor(const SEventListOwners &owners, std::string_view name,
                   const CDemonActorType &expected_class) {
-    const auto actor = resolveActorByName(owners.mission, name, expected_class);
-    if (!actor) {
-        return std::unexpected(actor.error());
-    }
-    return {};
-}
-
-// Moves past what a format took, or fails with the function's message.
-Result consume(std::string_view &rest, std::optional<std::size_t> taken, std::string_view error) {
-    if (!taken) {
-        return std::unexpected(std::string(error));
-    }
-    rest.remove_prefix(*taken);
-    return {};
+    return core::checkActor(owners.mission, name, expected_class);
 }
 
 // "( name )", the name without spaces.

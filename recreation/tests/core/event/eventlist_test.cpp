@@ -22,8 +22,6 @@ TEST(CEventList, PublicInterface) {
         std::is_same_v<decltype(&CEventList::executeCommands), int (CEventList::*)(char *)>);
     static_assert(
         std::is_same_v<decltype(&CEventList::evaluateCondition), int (CEventList::*)(char *)>);
-    static_assert(
-        std::is_same_v<decltype(&CEventList::validateCommands), char *(CEventList::*)(char *)>);
     static_assert(std::is_same_v<decltype(&CEventList::render), void (CEventList::*)()>);
     static_assert(std::is_same_v<decltype(&CEventList::addOrRemovePersistentEvent),
                                  void (CEventList::*)(char *, int)>);

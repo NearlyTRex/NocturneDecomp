@@ -83,15 +83,14 @@ protected:
             << text;
     }
 
-    // Loads a set whose lights are the text's, a count then each light. The set has no geometry,
-    // which a prompt warns of.
-    void givenLights(const std::string &lights) {
+    // Loads the set. It has no geometry, which a prompt warns of.
+    void givenSet(const SSetFile &file) {
         EXPECT_CALL(raw_input_, getNextKeypress(::testing::_)).WillOnce(::testing::Return('x'));
-        givenFile("models\\test.set", SSetFile{.lights = lights}.text());
+        givenFile("models\\test.set", file.text());
         set_.load("test.set");
     }
 
-    CEventList events_{{.mission = mission_, .actor = actor_, .set = set_}};
+    CEventList events_{{.mission = mission_, .actor = actor_, .set = set_, .dosio = dosio_}};
     CScript script_{
         {.dosio = dosio_, .editor_tools = editor_tools_, .mission = mission_, .events = events_}};
 };

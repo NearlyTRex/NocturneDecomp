@@ -224,7 +224,7 @@ Result checkHolsterWeapon(CScript & /*script*/, SScriptStatement &statement) {
         }
         const std::string_view condition = statement.rest.substr(0, statement.rest.size() - 1);
         statement.rest.remove_prefix(condition.size());
-        if (const CEventList::ConditionResult valid = statement.events.validateCondition(condition);
+        if (const CEventList::CheckResult valid = statement.events.validateCondition(condition);
             !valid) {
             return valid;
         }

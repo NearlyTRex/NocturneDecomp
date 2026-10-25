@@ -44,10 +44,11 @@ struct SDialogEntry {
     bool operator==(const SDialogEntry &) const = default;
 };
 
-// The line a step is checking: the command's name as the command table spells it, what follows
-// the name, which a check moves past what it reads, the line in the file, the mission whose
-// actors the command names, and the events that check its condition.
+// The line a step is checking: the whole of it, the command's name as the command table spells
+// it, what follows the name, which a check moves past what it reads, the line in the file, the
+// mission whose actors the command names, and the events that check its condition and commands.
 struct SScriptStatement {
+    std::string_view line;
     std::string_view command;
     std::string_view rest;
     int line_number = 0;

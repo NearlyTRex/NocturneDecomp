@@ -36,7 +36,9 @@ std::string trimLine(std::string_view line) {
     return std::string(trimTrailing(text.substr(0, text.find("//"))));
 }
 
+// The events' trimWhitespace is the same function.
 // nocedit 0x00559360
+// nocedit 0x004aa650
 std::string_view trimString(std::string_view text) {
     return skipWhitespace(trimTrailing(text));
 }
@@ -47,7 +49,9 @@ std::string_view skipWhitespace(std::string_view text) {
     return text.substr(first == std::string_view::npos ? text.size() : first);
 }
 
+// The events' extractParenArg is the same function.
 // nocedit 0x005593f0
+// nocedit 0x004aa6c0
 std::expected<std::string, std::string> parseArgument(std::string_view &cursor,
                                                       std::size_t max_length) {
     cursor = skipWhitespace(cursor);
@@ -83,7 +87,7 @@ std::expected<std::string, std::string> parseConditionExpr(std::string_view &cur
     if (!condition) {
         return condition;
     }
-    if (const CEventList::ConditionResult valid = events.validateCondition(*condition); !valid) {
+    if (const CEventList::CheckResult valid = events.validateCondition(*condition); !valid) {
         return std::unexpected(valid.error());
     }
     return condition;

@@ -73,7 +73,8 @@ public:
     void initScene();
     void snapshotActorTransformState(CDemonActor *actor);
     void setCameraView(int index);
-    int findCameraByName(char *name);
+    // The camera of that name, compared ignoring case.
+    [[nodiscard]] std::optional<std::size_t> findCameraByName(std::string_view name) const;
     void reinitCamera(int clear_enabled, int is_clearing, int screen_height);
     void processActors();
     void renderStaticLights();

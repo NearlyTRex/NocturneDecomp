@@ -39,7 +39,7 @@ protected:
     }
 
     void expectError(std::string_view condition, std::string_view message) {
-        const CEventList::ConditionResult result = events_.validateCondition(condition);
+        const CEventList::CheckResult result = events_.validateCondition(condition);
         ASSERT_FALSE(result.has_value()) << condition;
         EXPECT_EQ(result.error(), message) << condition;
     }
@@ -194,7 +194,7 @@ TEST_F(CEventListConditionTest, IsFacingFailsOneLetterNamesWithoutASpace) {
 }
 
 TEST_F(CEventListConditionTest, IsLightOnTakesASpotlightOfTheSet) {
-    givenLights("2\n" + lightText("omni", 1) + lightText("Beam", 0));
+    givenSet({.lights = "2\n" + lightText("omni", 1) + lightText("Beam", 0)});
     expectValid("isLightOn(beam)");
     expectError("isLightOn(omni)", "Spotlight omni doesn't exist.");
     expectError("isLightOn()", "Error parsing isLightOn parameters.");

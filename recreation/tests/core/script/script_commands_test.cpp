@@ -115,6 +115,20 @@ TEST_F(CScriptCommandsTest, AConditionIsShorterThan100Characters) {
     expectSyntaxError(std::format("if({})\n", std::string(100, 'f')), 1, "Argument too long");
 }
 
+// The events check the whole line, more commands after a ';' included.
+TEST_F(CScriptCommandsTest, AnEventCommandsLineIsCheckedAsEventCommands) {
+    expectPasses("flagOn(a); flagOff(b)\nincCounter(count)\n");
+    expectSyntaxError("flagOn(a); bogus(1)\n", 1, "Unknown meta-function starting at bogus(1)");
+    expectSyntaxError("flagOn(a) junk\n", 1, "Extra characters found");
+}
+
+TEST_F(CScriptCommandsTest, RaiseTakesEventCommands) {
+    expectPasses("raise( door_open; flagOn(a) )\n");
+    expectSyntaxError("raise(bad name)\n", 1, "Event name bad name is not valid");
+    expectSyntaxError("raise door_open\n", 1,
+                      "Error parsing event expression on raise statament: No opening parenthesis");
+}
+
 TEST_F(CScriptCommandsTest, EnableCameraGroupTakesAGroupAndACondition) {
     expectPasses("enableCameraGroup(2 , !flag )\n");
     expectSyntaxError("enableCameraGroup(2, flag flag)\n", 1, "Syntax error");

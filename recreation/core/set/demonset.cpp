@@ -1,6 +1,12 @@
 #include "core/set/demonset.h"
 
 #include "common/math/vector3i.h"
+#include "common/text/ascii.h"
+
+#include <algorithm>
+#include <cstddef>
+#include <optional>
+#include <string_view>
 
 namespace nocturne::core {
 
@@ -30,6 +36,17 @@ const CColor3i &CDemonSet::getFlatColor() const {
 // nocedit 0x00570ca0
 void CDemonSet::setFlatColor(int light_scale, int color_scale, int fog_scale) {
     flat_color_ = {.r = light_scale, .g = color_scale, .b = fog_scale};
+}
+
+// nocedit 0x0056b790
+std::optional<std::size_t> CDemonSet::findCameraByName(std::string_view name) const {
+    const auto camera = std::ranges::find_if(cameras_, [name](const C3DSCamera &candidate) {
+        return common::equalsIgnoringAsciiCase(candidate.getName(), name);
+    });
+    if (camera == cameras_.end()) {
+        return std::nullopt;
+    }
+    return static_cast<std::size_t>(camera - cameras_.begin());
 }
 
 int CDemonSet::getSetFileVersion() const {

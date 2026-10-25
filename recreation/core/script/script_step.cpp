@@ -70,14 +70,13 @@ void CScript::initRuntime() {
 //   and startDialogLine
 // deferred: staying on a command that hasn't finished, and the overrun past the end of the
 //   script, while running, with process
-// deferred: advanceLightFilter, createExplosion, deleteActor, displayBitmap, hurtCharacter,
-//   incCounter, fadeSfx, fadeAmbientSound, flagOn, flagOff, gameFlagOn, gameFlagOff,
-//   killCharacter, killHero, killSfx, lightning, playSfx, setCameraAmbient, setCounter,
-//   setGroupAmbient, setLightFilterFrame, setLeverState, setModelState, setTimer, setWeather,
-//   shakeScreen, slamModelToMotion and warpTo, each checked and run as the event command of the
-//   same name, with CEventList::validateCommands and executeCommands
-// deferred: raise, checking and running its event commands, with CEventList::validateCommands
-//   and executeCommands
+// deferred: running advanceLightFilter, createExplosion, deleteActor, displayBitmap,
+//   hurtCharacter, incCounter, fadeSfx, fadeAmbientSound, flagOn, flagOff, gameFlagOn,
+//   gameFlagOff, killCharacter, killHero, killSfx, lightning, playSfx, setCameraAmbient,
+//   setCounter, setGroupAmbient, setLightFilterFrame, setLeverState, setModelState, setTimer,
+//   setWeather, shakeScreen, slamModelToMotion and warpTo, the line run as event commands, with
+//   CEventList::executeCommands
+// deferred: running raise, running its event commands, with CEventList::executeCommands
 // deferred: running allowEnemyAttack, setting whether enemies attack by its condition, with
 //   CEventList::evaluateCondition
 // deferred: running allowHeroControls, blocking the heroes' controls unless its condition holds,
@@ -186,7 +185,8 @@ CScript::CommandResult CScript::step() {
     const std::size_t index = next_cmd_;
     const SScriptLine &line = parsed_lines_[index];
     ++next_cmd_;
-    SStatement statement{.command = {},
+    SStatement statement{.line = line.text,
+                         .command = {},
                          .rest = line.text,
                          .line_number = line.line_number,
                          .mission = owners_.mission,

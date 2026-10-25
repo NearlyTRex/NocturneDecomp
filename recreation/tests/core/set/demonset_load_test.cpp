@@ -93,6 +93,14 @@ TEST_F(CDemonSetLoadTest, EveryCameraIsEnabledInGroupZeroAtTheLeastAmbient) {
     EXPECT_THAT(set_.getCameras()[0].getPVSList(), ::testing::ElementsAre(4, 5));
 }
 
+TEST_F(CDemonSetLoadTest, ACameraIsFoundByName) {
+    load(
+        {.cameras = "2\n" + cameraText("first") + cameraText("Second"), .pvs = "2\n\t4\n\t5\n0\n"});
+    EXPECT_EQ(set_.findCameraByName("FIRST"), 0U);
+    EXPECT_EQ(set_.findCameraByName("second"), 1U);
+    EXPECT_FALSE(set_.findCameraByName("third").has_value());
+}
+
 TEST_F(CDemonSetLoadTest, EachLightIsReadInTurn) {
     load({.lights = "1\n" + lightText("lamp", 2)});
     ASSERT_EQ(set_.getLights().size(), 1U);

@@ -40,7 +40,7 @@ TEST_F(CScriptStepTest, WhatACommandLeavesIsAnError) {
 }
 
 TEST_F(CScriptStepTest, ACommandWhoseCheckIsNotPortedQuitsNamingIt) {
-    expectQuit("playSfx(door)\n", "CScript::step's playSfx command is not ported yet");
+    expectQuit("say(line)\n", "CScript::step's say command is not ported yet");
 }
 
 TEST_F(CScriptStepTest, ALabelIsLettersDigitsAndUnderscores) {

@@ -82,6 +82,22 @@ Result checkCondition(CScript & /*script*/, SScriptStatement &statement) {
     return {};
 }
 
+// An event command: the whole line goes to the events, more commands after a ';' included.
+Result checkEventCommand(CScript & /*script*/, SScriptStatement &statement) {
+    statement.rest = {};
+    return statement.events.validateCommands(statement.line);
+}
+
+Result checkRaise(CScript & /*script*/, SScriptStatement &statement) {
+    const std::expected<std::string, std::string> commands =
+        parseArgument(statement.rest, kMaxShortArgument);
+    if (!commands) {
+        return std::unexpected(
+            std::format("Error parsing event expression on raise statament: {}", commands.error()));
+    }
+    return statement.events.validateCommands(*commands);
+}
+
 // "(group, condition)".
 Result checkEnableCameraGroup(CScript & /*script*/, SScriptStatement &statement) {
     int group = 0;
@@ -205,7 +221,7 @@ const CScript::SCommand *CScript::findCommand(std::string_view name) {
     static constexpr std::array kCommands{
         SCommand{.name = "addItemToInventory", .check = &checkAddItemToInventory},
         SCommand{.name = "addLightFilter", .check = &checkNotPorted},
-        SCommand{.name = "advanceLightFilter", .check = &checkNotPorted},
+        SCommand{.name = "advanceLightFilter", .check = &checkEventCommand},
         SCommand{.name = "allowEnemyAttack", .check = &checkCondition},
         SCommand{.name = "allowHeroControls", .check = &checkCondition},
         SCommand{.name = "allowHeroDamage", .check = &checkCondition},
@@ -217,28 +233,28 @@ const CScript::SCommand *CScript::findCommand(std::string_view name) {
         SCommand{.name = "cancelWalkTo", .check = &checkCancelWalkTo},
         SCommand{.name = "chainToMission", .check = &checkMissionName},
         SCommand{.name = "clearActorVariable", .check = &checkClearActorVariable},
-        SCommand{.name = "createExplosion", .check = &checkNotPorted},
+        SCommand{.name = "createExplosion", .check = &checkEventCommand},
         SCommand{.name = "dbSay", .check = &checkNotPorted},
         SCommand{.name = "dbStartSay", .check = &checkNotPorted},
         SCommand{.name = "debug", .check = &checkText},
-        SCommand{.name = "deleteActor", .check = &checkNotPorted},
+        SCommand{.name = "deleteActor", .check = &checkEventCommand},
         SCommand{.name = "dismember", .check = &checkNotPorted},
         SCommand{.name = "display", .check = &checkDisplay},
-        SCommand{.name = "displayBitmap", .check = &checkNotPorted},
+        SCommand{.name = "displayBitmap", .check = &checkEventCommand},
         SCommand{.name = "else", .check = &checkElse},
         SCommand{.name = "enableCamera", .check = &checkNotPorted},
         SCommand{.name = "enableCameraGroup", .check = &checkEnableCameraGroup},
         SCommand{.name = "enableHealthBar", .check = &checkEnableHealthBar},
         SCommand{.name = "end", .check = &checkNothing},
-        SCommand{.name = "fadeAmbientSound", .check = &checkNotPorted},
+        SCommand{.name = "fadeAmbientSound", .check = &checkEventCommand},
         SCommand{.name = "fadeIn", .check = &checkNothing},
         SCommand{.name = "fadeOut", .check = &checkNothing},
-        SCommand{.name = "fadeSfx", .check = &checkNotPorted},
+        SCommand{.name = "fadeSfx", .check = &checkEventCommand},
         SCommand{.name = "finishedAct", .check = &checkFinishedAct},
-        SCommand{.name = "flagOff", .check = &checkNotPorted},
-        SCommand{.name = "flagOn", .check = &checkNotPorted},
-        SCommand{.name = "gameFlagOff", .check = &checkNotPorted},
-        SCommand{.name = "gameFlagOn", .check = &checkNotPorted},
+        SCommand{.name = "flagOff", .check = &checkEventCommand},
+        SCommand{.name = "flagOn", .check = &checkEventCommand},
+        SCommand{.name = "gameFlagOff", .check = &checkEventCommand},
+        SCommand{.name = "gameFlagOn", .check = &checkEventCommand},
         SCommand{.name = "gesture", .check = &checkNotPorted},
         SCommand{.name = "getIniInt", .check = &checkGetIniInt},
         SCommand{.name = "getTriggerActor", .check = &checkGetTriggerActor},
@@ -246,22 +262,22 @@ const CScript::SCommand *CScript::findCommand(std::string_view name) {
         SCommand{.name = "goto", .check = &checkJumpLabel},
         SCommand{.name = "gtfo", .check = &checkText},
         SCommand{.name = "holsterWeapon", .check = &checkHolsterWeapon},
-        SCommand{.name = "hurtCharacter", .check = &checkNotPorted},
+        SCommand{.name = "hurtCharacter", .check = &checkEventCommand},
         SCommand{.name = "idle", .check = &checkNothing},
         SCommand{.name = "if", .check = &checkCondition},
-        SCommand{.name = "incCounter", .check = &checkNotPorted},
-        SCommand{.name = "killCharacter", .check = &checkNotPorted},
-        SCommand{.name = "killHero", .check = &checkNotPorted},
-        SCommand{.name = "killSfx", .check = &checkNotPorted},
+        SCommand{.name = "incCounter", .check = &checkEventCommand},
+        SCommand{.name = "killCharacter", .check = &checkEventCommand},
+        SCommand{.name = "killHero", .check = &checkEventCommand},
+        SCommand{.name = "killSfx", .check = &checkEventCommand},
         SCommand{.name = "letterbox", .check = &checkLetterbox},
-        SCommand{.name = "lightning", .check = &checkNotPorted},
+        SCommand{.name = "lightning", .check = &checkEventCommand},
         SCommand{.name = "lockFocusActor", .check = &checkCondition},
         SCommand{.name = "lookAt", .check = &checkLookAt},
         SCommand{.name = "movePlatform", .check = &checkMovePlatform},
         SCommand{.name = "openDoor", .check = &checkOpenDoor},
-        SCommand{.name = "playSfx", .check = &checkNotPorted},
+        SCommand{.name = "playSfx", .check = &checkEventCommand},
         SCommand{.name = "pressButton", .check = &checkNotPorted},
-        SCommand{.name = "raise", .check = &checkNotPorted},
+        SCommand{.name = "raise", .check = &checkRaise},
         SCommand{.name = "releaseButton", .check = &checkNotPorted},
         SCommand{.name = "removeAllItemsFromInventory", .check = &checkRemoveAllItemsFromInventory},
         SCommand{.name = "removeItemFromInventory", .check = &checkRemoveItemFromInventory},
@@ -272,26 +288,26 @@ const CScript::SCommand *CScript::findCommand(std::string_view name) {
         SCommand{.name = "selectWeapon", .check = &checkSelectWeapon},
         SCommand{.name = "setActorVariable", .check = &checkSetActorVariable},
         SCommand{.name = "setAmbientSound", .check = &checkShortArgument},
-        SCommand{.name = "setCameraAmbient", .check = &checkNotPorted},
+        SCommand{.name = "setCameraAmbient", .check = &checkEventCommand},
         SCommand{.name = "setCameraGroup", .check = &checkNotPorted},
         SCommand{.name = "setCharacterHealth", .check = &checkSetCharacterHealth},
-        SCommand{.name = "setCounter", .check = &checkNotPorted},
+        SCommand{.name = "setCounter", .check = &checkEventCommand},
         SCommand{.name = "setFocusActor", .check = &checkSetFocusActor},
-        SCommand{.name = "setGroupAmbient", .check = &checkNotPorted},
+        SCommand{.name = "setGroupAmbient", .check = &checkEventCommand},
         SCommand{.name = "setHeroTask", .check = &checkSetHeroTask},
         SCommand{.name = "setIniInt", .check = &checkSetIniInt},
-        SCommand{.name = "setLeverState", .check = &checkNotPorted},
-        SCommand{.name = "setLightFilterFrame", .check = &checkNotPorted},
-        SCommand{.name = "setModelState", .check = &checkNotPorted},
+        SCommand{.name = "setLeverState", .check = &checkEventCommand},
+        SCommand{.name = "setLightFilterFrame", .check = &checkEventCommand},
+        SCommand{.name = "setModelState", .check = &checkEventCommand},
         SCommand{.name = "setSayTimeOverride", .check = &checkSetSayTimeOverride},
         SCommand{.name = "setSkipLabel", .check = &checkSetSkipLabel},
         SCommand{.name = "setSpeaker", .check = &checkSetSpeaker},
         SCommand{.name = "setTimeFactor", .check = &checkSetTimeFactor},
-        SCommand{.name = "setTimer", .check = &checkNotPorted},
+        SCommand{.name = "setTimer", .check = &checkEventCommand},
         SCommand{.name = "setVictim", .check = &checkSetVictim},
-        SCommand{.name = "setWeather", .check = &checkNotPorted},
-        SCommand{.name = "shakeScreen", .check = &checkNotPorted},
-        SCommand{.name = "slamModelToMotion", .check = &checkNotPorted},
+        SCommand{.name = "setWeather", .check = &checkEventCommand},
+        SCommand{.name = "shakeScreen", .check = &checkEventCommand},
+        SCommand{.name = "slamModelToMotion", .check = &checkEventCommand},
         SCommand{.name = "snapToFace", .check = &checkSnapToFace},
         SCommand{.name = "startSay", .check = &checkNotPorted},
         SCommand{.name = "switchCamera", .check = &checkNotPorted},
@@ -300,7 +316,7 @@ const CScript::SCommand *CScript::findCommand(std::string_view name) {
         SCommand{.name = "wait", .check = &checkWait},
         SCommand{.name = "waitFor", .check = &checkCondition},
         SCommand{.name = "walkTo", .check = &checkWalkTo},
-        SCommand{.name = "warpTo", .check = &checkNotPorted},
+        SCommand{.name = "warpTo", .check = &checkEventCommand},
     };
     const auto *command = std::ranges::find_if(kCommands, [name](const SCommand &candidate) {
         return common::equalsIgnoringAsciiCase(candidate.name, name);
