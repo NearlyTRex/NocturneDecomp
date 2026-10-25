@@ -11,7 +11,7 @@ namespace message_support {
 std::string last;
 int shown = 0;
 
-}  // namespace message_support
+} // namespace message_support
 
 extern "C" int message_support_SDL_ShowSimpleMessageBox(Uint32, const char *, const char *message,
                                                         SDL_Window *) {

@@ -6,11 +6,10 @@
 // can trap floating-point exceptions, and whether the platform has a crash
 // filter to install.
 
-#include "nocturne_test.h"
-
 #include "core/crash_report.h"
 #include "core/fpu_trap.h"
 #include "core/heap_report.h"
+#include "nocturne_test.h"
 #include "shim_config.h"
 
 #include <cstring>

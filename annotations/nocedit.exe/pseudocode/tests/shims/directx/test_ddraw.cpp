@@ -10,20 +10,18 @@
 // it all leaves nothing behind. Each case calls through the game's own
 // vtables, on SDL's dummy video driver.
 
-#include "nocturne_test.h"
-#include "directx_support.h"
-
 #include "config/shim_config_video.h"
 #include "directx/ddraw.h"
+#include "directx_support.h"
 #include "gl/window_mode.h"
 #include "globals/globals_610000.h"
+#include "nocturne_test.h"
 #include "system/ddraw.h"
 #include "win32/shim_init.h"
 
 // The test's own main(), which SDL would otherwise rename on Windows.
 #define SDL_MAIN_HANDLED
 #include <SDL.h>
-
 #include <cstdint>
 #include <cstring>
 #include <string>
@@ -72,7 +70,8 @@ struct Screen {
         CHECK_EQ((*g_DirectDrawCreateFunc)(nullptr, &ddraw, nullptr), kOk);
     }
     ~Screen() {
-        if (ddraw != nullptr) release(ddraw);
+        if (ddraw != nullptr)
+            release(ddraw);
         SDL_DestroyWindow(g_sdlWindow);
         g_sdlWindow = nullptr;
         SDL_QuitSubSystem(SDL_INIT_VIDEO);
@@ -102,10 +101,10 @@ struct Screen {
         DDSURFACEDESC desc;
         memset(&desc, 0, sizeof(desc));
         desc.dwSize = sizeof(desc);
-        desc.dwFlags = 0x7;   // DDSD_CAPS | DDSD_HEIGHT | DDSD_WIDTH
+        desc.dwFlags = 0x7; // DDSD_CAPS | DDSD_HEIGHT | DDSD_WIDTH
         desc.dwWidth = (DWORD)width;
         desc.dwHeight = (DWORD)height;
-        desc.ddsCaps.dwCaps = 0x40;   // DDSCAPS_OFFSCREENPLAIN
+        desc.ddsCaps.dwCaps = 0x40; // DDSCAPS_OFFSCREENPLAIN
         return create(&desc, surface);
     }
 };
@@ -129,7 +128,7 @@ DDSURFACEDESC draw(IDirectDrawSurface *surface, uint32_t pixel) {
     return desc;
 }
 
-}  // namespace
+} // namespace
 
 // -----------------------------------------------------------------------------
 // Coming up
@@ -141,9 +140,9 @@ DDSURFACEDESC draw(IDirectDrawSurface *surface, uint32_t pixel) {
 NOCTURNE_TEST(the_screen_comes_up_through_gl_and_a_flip_shows_the_back_buffer) {
     Screen screen;
     stand.gl_init = 1;
-    CHECK_EQ((*screen.ddraw->vtable->SetCooperativeLevel)(screen.ddraw, (HWND)1,
-                                                          kFullscreenExclusive),
-             kOk);
+    CHECK_EQ(
+        (*screen.ddraw->vtable->SetCooperativeLevel)(screen.ddraw, (HWND)1, kFullscreenExclusive),
+        kOk);
     CHECK_EQ(screen.set_mode(320, 240, 32), kOk);
     int w = 0, h = 0;
     SDL_GetWindowSize(g_sdlWindow, &w, &h);
@@ -165,7 +164,7 @@ NOCTURNE_TEST(the_screen_comes_up_through_gl_and_a_flip_shows_the_back_buffer) {
     CHECK_EQ(desc.dwHeight, 240u);
     CHECK_EQ(desc.dwPitchOrLinearSize.lPitch, 320 * 4);
     CHECK_EQ(desc.ddpfPixelFormat.dwBitCount.dwRGBBitCount, 32u);
-    CHECK_EQ(stand.presents, 0);   // a back buffer is not the screen
+    CHECK_EQ(stand.presents, 0); // a back buffer is not the screen
 
     CHECK_EQ((*primary->vtable->Flip)(primary, nullptr, 1), kOk);
     CHECK_EQ(stand.presents, 1);
@@ -253,10 +252,10 @@ NOCTURNE_TEST(a_later_mode_resizes_only_when_the_size_changes) {
         CHECK_EQ(w, 800);
         CHECK_EQ(h, 600);
 
-        CHECK_EQ(screen.set_mode(320, 240, 32), kOk);   // the same window size
+        CHECK_EQ(screen.set_mode(320, 240, 32), kOk); // the same window size
         SDL_GetWindowSize(g_sdlWindow, &w, &h);
         CHECK_EQ(w, 800);
-        stand.preferred_height = 700;                   // the height alone
+        stand.preferred_height = 700; // the height alone
         CHECK_EQ(screen.set_mode(320, 240, 32), kOk);
         SDL_GetWindowSize(g_sdlWindow, &w, &h);
         CHECK_EQ(h, 700);
@@ -358,8 +357,8 @@ NOCTURNE_TEST(a_surface_is_in_the_modes_pixel_format) {
         DWORD red;
         LONG pitch;
     };
-    for (const Format &f : {Format{16, 0xf800, 64}, Format{24, 0xff0000, 96},
-                            Format{32, 0xff0000, 128}}) {
+    for (const Format &f :
+         {Format{16, 0xf800, 64}, Format{24, 0xff0000, 96}, Format{32, 0xff0000, 128}}) {
         CHECK_EQ(screen.set_mode(32, 16, f.bpp), kOk);
         IDirectDrawSurface *primary = nullptr;
         CHECK_EQ(screen.flip_chain(&primary), kOk);
@@ -390,7 +389,7 @@ NOCTURNE_TEST(only_a_complex_flipping_primary_has_a_back_buffer) {
     Screen screen;
     stand.gl_init = 1;
     screen.set_mode(32, 16, 32);
-    for (DWORD caps : {0x200u, 0x208u, 0x210u}) {   // primary; + complex; + flip
+    for (DWORD caps : {0x200u, 0x208u, 0x210u}) { // primary; + complex; + flip
         IDirectDrawSurface *primary = nullptr;
         CHECK_EQ(screen.flip_chain(&primary, caps), kOk);
         DDSCAPS back_caps = {kBackBufferCaps};
@@ -419,8 +418,8 @@ NOCTURNE_TEST(a_flip_shows_the_surface_it_is_told_to) {
     CHECK_EQ((*primary->vtable->Flip)(primary, own, 1), kOk);
     Uint32 shown = 0;
     SDL_Rect corner = {0, 0, 1, 1};
-    SDL_RenderReadPixels(nocturne_ddraw_present_renderer(), &corner, SDL_PIXELFORMAT_RGB888,
-                         &shown, 4);
+    SDL_RenderReadPixels(nocturne_ddraw_present_renderer(), &corner, SDL_PIXELFORMAT_RGB888, &shown,
+                         4);
     CHECK_EQ(shown & 0x00ffffffu, 0x000000ffu);
 
     // Drawn through GL, a surface made before it is shown the same way.
@@ -448,8 +447,7 @@ NOCTURNE_TEST(palettes_and_restores_succeed) {
     stand.gl_init = 1;
     screen.set_mode(32, 16, 32);
     IDirectDrawPalette *palette = nullptr;
-    CHECK_EQ((*screen.ddraw->vtable->CreatePalette)(screen.ddraw, 0x44, nullptr, &palette,
-                                                    nullptr),
+    CHECK_EQ((*screen.ddraw->vtable->CreatePalette)(screen.ddraw, 0x44, nullptr, &palette, nullptr),
              kOk);
     CHECK(palette != nullptr);
     IDirectDrawSurface *primary = nullptr;

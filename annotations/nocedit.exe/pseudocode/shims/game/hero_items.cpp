@@ -1,19 +1,18 @@
 #include "game/hero_items.h"
+
 #include "nocturne.h"
 
 namespace {
 
 // CScat::process and CIcePick::process already call updateInventory.
-int ticks_own_inventory(CHero *hero)
-{
-    return (core_actor_cpp_castToClassHash_FUN_0040c790
-                ((CDemonActor *)hero, g_CScatClassInfo.name_hash) != (void *)0x0) ||
-           (core_actor_cpp_castToClassHash_FUN_0040c790
-                ((CDemonActor *)hero, g_CIcePickClassInfo.name_hash) != (void *)0x0);
+int ticks_own_inventory(CHero *hero) {
+    return (core_actor_cpp_castToClassHash_FUN_0040c790(
+                (CDemonActor *)hero, g_CScatClassInfo.name_hash) != (void *)0x0) ||
+           (core_actor_cpp_castToClassHash_FUN_0040c790(
+                (CDemonActor *)hero, g_CIcePickClassInfo.name_hash) != (void *)0x0);
 }
 
-int auto_use_health(void)
-{
+int auto_use_health(void) {
 #if !NOCTURNE_AUTHENTIC_NETPLAY
     return nocturne_net_cheats_auto_use_health();
 #else
@@ -23,8 +22,7 @@ int auto_use_health(void)
 
 } // namespace
 
-extern "C" void nocturne_hero_items_process(CHero *hero)
-{
+extern "C" void nocturne_hero_items_process(CHero *hero) {
     CDemonActor *selected;
     EDeathState death_state;
 
@@ -51,8 +49,7 @@ extern "C" void nocturne_hero_items_process(CHero *hero)
     (hero->player_input).action_state.use_item = 0;
 }
 
-extern "C" float nocturne_hero_items_damage_taken(CHero *hero, SDamageInfo *damage_info)
-{
+extern "C" float nocturne_hero_items_damage_taken(CHero *hero, SDamageInfo *damage_info) {
     if (nocturne_hero_is_player(hero) == 0) {
         return (hero->base).hit_points;
     }

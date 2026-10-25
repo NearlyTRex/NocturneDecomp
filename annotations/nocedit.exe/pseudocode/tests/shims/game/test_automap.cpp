@@ -7,10 +7,9 @@
 // its controls do, and what it draws are read back from the stand-ins: every
 // line through clipAndDrawLine, every word through nocturne_ui_draw_text.
 
-#include "nocturne_test.h"
-
 #include "automap_support.h"
 #include "game/automap.h"
+#include "nocturne_test.h"
 #include "system/crt.h"
 
 #include <algorithm>
@@ -23,7 +22,7 @@ using namespace automap_support;
 
 namespace {
 
-const int kMapKey = 0x32;     // DIK_M, the map's default binding
+const int kMapKey = 0x32; // DIK_M, the map's default binding
 const int kMargin = 24;
 
 // Palette entries the map's colours land on, at 32bpp.
@@ -32,18 +31,19 @@ const int kWall = 1, kPlayer = 3, kDoorOpen = 6, kDoorFree = 7, kDoorLocked = 8,
 
 void palette() {
     const int rgb[][3] = {
-        {0, 0, 0},       {170, 205, 235}, {74, 92, 116},  {255, 64, 48},  {10, 10, 14},
-        {255, 220, 200}, {110, 130, 110}, {60, 220, 90},  {235, 60, 55},  {90, 170, 255},
+        {0, 0, 0},       {170, 205, 235}, {74, 92, 116},  {255, 64, 48},   {10, 10, 14},
+        {255, 220, 200}, {110, 130, 110}, {60, 220, 90},  {235, 60, 55},   {90, 170, 255},
         {250, 200, 60},  {255, 60, 130},  {90, 235, 215}, {205, 125, 240}, {150, 45, 45},
-        {198, 168, 124},  // dirt, the second wall's material
-        {255, 140, 20},   // a door that opens one way
+        {198, 168, 124}, // dirt, the second wall's material
+        {255, 140, 20},  // a door that opens one way
     };
     const int count = (int)(sizeof(rgb) / sizeof(rgb[0]));
     for (int i = 0; i < count; i++) {
         g_ColorTable32[i] = (uint)((rgb[i][0] << 16) | (rgb[i][1] << 8) | rgb[i][2]);
     }
     // Everything else far from all of them.
-    for (int i = count; i < 256; i++) g_ColorTable32[i] = 0x808000u;
+    for (int i = count; i < 256; i++)
+        g_ColorTable32[i] = 0x808000u;
 }
 
 // A 4 x 2 x 4 level of 10-unit cubes, a wall along each of two cubes on the
@@ -63,7 +63,9 @@ Level *level() {
 // leaves in the fog, and still inside the map window.
 const CVector3f kInTheFog = {5.0f, 0.0f, 10.5f};
 
-bool past_z9(const CVector3f &, const CVector3f &to) { return to.z > 9.0f; }
+bool past_z9(const CVector3f &, const CVector3f &to) {
+    return to.z > 9.0f;
+}
 
 void start() {
     stand.reset();
@@ -78,7 +80,9 @@ void press(int code) {
     nocturne_automap_update();
 }
 
-void open_map() { press(kMapKey); }
+void open_map() {
+    press(kMapKey);
+}
 
 void frame() {
     stand.lines.clear();
@@ -93,9 +97,11 @@ Line window() {
 }
 
 // Which colours any line was drawn in.
-bool drew(int color) { return !lines_in(color).empty(); }
+bool drew(int color) {
+    return !lines_in(color).empty();
+}
 
-}  // namespace
+} // namespace
 
 // -----------------------------------------------------------------------------
 // What is taken from the level
@@ -343,7 +349,8 @@ NOCTURNE_TEST(a_binding_off_the_table_is_never_down) {
 int player_x() {
     frame();
     const std::vector<Line> body = lines_in(kPlayer);
-    if (body.empty()) return 0;
+    if (body.empty())
+        return 0;
     int lo = body[0].x1, hi = body[0].x2;
     for (const Line &l : body) {
         lo = std::min(lo, l.x1);
@@ -447,9 +454,11 @@ NOCTURNE_TEST(panning_stops_at_the_edges_of_the_level) {
         press(g_CGamePtr->key_run);
         stand.axes[0] = push[0];
         stand.axes[1] = push[1];
-        for (int i = 0; i < 100; i++) nocturne_automap_update();
+        for (int i = 0; i < 100; i++)
+            nocturne_automap_update();
         const int x = player_x(), y = player_y();
-        for (int i = 0; i < 10; i++) nocturne_automap_update();
+        for (int i = 0; i < 10; i++)
+            nocturne_automap_update();
         CHECK_EQ(player_x(), x);
         CHECK_EQ(player_y(), y);
     }
@@ -463,11 +472,13 @@ NOCTURNE_TEST(the_zoom_is_held_between_limits_and_kept) {
     *nocturne_automap_zoom_setting() = 320;
     open_map();
     hold(g_CGamePtr->key_next_weapon);
-    for (int i = 0; i < 100; i++) nocturne_automap_update();
+    for (int i = 0; i < 100; i++)
+        nocturne_automap_update();
     hold(g_CGamePtr->key_next_weapon, false);
     CHECK_EQ(*nocturne_automap_zoom_setting(), 800);
     hold(g_CGamePtr->key_prev_weapon);
-    for (int i = 0; i < 100; i++) nocturne_automap_update();
+    for (int i = 0; i < 100; i++)
+        nocturne_automap_update();
     hold(g_CGamePtr->key_prev_weapon, false);
     CHECK_EQ(*nocturne_automap_zoom_setting(), 50);
 
@@ -490,16 +501,18 @@ NOCTURNE_TEST(the_other_storeys_are_brightened_and_dimmed) {
     frame();
     const size_t at_half = stand.lines.size();
 
-    stand.axes[4] = 0.05f;     // resting, under the deadzone
+    stand.axes[4] = 0.05f; // resting, under the deadzone
     stand.axes[5] = 0.05f;
     hold(g_CGamePtr->key_draw);
-    for (int i = 0; i < 20; i++) nocturne_automap_update();
+    for (int i = 0; i < 20; i++)
+        nocturne_automap_update();
     hold(g_CGamePtr->key_draw, false);
     frame();
     CHECK(stand.lines.size() < at_half);
 
     stand.axes[5] = 1.0f;
-    for (int i = 0; i < 20; i++) nocturne_automap_update();
+    for (int i = 0; i < 20; i++)
+        nocturne_automap_update();
     stand.axes[5] = 0.0f;
     frame();
     CHECK_EQ(stand.lines.size(), at_half);
@@ -508,12 +521,14 @@ NOCTURNE_TEST(the_other_storeys_are_brightened_and_dimmed) {
     nocturne_automap_update();
     hold(g_CGamePtr->key_fire, false);
     stand.axes[4] = 1.0f;
-    for (int i = 0; i < 20; i++) nocturne_automap_update();
+    for (int i = 0; i < 20; i++)
+        nocturne_automap_update();
     stand.axes[4] = 0.0f;
     frame();
     CHECK(stand.lines.size() < at_half);
     stand.axes[5] = 1.0f;
-    for (int i = 0; i < 6; i++) nocturne_automap_update();
+    for (int i = 0; i < 6; i++)
+        nocturne_automap_update();
     stand.axes[5] = 0.0f;
 }
 
@@ -601,8 +616,10 @@ NOCTURNE_TEST(the_legend_swaps_with_the_heading_without_moving_the_map) {
             int right = 0;
             const Text *first = nullptr;
             for (const Text &t : stand.texts) {
-                if (t.y != row) continue;
-                if (first == nullptr) first = &t;
+                if (t.y != row)
+                    continue;
+                if (first == nullptr)
+                    first = &t;
                 right = t.x + (int)t.text.size() * stand.char_w;
             }
             // The first item's swatch is a ring of radius 7, or a box of 5.
@@ -683,7 +700,8 @@ NOCTURNE_TEST(the_controls_are_named_below_the_map) {
     stand.key_names[10] = "";
     open_map();
     frame();
-    CHECK(text_starting("Left Stick") != nullptr && text_starting("Left Stick")->text == "Left Stick");
+    CHECK(text_starting("Left Stick") != nullptr &&
+          text_starting("Left Stick")->text == "Left Stick");
     CHECK(text_starting("Pad B") != nullptr);
     CHECK(text_starting("RT") != nullptr);
 
@@ -701,7 +719,7 @@ NOCTURNE_TEST(the_controls_are_named_below_the_map) {
 // than the key's swatches sets the height of its rows.
 NOCTURNE_TEST(the_bands_follow_the_font) {
     start();
-    stand.char_w = 5;   // the key on one row
+    stand.char_w = 5; // the key on one row
     stand.text_h = 0;
     open_map();
     frame();
@@ -769,7 +787,8 @@ NOCTURNE_TEST(the_level_is_fitted_into_the_window) {
     // Zoom 1 is the 60-unit width across the 252 pixels the window has.
     const std::vector<Line> walls = lines_in(kWall);
     CHECK(!walls.empty());
-    if (!walls.empty()) CHECK_EQ(walls[0].x2 - walls[0].x1, 42);
+    if (!walls.empty())
+        CHECK_EQ(walls[0].x2 - walls[0].x1, 42);
     *nocturne_automap_zoom_setting() = 320;
 }
 
@@ -834,8 +853,8 @@ NOCTURNE_TEST(nothing_is_drawn_without_room_or_a_player) {
 // has no direction on the floor.
 NOCTURNE_TEST(the_player_shows_which_way_he_faces) {
     const CVector3f facings[] = {
-        {0, 0, 1}, {0, 0, -1}, {1, 0, 0}, {-1, 0, 0}, {1, 0, 1}, {-1, 0, -1}, {1, 0, -2},
-        {-2, 0, 1},
+        {0, 0, 1}, {0, 0, -1},  {1, 0, 0},  {-1, 0, 0},
+        {1, 0, 1}, {-1, 0, -1}, {1, 0, -2}, {-2, 0, 1},
     };
     for (const CVector3f &f : facings) {
         start();
@@ -953,7 +972,8 @@ NOCTURNE_TEST(characters_are_drawn_by_who_they_are) {
     place(actor(1), &g_CCharacterClassInfo, CVector3f{8.0f, 0.0f, 8.0f});
     place(actor(2), &g_CHeroClassInfo, CVector3f{3.0f, 0.0f, 8.0f});
     place(actor(3), &unregistered_type, CVector3f{1.0f, 0.0f, 3.0f});
-    for (int i = 0; i < 4; i++) ((CCharacter *)actor(i))->hit_points = 10.0f;
+    for (int i = 0; i < 4; i++)
+        ((CCharacter *)actor(i))->hit_points = 10.0f;
     place(actor(4), &g_CCharacterClassInfo, CVector3f{2.0f, 0.0f, 2.0f});
     open_map();
     frame();
@@ -992,7 +1012,7 @@ NOCTURNE_TEST(a_friend_in_the_fog_is_not_drawn) {
 // own list holds no more than it has room for.
 NOCTURNE_TEST(markers_off_the_storey_or_the_window_are_not_drawn) {
     start();
-    const CVector3f off[] = {{5, 15, 5},  {5, -5, 5},  {20, 0, 5},
+    const CVector3f off[] = {{5, 15, 5},  {5, -5, 5}, {20, 0, 5},
                              {-10, 0, 5}, {5, 0, 20}, {5, 0, -10}};
     for (int i = 0; i < 6; i++) {
         place(actor(i), &g_CCharacterClassInfo, off[i]);
@@ -1014,7 +1034,7 @@ NOCTURNE_TEST(a_friend_outside_the_grid_is_not_drawn) {
         hero->base.base.location.position = CVector3f{20.0f, floor, 20.0f};
         // A cube index truncates toward zero, so "outside" below the grid
         // starts a whole cell past its edge.
-        const CVector3f out[] = {{-11, floor, 20}, {41, floor, 20}, {20, floor - 1.5f, 20},
+        const CVector3f out[] = {{-11, floor, 20},    {41, floor, 20},  {20, floor - 1.5f, 20},
                                  {20, floor + 6, 20}, {20, floor, -11}, {20, floor, 41}};
         for (int i = 0; i < 6; i++) {
             place(actor(i), &g_CCharacterClassInfo, out[i]);
@@ -1065,7 +1085,8 @@ NOCTURNE_TEST(teammates_are_drawn_once) {
         {"off the top", [] { mate->base.base.location.position.z = 20.0f; }},
         {"off the bottom", [] { mate->base.base.location.position.z = -10.0f; }},
         {"in the fog", [] { mate->base.base.location.position = kInTheFog; }},
-        {"local", [] {
+        {"local",
+         [] {
              g_HeroActors[0] = nullptr;
              g_LocalHeroIndex = 1;
              stand.local = mate;
@@ -1101,7 +1122,8 @@ std::string read_file() {
     FILE *f = std::fopen(kSave, "r");
     std::string text;
     char buffer[256];
-    while (std::fgets(buffer, sizeof(buffer), f) != nullptr) text += buffer;
+    while (std::fgets(buffer, sizeof(buffer), f) != nullptr)
+        text += buffer;
     std::fclose(f);
     return text;
 }
@@ -1117,7 +1139,7 @@ void load() {
     nocturne_automap_load(f);
     _fclose(f);
 }
-}  // namespace
+} // namespace
 
 // What has been explored goes into the save and comes back on the same level.
 NOCTURNE_TEST(what_is_explored_survives_a_save) {
@@ -1159,7 +1181,8 @@ NOCTURNE_TEST(what_is_explored_survives_a_save) {
 NOCTURNE_TEST(a_long_pattern_is_written_in_lines) {
     start();
     std::string text = "Automap\n.GEO\n4,2,4,1\n";
-    for (int i = 0; i < 40; i++) text += "1 ";
+    for (int i = 0; i < 40; i++)
+        text += "1 ";
     text += "100\n";
     write_file(text.c_str());
     std::snprintf(g_CDemonSetInstance.geometry_filename,

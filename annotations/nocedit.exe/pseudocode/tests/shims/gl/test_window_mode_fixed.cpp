@@ -6,11 +6,10 @@
 // written, and the window is neither sized nor taken in or out of fullscreen.
 // A run of its own, since the mode is read once (see window_stand.h).
 
-#include "nocturne_test.h"
-#include "ini_support.h"
-#include "window_stand.h"
-
 #include "gl/window_mode.h"
+#include "ini_support.h"
+#include "nocturne_test.h"
+#include "window_stand.h"
 
 NOCTURNE_TEST(a_fixed_display_is_borderless_and_left_alone) {
     window_stand::enter_game_directory("nocturne_window_mode_fixed_test");

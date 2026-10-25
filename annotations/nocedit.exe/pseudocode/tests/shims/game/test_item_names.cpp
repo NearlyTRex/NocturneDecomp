@@ -2,10 +2,9 @@
 // ITEM NAMES — an item found by name, carried or not
 // =============================================================================
 
-#include "nocturne_test.h"
-
 #include "game/item_names.h"
 #include "game_support.h"
+#include "nocturne_test.h"
 
 #include <cstdio>
 #include <memory>
@@ -18,7 +17,7 @@ void name(CDemonActor *actor, const char *text) {
     std::snprintf(actor->actor_name, sizeof(actor->actor_name), "%s", text);
 }
 
-}  // namespace
+} // namespace
 
 // The mission's own lookup answers first; past that, an item a hero carries is
 // found by its name, whatever its case. Actors that are not heroes carry

@@ -50,7 +50,7 @@ static void win32_socket_init(void) {
  * handle space, the same reason a SOCKET has always survived a round trip
  * through a BSD-shaped int -- but it is a truncation, so it is spelled out
  * rather than left to an implicit conversion. */
-#define SOCK(fd)  ((SOCKET)(UINT_PTR)(unsigned int)(fd))
+#define SOCK(fd) ((SOCKET)(UINT_PTR)(unsigned int)(fd))
 #define UNSOCK(s) ((int)(unsigned int)(UINT_PTR)(s))
 
 int nocturne_socket_socket(int domain, int type, int protocol) {
@@ -58,25 +58,27 @@ int nocturne_socket_socket(int domain, int type, int protocol) {
     return UNSOCK(socket(domain, type, protocol));
 }
 
-int nocturne_socket_accept(int sockfd, struct sockaddr* addr, unsigned int* addrlen) {
+int nocturne_socket_accept(int sockfd, struct sockaddr *addr, unsigned int *addrlen) {
     int len = addrlen ? (int)*addrlen : 0;
     SOCKET s = accept(SOCK(sockfd), addr, addrlen ? &len : NULL);
-    if (addrlen) *addrlen = (unsigned int)len;
+    if (addrlen)
+        *addrlen = (unsigned int)len;
     return UNSOCK(s);
 }
 
-int nocturne_socket_bind(int sockfd, const struct sockaddr* addr, unsigned int addrlen) {
+int nocturne_socket_bind(int sockfd, const struct sockaddr *addr, unsigned int addrlen) {
     return bind(SOCK(sockfd), addr, (int)addrlen);
 }
 
-int nocturne_socket_connect(int sockfd, const struct sockaddr* addr, unsigned int addrlen) {
+int nocturne_socket_connect(int sockfd, const struct sockaddr *addr, unsigned int addrlen) {
     return connect(SOCK(sockfd), addr, (int)addrlen);
 }
 
-int nocturne_socket_getsockname(int sockfd, struct sockaddr* addr, unsigned int* addrlen) {
+int nocturne_socket_getsockname(int sockfd, struct sockaddr *addr, unsigned int *addrlen) {
     int len = addrlen ? (int)*addrlen : 0;
     int rc = getsockname(SOCK(sockfd), addr, addrlen ? &len : NULL);
-    if (addrlen) *addrlen = (unsigned int)len;
+    if (addrlen)
+        *addrlen = (unsigned int)len;
     return rc;
 }
 
@@ -84,33 +86,31 @@ int nocturne_socket_listen(int sockfd, int backlog) {
     return listen(SOCK(sockfd), backlog);
 }
 
-int nocturne_socket_recv(int sockfd, void* buf, unsigned long len, int flags) {
-    return recv(SOCK(sockfd), (char*)buf, (int)len, flags);
+int nocturne_socket_recv(int sockfd, void *buf, unsigned long len, int flags) {
+    return recv(SOCK(sockfd), (char *)buf, (int)len, flags);
 }
 
-int nocturne_socket_recvfrom(int sockfd, void* buf, unsigned long len, int flags,
-                   struct sockaddr* from, unsigned int* fromlen) {
+int nocturne_socket_recvfrom(int sockfd, void *buf, unsigned long len, int flags,
+                             struct sockaddr *from, unsigned int *fromlen) {
     int flen = fromlen ? (int)*fromlen : 0;
-    int rc = recvfrom(SOCK(sockfd), (char*)buf, (int)len, flags,
-                      from, fromlen ? &flen : NULL);
-    if (fromlen) *fromlen = (unsigned int)flen;
+    int rc = recvfrom(SOCK(sockfd), (char *)buf, (int)len, flags, from, fromlen ? &flen : NULL);
+    if (fromlen)
+        *fromlen = (unsigned int)flen;
     return rc;
 }
 
-int nocturne_socket_send(int sockfd, const void* buf, unsigned long len, int flags) {
-    return send(SOCK(sockfd), (const char*)buf, (int)len, flags);
+int nocturne_socket_send(int sockfd, const void *buf, unsigned long len, int flags) {
+    return send(SOCK(sockfd), (const char *)buf, (int)len, flags);
 }
 
-int nocturne_socket_sendto(int sockfd, const void* buf, unsigned long len, int flags,
-                 const struct sockaddr* to, unsigned int tolen) {
-    return sendto(SOCK(sockfd), (const char*)buf, (int)len, flags,
-                  to, (int)tolen);
+int nocturne_socket_sendto(int sockfd, const void *buf, unsigned long len, int flags,
+                           const struct sockaddr *to, unsigned int tolen) {
+    return sendto(SOCK(sockfd), (const char *)buf, (int)len, flags, to, (int)tolen);
 }
 
-int nocturne_socket_setsockopt(int sockfd, int level, int optname,
-                     const void* optval, unsigned int optlen) {
-    return setsockopt(SOCK(sockfd), level, optname,
-                      (const char*)optval, (int)optlen);
+int nocturne_socket_setsockopt(int sockfd, int level, int optname, const void *optval,
+                               unsigned int optlen) {
+    return setsockopt(SOCK(sockfd), level, optname, (const char *)optval, (int)optlen);
 }
 
 int nocturne_socket_shutdown(int sockfd, int how) {
@@ -121,29 +121,29 @@ int nocturne_socket_close(int fd) {
     return closesocket(SOCK(fd));
 }
 
-int nocturne_socket_ioctl(int fd, unsigned long request, void* argp) {
+int nocturne_socket_ioctl(int fd, unsigned long request, void *argp) {
     /* The FIONBIO the caller tests for is 0x8004667E, which is the value
      * Winsock uses as well -- the encoding came from BSD -- so the request
      * passes straight through and needs no translation. There is no fcntl
      * path here because ioctlsocket sets non-blocking mode directly. */
-    return ioctlsocket(SOCK(fd), (long)request, (u_long*)argp);
+    return ioctlsocket(SOCK(fd), (long)request, (u_long *)argp);
 }
 
-struct hostent* nocturne_socket_gethostbyname(const char* name) {
+struct hostent *nocturne_socket_gethostbyname(const char *name) {
     win32_socket_init();
     return gethostbyname(name);
 }
 
-unsigned long nocturne_socket_inet_addr(const char* cp) {
+unsigned long nocturne_socket_inet_addr(const char *cp) {
     return (unsigned long)inet_addr(cp);
 }
 
-int nocturne_socket_gethostname(char* name, unsigned long namelen) {
+int nocturne_socket_gethostname(char *name, unsigned long namelen) {
     win32_socket_init();
     return gethostname(name, (int)namelen);
 }
 
-struct servent* nocturne_socket_getservbyport(int port, const char* proto) {
+struct servent *nocturne_socket_getservbyport(int port, const char *proto) {
     win32_socket_init();
     return getservbyport(port, proto);
 }

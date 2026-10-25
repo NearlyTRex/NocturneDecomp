@@ -2,10 +2,9 @@
 // SCRIPT CUES — a music cue still playing is not started over
 // =============================================================================
 
-#include "nocturne_test.h"
-
 #include "game/script_cue.h"
 #include "game_support.h"
+#include "nocturne_test.h"
 
 #include <string>
 

@@ -23,4 +23,4 @@ CDemonActorType *actor_type(CDemonActor *actor);
 // A type named `name` and hashed `hash`, under `parent`.
 CDemonActorType make(const char *name, uint hash, CDemonActorType *parent = nullptr);
 
-}  // namespace class_support
+} // namespace class_support

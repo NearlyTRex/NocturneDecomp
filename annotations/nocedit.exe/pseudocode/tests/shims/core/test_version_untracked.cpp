@@ -4,9 +4,8 @@
 //
 // test_version_tagged.cpp the other way round.
 
-#include "nocturne_test.h"
-
 #include "core/version.h"
+#include "nocturne_test.h"
 
 #include <string>
 

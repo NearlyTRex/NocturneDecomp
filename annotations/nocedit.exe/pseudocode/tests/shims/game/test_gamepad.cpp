@@ -7,13 +7,12 @@
 // plugged in. Its mapping files and SDL's subsystem are what the other
 // test_gamepad_*.cpp binaries start from.
 
-#include "nocturne_test.h"
 #include "../gl/ini_support.h"
-#include "gamepad_support.h"
-
 #include "game/gamepad.h"
 #include "game/pad_tuning.h"
+#include "gamepad_support.h"
 #include "nocturne.h"
+#include "nocturne_test.h"
 
 #include <cstring>
 #include <filesystem>
@@ -29,9 +28,13 @@ const int kA = NOCTURNE_PAD_BUTTON(SDL_CONTROLLER_BUTTON_A);
 
 std::unique_ptr<CGame> s_game(new CGame());
 
-void clear_keys() { std::memset(g_KeyboardState, 0, sizeof(g_KeyboardState)); }
+void clear_keys() {
+    std::memset(g_KeyboardState, 0, sizeof(g_KeyboardState));
+}
 
-void press(SDL_GameControllerButton b, bool down = true) { pad().buttons[b] = down ? 1 : 0; }
+void press(SDL_GameControllerButton b, bool down = true) {
+    pad().buttons[b] = down ? 1 : 0;
+}
 
 void pump_at(Uint32 ms) {
     stand.ticks = ms;
@@ -43,7 +46,7 @@ std::string name(int code) {
     return n != nullptr ? n : "(none)";
 }
 
-}  // namespace
+} // namespace
 
 // With no pad, nothing is present, every axis is at rest, and the names are a
 // standard pad's.
@@ -62,7 +65,8 @@ NOCTURNE_TEST(without_a_pad_nothing_moves) {
     CHECK_EQ(nocturne_gamepad_present(), 0);
     float v[6] = {9, 9, 9, 9, 9, 9};
     nocturne_gamepad_axes(&v[0], &v[1], &v[2], &v[3], &v[4], &v[5]);
-    for (float f : v) CHECK_EQ(f, 0.0f);
+    for (float f : v)
+        CHECK_EQ(f, 0.0f);
     nocturne_gamepad_axes(nullptr, nullptr, nullptr, nullptr, nullptr, nullptr);
     CHECK_EQ(name(kA), std::string("A"));
     SPlayerInput input = {};
@@ -222,9 +226,9 @@ NOCTURNE_TEST(directions_navigate_and_repeat) {
             CHECK_EQ((int)g_KeyboardState[code], 0);
         }
     }
-    for (SDL_GameControllerButton b : {SDL_CONTROLLER_BUTTON_DPAD_DOWN,
-                                       SDL_CONTROLLER_BUTTON_DPAD_LEFT,
-                                       SDL_CONTROLLER_BUTTON_DPAD_RIGHT}) {
+    for (SDL_GameControllerButton b :
+         {SDL_CONTROLLER_BUTTON_DPAD_DOWN, SDL_CONTROLLER_BUTTON_DPAD_LEFT,
+          SDL_CONTROLLER_BUTTON_DPAD_RIGHT}) {
         press(b);
         pump_at(4000);
         press(b, false);
@@ -381,7 +385,8 @@ NOCTURNE_TEST(a_mode_switch_never_leaves_nothing_to_press) {
 
     // Keyboard bindings, gamepad mode: restored, unless the map is on the pad.
     int *keys = &game->key_walk;
-    for (int i = 0; i < 27; i++) keys[i] = (i == 0) ? DIK_W : (int)INPUT_NONE;
+    for (int i = 0; i < 27; i++)
+        keys[i] = (i == 0) ? DIK_W : (int)INPUT_NONE;
     game->game_control = CONTROL_MODE_GAMEPAD;
     nocturne_gamepad_reseed_for_mode(game);
     CHECK_EQ(stand.defaults_restored, 2);
@@ -461,7 +466,8 @@ NOCTURNE_TEST(the_sticks_drive_the_hero) {
     CHECK_EQ(nocturne_gamepad_apply_analog(game, &input), 1);
     CHECK_EQ(input.strafe_speed, 7.0f);
     stand.map_owns_controls = 0;
-    for (Sint16 &a : pad().axes) a = 0;
+    for (Sint16 &a : pad().axes)
+        a = 0;
 }
 
 // Unplugged, the pad is closed, its codes released, and the next one taken.

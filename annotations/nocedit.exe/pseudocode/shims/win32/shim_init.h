@@ -20,4 +20,4 @@ void shims_init_dsound(void);
 
 void shims_init_all(void);
 
-void shims_set_command_line(int argc, char** argv);
+void shims_set_command_line(int argc, char **argv);

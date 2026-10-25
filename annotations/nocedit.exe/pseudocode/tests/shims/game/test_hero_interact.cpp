@@ -2,10 +2,9 @@
 // HERO INTERACT — the action button, in the melee classes' order
 // =============================================================================
 
-#include "nocturne_test.h"
-
 #include "behaviour_support.h"
 #include "game/hero_interact.h"
+#include "nocturne_test.h"
 
 #include <string>
 #include <vector>
@@ -21,7 +20,7 @@ std::vector<std::string> interact_with(void (*setup)()) {
     return stand.interactions;
 }
 
-}  // namespace
+} // namespace
 
 // An interaction, then a door, then a talk, then a lever: the first that
 // answers ends it. A door handled already needs nothing more; one waiting on

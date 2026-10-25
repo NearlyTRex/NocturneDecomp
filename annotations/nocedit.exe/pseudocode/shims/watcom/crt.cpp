@@ -14,17 +14,19 @@
 #endif
 
 #include "system/crt.h"
-#include "watcom/path.h"        // watcom_resolve_fs_path() — the Windows-path shim
-#include "core/ascii_case.h"    // the one case fold, for _stricmp/_strnicmp
+
+#include "core/ascii_case.h" // the one case fold, for _stricmp/_strnicmp
 #include "core/debug_log.h"
-#include "net/rng.h"            // nocturne_rng_note_raw_draw() — the rand() audit
+#include "net/rng.h"     // nocturne_rng_note_raw_draw() — the rand() audit
+#include "watcom/path.h" // watcom_resolve_fs_path() — the Windows-path shim
+
 #include <cerrno>
 #include <string>
 // Full struct layouts for Watcom types that crt.h only forward-declares.
 // The shims bridge these to libc equivalents field-by-field.
-#include "system/stdio.h"   // _FILE       (for _FILE_to_FILE)
-#include "system/watcom.h"  // WatcomStat  (for getFileStat)
-#include "system/time.h"    // _tm         (for _mktime/_localtime)
+#include "system/stdio.h"  // _FILE       (for _FILE_to_FILE)
+#include "system/time.h"   // _tm         (for _mktime/_localtime)
+#include "system/watcom.h" // WatcomStat  (for getFileStat)
 
 // ---------------------------------------------------------------------------
 // rand() — Watcom/Win32 semantics
@@ -65,18 +67,18 @@ extern "C" void srand(unsigned int seed) {
 // String Comparison
 // ---------------------------------------------------------------------------
 
-int _strcmp(char* s1, char* s2) {
+int _strcmp(char *s1, char *s2) {
     return strcmp(s1, s2);
 }
 
 // The C library's versions follow the locale; these do not. In the "C" locale —
 // which is what the game has always run under — the two agree, and outside it
 // the fixed fold is the one that keeps an asset name matching itself.
-int _stricmp(char* s1, char* s2) {
+int _stricmp(char *s1, char *s2) {
     return nocturne_ascii_icompare(s1, s2);
 }
 
-int _strnicmp(char* s1, char* s2, size_t n) {
+int _strnicmp(char *s1, char *s2, size_t n) {
     return nocturne_ascii_icompare_n(s1, s2, n);
 }
 
@@ -86,17 +88,19 @@ int _strnicmp(char* s1, char* s2, size_t n) {
 
 // Through unsigned char: toupper and tolower are undefined for the negative
 // values a plain char holds above 0x7F.
-char* strupr(char* s) {
-    for (char* p = s; *p; ++p) *p = (char)toupper((unsigned char)*p);
+char *strupr(char *s) {
+    for (char *p = s; *p; ++p)
+        *p = (char)toupper((unsigned char)*p);
     return s;
 }
 
-char* strlwr(char* s) {
-    for (char* p = s; *p; ++p) *p = (char)tolower((unsigned char)*p);
+char *strlwr(char *s) {
+    for (char *p = s; *p; ++p)
+        *p = (char)tolower((unsigned char)*p);
     return s;
 }
 
-double _strtod(const char* str) {
+double _strtod(const char *str) {
     return strtod(str, nullptr);
 }
 
@@ -110,51 +114,59 @@ double _strtod(const char* str) {
 static const size_t kMaxPath = 260, kMaxDrive = 3, kMaxPart = 256;
 
 // Up to len bytes of src into a buffer of cap bytes, terminated.
-static void copy_part(char* out, size_t cap, const char* src, size_t len) {
-    if (len > cap - 1) len = cap - 1;
+static void copy_part(char *out, size_t cap, const char *src, size_t len) {
+    if (len > cap - 1)
+        len = cap - 1;
     memcpy(out, src, len);
     out[len] = 0;
 }
 
-void splitpath(const char* path, char* drive, char* dir, char* fname, char* ext) {
+void splitpath(const char *path, char *drive, char *dir, char *fname, char *ext) {
     // A drive is a letter and a colon, and keeps the colon; the directory is
     // what follows it.
     const bool has_drive = isalpha((unsigned char)path[0]) && path[1] == ':';
-    if (drive) copy_part(drive, kMaxDrive, path, has_drive ? 2 : 0);
-    if (has_drive) path += 2;
+    if (drive)
+        copy_part(drive, kMaxDrive, path, has_drive ? 2 : 0);
+    if (has_drive)
+        path += 2;
 
     // Find last separator
-    const char* last_sep = nullptr;
-    for (const char* p = path; *p; ++p) {
-        if (*p == '/' || *p == '\\') last_sep = p;
+    const char *last_sep = nullptr;
+    for (const char *p = path; *p; ++p) {
+        if (*p == '/' || *p == '\\')
+            last_sep = p;
     }
 
     // Find last dot (after last separator)
-    const char* last_dot = nullptr;
-    const char* fname_start = last_sep ? last_sep + 1 : path;
-    for (const char* p = fname_start; *p; ++p) {
-        if (*p == '.') last_dot = p;
+    const char *last_dot = nullptr;
+    const char *fname_start = last_sep ? last_sep + 1 : path;
+    for (const char *p = fname_start; *p; ++p) {
+        if (*p == '.')
+            last_dot = p;
     }
 
-    if (dir) copy_part(dir, kMaxPart, path, last_sep ? (size_t)(last_sep - path + 1) : 0);
+    if (dir)
+        copy_part(dir, kMaxPart, path, last_sep ? (size_t)(last_sep - path + 1) : 0);
 
     if (fname) {
-        const char* end = last_dot ? last_dot : fname_start + strlen(fname_start);
+        const char *end = last_dot ? last_dot : fname_start + strlen(fname_start);
         copy_part(fname, kMaxPart, fname_start, (size_t)(end - fname_start));
     }
 
     // The extension keeps its leading period, as Watcom's does.
-    if (ext) copy_part(ext, kMaxPart, last_dot ? last_dot : "", last_dot ? strlen(last_dot) : 0);
+    if (ext)
+        copy_part(ext, kMaxPart, last_dot ? last_dot : "", last_dot ? strlen(last_dot) : 0);
 }
 
 // The parts joined as Watcom's _makepath joins them: a colon after a drive and
 // a period before an extension unless they already carry one, so what
 // splitpath took apart goes back together unchanged.
-void makepath(char* path, const char* drive, const char* dir, const char* fname, const char* ext) {
+void makepath(char *path, const char *drive, const char *dir, const char *fname, const char *ext) {
     std::string joined;
     if (drive && drive[0]) {
         joined += drive;
-        if (joined.back() != ':') joined += ':';
+        if (joined.back() != ':')
+            joined += ':';
     }
     if (dir && dir[0]) {
         joined += dir;
@@ -165,11 +177,14 @@ void makepath(char* path, const char* drive, const char* dir, const char* fname,
         // without the inserted separator `dir` and `fname` fuse into one bogus
         // name. Use '\\' to match Watcom byte for byte; the path shim rewrites
         // it to '/' at open time.
-        if (joined.back() != '\\' && joined.back() != '/') joined += '\\';
+        if (joined.back() != '\\' && joined.back() != '/')
+            joined += '\\';
     }
-    if (fname && fname[0]) joined += fname;
+    if (fname && fname[0])
+        joined += fname;
     if (ext && ext[0]) {
-        if (ext[0] != '.') joined += '.';
+        if (ext[0] != '.')
+            joined += '.';
         joined += ext;
     }
     copy_part(path, kMaxPath, joined.c_str(), joined.size());
@@ -193,30 +208,35 @@ void makepath(char* path, const char* drive, const char* dir, const char* fname,
 //   3. A raw libc FILE* cast to _FILE* from some older path we haven't
 //      updated yet. Detect by glibc's _IO_FILE magic (_flags = 0xFBADxxxx
 //      in the first 4 bytes) and pass through.
-FILE* _FILE_to_FILE(_FILE* f) {
-    if (!f) return nullptr;
+FILE *_FILE_to_FILE(_FILE *f) {
+    if (!f)
+        return nullptr;
 
-    const unsigned int IO_FILE_MAGIC      = 0xFBAD0000u;
+    const unsigned int IO_FILE_MAGIC = 0xFBAD0000u;
     const unsigned int IO_FILE_MAGIC_MASK = 0xFFFF0000u;
-    unsigned int first_word = *reinterpret_cast<unsigned int*>(f);
+    unsigned int first_word = *reinterpret_cast<unsigned int *>(f);
     if ((first_word & IO_FILE_MAGIC_MASK) == IO_FILE_MAGIC) {
-        return reinterpret_cast<FILE*>(f);
+        return reinterpret_cast<FILE *>(f);
     }
 
     // Case 1: our wrapper — _link holds the real libc FILE*.
     if (f->_link != nullptr) {
-        return reinterpret_cast<FILE*>(f->_link);
+        return reinterpret_cast<FILE *>(f->_link);
     }
 
     // Case 2: static standard-stream global — map by _handle.
     switch (f->_handle) {
-        case 0: return stdin;
-        case 1: return stdout;
-        case 2: return stderr;
-        default: break;
+    case 0:
+        return stdin;
+    case 1:
+        return stdout;
+    case 2:
+        return stderr;
+    default:
+        break;
     }
 
-    return reinterpret_cast<FILE*>(f);
+    return reinterpret_cast<FILE *>(f);
 }
 
 // Keep the Watcom _flag byte in sync with libc's EOF/error state so game
@@ -226,18 +246,15 @@ FILE* _FILE_to_FILE(_FILE* f) {
 //
 // Watcom flag bits: 0x10 = _IOEOF, 0x20 = _IOERR. Every caller has just handed
 // the stream to the C library, so it is one.
-static void sync_file_flags(_FILE* f) {
-    FILE* fp = _FILE_to_FILE(f);
+static void sync_file_flags(_FILE *f) {
+    FILE *fp = _FILE_to_FILE(f);
     unsigned int old_flag = f->_flag;
-    f->_flag = (f->_flag & ~0x30u)
-             | (feof(fp)   ? 0x10u : 0u)
-             | (ferror(fp) ? 0x20u : 0u);
+    f->_flag = (f->_flag & ~0x30u) | (feof(fp) ? 0x10u : 0u) | (ferror(fp) ? 0x20u : 0u);
     // Probe: surface the moment ferror flips on. Game archive loaders
     // branch on `_flag & 0x20` and bail out without logging why, so this
     // catches the transition instead of the downstream panic.
     if (((old_flag & 0x20u) == 0) && ((f->_flag & 0x20u) != 0)) {
-        DWARN("_FILE ferror set (fd=%d, errno=%d, feof=%d)",
-              f->_handle, errno, feof(fp) ? 1 : 0);
+        DWARN("_FILE ferror set (fd=%d, errno=%d, feof=%d)", f->_handle, errno, feof(fp) ? 1 : 0);
     }
 }
 
@@ -262,7 +279,6 @@ static void sync_file_flags(_FILE* f) {
 #include <utime.h>
 #endif
 
-
 // ---------------------------------------------------------------------------
 // File Manipulation
 // ---------------------------------------------------------------------------
@@ -273,12 +289,13 @@ static void sync_file_flags(_FILE* f) {
 // wrapper only when _link is non-null (to avoid freeing the game's static
 // stream globals).
 
-static _FILE* make_file_wrapper(FILE* fp) {
-    if (!fp) return nullptr;
-    _FILE* w = new _FILE();
+static _FILE *make_file_wrapper(FILE *fp) {
+    if (!fp)
+        return nullptr;
+    _FILE *w = new _FILE();
     w->_ptr = nullptr;
     w->_cnt = 0;
-    w->_link = reinterpret_cast<struct streambuf*>(fp);
+    w->_link = reinterpret_cast<struct streambuf *>(fp);
     w->_flag = 0;
     w->_handle = fileno(fp);
     w->_bufsize = 0;
@@ -306,70 +323,73 @@ static _FILE* make_file_wrapper(FILE* fp) {
 // gets the behaviour from the runtime that originally defined it.
 #if defined(_WIN32)
 
-static FILE* fopen_text_aware(const char* path, const char* mode) {
+static FILE *fopen_text_aware(const char *path, const char *mode) {
     return fopen(path, mode);
 }
 
 #else
 
-static bool mode_is_text(const char* mode) {
-    for (const char* p = mode; *p; ++p) {
-        if (*p == 'b') return false;
+static bool mode_is_text(const char *mode) {
+    for (const char *p = mode; *p; ++p) {
+        if (*p == 'b')
+            return false;
     }
     return true;
 }
 
-static size_t text_cookie_read_bytes(void* cookie, char* buf, size_t size) {
-    FILE* underlying = static_cast<FILE*>(cookie);
+static size_t text_cookie_read_bytes(void *cookie, char *buf, size_t size) {
+    FILE *underlying = static_cast<FILE *>(cookie);
     size_t out = 0;
     while (out < size) {
         int c = fgetc(underlying);
-        if (c == EOF) break;
-        if (c == '\r') continue;
+        if (c == EOF)
+            break;
+        if (c == '\r')
+            continue;
         buf[out++] = static_cast<char>(c);
     }
     return out;
 }
 
-static int text_cookie_close(void* cookie) {
-    return fclose(static_cast<FILE*>(cookie));
+static int text_cookie_close(void *cookie) {
+    return fclose(static_cast<FILE *>(cookie));
 }
 
 // The same layer through each libc's custom-stream call: glibc's fopencookie,
 // and funopen on Apple and the BSDs, which takes int sizes and returns the new
 // position from its seek rather than writing it back.
 #if defined(__APPLE__) || defined(__FreeBSD__) || defined(__OpenBSD__) || defined(__NetBSD__)
-static int text_cookie_read(void* cookie, char* buf, int size) {
+static int text_cookie_read(void *cookie, char *buf, int size) {
     return static_cast<int>(text_cookie_read_bytes(cookie, buf, static_cast<size_t>(size)));
 }
 
-static int text_cookie_write(void* cookie, const char* buf, int size) {
-    return static_cast<int>(fwrite(buf, 1, static_cast<size_t>(size), static_cast<FILE*>(cookie)));
+static int text_cookie_write(void *cookie, const char *buf, int size) {
+    return static_cast<int>(fwrite(buf, 1, static_cast<size_t>(size), static_cast<FILE *>(cookie)));
 }
 
-static fpos_t text_cookie_seek(void* cookie, fpos_t offset, int whence) {
-    FILE* underlying = static_cast<FILE*>(cookie);
+static fpos_t text_cookie_seek(void *cookie, fpos_t offset, int whence) {
+    FILE *underlying = static_cast<FILE *>(cookie);
     if (fseeko(underlying, static_cast<off_t>(offset), whence) != 0) {
         return -1;
     }
     return static_cast<fpos_t>(ftello(underlying));
 }
 
-static FILE* open_text_cookie(FILE* underlying, const char*) {
+static FILE *open_text_cookie(FILE *underlying, const char *) {
     return funopen(underlying, text_cookie_read, text_cookie_write, text_cookie_seek,
                    text_cookie_close);
 }
 #else
-static ssize_t text_cookie_read(void* cookie, char* buf, size_t size) {
+static ssize_t text_cookie_read(void *cookie, char *buf, size_t size) {
     return static_cast<ssize_t>(text_cookie_read_bytes(cookie, buf, size));
 }
 
-static ssize_t text_cookie_write(void* cookie, const char* buf, size_t size) {
-    return static_cast<ssize_t>(fwrite(buf, 1, size, static_cast<FILE*>(cookie)));
+static ssize_t text_cookie_write(void *cookie, const char *buf, size_t size) {
+    return static_cast<ssize_t>(fwrite(buf, 1, size, static_cast<FILE *>(cookie)));
 }
 
-static int text_cookie_seek(void* cookie, off64_t* offset, int whence) {
-    FILE* underlying = static_cast<FILE*>(cookie);
+static int text_cookie_seek(void *cookie, off64_t *offset, int whence) {
+    FILE *underlying = static_cast<FILE *>(cookie);
     if (fseeko(underlying, static_cast<off_t>(*offset), whence) != 0) {
         return -1;
     }
@@ -377,26 +397,27 @@ static int text_cookie_seek(void* cookie, off64_t* offset, int whence) {
     return 0;
 }
 
-static FILE* open_text_cookie(FILE* underlying, const char* mode) {
-    cookie_io_functions_t ops = {
-        text_cookie_read, text_cookie_write, text_cookie_seek, text_cookie_close
-    };
+static FILE *open_text_cookie(FILE *underlying, const char *mode) {
+    cookie_io_functions_t ops = {text_cookie_read, text_cookie_write, text_cookie_seek,
+                                 text_cookie_close};
     return fopencookie(underlying, mode, ops);
 }
 #endif
 
-static FILE* fopen_text_aware(const char* path, const char* mode) {
+static FILE *fopen_text_aware(const char *path, const char *mode) {
     if (!mode_is_text(mode)) {
         return fopen(path, mode);
     }
     // Strip 't' for the underlying open so the mode string is portable.
     std::string effective;
-    for (const char* p = mode; *p; ++p) {
-        if (*p != 't') effective += *p;
+    for (const char *p = mode; *p; ++p) {
+        if (*p != 't')
+            effective += *p;
     }
-    FILE* underlying = fopen(path, effective.c_str());
-    if (!underlying) return nullptr;
-    FILE* cooked = open_text_cookie(underlying, effective.c_str());
+    FILE *underlying = fopen(path, effective.c_str());
+    if (!underlying)
+        return nullptr;
+    FILE *cooked = open_text_cookie(underlying, effective.c_str());
     if (!cooked) {
         fclose(underlying);
         return nullptr;
@@ -412,138 +433,138 @@ static FILE* fopen_text_aware(const char* path, const char* mode) {
     return cooked;
 }
 
-#endif  // !_WIN32
+#endif // !_WIN32
 
-_FILE* _fopen(const char* filename, const char* mode) {
+_FILE *_fopen(const char *filename, const char *mode) {
     const WatcomPathUse use = watcom_mode_writes(mode) ? WatcomPathUse::Write : WatcomPathUse::Read;
-    return make_file_wrapper(
-        fopen_text_aware(watcom_resolve_fs_path(filename, use).c_str(), mode));
+    return make_file_wrapper(fopen_text_aware(watcom_resolve_fs_path(filename, use).c_str(), mode));
 }
 
 // The game's paths are Windows paths, ".\\system\\nocturne.ini" in
 // CIni::writeProfileString's temp-file swap among them, and with a user
 // directory set (watcom/path.h) the temp file is written there, so the swap has
 // to happen there too.
-int _remove(const char* filename) {
+int _remove(const char *filename) {
     return remove(watcom_resolve_fs_path(filename, WatcomPathUse::Write).c_str());
 }
 
-int _rename(const char* old_filename, const char* new_filename) {
+int _rename(const char *old_filename, const char *new_filename) {
     return rename(watcom_resolve_fs_path(old_filename, WatcomPathUse::Write).c_str(),
                   watcom_resolve_fs_path(new_filename, WatcomPathUse::Write).c_str());
 }
 
-int _fclose(_FILE* f) {
-    if (!f) return 0;
+int _fclose(_FILE *f) {
+    if (!f)
+        return 0;
     int rc = fclose(_FILE_to_FILE(f));
     // Only free our heap-allocated wrappers. Game static globals have
     // _link == null — leave them alone.
     if (f->_link != nullptr) {
-        f->_link = nullptr;  // defensive: prevent use-after-free via this ptr
+        f->_link = nullptr; // defensive: prevent use-after-free via this ptr
         delete f;
     }
     return rc;
 }
 
-int _fflush(_FILE* f) {
+int _fflush(_FILE *f) {
     int rc = fflush(_FILE_to_FILE(f));
     sync_file_flags(f);
     return rc;
 }
 
-int _feof(_FILE* f) {
+int _feof(_FILE *f) {
     int rc = feof(_FILE_to_FILE(f));
     sync_file_flags(f);
     return rc;
 }
 
-int _ferror(_FILE* f) {
+int _ferror(_FILE *f) {
     int rc = ferror(_FILE_to_FILE(f));
     sync_file_flags(f);
     return rc;
 }
 
-long _ftell(_FILE* f) {
+long _ftell(_FILE *f) {
     return ftell(_FILE_to_FILE(f));
 }
 
 // rewind is defined as exactly this; spelled out, the seek can say whether it
 // worked.
-void _rewind(_FILE* f) {
-    FILE* file = _FILE_to_FILE(f);
+void _rewind(_FILE *f) {
+    FILE *file = _FILE_to_FILE(f);
     (void)fseek(file, 0L, SEEK_SET);
     clearerr(file);
     sync_file_flags(f);
 }
 
-int _fgetc(_FILE* f) {
+int _fgetc(_FILE *f) {
     int rc = fgetc(_FILE_to_FILE(f));
     sync_file_flags(f);
     return rc;
 }
 
-int _fputc(int c, _FILE* f) {
+int _fputc(int c, _FILE *f) {
     int rc = fputc(c, _FILE_to_FILE(f));
     sync_file_flags(f);
     return rc;
 }
 
-int _ungetc(int c, _FILE* f) {
+int _ungetc(int c, _FILE *f) {
     int rc = ungetc(c, _FILE_to_FILE(f));
     sync_file_flags(f);
     return rc;
 }
 
-char* _fgets(char* s, int n, _FILE* f) {
-    char* rc = fgets(s, n, _FILE_to_FILE(f));
+char *_fgets(char *s, int n, _FILE *f) {
+    char *rc = fgets(s, n, _FILE_to_FILE(f));
     sync_file_flags(f);
     return rc;
 }
 
-int _fputs(const char* s, _FILE* f) {
+int _fputs(const char *s, _FILE *f) {
     int rc = fputs(s, _FILE_to_FILE(f));
     sync_file_flags(f);
     return rc;
 }
 
-size_t _fread(void* ptr, size_t size, size_t count, _FILE* f) {
+size_t _fread(void *ptr, size_t size, size_t count, _FILE *f) {
     size_t rc = fread(ptr, size, count, _FILE_to_FILE(f));
     sync_file_flags(f);
     return rc;
 }
 
-size_t _fwrite(const void* ptr, size_t size, size_t count, _FILE* f) {
+size_t _fwrite(const void *ptr, size_t size, size_t count, _FILE *f) {
     size_t rc = fwrite(ptr, size, count, _FILE_to_FILE(f));
     sync_file_flags(f);
     return rc;
 }
 
-int _fseek(_FILE* f, long offset, int whence) {
+int _fseek(_FILE *f, long offset, int whence) {
     int rc = fseek(_FILE_to_FILE(f), offset, whence);
     sync_file_flags(f);
     return rc;
 }
 
-int _fsetpos(_FILE* f, const fpos_t* pos) {
+int _fsetpos(_FILE *f, const fpos_t *pos) {
     int rc = fsetpos(_FILE_to_FILE(f), pos);
     sync_file_flags(f);
     return rc;
 }
 
-int _fgetpos(_FILE* f, fpos_t* pos) {
+int _fgetpos(_FILE *f, fpos_t *pos) {
     return fgetpos(_FILE_to_FILE(f), pos);
 }
 
-int _setvbuf(_FILE* f, char* buf, int mode, size_t size) {
+int _setvbuf(_FILE *f, char *buf, int mode, size_t size) {
     return setvbuf(_FILE_to_FILE(f), buf, mode, size);
 }
 
 // setbuf is defined as this setvbuf call.
-void _setbuf(_FILE* f, char* buf) {
+void _setbuf(_FILE *f, char *buf) {
     (void)setvbuf(_FILE_to_FILE(f), buf, buf ? _IOFBF : _IONBF, BUFSIZ);
 }
 
-int _fprintf(_FILE* f, const char* format, ...) {
+int _fprintf(_FILE *f, const char *format, ...) {
     va_list args;
     va_start(args, format);
     int result = vfprintf(_FILE_to_FILE(f), format, args);
@@ -551,7 +572,7 @@ int _fprintf(_FILE* f, const char* format, ...) {
     return result;
 }
 
-int _fscanf(_FILE* f, const char* format, ...) {
+int _fscanf(_FILE *f, const char *format, ...) {
     va_list args;
     va_start(args, format);
     int result = vfscanf(_FILE_to_FILE(f), format, args);
@@ -559,13 +580,14 @@ int _fscanf(_FILE* f, const char* format, ...) {
     return result;
 }
 
-_FILE* _freopen(const char* filename, const char* mode, _FILE* stream) {
+_FILE *_freopen(const char *filename, const char *mode, _FILE *stream) {
     // No stream is nothing to reopen; the C library's freopen would take it as one.
-    if (!stream) return nullptr;
+    if (!stream)
+        return nullptr;
     const WatcomPathUse use = watcom_mode_writes(mode) ? WatcomPathUse::Write : WatcomPathUse::Read;
-    FILE* fp = freopen(watcom_resolve_fs_path(filename, use).c_str(),
-                       mode, _FILE_to_FILE(stream));
-    if (!fp) return nullptr;
+    FILE *fp = freopen(watcom_resolve_fs_path(filename, use).c_str(), mode, _FILE_to_FILE(stream));
+    if (!fp)
+        return nullptr;
     // If the caller's stream was one of the game's static stream globals
     // (wrapper _link is null, _handle is 0/1/2), freopen redirected the
     // libc-side fd for us and the caller wants the same pointer back.
@@ -573,7 +595,7 @@ _FILE* _freopen(const char* filename, const char* mode, _FILE* stream) {
     // point at the new libc FILE and reset _flag. Either way, return
     // the same stream pointer the caller passed in.
     if (stream->_link != nullptr) {
-        stream->_link = reinterpret_cast<struct streambuf*>(fp);
+        stream->_link = reinterpret_cast<struct streambuf *>(fp);
         stream->_flag = 0;
         stream->_handle = fileno(fp);
     }
@@ -593,7 +615,7 @@ _FILE* _freopen(const char* filename, const char* mode, _FILE* stream) {
 // -O2 across TU boundaries miscompiled (the call looked fine in isolation,
 // but in the full game build vsprintf read zeros). Copying the raw pointer
 // byte-wise into a real `va_list` sidesteps the aliasing question entirely.
-int _vsprintf(char* buffer, const char* format, va_list_t args) {
+int _vsprintf(char *buffer, const char *format, va_list_t args) {
     // va_list_t carries a full __builtin_va_list (VA_START_T copied all of it);
     // copy the whole thing back, not just a leading char*. On x86-64 SysV a
     // va_list is a 24-byte __va_list_tag[1], so a char*-sized copy dropped the
@@ -601,16 +623,16 @@ int _vsprintf(char* buffer, const char* format, va_list_t args) {
     static_assert(sizeof(va_list) <= sizeof(va_list_t),
                   "va_list_t must be large enough to hold a full va_list");
     va_list va;
-    __builtin_memcpy(&va, (const void*)&args.value[0], sizeof(va_list));
+    __builtin_memcpy(&va, (const void *)&args.value[0], sizeof(va_list));
     // Filled by the copy above, which the analyzer cannot see as va_start or
     // va_copy; a va_list cannot be built any other way from va_list_t.
-    return vsprintf(buffer, format, va);  // NOLINT(clang-analyzer-valist.Uninitialized)
+    return vsprintf(buffer, format, va); // NOLINT(clang-analyzer-valist.Uninitialized)
 }
 
-int _sprintf(void* buffer, const char* format, ...) {
+int _sprintf(void *buffer, const char *format, ...) {
     va_list args;
     va_start(args, format);
-    int result = vsprintf((char*)buffer, format, args);
+    int result = vsprintf((char *)buffer, format, args);
     va_end(args);
     return result;
 }
@@ -619,8 +641,8 @@ int _sprintf(void* buffer, const char* format, ...) {
 // String Type Bridges
 // ---------------------------------------------------------------------------
 
-char* _strncpy(void* dest, const void* src, size_t count) {
-    return strncpy((char*)dest, (const char*)src, count);
+char *_strncpy(void *dest, const void *src, size_t count) {
+    return strncpy((char *)dest, (const char *)src, count);
 }
 
 // ---------------------------------------------------------------------------
@@ -631,32 +653,32 @@ char* _strncpy(void* dest, const void* src, size_t count) {
 // tm_gmtoff + tm_zone). ASan's mktime interceptor unpoisonsthe full
 // 44-byte struct, overflowing the 36-byte Watcom buffer. Bridge by
 // copying into a properly-sized local, calling libc, and copying back.
-static void watcom_to_libc_tm(const _tm* src, struct tm* dst) {
+static void watcom_to_libc_tm(const _tm *src, struct tm *dst) {
     memset(dst, 0, sizeof(*dst));
-    dst->tm_sec   = src->tm_sec;
-    dst->tm_min   = src->tm_min;
-    dst->tm_hour  = src->tm_hour;
-    dst->tm_mday  = src->tm_mday;
-    dst->tm_mon   = src->tm_mon;
-    dst->tm_year  = src->tm_year;
-    dst->tm_wday  = src->tm_wday;
-    dst->tm_yday  = src->tm_yday;
+    dst->tm_sec = src->tm_sec;
+    dst->tm_min = src->tm_min;
+    dst->tm_hour = src->tm_hour;
+    dst->tm_mday = src->tm_mday;
+    dst->tm_mon = src->tm_mon;
+    dst->tm_year = src->tm_year;
+    dst->tm_wday = src->tm_wday;
+    dst->tm_yday = src->tm_yday;
     dst->tm_isdst = src->tm_isdst;
 }
 
-static void libc_to_watcom_tm(const struct tm* src, _tm* dst) {
-    dst->tm_sec   = src->tm_sec;
-    dst->tm_min   = src->tm_min;
-    dst->tm_hour  = src->tm_hour;
-    dst->tm_mday  = src->tm_mday;
-    dst->tm_mon   = src->tm_mon;
-    dst->tm_year  = src->tm_year;
-    dst->tm_wday  = src->tm_wday;
-    dst->tm_yday  = src->tm_yday;
+static void libc_to_watcom_tm(const struct tm *src, _tm *dst) {
+    dst->tm_sec = src->tm_sec;
+    dst->tm_min = src->tm_min;
+    dst->tm_hour = src->tm_hour;
+    dst->tm_mday = src->tm_mday;
+    dst->tm_mon = src->tm_mon;
+    dst->tm_year = src->tm_year;
+    dst->tm_wday = src->tm_wday;
+    dst->tm_yday = src->tm_yday;
     dst->tm_isdst = src->tm_isdst;
 }
 
-time_t _mktime(_tm* t) {
+time_t _mktime(_tm *t) {
     struct tm libc_tm;
     watcom_to_libc_tm(t, &libc_tm);
     time_t result = mktime(&libc_tm);
@@ -671,40 +693,42 @@ static thread_local _tm s_localtime_buf;
 
 // The 32 bits Watcom's time_t had: some callers pass a host time_t and some a
 // 32-bit timestamp out of a file record, and the low word is the time in both.
-_tm* _localtime(const void* timer) {
-    time_t t = *reinterpret_cast<const int*>(timer);
-    struct tm* libc_result = localtime(&t);
-    if (!libc_result) return nullptr;
+_tm *_localtime(const void *timer) {
+    time_t t = *reinterpret_cast<const int *>(timer);
+    struct tm *libc_result = localtime(&t);
+    if (!libc_result)
+        return nullptr;
     libc_to_watcom_tm(libc_result, &s_localtime_buf);
     return &s_localtime_buf;
 }
 
-time_t _time(time_t* timer) {
+time_t _time(time_t *timer) {
     time_t t = time(nullptr);
-    if (timer) *timer = t;
+    if (timer)
+        *timer = t;
     return t;
 }
 
 // asctime as the C standard defines it, "Sun Sep 16 01:03:52 1973\n", written
 // with a bound. One static buffer, as asctime's own: the next call overwrites
 // it. A day or month out of range is "???" rather than a read off the table.
-char* _asctime(_tm* timeptr) {
+char *_asctime(_tm *timeptr) {
     static const char days[7][4] = {"Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"};
     static const char months[12][4] = {"Jan", "Feb", "Mar", "Apr", "May", "Jun",
                                        "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"};
     static char text[64];
-    const _tm* t = timeptr;
+    const _tm *t = timeptr;
     const bool day_ok = t->tm_wday >= 0 && t->tm_wday < 7;
     const bool month_ok = t->tm_mon >= 0 && t->tm_mon < 12;
     snprintf(text, sizeof(text), "%.3s %.3s%3d %.2d:%.2d:%.2d %d\n",
-             day_ok ? days[t->tm_wday] : "???", month_ok ? months[t->tm_mon] : "???",
-             t->tm_mday, t->tm_hour, t->tm_min, t->tm_sec, 1900 + t->tm_year);
+             day_ok ? days[t->tm_wday] : "???", month_ok ? months[t->tm_mon] : "???", t->tm_mday,
+             t->tm_hour, t->tm_min, t->tm_sec, 1900 + t->tm_year);
     return text;
 }
 
 // Through a host struct tm, which is larger: strftime reads its zone fields for
 // %z and %Z, past the end of the game's 36 bytes.
-size_t _strftime(char* dest_buffer, size_t buffer_size, const char* format_string, _tm* time_ptr) {
+size_t _strftime(char *dest_buffer, size_t buffer_size, const char *format_string, _tm *time_ptr) {
     struct tm libc_tm;
     watcom_to_libc_tm(time_ptr, &libc_tm);
     return strftime(dest_buffer, buffer_size, format_string, &libc_tm);
@@ -724,7 +748,7 @@ size_t _strftime(char* dest_buffer, size_t buffer_size, const char* format_strin
 // WatcomStat is 70 bytes; glibc struct stat is 88 on 32-bit. ASan's
 // stat interceptor writes the full 88 bytes, overflowing the 70-byte
 // Watcom buffer. Bridge the same way as _mktime/_tm.
-int getFileStat(const char* path, struct WatcomStat* buf) {
+int getFileStat(const char *path, struct WatcomStat *buf) {
     struct stat libc_st;
     int rc = stat(watcom_resolve_fs_path(path).c_str(), &libc_st);
     if (rc == 0 && buf) {
@@ -732,14 +756,14 @@ int getFileStat(const char* path, struct WatcomStat* buf) {
         // Every field narrows: the host's are 64-bit where Watcom's are 16 or
         // 32, and they differ again between hosts. Spelled out so the loss is
         // visible rather than left to an implicit conversion.
-        buf->_st_dev   = (int)libc_st.st_dev;
-        buf->_st_ino   = (uint)libc_st.st_ino;
-        buf->_st_mode  = (ushort)libc_st.st_mode;
+        buf->_st_dev = (int)libc_st.st_dev;
+        buf->_st_ino = (uint)libc_st.st_ino;
+        buf->_st_mode = (ushort)libc_st.st_mode;
         buf->_st_nlink = (short)libc_st.st_nlink;
-        buf->_st_uid   = (ulong)libc_st.st_uid;
-        buf->_st_gid   = (short)libc_st.st_gid;
-        buf->_st_rdev  = (int)libc_st.st_rdev;
-        buf->_st_size  = (long)libc_st.st_size;
+        buf->_st_uid = (ulong)libc_st.st_uid;
+        buf->_st_gid = (short)libc_st.st_gid;
+        buf->_st_rdev = (int)libc_st.st_rdev;
+        buf->_st_size = (long)libc_st.st_size;
         buf->_st_atime = (time_t)libc_st.st_atime;
         buf->_st_mtime = (time_t)libc_st.st_mtime;
         buf->_st_ctime = (time_t)libc_st.st_ctime;
@@ -747,7 +771,7 @@ int getFileStat(const char* path, struct WatcomStat* buf) {
     return rc;
 }
 
-int _utime(const char* path, void* times) {
+int _utime(const char *path, void *times) {
     return utime(watcom_resolve_fs_path(path, WatcomPathUse::Write).c_str(),
-                 (struct utimbuf*)times);
+                 (struct utimbuf *)times);
 }

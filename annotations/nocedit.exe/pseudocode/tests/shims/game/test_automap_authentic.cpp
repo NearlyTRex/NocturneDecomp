@@ -5,9 +5,8 @@
 // Every entry point is there, so the game's calls into it still link, and none
 // of them does anything: the map never opens, takes nothing and saves nothing.
 
-#include "nocturne_test.h"
-
 #include "game/automap.h"
+#include "nocturne_test.h"
 
 #include <string>
 

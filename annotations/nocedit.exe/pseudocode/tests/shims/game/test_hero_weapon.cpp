@@ -2,11 +2,10 @@
 // HERO WEAPON — each hero's own weapon, and what each can carry
 // =============================================================================
 
-#include "nocturne_test.h"
-
 #include "behaviour_support.h"
 #include "class_support.h"
 #include "game/hero_weapon.h"
+#include "nocturne_test.h"
 
 #include <cstdio>
 #include <cstring>
@@ -30,14 +29,16 @@ CHero *built_as(CDemonActorType *type) {
     return heroes[0];
 }
 
-CWeapon *selected(CHero *hero) { return hero->inventory.selected_weapon; }
+CWeapon *selected(CHero *hero) {
+    return hero->inventory.selected_weapon;
+}
 
 std::string model_of(CWeapon *w) {
     std::map<const void *, std::string>::const_iterator it = stand.models.find(&w->model);
     return (it != stand.models.end()) ? it->second : "(none)";
 }
 
-}  // namespace
+} // namespace
 
 // The Stranger, Gabriella and the Baron keep the pistol they were built with.
 NOCTURNE_TEST(some_heroes_keep_the_shipped_weapon) {
@@ -157,7 +158,7 @@ NOCTURNE_TEST(the_newest_eight_extra_guns_are_remembered) {
         h->inventory.selected_weapon = weapon(&g_CGunClassInfo);
         nocturne_hero_default_weapon(h, HERO_TYPE_SCAT);
     }
-    nocturne_hero_default_weapon(many[8].get(), HERO_TYPE_SCAT);   // built again
+    nocturne_hero_default_weapon(many[8].get(), HERO_TYPE_SCAT); // built again
     for (int i = 0; i < 9; i++) {
         CInventory &inv = many[i]->inventory;
         CWeapon *pistol = (CWeapon *)inv.items[inv.item_count - 1];
@@ -197,7 +198,8 @@ NOCTURNE_TEST(each_class_carries_what_it_can_use) {
     for (const Item &it : items) {
         CDemonActor *thing = &weapon(it.type)->base;
         CHECK_AT(nocturne_hero_can_hold_item(heroes[0], thing) == it.stranger, it.type->class_name);
-        CHECK_AT(nocturne_hero_can_hold_item(heroes[1], thing) == it.gabriella, it.type->class_name);
+        CHECK_AT(nocturne_hero_can_hold_item(heroes[1], thing) == it.gabriella,
+                 it.type->class_name);
         CHECK_AT(nocturne_hero_can_hold_item(heroes[2], thing) == it.svetlana, it.type->class_name);
         CHECK_AT(nocturne_hero_can_hold_item(heroes[3], thing) == 1, it.type->class_name);
     }
@@ -214,8 +216,9 @@ NOCTURNE_TEST(the_heroes_own_items_have_their_own_text) {
     CWeapon *sidearm = weapon(&g_CGunClassInfo);
     std::snprintf(sidearm->base.actor_name, sizeof(sidearm->base.actor_name),
                   NOCTURNE_COLONEL_SIDEARM_NAME);
-    CHECK(std::string(nocturne_hero_item_text(&sidearm->base, "gat.kfm", 1)).find("never runs dry") !=
-          std::string::npos);
+    CHECK(
+        std::string(nocturne_hero_item_text(&sidearm->base, "gat.kfm", 1)).find("never runs dry") !=
+        std::string::npos);
     CWeapon *other = weapon(&g_CGunClassInfo);
     CHECK_EQ(std::string(nocturne_hero_item_text(&other->base, "GABGUN.KFM", 0)),
              std::string("Gabriella's Pistol"));
@@ -236,7 +239,8 @@ NOCTURNE_TEST(unselected_weapons_are_put_away) {
     held->weapon_state = WEAPON_STATE_IN_HAND;
     stowed->weapon_state = WEAPON_STATE_IN_INVENTORY;
     CDemonActor *list[] = {&chosen->base, nullptr, &held->base, &stowed->base, medkit};
-    for (CDemonActor *a : list) inv.items[inv.item_count++] = a;
+    for (CDemonActor *a : list)
+        inv.items[inv.item_count++] = a;
     inv.selected_weapon = chosen;
     nocturne_hero_stow_unselected_weapons(heroes[0]);
     CHECK_EQ(stand.weapon_states.size(), (size_t)1);

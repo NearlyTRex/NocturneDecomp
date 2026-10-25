@@ -5,10 +5,9 @@
 // The finder lists what menus_support names; the saves it reads are real
 // files under save\ in a directory of the test's own.
 
-#include "nocturne_test.h"
-#include "menus_support.h"
-
 #include "game/save_slots.h"
+#include "menus_support.h"
+#include "nocturne_test.h"
 
 #include <filesystem>
 #include <fstream>
@@ -48,11 +47,12 @@ std::string in_mission(const char *root) {
 // The second tab-separated field of a row.
 std::string column(const std::string &row, int n) {
     std::string::size_type start = 0;
-    for (int i = 0; i < n; i++) start = row.find('\t', start) + 1;
+    for (int i = 0; i < n; i++)
+        start = row.find('\t', start) + 1;
     return row.substr(start, row.find('\t', start) - start);
 }
 
-}  // namespace
+} // namespace
 
 // The load list is the autosave first, then the newest save first; each row
 // names the slot, the place and the time.
@@ -79,7 +79,7 @@ NOCTURNE_TEST(the_load_list_is_autosave_then_newest) {
         CHECK_EQ(column(stand.rows[2], 0), std::string("MYSAVE.NOC"));
         CHECK_EQ(column(stand.rows[2], 1), std::string(""));
         CHECK_EQ(column(stand.rows[3], 1), std::string("Castle Gaustadt"));
-        CHECK_EQ(column(stand.rows[3], 2).size(), (size_t)17);   // "mm/dd/yy hh:mm AM"
+        CHECK_EQ(column(stand.rows[3], 2).size(), (size_t)17); // "mm/dd/yy hh:mm AM"
     }
 
     // Escape loads nothing; an empty directory says so.
@@ -119,7 +119,7 @@ NOCTURNE_TEST(a_saves_place_is_read_once) {
     write_save("SLOT04.NOC", std::string("text, but no marker\n"), 40);
     write_save("SLOT05.NOC", std::string("ends at the marker // Root name of mission"), 50);
     write_save("SLOT06.NOC", std::string(kMarker) + "castle1", 60);
-    stand.saves.push_back({"SLOT07.NOC", 10, 70});   // listed, not on disk
+    stand.saves.push_back({"SLOT07.NOC", 10, 70}); // listed, not on disk
     write_save("SLOT08.NOC", std::string(kMarker) + "\r\n", 1);
     nocturne_save_slots_prewarm();
     stand.choices.push_back(-1);
@@ -127,8 +127,8 @@ NOCTURNE_TEST(a_saves_place_is_read_once) {
     nocturne_load_pick_slot(out, sizeof(out));
     // Newest first, SLOT07 down to SLOT01 and then SLOT08: only SLOT06's line
     // and SLOT01's are there to read; SLOT08's is blank.
-    const std::vector<std::string> places = {"", "Castle Gaustadt", "", "", "", "",
-                                             "Castle Gaustadt", ""};
+    const std::vector<std::string> places = {"", "Castle Gaustadt", "", "", "",
+                                             "", "Castle Gaustadt", ""};
     CHECK_EQ(stand.rows.size(), places.size());
     for (size_t i = 0; i < stand.rows.size() && i < places.size(); i++) {
         CHECK_EQ_AT(column(stand.rows[i], 1), places[i], stand.rows[i].c_str());
@@ -178,7 +178,7 @@ NOCTURNE_TEST(a_save_takes_the_lowest_free_slot_or_one_agreed_to) {
     CHECK_EQ(stand.rows[0], std::string("* NEW SAVE *"));
     CHECK(stand.disabled == std::set<int>({1}));
 
-    stand.choices.push_back(2);   // SLOT03, the newest after the autosave
+    stand.choices.push_back(2); // SLOT03, the newest after the autosave
     CHECK_EQ(nocturne_save_pick_slot(out, sizeof(out)), 1);
     CHECK_EQ(std::string(out), std::string("SLOT03.NOC"));
     stand.confirm = 0;

@@ -5,6 +5,7 @@
 // See file_search.h.
 
 #include "core/file_search.h"
+
 #include "core/ascii_case.h"
 #include "watcom/path.h"
 
@@ -26,8 +27,7 @@ bool matches(const char *pattern, const char *name) {
     const char *retry = nullptr;
 
     while (*name != '\0') {
-        if (*pattern == '?' ||
-            nocturne_ascii_lower(*pattern) == nocturne_ascii_lower(*name)) {
+        if (*pattern == '?' || nocturne_ascii_lower(*pattern) == nocturne_ascii_lower(*name)) {
             ++pattern;
             ++name;
         } else if (*pattern == '*') {
@@ -42,7 +42,8 @@ bool matches(const char *pattern, const char *name) {
         }
     }
     // Trailing stars match nothing, which is still a match.
-    while (*pattern == '*') ++pattern;
+    while (*pattern == '*')
+        ++pattern;
     return *pattern == '\0';
 }
 
@@ -52,7 +53,8 @@ bool matches(const char *pattern, const char *name) {
 void split(const std::string &filespec, std::string *directory, std::string *pattern) {
     std::string spec = filespec;
     for (char &c : spec) {
-        if (c == '\\') c = '/';
+        if (c == '\\')
+            c = '/';
     }
     const size_t separator = spec.rfind('/');
     if (separator == std::string::npos) {
@@ -64,16 +66,18 @@ void split(const std::string &filespec, std::string *directory, std::string *pat
     }
 }
 
-}  // namespace
+} // namespace
 
 bool nocturne_name_matches(const char *pattern, const char *name) {
-    if (pattern == nullptr || name == nullptr) return false;
+    if (pattern == nullptr || name == nullptr)
+        return false;
     return matches(pattern, name);
 }
 
 std::vector<std::string> nocturne_find_files(const char *filespec) {
     std::vector<std::string> found;
-    if (filespec == nullptr) return found;
+    if (filespec == nullptr)
+        return found;
 
     std::string directory, pattern;
     split(filespec, &directory, &pattern);
@@ -89,18 +93,22 @@ std::vector<std::string> nocturne_find_files(const char *filespec) {
         // read, means no matches rather than an error to propagate. Both callers
         // report that as their own API's "nothing found".
         std::filesystem::directory_iterator it(where, ignored), end;
-        if (ignored) continue;
+        if (ignored)
+            continue;
 
         // A failed step leaves the iterator at end, so an error mid-listing
         // stops the walk with what was found so far.
         for (; it != end; it.increment(ignored)) {
             const std::string name = it->path().filename().string();
-            if (!matches(pattern.c_str(), name.c_str())) continue;
+            if (!matches(pattern.c_str(), name.c_str()))
+                continue;
             bool duplicate = false;
             for (const std::string &other : seen) {
-                if (nocturne_ascii_iequals(other.c_str(), name.c_str())) duplicate = true;
+                if (nocturne_ascii_iequals(other.c_str(), name.c_str()))
+                    duplicate = true;
             }
-            if (duplicate) continue;
+            if (duplicate)
+                continue;
             seen.push_back(name);
             found.push_back(directory.empty() ? name : directory + "/" + name);
         }

@@ -2,11 +2,10 @@
 // GUN FLASHLIGHT — the light switch for the heroes whose guns take a light
 // =============================================================================
 
-#include "nocturne_test.h"
-
 #include "behaviour_support.h"
 #include "game/gun_flashlight.h"
 #include "game/hero_light.h"
+#include "nocturne_test.h"
 
 #include <cstring>
 #include <memory>
@@ -35,7 +34,7 @@ void press_light(CHero *hero) {
     hero->player_input.action_state.light = 0;
 }
 
-}  // namespace
+} // namespace
 
 // The switch lights the gun, drawing it if it is away, and puts it out again;
 // each time it clicks.

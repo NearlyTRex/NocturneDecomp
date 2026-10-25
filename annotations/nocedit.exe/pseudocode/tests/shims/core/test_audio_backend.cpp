@@ -7,10 +7,9 @@
 
 #define SDL_MAIN_HANDLED
 
+#include "core/audio_backend.h"
 #include "nocturne_test.h"
 #include "sdl_support.h"
-
-#include "core/audio_backend.h"
 
 #include <string>
 
@@ -18,9 +17,11 @@ namespace {
 
 using sdl_support::stand;
 
-std::string name() { return nocturne_audio_backend_name(); }
+std::string name() {
+    return nocturne_audio_backend_name();
+}
 
-}  // namespace
+} // namespace
 
 NOCTURNE_TEST(each_driver_is_named_the_way_its_project_names_it) {
     stand.reset();

@@ -11,6 +11,8 @@ namespace rng_audit_support {
 
 int raw_draws = 0;
 
-}  // namespace rng_audit_support
+} // namespace rng_audit_support
 
-extern "C" void nocturne_rng_note_raw_draw(void) { ++rng_audit_support::raw_draws; }
+extern "C" void nocturne_rng_note_raw_draw(void) {
+    ++rng_audit_support::raw_draws;
+}

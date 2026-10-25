@@ -8,9 +8,8 @@
 // draws after it find their program and vertex array where they left them; and
 // that a context which cannot build it says so, once, rather than half drawing.
 
-#include "nocturne_test.h"
-
 #include "gl/gl_blit.h"
+#include "nocturne_test.h"
 #include "shims/renderer/gl_recorder.h"
 
 #include <cstddef>
@@ -31,12 +30,15 @@ unsigned drawn_first(const gl_recorder::State &s) {
 }
 
 void APIENTRY no_buffer(GLsizei n, GLuint *out) {
-    for (GLsizei i = 0; i < n; ++i) out[i] = 0;
+    for (GLsizei i = 0; i < n; ++i)
+        out[i] = 0;
 }
 
-void APIENTRY failed(GLuint, GLenum, GLint *out) { *out = GL_FALSE; }
+void APIENTRY failed(GLuint, GLenum, GLint *out) {
+    *out = GL_FALSE;
+}
 
-}  // namespace
+} // namespace
 
 // The texture is drawn as an image, top row first, from the quad built on the
 // first blit; the program and vertex array in use before are put back.
@@ -47,8 +49,8 @@ NOCTURNE_TEST(a_blit_draws_the_texture_and_puts_the_pipeline_back) {
     CHECK_EQ(nocturne_gl_blit_quad(5), 1);
     CHECK_EQ(s.count("BufferData"), 1);
     const gl_recorder::Call &draw = s.calls[(size_t)s.index_of_last("DrawArrays")];
-    CHECK_EQ(draw.a, 5u);   // the texture
-    CHECK_EQ(draw.b, 0u);   // from the first vertex, top-down
+    CHECK_EQ(draw.a, 5u); // the texture
+    CHECK_EQ(draw.b, 0u); // from the first vertex, top-down
     CHECK_EQ(draw.c, 4u);
     CHECK_EQ(s.bound_program, 42u);
     CHECK_EQ(s.bound_vao, 7u);
@@ -67,7 +69,7 @@ NOCTURNE_TEST(shutting_down_deletes_the_quad_and_builds_it_again_after) {
     CHECK_EQ(s.count("DeleteProgram"), 1);
     CHECK_EQ(s.count("DeleteBuffers"), 1);
     CHECK_EQ(s.count("DeleteVertexArrays"), 1);
-    nocturne_gl_blit_shutdown();   // nothing left to delete
+    nocturne_gl_blit_shutdown(); // nothing left to delete
     CHECK_EQ(s.count("DeleteProgram"), 1);
     CHECK_EQ(nocturne_gl_blit_quad(1), 1);
     CHECK_EQ(s.count("BufferData"), 2);
@@ -79,21 +81,32 @@ NOCTURNE_TEST(without_an_entry_point_it_needs_nothing_is_drawn) {
     // The table's members are distinct function pointer types; each is nulled
     // through its own offset.
     const size_t slots[] = {
-        offsetof(NocturneGLApi, CreateShader),     offsetof(NocturneGLApi, ShaderSource),
-        offsetof(NocturneGLApi, CompileShader),    offsetof(NocturneGLApi, GetShaderiv),
-        offsetof(NocturneGLApi, DeleteShader),     offsetof(NocturneGLApi, CreateProgram),
-        offsetof(NocturneGLApi, AttachShader),     offsetof(NocturneGLApi, LinkProgram),
-        offsetof(NocturneGLApi, GetProgramiv),     offsetof(NocturneGLApi, UseProgram),
-        offsetof(NocturneGLApi, DeleteProgram),    offsetof(NocturneGLApi, GetUniformLocation),
-        offsetof(NocturneGLApi, Uniform1i),        offsetof(NocturneGLApi, GetIntegerv),
-        offsetof(NocturneGLApi, GenBuffers),       offsetof(NocturneGLApi, BindBuffer),
-        offsetof(NocturneGLApi, BufferData),       offsetof(NocturneGLApi, DeleteBuffers),
+        offsetof(NocturneGLApi, CreateShader),
+        offsetof(NocturneGLApi, ShaderSource),
+        offsetof(NocturneGLApi, CompileShader),
+        offsetof(NocturneGLApi, GetShaderiv),
+        offsetof(NocturneGLApi, DeleteShader),
+        offsetof(NocturneGLApi, CreateProgram),
+        offsetof(NocturneGLApi, AttachShader),
+        offsetof(NocturneGLApi, LinkProgram),
+        offsetof(NocturneGLApi, GetProgramiv),
+        offsetof(NocturneGLApi, UseProgram),
+        offsetof(NocturneGLApi, DeleteProgram),
+        offsetof(NocturneGLApi, GetUniformLocation),
+        offsetof(NocturneGLApi, Uniform1i),
+        offsetof(NocturneGLApi, GetIntegerv),
+        offsetof(NocturneGLApi, GenBuffers),
+        offsetof(NocturneGLApi, BindBuffer),
+        offsetof(NocturneGLApi, BufferData),
+        offsetof(NocturneGLApi, DeleteBuffers),
         offsetof(NocturneGLApi, GetAttribLocation),
         offsetof(NocturneGLApi, BindAttribLocation),
         offsetof(NocturneGLApi, EnableVertexAttribArray),
         offsetof(NocturneGLApi, VertexAttribPointer),
-        offsetof(NocturneGLApi, DrawArrays),       offsetof(NocturneGLApi, GenVertexArrays),
-        offsetof(NocturneGLApi, BindVertexArray),  offsetof(NocturneGLApi, DeleteVertexArrays),
+        offsetof(NocturneGLApi, DrawArrays),
+        offsetof(NocturneGLApi, GenVertexArrays),
+        offsetof(NocturneGLApi, BindVertexArray),
+        offsetof(NocturneGLApi, DeleteVertexArrays),
     };
     for (size_t offset : slots) {
         gl_recorder::State &s = start();
@@ -116,13 +129,13 @@ NOCTURNE_TEST(a_quad_the_driver_will_not_make_is_none) {
     gl.GenBuffers = no_buffer;
     CHECK_EQ(nocturne_gl_blit_quad(1), 0);
     CHECK_EQ(s.count("DeleteProgram"), 1);
-    CHECK_EQ(s.count("DeleteVertexArrays"), 1);   // the array that was made
+    CHECK_EQ(s.count("DeleteVertexArrays"), 1); // the array that was made
 
     start();
     gl.GenVertexArrays = no_buffer;
     CHECK_EQ(nocturne_gl_blit_quad(1), 0);
     CHECK_EQ(s.count("DeleteBuffers"), 1);
-    CHECK_EQ(nocturne_gl_blit_quad(1), 0);        // and is not tried again
+    CHECK_EQ(nocturne_gl_blit_quad(1), 0); // and is not tried again
     CHECK_EQ(s.count("GenBuffers"), 1);
 }
 

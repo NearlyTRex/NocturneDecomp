@@ -2,11 +2,10 @@
 // GOGGLE LOOK — the goggle view looks up and down for every hero
 // =============================================================================
 
-#include "nocturne_test.h"
-
 #include "behaviour_support.h"
 #include "game/goggle_look.h"
 #include "game/hero_motion.h"
+#include "nocturne_test.h"
 
 using namespace behaviour_support;
 
@@ -23,7 +22,7 @@ CHero *looking() {
     return heroes[0];
 }
 
-}  // namespace
+} // namespace
 
 // Under the goggles the local hero's pitch follows his look, within the
 // Stranger's limits; another hero's view is level until he is the local one,
@@ -34,7 +33,8 @@ NOCTURNE_TEST(the_goggle_view_follows_the_look) {
     const float pitch = nocturne_goggle_look_pitch(hero);
     CHECK_NEAR(pitch, -0.31415927f, 1e-6f);
     CHECK_EQ(nocturne_goggle_look_pitch(heroes[1]), 0.0f);
-    for (int i = 0; i < 10; i++) nocturne_goggle_look_tick(0.5f);
+    for (int i = 0; i < 10; i++)
+        nocturne_goggle_look_tick(0.5f);
     CHECK_EQ(nocturne_goggle_look_pitch(hero), NOCTURNE_STRANGER_PITCH_UP);
 
     death[hero] = DEATH_STATE_DEAD;
@@ -74,23 +74,29 @@ NOCTURNE_TEST(the_stranger_turns_his_own_view_but_with_empty_hands_in_netplay) {
     const Case cases[] = {
         {"single player", [](CStranger *) {}, false},
         {"empty hands", [](CStranger *) { stand.net_active = 1; }, true},
-        {"a weapon", [](CStranger *s) {
+        {"a weapon",
+         [](CStranger *s) {
              stand.net_active = 1;
              s->weapon = (CWeapon *)&character(0)->base;
-         }, false},
-        {"a crate", [](CStranger *s) {
+         },
+         false},
+        {"a crate",
+         [](CStranger *s) {
              stand.net_active = 1;
              CDemonActor *crate = &character(0)->base;
              give_class(crate, &item_type);
              stand.melee_types[crate] = 4;
              s->base.base.carry_hands[1].carry_actor = crate;
-         }, false},
-        {"a lamp", [](CStranger *s) {
+         },
+         false},
+        {"a lamp",
+         [](CStranger *s) {
              stand.net_active = 1;
              CDemonActor *lamp = &character(0)->base;
              give_class(lamp, &item_type);
              s->base.base.carry_hands[1].carry_actor = lamp;
-         }, true},
+         },
+         true},
     };
     for (const Case &c : cases) {
         looking();

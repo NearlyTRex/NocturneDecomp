@@ -37,8 +37,7 @@ void nocturne_trigl_pack_palette(const unsigned char *palette, unsigned *out);
 // `pixel_count` bytes of per-pixel alpha or null, which selects the colour-key
 // rule above. `out` holds `pixel_count` words.
 void nocturne_trigl_expand_texture(const unsigned char *indices, int pixel_count,
-                                   const unsigned *packed_palette,
-                                   const unsigned char *opacity,
+                                   const unsigned *packed_palette, const unsigned char *opacity,
                                    unsigned *out);
 
 #ifdef __cplusplus

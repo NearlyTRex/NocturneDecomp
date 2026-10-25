@@ -5,6 +5,7 @@
 // See path.h.
 
 #include "watcom/path.h"
+
 #include "core/ascii_case.h"
 
 #include <filesystem>
@@ -27,11 +28,13 @@ std::string sibling_ignoring_case(const std::string &parent, const std::string &
     // cannot be read, is an ordinary outcome here and means no match rather than
     // an error to propagate.
     std::filesystem::directory_iterator it(directory, ignored), end;
-    if (ignored) return std::string();
+    if (ignored)
+        return std::string();
     // A failed step leaves the iterator at end, which is no match.
     for (; it != end; it.increment(ignored)) {
         const std::string name = it->path().filename().string();
-        if (nocturne_ascii_iequals(name.c_str(), wanted.c_str())) return name;
+        if (nocturne_ascii_iequals(name.c_str(), wanted.c_str()))
+            return name;
     }
     return std::string();
 }
@@ -39,7 +42,8 @@ std::string sibling_ignoring_case(const std::string &parent, const std::string &
 std::string resolve_case_insensitive(const std::string &slashed) {
     // Whole path already right: the common case once a directory has been
     // resolved, and worth not walking.
-    if (slashed.empty() || exists(slashed)) return slashed;
+    if (slashed.empty() || exists(slashed))
+        return slashed;
 
     std::string result;
     size_t i = 0;
@@ -55,11 +59,13 @@ std::string resolve_case_insensitive(const std::string &slashed) {
 
     while (i < slashed.size()) {
         size_t next = slashed.find('/', i);
-        if (next == std::string::npos) next = slashed.size();
+        if (next == std::string::npos)
+            next = slashed.size();
         const std::string component(slashed, i, next - i);
         i = (next == slashed.size()) ? next : next + 1;
 
-        if (component.empty() || component == ".") continue;
+        if (component.empty() || component == ".")
+            continue;
 
         // Exact spelling first, so a directory holding both "Save" and "save"
         // resolves to the one that was asked for rather than whichever the
@@ -73,7 +79,8 @@ std::string resolve_case_insensitive(const std::string &slashed) {
         std::string parent = result;
         // Anything built so far ends in a separator, which goes before the scan,
         // except at the root where it is the whole name.
-        if (parent.size() > 1) parent.pop_back();
+        if (parent.size() > 1)
+            parent.pop_back();
         const std::string matched = sibling_ignoring_case(parent, component);
 
         if (matched.empty()) {
@@ -81,7 +88,8 @@ std::string resolve_case_insensitive(const std::string &slashed) {
             // and handed back: the caller is about to fail, and it should fail
             // on the path it asked for.
             result += component + (i < slashed.size() ? "/" : "");
-            if (i < slashed.size()) result.append(slashed, i, std::string::npos);
+            if (i < slashed.size())
+                result.append(slashed, i, std::string::npos);
             return result;
         }
         result += matched + (i < slashed.size() ? "/" : "");
@@ -99,14 +107,16 @@ const WatcomPathRoots &roots() {
 std::string slashed(const char *path) {
     std::string result(path);
     for (char &c : result) {
-        if (c == '\\') c = '/';
+        if (c == '\\')
+            c = '/';
     }
     return result;
 }
 
 // "/x", "//server/x" and "C:/x" name the same file whatever the roots are.
 bool is_absolute(const std::string &path) {
-    if (!path.empty() && path[0] == '/') return true;
+    if (!path.empty() && path[0] == '/')
+        return true;
     return path.size() >= 2 && path[1] == ':' &&
            ((path[0] >= 'A' && path[0] <= 'Z') || (path[0] >= 'a' && path[0] <= 'z'));
 }
@@ -114,8 +124,10 @@ bool is_absolute(const std::string &path) {
 // `relative` under `root`, case-resolved below the root. The root is the host's
 // own path and is used exactly as given.
 std::string under(const std::string &root, std::string relative) {
-    while (relative.size() >= 2 && relative[0] == '.' && relative[1] == '/') relative.erase(0, 2);
-    if (relative == ".") relative.clear();
+    while (relative.size() >= 2 && relative[0] == '.' && relative[1] == '/')
+        relative.erase(0, 2);
+    if (relative == ".")
+        relative.clear();
     const std::string joined = relative.empty() ? root : root + "/" + relative;
     return resolve_case_insensitive(joined);
 }
@@ -135,26 +147,30 @@ std::string for_writing(const std::string &relative) {
     std::error_code ignored;
     std::filesystem::create_directories(std::filesystem::path(target).parent_path(), ignored);
     if (!exists(target)) {
-        const std::string shipped = r.data.empty() ? resolve_case_insensitive(relative)
-                                                   : under(r.data, relative);
-        if (is_regular_file(shipped)) std::filesystem::copy_file(shipped, target, ignored);
+        const std::string shipped =
+            r.data.empty() ? resolve_case_insensitive(relative) : under(r.data, relative);
+        if (is_regular_file(shipped))
+            std::filesystem::copy_file(shipped, target, ignored);
     }
     return target;
 }
 
-}  // namespace
+} // namespace
 
 std::string watcom_resolve_fs_path(const char *path, WatcomPathUse use) {
-    if (path == nullptr) return std::string();
+    if (path == nullptr)
+        return std::string();
     const std::string relative = slashed(path);
     const WatcomPathRoots &r = roots();
     if (is_absolute(relative) || (r.data.empty() && r.user.empty())) {
         return resolve_case_insensitive(relative);
     }
     if (!r.user.empty()) {
-        if (use == WatcomPathUse::Write) return for_writing(relative);
+        if (use == WatcomPathUse::Write)
+            return for_writing(relative);
         const std::string own = under(r.user, relative);
-        if (exists(own)) return own;
+        if (exists(own))
+            return own;
     }
     return r.data.empty() ? resolve_case_insensitive(relative) : under(r.data, relative);
 }
@@ -166,7 +182,8 @@ std::vector<std::string> watcom_resolve_fs_dirs(const char *directory) {
         return {resolve_case_insensitive(relative)};
     }
     std::vector<std::string> dirs;
-    if (!r.user.empty()) dirs.push_back(under(r.user, relative));
+    if (!r.user.empty())
+        dirs.push_back(under(r.user, relative));
     dirs.push_back(r.data.empty() ? resolve_case_insensitive(relative) : under(r.data, relative));
     return dirs;
 }

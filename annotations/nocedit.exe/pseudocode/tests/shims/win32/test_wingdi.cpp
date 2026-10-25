@@ -8,16 +8,14 @@
 // background paints the cell first. Each case draws through the game's function
 // pointers and reads the section's pixels back.
 
-#include "nocturne_test.h"
-
 #include "globals/globals_610000.h"
+#include "nocturne_test.h"
 #include "system/wingdi.h"
 #include "win32/shim_init.h"
 
 // The test's own main(), which SDL would otherwise rename on Windows.
 #define SDL_MAIN_HANDLED
 #include <SDL.h>
-
 #include <cstdlib>
 #include <cstring>
 #include <string>
@@ -84,16 +82,19 @@ struct Canvas {
         g_DeleteDCFunc(dc);
     }
 
-    unsigned at(int x, int y) const { return pixels[y * width + x] & 0x00ffffffu; }
+    unsigned at(int x, int y) const {
+        return pixels[y * width + x] & 0x00ffffffu;
+    }
 
     int count_not(unsigned colour) const {
         int n = 0;
-        for (int i = 0; i < width * height; ++i) n += ((pixels[i] & 0x00ffffffu) != colour);
+        for (int i = 0; i < width * height; ++i)
+            n += ((pixels[i] & 0x00ffffffu) != colour);
         return n;
     }
 };
 
-}  // namespace
+} // namespace
 
 // -----------------------------------------------------------------------------
 // Sections, brushes and rectangles
@@ -109,7 +110,7 @@ NOCTURNE_TEST(a_section_starts_as_the_transparency_key) {
     CHECK_EQ(((unsigned *)bits)[7] & 0x00ffffffu, kMagenta32);
     g_DeleteObjectFunc((HGDIOBJ)b32);
 
-    bmi = info(4, 2, 16);   // bottom-up is the same size
+    bmi = info(4, 2, 16); // bottom-up is the same size
     HBITMAP b16 = g_CreateDIBSectionFunc(nullptr, &bmi, 0, &bits, nullptr, 0);
     CHECK_EQ((unsigned)((unsigned short *)bits)[0], 0x7c1fu);
     g_DeleteObjectFunc((HGDIOBJ)b16);
@@ -163,14 +164,14 @@ NOCTURNE_TEST(a_rectangle_fills_with_the_brush_or_the_background) {
     Canvas canvas(8, 8);
     LOGBRUSH red;
     memset(&red, 0, sizeof(red));
-    red.lbColor = 0x000000ff;   // COLORREF is 0x00BBGGRR
+    red.lbColor = 0x000000ff; // COLORREF is 0x00BBGGRR
     HBRUSH brush = g_CreateBrushIndirectFunc(&red);
     CHECK(g_SelectObjectFunc(canvas.dc, (HGDIOBJ)brush) == nullptr);
     CHECK_EQ(g_RectangleFunc(canvas.dc, 0, 0, 2, 2), 1);
     CHECK_EQ(canvas.at(1, 1), 0x00ff0000u);
     CHECK_EQ(canvas.at(2, 2), kMagenta32);
 
-    g_RectangleFunc(canvas.dc, 6, 6, 4, 4);   // corners swapped
+    g_RectangleFunc(canvas.dc, 6, 6, 4, 4); // corners swapped
     CHECK_EQ(canvas.at(4, 4), 0x00ff0000u);
     CHECK_EQ(canvas.at(6, 6), kMagenta32);
 
@@ -278,7 +279,8 @@ NOCTURNE_TEST(the_font_is_the_first_on_the_path_that_opens) {
 #else
     const std::string separator = ":";
 #endif
-    set_env("NOCTURNE_OS_FONT_PATH", (separator + "missing.ttf" + separator + separator + font).c_str());
+    set_env("NOCTURNE_OS_FONT_PATH",
+            (separator + "missing.ttf" + separator + separator + font).c_str());
     Canvas canvas;
     HFONT found = make_font(-14);
     g_SelectObjectFunc(canvas.dc, (HGDIOBJ)found);
@@ -317,10 +319,11 @@ NOCTURNE_TEST(an_opaque_string_paints_its_cell_and_a_transparent_one_does_not) {
     g_SetBkColorFunc(canvas.dc, 0x00000000);
     CHECK_EQ(g_TextOutAFunc(canvas.dc, 0, 0, "W", 1), 1);
     CHECK_EQ(canvas.at(0, 0), 0u);           // the cell, black
-    CHECK_EQ(canvas.at(60, 30), kMagenta32);  // outside it, the key
+    CHECK_EQ(canvas.at(60, 30), kMagenta32); // outside it, the key
 
     g_SetBkModeFunc(canvas.dc, kTransparent);
-    for (int i = 0; i < canvas.width * canvas.height; ++i) canvas.pixels[i] = kMagenta32;
+    for (int i = 0; i < canvas.width * canvas.height; ++i)
+        canvas.pixels[i] = kMagenta32;
     g_TextOutAFunc(canvas.dc, 0, 0, "W", 1);
     CHECK_EQ(canvas.at(0, 0), kMagenta32);
     // Hard-edged: every pixel is the key or the text colour, nothing between.
@@ -361,7 +364,7 @@ NOCTURNE_TEST(text_is_measured_and_drawn_as_cp1252) {
 NOCTURNE_TEST(text_with_nothing_to_draw_draws_nothing) {
     set_env("NOCTURNE_OS_FONT_PATH", test_font().c_str());
     Canvas canvas;
-    CHECK_EQ(g_TextOutAFunc(canvas.dc, 0, 0, "x", 1), 1);   // no font yet
+    CHECK_EQ(g_TextOutAFunc(canvas.dc, 0, 0, "x", 1), 1); // no font yet
     tagSIZE unfonted;
     CHECK(g_GetTextExtentPoint32A(canvas.dc, "xy", 2, &unfonted));
     CHECK_EQ(unfonted.cx, 16L);
@@ -376,7 +379,7 @@ NOCTURNE_TEST(text_with_nothing_to_draw_draws_nothing) {
 
     HDC bare = g_CreateCompatibleDCFunc(nullptr);
     g_SelectObjectFunc(bare, (HGDIOBJ)font);
-    CHECK_EQ(g_TextOutAFunc(bare, 0, 0, "x", 1), 1);   // no section
+    CHECK_EQ(g_TextOutAFunc(bare, 0, 0, "x", 1), 1); // no section
 
     tagSIZE size;
     CHECK(!g_GetTextExtentPoint32A(canvas.dc, "x", 1, nullptr));

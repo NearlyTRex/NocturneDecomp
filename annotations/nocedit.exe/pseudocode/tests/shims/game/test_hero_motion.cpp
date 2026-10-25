@@ -2,10 +2,9 @@
 // HERO MOTION — the motion controller helpers the hero shims share
 // =============================================================================
 
-#include "nocturne_test.h"
-
 #include "behaviour_support.h"
 #include "game/hero_motion.h"
+#include "nocturne_test.h"
 
 #include <memory>
 
@@ -38,9 +37,11 @@ NOCTURNE_TEST(a_state_is_forced_through_its_motion) {
     c->model.base.motion_list_ptr = list.get();
     CHECK_EQ(nocturne_hero_motion_force_state(c, 7), 1);
     CHECK_EQ(stand.jumped.size(), (size_t)1);
-    if (!stand.jumped.empty()) CHECK_EQ(stand.jumped[0].index, 1);
+    if (!stand.jumped.empty())
+        CHECK_EQ(stand.jumped[0].index, 1);
     CHECK_EQ(stand.desired.size(), (size_t)1);
-    if (!stand.desired.empty()) CHECK_EQ(stand.desired[0].force, 0);
+    if (!stand.desired.empty())
+        CHECK_EQ(stand.desired[0].force, 0);
     CHECK_EQ(nocturne_hero_motion_force_state(c, 9), 0);
 }
 
@@ -54,13 +55,13 @@ NOCTURNE_TEST(a_frame_is_crossed_once) {
     stand.motion[&c->model.base] = &punch;
     c->model.base.current_frame_number = 16.0f;
 
-    CHECK_EQ(nocturne_hero_motion_crossed(c, 10, 10, 15.0f, 16.0f), 0);   // another state
-    CHECK_EQ(nocturne_hero_motion_crossed(c, 11, 11, 15.0f, 16.0f), 1);   // passed it
-    CHECK_EQ(nocturne_hero_motion_crossed(c, 11, 11, 16.0f, 16.0f), 0);   // passed before
-    CHECK_EQ(nocturne_hero_motion_crossed(c, 11, 11, 15.0f, 17.0f), 0);   // not reached
-    CHECK_EQ(nocturne_hero_motion_crossed(c, 11, 0, 30.0f, 16.0f), 1);    // entered at it
-    CHECK_EQ(nocturne_hero_motion_crossed(c, 11, 11, 20.0f, 16.0f), 1);   // looped to it
-    CHECK_EQ(nocturne_hero_motion_crossed(c, 11, 0, 0.0f, 17.0f), 0);     // entered short
+    CHECK_EQ(nocturne_hero_motion_crossed(c, 10, 10, 15.0f, 16.0f), 0); // another state
+    CHECK_EQ(nocturne_hero_motion_crossed(c, 11, 11, 15.0f, 16.0f), 1); // passed it
+    CHECK_EQ(nocturne_hero_motion_crossed(c, 11, 11, 16.0f, 16.0f), 0); // passed before
+    CHECK_EQ(nocturne_hero_motion_crossed(c, 11, 11, 15.0f, 17.0f), 0); // not reached
+    CHECK_EQ(nocturne_hero_motion_crossed(c, 11, 0, 30.0f, 16.0f), 1);  // entered at it
+    CHECK_EQ(nocturne_hero_motion_crossed(c, 11, 11, 20.0f, 16.0f), 1); // looped to it
+    CHECK_EQ(nocturne_hero_motion_crossed(c, 11, 0, 0.0f, 17.0f), 0);   // entered short
 }
 
 // A move in the world is the character's own move, collided.

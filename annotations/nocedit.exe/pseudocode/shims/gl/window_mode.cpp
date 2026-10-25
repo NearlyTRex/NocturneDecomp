@@ -5,12 +5,13 @@
 // own INI rather than a side file.
 
 #include "gl/window_mode.h"
-#include "shim_config.h"
+
 #include "core/debug_log.h"
 #include "core/ini_setting.h"
-#include <SDL.h>
-
 #include "nocturne.h"
+#include "shim_config.h"
+
+#include <SDL.h>
 
 #ifndef NOCTURNE_PLATFORM_FIXED_DISPLAY
 #define NOCTURNE_PLATFORM_FIXED_DISPLAY 0
@@ -23,7 +24,7 @@ namespace {
 const char kIniSection[] = "Graphics";
 const char kIniKey[] = "windowMode";
 
-int  s_mode = NOCTURNE_WINDOW_MODE_WINDOWED;
+int s_mode = NOCTURNE_WINDOW_MODE_WINDOWED;
 bool s_loaded = false;
 
 // The window the ddraw shim last handed us, so a mode change from the menu can
@@ -37,7 +38,7 @@ SDL_Window *s_window = nullptr;
 // selected resolution. Sizing the window from the render resolution therefore
 // makes it jump every time the engine crosses one of those boundaries. Held
 // here so SetDisplayMode has something to size against instead.
-int s_pref_width  = 0;
+int s_pref_width = 0;
 int s_pref_height = 0;
 
 // A negative mode is a large unsigned one, so one comparison bounds both ends.
@@ -57,15 +58,18 @@ int clamp_mode(int mode) {
 // calls this once a frame. Without the early out that would be an
 // SDL_SetWindowSize, and a resize event, per frame.
 void apply_pref_size() {
-    if (s_window == nullptr) return;
-    if (s_pref_width <= 0) return;   // never set; it is set only whole
+    if (s_window == nullptr)
+        return;
+    if (s_pref_width <= 0)
+        return; // never set; it is set only whole
 
     int cur_w = 0, cur_h = 0;
     SDL_GetWindowSize(s_window, &cur_w, &cur_h);
-    if (cur_w == s_pref_width && cur_h == s_pref_height) return;
+    if (cur_w == s_pref_width && cur_h == s_pref_height)
+        return;
 
-    DLOG("render", "resize window %dx%d -> %dx%d (render resolution unchanged)",
-            cur_w, cur_h, s_pref_width, s_pref_height);
+    DLOG("render", "resize window %dx%d -> %dx%d (render resolution unchanged)", cur_w, cur_h,
+         s_pref_width, s_pref_height);
     SDL_SetWindowSize(s_window, s_pref_width, s_pref_height);
     SDL_SetWindowPosition(s_window, SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED);
 }
@@ -77,24 +81,25 @@ extern "C" int nocturne_window_mode_get(void) {
     // DDSCL_FULLSCREEN | DDSCL_EXCLUSIVE is the only mode the shipped game has.
     return NOCTURNE_WINDOW_MODE_FULLSCREEN;
 #endif
-    if (g_nocturne_fixed_display != 0) return NOCTURNE_WINDOW_MODE_BORDERLESS;
+    if (g_nocturne_fixed_display != 0)
+        return NOCTURNE_WINDOW_MODE_BORDERLESS;
     if (!s_loaded) {
         // Runs from the ddraw shim during startup, before anything has written
         // the ini (see core/ini_setting.h).
         if (nocturne_ini_exists() == 0) {
             DLOG("render", "no %s yet; defaulting to windowed", NOCTURNE_INI_PATH);
         }
-        s_mode = clamp_mode(nocturne_ini_get_int(kIniSection, kIniKey,
-                                                 NOCTURNE_WINDOW_MODE_WINDOWED));
+        s_mode =
+            clamp_mode(nocturne_ini_get_int(kIniSection, kIniKey, NOCTURNE_WINDOW_MODE_WINDOWED));
         s_loaded = true;
-        DLOG("render", "loaded windowMode=%d (%s)", s_mode,
-                nocturne_window_mode_name(s_mode));
+        DLOG("render", "loaded windowMode=%d (%s)", s_mode, nocturne_window_mode_name(s_mode));
     }
     return s_mode;
 }
 
 extern "C" int nocturne_window_mode_cycle(int step) {
-    if (g_nocturne_fixed_display != 0) return nocturne_window_mode_get();
+    if (g_nocturne_fixed_display != 0)
+        return nocturne_window_mode_get();
     const int next =
         nocturne_ini_cycle(nocturne_window_mode_get(), step, NOCTURNE_WINDOW_MODE_COUNT);
     s_mode = next;
@@ -106,16 +111,21 @@ extern "C" int nocturne_window_mode_cycle(int step) {
 
 extern "C" const char *nocturne_window_mode_name(int mode) {
     switch (mode) {
-    case NOCTURNE_WINDOW_MODE_FULLSCREEN: return "Fullscreen";
-    case NOCTURNE_WINDOW_MODE_BORDERLESS: return "Borderless";
-    default:                              return "Windowed";
+    case NOCTURNE_WINDOW_MODE_FULLSCREEN:
+        return "Fullscreen";
+    case NOCTURNE_WINDOW_MODE_BORDERLESS:
+        return "Borderless";
+    default:
+        return "Windowed";
     }
 }
 
 extern "C" void nocturne_window_mode_apply(SDL_Window *window) {
-    if (window == nullptr) return;
+    if (window == nullptr)
+        return;
     s_window = window;
-    if (g_nocturne_fixed_display != 0) return;   // made full-screen, and left so
+    if (g_nocturne_fixed_display != 0)
+        return; // made full-screen, and left so
 
     const int mode = nocturne_window_mode_get();
 
@@ -137,10 +147,11 @@ extern "C" void nocturne_window_mode_apply(SDL_Window *window) {
     // SDL_WINDOW_FULLSCREEN_DESKTOP contains the FULLSCREEN bit, so mask with
     // the wider value to tell the two apart.
     const Uint32 cur = SDL_GetWindowFlags(window) & SDL_WINDOW_FULLSCREEN_DESKTOP;
-    if (cur == want) return;
+    if (cur == want)
+        return;
 
-    DLOG("render", "apply mode=%d (%s) flags 0x%x -> 0x%x",
-            mode, nocturne_window_mode_name(mode), cur, want);
+    DLOG("render", "apply mode=%d (%s) flags 0x%x -> 0x%x", mode, nocturne_window_mode_name(mode),
+         cur, want);
     // Switching straight between exclusive and desktop fullscreen asks the
     // backend to change the display mode and the window geometry while the
     // window stays fullscreen, which not every video driver or window manager
@@ -165,24 +176,26 @@ extern "C" void nocturne_window_mode_apply(SDL_Window *window) {
     SDL_GetWindowSize(window, &win_w, &win_h);
     SDL_GL_GetDrawableSize(window, &draw_w, &draw_h);
     SDL_GetCurrentDisplayMode(SDL_GetWindowDisplayIndex(window), &display_mode);
-    DLOG("render", "applied mode=%d: window %dx%d drawable %dx%d display %dx%d",
-            mode, win_w, win_h, draw_w, draw_h, display_mode.w, display_mode.h);
+    DLOG("render", "applied mode=%d: window %dx%d drawable %dx%d display %dx%d", mode, win_w, win_h,
+         draw_w, draw_h, display_mode.w, display_mode.h);
 }
 
 // The size is set only whole, so a width says there is one.
 extern "C" int nocturne_window_preferred_size(int *width, int *height) {
-    if (s_pref_width <= 0) return 0;
-    *width  = s_pref_width;
+    if (s_pref_width <= 0)
+        return 0;
+    *width = s_pref_width;
     *height = s_pref_height;
     return 1;
 }
 
 extern "C" void nocturne_window_set_size(int width, int height) {
-    if (width <= 0 || height <= 0) return;
+    if (width <= 0 || height <= 0)
+        return;
     // Recorded even when it cannot be applied yet. This runs before the window
     // exists, and it runs while fullscreen owns the size; either way it is the
     // size windowed mode should come back to.
-    s_pref_width  = width;
+    s_pref_width = width;
     s_pref_height = height;
 
     if (nocturne_window_mode_get() != NOCTURNE_WINDOW_MODE_WINDOWED) {

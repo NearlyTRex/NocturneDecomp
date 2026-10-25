@@ -52,7 +52,9 @@ struct Stand {
     int session_active = 0;
     int session_frame = 0;
 
-    void reset() { *this = Stand(); }
+    void reset() {
+        *this = Stand();
+    }
 };
 
 extern Stand stand;
@@ -61,4 +63,4 @@ extern Stand stand;
 CBitFont *micro_font();
 CBitFont *small_font();
 
-}  // namespace debug_support
+} // namespace debug_support

@@ -19,11 +19,10 @@
 //
 // and commit the rewritten trace with the code that caused it.
 
-#include "nocturne_test.h"
 #include "gl_recorder.h"
 #include "golden_trace.h"
-
 #include "nocturne.h"
+#include "nocturne_test.h"
 #include "renderer/builtin_dll.h"
 #include "renderer/trigl_gl.h"
 
@@ -45,7 +44,8 @@ void *entry(const char *name) {
     int count = 0;
     const NocturneBuiltinExport *table = nocturne_trigl_native_exports(&count);
     for (int i = 0; i < count; ++i) {
-        if (strcmp(table[i].name, name) == 0) return table[i].proc;
+        if (strcmp(table[i].name, name) == 0)
+            return table[i].proc;
     }
     return nullptr;
 }
@@ -116,10 +116,10 @@ SMRGLTextureBasic named(const char *name) {
 }
 
 // TEXTURED | DEPTH_TEST | DEPTH_WRITE, and the same with BLEND.
-const int kOpaque  = 0x001 | 0x040 | 0x080;
+const int kOpaque = 0x001 | 0x040 | 0x080;
 const int kBlended = 0x001 | 0x002 | 0x040;
 
-}  // namespace
+} // namespace
 
 NOCTURNE_TEST(a_frame_calls_the_driver_the_way_it_always_has) {
     Engine engine;
@@ -133,7 +133,8 @@ NOCTURNE_TEST(a_frame_calls_the_driver_the_way_it_always_has) {
     // Teardown first, then a fresh recorder: the renderer's record of the
     // pipeline outlives a test and would otherwise agree with a draw about state
     // the new pipeline never had.
-    if (void *kill = entry("APIDLLkill")) ((VoidFn)kill)();
+    if (void *kill = entry("APIDLLkill"))
+        ((VoidFn)kill)();
     nocturne_trigl_gl_shutdown();
     gl_recorder::install();
 
@@ -151,14 +152,14 @@ NOCTURNE_TEST(a_frame_calls_the_driver_the_way_it_always_has) {
     ((VoidIntFn)entry("APIDLLbeginScene"))();
 
     // An opaque draw.
-    ((SelectTextureFn)entry("APIDLLselectTexture"))(
-        &wall, 64, (uchar *)pixels.data(), (uchar *)palette.data(), nullptr);
+    ((SelectTextureFn)entry("APIDLLselectTexture"))(&wall, 64, (uchar *)pixels.data(),
+                                                    (uchar *)palette.data(), nullptr);
     ((DrawPolyListFn)entry("APIDLLdrawPolyList"))(quad.vertices, quad.list, 1, kOpaque);
 
     // A second texture arriving mid-frame, which uploads while the first draw's
     // polygons are still pending.
-    ((SelectTextureFn)entry("APIDLLselectTexture"))(
-        &glass, 64, (uchar *)pixels.data(), (uchar *)palette.data(), nullptr);
+    ((SelectTextureFn)entry("APIDLLselectTexture"))(&glass, 64, (uchar *)pixels.data(),
+                                                    (uchar *)palette.data(), nullptr);
     ((DrawPolyListFn)entry("APIDLLdrawPolyList"))(quad.vertices, quad.list, 1, kBlended);
 
     // The engine takes the frame to draw its 2D into and hands it back.

@@ -7,9 +7,8 @@
 // tag, or with no git) are runs of their own: test_version_tagged.cpp and
 // test_version_untracked.cpp.
 
-#include "nocturne_test.h"
-
 #include "core/version.h"
+#include "nocturne_test.h"
 
 #include <cstring>
 #include <string>

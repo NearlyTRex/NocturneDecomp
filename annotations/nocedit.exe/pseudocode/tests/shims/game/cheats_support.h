@@ -10,10 +10,9 @@
 // they were handed. Items are real structs, kept until the next reset(); the
 // party and the class infos are hero_support.h's. reset() puts everything back.
 
+#include "game/hero_weapon.h"
 #include "hero_support.h"
 #include "nocturne.h"
-
-#include "game/hero_weapon.h"
 
 #include <deque>
 #include <map>
@@ -41,31 +40,31 @@ struct Stand {
     // What each frame answers, in turn: a line, -1 for none, or kCancel. Once
     // these run out every frame cancels, so no menu outlives its script.
     std::deque<int> choices;
-    int left = 0;                                   // g_MenuLeftRightPressed each frame
+    int left = 0; // g_MenuLeftRightPressed each frame
     std::vector<Frame> frames;
 
     // --- the actor factory ----------------------------------------------------
-    std::vector<std::string> created;               // createActorByName, by class
-    std::set<std::string> not_items;                // ...made as no class it asks for
-    int alloc_fails = 0;                            // debugAllocTracked1 answers none
-    int named = 0;                                  // generateActorName
-    std::vector<CDemonActor *> set_up;              // setup
-    std::vector<std::pair<CDemonActor *, CDemonActor *>> picked_up;   // pickup: item, carrier
-    std::set<const void *> no_model;                // getItemModel answers none
+    std::vector<std::string> created;  // createActorByName, by class
+    std::set<std::string> not_items;   // ...made as no class it asks for
+    int alloc_fails = 0;               // debugAllocTracked1 answers none
+    int named = 0;                     // generateActorName
+    std::vector<CDemonActor *> set_up; // setup
+    std::vector<std::pair<CDemonActor *, CDemonActor *>> picked_up; // pickup: item, carrier
+    std::set<const void *> no_model;                                // getItemModel answers none
 
     // --- the hero shims -------------------------------------------------------
-    std::map<const void *, std::set<int>> refused;  // nocturne_hero_can_hold_kind; by hero
-    std::vector<int> kinds;                         // what it was asked
-    int session = 0;                                // nocturne_net_session_active
+    std::map<const void *, std::set<int>> refused; // nocturne_hero_can_hold_kind; by hero
+    std::vector<int> kinds;                        // what it was asked
+    int session = 0;                               // nocturne_net_session_active
 
     // --- the world ------------------------------------------------------------
-    std::map<std::string, int> bones;               // findBone; else -1
-    std::vector<std::pair<int, float>> scaled;      // scaleBoneRecursive: bone, factor
-    std::vector<std::string> precached;             // preCache, by model name
-    std::vector<EWeatherType> weather;              // setWeatherType
-    std::vector<int> camera_heights;                // reinitCamera
-    std::vector<std::string> events;                // addOrRemovePersistentEvent
-    std::vector<std::string> messages;              // displayMessage
+    std::map<std::string, int> bones;          // findBone; else -1
+    std::vector<std::pair<int, float>> scaled; // scaleBoneRecursive: bone, factor
+    std::vector<std::string> precached;        // preCache, by model name
+    std::vector<EWeatherType> weather;         // setWeatherType
+    std::vector<int> camera_heights;           // reinitCamera
+    std::vector<std::string> events;           // addOrRemovePersistentEvent
+    std::vector<std::string> messages;         // displayMessage
 
     void reset();
 };
@@ -92,4 +91,4 @@ int count_class(CHero *hero, const char *class_name);
 // cheats' ini is written; one name per test binary, as they may run at once.
 void enter_empty_dir(const char *name);
 
-}  // namespace cheats_support
+} // namespace cheats_support

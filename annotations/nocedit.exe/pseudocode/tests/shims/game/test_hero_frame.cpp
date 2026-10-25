@@ -2,10 +2,9 @@
 // HERO FRAME — what every hero class gets each frame
 // =============================================================================
 
-#include "nocturne_test.h"
-
 #include "game/hero_frame.h"
 #include "game_support.h"
+#include "nocturne_test.h"
 
 using namespace game_support;
 

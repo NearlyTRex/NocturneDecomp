@@ -34,9 +34,9 @@ struct Text {
 
 struct Stand {
     // --- the screen ---------------------------------------------------------
-    int ui = 1;                 // nocturne_ui_scale
-    int char_w = 6;             // text width per character, at scale 1
-    int text_h = 10;            // text height, at scale 1; 0 for a font with none
+    int ui = 1;      // nocturne_ui_scale
+    int char_w = 6;  // text width per character, at scale 1
+    int text_h = 10; // text height, at scale 1; 0 for a font with none
     std::vector<Line> lines;
     std::vector<Text> texts;
 
@@ -44,10 +44,10 @@ struct Stand {
     // testLineOcclusion: blocked when this answers true; clear when unset.
     std::function<bool(const CVector3f &, const CVector3f &)> blocked;
     int sight_tests = 0;
-    std::map<std::string, int> conditions;    // evaluateCondition
-    CVector3f facing = {0.0f, 0.0f, 1.0f};    // what transformVector hands back
-    int has_key = 1;                          // checkHasMatchingKey
-    CHero *local = nullptr;                   // nocturne_hero_local
+    std::map<std::string, int> conditions; // evaluateCondition
+    CVector3f facing = {0.0f, 0.0f, 1.0f}; // what transformVector hands back
+    int has_key = 1;                       // checkHasMatchingKey
+    CHero *local = nullptr;                // nocturne_hero_local
 
     // --- what canPickup answers each actor, and what getDeathState answers a
     // character; their classes are class_support's ----------------------------
@@ -55,10 +55,10 @@ struct Stand {
     std::map<const void *, EDeathState> death;
 
     // --- the rest -------------------------------------------------------------
-    std::map<int, std::string> key_names;     // getKeyDisplayName; else "K<code>"
-    float axes[6] = {};                       // move x/y, look x/y, triggers l/r
+    std::map<int, std::string> key_names; // getKeyDisplayName; else "K<code>"
+    float axes[6] = {};                   // move x/y, look x/y, triggers l/r
     int net_active = 0;
-    const char *place = nullptr;              // nocturne_chapter_environment_name
+    const char *place = nullptr; // nocturne_chapter_environment_name
 
     void reset();
 };
@@ -118,4 +118,4 @@ std::vector<Line> lines_in(int color);
 // The drawn text that starts with `prefix`, or nullptr.
 const Text *text_starting(const std::string &prefix);
 
-}  // namespace automap_support
+} // namespace automap_support

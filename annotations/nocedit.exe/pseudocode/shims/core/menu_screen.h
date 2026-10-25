@@ -17,7 +17,7 @@
 // start-y. renderMenuAndGetChoice double-spaces an untitled list and adds a
 // line; a titled list is single-spaced and spends lines on the title.
 #define NOCTURNE_MENU_ROWS_UNTITLED(lines) ((lines) * 2 + 1)
-#define NOCTURNE_MENU_ROWS_TITLED(lines)   ((lines) + 4)
+#define NOCTURNE_MENU_ROWS_TITLED(lines) ((lines) + 4)
 
 #ifdef __cplusplus
 extern "C" {

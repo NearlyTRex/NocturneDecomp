@@ -2,11 +2,10 @@
 // HERO LIGHT — a flashlight, a beam and goggles for each hero
 // =============================================================================
 
-#include "nocturne_test.h"
-
 #include "behaviour_support.h"
 #include "game/hero_light.h"
 #include "net/net_weapon.h"
+#include "nocturne_test.h"
 
 #include <string>
 
@@ -21,7 +20,7 @@ void party() {
     nocturne_hero_goggles_reset();
 }
 
-}  // namespace
+} // namespace
 
 // The local hero's flashlight is the game's own switch; each other player has
 // his own; anyone else gets one that is always off.

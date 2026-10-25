@@ -44,4 +44,4 @@ std::string render(const gl_recorder::State &state);
 // diffed. With NOCTURNE_GOLDEN_UPDATE=1 it rewrites the golden and returns true.
 bool matches(const char *name, const std::string &actual);
 
-}  // namespace golden
+} // namespace golden

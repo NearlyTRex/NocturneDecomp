@@ -2,10 +2,9 @@
 // HERO SHOVE — an enemy pushed away from the hero who hit it
 // =============================================================================
 
-#include "nocturne_test.h"
-
 #include "game/hero_shove.h"
 #include "game_support.h"
+#include "nocturne_test.h"
 
 using namespace game_support;
 
@@ -22,17 +21,19 @@ CCharacter *target(int i, float x, float z) {
 float moved_x(CCharacter *c) {
     float x = 0.0f;
     for (const auto &move : stand.moved) {
-        if (move.first == c) x += move.second.x;
+        if (move.first == c)
+            x += move.second.x;
     }
     return x;
 }
 
 // Plays out every shove a hero has, in steps past their length.
 void finish(CHero *owner) {
-    for (int i = 0; i < 6; i++) nocturne_hero_shove_step(owner, 0.05f);
+    for (int i = 0; i < 6; i++)
+        nocturne_hero_shove_step(owner, 0.05f);
 }
 
-}  // namespace
+} // namespace
 
 // The target is moved straight away from the hero, fast at first and easing
 // to a stop at the full distance; then nothing more.
@@ -50,7 +51,8 @@ NOCTURNE_TEST(a_shove_eases_the_target_to_the_distance) {
     const size_t moves = stand.moved.size();
     nocturne_hero_shove_step(heroes[0], 0.05f);
     CHECK_EQ(stand.moved.size(), moves);
-    for (const auto &move : stand.moved) CHECK_EQ(move.second.z, 0.0f);
+    for (const auto &move : stand.moved)
+        CHECK_EQ(move.second.z, 0.0f);
 }
 
 // A target standing on the hero has no direction to go, and is not shoved.

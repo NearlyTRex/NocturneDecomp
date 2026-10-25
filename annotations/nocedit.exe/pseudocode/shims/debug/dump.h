@@ -126,12 +126,11 @@ int nocturne_dump_bake_signature(const char *path, int tag);
 // The arm/disarm operation also fprintfs to stderr, so a toggle made from gdb
 // is visible in the terminal.
 struct CDemonActor;
-void nocturne_auto_dump_set_slot(int slot, const char *path_template,
-                                  struct CDemonActor *actor);
+void nocturne_auto_dump_set_slot(int slot, const char *path_template, struct CDemonActor *actor);
 
 // Returns non-zero if the slot is currently armed, so a caller can flip between
 // arm and disarm without tracking external state.
-int  nocturne_auto_dump_is_armed(int slot);
+int nocturne_auto_dump_is_armed(int slot);
 
 // Tick all armed slots — each writes one numbered actor-state file per call.
 // Nothing in the game calls this; drive it from a `commands` block on a

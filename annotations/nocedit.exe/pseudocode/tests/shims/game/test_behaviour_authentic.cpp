@@ -5,14 +5,13 @@
 // Built with NOCTURNE_AUTHENTIC_HERO_ACTIONS, _LIGHT_FILTER_LOAD, _ACTOR_DELETE
 // and _BOTTOMLESS_FALL, each of which puts the shipped behaviour back.
 
-#include "nocturne_test.h"
-
 #include "behaviour_support.h"
 #include "game/actor_delete.h"
 #include "game/gun_flashlight.h"
 #include "game/hero_colonel.h"
 #include "game/hero_grab.h"
 #include "game/light_filter_load.h"
+#include "nocturne_test.h"
 
 using namespace behaviour_support;
 

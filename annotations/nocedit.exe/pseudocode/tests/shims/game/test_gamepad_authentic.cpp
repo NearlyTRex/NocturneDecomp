@@ -5,11 +5,10 @@
 // Built with NOCTURNE_AUTHENTIC_GAMEPAD: every entry point is there for its
 // callers and does nothing.
 
-#include "nocturne_test.h"
-#include "gamepad_support.h"
-
 #include "game/gamepad.h"
+#include "gamepad_support.h"
 #include "nocturne.h"
+#include "nocturne_test.h"
 
 using namespace gamepad_support;
 
@@ -23,7 +22,8 @@ NOCTURNE_TEST(there_is_no_pad) {
     CHECK_EQ(nocturne_gamepad_present(), 0);
     float v[6] = {9, 9, 9, 9, 9, 9};
     nocturne_gamepad_axes(&v[0], &v[1], &v[2], &v[3], &v[4], &v[5]);
-    for (float f : v) CHECK_EQ(f, 0.0f);
+    for (float f : v)
+        CHECK_EQ(f, 0.0f);
     nocturne_gamepad_axes(nullptr, nullptr, nullptr, nullptr, nullptr, nullptr);
     CHECK(nocturne_gamepad_code_name(NOCTURNE_PAD_BUTTON(0)) == nullptr);
     CGame game = {};

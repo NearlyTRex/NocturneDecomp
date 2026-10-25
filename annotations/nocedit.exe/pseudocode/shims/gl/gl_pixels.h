@@ -23,16 +23,27 @@
 // GL_BGRA, not GL_RGBA. False for a depth with no GL equivalent.
 inline bool nocturne_gl_format_for_bpp(int bpp, GLenum *format, GLenum *type) {
     switch (bpp) {
-        case 16: *format = GL_RGB;  *type = GL_UNSIGNED_SHORT_5_6_5; return true;
-        case 24: *format = GL_RGB;  *type = GL_UNSIGNED_BYTE;        return true;
-        case 32: *format = GL_BGRA; *type = GL_UNSIGNED_BYTE;        return true;
-        default: return false;
+    case 16:
+        *format = GL_RGB;
+        *type = GL_UNSIGNED_SHORT_5_6_5;
+        return true;
+    case 24:
+        *format = GL_RGB;
+        *type = GL_UNSIGNED_BYTE;
+        return true;
+    case 32:
+        *format = GL_BGRA;
+        *type = GL_UNSIGNED_BYTE;
+        return true;
+    default:
+        return false;
     }
 }
 
 // Bytes per pixel of a pair from nocturne_gl_format_for_bpp.
 inline int nocturne_gl_pixel_bytes(GLenum format, GLenum type) {
-    if (format == GL_BGRA) return 4;
+    if (format == GL_BGRA)
+        return 4;
     return type == GL_UNSIGNED_SHORT_5_6_5 ? 2 : 3;
 }
 
@@ -42,7 +53,10 @@ inline int nocturne_gl_pixel_bytes(GLenum format, GLenum type) {
 inline void nocturne_gl_pack_rgba(const unsigned char *rgba, GLenum format, GLenum type,
                                   unsigned char *out) {
     if (format == GL_BGRA) {
-        out[0] = rgba[2]; out[1] = rgba[1]; out[2] = rgba[0]; out[3] = rgba[3];
+        out[0] = rgba[2];
+        out[1] = rgba[1];
+        out[2] = rgba[0];
+        out[3] = rgba[3];
     } else if (type == GL_UNSIGNED_SHORT_5_6_5) {
         const unsigned r = (rgba[0] * 31u + 127u) / 255u;
         const unsigned g = (rgba[1] * 63u + 127u) / 255u;
@@ -50,7 +64,9 @@ inline void nocturne_gl_pack_rgba(const unsigned char *rgba, GLenum format, GLen
         const unsigned short packed = (unsigned short)((r << 11) | (g << 5) | b);
         memcpy(out, &packed, sizeof(packed));
     } else {
-        out[0] = rgba[0]; out[1] = rgba[1]; out[2] = rgba[2];
+        out[0] = rgba[0];
+        out[1] = rgba[1];
+        out[2] = rgba[2];
     }
 }
 
@@ -64,7 +80,8 @@ inline void nocturne_gl_read_pixels(GLenum read_buffer, GLsizei width, GLsizei h
     gl.PixelStorei(GL_PACK_ALIGNMENT, 1);
 #if NOCTURNE_GLES
     unsigned char *rgba = (unsigned char *)malloc((size_t)width * (size_t)height * 4u);
-    if (rgba == nullptr) return;
+    if (rgba == nullptr)
+        return;
     gl.ReadBuffer(read_buffer);
     gl.ReadPixels(0, 0, width, height, GL_RGBA, GL_UNSIGNED_BYTE, rgba);
     for (GLsizei y = 0; y < height; ++y) {
@@ -87,7 +104,7 @@ inline void nocturne_gl_read_pixels(GLenum read_buffer, GLsizei width, GLsizei h
 // bottom-up and the engine's image is top-down.
 inline void nocturne_gl_flip_rows(unsigned char *base, int pitch, int rows) {
     for (int y = 0; y < rows / 2; ++y) {
-        unsigned char *top    = base + (size_t)y * (size_t)pitch;
+        unsigned char *top = base + (size_t)y * (size_t)pitch;
         unsigned char *bottom = base + (size_t)(rows - 1 - y) * (size_t)pitch;
         std::swap_ranges(top, top + pitch, bottom);
     }

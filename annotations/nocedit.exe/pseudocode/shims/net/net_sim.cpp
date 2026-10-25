@@ -5,9 +5,9 @@
 // See net_sim.h for why simulation code must not read g_LocalHeroIndex.
 
 #include "net/net_sim.h"
-#include "shim_config.h"
 
 #include "nocturne.h"
+#include "shim_config.h"
 
 // See net_sim.h, "WHICH HERO DOES THIS SCRIPT MEAN?". -1 is no record.
 static int s_trigger_hero_index = -1;
@@ -15,8 +15,7 @@ static int s_trigger_hero_index = -1;
 // A hero held out of the world carries a negative area (createOneHero), and a
 // dead one should not be what an enemy paths toward while a live one is
 // available. Both tests read lockstep state, so every machine agrees.
-static int sim_hero_is_targetable(CHero *hero)
-{
+static int sim_hero_is_targetable(CHero *hero) {
     if (hero == (CHero *)0x0) {
         return 0;
     }
@@ -26,14 +25,11 @@ static int sim_hero_is_targetable(CHero *hero)
     return 1;
 }
 
-static CHero *sim_local_hero(void)
-{
+static CHero *sim_local_hero(void) {
     return nocturne_hero_local();
 }
 
-
-extern "C" CHero *nocturne_net_sim_leader_hero(void)
-{
+extern "C" CHero *nocturne_net_sim_leader_hero(void) {
     int i;
 
     if (nocturne_net_session_active() == 0) {
@@ -50,8 +46,7 @@ extern "C" CHero *nocturne_net_sim_leader_hero(void)
 // See net_sim.h. The leader, because CMimic::setup builds the mimic out of
 // whatever this returns — model, skeleton and cloth — so the copies in
 // updatePose match by construction whichever hero it is.
-extern "C" CHero *nocturne_net_sim_mimic_hero(void)
-{
+extern "C" CHero *nocturne_net_sim_mimic_hero(void) {
     if (nocturne_net_session_active() == 0) {
         // Single player mirrors the player, exactly as shipped.
         return sim_local_hero();
@@ -59,19 +54,17 @@ extern "C" CHero *nocturne_net_sim_mimic_hero(void)
     return nocturne_net_sim_leader_hero();
 }
 
-extern "C" CHero *nocturne_net_sim_target_for(CDemonActor *self)
-{
+extern "C" CHero *nocturne_net_sim_target_for(CDemonActor *self) {
     if (self == (CDemonActor *)0x0) {
         return nocturne_net_sim_leader_hero();
     }
     return nocturne_net_sim_target_hero(&self->location.position);
 }
 
-extern "C" CHero *nocturne_net_sim_target_hero(const CVector3f *from)
-{
+extern "C" CHero *nocturne_net_sim_target_hero(const CVector3f *from) {
     CHero *best = (CHero *)0x0;
-    float  best_distance = 0.0f;
-    int    i;
+    float best_distance = 0.0f;
+    int i;
 
     if (nocturne_net_session_active() == 0) {
         return sim_local_hero();
@@ -82,10 +75,10 @@ extern "C" CHero *nocturne_net_sim_target_hero(const CVector3f *from)
 
     for (i = 0; i < NOCTURNE_HERO_SLOTS; i++) {
         CHero *hero = g_HeroActors[i];
-        float  dx;
-        float  dy;
-        float  dz;
-        float  distance;
+        float dx;
+        float dy;
+        float dz;
+        float distance;
 
         if (sim_hero_is_targetable(hero) == 0) {
             continue;
@@ -111,8 +104,7 @@ extern "C" CHero *nocturne_net_sim_target_hero(const CVector3f *from)
 
 // See net_sim.h, "AM I THE PLAYER?", for why the index is substituted rather
 // than each subclass patched.
-extern "C" int nocturne_net_sim_begin_hero_setup(CDemonActor *actor)
-{
+extern "C" int nocturne_net_sim_begin_hero_setup(CDemonActor *actor) {
     int saved = g_LocalHeroIndex;
     int slot;
 
@@ -126,13 +118,11 @@ extern "C" int nocturne_net_sim_begin_hero_setup(CDemonActor *actor)
     return saved;
 }
 
-extern "C" void nocturne_net_sim_end_hero_setup(int saved_local_hero_index)
-{
+extern "C" void nocturne_net_sim_end_hero_setup(int saved_local_hero_index) {
     g_LocalHeroIndex = saved_local_hero_index;
 }
 
-extern "C" void nocturne_net_sim_note_trigger_hero(CDemonActor *actor)
-{
+extern "C" void nocturne_net_sim_note_trigger_hero(CDemonActor *actor) {
     int slot;
 
     if (nocturne_net_session_active() == 0) {
@@ -144,8 +134,7 @@ extern "C" void nocturne_net_sim_note_trigger_hero(CDemonActor *actor)
     }
 }
 
-extern "C" CHero *nocturne_net_sim_trigger_hero(void)
-{
+extern "C" CHero *nocturne_net_sim_trigger_hero(void) {
     if ((s_trigger_hero_index < 0) || (g_HeroCount <= s_trigger_hero_index)) {
         return (CHero *)0x0;
     }
@@ -156,16 +145,14 @@ extern "C" CHero *nocturne_net_sim_trigger_hero(void)
 static int s_gas_hero_index = -1;
 
 // The script's flagOn/flagOff keep their flags as persistent events.
-static int sim_gas_choking(void)
-{
-    return core_event_cpp_CEventList_findPersistentEvent_FUN_004b0860
-               (g_CEventListPtr, (char *)"choking") >= 0;
+static int sim_gas_choking(void) {
+    return core_event_cpp_CEventList_findPersistentEvent_FUN_004b0860(g_CEventListPtr,
+                                                                      (char *)"choking") >= 0;
 }
 
 // TriggerGasRoomEscape raises Escape on the frame the room empties; the script
 // turns choking off and speaks its escape line on that frame.
-static int sim_gas_escaping(void)
-{
+static int sim_gas_escaping(void) {
     const SEventNameBlock *blocks[2];
     int b;
     int i;
@@ -183,21 +170,19 @@ static int sim_gas_escaping(void)
 }
 
 // Nonzero when `hero` stands inside TriggerGasRoom.
-static int sim_hero_in_gas_room(CHero *hero)
-{
+static int sim_hero_in_gas_room(CHero *hero) {
     CTrigger *gas;
 
-    gas = (CTrigger *)core_actor_cpp_castToClassHash_FUN_0040c790
-        (core_mission_cpp_CDemonMission_findActorByName_FUN_00524030
-             (g_CDemonMissionPtr, (char *)"TriggerGasRoom"),
-         g_CTriggerClassInfo.name_hash);
+    gas = (CTrigger *)core_actor_cpp_castToClassHash_FUN_0040c790(
+        core_mission_cpp_CDemonMission_findActorByName_FUN_00524030(g_CDemonMissionPtr,
+                                                                    (char *)"TriggerGasRoom"),
+        g_CTriggerClassInfo.name_hash);
     return (gas != (CTrigger *)0x0) &&
            (core_trigger_cpp_CTrigger_containsActor_FUN_005e0cd0(gas, (CDemonActor *)hero) != 0);
 }
 
 // Nonzero when `hero` is alive, unmasked and inside TriggerGasRoom.
-static int sim_hero_breathes_gas(CHero *hero)
-{
+static int sim_hero_breathes_gas(CHero *hero) {
     if ((hero == (CHero *)0x0) || ((hero->base).hit_points <= 0.0f) ||
         (hero->is_wearing_gas_mask == 2)) {
         return 0;
@@ -206,8 +191,7 @@ static int sim_hero_breathes_gas(CHero *hero)
 }
 
 // The first player hero, by slot, standing in TriggerGasRoom unmasked, or -1.
-static int sim_unmasked_hero_in_gas(void)
-{
+static int sim_unmasked_hero_in_gas(void) {
     int i;
 
     for (i = 0; (i < NOCTURNE_HERO_SLOTS) && (i < g_HeroCount); i++) {
@@ -218,8 +202,7 @@ static int sim_unmasked_hero_in_gas(void)
     return -1;
 }
 
-extern "C" CHero *nocturne_net_sim_script_hero(void)
-{
+extern "C" CHero *nocturne_net_sim_script_hero(void) {
     int choking;
     int i;
 
@@ -227,8 +210,8 @@ extern "C" CHero *nocturne_net_sim_script_hero(void)
         return g_HeroActors[g_LocalHeroIndex];
     }
     choking = sim_gas_choking();
-    if (((choking != 0) || (sim_gas_escaping() != 0)) &&
-        (0 <= s_gas_hero_index) && (s_gas_hero_index < g_HeroCount)) {
+    if (((choking != 0) || (sim_gas_escaping() != 0)) && (0 <= s_gas_hero_index) &&
+        (s_gas_hero_index < g_HeroCount)) {
         return g_HeroActors[s_gas_hero_index];
     }
     i = sim_unmasked_hero_in_gas();
@@ -242,8 +225,7 @@ extern "C" CHero *nocturne_net_sim_script_hero(void)
     return g_HeroActors[0];
 }
 
-extern "C" int nocturne_net_sim_gas_spares(CHero *hero)
-{
+extern "C" int nocturne_net_sim_gas_spares(CHero *hero) {
     if ((nocturne_net_session_active() == 0) || (hero == (CHero *)0x0)) {
         return 0;
     }
@@ -253,8 +235,7 @@ extern "C" int nocturne_net_sim_gas_spares(CHero *hero)
     return (sim_gas_choking() == 0) && (sim_hero_breathes_gas(hero) == 0);
 }
 
-extern "C" int nocturne_net_sim_spot_in_gas(const CVector3f *feet)
-{
+extern "C" int nocturne_net_sim_spot_in_gas(const CVector3f *feet) {
     CTrigger *gas;
     CBoundingBox3D box;
     CVector3f world;
@@ -264,10 +245,10 @@ extern "C" int nocturne_net_sim_spot_in_gas(const CVector3f *feet)
     if (feet == (const CVector3f *)0x0) {
         return 0;
     }
-    gas = (CTrigger *)core_actor_cpp_castToClassHash_FUN_0040c790
-        (core_mission_cpp_CDemonMission_findActorByName_FUN_00524030
-             (g_CDemonMissionPtr, (char *)"TriggerGasRoom"),
-         g_CTriggerClassInfo.name_hash);
+    gas = (CTrigger *)core_actor_cpp_castToClassHash_FUN_0040c790(
+        core_mission_cpp_CDemonMission_findActorByName_FUN_00524030(g_CDemonMissionPtr,
+                                                                    (char *)"TriggerGasRoom"),
+        g_CTriggerClassInfo.name_hash);
     if (gas == (CTrigger *)0x0) {
         return 0;
     }
@@ -287,18 +268,16 @@ extern "C" int nocturne_net_sim_spot_in_gas(const CVector3f *feet)
         return local.x * local.x + local.z * local.z <=
                (gas->trigger_size).x * (gas->trigger_size).z * 0.25f;
     }
-    return (box.min.x <= local.x) && (local.x <= box.max.x) &&
-           (box.min.z <= local.z) && (local.z <= box.max.z);
+    return (box.min.x <= local.x) && (local.x <= box.max.x) && (box.min.z <= local.z) &&
+           (local.z <= box.max.z);
 }
 
-extern "C" void nocturne_net_sim_gas_tick(void)
-{
+extern "C" void nocturne_net_sim_gas_tick(void) {
     char escape[] = "Escape";
     CHero *hero;
 
     if ((nocturne_net_session_active() == 0) || (g_CEventListPtr == (CEventList *)0x0) ||
-        (sim_gas_choking() == 0) || (s_gas_hero_index < 0) ||
-        (g_HeroCount <= s_gas_hero_index)) {
+        (sim_gas_choking() == 0) || (s_gas_hero_index < 0) || (g_HeroCount <= s_gas_hero_index)) {
         return;
     }
     hero = g_HeroActors[s_gas_hero_index];
@@ -309,8 +288,7 @@ extern "C" void nocturne_net_sim_gas_tick(void)
     core_event_cpp_CEventList_executeCommands_FUN_004aabe0(g_CEventListPtr, escape);
 }
 
-extern "C" void nocturne_net_sim_forget_trigger_hero(void)
-{
+extern "C" void nocturne_net_sim_forget_trigger_hero(void) {
     s_trigger_hero_index = -1;
     s_gas_hero_index = -1;
 }

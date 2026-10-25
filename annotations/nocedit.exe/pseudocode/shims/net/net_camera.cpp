@@ -5,10 +5,11 @@
 // See net_camera.h. The scheduling follows net_weapon.cpp.
 
 #include "net/net_camera.h"
+
 #include "core/ascii_case.h"
-#include "shim_config.h"
-#include "nocturne.h"
 #include "core/debug_log.h"
+#include "nocturne.h"
+#include "shim_config.h"
 
 #include <cstring>
 
@@ -26,18 +27,18 @@
 
 #pragma pack(push, 1)
 typedef struct SNetPacket_Camera {
-    SNetPacketHeader header;         // 0x0
-    int apply_sequence;              // 0x5   sim frame every machine applies on
-    int origin_player;               // 0x9   whose camera
-    int serial;                      // 0xd   per-origin, for de-duplication
-    int camera_index;                // 0x11  index into g_CDemonSetPtr->cameras
-} SNetPacket_Camera;                 // 0x15
+    SNetPacketHeader header; // 0x0
+    int apply_sequence;      // 0x5   sim frame every machine applies on
+    int origin_player;       // 0x9   whose camera
+    int serial;              // 0xd   per-origin, for de-duplication
+    int camera_index;        // 0x11  index into g_CDemonSetPtr->cameras
+} SNetPacket_Camera;         // 0x15
 #pragma pack(pop)
 
 static SNetPacket_Camera s_pending[CAMERA_MAX_PENDING];
 static int s_pending_count = 0;
-static int s_synced_camera[NOCTURNE_HERO_SLOTS] = {
-    CAMERA_NONE, CAMERA_NONE, CAMERA_NONE, CAMERA_NONE};
+static int s_synced_camera[NOCTURNE_HERO_SLOTS] = {CAMERA_NONE, CAMERA_NONE, CAMERA_NONE,
+                                                   CAMERA_NONE};
 // Serials taken from each peer (net_packets.h).
 static SNetSerialWindow s_serials[NOCTURNE_HERO_SLOTS];
 // Serial of the change each player's synced camera came from.
@@ -47,13 +48,11 @@ static int s_next_serial = 1;
 static int s_published_camera = -2;
 static int s_reported_late = 0;
 
-static void camera_broadcast(const SNetPacket_Camera *change)
-{
+static void camera_broadcast(const SNetPacket_Camera *change) {
     nocturne_net_session_broadcast((SNetPacketHeader *)&change->header);
 }
 
-static void camera_queue(const SNetPacket_Camera *change)
-{
+static void camera_queue(const SNetPacket_Camera *change) {
     if (CAMERA_MAX_PENDING <= s_pending_count) {
         DWARN("net_camera: pending queue full, dropping a camera change - "
               "isCurrentCamera may disagree between machines from here on");
@@ -63,11 +62,9 @@ static void camera_queue(const SNetPacket_Camera *change)
     s_pending_count = s_pending_count + 1;
 }
 
-
-static void camera_publish_local(void)
-{
+static void camera_publish_local(void) {
     SNetPacket_Camera change;
-    int               camera = g_CDemonSetPtr->selected_camera_index;
+    int camera = g_CDemonSetPtr->selected_camera_index;
 
     if (camera == s_published_camera) {
         return;
@@ -76,22 +73,20 @@ static void camera_publish_local(void)
 
     nocturne_net_packet_init(&change, (int)sizeof(change), NOCTURNE_NET_PACKET_CAMERA);
     change.apply_sequence = nocturne_net_session_local_frame() + CAMERA_LEAD_FRAMES;
-    change.origin_player  = g_CNetGamePtr->local_player_index;
-    change.serial         = s_next_serial;
-    change.camera_index   = camera;
+    change.origin_player = g_CNetGamePtr->local_player_index;
+    change.serial = s_next_serial;
+    change.camera_index = camera;
     s_next_serial = s_next_serial + 1;
 
     camera_queue(&change);
     camera_broadcast(&change);
 }
 
-extern "C" int nocturne_net_camera_active(void)
-{
+extern "C" int nocturne_net_camera_active(void) {
     return nocturne_net_session_playing();
 }
 
-extern "C" int nocturne_net_camera_is_current(const char *camera_name)
-{
+extern "C" int nocturne_net_camera_is_current(const char *camera_name) {
     CDemonSet *set = g_CDemonSetPtr;
 
     if ((set == (CDemonSet *)0x0) || (camera_name == (const char *)0x0)) {
@@ -107,8 +102,7 @@ extern "C" int nocturne_net_camera_is_current(const char *camera_name)
     return 0;
 }
 
-extern "C" int nocturne_net_camera_on_packet(const void *packet, int packet_size)
-{
+extern "C" int nocturne_net_camera_on_packet(const void *packet, int packet_size) {
     const SNetPacket_Camera *incoming = (const SNetPacket_Camera *)packet;
 
     if (nocturne_net_packet_is(packet, packet_size, NOCTURNE_NET_PACKET_CAMERA,
@@ -119,16 +113,15 @@ extern "C" int nocturne_net_camera_on_packet(const void *packet, int packet_size
         return 1;
     }
     if (nocturne_net_serial_take(&s_serials[incoming->origin_player], incoming->serial) == 0) {
-        return 1;               // a re-send of one already queued
+        return 1; // a re-send of one already queued
     }
     camera_queue(incoming);
     return 1;
 }
 
-extern "C" void nocturne_net_camera_apply_if_due(int sequence_number)
-{
+extern "C" void nocturne_net_camera_apply_if_due(int sequence_number) {
     CNetGame *net_game = g_CNetGamePtr;
-    int       kept = 0;
+    int kept = 0;
 
     if ((net_game == (CNetGame *)0x0) || (g_CDemonSetPtr == (CDemonSet *)0x0)) {
         return;
@@ -154,11 +147,10 @@ extern "C" void nocturne_net_camera_apply_if_due(int sequence_number)
         if ((change->apply_sequence < sequence_number) && (s_reported_late == 0)) {
             s_reported_late = 1;
             DLOG("netplay",
-                    "net_camera: a camera change scheduled for frame %d applied at %d - "
-                    "isCurrentCamera disagreed for %d frames. CAMERA_LEAD_FRAMES is too "
-                    "short for this connection",
-                    change->apply_sequence, sequence_number,
-                    sequence_number - change->apply_sequence);
+                 "net_camera: a camera change scheduled for frame %d applied at %d - "
+                 "isCurrentCamera disagreed for %d frames. CAMERA_LEAD_FRAMES is too "
+                 "short for this connection",
+                 change->apply_sequence, sequence_number, sequence_number - change->apply_sequence);
         }
         if (s_applied_serial[origin] < change->serial) {
             s_applied_serial[origin] = change->serial;
@@ -168,12 +160,11 @@ extern "C" void nocturne_net_camera_apply_if_due(int sequence_number)
     s_pending_count = kept;
 }
 
-extern "C" void nocturne_net_camera_reset(void)
-{
-    s_pending_count    = 0;
-    s_next_serial      = 1;
+extern "C" void nocturne_net_camera_reset(void) {
+    s_pending_count = 0;
+    s_next_serial = 1;
     s_published_camera = -2;
-    s_reported_late    = 0;
+    s_reported_late = 0;
     std::memset(s_serials, 0, sizeof(s_serials));
     std::memset(s_applied_serial, 0, sizeof(s_applied_serial));
     for (int i = 0; i < NOCTURNE_HERO_SLOTS; i++) {
@@ -193,11 +184,19 @@ extern "C" CDemonActor *nocturne_net_camera_focus_actor(CDemonActor *target) {
 
 #else
 
-extern "C" int  nocturne_net_camera_active(void)                    { return 0; }
-extern "C" int  nocturne_net_camera_is_current(const char *)        { return 0; }
-extern "C" int  nocturne_net_camera_on_packet(const void *, int)    { return 0; }
-extern "C" void nocturne_net_camera_apply_if_due(int)               {}
-extern "C" void nocturne_net_camera_reset(void)                     {}
-extern "C" CDemonActor *nocturne_net_camera_focus_actor(CDemonActor *target) { return target; }
+extern "C" int nocturne_net_camera_active(void) {
+    return 0;
+}
+extern "C" int nocturne_net_camera_is_current(const char *) {
+    return 0;
+}
+extern "C" int nocturne_net_camera_on_packet(const void *, int) {
+    return 0;
+}
+extern "C" void nocturne_net_camera_apply_if_due(int) {}
+extern "C" void nocturne_net_camera_reset(void) {}
+extern "C" CDemonActor *nocturne_net_camera_focus_actor(CDemonActor *target) {
+    return target;
+}
 
 #endif

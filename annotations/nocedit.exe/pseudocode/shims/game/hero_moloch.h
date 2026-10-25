@@ -36,7 +36,7 @@
 struct CMoloch;
 struct CHero;
 
-#define MOLOCH_MIN_HIT_POINTS   1.0f
+#define MOLOCH_MIN_HIT_POINTS 1.0f
 #define MOLOCH_REGEN_PER_SECOND 5.0f
 
 #ifdef __cplusplus

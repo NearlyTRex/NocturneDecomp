@@ -6,11 +6,10 @@
 // first use of the setting is what reads it, so this is a run of its own: see
 // window_stand.h.
 
-#include "nocturne_test.h"
-#include "ini_support.h"
-#include "window_stand.h"
-
 #include "gl/window_mode.h"
+#include "ini_support.h"
+#include "nocturne_test.h"
+#include "window_stand.h"
 
 // Borderless from the ini; leaving it for windowed with no size ever chosen
 // keeps the window the size it was.

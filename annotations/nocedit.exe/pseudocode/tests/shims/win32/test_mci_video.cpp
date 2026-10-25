@@ -9,12 +9,11 @@
 // says once that it is done. The movies are written by movie_writer.h; what no
 // movie makes fail, ffmpeg_faults.h does.
 
-#include "nocturne_test.h"
 #include "ffmpeg_faults.h"
-#include "movie_writer.h"
-#include "sdl_support.h"
-
 #include "globals/globals_610000.h"
+#include "movie_writer.h"
+#include "nocturne_test.h"
+#include "sdl_support.h"
 #include "system/mmsystem.h"
 #include "win32/mci_video.h"
 #include "win32/shim_init.h"
@@ -22,7 +21,6 @@
 // The test's own main(), which SDL would otherwise rename on Windows.
 #define SDL_MAIN_HANDLED
 #include <SDL.h>
-
 #include <cstdio>
 #include <cstdlib>
 #include <cstring>
@@ -37,7 +35,9 @@ using sdl_support::stand;
 
 using movie_writer::Movie;
 
-bool write_movie(const std::string &path, const Movie &m) { return movie_writer::write(path, m); }
+bool write_movie(const std::string &path, const Movie &m) {
+    return movie_writer::write(path, m);
+}
 
 // --- driving it as playMovie does --------------------------------------------
 
@@ -49,7 +49,8 @@ MCIERROR mci(const std::string &command, char *reply = nullptr, UINT size = 0) {
 int pump_until_done(int ms) {
     const Uint32 start = SDL_GetTicks();
     while (SDL_GetTicks() - start < (Uint32)ms) {
-        if (mci_video_pump_frame()) return 1;
+        if (mci_video_pump_frame())
+            return 1;
         SDL_Delay(5);
     }
     return 0;
@@ -80,7 +81,7 @@ struct Dir {
     }
 };
 
-}  // namespace
+} // namespace
 
 // -----------------------------------------------------------------------------
 // Opening
@@ -157,14 +158,14 @@ NOCTURNE_TEST(a_movie_that_cannot_be_opened_is_an_error_and_nothing_to_play) {
 NOCTURNE_TEST(a_picture_that_cannot_be_decoded_is_an_error) {
     Dir dir;
     struct Patch {
-        size_t offset;   // into the BITMAPINFOHEADER
+        size_t offset; // into the BITMAPINFOHEADER
         uint32_t value;
         int size;
     };
     const Patch patches[] = {
-        {16, 0x5a5a5a5a, 4},   // biCompression: an unknown fourcc
-        {4, 0, 4},             // biWidth
-        {8, 0, 4},             // biHeight
+        {16, 0x5a5a5a5a, 4}, // biCompression: an unknown fourcc
+        {4, 0, 4},           // biWidth
+        {8, 0, 4},           // biHeight
     };
     for (const Patch &p : patches) {
         CHECK(write_movie("Video/bad.avi", Movie()));
@@ -188,9 +189,9 @@ NOCTURNE_TEST(a_movie_whose_opening_fails_part_way_is_an_error) {
         {"avcodec_parameters_to_context", 0},
         {"avcodec_open2", 0},
         {"av_packet_alloc", 0},
-        {"av_frame_alloc", 0},   // the decode frame
-        {"av_frame_alloc", 1},   // the RGB one
-        {"av_frame_alloc", 2},   // the first of the queue
+        {"av_frame_alloc", 0}, // the decode frame
+        {"av_frame_alloc", 1}, // the RGB one
+        {"av_frame_alloc", 2}, // the first of the queue
         {"av_malloc", 0},
         {"sws_getContext", 0},
     };
@@ -220,7 +221,7 @@ NOCTURNE_TEST(a_movie_plays_its_length_and_says_once_that_it_ended) {
     CHECK_EQ(mci_video_is_playing(), 1);
     CHECK_EQ(pump_until_done(5000), 1);
     const Uint32 took = SDL_GetTicks() - start;
-    CHECK(took >= 800);    // a second of movie, not a burst
+    CHECK(took >= 800); // a second of movie, not a burst
     CHECK(stand.presents >= 5);
     CHECK_EQ(stand.present_width, 32);
     CHECK_EQ(stand.present_bpp, 24);
@@ -266,12 +267,12 @@ NOCTURNE_TEST(a_paused_movie_resumes_where_it_was) {
     two_seconds.audio = AV_CODEC_ID_NONE;
     CHECK(write_movie("Video/noc3.avi", two_seconds));
     CHECK_EQ(mci("open \"video\\noc3.avi\" alias mov"), 0u);
-    CHECK_EQ(mci("pause mov"), 0u);   // before playing: nothing to pause
+    CHECK_EQ(mci("pause mov"), 0u); // before playing: nothing to pause
     mci("play mov");
     SDL_Delay(500);
     mci_video_pump_frame();
     CHECK_EQ(mci("pause mov"), 0u);
-    CHECK_EQ(mci("pause mov"), 0u);   // twice is once
+    CHECK_EQ(mci("pause mov"), 0u); // twice is once
     CHECK_EQ(mci_video_is_playing(), 0);
     const int shown = stand.presents;
     SDL_Delay(1000);
@@ -288,7 +289,7 @@ NOCTURNE_TEST(a_paused_movie_resumes_where_it_was) {
     CHECK(SDL_GetTicks() - resumed < 300);
     CHECK_EQ(pump_until_done(5000), 1);
     const Uint32 rest = SDL_GetTicks() - resumed;
-    CHECK(rest < 1900);   // the second and a half left, not that plus the pause
+    CHECK(rest < 1900); // the second and a half left, not that plus the pause
 }
 
 // A pump that falls behind drops the frames it missed rather than showing them
@@ -303,7 +304,7 @@ NOCTURNE_TEST(frames_missed_by_a_late_pump_are_dropped) {
     SDL_Delay(400);
     const int before = stand.presents;
     mci_video_pump_frame();
-    CHECK_EQ(stand.presents, before + 1);   // one shown for the six that came due
+    CHECK_EQ(stand.presents, before + 1); // one shown for the six that came due
     CHECK_EQ(pump_until_done(3000), 1);
 }
 
@@ -379,7 +380,8 @@ NOCTURNE_TEST(with_every_sound_device_taken_a_movie_plays_silent) {
     CHECK_EQ(mci("open \"video\\quiet.avi\" alias mov"), 0u);
     mci("play mov");
     CHECK_EQ(pump_until_done(3000), 1);
-    for (SDL_AudioDeviceID id : taken) SDL_CloseAudioDevice(id);
+    for (SDL_AudioDeviceID id : taken)
+        SDL_CloseAudioDevice(id);
 }
 
 // Sound that cannot be decoded, or whose decoder or resampler fails to come up,
@@ -390,13 +392,13 @@ NOCTURNE_TEST(a_movie_whose_sound_cannot_be_played_plays_silent) {
     Movie movie;
     movie.frames = 3;
     struct Patch {
-        size_t offset;   // into the WAVEFORMATEX
+        size_t offset; // into the WAVEFORMATEX
         uint32_t value;
         int size;
     };
     const Patch patches[] = {
-        {0, 0x7777, 2},   // wFormatTag: no such codec
-        {2, 0, 2},        // nChannels
+        {0, 0x7777, 2}, // wFormatTag: no such codec
+        {2, 0, 2},      // nChannels
     };
     for (const Patch &p : patches) {
         CHECK(write_movie("Video/mute.avi", movie));
@@ -437,7 +439,7 @@ NOCTURNE_TEST(sound_left_playing_after_the_picture_is_given_up_on) {
     stand.gl_active = 1;
     Movie movie;
     movie.frames = 1;
-    movie.sound_frames = 300;   // twenty seconds
+    movie.sound_frames = 300; // twenty seconds
     CHECK(write_movie("Video/long.avi", movie));
     CHECK_EQ(mci("open \"video\\long.avi\" alias mov"), 0u);
     const Uint32 start = SDL_GetTicks();
@@ -497,7 +499,7 @@ NOCTURNE_TEST(playing_a_playing_movie_carries_on) {
     mci_video_pump_frame();
     CHECK_EQ(mci("play mov"), 0u);
     CHECK_EQ(pump_until_done(3000), 1);
-    CHECK(SDL_GetTicks() - start < 1400);   // a second's movie, not a second and a half
+    CHECK(SDL_GetTicks() - start < 1400); // a second's movie, not a second and a half
 }
 
 // -----------------------------------------------------------------------------

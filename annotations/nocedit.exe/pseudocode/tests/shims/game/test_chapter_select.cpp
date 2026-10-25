@@ -2,11 +2,10 @@
 // CHAPTER SELECT — the story to play, and the name of the place a mission is in
 // =============================================================================
 
-#include "nocturne_test.h"
 #include "../gl/ini_support.h"
-#include "menus_support.h"
-
 #include "game/chapter_select.h"
+#include "menus_support.h"
+#include "nocturne_test.h"
 
 #include <filesystem>
 #include <string>
@@ -31,7 +30,7 @@ std::string place(const char *mission_name) {
     return name != nullptr ? name : "(none)";
 }
 
-}  // namespace
+} // namespace
 
 // The volumes are listed in order, a volume whose first chapter is not
 // installed greyed out, and the Epilogue left off until all four acts are
@@ -82,7 +81,8 @@ NOCTURNE_TEST(the_epilogue_opens_once_every_act_is_done) {
     stand.missions = {"hq-act5.msn"};
     const char *codes[] = {"817", "972", "940", "214"};
     const char *keys[] = {"Act1Code", "Act2Code", "Act3Code", "Act4Code"};
-    for (int i = 0; i < 3; i++) ini_support::save("Game", keys[i], codes[i]);
+    for (int i = 0; i < 3; i++)
+        ini_support::save("Game", keys[i], codes[i]);
     char out[64] = "";
     nocturne_chapter_pick_mission(out, sizeof(out));
     CHECK_EQ(stand.rows.size(), (size_t)4);

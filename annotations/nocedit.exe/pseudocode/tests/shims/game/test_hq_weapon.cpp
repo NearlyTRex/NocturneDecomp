@@ -2,10 +2,9 @@
 // HQ WEAPON — no drawing a weapon or a light at headquarters
 // =============================================================================
 
-#include "nocturne_test.h"
-
 #include "game/hq_weapon.h"
 #include "game_support.h"
+#include "nocturne_test.h"
 
 #include <cstdio>
 #include <memory>
@@ -21,7 +20,7 @@ SPlayerInput drawing() {
     return input;
 }
 
-}  // namespace
+} // namespace
 
 // In an HQ mission, whatever its case, draw and light are taken out of the
 // input; anywhere else, or with no mission, they stand.

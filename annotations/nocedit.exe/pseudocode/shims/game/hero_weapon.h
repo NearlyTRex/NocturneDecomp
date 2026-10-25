@@ -68,7 +68,7 @@ struct CDemonActor;
 // nocturne_hero_item_text). The Colonel's bottomless reserve is keyed on his
 // too. Names survive a save, where a pointer would not.
 #define NOCTURNE_COLONEL_SIDEARM_NAME "Colonel_sidearm"
-#define NOCTURNE_MOLOCH_AMULET_NAME   "Moloch_amulet"
+#define NOCTURNE_MOLOCH_AMULET_NAME "Moloch_amulet"
 
 // What a player hero may hold, by class:
 //

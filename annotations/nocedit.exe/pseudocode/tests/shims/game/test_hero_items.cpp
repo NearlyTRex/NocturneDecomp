@@ -2,11 +2,10 @@
 // HERO ITEMS — every player hero's inventory, and its health items
 // =============================================================================
 
-#include "nocturne_test.h"
-
 #include "behaviour_support.h"
 #include "class_support.h"
 #include "game/hero_items.h"
+#include "nocturne_test.h"
 
 using namespace behaviour_support;
 
@@ -26,7 +25,7 @@ CHero *about_to_heal() {
     return heroes[0];
 }
 
-}  // namespace
+} // namespace
 
 // A player's inventory ticks, unless the class ticks its own; anyone else's is
 // not this one's to tick.
@@ -35,7 +34,8 @@ NOCTURNE_TEST(a_players_inventory_ticks) {
     place_heroes(3);
     give_class(&heroes[1]->base.base, &g_CScatClassInfo);
     give_class(&heroes[2]->base.base, &g_CIcePickClassInfo);
-    for (CHero *hero : heroes) nocturne_hero_items_process(hero);
+    for (CHero *hero : heroes)
+        nocturne_hero_items_process(hero);
     nocturne_hero_items_process(nullptr);
     CHECK_EQ(stand.inventory_updates, 1);
 }

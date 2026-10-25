@@ -5,12 +5,11 @@
 // Built with NOCTURNE_AUTHENTIC_CHEAT_MENU, _SAVE_SLOTS, _AUTOSAVE and
 // _MENU_FONT: the single-player submenu stays, without its Continue row.
 
-#include "nocturne_test.h"
-#include "menus_support.h"
-
 #include "game/chapter_select.h"
 #include "game/save_slots.h"
 #include "game/warps.h"
+#include "menus_support.h"
+#include "nocturne_test.h"
 
 using namespace menus_support;
 

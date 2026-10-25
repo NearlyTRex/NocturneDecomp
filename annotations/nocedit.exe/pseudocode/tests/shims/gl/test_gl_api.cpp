@@ -8,10 +8,9 @@
 // a second call does not ask the driver again. The first load in a process is
 // the one that counts, so the driver missing a name is test_gl_api_missing.cpp.
 
+#include "gl/gl_api.h"
 #include "nocturne_test.h"
 #include "proc_address_support.h"
-
-#include "gl/gl_api.h"
 
 // Loaded with the shader entry points absent: the GL path still comes up, and
 // those slots are left for their callers to find empty. Asked again, the table

@@ -3,8 +3,8 @@
 // =============================================================================
 
 #include "behaviour_support.h"
-#include "class_support.h"
 
+#include "class_support.h"
 #include "net/net_cheats.h"
 #include "net/net_friendly.h"
 #include "net/net_session.h"
@@ -54,7 +54,8 @@ CWeapon_full_vtable s_weapon_vtable;
 
 bool rotated(const CDemonActor *actor) {
     for (const CVector3f &row : actor->orient_matrix.m) {
-        if (row.x != 0.0f || row.y != 0.0f || row.z != 0.0f) return true;
+        if (row.x != 0.0f || row.y != 0.0f || row.z != 0.0f)
+            return true;
     }
     return false;
 }
@@ -76,16 +77,22 @@ void place(CDemonActor *actor, CVector3f *position, CVector3f *orientation) {
     stand.placed.emplace_back(actor, *orientation);
 }
 
-void process_actor(CDemonActor *, float) { stand.processed++; }
+void process_actor(CDemonActor *, float) {
+    stand.processed++;
+}
 
 int render(CDemonActor *) {
     stand.renders++;
     return 1;
 }
 
-void aim_beam(CWeapon *) { stand.beams++; }
+void aim_beam(CWeapon *) {
+    stand.beams++;
+}
 
-int ready(CWeapon *) { return stand.ready_to_fire; }
+int ready(CWeapon *) {
+    return stand.ready_to_fire;
+}
 
 int fire(CWeapon *weapon) {
     stand.shots++;
@@ -93,9 +100,13 @@ int fire(CWeapon *weapon) {
     return 1;
 }
 
-void on_fired(CWeapon *) { stand.ejected++; }
+void on_fired(CWeapon *) {
+    stand.ejected++;
+}
 
-void drop_carried(CCharacter *, int, CVector3f *direction) { stand.drops.push_back(*direction); }
+void drop_carried(CCharacter *, int, CVector3f *direction) {
+    stand.drops.push_back(*direction);
+}
 
 uint play_sound(CDemonActor *actor, char *name) {
     stand.sounds.emplace_back(actor, name);
@@ -134,7 +145,7 @@ int cylinder(CCharacter *target, CVector3f *point, float, SDamageInfo *) {
     return (it != stand.cylinder_hits.end()) ? it->second : 0;
 }
 
-}  // namespace
+} // namespace
 
 CGame *game = s_game.get();
 CDemonSet *set = s_set.get();
@@ -192,8 +203,10 @@ void Stand::reset() {
     s_weapon_vtable._uw.fire = fire;
     vtable._ub.getTargetPoints = target_points_of;
     vtable._ub.getBoundingBox = bounding_box;
-    for (int i = 0; i < 17; i++) g_ColonelIndices[i] = i;
-    for (int i = 0; i < 20; i++) g_GabriellaIndices[i] = i;
+    for (int i = 0; i < 17; i++)
+        g_ColonelIndices[i] = i;
+    for (int i = 0; i < 20; i++)
+        g_GabriellaIndices[i] = i;
 
     std::memset(game, 0, sizeof(*game));
     std::memset(set, 0, sizeof(*set));
@@ -202,12 +215,13 @@ void Stand::reset() {
     g_CDemonSetPtr = set;
     std::memset(&g_CDemonRaytraceInstance, 0, sizeof(g_CDemonRaytraceInstance));
     std::memset(&g_CDemonLightInstance, 0, sizeof(g_CDemonLightInstance));
-    for (CDemonLight *&light : g_DynamicLights) light = nullptr;
+    for (CDemonLight *&light : g_DynamicLights)
+        light = nullptr;
     g_DynamicLightCount = 0;
     std::memset(g_SfxSlots, 0, sizeof(g_SfxSlots));
 }
 
-}  // namespace behaviour_support
+} // namespace behaviour_support
 
 using behaviour_support::stand;
 
@@ -220,7 +234,7 @@ SMotion *__cdecl core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
 }
 
 int __cdecl core_motion_cpp_CMotionList_findStateIndex_FUN_0052d4f0(CMotionList *, char *state_name,
-                                                                   int) {
+                                                                    int) {
     std::map<std::string, int>::const_iterator it = stand.states.find(state_name);
     return (it != stand.states.end()) ? it->second : -1;
 }
@@ -243,7 +257,7 @@ void __cdecl core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00(
 }
 
 void __cdecl core_charactr_cpp_CCharacter_moveAndCollide_FUN_00428f40(CCharacter *this_ptr,
-                                                                     CVector3f *velocity) {
+                                                                      CVector3f *velocity) {
     stand.moves.emplace_back(this_ptr, *velocity);
     stand.on_move(this_ptr, velocity);
 }
@@ -300,8 +314,9 @@ int __cdecl core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0(CSkeleton *, char 
     return (it != stand.bones.end()) ? it->second : -1;
 }
 
-CVector3f *__cdecl core_skeleton_cpp_CDeformableModelInstance_getBoneCachedModelPosition_FUN_0059fb00(
-    CDeformableModelInstance *, CVector3f *out_position, int) {
+CVector3f
+    *__cdecl core_skeleton_cpp_CDeformableModelInstance_getBoneCachedModelPosition_FUN_0059fb00(
+        CDeformableModelInstance *, CVector3f *out_position, int) {
     *out_position = stand.bone_point;
     return out_position;
 }
@@ -314,7 +329,7 @@ SDamageInfo *__cdecl core_charactr_cpp_SDamageInfo_ctor_FUN_00427db0(SDamageInfo
 }
 
 void __cdecl core_charactr_cpp_CCharacter_processDamage_FUN_0042c3c0(CCharacter *this_ptr,
-                                                                    SDamageInfo *) {
+                                                                     SDamageInfo *) {
     stand.base_damage.push_back(this_ptr);
 }
 
@@ -379,7 +394,7 @@ void __cdecl core_inv_cpp_CInventory_initialize_FUN_004fd190(CInventory *this_pt
 
 // Added at the end, and selected when it is a weapon and none is yet.
 int __cdecl core_inv_cpp_CInventory_addItem_FUN_004fd600(CInventory *this_ptr,
-                                                       CDemonActor *item_actor, int) {
+                                                         CDemonActor *item_actor, int) {
     this_ptr->items[this_ptr->item_count++] = item_actor;
     if (this_ptr->selected_weapon == nullptr &&
         core_actor_cpp_castToClassHash_FUN_0040c790(item_actor, g_CWeaponClassInfo.name_hash) !=
@@ -390,14 +405,14 @@ int __cdecl core_inv_cpp_CInventory_addItem_FUN_004fd600(CInventory *this_ptr,
 }
 
 void __cdecl core_inv_cpp_CInventory_selectWeapon_FUN_004feb10(CInventory *, CDemonActor *, int,
-                                                             int) {
+                                                               int) {
     stand.weapon_selections++;
 }
 
 // The classes the weapon shim asks for, made as weapons.
 CDemonActor *__cdecl core_actor_cpp_createActorByName_FUN_0040c430(char *class_name) {
-    CDemonActorType *type = std::strcmp(class_name, "CShovel") == 0 ? &g_CShovelClassInfo
-                                                                      : &g_CGunClassInfo;
+    CDemonActorType *type =
+        std::strcmp(class_name, "CShovel") == 0 ? &g_CShovelClassInfo : &g_CGunClassInfo;
     return &behaviour_support::weapon(type)->base;
 }
 
@@ -409,7 +424,7 @@ void __cdecl core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_00478dd0(
 // --- lights --------------------------------------------------------------------
 
 CDemonLight *__cdecl core_dlight_cpp_CDemonLight_ctor_FUN_004726a0(CDemonLight *this_ptr, int,
-                                                                  int) {
+                                                                   int) {
     stand.lights_built.push_back(this_ptr);
     return this_ptr;
 }
@@ -417,8 +432,8 @@ CDemonLight *__cdecl core_dlight_cpp_CDemonLight_ctor_FUN_004726a0(CDemonLight *
 void __cdecl core_dlight_cpp_CDemonLight_init_FUN_004727c0(CDemonLight *) {}
 
 void __cdecl core_set_cpp_CDemonSet_addLightFilter_FUN_00570f10(CDemonSet *, char *light_name,
-                                                              C3DSLight **out_light,
-                                                              CDemonLight **) {
+                                                                C3DSLight **out_light,
+                                                                CDemonLight **) {
     std::map<std::string, C3DSLight *>::const_iterator it = stand.scene_lights.find(light_name);
     *out_light = (it != stand.scene_lights.end()) ? it->second : nullptr;
 }
@@ -429,20 +444,25 @@ int __cdecl engine_dosio_cpp_getFileSize_FUN_00481880(char *, char *filename) {
 }
 
 void __cdecl core_setutil_cpp_C3DSLight_addFilter_FUN_00586fa0(C3DSLight *, char *filter_name,
-                                                             float duration, int) {
+                                                               float duration, int) {
     stand.filters.emplace_back(filter_name, duration);
 }
 
 char *__cdecl core_script_cpp_skipWhitespace_FUN_005593d0(char *str) {
-    while (std::isspace((unsigned char)*str)) str++;
+    while (std::isspace((unsigned char)*str))
+        str++;
     return str;
 }
 
 // --- sound ---------------------------------------------------------------------
 
-void __cdecl sound_sndmain_cpp_lockSound_FUN_005abd30(void) { stand.sound_locks++; }
+void __cdecl sound_sndmain_cpp_lockSound_FUN_005abd30(void) {
+    stand.sound_locks++;
+}
 
-void __cdecl sound_sndmain_cpp_unlockSound_FUN_005abdc0(void) { stand.sound_unlocks++; }
+void __cdecl sound_sndmain_cpp_unlockSound_FUN_005abdc0(void) {
+    stand.sound_unlocks++;
+}
 
 // --- aiming --------------------------------------------------------------------
 
@@ -452,7 +472,7 @@ CMotionList *__cdecl core_motion_cpp_CMotionController_getMotionList_FUN_0052dce
 }
 
 int __cdecl core_motion_cpp_CMotionList_findMotionIndex_FUN_0052d460(CMotionList *,
-                                                                    char *motion_name, int) {
+                                                                     char *motion_name, int) {
     std::map<std::string, int>::const_iterator it = stand.motion_indices.find(motion_name);
     return (it != stand.motion_indices.end()) ? it->second : 0;
 }
@@ -464,7 +484,7 @@ void __cdecl core_skeleton_cpp_CDeformableModelInstance_blendMotion_FUN_0059eb50
 }
 
 float __cdecl core_skeleton_cpp_blendWeightCallback_FUN_0059ddb0(int, int, float blend_weight, int,
-                                                               CDeformableModelInstance *) {
+                                                                 CDeformableModelInstance *) {
     return blend_weight;
 }
 
@@ -489,11 +509,12 @@ void __cdecl core_setcolid_cpp_CDemonSet_ignore_FUN_005741b0(CDemonSet *, CDemon
 // Hits `ray_actor` when set, else the character whose first target point is at
 // the ray's end.
 float __cdecl core_setcolid_cpp_CDemonSet_raycast_FUN_00572530(CDemonSet *this_ptr, CVector3f *,
-                                                             CVector3f *end) {
+                                                               CVector3f *end) {
     this_ptr->collision_actor = stand.ray_actor;
     for (int i = 0; (stand.ray_actor == nullptr) && (i < this_ptr->character_count); i++) {
         CCharacter *c = this_ptr->characters[i];
-        if (c == nullptr) continue;
+        if (c == nullptr)
+            continue;
         const CVector3f &at = c->base.location.position;
         if ((at.x + stand.target_offset.x == end->x) && (at.y + stand.target_offset.y == end->y) &&
             (at.z + stand.target_offset.z == end->z)) {
@@ -534,13 +555,13 @@ CQuaternion4f *core_xform_cpp_quaternionFromAngleZ_FUN_005f7a30(float angle, CQu
 }
 
 CQuaternion4f *core_xform_cpp_multiplyQuaternion_FUN_005f7640(CQuaternion4f *, CQuaternion4f *b,
-                                                            CQuaternion4f *out) {
+                                                              CQuaternion4f *out) {
     *out = *b;
     return out;
 }
 
-CQuaternion4f *core_xform_cpp_slerpQuaternion_FUN_005f77e0(CQuaternion4f *, CQuaternion4f *b,
-                                                         float, CQuaternion4f *out) {
+CQuaternion4f *core_xform_cpp_slerpQuaternion_FUN_005f77e0(CQuaternion4f *, CQuaternion4f *b, float,
+                                                           CQuaternion4f *out) {
     *out = *b;
     return out;
 }
@@ -556,34 +577,43 @@ void __cdecl core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_005f54c0(
 }
 
 CMatrix3x4f *core_xform_cpp_multiplyMatrix3x4_FUN_005f4f10(CMatrix3x4f *a, CMatrix3x4f *b,
-                                                         CMatrix3x4f *out) {
+                                                           CMatrix3x4f *out) {
     CMatrix3x4f sum = {};
-    for (int row = 0; row < 3; row++) sum.m[row].z = a->m[row].z + b->m[row].z;
+    for (int row = 0; row < 3; row++)
+        sum.m[row].z = a->m[row].z + b->m[row].z;
     *out = sum;
     return out;
 }
 
 CVector3f *__cdecl core_xform_cpp_getTranslation_FUN_005f6110(CMatrix3x4f *matrix_in,
-                                                            CVector3f *vector_out) {
+                                                              CVector3f *vector_out) {
     *vector_out = CVector3f{matrix_in->m[0].z, matrix_in->m[1].z, matrix_in->m[2].z};
     return vector_out;
 }
 
 CVector3f *__cdecl core_xform_cpp_matrixToEulerAngles_FUN_005f5690(CMatrix3x4f *,
-                                                                 CVector3f *euler_out) {
+                                                                   CVector3f *euler_out) {
     *euler_out = CVector3f{0.0f, 0.0f, 0.0f};
     return euler_out;
 }
 
 // --- the netplay shims ---------------------------------------------------------
 
-int nocturne_net_session_active(void) { return stand.net_active; }
+int nocturne_net_session_active(void) {
+    return stand.net_active;
+}
 
-int nocturne_net_session_playing(void) { return stand.net_playing; }
+int nocturne_net_session_playing(void) {
+    return stand.net_playing;
+}
 
-int nocturne_net_cheats_auto_use_health(void) { return stand.auto_use_health; }
+int nocturne_net_cheats_auto_use_health(void) {
+    return stand.auto_use_health;
+}
 
-int nocturne_net_friendly_fire_block(CCharacter *, SDamageInfo *) { return stand.friendly_block; }
+int nocturne_net_friendly_fire_block(CCharacter *, SDamageInfo *) {
+    return stand.friendly_block;
+}
 
 void nocturne_net_weapon_request(int action, int, int direction) {
     stand.weapon_requests.emplace_back(action, direction);
@@ -592,9 +622,10 @@ void nocturne_net_weapon_request(int action, int, int direction) {
 // --- Gabriella's ---------------------------------------------------------------
 
 void __cdecl core_gabriela_cpp_CGabriella_processMotionEvents_FUN_004d4890(CGabriella *this_ptr,
-                                                                          float delta_time) {
+                                                                           float delta_time) {
     stand.motion_deltas.push_back(delta_time);
-    if (stand.on_motion_events) stand.on_motion_events(this_ptr, delta_time);
+    if (stand.on_motion_events)
+        stand.on_motion_events(this_ptr, delta_time);
 }
 
 int __cdecl core_gabriela_cpp_CGabriella_findAndPickupNearbyObject_FUN_004d5870(CGabriella *) {
@@ -637,24 +668,25 @@ void __cdecl core_dynamite_cpp_CDynamite_lightFuse_FUN_0049cf20(CDynamite *this_
 }
 
 float __cdecl core_setcolid_cpp_CDemonSet_iterativeRaycast_FUN_00572800(CDemonSet *, CVector3f *,
-                                                                       CVector3f *) {
+                                                                        CVector3f *) {
     return stand.arc_hit;
 }
 
 void __cdecl core_fire_cpp_CFireEffect_createLaserPath_FUN_004c7f80(CFireEffect *, CVector3f *,
-                                                                   CVector3f *, float, float,
-                                                                   CVector3f *, float hit_time,
-                                                                   int, int, int) {
+                                                                    CVector3f *, float, float,
+                                                                    CVector3f *, float hit_time,
+                                                                    int, int, int) {
     stand.arcs.push_back(hit_time);
 }
 
-float __cdecl core_setcolid_cpp_CDemonSet_testCylinderCollision_FUN_00573470(
-    CDemonSet *, float, float, float, float, float, float, float) {
+float __cdecl core_setcolid_cpp_CDemonSet_testCylinderCollision_FUN_00573470(CDemonSet *, float,
+                                                                             float, float, float,
+                                                                             float, float, float) {
     return stand.clear_ahead;
 }
 
 float __cdecl core_setcolid_cpp_CDemonSet_processCollisionTypes_FUN_005716b0(CDemonSet *,
-                                                                            CVector3f *, float) {
+                                                                             CVector3f *, float) {
     return stand.ground;
 }
 
@@ -671,7 +703,7 @@ float __cdecl core_actor_cpp_normalizeAngleToPi_FUN_0040cd70(float angle) {
 
 // A pitch about x alone, down positive, which is all a throw asks for.
 void __cdecl core_dirmat_cpp_CMatrix3x3f_buildRotationMatrix_FUN_00471d30(CMatrix3x3f *this_ptr,
-                                                                         CVector3f *euler) {
+                                                                          CVector3f *euler) {
     const float c = std::cos(euler->x), s = std::sin(euler->x);
     this_ptr->m[0] = CVector3f{1.0f, 0.0f, 0.0f};
     this_ptr->m[1] = CVector3f{0.0f, c, s};
@@ -679,8 +711,8 @@ void __cdecl core_dirmat_cpp_CMatrix3x3f_buildRotationMatrix_FUN_00471d30(CMatri
 }
 
 CVector3f *__cdecl core_dirmat_cpp_CMatrix3x3f_transformVector_FUN_00471fd0(CMatrix3x3f *this_ptr,
-                                                                          CVector3f *output,
-                                                                          CVector3f *input) {
+                                                                            CVector3f *output,
+                                                                            CVector3f *input) {
     const CVector3f *m = this_ptr->m;
     *output = CVector3f{m[0].x * input->x + m[0].y * input->y + m[0].z * input->z,
                         m[1].x * input->x + m[1].y * input->y + m[1].z * input->z,
@@ -689,14 +721,14 @@ CVector3f *__cdecl core_dirmat_cpp_CMatrix3x3f_transformVector_FUN_00471fd0(CMat
 }
 
 CQuaternion4f *__cdecl core_xform_cpp_eulerToQuaternion_FUN_005f7b20(CVector3f *euler,
-                                                                   CQuaternion4f *out) {
+                                                                     CQuaternion4f *out) {
     stand.arm_eulers.push_back(*euler);
     *out = CQuaternion4f{euler->x, euler->y, euler->z, 1.0f};
     return out;
 }
 
 void __cdecl core_gore_cpp_CGore_spawnBloodBurst_FUN_004edbb0(CGore *, CVector3f *, CVector3f *,
-                                                            int, int) {
+                                                              int, int) {
     stand.blood++;
 }
 

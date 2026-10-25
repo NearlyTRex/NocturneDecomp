@@ -4,10 +4,9 @@
 //
 // On the real clock, in fractions of a second.
 
-#include "nocturne_test.h"
-
 #include "core/clock.h"
 #include "game/attract.h"
+#include "nocturne_test.h"
 
 #include <chrono>
 #include <thread>
@@ -18,7 +17,7 @@ void wait(double seconds) {
     std::this_thread::sleep_for(std::chrono::duration<double>(seconds));
 }
 
-}  // namespace
+} // namespace
 
 // Until the opening has played, or with no music to wait out, nothing fires.
 NOCTURNE_TEST(nothing_fires_before_the_opening_or_without_music) {

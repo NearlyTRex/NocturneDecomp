@@ -31,16 +31,16 @@ struct Stand {
     // --- the socket ----------------------------------------------------------
     std::vector<Sent> sent;
     std::vector<SNetworkAddr *> disconnect_notices;
-    std::vector<int> pings;               // player indices updatePing was asked about
-    int receives = 0;                     // receivePackets calls
-    std::function<void()> on_receive;     // run inside each receivePackets
-    std::vector<int> sync_stages;         // syncPlayers' stages, in order
+    std::vector<int> pings;           // player indices updatePing was asked about
+    int receives = 0;                 // receivePackets calls
+    std::function<void()> on_receive; // run inside each receivePackets
+    std::vector<int> sync_stages;     // syncPlayers' stages, in order
     int sync_result = 1;
     int disconnects = 0;
 
     // --- the game's own generators --------------------------------------------
-    unsigned int next_random = 0;         // generateRandomValue answers, then counts up
-    std::vector<unsigned int> seeds;      // setRandomSeed
+    unsigned int next_random = 0;    // generateRandomValue answers, then counts up
+    std::vector<unsigned int> seeds; // setRandomSeed
 
     // --- the hero slots (game/hero_slot.h) and the hero shims ---------------
     int revive_result = 1;
@@ -63,28 +63,28 @@ struct Stand {
     std::vector<Selection> selections;
 
     // --- the cheat table (game/cheats.h) --------------------------------------
-    std::vector<unsigned char> cheats_packed;   // what nocturne_cheats_pack writes
-    std::vector<unsigned char> cheat_override;  // what set_override was given
+    std::vector<unsigned char> cheats_packed;  // what nocturne_cheats_pack writes
+    std::vector<unsigned char> cheat_override; // what set_override was given
     int cheat_override_active = 0;
     int cheat_overrides_cleared = 0;
 
     // --- screens --------------------------------------------------------------
-    std::vector<int> menu_choices;        // renderMenuAndGetChoice, front first; -1 after
-    std::vector<int> menu_cancels;        // nocturne_menu_cancelled, front first; 0 after
-    std::vector<int> pick_choices;        // displayChoicesAndWaitForInput, front first
-    std::vector<std::string> pick_lines;  // CStrList::add
+    std::vector<int> menu_choices;       // renderMenuAndGetChoice, front first; -1 after
+    std::vector<int> menu_cancels;       // nocturne_menu_cancelled, front first; 0 after
+    std::vector<int> pick_choices;       // displayChoicesAndWaitForInput, front first
+    std::vector<std::string> pick_lines; // CStrList::add
     std::string pick_title;
     int pick_lists_alive = 0;
-    int input_waits = 0;                  // clearInputAndWait
-    int swaps = 0;                        // swapBuffers
-    int clears = 0;                       // clearScreen
-    int backdrops = 0;                    // nocturne_menu_backdrop_frame
-    std::vector<std::string> drawn;       // drawText
-    std::vector<std::string> messages;    // CGame::displayMessage
+    int input_waits = 0;               // clearInputAndWait
+    int swaps = 0;                     // swapBuffers
+    int clears = 0;                    // clearScreen
+    int backdrops = 0;                 // nocturne_menu_backdrop_frame
+    std::vector<std::string> drawn;    // drawText
+    std::vector<std::string> messages; // CGame::displayMessage
     int sound_resets = 0;
     int sound_configures = 0;
-    int hosted = 0;                       // hostNetworkGame
-    int joined = 0;                       // joinNetworkGame
+    int hosted = 0; // hostNetworkGame
+    int joined = 0; // joinNetworkGame
 
     // --- the keyboard: held keys read as down, pressed ones once ------------
     std::set<int> held;
@@ -95,24 +95,24 @@ struct Stand {
     int time_step = 0;
 
     // --- the script and the mission -------------------------------------------
-    int choking = 0;                      // findPersistentEvent("choking")
-    CDemonActor *gas_room = nullptr;      // findActorByName("TriggerGasRoom")
-    std::set<const void *> in_gas_room;   // CTrigger::containsActor
-    std::vector<std::string> commands;    // CEventList::executeCommands
-    int skip_jumped = 1;                  // CScript::skipCinematic
-    std::vector<int> skip_processing;     // is_processing at each skipCinematic
-    int world_to_local_elsewhere = 0;     // worldToLocalPoint answers its own copy
+    int choking = 0;                    // findPersistentEvent("choking")
+    CDemonActor *gas_room = nullptr;    // findActorByName("TriggerGasRoom")
+    std::set<const void *> in_gas_room; // CTrigger::containsActor
+    std::vector<std::string> commands;  // CEventList::executeCommands
+    int skip_jumped = 1;                // CScript::skipCinematic
+    std::vector<int> skip_processing;   // is_processing at each skipCinematic
+    int world_to_local_elsewhere = 0;   // worldToLocalPoint answers its own copy
 
     // --- collision and the camera ---------------------------------------------
-    std::function<float(const CVector3f &, float)> ground;   // processCollisionTypes
-    std::function<int(const CVector3f &, const CVector3f &)> blocked;  // testVoxelRaycast
-    std::function<CVector3i(const CVector3i &)> screen;      // worldToScreenWithFrustumCull
+    std::function<float(const CVector3f &, float)> ground;            // processCollisionTypes
+    std::function<int(const CVector3f &, const CVector3f &)> blocked; // testVoxelRaycast
+    std::function<CVector3i(const CVector3i &)> screen; // worldToScreenWithFrustumCull
 
     // --- clothing -------------------------------------------------------------
-    std::vector<std::string> cloth;       // "add strcoat.cth", "load", "setup", "process"
+    std::vector<std::string> cloth; // "add strcoat.cth", "load", "setup", "process"
 
     // --- the error box --------------------------------------------------------
-    std::vector<std::string> errors;      // displayErrorAndQuit, formatted
+    std::vector<std::string> errors; // displayErrorAndQuit, formatted
 
     void reset();
 };
@@ -125,9 +125,9 @@ extern CNetGame net;
 extern CGame game;
 extern CScript script;
 extern CEventList events;
-extern CDemonSet *set;            // large, so allocated once
+extern CDemonSet *set; // large, so allocated once
 extern CDemonMission mission;
-extern CHero *heroes[4];          // large, so allocated once; not in g_HeroActors until asked
+extern CHero *heroes[4]; // large, so allocated once; not in g_HeroActors until asked
 extern CKeys keys;
 
 // A session: g_CNetGamePtr pointed at `net`, with `players` players, this
@@ -155,4 +155,4 @@ int array_inits();
 int atexits();
 int path_resets();
 
-}  // namespace net_support
+} // namespace net_support

@@ -13,8 +13,7 @@
 
 #if defined(__linux__)
 #include <sys/sysinfo.h>
-#elif defined(__APPLE__) || defined(__FreeBSD__) || defined(__OpenBSD__) || \
-      defined(__NetBSD__)
+#elif defined(__APPLE__) || defined(__FreeBSD__) || defined(__OpenBSD__) || defined(__NetBSD__)
 #include <sys/sysctl.h>
 #endif
 
@@ -24,12 +23,14 @@
 // the game's swap warning tests against while gigabytes are in fact available.
 unsigned long long nocturne_meminfo_available(const char *meminfo_path) {
     FILE *f = fopen(meminfo_path, "r");
-    if (!f) return 0;
+    if (!f)
+        return 0;
     char line[256];
     unsigned long long kb = 0;
     while (fgets(line, sizeof(line), f)) {
         if (strncmp(line, "MemAvailable:", 13) == 0) {
-            if (sscanf(line + 13, "%llu", &kb) != 1) kb = 0;
+            if (sscanf(line + 13, "%llu", &kb) != 1)
+                kb = 0;
             break;
         }
     }
@@ -49,8 +50,8 @@ HostMemory nocturne_host_memory(const char *meminfo_path) {
     memory.total_phys = (unsigned long long)si.totalram * unit;
     memory.avail_phys = nocturne_meminfo_available(meminfo_path);
     if (memory.avail_phys == 0) {
-        memory.avail_phys = ((unsigned long long)si.freeram +
-                             (unsigned long long)si.bufferram) * unit;
+        memory.avail_phys =
+            ((unsigned long long)si.freeram + (unsigned long long)si.bufferram) * unit;
     }
     // The page-file fields are Windows' commit limit and remaining commit,
     // which span RAM plus backing store — not the swap device alone. A swapless
@@ -68,8 +69,8 @@ HostMemory nocturne_host_memory(const char *meminfo_path) {
 // sizes caches from these. A modest machine is the safe thing to claim to be.
 static HostMemory host_memory_fallback(void) {
     HostMemory memory;
-    memory.total_phys   = 256ull * 1024 * 1024;
-    memory.avail_phys   = 128ull * 1024 * 1024;
+    memory.total_phys = 256ull * 1024 * 1024;
+    memory.avail_phys = 128ull * 1024 * 1024;
     memory.total_commit = 512ull * 1024 * 1024;
     memory.avail_commit = 512ull * 1024 * 1024;
     return memory;
@@ -84,8 +85,8 @@ static HostMemory host_memory_fallback(void) {
 // collision, and the layout is fixed ABI.
 extern "C" {
 struct NOC_MEMORYSTATUSEX {
-    DWORD              dwLength;
-    DWORD              dwMemoryLoad;
+    DWORD dwLength;
+    DWORD dwMemoryLoad;
     unsigned long long ullTotalPhys;
     unsigned long long ullAvailPhys;
     unsigned long long ullTotalPageFile;
@@ -103,17 +104,17 @@ HostMemory nocturne_host_memory(const char *meminfo_path) {
     (void)meminfo_path;
     NOC_MEMORYSTATUSEX status;
     status.dwLength = sizeof(status);
-    if (!GlobalMemoryStatusEx(&status)) return host_memory_fallback();
+    if (!GlobalMemoryStatusEx(&status))
+        return host_memory_fallback();
     HostMemory memory;
-    memory.total_phys   = status.ullTotalPhys;
-    memory.avail_phys   = status.ullAvailPhys;
+    memory.total_phys = status.ullTotalPhys;
+    memory.avail_phys = status.ullAvailPhys;
     memory.total_commit = status.ullTotalPageFile;
     memory.avail_commit = status.ullAvailPageFile;
     return memory;
 }
 
-#elif defined(__APPLE__) || defined(__FreeBSD__) || defined(__OpenBSD__) || \
-      defined(__NetBSD__)
+#elif defined(__APPLE__) || defined(__FreeBSD__) || defined(__OpenBSD__) || defined(__NetBSD__)
 
 // The BSDs and macOS answer through sysctl. Total is asked for directly;
 // available is not reported in a form that means the same thing, so it is left
@@ -131,8 +132,8 @@ HostMemory nocturne_host_memory(const char *meminfo_path) {
         return host_memory_fallback();
     }
     HostMemory memory;
-    memory.total_phys   = total;
-    memory.avail_phys   = total / 2;
+    memory.total_phys = total;
+    memory.avail_phys = total / 2;
     memory.total_commit = total;
     memory.avail_commit = total / 2;
     return memory;
@@ -166,8 +167,8 @@ static SIZE_T clamp(unsigned long long bytes) {
 void nocturne_memory_status(const HostMemory &memory, _MEMORYSTATUS *out) {
     memset(out, 0, sizeof(_MEMORYSTATUS));
     out->dwLength = sizeof(_MEMORYSTATUS);
-    out->dwTotalPhys     = clamp(memory.total_phys);
-    out->dwAvailPhys     = clamp(memory.avail_phys);
+    out->dwTotalPhys = clamp(memory.total_phys);
+    out->dwAvailPhys = clamp(memory.avail_phys);
     out->dwTotalPageFile = clamp(memory.total_commit);
     out->dwAvailPageFile = clamp(memory.avail_commit);
     // Address space, not memory: the 2 GB user half of a 32-bit process.

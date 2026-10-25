@@ -8,9 +8,8 @@
 // in and every case here would still hold, which is what makes them worth having
 // through a port.
 
-#include "nocturne_test.h"
-
 #include "core/file_search.h"
+#include "nocturne_test.h"
 
 #include <filesystem>
 #include <fstream>
@@ -35,7 +34,7 @@ struct Tree {
         fs::create_directories(root / "SAVE", ec);
         write(root / "ACT1.POD");
         write(root / "act2.pod");
-        write(root / "readme");          // no extension
+        write(root / "readme"); // no extension
         write(root / "art" / "wall.raw");
         write(root / "art" / "FLOOR.RAW");
         write(root / "art" / "notes.txt");
@@ -58,12 +57,13 @@ struct Tree {
 
 bool contains(const std::vector<std::string> &all, const std::string &wanted) {
     for (size_t i = 0; i < all.size(); ++i) {
-        if (all[i] == wanted) return true;
+        if (all[i] == wanted)
+            return true;
     }
     return false;
 }
 
-}  // namespace
+} // namespace
 
 // -----------------------------------------------------------------------------
 // The matcher.
@@ -85,7 +85,7 @@ NOCTURNE_TEST(a_star_takes_any_run_including_none) {
     CHECK(nocturne_name_matches("*", "anything"));
     CHECK(nocturne_name_matches("*.pod", "act1.pod"));
     CHECK(nocturne_name_matches("act*", "act1.pod"));
-    CHECK(nocturne_name_matches("act*.pod", "act.pod"));      // none
+    CHECK(nocturne_name_matches("act*.pod", "act.pod")); // none
     CHECK(nocturne_name_matches("APIDLL*", "APIDLLinit"));
     CHECK(!nocturne_name_matches("*.pod", "act1.podx"));
     // Stars left over once the name is used up take nothing, and still match.
@@ -141,7 +141,7 @@ NOCTURNE_TEST(a_spec_with_no_directory_returns_bare_names) {
     const std::vector<std::string> found = nocturne_find_files("*.POD");
     CHECK_EQ((int)found.size(), 2);
     CHECK(contains(found, "ACT1.POD"));
-    CHECK(contains(found, "act2.pod"));      // case-insensitively
+    CHECK(contains(found, "act2.pod")); // case-insensitively
 }
 
 NOCTURNE_TEST(a_spec_with_a_directory_returns_paths_that_open) {

@@ -3,13 +3,15 @@
 // =============================================================================
 
 #include "debug/focus_trace.h"
+
 #include "shim_config.h"
 
 #if NOCTURNE_DUMP_TOOLS
 
-#include "nocturne.h"
 #include "debug/dump.h"
+#include "nocturne.h"
 #include "renderer/trigl_gl.h"
+
 #include <SDL.h>
 #include <cstdio>
 #include <cstdlib>
@@ -31,16 +33,14 @@ int s_presents_left;
 int s_present_index;
 unsigned s_last_draws, s_last_untextured, s_last_missing;
 
-unsigned delta(unsigned now, unsigned *last)
-{
+unsigned delta(unsigned now, unsigned *last) {
     // The stats reset when the renderer is re-initialised.
     unsigned d = (now >= *last) ? now - *last : now;
     *last = now;
     return d;
 }
 
-void log_backtrace(void)
-{
+void log_backtrace(void) {
 #if FOCUS_HAS_EXECINFO
     void *frames[24];
     int n = backtrace(frames, 24);
@@ -53,8 +53,7 @@ void log_backtrace(void)
 
 int g_nocturne_focus_trace_active = 0;
 
-extern "C" void nocturne_focus_trace_arm(void)
-{
+extern "C" void nocturne_focus_trace_arm(void) {
     if (!s_checked_env) {
         s_checked_env = true;
         s_dir = getenv("NOCTURNE_FOCUS_TRACE");
@@ -80,8 +79,7 @@ extern "C" void nocturne_focus_trace_arm(void)
     fflush(s_log);
 }
 
-extern "C" void nocturne_focus_trace_event(const char *name)
-{
+extern "C" void nocturne_focus_trace_event(const char *name) {
     if (s_log == nullptr || s_presents_left <= 0) {
         return;
     }
@@ -99,8 +97,7 @@ extern "C" void nocturne_focus_trace_event(const char *name)
     fflush(s_log);
 }
 
-extern "C" void nocturne_focus_trace_presented(void)
-{
+extern "C" void nocturne_focus_trace_presented(void) {
     if (s_log == nullptr || s_presents_left <= 0) {
         return;
     }
@@ -109,8 +106,8 @@ extern "C" void nocturne_focus_trace_presented(void)
     int ok = nocturne_dump_frontbuffer(path);
     fprintf(s_log, "  -- present %d: game frame %d pending_sim=%d focus_regained=%d dump=%s\n",
             s_present_index, (g_CGamePtr != nullptr) ? g_CGamePtr->frame_counter : -1,
-            (g_CNetGamePtr != nullptr) ? g_CNetGamePtr->has_pending_sim_frame : -1,
-            g_FocusRegained, (ok == 0) ? path : "failed");
+            (g_CNetGamePtr != nullptr) ? g_CNetGamePtr->has_pending_sim_frame : -1, g_FocusRegained,
+            (ok == 0) ? path : "failed");
     fflush(s_log);
     s_present_index++;
     s_presents_left--;

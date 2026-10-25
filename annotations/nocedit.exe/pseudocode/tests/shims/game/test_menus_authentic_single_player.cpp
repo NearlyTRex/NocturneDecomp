@@ -5,10 +5,9 @@
 // Built with NOCTURNE_AUTHENTIC_SINGLE_PLAYER_MENU: the main menu starts a game
 // directly, so there is no submenu to show and nothing to continue.
 
-#include "nocturne_test.h"
-#include "menus_support.h"
-
 #include "game/save_slots.h"
+#include "menus_support.h"
+#include "nocturne_test.h"
 
 using namespace menus_support;
 

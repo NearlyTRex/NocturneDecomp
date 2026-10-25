@@ -46,9 +46,9 @@ struct Stand {
     // writes the two globals the real ones do, for the dump to put back.
     int visible = 0;
     int visible_with_camera = 0;
-    int render_state_brackets = 0;   // setupRenderState less restoreRenderState
+    int render_state_brackets = 0; // setupRenderState less restoreRenderState
 
-    CHero *local_hero = nullptr;      // nocturne_hero_local
+    CHero *local_hero = nullptr; // nocturne_hero_local
 
     // The presenter: GL's read-back, or the DirectDraw renderer's.
     int gl_active = 0;
@@ -67,4 +67,4 @@ extern Stand stand;
 // Pretends `actor` is each of `hashes`.
 void is_a(const CDemonActor *actor, std::set<unsigned> hashes);
 
-}  // namespace dump_support
+} // namespace dump_support

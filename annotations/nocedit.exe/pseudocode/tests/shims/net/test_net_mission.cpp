@@ -10,12 +10,11 @@
 // What was announced lasts the run, so the cases run in order: a guest with
 // nothing yet, then the host's announcement, then a guest that has it.
 
-#include "nocturne_test.h"
-#include "net_support.h"
-
 #include "net/net_mission.h"
 #include "net/net_packets.h"
+#include "net_support.h"
 #include "nocturne.h"
+#include "nocturne_test.h"
 
 #include <cstring>
 #include <string>
@@ -53,7 +52,8 @@ int deliver(const Announcement &packet) {
 
 int sent_of(int type) {
     int count = 0;
-    for (const auto &s : stand.sent) count += (net_support::type_of(s) == type);
+    for (const auto &s : stand.sent)
+        count += (net_support::type_of(s) == type);
     return count;
 }
 
@@ -64,7 +64,7 @@ void history(std::vector<int> sequences) {
     }
 }
 
-}  // namespace
+} // namespace
 
 // Outside a session there is nothing to agree on.
 NOCTURNE_TEST(outside_a_session_a_mission_change_is_the_games_own) {
@@ -140,7 +140,8 @@ NOCTURNE_TEST(the_host_announces_the_next_mission) {
     CHECK_EQ(sent_of(NOCTURNE_NET_PACKET_MISSION), 3);
     CHECK_EQ(sent_of(PACKET_SIM_FRAME), 6);
     CHECK_EQ(sent_of(NOCTURNE_NET_PACKET_CHEATS), 3);
-    for (const auto &s : stand.sent) CHECK_EQ(s.player, 1);
+    for (const auto &s : stand.sent)
+        CHECK_EQ(s.player, 1);
 
     const Announcement *sent = nullptr;
     for (const auto &s : stand.sent) {

@@ -4,11 +4,10 @@
 //
 // With no INI yet; test_movie_audio_saved.cpp starts from a saved one.
 
-#include "nocturne_test.h"
 #include "../gl/ini_support.h"
-#include "sound_support.h"
-
 #include "game/movie_audio.h"
+#include "nocturne_test.h"
+#include "sound_support.h"
 
 #include <filesystem>
 #include <string>

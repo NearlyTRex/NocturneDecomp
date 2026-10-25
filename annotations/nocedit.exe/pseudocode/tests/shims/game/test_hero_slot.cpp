@@ -2,10 +2,9 @@
 // HERO SLOTS — which heroes are players
 // =============================================================================
 
-#include "nocturne_test.h"
-
 #include "game/hero_slot.h"
 #include "game_support.h"
+#include "nocturne_test.h"
 
 using namespace game_support;
 
@@ -27,7 +26,7 @@ NOCTURNE_TEST(the_local_hero_is_the_slot_named) {
 NOCTURNE_TEST(a_player_is_a_hero_in_the_party) {
     stand.reset();
     place_heroes(2);
-    g_HeroActors[2] = heroes[2];   // left over past the hero count
+    g_HeroActors[2] = heroes[2]; // left over past the hero count
     CHECK_EQ(nocturne_hero_slot(heroes[1]), 1);
     CHECK_EQ(nocturne_hero_is_player(heroes[0]), 1);
     CHECK_EQ(nocturne_hero_slot(heroes[2]), -1);

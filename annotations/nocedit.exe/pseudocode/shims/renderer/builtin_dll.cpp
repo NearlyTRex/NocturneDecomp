@@ -6,9 +6,10 @@
 // names a renderer DLL; add a module row here to make it selectable.
 
 #include "renderer/builtin_dll.h"
-#include "shim_config.h"
-#include "core/debug_log.h"
+
 #include "core/ascii_case.h"
+#include "core/debug_log.h"
+#include "shim_config.h"
 #include "watcom/path.h"
 
 #include <stddef.h>
@@ -32,7 +33,7 @@ extern "C" const NocturneBuiltinExport *nocturne_trigl_native_exports(int *count
 // Every row has a provider, and every provider a table of named exports.
 
 static const NocturneBuiltinModule g_BuiltinModules[] = {
-    { "trigl.dll",    nocturne_trigl_native_exports },
+    {"trigl.dll", nocturne_trigl_native_exports},
     // { "tridx6.dll", nocturne_tridx6_exports },
     // { "trid3d.dll", nocturne_trid3d_exports },
     // { "tri3dfx.dll", nocturne_tri3dfx_exports },
@@ -66,13 +67,13 @@ static const char *next_module(const char *current) {
         // Logged because the Graphics Options line shows a label, not the DLL
         // name, so there is otherwise no way to tell which renderer the
         // selector has landed on.
-        DLOG("render","builtin_dll: 3D API cycle \"%s\" (unknown) -> \"%s\"",
-                  current, g_BuiltinModules[0].dll_name);
+        DLOG("render", "builtin_dll: 3D API cycle \"%s\" (unknown) -> \"%s\"", current,
+             g_BuiltinModules[0].dll_name);
         return g_BuiltinModules[0].dll_name;
     }
-    const char *next = g_BuiltinModules[(int)(module - g_BuiltinModules + 1) %
-                                        g_BuiltinModuleCount].dll_name;
-    DLOG("render","builtin_dll: 3D API cycle \"%s\" -> \"%s\"", module->dll_name, next);
+    const char *next =
+        g_BuiltinModules[(int)(module - g_BuiltinModules + 1) % g_BuiltinModuleCount].dll_name;
+    DLOG("render", "builtin_dll: 3D API cycle \"%s\" -> \"%s\"", module->dll_name, next);
     return next;
 }
 
@@ -107,9 +108,8 @@ extern "C" void *nocturne_builtin_dll_open(const char *dll_name) {
         // and lands here too, so the line names the module rather than the entry
         // point that asked — winmm.dll appearing here is the joystick asking
         // whether it is present, and being told no.
-        DLOG("render","builtin_dll: open(\"%s\") -> %s",
-                  (dll_name != NULL) ? dll_name : "(null)",
-                  (module != NULL) ? "built-in module" : "NOT REGISTERED");
+        DLOG("render", "builtin_dll: open(\"%s\") -> %s", (dll_name != NULL) ? dll_name : "(null)",
+             (module != NULL) ? "built-in module" : "NOT REGISTERED");
         return (void *)module;
     }
 #else
@@ -120,8 +120,7 @@ extern "C" void *nocturne_builtin_dll_open(const char *dll_name) {
 
 extern "C" int nocturne_builtin_dll_is_handle(void *handle) {
     const NocturneBuiltinModule *module = (const NocturneBuiltinModule *)handle;
-    return module >= g_BuiltinModules &&
-           module < g_BuiltinModules + g_BuiltinModuleCount;
+    return module >= g_BuiltinModules && module < g_BuiltinModules + g_BuiltinModuleCount;
 }
 
 extern "C" void *nocturne_builtin_dll_sym(void *handle, const char *proc_name) {

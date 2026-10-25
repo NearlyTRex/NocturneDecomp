@@ -23,31 +23,41 @@ namespace gamepad_support {
 
 Stand stand;
 
-Pad &pad(int i) { return stand.pads[(size_t)i]; }
+Pad &pad(int i) {
+    return stand.pads[(size_t)i];
+}
 
-}  // namespace gamepad_support
+} // namespace gamepad_support
 
 using gamepad_support::Pad;
 using gamepad_support::stand;
 
 namespace {
 
-Pad *of(SDL_GameController *controller) { return (Pad *)controller; }
+Pad *of(SDL_GameController *controller) {
+    return (Pad *)controller;
+}
 
 // The files SDL_RWFromFile was asked to open, so a stream is its name.
 std::deque<std::string> s_opened;
 
-}  // namespace
+} // namespace
 
 // --- SDL, with SDL's own linkage -----------------------------------------------
 
 extern "C" {
 
-SDL_bool gamepad_sdl_SDL_SetHint(const char *, const char *) { return SDL_TRUE; }
+SDL_bool gamepad_sdl_SDL_SetHint(const char *, const char *) {
+    return SDL_TRUE;
+}
 
-int gamepad_sdl_SDL_InitSubSystem(Uint32) { return stand.subsystem_result; }
+int gamepad_sdl_SDL_InitSubSystem(Uint32) {
+    return stand.subsystem_result;
+}
 
-const char *gamepad_sdl_SDL_GetError(void) { return "no controllers here"; }
+const char *gamepad_sdl_SDL_GetError(void) {
+    return "no controllers here";
+}
 
 // SDL_GameControllerAddMappingsFromFile is these two, as SDL's header defines it.
 SDL_RWops *gamepad_sdl_SDL_RWFromFile(const char *file, const char *) {
@@ -61,15 +71,20 @@ int gamepad_sdl_SDL_GameControllerAddMappingsFromRW(SDL_RWops *rw, int) {
 }
 
 char *gamepad_sdl_SDL_GetBasePath(void) {
-    if (stand.base_path == nullptr) return nullptr;
+    if (stand.base_path == nullptr)
+        return nullptr;
     char *copy = (char *)std::malloc(std::strlen(stand.base_path) + 1);
     std::strcpy(copy, stand.base_path);
     return copy;
 }
 
-void gamepad_sdl_SDL_free(void *memory) { std::free(memory); }
+void gamepad_sdl_SDL_free(void *memory) {
+    std::free(memory);
+}
 
-int gamepad_sdl_SDL_NumJoysticks(void) { return (int)stand.pads.size(); }
+int gamepad_sdl_SDL_NumJoysticks(void) {
+    return (int)stand.pads.size();
+}
 
 SDL_bool gamepad_sdl_SDL_IsGameController(int index) {
     return stand.pads[(size_t)index].controller ? SDL_TRUE : SDL_FALSE;
@@ -88,19 +103,21 @@ SDL_GameControllerType gamepad_sdl_SDL_GameControllerGetType(SDL_GameController 
     return of(controller)->type;
 }
 
-void gamepad_sdl_SDL_GameControllerClose(SDL_GameController *) { stand.closed++; }
+void gamepad_sdl_SDL_GameControllerClose(SDL_GameController *) {
+    stand.closed++;
+}
 
 SDL_bool gamepad_sdl_SDL_GameControllerGetAttached(SDL_GameController *controller) {
     return of(controller)->attached ? SDL_TRUE : SDL_FALSE;
 }
 
 Uint8 gamepad_sdl_SDL_GameControllerGetButton(SDL_GameController *controller,
-                                               SDL_GameControllerButton button) {
+                                              SDL_GameControllerButton button) {
     return of(controller)->buttons[button];
 }
 
 Sint16 gamepad_sdl_SDL_GameControllerGetAxis(SDL_GameController *controller,
-                                              SDL_GameControllerAxis axis) {
+                                             SDL_GameControllerAxis axis) {
     return of(controller)->axes[axis];
 }
 
@@ -108,11 +125,15 @@ SDL_Window *gamepad_sdl_SDL_GetKeyboardFocus(void) {
     return stand.focused ? (SDL_Window *)&stand : nullptr;
 }
 
-Uint32 gamepad_sdl_SDL_GetTicks(void) { return stand.ticks; }
+Uint32 gamepad_sdl_SDL_GetTicks(void) {
+    return stand.ticks;
+}
 
-float gamepad_sdl_SDL_sqrtf(float x) { return std::sqrt(x); }
+float gamepad_sdl_SDL_sqrtf(float x) {
+    return std::sqrt(x);
+}
 
-}  // extern "C"
+} // extern "C"
 
 // --- the engine and the map ------------------------------------------------------
 
@@ -124,6 +145,10 @@ void __cdecl core_game_cpp_CGame_restoreDefaultControls_FUN_004dbbc0(CGame *) {
     stand.defaults_restored++;
 }
 
-int *nocturne_automap_key_binding(void) { return &stand.map_binding; }
+int *nocturne_automap_key_binding(void) {
+    return &stand.map_binding;
+}
 
-int nocturne_automap_owns_controls(void) { return stand.map_owns_controls; }
+int nocturne_automap_owns_controls(void) {
+    return stand.map_owns_controls;
+}

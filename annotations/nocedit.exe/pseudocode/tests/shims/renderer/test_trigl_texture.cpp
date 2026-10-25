@@ -18,9 +18,8 @@ namespace {
 // The expansion loops of expandTextureAndBuildMips, keeping their shape. The
 // channel shifts are the fixed ones the engine uses for anything but a 32-bit
 // hardware format, which is the layout a texture upload wants regardless.
-void oracle(const unsigned char *indices, int pixel_count,
-            const unsigned char *palette, const unsigned char *opacity,
-            unsigned *out) {
+void oracle(const unsigned char *indices, int pixel_count, const unsigned char *palette,
+            const unsigned char *opacity, unsigned *out) {
     unsigned packed[256];
     const unsigned char *p = palette;
     for (int i = 0; i < 256; ++i) {
@@ -31,7 +30,8 @@ void oracle(const unsigned char *indices, int pixel_count,
     if (opacity == nullptr) {
         for (int i = 0; i < pixel_count; ++i) {
             unsigned v = 0;
-            if (packed[indices[i]] != 0) v = packed[indices[i]] | 0xff000000u;
+            if (packed[indices[i]] != 0)
+                v = packed[indices[i]] | 0xff000000u;
             out[i] = v;
         }
     } else {
@@ -56,7 +56,7 @@ void fill_palette() {
         g_palette[i * 3 + 2] = (unsigned char)(i * 11);
     }
     // Index 0 is black, and so are three others scattered through the palette.
-    const int blacks[] = { 0, 7, 128, 255 };
+    const int blacks[] = {0, 7, 128, 255};
     for (int b : blacks) {
         g_palette[b * 3 + 0] = 0;
         g_palette[b * 3 + 1] = 0;
@@ -68,7 +68,7 @@ void fill_palette() {
     g_palette[9 * 3 + 2] = 1;
 }
 
-}  // namespace
+} // namespace
 
 NOCTURNE_TEST(expansion_matches_the_engine) {
     fill_palette();
@@ -87,8 +87,7 @@ NOCTURNE_TEST(expansion_matches_the_engine) {
         oracle(g_indices, count, g_palette, op, g_want);
         for (int i = 0; i < count; ++i) {
             CHECK_EQ_AT(g_got[i], g_want[i],
-                        "opacity=" + std::to_string(with_opacity) +
-                        " pixel=" + std::to_string(i));
+                        "opacity=" + std::to_string(with_opacity) + " pixel=" + std::to_string(i));
         }
     }
 }
@@ -100,7 +99,7 @@ NOCTURNE_TEST(colour_key_is_a_colour_not_an_index) {
     unsigned packed[256];
     nocturne_trigl_pack_palette(g_palette, packed);
 
-    const unsigned char indices[] = { 0, 7, 128, 255, 9, 1, 200 };
+    const unsigned char indices[] = {0, 7, 128, 255, 9, 1, 200};
     const int count = (int)(sizeof(indices) / sizeof(indices[0]));
     unsigned out[sizeof(indices) / sizeof(indices[0])];
     nocturne_trigl_expand_texture(indices, count, packed, nullptr, out);
@@ -124,8 +123,8 @@ NOCTURNE_TEST(opacity_plane_replaces_the_colour_key) {
     unsigned packed[256];
     nocturne_trigl_pack_palette(g_palette, packed);
 
-    const unsigned char indices[] = { 0, 7, 1 };
-    const unsigned char opacity[] = { 0xff, 0x40, 0x00 };
+    const unsigned char indices[] = {0, 7, 1};
+    const unsigned char opacity[] = {0xff, 0x40, 0x00};
     unsigned out[3];
     nocturne_trigl_expand_texture(indices, 3, packed, opacity, out);
 
@@ -144,8 +143,8 @@ NOCTURNE_TEST(opacity_is_per_pixel_not_per_palette_entry) {
     unsigned packed[256];
     nocturne_trigl_pack_palette(g_palette, packed);
 
-    const unsigned char indices[] = { 40, 40, 40 };
-    const unsigned char opacity[] = { 0x10, 0x80, 0xf0 };
+    const unsigned char indices[] = {40, 40, 40};
+    const unsigned char opacity[] = {0x10, 0x80, 0xf0};
     unsigned out[3];
     nocturne_trigl_expand_texture(indices, 3, packed, opacity, out);
 
@@ -159,10 +158,18 @@ NOCTURNE_TEST(opacity_is_per_pixel_not_per_palette_entry) {
 
 NOCTURNE_TEST(packed_palette_channel_order) {
     unsigned char palette[256 * 3] = {};
-    palette[0] = 0x12; palette[1] = 0x34; palette[2] = 0x56;   // entry 0
-    palette[3] = 0xff; palette[4] = 0x00; palette[5] = 0x00;   // entry 1, red
-    palette[6] = 0x00; palette[7] = 0xff; palette[8] = 0x00;   // entry 2, green
-    palette[9] = 0x00; palette[10] = 0x00; palette[11] = 0xff; // entry 3, blue
+    palette[0] = 0x12;
+    palette[1] = 0x34;
+    palette[2] = 0x56; // entry 0
+    palette[3] = 0xff;
+    palette[4] = 0x00;
+    palette[5] = 0x00; // entry 1, red
+    palette[6] = 0x00;
+    palette[7] = 0xff;
+    palette[8] = 0x00; // entry 2, green
+    palette[9] = 0x00;
+    palette[10] = 0x00;
+    palette[11] = 0xff; // entry 3, blue
 
     unsigned packed[256];
     nocturne_trigl_pack_palette(palette, packed);

@@ -2,10 +2,9 @@
 // HERO BREATH — cold breath for a player hero of any class
 // =============================================================================
 
-#include "nocturne_test.h"
-
 #include "game/hero_breath.h"
 #include "game_support.h"
+#include "nocturne_test.h"
 
 using namespace game_support;
 

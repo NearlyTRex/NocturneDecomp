@@ -10,21 +10,18 @@
 
 namespace {
 
-struct Mode { int width; int height; };
+struct Mode {
+    int width;
+    int height;
+};
 
 // Ascending by height, which is what makes the stepping monotonic. Every mode
 // the shipped labels already knew about is here — including 400x300, which the
 // shipped chain could describe but never select — plus 1600x1200, which was in
 // g_ResolutionTable all along with no way to choose it.
 const Mode kModes[] = {
-    { 320,  240 },
-    { 400,  300 },
-    { 512,  384 },
-    { 640,  480 },
-    { 800,  600 },
-    { 1024, 768 },
-    { 1280, 1024 },
-    { 1600, 1200 },
+    {320, 240}, {400, 300},  {512, 384},   {640, 480},
+    {800, 600}, {1024, 768}, {1280, 1024}, {1600, 1200},
 };
 
 const int kModeCount = (int)(sizeof(kModes) / sizeof(kModes[0]));
@@ -33,15 +30,17 @@ const int kModeCount = (int)(sizeof(kModes) / sizeof(kModes[0]));
 // list" as against "the INI holds something we have to snap out of".
 int index_of(int width, int height) {
     for (int i = 0; i < kModeCount; ++i) {
-        if (kModes[i].width == width && kModes[i].height == height) { return i; }
+        if (kModes[i].width == width && kModes[i].height == height) {
+            return i;
+        }
     }
     return -1;
 }
 
 } // namespace
 
-void nocturne_resolution_step(int current_width, int current_height, int step,
-                              int max_height, int *out_width, int *out_height) {
+void nocturne_resolution_step(int current_width, int current_height, int step, int max_height,
+                              int *out_width, int *out_height) {
     int index;
     int last;
 
@@ -50,7 +49,9 @@ void nocturne_resolution_step(int current_width, int current_height, int step,
     // land on even for one frame.
     last = kModeCount - 1;
     if (max_height > 0) {
-        while (last > 0 && kModes[last].height > max_height) { --last; }
+        while (last > 0 && kModes[last].height > max_height) {
+            --last;
+        }
     }
 
     index = index_of(current_width, current_height);
@@ -63,25 +64,29 @@ void nocturne_resolution_step(int current_width, int current_height, int step,
         int best_delta = -1;
         for (int i = 0; i <= last; ++i) {
             int delta = kModes[i].height - current_height;
-            if (delta < 0) { delta = -delta; }
+            if (delta < 0) {
+                delta = -delta;
+            }
             if (best_delta < 0 || delta < best_delta) {
                 best_delta = delta;
                 best = i;
             }
         }
         index = best;
-    }
-    else if (index > last) {
+    } else if (index > last) {
         // In the table but above the ceiling, which an INI can arrange. Snap
         // into range, the same way an unknown mode does.
         index = last;
-    }
-    else {
+    } else {
         index = index + (step < 0 ? -1 : 1);
         // Wrap at both ends, the way the shipped chain wrapped from its
         // smallest mode back to the largest the card would allow.
-        if (index < 0) { index = last; }
-        if (index > last) { index = 0; }
+        if (index < 0) {
+            index = last;
+        }
+        if (index > last) {
+            index = 0;
+        }
     }
 
     *out_width = kModes[index].width;

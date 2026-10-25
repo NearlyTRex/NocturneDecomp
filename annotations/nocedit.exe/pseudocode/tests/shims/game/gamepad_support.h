@@ -13,7 +13,6 @@
 // The tests' own main(), which SDL would otherwise rename on Windows.
 #define SDL_MAIN_HANDLED
 #include <SDL.h>
-
 #include <deque>
 #include <string>
 #include <vector>
@@ -22,8 +21,8 @@ namespace gamepad_support {
 
 // A device SDL lists.
 struct Pad {
-    bool controller = true;          // SDL_IsGameController
-    bool opens = true;               // SDL_GameControllerOpen succeeds
+    bool controller = true; // SDL_IsGameController
+    bool opens = true;      // SDL_GameControllerOpen succeeds
     const char *name = "Pad";
     SDL_GameControllerType type = SDL_CONTROLLER_TYPE_XBOXONE;
     bool attached = true;
@@ -35,18 +34,18 @@ struct Stand {
     // A deque, so a pad keeps its place as others are plugged in: the shim
     // holds on to the one it opened.
     std::deque<Pad> pads;
-    int subsystem_result = 0;            // SDL_InitSubSystem
-    const char *base_path = nullptr;     // SDL_GetBasePath; null for none
-    int mappings_added = 0;              // what each mapping file adds
+    int subsystem_result = 0;        // SDL_InitSubSystem
+    const char *base_path = nullptr; // SDL_GetBasePath; null for none
+    int mappings_added = 0;          // what each mapping file adds
     std::vector<std::string> mapping_files;
-    bool focused = true;                 // SDL_GetKeyboardFocus has a window
-    Uint32 ticks = 0;                    // SDL_GetTicks
-    int closed = 0;                      // SDL_GameControllerClose
+    bool focused = true; // SDL_GetKeyboardFocus has a window
+    Uint32 ticks = 0;    // SDL_GetTicks
+    int closed = 0;      // SDL_GameControllerClose
 
-    std::vector<int> typed;              // enqueueInput
-    int defaults_restored = 0;           // restoreDefaultControls
-    int map_binding = 0;                 // nocturne_automap_key_binding
-    int map_owns_controls = 0;           // nocturne_automap_owns_controls
+    std::vector<int> typed;    // enqueueInput
+    int defaults_restored = 0; // restoreDefaultControls
+    int map_binding = 0;       // nocturne_automap_key_binding
+    int map_owns_controls = 0; // nocturne_automap_owns_controls
 };
 
 extern Stand stand;
@@ -54,4 +53,4 @@ extern Stand stand;
 // The pad at `i`, as SDL would hand it back.
 Pad &pad(int i = 0);
 
-}  // namespace gamepad_support
+} // namespace gamepad_support

@@ -61,7 +61,7 @@ void fill(CFileFinder *finder) {
     }
 }
 
-}  // namespace
+} // namespace
 
 CDemonMission *mission = s_mission.get();
 CGame *game = s_game.get();
@@ -82,7 +82,7 @@ void Stand::reset() {
     g_CurrentSaveFile[0] = '\0';
 }
 
-}  // namespace menus_support
+} // namespace menus_support
 
 using menus_support::stand;
 
@@ -103,8 +103,9 @@ void __cdecl shape_edittool_cpp_CStrList_add_FUN_004a2b80(CStrList *, char *stri
 }
 
 void __cdecl shape_edittool_cpp_CPickList_enableItem_FUN_004a5410(CPickList *, int item_index,
-                                                                int enable_flag) {
-    if (enable_flag == 0) stand.disabled.insert(item_index);
+                                                                  int enable_flag) {
+    if (enable_flag == 0)
+        stand.disabled.insert(item_index);
 }
 
 int __cdecl shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20(
@@ -112,16 +113,18 @@ int __cdecl shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3
     stand.title = dialog_title;
     stand.initial = initial_selected_index;
     stand.lists_shown++;
-    if (stand.choices.empty()) return -1;
+    if (stand.choices.empty())
+        return -1;
     const int choice = stand.choices.front();
     stand.choices.pop_front();
     return choice;
 }
 
-int __cdecl core_menu_cpp_renderMenuAndGetChoice_FUN_00510000(char **, int menu_count, int *,
-                                                              int, char *) {
+int __cdecl core_menu_cpp_renderMenuAndGetChoice_FUN_00510000(char **, int menu_count, int *, int,
+                                                              char *) {
     stand.menu_counts.push_back(menu_count);
-    if (stand.menu_choices.empty()) return -1;
+    if (stand.menu_choices.empty())
+        return -1;
     const int choice = stand.menu_choices.front();
     stand.menu_choices.pop_front();
     return choice;
@@ -139,7 +142,7 @@ int __cdecl shape_edittool_cpp_CEditorTools_showDestructiveActionConfirmDialog_F
 }
 
 void __cdecl shape_edittool_cpp_CEditorTools_showError_FUN_0049e740(CEditorTools *, char *format,
-                                                                  ...) {
+                                                                    ...) {
     stand.errors.push_back(format);
 }
 
@@ -156,7 +159,9 @@ _FILE *__cdecl engine_dosio_cpp_getFile_FUN_00481a50(char *, char *filename, cha
                : nullptr;
 }
 
-int __cdecl shape_memdbg_cpp_closeFile_FUN_0050f9b0(_FILE *, char *, int) { return 0; }
+int __cdecl shape_memdbg_cpp_closeFile_FUN_0050f9b0(_FILE *, char *, int) {
+    return 0;
+}
 
 CFileFinder *__cdecl engine_dosio_cpp_CFileFinder_ctor_FUN_00481c30(CFileFinder *this_ptr) {
     return this_ptr;
@@ -183,16 +188,16 @@ CFileFinder *__cdecl engine_dosio_cpp_CFileFinder_dtor_FUN_00481c50(CFileFinder 
 // The decoder hands its input through, as far as its budget, as if the save had
 // been stored uncompressed behind the magic.
 CLZWDecompress *__cdecl support_codec_cpp_CLZWDecompress_ctor_FUN_0043f490(CLZWDecompress *this_ptr,
-                                                                         int, int) {
+                                                                           int, int) {
     return this_ptr;
 }
 
 void __cdecl support_codec_cpp_CLZWDecompress_init_FUN_0043f4d0(CLZWDecompress *) {}
 
 int __cdecl support_codec_cpp_CLZWDecompress_process_FUN_0043f510(CLZWDecompress *,
-                                                                 _istream *istream,
-                                                                 int *byte_count,
-                                                                 _ostream *ostream) {
+                                                                  _istream *istream,
+                                                                  int *byte_count,
+                                                                  _ostream *ostream) {
     std::istream &in = std_istream_from(istream);
     std::ostream &out = std_ostream_from(ostream);
     char c;
@@ -208,7 +213,7 @@ int __cdecl support_codec_cpp_CLZWDecompress_finalize_FUN_0043f590(CLZWDecompres
 }
 
 CLZWDictionary *__cdecl support_codec_cpp_CLZWDictionary_dtor_FUN_0043edf0(CLZWDictionary *this_ptr,
-                                                                         uint) {
+                                                                           uint) {
     return this_ptr;
 }
 
@@ -237,12 +242,20 @@ int nocturne_cheat_active(int index) {
     return (index == NOCTURNE_CHEAT_WARPS) ? stand.warps_cheat : 0;
 }
 
-int nocturne_net_session_active(void) { return stand.net_active; }
+int nocturne_net_session_active(void) {
+    return stand.net_active;
+}
 
-CBitFont *nocturne_menu_font(void) { return menus_support::s_menu_font; }
+CBitFont *nocturne_menu_font(void) {
+    return menus_support::s_menu_font;
+}
 
 void nocturne_menu_backdrop_frame(void) {}
 
-int nocturne_menu_start_y(int rows) { return rows * 10; }
+int nocturne_menu_start_y(int rows) {
+    return rows * 10;
+}
 
-int nocturne_menu_cancelled(void) { return stand.cancelled; }
+int nocturne_menu_cancelled(void) {
+    return stand.cancelled;
+}

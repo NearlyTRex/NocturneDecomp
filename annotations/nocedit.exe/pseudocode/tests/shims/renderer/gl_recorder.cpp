@@ -17,8 +17,7 @@ namespace {
 
 State g_state;
 
-void note(const char *name, unsigned a = 0, unsigned b = 0, unsigned c = 0,
-          unsigned d = 0) {
+void note(const char *name, unsigned a = 0, unsigned b = 0, unsigned c = 0, unsigned d = 0) {
     Call call;
     call.name = name;
     call.a = a;
@@ -32,7 +31,8 @@ void note(const char *name, unsigned a = 0, unsigned b = 0, unsigned c = 0,
 
 void APIENTRY r_ActiveTexture(GLenum unit) {
     const unsigned index = (unsigned)(unit - GL_TEXTURE0);
-    if (index < 8) g_state.active_unit = index;
+    if (index < 8)
+        g_state.active_unit = index;
     note("ActiveTexture", index);
 }
 
@@ -42,7 +42,8 @@ void APIENTRY r_BindTexture(GLenum, GLuint texture) {
 }
 
 void APIENTRY r_GenTextures(GLsizei n, GLuint *out) {
-    for (GLsizei i = 0; i < n; ++i) out[i] = g_state.next_texture++;
+    for (GLsizei i = 0; i < n; ++i)
+        out[i] = g_state.next_texture++;
     note("GenTextures", (unsigned)n, out[0]);
 }
 
@@ -50,14 +51,13 @@ void APIENTRY r_DeleteTextures(GLsizei n, const GLuint *names) {
     note("DeleteTextures", (unsigned)n, (n > 0) ? names[0] : 0u);
 }
 
-void APIENTRY r_TexImage2D(GLenum, GLint, GLint, GLsizei w, GLsizei h, GLint,
-                           GLenum, GLenum, const void *) {
-    note("TexImage2D", g_state.bound_texture[g_state.active_unit], (unsigned)w,
-         (unsigned)h);
+void APIENTRY r_TexImage2D(GLenum, GLint, GLint, GLsizei w, GLsizei h, GLint, GLenum, GLenum,
+                           const void *) {
+    note("TexImage2D", g_state.bound_texture[g_state.active_unit], (unsigned)w, (unsigned)h);
 }
 
-void APIENTRY r_TexSubImage2D(GLenum, GLint, GLint, GLint, GLsizei, GLsizei,
-                              GLenum, GLenum, const void *) {
+void APIENTRY r_TexSubImage2D(GLenum, GLint, GLint, GLint, GLsizei, GLsizei, GLenum, GLenum,
+                              const void *) {
     note("TexSubImage2D", g_state.bound_texture[g_state.active_unit]);
 }
 
@@ -85,7 +85,8 @@ void APIENTRY r_GetIntegerv(GLenum name, GLint *out) {
     } else if (name == GL_SCISSOR_TEST) {
         *out = g_state.scissor;
     } else if (name == GL_VIEWPORT) {
-        for (int i = 0; i < 4; ++i) out[i] = g_state.viewport[i];
+        for (int i = 0; i < 4; ++i)
+            out[i] = g_state.viewport[i];
     } else {
         *out = 0;
     }
@@ -94,8 +95,8 @@ void APIENTRY r_GetIntegerv(GLenum name, GLint *out) {
 void APIENTRY r_DrawElements(GLenum, GLsizei count, GLenum, const void *) {
     // Recorded with what the pipeline holds, so a draw can be asked afterwards
     // what image it went out with and under what state.
-    note("DrawElements", g_state.bound_texture[0], (unsigned)count,
-         g_state.bound_program, g_state.bound_vao);
+    note("DrawElements", g_state.bound_texture[0], (unsigned)count, g_state.bound_program,
+         g_state.bound_vao);
     Call &call = g_state.calls.back();
     call.depth_test = g_state.depth_test;
     call.depth_write = g_state.depth_write;
@@ -115,27 +116,45 @@ GLuint APIENTRY r_CreateShader(GLenum) {
 void APIENTRY r_ShaderSource(GLuint s, GLsizei, const GLchar *const *, const GLint *) {
     note("ShaderSource", s);
 }
-void APIENTRY r_CompileShader(GLuint s) { note("CompileShader", s); }
-void APIENTRY r_GetShaderiv(GLuint, GLenum, GLint *out) { *out = GL_TRUE; }
-void APIENTRY r_GetShaderInfoLog(GLuint, GLsizei n, GLsizei *len, GLchar *log) {
-    if (n > 0) log[0] = '\0';
-    if (len != nullptr) *len = 0;
+void APIENTRY r_CompileShader(GLuint s) {
+    note("CompileShader", s);
 }
-void APIENTRY r_DeleteShader(GLuint s) { note("DeleteShader", s); }
+void APIENTRY r_GetShaderiv(GLuint, GLenum, GLint *out) {
+    *out = GL_TRUE;
+}
+void APIENTRY r_GetShaderInfoLog(GLuint, GLsizei n, GLsizei *len, GLchar *log) {
+    if (n > 0)
+        log[0] = '\0';
+    if (len != nullptr)
+        *len = 0;
+}
+void APIENTRY r_DeleteShader(GLuint s) {
+    note("DeleteShader", s);
+}
 
 GLuint APIENTRY r_CreateProgram(void) {
     const unsigned id = g_state.next_program++;
     note("CreateProgram", id);
     return id;
 }
-void APIENTRY r_AttachShader(GLuint p, GLuint s) { note("AttachShader", p, s); }
-void APIENTRY r_LinkProgram(GLuint p) { note("LinkProgram", p); }
-void APIENTRY r_GetProgramiv(GLuint, GLenum, GLint *out) { *out = GL_TRUE; }
-void APIENTRY r_GetProgramInfoLog(GLuint, GLsizei n, GLsizei *len, GLchar *log) {
-    if (n > 0) log[0] = '\0';
-    if (len != nullptr) *len = 0;
+void APIENTRY r_AttachShader(GLuint p, GLuint s) {
+    note("AttachShader", p, s);
 }
-void APIENTRY r_DeleteProgram(GLuint p) { note("DeleteProgram", p); }
+void APIENTRY r_LinkProgram(GLuint p) {
+    note("LinkProgram", p);
+}
+void APIENTRY r_GetProgramiv(GLuint, GLenum, GLint *out) {
+    *out = GL_TRUE;
+}
+void APIENTRY r_GetProgramInfoLog(GLuint, GLsizei n, GLsizei *len, GLchar *log) {
+    if (n > 0)
+        log[0] = '\0';
+    if (len != nullptr)
+        *len = 0;
+}
+void APIENTRY r_DeleteProgram(GLuint p) {
+    note("DeleteProgram", p);
+}
 void APIENTRY r_UseProgram(GLuint p) {
     g_state.bound_program = p;
     note("UseProgram", p);
@@ -145,27 +164,36 @@ void APIENTRY r_UseProgram(GLuint p) {
 // which would silently switch off every uniform the renderer sets.
 GLint APIENTRY r_GetUniformLocation(GLuint, const GLchar *name) {
     static const char *known[] = {
-        "u_projection", "u_tex", "u_tex_enabled", "u_modulate_alpha",
-        "u_alpha_test", "u_fog_enabled", "u_fog_color", "u_debug",
+        "u_projection", "u_tex",         "u_tex_enabled", "u_modulate_alpha",
+        "u_alpha_test", "u_fog_enabled", "u_fog_color",   "u_debug",
     };
     for (int i = 0; i < (int)(sizeof(known) / sizeof(known[0])); ++i) {
-        if (strcmp(known[i], name) == 0) return i;
+        if (strcmp(known[i], name) == 0)
+            return i;
     }
     return 100;
 }
 GLint APIENTRY r_GetAttribLocation(GLuint, const GLchar *name) {
-    if (strcmp(name, "a_pos") == 0) return 0;
-    if (strcmp(name, "a_color") == 0) return 1;
-    if (strcmp(name, "a_specular") == 0) return 2;
-    if (strcmp(name, "a_uv") == 0) return 3;
+    if (strcmp(name, "a_pos") == 0)
+        return 0;
+    if (strcmp(name, "a_color") == 0)
+        return 1;
+    if (strcmp(name, "a_specular") == 0)
+        return 2;
+    if (strcmp(name, "a_uv") == 0)
+        return 3;
     return 4;
 }
 void APIENTRY r_BindAttribLocation(GLuint, GLuint index, const GLchar *) {
     note("BindAttribLocation", index);
 }
 
-void APIENTRY r_Uniform1i(GLint loc, GLint v) { note("Uniform1i", (unsigned)loc, (unsigned)v); }
-void APIENTRY r_Uniform1f(GLint loc, GLfloat) { note("Uniform1f", (unsigned)loc); }
+void APIENTRY r_Uniform1i(GLint loc, GLint v) {
+    note("Uniform1i", (unsigned)loc, (unsigned)v);
+}
+void APIENTRY r_Uniform1f(GLint loc, GLfloat) {
+    note("Uniform1f", (unsigned)loc);
+}
 void APIENTRY r_Uniform3f(GLint loc, GLfloat, GLfloat, GLfloat) {
     note("Uniform3f", (unsigned)loc);
 }
@@ -177,10 +205,13 @@ void APIENTRY r_UniformMatrix4fv(GLint loc, GLsizei, GLboolean, const GLfloat *)
 }
 
 void APIENTRY r_GenBuffers(GLsizei n, GLuint *out) {
-    for (GLsizei i = 0; i < n; ++i) out[i] = g_state.next_buffer++;
+    for (GLsizei i = 0; i < n; ++i)
+        out[i] = g_state.next_buffer++;
     note("GenBuffers", (unsigned)n, out[0]);
 }
-void APIENTRY r_DeleteBuffers(GLsizei n, const GLuint *) { note("DeleteBuffers", (unsigned)n); }
+void APIENTRY r_DeleteBuffers(GLsizei n, const GLuint *) {
+    note("DeleteBuffers", (unsigned)n);
+}
 void APIENTRY r_BindBuffer(GLenum target, GLuint buffer) {
     note("BindBuffer", buffer, (unsigned)target);
 }
@@ -192,7 +223,8 @@ void APIENTRY r_BufferSubData(GLenum, GLintptr, GLsizeiptr size, const void *) {
 }
 
 void APIENTRY r_GenVertexArrays(GLsizei n, GLuint *out) {
-    for (GLsizei i = 0; i < n; ++i) out[i] = g_state.next_vao++;
+    for (GLsizei i = 0; i < n; ++i)
+        out[i] = g_state.next_vao++;
     note("GenVertexArrays", (unsigned)n, out[0]);
 }
 void APIENTRY r_DeleteVertexArrays(GLsizei n, const GLuint *) {
@@ -208,18 +240,26 @@ void APIENTRY r_EnableVertexAttribArray(GLuint index) {
 void APIENTRY r_DisableVertexAttribArray(GLuint index) {
     note("DisableVertexAttribArray", index);
 }
-void APIENTRY r_VertexAttribPointer(GLuint index, GLint, GLenum, GLboolean, GLsizei,
-                                    const void *) {
+void APIENTRY r_VertexAttribPointer(GLuint index, GLint, GLenum, GLboolean, GLsizei, const void *) {
     note("VertexAttribPointer", index);
 }
 
 void set_cap(GLenum cap, int on) {
     switch (cap) {
-        case GL_DEPTH_TEST:   g_state.depth_test = on; break;
-        case GL_BLEND:        g_state.blend = on; break;
-        case GL_CULL_FACE:    g_state.cull = on; break;
-        case GL_SCISSOR_TEST: g_state.scissor = on; break;
-        default: break;
+    case GL_DEPTH_TEST:
+        g_state.depth_test = on;
+        break;
+    case GL_BLEND:
+        g_state.blend = on;
+        break;
+    case GL_CULL_FACE:
+        g_state.cull = on;
+        break;
+    case GL_SCISSOR_TEST:
+        g_state.scissor = on;
+        break;
+    default:
+        break;
     }
 }
 
@@ -231,8 +271,12 @@ void APIENTRY r_Disable(GLenum cap) {
     set_cap(cap, 0);
     note("Disable", (unsigned)cap);
 }
-void APIENTRY r_BlendFunc(GLenum s, GLenum d) { note("BlendFunc", (unsigned)s, (unsigned)d); }
-void APIENTRY r_DepthFunc(GLenum f) { note("DepthFunc", (unsigned)f); }
+void APIENTRY r_BlendFunc(GLenum s, GLenum d) {
+    note("BlendFunc", (unsigned)s, (unsigned)d);
+}
+void APIENTRY r_DepthFunc(GLenum f) {
+    note("DepthFunc", (unsigned)f);
+}
 void APIENTRY r_DepthMask(GLboolean on) {
     g_state.depth_write = (on != 0) ? 1 : 0;
     note("DepthMask", (unsigned)on);
@@ -242,8 +286,12 @@ void APIENTRY r_DepthMask(GLboolean on) {
 void APIENTRY r_PolygonOffset(GLfloat factor, GLfloat units) {
     note("PolygonOffset", (unsigned)(int)factor, (unsigned)(int)units);
 }
-void APIENTRY r_CullFace(GLenum f) { note("CullFace", (unsigned)f); }
-void APIENTRY r_FrontFace(GLenum f) { note("FrontFace", (unsigned)f); }
+void APIENTRY r_CullFace(GLenum f) {
+    note("CullFace", (unsigned)f);
+}
+void APIENTRY r_FrontFace(GLenum f) {
+    note("FrontFace", (unsigned)f);
+}
 // Width and height first, then where.
 void APIENTRY r_Viewport(GLint x, GLint y, GLsizei w, GLsizei h) {
     g_state.viewport[0] = x;
@@ -255,19 +303,29 @@ void APIENTRY r_Viewport(GLint x, GLint y, GLsizei w, GLsizei h) {
 void APIENTRY r_Scissor(GLint x, GLint y, GLsizei w, GLsizei h) {
     note("Scissor", (unsigned)x, (unsigned)y, (unsigned)w, (unsigned)h);
 }
-void APIENTRY r_PixelStorei(GLenum, GLint) { note("PixelStorei"); }
+void APIENTRY r_PixelStorei(GLenum, GLint) {
+    note("PixelStorei");
+}
 void APIENTRY r_GenerateMipmap(GLenum) {
     note("GenerateMipmap", g_state.bound_texture[g_state.active_unit]);
 }
-GLenum APIENTRY r_GetError(void) { return GL_NO_ERROR; }
-void APIENTRY r_BindFramebuffer(GLenum, GLuint fbo) { note("BindFramebuffer", fbo); }
+GLenum APIENTRY r_GetError(void) {
+    return GL_NO_ERROR;
+}
+void APIENTRY r_BindFramebuffer(GLenum, GLuint fbo) {
+    note("BindFramebuffer", fbo);
+}
 
 // --- reading the target back --------------------------------------------------
 // The device mirrors the frame into a CPU image so the engine can draw its 2D
 // into it. Nothing is rendered here, so the read leaves the buffer as it found
 // it — what these tests ask about is the order of the calls around it.
-void APIENTRY r_ReadBuffer(GLenum which) { note("ReadBuffer", (unsigned)which); }
-void APIENTRY r_DrawBuffer(GLenum which) { note("DrawBuffer", (unsigned)which); }
+void APIENTRY r_ReadBuffer(GLenum which) {
+    note("ReadBuffer", (unsigned)which);
+}
+void APIENTRY r_DrawBuffer(GLenum which) {
+    note("DrawBuffer", (unsigned)which);
+}
 void APIENTRY r_ReadPixels(GLint, GLint, GLsizei w, GLsizei h, GLenum, GLenum, void *) {
     note("ReadPixels", (unsigned)w, (unsigned)h);
 }
@@ -278,9 +336,15 @@ const GLubyte *APIENTRY r_GetString(GLenum) {
     return (const GLubyte *)"gl_recorder";
 }
 
-void APIENTRY r_Clear(GLbitfield mask) { note("Clear", (unsigned)mask); }
-void APIENTRY r_ClearColor(GLclampf, GLclampf, GLclampf, GLclampf) { note("ClearColor"); }
-void APIENTRY r_ClearDepth(GLclampd) { note("ClearDepth"); }
+void APIENTRY r_Clear(GLbitfield mask) {
+    note("Clear", (unsigned)mask);
+}
+void APIENTRY r_ClearColor(GLclampf, GLclampf, GLclampf, GLclampf) {
+    note("ClearColor");
+}
+void APIENTRY r_ClearDepth(GLclampd) {
+    note("ClearDepth");
+}
 
 // --- framebuffers -------------------------------------------------------------
 // The renderer keeps one framebuffer per master-depth slot. Names are handed out
@@ -288,21 +352,27 @@ void APIENTRY r_ClearDepth(GLclampd) { note("ClearDepth"); }
 // that reported an incomplete framebuffer would send the renderer down its
 // failure path and the test would be measuring that instead.
 void APIENTRY r_GenFramebuffers(GLsizei n, GLuint *out) {
-    for (GLsizei i = 0; i < n; ++i) out[i] = g_state.next_buffer++;
+    for (GLsizei i = 0; i < n; ++i)
+        out[i] = g_state.next_buffer++;
     note("GenFramebuffers", (unsigned)n, out[0]);
 }
 void APIENTRY r_DeleteFramebuffers(GLsizei n, const GLuint *) {
     note("DeleteFramebuffers", (unsigned)n);
 }
-GLenum APIENTRY r_CheckFramebufferStatus(GLenum) { return GL_FRAMEBUFFER_COMPLETE; }
+GLenum APIENTRY r_CheckFramebufferStatus(GLenum) {
+    return GL_FRAMEBUFFER_COMPLETE;
+}
 void APIENTRY r_GenRenderbuffers(GLsizei n, GLuint *out) {
-    for (GLsizei i = 0; i < n; ++i) out[i] = g_state.next_buffer++;
+    for (GLsizei i = 0; i < n; ++i)
+        out[i] = g_state.next_buffer++;
     note("GenRenderbuffers", (unsigned)n, out[0]);
 }
 void APIENTRY r_DeleteRenderbuffers(GLsizei n, const GLuint *) {
     note("DeleteRenderbuffers", (unsigned)n);
 }
-void APIENTRY r_BindRenderbuffer(GLenum, GLuint rb) { note("BindRenderbuffer", rb); }
+void APIENTRY r_BindRenderbuffer(GLenum, GLuint rb) {
+    note("BindRenderbuffer", rb);
+}
 void APIENTRY r_RenderbufferStorage(GLenum, GLenum, GLsizei w, GLsizei h) {
     note("RenderbufferStorage", (unsigned)w, (unsigned)h);
 }
@@ -312,14 +382,16 @@ void APIENTRY r_FramebufferRenderbuffer(GLenum, GLenum, GLenum, GLuint rb) {
 void APIENTRY r_FramebufferTexture2D(GLenum, GLenum, GLenum, GLuint texture, GLint) {
     note("FramebufferTexture2D", texture);
 }
-void APIENTRY r_BlitFramebuffer(GLint, GLint, GLint, GLint, GLint, GLint, GLint,
-                                GLint, GLbitfield mask, GLenum) {
+void APIENTRY r_BlitFramebuffer(GLint, GLint, GLint, GLint, GLint, GLint, GLint, GLint,
+                                GLbitfield mask, GLenum) {
     note("BlitFramebuffer", (unsigned)mask);
 }
 
-}  // namespace
+} // namespace
 
-State &state() { return g_state; }
+State &state() {
+    return g_state;
+}
 
 // Called when the renderer reaches for an entry point this recorder does not
 // install. Zeroing the table instead leaves a null pointer, and calling one is a
@@ -329,10 +401,9 @@ State &state() { return g_state; }
 // pointer, so all of them can be pointed here first and the real ones written
 // over the top.
 void APIENTRY r_unimplemented(void) {
-    fprintf(stderr,
-            "gl_recorder: the renderer called an entry point the recorder does "
-            "not install.\n"
-            "             Add it to install() — see the list this file keeps.\n");
+    fprintf(stderr, "gl_recorder: the renderer called an entry point the recorder does "
+                    "not install.\n"
+                    "             Add it to install() — see the list this file keeps.\n");
     abort();
 }
 
@@ -426,7 +497,7 @@ void install() {
     gl.BindFramebuffer = r_BindFramebuffer;
 }
 
-}  // namespace gl_recorder
+} // namespace gl_recorder
 
 // The table the renderer reaches GL through. Owned by the recorder in a test
 // build, so gl_api.cpp — which would pull in SDL — stays out of the link.

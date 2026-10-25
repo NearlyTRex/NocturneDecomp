@@ -2,10 +2,9 @@
 // HERO FALL — a long fall hurts, and falling out of the world kills
 // =============================================================================
 
-#include "nocturne_test.h"
-
 #include "behaviour_support.h"
 #include "game/hero_fall.h"
+#include "nocturne_test.h"
 
 #include <string>
 
@@ -28,7 +27,7 @@ CHero *falling(float speed) {
 
 CVector3f s_step = {0.0f, -5.0f, 0.0f};
 
-}  // namespace
+} // namespace
 
 // A landing past the safe speed hurts in proportion, through any invincibility,
 // and plays a footstep as heavy as the fall.
@@ -43,7 +42,8 @@ NOCTURNE_TEST(a_hard_landing_hurts) {
     }
     CHECK_EQ(hero->invincibility_timer, 0.0f);
     CHECK_EQ(stand.footsteps.size(), (size_t)1);
-    if (!stand.footsteps.empty()) CHECK_NEAR(stand.footsteps[0], 1.75f, 1e-6f);
+    if (!stand.footsteps.empty())
+        CHECK_NEAR(stand.footsteps[0], 1.75f, 1e-6f);
 }
 
 // One past the fatal figure kills, as a fall, and plays no footstep.
@@ -108,9 +108,11 @@ NOCTURNE_TEST(below_the_world_a_character_dies) {
     nocturne_fall_out_of_world(&stranger->base);
     CHECK_EQ(stranger->invincibility_timer, 0.0f);
     CHECK_EQ(stand.desired.size(), (size_t)1);
-    if (!stand.desired.empty()) CHECK_EQ(stand.desired[0].index, 0x12);
+    if (!stand.desired.empty())
+        CHECK_EQ(stand.desired[0].index, 0x12);
     CHECK_EQ(stand.sounds.size(), (size_t)1);
-    if (!stand.sounds.empty()) CHECK_EQ(stand.sounds[0].second, std::string("fall-?.wav"));
+    if (!stand.sounds.empty())
+        CHECK_EQ(stand.sounds[0].second, std::string("fall-?.wav"));
 
     // One the blow leaves standing is not made to splat.
     stranger->base.hit_points = 99999.0f;

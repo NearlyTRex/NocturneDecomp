@@ -38,7 +38,7 @@ namespace gl_recorder {
 
 struct Call {
     std::string name;
-    unsigned    a = 0, b = 0, c = 0, d = 0;
+    unsigned a = 0, b = 0, c = 0, d = 0;
     // What the pipeline held when the call was made. Only meaningful on a draw,
     // and recorded there because "was depth testing on when this geometry went
     // out" cannot be answered afterwards — by then the frame has moved on.
@@ -74,9 +74,9 @@ struct State {
     // Name allocators. Start at 1: zero means "none" throughout GL, and a fake
     // that handed out 0 would make "nothing bound" and "this object" identical.
     unsigned next_texture = 1;
-    unsigned next_buffer  = 1;
-    unsigned next_vao     = 1;
-    unsigned next_shader  = 1;
+    unsigned next_buffer = 1;
+    unsigned next_vao = 1;
+    unsigned next_shader = 1;
     unsigned next_program = 1;
 
     void reset() {
@@ -96,14 +96,16 @@ struct State {
     int count(const char *name) const {
         int n = 0;
         for (const Call &call : calls) {
-            if (call.name == name) ++n;
+            if (call.name == name)
+                ++n;
         }
         return n;
     }
 
     int index_of_last(const char *name) const {
         for (int i = (int)calls.size() - 1; i >= 0; --i) {
-            if (calls[(size_t)i].name == name) return i;
+            if (calls[(size_t)i].name == name)
+                return i;
         }
         return -1;
     }
@@ -114,7 +116,8 @@ struct State {
     unsigned value_at(const char *name, int at) const {
         unsigned value = 0;
         for (int i = 0; i < at && i < (int)calls.size(); ++i) {
-            if (calls[(size_t)i].name == name) value = calls[(size_t)i].a;
+            if (calls[(size_t)i].name == name)
+                value = calls[(size_t)i].a;
         }
         return value;
     }
@@ -126,4 +129,4 @@ State &state();
 // per test before touching the renderer.
 void install();
 
-}  // namespace gl_recorder
+} // namespace gl_recorder

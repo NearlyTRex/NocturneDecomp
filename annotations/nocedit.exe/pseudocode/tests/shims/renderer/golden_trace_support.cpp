@@ -27,9 +27,11 @@ struct Names {
     std::map<unsigned, std::string> assigned;
 
     std::string of(const char *kind, unsigned id) {
-        if (id == 0) return "none";
+        if (id == 0)
+            return "none";
         const std::map<unsigned, std::string>::iterator found = assigned.find(id);
-        if (found != assigned.end()) return found->second;
+        if (found != assigned.end())
+            return found->second;
         char buffer[64];
         snprintf(buffer, sizeof(buffer), "%s%d", kind, (int)assigned.size() + 1);
         assigned[id] = buffer;
@@ -39,19 +41,26 @@ struct Names {
 
 const char *cap_name(unsigned cap) {
     switch (cap) {
-        case GL_DEPTH_TEST:   return "depth_test";
-        case GL_BLEND:        return "blend";
-        case GL_CULL_FACE:    return "cull";
-        case GL_SCISSOR_TEST: return "scissor";
-        case GL_TEXTURE_2D:   return "texture_2d";
-        default:              return "cap";
+    case GL_DEPTH_TEST:
+        return "depth_test";
+    case GL_BLEND:
+        return "blend";
+    case GL_CULL_FACE:
+        return "cull";
+    case GL_SCISSOR_TEST:
+        return "scissor";
+    case GL_TEXTURE_2D:
+        return "texture_2d";
+    default:
+        return "cap";
     }
 }
 
 std::string path_for(const char *name, const char *extension) {
     std::error_code ec;
     std::string path = std::filesystem::is_directory(NOCTURNE_TEST_DATA_DIR, ec)
-                           ? NOCTURNE_TEST_DATA_DIR : "golden";
+                           ? NOCTURNE_TEST_DATA_DIR
+                           : "golden";
     path += "/";
     path += name;
     path += extension;
@@ -60,18 +69,21 @@ std::string path_for(const char *name, const char *extension) {
 
 bool read_file(const std::string &path, std::string *out) {
     FILE *file = fopen(path.c_str(), "rb");
-    if (file == nullptr) return false;
+    if (file == nullptr)
+        return false;
     char buffer[4096];
     size_t got = 0;
     out->clear();
-    while ((got = fread(buffer, 1, sizeof(buffer), file)) > 0) out->append(buffer, got);
+    while ((got = fread(buffer, 1, sizeof(buffer), file)) > 0)
+        out->append(buffer, got);
     fclose(file);
     return true;
 }
 
 bool write_file(const std::string &path, const std::string &text) {
     FILE *file = fopen(path.c_str(), "wb");
-    if (file == nullptr) return false;
+    if (file == nullptr)
+        return false;
     fwrite(text.data(), 1, text.size(), file);
     fclose(file);
     return true;
@@ -81,11 +93,12 @@ std::vector<std::string> lines_of(const std::string &text) {
     std::vector<std::string> lines;
     std::istringstream stream(text);
     std::string line;
-    while (std::getline(stream, line)) lines.push_back(line);
+    while (std::getline(stream, line))
+        lines.push_back(line);
     return lines;
 }
 
-}  // namespace
+} // namespace
 
 std::string render(const gl_recorder::State &state) {
     Names textures, programs, arrays, buffers;
@@ -98,18 +111,16 @@ std::string render(const gl_recorder::State &state) {
         if (name == "BindTexture") {
             out << "bind texture " << textures.of("texture", call.a) << "\n";
         } else if (name == "TexImage2D") {
-            out << "upload " << textures.of("texture", call.a) << " " << call.b
-                << "x" << call.c << "\n";
+            out << "upload " << textures.of("texture", call.a) << " " << call.b << "x" << call.c
+                << "\n";
         } else if (name == "TexParameteri") {
-            out << "texture parameter 0x" << std::hex << call.a << std::dec << " = "
-                << (int)call.b << "\n";
+            out << "texture parameter 0x" << std::hex << call.a << std::dec << " = " << (int)call.b
+                << "\n";
         } else if (name == "DrawElements") {
             out << "DRAW " << textures.of("texture", call.a) << " indices=" << call.b
                 << " program=" << programs.of("program", call.c)
-                << " array=" << arrays.of("array", call.d)
-                << " depth_test=" << call.depth_test
-                << " depth_write=" << call.depth_write
-                << " blend=" << call.blend << "\n";
+                << " array=" << arrays.of("array", call.d) << " depth_test=" << call.depth_test
+                << " depth_write=" << call.depth_write << " blend=" << call.blend << "\n";
         } else if (name == "Enable" || name == "Disable") {
             out << (name == "Enable" ? "enable " : "disable ") << cap_name(call.a) << "\n";
         } else if (name == "UseProgram") {
@@ -160,20 +171,20 @@ bool matches(const char *name, const std::string &actual) {
                 golden_path.c_str(), name);
         return false;
     }
-    if (expected == actual) return true;
+    if (expected == actual)
+        return true;
 
     write_file(path_for(name, ".actual"), actual);
 
     const std::vector<std::string> want = lines_of(expected);
     const std::vector<std::string> got = lines_of(actual);
     size_t at = 0;
-    while (at < want.size() && at < got.size() && want[at] == got[at]) ++at;
+    while (at < want.size() && at < got.size() && want[at] == got[at])
+        ++at;
 
     fprintf(stderr, "golden: %s differs at line %d\n", name, (int)at + 1);
-    fprintf(stderr, "  expected: %s\n",
-            (at < want.size()) ? want[at].c_str() : "(end of trace)");
-    fprintf(stderr, "  recorded: %s\n",
-            (at < got.size()) ? got[at].c_str() : "(end of trace)");
+    fprintf(stderr, "  expected: %s\n", (at < want.size()) ? want[at].c_str() : "(end of trace)");
+    fprintf(stderr, "  recorded: %s\n", (at < got.size()) ? got[at].c_str() : "(end of trace)");
     fprintf(stderr,
             "  %d lines expected, %d recorded. The full recording is beside the\n"
             "  golden as %s.actual. If the change is intended, rerun with\n"
@@ -182,4 +193,4 @@ bool matches(const char *name, const std::string &actual) {
     return false;
 }
 
-}  // namespace golden
+} // namespace golden

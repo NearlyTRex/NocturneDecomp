@@ -2,9 +2,8 @@
 // WALL CLOCK — seconds that only go forwards
 // =============================================================================
 
-#include "nocturne_test.h"
-
 #include "core/clock.h"
+#include "nocturne_test.h"
 
 #include <chrono>
 #include <thread>

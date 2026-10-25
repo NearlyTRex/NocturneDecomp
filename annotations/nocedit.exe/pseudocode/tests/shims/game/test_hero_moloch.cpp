@@ -2,10 +2,9 @@
 // HERO MOLOCH — Moloch played: his blows, his health, his damage
 // =============================================================================
 
-#include "nocturne_test.h"
-
 #include "behaviour_support.h"
 #include "game/hero_moloch.h"
+#include "nocturne_test.h"
 
 #include <cstring>
 #include <memory>
@@ -42,9 +41,11 @@ CMoloch *moloch() {
     return m;
 }
 
-CMotionController *controller(CMoloch *m) { return &m->base.base.model.base; }
+CMotionController *controller(CMoloch *m) {
+    return &m->base.base.model.base;
+}
 
-}  // namespace
+} // namespace
 
 // Fire throws a punch, then a smash, then a punch, each player in turn, and a
 // new mission starts him over at the punch; an NPC Moloch always punches.
@@ -118,7 +119,7 @@ NOCTURNE_TEST(a_blow_lands_from_whichever_hand_reaches) {
     CHECK(stand.cylinder_points.empty());
     controller(m)->current_frame_number = 17.0f;
     nocturne_moloch_attack_hit(m, kPunch, 15.0f);
-    CHECK_EQ(stand.cylinder_points.size(), (size_t)3);   // right once, left twice
+    CHECK_EQ(stand.cylinder_points.size(), (size_t)3); // right once, left twice
 
     // A smash lands on its own frame; with no hands to strike from, nothing.
     stand.cylinder_points.clear();

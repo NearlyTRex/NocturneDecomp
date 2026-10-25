@@ -2,9 +2,8 @@
 // CHEATS, AUTHENTIC — the shipped game has no presets
 // =============================================================================
 
-#include "nocturne_test.h"
-
 #include "game/cheats.h"
+#include "nocturne_test.h"
 
 // No menu, nothing applied, every line off, nothing to send and no host's set
 // taken.

@@ -2,19 +2,22 @@
 // HERO BARON — one Baron per Baron weapon, in netplay
 // =============================================================================
 
-#include "nocturne_test.h"
-
 #include "game/hero_baron.h"
 #include "game_support.h"
+#include "nocturne_test.h"
 
 using namespace game_support;
 
 namespace {
 
-CBaronWeapon *weapon(int i) { return (CBaronWeapon *)(0x1000 + i * 0x10); }
-CBaron *baron(int i) { return (CBaron *)(0x9000 + i * 0x10); }
+CBaronWeapon *weapon(int i) {
+    return (CBaronWeapon *)(0x1000 + i * 0x10);
+}
+CBaron *baron(int i) {
+    return (CBaron *)(0x9000 + i * 0x10);
+}
 
-}  // namespace
+} // namespace
 
 // Outside netplay nothing is claimed, so nothing is claimed by another.
 NOCTURNE_TEST(outside_netplay_there_are_no_claims) {
@@ -52,7 +55,8 @@ NOCTURNE_TEST(the_claims_past_the_table_are_not_kept) {
     stand.reset();
     stand.net_active = 1;
     nocturne_baron_reset();
-    for (int i = 0; i < 17; i++) nocturne_baron_claim(weapon(i), baron(i));
+    for (int i = 0; i < 17; i++)
+        nocturne_baron_claim(weapon(i), baron(i));
     CHECK_EQ(nocturne_baron_claimed_by_other(weapon(99), baron(15)), 1);
     CHECK_EQ(nocturne_baron_claimed_by_other(weapon(99), baron(16)), 0);
 }

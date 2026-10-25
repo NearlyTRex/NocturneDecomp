@@ -56,19 +56,22 @@ void report_loader_tls() {
         const char *tls = image + tls_rva;
         const uint64_t start = at<uint64_t>(tls, 0), end = at<uint64_t>(tls, 8);
         const uint64_t index_at = at<uint64_t>(tls, 16), callbacks = at<uint64_t>(tls, 24);
-        std::printf("  raw data %#llx..%#llx (%llu bytes), index at %#llx, callbacks at %#llx, zero fill %u\n",
+        std::printf("  raw data %#llx..%#llx (%llu bytes), index at %#llx, callbacks at %#llx, "
+                    "zero fill %u\n",
                     (unsigned long long)start, (unsigned long long)end,
                     (unsigned long long)(end - start), (unsigned long long)index_at,
                     (unsigned long long)callbacks, at<uint32_t>(tls, 32));
         std::printf("  directory fields inside the image: %s\n",
                     (start >= (uint64_t)(uintptr_t)image && index_at >= (uint64_t)(uintptr_t)image)
-                        ? "yes" : "no (not relocated)");
+                        ? "yes"
+                        : "no (not relocated)");
     }
     std::printf("_tls_index = %lu at %p\n", _tls_index, (void *)&_tls_index);
     void **array = thread_tls_array();
     std::printf("TEB TLS array at %p\n", (void *)array);
     if (array != nullptr) {
-        std::printf("  slot %lu = %p, t_probe at %p\n", _tls_index, array[_tls_index], (void *)&t_probe);
+        std::printf("  slot %lu = %p, t_probe at %p\n", _tls_index, array[_tls_index],
+                    (void *)&t_probe);
     }
     std::fflush(stdout);
 }
@@ -79,7 +82,7 @@ void report_loader_tls() {}
 
 #endif
 
-}  // namespace
+} // namespace
 
 NOCTURNE_TEST(the_programs_thread_local_storage_is_writable_on_the_main_thread) {
     report_loader_tls();

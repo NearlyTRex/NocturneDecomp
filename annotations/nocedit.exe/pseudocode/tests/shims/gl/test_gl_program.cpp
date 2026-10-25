@@ -7,9 +7,8 @@
 // failures are the driver's, so each case swaps one entry of the recorder's
 // table for one that says no.
 
-#include "nocturne_test.h"
-
 #include "gl/gl_program.h"
+#include "nocturne_test.h"
 #include "shims/renderer/gl_recorder.h"
 
 namespace {
@@ -19,12 +18,22 @@ gl_recorder::State &start() {
     return gl_recorder::state();
 }
 
-GLuint build() { return nocturne_gl_build_program("vs", "fs", "test"); }
+GLuint build() {
+    return nocturne_gl_build_program("vs", "fs", "test");
+}
 
-GLuint APIENTRY no_shader(GLenum) { return 0; }
-GLuint APIENTRY no_program(void) { return 0; }
-void APIENTRY failed(GLuint, GLenum, GLint *out) { *out = GL_FALSE; }
-GLint APIENTRY elsewhere(GLuint, const GLchar *) { return 3; }
+GLuint APIENTRY no_shader(GLenum) {
+    return 0;
+}
+GLuint APIENTRY no_program(void) {
+    return 0;
+}
+void APIENTRY failed(GLuint, GLenum, GLint *out) {
+    *out = GL_FALSE;
+}
+GLint APIENTRY elsewhere(GLuint, const GLchar *) {
+    return 3;
+}
 
 // Fails the second shader only, the fragment one.
 GLuint APIENTRY second_shader_fails(GLenum type) {
@@ -32,7 +41,7 @@ GLuint APIENTRY second_shader_fails(GLenum type) {
     return type == GL_FRAGMENT_SHADER ? 0 : next++;
 }
 
-}  // namespace
+} // namespace
 
 NOCTURNE_TEST(two_shaders_link_into_a_program_with_a_pos_first) {
     gl_recorder::State &s = start();

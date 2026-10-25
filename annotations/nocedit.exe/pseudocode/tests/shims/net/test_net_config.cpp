@@ -6,11 +6,10 @@
 // the file; the file written with the built-in values the first time it is
 // looked for. Each case runs in a game directory of its own.
 
-#include "nocturne_test.h"
-#include "net_support.h"
-
 #include "net/net_config.h"
+#include "net_support.h"
 #include "nocturne.h"
+#include "nocturne_test.h"
 
 #include <cstdlib>
 #include <filesystem>
@@ -52,7 +51,7 @@ void write_ini(const char *text) {
     out << text;
 }
 
-}  // namespace
+} // namespace
 
 // With no system directory there is nowhere to write the file: the built-in
 // values stand.

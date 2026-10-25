@@ -11,11 +11,10 @@
 // written, and -1 answered, when there is nowhere to write it. The engine is
 // stood in for by dump_support.h; the cases run in a directory of their own.
 
-#include "nocturne_test.h"
-#include "dump_support.h"
-
 #include "debug/dump.h"
+#include "dump_support.h"
 #include "nocturne.h"
+#include "nocturne_test.h"
 
 #include <cmath>
 #include <cstdlib>
@@ -36,7 +35,8 @@ const char kNowhere[] = "no_such_dir/out.txt";
 
 void enter_directory() {
     static bool entered = false;
-    if (entered) return;
+    if (entered)
+        return;
     entered = true;
     std::error_code ec;
     const fs::path root = fs::temp_directory_path(ec) / "nocturne_dump_test";
@@ -63,7 +63,8 @@ std::string read(const std::string &path) {
     std::string text = read_bytes(path);
     std::string lines;
     for (char c : text) {
-        if (c != '\r') lines += c;
+        if (c != '\r')
+            lines += c;
     }
     return lines;
 }
@@ -78,9 +79,11 @@ void block(const std::string &path) {
     fs::create_directories(path, ec);
 }
 
-void name(CDemonActor &actor, const char *text) { strncpy(actor.actor_name, text, 32); }
+void name(CDemonActor &actor, const char *text) {
+    strncpy(actor.actor_name, text, 32);
+}
 
-}  // namespace
+} // namespace
 
 // -----------------------------------------------------------------------------
 // The frame and depth buffers
@@ -99,7 +102,7 @@ NOCTURNE_TEST(the_frame_buffer_is_written_with_its_histogram) {
     CHECK_EQ(nocturne_dump_screenshot("frame.ppm"), 0);
     const std::string image = read_bytes("frame.ppm");
     CHECK(has(image, "P6\n2 2\n255\n"));
-    CHECK_EQ((unsigned char)image[image.size() - 2], 100);   // the last pixel's green
+    CHECK_EQ((unsigned char)image[image.size() - 2], 100); // the last pixel's green
     const std::string meta = read("frame.ppm.txt");
     CHECK(has(meta, "zero (all channels=0):  1"));
     CHECK(has(meta, "dim (max 1..31):        1"));
@@ -160,10 +163,10 @@ NOCTURNE_TEST(the_depth_buffer_is_written_normalised) {
     CHECK_EQ(nocturne_dump_zbuffer("depth.ppm"), 0);
     const std::string image = read_bytes("depth.ppm");
     const size_t start_at = image.size() - 27;
-    CHECK_EQ((unsigned char)image[start_at + 0], 0);      // untouched
-    CHECK_EQ((unsigned char)image[start_at + 3], 85);     // 100 of 0..300
+    CHECK_EQ((unsigned char)image[start_at + 0], 0);  // untouched
+    CHECK_EQ((unsigned char)image[start_at + 3], 85); // 100 of 0..300
     CHECK_EQ((unsigned char)image[start_at + 6], 255);
-    CHECK_EQ((unsigned char)image[start_at + 9], 0);      // a row with no buffer
+    CHECK_EQ((unsigned char)image[start_at + 9], 0); // a row with no buffer
     const std::string meta = read("depth.ppm.txt");
     CHECK(has(meta, "touched (d!=0):  3"));
     CHECK(has(meta, "touched bbox: x=[0..2] y=[0..2]"));
@@ -230,14 +233,15 @@ NOCTURNE_TEST(an_actor_is_written_class_by_class) {
     CDemonActor *actor = &stranger.base.base.base;
     name(*actor, "svetlana");
     CQuaternion4f *bones = stranger.base.base.model.bone_transform.pose_data.bone_rotations;
-    for (int b = 0; b < 100; ++b) bones[b].w = 1.0f;
+    for (int b = 0; b < 100; ++b)
+        bones[b].w = 1.0f;
     bones[3].w = 2.0f;
     bones[4].w = NAN;
     bones[5].x = NAN;
     bones[6].y = NAN;
     bones[7].z = NAN;
-    dump_support::is_a(actor, {dump_support::kStranger, dump_support::kHero,
-                               dump_support::kCharacter});
+    dump_support::is_a(actor,
+                       {dump_support::kStranger, dump_support::kHero, dump_support::kCharacter});
     CHECK_EQ(nocturne_dump_actor_state("stranger.txt", actor), 0);
     std::string text = read("stranger.txt");
     CHECK(has(text, "[CDemonActor]"));
@@ -291,7 +295,8 @@ CVector3f g_corners[3] = {{0, 0, 0}, {1, 0, 0}, {0, 0, 1}};
 CDemonCube make_cube(std::vector<CDemonCubeTriangle> &storage, int count, float ny) {
     storage.assign((size_t)count, CDemonCubeTriangle{});
     for (CDemonCubeTriangle &t : storage) {
-        for (int v = 0; v < 3; ++v) t.triangle.vertices[v] = &g_corners[v];
+        for (int v = 0; v < 3; ++v)
+            t.triangle.vertices[v] = &g_corners[v];
         t.triangle.normal.y = ny;
     }
     CDemonCube cube = {};
@@ -300,7 +305,7 @@ CDemonCube make_cube(std::vector<CDemonCubeTriangle> &storage, int count, float 
     return cube;
 }
 
-}  // namespace
+} // namespace
 
 // The grid's extent always; at a point, where it falls, the triangles up its
 // column, the triangles of its cube and the four beside it, and the densest
@@ -316,11 +321,11 @@ NOCTURNE_TEST(the_collision_grid_is_written_round_a_point) {
     CDemonCube wall = make_cube(t_wall, 1, 0.0f);
     CDemonCube dense = make_cube(t_dense, 3, 1.0f);
     CDemonCube empty = {};
-    stand.cubes[{1, 1, 1}] = &floor;      // the probe's
-    stand.cubes[{0, 1, 1}] = &ceiling;    // x-1
-    stand.cubes[{2, 1, 1}] = &wall;       // x+1
-    stand.cubes[{1, 1, 0}] = &empty;      // z-1: nothing in it
-    stand.cubes[{1, 3, 1}] = &dense;      // up the column
+    stand.cubes[{1, 1, 1}] = &floor;   // the probe's
+    stand.cubes[{0, 1, 1}] = &ceiling; // x-1
+    stand.cubes[{2, 1, 1}] = &wall;    // x+1
+    stand.cubes[{1, 1, 0}] = &empty;   // z-1: nothing in it
+    stand.cubes[{1, 3, 1}] = &dense;   // up the column
     stand.cubes[{1, 2, 1}] = &empty;
 
     CHECK_EQ(nocturne_dump_collision_grid("extent.txt", nullptr), 0);
@@ -368,10 +373,10 @@ NOCTURNE_TEST(the_world_geometry_is_written_whole) {
     tris[1].triangle.vertices[0] = nullptr;
     tris[2].triangle.vertices[1] = nullptr;
     tris[3].triangle.vertices[2] = nullptr;
-    cubes[1].triangle_count = 2;              // a count with no buffer
+    cubes[1].triangle_count = 2; // a count with no buffer
     std::vector<CDemonCubeTriangle> unused;
     cubes[2] = make_cube(unused, 1, 0.0f);
-    cubes[2].triangle_count = 0;              // a buffer with no count
+    cubes[2].triangle_count = 0; // a buffer with no count
     rt.cube_data = cubes;
     static CHero hero = {};
     hero.base.base.location.area_id = 7;
@@ -418,7 +423,8 @@ NOCTURNE_TEST(the_lighting_state_is_written_with_its_normals) {
     start();
     const CVector3f normals[] = {{0, 0, 0},   {0.1f, 0, 0}, {1, 0, 0},   {3, 0, 0},
                                  {NAN, 0, 0}, {0, NAN, 0},  {0, 0, NAN}, {0, 1, 0}};
-    for (int i = 0; i < 8; ++i) g_VertexNormalArray[i] = normals[i];
+    for (int i = 0; i < 8; ++i)
+        g_VertexNormalArray[i] = normals[i];
     g_VertexCount = 8;
     g_TransformedVertexArray[0].x = 321;
     CHECK_EQ(nocturne_dump_lighting_state("light.txt"), 0);
@@ -441,7 +447,8 @@ NOCTURNE_TEST(the_lighting_state_is_written_with_its_normals) {
     CHECK(!has(read("none.txt"), "histogram"));
     CHECK_EQ(nocturne_dump_lighting_state(nullptr), -1);
     CHECK_EQ(nocturne_dump_lighting_state(kNowhere), -1);
-    for (int i = 0; i < 8; ++i) g_VertexNormalArray[i] = CVector3f{};
+    for (int i = 0; i < 8; ++i)
+        g_VertexNormalArray[i] = CVector3f{};
 }
 
 // One line per bake, appended: checksums of its inputs, the camera buffers
@@ -458,7 +465,7 @@ NOCTURNE_TEST(a_bake_signature_is_appended_per_bake) {
     cam.framebuffer_aligned = framebuffer;
     cam.framebuffer_width = 2;
     cam.framebuffer_height = 2;
-    g_PrecomputedWorldPositions[0].x = 5;     // off the origin on each axis
+    g_PrecomputedWorldPositions[0].x = 5; // off the origin on each axis
     g_PrecomputedWorldPositions[1].y = 5;
     g_PrecomputedWorldPositions[2].z = 5;
     static CDemonLight lit = {};
@@ -488,7 +495,8 @@ NOCTURNE_TEST(a_bake_signature_is_appended_per_bake) {
     // More lights than it reports stops at eight. No buffers, or a camera of
     // no width or height: no checksum of them.
     g_SpotLightCount = 9;
-    for (int i = 0; i < 9; ++i) g_SpotLightList[i] = &dark;
+    for (int i = 0; i < 9; ++i)
+        g_SpotLightList[i] = &dark;
     cam.zbuffer_aligned = nullptr;
     cam.framebuffer_aligned = nullptr;
     CHECK_EQ(nocturne_dump_bake_signature("bake.txt", 2), 0);
@@ -526,13 +534,15 @@ NOCTURNE_TEST(auto_capture_writes_every_nth_frame_up_to_a_count) {
     g_BitsPerPixel = 32;
     g_WindowWidth = 1;
     g_WindowHeight = 1;
-    for (int i = 0; i < 5; ++i) nocturne_auto_capture("cap_%d.ppm", 2, 2, i == 0);
+    for (int i = 0; i < 5; ++i)
+        nocturne_auto_capture("cap_%d.ppm", 2, 2, i == 0);
     CHECK(fs::exists("cap_0.ppm"));
     CHECK(fs::exists("cap_0.txt"));
     CHECK(fs::exists("cap_1.ppm"));
-    CHECK(!fs::exists("cap_2.ppm"));     // the count was two
+    CHECK(!fs::exists("cap_2.ppm")); // the count was two
     // Every call, with any other extension or none, the list beside it.
-    for (int i = 0; i < 2; ++i) nocturne_auto_capture("raw_%d.bin", 0, 9, i == 0);
+    for (int i = 0; i < 2; ++i)
+        nocturne_auto_capture("raw_%d.bin", 0, 9, i == 0);
     CHECK(fs::exists("raw_1.bin.txt"));
     nocturne_auto_capture("plain%d", 1, 9, 1);
     CHECK(fs::exists("plain0.txt"));
@@ -553,7 +563,7 @@ NOCTURNE_TEST(an_auto_dump_slot_writes_a_state_each_tick) {
     nocturne_auto_dump_tick();
     CHECK(has(read("slot0_1.txt"), "baron"));
     nocturne_auto_dump_set_slot(0, nullptr, nullptr);
-    nocturne_auto_dump_set_slot(0, nullptr, nullptr);   // already disarmed
+    nocturne_auto_dump_set_slot(0, nullptr, nullptr); // already disarmed
     CHECK_EQ(nocturne_auto_dump_is_armed(0), 0);
     nocturne_auto_dump_set_slot(-1, "x_%d.txt", &actor);
     nocturne_auto_dump_set_slot(2, "x_%d.txt", &actor);
@@ -596,12 +606,14 @@ void set_pcm_dir(const char *dir) {
 #if defined(_WIN32)
     _putenv_s("NOCTURNE_DUMP_STREAM_PCM", dir != nullptr ? dir : "");
 #else
-    if (dir == nullptr) unsetenv("NOCTURNE_DUMP_STREAM_PCM");
-    else setenv("NOCTURNE_DUMP_STREAM_PCM", dir, 1);
+    if (dir == nullptr)
+        unsetenv("NOCTURNE_DUMP_STREAM_PCM");
+    else
+        setenv("NOCTURNE_DUMP_STREAM_PCM", dir, 1);
 #endif
 }
 
-}  // namespace
+} // namespace
 
 // With a directory set, each batch is appended to the sample's raw file, its
 // header written beside it once; a name's directory part cannot escape.
@@ -647,7 +659,7 @@ void event_name(SEventNameBlock &block, int i, const char *text) {
     strncpy(block.names[i], text, 32);
 }
 
-}  // namespace
+} // namespace
 
 // Every actor whose creation an event gates, with what the condition answers
 // now and whether it reached the active set; then every container the
@@ -687,7 +699,7 @@ NOCTURNE_TEST(the_creation_gates_are_written_with_their_events) {
     strcpy(events.timers.names[0], "fuse");
     events.timers.durations[0] = 2.5f;
     g_CEventListPtr = &events;
-    g_CDemonSetInstance.actor_count = 2001;   // more than the array: the array
+    g_CDemonSetInstance.actor_count = 2001; // more than the array: the array
     CHECK_EQ(nocturne_dump_create_gates("events.txt"), 0);
     text = read("events.txt");
     CHECK(has(text, "<negative count>"));
@@ -721,7 +733,7 @@ CBoundingBox3D *flame_box(CDemonActor *, CBoundingBox3D *out) {
     return out;
 }
 
-}  // namespace
+} // namespace
 
 // Every flame with its stored verdict beside a fresh one, taken inside the
 // render-state bracket; the globals the fresh test writes are put back.
@@ -764,7 +776,7 @@ NOCTURNE_TEST(each_flames_visibility_is_written_fresh_and_stored) {
 // over, and an arm that cannot write leaves it disarmed.
 NOCTURNE_TEST(the_flame_draw_probe_writes_its_budget_of_rows) {
     start();
-    nocturne_probe_flame_draw("early", 0, 0);   // not armed
+    nocturne_probe_flame_draw("early", 0, 0); // not armed
     nocturne_probe_flame_draw_arm("draws.txt", 3);
     nocturne_probe_flame_draw("no_renderer", 100, 65435);
     static CDemonRenderer renderer = {};
@@ -782,7 +794,7 @@ NOCTURNE_TEST(the_flame_draw_probe_writes_its_budget_of_rows) {
     CHECK(!has(text, "spent "));
 
     nocturne_probe_flame_draw_arm("again.txt", 5);
-    nocturne_probe_flame_draw_arm("again.txt", 5);   // re-armed: the old closed
+    nocturne_probe_flame_draw_arm("again.txt", 5); // re-armed: the old closed
     nocturne_probe_flame_draw_arm(nullptr, 5);
     nocturne_probe_flame_draw_arm("zero.txt", 0);
     nocturne_probe_flame_draw_arm(kNowhere, 5);
@@ -803,14 +815,14 @@ NOCTURNE_TEST(the_presented_frame_is_read_from_whatever_presents_it) {
     CHECK_EQ(nocturne_dump_frontbuffer("gl.ppm"), 0);
     const std::string gl_image = read_bytes("gl.ppm");
     CHECK(has(gl_image, "P6\n2 1\n255\n"));
-    CHECK_EQ((unsigned char)gl_image[gl_image.size() - 1], 255);   // blue
+    CHECK_EQ((unsigned char)gl_image[gl_image.size() - 1], 255); // blue
     stand.gl_read_result = -1;
     CHECK_EQ(nocturne_dump_frontbuffer("gl.ppm"), -1);
     stand.gl_read_result = 0;
     CHECK_EQ(nocturne_dump_frontbuffer(kNowhere), -1);
 
     stand.gl_active = 0;
-    CHECK_EQ(nocturne_dump_frontbuffer("sdl.ppm"), -1);       // no renderer
+    CHECK_EQ(nocturne_dump_frontbuffer("sdl.ppm"), -1); // no renderer
     stand.renderer_present = 1;
     CHECK_EQ(nocturne_dump_frontbuffer("sdl.ppm"), 0);
     CHECK(has(read_bytes("sdl.ppm"), "P6\n4 2\n255\n"));

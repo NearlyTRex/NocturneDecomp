@@ -4,12 +4,11 @@
 //
 // With no INI yet; test_cheats_saved.cpp starts from a saved one.
 
-#include "nocturne_test.h"
 #include "../gl/ini_support.h"
 #include "cheats_support.h"
 #include "class_support.h"
-
 #include "game/cheats.h"
+#include "nocturne_test.h"
 
 #include <cstring>
 #include <string>
@@ -20,21 +19,23 @@ using namespace cheats_support;
 namespace {
 
 // The first line of each page, in picker order, and one past the last page.
-const int kPageStarts[] = {NOCTURNE_CHEAT_GOD_MODE, NOCTURNE_CHEAT_ALL_GUNS,
+const int kPageStarts[] = {NOCTURNE_CHEAT_GOD_MODE,  NOCTURNE_CHEAT_ALL_GUNS,
                            NOCTURNE_CHEAT_ALL_MELEE, NOCTURNE_CHEAT_ITEM_TONIC,
-                           NOCTURNE_CHEAT_DEV_MODE, NOCTURNE_CHEAT_COUNT};
+                           NOCTURNE_CHEAT_DEV_MODE,  NOCTURNE_CHEAT_COUNT};
 
 // Opens the line's page, steps the line once and backs out of both menus.
 void step(int index) {
     int page = 0;
-    while (kPageStarts[page + 1] <= index) page++;
+    while (kPageStarts[page + 1] <= index)
+        page++;
     stand.choices = {page, index - kPageStarts[page]};
     nocturne_cheats_menu();
 }
 
 // Steps the line until it holds `value`.
 void arm(int index, int value) {
-    for (int i = 0; i < 3 && nocturne_cheat_local(index) != value; i++) step(index);
+    for (int i = 0; i < 3 && nocturne_cheat_local(index) != value; i++)
+        step(index);
 }
 
 // Every line off and no host deciding, then a fresh stand.
@@ -42,7 +43,8 @@ void fresh() {
     enter_empty_dir("nocturne_cheats_test");
     stand.reset();
     nocturne_cheats_clear_override();
-    for (int i = 0; i < NOCTURNE_CHEAT_COUNT; i++) arm(i, 0);
+    for (int i = 0; i < NOCTURNE_CHEAT_COUNT; i++)
+        arm(i, 0);
     stand.reset();
 }
 
@@ -55,12 +57,13 @@ void play_stranger() {
 CMelee *melee_with_model(CHero *hero, const char *model) {
     for (int i = 0; i < hero->inventory.item_count; i++) {
         CMelee *m = (CMelee *)hero->inventory.items[i];
-        if (std::strcmp(m->base.model.model_name, model) == 0) return m;
+        if (std::strcmp(m->base.model.model_name, model) == 0)
+            return m;
     }
     return nullptr;
 }
 
-}  // namespace
+} // namespace
 
 // With no INI every line is off, here and as a host would send it; an index
 // past either end is off too.
@@ -88,9 +91,8 @@ NOCTURNE_TEST(the_menu_lists_pages_and_steps_lines) {
 
     CHECK_EQ(stand.frames.size(), (size_t)5);
     CHECK_EQ(stand.frames[0].title, std::string("Cheats"));
-    CHECK(stand.frames[0].lines == std::vector<std::string>({"Gameplay", "Guns & Ammo",
-                                                             "Melee Weapons", "Items",
-                                                             "Debug"}));
+    CHECK(stand.frames[0].lines ==
+          std::vector<std::string>({"Gameplay", "Guns & Ammo", "Melee Weapons", "Items", "Debug"}));
     CHECK_EQ(stand.frames[1].title, std::string("Cheats"));
     CHECK_EQ(stand.frames[2].title, std::string("Gameplay"));
     CHECK_EQ(stand.frames[2].lines.size(), (size_t)8);
@@ -132,8 +134,8 @@ NOCTURNE_TEST(weather_cycles_and_off_restores_the_sets_own) {
     CHECK_EQ(stand.frames.back().lines[3], std::string("Weather : Snow"));
     step(NOCTURNE_CHEAT_WEATHER);
     CHECK_EQ(nocturne_cheat_local(NOCTURNE_CHEAT_WEATHER), NOCTURNE_CHEAT_WEATHER_OFF);
-    CHECK(stand.weather == std::vector<EWeatherType>({WEATHER_TYPE_RAIN, WEATHER_TYPE_SNOW,
-                                                      WEATHER_TYPE_SNOW}));
+    CHECK(stand.weather ==
+          std::vector<EWeatherType>({WEATHER_TYPE_RAIN, WEATHER_TYPE_SNOW, WEATHER_TYPE_SNOW}));
     CHECK_EQ(ini_support::values["Cheats/weather"], std::string("0"));
 
     stand.left = 1;
@@ -316,16 +318,21 @@ NOCTURNE_TEST(hats_need_the_stranger_in_a_mission) {
 NOCTURNE_TEST(grants_reach_every_hero_once) {
     fresh();
     const int grants[] = {
-        NOCTURNE_CHEAT_ALL_GUNS,    NOCTURNE_CHEAT_SHOTGUN,      NOCTURNE_CHEAT_CROSSBOW,
-        NOCTURNE_CHEAT_DYNAMITE,    NOCTURNE_CHEAT_FLAME_THROWER, NOCTURNE_CHEAT_TOMMY_GUN,
-        NOCTURNE_CHEAT_ELEPHANT_GUN, NOCTURNE_CHEAT_LIGHT_GUN,   NOCTURNE_CHEAT_SILVER_AMMO,
-        NOCTURNE_CHEAT_LITHIUM_AMMO, NOCTURNE_CHEAT_MERCURY_AMMO, NOCTURNE_CHEAT_ITEM_BARON,
-        NOCTURNE_CHEAT_ALL_MELEE,   NOCTURNE_CHEAT_ITEM_SKELETON_KEY, NOCTURNE_CHEAT_ITEM_GAS_MASK,
-        NOCTURNE_CHEAT_ITEM_TONIC,  NOCTURNE_CHEAT_ITEM_DOCBAG,  NOCTURNE_CHEAT_ITEM_SCOTCH,
+        NOCTURNE_CHEAT_ALL_GUNS,       NOCTURNE_CHEAT_SHOTGUN,
+        NOCTURNE_CHEAT_CROSSBOW,       NOCTURNE_CHEAT_DYNAMITE,
+        NOCTURNE_CHEAT_FLAME_THROWER,  NOCTURNE_CHEAT_TOMMY_GUN,
+        NOCTURNE_CHEAT_ELEPHANT_GUN,   NOCTURNE_CHEAT_LIGHT_GUN,
+        NOCTURNE_CHEAT_SILVER_AMMO,    NOCTURNE_CHEAT_LITHIUM_AMMO,
+        NOCTURNE_CHEAT_MERCURY_AMMO,   NOCTURNE_CHEAT_ITEM_BARON,
+        NOCTURNE_CHEAT_ALL_MELEE,      NOCTURNE_CHEAT_ITEM_SKELETON_KEY,
+        NOCTURNE_CHEAT_ITEM_GAS_MASK,  NOCTURNE_CHEAT_ITEM_TONIC,
+        NOCTURNE_CHEAT_ITEM_DOCBAG,    NOCTURNE_CHEAT_ITEM_SCOTCH,
         NOCTURNE_CHEAT_ITEM_HIRAM_KIT, NOCTURNE_CHEAT_ITEM_CANDY,
     };
-    for (int index : grants) step(index);
-    for (int m = NOCTURNE_CHEAT_MELEE_WOODSMANS_AXE; m <= NOCTURNE_CHEAT_MELEE_RELIC; m++) step(m);
+    for (int index : grants)
+        step(index);
+    for (int m = NOCTURNE_CHEAT_MELEE_WOODSMANS_AXE; m <= NOCTURNE_CHEAT_MELEE_RELIC; m++)
+        step(m);
 
     place_heroes(2);
     nocturne_cheats_apply();
@@ -333,7 +340,8 @@ NOCTURNE_TEST(grants_reach_every_hero_once) {
         CHero *hero = heroes[h];
         const char *const guns[] = {"CShotgun",  "CCrossbow",    "CDynamite", "CFlameThrower",
                                     "CTommyGun", "CElephantGun", "CLightGun", "CBaronWeapon"};
-        for (const char *gun : guns) CHECK_EQ_AT(count_class(hero, gun), 1, gun);
+        for (const char *gun : guns)
+            CHECK_EQ_AT(count_class(hero, gun), 1, gun);
         CHECK_EQ(count_class(hero, "CAmmo"), 4);
         CHECK_EQ(count_class(hero, "CMelee"), 7);
         CHECK_EQ(count_class(hero, "CHealthItem"), 5);
@@ -379,8 +387,10 @@ NOCTURNE_TEST(ammo_is_matched_by_weapon_and_type) {
     std::vector<std::pair<std::string, int>> rounds;
     for (int i = 0; i < hero->inventory.item_count; i++) {
         CAmmo *ammo = (CAmmo *)hero->inventory.items[i];
-        if (ammo == nullptr || class_support::actor_type(&ammo->base) != &g_CAmmoClassInfo) continue;
-        if (ammo == other || ammo == lithium) continue;
+        if (ammo == nullptr || class_support::actor_type(&ammo->base) != &g_CAmmoClassInfo)
+            continue;
+        if (ammo == other || ammo == lithium)
+            continue;
         CHECK_EQ(ammo->ammo_count, 500);
         rounds.emplace_back(ammo->weapon_class_name, ammo->ammo_type);
     }
@@ -441,7 +451,8 @@ NOCTURNE_TEST(each_melee_line_grants_its_own_weapon) {
         CHECK_EQ_AT(heroes[0]->inventory.item_count, 1, note);
         CMelee *m = melee_with_model(heroes[0], c.model);
         CHECK_AT(m != nullptr, note);
-        if (m == nullptr) continue;
+        if (m == nullptr)
+            continue;
         CHECK_EQ_AT(m->allowed_attack_types, c.attack_types, note);
         CHECK_EQ_AT(m->strength_lo, c.lo, note);
         CHECK_EQ_AT(m->strength_hi, c.hi, note);
@@ -477,7 +488,8 @@ NOCTURNE_TEST(each_health_line_grants_its_own_kind) {
         step(c.index);
         const std::string note = c.model;
         CHECK_EQ_AT(heroes[0]->inventory.item_count, 1, note);
-        if (heroes[0]->inventory.item_count != 1) continue;
+        if (heroes[0]->inventory.item_count != 1)
+            continue;
         CHealthItem *item = (CHealthItem *)heroes[0]->inventory.items[0];
         CHECK_EQ_AT(std::string(item->model.model_name), std::string(c.model), note);
         CHECK_EQ_AT(item->use_count, c.uses, note);

@@ -2,10 +2,9 @@
 // HERO GRAB — every hero breaks free of a grab, as the Stranger does
 // =============================================================================
 
-#include "nocturne_test.h"
-
 #include "behaviour_support.h"
 #include "game/hero_grab.h"
+#include "nocturne_test.h"
 
 #include <memory>
 
@@ -30,7 +29,8 @@ CHero *held(const char *escape = "ESCAPEGRAB") {
     hero->base.model.base.tween_progress = -1.0f;
     stand.states["STAND"] = kStand;
     stand.states["GETGRABBED"] = kGrabbed;
-    if (escape != nullptr) stand.states[escape] = kEscape;
+    if (escape != nullptr)
+        stand.states[escape] = kEscape;
 
     std::memset(s_list.get(), 0, sizeof(*s_list));
     s_list->motion_count = 1;
@@ -53,7 +53,7 @@ int hold_for(CHero *hero, float seconds) {
     return freed;
 }
 
-}  // namespace
+} // namespace
 
 // Held, a running hero is steered into GETGRABBED through STAND, the struggle
 // press is spent, and a little later he is put there outright.
@@ -63,9 +63,10 @@ NOCTURNE_TEST(a_held_hero_is_steered_into_the_grab) {
     CHECK_EQ(nocturne_hero_grab_escape(hero, 0.1f), 0);
     CHECK_EQ(hero->player_input.action_state.fire, 0);
     CHECK_EQ(stand.desired.size(), (size_t)1);
-    if (!stand.desired.empty()) CHECK_EQ(stand.desired[0].index, kStand);
+    if (!stand.desired.empty())
+        CHECK_EQ(stand.desired[0].index, kStand);
     nocturne_hero_grab_escape(hero, 0.1f);
-    CHECK_EQ(stand.desired.size(), (size_t)1);   // already headed there
+    CHECK_EQ(stand.desired.size(), (size_t)1); // already headed there
 
     // A motion that routes to it is asked for it directly.
     s_run.transition_count = 2;

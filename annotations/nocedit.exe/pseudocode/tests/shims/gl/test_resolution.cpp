@@ -6,9 +6,8 @@
 // tallest the screen will take while acceleration is off; a mode not in the
 // list, from an old INI, snaps to the nearest rather than to the smallest.
 
-#include "nocturne_test.h"
-
 #include "gl/resolution.h"
+#include "nocturne_test.h"
 
 #include <string>
 
@@ -17,26 +16,27 @@ namespace {
 struct Mode {
     int width;
     int height;
-    bool operator==(const Mode &o) const { return width == o.width && height == o.height; }
+    bool operator==(const Mode &o) const {
+        return width == o.width && height == o.height;
+    }
 };
 
 const int kRight = 1;
 const int kLeft = -1;
-const int kSoftwareMax = 480;   // the Options screen's ceiling without acceleration
+const int kSoftwareMax = 480; // the Options screen's ceiling without acceleration
 
 Mode step(Mode from, int direction, int max_height = 0) {
     Mode to = {0, 0};
-    nocturne_resolution_step(from.width, from.height, direction, max_height, &to.width,
-                             &to.height);
+    nocturne_resolution_step(from.width, from.height, direction, max_height, &to.width, &to.height);
     return to;
 }
 
-}  // namespace
+} // namespace
 
 // Right is the next larger mode and left the next smaller, through every mode
 // there is, round from the largest to the smallest and back.
 NOCTURNE_TEST(left_and_right_step_through_every_mode_and_wrap) {
-    const Mode modes[] = {{320, 240}, {400, 300},   {512, 384},   {640, 480},
+    const Mode modes[] = {{320, 240}, {400, 300},  {512, 384},   {640, 480},
                           {800, 600}, {1024, 768}, {1280, 1024}, {1600, 1200}};
     const int count = (int)(sizeof(modes) / sizeof(modes[0]));
     for (int i = 0; i < count; ++i) {
@@ -63,7 +63,7 @@ NOCTURNE_TEST(a_mode_not_in_the_list_snaps_to_the_nearest) {
     CHECK(step({1920, 1080}, kLeft, kSoftwareMax) == (Mode{640, 480}));
     CHECK(step({360, 270}, kRight) == (Mode{320, 240}));
     CHECK(step({300, 240}, kRight) == (Mode{320, 240}));
-    CHECK(step({640, 400}, kRight) == (Mode{512, 384}));   // a width of ours alone
+    CHECK(step({640, 400}, kRight) == (Mode{512, 384})); // a width of ours alone
 }
 
 NOCTURNE_TEST(the_label_names_the_mode) {

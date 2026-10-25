@@ -25,31 +25,31 @@ using namespace hero_support;
 
 struct Stand {
     // --- what the engine was asked to do ---------------------------------------
-    std::vector<std::pair<CCharacter *, float>> smoked;      // processSmoking
-    std::vector<std::pair<CHero *, int>> grabbed;            // getGrabbed: hero, grab type
+    std::vector<std::pair<CCharacter *, float>> smoked; // processSmoking
+    std::vector<std::pair<CHero *, int>> grabbed;       // getGrabbed: hero, grab type
     int grab_result = 1;
-    std::vector<CDeformableModelInstance *> reassembled;     // showAllParts
-    std::vector<int> jumped;                                 // jumpToMotion's motion index
-    std::vector<std::pair<int, int>> desired;                // setDesiredState: state, force
+    std::vector<CDeformableModelInstance *> reassembled; // showAllParts
+    std::vector<int> jumped;                             // jumpToMotion's motion index
+    std::vector<std::pair<int, int>> desired;            // setDesiredState: state, force
 
     // --- the other shims --------------------------------------------------------
-    std::vector<CHero *> items_processed;                    // nocturne_hero_items_process
-    std::vector<std::pair<CMoloch *, float>> regenerated;    // nocturne_moloch_regenerate
-    std::map<std::string, int> motion_states;                // find_state; else -1
-    std::vector<std::pair<CCharacter *, int>> forced;        // force_state
-    std::set<const void *> in_set;                           // nocturne_hero_in_set
-    std::vector<std::pair<CCharacter *, CVector3f>> moved;   // move_world
+    std::vector<CHero *> items_processed;                  // nocturne_hero_items_process
+    std::vector<std::pair<CMoloch *, float>> regenerated;  // nocturne_moloch_regenerate
+    std::map<std::string, int> motion_states;              // find_state; else -1
+    std::vector<std::pair<CCharacter *, int>> forced;      // force_state
+    std::set<const void *> in_set;                         // nocturne_hero_in_set
+    std::vector<std::pair<CCharacter *, CVector3f>> moved; // move_world
     int net_active = 0;
-    std::map<const void *, int> hero_types;                  // net_hero_type_of; else -1
+    std::map<const void *, int> hero_types; // net_hero_type_of; else -1
 
     // --- the rest ---------------------------------------------------------------
-    std::map<std::string, CDemonActor *> named;              // findActorByName
-    std::set<unsigned int> playing;                          // isSfxPlaying
-    std::map<std::string, float> durations;                  // getSoundDuration; else -1
+    std::map<std::string, CDemonActor *> named; // findActorByName
+    std::set<unsigned int> playing;             // isSfxPlaying
+    std::map<std::string, float> durations;     // getSoundDuration; else -1
 
     void reset();
 };
 
 extern Stand stand;
 
-}  // namespace game_support
+} // namespace game_support

@@ -3,6 +3,7 @@
 // =============================================================================
 
 #include "hero_support.h"
+
 #include "class_support.h"
 
 #include <cstring>
@@ -42,10 +43,9 @@ CDemonActorType item_type = {};
 
 namespace {
 
-std::unique_ptr<CHero> s_heroes[4] = {std::unique_ptr<CHero>(new CHero()),
-                                      std::unique_ptr<CHero>(new CHero()),
-                                      std::unique_ptr<CHero>(new CHero()),
-                                      std::unique_ptr<CHero>(new CHero())};
+std::unique_ptr<CHero> s_heroes[4] = {
+    std::unique_ptr<CHero>(new CHero()), std::unique_ptr<CHero>(new CHero()),
+    std::unique_ptr<CHero>(new CHero()), std::unique_ptr<CHero>(new CHero())};
 std::unique_ptr<CCharacter> s_characters[8];
 std::unique_ptr<CStranger> s_stranger(new CStranger());
 
@@ -54,13 +54,14 @@ EDeathState death_state(CCharacter *c) {
     return (it != death.end()) ? it->second : DEATH_STATE_ALIVE;
 }
 
-}  // namespace
+} // namespace
 
 CHero *heroes[4] = {s_heroes[0].get(), s_heroes[1].get(), s_heroes[2].get(), s_heroes[3].get()};
 CStranger *stranger = s_stranger.get();
 
 CCharacter *character(int i) {
-    if (!s_characters[i]) s_characters[i].reset(new CCharacter());
+    if (!s_characters[i])
+        s_characters[i].reset(new CCharacter());
     return s_characters[i].get();
 }
 
@@ -80,9 +81,11 @@ void place_heroes(int count) {
 }
 
 void reset() {
-    for (std::unique_ptr<CHero> &h : s_heroes) std::memset(h.get(), 0, sizeof(*h));
+    for (std::unique_ptr<CHero> &h : s_heroes)
+        std::memset(h.get(), 0, sizeof(*h));
     for (std::unique_ptr<CCharacter> &c : s_characters) {
-        if (c) std::memset(c.get(), 0, sizeof(*c));
+        if (c)
+            std::memset(c.get(), 0, sizeof(*c));
     }
     death.clear();
     std::memset(&vtable, 0, sizeof(vtable));
@@ -119,9 +122,10 @@ void reset() {
     give_class(&stranger->base.base.base, &g_CStrangerClassInfo);
     stranger->base.base.hit_points = 100.0f;
 
-    for (CHero *&h : g_HeroActors) h = nullptr;
+    for (CHero *&h : g_HeroActors)
+        h = nullptr;
     g_HeroCount = 0;
     g_LocalHeroIndex = 0;
 }
 
-}  // namespace hero_support
+} // namespace hero_support

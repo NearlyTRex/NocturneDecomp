@@ -15,4 +15,4 @@ void nocturne_focus_trace_arm(void) {}
 void nocturne_focus_trace_event(const char *) {}
 void nocturne_focus_trace_presented(void) {}
 
-}  // extern "C"
+} // extern "C"

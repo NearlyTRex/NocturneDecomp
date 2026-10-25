@@ -4,10 +4,9 @@
 //
 // Where the two are one file, it is loaded once.
 
-#include "nocturne_test.h"
-#include "gamepad_support.h"
-
 #include "game/gamepad.h"
+#include "gamepad_support.h"
+#include "nocturne_test.h"
 
 #include <filesystem>
 #include <fstream>

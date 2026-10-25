@@ -3,11 +3,10 @@
 // switch, pump action and gas mask as a player hero
 // =============================================================================
 
-#include "nocturne_test.h"
-
 #include "behaviour_support.h"
 #include "class_support.h"
 #include "game/hero_gabriella.h"
+#include "nocturne_test.h"
 
 #include <cmath>
 #include <cstring>
@@ -44,7 +43,9 @@ std::deque<std::unique_ptr<CLadder>> s_ladders;
 std::deque<std::unique_ptr<CGasMask>> s_masks;
 std::deque<std::unique_ptr<CDemonActor>> s_actors;
 
-CMotionController *controller(CGabriella *g) { return &g->base.base.model.base; }
+CMotionController *controller(CGabriella *g) {
+    return &g->base.base.model.base;
+}
 
 void play(CGabriella *g, int state) {
     s_states[state].state_index = state;
@@ -58,13 +59,15 @@ void blank(CGabriella *g) {
     g->base.base.is_on_ground = 1;
     g->base.base.model.base.motion_list_ptr = s_list.get();
     g->base.base.model.base.tween_progress = -1.0f;
-    for (int i = 0; i < 3; i++) (&g->base.base.base.orient_matrix.m[i].x)[i] = 1.0f;
+    for (int i = 0; i < 3; i++)
+        (&g->base.base.base.orient_matrix.m[i].x)[i] = 1.0f;
 }
 
 // A fresh mission: no heroes, every slot at rest.
 void start() {
     nocturne_hero_gabriella_reset();
-    for (int i = 0; i < 4; i++) g_HeroActors[i] = nullptr;
+    for (int i = 0; i < 4; i++)
+        g_HeroActors[i] = nullptr;
     g_HeroCount = 0;
     stand.reset();
     std::memset(s_list.get(), 0, sizeof(*s_list));
@@ -84,12 +87,15 @@ CGabriella *gabriella(int slot = 0) {
     play(g, kStand);
     if (slot >= 0) {
         g_HeroActors[slot] = &g->base;
-        if (g_HeroCount <= slot) g_HeroCount = slot + 1;
+        if (g_HeroCount <= slot)
+            g_HeroCount = slot + 1;
     }
     return g;
 }
 
-SPlayerActionState &press(CGabriella *g) { return g->base.player_input.action_state; }
+SPlayerActionState &press(CGabriella *g) {
+    return g->base.player_input.action_state;
+}
 
 // A live enemy at (x, y, z), its cylinder `radius` wide, in the set.
 CCharacter *enemy(int i, float x, float y, float z, float radius = 0.5f) {
@@ -169,9 +175,11 @@ CGasMask *gas_mask(CGabriella *g, bool wanted) {
     return m;
 }
 
-float last_delta() { return stand.motion_deltas.empty() ? -1.0f : stand.motion_deltas.back(); }
+float last_delta() {
+    return stand.motion_deltas.empty() ? -1.0f : stand.motion_deltas.back();
+}
 
-}  // namespace
+} // namespace
 
 // Every entry point leaves a missing Gabriella alone and answers as the
 // shipped code would carry on.
@@ -426,7 +434,8 @@ NOCTURNE_TEST(the_kick_needs_an_enemy_in_reach) {
     CHECK_EQ(nocturne_hero_gabriella_kick(g), 1);
     CHECK_EQ(press(g).fire, 0);
     CHECK_EQ(stand.desired.size(), (size_t)1);
-    if (!stand.desired.empty()) CHECK_EQ(stand.desired[0].index, kKickDoor);
+    if (!stand.desired.empty())
+        CHECK_EQ(stand.desired[0].index, kKickDoor);
 
     // Walking, the press waits; with her weapon out it is not taken, and once
     // she stands it is.
@@ -494,7 +503,8 @@ NOCTURNE_TEST(the_kick_lands_on_its_hit_frame) {
     }
     CHECK_EQ(stand.blood, 1);
     CHECK_EQ(stand.sounds.size(), (size_t)1);
-    if (!stand.sounds.empty()) CHECK_EQ(stand.sounds[0].second, std::string("kick1.wav"));
+    if (!stand.sounds.empty())
+        CHECK_EQ(stand.sounds[0].second, std::string("kick1.wav"));
     CHECK_EQ(far->hit_points, 10.0f);
 
     // Pushed away from her over the next frames.
@@ -535,7 +545,8 @@ NOCTURNE_TEST(a_ladder_in_front_is_climbed_from_stand) {
     CHECK_EQ(press(g).fire, 0);
     CHECK(g->base.ladder_to_climb == l);
     CHECK_EQ(stand.desired.size(), (size_t)1);
-    if (!stand.desired.empty()) CHECK_EQ(stand.desired[0].index, kLadder);
+    if (!stand.desired.empty())
+        CHECK_EQ(stand.desired[0].index, kLadder);
 
     stand.weights[kLadder] = 1.0f;
     CHECK_EQ(nocturne_hero_gabriella_ladder_tick(g, 0.25f), 1);
@@ -821,7 +832,7 @@ NOCTURNE_TEST(holstering_or_a_new_charge_cancels_the_throw) {
     nocturne_hero_gabriella_throw_ready(g);
     g->fire_state = 3;
     nocturne_hero_gabriella_dynamite_tick(g, 0.1f);
-    CHECK_EQ(nocturne_hero_gabriella_throw_ready(g), 0);   // a fresh swing
+    CHECK_EQ(nocturne_hero_gabriella_throw_ready(g), 0); // a fresh swing
     g->fire_state = 1;
     nocturne_hero_gabriella_dynamite_tick(g, 0.0f);
     g->fire_state = 0;
@@ -947,12 +958,9 @@ NOCTURNE_TEST(dynamite_aims_as_the_stranger_throws) {
         bool raised;
     };
     const Case cases[] = {
-        {"charging", 2, 0, 3, false, true},
-        {"released", 2, 0, 2, false, true},
-        {"swinging", 2, 0, 0, true, true},
-        {"idle", 2, 0, 0, false, false},
-        {"holstering", 2, 1, 3, false, false},
-        {"away", 0, 0, 3, false, false},
+        {"charging", 2, 0, 3, false, true},    {"released", 2, 0, 2, false, true},
+        {"swinging", 2, 0, 0, true, true},     {"idle", 2, 0, 0, false, false},
+        {"holstering", 2, 1, 3, false, false}, {"away", 0, 0, 3, false, false},
     };
     for (const Case &c : cases) {
         start();
@@ -1221,12 +1229,15 @@ NOCTURNE_TEST(look_input_aims_a_carried_throw) {
     nocturne_hero_gabriella_throw_carried(g);
     press(g).fire = 1;
     g->base.player_input.look_up_down_speed = -0.1f;
-    for (int i = 0; i < 10; i++) nocturne_hero_gabriella_process_motion(g, 0.1f);
+    for (int i = 0; i < 10; i++)
+        nocturne_hero_gabriella_process_motion(g, 0.1f);
     press(g).fire = 0;
     g->base.player_input.look_up_down_speed = 0.0f;
-    for (int i = 0; i < 4; i++) nocturne_hero_gabriella_process_motion(g, 0.05f);
+    for (int i = 0; i < 4; i++)
+        nocturne_hero_gabriella_process_motion(g, 0.05f);
     CHECK_EQ(stand.drops.size(), (size_t)1);
-    if (!stand.drops.empty()) CHECK(stand.drops[0].y < 0.0f);
+    if (!stand.drops.empty())
+        CHECK(stand.drops[0].y < 0.0f);
 }
 
 // A throw whose object is gone, or whose thrower is held, at the release
@@ -1319,7 +1330,8 @@ NOCTURNE_TEST(a_carried_object_is_put_down_on_free_floor) {
     CHECK_EQ(nocturne_hero_gabriella_put_down(g), 1);
     CHECK_EQ(press(g).fire, 0);
     CHECK_EQ(stand.desired.size(), (size_t)1);
-    if (!stand.desired.empty()) CHECK_EQ(stand.desired[0].index, kPutDown);
+    if (!stand.desired.empty())
+        CHECK_EQ(stand.desired[0].index, kPutDown);
 
     play(g, kWalk);
     CHECK_EQ(nocturne_hero_gabriella_put_down(g), 1);
@@ -1437,7 +1449,8 @@ NOCTURNE_TEST(the_gas_mask_goes_on_and_comes_off) {
     nocturne_hero_gabriella_mask_tick(g, 0.4f);
     CHECK_EQ(wearing, 1);
     mask->carrier = nullptr;
-    for (int i = 0; i < 3; i++) nocturne_hero_gabriella_mask_tick(g, 0.5f);
+    for (int i = 0; i < 3; i++)
+        nocturne_hero_gabriella_mask_tick(g, 0.5f);
     CHECK_EQ(wearing, 0);
 
     // With no mask in the inventory there is nothing to want.

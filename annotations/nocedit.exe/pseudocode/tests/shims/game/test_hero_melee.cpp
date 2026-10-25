@@ -2,10 +2,9 @@
 // HERO MELEE — what a hero's blow can reach, and what it does
 // =============================================================================
 
-#include "nocturne_test.h"
-
 #include "behaviour_support.h"
 #include "game/hero_melee.h"
+#include "nocturne_test.h"
 
 using namespace behaviour_support;
 

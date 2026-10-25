@@ -36,10 +36,16 @@ void nocturne_focus_trace_presented(void);
 #endif
 
 #if NOCTURNE_DUMP_TOOLS
-#define NOCTURNE_FOCUS_TRACE_EVENT(name) \
-    do { if (g_nocturne_focus_trace_active) nocturne_focus_trace_event(name); } while (0)
-#define NOCTURNE_FOCUS_TRACE_PRESENTED() \
-    do { if (g_nocturne_focus_trace_active) nocturne_focus_trace_presented(); } while (0)
+#define NOCTURNE_FOCUS_TRACE_EVENT(name)                                                           \
+    do {                                                                                           \
+        if (g_nocturne_focus_trace_active)                                                         \
+            nocturne_focus_trace_event(name);                                                      \
+    } while (0)
+#define NOCTURNE_FOCUS_TRACE_PRESENTED()                                                           \
+    do {                                                                                           \
+        if (g_nocturne_focus_trace_active)                                                         \
+            nocturne_focus_trace_presented();                                                      \
+    } while (0)
 #else
 #define NOCTURNE_FOCUS_TRACE_EVENT(name) ((void)0)
 #define NOCTURNE_FOCUS_TRACE_PRESENTED() ((void)0)

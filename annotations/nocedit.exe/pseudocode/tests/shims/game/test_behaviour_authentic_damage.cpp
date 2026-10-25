@@ -6,12 +6,11 @@
 // _FRIENDLY_FIRE and _NETPLAY: the landing handler and Moloch's damage stay,
 // with the shipped game's rules inside them.
 
-#include "nocturne_test.h"
-
 #include "behaviour_support.h"
 #include "game/hero_fall.h"
 #include "game/hero_items.h"
 #include "game/hero_moloch.h"
+#include "nocturne_test.h"
 
 #include <cstring>
 #include <memory>

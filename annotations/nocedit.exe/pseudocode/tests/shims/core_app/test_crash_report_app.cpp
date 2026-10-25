@@ -8,15 +8,12 @@
 // leaving nocturne_crash.txt behind with the version, the fault and the
 // stack. A C++ throw caught on the way does not set it off.
 
-#include "nocturne_test.h"
-
 #include "core/crash_report.h"
+#include "nocturne_test.h"
 
 #if defined(_WIN32)
 
 #define WIN32_LEAN_AND_MEAN
-#include <windows.h>
-
 #include <cstdlib>
 #include <filesystem>
 #include <fstream>
@@ -24,6 +21,7 @@
 #include <stdexcept>
 #include <string>
 #include <system_error>
+#include <windows.h>
 
 namespace {
 
@@ -36,12 +34,13 @@ fs::path report_dir() {
     return fs::temp_directory_path(ec) / "nocturne_crash_report_app_test";
 }
 
-}  // namespace
+} // namespace
 
 // The child: only when asked to.
 NOCTURNE_TEST(child_faults_when_asked) {
     char dir[MAX_PATH];
-    if (GetEnvironmentVariableA(kChildVariable, dir, sizeof(dir)) == 0) return;
+    if (GetEnvironmentVariableA(kChildVariable, dir, sizeof(dir)) == 0)
+        return;
     nocturne_install_crash_handler("NocturneDecomp test-version");
     nocturne_crash_report_set_dir(dir);
     try {
@@ -69,7 +68,8 @@ NOCTURNE_TEST(a_fault_leaves_its_report) {
                                         nullptr, &startup, &process);
     SetEnvironmentVariableA(kChildVariable, nullptr);
     CHECK(started != 0);
-    if (started == 0) return;
+    if (started == 0)
+        return;
     WaitForSingleObject(process.hProcess, 60000);
     DWORD exit_code = 0;
     GetExitCodeProcess(process.hProcess, &exit_code);

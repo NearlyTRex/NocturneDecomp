@@ -1,9 +1,8 @@
 #include "game/item_names.h"
+
 #include "nocturne.h"
 
-extern "C" CDemonActor *nocturne_item_names_find_actor(CDemonMission *mission,
-                                                       const char *name)
-{
+extern "C" CDemonActor *nocturne_item_names_find_actor(CDemonMission *mission, const char *name) {
     CDemonActor *actor;
     CHero *hero;
     int i;
@@ -13,7 +12,8 @@ extern "C" CDemonActor *nocturne_item_names_find_actor(CDemonMission *mission,
         return actor;
     }
     for (actor = mission->first_actor; actor != (CDemonActor *)0x0; actor = actor->next_actor) {
-        hero = (CHero *)core_actor_cpp_castToClassHash_FUN_0040c790(actor, g_CHeroClassInfo.name_hash);
+        hero =
+            (CHero *)core_actor_cpp_castToClassHash_FUN_0040c790(actor, g_CHeroClassInfo.name_hash);
         if (hero == (CHero *)0x0) {
             continue;
         }

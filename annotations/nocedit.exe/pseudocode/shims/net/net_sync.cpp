@@ -5,12 +5,11 @@
 // See net_sync.h for what this is and why it reports rather than corrects.
 
 #include "net/net_sync.h"
-#include "shim_config.h"
-
-#include "nocturne.h"
 
 #include "core/debug_log.h"
 #include "core/fnv1a.h"
+#include "nocturne.h"
+#include "shim_config.h"
 
 #include <algorithm>
 #include <cstdarg>
@@ -33,7 +32,7 @@
 // following frame mismatches too. Report the first few in full, then one in
 // this many, so the log keeps a heartbeat without burying the first report —
 // which is the only one that says when it started.
-#define SYNC_LOG_FULL    3
+#define SYNC_LOG_FULL 3
 #define SYNC_LOG_EVERY 300
 
 // A single whole-world hash says "something differs" and nothing more, which is
@@ -49,27 +48,27 @@
 
 #pragma pack(push, 1)
 typedef struct SNetPacket_SyncCheck {
-    SNetPacketHeader header;                  // 0x00
-    int    sequence_number;                   // 0x05
-    int    hero_count;                        // 0x09
-    float  hero_position[SYNC_MAX_HEROES][3]; // 0x0d
-    int    hero_area[SYNC_MAX_HEROES];        // 0x3d
-    uint   actor_hash;                        // 0x4d
-    int    actor_count;                       // 0x51
-    uint   bucket_hash[SYNC_BUCKETS];         // 0x55
-    ushort bucket_count[SYNC_BUCKETS];        // 0xd5
+    SNetPacketHeader header;                 // 0x00
+    int sequence_number;                     // 0x05
+    int hero_count;                          // 0x09
+    float hero_position[SYNC_MAX_HEROES][3]; // 0x0d
+    int hero_area[SYNC_MAX_HEROES];          // 0x3d
+    uint actor_hash;                         // 0x4d
+    int actor_count;                         // 0x51
+    uint bucket_hash[SYNC_BUCKETS];          // 0x55
+    ushort bucket_count[SYNC_BUCKETS];       // 0xd5
     // Sim-stream draws during the frame just simulated (rng.h). Two machines
     // that agreed on the frame's seed and then drew a different number of times
     // have diverged inside that frame - and this says so with a count, which
     // localises far faster than a hash that only says "something differs".
-    uint   sim_rng_draws;                     // 0x115
-} SNetPacket_SyncCheck;                       // 0x119
+    uint sim_rng_draws; // 0x115
+} SNetPacket_SyncCheck; // 0x119
 #pragma pack(pop)
 
 static SNetPacket_SyncCheck s_ring[SYNC_RING];
-static int  s_ring_seq[SYNC_RING];
-static int  s_ring_used = 0;
-static int  s_mismatches = 0;
+static int s_ring_seq[SYNC_RING];
+static int s_ring_used = 0;
+static int s_mismatches = 0;
 
 // =============================================================================
 // State capture
@@ -77,13 +76,13 @@ static int  s_mismatches = 0;
 
 // Whether two positions are the same bit for bit, for the reason the hash
 // below is: -0 and 0, or two NaNs, are drift as much as any other change.
-static bool same_bits(const float (&a)[3], const float (&b)[3])
-{
+static bool same_bits(const float (&a)[3], const float (&b)[3]) {
     for (int i = 0; i < 3; i++) {
         uint x, y;
         std::memcpy(&x, &a[i], sizeof(x));
         std::memcpy(&y, &b[i], sizeof(y));
-        if (x != y) return false;
+        if (x != y)
+            return false;
     }
     return true;
 }
@@ -92,8 +91,7 @@ static bool same_bits(const float (&a)[3], const float (&b)[3])
 // machines run the same binary on the same architecture, so a deterministic
 // simulation produces identical floats down to the last bit. A tolerance here
 // would only hide the very drift this exists to catch.
-static uint sync_hash_bytes(uint hash, const void *data, int length)
-{
+static uint sync_hash_bytes(uint hash, const void *data, int length) {
     return nocturne_fnv1a(hash, data, length);
 }
 
@@ -125,14 +123,13 @@ static uint sync_hash_bytes(uint hash, const void *data, int length)
 #define SYNC_CLASS_CACHE 128
 
 static void *s_class_vtable[SYNC_CLASS_CACHE];
-static char  s_class_cosmetic[SYNC_CLASS_CACHE];
-static int   s_class_count = 0;
+static char s_class_cosmetic[SYNC_CLASS_CACHE];
+static int s_class_count = 0;
 
-static int sync_is_cosmetic(CDemonActor *actor)
-{
+static int sync_is_cosmetic(CDemonActor *actor) {
     void *vtable = (void *)actor->vtable._ub;
-    int   cosmetic;
-    int   i;
+    int cosmetic;
+    int i;
 
     for (i = 0; i < s_class_count; i++) {
         if (s_class_vtable[i] == vtable) {
@@ -140,10 +137,10 @@ static int sync_is_cosmetic(CDemonActor *actor)
         }
     }
 
-    cosmetic = (core_actor_cpp_castToClassHash_FUN_0040c790(
-                    actor, g_CFliesClassInfo.name_hash) != (CDemonActor *)0x0);
+    cosmetic = (core_actor_cpp_castToClassHash_FUN_0040c790(actor, g_CFliesClassInfo.name_hash) !=
+                (CDemonActor *)0x0);
     if (s_class_count < SYNC_CLASS_CACHE) {
-        s_class_vtable[s_class_count]   = vtable;
+        s_class_vtable[s_class_count] = vtable;
         s_class_cosmetic[s_class_count] = (char)cosmetic;
         s_class_count++;
     }
@@ -152,10 +149,9 @@ static int sync_is_cosmetic(CDemonActor *actor)
 
 // Which bucket an actor belongs to, from its name. Stable across machines and
 // independent of position in the list.
-static uint sync_name_bucket(CDemonActor *actor)
-{
+static uint sync_name_bucket(CDemonActor *actor) {
     uint hash = NOCTURNE_FNV1A_BASIS;
-    int  i;
+    int i;
 
     for (i = 0; (i < 32) && (actor->actor_name[i] != '\0'); i++) {
         hash = nocturne_fnv1a_step(hash, (unsigned char)actor->actor_name[i]);
@@ -163,14 +159,13 @@ static uint sync_name_bucket(CDemonActor *actor)
     return hash % SYNC_BUCKETS;
 }
 
-static void sync_capture(SNetPacket_SyncCheck *out, int sequence_number)
-{
+static void sync_capture(SNetPacket_SyncCheck *out, int sequence_number) {
     uint hash = NOCTURNE_FNV1A_BASIS;
-    int  count;
-    int  i;
+    int count;
+    int i;
 
     nocturne_net_packet_init(out, (int)sizeof(*out), NOCTURNE_NET_PACKET_SYNC_CHECK);
-    out->sequence_number   = sequence_number;
+    out->sequence_number = sequence_number;
 
     count = g_HeroCount;
     if (SYNC_MAX_HEROES < count) {
@@ -180,13 +175,13 @@ static void sync_capture(SNetPacket_SyncCheck *out, int sequence_number)
     for (i = 0; i < count; i++) {
         CHero *hero = g_HeroActors[i];
         if (hero == (CHero *)0x0) {
-            out->hero_area[i] = -2;         // distinct from the held-hero -1
+            out->hero_area[i] = -2; // distinct from the held-hero -1
             continue;
         }
         out->hero_position[i][0] = (hero->base).base.location.position.x;
         out->hero_position[i][1] = (hero->base).base.location.position.y;
         out->hero_position[i][2] = (hero->base).base.location.position.z;
-        out->hero_area[i]        = (hero->base).base.location.area_id;
+        out->hero_area[i] = (hero->base).base.location.area_id;
     }
 
     // The active set, which is where a diverging enemy shows up. The count on
@@ -210,14 +205,12 @@ static void sync_capture(SNetPacket_SyncCheck *out, int sequence_number)
 
         bucket = sync_name_bucket(actor);
         out->bucket_hash[bucket] = sync_hash_bytes(
-            out->bucket_hash[bucket], &actor->location.position,
-            sizeof(actor->location.position));
+            out->bucket_hash[bucket], &actor->location.position, sizeof(actor->location.position));
         out->bucket_hash[bucket] = sync_hash_bytes(
-            out->bucket_hash[bucket], &actor->location.area_id,
-            sizeof(actor->location.area_id));
+            out->bucket_hash[bucket], &actor->location.area_id, sizeof(actor->location.area_id));
         out->bucket_count[bucket] = (ushort)(out->bucket_count[bucket] + 1);
     }
-    out->actor_hash    = hash;
+    out->actor_hash = hash;
     out->sim_rng_draws = nocturne_rng_sim_draws();
 }
 
@@ -242,9 +235,9 @@ static void sync_capture(SNetPacket_SyncCheck *out, int sequence_number)
 #if defined(__GNUC__) || defined(__clang__)
 __attribute__((format(printf, 1, 2)))
 #endif
-static std::string sync_piece(const char *format, ...)
-{
-    char    piece[512];
+static std::string
+sync_piece(const char *format, ...) {
+    char piece[512];
     va_list args;
 
     va_start(args, format);
@@ -253,61 +246,47 @@ static std::string sync_piece(const char *format, ...)
     return piece;
 }
 
-static void sync_fatal(const SNetPacket_SyncCheck *host_state,
-                       const SNetPacket_SyncCheck *own,
-                       int heroes_differ, int actors_differ,
-                       int draws_differ)
-{
+static void sync_fatal(const SNetPacket_SyncCheck *host_state, const SNetPacket_SyncCheck *own,
+                       int heroes_differ, int actors_differ, int draws_differ) {
     std::string message;
-    int         i;
+    int i;
 
     message = sync_piece(
         "Netplay desync at sim frame %d.\n\n"
         "%s, %s\n"
         "actors: host %d hash=%08x | ours %d hash=%08x\n"
         "sim RNG draws: host %u | ours %u%s\n",
-        own->sequence_number,
-        (heroes_differ != 0) ? "heroes differ" : "heroes match",
-        (actors_differ != 0) ? "actors differ" : "actors match",
-        host_state->actor_count, host_state->actor_hash,
-        own->actor_count, own->actor_hash,
-        host_state->sim_rng_draws, own->sim_rng_draws,
-        (draws_differ != 0) ? "  <- diverged inside this frame" : "");
+        own->sequence_number, (heroes_differ != 0) ? "heroes differ" : "heroes match",
+        (actors_differ != 0) ? "actors differ" : "actors match", host_state->actor_count,
+        host_state->actor_hash, own->actor_count, own->actor_hash, host_state->sim_rng_draws,
+        own->sim_rng_draws, (draws_differ != 0) ? "  <- diverged inside this frame" : "");
 
     for (i = 0; i < own->hero_count; i++) {
         if ((own->hero_area[i] == host_state->hero_area[i]) &&
             same_bits(own->hero_position[i], host_state->hero_position[i])) {
             continue;
         }
-        message += sync_piece(
-            "\nhero %d  host (%.3f, %.3f, %.3f) area %d\n"
-            "        ours (%.3f, %.3f, %.3f) area %d\n",
-            i,
-            (double)host_state->hero_position[i][0],
-            (double)host_state->hero_position[i][1],
-            (double)host_state->hero_position[i][2],
-            host_state->hero_area[i],
-            (double)own->hero_position[i][0],
-            (double)own->hero_position[i][1],
-            (double)own->hero_position[i][2],
-            own->hero_area[i]);
+        message += sync_piece("\nhero %d  host (%.3f, %.3f, %.3f) area %d\n"
+                              "        ours (%.3f, %.3f, %.3f) area %d\n",
+                              i, (double)host_state->hero_position[i][0],
+                              (double)host_state->hero_position[i][1],
+                              (double)host_state->hero_position[i][2], host_state->hero_area[i],
+                              (double)own->hero_position[i][0], (double)own->hero_position[i][1],
+                              (double)own->hero_position[i][2], own->hero_area[i]);
     }
 
     message += "\nWhich actors differ is in nocturne_netplay.log; the frame "
                "itself is in nocturne_simtrace.log on both machines.";
     message.resize((std::min)(message.size(), (size_t)SYNC_FATAL_MESSAGE_MAX));
 
-    g_CurrentFilename   = (char *)"..\\shims\\net_sync.cpp";
+    g_CurrentFilename = (char *)"..\\shims\\net_sync.cpp";
     g_CurrentLineNumber = __LINE__;
     core_main_c_displayErrorAndQuit_FUN_00506f10((char *)"%s", message.c_str());
 }
 #endif /* NOCTURNE_NETPLAY_SYNC_FATAL */
 
-static void sync_report(const SNetPacket_SyncCheck *host_state,
-                        const SNetPacket_SyncCheck *own,
-                        int heroes_differ, int actors_differ,
-                        int draws_differ)
-{
+static void sync_report(const SNetPacket_SyncCheck *host_state, const SNetPacket_SyncCheck *own,
+                        int heroes_differ, int actors_differ, int draws_differ) {
     int i;
 
     s_mismatches = s_mismatches + 1;
@@ -316,12 +295,11 @@ static void sync_report(const SNetPacket_SyncCheck *host_state,
     }
 
     DLOG("netplay",
-            "DESYNC #%d at sim frame %d - %s%s(host actors=%d hash=%08x / ours=%d hash=%08x)",
-            s_mismatches, own->sequence_number,
-            (heroes_differ != 0) ? "heroes differ " : "heroes match ",
-            (actors_differ != 0) ? "actors differ " : "actors match ",
-            host_state->actor_count, host_state->actor_hash,
-            own->actor_count, own->actor_hash);
+         "DESYNC #%d at sim frame %d - %s%s(host actors=%d hash=%08x / ours=%d hash=%08x)",
+         s_mismatches, own->sequence_number,
+         (heroes_differ != 0) ? "heroes differ " : "heroes match ",
+         (actors_differ != 0) ? "actors differ " : "actors match ", host_state->actor_count,
+         host_state->actor_hash, own->actor_count, own->actor_hash);
 
     // Printed whenever it differs, including on a frame whose state still
     // matches: a draw-count split is the earliest visible sign of divergence,
@@ -329,26 +307,22 @@ static void sync_report(const SNetPacket_SyncCheck *host_state,
     // the resulting position has had time to separate.
     if (draws_differ != 0) {
         DLOG("netplay",
-                "  sim RNG draws differ: host %u | ours %u - simulation code is "
-                "drawing a different number of times, which is a determinism "
-                "break in the frame just simulated (see rng.h)",
-                host_state->sim_rng_draws, own->sim_rng_draws);
+             "  sim RNG draws differ: host %u | ours %u - simulation code is "
+             "drawing a different number of times, which is a determinism "
+             "break in the frame just simulated (see rng.h)",
+             host_state->sim_rng_draws, own->sim_rng_draws);
     }
 
     for (i = 0; i < own->hero_count; i++) {
         if ((own->hero_area[i] != host_state->hero_area[i]) ||
             !same_bits(own->hero_position[i], host_state->hero_position[i])) {
             DLOG("netplay",
-                    "  hero %d  host (%.3f, %.3f, %.3f) area %d  |  ours (%.3f, %.3f, %.3f) area %d",
-                    i,
-                    (double)host_state->hero_position[i][0],
-                    (double)host_state->hero_position[i][1],
-                    (double)host_state->hero_position[i][2],
-                    host_state->hero_area[i],
-                    (double)own->hero_position[i][0],
-                    (double)own->hero_position[i][1],
-                    (double)own->hero_position[i][2],
-                    own->hero_area[i]);
+                 "  hero %d  host (%.3f, %.3f, %.3f) area %d  |  ours (%.3f, %.3f, %.3f) area %d",
+                 i, (double)host_state->hero_position[i][0],
+                 (double)host_state->hero_position[i][1], (double)host_state->hero_position[i][2],
+                 host_state->hero_area[i], (double)own->hero_position[i][0],
+                 (double)own->hero_position[i][1], (double)own->hero_position[i][2],
+                 own->hero_area[i]);
         }
     }
 
@@ -363,24 +337,21 @@ static void sync_report(const SNetPacket_SyncCheck *host_state,
             (own->bucket_count[i] == host_state->bucket_count[i])) {
             continue;
         }
-        DLOG("netplay", "  bucket %d differs: host %d actors hash=%08x | "
-                           "ours %d actors hash=%08x",
-                i, host_state->bucket_count[i], host_state->bucket_hash[i],
-                own->bucket_count[i], own->bucket_hash[i]);
+        DLOG("netplay",
+             "  bucket %d differs: host %d actors hash=%08x | "
+             "ours %d actors hash=%08x",
+             i, host_state->bucket_count[i], host_state->bucket_hash[i], own->bucket_count[i],
+             own->bucket_hash[i]);
 
         for (j = 0; (j < g_CDemonSetPtr->actor_count) && (listed < 8); j++) {
             CDemonActor *actor = g_CDemonSetPtr->actors[j];
-            if ((actor == (CDemonActor *)0x0) ||
-                ((int)sync_name_bucket(actor) != i)) {
+            if ((actor == (CDemonActor *)0x0) || ((int)sync_name_bucket(actor) != i)) {
                 continue;
             }
             listed = listed + 1;
-            DLOG("netplay", "    ours: %-24s (%.3f, %.3f, %.3f) area %d",
-                    actor->actor_name,
-                    (double)actor->location.position.x,
-                    (double)actor->location.position.y,
-                    (double)actor->location.position.z,
-                    actor->location.area_id);
+            DLOG("netplay", "    ours: %-24s (%.3f, %.3f, %.3f) area %d", actor->actor_name,
+                 (double)actor->location.position.x, (double)actor->location.position.y,
+                 (double)actor->location.position.z, actor->location.area_id);
         }
         break;
     }
@@ -398,22 +369,20 @@ static void sync_report(const SNetPacket_SyncCheck *host_state,
 // Entry points
 // =============================================================================
 
-extern "C" void nocturne_net_sync_reset(void)
-{
-    s_ring_used  = 0;
+extern "C" void nocturne_net_sync_reset(void) {
+    s_ring_used = 0;
     s_mismatches = 0;
     std::memset(s_ring_seq, 0, sizeof(s_ring_seq));
 }
 
-extern "C" void nocturne_net_sync_check(int sequence_number)
-{
-    CNetGame            *net_game = g_CNetGamePtr;
+extern "C" void nocturne_net_sync_check(int sequence_number) {
+    CNetGame *net_game = g_CNetGamePtr;
     SNetPacket_SyncCheck own;
-    int                  slot;
-    int                  heroes_differ;
-    int                  actors_differ;
-    int                  draws_differ;
-    int                  i;
+    int slot;
+    int heroes_differ;
+    int actors_differ;
+    int draws_differ;
+    int i;
 
     if ((net_game == (CNetGame *)0x0) || (net_game->network_mode != NET_MODE_PLAYING)) {
         return;
@@ -443,7 +412,7 @@ extern "C" void nocturne_net_sync_check(int sequence_number)
 
     slot = sequence_number & (SYNC_RING - 1);
     if ((s_ring_used == 0) || (s_ring_seq[slot] != sequence_number)) {
-        return;                 // no report for this frame (lost, or not yet here)
+        return; // no report for this frame (lost, or not yet here)
     }
 
     heroes_differ = 0;
@@ -455,15 +424,14 @@ extern "C" void nocturne_net_sync_check(int sequence_number)
     }
     actors_differ = ((own.actor_hash != s_ring[slot].actor_hash) ||
                      (own.actor_count != s_ring[slot].actor_count));
-    draws_differ  = (own.sim_rng_draws != s_ring[slot].sim_rng_draws);
+    draws_differ = (own.sim_rng_draws != s_ring[slot].sim_rng_draws);
 
     if ((heroes_differ != 0) || (actors_differ != 0) || (draws_differ != 0)) {
         sync_report(&s_ring[slot], &own, heroes_differ, actors_differ, draws_differ);
     }
 }
 
-extern "C" int nocturne_net_sync_on_packet(const void *packet, int packet_size)
-{
+extern "C" int nocturne_net_sync_on_packet(const void *packet, int packet_size) {
     const SNetPacket_SyncCheck *incoming = (const SNetPacket_SyncCheck *)packet;
     int slot;
 
@@ -472,17 +440,19 @@ extern "C" int nocturne_net_sync_on_packet(const void *packet, int packet_size)
         return 0;
     }
 
-    slot              = incoming->sequence_number & (SYNC_RING - 1);
-    s_ring[slot]      = *incoming;
-    s_ring_seq[slot]  = incoming->sequence_number;
-    s_ring_used       = 1;
+    slot = incoming->sequence_number & (SYNC_RING - 1);
+    s_ring[slot] = *incoming;
+    s_ring_seq[slot] = incoming->sequence_number;
+    s_ring_used = 1;
     return 1;
 }
 
-#else  /* disabled */
+#else /* disabled */
 
 extern "C" void nocturne_net_sync_check(int) {}
-extern "C" int  nocturne_net_sync_on_packet(const void *, int) { return 0; }
+extern "C" int nocturne_net_sync_on_packet(const void *, int) {
+    return 0;
+}
 extern "C" void nocturne_net_sync_reset(void) {}
 
 #endif

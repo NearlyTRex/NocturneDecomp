@@ -3,8 +3,8 @@
 // =============================================================================
 
 #include "cheats_support.h"
-#include "class_support.h"
 
+#include "class_support.h"
 #include "core/menu_screen.h"
 #include "game/hero_slot.h"
 #include "net/net_session.h"
@@ -46,7 +46,7 @@ std::unique_ptr<CDemonSet> s_set(new CDemonSet());
 std::unique_ptr<CSkeleton> s_skeleton(new CSkeleton());
 std::unique_ptr<CCharacter> s_characters[4];
 std::vector<std::unique_ptr<Item>> s_items;
-std::map<std::string, CDemonActorType> s_classes;   // the classes made on request
+std::map<std::string, CDemonActorType> s_classes; // the classes made on request
 CDemonActorType s_key_type = {};
 CDemonMission s_mission;
 CEventList s_events;
@@ -56,7 +56,9 @@ CDemonActor_vtable s_item_vtable;
 // The menu cancels once its script runs out, or on kCancel.
 int s_cancelled = 0;
 
-void setup(CDemonActor *actor) { stand.set_up.push_back(actor); }
+void setup(CDemonActor *actor) {
+    stand.set_up.push_back(actor);
+}
 
 void pickup(CDemonActor *actor, CDemonActor *carrier) {
     stand.picked_up.emplace_back(actor, carrier);
@@ -76,8 +78,8 @@ CDemonActorType *weapon_class(const std::string &name) {
     if (it == s_classes.end()) {
         CDemonActorType *parent = name == "CCrossbow" ? &g_CGunClassInfo : &g_CWeaponClassInfo;
         it = s_classes
-                 .emplace(name, class_support::make(name.c_str(),
-                                                    0x1000 + (uint)s_classes.size(), parent))
+                 .emplace(name, class_support::make(name.c_str(), 0x1000 + (uint)s_classes.size(),
+                                                    parent))
                  .first;
     }
     return &it->second;
@@ -87,7 +89,7 @@ CKeyFramedModelInstance *model_of(CDemonActor *item) {
     return &((CWeapon *)item)->model;
 }
 
-}  // namespace
+} // namespace
 
 CGame *game = s_game.get();
 CDemonSet *set = s_set.get();
@@ -95,7 +97,8 @@ CSkeleton *skeleton = s_skeleton.get();
 
 CCharacter *set_character(const char *model) {
     const int i = set->character_count;
-    if (!s_characters[i]) s_characters[i].reset(new CCharacter());
+    if (!s_characters[i])
+        s_characters[i].reset(new CCharacter());
     CCharacter *c = s_characters[i].get();
     std::memset(c, 0, sizeof(*c));
     std::snprintf(c->model.model_name, sizeof(c->model.model_name), "%s", model);
@@ -114,7 +117,8 @@ int count_model(CHero *hero, const char *model) {
     int n = 0;
     for (int i = 0; i < hero->inventory.item_count; i++) {
         CDemonActor *item = hero->inventory.items[i];
-        if (item != nullptr && std::strcmp(model_of(item)->model_name, model) == 0) n++;
+        if (item != nullptr && std::strcmp(model_of(item)->model_name, model) == 0)
+            n++;
     }
     return n;
 }
@@ -161,7 +165,7 @@ void enter_empty_dir(const char *name) {
     std::filesystem::current_path(temp / name, ec);
 }
 
-}  // namespace cheats_support
+} // namespace cheats_support
 
 using cheats_support::stand;
 
@@ -171,7 +175,8 @@ int __cdecl core_menu_cpp_renderMenuAndGetChoice_FUN_00510000(char **menu_text_a
                                                               int menu_count, int *, int,
                                                               char *title) {
     cheats_support::Frame frame;
-    for (int i = 0; i < menu_count; i++) frame.lines.push_back(menu_text_array[i]);
+    for (int i = 0; i < menu_count; i++)
+        frame.lines.push_back(menu_text_array[i]);
     frame.title = title;
     stand.frames.push_back(frame);
 
@@ -189,13 +194,19 @@ void __cdecl engine_2d_c_clearInputAndWait_FUN_00403260(void) {}
 
 void __cdecl wincore_wddvmem_cpp_swapBuffers_FUN_005eda20(void) {}
 
-char *__cdecl support_newmsg_cpp_getLocalizedString_FUN_005441f0(char *key) { return key; }
+char *__cdecl support_newmsg_cpp_getLocalizedString_FUN_005441f0(char *key) {
+    return key;
+}
 
 void nocturne_menu_backdrop_frame(void) {}
 
-int nocturne_menu_start_y(int rows) { return rows * 10; }
+int nocturne_menu_start_y(int rows) {
+    return rows * 10;
+}
 
-int nocturne_menu_cancelled(void) { return cheats_support::s_cancelled; }
+int nocturne_menu_cancelled(void) {
+    return cheats_support::s_cancelled;
+}
 
 // --- the actor factory -----------------------------------------------------------
 
@@ -212,7 +223,8 @@ CDemonActor *__cdecl core_actor_cpp_createActorByName_FUN_0040c430(char *class_n
 }
 
 void *__cdecl shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0(int, char *, int) {
-    if (stand.alloc_fails != 0) return nullptr;
+    if (stand.alloc_fails != 0)
+        return nullptr;
     cheats_support::s_items.emplace_back(new cheats_support::Item());
     return cheats_support::s_items.back().get();
 }
@@ -236,7 +248,7 @@ CGasMask *__cdecl core_gasmask_cpp_CGasMask_ctor_FUN_004e5d00(CGasMask *this_ptr
 }
 
 void __cdecl core_mission_cpp_CDemonMission_generateActorName_FUN_00524700(CDemonMission *,
-                                                                          CDemonActor *) {
+                                                                           CDemonActor *) {
     stand.named++;
 }
 
@@ -254,31 +266,32 @@ CKeyFramedModel *__cdecl core_dmodel_cpp_CKeyFramedModelInstance_preCache_FUN_00
 // --- the inventory -------------------------------------------------------------
 
 int __cdecl core_inv_cpp_CInventory_hasItemOfClass_FUN_004fea20(CInventory *this_ptr,
-                                                               char *class_name) {
+                                                                char *class_name) {
     for (int i = 0; i < this_ptr->item_count; i++) {
-        if (core_actor_cpp_isOfClass_FUN_0040c6d0(this_ptr->items[i], class_name) != 0) return 1;
+        if (core_actor_cpp_isOfClass_FUN_0040c6d0(this_ptr->items[i], class_name) != 0)
+            return 1;
     }
     return 0;
 }
 
 CDemonActor *__cdecl core_inv_cpp_CInventory_findItemByName_FUN_004fe9d0(CInventory *this_ptr,
-                                                                       char *item_name) {
+                                                                         char *item_name) {
     for (int i = 0; i < this_ptr->item_count; i++) {
         CDemonActor *item = this_ptr->items[i];
-        if (item != nullptr && std::strcmp(item->actor_name, item_name) == 0) return item;
+        if (item != nullptr && std::strcmp(item->actor_name, item_name) == 0)
+            return item;
     }
     return nullptr;
 }
 
 int __cdecl core_inv_cpp_CInventory_addItem_FUN_004fd600(CInventory *this_ptr,
-                                                       CDemonActor *item_actor, int) {
+                                                         CDemonActor *item_actor, int) {
     this_ptr->items[this_ptr->item_count++] = item_actor;
     return 1;
 }
 
 CKeyFramedModelInstance *__cdecl core_inv_cpp_getItemModel_FUN_004fcda0(CDemonActor *actor_ptr) {
-    return stand.no_model.count(actor_ptr) != 0 ? nullptr
-                                                : cheats_support::model_of(actor_ptr);
+    return stand.no_model.count(actor_ptr) != 0 ? nullptr : cheats_support::model_of(actor_ptr);
 }
 
 // --- the world -------------------------------------------------------------------
@@ -293,9 +306,8 @@ int __cdecl core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0(CSkeleton *, char 
     return (it != stand.bones.end()) ? it->second : -1;
 }
 
-void __cdecl core_game_cpp_scaleBoneRecursive_FUN_004dda80(CDeformableModelInstance *,
-                                                          CSkeleton *, float scale_factor,
-                                                          int bone_index) {
+void __cdecl core_game_cpp_scaleBoneRecursive_FUN_004dda80(CDeformableModelInstance *, CSkeleton *,
+                                                           float scale_factor, int bone_index) {
     stand.scaled.emplace_back(bone_index, scale_factor);
 }
 
@@ -304,12 +316,12 @@ void __cdecl core_weather_cpp_CWeather_setWeatherType_FUN_005ef8c0(CWeather *, E
 }
 
 void __cdecl core_set_cpp_CDemonSet_reinitCamera_FUN_0056b7e0(CDemonSet *, int, int,
-                                                            int screen_height) {
+                                                              int screen_height) {
     stand.camera_heights.push_back(screen_height);
 }
 
 void __cdecl core_event_cpp_CEventList_addOrRemovePersistentEvent_FUN_004b0330(CEventList *,
-                                                                             char *name, int) {
+                                                                               char *name, int) {
     stand.events.push_back(name);
 }
 
@@ -319,7 +331,9 @@ void __cdecl core_game_cpp_CGame_displayMessage_FUN_004d7f20(CGame *, char *mess
 
 // --- the other shims -------------------------------------------------------------
 
-CHero *nocturne_hero_local(void) { return g_HeroActors[g_LocalHeroIndex]; }
+CHero *nocturne_hero_local(void) {
+    return g_HeroActors[g_LocalHeroIndex];
+}
 
 int nocturne_hero_can_hold_kind(CHero *hero, EHeroItemKind kind) {
     stand.kinds.push_back(kind);
@@ -327,4 +341,6 @@ int nocturne_hero_can_hold_kind(CHero *hero, EHeroItemKind kind) {
     return (it != stand.refused.end() && it->second.count(kind) != 0) ? 0 : 1;
 }
 
-int nocturne_net_session_active(void) { return stand.session; }
+int nocturne_net_session_active(void) {
+    return stand.session;
+}

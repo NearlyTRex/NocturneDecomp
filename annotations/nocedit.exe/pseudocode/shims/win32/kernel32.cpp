@@ -24,12 +24,13 @@
 //
 
 #include "system/kernel32.h"
+
+#include "core/file_search.h"        // nocturne_find_files() — shared with _findfirst
+#include "core/host_memory.h"        // GlobalMemoryStatus's figures
+#include "globals/globals_3F90000.h" // g_CommandLineBuffer, which GetCommandLineA fits
 #include "globals/globals_610000.h"
-#include "globals/globals_3F90000.h"  // g_CommandLineBuffer, which GetCommandLineA fits
 #include "renderer/builtin_dll.h"
-#include "core/file_search.h"   // nocturne_find_files() — shared with _findfirst
-#include "core/host_memory.h"   // GlobalMemoryStatus's figures
-#include "watcom/path.h"        // the same path resolution and roots the CRT uses
+#include "watcom/path.h" // the same path resolution and roots the CRT uses
 
 #include <SDL.h>
 
@@ -41,18 +42,18 @@
 #include <condition_variable>
 #include <filesystem>
 #include <mutex>
+#include <sys/stat.h>
 #include <system_error>
 #include <thread>
-#include <sys/stat.h>
 #if defined(__APPLE__)
-#include <mach-o/dyld.h>    // _NSGetExecutablePath, for host_program_path
+#include <mach-o/dyld.h> // _NSGetExecutablePath, for host_program_path
 #endif
-#include <sys/types.h>
 #include <errno.h>
 #include <fcntl.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <sys/types.h>
 #include <time.h>
 // The descriptor calls behind CreateFile/ReadFile/WriteFile: read, write,
 // close, lseek, dup, ftruncate, fsync, getpid. Not a port so much as a
@@ -74,24 +75,24 @@
 // runtime has only the _S_IF* bits they test.
 #if defined(_MSC_VER)
 typedef long long ssize_t;
-#define S_ISDIR(m)  (((m) & _S_IFMT) == _S_IFDIR)
-#define S_ISREG(m)  (((m) & _S_IFMT) == _S_IFREG)
-#define S_ISCHR(m)  (((m) & _S_IFMT) == _S_IFCHR)
+#define S_ISDIR(m) (((m) & _S_IFMT) == _S_IFDIR)
+#define S_ISREG(m) (((m) & _S_IFMT) == _S_IFREG)
+#define S_ISCHR(m) (((m) & _S_IFMT) == _S_IFCHR)
 #define S_ISFIFO(m) (((m) & _S_IFMT) == _S_IFIFO)
-#define S_IWUSR     _S_IWRITE
+#define S_IWUSR _S_IWRITE
 #endif
 // The reentrant broken-down-time calls, and the UTC offset that goes with them.
 // Windows' runtime spells the first two _s with the arguments the other way
 // round, and its struct tm has no tm_gmtoff — there the offset is a process-wide
 // setting read through _get_timezone, with the daylight part carried separately.
 #if defined(_WIN32)
-static inline struct tm* localtime_r(const time_t* timer, struct tm* out) {
+static inline struct tm *localtime_r(const time_t *timer, struct tm *out) {
     return localtime_s(out, timer) == 0 ? out : NULL;
 }
-static inline struct tm* gmtime_r(const time_t* timer, struct tm* out) {
+static inline struct tm *gmtime_r(const time_t *timer, struct tm *out) {
     return gmtime_s(out, timer) == 0 ? out : NULL;
 }
-static inline time_t timegm(struct tm* tm_buf) {
+static inline time_t timegm(struct tm *tm_buf) {
     return _mkgmtime(tm_buf);
 }
 // Read the offset off the two readings of the same fields rather than out of
@@ -99,34 +100,35 @@ static inline time_t timegm(struct tm* tm_buf) {
 // cross lane targets msvcrt. mktime reads the fields as local and _mkgmtime as
 // UTC, so their difference is the offset, with DST already in it via tm_isdst.
 // Both mutate what they are handed, hence the copies.
-static inline long tm_utc_offset(const struct tm* tm_buf) {
+static inline long tm_utc_offset(const struct tm *tm_buf) {
     struct tm as_local = *tm_buf;
     struct tm as_utc = *tm_buf;
     const time_t local = mktime(&as_local);
     const time_t utc = _mkgmtime(&as_utc);
-    if (local == (time_t)-1 || utc == (time_t)-1) return 0;
+    if (local == (time_t)-1 || utc == (time_t)-1)
+        return 0;
     return (long)(utc - local);
 }
 // _putenv_s is the whole of the environment interface Windows offers: an empty
 // value is how it removes a name, and it always overwrites, which is the only
 // mode either caller here asks for.
-static inline int setenv(const char* name, const char* value, int overwrite) {
+static inline int setenv(const char *name, const char *value, int overwrite) {
     (void)overwrite;
     return _putenv_s(name, value);
 }
-static inline int unsetenv(const char* name) {
+static inline int unsetenv(const char *name) {
     return _putenv_s(name, "");
 }
 #else
-static inline long tm_utc_offset(const struct tm* tm_buf) {
+static inline long tm_utc_offset(const struct tm *tm_buf) {
     return tm_buf->tm_gmtoff;
 }
 #endif
 
-#include <vector>
-#include <string>
-#include <wchar.h>
 #include <stdint.h>
+#include <string>
+#include <vector>
+#include <wchar.h>
 
 // =============================================================================
 // Handle Wrapper Types
@@ -134,7 +136,7 @@ static inline long tm_utc_offset(const struct tm* tm_buf) {
 
 // Convert fd to HANDLE and back
 #define FD_TO_HANDLE(fd) ((HANDLE)(intptr_t)(fd))
-#define HANDLE_TO_FD(h)  ((int)(intptr_t)(h))
+#define HANDLE_TO_FD(h) ((int)(intptr_t)(h))
 
 // A file handle is its descriptor, a small number; every other handle is the
 // address of a tagged object. No system maps the first 64 KB, so the value
@@ -146,10 +148,10 @@ static bool is_object_handle(HANDLE h) {
 // Handle tag for identifying wrapper types
 enum HandleTag {
     HANDLE_TAG_THREAD = 0x54485244, // 'THRD'
-    HANDLE_TAG_MUTEX  = 0x4D555458, // 'MUTX'
-    HANDLE_TAG_EVENT  = 0x45565454, // 'EVNT'
-    HANDLE_TAG_FIND   = 0x46494E44, // 'FIND'
-    HANDLE_TAG_PROC   = 0x50524F43  // 'PROC'
+    HANDLE_TAG_MUTEX = 0x4D555458,  // 'MUTX'
+    HANDLE_TAG_EVENT = 0x45565454,  // 'EVNT'
+    HANDLE_TAG_FIND = 0x46494E44,   // 'FIND'
+    HANDLE_TAG_PROC = 0x50524F43    // 'PROC'
 };
 
 // The waitable objects, on the standard library rather than on pthreads. What
@@ -194,7 +196,7 @@ struct FindHandle {
     size_t currentIndex;
 };
 
-}  // namespace
+} // namespace
 
 // =============================================================================
 // Thread-local last error
@@ -210,31 +212,31 @@ static const HANDLE INVALID_HANDLE = (HANDLE)(intptr_t)(-1);
 static const DWORD SHIM_INVALID_FILE_ATTRIBUTES = 0xFFFFFFFF;
 
 // Win32 file open mode constants
-#define WIN32_GENERIC_READ    0x80000000UL
-#define WIN32_GENERIC_WRITE   0x40000000UL
-#define WIN32_CREATE_NEW      1
-#define WIN32_CREATE_ALWAYS   2
-#define WIN32_OPEN_EXISTING   3
-#define WIN32_OPEN_ALWAYS     4
+#define WIN32_GENERIC_READ 0x80000000UL
+#define WIN32_GENERIC_WRITE 0x40000000UL
+#define WIN32_CREATE_NEW 1
+#define WIN32_CREATE_ALWAYS 2
+#define WIN32_OPEN_EXISTING 3
+#define WIN32_OPEN_ALWAYS 4
 #define WIN32_TRUNCATE_EXISTING 5
 
 // Win32 file attribute constants
-#define WIN32_FILE_ATTRIBUTE_READONLY   0x00000001
-#define WIN32_FILE_ATTRIBUTE_HIDDEN     0x00000002
-#define WIN32_FILE_ATTRIBUTE_SYSTEM     0x00000004
-#define WIN32_FILE_ATTRIBUTE_DIRECTORY  0x00000010
-#define WIN32_FILE_ATTRIBUTE_ARCHIVE    0x00000020
-#define WIN32_FILE_ATTRIBUTE_NORMAL     0x00000080
+#define WIN32_FILE_ATTRIBUTE_READONLY 0x00000001
+#define WIN32_FILE_ATTRIBUTE_HIDDEN 0x00000002
+#define WIN32_FILE_ATTRIBUTE_SYSTEM 0x00000004
+#define WIN32_FILE_ATTRIBUTE_DIRECTORY 0x00000010
+#define WIN32_FILE_ATTRIBUTE_ARCHIVE 0x00000020
+#define WIN32_FILE_ATTRIBUTE_NORMAL 0x00000080
 
 // Win32 move method constants
-#define WIN32_FILE_BEGIN   0
+#define WIN32_FILE_BEGIN 0
 #define WIN32_FILE_CURRENT 1
-#define WIN32_FILE_END     2
+#define WIN32_FILE_END 2
 
 // Win32 STD handle constants
-#define WIN32_STD_INPUT_HANDLE  ((DWORD)-10)
-#define WIN32_STD_OUTPUT_HANDLE ((DWORD)-11)
-#define WIN32_STD_ERROR_HANDLE  ((DWORD)-12)
+#define WIN32_STD_INPUT_HANDLE ((DWORD) - 10)
+#define WIN32_STD_OUTPUT_HANDLE ((DWORD) - 11)
+#define WIN32_STD_ERROR_HANDLE ((DWORD) - 12)
 
 // Win32 file type constants
 #define WIN32_FILE_TYPE_DISK 0x0001
@@ -245,10 +247,10 @@ static const DWORD SHIM_INVALID_FILE_ATTRIBUTES = 0xFFFFFFFF;
 #define WIN32_TLS_OUT_OF_INDEXES 0xFFFFFFFF
 
 // Win32 WAIT constants
-#define WIN32_WAIT_OBJECT_0  0x00000000
-#define WIN32_WAIT_TIMEOUT   0x00000102
-#define WIN32_WAIT_FAILED    0xFFFFFFFF
-#define WIN32_INFINITE       0xFFFFFFFF
+#define WIN32_WAIT_OBJECT_0 0x00000000
+#define WIN32_WAIT_TIMEOUT 0x00000102
+#define WIN32_WAIT_FAILED 0xFFFFFFFF
+#define WIN32_INFINITE 0xFFFFFFFF
 
 // Win32 page protection
 #define WIN32_PAGE_READWRITE 0x04
@@ -256,17 +258,16 @@ static const DWORD SHIM_INVALID_FILE_ATTRIBUTES = 0xFFFFFFFF;
 // FILETIME epoch offset: 100ns intervals between 1601-01-01 and 1970-01-01
 static const unsigned long long FILETIME_EPOCH_OFFSET = 116444736000000000ULL;
 
-static void timespec_to_filetime(const struct timespec* ts, FILETIME* ft) {
-    unsigned long long val = (unsigned long long)ts->tv_sec * 10000000ULL
-                           + (unsigned long long)ts->tv_nsec / 100ULL
-                           + FILETIME_EPOCH_OFFSET;
+static void timespec_to_filetime(const struct timespec *ts, FILETIME *ft) {
+    unsigned long long val = (unsigned long long)ts->tv_sec * 10000000ULL +
+                             (unsigned long long)ts->tv_nsec / 100ULL + FILETIME_EPOCH_OFFSET;
     ft->dwLowDateTime = (DWORD)(val & 0xFFFFFFFF);
     ft->dwHighDateTime = (DWORD)(val >> 32);
 }
 
-static void filetime_to_timespec(const FILETIME* ft, struct timespec* ts) {
-    unsigned long long val = ((unsigned long long)ft->dwHighDateTime << 32)
-                           | (unsigned long long)ft->dwLowDateTime;
+static void filetime_to_timespec(const FILETIME *ft, struct timespec *ts) {
+    unsigned long long val =
+        ((unsigned long long)ft->dwHighDateTime << 32) | (unsigned long long)ft->dwLowDateTime;
     val -= FILETIME_EPOCH_OFFSET;
     ts->tv_sec = (time_t)(val / 10000000ULL);
     ts->tv_nsec = (long)((val % 10000000ULL) * 100ULL);
@@ -276,10 +277,10 @@ static void filetime_to_timespec(const FILETIME* ft, struct timespec* ts) {
 // File I/O Shims
 // =============================================================================
 
-static HANDLE shim_CreateFileA(LPCSTR lpFileName, DWORD dwDesiredAccess,
-    DWORD dwShareMode, LPSECURITY_ATTRIBUTES lpSecurityAttributes,
-    DWORD dwCreationDisposition, DWORD dwFlagsAndAttributes, HANDLE hTemplateFile)
-{
+static HANDLE shim_CreateFileA(LPCSTR lpFileName, DWORD dwDesiredAccess, DWORD dwShareMode,
+                               LPSECURITY_ATTRIBUTES lpSecurityAttributes,
+                               DWORD dwCreationDisposition, DWORD dwFlagsAndAttributes,
+                               HANDLE hTemplateFile) {
     (void)dwShareMode;
     (void)lpSecurityAttributes;
     (void)dwFlagsAndAttributes;
@@ -325,7 +326,8 @@ static HANDLE shim_CreateFileA(LPCSTR lpFileName, DWORD dwDesiredAccess,
 #endif
 
     const WatcomPathUse use = (flags & (O_WRONLY | O_RDWR | O_CREAT | O_TRUNC))
-                                  ? WatcomPathUse::Write : WatcomPathUse::Read;
+                                  ? WatcomPathUse::Write
+                                  : WatcomPathUse::Read;
     int fd = open(watcom_resolve_fs_path(lpFileName, use).c_str(), flags, 0666);
     if (fd < 0) {
         s_lastError = (DWORD)errno;
@@ -334,44 +336,46 @@ static HANDLE shim_CreateFileA(LPCSTR lpFileName, DWORD dwDesiredAccess,
     return FD_TO_HANDLE(fd);
 }
 
-static BOOL shim_ReadFile(HANDLE hFile, LPVOID lpBuffer,
-    DWORD nNumberOfBytesToRead, LPDWORD lpNumberOfBytesRead,
-    LPOVERLAPPED lpOverlapped)
-{
+static BOOL shim_ReadFile(HANDLE hFile, LPVOID lpBuffer, DWORD nNumberOfBytesToRead,
+                          LPDWORD lpNumberOfBytesRead, LPOVERLAPPED lpOverlapped) {
     (void)lpOverlapped;
     int fd = HANDLE_TO_FD(hFile);
     ssize_t result = read(fd, lpBuffer, nNumberOfBytesToRead);
     if (result < 0) {
         s_lastError = (DWORD)errno;
-        if (lpNumberOfBytesRead) *lpNumberOfBytesRead = 0;
+        if (lpNumberOfBytesRead)
+            *lpNumberOfBytesRead = 0;
         return 0;
     }
-    if (lpNumberOfBytesRead) *lpNumberOfBytesRead = (DWORD)result;
+    if (lpNumberOfBytesRead)
+        *lpNumberOfBytesRead = (DWORD)result;
     return 1;
 }
 
-static BOOL shim_WriteFile(HANDLE hFile, LPCVOID lpBuffer,
-    DWORD nNumberOfBytesToWrite, LPDWORD lpNumberOfBytesWritten,
-    LPOVERLAPPED lpOverlapped)
-{
+static BOOL shim_WriteFile(HANDLE hFile, LPCVOID lpBuffer, DWORD nNumberOfBytesToWrite,
+                           LPDWORD lpNumberOfBytesWritten, LPOVERLAPPED lpOverlapped) {
     (void)lpOverlapped;
     int fd = HANDLE_TO_FD(hFile);
     ssize_t result = write(fd, lpBuffer, nNumberOfBytesToWrite);
     if (result < 0) {
         s_lastError = (DWORD)errno;
-        if (lpNumberOfBytesWritten) *lpNumberOfBytesWritten = 0;
+        if (lpNumberOfBytesWritten)
+            *lpNumberOfBytesWritten = 0;
         return 0;
     }
-    if (lpNumberOfBytesWritten) *lpNumberOfBytesWritten = (DWORD)result;
+    if (lpNumberOfBytesWritten)
+        *lpNumberOfBytesWritten = (DWORD)result;
     return 1;
 }
 
 static BOOL shim_CloseHandle(HANDLE hObject) {
-    if (hObject == NULL || hObject == INVALID_HANDLE) return 0;
-    if (!is_object_handle(hObject)) return close(HANDLE_TO_FD(hObject)) == 0 ? 1 : 0;
+    if (hObject == NULL || hObject == INVALID_HANDLE)
+        return 0;
+    if (!is_object_handle(hObject))
+        return close(HANDLE_TO_FD(hObject)) == 0 ? 1 : 0;
 
     // Check if this is a tagged handle
-    int* tagPtr = (int*)hObject;
+    int *tagPtr = (int *)hObject;
     switch (*tagPtr) {
     case HANDLE_TAG_THREAD:
         // Closing a thread handle on Windows drops the caller's reference and
@@ -380,16 +384,17 @@ static BOOL shim_CloseHandle(HANDLE hObject) {
         // writes its exit code through it, and there is no way from here to know
         // whether it has finished. One leaked handle per thread, and the game
         // creates one.
-        if (((ThreadHandle*)hObject)->thread.joinable()) ((ThreadHandle*)hObject)->thread.detach();
+        if (((ThreadHandle *)hObject)->thread.joinable())
+            ((ThreadHandle *)hObject)->thread.detach();
         return 1;
     case HANDLE_TAG_MUTEX:
-        delete (MutexHandle*)hObject;
+        delete (MutexHandle *)hObject;
         return 1;
     case HANDLE_TAG_EVENT:
-        delete (EventHandle*)hObject;
+        delete (EventHandle *)hObject;
         return 1;
     case HANDLE_TAG_FIND:
-        delete (FindHandle*)hObject;
+        delete (FindHandle *)hObject;
         return 1;
     default:
         // An object of no kind this file makes
@@ -407,16 +412,23 @@ static long long seek64(int fd, long long offset, int whence) {
 #endif
 }
 
-static DWORD shim_SetFilePointer(HANDLE hFile, LONGVAL lDistanceToMove,
-    PLONG lpDistanceToMoveHigh, DWORD dwMoveMethod)
-{
+static DWORD shim_SetFilePointer(HANDLE hFile, LONGVAL lDistanceToMove, PLONG lpDistanceToMoveHigh,
+                                 DWORD dwMoveMethod) {
     int fd = HANDLE_TO_FD(hFile);
     int whence;
     switch (dwMoveMethod) {
-    case WIN32_FILE_BEGIN:   whence = SEEK_SET; break;
-    case WIN32_FILE_CURRENT: whence = SEEK_CUR; break;
-    case WIN32_FILE_END:     whence = SEEK_END; break;
-    default: whence = SEEK_SET; break;
+    case WIN32_FILE_BEGIN:
+        whence = SEEK_SET;
+        break;
+    case WIN32_FILE_CURRENT:
+        whence = SEEK_CUR;
+        break;
+    case WIN32_FILE_END:
+        whence = SEEK_END;
+        break;
+    default:
+        whence = SEEK_SET;
+        break;
     }
 
     // With a high word the distance is one signed 64-bit value, the low word
@@ -440,11 +452,20 @@ static DWORD shim_SetFilePointer(HANDLE hFile, LONGVAL lDistanceToMove,
 static BOOL shim_SetEndOfFile(HANDLE hFile) {
     int fd = HANDLE_TO_FD(hFile);
     long long pos = seek64(fd, 0, SEEK_CUR);
-    if (pos == -1) { s_lastError = (DWORD)errno; return 0; }
+    if (pos == -1) {
+        s_lastError = (DWORD)errno;
+        return 0;
+    }
 #if defined(_WIN32)
-    if (_chsize_s(fd, pos) != 0) { s_lastError = (DWORD)errno; return 0; }
+    if (_chsize_s(fd, pos) != 0) {
+        s_lastError = (DWORD)errno;
+        return 0;
+    }
 #else
-    if (ftruncate(fd, (off_t)pos) != 0) { s_lastError = (DWORD)errno; return 0; }
+    if (ftruncate(fd, (off_t)pos) != 0) {
+        s_lastError = (DWORD)errno;
+        return 0;
+    }
 #endif
     return 1;
 }
@@ -461,26 +482,27 @@ static BOOL shim_FlushFileBuffers(HANDLE hFile) {
 static BOOL shim_DeleteFileA(LPCSTR lpFileName) {
     std::error_code ec;
     const std::filesystem::path path(watcom_resolve_fs_path(lpFileName, WatcomPathUse::Write));
-    if (std::filesystem::remove(path, ec)) return 1;
+    if (std::filesystem::remove(path, ec))
+        return 1;
     // remove answers false without an error when there was nothing to remove.
-    s_lastError = ec ? (DWORD)ec.value() : (DWORD)2;   // ERROR_FILE_NOT_FOUND
+    s_lastError = ec ? (DWORD)ec.value() : (DWORD)2; // ERROR_FILE_NOT_FOUND
     return 0;
 }
 
 static BOOL shim_MoveFileA(LPCSTR lpExistingFileName, LPCSTR lpNewFileName) {
     if (rename(watcom_resolve_fs_path(lpExistingFileName, WatcomPathUse::Write).c_str(),
-               watcom_resolve_fs_path(lpNewFileName, WatcomPathUse::Write).c_str()) == 0) return 1;
+               watcom_resolve_fs_path(lpNewFileName, WatcomPathUse::Write).c_str()) == 0)
+        return 1;
     s_lastError = (DWORD)errno;
     return 0;
 }
 
-static BOOL shim_CreateDirectoryA(LPCSTR lpPathName,
-    LPSECURITY_ATTRIBUTES lpSecurityAttributes)
-{
+static BOOL shim_CreateDirectoryA(LPCSTR lpPathName, LPSECURITY_ATTRIBUTES lpSecurityAttributes) {
     (void)lpSecurityAttributes;
     std::error_code ec;
     const std::filesystem::path path(watcom_resolve_fs_path(lpPathName, WatcomPathUse::Write));
-    if (std::filesystem::create_directory(path, ec)) return 1;
+    if (std::filesystem::create_directory(path, ec))
+        return 1;
     // create_directory answers false without an error when the directory is
     // already there, which Win32 reports as a failure with ERROR_ALREADY_EXISTS.
     s_lastError = ec ? (DWORD)ec.value() : (DWORD)183;
@@ -494,9 +516,12 @@ static DWORD shim_GetFileAttributesA(LPCSTR lpFileName) {
         return SHIM_INVALID_FILE_ATTRIBUTES;
     }
     DWORD attrs = 0;
-    if (S_ISDIR(st.st_mode)) attrs |= WIN32_FILE_ATTRIBUTE_DIRECTORY;
-    if (!(st.st_mode & S_IWUSR)) attrs |= WIN32_FILE_ATTRIBUTE_READONLY;
-    if (attrs == 0) attrs = WIN32_FILE_ATTRIBUTE_NORMAL;
+    if (S_ISDIR(st.st_mode))
+        attrs |= WIN32_FILE_ATTRIBUTE_DIRECTORY;
+    if (!(st.st_mode & S_IWUSR))
+        attrs |= WIN32_FILE_ATTRIBUTE_READONLY;
+    if (attrs == 0)
+        attrs = WIN32_FILE_ATTRIBUTE_NORMAL;
     return attrs;
 }
 
@@ -507,9 +532,8 @@ static BOOL shim_SetFileAttributesA(LPCSTR lpFileName, DWORD dwFileAttributes) {
     return 1;
 }
 
-static BOOL shim_GetFileTime(HANDLE hFile, LPFILETIME lpCreationTime,
-    LPFILETIME lpLastAccessTime, LPFILETIME lpLastWriteTime)
-{
+static BOOL shim_GetFileTime(HANDLE hFile, LPFILETIME lpCreationTime, LPFILETIME lpLastAccessTime,
+                             LPFILETIME lpLastWriteTime) {
     int fd = HANDLE_TO_FD(hFile);
     struct stat st;
     if (fstat(fd, &st) != 0) {
@@ -518,23 +542,25 @@ static BOOL shim_GetFileTime(HANDLE hFile, LPFILETIME lpCreationTime,
     }
     struct timespec ts;
     if (lpCreationTime) {
-        ts.tv_sec = st.st_ctime; ts.tv_nsec = 0;
+        ts.tv_sec = st.st_ctime;
+        ts.tv_nsec = 0;
         timespec_to_filetime(&ts, lpCreationTime);
     }
     if (lpLastAccessTime) {
-        ts.tv_sec = st.st_atime; ts.tv_nsec = 0;
+        ts.tv_sec = st.st_atime;
+        ts.tv_nsec = 0;
         timespec_to_filetime(&ts, lpLastAccessTime);
     }
     if (lpLastWriteTime) {
-        ts.tv_sec = st.st_mtime; ts.tv_nsec = 0;
+        ts.tv_sec = st.st_mtime;
+        ts.tv_nsec = 0;
         timespec_to_filetime(&ts, lpLastWriteTime);
     }
     return 1;
 }
 
-static BOOL shim_SetFileTime(HANDLE hFile, FILETIME* lpCreationTime,
-    FILETIME* lpLastAccessTime, FILETIME* lpLastWriteTime)
-{
+static BOOL shim_SetFileTime(HANDLE hFile, FILETIME *lpCreationTime, FILETIME *lpLastAccessTime,
+                             FILETIME *lpLastWriteTime) {
     (void)hFile;
     (void)lpCreationTime;
     (void)lpLastAccessTime;
@@ -546,15 +572,20 @@ static BOOL shim_SetFileTime(HANDLE hFile, FILETIME* lpCreationTime,
 static DWORD shim_GetFileType(HANDLE hFile) {
     int fd = HANDLE_TO_FD(hFile);
     struct stat st;
-    if (fstat(fd, &st) != 0) return 0;
-    if (S_ISREG(st.st_mode)) return WIN32_FILE_TYPE_DISK;
-    if (S_ISCHR(st.st_mode)) return WIN32_FILE_TYPE_CHAR;
-    // No S_ISSOCK on Windows: a socket is never a stat-able filesystem object
-    // there, so the macro does not exist and the case cannot arise.
+    if (fstat(fd, &st) != 0)
+        return 0;
+    if (S_ISREG(st.st_mode))
+        return WIN32_FILE_TYPE_DISK;
+    if (S_ISCHR(st.st_mode))
+        return WIN32_FILE_TYPE_CHAR;
+        // No S_ISSOCK on Windows: a socket is never a stat-able filesystem object
+        // there, so the macro does not exist and the case cannot arise.
 #if defined(S_ISSOCK)
-    if (S_ISFIFO(st.st_mode) || S_ISSOCK(st.st_mode)) return WIN32_FILE_TYPE_PIPE;
+    if (S_ISFIFO(st.st_mode) || S_ISSOCK(st.st_mode))
+        return WIN32_FILE_TYPE_PIPE;
 #else
-    if (S_ISFIFO(st.st_mode)) return WIN32_FILE_TYPE_PIPE;
+    if (S_ISFIFO(st.st_mode))
+        return WIN32_FILE_TYPE_PIPE;
 #endif
     return WIN32_FILE_TYPE_DISK;
 }
@@ -563,9 +594,8 @@ static DWORD shim_GetFileType(HANDLE hFile) {
 // and follows no links — which is absolute() and lexical normalising, not
 // realpath. Like GetCurrentDirectoryA, a buffer too small is told the size it
 // needs, terminator included, and nothing is written.
-static DWORD shim_GetFullPathNameA(LPCSTR lpFileName, DWORD nBufferLength,
-    LPSTR lpBuffer, LPSTR* lpFilePart)
-{
+static DWORD shim_GetFullPathNameA(LPCSTR lpFileName, DWORD nBufferLength, LPSTR lpBuffer,
+                                   LPSTR *lpFilePart) {
     std::error_code ec;
     const std::filesystem::path full =
         std::filesystem::absolute(std::filesystem::path(lpFileName), ec).lexically_normal();
@@ -574,9 +604,11 @@ static DWORD shim_GetFullPathNameA(LPCSTR lpFileName, DWORD nBufferLength,
         return 0;
     }
     const std::string text = full.string();
-    if (text.size() + 1 > (size_t)nBufferLength) return (DWORD)(text.size() + 1);
+    if (text.size() + 1 > (size_t)nBufferLength)
+        return (DWORD)(text.size() + 1);
     memcpy(lpBuffer, text.c_str(), text.size() + 1);
-    if (lpFilePart) *lpFilePart = lpBuffer + text.size() - full.filename().string().size();
+    if (lpFilePart)
+        *lpFilePart = lpBuffer + text.size() - full.filename().string().size();
     return (DWORD)text.size();
 }
 
@@ -589,7 +621,8 @@ static DWORD shim_GetCurrentDirectoryA(DWORD nBufferLength, LPSTR lpBuffer) {
     }
     // Win32 reports the length it needed when the buffer is too small and
     // writes nothing, rather than truncating.
-    if (here.size() + 1 > (size_t)nBufferLength) return (DWORD)(here.size() + 1);
+    if (here.size() + 1 > (size_t)nBufferLength)
+        return (DWORD)(here.size() + 1);
     memcpy(lpBuffer, here.c_str(), here.size() + 1);
     return (DWORD)here.size();
 }
@@ -597,7 +630,8 @@ static DWORD shim_GetCurrentDirectoryA(DWORD nBufferLength, LPSTR lpBuffer) {
 static BOOL shim_SetCurrentDirectoryA(LPCSTR lpPathName) {
     std::error_code ec;
     std::filesystem::current_path(std::filesystem::path(lpPathName), ec);
-    if (!ec) return 1;
+    if (!ec)
+        return 1;
     s_lastError = (DWORD)ec.value();
     return 0;
 }
@@ -606,10 +640,10 @@ static BOOL shim_SetCurrentDirectoryA(LPCSTR lpPathName) {
 // File Search Shims
 // =============================================================================
 
-static void populate_find_data(const char* path, LPWIN32_FIND_DATAA lpFindFileData) {
+static void populate_find_data(const char *path, LPWIN32_FIND_DATAA lpFindFileData) {
     memset(lpFindFileData, 0, sizeof(WIN32_FIND_DATAA));
 
-    const char* basename = strrchr(path, '/');
+    const char *basename = strrchr(path, '/');
     basename = basename ? basename + 1 : path;
     strncpy(lpFindFileData->cFileName, basename, 259);
     lpFindFileData->cFileName[259] = '\0';
@@ -623,7 +657,8 @@ static void populate_find_data(const char* path, LPWIN32_FIND_DATAA lpFindFileDa
         lpFindFileData->nFileSizeLow = (DWORD)(st.st_size & 0xFFFFFFFF);
         lpFindFileData->nFileSizeHigh = (DWORD)((unsigned long long)st.st_size >> 32);
         struct timespec ts;
-        ts.tv_sec = st.st_mtime; ts.tv_nsec = 0;
+        ts.tv_sec = st.st_mtime;
+        ts.tv_nsec = 0;
         timespec_to_filetime(&ts, &lpFindFileData->ftLastWriteTime);
         ts.tv_sec = st.st_atime;
         timespec_to_filetime(&ts, &lpFindFileData->ftLastAccessTime);
@@ -643,7 +678,7 @@ static HANDLE shim_FindFirstFileA(LPCSTR lpFileName, LPWIN32_FIND_DATAA lpFindFi
         return INVALID_HANDLE;
     }
 
-    FindHandle* fh = new FindHandle();
+    FindHandle *fh = new FindHandle();
     fh->tag = HANDLE_TAG_FIND;
     fh->matches = matches;
     // Win32 hands the first match back through the out-parameter rather than
@@ -654,8 +689,9 @@ static HANDLE shim_FindFirstFileA(LPCSTR lpFileName, LPWIN32_FIND_DATAA lpFindFi
 }
 
 static BOOL shim_FindNextFileA(HANDLE hFindFile, LPWIN32_FIND_DATAA lpFindFileData) {
-    FindHandle* fh = (FindHandle*)hFindFile;
-    if (!is_object_handle(hFindFile) || fh->tag != HANDLE_TAG_FIND) return 0;
+    FindHandle *fh = (FindHandle *)hFindFile;
+    if (!is_object_handle(hFindFile) || fh->tag != HANDLE_TAG_FIND)
+        return 0;
     if (fh->currentIndex >= fh->matches.size()) {
         s_lastError = 18; // ERROR_NO_MORE_FILES
         return 0;
@@ -666,8 +702,9 @@ static BOOL shim_FindNextFileA(HANDLE hFindFile, LPWIN32_FIND_DATAA lpFindFileDa
 }
 
 static BOOL shim_FindClose(HANDLE hFindFile) {
-    FindHandle* fh = (FindHandle*)hFindFile;
-    if (!is_object_handle(hFindFile) || fh->tag != HANDLE_TAG_FIND) return 0;
+    FindHandle *fh = (FindHandle *)hFindFile;
+    if (!is_object_handle(hFindFile) || fh->tag != HANDLE_TAG_FIND)
+        return 0;
     delete fh;
     return 1;
 }
@@ -678,42 +715,55 @@ static BOOL shim_FindClose(HANDLE hFindFile) {
 
 static HANDLE shim_GetStdHandle(DWORD nStdHandle) {
     switch (nStdHandle) {
-    case WIN32_STD_INPUT_HANDLE:  return FD_TO_HANDLE(0);
-    case WIN32_STD_OUTPUT_HANDLE: return FD_TO_HANDLE(1);
-    case WIN32_STD_ERROR_HANDLE:  return FD_TO_HANDLE(2);
-    default: return INVALID_HANDLE;
+    case WIN32_STD_INPUT_HANDLE:
+        return FD_TO_HANDLE(0);
+    case WIN32_STD_OUTPUT_HANDLE:
+        return FD_TO_HANDLE(1);
+    case WIN32_STD_ERROR_HANDLE:
+        return FD_TO_HANDLE(2);
+    default:
+        return INVALID_HANDLE;
     }
 }
 
 static BOOL shim_SetStdHandle(DWORD nStdHandle, HANDLE hHandle) {
     int target;
     switch (nStdHandle) {
-    case WIN32_STD_INPUT_HANDLE:  target = 0; break;
-    case WIN32_STD_OUTPUT_HANDLE: target = 1; break;
-    case WIN32_STD_ERROR_HANDLE:  target = 2; break;
-    default: return 0;
+    case WIN32_STD_INPUT_HANDLE:
+        target = 0;
+        break;
+    case WIN32_STD_OUTPUT_HANDLE:
+        target = 1;
+        break;
+    case WIN32_STD_ERROR_HANDLE:
+        target = 2;
+        break;
+    default:
+        return 0;
     }
     return dup2(HANDLE_TO_FD(hHandle), target) >= 0 ? 1 : 0;
 }
 
-static BOOL shim_WriteConsoleA(HANDLE hConsoleOutput, void* lpBuffer,
-    DWORD nNumberOfCharsToWrite, LPDWORD lpNumberOfCharsWritten, LPVOID lpReserved)
-{
+static BOOL shim_WriteConsoleA(HANDLE hConsoleOutput, void *lpBuffer, DWORD nNumberOfCharsToWrite,
+                               LPDWORD lpNumberOfCharsWritten, LPVOID lpReserved) {
     (void)lpReserved;
     int fd = HANDLE_TO_FD(hConsoleOutput);
     ssize_t written = write(fd, lpBuffer, nNumberOfCharsToWrite);
     if (written < 0) {
         s_lastError = (DWORD)errno;
-        if (lpNumberOfCharsWritten) *lpNumberOfCharsWritten = 0;
+        if (lpNumberOfCharsWritten)
+            *lpNumberOfCharsWritten = 0;
         return 0;
     }
-    if (lpNumberOfCharsWritten) *lpNumberOfCharsWritten = (DWORD)written;
+    if (lpNumberOfCharsWritten)
+        *lpNumberOfCharsWritten = (DWORD)written;
     return 1;
 }
 
 static BOOL shim_GetConsoleMode(HANDLE hConsoleHandle, LPDWORD lpMode) {
     (void)hConsoleHandle;
-    if (lpMode) *lpMode = 0;
+    if (lpMode)
+        *lpMode = 0;
     return 1;
 }
 
@@ -730,13 +780,13 @@ static BOOL shim_SetConsoleCtrlHandler(PHANDLER_ROUTINE HandlerRoutine, BOOL Add
     return 1;
 }
 
-static BOOL shim_ReadConsoleInputA(HANDLE hConsoleInput, PINPUT_RECORD lpBuffer,
-    DWORD nLength, LPDWORD lpNumberOfEventsRead)
-{
+static BOOL shim_ReadConsoleInputA(HANDLE hConsoleInput, PINPUT_RECORD lpBuffer, DWORD nLength,
+                                   LPDWORD lpNumberOfEventsRead) {
     (void)hConsoleInput;
     (void)lpBuffer;
     (void)nLength;
-    if (lpNumberOfEventsRead) *lpNumberOfEventsRead = 0;
+    if (lpNumberOfEventsRead)
+        *lpNumberOfEventsRead = 0;
     return 0;
 }
 
@@ -744,20 +794,22 @@ static BOOL shim_ReadConsoleInputA(HANDLE hConsoleInput, PINPUT_RECORD lpBuffer,
 // Thread Shims
 // =============================================================================
 
-static HANDLE shim_CreateThread(LPSECURITY_ATTRIBUTES lpThreadAttributes,
-    SIZE_T dwStackSize, LPTHREAD_START_ROUTINE lpStartAddress,
-    LPVOID lpParameter, DWORD dwCreationFlags, LPDWORD lpThreadId)
-{
+static HANDLE shim_CreateThread(LPSECURITY_ATTRIBUTES lpThreadAttributes, SIZE_T dwStackSize,
+                                LPTHREAD_START_ROUTINE lpStartAddress, LPVOID lpParameter,
+                                DWORD dwCreationFlags, LPDWORD lpThreadId) {
     (void)lpThreadAttributes;
-    (void)dwCreationFlags;   // CREATE_SUSPENDED not supported
+    (void)dwCreationFlags; // CREATE_SUSPENDED not supported
     // A stack size cannot be asked for through std::thread. The game's one call
     // site passes zero, meaning "whatever the default is", so there is nothing
     // to honour — and adding a threading library to carry a parameter nobody
     // sets would be paying for it twice.
     (void)dwStackSize;
 
-    ThreadHandle* th = new (std::nothrow) ThreadHandle();
-    if (!th) { s_lastError = 8; return NULL; }
+    ThreadHandle *th = new (std::nothrow) ThreadHandle();
+    if (!th) {
+        s_lastError = 8;
+        return NULL;
+    }
     th->tag = HANDLE_TAG_THREAD;
     th->exitCode = 0;
     th->finished = 0;
@@ -805,14 +857,16 @@ static DWORD shim_GetCurrentThreadId(void) {
 // Mutex / Event Shims
 // =============================================================================
 
-static HANDLE shim_CreateMutexA(LPSECURITY_ATTRIBUTES lpMutexAttributes,
-    BOOL bInitialOwner, LPCSTR lpName)
-{
+static HANDLE shim_CreateMutexA(LPSECURITY_ATTRIBUTES lpMutexAttributes, BOOL bInitialOwner,
+                                LPCSTR lpName) {
     (void)lpMutexAttributes;
     (void)lpName;
 
-    MutexHandle* mh = new (std::nothrow) MutexHandle();
-    if (!mh) { s_lastError = 8; return NULL; }
+    MutexHandle *mh = new (std::nothrow) MutexHandle();
+    if (!mh) {
+        s_lastError = 8;
+        return NULL;
+    }
     mh->tag = HANDLE_TAG_MUTEX;
 
     if (bInitialOwner) {
@@ -822,20 +876,23 @@ static HANDLE shim_CreateMutexA(LPSECURITY_ATTRIBUTES lpMutexAttributes,
 }
 
 static BOOL shim_ReleaseMutex(HANDLE hMutex) {
-    MutexHandle* mh = (MutexHandle*)hMutex;
-    if (!is_object_handle(hMutex) || mh->tag != HANDLE_TAG_MUTEX) return 0;
+    MutexHandle *mh = (MutexHandle *)hMutex;
+    if (!is_object_handle(hMutex) || mh->tag != HANDLE_TAG_MUTEX)
+        return 0;
     mh->mutex.unlock();
     return 1;
 }
 
-static HANDLE shim_CreateEventA(LPSECURITY_ATTRIBUTES lpEventAttributes,
-    BOOL bManualReset, BOOL bInitialState, LPCSTR lpName)
-{
+static HANDLE shim_CreateEventA(LPSECURITY_ATTRIBUTES lpEventAttributes, BOOL bManualReset,
+                                BOOL bInitialState, LPCSTR lpName) {
     (void)lpEventAttributes;
     (void)lpName;
 
-    EventHandle* eh = new (std::nothrow) EventHandle();
-    if (!eh) { s_lastError = 8; return NULL; }
+    EventHandle *eh = new (std::nothrow) EventHandle();
+    if (!eh) {
+        s_lastError = 8;
+        return NULL;
+    }
     eh->tag = HANDLE_TAG_EVENT;
     eh->manualReset = bManualReset;
     eh->signaled = bInitialState ? 1 : 0;
@@ -843,28 +900,32 @@ static HANDLE shim_CreateEventA(LPSECURITY_ATTRIBUTES lpEventAttributes,
 }
 
 static BOOL shim_SetEvent(HANDLE hEvent) {
-    EventHandle* eh = (EventHandle*)hEvent;
-    if (!is_object_handle(hEvent) || eh->tag != HANDLE_TAG_EVENT) return 0;
+    EventHandle *eh = (EventHandle *)hEvent;
+    if (!is_object_handle(hEvent) || eh->tag != HANDLE_TAG_EVENT)
+        return 0;
     {
         std::lock_guard<std::mutex> held(eh->mutex);
         eh->signaled = 1;
     }
     // A manual-reset event stays signalled, so everyone waiting can go; an
     // automatic one is taken by whoever wakes first, so only one is woken.
-    if (eh->manualReset) eh->cond.notify_all();
-    else                 eh->cond.notify_one();
+    if (eh->manualReset)
+        eh->cond.notify_all();
+    else
+        eh->cond.notify_one();
     return 1;
 }
 
 static DWORD shim_WaitForSingleObject(HANDLE hHandle, DWORD dwMilliseconds) {
-    if (!is_object_handle(hHandle)) return WIN32_WAIT_FAILED;
+    if (!is_object_handle(hHandle))
+        return WIN32_WAIT_FAILED;
 
     const std::chrono::milliseconds timeout((long long)dwMilliseconds);
     const bool forever = (dwMilliseconds == WIN32_INFINITE);
 
-    int* tagPtr = (int*)hHandle;
+    int *tagPtr = (int *)hHandle;
     if (*tagPtr == HANDLE_TAG_MUTEX) {
-        MutexHandle* mh = (MutexHandle*)hHandle;
+        MutexHandle *mh = (MutexHandle *)hHandle;
         // Waiting on a mutex is taking it. It stays taken until ReleaseMutex,
         // which is why this does not use a lock guard.
         if (forever) {
@@ -875,7 +936,7 @@ static DWORD shim_WaitForSingleObject(HANDLE hHandle, DWORD dwMilliseconds) {
     }
 
     if (*tagPtr == HANDLE_TAG_EVENT) {
-        EventHandle* eh = (EventHandle*)hHandle;
+        EventHandle *eh = (EventHandle *)hHandle;
         std::unique_lock<std::mutex> held(eh->mutex);
         if (forever) {
             // The predicate form, which re-checks after every wake and so is not
@@ -886,14 +947,16 @@ static DWORD shim_WaitForSingleObject(HANDLE hHandle, DWORD dwMilliseconds) {
         }
         // An automatic event is consumed by the wait that takes it; a
         // manual-reset one stays signalled until ResetEvent.
-        if (!eh->manualReset) eh->signaled = 0;
+        if (!eh->manualReset)
+            eh->signaled = 0;
         return WIN32_WAIT_OBJECT_0;
     }
 
     if (*tagPtr == HANDLE_TAG_THREAD) {
-        ThreadHandle* th = (ThreadHandle*)hHandle;
+        ThreadHandle *th = (ThreadHandle *)hHandle;
         if (forever) {
-            if (th->thread.joinable()) th->thread.join();
+            if (th->thread.joinable())
+                th->thread.join();
             return WIN32_WAIT_OBJECT_0;
         }
         // A timed wait for a thread has no direct expression: joining cannot be
@@ -914,7 +977,7 @@ static DWORD shim_WaitForSingleObject(HANDLE hHandle, DWORD dwMilliseconds) {
 // something of its own too. Recursive, because that is what a critical section
 // is: the thread holding one can enter it again.
 static void shim_InitializeCriticalSection(LPCRITICAL_SECTION lpCriticalSection) {
-    std::recursive_mutex* mtx = new (std::nothrow) std::recursive_mutex();
+    std::recursive_mutex *mtx = new (std::nothrow) std::recursive_mutex();
     lpCriticalSection->LockSemaphore = (HANDLE)mtx;
     lpCriticalSection->LockCount = -1;
     lpCriticalSection->RecursionCount = 0;
@@ -922,7 +985,7 @@ static void shim_InitializeCriticalSection(LPCRITICAL_SECTION lpCriticalSection)
 }
 
 static void shim_DeleteCriticalSection(LPCRITICAL_SECTION lpCriticalSection) {
-    std::recursive_mutex* mtx = (std::recursive_mutex*)lpCriticalSection->LockSemaphore;
+    std::recursive_mutex *mtx = (std::recursive_mutex *)lpCriticalSection->LockSemaphore;
     if (mtx) {
         delete mtx;
         lpCriticalSection->LockSemaphore = NULL;
@@ -930,13 +993,15 @@ static void shim_DeleteCriticalSection(LPCRITICAL_SECTION lpCriticalSection) {
 }
 
 static void shim_EnterCriticalSection(LPCRITICAL_SECTION lpCriticalSection) {
-    std::recursive_mutex* mtx = (std::recursive_mutex*)lpCriticalSection->LockSemaphore;
-    if (mtx) mtx->lock();
+    std::recursive_mutex *mtx = (std::recursive_mutex *)lpCriticalSection->LockSemaphore;
+    if (mtx)
+        mtx->lock();
 }
 
 static void shim_LeaveCriticalSection(LPCRITICAL_SECTION lpCriticalSection) {
-    std::recursive_mutex* mtx = (std::recursive_mutex*)lpCriticalSection->LockSemaphore;
-    if (mtx) mtx->unlock();
+    std::recursive_mutex *mtx = (std::recursive_mutex *)lpCriticalSection->LockSemaphore;
+    if (mtx)
+        mtx->unlock();
 }
 
 // =============================================================================
@@ -944,16 +1009,21 @@ static void shim_LeaveCriticalSection(LPCRITICAL_SECTION lpCriticalSection) {
 // =============================================================================
 
 static BOOL shim_CreateProcessA(LPCSTR lpApplicationName, LPSTR lpCommandLine,
-    LPSECURITY_ATTRIBUTES lpProcessAttributes,
-    LPSECURITY_ATTRIBUTES lpThreadAttributes, BOOL bInheritHandles,
-    DWORD dwCreationFlags, LPVOID lpEnvironment, LPCSTR lpCurrentDirectory,
-    LPSTARTUPINFOA lpStartupInfo, LPPROCESS_INFORMATION lpProcessInformation)
-{
-    (void)lpApplicationName; (void)lpCommandLine;
-    (void)lpProcessAttributes; (void)lpThreadAttributes;
-    (void)bInheritHandles; (void)dwCreationFlags;
-    (void)lpEnvironment; (void)lpCurrentDirectory;
-    (void)lpStartupInfo; (void)lpProcessInformation;
+                                LPSECURITY_ATTRIBUTES lpProcessAttributes,
+                                LPSECURITY_ATTRIBUTES lpThreadAttributes, BOOL bInheritHandles,
+                                DWORD dwCreationFlags, LPVOID lpEnvironment,
+                                LPCSTR lpCurrentDirectory, LPSTARTUPINFOA lpStartupInfo,
+                                LPPROCESS_INFORMATION lpProcessInformation) {
+    (void)lpApplicationName;
+    (void)lpCommandLine;
+    (void)lpProcessAttributes;
+    (void)lpThreadAttributes;
+    (void)bInheritHandles;
+    (void)dwCreationFlags;
+    (void)lpEnvironment;
+    (void)lpCurrentDirectory;
+    (void)lpStartupInfo;
+    (void)lpProcessInformation;
     // Stub - process creation is complex
     s_lastError = 5; // ERROR_ACCESS_DENIED
     return 0;
@@ -983,22 +1053,26 @@ static DWORD shim_GetCurrentProcessId(void) {
 
 static BOOL shim_GetExitCodeProcess(HANDLE hProcess, LPDWORD lpExitCode) {
     (void)hProcess;
-    if (lpExitCode) *lpExitCode = 0;
+    if (lpExitCode)
+        *lpExitCode = 0;
     return 1;
 }
 
 static BOOL shim_DuplicateHandle(HANDLE hSourceProcessHandle, HANDLE hSourceHandle,
-    HANDLE hTargetProcessHandle, LPHANDLE lpTargetHandle,
-    DWORD dwDesiredAccess, BOOL bInheritHandle, DWORD dwOptions)
-{
-    (void)hSourceProcessHandle; (void)hTargetProcessHandle;
-    (void)dwDesiredAccess; (void)bInheritHandle; (void)dwOptions;
+                                 HANDLE hTargetProcessHandle, LPHANDLE lpTargetHandle,
+                                 DWORD dwDesiredAccess, BOOL bInheritHandle, DWORD dwOptions) {
+    (void)hSourceProcessHandle;
+    (void)hTargetProcessHandle;
+    (void)dwDesiredAccess;
+    (void)bInheritHandle;
+    (void)dwOptions;
     int newfd = dup(HANDLE_TO_FD(hSourceHandle));
     if (newfd < 0) {
         s_lastError = (DWORD)errno;
         return 0;
     }
-    if (lpTargetHandle) *lpTargetHandle = FD_TO_HANDLE(newfd);
+    if (lpTargetHandle)
+        *lpTargetHandle = FD_TO_HANDLE(newfd);
     return 1;
 }
 
@@ -1020,12 +1094,11 @@ static BOOL shim_DuplicateHandle(HANDLE hSourceProcessHandle, HANDLE hSourceHand
 // asked for a guarantee and would carry on believing it had one.
 static const DWORD kPageSize = 4096;
 
-static LPVOID shim_VirtualAlloc(LPVOID lpAddress, SIZE_T dwSize,
-    DWORD flAllocationType, DWORD flProtect)
-{
+static LPVOID shim_VirtualAlloc(LPVOID lpAddress, SIZE_T dwSize, DWORD flAllocationType,
+                                DWORD flProtect) {
     // PAGE_EXECUTE, _READ, _READWRITE — nothing in the language grants these.
     if (flProtect & (0x10 | 0x20 | 0x40 | 0x80)) {
-        s_lastError = 50;   // ERROR_NOT_SUPPORTED
+        s_lastError = 50; // ERROR_NOT_SUPPORTED
         return NULL;
     }
     // A specific base address is a request about the address space itself.
@@ -1039,15 +1112,17 @@ static LPVOID shim_VirtualAlloc(LPVOID lpAddress, SIZE_T dwSize,
         s_lastError = 50;
         return NULL;
     }
-    if (dwSize == 0) { s_lastError = 87; return NULL; }   // ERROR_INVALID_PARAMETER
+    if (dwSize == 0) {
+        s_lastError = 87;
+        return NULL;
+    } // ERROR_INVALID_PARAMETER
 
     // Rounded up to a page and aligned to one, because callers of VirtualAlloc
     // are entitled to both.
     const SIZE_T rounded = ((dwSize + kPageSize - 1) / kPageSize) * kPageSize;
-    void* result = ::operator new(rounded, std::align_val_t(kPageSize),
-                                  std::nothrow);
+    void *result = ::operator new(rounded, std::align_val_t(kPageSize), std::nothrow);
     if (result == NULL) {
-        s_lastError = 8;    // ERROR_NOT_ENOUGH_MEMORY
+        s_lastError = 8; // ERROR_NOT_ENOUGH_MEMORY
         return NULL;
     }
     // VirtualAlloc hands back zeroed pages and callers rely on it.
@@ -1058,16 +1133,17 @@ static LPVOID shim_VirtualAlloc(LPVOID lpAddress, SIZE_T dwSize,
 static BOOL shim_VirtualFree(LPVOID lpAddress, SIZE_T dwSize, DWORD dwFreeType) {
     (void)dwSize;
     (void)dwFreeType;
-    if (lpAddress == NULL) return 0;
+    if (lpAddress == NULL)
+        return 0;
     ::operator delete(lpAddress, std::align_val_t(kPageSize));
     return 1;
 }
 
 static SIZE_T shim_VirtualQuery(LPCVOID lpAddress, PMEMORY_BASIC_INFORMATION lpBuffer,
-    SIZE_T dwLength)
-{
+                                SIZE_T dwLength) {
     (void)lpAddress;
-    if (!lpBuffer || dwLength < sizeof(_MEMORY_BASIC_INFORMATION)) return 0;
+    if (!lpBuffer || dwLength < sizeof(_MEMORY_BASIC_INFORMATION))
+        return 0;
     memset(lpBuffer, 0, sizeof(_MEMORY_BASIC_INFORMATION));
     lpBuffer->BaseAddress = (PVOID)lpAddress;
     lpBuffer->RegionSize = 4096;
@@ -1078,7 +1154,7 @@ static SIZE_T shim_VirtualQuery(LPCVOID lpAddress, PMEMORY_BASIC_INFORMATION lpB
 
 static HGLOBAL shim_GlobalAlloc(UINT uFlags, SIZE_T dwBytes) {
     (void)uFlags;
-    void* ptr = calloc(1, dwBytes > 0 ? dwBytes : 1);
+    void *ptr = calloc(1, dwBytes > 0 ? dwBytes : 1);
     return (HGLOBAL)ptr;
 }
 
@@ -1099,7 +1175,8 @@ static BOOL shim_GlobalUnlock(HGLOBAL hMem) {
 
 // The figures and the 32-bit clamping are core/host_memory's.
 static void shim_GlobalMemoryStatus(LPMEMORYSTATUS lpBuffer) {
-    if (!lpBuffer) return;
+    if (!lpBuffer)
+        return;
     nocturne_memory_status(nocturne_host_memory(), lpBuffer);
 }
 
@@ -1123,8 +1200,9 @@ static void shim_GlobalMemoryStatus(LPMEMORYSTATUS lpBuffer) {
 // it is asked for with GetModuleHandle, and the joystick calls it goes on to
 // make are shimmed directly.
 static HMODULE shim_LoadLibraryA(LPCSTR lpLibFileName) {
-    void* builtin = nocturne_builtin_dll_open(lpLibFileName);
-    if (builtin) return (HMODULE)builtin;
+    void *builtin = nocturne_builtin_dll_open(lpLibFileName);
+    if (builtin)
+        return (HMODULE)builtin;
     s_lastError = 126; // ERROR_MOD_NOT_FOUND
     return NULL;
 }
@@ -1132,12 +1210,12 @@ static HMODULE shim_LoadLibraryA(LPCSTR lpLibFileName) {
 static BOOL shim_FreeLibrary(HMODULE hLibModule) {
     // Built-in modules are static data — nothing to unload, and nothing else
     // can have been loaded.
-    return nocturne_builtin_dll_is_handle((void*)hLibModule) ? 1 : 0;
+    return nocturne_builtin_dll_is_handle((void *)hLibModule) ? 1 : 0;
 }
 
 static FARPROC shim_GetProcAddress(HMODULE hModule, LPCSTR lpProcName) {
-    if (nocturne_builtin_dll_is_handle((void*)hModule)) {
-        void* proc = nocturne_builtin_dll_sym((void*)hModule, lpProcName);
+    if (nocturne_builtin_dll_is_handle((void *)hModule)) {
+        void *proc = nocturne_builtin_dll_sym((void *)hModule, lpProcName);
         if (!proc) {
             s_lastError = 127; // ERROR_PROC_NOT_FOUND
         }
@@ -1159,7 +1237,8 @@ static FARPROC shim_GetProcAddress(HMODULE hModule, LPCSTR lpProcName) {
 static HMODULE shim_GetModuleHandleA(LPCSTR lpModuleName) {
     // NULL asks for the running program itself. There is no handle for it here,
     // and no caller wants one — the game passes a name.
-    if (!lpModuleName) return NULL;
+    if (!lpModuleName)
+        return NULL;
     return (HMODULE)nocturne_builtin_dll_open(lpModuleName);
 }
 
@@ -1168,19 +1247,23 @@ static HMODULE shim_GetModuleHandleA(LPCSTR lpModuleName) {
 // answer; Windows' runtime holds it in _pgmptr, which is what the real
 // GetModuleFileNameA would hand back and needs no Win32 header to read; macOS
 // has dyld's _NSGetExecutablePath, which fails rather than truncates.
-static ssize_t host_program_path(char* out, size_t cap) {
-    if (cap == 0) return -1;
+static ssize_t host_program_path(char *out, size_t cap) {
+    if (cap == 0)
+        return -1;
 #if defined(_WIN32)
-    const char* path = _pgmptr;
-    if (!path) return -1;
+    const char *path = _pgmptr;
+    if (!path)
+        return -1;
     size_t len = strlen(path);
-    if (len > cap - 1) len = cap - 1;
+    if (len > cap - 1)
+        len = cap - 1;
     memcpy(out, path, len);
     out[len] = '\0';
     return (ssize_t)len;
 #elif defined(__APPLE__)
     uint32_t size = (uint32_t)cap;
-    if (_NSGetExecutablePath(out, &size) != 0) return -1;
+    if (_NSGetExecutablePath(out, &size) != 0)
+        return -1;
     return (ssize_t)strlen(out);
 #else
     return readlink("/proc/self/exe", out, cap - 1);
@@ -1191,7 +1274,8 @@ static DWORD shim_GetModuleFileNameA(HMODULE hModule, LPSTR lpFilename, DWORD nS
     (void)hModule;
     // A path that cannot be had, or no room for one, is 0 with nothing written.
     ssize_t len = host_program_path(lpFilename, nSize);
-    if (len < 0) return 0;
+    if (len < 0)
+        return 0;
     lpFilename[len] = '\0';
     return (DWORD)len;
 }
@@ -1200,10 +1284,11 @@ static DWORD shim_GetModuleFileNameA(HMODULE hModule, LPSTR lpFilename, DWORD nS
 // one. A failure there is an empty path here.
 static DWORD shim_GetModuleFileNameW(HMODULE hModule, LPWSTR lpFilename, DWORD nSize) {
     // No room even for the terminator.
-    if (nSize == 0) return 0;
+    if (nSize == 0)
+        return 0;
     char narrow[4096] = "";
-    const DWORD len = shim_GetModuleFileNameA(hModule, narrow,
-                                              nSize < sizeof(narrow) ? nSize : (DWORD)sizeof(narrow));
+    const DWORD len = shim_GetModuleFileNameA(
+        hModule, narrow, nSize < sizeof(narrow) ? nSize : (DWORD)sizeof(narrow));
     for (DWORD i = 0; i <= len; i++) {
         lpFilename[i] = (wchar_t)(unsigned char)narrow[i];
     }
@@ -1214,17 +1299,16 @@ static DWORD shim_GetModuleFileNameW(HMODULE hModule, LPWSTR lpFilename, DWORD n
 // Time / Performance Shims
 // =============================================================================
 
-static BOOL shim_QueryPerformanceCounter(LARGE_INTEGER* lpPerformanceCount) {
+static BOOL shim_QueryPerformanceCounter(LARGE_INTEGER *lpPerformanceCount) {
     // steady_clock is the one that only goes forwards. A performance counter
     // that could step backwards when the system clock is corrected would make
     // every elapsed-time measurement in the game briefly negative.
-    const std::chrono::nanoseconds since =
-        std::chrono::steady_clock::now().time_since_epoch();
+    const std::chrono::nanoseconds since = std::chrono::steady_clock::now().time_since_epoch();
     lpPerformanceCount->QuadPart = (LONGLONG)since.count();
     return 1;
 }
 
-static BOOL shim_QueryPerformanceFrequency(LARGE_INTEGER* lpFrequency) {
+static BOOL shim_QueryPerformanceFrequency(LARGE_INTEGER *lpFrequency) {
     lpFrequency->QuadPart = 1000000000LL; // nanoseconds
     return 1;
 }
@@ -1265,7 +1349,7 @@ static DWORD shim_GetVersion(void) {
 // FILETIME Conversion Shims
 // =============================================================================
 
-static BOOL shim_FileTimeToLocalFileTime(FILETIME* lpFileTime, LPFILETIME lpLocalFileTime) {
+static BOOL shim_FileTimeToLocalFileTime(FILETIME *lpFileTime, LPFILETIME lpLocalFileTime) {
     // Convert UTC FILETIME to local by applying timezone offset
     struct timespec ts;
     filetime_to_timespec(lpFileTime, &ts);
@@ -1278,7 +1362,7 @@ static BOOL shim_FileTimeToLocalFileTime(FILETIME* lpFileTime, LPFILETIME lpLoca
     return 1;
 }
 
-static BOOL shim_LocalFileTimeToFileTime(FILETIME* lpLocalFileTime, LPFILETIME lpFileTime) {
+static BOOL shim_LocalFileTimeToFileTime(FILETIME *lpLocalFileTime, LPFILETIME lpFileTime) {
     struct timespec ts;
     filetime_to_timespec(lpLocalFileTime, &ts);
     struct tm tm_buf;
@@ -1289,7 +1373,7 @@ static BOOL shim_LocalFileTimeToFileTime(FILETIME* lpLocalFileTime, LPFILETIME l
     return 1;
 }
 
-static BOOL shim_FileTimeToSystemTime(FILETIME* lpFileTime, LPSYSTEMTIME lpSystemTime) {
+static BOOL shim_FileTimeToSystemTime(FILETIME *lpFileTime, LPSYSTEMTIME lpSystemTime) {
     struct timespec ts;
     filetime_to_timespec(lpFileTime, &ts);
     struct tm tm_buf;
@@ -1305,7 +1389,7 @@ static BOOL shim_FileTimeToSystemTime(FILETIME* lpFileTime, LPSYSTEMTIME lpSyste
     return 1;
 }
 
-static BOOL shim_SystemTimeToFileTime(SYSTEMTIME* lpSystemTime, LPFILETIME lpFileTime) {
+static BOOL shim_SystemTimeToFileTime(SYSTEMTIME *lpSystemTime, LPFILETIME lpFileTime) {
     struct tm tm_buf;
     memset(&tm_buf, 0, sizeof(tm_buf));
     tm_buf.tm_year = lpSystemTime->wYear - 1900;
@@ -1339,20 +1423,17 @@ static BOOL shim_DosDateTimeToFileTime(WORD wFatDate, WORD wFatTime, LPFILETIME 
     return 1;
 }
 
-static BOOL shim_FileTimeToDosDateTime(FILETIME* lpFileTime, LPWORD lpFatDate, LPWORD lpFatTime) {
+static BOOL shim_FileTimeToDosDateTime(FILETIME *lpFileTime, LPWORD lpFatDate, LPWORD lpFatTime) {
     struct timespec ts;
     filetime_to_timespec(lpFileTime, &ts);
     struct tm tm_buf;
     gmtime_r(&ts.tv_sec, &tm_buf);
     if (lpFatDate) {
-        *lpFatDate = (WORD)(((tm_buf.tm_year - 80) << 9) |
-                            ((tm_buf.tm_mon + 1) << 5) |
-                            tm_buf.tm_mday);
+        *lpFatDate =
+            (WORD)(((tm_buf.tm_year - 80) << 9) | ((tm_buf.tm_mon + 1) << 5) | tm_buf.tm_mday);
     }
     if (lpFatTime) {
-        *lpFatTime = (WORD)((tm_buf.tm_hour << 11) |
-                            (tm_buf.tm_min << 5) |
-                            (tm_buf.tm_sec / 2));
+        *lpFatTime = (WORD)((tm_buf.tm_hour << 11) | (tm_buf.tm_min << 5) | (tm_buf.tm_sec / 2));
     }
     return 1;
 }
@@ -1385,9 +1466,11 @@ static DWORD shim_TlsAlloc(void) {
 }
 
 static BOOL shim_TlsFree(DWORD dwTlsIndex) {
-    if (dwTlsIndex >= MAX_TLS_SLOTS) return 0;
+    if (dwTlsIndex >= MAX_TLS_SLOTS)
+        return 0;
     std::lock_guard<std::mutex> held(s_tlsMutex);
-    if (!s_tlsUsed[dwTlsIndex]) return 0;
+    if (!s_tlsUsed[dwTlsIndex])
+        return 0;
     s_tlsUsed[dwTlsIndex] = false;
     // Only this thread's copy can be cleared from here, which is the same reach
     // pthread_key_delete had: it releases the key without touching the values
@@ -1400,7 +1483,7 @@ static BOOL shim_TlsFree(DWORD dwTlsIndex) {
 // a bad index: that is how a caller tells an empty slot from a failure.
 static LPVOID shim_TlsGetValue(DWORD dwTlsIndex) {
     if (dwTlsIndex >= MAX_TLS_SLOTS || !s_tlsUsed[dwTlsIndex]) {
-        s_lastError = 87;   // ERROR_INVALID_PARAMETER
+        s_lastError = 87; // ERROR_INVALID_PARAMETER
         return NULL;
     }
     s_lastError = 0;
@@ -1408,7 +1491,8 @@ static LPVOID shim_TlsGetValue(DWORD dwTlsIndex) {
 }
 
 static BOOL shim_TlsSetValue(DWORD dwTlsIndex, LPVOID lpTlsValue) {
-    if (dwTlsIndex >= MAX_TLS_SLOTS || !s_tlsUsed[dwTlsIndex]) return 0;
+    if (dwTlsIndex >= MAX_TLS_SLOTS || !s_tlsUsed[dwTlsIndex])
+        return 0;
     s_tlsValues[dwTlsIndex] = lpTlsValue;
     return 1;
 }
@@ -1427,15 +1511,14 @@ static void shim_SetLastError(DWORD dwErrCode) {
 
 static LPTOP_LEVEL_EXCEPTION_FILTER s_unhandledFilter = NULL;
 
-static LPTOP_LEVEL_EXCEPTION_FILTER shim_SetUnhandledExceptionFilter(
-    LPTOP_LEVEL_EXCEPTION_FILTER lpTopLevelExceptionFilter)
-{
+static LPTOP_LEVEL_EXCEPTION_FILTER
+shim_SetUnhandledExceptionFilter(LPTOP_LEVEL_EXCEPTION_FILTER lpTopLevelExceptionFilter) {
     LPTOP_LEVEL_EXCEPTION_FILTER prev = s_unhandledFilter;
     s_unhandledFilter = lpTopLevelExceptionFilter;
     return prev;
 }
 
-static LONGVAL shim_UnhandledExceptionFilter(struct _EXCEPTION_POINTERS* ExceptionInfo) {
+static LONGVAL shim_UnhandledExceptionFilter(struct _EXCEPTION_POINTERS *ExceptionInfo) {
     (void)ExceptionInfo;
     return 0; // EXCEPTION_CONTINUE_SEARCH
 }
@@ -1455,13 +1538,15 @@ static LONGVAL shim_UnhandledExceptionFilter(struct _EXCEPTION_POINTERS* Excepti
 static char s_commandLine[sizeof(g_CommandLineBuffer)] = "";
 static wchar_t s_commandLineW[sizeof(g_CommandLineBuffer)] = L"";
 
-void shims_set_command_line(int argc, char** argv) {
+void shims_set_command_line(int argc, char **argv) {
     size_t used = 0;
     for (int i = 0; i < argc && used + 1 < sizeof(s_commandLine); i++) {
-        if (i > 0) s_commandLine[used++] = ' ';
+        if (i > 0)
+            s_commandLine[used++] = ' ';
         size_t len = strlen(argv[i]);
         const size_t room = sizeof(s_commandLine) - used - 1;
-        if (len > room) len = room;
+        if (len > room)
+            len = room;
         memcpy(s_commandLine + used, argv[i], len);
         used += len;
     }
@@ -1481,17 +1566,18 @@ static LPWSTR shim_GetCommandLineW(void) {
 
 static LPSTR shim_GetEnvironmentStrings(void) {
     // Return a double-null-terminated block of "KEY=VALUE\0" pairs
-    extern char** environ;
+    extern char **environ;
     size_t total = 0;
     for (int i = 0; environ[i]; i++) {
         total += strlen(environ[i]) + 1;
     }
     total++; // double null terminator
 
-    char* block = new (std::nothrow) char[total];
-    if (!block) return NULL;
+    char *block = new (std::nothrow) char[total];
+    if (!block)
+        return NULL;
 
-    char* p = block;
+    char *p = block;
     for (int i = 0; environ[i]; i++) {
         size_t len = strlen(environ[i]);
         memcpy(p, environ[i], len + 1);
@@ -1519,13 +1605,15 @@ static BOOL shim_SetEnvironmentVariableW(LPCWSTR lpName, LPCWSTR lpValue) {
     // Basic wchar->char conversion
     char name[256], value[1024];
     int i;
-    for (i = 0; lpName[i] && i < 255; i++) name[i] = (char)lpName[i];
+    for (i = 0; lpName[i] && i < 255; i++)
+        name[i] = (char)lpName[i];
     name[i] = '\0';
 
     if (!lpValue) {
         unsetenv(name);
     } else {
-        for (i = 0; lpValue[i] && i < 1023; i++) value[i] = (char)lpValue[i];
+        for (i = 0; lpValue[i] && i < 1023; i++)
+            value[i] = (char)lpValue[i];
         value[i] = '\0';
         setenv(name, value, 1);
     }
@@ -1545,7 +1633,7 @@ static BOOL shim_GetComputerNameA(LPSTR lpBuffer, LPDWORD nSize) {
     const size_t length = strlen(name);
     if (length + 1 > (size_t)*nSize) {
         *nSize = (DWORD)(length + 1);
-        s_lastError = 111;  // ERROR_BUFFER_OVERFLOW
+        s_lastError = 111; // ERROR_BUFFER_OVERFLOW
         return 0;
     }
     memcpy(lpBuffer, name, length + 1);
@@ -1563,8 +1651,9 @@ static UINT shim_GetOEMCP(void) {
 
 static BOOL shim_GetCPInfo(UINT CodePage, LPCPINFO lpCPInfo) {
     (void)CodePage;
-    if (!lpCPInfo) return 0;
-    _cpinfo* info = lpCPInfo;
+    if (!lpCPInfo)
+        return 0;
+    _cpinfo *info = lpCPInfo;
     info->MaxCharSize = 1;
     info->DefaultChar[0] = '?';
     info->DefaultChar[1] = 0;
@@ -1576,10 +1665,8 @@ static BOOL shim_GetCPInfo(UINT CodePage, LPCPINFO lpCPInfo) {
 // String Conversion Shims
 // =============================================================================
 
-static int shim_MultiByteToWideChar(UINT CodePage, DWORD dwFlags,
-    LPCSTR lpMultiByteStr, int cbMultiByte,
-    LPWSTR lpWideCharStr, int cchWideChar)
-{
+static int shim_MultiByteToWideChar(UINT CodePage, DWORD dwFlags, LPCSTR lpMultiByteStr,
+                                    int cbMultiByte, LPWSTR lpWideCharStr, int cchWideChar) {
     (void)CodePage;
     (void)dwFlags;
 
@@ -1589,7 +1676,8 @@ static int shim_MultiByteToWideChar(UINT CodePage, DWORD dwFlags,
     else
         len = cbMultiByte;
 
-    if (cchWideChar == 0) return len; // Query size
+    if (cchWideChar == 0)
+        return len; // Query size
 
     int count = (len < cchWideChar) ? len : cchWideChar;
     for (int i = 0; i < count; i++) {
@@ -1598,29 +1686,30 @@ static int shim_MultiByteToWideChar(UINT CodePage, DWORD dwFlags,
     return count;
 }
 
-static int shim_WideCharToMultiByte(UINT CodePage, DWORD dwFlags,
-    LPCWSTR lpWideCharStr, int cchWideChar,
-    LPSTR lpMultiByteStr, int cbMultiByte,
-    LPCSTR lpDefaultChar, LPBOOL lpUsedDefaultChar)
-{
+static int shim_WideCharToMultiByte(UINT CodePage, DWORD dwFlags, LPCWSTR lpWideCharStr,
+                                    int cchWideChar, LPSTR lpMultiByteStr, int cbMultiByte,
+                                    LPCSTR lpDefaultChar, LPBOOL lpUsedDefaultChar) {
     (void)CodePage;
     (void)dwFlags;
 
     // What stands in for a character the code page cannot hold, and whether it
     // had to, as Win32 reports them.
     const char fallback = lpDefaultChar ? *lpDefaultChar : '?';
-    if (lpUsedDefaultChar) *lpUsedDefaultChar = 0;
+    if (lpUsedDefaultChar)
+        *lpUsedDefaultChar = 0;
 
     int len;
     if (cchWideChar == -1) {
         len = 0;
-        while (lpWideCharStr[len]) len++;
+        while (lpWideCharStr[len])
+            len++;
         len++; // include null
     } else {
         len = cchWideChar;
     }
 
-    if (cbMultiByte == 0) return len; // Query size
+    if (cbMultiByte == 0)
+        return len; // Query size
 
     int count = (len < cbMultiByte) ? len : cbMultiByte;
     for (int i = 0; i < count; i++) {
@@ -1629,7 +1718,8 @@ static int shim_WideCharToMultiByte(UINT CodePage, DWORD dwFlags,
             lpMultiByteStr[i] = (char)wc;
         } else {
             lpMultiByteStr[i] = fallback;
-            if (lpUsedDefaultChar) *lpUsedDefaultChar = 1;
+            if (lpUsedDefaultChar)
+                *lpUsedDefaultChar = 1;
         }
     }
     return count;
@@ -1644,7 +1734,7 @@ static int shim_WideCharToMultiByte(UINT CodePage, DWORD dwFlags,
 // that is not open, where Win32 and the other runtimes answer with an error —
 // CloseHandle on a closed file is FALSE, not a crash. Every descriptor call in
 // the shims checks for that error, so a handler that returns lets them see it.
-static void return_on_invalid_parameter(const wchar_t*, const wchar_t*, const wchar_t*,
+static void return_on_invalid_parameter(const wchar_t *, const wchar_t *, const wchar_t *,
                                         unsigned int, uintptr_t) {}
 #endif
 

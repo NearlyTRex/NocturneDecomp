@@ -22,4 +22,4 @@ extern std::map<std::string, std::string> values;
 // to `value`.
 void save(const std::string &section, const std::string &key, const std::string &value);
 
-}  // namespace ini_support
+} // namespace ini_support

@@ -2,10 +2,9 @@
 // HERO DEATH — a killed player falls, and a fallen one can be brought back
 // =============================================================================
 
-#include "nocturne_test.h"
-
 #include "game/hero_death.h"
 #include "game_support.h"
+#include "nocturne_test.h"
 
 using namespace game_support;
 
@@ -17,7 +16,7 @@ void dying_states() {
     stand.motion_states["STAND"] = 0;
 }
 
-}  // namespace
+} // namespace
 
 // Only a player at no health stops regenerating.
 NOCTURNE_TEST(only_a_player_at_no_health_stops_regenerating) {
@@ -39,7 +38,8 @@ NOCTURNE_TEST(a_player_at_no_health_is_sent_to_die) {
     heroes[0]->base.hit_points = 0.0f;
     nocturne_hero_check_death(heroes[0]);
     CHECK_EQ(stand.forced.size(), (size_t)1);
-    if (!stand.forced.empty()) CHECK_EQ(stand.forced[0].second, 4);
+    if (!stand.forced.empty())
+        CHECK_EQ(stand.forced[0].second, 4);
 }
 
 // Not when alive, not a player, already dying or dead, already headed for
@@ -91,7 +91,8 @@ NOCTURNE_TEST(a_fallen_hero_is_brought_back) {
     CHECK_EQ(heroes[0]->base.hit_points, 100.0f);
     CHECK_EQ(stand.jumped.size(), (size_t)1);
     CHECK_EQ(stand.desired.size(), (size_t)1);
-    if (!stand.desired.empty()) CHECK(stand.desired[0] == std::make_pair(0, 1));
+    if (!stand.desired.empty())
+        CHECK(stand.desired[0] == std::make_pair(0, 1));
     CHECK(stand.reassembled.empty());
 
     // Swallowed whole with his health intact.

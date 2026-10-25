@@ -5,12 +5,12 @@
 // See dialogue_override.h.
 
 #include "game/dialogue_override.h"
+
 #include "core/ascii_case.h"
 #include "net/net_hero.h"
-#include "watcom/path.h"
-#include "shim_config.h"
-
 #include "nocturne.h"
+#include "shim_config.h"
+#include "watcom/path.h"
 
 #include <cstdio>
 #include <cstring>
@@ -19,18 +19,18 @@
 namespace {
 
 struct DialogueOverride {
-    const char *mission;     // CDemonMission::mission_name, without case
-    const char *line;        // the line's database key (its sound's stem), without case
-    int         unless;      // EHeroType it never applies to: the one recorded saying it
-    const char *caption;     // replaces the database caption; its "{name}" is the speaker's
+    const char *mission; // CDemonMission::mission_name, without case
+    const char *line;    // the line's database key (its sound's stem), without case
+    int unless;          // EHeroType it never applies to: the one recorded saying it
+    const char *caption; // replaces the database caption; its "{name}" is the speaker's
 };
 
 const DialogueOverride k_overrides[] = {
     // ACT2's gas room chokes whichever hero `$` resolves to. Both lines are
     // the Stranger's recordings.
-    { "MINE", "a2s3_stranger01", HERO_TYPE_STRANGER, "{name}: Gas. Can't breathe." },
-    { "MINE", "a2s3_stranger02", HERO_TYPE_STRANGER,
-      "{name}: I can't go back in there without some kind of gas mask." },
+    {"MINE", "a2s3_stranger01", HERO_TYPE_STRANGER, "{name}: Gas. Can't breathe."},
+    {"MINE", "a2s3_stranger02", HERO_TYPE_STRANGER,
+     "{name}: I can't go back in there without some kind of gas mask."},
 };
 
 const int k_override_count = (int)(sizeof(k_overrides) / sizeof(k_overrides[0]));
@@ -53,8 +53,7 @@ const DialogueOverride *find(const char *mission, const char *sound_name, int sp
     for (int i = 0; i < k_override_count; i++) {
         const DialogueOverride *entry = &k_overrides[i];
         if (nocturne_ascii_icompare(entry->mission, mission) == 0 &&
-            nocturne_ascii_icompare(entry->line, line.c_str()) == 0 &&
-            entry->unless != speaker) {
+            nocturne_ascii_icompare(entry->line, line.c_str()) == 0 && entry->unless != speaker) {
             return entry;
         }
     }

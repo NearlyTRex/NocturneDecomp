@@ -3,19 +3,18 @@
 // =============================================================================
 
 #include "net/net_packets.h"
+
 #include "nocturne.h"
 
 #include <cstring>
 
-extern "C" int nocturne_net_serial_take(SNetSerialWindow *window, int serial)
-{
+extern "C" int nocturne_net_serial_take(SNetSerialWindow *window, int serial) {
     int highest = window->highest;
 
     if (highest < serial) {
         int shift = serial - highest;
-        window->seen_below = (shift < 32)
-            ? ((window->seen_below << shift) | (1u << (shift - 1)))
-            : 0u;
+        window->seen_below =
+            (shift < 32) ? ((window->seen_below << shift) | (1u << (shift - 1))) : 0u;
         if (highest == 0) {
             window->seen_below = 0u;
         }
@@ -33,8 +32,7 @@ extern "C" int nocturne_net_serial_take(SNetSerialWindow *window, int serial)
     return 1;
 }
 
-extern "C" void nocturne_net_packet_init(void *packet, int size, int type)
-{
+extern "C" void nocturne_net_packet_init(void *packet, int size, int type) {
     SNetPacketHeader *header = (SNetPacketHeader *)packet;
 
     std::memset(packet, 0, (size_t)size);
@@ -42,8 +40,7 @@ extern "C" void nocturne_net_packet_init(void *packet, int size, int type)
     header->type = (ENetPacketType)type;
 }
 
-extern "C" int nocturne_net_packet_is(const void *packet, int packet_size, int type, int min_size)
-{
+extern "C" int nocturne_net_packet_is(const void *packet, int packet_size, int type, int min_size) {
     if ((packet == (const void *)0x0) || (packet_size < min_size)) {
         return 0;
     }

@@ -19,12 +19,11 @@
 // back at what the pipeline held at that point. Nothing is asserted about how
 // the renderer gets there.
 
-#include "nocturne_test.h"
+#include "debug/focus_trace.h"
 #include "gl_present_support.h"
 #include "gl_recorder.h"
-
 #include "nocturne.h"
-#include "debug/focus_trace.h"
+#include "nocturne_test.h"
 #include "renderer/builtin_dll.h"
 #include "renderer/trigl_device.h"
 #include "renderer/trigl_gl.h"
@@ -108,7 +107,8 @@ void *entry(const char *name) {
     int count = 0;
     const NocturneBuiltinExport *table = nocturne_trigl_native_exports(&count);
     for (int i = 0; i < count; ++i) {
-        if (strcmp(table[i].name, name) == 0) return table[i].proc;
+        if (strcmp(table[i].name, name) == 0)
+            return table[i].proc;
     }
     return nullptr;
 }
@@ -166,7 +166,8 @@ struct Frame {
         // the call that would set it is skipped as redundant and the test reads
         // the previous test's leftovers. The teardown runs first because it
         // deletes GL objects and needs the recorder that made them.
-        if (void *kill = entry("APIDLLkill")) ((VoidFn)kill)();
+        if (void *kill = entry("APIDLLkill"))
+            ((VoidFn)kill)();
         nocturne_trigl_gl_shutdown();
 
         gl_recorder::install();
@@ -178,9 +179,9 @@ struct Frame {
 
     void select(SMRGLTextureBasic *info, std::vector<unsigned> &pixels,
                 std::vector<unsigned char> &palette) {
-        ((SelectTextureFn)entry("APIDLLselectTexture"))(
-            info, engine.texture_dimension, (uchar *)pixels.data(),
-            (uchar *)palette.data(), nullptr);
+        ((SelectTextureFn)entry("APIDLLselectTexture"))(info, engine.texture_dimension,
+                                                        (uchar *)pixels.data(),
+                                                        (uchar *)palette.data(), nullptr);
     }
 
     void draw(int render_flags = kOpaque) {
@@ -198,7 +199,7 @@ unsigned resolved(const char *name, int dimension) {
     return nocturne_trigl_gl_texture_cached(name, dimension);
 }
 
-}  // namespace
+} // namespace
 
 // -----------------------------------------------------------------------------
 // The invariant the live probe could not see: a draw goes out with the image it
@@ -242,9 +243,11 @@ NOCTURNE_TEST(a_draw_goes_out_with_the_texture_it_asked_for) {
     // Every draw carries the texture that was bound when it went out.
     bool saw_coat = false;
     for (const gl_recorder::Call &call : log.calls) {
-        if (call.name != "DrawElements") continue;
+        if (call.name != "DrawElements")
+            continue;
         CHECK(call.a == coat_texture || call.a == face_texture);
-        if (call.a == coat_texture) saw_coat = true;
+        if (call.a == coat_texture)
+            saw_coat = true;
     }
     // The coat's polygons must have reached the hardware as the coat. If the
     // upload left its binding, this is the check that fails.
@@ -277,7 +280,8 @@ NOCTURNE_TEST(an_upload_between_draws_does_not_reach_the_pending_batch) {
 
     const gl_recorder::State &log = gl_recorder::state();
     for (const gl_recorder::Call &call : log.calls) {
-        if (call.name != "DrawElements") continue;
+        if (call.name != "DrawElements")
+            continue;
         CHECK_EQ(call.a, first_texture);
     }
 }
@@ -303,7 +307,8 @@ NOCTURNE_TEST(a_textured_draw_never_goes_out_with_nothing_bound) {
     const gl_recorder::State &log = gl_recorder::state();
     CHECK(log.count("DrawElements") >= 1);
     for (const gl_recorder::Call &call : log.calls) {
-        if (call.name != "DrawElements") continue;
+        if (call.name != "DrawElements")
+            continue;
         CHECK(call.a != 0);
     }
 }
@@ -327,9 +332,10 @@ NOCTURNE_TEST(every_draw_has_a_program_and_a_vertex_array) {
     const gl_recorder::State &log = gl_recorder::state();
     CHECK(log.count("DrawElements") >= 1);
     for (const gl_recorder::Call &call : log.calls) {
-        if (call.name != "DrawElements") continue;
-        CHECK(call.c != 0);   // program
-        CHECK(call.d != 0);   // vertex array
+        if (call.name != "DrawElements")
+            continue;
+        CHECK(call.c != 0); // program
+        CHECK(call.d != 0); // vertex array
     }
 }
 
@@ -374,14 +380,16 @@ NOCTURNE_TEST(depth_survives_a_present) {
     int disabled_at = -1;
     for (int i = 0; i < (int)log.calls.size(); ++i) {
         const gl_recorder::Call &call = log.calls[(size_t)i];
-        if (call.name == "Disable" && call.a == GL_DEPTH_TEST) disabled_at = i;
+        if (call.name == "Disable" && call.a == GL_DEPTH_TEST)
+            disabled_at = i;
     }
     CHECK(disabled_at >= 0);
 
     int draws_after = 0;
     for (int i = disabled_at + 1; i < (int)log.calls.size(); ++i) {
         const gl_recorder::Call &call = log.calls[(size_t)i];
-        if (call.name != "DrawElements") continue;
+        if (call.name != "DrawElements")
+            continue;
         ++draws_after;
         // kOpaque asks for depth test and depth write.
         CHECK(call.depth_test != 0);
@@ -416,7 +424,8 @@ NOCTURNE_TEST(depth_survives_the_frame_being_locked_and_unlocked) {
     const gl_recorder::State &log = gl_recorder::state();
     CHECK(log.count("DrawElements") >= 1);
     for (const gl_recorder::Call &call : log.calls) {
-        if (call.name != "DrawElements") continue;
+        if (call.name != "DrawElements")
+            continue;
         CHECK(call.depth_test != 0);
         CHECK(call.depth_write != 0);
     }
@@ -443,7 +452,8 @@ NOCTURNE_TEST(depth_writes_stay_off_across_a_depth_clear) {
     const gl_recorder::State &log = gl_recorder::state();
     CHECK(log.count("DrawElements") >= 2);
     for (const gl_recorder::Call &call : log.calls) {
-        if (call.name != "DrawElements") continue;
+        if (call.name != "DrawElements")
+            continue;
         CHECK(call.depth_test != 0);
         CHECK(call.depth_write == 0);
     }
@@ -454,13 +464,14 @@ NOCTURNE_TEST(depth_writes_stay_off_across_a_depth_clear) {
 NOCTURNE_TEST(a_depth_box_clear_includes_its_right_and_bottom_edges) {
     Frame frame;
     frame.begin();
-    typedef int(__cdecl *ClearZBoxFn)(int, int, int, int);
+    typedef int(__cdecl * ClearZBoxFn)(int, int, int, int);
     CHECK(((ClearZBoxFn)entry("APIDLLclearZBox"))(10, 19, 20, 29) == 1);
 
     const gl_recorder::State &log = gl_recorder::state();
     int scissors = 0;
     for (const gl_recorder::Call &call : log.calls) {
-        if (call.name != "Scissor") continue;
+        if (call.name != "Scissor")
+            continue;
         ++scissors;
         // 480 lines, counted from the bottom: rows 20..29 start at 480 - 30.
         CHECK(call.a == 10);
@@ -526,15 +537,19 @@ std::vector<SRenderVertex> fan(int count) {
     return vertices;
 }
 
-int draws() { return gl_recorder::state().count("DrawElements"); }
+int draws() {
+    return gl_recorder::state().count("DrawElements");
+}
 
 std::string read_text(const std::string &path) {
     std::string text;
     FILE *f = fopen(path.c_str(), "rb");
-    if (f == nullptr) return text;
+    if (f == nullptr)
+        return text;
     char chunk[512];
     size_t got = 0;
-    while ((got = fread(chunk, 1, sizeof(chunk), f)) > 0) text.append(chunk, got);
+    while ((got = fread(chunk, 1, sizeof(chunk), f)) > 0)
+        text.append(chunk, got);
     fclose(f);
     return text;
 }
@@ -543,7 +558,7 @@ std::string temp_path(const char *leaf) {
     return std::filesystem::temp_directory_path().string() + "/" + leaf;
 }
 
-}  // namespace
+} // namespace
 
 // -----------------------------------------------------------------------------
 // Describing itself
@@ -566,7 +581,8 @@ NOCTURNE_TEST(the_renderer_describes_itself_as_the_engine_checks) {
 
 // One card, named by the driver; every answer is optional to ask for.
 NOCTURNE_TEST(there_is_one_card_with_room_to_spare) {
-    CHECK_EQ(api<CardListFn>("APIDLLbuildCardList")(nullptr, nullptr, nullptr, nullptr, nullptr), 1);
+    CHECK_EQ(api<CardListFn>("APIDLLbuildCardList")(nullptr, nullptr, nullptr, nullptr, nullptr),
+             1);
     int count = 0, vendor = -1, device = -1;
     char *driver = nullptr;
     char *name = nullptr;
@@ -649,7 +665,7 @@ NOCTURNE_TEST(the_frame_entry_points_reach_the_device) {
     gl_recorder::State &s = gl_recorder::state();
     CHECK_EQ(api<VoidIntFn>("APIDLLlockFrame")(), 1);
     CHECK_EQ(api<VoidIntFn>("APIDLLunlockFrame")(), 1);
-    CHECK_EQ(api<VoidIntFn>("APIDLLlockHoldBuffer")(), 0);    // no rows handed over
+    CHECK_EQ(api<VoidIntFn>("APIDLLlockHoldBuffer")(), 0); // no rows handed over
     CHECK_EQ(api<VoidIntFn>("APIDLLunlockHoldBuffer")(), 1);
     CHECK_EQ(api<VoidIntFn>("APIDLLclear")(), 1);
     CHECK_EQ(api<VoidIntFn>("APIDLLclearZBuffer")(), 1);
@@ -679,7 +695,7 @@ NOCTURNE_TEST(an_armed_focus_trace_hears_every_frame_event) {
     api<VoidIntFn>("APIDLLunlockHoldBuffer")();
     api<VoidIntFn>("APIDLLclear")();
     api<VoidIntFn>("APIDLLclearZBuffer")();
-    typedef int(__cdecl *ClearZBoxFn)(int, int, int, int);
+    typedef int(__cdecl * ClearZBoxFn)(int, int, int, int);
     api<ClearZBoxFn>("APIDLLclearZBox")(0, 1, 0, 1);
     api<IntFn>("APIDLLmasterZBuffer")(0);
     api<RestoreZFn>("APIDLLrestoreZBuffer")(0, 0, 0, 1, 1);
@@ -714,7 +730,7 @@ struct PixelFormat {
     }
 };
 
-}  // namespace
+} // namespace
 
 // The format the engine draws its 2D in is the CPU image's: RGB565 at 16 bits,
 // ARGB8888 otherwise, with the bits each channel loses as its dither shift.
@@ -723,7 +739,7 @@ NOCTURNE_TEST(the_colour_table_is_built_in_the_images_format) {
     PixelFormat format;
     format.point(engine.bridge);
     std::vector<unsigned char> palette(768, 0);
-    palette[3] = 0xF8;  // entry 1: red
+    palette[3] = 0xF8; // entry 1: red
     palette[4] = 0xFC;
     palette[5] = 0x08;
     std::vector<ushort> table(256, 0);
@@ -806,7 +822,8 @@ NOCTURNE_TEST(an_update_reuploads_and_opacity_is_counted) {
     std::vector<unsigned char> palette(768, 0x40);
     std::vector<unsigned char> pixels(64, 1);
     std::vector<unsigned char> opacity(64, 0xFF);
-    for (int i = 0; i < 16; ++i) opacity[(size_t)i] = 0;
+    for (int i = 0; i < 16; ++i)
+        opacity[(size_t)i] = 0;
     SMRGLTextureBasic wall = named("wall.raw");
     SelectTextureFn select = api<SelectTextureFn>("APIDLLselectTexture");
     SelectTextureFn update = api<SelectTextureFn>("APIDLLupdateTexture");
@@ -888,7 +905,8 @@ NOCTURNE_TEST(every_polygon_form_draws) {
     SMRGLPrimitiveQuad *six = (SMRGLPrimitiveQuad *)record.data();
     six->base.base.count = 6;
     SMRGLVertex *listed = six->vertices;
-    for (int i = 0; i < 6; ++i) listed[i].vertex_index = i;
+    for (int i = 0; i < 6; ++i)
+        listed[i].vertex_index = i;
     SMRGLPrimitiveQuad two{};
     two.base.base.count = 2;
     SMRGLPrimitiveQuad *list[3] = {six, nullptr, &two};
@@ -963,7 +981,7 @@ NOCTURNE_TEST(the_draw_counters_say_what_each_draw_was) {
     restart(&engine.bridge);
     nocturne_trigl_stats_reset();
     DrawPolyListFn draw = api<DrawPolyListFn>("APIDLLdrawPolyList");
-    draw(quad.vertices, quad.list, 1, kOpaque);            // textured, nothing selected
+    draw(quad.vertices, quad.list, 1, kOpaque); // textured, nothing selected
     draw(quad.vertices, quad.list, 1, kOpaque & ~NOCTURNE_TRIGL_FLAG_TEXTURED);
     draw(quad.vertices, quad.list, 1, kOpaque | NOCTURNE_TRIGL_FLAG_BLEND);
     CHECK_EQ(nocturne_trigl_stats.draws, 3u);
@@ -989,9 +1007,9 @@ NOCTURNE_TEST(the_marked_texture_can_skip_the_depth_comparison) {
     gl_recorder::State &s = gl_recorder::state();
 
     nocturne_trigl_paint_depth = 1;
-    draw(quad.vertices, quad.list, 1, kOpaque);                 // nothing marked
+    draw(quad.vertices, quad.list, 1, kOpaque); // nothing marked
     nocturne_trigl_paint_texture = (int)(texture + 1);
-    draw(quad.vertices, quad.list, 1, kOpaque | NOCTURNE_TRIGL_FLAG_BLEND);  // another marked
+    draw(quad.vertices, quad.list, 1, kOpaque | NOCTURNE_TRIGL_FLAG_BLEND); // another marked
     nocturne_trigl_paint_texture = (int)texture;
     s.calls.clear();
     draw(quad.vertices, quad.list, 1, kOpaque);

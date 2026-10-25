@@ -284,79 +284,79 @@ extern "C" {
 // than appending a line onto the wrong page to avoid it.
 
 // Gameplay.
-#define NOCTURNE_CHEAT_GOD_MODE          0
-#define NOCTURNE_CHEAT_FREEZE            1
-#define NOCTURNE_CHEAT_DISMEMBER         2
-#define NOCTURNE_CHEAT_WEATHER           3   // three states, see below
-#define NOCTURNE_CHEAT_BIG_HEAD          4
-#define NOCTURNE_CHEAT_OLD_HAT           5
+#define NOCTURNE_CHEAT_GOD_MODE 0
+#define NOCTURNE_CHEAT_FREEZE 1
+#define NOCTURNE_CHEAT_DISMEMBER 2
+#define NOCTURNE_CHEAT_WEATHER 3 // three states, see below
+#define NOCTURNE_CHEAT_BIG_HEAD 4
+#define NOCTURNE_CHEAT_OLD_HAT 5
 // No shipped cheat code of its own: the flashlight/goggles battery drain has no
 // engine flag to arm, so this is polled in place by CInventory::updateInventory
 // rather than applied at mission start.
-#define NOCTURNE_CHEAT_INF_BATTERY       6
+#define NOCTURNE_CHEAT_INF_BATTERY 6
 // No cheat code either: the shipped way to raise an event is the RAISE dialog,
 // which is behind developer mode and wants the name typed.
-#define NOCTURNE_CHEAT_EASTER_EGGS       7
+#define NOCTURNE_CHEAT_EASTER_EGGS 7
 
 // Guns & ammo. The "all" line leads its page, the way the shipped WINBLOWS
 // stands in for the whole list.
-#define NOCTURNE_CHEAT_ALL_GUNS          8
-#define NOCTURNE_CHEAT_SHOTGUN           9
-#define NOCTURNE_CHEAT_CROSSBOW         10
-#define NOCTURNE_CHEAT_DYNAMITE         11
-#define NOCTURNE_CHEAT_FLAME_THROWER    12
-#define NOCTURNE_CHEAT_TOMMY_GUN        13
-#define NOCTURNE_CHEAT_ELEPHANT_GUN     14
-#define NOCTURNE_CHEAT_LIGHT_GUN        15
-#define NOCTURNE_CHEAT_FLAMING_AMMO     16
-#define NOCTURNE_CHEAT_SILVER_AMMO      17
-#define NOCTURNE_CHEAT_LITHIUM_AMMO     18
-#define NOCTURNE_CHEAT_MERCURY_AMMO     19
+#define NOCTURNE_CHEAT_ALL_GUNS 8
+#define NOCTURNE_CHEAT_SHOTGUN 9
+#define NOCTURNE_CHEAT_CROSSBOW 10
+#define NOCTURNE_CHEAT_DYNAMITE 11
+#define NOCTURNE_CHEAT_FLAME_THROWER 12
+#define NOCTURNE_CHEAT_TOMMY_GUN 13
+#define NOCTURNE_CHEAT_ELEPHANT_GUN 14
+#define NOCTURNE_CHEAT_LIGHT_GUN 15
+#define NOCTURNE_CHEAT_FLAMING_AMMO 16
+#define NOCTURNE_CHEAT_SILVER_AMMO 17
+#define NOCTURNE_CHEAT_LITHIUM_AMMO 18
+#define NOCTURNE_CHEAT_MERCURY_AMMO 19
 
 // Melee weapons, each named for the model it carries, since that is what the
 // inventory keys its own name and description off.
-#define NOCTURNE_CHEAT_ALL_MELEE           20
-#define NOCTURNE_CHEAT_MELEE_WOODSMANS_AXE 21   // ax.kfm
-#define NOCTURNE_CHEAT_MELEE_AXE           22   // axe1.kfm
-#define NOCTURNE_CHEAT_MELEE_BLADED        23   // tort1.kfm
-#define NOCTURNE_CHEAT_MELEE_SHOVEL        24   // shoveit.kfm
-#define NOCTURNE_CHEAT_MELEE_SPEAR         25   // melee.kfm
-#define NOCTURNE_CHEAT_MELEE_STAKE         26   // stakelong.kfm
-#define NOCTURNE_CHEAT_MELEE_RELIC         27   // holyitem.kfm
+#define NOCTURNE_CHEAT_ALL_MELEE 20
+#define NOCTURNE_CHEAT_MELEE_WOODSMANS_AXE 21 // ax.kfm
+#define NOCTURNE_CHEAT_MELEE_AXE 22           // axe1.kfm
+#define NOCTURNE_CHEAT_MELEE_BLADED 23        // tort1.kfm
+#define NOCTURNE_CHEAT_MELEE_SHOVEL 24        // shoveit.kfm
+#define NOCTURNE_CHEAT_MELEE_SPEAR 25         // melee.kfm
+#define NOCTURNE_CHEAT_MELEE_STAKE 26         // stakelong.kfm
+#define NOCTURNE_CHEAT_MELEE_RELIC 27         // holyitem.kfm
 
 // Items. The health items lead, one line per kind the game actually names.
-#define NOCTURNE_CHEAT_ITEM_TONIC        28   // a1-bottle.kfm
-#define NOCTURNE_CHEAT_ITEM_DOCBAG       29   // a3-docbag.kfm
-#define NOCTURNE_CHEAT_ITEM_SCOTCH       30   // a3-bottle.kfm
-#define NOCTURNE_CHEAT_ITEM_HIRAM_KIT    31   // health_hirambag.kfm
-#define NOCTURNE_CHEAT_ITEM_CANDY        32   // candy.kfm
+#define NOCTURNE_CHEAT_ITEM_TONIC 28     // a1-bottle.kfm
+#define NOCTURNE_CHEAT_ITEM_DOCBAG 29    // a3-docbag.kfm
+#define NOCTURNE_CHEAT_ITEM_SCOTCH 30    // a3-bottle.kfm
+#define NOCTURNE_CHEAT_ITEM_HIRAM_KIT 31 // health_hirambag.kfm
+#define NOCTURNE_CHEAT_ITEM_CANDY 32     // candy.kfm
 #define NOCTURNE_CHEAT_ITEM_SKELETON_KEY 33
-#define NOCTURNE_CHEAT_ITEM_GAS_MASK     34
-#define NOCTURNE_CHEAT_ITEM_BARON        35   // a2s2-pouch.kfm
+#define NOCTURNE_CHEAT_ITEM_GAS_MASK 34
+#define NOCTURNE_CHEAT_ITEM_BARON 35 // a2s2-pouch.kfm
 
 // Debug. Developer mode leads, so the flat apply loop sets it before the codes
 // the shipped binary gates behind it.
-#define NOCTURNE_CHEAT_DEV_MODE         36
-#define NOCTURNE_CHEAT_GEOMETRY_DEBUG   37
-#define NOCTURNE_CHEAT_COLLISION_DEBUG  38
-#define NOCTURNE_CHEAT_EVENT_DEBUG      39
-#define NOCTURNE_CHEAT_SCRIPT_DEBUG     40
-#define NOCTURNE_CHEAT_MEMORY_DEBUG     41
-#define NOCTURNE_CHEAT_SOUND_DEBUG      42
-#define NOCTURNE_CHEAT_RENDER_MODE      43
+#define NOCTURNE_CHEAT_DEV_MODE 36
+#define NOCTURNE_CHEAT_GEOMETRY_DEBUG 37
+#define NOCTURNE_CHEAT_COLLISION_DEBUG 38
+#define NOCTURNE_CHEAT_EVENT_DEBUG 39
+#define NOCTURNE_CHEAT_SCRIPT_DEBUG 40
+#define NOCTURNE_CHEAT_MEMORY_DEBUG 41
+#define NOCTURNE_CHEAT_SOUND_DEBUG 42
+#define NOCTURNE_CHEAT_RENDER_MODE 43
 // NOD3D. Suppresses set geometry: all five CDemonSet batch render paths open
 // with a test of the field this sets.
 #define NOCTURNE_CHEAT_HIDE_SET_GEOMETRY 44
 // Nothing to apply: it decides whether the pause menu offers WARPS, so it is
 // read where that menu is built rather than written into engine state at
 // mission start. See shims/game/warps.h.
-#define NOCTURNE_CHEAT_WARPS            45
+#define NOCTURNE_CHEAT_WARPS 45
 // Nothing to apply: a frame-rate readout drawn by shims/debug/perf_overlay.h.
-#define NOCTURNE_CHEAT_PERF_STATS       46
-#define NOCTURNE_CHEAT_COUNT            47
+#define NOCTURNE_CHEAT_PERF_STATS 46
+#define NOCTURNE_CHEAT_COUNT 47
 
 // The weather line's states, in cycle order.
-#define NOCTURNE_CHEAT_WEATHER_OFF  0
+#define NOCTURNE_CHEAT_WEATHER_OFF 0
 #define NOCTURNE_CHEAT_WEATHER_RAIN 1
 #define NOCTURNE_CHEAT_WEATHER_SNOW 2
 

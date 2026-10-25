@@ -7,11 +7,10 @@
 // held screen stays up for a fixed time, and the input frame built before it
 // went up is dropped on every machine.
 
-#include "nocturne_test.h"
-#include "net_support.h"
-
 #include "net/net_keepalive.h"
+#include "net_support.h"
 #include "nocturne.h"
+#include "nocturne_test.h"
 
 namespace {
 
@@ -19,7 +18,7 @@ using net_support::heroes;
 using net_support::net;
 using net_support::stand;
 
-}  // namespace
+} // namespace
 
 // Before any held screen, none is up; once one starts, it is.
 NOCTURNE_TEST(a_held_screen_is_up_once_begun) {

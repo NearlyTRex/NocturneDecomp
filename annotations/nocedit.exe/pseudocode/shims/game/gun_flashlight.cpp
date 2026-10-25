@@ -5,10 +5,10 @@
 // See gun_flashlight.h.
 
 #include "game/gun_flashlight.h"
-#include "game/hero_light.h"
-#include "shim_config.h"
 
+#include "game/hero_light.h"
 #include "nocturne.h"
+#include "shim_config.h"
 
 #if !NOCTURNE_AUTHENTIC_HERO_ACTIONS
 
@@ -25,9 +25,9 @@ const CDemonActorType *const k_classes[] = {
 // button, so a hero holding one is left to that.
 bool carries_lamp(CHero *hero) {
     for (int hand = 0; hand < 2; hand++) {
-        if (core_actor_cpp_castToClassHash_FUN_0040c790(
-                (hero->base).carry_hands[hand].carry_actor,
-                g_CLightActorClassInfo.name_hash) != nullptr) {
+        if (core_actor_cpp_castToClassHash_FUN_0040c790((hero->base).carry_hands[hand].carry_actor,
+                                                        g_CLightActorClassInfo.name_hash) !=
+            nullptr) {
             return true;
         }
     }
@@ -55,8 +55,7 @@ void apply_input(CHero *hero) {
     int *flashlight = nocturne_hero_flashlight(hero);
     CWeapon *weapon = hero->inventory.selected_weapon;
     const bool takes_light = (weapon != nullptr) && (weapon->can_attach_light != 0);
-    const bool drawn =
-        (*(((hero->base).base.vtable._uh)->_uh).isWeaponDrawn)(hero) != 0;
+    const bool drawn = (*(((hero->base).base.vtable._uh)->_uh).isWeaponDrawn)(hero) != 0;
 
     if (*flashlight != 0 && (!drawn || !takes_light)) {
         *flashlight = 0;

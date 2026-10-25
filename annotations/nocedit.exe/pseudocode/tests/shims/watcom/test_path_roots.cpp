@@ -6,9 +6,8 @@
 // one directory that cannot be written, saves and settings in another. Each case
 // builds both, asks for a path the way the game would, and checks where it lands.
 
-#include "nocturne_test.h"
-
 #include "core/file_search.h"
+#include "nocturne_test.h"
 #include "system/watcom.h"
 #include "watcom/path.h"
 
@@ -58,11 +57,15 @@ struct Install {
         return std::string(std::istreambuf_iterator<char>(in), std::istreambuf_iterator<char>());
     }
 
-    std::string in_user(const char *relative) const { return (user / relative).generic_string(); }
-    std::string in_data(const char *relative) const { return (data / relative).generic_string(); }
+    std::string in_user(const char *relative) const {
+        return (user / relative).generic_string();
+    }
+    std::string in_data(const char *relative) const {
+        return (data / relative).generic_string();
+    }
 };
 
-}  // namespace
+} // namespace
 
 NOCTURNE_TEST(a_read_finds_the_shipped_file_in_any_case) {
     Install install;
@@ -166,7 +169,8 @@ NOCTURNE_TEST(a_data_directory_alone_is_the_only_place) {
     CHECK(fs::equivalent(watcom_resolve_fs_path("act1.pod"), install.in_data("ACT1.POD")));
     const std::vector<std::string> dirs = watcom_resolve_fs_dirs("SAVE");
     CHECK_EQ(dirs.size(), (size_t)1);
-    if (dirs.size() == 1) CHECK(fs::equivalent(dirs[0], install.in_data("save")));
+    if (dirs.size() == 1)
+        CHECK(fs::equivalent(dirs[0], install.in_data("save")));
 }
 
 // "." is the root itself, and no directory at all lists both roots whole. A name

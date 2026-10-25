@@ -5,9 +5,9 @@
 // See net_keepalive.h for what this is and which screens need it.
 
 #include "net/net_keepalive.h"
-#include "nocturne.h"
 
 #include "core/clock.h"
+#include "nocturne.h"
 
 #include <cstring>
 
@@ -27,8 +27,12 @@ const float k_keepalive_ping_seconds = 1.0f;
 int s_in_keepalive = 0;
 
 struct ReentryGuard {
-    ReentryGuard()  { s_in_keepalive = 1; }
-    ~ReentryGuard() { s_in_keepalive = 0; }
+    ReentryGuard() {
+        s_in_keepalive = 1;
+    }
+    ~ReentryGuard() {
+        s_in_keepalive = 0;
+    }
 };
 
 // How long a held screen stays up in a network game, in seconds. Long enough to
@@ -54,8 +58,7 @@ void clear_hero_inputs() {
 
 } // namespace
 
-extern "C" void nocturne_net_keepalive(void)
-{
+extern "C" void nocturne_net_keepalive(void) {
     CNetGame *net;
     int i;
 
@@ -89,18 +92,15 @@ extern "C" void nocturne_net_keepalive(void)
     core_netgame_cpp_CNetGame_receivePackets_FUN_005405b0(net);
 }
 
-extern "C" void nocturne_net_hold_begin(void)
-{
+extern "C" void nocturne_net_hold_begin(void) {
     s_hold_deadline = nocturne_now_seconds() + k_hold_seconds;
 }
 
-extern "C" int nocturne_net_hold_active(void)
-{
+extern "C" int nocturne_net_hold_active(void) {
     return nocturne_now_seconds() < s_hold_deadline ? 1 : 0;
 }
 
-extern "C" void nocturne_net_hold_end(void)
-{
+extern "C" void nocturne_net_hold_end(void) {
     CNetGame *net = g_CNetGamePtr;
     int own_index;
     int i;
@@ -130,8 +130,7 @@ extern "C" void nocturne_net_hold_end(void)
     }
 }
 
-extern "C" void nocturne_net_hold_apply_if_due(int sequence_number)
-{
+extern "C" void nocturne_net_hold_apply_if_due(int sequence_number) {
     if (sequence_number != s_stale_sequence) {
         return;
     }

@@ -2,10 +2,9 @@
 // STATUS BARS — a hero's bar sized by his maximum health
 // =============================================================================
 
-#include "nocturne_test.h"
-
 #include "game/status_bar.h"
 #include "game_support.h"
+#include "nocturne_test.h"
 
 #include <cstdio>
 
@@ -19,7 +18,7 @@ CCharacter *named(CCharacter *c, const char *name, float max_health) {
     return c;
 }
 
-}  // namespace
+} // namespace
 
 // A hero's bar is as long as his maximum health against the hundred the
 // shipped bar stands for, found under any case of his name.

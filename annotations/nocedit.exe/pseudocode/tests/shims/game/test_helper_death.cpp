@@ -2,10 +2,9 @@
 // HELPER DEATH — a helper's death ends the mission
 // =============================================================================
 
-#include "nocturne_test.h"
-
 #include "game/helper_death.h"
 #include "game_support.h"
+#include "nocturne_test.h"
 
 #include <memory>
 

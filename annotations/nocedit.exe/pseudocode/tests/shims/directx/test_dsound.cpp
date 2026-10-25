@@ -9,16 +9,14 @@
 // volume and distance, summed with the others and clipped. SDL's disk driver
 // writes the output to a file, so each case reads back what was heard.
 
-#include "nocturne_test.h"
-
 #include "globals/globals_610000.h"
+#include "nocturne_test.h"
 #include "system/dsound.h"
 #include "win32/shim_init.h"
 
 // The test's own main(), which SDL would otherwise rename on Windows.
 #define SDL_MAIN_HANDLED
 #include <SDL.h>
-
 #include <cmath>
 #include <cstdint>
 #include <cstdio>
@@ -44,8 +42,10 @@ const DWORD kModeDisable = 2;
 
 // The ones the game asks a buffer for.
 GUID iid_3d_buffer = {0x279AFA86, 0x4981, 0x11CE, {0xA5, 0x21, 0x00, 0x20, 0xAF, 0x0B, 0xE5, 0x60}};
-GUID iid_3d_listener = {0x279AFA84, 0x4981, 0x11CE, {0xA5, 0x21, 0x00, 0x20, 0xAF, 0x0B, 0xE5, 0x60}};
-GUID iid_property_set = {0x31EFAC30, 0x515C, 0x11D0, {0xA9, 0xAA, 0x00, 0xAA, 0x00, 0x61, 0xBE, 0x93}};
+GUID iid_3d_listener = {
+    0x279AFA84, 0x4981, 0x11CE, {0xA5, 0x21, 0x00, 0x20, 0xAF, 0x0B, 0xE5, 0x60}};
+GUID iid_property_set = {
+    0x31EFAC30, 0x515C, 0x11D0, {0xA9, 0xAA, 0x00, 0xAA, 0x00, 0x61, 0xBE, 0x93}};
 
 void set_env(const char *name, const char *value) {
 #if defined(_WIN32)
@@ -96,7 +96,8 @@ struct Sound {
         CHECK_EQ((*g_DirectSoundCreateFunc)(nullptr, &ds, nullptr), kOk);
     }
     ~Sound() {
-        if (ds != nullptr) release(ds);
+        if (ds != nullptr)
+            release(ds);
         SDL_QuitSubSystem(SDL_INIT_AUDIO);
         std::error_code ec;
         fs::remove(file, ec);
@@ -107,7 +108,7 @@ struct Sound {
         DSBUFFERDESC desc;
         memset(&desc, 0, sizeof(desc));
         desc.dwSize = sizeof(desc);
-        desc.dwFlags = 0xb0;   // the game's: volume, pan, frequency
+        desc.dwFlags = 0xb0; // the game's: volume, pan, frequency
         desc.dwBufferBytes = bytes;
         desc.lpwfxFormat = &copy;
         IDirectSoundBuffer *buf = nullptr;
@@ -119,7 +120,7 @@ struct Sound {
         DSBUFFERDESC desc;
         memset(&desc, 0, sizeof(desc));
         desc.dwSize = sizeof(desc);
-        desc.dwFlags = kPrimary | 0x10;   // and 3D, as the game first asks
+        desc.dwFlags = kPrimary | 0x10; // and 3D, as the game first asks
         IDirectSoundBuffer *buf = nullptr;
         CHECK_EQ((*ds->vtable->CreateSoundBuffer)(ds, &desc, &buf, nullptr), kOk);
         return buf;
@@ -132,7 +133,8 @@ struct Sound {
         ds = nullptr;
         std::vector<int16_t> samples;
         FILE *in = fopen(file.string().c_str(), "rb");
-        if (in == nullptr) return samples;
+        if (in == nullptr)
+            return samples;
         int16_t pair[2];
         while (fread(pair, sizeof(pair), 1, in) == 1) {
             samples.push_back(pair[0]);
@@ -187,7 +189,8 @@ struct Heard {
 Heard what_was_heard(const std::vector<int16_t> &out) {
     Heard h;
     for (size_t i = 0; i + 1 < out.size(); i += 2) {
-        if (out[i] == 0 && out[i + 1] == 0) continue;
+        if (out[i] == 0 && out[i + 1] == 0)
+            continue;
         if (h.frames == 0) {
             h.left = out[i];
             h.right = out[i + 1];
@@ -214,7 +217,7 @@ Heard play_once(Setup setup, int frames = 4410, int rate = 44100) {
 
 void no_setup(Sound &, IDirectSoundBuffer *) {}
 
-}  // namespace
+} // namespace
 
 // -----------------------------------------------------------------------------
 // What comes out
@@ -295,12 +298,11 @@ NOCTURNE_TEST(a_buffer_plays_at_its_frequency) {
 NOCTURNE_TEST(volume_is_attenuation_in_hundredths_of_a_decibel) {
     const Heard h = play_once([](Sound &, IDirectSoundBuffer *b) {
         (*b->vtable->SetVolume)(b, 0);
-        for (int i = 0; i < 100; ++i) (*b->vtable->SetVolume)(b, -2000);
+        for (int i = 0; i < 100; ++i)
+            (*b->vtable->SetVolume)(b, -2000);
     });
     CHECK_EQ(h.left, 100);
-    CHECK_EQ(play_once([](Sound &, IDirectSoundBuffer *b) {
-                 (*b->vtable->SetVolume)(b, 0);
-             }).left,
+    CHECK_EQ(play_once([](Sound &, IDirectSoundBuffer *b) { (*b->vtable->SetVolume)(b, 0); }).left,
              1000);
 }
 
@@ -355,7 +357,7 @@ NOCTURNE_TEST(the_cursor_is_set_to_a_whole_frame_within_the_buffer) {
     Sound sound;
     IDirectSoundBuffer *buf = sound.buffer(400, pcm(2, 16, 44100));
     DWORD play = 0, write = 0;
-    CHECK_EQ((*buf->vtable->SetCurrentPosition)(buf, 398), kOk);   // mid-frame
+    CHECK_EQ((*buf->vtable->SetCurrentPosition)(buf, 398), kOk); // mid-frame
     (*buf->vtable->GetCurrentPosition)(buf, &play, &write);
     CHECK_EQ(play, 396u);
     CHECK_EQ((*buf->vtable->SetCurrentPosition)(buf, 1003), kOk);
@@ -403,20 +405,22 @@ NOCTURNE_TEST(a_duplicate_shares_its_originals_samples) {
     release(dup);
     const Heard h = what_was_heard(sound.heard());
     CHECK_EQ(h.frames, 4410);
-    CHECK_EQ(h.left, 100);   // and its volume
+    CHECK_EQ(h.left, 100); // and its volume
 }
 
 // Past the mixer's sixty-four voices a buffer still works, unheard.
 NOCTURNE_TEST(past_sixty_four_voices_a_buffer_is_silent) {
     Sound sound;
     std::vector<IDirectSoundBuffer *> voices;
-    for (int i = 0; i < 64; ++i) voices.push_back(sound.buffer(4, pcm(1, 16, 44100)));
+    for (int i = 0; i < 64; ++i)
+        voices.push_back(sound.buffer(4, pcm(1, 16, 44100)));
     IDirectSoundBuffer *unheard = sound.buffer(441 * 2, pcm(1, 16, 44100));
     fill(unheard, 441 * 2, 16, 1, 1000, 1000);
     CHECK_EQ((*unheard->vtable->Play)(unheard, 0, 0, 0), kOk);
     SDL_Delay(50);
     release(unheard);
-    for (IDirectSoundBuffer *v : voices) release(v);
+    for (IDirectSoundBuffer *v : voices)
+        release(v);
     CHECK_EQ(what_was_heard(sound.heard()).frames, 0);
 }
 
@@ -435,11 +439,13 @@ NOCTURNE_TEST(without_an_output_buffers_play_unheard_until_there_is_one) {
     std::vector<SDL_AudioDeviceID> taken;
     std::vector<fs::path> elsewhere;
     for (;;) {
-        elsewhere.push_back(fs::path(sound.file).replace_extension(
-            ".taken" + std::to_string(elsewhere.size()) + ".raw"));
+        elsewhere.push_back(
+            fs::path(sound.file)
+                .replace_extension(".taken" + std::to_string(elsewhere.size()) + ".raw"));
         set_env("SDL_DISKAUDIOFILE", elsewhere.back().string().c_str());
         SDL_AudioDeviceID id = SDL_OpenAudioDevice(nullptr, 0, &spec, nullptr, 0);
-        if (id == 0) break;
+        if (id == 0)
+            break;
         taken.push_back(id);
     }
     set_env("SDL_DISKAUDIOFILE", sound.file.string().c_str());
@@ -447,13 +453,15 @@ NOCTURNE_TEST(without_an_output_buffers_play_unheard_until_there_is_one) {
     IDirectSoundBuffer *buf = sound.buffer(441 * 2, pcm(1, 16, 44100));
     fill(buf, 441 * 2, 16, 1, 1000, 1000);
     CHECK_EQ((*buf->vtable->Play)(buf, 0, 0, 0), kOk);
-    for (SDL_AudioDeviceID id : taken) SDL_CloseAudioDevice(id);
+    for (SDL_AudioDeviceID id : taken)
+        SDL_CloseAudioDevice(id);
     CHECK_EQ((*buf->vtable->Play)(buf, 0, 0, 0), kOk);
     wait_until_played(buf);
     release(buf);
     CHECK_EQ(what_was_heard(sound.heard()).frames, 441);
     std::error_code ec;
-    for (const fs::path &file : elsewhere) fs::remove(file, ec);
+    for (const fs::path &file : elsewhere)
+        fs::remove(file, ec);
 }
 
 // -----------------------------------------------------------------------------
@@ -472,12 +480,12 @@ NOCTURNE_TEST(a_positioned_voice_falls_off_with_distance) {
         int level;
     };
     const Case cases[] = {
-        {10, 100, 40, 0, false, 250},   // 10/40
-        {10, 100, 5, 0, false, 1000},   // within the minimum
-        {10, 20, 40, 0, false, 500},    // capped at the maximum: 10/20
-        {0, 100, 4, 0, false, 250},     // a minimum of 0 is 1
-        {10, 5, 40, 0, false, 1000},    // a maximum under the minimum is it
-        {10, 100, 40, 0, true, 500},    // from a listener at 20
+        {10, 100, 40, 0, false, 250}, // 10/40
+        {10, 100, 5, 0, false, 1000}, // within the minimum
+        {10, 20, 40, 0, false, 500},  // capped at the maximum: 10/20
+        {0, 100, 4, 0, false, 250},   // a minimum of 0 is 1
+        {10, 5, 40, 0, false, 1000},  // a maximum under the minimum is it
+        {10, 100, 40, 0, true, 500},  // from a listener at 20
         {10, 100, 40, kModeHeadRelative, true, 250},
         {10, 100, 40, kModeDisable, false, 1000},
         {10, 100, NAN, 0, true, 1000},
@@ -488,7 +496,7 @@ NOCTURNE_TEST(a_positioned_voice_falls_off_with_distance) {
         IDirectSound3DListener *listener = nullptr;
         if (c.listener) {
             CHECK_EQ((*primary->vtable->QueryInterface)((IUnknown *)primary, &iid_3d_listener,
-                                                         (void **)&listener),
+                                                        (void **)&listener),
                      kOk);
             (*listener->vtable->SetPosition)(listener, 20, 0, 0, 0);
             (*listener->vtable->SetVelocity)(listener, 0, 0, 0, 0);
@@ -508,14 +516,14 @@ NOCTURNE_TEST(a_positioned_voice_falls_off_with_distance) {
         (*d3d->vtable->SetVelocity)(d3d, 0, 0, 0, 0);
         // The game's EAX query, which it plays on without.
         void *property_set = nullptr;
-        CHECK_EQ((*d3d->vtable->QueryInterface)((IUnknown *)d3d, &iid_property_set,
-                                                &property_set),
+        CHECK_EQ((*d3d->vtable->QueryInterface)((IUnknown *)d3d, &iid_property_set, &property_set),
                  kUnsupported);
         (*buf->vtable->Play)(buf, 0, 0, 0);
         wait_until_played(buf);
         release(d3d);
         release(buf);
-        if (listener != nullptr) release(listener);
+        if (listener != nullptr)
+            release(listener);
         release(primary);
         const Heard h = what_was_heard(sound.heard());
         CHECK_AT(std::abs(h.left - c.level) <= 1,
@@ -540,13 +548,13 @@ NOCTURNE_TEST(the_3d_view_and_listener_go_in_either_order) {
     (*first->vtable->QueryInterface)((IUnknown *)first, &iid_3d_buffer, (void **)&first_3d);
     (*second->vtable->QueryInterface)((IUnknown *)second, &iid_3d_buffer, (void **)&second_3d);
     (*first_3d->vtable->SetPosition)(first_3d, 1000, 0, 0, 0);
-    CHECK_EQ(release(first_3d), 0u);    // the view first
+    CHECK_EQ(release(first_3d), 0u); // the view first
     CHECK_EQ(release(listener), 0u);
     fill(first, 441 * 2, 16, 1, 1000, 1000);
     (*first->vtable->Play)(first, 0, 0, 0);
     wait_until_played(first);
     CHECK_EQ(release(first), 0u);
-    CHECK_EQ(release(second), 0u);      // the buffer first
+    CHECK_EQ(release(second), 0u); // the buffer first
     CHECK_EQ(release(second_3d), 0u);
     CHECK_EQ(release(primary), 0u);
     CHECK_EQ(what_was_heard(sound.heard()).left, 1000);
@@ -585,7 +593,7 @@ NOCTURNE_TEST(the_primary_buffer_gives_back_its_format) {
     CHECK_EQ((*primary->vtable->GetFormat)(primary, &back, 18, nullptr), kOk);
     CHECK_EQ(back.nSamplesPerSec, 22050u);
     CHECK_EQ(back.wBitsPerSample, 16u);
-    CHECK_EQ(((uint8_t *)&back)[18], 0xee);   // past what was asked for
+    CHECK_EQ(((uint8_t *)&back)[18], 0xee); // past what was asked for
     DWORD written = 0;
     CHECK_EQ((*primary->vtable->GetFormat)(primary, &back, sizeof(back) + 4, &written), kOk);
     CHECK_EQ(written, (DWORD)sizeof(WAVEFORMATEX));
@@ -619,7 +627,7 @@ BOOL record_device(LPGUID guid, LPCSTR description, LPCSTR module, LPVOID contex
     return 1;
 }
 
-}  // namespace
+} // namespace
 
 // One device is listed: by name once SDL's audio is up, by a stand-in before.
 NOCTURNE_TEST(one_device_is_enumerated) {

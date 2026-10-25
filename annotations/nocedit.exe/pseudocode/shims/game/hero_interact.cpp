@@ -5,10 +5,10 @@
 // See hero_interact.h for what this is and which classes were missing it.
 
 #include "game/hero_interact.h"
+
 #include "nocturne.h"
 
-extern "C" int nocturne_hero_interact(CHero *hero)
-{
+extern "C" int nocturne_hero_interact(CHero *hero) {
     int door_result;
 
     if (hero == (CHero *)0x0) {
@@ -42,8 +42,7 @@ extern "C" int nocturne_hero_interact(CHero *hero)
     return 0;
 }
 
-extern "C" void nocturne_hero_fire_interact(CHero *hero)
-{
+extern "C" void nocturne_hero_fire_interact(CHero *hero) {
     if ((hero->player_input.action_state.fire != 0) && (hero->control_type != HERO_CONTROL_AI) &&
         (nocturne_hero_interact(hero) != 0)) {
         hero->player_input.action_state.fire = 0;

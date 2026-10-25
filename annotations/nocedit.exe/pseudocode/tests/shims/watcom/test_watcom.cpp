@@ -21,9 +21,8 @@
 // it — a long handle, and an iterator that says it is done by returning -1.
 
 #include "nocturne_test.h"
-
-#include "system/watcom.h"
 #include "system/dos.h"
+#include "system/watcom.h"
 
 #include <cerrno>
 #include <cstdio>
@@ -72,7 +71,7 @@ struct Tree {
     }
 };
 
-}  // namespace
+} // namespace
 
 // -----------------------------------------------------------------------------
 // _mkdir. Watcom answers 0 for made and -1 for not, and "it was already there"
@@ -143,9 +142,9 @@ NOCTURNE_TEST(a_full_path_answers_for_something_not_there_yet) {
 
 NOCTURNE_TEST(file_attributes_say_directory_and_read_only) {
     Tree tree;
-    const unsigned long kInvalid   = 0xFFFFFFFFul;
+    const unsigned long kInvalid = 0xFFFFFFFFul;
     const unsigned long kDirectory = 0x10;
-    const unsigned long kReadOnly  = 0x01;
+    const unsigned long kReadOnly = 0x01;
 
     CHECK_EQ(__getfileattr("SYSTEM"), kDirectory);
     CHECK_EQ(__getfileattr("ACT1.POD"), 0ul);
@@ -160,8 +159,7 @@ NOCTURNE_TEST(file_attributes_say_directory_and_read_only) {
                     fs::perm_options::remove, ec);
     CHECK_EQ(__getfileattr("ACT1.POD"), kReadOnly);
     // Put it back so the tree can be removed.
-    fs::permissions(fs::path("ACT1.POD"), fs::perms::owner_write,
-                    fs::perm_options::add, ec);
+    fs::permissions(fs::path("ACT1.POD"), fs::perms::owner_write, fs::perm_options::add, ec);
 }
 
 // -----------------------------------------------------------------------------
@@ -171,7 +169,7 @@ NOCTURNE_TEST(file_attributes_say_directory_and_read_only) {
 // No find data, for the cases that only walk. It is a typed void* rather than
 // nullptr because the Windows runtime's <io.h> renames _findfirst to
 // _findfirst64i32, and a bare nullptr matches both that function and the shim's.
-static void* const kNoInfo = nullptr;
+static void *const kNoInfo = nullptr;
 
 NOCTURNE_TEST(finding_walks_every_match_then_stops) {
     Tree tree;
@@ -349,7 +347,8 @@ NOCTURNE_TEST(a_working_directory_that_is_gone_has_no_path) {
 // something for anyone else.
 NOCTURNE_TEST(a_full_path_that_cannot_be_resolved_is_the_path_as_asked) {
     Tree tree;
-    if (geteuid() == 0) return;
+    if (geteuid() == 0)
+        return;
     std::error_code ec;
     fs::create_directories("locked", ec);
     fs::permissions("locked", fs::perms::owner_read, ec);
@@ -380,7 +379,8 @@ NOCTURNE_TEST(a_descriptor_tells_where_it_is_and_can_be_cut_short) {
     Tree tree;
     FILE *f = fopen("sized.bin", "wb+");
     CHECK(f != nullptr);
-    if (f == nullptr) return;
+    if (f == nullptr)
+        return;
     fwrite("0123456789", 1, 10, f);
     fflush(f);
     CHECK_EQ(tell(fileno(f)), 10L);
@@ -405,9 +405,16 @@ struct Slot {
 
 int s_calls;
 
-void make(void *at) { ((Slot *)at)->value = 7; ((Slot *)at)->order = s_calls++; }
-void copy(void *to, void *from) { ((Slot *)to)->value = ((Slot *)from)->value + 1; }
-void unmake(void *at, int) { ((Slot *)at)->order = s_calls++; }
+void make(void *at) {
+    ((Slot *)at)->value = 7;
+    ((Slot *)at)->order = s_calls++;
+}
+void copy(void *to, void *from) {
+    ((Slot *)to)->value = ((Slot *)from)->value + 1;
+}
+void unmake(void *at, int) {
+    ((Slot *)at)->order = s_calls++;
+}
 
 WatcomTypeInfo full_type() {
     WatcomTypeInfo ti = {};
@@ -418,7 +425,7 @@ WatcomTypeInfo full_type() {
     return ti;
 }
 
-}  // namespace
+} // namespace
 
 NOCTURNE_TEST(an_array_is_constructed_first_to_last) {
     WatcomTypeInfo ti = full_type();

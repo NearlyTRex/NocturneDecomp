@@ -11,9 +11,9 @@
 extern const char *version_support_version;
 extern const char *version_support_git;
 
-#define NOCTURNE_VERSION       version_support_version
+#define NOCTURNE_VERSION version_support_version
 #define NOCTURNE_VERSION_MAJOR 1
 #define NOCTURNE_VERSION_MINOR 2
 #define NOCTURNE_VERSION_PATCH 3
-#define NOCTURNE_VERSION_GIT   version_support_git
+#define NOCTURNE_VERSION_GIT version_support_git
 #define NOCTURNE_VERSION_BUILD "test-build"

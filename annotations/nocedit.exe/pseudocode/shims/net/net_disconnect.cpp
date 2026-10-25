@@ -5,8 +5,9 @@
 // See net_disconnect.h.
 
 #include "net/net_disconnect.h"
-#include "shim_config.h"
+
 #include "nocturne.h"
+#include "shim_config.h"
 
 #if !NOCTURNE_AUTHENTIC_NETPLAY
 
@@ -14,8 +15,7 @@
 // guarantee and the receiver ignores repeats.
 #define DISCONNECT_NOTICE_REPEATS 3
 
-extern "C" void nocturne_net_disconnect_notify(CNetGame *net_game)
-{
+extern "C" void nocturne_net_disconnect_notify(CNetGame *net_game) {
     if ((net_game == (CNetGame *)0x0) || (net_game->connection_type == CONNECTION_NONE)) {
         return;
     }
@@ -38,6 +38,8 @@ extern "C" void nocturne_net_disconnect_notify(CNetGame *net_game)
 
 #else
 
-extern "C" void nocturne_net_disconnect_notify(CNetGame *net_game) { (void)net_game; }
+extern "C" void nocturne_net_disconnect_notify(CNetGame *net_game) {
+    (void)net_game;
+}
 
 #endif

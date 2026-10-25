@@ -2,11 +2,10 @@
 // NET HERO — the lobby's hero names, the guests' roster, and whose hero is whose
 // =============================================================================
 
-#include "nocturne_test.h"
-#include "net_support.h"
-
 #include "net/net_hero.h"
+#include "net_support.h"
 #include "nocturne.h"
+#include "nocturne_test.h"
 
 #include <string>
 
@@ -16,7 +15,7 @@ using net_support::heroes;
 using net_support::net;
 using net_support::stand;
 
-}  // namespace
+} // namespace
 
 NOCTURNE_TEST(each_hero_has_a_name_and_anything_else_is_a_question_mark) {
     CHECK_EQ(std::string(nocturne_net_hero_name(HERO_TYPE_GABRIELLA)), std::string("Gabriella"));

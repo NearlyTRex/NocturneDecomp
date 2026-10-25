@@ -2,10 +2,9 @@
 // GOGGLES CAMERA HOLD — a script's camera hold runs out under the goggles
 // =============================================================================
 
-#include "nocturne_test.h"
-
 #include "game/goggles_camera_hold.h"
 #include "game_support.h"
+#include "nocturne_test.h"
 
 #include <memory>
 

@@ -18,29 +18,37 @@
 
 #include "gl_present_support.h"
 
-#include "gl/gl_present.h"
 #include "gl/gl_api.h"
+#include "gl/gl_present.h"
 #include "gl_recorder.h"
 
 namespace gl_present_support {
 
 Presenter presenter;
 
-}  // namespace gl_present_support
+} // namespace gl_present_support
 
 using gl_present_support::presenter;
 
 extern "C" {
 
-int nocturne_gl_scene_target_bind(int, int) { return presenter.target_bind; }
-int nocturne_gl_scene_target_active(void) { return presenter.target_active; }
-int nocturne_gl_ensure_active(void) { return presenter.context; }
+int nocturne_gl_scene_target_bind(int, int) {
+    return presenter.target_bind;
+}
+int nocturne_gl_scene_target_active(void) {
+    return presenter.target_active;
+}
+int nocturne_gl_ensure_active(void) {
+    return presenter.context;
+}
 void nocturne_gl_set_logical_size(int, int) {}
 
 // The renderer draws into the scene framebuffer when there is one. There is none
 // unless a test asks for one, through the recorder's state, and 0 is the answer
 // that means exactly that.
-unsigned nocturne_gl_scene_fbo(void) { return gl_recorder::state().scene_fbo; }
+unsigned nocturne_gl_scene_fbo(void) {
+    return gl_recorder::state().scene_fbo;
+}
 
 // These two leave the pipeline disturbed ON PURPOSE, because the real ones do.
 //
@@ -66,10 +74,10 @@ void nocturne_gl_present_scene(void) {
 void nocturne_gl_scene_upload(const void *pixels, int width, int height, int, int) {
     ++presenter.uploads;
     presenter.upload_pixels = pixels;
-    presenter.upload_width  = width;
+    presenter.upload_width = width;
     presenter.upload_height = height;
     gl.Disable(GL_DEPTH_TEST);
     gl.Disable(GL_BLEND);
 }
 
-}  // extern "C"
+} // extern "C"

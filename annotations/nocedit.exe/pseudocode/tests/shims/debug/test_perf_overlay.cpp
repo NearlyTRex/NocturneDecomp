@@ -7,11 +7,10 @@
 // and renderer, right-aligned in the HUD's font. The clock is the stand's, a
 // millisecond a tick, and so is the presenter's swap total.
 
-#include "nocturne_test.h"
-#include "debug_support.h"
-
 #include "debug/perf_overlay.h"
+#include "debug_support.h"
 #include "nocturne.h"
+#include "nocturne_test.h"
 
 #include <string>
 
@@ -26,7 +25,7 @@ void frame_after(int ms) {
     nocturne_perf_overlay_render();
 }
 
-}  // namespace
+} // namespace
 
 // Off, nothing is drawn.
 NOCTURNE_TEST(while_the_line_is_off_nothing_is_drawn) {
@@ -43,11 +42,12 @@ NOCTURNE_TEST(each_half_second_the_rate_and_frame_times_are_shown) {
     stand.perf_stats = 1;
     stand.counter = 1000;
     g_SmallEditorFont = debug_support::small_font();
-    frame_after(0);                 // the first: the clock starts
+    frame_after(0); // the first: the clock starts
     CHECK_EQ(stand.drawn[0].text, std::string("0 FPS"));
-    for (int i = 0; i < 24; ++i) frame_after(20);
-    stand.swap_ticks = 125;         // 5 ms of each frame in the swap
-    frame_after(20);                // 25 frames in 500 ms
+    for (int i = 0; i < 24; ++i)
+        frame_after(20);
+    stand.swap_ticks = 125; // 5 ms of each frame in the swap
+    frame_after(20);        // 25 frames in 500 ms
     CHECK_EQ(stand.drawn[0].text, std::string("50 FPS"));
     CHECK_EQ(stand.drawn[1].text, std::string("20.0 ms avg  20.0 max"));
     CHECK_EQ(stand.drawn[2].text, std::string("5.0 ms in swap"));
@@ -59,7 +59,8 @@ NOCTURNE_TEST(each_half_second_the_rate_and_frame_times_are_shown) {
 
     // A slow frame is the worst, until the next half second publishes.
     frame_after(100);
-    for (int i = 0; i < 20; ++i) frame_after(20);
+    for (int i = 0; i < 20; ++i)
+        frame_after(20);
     CHECK_EQ(stand.drawn[1].text, std::string("23.8 ms avg  100.0 max"));
     // Only what was spent since the last half second counts.
     CHECK_EQ(stand.drawn[2].text, std::string("0.0 ms in swap"));
@@ -76,7 +77,8 @@ NOCTURNE_TEST(the_time_hidden_is_not_a_frame) {
     frame_after(10000);
     stand.perf_stats = 1;
     frame_after(0);
-    for (int i = 0; i < 25; ++i) frame_after(20);
+    for (int i = 0; i < 25; ++i)
+        frame_after(20);
     CHECK_EQ(stand.drawn[1].text, std::string("20.0 ms avg  20.0 max"));
 }
 

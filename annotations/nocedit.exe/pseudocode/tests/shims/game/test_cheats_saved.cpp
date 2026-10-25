@@ -2,11 +2,10 @@
 // CHEATS, SAVED — the lines a saved INI arms
 // =============================================================================
 
-#include "nocturne_test.h"
 #include "../gl/ini_support.h"
 #include "cheats_support.h"
-
 #include "game/cheats.h"
+#include "nocturne_test.h"
 
 using namespace cheats_support;
 

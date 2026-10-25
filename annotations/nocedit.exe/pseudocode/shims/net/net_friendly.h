@@ -77,15 +77,13 @@ extern "C" {
 //
 // Zero outside a network game, zero when the victim or the source is not a
 // hero, and zero when NOCTURNE_AUTHENTIC_FRIENDLY_FIRE is 1.
-int nocturne_net_friendly_fire_blocked(struct CCharacter *victim,
-                                       struct SDamageInfo *damage_info);
+int nocturne_net_friendly_fire_blocked(struct CCharacter *victim, struct SDamageInfo *damage_info);
 
 // The above, and zeroes damage_info->damage_amount when it answers yes. Reports
 // whether it did, and a caller in a hero's own processDamage should return on
 // that — see the note above. A hit already carrying no damage is not blocked.
 // Call at the top of a hero's processDamage, beside the god-mode test.
-int nocturne_net_friendly_fire_block(struct CCharacter *victim,
-                                     struct SDamageInfo *damage_info);
+int nocturne_net_friendly_fire_block(struct CCharacter *victim, struct SDamageInfo *damage_info);
 
 #ifdef __cplusplus
 }

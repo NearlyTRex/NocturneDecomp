@@ -2,9 +2,8 @@
 // GL PIXELS — the game's bit depths as GL formats, and its rows the other way up
 // =============================================================================
 
-#include "nocturne_test.h"
-
 #include "gl/gl_pixels.h"
+#include "nocturne_test.h"
 #include "shims/renderer/gl_recorder.h"
 
 #include <cstring>
@@ -61,7 +60,7 @@ void APIENTRY record_store(GLenum name, GLint value) {
     g_stores.push_back((int)value);
 }
 
-}  // namespace
+} // namespace
 
 // Desktop GL converts as it reads; the row length is the pitch in pixels, and it
 // is put back afterwards for whoever reads next.
@@ -72,7 +71,7 @@ NOCTURNE_TEST(a_read_asks_for_the_rows_the_pitch_apart) {
     unsigned char dst[64 * 4];
     nocturne_gl_read_pixels(GL_BACK, 10, 4, GL_RGB, GL_UNSIGNED_SHORT_5_6_5, dst, 64);
 
-    const std::vector<int> expected = {GL_PACK_ALIGNMENT, 1, GL_PACK_ROW_LENGTH, 32,
+    const std::vector<int> expected = {GL_PACK_ALIGNMENT,  1, GL_PACK_ROW_LENGTH, 32,
                                        GL_PACK_ROW_LENGTH, 0};
     CHECK(g_stores == expected);
     gl_recorder::State &s = gl_recorder::state();

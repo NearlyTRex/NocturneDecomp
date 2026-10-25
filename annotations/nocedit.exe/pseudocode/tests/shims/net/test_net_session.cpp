@@ -6,20 +6,19 @@
 // it has reached; a packet to every other player; the goodbye sent on leaving
 // without the handshake; and the path-map cache started fresh per mission.
 
-#include "nocturne_test.h"
-#include "net_support.h"
-
 #include "net/net_disconnect.h"
 #include "net/net_pathcache.h"
 #include "net/net_session.h"
+#include "net_support.h"
 #include "nocturne.h"
+#include "nocturne_test.h"
 
 namespace {
 
 using net_support::net;
 using net_support::stand;
 
-}  // namespace
+} // namespace
 
 // No CNetGame, or one that is not connected, is no session.
 NOCTURNE_TEST(with_no_connection_there_is_no_session) {
@@ -58,7 +57,8 @@ NOCTURNE_TEST(the_host_and_a_guest_are_told_apart) {
 NOCTURNE_TEST(a_broadcast_goes_to_every_other_player) {
     stand.reset();
     net_support::start_session(CONNECTION_HOST, 2, 1);
-    SNetPacketHeader header = {sizeof(SNetPacketHeader), (ENetPacketType)NOCTURNE_NET_PACKET_CAMERA};
+    SNetPacketHeader header = {sizeof(SNetPacketHeader),
+                               (ENetPacketType)NOCTURNE_NET_PACKET_CAMERA};
     nocturne_net_session_broadcast(&header);
     CHECK_EQ(stand.sent.size(), (size_t)1);
     CHECK_EQ(stand.sent[0].player, 0);

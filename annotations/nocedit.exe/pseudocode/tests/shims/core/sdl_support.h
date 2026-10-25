@@ -18,11 +18,13 @@ struct Stand {
     const char *driver = nullptr;
 
     int surface_fails = 0;
-    SDL_Window *icon_window = nullptr;     // the window SDL_SetWindowIcon was handed
+    SDL_Window *icon_window = nullptr; // the window SDL_SetWindowIcon was handed
     int icon_width = 0;
-    unsigned first_pixel = 0;              // the icon's top-left pixel as handed over
+    unsigned first_pixel = 0; // the icon's top-left pixel as handed over
 
-    void reset() { *this = Stand(); }
+    void reset() {
+        *this = Stand();
+    }
 };
 
 extern Stand stand;
@@ -30,4 +32,4 @@ extern Stand stand;
 // A window to hand the icon shim: never dereferenced.
 SDL_Window *window();
 
-}  // namespace sdl_support
+} // namespace sdl_support

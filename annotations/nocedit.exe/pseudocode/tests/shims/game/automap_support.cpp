@@ -3,8 +3,8 @@
 // =============================================================================
 
 #include "automap_support.h"
-#include "class_support.h"
 
+#include "class_support.h"
 #include "core/ui_scale.h"
 #include "game/chapter_select.h"
 #include "game/gamepad.h"
@@ -74,17 +74,20 @@ EDeathState death_state(CCharacter *c) {
 
 CCharacter_full_vtable s_vtable;
 
-}  // namespace
+} // namespace
 
 CHero *hero = s_heroes[0].get();
 CHero *mate = s_heroes[1].get();
 
 CDemonActor *actor(int i) {
-    if (!s_actors[i]) s_actors[i].reset(new CCharacter());
+    if (!s_actors[i])
+        s_actors[i].reset(new CCharacter());
     return &s_actors[i]->base;
 }
 
-CDoor *door() { return s_door.get(); }
+CDoor *door() {
+    return s_door.get();
+}
 
 void place(CDemonActor *a, CDemonActorType *type, CVector3f at) {
     a->vtable._uc = &s_vtable;
@@ -98,10 +101,12 @@ void Stand::reset() {
     std::memset(&s_game, 0, sizeof(s_game));
     std::memset(&s_events, 0, sizeof(s_events));
     std::memset(&s_mission, 0, sizeof(s_mission));
-    for (std::unique_ptr<CHero> &h : s_heroes) std::memset(h.get(), 0, sizeof(*h));
+    for (std::unique_ptr<CHero> &h : s_heroes)
+        std::memset(h.get(), 0, sizeof(*h));
     std::memset(s_door.get(), 0, sizeof(*s_door));
     for (std::unique_ptr<CCharacter> &a : s_actors) {
-        if (a) std::memset(a.get(), 0, sizeof(*a));
+        if (a)
+            std::memset(a.get(), 0, sizeof(*a));
     }
     std::memset(&g_CDemonRaytraceInstance, 0, sizeof(g_CDemonRaytraceInstance));
     std::memset(&g_CDemonSetInstance, 0, sizeof(g_CDemonSetInstance));
@@ -131,7 +136,8 @@ void Stand::reset() {
     g_CEventListPtr = &s_events;
     g_CGamePtr = &s_game;
     g_ThemeFont = nullptr;
-    for (CHero *&h : g_HeroActors) h = nullptr;
+    for (CHero *&h : g_HeroActors)
+        h = nullptr;
     g_ActiveRenderColor = 0;
     g_BitsPerPixel = 0x20;
     g_LaserBeamActiveCount = 0;
@@ -175,9 +181,9 @@ void Stand::reset() {
 // --- the level -----------------------------------------------------------------
 
 Level::Level(int x, int y, int z, float size)
-    : dimx(x), dimy(y), dimz(z), cell(size),
-      triangles_((size_t)(x * y * z)), grounds_((size_t)(x * y * z)),
-      no_materials_((size_t)(x * y * z), false), cubes_((size_t)(x * y * z)) {}
+    : dimx(x), dimy(y), dimz(z), cell(size), triangles_((size_t)(x * y * z)),
+      grounds_((size_t)(x * y * z)), no_materials_((size_t)(x * y * z), false),
+      cubes_((size_t)(x * y * z)) {}
 
 int Level::cube_of(float x, float y, float z) const {
     const int gx = (int)(x / cell), gy = (int)(y / cell), gz = (int)(z / cell);
@@ -210,15 +216,17 @@ void Level::broken_triangle(int cube, int missing) {
     grounds_[(size_t)cube].push_back(0);
 }
 
-void Level::no_materials(int cube) { no_materials_[(size_t)cube] = true; }
+void Level::no_materials(int cube) {
+    no_materials_[(size_t)cube] = true;
+}
 
 void Level::wall(float x1, float z1, float x2, float z2, float y0, float y1, int ground) {
     const int cube = cube_of(x1, y0, z1);
     const CVector3f normal = {z2 - z1, 0.0f, x1 - x2};
-    triangle(cube, CVector3f{x1, y0, z1}, CVector3f{x2, y0, z2}, CVector3f{x2, y1, z2}, normal,
-             0, ground);
-    triangle(cube, CVector3f{x1, y0, z1}, CVector3f{x2, y1, z2}, CVector3f{x1, y1, z1}, normal,
-             0, ground);
+    triangle(cube, CVector3f{x1, y0, z1}, CVector3f{x2, y0, z2}, CVector3f{x2, y1, z2}, normal, 0,
+             ground);
+    triangle(cube, CVector3f{x1, y0, z1}, CVector3f{x2, y1, z2}, CVector3f{x1, y1, z1}, normal, 0,
+             ground);
 }
 
 void Level::install() {
@@ -240,50 +248,54 @@ void Level::install() {
     nocturne_automap_reset();
 }
 
-void hold(int code, bool down) { g_KeyboardState[code] = down ? 1 : 0; }
+void hold(int code, bool down) {
+    g_KeyboardState[code] = down ? 1 : 0;
+}
 
 std::vector<Line> lines_in(int color) {
     std::vector<Line> out;
     for (const Line &l : stand.lines) {
-        if (l.color == color) out.push_back(l);
+        if (l.color == color)
+            out.push_back(l);
     }
     return out;
 }
 
 const Text *text_starting(const std::string &prefix) {
     for (const Text &t : stand.texts) {
-        if (t.text.compare(0, prefix.size(), prefix) == 0) return &t;
+        if (t.text.compare(0, prefix.size(), prefix) == 0)
+            return &t;
     }
     return nullptr;
 }
 
-}  // namespace automap_support
+} // namespace automap_support
 
 using automap_support::stand;
 
 // --- the engine ----------------------------------------------------------------
 
 void __cdecl engine_2d_c_clipAndDrawLine_FUN_00402ca0(int x1, int y1, int x2, int y2, int x_min,
-                                                    int y_min, int x_max, int y_max) {
+                                                      int y_min, int x_max, int y_max) {
     stand.lines.push_back({x1, y1, x2, y2, x_min, y_min, x_max, y_max, g_ActiveRenderColor});
 }
 
 int __cdecl core_setcolid_cpp_CDemonSet_testLineOcclusion_FUN_00572460(CDemonSet *,
-                                                                     CVector3f *start_pos,
-                                                                     CVector3f *end_pos) {
+                                                                       CVector3f *start_pos,
+                                                                       CVector3f *end_pos) {
     stand.sight_tests++;
     return (stand.blocked && stand.blocked(*start_pos, *end_pos)) ? 1 : 0;
 }
 
 int __cdecl core_event_cpp_CEventList_evaluateCondition_FUN_004adca0(CEventList *,
-                                                                   char *condition_expression) {
+                                                                     char *condition_expression) {
     std::map<std::string, int>::const_iterator it = stand.conditions.find(condition_expression);
     return (it != stand.conditions.end()) ? it->second : 0;
 }
 
 CVector3f *__cdecl core_actor_cpp_CDemonActor_transformVector_FUN_00408e80(CDemonActor *,
-                                                                          CVector3f *output,
-                                                                          CVector3f *) {
+                                                                           CVector3f *output,
+                                                                           CVector3f *) {
     *output = stand.facing;
     return output;
 }
@@ -304,34 +316,46 @@ char *__cdecl core_menu_cpp_getKeyDisplayName_FUN_005134e0(EInputCodeType key_co
     return automap_support::s_key_name;
 }
 
-char *__cdecl support_newmsg_cpp_getLocalizedString_FUN_005441f0(char *key) { return key; }
+char *__cdecl support_newmsg_cpp_getLocalizedString_FUN_005441f0(char *key) {
+    return key;
+}
 
 // --- the shims ---------------------------------------------------------------
 
-CHero *nocturne_hero_local(void) { return stand.local; }
+CHero *nocturne_hero_local(void) {
+    return stand.local;
+}
 
-int nocturne_net_session_active(void) { return stand.net_active; }
+int nocturne_net_session_active(void) {
+    return stand.net_active;
+}
 
 void nocturne_gamepad_axes(float *move_x, float *move_y, float *look_x, float *look_y,
                            float *left_trigger, float *right_trigger) {
     float *out[6] = {move_x, move_y, look_x, look_y, left_trigger, right_trigger};
     for (int i = 0; i < 6; i++) {
-        if (out[i] != nullptr) *out[i] = stand.axes[i];
+        if (out[i] != nullptr)
+            *out[i] = stand.axes[i];
     }
 }
 
-char *nocturne_chapter_environment_name(const char *) { return (char *)stand.place; }
+char *nocturne_chapter_environment_name(const char *) {
+    return (char *)stand.place;
+}
 
-int nocturne_ui_scale(void) { return stand.ui; }
+int nocturne_ui_scale(void) {
+    return stand.ui;
+}
 
 int nocturne_ui_text_width(CBitFont *, char *text, int scale) {
     return (int)std::strlen(text) * stand.char_w * scale;
 }
 
-int nocturne_ui_text_height(CBitFont *, char *, int scale) { return stand.text_h * scale; }
+int nocturne_ui_text_height(CBitFont *, char *, int scale) {
+    return stand.text_h * scale;
+}
 
-int nocturne_ui_draw_text(CBitFont *, char *text, int x, int y, int color_mode, int,
-                          int scale) {
+int nocturne_ui_draw_text(CBitFont *, char *text, int x, int y, int color_mode, int, int scale) {
     stand.texts.push_back({text, x, y, color_mode, scale});
     return 0;
 }

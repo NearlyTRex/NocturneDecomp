@@ -6,11 +6,10 @@
 // that still holds a readable console; scrolled back with the keys and the
 // wheel; and drawn a glyph at a time into the framebuffer at that scale.
 
-#include "nocturne_test.h"
-#include "ui_support.h"
-
 #include "core/console.h"
 #include "nocturne.h"
+#include "nocturne_test.h"
+#include "ui_support.h"
 
 #include <cstring>
 
@@ -28,7 +27,7 @@ Layout layout(int x, int y, int max_cols, int max_rows) {
     return out;
 }
 
-}  // namespace
+} // namespace
 
 // 640 x 480 stays at one, 1920 x 1080 reaches two: three would leave fewer
 // than forty rows.
@@ -89,7 +88,7 @@ NOCTURNE_TEST(scrolling_moves_the_rows_up) {
     CHECK_EQ(std::string(nocturne_console_row(1)), std::string("third"));
     CHECK_EQ(nocturne_console_row(2)[0], '\0');
 
-    nocturne_console_scroll_up(-5, 2);   // no width: the rows stay
+    nocturne_console_scroll_up(-5, 2); // no width: the rows stay
     CHECK_EQ(std::string(nocturne_console_row(0)), std::string("second"));
     nocturne_console_scroll_up(1000, 1000);
     CHECK_EQ(std::string(nocturne_console_row(0)), std::string("third"));
@@ -150,8 +149,8 @@ NOCTURNE_TEST(a_glyph_is_drawn_whole_or_not_at_all) {
     ui_support::screen(64, 64, 32);
     SFontGlyph &a = g_FontTable['A' - 0x20];
     a.width = 2;
-    a.bitmap[0] = 1;        // row 0: on, off
-    a.bitmap[3] = 1;        // row 1: off, on
+    a.bitmap[0] = 1; // row 0: on, off
+    a.bitmap[3] = 1; // row 1: off, on
     g_ColorTable32[5] = 0x00ff00;
     nocturne_console_draw_char('A', 4, 4, 5, 2);
     CHECK_EQ(ui_support::pixel32(4, 4), 0x00ff00u);
@@ -161,7 +160,7 @@ NOCTURNE_TEST(a_glyph_is_drawn_whole_or_not_at_all) {
 
     ui_support::screen(64, 64, 16);
     g_ColorTable16[5] = 0x07e0;
-    nocturne_console_draw_char('A', 0, 0, 5, 0);   // scale 0 is 1
+    nocturne_console_draw_char('A', 0, 0, 5, 0); // scale 0 is 1
     CHECK_EQ(ui_support::pixel16(0, 0), 0x07e0u);
     CHECK_EQ(ui_support::pixel16(1, 0), 0u);
 
@@ -182,7 +181,8 @@ NOCTURNE_TEST(a_glyph_is_drawn_whole_or_not_at_all) {
     g_ClipBottom = 5000;
     nocturne_console_draw_char('A', 0, 1195, 5, 1);
     for (int y = 0; y < 64; y++) {
-        for (int x = 0; x < 64; x++) CHECK_EQ(ui_support::pixel32(x, y), 0u);
+        for (int x = 0; x < 64; x++)
+            CHECK_EQ(ui_support::pixel32(x, y), 0u);
     }
 
     // A row with no line behind it is passed over.

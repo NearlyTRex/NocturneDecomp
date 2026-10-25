@@ -2,10 +2,9 @@
 // LIGHT FILTER LOAD — a loaded save's lights filtered as the script left them
 // =============================================================================
 
-#include "nocturne_test.h"
-
 #include "behaviour_support.h"
 #include "game/light_filter_load.h"
+#include "nocturne_test.h"
 
 #include <memory>
 #include <string>
@@ -41,7 +40,7 @@ void scene() {
     stand.art_sizes["dim.raw"] = 64;
 }
 
-}  // namespace
+} // namespace
 
 // Each addLightFilter the script ran before its first wait is run again,
 // whatever its case.

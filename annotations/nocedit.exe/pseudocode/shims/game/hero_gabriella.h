@@ -428,4 +428,4 @@ void nocturne_hero_gabriella_reset(void);
 
 #define NOCTURNE_GABRIELLA_STRAFE_RATE 2.0f
 #define NOCTURNE_GABRIELLA_LADDER_RATE 1.75f
-#define NOCTURNE_GABRIELLA_TURN_RATE   0.8f
+#define NOCTURNE_GABRIELLA_TURN_RATE 0.8f

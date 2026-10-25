@@ -2,10 +2,9 @@
 // DIALOGUE OVERRIDES — a line recorded for one hero, said by another
 // =============================================================================
 
-#include "nocturne_test.h"
-
 #include "game/dialogue_override.h"
 #include "game_support.h"
+#include "nocturne_test.h"
 
 #include <cstdio>
 #include <cstring>
@@ -28,8 +27,8 @@ int say(CDemonActor *speaker, const char *sound, Line *line, int timed = 1) {
     std::snprintf(sound_buffer, sizeof(sound_buffer), "%s", sound);
     line->sound = sound_buffer;
     line->text = text;
-    return nocturne_dialogue_override_apply(speaker, &line->sound, &line->text,
-                                            &line->duration, timed);
+    return nocturne_dialogue_override_apply(speaker, &line->sound, &line->text, &line->duration,
+                                            timed);
 }
 
 std::unique_ptr<CDemonMission> mission(const char *name) {
@@ -39,7 +38,7 @@ std::unique_ptr<CDemonMission> mission(const char *name) {
     return m;
 }
 
-}  // namespace
+} // namespace
 
 // In the gas room, a line recorded for the Stranger and said by another hero
 // is captioned with that hero's name, plays no voice, and lasts as long as a

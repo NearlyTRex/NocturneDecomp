@@ -16,4 +16,4 @@ namespace message_support {
 extern std::string last;
 extern int shown;
 
-}  // namespace message_support
+} // namespace message_support

@@ -7,11 +7,10 @@
 // the gas room's choke is about the first unmasked hero inside it, all from
 // state every machine shares.
 
-#include "nocturne_test.h"
-#include "net_support.h"
-
 #include "net/net_sim.h"
+#include "net_support.h"
 #include "nocturne.h"
+#include "nocturne_test.h"
 
 #include <cstring>
 
@@ -46,7 +45,7 @@ void raise_event(SEventNameBlock &block, const char *name) {
     block.count++;
 }
 
-}  // namespace
+} // namespace
 
 // The leader is the first hero in the world, else this machine's own.
 NOCTURNE_TEST(the_leader_is_the_first_hero_in_the_world) {
@@ -82,7 +81,8 @@ NOCTURNE_TEST(an_enemy_targets_the_nearest_hero) {
     CHECK(nocturne_net_sim_target_hero(nullptr) == heroes[0]);
 
     // Nobody in the world: this machine's own.
-    for (int i = 0; i < 3; i++) heroes[i]->base.base.location.area_id = -1;
+    for (int i = 0; i < 3; i++)
+        heroes[i]->base.base.location.area_id = -1;
     CHECK(nocturne_net_sim_target_for(&enemy) == heroes[0]);
 
     g_CNetGamePtr = nullptr;

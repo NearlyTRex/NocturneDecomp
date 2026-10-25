@@ -21,14 +21,14 @@ namespace movie_writer {
 struct Movie {
     int width = 32;
     int height = 16;
-    int frames = 15;          // a second at 15 fps
+    int frames = 15; // a second at 15 fps
     bool video = true;
     AVCodecID video_codec = AV_CODEC_ID_RAWVIDEO;
-    int b_frames = 0;         // which the decoder holds back until the end
-    AVCodecID audio = AV_CODEC_ID_PCM_S16LE;   // AV_CODEC_ID_NONE for none
+    int b_frames = 0;                        // which the decoder holds back until the end
+    AVCodecID audio = AV_CODEC_ID_PCM_S16LE; // AV_CODEC_ID_NONE for none
     int rate = 22050;
     int channels = 1;
-    int sound_frames = -1;    // fifteenths of a second of sound; -1 for `frames`
+    int sound_frames = -1; // fifteenths of a second of sound; -1 for `frames`
     const char *container = "avi";
 };
 
@@ -42,4 +42,4 @@ bool write(const std::string &path, const Movie &movie);
 bool patch_format(const std::string &path, const char *type, size_t offset, uint32_t value,
                   int size);
 
-}  // namespace movie_writer
+} // namespace movie_writer

@@ -40,4 +40,4 @@ void place_heroes(int count);
 
 void reset();
 
-}  // namespace hero_support
+} // namespace hero_support

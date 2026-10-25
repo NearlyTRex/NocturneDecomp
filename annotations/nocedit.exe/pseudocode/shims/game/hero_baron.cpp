@@ -3,6 +3,7 @@
 // =============================================================================
 
 #include "game/hero_baron.h"
+
 #include "nocturne.h"
 
 namespace {
@@ -20,8 +21,7 @@ int s_claim_count;
 
 } // namespace
 
-extern "C" int nocturne_baron_claimed_by_other(CBaronWeapon *weapon, CBaron *baron)
-{
+extern "C" int nocturne_baron_claimed_by_other(CBaronWeapon *weapon, CBaron *baron) {
     if (!nocturne_net_session_active()) {
         return 0;
     }
@@ -33,8 +33,7 @@ extern "C" int nocturne_baron_claimed_by_other(CBaronWeapon *weapon, CBaron *bar
     return 0;
 }
 
-extern "C" void nocturne_baron_claim(CBaronWeapon *weapon, CBaron *baron)
-{
+extern "C" void nocturne_baron_claim(CBaronWeapon *weapon, CBaron *baron) {
     if (!nocturne_net_session_active() || (baron == (CBaron *)0x0)) {
         return;
     }
@@ -51,7 +50,6 @@ extern "C" void nocturne_baron_claim(CBaronWeapon *weapon, CBaron *baron)
     }
 }
 
-extern "C" void nocturne_baron_reset(void)
-{
+extern "C" void nocturne_baron_reset(void) {
     s_claim_count = 0;
 }

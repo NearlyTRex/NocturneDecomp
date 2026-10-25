@@ -2,13 +2,12 @@
 // HERO COLONEL — his pistol, his death and his push-off
 // =============================================================================
 
-#include "nocturne_test.h"
-
 #include "behaviour_support.h"
 #include "class_support.h"
 #include "game/hero_colonel.h"
 #include "game/hero_shove.h"
 #include "game/hero_weapon.h"
+#include "nocturne_test.h"
 
 #include <cmath>
 #include <cstdio>
@@ -79,7 +78,9 @@ CColonel *ready() {
     return c;
 }
 
-CWeapon *gun_of(CColonel *c) { return c->base.inventory.selected_weapon; }
+CWeapon *gun_of(CColonel *c) {
+    return c->base.inventory.selected_weapon;
+}
 
 // A live enemy at (x, y, z) with a target point, in the set.
 CCharacter *enemy(int i, float x, float y, float z) {
@@ -99,7 +100,7 @@ float aimed_yaw(CColonel *c) {
     return stand.placed.back().second.y;
 }
 
-}  // namespace
+} // namespace
 
 // Without his sidearm, the Colonel is left as shipped.
 NOCTURNE_TEST(without_the_sidearm_nothing_happens) {
@@ -128,7 +129,8 @@ NOCTURNE_TEST(draw_plays_forward_and_holstering_plays_back) {
     c->guns_drawn = 1;
     CHECK_EQ(nocturne_colonel_draw(c), 1);
     CHECK_EQ(stand.weapon_states.size(), (size_t)1);
-    if (!stand.weapon_states.empty()) CHECK_EQ(stand.weapon_states[0].second, (int)WEAPON_STATE_IN_HAND);
+    if (!stand.weapon_states.empty())
+        CHECK_EQ(stand.weapon_states[0].second, (int)WEAPON_STATE_IN_HAND);
     for (float frame : {0.0f, 5.0f, 10.0f, 15.0f}) {
         nocturne_colonel_update_gun(c, 0.5f);
         CHECK_EQ(stand.layered.back().first, kDraw);
@@ -245,7 +247,8 @@ NOCTURNE_TEST(the_arm_rises_on_locomotion_only) {
     start();
     CColonel *c = ready();
     CHECK_EQ(stand.arm_blends.size(), (size_t)1);
-    if (!stand.arm_blends.empty()) CHECK_NEAR(stand.arm_blends[0], 1.0f, 1e-4f);
+    if (!stand.arm_blends.empty())
+        CHECK_NEAR(stand.arm_blends[0], 1.0f, 1e-4f);
     nocturne_colonel_render_gun(c);
     CHECK_EQ(stand.renders, 1);
     CHECK_EQ(stand.beams, 1);
@@ -313,7 +316,8 @@ NOCTURNE_TEST(a_target_must_be_a_live_enemy_in_front_in_reach_and_sight) {
     for (CVector3f at : {CVector3f{3.0f, 0.0f, -10.0f}, CVector3f{10.0f, 0.0f, 10.0f},
                          CVector3f{3.0f, 0.0f, 31.0f}}) {
         e->base.location.position = at;
-        CHECK_AT(std::fabs(aimed_yaw(c)) < 1e-4f, std::to_string(at.x) + "," + std::to_string(at.z));
+        CHECK_AT(std::fabs(aimed_yaw(c)) < 1e-4f,
+                 std::to_string(at.x) + "," + std::to_string(at.z));
     }
     e->base.location.position = CVector3f{3.0f, 0.0f, 10.0f};
 
@@ -345,9 +349,11 @@ NOCTURNE_TEST(the_nearest_target_wins) {
     for (int nearer_first : {0, 1}) {
         start();
         CColonel *c = ready();
-        if (nearer_first) enemy(1, -2.0f, 0.0f, 5.0f);
+        if (nearer_first)
+            enemy(1, -2.0f, 0.0f, 5.0f);
         enemy(0, 3.0f, 0.0f, 10.0f);
-        if (!nearer_first) enemy(1, -2.0f, 0.0f, 5.0f);
+        if (!nearer_first)
+            enemy(1, -2.0f, 0.0f, 5.0f);
         CHECK_AT(aimed_yaw(c) < -0.2f, nearer_first ? "nearer first" : "nearer last");
     }
 }

@@ -2,10 +2,9 @@
 // GAMEPAD, NO PROGRAM DIRECTORY — only the data directory's mapping file
 // =============================================================================
 
-#include "nocturne_test.h"
-#include "gamepad_support.h"
-
 #include "game/gamepad.h"
+#include "gamepad_support.h"
+#include "nocturne_test.h"
 
 using namespace gamepad_support;
 

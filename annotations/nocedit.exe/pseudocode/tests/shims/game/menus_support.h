@@ -30,32 +30,32 @@ struct Listed {
 
 struct Stand {
     // --- pick lists -------------------------------------------------------------
-    std::vector<std::string> rows;       // CStrList_add, for the last list built
-    std::set<int> disabled;              // enableItem(..., 0)
-    std::string title;                   // displayChoicesAndWaitForInput's
+    std::vector<std::string> rows; // CStrList_add, for the last list built
+    std::set<int> disabled;        // enableItem(..., 0)
+    std::string title;             // displayChoicesAndWaitForInput's
     int initial = -2;
-    std::deque<int> choices;             // what it answers, in turn; -1 when empty
+    std::deque<int> choices; // what it answers, in turn; -1 when empty
     int lists_shown = 0;
 
     // --- the main-menu screen -----------------------------------------------------
-    std::deque<int> menu_choices;        // renderMenuAndGetChoice; -1 when empty
-    std::vector<int> menu_counts;        // how many lines each frame offered
-    int cancelled = 0;                   // nocturne_menu_cancelled
+    std::deque<int> menu_choices; // renderMenuAndGetChoice; -1 when empty
+    std::vector<int> menu_counts; // how many lines each frame offered
+    int cancelled = 0;            // nocturne_menu_cancelled
 
     // --- dialogs --------------------------------------------------------------
-    int confirm = 1;                     // showDestructiveActionConfirmDialog
-    std::vector<std::string> errors;     // showError
+    int confirm = 1;                 // showDestructiveActionConfirmDialog
+    std::vector<std::string> errors; // showError
 
     // --- the world and the saves ----------------------------------------------
-    std::set<std::string> missions;      // world\ files getFile finds, lower case
-    std::vector<Listed> saves;           // CFileFinder over save\*.noc
-    std::map<std::string, std::string> localized;   // getLocalizedString; else the key
-    std::vector<std::string> saved;      // saveGame
-    std::vector<std::string> commands;   // executeCommands
-    std::vector<std::string> messages;   // displayMessage
+    std::set<std::string> missions;               // world\ files getFile finds, lower case
+    std::vector<Listed> saves;                    // CFileFinder over save\*.noc
+    std::map<std::string, std::string> localized; // getLocalizedString; else the key
+    std::vector<std::string> saved;               // saveGame
+    std::vector<std::string> commands;            // executeCommands
+    std::vector<std::string> messages;            // displayMessage
 
     // --- the other shims --------------------------------------------------------
-    int warps_cheat = 1;                 // nocturne_cheat_active(NOCTURNE_CHEAT_WARPS)
+    int warps_cheat = 1; // nocturne_cheat_active(NOCTURNE_CHEAT_WARPS)
     int net_active = 0;
 
     void reset();
@@ -69,4 +69,4 @@ extern CGame *game;
 // The mission now running, by root name.
 void run_mission(const char *name);
 
-}  // namespace menus_support
+} // namespace menus_support

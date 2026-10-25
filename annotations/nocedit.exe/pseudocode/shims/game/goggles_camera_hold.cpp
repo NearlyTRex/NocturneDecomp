@@ -3,6 +3,7 @@
 // =============================================================================
 
 #include "game/goggles_camera_hold.h"
+
 #include "nocturne.h"
 
 extern "C" void nocturne_goggles_camera_hold_tick(CDemonSet *set, float delta_time) {

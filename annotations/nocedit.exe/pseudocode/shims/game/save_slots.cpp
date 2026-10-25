@@ -6,10 +6,10 @@
 // rather than an index file, and what holding CTRL still reaches.
 
 #include "game/save_slots.h"
-#include "game/chapter_select.h"
-#include "shim_config.h"
 
+#include "game/chapter_select.h"
 #include "nocturne.h"
+#include "shim_config.h"
 #include "watcom/stream_compat.h"
 
 #include <cstdio>
@@ -45,15 +45,15 @@ namespace {
 #define SAVE_LIST_MAX 128
 
 struct SlotInfo {
-    char filename[64];  // "SLOT03.NOC", as save\ spells it
-    int  slot;          // 1..99, 0 for AUTO, -1 for a save this build did not name
-    char mission[64];   // mission root name out of the save, "" when unreadable
-    uint timestamp;     // CFileFinder's, the same field the shipped list dated rows with
+    char filename[64]; // "SLOT03.NOC", as save\ spells it
+    int slot;          // 1..99, 0 for AUTO, -1 for a save this build did not name
+    char mission[64];  // mission root name out of the save, "" when unreadable
+    uint timestamp;    // CFileFinder's, the same field the shipped list dated rows with
     uint size;
 };
 
 SlotInfo s_slots[SAVE_LIST_MAX];
-int      s_slot_count = 0;
+int s_slot_count = 0;
 
 // ---------------------------------------------------------------------------
 // Metadata cache
@@ -71,10 +71,9 @@ struct CacheEntry {
 };
 
 CacheEntry s_cache[SAVE_LIST_MAX];
-int        s_cache_count = 0;
+int s_cache_count = 0;
 
-const CacheEntry *cache_find(const char *filename, uint timestamp, uint size)
-{
+const CacheEntry *cache_find(const char *filename, uint timestamp, uint size) {
     int i;
 
     for (i = 0; i < s_cache_count; i++) {
@@ -86,11 +85,9 @@ const CacheEntry *cache_find(const char *filename, uint timestamp, uint size)
     return (const CacheEntry *)0;
 }
 
-void cache_store(const char *filename, uint timestamp, uint size,
-                 const char *mission)
-{
+void cache_store(const char *filename, uint timestamp, uint size, const char *mission) {
     CacheEntry *entry;
-    int         i;
+    int i;
 
     entry = (CacheEntry *)0;
     for (i = 0; i < s_cache_count; i++) {
@@ -109,7 +106,7 @@ void cache_store(const char *filename, uint timestamp, uint size,
     snprintf(entry->filename, sizeof(entry->filename), "%s", filename);
     snprintf(entry->mission, sizeof(entry->mission), "%s", mission);
     entry->timestamp = timestamp;
-    entry->size      = size;
+    entry->size = size;
 }
 
 // ---------------------------------------------------------------------------
@@ -137,13 +134,12 @@ void cache_store(const char *filename, uint timestamp, uint size,
 // form CGame::saveGame writes at NOCTURNE_AUTHENTIC_SAVE=1, "LZW" over three is
 // the older one it still loads, and anything else is the plain text
 // NOCTURNE_AUTHENTIC_SAVE=0 writes directly.
-std::string read_save_text(const char *filename, uint size)
-{
-    std::ifstream  ifs;
-    char           path[512];
-    char           magic[4];
+std::string read_save_text(const char *filename, uint size) {
+    std::ifstream ifs;
+    char path[512];
+    char magic[4];
     CLZWDecompress decoder;
-    int            remaining;
+    int remaining;
 
     snprintf(path, sizeof(path), "%s\\%s", "save", filename);
     watcom_stream_open(ifs, path, std::ios::in | std::ios::binary);
@@ -183,10 +179,9 @@ std::string read_save_text(const char *filename, uint size)
 
         support_codec_cpp_CLZWDecompress_ctor_FUN_0043f490(&decoder, 0x8000, 8);
         support_codec_cpp_CLZWDecompress_init_FUN_0043f4d0(&decoder);
-        support_codec_cpp_CLZWDecompress_process_FUN_0043f510(
-            &decoder, watcom_istream_from(ifs), &remaining, watcom_ostream_from(out));
-        support_codec_cpp_CLZWDecompress_finalize_FUN_0043f590(&decoder,
-                                                               watcom_ostream_from(out));
+        support_codec_cpp_CLZWDecompress_process_FUN_0043f510(&decoder, watcom_istream_from(ifs),
+                                                              &remaining, watcom_ostream_from(out));
+        support_codec_cpp_CLZWDecompress_finalize_FUN_0043f590(&decoder, watcom_ostream_from(out));
         support_codec_cpp_CLZWDictionary_dtor_FUN_0043edf0(&decoder.lzw_dict, 0);
         support_codec_cpp_CCodec_dtor_FUN_0043e9b0(&decoder.base, 1);
 
@@ -195,8 +190,7 @@ std::string read_save_text(const char *filename, uint size)
 }
 
 // The line following `marker`, trimmed of its line ending.
-std::string line_after(const std::string &text, const char *marker)
-{
+std::string line_after(const std::string &text, const char *marker) {
     std::string::size_type at;
     std::string::size_type start;
     std::string::size_type end;
@@ -212,7 +206,7 @@ std::string line_after(const std::string &text, const char *marker)
         return std::string();
     }
     start = start + 1;
-    end   = text.find('\n', start);
+    end = text.find('\n', start);
     if (end == std::string::npos) {
         end = text.size();
     }
@@ -225,11 +219,10 @@ std::string line_after(const std::string &text, const char *marker)
 
 // Fills in the mission the save is in. The marker is the comment
 // CDemonMission::writeFile prints above the mission's root name.
-void read_metadata(SlotInfo *slot)
-{
+void read_metadata(SlotInfo *slot) {
     const CacheEntry *cached;
-    std::string       text;
-    std::string       line;
+    std::string text;
+    std::string line;
 
     slot->mission[0] = '\0';
 
@@ -254,8 +247,7 @@ void read_metadata(SlotInfo *slot)
 // The SLOTnn number a filename carries, 0 for the autosave, -1 for anything
 // else. Case-insensitive, because save\ is matched case-insensitively
 // everywhere else in the engine.
-int slot_number_of(const char *filename)
-{
+int slot_number_of(const char *filename) {
     int number;
 
     if (_stricmp((char *)filename, (char *)k_auto_name) == 0) {
@@ -264,8 +256,7 @@ int slot_number_of(const char *filename)
     if (_strnicmp((char *)filename, (char *)"SLOT", 4) != 0) {
         return -1;
     }
-    if ((filename[4] < '0') || ('9' < filename[4]) || (filename[5] < '0') ||
-        ('9' < filename[5])) {
+    if ((filename[4] < '0') || ('9' < filename[4]) || (filename[5] < '0') || ('9' < filename[5])) {
         return -1;
     }
     if (_stricmp((char *)(filename + 6), (char *)".NOC") != 0) {
@@ -281,30 +272,28 @@ int slot_number_of(const char *filename)
 // Newest first, with the autosave held at the top. The autosave is the row the
 // player is most often after and the one that moves under them, so it reads
 // better in a fixed place than sliding through the list as it is rewritten.
-void sort_slots(void)
-{
+void sort_slots(void) {
     SlotInfo tmp;
-    int      i;
-    int      j;
+    int i;
+    int j;
 
     for (i = 1; i < s_slot_count; i++) {
         for (j = i; j > 0; j--) {
-            int  prev_auto = (s_slots[j - 1].slot == 0);
-            int  this_auto = (s_slots[j].slot == 0);
+            int prev_auto = (s_slots[j - 1].slot == 0);
+            int this_auto = (s_slots[j].slot == 0);
             bool swap;
 
             if (prev_auto != this_auto) {
                 swap = (this_auto != 0);
-            }
-            else {
+            } else {
                 swap = (s_slots[j - 1].timestamp < s_slots[j].timestamp);
             }
             if (!swap) {
                 break;
             }
-            tmp            = s_slots[j - 1];
+            tmp = s_slots[j - 1];
             s_slots[j - 1] = s_slots[j];
-            s_slots[j]     = tmp;
+            s_slots[j] = tmp;
         }
     }
 }
@@ -316,10 +305,9 @@ void sort_slots(void)
 // instead — see nocturne_save_slots_prewarm — and a save the cache already
 // holds at the size and timestamp it was listed with is not opened again, so a
 // list built after the prewarm reads only what has been written since.
-int refresh(void)
-{
+int refresh(void) {
     CFileFinder finder;
-    int         i;
+    int i;
 
     s_slot_count = 0;
 
@@ -329,11 +317,11 @@ int refresh(void)
         SlotInfo *slot = &s_slots[s_slot_count];
 
         snprintf(slot->filename, sizeof(slot->filename), "%s", finder.filename);
-        slot->slot      = slot_number_of(slot->filename);
+        slot->slot = slot_number_of(slot->filename);
         slot->timestamp = finder.timestamp;
-        slot->size      = finder.file_size;
+        slot->size = finder.file_size;
         slot->mission[0] = '\0';
-        s_slot_count     = s_slot_count + 1;
+        s_slot_count = s_slot_count + 1;
 
         engine_dosio_cpp_CFileFinder_findNext_FUN_00481cf0(&finder);
     }
@@ -354,27 +342,23 @@ int refresh(void)
 
 // Tab-separated, because CPickList::renderDialog splits a row on tabs and lays
 // the pieces out in columns of its own measuring — see tab_column_widths.
-void build_row(const SlotInfo *slot, char *out, int out_size)
-{
-    char        label[64];
-    char        when[32];
+void build_row(const SlotInfo *slot, char *out, int out_size) {
+    char label[64];
+    char when[32];
     const char *place;
-    char       *environment;
-    time_t      stamp;
-    _tm        *broken_down;
+    char *environment;
+    time_t stamp;
+    _tm *broken_down;
 
     if (slot->slot == 0) {
         snprintf(label, sizeof(label), "%s",
                  support_newmsg_cpp_getLocalizedString_FUN_005441f0((char *)"Autosave"));
-    }
-    else if (slot->slot > 0) {
+    } else if (slot->slot > 0) {
         // The word, not the bare number: the first column is drawn in the
         // theme font, where a lone "1" reads as a letter.
         snprintf(label, sizeof(label), "%s %d",
-                 support_newmsg_cpp_getLocalizedString_FUN_005441f0((char *)"Slot"),
-                 slot->slot);
-    }
-    else {
+                 support_newmsg_cpp_getLocalizedString_FUN_005441f0((char *)"Slot"), slot->slot);
+    } else {
         // A save the shipped typed-filename dialog named. Its own name is the
         // only label it has.
         snprintf(label, sizeof(label), "%s", slot->filename);
@@ -387,16 +371,14 @@ void build_row(const SlotInfo *slot, char *out, int out_size)
     environment = nocturne_chapter_environment_name(slot->mission);
     if (environment != (char *)0x0) {
         place = environment;
-    }
-    else if (slot->mission[0] != '\0') {
+    } else if (slot->mission[0] != '\0') {
         place = slot->mission;
-    }
-    else {
+    } else {
         place = "";
     }
 
     // Any 32-bit time is one the runtime can break down.
-    stamp       = (time_t)slot->timestamp;
+    stamp = (time_t)slot->timestamp;
     broken_down = _localtime(&stamp);
     _strftime(when, sizeof(when), (char *)"%m/%d/%y %I:%M %p", broken_down);
 
@@ -404,8 +386,7 @@ void build_row(const SlotInfo *slot, char *out, int out_size)
 }
 
 // The lowest SLOTnn with no file, or 0 when every one of them is taken.
-int next_free_slot(void)
-{
+int next_free_slot(void) {
     int number;
     int i;
 
@@ -435,27 +416,24 @@ int next_free_slot(void)
 
 #if !NOCTURNE_AUTHENTIC_SAVE_SLOTS
 
-extern "C" void nocturne_save_slots_prewarm(void)
-{
+extern "C" void nocturne_save_slots_prewarm(void) {
     refresh();
 }
 
-extern "C" int nocturne_save_pick_slot(char *out, int out_size)
-{
+extern "C" int nocturne_save_pick_slot(char *out, int out_size) {
     CPickList list;
-    char      row[256];
-    char     *title;
-    int       free_slot;
-    int       choice;
-    int       i;
+    char row[256];
+    char *title;
+    int free_slot;
+    int choice;
+    int i;
 
     refresh();
     free_slot = next_free_slot();
 
     shape_edittool_cpp_CPickList_ctor_FUN_004a3b90(&list);
     shape_edittool_cpp_CStrList_add_FUN_004a2b80(
-        &list.base,
-        support_newmsg_cpp_getLocalizedString_FUN_005441f0((char *)"* NEW SAVE *"));
+        &list.base, support_newmsg_cpp_getLocalizedString_FUN_005441f0((char *)"* NEW SAVE *"));
     for (i = 0; i < s_slot_count; i++) {
         build_row(&s_slots[i], row, (int)sizeof(row));
         shape_edittool_cpp_CStrList_add_FUN_004a2b80(&list.base, row);
@@ -473,9 +451,9 @@ extern "C" int nocturne_save_pick_slot(char *out, int out_size)
         }
     }
 
-    title  = support_newmsg_cpp_getLocalizedString_FUN_005441f0((char *)"Save game");
-    choice = shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20(
-        &list, title, 0, 0);
+    title = support_newmsg_cpp_getLocalizedString_FUN_005441f0((char *)"Save game");
+    choice =
+        shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20(&list, title, 0, 0);
     shape_edittool_cpp_CPickList_dtor_FUN_004a3c80(&list, 0);
 
     // Negative is Escape. displayChoicesAndWaitForInput returns the index.
@@ -497,22 +475,20 @@ extern "C" int nocturne_save_pick_slot(char *out, int out_size)
     }
     if (shape_edittool_cpp_CEditorTools_showDestructiveActionConfirmDialog_FUN_0049f060(
             g_CEditorToolsPtr, (char *)"%s",
-            support_newmsg_cpp_getLocalizedString_FUN_005441f0((char *)"Overwrite save")) ==
-        0) {
+            support_newmsg_cpp_getLocalizedString_FUN_005441f0((char *)"Overwrite save")) == 0) {
         return 0;
     }
     snprintf(out, (size_t)out_size, "%s", s_slots[i].filename);
     return 1;
 }
 
-extern "C" int nocturne_load_pick_slot(char *out, int out_size)
-{
+extern "C" int nocturne_load_pick_slot(char *out, int out_size) {
     CPickList list;
-    char      row[256];
-    char     *title;
-    int       choice;
-    int       initial;
-    int       i;
+    char row[256];
+    char *title;
+    int choice;
+    int initial;
+    int i;
 
     if (refresh() < 1) {
         shape_edittool_cpp_CEditorTools_showError_FUN_0049e740(
@@ -533,9 +509,9 @@ extern "C" int nocturne_load_pick_slot(char *out, int out_size)
         }
     }
 
-    title  = support_newmsg_cpp_getLocalizedString_FUN_005441f0((char *)"Select file to load");
-    choice = shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20(
-        &list, title, initial, 0);
+    title = support_newmsg_cpp_getLocalizedString_FUN_005441f0((char *)"Select file to load");
+    choice = shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20(&list, title,
+                                                                                     initial, 0);
     shape_edittool_cpp_CPickList_dtor_FUN_004a3c80(&list, 0);
 
     // Escape; otherwise a row, one per listed save.
@@ -548,9 +524,13 @@ extern "C" int nocturne_load_pick_slot(char *out, int out_size)
 
 #else
 
-extern "C" void nocturne_save_slots_prewarm(void) { }
-extern "C" int  nocturne_save_pick_slot(char *, int) { return 0; }
-extern "C" int  nocturne_load_pick_slot(char *, int) { return 0; }
+extern "C" void nocturne_save_slots_prewarm(void) {}
+extern "C" int nocturne_save_pick_slot(char *, int) {
+    return 0;
+}
+extern "C" int nocturne_load_pick_slot(char *, int) {
+    return 0;
+}
 
 #endif // !NOCTURNE_AUTHENTIC_SAVE_SLOTS
 
@@ -563,17 +543,16 @@ extern "C" int  nocturne_load_pick_slot(char *, int) { return 0; }
 // Continue, Start, Load — the most the submenu ever lists.
 #define SP_MENU_MAX_ITEMS 3
 
-extern "C" int nocturne_single_player_menu(void)
-{
-    char  continue_line[256];
-    char  start_line[256];
-    char  load_line[256];
+extern "C" int nocturne_single_player_menu(void) {
+    char continue_line[256];
+    char start_line[256];
+    char load_line[256];
     char *menu_ptrs[SP_MENU_MAX_ITEMS];
-    int   continue_item;
-    int   start_item;
-    int   selected = 0;
-    int   menu_count;
-    int   choice;
+    int continue_item;
+    int start_item;
+    int selected = 0;
+    int menu_count;
+    int choice;
 
     // The caller reached here on a RETURN that renderMenuAndGetChoice has
     // already consumed, but the key can still be down; without this the
@@ -586,7 +565,7 @@ extern "C" int nocturne_single_player_menu(void)
         // Rebuilt every frame, as the main menu rebuilds its own: the strings
         // are localized and the language can change under the options screen.
         // Each row keeps its own index, so Continue's absence shifts nothing.
-        menu_count    = 0;
+        menu_count = 0;
         snprintf(continue_line, sizeof(continue_line), "%s",
                  support_newmsg_cpp_getLocalizedString_FUN_005441f0((char *)"C O N T I N U E"));
         snprintf(start_line, sizeof(start_line), "%s",
@@ -594,24 +573,23 @@ extern "C" int nocturne_single_player_menu(void)
         snprintf(load_line, sizeof(load_line), "%s",
                  support_newmsg_cpp_getLocalizedString_FUN_005441f0((char *)"L O A D"));
 #if !NOCTURNE_AUTHENTIC_AUTOSAVE
-        continue_item          = menu_count;
-        menu_ptrs[menu_count]  = continue_line;
-        menu_count             = menu_count + 1;
+        continue_item = menu_count;
+        menu_ptrs[menu_count] = continue_line;
+        menu_count = menu_count + 1;
 #else
-        continue_item          = -1;    // no Continue row for a choice to match
+        continue_item = -1; // no Continue row for a choice to match
 #endif
-        start_item             = menu_count;
-        menu_ptrs[menu_count]  = start_line;
-        menu_count             = menu_count + 1;
-        menu_ptrs[menu_count]  = load_line;
-        menu_count             = menu_count + 1;
+        start_item = menu_count;
+        menu_ptrs[menu_count] = start_line;
+        menu_count = menu_count + 1;
+        menu_ptrs[menu_count] = load_line;
+        menu_count = menu_count + 1;
 
         // From the main menu's own start-y, so the submenu's lines land where
         // the ones it replaced on screen were.
         choice = core_menu_cpp_renderMenuAndGetChoice_FUN_00510000(
-                     menu_ptrs, menu_count, &selected,
-                     nocturne_menu_start_y(NOCTURNE_MENU_ROWS_UNTITLED(menu_count)),
-                     (char *)0x0);
+            menu_ptrs, menu_count, &selected,
+            nocturne_menu_start_y(NOCTURNE_MENU_ROWS_UNTITLED(menu_count)), (char *)0x0);
         wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();
 
         // A choice is one of the rows just listed.
@@ -633,16 +611,15 @@ extern "C" int nocturne_single_player_menu(void)
 // question about filenames and timestamps, and tying it to the slot machinery
 // would make where the main menu puts Load depend on what the picker looks
 // like. The two flags are independent, so the code behind them is too.
-extern "C" int nocturne_save_continue_target(char *out, int out_size)
-{
+extern "C" int nocturne_save_continue_target(char *out, int out_size) {
     CFileFinder finder;
-    char        newest_name[64];
-    uint        newest_stamp;
-    int         found;
+    char newest_name[64];
+    uint newest_stamp;
+    int found;
 
-    found           = 0;
-    newest_stamp    = 0;
-    newest_name[0]  = '\0';
+    found = 0;
+    newest_stamp = 0;
+    newest_name[0] = '\0';
 
     engine_dosio_cpp_CFileFinder_ctor_FUN_00481c30(&finder);
     engine_dosio_cpp_CFileFinder_openSearch_FUN_00481c70(&finder, (char *)"save\\*.noc");
@@ -650,7 +627,7 @@ extern "C" int nocturne_save_continue_target(char *out, int out_size)
         if ((found == 0) || (newest_stamp < finder.timestamp)) {
             snprintf(newest_name, sizeof(newest_name), "%s", finder.filename);
             newest_stamp = finder.timestamp;
-            found        = 1;
+            found = 1;
         }
         engine_dosio_cpp_CFileFinder_findNext_FUN_00481cf0(&finder);
     }
@@ -666,8 +643,12 @@ extern "C" int nocturne_save_continue_target(char *out, int out_size)
 
 #else
 
-extern "C" int nocturne_single_player_menu(void) { return NOCTURNE_SP_MENU_CANCEL; }
-extern "C" int nocturne_save_continue_target(char *, int) { return 0; }
+extern "C" int nocturne_single_player_menu(void) {
+    return NOCTURNE_SP_MENU_CANCEL;
+}
+extern "C" int nocturne_save_continue_target(char *, int) {
+    return 0;
+}
 
 #endif // !NOCTURNE_AUTHENTIC_SINGLE_PLAYER_MENU
 
@@ -679,11 +660,10 @@ extern "C" int nocturne_save_continue_target(char *, int) { return 0; }
 
 namespace {
 
-int  s_prev_letterbox = 0;
-char s_prev_mission[256] = { '\0' };
+int s_prev_letterbox = 0;
+char s_prev_mission[256] = {'\0'};
 
-void autosave_write(CGame *game)
-{
+void autosave_write(CGame *game) {
     char *message;
 
     // CGame::saveGame ends by pointing g_CurrentSaveFile at what it just wrote,
@@ -696,17 +676,15 @@ void autosave_write(CGame *game)
 
 } // namespace
 
-extern "C" void nocturne_autosave_session_start(void)
-{
+extern "C" void nocturne_autosave_session_start(void) {
     s_prev_mission[0] = '\0';
-    s_prev_letterbox  = 0;
+    s_prev_letterbox = 0;
 }
 
-extern "C" void nocturne_autosave_poll(CGame *game)
-{
+extern "C" void nocturne_autosave_poll(CGame *game) {
     const char *mission;
-    int         letterbox;
-    int         mission_changed;
+    int letterbox;
+    int mission_changed;
 
     if ((game == (CGame *)0x0) || (g_CDemonMissionPtr == (CDemonMission *)0x0) ||
         (g_HeroCount < 1)) {
@@ -714,12 +692,12 @@ extern "C" void nocturne_autosave_poll(CGame *game)
     }
     if (nocturne_net_session_active() != 0) {
         s_prev_mission[0] = '\0';
-        s_prev_letterbox  = 0;
+        s_prev_letterbox = 0;
         return;
     }
 
-    mission         = g_CDemonMissionPtr->mission_name;
-    letterbox       = game->letterbox_mode;
+    mission = g_CDemonMissionPtr->mission_name;
+    letterbox = game->letterbox_mode;
     mission_changed = (_stricmp(s_prev_mission, (char *)mission) != 0);
 
     if (mission_changed) {
@@ -732,8 +710,7 @@ extern "C" void nocturne_autosave_poll(CGame *game)
             s_prev_letterbox = letterbox;
             return;
         }
-    }
-    else if ((s_prev_letterbox == 0) || (letterbox != 0)) {
+    } else if ((s_prev_letterbox == 0) || (letterbox != 0)) {
         s_prev_letterbox = letterbox;
         return;
     }
@@ -750,7 +727,7 @@ extern "C" void nocturne_autosave_poll(CGame *game)
 
 #else
 
-extern "C" void nocturne_autosave_session_start(void) { }
-extern "C" void nocturne_autosave_poll(CGame *) { }
+extern "C" void nocturne_autosave_session_start(void) {}
+extern "C" void nocturne_autosave_poll(CGame *) {}
 
 #endif // !NOCTURNE_AUTHENTIC_AUTOSAVE

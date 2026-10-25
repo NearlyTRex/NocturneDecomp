@@ -11,12 +11,11 @@
 // camera that puts world x and z twenty pixels a unit from the middle of the
 // frame.
 
-#include "nocturne_test.h"
-#include "net_support.h"
-
 #include "net/net_packets.h"
 #include "net/net_respawn.h"
+#include "net_support.h"
 #include "nocturne.h"
+#include "nocturne_test.h"
 
 #include <cmath>
 #include <cstring>
@@ -60,7 +59,8 @@ void party(int count) {
     g_CDemonCameraInstance.framebuffer_height = 480;
     stand.ground = [](const CVector3f &, float) { return 0.0f; };
     stand.screen = on_screen;
-    for (int i = 0; i < count; i++) heroes[i]->base.base.location.position = {0, 0, 0};
+    for (int i = 0; i < count; i++)
+        heroes[i]->base.base.location.position = {0, 0, 0};
 }
 
 // The packet the last request sent.
@@ -75,9 +75,11 @@ Respawn last_respawn() {
     return packet;
 }
 
-bool near(float a, float b) { return std::fabs(a - b) < 1e-3f; }
+bool near(float a, float b) {
+    return std::fabs(a - b) < 1e-3f;
+}
 
-}  // namespace
+} // namespace
 
 // Only the host, in play, out of a cinematic, with someone to play with.
 NOCTURNE_TEST(only_the_host_in_play_can_respawn_the_party) {
@@ -189,30 +191,40 @@ NOCTURNE_TEST(with_nowhere_to_stand_the_fallbacks_are_taken_in_turn) {
     // at the origin or far from it.
     static auto step_of = [](float x, float z) {
         const float r = std::sqrt(x * x + z * z);
-        if (r < 1.0f || 8.0f < r) return -1;
+        if (r < 1.0f || 8.0f < r)
+            return -1;
         float degrees = std::atan2(z, x) * 57.29578f;
-        if (degrees < 0.0f) degrees += 360.0f;
+        if (degrees < 0.0f)
+            degrees += 360.0f;
         return (int)((degrees + 11.25f) / 22.5f) % 16;
     };
     stand.ground = [](const CVector3f &p, float) {
         const int step = step_of(p.x, p.z);
-        if (step == 0 || step == 1) return p.y - 10.0f;   // a hole
-        if (step == 2 || step == 3) return NAN;
-        if (step == 4 || step == 5) return 4.0f;          // a ledge
+        if (step == 0 || step == 1)
+            return p.y - 10.0f; // a hole
+        if (step == 2 || step == 3)
+            return NAN;
+        if (step == 4 || step == 5)
+            return 4.0f; // a ledge
         return 0.0f;
     };
     stand.blocked = [](const CVector3f &, const CVector3f &to) {
         const int step = step_of(to.x, to.z);
-        return (step == 6 || step == 7) ? 1 : 0;          // behind a wall
+        return (step == 6 || step == 7) ? 1 : 0; // behind a wall
     };
     stand.screen = [](const CVector3i &world) {
         CVector3i screen = on_screen(world);
         const int step = step_of((float)world.x / 256.0f, (float)world.z / 256.0f);
-        if (step == 8 || step == 9) screen.z = 0;         // behind the camera
-        if (step == 10 || step == 11) screen.x = 900 << 16;
-        if (step == 12 || step == 13) screen.x = -900 << 16;
-        if (step == 14) screen.y = 900 << 16;
-        if (step == 15) screen.y = -900 << 16;
+        if (step == 8 || step == 9)
+            screen.z = 0; // behind the camera
+        if (step == 10 || step == 11)
+            screen.x = 900 << 16;
+        if (step == 12 || step == 13)
+            screen.x = -900 << 16;
+        if (step == 14)
+            screen.y = 900 << 16;
+        if (step == 15)
+            screen.y = -900 << 16;
         return screen;
     };
 
@@ -295,11 +307,11 @@ NOCTURNE_TEST(safe_footing_is_only_live_floor_on_the_host) {
     net_support::box.min = {-1.0f, -1.0f, -1.0f};
     net_support::box.max = {1.0f, 3.0f, 1.0f};
     heroes[0]->base.base.location.position = {0.0f, 0.0f, 0.0f};
-    nocturne_net_respawn_apply_if_due(10);   // in the gas
+    nocturne_net_respawn_apply_if_due(10); // in the gas
     heroes[0]->base.base.location.position = {9.0f, 1.0f, 0.0f};
-    nocturne_net_respawn_apply_if_due(10);   // in the air
+    nocturne_net_respawn_apply_if_due(10); // in the air
     heroes[0]->base.base.location.position = {9.0f, 0.0f, 0.0f};
-    nocturne_net_respawn_apply_if_due(11);   // not a sampling frame
+    nocturne_net_respawn_apply_if_due(11); // not a sampling frame
     heroes[0]->base.hit_points = 0.0f;
     nocturne_net_respawn_apply_if_due(20);
     heroes[0]->base.hit_points = 100.0f;
@@ -317,7 +329,7 @@ NOCTURNE_TEST(safe_footing_is_only_live_floor_on_the_host) {
     g_HeroActors[0] = nullptr;
     nocturne_net_respawn_apply_if_due(30);
     g_HeroActors[0] = heroes[0];
-    heroes[0]->base.base.lifecycle_state = ACTOR_DESTROYED;   // blown apart, hit points or not
+    heroes[0]->base.base.lifecycle_state = ACTOR_DESTROYED; // blown apart, hit points or not
     nocturne_net_respawn_apply_if_due(30);
     heroes[0]->base.base.lifecycle_state = (EActorLifecycleState)0;
 

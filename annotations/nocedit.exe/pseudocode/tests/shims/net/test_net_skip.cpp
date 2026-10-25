@@ -6,12 +6,11 @@
 // answer is yes, schedules the skip a few frames ahead and sends that until it
 // is due. Votes and commits from a peer are written as the wire has them.
 
-#include "nocturne_test.h"
-#include "net_support.h"
-
 #include "net/net_packets.h"
 #include "net/net_skip.h"
+#include "net_support.h"
 #include "nocturne.h"
+#include "nocturne_test.h"
 
 #include <string>
 
@@ -65,11 +64,12 @@ void in_cinematic(EConnectionType connection, int label) {
 
 int sent_of(int type) {
     int count = 0;
-    for (const auto &s : stand.sent) count += (net_support::type_of(s) == type);
+    for (const auto &s : stand.sent)
+        count += (net_support::type_of(s) == type);
     return count;
 }
 
-}  // namespace
+} // namespace
 
 // Starting a skippable cinematic says so once; a vote goes out every frame.
 NOCTURNE_TEST(a_skippable_cinematic_says_so_and_votes_every_frame) {
@@ -243,7 +243,8 @@ NOCTURNE_TEST(between_cinematics_there_is_nothing_to_vote_on) {
 NOCTURNE_TEST(everyone_is_only_ever_the_players_there_are) {
     in_cinematic(CONNECTION_HOST, 4);
     net.player_count = 5;
-    for (int i = 1; i < 4; i++) vote(i, 4, 1);
+    for (int i = 1; i < 4; i++)
+        vote(i, 4, 1);
     nocturne_net_skip_toggle_vote();
     nocturne_net_skip_poll();
     CHECK_EQ(sent_of(NOCTURNE_NET_PACKET_SKIP_COMMIT), 0);

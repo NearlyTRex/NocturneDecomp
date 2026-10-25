@@ -20,10 +20,11 @@
 // keeping the project-specific buffer wrappers and back-cast helpers here
 // means re-exports don't wipe them.
 
-#include <fstream>
-#include <strstream>
-#include <string>
 #include "system/iostream.h"
+
+#include <fstream>
+#include <string>
+#include <strstream>
 
 inline _istream *watcom_istream_from(std::istream &is) {
     return reinterpret_cast<_istream *>(&is);
@@ -72,12 +73,10 @@ inline std::ofstream &std_ofstream_from(ofstream *fs) {
 // fs.open(path, mode) for any raw std:: file-stream open.
 #include "watcom/path.h"
 
-inline void watcom_stream_open(std::ifstream &fs, const char *path,
-                               std::ios::openmode mode) {
+inline void watcom_stream_open(std::ifstream &fs, const char *path, std::ios::openmode mode) {
     fs.open(watcom_resolve_fs_path(path).c_str(), mode);
 }
-inline void watcom_stream_open(std::ofstream &fs, const char *path,
-                               std::ios::openmode mode) {
+inline void watcom_stream_open(std::ofstream &fs, const char *path, std::ios::openmode mode) {
     fs.open(watcom_resolve_fs_path(path, WatcomPathUse::Write).c_str(), mode);
 }
 
@@ -103,22 +102,26 @@ class watcom_buffer_ostream {
     bool full_;
     int *size_ptr_;
     std::ostrstream oss_;
+
 public:
     watcom_buffer_ostream(char *buf, int *size_ptr)
-        : full_(*size_ptr <= 0)
-        , size_ptr_(size_ptr)
-        , oss_(full_ ? &fallback_ : buf,
-               full_ ? 1 : *size_ptr,
-               std::ios::out | std::ios::binary) {}
+        : full_(*size_ptr <= 0), size_ptr_(size_ptr),
+          oss_(full_ ? &fallback_ : buf, full_ ? 1 : *size_ptr, std::ios::out | std::ios::binary) {}
     ~watcom_buffer_ostream() {
-        if (!full_) *size_ptr_ -= (int)oss_.pcount();
+        if (!full_)
+            *size_ptr_ -= (int)oss_.pcount();
     }
-    operator _ostream *() { return watcom_ostream_from(oss_); }
+    operator _ostream *() {
+        return watcom_ostream_from(oss_);
+    }
 };
 
 class watcom_buffer_istream {
     std::istrstream iss_;
+
 public:
     watcom_buffer_istream(char *buf, int size) : iss_(buf, size) {}
-    operator _istream *() { return watcom_istream_from(iss_); }
+    operator _istream *() {
+        return watcom_istream_from(iss_);
+    }
 };

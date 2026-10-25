@@ -9,4 +9,4 @@ namespace sound_support {
 // What isSoundMuted answers.
 extern int muted;
 
-}  // namespace sound_support
+} // namespace sound_support

@@ -2,10 +2,9 @@
 // ACTOR DELETE — nothing left pointing at an actor once it is gone
 // =============================================================================
 
-#include "nocturne_test.h"
-
 #include "behaviour_support.h"
 #include "game/actor_delete.h"
+#include "nocturne_test.h"
 
 using namespace behaviour_support;
 

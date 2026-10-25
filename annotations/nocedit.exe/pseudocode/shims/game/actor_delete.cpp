@@ -6,9 +6,9 @@
 // killed, and why this has to hold the sound lock.
 
 #include "game/actor_delete.h"
-#include "shim_config.h"
 
 #include "nocturne.h"
+#include "shim_config.h"
 
 #if !NOCTURNE_AUTHENTIC_ACTOR_DELETE
 
@@ -21,17 +21,16 @@ namespace {
 
 // The two tracking formats CSfxSlot::updateBoundPositionAndVelocity reads
 // through a pointer; 0 is a static position it copies from the options.
-#define SFX_TRACK_NONE    0
-#define SFX_TRACK_FLOAT3  1
+#define SFX_TRACK_NONE 0
+#define SFX_TRACK_FLOAT3 1
 #define SFX_TRACK_DOUBLE3 2
 
 } // namespace
 
-extern "C" void nocturne_actor_delete_unbind_sounds(CDemonActor *actor)
-{
+extern "C" void nocturne_actor_delete_unbind_sounds(CDemonActor *actor) {
     CSfxOptions *options;
-    void        *actor_position;
-    int          i;
+    void *actor_position;
+    int i;
 
     if (actor == (CDemonActor *)0) {
         return;
@@ -49,12 +48,12 @@ extern "C" void nocturne_actor_delete_unbind_sounds(CDemonActor *actor)
         if ((options->position_source_ptr == actor_position) ||
             (options->userdata[0] == (void *)actor)) {
             options->position_source_ptr = (void *)0;
-            options->position_format     = SFX_TRACK_NONE;
+            options->position_format = SFX_TRACK_NONE;
         }
         if ((options->velocity_source_ptr == actor_position) ||
             (options->userdata[0] == (void *)actor)) {
             options->velocity_source_ptr = (void *)0;
-            options->velocity_format     = SFX_TRACK_NONE;
+            options->velocity_format = SFX_TRACK_NONE;
         }
 
         // Not a tracker, but the same dangling read: anything still asking the
@@ -69,8 +68,7 @@ extern "C" void nocturne_actor_delete_unbind_sounds(CDemonActor *actor)
     sound_sndmain_cpp_unlockSound_FUN_005abdc0();
 }
 
-extern "C" void nocturne_actor_delete_unbind_heroes(CDemonActor *actor)
-{
+extern "C" void nocturne_actor_delete_unbind_heroes(CDemonActor *actor) {
     CStranger *stranger;
     CHero *hero;
     CInventory *inventory;
@@ -82,8 +80,8 @@ extern "C" void nocturne_actor_delete_unbind_heroes(CDemonActor *actor)
         if (hero == (CHero *)0x0) {
             continue;
         }
-        stranger = (CStranger *)core_actor_cpp_castToClassHash_FUN_0040c790
-                                    (&(hero->base).base, g_CStrangerClassInfo.name_hash);
+        stranger = (CStranger *)core_actor_cpp_castToClassHash_FUN_0040c790(
+            &(hero->base).base, g_CStrangerClassInfo.name_hash);
         if ((stranger != (CStranger *)0x0) && (stranger->weapon == (CWeapon *)actor)) {
             stranger->weapon = (CWeapon *)0x0;
         }
@@ -104,7 +102,11 @@ extern "C" void nocturne_actor_delete_unbind_heroes(CDemonActor *actor)
 
 #else
 
-extern "C" void nocturne_actor_delete_unbind_sounds(CDemonActor *actor) { (void)actor; }
-extern "C" void nocturne_actor_delete_unbind_heroes(CDemonActor *actor) { (void)actor; }
+extern "C" void nocturne_actor_delete_unbind_sounds(CDemonActor *actor) {
+    (void)actor;
+}
+extern "C" void nocturne_actor_delete_unbind_heroes(CDemonActor *actor) {
+    (void)actor;
+}
 
 #endif // !NOCTURNE_AUTHENTIC_ACTOR_DELETE

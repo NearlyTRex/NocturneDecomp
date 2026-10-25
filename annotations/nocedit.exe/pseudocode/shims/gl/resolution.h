@@ -59,8 +59,8 @@ extern "C" {
 // ever selected only to be taken back.
 //
 // Writes the new mode.
-void nocturne_resolution_step(int current_width, int current_height, int step,
-                              int max_height, int *out_width, int *out_height);
+void nocturne_resolution_step(int current_width, int current_height, int step, int max_height,
+                              int *out_width, int *out_height);
 
 // "Resolution : 1024x768" for the Options line, built into static storage.
 // Never null, so the caller can hand it straight to the localiser.

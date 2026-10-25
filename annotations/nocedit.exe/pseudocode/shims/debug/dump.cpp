@@ -6,14 +6,16 @@
 // toggle.
 
 #include "debug/dump.h"
+
 #include "shim_config.h"
 
 #if NOCTURNE_DUMP_TOOLS
 
-#include "nocturne.h"
-#include "gl/gl_present.h"
-#include "directx/ddraw.h"
 #include "core/ascii_case.h"
+#include "directx/ddraw.h"
+#include "gl/gl_present.h"
+#include "nocturne.h"
+
 #include <SDL.h>
 #include <cmath>
 #include <cstdio>
@@ -24,8 +26,7 @@
 // Common helpers
 // =============================================================================
 
-static void write_timestamp(FILE *f)
-{
+static void write_timestamp(FILE *f) {
     time_t now = std::time(nullptr);
     char tbuf[64];
     std::strftime(tbuf, sizeof(tbuf), "%Y-%m-%d %H:%M:%S", std::localtime(&now));
@@ -38,46 +39,54 @@ static void write_timestamp(FILE *f)
 
 struct PixelStats {
     int zero;
-    int dim;     // max channel 1..31
-    int mid;     // max channel 32..127
-    int bright;  // max channel 128..255
+    int dim;    // max channel 1..31
+    int mid;    // max channel 32..127
+    int bright; // max channel 128..255
     int min_x, min_y, max_x, max_y;
     int max_value;
 };
 
-static void pixel_stats_init(PixelStats *s)
-{
+static void pixel_stats_init(PixelStats *s) {
     s->zero = s->dim = s->mid = s->bright = 0;
     s->min_x = s->min_y = 0x7fffffff;
     s->max_x = s->max_y = -1;
     s->max_value = 0;
 }
 
-static void pixel_stats_update(PixelStats *s, int x, int y, int r, int g, int b)
-{
+static void pixel_stats_update(PixelStats *s, int x, int y, int r, int g, int b) {
     int m = r;
-    if (g > m) m = g;
-    if (b > m) m = b;
+    if (g > m)
+        m = g;
+    if (b > m)
+        m = b;
     if (m == 0) {
         s->zero++;
         return;
     }
-    if (m < 32) s->dim++;
-    else if (m < 128) s->mid++;
-    else s->bright++;
-    if (m > s->max_value) s->max_value = m;
-    if (x < s->min_x) s->min_x = x;
-    if (y < s->min_y) s->min_y = y;
-    if (x > s->max_x) s->max_x = x;
-    if (y > s->max_y) s->max_y = y;
+    if (m < 32)
+        s->dim++;
+    else if (m < 128)
+        s->mid++;
+    else
+        s->bright++;
+    if (m > s->max_value)
+        s->max_value = m;
+    if (x < s->min_x)
+        s->min_x = x;
+    if (y < s->min_y)
+        s->min_y = y;
+    if (x > s->max_x)
+        s->max_x = x;
+    if (y > s->max_y)
+        s->max_y = y;
 }
 
-static void write_screenshot_metadata(const char *path, const PixelStats *s)
-{
+static void write_screenshot_metadata(const char *path, const PixelStats *s) {
     char meta_path[1024];
     std::snprintf(meta_path, sizeof(meta_path), "%s.txt", path);
     FILE *f = std::fopen(meta_path, "w");
-    if (!f) return;
+    if (!f)
+        return;
 
     std::fprintf(f, "=== Nocturne Frame Buffer Dump ===\n");
     std::fprintf(f, "image: %s\n", path);
@@ -111,8 +120,7 @@ static void write_screenshot_metadata(const char *path, const PixelStats *s)
     std::fprintf(f, "g_SpotLightCount:    %d\n\n", g_SpotLightCount);
 
     std::fprintf(f, "== Camera ==\n");
-    std::fprintf(f, "position: (%.4f, %.4f, %.4f)\n",
-                 g_CDemonCameraInstance.base.position.f.x,
+    std::fprintf(f, "position: (%.4f, %.4f, %.4f)\n", g_CDemonCameraInstance.base.position.f.x,
                  g_CDemonCameraInstance.base.position.f.y,
                  g_CDemonCameraInstance.base.position.f.z);
     std::fprintf(f, "rotation_matrix:\n");
@@ -123,30 +131,27 @@ static void write_screenshot_metadata(const char *path, const PixelStats *s)
                      g_CDemonCameraInstance.base.rotation_matrix.m[i].z);
     }
     std::fprintf(f, "scale_factor: %d\n", g_CDemonCameraInstance.scale_factor);
-    std::fprintf(f, "framebuffer:  %dx%d\n",
-                 g_CDemonCameraInstance.framebuffer_width,
+    std::fprintf(f, "framebuffer:  %dx%d\n", g_CDemonCameraInstance.framebuffer_width,
                  g_CDemonCameraInstance.framebuffer_height);
-    std::fprintf(f, "display:      %dx%d\n\n",
-                 g_CDemonCameraInstance.display_width,
+    std::fprintf(f, "display:      %dx%d\n\n", g_CDemonCameraInstance.display_width,
                  g_CDemonCameraInstance.display_height);
 
     int total = s->zero + s->dim + s->mid + s->bright;
     int nonzero = total - s->zero;
     std::fprintf(f, "== Frame Buffer Histogram ==\n");
     std::fprintf(f, "total pixels:           %d\n", total);
-    std::fprintf(f, "zero (all channels=0):  %d (%.2f%%)\n",
-                 s->zero, total ? 100.0 * s->zero / total : 0.0);
-    std::fprintf(f, "dim (max 1..31):        %d (%.2f%%)\n",
-                 s->dim,    total ? 100.0 * s->dim    / total : 0.0);
-    std::fprintf(f, "mid (max 32..127):      %d (%.2f%%)\n",
-                 s->mid,    total ? 100.0 * s->mid    / total : 0.0);
-    std::fprintf(f, "bright (max 128..255):  %d (%.2f%%)\n",
-                 s->bright, total ? 100.0 * s->bright / total : 0.0);
+    std::fprintf(f, "zero (all channels=0):  %d (%.2f%%)\n", s->zero,
+                 total ? 100.0 * s->zero / total : 0.0);
+    std::fprintf(f, "dim (max 1..31):        %d (%.2f%%)\n", s->dim,
+                 total ? 100.0 * s->dim / total : 0.0);
+    std::fprintf(f, "mid (max 32..127):      %d (%.2f%%)\n", s->mid,
+                 total ? 100.0 * s->mid / total : 0.0);
+    std::fprintf(f, "bright (max 128..255):  %d (%.2f%%)\n", s->bright,
+                 total ? 100.0 * s->bright / total : 0.0);
     std::fprintf(f, "max channel value:      %d\n", s->max_value);
     if (nonzero > 0) {
-        std::fprintf(f, "nonzero bbox: x=[%d..%d] y=[%d..%d] (w=%d h=%d)\n",
-                     s->min_x, s->max_x, s->min_y, s->max_y,
-                     s->max_x - s->min_x + 1, s->max_y - s->min_y + 1);
+        std::fprintf(f, "nonzero bbox: x=[%d..%d] y=[%d..%d] (w=%d h=%d)\n", s->min_x, s->max_x,
+                     s->min_y, s->max_y, s->max_x - s->min_x + 1, s->max_y - s->min_y + 1);
     } else {
         std::fprintf(f, "nonzero bbox: <none — buffer is entirely zero>\n");
     }
@@ -154,8 +159,7 @@ static void write_screenshot_metadata(const char *path, const PixelStats *s)
     std::fclose(f);
 }
 
-extern "C" int nocturne_dump_screenshot(const char *path)
-{
+extern "C" int nocturne_dump_screenshot(const char *path) {
     if (path == nullptr || g_BackBuffer == nullptr) {
         return -1;
     }
@@ -184,7 +188,7 @@ extern "C" int nocturne_dump_screenshot(const char *path)
                 unsigned char r = row[x * 4 + 2];
                 unsigned char g = row[x * 4 + 1];
                 unsigned char b = row[x * 4 + 0];
-                unsigned char rgb[3] = { r, g, b };
+                unsigned char rgb[3] = {r, g, b};
                 std::fwrite(rgb, 1, 3, f);
                 pixel_stats_update(&stats, x, y, r, g, b);
             }
@@ -196,12 +200,12 @@ extern "C" int nocturne_dump_screenshot(const char *path)
                 unsigned int p = (unsigned int)row[(ptrdiff_t)x * 2] |
                                  ((unsigned int)row[(ptrdiff_t)x * 2 + 1] << 8);
                 unsigned int r5 = (p >> 11) & 0x1F;
-                unsigned int g6 = (p >> 5)  & 0x3F;
-                unsigned int b5 =  p        & 0x1F;
+                unsigned int g6 = (p >> 5) & 0x3F;
+                unsigned int b5 = p & 0x1F;
                 unsigned char r = (unsigned char)((r5 << 3) | (r5 >> 2));
                 unsigned char g = (unsigned char)((g6 << 2) | (g6 >> 4));
                 unsigned char b = (unsigned char)((b5 << 3) | (b5 >> 2));
-                unsigned char rgb[3] = { r, g, b };
+                unsigned char rgb[3] = {r, g, b};
                 std::fwrite(rgb, 1, 3, f);
                 pixel_stats_update(&stats, x, y, r, g, b);
             }
@@ -217,8 +221,7 @@ extern "C" int nocturne_dump_screenshot(const char *path)
 // Z-buffer dump
 // =============================================================================
 
-extern "C" int nocturne_dump_zbuffer(const char *path)
-{
+extern "C" int nocturne_dump_zbuffer(const char *path) {
     if (path == nullptr) {
         return -1;
     }
@@ -241,17 +244,24 @@ extern "C" int nocturne_dump_zbuffer(const char *path)
 
     for (int y = 0; y < h; y++) {
         const unsigned int *row = g_ZBufferScanlineArray[y];
-        if (row == nullptr) continue;
+        if (row == nullptr)
+            continue;
         for (int x = 0; x < w; x++) {
             unsigned int d = row[x];
-            if (d < min_d) min_d = d;
-            if (d > max_d) max_d = d;
+            if (d < min_d)
+                min_d = d;
+            if (d > max_d)
+                max_d = d;
             if (d != 0) {
                 touched++;
-                if (x < min_x) min_x = x;
-                if (y < min_y) min_y = y;
-                if (x > max_x) max_x = x;
-                if (y > max_y) max_y = y;
+                if (x < min_x)
+                    min_x = x;
+                if (y < min_y)
+                    min_y = y;
+                if (x > max_x)
+                    max_x = x;
+                if (y > max_y)
+                    max_y = y;
             }
         }
     }
@@ -271,18 +281,18 @@ extern "C" int nocturne_dump_zbuffer(const char *path)
         const unsigned int *row = g_ZBufferScanlineArray[y];
         if (row == nullptr) {
             unsigned char black[3] = {0, 0, 0};
-            for (int x = 0; x < w; x++) std::fwrite(black, 1, 3, f);
+            for (int x = 0; x < w; x++)
+                std::fwrite(black, 1, 3, f);
             continue;
         }
         for (int x = 0; x < w; x++) {
             unsigned int d = row[x];
             unsigned char v = 0;
             if (d != 0) {
-                unsigned long long scaled =
-                    (unsigned long long)(d - min_d) * 255ull / range;
+                unsigned long long scaled = (unsigned long long)(d - min_d) * 255ull / range;
                 v = (unsigned char)scaled;
             }
-            unsigned char rgb[3] = { v, v, v };
+            unsigned char rgb[3] = {v, v, v};
             std::fwrite(rgb, 1, 3, f);
         }
     }
@@ -305,16 +315,16 @@ extern "C" int nocturne_dump_zbuffer(const char *path)
         std::fprintf(m, "== Depth Stats ==\n");
         std::fprintf(m, "total pixels:    %d\n", total);
         std::fprintf(m, "touched (d!=0):  %d (%.2f%%)\n", touched, 100.0 * touched / total);
-        std::fprintf(m, "untouched (d=0): %d (%.2f%%)\n",
-                     total - touched, 100.0 * (total - touched) / total);
+        std::fprintf(m, "untouched (d=0): %d (%.2f%%)\n", total - touched,
+                     100.0 * (total - touched) / total);
         if (touched > 0) {
             std::fprintf(m, "min depth: 0x%08x (%u)\n", min_d, min_d);
             std::fprintf(m, "max depth: 0x%08x (%u)\n", max_d, max_d);
-            std::fprintf(m, "touched bbox: x=[%d..%d] y=[%d..%d] (w=%d h=%d)\n",
-                         min_x, max_x, min_y, max_y,
-                         max_x - min_x + 1, max_y - min_y + 1);
+            std::fprintf(m, "touched bbox: x=[%d..%d] y=[%d..%d] (w=%d h=%d)\n", min_x, max_x,
+                         min_y, max_y, max_x - min_x + 1, max_y - min_y + 1);
         } else {
-            std::fprintf(m, "<entire z-buffer is zero — rasterizer didn't run or didn't write depth>\n");
+            std::fprintf(
+                m, "<entire z-buffer is zero — rasterizer didn't run or didn't write depth>\n");
         }
         std::fclose(m);
     }
@@ -326,8 +336,7 @@ extern "C" int nocturne_dump_zbuffer(const char *path)
 // Display list dump
 // =============================================================================
 
-extern "C" int nocturne_dump_display_list(const char *path)
-{
+extern "C" int nocturne_dump_display_list(const char *path) {
     if (path == nullptr) {
         return -1;
     }
@@ -350,16 +359,19 @@ extern "C" int nocturne_dump_display_list(const char *path)
     std::fprintf(f, "\n");
 
     if (count <= 0) {
-        std::fprintf(f, "<display list is empty — buildDisplayList culled all actors or wasn't called>\n");
+        std::fprintf(
+            f, "<display list is empty — buildDisplayList culled all actors or wasn't called>\n");
         std::fclose(f);
         return 0;
     }
 
-    std::fprintf(f, "%-4s  %-10s  %-32s  %-30s  %s\n",
-                 "idx", "ptr", "name", "position", "orient (vec)");
-    std::fprintf(f, "----  ----------  --------------------------------  ------------------------------  ------------------------------\n");
+    std::fprintf(f, "%-4s  %-10s  %-32s  %-30s  %s\n", "idx", "ptr", "name", "position",
+                 "orient (vec)");
+    std::fprintf(f, "----  ----------  --------------------------------  "
+                    "------------------------------  ------------------------------\n");
 
-    if (count > 2000) count = 2000;  // safety cap to declared array size
+    if (count > 2000)
+        count = 2000; // safety cap to declared array size
     for (int i = 0; i < count; i++) {
         CDemonActor *a = g_CDemonSetInstance.sorted_render_actors[i];
         if (a == nullptr) {
@@ -370,17 +382,12 @@ extern "C" int nocturne_dump_display_list(const char *path)
         std::memcpy(name, a->actor_name, 32);
         name[32] = '\0';
         char posbuf[64];
-        std::snprintf(posbuf, sizeof(posbuf), "(%.2f, %.2f, %.2f)",
-                      a->location.position.x,
-                      a->location.position.y,
-                      a->location.position.z);
+        std::snprintf(posbuf, sizeof(posbuf), "(%.2f, %.2f, %.2f)", a->location.position.x,
+                      a->location.position.y, a->location.position.z);
         char rotbuf[64];
-        std::snprintf(rotbuf, sizeof(rotbuf), "(%.3f, %.3f, %.3f)",
-                      a->orient.vec.x,
-                      a->orient.vec.y,
-                      a->orient.vec.z);
-        std::fprintf(f, "%-4d  %-10p  %-32s  %-30s  %s\n",
-                     i, (void *)a, name, posbuf, rotbuf);
+        std::snprintf(rotbuf, sizeof(rotbuf), "(%.3f, %.3f, %.3f)", a->orient.vec.x,
+                      a->orient.vec.y, a->orient.vec.z);
+        std::fprintf(f, "%-4d  %-10p  %-32s  %-30s  %s\n", i, (void *)a, name, posbuf, rotbuf);
     }
 
     std::fclose(f);
@@ -391,35 +398,31 @@ extern "C" int nocturne_dump_display_list(const char *path)
 // Actor state dump — generic, typed via class-hash dispatch
 // =============================================================================
 
-static void dump_actor_fields(FILE *f, CDemonActor *a)
-{
+static void dump_actor_fields(FILE *f, CDemonActor *a) {
     char name[33];
     std::memcpy(name, a->actor_name, 32);
     name[32] = '\0';
     std::fprintf(f, "[CDemonActor]\n");
     std::fprintf(f, "name:       %s\n", name);
     std::fprintf(f, "ptr:        %p\n", (void *)a);
-    std::fprintf(f, "position:   (%.4f, %.4f, %.4f)\n",
-                 a->location.position.x, a->location.position.y, a->location.position.z);
+    std::fprintf(f, "position:   (%.4f, %.4f, %.4f)\n", a->location.position.x,
+                 a->location.position.y, a->location.position.z);
     std::fprintf(f, "area_id:    %d\n", a->location.area_id);
-    std::fprintf(f, "orient_vec: (%.4f, %.4f, %.4f)\n",
-                 a->orient.vec.x, a->orient.vec.y, a->orient.vec.z);
+    std::fprintf(f, "orient_vec: (%.4f, %.4f, %.4f)\n", a->orient.vec.x, a->orient.vec.y,
+                 a->orient.vec.z);
     // The 3x3 orientation matrix is what the renderer actually multiplies
     // vertices by for body rotation. Print all 9 cells; mismatch with
     // orient_vec implies they're being updated by different code paths.
     std::fprintf(f, "orient_matrix:\n");
     for (int r = 0; r < 3; ++r) {
-        std::fprintf(f, "  [%.4f %.4f %.4f]\n",
-                     a->orient_matrix.m[r].x,
-                     a->orient_matrix.m[r].y,
+        std::fprintf(f, "  [%.4f %.4f %.4f]\n", a->orient_matrix.m[r].x, a->orient_matrix.m[r].y,
                      a->orient_matrix.m[r].z);
     }
     // Derived yaw from the matrix: atan2(m02, m00). Cheaper to read across
     // a long file than the matrix.
     {
         float yaw = std::atan2(a->orient_matrix.m[0].z, a->orient_matrix.m[0].x);
-        std::fprintf(f, "matrix_yaw: %.4f rad (%.2f deg)\n",
-                     yaw, yaw * 57.29577951f);
+        std::fprintf(f, "matrix_yaw: %.4f rad (%.2f deg)\n", yaw, yaw * 57.29577951f);
     }
     std::fprintf(f, "lifecycle:  %d\n", (int)a->lifecycle_state);
     std::fprintf(f, "health:     %d\n", a->health);
@@ -428,20 +431,18 @@ static void dump_actor_fields(FILE *f, CDemonActor *a)
     std::fprintf(f, "is_transparent:   %d\n", a->is_transparent);
     std::fprintf(f, "collision_disabled: %d\n", a->collision_disabled);
     std::fprintf(f, "process_disabled:   %d\n", a->process_disabled);
-    std::fprintf(f, "scale:       (%d, %d, %d)\n",
-                 a->scale.x, a->scale.y, a->scale.z);
+    std::fprintf(f, "scale:       (%d, %d, %d)\n", a->scale.x, a->scale.y, a->scale.z);
     std::fprintf(f, "standing_platform: %p\n", (void *)a->standing_platform);
 }
 
-static void dump_character_fields(FILE *f, CCharacter *c)
-{
+static void dump_character_fields(FILE *f, CCharacter *c) {
     std::fprintf(f, "\n[CCharacter]\n");
     std::fprintf(f, "is_on_ground:    %d\n", c->is_on_ground);
     std::fprintf(f, "closest_distance_threshold: %.4f\n", c->closest_distance_threshold);
-    std::fprintf(f, "velocity:        (%.4f, %.4f, %.4f)\n",
-                 c->velocity.x, c->velocity.y, c->velocity.z);
-    std::fprintf(f, "position_delta:  (%.4f, %.4f, %.4f)\n",
-                 c->position_delta.x, c->position_delta.y, c->position_delta.z);
+    std::fprintf(f, "velocity:        (%.4f, %.4f, %.4f)\n", c->velocity.x, c->velocity.y,
+                 c->velocity.z);
+    std::fprintf(f, "position_delta:  (%.4f, %.4f, %.4f)\n", c->position_delta.x,
+                 c->position_delta.y, c->position_delta.z);
     std::fprintf(f, "walk_step_speed: %.4f\n", c->walk_step_speed);
     std::fprintf(f, "turn_speed:      %.4f\n", c->turn_speed);
     std::fprintf(f, "hit_points:      %.2f / %.2f\n", c->hit_points, c->max_hit_points);
@@ -467,18 +468,16 @@ static void dump_character_fields(FILE *f, CCharacter *c)
                  c->model.bone_transform.pose_data.root_position.z);
     std::fprintf(f, "root_bone_world_matrix:\n");
     for (int r = 0; r < 3; ++r) {
-        std::fprintf(f, "  [%.4f %.4f %.4f %.4f]\n",
-                     root.m[r].x, root.m[r].y, root.m[r].z, root.m[r].w);
+        std::fprintf(f, "  [%.4f %.4f %.4f %.4f]\n", root.m[r].x, root.m[r].y, root.m[r].z,
+                     root.m[r].w);
     }
     {
         float yaw = std::atan2(root.m[0].z, root.m[0].x);
-        std::fprintf(f, "root_bone_yaw: %.4f rad (%.2f deg)\n",
-                     yaw, yaw * 57.29577951f);
+        std::fprintf(f, "root_bone_yaw: %.4f rad (%.2f deg)\n", yaw, yaw * 57.29577951f);
     }
     // Root quaternion (driven by motion blender / applyRotationToHierarchy).
     CQuaternion4f &q0 = c->model.bone_transform.pose_data.bone_rotations[0];
-    std::fprintf(f, "root_bone_quat: (w=%.4f x=%.4f y=%.4f z=%.4f)\n",
-                 q0.w, q0.x, q0.y, q0.z);
+    std::fprintf(f, "root_bone_quat: (w=%.4f x=%.4f y=%.4f z=%.4f)\n", q0.w, q0.x, q0.y, q0.z);
 
     // Scan all 100 bones for NaN or non-unit quaternions. Unit quat:
     // w^2 + x^2 + y^2 + z^2 == 1. A bone with a wildly-off-unit rotation
@@ -489,25 +488,22 @@ static void dump_character_fields(FILE *f, CCharacter *c)
     int anomalous = 0;
     for (int b = 0; b < 100; ++b) {
         CQuaternion4f &q = c->model.bone_transform.pose_data.bone_rotations[b];
-        bool nan = std::isnan(q.w) || std::isnan(q.x) ||
-                   std::isnan(q.y) || std::isnan(q.z);
-        float len2 = q.w*q.w + q.x*q.x + q.y*q.y + q.z*q.z;
+        bool nan = std::isnan(q.w) || std::isnan(q.x) || std::isnan(q.y) || std::isnan(q.z);
+        float len2 = q.w * q.w + q.x * q.x + q.y * q.y + q.z * q.z;
         if (nan || std::fabs(len2 - 1.0f) > 0.01f) {
-            std::fprintf(f, "  bone[%3d]: w=%.4f x=%.4f y=%.4f z=%.4f  |len2=%.4f%s\n",
-                         b, q.w, q.x, q.y, q.z, len2, nan ? " NaN" : "");
+            std::fprintf(f, "  bone[%3d]: w=%.4f x=%.4f y=%.4f z=%.4f  |len2=%.4f%s\n", b, q.w, q.x,
+                         q.y, q.z, len2, nan ? " NaN" : "");
             anomalous++;
         }
     }
     if (anomalous == 0) {
         std::fprintf(f, "  (none — all bone quaternions are unit-length)\n");
-    }
-    else {
+    } else {
         std::fprintf(f, "  total anomalous: %d / 100\n", anomalous);
     }
 }
 
-static void dump_hero_fields(FILE *f, CHero *h)
-{
+static void dump_hero_fields(FILE *f, CHero *h) {
     std::fprintf(f, "\n[CHero]\n");
     std::fprintf(f, "invincibility_timer: %.4f\n", h->invincibility_timer);
     std::fprintf(f, "control_type:        %d\n", (int)h->control_type);
@@ -515,27 +511,27 @@ static void dump_hero_fields(FILE *f, CHero *h)
     std::fprintf(f, "ai_task:             %d\n", (int)h->ai_task);
     std::fprintf(f, "is_wearing_gas_mask: %d\n", h->is_wearing_gas_mask);
     std::fprintf(f, "target_actor:        %p\n", (void *)h->target_actor);
-    std::fprintf(f, "target_position:     (%.4f, %.4f, %.4f)\n",
-                 h->target_position.x, h->target_position.y, h->target_position.z);
+    std::fprintf(f, "target_position:     (%.4f, %.4f, %.4f)\n", h->target_position.x,
+                 h->target_position.y, h->target_position.z);
 }
 
-static void dump_stranger_fields(FILE *f, CStranger *s)
-{
+static void dump_stranger_fields(FILE *f, CStranger *s) {
     std::fprintf(f, "\n[CStranger]\n");
     std::fprintf(f, "guns_drawn:       %d\n", s->guns_drawn);
     std::fprintf(f, "aim_pitch:        %.4f\n", s->aim_pitch);
     std::fprintf(f, "weapon:           %p\n", (void *)s->weapon);
     std::fprintf(f, "airborne_timer:   %.4f\n", s->airborne_timer);
     std::fprintf(f, "fall_velocity_snapshot: %.4f\n", s->fall_velocity_snapshot);
-    std::fprintf(f, "pending_velocity: (%.4f, %.4f, %.4f)\n",
-                 s->pending_velocity.x, s->pending_velocity.y, s->pending_velocity.z);
+    std::fprintf(f, "pending_velocity: (%.4f, %.4f, %.4f)\n", s->pending_velocity.x,
+                 s->pending_velocity.y, s->pending_velocity.z);
 }
 
-extern "C" int nocturne_dump_actor_state(const char *path, CDemonActor *actor)
-{
-    if (path == nullptr) return -1;
+extern "C" int nocturne_dump_actor_state(const char *path, CDemonActor *actor) {
+    if (path == nullptr)
+        return -1;
     FILE *f = std::fopen(path, "w");
-    if (f == nullptr) return -1;
+    if (f == nullptr)
+        return -1;
 
     std::fprintf(f, "=== Nocturne Actor State Dump ===\n");
     write_timestamp(f);
@@ -552,13 +548,16 @@ extern "C" int nocturne_dump_actor_state(const char *path, CDemonActor *actor)
     dump_actor_fields(f, actor);
     CStranger *as_stranger = (CStranger *)core_actor_cpp_castToClassHash_FUN_0040c790(
         actor, g_CStrangerClassInfo.name_hash);
-    CHero *as_hero = (CHero *)core_actor_cpp_castToClassHash_FUN_0040c790(
-        actor, g_CHeroClassInfo.name_hash);
+    CHero *as_hero =
+        (CHero *)core_actor_cpp_castToClassHash_FUN_0040c790(actor, g_CHeroClassInfo.name_hash);
     CCharacter *as_character = (CCharacter *)core_actor_cpp_castToClassHash_FUN_0040c790(
         actor, g_CCharacterClassInfo.name_hash);
-    if (as_character) dump_character_fields(f, as_character);
-    if (as_hero)      dump_hero_fields(f, as_hero);
-    if (as_stranger)  dump_stranger_fields(f, as_stranger);
+    if (as_character)
+        dump_character_fields(f, as_character);
+    if (as_hero)
+        dump_hero_fields(f, as_hero);
+    if (as_stranger)
+        dump_stranger_fields(f, as_stranger);
 
     std::fclose(f);
     return 0;
@@ -568,16 +567,16 @@ extern "C" int nocturne_dump_actor_state(const char *path, CDemonActor *actor)
 // Ground probes — point + cylinder sweep at a given position
 // =============================================================================
 
-extern "C" int nocturne_dump_ground_probes(const char *path, CVector3f *pos)
-{
-    if (path == nullptr || pos == nullptr) return -1;
+extern "C" int nocturne_dump_ground_probes(const char *path, CVector3f *pos) {
+    if (path == nullptr || pos == nullptr)
+        return -1;
     FILE *f = std::fopen(path, "w");
-    if (f == nullptr) return -1;
+    if (f == nullptr)
+        return -1;
 
     std::fprintf(f, "=== Nocturne Ground Probes ===\n");
     write_timestamp(f);
-    std::fprintf(f, "probe position: (%.4f, %.4f, %.4f)\n\n",
-                 pos->x, pos->y, pos->z);
+    std::fprintf(f, "probe position: (%.4f, %.4f, %.4f)\n\n", pos->x, pos->y, pos->z);
 
     // radius=0 hits the point-query getGroundHeight path; >0 goes to
     // cylinderGroundCheck which iterates neighbor cubes. Sweeping radii
@@ -585,12 +584,11 @@ extern "C" int nocturne_dump_ground_probes(const char *path, CVector3f *pos)
     // "no ground in this single cube but yes in neighbors" (radius=0
     // misses, radius>=1 hits).
     float radii[] = {0.0f, 0.5f, 1.0f, 2.0f, 5.0f};
-    for (size_t i = 0; i < sizeof(radii)/sizeof(radii[0]); i++) {
+    for (size_t i = 0; i < sizeof(radii) / sizeof(radii[0]); i++) {
         CVector3f probe = *pos;
         float gh = core_setcolid_cpp_CDemonSet_processCollisionTypes_FUN_005716b0(
             &g_CDemonSetInstance, &probe, radii[i]);
-        std::fprintf(f, "  radius=%.1f  ground=%.4f  (delta=%.4f)\n",
-                     radii[i], gh, pos->y - gh);
+        std::fprintf(f, "  radius=%.1f  ground=%.4f  (delta=%.4f)\n", radii[i], gh, pos->y - gh);
     }
 
     std::fclose(f);
@@ -601,21 +599,20 @@ extern "C" int nocturne_dump_ground_probes(const char *path, CVector3f *pos)
 // Collision grid — extent, optional per-position neighborhood, and triangles
 // =============================================================================
 
-static const char *triangle_kind(float ny)
-{
-    if (ny >  0.7f) return "FLOOR-up";
-    if (ny < -0.7f) return "FLOOR-dn";
+static const char *triangle_kind(float ny) {
+    if (ny > 0.7f)
+        return "FLOOR-up";
+    if (ny < -0.7f)
+        return "FLOOR-dn";
     return "wall    ";
 }
 
-static void dump_cube_triangles(FILE *f, CDemonRaytrace *rt,
-                                int xi, int yi, int zi, const char *label)
-{
-    CDemonCube *cube = core_dtrace_cpp_CDemonRaytrace_getCubeAt_FUN_004952b0(
-        rt, xi, yi, zi);
-    if (cube == nullptr || cube->triangle_count <= 0) return;
-    std::fprintf(f, "\n%s (x=%d, y=%d, z=%d, %d tris):\n",
-                 label, xi, yi, zi, cube->triangle_count);
+static void dump_cube_triangles(FILE *f, CDemonRaytrace *rt, int xi, int yi, int zi,
+                                const char *label) {
+    CDemonCube *cube = core_dtrace_cpp_CDemonRaytrace_getCubeAt_FUN_004952b0(rt, xi, yi, zi);
+    if (cube == nullptr || cube->triangle_count <= 0)
+        return;
+    std::fprintf(f, "\n%s (x=%d, y=%d, z=%d, %d tris):\n", label, xi, yi, zi, cube->triangle_count);
     // Indexed as the game indexes it: 0x20 was the 32-bit size, and the vertex
     // pointers inside make the entry larger at 64.
     for (int t = 0; t < cube->triangle_count; t++) {
@@ -623,20 +620,21 @@ static void dump_cube_triangles(FILE *f, CDemonRaytrace *rt,
         CVector3f *v0 = ct->triangle.vertices[0];
         CVector3f *v1 = ct->triangle.vertices[1];
         CVector3f *v2 = ct->triangle.vertices[2];
-        std::fprintf(f, "  tri[%d] %s  dom=%u  normal=(%.3f, %.3f, %.3f)  d=%.3f\n",
-                     t, triangle_kind(ct->triangle.normal.y), ct->dominant_axis,
-                     ct->triangle.normal.x, ct->triangle.normal.y, ct->triangle.normal.z,
-                     ct->triangle.plane_distance);
-        std::fprintf(f, "         v0=(%.2f, %.2f, %.2f)  v1=(%.2f, %.2f, %.2f)  v2=(%.2f, %.2f, %.2f)\n",
-                     v0->x, v0->y, v0->z, v1->x, v1->y, v1->z, v2->x, v2->y, v2->z);
+        std::fprintf(f, "  tri[%d] %s  dom=%u  normal=(%.3f, %.3f, %.3f)  d=%.3f\n", t,
+                     triangle_kind(ct->triangle.normal.y), ct->dominant_axis, ct->triangle.normal.x,
+                     ct->triangle.normal.y, ct->triangle.normal.z, ct->triangle.plane_distance);
+        std::fprintf(
+            f, "         v0=(%.2f, %.2f, %.2f)  v1=(%.2f, %.2f, %.2f)  v2=(%.2f, %.2f, %.2f)\n",
+            v0->x, v0->y, v0->z, v1->x, v1->y, v1->z, v2->x, v2->y, v2->z);
     }
 }
 
-extern "C" int nocturne_dump_collision_grid(const char *path, CVector3f *pos)
-{
-    if (path == nullptr) return -1;
+extern "C" int nocturne_dump_collision_grid(const char *path, CVector3f *pos) {
+    if (path == nullptr)
+        return -1;
     FILE *f = std::fopen(path, "w");
-    if (f == nullptr) return -1;
+    if (f == nullptr)
+        return -1;
 
     std::fprintf(f, "=== Nocturne Collision Grid Dump ===\n");
     write_timestamp(f);
@@ -644,12 +642,12 @@ extern "C" int nocturne_dump_collision_grid(const char *path, CVector3f *pos)
 
     CDemonRaytrace *rt = &g_CDemonRaytraceInstance;
     std::fprintf(f, "[Raytrace grid]\n");
-    std::fprintf(f, "bbox_min:          (%.2f, %.2f, %.2f)\n",
-                 rt->bbox_min.x, rt->bbox_min.y, rt->bbox_min.z);
-    std::fprintf(f, "cell_size:         (%.3f, %.3f, %.3f)\n",
-                 rt->cell_size.x, rt->cell_size.y, rt->cell_size.z);
-    std::fprintf(f, "grid_coord (size): (%d, %d, %d)\n",
-                 rt->grid_coord.x, rt->grid_coord.y, rt->grid_coord.z);
+    std::fprintf(f, "bbox_min:          (%.2f, %.2f, %.2f)\n", rt->bbox_min.x, rt->bbox_min.y,
+                 rt->bbox_min.z);
+    std::fprintf(f, "cell_size:         (%.3f, %.3f, %.3f)\n", rt->cell_size.x, rt->cell_size.y,
+                 rt->cell_size.z);
+    std::fprintf(f, "grid_coord (size): (%d, %d, %d)\n", rt->grid_coord.x, rt->grid_coord.y,
+                 rt->grid_coord.z);
 
     if (pos == nullptr) {
         std::fclose(f);
@@ -664,32 +662,30 @@ extern "C" int nocturne_dump_collision_grid(const char *path, CVector3f *pos)
     std::fprintf(f, "\n[Position lookup]\n");
     std::fprintf(f, "probe position: (%.4f, %.4f, %.4f)\n", pos->x, pos->y, pos->z);
     std::fprintf(f, "grid index:     (%d, %d, %d)\n", gx, gy, gz);
-    std::fprintf(f, "(in_bounds: x=%d y=%d z=%d)\n",
-                 (gx >= 0 && gx < rt->grid_coord.x),
-                 (gy >= 0 && gy < rt->grid_coord.y),
-                 (gz >= 0 && gz < rt->grid_coord.z));
+    std::fprintf(f, "(in_bounds: x=%d y=%d z=%d)\n", (gx >= 0 && gx < rt->grid_coord.x),
+                 (gy >= 0 && gy < rt->grid_coord.y), (gz >= 0 && gz < rt->grid_coord.z));
 
     // Y-column scan: where (along Y) at probe's (x, z) do triangles exist.
     std::fprintf(f, "\nCube triangle counts along Y at (x=%d, z=%d):\n", gx, gz);
     std::fprintf(f, "%-6s %-30s %s\n", "grid_y", "world y range", "triangle_count");
     for (int yi = rt->grid_coord.y - 1; yi >= 0; yi--) {
-        CDemonCube *cube = core_dtrace_cpp_CDemonRaytrace_getCubeAt_FUN_004952b0(
-            rt, gx, yi, gz);
-        if (cube == nullptr || cube->triangle_count == 0) continue;
+        CDemonCube *cube = core_dtrace_cpp_CDemonRaytrace_getCubeAt_FUN_004952b0(rt, gx, yi, gz);
+        if (cube == nullptr || cube->triangle_count == 0)
+            continue;
         float y0 = rt->bbox_min.y + (float)yi * rt->cell_size.y;
         float y1 = y0 + rt->cell_size.y;
         const char *marker = (yi == gy) ? " <-- probe here" : "";
-        std::fprintf(f, "y=%-4d [%7.2f .. %7.2f]      %d%s\n",
-                     yi, y0, y1, cube->triangle_count, marker);
+        std::fprintf(f, "y=%-4d [%7.2f .. %7.2f]      %d%s\n", yi, y0, y1, cube->triangle_count,
+                     marker);
     }
 
     // Triangle dump for the probe's cube + 4 adjacent xz cells.
     if (gy >= 0 && gy < rt->grid_coord.y) {
-        dump_cube_triangles(f, rt, gx,   gy, gz,   "Probe's cube");
-        dump_cube_triangles(f, rt, gx-1, gy, gz,   "x-1 neighbor");
-        dump_cube_triangles(f, rt, gx+1, gy, gz,   "x+1 neighbor");
-        dump_cube_triangles(f, rt, gx,   gy, gz-1, "z-1 neighbor");
-        dump_cube_triangles(f, rt, gx,   gy, gz+1, "z+1 neighbor");
+        dump_cube_triangles(f, rt, gx, gy, gz, "Probe's cube");
+        dump_cube_triangles(f, rt, gx - 1, gy, gz, "x-1 neighbor");
+        dump_cube_triangles(f, rt, gx + 1, gy, gz, "x+1 neighbor");
+        dump_cube_triangles(f, rt, gx, gy, gz - 1, "z-1 neighbor");
+        dump_cube_triangles(f, rt, gx, gy, gz + 1, "z+1 neighbor");
     }
 
     // Densest cube in the column — useful to see "what triangles exist
@@ -726,25 +722,23 @@ extern "C" int nocturne_dump_collision_grid(const char *path, CVector3f *pos)
 //
 // Sizeable: one line per triangle, so a level of 40k triangles is a few MB.
 
-extern "C" int nocturne_dump_geometry(const char *path)
-{
-    if (path == nullptr) return -1;
+extern "C" int nocturne_dump_geometry(const char *path) {
+    if (path == nullptr)
+        return -1;
     FILE *f = std::fopen(path, "w");
-    if (f == nullptr) return -1;
+    if (f == nullptr)
+        return -1;
 
     CDemonRaytrace *rt = &g_CDemonRaytraceInstance;
 
     std::fprintf(f, "=== Nocturne World Geometry Dump ===\n");
     write_timestamp(f);
     std::fprintf(f, "\n[grid]\n");
-    std::fprintf(f, "bbox_min %.4f %.4f %.4f\n",
-                 rt->bbox_min.x, rt->bbox_min.y, rt->bbox_min.z);
-    std::fprintf(f, "bbox_max %.4f %.4f %.4f\n",
-                 rt->bbox_max.x, rt->bbox_max.y, rt->bbox_max.z);
-    std::fprintf(f, "cell_size %.4f %.4f %.4f\n",
-                 rt->cell_size.x, rt->cell_size.y, rt->cell_size.z);
-    std::fprintf(f, "grid_coord %d %d %d\n",
-                 rt->grid_coord.x, rt->grid_coord.y, rt->grid_coord.z);
+    std::fprintf(f, "bbox_min %.4f %.4f %.4f\n", rt->bbox_min.x, rt->bbox_min.y, rt->bbox_min.z);
+    std::fprintf(f, "bbox_max %.4f %.4f %.4f\n", rt->bbox_max.x, rt->bbox_max.y, rt->bbox_max.z);
+    std::fprintf(f, "cell_size %.4f %.4f %.4f\n", rt->cell_size.x, rt->cell_size.y,
+                 rt->cell_size.z);
+    std::fprintf(f, "grid_coord %d %d %d\n", rt->grid_coord.x, rt->grid_coord.y, rt->grid_coord.z);
     std::fprintf(f, "triangle_count %d\n", rt->triangle_count);
 
     // Where the hero is standing, so the offline pass can pick a height band
@@ -754,11 +748,8 @@ extern "C" int nocturne_dump_geometry(const char *path)
         hero = (CDemonActor *)g_HeroActors[g_LocalHeroIndex];
     }
     if (hero != nullptr) {
-        std::fprintf(f, "hero %.4f %.4f %.4f area %d\n",
-                     hero->location.position.x,
-                     hero->location.position.y,
-                     hero->location.position.z,
-                     hero->location.area_id);
+        std::fprintf(f, "hero %.4f %.4f %.4f area %d\n", hero->location.position.x,
+                     hero->location.position.y, hero->location.position.z, hero->location.area_id);
     } else {
         std::fprintf(f, "hero none\n");
     }
@@ -784,13 +775,12 @@ extern "C" int nocturne_dump_geometry(const char *path)
         std::fprintf(f, "\n# NO GEOMETRY RESIDENT — cube_data is null, so no\n"
                         "# collision query has anything to read. Is a level loaded?\n");
         std::fclose(f);
-        return 1;   // distinct from 0, so a caller can tell empty from written
+        return 1; // distinct from 0, so a caller can tell empty from written
     }
 
     int total = 0, with_tris = 0;
     for (int i = 0; i < cubes; i++) {
-        if (rt->cube_data[i].triangle_buffer != nullptr &&
-            rt->cube_data[i].triangle_count > 0) {
+        if (rt->cube_data[i].triangle_buffer != nullptr && rt->cube_data[i].triangle_count > 0) {
             total += rt->cube_data[i].triangle_count;
             with_tris++;
         }
@@ -807,22 +797,21 @@ extern "C" int nocturne_dump_geometry(const char *path)
                     "dominant_axis flags cube_index\n");
     for (int i = 0; i < cubes; i++) {
         const CDemonCube *c = &rt->cube_data[i];
-        if (c->triangle_buffer == nullptr) continue;
+        if (c->triangle_buffer == nullptr)
+            continue;
         for (int j = 0; j < c->triangle_count; j++) {
             const CDemonCubeTriangle *ct = &c->triangle_buffer[j];
             const CVector3f *v0 = ct->triangle.vertices[0];
             const CVector3f *v1 = ct->triangle.vertices[1];
             const CVector3f *v2 = ct->triangle.vertices[2];
-            if (v0 == nullptr || v1 == nullptr || v2 == nullptr) continue;
+            if (v0 == nullptr || v1 == nullptr || v2 == nullptr)
+                continue;
             std::fprintf(f,
-                "%.4f %.4f %.4f  %.4f %.4f %.4f  %.4f %.4f %.4f  "
-                "%.4f %.4f %.4f  %d %d %d\n",
-                v0->x, v0->y, v0->z,
-                v1->x, v1->y, v1->z,
-                v2->x, v2->y, v2->z,
-                ct->triangle.normal.x, ct->triangle.normal.y,
-                ct->triangle.normal.z,
-                (int)ct->dominant_axis, 0, i);
+                         "%.4f %.4f %.4f  %.4f %.4f %.4f  %.4f %.4f %.4f  "
+                         "%.4f %.4f %.4f  %d %d %d\n",
+                         v0->x, v0->y, v0->z, v1->x, v1->y, v1->z, v2->x, v2->y, v2->z,
+                         ct->triangle.normal.x, ct->triangle.normal.y, ct->triangle.normal.z,
+                         (int)ct->dominant_axis, 0, i);
         }
     }
 
@@ -834,11 +823,12 @@ extern "C" int nocturne_dump_geometry(const char *path)
 // Lighting / vertex pipeline state
 // =============================================================================
 
-extern "C" int nocturne_dump_lighting_state(const char *path)
-{
-    if (path == nullptr) return -1;
+extern "C" int nocturne_dump_lighting_state(const char *path) {
+    if (path == nullptr)
+        return -1;
     FILE *f = std::fopen(path, "w");
-    if (f == nullptr) return -1;
+    if (f == nullptr)
+        return -1;
 
     std::fprintf(f, "=== Nocturne Lighting State Dump ===\n");
     write_timestamp(f);
@@ -859,16 +849,16 @@ extern "C" int nocturne_dump_lighting_state(const char *path)
     std::fprintf(f, "g_AmbientLightLevel:        %d\n", g_AmbientLightLevel);
     std::fprintf(f, "g_DynamicLightCount:        %d\n", g_DynamicLightCount);
     std::fprintf(f, "g_SpotLightCount:           %d\n", g_SpotLightCount);
-    std::fprintf(f, "g_StaticColorVector:        (%.4f, %.4f, %.4f)\n",
-                 g_StaticColorVector.x, g_StaticColorVector.y, g_StaticColorVector.z);
+    std::fprintf(f, "g_StaticColorVector:        (%.4f, %.4f, %.4f)\n", g_StaticColorVector.x,
+                 g_StaticColorVector.y, g_StaticColorVector.z);
     std::fprintf(f, "g_LightingReferencePosition: (%.4f, %.4f, %.4f)\n",
-                 g_LightingReferencePosition.x,
-                 g_LightingReferencePosition.y,
+                 g_LightingReferencePosition.x, g_LightingReferencePosition.y,
                  g_LightingReferencePosition.z);
     std::fprintf(f, "\n");
 
     int vc = g_VertexCount;
-    if (vc > 20000) vc = 20000;
+    if (vc > 20000)
+        vc = 20000;
     std::fprintf(f, "[g_VertexCount = %d]\n", vc);
 
     // Vertex normal sample + magnitude statistics — if our ROUND→TRUNC change
@@ -880,7 +870,7 @@ extern "C" int nocturne_dump_lighting_state(const char *path)
         float x = g_VertexNormalArray[i].x;
         float y = g_VertexNormalArray[i].y;
         float z = g_VertexNormalArray[i].z;
-        float mag = std::sqrt(x*x + y*y + z*z);
+        float mag = std::sqrt(x * x + y * y + z * z);
         std::fprintf(f, "%-5d %-10.4f %-10.4f %-10.4f %.4f\n", i, x, y, z, mag);
     }
 
@@ -891,14 +881,23 @@ extern "C" int nocturne_dump_lighting_state(const char *path)
             float x = g_VertexNormalArray[i].x;
             float y = g_VertexNormalArray[i].y;
             float z = g_VertexNormalArray[i].z;
-            if (x != x || y != y || z != z) { nan_count++; continue; }
-            float mag = std::sqrt(x*x + y*y + z*z);
-            if (mag < min_mag) min_mag = mag;
-            if (mag > max_mag) max_mag = mag;
-            if (mag == 0.0f) zero_count++;
-            else if (mag < 0.5f) below_half++;
-            else if (mag < 2.0f) near_unit++;
-            else above_two++;
+            if (x != x || y != y || z != z) {
+                nan_count++;
+                continue;
+            }
+            float mag = std::sqrt(x * x + y * y + z * z);
+            if (mag < min_mag)
+                min_mag = mag;
+            if (mag > max_mag)
+                max_mag = mag;
+            if (mag == 0.0f)
+                zero_count++;
+            else if (mag < 0.5f)
+                below_half++;
+            else if (mag < 2.0f)
+                near_unit++;
+            else
+                above_two++;
         }
         std::fprintf(f, "\n[Normal magnitude histogram across all %d normals]\n", vc);
         std::fprintf(f, "  zero  : %d\n", zero_count);
@@ -911,14 +910,12 @@ extern "C" int nocturne_dump_lighting_state(const char *path)
     }
 
     // Transformed (post-camera, post-projection) vertex sample.
-    std::fprintf(f, "\n[g_TransformedVertexArray sample (CVector3i, fixed-point 8.8 in many places)]\n");
+    std::fprintf(
+        f, "\n[g_TransformedVertexArray sample (CVector3i, fixed-point 8.8 in many places)]\n");
     std::fprintf(f, "%-5s %-12s %-12s %s\n", "idx", "x", "y", "z");
     for (int i = 0; i < sample; i++) {
-        std::fprintf(f, "%-5d %-12d %-12d %d\n",
-                     i,
-                     g_TransformedVertexArray[i].x,
-                     g_TransformedVertexArray[i].y,
-                     g_TransformedVertexArray[i].z);
+        std::fprintf(f, "%-5d %-12d %-12d %d\n", i, g_TransformedVertexArray[i].x,
+                     g_TransformedVertexArray[i].y, g_TransformedVertexArray[i].z);
     }
 
     std::fclose(f);
@@ -943,13 +940,11 @@ extern "C" int nocturne_dump_lighting_state(const char *path)
 // Appends one line per call so a run accumulates samples; correlate the tag
 // with the screenshot captured a few frames later.
 
-static unsigned long long sig_mix(unsigned long long h, unsigned long long v)
-{
+static unsigned long long sig_mix(unsigned long long h, unsigned long long v) {
     return h * 1000003ull + v;
 }
 
-extern "C" int nocturne_dump_bake_signature(const char *path, int tag)
-{
+extern "C" int nocturne_dump_bake_signature(const char *path, int tag) {
     if (path == nullptr) {
         return -1;
     }
@@ -997,7 +992,8 @@ extern "C" int nocturne_dump_bake_signature(const char *path, int tag)
     for (int y = 0; y < 240; y++) {
         for (int x = 0; x < 320; x++) {
             const CVector3i *w = &g_PrecomputedWorldPositions[y * 320 + x];
-            if (w->x == 0 && w->y == 0 && w->z == 0) wp_zero++;
+            if (w->x == 0 && w->y == 0 && w->z == 0)
+                wp_zero++;
             wp = sig_mix(wp, (unsigned int)w->x);
             wp = sig_mix(wp, (unsigned int)w->y);
             wp = sig_mix(wp, (unsigned int)w->z);
@@ -1015,8 +1011,8 @@ extern "C" int nocturne_dump_bake_signature(const char *path, int tag)
     std::fprintf(f,
                  "tag=%d dw=%d dh=%d fw=%d fh=%d zb=%016llx fb=%016llx "
                  "fbmean=%.3f wp=%016llx wpzero=%d nrm=%016llx spot=%d dyn=%d",
-                 tag, dw, dh, fw, fh, zb, fb, fb_mean, wp, wp_zero, nrm,
-                 g_SpotLightCount, g_DynamicLightCount);
+                 tag, dw, dh, fw, fh, zb, fb, fb_mean, wp, wp_zero, nrm, g_SpotLightCount,
+                 g_DynamicLightCount);
 
     // --- bake outputs, per spot light --------------------------------------
     for (int li = 0; li < g_SpotLightCount && li < 8; li++) {
@@ -1047,7 +1043,8 @@ extern "C" int nocturne_dump_bake_signature(const char *path, int tag)
         if (L->corona_visibility_buffers != nullptr) {
             const int *v = L->corona_visibility_buffers;
             for (int i = 0; i < 320 * 240; i++) {
-                if (v[i] != 0) vis_nonzero++;
+                if (v[i] != 0)
+                    vis_nonzero++;
                 vis = sig_mix(vis, (unsigned int)v[i]);
             }
         }
@@ -1064,35 +1061,26 @@ extern "C" int nocturne_dump_bake_signature(const char *path, int tag)
         CCameraView *V = &L->base.base;
         const CRect *rc = &g_SpotLightBounds[li];
 
-        std::fprintf(f,
-                     " | L%d en=%d px=%lld lines=%d ext=%016llx "
-                     "vis=%016llx visnz=%d lm=%016llx "
-                     "rect=(%d,%d)-(%d,%d) fps=%.4f foc=%.4f dead=%d "
-                     "pos=(%.3f,%.3f,%.3f) "
-                     "rot=[%.4f %.4f %.4f | %.4f %.4f %.4f | %.4f %.4f %.4f] "
-                     "lfw=%d lfh=%d lsc=%d lsw=%d lsh=%d xs=%d ys=%d "
-                     "mask=%u tsf=%d mz=%d sdb=%d lvb=%d plt=%d filt=%s",
-                     li, L->light_enabled_flag, lit_px, lit_lines, ext,
-                     vis, vis_nonzero, lm,
-                     rc->x_min, rc->y_min, rc->x_max, rc->y_max,
-                     V->fixed_point_scale, V->focal_length, V->dead,
-                     V->position.f.x, V->position.f.y, V->position.f.z,
-                     V->rotation_matrix.m[0].x, V->rotation_matrix.m[0].y,
-                     V->rotation_matrix.m[0].z,
-                     V->rotation_matrix.m[1].x, V->rotation_matrix.m[1].y,
-                     V->rotation_matrix.m[1].z,
-                     V->rotation_matrix.m[2].x, V->rotation_matrix.m[2].y,
-                     V->rotation_matrix.m[2].z,
-                     L->base.framebuffer_width, L->base.framebuffer_height,
-                     L->base.scale_factor,
-                     L->shadow_map_width, L->shadow_map_height,
-                     L->shadow_x_shift, L->shadow_y_shift,
-                     L->texture_coord_mask, L->transform_scale_factor,
-                     L->master_zbuffer != nullptr,
-                     L->shadow_depth_buffer != nullptr,
-                     L->lightmap_visibility_bits != nullptr,
-                     L->precomputed_lighting_textures != nullptr,
-                     L->filter_name);
+        std::fprintf(
+            f,
+            " | L%d en=%d px=%lld lines=%d ext=%016llx "
+            "vis=%016llx visnz=%d lm=%016llx "
+            "rect=(%d,%d)-(%d,%d) fps=%.4f foc=%.4f dead=%d "
+            "pos=(%.3f,%.3f,%.3f) "
+            "rot=[%.4f %.4f %.4f | %.4f %.4f %.4f | %.4f %.4f %.4f] "
+            "lfw=%d lfh=%d lsc=%d lsw=%d lsh=%d xs=%d ys=%d "
+            "mask=%u tsf=%d mz=%d sdb=%d lvb=%d plt=%d filt=%s",
+            li, L->light_enabled_flag, lit_px, lit_lines, ext, vis, vis_nonzero, lm, rc->x_min,
+            rc->y_min, rc->x_max, rc->y_max, V->fixed_point_scale, V->focal_length, V->dead,
+            V->position.f.x, V->position.f.y, V->position.f.z, V->rotation_matrix.m[0].x,
+            V->rotation_matrix.m[0].y, V->rotation_matrix.m[0].z, V->rotation_matrix.m[1].x,
+            V->rotation_matrix.m[1].y, V->rotation_matrix.m[1].z, V->rotation_matrix.m[2].x,
+            V->rotation_matrix.m[2].y, V->rotation_matrix.m[2].z, L->base.framebuffer_width,
+            L->base.framebuffer_height, L->base.scale_factor, L->shadow_map_width,
+            L->shadow_map_height, L->shadow_x_shift, L->shadow_y_shift, L->texture_coord_mask,
+            L->transform_scale_factor, L->master_zbuffer != nullptr,
+            L->shadow_depth_buffer != nullptr, L->lightmap_visibility_bits != nullptr,
+            L->precomputed_lighting_textures != nullptr, L->filter_name);
     }
 
     std::fprintf(f, "\n");
@@ -1109,19 +1097,22 @@ extern "C" int nocturne_dump_bake_signature(const char *path, int tag)
 // so the user only needs to set the breakpoint. Pass NULL path to make
 // subsequent calls no-ops.
 
-extern "C" void nocturne_auto_capture(const char *path_template,
-                                       int every_n, int max_count, int reset)
-{
-    static int s_call    = 0;
+extern "C" void nocturne_auto_capture(const char *path_template, int every_n, int max_count,
+                                      int reset) {
+    static int s_call = 0;
     static int s_written = 0;
     if (reset) {
-        s_call    = 0;
+        s_call = 0;
         s_written = 0;
     }
-    if (path_template == nullptr) return;
-    if (s_written >= max_count)   return;
-    if (every_n <= 0) every_n = 1;
-    if ((s_call++ % every_n) != 0) return;
+    if (path_template == nullptr)
+        return;
+    if (s_written >= max_count)
+        return;
+    if (every_n <= 0)
+        every_n = 1;
+    if ((s_call++ % every_n) != 0)
+        return;
 
     // Build screenshot path via the user-supplied template.
     char ppm[256];
@@ -1132,8 +1123,8 @@ extern "C" void nocturne_auto_capture(const char *path_template,
     char dl[256];
     std::snprintf(dl, sizeof(dl), "%s", ppm);
     char *dot = std::strrchr(dl, '.');
-    const size_t stem = (dot != nullptr && std::strcmp(dot, ".ppm") == 0)
-                            ? (size_t)(dot - dl) : std::strlen(dl);
+    const size_t stem =
+        (dot != nullptr && std::strcmp(dot, ".ppm") == 0) ? (size_t)(dot - dl) : std::strlen(dl);
     std::snprintf(dl + stem, sizeof(dl) - stem, ".txt");
 
     nocturne_dump_screenshot(ppm);
@@ -1151,52 +1142,52 @@ extern "C" void nocturne_auto_capture(const char *path_template,
 namespace {
 
 struct AutoDumpSlot {
-    char           path_template[256];
-    CDemonActor   *actor;
-    int            counter;
-    bool           armed;
+    char path_template[256];
+    CDemonActor *actor;
+    int counter;
+    bool armed;
 };
 
 AutoDumpSlot g_auto_dump_slots[2] = {};
 
-}  // namespace
+} // namespace
 
 extern "C" void nocturne_auto_dump_set_slot(int slot, const char *path_template,
-                                             CDemonActor *actor)
-{
-    if (slot < 0 || slot >= 2) return;
+                                            CDemonActor *actor) {
+    if (slot < 0 || slot >= 2)
+        return;
     AutoDumpSlot &s = g_auto_dump_slots[slot];
 
     if (path_template == nullptr) {
         if (s.armed) {
-            std::fprintf(stderr, "[auto_dump] slot %d disarmed (%d files written)\n",
-                         slot, s.counter);
+            std::fprintf(stderr, "[auto_dump] slot %d disarmed (%d files written)\n", slot,
+                         s.counter);
         }
-        s.armed   = false;
-        s.actor   = nullptr;
+        s.armed = false;
+        s.actor = nullptr;
         s.counter = 0;
         return;
     }
 
     std::snprintf(s.path_template, sizeof(s.path_template), "%s", path_template);
-    s.actor   = actor;
+    s.actor = actor;
     s.counter = 0;
-    s.armed   = true;
-    std::fprintf(stderr, "[auto_dump] slot %d armed: actor=%p template=\"%s\"\n",
-                 slot, (void *)actor, s.path_template);
+    s.armed = true;
+    std::fprintf(stderr, "[auto_dump] slot %d armed: actor=%p template=\"%s\"\n", slot,
+                 (void *)actor, s.path_template);
 }
 
-extern "C" int nocturne_auto_dump_is_armed(int slot)
-{
-    if (slot < 0 || slot >= 2) return 0;
+extern "C" int nocturne_auto_dump_is_armed(int slot) {
+    if (slot < 0 || slot >= 2)
+        return 0;
     return g_auto_dump_slots[slot].armed ? 1 : 0;
 }
 
-extern "C" void nocturne_auto_dump_tick(void)
-{
+extern "C" void nocturne_auto_dump_tick(void) {
     for (int i = 0; i < 2; ++i) {
         AutoDumpSlot &s = g_auto_dump_slots[i];
-        if (!s.armed) continue;
+        if (!s.armed)
+            continue;
         char path[300];
         std::snprintf(path, sizeof(path), s.path_template, s.counter);
         nocturne_dump_actor_state(path, s.actor);
@@ -1204,25 +1195,23 @@ extern "C" void nocturne_auto_dump_tick(void)
     }
 }
 
-static CDemonActor *find_player_actor()
-{
+static CDemonActor *find_player_actor() {
     return (CDemonActor *)nocturne_hero_local();
 }
 
-static CDemonActor *find_svetlana_actor()
-{
+static CDemonActor *find_svetlana_actor() {
     int count = g_CDemonSetInstance.sorted_render_actor_count;
     for (int i = 0; i < count; ++i) {
         CDemonActor *a = g_CDemonSetInstance.sorted_render_actors[i];
-        if (a == nullptr) continue;
+        if (a == nullptr)
+            continue;
         if (core_actor_cpp_castToClassHash_FUN_0040c790(a, g_CSvetlanaClassInfo.name_hash))
             return a;
     }
     return nullptr;
 }
 
-static int toggle_slot(int slot, const char *path_template, CDemonActor *actor)
-{
+static int toggle_slot(int slot, const char *path_template, CDemonActor *actor) {
     if (nocturne_auto_dump_is_armed(slot)) {
         nocturne_auto_dump_set_slot(slot, nullptr, nullptr);
         return 0;
@@ -1235,25 +1224,22 @@ static int toggle_slot(int slot, const char *path_template, CDemonActor *actor)
     return 1;
 }
 
-extern "C" int nocturne_auto_dump_toggle_player(void)
-{
+extern "C" int nocturne_auto_dump_toggle_player(void) {
     return toggle_slot(0, "/tmp/auto_dump_player_%05d.txt", find_player_actor());
 }
 
-extern "C" int nocturne_auto_dump_toggle_svetlana(void)
-{
+extern "C" int nocturne_auto_dump_toggle_svetlana(void) {
     return toggle_slot(1, "/tmp/auto_dump_svetlana_%05d.txt", find_svetlana_actor());
 }
 
 extern "C" void nocturne_dump_stream_pcm(const char *sample_name, const short *pcm, int frames,
-                                         int num_channels, int bit_depth, int sample_rate)
-{
+                                         int num_channels, int bit_depth, int sample_rate) {
     const char *dir;
-    char        raw_path[512];
-    char        txt_path[512];
-    char        leaf[256];
-    FILE       *raw;
-    int         i;
+    char raw_path[512];
+    char txt_path[512];
+    char leaf[256];
+    FILE *raw;
+    int i;
 
     dir = getenv("NOCTURNE_DUMP_STREAM_PCM");
     if (dir == (const char *)0 || dir[0] == '\0') {
@@ -1283,8 +1269,8 @@ extern "C" void nocturne_dump_stream_pcm(const char *sample_name, const short *p
     } else {
         FILE *txt = fopen(txt_path, "w");
         if (txt != (FILE *)0) {
-            fprintf(txt, "name=%s\nchannels=%d\nbits=%d\nrate=%d\n",
-                    sample_name, num_channels, bit_depth, sample_rate);
+            fprintf(txt, "name=%s\nchannels=%d\nbits=%d\nrate=%d\n", sample_name, num_channels,
+                    bit_depth, sample_rate);
             fclose(txt);
         }
     }
@@ -1304,16 +1290,15 @@ extern "C" void nocturne_dump_stream_pcm(const char *sample_name, const short *p
 // Names are fixed-width, 32 bytes, and not guaranteed terminated; copy through
 // a bounded buffer before printing one. A name handed in as a string may also
 // be shorter than the field, so the copy stops at its end.
-static void copy_fixed_name(char (&dest)[33], const char *src)
-{
+static void copy_fixed_name(char (&dest)[33], const char *src) {
     size_t n = 0;
-    while (n < 32 && src[n] != '\0') n++;
+    while (n < 32 && src[n] != '\0')
+        n++;
     std::memcpy(dest, src, n);
     dest[n] = '\0';
 }
 
-static void write_event_block(FILE *f, const char *label, const SEventNameBlock *block)
-{
+static void write_event_block(FILE *f, const char *label, const SEventNameBlock *block) {
     std::fprintf(f, "%s: count=%d\n", label, block->count);
     int count = block->count;
     if (count < 0) {
@@ -1322,8 +1307,8 @@ static void write_event_block(FILE *f, const char *label, const SEventNameBlock 
     }
     const int capacity = (int)(sizeof(block->names) / sizeof(block->names[0]));
     if (count > capacity) {
-        std::fprintf(f, "  <count exceeds the %d-entry array; listing the first %d>\n",
-                     capacity, capacity);
+        std::fprintf(f, "  <count exceeds the %d-entry array; listing the first %d>\n", capacity,
+                     capacity);
         count = capacity;
     }
     for (int i = 0; i < count; i++) {
@@ -1335,10 +1320,10 @@ static void write_event_block(FILE *f, const char *label, const SEventNameBlock 
 
 // Is this actor in the set's active list? That list is what the gate feeds,
 // so an actor present here was admitted by it.
-static int actor_in_active_set(const CDemonActor *actor)
-{
+static int actor_in_active_set(const CDemonActor *actor) {
     int count = g_CDemonSetInstance.actor_count;
-    if (count > 2000) count = 2000;
+    if (count > 2000)
+        count = 2000;
     for (int i = 0; i < count; i++) {
         if (g_CDemonSetInstance.actors[i] == actor) {
             return 1;
@@ -1347,8 +1332,7 @@ static int actor_in_active_set(const CDemonActor *actor)
     return 0;
 }
 
-extern "C" int nocturne_dump_create_gates(const char *path)
-{
+extern "C" int nocturne_dump_create_gates(const char *path) {
     if (path == nullptr) {
         return -1;
     }
@@ -1379,9 +1363,10 @@ extern "C" int nocturne_dump_create_gates(const char *path)
     // lifecycle_state: 0 = not created, 1 = created, 2 = destroyed.
     // "cond" is what evaluateCondition answers for create_event right now;
     // it is only consulted when create_event is non-empty and not "none".
-    std::fprintf(f, "%-32s  %4s  %5s  %6s  %4s  %8s  %s\n",
-                 "actor", "area", "state", "inset", "cond", "prob", "create_event");
-    std::fprintf(f, "--------------------------------  ----  -----  ------  ----  --------  ------------\n");
+    std::fprintf(f, "%-32s  %4s  %5s  %6s  %4s  %8s  %s\n", "actor", "area", "state", "inset",
+                 "cond", "prob", "create_event");
+    std::fprintf(
+        f, "--------------------------------  ----  -----  ------  ----  --------  ------------\n");
 
     int total = 0;
     int gated = 0;
@@ -1401,16 +1386,11 @@ extern "C" int nocturne_dump_create_gates(const char *path)
         char name[33];
         copy_fixed_name(name, a->actor_name);
 
-        int cond = core_event_cpp_CEventList_evaluateCondition_FUN_004adca0(
-                       g_CEventListPtr, a->create_event);
+        int cond = core_event_cpp_CEventList_evaluateCondition_FUN_004adca0(g_CEventListPtr,
+                                                                            a->create_event);
 
-        std::fprintf(f, "%-32s  %4d  %5d  %6d  %4d  %8.3f  \"%s\"\n",
-                     name,
-                     a->location.area_id,
-                     (int)a->lifecycle_state,
-                     actor_in_active_set(a),
-                     cond,
-                     (double)a->create_prob,
+        std::fprintf(f, "%-32s  %4d  %5d  %6d  %4d  %8.3f  \"%s\"\n", name, a->location.area_id,
+                     (int)a->lifecycle_state, actor_in_active_set(a), cond, (double)a->create_prob,
                      a->create_event);
     }
 
@@ -1441,12 +1421,12 @@ extern "C" int nocturne_dump_create_gates(const char *path)
         (int)(sizeof(events->timers.names) / sizeof(events->timers.names[0]));
     int timer_count = events->timers.count;
     if (timer_count > 0) {
-        if (timer_count > timer_capacity) timer_count = timer_capacity;
+        if (timer_count > timer_capacity)
+            timer_count = timer_capacity;
         for (int i = 0; i < timer_count; i++) {
             char name[33];
             copy_fixed_name(name, events->timers.names[i]);
-            std::fprintf(f, "  [%3d] %-32s %.3f\n", i, name,
-                         (double)events->timers.durations[i]);
+            std::fprintf(f, "  [%3d] %-32s %.3f\n", i, name, (double)events->timers.durations[i]);
         }
     }
 
@@ -1458,8 +1438,7 @@ extern "C" int nocturne_dump_create_gates(const char *path)
 // Flame visibility
 // =============================================================================
 
-extern "C" int nocturne_dump_flame_visibility(const char *path)
-{
+extern "C" int nocturne_dump_flame_visibility(const char *path) {
     if (path == nullptr) {
         return -1;
     }
@@ -1485,8 +1464,8 @@ extern "C" int nocturne_dump_flame_visibility(const char *path)
     std::fprintf(f, "active set count:     %d\n", g_CDemonSetInstance.actor_count);
     std::fprintf(f, "sorted_render_actors: %d\n", g_CDemonSetInstance.sorted_render_actor_count);
     std::fprintf(f, "g_ProjectionScale:    %d\n", g_ProjectionScale);
-    std::fprintf(f, "g_TransformMatrix col0: %d, %d, %d\n",
-                 g_TransformMatrix.m[0].x, g_TransformMatrix.m[1].x, g_TransformMatrix.m[2].x);
+    std::fprintf(f, "g_TransformMatrix col0: %d, %d, %d\n", g_TransformMatrix.m[0].x,
+                 g_TransformMatrix.m[1].x, g_TransformMatrix.m[2].x);
     std::fprintf(f, "\n");
 
     // The re-test below goes through CBoundingBox3D::isVisible, which writes
@@ -1494,16 +1473,15 @@ extern "C" int nocturne_dump_flame_visibility(const char *path)
     const decltype(g_PerspectiveReciprocal) saved_perspective = g_PerspectiveReciprocal;
     const decltype(g_SolidColorMode) saved_solid_color = g_SolidColorMode;
 
-    std::fprintf(f, "%-20s  %5s  %5s  %4s  %6s  %5s  %4s  %4s  %-22s  %s\n",
-                 "flame", "state", "check", "vis", "fresh", "frust", "wf", "gscl",
-                 "position", "bbox(min..max)");
+    std::fprintf(f, "%-20s  %5s  %5s  %4s  %6s  %5s  %4s  %4s  %-22s  %s\n", "flame", "state",
+                 "check", "vis", "fresh", "frust", "wf", "gscl", "position", "bbox(min..max)");
     std::fprintf(f, "--------------------  -----  -----  ----  ------  -----  ----  ----  "
                     "----------------------  ------------------------------\n");
 
     int count = 0;
     for (CDemonActor *a = mission->first_actor; a != nullptr; a = a->next_actor) {
-        CFlame *flame = (CFlame *)core_actor_cpp_castToClassHash_FUN_0040c790(
-                            a, g_CFlameClassInfo.name_hash);
+        CFlame *flame =
+            (CFlame *)core_actor_cpp_castToClassHash_FUN_0040c790(a, g_CFlameClassInfo.name_hash);
         if (flame == nullptr) {
             continue;
         }
@@ -1522,24 +1500,16 @@ extern "C" int nocturne_dump_flame_visibility(const char *path)
         core_actor_cpp_CDemonActor_restoreRenderState_FUN_00408b40(&flame->base);
 
         char posbuf[64];
-        std::snprintf(posbuf, sizeof(posbuf), "(%.2f,%.2f,%.2f)",
-                      a->location.position.x, a->location.position.y, a->location.position.z);
+        std::snprintf(posbuf, sizeof(posbuf), "(%.2f,%.2f,%.2f)", a->location.position.x,
+                      a->location.position.y, a->location.position.z);
         char boxbuf[96];
-        std::snprintf(boxbuf, sizeof(boxbuf), "(%.2f,%.2f,%.2f)..(%.2f,%.2f,%.2f)",
-                      box->min.x, box->min.y, box->min.z,
-                      box->max.x, box->max.y, box->max.z);
+        std::snprintf(boxbuf, sizeof(boxbuf), "(%.2f,%.2f,%.2f)..(%.2f,%.2f,%.2f)", box->min.x,
+                      box->min.y, box->min.z, box->max.x, box->max.y, box->max.z);
 
-        std::fprintf(f, "%-20s  %5d  %5d  %4d  %6d  %5d  %4d  %4.1f  %-22s  %s\n",
-                     name,
-                     flame->flame_state,
-                     flame->do_visibility_check,
-                     flame->is_visible,
-                     fresh_visible,
-                     fresh_frustum,
-                     flame->which_flame,
-                     (double)flame->globe_scalar,
-                     posbuf,
-                     boxbuf);
+        std::fprintf(f, "%-20s  %5d  %5d  %4d  %6d  %5d  %4d  %4.1f  %-22s  %s\n", name,
+                     flame->flame_state, flame->do_visibility_check, flame->is_visible,
+                     fresh_visible, fresh_frustum, flame->which_flame, (double)flame->globe_scalar,
+                     posbuf, boxbuf);
     }
 
     g_PerspectiveReciprocal = saved_perspective;
@@ -1563,10 +1533,9 @@ extern "C" int nocturne_dump_flame_visibility(const char *path)
 // =============================================================================
 
 static FILE *g_flame_draw_file = nullptr;
-static int   g_flame_draw_rows = 0;
+static int g_flame_draw_rows = 0;
 
-extern "C" void nocturne_probe_flame_draw_arm(const char *path, int rows)
-{
+extern "C" void nocturne_probe_flame_draw_arm(const char *path, int rows) {
     if (g_flame_draw_file != nullptr) {
         std::fclose(g_flame_draw_file);
         g_flame_draw_file = nullptr;
@@ -1584,18 +1553,15 @@ extern "C" void nocturne_probe_flame_draw_arm(const char *path, int rows)
     write_timestamp(g_flame_draw_file);
     std::fprintf(g_flame_draw_file,
                  "\nalpha = (0xffff - fog), halved for whichFlame 1; 0xffff is opaque.\n");
-    std::fprintf(g_flame_draw_file,
-                 "A flame that is never drawn writes no row at all.\n\n");
-    std::fprintf(g_flame_draw_file, "%-20s  %7s  %7s  %6s   %s\n",
-                 "flame", "fog", "alpha", "alpha%", "quad screen x,y (v0..v3)");
-    std::fprintf(g_flame_draw_file,
-                 "--------------------  -------  -------  ------   "
-                 "--------------------------------------------\n");
+    std::fprintf(g_flame_draw_file, "A flame that is never drawn writes no row at all.\n\n");
+    std::fprintf(g_flame_draw_file, "%-20s  %7s  %7s  %6s   %s\n", "flame", "fog", "alpha",
+                 "alpha%", "quad screen x,y (v0..v3)");
+    std::fprintf(g_flame_draw_file, "--------------------  -------  -------  ------   "
+                                    "--------------------------------------------\n");
 }
 
 // The file is open only while rows of the budget are left.
-extern "C" void nocturne_probe_flame_draw(const char *name, int fog, int alpha)
-{
+extern "C" void nocturne_probe_flame_draw(const char *name, int fog, int alpha) {
     if (g_flame_draw_file == nullptr) {
         return;
     }
@@ -1614,16 +1580,15 @@ extern "C" void nocturne_probe_flame_draw(const char *name, int fog, int alpha)
             n += std::snprintf(quad + n, sizeof(quad) - (size_t)n, "(%.1f,%.1f z=%d)%s",
                                vb[i].projected_vertex.screen_x / 65536.0,
                                vb[i].projected_vertex.screen_y / 65536.0,
-                               vb[i].projected_vertex.transformed_z,
-                               i == 3 ? "" : " ");
+                               vb[i].projected_vertex.transformed_z, i == 3 ? "" : " ");
         }
     }
 
     char leaf[33];
     copy_fixed_name(leaf, name);
 
-    std::fprintf(g_flame_draw_file, "%-20s  %7d  %7d  %5.1f%%   %s\n",
-                 leaf, fog, alpha, (double)alpha * 100.0 / 65535.0, quad);
+    std::fprintf(g_flame_draw_file, "%-20s  %7d  %7d  %5.1f%%   %s\n", leaf, fog, alpha,
+                 (double)alpha * 100.0 / 65535.0, quad);
 
     g_flame_draw_rows--;
     if (g_flame_draw_rows == 0) {
@@ -1642,8 +1607,7 @@ extern "C" void nocturne_probe_flame_draw(const char *name, int fog, int alpha)
 // it is called. Output is a PPM at the presenting surface's size, which
 // includes any integer up-scaling of the 640x480 logical one.
 
-extern "C" int nocturne_dump_frontbuffer(const char *path)
-{
+extern "C" int nocturne_dump_frontbuffer(const char *path) {
     if (path == nullptr) {
         return -1;
     }
@@ -1687,50 +1651,101 @@ extern "C" int nocturne_dump_frontbuffer(const char *path)
     return 0;
 }
 
-#else  // NOCTURNE_DUMP_TOOLS == 0
+#else // NOCTURNE_DUMP_TOOLS == 0
 
-extern "C" int nocturne_dump_screenshot(const char *path)   { (void)path; return -1; }
-extern "C" int nocturne_dump_zbuffer(const char *path)      { (void)path; return -1; }
-extern "C" int nocturne_dump_display_list(const char *path) { (void)path; return -1; }
+extern "C" int nocturne_dump_screenshot(const char *path) {
+    (void)path;
+    return -1;
+}
+extern "C" int nocturne_dump_zbuffer(const char *path) {
+    (void)path;
+    return -1;
+}
+extern "C" int nocturne_dump_display_list(const char *path) {
+    (void)path;
+    return -1;
+}
 extern "C" int nocturne_dump_actor_state(const char *path, CDemonActor *actor) {
-    (void)path; (void)actor; return -1;
+    (void)path;
+    (void)actor;
+    return -1;
 }
 extern "C" int nocturne_dump_ground_probes(const char *path, CVector3f *pos) {
-    (void)path; (void)pos; return -1;
+    (void)path;
+    (void)pos;
+    return -1;
 }
 extern "C" int nocturne_dump_collision_grid(const char *path, CVector3f *pos) {
-    (void)path; (void)pos; return -1;
+    (void)path;
+    (void)pos;
+    return -1;
 }
-extern "C" int nocturne_dump_geometry(const char *path) { (void)path; return -1; }
-extern "C" void nocturne_auto_capture(const char *path_template,
-                                       int every_n, int max_count, int reset) {
-    (void)path_template; (void)every_n; (void)max_count; (void)reset;
+extern "C" int nocturne_dump_geometry(const char *path) {
+    (void)path;
+    return -1;
 }
-extern "C" int nocturne_dump_lighting_state(const char *path) { (void)path; return -1; }
+extern "C" void nocturne_auto_capture(const char *path_template, int every_n, int max_count,
+                                      int reset) {
+    (void)path_template;
+    (void)every_n;
+    (void)max_count;
+    (void)reset;
+}
+extern "C" int nocturne_dump_lighting_state(const char *path) {
+    (void)path;
+    return -1;
+}
 extern "C" int nocturne_dump_bake_signature(const char *path, int tag) {
-    (void)path; (void)tag; return -1;
+    (void)path;
+    (void)tag;
+    return -1;
 }
 extern "C" void nocturne_auto_dump_set_slot(int slot, const char *path_template,
-                                             CDemonActor *actor) {
-    (void)slot; (void)path_template; (void)actor;
+                                            CDemonActor *actor) {
+    (void)slot;
+    (void)path_template;
+    (void)actor;
 }
-extern "C" int  nocturne_auto_dump_is_armed(int slot) { (void)slot; return 0; }
+extern "C" int nocturne_auto_dump_is_armed(int slot) {
+    (void)slot;
+    return 0;
+}
 extern "C" void nocturne_auto_dump_tick(void) {}
-extern "C" int  nocturne_auto_dump_toggle_player(void)   { return -1; }
-extern "C" int  nocturne_auto_dump_toggle_svetlana(void) { return -1; }
+extern "C" int nocturne_auto_dump_toggle_player(void) {
+    return -1;
+}
+extern "C" int nocturne_auto_dump_toggle_svetlana(void) {
+    return -1;
+}
 extern "C" void nocturne_dump_stream_pcm(const char *sample_name, const short *pcm, int frames,
                                          int num_channels, int bit_depth, int sample_rate) {
-    (void)sample_name; (void)pcm; (void)frames;
-    (void)num_channels; (void)bit_depth; (void)sample_rate;
+    (void)sample_name;
+    (void)pcm;
+    (void)frames;
+    (void)num_channels;
+    (void)bit_depth;
+    (void)sample_rate;
 }
-extern "C" int nocturne_dump_create_gates(const char *path) { (void)path; return -1; }
-extern "C" int nocturne_dump_flame_visibility(const char *path) { (void)path; return -1; }
+extern "C" int nocturne_dump_create_gates(const char *path) {
+    (void)path;
+    return -1;
+}
+extern "C" int nocturne_dump_flame_visibility(const char *path) {
+    (void)path;
+    return -1;
+}
 extern "C" void nocturne_probe_flame_draw_arm(const char *path, int rows) {
-    (void)path; (void)rows;
+    (void)path;
+    (void)rows;
 }
 extern "C" void nocturne_probe_flame_draw(const char *name, int fog, int alpha) {
-    (void)name; (void)fog; (void)alpha;
+    (void)name;
+    (void)fog;
+    (void)alpha;
 }
-extern "C" int nocturne_dump_frontbuffer(const char *path) { (void)path; return -1; }
+extern "C" int nocturne_dump_frontbuffer(const char *path) {
+    (void)path;
+    return -1;
+}
 
 #endif

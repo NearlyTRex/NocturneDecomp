@@ -8,9 +8,8 @@
 // case faults in a child the test forks, and reads what it left. Windows has
 // its own handler (test_crash_report_app.cpp).
 
-#include "nocturne_test.h"
-
 #include "core/crash_report.h"
+#include "nocturne_test.h"
 
 #if !defined(_WIN32)
 
@@ -19,8 +18,8 @@
 #include <fstream>
 #include <sstream>
 #include <string>
-#include <system_error>
 #include <sys/wait.h>
+#include <system_error>
 #include <unistd.h>
 
 namespace {
@@ -47,7 +46,8 @@ std::string read(const fs::path &file) {
 int fault_in_child(int sig, const std::string &dir, bool no_stderr = false) {
     const pid_t child = fork();
     if (child == 0) {
-        if (no_stderr) close(STDERR_FILENO);
+        if (no_stderr)
+            close(STDERR_FILENO);
         g_nocturne_crash_signals = 1;
         nocturne_install_crash_handler("NocturneDecomp test-version");
         nocturne_crash_report_set_dir(dir.c_str());
@@ -63,7 +63,7 @@ int fault_in_child(int sig, const std::string &dir, bool no_stderr = false) {
     return WIFSIGNALED(status) ? WTERMSIG(status) : 0;
 }
 
-}  // namespace
+} // namespace
 
 // Each fault is named, and still ends the process.
 NOCTURNE_TEST(each_fault_leaves_its_report_and_still_ends_the_process) {
@@ -129,7 +129,9 @@ NOCTURNE_TEST(off_nothing_is_installed) {
 
 #else
 
-NOCTURNE_TEST(windows_has_its_own_handler) { CHECK(true); }
+NOCTURNE_TEST(windows_has_its_own_handler) {
+    CHECK(true);
+}
 
 #endif
 
