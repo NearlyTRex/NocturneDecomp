@@ -58,6 +58,7 @@ nocturne_test_suite(shims_game_heroes
 set(_behaviour_subjects
     shims/game/hero_weapon.cpp
     shims/game/hero_colonel.cpp
+    shims/game/hero_gabriella.cpp
     shims/watcom/crt.cpp
     shims/watcom/path.cpp
     shims/core/file_search.cpp
@@ -82,7 +83,7 @@ nocturne_test_suite(shims_game_behaviour
     TESTS test_hero_motion.cpp test_hero_melee.cpp test_hero_interact.cpp test_hero_items.cpp
           test_goggle_look.cpp test_gun_flashlight.cpp test_light_filter_load.cpp
           test_actor_delete.cpp test_hero_light.cpp test_hero_fall.cpp test_hero_grab.cpp
-          test_hero_moloch.cpp test_hero_weapon.cpp test_hero_colonel.cpp
+          test_hero_moloch.cpp test_hero_weapon.cpp test_hero_colonel.cpp test_hero_gabriella.cpp
     SUBJECTS ${_behaviour_subjects}
     SUPPORT ${_behaviour_support}
 )
@@ -141,6 +142,33 @@ nocturne_test_suite(shims_game_menus_authentic_single_player
     SUBJECTS ${_menus_subjects}
     SUPPORT ${_menus_support}
     DEFINITIONS NOCTURNE_AUTHENTIC_SINGLE_PLAYER_MENU=1
+)
+
+# The cheat presets, against the menu, the inventory and the world
+# cheats_support.cpp stands in for. Their settings go through a stand-in for the
+# engine's CIni, and the Watcom runtime brings _stricmp. Settings load once a
+# process, so a saved INI is a binary of its own.
+set(_cheats_subjects
+    shims/game/cheats.cpp
+    shims/core/ini_setting.cpp
+    shims/watcom/crt.cpp
+    shims/watcom/path.cpp
+    shims/core/file_search.cpp)
+set(_cheats_support cheats_support.cpp hero_support.cpp class_support.cpp
+    ../gl/ini_support.cpp ../watcom/rng_audit_support.cpp)
+
+nocturne_test_suite(shims_game_cheats
+    TESTS test_cheats.cpp test_cheats_saved.cpp
+    SUBJECTS ${_cheats_subjects}
+    SUPPORT ${_cheats_support}
+)
+
+# Without them: the shipped game has no presets.
+nocturne_test_suite(shims_game_cheats_authentic
+    TESTS test_cheats_authentic.cpp
+    SUBJECTS
+        shims/game/cheats.cpp
+    DEFINITIONS NOCTURNE_AUTHENTIC_CHEAT_MENU=1
 )
 
 # The controller, its SDL calls renamed in this directory's build of it for

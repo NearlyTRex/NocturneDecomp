@@ -7,7 +7,8 @@
 // The set, the game, the lights and the sound slots, defined here; the engine's
 // motion, skeleton, inventory, door, light and script calls, the vtable slots
 // the shims call through, and the netplay shims they ask, stood in for and
-// recording what they were handed. The party and its vtable are
+// recording what they were handed; and Gabriella's own calls, her dynamite
+// and the collision and render calls she makes. The party and its vtable are
 // hero_support.h's. reset() puts everything back.
 
 #include "hero_support.h"
@@ -15,6 +16,7 @@
 
 #include <functional>
 #include <map>
+#include <set>
 #include <string>
 #include <utility>
 #include <vector>
@@ -82,6 +84,23 @@ struct Stand {
     std::vector<std::pair<CDemonActor *, CVector3f>> placed; // setPositionAndOrientation's
                                                              // orientation
 
+    // --- Gabriella's ----------------------------------------------------------
+    // processMotionEvents: each delta, and what else it does; else nothing
+    std::vector<float> motion_deltas;
+    std::function<void(CGabriella *, float)> on_motion_events;
+    std::vector<SMotionTransition> transitions;              // startTransition
+    int pickup_found = 0, pickups = 0, put_downs = 0;        // findAndPickupNearbyObject, ...
+    int shipped_climb = 0, shipped_climbs = 0;               // tryClimbLadder: answer, calls
+    std::set<const void *> burned_out;                       // isFuseBurnedOut
+    int fuses_lit = 0, ejected = 0, blood = 0;               // lightFuse, onFired, blood bursts
+    float arc_hit = -1.0f;                                   // iterativeRaycast
+    std::vector<float> arcs;                                 // createLaserPath's hit time
+    float clear_ahead = 1.0f, ground = 0.0f;                 // testCylinderCollision, ...
+    std::vector<CVector3f> drops;                            // dropCarriedObject's direction
+    std::vector<CVector3f> arm_eulers;                       // eulerToQuaternion
+    std::vector<CVector3f> mask_placed;                      // applyScaledTransform's position
+    int models_drawn = 0, render_states = 0;                 // prepareForRendering, setup...
+
     // --- the netplay shims ----------------------------------------------------
     int net_active = 0, net_playing = 0, auto_use_health = 0, friendly_block = 0;
     std::vector<std::pair<int, int>> weapon_requests;       // action, direction
@@ -108,5 +127,8 @@ void put_in_set(CCharacter *character);
 // A weapon of class `type`, as createActorByName makes one, with the weapons'
 // vtable. Kept until the next reset().
 CWeapon *weapon(CDemonActorType *type);
+
+// The same for a stick of dynamite, unlit, of class CDynamite.
+CDynamite *dynamite();
 
 }  // namespace behaviour_support

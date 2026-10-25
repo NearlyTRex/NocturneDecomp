@@ -69,6 +69,10 @@ void nocturne_moloch_install_vtable(struct CMoloch *moloch);
 // From nocturne_hero_frame (hero_frame.h), once a frame.
 void nocturne_moloch_regenerate(struct CMoloch *moloch, float delta_time);
 
+// Starts every hero slot's attacks over at the punch. Called as a mission
+// builds its heroes.
+void nocturne_moloch_reset(void);
+
 #ifdef __cplusplus
 }
 #endif

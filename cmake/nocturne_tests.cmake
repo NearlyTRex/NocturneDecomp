@@ -71,7 +71,8 @@ function(nocturne_test_suite _suite)
             target_link_libraries(${_name} PRIVATE ${_arg_LIBRARIES})
         endif()
         add_test(NAME ${_test} COMMAND ${_name})
-        set_tests_properties(${_test} PROPERTIES LABELS "${_suite}")
+        set_tests_properties(${_test} PROPERTIES
+            LABELS "${_suite}" FIXTURES_REQUIRED nocturne_build)
         # Under wine, the gcc runtime DLLs a test needs are the ones the
         # platform file stages beside the exe, in the top of the build tree.
         # With no display to reach, wine takes its null graphics driver and

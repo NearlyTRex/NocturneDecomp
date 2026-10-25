@@ -28,12 +28,14 @@ const int kShoot = 2;
 
 std::unique_ptr<CMotionList> s_list(new CMotionList());
 
-// Never freed: the shim's aim table outlives a test and knows a Colonel by
-// address, so no two may share one.
+// Never freed: the shim's aim table knows a Colonel by address, so no two may
+// share one.
 std::deque<std::unique_ptr<CColonel>> s_colonels;
 
+// A fresh mission: no Colonel has an aim yet.
 void start() {
     stand.reset();
+    nocturne_colonel_reset();
     std::memset(s_list.get(), 0, sizeof(*s_list));
     s_list->motion_count = 3;
     s_list->motions[kDraw].fps = 10.0f;
@@ -405,6 +407,21 @@ NOCTURNE_TEST(a_full_aim_table_reuses_the_oldest) {
     CHECK_EQ(stand.renders, 1);
     nocturne_colonel_render_gun(late);
     CHECK_EQ(stand.renders, 2);
+}
+
+// A new mission forgets every aim: a Colonel mid-holster is no longer drawn
+// with his gun.
+NOCTURNE_TEST(a_reset_forgets_every_aim) {
+    start();
+    CColonel *c = ready();
+    c->guns_drawn = 0;
+    nocturne_colonel_draw(c);
+    nocturne_colonel_render_gun(c);
+    CHECK_EQ(stand.renders, 1);
+
+    nocturne_colonel_reset();
+    nocturne_colonel_render_gun(c);
+    CHECK_EQ(stand.renders, 1);
 }
 
 NOCTURNE_TEST_MAIN()

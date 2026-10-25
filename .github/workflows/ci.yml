@@ -69,8 +69,9 @@ jobs:
       ccache-max-size: 2G
       # Shared by the CI build and the release build of the same preset.
       cache-key: ${{ matrix.preset }}
-      # The test binaries are EXCLUDE_FROM_ALL, and ctest only runs what is
-      # already built, so they are built explicitly (see docs/testing.md).
+      # The test binaries are EXCLUDE_FROM_ALL. ctest's build_tests fixture
+      # would build them, but a phase of their own reports a compile error as a
+      # build failure and times it apart (see docs/testing.md).
       build-command: |
         ci-phase Configure cmake --preset ${{ matrix.preset }} -DNOCTURNE_COVERAGE=${{ matrix.coverage }}
         ci-phase Build cmake --build --preset ${{ matrix.preset }}

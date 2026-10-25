@@ -30,6 +30,9 @@ CDemonActorType g_CHealthItemClassInfo = {};
 CDemonActorType g_CGasMaskClassInfo = {};
 CDemonActorType g_CAmmoClassInfo = {};
 CDemonActorType g_CAmmoBoxClassInfo = {};
+CDemonActorType g_CDynamiteClassInfo = {};
+CDemonActorType g_CLadderClassInfo = {};
+CDemonActorType g_CCrateClassInfo = {};
 
 namespace hero_support {
 
@@ -107,6 +110,9 @@ void reset() {
     g_CGasMaskClassInfo = make("CGasMask", 0x510);
     g_CAmmoClassInfo = make("CAmmo", 0x520);
     g_CAmmoBoxClassInfo = make("CAmmoBox", 0x530);
+    g_CDynamiteClassInfo = make("CDynamite", 0x440, &g_CWeaponClassInfo);
+    g_CLadderClassInfo = make("CLadder", 0x320);
+    g_CCrateClassInfo = make("CCrate", 0x330);
     item_type = make("CBoxActor", 0x310);
 
     std::memset(stranger, 0, sizeof(*stranger));

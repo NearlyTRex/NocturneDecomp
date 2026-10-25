@@ -29,6 +29,10 @@ CHero_full_vtable g_CMolochVTable = {};
 UVector3 g_ZeroVector = {};
 int g_ColonelIndices[17] = {};
 CQuaternion4f CQuaternion4f_00665998 = {};
+int g_GabriellaIndices[20] = {};
+CFireEffect *g_CFireEffectPtr = nullptr;
+CGore *g_CGorePtr = nullptr;
+CDemonRenderer *g_CDemonRendererPtr2 = nullptr;
 
 namespace behaviour_support {
 
@@ -39,6 +43,7 @@ namespace {
 std::unique_ptr<CGame> s_game(new CGame());
 std::unique_ptr<CDemonSet> s_set(new CDemonSet());
 std::vector<std::unique_ptr<CWeapon>> s_weapons;
+std::vector<std::unique_ptr<CDynamite>> s_dynamites;
 
 void set_weapon_state(CWeapon *weapon, int state) {
     stand.weapon_states.emplace_back(weapon, state);
@@ -46,6 +51,13 @@ void set_weapon_state(CWeapon *weapon, int state) {
 }
 
 CWeapon_full_vtable s_weapon_vtable;
+
+bool rotated(const CDemonActor *actor) {
+    for (const CVector3f &row : actor->orient_matrix.m) {
+        if (row.x != 0.0f || row.y != 0.0f || row.z != 0.0f) return true;
+    }
+    return false;
+}
 
 int target_points_of(CDemonActor *actor, CVector3f *out) {
     out[0] = stand.target_offset;
@@ -80,6 +92,10 @@ int fire(CWeapon *weapon) {
     weapon->ammo_count--;
     return 1;
 }
+
+void on_fired(CWeapon *) { stand.ejected++; }
+
+void drop_carried(CCharacter *, int, CVector3f *direction) { stand.drops.push_back(*direction); }
 
 uint play_sound(CDemonActor *actor, char *name) {
     stand.sounds.emplace_back(actor, name);
@@ -136,6 +152,16 @@ CWeapon *weapon(CDemonActorType *type) {
     return w;
 }
 
+CDynamite *dynamite() {
+    s_dynamites.emplace_back(new CDynamite());
+    CDynamite *d = s_dynamites.back().get();
+    std::memset(d, 0, sizeof(*d));
+    d->base.base.vtable._uw = &s_weapon_vtable;
+    d->fuse_timer = -1.0f;
+    class_support::types[&d->base.base] = &g_CDynamiteClassInfo;
+    return d;
+}
+
 void Stand::reset() {
     *this = Stand();
     hero_support::reset();
@@ -151,8 +177,11 @@ void Stand::reset() {
     vtable._uc.releaseFromGrab = release;
     vtable._uc.checkCylinderCollisionWorld = cylinder;
     vtable._uh.isWeaponDrawn = weapon_drawn;
+    vtable._uc.dropCarriedObject = drop_carried;
     s_weapons.clear();
+    s_dynamites.clear();
     std::memset(&s_weapon_vtable, 0, sizeof(s_weapon_vtable));
+    s_weapon_vtable._uw.onFired = on_fired;
     s_weapon_vtable._ub.getActorType = class_support::actor_type;
     s_weapon_vtable._uw.setWeaponState = set_weapon_state;
     s_weapon_vtable._ub.setPositionAndOrientation = place;
@@ -164,6 +193,7 @@ void Stand::reset() {
     vtable._ub.getTargetPoints = target_points_of;
     vtable._ub.getBoundingBox = bounding_box;
     for (int i = 0; i < 17; i++) g_ColonelIndices[i] = i;
+    for (int i = 0; i < 20; i++) g_GabriellaIndices[i] = i;
 
     std::memset(game, 0, sizeof(*game));
     std::memset(set, 0, sizeof(*set));
@@ -227,19 +257,36 @@ CVector3f *__cdecl core_actor_cpp_CDemonActor_inverseTransformVector_FUN_00408ea
 }
 
 // An actor's frame is its position, unrotated.
+// Turned by its orient_matrix, whose columns are its axes in the world, when it
+// has one set; an all-zero matrix leaves it unrotated.
 CVector3f *__cdecl core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_00408f10(
     CDemonActor *this_ptr, CVector3f *output_local_point, CVector3f *input_world_point) {
     const CVector3f &at = this_ptr->location.position;
-    *output_local_point = CVector3f{input_world_point->x - at.x, input_world_point->y - at.y,
-                                    input_world_point->z - at.z};
+    const CVector3f d = {input_world_point->x - at.x, input_world_point->y - at.y,
+                         input_world_point->z - at.z};
+    const CVector3f *m = this_ptr->orient_matrix.m;
+    if (behaviour_support::rotated(this_ptr)) {
+        *output_local_point = CVector3f{m[0].x * d.x + m[1].x * d.y + m[2].x * d.z,
+                                        m[0].y * d.x + m[1].y * d.y + m[2].y * d.z,
+                                        m[0].z * d.x + m[1].z * d.y + m[2].z * d.z};
+    } else {
+        *output_local_point = d;
+    }
     return output_local_point;
 }
 
 CVector3f *__cdecl core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0(
     CDemonActor *this_ptr, CVector3f *output_world_point, CVector3f *input_local_point) {
     const CVector3f &at = this_ptr->location.position;
-    *output_world_point = CVector3f{input_local_point->x + at.x, input_local_point->y + at.y,
-                                    input_local_point->z + at.z};
+    const CVector3f &l = *input_local_point;
+    const CVector3f *m = this_ptr->orient_matrix.m;
+    CVector3f d = l;
+    if (behaviour_support::rotated(this_ptr)) {
+        d = CVector3f{m[0].x * l.x + m[0].y * l.y + m[0].z * l.z,
+                      m[1].x * l.x + m[1].y * l.y + m[1].z * l.z,
+                      m[2].x * l.x + m[2].y * l.y + m[2].z * l.z};
+    }
+    *output_world_point = CVector3f{d.x + at.x, d.y + at.y, d.z + at.z};
     return output_world_point;
 }
 
@@ -540,4 +587,135 @@ int nocturne_net_friendly_fire_block(CCharacter *, SDamageInfo *) { return stand
 
 void nocturne_net_weapon_request(int action, int, int direction) {
     stand.weapon_requests.emplace_back(action, direction);
+}
+
+// --- Gabriella's ---------------------------------------------------------------
+
+void __cdecl core_gabriela_cpp_CGabriella_processMotionEvents_FUN_004d4890(CGabriella *this_ptr,
+                                                                          float delta_time) {
+    stand.motion_deltas.push_back(delta_time);
+    if (stand.on_motion_events) stand.on_motion_events(this_ptr, delta_time);
+}
+
+int __cdecl core_gabriela_cpp_CGabriella_findAndPickupNearbyObject_FUN_004d5870(CGabriella *) {
+    stand.pickups++;
+    return stand.pickup_found;
+}
+
+int __cdecl core_gabriela_cpp_CGabriella_tryThrowObject_FUN_004d6050(CGabriella *) {
+    stand.put_downs++;
+    return 1;
+}
+
+int __cdecl core_gabriela_cpp_CGabriella_tryClimbLadder_FUN_004d5c60(CGabriella *) {
+    stand.shipped_climbs++;
+    return stand.shipped_climb;
+}
+
+float __cdecl core_gabriela_cpp_weaponDrawBlendWeightCallback_FUN_004d29f0(
+    int, int, float blend_weight, int, CDeformableModelInstance *) {
+    return blend_weight;
+}
+
+void __cdecl core_motion_cpp_CMotionController_startTransition_FUN_0052dbc0(
+    CMotionController *, SMotionTransition *transition) {
+    stand.transitions.push_back(*transition);
+}
+
+// Lit while the timer runs; burned out when the test says so.
+int __cdecl core_dynamite_cpp_CDynamite_isFuseLit_FUN_0049cf70(CDynamite *this_ptr) {
+    return this_ptr->fuse_timer >= 0.0f;
+}
+
+int __cdecl core_dynamite_cpp_CDynamite_isFuseBurnedOut_FUN_0049cf90(CDynamite *this_ptr) {
+    return stand.burned_out.count(this_ptr) != 0;
+}
+
+void __cdecl core_dynamite_cpp_CDynamite_lightFuse_FUN_0049cf20(CDynamite *this_ptr) {
+    stand.fuses_lit++;
+    this_ptr->fuse_timer = 3.5f;
+}
+
+float __cdecl core_setcolid_cpp_CDemonSet_iterativeRaycast_FUN_00572800(CDemonSet *, CVector3f *,
+                                                                       CVector3f *) {
+    return stand.arc_hit;
+}
+
+void __cdecl core_fire_cpp_CFireEffect_createLaserPath_FUN_004c7f80(CFireEffect *, CVector3f *,
+                                                                   CVector3f *, float, float,
+                                                                   CVector3f *, float hit_time,
+                                                                   int, int, int) {
+    stand.arcs.push_back(hit_time);
+}
+
+float __cdecl core_setcolid_cpp_CDemonSet_testCylinderCollision_FUN_00573470(
+    CDemonSet *, float, float, float, float, float, float, float) {
+    return stand.clear_ahead;
+}
+
+float __cdecl core_setcolid_cpp_CDemonSet_processCollisionTypes_FUN_005716b0(CDemonSet *,
+                                                                            CVector3f *, float) {
+    return stand.ground;
+}
+
+// An actor's frame is unrotated.
+CVector3f *__cdecl core_actor_cpp_CDemonActor_transformVector_FUN_00408e80(
+    CDemonActor *, CVector3f *output_vector, CVector3f *input_vector) {
+    *output_vector = *input_vector;
+    return output_vector;
+}
+
+float __cdecl core_actor_cpp_normalizeAngleToPi_FUN_0040cd70(float angle) {
+    return std::remainder(angle, 2.0f * 3.1415927f);
+}
+
+// A pitch about x alone, down positive, which is all a throw asks for.
+void __cdecl core_dirmat_cpp_CMatrix3x3f_buildRotationMatrix_FUN_00471d30(CMatrix3x3f *this_ptr,
+                                                                         CVector3f *euler) {
+    const float c = std::cos(euler->x), s = std::sin(euler->x);
+    this_ptr->m[0] = CVector3f{1.0f, 0.0f, 0.0f};
+    this_ptr->m[1] = CVector3f{0.0f, c, s};
+    this_ptr->m[2] = CVector3f{0.0f, -s, c};
+}
+
+CVector3f *__cdecl core_dirmat_cpp_CMatrix3x3f_transformVector_FUN_00471fd0(CMatrix3x3f *this_ptr,
+                                                                          CVector3f *output,
+                                                                          CVector3f *input) {
+    const CVector3f *m = this_ptr->m;
+    *output = CVector3f{m[0].x * input->x + m[0].y * input->y + m[0].z * input->z,
+                        m[1].x * input->x + m[1].y * input->y + m[1].z * input->z,
+                        m[2].x * input->x + m[2].y * input->y + m[2].z * input->z};
+    return output;
+}
+
+CQuaternion4f *__cdecl core_xform_cpp_eulerToQuaternion_FUN_005f7b20(CVector3f *euler,
+                                                                   CQuaternion4f *out) {
+    stand.arm_eulers.push_back(*euler);
+    *out = CQuaternion4f{euler->x, euler->y, euler->z, 1.0f};
+    return out;
+}
+
+void __cdecl core_gore_cpp_CGore_spawnBloodBurst_FUN_004edbb0(CGore *, CVector3f *, CVector3f *,
+                                                            int, int) {
+    stand.blood++;
+}
+
+void __cdecl core_actor_cpp_CDemonActor_setupRenderState_FUN_00408b00(CDemonActor *) {
+    stand.render_states++;
+}
+
+void __cdecl core_actor_cpp_CDemonActor_restoreRenderState_FUN_00408b40(CDemonActor *) {
+    stand.render_states--;
+}
+
+void __cdecl engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0(
+    CDemonRenderer *, CVector3f *, CVector3f *position) {
+    stand.mask_placed.push_back(*position);
+}
+
+void __cdecl engine_drender_cpp_CDemonRenderer_matrixPop_FUN_0048c640(CDemonRenderer *) {}
+
+void __cdecl core_dmodel_cpp_CKeyFramedModelInstance_prepareForRendering_FUN_00478d20(
+    CKeyFramedModelInstance *, float, int) {
+    stand.models_drawn++;
 }

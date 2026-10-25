@@ -349,16 +349,15 @@ void giveWeaponTo(CHero *hero, char *class_name, char *model)
     core_inv_cpp_CInventory_addItem_FUN_004fd600(&hero->inventory, actor, 0);
 }
 
+// Every health line has a row, as the static_assert above counts them.
 const HealthDef *healthDefFor(int cheat)
 {
-    int i;
+    int i = 0;
 
-    for (i = 0; i < HEALTH_ITEM_COUNT; i++) {
-        if (kHealthItems[i].cheat == cheat) {
-            return &kHealthItems[i];
-        }
+    while (kHealthItems[i].cheat != cheat) {
+        i++;
     }
-    return (const HealthDef *)0;
+    return &kHealthItems[i];
 }
 
 // Every health item is a CHealthItem and every melee weapon a CMelee, so
@@ -391,9 +390,6 @@ void giveHealthTo(CHero *hero, const HealthDef *def)
 {
     CHealthItem *item;
 
-    if (def == (const HealthDef *)0) {
-        return;
-    }
     if (hasItemWithModel(&hero->inventory, def->model) != 0) {
         return;
     }
@@ -412,16 +408,15 @@ void giveHealthTo(CHero *hero, const HealthDef *def)
     core_inv_cpp_CInventory_addItem_FUN_004fd600(&hero->inventory, &item->base, 0);
 }
 
+// Likewise every melee line, as its static_assert counts them.
 const MeleeDef *meleeDefFor(int cheat)
 {
-    int i;
+    int i = 0;
 
-    for (i = 0; i < MELEE_WEAPON_COUNT; i++) {
-        if (kMeleeWeapons[i].cheat == cheat) {
-            return &kMeleeWeapons[i];
-        }
+    while (kMeleeWeapons[i].cheat != cheat) {
+        i++;
     }
-    return (const MeleeDef *)0;
+    return &kMeleeWeapons[i];
 }
 
 // giveWeaponTo for a weapon that has no class of its own — see the melee note
@@ -437,9 +432,6 @@ void giveMeleeTo(CHero *hero, const MeleeDef *def)
     CDemonActor *actor;
     CMelee      *melee;
 
-    if (def == (const MeleeDef *)0) {
-        return;
-    }
     if (hasItemWithModel(&hero->inventory, def->model) != 0) {
         return;
     }
@@ -513,9 +505,6 @@ void giveAmmoTo(CHero *hero, char *weapon_class, EAmmoType ammo_type)
         return;
     }
     ammo = core_ammo_cpp_CAmmo_ctor_FUN_00410dc0(ammo);
-    if (ammo == (CAmmo *)0) {
-        return;
-    }
     core_mission_cpp_CDemonMission_generateActorName_FUN_00524700(g_CDemonMissionPtr, &ammo->base);
     (*((ammo->base).vtable._ub)->setup)(&ammo->base);
     ammo->ammo_type = ammo_type;
@@ -584,9 +573,6 @@ void giveGasMask(CHero *hero)
         return;
     }
     mask = core_gasmask_cpp_CGasMask_ctor_FUN_004e5d00(mask);
-    if (mask == (CGasMask *)0) {
-        return;
-    }
     // The constructor's own "gasmask.kfm" has no itemlist.txt row, so an
     // inventory holding one shows the literal "Add to dict: gasmask.kfm". The
     // model with the row is the one the single shipped placement overrides to,
@@ -676,15 +662,11 @@ void bigHeadScaleWorld(float factor)
 
 // Both hat cheats write the same model slot, so the model is resolved from both
 // lines at once rather than by whichever ran last.
-void applyHatModel(void)
+void applyHatModel(CHero *hero)
 {
-    CHero     *hero = localHero();
     CStranger *stranger;
     char      *model_name;
 
-    if (hero == (CHero *)0) {
-        return;
-    }
     stranger = (CStranger *)core_actor_cpp_castToClassHash_FUN_0040c790(
                                 (CDemonActor *)hero, g_CStrangerClassInfo.name_hash);
     if (stranger == (CStranger *)0) {
@@ -857,17 +839,10 @@ void applyToEveryHero(int index, int value)
             if (value != 0) { giveMeleeTo(hero, meleeDefFor(index)); }
             break;
 
-        // Likewise one class, told apart by the row healthDefFor hands back.
-        case NOCTURNE_CHEAT_ITEM_TONIC:
-        case NOCTURNE_CHEAT_ITEM_DOCBAG:
-        case NOCTURNE_CHEAT_ITEM_SCOTCH:
-        case NOCTURNE_CHEAT_ITEM_HIRAM_KIT:
-        case NOCTURNE_CHEAT_ITEM_CANDY:
-            if (value != 0) { giveHealthTo(hero, healthDefFor(index)); }
-            break;
-
+        // The rest are the health items: likewise one class, told apart by the
+        // row healthDefFor hands back.
         default:
-            // A line that is not hero-scoped: nothing to do to this hero.
+            if (value != 0) { giveHealthTo(hero, healthDefFor(index)); }
             break;
         }
     }
@@ -895,7 +870,8 @@ EWeatherType weatherTypeFor(int value)
 // grants only hand something over, since there is no un-give — see cheats.h.
 void applyOne(int index, int value)
 {
-    int i;
+    CHero *hero;
+    int    i;
 
     switch (index) {
     case NOCTURNE_CHEAT_GOD_MODE:
@@ -920,14 +896,16 @@ void applyOne(int index, int value)
         }
         break;
     case NOCTURNE_CHEAT_BIG_HEAD:
-        if (localHero() != (CHero *)0) {
+        hero = localHero();
+        if (hero != (CHero *)0) {
             bigHeadSetScale(value);
-            applyHatModel();
+            applyHatModel(hero);
         }
         break;
     case NOCTURNE_CHEAT_OLD_HAT:
-        if (localHero() != (CHero *)0) {
-            applyHatModel();
+        hero = localHero();
+        if (hero != (CHero *)0) {
+            applyHatModel(hero);
         }
         break;
 
@@ -989,42 +967,11 @@ void applyOne(int index, int value)
         }
         break;
 
-    // The hero-scoped lines, named rather than swept up by a default: an index
-    // with no case here does nothing, visibly, instead of being handed to a
-    // hero loop that has no case for it either.
-    case NOCTURNE_CHEAT_FLAMING_AMMO:
-    case NOCTURNE_CHEAT_ITEM_SKELETON_KEY:
-    case NOCTURNE_CHEAT_ITEM_GAS_MASK:
-    case NOCTURNE_CHEAT_ALL_GUNS:
-    case NOCTURNE_CHEAT_SHOTGUN:
-    case NOCTURNE_CHEAT_CROSSBOW:
-    case NOCTURNE_CHEAT_DYNAMITE:
-    case NOCTURNE_CHEAT_FLAME_THROWER:
-    case NOCTURNE_CHEAT_TOMMY_GUN:
-    case NOCTURNE_CHEAT_ELEPHANT_GUN:
-    case NOCTURNE_CHEAT_LIGHT_GUN:
-    case NOCTURNE_CHEAT_ITEM_BARON:
-    case NOCTURNE_CHEAT_SILVER_AMMO:
-    case NOCTURNE_CHEAT_LITHIUM_AMMO:
-    case NOCTURNE_CHEAT_MERCURY_AMMO:
-    case NOCTURNE_CHEAT_ALL_MELEE:
-    case NOCTURNE_CHEAT_MELEE_WOODSMANS_AXE:
-    case NOCTURNE_CHEAT_MELEE_AXE:
-    case NOCTURNE_CHEAT_MELEE_BLADED:
-    case NOCTURNE_CHEAT_MELEE_SHOVEL:
-    case NOCTURNE_CHEAT_MELEE_SPEAR:
-    case NOCTURNE_CHEAT_MELEE_STAKE:
-    case NOCTURNE_CHEAT_MELEE_RELIC:
-    case NOCTURNE_CHEAT_ITEM_TONIC:
-    case NOCTURNE_CHEAT_ITEM_DOCBAG:
-    case NOCTURNE_CHEAT_ITEM_SCOTCH:
-    case NOCTURNE_CHEAT_ITEM_HIRAM_KIT:
-    case NOCTURNE_CHEAT_ITEM_CANDY:
-        applyToEveryHero(index, value);
-        break;
-
+    // Every other line is hero-scoped: a grant, or the flaming ammo on a weapon
+    // already carried. applyToEveryHero names each, so a line added above this
+    // needs its own case here or it is handed to the heroes.
     default:
-        // An index no line has: nothing to apply.
+        applyToEveryHero(index, value);
         break;
     }
 }
@@ -1255,8 +1202,9 @@ void nocturne_cheats_set_override(const unsigned char *state, int size)
         int value = (int)state[i];
 
         // A host on a different build, or a corrupted packet, must not put a
-        // state in here that stateLabel would index out of range.
-        if ((value < 0) || (kCheats[i].state_count <= value)) {
+        // state in here that stateLabel would index out of range. A byte is
+        // never below zero.
+        if (kCheats[i].state_count <= value) {
             value = 0;
         }
         s_override[i] = value;

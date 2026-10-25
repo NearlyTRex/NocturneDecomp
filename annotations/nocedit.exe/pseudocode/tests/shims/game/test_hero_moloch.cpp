@@ -19,9 +19,11 @@ const int kStand = 0, kWalk = 1, kSmash = 10, kPunch = 11;
 std::unique_ptr<CMoloch> s_moloch(new CMoloch());
 SMotion s_standing, s_walking, s_punching;
 
-// Moloch as the party's first player, standing, at full health.
+// Moloch as the party's first player, standing, at full health, in a fresh
+// mission.
 CMoloch *moloch() {
     stand.reset();
+    nocturne_moloch_reset();
     std::memset(s_moloch.get(), 0, sizeof(*s_moloch));
     CMoloch *m = s_moloch.get();
     CHero *hero = &m->base;
@@ -44,18 +46,16 @@ CMotionController *controller(CMoloch *m) { return &m->base.base.model.base; }
 
 }  // namespace
 
-// Fire throws a punch, then a smash, then a punch, each player in turn; an
-// NPC Moloch always punches.
+// Fire throws a punch, then a smash, then a punch, each player in turn, and a
+// new mission starts him over at the punch; an NPC Moloch always punches.
 NOCTURNE_TEST(fire_throws_punch_and_smash_in_turn) {
     CMoloch *m = moloch();
     m->base.player_input.action_state.fire = 1;
-    const unsigned int first = nocturne_moloch_fire(m, kWalk);
-    const unsigned int second = nocturne_moloch_fire(m, kWalk);
-    const unsigned int third = nocturne_moloch_fire(m, kWalk);
-    CHECK(first != second);
-    CHECK_EQ(first, third);
-    CHECK((first == (unsigned)kPunch && second == (unsigned)kSmash) ||
-          (first == (unsigned)kSmash && second == (unsigned)kPunch));
+    CHECK_EQ(nocturne_moloch_fire(m, kWalk), (unsigned)kPunch);
+    CHECK_EQ(nocturne_moloch_fire(m, kWalk), (unsigned)kSmash);
+    CHECK_EQ(nocturne_moloch_fire(m, kWalk), (unsigned)kPunch);
+    nocturne_moloch_reset();
+    CHECK_EQ(nocturne_moloch_fire(m, kWalk), (unsigned)kPunch);
 
     g_HeroCount = 0;
     CHECK_EQ(nocturne_moloch_fire(m, kWalk), (unsigned)kPunch);

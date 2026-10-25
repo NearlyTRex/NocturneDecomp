@@ -55,7 +55,7 @@ extern "C" void nocturne_hero_shove_start(CHero *owner, CCharacter *target, floa
         SShove *shove = &s_shoves[i];
 
         // A slot is free once finished, or once its owner is no longer a
-        // player hero (a mission ended under it).
+        // player hero (it was destroyed).
         if ((shove->target == (CCharacter *)0x0) || (kShoveSeconds <= shove->elapsed) ||
             (nocturne_hero_is_player(shove->owner) == 0)) {
             shove->owner    = owner;
@@ -95,6 +95,15 @@ extern "C" void nocturne_hero_shove_step(CHero *owner, float delta_time)
         world_delta.y = 0.0f;
         world_delta.z = shove->dir_z * shove->distance * step;
         nocturne_hero_move_world(shove->target, &world_delta);
+    }
+}
+
+extern "C" void nocturne_hero_shove_reset(void)
+{
+    int i;
+
+    for (i = 0; i < SHOVE_COUNT; i++) {
+        s_shoves[i].target = (CCharacter *)0x0;
     }
 }
 

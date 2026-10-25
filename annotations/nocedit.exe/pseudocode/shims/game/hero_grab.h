@@ -116,6 +116,10 @@ int nocturne_hero_grab_escape(struct CHero *hero, float delta_time);
 // to its own original write, so the shipped path stays reachable.
 int nocturne_grab_carry_move(struct CDemonActor *victim, struct CVector3f *world_target);
 
+// Lets go of every hold. Called as a mission builds its heroes: a hero
+// destroyed while grabbed never releases his own.
+void nocturne_hero_grab_reset(void);
+
 #ifdef __cplusplus
 }
 #endif

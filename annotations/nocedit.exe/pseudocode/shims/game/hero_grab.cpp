@@ -148,6 +148,15 @@ void release_hold(CHero *hero)
 
 } // namespace
 
+extern "C" void nocturne_hero_grab_reset(void)
+{
+    int i;
+
+    for (i = 0; i < GRAB_HOLD_COUNT; i++) {
+        g_holds[i].hero = (CHero *)0x0;
+    }
+}
+
 #endif // !NOCTURNE_AUTHENTIC_HERO_ACTIONS
 
 extern "C" int nocturne_hero_grab_escape(CHero *hero, float delta_time)

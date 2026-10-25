@@ -6,6 +6,7 @@
 #include "nocturne.h"
 
 #include <cmath>
+#include <cstring>
 
 #if !NOCTURNE_AUTHENTIC_HERO_ACTIONS
 
@@ -173,11 +174,12 @@ SThrow *throw_state(CGabriella *gabriella)
     return slot_entry(gabriella, s_throw);
 }
 
-// Dynamite drawn with no stick in hand: thrown and not yet replaced, or none left.
-int empty_handed(CGabriella *gabriella)
+// Dynamite drawn with no stick in hand: thrown and not yet replaced, or none
+// left. For the player hero in `slot`.
+int empty_handed(CGabriella *gabriella, int slot)
 {
     CDynamite *dynamite = selected_dynamite(gabriella);
-    const SThrow *t;
+    const SThrow *t = &s_throw[slot];
 
     if ((dynamite == (CDynamite *)0x0) || (gabriella->weapon_state_flags == 0)) {
         return 0;
@@ -185,8 +187,7 @@ int empty_handed(CGabriella *gabriella)
     if ((dynamite->base).ammo_count <= 0) {
         return 1;
     }
-    t = throw_state(gabriella);
-    return (t != (SThrow *)0x0) && ((t->thrown != 0) || (t->refetch != REFETCH_NONE));
+    return (t->thrown != 0) || (t->refetch != REFETCH_NONE);
 }
 
 float smoothstep01(float x)
@@ -210,10 +211,12 @@ float swing_weight(const SThrow *t)
         weight = 1.0f;
     }
     fade_start = kSwingSeconds * (1.0f - kSwingFadeFraction);
+    // A swing stops once swing_t reaches kSwingSeconds, so the fade never
+    // passes zero.
     if (fade_start < t->swing_t) {
         weight = weight * (1.0f - (t->swing_t - fade_start) / (kSwingSeconds - fade_start));
     }
-    return (weight < 0.0f) ? 0.0f : weight;
+    return weight;
 }
 
 // How far her arm is out, from updateWeaponAndAimAnimation's aim weight: 0
@@ -787,10 +790,11 @@ namespace {
 // again every frame, and a held press would repeat the action each time.
 int s_press_used[NOCTURNE_HERO_SLOTS];
 
-// Marks the press as used and clears it for the rest of this frame.
+// Marks the press as used and clears it for the rest of this frame. `slot` is
+// -1 for a Gabriella who is not a player hero.
 void use_press(CGabriella *gabriella, int slot)
 {
-    if ((0 <= slot) && (slot < 4)) {
+    if (0 <= slot) {
         s_press_used[slot] = 1;
     }
     (gabriella->base).player_input.action_state.fire = 0;
@@ -805,7 +809,7 @@ void filter_press(CGabriella *gabriella, int slot)
 {
     SPlayerInput *input = &(gabriella->base).player_input;
 
-    if ((slot < 0) || (4 <= slot)) {
+    if (slot < 0) {
         return;
     }
     if (input->action_state.fire == 0) {
@@ -816,7 +820,7 @@ void filter_press(CGabriella *gabriella, int slot)
         ((input->action_state.draw != 0) || (0.0f < gabriella->draw_blend))) {
         s_press_used[slot] = 1;
     }
-    if (empty_handed(gabriella) != 0) {
+    if (empty_handed(gabriella, slot) != 0) {
         s_press_used[slot] = 1;
     }
     if (s_press_used[slot] != 0) {
@@ -937,12 +941,11 @@ int floor_takes(CGabriella *gabriella, CDemonActor *object)
     return 1;
 }
 
-// Asks for PUTDOWN if she stands on the ground and the floor takes what she carries.
-int try_start_put_down(CGabriella *gabriella)
+// Asks for PUTDOWN if she stands on the ground and the floor takes `object`,
+// which she carries.
+int try_start_put_down(CGabriella *gabriella, CDemonActor *object)
 {
-    CDemonActor *object = carried_object(gabriella);
-
-    if ((object == (CDemonActor *)0x0) || ((gabriella->base).base.is_on_ground == 0) ||
+    if (((gabriella->base).base.is_on_ground == 0) ||
         (can_act(gabriella) == 0) || (current_state(gabriella) != kStand) ||
         (floor_takes(gabriella, object) == 0)) {
         return 0;
@@ -1111,7 +1114,7 @@ extern "C" int nocturne_hero_gabriella_put_down(CGabriella *gabriella)
     if ((slot < 0) || (object == (CDemonActor *)0x0)) {
         return 0;
     }
-    if (try_start_put_down(gabriella) != 0) {
+    if (try_start_put_down(gabriella, object) != 0) {
         s_put_down_buffer[slot] = 0.0f;
     }
     else if (((gabriella->base).base.is_on_ground != 0) && (can_act(gabriella) != 0) &&
@@ -1227,7 +1230,8 @@ extern "C" void nocturne_hero_gabriella_mask_tick(CGabriella *gabriella, float d
             (gabriella->weapon_state_flags == 0) && (gabriella->draw_blend <= 0.0f)) {
             m->moving = 1;
             m->raising = 1;
-            if ((*wearing == 0) && (wanted != 0)) {
+            // From 0 the arm only starts for a wanted mask.
+            if (*wearing == 0) {
                 *wearing = 1;
             }
         }
@@ -1908,13 +1912,29 @@ extern "C" void nocturne_hero_gabriella_process_motion(CGabriella *gabriella, fl
     if (slot >= 0) {
         step_carry_throw(gabriella, &s_carry_throw[slot], delta_time);
         if (0.0f < s_put_down_buffer[slot]) {
+            CDemonActor *object = carried_object(gabriella);
+
             s_put_down_buffer[slot] = s_put_down_buffer[slot] - delta_time;
-            if ((carried_object(gabriella) == (CDemonActor *)0x0) ||
-                (try_start_put_down(gabriella) != 0)) {
+            if ((object == (CDemonActor *)0x0) || (try_start_put_down(gabriella, object) != 0)) {
                 s_put_down_buffer[slot] = 0.0f;
             }
         }
     }
+}
+
+extern "C" void nocturne_hero_gabriella_reset(void)
+{
+    std::memset(s_throw, 0, sizeof(s_throw));
+    std::memset(s_switch, 0, sizeof(s_switch));
+    std::memset(s_pump, 0, sizeof(s_pump));
+    std::memset(s_press_used, 0, sizeof(s_press_used));
+    std::memset(s_carry_throw, 0, sizeof(s_carry_throw));
+    std::memset(s_put_down_buffer, 0, sizeof(s_put_down_buffer));
+    std::memset(s_mask_arm, 0, sizeof(s_mask_arm));
+    std::memset(s_kick_buffer, 0, sizeof(s_kick_buffer));
+    std::memset(s_ladder_blend, 0, sizeof(s_ladder_blend));
+    std::memset(s_climb_buffer, 0, sizeof(s_climb_buffer));
+    std::memset(s_turn_held, 0, sizeof(s_turn_held));
 }
 
 #endif // !NOCTURNE_AUTHENTIC_HERO_ACTIONS

@@ -131,6 +131,11 @@ extern "C" unsigned int nocturne_moloch_fire(CMoloch *moloch, unsigned int desir
     return kAttackStates[attack];
 }
 
+extern "C" void nocturne_moloch_reset(void)
+{
+    std::memset(s_next_attack, 0, sizeof(s_next_attack));
+}
+
 extern "C" void nocturne_moloch_attack_hit(CMoloch *moloch, int prev_state, float prev_frame)
 {
     CCharacter *character;

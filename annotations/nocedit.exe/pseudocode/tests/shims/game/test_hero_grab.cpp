@@ -22,10 +22,9 @@ SMotion s_run, s_grabbed;
 // GETGRABBED and the escape named `escape` (or none).
 CHero *held(const char *escape = "ESCAPEGRAB") {
     stand.reset();
+    nocturne_hero_grab_reset();
     place_heroes(1);
     CHero *hero = heroes[0];
-    // Free first, so the hold the last case left him in is given back.
-    nocturne_hero_grab_escape(hero, 0.0f);
     hero->base.grabbed_by = &character(0)->base;
     hero->base.model.base.state_index = kRun;
     hero->base.model.base.tween_progress = -1.0f;
@@ -159,6 +158,10 @@ NOCTURNE_TEST(only_a_hero_held_by_an_enemy_escapes) {
     CHECK_EQ(hold_for(hero, 2.0f), 0);
     CHECK_EQ(nocturne_hero_grab_escape(nullptr, 0.1f), 0);
 
+    // A free hero with no hold has none to give back.
+    std::unique_ptr<CHero> free_hero(new CHero());
+    CHECK_EQ(nocturne_hero_grab_escape(free_hero.get(), 0.1f), 0);
+
     // Eight heroes held at once fill the table.
     stand.reset();
     stand.states.clear();
@@ -169,10 +172,23 @@ NOCTURNE_TEST(only_a_hero_held_by_an_enemy_escapes) {
         nocturne_hero_grab_escape(held_heroes[i].get(), 0.1f);
     }
     CHECK_EQ(hold_for(held_heroes[8].get(), 2.0f), 0);
-    for (int i = 0; i < 8; i++) {
-        held_heroes[i]->base.grabbed_by = nullptr;
-        nocturne_hero_grab_escape(held_heroes[i].get(), 0.1f);
+}
+
+// Heroes destroyed while held never give their holds back; a new mission's
+// reset does, and a hero held then breaks free again.
+NOCTURNE_TEST(a_reset_lets_go_of_holds_whose_heroes_are_gone) {
+    CHero *hero = held();
+    stand.states.clear();
+    std::unique_ptr<CHero> gone[8];
+    for (auto &g : gone) {
+        g.reset(new CHero());
+        g->base.grabbed_by = &character(0)->base;
+        nocturne_hero_grab_escape(g.get(), 0.1f);
     }
+    CHECK_EQ(hold_for(hero, 2.0f), 0);
+
+    nocturne_hero_grab_reset();
+    CHECK_EQ(hold_for(hero, 2.0f), 1);
 }
 
 // A character carried off is moved there through collision; anything else is

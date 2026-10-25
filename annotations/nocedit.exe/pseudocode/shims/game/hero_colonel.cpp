@@ -90,8 +90,8 @@ SColonelAim *aim_state(CColonel *colonel)
         }
     }
     if (first_free == (SColonelAim *)0x0) {
-        // A mission rebuilds its heroes; reuse the slots in turn, the oldest
-        // first, rather than refuse a Colonel his aim.
+        // Every slot taken: reuse them in turn, the oldest first, rather than
+        // refuse a Colonel his aim.
         first_free = &g_aims[g_next_reused_aim];
         g_next_reused_aim = (g_next_reused_aim + 1) % AIM_COUNT;
     }
@@ -608,6 +608,16 @@ extern "C" void nocturne_colonel_render_gun(CColonel *colonel)
     if ((colonel->guns_drawn != 0) && (kAimReadyWeight < aim->weight)) {
         (*(((weapon->base).vtable._uw)->_uw).renderAimBeam)(weapon);
     }
+}
+
+extern "C" void nocturne_colonel_reset(void)
+{
+    int i;
+
+    for (i = 0; i < AIM_COUNT; i++) {
+        g_aims[i].colonel = (CColonel *)0x0;
+    }
+    g_next_reused_aim = 0;
 }
 
 #else

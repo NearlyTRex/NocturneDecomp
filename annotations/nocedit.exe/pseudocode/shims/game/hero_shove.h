@@ -29,6 +29,9 @@ void nocturne_hero_shove_start(struct CHero *owner, struct CCharacter *target, f
 // Once per frame from the owner's process: advances that owner's shoves.
 void nocturne_hero_shove_step(struct CHero *owner, float delta_time);
 
+// Drops every shove. Called as a mission builds its heroes.
+void nocturne_hero_shove_reset(void);
+
 #ifdef __cplusplus
 }
 #endif

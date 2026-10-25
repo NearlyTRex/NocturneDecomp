@@ -107,4 +107,15 @@ NOCTURNE_TEST(a_full_table_takes_a_finished_or_orphaned_slot) {
     CHECK_EQ(stand.moved.size(), (size_t)1);
 }
 
+// A new mission drops every shove still running, so none carries on under a
+// hero built at the same address.
+NOCTURNE_TEST(a_reset_drops_every_shove) {
+    stand.reset();
+    place_heroes(1);
+    nocturne_hero_shove_start(heroes[0], target(0, 3.0f, 0.0f), 2.0f);
+    nocturne_hero_shove_reset();
+    finish(heroes[0]);
+    CHECK(stand.moved.empty());
+}
+
 NOCTURNE_TEST_MAIN()
