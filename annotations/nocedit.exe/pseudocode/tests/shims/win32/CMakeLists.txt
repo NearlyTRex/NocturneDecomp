@@ -36,12 +36,14 @@ nocturne_test_suite(shims_win32
 
 # The shims SDL stands behind, on its dummy drivers: no window or sound device
 # is opened. The font is one SDL_ttf's own sources carry, so the text cases do
-# not depend on what the machine has installed; on Windows it travels in the
-# test bundle beside the tests.
+# not depend on what the machine has installed. On Windows the tests find it
+# beside themselves: in the test bundle, and copied here for a run in the build
+# tree, as under wine.
 set(_test_font "${sdl2_ttf_SOURCE_DIR}/external/harfbuzz/perf/fonts/Roboto-Regular.ttf")
 set_property(GLOBAL APPEND PROPERTY NOCTURNE_TEST_BUNDLE_FILES "${_test_font}")
 if(WIN32)
     get_filename_component(_test_font_name "${_test_font}" NAME)
+    configure_file("${_test_font}" "${CMAKE_CURRENT_BINARY_DIR}/${_test_font_name}" COPYONLY)
     set(_test_font_define "NOCTURNE_TEST_FONT=\"${_test_font_name}\"")
 else()
     set(_test_font_define "NOCTURNE_TEST_FONT=\"${_test_font}\"")
