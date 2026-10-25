@@ -22,6 +22,14 @@ CDemonActorType g_CIcePickClassInfo = {};
 CDemonActorType g_CColonelClassInfo = {};
 CDemonActorType g_CMolochClassInfo = {};
 CDemonActorType g_CLightActorClassInfo = {};
+CDemonActorType g_CWeaponClassInfo = {};
+CDemonActorType g_CMeleeClassInfo = {};
+CDemonActorType g_CShovelClassInfo = {};
+CDemonActorType g_CGunClassInfo = {};
+CDemonActorType g_CHealthItemClassInfo = {};
+CDemonActorType g_CGasMaskClassInfo = {};
+CDemonActorType g_CAmmoClassInfo = {};
+CDemonActorType g_CAmmoBoxClassInfo = {};
 
 namespace hero_support {
 
@@ -91,7 +99,15 @@ void reset() {
     g_CColonelClassInfo = make("CColonel", 0x260, &g_CHeroClassInfo);
     g_CMolochClassInfo = make("CMoloch", 0x270, &g_CHeroClassInfo);
     g_CLightActorClassInfo = make("CLightActor", 0x300);
-    item_type = make("CGun", 0x310);
+    g_CWeaponClassInfo = make("CWeapon", 0x400);
+    g_CMeleeClassInfo = make("CMelee", 0x410, &g_CWeaponClassInfo);
+    g_CShovelClassInfo = make("CShovel", 0x420, &g_CWeaponClassInfo);
+    g_CGunClassInfo = make("CGun", 0x430, &g_CWeaponClassInfo);
+    g_CHealthItemClassInfo = make("CHealthItem", 0x500);
+    g_CGasMaskClassInfo = make("CGasMask", 0x510);
+    g_CAmmoClassInfo = make("CAmmo", 0x520);
+    g_CAmmoBoxClassInfo = make("CAmmoBox", 0x530);
+    item_type = make("CBoxActor", 0x310);
 
     std::memset(stranger, 0, sizeof(*stranger));
     give_class(&stranger->base.base.base, &g_CStrangerClassInfo);

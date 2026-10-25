@@ -80,9 +80,9 @@ static CInventory *hero_reset_inventory(CHero *hero)
     return inventory;
 }
 
-// A new `class_name` weapon named `actor_name`, or null if the class did not
-// come out as a CWeapon. The two steps are the ones CHero::createDefaultWeapon
-// takes for its CGun.
+// A new `class_name` weapon named `actor_name`. The two steps are the ones
+// CHero::createDefaultWeapon takes for its CGun; every class asked for here is
+// a registered CWeapon.
 static CWeapon *hero_create_weapon(const char *class_name, const char *actor_name)
 {
     CDemonActor *actor_ptr;
@@ -91,9 +91,7 @@ static CWeapon *hero_create_weapon(const char *class_name, const char *actor_nam
     actor_ptr = core_actor_cpp_createActorByName_FUN_0040c430((char *)class_name);
     weapon = (CWeapon *)core_actor_cpp_castToClassHash_FUN_0040c790
                                   (actor_ptr, g_CWeaponClassInfo.name_hash);
-    if (weapon != (CWeapon *)0x0) {
-        snprintf(weapon->base.actor_name, sizeof(weapon->base.actor_name), "%s", actor_name);
-    }
+    snprintf(weapon->base.actor_name, sizeof(weapon->base.actor_name), "%s", actor_name);
     return weapon;
 }
 
@@ -120,12 +118,6 @@ static void hero_install_melee(CHero *hero, const char *item_model_name, const c
     // of it.
     weapon = hero_create_weapon("CShovel",
                                 (actor_name != (const char *)0x0) ? actor_name : "Your_weapon");
-    if (weapon == (CWeapon *)0x0) {
-        // The hero keeps an empty slot rather than the pistol. Losing the
-        // weapon is not worth quitting the process over.
-        return;
-    }
-
     core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_00478dd0
               (&weapon->model, (char *)item_model_name);
 
@@ -136,16 +128,11 @@ static void hero_install_melee(CHero *hero, const char *item_model_name, const c
               (inventory, (CDemonActor *)0x0, 5, 1);
 }
 
+// Scat's, whose constructor has already selected his CBaronWeapon.
 static void hero_rename_weapon(CHero *hero, const char *item_model_name)
 {
-    CWeapon *weapon;
-
-    weapon = hero->inventory.selected_weapon;
-    if (weapon == (CWeapon *)0x0) {
-        return;
-    }
     core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_00478dd0
-              (&weapon->model, (char *)item_model_name);
+              (&hero->inventory.selected_weapon->model, (char *)item_model_name);
 }
 
 // What the extra pistol is loaded with, and what it is put back to after every
@@ -176,29 +163,27 @@ static void hero_rename_weapon(CHero *hero, const char *item_model_name)
 // weapons - which nocturne_net_weapon_request already keeps in step across
 // machines.
 // The pistol each hero was given, so the top-up leaves any other gun alone.
-// Replaced whenever the hero is re-created.
+// Replaced whenever the hero is re-created. Every mission builds its heroes
+// anew, so entries for heroes long gone pile up; a new hero takes the oldest
+// entry, and the table holds the most recent eight, which covers the party.
 #define HERO_EXTRA_GUN_SLOTS 8
 static struct {
     const CHero *hero;
     const CWeapon *weapon;
 } s_extra_guns[HERO_EXTRA_GUN_SLOTS];
+static int s_extra_gun_next;
 
 static void remember_extra_gun(const CHero *hero, const CWeapon *weapon)
 {
-    int free_slot = -1;
     for (int i = 0; i < HERO_EXTRA_GUN_SLOTS; i++) {
         if (s_extra_guns[i].hero == hero) {
             s_extra_guns[i].weapon = weapon;
             return;
         }
-        if (free_slot < 0 && s_extra_guns[i].hero == (CHero *)0x0) {
-            free_slot = i;
-        }
     }
-    if (free_slot >= 0) {
-        s_extra_guns[free_slot].hero = hero;
-        s_extra_guns[free_slot].weapon = weapon;
-    }
+    s_extra_guns[s_extra_gun_next].hero = hero;
+    s_extra_guns[s_extra_gun_next].weapon = weapon;
+    s_extra_gun_next = (s_extra_gun_next + 1) % HERO_EXTRA_GUN_SLOTS;
 }
 
 static int is_extra_gun(const CHero *hero, const CWeapon *weapon)
@@ -212,15 +197,12 @@ static int is_extra_gun(const CHero *hero, const CWeapon *weapon)
 }
 
 // A CGun named `actor_name`, loaded with the extra-gun reserve and added to
-// the hero's inventory. Null if the CGun could not be made.
+// the hero's inventory.
 static CWeapon *hero_add_gun(CHero *hero, const char *actor_name)
 {
     CWeapon *weapon;
 
     weapon = hero_create_weapon("CGun", actor_name);
-    if (weapon == (CWeapon *)0x0) {
-        return weapon;
-    }
     weapon->ammo_count = HERO_EXTRA_GUN_AMMO;
     core_inv_cpp_CInventory_addItem_FUN_004fd600
               (&hero->inventory, (CDemonActor *)weapon, 0);
@@ -229,12 +211,7 @@ static CWeapon *hero_add_gun(CHero *hero, const char *actor_name)
 
 static void hero_add_pistol(CHero *hero)
 {
-    CWeapon *weapon;
-
-    weapon = hero_add_gun(hero, "Your_weapon");
-    if (weapon != (CWeapon *)0x0) {
-        remember_extra_gun(hero, weapon);
-    }
+    remember_extra_gun(hero, hero_add_gun(hero, "Your_weapon"));
 }
 
 // The Colonel's pistol replaces the CHero one outright. It is a CGun like the
@@ -244,9 +221,7 @@ static void hero_add_pistol(CHero *hero)
 static void hero_install_sidearm(CHero *hero)
 {
     hero_reset_inventory(hero);
-    if (hero_add_gun(hero, NOCTURNE_COLONEL_SIDEARM_NAME) == (CWeapon *)0x0) {
-        return;
-    }
+    hero_add_gun(hero, NOCTURNE_COLONEL_SIDEARM_NAME);
     core_inv_cpp_CInventory_selectWeapon_FUN_004feb10
               (&hero->inventory, (CDemonActor *)0x0, 5, 1);
 }
@@ -263,11 +238,9 @@ extern "C" int nocturne_hero_weapon_hides_ammo(CWeapon *weapon)
            (core_actor_cpp_isOfClass_FUN_0040c6d0(&weapon->base, (char *)"CShovel") != 0);
 }
 
+// Given the hero and the gun he has just fired.
 extern "C" void nocturne_hero_reload_extra_gun(CHero *hero, CWeapon *weapon)
 {
-    if (hero == (CHero *)0x0 || weapon == (CWeapon *)0x0) {
-        return;
-    }
     // The Colonel's pistol is bottomless in any game: he has no way to collect
     // ammunition either, and it is the only weapon he has.
     if (nocturne_hero_weapon_is_sidearm(weapon) != 0) {
@@ -290,13 +263,11 @@ extern "C" void nocturne_hero_reload_extra_gun(CHero *hero, CWeapon *weapon)
     weapon->ammo_count = HERO_EXTRA_GUN_AMMO;
 }
 
+// Given the hero CHeroPlaceholder::createHero has just built, and its type.
 extern "C" void nocturne_hero_default_weapon(CHero *hero, int hero_type)
 {
     const SHeroWeapon *entry;
 
-    if (hero == (CHero *)0x0 || hero_type < 0 || hero_type >= HERO_WEAPON_COUNT) {
-        return;
-    }
     entry = &k_hero_weapon[hero_type];
 
     switch (entry->action) {
@@ -339,7 +310,7 @@ static int item_is_class(CDemonActor *item, uint name_hash)
 
 extern "C" int nocturne_hero_can_hold_kind(CHero *hero, EHeroItemKind kind)
 {
-    if ((hero == (CHero *)0x0) || (nocturne_hero_is_player(hero) == 0)) {
+    if (nocturne_hero_is_player(hero) == 0) {
         return 1;
     }
     if ((kind == HERO_ITEM_OTHER) || (kind == HERO_ITEM_HEALTH)) {
@@ -364,9 +335,6 @@ extern "C" int nocturne_hero_can_hold_item(CHero *hero, CDemonActor *item)
 {
     EHeroItemKind kind;
 
-    if (item == (CDemonActor *)0x0) {
-        return 1;
-    }
     // Both melee classes are CWeapons, so they are tested before the guns.
     // CShovel is not a CMelee, but its fire() does nothing either.
     if (item_is_class(item, g_CHealthItemClassInfo.name_hash) != 0) {
@@ -415,15 +383,11 @@ extern "C" char *nocturne_hero_item_text(CDemonActor *item, const char *model_na
     const char *key;
     int i;
 
+    // Asked of an item and its model by the inventory's name and description
+    // lookups, which have both.
     for (i = 0; i < (int)(sizeof(k_hero_item_text) / sizeof(k_hero_item_text[0])); i++) {
-        if (k_hero_item_text[i].by_actor_name != 0) {
-            key = (item != (CDemonActor *)0x0) ? item->actor_name : (const char *)0x0;
-        }
-        else {
-            key = model_name;
-        }
-        if ((key != (const char *)0x0) &&
-            (_stricmp((char *)key, (char *)k_hero_item_text[i].key) == 0)) {
+        key = (k_hero_item_text[i].by_actor_name != 0) ? item->actor_name : model_name;
+        if (_stricmp((char *)key, (char *)k_hero_item_text[i].key) == 0) {
             return (char *)(description != 0 ? k_hero_item_text[i].description
                                              : k_hero_item_text[i].name);
         }
@@ -437,9 +401,6 @@ extern "C" void nocturne_hero_stow_unselected_weapons(CHero *hero)
     CWeapon *weapon;
     int i;
 
-    if (hero == (CHero *)0x0) {
-        return;
-    }
     inventory = &hero->inventory;
     for (i = 0; i < inventory->item_count; i++) {
         if (inventory->items[i] == (CDemonActor *)0x0) {
@@ -457,7 +418,7 @@ extern "C" void nocturne_hero_stow_unselected_weapons(CHero *hero)
 
 extern "C" void nocturne_hero_put_away_weapon(CHero *hero, CWeapon *weapon)
 {
-    if ((hero == (CHero *)0x0) || (weapon == (CWeapon *)0x0) || (nocturne_hero_is_player(hero) == 0) ||
+    if ((weapon == (CWeapon *)0x0) || (nocturne_hero_is_player(hero) == 0) ||
         (weapon->weapon_state != WEAPON_STATE_IN_HAND)) {
         return;
     }

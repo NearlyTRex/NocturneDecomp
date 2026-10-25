@@ -62,6 +62,25 @@ struct Stand {
 
     // --- the inventory --------------------------------------------------------
     int inventory_updates = 0, items_used = 0, health_auto_used = 0, display_resets = 0;
+    int inventory_clears = 0;                                // CInventory::initialize
+    int weapon_selections = 0;                               // selectWeapon
+    std::map<const void *, std::string> models;              // setModelName, by model
+    std::vector<std::pair<CWeapon *, int>> weapon_states;    // setWeaponState
+
+    // --- aiming: the Colonel's ------------------------------------------------
+    std::map<std::string, int> motion_indices;               // findMotionIndex; else 0
+    std::vector<std::pair<int, float>> layered;              // blendMotion: motion, frame
+    std::vector<float> arm_blends;                           // blendBoneRotations' weight
+    std::map<const void *, int> target_points;               // getTargetPoints' count
+    CVector3f target_offset = {0.0f, 1.0f, 0.0f};            // where its first point is
+    float ray_hit = 0.5f;                                    // raycast's fraction
+    CDemonActor *ray_actor = nullptr;                        // what it hits; else what is
+                                                             // at its end
+    float random = 0.0f;                                     // getRandomFloatFromRange; else min
+    int ready_to_fire = 1;                                   // isReadyToFire
+    int shots = 0, beams = 0, renders = 0, processed = 0;    // fire, renderAimBeam, ...
+    std::vector<std::pair<CDemonActor *, CVector3f>> placed; // setPositionAndOrientation's
+                                                             // orientation
 
     // --- the netplay shims ----------------------------------------------------
     int net_active = 0, net_playing = 0, auto_use_health = 0, friendly_block = 0;
@@ -85,5 +104,9 @@ extern CDemonSet *set;
 
 // A character the set's list holds.
 void put_in_set(CCharacter *character);
+
+// A weapon of class `type`, as createActorByName makes one, with the weapons'
+// vtable. Kept until the next reset().
+CWeapon *weapon(CDemonActorType *type);
 
 }  // namespace behaviour_support

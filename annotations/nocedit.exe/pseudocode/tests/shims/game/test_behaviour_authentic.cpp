@@ -10,6 +10,7 @@
 #include "behaviour_support.h"
 #include "game/actor_delete.h"
 #include "game/gun_flashlight.h"
+#include "game/hero_colonel.h"
 #include "game/hero_grab.h"
 #include "game/light_filter_load.h"
 
@@ -39,6 +40,20 @@ NOCTURNE_TEST(each_addition_is_off) {
     CHECK_EQ(nocturne_hero_grab_escape(heroes[0], 10.0f), 0);
     CVector3f target = {1.0f, 2.0f, 3.0f};
     CHECK_EQ(nocturne_grab_carry_move(&heroes[0]->base.base, &target), 0);
+}
+
+// The Colonel draws nothing, shoots nothing, dies through the state shipped and
+// pushes nobody off. None of it reads him.
+NOCTURNE_TEST(the_colonel_is_as_shipped) {
+    stand.reset();
+    CColonel *colonel = nullptr;
+    CHECK_EQ(nocturne_colonel_draw(colonel), 0);
+    CHECK_EQ(nocturne_colonel_fire(colonel), 0);
+    nocturne_colonel_update_gun(colonel, 0.1f);
+    nocturne_colonel_render_gun(colonel);
+    CHECK_EQ(nocturne_colonel_death_state(colonel, 5), 5);
+    nocturne_colonel_push_off(colonel);
+    CHECK(stand.damage.empty());
 }
 
 NOCTURNE_TEST_MAIN()

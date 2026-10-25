@@ -61,6 +61,7 @@ struct SColonelAim {
 };
 
 SColonelAim g_aims[8];
+int g_next_reused_aim;
 
 #define AIM_COUNT ((int)(sizeof(g_aims) / sizeof(g_aims[0])))
 
@@ -89,9 +90,10 @@ SColonelAim *aim_state(CColonel *colonel)
         }
     }
     if (first_free == (SColonelAim *)0x0) {
-        // A mission rebuilds its heroes; reuse the oldest slot rather than
-        // refuse a Colonel his aim.
-        first_free = &g_aims[0];
+        // A mission rebuilds its heroes; reuse the slots in turn, the oldest
+        // first, rather than refuse a Colonel his aim.
+        first_free = &g_aims[g_next_reused_aim];
+        g_next_reused_aim = (g_next_reused_aim + 1) % AIM_COUNT;
     }
     first_free->colonel = colonel;
     first_free->aim_yaw = 0.0f;
@@ -183,13 +185,13 @@ int target_point(CCharacter *target, CVector3f *out)
 // CScat::scoreAimTarget's test, narrowed to enemies: alive by getDeathState
 // (hit_points is not zeroed by every death), offering a target point, in
 // front and in reach, and in sight - a ray from the middle of the Colonel to
-// the target point that hits the target first. Returns the distance, or -1.
-float score_target(CColonel *colonel, CCharacter *target, int is_current)
+// the target point that hits the target first. Returns the distance, or -1,
+// and the target point in `aim_point`.
+float score_target(CColonel *colonel, CCharacter *target, int is_current, CVector3f *aim_point)
 {
     CBoundingBox3D box;
     CBoundingBox3D *bounds;
     CVector3f local;
-    CVector3f aim_point;
     CVector3f eye;
     float distance;
     float range;
@@ -204,7 +206,7 @@ float score_target(CColonel *colonel, CCharacter *target, int is_current)
     if (0 < (int)(*(((target->base).vtable._uc)->_uc).getDeathState)(target)) {
         return -1.0f;
     }
-    if (target_point(target, &aim_point) == 0) {
+    if (target_point(target, aim_point) == 0) {
         return -1.0f;
     }
     core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_00408f10
@@ -226,7 +228,7 @@ float score_target(CColonel *colonel, CCharacter *target, int is_current)
     core_setcolid_cpp_CDemonSet_init_FUN_00574180(g_CDemonSetPtr);
     core_setcolid_cpp_CDemonSet_setRayType_FUN_00574230(g_CDemonSetPtr, 1);
     core_setcolid_cpp_CDemonSet_ignore_FUN_005741b0(g_CDemonSetPtr, (CDemonActor *)colonel);
-    hit = core_setcolid_cpp_CDemonSet_raycast_FUN_00572530(g_CDemonSetPtr, &eye, &aim_point);
+    hit = core_setcolid_cpp_CDemonSet_raycast_FUN_00572530(g_CDemonSetPtr, &eye, aim_point);
     if ((1.0f < hit) || (g_CDemonSetPtr->collision_actor != &target->base)) {
         distance = -1.0f;
     }
@@ -234,12 +236,13 @@ float score_target(CColonel *colonel, CCharacter *target, int is_current)
     return distance;
 }
 
-// The nearest target, keeping the current one while it still scores. Recorded
-// in `aim` so the next frame can prefer it.
-CCharacter *find_target(CColonel *colonel, SColonelAim *aim)
+// The nearest target, keeping the current one while it still scores, and its
+// target point in `out_point`. Recorded in `aim` so the next frame can prefer it.
+CCharacter *find_target(CColonel *colonel, SColonelAim *aim, CVector3f *out_point)
 {
     CCharacter *best;
     CCharacter *target;
+    CVector3f point;
     float best_distance;
     float distance;
     int i;
@@ -248,10 +251,11 @@ CCharacter *find_target(CColonel *colonel, SColonelAim *aim)
     best_distance = 1e30f;
     for (i = 0; i < g_CDemonSetPtr->character_count; i++) {
         target = g_CDemonSetPtr->characters[i];
-        distance = score_target(colonel, target, target == aim->target ? 1 : 0);
+        distance = score_target(colonel, target, target == aim->target ? 1 : 0, &point);
         if ((0.0f <= distance) && (distance < best_distance)) {
             best_distance = distance;
             best = target;
+            *out_point = point;
         }
     }
     aim->target = best;
@@ -260,19 +264,15 @@ CCharacter *find_target(CColonel *colonel, SColonelAim *aim)
 
 // The aim the arm turns toward: at the target from the shoulder, in the
 // Colonel's own frame, or level and at the look pitch when there is none.
-void desired_aim(CColonel *colonel, CWeapon *weapon, SColonelAim *aim,
-                 float *out_yaw, float *out_pitch)
+void desired_aim(CColonel *colonel, SColonelAim *aim, float *out_yaw, float *out_pitch)
 {
-    CCharacter *target;
     CVector3f world;
     CVector3f local;
     CVector3f shoulder;
     CVector3f direction;
     CVector3f euler;
 
-    (void)weapon;
-    target = find_target(colonel, aim);
-    if ((target == (CCharacter *)0x0) || (target_point(target, &world) == 0)) {
+    if (find_target(colonel, aim, &world) == (CCharacter *)0x0) {
         *out_yaw = 0.0f;
         *out_pitch = aim->look_pitch;
         return;
@@ -389,7 +389,6 @@ void place_gun(CColonel *colonel, CWeapon *weapon, SColonelAim *aim)
 // from the weapon's own muzzle along its own facing, sends it there.
 void point_gun_at_shot(CColonel *colonel, CWeapon *weapon, SColonelAim *aim)
 {
-    CCharacter *target;
     CMatrix3x4f grip;
     CVector3f hand;
     CVector3f world;
@@ -400,8 +399,7 @@ void point_gun_at_shot(CColonel *colonel, CWeapon *weapon, SColonelAim *aim)
     // hand in the actor's own frame, not the world's.
     grip_world(colonel, &grip);
     core_xform_cpp_getTranslation_FUN_005f6110(&grip, &hand);
-    target = find_target(colonel, aim);
-    if ((target != (CCharacter *)0x0) && (target_point(target, &world) != 0)) {
+    if (find_target(colonel, aim, &world) != (CCharacter *)0x0) {
         direction.x = world.x - hand.x;
         direction.y = world.y - hand.y;
         direction.z = world.z - hand.z;
@@ -420,9 +418,6 @@ extern "C" int nocturne_colonel_draw(CColonel *colonel)
     CWeapon *weapon;
     SColonelAim *aim;
 
-    if (colonel == (CColonel *)0x0) {
-        return 0;
-    }
     weapon = sidearm(colonel);
     if (weapon == (CWeapon *)0x0) {
         return 0;
@@ -453,7 +448,7 @@ extern "C" int nocturne_colonel_fire(CColonel *colonel)
     CWeapon *weapon;
     SColonelAim *aim;
 
-    if ((colonel == (CColonel *)0x0) || (colonel->guns_drawn == 0)) {
+    if (colonel->guns_drawn == 0) {
         return 0;
     }
     weapon = sidearm(colonel);
@@ -484,9 +479,6 @@ extern "C" void nocturne_colonel_update_gun(CColonel *colonel, float delta_time)
     int state;
     int locomotion;
 
-    if (colonel == (CColonel *)0x0) {
-        return;
-    }
     weapon = sidearm(colonel);
     if (weapon == (CWeapon *)0x0) {
         return;
@@ -530,7 +522,7 @@ extern "C" void nocturne_colonel_update_gun(CColonel *colonel, float delta_time)
     }
     aim->weight = nocturne_hero_approach(aim->weight, wanted_weight, kAimWeightRate * delta_time);
 
-    desired_aim(colonel, weapon, aim, &wanted_yaw, &wanted_pitch);
+    desired_aim(colonel, aim, &wanted_yaw, &wanted_pitch);
     step = kAimTurnRate * delta_time;
     aim->aim_yaw = nocturne_hero_approach(aim->aim_yaw, wanted_yaw, step);
     aim->aim_pitch = nocturne_hero_approach(aim->aim_pitch, wanted_pitch, step);
@@ -567,7 +559,7 @@ int in_push_reach(CColonel *colonel, CCharacter *target)
 
 extern "C" int nocturne_colonel_death_state(CColonel *colonel, int shipped_state)
 {
-    if ((colonel == (CColonel *)0x0) || (nocturne_hero_is_player(colonel) == 0)) {
+    if (nocturne_hero_is_player(colonel) == 0) {
         return shipped_state;
     }
     // COLONEL.SKL's DIE (7) and DEAD (8).
@@ -580,7 +572,7 @@ extern "C" void nocturne_colonel_push_off(CColonel *colonel)
     float amount;
     int i;
 
-    if ((colonel == (CColonel *)0x0) || (nocturne_hero_is_player(colonel) == 0)) {
+    if (nocturne_hero_is_player(colonel) == 0) {
         return;
     }
 
@@ -604,9 +596,6 @@ extern "C" void nocturne_colonel_render_gun(CColonel *colonel)
     CWeapon *weapon;
     const SColonelAim *aim;
 
-    if (colonel == (CColonel *)0x0) {
-        return;
-    }
     weapon = sidearm(colonel);
     aim = find_aim(colonel);
     if ((weapon == (CWeapon *)0x0) || (aim == (const SColonelAim *)0x0)) {

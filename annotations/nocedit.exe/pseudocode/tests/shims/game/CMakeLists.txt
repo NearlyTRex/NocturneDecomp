@@ -50,11 +50,17 @@ nocturne_test_suite(shims_game_heroes
         ../watcom/rng_audit_support.cpp
 )
 
-# What the heroes do: motion, melee, interaction, items, lights, falls, grabs
-# and Moloch. They call one another, and the engine calls they make are
+# What the heroes do: motion, melee, interaction, items, weapons, lights, falls,
+# grabs and Moloch. They call one another, and the engine calls they make are
 # behaviour_support.cpp's. The light-filter replay matches commands without
-# case through core/ascii_case.h.
+# case through core/ascii_case.h; the weapon names go through the Watcom
+# runtime's _stricmp.
 set(_behaviour_subjects
+    shims/game/hero_weapon.cpp
+    shims/game/hero_colonel.cpp
+    shims/watcom/crt.cpp
+    shims/watcom/path.cpp
+    shims/core/file_search.cpp
     shims/game/hero_motion.cpp
     shims/game/hero_melee.cpp
     shims/game/hero_interact.cpp
@@ -67,14 +73,16 @@ set(_behaviour_subjects
     shims/game/hero_fall.cpp
     shims/game/hero_grab.cpp
     shims/game/hero_moloch.cpp
+    shims/game/hero_shove.cpp
     shims/game/hero_slot.cpp)
-set(_behaviour_support behaviour_support.cpp hero_support.cpp class_support.cpp)
+set(_behaviour_support behaviour_support.cpp hero_support.cpp class_support.cpp
+    ../watcom/rng_audit_support.cpp)
 
 nocturne_test_suite(shims_game_behaviour
     TESTS test_hero_motion.cpp test_hero_melee.cpp test_hero_interact.cpp test_hero_items.cpp
           test_goggle_look.cpp test_gun_flashlight.cpp test_light_filter_load.cpp
           test_actor_delete.cpp test_hero_light.cpp test_hero_fall.cpp test_hero_grab.cpp
-          test_hero_moloch.cpp
+          test_hero_moloch.cpp test_hero_weapon.cpp test_hero_colonel.cpp
     SUBJECTS ${_behaviour_subjects}
     SUPPORT ${_behaviour_support}
 )
