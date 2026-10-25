@@ -279,9 +279,9 @@ jobs:
     permissions:
       contents: read
     with:
-      # The suite's pytest.ini lives in Tests/, but the rootdir must stay the
+      # The suite's pytest.ini lives in tests/, but the rootdir must stay the
       # repository; a file's tests share a worker, so its fixtures build once
-      test-command: pytest -q -c Tests/pytest.ini --rootdir=. -n auto --dist loadfile Tests/unit
+      test-command: pytest -q -c tests/pytest.ini --rootdir=. -n auto --dist loadfile tests/unit
       coverage-fail-under: "100"
       # Every shell statement, and every && / || handler, is run by the tests
       shell-coverage-source: scripts/Bash

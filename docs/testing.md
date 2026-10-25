@@ -120,8 +120,8 @@ gated.
 ## The Python tooling
 
 The scripts in `scripts/Python`, `cmake/collect_sources.py` and `recreation/cmake/tidy.py` have
-their own pytest suite under `Tests/`, held to [pytest-testrex](https://github.com/NearlyTRex/TestRex)'s
-rules and to full line and branch coverage. [Tests/README.md](../Tests/README.md) has the layout
+their own pytest suite under `tests/`, held to [pytest-testrex](https://github.com/NearlyTRex/TestRex)'s
+rules and to full line and branch coverage. [tests/README.md](../tests/README.md) has the layout
 and how to run it.
 
 ## Beyond unit tests
