@@ -1,0 +1,28 @@
+name: Feature request
+description: Suggest something new, or a change to how something works
+labels: [enhancement]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for the idea. This is a personal project maintained in spare time, so requests are
+        looked at when there is time to, with no promise they will be taken up.
+  - type: textarea
+    id: problem
+    attributes:
+      label: The problem
+      description: What are you trying to do that is hard or impossible today?
+    validations:
+      required: true
+  - type: textarea
+    id: idea
+    attributes:
+      label: What you'd like
+      description: How you picture it working.
+    validations:
+      required: true
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives
+      description: Anything else you considered, or how you work around it now.

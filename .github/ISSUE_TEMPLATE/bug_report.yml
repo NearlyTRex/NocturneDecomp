@@ -1,0 +1,45 @@
+name: Bug report
+description: Something doesn't work the way it should
+labels: [bug]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for the report. This is a personal project maintained in spare time, so it is
+        looked at when there is time to. For a security problem, please use
+        [private reporting](https://github.com/NearlyTRex/NocturneDecomp/security/advisories/new) instead.
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: What happened
+      description: What did you see, and what did you expect to see instead?
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      description: The commands or actions that lead to it, from a clean start where possible.
+      placeholder: |
+        1. Run ...
+        2. ...
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: Version
+      description: The release or commit you are using.
+    validations:
+      required: true
+  - type: input
+    id: environment
+    attributes:
+      label: Environment
+      description: Operating system and version, and anything else about the machine that matters.
+  - type: textarea
+    id: logs
+    attributes:
+      label: Output
+      description: Error messages or log output. Remove any passwords, keys or tokens first.
+      render: text
