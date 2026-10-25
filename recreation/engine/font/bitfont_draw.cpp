@@ -10,6 +10,7 @@
 
 #include <algorithm>
 #include <cstddef>
+#include <utility>
 
 namespace nocturne::engine {
 namespace {
@@ -18,7 +19,7 @@ constexpr std::uint32_t kLevelMask = 0xff;
 
 // isspace in the C locale.
 bool isSpace(char c) {
-    return std::string_view(" \t\n\v\f\r").find(c) != std::string_view::npos;
+    return std::string_view(" \t\n\v\f\r").contains(c);
 }
 
 // One channel of a 16-bit pixel as the 8-bit level the font blends.
@@ -142,7 +143,7 @@ int CBitFont::getTextWidth(std::string_view text, int scale) const {
 // One line is as tall as its tallest character; more are each a line height and spacing apart.
 // nocedit 0x004cff40
 int CBitFont::getTextHeight(std::string_view text, int scale) const {
-    const bool one_line = text.find('\n') == std::string_view::npos;
+    const bool one_line = !text.contains('\n');
     if (win_font_helper_ != nullptr) {
         if (one_line) {
             return win_font_helper_->getStringHeight(text);
@@ -184,7 +185,7 @@ std::size_t CBitFont::measureLine(std::string_view text, int line_width,
 std::vector<std::string> CBitFont::wrapText(std::string_view source_text, int max_lines,
                                             int line_width, int max_pixel_width) const {
     std::vector<std::string> lines;
-    while (static_cast<int>(lines.size()) < max_lines) {
+    while (std::cmp_less(lines.size(), max_lines)) {
         while (!source_text.empty() && source_text.front() != '\n' &&
                isSpace(source_text.front())) {
             source_text.remove_prefix(1);
@@ -362,7 +363,7 @@ void CBitFont::drawRow8(std::uint8_t *row, std::span<const std::uint8_t> indices
         solid = static_cast<std::uint8_t>(color_mode);
     }
     for (const std::uint8_t index : indices) {
-        if (index != static_cast<std::uint32_t>(load_flags_)) {
+        if (std::cmp_not_equal(index, load_flags_)) {
             *row = color_mode == kSheetColors ? index : solid;
         }
         ++row;
@@ -400,7 +401,7 @@ void CBitFont::drawRow16(std::uint16_t *row, std::span<const std::uint8_t> indic
     for (const std::uint8_t index : indices) {
         const std::uint32_t color = color_mode == kSheetColors ? sheet.display[index] : solid;
         if (!is_initialized_) {
-            if (index != static_cast<std::uint32_t>(load_flags_)) {
+            if (std::cmp_not_equal(index, load_flags_)) {
                 *row = static_cast<std::uint16_t>(color);
             }
         } else if (const std::uint32_t alpha =
@@ -428,7 +429,7 @@ void CBitFont::drawRow32(std::uint32_t *row, std::span<const std::uint8_t> indic
         return;
     }
     for (const std::uint8_t index : indices) {
-        if (index != static_cast<std::uint32_t>(load_flags_)) {
+        if (std::cmp_not_equal(index, load_flags_)) {
             *row = color_mode == kSheetColors ? sheet.display[index] : solid;
         }
         ++row;

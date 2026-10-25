@@ -7,6 +7,7 @@
 
 #include <array>
 #include <cstddef>
+#include <utility>
 
 namespace nocturne::core {
 namespace {
@@ -56,7 +57,7 @@ void CLevelLoader::show(int total_frames, bool use_custom_viewport, int image_va
     if (image_variant == kRandomImage && !use_custom_viewport) {
         image_variant = owners_.crt_random.rand() % kRandomPictures;
     }
-    if (image_variant < 0 || image_variant >= static_cast<int>(kPictures.size())) {
+    if (image_variant < 0 || std::cmp_greater_equal(image_variant, kPictures.size())) {
         return;
     }
     const SPicture &picture = kPictures[static_cast<std::size_t>(image_variant)];

@@ -7,6 +7,7 @@
 #include "engine/softwareedge.h"
 #include "engine/texture/currenttexture.h"
 
+#include <bit>
 #include <cstddef>
 #include <cstdint>
 #include <span>
@@ -74,7 +75,8 @@ void renderTexturedAlphaMMXScanline(const engine::SSoftwareEdge &left_edge,
     int v = lo.v_current;
     int depth = lo.depth_current;
     for (int x = 0; x <= span.count; ++x) {
-        if (static_cast<std::uint32_t>(depth) < row[x] &&
+        // Unsigned, so a depth stepped below zero is behind everything.
+        if (std::bit_cast<std::uint32_t>(depth) < row[x] &&
             coverage[engine::getTexelIndex(static_cast<std::uint32_t>(u),
                                            static_cast<std::uint32_t>(v), texture)] != 0) {
             row[x] = static_cast<std::uint16_t>(depth);

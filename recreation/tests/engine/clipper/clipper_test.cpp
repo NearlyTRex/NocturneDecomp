@@ -250,7 +250,7 @@ protected:
 
     static std::vector<int> getIndices(const std::vector<SRenderVertex> &buffer) {
         std::vector<int> indices(buffer.size());
-        std::iota(indices.begin(), indices.end(), 0);
+        std::ranges::iota(indices, 0);
         return indices;
     }
 

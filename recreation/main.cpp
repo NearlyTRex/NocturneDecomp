@@ -192,8 +192,14 @@ private:
     std::array<core::CDemonFilter, 4> player_filters_;
     engine::CMouse mouse_{dosio_, screen_, special_};
     core::CNetGame net_game_{file_system_, environment_, winrun_};
-    wincore::SMovieOwners movie_owners_{file_system_, movies_,  window_, clock_,
-                                        winrun_,      special_, screen_, two_d_};
+    wincore::SMovieOwners movie_owners_{.file_system = file_system_,
+                                        .movies = movies_,
+                                        .window = window_,
+                                        .clock = clock_,
+                                        .winrun = winrun_,
+                                        .special = special_,
+                                        .screen = screen_,
+                                        .two_d = two_d_};
     std::vector<nocturne::platform::SRenderVertex> vertex_buffer_ =
         std::vector<nocturne::platform::SRenderVertex>(kRenderVertexCount);
     engine::CPrim prim_{special_, two_d_, three_d_, current_texture_};
@@ -315,7 +321,10 @@ int main() {
     try {
         return run();
     } catch (const std::exception &error) {
-        std::fputs(std::format("nocturne: {}\n", error.what()).c_str(), stderr);
+        // In pieces, so reporting the error can't throw another.
+        std::fputs("nocturne: ", stderr);
+        std::fputs(error.what(), stderr);
+        std::fputs("\n", stderr);
         return 1;
     }
 }

@@ -35,7 +35,7 @@ bool CSndMain::isWithinListenerRadius(double pos_x, double pos_y, double pos_z,
     const double dx = pos_x - cached_3d_listener_pos_.x;
     const double dy = pos_y - cached_3d_listener_pos_.y;
     const double dz = pos_z - cached_3d_listener_pos_.z;
-    return dx * dx + dy * dy + dz * dz <= radius * radius;
+    return (dx * dx) + (dy * dy) + (dz * dz) <= radius * radius;
 }
 
 const common::CVector3d &CSndMain::getListenerPosition() const {
@@ -58,12 +58,12 @@ void CSndMain::calculateVirtualSpeakerPositions() {
     const common::CVector3d &centre = cached_3d_listener_pos_;
     if (audio_channel_count_ == 2) {
         const common::CVector3d &axis = cached_3d_listener_orient_front_;
-        virtual_speaker_positions_[0] = {.x = centre.x - axis.x * kEarOffset,
-                                         .y = centre.y - axis.y * kEarOffset,
-                                         .z = centre.z - axis.z * kEarOffset};
-        virtual_speaker_positions_[1] = {.x = centre.x + axis.x * kEarOffset,
-                                         .y = centre.y + axis.y * kEarOffset,
-                                         .z = centre.z + axis.z * kEarOffset};
+        virtual_speaker_positions_[0] = {.x = centre.x - (axis.x * kEarOffset),
+                                         .y = centre.y - (axis.y * kEarOffset),
+                                         .z = centre.z - (axis.z * kEarOffset)};
+        virtual_speaker_positions_[1] = {.x = centre.x + (axis.x * kEarOffset),
+                                         .y = centre.y + (axis.y * kEarOffset),
+                                         .z = centre.z + (axis.z * kEarOffset)};
         return;
     }
     virtual_speaker_positions_.fill(centre);

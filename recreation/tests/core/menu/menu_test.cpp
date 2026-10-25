@@ -385,7 +385,8 @@ TEST_F(CMenuTest, WithOsTextTheCopyrightCarriesTheCopyrightSign) {
     std::vector<std::string> drawn;
     ON_CALL(os_fonts_, createOsFont(_, _)).WillByDefault([&drawn](std::string_view, int) {
         auto font = std::make_unique<NiceMock<platform::MockOsFont>>();
-        ON_CALL(*font, measureText).WillByDefault(Return(common::SExtent{30, 9}));
+        ON_CALL(*font, measureText)
+            .WillByDefault(Return(common::SExtent{.width = 30, .height = 9}));
         ON_CALL(*font, renderText).WillByDefault([&drawn](std::string_view text) {
             drawn.emplace_back(text);
             return platform::STextMask{};

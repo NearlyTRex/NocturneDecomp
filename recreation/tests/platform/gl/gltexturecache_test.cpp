@@ -17,14 +17,16 @@ namespace {
 using ::testing::ElementsAre;
 
 std::vector<std::uint32_t> image(int dimension) {
-    return std::vector<std::uint32_t>(static_cast<std::size_t>(dimension * dimension), 0xFF204060U);
+    std::vector<std::uint32_t> pixels(static_cast<std::size_t>(dimension * dimension), 0xFF204060U);
+    return pixels;
 }
 
-common::SPipelineState filtered(common::ETextureFilter min, common::ETextureFilter mag) {
+constexpr common::SPipelineState filtered(common::ETextureFilter min,
+                                          common::ETextureFilter mag) noexcept {
     return {.min_filter = min, .mag_filter = mag};
 }
 
-const common::SPipelineState kNearest =
+constexpr common::SPipelineState kNearest =
     filtered(common::ETextureFilter::Nearest, common::ETextureFilter::Nearest);
 
 std::vector<GLuint> deletedNames(const SGlCall &call) {

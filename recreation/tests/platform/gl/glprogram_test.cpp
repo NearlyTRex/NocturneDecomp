@@ -18,7 +18,7 @@ constexpr std::array<SAttributeBinding, 2> kAttributes = {{
     {.location = 1, .name = "a_uv"},
 }};
 
-std::string thrownBy(CGlRecorder &gl) {
+std::string thrownBy(const CGlRecorder &gl) {
     try {
         const CGlProgram program(gl.getApi(), "vs", "fs", kAttributes);
     } catch (const std::runtime_error &error) {

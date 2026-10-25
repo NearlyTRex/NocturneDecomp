@@ -17,6 +17,7 @@
 #include <cstdint>
 #include <string>
 #include <string_view>
+#include <utility>
 
 namespace nocturne::core {
 namespace {
@@ -129,7 +130,7 @@ int CMenu::renderMenuAndGetChoice(std::span<const std::string> items, int &selec
     for (std::size_t i = 0; i < items.size(); ++i) {
         const int line_height = font.getCharHeight(kLineHeightChar);
         int color = kTextColor;
-        if (static_cast<int>(i) == selected_index) {
+        if (std::cmp_equal(i, selected_index)) {
             // The glow pulses with the title animation, steady in its second half.
             if (moon_.isAnimationFirstHalf() != 0) {
                 drawGlowingItem(font, items[i], y_position);
@@ -180,8 +181,7 @@ int CMenu::readMenuActions(std::span<const std::string> items, int &selected_ind
     using engine::EMenuAction;
     engine::CMenuInput &input = owners_.menu_input;
     const auto count = static_cast<int>(items.size());
-    const bool is_setting =
-        items[static_cast<std::size_t>(selected_index)].find(':') != std::string::npos;
+    const bool is_setting = items[static_cast<std::size_t>(selected_index)].contains(':');
     menu_input_happened_ = false;
     if (input.takeMenuAction(EMenuAction::Up)) {
         menu_input_happened_ = true;

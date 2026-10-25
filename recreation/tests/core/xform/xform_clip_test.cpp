@@ -46,6 +46,7 @@ std::vector<SEyePoint> getPoints(const std::vector<SRenderVertex> &polygon) {
 std::vector<SRenderVertex> clip(const std::vector<SRenderVertex> &polygon,
                                 std::uint32_t render_flags = 0) {
     std::vector<int> indices;
+    indices.reserve(polygon.size());
     for (std::size_t i = 0; i < polygon.size(); ++i) {
         indices.push_back(static_cast<int>(i));
     }

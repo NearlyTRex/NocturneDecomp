@@ -5,6 +5,7 @@
 #include <cstdint>
 #include <span>
 #include <string_view>
+#include <utility>
 
 namespace nocturne::engine {
 namespace {
@@ -22,7 +23,7 @@ void drawGlyph(std::span<void *> rows, const SFontGlyph &glyph, int x, int y, bo
     for (std::size_t row = 0; row < SFontGlyph::kRows; ++row) {
         auto *pixels = static_cast<TPixel *>(rows[static_cast<std::size_t>(y) + row]) + x;
         const unsigned bits = glyph.rows.at(row);
-        for (int column = 0; column < glyph.width; ++column) {
+        for (int column = 0; std::cmp_less(column, glyph.width); ++column) {
             const bool ink = ((bits >> static_cast<unsigned>(glyph.width - 1 - column)) & 1U) != 0;
             pixels[column] = color_of(ink ? kFontInk : std::uint8_t{0});
         }

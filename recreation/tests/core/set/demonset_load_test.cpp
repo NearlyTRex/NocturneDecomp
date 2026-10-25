@@ -37,9 +37,9 @@ void expectMatrix(const common::CMatrix3x3f &actual, const common::CVector3f &an
 }
 
 // A one-square text model, as models\moon.kfm.
-const std::string kMoonModel = "/\n5\n;\n4,1,1,1,1\n;\n0\n;\n"
-                               "0,0,2048\n512,0,2048\n512,512,2048\n0,512,2048\n;\n"
-                               "0,3, 0,0,0, 2,0,0, 1,0,0\n;\na.raw\n;\n4,1\n";
+constexpr std::string_view kMoonModel = "/\n5\n;\n4,1,1,1,1\n;\n0\n;\n"
+                                        "0,0,2048\n512,0,2048\n512,512,2048\n0,512,2048\n;\n"
+                                        "0,3, 0,0,0, 2,0,0, 1,0,0\n;\na.raw\n;\n4,1\n";
 
 TEST_F(CDemonSetLoadTest, ACurrentFileGivesEverySetting) {
     load({});
@@ -181,7 +181,7 @@ TEST_F(CDemonSetLoadTest, ATrainSetPutsTheTerrainDown) {
 }
 
 TEST_F(CDemonSetLoadTest, TheEnviroModelIsLoadedWhenTheSetUsesOneAndFreedWithTheNext) {
-    givenFile("models\\moon.kfm", kMoonModel);
+    givenFile("models\\moon.kfm", std::string(kMoonModel));
     load({.enviro = "1,moon.kfm"});
     EXPECT_TRUE(set_.getUseEnviroModel());
     EXPECT_EQ(set_parts_.enviro_model.getVertexCount(), 4);

@@ -36,8 +36,8 @@ common::SExtent CSdlOsFont::measureText(std::string_view text) {
 STextMask CSdlOsFont::renderText(std::string_view text) {
     const std::string utf8 = common::windows1252ToUtf8(text);
     // Solid is unblended: index 0 is the background and 1 the glyphs.
-    const std::unique_ptr<SDL_Surface, SSurfaceDeleter> surface(
-        TTF_RenderText_Solid(font_.get(), utf8.data(), utf8.size(), SDL_Color{255, 255, 255, 255}));
+    const std::unique_ptr<SDL_Surface, SSurfaceDeleter> surface(TTF_RenderText_Solid(
+        font_.get(), utf8.data(), utf8.size(), SDL_Color{.r = 255, .g = 255, .b = 255, .a = 255}));
     if (!surface) {
         return {};
     }

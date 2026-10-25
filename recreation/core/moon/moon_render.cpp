@@ -14,6 +14,7 @@
 #include <cstddef>
 #include <cstdint>
 #include <span>
+#include <utility>
 
 namespace nocturne::core {
 namespace {
@@ -77,7 +78,7 @@ void CMoon::render() {
     owners_.three_d.setBlendMode(1);
     // The timer runs to 60 over 30 frames; the second half holds the first frame.
     int frame = common::truncateToInt(animation_timer_);
-    if (frame < 0 || frame >= static_cast<int>(kAnimationFrameCount)) {
+    if (frame < 0 || std::cmp_greater_equal(frame, kAnimationFrameCount)) {
         frame = 0;
     }
     animation_textures_[static_cast<std::size_t>(frame)].display(0, 0, kAnimationAlpha);

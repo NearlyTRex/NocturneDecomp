@@ -2,12 +2,23 @@
 # Pass-1 signatures mirror the binary's parameter order and pointer types, so
 # the checks that would rewrite an interface wholesale stay off until the
 # function is implemented and its read sites are known. Confusable identifiers are allowed
-# because the original's names are kept, DirectInput's DIK_I beside DIK_1 among them.
+# because the original's names are kept, DirectInput's DIK_I beside DIK_1 among them, and so is
+# a derived class hiding a base method of the same name, as the originals' classes do.
+# The originals' masks, flags and fixed point are int arithmetic, checked against their own
+# machine code, so signed bitwise operands stay. A trailing comma makes clang-format put each
+# element on its own line, which would unpack every lookup table. The game's randomness is the
+# original's own generator; standard generators appear only in tests, seeded to be repeatable.
+# A compile-time-checked format converts implicitly from its literal, as std::format_string
+# does. Member order follows construction order, not padding.
 Checks: >
   -*,
   bugprone-*,
+  -bugprone-derived-method-shadowing-base-method,
   -bugprone-easily-swappable-parameters,
+  -bugprone-random-generator-seed,
+  -bugprone-signed-bitwise,
   clang-analyzer-*,
+  -clang-analyzer-optin.performance.Padding,
   cppcoreguidelines-avoid-goto,
   cppcoreguidelines-init-variables,
   cppcoreguidelines-no-malloc,
@@ -18,6 +29,7 @@ Checks: >
   misc-*,
   -misc-include-cleaner,
   -misc-confusable-identifiers,
+  -misc-explicit-constructor,
   -misc-no-recursion,
   -misc-non-private-member-variables-in-classes,
   modernize-*,
@@ -28,6 +40,7 @@ Checks: >
   -readability-identifier-length,
   -readability-magic-numbers,
   -readability-named-parameter,
+  -readability-trailing-comma,
 WarningsAsErrors: '*'
 HeaderFilterRegex: '/recreation/(common|platform|engine|sound|support|cockpit|shape|core|wincore)/'
 FormatStyle: file
@@ -44,3 +57,9 @@ CheckOptions:
   # does; an exact constant written out still gets the std::numbers name.
   - key: modernize-use-std-numbers.DiffThreshold
     value: '1e-15'
+  # The names are patterns; anchored, they mean the C library's functions and not the
+  # original's CConsole::printf, which takes text already formatted.
+  - key: modernize-use-std-print.PrintfLikeFunctions
+    value: '^::printf$;^::std::printf$'
+  - key: modernize-use-std-print.FprintfLikeFunctions
+    value: '^::fprintf$;^::std::fprintf$'

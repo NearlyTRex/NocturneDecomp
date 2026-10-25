@@ -1071,7 +1071,9 @@ class Scaffold:
             pointer = "%s(%s::*)(%s)" % (pointer_join(e["ret"]), owner, params)
             target = "&%s::%s" % (owner, e["name"])
         if overloaded:
-            return "static_assert(std::is_same_v<decltype(static_cast<%s>(%s)), %s>);" % (pointer, target, pointer)
+            # A template argument of the pointer's type picks the overload, as a cast would.
+            return "static_assert(std::is_same_v<std::integral_constant<%s, %s>::value_type, %s>);" % (
+                pointer, target, pointer)
         return "static_assert(std::is_same_v<decltype(%s), %s>);" % (target, pointer)
 
     def emit_class_test(self, emit, cls, path, module, parent, base_spelled, is_poly, abstract, ctors, members, names):

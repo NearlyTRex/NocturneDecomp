@@ -125,7 +125,7 @@ SFrameUpload CFrameConverter::expand(std::span<const std::byte> pixels, int pitc
     expanded_.resize(width * height * kBgraSize);
     for (std::size_t y = 0; y < height; ++y) {
         const auto row = pixels.subspan(y * static_cast<std::size_t>(pitch), width);
-        auto out = std::span(expanded_).subspan(y * width * kBgraSize, width * kBgraSize);
+        const auto out = std::span(expanded_).subspan(y * width * kBgraSize, width * kBgraSize);
         for (std::size_t x = 0; x < width; ++x) {
             const auto &entry = palette_.at(std::to_integer<std::size_t>(row[x]));
             std::ranges::copy(entry, out.subspan(x * kBgraSize, kBgraSize).begin());

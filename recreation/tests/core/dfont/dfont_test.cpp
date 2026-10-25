@@ -78,7 +78,8 @@ protected:
             EXPECT_CALL(os_fonts_, createOsFont(std::string_view("Arial"), height))
                 .WillOnce([](std::string_view, int) {
                     auto font = std::make_unique<NiceMock<platform::MockOsFont>>();
-                    ON_CALL(*font, measureText).WillByDefault(Return(common::SExtent{30, 9}));
+                    ON_CALL(*font, measureText)
+                        .WillByDefault(Return(common::SExtent{.width = 30, .height = 9}));
                     return font;
                 });
         }

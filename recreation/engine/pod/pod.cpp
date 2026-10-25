@@ -101,11 +101,11 @@ void CPod::initSearch(std::string_view search_pattern, CPodSearchContext &search
 bool CPod::getNextSearchResult(CPodSearchContext &search_context) {
     auto &pod_index = search_context.current_pod_index;
     auto &file_index = search_context.current_file_index;
-    for (pod_index = std::max(pod_index, 0); pod_index < static_cast<int>(pod_files_.size());
+    for (pod_index = std::max(pod_index, 0); std::cmp_less(pod_index, pod_files_.size());
          ++pod_index, file_index = 0) {
         const CPodFile &pod = *pod_files_[static_cast<std::size_t>(pod_index)];
         const std::vector<CPodDirectoryEntry> &entries = pod.getEntries();
-        for (file_index = std::max(file_index, 0); file_index < static_cast<int>(entries.size());
+        for (file_index = std::max(file_index, 0); std::cmp_less(file_index, entries.size());
              ++file_index) {
             const std::string &name = entries[static_cast<std::size_t>(file_index)].name;
             if (common::matchesWildcard(search_context.search_pattern, name)) {

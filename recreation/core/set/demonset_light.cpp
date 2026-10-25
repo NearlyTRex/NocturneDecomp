@@ -17,6 +17,7 @@
 #include <format>
 #include <span>
 #include <string_view>
+#include <utility>
 #include <vector>
 
 namespace nocturne::core {
@@ -33,7 +34,7 @@ constexpr double kUnitNormal = 65535.0;
 constexpr int kBrightest = 0xffff;
 
 void checkVertexCount(std::string_view what, int vertex_count, std::size_t capacity) {
-    if (vertex_count > static_cast<int>(capacity)) {
+    if (std::cmp_greater(vertex_count, capacity)) {
         common::displayErrorAndQuit(
             std::format("CDemonSet::{} {} vertices, but GLOBAL_VERTEX_COUNT = {}", what,
                         vertex_count, capacity));

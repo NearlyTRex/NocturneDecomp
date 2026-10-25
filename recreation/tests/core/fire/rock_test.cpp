@@ -29,8 +29,9 @@ TEST(CRock, PublicInterface) {
     static_assert(
         std::is_same_v<decltype(&CRock::onCollision), int (CRock::*)(common::CVector3f *)>);
     static_assert(std::is_same_v<
-                  decltype(static_cast<void (CRock::*)(common::CVector3f *, common::CVector3f *,
-                                                       CKeyFramedModel *)>(&CRock::setup)),
+                  std::integral_constant<void (CRock::*)(common::CVector3f *, common::CVector3f *,
+                                                         CKeyFramedModel *),
+                                         &CRock::setup>::value_type,
                   void (CRock::*)(common::CVector3f *, common::CVector3f *, CKeyFramedModel *)>);
 }
 

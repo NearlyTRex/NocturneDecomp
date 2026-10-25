@@ -69,7 +69,7 @@ TEST(CoreActorFunctions, AClassNameHashesItsLettersAndDigitsInEitherCase) {
 
 TEST(CoreActorFunctions, AClassRecordHashesItsName) {
     const std::string name = "CTestLeaf";
-    const CDemonActorType type = makeActorType(name, &kTestBaseType, nullptr, 3);
+    const CDemonActorType type = makeActorType(name.c_str(), &kTestBaseType, nullptr, 3);
     EXPECT_EQ(type.class_name, "CTestLeaf");
     EXPECT_EQ(type.parent_type, &kTestBaseType);
     EXPECT_EQ(type.factory_func, nullptr);

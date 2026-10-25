@@ -92,7 +92,7 @@ void CConsole::newLine() {
 
 // nocedit 0x00441a80
 void CConsole::scrollUp() {
-    std::shift_left(grid_.begin(), grid_.end(), kMaxColumns);
+    std::ranges::shift_left(grid_, kMaxColumns);
     std::fill(grid_.end() - kMaxColumns, grid_.end(), '\0');
 }
 

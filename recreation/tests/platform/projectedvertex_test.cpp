@@ -2,6 +2,8 @@
 
 #include <gtest/gtest.h>
 
+#include <bit>
+#include <cstdint>
 #include <type_traits>
 
 namespace nocturne::platform {
@@ -25,11 +27,11 @@ TEST(SProjectedVertex, HoldsTheEyeSpacePointAndFixedPointScreenPosition) {
 
 // Each flag is negative, so one sign test tells a clipped vertex from a position.
 TEST(SProjectedVertex, ClipFlagsAreTheSignBitAndOneBitPerSide) {
-    static_assert(SProjectedVertex::kClipRight == static_cast<int>(0x80000001U));
-    static_assert(SProjectedVertex::kClipLeft == static_cast<int>(0x80000002U));
-    static_assert(SProjectedVertex::kClipTop == static_cast<int>(0x80000004U));
-    static_assert(SProjectedVertex::kClipBottom == static_cast<int>(0x80000008U));
-    static_assert(SProjectedVertex::kClipNear == static_cast<int>(0x80000010U));
+    static_assert(std::bit_cast<std::uint32_t>(SProjectedVertex::kClipRight) == 0x80000001U);
+    static_assert(std::bit_cast<std::uint32_t>(SProjectedVertex::kClipLeft) == 0x80000002U);
+    static_assert(std::bit_cast<std::uint32_t>(SProjectedVertex::kClipTop) == 0x80000004U);
+    static_assert(std::bit_cast<std::uint32_t>(SProjectedVertex::kClipBottom) == 0x80000008U);
+    static_assert(std::bit_cast<std::uint32_t>(SProjectedVertex::kClipNear) == 0x80000010U);
 }
 
 } // namespace

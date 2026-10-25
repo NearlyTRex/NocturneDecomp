@@ -65,7 +65,7 @@ std::uint32_t CSndMain::startSfx(std::string_view filename) {
     slot.min_distance = info.reference_volume_distance;
     slot.max_distance = info.max_distance;
     // From 1 up to the largest the handle holds, then round to 1 again.
-    sfx_playback_state_counter_ = sfx_playback_state_counter_ % kMaxGeneration + 1;
+    sfx_playback_state_counter_ = (sfx_playback_state_counter_ % kMaxGeneration) + 1;
     slot.playback_state = sfx_playback_state_counter_;
     slot.compute(0.0F);
     slot.play(*mixer_);

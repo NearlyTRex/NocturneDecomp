@@ -203,9 +203,10 @@ TEST(CGlSceneTarget, AnUploadOfAnotherShapeRespecifiesTheTexture) {
         int width;
         int height;
     };
-    for (const SShape shape : {SShape{common::EPixelLayout::Bgra8888, 2, 4},
-                               SShape{common::EPixelLayout::Bgra8888, 4, 2},
-                               SShape{common::EPixelLayout::Rgb565, 4, 4}}) {
+    for (const SShape shape :
+         {SShape{.layout = common::EPixelLayout::Bgra8888, .width = 2, .height = 4},
+          SShape{.layout = common::EPixelLayout::Bgra8888, .width = 4, .height = 2},
+          SShape{.layout = common::EPixelLayout::Rgb565, .width = 4, .height = 4}}) {
         SFixture f;
         ASSERT_TRUE(f.target->resize(4, 4));
         const std::vector<std::byte> image(std::size_t{4} * 4 * 4);

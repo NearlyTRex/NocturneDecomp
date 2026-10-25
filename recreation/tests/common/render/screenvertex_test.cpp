@@ -12,7 +12,7 @@
 namespace nocturne::common {
 namespace {
 
-std::array<std::uint8_t, 768> makePalette() {
+constexpr std::array<std::uint8_t, 768> makePalette() {
     std::array<std::uint8_t, 768> palette{};
     for (std::size_t i = 0; i < 256; ++i) {
         palette.at(i * 3) = static_cast<std::uint8_t>(i);
@@ -22,7 +22,7 @@ std::array<std::uint8_t, 768> makePalette() {
     return palette;
 }
 
-const std::array<std::uint8_t, 768> kPalette = makePalette();
+constexpr std::array<std::uint8_t, 768> kPalette = makePalette();
 
 SVertexContext baseContext(std::uint32_t flags) {
     return {.render_flags = flags,
@@ -117,10 +117,42 @@ void expectMatchesOracle(const SVertexContext &ctx, std::span<const SVertexInput
 TEST(ScreenVertex, MatchesBuildTlVertexAcrossEveryPackingPath) {
     // Ordinary values, channels at both ends of their range, and depths either side of the clamps.
     const std::array<SVertexInput, 4> inputs = {{
-        {0, 0, 1, 0, 0, 0, 0, 0, 0},
-        {0x1400000, 0xF0000, 4096, 0x00800000, 0x00400000, 0x1000, 0x2000, 0x3000, 0x8000},
-        {-0x10000, 0x2A0000, 1, 0x7F000000, 0x00000001, 0xFF00, 0xFF00, 0xFF00, 0xFF00},
-        {0x28000000, -0x50000, 100000, 0x00ABCDEF, 0x00FEDCBA, 0x10FF, 0x0100, 0x08A0, 0x0180},
+        {.screen_x = 0,
+         .screen_y = 0,
+         .transformed_z = 1,
+         .u = 0,
+         .v = 0,
+         .r = 0,
+         .g = 0,
+         .b = 0,
+         .a = 0},
+        {.screen_x = 0x1400000,
+         .screen_y = 0xF0000,
+         .transformed_z = 4096,
+         .u = 0x00800000,
+         .v = 0x00400000,
+         .r = 0x1000,
+         .g = 0x2000,
+         .b = 0x3000,
+         .a = 0x8000},
+        {.screen_x = -0x10000,
+         .screen_y = 0x2A0000,
+         .transformed_z = 1,
+         .u = 0x7F000000,
+         .v = 0x00000001,
+         .r = 0xFF00,
+         .g = 0xFF00,
+         .b = 0xFF00,
+         .a = 0xFF00},
+        {.screen_x = 0x28000000,
+         .screen_y = -0x50000,
+         .transformed_z = 100000,
+         .u = 0x00ABCDEF,
+         .v = 0x00FEDCBA,
+         .r = 0x10FF,
+         .g = 0x0100,
+         .b = 0x08A0,
+         .a = 0x0180},
     }};
     constexpr std::array<std::uint32_t, 5> kBits = {
         kRenderTextured, kRenderSmooth, kRenderSolidAlpha, kRenderVertexAlpha, kRenderVertexColor};

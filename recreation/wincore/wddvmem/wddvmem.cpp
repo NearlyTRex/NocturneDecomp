@@ -6,6 +6,8 @@
 #include "platform/renderer.h"
 #include "wincore/winrun/winrun.h"
 
+#include <utility>
+
 namespace nocturne::wincore {
 namespace {
 
@@ -41,7 +43,7 @@ void CWddVMem::allocateRenderBuffers() {
 void CWddVMem::initializeScanlinePointers() {
     const std::size_t row_bytes = getRowBytes();
     const auto width = static_cast<std::size_t>(window_width_);
-    for (std::size_t y = 0; y < static_cast<std::size_t>(window_height_); ++y) {
+    for (std::size_t y = 0; std::cmp_less(y, window_height_); ++y) {
         screen_buffer_array_[y] = back_buffer_.data() + (y * row_bytes);
         z_buffer_scanline_array_[y] = z_buffer_.data() + (y * width);
     }
@@ -55,7 +57,7 @@ bool CWddVMem::setScreenResolution(int width, int height, int bits_per_pixel) {
     if (bits_per_pixel != 8 && bits_per_pixel != 16 && bits_per_pixel != 32) {
         return false;
     }
-    if (width <= 0 || height <= 0 || static_cast<std::size_t>(height) > kMaxScanlines ||
+    if (width <= 0 || height <= 0 || std::cmp_greater(height, kMaxScanlines) ||
         !display_.setDisplayMode(width, height, bits_per_pixel)) {
         return false;
     }
@@ -79,7 +81,7 @@ void CWddVMem::openScreenDevice() {
         return;
     }
     const std::size_t row_bytes = getRowBytes();
-    for (std::size_t y = 0; y < static_cast<std::size_t>(window_height_); ++y) {
+    for (std::size_t y = 0; std::cmp_less(y, window_height_); ++y) {
         screen_buffer_array_[y] = back_surface_.data() + (y * row_bytes);
     }
 }

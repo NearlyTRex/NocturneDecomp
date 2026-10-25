@@ -67,15 +67,16 @@ struct SSidePass {
     Interpolator interpolate;
 };
 
-constexpr std::array kBasicPasses{SSidePass{&kPositiveXPlane, interpolateVertexRightClip},
-                                  SSidePass{&kNegativeXPlane, interpolateVertexLeftClip},
-                                  SSidePass{&kPositiveYPlane, interpolateVertexTopClip},
-                                  SSidePass{&kNegativeYPlane, interpolateVertexBottomClip}};
+constexpr std::array kBasicPasses{
+    SSidePass{.plane = &kPositiveXPlane, .interpolate = interpolateVertexRightClip},
+    SSidePass{.plane = &kNegativeXPlane, .interpolate = interpolateVertexLeftClip},
+    SSidePass{.plane = &kPositiveYPlane, .interpolate = interpolateVertexTopClip},
+    SSidePass{.plane = &kNegativeYPlane, .interpolate = interpolateVertexBottomClip}};
 constexpr std::array kAdvancedPasses{
-    SSidePass{&kPositiveXPlane, interpolateVertexRightClipAdvanced},
-    SSidePass{&kNegativeXPlane, interpolateVertexLeftClipAdvanced},
-    SSidePass{&kPositiveYPlane, interpolateVertexTopClipAdvanced},
-    SSidePass{&kNegativeYPlane, interpolateVertexBottomClipAdvanced}};
+    SSidePass{.plane = &kPositiveXPlane, .interpolate = interpolateVertexRightClipAdvanced},
+    SSidePass{.plane = &kNegativeXPlane, .interpolate = interpolateVertexLeftClipAdvanced},
+    SSidePass{.plane = &kPositiveYPlane, .interpolate = interpolateVertexTopClipAdvanced},
+    SSidePass{.plane = &kNegativeYPlane, .interpolate = interpolateVertexBottomClipAdvanced}};
 
 // Which corner each side's pass starts from, which decides the clipped polygon's first corner.
 enum class EPassStart : std::uint8_t { First, Last };

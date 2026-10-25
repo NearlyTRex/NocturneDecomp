@@ -10,6 +10,7 @@
 #include <cstddef>
 #include <cstring>
 #include <span>
+#include <utility>
 
 namespace nocturne::engine {
 namespace {
@@ -239,7 +240,7 @@ void CSpecial::presentToExternalRenderer() {
         const auto *source = static_cast<const std::byte *>(rows[0]);
         screen_.openScreenDevice();
         lockFrame();
-        for (std::size_t y = 0; y < static_cast<std::size_t>(screen_.getWindowHeight()); ++y) {
+        for (std::size_t y = 0; std::cmp_less(y, screen_.getWindowHeight()); ++y) {
             std::memmove(rows[y], source + (y * row_bytes), row_bytes);
         }
         unlockFrame();

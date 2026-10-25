@@ -12,7 +12,7 @@ void resolve(const GlResolver &resolver, Function &function, const char *name) {
     if (proc == nullptr) {
         throw std::runtime_error(std::string("OpenGL entry point missing: ") + name);
     }
-    function = std::bit_cast<Function>(proc);
+    function = reinterpret_cast<Function>(proc);
 }
 
 } // namespace

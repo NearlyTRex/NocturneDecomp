@@ -207,7 +207,7 @@ TEST_F(CPickListInputTest, AClickSelects) {
 TEST_F(CPickListInputTest, TwoQuickClicksOnAnItemPickIt) {
     open(0);
     clickRow(2);
-    time_ += engine::IGameClock::kTicksPerSecond / 4 - 1;
+    time_ += (engine::IGameClock::kTicksPerSecond / 4) - 1;
     clickRow(2);
     EXPECT_EQ(list_.handleDialogInput(), 2);
 }

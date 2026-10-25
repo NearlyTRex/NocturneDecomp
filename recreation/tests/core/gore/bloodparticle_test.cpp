@@ -28,9 +28,9 @@ TEST(CBloodParticle, PublicInterface) {
     static_assert(std::is_same_v<decltype(&CBloodParticle::onCollision),
                                  int (CBloodParticle::*)(common::CVector3f *)>);
     static_assert(
-        std::is_same_v<decltype(static_cast<void (CBloodParticle::*)(common::CVector3f *,
-                                                                     common::CVector3f *, int)>(
-                           &CBloodParticle::setup)),
+        std::is_same_v<std::integral_constant<void (CBloodParticle::*)(common::CVector3f *,
+                                                                       common::CVector3f *, int),
+                                              &CBloodParticle::setup>::value_type,
                        void (CBloodParticle::*)(common::CVector3f *, common::CVector3f *, int)>);
     static_assert(
         std::is_same_v<decltype(&CBloodParticle::setupRenderState), void (CBloodParticle::*)()>);

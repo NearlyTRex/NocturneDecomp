@@ -32,7 +32,7 @@ common::CVector3d subtract(const common::CVector3d &a, const common::CVector3d &
 }
 
 double dot(const common::CVector3d &a, const common::CVector3d &b) {
-    return a.x * b.x + a.y * b.y + a.z * b.z;
+    return (a.x * b.x) + (a.y * b.y) + (a.z * b.z);
 }
 
 double length(const common::CVector3d &v) {
@@ -100,7 +100,7 @@ bool CSfxSlot::compute(float delta_time) {
 void CSfxSlot::advanceFade(float delta_time) {
     const double share = static_cast<double>(delta_time) / fade_time_remaining;
     options.current_volume = static_cast<float>(
-        (static_cast<double>(fade_target_volume) - options.current_volume) * share +
+        ((static_cast<double>(fade_target_volume) - options.current_volume) * share) +
         options.current_volume);
     fade_time_remaining -= delta_time;
 }
@@ -195,7 +195,7 @@ void CSfxSlot::updatePlaybackPos(double hardware_playback_pos) {
         options.playback_position =
             sample->loop_marker_count
                 ? options.playback_position -
-                      std::floor(options.playback_position / sample_count) * sample_count
+                      (std::floor(options.playback_position / sample_count) * sample_count)
                 : sample_count;
     }
     prev_hardware_playback_pos = hardware_playback_pos;

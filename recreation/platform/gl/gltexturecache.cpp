@@ -3,8 +3,9 @@
 #include "common/render/renderstate.h"
 
 #include <algorithm>
+#include <array>
+#include <cstddef>
 #include <stdexcept>
-#include <vector>
 
 namespace nocturne::platform::gl {
 namespace {
@@ -97,12 +98,14 @@ void CGlTextureCache::release() {
     if (entries_.empty()) {
         return;
     }
-    std::vector<GLuint> textures;
-    textures.reserve(entries_.size());
+    // Gathered on the stack, as the cache never holds more than its capacity, so releasing from
+    // the destructor allocates nothing.
+    std::array<GLuint, kCapacity> textures{};
+    std::size_t count = 0;
     for (const auto &[key, entry] : entries_) {
-        textures.push_back(entry.texture);
+        textures[count++] = entry.texture;
     }
-    gl_.DeleteTextures(static_cast<GLsizei>(textures.size()), textures.data());
+    gl_.DeleteTextures(static_cast<GLsizei>(count), textures.data());
     entries_.clear();
     chained_.clear();
     // A deleted name is not one GL will bind again.
