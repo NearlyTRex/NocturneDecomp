@@ -24,7 +24,7 @@ functions don't count as done. Sizes are in instructions.
 | 8 | `renderMenuAndGetChoice`, `CMoon::free`, `CSound::reset`, `CEditorTools::showFileSelectionDialog` | 8 | 63 | 5314 | 60 | 3 | 95.2% |
 | 9 | `CPickList::enableItem`, `CEventList::resetGameFlags`, `CLevelLoader::show`, `CDemonMission::load` | 15 | 56 | 3298 | 26 | 8 | 46.4% |
 | 10 | `CDemonMission::createHeros`, `CDemonMission::prepareAllActors`, `CEventList::reset`, `CDemonMission::loadSet` | 15 | 42 | 5112 | 31 | 7 | 73.8% |
-| 11 | `CScript::loadScript` | 63 | 579 | 67400 | 12 | 1 | 2.0% |
+| 11 | `CScript::loadScript` | 63 | 579 | 67400 | 19 | 3 | 3.2% |
 | 12 | `CDemonMission::loadScript`, `CScript::executeInitSection`, `CDemonMission::startMission`, `CDemonMission::buildActiveSetActorList`, `CConsole::reset`, `CEditorTools::displayMemoryDiagnostics`, `CGame::setGameRes`, `CDemonLight::init`, `CDemonSet::initScene` | 12 | 26 | 1658 | 2 | 0 | 7.6% |
 | 13 | `CFireEffect::init`, `CDemonSet::loadMasterLightStates`, `CDemonSet::setGamma`, `CGame::clearOverlay`, `CGame::loadAssets` | 7 | 27 | 735 | 0 | 0 | 0.0% |
 | 14 | `CNetGame::syncPlayers`, `CNetGame::processServerFrame`, `CLevelLoader::cleanup`, `CKeys::toggleInputMask`, `CGame::processHotkeys` | 17 | 51 | 5302 | 1 | 0 | 1.9% |
@@ -42,11 +42,11 @@ functions don't count as done. Sizes are in instructions.
 | 26 | Not reached from startup: `core/` (part 4 of 9) | 18 | 300 | 20148 | 27 | 1 | 9.0% |
 | 27 | Not reached from startup: `core/` (part 5 of 9) | 21 | 294 | 20910 | 11 | 4 | 3.7% |
 | 28 | Not reached from startup: `core/` (part 6 of 9) | 18 | 282 | 21809 | 13 | 5 | 4.6% |
-| 29 | Not reached from startup: `core/` (part 7 of 9) | 18 | 263 | 22721 | 8 | 3 | 3.0% |
+| 29 | Not reached from startup: `core/` (part 7 of 9) | 18 | 263 | 22721 | 10 | 3 | 3.8% |
 | 30 | Not reached from startup: `core/` (part 8 of 9) | 20 | 300 | 31826 | 9 | 2 | 3.0% |
 | 31 | Not reached from startup: `core/` (part 9 of 9) | 5 | 111 | 10905 | 4 | 0 | 3.6% |
 | 32 | Not reached from startup: `wincore/` | 2 | 11 | 482 | 4 | 0 | 36.3% |
-| | **All** | | **4479** | **402407** | **637** | **84** | **14.2%** |
+| | **All** | | **4479** | **402407** | **646** | **86** | **14.4%** |
 
 ## Step 0: Math value types
 
@@ -1953,27 +1953,30 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `apply` 0x00585870 (106)
   - [ ] `testSphereInFrustum` 0x00585970 (66)
 
-### `core/script.cpp` (25 functions, 7596 instructions, 0 done, 0 partial)
+### `core/script.cpp` (25 functions, 7596 instructions, 7 done, 2 partial)
 - class `CScript`
-  - [ ] `freeParsedLines` 0x005598f0 (40)
-  - [ ] `clear` 0x00559870 (38)
-  - [ ] `buildParsedLines` 0x0055a370 (107)
+  - [x] `freeParsedLines` 0x005598f0 (40)
+  - [~] `clear` 0x00559870 (38)
+    - deferred: clearing the notes of dialogue missing from the database, with the dbSay commands and startDialogLine
+  - [x] `buildParsedLines` 0x0055a370 (107)
   - [ ] `initRuntime` 0x0055a540 (120)
   - [ ] `startDialogLine` 0x0055ff00 (148)
   - [ ] `processTimer` 0x005600c0 (46)
   - [ ] `setSpeaker` 0x00560140 (8)
   - [ ] `findLabelIndex` 0x00560160 (42)
   - [ ] `skipCommands` 0x005601c0 (104)
-  - [ ] `findDialogEntry` 0x005606e0 (48)
+  - [x] `findDialogEntry` 0x005606e0 (48)
   - [ ] `step` 0x0055a810 (5702)
   - [ ] `validateSyntax` 0x0055a4b0 (53)
-  - [ ] `dbLoad` 0x005603c0 (232)
-  - [ ] `loadScript` 0x00559f80 (308)
+  - [x] `dbLoad` 0x005603c0 (232)
+  - [~] `loadScript` 0x00559f80 (308)
+    - deferred: checking the script's syntax, quitting on the first error, unless the caller skips it, with validateSyntax
+    - deferred: starting the script's run, with initRuntime
 - free functions
-  - [ ] `trimLine` 0x005592c0 (64)
+  - [x] `trimLine` 0x005592c0 (64)
   - [ ] `validateActorVariableName` 0x00559220 (63)
-  - [ ] `trimString` 0x00559360 (44)
-  - [ ] `skipWhitespace` 0x005593d0 (8)
+  - [x] `trimString` 0x00559360 (44)
+  - [x] `skipWhitespace` 0x005593d0 (8)
   - [ ] `parseArgument` 0x005593f0 (78)
   - [ ] `parseConditionExpr` 0x005594a0 (23)
   - [ ] `getActor` 0x005594e0 (149)
@@ -5647,10 +5650,10 @@ functions don't count as done. Sizes are in instructions.
   - [x] `factoryFuncScat` 0x00556e90 (12)
   - [ ] `staticInit` 0x00556e00 (9)
 
-### `core/script.cpp` (3 functions, 52 instructions, 0 done, 0 partial)
+### `core/script.cpp` (3 functions, 52 instructions, 2 done, 0 partial)
 - class `CScript`
-  - [ ] `ctor` 0x005597f0 (14)
-  - [ ] `dtor` 0x00559840 (13)
+  - [x] `ctor` 0x005597f0 (14)
+  - [x] `dtor` 0x00559840 (13)
 - free functions
   - [ ] `staticInit` 0x005591b0 (25)
 
