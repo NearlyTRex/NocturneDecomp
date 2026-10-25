@@ -105,5 +105,19 @@ TEST(CTextScanner, ScanUntilFailsOnAnEmptyMatch) {
     EXPECT_EQ(at_end.scanUntil('"'), std::nullopt);
 }
 
+TEST(CTextScanner, ScanUntilAnyStopsAtTheFirstOfItsDelimiters) {
+    CTextScanner scanner("head),arm");
+    EXPECT_EQ(scanner.scanUntilAny(",)"), "head");
+    EXPECT_TRUE(scanner.expect(')'));
+    EXPECT_EQ(scanner.scanUntilAny(",)"), std::nullopt);
+}
+
+TEST(CTextScanner, ThePositionCountsWhatHasBeenRead) {
+    CTextScanner scanner("  12 x");
+    EXPECT_EQ(scanner.getPosition(), 0U);
+    EXPECT_EQ(scanner.scanInteger(), 12);
+    EXPECT_EQ(scanner.getPosition(), 4U);
+}
+
 } // namespace
 } // namespace nocturne::common

@@ -50,7 +50,7 @@ protected:
 
 TEST_F(CScriptLoadTest, AMissingScriptLoadsEmptyWithoutReadingItsDialogue) {
     givenFile("world\\m1.txt", "hello, gabriela, Hi.\n");
-    EXPECT_TRUE(script_.loadScript("m1.scr"));
+    EXPECT_TRUE(script_.loadScript("m1.scr", true));
     EXPECT_THAT(lines(), IsEmpty());
     EXPECT_THAT(dialogue(), IsEmpty());
 }
@@ -58,34 +58,34 @@ TEST_F(CScriptLoadTest, AMissingScriptLoadsEmptyWithoutReadingItsDialogue) {
 TEST_F(CScriptLoadTest, AnEmptyScriptLoadsEmpty) {
     givenFile("world\\m1.scr", "");
     givenFile("world\\m1.txt", "hello, gabriela, Hi.\n");
-    EXPECT_TRUE(script_.loadScript("m1.scr"));
+    EXPECT_TRUE(script_.loadScript("m1.scr", true));
     EXPECT_THAT(dialogue(), IsEmpty());
 }
 
 TEST_F(CScriptLoadTest, AScriptThatWontOpenLoadsEmptyAfterItsDialogue) {
     givenUnopenableFile("world\\m1.scr");
     givenFile("world\\m1.txt", "hello, gabriela, Hi.\n");
-    EXPECT_TRUE(script_.loadScript("m1.scr"));
+    EXPECT_TRUE(script_.loadScript("m1.scr", true));
     EXPECT_THAT(lines(), IsEmpty());
     EXPECT_EQ(dialogue().size(), 1U);
 }
 
 TEST_F(CScriptLoadTest, LinesThatHoldSomethingKeepTheirLineInTheFile) {
     givenFile("world\\m1.scr", "  \r\nwait(1) // a second\r\n// none\r\n\r\n  :top\n");
-    EXPECT_TRUE(script_.loadScript("m1.scr"));
+    EXPECT_TRUE(script_.loadScript("m1.scr", true));
     EXPECT_THAT(lines(), ElementsAre(SScriptLine{.line_number = 2, .text = "wait(1)"},
                                      SScriptLine{.line_number = 5, .text = ":top"}));
 }
 
 TEST_F(CScriptLoadTest, ACarriageReturnInsideALineIsDropped) {
     givenFile("world\\m1.scr", "wa\rit(1)\n");
-    EXPECT_TRUE(script_.loadScript("m1.scr"));
+    EXPECT_TRUE(script_.loadScript("m1.scr", true));
     EXPECT_THAT(lines(), ElementsAre(SScriptLine{.line_number = 1, .text = "wait(1)"}));
 }
 
 TEST_F(CScriptLoadTest, TheLastLineNeedsNoNewline) {
     givenFile("world\\m1.scr", "{\nend");
-    EXPECT_TRUE(script_.loadScript("m1.scr"));
+    EXPECT_TRUE(script_.loadScript("m1.scr", true));
     EXPECT_THAT(lines(), ElementsAre(SScriptLine{.line_number = 1, .text = "{"},
                                      SScriptLine{.line_number = 2, .text = "end"}));
 }
@@ -94,7 +94,7 @@ TEST_F(CScriptLoadTest, ANulMeansTheFileIsNotTextAndNothingIsKept) {
     givenFile("world\\m1.scr", std::string("wait(1)\nwa\0it(2)\n", 17));
     givenFile("world\\m1.txt", "hello, gabriela, Hi.\n");
     EXPECT_CALL(raw_input_, getNextKeypress(_));
-    EXPECT_FALSE(script_.loadScript("m1.scr"));
+    EXPECT_FALSE(script_.loadScript("m1.scr", true));
     EXPECT_THAT(lines(), IsEmpty());
     EXPECT_THAT(dialogue(), IsEmpty());
 }
@@ -103,23 +103,23 @@ TEST_F(CScriptLoadTest, LoadingAScriptReplacesTheOneBefore) {
     givenFile("world\\m1.scr", "first\n");
     givenFile("world\\m1.txt", "hello, gabriela, Hi.\n");
     givenFile("world\\m2.scr", "second\n");
-    EXPECT_TRUE(script_.loadScript("m1.scr"));
-    EXPECT_TRUE(script_.loadScript("m2.scr"));
+    EXPECT_TRUE(script_.loadScript("m1.scr", true));
+    EXPECT_TRUE(script_.loadScript("m2.scr", true));
     EXPECT_THAT(lines(), ElementsAre(SScriptLine{.line_number = 1, .text = "second"}));
     EXPECT_THAT(dialogue(), IsEmpty());
 }
 
 TEST_F(CScriptLoadTest, LoadingAMissingScriptForgetsTheOneBefore) {
     givenFile("world\\m1.scr", "first\n");
-    EXPECT_TRUE(script_.loadScript("m1.scr"));
-    EXPECT_TRUE(script_.loadScript("none.scr"));
+    EXPECT_TRUE(script_.loadScript("m1.scr", true));
+    EXPECT_TRUE(script_.loadScript("none.scr", true));
     EXPECT_THAT(lines(), IsEmpty());
 }
 
 TEST_F(CScriptLoadTest, ClearForgetsTheLinesAndTheDialogue) {
     givenFile("world\\m1.scr", "wait(1)\n");
     givenFile("world\\m1.txt", "hello, gabriela, Hi.\n");
-    EXPECT_TRUE(script_.loadScript("m1.scr"));
+    EXPECT_TRUE(script_.loadScript("m1.scr", true));
     script_.clear();
     EXPECT_THAT(lines(), IsEmpty());
     EXPECT_THAT(dialogue(), IsEmpty());
@@ -131,7 +131,7 @@ protected:
     void load(const std::string &database) {
         givenFile("world\\m1.scr", "wait(1)\n");
         givenFile("world\\m1.txt", database);
-        EXPECT_TRUE(script_.loadScript("m1.scr"));
+        EXPECT_TRUE(script_.loadScript("m1.scr", true));
     }
 
     void expectFatal(const std::string &database, const std::string &message) {
@@ -201,7 +201,7 @@ TEST_F(CScriptDialogueTest, AnEmptyFieldQuits) {
 TEST_F(CScriptDialogueTest, ADatabaseThatWontOpenQuits) {
     givenFile("world\\m1.scr", "wait(1)\n");
     givenUnopenableFile("world\\m1.txt");
-    EXPECT_THAT([this] { (void)script_.loadScript("m1.scr"); },
+    EXPECT_THAT([this] { (void)script_.loadScript("m1.scr", true); },
                 ThrowsMessage<common::CFatalError>(StrEq("Can't open world\\m1.txt")));
 }
 

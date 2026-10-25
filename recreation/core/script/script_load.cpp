@@ -18,12 +18,12 @@
 
 namespace nocturne::core {
 
-// Retail, not nocedit: no listing of the parsed lines is written to script.txt.
-// deferred: checking the script's syntax, quitting on the first error, unless the caller skips
-//   it, with validateSyntax
-// deferred: starting the script's run, with initRuntime
+// Retail, not nocedit: no listing of the parsed lines is written to script.txt, and a syntax
+// error quits instead of offering to edit the script and load it again.
+// deferred: clearing the notes of dialogue missing from the database after the check, with the
+//   dbSay commands and startDialogLine
 // nocedit 0x00559f80
-bool CScript::loadScript(std::string_view filename) {
+bool CScript::loadScript(std::string_view filename, bool skip_validation) {
     clear();
     if (owners_.dosio.getFileSize("world", filename) < 1) {
         return true;
@@ -37,6 +37,13 @@ bool CScript::loadScript(std::string_view filename) {
         return false;
     }
     buildParsedLines();
+    if (!skip_validation) {
+        if (const std::optional<SSyntaxError> error = validateSyntax()) {
+            common::displayErrorAndQuit(std::format("{} failed syntax check on line {}: {}",
+                                                    filename, error->line_number, error->message));
+        }
+    }
+    initRuntime();
     return true;
 }
 

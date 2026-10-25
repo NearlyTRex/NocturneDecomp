@@ -1,0 +1,118 @@
+#include "tests/mocks/core/scriptfixture.h"
+
+#include <gtest/gtest.h>
+
+#include <string>
+
+namespace nocturne::core {
+namespace {
+
+using CScriptCommandsTest = CScriptFixture;
+
+TEST_F(CScriptCommandsTest, CommandsThatTakeNothingPassAlone) {
+    for (const char *command : {"beginFadeIn", "beginFadeOut", "breakPoint", "cancelCameraHold",
+                                "end", "fadeIn", "fadeOut", "idle", "return"}) {
+        expectPasses(command);
+    }
+    expectSyntaxError("fadeIn()\n", 1, "Extra characters \"()\" on line 1");
+}
+
+TEST_F(CScriptCommandsTest, AnArgumentNeedsItsParentheses) {
+    expectPasses("debug( Line (with parentheses) )\ngtfo(Bye)\nsetAmbientSound(rain.wav)\n");
+    expectSyntaxError("debug Hello\n", 1, "No opening parenthesis");
+    expectSyntaxError("gtfo(Bye\n", 1, "Can't find closing parenthesis");
+}
+
+// Each argument must be shorter than the original's buffer for it.
+TEST_F(CScriptCommandsTest, EachCommandLimitsItsArgument) {
+    expectPasses(std::format("chainToMission({})\n", std::string(199, 'm')));
+    expectSyntaxError(std::format("chainToMission({})\n", std::string(200, 'm')), 1,
+                      "Argument too long");
+    expectPasses(std::format("debug({})\n", std::string(299, 'x')));
+    expectSyntaxError(std::format("gtfo({})\n", std::string(300, 'x')), 1, "Argument too long");
+    expectSyntaxError(std::format("setAmbientSound({})\n", std::string(100, 'x')), 1,
+                      "Argument too long");
+}
+
+TEST_F(CScriptCommandsTest, ClearActorVariableTakesAVariableName) {
+    expectPasses("clearActorVariable(@door_1)\n");
+    expectSyntaxError("clearActorVariable(door)\n", 1, "Actor variable name must begin with '@'");
+    expectSyntaxError("clearActorVariable(@door\n", 1, "Can't find closing parenthesis");
+}
+
+TEST_F(CScriptCommandsTest, DisplaySaysWhatWentWrongWithItsMessage) {
+    expectPasses(std::format("display({})\n", std::string(0x3ff, 'x')));
+    expectSyntaxError("display Hello\n", 1,
+                      "Error parsing message text on display statament: No opening parenthesis");
+}
+
+TEST_F(CScriptCommandsTest, FinishedActAndRollCreditsTakeEmptyParentheses) {
+    expectPasses("finishedAct()\nrollCredits ( )\n");
+    expectSyntaxError("finishedAct(1)\n", 1, "Error parsing finishedAct command");
+    expectSyntaxError("rollCredits\n", 1, "Error parsing rollCredits command");
+}
+
+TEST_F(CScriptCommandsTest, GetIniIntTakesAKeyAndACounter) {
+    expectPasses("getIniInt(Gore, gore_level )\n");
+    expectSyntaxError("getIniInt(Gore)\n", 1, "Error parsing getIniInt command parms");
+}
+
+TEST_F(CScriptCommandsTest, SetIniIntTakesAKeyAndANumber) {
+    expectPasses("setIniInt(Gore, 2 )\n");
+    expectSyntaxError("setIniInt(Gore, high)\n", 1, "Error parsing setIniInt command parms");
+}
+
+TEST_F(CScriptCommandsTest, LetterboxTakesFalseTrueOrBottom) {
+    expectPasses("letterbox(false)\nletterbox(TRUE)\nletterbox( Bottom )\n");
+    expectSyntaxError("letterbox(top)\n", 1, "Invalid letterBox mode: top");
+    expectSyntaxError("letterbox\n", 1, "No opening parenthesis");
+}
+
+TEST_F(CScriptCommandsTest, RemoveKeysTakesAKeyNumber) {
+    expectPasses("removeKeys (3 )\n");
+    expectSyntaxError("removeKeys(red)\n", 1, "Error parsing removeKeys() command parms");
+}
+
+TEST_F(CScriptCommandsTest, SetSayTimeOverrideTakesSecondsOrNothing) {
+    expectPasses("setSayTimeOverride()\nsetSayTimeOverride ( 2.5 )\n");
+    expectSyntaxError("setSayTimeOverride 2.5\n", 1,
+                      "Error parsing setSayTimeOverride parameters.");
+    expectSyntaxError("setSayTimeOverride(long)\n", 1,
+                      "Error parsing setSayTimeOverride parameters.");
+}
+
+TEST_F(CScriptCommandsTest, SetTimeFactorIsAboveZeroAndAtMostFour) {
+    expectPasses("setTimeFactor(0.5)\nsetTimeFactor(4)\n");
+    expectSyntaxError("setTimeFactor(0)\n", 1, "Invalid time factor 0");
+    expectSyntaxError("setTimeFactor(4.5)\n", 1, "Invalid time factor 4.5");
+    expectSyntaxError("setTimeFactor(fast)\n", 1, "Invalid time factor fast");
+    expectSyntaxError("setTimeFactor 2\n", 1, "No opening parenthesis");
+}
+
+TEST_F(CScriptCommandsTest, TimedDisplayStartsWithItsSeconds) {
+    expectPasses("timedDisplay(3, Hello, there)\n");
+    expectSyntaxError("timedDisplay(Hello)\n", 1, "Error parsing time value");
+    expectSyntaxError("timedDisplay 3\n", 1, "No opening parenthesis");
+}
+
+TEST_F(CScriptCommandsTest, WaitTakesSeconds) {
+    expectPasses("wait(0.25)\n");
+    expectSyntaxError("wait(soon)\n", 1, "Error parsing time value on wait statament");
+}
+
+TEST_F(CScriptCommandsTest, GotoAndGosubTakeTheRestOfTheLineAsALabel) {
+    expectPasses("goto end_part\ngosub End_Part\n:end_part\n");
+    expectSyntaxError(":top\ngoto bottom\n", 2,
+                      "Undefined label bottom used in goto statement on line 2");
+    expectSyntaxError("gosub bottom\n", 1,
+                      "Undefined label bottom used in gosub statement on line 1");
+}
+
+TEST_F(CScriptCommandsTest, SetSkipLabelTakesALabel) {
+    expectPasses("setSkipLabel( skip )\n:skip\n");
+    expectSyntaxError("setSkipLabel(skip)\n", 1, "Undefined label 'skip'");
+    expectSyntaxError("setSkipLabel skip\n", 1, "No opening parenthesis");
+}
+
+} // namespace
+} // namespace nocturne::core

@@ -28,7 +28,7 @@ TEST(CScript, PublicInterface) {
     static_assert(
         std::is_same_v<decltype(&CScript::renderEditor), void (CScript::*)(int, int, int, int)>);
     static_assert(
-        std::is_same_v<decltype(&CScript::loadScript), bool (CScript::*)(std::string_view)>);
+        std::is_same_v<decltype(&CScript::loadScript), bool (CScript::*)(std::string_view, bool)>);
     static_assert(std::is_same_v<decltype(&CScript::initRuntime), void (CScript::*)()>);
     static_assert(std::is_same_v<decltype(&CScript::executeInitSection), void (CScript::*)()>);
     static_assert(std::is_same_v<decltype(&CScript::setSpeaker), void (CScript::*)(CDemonActor *)>);

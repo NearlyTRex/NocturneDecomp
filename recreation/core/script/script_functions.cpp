@@ -1,13 +1,19 @@
 #include "core/script/script_functions.h"
 
+#include "common/text/ascii.h"
 #include "common/text/scan.h"
 
+#include <algorithm>
 #include <cstddef>
+#include <expected>
+#include <format>
 #include <string>
 #include <string_view>
 
 namespace nocturne::core {
 namespace {
+
+constexpr std::size_t kMaxActorVariableLength = 30;
 
 std::string_view trimTrailing(std::string_view text) {
     const std::size_t last = text.find_last_not_of(common::kWhitespace);
@@ -31,6 +37,52 @@ std::string_view trimString(std::string_view text) {
 std::string_view skipWhitespace(std::string_view text) {
     const std::size_t first = text.find_first_not_of(common::kWhitespace);
     return text.substr(first == std::string_view::npos ? text.size() : first);
+}
+
+// nocedit 0x005593f0
+std::expected<std::string, std::string> parseArgument(std::string_view &cursor,
+                                                      std::size_t max_length) {
+    cursor = skipWhitespace(cursor);
+    if (!cursor.starts_with('(')) {
+        return std::unexpected("No opening parenthesis");
+    }
+    int depth = 0;
+    std::string argument;
+    for (std::size_t i = 1; argument.size() < max_length; ++i) {
+        if (i >= cursor.size()) {
+            return std::unexpected("Can't find closing parenthesis");
+        }
+        const char c = cursor[i];
+        if (c == '(') {
+            ++depth;
+        } else if (c == ')') {
+            if (depth == 0) {
+                cursor = skipWhitespace(cursor.substr(i + 1));
+                return std::string(trimString(argument));
+            }
+            --depth;
+        }
+        argument.push_back(c);
+    }
+    return std::unexpected("Argument too long");
+}
+
+// nocedit 0x00559220
+std::expected<void, std::string> validateActorVariableName(std::string_view variable_name) {
+    if (!variable_name.starts_with('@')) {
+        return std::unexpected("Actor variable name must begin with '@'");
+    }
+    if (variable_name.size() > kMaxActorVariableLength) {
+        return std::unexpected(
+            std::format("Actor variable name \"{}\" is too long", variable_name));
+    }
+    const std::string_view name = variable_name.substr(1);
+    if (name.empty() ||
+        !std::ranges::all_of(name, [](char c) { return common::isAsciiAlnum(c) || c == '_'; })) {
+        return std::unexpected(
+            std::format("Actor variable name \"{}\" is not valid", variable_name));
+    }
+    return {};
 }
 
 } // namespace nocturne::core

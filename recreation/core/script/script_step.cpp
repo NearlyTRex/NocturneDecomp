@@ -1,0 +1,319 @@
+#include "common/text/ascii.h"
+#include "core/actor/notported.h"
+#include "core/script/script.h"
+#include "core/script/script_functions.h"
+
+#include <algorithm>
+#include <cstddef>
+#include <expected>
+#include <format>
+#include <optional>
+#include <string>
+#include <string_view>
+#include <utility>
+
+namespace nocturne::core {
+namespace {
+
+constexpr std::size_t kMaxSkipLabelLength = 100;
+
+// The run of letters and digits a line starts with: a command matches when the line starts with
+// its name and the next character is neither.
+std::string_view leadingWord(std::string_view text) {
+    const auto *const end = std::ranges::find_if_not(text, common::isAsciiAlnum);
+    return text.substr(0, static_cast<std::size_t>(end - text.begin()));
+}
+
+} // namespace
+
+// The original also passed each step a quarter second, which only a running command reads.
+// deferred: clearing the notes of dialogue missing from the database first, with the dbSay
+//   commands and startDialogLine
+// deferred: going back to running commands once the check passes, with process
+// nocedit 0x0055a4b0
+std::optional<CScript::SSyntaxError> CScript::validateSyntax() {
+    checks_suspended_ = false;
+    initRuntime();
+    while (next_cmd_ < parsed_lines_.size()) {
+        const std::size_t index = next_cmd_;
+        if (CommandResult result = step(); !result) {
+            return SSyntaxError{.line_number = parsed_lines_[index].line_number,
+                                .message = std::move(result.error())};
+        }
+        next_cmd_ = index + 1;
+    }
+    return std::nullopt;
+}
+
+// deferred: clearing the shown message, with renderSubtitles
+// deferred: clearing the wait and dialogue timers and the time a message shows for, with
+//   processTimer and startDialogLine
+// deferred: clearing the ending flag, the breakpoint state, the call stack, the skip label and
+//   the loop warning, with process and skipCinematic
+// deferred: choosing the focus actor, the local hero or else the first hero placed in an area,
+//   and clearing the speaker and the focus lock, with setFocusActor and the scene camera
+// deferred: letting the heroes be damaged and the enemies attack, and clearing the letterbox,
+//   with CGame's readers of them
+// deferred: clearing the script's time scale, with process
+// deferred: playing the set's ambient sound, its geometry file's stem as a .wav and smill and
+//   town at 0.85, with CSound::playAmbientSound
+// nocedit 0x0055a540
+void CScript::initRuntime() {
+    next_cmd_ = 0;
+}
+
+// The original first set a placeholder message, which every error replaces.
+// deferred: quitting on an instruction pointer outside the script, with process
+// deferred: passing over labels without checking them while running, with process
+// deferred: syntaxCheckOn and syntaxCheckOff leaving a running script alone, with process
+// deferred: resetting the wait and dialogue timers once a command finishes, with processTimer
+//   and startDialogLine
+// deferred: staying on a command that hasn't finished, and the overrun past the end of the
+//   script, while running, with process
+// deferred: advanceLightFilter, createExplosion, deleteActor, displayBitmap, hurtCharacter,
+//   incCounter, fadeSfx, fadeAmbientSound, flagOn, flagOff, gameFlagOn, gameFlagOff,
+//   killCharacter, killHero, killSfx, lightning, playSfx, setCameraAmbient, setCounter,
+//   setGroupAmbient, setLightFilterFrame, setLeverState, setModelState, setTimer, setWeather,
+//   shakeScreen, slamModelToMotion and warpTo, each checked and run as the event command of the
+//   same name, with CEventList::validateCommands and executeCommands
+// deferred: raise, checking and running its event commands, with CEventList::validateCommands
+//   and executeCommands
+// deferred: allowEnemyAttack, checking its condition and setting whether enemies attack, with
+//   CEventList::validateCondition and evaluateCondition
+// deferred: allowHeroControls, checking its condition and blocking the heroes' controls, with
+//   CEventList::validateCondition and evaluateCondition
+// deferred: allowHeroDamage, checking its condition and setting whether heroes take damage,
+//   with CEventList::validateCondition and evaluateCondition
+// deferred: lockFocusActor, checking its condition and locking the focus actor, with
+//   CEventList::validateCondition and evaluateCondition
+// deferred: if, checking its condition and skipping the next statement, and an else after it,
+//   when false, with CEventList::validateCondition and evaluateCondition
+// deferred: waitFor, checking its condition and holding the script until it holds, with
+//   CEventList::validateCondition and evaluateCondition
+// deferred: addItemToInventory, checking the hero and the item and adding it, with getActor
+// deferred: attachActorToPlatform, checking the actor and the platform and attaching it, with
+//   getActor
+// deferred: cancelWalkTo, checking the character, or all, and stopping its walk, with getActor
+// deferred: enableHealthBar, checking the character and the mode and setting it, with getActor
+// deferred: getTriggerActor, checking the variable and the trigger and storing who set it off,
+//   with getActor
+// deferred: lookAt, checking the character and the target and turning its head, with getActor
+// deferred: movePlatform, checking the platform, the position and the rate and moving it, with
+//   getActor
+// deferred: openDoor, checking the character and the door and holding until it opens, with
+//   getActor
+// deferred: removeAllItemsFromInventory, checking the hero and emptying its inventory, with
+//   getActor
+// deferred: removeItemFromInventory, checking the hero and taking the item, with getActor
+// deferred: selectWeapon, checking the hero and cycling to the weapon, with getActor
+// deferred: setActorVariable, checking the variable and the actor and storing it, with getActor
+// deferred: setCharacterHealth, checking the character and setting its health, with getActor
+// deferred: setFocusActor, checking the actor and making it the focus, while checking too,
+//   with getActor
+// deferred: setHeroTask, checking the hero and the task and setting it, with getActor
+// deferred: setSpeaker, checking the character and making it the speaker and the focus, while
+//   checking too, with getActor
+// deferred: setVictim, checking the enemy and the victim, or disable, and setting it, with
+//   getActor
+// deferred: snapToFace, checking both actors and turning the first to face the second, with
+//   getActor
+// deferred: turnToFace, checking the character and the target and turning it, with getActor
+// deferred: walkTo, checking the character, the target, the distance and the time and walking
+//   it there, with getActor
+// deferred: addLightFilter, checking the light and the filter file and adding the filter, with
+//   CDemonSet::addLightFilter
+// deferred: enableCamera, checking the camera and its condition and enabling it, with
+//   CDemonSet::findCameraByName and CEventList::validateCondition
+// deferred: enableCameraGroup, checking its condition and enabling the group, with
+//   CEventList::validateCondition
+// deferred: setCameraGroup, checking the camera and moving it to the group, with
+//   CDemonSet::findCameraByName
+// deferred: switchCamera, checking the camera and the hold time and switching to it, with
+//   CDemonSet::findCameraByName
+// deferred: gesture, checking the character and the motion and starting it, with
+//   CMotionList::findMotionIndex
+// deferred: dismember, checking the character and its parts, drawing the random spread while
+//   checking too, and cutting the parts off, with parseBodyPartMask and createBodyPart
+// deferred: holsterWeapon, checking the hero and its condition and holstering or drawing, with
+//   getActor and CEventList::validateCondition
+// deferred: pressButton, checking the hero and the button and pressing it, with getActionState
+// deferred: releaseButton, checking the hero and the button and releasing it, with
+//   getActionState
+// deferred: dbSay, checking the line in the database and its speaker and saying it, with
+//   startDialogLine
+// deferred: dbStartSay, checking the line in the database and its speaker and starting it,
+//   with startDialogLine
+// deferred: say, checking the speaker and the sound and saying the line, with startDialogLine
+// deferred: startSay, checking the speaker and the sound and starting the line, with
+//   startDialogLine
+// deferred: running beginFadeIn and beginFadeOut, starting the fade, with CGame's fades
+// deferred: running breakPoint, showing where the script stopped and stopping it, with process
+// deferred: running cancelCameraHold, ending the camera's hold, with the virtual director
+// deferred: running chainToMission, naming the next mission and ending this one, with process
+// deferred: running clearActorVariable, clearing the variable, with
+//   CEventList::setActorVariable
+// deferred: running debug, showing the message, with process
+// deferred: keeping display's message, while checking too, with renderSubtitles
+// deferred: running else, skipping the statement after it, with process
+// deferred: running end, ending the mission and noting it for the helper-death fix, with process
+// deferred: running fadeIn and fadeOut, holding the script until the fade finishes, with CGame's
+//   fades
+// deferred: running finishedAct and rollCredits, ending the act, with process
+// deferred: running getIniInt, reading the INI value into the counter, with CEventList's
+//   counters
+// deferred: running gosub and return, calling and returning through the call stack, with process
+// deferred: running goto, jumping to the label, with process
+// deferred: running gtfo, showing the message and ending the mission, with process
+// deferred: running idle, stopping for the frame after moving past it, with process
+// deferred: running letterbox, setting the letterbox and what it allows, and turning off the
+//   goggles, with CGame's readers of them
+// deferred: running removeKeys, taking the keys from every hero, with CHero::removeMatchingKeys
+// deferred: running setAmbientSound, playing it, with CSound::playAmbientSound
+// deferred: running setIniInt, writing the INI value, with process
+// deferred: running setSayTimeOverride, setting how long lines show for, with startDialogLine
+// deferred: running setSkipLabel, setting where a skipped cinematic goes, with skipCinematic
+// deferred: running setTimeFactor, setting the game's speed, with CGame's time scale
+// deferred: running timedDisplay, showing the message for its time, with renderSubtitles and
+//   processTimer
+// deferred: running wait, holding the script for its time, with processTimer
+// nocedit 0x0055a810
+CScript::CommandResult CScript::step() {
+    const std::size_t index = next_cmd_;
+    const SScriptLine &line = parsed_lines_[index];
+    ++next_cmd_;
+    SStatement statement{.command = {}, .rest = line.text, .line_number = line.line_number};
+    const char first = line.text.front();
+    if (first == '{' || first == '}') {
+        return {};
+    }
+    if (first == ':') {
+        return checkLabel(index, statement);
+    }
+    const std::string_view word = leadingWord(line.text);
+    if (common::equalsIgnoringAsciiCase(word, "syntaxCheckOn")) {
+        checks_suspended_ = false;
+        return {};
+    }
+    if (common::equalsIgnoringAsciiCase(word, "syntaxCheckOff")) {
+        checks_suspended_ = true;
+        return {};
+    }
+    if (checks_suspended_) {
+        return {};
+    }
+    const SCommand *command = findCommand(word);
+    if (command == nullptr) {
+        return std::unexpected(
+            std::format("Unknown command on line {}: {}", line.line_number, line.text));
+    }
+    statement.command = command->name;
+    statement.rest = skipWhitespace(statement.rest.substr(word.size()));
+    if (CommandResult result = command->check(*this, statement); !result) {
+        return result;
+    }
+    if (!statement.rest.empty()) {
+        return std::unexpected(
+            std::format("Extra characters \"{}\" on line {}", statement.rest, line.line_number));
+    }
+    return {};
+}
+
+// The original's message left out the line number its format was given. It also quit if a
+// label couldn't find itself, which can't happen.
+CScript::CommandResult CScript::checkLabel(std::size_t index, const SStatement &statement) const {
+    const std::string_view name = skipWhitespace(statement.rest.substr(1));
+    if (!std::ranges::all_of(name, [](char c) { return common::isAsciiAlnum(c) || c == '_'; })) {
+        return std::unexpected(
+            std::format("Invalid label \"{}\" on line {}", name, statement.line_number));
+    }
+    const std::size_t first = findLabelIndex(name).value_or(index);
+    if (first != index) {
+        return std::unexpected(std::format("Duplicate label {} on lines {} and {}", name,
+                                           statement.line_number,
+                                           parsed_lines_[first].line_number));
+    }
+    return {};
+}
+
+// nocedit 0x00560160
+std::optional<std::size_t> CScript::findLabelIndex(std::string_view label_name) const {
+    for (std::size_t i = 0; i < parsed_lines_.size(); ++i) {
+        const std::string_view text = parsed_lines_[i].text;
+        if (text.starts_with(':') &&
+            common::equalsIgnoringAsciiCase(skipWhitespace(text.substr(1)), label_name)) {
+            return i;
+        }
+    }
+    return std::nullopt;
+}
+
+// One statement from start: a command, a { } block, or an if or else with its own statement.
+// An if is only taken in as the first line or inside a block, as the original's strnicmp has
+// it, so a line that merely starts with "if" counts as one.
+// deferred: stopping at an else on the top level, to skip only an if's own statement, with
+//   running if
+// nocedit 0x005601c0
+std::optional<std::size_t> CScript::skipCommands(std::size_t start) const {
+    int depth = 0;
+    for (std::size_t line = start; line < parsed_lines_.size();) {
+        const std::string_view text = parsed_lines_[line].text;
+        const bool is_first = line == start;
+        if (text.front() == '{') {
+            ++depth;
+            ++line;
+        } else if (text.front() == '}') {
+            if (depth == 0) {
+                return is_first ? line + 1 : line;
+            }
+            --depth;
+            ++line;
+        } else if ((common::startsWithIgnoringAsciiCase(text, "if") && (depth >= 1 || is_first)) ||
+                   common::startsWithIgnoringAsciiCase(text, "else")) {
+            // An inner skip that runs off the end ends this one too.
+            line = skipCommands(line + 1).value_or(parsed_lines_.size());
+        } else {
+            if (depth == 0) {
+                return is_first ? line + 1 : line;
+            }
+            ++line;
+        }
+    }
+    return std::nullopt;
+}
+
+CScript::CommandResult CScript::checkNotPorted(CScript & /*script*/, SStatement &statement) {
+    quitNotPorted("CScript", std::format("step's {} command", statement.command));
+}
+
+CScript::CommandResult CScript::checkElse(CScript &script, SStatement &statement) {
+    if (!script.skipCommands(script.next_cmd_)) {
+        return std::unexpected(std::format(
+            "Can't skip next command after else statement on line {}", statement.line_number));
+    }
+    return {};
+}
+
+// goto and gosub take the rest of the line as the label.
+CScript::CommandResult CScript::checkJumpLabel(CScript &script, SStatement &statement) {
+    if (!script.findLabelIndex(statement.rest)) {
+        return std::unexpected(std::format("Undefined label {} used in {} statement on line {}",
+                                           statement.rest, statement.command,
+                                           statement.line_number));
+    }
+    statement.rest = {};
+    return {};
+}
+
+CScript::CommandResult CScript::checkSetSkipLabel(CScript &script, SStatement &statement) {
+    const std::expected<std::string, std::string> label =
+        parseArgument(statement.rest, kMaxSkipLabelLength);
+    if (!label) {
+        return std::unexpected(label.error());
+    }
+    if (!script.findLabelIndex(*label)) {
+        return std::unexpected(std::format("Undefined label '{}'", *label));
+    }
+    return {};
+}
+
+} // namespace nocturne::core

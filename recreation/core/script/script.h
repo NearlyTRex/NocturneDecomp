@@ -4,7 +4,10 @@
 #include "engine/fwd.h"
 #include "shape/fwd.h"
 
+#include <cstddef>
 #include <cstdio>
+#include <expected>
+#include <optional>
 #include <span>
 #include <string>
 #include <string_view>
@@ -38,8 +41,19 @@ struct SDialogEntry {
     bool operator==(const SDialogEntry &) const = default;
 };
 
+// The line a step is checking: the command's name as the command table spells it, what follows
+// the name, which a check moves past what it reads, and the line in the file.
+struct SScriptStatement {
+    std::string_view command;
+    std::string_view rest;
+    int line_number = 0;
+};
+
 class CScript {
 public:
+    // A command's check: nothing, or the syntax error's message.
+    using CommandResult = std::expected<void, std::string>;
+
     explicit CScript(const SScriptOwners &owners);
     ~CScript();
     CScript(const CScript &) = delete;
@@ -52,9 +66,10 @@ public:
     int getLetterboxHeight();
     void renderSubtitles();
     void renderEditor(int left, int top, int right, int bottom);
-    // Loads world\<filename> and the dialogue in world\<stem>.txt. A missing script loads as an
-    // empty one; false when the file isn't text.
-    [[nodiscard]] bool loadScript(std::string_view filename);
+    // Loads world\<filename> and the dialogue in world\<stem>.txt, then checks the script's
+    // syntax unless told not to; a syntax error quits. A missing script loads as an empty one;
+    // false when the file isn't text.
+    [[nodiscard]] bool loadScript(std::string_view filename, bool skip_validation);
     void initRuntime();
     void executeInitSection();
     void setSpeaker(CDemonActor *actor);
@@ -67,6 +82,18 @@ public:
     [[nodiscard]] std::span<const SDialogEntry> getDialogEntries() const;
 
 private:
+    using SStatement = SScriptStatement;
+    using CommandCheck = CommandResult (*)(CScript &script, SStatement &statement);
+    struct SCommand {
+        std::string_view name;
+        CommandCheck check;
+    };
+    // Where a syntax error is and what it is.
+    struct SSyntaxError {
+        int line_number = 0;
+        std::string message;
+    };
+
     [[nodiscard]] bool readScriptText(std::string_view text, std::string_view filename);
     void freeParsedLines();
     void buildParsedLines();
@@ -75,10 +102,24 @@ private:
                         std::string_view filename);
     [[nodiscard]] const SDialogEntry *findDialogEntry(std::string_view path) const;
 
+    [[nodiscard]] std::optional<SSyntaxError> validateSyntax();
+    [[nodiscard]] CommandResult step();
+    [[nodiscard]] CommandResult checkLabel(std::size_t index, const SStatement &statement) const;
+    [[nodiscard]] std::optional<std::size_t> findLabelIndex(std::string_view label_name) const;
+    [[nodiscard]] std::optional<std::size_t> skipCommands(std::size_t start) const;
+    [[nodiscard]] static const SCommand *findCommand(std::string_view name);
+    static CommandResult checkNotPorted(CScript &script, SStatement &statement);
+    static CommandResult checkElse(CScript &script, SStatement &statement);
+    static CommandResult checkJumpLabel(CScript &script, SStatement &statement);
+    static CommandResult checkSetSkipLabel(CScript &script, SStatement &statement);
+
     SScriptOwners owners_;
     std::vector<std::string> script_text_;
     std::vector<SScriptLine> parsed_lines_;
     std::vector<SDialogEntry> dialog_entries_;
+    std::size_t next_cmd_ = 0;
+    // syntaxCheckOff: the check passes over commands until syntaxCheckOn.
+    bool checks_suspended_ = false;
 };
 
 } // namespace nocturne::core
