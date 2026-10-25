@@ -63,7 +63,8 @@ no rights in it are held here and none are granted. See [LICENSE](LICENSE).
 
 ## Status
 
-**Active research — the decompiled game builds and plays on Linux.**
+**Active research — the decompiled game builds and plays on Linux and Windows.** It is
+alpha-quality: mostly playable, with rough edges still being found and fixed.
 
 The engine runs through SDL2-backed shims for DirectDraw, DirectSound, DirectInput and the Win32
 APIs it expects. Rendering no longer goes through an emulated DirectX 7: `trigl`, written
@@ -77,8 +78,10 @@ menu scaling above 640x480, a resolution list the menu can actually reach, netpl
 catalogue of rendering bugs traced to their cause. The [research index](research/README.md)
 is the record of those investigations, several of which ended in a measured fix.
 
-The recreation is being ported now. It builds and runs on its own, through SDL3 adapters behind
-platform interfaces, and its tests hold it at 100% line, function and branch coverage.
+The recreation is being ported now, and it is where the project is headed: a clean engine is
+where the bigger additions belong, such as more advanced graphics options and ports to new
+platforms. It builds and runs on its own, through SDL3 adapters behind platform interfaces, and
+its tests hold it at 100% line, function and branch coverage.
 [docs/recreation-itinerary.md](docs/recreation-itinerary.md) tracks how much of the game it
 covers, step by step.
 
@@ -167,6 +170,8 @@ suspect type, the recognition pattern, and the rewrite, indexed by the detector 
 
 - **Finish the recreation**, with the decompilation's enhancements and bug fixes merged into it,
   leaving the decompilation as close to the original as it can run.
+- **More advanced graphics options** in the recreation, beyond what the original renderer
+  offered.
 - **Console ports**, such as Xbox, Nintendo Switch and PlayStation 4, built from the
   recreation. The decompilation can be built for them already: see "Consoles and packaged
   apps" in [docs/porting.md](docs/porting.md).
@@ -175,7 +180,8 @@ suspect type, the recognition pattern, and the rewrite, indexed by the detector 
 ## Contributing
 
 This is a research project. Contributions and documentation improvements are welcome, as are
-insights about the Nocturne engine.
+insights about the Nocturne engine. See [CONTRIBUTING.md](CONTRIBUTING.md), and
+[Discussions](https://github.com/NearlyTRex/NocturneDecomp/discussions) for questions and ideas.
 
 ## Legal Notice
 
