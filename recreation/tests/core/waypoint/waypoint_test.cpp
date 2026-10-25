@@ -1,3 +1,4 @@
+#include "core/actor/demonactortype.h"
 #include "core/waypoint/waypoint.h"
 
 #include <gtest/gtest.h>
@@ -32,6 +33,13 @@ TEST(CWayPoint, PublicInterface) {
         std::is_same_v<decltype(&CWayPoint::archive), void (CWayPoint::*)(CActorArchive &)>);
     static_assert(std::is_same_v<decltype(&CWayPoint::findNearestReachable),
                                  CWayPoint *(CWayPoint::*)(CWayPoint *)>);
+}
+
+TEST(CWayPoint, ItsRecordIsVersion2UnderCTrigger) {
+    EXPECT_EQ(CWayPoint::kType.class_name, "CWayPoint");
+    EXPECT_EQ(CWayPoint::kType.parent_type, &CTrigger::kType);
+    EXPECT_EQ(CWayPoint::kType.factory_func, nullptr);
+    EXPECT_EQ(CWayPoint::kType.latest_version, 2);
 }
 
 } // namespace

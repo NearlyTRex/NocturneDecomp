@@ -4,7 +4,6 @@
 
 namespace nocturne::core {
 
-void staticInit();
 CWaterActor *factoryFuncWaterActor();
 
 } // namespace nocturne::core

@@ -1,3 +1,4 @@
+#include "core/actor/demonactortype.h"
 #include "core/vampboss/vampireboss.h"
 
 #include <gtest/gtest.h>
@@ -42,6 +43,13 @@ TEST(CVampireBoss, PublicInterface) {
     static_assert(
         std::is_same_v<decltype(&CVampireBoss::getCarryObjToBodyXForm),
                        common::CMatrix3x4f *(CVampireBoss::*)(int, common::CMatrix3x4f *)>);
+}
+
+TEST(CVampireBoss, ItsRecordIsVersion4UnderCEnemy) {
+    EXPECT_EQ(CVampireBoss::kType.class_name, "CVampireBoss");
+    EXPECT_EQ(CVampireBoss::kType.parent_type, &CEnemy::kType);
+    EXPECT_EQ(CVampireBoss::kType.factory_func, nullptr);
+    EXPECT_EQ(CVampireBoss::kType.latest_version, 4);
 }
 
 } // namespace

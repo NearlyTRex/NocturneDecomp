@@ -1,3 +1,4 @@
+#include "core/actor/demonactortype.h"
 #include "core/melee/melee.h"
 
 #include <gtest/gtest.h>
@@ -38,6 +39,13 @@ TEST(CMelee, PublicInterface) {
     static_assert(std::is_same_v<decltype(&CMelee::fire), int (CMelee::*)()>);
     static_assert(std::is_same_v<decltype(&CMelee::getDamage), float (CMelee::*)()>);
     static_assert(std::is_same_v<decltype(&CMelee::renderAimBeam), void (CMelee::*)()>);
+}
+
+TEST(CMelee, ItsRecordIsVersion7UnderCWeapon) {
+    EXPECT_EQ(CMelee::kType.class_name, "CMelee");
+    EXPECT_EQ(CMelee::kType.parent_type, &CWeapon::kType);
+    EXPECT_EQ(CMelee::kType.factory_func, nullptr);
+    EXPECT_EQ(CMelee::kType.latest_version, 7);
 }
 
 } // namespace

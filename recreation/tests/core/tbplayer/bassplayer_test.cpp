@@ -1,3 +1,4 @@
+#include "core/actor/demonactortype.h"
 #include "core/tbplayer/bassplayer.h"
 
 #include <gtest/gtest.h>
@@ -32,6 +33,13 @@ TEST(CBassPlayer, PublicInterface) {
     static_assert(
         std::is_same_v<decltype(&CBassPlayer::getCarryObjToBodyXForm),
                        common::CMatrix3x4f *(CBassPlayer::*)(int, common::CMatrix3x4f *)>);
+}
+
+TEST(CBassPlayer, ItsRecordIsVersion1UnderCNPC) {
+    EXPECT_EQ(CBassPlayer::kType.class_name, "CBassPlayer");
+    EXPECT_EQ(CBassPlayer::kType.parent_type, &CNPC::kType);
+    EXPECT_EQ(CBassPlayer::kType.factory_func, nullptr);
+    EXPECT_EQ(CBassPlayer::kType.latest_version, 1);
 }
 
 } // namespace

@@ -8,6 +8,8 @@ namespace nocturne::core {
 
 class CMansionPuzzleCircle : public CDemonActor {
 public:
+    static const CDemonActorType kType;
+
     CMansionPuzzleCircle();
     ~CMansionPuzzleCircle() override;
 

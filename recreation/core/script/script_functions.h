@@ -18,8 +18,6 @@ struct SActorLookupError {
     bool operator==(const SActorLookupError &) const = default;
 };
 
-void staticInit();
-
 // A script line without its leading whitespace, its "//" comment, and the whitespace before it.
 [[nodiscard]] std::string trimLine(std::string_view line);
 [[nodiscard]] std::string_view trimString(std::string_view text);

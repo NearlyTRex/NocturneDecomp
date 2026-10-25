@@ -7,6 +7,8 @@ namespace nocturne::core {
 
 class CHealthItem : public CDemonActor {
 public:
+    static const CDemonActorType kType;
+
     CHealthItem();
     ~CHealthItem() override;
 

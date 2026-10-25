@@ -7,6 +7,8 @@ namespace nocturne::core {
 
 class CFlies : public CDemonActor {
 public:
+    static const CDemonActorType kType;
+
     CFlies();
     ~CFlies() override;
 

@@ -8,6 +8,8 @@ namespace nocturne::core {
 
 class CBassPlayer : public CNPC {
 public:
+    static const CDemonActorType kType;
+
     CBassPlayer();
     ~CBassPlayer() override;
 

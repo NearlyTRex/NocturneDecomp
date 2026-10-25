@@ -1,3 +1,4 @@
+#include "core/actor/demonactortype.h"
 #include "core/ghoul/ghoul.h"
 
 #include <gtest/gtest.h>
@@ -38,6 +39,13 @@ TEST(CGhoul, PublicInterface) {
         std::is_same_v<decltype(&CGhoul::canBeAttracted), int (CGhoul::*)(common::CVector3f *)>);
     static_assert(std::is_same_v<decltype(&CGhoul::getTargetPoint),
                                  common::CVector3f *(CGhoul::*)(common::CVector3f *)>);
+}
+
+TEST(CGhoul, ItsRecordIsVersion7UnderCEnemy) {
+    EXPECT_EQ(CGhoul::kType.class_name, "CGhoul");
+    EXPECT_EQ(CGhoul::kType.parent_type, &CEnemy::kType);
+    EXPECT_EQ(CGhoul::kType.factory_func, nullptr);
+    EXPECT_EQ(CGhoul::kType.latest_version, 7);
 }
 
 } // namespace

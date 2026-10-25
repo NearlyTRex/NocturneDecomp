@@ -8,6 +8,8 @@ namespace nocturne::core {
 
 class CCrossbow : public CWeapon {
 public:
+    static const CDemonActorType kType;
+
     CCrossbow();
     ~CCrossbow() override;
 

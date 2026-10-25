@@ -8,6 +8,8 @@ namespace nocturne::core {
 
 class CCryptVessel : public CDemonActor {
 public:
+    static const CDemonActorType kType;
+
     CCryptVessel();
     ~CCryptVessel() override;
 

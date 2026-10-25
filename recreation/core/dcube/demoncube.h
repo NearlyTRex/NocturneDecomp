@@ -21,6 +21,8 @@ struct SVoxelGrid {
 };
 
 // One cell of the set's raytrace grid: its bounds, and the geometry and voxels inside it.
+// deferred: the frustum clip stages' 16-vertex buffers, with clipTriangleToFrustum
+// nocedit 0x00454720
 class CDemonCube {
 public:
     CDemonCube();

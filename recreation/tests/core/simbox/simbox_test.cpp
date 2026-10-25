@@ -1,3 +1,4 @@
+#include "core/actor/demonactortype.h"
 #include "core/simbox/simbox.h"
 
 #include <gtest/gtest.h>
@@ -34,6 +35,13 @@ TEST(CSimBox, PublicInterface) {
     static_assert(std::is_same_v<decltype(&CSimBox::getActorType),
                                  const CDemonActorType &(CSimBox::*)() const>);
     static_assert(std::is_same_v<decltype(&CSimBox::archive), void (CSimBox::*)(CActorArchive &)>);
+}
+
+TEST(CSimBox, ItsRecordIsVersion3UnderCDemonActor) {
+    EXPECT_EQ(CSimBox::kType.class_name, "CSimBox");
+    EXPECT_EQ(CSimBox::kType.parent_type, &CDemonActor::kType);
+    EXPECT_EQ(CSimBox::kType.factory_func, nullptr);
+    EXPECT_EQ(CSimBox::kType.latest_version, 3);
 }
 
 } // namespace

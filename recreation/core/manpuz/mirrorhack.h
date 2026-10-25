@@ -8,6 +8,8 @@ namespace nocturne::core {
 
 class CMirrorHack : public CDemonActor {
 public:
+    static const CDemonActorType kType;
+
     CMirrorHack();
     ~CMirrorHack() override;
 

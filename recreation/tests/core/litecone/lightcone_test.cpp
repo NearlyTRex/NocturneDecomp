@@ -1,3 +1,4 @@
+#include "core/actor/demonactortype.h"
 #include "core/litecone/lightcone.h"
 
 #include <gtest/gtest.h>
@@ -35,6 +36,13 @@ TEST(CLightCone, PublicInterface) {
                                  const CDemonActorType &(CLightCone::*)() const>);
     static_assert(
         std::is_same_v<decltype(&CLightCone::archive), void (CLightCone::*)(CActorArchive &)>);
+}
+
+TEST(CLightCone, ItsRecordIsVersion2UnderCDemonActor) {
+    EXPECT_EQ(CLightCone::kType.class_name, "CLightCone");
+    EXPECT_EQ(CLightCone::kType.parent_type, &CDemonActor::kType);
+    EXPECT_EQ(CLightCone::kType.factory_func, nullptr);
+    EXPECT_EQ(CLightCone::kType.latest_version, 2);
 }
 
 } // namespace

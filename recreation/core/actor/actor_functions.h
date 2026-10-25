@@ -9,7 +9,6 @@
 
 namespace nocturne::core {
 
-void staticInit();
 void deleteActor(CDemonActor *actor_ptr);
 int adjustIndentationLevel(int indent_delta);
 void archiveVector(common::CVector3f *vector_ptr, char *property_name);

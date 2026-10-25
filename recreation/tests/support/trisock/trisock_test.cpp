@@ -8,7 +8,6 @@ namespace nocturne::support {
 namespace {
 
 TEST(SupportTrisockFunctions, PublicInterface) {
-    static_assert(std::is_same_v<decltype(&staticInit), void (*)()>);
     static_assert(
         std::is_same_v<decltype(&parseIPAddress), std::uint32_t *(*)(std::uint32_t *, char *)>);
     static_assert(std::is_same_v<decltype(&formatIPAddress), void (*)(std::uint8_t *, char *)>);

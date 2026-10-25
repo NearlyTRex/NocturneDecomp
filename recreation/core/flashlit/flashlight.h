@@ -7,6 +7,8 @@ namespace nocturne::core {
 
 class CFlashlight : public CWeapon {
 public:
+    static const CDemonActorType kType;
+
     CFlashlight();
     ~CFlashlight() override;
 

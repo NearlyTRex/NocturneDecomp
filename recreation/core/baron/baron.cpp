@@ -13,6 +13,7 @@ constexpr int kVersion = 2;
 
 } // namespace
 
+// nocedit 0x00412b20
 constinit const CDemonActorType CBaron::kType =
     makeActorType("CBaron", &CHero::kType, &CBaron::create, kVersion);
 

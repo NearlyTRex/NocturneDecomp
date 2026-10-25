@@ -6,6 +6,8 @@
 
 namespace nocturne::core {
 
+// deferred: the reflection clipper's 32-vertex buffers, with reflectAndClipPrimitive
+// nocedit 0x00520fb0
 class CMirror {
 public:
     CMirror();

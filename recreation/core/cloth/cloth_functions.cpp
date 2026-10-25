@@ -7,6 +7,8 @@ namespace nocturne::core {
 namespace {
 
 // 1.0's bits plus half of them, as flattn.cpp's static initialiser computes it at startup.
+// deferred: the fast square root's half of 1.0's bits, with its first reader
+// nocedit 0x004cbcb0
 constexpr std::int32_t kFastInvSqrtMagic = 0x3f800000 + (0x3f800000 >> 1);
 
 } // namespace

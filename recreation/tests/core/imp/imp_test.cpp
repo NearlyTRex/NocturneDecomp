@@ -1,3 +1,4 @@
+#include "core/actor/demonactortype.h"
 #include "core/imp/imp.h"
 
 #include <gtest/gtest.h>
@@ -38,6 +39,13 @@ TEST(CImp, PublicInterface) {
                                  int (CImp::*)(CDemonActor *, common::CVector3f *)>);
     static_assert(std::is_same_v<decltype(&CImp::getCarryObjToBodyXForm),
                                  common::CMatrix3x4f *(CImp::*)(int, common::CMatrix3x4f *)>);
+}
+
+TEST(CImp, ItsRecordIsVersion1UnderCEnemy) {
+    EXPECT_EQ(CImp::kType.class_name, "CImp");
+    EXPECT_EQ(CImp::kType.parent_type, &CEnemy::kType);
+    EXPECT_EQ(CImp::kType.factory_func, nullptr);
+    EXPECT_EQ(CImp::kType.latest_version, 1);
 }
 
 } // namespace

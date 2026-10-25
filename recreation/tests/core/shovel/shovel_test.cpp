@@ -1,3 +1,4 @@
+#include "core/actor/demonactortype.h"
 #include "core/shovel/shovel.h"
 
 #include <gtest/gtest.h>
@@ -29,6 +30,13 @@ TEST(CShovel, PublicInterface) {
     static_assert(std::is_same_v<decltype(&CShovel::fire), int (CShovel::*)()>);
     static_assert(std::is_same_v<decltype(&CShovel::getDamage), float (CShovel::*)()>);
     static_assert(std::is_same_v<decltype(&CShovel::renderAimBeam), void (CShovel::*)()>);
+}
+
+TEST(CShovel, ItsRecordIsVersion1UnderCWeapon) {
+    EXPECT_EQ(CShovel::kType.class_name, "CShovel");
+    EXPECT_EQ(CShovel::kType.parent_type, &CWeapon::kType);
+    EXPECT_EQ(CShovel::kType.factory_func, nullptr);
+    EXPECT_EQ(CShovel::kType.latest_version, 1);
 }
 
 } // namespace

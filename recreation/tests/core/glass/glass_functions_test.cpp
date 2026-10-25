@@ -8,7 +8,6 @@ namespace nocturne::core {
 namespace {
 
 TEST(CoreGlassFunctions, PublicInterface) {
-    static_assert(std::is_same_v<decltype(&staticInit), void (*)()>);
     static_assert(std::is_same_v<decltype(&factoryFuncGlass), CGlass *(*)()>);
 }
 

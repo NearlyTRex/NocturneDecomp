@@ -8,7 +8,6 @@ namespace nocturne::core {
 namespace {
 
 TEST(CoreCharactrFunctions, PublicInterface) {
-    static_assert(std::is_same_v<decltype(&staticInit), void (*)()>);
     static_assert(std::is_same_v<decltype(&getGameDeltaTime), float (*)(CGame *)>);
 }
 

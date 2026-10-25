@@ -1,3 +1,4 @@
+#include "core/actor/demonactortype.h"
 #include "core/mobster/mobster.h"
 
 #include <gtest/gtest.h>
@@ -39,6 +40,13 @@ TEST(CMobster, PublicInterface) {
     static_assert(std::is_same_v<decltype(&CMobster::getCarryObjToBodyXForm),
                                  common::CMatrix3x4f *(CMobster::*)(int, common::CMatrix3x4f *)>);
     static_assert(std::is_same_v<decltype(&CMobster::reset), void (CMobster::*)()>);
+}
+
+TEST(CMobster, ItsRecordIsVersion7UnderCEnemy) {
+    EXPECT_EQ(CMobster::kType.class_name, "CMobster");
+    EXPECT_EQ(CMobster::kType.parent_type, &CEnemy::kType);
+    EXPECT_EQ(CMobster::kType.factory_func, nullptr);
+    EXPECT_EQ(CMobster::kType.latest_version, 7);
 }
 
 } // namespace

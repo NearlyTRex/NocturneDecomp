@@ -7,6 +7,8 @@ namespace nocturne::core {
 
 class CEmitter : public CDemonActor {
 public:
+    static const CDemonActorType kType;
+
     CEmitter();
     ~CEmitter() override;
 

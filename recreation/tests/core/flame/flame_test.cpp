@@ -1,3 +1,4 @@
+#include "core/actor/demonactortype.h"
 #include "core/flame/flame.h"
 
 #include <gtest/gtest.h>
@@ -36,6 +37,13 @@ TEST(CFlame, PublicInterface) {
                                  const CDemonActorType &(CFlame::*)() const>);
     static_assert(std::is_same_v<decltype(&CFlame::archive), void (CFlame::*)(CActorArchive &)>);
     static_assert(std::is_same_v<decltype(&CFlame::hide), void (CFlame::*)()>);
+}
+
+TEST(CFlame, ItsRecordIsVersion7UnderCDemonActor) {
+    EXPECT_EQ(CFlame::kType.class_name, "CFlame");
+    EXPECT_EQ(CFlame::kType.parent_type, &CDemonActor::kType);
+    EXPECT_EQ(CFlame::kType.factory_func, nullptr);
+    EXPECT_EQ(CFlame::kType.latest_version, 7);
 }
 
 } // namespace

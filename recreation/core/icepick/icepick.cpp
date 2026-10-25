@@ -13,6 +13,7 @@ constexpr int kVersion = 1;
 
 } // namespace
 
+// nocedit 0x004f7d80
 constinit const CDemonActorType CIcePick::kType =
     makeActorType("CIcePick", &CHero::kType, &CIcePick::create, kVersion);
 

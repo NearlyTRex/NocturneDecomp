@@ -4,7 +4,6 @@
 
 namespace nocturne::core {
 
-void staticInit();
 CZombie *factoryFuncZombie();
 
 } // namespace nocturne::core

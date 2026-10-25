@@ -1,3 +1,4 @@
+#include "core/actor/demonactortype.h"
 #include "core/beast/beast.h"
 
 #include <gtest/gtest.h>
@@ -36,6 +37,13 @@ TEST(CBeast, PublicInterface) {
     static_assert(
         std::is_same_v<decltype(&CBeast::processDamage), void (CBeast::*)(SDamageInfo *)>);
     static_assert(std::is_same_v<decltype(&CBeast::getDeathState), EDeathState (CBeast::*)()>);
+}
+
+TEST(CBeast, ItsRecordIsVersion1UnderCEnemy) {
+    EXPECT_EQ(CBeast::kType.class_name, "CBeast");
+    EXPECT_EQ(CBeast::kType.parent_type, &CEnemy::kType);
+    EXPECT_EQ(CBeast::kType.factory_func, nullptr);
+    EXPECT_EQ(CBeast::kType.latest_version, 1);
 }
 
 } // namespace

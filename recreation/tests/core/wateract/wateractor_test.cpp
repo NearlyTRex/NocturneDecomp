@@ -1,3 +1,4 @@
+#include "core/actor/demonactortype.h"
 #include "core/wateract/wateractor.h"
 
 #include <gtest/gtest.h>
@@ -43,6 +44,13 @@ TEST(CWaterActor, PublicInterface) {
                                  const CDemonActorType &(CWaterActor::*)() const>);
     static_assert(
         std::is_same_v<decltype(&CWaterActor::archive), void (CWaterActor::*)(CActorArchive &)>);
+}
+
+TEST(CWaterActor, ItsRecordIsVersion6UnderCDemonActor) {
+    EXPECT_EQ(CWaterActor::kType.class_name, "CWaterActor");
+    EXPECT_EQ(CWaterActor::kType.parent_type, &CDemonActor::kType);
+    EXPECT_EQ(CWaterActor::kType.factory_func, nullptr);
+    EXPECT_EQ(CWaterActor::kType.latest_version, 6);
 }
 
 } // namespace

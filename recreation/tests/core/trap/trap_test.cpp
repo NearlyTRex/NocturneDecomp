@@ -1,3 +1,4 @@
+#include "core/actor/demonactortype.h"
 #include "core/trap/trap.h"
 
 #include <gtest/gtest.h>
@@ -39,6 +40,13 @@ TEST(CTrap, PublicInterface) {
     static_assert(
         std::is_same_v<decltype(&CTrap::getActorType), const CDemonActorType &(CTrap::*)() const>);
     static_assert(std::is_same_v<decltype(&CTrap::archive), void (CTrap::*)(CActorArchive &)>);
+}
+
+TEST(CTrap, ItsRecordIsVersion1UnderCDemonActor) {
+    EXPECT_EQ(CTrap::kType.class_name, "CTrap");
+    EXPECT_EQ(CTrap::kType.parent_type, &CDemonActor::kType);
+    EXPECT_EQ(CTrap::kType.factory_func, nullptr);
+    EXPECT_EQ(CTrap::kType.latest_version, 1);
 }
 
 } // namespace

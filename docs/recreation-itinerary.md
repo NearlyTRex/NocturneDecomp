@@ -32,21 +32,21 @@ functions don't count as done. Sizes are in instructions.
 | 16 | `CGame::setScreenResolutionAndDisplayFangs`, `showOptionsScreen`, `CScript::skipCinematic`, `CGame::showFullscreenBitmap`, `CDemonMission::countDamageableEnemies`, `freeInventory`, `CGame::runGameSession`, `CGame::displayActStats` | 10 | 25 | 6938 | 1 | 0 | 4.0% |
 | 17 | `CGame::finishAct`, `CDemonMission::run`, `CGame::loadGame`, `CGame::showChapterSelect`, `showDeveloperToolsMenu` | 12 | 26 | 3707 | 4 | 1 | 15.3% |
 | 18 | `enterMainGameMenu`, `finalizeGameSystems` | 11 | 13 | 539 | 3 | 0 | 23.0% |
-| 19 | Not reached from startup: `engine/` | 23 | 279 | 19702 | 20 | 1 | 7.1% |
-| 20 | Not reached from startup: `support/` | 2 | 24 | 593 | 3 | 0 | 12.5% |
+| 19 | Not reached from startup: `engine/` | 23 | 279 | 19702 | 24 | 1 | 8.6% |
+| 20 | Not reached from startup: `support/` | 2 | 24 | 593 | 3 | 1 | 12.5% |
 | 21 | Not reached from startup: `cockpit/` | 4 | 178 | 11527 | 0 | 0 | 0.0% |
-| 22 | Not reached from startup: `shape/` | 2 | 42 | 3178 | 4 | 1 | 9.5% |
-| 23 | Not reached from startup: `core/` (part 1 of 9) | 18 | 292 | 16011 | 8 | 1 | 2.7% |
-| 24 | Not reached from startup: `core/` (part 2 of 9) | 11 | 277 | 24965 | 5 | 2 | 1.8% |
-| 25 | Not reached from startup: `core/` (part 3 of 9) | 24 | 278 | 24134 | 7 | 0 | 2.5% |
-| 26 | Not reached from startup: `core/` (part 4 of 9) | 18 | 300 | 20148 | 27 | 1 | 9.0% |
-| 27 | Not reached from startup: `core/` (part 5 of 9) | 21 | 294 | 20910 | 11 | 4 | 3.7% |
-| 28 | Not reached from startup: `core/` (part 6 of 9) | 18 | 282 | 21809 | 13 | 5 | 4.6% |
-| 29 | Not reached from startup: `core/` (part 7 of 9) | 18 | 263 | 22721 | 10 | 3 | 3.8% |
-| 30 | Not reached from startup: `core/` (part 8 of 9) | 20 | 300 | 31826 | 9 | 2 | 3.0% |
-| 31 | Not reached from startup: `core/` (part 9 of 9) | 5 | 111 | 10905 | 4 | 0 | 3.6% |
+| 22 | Not reached from startup: `shape/` | 2 | 42 | 3178 | 4 | 2 | 9.5% |
+| 23 | Not reached from startup: `core/` (part 1 of 9) | 18 | 292 | 16011 | 24 | 1 | 8.2% |
+| 24 | Not reached from startup: `core/` (part 2 of 9) | 11 | 277 | 24965 | 15 | 2 | 5.4% |
+| 25 | Not reached from startup: `core/` (part 3 of 9) | 24 | 278 | 24134 | 18 | 8 | 6.4% |
+| 26 | Not reached from startup: `core/` (part 4 of 9) | 18 | 300 | 20148 | 40 | 5 | 13.3% |
+| 27 | Not reached from startup: `core/` (part 5 of 9) | 21 | 294 | 20910 | 29 | 5 | 9.8% |
+| 28 | Not reached from startup: `core/` (part 6 of 9) | 18 | 282 | 21809 | 24 | 7 | 8.5% |
+| 29 | Not reached from startup: `core/` (part 7 of 9) | 18 | 263 | 22721 | 20 | 9 | 7.6% |
+| 30 | Not reached from startup: `core/` (part 8 of 9) | 20 | 300 | 31826 | 29 | 2 | 9.6% |
+| 31 | Not reached from startup: `core/` (part 9 of 9) | 5 | 111 | 10905 | 7 | 1 | 6.3% |
 | 32 | Not reached from startup: `wincore/` | 2 | 11 | 482 | 4 | 0 | 36.3% |
-| | **All** | | **4479** | **402407** | **649** | **91** | **14.4%** |
+| | **All** | | **4479** | **402407** | **765** | **115** | **17.0%** |
 
 ## Step 0: Math value types
 
@@ -2981,14 +2981,14 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `perspectiveDivideVertices` 0x00437bf0 (47)
   - [ ] `clipPolygonToViewFrustumAdvanced` 0x00437ca0 (581)
 
-### `engine/console.cpp` (3 functions, 38 instructions, 2 done, 0 partial)
+### `engine/console.cpp` (3 functions, 38 instructions, 3 done, 0 partial)
 - class `CConsole`
   - [x] `ctor` 0x00441810 (25)
   - [x] `dtor` 0x00441880 (2, compiler-generated)
 - free functions
-  - [ ] `staticInit` 0x004417e0 (11)
+  - [x] `staticInit` 0x004417e0 (11)
 
-### `engine/drender.cpp` (18 functions, 1601 instructions, 1 done, 0 partial)
+### `engine/drender.cpp` (18 functions, 1601 instructions, 2 done, 0 partial)
 - class `CDemonRenderer`
   - [x] `ctor` 0x0048a6c0 (10)
   - [ ] `setProjectionMode` 0x0048a700 (14)
@@ -3008,7 +3008,7 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `renderTriangleBatch` 0x0048ce20 (46)
   - [ ] `renderFaceList` 0x0048d170 (218)
 - free functions
-  - [ ] `staticInit` 0x0048a6b0 (4)
+  - [x] `staticInit` 0x0048a6b0 (4)
 
 ### `engine/font.cpp` (16 functions, 1653 instructions, 0 done, 0 partial)
 - free functions
@@ -3036,9 +3036,9 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `addPolygonEdge` 0x004d11c0 (107)
   - [ ] `findHardwareEdgeByYMin` 0x004d1300 (22)
 
-### `engine/ini.cpp` (4 functions, 51 instructions, 2 done, 0 partial)
+### `engine/ini.cpp` (4 functions, 51 instructions, 3 done, 0 partial)
 - free functions
-  - [ ] `staticInit` 0x004fb240 (1)
+  - [x] `staticInit` 0x004fb240 (1, compiler-generated)
   - [ ] `getProfileInteger` 0x004fb9a0 (46)
 - class `CIni`
   - [x] `ctor` 0x004fbd70 (2, compiler-generated)
@@ -3096,7 +3096,7 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `loadMRGLTextures` 0x00528870 (78)
   - [ ] `initializeMRGLModel` 0x00528940 (18)
 
-### `engine/ncursfx.cpp` (7 functions, 192 instructions, 1 done, 1 partial)
+### `engine/ncursfx.cpp` (7 functions, 192 instructions, 2 done, 1 partial)
 - class `CMouse`
   - [~] `ctor` 0x00544380 (22)
     - deferred: zeroing anim_timer and effect_mode, with CMouse::render, CMouse::startEffect and CMouse::consumeButton
@@ -3106,7 +3106,7 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `getPosition` 0x005445a0 (7)
   - [ ] `render` 0x005445c0 (105)
 - free functions
-  - [ ] `staticInit` 0x00544360 (7)
+  - [x] `staticInit` 0x00544360 (7)
 
 ### `engine/palette.cpp` (2 functions, 5 instructions, 2 done, 0 partial)
 - class `CFont`
@@ -3196,11 +3196,12 @@ functions don't count as done. Sizes are in instructions.
 - class `CLZWCompress`
   - [ ] `dtor` 0x0043f710 (37)
 
-### `support/trisock.cpp` (20 functions, 477 instructions, 3 done, 0 partial)
+### `support/trisock.cpp` (20 functions, 477 instructions, 3 done, 1 partial)
 - free functions
   - [ ] `buildIPAddress` 0x005e1870 (36)
   - [ ] `buildIPAddressOrDie` 0x005e1750 (43)
-  - [ ] `staticInit` 0x005e16b0 (15)
+  - [~] `staticInit` 0x005e16b0 (15)
+    - deferred: the unspecified address 0.0.0.0, with CNetGame::initializeNetworkToHost and CNetGame::initializeNetworkToJoin
   - [ ] `parseIPComponents` 0x005e1800 (42)
   - [ ] `parseIPAddress` 0x005e1700 (28)
   - [ ] `formatIPAddress` 0x005e17c0 (19)
@@ -3460,14 +3461,15 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `render` 0x004a6c00 (120)
   - [ ] `handleInput` 0x004a6d20 (74)
 
-### `shape/spotview.cpp` (5 functions, 374 instructions, 0 done, 0 partial)
+### `shape/spotview.cpp` (5 functions, 374 instructions, 0 done, 1 partial)
 - class `CSpotView`
   - [ ] `reset` 0x005b9620 (27)
   - [ ] `ctor` 0x005b95c0 (27)
   - [ ] `clampValues` 0x005b9950 (56)
   - [ ] `handleInput` 0x005b9670 (260)
 - free functions
-  - [ ] `staticInit` 0x005b95b0 (4)
+  - [~] `staticInit` 0x005b95b0 (4)
+    - deferred: the game's spot view, with this constructor
 
 ## Step 23: Not reached from startup: `core/` (part 1 of 9)
 
@@ -3494,10 +3496,10 @@ functions don't count as done. Sizes are in instructions.
   - [x] `copy` 0x00410440 (26, compiler-generated)
   - [x] `dtor` 0x00410490 (2, compiler-generated)
 
-### `core/ammo.cpp` (12 functions, 174 instructions, 0 done, 0 partial)
+### `core/ammo.cpp` (12 functions, 174 instructions, 1 done, 0 partial)
 - free functions
   - [ ] `factoryFuncAmmo` 0x00410d80 (12)
-  - [ ] `staticInit` 0x00410d50 (9)
+  - [x] `staticInit` 0x00410d50 (9)
 - class `CAmmo`
   - [ ] `getActorType` 0x00410db0 (2)
   - [ ] `process` 0x00410e70 (1)
@@ -3510,7 +3512,7 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `setup` 0x00410e50 (8)
   - [ ] `setAmmoCount` 0x004111b0 (4)
 
-### `core/ammobox.cpp` (14 functions, 380 instructions, 0 done, 0 partial)
+### `core/ammobox.cpp` (14 functions, 380 instructions, 1 done, 0 partial)
 - class `CAmmoBox`
   - [ ] `ctor` 0x004115a0 (44)
   - [ ] `getActorType` 0x00411590 (2)
@@ -3526,9 +3528,9 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `addToInventory` 0x00411700 (90)
 - free functions
   - [ ] `factoryFuncAmmoBox` 0x00411560 (12)
-  - [ ] `staticInit` 0x00411530 (9)
+  - [x] `staticInit` 0x00411530 (9)
 
-### `core/anvil.cpp` (11 functions, 300 instructions, 0 done, 0 partial)
+### `core/anvil.cpp` (11 functions, 300 instructions, 1 done, 0 partial)
 - class `CAnvil`
   - [ ] `ctor` 0x00411ce0 (40)
   - [ ] `getActorType` 0x00411cd0 (2)
@@ -3541,9 +3543,9 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `setup` 0x00411d70 (10)
 - free functions
   - [ ] `factoryFuncAnvil` 0x00411ca0 (12)
-  - [ ] `staticInit` 0x00411c70 (9)
+  - [x] `staticInit` 0x00411c70 (9)
 
-### `core/armour.cpp` (12 functions, 358 instructions, 0 done, 0 partial)
+### `core/armour.cpp` (12 functions, 358 instructions, 1 done, 0 partial)
 - class `CArmour`
   - [ ] `ctor` 0x004121a0 (41)
   - [ ] `getActorType` 0x00412190 (2)
@@ -3556,11 +3558,11 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `setup` 0x00412240 (10)
 - free functions
   - [ ] `factoryFuncArmour` 0x00412160 (12)
-  - [ ] `staticInit` 0x00412130 (9)
+  - [x] `staticInit` 0x00412130 (9)
 - class `CEnemy`
   - [ ] `dtor` 0x004125c0 (62)
 
-### `core/backgnd.cpp` (13 functions, 248 instructions, 0 done, 0 partial)
+### `core/backgnd.cpp` (13 functions, 248 instructions, 1 done, 0 partial)
 - class `CBackgroundActor`
   - [ ] `ctor` 0x004127b0 (21)
   - [ ] `getActorType` 0x004127a0 (2)
@@ -3575,9 +3577,9 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `setup` 0x00412810 (17)
 - free functions
   - [ ] `factoryFuncBackgroundActor` 0x00412770 (12)
-  - [ ] `staticInit` 0x00412740 (9)
+  - [x] `staticInit` 0x00412740 (9)
 
-### `core/baron.cpp` (30 functions, 1554 instructions, 3 done, 1 partial)
+### `core/baron.cpp` (30 functions, 1554 instructions, 4 done, 1 partial)
 - class `CBaron`
   - [~] `ctor` 0x00412bc0 (63)
     - deferred: loading the model baron.dfm, with CDeformableModelInstance::init
@@ -3600,7 +3602,7 @@ functions don't count as done. Sizes are in instructions.
 - free functions
   - [x] `factoryFuncBaron` 0x00412b80 (12)
   - [ ] `factoryFuncBaronWeapon` 0x00413d00 (12)
-  - [ ] `staticInit` 0x00412b20 (20)
+  - [x] `staticInit` 0x00412b20 (20)
 - class `CBaronWeapon`
   - [ ] `ctor` 0x00413d40 (12)
   - [ ] `getActorType` 0x00413d30 (2)
@@ -3614,7 +3616,7 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `dtor` 0x004140b0 (31)
   - [ ] `setup` 0x00413da0 (8)
 
-### `core/barrier.cpp` (11 functions, 219 instructions, 0 done, 0 partial)
+### `core/barrier.cpp` (11 functions, 219 instructions, 1 done, 0 partial)
 - class `CBarrier`
   - [ ] `ctor` 0x004141c0 (13)
   - [ ] `getActorType` 0x004141b0 (2)
@@ -3627,9 +3629,9 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `setup` 0x00414210 (11)
 - free functions
   - [ ] `factoryFuncBarrier` 0x00414180 (12)
-  - [ ] `staticInit` 0x00414150 (9)
+  - [x] `staticInit` 0x00414150 (9)
 
-### `core/bat.cpp` (12 functions, 548 instructions, 0 done, 0 partial)
+### `core/bat.cpp` (12 functions, 548 instructions, 1 done, 0 partial)
 - class `CBat`
   - [ ] `ctor` 0x004147d0 (50)
   - [ ] `getActorType` 0x004147c0 (2)
@@ -3642,10 +3644,10 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `setup` 0x004148a0 (30)
 - free functions
   - [ ] `factoryFuncBat` 0x00414790 (12)
-  - [ ] `staticInit` 0x004146c0 (9)
+  - [x] `staticInit` 0x004146c0 (9)
   - [ ] `fmodfPositive` 0x004146f0 (54)
 
-### `core/batcreat.cpp` (12 functions, 1418 instructions, 0 done, 0 partial)
+### `core/batcreat.cpp` (12 functions, 1418 instructions, 1 done, 0 partial)
 - class `CBatCreature`
   - [ ] `ctor` 0x004150f0 (22)
   - [ ] `getActorType` 0x004150e0 (2)
@@ -3659,9 +3661,9 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `setup` 0x00415150 (213)
 - free functions
   - [ ] `factoryFuncBatCreature` 0x004150b0 (12)
-  - [ ] `staticInit` 0x00415080 (9)
+  - [x] `staticInit` 0x00415080 (9)
 
-### `core/batman.cpp` (14 functions, 1919 instructions, 0 done, 0 partial)
+### `core/batman.cpp` (14 functions, 1919 instructions, 1 done, 0 partial)
 - class `CBatman`
   - [ ] `ctor` 0x00416450 (48)
   - [ ] `getActorType` 0x00416440 (2)
@@ -3677,9 +3679,9 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `setup` 0x00416510 (209)
 - free functions
   - [ ] `factoryFuncBatman` 0x00416410 (12)
-  - [ ] `staticInit` 0x004163e0 (9)
+  - [x] `staticInit` 0x004163e0 (9)
 
-### `core/battery.cpp` (15 functions, 204 instructions, 0 done, 0 partial)
+### `core/battery.cpp` (15 functions, 204 instructions, 1 done, 0 partial)
 - class `CBattery`
   - [ ] `ctor` 0x00417e90 (21)
   - [ ] `getActorType` 0x00417e80 (2)
@@ -3696,9 +3698,9 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `setup` 0x00417ef0 (12)
 - free functions
   - [ ] `factoryFuncBattery` 0x00417e50 (12)
-  - [ ] `staticInit` 0x00417e20 (9)
+  - [x] `staticInit` 0x00417e20 (9)
 
-### `core/beast.cpp` (12 functions, 237 instructions, 0 done, 0 partial)
+### `core/beast.cpp` (12 functions, 237 instructions, 1 done, 0 partial)
 - class `CBeast`
   - [ ] `ctor` 0x00418220 (22)
   - [ ] `getActorType` 0x00418210 (2)
@@ -3712,9 +3714,9 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `setup` 0x00418280 (10)
 - free functions
   - [ ] `factoryFuncBeast` 0x004181e0 (12)
-  - [ ] `staticInit` 0x004181b0 (9)
+  - [x] `staticInit` 0x004181b0 (9)
 
-### `core/biggs.cpp` (12 functions, 613 instructions, 0 done, 0 partial)
+### `core/biggs.cpp` (12 functions, 613 instructions, 1 done, 0 partial)
 - class `CBiggs`
   - [ ] `ctor` 0x004185c0 (53)
   - [ ] `getActorType` 0x004185b0 (2)
@@ -3728,12 +3730,12 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `setup` 0x00418680 (39)
 - free functions
   - [ ] `factoryFuncBiggs` 0x00418580 (12)
-  - [ ] `staticInit` 0x00418550 (9)
+  - [x] `staticInit` 0x00418550 (9)
 
-### `core/bodypart.cpp` (26 functions, 1186 instructions, 0 done, 0 partial)
+### `core/bodypart.cpp` (26 functions, 1186 instructions, 1 done, 0 partial)
 - free functions
   - [ ] `factoryFuncBodyPart` 0x00418fd0 (12)
-  - [ ] `staticInit` 0x00418de0 (9)
+  - [x] `staticInit` 0x00418de0 (9)
   - [ ] `scaleVector` 0x0041b4e0 (13)
   - [ ] `addVector` 0x0041b540 (13)
   - [ ] `copyVector` 0x0041b570 (9)
@@ -3760,11 +3762,11 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `fillAttackDamageInfo` 0x0041b210 (25)
   - [ ] `setup` 0x00419810 (37)
 
-### `core/boneguy.cpp` (22 functions, 2680 instructions, 0 done, 0 partial)
+### `core/boneguy.cpp` (22 functions, 2680 instructions, 1 done, 0 partial)
 - free functions
   - [ ] `hsvToRgb` 0x0041ba10 (128)
   - [ ] `factoryFuncBoneGuy` 0x0041b820 (12)
-  - [ ] `staticInit` 0x0041b6d0 (9)
+  - [x] `staticInit` 0x0041b6d0 (9)
   - [ ] `getLocalBoundingBoxCenter` 0x0041b700 (38)
   - [ ] `getWorldBoundingBoxCenter` 0x0041b770 (60)
   - [ ] `rgbToHsv` 0x0041b860 (128)
@@ -3802,7 +3804,7 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `isInverted` 0x00420fe0 (20)
   - [ ] `render` 0x004210b0 (270)
 
-### `core/boxactor.cpp` (33 functions, 1770 instructions, 0 done, 0 partial)
+### `core/boxactor.cpp` (33 functions, 1770 instructions, 1 done, 0 partial)
 - class `CBoxActor`
   - [ ] `ctor` 0x00421700 (49)
   - [ ] `getActorType` 0x004216f0 (2)
@@ -3829,7 +3831,7 @@ functions don't count as done. Sizes are in instructions.
 - free functions
   - [ ] `factoryFuncBoxActor` 0x004216c0 (12)
   - [ ] `factoryFuncLightActor` 0x00422950 (12)
-  - [ ] `staticInit` 0x00421650 (25)
+  - [x] `staticInit` 0x00421650 (25)
 - class `CLightActor`
   - [ ] `ctor` 0x00422990 (28)
   - [ ] `getActorType` 0x00422980 (2)
@@ -3842,7 +3844,7 @@ functions don't count as done. Sizes are in instructions.
 
 ## Step 24: Not reached from startup: `core/` (part 2 of 9)
 
-### `core/bride.cpp` (12 functions, 1550 instructions, 0 done, 0 partial)
+### `core/bride.cpp` (12 functions, 1550 instructions, 1 done, 0 partial)
 - class `CBride`
   - [ ] `ctor` 0x004237a0 (23)
   - [ ] `getActorType` 0x00423790 (2)
@@ -3856,9 +3858,9 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `setup` 0x00423810 (154)
 - free functions
   - [ ] `factoryFuncBride` 0x00423760 (12)
-  - [ ] `staticInit` 0x00423700 (20)
+  - [x] `staticInit` 0x00423700 (20)
 
-### `core/bugs.cpp` (38 functions, 3451 instructions, 0 done, 0 partial)
+### `core/bugs.cpp` (38 functions, 3451 instructions, 1 done, 0 partial)
 - class `CBugs`
   - [ ] `ctor` 0x00424cb0 (106)
   - [ ] `getActorType` 0x00424ca0 (2)
@@ -3887,7 +3889,7 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `renderGroundHeightGrid` 0x00425340 (111)
 - free functions
   - [ ] `factoryFuncBugs` 0x00424c70 (12)
-  - [ ] `staticInit` 0x00424c40 (9)
+  - [x] `staticInit` 0x00424c40 (9)
   - [ ] `maxFloat` 0x00427ba0 (16)
   - [ ] `createVector` 0x004279b0 (8)
   - [ ] `scaleVector` 0x004279d0 (12)
@@ -3900,7 +3902,7 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `getBugState` 0x00427b60 (3)
   - [ ] `swapIntegers` 0x00427b80 (8)
 
-### `core/charactr.cpp` (91 functions, 8559 instructions, 1 done, 1 partial)
+### `core/charactr.cpp` (91 functions, 8559 instructions, 2 done, 1 partial)
 - class `CCharacter`
   - [~] `ctor` 0x00427e20 (125)
     - deferred: the cloth, collision points, fires and flames, and the defaults the constructor gives the movement, walking, looking, carrying, health, layer action and smoking fields, with the steps that read them
@@ -3986,7 +3988,7 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `processSmoking` 0x0042ea40 (165)
   - [ ] `moveOutOfHeroWay` 0x0042ede0 (345)
 - free functions
-  - [ ] `staticInit` 0x00427d80 (12)
+  - [x] `staticInit` 0x00427d80 (12)
   - [ ] `clampFloat` 0x00428620 (26)
   - [ ] `clampNormalizedAngle` 0x00428670 (33)
   - [ ] `divideVector` 0x0042f8f0 (13)
@@ -3996,7 +3998,7 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `getDeformableModelPartCount` 0x0042f9c0 (3)
   - [ ] `getActorCreateEvent` 0x0042f9d0 (3)
 
-### `core/chain.cpp` (16 functions, 1639 instructions, 0 done, 0 partial)
+### `core/chain.cpp` (16 functions, 1639 instructions, 1 done, 0 partial)
 - class `CChain`
   - [ ] `ctor` 0x0042fb80 (74)
   - [ ] `getActorType` 0x0042fb70 (2)
@@ -4011,7 +4013,7 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `setup` 0x0042fd20 (126)
 - free functions
   - [ ] `factoryFuncChain` 0x0042fb40 (12)
-  - [ ] `staticInit` 0x0042fb10 (9)
+  - [x] `staticInit` 0x0042fb10 (9)
   - [ ] `passthroughInt1` 0x00431330 (2)
   - [ ] `passthroughInt2` 0x00431340 (2)
   - [ ] `fastSqrt` 0x00431350 (5)
@@ -4056,7 +4058,7 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `applyLightAttenuation` 0x0043e380 (28)
   - [ ] `scaleVector` 0x0043e3d0 (13)
 
-### `core/colonel.cpp` (15 functions, 1081 instructions, 3 done, 1 partial)
+### `core/colonel.cpp` (15 functions, 1081 instructions, 4 done, 1 partial)
 - class `CColonel`
   - [~] `ctor` 0x0043f7e0 (24)
     - deferred: loading the model colonel.dfm, with CDeformableModelInstance::init
@@ -4074,10 +4076,10 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `setup` 0x0043f850 (117)
 - free functions
   - [x] `factoryFuncColonel` 0x0043f7a0 (12)
-  - [ ] `staticInit` 0x0043f770 (9)
+  - [x] `staticInit` 0x0043f770 (9)
   - [ ] `getCurrentMotionState` 0x00440650 (6)
 
-### `core/conveyor.cpp` (13 functions, 378 instructions, 0 done, 0 partial)
+### `core/conveyor.cpp` (13 functions, 378 instructions, 1 done, 0 partial)
 - class `CConveyor`
   - [ ] `ctor` 0x00441ca0 (48)
   - [ ] `getActorType` 0x00441c90 (2)
@@ -4091,11 +4093,11 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `setup` 0x00441d60 (68)
 - free functions
   - [ ] `factoryFuncConveyor` 0x00441c60 (12)
-  - [ ] `staticInit` 0x00441c30 (9)
+  - [x] `staticInit` 0x00441c30 (9)
 - class `CPlatform`
   - [ ] `dtor` 0x00442380 (37)
 
-### `core/cow.cpp` (11 functions, 903 instructions, 0 done, 0 partial)
+### `core/cow.cpp` (11 functions, 903 instructions, 1 done, 0 partial)
 - class `CZombieCow`
   - [ ] `ctor` 0x00444140 (23)
   - [ ] `getActorType` 0x00444130 (2)
@@ -4108,9 +4110,9 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `setup` 0x004441b0 (95)
 - free functions
   - [ ] `factoryFuncZombieCow` 0x00444100 (12)
-  - [ ] `staticInit` 0x004440d0 (9)
+  - [x] `staticInit` 0x004440d0 (9)
 
-### `core/crate.cpp` (17 functions, 463 instructions, 0 done, 0 partial)
+### `core/crate.cpp` (17 functions, 463 instructions, 1 done, 0 partial)
 - class `CCrate`
   - [ ] `ctor` 0x004484d0 (21)
   - [ ] `getActorType` 0x004484c0 (2)
@@ -4129,9 +4131,9 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `setup` 0x00448530 (49)
 - free functions
   - [ ] `factoryFuncCrate` 0x00448490 (12)
-  - [ ] `staticInit` 0x00448460 (9)
+  - [x] `staticInit` 0x00448460 (9)
 
-### `core/crossbow.cpp` (12 functions, 673 instructions, 0 done, 0 partial)
+### `core/crossbow.cpp` (12 functions, 673 instructions, 1 done, 0 partial)
 - class `CCrossbow`
   - [ ] `getActorType` 0x00448c60 (2)
   - [ ] `process` 0x00448d30 (56)
@@ -4145,9 +4147,9 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `ctor` 0x00448c70 (30)
 - free functions
   - [ ] `factoryFuncCrossbow` 0x00448c30 (12)
-  - [ ] `staticInit` 0x00448c00 (9)
+  - [x] `staticInit` 0x00448c00 (9)
 
-### `core/curtain.cpp` (17 functions, 2249 instructions, 0 done, 0 partial)
+### `core/curtain.cpp` (17 functions, 2249 instructions, 1 done, 0 partial)
 - class `CCurtain`
   - [ ] `ctor` 0x004496a0 (68)
   - [ ] `getActorType` 0x00449690 (2)
@@ -4166,11 +4168,11 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `setup` 0x00449810 (443)
 - free functions
   - [ ] `factoryFuncCurtain` 0x00449660 (12)
-  - [ ] `staticInit` 0x00449610 (19)
+  - [x] `staticInit` 0x00449610 (19)
 
 ## Step 25: Not reached from startup: `core/` (part 3 of 9)
 
-### `core/dcamera.cpp` (27 functions, 2549 instructions, 0 done, 0 partial)
+### `core/dcamera.cpp` (27 functions, 2549 instructions, 0 done, 1 partial)
 - class `CDemonCamera`
   - [ ] `isSphereVisible` 0x00452730 (144)
   - [ ] `getFogValueAtPosition` 0x00453700 (69)
@@ -4192,7 +4194,9 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `sampleFramebufferPixel` 0x004538c0 (41)
   - [ ] `computeVisibleFrustumBounds` 0x00454060 (284)
 - free functions
-  - [ ] `staticInit` 0x0044bb10 (14)
+  - [~] `staticInit` 0x0044bb10 (14)
+    - deferred: the precomputed surface normals, with precomputeNormals
+    - deferred: the image decompressor, 0x10000 bytes from 6 bits, with loadImage
   - [ ] `renderCoronaProjectedTextureScanline` 0x004507a0 (162)
   - [ ] `log2Custom` 0x00450a90 (11)
   - [ ] `testCoronaVisibility` 0x00451250 (77)
@@ -4201,12 +4205,13 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `transformAndStoreVertex` 0x00452110 (34)
   - [ ] `saveCameraFog` 0x00453f10 (57)
 
-### `core/dcube.cpp` (21 functions, 2237 instructions, 2 done, 0 partial)
+### `core/dcube.cpp` (21 functions, 2237 instructions, 2 done, 1 partial)
 - free functions
   - [ ] `intersectXZCylinder` 0x004556b0 (256)
   - [ ] `intersectXZCylinderWithHeight` 0x00455990 (63)
   - [ ] `intersectTriangleWithXZCylinder` 0x00455a30 (406)
-  - [ ] `staticInit` 0x00454720 (36)
+  - [~] `staticInit` 0x00454720 (36)
+    - deferred: the frustum clip stages' 16-vertex buffers, with clipTriangleToFrustum
   - [ ] `copyVector3` 0x004547b0 (12)
   - [ ] `clipEdgeToPlane` 0x004547d0 (145)
   - [ ] `clipPolygonAgainstMaxY` 0x00454970 (116)
@@ -4227,7 +4232,7 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `calculateNormalAndPlane` 0x004552c0 (133)
   - [ ] `init` 0x00455430 (11)
 
-### `core/dest.cpp` (11 functions, 469 instructions, 0 done, 0 partial)
+### `core/dest.cpp` (11 functions, 469 instructions, 1 done, 0 partial)
 - class `CActorDestination`
   - [ ] `ctor` 0x0046f900 (30)
   - [ ] `getActorType` 0x0046f8f0 (2)
@@ -4240,9 +4245,9 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `setup` 0x0046f970 (13)
 - free functions
   - [ ] `factoryFuncActorDestination` 0x0046f8c0 (12)
-  - [ ] `staticInit` 0x0046f890 (9)
+  - [x] `staticInit` 0x0046f890 (9)
 
-### `core/dfilter.cpp` (7 functions, 199 instructions, 0 done, 0 partial)
+### `core/dfilter.cpp` (7 functions, 199 instructions, 0 done, 1 partial)
 - class `CFilterCache`
   - [ ] `ctor` 0x0046ffd0 (3)
   - [ ] `dtor` 0x0046ffe0 (8)
@@ -4252,7 +4257,8 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `dtor` 0x004706e0 (8)
   - [ ] `openMovie` 0x00470730 (131)
 - free functions
-  - [ ] `staticInit` 0x0046ff50 (29)
+  - [~] `staticInit` 0x0046ff50 (29)
+    - deferred: the filter cache and filter effects, with CFilterCache's and CFilterFX's constructors
 
 ### `core/dfont.cpp` (1 functions, 5 instructions, 0 done, 0 partial)
 - free functions
@@ -4271,26 +4277,27 @@ functions don't count as done. Sizes are in instructions.
 - free functions
   - [x] `angleFromSinCos` 0x00472090 (75)
 
-### `core/dlight.cpp` (5 functions, 816 instructions, 0 done, 0 partial)
+### `core/dlight.cpp` (5 functions, 816 instructions, 1 done, 0 partial)
 - class `CDemonLight`
   - [ ] `dtor` 0x00472760 (35)
   - [ ] `renderRadialVolumetricScattering` 0x00475210 (427)
 - free functions
-  - [ ] `staticInit` 0x00472680 (5)
+  - [x] `staticInit` 0x00472680 (5)
   - [ ] `drawGrayscalePixel` 0x00473360 (16)
   - [ ] `renderConeLightGeometry` 0x004760d0 (333)
 
-### `core/dmodel.cpp` (5 functions, 108 instructions, 2 done, 0 partial)
+### `core/dmodel.cpp` (5 functions, 108 instructions, 2 done, 1 partial)
 - class `CKeyFramedModel`
   - [ ] `intersectCylinder` 0x00478650 (76)
 - free functions
-  - [ ] `staticInit` 0x00476c50 (9)
+  - [~] `staticInit` 0x00476c50 (9)
+    - deferred: the pool of 256 models, with this
   - [ ] `skipLines` 0x00476c80 (19)
 - class `CDemonTriangle`
   - [x] `ctor` 0x0047eef0 (2, compiler-generated)
   - [x] `dtor` 0x0047ef00 (2, compiler-generated)
 
-### `core/dog.cpp` (10 functions, 741 instructions, 0 done, 0 partial)
+### `core/dog.cpp` (10 functions, 741 instructions, 1 done, 0 partial)
 - class `CZombieDog`
   - [ ] `ctor` 0x0047f050 (23)
   - [ ] `getActorType` 0x0047f040 (2)
@@ -4302,9 +4309,9 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `setup` 0x0047f0c0 (29)
 - free functions
   - [ ] `factoryFuncZombieDog` 0x0047f010 (12)
-  - [ ] `staticInit` 0x0047efe0 (9)
+  - [x] `staticInit` 0x0047efe0 (9)
 
-### `core/door.cpp` (23 functions, 1740 instructions, 0 done, 0 partial)
+### `core/door.cpp` (23 functions, 1740 instructions, 1 done, 0 partial)
 - class `CDoor`
   - [ ] `getOpenStandPos` 0x00480e20 (177)
   - [ ] `onOpened` 0x0047fcf0 (8)
@@ -4328,7 +4335,7 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `setSwingRange` 0x00480de0 (4)
 - free functions
   - [ ] `factoryFuncDoor` 0x0047fa90 (12)
-  - [ ] `staticInit` 0x0047fa60 (9)
+  - [x] `staticInit` 0x0047fa60 (9)
   - [ ] `clearRuleList` 0x00481650 (8)
 
 ### `core/dpart.cpp` (8 functions, 827 instructions, 0 done, 0 partial)
@@ -4343,7 +4350,7 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `setupTriangleEdgeInterpolation` 0x00482fb0 (210)
   - [ ] `setupDepthOnlyEdgeInterpolation` 0x00483210 (92)
 
-### `core/dracbrid.cpp` (18 functions, 3231 instructions, 0 done, 0 partial)
+### `core/dracbrid.cpp` (18 functions, 3231 instructions, 1 done, 0 partial)
 - class `CDraculaBride`
   - [ ] `ctor` 0x00483fc0 (47)
   - [ ] `getActorType` 0x00483fb0 (2)
@@ -4363,9 +4370,9 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `setup` 0x004840b0 (208)
 - free functions
   - [ ] `factoryFuncDraculaBride` 0x00483f80 (12)
-  - [ ] `staticInit` 0x00483ef0 (32)
+  - [x] `staticInit` 0x00483ef0 (32)
 
-### `core/drip.cpp` (12 functions, 604 instructions, 0 done, 0 partial)
+### `core/drip.cpp` (12 functions, 604 instructions, 1 done, 0 partial)
 - class `CDrip`
   - [ ] `ctor` 0x0048e000 (52)
   - [ ] `getActorType` 0x0048dff0 (2)
@@ -4379,9 +4386,9 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `reset` 0x0048e6b0 (3)
 - free functions
   - [ ] `factoryFuncDrip` 0x0048dfc0 (12)
-  - [ ] `staticInit` 0x0048df80 (12)
+  - [x] `staticInit` 0x0048df80 (12)
 
-### `core/drone.cpp` (10 functions, 800 instructions, 0 done, 0 partial)
+### `core/drone.cpp` (10 functions, 800 instructions, 1 done, 0 partial)
 - class `CDrone`
   - [ ] `ctor` 0x0048eb50 (24)
   - [ ] `getActorType` 0x0048eb40 (2)
@@ -4393,12 +4400,13 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `setup` 0x0048ebc0 (33)
 - free functions
   - [ ] `factoryFuncDrone` 0x0048eb10 (12)
-  - [ ] `staticInit` 0x0048eae0 (9)
+  - [x] `staticInit` 0x0048eae0 (9)
 
-### `core/dskybox.cpp` (2 functions, 30 instructions, 0 done, 0 partial)
+### `core/dskybox.cpp` (2 functions, 30 instructions, 0 done, 1 partial)
 - free functions
   - [ ] `initializeSkyboxTexture` 0x00490070 (22)
-  - [ ] `staticInit` 0x00490040 (8)
+  - [~] `staticInit` 0x00490040 (8)
+    - deferred: the sky texture named NITESKY.RAW and the dome centred at the origin, with this
 
 ### `core/dstrender.cpp` (6 functions, 916 instructions, 0 done, 0 partial)
 - free functions
@@ -4409,7 +4417,7 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `blendLightmapShared4U64toU64pBB12Px4MMX` 0x004924a9 (84)
   - [ ] `blendLightmapShared4U64toU64pAmbientPx4MMX` 0x004925c5 (84)
 
-### `core/dtrace.cpp` (18 functions, 2180 instructions, 2 done, 0 partial)
+### `core/dtrace.cpp` (18 functions, 2180 instructions, 2 done, 1 partial)
 - class `CDemonRaytrace`
   - [ ] `getVoxelHeightAtVoxelCoords` 0x00499a50 (95)
   - [ ] `voxelRaycast3D` 0x00499330 (379)
@@ -4429,14 +4437,16 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `testVoxelAtCoords` 0x00499970 (82)
 - free functions
   - [ ] `initIntersectionCylinder` 0x00496b90 (74)
-  - [ ] `staticInit` 0x004941e0 (6)
+  - [~] `staticInit` 0x004941e0 (6)
+    - deferred: the 20000 PVS cube positions, with this
 
-### `core/dtri.cpp` (21 functions, 2594 instructions, 0 done, 0 partial)
+### `core/dtri.cpp` (21 functions, 2594 instructions, 0 done, 1 partial)
 - free functions
   - [ ] `cylinderEdgeIntersection` 0x0049aa00 (256)
   - [ ] `cylinderEdgeTestWithHeight` 0x0049ace0 (61)
   - [ ] `cylinderTriangleTest` 0x0049ad80 (352)
-  - [ ] `staticInit` 0x0049a430 (41)
+  - [~] `staticInit` 0x0049a430 (41)
+    - deferred: the clipper's 16-vertex buffers and 8-triangle fan, with clipTriangleToBounds and buildClipTriangleFan
   - [ ] `copyVector3` 0x0049b6a0 (12)
   - [ ] `clipLineToPlane` 0x0049b6c0 (145)
   - [ ] `clipPolygonToTop` 0x0049b860 (116)
@@ -4456,7 +4466,7 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `writeDataBinary` 0x0049a5f0 (34)
   - [ ] `render` 0x0049cbd0 (97)
 
-### `core/dynamite.cpp` (12 functions, 287 instructions, 0 done, 0 partial)
+### `core/dynamite.cpp` (12 functions, 287 instructions, 1 done, 0 partial)
 - class `CDynamite`
   - [ ] `getActorType` 0x0049cdb0 (2)
   - [ ] `fire` 0x0049ce70 (34)
@@ -4470,9 +4480,9 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `isFuseBurnedOut` 0x0049cf90 (5)
 - free functions
   - [ ] `factoryFuncDynamite` 0x0049cd80 (12)
-  - [ ] `staticInit` 0x0049cd40 (14)
+  - [x] `staticInit` 0x0049cd40 (14)
 
-### `core/elephant.cpp` (10 functions, 872 instructions, 0 done, 0 partial)
+### `core/elephant.cpp` (10 functions, 872 instructions, 1 done, 0 partial)
 - class `CElephantGun`
   - [ ] `getActorType` 0x004a6fd0 (2)
   - [ ] `process` 0x004a7070 (65)
@@ -4484,9 +4494,9 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `ctor` 0x004a6fe0 (25)
 - free functions
   - [ ] `factoryFuncElephantGun` 0x004a6fa0 (12)
-  - [ ] `staticInit` 0x004a6f70 (9)
+  - [x] `staticInit` 0x004a6f70 (9)
 
-### `core/emitter.cpp` (14 functions, 1234 instructions, 0 done, 0 partial)
+### `core/emitter.cpp` (14 functions, 1234 instructions, 1 done, 0 partial)
 - class `CEmitter`
   - [ ] `ctor` 0x004a7ca0 (71)
   - [ ] `getActorType` 0x004a7c90 (2)
@@ -4502,9 +4512,9 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `launchFireballAtHero` 0x004a7e80 (144)
 - free functions
   - [ ] `factoryFuncEmitter` 0x004a7c60 (12)
-  - [ ] `staticInit` 0x004a7c30 (9)
+  - [x] `staticInit` 0x004a7c30 (9)
 
-### `core/enemy.cpp` (16 functions, 931 instructions, 0 done, 0 partial)
+### `core/enemy.cpp` (16 functions, 931 instructions, 1 done, 0 partial)
 - class `CEnemy`
   - [ ] `ctor` 0x004a9500 (68)
   - [ ] `archive` 0x004a9660 (93)
@@ -4522,9 +4532,9 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `testAttackLine` 0x004a9930 (61)
   - [ ] `countSameClassAttackingHero` 0x004aa0f0 (45)
 - free functions
-  - [ ] `staticInit` 0x004a94d0 (9)
+  - [x] `staticInit` 0x004a94d0 (9)
 
-### `core/event.cpp` (14 functions, 435 instructions, 0 done, 0 partial)
+### `core/event.cpp` (14 functions, 435 instructions, 0 done, 1 partial)
 - class `CRuleList`
   - [ ] `findFirst` 0x004b1890 (34)
   - [ ] `evaluateAndRun` 0x004b18e0 (24)
@@ -4534,7 +4544,8 @@ functions don't count as done. Sizes are in instructions.
 - class `CEventList`
   - [ ] `ctor` 0x004aaa50 (11)
 - free functions
-  - [ ] `staticInit` 0x004aa260 (4)
+  - [~] `staticInit` 0x004aa260 (4)
+    - deferred: the game's event list, with this constructor
   - [ ] `setEventError` 0x004aa270 (20)
   - [ ] `skipWhitespace` 0x004aa2d0 (8)
   - [ ] `skipWhitespaceIndexed` 0x004aa2f0 (10)
@@ -4545,7 +4556,7 @@ functions don't count as done. Sizes are in instructions.
 
 ## Step 26: Not reached from startup: `core/` (part 4 of 9)
 
-### `core/filmreel.cpp` (25 functions, 588 instructions, 0 done, 0 partial)
+### `core/filmreel.cpp` (25 functions, 588 instructions, 1 done, 0 partial)
 - class `CFilmReel`
   - [ ] `ctor` 0x004be6b0 (37)
   - [ ] `getActorType` 0x004be6a0 (2)
@@ -4564,7 +4575,7 @@ functions don't count as done. Sizes are in instructions.
 - free functions
   - [ ] `factoryFuncFilmReel` 0x004be670 (12)
   - [ ] `factoryFuncFilmProjector` 0x004bea00 (12)
-  - [ ] `staticInit` 0x004be620 (17)
+  - [x] `staticInit` 0x004be620 (17)
 - class `CFilmProjector`
   - [ ] `ctor` 0x004bea40 (55)
   - [ ] `getActorType` 0x004bea30 (2)
@@ -4580,7 +4591,7 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `ctor` 0x00545650 (4)
   - [ ] `dtor` 0x00545670 (3)
 
-### `core/fire.cpp` (72 functions, 3038 instructions, 18 done, 0 partial)
+### `core/fire.cpp` (72 functions, 3038 instructions, 18 done, 1 partial)
 - class `CLightningBolt`
   - [ ] `activateDirectional` 0x004c5680 (34)
   - [x] `ctor` 0x004c9540 (2, compiler-generated)
@@ -4621,7 +4632,8 @@ functions don't count as done. Sizes are in instructions.
   - [x] `dtor` 0x004c9790 (2, compiler-generated)
 - free functions
   - [ ] `allocateBulletHole` 0x004c6c10 (20)
-  - [ ] `staticInit` 0x004bef20 (149)
+  - [~] `staticInit` 0x004bef20 (149)
+    - deferred: the game's fire effect, its five models and its particle pools, with this constructor
   - [ ] `safeAcos` 0x004bf1a0 (30)
   - [ ] `transformWorldToScreen` 0x004c9400 (22)
 - class `CMuzzleFlash`
@@ -4677,15 +4689,15 @@ functions don't count as done. Sizes are in instructions.
 - class `CKeyFramedModelInstance`
   - [x] `dtor` 0x004c97c0 (2, compiler-generated)
 
-### `core/flame.cpp` (4 functions, 61 instructions, 0 done, 0 partial)
+### `core/flame.cpp` (4 functions, 61 instructions, 1 done, 0 partial)
 - class `CFlame`
   - [ ] `hide` 0x004caa70 (3)
   - [ ] `ctor` 0x004c9aa0 (37)
 - free functions
   - [ ] `factoryFuncFlame` 0x004c9a60 (12)
-  - [ ] `staticInit` 0x004c9a30 (9)
+  - [x] `staticInit` 0x004c9a30 (9)
 
-### `core/flamecan.cpp` (13 functions, 455 instructions, 0 done, 0 partial)
+### `core/flamecan.cpp` (13 functions, 455 instructions, 1 done, 0 partial)
 - class `CFlameCan`
   - [ ] `ctor` 0x004cb160 (44)
   - [ ] `getActorType` 0x004cb150 (2)
@@ -4700,9 +4712,9 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `setup` 0x004cb200 (87)
 - free functions
   - [ ] `factoryFuncFlameCan` 0x004cb120 (12)
-  - [ ] `staticInit` 0x004cb0f0 (9)
+  - [x] `staticInit` 0x004cb0f0 (9)
 
-### `core/flamegun.cpp` (9 functions, 207 instructions, 0 done, 0 partial)
+### `core/flamegun.cpp` (9 functions, 207 instructions, 1 done, 0 partial)
 - class `CFlameThrower`
   - [ ] `getActorType` 0x004cb870 (2)
   - [ ] `fire` 0x004cb920 (46)
@@ -4713,9 +4725,9 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `ctor` 0x004cb880 (27)
 - free functions
   - [ ] `factoryFuncFlameThrower` 0x004cb840 (12)
-  - [ ] `staticInit` 0x004cb810 (9)
+  - [x] `staticInit` 0x004cb810 (9)
 
-### `core/flashlit.cpp` (7 functions, 83 instructions, 0 done, 0 partial)
+### `core/flashlit.cpp` (7 functions, 83 instructions, 1 done, 0 partial)
 - class `CFlashlight`
   - [ ] `getActorType` 0x004cbbb0 (2)
   - [ ] `fire` 0x004cbc40 (2)
@@ -4724,16 +4736,17 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `ctor` 0x004cbbc0 (24)
 - free functions
   - [ ] `factoryFuncFlashlight` 0x004cbb80 (12)
-  - [ ] `staticInit` 0x004cbb50 (9)
+  - [x] `staticInit` 0x004cbb50 (9)
 
-### `core/flattn.cpp` (1 functions, 12 instructions, 0 done, 0 partial)
+### `core/flattn.cpp` (1 functions, 12 instructions, 0 done, 1 partial)
 - free functions
-  - [ ] `staticInit` 0x004cbcb0 (12)
+  - [~] `staticInit` 0x004cbcb0 (12)
+    - deferred: the fast square root's half of 1.0's bits, with its first reader
 
-### `core/flies.cpp` (13 functions, 1038 instructions, 0 done, 0 partial)
+### `core/flies.cpp` (13 functions, 1038 instructions, 1 done, 0 partial)
 - free functions
   - [ ] `factoryFuncFlies` 0x004cbd20 (12)
-  - [ ] `staticInit` 0x004cbcf0 (9)
+  - [x] `staticInit` 0x004cbcf0 (9)
   - [ ] `drawFlyPixel` 0x004cc230 (48)
 - class `CFlies`
   - [ ] `getActorType` 0x004cbd50 (2)
@@ -4747,7 +4760,7 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `dtor` 0x004cccb0 (37)
   - [ ] `setup` 0x004cbe20 (22)
 
-### `core/frankgen.cpp` (19 functions, 1037 instructions, 0 done, 0 partial)
+### `core/frankgen.cpp` (19 functions, 1037 instructions, 1 done, 0 partial)
 - class `CFrankenstienMachine`
   - [ ] `ctor` 0x004d1720 (23)
   - [ ] `getActorType` 0x004d1710 (2)
@@ -4765,12 +4778,12 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `setup` 0x004d17b0 (160)
 - free functions
   - [ ] `factoryFuncFrankenstienMachine` 0x004d16e0 (12)
-  - [ ] `staticInit` 0x004d16b0 (9)
+  - [x] `staticInit` 0x004d16b0 (9)
   - [ ] `findLeader` 0x004d2330 (33)
   - [ ] `getFrameCount` 0x004d2880 (3)
   - [ ] `getActorName` 0x004d2890 (3)
 
-### `core/gabriela.cpp` (34 functions, 5722 instructions, 3 done, 1 partial)
+### `core/gabriela.cpp` (34 functions, 5722 instructions, 4 done, 1 partial)
 - class `CGabriella`
   - [~] `ctor` 0x004d2b20 (50)
     - deferred: loading the model gabriela.dfm, with CDeformableModelInstance::init
@@ -4806,12 +4819,12 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `setup` 0x004d2c40 (170)
 - free functions
   - [x] `factoryFuncGabriella` 0x004d2ae0 (12)
-  - [ ] `staticInit` 0x004d2910 (49)
+  - [x] `staticInit` 0x004d2910 (49)
   - [ ] `weaponDrawBlendWeightCallback` 0x004d29f0 (20)
   - [ ] `flashlightBlendWeightCallback` 0x004d2a30 (28)
   - [ ] `aimRotationBlendWeightCallback` 0x004d2a80 (30)
 
-### `core/game.cpp` (19 functions, 959 instructions, 1 done, 0 partial)
+### `core/game.cpp` (19 functions, 959 instructions, 1 done, 1 partial)
 - class `CGame`
   - [ ] `setStatusDisplay` 0x004e0bf0 (79)
   - [ ] `resetWeaponSwitchTimers` 0x004e0bb0 (8)
@@ -4820,7 +4833,8 @@ functions don't count as done. Sizes are in instructions.
   - [x] `dtor` 0x004d7d70 (2, compiler-generated)
   - [ ] `setFudgeTarget` 0x004d8730 (6)
 - free functions
-  - [ ] `staticInit` 0x004d76d0 (21)
+  - [~] `staticInit` 0x004d76d0 (21)
+    - deferred: the scene's 256 by 256 CDemonLight, with CDemonLight's constructor
   - [ ] `setupMovieRecording` 0x004d7730 (72)
   - [ ] `captureDebugMovieFrame` 0x004d7810 (224)
   - [ ] `drawHealthBar` 0x004d7fa0 (62)
@@ -4834,7 +4848,7 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `checkCheatAndGiveWeapon` 0x004dd9d0 (70)
   - [ ] `joinNetworkGame` 0x004e2fc0 (72)
 
-### `core/gargoyle.cpp` (14 functions, 1690 instructions, 0 done, 0 partial)
+### `core/gargoyle.cpp` (14 functions, 1690 instructions, 1 done, 0 partial)
 - class `CGargoyle`
   - [ ] `ctor` 0x004e44e0 (37)
   - [ ] `getActorType` 0x004e44d0 (2)
@@ -4850,12 +4864,12 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `setup` 0x004e45e0 (199)
 - free functions
   - [ ] `factoryFuncGargoyle` 0x004e44a0 (12)
-  - [ ] `staticInit` 0x004e4470 (9)
+  - [x] `staticInit` 0x004e4470 (9)
 
-### `core/gasmask.cpp` (11 functions, 161 instructions, 0 done, 0 partial)
+### `core/gasmask.cpp` (11 functions, 161 instructions, 1 done, 0 partial)
 - free functions
   - [ ] `factoryFuncGasMask` 0x004e5cc0 (12)
-  - [ ] `staticInit` 0x004e5c90 (9)
+  - [x] `staticInit` 0x004e5c90 (9)
 - class `CGasMask`
   - [ ] `getActorType` 0x004e5cf0 (2)
   - [ ] `canPickup` 0x004e5d70 (10)
@@ -4867,7 +4881,7 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `dtor` 0x004e5f40 (31)
   - [ ] `setup` 0x004e5d50 (10)
 
-### `core/ghoul.cpp` (15 functions, 3297 instructions, 0 done, 0 partial)
+### `core/ghoul.cpp` (15 functions, 3297 instructions, 1 done, 0 partial)
 - class `CGhoul`
   - [ ] `ctor` 0x004e6030 (56)
   - [ ] `getActorType` 0x004e6020 (2)
@@ -4884,9 +4898,9 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `setup` 0x004e6160 (163)
 - free functions
   - [ ] `factoryFuncGhoul` 0x004e5ff0 (12)
-  - [ ] `staticInit` 0x004e5f90 (20)
+  - [x] `staticInit` 0x004e5f90 (20)
 
-### `core/glass.cpp` (15 functions, 1227 instructions, 0 done, 0 partial)
+### `core/glass.cpp` (15 functions, 1227 instructions, 1 done, 0 partial)
 - class `CGlass`
   - [ ] `ctor` 0x004e9040 (77)
   - [ ] `getActorType` 0x004e9030 (2)
@@ -4903,9 +4917,9 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `setup` 0x004e9180 (486)
 - free functions
   - [ ] `factoryFuncGlass` 0x004e9000 (12)
-  - [ ] `staticInit` 0x004e8fd0 (9)
+  - [x] `staticInit` 0x004e8fd0 (9)
 
-### `core/gore.cpp` (14 functions, 163 instructions, 5 done, 0 partial)
+### `core/gore.cpp` (14 functions, 163 instructions, 5 done, 1 partial)
 - class `CBloodPool`
   - [ ] `init` 0x004ed0d0 (44)
   - [x] `ctor` 0x004ee3b0 (2, compiler-generated)
@@ -4916,7 +4930,8 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `ctor` 0x004ed730 (8)
   - [x] `dtor` 0x004ed750 (2, compiler-generated)
 - free functions
-  - [ ] `staticInit` 0x004eb8c0 (33)
+  - [~] `staticInit` 0x004eb8c0 (33)
+    - deferred: the game's gore and its blood, splat, pool and footstep arrays, with this constructor
 - class `CFootstep`
   - [ ] `ctor` 0x004ee370 (9)
   - [ ] `dtor` 0x004ee390 (8)
@@ -4927,7 +4942,7 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `ctor` 0x004ee3f0 (6)
   - [ ] `dtor` 0x004ee410 (6)
 
-### `core/grave.cpp` (13 functions, 403 instructions, 0 done, 0 partial)
+### `core/grave.cpp` (13 functions, 403 instructions, 1 done, 0 partial)
 - class `CGrave`
   - [ ] `ctor` 0x004ee510 (26)
   - [ ] `getActorType` 0x004ee500 (2)
@@ -4942,21 +4957,21 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `setup` 0x004ee5a0 (10)
 - free functions
   - [ ] `factoryFuncGrave` 0x004ee4d0 (12)
-  - [ ] `staticInit` 0x004ee4a0 (9)
+  - [x] `staticInit` 0x004ee4a0 (9)
 
 ## Step 27: Not reached from startup: `core/` (part 5 of 9)
 
-### `core/ground.cpp` (5 functions, 378 instructions, 2 done, 1 partial)
+### `core/ground.cpp` (5 functions, 378 instructions, 3 done, 1 partial)
 - class `CGround`
   - [~] `ctor` 0x004eee80 (23)
     - deferred: the 30 by 30 grid render draws and the scales it draws at, with render
   - [x] `dtor` 0x004eeee0 (8)
   - [ ] `getNormalAtPosition` 0x004effb0 (248)
 - free functions
-  - [ ] `staticInit` 0x004eeb90 (9)
+  - [x] `staticInit` 0x004eeb90 (9)
   - [x] `openFileWithExtension` 0x004eebc0 (90)
 
-### `core/gun.cpp` (7 functions, 583 instructions, 0 done, 0 partial)
+### `core/gun.cpp` (7 functions, 583 instructions, 1 done, 0 partial)
 - class `CGun`
   - [ ] `getActorType` 0x004f02e0 (2)
   - [ ] `fire` 0x004f0350 (498)
@@ -4965,9 +4980,9 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `ctor` 0x004f02f0 (20)
 - free functions
   - [ ] `factoryFuncGun` 0x004f02b0 (12)
-  - [ ] `staticInit` 0x004f0280 (9)
+  - [x] `staticInit` 0x004f0280 (9)
 
-### `core/haystack.cpp` (15 functions, 1231 instructions, 3 done, 1 partial)
+### `core/haystack.cpp` (15 functions, 1231 instructions, 4 done, 1 partial)
 - class `CHaystack`
   - [~] `ctor` 0x004f0c10 (24)
     - deferred: loading the model haystack.dfm, with CDeformableModelInstance::init
@@ -4986,9 +5001,9 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `setup` 0x004f0c80 (117)
 - free functions
   - [x] `factoryFuncHaystack` 0x004f0bd0 (12)
-  - [ ] `staticInit` 0x004f0ba0 (9)
+  - [x] `staticInit` 0x004f0ba0 (9)
 
-### `core/health.cpp` (14 functions, 221 instructions, 0 done, 0 partial)
+### `core/health.cpp` (14 functions, 221 instructions, 1 done, 0 partial)
 - class `CHealthItem`
   - [ ] `ctor` 0x004f1dd0 (21)
   - [ ] `getActorType` 0x004f1dc0 (2)
@@ -5004,14 +5019,14 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `useItem` 0x004f1fd0 (15)
 - free functions
   - [ ] `factoryFuncHealthItem` 0x004f1d90 (12)
-  - [ ] `staticInit` 0x004f1d60 (9)
+  - [x] `staticInit` 0x004f1d60 (9)
 
-### `core/hero.cpp` (35 functions, 2025 instructions, 2 done, 1 partial)
+### `core/hero.cpp` (35 functions, 2025 instructions, 3 done, 1 partial)
 - free functions
   - [ ] `isAnyHeroWithinCylinder` 0x004f22a0 (63)
   - [ ] `closestHeroToPoint` 0x004f2170 (66)
   - [x] `factoryFuncHeroPlaceholder` 0x004f3bc0 (12)
-  - [ ] `staticInit` 0x004f2120 (17)
+  - [x] `staticInit` 0x004f2120 (17)
 - class `CHero`
   - [ ] `createDefaultWeapon` 0x004f2a30 (59)
   - [~] `ctor` 0x004f2340 (48)
@@ -5047,7 +5062,7 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `findItemUseTarget` 0x004f35b0 (143)
   - [ ] `tryUseSelectedItem` 0x004f3760 (49)
 
-### `core/hiram.cpp` (8 functions, 247 instructions, 0 done, 0 partial)
+### `core/hiram.cpp` (8 functions, 247 instructions, 1 done, 0 partial)
 - class `CHiram`
   - [ ] `ctor` 0x004f43f0 (33)
   - [ ] `getActorType` 0x004f43e0 (2)
@@ -5057,9 +5072,9 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `setup` 0x004f4530 (7)
 - free functions
   - [ ] `factoryFuncHiram` 0x004f43b0 (12)
-  - [ ] `staticInit` 0x004f4380 (9)
+  - [x] `staticInit` 0x004f4380 (9)
 
-### `core/hostage.cpp` (16 functions, 2322 instructions, 0 done, 0 partial)
+### `core/hostage.cpp` (16 functions, 2322 instructions, 1 done, 0 partial)
 - class `CHostage`
   - [ ] `ctor` 0x004f4840 (56)
   - [ ] `getActorType` 0x004f4830 (2)
@@ -5077,9 +5092,9 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `setup` 0x004f4970 (128)
 - free functions
   - [ ] `factoryFuncHostage` 0x004f4800 (12)
-  - [ ] `staticInit` 0x004f47d0 (9)
+  - [x] `staticInit` 0x004f47d0 (9)
 
-### `core/hotdemon.cpp` (12 functions, 1060 instructions, 0 done, 0 partial)
+### `core/hotdemon.cpp` (12 functions, 1060 instructions, 1 done, 0 partial)
 - class `CHotDemon`
   - [ ] `ctor` 0x004f6ca0 (22)
   - [ ] `getActorType` 0x004f6c90 (2)
@@ -5093,9 +5108,9 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `setup` 0x004f6d00 (137)
 - free functions
   - [ ] `factoryFuncHotDemon` 0x004f6c60 (12)
-  - [ ] `staticInit` 0x004f6c30 (9)
+  - [x] `staticInit` 0x004f6c30 (9)
 
-### `core/hpriest.cpp` (8 functions, 162 instructions, 0 done, 0 partial)
+### `core/hpriest.cpp` (8 functions, 162 instructions, 1 done, 0 partial)
 - class `CHighPriestOfGardath`
   - [ ] `getActorType` 0x004f7b60 (2)
   - [ ] `archive` 0x004f7bd0 (11)
@@ -5105,9 +5120,9 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `ctor` 0x004f7b70 (33)
 - free functions
   - [ ] `factoryFuncHighPriestOfGardath` 0x004f7b30 (12)
-  - [ ] `staticInit` 0x004f7b00 (9)
+  - [x] `staticInit` 0x004f7b00 (9)
 
-### `core/icepick.cpp` (19 functions, 1820 instructions, 3 done, 1 partial)
+### `core/icepick.cpp` (19 functions, 1820 instructions, 4 done, 1 partial)
 - class `CIcePick`
   - [~] `ctor` 0x004f7df0 (27)
     - deferred: loading the model icepick.dfm, with CDeformableModelInstance::init
@@ -5130,9 +5145,9 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `setup` 0x004f7e80 (139)
 - free functions
   - [x] `factoryFuncIcePick` 0x004f7db0 (12)
-  - [ ] `staticInit` 0x004f7d80 (9)
+  - [x] `staticInit` 0x004f7d80 (9)
 
-### `core/imp.cpp` (15 functions, 1886 instructions, 0 done, 0 partial)
+### `core/imp.cpp` (15 functions, 1886 instructions, 1 done, 0 partial)
 - class `CImp`
   - [ ] `ctor` 0x004f98a0 (23)
   - [ ] `getActorType` 0x004f9890 (2)
@@ -5148,10 +5163,10 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `setup` 0x004f9910 (210)
 - free functions
   - [ ] `factoryFuncImp` 0x004f9860 (12)
-  - [ ] `staticInit` 0x004f9830 (9)
+  - [x] `staticInit` 0x004f9830 (9)
   - [ ] `setVector` 0x004fa900 (8)
 
-### `core/inv.cpp` (13 functions, 1155 instructions, 0 done, 0 partial)
+### `core/inv.cpp` (13 functions, 1155 instructions, 0 done, 1 partial)
 - class `CInventory`
   - [ ] `ctor` 0x004fd020 (18)
   - [ ] `save` 0x004ff210 (133)
@@ -5166,9 +5181,10 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `getActiveLightGun` 0x004ffab0 (11)
   - [ ] `autoUseHealthItem` 0x00501570 (67)
 - free functions
-  - [ ] `staticInit` 0x004fcc30 (85)
+  - [~] `staticInit` 0x004fcc30 (85)
+    - deferred: the inventory's 14 bitmaps, with this constructor
 
-### `core/keyactor.cpp` (13 functions, 252 instructions, 0 done, 0 partial)
+### `core/keyactor.cpp` (13 functions, 252 instructions, 1 done, 0 partial)
 - class `CKeyActor`
   - [ ] `ctor` 0x00501690 (21)
   - [ ] `getActorType` 0x00501680 (2)
@@ -5183,9 +5199,9 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `setup` 0x005016f0 (10)
 - free functions
   - [ ] `factoryFuncKeyActor` 0x00501650 (12)
-  - [ ] `staticInit` 0x00501620 (9)
+  - [x] `staticInit` 0x00501620 (9)
 
-### `core/ladder.cpp` (14 functions, 791 instructions, 0 done, 0 partial)
+### `core/ladder.cpp` (14 functions, 791 instructions, 1 done, 0 partial)
 - class `CLadder`
   - [ ] `ctor` 0x00502540 (36)
   - [ ] `getActorType` 0x00502530 (2)
@@ -5201,9 +5217,9 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `setup` 0x005025f0 (10)
 - free functions
   - [ ] `factoryFuncLadder` 0x00502500 (12)
-  - [ ] `staticInit` 0x005024d0 (9)
+  - [x] `staticInit` 0x005024d0 (9)
 
-### `core/larva.cpp` (10 functions, 1014 instructions, 0 done, 0 partial)
+### `core/larva.cpp` (10 functions, 1014 instructions, 1 done, 0 partial)
 - class `CLarva`
   - [ ] `ctor` 0x00502f90 (26)
   - [ ] `getActorType` 0x00502f80 (2)
@@ -5215,7 +5231,7 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `setup` 0x00503020 (26)
 - free functions
   - [ ] `factoryFuncLarva` 0x00502f50 (12)
-  - [ ] `staticInit` 0x00502f20 (9)
+  - [x] `staticInit` 0x00502f20 (9)
 
 ### `core/level.cpp` (2 functions, 13 instructions, 1 done, 0 partial)
 - class `CLevelLoader`
@@ -5223,7 +5239,7 @@ functions don't count as done. Sizes are in instructions.
 - free functions
   - [x] `staticInit` 0x00503d80 (10)
 
-### `core/lever.cpp` (14 functions, 639 instructions, 0 done, 0 partial)
+### `core/lever.cpp` (14 functions, 639 instructions, 1 done, 0 partial)
 - class `CLever`
   - [ ] `isAccessibleFrom` 0x00505080 (56)
   - [ ] `activate` 0x00504c90 (34)
@@ -5239,9 +5255,9 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `getHandlePosition` 0x00504dd0 (56)
 - free functions
   - [ ] `factoryFuncLever` 0x00504790 (12)
-  - [ ] `staticInit` 0x00504760 (9)
+  - [x] `staticInit` 0x00504760 (9)
 
-### `core/lightgun.cpp` (13 functions, 1262 instructions, 0 done, 0 partial)
+### `core/lightgun.cpp` (13 functions, 1262 instructions, 1 done, 0 partial)
 - class `CLightGun`
   - [ ] `getActorType` 0x005058f0 (2)
   - [ ] `updateBeamLight` 0x00505ac0 (48)
@@ -5256,9 +5272,9 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `canSeeTarget` 0x00505b70 (91)
 - free functions
   - [ ] `factoryFuncLightGun` 0x005058c0 (12)
-  - [ ] `staticInit` 0x00505890 (9)
+  - [x] `staticInit` 0x00505890 (9)
 
-### `core/litecone.cpp` (11 functions, 243 instructions, 0 done, 0 partial)
+### `core/litecone.cpp` (11 functions, 243 instructions, 1 done, 0 partial)
 - class `CLightCone`
   - [ ] `ctor` 0x00506b10 (44)
   - [ ] `getActorType` 0x00506b00 (2)
@@ -5271,7 +5287,7 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `setup` 0x00506bb0 (5)
 - free functions
   - [ ] `factoryFuncLightCone` 0x00506ad0 (12)
-  - [ ] `staticInit` 0x00506aa0 (9)
+  - [x] `staticInit` 0x00506aa0 (9)
 
 ### `core/main.c` (3 functions, 261 instructions, 0 done, 0 partial)
 - free functions
@@ -5279,7 +5295,7 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `waitWithSkip` 0x005082a0 (61)
   - [ ] `showPromoScreen` 0x00508340 (167)
 
-### `core/manpuz.cpp` (47 functions, 3345 instructions, 0 done, 0 partial)
+### `core/manpuz.cpp` (47 functions, 3345 instructions, 1 done, 0 partial)
 - class `CMansionPuzzleCircle`
   - [ ] `getPanelColor` 0x0050a420 (35)
   - [ ] `initPuzzleState` 0x005098f0 (93)
@@ -5313,7 +5329,7 @@ functions don't count as done. Sizes are in instructions.
 - free functions
   - [ ] `factoryFuncMansionPuzzleCircle` 0x005088e0 (12)
   - [ ] `factoryFuncMirrorHack` 0x0050b0d0 (12)
-  - [ ] `staticInit` 0x00508890 (17)
+  - [x] `staticInit` 0x00508890 (17)
   - [ ] `updateGemHumChannel` 0x0050a4f0 (114)
   - [ ] `copyPanel` 0x0050b9a0 (73)
 - class `CMirrorHack`
@@ -5333,7 +5349,7 @@ functions don't count as done. Sizes are in instructions.
 
 ## Step 28: Not reached from startup: `core/` (part 6 of 9)
 
-### `core/marquee.cpp` (14 functions, 729 instructions, 0 done, 0 partial)
+### `core/marquee.cpp` (14 functions, 729 instructions, 1 done, 0 partial)
 - class `CMarquee`
   - [ ] `ctor` 0x0050bb60 (41)
   - [ ] `getActorType` 0x0050bb50 (2)
@@ -5349,9 +5365,9 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `setup` 0x0050bd60 (17)
 - free functions
   - [ ] `factoryFuncMarquee` 0x0050bb20 (12)
-  - [ ] `staticInit` 0x0050baf0 (9)
+  - [x] `staticInit` 0x0050baf0 (9)
 
-### `core/melee.cpp` (16 functions, 391 instructions, 0 done, 0 partial)
+### `core/melee.cpp` (16 functions, 391 instructions, 1 done, 0 partial)
 - class `CMelee`
   - [ ] `getActorType` 0x0050e7c0 (2)
   - [ ] `archive` 0x0050e920 (73)
@@ -5369,7 +5385,7 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `ctor` 0x0050e7d0 (78)
 - free functions
   - [ ] `factoryFuncMelee` 0x0050e790 (12)
-  - [ ] `staticInit` 0x0050e760 (9)
+  - [x] `staticInit` 0x0050e760 (9)
 
 ### `core/menu.cpp` (6 functions, 588 instructions, 1 done, 1 partial)
 - free functions
@@ -5387,7 +5403,7 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `addCustomKeyBinding` 0x00513460 (40)
   - [ ] `getSinglePressedKey` 0x00513860 (40)
 
-### `core/mimic.cpp` (20 functions, 2300 instructions, 0 done, 0 partial)
+### `core/mimic.cpp` (20 functions, 2300 instructions, 1 done, 0 partial)
 - class `CMimic`
   - [ ] `ctor` 0x0051f1d0 (50)
   - [ ] `getActorType` 0x0051f1c0 (2)
@@ -5408,13 +5424,13 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `setup` 0x0051f3e0 (302)
 - free functions
   - [ ] `factoryFuncMimic` 0x0051f190 (12)
-  - [ ] `staticInit` 0x0051f100 (9)
+  - [x] `staticInit` 0x0051f100 (9)
   - [ ] `mirrorXTransform` 0x0051f130 (23)
 
-### `core/minecar.cpp` (7 functions, 109 instructions, 0 done, 0 partial)
+### `core/minecar.cpp` (7 functions, 109 instructions, 1 done, 0 partial)
 - free functions
   - [ ] `factoryFuncMineCar` 0x00520e50 (13)
-  - [ ] `staticInit` 0x00520e20 (9)
+  - [x] `staticInit` 0x00520e20 (9)
 - class `CMineCar`
   - [ ] `getActorType` 0x00520e80 (2)
   - [ ] `process` 0x00520eb0 (35)
@@ -5422,7 +5438,7 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `setup` 0x00520e90 (7)
   - [ ] `ctor` 0x00520f20 (6)
 
-### `core/mirror.cpp` (7 functions, 251 instructions, 0 done, 0 partial)
+### `core/mirror.cpp` (7 functions, 251 instructions, 0 done, 1 partial)
 - class `CMirror`
   - [ ] `renderMirroredPrimitive` 0x005225e0 (35)
   - [ ] `ctor` 0x005213c0 (9)
@@ -5431,9 +5447,10 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `renderReflectedPrimitive` 0x005225a0 (19)
   - [ ] `renderMirrorQuad` 0x00522670 (117)
 - free functions
-  - [ ] `staticInit` 0x00520fb0 (11)
+  - [~] `staticInit` 0x00520fb0 (11)
+    - deferred: the reflection clipper's 32-vertex buffers, with reflectAndClipPrimitive
 
-### `core/mission.cpp` (8 functions, 153 instructions, 2 done, 0 partial)
+### `core/mission.cpp` (8 functions, 153 instructions, 3 done, 0 partial)
 - class `CDemonMission`
   - [ ] `getNextLoadedInventoryActor` 0x00523520 (41)
   - [ ] `save` 0x00522e30 (38)
@@ -5442,10 +5459,10 @@ functions don't count as done. Sizes are in instructions.
   - [x] `ctor` 0x00524ef0 (2, compiler-generated)
   - [x] `dtor` 0x00524f00 (2, compiler-generated)
 - free functions
-  - [ ] `staticInit` 0x00522c50 (1)
+  - [x] `staticInit` 0x00522c50 (1, compiler-generated)
   - [ ] `skipLine` 0x00522c60 (11)
 
-### `core/mobster.cpp` (23 functions, 3180 instructions, 0 done, 0 partial)
+### `core/mobster.cpp` (23 functions, 3180 instructions, 1 done, 0 partial)
 - class `CMobster`
   - [ ] `ctor` 0x00525200 (64)
   - [ ] `getActorType` 0x005251f0 (2)
@@ -5467,12 +5484,12 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `setup` 0x00525340 (210)
 - free functions
   - [ ] `factoryFuncMobster` 0x005251c0 (12)
-  - [ ] `staticInit` 0x00525070 (9)
+  - [x] `staticInit` 0x00525070 (9)
   - [ ] `getObjectGrabPointLocal` 0x005250a0 (38)
   - [ ] `getObjectGrabPointWorld` 0x00525110 (60)
   - [ ] `setEulerAngles` 0x00526b00 (8)
 
-### `core/moloch.cpp` (13 functions, 1031 instructions, 3 done, 1 partial)
+### `core/moloch.cpp` (13 functions, 1031 instructions, 4 done, 1 partial)
 - class `CMoloch`
   - [~] `ctor` 0x00528b30 (58)
     - deferred: loading the human model moloch_h.dfm, with CDeformableModelInstance::init
@@ -5489,7 +5506,7 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `setup` 0x00528c70 (53)
 - free functions
   - [x] `factoryFuncMoloch` 0x00528af0 (12)
-  - [ ] `staticInit` 0x00528ac0 (9)
+  - [x] `staticInit` 0x00528ac0 (9)
 
 ### `core/moon.cpp` (3 functions, 56 instructions, 3 done, 0 partial)
 - class `CMoon`
@@ -5564,7 +5581,7 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `ctor` 0x0052cd50 (4)
   - [ ] `save` 0x0052d170 (248)
 
-### `core/netgame.cpp` (35 functions, 1904 instructions, 0 done, 2 partial)
+### `core/netgame.cpp` (35 functions, 1904 instructions, 0 done, 3 partial)
 - class `CNetGame`
   - [ ] `flushIncomingPackets` 0x00540550 (35)
   - [ ] `initializeNetwork` 0x0053fbc0 (107)
@@ -5588,7 +5605,9 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `setMode12` 0x00543b90 (4)
   - [ ] `setMode13` 0x00543ba0 (4)
 - free functions
-  - [ ] `staticInit` 0x0053f310 (16)
+  - [~] `staticInit` 0x0053f310 (16)
+    - deferred: the 400 chat history entries, with CNetGame::addChatHistory
+    - deferred: the receive packet's header, size 0x405 and PACKET_NONE, with CNetGame::receivePackets
   - [ ] `resetGameTime` 0x0053f360 (8)
   - [ ] `updateGameTime` 0x0053f390 (19)
   - [ ] `computeTimeDelta` 0x0053f3e0 (31)
@@ -5606,7 +5625,7 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `copyPlayerInput` 0x00543db0 (25)
   - [ ] `copyNetAddr` 0x00543e00 (7)
 
-### `core/npc.cpp` (13 functions, 589 instructions, 0 done, 0 partial)
+### `core/npc.cpp` (13 functions, 589 instructions, 1 done, 0 partial)
 - class `CNPC`
   - [ ] `ctor` 0x005447e0 (26)
   - [ ] `archive` 0x00544ba0 (51)
@@ -5621,9 +5640,9 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `setup` 0x00544870 (21)
 - free functions
   - [ ] `factoryFuncNPC` 0x005447a0 (12)
-  - [ ] `staticInit` 0x00544770 (9)
+  - [x] `staticInit` 0x00544770 (9)
 
-### `core/passngr.cpp` (9 functions, 601 instructions, 0 done, 0 partial)
+### `core/passngr.cpp` (9 functions, 601 instructions, 1 done, 0 partial)
 - class `CPassenger`
   - [ ] `ctor` 0x00545b30 (68)
   - [ ] `getActorType` 0x00545b20 (2)
@@ -5634,7 +5653,7 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `setup` 0x00545d30 (131)
 - free functions
   - [ ] `factoryFuncPassenger` 0x00545af0 (12)
-  - [ ] `staticInit` 0x00545ac0 (9)
+  - [x] `staticInit` 0x00545ac0 (9)
 
 ### `core/path.cpp` (20 functions, 2841 instructions, 0 done, 0 partial)
 - class `CPathMap`
@@ -5660,7 +5679,7 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `renderAllPathMaps` 0x005485f0 (44)
   - [ ] `renderPathMapsAtPosition` 0x00548680 (73)
 
-### `core/pendulum.cpp` (15 functions, 1407 instructions, 0 done, 0 partial)
+### `core/pendulum.cpp` (15 functions, 1407 instructions, 1 done, 0 partial)
 - class `CPendulum`
   - [ ] `ctor` 0x00549390 (64)
   - [ ] `getActorType` 0x00549380 (2)
@@ -5676,10 +5695,10 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `setup` 0x005494a0 (85)
 - free functions
   - [ ] `factoryFuncPendulum` 0x00549350 (12)
-  - [ ] `staticInit` 0x00549320 (9)
+  - [x] `staticInit` 0x00549320 (9)
   - [ ] `didPhaseCross` 0x00549aa0 (73)
 
-### `core/platfrm.cpp` (18 functions, 1935 instructions, 0 done, 0 partial)
+### `core/platfrm.cpp` (18 functions, 1935 instructions, 1 done, 0 partial)
 - class `CPlatform`
   - [ ] `ctor` 0x0054c850 (115)
   - [ ] `archive` 0x0054dbc0 (251)
@@ -5699,11 +5718,11 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `onActorDeleted` 0x0054e2e0 (15)
 - free functions
   - [ ] `factoryFuncPlatform` 0x0054c810 (12)
-  - [ ] `staticInit` 0x0054c7e0 (9)
+  - [x] `staticInit` 0x0054c7e0 (9)
 
 ## Step 29: Not reached from startup: `core/` (part 7 of 9)
 
-### `core/scat.cpp` (22 functions, 2672 instructions, 3 done, 1 partial)
+### `core/scat.cpp` (22 functions, 2672 instructions, 4 done, 1 partial)
 - class `CScat`
   - [ ] `createDefaultWeapon` 0x00557150 (41)
   - [~] `ctor` 0x00556ed0 (46)
@@ -5731,16 +5750,18 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `setup` 0x00556f90 (129)
 - free functions
   - [x] `factoryFuncScat` 0x00556e90 (12)
-  - [ ] `staticInit` 0x00556e00 (9)
+  - [x] `staticInit` 0x00556e00 (9)
 
-### `core/script.cpp` (3 functions, 52 instructions, 2 done, 0 partial)
+### `core/script.cpp` (3 functions, 52 instructions, 2 done, 1 partial)
 - class `CScript`
   - [x] `ctor` 0x005597f0 (14)
   - [x] `dtor` 0x00559840 (13)
 - free functions
-  - [ ] `staticInit` 0x005591b0 (25)
+  - [~] `staticInit` 0x005591b0 (25)
+    - deferred: the game's script, with the main loop that runs it
+    - deferred: the script editor's pick list and two scroll bars, with the script editor
 
-### `core/sentinel.cpp` (12 functions, 1373 instructions, 0 done, 0 partial)
+### `core/sentinel.cpp` (12 functions, 1373 instructions, 1 done, 0 partial)
 - class `CSentinel`
   - [ ] `ctor` 0x00567db0 (23)
   - [ ] `getActorType` 0x00567da0 (2)
@@ -5754,9 +5775,9 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `setup` 0x00567e20 (126)
 - free functions
   - [ ] `factoryFuncSentinel` 0x00567d70 (12)
-  - [ ] `staticInit` 0x00567d40 (9)
+  - [x] `staticInit` 0x00567d40 (9)
 
-### `core/set.cpp` (15 functions, 1251 instructions, 2 done, 0 partial)
+### `core/set.cpp` (15 functions, 1251 instructions, 2 done, 1 partial)
 - class `CDemonSet`
   - [ ] `renderEnvMapTriangles` 0x005702b0 (289)
   - [ ] `renderFaceListOrEnvMap` 0x00570870 (42)
@@ -5769,7 +5790,9 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `renderFaceBatchOrEnvMap` 0x00570700 (42)
   - [ ] `renderSinglePrimitive` 0x00570df0 (17)
 - free functions
-  - [ ] `staticInit` 0x00569040 (30)
+  - [~] `staticInit` 0x00569040 (30)
+    - deferred: the camera, with CDemonCamera's constructor
+    - deferred: the 4000 face normals, with lightVerticies' face lists
   - [ ] `computeTriangleNormal` 0x0056e180 (104)
   - [ ] `computeTriangleNormalIndexed` 0x0056e2b0 (108)
 - class `C3DSLight`
@@ -5777,7 +5800,7 @@ functions don't count as done. Sizes are in instructions.
 - class `CBoundingBox3D`
   - [x] `assign` 0x005714c0 (29, compiler-generated)
 
-### `core/setcolid.cpp` (14 functions, 1616 instructions, 0 done, 0 partial)
+### `core/setcolid.cpp` (14 functions, 1616 instructions, 0 done, 1 partial)
 - class `CDemonSet`
   - [ ] `testVoxelRaycast` 0x00572510 (8)
   - [ ] `testOBBCylinderCollision` 0x00573140 (248)
@@ -5790,14 +5813,16 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `refinedRaycast` 0x005726c0 (94)
   - [ ] `iterativeRaycast` 0x00572800 (167)
 - free functions
-  - [ ] `staticInit` 0x005715b0 (6)
+  - [~] `staticInit` 0x005715b0 (6)
+    - deferred: the five-deep raytrace state stack, with this
   - [ ] `rayTestQuadFloor` 0x005715d0 (83)
   - [ ] `intersectXZCylinder` 0x00572e80 (192)
   - [ ] `testCylinderQuadCollision` 0x005730d0 (41)
 
-### `core/setdir.cpp` (4 functions, 329 instructions, 0 done, 0 partial)
+### `core/setdir.cpp` (4 functions, 329 instructions, 0 done, 1 partial)
 - free functions
-  - [ ] `staticInit` 0x00574790 (14)
+  - [~] `staticInit` 0x00574790 (14)
+    - deferred: the pool of 1500 thumbs and the 2000 nearby actors' boxes, with this
   - [ ] `testCameraVisibility` 0x005750a0 (112)
 - class `CZThumb`
   - [ ] `saveZBufferTable` 0x00574910 (159)
@@ -5817,7 +5842,7 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `generateSphereVertex` 0x00587a40 (73)
   - [ ] `calculateVertexIndex` 0x00587b30 (7)
 
-### `core/shotgun.cpp` (10 functions, 882 instructions, 0 done, 0 partial)
+### `core/shotgun.cpp` (10 functions, 882 instructions, 1 done, 0 partial)
 - class `CShotgun`
   - [ ] `getActorType` 0x00587ed0 (2)
   - [ ] `process` 0x00587f70 (65)
@@ -5829,9 +5854,9 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `ctor` 0x00587ee0 (25)
 - free functions
   - [ ] `factoryFuncShotgun` 0x00587ea0 (12)
-  - [ ] `staticInit` 0x00587e70 (9)
+  - [x] `staticInit` 0x00587e70 (9)
 
-### `core/shovel.cpp` (8 functions, 91 instructions, 0 done, 0 partial)
+### `core/shovel.cpp` (8 functions, 91 instructions, 1 done, 0 partial)
 - class `CShovel`
   - [ ] `getActorType` 0x00588b90 (2)
   - [ ] `fire` 0x00588c20 (9)
@@ -5841,9 +5866,9 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `ctor` 0x00588ba0 (23)
 - free functions
   - [ ] `factoryFuncShovel` 0x00588b60 (12)
-  - [ ] `staticInit` 0x00588b30 (9)
+  - [x] `staticInit` 0x00588b30 (9)
 
-### `core/simbox.cpp` (11 functions, 457 instructions, 0 done, 0 partial)
+### `core/simbox.cpp` (11 functions, 457 instructions, 1 done, 0 partial)
 - class `CSimBox`
   - [ ] `ctor` 0x00588d40 (55)
   - [ ] `getActorType` 0x00588d30 (2)
@@ -5856,9 +5881,9 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `setup` 0x00588e00 (94)
 - free functions
   - [ ] `factoryFuncSimBox` 0x00588d00 (12)
-  - [ ] `staticInit` 0x00588cd0 (9)
+  - [x] `staticInit` 0x00588cd0 (9)
 
-### `core/skeleton.cpp` (88 functions, 8882 instructions, 0 done, 2 partial)
+### `core/skeleton.cpp` (88 functions, 8882 instructions, 0 done, 3 partial)
 - class `CDeformableModelInstance`
   - [ ] `showAllParts` 0x005a0410 (8)
   - [ ] `clearAllTextureSetIndices` 0x005a0430 (8)
@@ -5914,7 +5939,8 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `computeBoneModelMatrices` 0x005a1950 (126)
   - [ ] `loadSkeleton` 0x005a1df0 (57)
   - [ ] `getDeformableModel` 0x005a1cf0 (67)
-  - [ ] `staticInit` 0x00599670 (17)
+  - [~] `staticInit` 0x00599670 (17)
+    - deferred: the pools of 64 deformable models and 40 skeletons, with this and loadSkeleton
   - [ ] `skipToEndOfLine` 0x005996c0 (11)
   - [ ] `distancePointToLineSegment` 0x005996e0 (149)
   - [ ] `getRootMotionDeltaForMotion` 0x005a0f50 (51)
@@ -5954,11 +5980,11 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `renderSkeleton` 0x0059b640 (189)
   - [ ] `renderBones` 0x0059b800 (69)
 
-### `core/slew.cpp` (1 functions, 1 instructions, 0 done, 0 partial)
+### `core/slew.cpp` (1 functions, 1 instructions, 1 done, 0 partial)
 - free functions
-  - [ ] `staticInit` 0x005a2050 (1)
+  - [x] `staticInit` 0x005a2050 (1, compiler-generated)
 
-### `core/smiley.cpp` (14 functions, 1561 instructions, 0 done, 0 partial)
+### `core/smiley.cpp` (14 functions, 1561 instructions, 1 done, 0 partial)
 - class `CSmiley`
   - [ ] `ctor` 0x005a2430 (28)
   - [ ] `getActorType` 0x005a2420 (2)
@@ -5974,11 +6000,12 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `setup` 0x005a24d0 (219)
 - free functions
   - [ ] `factorFunc` 0x005a23f0 (12)
-  - [ ] `staticInit` 0x005a23c0 (9)
+  - [x] `staticInit` 0x005a23c0 (9)
 
-### `core/sound.cpp` (11 functions, 561 instructions, 0 done, 0 partial)
+### `core/sound.cpp` (11 functions, 561 instructions, 0 done, 1 partial)
 - free functions
-  - [ ] `staticInit` 0x005b1760 (15)
+  - [~] `staticInit` 0x005b1760 (15)
+    - deferred: the 10 train noises, with processTrainSounds
   - [ ] `populateSoundFiles` 0x005b17a0 (11)
   - [ ] `filterSoundFilesByPattern` 0x005b17d0 (60)
   - [ ] `resetTrainSounds` 0x005b26f0 (26)
@@ -5991,7 +6018,7 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `getSoundModeName` 0x005b3c70 (10)
   - [ ] `selectReverbPreset` 0x005b3d20 (50)
 
-### `core/spike.cpp` (12 functions, 881 instructions, 0 done, 0 partial)
+### `core/spike.cpp` (12 functions, 881 instructions, 1 done, 0 partial)
 - class `CSpike`
   - [ ] `ctor` 0x005b8220 (89)
   - [ ] `getActorType` 0x005b8210 (2)
@@ -6005,7 +6032,7 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `setup` 0x005b8360 (53)
 - free functions
   - [ ] `factoryFuncSpike` 0x005b81e0 (12)
-  - [ ] `staticInit` 0x005b81b0 (9)
+  - [x] `staticInit` 0x005b81b0 (9)
 
 ### `core/spline.cpp` (7 functions, 424 instructions, 0 done, 0 partial)
 - free functions
@@ -6017,7 +6044,7 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `evaluateSplineTangentScalar` 0x005b93f0 (21)
   - [ ] `evaluateSplineTangentInt` 0x005b9430 (36)
 
-### `core/stairs.cpp` (16 functions, 1242 instructions, 0 done, 0 partial)
+### `core/stairs.cpp` (16 functions, 1242 instructions, 1 done, 0 partial)
 - class `CStairs`
   - [ ] `ctor` 0x005b9b70 (20)
   - [ ] `getActorType` 0x005b9b60 (2)
@@ -6035,9 +6062,9 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `setup` 0x005b9be0 (3)
 - free functions
   - [ ] `factoryFuncStairs` 0x005b9b30 (12)
-  - [ ] `staticInit` 0x005b9b00 (9)
+  - [x] `staticInit` 0x005b9b00 (9)
 
-### `core/stone.cpp` (7 functions, 111 instructions, 0 done, 0 partial)
+### `core/stone.cpp` (7 functions, 111 instructions, 1 done, 0 partial)
 - class `CTempleStone`
   - [ ] `getActorType` 0x005bad00 (2)
   - [ ] `archive` 0x005bad40 (11)
@@ -6046,11 +6073,11 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `ctor` 0x005bad10 (7)
 - free functions
   - [ ] `factoryFuncTempleStone` 0x005bacd0 (12)
-  - [ ] `staticInit` 0x005baca0 (9)
+  - [x] `staticInit` 0x005baca0 (9)
 
 ## Step 30: Not reached from startup: `core/` (part 8 of 9)
 
-### `core/stranger.cpp` (57 functions, 13459 instructions, 3 done, 1 partial)
+### `core/stranger.cpp` (57 functions, 13459 instructions, 4 done, 1 partial)
 - class `CStranger`
   - [~] `ctor` 0x005bb120 (207)
     - deferred: loading the model stranger.dfm, with CDeformableModelInstance::init
@@ -6103,7 +6130,7 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `getCarryLightIntensity` 0x005be430 (26)
 - free functions
   - [x] `factoryFuncStranger` 0x005bb0e0 (12)
-  - [ ] `staticInit` 0x005bae80 (23)
+  - [x] `staticInit` 0x005bae80 (23)
   - [ ] `blendWeightCallback` 0x005baee0 (20)
   - [ ] `canPickupObject` 0x005bafe0 (15)
   - [ ] `getCarriedObjectVerticalOffset` 0x005bb010 (78)
@@ -6115,7 +6142,7 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `setWindVelocity` 0x005c6970 (13)
   - [ ] `getCurrentMotionStateIndex` 0x005c69a0 (7)
 
-### `core/succubus.cpp` (12 functions, 1089 instructions, 0 done, 0 partial)
+### `core/succubus.cpp` (12 functions, 1089 instructions, 1 done, 0 partial)
 - class `CSuccubus`
   - [ ] `ctor` 0x005c6a80 (58)
   - [ ] `getActorType` 0x005c6a70 (2)
@@ -6129,9 +6156,9 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `setup` 0x005c6b60 (234)
 - free functions
   - [ ] `factoryFuncSuccubus` 0x005c6a40 (12)
-  - [ ] `staticInit` 0x005c6a10 (9)
+  - [x] `staticInit` 0x005c6a10 (9)
 
-### `core/svetlana.cpp` (16 functions, 1634 instructions, 3 done, 1 partial)
+### `core/svetlana.cpp` (16 functions, 1634 instructions, 4 done, 1 partial)
 - class `CSvetlana`
   - [~] `ctor` 0x005d8850 (32)
     - deferred: loading the model svetlana.dfm, with CDeformableModelInstance::init
@@ -6151,9 +6178,9 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `setup` 0x005d88e0 (191)
 - free functions
   - [x] `factoryFuncSvetlana` 0x005d8810 (12)
-  - [ ] `staticInit` 0x005d87e0 (9)
+  - [x] `staticInit` 0x005d87e0 (9)
 
-### `core/tbplayer.cpp` (16 functions, 530 instructions, 0 done, 0 partial)
+### `core/tbplayer.cpp` (16 functions, 530 instructions, 1 done, 0 partial)
 - class `CBassPlayer`
   - [ ] `ctor` 0x005da060 (15)
   - [ ] `getActorType` 0x005da050 (2)
@@ -6164,7 +6191,7 @@ functions don't count as done. Sizes are in instructions.
 - free functions
   - [ ] `factoryFuncBassPlayer` 0x005da020 (12)
   - [ ] `factoryFuncDrummer` 0x005da280 (12)
-  - [ ] `staticInit` 0x005d9fd0 (17)
+  - [x] `staticInit` 0x005d9fd0 (17)
   - [ ] `setVector` 0x005da100 (8)
 - class `CDrummer`
   - [ ] `ctor` 0x005da2c0 (15)
@@ -6174,17 +6201,17 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `dtor` 0x005da540 (67)
   - [ ] `setup` 0x005da2f0 (32)
 
-### `core/teleport.cpp` (5 functions, 57 instructions, 0 done, 0 partial)
+### `core/teleport.cpp` (5 functions, 57 instructions, 1 done, 0 partial)
 - class `CTeleportDest`
   - [ ] `ctor` 0x005da770 (6)
 - free functions
   - [ ] `factoryFuncTeleportDest` 0x005da730 (12)
   - [ ] `factoryFuncTeleport` 0x005da9a0 (12)
-  - [ ] `staticInit` 0x005da6e0 (17)
+  - [x] `staticInit` 0x005da6e0 (17)
 - class `CTeleport`
   - [ ] `ctor` 0x005da9e0 (10)
 
-### `core/tentacle.cpp` (13 functions, 1301 instructions, 0 done, 0 partial)
+### `core/tentacle.cpp` (13 functions, 1301 instructions, 1 done, 0 partial)
 - class `CTentacle`
   - [ ] `ctor` 0x005daf60 (20)
   - [ ] `getActorType` 0x005daf50 (2)
@@ -6199,16 +6226,16 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `setup` 0x005dafc0 (40)
 - free functions
   - [ ] `factoryFuncTentacle` 0x005daf20 (12)
-  - [ ] `staticInit` 0x005daef0 (9)
+  - [x] `staticInit` 0x005daef0 (9)
 
-### `core/texlist.cpp` (3 functions, 146 instructions, 0 done, 0 partial)
+### `core/texlist.cpp` (3 functions, 146 instructions, 1 done, 0 partial)
 - free functions
-  - [ ] `staticInit` 0x005dbdb0 (7)
+  - [x] `staticInit` 0x005dbdb0 (7)
 - class `CTextureList`
   - [ ] `save` 0x005dc0d0 (114)
   - [ ] `captureAllTextures` 0x005dc230 (25)
 
-### `core/tommygun.cpp` (9 functions, 786 instructions, 0 done, 0 partial)
+### `core/tommygun.cpp` (9 functions, 786 instructions, 1 done, 0 partial)
 - class `CTommyGun`
   - [ ] `getActorType` 0x005dda80 (2)
   - [ ] `fire` 0x005ddb30 (521)
@@ -6219,9 +6246,9 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `ctor` 0x005dda90 (26)
 - free functions
   - [ ] `factoryFuncTommyGun` 0x005dda50 (12)
-  - [ ] `staticInit` 0x005dda20 (9)
+  - [x] `staticInit` 0x005dda20 (9)
 
-### `core/trap.cpp` (15 functions, 338 instructions, 0 done, 0 partial)
+### `core/trap.cpp` (15 functions, 338 instructions, 1 done, 0 partial)
 - class `CTrap`
   - [ ] `ctor` 0x005de690 (20)
   - [ ] `getActorType` 0x005de680 (2)
@@ -6238,9 +6265,9 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `setup` 0x005de6e0 (12)
 - free functions
   - [ ] `factoryFuncTrap` 0x005de650 (12)
-  - [ ] `staticInit` 0x005de620 (9)
+  - [x] `staticInit` 0x005de620 (9)
 
-### `core/trash.cpp` (11 functions, 813 instructions, 0 done, 0 partial)
+### `core/trash.cpp` (11 functions, 813 instructions, 1 done, 0 partial)
 - class `CTrash`
   - [ ] `ctor` 0x005deb70 (19)
   - [ ] `getActorType` 0x005deb60 (2)
@@ -6253,9 +6280,9 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `setup` 0x005debc0 (43)
 - free functions
   - [ ] `factoryFuncTrash` 0x005deb30 (12)
-  - [ ] `staticInit` 0x005deb00 (9)
+  - [x] `staticInit` 0x005deb00 (9)
 
-### `core/trigger.cpp` (18 functions, 1660 instructions, 0 done, 0 partial)
+### `core/trigger.cpp` (18 functions, 1660 instructions, 1 done, 0 partial)
 - class `CTrigger`
   - [ ] `onProjectileHit` 0x005e0aa0 (6)
   - [ ] `ctor` 0x005df840 (63)
@@ -6275,9 +6302,9 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `setup` 0x005df990 (50)
 - free functions
   - [ ] `factoryFuncTrigger` 0x005df800 (12)
-  - [ ] `staticInit` 0x005df7d0 (9)
+  - [x] `staticInit` 0x005df7d0 (9)
 
-### `core/turret.cpp` (22 functions, 2055 instructions, 0 done, 0 partial)
+### `core/turret.cpp` (22 functions, 2055 instructions, 1 done, 0 partial)
 - class `CTurret`
   - [ ] `ctor` 0x005e20f0 (79)
   - [ ] `getActorType` 0x005e20e0 (2)
@@ -6301,9 +6328,9 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `setup` 0x005e2240 (67)
 - free functions
   - [ ] `factoryFuncTurret` 0x005e20b0 (12)
-  - [ ] `staticInit` 0x005e2080 (9)
+  - [x] `staticInit` 0x005e2080 (9)
 
-### `core/tvbat.cpp` (16 functions, 1306 instructions, 0 done, 0 partial)
+### `core/tvbat.cpp` (16 functions, 1306 instructions, 1 done, 0 partial)
 - class `CTVBat`
   - [ ] `ctor` 0x005e3ef0 (66)
   - [ ] `getActorType` 0x005e3eb0 (2)
@@ -6320,10 +6347,10 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `orderAttack` 0x005e4d70 (3)
 - free functions
   - [ ] `factoryFuncTVBat` 0x005e3e80 (12)
-  - [ ] `staticInit` 0x005e3e50 (9)
+  - [x] `staticInit` 0x005e3e50 (9)
   - [ ] `jitterValue` 0x005e3ec0 (12)
 
-### `core/vampboss.cpp` (22 functions, 2452 instructions, 0 done, 0 partial)
+### `core/vampboss.cpp` (22 functions, 2452 instructions, 1 done, 0 partial)
 - class `CVampireBoss`
   - [ ] `ctor` 0x005e5590 (56)
   - [ ] `getActorType` 0x005e5580 (2)
@@ -6346,14 +6373,14 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `setup` 0x005e56c0 (167)
 - free functions
   - [ ] `factoryFuncVampireBoss` 0x005e5550 (12)
-  - [ ] `staticInit` 0x005e5520 (9)
+  - [x] `staticInit` 0x005e5520 (9)
   - [ ] `clampAngle` 0x005e58d0 (33)
 
-### `core/vecdir.cpp` (1 functions, 5 instructions, 0 done, 0 partial)
+### `core/vecdir.cpp` (1 functions, 5 instructions, 1 done, 0 partial)
 - free functions
-  - [ ] `staticInit` 0x005e7810 (5)
+  - [x] `staticInit` 0x005e7810 (5)
 
-### `core/vehicle.cpp` (16 functions, 1309 instructions, 1 done, 0 partial)
+### `core/vehicle.cpp` (16 functions, 1309 instructions, 2 done, 0 partial)
 - class `CVehicle`
   - [ ] `ctor` 0x005e7940 (118)
   - [ ] `getActorType` 0x005e7930 (2)
@@ -6369,12 +6396,12 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `setup` 0x005e7b90 (201)
 - free functions
   - [ ] `factoryFuncVehicle` 0x005e7900 (12)
-  - [ ] `staticInit` 0x005e78d0 (9)
+  - [x] `staticInit` 0x005e78d0 (9)
 - class `CTire`
   - [ ] `ctor` 0x005e8da0 (7)
   - [x] `dtor` 0x005e8dc0 (2, compiler-generated)
 
-### `core/vessel.cpp` (18 functions, 996 instructions, 0 done, 0 partial)
+### `core/vessel.cpp` (18 functions, 996 instructions, 1 done, 0 partial)
 - class `CCryptVessel`
   - [ ] `ctor` 0x005e8e60 (79)
   - [ ] `getActorType` 0x005e8e50 (2)
@@ -6393,18 +6420,18 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `setup` 0x005e8fc0 (82)
 - free functions
   - [ ] `factoryFuncCryptVessel` 0x005e8e20 (12)
-  - [ ] `staticInit` 0x005e8df0 (9)
+  - [x] `staticInit` 0x005e8df0 (9)
   - [ ] `isStartLocTriggered` 0x005e9180 (4)
 
-### `core/water.cpp` (4 functions, 33 instructions, 2 done, 0 partial)
+### `core/water.cpp` (4 functions, 33 instructions, 3 done, 0 partial)
 - class `CWater`
   - [x] `ctor` 0x005e9e10 (5)
   - [x] `dtor` 0x005e9e30 (2, compiler-generated)
 - free functions
-  - [ ] `staticInit` 0x005e9da0 (7)
+  - [x] `staticInit` 0x005e9da0 (7)
   - [ ] `calculateWaveHeight` 0x005e9dc0 (19)
 
-### `core/wateract.cpp` (16 functions, 1207 instructions, 0 done, 0 partial)
+### `core/wateract.cpp` (16 functions, 1207 instructions, 1 done, 0 partial)
 - class `CWaterActor`
   - [ ] `ctor` 0x005ea8a0 (67)
   - [ ] `getActorType` 0x005ea890 (2)
@@ -6422,9 +6449,9 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `updateLocalPositions` 0x005eb040 (61)
 - free functions
   - [ ] `factoryFuncWaterActor` 0x005ea860 (12)
-  - [ ] `staticInit` 0x005ea810 (19)
+  - [x] `staticInit` 0x005ea810 (19)
 
-### `core/waypoint.cpp` (10 functions, 650 instructions, 0 done, 0 partial)
+### `core/waypoint.cpp` (10 functions, 650 instructions, 1 done, 0 partial)
 - class `CWayPoint`
   - [ ] `isReachable` 0x005ebd40 (91)
   - [ ] `findNearestReachable` 0x005ec320 (133)
@@ -6436,11 +6463,11 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `setup` 0x005ebeb0 (68)
 - free functions
   - [ ] `factoryFuncWayPoint` 0x005ebe30 (12)
-  - [ ] `staticInit` 0x005ebd10 (9)
+  - [x] `staticInit` 0x005ebd10 (9)
 
 ## Step 31: Not reached from startup: `core/` (part 9 of 9)
 
-### `core/weapon.cpp` (25 functions, 852 instructions, 2 done, 0 partial)
+### `core/weapon.cpp` (25 functions, 852 instructions, 3 done, 0 partial)
 - class `CWeapon`
   - [ ] `ctor` 0x005ede70 (42)
   - [ ] `process` 0x005ee110 (95)
@@ -6465,19 +6492,20 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `onFired` 0x005ee860 (1)
   - [ ] `setup` 0x005edff0 (15)
 - free functions
-  - [ ] `staticInit` 0x005ede40 (9)
+  - [x] `staticInit` 0x005ede40 (9)
 - class `CDemonGlobe`
   - [x] `ctor` 0x005eea80 (2, compiler-generated)
   - [x] `dtor` 0x005eea90 (2, compiler-generated)
 
-### `core/weather.cpp` (3 functions, 20 instructions, 1 done, 0 partial)
+### `core/weather.cpp` (3 functions, 20 instructions, 1 done, 1 partial)
 - class `CWeather`
   - [ ] `ctor` 0x005eead0 (9)
   - [x] `dtor` 0x005efb40 (2, compiler-generated)
 - free functions
-  - [ ] `staticInit` 0x005eeaa0 (9)
+  - [~] `staticInit` 0x005eeaa0 (9)
+    - deferred: the game's weather and its 200 particle positions, with this constructor
 
-### `core/werewolf.cpp` (16 functions, 2629 instructions, 0 done, 0 partial)
+### `core/werewolf.cpp` (16 functions, 2629 instructions, 1 done, 0 partial)
 - class `CWerewolf`
   - [ ] `ctor` 0x005efc10 (31)
   - [ ] `getActorType` 0x005efc00 (2)
@@ -6495,7 +6523,7 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `setup` 0x005efcc0 (72)
 - free functions
   - [ ] `factoryFuncWerewolf` 0x005efbd0 (12)
-  - [ ] `staticInit` 0x005efb70 (23)
+  - [x] `staticInit` 0x005efb70 (23)
 
 ### `core/xform.cpp` (42 functions, 2952 instructions, 1 done, 0 partial)
 - free functions
@@ -6542,7 +6570,7 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `clipPolygonStage4` 0x005f8330 (120)
   - [ ] `clampClippedVertices` 0x005f84a0 (47)
 
-### `core/zombie.cpp` (25 functions, 4452 instructions, 0 done, 0 partial)
+### `core/zombie.cpp` (25 functions, 4452 instructions, 1 done, 0 partial)
 - class `CZombie`
   - [ ] `ctor` 0x005f8fe0 (77)
   - [ ] `getActorType` 0x005f8fd0 (2)
@@ -6568,7 +6596,7 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `setup` 0x005f9140 (217)
 - free functions
   - [ ] `factoryFuncZombie` 0x005f8fa0 (12)
-  - [ ] `staticInit` 0x005f8c90 (9)
+  - [x] `staticInit` 0x005f8c90 (9)
   - [ ] `classifyObjectShape` 0x005f8e50 (117)
 
 ## Step 32: Not reached from startup: `wincore/`

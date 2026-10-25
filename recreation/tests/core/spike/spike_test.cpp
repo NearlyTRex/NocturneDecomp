@@ -1,3 +1,4 @@
+#include "core/actor/demonactortype.h"
 #include "core/spike/spike.h"
 
 #include <gtest/gtest.h>
@@ -34,6 +35,13 @@ TEST(CSpike, PublicInterface) {
     static_assert(std::is_same_v<decltype(&CSpike::getActorType),
                                  const CDemonActorType &(CSpike::*)() const>);
     static_assert(std::is_same_v<decltype(&CSpike::archive), void (CSpike::*)(CActorArchive &)>);
+}
+
+TEST(CSpike, ItsRecordIsVersion1UnderCDemonActor) {
+    EXPECT_EQ(CSpike::kType.class_name, "CSpike");
+    EXPECT_EQ(CSpike::kType.parent_type, &CDemonActor::kType);
+    EXPECT_EQ(CSpike::kType.factory_func, nullptr);
+    EXPECT_EQ(CSpike::kType.latest_version, 1);
 }
 
 } // namespace

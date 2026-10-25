@@ -8,7 +8,6 @@ namespace nocturne::core {
 namespace {
 
 TEST(CoreFliesFunctions, PublicInterface) {
-    static_assert(std::is_same_v<decltype(&staticInit), void (*)()>);
     static_assert(std::is_same_v<decltype(&factoryFuncFlies), CFlies *(*)()>);
     static_assert(std::is_same_v<decltype(&findFliesByFollowActor), CFlies *(*)(CDemonActor *)>);
 }

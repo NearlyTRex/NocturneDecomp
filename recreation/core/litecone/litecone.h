@@ -4,7 +4,6 @@
 
 namespace nocturne::core {
 
-void staticInit();
 CLightCone *factoryFuncLightCone();
 
 } // namespace nocturne::core

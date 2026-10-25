@@ -8,6 +8,8 @@ namespace nocturne::core {
 
 class CGlass : public CDemonActor {
 public:
+    static const CDemonActorType kType;
+
     CGlass();
     ~CGlass() override;
 

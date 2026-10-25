@@ -7,6 +7,8 @@ namespace nocturne::core {
 
 class CFilmProjector : public CActorDestination {
 public:
+    static const CDemonActorType kType;
+
     CFilmProjector();
     ~CFilmProjector() override;
 

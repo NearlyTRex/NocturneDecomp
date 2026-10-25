@@ -7,6 +7,8 @@ namespace nocturne::core {
 
 class CTeleportDest : public CDemonActor {
 public:
+    static const CDemonActorType kType;
+
     CTeleportDest();
     ~CTeleportDest() override;
 

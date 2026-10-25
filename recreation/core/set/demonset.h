@@ -129,6 +129,8 @@ public:
                                  common::CMatrix3x3f *orientation_matrix);
     float testCylinderCollision(float start_x, float start_z, float dir_x, float dir_z,
                                 float radius, float bottom_y, float top_y);
+    // deferred: the five-deep raytrace state stack, with this
+    // nocedit 0x005715b0
     void pushRaytraceState();
     void popRaytraceState();
     void skipExactCollisions();
@@ -145,6 +147,8 @@ public:
     void transferVoxelShadow(CDemonActor *actor);
     void commitVoxelBuffer();
     int isPointInWater(common::CVector3f *point);
+    // deferred: the pool of 1500 thumbs and the 2000 nearby actors' boxes, with this
+    // nocedit 0x00574790
     int evaluateVirtualDirector(CDemonActor *actor, int force_evaluation_mode);
     void setPendingCamera(int camera_index, float hold_time);
     void clearCameraSwitchCooldown();

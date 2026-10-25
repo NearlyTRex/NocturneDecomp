@@ -1,3 +1,4 @@
+#include "core/actor/demonactortype.h"
 #include "core/mimic/mimic.h"
 
 #include <gtest/gtest.h>
@@ -35,6 +36,13 @@ TEST(CMimic, PublicInterface) {
                                  const CDemonActorType &(CMimic::*)() const>);
     static_assert(std::is_same_v<decltype(&CMimic::archive), void (CMimic::*)(CActorArchive &)>);
     static_assert(std::is_same_v<decltype(&CMimic::getDeathState), EDeathState (CMimic::*)()>);
+}
+
+TEST(CMimic, ItsRecordIsVersion3UnderCEnemy) {
+    EXPECT_EQ(CMimic::kType.class_name, "CMimic");
+    EXPECT_EQ(CMimic::kType.parent_type, &CEnemy::kType);
+    EXPECT_EQ(CMimic::kType.factory_func, nullptr);
+    EXPECT_EQ(CMimic::kType.latest_version, 3);
 }
 
 } // namespace

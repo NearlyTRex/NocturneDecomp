@@ -13,6 +13,7 @@ constexpr int kVersion = 1;
 
 } // namespace
 
+// nocedit 0x00556e00
 constinit const CDemonActorType CScat::kType =
     makeActorType("CScat", &CHero::kType, &CScat::create, kVersion);
 

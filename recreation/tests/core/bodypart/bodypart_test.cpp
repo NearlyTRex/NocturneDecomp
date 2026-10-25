@@ -1,3 +1,4 @@
+#include "core/actor/demonactortype.h"
 #include "core/bodypart/bodypart.h"
 
 #include <gtest/gtest.h>
@@ -7,8 +8,8 @@
 namespace nocturne::core {
 namespace {
 
-TEST(CBodyPart, DerivesFromCCharacter) {
-    static_assert(std::is_base_of_v<CCharacter, CBodyPart>);
+TEST(CBodyPart, DerivesFromCDemonActor) {
+    static_assert(std::is_base_of_v<CDemonActor, CBodyPart>);
 }
 
 TEST(CBodyPart, HasVirtualDestructor) {
@@ -55,6 +56,13 @@ TEST(CBodyPart, PublicInterface) {
     static_assert(
         std::is_same_v<decltype(&CBodyPart::addFire), void (CBodyPart::*)(common::CVector3f *)>);
     static_assert(std::is_same_v<decltype(&CBodyPart::addTexture), int (CBodyPart::*)(char *)>);
+}
+
+TEST(CBodyPart, ItsRecordIsVersion5UnderCDemonActor) {
+    EXPECT_EQ(CBodyPart::kType.class_name, "CBodyPart");
+    EXPECT_EQ(CBodyPart::kType.parent_type, &CDemonActor::kType);
+    EXPECT_EQ(CBodyPart::kType.factory_func, nullptr);
+    EXPECT_EQ(CBodyPart::kType.latest_version, 5);
 }
 
 } // namespace

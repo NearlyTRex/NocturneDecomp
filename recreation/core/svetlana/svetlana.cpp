@@ -13,6 +13,7 @@ constexpr int kVersion = 1;
 
 } // namespace
 
+// nocedit 0x005d87e0
 constinit const CDemonActorType CSvetlana::kType =
     makeActorType("CSvetlana", &CHero::kType, &CSvetlana::create, kVersion);
 

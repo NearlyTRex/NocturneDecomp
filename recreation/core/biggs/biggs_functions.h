@@ -4,7 +4,6 @@
 
 namespace nocturne::core {
 
-void staticInit();
 CBiggs *factoryFuncBiggs();
 
 } // namespace nocturne::core

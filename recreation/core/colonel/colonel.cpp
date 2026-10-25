@@ -13,6 +13,7 @@ constexpr int kVersion = 1;
 
 } // namespace
 
+// nocedit 0x0043f770
 constinit const CDemonActorType CColonel::kType =
     makeActorType("CColonel", &CHero::kType, &CColonel::create, kVersion);
 

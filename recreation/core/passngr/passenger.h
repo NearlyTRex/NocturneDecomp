@@ -7,6 +7,8 @@ namespace nocturne::core {
 
 class CPassenger : public CNPC {
 public:
+    static const CDemonActorType kType;
+
     CPassenger();
     ~CPassenger() override;
 

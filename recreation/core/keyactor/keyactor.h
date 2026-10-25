@@ -7,6 +7,8 @@ namespace nocturne::core {
 
 class CKeyActor : public CDemonActor {
 public:
+    static const CDemonActorType kType;
+
     CKeyActor();
     ~CKeyActor() override;
 

@@ -1,3 +1,4 @@
+#include "core/actor/demonactortype.h"
 #include "core/ammobox/ammobox.h"
 
 #include <gtest/gtest.h>
@@ -7,8 +8,8 @@
 namespace nocturne::core {
 namespace {
 
-TEST(CAmmoBox, DerivesFromCCharacter) {
-    static_assert(std::is_base_of_v<CCharacter, CAmmoBox>);
+TEST(CAmmoBox, DerivesFromCDemonActor) {
+    static_assert(std::is_base_of_v<CDemonActor, CAmmoBox>);
 }
 
 TEST(CAmmoBox, HasVirtualDestructor) {
@@ -39,6 +40,13 @@ TEST(CAmmoBox, PublicInterface) {
     static_assert(std::is_same_v<decltype(&CAmmoBox::openBox), void (CAmmoBox::*)(float)>);
     static_assert(
         std::is_same_v<decltype(&CAmmoBox::addToInventory), void (CAmmoBox::*)(CInventory *)>);
+}
+
+TEST(CAmmoBox, ItsRecordIsVersion4UnderCDemonActor) {
+    EXPECT_EQ(CAmmoBox::kType.class_name, "CAmmoBox");
+    EXPECT_EQ(CAmmoBox::kType.parent_type, &CDemonActor::kType);
+    EXPECT_EQ(CAmmoBox::kType.factory_func, nullptr);
+    EXPECT_EQ(CAmmoBox::kType.latest_version, 4);
 }
 
 } // namespace

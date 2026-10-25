@@ -1,3 +1,4 @@
+#include "core/actor/demonactortype.h"
 #include "core/gargoyle/gargoyle.h"
 
 #include <gtest/gtest.h>
@@ -37,6 +38,13 @@ TEST(CGargoyle, PublicInterface) {
         std::is_same_v<decltype(&CGargoyle::archive), void (CGargoyle::*)(CActorArchive &)>);
     static_assert(
         std::is_same_v<decltype(&CGargoyle::processDamage), void (CGargoyle::*)(SDamageInfo *)>);
+}
+
+TEST(CGargoyle, ItsRecordIsVersion2UnderCEnemy) {
+    EXPECT_EQ(CGargoyle::kType.class_name, "CGargoyle");
+    EXPECT_EQ(CGargoyle::kType.parent_type, &CEnemy::kType);
+    EXPECT_EQ(CGargoyle::kType.factory_func, nullptr);
+    EXPECT_EQ(CGargoyle::kType.latest_version, 2);
 }
 
 } // namespace

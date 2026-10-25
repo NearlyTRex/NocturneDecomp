@@ -13,6 +13,7 @@ constexpr int kVersion = 1;
 
 } // namespace
 
+// nocedit 0x00528ac0
 constinit const CDemonActorType CMoloch::kType =
     makeActorType("CMoloch", &CHero::kType, &CMoloch::create, kVersion);
 

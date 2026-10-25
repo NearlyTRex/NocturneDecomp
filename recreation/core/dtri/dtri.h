@@ -5,7 +5,6 @@
 
 namespace nocturne::core {
 
-void staticInit();
 float rayTriangleIntersection(CDemonTriangle *triangle, common::CVector3f *rayOrigin,
                               common::CVector3f *rayDirection);
 void cylinderTriangleTest(CDemonTriangle *triangle, SIntersectXZCylinder *cylinder);

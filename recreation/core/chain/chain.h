@@ -7,6 +7,8 @@ namespace nocturne::core {
 
 class CChain : public CDemonActor {
 public:
+    static const CDemonActorType kType;
+
     CChain();
     ~CChain() override;
 

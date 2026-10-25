@@ -406,6 +406,10 @@ class Model:
         return caller["tu"] != f["tu"]
 
     def is_public(self, f):
+        # A TU's static initializer is only the CRT's to call. Its logic goes to the constructor
+        # or owner that covers it, which takes its address line, so it is never declared.
+        if f["method"] == "staticInit" and not f.get("cls"):
+            return False
         if any(self.is_external_caller(c, f) for c in f.get("callers", [])):
             return True
         return any(ref not in self.slot_addrs for ref in f.get("data_refs", []))

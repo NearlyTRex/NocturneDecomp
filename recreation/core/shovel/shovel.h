@@ -7,6 +7,8 @@ namespace nocturne::core {
 
 class CShovel : public CWeapon {
 public:
+    static const CDemonActorType kType;
+
     CShovel();
     ~CShovel() override;
 

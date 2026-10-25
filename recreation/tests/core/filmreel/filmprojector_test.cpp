@@ -1,3 +1,4 @@
+#include "core/actor/demonactortype.h"
 #include "core/filmreel/filmprojector.h"
 
 #include <gtest/gtest.h>
@@ -35,6 +36,13 @@ TEST(CFilmProjector, PublicInterface) {
                                  const CDemonActorType &(CFilmProjector::*)() const>);
     static_assert(std::is_same_v<decltype(&CFilmProjector::archive),
                                  void (CFilmProjector::*)(CActorArchive &)>);
+}
+
+TEST(CFilmProjector, ItsRecordIsVersion2UnderCActorDestination) {
+    EXPECT_EQ(CFilmProjector::kType.class_name, "CFilmProjector");
+    EXPECT_EQ(CFilmProjector::kType.parent_type, &CActorDestination::kType);
+    EXPECT_EQ(CFilmProjector::kType.factory_func, nullptr);
+    EXPECT_EQ(CFilmProjector::kType.latest_version, 2);
 }
 
 } // namespace

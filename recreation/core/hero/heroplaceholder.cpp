@@ -42,6 +42,7 @@ std::string_view getHeroClassName(EHeroType hero_type) {
 
 } // namespace
 
+// nocedit 0x004f2120
 constinit const CDemonActorType CHeroPlaceholder::kType =
     makeActorType("CHeroPlaceholder", &CDemonActor::kType, &CHeroPlaceholder::create, kVersion);
 

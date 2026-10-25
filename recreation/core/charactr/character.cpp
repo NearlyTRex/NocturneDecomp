@@ -11,6 +11,7 @@ constexpr int kVersion = 6;
 
 } // namespace
 
+// nocedit 0x00427d80
 constinit const CDemonActorType CCharacter::kType =
     makeActorType("CCharacter", &CDemonActor::kType, nullptr, kVersion);
 

@@ -1,3 +1,4 @@
+#include "core/actor/demonactortype.h"
 #include "core/gasmask/gasmask.h"
 
 #include <gtest/gtest.h>
@@ -36,6 +37,13 @@ TEST(CGasMask, PublicInterface) {
                                  const CDemonActorType &(CGasMask::*)() const>);
     static_assert(
         std::is_same_v<decltype(&CGasMask::archive), void (CGasMask::*)(CActorArchive &)>);
+}
+
+TEST(CGasMask, ItsRecordIsVersion1UnderCDemonActor) {
+    EXPECT_EQ(CGasMask::kType.class_name, "CGasMask");
+    EXPECT_EQ(CGasMask::kType.parent_type, &CDemonActor::kType);
+    EXPECT_EQ(CGasMask::kType.factory_func, nullptr);
+    EXPECT_EQ(CGasMask::kType.latest_version, 1);
 }
 
 } // namespace

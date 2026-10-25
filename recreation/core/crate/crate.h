@@ -8,6 +8,8 @@ namespace nocturne::core {
 
 class CCrate : public CDemonActor {
 public:
+    static const CDemonActorType kType;
+
     CCrate();
     ~CCrate() override;
 

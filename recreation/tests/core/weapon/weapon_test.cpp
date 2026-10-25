@@ -1,3 +1,4 @@
+#include "core/actor/demonactortype.h"
 #include "core/weapon/weapon.h"
 
 #include <gtest/gtest.h>
@@ -43,6 +44,13 @@ TEST(CWeapon, PublicInterface) {
     static_assert(std::is_same_v<decltype(&CWeapon::getDamage), float (CWeapon::*)()>);
     static_assert(std::is_same_v<decltype(&CWeapon::renderAimBeam), void (CWeapon::*)()>);
     static_assert(std::is_same_v<decltype(&CWeapon::updateLighting), void (CWeapon::*)()>);
+}
+
+TEST(CWeapon, ItsRecordIsVersion7UnderCDemonActor) {
+    EXPECT_EQ(CWeapon::kType.class_name, "CWeapon");
+    EXPECT_EQ(CWeapon::kType.parent_type, &CDemonActor::kType);
+    EXPECT_EQ(CWeapon::kType.factory_func, nullptr);
+    EXPECT_EQ(CWeapon::kType.latest_version, 7);
 }
 
 } // namespace

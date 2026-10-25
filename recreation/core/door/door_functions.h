@@ -4,7 +4,6 @@
 
 namespace nocturne::core {
 
-void staticInit();
 CDoor *factoryFuncDoor();
 
 } // namespace nocturne::core

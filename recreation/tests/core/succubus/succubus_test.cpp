@@ -1,3 +1,4 @@
+#include "core/actor/demonactortype.h"
 #include "core/succubus/succubus.h"
 
 #include <gtest/gtest.h>
@@ -37,6 +38,13 @@ TEST(CSuccubus, PublicInterface) {
         std::is_same_v<decltype(&CSuccubus::archive), void (CSuccubus::*)(CActorArchive &)>);
     static_assert(
         std::is_same_v<decltype(&CSuccubus::processDamage), void (CSuccubus::*)(SDamageInfo *)>);
+}
+
+TEST(CSuccubus, ItsRecordIsVersion1UnderCEnemy) {
+    EXPECT_EQ(CSuccubus::kType.class_name, "CSuccubus");
+    EXPECT_EQ(CSuccubus::kType.parent_type, &CEnemy::kType);
+    EXPECT_EQ(CSuccubus::kType.factory_func, nullptr);
+    EXPECT_EQ(CSuccubus::kType.latest_version, 1);
 }
 
 } // namespace

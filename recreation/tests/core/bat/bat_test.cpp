@@ -1,3 +1,4 @@
+#include "core/actor/demonactortype.h"
 #include "core/bat/bat.h"
 
 #include <gtest/gtest.h>
@@ -7,8 +8,8 @@
 namespace nocturne::core {
 namespace {
 
-TEST(CBat, DerivesFromCCharacter) {
-    static_assert(std::is_base_of_v<CCharacter, CBat>);
+TEST(CBat, DerivesFromCDemonActor) {
+    static_assert(std::is_base_of_v<CDemonActor, CBat>);
 }
 
 TEST(CBat, HasVirtualDestructor) {
@@ -32,6 +33,13 @@ TEST(CBat, PublicInterface) {
     static_assert(
         std::is_same_v<decltype(&CBat::getActorType), const CDemonActorType &(CBat::*)() const>);
     static_assert(std::is_same_v<decltype(&CBat::archive), void (CBat::*)(CActorArchive &)>);
+}
+
+TEST(CBat, ItsRecordIsVersion4UnderCDemonActor) {
+    EXPECT_EQ(CBat::kType.class_name, "CBat");
+    EXPECT_EQ(CBat::kType.parent_type, &CDemonActor::kType);
+    EXPECT_EQ(CBat::kType.factory_func, nullptr);
+    EXPECT_EQ(CBat::kType.latest_version, 4);
 }
 
 } // namespace

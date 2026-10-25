@@ -1,3 +1,4 @@
+#include "core/actor/demonactortype.h"
 #include "core/sentinel/sentinel.h"
 
 #include <gtest/gtest.h>
@@ -38,6 +39,13 @@ TEST(CSentinel, PublicInterface) {
         std::is_same_v<decltype(&CSentinel::processDamage), void (CSentinel::*)(SDamageInfo *)>);
     static_assert(std::is_same_v<decltype(&CSentinel::attractActorToward),
                                  int (CSentinel::*)(CDemonActor *, common::CVector3f *)>);
+}
+
+TEST(CSentinel, ItsRecordIsVersion2UnderCEnemy) {
+    EXPECT_EQ(CSentinel::kType.class_name, "CSentinel");
+    EXPECT_EQ(CSentinel::kType.parent_type, &CEnemy::kType);
+    EXPECT_EQ(CSentinel::kType.factory_func, nullptr);
+    EXPECT_EQ(CSentinel::kType.latest_version, 2);
 }
 
 } // namespace

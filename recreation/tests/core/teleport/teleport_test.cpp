@@ -1,3 +1,4 @@
+#include "core/actor/demonactortype.h"
 #include "core/teleport/teleport.h"
 
 #include <gtest/gtest.h>
@@ -33,6 +34,13 @@ TEST(CTeleport, PublicInterface) {
                                  const CDemonActorType &(CTeleport::*)() const>);
     static_assert(
         std::is_same_v<decltype(&CTeleport::archive), void (CTeleport::*)(CActorArchive &)>);
+}
+
+TEST(CTeleport, ItsRecordIsVersion1UnderCDemonActor) {
+    EXPECT_EQ(CTeleport::kType.class_name, "CTeleport");
+    EXPECT_EQ(CTeleport::kType.parent_type, &CDemonActor::kType);
+    EXPECT_EQ(CTeleport::kType.factory_func, nullptr);
+    EXPECT_EQ(CTeleport::kType.latest_version, 1);
 }
 
 } // namespace

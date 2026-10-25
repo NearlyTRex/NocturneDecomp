@@ -4,7 +4,6 @@
 
 namespace nocturne::core {
 
-void staticInit();
 CHaystack *factoryFuncHaystack();
 
 } // namespace nocturne::core

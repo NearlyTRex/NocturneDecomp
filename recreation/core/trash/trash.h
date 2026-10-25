@@ -7,6 +7,8 @@ namespace nocturne::core {
 
 class CTrash : public CDemonActor {
 public:
+    static const CDemonActorType kType;
+
     CTrash();
     ~CTrash() override;
 

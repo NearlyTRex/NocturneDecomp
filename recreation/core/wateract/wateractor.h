@@ -8,6 +8,8 @@ namespace nocturne::core {
 
 class CWaterActor : public CDemonActor {
 public:
+    static const CDemonActorType kType;
+
     CWaterActor();
     ~CWaterActor() override;
 

@@ -9,6 +9,9 @@ namespace nocturne::core {
 
 class CDemonCamera : public CCameraView {
 public:
+    // deferred: the precomputed surface normals, with precomputeNormals
+    // deferred: the image decompressor, 0x10000 bytes from 6 bits, with loadImage
+    // nocedit 0x0044bb10
     CDemonCamera();
     ~CDemonCamera() override;
 

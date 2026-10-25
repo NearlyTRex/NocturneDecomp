@@ -7,6 +7,8 @@ namespace nocturne::core {
 
 class CMineCar : public CPlatform {
 public:
+    static const CDemonActorType kType;
+
     CMineCar();
     ~CMineCar() override;
 

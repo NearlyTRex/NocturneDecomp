@@ -7,6 +7,8 @@ namespace nocturne::core {
 
 class CWayPoint : public CTrigger {
 public:
+    static const CDemonActorType kType;
+
     CWayPoint();
     ~CWayPoint() override;
 

@@ -11,6 +11,7 @@ constexpr int kVersion = 12;
 
 } // namespace
 
+// nocedit 0x004f2120
 constinit const CDemonActorType CHero::kType =
     makeActorType("CHero", &CCharacter::kType, nullptr, kVersion);
 

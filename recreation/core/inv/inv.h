@@ -2,7 +2,6 @@
 
 namespace nocturne::core {
 
-void staticInit();
 void loadAssets();
 void freeInventory();
 

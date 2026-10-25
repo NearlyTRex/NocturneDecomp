@@ -1,3 +1,4 @@
+#include "core/actor/demonactortype.h"
 #include "core/werewolf/werewolf.h"
 
 #include <gtest/gtest.h>
@@ -39,6 +40,13 @@ TEST(CWerewolf, PublicInterface) {
         std::is_same_v<decltype(&CWerewolf::getDeathState), EDeathState (CWerewolf::*)()>);
     static_assert(std::is_same_v<decltype(&CWerewolf::setWalkTarget),
                                  void (CWerewolf::*)(CDemonActor *, float, float)>);
+}
+
+TEST(CWerewolf, ItsRecordIsVersion6UnderCEnemy) {
+    EXPECT_EQ(CWerewolf::kType.class_name, "CWerewolf");
+    EXPECT_EQ(CWerewolf::kType.parent_type, &CEnemy::kType);
+    EXPECT_EQ(CWerewolf::kType.factory_func, nullptr);
+    EXPECT_EQ(CWerewolf::kType.latest_version, 6);
 }
 
 } // namespace

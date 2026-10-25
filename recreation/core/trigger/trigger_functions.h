@@ -4,7 +4,6 @@
 
 namespace nocturne::core {
 
-void staticInit();
 CTrigger *factoryFuncTrigger();
 
 } // namespace nocturne::core

@@ -1,3 +1,4 @@
+#include "core/actor/demonactortype.h"
 #include "core/frankgen/frankenstienmachine.h"
 
 #include <gtest/gtest.h>
@@ -38,6 +39,13 @@ TEST(CFrankenstienMachine, PublicInterface) {
                                  const CDemonActorType &(CFrankenstienMachine::*)() const>);
     static_assert(std::is_same_v<decltype(&CFrankenstienMachine::archive),
                                  void (CFrankenstienMachine::*)(CActorArchive &)>);
+}
+
+TEST(CFrankenstienMachine, ItsRecordIsVersion1UnderCDemonActor) {
+    EXPECT_EQ(CFrankenstienMachine::kType.class_name, "CFrankenstienMachine");
+    EXPECT_EQ(CFrankenstienMachine::kType.parent_type, &CDemonActor::kType);
+    EXPECT_EQ(CFrankenstienMachine::kType.factory_func, nullptr);
+    EXPECT_EQ(CFrankenstienMachine::kType.latest_version, 1);
 }
 
 } // namespace

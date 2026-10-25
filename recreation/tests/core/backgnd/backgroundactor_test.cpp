@@ -1,3 +1,4 @@
+#include "core/actor/demonactortype.h"
 #include "core/backgnd/backgroundactor.h"
 
 #include <gtest/gtest.h>
@@ -7,8 +8,8 @@
 namespace nocturne::core {
 namespace {
 
-TEST(CBackgroundActor, DerivesFromCCharacter) {
-    static_assert(std::is_base_of_v<CCharacter, CBackgroundActor>);
+TEST(CBackgroundActor, DerivesFromCDemonActor) {
+    static_assert(std::is_base_of_v<CDemonActor, CBackgroundActor>);
 }
 
 TEST(CBackgroundActor, HasVirtualDestructor) {
@@ -41,6 +42,13 @@ TEST(CBackgroundActor, PublicInterface) {
                                  const CDemonActorType &(CBackgroundActor::*)() const>);
     static_assert(std::is_same_v<decltype(&CBackgroundActor::archive),
                                  void (CBackgroundActor::*)(CActorArchive &)>);
+}
+
+TEST(CBackgroundActor, ItsRecordIsVersion2UnderCDemonActor) {
+    EXPECT_EQ(CBackgroundActor::kType.class_name, "CBackgroundActor");
+    EXPECT_EQ(CBackgroundActor::kType.parent_type, &CDemonActor::kType);
+    EXPECT_EQ(CBackgroundActor::kType.factory_func, nullptr);
+    EXPECT_EQ(CBackgroundActor::kType.latest_version, 2);
 }
 
 } // namespace

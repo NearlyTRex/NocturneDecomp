@@ -4,7 +4,6 @@
 
 namespace nocturne::core {
 
-void staticInit();
 CHealthItem *factoryFuncHealthItem();
 
 } // namespace nocturne::core

@@ -8,6 +8,9 @@ namespace nocturne::common {
 // work in double, the closest portable stand-in.
 class CVector3f {
 public:
+    // The original's zero vectors were statics zeroed at startup; a default CVector3f is one.
+    // nocedit 0x00472680
+    // nocedit 0x005e7810
     float x = 0.0F;
     float y = 0.0F;
     float z = 0.0F;

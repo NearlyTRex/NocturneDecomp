@@ -11,6 +11,7 @@ constexpr int kVersion = 10;
 
 } // namespace
 
+// nocedit 0x004a94d0
 constinit const CDemonActorType CEnemy::kType =
     makeActorType("CEnemy", &CCharacter::kType, nullptr, kVersion);
 

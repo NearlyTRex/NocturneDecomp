@@ -7,6 +7,8 @@ namespace nocturne::core {
 
 class CConveyor : public CPlatform {
 public:
+    static const CDemonActorType kType;
+
     CConveyor();
     ~CConveyor() override;
 

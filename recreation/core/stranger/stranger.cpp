@@ -13,6 +13,7 @@ constexpr int kVersion = 9;
 
 } // namespace
 
+// nocedit 0x005bae80
 constinit const CDemonActorType CStranger::kType =
     makeActorType("CStranger", &CHero::kType, &CStranger::create, kVersion);
 

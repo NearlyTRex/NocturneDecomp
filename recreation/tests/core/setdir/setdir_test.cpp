@@ -10,7 +10,6 @@ namespace nocturne::core {
 namespace {
 
 TEST(CoreSetdirFunctions, PublicInterface) {
-    static_assert(std::is_same_v<decltype(&staticInit), void (*)()>);
     static_assert(
         std::is_same_v<decltype(&testOBBIntersection), bool (*)(const SVDBox &, const SVDBox &)>);
 }

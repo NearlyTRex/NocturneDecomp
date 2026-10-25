@@ -8,7 +8,6 @@ namespace nocturne::core {
 namespace {
 
 TEST(CoreDtriFunctions, PublicInterface) {
-    static_assert(std::is_same_v<decltype(&staticInit), void (*)()>);
     static_assert(
         std::is_same_v<decltype(&rayTriangleIntersection),
                        float (*)(CDemonTriangle *, common::CVector3f *, common::CVector3f *)>);

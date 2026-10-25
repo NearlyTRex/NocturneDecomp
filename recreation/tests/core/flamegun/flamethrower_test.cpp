@@ -1,3 +1,4 @@
+#include "core/actor/demonactortype.h"
 #include "core/flamegun/flamethrower.h"
 
 #include <gtest/gtest.h>
@@ -32,6 +33,13 @@ TEST(CFlameThrower, PublicInterface) {
     static_assert(std::is_same_v<decltype(&CFlameThrower::getDamage), float (CFlameThrower::*)()>);
     static_assert(
         std::is_same_v<decltype(&CFlameThrower::renderAimBeam), void (CFlameThrower::*)()>);
+}
+
+TEST(CFlameThrower, ItsRecordIsVersion1UnderCWeapon) {
+    EXPECT_EQ(CFlameThrower::kType.class_name, "CFlameThrower");
+    EXPECT_EQ(CFlameThrower::kType.parent_type, &CWeapon::kType);
+    EXPECT_EQ(CFlameThrower::kType.factory_func, nullptr);
+    EXPECT_EQ(CFlameThrower::kType.latest_version, 1);
 }
 
 } // namespace

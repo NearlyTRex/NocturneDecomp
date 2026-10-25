@@ -8,6 +8,8 @@ namespace nocturne::core {
 
 class CEventList {
 public:
+    // deferred: the game's event list, with this constructor
+    // nocedit 0x004aa260
     CEventList();
 
     void reset();

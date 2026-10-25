@@ -4,6 +4,9 @@
 
 namespace nocturne::core {
 
+// deferred: the game's script, with the main loop that runs it
+// deferred: the script editor's pick list and two scroll bars, with the script editor
+// nocedit 0x005591b0
 // nocedit 0x005597f0
 CScript::CScript(const SScriptOwners &owners) : owners_(owners) {}
 

@@ -7,6 +7,8 @@ namespace nocturne::core {
 
 class CMimic : public CEnemy {
 public:
+    static const CDemonActorType kType;
+
     CMimic();
     ~CMimic() override;
 

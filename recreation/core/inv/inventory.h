@@ -9,6 +9,8 @@ namespace nocturne::core {
 
 class CInventory {
 public:
+    // deferred: the inventory's 14 bitmaps, with this constructor
+    // nocedit 0x004fcc30
     CInventory();
     ~CInventory();
 

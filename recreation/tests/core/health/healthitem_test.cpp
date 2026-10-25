@@ -1,3 +1,4 @@
+#include "core/actor/demonactortype.h"
 #include "core/health/healthitem.h"
 
 #include <gtest/gtest.h>
@@ -41,6 +42,13 @@ TEST(CHealthItem, PublicInterface) {
         std::is_same_v<decltype(&CHealthItem::archive), void (CHealthItem::*)(CActorArchive &)>);
     static_assert(
         std::is_same_v<decltype(&CHealthItem::useItem), int (CHealthItem::*)(CCharacter *)>);
+}
+
+TEST(CHealthItem, ItsRecordIsVersion3UnderCDemonActor) {
+    EXPECT_EQ(CHealthItem::kType.class_name, "CHealthItem");
+    EXPECT_EQ(CHealthItem::kType.parent_type, &CDemonActor::kType);
+    EXPECT_EQ(CHealthItem::kType.factory_func, nullptr);
+    EXPECT_EQ(CHealthItem::kType.latest_version, 3);
 }
 
 } // namespace

@@ -13,6 +13,7 @@ constexpr int kVersion = 3;
 
 } // namespace
 
+// nocedit 0x004d2910
 constinit const CDemonActorType CGabriella::kType =
     makeActorType("CGabriella", &CHero::kType, &CGabriella::create, kVersion);
 

@@ -4,7 +4,6 @@
 
 namespace nocturne::core {
 
-void staticInit();
 CImp *factoryFuncImp();
 
 } // namespace nocturne::core

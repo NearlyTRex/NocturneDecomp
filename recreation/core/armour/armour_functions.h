@@ -4,7 +4,6 @@
 
 namespace nocturne::core {
 
-void staticInit();
 CArmour *factoryFuncArmour();
 
 } // namespace nocturne::core

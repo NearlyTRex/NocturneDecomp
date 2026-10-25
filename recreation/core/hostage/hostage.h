@@ -8,6 +8,8 @@ namespace nocturne::core {
 
 class CHostage : public CNPC {
 public:
+    static const CDemonActorType kType;
+
     CHostage();
     ~CHostage() override;
 

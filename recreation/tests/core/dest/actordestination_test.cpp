@@ -1,3 +1,4 @@
+#include "core/actor/demonactortype.h"
 #include "core/dest/actordestination.h"
 
 #include <gtest/gtest.h>
@@ -38,6 +39,13 @@ TEST(CActorDestination, PublicInterface) {
                                  void (CActorDestination::*)(CActorArchive &)>);
     static_assert(std::is_same_v<decltype(&CActorDestination::acceptsActor),
                                  int (CActorDestination::*)(CDemonActor *)>);
+}
+
+TEST(CActorDestination, ItsRecordIsVersion4UnderCDemonActor) {
+    EXPECT_EQ(CActorDestination::kType.class_name, "CActorDestination");
+    EXPECT_EQ(CActorDestination::kType.parent_type, &CDemonActor::kType);
+    EXPECT_EQ(CActorDestination::kType.factory_func, nullptr);
+    EXPECT_EQ(CActorDestination::kType.latest_version, 4);
 }
 
 } // namespace

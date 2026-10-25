@@ -1,3 +1,4 @@
+#include "core/actor/demonactortype.h"
 #include "core/vehicle/vehicle.h"
 
 #include <gtest/gtest.h>
@@ -37,6 +38,13 @@ TEST(CVehicle, PublicInterface) {
                                  const CDemonActorType &(CVehicle::*)() const>);
     static_assert(
         std::is_same_v<decltype(&CVehicle::archive), void (CVehicle::*)(CActorArchive &)>);
+}
+
+TEST(CVehicle, ItsRecordIsVersion3UnderCDemonActor) {
+    EXPECT_EQ(CVehicle::kType.class_name, "CVehicle");
+    EXPECT_EQ(CVehicle::kType.parent_type, &CDemonActor::kType);
+    EXPECT_EQ(CVehicle::kType.factory_func, nullptr);
+    EXPECT_EQ(CVehicle::kType.latest_version, 3);
 }
 
 } // namespace

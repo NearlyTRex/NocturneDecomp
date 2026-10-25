@@ -8,7 +8,6 @@ namespace nocturne::core {
 namespace {
 
 TEST(CoreGroundFunctions, PublicInterface) {
-    static_assert(std::is_same_v<decltype(&staticInit), void (*)()>);
     static_assert(std::is_same_v<decltype(&getGroundTypeCode), char *(*)(EGroundType)>);
     static_assert(std::is_same_v<decltype(&getGroundTypeColor), std::uint32_t (*)(EGroundType)>);
 }

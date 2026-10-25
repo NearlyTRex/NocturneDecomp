@@ -1,3 +1,4 @@
+#include "core/actor/demonactortype.h"
 #include "core/chain/chain.h"
 
 #include <gtest/gtest.h>
@@ -34,6 +35,13 @@ TEST(CChain, PublicInterface) {
     static_assert(std::is_same_v<decltype(&CChain::getActorType),
                                  const CDemonActorType &(CChain::*)() const>);
     static_assert(std::is_same_v<decltype(&CChain::archive), void (CChain::*)(CActorArchive &)>);
+}
+
+TEST(CChain, ItsRecordIsVersion4UnderCDemonActor) {
+    EXPECT_EQ(CChain::kType.class_name, "CChain");
+    EXPECT_EQ(CChain::kType.parent_type, &CDemonActor::kType);
+    EXPECT_EQ(CChain::kType.factory_func, nullptr);
+    EXPECT_EQ(CChain::kType.latest_version, 4);
 }
 
 } // namespace

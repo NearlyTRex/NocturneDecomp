@@ -4,7 +4,6 @@
 
 namespace nocturne::core {
 
-void staticInit();
 CGrave *factoryFuncGrave();
 
 } // namespace nocturne::core

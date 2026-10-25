@@ -8,6 +8,8 @@ namespace nocturne::core {
 
 class CLever : public CDemonActor {
 public:
+    static const CDemonActorType kType;
+
     CLever();
     ~CLever() override;
 

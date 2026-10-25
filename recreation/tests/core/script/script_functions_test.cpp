@@ -16,7 +16,6 @@ namespace nocturne::core {
 namespace {
 
 TEST(CoreScriptFunctions, PublicInterface) {
-    static_assert(std::is_same_v<decltype(&staticInit), void (*)()>);
     static_assert(std::is_same_v<decltype(&trimLine), std::string (*)(std::string_view)>);
     static_assert(std::is_same_v<decltype(&trimString), std::string_view (*)(std::string_view)>);
     static_assert(

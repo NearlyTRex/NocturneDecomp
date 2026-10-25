@@ -8,6 +8,8 @@ namespace nocturne::core {
 
 class CStairs : public CDemonActor {
 public:
+    static const CDemonActorType kType;
+
     CStairs();
     ~CStairs() override;
 

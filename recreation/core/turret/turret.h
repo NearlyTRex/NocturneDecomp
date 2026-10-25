@@ -8,6 +8,8 @@ namespace nocturne::core {
 
 class CTurret : public CWeapon {
 public:
+    static const CDemonActorType kType;
+
     CTurret();
     ~CTurret() override;
 

@@ -9,6 +9,9 @@ namespace nocturne::core {
 
 class CGore {
 public:
+    // deferred: the game's gore and its blood, splat, pool and footstep arrays, with this
+    //   constructor
+    // nocedit 0x004eb8c0
     CGore();
 
     void reset();

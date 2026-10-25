@@ -4,7 +4,6 @@
 
 namespace nocturne::core {
 
-void staticInit();
 CCrossbow *factoryFuncCrossbow();
 
 } // namespace nocturne::core

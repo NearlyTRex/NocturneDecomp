@@ -12,6 +12,7 @@ constexpr int kVersion = 11;
 } // namespace
 
 // Without a factory until CDoor's constructor is ported, so missions can't make one yet.
+// nocedit 0x0047fa60
 constinit const CDemonActorType CDoor::kType =
     makeActorType("CDoor", &CDemonActor::kType, nullptr, kVersion);
 

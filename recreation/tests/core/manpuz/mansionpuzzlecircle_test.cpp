@@ -1,3 +1,4 @@
+#include "core/actor/demonactortype.h"
 #include "core/manpuz/mansionpuzzlecircle.h"
 
 #include <gtest/gtest.h>
@@ -49,6 +50,13 @@ TEST(CMansionPuzzleCircle, PublicInterface) {
                                  const CDemonActorType &(CMansionPuzzleCircle::*)() const>);
     static_assert(std::is_same_v<decltype(&CMansionPuzzleCircle::archive),
                                  void (CMansionPuzzleCircle::*)(CActorArchive &)>);
+}
+
+TEST(CMansionPuzzleCircle, ItsRecordIsVersion3UnderCDemonActor) {
+    EXPECT_EQ(CMansionPuzzleCircle::kType.class_name, "CMansionPuzzleCircle");
+    EXPECT_EQ(CMansionPuzzleCircle::kType.parent_type, &CDemonActor::kType);
+    EXPECT_EQ(CMansionPuzzleCircle::kType.factory_func, nullptr);
+    EXPECT_EQ(CMansionPuzzleCircle::kType.latest_version, 3);
 }
 
 } // namespace

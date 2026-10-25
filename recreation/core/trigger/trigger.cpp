@@ -12,6 +12,7 @@ constexpr int kVersion = 11;
 } // namespace
 
 // Without a factory until CTrigger's constructor is ported, so missions can't make one yet.
+// nocedit 0x005df7d0
 constinit const CDemonActorType CTrigger::kType =
     makeActorType("CTrigger", &CDemonActor::kType, nullptr, kVersion);
 

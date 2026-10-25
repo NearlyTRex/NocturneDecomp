@@ -48,6 +48,7 @@ private:
     int height_;
     std::vector<SGroundCell> terrain_data_;
     // The original's was null before init and after free; here it is empty then.
+    // nocedit 0x005dbdb0
     CTextureList texture_list_;
 };
 

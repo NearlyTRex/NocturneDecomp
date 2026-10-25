@@ -1,3 +1,4 @@
+#include "core/actor/demonactortype.h"
 #include "core/tvbat/tvbat.h"
 
 #include <gtest/gtest.h>
@@ -40,6 +41,13 @@ TEST(CTVBat, PublicInterface) {
         std::is_same_v<decltype(&CTVBat::processDamage), void (CTVBat::*)(SDamageInfo *)>);
     static_assert(std::is_same_v<decltype(&CTVBat::getDeathState), EDeathState (CTVBat::*)()>);
     static_assert(std::is_same_v<decltype(&CTVBat::orderAttack), void (CTVBat::*)()>);
+}
+
+TEST(CTVBat, ItsRecordIsVersion5UnderCEnemy) {
+    EXPECT_EQ(CTVBat::kType.class_name, "CTVBat");
+    EXPECT_EQ(CTVBat::kType.parent_type, &CEnemy::kType);
+    EXPECT_EQ(CTVBat::kType.factory_func, nullptr);
+    EXPECT_EQ(CTVBat::kType.latest_version, 5);
 }
 
 } // namespace

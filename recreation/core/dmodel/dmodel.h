@@ -4,7 +4,8 @@
 
 namespace nocturne::core {
 
-void staticInit();
+// deferred: the pool of 256 models, with this
+// nocedit 0x00476c50
 CKeyFramedModel *loadModel(char *filename);
 void freeAllModels();
 

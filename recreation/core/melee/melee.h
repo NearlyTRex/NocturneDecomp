@@ -7,6 +7,8 @@ namespace nocturne::core {
 
 class CMelee : public CWeapon {
 public:
+    static const CDemonActorType kType;
+
     CMelee();
     ~CMelee() override;
 

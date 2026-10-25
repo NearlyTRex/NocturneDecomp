@@ -7,6 +7,8 @@ namespace nocturne::core {
 
 class CTempleStone : public CBoxActor {
 public:
+    static const CDemonActorType kType;
+
     CTempleStone();
     ~CTempleStone() override;
 

@@ -11,6 +11,9 @@ namespace nocturne::core {
 
 class CFireEffect {
 public:
+    // deferred: the game's fire effect, its five models and its particle pools, with this
+    //   constructor
+    // nocedit 0x004bef20
     CFireEffect();
 
     void init();

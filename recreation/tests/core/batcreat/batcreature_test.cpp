@@ -1,3 +1,4 @@
+#include "core/actor/demonactortype.h"
 #include "core/batcreat/batcreature.h"
 
 #include <gtest/gtest.h>
@@ -36,6 +37,13 @@ TEST(CBatCreature, PublicInterface) {
         std::is_same_v<decltype(&CBatCreature::archive), void (CBatCreature::*)(CActorArchive &)>);
     static_assert(std::is_same_v<decltype(&CBatCreature::processDamage),
                                  void (CBatCreature::*)(SDamageInfo *)>);
+}
+
+TEST(CBatCreature, ItsRecordIsVersion1UnderCEnemy) {
+    EXPECT_EQ(CBatCreature::kType.class_name, "CBatCreature");
+    EXPECT_EQ(CBatCreature::kType.parent_type, &CEnemy::kType);
+    EXPECT_EQ(CBatCreature::kType.factory_func, nullptr);
+    EXPECT_EQ(CBatCreature::kType.latest_version, 1);
 }
 
 } // namespace

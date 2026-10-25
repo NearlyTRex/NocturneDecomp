@@ -4,7 +4,6 @@
 
 namespace nocturne::core {
 
-void staticInit();
 CFlameThrower *factoryFuncFlameThrower();
 
 } // namespace nocturne::core

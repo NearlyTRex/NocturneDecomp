@@ -8,6 +8,8 @@ namespace nocturne::core {
 
 class CImp : public CEnemy {
 public:
+    static const CDemonActorType kType;
+
     CImp();
     ~CImp() override;
 

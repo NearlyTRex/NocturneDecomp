@@ -8,6 +8,9 @@ namespace nocturne::core {
 
 class CWeapon : public CDemonActor {
 public:
+    // Abstract: missions can't hold one.
+    static const CDemonActorType kType;
+
     CWeapon();
     ~CWeapon() override;
 

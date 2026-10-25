@@ -1,12 +1,14 @@
 #pragma once
 
-#include "core/charactr/character.h"
+#include "core/actor/demonactor.h"
 #include "core/fwd.h"
 
 namespace nocturne::core {
 
-class CBackgroundActor : public CCharacter {
+class CBackgroundActor : public CDemonActor {
 public:
+    static const CDemonActorType kType;
+
     CBackgroundActor();
     ~CBackgroundActor() override;
 

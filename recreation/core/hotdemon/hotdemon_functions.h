@@ -4,7 +4,6 @@
 
 namespace nocturne::core {
 
-void staticInit();
 CHotDemon *factoryFuncHotDemon();
 
 } // namespace nocturne::core

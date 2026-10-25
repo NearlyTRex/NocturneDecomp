@@ -1,3 +1,4 @@
+#include "core/actor/demonactortype.h"
 #include "core/hpriest/highpriestofgardath.h"
 
 #include <gtest/gtest.h>
@@ -32,6 +33,13 @@ TEST(CHighPriestOfGardath, PublicInterface) {
                                  void (CHighPriestOfGardath::*)(CActorArchive &)>);
     static_assert(std::is_same_v<decltype(&CHighPriestOfGardath::processDamage),
                                  void (CHighPriestOfGardath::*)(SDamageInfo *)>);
+}
+
+TEST(CHighPriestOfGardath, ItsRecordIsVersion1UnderCNPC) {
+    EXPECT_EQ(CHighPriestOfGardath::kType.class_name, "CHighPriestOfGardath");
+    EXPECT_EQ(CHighPriestOfGardath::kType.parent_type, &CNPC::kType);
+    EXPECT_EQ(CHighPriestOfGardath::kType.factory_func, nullptr);
+    EXPECT_EQ(CHighPriestOfGardath::kType.latest_version, 1);
 }
 
 } // namespace

@@ -7,6 +7,8 @@ namespace nocturne::core {
 
 class CDynamite : public CWeapon {
 public:
+    static const CDemonActorType kType;
+
     CDynamite();
     ~CDynamite() override;
 

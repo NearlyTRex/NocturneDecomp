@@ -7,6 +7,8 @@ namespace nocturne::core {
 
 class CNPC : public CCharacter {
 public:
+    static const CDemonActorType kType;
+
     CNPC();
     ~CNPC() override;
 

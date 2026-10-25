@@ -8,6 +8,8 @@ namespace nocturne::core {
 
 class CVampireBoss : public CEnemy {
 public:
+    static const CDemonActorType kType;
+
     CVampireBoss();
     ~CVampireBoss() override;
 
