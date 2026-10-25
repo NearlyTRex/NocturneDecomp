@@ -52,11 +52,10 @@ SMotion *current_motion(CHero *hero)
     return core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0(controller(hero));
 }
 
+// Asked only of states the hero has: GETGRABBED once found, and the escape once
+// escaping, which needs one.
 float state_weight(CHero *hero, int state)
 {
-    if (state < 0) {
-        return 0.0f;
-    }
     return core_motion_cpp_CMotionController_getStateBlendWeight_FUN_0052dd20
         (controller(hero), state);
 }

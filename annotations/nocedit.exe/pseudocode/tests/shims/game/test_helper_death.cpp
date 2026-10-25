@@ -37,14 +37,14 @@ NOCTURNE_TEST(the_hero_is_held_over_a_dead_helper) {
     CHECK_EQ(nocturne_helper_death_hold_hero(), 0);
 
     script->focus_actor = &heroes[0]->base.base;
-    stand.death[heroes[0]] = DEATH_STATE_DEAD;
+    death[heroes[0]] = DEATH_STATE_DEAD;
     CHECK_EQ(nocturne_helper_death_hold_hero(), 0);
 
     script->focus_actor = helper;
-    give_class(helper, &scat_type);
-    stand.death[helper] = DEATH_STATE_DYING;
+    give_class(helper, &g_CScatClassInfo);
+    death[helper] = DEATH_STATE_DYING;
     CHECK_EQ(nocturne_helper_death_hold_hero(), 0);
-    stand.death[helper] = DEATH_STATE_DEAD;
+    death[helper] = DEATH_STATE_DEAD;
     CHECK_EQ(nocturne_helper_death_hold_hero(), 1);
 }
 

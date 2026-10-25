@@ -8,14 +8,15 @@
 
 #include "nocturne.h"
 
+#include <cctype>
+
 #if !NOCTURNE_AUTHENTIC_LIGHT_FILTER_LOAD
 
 namespace {
 
 bool is_ident_char(char c)
 {
-    return (c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z') ||
-           (c >= '0' && c <= '9') || c == '_';
+    return std::isalnum((unsigned char)c) != 0 || c == '_';
 }
 
 // `text` starts with the command `name`, matched without case and not as the

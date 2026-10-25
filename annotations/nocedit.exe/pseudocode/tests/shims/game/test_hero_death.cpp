@@ -53,7 +53,7 @@ NOCTURNE_TEST(a_hero_not_standing_dead_is_left_alone) {
     const Case cases[] = {
         {"alive", [] { heroes[0]->base.hit_points = 1.0f; }},
         {"not a player", [] { g_HeroCount = 0; }},
-        {"dying", [] { stand.death[heroes[0]] = DEATH_STATE_DYING; }},
+        {"dying", [] { death[heroes[0]] = DEATH_STATE_DYING; }},
         {"headed to DIE", [] { heroes[0]->base.model.base.state_index = 4; }},
         {"headed to DEAD", [] { heroes[0]->base.model.base.state_index = 5; }},
         {"no DIE", [] { stand.motion_states.erase("DIE"); }},

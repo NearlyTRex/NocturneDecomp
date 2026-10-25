@@ -7,9 +7,10 @@
 // The globals they read, defined here; the engine's motion, sound, grab and
 // lookup calls, and the shims outside these that they lean on (the hero motion
 // helpers, the items, Moloch's regeneration, the netplay hero names), stood in
-// for and recording what they were handed. Actors answer their class through
-// class_support.h. reset() puts everything back.
+// for and recording what they were handed. The party is hero_support.h's.
+// reset() puts everything back.
 
+#include "hero_support.h"
 #include "nocturne.h"
 
 #include <map>
@@ -19,6 +20,8 @@
 #include <vector>
 
 namespace game_support {
+
+using namespace hero_support;
 
 struct Stand {
     // --- what the engine was asked to do ---------------------------------------
@@ -41,7 +44,6 @@ struct Stand {
 
     // --- the rest ---------------------------------------------------------------
     std::map<std::string, CDemonActor *> named;              // findActorByName
-    std::map<const void *, EDeathState> death;               // getDeathState; else ALIVE
     std::set<unsigned int> playing;                          // isSfxPlaying
     std::map<std::string, float> durations;                  // getSoundDuration; else -1
 
@@ -49,19 +51,5 @@ struct Stand {
 };
 
 extern Stand stand;
-
-// Classes with no class info of their own here: a companion, under CHero, and
-// an item, under nothing.
-extern CDemonActorType scat_type, item_type;
-
-// Heroes for the four slots, and characters that are not heroes.
-extern CHero *heroes[4];
-CCharacter *character(int i);
-
-// Give an actor the shared vtable and a class.
-void give_class(CDemonActor *actor, CDemonActorType *type);
-
-// Put heroes[0..count) in the party, as players.
-void place_heroes(int count);
 
 }  // namespace game_support
