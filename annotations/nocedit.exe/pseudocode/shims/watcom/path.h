@@ -47,8 +47,13 @@ inline WatcomPathRoots &watcom_path_roots_storage() {
     static WatcomPathRoots roots;
     return roots;
 }
+inline unsigned &watcom_path_roots_generation() {
+    static unsigned generation = 0;
+    return generation;
+}
 inline void watcom_set_path_roots(const WatcomPathRoots &roots) {
     watcom_path_roots_storage() = roots;
+    watcom_path_roots_generation()++;
 }
 inline const WatcomPathRoots &watcom_path_roots() {
     return watcom_path_roots_storage();

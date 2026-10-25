@@ -199,6 +199,47 @@ NOCTURNE_TEST(a_drive_letter_is_a_letter_and_a_colon) {
     CHECK_EQ(watcom_resolve_fs_path("{:\\x"), data + "/{:/x");
 }
 
+// A read that found its file is answered the same way until something could
+// have changed it: a copy put in the user directory behind the resolver's back
+// is not seen until the game writes, or the roots are set again.
+NOCTURNE_TEST(a_found_read_holds_until_a_write_or_new_roots) {
+    Install install;
+    CHECK(fs::equivalent(watcom_resolve_fs_path("act1.pod"), install.in_data("ACT1.POD")));
+    Install::write(install.user / "ACT1.POD", "mine");
+    CHECK(fs::equivalent(watcom_resolve_fs_path("act1.pod"), install.in_data("ACT1.POD")));
+
+    watcom_resolve_fs_path("save\\other.noc", WatcomPathUse::Write);
+    CHECK(fs::equivalent(watcom_resolve_fs_path("act1.pod"), install.in_user("ACT1.POD")));
+
+    std::error_code ec;
+    fs::remove(install.user / "ACT1.POD", ec);
+    watcom_set_path_roots({install.data.generic_string(), install.user.generic_string()});
+    CHECK(fs::equivalent(watcom_resolve_fs_path("act1.pod"), install.in_data("ACT1.POD")));
+}
+
+// A read that found nothing is asked again, so a file that appears is found.
+NOCTURNE_TEST(a_missing_read_is_looked_for_again) {
+    Install install;
+    std::error_code ec;
+    CHECK(!fs::exists(fs::path(watcom_resolve_fs_path("save\\later.noc")), ec));
+    Install::write(install.data / "save" / "later.noc", "late");
+    CHECK(fs::equivalent(watcom_resolve_fs_path("save\\later.noc"),
+                         install.in_data("save/later.noc")));
+}
+
+// Past its limit the store starts over rather than growing, and what it forgot
+// is worked out again.
+NOCTURNE_TEST(a_full_store_starts_over) {
+    Install install;
+    std::string spelling = "act1.pod";
+    for (int i = 0; i <= 1024; ++i) {
+        watcom_resolve_fs_path(spelling.c_str());
+        spelling = ".\\" + spelling;
+    }
+    Install::write(install.user / "ACT1.POD", "mine");
+    CHECK(fs::equivalent(watcom_resolve_fs_path("act1.pod"), install.in_user("ACT1.POD")));
+}
+
 NOCTURNE_TEST(no_roots_is_the_working_directory) {
     watcom_set_path_roots({});
     CHECK_EQ(watcom_resolve_fs_path("no\\such\\file", WatcomPathUse::Write),

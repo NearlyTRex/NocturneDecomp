@@ -9,8 +9,10 @@
 #include "core/ascii_case.h"
 
 #include <filesystem>
+#include <mutex>
 #include <string>
 #include <system_error>
+#include <unordered_map>
 
 namespace {
 
@@ -155,11 +157,7 @@ std::string for_writing(const std::string &relative) {
     return target;
 }
 
-} // namespace
-
-std::string watcom_resolve_fs_path(const char *path, WatcomPathUse use) {
-    if (path == nullptr)
-        return std::string();
+std::string resolve(const char *path, WatcomPathUse use) {
     const std::string relative = slashed(path);
     const WatcomPathRoots &r = roots();
     if (is_absolute(relative) || (r.data.empty() && r.user.empty())) {
@@ -173,6 +171,53 @@ std::string watcom_resolve_fs_path(const char *path, WatcomPathUse use) {
             return own;
     }
     return r.data.empty() ? resolve_case_insensitive(relative) : under(r.data, relative);
+}
+
+// What each read found, for asking again without the walk: the game opens the
+// same files over and over, and every resolution is a few filesystem calls.
+// Only answers that found a file are kept, so one that appears later is still
+// found; only absolute ones, so a change of working directory cannot make one
+// wrong (the roots are absolute, so that is every read under them). A write
+// could change any answer, so it forgets them all, as new roots do. A file
+// changed behind the game's back is not noticed until then.
+struct ReadCache {
+    std::mutex lock;
+    unsigned generation = 0;
+    std::unordered_map<std::string, std::string> found;
+};
+
+const size_t kReadCacheLimit = 1024;
+
+ReadCache &read_cache() {
+    static ReadCache cache;
+    return cache;
+}
+
+} // namespace
+
+std::string watcom_resolve_fs_path(const char *path, WatcomPathUse use) {
+    if (path == nullptr)
+        return std::string();
+    ReadCache &cache = read_cache();
+    std::lock_guard<std::mutex> guard(cache.lock);
+    if (use == WatcomPathUse::Write || cache.generation != watcom_path_roots_generation()) {
+        cache.found.clear();
+        cache.generation = watcom_path_roots_generation();
+    }
+    if (use == WatcomPathUse::Write)
+        return resolve(path, use);
+
+    const std::string key(path);
+    const auto hit = cache.found.find(key);
+    if (hit != cache.found.end())
+        return hit->second;
+    std::string resolved = resolve(path, use);
+    if (is_absolute(resolved) && exists(resolved)) {
+        if (cache.found.size() >= kReadCacheLimit)
+            cache.found.clear();
+        cache.found.emplace(key, resolved);
+    }
+    return resolved;
 }
 
 std::vector<std::string> watcom_resolve_fs_dirs(const char *directory) {
