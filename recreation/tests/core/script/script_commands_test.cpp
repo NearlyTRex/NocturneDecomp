@@ -100,6 +100,28 @@ TEST_F(CScriptCommandsTest, WaitTakesSeconds) {
     expectSyntaxError("wait(soon)\n", 1, "Error parsing time value on wait statament");
 }
 
+TEST_F(CScriptCommandsTest, TheCommandsOfAConditionCheckIt) {
+    for (const char *command : {"allowEnemyAttack", "allowHeroControls", "allowHeroDamage", "if",
+                                "lockFocusActor", "waitFor"}) {
+        expectPasses(std::format("{}( flag && cmp(count > 2) )\n", command));
+        expectSyntaxError(std::format("{}(flag &)\n", command), 1, "Unexpected end of string");
+        expectSyntaxError(std::format("{} flag\n", command), 1, "No opening parenthesis");
+    }
+}
+
+// The original's buffer for a condition is 100 characters.
+TEST_F(CScriptCommandsTest, AConditionIsShorterThan100Characters) {
+    expectPasses(std::format("if({})\n", std::string(99, 'f')));
+    expectSyntaxError(std::format("if({})\n", std::string(100, 'f')), 1, "Argument too long");
+}
+
+TEST_F(CScriptCommandsTest, EnableCameraGroupTakesAGroupAndACondition) {
+    expectPasses("enableCameraGroup(2 , !flag )\n");
+    expectSyntaxError("enableCameraGroup(2, flag flag)\n", 1, "Syntax error");
+    expectSyntaxError("enableCameraGroup(first, flag)\n", 1,
+                      "Error parsing enableCameraGroup parms");
+}
+
 TEST_F(CScriptCommandsTest, GotoAndGosubTakeTheRestOfTheLineAsALabel) {
     expectPasses("goto end_part\ngosub End_Part\n:end_part\n");
     expectSyntaxError(":top\ngoto bottom\n", 2,

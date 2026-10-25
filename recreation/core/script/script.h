@@ -15,12 +15,13 @@
 
 namespace nocturne::core {
 
-// What a script reads its files with, reports a bad file through, and finds the actors its
-// commands name in.
+// What a script reads its files with, reports a bad file through, finds the actors its commands
+// name in, and checks its conditions with.
 struct SScriptOwners {
     const engine::CDosIo &dosio;
     shape::CEditorTools &editor_tools;
     const CDemonMission &mission;
+    CEventList &events;
 };
 
 // A line of the script that holds something, trimmed, and its line in the file, from 1.
@@ -44,13 +45,14 @@ struct SDialogEntry {
 };
 
 // The line a step is checking: the command's name as the command table spells it, what follows
-// the name, which a check moves past what it reads, the line in the file, and the mission whose
-// actors the command names.
+// the name, which a check moves past what it reads, the line in the file, the mission whose
+// actors the command names, and the events that check its condition.
 struct SScriptStatement {
     std::string_view command;
     std::string_view rest;
     int line_number = 0;
     const CDemonMission &mission;
+    CEventList &events;
 };
 
 class CScript {

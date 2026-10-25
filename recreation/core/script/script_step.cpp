@@ -78,18 +78,18 @@ void CScript::initRuntime() {
 //   same name, with CEventList::validateCommands and executeCommands
 // deferred: raise, checking and running its event commands, with CEventList::validateCommands
 //   and executeCommands
-// deferred: allowEnemyAttack, checking its condition and setting whether enemies attack, with
-//   CEventList::validateCondition and evaluateCondition
-// deferred: allowHeroControls, checking its condition and blocking the heroes' controls, with
-//   CEventList::validateCondition and evaluateCondition
-// deferred: allowHeroDamage, checking its condition and setting whether heroes take damage,
-//   with CEventList::validateCondition and evaluateCondition
-// deferred: lockFocusActor, checking its condition and locking the focus actor, with
-//   CEventList::validateCondition and evaluateCondition
-// deferred: if, checking its condition and skipping the next statement, and an else after it,
-//   when false, with CEventList::validateCondition and evaluateCondition
-// deferred: waitFor, checking its condition and holding the script until it holds, with
-//   CEventList::validateCondition and evaluateCondition
+// deferred: running allowEnemyAttack, setting whether enemies attack by its condition, with
+//   CEventList::evaluateCondition
+// deferred: running allowHeroControls, blocking the heroes' controls unless its condition holds,
+//   with CEventList::evaluateCondition
+// deferred: running allowHeroDamage, setting whether heroes take damage by its condition, with
+//   CEventList::evaluateCondition
+// deferred: running lockFocusActor, locking the focus actor by its condition, with
+//   CEventList::evaluateCondition
+// deferred: running if, skipping the next statement, and an else after it, when its condition
+//   is false, with CEventList::evaluateCondition
+// deferred: running waitFor, holding the script until its condition holds, with
+//   CEventList::evaluateCondition
 // deferred: running addItemToInventory, adding the item to the hero's inventory, with
 //   CInventory::addItem
 // deferred: running attachActorToPlatform, attaching the actor, with CPlatform::attachActor
@@ -129,8 +129,8 @@ void CScript::initRuntime() {
 //   CDemonSet::addLightFilter
 // deferred: enableCamera, checking the camera and its condition and enabling it, with
 //   CDemonSet::findCameraByName and CEventList::validateCondition
-// deferred: enableCameraGroup, checking its condition and enabling the group, with
-//   CEventList::validateCondition
+// deferred: running enableCameraGroup, enabling the group by its condition, with
+//   CDemonSet::setCameraEnabledByGroup and CEventList::evaluateCondition
 // deferred: setCameraGroup, checking the camera and moving it to the group, with
 //   CDemonSet::findCameraByName
 // deferred: switchCamera, checking the camera and the hold time and switching to it, with
@@ -139,8 +139,8 @@ void CScript::initRuntime() {
 //   CMotionList::findMotionIndex
 // deferred: dismember, checking the character and its parts, drawing the random spread while
 //   checking too, and cutting the parts off, with parseBodyPartMask and createBodyPart
-// deferred: holsterWeapon, checking the hero and its condition and holstering or drawing, with
-//   CEventList::validateCondition
+// deferred: running holsterWeapon, holstering the weapon when its condition holds and drawing it
+//   otherwise, with CHero::drawWeapon and CEventList::evaluateCondition
 // deferred: pressButton, checking the hero and the button and pressing it, with getActionState
 // deferred: releaseButton, checking the hero and the button and releasing it, with
 //   getActionState
@@ -189,7 +189,8 @@ CScript::CommandResult CScript::step() {
     SStatement statement{.command = {},
                          .rest = line.text,
                          .line_number = line.line_number,
-                         .mission = owners_.mission};
+                         .mission = owners_.mission,
+                         .events = owners_.events};
     const char first = line.text.front();
     if (first == '{' || first == '}') {
         return {};

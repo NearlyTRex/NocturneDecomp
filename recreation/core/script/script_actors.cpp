@@ -5,6 +5,7 @@
 #include "core/charactr/character.h"
 #include "core/door/door.h"
 #include "core/enemy/enemy.h"
+#include "core/event/eventlist.h"
 #include "core/hero/hero.h"
 #include "core/platfrm/platform.h"
 #include "core/script/commandchecks.h"
@@ -201,6 +202,38 @@ Result checkGetTriggerActor(CScript & /*script*/, SScriptStatement &statement) {
         return valid;
     }
     return missing(statement, pair->second, CTrigger::kType).value_or(Result{});
+}
+
+// "(hero[, condition])": the condition is all but the last character after the comma, which must
+// be the ')'.
+Result checkHolsterWeapon(CScript & /*script*/, SScriptStatement &statement) {
+    constexpr std::string_view kError = "Error parsing holsterWeapon command parms";
+    std::string hero;
+    if (const Result scanned =
+            consumeScanned(statement, common::scanPrefix(statement.rest, "(%[^,)]", hero), kError);
+        !scanned) {
+        return scanned;
+    }
+    if (const std::optional<Result> stop = missing(statement, trimmed(hero), CHero::kType)) {
+        return *stop;
+    }
+    if (statement.rest.starts_with(',')) {
+        statement.rest.remove_prefix(1);
+        if (statement.rest.size() < 2) {
+            return std::unexpected(std::string(kError));
+        }
+        const std::string_view condition = statement.rest.substr(0, statement.rest.size() - 1);
+        statement.rest.remove_prefix(condition.size());
+        if (const CEventList::ConditionResult valid = statement.events.validateCondition(condition);
+            !valid) {
+            return valid;
+        }
+    }
+    if (!statement.rest.starts_with(')')) {
+        return std::unexpected("Missing closing ')' in holsterWeapon command");
+    }
+    statement.rest.remove_prefix(1);
+    return {};
 }
 
 Result checkLookAt(CScript & /*script*/, SScriptStatement &statement) {

@@ -61,6 +61,15 @@ inline std::string cameraText(const std::string &name) {
            "4,5,6\nreverb\n7\n";
 }
 
+// A light as a version 26 file holds it, of the type, which is 0 for a spotlight.
+inline std::string lightText(const std::string &name, int light_type) {
+    return "label\n" + name +
+           "\nlabel\n1,2,3\nlabel\n0.1,0.2,0.3\nlabel\n30\naspect\n1.5\nintensity\n0.25\nlabel\n" +
+           std::to_string(light_type) +
+           "\nlabel\n0.5,0.6,0.7,10,4\nlabel\n512,128\nlabel\n2\nlabel\n0\n1.5,3,glow.raw\n"
+           "2.5,4,dim.raw\nlabel\n1\nmove\n1,2,3,4,5\nlabel\n0.5,2\nvisible\n0\n";
+}
+
 // A CDemonSet over the renderer fixture, loading models\test.set.
 class CSetFileFixture : public engine::CDemonRendererFixture {
 protected:

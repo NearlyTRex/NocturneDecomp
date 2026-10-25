@@ -82,6 +82,19 @@ TEST_F(CScriptActorsTest, EnableHealthBarTakesACharacterAndAMode) {
     expectSyntaxError("enableHealthBar(Mob)\n", 1, "Error parsing enableHealthBar parms");
 }
 
+// The condition is all but the last character after the comma.
+TEST_F(CScriptActorsTest, HolsterWeaponTakesAHeroAndACondition) {
+    expectPasses("holsterWeapon(Gabriel)\nholsterWeapon( Gabriel , isDead(Mob))\n"
+                 "holsterWeapon($, junk\n");
+    expectSyntaxError("holsterWeapon(Mob)\n", 1, wrongClass("Mob", "CTestCharacter", "CHero"));
+    expectSyntaxError("holsterWeapon(Gabriel, unknown(1))\n", 1, "Invalid meta-function");
+    expectSyntaxError("holsterWeapon(Gabriel, flag]\n", 1,
+                      "Missing closing ')' in holsterWeapon command");
+    expectSyntaxError("holsterWeapon(Gabriel\n", 1, "Missing closing ')' in holsterWeapon command");
+    expectSyntaxError("holsterWeapon(Gabriel,)\n", 1, "Error parsing holsterWeapon command parms");
+    expectSyntaxError("holsterWeapon Gabriel\n", 1, "Error parsing holsterWeapon command parms");
+}
+
 TEST_F(CScriptActorsTest, GetTriggerActorTakesAVariableAndATrigger) {
     expectPasses("getTriggerActor(@who, Trip)\n");
     expectSyntaxError("getTriggerActor(who, Trip)\n", 1, "Actor variable name must begin with '@'");

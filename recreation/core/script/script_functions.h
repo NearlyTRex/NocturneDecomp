@@ -26,6 +26,9 @@ struct SActorLookupError {
 // whitespace after. The argument must be shorter than max_length.
 [[nodiscard]] std::expected<std::string, std::string> parseArgument(std::string_view &cursor,
                                                                     std::size_t max_length);
+// A command's condition, parsed as parseArgument parses it and then checked.
+[[nodiscard]] std::expected<std::string, std::string> parseConditionExpr(std::string_view &cursor,
+                                                                         CEventList &events);
 // '@' then one or more letters, digits or underscores, 30 characters at most.
 [[nodiscard]] std::expected<void, std::string>
 validateActorVariableName(std::string_view variable_name);

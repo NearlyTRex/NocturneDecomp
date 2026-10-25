@@ -20,6 +20,7 @@ ScriptCheckResult checkAttachActorToPlatform(CScript &script, SScriptStatement &
 ScriptCheckResult checkCancelWalkTo(CScript &script, SScriptStatement &statement);
 ScriptCheckResult checkEnableHealthBar(CScript &script, SScriptStatement &statement);
 ScriptCheckResult checkGetTriggerActor(CScript &script, SScriptStatement &statement);
+ScriptCheckResult checkHolsterWeapon(CScript &script, SScriptStatement &statement);
 ScriptCheckResult checkLookAt(CScript &script, SScriptStatement &statement);
 ScriptCheckResult checkMovePlatform(CScript &script, SScriptStatement &statement);
 ScriptCheckResult checkOpenDoor(CScript &script, SScriptStatement &statement);

@@ -5,12 +5,14 @@
 #include "core/charactr/character.h"
 #include "core/door/door.h"
 #include "core/enemy/enemy.h"
+#include "core/event/eventlist.h"
 #include "core/hero/hero.h"
 #include "core/hero/heroplaceholder.h"
 #include "core/platfrm/platform.h"
 #include "core/script/script.h"
 #include "core/trigger/trigger.h"
 #include "tests/mocks/core/missionfixture.h"
+#include "tests/mocks/core/setfilefixture.h"
 #include "tests/mocks/core/testactor.h"
 
 #include <gmock/gmock.h>
@@ -81,7 +83,17 @@ protected:
             << text;
     }
 
-    CScript script_{{.dosio = dosio_, .editor_tools = editor_tools_, .mission = mission_}};
+    // Loads a set whose lights are the text's, a count then each light. The set has no geometry,
+    // which a prompt warns of.
+    void givenLights(const std::string &lights) {
+        EXPECT_CALL(raw_input_, getNextKeypress(::testing::_)).WillOnce(::testing::Return('x'));
+        givenFile("models\\test.set", SSetFile{.lights = lights}.text());
+        set_.load("test.set");
+    }
+
+    CEventList events_{{.mission = mission_, .actor = actor_, .set = set_}};
+    CScript script_{
+        {.dosio = dosio_, .editor_tools = editor_tools_, .mission = mission_, .events = events_}};
 };
 
 } // namespace nocturne::core

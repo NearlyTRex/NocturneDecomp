@@ -24,7 +24,7 @@ functions don't count as done. Sizes are in instructions.
 | 8 | `renderMenuAndGetChoice`, `CMoon::free`, `CSound::reset`, `CEditorTools::showFileSelectionDialog` | 8 | 63 | 5314 | 60 | 3 | 95.2% |
 | 9 | `CPickList::enableItem`, `CEventList::resetGameFlags`, `CLevelLoader::show`, `CDemonMission::load` | 15 | 56 | 3298 | 26 | 8 | 46.4% |
 | 10 | `CDemonMission::createHeros`, `CDemonMission::prepareAllActors`, `CEventList::reset`, `CDemonMission::loadSet` | 15 | 42 | 5112 | 31 | 7 | 73.8% |
-| 11 | `CScript::loadScript` | 63 | 579 | 67400 | 22 | 8 | 3.7% |
+| 11 | `CScript::loadScript` | 63 | 579 | 67400 | 26 | 13 | 4.4% |
 | 12 | `CDemonMission::loadScript`, `CScript::executeInitSection`, `CDemonMission::startMission`, `CDemonMission::buildActiveSetActorList`, `CConsole::reset`, `CEditorTools::displayMemoryDiagnostics`, `CGame::setGameRes`, `CDemonLight::init`, `CDemonSet::initScene` | 12 | 26 | 1658 | 2 | 0 | 7.6% |
 | 13 | `CFireEffect::init`, `CDemonSet::loadMasterLightStates`, `CDemonSet::setGamma`, `CGame::clearOverlay`, `CGame::loadAssets` | 7 | 27 | 735 | 0 | 0 | 0.0% |
 | 14 | `CNetGame::syncPlayers`, `CNetGame::processServerFrame`, `CLevelLoader::cleanup`, `CKeys::toggleInputMask`, `CGame::processHotkeys` | 17 | 51 | 5302 | 1 | 0 | 1.9% |
@@ -38,7 +38,7 @@ functions don't count as done. Sizes are in instructions.
 | 22 | Not reached from startup: `shape/` | 2 | 42 | 3178 | 4 | 2 | 9.5% |
 | 23 | Not reached from startup: `core/` (part 1 of 9) | 18 | 292 | 16011 | 24 | 1 | 8.2% |
 | 24 | Not reached from startup: `core/` (part 2 of 9) | 11 | 277 | 24965 | 15 | 2 | 5.4% |
-| 25 | Not reached from startup: `core/` (part 3 of 9) | 24 | 278 | 24134 | 18 | 8 | 6.4% |
+| 25 | Not reached from startup: `core/` (part 3 of 9) | 24 | 278 | 24134 | 19 | 9 | 6.8% |
 | 26 | Not reached from startup: `core/` (part 4 of 9) | 18 | 300 | 20148 | 40 | 5 | 13.3% |
 | 27 | Not reached from startup: `core/` (part 5 of 9) | 21 | 294 | 20910 | 29 | 5 | 9.8% |
 | 28 | Not reached from startup: `core/` (part 6 of 9) | 18 | 282 | 21809 | 24 | 7 | 8.5% |
@@ -46,7 +46,7 @@ functions don't count as done. Sizes are in instructions.
 | 30 | Not reached from startup: `core/` (part 8 of 9) | 20 | 300 | 31826 | 29 | 2 | 9.6% |
 | 31 | Not reached from startup: `core/` (part 9 of 9) | 5 | 111 | 10905 | 7 | 1 | 6.3% |
 | 32 | Not reached from startup: `wincore/` | 2 | 11 | 482 | 4 | 0 | 36.3% |
-| | **All** | | **4479** | **402407** | **765** | **115** | **17.0%** |
+| | **All** | | **4479** | **402407** | **770** | **121** | **17.1%** |
 
 ## Step 0: Math value types
 
@@ -1370,7 +1370,7 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `reverseTransition` 0x0052da50 (38)
   - [ ] `setDesiredState` 0x0052db00 (47)
 
-### `core/event.cpp` (34 functions, 8671 instructions, 0 done, 0 partial)
+### `core/event.cpp` (34 functions, 8671 instructions, 3 done, 4 partial)
 - class `CEventList`
   - [ ] `findActorVariable` 0x004b0bf0 (34)
   - [ ] `getActorByVarName` 0x004b0b80 (46)
@@ -1383,11 +1383,15 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `findSfxEntry` 0x004b0d60 (34)
   - [ ] `updateSfxEntries` 0x004b0db0 (95)
   - [ ] `getSfxHandle` 0x004b0c40 (22)
-  - [ ] `evaluateAtom` 0x004ae140 (2676)
-  - [ ] `evaluateLogicalExpr` 0x004b0270 (74)
-  - [ ] `evaluateExpression` 0x004add80 (45)
+  - [~] `evaluateAtom` 0x004ae140 (2676)
+    - deferred: each atom's value: a flag, event or timer by its name, the counters a cmp compares, the heroes' items and keys, the actors' state, the camera, the fade, the nudity setting and the event sounds, with evaluateCondition
+    - deferred: hasItem and hasKeyMask asking every hero in a network game, isCurrentCamera asking the network camera, and isWearingGasMask holding for the hero the gas room spares, with CNetGame's sessions
+  - [~] `evaluateLogicalExpr` 0x004b0270 (74)
+    - deferred: the value of the atoms joined, with evaluateCondition
+  - [x] `evaluateExpression` 0x004add80 (45)
   - [ ] `evaluateCondition` 0x004adca0 (33)
-  - [ ] `validateCondition` 0x004add00 (21)
+  - [~] `validateCondition` 0x004add00 (21)
+    - deferred: evaluating the condition while running, printing an error to the console, with evaluateCondition
   - [ ] `addOrRemovePersistentEvent` 0x004b0330 (101)
   - [ ] `addOrRemoveGameFlag` 0x004b0470 (101)
   - [ ] `setTimerEvent` 0x004b05a0 (131)
@@ -1399,9 +1403,11 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `validateCommands` 0x004add40 (21)
   - [ ] `setActorVariable` 0x004b09a0 (181)
 - free functions
-  - [ ] `resolveActorByName` 0x004aa400 (126)
-  - [ ] `parseVectorLocation` 0x004aa530 (105)
-  - [ ] `isValidIdentifierChar` 0x004b0f90 (12)
+  - [~] `resolveActorByName` 0x004aa400 (126)
+    - deferred: an actor variable, missing when unset or of another class, with getActorByVarName
+    - deferred: the hero "$" means in a network game, the gas room's unmasked hero else the first, with CNetGame's sessions
+  - [x] `parseVectorLocation` 0x004aa530 (105)
+  - [x] `isValidIdentifierChar` 0x004b0f90 (12)
   - [ ] `formatEventError` 0x004aa2a0 (15)
   - [ ] `extractParenArg` 0x004aa6c0 (123)
   - [ ] `parseDeathType` 0x004aa7d0 (140)
@@ -1881,7 +1887,7 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `setWeatherType` 0x005ef8c0 (30)
   - [ ] `setOriginAndRotation` 0x005ef940 (154)
 
-### `core/set.cpp` (27 functions, 2403 instructions, 0 done, 0 partial)
+### `core/set.cpp` (27 functions, 2403 instructions, 1 done, 0 partial)
 - class `CDemonSet`
   - [ ] `getReverbPresetAtPosition` 0x0056fac0 (77)
   - [ ] `addCoronaGlobe` 0x0056d110 (12)
@@ -1889,7 +1895,7 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `initCameraShake` 0x00570fa0 (8)
   - [ ] `computeLighting` 0x0056e110 (40)
   - [ ] `markMirrorCameraDirty` 0x00570c60 (3)
-  - [ ] `addLightFilter` 0x00570f10 (54)
+  - [x] `addLightFilter` 0x00570f10 (54)
   - [ ] `addQueuedCoronaGlobe` 0x0056d140 (22)
   - [ ] `findCameraByName` 0x0056b790 (34)
   - [ ] `setCameraAmbientValue` 0x00570e20 (16)
@@ -1953,7 +1959,7 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `apply` 0x00585870 (106)
   - [ ] `testSphereInFrustum` 0x00585970 (66)
 
-### `core/script.cpp` (25 functions, 7596 instructions, 10 done, 7 partial)
+### `core/script.cpp` (25 functions, 7596 instructions, 10 done, 8 partial)
 - class `CScript`
   - [x] `freeParsedLines` 0x005598f0 (40)
   - [~] `clear` 0x00559870 (38)
@@ -1982,12 +1988,12 @@ functions don't count as done. Sizes are in instructions.
     - deferred: staying on a command that hasn't finished, and the overrun past the end of the script, while running, with process
     - deferred: advanceLightFilter, createExplosion, deleteActor, displayBitmap, hurtCharacter, incCounter, fadeSfx, fadeAmbientSound, flagOn, flagOff, gameFlagOn, gameFlagOff, killCharacter, killHero, killSfx, lightning, playSfx, setCameraAmbient, setCounter, setGroupAmbient, setLightFilterFrame, setLeverState, setModelState, setTimer, setWeather, shakeScreen, slamModelToMotion and warpTo, each checked and run as the event command of the same name, with CEventList::validateCommands and executeCommands
     - deferred: raise, checking and running its event commands, with CEventList::validateCommands and executeCommands
-    - deferred: allowEnemyAttack, checking its condition and setting whether enemies attack, with CEventList::validateCondition and evaluateCondition
-    - deferred: allowHeroControls, checking its condition and blocking the heroes' controls, with CEventList::validateCondition and evaluateCondition
-    - deferred: allowHeroDamage, checking its condition and setting whether heroes take damage, with CEventList::validateCondition and evaluateCondition
-    - deferred: lockFocusActor, checking its condition and locking the focus actor, with CEventList::validateCondition and evaluateCondition
-    - deferred: if, checking its condition and skipping the next statement, and an else after it, when false, with CEventList::validateCondition and evaluateCondition
-    - deferred: waitFor, checking its condition and holding the script until it holds, with CEventList::validateCondition and evaluateCondition
+    - deferred: running allowEnemyAttack, setting whether enemies attack by its condition, with CEventList::evaluateCondition
+    - deferred: running allowHeroControls, blocking the heroes' controls unless its condition holds, with CEventList::evaluateCondition
+    - deferred: running allowHeroDamage, setting whether heroes take damage by its condition, with CEventList::evaluateCondition
+    - deferred: running lockFocusActor, locking the focus actor by its condition, with CEventList::evaluateCondition
+    - deferred: running if, skipping the next statement, and an else after it, when its condition is false, with CEventList::evaluateCondition
+    - deferred: running waitFor, holding the script until its condition holds, with CEventList::evaluateCondition
     - deferred: running addItemToInventory, adding the item to the hero's inventory, with CInventory::addItem
     - deferred: running attachActorToPlatform, attaching the actor, with CPlatform::attachActor
     - deferred: running cancelWalkTo, stopping the character's walk, or every character's in the set, with the characters' walk targets
@@ -2010,12 +2016,12 @@ functions don't count as done. Sizes are in instructions.
     - deferred: running walkTo, walking the character to the target, with the characters' walk targets
     - deferred: addLightFilter, checking the light and the filter file and adding the filter, with CDemonSet::addLightFilter
     - deferred: enableCamera, checking the camera and its condition and enabling it, with CDemonSet::findCameraByName and CEventList::validateCondition
-    - deferred: enableCameraGroup, checking its condition and enabling the group, with CEventList::validateCondition
+    - deferred: running enableCameraGroup, enabling the group by its condition, with CDemonSet::setCameraEnabledByGroup and CEventList::evaluateCondition
     - deferred: setCameraGroup, checking the camera and moving it to the group, with CDemonSet::findCameraByName
     - deferred: switchCamera, checking the camera and the hold time and switching to it, with CDemonSet::findCameraByName
     - deferred: gesture, checking the character and the motion and starting it, with CMotionList::findMotionIndex
     - deferred: dismember, checking the character and its parts, drawing the random spread while checking too, and cutting the parts off, with parseBodyPartMask and createBodyPart
-    - deferred: holsterWeapon, checking the hero and its condition and holstering or drawing, with CEventList::validateCondition
+    - deferred: running holsterWeapon, holstering the weapon when its condition holds and drawing it otherwise, with CHero::drawWeapon and CEventList::evaluateCondition
     - deferred: pressButton, checking the hero and the button and pressing it, with getActionState
     - deferred: releaseButton, checking the hero and the button and releasing it, with getActionState
     - deferred: dbSay, checking the line in the database and its speaker and saying it, with startDialogLine
@@ -2059,7 +2065,8 @@ functions don't count as done. Sizes are in instructions.
   - [x] `trimString` 0x00559360 (44)
   - [x] `skipWhitespace` 0x005593d0 (8)
   - [x] `parseArgument` 0x005593f0 (78)
-  - [ ] `parseConditionExpr` 0x005594a0 (23)
+  - [~] `parseConditionExpr` 0x005594a0 (23)
+    - deferred: only parsing the condition while the script runs, with process
   - [~] `getActor` 0x005594e0 (149)
     - deferred: looking an actor variable up by its actor's name among the set's actors, with CEventList's actor variables and the set's actor list
     - deferred: the hero "$" means in a network game, the gas room's unmasked hero else the first, with CNetGame's sessions
@@ -4534,7 +4541,7 @@ functions don't count as done. Sizes are in instructions.
 - free functions
   - [x] `staticInit` 0x004a94d0 (9)
 
-### `core/event.cpp` (14 functions, 435 instructions, 0 done, 1 partial)
+### `core/event.cpp` (14 functions, 435 instructions, 1 done, 2 partial)
 - class `CRuleList`
   - [ ] `findFirst` 0x004b1890 (34)
   - [ ] `evaluateAndRun` 0x004b18e0 (24)
@@ -4542,14 +4549,15 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `insert` 0x004b1680 (109)
   - [ ] `remove` 0x004b17c0 (67)
 - class `CEventList`
-  - [ ] `ctor` 0x004aaa50 (11)
+  - [~] `ctor` 0x004aaa50 (11)
+    - deferred: emptying the events, counters, timers, actor variables, sounds and game flags, with the functions that read them
 - free functions
   - [~] `staticInit` 0x004aa260 (4)
-    - deferred: the game's event list, with this constructor
+    - deferred: the game's event list, with CDemonMission::loadScript
   - [ ] `setEventError` 0x004aa270 (20)
   - [ ] `skipWhitespace` 0x004aa2d0 (8)
   - [ ] `skipWhitespaceIndexed` 0x004aa2f0 (10)
-  - [ ] `parseComparisonOp` 0x004aa320 (58)
+  - [x] `parseComparisonOp` 0x004aa320 (58)
   - [ ] `parseIntOrCounter` 0x004aa3c0 (23)
   - [ ] `trimWhitespace` 0x004aa650 (44)
   - [ ] `getVectorDistance` 0x004b1930 (20)

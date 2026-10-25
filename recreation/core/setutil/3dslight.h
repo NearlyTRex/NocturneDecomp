@@ -20,6 +20,8 @@ class C3DSLight {
 public:
     // The cameras a light can say it is seen from.
     static constexpr int kMaxCameras = 250;
+    // The light type of a spotlight, the lights master lights are made for.
+    static constexpr int kSpotlightType = 0;
 
     C3DSLight();
 

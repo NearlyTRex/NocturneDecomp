@@ -18,6 +18,7 @@
 #include <cstddef>
 #include <cstdint>
 #include <cstdio>
+#include <optional>
 #include <span>
 #include <string>
 #include <string_view>
@@ -32,6 +33,12 @@ struct SRoom {
     common::CVector3f extents;
     common::CMatrix3x3f rotation_matrix;
     int reverb_size = 0;
+};
+
+// A light of the set that is a spotlight, and which of the spotlights it is.
+struct SSpotlight {
+    const C3DSLight *light = nullptr;
+    std::size_t index = 0;
 };
 
 // What a set loads with and into, and draws with.
@@ -111,7 +118,9 @@ public:
     void setCameraAmbientValueByGroup(int group_id, float value);
     void setCameraEnabled(int camera_index, int enabled);
     void setCameraEnabledByGroup(int group_id, int enabled);
-    void addLightFilter(char *light_name, C3DSLight **out_light, CDemonLight **out_master_light);
+    // The spotlight of that name, compared ignoring case, and its place among the set's
+    // spotlights, which is its master light's.
+    [[nodiscard]] std::optional<SSpotlight> addLightFilter(std::string_view light_name) const;
     void initCameraShake(float peak, float attack, float sustain, float decay);
     void buildActorTypeLists();
     void loadMasterLightStates(int *light_state_buffer);

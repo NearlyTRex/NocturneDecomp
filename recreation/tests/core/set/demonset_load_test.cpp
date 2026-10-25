@@ -11,6 +11,7 @@
 
 #include <cstddef>
 #include <cstdint>
+#include <optional>
 #include <span>
 #include <string>
 
@@ -93,13 +94,21 @@ TEST_F(CDemonSetLoadTest, EveryCameraIsEnabledInGroupZeroAtTheLeastAmbient) {
 }
 
 TEST_F(CDemonSetLoadTest, EachLightIsReadInTurn) {
-    const std::string light = "label\nlamp\nlabel\n1,2,3\nlabel\n0.1,0.2,0.3\nlabel\n30\n"
-                              "aspect\n1.5\nintensity\n0.25\nlabel\n2\nlabel\n0.5,0.6,0.7,10,4\n"
-                              "label\n512,128\nlabel\n2\nlabel\n0\n1.5,3,glow.raw\n2.5,4,dim.raw\n"
-                              "label\n1\nmove\n1,2,3,4,5\nlabel\n0.5,2\nvisible\n0\n";
-    load({.lights = "1\n" + light});
+    load({.lights = "1\n" + lightText("lamp", 2)});
     ASSERT_EQ(set_.getLights().size(), 1U);
     EXPECT_EQ(set_.getLights()[0].getName(), "lamp");
+}
+
+// Other lights are passed over, and don't count among the spotlights.
+TEST_F(CDemonSetLoadTest, ASpotlightIsFoundByNameAmongTheSpotlights) {
+    load({.lights = "4\n" + lightText("first", 0) + lightText("omni", 1) + lightText("Beam", 0) +
+                    lightText("last", 0)});
+    const std::optional<SSpotlight> beam = set_.addLightFilter("BEAM");
+    ASSERT_TRUE(beam.has_value());
+    EXPECT_EQ(beam->light, &set_.getLights()[2]);
+    EXPECT_EQ(beam->index, 1U);
+    EXPECT_FALSE(set_.addLightFilter("omni").has_value());
+    EXPECT_FALSE(set_.addLightFilter("absent").has_value());
 }
 
 TEST_F(CDemonSetLoadTest, AMissingFileIsFatal) {

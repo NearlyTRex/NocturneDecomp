@@ -101,8 +101,6 @@ TEST(CDemonSet, PublicInterface) {
         std::is_same_v<decltype(&CDemonSet::setCameraEnabled), void (CDemonSet::*)(int, int)>);
     static_assert(std::is_same_v<decltype(&CDemonSet::setCameraEnabledByGroup),
                                  void (CDemonSet::*)(int, int)>);
-    static_assert(std::is_same_v<decltype(&CDemonSet::addLightFilter),
-                                 void (CDemonSet::*)(char *, C3DSLight **, CDemonLight **)>);
     static_assert(std::is_same_v<decltype(&CDemonSet::initCameraShake),
                                  void (CDemonSet::*)(float, float, float, float)>);
     static_assert(std::is_same_v<decltype(&CDemonSet::buildActorTypeLists), void (CDemonSet::*)()>);

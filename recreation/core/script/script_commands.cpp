@@ -1,6 +1,7 @@
 #include "common/text/ascii.h"
 #include "common/text/scan.h"
 #include "common/text/scanformat.h"
+#include "core/event/eventlist.h"
 #include "core/script/commandchecks.h"
 #include "core/script/script.h"
 #include "core/script/script_functions.h"
@@ -69,6 +70,29 @@ Result checkDisplay(CScript & /*script*/, SScriptStatement &statement) {
             std::format("Error parsing message text on display statament: {}", message.error()));
     }
     return {};
+}
+
+// A command that takes only a condition.
+Result checkCondition(CScript & /*script*/, SScriptStatement &statement) {
+    const std::expected<std::string, std::string> condition =
+        parseConditionExpr(statement.rest, statement.events);
+    if (!condition) {
+        return std::unexpected(condition.error());
+    }
+    return {};
+}
+
+// "(group, condition)".
+Result checkEnableCameraGroup(CScript & /*script*/, SScriptStatement &statement) {
+    int group = 0;
+    std::string condition;
+    if (Result scanned = consumeScanned(
+            statement, common::scanPrefix(statement.rest, "(%d , %[^)])", group, condition),
+            "Error parsing enableCameraGroup parms");
+        !scanned) {
+        return scanned;
+    }
+    return statement.events.validateCondition(trimString(condition));
 }
 
 Result checkFinishedAct(CScript & /*script*/, SScriptStatement &statement) {
@@ -182,9 +206,9 @@ const CScript::SCommand *CScript::findCommand(std::string_view name) {
         SCommand{.name = "addItemToInventory", .check = &checkAddItemToInventory},
         SCommand{.name = "addLightFilter", .check = &checkNotPorted},
         SCommand{.name = "advanceLightFilter", .check = &checkNotPorted},
-        SCommand{.name = "allowEnemyAttack", .check = &checkNotPorted},
-        SCommand{.name = "allowHeroControls", .check = &checkNotPorted},
-        SCommand{.name = "allowHeroDamage", .check = &checkNotPorted},
+        SCommand{.name = "allowEnemyAttack", .check = &checkCondition},
+        SCommand{.name = "allowHeroControls", .check = &checkCondition},
+        SCommand{.name = "allowHeroDamage", .check = &checkCondition},
         SCommand{.name = "attachActorToPlatform", .check = &checkAttachActorToPlatform},
         SCommand{.name = "beginFadeIn", .check = &checkNothing},
         SCommand{.name = "beginFadeOut", .check = &checkNothing},
@@ -203,7 +227,7 @@ const CScript::SCommand *CScript::findCommand(std::string_view name) {
         SCommand{.name = "displayBitmap", .check = &checkNotPorted},
         SCommand{.name = "else", .check = &checkElse},
         SCommand{.name = "enableCamera", .check = &checkNotPorted},
-        SCommand{.name = "enableCameraGroup", .check = &checkNotPorted},
+        SCommand{.name = "enableCameraGroup", .check = &checkEnableCameraGroup},
         SCommand{.name = "enableHealthBar", .check = &checkEnableHealthBar},
         SCommand{.name = "end", .check = &checkNothing},
         SCommand{.name = "fadeAmbientSound", .check = &checkNotPorted},
@@ -221,17 +245,17 @@ const CScript::SCommand *CScript::findCommand(std::string_view name) {
         SCommand{.name = "gosub", .check = &checkJumpLabel},
         SCommand{.name = "goto", .check = &checkJumpLabel},
         SCommand{.name = "gtfo", .check = &checkText},
-        SCommand{.name = "holsterWeapon", .check = &checkNotPorted},
+        SCommand{.name = "holsterWeapon", .check = &checkHolsterWeapon},
         SCommand{.name = "hurtCharacter", .check = &checkNotPorted},
         SCommand{.name = "idle", .check = &checkNothing},
-        SCommand{.name = "if", .check = &checkNotPorted},
+        SCommand{.name = "if", .check = &checkCondition},
         SCommand{.name = "incCounter", .check = &checkNotPorted},
         SCommand{.name = "killCharacter", .check = &checkNotPorted},
         SCommand{.name = "killHero", .check = &checkNotPorted},
         SCommand{.name = "killSfx", .check = &checkNotPorted},
         SCommand{.name = "letterbox", .check = &checkLetterbox},
         SCommand{.name = "lightning", .check = &checkNotPorted},
-        SCommand{.name = "lockFocusActor", .check = &checkNotPorted},
+        SCommand{.name = "lockFocusActor", .check = &checkCondition},
         SCommand{.name = "lookAt", .check = &checkLookAt},
         SCommand{.name = "movePlatform", .check = &checkMovePlatform},
         SCommand{.name = "openDoor", .check = &checkOpenDoor},
@@ -274,7 +298,7 @@ const CScript::SCommand *CScript::findCommand(std::string_view name) {
         SCommand{.name = "timedDisplay", .check = &checkTimedDisplay},
         SCommand{.name = "turnToFace", .check = &checkTurnToFace},
         SCommand{.name = "wait", .check = &checkWait},
-        SCommand{.name = "waitFor", .check = &checkNotPorted},
+        SCommand{.name = "waitFor", .check = &checkCondition},
         SCommand{.name = "walkTo", .check = &checkWalkTo},
         SCommand{.name = "warpTo", .check = &checkNotPorted},
     };

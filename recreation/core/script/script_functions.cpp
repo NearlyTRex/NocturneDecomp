@@ -5,6 +5,7 @@
 #include "core/actor/demonactor.h"
 #include "core/actor/demonactortype.h"
 #include "core/actor/notported.h"
+#include "core/event/eventlist.h"
 #include "core/hero/hero.h"
 #include "core/mission/demonmission.h"
 
@@ -19,6 +20,8 @@ namespace nocturne::core {
 namespace {
 
 constexpr std::size_t kMaxActorVariableLength = 30;
+// A condition is shorter than the original's buffer for it.
+constexpr std::size_t kMaxCondition = 100;
 
 std::string_view trimTrailing(std::string_view text) {
     const std::size_t last = text.find_last_not_of(common::kWhitespace);
@@ -70,6 +73,20 @@ std::expected<std::string, std::string> parseArgument(std::string_view &cursor,
         argument.push_back(c);
     }
     return std::unexpected("Argument too long");
+}
+
+// deferred: only parsing the condition while the script runs, with process
+// nocedit 0x005594a0
+std::expected<std::string, std::string> parseConditionExpr(std::string_view &cursor,
+                                                           CEventList &events) {
+    std::expected<std::string, std::string> condition = parseArgument(cursor, kMaxCondition);
+    if (!condition) {
+        return condition;
+    }
+    if (const CEventList::ConditionResult valid = events.validateCondition(*condition); !valid) {
+        return std::unexpected(valid.error());
+    }
+    return condition;
 }
 
 // nocedit 0x00559220

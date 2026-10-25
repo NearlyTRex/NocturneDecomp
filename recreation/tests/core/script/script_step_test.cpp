@@ -99,13 +99,12 @@ TEST_F(CScriptStepTest, ElseSkipsAnotherElseWithItsStatement) {
                       "Can't skip next command after else statement on line 1");
 }
 
-// The if lines sit where the check is off, as the if command's own check isn't ported.
 TEST_F(CScriptStepTest, ElseSkipsAnIfWithItsStatementInsideABlock) {
-    expectPasses("else\n{\nsyntaxCheckOff\nif(a)\nif(b)\nwait(1)\nsyntaxCheckOn\n}\nend\n");
+    expectPasses("else\n{\nif(a)\nif(b)\nwait(1)\n}\nend\n");
 }
 
 TEST_F(CScriptStepTest, AnIfAfterTheSkippedStatementIsNotTakenIn) {
-    expectPasses("else\n{\nsyntaxCheckOff\n}\nif(a)\n");
+    expectPasses("else\n{\n}\nif(a)\n");
 }
 
 } // namespace
