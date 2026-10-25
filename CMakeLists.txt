@@ -21,7 +21,7 @@ cmake_minimum_required(VERSION 3.20)
 # run; cmake/README.md says which file holds what.
 # -----------------------------------------------------------------------------
 
-project(NocturneDecomp VERSION 0.1.7 LANGUAGES C CXX)
+project(NocturneDecomp VERSION 0.1.8 LANGUAGES C CXX)
 
 include("${CMAKE_SOURCE_DIR}/cmake/options.cmake")
 include("${CMAKE_SOURCE_DIR}/cmake/authenticity.cmake")
