@@ -15,8 +15,8 @@
 #include "gl/gl_api.h"
 
 #include <algorithm>
-#include <cstdlib>
 #include <cstring>
+#include <vector>
 
 // The game's back-buffer bit depth as a GL upload format. The 32bpp case is
 // SDL_PIXELFORMAT_ARGB8888, which on little-endian is B,G,R,A in memory —
@@ -47,26 +47,51 @@ inline int nocturne_gl_pixel_bytes(GLenum format, GLenum type) {
     return type == GL_UNSIGNED_SHORT_5_6_5 ? 2 : 3;
 }
 
-// One RGBA byte pixel written as `format`/`type`, a pair from
-// nocturne_gl_format_for_bpp. Rounds to the nearest 5- or 6-bit level, as a
-// desktop driver's conversion does.
-inline void nocturne_gl_pack_rgba(const unsigned char *rgba, GLenum format, GLenum type,
-                                  unsigned char *out) {
+// The nearest 5- and 6-bit level of each byte value, as a desktop driver's
+// conversion rounds.
+struct NocturneGlLevels {
+    unsigned char to5[256];
+    unsigned char to6[256];
+
+    NocturneGlLevels() {
+        for (unsigned i = 0; i < 256; ++i) {
+            to5[i] = (unsigned char)((i * 31u + 127u) / 255u);
+            to6[i] = (unsigned char)((i * 63u + 127u) / 255u);
+        }
+    }
+};
+
+inline const NocturneGlLevels &nocturne_gl_levels() {
+    static const NocturneGlLevels levels;
+    return levels;
+}
+
+// `count` RGBA byte pixels written as `format`/`type`, a pair from
+// nocturne_gl_format_for_bpp. A whole frame goes through here once a frame, so
+// the format is decided once a row rather than once a pixel.
+inline void nocturne_gl_pack_rgba_row(const unsigned char *rgba, int count, GLenum format,
+                                      GLenum type, unsigned char *out) {
     if (format == GL_BGRA) {
-        out[0] = rgba[2];
-        out[1] = rgba[1];
-        out[2] = rgba[0];
-        out[3] = rgba[3];
+        for (int x = 0; x < count; ++x, rgba += 4, out += 4) {
+            out[0] = rgba[2];
+            out[1] = rgba[1];
+            out[2] = rgba[0];
+            out[3] = rgba[3];
+        }
     } else if (type == GL_UNSIGNED_SHORT_5_6_5) {
-        const unsigned r = (rgba[0] * 31u + 127u) / 255u;
-        const unsigned g = (rgba[1] * 63u + 127u) / 255u;
-        const unsigned b = (rgba[2] * 31u + 127u) / 255u;
-        const unsigned short packed = (unsigned short)((r << 11) | (g << 5) | b);
-        memcpy(out, &packed, sizeof(packed));
+        const NocturneGlLevels &levels = nocturne_gl_levels();
+        for (int x = 0; x < count; ++x, rgba += 4, out += 2) {
+            const unsigned short packed =
+                (unsigned short)((levels.to5[rgba[0]] << 11) | (levels.to6[rgba[1]] << 5) |
+                                 levels.to5[rgba[2]]);
+            memcpy(out, &packed, sizeof(packed));
+        }
     } else {
-        out[0] = rgba[0];
-        out[1] = rgba[1];
-        out[2] = rgba[2];
+        for (int x = 0; x < count; ++x, rgba += 4, out += 3) {
+            out[0] = rgba[0];
+            out[1] = rgba[1];
+            out[2] = rgba[2];
+        }
     }
 }
 
@@ -76,23 +101,18 @@ inline void nocturne_gl_pack_rgba(const unsigned char *rgba, GLenum format, GLen
 // converted here.
 inline void nocturne_gl_read_pixels(GLenum read_buffer, GLsizei width, GLsizei height,
                                     GLenum format, GLenum type, void *dst, int pitch) {
-    const int bytes = nocturne_gl_pixel_bytes(format, type);
     gl.PixelStorei(GL_PACK_ALIGNMENT, 1);
 #if NOCTURNE_GLES
-    unsigned char *rgba = (unsigned char *)malloc((size_t)width * (size_t)height * 4u);
-    if (rgba == nullptr)
-        return;
+    static std::vector<unsigned char> rgba;
+    rgba.resize((size_t)width * (size_t)height * 4u);
     gl.ReadBuffer(read_buffer);
-    gl.ReadPixels(0, 0, width, height, GL_RGBA, GL_UNSIGNED_BYTE, rgba);
+    gl.ReadPixels(0, 0, width, height, GL_RGBA, GL_UNSIGNED_BYTE, rgba.data());
     for (GLsizei y = 0; y < height; ++y) {
-        unsigned char *row = (unsigned char *)dst + (size_t)y * (size_t)pitch;
-        const unsigned char *from = rgba + (size_t)y * (size_t)width * 4u;
-        for (GLsizei x = 0; x < width; ++x) {
-            nocturne_gl_pack_rgba(from + (size_t)x * 4u, format, type, row + (size_t)x * bytes);
-        }
+        nocturne_gl_pack_rgba_row(rgba.data() + (size_t)y * (size_t)width * 4u, width, format, type,
+                                  (unsigned char *)dst + (size_t)y * (size_t)pitch);
     }
-    free(rgba);
 #else
+    const int bytes = nocturne_gl_pixel_bytes(format, type);
     gl.PixelStorei(GL_PACK_ROW_LENGTH, pitch / bytes);
     gl.ReadBuffer(read_buffer);
     gl.ReadPixels(0, 0, width, height, format, type, dst);

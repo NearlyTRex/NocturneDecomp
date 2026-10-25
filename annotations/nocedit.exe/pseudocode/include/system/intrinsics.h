@@ -564,7 +564,13 @@ static inline int* _cpuid_intrinsic(int leaf) {
 // `ROUND(...)` in the decompile maps back to a call to that function (or to
 // FIST applied to its already-integer result), so truncate semantics is the
 // faithful match. NaN/inf/out-of-range -> INT_MIN per Watcom FIST behavior.
-static inline int ROUND(double x) {
+// Forced inline: per-pixel loops call it, and most of the game is built without
+// optimisation, where a plain inline function stays a call.
+#if defined(_MSC_VER)
+static __forceinline int ROUND(double x) {
+#else
+static inline __attribute__((always_inline)) int ROUND(double x) {
+#endif
     if (x != x || x >= 2147483647.5 || x < -2147483648.5) return (int)0x80000000;
     return (int)x;
 }

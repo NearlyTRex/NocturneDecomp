@@ -3,7 +3,7 @@
 # works to, on SDL's dummy video driver, their ini settings through a stand-in
 # for the engine's CIni.
 nocturne_test_suite(shims_gl
-    EXCLUDE "/test_gl_(api|api_missing|present)\\.cpp$"
+    EXCLUDE "/test_gl_(api|api_missing|present|pixels_gles)\\.cpp$"
     SUBJECTS
         shims/gl/gl_program.cpp
         shims/gl/gl_blit.cpp
@@ -15,6 +15,15 @@ nocturne_test_suite(shims_gl
     SUPPORT
         ../renderer/gl_recorder.cpp
         ini_support.cpp
+    LIBRARIES ${SDL2_LIBRARIES}
+)
+
+# The pixel helpers as an ES build has them, where a read comes back as RGBA
+# bytes for gl_pixels.h to convert.
+nocturne_test_suite(shims_gl_gles
+    TESTS test_gl_pixels_gles.cpp
+    SUPPORT ../renderer/gl_recorder.cpp
+    DEFINITIONS NOCTURNE_GLES=1
     LIBRARIES ${SDL2_LIBRARIES}
 )
 
