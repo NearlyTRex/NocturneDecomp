@@ -3,6 +3,7 @@
 // =============================================================================
 
 #include "automap_support.h"
+#include "class_support.h"
 
 #include "core/ui_scale.h"
 #include "game/chapter_select.h"
@@ -61,11 +62,6 @@ std::unique_ptr<CCharacter> s_actors[8];
 std::vector<unsigned char> s_screen;
 char s_key_name[40];
 
-CDemonActorType *actor_type(CDemonActor *a) {
-    std::map<const void *, CDemonActorType *>::const_iterator it = stand.types.find(a);
-    return (it != stand.types.end()) ? it->second : nullptr;
-}
-
 int can_pickup(CDemonActor *a, CDemonActor *) {
     std::map<const void *, int>::const_iterator it = stand.pickup.find(a);
     return (it != stand.pickup.end()) ? it->second : 0;
@@ -93,7 +89,7 @@ CDoor *door() { return s_door.get(); }
 void place(CDemonActor *a, CDemonActorType *type, CVector3f at) {
     a->vtable._uc = &s_vtable;
     a->location.position = at;
-    stand.types[a] = type;
+    class_support::types[a] = type;
     g_CDemonSetInstance.actors[g_CDemonSetInstance.actor_count++] = a;
 }
 
@@ -114,30 +110,21 @@ void Stand::reset() {
     std::memset(g_ColorTable32, 0, sizeof(g_ColorTable32));
 
     std::memset(&s_vtable, 0, sizeof(s_vtable));
-    s_vtable._ub.getActorType = actor_type;
+    s_vtable._ub.getActorType = class_support::actor_type;
     s_vtable._ub.canPickup = can_pickup;
     s_vtable._uc.getDeathState = death_state;
 
     // Each class registered, the way a first construction does it.
-    g_CCharacterClassInfo = CDemonActorType();
-    g_CCharacterClassInfo.name_hash = 0x100;
-    g_CEnemyClassInfo = CDemonActorType();
-    g_CEnemyClassInfo.name_hash = 0x200;
-    g_CEnemyClassInfo.parent_type = &g_CCharacterClassInfo;
-    g_CHeroClassInfo = CDemonActorType();
-    g_CHeroClassInfo.name_hash = 0x300;
-    g_CHeroClassInfo.parent_type = &g_CCharacterClassInfo;
-    g_CDoorClassInfo = CDemonActorType();
-    g_CDoorClassInfo.name_hash = 0x400;
-    g_CBodyPartClassInfo = CDemonActorType();
-    g_CBodyPartClassInfo.name_hash = 0x500;
-    mobster_type = CDemonActorType();
-    mobster_type.name_hash = 0x600;
-    mobster_type.parent_type = &g_CEnemyClassInfo;
-    item_type = CDemonActorType();
-    item_type.name_hash = 0x700;
-    unregistered_type = CDemonActorType();
-    unregistered_type.parent_type = &g_CEnemyClassInfo;
+    using class_support::make;
+    class_support::types.clear();
+    g_CCharacterClassInfo = make("CCharacter", 0x100);
+    g_CEnemyClassInfo = make("CEnemy", 0x200, &g_CCharacterClassInfo);
+    g_CHeroClassInfo = make("CHero", 0x300, &g_CCharacterClassInfo);
+    g_CDoorClassInfo = make("CDoor", 0x400);
+    g_CBodyPartClassInfo = make("CBodyPart", 0x500);
+    mobster_type = make("CMobster", 0x600, &g_CEnemyClassInfo);
+    item_type = make("CGun", 0x700);
+    unregistered_type = make("CWerewolf", 0, &g_CEnemyClassInfo);
 
     g_CDemonSetPtr = &g_CDemonSetInstance;
     g_CDemonMissionPtr = &s_mission;
@@ -178,7 +165,7 @@ void Stand::reset() {
     for (CHero *h : {hero, mate}) {
         h->base.base.vtable._uc = &s_vtable;
         h->base.hit_points = 100.0f;
-        types[&h->base.base] = &g_CHeroClassInfo;
+        class_support::types[&h->base.base] = &g_CHeroClassInfo;
     }
     hero->base.base.location.position = CVector3f{5.0f, 0.0f, 5.0f};
     g_HeroActors[0] = hero;
@@ -292,17 +279,6 @@ int __cdecl core_event_cpp_CEventList_evaluateCondition_FUN_004adca0(CEventList 
                                                                    char *condition_expression) {
     std::map<std::string, int>::const_iterator it = stand.conditions.find(condition_expression);
     return (it != stand.conditions.end()) ? it->second : 0;
-}
-
-// isOfClassHash: the actor's own type, then each base in turn.
-CDemonActor *__cdecl core_actor_cpp_castToClassHash_FUN_0040c790(CDemonActor *actor_ptr,
-                                                                uint class_name_hash) {
-    if (actor_ptr == nullptr) return nullptr;
-    for (CDemonActorType *t = (*actor_ptr->vtable._ub->getActorType)(actor_ptr); t != nullptr;
-         t = t->parent_type) {
-        if (t->name_hash == class_name_hash) return actor_ptr;
-    }
-    return nullptr;
 }
 
 CVector3f *__cdecl core_actor_cpp_CDemonActor_transformVector_FUN_00408e80(CDemonActor *,

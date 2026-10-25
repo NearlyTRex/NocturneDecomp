@@ -5,10 +5,9 @@
 // =============================================================================
 //
 // The globals the automap reads, defined here; the engine's line drawing,
-// sight test, class lookup and text calls stood in for, recording what they
-// were handed. A level is a grid of cubes holding wall quads, built by Level;
-// actors answer their class through the type chain the engine's own
-// isOfClassHash walks. reset() puts everything back.
+// sight test and text calls stood in for, recording what they were handed. A
+// level is a grid of cubes holding wall quads, built by Level; actors answer
+// their class through class_support.h. reset() puts everything back.
 
 #include "nocturne.h"
 
@@ -50,9 +49,8 @@ struct Stand {
     int has_key = 1;                          // checkHasMatchingKey
     CHero *local = nullptr;                   // nocturne_hero_local
 
-    // --- the classes: each actor's own type, what canPickup answers it, and
-    // what getDeathState answers a character -----------------------------------
-    std::map<const void *, CDemonActorType *> types;
+    // --- what canPickup answers each actor, and what getDeathState answers a
+    // character; their classes are class_support's ----------------------------
     std::map<const void *, int> pickup;
     std::map<const void *, EDeathState> death;
 

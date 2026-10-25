@@ -129,8 +129,8 @@ extern "C" int nocturne_attract_tick(void) {
     // The track reached the end of a pass behind a screen that blocked the menu
     // loop, so nobody was at the main menu to be shown a movie. The music has
     // already wrapped and is playing on; let this pass go and wait for the end
-    // of the one now running.
-    if (gap > kMenuAwayGapSeconds && s_music_period > 0.0) {
+    // of the one now running. Armed means a pass has a length.
+    if (gap > kMenuAwayGapSeconds) {
         skipped = 0;
         do {
             s_music_deadline += s_music_period;

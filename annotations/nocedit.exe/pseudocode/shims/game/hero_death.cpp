@@ -9,12 +9,20 @@
 
 #if !NOCTURNE_AUTHENTIC_HERO_ACTIONS
 
+namespace {
+
+// A player hero with no health left.
+bool player_at_zero(CHero *hero)
+{
+    return (hero != (CHero *)0x0) && !(0.0f < (hero->base).hit_points) &&
+           (nocturne_hero_is_player(hero) != 0);
+}
+
+} // namespace
+
 extern "C" int nocturne_hero_regenerates(CHero *hero)
 {
-    if ((hero == (CHero *)0x0) || (0.0f < (hero->base).hit_points)) {
-        return 1;
-    }
-    return (nocturne_hero_is_player(hero) == 0) ? 1 : 0;
+    return player_at_zero(hero) ? 0 : 1;
 }
 
 extern "C" void nocturne_hero_check_death(CHero *hero)
@@ -24,8 +32,7 @@ extern "C" void nocturne_hero_check_death(CHero *hero)
     int         die_state;
     int         dead_state;
 
-    if ((hero == (CHero *)0x0) || (0.0f < (hero->base).hit_points) ||
-        (nocturne_hero_is_player(hero) == 0)) {
+    if (!player_at_zero(hero)) {
         return;
     }
     character = &hero->base;
