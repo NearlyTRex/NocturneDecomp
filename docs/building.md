@@ -19,7 +19,10 @@ BUILD_PRESET=check-linux-x86_64 ./build.sh
 ```
 
 The source recreation under `recreation/` is a separate CMake project with its own script. It
-builds the `game` preset into `build/recreation/game` and runs the executable from the repo root:
+builds with LLVM 23's clang and libc++ (`clang++-23`, from apt.llvm.org; JoyBox's `llvm` bootstrap
+component installs it), which its presets select and its configure insists on; the release is
+`NOCTURNE_LLVM_VERSION` in `recreation/CMakePresets.json`. It builds the `game` preset into
+`build/recreation/game` and runs the executable from the repo root:
 
 ```sh
 ./recreation.sh          # build, then run

@@ -1164,6 +1164,19 @@ def included_headers(root):
     return included
 
 
+def find_clang_format():
+    """The clang-format of the LLVM release the recreation's presets build with.
+
+    Releases format the same file differently, so the scaffold must write what
+    the recreation's format-check accepts. None when that release isn't installed.
+    """
+    with open(os.path.join(OUTPUT, "CMakePresets.json"), encoding="utf-8") as f:
+        presets = json.load(f)
+    default = next(p for p in presets["configurePresets"] if p["name"] == "default")
+    version = default["environment"]["NOCTURNE_LLVM_VERSION"]
+    return shutil.which("clang-format-%s" % version)
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__.split("\n\n")[0])
     parser.add_argument("--report-only", action="store_true", help="print the report, write nothing")
@@ -1198,9 +1211,9 @@ def main():
     elif stale:
         model.report["stale generated files (remove with --prune)"].extend(stale)
     if written:
-        clang_format = shutil.which("clang-format")
+        clang_format = find_clang_format()
         if clang_format is None:
-            print("WARNING: clang-format not found; written files are unformatted")
+            print("WARNING: the recreation's clang-format not found; written files are unformatted")
         else:
             paths = [os.path.join(args.output, p) for p in written]
             for i in range(0, len(paths), 200):

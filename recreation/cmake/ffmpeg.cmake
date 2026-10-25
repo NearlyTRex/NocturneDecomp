@@ -7,7 +7,7 @@ include("${CMAKE_CURRENT_LIST_DIR}/../../cmake/ffmpeg.cmake")
 nocturne_add_ffmpeg(ffmpeg_ext
     PREFIX "${FETCHCONTENT_BASE_DIR}/ffmpeg"
     TARGET_OS linux
-    EXTRA_ARGS --cc=clang --ld=clang
+    EXTRA_ARGS --cc=${CMAKE_C_COMPILER} --ld=${CMAKE_C_COMPILER}
     SYSTEM_LIBRARIES m pthread)
 
 add_library(nocturne_ffmpeg INTERFACE)
