@@ -91,8 +91,11 @@ protected:
     }
 
     CEventList events_{{.mission = mission_, .actor = actor_, .set = set_, .dosio = dosio_}};
-    CScript script_{
-        {.dosio = dosio_, .editor_tools = editor_tools_, .mission = mission_, .events = events_}};
+    CScript script_{{.dosio = dosio_,
+                     .editor_tools = editor_tools_,
+                     .mission = mission_,
+                     .events = events_,
+                     .set = set_}};
 };
 
 } // namespace nocturne::core

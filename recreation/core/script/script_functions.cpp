@@ -6,13 +6,16 @@
 #include "core/actor/demonactortype.h"
 #include "core/actor/notported.h"
 #include "core/event/eventlist.h"
+#include "core/game/gameaction.h"
 #include "core/hero/hero.h"
 #include "core/mission/demonmission.h"
 
 #include <algorithm>
+#include <array>
 #include <cstddef>
 #include <expected>
 #include <format>
+#include <optional>
 #include <string>
 #include <string_view>
 
@@ -91,6 +94,31 @@ std::expected<std::string, std::string> parseConditionExpr(std::string_view &cur
         return std::unexpected(valid.error());
     }
     return condition;
+}
+
+// nocedit 0x00559660
+std::optional<EGameAction> getActionState(std::string_view button) {
+    struct SButton {
+        std::string_view name;
+        EGameAction action;
+    };
+    constexpr std::array kButtons{
+        SButton{.name = "walk", .action = EGameAction::Walk},
+        SButton{.name = "backup", .action = EGameAction::Backup},
+        SButton{.name = "run", .action = EGameAction::Run},
+        SButton{.name = "fire", .action = EGameAction::Fire},
+        SButton{.name = "useItem", .action = EGameAction::UseItem},
+        SButton{.name = "light", .action = EGameAction::Light},
+        SButton{.name = "draw", .action = EGameAction::Draw},
+        SButton{.name = "jump", .action = EGameAction::Jump},
+    };
+    const auto *found = std::ranges::find_if(kButtons, [button](const SButton &candidate) {
+        return common::equalsIgnoringAsciiCase(candidate.name, button);
+    });
+    if (found == kButtons.end()) {
+        return std::nullopt;
+    }
+    return found->action;
 }
 
 // nocedit 0x00559220

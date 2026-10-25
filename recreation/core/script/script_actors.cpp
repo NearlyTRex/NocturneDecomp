@@ -2,6 +2,7 @@
 #include "common/text/scanformat.h"
 #include "core/actor/demonactor.h"
 #include "core/actor/demonactortype.h"
+#include "core/actor/notported.h"
 #include "core/charactr/character.h"
 #include "core/door/door.h"
 #include "core/enemy/enemy.h"
@@ -39,7 +40,7 @@ constexpr std::array<std::string_view, 5> kHeroTasks = {"stand", "follow", "kill
 // for an actor missing through a variable, passing the rest of the command over unchecked.
 std::optional<Result> missing(SScriptStatement &statement, std::string_view specifier,
                               const CDemonActorType &expected_class) {
-    const auto actor = getActor(specifier, expected_class, statement.mission);
+    const auto actor = getActor(specifier, expected_class, statement.owners.mission);
     if (actor) {
         return std::nullopt;
     }
@@ -140,6 +141,21 @@ Result checkOptionalSecond(SScriptStatement &statement, std::string_view error,
     return {};
 }
 
+// "(hero, button)".
+Result checkButton(SScriptStatement &statement, std::string_view error) {
+    const std::expected<SPair, std::string> pair = scanPair(statement, " ( %[^,], %[^)])", error);
+    if (!pair) {
+        return std::unexpected(pair.error());
+    }
+    if (const std::optional<Result> stop = missing(statement, pair->first, CHero::kType)) {
+        return *stop;
+    }
+    if (!getActionState(pair->second)) {
+        return std::unexpected(std::format("Invalid button name: {}", pair->second));
+    }
+    return {};
+}
+
 // One actor after a parenthesised argument the parse reads.
 Result checkArgumentActor(SScriptStatement &statement, std::size_t max_length,
                           const CDemonActorType &expected_class) {
@@ -204,6 +220,48 @@ Result checkGetTriggerActor(CScript & /*script*/, SScriptStatement &statement) {
     return missing(statement, pair->second, CTrigger::kType).value_or(Result{});
 }
 
+// "(character, parts...": the character's model must have each part, which the model's parts
+// aren't ported to find yet. The original's scan had to take five characters, which "(a,b" falls
+// short of.
+Result checkDismember(CScript & /*script*/, SScriptStatement &statement) {
+    constexpr std::size_t kMinScan = 5;
+    std::string character;
+    std::string parts;
+    const std::optional<std::size_t> taken =
+        common::scanPrefix(statement.rest, "(%[^,], %[^,)]", character, parts);
+    if (!taken || *taken < kMinScan) {
+        return std::unexpected("Error parsing dismember command parms");
+    }
+    statement.rest.remove_prefix(*taken);
+    if (const std::optional<Result> stop =
+            missing(statement, trimmed(character), CCharacter::kType)) {
+        return *stop;
+    }
+    quitNotPorted("CDeformableModel", "findPartByName");
+}
+
+// "(character, motion)": the character's model must have the motion, which the model's motions
+// aren't ported to find yet.
+Result checkGesture(CScript & /*script*/, SScriptStatement &statement) {
+    const std::expected<SPair, std::string> pair =
+        scanPair(statement, "(%[^,], %[^)])", "Error parsing gesture command parms");
+    if (!pair) {
+        return std::unexpected(pair.error());
+    }
+    if (const std::optional<Result> stop = missing(statement, pair->first, CCharacter::kType)) {
+        return *stop;
+    }
+    quitNotPorted("CMotionList", "findMotionIndex");
+}
+
+Result checkPressButton(CScript & /*script*/, SScriptStatement &statement) {
+    return checkButton(statement, "Error parsing pressButton() command parms");
+}
+
+Result checkReleaseButton(CScript & /*script*/, SScriptStatement &statement) {
+    return checkButton(statement, "Error parsing releaseButton() command parms");
+}
+
 // "(hero[, condition])": the condition is all but the last character after the comma, which must
 // be the ')'.
 Result checkHolsterWeapon(CScript & /*script*/, SScriptStatement &statement) {
@@ -224,7 +282,8 @@ Result checkHolsterWeapon(CScript & /*script*/, SScriptStatement &statement) {
         }
         const std::string_view condition = statement.rest.substr(0, statement.rest.size() - 1);
         statement.rest.remove_prefix(condition.size());
-        if (const CEventList::CheckResult valid = statement.events.validateCondition(condition);
+        if (const CEventList::CheckResult valid =
+                statement.owners.events.validateCondition(condition);
             !valid) {
             return valid;
         }
@@ -315,7 +374,7 @@ Result checkSetActorVariable(CScript & /*script*/, SScriptStatement &statement) 
         !valid) {
         return valid;
     }
-    const auto actor = getActor(pair->second, CDemonActor::kType, statement.mission);
+    const auto actor = getActor(pair->second, CDemonActor::kType, statement.owners.mission);
     if (!actor && !actor.error().by_variable) {
         return std::unexpected(actor.error().message);
     }

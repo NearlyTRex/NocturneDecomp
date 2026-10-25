@@ -82,6 +82,32 @@ TEST_F(CScriptActorsTest, EnableHealthBarTakesACharacterAndAMode) {
     expectSyntaxError("enableHealthBar(Mob)\n", 1, "Error parsing enableHealthBar parms");
 }
 
+TEST_F(CScriptActorsTest, PressAndReleaseButtonTakeAHeroAndAButton) {
+    expectPasses("pressButton( Gabriel , FIRE )\nreleaseButton(Gabriel, useItem)\n"
+                 "pressButton($, nothing)\n");
+    expectSyntaxError("pressButton(Gabriel, dance)\n", 1, "Invalid button name: dance");
+    expectSyntaxError("releaseButton(Mob, fire)\n", 1,
+                      wrongClass("Mob", "CTestCharacter", "CHero"));
+    expectSyntaxError("pressButton(Gabriel)\n", 1, "Error parsing pressButton() command parms");
+    expectSyntaxError("releaseButton(Gabriel)\n", 1, "Error parsing releaseButton() command parms");
+}
+
+// A character missing through a variable passes before its model is needed.
+TEST_F(CScriptActorsTest, GestureAndDismemberNeedTheModelWhichIsNotPortedYet) {
+    expectPasses("gesture($, wave)\ndismember($, arm)\n");
+    expectQuit("gesture(Mob, wave)\n", "CMotionList::findMotionIndex is not ported yet");
+    expectQuit("dismember( Mob , arm leg)\n", "CDeformableModel::findPartByName is not ported yet");
+    expectSyntaxError("gesture(Door1, wave)\n", 1, wrongClass("Door1", "CTestDoor", "CCharacter"));
+    expectSyntaxError("dismember(Door1, arm)\n", 1, wrongClass("Door1", "CTestDoor", "CCharacter"));
+    expectSyntaxError("gesture(Mob)\n", 1, "Error parsing gesture command parms");
+}
+
+// The original's scan had to take five characters.
+TEST_F(CScriptActorsTest, DismembersScanFailsOnOneLetterNamesWithoutASpace) {
+    expectSyntaxError("dismember(a,b)\n", 1, "Error parsing dismember command parms");
+    expectSyntaxError("dismember(Mob)\n", 1, "Error parsing dismember command parms");
+}
+
 // The condition is all but the last character after the comma.
 TEST_F(CScriptActorsTest, HolsterWeaponTakesAHeroAndACondition) {
     expectPasses("holsterWeapon(Gabriel)\nholsterWeapon( Gabriel , isDead(Mob))\n"

@@ -129,6 +129,53 @@ TEST_F(CScriptCommandsTest, RaiseTakesEventCommands) {
                       "Error parsing event expression on raise statament: No opening parenthesis");
 }
 
+// A set with a spotlight Beam, a light omni that isn't one, and a camera cam1.
+class CScriptSetCommandsTest : public CScriptFixture {
+protected:
+    CScriptSetCommandsTest() {
+        givenSet({.lights = "2\n" + lightText("omni", 1) + lightText("Beam", 0),
+                  .cameras = "1\n" + cameraText("cam1"),
+                  .pvs = "0\n"});
+    }
+};
+
+// The light's name is taken untrimmed.
+TEST_F(CScriptSetCommandsTest, AddLightFilterTakesASpotlightAndAFilterInArt) {
+    givenFile("art\\glow.raw", "xx");
+    givenFile("art\\empty.raw", "");
+    expectPasses("addLightFilter( Beam, glow.raw, 2 )\n");
+    expectSyntaxError("addLightFilter(Beam , glow.raw, 2)\n", 1, "Light \"Beam \" does not exist");
+    expectSyntaxError("addLightFilter(omni, glow.raw, 2)\n", 1, "Light \"omni\" does not exist");
+    expectSyntaxError("addLightFilter(Beam, empty.raw, 2)\n", 1, "Can't open filter \"empty.raw\"");
+    expectSyntaxError("addLightFilter(Beam, glow.raw)\n", 1,
+                      "Error parsing addLightFilter command parms");
+}
+
+TEST_F(CScriptSetCommandsTest, EnableCameraTakesACameraAndACondition) {
+    expectPasses("enableCamera( CAM1 , !flag )\n");
+    expectSyntaxError("enableCamera(cam9, flag)\n", 1, "Camera \"cam9\" does not exist.");
+    expectSyntaxError("enableCamera(cam1, flag &)\n", 1, "Unexpected end of string");
+    expectSyntaxError("enableCamera(cam1)\n", 1, "Error parsing enableCamera parms");
+}
+
+TEST_F(CScriptSetCommandsTest, SetCameraGroupTakesACameraAndAGroup) {
+    expectPasses("setCameraGroup( cam1 , 2)\n");
+    expectSyntaxError("setCameraGroup(cam9, 2)\n", 1, "Camera \"cam9\" does not exist.");
+    expectSyntaxError("setCameraGroup(cam1, two)\n", 1, "Error parsing setCameragroup parms");
+}
+
+// Without seconds after a comma the hold is longer than any allowed.
+TEST_F(CScriptSetCommandsTest, SwitchCameraTakesACameraAndAHoldTime) {
+    expectPasses("switchCamera( cam1 )\nswitchCamera(cam1, 0)\nswitchCamera(cam1, 99999)\n");
+    expectSyntaxError("switchCamera(cam9)\n", 1, "Camera \"cam9\" doesn't exist.");
+    expectSyntaxError("switchCamera(cam1, 100000)\n", 1, "Invalid hold time value");
+    expectSyntaxError("switchCamera(cam1, -1)\n", 1, "Invalid hold time value");
+    expectSyntaxError("switchCamera(cam1,)\n", 1, "Invalid hold time value");
+    expectSyntaxError("switchCamera(, 5)\n", 1, "Error parsing out camera name");
+    expectSyntaxError("switchCamera()\n", 1, "Error parsing out camera name");
+    expectSyntaxError("switchCamera cam1\n", 1, "No opening parenthesis");
+}
+
 TEST_F(CScriptCommandsTest, EnableCameraGroupTakesAGroupAndACondition) {
     expectPasses("enableCameraGroup(2 , !flag )\n");
     expectSyntaxError("enableCameraGroup(2, flag flag)\n", 1, "Syntax error");

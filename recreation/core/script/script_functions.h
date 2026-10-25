@@ -4,6 +4,7 @@
 
 #include <cstddef>
 #include <expected>
+#include <optional>
 #include <string>
 #include <string_view>
 
@@ -29,6 +30,9 @@ struct SActorLookupError {
 // A command's condition, parsed as parseArgument parses it and then checked.
 [[nodiscard]] std::expected<std::string, std::string> parseConditionExpr(std::string_view &cursor,
                                                                          CEventList &events);
+// The action a pressButton or releaseButton names, ignoring case: walk, backup, run, fire,
+// useItem, light, draw or jump.
+[[nodiscard]] std::optional<EGameAction> getActionState(std::string_view button);
 // '@' then one or more letters, digits or underscores, 30 characters at most.
 [[nodiscard]] std::expected<void, std::string>
 validateActorVariableName(std::string_view variable_name);

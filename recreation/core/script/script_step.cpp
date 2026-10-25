@@ -1,5 +1,4 @@
 #include "common/text/ascii.h"
-#include "core/actor/notported.h"
 #include "core/script/script.h"
 #include "core/script/script_functions.h"
 
@@ -124,32 +123,27 @@ void CScript::initRuntime() {
 //   walk targets
 // deferred: running walkTo, walking the character to the target, with the characters' walk
 //   targets
-// deferred: addLightFilter, checking the light and the filter file and adding the filter, with
-//   CDemonSet::addLightFilter
-// deferred: enableCamera, checking the camera and its condition and enabling it, with
-//   CDemonSet::findCameraByName and CEventList::validateCondition
+// deferred: running addLightFilter, adding the filter to the light, with C3DSLight::addFilter
+// deferred: running enableCamera, enabling the camera by its condition, with
+//   CDemonSet::setCameraEnabled and CEventList::evaluateCondition
 // deferred: running enableCameraGroup, enabling the group by its condition, with
 //   CDemonSet::setCameraEnabledByGroup and CEventList::evaluateCondition
-// deferred: setCameraGroup, checking the camera and moving it to the group, with
-//   CDemonSet::findCameraByName
-// deferred: switchCamera, checking the camera and the hold time and switching to it, with
-//   CDemonSet::findCameraByName
-// deferred: gesture, checking the character and the motion and starting it, with
-//   CMotionList::findMotionIndex
-// deferred: dismember, checking the character and its parts, drawing the random spread while
-//   checking too, and cutting the parts off, with parseBodyPartMask and createBodyPart
+// deferred: running setCameraGroup, moving the camera to the group, with the cameras' groups
+// deferred: running switchCamera, switching to the camera for the hold time, with
+//   CDemonSet::setPendingCamera
+// deferred: gesture, the motion the character's model must have and starting it, with
+//   CMotionList::findMotionIndex and CCharacter::initGesture
+// deferred: dismember, the parts the character's model must have, the direction and spread,
+//   drawing the spread's two random angles while checking too, and cutting the parts off, with
+//   parseBodyPartMask and createBodyPart
 // deferred: running holsterWeapon, holstering the weapon when its condition holds and drawing it
 //   otherwise, with CHero::drawWeapon and CEventList::evaluateCondition
-// deferred: pressButton, checking the hero and the button and pressing it, with getActionState
-// deferred: releaseButton, checking the hero and the button and releasing it, with
-//   getActionState
-// deferred: dbSay, checking the line in the database and its speaker and saying it, with
-//   startDialogLine
-// deferred: dbStartSay, checking the line in the database and its speaker and starting it,
-//   with startDialogLine
-// deferred: say, checking the speaker and the sound and saying the line, with startDialogLine
-// deferred: startSay, checking the speaker and the sound and starting the line, with
-//   startDialogLine
+// deferred: running pressButton and releaseButton, pressing or releasing the action in the
+//   hero's input and handing the controls back from the script, with the heroes' input
+// deferred: running dbSay and say, holding the script until the line is said, with
+//   processTimer and setSpeaker
+// deferred: noting a line the dialogue database doesn't hold in the script's pick list, while
+//   checking too, with the script editor
 // deferred: running beginFadeIn and beginFadeOut, starting the fade, with CGame's fades
 // deferred: running breakPoint, showing where the script stopped and stopping it, with process
 // deferred: running cancelCameraHold, ending the camera's hold, with the virtual director
@@ -189,8 +183,7 @@ CScript::CommandResult CScript::step() {
                          .command = {},
                          .rest = line.text,
                          .line_number = line.line_number,
-                         .mission = owners_.mission,
-                         .events = owners_.events};
+                         .owners = owners_};
     const char first = line.text.front();
     if (first == '{' || first == '}') {
         return {};
@@ -288,10 +281,6 @@ std::optional<std::size_t> CScript::skipCommands(std::size_t start) const {
         }
     }
     return std::nullopt;
-}
-
-CScript::CommandResult CScript::checkNotPorted(CScript & /*script*/, SStatement &statement) {
-    quitNotPorted("CScript", std::format("step's {} command", statement.command));
 }
 
 CScript::CommandResult CScript::checkElse(CScript &script, SStatement &statement) {

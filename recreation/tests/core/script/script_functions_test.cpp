@@ -1,3 +1,4 @@
+#include "core/game/gameaction.h"
 #include "core/script/script_functions.h"
 #include "tests/mocks/core/scriptfixture.h"
 
@@ -29,6 +30,18 @@ TEST(CoreScriptFunctions, PublicInterface) {
         std::is_same_v<decltype(&getActor),
                        std::expected<CDemonActor *, SActorLookupError> (*)(
                            std::string_view, const CDemonActorType &, const CDemonMission &)>);
+}
+
+TEST(CoreScriptFunctions, EachButtonNamesItsAction) {
+    EXPECT_EQ(getActionState("WALK"), EGameAction::Walk);
+    EXPECT_EQ(getActionState("backup"), EGameAction::Backup);
+    EXPECT_EQ(getActionState("run"), EGameAction::Run);
+    EXPECT_EQ(getActionState("fire"), EGameAction::Fire);
+    EXPECT_EQ(getActionState("useitem"), EGameAction::UseItem);
+    EXPECT_EQ(getActionState("light"), EGameAction::Light);
+    EXPECT_EQ(getActionState("draw"), EGameAction::Draw);
+    EXPECT_EQ(getActionState("jump"), EGameAction::Jump);
+    EXPECT_FALSE(getActionState("strafe").has_value());
 }
 
 TEST(CoreScriptFunctions, TrimLineDropsTheCommentAndTheWhitespaceAroundTheCommand) {

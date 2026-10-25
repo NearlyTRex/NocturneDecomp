@@ -16,12 +16,14 @@
 namespace nocturne::core {
 
 // What a script reads its files with, reports a bad file through, finds the actors its commands
-// name in, and checks its conditions with.
+// name in, checks its conditions and event commands with, and finds the set's lights and
+// cameras in.
 struct SScriptOwners {
     const engine::CDosIo &dosio;
     shape::CEditorTools &editor_tools;
     const CDemonMission &mission;
     CEventList &events;
+    const CDemonSet &set;
 };
 
 // A line of the script that holds something, trimmed, and its line in the file, from 1.
@@ -45,15 +47,14 @@ struct SDialogEntry {
 };
 
 // The line a step is checking: the whole of it, the command's name as the command table spells
-// it, what follows the name, which a check moves past what it reads, the line in the file, the
-// mission whose actors the command names, and the events that check its condition and commands.
+// it, what follows the name, which a check moves past what it reads, the line in the file, and
+// the script's owners, which the check looks things up in.
 struct SScriptStatement {
     std::string_view line;
     std::string_view command;
     std::string_view rest;
     int line_number = 0;
-    const CDemonMission &mission;
-    CEventList &events;
+    const SScriptOwners &owners;
 };
 
 class CScript {
@@ -108,6 +109,9 @@ private:
     void addDialogEntry(std::string_view name, std::string_view speaker, std::string_view text,
                         std::string_view filename);
     [[nodiscard]] const SDialogEntry *findDialogEntry(std::string_view path) const;
+    [[nodiscard]] CommandResult startDialogLine(std::string_view speaker,
+                                                std::string_view sound_name,
+                                                std::string_view dialog_text) const;
 
     [[nodiscard]] std::optional<SSyntaxError> validateSyntax();
     [[nodiscard]] CommandResult step();
@@ -115,10 +119,11 @@ private:
     [[nodiscard]] std::optional<std::size_t> findLabelIndex(std::string_view label_name) const;
     [[nodiscard]] std::optional<std::size_t> skipCommands(std::size_t start) const;
     [[nodiscard]] static const SCommand *findCommand(std::string_view name);
-    static CommandResult checkNotPorted(CScript &script, SStatement &statement);
     static CommandResult checkElse(CScript &script, SStatement &statement);
     static CommandResult checkJumpLabel(CScript &script, SStatement &statement);
     static CommandResult checkSetSkipLabel(CScript &script, SStatement &statement);
+    static CommandResult checkSay(CScript &script, SStatement &statement);
+    static CommandResult checkDbSay(CScript &script, SStatement &statement);
 
     SScriptOwners owners_;
     std::vector<std::string> script_text_;

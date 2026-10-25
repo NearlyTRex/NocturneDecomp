@@ -39,10 +39,6 @@ TEST_F(CScriptStepTest, WhatACommandLeavesIsAnError) {
     expectSyntaxError("end now\n", 1, "Extra characters \"now\" on line 1");
 }
 
-TEST_F(CScriptStepTest, ACommandWhoseCheckIsNotPortedQuitsNamingIt) {
-    expectQuit("say(line)\n", "CScript::step's say command is not ported yet");
-}
-
 TEST_F(CScriptStepTest, ALabelIsLettersDigitsAndUnderscores) {
     expectPasses(":a_1\n:\n");
     expectSyntaxError(": a-b\n", 1, "Invalid label \"a-b\" on line 1");

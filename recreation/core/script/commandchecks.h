@@ -19,11 +19,15 @@ ScriptCheckResult checkAddItemToInventory(CScript &script, SScriptStatement &sta
 ScriptCheckResult checkAttachActorToPlatform(CScript &script, SScriptStatement &statement);
 ScriptCheckResult checkCancelWalkTo(CScript &script, SScriptStatement &statement);
 ScriptCheckResult checkEnableHealthBar(CScript &script, SScriptStatement &statement);
+ScriptCheckResult checkDismember(CScript &script, SScriptStatement &statement);
+ScriptCheckResult checkGesture(CScript &script, SScriptStatement &statement);
 ScriptCheckResult checkGetTriggerActor(CScript &script, SScriptStatement &statement);
 ScriptCheckResult checkHolsterWeapon(CScript &script, SScriptStatement &statement);
 ScriptCheckResult checkLookAt(CScript &script, SScriptStatement &statement);
 ScriptCheckResult checkMovePlatform(CScript &script, SScriptStatement &statement);
 ScriptCheckResult checkOpenDoor(CScript &script, SScriptStatement &statement);
+ScriptCheckResult checkPressButton(CScript &script, SScriptStatement &statement);
+ScriptCheckResult checkReleaseButton(CScript &script, SScriptStatement &statement);
 ScriptCheckResult checkRemoveAllItemsFromInventory(CScript &script, SScriptStatement &statement);
 ScriptCheckResult checkRemoveItemFromInventory(CScript &script, SScriptStatement &statement);
 ScriptCheckResult checkSelectWeapon(CScript &script, SScriptStatement &statement);
