@@ -7,6 +7,8 @@ namespace nocturne::core {
 
 class CPlatform : public CDemonActor {
 public:
+    static const CDemonActorType kType;
+
     CPlatform();
     ~CPlatform() override;
 

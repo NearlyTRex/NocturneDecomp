@@ -2,6 +2,11 @@
 
 #include "common/text/ascii.h"
 #include "common/text/scan.h"
+#include "core/actor/demonactor.h"
+#include "core/actor/demonactortype.h"
+#include "core/actor/notported.h"
+#include "core/hero/hero.h"
+#include "core/mission/demonmission.h"
 
 #include <algorithm>
 #include <cstddef>
@@ -83,6 +88,48 @@ std::expected<void, std::string> validateActorVariableName(std::string_view vari
             std::format("Actor variable name \"{}\" is not valid", variable_name));
     }
     return {};
+}
+
+// "$" is the local hero, which is the first outside a network game.
+// deferred: looking an actor variable up by its actor's name among the set's actors, with
+//   CEventList's actor variables and the set's actor list
+// deferred: the hero "$" means in a network game, the gas room's unmasked hero else the first,
+//   with CNetGame's sessions
+// nocedit 0x005594e0
+std::expected<CDemonActor *, SActorLookupError> getActor(std::string_view specifier,
+                                                         const CDemonActorType &expected_class,
+                                                         const CDemonMission &mission) {
+    if (specifier.empty()) {
+        return std::unexpected(SActorLookupError{.message = "Must specify actor name"});
+    }
+    if (specifier.starts_with('@')) {
+        if (const std::expected<void, std::string> valid = validateActorVariableName(specifier);
+            !valid) {
+            return std::unexpected(SActorLookupError{.message = valid.error()});
+        }
+        quitNotPorted("CEventList", "getActorByVarName");
+    }
+    CDemonActor *actor = nullptr;
+    if (common::equalsIgnoringAsciiCase(specifier, "$")) {
+        actor = mission.getHero(0);
+        if (actor == nullptr) {
+            return std::unexpected(
+                SActorLookupError{.message = "Hero doesn't exist!!?!", .by_variable = true});
+        }
+    } else {
+        actor = mission.findActorByName(specifier);
+        if (actor == nullptr) {
+            return std::unexpected(SActorLookupError{
+                .message = std::format("Actor \"{}\" does not exist.", specifier)});
+        }
+    }
+    if (!checkNameHash(&actor->getActorType(), expected_class.name_hash)) {
+        return std::unexpected(SActorLookupError{
+            .message = std::format(
+                "Actor \"{}\" is of type {}, this command requires an actor of type {}.", specifier,
+                actor->getActorClassName(), expected_class.class_name)});
+    }
+    return actor;
 }
 
 } // namespace nocturne::core

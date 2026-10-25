@@ -8,6 +8,8 @@ namespace nocturne::core {
 
 class CTrigger : public CDemonActor {
 public:
+    static const CDemonActorType kType;
+
     CTrigger();
     ~CTrigger() override;
 

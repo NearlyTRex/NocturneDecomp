@@ -1,11 +1,22 @@
 #pragma once
 
+#include "core/fwd.h"
+
 #include <cstddef>
 #include <expected>
 #include <string>
 #include <string_view>
 
 namespace nocturne::core {
+
+// Why getActor found no actor. A command passes over an actor missing through a variable, which
+// may name nothing for now, rather than failing.
+struct SActorLookupError {
+    std::string message;
+    bool by_variable = false;
+
+    bool operator==(const SActorLookupError &) const = default;
+};
 
 void staticInit();
 
@@ -20,5 +31,10 @@ void staticInit();
 // '@' then one or more letters, digits or underscores, 30 characters at most.
 [[nodiscard]] std::expected<void, std::string>
 validateActorVariableName(std::string_view variable_name);
+// The actor a command names, of the class it needs: "@variable", "$" for the hero, or an actor's
+// name in the mission.
+[[nodiscard]] std::expected<CDemonActor *, SActorLookupError>
+getActor(std::string_view specifier, const CDemonActorType &expected_class,
+         const CDemonMission &mission);
 
 } // namespace nocturne::core

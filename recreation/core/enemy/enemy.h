@@ -8,6 +8,9 @@ namespace nocturne::core {
 
 class CEnemy : public CCharacter {
 public:
+    // Abstract: missions can't hold one.
+    static const CDemonActorType kType;
+
     CEnemy();
     ~CEnemy() override;
 

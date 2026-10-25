@@ -1,3 +1,4 @@
+#include "core/actor/demonactortype.h"
 #include "core/trigger/trigger.h"
 
 #include <gtest/gtest.h>
@@ -9,6 +10,13 @@ namespace {
 
 TEST(CTrigger, DerivesFromCDemonActor) {
     static_assert(std::is_base_of_v<CDemonActor, CTrigger>);
+}
+
+TEST(CTrigger, ItsRecordIsAVersionElevenActor) {
+    EXPECT_EQ(CTrigger::kType.class_name, "CTrigger");
+    EXPECT_EQ(CTrigger::kType.parent_type, &CDemonActor::kType);
+    EXPECT_EQ(CTrigger::kType.latest_version, 11);
+    EXPECT_EQ(CTrigger::kType.name_hash, hashClassName("CTrigger"));
 }
 
 TEST(CTrigger, HasVirtualDestructor) {

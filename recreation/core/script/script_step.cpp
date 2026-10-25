@@ -90,36 +90,41 @@ void CScript::initRuntime() {
 //   when false, with CEventList::validateCondition and evaluateCondition
 // deferred: waitFor, checking its condition and holding the script until it holds, with
 //   CEventList::validateCondition and evaluateCondition
-// deferred: addItemToInventory, checking the hero and the item and adding it, with getActor
-// deferred: attachActorToPlatform, checking the actor and the platform and attaching it, with
-//   getActor
-// deferred: cancelWalkTo, checking the character, or all, and stopping its walk, with getActor
-// deferred: enableHealthBar, checking the character and the mode and setting it, with getActor
-// deferred: getTriggerActor, checking the variable and the trigger and storing who set it off,
-//   with getActor
-// deferred: lookAt, checking the character and the target and turning its head, with getActor
-// deferred: movePlatform, checking the platform, the position and the rate and moving it, with
-//   getActor
-// deferred: openDoor, checking the character and the door and holding until it opens, with
-//   getActor
-// deferred: removeAllItemsFromInventory, checking the hero and emptying its inventory, with
-//   getActor
-// deferred: removeItemFromInventory, checking the hero and taking the item, with getActor
-// deferred: selectWeapon, checking the hero and cycling to the weapon, with getActor
-// deferred: setActorVariable, checking the variable and the actor and storing it, with getActor
-// deferred: setCharacterHealth, checking the character and setting its health, with getActor
-// deferred: setFocusActor, checking the actor and making it the focus, while checking too,
-//   with getActor
-// deferred: setHeroTask, checking the hero and the task and setting it, with getActor
-// deferred: setSpeaker, checking the character and making it the speaker and the focus, while
-//   checking too, with getActor
-// deferred: setVictim, checking the enemy and the victim, or disable, and setting it, with
-//   getActor
-// deferred: snapToFace, checking both actors and turning the first to face the second, with
-//   getActor
-// deferred: turnToFace, checking the character and the target and turning it, with getActor
-// deferred: walkTo, checking the character, the target, the distance and the time and walking
-//   it there, with getActor
+// deferred: running addItemToInventory, adding the item to the hero's inventory, with
+//   CInventory::addItem
+// deferred: running attachActorToPlatform, attaching the actor, with CPlatform::attachActor
+// deferred: running cancelWalkTo, stopping the character's walk, or every character's in the
+//   set, with the characters' walk targets
+// deferred: running enableHealthBar, setting the character's health bar, with its health bar
+// deferred: running getTriggerActor, storing who set the trigger off in the variable, with
+//   CEventList's actor variables
+// deferred: running lookAt, turning the character's head, with CCharacter::setLookAtTarget
+// deferred: running movePlatform, moving the platform, with CPlatform::startMovement
+// deferred: running openDoor, holding the script until the character has the door open, with
+//   the characters' door targets
+// deferred: running removeAllItemsFromInventory, emptying the hero's inventory, with
+//   CInventory::initialize
+// deferred: running removeItemFromInventory, taking the item the local hero holds by that name
+//   from the hero, with CInventory::findItemByName and removeItem
+// deferred: running selectWeapon, cycling the hero's weapons to the class, or saying it can't,
+//   with CInventory::selectWeapon
+// deferred: running setActorVariable, storing the actor in the variable, with CEventList's
+//   actor variables
+// deferred: running setCharacterHealth, setting the character's health as a share of its most,
+//   with its hit points
+// deferred: setFocusActor making the actor the focus, the network camera's choice of it
+//   included, while checking too, with the scene camera
+// deferred: running setHeroTask, setting the hero's task, with CHero::setAiTask
+// deferred: setSpeaker making the character the speaker and, unless the focus is locked, the
+//   focus, or clearing the speaker, while checking too, with renderSubtitles and the scene camera
+// deferred: running setVictim, setting the enemy's victim or stopping it choosing one, with
+//   CEnemy::setVictim
+// deferred: running snapToFace, turning the first actor to face the second, with the actors'
+//   orientation
+// deferred: running turnToFace, turning the character to face the target, with the characters'
+//   walk targets
+// deferred: running walkTo, walking the character to the target, with the characters' walk
+//   targets
 // deferred: addLightFilter, checking the light and the filter file and adding the filter, with
 //   CDemonSet::addLightFilter
 // deferred: enableCamera, checking the camera and its condition and enabling it, with
@@ -135,7 +140,7 @@ void CScript::initRuntime() {
 // deferred: dismember, checking the character and its parts, drawing the random spread while
 //   checking too, and cutting the parts off, with parseBodyPartMask and createBodyPart
 // deferred: holsterWeapon, checking the hero and its condition and holstering or drawing, with
-//   getActor and CEventList::validateCondition
+//   CEventList::validateCondition
 // deferred: pressButton, checking the hero and the button and pressing it, with getActionState
 // deferred: releaseButton, checking the hero and the button and releasing it, with
 //   getActionState
@@ -181,7 +186,10 @@ CScript::CommandResult CScript::step() {
     const std::size_t index = next_cmd_;
     const SScriptLine &line = parsed_lines_[index];
     ++next_cmd_;
-    SStatement statement{.command = {}, .rest = line.text, .line_number = line.line_number};
+    SStatement statement{.command = {},
+                         .rest = line.text,
+                         .line_number = line.line_number,
+                         .mission = owners_.mission};
     const char first = line.text.front();
     if (first == '{' || first == '}') {
         return {};

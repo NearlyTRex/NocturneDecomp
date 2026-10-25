@@ -10,6 +10,8 @@ namespace nocturne::core {
 
 class CDoor : public CDemonActor {
 public:
+    static const CDemonActorType kType;
+
     CDoor();
     ~CDoor() override;
 

@@ -24,16 +24,6 @@ void takeOperator(std::string_view &text, char c) {
     }
 }
 
-// nocedit 0x0040c700
-bool checkNameHash(const CDemonActorType *type_ptr, std::uint32_t name_hash) {
-    for (; type_ptr != nullptr; type_ptr = type_ptr->parent_type) {
-        if (type_ptr->name_hash == name_hash) {
-            return true;
-        }
-    }
-    return false;
-}
-
 std::optional<bool> matchClassExpression(const CDemonActorType &type, std::string_view &text);
 
 // A name runs to the first character that isn't a letter or digit.

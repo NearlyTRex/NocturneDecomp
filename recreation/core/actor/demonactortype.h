@@ -43,6 +43,18 @@ struct CDemonActorType {
     std::uint32_t name_hash = 0;
 };
 
+// Whether the class, or one it derives from, has the name's hash.
+// nocedit 0x0040c700
+[[nodiscard]] constexpr bool checkNameHash(const CDemonActorType *type_ptr,
+                                           std::uint32_t name_hash) noexcept {
+    for (; type_ptr != nullptr; type_ptr = type_ptr->parent_type) {
+        if (type_ptr->name_hash == name_hash) {
+            return true;
+        }
+    }
+    return false;
+}
+
 // The record for a class, its hash worked out from its name. The name comes as a pointer so its
 // view is made in here, where nothing may throw.
 [[nodiscard]] constexpr CDemonActorType makeActorType(const char *class_name,

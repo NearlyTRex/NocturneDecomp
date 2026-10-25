@@ -24,7 +24,7 @@ functions don't count as done. Sizes are in instructions.
 | 8 | `renderMenuAndGetChoice`, `CMoon::free`, `CSound::reset`, `CEditorTools::showFileSelectionDialog` | 8 | 63 | 5314 | 60 | 3 | 95.2% |
 | 9 | `CPickList::enableItem`, `CEventList::resetGameFlags`, `CLevelLoader::show`, `CDemonMission::load` | 15 | 56 | 3298 | 26 | 8 | 46.4% |
 | 10 | `CDemonMission::createHeros`, `CDemonMission::prepareAllActors`, `CEventList::reset`, `CDemonMission::loadSet` | 15 | 42 | 5112 | 31 | 7 | 73.8% |
-| 11 | `CScript::loadScript` | 63 | 579 | 67400 | 19 | 3 | 3.2% |
+| 11 | `CScript::loadScript` | 63 | 579 | 67400 | 22 | 8 | 3.7% |
 | 12 | `CDemonMission::loadScript`, `CScript::executeInitSection`, `CDemonMission::startMission`, `CDemonMission::buildActiveSetActorList`, `CConsole::reset`, `CEditorTools::displayMemoryDiagnostics`, `CGame::setGameRes`, `CDemonLight::init`, `CDemonSet::initScene` | 12 | 26 | 1658 | 2 | 0 | 7.6% |
 | 13 | `CFireEffect::init`, `CDemonSet::loadMasterLightStates`, `CDemonSet::setGamma`, `CGame::clearOverlay`, `CGame::loadAssets` | 7 | 27 | 735 | 0 | 0 | 0.0% |
 | 14 | `CNetGame::syncPlayers`, `CNetGame::processServerFrame`, `CLevelLoader::cleanup`, `CKeys::toggleInputMask`, `CGame::processHotkeys` | 17 | 51 | 5302 | 1 | 0 | 1.9% |
@@ -46,7 +46,7 @@ functions don't count as done. Sizes are in instructions.
 | 30 | Not reached from startup: `core/` (part 8 of 9) | 20 | 300 | 31826 | 9 | 2 | 3.0% |
 | 31 | Not reached from startup: `core/` (part 9 of 9) | 5 | 111 | 10905 | 4 | 0 | 3.6% |
 | 32 | Not reached from startup: `wincore/` | 2 | 11 | 482 | 4 | 0 | 36.3% |
-| | **All** | | **4479** | **402407** | **646** | **86** | **14.4%** |
+| | **All** | | **4479** | **402407** | **649** | **91** | **14.4%** |
 
 ## Step 0: Math value types
 
@@ -1953,33 +1953,116 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `apply` 0x00585870 (106)
   - [ ] `testSphereInFrustum` 0x00585970 (66)
 
-### `core/script.cpp` (25 functions, 7596 instructions, 7 done, 2 partial)
+### `core/script.cpp` (25 functions, 7596 instructions, 10 done, 7 partial)
 - class `CScript`
   - [x] `freeParsedLines` 0x005598f0 (40)
   - [~] `clear` 0x00559870 (38)
     - deferred: clearing the notes of dialogue missing from the database, with the dbSay commands and startDialogLine
   - [x] `buildParsedLines` 0x0055a370 (107)
-  - [ ] `initRuntime` 0x0055a540 (120)
+  - [~] `initRuntime` 0x0055a540 (120)
+    - deferred: clearing the shown message, with renderSubtitles
+    - deferred: clearing the wait and dialogue timers and the time a message shows for, with processTimer and startDialogLine
+    - deferred: clearing the ending flag, the breakpoint state, the call stack, the skip label and the loop warning, with process and skipCinematic
+    - deferred: choosing the focus actor, the local hero or else the first hero placed in an area, and clearing the speaker and the focus lock, with setFocusActor and the scene camera
+    - deferred: letting the heroes be damaged and the enemies attack, and clearing the letterbox, with CGame's readers of them
+    - deferred: clearing the script's time scale, with process
+    - deferred: playing the set's ambient sound, its geometry file's stem as a .wav and smill and town at 0.85, with CSound::playAmbientSound
   - [ ] `startDialogLine` 0x0055ff00 (148)
   - [ ] `processTimer` 0x005600c0 (46)
   - [ ] `setSpeaker` 0x00560140 (8)
-  - [ ] `findLabelIndex` 0x00560160 (42)
-  - [ ] `skipCommands` 0x005601c0 (104)
+  - [x] `findLabelIndex` 0x00560160 (42)
+  - [~] `skipCommands` 0x005601c0 (104)
+    - deferred: stopping at an else on the top level, to skip only an if's own statement, with running if
   - [x] `findDialogEntry` 0x005606e0 (48)
-  - [ ] `step` 0x0055a810 (5702)
-  - [ ] `validateSyntax` 0x0055a4b0 (53)
+  - [~] `step` 0x0055a810 (5702)
+    - deferred: quitting on an instruction pointer outside the script, with process
+    - deferred: passing over labels without checking them while running, with process
+    - deferred: syntaxCheckOn and syntaxCheckOff leaving a running script alone, with process
+    - deferred: resetting the wait and dialogue timers once a command finishes, with processTimer and startDialogLine
+    - deferred: staying on a command that hasn't finished, and the overrun past the end of the script, while running, with process
+    - deferred: advanceLightFilter, createExplosion, deleteActor, displayBitmap, hurtCharacter, incCounter, fadeSfx, fadeAmbientSound, flagOn, flagOff, gameFlagOn, gameFlagOff, killCharacter, killHero, killSfx, lightning, playSfx, setCameraAmbient, setCounter, setGroupAmbient, setLightFilterFrame, setLeverState, setModelState, setTimer, setWeather, shakeScreen, slamModelToMotion and warpTo, each checked and run as the event command of the same name, with CEventList::validateCommands and executeCommands
+    - deferred: raise, checking and running its event commands, with CEventList::validateCommands and executeCommands
+    - deferred: allowEnemyAttack, checking its condition and setting whether enemies attack, with CEventList::validateCondition and evaluateCondition
+    - deferred: allowHeroControls, checking its condition and blocking the heroes' controls, with CEventList::validateCondition and evaluateCondition
+    - deferred: allowHeroDamage, checking its condition and setting whether heroes take damage, with CEventList::validateCondition and evaluateCondition
+    - deferred: lockFocusActor, checking its condition and locking the focus actor, with CEventList::validateCondition and evaluateCondition
+    - deferred: if, checking its condition and skipping the next statement, and an else after it, when false, with CEventList::validateCondition and evaluateCondition
+    - deferred: waitFor, checking its condition and holding the script until it holds, with CEventList::validateCondition and evaluateCondition
+    - deferred: running addItemToInventory, adding the item to the hero's inventory, with CInventory::addItem
+    - deferred: running attachActorToPlatform, attaching the actor, with CPlatform::attachActor
+    - deferred: running cancelWalkTo, stopping the character's walk, or every character's in the set, with the characters' walk targets
+    - deferred: running enableHealthBar, setting the character's health bar, with its health bar
+    - deferred: running getTriggerActor, storing who set the trigger off in the variable, with CEventList's actor variables
+    - deferred: running lookAt, turning the character's head, with CCharacter::setLookAtTarget
+    - deferred: running movePlatform, moving the platform, with CPlatform::startMovement
+    - deferred: running openDoor, holding the script until the character has the door open, with the characters' door targets
+    - deferred: running removeAllItemsFromInventory, emptying the hero's inventory, with CInventory::initialize
+    - deferred: running removeItemFromInventory, taking the item the local hero holds by that name from the hero, with CInventory::findItemByName and removeItem
+    - deferred: running selectWeapon, cycling the hero's weapons to the class, or saying it can't, with CInventory::selectWeapon
+    - deferred: running setActorVariable, storing the actor in the variable, with CEventList's actor variables
+    - deferred: running setCharacterHealth, setting the character's health as a share of its most, with its hit points
+    - deferred: setFocusActor making the actor the focus, the network camera's choice of it included, while checking too, with the scene camera
+    - deferred: running setHeroTask, setting the hero's task, with CHero::setAiTask
+    - deferred: setSpeaker making the character the speaker and, unless the focus is locked, the focus, or clearing the speaker, while checking too, with renderSubtitles and the scene camera
+    - deferred: running setVictim, setting the enemy's victim or stopping it choosing one, with CEnemy::setVictim
+    - deferred: running snapToFace, turning the first actor to face the second, with the actors' orientation
+    - deferred: running turnToFace, turning the character to face the target, with the characters' walk targets
+    - deferred: running walkTo, walking the character to the target, with the characters' walk targets
+    - deferred: addLightFilter, checking the light and the filter file and adding the filter, with CDemonSet::addLightFilter
+    - deferred: enableCamera, checking the camera and its condition and enabling it, with CDemonSet::findCameraByName and CEventList::validateCondition
+    - deferred: enableCameraGroup, checking its condition and enabling the group, with CEventList::validateCondition
+    - deferred: setCameraGroup, checking the camera and moving it to the group, with CDemonSet::findCameraByName
+    - deferred: switchCamera, checking the camera and the hold time and switching to it, with CDemonSet::findCameraByName
+    - deferred: gesture, checking the character and the motion and starting it, with CMotionList::findMotionIndex
+    - deferred: dismember, checking the character and its parts, drawing the random spread while checking too, and cutting the parts off, with parseBodyPartMask and createBodyPart
+    - deferred: holsterWeapon, checking the hero and its condition and holstering or drawing, with CEventList::validateCondition
+    - deferred: pressButton, checking the hero and the button and pressing it, with getActionState
+    - deferred: releaseButton, checking the hero and the button and releasing it, with getActionState
+    - deferred: dbSay, checking the line in the database and its speaker and saying it, with startDialogLine
+    - deferred: dbStartSay, checking the line in the database and its speaker and starting it, with startDialogLine
+    - deferred: say, checking the speaker and the sound and saying the line, with startDialogLine
+    - deferred: startSay, checking the speaker and the sound and starting the line, with startDialogLine
+    - deferred: running beginFadeIn and beginFadeOut, starting the fade, with CGame's fades
+    - deferred: running breakPoint, showing where the script stopped and stopping it, with process
+    - deferred: running cancelCameraHold, ending the camera's hold, with the virtual director
+    - deferred: running chainToMission, naming the next mission and ending this one, with process
+    - deferred: running clearActorVariable, clearing the variable, with CEventList::setActorVariable
+    - deferred: running debug, showing the message, with process
+    - deferred: keeping display's message, while checking too, with renderSubtitles
+    - deferred: running else, skipping the statement after it, with process
+    - deferred: running end, ending the mission and noting it for the helper-death fix, with process
+    - deferred: running fadeIn and fadeOut, holding the script until the fade finishes, with CGame's fades
+    - deferred: running finishedAct and rollCredits, ending the act, with process
+    - deferred: running getIniInt, reading the INI value into the counter, with CEventList's counters
+    - deferred: running gosub and return, calling and returning through the call stack, with process
+    - deferred: running goto, jumping to the label, with process
+    - deferred: running gtfo, showing the message and ending the mission, with process
+    - deferred: running idle, stopping for the frame after moving past it, with process
+    - deferred: running letterbox, setting the letterbox and what it allows, and turning off the goggles, with CGame's readers of them
+    - deferred: running removeKeys, taking the keys from every hero, with CHero::removeMatchingKeys
+    - deferred: running setAmbientSound, playing it, with CSound::playAmbientSound
+    - deferred: running setIniInt, writing the INI value, with process
+    - deferred: running setSayTimeOverride, setting how long lines show for, with startDialogLine
+    - deferred: running setSkipLabel, setting where a skipped cinematic goes, with skipCinematic
+    - deferred: running setTimeFactor, setting the game's speed, with CGame's time scale
+    - deferred: running timedDisplay, showing the message for its time, with renderSubtitles and processTimer
+    - deferred: running wait, holding the script for its time, with processTimer
+  - [~] `validateSyntax` 0x0055a4b0 (53)
+    - deferred: clearing the notes of dialogue missing from the database first, with the dbSay commands and startDialogLine
+    - deferred: going back to running commands once the check passes, with process
   - [x] `dbLoad` 0x005603c0 (232)
   - [~] `loadScript` 0x00559f80 (308)
-    - deferred: checking the script's syntax, quitting on the first error, unless the caller skips it, with validateSyntax
-    - deferred: starting the script's run, with initRuntime
+    - deferred: clearing the notes of dialogue missing from the database after the check, with the dbSay commands and startDialogLine
 - free functions
   - [x] `trimLine` 0x005592c0 (64)
-  - [ ] `validateActorVariableName` 0x00559220 (63)
+  - [x] `validateActorVariableName` 0x00559220 (63)
   - [x] `trimString` 0x00559360 (44)
   - [x] `skipWhitespace` 0x005593d0 (8)
-  - [ ] `parseArgument` 0x005593f0 (78)
+  - [x] `parseArgument` 0x005593f0 (78)
   - [ ] `parseConditionExpr` 0x005594a0 (23)
-  - [ ] `getActor` 0x005594e0 (149)
+  - [~] `getActor` 0x005594e0 (149)
+    - deferred: looking an actor variable up by its actor's name among the set's actors, with CEventList's actor variables and the set's actor list
+    - deferred: the hero "$" means in a network game, the gas room's unmasked hero else the first, with CNetGame's sessions
   - [ ] `getActionState` 0x00559660 (88)
   - [ ] `getDeformableModelFilename` 0x00567d30 (3)
   - [ ] `parseBodyPartMask` 0x00559730 (66)

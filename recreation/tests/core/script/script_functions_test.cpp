@@ -1,5 +1,7 @@
 #include "core/script/script_functions.h"
+#include "tests/mocks/core/scriptfixture.h"
 
+#include <gmock/gmock.h>
 #include <gtest/gtest.h>
 
 #include <cstddef>
@@ -8,6 +10,7 @@
 #include <string>
 #include <string_view>
 #include <type_traits>
+#include <utility>
 
 namespace nocturne::core {
 namespace {
@@ -23,6 +26,10 @@ TEST(CoreScriptFunctions, PublicInterface) {
                                                      std::string_view &, std::size_t)>);
     static_assert(std::is_same_v<decltype(&validateActorVariableName),
                                  std::expected<void, std::string> (*)(std::string_view)>);
+    static_assert(
+        std::is_same_v<decltype(&getActor),
+                       std::expected<CDemonActor *, SActorLookupError> (*)(
+                           std::string_view, const CDemonActorType &, const CDemonMission &)>);
 }
 
 TEST(CoreScriptFunctions, TrimLineDropsTheCommentAndTheWhitespaceAroundTheCommand) {
@@ -87,6 +94,63 @@ TEST(CoreScriptFunctions, AnActorVariableIsAnAtSignAndAName) {
               std::unexpected(std::string("Actor variable name \"@\" is not valid")));
     EXPECT_EQ(validateActorVariableName("@a-b"),
               std::unexpected(std::string("Actor variable name \"@a-b\" is not valid")));
+}
+
+using CoreScriptGetActor = CScriptFixture;
+
+std::unexpected<SActorLookupError> lookupError(std::string message, bool by_variable = false) {
+    return std::unexpected(
+        SActorLookupError{.message = std::move(message), .by_variable = by_variable});
+}
+
+TEST_F(CoreScriptGetActor, AnActorIsFoundByItsNameInAnyCase) {
+    addActor("Door1", kScriptDoorType);
+    const auto actor = getActor("DOOR1", CDoor::kType, mission_);
+    ASSERT_TRUE(actor);
+    EXPECT_EQ(*actor, mission_.findActorByName("Door1"));
+}
+
+TEST_F(CoreScriptGetActor, ANameMustBeGiven) {
+    EXPECT_EQ(getActor("", CDemonActor::kType, mission_), lookupError("Must specify actor name"));
+}
+
+TEST_F(CoreScriptGetActor, AMissingActorIsNamed) {
+    EXPECT_EQ(getActor("Nobody", CDemonActor::kType, mission_),
+              lookupError("Actor \"Nobody\" does not exist."));
+}
+
+TEST_F(CoreScriptGetActor, TheActorMustBeOfTheCommandsClass) {
+    addActor("Door1", kScriptDoorType);
+    EXPECT_EQ(getActor("Door1", CCharacter::kType, mission_),
+              lookupError("Actor \"Door1\" is of type CTestDoor, this command requires an actor "
+                          "of type CCharacter."));
+}
+
+TEST_F(CoreScriptGetActor, TheDollarSignIsTheFirstHero) {
+    addHero();
+    const auto actor = getActor("$", CHero::kType, mission_);
+    ASSERT_TRUE(actor);
+    EXPECT_EQ(*actor, mission_.getHero(0));
+    EXPECT_EQ(getActor("$", CDoor::kType, mission_),
+              lookupError(std::format("Actor \"$\" is of type {}, this command requires an actor "
+                                      "of type CDoor.",
+                                      mission_.getHero(0)->getActorClassName())));
+}
+
+// The original counts a missing hero as a variable naming nothing, which a command passes over.
+TEST_F(CoreScriptGetActor, WithoutAHeroTheDollarSignNamesNothing) {
+    EXPECT_EQ(getActor("$", CHero::kType, mission_), lookupError("Hero doesn't exist!!?!", true));
+}
+
+TEST_F(CoreScriptGetActor, AVariableNameMustBeValid) {
+    EXPECT_EQ(getActor("@a-b", CDemonActor::kType, mission_),
+              lookupError("Actor variable name \"@a-b\" is not valid"));
+}
+
+TEST_F(CoreScriptGetActor, LookingUpAVariableIsNotPortedYet) {
+    EXPECT_THAT([this] { return getActor("@door", CDemonActor::kType, mission_); },
+                ::testing::ThrowsMessage<common::CFatalError>(
+                    ::testing::StrEq("CEventList::getActorByVarName is not ported yet")));
 }
 
 } // namespace

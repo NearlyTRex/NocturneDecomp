@@ -1,3 +1,5 @@
+#include "core/actor/demonactortype.h"
+#include "core/charactr/character.h"
 #include "core/enemy/enemy.h"
 
 #include <gtest/gtest.h>
@@ -9,6 +11,14 @@ namespace {
 
 TEST(CEnemy, DerivesFromCCharacter) {
     static_assert(std::is_base_of_v<CCharacter, CEnemy>);
+}
+
+TEST(CEnemy, ItsRecordIsAVersionTenCharacterThatMissionsCantCreate) {
+    EXPECT_EQ(CEnemy::kType.class_name, "CEnemy");
+    EXPECT_EQ(CEnemy::kType.parent_type, &CCharacter::kType);
+    EXPECT_EQ(CEnemy::kType.factory_func, nullptr);
+    EXPECT_EQ(CEnemy::kType.latest_version, 10);
+    EXPECT_EQ(CEnemy::kType.name_hash, hashClassName("CEnemy"));
 }
 
 TEST(CEnemy, HasVirtualDestructor) {

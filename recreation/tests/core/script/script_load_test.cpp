@@ -1,7 +1,7 @@
 #include "common/error/fatalerror.h"
 #include "core/script/script.h"
 #include "platform/filesystem.h"
-#include "tests/mocks/shape/edcontrolsfixture.h"
+#include "tests/mocks/core/scriptfixture.h"
 
 #include <gmock/gmock.h>
 #include <gtest/gtest.h>
@@ -20,14 +20,8 @@ using ::testing::Return;
 using ::testing::StrEq;
 using ::testing::ThrowsMessage;
 
-// A script over files the test places under world and sound. An error prompt waits for a key
-// before it closes, so the test counts prompts by the keys they wait for.
-class CScriptLoadTest : public shape::CEdControlsFixture {
+class CScriptLoadTest : public CScriptFixture {
 protected:
-    CScriptLoadTest() {
-        EXPECT_CALL(raw_input_, getNextKeypress(_)).Times(0);
-    }
-
     // A file a lookup finds, at the given size, that won't open.
     void givenUnopenableFile(const std::string &name) {
         ON_CALL(file_system_, getFileInfo(std::string_view("/game/" + name)))
@@ -44,8 +38,6 @@ protected:
         const auto entries = script_.getDialogEntries();
         return {entries.begin(), entries.end()};
     }
-
-    CScript script_{{.dosio = dosio_, .editor_tools = editor_tools_}};
 };
 
 TEST_F(CScriptLoadTest, AMissingScriptLoadsEmptyWithoutReadingItsDialogue) {
@@ -93,7 +85,7 @@ TEST_F(CScriptLoadTest, TheLastLineNeedsNoNewline) {
 TEST_F(CScriptLoadTest, ANulMeansTheFileIsNotTextAndNothingIsKept) {
     givenFile("world\\m1.scr", std::string("wait(1)\nwa\0it(2)\n", 17));
     givenFile("world\\m1.txt", "hello, gabriela, Hi.\n");
-    EXPECT_CALL(raw_input_, getNextKeypress(_));
+    EXPECT_CALL(raw_input_, getNextKeypress(_)).WillOnce(Return('x'));
     EXPECT_FALSE(script_.loadScript("m1.scr", true));
     EXPECT_THAT(lines(), IsEmpty());
     EXPECT_THAT(dialogue(), IsEmpty());
@@ -176,7 +168,7 @@ TEST_F(CScriptDialogueTest, TheStrangerSpeaksAsTheDollarSign) {
 }
 
 TEST_F(CScriptDialogueTest, ADuplicateNameWarnsAndIsKept) {
-    EXPECT_CALL(raw_input_, getNextKeypress(_));
+    EXPECT_CALL(raw_input_, getNextKeypress(_)).WillOnce(Return('x'));
     load("hello, a, first\nlines\\HELLO.wav, b, second\n");
     const std::vector<SDialogEntry> entries = dialogue();
     ASSERT_EQ(entries.size(), 2U);

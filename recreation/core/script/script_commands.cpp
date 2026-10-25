@@ -1,6 +1,7 @@
 #include "common/text/ascii.h"
 #include "common/text/scan.h"
 #include "common/text/scanformat.h"
+#include "core/script/commandchecks.h"
 #include "core/script/script.h"
 #include "core/script/script_functions.h"
 
@@ -25,16 +26,6 @@ constexpr std::size_t kMaxText = 300;
 constexpr std::size_t kMaxDisplayMessage = 0x400;
 // setTimeFactor's range: faster than stopped, up to four times the normal speed.
 constexpr float kMaxTimeFactor = 4.0F;
-
-// Moves the statement past what a format took, or fails with the command's message.
-Result consume(SScriptStatement &statement, std::optional<std::size_t> taken,
-               std::string_view error) {
-    if (!taken) {
-        return std::unexpected(std::string(error));
-    }
-    statement.rest.remove_prefix(*taken);
-    return {};
-}
 
 Result checkArgument(SScriptStatement &statement, std::size_t max_length) {
     const std::expected<std::string, std::string> argument =
@@ -81,27 +72,28 @@ Result checkDisplay(CScript & /*script*/, SScriptStatement &statement) {
 }
 
 Result checkFinishedAct(CScript & /*script*/, SScriptStatement &statement) {
-    return consume(statement, common::scanPrefix(statement.rest, " ( )"),
-                   "Error parsing finishedAct command");
+    return consumeScanned(statement, common::scanPrefix(statement.rest, " ( )"),
+                          "Error parsing finishedAct command");
 }
 
 Result checkRollCredits(CScript & /*script*/, SScriptStatement &statement) {
-    return consume(statement, common::scanPrefix(statement.rest, " ( )"),
-                   "Error parsing rollCredits command");
+    return consumeScanned(statement, common::scanPrefix(statement.rest, " ( )"),
+                          "Error parsing rollCredits command");
 }
 
 Result checkGetIniInt(CScript & /*script*/, SScriptStatement &statement) {
     std::string key;
     std::string counter;
-    return consume(statement, common::scanPrefix(statement.rest, "(%[^,], %[^,)] )", key, counter),
-                   "Error parsing getIniInt command parms");
+    return consumeScanned(statement,
+                          common::scanPrefix(statement.rest, "(%[^,], %[^,)] )", key, counter),
+                          "Error parsing getIniInt command parms");
 }
 
 Result checkSetIniInt(CScript & /*script*/, SScriptStatement &statement) {
     std::string key;
     int value = 0;
-    return consume(statement, common::scanPrefix(statement.rest, "(%[^,], %d )", key, value),
-                   "Error parsing setIniInt command parms");
+    return consumeScanned(statement, common::scanPrefix(statement.rest, "(%[^,], %d )", key, value),
+                          "Error parsing setIniInt command parms");
 }
 
 Result checkLetterbox(CScript & /*script*/, SScriptStatement &statement) {
@@ -121,14 +113,15 @@ Result checkLetterbox(CScript & /*script*/, SScriptStatement &statement) {
 // The shipped game refused removeKeys in a network game; there it takes every hero's keys.
 Result checkRemoveKeys(CScript & /*script*/, SScriptStatement &statement) {
     int key_type = 0;
-    return consume(statement, common::scanPrefix(statement.rest, " (%d )", key_type),
-                   "Error parsing removeKeys() command parms");
+    return consumeScanned(statement, common::scanPrefix(statement.rest, " (%d )", key_type),
+                          "Error parsing removeKeys() command parms");
 }
 
 // Either "()" or "(seconds)", with whitespace anywhere around them.
 Result checkSetSayTimeOverride(CScript & /*script*/, SScriptStatement &statement) {
     constexpr std::string_view kError = "Error parsing setSayTimeOverride parameters.";
-    if (Result opened = consume(statement, common::scanPrefix(statement.rest, " ( "), kError);
+    if (Result opened =
+            consumeScanned(statement, common::scanPrefix(statement.rest, " ( "), kError);
         !opened) {
         return opened;
     }
@@ -137,7 +130,7 @@ Result checkSetSayTimeOverride(CScript & /*script*/, SScriptStatement &statement
         return {};
     }
     float seconds = 0.0F;
-    return consume(statement, common::scanPrefix(statement.rest, "%f )", seconds), kError);
+    return consumeScanned(statement, common::scanPrefix(statement.rest, "%f )", seconds), kError);
 }
 
 Result checkSetTimeFactor(CScript & /*script*/, SScriptStatement &statement) {
@@ -169,26 +162,35 @@ Result checkTimedDisplay(CScript & /*script*/, SScriptStatement &statement) {
 
 Result checkWait(CScript & /*script*/, SScriptStatement &statement) {
     float seconds = 0.0F;
-    return consume(statement, common::scanPrefix(statement.rest, "(%f)", seconds),
-                   "Error parsing time value on wait statament");
+    return consumeScanned(statement, common::scanPrefix(statement.rest, "(%f)", seconds),
+                          "Error parsing time value on wait statament");
 }
 
 } // namespace
 
+Result consumeScanned(SScriptStatement &statement, std::optional<std::size_t> taken,
+                      std::string_view error) {
+    if (!taken) {
+        return std::unexpected(std::string(error));
+    }
+    statement.rest.remove_prefix(*taken);
+    return {};
+}
+
 const CScript::SCommand *CScript::findCommand(std::string_view name) {
     static constexpr std::array kCommands{
-        SCommand{.name = "addItemToInventory", .check = &checkNotPorted},
+        SCommand{.name = "addItemToInventory", .check = &checkAddItemToInventory},
         SCommand{.name = "addLightFilter", .check = &checkNotPorted},
         SCommand{.name = "advanceLightFilter", .check = &checkNotPorted},
         SCommand{.name = "allowEnemyAttack", .check = &checkNotPorted},
         SCommand{.name = "allowHeroControls", .check = &checkNotPorted},
         SCommand{.name = "allowHeroDamage", .check = &checkNotPorted},
-        SCommand{.name = "attachActorToPlatform", .check = &checkNotPorted},
+        SCommand{.name = "attachActorToPlatform", .check = &checkAttachActorToPlatform},
         SCommand{.name = "beginFadeIn", .check = &checkNothing},
         SCommand{.name = "beginFadeOut", .check = &checkNothing},
         SCommand{.name = "breakPoint", .check = &checkNothing},
         SCommand{.name = "cancelCameraHold", .check = &checkNothing},
-        SCommand{.name = "cancelWalkTo", .check = &checkNotPorted},
+        SCommand{.name = "cancelWalkTo", .check = &checkCancelWalkTo},
         SCommand{.name = "chainToMission", .check = &checkMissionName},
         SCommand{.name = "clearActorVariable", .check = &checkClearActorVariable},
         SCommand{.name = "createExplosion", .check = &checkNotPorted},
@@ -202,7 +204,7 @@ const CScript::SCommand *CScript::findCommand(std::string_view name) {
         SCommand{.name = "else", .check = &checkElse},
         SCommand{.name = "enableCamera", .check = &checkNotPorted},
         SCommand{.name = "enableCameraGroup", .check = &checkNotPorted},
-        SCommand{.name = "enableHealthBar", .check = &checkNotPorted},
+        SCommand{.name = "enableHealthBar", .check = &checkEnableHealthBar},
         SCommand{.name = "end", .check = &checkNothing},
         SCommand{.name = "fadeAmbientSound", .check = &checkNotPorted},
         SCommand{.name = "fadeIn", .check = &checkNothing},
@@ -215,7 +217,7 @@ const CScript::SCommand *CScript::findCommand(std::string_view name) {
         SCommand{.name = "gameFlagOn", .check = &checkNotPorted},
         SCommand{.name = "gesture", .check = &checkNotPorted},
         SCommand{.name = "getIniInt", .check = &checkGetIniInt},
-        SCommand{.name = "getTriggerActor", .check = &checkNotPorted},
+        SCommand{.name = "getTriggerActor", .check = &checkGetTriggerActor},
         SCommand{.name = "gosub", .check = &checkJumpLabel},
         SCommand{.name = "goto", .check = &checkJumpLabel},
         SCommand{.name = "gtfo", .check = &checkText},
@@ -230,50 +232,50 @@ const CScript::SCommand *CScript::findCommand(std::string_view name) {
         SCommand{.name = "letterbox", .check = &checkLetterbox},
         SCommand{.name = "lightning", .check = &checkNotPorted},
         SCommand{.name = "lockFocusActor", .check = &checkNotPorted},
-        SCommand{.name = "lookAt", .check = &checkNotPorted},
-        SCommand{.name = "movePlatform", .check = &checkNotPorted},
-        SCommand{.name = "openDoor", .check = &checkNotPorted},
+        SCommand{.name = "lookAt", .check = &checkLookAt},
+        SCommand{.name = "movePlatform", .check = &checkMovePlatform},
+        SCommand{.name = "openDoor", .check = &checkOpenDoor},
         SCommand{.name = "playSfx", .check = &checkNotPorted},
         SCommand{.name = "pressButton", .check = &checkNotPorted},
         SCommand{.name = "raise", .check = &checkNotPorted},
         SCommand{.name = "releaseButton", .check = &checkNotPorted},
-        SCommand{.name = "removeAllItemsFromInventory", .check = &checkNotPorted},
-        SCommand{.name = "removeItemFromInventory", .check = &checkNotPorted},
+        SCommand{.name = "removeAllItemsFromInventory", .check = &checkRemoveAllItemsFromInventory},
+        SCommand{.name = "removeItemFromInventory", .check = &checkRemoveItemFromInventory},
         SCommand{.name = "removeKeys", .check = &checkRemoveKeys},
         SCommand{.name = "return", .check = &checkNothing},
         SCommand{.name = "rollCredits", .check = &checkRollCredits},
         SCommand{.name = "say", .check = &checkNotPorted},
-        SCommand{.name = "selectWeapon", .check = &checkNotPorted},
-        SCommand{.name = "setActorVariable", .check = &checkNotPorted},
+        SCommand{.name = "selectWeapon", .check = &checkSelectWeapon},
+        SCommand{.name = "setActorVariable", .check = &checkSetActorVariable},
         SCommand{.name = "setAmbientSound", .check = &checkShortArgument},
         SCommand{.name = "setCameraAmbient", .check = &checkNotPorted},
         SCommand{.name = "setCameraGroup", .check = &checkNotPorted},
-        SCommand{.name = "setCharacterHealth", .check = &checkNotPorted},
+        SCommand{.name = "setCharacterHealth", .check = &checkSetCharacterHealth},
         SCommand{.name = "setCounter", .check = &checkNotPorted},
-        SCommand{.name = "setFocusActor", .check = &checkNotPorted},
+        SCommand{.name = "setFocusActor", .check = &checkSetFocusActor},
         SCommand{.name = "setGroupAmbient", .check = &checkNotPorted},
-        SCommand{.name = "setHeroTask", .check = &checkNotPorted},
+        SCommand{.name = "setHeroTask", .check = &checkSetHeroTask},
         SCommand{.name = "setIniInt", .check = &checkSetIniInt},
         SCommand{.name = "setLeverState", .check = &checkNotPorted},
         SCommand{.name = "setLightFilterFrame", .check = &checkNotPorted},
         SCommand{.name = "setModelState", .check = &checkNotPorted},
         SCommand{.name = "setSayTimeOverride", .check = &checkSetSayTimeOverride},
         SCommand{.name = "setSkipLabel", .check = &checkSetSkipLabel},
-        SCommand{.name = "setSpeaker", .check = &checkNotPorted},
+        SCommand{.name = "setSpeaker", .check = &checkSetSpeaker},
         SCommand{.name = "setTimeFactor", .check = &checkSetTimeFactor},
         SCommand{.name = "setTimer", .check = &checkNotPorted},
-        SCommand{.name = "setVictim", .check = &checkNotPorted},
+        SCommand{.name = "setVictim", .check = &checkSetVictim},
         SCommand{.name = "setWeather", .check = &checkNotPorted},
         SCommand{.name = "shakeScreen", .check = &checkNotPorted},
         SCommand{.name = "slamModelToMotion", .check = &checkNotPorted},
-        SCommand{.name = "snapToFace", .check = &checkNotPorted},
+        SCommand{.name = "snapToFace", .check = &checkSnapToFace},
         SCommand{.name = "startSay", .check = &checkNotPorted},
         SCommand{.name = "switchCamera", .check = &checkNotPorted},
         SCommand{.name = "timedDisplay", .check = &checkTimedDisplay},
-        SCommand{.name = "turnToFace", .check = &checkNotPorted},
+        SCommand{.name = "turnToFace", .check = &checkTurnToFace},
         SCommand{.name = "wait", .check = &checkWait},
         SCommand{.name = "waitFor", .check = &checkNotPorted},
-        SCommand{.name = "walkTo", .check = &checkNotPorted},
+        SCommand{.name = "walkTo", .check = &checkWalkTo},
         SCommand{.name = "warpTo", .check = &checkNotPorted},
     };
     const auto *command = std::ranges::find_if(kCommands, [name](const SCommand &candidate) {
