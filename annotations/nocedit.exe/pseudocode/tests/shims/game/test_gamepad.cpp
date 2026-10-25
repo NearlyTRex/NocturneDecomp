@@ -154,8 +154,8 @@ NOCTURNE_TEST(triggers_and_sticks_press_their_codes) {
 }
 
 // The sticks have a radial deadzone, and the range past it is rescaled from
-// nothing to full. Past full deflection, as a square gate's corner is, each
-// axis is passed through as it reads.
+// nothing to full. A square gate's corner is full deflection on the diagonal,
+// held to the unit circle.
 NOCTURNE_TEST(the_sticks_have_a_rescaled_deadzone) {
     float mx = 0, my = 0, lx = 0, ly = 0;
     const float dz = nocturne_pad_tuning()->stick_deadzone;
@@ -168,8 +168,8 @@ NOCTURNE_TEST(the_sticks_have_a_rescaled_deadzone) {
     pad().axes[SDL_CONTROLLER_AXIS_LEFTX] = 32767;
     pad().axes[SDL_CONTROLLER_AXIS_LEFTY] = 32767;
     nocturne_gamepad_axes(&mx, &my, nullptr, nullptr, nullptr, nullptr);
-    CHECK_EQ(mx, 1.0f);
-    CHECK_EQ(my, 1.0f);
+    CHECK_NEAR(mx, 0.70710678f, 1e-4f);
+    CHECK_NEAR(my, 0.70710678f, 1e-4f);
     pad().axes[SDL_CONTROLLER_AXIS_LEFTY] = 0;
     pad().axes[SDL_CONTROLLER_AXIS_LEFTX] = -32768;
     nocturne_gamepad_axes(&mx, nullptr, nullptr, nullptr, nullptr, nullptr);

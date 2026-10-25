@@ -100,20 +100,20 @@ bool trigger_down(int code, float pull) {
 }
 
 // Radial deadzone with the live range rescaled to 0..1, so a stick starts
-// moving the hero from a standstill rather than from the deadzone edge.
+// moving the hero from a standstill rather than from the deadzone edge. The
+// result never leaves the unit circle: a corner of a square gate is full
+// deflection in its direction, not full on both axes.
 void deadzone(float raw_x, float raw_y, float *out_x, float *out_y) {
     const float dz = nocturne_pad_tuning()->stick_deadzone;
-    float magnitude = SDL_sqrtf(raw_x * raw_x + raw_y * raw_y);
+    const float magnitude = SDL_sqrtf(raw_x * raw_x + raw_y * raw_y);
 
     if (magnitude <= dz) {
         *out_x = 0.0f;
         *out_y = 0.0f;
         return;
     }
-    if (magnitude > 1.0f) {
-        magnitude = 1.0f;
-    }
-    const float scaled = (magnitude - dz) / (1.0f - dz);
+    const float reach = (magnitude > 1.0f) ? 1.0f : magnitude;
+    const float scaled = (reach - dz) / (1.0f - dz);
     const float gain = scaled / magnitude;
     *out_x = raw_x * gain;
     *out_y = raw_y * gain;
