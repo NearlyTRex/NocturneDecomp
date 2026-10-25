@@ -46,7 +46,7 @@ using sdl_support::stand;
 
 const UINT kKeyDown = 0x0100, kKeyUp = 0x0101, kChar = 0x0102;
 const UINT kActivateApp = 0x001C, kDestroy = 0x0002, kQuit = 0x0012;
-const UINT kMouseMove = 0x0200, kMciNotify = 0x3b9;
+const UINT kMouseMove = 0x0200, kSetCursor = 0x0020, kMciNotify = 0x3b9;
 const UINT kRemove = 1;
 
 void start() {
@@ -454,10 +454,13 @@ NOCTURNE_TEST(the_mouse_reports_in_the_games_own_coordinates) {
     ev.motion.y = 100;
     SDL_PushEvent(&ev);
     std::vector<MSG> got = drain();
-    CHECK_EQ(got.size(), (size_t)1);
-    if (!got.empty()) {
-        CHECK_EQ(got[0].message, kMouseMove);
-        CHECK_EQ((long)got[0].lParam, (50L << 16) | 100L);
+    // WM_SETCURSOR comes first, over the client area for a mouse move.
+    CHECK_EQ(got.size(), (size_t)2);
+    if (got.size() == 2) {
+        CHECK_EQ(got[0].message, kSetCursor);
+        CHECK_EQ((long)got[0].lParam, ((long)kMouseMove << 16) | 1L);
+        CHECK_EQ(got[1].message, kMouseMove);
+        CHECK_EQ((long)got[1].lParam, (50L << 16) | 100L);
     }
 
     // Left, right and middle, down and up; another button is nothing.
@@ -589,7 +592,16 @@ NOCTURNE_TEST(text_goes_through_the_clipboard_and_upper_cases_in_place) {
     CHECK(g_UpdateWindowFunc(0));
     CHECK(g_LoadCursorAFunc(0, nullptr) != nullptr);
     CHECK(g_LoadIconAFunc(0, nullptr) != nullptr);
-    CHECK(g_SetCursorFunc(nullptr) != nullptr);
+}
+
+// No cursor hides the system's over the window, as the game asks on every
+// WM_SETCURSOR; one puts it back. Each answers the cursor before it.
+NOCTURNE_TEST(no_cursor_hides_the_systems_and_one_puts_it_back) {
+    start();
+    CHECK(g_SetCursorFunc(nullptr) == (HCURSOR)1);
+    CHECK_EQ(SDL_ShowCursor(SDL_QUERY), SDL_DISABLE);
+    CHECK(g_SetCursorFunc((HCURSOR)1) == nullptr);
+    CHECK_EQ(SDL_ShowCursor(SDL_QUERY), SDL_ENABLE);
 }
 
 #if !defined(_WIN32)

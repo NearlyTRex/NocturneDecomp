@@ -223,8 +223,16 @@ static void queueTypedText(MSG msg, const char *text) {
 static const uint32_t kKeyWasDown = 0x40000000u;
 static const uint32_t kKeyReleased = 0x80000000u;
 
-// WM_MOUSEMOVE, at the point in the game's own coordinates.
+// WM_MOUSEMOVE, at the point in the game's own coordinates, after the
+// WM_SETCURSOR Windows sends ahead of it: the hit test (HTCLIENT) low, the
+// message that moved it high. The game answers it with SetCursor(NULL).
 static void queueMouseMove(MSG msg, const SDL_MouseMotionEvent& motion) {
+    msg.message = 0x0020; // WM_SETCURSOR
+    msg.wParam = (WPARAM)msg.hwnd;
+    msg.lParam = (0x0200 << 16) | 1;
+    s_msgQueue.push(msg);
+    msg.wParam = 0;
+
     int mx = 0, my = 0;
     nocturne_gl_window_to_logical(motion.x, motion.y, &mx, &my);
     msg.message = 0x0200; // WM_MOUSEMOVE
@@ -595,7 +603,11 @@ static HANDLE shim_SetClipboardData(unsigned int uFormat, HGLOBAL hMem) {
 }
 
 static HCURSOR shim_SetCursor(HCURSOR hCursor) {
-    return (HCURSOR)1;
+    static HCURSOR s_cursor = (HCURSOR)1;
+    const HCURSOR previous = s_cursor;
+    s_cursor = hCursor;
+    SDL_ShowCursor(hCursor != nullptr ? SDL_ENABLE : SDL_DISABLE);
+    return previous;
 }
 
 static BOOL shim_SetCursorPos(int X, int Y) {
