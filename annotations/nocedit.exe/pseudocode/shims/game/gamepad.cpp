@@ -39,7 +39,6 @@ static_assert(NOCTURNE_PAD_CODE_END <= DIM_LBUTTON,
               "pad codes overlap the mouse and joystick codes");
 
 SDL_GameController *s_pad = nullptr;
-SDL_JoystickID      s_pad_id = -1;
 bool                s_inited = false;
 
 // Frames of navigation suppression still owed to CGame::playerControls. A
@@ -134,26 +133,22 @@ float axis_unit(SDL_GameControllerAxis axis) {
     }
     const int raw = SDL_GameControllerGetAxis(s_pad, axis);
     // SDL's negative extent is one larger than its positive one; dividing both
-    // by the positive extent and clamping keeps full deflection at exactly 1.
+    // by the positive extent and clamping the negative keeps full deflection at
+    // exactly 1 either way.
     float unit = (float)raw / 32767.0f;
     if (unit < -1.0f) unit = -1.0f;
-    if (unit >  1.0f) unit =  1.0f;
     return unit;
 }
 
+// The open pad, gone.
 void close_pad() {
-    if (s_pad != nullptr) {
-        SDL_GameControllerClose(s_pad);
-        s_pad = nullptr;
-        s_pad_id = -1;
-    }
+    SDL_GameControllerClose(s_pad);
+    s_pad = nullptr;
     memset(s_prev, 0, sizeof(s_prev));
 }
 
+// With none open.
 void open_first_pad() {
-    if (s_pad != nullptr) {
-        return;
-    }
     for (int i = 0; i < SDL_NumJoysticks(); i++) {
         if (!SDL_IsGameController(i)) {
             continue;
@@ -163,7 +158,6 @@ void open_first_pad() {
             continue;
         }
         s_pad = pad;
-        s_pad_id = SDL_JoystickInstanceID(SDL_GameControllerGetJoystick(pad));
         memset(s_prev, 0, sizeof(s_prev));
         DLOG("input", "controller opened: %s (%s)",
              SDL_GameControllerName(pad) ? SDL_GameControllerName(pad) : "?",
@@ -463,8 +457,9 @@ extern "C" void nocturne_gamepad_pump(void) {
     g_JoyYPos = (DWORD)((move_y + 1.0f) * 32767.5f);
     g_JoyZPos = (DWORD)((look_y + 1.0f) * 32767.5f);
     g_JoyRPos = (DWORD)((look_x + 1.0f) * 32767.5f);
+    static_assert(SDL_CONTROLLER_BUTTON_MAX >= 10, "the shipped path reported ten buttons");
     g_JoyButtons = 0;
-    for (int b = 0; b < 10 && b < SDL_CONTROLLER_BUTTON_MAX; b++) {
+    for (int b = 0; b < 10; b++) {
         if (button_down((SDL_GameControllerButton)b)) {
             g_JoyButtons |= (1u << b);
         }

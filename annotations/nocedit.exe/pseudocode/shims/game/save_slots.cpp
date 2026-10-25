@@ -216,7 +216,8 @@ std::string line_after(const std::string &text, const char *marker)
     if (end == std::string::npos) {
         end = text.size();
     }
-    while ((end > start) && ((text[end - 1] == '\r') || (text[end - 1] == '\n'))) {
+    // Up to the first newline, so only a carriage return can be left on it.
+    while ((end > start) && (text[end - 1] == '\r')) {
         end = end - 1;
     }
     return text.substr(start, end - start);
@@ -308,14 +309,14 @@ void sort_slots(void)
     }
 }
 
-// Rebuilds s_slots from save\*.noc. Returns the count.
+// Rebuilds s_slots from save\*.noc, each with its mission name. Returns the
+// count.
 //
-// `read_rows` also opens each save for its mission name. Whatever that costs is
-// normally paid at startup instead — see nocturne_save_slots_prewarm — and a
-// save the cache already holds at the size and timestamp it was listed with is
-// not opened again, so a list built after the prewarm reads only what has been
-// written since.
-int refresh(int read_rows)
+// The first time, reading every save for its name is normally paid at startup
+// instead — see nocturne_save_slots_prewarm — and a save the cache already
+// holds at the size and timestamp it was listed with is not opened again, so a
+// list built after the prewarm reads only what has been written since.
+int refresh(void)
 {
     CFileFinder finder;
     int         i;
@@ -339,10 +340,8 @@ int refresh(int read_rows)
     engine_dosio_cpp_CFileFinder_closeSearch_FUN_00481d70(&finder);
     engine_dosio_cpp_CFileFinder_dtor_FUN_00481c50(&finder, 0);
 
-    if (read_rows != 0) {
-        for (i = 0; i < s_slot_count; i++) {
-            read_metadata(&s_slots[i]);
-        }
+    for (i = 0; i < s_slot_count; i++) {
+        read_metadata(&s_slots[i]);
     }
 
     sort_slots();
@@ -396,12 +395,10 @@ void build_row(const SlotInfo *slot, char *out, int out_size)
         place = "";
     }
 
+    // Any 32-bit time is one the runtime can break down.
     stamp       = (time_t)slot->timestamp;
     broken_down = _localtime(&stamp);
-    when[0]     = '\0';
-    if (broken_down != (_tm *)0x0) {
-        _strftime(when, sizeof(when), (char *)"%m/%d/%y %I:%M %p", broken_down);
-    }
+    _strftime(when, sizeof(when), (char *)"%m/%d/%y %I:%M %p", broken_down);
 
     snprintf(out, (size_t)out_size, "%s\t%s\t%s", label, place, when);
 }
@@ -440,7 +437,7 @@ int next_free_slot(void)
 
 extern "C" void nocturne_save_slots_prewarm(void)
 {
-    refresh(1);
+    refresh();
 }
 
 extern "C" int nocturne_save_pick_slot(char *out, int out_size)
@@ -452,7 +449,7 @@ extern "C" int nocturne_save_pick_slot(char *out, int out_size)
     int       choice;
     int       i;
 
-    refresh(1);
+    refresh();
     free_slot = next_free_slot();
 
     shape_edittool_cpp_CPickList_ctor_FUN_004a3b90(&list);
@@ -493,8 +490,9 @@ extern "C" int nocturne_save_pick_slot(char *out, int out_size)
         return 1;
     }
 
+    // A row past NEW SAVE, one per listed save. The autosave's is refused.
     i = choice - 1;
-    if ((i < 0) || (s_slot_count <= i) || (s_slots[i].slot == 0)) {
+    if (s_slots[i].slot == 0) {
         return 0;
     }
     if (shape_edittool_cpp_CEditorTools_showDestructiveActionConfirmDialog_FUN_0049f060(
@@ -516,7 +514,7 @@ extern "C" int nocturne_load_pick_slot(char *out, int out_size)
     int       initial;
     int       i;
 
-    if (refresh(1) < 1) {
+    if (refresh() < 1) {
         shape_edittool_cpp_CEditorTools_showError_FUN_0049e740(
             g_CEditorToolsPtr, (char *)"%s",
             support_newmsg_cpp_getLocalizedString_FUN_005441f0((char *)"No files found"));
@@ -540,7 +538,8 @@ extern "C" int nocturne_load_pick_slot(char *out, int out_size)
         &list, title, initial, 0);
     shape_edittool_cpp_CPickList_dtor_FUN_004a3c80(&list, 0);
 
-    if ((choice < 0) || (s_slot_count <= choice)) {
+    // Escape; otherwise a row, one per listed save.
+    if (choice < 0) {
         return 0;
     }
     snprintf(out, (size_t)out_size, "%s", s_slots[choice].filename);
@@ -572,7 +571,6 @@ extern "C" int nocturne_single_player_menu(void)
     char *menu_ptrs[SP_MENU_MAX_ITEMS];
     int   continue_item;
     int   start_item;
-    int   load_item;
     int   selected = 0;
     int   menu_count;
     int   choice;
@@ -605,7 +603,6 @@ extern "C" int nocturne_single_player_menu(void)
         start_item             = menu_count;
         menu_ptrs[menu_count]  = start_line;
         menu_count             = menu_count + 1;
-        load_item              = menu_count;
         menu_ptrs[menu_count]  = load_line;
         menu_count             = menu_count + 1;
 
@@ -617,17 +614,12 @@ extern "C" int nocturne_single_player_menu(void)
                      (char *)0x0);
         wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();
 
+        // A choice is one of the rows just listed.
         if (choice >= 0) {
             if (choice == continue_item) {
                 return NOCTURNE_SP_MENU_CONTINUE;
             }
-            if (choice == start_item) {
-                return NOCTURNE_SP_MENU_START;
-            }
-            if (choice == load_item) {
-                return NOCTURNE_SP_MENU_LOAD;
-            }
-            return NOCTURNE_SP_MENU_CANCEL;
+            return (choice == start_item) ? NOCTURNE_SP_MENU_START : NOCTURNE_SP_MENU_LOAD;
         }
         if (nocturne_menu_cancelled() != 0) {
             return NOCTURNE_SP_MENU_CANCEL;

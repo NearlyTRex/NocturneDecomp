@@ -169,14 +169,13 @@ int collectRows(void)
     return s_row_count;
 }
 
+// `row` is a choice from the list collectRows just built, which it only builds
+// with an event list to raise into.
 void fire(int row)
 {
     const WarpDef *warp;
     char           message[256];
 
-    if ((row < 0) || (s_row_count <= row) || (g_CEventListPtr == (CEventList *)0)) {
-        return;
-    }
     warp = &kWarps[s_rows[row]];
 
     // executeCommands, not addOrRemovePersistentEvent: a bare name with no

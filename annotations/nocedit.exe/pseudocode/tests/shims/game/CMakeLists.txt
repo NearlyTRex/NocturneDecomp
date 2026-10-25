@@ -99,6 +99,78 @@ nocturne_test_suite(shims_game_behaviour_authentic_damage
         NOCTURNE_AUTHENTIC_FRIENDLY_FIRE=1 NOCTURNE_AUTHENTIC_NETPLAY=1
 )
 
+# The warps, the story list and the save slots, which share the pick list and
+# the chapter table: the engine's lists, file finder, decoder and dialogs are
+# menus_support.cpp's, the settings go through a stand-in for the engine's CIni,
+# and the Watcom runtime brings _stricmp, _localtime and _strftime.
+set(_menus_subjects
+    shims/game/warps.cpp
+    shims/game/chapter_select.cpp
+    shims/game/save_slots.cpp
+    shims/core/ini_setting.cpp
+    shims/watcom/crt.cpp
+    shims/watcom/path.cpp
+    shims/core/file_search.cpp)
+set(_menus_support menus_support.cpp ../gl/ini_support.cpp ../watcom/rng_audit_support.cpp)
+
+nocturne_test_suite(shims_game_menus
+    TESTS test_warps.cpp test_chapter_select.cpp test_save_slots.cpp
+    SUBJECTS ${_menus_subjects}
+    SUPPORT ${_menus_support}
+)
+
+nocturne_test_suite(shims_game_menus_authentic
+    TESTS test_menus_authentic.cpp
+    SUBJECTS ${_menus_subjects}
+    SUPPORT ${_menus_support}
+    DEFINITIONS
+        NOCTURNE_AUTHENTIC_CHEAT_MENU=1 NOCTURNE_AUTHENTIC_SAVE_SLOTS=1
+        NOCTURNE_AUTHENTIC_AUTOSAVE=1 NOCTURNE_AUTHENTIC_MENU_FONT=1
+)
+
+nocturne_test_suite(shims_game_menus_authentic_single_player
+    TESTS test_menus_authentic_single_player.cpp
+    SUBJECTS ${_menus_subjects}
+    SUPPORT ${_menus_support}
+    DEFINITIONS NOCTURNE_AUTHENTIC_SINGLE_PLAYER_MENU=1
+)
+
+# The controller, its SDL calls renamed in this directory's build of it for
+# gamepad_support.cpp to answer, so no pad on the machine is ever opened. Its
+# start-up runs once a process, so each way it can start is a binary of its own.
+set(_gamepad_sdl
+    SDL_SetHint SDL_InitSubSystem SDL_GetError SDL_RWFromFile
+    SDL_GameControllerAddMappingsFromRW SDL_GetBasePath SDL_free SDL_NumJoysticks SDL_IsGameController SDL_GameControllerOpen
+    SDL_GameControllerName SDL_GameControllerGetType SDL_GameControllerClose
+    SDL_GameControllerGetAttached SDL_GameControllerGetButton SDL_GameControllerGetAxis
+    SDL_GetKeyboardFocus SDL_GetTicks SDL_sqrtf)
+list(TRANSFORM _gamepad_sdl REPLACE "^(.+)$" "\\1=gamepad_sdl_\\1")
+set_source_files_properties("${NOCTURNE_PSEUDOCODE_DIR}/shims/game/gamepad.cpp"
+    PROPERTIES COMPILE_DEFINITIONS "${_gamepad_sdl}")
+
+nocturne_test_suite(shims_game_gamepad
+    TESTS test_gamepad.cpp test_gamepad_mappings.cpp test_gamepad_no_base.cpp
+          test_gamepad_no_subsystem.cpp
+    SUBJECTS
+        shims/game/gamepad.cpp
+        shims/game/pad_tuning.cpp
+        shims/core/ini_setting.cpp
+        shims/watcom/path.cpp
+        shims/core/file_search.cpp
+    SUPPORT
+        gamepad_support.cpp
+        ../gl/ini_support.cpp
+)
+
+nocturne_test_suite(shims_game_gamepad_authentic
+    TESTS test_gamepad_authentic.cpp
+    SUBJECTS
+        shims/game/gamepad.cpp
+    SUPPORT
+        gamepad_support.cpp
+    DEFINITIONS NOCTURNE_AUTHENTIC_GAMEPAD=1
+)
+
 # The small shims with the shipped behaviour back.
 nocturne_test_suite(shims_game_authentic
     TESTS test_game_authentic.cpp

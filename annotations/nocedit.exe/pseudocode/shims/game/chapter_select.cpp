@@ -111,14 +111,12 @@ static_assert(sizeof(k_chapter_names[0]) / sizeof(k_chapter_names[0][0]) ==
               "so [volume][chapter] means the same thing in both");
 
 // Whether a mission file is present in world\, the test showChapterSelect uses
-// to decide which entries to grey out.
+// to decide which entries to grey out. Asked only of a volume's first chapter,
+// which every volume has.
 int mission_exists(const char *mission_filename)
 {
     _FILE *handle;
 
-    if (mission_filename == (const char *)0x0) {
-        return 0;
-    }
     handle = engine_dosio_cpp_getFile_FUN_00481a50
                  ((char *)"world", (char *)mission_filename, (char *)"rt");
     if (handle == (_FILE *)0x0) {
@@ -137,11 +135,6 @@ void mission_stem(const char *name, char *out, int out_size)
 {
     const char *start;
     int i;
-
-    out[0] = '\0';
-    if (name == (const char *)0x0) {
-        return;
-    }
 
     // Last separator wins, so "world\castle1.msn" and "castle1.msn" agree.
     start = watcom_path_leaf(name);
@@ -204,7 +197,9 @@ extern "C" int nocturne_chapter_pick_mission(char *out, int out_size)
     shape_edittool_cpp_CPickList_dtor_FUN_004a3c80(&list, 0);
     g_EditorFont = saved_font;
 
-    if (volume < 0 || volume >= CHAPTER_VOLUME_COUNT) {
+    // Escape, or nothing playable to choose. The list holds the volumes in
+    // order, the Epilogue last when it is there, so an index is a volume.
+    if (volume < 0) {
         return 0;
     }
 
@@ -252,15 +247,9 @@ extern "C" char *nocturne_chapter_environment_name(const char *mission_name)
     line = (const char *)0x0;
     for (volume = 0; volume < CHAPTER_VOLUME_COUNT && line == (const char *)0x0;
          volume++) {
-        for (chapter = 0;
-             chapter < (int)(sizeof(g_ChapterMissionFiles[0]) /
-                             sizeof(g_ChapterMissionFiles[0][0]));
-             chapter++) {
-            // A null entry is the end of the volume's chapters, and the tail of
-            // the row past it is null too.
-            if (g_ChapterMissionFiles[volume][chapter] == (char *)0x0) {
-                break;
-            }
+        // A null entry is the end of the volume's chapters. Every row has one:
+        // the longest volume is 11 chapters of the row's 13.
+        for (chapter = 0; g_ChapterMissionFiles[volume][chapter] != (char *)0x0; chapter++) {
             mission_stem(g_ChapterMissionFiles[volume][chapter], candidate,
                          (int)sizeof(candidate));
             // Case-insensitive: the shipped root names are inconsistent about
