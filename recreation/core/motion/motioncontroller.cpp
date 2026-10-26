@@ -1,13 +1,16 @@
 #include "core/motion/motioncontroller.h"
 
 #include "common/error/error.h"
+#include "common/text/scanformat.h"
+#include "common/text/textscanner.h"
 
 #include <cmath>
+#include <string>
 
 namespace nocturne::core {
 
-// deferred: starting with no motion list and no motion name, with setMotionList,
-//   getMotionList and getCurrentStateName
+// deferred: starting with no motion list, with setMotionList, getMotionList and
+//   getCurrentStateName
 // deferred: starting the tween at speed 0 towards motion 0, frame 0, direction 1 and no new
 //   state (MOTION_TWEEN_INIT), with advanceTween and reverseTransition
 // nocedit 0x0052d570
@@ -50,6 +53,25 @@ void CMotionController::jumpToMotion(int target_motion_index, float target_frame
     current_motion_index_ = target_motion_index;
     current_frame_number_ = target_frame_number;
     clearTweenState();
+}
+
+// The motion by its index, or failing that by its quoted name with no index, then the frame. A
+// number read before the failure stays, as fscanf leaves it.
+// nocedit 0x0052e5d0
+void CMotionController::load(common::CTextScanner &scanner) {
+    scanner.skipWhitespace();
+    current_motion_name_.clear();
+    current_motion_index_ = -1;
+    if (common::scanFormat(scanner, "%d,%f", current_motion_index_, current_frame_number_) != 2 &&
+        common::scanFormat(scanner, R"("%[^"]" , %f)", current_motion_name_,
+                           current_frame_number_) != 2) {
+        common::displayErrorAndQuit("CMotionController::load - error parsing file");
+    }
+    scanner.skipLine();
+}
+
+const std::string &CMotionController::getCurrentMotionName() const {
+    return current_motion_name_;
 }
 
 // nocedit 0x0052de40

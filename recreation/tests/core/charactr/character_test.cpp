@@ -6,6 +6,7 @@
 #include "core/actor/demonactor.h"
 #include "core/actor/demonactortype.h"
 #include "core/charactr/character.h"
+#include "core/charactr/healthbarmode.h"
 #include "core/cloth/clothlist.h"
 #include "core/game/game.h"
 #include "tests/mocks/core/mockactorlookup.h"
@@ -256,7 +257,7 @@ TEST_F(CCharacterArchiveTest, ACharacterIsReadWithAllItsFields) {
     EXPECT_EQ(character_.getGrabbedType(), 3);
     EXPECT_THAT(character_.getClothList().getFilenames(), ElementsAre("coat.cls"));
     EXPECT_EQ(character_.getSizeScale(), 1.5F);
-    EXPECT_EQ(character_.getHealthBarMode(), 2);
+    EXPECT_EQ(character_.getHealthBarMode(), EHealthBarMode::kAlways);
     EXPECT_EQ(character_.getDescriptiveName(), "The Mob");
     EXPECT_EQ(character_.getMaxHitPoints(), 80.0F);
 }
@@ -266,7 +267,7 @@ TEST_F(CCharacterArchiveTest, AnOlderCharacterHasOnlyTheFieldsItsVersionHeld) {
     readAs(5, "40\n0\n\"\"\n\"(none)\"\n0\n{\n0\n}\n2\n");
     EXPECT_EQ(character_.getSizeScale(), 2.0F);
     EXPECT_EQ(character_.getMaxHitPoints(), 40.0F);
-    EXPECT_EQ(character_.getHealthBarMode(), 0);
+    EXPECT_EQ(character_.getHealthBarMode(), EHealthBarMode::kNone);
     readAs(1, "30\n");
     EXPECT_EQ(character_.getHitPoints(), 30.0F);
     EXPECT_EQ(character_.getMaxHitPoints(), 30.0F);

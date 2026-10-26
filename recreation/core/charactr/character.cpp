@@ -3,6 +3,7 @@
 #include "common/error/error.h"
 #include "core/actor/actorarchive.h"
 #include "core/actor/demonactortype.h"
+#include "core/charactr/healthbarmode.h"
 #include "core/cloth/clothlist.h"
 
 #include <algorithm>
@@ -49,7 +50,7 @@ CDeformableModelInstance &CCharacter::getModel() {
 // nocedit 0x004283a0
 void CCharacter::archive(CActorArchive &actor_archive) {
     CDemonActor::archive(actor_archive);
-    actor_archive.archiveFloat(hit_points_, "hitPoints");
+    archiveHitPoints(actor_archive);
     const int saved_version = actor_archive.getSavedVersion(kType);
     if (saved_version >= kCarryingVersion) {
         int hands_carrying = 0;
@@ -69,7 +70,7 @@ void CCharacter::archive(CActorArchive &actor_archive) {
         actor_archive.archiveString(talk_to_me_event_, "talkToMeEvent");
     }
     if (saved_version >= kGrabbingVersion) {
-        actor_archive.archiveActor(grabbed_by_, "grabbedBy");
+        archiveGrabbedBy(actor_archive);
         actor_archive.archiveInteger(grabbed_type_, "grabbedType");
         actor_archive.archiveClothList(cloth_list_, "clothList");
     }
@@ -80,9 +81,31 @@ void CCharacter::archive(CActorArchive &actor_archive) {
         max_hit_points_ = hit_points_;
         return;
     }
-    actor_archive.archiveInteger(health_bar_mode_, "healthBarMode");
+    auto health_bar_mode = static_cast<int>(health_bar_mode_);
+    actor_archive.archiveInteger(health_bar_mode, "healthBarMode");
+    health_bar_mode_ = static_cast<EHealthBarMode>(health_bar_mode);
     actor_archive.archiveLocalizedString(descriptive_name_, "descriptiveName");
     actor_archive.archiveFloat(max_hit_points_, "maxHitPoints");
+}
+
+void CCharacter::archiveDemonActorFields(CActorArchive &actor_archive) {
+    CDemonActor::archive(actor_archive);
+}
+
+void CCharacter::archiveGrabbedBy(CActorArchive &actor_archive) {
+    actor_archive.archiveActor(grabbed_by_, "grabbedBy");
+}
+
+void CCharacter::archiveHitPoints(CActorArchive &actor_archive) {
+    actor_archive.archiveFloat(hit_points_, "hitPoints");
+}
+
+void CCharacter::clearGrabbedType() {
+    grabbed_type_ = kOrdinaryGrab;
+}
+
+void CCharacter::setHealthBarMode(EHealthBarMode health_bar_mode) {
+    health_bar_mode_ = health_bar_mode;
 }
 
 // nocedit 0x0042bf80
@@ -124,7 +147,7 @@ float CCharacter::getSizeScale() const {
     return size_scale_;
 }
 
-int CCharacter::getHealthBarMode() const {
+EHealthBarMode CCharacter::getHealthBarMode() const {
     return health_bar_mode_;
 }
 

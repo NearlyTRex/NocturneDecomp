@@ -37,10 +37,6 @@ CPathMap *CHero::getPathMap() {
     notPorted("getPathMap");
 }
 
-void CHero::archive(CActorArchive & /*actor_archive*/) {
-    notPorted("archive");
-}
-
 void CHero::kill(int /*damage_type*/, common::CVector3f * /*damage_direction*/,
                  float /*impact_force*/) {
     notPorted("kill");

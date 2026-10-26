@@ -24,7 +24,7 @@ functions don't count as done. Sizes are in instructions.
 | 8 | `renderMenuAndGetChoice`, `CMoon::free`, `CSound::reset`, `CEditorTools::showFileSelectionDialog` | 8 | 63 | 5314 | 60 | 3 | 95.2% |
 | 9 | `CPickList::enableItem`, `CEventList::resetGameFlags`, `CLevelLoader::show`, `CDemonMission::load` | 15 | 56 | 3298 | 27 | 9 | 48.2% |
 | 10 | `CDemonMission::createHeros`, `CDemonMission::prepareAllActors`, `CEventList::reset`, `CDemonMission::loadSet` | 15 | 42 | 5112 | 32 | 9 | 76.1% |
-| 11 | `CScript::loadScript` | 63 | 579 | 67400 | 36 | 26 | 6.2% |
+| 11 | `CScript::loadScript` | 63 | 579 | 67400 | 37 | 26 | 6.3% |
 | 12 | `CDemonMission::loadScript`, `CScript::executeInitSection`, `CDemonMission::startMission`, `CDemonMission::buildActiveSetActorList`, `CConsole::reset`, `CEditorTools::displayMemoryDiagnostics`, `CGame::setGameRes`, `CDemonLight::init`, `CDemonSet::initScene` | 12 | 26 | 1658 | 2 | 0 | 7.6% |
 | 13 | `CFireEffect::init`, `CDemonSet::loadMasterLightStates`, `CDemonSet::setGamma`, `CGame::clearOverlay`, `CGame::loadAssets` | 7 | 27 | 735 | 0 | 0 | 0.0% |
 | 14 | `CNetGame::syncPlayers`, `CNetGame::processServerFrame`, `CLevelLoader::cleanup`, `CKeys::toggleInputMask`, `CGame::processHotkeys` | 17 | 51 | 5302 | 1 | 0 | 1.9% |
@@ -36,17 +36,17 @@ functions don't count as done. Sizes are in instructions.
 | 20 | Not reached from startup: `support/` | 2 | 24 | 593 | 3 | 1 | 12.5% |
 | 21 | Not reached from startup: `cockpit/` | 4 | 178 | 11527 | 0 | 0 | 0.0% |
 | 22 | Not reached from startup: `shape/` | 2 | 42 | 3178 | 4 | 2 | 9.5% |
-| 23 | Not reached from startup: `core/` (part 1 of 9) | 18 | 292 | 16011 | 25 | 2 | 8.5% |
+| 23 | Not reached from startup: `core/` (part 1 of 9) | 18 | 292 | 16011 | 25 | 4 | 8.5% |
 | 24 | Not reached from startup: `core/` (part 2 of 9) | 11 | 277 | 24965 | 18 | 4 | 6.4% |
 | 25 | Not reached from startup: `core/` (part 3 of 9) | 24 | 278 | 24134 | 20 | 9 | 7.1% |
 | 26 | Not reached from startup: `core/` (part 4 of 9) | 18 | 300 | 20148 | 40 | 5 | 13.3% |
-| 27 | Not reached from startup: `core/` (part 5 of 9) | 21 | 294 | 20910 | 29 | 5 | 9.8% |
-| 28 | Not reached from startup: `core/` (part 6 of 9) | 18 | 282 | 21809 | 24 | 7 | 8.5% |
-| 29 | Not reached from startup: `core/` (part 7 of 9) | 18 | 263 | 22721 | 20 | 9 | 7.6% |
+| 27 | Not reached from startup: `core/` (part 5 of 9) | 21 | 294 | 20910 | 29 | 6 | 9.8% |
+| 28 | Not reached from startup: `core/` (part 6 of 9) | 18 | 282 | 21809 | 25 | 7 | 8.8% |
+| 29 | Not reached from startup: `core/` (part 7 of 9) | 18 | 263 | 22721 | 22 | 9 | 8.3% |
 | 30 | Not reached from startup: `core/` (part 8 of 9) | 20 | 300 | 31826 | 29 | 2 | 9.6% |
 | 31 | Not reached from startup: `core/` (part 9 of 9) | 5 | 111 | 10905 | 7 | 1 | 6.3% |
 | 32 | Not reached from startup: `wincore/` | 2 | 11 | 482 | 4 | 0 | 36.3% |
-| | **All** | | **4479** | **402407** | **787** | **140** | **17.5%** |
+| | **All** | | **4479** | **402407** | **791** | **143** | **17.6%** |
 
 ## Step 0: Math value types
 
@@ -1444,13 +1444,13 @@ functions don't count as done. Sizes are in instructions.
 - free functions
   - [ ] `calculateIrisFadeCenter` 0x004e09a0 (13)
 
-### `core/hero.cpp` (7 functions, 121 instructions, 2 done, 0 partial)
+### `core/hero.cpp` (7 functions, 121 instructions, 3 done, 0 partial)
 - class `CHeroPlaceholder`
   - [x] `getActorType` 0x004f3bf0 (2)
   - [x] `dtor` 0x004f3c30 (32)
   - [ ] `renderTransparent` 0x004f3c90 (50)
   - [ ] `getBoundingBox` 0x004f3d20 (8)
-  - [ ] `archive` 0x004f3ef0 (11)
+  - [x] `archive` 0x004f3ef0 (11)
 - class `CHero`
   - [ ] `removeMatchingKeys` 0x004f3910 (8)
   - [ ] `setAiTask` 0x004f3930 (10)
@@ -3491,7 +3491,7 @@ functions don't count as done. Sizes are in instructions.
 
 ## Step 23: Not reached from startup: `core/` (part 1 of 9)
 
-### `core/actor.cpp` (19 functions, 1173 instructions, 6 done, 1 partial)
+### `core/actor.cpp` (19 functions, 1173 instructions, 6 done, 3 partial)
 - free functions
   - [x] `registerActorClass` 0x0040c2e0 (73)
   - [x] `staticInit` 0x00408320 (9)
@@ -3501,8 +3501,10 @@ functions don't count as done. Sizes are in instructions.
   - [x] `archiveLocalizedString` 0x0040b6e0 (54)
   - [ ] `archiveKeyframedModelInstance` 0x0040b8f0 (44)
   - [ ] `archiveDeformableModelInstance` 0x0040b970 (44)
-  - [ ] `archiveMotionState` 0x0040b9f0 (81)
-  - [ ] `archivePartStatus` 0x0040bae0 (202)
+  - [~] `archiveMotionState` 0x0040b9f0 (81)
+    - deferred: writing the motion to a save file, with CMotionController::save
+  - [~] `archivePartStatus` 0x0040bae0 (202)
+    - deferred: writing the parts to a save file, with CDemonActor::save
   - [ ] `archiveBox` 0x0040bd70 (81)
   - [~] `archiveClothList` 0x0040be60 (136)
     - deferred: writing the list to a save file, with CDemonActor::save
@@ -5043,7 +5045,7 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `factoryFuncHealthItem` 0x004f1d90 (12)
   - [x] `staticInit` 0x004f1d60 (9)
 
-### `core/hero.cpp` (35 functions, 2025 instructions, 3 done, 1 partial)
+### `core/hero.cpp` (35 functions, 2025 instructions, 3 done, 2 partial)
 - free functions
   - [ ] `isAnyHeroWithinCylinder` 0x004f22a0 (63)
   - [ ] `closestHeroToPoint` 0x004f2170 (66)
@@ -5052,10 +5054,11 @@ functions don't count as done. Sizes are in instructions.
 - class `CHero`
   - [ ] `createDefaultWeapon` 0x004f2a30 (59)
   - [~] `ctor` 0x004f2340 (48)
-    - deferred: the path map, inventory and input, and the defaults the constructor gives the collision, control, aiming, interaction and task fields, with the steps that read them
+    - deferred: the path map, inventory and input, and the defaults the constructor gives the collision, invincibility, aiming, nearby actor, target and flame fields, with the steps that read them
     - deferred: creating the default weapon, with the weapon classes
   - [ ] `closestEnemy` 0x004f3960 (120)
-  - [ ] `archive` 0x004f2610 (162)
+  - [~] `archive` 0x004f2610 (162)
+    - deferred: reading the inventory, with CInventory::load
   - [x] `dtor` 0x004f2470 (59)
   - [ ] `testCylinderCollision` 0x004f2580 (17)
   - [ ] `testLineIntersection` 0x004f25c0 (25)
@@ -5574,13 +5577,13 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `countTrianglesFromPolygons` 0x0052a490 (19)
   - [ ] `addInts` 0x0052cc40 (3)
 
-### `core/motion.cpp` (23 functions, 1941 instructions, 4 done, 1 partial)
+### `core/motion.cpp` (23 functions, 1941 instructions, 5 done, 1 partial)
 - class `CMotionController`
-  - [ ] `load` 0x0052e5d0 (50)
+  - [x] `load` 0x0052e5d0 (50)
   - [ ] `save` 0x0052e670 (50)
   - [x] `reset` 0x0052dad0 (9)
   - [~] `ctor` 0x0052d570 (11)
-    - deferred: starting with no motion list and no motion name, with setMotionList, getMotionList and getCurrentStateName
+    - deferred: starting with no motion list, with setMotionList, getMotionList and getCurrentStateName
     - deferred: starting the tween at speed 0 towards motion 0, frame 0, direction 1 and no new state (MOTION_TWEEN_INIT), with advanceTween and reverseTransition
   - [ ] `getFramesForInterpolation` 0x0052e4c0 (97)
   - [ ] `advanceFrameAndCheckSignals` 0x0052de70 (154)
@@ -5905,10 +5908,10 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `factoryFuncSimBox` 0x00588d00 (12)
   - [x] `staticInit` 0x00588cd0 (9)
 
-### `core/skeleton.cpp` (88 functions, 8882 instructions, 0 done, 3 partial)
+### `core/skeleton.cpp` (88 functions, 8882 instructions, 2 done, 3 partial)
 - class `CDeformableModelInstance`
-  - [ ] `showAllParts` 0x005a0410 (8)
-  - [ ] `clearAllTextureSetIndices` 0x005a0430 (8)
+  - [x] `showAllParts` 0x005a0410 (8)
+  - [x] `clearAllTextureSetIndices` 0x005a0430 (8)
   - [ ] `init` 0x005a0840 (30)
   - [~] `ctor` 0x0059ddc0 (25)
     - deferred: the transformed vertices, and the defaults the constructor gives the model, skinning, root motion and scale fields, with the steps that read them

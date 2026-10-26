@@ -14,8 +14,6 @@ int adjustIndentationLevel(int indent_delta);
 void archiveQuaternion(common::CQuaternion4f *quat_ptr, char *property_type);
 void archiveKeyframedModelInstance(CKeyFramedModelInstance *model_ptr, char *property_name);
 void archiveDeformableModelInstance(CDeformableModelInstance *model_ptr, char *property_name);
-void archiveMotionState(CMotionController *motion_controller, char *property_name);
-void archivePartStatus(CDeformableModelInstance *model_ptr, char *property_name);
 void archiveBox(CBox *box_ptr, char *property_name);
 void archiveRules(CRuleList *rules, char *property_name);
 // Whether the actor's class matches a class expression: class names, '!' before a name or a

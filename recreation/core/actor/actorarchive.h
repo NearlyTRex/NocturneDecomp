@@ -41,6 +41,11 @@ public:
     void archiveActor(CDemonActor *&actor, std::string_view description);
     // A line, the count, then each file name quoted on its own line, and a closing line.
     void archiveClothList(CClothList &cloth_list, std::string_view description);
+    // A line, the motion and frame, and a closing line.
+    void archiveMotionState(CMotionController &motion, std::string_view description);
+    // A line, the count of parts, each part's visibility, then each one's texture set, and a
+    // closing line. Every part is shown, with its first texture set, until the file says.
+    void archivePartStatus(CDeformableModelInstance &model, std::string_view description);
 
 private:
     // The rest of the line; the end of the file before its newline is fatal.

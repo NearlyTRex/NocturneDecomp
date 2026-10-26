@@ -8,6 +8,8 @@
 #include "core/cloth/clothlist.h"
 #include "core/game/game.h"
 #include "core/location.h"
+#include "core/skeleton/deformablemodelinstance.h"
+#include "core/skeleton/partvisibility.h"
 #include "tests/mocks/core/mockactorlookup.h"
 #include "tests/mocks/core/testactor.h"
 #include "tests/mocks/engine/mockgameclock.h"
@@ -209,6 +211,82 @@ TEST_F(CActorArchiveTest, AClothListThatCantBeReadIsFatal) {
     expectFatal("{\n1", read_list, "clothList", "clothCount");
     expectFatal("{\n1\ncoat.cls\n}\n", read_list, "clothList", "cloth filename entry");
     expectFatal("{\n1\n\"coat.cls\"\n}", read_list, "clothList", "Cloth list closing brace");
+}
+
+TEST_F(CActorArchiveTest, AMotionStateIsTheMotionAndFrame) {
+    CDeformableModelInstance model;
+    EXPECT_EQ(read("\t{ // motion state\n\t\t12,3.5\n\t}\nnext",
+                   [&](CActorArchive &archive) { archive.archiveMotionState(model, "m"); }),
+              "next");
+    EXPECT_EQ(model.getCurrentMotionIndex(), 12);
+    EXPECT_EQ(model.getCurrentFrameNumber(), 3.5F);
+    EXPECT_EQ(model.getCurrentMotionName(), "");
+}
+
+// A motion named instead of numbered has no index until it is looked up.
+TEST_F(CActorArchiveTest, AMotionStateCanNameTheMotion) {
+    CDeformableModelInstance model;
+    read("{\n\"run fast\" , 7\n}\n",
+         [&](CActorArchive &archive) { archive.archiveMotionState(model, "m"); });
+    EXPECT_EQ(model.getCurrentMotionIndex(), -1);
+    EXPECT_EQ(model.getCurrentMotionName(), "run fast");
+    EXPECT_EQ(model.getCurrentFrameNumber(), 7.0F);
+}
+
+TEST_F(CActorArchiveTest, AMotionStateThatCantBeReadIsFatal) {
+    CDeformableModelInstance model;
+    const auto read_motion = [&](CActorArchive &archive) {
+        archive.archiveMotionState(model, "motion state");
+    };
+    expectFatal("{", read_motion, "motion state", "motion state info opening brace");
+    expectFatal("{\n1,2\n}", read_motion, "motion state", "motion state info closing brace");
+    for (const std::string_view broken : {"{\n5,x\n}\n", "{\n\"walk\"\n}\n"}) {
+        EXPECT_THAT([&] { read(broken, read_motion); },
+                    ThrowsMessage<common::CFatalError>(
+                        StrEq("CMotionController::load - error parsing file")))
+            << broken;
+    }
+}
+
+// Every part is shown in its first texture set until the file says otherwise, and any number but
+// 0 shows a part.
+TEST_F(CActorArchiveTest, APartStatusIsEachPartsVisibilityThenTextureSet) {
+    CDeformableModelInstance model;
+    model.setPartVisibility(2, EPartVisibility::kHidden);
+    model.setPartTextureSet(2, 9);
+    EXPECT_EQ(read("\t{ // partStatus\n\t\t2\n\t\t0 3 \n\t\t5 6 \n\t}\nnext",
+                   [&](CActorArchive &archive) { archive.archivePartStatus(model, "p"); }),
+              "next");
+    EXPECT_EQ(model.getPartVisibility(0), EPartVisibility::kHidden);
+    EXPECT_EQ(model.getPartVisibility(1), EPartVisibility::kShown);
+    EXPECT_EQ(model.getPartVisibility(2), EPartVisibility::kShown);
+    EXPECT_EQ(model.getPartTextureSet(0), 5);
+    EXPECT_EQ(model.getPartTextureSet(1), 6);
+    EXPECT_EQ(model.getPartTextureSet(2), CDeformableModelInstance::kFirstTextureSet);
+}
+
+// The original read on with whatever its stack held for a count it couldn't read.
+TEST_F(CActorArchiveTest, APartCountThatCantBeReadIsNone) {
+    CDeformableModelInstance model;
+    model.setPartVisibility(0, EPartVisibility::kHidden);
+    EXPECT_EQ(
+        read("{\n}\nnext", [&](CActorArchive &archive) { archive.archivePartStatus(model, "p"); }),
+        "next");
+    EXPECT_EQ(model.getPartVisibility(0), EPartVisibility::kShown);
+}
+
+TEST_F(CActorArchiveTest, APartStatusThatCantBeReadIsFatal) {
+    CDeformableModelInstance model;
+    const auto read_parts = [&](CActorArchive &archive) {
+        archive.archivePartStatus(model, "partStatus");
+    };
+    expectFatal("{", read_parts, "partStatus", "part status opening brace");
+    expectFatal("{\n2\n1\n}\n", read_parts, "description", "part status entry");
+    expectFatal("{\n1\n1\n}\n", read_parts, "description", "part texture entry");
+    expectFatal("{\n1\n1\n0\n}", read_parts, "partStatus", "part status info closing brace");
+    EXPECT_THAT([&] { read("{\n31\n", read_parts); },
+                ThrowsMessage<common::CFatalError>(
+                    StrEq("CActorArchive::archivePartStatus - Door has 31 parts")));
 }
 
 TEST_F(CActorArchiveTest, ItGivesTheVersionTheFileSavedAClassIn) {

@@ -2,6 +2,7 @@
 
 #include "common/fwd.h"
 #include "core/actor/demonactor.h"
+#include "core/charactr/healthbarmode.h"
 #include "core/cloth/clothlist.h"
 #include "core/fwd.h"
 #include "core/skeleton/deformablemodelinstance.h"
@@ -120,17 +121,27 @@ public:
     [[nodiscard]] CDemonActor *getCarriedActor(std::size_t hand) const;
     // The event raised when the hero talks to the character.
     [[nodiscard]] const std::string &getTalkToMeEvent() const;
-    // How the grabber holds the character.
+    // How the grabber holds the character, kOrdinaryGrab unless it says otherwise.
     [[nodiscard]] int getGrabbedType() const;
     [[nodiscard]] const CClothList &getClothList() const;
     // The character's size, as a multiple of its model's.
     [[nodiscard]] float getSizeScale() const;
-    [[nodiscard]] int getHealthBarMode() const;
+    [[nodiscard]] EHealthBarMode getHealthBarMode() const;
     // The name the character is shown by, marked for translation.
     [[nodiscard]] const std::string &getDescriptiveName() const;
 
     // One for each hand.
     static constexpr std::size_t kCarryHands = 2;
+    static constexpr int kOrdinaryGrab = 0;
+
+protected:
+    // For a derived class whose older files held these apart from the rest of the fields, or
+    // only CDemonActor's.
+    void archiveDemonActorFields(CActorArchive &actor_archive);
+    void archiveGrabbedBy(CActorArchive &actor_archive);
+    void archiveHitPoints(CActorArchive &actor_archive);
+    void clearGrabbedType();
+    void setHealthBarMode(EHealthBarMode health_bar_mode);
 
 private:
     static constexpr float kFullHitPoints = 100.0F;
@@ -141,10 +152,10 @@ private:
     std::array<CDemonActor *, kCarryHands> carried_actors_{};
     std::string talk_to_me_event_;
     CDemonActor *grabbed_by_ = nullptr;
-    int grabbed_type_ = 0;
+    int grabbed_type_ = kOrdinaryGrab;
     CClothList cloth_list_;
     float size_scale_ = 1.0F;
-    int health_bar_mode_ = 0;
+    EHealthBarMode health_bar_mode_ = EHealthBarMode::kNone;
     std::string descriptive_name_;
 };
 

@@ -21,10 +21,6 @@ TEST(CoreActorFunctions, PublicInterface) {
                                  void (*)(CKeyFramedModelInstance *, char *)>);
     static_assert(std::is_same_v<decltype(&archiveDeformableModelInstance),
                                  void (*)(CDeformableModelInstance *, char *)>);
-    static_assert(
-        std::is_same_v<decltype(&archiveMotionState), void (*)(CMotionController *, char *)>);
-    static_assert(
-        std::is_same_v<decltype(&archivePartStatus), void (*)(CDeformableModelInstance *, char *)>);
     static_assert(std::is_same_v<decltype(&archiveBox), void (*)(CBox *, char *)>);
     static_assert(std::is_same_v<decltype(&archiveRules), void (*)(CRuleList *, char *)>);
     static_assert(

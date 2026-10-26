@@ -3,6 +3,8 @@
 #include "common/fwd.h"
 #include "core/charactr/character.h"
 #include "core/fwd.h"
+#include "core/hero/herocontroltype.h"
+#include "core/hero/herotask.h"
 
 #include <cstdint>
 
@@ -56,6 +58,26 @@ public:
     void removeMatchingKeys(std::uint32_t key_mask);
     void setAiTask(int ai_task);
     CEnemy *closestEnemy(float *out_distance);
+
+    [[nodiscard]] EHeroControlType getControlType() const;
+    // What the hero was on the way to, as the file names it; null for nothing.
+    [[nodiscard]] CDemonActor *getObjectToPickUp() const;
+    [[nodiscard]] CDemonActor *getDoorToOpen() const;
+    [[nodiscard]] CDemonActor *getLeverToPull() const;
+    [[nodiscard]] CDemonActor *getLadderToClimb() const;
+    [[nodiscard]] CDemonActor *getPushedObject() const;
+    [[nodiscard]] EHeroTask getAiTask() const;
+    [[nodiscard]] bool isWearingGasMask() const;
+
+private:
+    EHeroControlType control_type_ = EHeroControlType::kAi;
+    CDemonActor *object_to_pick_up_ = nullptr;
+    CDemonActor *door_to_open_ = nullptr;
+    CDemonActor *lever_to_pull_ = nullptr;
+    CDemonActor *ladder_to_climb_ = nullptr;
+    CDemonActor *pushed_object_ = nullptr;
+    EHeroTask ai_task_ = EHeroTask::kKill;
+    bool is_wearing_gas_mask_ = false;
 };
 
 } // namespace nocturne::core

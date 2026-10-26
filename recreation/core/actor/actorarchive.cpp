@@ -9,7 +9,11 @@
 #include "core/actor/demonactor.h"
 #include "core/cloth/clothlist.h"
 #include "core/location.h"
+#include "core/motion/motioncontroller.h"
+#include "core/skeleton/deformablemodelinstance.h"
+#include "core/skeleton/partvisibility.h"
 
+#include <cstddef>
 #include <format>
 #include <optional>
 #include <string>
@@ -146,6 +150,48 @@ void CActorArchive::archiveClothList(CClothList &cloth_list, std::string_view de
     }
     archiveDescription("Cloth list closing brace", description);
     cloth_list.setFilenames(std::move(filenames));
+}
+
+// deferred: writing the motion to a save file, with CMotionController::save
+// nocedit 0x0040b9f0
+void CActorArchive::archiveMotionState(CMotionController &motion, std::string_view description) {
+    archiveDescription("motion state info opening brace", description);
+    motion.load(scanner_);
+    archiveDescription("motion state info closing brace", description);
+}
+
+// A part saved as any number but 0 is shown, which is all the original's readers asked of it. A
+// bad entry names its field "description", as the original's did. The original took a count it
+// couldn't read as whatever its stack held, and wrote a count past its parts beyond them.
+// deferred: writing the parts to a save file, with CDemonActor::save
+// nocedit 0x0040bae0
+void CActorArchive::archivePartStatus(CDeformableModelInstance &model,
+                                      std::string_view description) {
+    archiveDescription("part status opening brace", description);
+    const int count = scanner_.scanInteger().value_or(0);
+    if (std::cmp_greater(count, CDeformableModelInstance::kMaxParts)) {
+        common::displayErrorAndQuit(std::format(
+            "CActorArchive::archivePartStatus - {} has {} parts", actor_.getActorName(), count));
+    }
+    const auto read_parts = [this, count](std::string_view type, auto set_part) {
+        for (int i = 0; i < count; ++i) {
+            const std::optional<int> value = scanner_.scanInteger();
+            if (!value) {
+                quitOnPropertyError(type, "description");
+            }
+            set_part(static_cast<std::size_t>(i), *value);
+        }
+        scanner_.skipWhitespace();
+    };
+    model.showAllParts();
+    read_parts("part status entry", [&model](std::size_t part, int value) {
+        model.setPartVisibility(part,
+                                value == 0 ? EPartVisibility::kHidden : EPartVisibility::kShown);
+    });
+    model.clearAllTextureSetIndices();
+    read_parts("part texture entry",
+               [&model](std::size_t part, int value) { model.setPartTextureSet(part, value); });
+    archiveDescription("part status info closing brace", description);
 }
 
 // The rest of the line; a last line without its newline is fatal, as the file's end was.

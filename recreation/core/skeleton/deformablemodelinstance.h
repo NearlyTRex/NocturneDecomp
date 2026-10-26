@@ -4,7 +4,10 @@
 #include "core/fwd.h"
 #include "core/motion/motioncontroller.h"
 #include "core/skeleton/deformablemodel.h"
+#include "core/skeleton/partvisibility.h"
 
+#include <array>
+#include <cstddef>
 #include <cstdint>
 
 namespace nocturne::core {
@@ -68,6 +71,21 @@ public:
     void setBoneTransform(SPose *bone_transform);
     CBoundingBox3D *computeBoundingBoxFromBones(CBoundingBox3D *output_bbox);
     void computeCylindricalUVs(int u_offset, int v_offset);
+
+    [[nodiscard]] EPartVisibility getPartVisibility(std::size_t part) const;
+    void setPartVisibility(std::size_t part, EPartVisibility visibility);
+    // Which of its texture sets the part wears.
+    [[nodiscard]] int getPartTextureSet(std::size_t part) const;
+    void setPartTextureSet(std::size_t part, int texture_set);
+
+    // The most parts a model can have.
+    static constexpr std::size_t kMaxParts = 30;
+    // The texture set each part wears unless told otherwise.
+    static constexpr int kFirstTextureSet = 0;
+
+private:
+    std::array<EPartVisibility, kMaxParts> part_visibility_{};
+    std::array<int, kMaxParts> part_texture_sets_{};
 };
 
 } // namespace nocturne::core

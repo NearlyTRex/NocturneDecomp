@@ -20,6 +20,7 @@ public:
     CHeroPlaceholder &operator=(CHeroPlaceholder &&) = delete;
 
     [[nodiscard]] const CDemonActorType &getActorType() const override;
+    void archive(CActorArchive &actor_archive) override;
 
     // A new hero of the type, named by the mission, standing here and facing as this place does.
     // A type that isn't a hero's is fatal.
