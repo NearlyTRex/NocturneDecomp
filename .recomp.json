@@ -1,0 +1,26 @@
+{
+  "$schema": "https://recomp.fyi/schema/v1.json",
+  "game": "Nocturne",
+  "wikidata": "Q2287670",
+  "system": "PC (Windows)",
+  "type": ["decomp", "port"],
+  "original": [
+    { "sha1": "f6011d8f985744627f98549064b55f76a7c38329" },
+    { "sha1": "c07307239723bd6db62acecde9d92f0597190d89" }
+  ],
+  "project": "NocturneDecomp",
+  "status": "playable",
+  "targets": ["Windows", "Linux"],
+  "toolchain": "Ghidra",
+  "approach": "Non-matching Ghidra decompilation run on SDL shims and a GL renderer, plus a clean C++23 engine recreation ported from it",
+  "maintainers": [
+    { "name": "NearlyTRex", "link": "https://github.com/NearlyTRex" }
+  ],
+  "links": [
+    { "label": "Discussions", "url": "https://github.com/NearlyTRex/NocturneDecomp/discussions" },
+    { "label": "Documentation", "url": "https://github.com/NearlyTRex/NocturneDecomp/blob/main/docs/README.md" },
+    { "label": "Research notes", "url": "https://github.com/NearlyTRex/NocturneDecomp/blob/main/research/README.md" }
+  ],
+  "tags": ["watcom", "64-bit", "netplay", "opengl", "sdl"],
+  "notes": "Decompiled from nocedit.exe (the editor build), with signatures carried to nocturne.exe. The decompilation is alpha: mostly playable on Linux and Windows as a 64-bit build, with windowed modes, controller support, HUD scaling and netplay. Deviations from the original sit behind flags that restore it. The recreation is a clean, fully tested rewrite of the engine and the main goal: advanced graphics options and ports will land there. No game data included."
+}
