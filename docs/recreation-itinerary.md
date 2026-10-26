@@ -14,8 +14,8 @@ functions don't count as done. Sizes are in instructions.
 | Step | First needed by | TUs | Functions | Instructions | Done | Partial | % Done |
 |---|---|---|---|---|---|---|---|
 | 0 | Math value types | 3 | 13 | 791 | 13 | 0 | 100.0% |
-| 1 | File system: `dosio`, pods | 5 | 44 | 2518 | 43 | 1 | 97.7% |
-| 2 | `doNothing`, `readMessageFile`, `getLocalizedString`, `initializeTrigTables`, `initTextureCache`, `initGraphicsSystem` | 8 | 30 | 2804 | 27 | 3 | 90.0% |
+| 1 | File system: `dosio`, pods | 5 | 44 | 2518 | 44 | 0 | 100.0% |
+| 2 | `doNothing`, `readMessageFile`, `getLocalizedString`, `initializeTrigTables`, `initTextureCache`, `initGraphicsSystem` | 8 | 30 | 2804 | 28 | 2 | 93.3% |
 | 3 | Sound system: `sndmain`, `CSound` lifetime, `readIniData` | 7 | 123 | 8346 | 122 | 1 | 99.1% |
 | 4 | `initFonts`, `CEditorTools::showWarning` | 11 | 46 | 4804 | 46 | 0 | 100.0% |
 | 5 | `showCalibrationTest`, `playMovie`, `CAlphaBitmap::ctor`, `CAlphaBitmap::dtor`, `CSound::findAllSoundFiles`, `CDemonMission::reset`, `CDemonFilter::init`, `CMouse::load`, `CNetGame::init` | 14 | 50 | 4789 | 31 | 3 | 62.0% |
@@ -46,7 +46,7 @@ functions don't count as done. Sizes are in instructions.
 | 30 | Not reached from startup: `core/` (part 8 of 9) | 20 | 300 | 31826 | 29 | 2 | 9.6% |
 | 31 | Not reached from startup: `core/` (part 9 of 9) | 5 | 111 | 10905 | 10 | 2 | 9.0% |
 | 32 | Not reached from startup: `wincore/` | 2 | 11 | 482 | 4 | 0 | 36.3% |
-| | **All** | | **4479** | **402407** | **811** | **151** | **18.1%** |
+| | **All** | | **4479** | **402407** | **813** | **149** | **18.1%** |
 
 ## Step 0: Math value types
 
@@ -104,7 +104,7 @@ functions don't count as done. Sizes are in instructions.
 - free functions
   - [x] `wildcardStringMatch` 0x004a6e20 (81)
 
-### `engine/pod.cpp` (20 functions, 1498 instructions, 19 done, 1 partial)
+### `engine/pod.cpp` (20 functions, 1498 instructions, 20 done, 0 partial)
 - class `CPodFile`
   - [x] `ctor` 0x0054f5a0 (14)
   - [x] `cleanup` 0x00550090 (36)
@@ -117,8 +117,7 @@ functions don't count as done. Sizes are in instructions.
   - [x] `load` 0x005509e0 (1)
   - [x] `mount` 0x00550a10 (66)
   - [x] `remount` 0x00550af0 (55)
-  - [~] `dismount` 0x00550b90 (62)
-    - deferred: clearing the texture cache, which nothing registers as the dismount handler, with retail clearTextureCache's port calling setDismountHandler
+  - [x] `dismount` 0x00550b90 (62)
   - [x] `cleanup` 0x00550c80 (36)
   - [x] `findFile` 0x00551380 (41)
   - [x] `dtor` 0x005509b0 (30)
@@ -144,10 +143,9 @@ functions don't count as done. Sizes are in instructions.
 - free functions
   - [x] `doNothing` 0x004cbce0 (1)
 
-### `support/newmsg.cpp` (3 functions, 341 instructions, 2 done, 1 partial)
+### `support/newmsg.cpp` (3 functions, 341 instructions, 3 done, 0 partial)
 - free functions
-  - [~] `readMessageFile` 0x00543e40 (218)
-    - unverified: which text a key listed twice returns; the original's exchange sort is not stable where stable_sort is, so check the shipped message files for repeated keys
+  - [x] `readMessageFile` 0x00543e40 (218)
   - [x] `findLocalizedString` 0x00544170 (59)
   - [x] `getLocalizedString` 0x005441f0 (64)
 

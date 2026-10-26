@@ -86,6 +86,8 @@ void initializeGameSystems(const SGameSystemOwners &owners) {
     });
     owners.messages.readMessageFile("msglist.txt");
     owners.texture.initTextureCache();
+    // The retail build's dismount cleared the texture cache.
+    owners.pod.setDismountHandler([&texture = owners.texture] { texture.clearTextureCache(); });
     owners.two_d.initGraphicsSystem();
     if (!owners.screen.setScreenResolution(kWidth, kHeight, kBitsPerPixel)) {
         displayErrorAndQuit("Unable to set 640x480x32bpp.  Please make sure that you have a video "

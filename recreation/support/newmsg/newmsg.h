@@ -34,6 +34,8 @@ public:
 
 private:
     void readMessages(common::CTextScanner &scanner, std::string_view message_file);
+    // Into key order, for the search.
+    void sortMessages();
     [[nodiscard]] std::string_view findLocalizedString(std::string_view key, int lower_bound,
                                                        int upper_bound) const;
 

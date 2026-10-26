@@ -100,6 +100,15 @@ TEST_F(CNewMsgTest, AKeyNotInTheTableIsItsOwnText) {
     EXPECT_EQ(messages_.getLocalizedString("zzz"), "zzz");
 }
 
+// The original's sort moves the second B ahead of the first as A comes to the front, and the
+// search lands on it.
+TEST_F(CNewMsgTest, AKeyListedTwiceGivesTheTextTheOriginalsSortLeavesWhereTheSearchLands) {
+    givenMessages("\"B\", \"first\"\n\"B\", \"second\"\n\"A\", \"a\"\n");
+    messages_.readMessageFile("msglist.txt");
+    EXPECT_EQ(messages_.getLocalizedString("B"), "second");
+    EXPECT_EQ(messages_.getLocalizedString("A"), "a");
+}
+
 // strcmp order: upper case sorts before lower case, so "save" isn't "SAVE".
 TEST_F(CNewMsgTest, KeysAreCaseSensitive) {
     givenMessages("\"SAVE\", \"Sauver\"\n");
