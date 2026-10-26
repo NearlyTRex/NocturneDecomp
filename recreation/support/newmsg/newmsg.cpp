@@ -4,7 +4,6 @@
 #include "common/text/textscanner.h"
 #include "engine/dosio/dosio.h"
 
-#include <algorithm>
 #include <cstddef>
 #include <format>
 #include <optional>
@@ -49,9 +48,8 @@ std::optional<SMessage> scanMessage(common::CTextScanner &scanner) {
 CNewMsg::CNewMsg(const engine::CDosIo &dosio) : dosio_(dosio), os_font_name_(kDefaultOSFontName) {}
 
 // A comment line heads each of the three settings, which are the version (0), whether to draw
-// text with an OS font, and that font's quoted name. Then come "key", "text" pairs.
-// unverified: which text a key listed twice returns; the original's exchange sort is not stable
-//   where stable_sort is, so check the shipped message files for repeated keys
+// text with an OS font, and that font's quoted name. Then come "key", "text" pairs. The shipped
+// game has no message file, so every key reads as itself.
 // nocedit 0x00543e40
 void CNewMsg::readMessageFile(std::string_view message_file) {
     const std::optional<std::string> text = dosio_.readFile("", message_file);
@@ -93,7 +91,19 @@ void CNewMsg::readMessages(common::CTextScanner &scanner, std::string_view messa
         }
         messages_.push_back(std::move(*message));
     }
-    std::ranges::stable_sort(messages_, {}, &SMessage::key);
+    sortMessages();
+}
+
+// The original's exchange sort: each place takes any later key that sorts before it. It isn't
+// stable, so which of a key listed twice the search finds is the original's.
+void CNewMsg::sortMessages() {
+    for (std::size_t i = 0; i + 1 < messages_.size(); ++i) {
+        for (std::size_t j = i + 1; j < messages_.size(); ++j) {
+            if (messages_[i].key > messages_[j].key) {
+                std::swap(messages_[i], messages_[j]);
+            }
+        }
+    }
 }
 
 // nocedit 0x005441f0
