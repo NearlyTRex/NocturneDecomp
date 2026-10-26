@@ -22,6 +22,8 @@
 #include <memory>
 #include <string>
 #include <string_view>
+#include <utility>
+#include <vector>
 
 namespace nocturne::core {
 
@@ -52,6 +54,15 @@ protected:
         auto actor = std::make_unique<CTestActor>(type);
         actor->setActorName(name);
         mission_.addActorToList(std::move(actor));
+    }
+
+    // Gives the set every actor of the mission, as loading the set they are in does.
+    void putActorsInSet() {
+        std::vector<CDemonActor *> actors;
+        for (const std::unique_ptr<CDemonActor> &actor : mission_.getActors()) {
+            actors.push_back(actor.get());
+        }
+        set_.setActors(std::move(actors));
     }
 
     // The game's hero, as the mission makes it at the place for the first hero.

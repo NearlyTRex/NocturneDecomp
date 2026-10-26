@@ -296,7 +296,8 @@ private:
                                   .messages = messages_,
                                   .game = game_,
                                   .actor = actor_,
-                                  .level_loader = level_loader_,
+                                  .loading_screen = level_loader_,
+                                  .set = set_,
                                   .textures = texture_,
                                   .editor_tools = editor_tools_,
                                   .pick_list = pick_list_owners_}};

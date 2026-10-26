@@ -50,9 +50,8 @@ void CDemonMission::removeActor(const CDemonActor &actor) {
     }
 }
 
-// deferred: rebuilding the set's actor lists after, with the set's per-frame readers
-// deferred: clearing actors_prepared and the delete queue, with prepareAllActors and
-//   markActorToDelete
+// The set's list is rebuilt, so it holds none of them.
+// deferred: clearing the delete queue, with markActorToDelete
 // deferred: committing the raytracer's shadow voxels and resetting the path maps, with the
 //   raytracer and the path maps
 // nocedit 0x00523f50
@@ -60,7 +59,9 @@ void CDemonMission::removeAllActors() {
     while (!actors_.empty()) {
         removeActor(*actors_.front());
     }
+    buildSetActorList();
     hero_count_ = 0;
+    actors_prepared_ = false;
 }
 
 // nocedit 0x00524030

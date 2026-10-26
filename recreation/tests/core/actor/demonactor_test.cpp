@@ -240,7 +240,7 @@ TEST(CDemonActor, TheFunctionsNotPortedYetQuit) {
     common::CTextScanner scanner("");
     CActorArchive archive(scanner);
     const std::vector<std::pair<std::string_view, std::function<void()>>> calls = {
-        {"setup", [&] { actor.setup(); }},
+        {"setup", [&] { actor.CDemonActor::setup(); }},
         {"process", [&] { actor.process(0.0F); }},
         {"renderOpaque", [&] { static_cast<void>(actor.renderOpaque()); }},
         {"renderTransparent", [&] { static_cast<void>(actor.renderTransparent()); }},
@@ -263,7 +263,7 @@ TEST(CDemonActor, TheFunctionsNotPortedYetQuit) {
         {"getBlockVirtualDirectorFlag",
          [&] { static_cast<void>(actor.getBlockVirtualDirectorFlag()); }},
         {"allowBulletHoles", [&] { static_cast<void>(actor.allowBulletHoles()); }},
-        {"updateCollisionData", [&] { actor.updateCollisionData(); }},
+        {"updateCollisionData", [&] { actor.CDemonActor::updateCollisionData(); }},
         {"getTargetPoints", [&] { static_cast<void>(actor.getTargetPoints(nullptr)); }},
         {"renderTargetPoints", [&] { actor.renderTargetPoints(); }},
         {"canLookAt", [&] { static_cast<void>(actor.canLookAt()); }},

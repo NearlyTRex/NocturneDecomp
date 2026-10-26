@@ -169,12 +169,17 @@ TEST_F(CoreScriptGetActor, AnUnsetVariableNamesNothing) {
 }
 
 // The set's actors, which a variable is looked up among, aren't ported yet.
-TEST_F(CoreScriptGetActor, ASetVariableIsLookedUpAmongTheSetsActors) {
+// An actor of another class counts as missing through the variable.
+TEST_F(CoreScriptGetActor, ASetVariableNamesItsActorInTheSet) {
     addActor("Door1", kScriptDoorType);
+    putActorsInSet();
     events_.setActorVariable("@door", mission_.findActorByName("Door1"));
-    EXPECT_THAT([this] { return getActor("@DOOR", CDemonActor::kType, mission_, events_); },
-                ::testing::ThrowsMessage<common::CFatalError>(
-                    ::testing::StrEq("CDemonMission::buildActiveSetActorList is not ported yet")));
+    EXPECT_EQ(getActor("@DOOR", CDoor::kType, mission_, events_),
+              mission_.findActorByName("Door1"));
+    EXPECT_EQ(getActor("@door", CCharacter::kType, mission_, events_),
+              lookupError("Actor \"@door\" is of type CTestDoor, this command requires an actor "
+                          "of type CCharacter.",
+                          true));
 }
 
 } // namespace

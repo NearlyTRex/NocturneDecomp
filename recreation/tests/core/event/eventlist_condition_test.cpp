@@ -1,4 +1,3 @@
-#include "common/error/fatalerror.h"
 #include "common/random/watcomrandom.h"
 #include "core/actor/demonactortype.h"
 #include "core/event/eventlist.h"
@@ -16,9 +15,6 @@
 
 namespace nocturne::core {
 namespace {
-
-using ::testing::StrEq;
-using ::testing::ThrowsMessage;
 
 constexpr CDemonActorType kGlassType = makeActorType("CTestGlass", &CGlass::kType, nullptr, 1);
 
@@ -93,12 +89,12 @@ TEST_F(CEventListConditionTest, ExistsAsksWithoutFailing) {
 }
 
 // An unset variable names no one for now.
+// An unset variable, or one whose actor is of another class, names no one for now.
 TEST_F(CEventListConditionTest, AnActorVariableNamesItsActor) {
     expectValid("isDead(@who) && isBroken(@who)");
+    putActorsInSet();
     events_.setActorVariable("@who", mission_.findActorByName("Mob"));
-    EXPECT_THAT([this] { return events_.validateCondition("isDead(@WHO)"); },
-                ThrowsMessage<common::CFatalError>(
-                    StrEq("CDemonMission::buildActiveSetActorList is not ported yet")));
+    expectValid("isDead(@WHO) && isBroken(@who)");
 }
 
 TEST_F(CEventListConditionTest, HasItemTakesAnyName) {

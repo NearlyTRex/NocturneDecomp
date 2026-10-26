@@ -5,7 +5,7 @@
 #include "core/actor/demonactor.h"
 #include "core/actor/demonactortype.h"
 #include "core/hero/heroplaceholder.h"
-#include "core/level/levelloader.h"
+#include "core/loadingscreen.h"
 #include "core/mission/demonmission.h"
 #include "engine/dosio/dosio.h"
 #include "engine/texture/texture.h"
@@ -86,7 +86,7 @@ void CDemonMission::load(std::string_view mission_filename, bool keep_assets) {
     if (!text) {
         common::displayErrorAndQuit("CDemonMission::load - Unable to open file");
     }
-    owners_.level_loader.update(owners_.messages.getLocalizedString("Loading mission"), false);
+    owners_.loading_screen.update(owners_.messages.getLocalizedString("Loading mission"), false);
     CTextScanner scanner(*text);
     readMissionFile(scanner, keep_assets);
     ensureHeroPlaceholder();
@@ -96,12 +96,11 @@ void CDemonMission::load(std::string_view mission_filename, bool keep_assets) {
 // there, which for a count is none. nocedit could also skip the blood, an editor setting.
 // deferred: noting each class's saved version for archive() to read, and resetting them first,
 //   with the archive helpers
-// deferred: keeping the set names, with loadSet
+// The current set is forgotten after; the editor's actor import kept it.
 // deferred: recording each actor in the table archives refer to actors by, and where the
 //   carried items start, with archiveActor and CInventory::load
 // deferred: taking each hero's carried items off the list, with CHero
-// deferred: reading the blood pools and splats the file ends with, and forgetting the current
-//   set, with CGore's renderers and loadSet
+// deferred: reading the blood pools and splats the file ends with, with CGore's renderers
 // nocedit 0x00522eb0
 void CDemonMission::readMissionFile(CTextScanner &scanner, bool keep_assets) {
     clearMissionData();
@@ -135,7 +134,7 @@ void CDemonMission::readMissionFile(CTextScanner &scanner, bool keep_assets) {
     scanner.skipLine();
     const int set_count = readNumber(scanner, 0);
     for (int i = 0; i < set_count; ++i) {
-        static_cast<void>(readWord(scanner));
+        set_names_.emplace_back(readWord(scanner));
     }
     if (mission_version_num_ >= kTypedVersion) {
         readActorTypes(scanner);
@@ -167,6 +166,7 @@ void CDemonMission::readMissionFile(CTextScanner &scanner, bool keep_assets) {
     if (actors_.size() > static_cast<std::size_t>(std::max(actor_count, 0))) {
         common::displayErrorAndQuit("CDemonMission::load - actor list count mismatch #3!");
     }
+    current_set_index_ = -1;
 }
 
 // A class's saved version newer than the game's own is fatal.
@@ -193,12 +193,12 @@ void CDemonMission::readActorTypes(CTextScanner &scanner) const {
 }
 
 // nocedit also zeroed the count of visible corona globes; retail doesn't.
-// deferred: clearing the set count, with loadSet
 // deferred: clearing has_inventory_actors, next_inventory_actor and actor_lookup_count, with
 //   archiveActor, getNextLoadedInventoryActor and CInventory::load
 // nocedit 0x00522d30
 void CDemonMission::clearMissionData() {
     removeAllActors();
+    set_names_.clear();
     mission_name_.clear();
 }
 

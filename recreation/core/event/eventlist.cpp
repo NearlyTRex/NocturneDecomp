@@ -3,7 +3,7 @@
 #include "common/error/error.h"
 #include "common/text/ascii.h"
 #include "core/actor/demonactor.h"
-#include "core/actor/notported.h"
+#include "core/set/demonset.h"
 
 #include <algorithm>
 #include <cstddef>
@@ -60,14 +60,20 @@ void CEventList::setActorVariable(std::string_view var_name, const CDemonActor *
                            .actor_name = std::string(actor->getActorName())};
 }
 
-// deferred: finding the variable's actor among the set's active actors by its name, with
-//   CDemonMission::buildActiveSetActorList
+// The actor is found by its name among the set's, so one not in the set names none.
 // nocedit 0x004b0b80
 CDemonActor *CEventList::getActorByVarName(std::string_view name) const {
-    if (!findActorVariable(name)) {
+    const std::optional<std::size_t> found = findActorVariable(name);
+    if (!found) {
         return nullptr;
     }
-    quitNotPorted("CDemonMission", "buildActiveSetActorList");
+    const std::string &actor_name = actor_vars_[*found].actor_name;
+    for (CDemonActor *actor : owners_.set.getActors()) {
+        if (common::equalsIgnoringAsciiCase(actor->getActorName(), actor_name)) {
+            return actor;
+        }
+    }
+    return nullptr;
 }
 
 // nocedit 0x004b0bf0

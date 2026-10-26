@@ -8,13 +8,30 @@
 
 namespace nocturne::core {
 
-// An actor of whatever class record the test gives it, whose archive() does what the test says.
+// An actor of whatever class record the test gives it, whose archive() does what the test says,
+// and which counts how often it is set up and its collision data updated.
 class CTestActor : public CDemonActor {
 public:
     explicit CTestActor(const CDemonActorType &type) : type_(type) {}
 
     [[nodiscard]] const CDemonActorType &getActorType() const override {
         return type_;
+    }
+
+    void setup() override {
+        ++setup_count_;
+    }
+
+    void updateCollisionData() override {
+        ++collision_updates_;
+    }
+
+    [[nodiscard]] int getSetupCount() const {
+        return setup_count_;
+    }
+
+    [[nodiscard]] int getCollisionUpdates() const {
+        return collision_updates_;
     }
 
     void archive(CActorArchive &actor_archive) override {
@@ -30,6 +47,8 @@ public:
 private:
     const CDemonActorType &type_;
     std::function<void(CActorArchive &)> on_archive_;
+    int setup_count_ = 0;
+    int collision_updates_ = 0;
 };
 
 // A base class, one derived from it, one derived from that, and an unrelated one.

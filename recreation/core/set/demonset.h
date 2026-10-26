@@ -185,6 +185,9 @@ public:
     [[nodiscard]] EWeatherType getWeatherType() const;
     [[nodiscard]] bool getPlayerOnTrain() const;
     [[nodiscard]] std::span<const C3DSLight> getLights() const;
+    // The mission's actors in this set, which the mission owns.
+    [[nodiscard]] std::span<CDemonActor *const> getActors() const;
+    void setActors(std::vector<CDemonActor *> actors);
     [[nodiscard]] std::span<const C3DSCamera> getCameras() const;
     [[nodiscard]] int getDefaultRoomSize() const;
     [[nodiscard]] std::span<const SRoom> getRooms() const;
@@ -233,6 +236,7 @@ private:
     EWeatherType weather_type_ = EWeatherType::WEATHER_TYPE_NONE;
     bool player_on_train_ = false;
     std::vector<C3DSLight> lights_;
+    std::vector<CDemonActor *> actors_;
     std::vector<C3DSCamera> cameras_;
     int default_room_size_ = 0;
     std::vector<SRoom> rooms_;

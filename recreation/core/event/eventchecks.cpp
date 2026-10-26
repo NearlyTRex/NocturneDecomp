@@ -23,8 +23,6 @@ bool isValidIdentifierChar(char c) {
 
 // deferred: the hero "$" means in a network game, the gas room's unmasked hero else the first,
 //   with CNetGame's sessions
-// deferred: an actor variable's actor of another class counting as missing, with
-//   CDemonMission::buildActiveSetActorList
 // nocedit 0x004aa400
 std::expected<CDemonActor *, std::string>
 resolveActorByName(const SCheckContext &context, std::string_view name,
@@ -51,6 +49,9 @@ resolveActorByName(const SCheckContext &context, std::string_view name,
     }
     if (isOfClassHash(actor, expected_class.name_hash)) {
         return actor;
+    }
+    if (name.starts_with('@')) {
+        return nullptr;
     }
     return std::unexpected(
         std::format("Actor \"{}\" is of type {}, this command requires an actor of type {}.", name,

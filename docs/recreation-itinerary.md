@@ -22,9 +22,9 @@ functions don't count as done. Sizes are in instructions.
 | 6 | `initializeGameSystems`, `CAlphaBitmap::scale`, `clearTextureCache`, `CMoon::init`, `CGame::saveClockTime`, `CGame::updateDT` | 11 | 25 | 2988 | 20 | 5 | 80.0% |
 | 7 | `CMoon::update`, `CMoon::render` | 17 | 120 | 17616 | 68 | 31 | 56.6% |
 | 8 | `renderMenuAndGetChoice`, `CMoon::free`, `CSound::reset`, `CEditorTools::showFileSelectionDialog` | 8 | 63 | 5314 | 60 | 3 | 95.2% |
-| 9 | `CPickList::enableItem`, `CEventList::resetGameFlags`, `CLevelLoader::show`, `CDemonMission::load` | 15 | 56 | 3298 | 26 | 8 | 46.4% |
-| 10 | `CDemonMission::createHeros`, `CDemonMission::prepareAllActors`, `CEventList::reset`, `CDemonMission::loadSet` | 15 | 42 | 5112 | 31 | 8 | 73.8% |
-| 11 | `CScript::loadScript` | 63 | 579 | 67400 | 34 | 17 | 5.8% |
+| 9 | `CPickList::enableItem`, `CEventList::resetGameFlags`, `CLevelLoader::show`, `CDemonMission::load` | 15 | 56 | 3298 | 26 | 9 | 46.4% |
+| 10 | `CDemonMission::createHeros`, `CDemonMission::prepareAllActors`, `CEventList::reset`, `CDemonMission::loadSet` | 15 | 42 | 5112 | 32 | 9 | 76.1% |
+| 11 | `CScript::loadScript` | 63 | 579 | 67400 | 35 | 16 | 6.0% |
 | 12 | `CDemonMission::loadScript`, `CScript::executeInitSection`, `CDemonMission::startMission`, `CDemonMission::buildActiveSetActorList`, `CConsole::reset`, `CEditorTools::displayMemoryDiagnostics`, `CGame::setGameRes`, `CDemonLight::init`, `CDemonSet::initScene` | 12 | 26 | 1658 | 2 | 0 | 7.6% |
 | 13 | `CFireEffect::init`, `CDemonSet::loadMasterLightStates`, `CDemonSet::setGamma`, `CGame::clearOverlay`, `CGame::loadAssets` | 7 | 27 | 735 | 0 | 0 | 0.0% |
 | 14 | `CNetGame::syncPlayers`, `CNetGame::processServerFrame`, `CLevelLoader::cleanup`, `CKeys::toggleInputMask`, `CGame::processHotkeys` | 17 | 51 | 5302 | 1 | 0 | 1.9% |
@@ -46,7 +46,7 @@ functions don't count as done. Sizes are in instructions.
 | 30 | Not reached from startup: `core/` (part 8 of 9) | 20 | 300 | 31826 | 29 | 2 | 9.6% |
 | 31 | Not reached from startup: `core/` (part 9 of 9) | 5 | 111 | 10905 | 7 | 1 | 6.3% |
 | 32 | Not reached from startup: `wincore/` | 2 | 11 | 482 | 4 | 0 | 36.3% |
-| | **All** | | **4479** | **402407** | **779** | **126** | **17.3%** |
+| | **All** | | **4479** | **402407** | **781** | **127** | **17.4%** |
 
 ## Step 0: Math value types
 
@@ -474,7 +474,6 @@ functions don't count as done. Sizes are in instructions.
   - [~] `reset` 0x00522c80 (23)
     - deferred: clearing the pending teleport to area -1 at the origin, with setTeleportTarget and process
     - deferred: emptying the queue of actors to delete, with markActorToDelete and process
-    - deferred: clearing actors_prepared, with prepareAllActors and loadSet
     - deferred: clearing has_inventory_actors, next_inventory_actor and actor_lookup_count, with readMissionFile, getNextLoadedInventoryActor and CInventory::load
 
 ### `core/dfilter.cpp` (3 functions, 147 instructions, 3 done, 0 partial)
@@ -1028,17 +1027,16 @@ functions don't count as done. Sizes are in instructions.
   - [~] `ctor` 0x004f3c00 (8)
     - deferred: drawing it transparent, with the set's renderable list
 
-### `core/mission.cpp` (13 functions, 995 instructions, 8 done, 4 partial)
+### `core/mission.cpp` (13 functions, 995 instructions, 8 done, 5 partial)
 - class `CDemonMission`
   - [x] `removeActorFromList` 0x00523be0 (67)
-  - [ ] `buildSetActorList` 0x00523e60 (50)
+  - [~] `buildSetActorList` 0x00523e60 (50)
+    - deferred: the set's lists of actors that collide and of each class, with their readers
   - [x] `removeActor` 0x00523f20 (18)
   - [~] `removeAllActors` 0x00523f50 (32)
-    - deferred: rebuilding the set's actor lists after, with the set's per-frame readers
-    - deferred: clearing actors_prepared and the delete queue, with prepareAllActors and markActorToDelete
+    - deferred: clearing the delete queue, with markActorToDelete
     - deferred: committing the raytracer's shadow voxels and resetting the path maps, with the raytracer and the path maps
   - [~] `clearMissionData` 0x00522d30 (20)
-    - deferred: clearing the set count, with loadSet
     - deferred: clearing has_inventory_actors, next_inventory_actor and actor_lookup_count, with archiveActor, getNextLoadedInventoryActor and CInventory::load
   - [x] `findActorByName` 0x00524030 (24)
   - [x] `generateUniqueActorName` 0x00524660 (65)
@@ -1048,10 +1046,9 @@ functions don't count as done. Sizes are in instructions.
     - deferred: freeing the keyframed models, deformable models and skeletons the mission's actors loaded, with their pools
   - [~] `readMissionFile` 0x00522eb0 (432)
     - deferred: noting each class's saved version for archive() to read, and resetting them first, with the archive helpers
-    - deferred: keeping the set names, with loadSet
     - deferred: recording each actor in the table archives refer to actors by, and where the carried items start, with archiveActor and CInventory::load
     - deferred: taking each hero's carried items off the list, with CHero
-    - deferred: reading the blood pools and splats the file ends with, and forgetting the current set, with CGore's renderers and loadSet
+    - deferred: reading the blood pools and splats the file ends with, with CGore's renderers
   - [x] `ensureHeroPlaceholder` 0x00524c20 (153)
   - [x] `load` 0x00522d90 (51)
 
@@ -1149,15 +1146,16 @@ functions don't count as done. Sizes are in instructions.
     - deferred: resetting every path map after new geometry, with resetAllPathMaps and the path maps
     - deferred: resetting the automap after new geometry, with the automap
 
-### `core/mission.cpp` (4 functions, 375 instructions, 1 done, 1 partial)
+### `core/mission.cpp` (4 functions, 375 instructions, 2 done, 2 partial)
 - class `CDemonMission`
   - [x] `createOneHero` 0x00524920 (109)
   - [~] `createHeros` 0x00524a80 (110)
     - deferred: making each network player's hero, and noting which is this machine's, with CNetGame
     - deferred: giving the hero the game's aim mode and the player's control, with the hero's aiming and control
     - deferred: rebuilding the set's actor lists after, with the set's per-frame readers
-  - [ ] `prepareAllActors` 0x00523cf0 (114)
-  - [ ] `loadSet` 0x00523fb0 (42)
+  - [~] `prepareAllActors` 0x00523cf0 (114)
+    - deferred: setting a hero up as the local hero in a network game, with CNetGame's sessions
+  - [x] `loadSet` 0x00523fb0 (42)
 
 ## Step 11: `CScript::loadScript`
 
@@ -1371,11 +1369,10 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `reverseTransition` 0x0052da50 (38)
   - [ ] `setDesiredState` 0x0052db00 (47)
 
-### `core/event.cpp` (34 functions, 8671 instructions, 9 done, 7 partial)
+### `core/event.cpp` (34 functions, 8671 instructions, 10 done, 6 partial)
 - class `CEventList`
   - [x] `findActorVariable` 0x004b0bf0 (34)
-  - [~] `getActorByVarName` 0x004b0b80 (46)
-    - deferred: finding the variable's actor among the set's active actors by its name, with CDemonMission::buildActiveSetActorList
+  - [x] `getActorByVarName` 0x004b0b80 (46)
   - [ ] `findPersistentEvent` 0x004b0860 (34)
   - [ ] `findGameFlag` 0x004b08b0 (34)
   - [ ] `findTimer` 0x004b0900 (34)
@@ -1412,7 +1409,6 @@ functions don't count as done. Sizes are in instructions.
 - free functions
   - [~] `resolveActorByName` 0x004aa400 (126)
     - deferred: the hero "$" means in a network game, the gas room's unmasked hero else the first, with CNetGame's sessions
-    - deferred: an actor variable's actor of another class counting as missing, with CDemonMission::buildActiveSetActorList
   - [x] `parseVectorLocation` 0x004aa530 (105)
   - [x] `isValidIdentifierChar` 0x004b0f90 (12)
   - [ ] `formatEventError` 0x004aa2a0 (15)

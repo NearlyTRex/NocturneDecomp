@@ -6,7 +6,10 @@
 #include <algorithm>
 #include <cstddef>
 #include <optional>
+#include <span>
 #include <string_view>
+#include <utility>
+#include <vector>
 
 namespace nocturne::core {
 
@@ -103,6 +106,14 @@ bool CDemonSet::getPlayerOnTrain() const {
 
 std::span<const C3DSLight> CDemonSet::getLights() const {
     return lights_;
+}
+
+std::span<CDemonActor *const> CDemonSet::getActors() const {
+    return actors_;
+}
+
+void CDemonSet::setActors(std::vector<CDemonActor *> actors) {
+    actors_ = std::move(actors);
 }
 
 std::span<const C3DSCamera> CDemonSet::getCameras() const {

@@ -18,14 +18,15 @@
 
 namespace nocturne::core {
 
-// What a mission reads its file with, makes its actors from, asks about a missing hero with, and
-// picks its hero by.
+// What a mission reads its file with, makes its actors from, shows its loading on, asks about a
+// missing hero with, picks its hero by, and loads its sets into.
 struct SMissionOwners {
     const engine::CDosIo &dosio;
     const support::CNewMsg &messages;
     const CGame &game;
     const CActor &actor;
-    CLevelLoader &level_loader;
+    ILoadingScreen &loading_screen;
+    CDemonSet &set;
     engine::CTexture &textures;
     shape::CEditorTools &editor_tools;
     const shape::SPickListOwners &pick_list;
@@ -82,6 +83,11 @@ public:
     // number following that in any actor's name, counting on past names already taken.
     void generateActorName(CDemonActor &actor) const;
     int startMission();
+    // Loads the set of that number, unless it is loaded already, gives it the actors in it, and
+    // sets every actor up the first time a set loads. A set the mission doesn't name is fatal.
+    void loadSet(int set_index);
+    // Sets every actor up, showing the loading screen's progress.
+    void prepareAllActors();
     // Puts the game's hero at the place for the first hero: the hero given, or a new one when none
     // is, then takes away every hero placeholder. False, the hero given destroyed, when there is
     // no place for it.
@@ -100,8 +106,14 @@ public:
     [[nodiscard]] int getHeroCount() const;
     // The hero of that number, the first being 0; null when it hasn't been made.
     [[nodiscard]] CHero *getHero(std::size_t index) const;
+    // The sets the mission file names, the first being 0.
+    [[nodiscard]] std::span<const std::string> getSetNames() const;
+    // The set loaded, or -1 when none is since the mission was read.
+    [[nodiscard]] int getCurrentSetIndex() const;
 
 private:
+    // Gives the set the actors whose place is in it, in list order.
+    void buildSetActorList();
     [[nodiscard]] std::string generateUniqueActorName(std::string_view base_name) const;
     void clearMissionData();
     void readActorTypes(common::CTextScanner &scanner) const;
@@ -118,6 +130,10 @@ private:
     std::string mission_name_;
     std::string pending_mission_name_;
     std::vector<std::unique_ptr<CDemonActor>> actors_;
+    std::vector<std::string> set_names_;
+    // Zero, as the original's began, until a mission file is read.
+    int current_set_index_ = 0;
+    bool actors_prepared_ = false;
     int hero_count_ = 0;
     // On the list, which owns them.
     std::array<CHero *, kMaxHeroes> heroes_{};

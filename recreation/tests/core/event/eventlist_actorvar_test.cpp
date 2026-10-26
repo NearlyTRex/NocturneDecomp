@@ -17,60 +17,63 @@ namespace {
 using ::testing::StrEq;
 using ::testing::ThrowsMessage;
 
-constexpr std::string_view kNotPorted = "CDemonMission::buildActiveSetActorList is not ported yet";
-
-// The actors Mob and Lever1. A variable that names an actor is looked up among the set's actors,
-// which aren't ported yet, so whether a variable is set shows as that lookup being reached.
+// The actors Mob and Lever1, both in the set.
 class CEventListActorVarTest : public CScriptFixture {
 protected:
     CEventListActorVarTest() {
         addActor("Mob", kScriptCharacterType);
         addActor("Lever1", kScriptDoorType);
+        putActorsInSet();
     }
 
-    [[nodiscard]] const CDemonActor *actor(std::string_view name) const {
+    [[nodiscard]] CDemonActor *actor(std::string_view name) const {
         return mission_.findActorByName(name);
-    }
-
-    void expectSet(std::string_view variable) {
-        EXPECT_THAT([&] { return events_.getActorByVarName(variable); },
-                    ThrowsMessage<common::CFatalError>(StrEq(kNotPorted)))
-            << variable;
-    }
-
-    void expectUnset(std::string_view variable) {
-        EXPECT_EQ(events_.getActorByVarName(variable), nullptr) << variable;
     }
 };
 
 TEST_F(CEventListActorVarTest, AVariableIsUnsetUntilItNamesAnActor) {
-    expectUnset("@who");
+    EXPECT_EQ(events_.getActorByVarName("@who"), nullptr);
     events_.setActorVariable("@who", nullptr);
-    expectUnset("@who");
+    EXPECT_EQ(events_.getActorByVarName("@who"), nullptr);
     events_.setActorVariable("@who", actor("Mob"));
-    expectSet("@WHO");
+    EXPECT_EQ(events_.getActorByVarName("@WHO"), actor("Mob"));
 }
 
 TEST_F(CEventListActorVarTest, SettingAVariableAgainRenamesItsActor) {
     events_.setActorVariable("@who", actor("Mob"));
     events_.setActorVariable("@WHO", actor("Lever1"));
-    expectSet("@who");
+    EXPECT_EQ(events_.getActorByVarName("@who"), actor("Lever1"));
+}
+
+// The actor is kept by name, so another of that name in the set is the one found.
+TEST_F(CEventListActorVarTest, TheActorIsFoundByItsNameAmongTheSets) {
+    events_.setActorVariable("@who", actor("Mob"));
+    actor("Mob")->setActorName("Moved");
+    EXPECT_EQ(events_.getActorByVarName("@who"), nullptr);
+    actor("Lever1")->setActorName("MOB");
+    EXPECT_EQ(events_.getActorByVarName("@who"), actor("MOB"));
+}
+
+TEST_F(CEventListActorVarTest, AnActorOutsideTheSetIsNamedByNoVariable) {
+    events_.setActorVariable("@who", actor("Mob"));
+    set_.setActors({});
+    EXPECT_EQ(events_.getActorByVarName("@who"), nullptr);
 }
 
 TEST_F(CEventListActorVarTest, ANullActorClearsTheVariableAndKeepsTheOthers) {
     events_.setActorVariable("@first", actor("Mob"));
     events_.setActorVariable("@second", actor("Mob"));
-    events_.setActorVariable("@third", actor("Mob"));
+    events_.setActorVariable("@third", actor("Lever1"));
     events_.setActorVariable("@Second", nullptr);
-    expectUnset("@second");
-    expectSet("@first");
-    expectSet("@third");
+    EXPECT_EQ(events_.getActorByVarName("@second"), nullptr);
+    EXPECT_EQ(events_.getActorByVarName("@first"), actor("Mob"));
+    EXPECT_EQ(events_.getActorByVarName("@third"), actor("Lever1"));
 }
 
 TEST_F(CEventListActorVarTest, ResetForgetsEveryVariable) {
     events_.setActorVariable("@who", actor("Mob"));
     events_.reset();
-    expectUnset("@who");
+    EXPECT_EQ(events_.getActorByVarName("@who"), nullptr);
 }
 
 TEST_F(CEventListActorVarTest, AnActorWithoutANameIsFatal) {
