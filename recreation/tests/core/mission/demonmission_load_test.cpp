@@ -6,6 +6,7 @@
 #include "core/actor/demonactortype.h"
 #include "core/hero/hero.h"
 #include "core/hero/heroplaceholder.h"
+#include "core/inv/inventory.h"
 #include "core/location.h"
 #include "core/mission/demonmission.h"
 #include "engine/keys/inputcodetype.h"
@@ -37,6 +38,7 @@ std::unique_ptr<CDemonActor> makeHero();
 std::unique_ptr<CDemonActor> makeSpot();
 std::unique_ptr<CDemonActor> makePlaced();
 std::unique_ptr<CDemonActor> makeLinked();
+std::unique_ptr<CDemonActor> makeCarrier();
 
 const CDemonActorType kDoorType = makeActorType("CTestDoor", &kTestBaseType, &makeDoor, 2);
 // A kind of the game's hero class, which is what a hero placeholder is offered for.
@@ -47,6 +49,22 @@ const CDemonActorType kSpotType =
 const CDemonActorType kPlacedType =
     makeActorType("CTestPlaced", &CDemonActor::kType, &makePlaced, 1);
 const CDemonActorType kLinkedType = makeActorType("CTestLinked", &kTestBaseType, &makeLinked, 1);
+const CDemonActorType kCarrierType = makeActorType("CTestCarrier", &kTestBaseType, &makeCarrier, 1);
+
+// An actor whose body is an inventory.
+class CTestCarrier : public CTestActor {
+public:
+    CTestCarrier() : CTestActor(kCarrierType) {}
+    void archive(CActorArchive &actor_archive) override {
+        inventory_.load(actor_archive);
+    }
+    [[nodiscard]] const CInventory &getInventory() const {
+        return inventory_;
+    }
+
+private:
+    CInventory inventory_;
+};
 
 // An actor whose body names another.
 class CTestLinked : public CTestActor {
@@ -112,6 +130,10 @@ std::unique_ptr<CDemonActor> makeLinked() {
     return std::make_unique<CTestLinked>();
 }
 
+std::unique_ptr<CDemonActor> makeCarrier() {
+    return std::make_unique<CTestCarrier>();
+}
+
 // An actor's start and end tags with nothing between.
 std::string body(std::string_view class_name, std::string_view name) {
     return std::format("{{ {} \"{}\"\n}} {} \"{}\"\n", class_name, name, class_name, name);
@@ -134,6 +156,7 @@ protected:
         actor_.registerActorClass(kSpotType);
         actor_.registerActorClass(kPlacedType);
         actor_.registerActorClass(kLinkedType);
+        actor_.registerActorClass(kCarrierType);
     }
 
     void read(const std::string &text, bool keep_assets = true) {
@@ -384,6 +407,59 @@ TEST_F(CDemonMissionLoadTest, ABodyNamesAnotherActor) {
                      body("CTestDoor", "Door 1")));
     const auto &linked = dynamic_cast<const CTestLinked &>(*mission_.getActors()[0]);
     EXPECT_EQ(linked.getLinked(), mission_.getActors()[1].get());
+}
+
+// A carrier C whose inventory lists the doors named, each body empty.
+std::string carrierBody(const std::vector<std::string> &items) {
+    std::string list;
+    std::string bodies;
+    for (const std::string &item : items) {
+        list += std::format("CTestDoor \"{}\"\n", item);
+        bodies += body("CTestDoor", item);
+    }
+    return std::format("{{ CTestCarrier \"C\"\n{{ // Inventory\n// fileVersion\n2\n// itemCount\n"
+                       "{}\n// currentWeapon\n-1\n// battery strength\n100\n// actor name list\n"
+                       "{}// actor data list\n{}}}\n}} CTestCarrier \"C\"\n",
+                       items.size(), list, bodies);
+}
+
+// The carried items listed after the actors leave the mission for the inventories that carry
+// them, claimed by name in either case; the item's body then names it.
+TEST_F(CDemonMissionLoadTest, TheCarriedItemsGoToTheirCarriers) {
+    read(mission("0\n", 1, 2, "CTestCarrier \"C\"\nCTestDoor \"a\"\nCTestDoor \"b\"\n",
+                 carrierBody({"A", "b"})));
+    EXPECT_EQ(names(), (std::vector<std::string>{"C"}));
+    const auto &carrier = dynamic_cast<const CTestCarrier &>(*mission_.getActors()[0]);
+    ASSERT_EQ(carrier.getInventory().getItems().size(), 2U);
+    EXPECT_EQ(carrier.getInventory().getItems()[0]->getActorName(), "A");
+    EXPECT_EQ(carrier.getInventory().getItems()[1]->getActorName(), "b");
+}
+
+TEST_F(CDemonMissionLoadTest, ACarriedItemNoOneClaimsIsFatal) {
+    expectFatal(mission("0\n", 1, 1, "CTestCarrier \"C\"\nCTestDoor \"a\"\n", carrierBody({})),
+                "CDemonMission::load - actor list count mismatch #3!");
+}
+
+TEST_F(CDemonMissionLoadTest, ClaimingTheItemsOutOfOrderIsFatal) {
+    expectFatal(mission("0\n", 1, 2, "CTestCarrier \"C\"\nCTestDoor \"a\"\nCTestDoor \"b\"\n",
+                        carrierBody({"b", "a"})),
+                "CDemonMission::getNextLoadedInventoryActor - requested b, but next actor was a!");
+}
+
+TEST_F(CDemonMissionLoadTest, ClaimingMoreItemsThanListedIsFatal) {
+    expectFatal(mission("0\n", 1, 0, "CTestCarrier \"C\"\n", carrierBody({"a"})),
+                "CDemonMission::getNextLoadedInventoryActor - no more!");
+}
+
+// Before version 6 a mission listed no carried items, so an inventory makes its own.
+TEST_F(CDemonMissionLoadTest, AnOlderMissionsInventoriesMakeTheirItems) {
+    read("; mission\n5,4\n; name\nOld\n; sets\n0\n; types\n0\n; actors\n1\n; list\n"
+         "CTestCarrier \"C\"\n; bodies\n" +
+         carrierBody({"a"}));
+    EXPECT_EQ(names(), (std::vector<std::string>{"C"}));
+    const auto &carrier = dynamic_cast<const CTestCarrier &>(*mission_.getActors()[0]);
+    ASSERT_EQ(carrier.getInventory().getItems().size(), 1U);
+    EXPECT_EQ(&carrier.getInventory().getItems()[0]->getActorType(), &kDoorType);
 }
 
 class CDemonMissionLoadActorTest : public CDemonMissionLoadTest {

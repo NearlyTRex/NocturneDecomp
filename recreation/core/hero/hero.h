@@ -5,6 +5,7 @@
 #include "core/fwd.h"
 #include "core/hero/herocontroltype.h"
 #include "core/hero/herotask.h"
+#include "core/inv/inventory.h"
 
 #include <cstdint>
 
@@ -68,8 +69,10 @@ public:
     [[nodiscard]] CDemonActor *getPushedObject() const;
     [[nodiscard]] EHeroTask getAiTask() const;
     [[nodiscard]] bool isWearingGasMask() const;
+    [[nodiscard]] const CInventory &getInventory() const;
 
 private:
+    CInventory inventory_;
     EHeroControlType control_type_ = EHeroControlType::kAi;
     CDemonActor *object_to_pick_up_ = nullptr;
     CDemonActor *door_to_open_ = nullptr;

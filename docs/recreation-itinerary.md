@@ -22,9 +22,9 @@ functions don't count as done. Sizes are in instructions.
 | 6 | `initializeGameSystems`, `CAlphaBitmap::scale`, `clearTextureCache`, `CMoon::init`, `CGame::saveClockTime`, `CGame::updateDT` | 11 | 25 | 2988 | 20 | 5 | 80.0% |
 | 7 | `CMoon::update`, `CMoon::render` | 17 | 120 | 17616 | 68 | 31 | 56.6% |
 | 8 | `renderMenuAndGetChoice`, `CMoon::free`, `CSound::reset`, `CEditorTools::showFileSelectionDialog` | 8 | 63 | 5314 | 60 | 3 | 95.2% |
-| 9 | `CPickList::enableItem`, `CEventList::resetGameFlags`, `CLevelLoader::show`, `CDemonMission::load` | 15 | 56 | 3298 | 27 | 9 | 48.2% |
+| 9 | `CPickList::enableItem`, `CEventList::resetGameFlags`, `CLevelLoader::show`, `CDemonMission::load` | 15 | 56 | 3298 | 28 | 9 | 50.0% |
 | 10 | `CDemonMission::createHeros`, `CDemonMission::prepareAllActors`, `CEventList::reset`, `CDemonMission::loadSet` | 15 | 42 | 5112 | 32 | 9 | 76.1% |
-| 11 | `CScript::loadScript` | 63 | 579 | 67400 | 37 | 26 | 6.3% |
+| 11 | `CScript::loadScript` | 63 | 579 | 67400 | 37 | 28 | 6.3% |
 | 12 | `CDemonMission::loadScript`, `CScript::executeInitSection`, `CDemonMission::startMission`, `CDemonMission::buildActiveSetActorList`, `CConsole::reset`, `CEditorTools::displayMemoryDiagnostics`, `CGame::setGameRes`, `CDemonLight::init`, `CDemonSet::initScene` | 12 | 26 | 1658 | 2 | 0 | 7.6% |
 | 13 | `CFireEffect::init`, `CDemonSet::loadMasterLightStates`, `CDemonSet::setGamma`, `CGame::clearOverlay`, `CGame::loadAssets` | 7 | 27 | 735 | 0 | 0 | 0.0% |
 | 14 | `CNetGame::syncPlayers`, `CNetGame::processServerFrame`, `CLevelLoader::cleanup`, `CKeys::toggleInputMask`, `CGame::processHotkeys` | 17 | 51 | 5302 | 1 | 0 | 1.9% |
@@ -40,13 +40,13 @@ functions don't count as done. Sizes are in instructions.
 | 24 | Not reached from startup: `core/` (part 2 of 9) | 11 | 277 | 24965 | 18 | 4 | 6.4% |
 | 25 | Not reached from startup: `core/` (part 3 of 9) | 24 | 278 | 24134 | 20 | 9 | 7.1% |
 | 26 | Not reached from startup: `core/` (part 4 of 9) | 18 | 300 | 20148 | 40 | 5 | 13.3% |
-| 27 | Not reached from startup: `core/` (part 5 of 9) | 21 | 294 | 20910 | 29 | 6 | 9.8% |
-| 28 | Not reached from startup: `core/` (part 6 of 9) | 18 | 282 | 21809 | 25 | 7 | 8.8% |
+| 27 | Not reached from startup: `core/` (part 5 of 9) | 21 | 294 | 20910 | 32 | 6 | 10.8% |
+| 28 | Not reached from startup: `core/` (part 6 of 9) | 18 | 282 | 21809 | 26 | 7 | 9.2% |
 | 29 | Not reached from startup: `core/` (part 7 of 9) | 18 | 263 | 22721 | 22 | 9 | 8.3% |
 | 30 | Not reached from startup: `core/` (part 8 of 9) | 20 | 300 | 31826 | 29 | 2 | 9.6% |
 | 31 | Not reached from startup: `core/` (part 9 of 9) | 5 | 111 | 10905 | 7 | 1 | 6.3% |
 | 32 | Not reached from startup: `wincore/` | 2 | 11 | 482 | 4 | 0 | 36.3% |
-| | **All** | | **4479** | **402407** | **791** | **143** | **17.6%** |
+| | **All** | | **4479** | **402407** | **796** | **145** | **17.7%** |
 
 ## Step 0: Math value types
 
@@ -474,7 +474,7 @@ functions don't count as done. Sizes are in instructions.
   - [~] `reset` 0x00522c80 (23)
     - deferred: clearing the pending teleport to area -1 at the origin, with setTeleportTarget and process
     - deferred: emptying the queue of actors to delete, with markActorToDelete and process
-    - deferred: clearing has_inventory_actors, next_inventory_actor and actor_lookup_count, with readMissionFile, getNextLoadedInventoryActor and CInventory::load
+    - deferred: clearing actor_lookup_count, with saveActor
 
 ### `core/dfilter.cpp` (3 functions, 147 instructions, 3 done, 0 partial)
 - class `CDemonFilter`
@@ -962,9 +962,9 @@ functions don't count as done. Sizes are in instructions.
 - class `CBloodPool`
   - [ ] `load` 0x004ed160 (38)
 
-### `core/inv.cpp` (1 functions, 27 instructions, 0 done, 0 partial)
+### `core/inv.cpp` (1 functions, 27 instructions, 1 done, 0 partial)
 - class `CInventory`
-  - [ ] `loadItems` 0x004ff740 (27)
+  - [x] `loadItems` 0x004ff740 (27)
 
 ### `core/set.cpp` (1 functions, 88 instructions, 0 done, 0 partial)
 - class `CDemonSet`
@@ -1037,7 +1037,7 @@ functions don't count as done. Sizes are in instructions.
     - deferred: clearing the delete queue, with markActorToDelete
     - deferred: committing the raytracer's shadow voxels and resetting the path maps, with the raytracer and the path maps
   - [~] `clearMissionData` 0x00522d30 (20)
-    - deferred: clearing has_inventory_actors, next_inventory_actor and actor_lookup_count, with archiveActor, getNextLoadedInventoryActor and CInventory::load
+    - deferred: clearing actor_lookup_count, with saveActor
   - [x] `findActorByName` 0x00524030 (24)
   - [x] `generateUniqueActorName` 0x00524660 (65)
   - [x] `generateActorName` 0x00524700 (39)
@@ -1045,8 +1045,7 @@ functions don't count as done. Sizes are in instructions.
   - [~] `freeAllAssets` 0x005248e0 (13)
     - deferred: freeing the keyframed models, deformable models and skeletons the mission's actors loaded, with their pools
   - [~] `readMissionFile` 0x00522eb0 (432)
-    - deferred: recording each actor in the table archives refer to actors by, and where the carried items start, with archiveActor and CInventory::load
-    - deferred: taking each hero's carried items off the list, with CHero
+    - deferred: recording each actor in the table save files refer to actors by, with saveActor
     - deferred: reading the blood pools and splats the file ends with, with CGore's renderers
   - [x] `ensureHeroPlaceholder` 0x00524c20 (153)
   - [x] `load` 0x00522d90 (51)
@@ -1467,15 +1466,17 @@ functions don't count as done. Sizes are in instructions.
 - free functions
   - [ ] `getKeyDisplayName` 0x005134e0 (161)
 
-### `core/inv.cpp` (15 functions, 2404 instructions, 0 done, 0 partial)
+### `core/inv.cpp` (15 functions, 2404 instructions, 0 done, 2 partial)
 - class `CInventory`
   - [ ] `findItemByName` 0x004fe9d0 (35)
   - [ ] `hasItemOfClass` 0x004fea20 (35)
   - [ ] `checkHasMatchingKey` 0x005013d0 (70)
   - [ ] `removeItem` 0x004fea70 (57)
   - [ ] `removeMatchingKeys` 0x005014a0 (43)
-  - [ ] `clear` 0x004fd0e0 (46)
-  - [ ] `initialize` 0x004fd190 (41)
+  - [~] `clear` 0x004fd0e0 (46)
+    - deferred: destroying the ammo counter, with CAmmo
+  - [~] `initialize` 0x004fd190 (41)
+    - deferred: making and setting up the ammo counter, with CAmmo
   - [ ] `updateSelectedWeaponAmmoDisplay` 0x004ffe10 (28)
   - [ ] `isWeaponInCategory` 0x004ffe70 (114)
   - [ ] `resetWeaponSwitchTimers` 0x004fffa0 (16)
@@ -5045,7 +5046,7 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `factoryFuncHealthItem` 0x004f1d90 (12)
   - [x] `staticInit` 0x004f1d60 (9)
 
-### `core/hero.cpp` (35 functions, 2025 instructions, 3 done, 2 partial)
+### `core/hero.cpp` (35 functions, 2025 instructions, 4 done, 1 partial)
 - free functions
   - [ ] `isAnyHeroWithinCylinder` 0x004f22a0 (63)
   - [ ] `closestHeroToPoint` 0x004f2170 (66)
@@ -5054,11 +5055,10 @@ functions don't count as done. Sizes are in instructions.
 - class `CHero`
   - [ ] `createDefaultWeapon` 0x004f2a30 (59)
   - [~] `ctor` 0x004f2340 (48)
-    - deferred: the path map, inventory and input, and the defaults the constructor gives the collision, invincibility, aiming, nearby actor, target and flame fields, with the steps that read them
+    - deferred: the path map and input, the inventory's owner, and the defaults the constructor gives the collision, invincibility, aiming, nearby actor, target and flame fields, with the steps that read them
     - deferred: creating the default weapon, with the weapon classes
   - [ ] `closestEnemy` 0x004f3960 (120)
-  - [~] `archive` 0x004f2610 (162)
-    - deferred: reading the inventory, with CInventory::load
+  - [x] `archive` 0x004f2610 (162)
   - [x] `dtor` 0x004f2470 (59)
   - [ ] `testCylinderCollision` 0x004f2580 (17)
   - [ ] `testLineIntersection` 0x004f25c0 (25)
@@ -5191,12 +5191,13 @@ functions don't count as done. Sizes are in instructions.
   - [x] `staticInit` 0x004f9830 (9)
   - [ ] `setVector` 0x004fa900 (8)
 
-### `core/inv.cpp` (13 functions, 1155 instructions, 0 done, 1 partial)
+### `core/inv.cpp` (13 functions, 1155 instructions, 2 done, 2 partial)
 - class `CInventory`
-  - [ ] `ctor` 0x004fd020 (18)
+  - [x] `ctor` 0x004fd020 (18)
   - [ ] `save` 0x004ff210 (133)
-  - [ ] `load` 0x004ff400 (221)
-  - [ ] `dtor` 0x004fd0c0 (8)
+  - [~] `load` 0x004ff400 (221)
+    - deferred: showing the held weapon's ammo, with CAmmo
+  - [x] `dtor` 0x004fd0c0 (8)
   - [ ] `setupItems` 0x004ff780 (42)
   - [ ] `calculateTotalBatteryCharge` 0x004ffda0 (47)
   - [ ] `resetInventoryDisplayTimer` 0x00500020 (8)
@@ -5475,9 +5476,9 @@ functions don't count as done. Sizes are in instructions.
   - [~] `staticInit` 0x00520fb0 (11)
     - deferred: the reflection clipper's 32-vertex buffers, with reflectAndClipPrimitive
 
-### `core/mission.cpp` (8 functions, 153 instructions, 3 done, 0 partial)
+### `core/mission.cpp` (8 functions, 153 instructions, 4 done, 0 partial)
 - class `CDemonMission`
-  - [ ] `getNextLoadedInventoryActor` 0x00523520 (41)
+  - [x] `getNextLoadedInventoryActor` 0x00523520 (41)
   - [ ] `save` 0x00522e30 (38)
   - [ ] `createFromSingleSet` 0x005243a0 (39)
   - [ ] `calculateAllActorChecksums` 0x005248a0 (19)

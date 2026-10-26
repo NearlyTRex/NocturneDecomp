@@ -41,6 +41,10 @@ common::CTextScanner &CActorArchive::getScanner() const {
     return scanner_;
 }
 
+const SActorArchiveOwners &CActorArchive::getOwners() const {
+    return owners_;
+}
+
 int CActorArchive::getSavedVersion(const CDemonActorType &type) const {
     return owners_.actor_classes.getSavedVersion(type);
 }

@@ -17,7 +17,8 @@ namespace nocturne::core {
 class CTestArchive {
 public:
     explicit CTestArchive(const CDemonActor &actor)
-        : archive_(scanner_, actor, {.actor_classes = classes_, .actors = actors_}) {}
+        : archive_(scanner_, actor,
+                   {.actor_classes = classes_, .actors = actors_, .crt_random = crt_}) {}
 
     [[nodiscard]] CActorArchive &get() {
         return archive_;

@@ -61,7 +61,8 @@ protected:
     common::CWatcomRandom crt_;
     CActor classes_{game_, crt_};
     ::testing::StrictMock<MockActorLookup> actors_;
-    const SActorArchiveOwners owners_{.actor_classes = classes_, .actors = actors_};
+    const SActorArchiveOwners owners_{
+        .actor_classes = classes_, .actors = actors_, .crt_random = crt_};
     CTestActor actor_{kTestLeafType};
 };
 

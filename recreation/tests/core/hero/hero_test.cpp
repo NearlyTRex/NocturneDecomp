@@ -1,4 +1,3 @@
-#include "common/error/fatalerror.h"
 #include "common/random/watcomrandom.h"
 #include "common/text/textscanner.h"
 #include "core/actor/actor.h"
@@ -11,6 +10,7 @@
 #include "core/hero/hero.h"
 #include "core/hero/herocontroltype.h"
 #include "core/hero/herotask.h"
+#include "core/inv/inventory.h"
 #include "core/skeleton/deformablemodelinstance.h"
 #include "core/skeleton/partvisibility.h"
 #include "tests/mocks/core/mockactorlookup.h"
@@ -28,9 +28,6 @@
 
 namespace nocturne::core {
 namespace {
-
-using ::testing::StrEq;
-using ::testing::ThrowsMessage;
 
 TEST(CHero, DerivesFromCCharacter) {
     static_assert(std::is_base_of_v<CCharacter, CHero>);
@@ -148,13 +145,14 @@ protected:
         const std::string text =
             std::format("{{ CHero \"Gabriel\"\n{}{}}} CHero \"Gabriel\"\n", kDemonFields, fields);
         common::CTextScanner scanner(text);
-        hero_.load(scanner, {.actor_classes = classes_, .actors = actors_});
+        hero_.load(scanner, {.actor_classes = classes_, .actors = actors_, .crt_random = crt_});
     }
 
-    void expectInventoryNotPorted(int saved_version, const std::string &fields) {
-        EXPECT_THAT(
-            [&] { readAs(saved_version, fields); },
-            ThrowsMessage<common::CFatalError>(StrEq("CInventory::load is not ported yet")));
+    // From version 6 the fields end with an inventory, here holding nothing.
+    void readWithInventory(int saved_version, const std::string &fields) {
+        readAs(saved_version,
+               fields + "{ // Inventory\n// fileVersion\n2\n// itemCount\n0\n// currentWeapon\n-1\n"
+                        "// battery strength\n40\n// actor name list\n// actor data list\n}\n");
     }
 
     void expectMotionAndParts() {
@@ -176,13 +174,13 @@ protected:
     CTestActor hook_{kTestBaseType};
 };
 
-// Everything the latest hero holds, up to its inventory, which isn't read yet.
-TEST_F(CHeroArchiveTest, AHeroIsReadUpToItsInventory) {
-    expectInventoryNotPorted(12, "60\n" + std::string(kMotion) + std::string(kParts) +
-                                     "0 // controlType\n\"Box\" // objectToPickUp\n\"(none)\"\n"
-                                     "\"(none)\"\n\"Hook\"\n\"Box\"\n3 // AITask\n"
-                                     "1 // isWearingGasMask\n");
+TEST_F(CHeroArchiveTest, AHeroIsReadWithAllItsFields) {
+    readWithInventory(12, "60\n" + std::string(kMotion) + std::string(kParts) +
+                              "0 // controlType\n\"Box\" // objectToPickUp\n\"(none)\"\n"
+                              "\"(none)\"\n\"Hook\"\n\"Box\"\n3 // AITask\n"
+                              "1 // isWearingGasMask\n");
     EXPECT_EQ(hero_.getHitPoints(), 60.0F);
+    EXPECT_EQ(hero_.getInventory().getBatteryCharge(), 40.0F);
     expectMotionAndParts();
     EXPECT_EQ(hero_.getControlType(), EHeroControlType::kPlayer);
     EXPECT_EQ(hero_.getObjectToPickUp(), &box_);
@@ -200,15 +198,16 @@ TEST_F(CHeroArchiveTest, TheKeysAreReadAndDropped) {
     for (int i = 0; i < 32; ++i) {
         key_names += "\"\"\n";
     }
-    expectInventoryNotPorted(10, "60\n" + std::string(kMotion) + std::string(kParts) +
-                                     "2\n\"(none)\"\n\"(none)\"\n\"(none)\"\n\"(none)\"\n"
-                                     "\"(none)\"\n7 // keys\n" +
-                                     key_names + "4 // AITask\n");
+    readWithInventory(10, "60\n" + std::string(kMotion) + std::string(kParts) +
+                              "2\n\"(none)\"\n\"(none)\"\n\"(none)\"\n\"(none)\"\n"
+                              "\"(none)\"\n7 // keys\n" +
+                              key_names + "4 // AITask\n");
     EXPECT_EQ(hero_.getAiTask(), EHeroTask::kSuspend);
-    expectInventoryNotPorted(8, "60\n" + std::string(kMotion) + std::string(kParts) +
-                                    "2\n\"(none)\"\n\"(none)\"\n\"(none)\"\n\"(none)\"\n"
-                                    "\"(none)\"\n" +
-                                    key_names);
+    readWithInventory(8, "60\n" + std::string(kMotion) + std::string(kParts) +
+                             "2\n\"(none)\"\n\"(none)\"\n\"(none)\"\n\"(none)\"\n"
+                             "\"(none)\"\n" +
+                             key_names);
+    EXPECT_EQ(hero_.getAiTask(), EHeroTask::kSuspend);
 }
 
 // Until version 8 a second grabber came after the parts, which leaves the ordinary grab, and a

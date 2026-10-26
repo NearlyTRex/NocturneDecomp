@@ -66,6 +66,7 @@ protected:
                             .messages = messages_,
                             .game = game_,
                             .actor = actor_,
+                            .crt_random = crt_random_,
                             .loading_screen = set_parts_.loading_screen,
                             .set = set_,
                             .textures = textures_,

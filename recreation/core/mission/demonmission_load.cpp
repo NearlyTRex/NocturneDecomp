@@ -104,9 +104,10 @@ void CDemonMission::load(std::string_view mission_filename, bool keep_assets) {
 // Each section starts after a line of its own; a number that can't be read leaves what was
 // there, which for a count is none. nocedit could also skip the blood, an editor setting.
 // The current set is forgotten after; the editor's actor import kept it.
-// deferred: recording each actor in the table archives refer to actors by, and where the
-//   carried items start, with archiveActor and CInventory::load
-// deferred: taking each hero's carried items off the list, with CHero
+// The carried items come after the actors, each taken off the list as a hero's inventory claims
+// it, so any left over are fatal. The original's check that none was left unclaimed after that
+// could never fail.
+// deferred: recording each actor in the table save files refer to actors by, with saveActor
 // deferred: reading the blood pools and splats the file ends with, with CGore's renderers
 // nocedit 0x00522eb0
 void CDemonMission::readMissionFile(CTextScanner &scanner, bool keep_assets) {
@@ -165,13 +166,18 @@ void CDemonMission::readMissionFile(CTextScanner &scanner, bool keep_assets) {
         }
     }
     scanner.skipLine();
+    if (mission_version_num_ >= kInventoryVersion) {
+        carried_start_ = static_cast<std::size_t>(std::max(actor_count, 0));
+    }
     for (int i = 0; i < actor_count; ++i) {
         if (static_cast<std::size_t>(i) >= actors_.size()) {
             common::displayErrorAndQuit("CDemonMission::load - actor list count mismatch #1!");
         }
         actors_[static_cast<std::size_t>(i)]->load(
-            scanner, {.actor_classes = owners_.actor, .actors = *this});
+            scanner,
+            {.actor_classes = owners_.actor, .actors = *this, .crt_random = owners_.crt_random});
     }
+    carried_start_.reset();
     if (actors_.size() > static_cast<std::size_t>(std::max(actor_count, 0))) {
         common::displayErrorAndQuit("CDemonMission::load - actor list count mismatch #3!");
     }
@@ -212,6 +218,25 @@ CDemonActor *CDemonMission::loadActor(CTextScanner &scanner, const CDemonActor &
     return actor;
 }
 
+// Each claimed comes off the list, which leaves the next where the first was.
+// nocedit 0x00523520
+std::unique_ptr<CDemonActor> CDemonMission::takeCarriedActor(std::string_view name) {
+    if (!carried_start_) {
+        return nullptr;
+    }
+    if (*carried_start_ >= actors_.size()) {
+        common::displayErrorAndQuit("CDemonMission::getNextLoadedInventoryActor - no more!");
+    }
+    const CDemonActor &next = *actors_[*carried_start_];
+    if (!common::equalsIgnoringAsciiCase(next.getActorName(), name)) {
+        common::displayErrorAndQuit(
+            std::format("CDemonMission::getNextLoadedInventoryActor - requested {}, but next "
+                        "actor was {}!",
+                        name, next.getActorName()));
+    }
+    return removeActorFromList(next);
+}
+
 // A class's saved version newer than the game's own is fatal.
 void CDemonMission::readActorTypes(CTextScanner &scanner) {
     scanner.skipLine();
@@ -240,11 +265,11 @@ void CDemonMission::readActorTypes(CTextScanner &scanner) {
 }
 
 // nocedit also zeroed the count of visible corona globes; retail doesn't.
-// deferred: clearing has_inventory_actors, next_inventory_actor and actor_lookup_count, with
-//   archiveActor, getNextLoadedInventoryActor and CInventory::load
+// deferred: clearing actor_lookup_count, with saveActor
 // nocedit 0x00522d30
 void CDemonMission::clearMissionData() {
     removeAllActors();
+    carried_start_.reset();
     set_names_.clear();
     mission_name_.clear();
 }

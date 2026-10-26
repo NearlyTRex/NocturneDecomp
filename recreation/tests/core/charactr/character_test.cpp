@@ -231,7 +231,8 @@ protected:
         const std::string text = std::format(
             "{{ CCharacter \"Mob\"\n0,0,0,0\n0,0,0\n0\n{}}} CCharacter \"Mob\"\n", fields);
         common::CTextScanner scanner(text);
-        character_.load(scanner, {.actor_classes = classes_, .actors = actors_});
+        character_.load(scanner,
+                        {.actor_classes = classes_, .actors = actors_, .crt_random = crt_});
     }
 
     ::testing::NiceMock<engine::MockGameClock> clock_;

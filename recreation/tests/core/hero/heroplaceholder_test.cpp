@@ -58,11 +58,11 @@ TEST(CHeroPlaceholder, ItsFileSaysWhichHeroItIsFor) {
     const CGame game{clock};
     common::CWatcomRandom crt;
     const CActor classes{game, crt};
-    const ::testing::NiceMock<MockActorLookup> actors;
+    ::testing::NiceMock<MockActorLookup> actors;
     CHeroPlaceholder placeholder;
     common::CTextScanner scanner("{ CHeroPlaceholder \"Spot\"\n2,1,2,3\n0,0,0\n0\n1 // index\n"
                                  "} CHeroPlaceholder \"Spot\"\n");
-    placeholder.load(scanner, {.actor_classes = classes, .actors = actors});
+    placeholder.load(scanner, {.actor_classes = classes, .actors = actors, .crt_random = crt});
     EXPECT_EQ(placeholder.getLocation().area_id, 2);
     EXPECT_EQ(placeholder.getIndex(), 1);
 }

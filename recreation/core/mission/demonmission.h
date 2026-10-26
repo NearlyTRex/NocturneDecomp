@@ -12,6 +12,7 @@
 #include <cstdint>
 #include <cstdio>
 #include <memory>
+#include <optional>
 #include <span>
 #include <string>
 #include <string_view>
@@ -19,13 +20,15 @@
 
 namespace nocturne::core {
 
-// What a mission reads its file with, makes its actors from, shows its loading on, asks about a
-// missing hero with, picks its hero by, and loads its sets into.
+// What a mission reads its file with, makes its actors from, draws the C library's random numbers
+// from, shows its loading on, asks about a missing hero with, picks its hero by, and loads its
+// sets into.
 struct SMissionOwners {
     const engine::CDosIo &dosio;
     const support::CNewMsg &messages;
     const CGame &game;
     CActor &actor;
+    common::CWatcomRandom &crt_random;
     ILoadingScreen &loading_screen;
     CDemonSet &set;
     engine::CTexture &textures;
@@ -58,7 +61,9 @@ public:
     void readMissionFile(common::CTextScanner &scanner, bool keep_assets);
     // Frees the textures, and the models the mission's actors loaded.
     void freeAllAssets();
-    CDemonActor *getNextLoadedInventoryActor(char *actor_name);
+    // While the mission file is read, the carried items it lists, in order: one not named as asked,
+    // or none left, is fatal.
+    [[nodiscard]] std::unique_ptr<CDemonActor> takeCarriedActor(std::string_view name) override;
     void writeFile(std::FILE *file_handle);
     // A reference that isn't quoted, as save files write a script's marker for no victim, quits
     // as not ported yet.
@@ -139,6 +144,8 @@ private:
     // Zero, as the original's began, until a mission file is read.
     int current_set_index_ = 0;
     bool actors_prepared_ = false;
+    // Where the carried items not yet claimed start, while a file that lists them is read.
+    std::optional<std::size_t> carried_start_;
     int hero_count_ = 0;
     // On the list, which owns them.
     std::array<CHero *, kMaxHeroes> heroes_{};

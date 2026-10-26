@@ -296,6 +296,7 @@ private:
                                   .messages = messages_,
                                   .game = game_,
                                   .actor = actor_,
+                                  .crt_random = crt_random_,
                                   .loading_screen = level_loader_,
                                   .set = set_,
                                   .textures = texture_,

@@ -2,7 +2,6 @@
 
 #include "core/actor/actorarchive.h"
 #include "core/actor/demonactortype.h"
-#include "core/actor/notported.h"
 #include "core/charactr/healthbarmode.h"
 #include "core/hero/herocontroltype.h"
 #include "core/hero/herotask.h"
@@ -40,9 +39,9 @@ constexpr int kKeyNameCount = 32;
 constinit const CDemonActorType CHero::kType =
     makeActorType("CHero", &CCharacter::kType, nullptr, kVersion);
 
-// deferred: the path map, inventory and input, and the defaults the constructor gives the
-//   collision, invincibility, aiming, nearby actor, target and flame fields, with the steps that
-//   read them
+// deferred: the path map and input, the inventory's owner, and the defaults the constructor gives
+//   the collision, invincibility, aiming, nearby actor, target and flame fields, with the steps
+//   that read them
 // deferred: creating the default weapon, with the weapon classes
 // nocedit 0x004f2340
 CHero::CHero() {
@@ -57,7 +56,6 @@ CHero::~CHero() = default;
 // Before version 4 a hero held only CDemonActor's fields of CCharacter's, with the motion state
 // from 2 and the parts, grabber and hit points from 3. The keys, and their names, are read and
 // dropped.
-// deferred: reading the inventory, with CInventory::load
 // nocedit 0x004f2610
 void CHero::archive(CActorArchive &actor_archive) {
     const int saved_version = actor_archive.getSavedVersion(kType);
@@ -113,8 +111,12 @@ void CHero::archive(CActorArchive &actor_archive) {
         is_wearing_gas_mask_ = wearing_gas_mask != 0;
     }
     if (saved_version >= kInventoryVersion) {
-        quitNotPorted("CInventory", "load");
+        inventory_.load(actor_archive);
     }
+}
+
+const CInventory &CHero::getInventory() const {
+    return inventory_;
 }
 
 EHeroControlType CHero::getControlType() const {

@@ -8,10 +8,12 @@
 
 namespace nocturne::core {
 
-// What an archive finds each class's saved version in, and the actors fields name.
+// What an archive finds each class's saved version in, makes and finds the actors fields name
+// with, and draws the C library's random numbers from.
 struct SActorArchiveOwners {
     const CActor &actor_classes;
-    const IActorLookup &actors;
+    IActorLookup &actors;
+    common::CWatcomRandom &crt_random;
 };
 
 // What an actor's archive() reads its fields from: the mission or save file it is loaded from,
@@ -23,6 +25,8 @@ public:
                   const SActorArchiveOwners &owners);
 
     [[nodiscard]] common::CTextScanner &getScanner() const;
+    // For fields that read actors of their own.
+    [[nodiscard]] const SActorArchiveOwners &getOwners() const;
     // The version the file saved the class's fields in.
     [[nodiscard]] int getSavedVersion(const CDemonActorType &type) const;
 

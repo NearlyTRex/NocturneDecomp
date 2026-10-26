@@ -201,7 +201,8 @@ protected:
     common::CWatcomRandom crt_;
     const CActor classes_{game_, crt_};
     ::testing::NiceMock<MockActorLookup> actors_;
-    const SActorArchiveOwners owners_{.actor_classes = classes_, .actors = actors_};
+    const SActorArchiveOwners owners_{
+        .actor_classes = classes_, .actors = actors_, .crt_random = crt_};
 };
 
 // The class's fields come between the tags, read by archive().

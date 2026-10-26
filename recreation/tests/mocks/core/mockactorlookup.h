@@ -6,6 +6,7 @@
 
 #include <gmock/gmock.h>
 
+#include <memory>
 #include <string_view>
 
 namespace nocturne::core {
@@ -16,6 +17,8 @@ public:
                 (common::CTextScanner & scanner, const CDemonActor &owner,
                  std::string_view description),
                 (const, override));
+    MOCK_METHOD(std::unique_ptr<CDemonActor>, takeCarriedActor, (std::string_view name),
+                (override));
 };
 
 } // namespace nocturne::core
