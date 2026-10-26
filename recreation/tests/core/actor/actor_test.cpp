@@ -114,6 +114,19 @@ TEST_F(CActorRegistryTest, MoreThanTwoHundredClassesIsFatal) {
                 ThrowsMessage<common::CFatalError>(StrEq("Too many actor types!")));
 }
 
+// A class a file didn't list reads as version 1, as do all once they are forgotten.
+TEST_F(CActorRegistryTest, ItKeepsTheVersionsAFileSavedItsClassesIn) {
+    EXPECT_EQ(actor_.getSavedVersion(CDemonActor::kType), 1);
+    actor_.setSavedVersion(CDemonActor::kType, 6);
+    actor_.setSavedVersion(CHero::kType, 3);
+    actor_.setSavedVersion(CDemonActor::kType, 7);
+    EXPECT_EQ(actor_.getSavedVersion(CDemonActor::kType), 7);
+    EXPECT_EQ(actor_.getSavedVersion(CHero::kType), 3);
+    actor_.resetSavedVersions();
+    EXPECT_EQ(actor_.getSavedVersion(CDemonActor::kType), 1);
+    EXPECT_EQ(actor_.getSavedVersion(CHero::kType), 1);
+}
+
 // Expected values are nocedit's own, from its machine code run with the same seeds.
 class CActorTest : public ::testing::Test {
 protected:

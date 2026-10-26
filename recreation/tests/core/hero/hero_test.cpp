@@ -1,8 +1,7 @@
-#include "common/text/textscanner.h"
-#include "core/actor/actorarchive.h"
 #include "core/actor/demonactortype.h"
 #include "core/hero/hero.h"
 #include "tests/mocks/core/notportedcalls.h"
+#include "tests/mocks/core/testarchive.h"
 
 #include <gtest/gtest.h>
 
@@ -89,8 +88,7 @@ TEST(CHero, ItsRecordIsAVersionTwelveCharacterThatMissionsCantCreate) {
 
 TEST(CHero, TheFunctionsNotPortedYetQuit) {
     CTestHero hero;
-    common::CTextScanner scanner("");
-    CActorArchive archive(scanner);
+    CTestArchive archive(hero);
     const NotPortedCalls calls = {
         {"setup", [&] { hero.setup(); }},
         {"canLookAt", [&] { static_cast<void>(hero.canLookAt()); }},
@@ -99,7 +97,7 @@ TEST(CHero, TheFunctionsNotPortedYetQuit) {
         {"testLineIntersection",
          [&] { static_cast<void>(hero.testLineIntersection(nullptr, nullptr, nullptr)); }},
         {"getPathMap", [&] { static_cast<void>(hero.getPathMap()); }},
-        {"archive", [&] { hero.archive(archive); }},
+        {"archive", [&] { hero.archive(archive.get()); }},
         {"kill", [&] { hero.kill(0, nullptr, 0.0F); }},
         {"isInvulnerable", [&] { static_cast<void>(hero.isInvulnerable()); }},
         {"isGrabbable", [&] { static_cast<void>(hero.isGrabbable(nullptr)); }},

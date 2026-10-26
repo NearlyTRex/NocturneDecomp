@@ -22,9 +22,9 @@ functions don't count as done. Sizes are in instructions.
 | 6 | `initializeGameSystems`, `CAlphaBitmap::scale`, `clearTextureCache`, `CMoon::init`, `CGame::saveClockTime`, `CGame::updateDT` | 11 | 25 | 2988 | 20 | 5 | 80.0% |
 | 7 | `CMoon::update`, `CMoon::render` | 17 | 120 | 17616 | 68 | 31 | 56.6% |
 | 8 | `renderMenuAndGetChoice`, `CMoon::free`, `CSound::reset`, `CEditorTools::showFileSelectionDialog` | 8 | 63 | 5314 | 60 | 3 | 95.2% |
-| 9 | `CPickList::enableItem`, `CEventList::resetGameFlags`, `CLevelLoader::show`, `CDemonMission::load` | 15 | 56 | 3298 | 26 | 9 | 46.4% |
+| 9 | `CPickList::enableItem`, `CEventList::resetGameFlags`, `CLevelLoader::show`, `CDemonMission::load` | 15 | 56 | 3298 | 27 | 9 | 48.2% |
 | 10 | `CDemonMission::createHeros`, `CDemonMission::prepareAllActors`, `CEventList::reset`, `CDemonMission::loadSet` | 15 | 42 | 5112 | 32 | 9 | 76.1% |
-| 11 | `CScript::loadScript` | 63 | 579 | 67400 | 35 | 16 | 6.0% |
+| 11 | `CScript::loadScript` | 63 | 579 | 67400 | 36 | 24 | 6.2% |
 | 12 | `CDemonMission::loadScript`, `CScript::executeInitSection`, `CDemonMission::startMission`, `CDemonMission::buildActiveSetActorList`, `CConsole::reset`, `CEditorTools::displayMemoryDiagnostics`, `CGame::setGameRes`, `CDemonLight::init`, `CDemonSet::initScene` | 12 | 26 | 1658 | 2 | 0 | 7.6% |
 | 13 | `CFireEffect::init`, `CDemonSet::loadMasterLightStates`, `CDemonSet::setGamma`, `CGame::clearOverlay`, `CGame::loadAssets` | 7 | 27 | 735 | 0 | 0 | 0.0% |
 | 14 | `CNetGame::syncPlayers`, `CNetGame::processServerFrame`, `CLevelLoader::cleanup`, `CKeys::toggleInputMask`, `CGame::processHotkeys` | 17 | 51 | 5302 | 1 | 0 | 1.9% |
@@ -46,7 +46,7 @@ functions don't count as done. Sizes are in instructions.
 | 30 | Not reached from startup: `core/` (part 8 of 9) | 20 | 300 | 31826 | 29 | 2 | 9.6% |
 | 31 | Not reached from startup: `core/` (part 9 of 9) | 5 | 111 | 10905 | 7 | 1 | 6.3% |
 | 32 | Not reached from startup: `wincore/` | 2 | 11 | 482 | 4 | 0 | 36.3% |
-| | **All** | | **4479** | **402407** | **781** | **127** | **17.4%** |
+| | **All** | | **4479** | **402407** | **783** | **135** | **17.4%** |
 
 ## Step 0: Math value types
 
@@ -999,21 +999,21 @@ functions don't count as done. Sizes are in instructions.
 - class `CSkeleton`
   - [ ] `free` 0x00599a50 (47)
 
-### `core/actor.cpp` (18 functions, 918 instructions, 13 done, 1 partial)
+### `core/actor.cpp` (18 functions, 918 instructions, 14 done, 1 partial)
 - class `CDemonActor`
   - [x] `getActorClassName` 0x00408b90 (6)
   - [x] `load` 0x0040b050 (125)
   - [x] `doCheckForInvalidPointers` 0x0040ac80 (193)
   - [ ] `updateOrientationMatrix` 0x00408c10 (30)
   - [~] `ctor` 0x004088b0 (88)
-    - deferred: the defaults the constructor gives the orientation's matrix, and the scale, creation, platform, rendering, health and footstep fields, with the steps that read them
+    - deferred: the defaults the constructor gives the orientation's matrix, and the scale, platform, rendering, health and footstep fields, with the steps that read them
 - free functions
   - [x] `getActorClassByName` 0x0040c3c0 (45)
   - [x] `createActorByName` 0x0040c430 (51)
   - [x] `checkNameHash` 0x0040c700 (11)
   - [x] `isOfClassHash` 0x0040c760 (14)
   - [x] `castToClassHash` 0x0040c790 (17)
-  - [ ] `resetActorTypeInfo` 0x0040c7f0 (18)
+  - [x] `resetActorTypeInfo` 0x0040c7f0 (18)
   - [x] `deleteActor` 0x00408820 (24)
   - [x] `matchClassTerm` 0x0040c4f0 (122)
   - [x] `matchClassExpression` 0x0040c610 (80)
@@ -1045,7 +1045,6 @@ functions don't count as done. Sizes are in instructions.
   - [~] `freeAllAssets` 0x005248e0 (13)
     - deferred: freeing the keyframed models, deformable models and skeletons the mission's actors loaded, with their pools
   - [~] `readMissionFile` 0x00522eb0 (432)
-    - deferred: noting each class's saved version for archive() to read, and resetting them first, with the archive helpers
     - deferred: recording each actor in the table archives refer to actors by, and where the carried items start, with archiveActor and CInventory::load
     - deferred: taking each hero's carried items off the list, with CHero
     - deferred: reading the blood pools and splats the file ends with, with CGore's renderers
@@ -1234,7 +1233,7 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `archive` 0x005dab30 (17)
   - [ ] `dtor` 0x005dae50 (31)
 
-### `core/actor.cpp` (66 functions, 3653 instructions, 4 done, 0 partial)
+### `core/actor.cpp` (66 functions, 3653 instructions, 5 done, 8 partial)
 - free functions
   - [ ] `copyVector` 0x00410360 (12)
   - [ ] `rayCylinderIntersect` 0x00408340 (354)
@@ -1245,14 +1244,22 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `crc32ProcessString` 0x0040cf90 (25)
   - [x] `randomChance` 0x0040cd10 (22)
   - [x] `getRandomInt` 0x0040cc70 (54)
-  - [ ] `handleActorPropertyParseError` 0x0040b210 (41)
-  - [ ] `archiveDescription` 0x0040b290 (70)
-  - [ ] `archiveOrientation` 0x0040b3e0 (49)
-  - [ ] `archiveLocation` 0x0040b480 (55)
-  - [ ] `archiveString` 0x0040b5c0 (92)
-  - [ ] `archiveFloat` 0x0040b770 (39)
-  - [ ] `archiveInteger` 0x0040b7f0 (40)
-  - [ ] `archiveVector` 0x0040b340 (49)
+  - [~] `handleActorPropertyParseError` 0x0040b210 (41)
+    - deferred: "saving" in the message, with CDemonActor::save
+  - [~] `archiveDescription` 0x0040b290 (70)
+    - deferred: writing the description as a comment, with CDemonActor::save
+  - [~] `archiveOrientation` 0x0040b3e0 (49)
+    - deferred: writing the value to a save file, with CDemonActor::save
+  - [~] `archiveLocation` 0x0040b480 (55)
+    - deferred: writing the value to a save file, with CDemonActor::save
+  - [~] `archiveString` 0x0040b5c0 (92)
+    - deferred: writing the value to a save file, with CDemonActor::save
+  - [~] `archiveFloat` 0x0040b770 (39)
+    - deferred: writing the value to a save file, with CDemonActor::save
+  - [~] `archiveInteger` 0x0040b7f0 (40)
+    - deferred: writing the value to a save file, with CDemonActor::save
+  - [~] `archiveVector` 0x0040b340 (49)
+    - deferred: writing the value to a save file, with CDemonActor::save
   - [ ] `archiveActor` 0x0040b870 (46)
 - class `CDemonActor`
   - [ ] `transformVector` 0x00408e80 (13)
@@ -1295,7 +1302,7 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `processMeleeHit` 0x0040a210 (651)
   - [ ] `fillAttackDamageInfo` 0x0040abc0 (21)
   - [ ] `playAttackHitEffects` 0x0040ac20 (1)
-  - [ ] `archive` 0x0040c1c0 (49)
+  - [x] `archive` 0x0040c1c0 (49)
   - [ ] `shouldIgnoreForTargeting` 0x0040c720 (2)
   - [ ] `processFootstep` 0x0040c830 (67)
   - [ ] `processFootstepAtOffset` 0x0040c8f0 (92)

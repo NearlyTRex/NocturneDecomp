@@ -94,8 +94,6 @@ void CDemonMission::load(std::string_view mission_filename, bool keep_assets) {
 
 // Each section starts after a line of its own; a number that can't be read leaves what was
 // there, which for a count is none. nocedit could also skip the blood, an editor setting.
-// deferred: noting each class's saved version for archive() to read, and resetting them first,
-//   with the archive helpers
 // The current set is forgotten after; the editor's actor import kept it.
 // deferred: recording each actor in the table archives refer to actors by, and where the
 //   carried items start, with archiveActor and CInventory::load
@@ -136,6 +134,7 @@ void CDemonMission::readMissionFile(CTextScanner &scanner, bool keep_assets) {
     for (int i = 0; i < set_count; ++i) {
         set_names_.emplace_back(readWord(scanner));
     }
+    owners_.actor.resetSavedVersions();
     if (mission_version_num_ >= kTypedVersion) {
         readActorTypes(scanner);
     }
@@ -161,7 +160,7 @@ void CDemonMission::readMissionFile(CTextScanner &scanner, bool keep_assets) {
         if (static_cast<std::size_t>(i) >= actors_.size()) {
             common::displayErrorAndQuit("CDemonMission::load - actor list count mismatch #1!");
         }
-        actors_[static_cast<std::size_t>(i)]->load(scanner);
+        actors_[static_cast<std::size_t>(i)]->load(scanner, owners_.actor);
     }
     if (actors_.size() > static_cast<std::size_t>(std::max(actor_count, 0))) {
         common::displayErrorAndQuit("CDemonMission::load - actor list count mismatch #3!");
@@ -170,7 +169,7 @@ void CDemonMission::readMissionFile(CTextScanner &scanner, bool keep_assets) {
 }
 
 // A class's saved version newer than the game's own is fatal.
-void CDemonMission::readActorTypes(CTextScanner &scanner) const {
+void CDemonMission::readActorTypes(CTextScanner &scanner) {
     scanner.skipLine();
     const int type_count = readNumber(scanner, 0);
     // The original kept the last version read when a line had none.
@@ -183,12 +182,16 @@ void CDemonMission::readActorTypes(CTextScanner &scanner) const {
             saved_version = readNumber(scanner, saved_version);
         }
         const CDemonActorType *type = owners_.actor.getActorClassByName(class_name);
-        if (type != nullptr && type->latest_version < saved_version) {
+        if (type == nullptr) {
+            continue;
+        }
+        if (type->latest_version < saved_version) {
             common::displayErrorAndQuit(
                 std::format("Actor type {} is saved in mission in format version {}, but the "
                             "latest version this .EXE supports is {}!",
                             class_name, saved_version, type->latest_version));
         }
+        owners_.actor.setSavedVersion(*type, saved_version);
     }
 }
 

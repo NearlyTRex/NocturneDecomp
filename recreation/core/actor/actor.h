@@ -7,6 +7,7 @@
 #include <cstdint>
 #include <memory>
 #include <string_view>
+#include <unordered_map>
 #include <vector>
 
 namespace nocturne::core {
@@ -29,6 +30,11 @@ public:
     // A new actor of the named class; fatal when the class is unknown or can't be created.
     [[nodiscard]] std::unique_ptr<CDemonActor> createActorByName(std::string_view class_name) const;
     [[nodiscard]] std::size_t getActorClassCount() const;
+    // Forgets the versions a file saved its classes' fields in, so each reads as version 1.
+    void resetSavedVersions();
+    void setSavedVersion(const CDemonActorType &type, int saved_version);
+    // The version the file being read saved the class's fields in.
+    [[nodiscard]] int getSavedVersion(const CDemonActorType &type) const;
 
     void setRandomSeed(std::uint32_t seed_value);
     [[nodiscard]] float getRandomFloatFromRange(float min_value, float max_value);
@@ -48,6 +54,8 @@ private:
     common::CWatcomRandom &crt_random_;
     std::uint32_t random_seed_value_ = 0;
     std::vector<const CDemonActorType *> registrations_;
+    // Only the classes the file listed; the rest read as version 1.
+    std::unordered_map<const CDemonActorType *, int> saved_versions_;
 };
 
 } // namespace nocturne::core

@@ -24,7 +24,7 @@ struct SMissionOwners {
     const engine::CDosIo &dosio;
     const support::CNewMsg &messages;
     const CGame &game;
-    const CActor &actor;
+    CActor &actor;
     ILoadingScreen &loading_screen;
     CDemonSet &set;
     engine::CTexture &textures;
@@ -116,7 +116,8 @@ private:
     void buildSetActorList();
     [[nodiscard]] std::string generateUniqueActorName(std::string_view base_name) const;
     void clearMissionData();
-    void readActorTypes(common::CTextScanner &scanner) const;
+    // Notes the version each class's fields were saved in.
+    void readActorTypes(common::CTextScanner &scanner);
     // Unless a hero placeholder for the first hero is there, offers to turn a hero into one.
     void ensureHeroPlaceholder();
     // Puts the hero given, or a new one of the type, at the place for that hero and adds it to

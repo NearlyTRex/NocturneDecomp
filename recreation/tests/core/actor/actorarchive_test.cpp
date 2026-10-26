@@ -1,0 +1,208 @@
+#include "common/error/fatalerror.h"
+#include "common/math/vector3f.h"
+#include "common/random/watcomrandom.h"
+#include "common/text/textscanner.h"
+#include "core/actor/actor.h"
+#include "core/actor/actorarchive.h"
+#include "core/actor/demonactor.h"
+#include "core/game/game.h"
+#include "core/location.h"
+#include "tests/mocks/core/testactor.h"
+#include "tests/mocks/engine/mockgameclock.h"
+
+#include <gmock/gmock.h>
+#include <gtest/gtest.h>
+
+#include <format>
+#include <functional>
+#include <string>
+#include <string_view>
+
+namespace nocturne::core {
+namespace {
+
+using ::testing::StrEq;
+using ::testing::ThrowsMessage;
+
+// An actor Door whose fields are read from the text each test gives.
+class CActorArchiveTest : public ::testing::Test {
+protected:
+    CActorArchiveTest() {
+        actor_.setActorName("Door");
+    }
+
+    // Reads with a fresh archive over the text, then gives what is left of it.
+    std::string read(std::string_view text, const std::function<void(CActorArchive &)> &fields) {
+        common::CTextScanner scanner(text);
+        CActorArchive archive(scanner, actor_, classes_);
+        fields(archive);
+        return std::string(scanner.readLine());
+    }
+
+    void expectFatal(std::string_view text, const std::function<void(CActorArchive &)> &fields,
+                     std::string_view description, std::string_view type) {
+        EXPECT_THAT([&] { read(text, fields); },
+                    ThrowsMessage<common::CFatalError>(StrEq(std::format(
+                        "Error loading actor property.\nActor name: Door\nActor type: CTestLeaf\n"
+                        "Property description: {}\nProperty type: {}\n",
+                        description, type))))
+            << text;
+    }
+
+    ::testing::NiceMock<engine::MockGameClock> clock_;
+    CGame game_{clock_};
+    common::CWatcomRandom crt_;
+    CActor classes_{game_, crt_};
+    CTestActor actor_{kTestLeafType};
+};
+
+// Each value is followed by its description, which the read passes over to the next line.
+TEST_F(CActorArchiveTest, ALocationIsTheAreaThenThePoint) {
+    CLocation location;
+    EXPECT_EQ(read("3,1.5,-2,4    // location\nnext",
+                   [&](CActorArchive &archive) { archive.archiveLocation(location, "location"); }),
+              "next");
+    EXPECT_EQ(location.area_id, 3);
+    EXPECT_EQ(location.position.x, 1.5F);
+    EXPECT_EQ(location.position.y, -2.0F);
+    EXPECT_EQ(location.position.z, 4.0F);
+}
+
+// Pitch, heading and bank, which the vector holds as x, z and y.
+TEST_F(CActorArchiveTest, AnOrientationIsPitchHeadingAndBank) {
+    common::CVector3f orientation;
+    read("1,2,3\n", [&](CActorArchive &archive) { archive.archiveOrientation(orientation, "o"); });
+    EXPECT_EQ(orientation.x, 1.0F);
+    EXPECT_EQ(orientation.y, 3.0F);
+    EXPECT_EQ(orientation.z, 2.0F);
+}
+
+TEST_F(CActorArchiveTest, AVectorIsXYAndZ) {
+    common::CVector3f vector;
+    read("1,2,3\n", [&](CActorArchive &archive) { archive.archiveVector(vector, "v"); });
+    EXPECT_EQ(vector.x, 1.0F);
+    EXPECT_EQ(vector.y, 2.0F);
+    EXPECT_EQ(vector.z, 3.0F);
+}
+
+TEST_F(CActorArchiveTest, NumbersAreReadOneToALine) {
+    float value = 0.0F;
+    int count = 0;
+    EXPECT_EQ(read(" 0.25 // f\n -7\nnext",
+                   [&](CActorArchive &archive) {
+                       archive.archiveFloat(value, "f");
+                       archive.archiveInteger(count, "i");
+                   }),
+              "next");
+    EXPECT_EQ(value, 0.25F);
+    EXPECT_EQ(count, -7);
+}
+
+// The opening quote may come after any whitespace, lines included, and the quotes may hold
+// nothing.
+TEST_F(CActorArchiveTest, AStringIsQuoted) {
+    std::string text = "old";
+    read(" \n \"open door 2\" // e\n",
+         [&](CActorArchive &archive) { archive.archiveString(text, "e"); });
+    EXPECT_EQ(text, "open door 2");
+    read("\"\"\n", [&](CActorArchive &archive) { archive.archiveString(text, "e"); });
+    EXPECT_EQ(text, "");
+}
+
+TEST_F(CActorArchiveTest, AValueThatCantBeReadIsFatal) {
+    CLocation location;
+    common::CVector3f vector;
+    float value = 0.0F;
+    int count = 0;
+    expectFatal(
+        "1,2,3\n", [&](CActorArchive &archive) { archive.archiveLocation(location, "location"); },
+        "location", "4D location");
+    expectFatal(
+        "1,2\n", [&](CActorArchive &archive) { archive.archiveOrientation(vector, "orient"); },
+        "orient", "Euler PBH orientation");
+    expectFatal(
+        "1 2 3\n", [&](CActorArchive &archive) { archive.archiveVector(vector, "size"); }, "size",
+        "3D vector");
+    expectFatal(
+        "x\n", [&](CActorArchive &archive) { archive.archiveFloat(value, "speed"); }, "speed",
+        "Floating point value");
+    expectFatal(
+        "x\n", [&](CActorArchive &archive) { archive.archiveInteger(count, "count"); }, "count",
+        "Integer value");
+}
+
+TEST_F(CActorArchiveTest, AStringWithoutBothQuotesIsFatal) {
+    std::string text;
+    const auto read_string = [&](CActorArchive &archive) { archive.archiveString(text, "name"); };
+    for (const std::string_view broken : {"name\"\n", "\"", "\"name\n"}) {
+        expectFatal(broken, read_string, "name", "String");
+    }
+}
+
+// The original reached the end of the file looking for the line's end.
+TEST_F(CActorArchiveTest, AValueWithoutItsLineEndIsFatal) {
+    int count = 0;
+    expectFatal(
+        "5 // count", [&](CActorArchive &archive) { archive.archiveInteger(count, "count"); },
+        "count", "Integer value");
+}
+
+TEST_F(CActorArchiveTest, AFieldWithNoDescriptionIsUnknown) {
+    int count = 0;
+    expectFatal(
+        "x\n", [&](CActorArchive &archive) { archive.archiveInteger(count, ""); }, "(unknown)",
+        "Integer value");
+}
+
+TEST_F(CActorArchiveTest, ItGivesTheVersionTheFileSavedAClassIn) {
+    classes_.setSavedVersion(kTestBaseType, 4);
+    read("", [&](CActorArchive &archive) {
+        EXPECT_EQ(archive.getSavedVersion(kTestBaseType), 4);
+        EXPECT_EQ(archive.getSavedVersion(kTestLeafType), 1);
+    });
+}
+
+// An actor whose own fields are CDemonActor's.
+class CDemonActorArchiveTest : public CActorArchiveTest {
+protected:
+    CDemonActorArchiveTest() {
+        actor_.onArchive([this](CActorArchive &archive) { actor_.CDemonActor::archive(archive); });
+    }
+
+    void readAs(int saved_version, std::string_view fields) {
+        classes_.setSavedVersion(CDemonActor::kType, saved_version);
+        const std::string text =
+            std::format("{{ CTestLeaf \"Door\"\n{}}} CTestLeaf \"Door\"\n", fields);
+        common::CTextScanner scanner(text);
+        actor_.load(scanner, classes_);
+    }
+};
+
+TEST_F(CDemonActorArchiveTest, AnActorIsWhereItIsAndHowItCameToBe) {
+    readAs(7, "2,1,2,3 // location\n0.5,0.25,0.125 // orient\n1 // wasCreated\n"
+              "0.75 // createProb\n\"boom\" // createEvent\n");
+    EXPECT_EQ(actor_.getLocation().area_id, 2);
+    EXPECT_EQ(actor_.getLocation().position.z, 3.0F);
+    EXPECT_EQ(actor_.getOrientation().y, 0.125F);
+    EXPECT_EQ(actor_.getLifecycleState(), EActorLifecycleState::kCreated);
+    EXPECT_EQ(actor_.getCreateProbability(), 0.75F);
+    EXPECT_EQ(actor_.getCreateEvent(), "boom");
+}
+
+// Version 6 still held a field of view, before the creation fields.
+TEST_F(CDemonActorArchiveTest, AVersionSixActorHasAFieldOfViewToPassOver) {
+    readAs(6, "2,1,2,3\n0,0,0\n90 // fov\n2\n0.5\n\"none\"\n");
+    EXPECT_EQ(actor_.getLifecycleState(), EActorLifecycleState::kDestroyed);
+    EXPECT_EQ(actor_.getCreateProbability(), 0.5F);
+}
+
+TEST_F(CDemonActorArchiveTest, AnOlderActorKeepsTheCreationDefaults) {
+    readAs(5, "2,1,2,3\n0,0,0\n90\n");
+    EXPECT_EQ(actor_.getLocation().area_id, 2);
+    EXPECT_EQ(actor_.getLifecycleState(), EActorLifecycleState::kNotCreated);
+    EXPECT_EQ(actor_.getCreateProbability(), 1.0F);
+    EXPECT_EQ(actor_.getCreateEvent(), "none");
+}
+
+} // namespace
+} // namespace nocturne::core

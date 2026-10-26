@@ -22,6 +22,12 @@
 #include <string_view>
 
 namespace nocturne::core {
+namespace {
+
+// What a class the file doesn't list reads as.
+constexpr int kUnlistedVersion = 1;
+
+} // namespace
 
 // Each class's file registered it as the game started; here the ported classes are listed in
 // one place, and each port adds its own.
@@ -70,6 +76,21 @@ std::unique_ptr<CDemonActor> CActor::createActorByName(std::string_view class_na
 
 std::size_t CActor::getActorClassCount() const {
     return registrations_.size();
+}
+
+// The original set every class's version to 1; here a class not set reads as 1.
+// nocedit 0x0040c7f0
+void CActor::resetSavedVersions() {
+    saved_versions_.clear();
+}
+
+void CActor::setSavedVersion(const CDemonActorType &type, int saved_version) {
+    saved_versions_.insert_or_assign(&type, saved_version);
+}
+
+int CActor::getSavedVersion(const CDemonActorType &type) const {
+    const auto found = saved_versions_.find(&type);
+    return found == saved_versions_.end() ? kUnlistedVersion : found->second;
 }
 
 } // namespace nocturne::core

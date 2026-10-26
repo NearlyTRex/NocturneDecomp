@@ -35,12 +35,16 @@ using ::testing::ThrowsMessage;
 std::unique_ptr<CDemonActor> makeDoor();
 std::unique_ptr<CDemonActor> makeHero();
 std::unique_ptr<CDemonActor> makeSpot();
+std::unique_ptr<CDemonActor> makePlaced();
 
 const CDemonActorType kDoorType = makeActorType("CTestDoor", &kTestBaseType, &makeDoor, 2);
 // A kind of the game's hero class, which is what a hero placeholder is offered for.
 const CDemonActorType kHeroType = makeActorType("CTestHero", &CHero::kType, &makeHero, 1);
 const CDemonActorType kSpotType =
     makeActorType("CTestSpot", &CHeroPlaceholder::kType, &makeSpot, 1);
+// Of a class whose fields are only CDemonActor's.
+const CDemonActorType kPlacedType =
+    makeActorType("CTestPlaced", &CDemonActor::kType, &makePlaced, 1);
 
 // A hero placeholder whose body holds its hero index, as CHeroPlaceholder's can't be read yet.
 class CTestSpot : public CHeroPlaceholder {
@@ -80,6 +84,13 @@ std::unique_ptr<CDemonActor> makeSpot() {
     return std::make_unique<CTestSpot>();
 }
 
+std::unique_ptr<CDemonActor> makePlaced() {
+    auto placed = std::make_unique<CTestActor>(kPlacedType);
+    CTestActor &actor = *placed;
+    actor.onArchive([&actor](CActorArchive &archive) { actor.CDemonActor::archive(archive); });
+    return placed;
+}
+
 // An actor's start and end tags with nothing between.
 std::string body(std::string_view class_name, std::string_view name) {
     return std::format("{{ {} \"{}\"\n}} {} \"{}\"\n", class_name, name, class_name, name);
@@ -100,6 +111,7 @@ protected:
         actor_.registerActorClass(kDoorType);
         actor_.registerActorClass(kHeroType);
         actor_.registerActorClass(kSpotType);
+        actor_.registerActorClass(kPlacedType);
     }
 
     void read(const std::string &text, bool keep_assets = true) {
@@ -128,6 +140,18 @@ TEST_F(CDemonMissionLoadTest, TheFileGivesTheNameVersionAndActorsInOrder) {
     EXPECT_EQ(mission_.getMissionVersionNum(), 7);
     EXPECT_EQ(names(), (std::vector<std::string>{"Door 1", "Start"}));
     EXPECT_EQ(&mission_.getActors()[0]->getActorType(), &kDoorType);
+}
+
+// The table's versions are the ones each class's fields are read as, and a mission that doesn't
+// list a class reads it as version 1, whatever the mission before said.
+TEST_F(CDemonMissionLoadTest, TheClassTableSaysWhichVersionTheFieldsAreIn) {
+    const std::string fields = "1,0,0,0\n0,0,0\n";
+    read(mission("1\nCDemonActor 6\n", 1, 0, "CTestPlaced \"P\"\n",
+                 "{ CTestPlaced \"P\"\n" + fields + "90\n1\n0.5\n\"go\"\n} CTestPlaced \"P\"\n"));
+    EXPECT_EQ(mission_.getActors()[0]->getCreateEvent(), "go");
+    read(mission("0\n", 1, 0, "CTestPlaced \"P\"\n",
+                 "{ CTestPlaced \"P\"\n" + fields + "90\n} CTestPlaced \"P\"\n"));
+    EXPECT_EQ(mission_.getActors()[0]->getCreateEvent(), "none");
 }
 
 // A new mission replaces the actors and the name of the last.

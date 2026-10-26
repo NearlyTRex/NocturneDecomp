@@ -88,7 +88,6 @@ TEST_F(CEventListConditionTest, ExistsAsksWithoutFailing) {
     expectError("exists()", "Error parsing exists parameters.");
 }
 
-// An unset variable names no one for now.
 // An unset variable, or one whose actor is of another class, names no one for now.
 TEST_F(CEventListConditionTest, AnActorVariableNamesItsActor) {
     expectValid("isDead(@who) && isBroken(@who)");

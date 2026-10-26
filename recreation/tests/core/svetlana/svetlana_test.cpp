@@ -1,8 +1,7 @@
-#include "common/text/textscanner.h"
-#include "core/actor/actorarchive.h"
 #include "core/actor/demonactortype.h"
 #include "core/svetlana/svetlana.h"
 #include "tests/mocks/core/notportedcalls.h"
+#include "tests/mocks/core/testarchive.h"
 
 #include <gtest/gtest.h>
 
@@ -56,13 +55,12 @@ TEST(CSvetlana, ItsRecordIsAVersionOneHeroThatMissionsCanCreate) {
 
 TEST(CSvetlana, TheFunctionsNotPortedYetQuit) {
     CSvetlana hero;
-    common::CTextScanner scanner("");
-    CActorArchive archive(scanner);
+    CTestArchive archive(hero);
     const NotPortedCalls calls = {
         {"setup", [&] { hero.setup(); }},
         {"process", [&] { hero.process(0.0F); }},
         {"renderOpaque", [&] { static_cast<void>(hero.renderOpaque()); }},
-        {"archive", [&] { hero.archive(archive); }},
+        {"archive", [&] { hero.archive(archive.get()); }},
         {"getGrabbed", [&] { static_cast<void>(hero.getGrabbed(nullptr, 0)); }},
         {"processDamage", [&] { hero.processDamage(nullptr); }},
         {"drawWeapon", [&] { hero.drawWeapon(0); }},

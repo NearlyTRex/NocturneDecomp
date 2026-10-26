@@ -1,8 +1,7 @@
-#include "common/text/textscanner.h"
-#include "core/actor/actorarchive.h"
 #include "core/actor/demonactortype.h"
 #include "core/gabriela/gabriella.h"
 #include "tests/mocks/core/notportedcalls.h"
+#include "tests/mocks/core/testarchive.h"
 
 #include <gtest/gtest.h>
 
@@ -57,14 +56,13 @@ TEST(CGabriella, ItsRecordIsAVersionThreeHeroThatMissionsCanCreate) {
 
 TEST(CGabriella, TheFunctionsNotPortedYetQuit) {
     CGabriella hero;
-    common::CTextScanner scanner("");
-    CActorArchive archive(scanner);
+    CTestArchive archive(hero);
     const NotPortedCalls calls = {
         {"setup", [&] { hero.setup(); }},
         {"process", [&] { hero.process(0.0F); }},
         {"renderOpaque", [&] { static_cast<void>(hero.renderOpaque()); }},
         {"renderTransparent", [&] { static_cast<void>(hero.renderTransparent()); }},
-        {"archive", [&] { hero.archive(archive); }},
+        {"archive", [&] { hero.archive(archive.get()); }},
         {"processDamage", [&] { hero.processDamage(nullptr); }},
         {"getCarryObjToBodyXForm",
          [&] { static_cast<void>(hero.getCarryObjToBodyXForm(0, nullptr)); }},

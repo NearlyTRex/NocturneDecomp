@@ -1,8 +1,7 @@
-#include "common/text/textscanner.h"
-#include "core/actor/actorarchive.h"
 #include "core/actor/demonactortype.h"
 #include "core/moloch/moloch.h"
 #include "tests/mocks/core/notportedcalls.h"
+#include "tests/mocks/core/testarchive.h"
 
 #include <gtest/gtest.h>
 
@@ -51,13 +50,12 @@ TEST(CMoloch, ItsRecordIsAVersionOneHeroThatMissionsCanCreate) {
 
 TEST(CMoloch, TheFunctionsNotPortedYetQuit) {
     CMoloch hero;
-    common::CTextScanner scanner("");
-    CActorArchive archive(scanner);
+    CTestArchive archive(hero);
     const NotPortedCalls calls = {
         {"setup", [&] { hero.setup(); }},
         {"process", [&] { hero.process(0.0F); }},
         {"renderOpaque", [&] { static_cast<void>(hero.renderOpaque()); }},
-        {"archive", [&] { hero.archive(archive); }},
+        {"archive", [&] { hero.archive(archive.get()); }},
         {"drawWeapon", [&] { hero.drawWeapon(0); }},
         {"isWeaponDrawn", [&] { static_cast<void>(hero.isWeaponDrawn()); }},
     };

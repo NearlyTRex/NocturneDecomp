@@ -1,8 +1,7 @@
-#include "common/text/textscanner.h"
-#include "core/actor/actorarchive.h"
 #include "core/actor/demonactortype.h"
 #include "core/charactr/character.h"
 #include "tests/mocks/core/notportedcalls.h"
+#include "tests/mocks/core/testarchive.h"
 
 #include <gtest/gtest.h>
 
@@ -179,8 +178,7 @@ TEST(CCharacter, ItsRecordIsAVersionSixActorThatMissionsCantCreate) {
 
 TEST(CCharacter, TheFunctionsNotPortedYetQuit) {
     CTestCharacter character;
-    common::CTextScanner scanner("");
-    CActorArchive archive(scanner);
+    CTestArchive archive(character);
     const NotPortedCalls calls = {
         {"setup", [&] { character.setup(); }},
         {"renderOpaque", [&] { static_cast<void>(character.renderOpaque()); }},
@@ -194,7 +192,7 @@ TEST(CCharacter, TheFunctionsNotPortedYetQuit) {
         {"drop", [&] { character.drop(nullptr, nullptr); }},
         {"spawnFlies", [&] { character.spawnFlies(0, 0.0F); }},
         {"calculateChecksum", [&] { character.calculateChecksum(nullptr); }},
-        {"archive", [&] { character.archive(archive); }},
+        {"archive", [&] { character.archive(archive.get()); }},
         {"applyDamage", [&] { character.applyDamage(0, 0.0F); }},
         {"kill", [&] { character.kill(0, nullptr, 0.0F); }},
         {"isInvulnerable", [&] { static_cast<void>(character.isInvulnerable()); }},

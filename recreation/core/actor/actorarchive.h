@@ -1,19 +1,43 @@
 #pragma once
 
 #include "common/fwd.h"
+#include "core/fwd.h"
+
+#include <string>
+#include <string_view>
 
 namespace nocturne::core {
 
 // What an actor's archive() reads its fields from: the mission or save file it is loaded from,
-// which the original kept in actor.cpp's globals while an actor was read.
+// which the original kept in actor.cpp's globals while an actor was read. Each field is a value
+// and its description, which runs to the end of the line; a field that can't be read is fatal.
 class CActorArchive {
 public:
-    explicit CActorArchive(common::CTextScanner &scanner);
+    CActorArchive(common::CTextScanner &scanner, const CDemonActor &actor,
+                  const CActor &actor_classes);
 
     [[nodiscard]] common::CTextScanner &getScanner() const;
+    // The version the file saved the class's fields in.
+    [[nodiscard]] int getSavedVersion(const CDemonActorType &type) const;
+
+    // "%d,%f,%f,%f": the area, then the point.
+    void archiveLocation(CLocation &location, std::string_view description);
+    // "%f,%f,%f": pitch, heading and bank, into x, z and y.
+    void archiveOrientation(common::CVector3f &orientation, std::string_view description);
+    void archiveVector(common::CVector3f &vector, std::string_view description);
+    void archiveFloat(float &value, std::string_view description);
+    void archiveInteger(int &value, std::string_view description);
+    // Quoted, after any whitespace; the quotes may hold nothing.
+    void archiveString(std::string &value, std::string_view description);
 
 private:
+    void archiveDescription(std::string_view type, std::string_view description);
+    [[noreturn]] void quitOnPropertyError(std::string_view type,
+                                          std::string_view description) const;
+
     common::CTextScanner &scanner_;
+    const CDemonActor &actor_;
+    const CActor &actor_classes_;
 };
 
 } // namespace nocturne::core

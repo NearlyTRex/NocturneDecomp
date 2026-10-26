@@ -1,8 +1,7 @@
-#include "common/text/textscanner.h"
-#include "core/actor/actorarchive.h"
 #include "core/actor/demonactortype.h"
 #include "core/stranger/stranger.h"
 #include "tests/mocks/core/notportedcalls.h"
+#include "tests/mocks/core/testarchive.h"
 
 #include <gtest/gtest.h>
 
@@ -68,8 +67,7 @@ TEST(CStranger, ItsRecordIsAVersionNineHeroThatMissionsCanCreate) {
 
 TEST(CStranger, TheFunctionsNotPortedYetQuit) {
     CStranger hero;
-    common::CTextScanner scanner("");
-    CActorArchive archive(scanner);
+    CTestArchive archive(hero);
     const NotPortedCalls calls = {
         {"setup", [&] { hero.setup(); }},
         {"process", [&] { hero.process(0.0F); }},
@@ -77,7 +75,7 @@ TEST(CStranger, TheFunctionsNotPortedYetQuit) {
         {"renderTransparent", [&] { static_cast<void>(hero.renderTransparent()); }},
         {"setPositionAndOrientation", [&] { hero.setPositionAndOrientation(nullptr, nullptr); }},
         {"drop", [&] { hero.drop(nullptr, nullptr); }},
-        {"archive", [&] { hero.archive(archive); }},
+        {"archive", [&] { hero.archive(archive.get()); }},
         {"getGrabbed", [&] { static_cast<void>(hero.getGrabbed(nullptr, 0)); }},
         {"processDamage", [&] { hero.processDamage(nullptr); }},
         {"getDeathState", [&] { static_cast<void>(hero.getDeathState()); }},

@@ -225,8 +225,4 @@ void CDemonActor::calculateChecksum(std::uint32_t * /*out_crc*/) {
     notPorted("calculateChecksum");
 }
 
-void CDemonActor::archive(CActorArchive & /*actor_archive*/) {
-    notPorted("archive");
-}
-
 } // namespace nocturne::core

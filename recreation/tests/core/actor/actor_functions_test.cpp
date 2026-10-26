@@ -15,14 +15,9 @@ namespace {
 TEST(CoreActorFunctions, PublicInterface) {
     static_assert(std::is_same_v<decltype(&deleteActor), void (*)(CDemonActor *)>);
     static_assert(std::is_same_v<decltype(&adjustIndentationLevel), int (*)(int)>);
-    static_assert(std::is_same_v<decltype(&archiveVector), void (*)(common::CVector3f *, char *)>);
-    static_assert(std::is_same_v<decltype(&archiveOrientation), void (*)(COrientation *, char *)>);
     static_assert(
         std::is_same_v<decltype(&archiveQuaternion), void (*)(common::CQuaternion4f *, char *)>);
-    static_assert(std::is_same_v<decltype(&archiveString), void (*)(char *, char *)>);
     static_assert(std::is_same_v<decltype(&archiveLocalizedString), void (*)(char *, char *)>);
-    static_assert(std::is_same_v<decltype(&archiveFloat), void (*)(float *, char *)>);
-    static_assert(std::is_same_v<decltype(&archiveInteger), void (*)(int *, char *)>);
     static_assert(std::is_same_v<decltype(&archiveActor), void (*)(CDemonActor **, char *)>);
     static_assert(std::is_same_v<decltype(&archiveKeyframedModelInstance),
                                  void (*)(CKeyFramedModelInstance *, char *)>);
@@ -42,7 +37,6 @@ TEST(CoreActorFunctions, PublicInterface) {
     static_assert(
         std::is_same_v<decltype(&castToClassHash), CDemonActor *(*)(CDemonActor *, std::uint32_t)>);
     static_assert(std::is_same_v<decltype(&syncActorTypeIDs), void (*)()>);
-    static_assert(std::is_same_v<decltype(&resetActorTypeInfo), void (*)()>);
     static_assert(std::is_same_v<decltype(&normalizeAngleToPi), float (*)(float)>);
     static_assert(
         std::is_same_v<decltype(&crc32ProcessByte), void (*)(std::uint32_t *, std::uint8_t)>);
