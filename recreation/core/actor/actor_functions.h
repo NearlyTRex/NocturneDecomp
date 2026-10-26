@@ -12,7 +12,6 @@ namespace nocturne::core {
 void deleteActor(CDemonActor *actor_ptr);
 int adjustIndentationLevel(int indent_delta);
 void archiveQuaternion(common::CQuaternion4f *quat_ptr, char *property_type);
-void archiveKeyframedModelInstance(CKeyFramedModelInstance *model_ptr, char *property_name);
 void archiveDeformableModelInstance(CDeformableModelInstance *model_ptr, char *property_name);
 void archiveBox(CBox *box_ptr, char *property_name);
 void archiveRules(CRuleList *rules, char *property_name);

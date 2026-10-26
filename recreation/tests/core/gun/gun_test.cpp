@@ -1,8 +1,11 @@
+#include "core/actor/demonactor.h"
 #include "core/actor/demonactortype.h"
 #include "core/gun/gun.h"
+#include "tests/mocks/core/notportedcalls.h"
 
 #include <gtest/gtest.h>
 
+#include <memory>
 #include <type_traits>
 
 namespace nocturne::core {
@@ -31,11 +34,27 @@ TEST(CGun, PublicInterface) {
     static_assert(std::is_same_v<decltype(&CGun::getDamage), float (CGun::*)()>);
 }
 
-TEST(CGun, ItsRecordIsVersion1UnderCWeapon) {
+TEST(CGun, ItsRecordIsAVersion1WeaponThatMissionsCanCreate) {
     EXPECT_EQ(CGun::kType.class_name, "CGun");
     EXPECT_EQ(CGun::kType.parent_type, &CWeapon::kType);
-    EXPECT_EQ(CGun::kType.factory_func, nullptr);
     EXPECT_EQ(CGun::kType.latest_version, 1);
+    ASSERT_NE(CGun::kType.factory_func, nullptr);
+    const std::unique_ptr<CDemonActor> gun = CGun::kType.factory_func();
+    EXPECT_EQ(&gun->getActorType(), &CGun::kType);
+}
+
+TEST(CGun, AGunIsTheGatlingModel) {
+    const CGun gun;
+    EXPECT_EQ(gun.getModel().getModelName(), "gat.kfm");
+}
+
+TEST(CGun, TheFunctionsNotPortedYetQuit) {
+    CGun gun;
+    const NotPortedCalls calls = {
+        {"fire", [&] { static_cast<void>(gun.fire()); }},
+        {"getDamage", [&] { static_cast<void>(gun.getDamage()); }},
+    };
+    expectEachQuitsNotPorted("CGun", calls);
 }
 
 } // namespace

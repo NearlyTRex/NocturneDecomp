@@ -17,8 +17,6 @@ TEST(CoreActorFunctions, PublicInterface) {
     static_assert(std::is_same_v<decltype(&adjustIndentationLevel), int (*)(int)>);
     static_assert(
         std::is_same_v<decltype(&archiveQuaternion), void (*)(common::CQuaternion4f *, char *)>);
-    static_assert(std::is_same_v<decltype(&archiveKeyframedModelInstance),
-                                 void (*)(CKeyFramedModelInstance *, char *)>);
     static_assert(std::is_same_v<decltype(&archiveDeformableModelInstance),
                                  void (*)(CDeformableModelInstance *, char *)>);
     static_assert(std::is_same_v<decltype(&archiveBox), void (*)(CBox *, char *)>);

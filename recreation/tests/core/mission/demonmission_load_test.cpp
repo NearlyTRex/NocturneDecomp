@@ -4,11 +4,14 @@
 #include "core/actor/actorarchive.h"
 #include "core/actor/demonactor.h"
 #include "core/actor/demonactortype.h"
+#include "core/ammo/ammo.h"
+#include "core/gun/gun.h"
 #include "core/hero/hero.h"
 #include "core/hero/heroplaceholder.h"
 #include "core/inv/inventory.h"
 #include "core/location.h"
 #include "core/mission/demonmission.h"
+#include "core/weapon/weaponstate.h"
 #include "engine/keys/inputcodetype.h"
 #include "platform/mrgltexturebasic.h"
 #include "tests/mocks/core/missionfixture.h"
@@ -449,6 +452,38 @@ TEST_F(CDemonMissionLoadTest, ClaimingTheItemsOutOfOrderIsFatal) {
 TEST_F(CDemonMissionLoadTest, ClaimingMoreItemsThanListedIsFatal) {
     expectFatal(mission("0\n", 1, 0, "CTestCarrier \"C\"\n", carrierBody({"a"})),
                 "CDemonMission::getNextLoadedInventoryActor - no more!");
+}
+
+// The ammunition and gun a hero carries in the shipped missions, as ACT1 saves them.
+TEST_F(CDemonMissionLoadTest, TheShippedMissionsItemsAreRead) {
+    const std::string demon_fields = "\t\t\t0,0,0,0    // location\n\t\t\t0,0,0    // orient\n"
+                                     "\t\t\t0    // wasCreated\n\t\t\t1    // createProb\n"
+                                     "\t\t\t\"none\"    // createEvent\n";
+    const std::string carrier =
+        "{ CTestCarrier \"C\"\n\t{ // Inventory\n\t\t// fileVersion\n\t\t2\n\t\t// "
+        "itemCount\n\t\t2\n"
+        "\t\t// currentWeapon\n\t\t1\n\t\t// battery strength\n\t\t100.000000\n"
+        "\t\t// actor name list\n\t\tCAmmo \"Some_ammo\"\n\t\tCGun \"Your_weapon\"\n"
+        "\t\t// actor data list\n\t\t{ CAmmo \"Some_ammo\"\n" +
+        demon_fields +
+        "\t\t\t\"gatbullet.kfm\"    // modelName\n\t\t\t\"CGun\"    // weaponClassName\n"
+        "\t\t\t20    // ammoCount\n\t\t\t0    // ammoType\n\t\t} CAmmo \"Some_ammo\"\n"
+        "\t\t{ CGun \"Your_weapon\"\n" +
+        demon_fields +
+        "\t\t\t\"gat.kfm\"    // modelName\n\t\t\t\"C\"\t\t// carriedByActor\n"
+        "\t\t\t1    // weaponState\n\t\t\t20    // ammoCount\n\t\t\t0    // ammoType\n"
+        "\t\t\t0    // simTimer\n\t\t} CGun \"Your_weapon\"\n\t}\n} CTestCarrier \"C\"\n";
+    read(mission("4\nCDemonActor 7\nCWeapon 7\nCGun 1\nCAmmo 1\n", 1, 2,
+                 "CTestCarrier \"C\"\nCAmmo \"Some_ammo\"\nCGun \"Your_weapon\"\n", carrier));
+    const auto &holder = dynamic_cast<const CTestCarrier &>(*mission_.getActors()[0]);
+    const CInventory &inventory = holder.getInventory();
+    ASSERT_EQ(inventory.getItems().size(), 2U);
+    const auto &ammo = dynamic_cast<const CAmmo &>(*inventory.getItems()[0]);
+    EXPECT_EQ(ammo.getModel().getModelName(), "gatbullet.kfm");
+    auto &gun = dynamic_cast<CGun &>(*inventory.getItems()[1]);
+    EXPECT_EQ(inventory.getSelectedWeapon(), &gun);
+    EXPECT_EQ(gun.getCarrier(), &holder);
+    EXPECT_EQ(gun.getWeaponState(), EWeaponState::kInInventory);
 }
 
 // Before version 6 a mission listed no carried items, so an inventory makes its own.

@@ -3,11 +3,14 @@
 #include "core/actor/actor.h"
 #include "core/actor/demonactor.h"
 #include "core/actor/demonactortype.h"
+#include "core/ammo/ammo.h"
 #include "core/baron/baron.h"
+#include "core/baron/baronweapon.h"
 #include "core/charactr/character.h"
 #include "core/colonel/colonel.h"
 #include "core/gabriela/gabriella.h"
 #include "core/game/game.h"
+#include "core/gun/gun.h"
 #include "core/haystack/haystack.h"
 #include "core/hero/hero.h"
 #include "core/hero/heroplaceholder.h"
@@ -16,6 +19,7 @@
 #include "core/scat/scat.h"
 #include "core/stranger/stranger.h"
 #include "core/svetlana/svetlana.h"
+#include "core/weapon/weapon.h"
 #include "tests/mocks/core/testactor.h"
 #include "tests/mocks/engine/mockgameclock.h"
 
@@ -80,7 +84,11 @@ TEST_F(CActorRegistryTest, ThePortedClassesAreRegistered) {
     EXPECT_EQ(actor_.getActorClassByName("CHaystack"), &CHaystack::kType);
     EXPECT_EQ(actor_.getActorClassByName("CColonel"), &CColonel::kType);
     EXPECT_EQ(actor_.getActorClassByName("CMoloch"), &CMoloch::kType);
-    EXPECT_EQ(actor_.getActorClassCount(), 13U);
+    EXPECT_EQ(actor_.getActorClassByName("CWeapon"), &CWeapon::kType);
+    EXPECT_EQ(actor_.getActorClassByName("CGun"), &CGun::kType);
+    EXPECT_EQ(actor_.getActorClassByName("CBaronWeapon"), &CBaronWeapon::kType);
+    EXPECT_EQ(actor_.getActorClassByName("CAmmo"), &CAmmo::kType);
+    EXPECT_EQ(actor_.getActorClassCount(), 17U);
 }
 
 // Only the letters and digits count, in either case.

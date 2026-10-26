@@ -24,11 +24,11 @@ functions don't count as done. Sizes are in instructions.
 | 8 | `renderMenuAndGetChoice`, `CMoon::free`, `CSound::reset`, `CEditorTools::showFileSelectionDialog` | 8 | 63 | 5314 | 60 | 3 | 95.2% |
 | 9 | `CPickList::enableItem`, `CEventList::resetGameFlags`, `CLevelLoader::show`, `CDemonMission::load` | 15 | 56 | 3298 | 28 | 9 | 50.0% |
 | 10 | `CDemonMission::createHeros`, `CDemonMission::prepareAllActors`, `CEventList::reset`, `CDemonMission::loadSet` | 15 | 42 | 5112 | 32 | 9 | 76.1% |
-| 11 | `CScript::loadScript` | 63 | 579 | 67400 | 37 | 28 | 6.3% |
+| 11 | `CScript::loadScript` | 63 | 579 | 67400 | 38 | 29 | 6.5% |
 | 12 | `CDemonMission::loadScript`, `CScript::executeInitSection`, `CDemonMission::startMission`, `CDemonMission::buildActiveSetActorList`, `CConsole::reset`, `CEditorTools::displayMemoryDiagnostics`, `CGame::setGameRes`, `CDemonLight::init`, `CDemonSet::initScene` | 12 | 26 | 1658 | 2 | 0 | 7.6% |
 | 13 | `CFireEffect::init`, `CDemonSet::loadMasterLightStates`, `CDemonSet::setGamma`, `CGame::clearOverlay`, `CGame::loadAssets` | 7 | 27 | 735 | 0 | 0 | 0.0% |
 | 14 | `CNetGame::syncPlayers`, `CNetGame::processServerFrame`, `CLevelLoader::cleanup`, `CKeys::toggleInputMask`, `CGame::processHotkeys` | 17 | 51 | 5302 | 1 | 0 | 1.9% |
-| 15 | `CGame::updateStatusDisplays`, `CGame::processFudge`, `CGame::playerControls`, `CGame::processFrame` | 43 | 189 | 28837 | 4 | 0 | 2.1% |
+| 15 | `CGame::updateStatusDisplays`, `CGame::processFudge`, `CGame::playerControls`, `CGame::processFrame` | 43 | 189 | 28837 | 5 | 1 | 2.6% |
 | 16 | `CGame::setScreenResolutionAndDisplayFangs`, `showOptionsScreen`, `CScript::skipCinematic`, `CGame::showFullscreenBitmap`, `CDemonMission::countDamageableEnemies`, `freeInventory`, `CGame::runGameSession`, `CGame::displayActStats` | 10 | 25 | 6938 | 1 | 0 | 4.0% |
 | 17 | `CGame::finishAct`, `CDemonMission::run`, `CGame::loadGame`, `CGame::showChapterSelect`, `showDeveloperToolsMenu` | 12 | 26 | 3707 | 4 | 1 | 15.3% |
 | 18 | `enterMainGameMenu`, `finalizeGameSystems` | 11 | 13 | 539 | 3 | 0 | 23.0% |
@@ -36,17 +36,17 @@ functions don't count as done. Sizes are in instructions.
 | 20 | Not reached from startup: `support/` | 2 | 24 | 593 | 3 | 1 | 12.5% |
 | 21 | Not reached from startup: `cockpit/` | 4 | 178 | 11527 | 0 | 0 | 0.0% |
 | 22 | Not reached from startup: `shape/` | 2 | 42 | 3178 | 4 | 2 | 9.5% |
-| 23 | Not reached from startup: `core/` (part 1 of 9) | 18 | 292 | 16011 | 25 | 4 | 8.5% |
+| 23 | Not reached from startup: `core/` (part 1 of 9) | 18 | 292 | 16011 | 32 | 6 | 10.9% |
 | 24 | Not reached from startup: `core/` (part 2 of 9) | 11 | 277 | 24965 | 18 | 4 | 6.4% |
 | 25 | Not reached from startup: `core/` (part 3 of 9) | 24 | 278 | 24134 | 20 | 9 | 7.1% |
 | 26 | Not reached from startup: `core/` (part 4 of 9) | 18 | 300 | 20148 | 40 | 5 | 13.3% |
-| 27 | Not reached from startup: `core/` (part 5 of 9) | 21 | 294 | 20910 | 32 | 6 | 10.8% |
+| 27 | Not reached from startup: `core/` (part 5 of 9) | 21 | 294 | 20910 | 35 | 7 | 11.9% |
 | 28 | Not reached from startup: `core/` (part 6 of 9) | 18 | 282 | 21809 | 26 | 7 | 9.2% |
 | 29 | Not reached from startup: `core/` (part 7 of 9) | 18 | 263 | 22721 | 22 | 9 | 8.3% |
 | 30 | Not reached from startup: `core/` (part 8 of 9) | 20 | 300 | 31826 | 29 | 2 | 9.6% |
-| 31 | Not reached from startup: `core/` (part 9 of 9) | 5 | 111 | 10905 | 7 | 1 | 6.3% |
+| 31 | Not reached from startup: `core/` (part 9 of 9) | 5 | 111 | 10905 | 10 | 2 | 9.0% |
 | 32 | Not reached from startup: `wincore/` | 2 | 11 | 482 | 4 | 0 | 36.3% |
-| | **All** | | **4479** | **402407** | **796** | **145** | **17.7%** |
+| | **All** | | **4479** | **402407** | **811** | **151** | **18.1%** |
 
 ## Step 0: Math value types
 
@@ -1196,7 +1196,7 @@ functions don't count as done. Sizes are in instructions.
 - free functions
   - [ ] `convertDirectionVectorToEulerAngles` 0x005e7830 (58)
 
-### `core/dmodel.cpp` (9 functions, 549 instructions, 0 done, 0 partial)
+### `core/dmodel.cpp` (9 functions, 549 instructions, 1 done, 1 partial)
 - class `CKeyFramedModel`
   - [ ] `captureTextures` 0x00478190 (25)
   - [ ] `getFloorHeight` 0x00478740 (81)
@@ -1205,8 +1205,9 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `loadModel` 0x00478c00 (51)
 - class `CKeyFramedModelInstance`
   - [ ] `preCache` 0x00478d60 (8)
-  - [ ] `init` 0x00478d00 (8)
-  - [ ] `setModelName` 0x00478dd0 (24)
+  - [x] `init` 0x00478d00 (8)
+  - [~] `setModelName` 0x00478dd0 (24)
+    - deferred: letting go of the model loaded, with getModelPtr
   - [ ] `getModelPtr` 0x00478d80 (21)
   - [ ] `prepareForRendering` 0x00478d20 (18)
 
@@ -2363,13 +2364,14 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `promptForValidFloat` 0x004a00f0 (91)
   - [ ] `showCheatInputDialog` 0x004a0400 (16)
 
-### `core/dmodel.cpp` (1 functions, 10 instructions, 0 done, 0 partial)
+### `core/dmodel.cpp` (1 functions, 10 instructions, 0 done, 1 partial)
 - class `CKeyFramedModelInstance`
-  - [ ] `ctor` 0x00478ce0 (10)
+  - [~] `ctor` 0x00478ce0 (10)
+    - deferred: starting with no model loaded, with getModelPtr
 
-### `core/ammo.cpp` (1 functions, 39 instructions, 0 done, 0 partial)
+### `core/ammo.cpp` (1 functions, 39 instructions, 1 done, 0 partial)
 - class `CAmmo`
-  - [ ] `ctor` 0x00410dc0 (39)
+  - [x] `ctor` 0x00410dc0 (39)
 
 ### `core/gasmask.cpp` (1 functions, 20 instructions, 0 done, 0 partial)
 - class `CGasMask`
@@ -3492,7 +3494,7 @@ functions don't count as done. Sizes are in instructions.
 
 ## Step 23: Not reached from startup: `core/` (part 1 of 9)
 
-### `core/actor.cpp` (19 functions, 1173 instructions, 6 done, 3 partial)
+### `core/actor.cpp` (19 functions, 1173 instructions, 6 done, 4 partial)
 - free functions
   - [x] `registerActorClass` 0x0040c2e0 (73)
   - [x] `staticInit` 0x00408320 (9)
@@ -3500,7 +3502,8 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `copyToActorDebugBuffer` 0x0040ac30 (27)
   - [ ] `archiveQuaternion` 0x0040b520 (54)
   - [x] `archiveLocalizedString` 0x0040b6e0 (54)
-  - [ ] `archiveKeyframedModelInstance` 0x0040b8f0 (44)
+  - [~] `archiveKeyframedModelInstance` 0x0040b8f0 (44)
+    - deferred: writing the model's name to a save file, with CDemonActor::save
   - [ ] `archiveDeformableModelInstance` 0x0040b970 (44)
   - [~] `archiveMotionState` 0x0040b9f0 (81)
     - deferred: writing the motion to a save file, with CMotionController::save
@@ -3518,19 +3521,19 @@ functions don't count as done. Sizes are in instructions.
   - [x] `copy` 0x00410440 (26, compiler-generated)
   - [x] `dtor` 0x00410490 (2, compiler-generated)
 
-### `core/ammo.cpp` (12 functions, 174 instructions, 1 done, 0 partial)
+### `core/ammo.cpp` (12 functions, 174 instructions, 5 done, 0 partial)
 - free functions
-  - [ ] `factoryFuncAmmo` 0x00410d80 (12)
+  - [x] `factoryFuncAmmo` 0x00410d80 (12)
   - [x] `staticInit` 0x00410d50 (9)
 - class `CAmmo`
-  - [ ] `getActorType` 0x00410db0 (2)
+  - [x] `getActorType` 0x00410db0 (2)
   - [ ] `process` 0x00410e70 (1)
   - [ ] `renderOpaque` 0x00410e80 (41)
   - [ ] `getBoundingBox` 0x00410ef0 (28)
-  - [ ] `archive` 0x00410f40 (27)
+  - [x] `archive` 0x00410f40 (27)
   - [ ] `getCollisionType` 0x00410fa0 (2)
   - [ ] `canPickup` 0x004111c0 (9)
-  - [ ] `dtor` 0x004114e0 (31)
+  - [x] `dtor` 0x004114e0 (31)
   - [ ] `setup` 0x00410e50 (8)
   - [ ] `setAmmoCount` 0x004111b0 (4)
 
@@ -3601,7 +3604,7 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `factoryFuncBackgroundActor` 0x00412770 (12)
   - [x] `staticInit` 0x00412740 (9)
 
-### `core/baron.cpp` (30 functions, 1554 instructions, 4 done, 1 partial)
+### `core/baron.cpp` (30 functions, 1554 instructions, 7 done, 2 partial)
 - class `CBaron`
   - [~] `ctor` 0x00412bc0 (63)
     - deferred: loading the model baron.dfm, with CDeformableModelInstance::init
@@ -3623,11 +3626,12 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `attachToOwner` 0x00413470 (96)
 - free functions
   - [x] `factoryFuncBaron` 0x00412b80 (12)
-  - [ ] `factoryFuncBaronWeapon` 0x00413d00 (12)
+  - [x] `factoryFuncBaronWeapon` 0x00413d00 (12)
   - [x] `staticInit` 0x00412b20 (20)
 - class `CBaronWeapon`
-  - [ ] `ctor` 0x00413d40 (12)
-  - [ ] `getActorType` 0x00413d30 (2)
+  - [~] `ctor` 0x00413d40 (12)
+    - deferred: the defaults the constructor gives the weapon type, firing and light fields, and the Baron it belongs to, with the steps that read them
+  - [x] `getActorType` 0x00413d30 (2)
   - [ ] `findOrCreateBaron` 0x00413f20 (65)
   - [ ] `process` 0x00413dc0 (10)
   - [ ] `renderOpaque` 0x00413de0 (5)
@@ -3635,7 +3639,7 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `isReadyToFire` 0x00413e30 (30)
   - [ ] `renderAimBeam` 0x00413e60 (1)
   - [ ] `setWeaponState` 0x00413e90 (49)
-  - [ ] `dtor` 0x004140b0 (31)
+  - [x] `dtor` 0x004140b0 (31)
   - [ ] `setup` 0x00413da0 (8)
 
 ### `core/barrier.cpp` (11 functions, 219 instructions, 1 done, 0 partial)
@@ -4996,15 +5000,16 @@ functions don't count as done. Sizes are in instructions.
   - [x] `staticInit` 0x004eeb90 (9)
   - [x] `openFileWithExtension` 0x004eebc0 (90)
 
-### `core/gun.cpp` (7 functions, 583 instructions, 1 done, 0 partial)
+### `core/gun.cpp` (7 functions, 583 instructions, 4 done, 1 partial)
 - class `CGun`
-  - [ ] `getActorType` 0x004f02e0 (2)
+  - [x] `getActorType` 0x004f02e0 (2)
   - [ ] `fire` 0x004f0350 (498)
   - [ ] `getDamage` 0x004f0b20 (11)
-  - [ ] `dtor` 0x004f0b50 (31)
-  - [ ] `ctor` 0x004f02f0 (20)
+  - [x] `dtor` 0x004f0b50 (31)
+  - [~] `ctor` 0x004f02f0 (20)
+    - deferred: the defaults the constructor gives the firing fields, with fire
 - free functions
-  - [ ] `factoryFuncGun` 0x004f02b0 (12)
+  - [x] `factoryFuncGun` 0x004f02b0 (12)
   - [x] `staticInit` 0x004f0280 (9)
 
 ### `core/haystack.cpp` (15 functions, 1231 instructions, 4 done, 1 partial)
@@ -6493,22 +6498,23 @@ functions don't count as done. Sizes are in instructions.
 
 ## Step 31: Not reached from startup: `core/` (part 9 of 9)
 
-### `core/weapon.cpp` (25 functions, 852 instructions, 3 done, 0 partial)
+### `core/weapon.cpp` (25 functions, 852 instructions, 6 done, 1 partial)
 - class `CWeapon`
-  - [ ] `ctor` 0x005ede70 (42)
+  - [~] `ctor` 0x005ede70 (42)
+    - deferred: the physics box, and the defaults the constructor gives the weight, collision, firing, light, muzzle flash and rendering fields, with the steps that read them
   - [ ] `process` 0x005ee110 (95)
   - [ ] `renderOpaque` 0x005ee030 (48)
   - [ ] `setWeaponState` 0x005ee640 (4)
-  - [ ] `dtor` 0x005edf80 (38)
+  - [x] `dtor` 0x005edf80 (38)
   - [ ] `fire` 0x005ee6e0 (11)
-  - [ ] `archive` 0x005ee250 (57)
+  - [x] `archive` 0x005ee250 (57)
   - [ ] `getBoundingBox` 0x005ee0c0 (28)
   - [ ] `getCollisionType` 0x005ee330 (2)
   - [ ] `canPickup` 0x005ee340 (58)
   - [ ] `pickup` 0x005ee3e0 (4)
   - [ ] `setupPhysicsBox` 0x005ee740 (74)
   - [ ] `onDropped` 0x005ee3f0 (47)
-  - [ ] `getCarrier` 0x005ee490 (3)
+  - [x] `getCarrier` 0x005ee490 (3)
   - [ ] `updateLighting` 0x005ee4a0 (114)
   - [ ] `onPickup` 0x005ee650 (7)
   - [ ] `getMuzzlePoint` 0x005ee670 (35)

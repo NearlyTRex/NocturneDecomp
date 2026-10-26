@@ -11,17 +11,37 @@
 
 #include <gmock/gmock.h>
 
+#include <string_view>
+
 namespace nocturne::core {
 
-// An archive over no text for the actor, for the archive() functions that quit before reading.
+// An archive reading the actor's fields from the text, which must outlive it, with the ported
+// classes registered and a lookup that finds no actors.
 class CTestArchive {
 public:
-    explicit CTestArchive(const CDemonActor &actor)
-        : archive_(scanner_, actor,
-                   {.actor_classes = classes_, .actors = actors_, .crt_random = crt_}) {}
+    explicit CTestArchive(const CDemonActor &actor, std::string_view text = "")
+        : scanner_(text),
+          archive_(scanner_, actor,
+                   {.actor_classes = classes_, .actors = actors_, .crt_random = crt_}) {
+        ON_CALL(actors_, loadActor)
+            .WillByDefault([](common::CTextScanner &reference, const CDemonActor &,
+                              std::string_view) -> CDemonActor * {
+                reference.skipLine();
+                return nullptr;
+            });
+    }
 
     [[nodiscard]] CActorArchive &get() {
         return archive_;
+    }
+
+    // Where the test says which version each class's fields are in.
+    [[nodiscard]] CActor &getClasses() {
+        return classes_;
+    }
+
+    [[nodiscard]] common::CTextScanner &getScanner() {
+        return scanner_;
     }
 
 private:
@@ -30,7 +50,7 @@ private:
     common::CWatcomRandom crt_;
     CActor classes_{game_, crt_};
     ::testing::NiceMock<MockActorLookup> actors_;
-    common::CTextScanner scanner_{""};
+    common::CTextScanner scanner_;
     CActorArchive archive_;
 };
 

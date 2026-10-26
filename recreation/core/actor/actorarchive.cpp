@@ -8,6 +8,7 @@
 #include "core/actor/actorlookup.h"
 #include "core/actor/demonactor.h"
 #include "core/cloth/clothlist.h"
+#include "core/dmodel/keyframedmodelinstance.h"
 #include "core/location.h"
 #include "core/motion/motioncontroller.h"
 #include "core/skeleton/deformablemodelinstance.h"
@@ -154,6 +155,15 @@ void CActorArchive::archiveClothList(CClothList &cloth_list, std::string_view de
     }
     archiveDescription("Cloth list closing brace", description);
     cloth_list.setFilenames(std::move(filenames));
+}
+
+// deferred: writing the model's name to a save file, with CDemonActor::save
+// nocedit 0x0040b8f0
+void CActorArchive::archiveKeyframedModelInstance(CKeyFramedModelInstance &model,
+                                                  std::string_view description) {
+    std::string filename;
+    archiveString(filename, description);
+    model.setModelName(filename);
 }
 
 // deferred: writing the motion to a save file, with CMotionController::save

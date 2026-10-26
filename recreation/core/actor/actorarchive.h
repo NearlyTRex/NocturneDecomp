@@ -45,6 +45,9 @@ public:
     void archiveActor(CDemonActor *&actor, std::string_view description);
     // A line, the count, then each file name quoted on its own line, and a closing line.
     void archiveClothList(CClothList &cloth_list, std::string_view description);
+    // The model's file name, quoted.
+    void archiveKeyframedModelInstance(CKeyFramedModelInstance &model,
+                                       std::string_view description);
     // A line, the motion and frame, and a closing line.
     void archiveMotionState(CMotionController &motion, std::string_view description);
     // A line, the count of parts, each part's visibility, then each one's texture set, and a
