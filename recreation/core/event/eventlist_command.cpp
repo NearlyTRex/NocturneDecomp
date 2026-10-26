@@ -90,7 +90,7 @@ void skipSpaces(std::string_view &rest) {
     rest = skipWhitespace(rest);
 }
 
-Result checkFlag(const SEventListOwners & /*owners*/, std::string_view &rest) {
+Result checkFlag(const SCheckContext & /*owners*/, std::string_view &rest) {
     const std::expected<std::string, std::string> flag = parseArgument(rest, kMaxFlagArgument);
     if (!flag) {
         return std::unexpected(flag.error());
@@ -98,14 +98,14 @@ Result checkFlag(const SEventListOwners & /*owners*/, std::string_view &rest) {
     return {};
 }
 
-Result checkSpotlight(const SEventListOwners &owners, std::string_view light) {
+Result checkSpotlight(const SCheckContext &owners, std::string_view light) {
     if (!owners.set.addLightFilter(light)) {
         return std::unexpected(std::format("SpotLight {} doesn't exist.", light));
     }
     return {};
 }
 
-Result checkAdvanceLightFilter(const SEventListOwners &owners, std::string_view &rest) {
+Result checkAdvanceLightFilter(const SCheckContext &owners, std::string_view &rest) {
     const std::expected<std::string, std::string> light = parseArgument(rest, kMaxNameArgument);
     if (!light) {
         return std::unexpected(light.error());
@@ -114,7 +114,7 @@ Result checkAdvanceLightFilter(const SEventListOwners &owners, std::string_view 
 }
 
 // "(radius, place[, damage])", the place a vector or an actor.
-Result checkCreateExplosion(const SEventListOwners &owners, std::string_view &rest) {
+Result checkCreateExplosion(const SCheckContext &owners, std::string_view &rest) {
     constexpr std::string_view kError = "Error parsing createExplosion() parms";
     float radius = 0.0F;
     if (Result opened = consume(rest, common::scanPrefix(rest, "( %f , ", radius), kError);
@@ -128,8 +128,7 @@ Result checkCreateExplosion(const SEventListOwners &owners, std::string_view &re
         std::string actor;
         taken = common::scanPrefix(rest, " %[^,)] ", actor);
         if (taken) {
-            if (Result found = checkActor(owners.mission, trimmed(actor), CDemonActor::kType);
-                !found) {
+            if (Result found = checkActor(owners, trimmed(actor), CDemonActor::kType); !found) {
                 return found;
             }
         }
@@ -153,16 +152,16 @@ Result checkCreateExplosion(const SEventListOwners &owners, std::string_view &re
     return {};
 }
 
-Result checkDeleteActor(const SEventListOwners &owners, std::string_view &rest) {
+Result checkDeleteActor(const SCheckContext &owners, std::string_view &rest) {
     const std::expected<std::string, std::string> actor = parseArgument(rest, kMaxNameArgument);
     if (!actor) {
         return std::unexpected(actor.error());
     }
-    return checkActor(owners.mission, *actor, CDemonActor::kType);
+    return checkActor(owners, *actor, CDemonActor::kType);
 }
 
 // "(file, width, height)": a raw bitmap in art, which must be width by height bytes.
-Result checkDisplayBitmap(const SEventListOwners &owners, std::string_view &rest) {
+Result checkDisplayBitmap(const SCheckContext &owners, std::string_view &rest) {
     std::string bitmap;
     int width = 0;
     int height = 0;
@@ -182,14 +181,14 @@ Result checkDisplayBitmap(const SEventListOwners &owners, std::string_view &rest
     return {};
 }
 
-Result checkFadeAmbientSound(const SEventListOwners & /*owners*/, std::string_view &rest) {
+Result checkFadeAmbientSound(const SCheckContext & /*owners*/, std::string_view &rest) {
     float volume = 0.0F;
     float seconds = 0.0F;
     return consume(rest, common::scanPrefix(rest, "(%f, %f )", volume, seconds),
                    "Error parsing fadeAmbientSound parms");
 }
 
-Result checkFadeSfx(const SEventListOwners & /*owners*/, std::string_view &rest) {
+Result checkFadeSfx(const SCheckContext & /*owners*/, std::string_view &rest) {
     std::string sound;
     float volume = 0.0F;
     float seconds = 0.0F;
@@ -198,7 +197,7 @@ Result checkFadeSfx(const SEventListOwners & /*owners*/, std::string_view &rest)
 }
 
 // The original's message names killHero.
-Result checkHurtCharacter(const SEventListOwners &owners, std::string_view &rest) {
+Result checkHurtCharacter(const SCheckContext &owners, std::string_view &rest) {
     std::string character;
     std::string damage_type;
     float damage = 0.0F;
@@ -208,7 +207,7 @@ Result checkHurtCharacter(const SEventListOwners &owners, std::string_view &rest
         !scanned) {
         return scanned;
     }
-    if (Result found = checkActor(owners.mission, trimmed(character), CCharacter::kType); !found) {
+    if (Result found = checkActor(owners, trimmed(character), CCharacter::kType); !found) {
         return found;
     }
     if (!parseDamageType(trimmed(damage_type))) {
@@ -220,7 +219,7 @@ Result checkHurtCharacter(const SEventListOwners &owners, std::string_view &rest
 
 // "( name )", and the original's scan took at least five characters, so a two-letter name needs
 // a space beside it.
-Result checkIncCounter(const SEventListOwners & /*owners*/, std::string_view &rest) {
+Result checkIncCounter(const SCheckContext & /*owners*/, std::string_view &rest) {
     std::string counter;
     const std::optional<std::size_t> taken = common::scanPrefix(rest, "( %[^ )] )", counter);
     if (!taken || *taken < kMinCounterScan) {
@@ -231,7 +230,7 @@ Result checkIncCounter(const SEventListOwners & /*owners*/, std::string_view &re
 }
 
 // "(character, death[, x, y, z[, degrees]])".
-Result checkKillCharacter(const SEventListOwners &owners, std::string_view &rest) {
+Result checkKillCharacter(const SCheckContext &owners, std::string_view &rest) {
     std::string character;
     std::string death_type;
     common::CVector3f direction;
@@ -249,7 +248,7 @@ Result checkKillCharacter(const SEventListOwners &owners, std::string_view &rest
     if (Result scanned = consume(rest, taken, "Syntax error in killCharacter() parms"); !scanned) {
         return scanned;
     }
-    if (Result found = checkActor(owners.mission, trimmed(character), CCharacter::kType); !found) {
+    if (Result found = checkActor(owners, trimmed(character), CCharacter::kType); !found) {
         return found;
     }
     if (!parseDeathType(trimmed(death_type))) {
@@ -261,7 +260,7 @@ Result checkKillCharacter(const SEventListOwners &owners, std::string_view &rest
 
 // The death type is taken untrimmed. The shipped game refused killHero in a network game; there
 // it kills the hero who set the trigger off, or every hero.
-Result checkKillHero(const SEventListOwners & /*owners*/, std::string_view &rest) {
+Result checkKillHero(const SCheckContext & /*owners*/, std::string_view &rest) {
     std::string death_type;
     if (Result scanned = consume(rest, common::scanPrefix(rest, " ( %[^)])", death_type),
                                  "Syntax error in killHero() parms");
@@ -287,7 +286,7 @@ Result closeParenthesis(std::string_view &rest, std::string_view error) {
 
 // "(handle[, seconds])"; the original's scans took at least three characters, so a one-letter
 // handle or a one-digit fade without a space falls short.
-Result checkKillSfx(const SEventListOwners & /*owners*/, std::string_view &rest) {
+Result checkKillSfx(const SCheckContext & /*owners*/, std::string_view &rest) {
     constexpr std::string_view kError = "Error parsing killSfx parms";
     std::string handle;
     std::optional<std::size_t> taken = common::scanPrefix(rest, "(%[^,)]", handle);
@@ -306,12 +305,12 @@ Result checkKillSfx(const SEventListOwners & /*owners*/, std::string_view &rest)
     return closeParenthesis(rest, "Can't find matching ) in killSfx command");
 }
 
-Result checkLightning(const SEventListOwners & /*owners*/, std::string_view &rest) {
+Result checkLightning(const SCheckContext & /*owners*/, std::string_view &rest) {
     return consume(rest, common::scanPrefix(rest, "( )"), "Error parsing lightning command");
 }
 
 // "(sound[, handle])"; the original's scans took at least three characters, as killSfx's did.
-Result checkPlaySfx(const SEventListOwners & /*owners*/, std::string_view &rest) {
+Result checkPlaySfx(const SCheckContext & /*owners*/, std::string_view &rest) {
     constexpr std::string_view kError = "Error parsing playSfx parms";
     std::string sound;
     std::optional<std::size_t> taken = common::scanPrefix(rest, "(%[^,)]", sound);
@@ -341,7 +340,7 @@ Result checkAmbientPercent(float percent) {
     return {};
 }
 
-Result checkSetCameraAmbient(const SEventListOwners &owners, std::string_view &rest) {
+Result checkSetCameraAmbient(const SCheckContext &owners, std::string_view &rest) {
     std::string camera;
     float percent = 0.0F;
     if (Result scanned = consume(rest, common::scanPrefix(rest, "(%[^,], %f)", camera, percent),
@@ -356,7 +355,7 @@ Result checkSetCameraAmbient(const SEventListOwners &owners, std::string_view &r
 }
 
 // "(counter[, value])"; the original's scan of "( counter" took at least five characters.
-Result checkSetCounter(const SEventListOwners & /*owners*/, std::string_view &rest) {
+Result checkSetCounter(const SCheckContext & /*owners*/, std::string_view &rest) {
     constexpr std::string_view kError = "Error parsing setCounter arguments";
     std::string counter;
     const std::optional<std::size_t> taken = common::scanPrefix(rest, "( %[^,)]", counter);
@@ -375,7 +374,7 @@ Result checkSetCounter(const SEventListOwners & /*owners*/, std::string_view &re
     return closeParenthesis(rest, kError);
 }
 
-Result checkSetGroupAmbient(const SEventListOwners & /*owners*/, std::string_view &rest) {
+Result checkSetGroupAmbient(const SCheckContext & /*owners*/, std::string_view &rest) {
     int group = 0;
     float percent = 0.0F;
     if (Result scanned = consume(rest, common::scanPrefix(rest, "(%d, %f)", group, percent),
@@ -386,7 +385,7 @@ Result checkSetGroupAmbient(const SEventListOwners & /*owners*/, std::string_vie
     return checkAmbientPercent(percent);
 }
 
-Result checkSetLightFilterFrame(const SEventListOwners &owners, std::string_view &rest) {
+Result checkSetLightFilterFrame(const SCheckContext &owners, std::string_view &rest) {
     std::string light;
     int frame = 0;
     if (Result scanned = consume(rest, common::scanPrefix(rest, "( %[^ ,] , %d )", light, frame),
@@ -423,26 +422,25 @@ scanPair(std::string_view &rest, PairFormat format, std::string_view error) {
 }
 
 // "(lever, condition)".
-Result checkSetLeverState(CEventList &events, const SEventListOwners &owners,
-                          std::string_view &rest) {
+Result checkSetLeverState(const SCheckContext &owners, std::string_view &rest) {
     const auto pair = scanPair(rest, "(%[^,], %[^)])", "Error parsing setLeverState command parms");
     if (!pair) {
         return std::unexpected(pair.error());
     }
-    if (Result found = checkActor(owners.mission, pair->first, CLever::kType); !found) {
+    if (Result found = checkActor(owners, pair->first, CLever::kType); !found) {
         return found;
     }
-    return events.validateCondition(pair->second);
+    return owners.events.validateCondition(pair->second);
 }
 
 // A character's model must have the state or motion; a character missing for now passes.
-Result checkModelPart(const SEventListOwners &owners, std::string_view &rest,
-                      std::string_view error, std::string_view finder) {
+Result checkModelPart(const SCheckContext &owners, std::string_view &rest, std::string_view error,
+                      std::string_view finder) {
     const auto pair = scanPair(rest, "(%[^,], %[^)])", error);
     if (!pair) {
         return std::unexpected(pair.error());
     }
-    const auto character = resolveActorByName(owners.mission, pair->first, CCharacter::kType);
+    const auto character = resolveActorByName(owners, pair->first, CCharacter::kType);
     if (!character) {
         return std::unexpected(character.error());
     }
@@ -452,17 +450,17 @@ Result checkModelPart(const SEventListOwners &owners, std::string_view &rest,
     return {};
 }
 
-Result checkSetModelState(const SEventListOwners &owners, std::string_view &rest) {
+Result checkSetModelState(const SCheckContext &owners, std::string_view &rest) {
     return checkModelPart(owners, rest, "Error parsing setModelState command parms",
                           "findStateIndex");
 }
 
-Result checkSlamModelToMotion(const SEventListOwners &owners, std::string_view &rest) {
+Result checkSlamModelToMotion(const SCheckContext &owners, std::string_view &rest) {
     return checkModelPart(owners, rest, "Error parsing slamModelToMotion command parms",
                           "findMotionIndex");
 }
 
-Result checkSetTimer(const SEventListOwners & /*owners*/, std::string_view &rest) {
+Result checkSetTimer(const SCheckContext & /*owners*/, std::string_view &rest) {
     std::string timer;
     float seconds = 0.0F;
     if (Result scanned = consume(rest, common::scanPrefix(rest, "(%[^,], %f)", timer, seconds),
@@ -487,7 +485,7 @@ std::optional<EWeatherType> parseWeatherType(std::string_view name) {
     });
 }
 
-Result checkSetWeather(const SEventListOwners & /*owners*/, std::string_view &rest) {
+Result checkSetWeather(const SCheckContext & /*owners*/, std::string_view &rest) {
     std::string weather;
     if (Result scanned = consume(rest, common::scanPrefix(rest, "(%[^)])", weather),
                                  "Error parsing setWeather command parms");
@@ -500,7 +498,7 @@ Result checkSetWeather(const SEventListOwners & /*owners*/, std::string_view &re
     return {};
 }
 
-Result checkShakeScreen(const SEventListOwners & /*owners*/, std::string_view &rest) {
+Result checkShakeScreen(const SCheckContext & /*owners*/, std::string_view &rest) {
     float peak = 0.0F;
     float attack = 0.0F;
     float sustain = 0.0F;
@@ -511,7 +509,7 @@ Result checkShakeScreen(const SEventListOwners & /*owners*/, std::string_view &r
 }
 
 // "(camera[, seconds])".
-Result checkSwitchCamera(const SEventListOwners &owners, std::string_view &rest) {
+Result checkSwitchCamera(const SCheckContext &owners, std::string_view &rest) {
     constexpr std::string_view kError = "Syntax error in switchCamera() parms";
     std::string camera;
     if (Result scanned = consume(rest, common::scanPrefix(rest, " ( %[^ ,)]", camera), kError);
@@ -534,13 +532,13 @@ Result checkSwitchCamera(const SEventListOwners &owners, std::string_view &rest)
 
 // "(actor, place)": the place is "x,y,z" with an optional yaw, or with all three angles, or an
 // actor, whose place and turn it takes; nothing may follow it.
-Result checkWarpTo(const SEventListOwners &owners, std::string_view &rest) {
+Result checkWarpTo(const SCheckContext &owners, std::string_view &rest) {
     constexpr std::string_view kError = "Error parsing warpTo command parms";
     const auto pair = scanPair(rest, "(%[^,], %[^)])", kError);
     if (!pair) {
         return std::unexpected(pair.error());
     }
-    if (Result found = checkActor(owners.mission, pair->first, CDemonActor::kType); !found) {
+    if (Result found = checkActor(owners, pair->first, CDemonActor::kType); !found) {
         return found;
     }
     const std::string_view place = pair->second;
@@ -556,7 +554,7 @@ Result checkWarpTo(const SEventListOwners &owners, std::string_view &rest) {
         taken = common::scanPrefix(place, "%f,%f,%f", position.x, position.y, position.z);
     }
     if (!taken) {
-        const auto target = resolveActorByName(owners.mission, place, CDemonActor::kType);
+        const auto target = resolveActorByName(owners, place, CDemonActor::kType);
         if (!target) {
             return std::unexpected(target.error());
         }
@@ -573,7 +571,7 @@ Result checkWarpTo(const SEventListOwners &owners, std::string_view &rest) {
 // The functions an event command can call, by name, and their checks.
 struct SCommandFunction {
     std::string_view name;
-    Result (*check)(const SEventListOwners &owners, std::string_view &rest);
+    Result (*check)(const SCheckContext &owners, std::string_view &rest);
 };
 
 constexpr std::array kCommandFunctions{
@@ -598,6 +596,7 @@ constexpr std::array kCommandFunctions{
     SCommandFunction{.name = "setCounter", .check = &checkSetCounter},
     SCommandFunction{.name = "setGroupAmbient", .check = &checkSetGroupAmbient},
     SCommandFunction{.name = "setLightFilterFrame", .check = &checkSetLightFilterFrame},
+    SCommandFunction{.name = "setLeverState", .check = &checkSetLeverState},
     SCommandFunction{.name = "setModelState", .check = &checkSetModelState},
     SCommandFunction{.name = "setTimer", .check = &checkSetTimer},
     SCommandFunction{.name = "setWeather", .check = &checkSetWeather},
@@ -677,25 +676,15 @@ CEventList::CheckResult CEventList::executeCommand(std::string_view command) {
     if (!command.contains('(')) {
         return checkEventName(command);
     }
-    // setLeverState checks its condition with these events.
-    constexpr std::string_view kSetLeverState = "setLeverState";
-    std::string_view rest;
-    CheckResult checked;
-    if (callsFunction(command, kSetLeverState)) {
-        rest = skipWhitespace(command.substr(kSetLeverState.size()));
-        checked = checkSetLeverState(*this, owners_, rest);
-    } else {
-        const auto *function =
-            std::ranges::find_if(kCommandFunctions, [command](const SCommandFunction &candidate) {
-                return callsFunction(command, candidate.name);
-            });
-        if (function == kCommandFunctions.end()) {
-            return std::unexpected(std::format("Unknown meta-function starting at {}", command));
-        }
-        rest = skipWhitespace(command.substr(function->name.size()));
-        checked = function->check(owners_, rest);
+    const auto *function =
+        std::ranges::find_if(kCommandFunctions, [command](const SCommandFunction &candidate) {
+            return callsFunction(command, candidate.name);
+        });
+    if (function == kCommandFunctions.end()) {
+        return std::unexpected(std::format("Unknown meta-function starting at {}", command));
     }
-    if (!checked) {
+    std::string_view rest = skipWhitespace(command.substr(function->name.size()));
+    if (CheckResult checked = function->check(SCheckContext{owners_, *this}, rest); !checked) {
         return checked;
     }
     if (!skipWhitespace(rest).empty()) {

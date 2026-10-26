@@ -92,10 +92,13 @@ TEST_F(CEventListConditionTest, ExistsAsksWithoutFailing) {
     expectError("exists()", "Error parsing exists parameters.");
 }
 
-TEST_F(CEventListConditionTest, AnActorVariableIsNotPortedYet) {
-    EXPECT_THAT([this] { return events_.validateCondition("isDead(@who)"); },
+// An unset variable names no one for now.
+TEST_F(CEventListConditionTest, AnActorVariableNamesItsActor) {
+    expectValid("isDead(@who) && isBroken(@who)");
+    events_.setActorVariable("@who", mission_.findActorByName("Mob"));
+    EXPECT_THAT([this] { return events_.validateCondition("isDead(@WHO)"); },
                 ThrowsMessage<common::CFatalError>(
-                    StrEq("CEventList::getActorByVarName is not ported yet")));
+                    StrEq("CDemonMission::buildActiveSetActorList is not ported yet")));
 }
 
 TEST_F(CEventListConditionTest, HasItemTakesAnyName) {

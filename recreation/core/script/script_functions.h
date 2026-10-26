@@ -40,6 +40,6 @@ validateActorVariableName(std::string_view variable_name);
 // name in the mission.
 [[nodiscard]] std::expected<CDemonActor *, SActorLookupError>
 getActor(std::string_view specifier, const CDemonActorType &expected_class,
-         const CDemonMission &mission);
+         const CDemonMission &mission, const CEventList &events);
 
 } // namespace nocturne::core

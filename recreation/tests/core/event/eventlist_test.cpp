@@ -30,10 +30,6 @@ TEST(CEventList, PublicInterface) {
         std::is_same_v<decltype(&CEventList::setCounter), void (CEventList::*)(char *, int)>);
     static_assert(
         std::is_same_v<decltype(&CEventList::getCounterValue), int (CEventList::*)(char *)>);
-    static_assert(std::is_same_v<decltype(&CEventList::setActorVariable),
-                                 void (CEventList::*)(char *, CDemonActor *)>);
-    static_assert(std::is_same_v<decltype(&CEventList::getActorByVarName),
-                                 CDemonActor *(CEventList::*)(char *)>);
     static_assert(std::is_same_v<decltype(&CEventList::restartSfxEntries), void (CEventList::*)()>);
     static_assert(
         std::is_same_v<decltype(&CEventList::loadState), int (CEventList::*)(std::FILE *)>);

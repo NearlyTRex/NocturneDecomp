@@ -6,8 +6,10 @@
 #include <cstddef>
 #include <cstdio>
 #include <expected>
+#include <optional>
 #include <string>
 #include <string_view>
+#include <vector>
 
 namespace nocturne::core {
 
@@ -29,6 +31,7 @@ public:
     // nocedit 0x004aa260
     explicit CEventList(const SEventListOwners &owners);
 
+    // Forgets the events' state for a new mission.
     void reset();
     void process();
     int executeCommands(char *commands);
@@ -44,13 +47,23 @@ public:
     void resetGameFlags();
     void setCounter(char *name, int value);
     int getCounterValue(char *str);
-    void setActorVariable(char *var_name, CDemonActor *actor);
-    CDemonActor *getActorByVarName(char *name);
+    // Points the variable, ignoring case, at the actor by its name; a null actor clears it. An
+    // actor without a name, or a 26th variable, is fatal.
+    void setActorVariable(std::string_view var_name, const CDemonActor *actor);
+    // The actor the variable names, or null when it names none.
+    [[nodiscard]] CDemonActor *getActorByVarName(std::string_view name) const;
     void restartSfxEntries();
     int loadState(std::FILE *file_handle);
     int saveState(std::FILE *file_handle);
 
 private:
+    // An actor variable and the name of the actor it names.
+    struct SActorVariable {
+        std::string var_name;
+        std::string actor_name;
+    };
+
+    [[nodiscard]] std::optional<std::size_t> findActorVariable(std::string_view name) const;
     [[nodiscard]] CheckResult evaluateExpression(std::string_view expression);
     [[nodiscard]] CheckResult evaluateLogicalExpr(std::string_view expression,
                                                   std::size_t &position);
@@ -59,6 +72,7 @@ private:
     [[nodiscard]] CheckResult executeCommand(std::string_view command);
 
     SEventListOwners owners_;
+    std::vector<SActorVariable> actor_vars_;
 };
 
 } // namespace nocturne::core

@@ -23,8 +23,8 @@ functions don't count as done. Sizes are in instructions.
 | 7 | `CMoon::update`, `CMoon::render` | 17 | 120 | 17616 | 68 | 31 | 56.6% |
 | 8 | `renderMenuAndGetChoice`, `CMoon::free`, `CSound::reset`, `CEditorTools::showFileSelectionDialog` | 8 | 63 | 5314 | 60 | 3 | 95.2% |
 | 9 | `CPickList::enableItem`, `CEventList::resetGameFlags`, `CLevelLoader::show`, `CDemonMission::load` | 15 | 56 | 3298 | 26 | 8 | 46.4% |
-| 10 | `CDemonMission::createHeros`, `CDemonMission::prepareAllActors`, `CEventList::reset`, `CDemonMission::loadSet` | 15 | 42 | 5112 | 31 | 7 | 73.8% |
-| 11 | `CScript::loadScript` | 63 | 579 | 67400 | 32 | 16 | 5.5% |
+| 10 | `CDemonMission::createHeros`, `CDemonMission::prepareAllActors`, `CEventList::reset`, `CDemonMission::loadSet` | 15 | 42 | 5112 | 31 | 8 | 73.8% |
+| 11 | `CScript::loadScript` | 63 | 579 | 67400 | 34 | 17 | 5.8% |
 | 12 | `CDemonMission::loadScript`, `CScript::executeInitSection`, `CDemonMission::startMission`, `CDemonMission::buildActiveSetActorList`, `CConsole::reset`, `CEditorTools::displayMemoryDiagnostics`, `CGame::setGameRes`, `CDemonLight::init`, `CDemonSet::initScene` | 12 | 26 | 1658 | 2 | 0 | 7.6% |
 | 13 | `CFireEffect::init`, `CDemonSet::loadMasterLightStates`, `CDemonSet::setGamma`, `CGame::clearOverlay`, `CGame::loadAssets` | 7 | 27 | 735 | 0 | 0 | 0.0% |
 | 14 | `CNetGame::syncPlayers`, `CNetGame::processServerFrame`, `CLevelLoader::cleanup`, `CKeys::toggleInputMask`, `CGame::processHotkeys` | 17 | 51 | 5302 | 1 | 0 | 1.9% |
@@ -46,7 +46,7 @@ functions don't count as done. Sizes are in instructions.
 | 30 | Not reached from startup: `core/` (part 8 of 9) | 20 | 300 | 31826 | 29 | 2 | 9.6% |
 | 31 | Not reached from startup: `core/` (part 9 of 9) | 5 | 111 | 10905 | 7 | 1 | 6.3% |
 | 32 | Not reached from startup: `wincore/` | 2 | 11 | 482 | 4 | 0 | 36.3% |
-| | **All** | | **4479** | **402407** | **777** | **124** | **17.3%** |
+| | **All** | | **4479** | **402407** | **779** | **126** | **17.3%** |
 
 ## Step 0: Math value types
 
@@ -1067,9 +1067,10 @@ functions don't count as done. Sizes are in instructions.
   - [x] `clearTweenState` 0x0052de40 (4)
   - [x] `jumpToMotion` 0x0052dde0 (32)
 
-### `core/event.cpp` (1 functions, 9 instructions, 0 done, 0 partial)
+### `core/event.cpp` (1 functions, 9 instructions, 0 done, 1 partial)
 - class `CEventList`
-  - [ ] `reset` 0x004aaa70 (9)
+  - [~] `reset` 0x004aaa70 (9)
+    - deferred: emptying the events, counters, timers and sounds, with the functions that read them
 
 ### `engine/2d.c` (4 functions, 263 instructions, 4 done, 0 partial)
 - free functions
@@ -1370,10 +1371,11 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `reverseTransition` 0x0052da50 (38)
   - [ ] `setDesiredState` 0x0052db00 (47)
 
-### `core/event.cpp` (34 functions, 8671 instructions, 7 done, 6 partial)
+### `core/event.cpp` (34 functions, 8671 instructions, 9 done, 7 partial)
 - class `CEventList`
-  - [ ] `findActorVariable` 0x004b0bf0 (34)
-  - [ ] `getActorByVarName` 0x004b0b80 (46)
+  - [x] `findActorVariable` 0x004b0bf0 (34)
+  - [~] `getActorByVarName` 0x004b0b80 (46)
+    - deferred: finding the variable's actor among the set's active actors by its name, with CDemonMission::buildActiveSetActorList
   - [ ] `findPersistentEvent` 0x004b0860 (34)
   - [ ] `findGameFlag` 0x004b08b0 (34)
   - [ ] `findTimer` 0x004b0900 (34)
@@ -1406,11 +1408,11 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `executeCommands` 0x004aabe0 (11)
   - [~] `validateCommands` 0x004add40 (21)
     - deferred: running the commands, printing a failed one's error to the console and going on to the next, with executeCommands
-  - [ ] `setActorVariable` 0x004b09a0 (181)
+  - [x] `setActorVariable` 0x004b09a0 (181)
 - free functions
   - [~] `resolveActorByName` 0x004aa400 (126)
-    - deferred: an actor variable, missing when unset or of another class, with getActorByVarName
     - deferred: the hero "$" means in a network game, the gas room's unmasked hero else the first, with CNetGame's sessions
+    - deferred: an actor variable's actor of another class counting as missing, with CDemonMission::buildActiveSetActorList
   - [x] `parseVectorLocation` 0x004aa530 (105)
   - [x] `isValidIdentifierChar` 0x004b0f90 (12)
   - [ ] `formatEventError` 0x004aa2a0 (15)
@@ -2006,14 +2008,14 @@ functions don't count as done. Sizes are in instructions.
     - deferred: running attachActorToPlatform, attaching the actor, with CPlatform::attachActor
     - deferred: running cancelWalkTo, stopping the character's walk, or every character's in the set, with the characters' walk targets
     - deferred: running enableHealthBar, setting the character's health bar, with its health bar
-    - deferred: running getTriggerActor, storing who set the trigger off in the variable, with CEventList's actor variables
+    - deferred: running getTriggerActor, storing who set the trigger off in the variable, with CTrigger's triggering actor
     - deferred: running lookAt, turning the character's head, with CCharacter::setLookAtTarget
     - deferred: running movePlatform, moving the platform, with CPlatform::startMovement
     - deferred: running openDoor, holding the script until the character has the door open, with the characters' door targets
     - deferred: running removeAllItemsFromInventory, emptying the hero's inventory, with CInventory::initialize
     - deferred: running removeItemFromInventory, taking the item the local hero holds by that name from the hero, with CInventory::findItemByName and removeItem
     - deferred: running selectWeapon, cycling the hero's weapons to the class, or saying it can't, with CInventory::selectWeapon
-    - deferred: running setActorVariable, storing the actor in the variable, with CEventList's actor variables
+    - deferred: running setActorVariable, storing the actor in the variable, with process
     - deferred: running setCharacterHealth, setting the character's health as a share of its most, with its hit points
     - deferred: setFocusActor making the actor the focus, the network camera's choice of it included, while checking too, with the scene camera
     - deferred: running setHeroTask, setting the hero's task, with CHero::setAiTask
@@ -2037,7 +2039,7 @@ functions don't count as done. Sizes are in instructions.
     - deferred: running breakPoint, showing where the script stopped and stopping it, with process
     - deferred: running cancelCameraHold, ending the camera's hold, with the virtual director
     - deferred: running chainToMission, naming the next mission and ending this one, with process
-    - deferred: running clearActorVariable, clearing the variable, with CEventList::setActorVariable
+    - deferred: running clearActorVariable, clearing the variable, with process
     - deferred: running debug, showing the message, with process
     - deferred: keeping display's message, while checking too, with renderSubtitles
     - deferred: running else, skipping the statement after it, with process
@@ -2073,7 +2075,6 @@ functions don't count as done. Sizes are in instructions.
   - [~] `parseConditionExpr` 0x005594a0 (23)
     - deferred: only parsing the condition while the script runs, with process
   - [~] `getActor` 0x005594e0 (149)
-    - deferred: looking an actor variable up by its actor's name among the set's actors, with CEventList's actor variables and the set's actor list
     - deferred: the hero "$" means in a network game, the gas room's unmasked hero else the first, with CNetGame's sessions
   - [x] `getActionState` 0x00559660 (88)
   - [ ] `getDeformableModelFilename` 0x00567d30 (3)
@@ -4555,7 +4556,7 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `remove` 0x004b17c0 (67)
 - class `CEventList`
   - [~] `ctor` 0x004aaa50 (11)
-    - deferred: emptying the events, counters, timers, actor variables, sounds and game flags, with the functions that read them
+    - deferred: emptying the events, counters, timers, sounds and game flags, with the functions that read them
 - free functions
   - [~] `staticInit` 0x004aa260 (4)
     - deferred: the game's event list, with CDemonMission::loadScript

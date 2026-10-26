@@ -95,7 +95,7 @@ void CScript::initRuntime() {
 //   set, with the characters' walk targets
 // deferred: running enableHealthBar, setting the character's health bar, with its health bar
 // deferred: running getTriggerActor, storing who set the trigger off in the variable, with
-//   CEventList's actor variables
+//   CTrigger's triggering actor
 // deferred: running lookAt, turning the character's head, with CCharacter::setLookAtTarget
 // deferred: running movePlatform, moving the platform, with CPlatform::startMovement
 // deferred: running openDoor, holding the script until the character has the door open, with
@@ -106,8 +106,7 @@ void CScript::initRuntime() {
 //   from the hero, with CInventory::findItemByName and removeItem
 // deferred: running selectWeapon, cycling the hero's weapons to the class, or saying it can't,
 //   with CInventory::selectWeapon
-// deferred: running setActorVariable, storing the actor in the variable, with CEventList's
-//   actor variables
+// deferred: running setActorVariable, storing the actor in the variable, with process
 // deferred: running setCharacterHealth, setting the character's health as a share of its most,
 //   with its hit points
 // deferred: setFocusActor making the actor the focus, the network camera's choice of it
@@ -148,8 +147,7 @@ void CScript::initRuntime() {
 // deferred: running breakPoint, showing where the script stopped and stopping it, with process
 // deferred: running cancelCameraHold, ending the camera's hold, with the virtual director
 // deferred: running chainToMission, naming the next mission and ending this one, with process
-// deferred: running clearActorVariable, clearing the variable, with
-//   CEventList::setActorVariable
+// deferred: running clearActorVariable, clearing the variable, with process
 // deferred: running debug, showing the message, with process
 // deferred: keeping display's message, while checking too, with renderSubtitles
 // deferred: running else, skipping the statement after it, with process

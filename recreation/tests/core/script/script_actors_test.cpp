@@ -41,6 +41,12 @@ TEST_F(CScriptActorsTest, AnActorMissingThroughAVariablePassesTheRestOver) {
                  "cancelWalkTo($) junk\n");
 }
 
+// An actor variable is unset as the script loads, so it names no one, as "$" without a hero.
+TEST_F(CScriptActorsTest, AnUnsetActorVariableNamesNoOne) {
+    expectPasses("walkTo(@who, Mob) junk\nholsterWeapon(@hero, bad(\nsay(@who, a.wav, Hi)\n");
+    expectSyntaxError("walkTo(@a-b, Mob)\n", 1, "Actor variable name \"@a-b\" is not valid");
+}
+
 TEST_F(CScriptActorsTest, WithAHeroTheDollarSignIsChecked) {
     addHero();
     expectPasses("setHeroTask($, guard)\n");

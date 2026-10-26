@@ -26,7 +26,7 @@ namespace nocturne::core {
 CScript::CommandResult CScript::startDialogLine(std::string_view speaker,
                                                 std::string_view /*sound_name*/,
                                                 std::string_view /*dialog_text*/) const {
-    const auto actor = getActor(speaker, CCharacter::kType, owners_.mission);
+    const auto actor = getActor(speaker, CCharacter::kType, owners_.mission, owners_.events);
     if (!actor && !actor.error().by_variable) {
         return std::unexpected(actor.error().message);
     }

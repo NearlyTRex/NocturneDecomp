@@ -27,9 +27,9 @@ TEST(CoreScriptFunctions, PublicInterface) {
     static_assert(std::is_same_v<decltype(&validateActorVariableName),
                                  std::expected<void, std::string> (*)(std::string_view)>);
     static_assert(
-        std::is_same_v<decltype(&getActor),
-                       std::expected<CDemonActor *, SActorLookupError> (*)(
-                           std::string_view, const CDemonActorType &, const CDemonMission &)>);
+        std::is_same_v<decltype(&getActor), std::expected<CDemonActor *, SActorLookupError> (*)(
+                                                std::string_view, const CDemonActorType &,
+                                                const CDemonMission &, const CEventList &)>);
 }
 
 TEST(CoreScriptFunctions, EachButtonNamesItsAction) {
@@ -117,33 +117,34 @@ std::unexpected<SActorLookupError> lookupError(std::string message, bool by_vari
 
 TEST_F(CoreScriptGetActor, AnActorIsFoundByItsNameInAnyCase) {
     addActor("Door1", kScriptDoorType);
-    const auto actor = getActor("DOOR1", CDoor::kType, mission_);
+    const auto actor = getActor("DOOR1", CDoor::kType, mission_, events_);
     ASSERT_TRUE(actor);
     EXPECT_EQ(*actor, mission_.findActorByName("Door1"));
 }
 
 TEST_F(CoreScriptGetActor, ANameMustBeGiven) {
-    EXPECT_EQ(getActor("", CDemonActor::kType, mission_), lookupError("Must specify actor name"));
+    EXPECT_EQ(getActor("", CDemonActor::kType, mission_, events_),
+              lookupError("Must specify actor name"));
 }
 
 TEST_F(CoreScriptGetActor, AMissingActorIsNamed) {
-    EXPECT_EQ(getActor("Nobody", CDemonActor::kType, mission_),
+    EXPECT_EQ(getActor("Nobody", CDemonActor::kType, mission_, events_),
               lookupError("Actor \"Nobody\" does not exist."));
 }
 
 TEST_F(CoreScriptGetActor, TheActorMustBeOfTheCommandsClass) {
     addActor("Door1", kScriptDoorType);
-    EXPECT_EQ(getActor("Door1", CCharacter::kType, mission_),
+    EXPECT_EQ(getActor("Door1", CCharacter::kType, mission_, events_),
               lookupError("Actor \"Door1\" is of type CTestDoor, this command requires an actor "
                           "of type CCharacter."));
 }
 
 TEST_F(CoreScriptGetActor, TheDollarSignIsTheFirstHero) {
     addHero();
-    const auto actor = getActor("$", CHero::kType, mission_);
+    const auto actor = getActor("$", CHero::kType, mission_, events_);
     ASSERT_TRUE(actor);
     EXPECT_EQ(*actor, mission_.getHero(0));
-    EXPECT_EQ(getActor("$", CDoor::kType, mission_),
+    EXPECT_EQ(getActor("$", CDoor::kType, mission_, events_),
               lookupError(std::format("Actor \"$\" is of type {}, this command requires an actor "
                                       "of type CDoor.",
                                       mission_.getHero(0)->getActorClassName())));
@@ -151,18 +152,29 @@ TEST_F(CoreScriptGetActor, TheDollarSignIsTheFirstHero) {
 
 // The original counts a missing hero as a variable naming nothing, which a command passes over.
 TEST_F(CoreScriptGetActor, WithoutAHeroTheDollarSignNamesNothing) {
-    EXPECT_EQ(getActor("$", CHero::kType, mission_), lookupError("Hero doesn't exist!!?!", true));
+    EXPECT_EQ(getActor("$", CHero::kType, mission_, events_),
+              lookupError("Hero doesn't exist!!?!", true));
 }
 
 TEST_F(CoreScriptGetActor, AVariableNameMustBeValid) {
-    EXPECT_EQ(getActor("@a-b", CDemonActor::kType, mission_),
+    EXPECT_EQ(getActor("@a-b", CDemonActor::kType, mission_, events_),
               lookupError("Actor variable name \"@a-b\" is not valid"));
 }
 
-TEST_F(CoreScriptGetActor, LookingUpAVariableIsNotPortedYet) {
-    EXPECT_THAT([this] { return getActor("@door", CDemonActor::kType, mission_); },
+TEST_F(CoreScriptGetActor, AnUnsetVariableNamesNothing) {
+    EXPECT_EQ(
+        getActor("@door", CDemonActor::kType, mission_, events_),
+        lookupError("Actor variable @door not defined, or doesn't reference an existing actor",
+                    true));
+}
+
+// The set's actors, which a variable is looked up among, aren't ported yet.
+TEST_F(CoreScriptGetActor, ASetVariableIsLookedUpAmongTheSetsActors) {
+    addActor("Door1", kScriptDoorType);
+    events_.setActorVariable("@door", mission_.findActorByName("Door1"));
+    EXPECT_THAT([this] { return getActor("@DOOR", CDemonActor::kType, mission_, events_); },
                 ::testing::ThrowsMessage<common::CFatalError>(
-                    ::testing::StrEq("CEventList::getActorByVarName is not ported yet")));
+                    ::testing::StrEq("CDemonMission::buildActiveSetActorList is not ported yet")));
 }
 
 } // namespace

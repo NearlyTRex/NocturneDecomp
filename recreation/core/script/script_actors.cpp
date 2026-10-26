@@ -40,7 +40,8 @@ constexpr std::array<std::string_view, 5> kHeroTasks = {"stand", "follow", "kill
 // for an actor missing through a variable, passing the rest of the command over unchecked.
 std::optional<Result> missing(SScriptStatement &statement, std::string_view specifier,
                               const CDemonActorType &expected_class) {
-    const auto actor = getActor(specifier, expected_class, statement.owners.mission);
+    const auto actor =
+        getActor(specifier, expected_class, statement.owners.mission, statement.owners.events);
     if (actor) {
         return std::nullopt;
     }
@@ -374,7 +375,8 @@ Result checkSetActorVariable(CScript & /*script*/, SScriptStatement &statement) 
         !valid) {
         return valid;
     }
-    const auto actor = getActor(pair->second, CDemonActor::kType, statement.owners.mission);
+    const auto actor = getActor(pair->second, CDemonActor::kType, statement.owners.mission,
+                                statement.owners.events);
     if (!actor && !actor.error().by_variable) {
         return std::unexpected(actor.error().message);
     }

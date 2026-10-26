@@ -13,14 +13,21 @@ namespace nocturne::core {
 
 // What the checks of conditions and commands share.
 
+// What a check looks things up in: the events' owners, and the events, whose actor variables
+// name actors and whose conditions a command can hold.
+struct SCheckContext : SEventListOwners {
+    CEventList &events;
+};
+
 [[nodiscard]] bool isValidIdentifierChar(char c);
 // The actor an event names, of the class it needs. A null actor is one missing for now: "$"
-// without a hero. A name the mission doesn't hold, or an actor of another class, is an error.
+// without a hero, or an actor variable unset or of another class. A name the mission doesn't
+// hold, or a named actor of another class, is an error.
 [[nodiscard]] std::expected<CDemonActor *, std::string>
-resolveActorByName(const CDemonMission &mission, std::string_view name,
+resolveActorByName(const SCheckContext &context, std::string_view name,
                    const CDemonActorType &expected_class);
 // The named actor, of the class, or why not; one missing for now passes.
-[[nodiscard]] CEventList::CheckResult checkActor(const CDemonMission &mission,
+[[nodiscard]] CEventList::CheckResult checkActor(const SCheckContext &context,
                                                  std::string_view name,
                                                  const CDemonActorType &expected_class);
 // Moves past what a format took, or fails with the message.

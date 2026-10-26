@@ -73,11 +73,6 @@ std::optional<EComparisonOp> parseComparisonOp(std::string_view op) {
     return static_cast<EComparisonOp>(found - kOps.begin());
 }
 
-Result checkActor(const SEventListOwners &owners, std::string_view name,
-                  const CDemonActorType &expected_class) {
-    return core::checkActor(owners.mission, name, expected_class);
-}
-
 // "( name )", the name without spaces.
 std::expected<std::string, std::string> scanName(std::string_view &rest, std::string_view error) {
     std::string name;
@@ -100,8 +95,8 @@ std::expected<std::string, std::string> scanArgument(std::string_view &rest,
 }
 
 // The named actor, of the class.
-Result checkNamedActor(const SEventListOwners &owners, std::string_view &rest,
-                       std::string_view error, const CDemonActorType &expected_class) {
+Result checkNamedActor(const SCheckContext &owners, std::string_view &rest, std::string_view error,
+                       const CDemonActorType &expected_class) {
     const std::expected<std::string, std::string> name = scanName(rest, error);
     if (!name) {
         return std::unexpected(name.error());
@@ -111,7 +106,7 @@ Result checkNamedActor(const SEventListOwners &owners, std::string_view &rest,
 
 // "{x, y, z}", or an actor whose place it is.
 // nocedit 0x004aa530
-Result parseVectorLocation(const SEventListOwners &owners, std::string_view &rest) {
+Result parseVectorLocation(const SCheckContext &owners, std::string_view &rest) {
     common::CVector3f position;
     if (const std::optional<std::size_t> taken =
             common::scanPrefix(rest, " { %f, %f, %f }", position.x, position.y, position.z)) {
@@ -130,7 +125,7 @@ Result parseVectorLocation(const SEventListOwners &owners, std::string_view &res
     return {};
 }
 
-Result checkCmp(const SEventListOwners & /*owners*/, std::string_view &rest) {
+Result checkCmp(const SCheckContext & /*owners*/, std::string_view &rest) {
     std::string left;
     std::string op;
     std::string right;
@@ -147,7 +142,7 @@ Result checkCmp(const SEventListOwners & /*owners*/, std::string_view &rest) {
 }
 
 // Whether the actor exists is the value, so a missing one is no error.
-Result checkExists(const SEventListOwners & /*owners*/, std::string_view &rest) {
+Result checkExists(const SCheckContext & /*owners*/, std::string_view &rest) {
     const std::expected<std::string, std::string> name =
         scanName(rest, "Error parsing exists parameters.");
     if (!name) {
@@ -157,7 +152,7 @@ Result checkExists(const SEventListOwners & /*owners*/, std::string_view &rest) 
 }
 
 // The shipped game refused hasItem in a network game; there it asks every hero.
-Result checkHasItem(const SEventListOwners & /*owners*/, std::string_view &rest) {
+Result checkHasItem(const SCheckContext & /*owners*/, std::string_view &rest) {
     const std::expected<std::string, std::string> item =
         scanArgument(rest, "Error parsing hasItem parameters.");
     if (!item) {
@@ -166,7 +161,7 @@ Result checkHasItem(const SEventListOwners & /*owners*/, std::string_view &rest)
     return {};
 }
 
-Result checkHasItemType(const SEventListOwners &owners, std::string_view &rest) {
+Result checkHasItemType(const SCheckContext &owners, std::string_view &rest) {
     std::string hero;
     std::string item_class;
     if (Result scanned =
@@ -179,7 +174,7 @@ Result checkHasItemType(const SEventListOwners &owners, std::string_view &rest) 
 }
 
 // One key's bit; the shipped game refused hasKeyMask in a network game, where it asks every hero.
-Result checkHasKeyMask(const SEventListOwners & /*owners*/, std::string_view &rest) {
+Result checkHasKeyMask(const SCheckContext & /*owners*/, std::string_view &rest) {
     int mask = 0;
     if (Result scanned = consume(rest, common::scanPrefix(rest, " ( %d )", mask),
                                  "Error parsing hasKeyMask parameters.");
@@ -196,7 +191,7 @@ Result checkHasKeyMask(const SEventListOwners & /*owners*/, std::string_view &re
     return {};
 }
 
-Result checkIsBroken(const SEventListOwners &owners, std::string_view &rest) {
+Result checkIsBroken(const SCheckContext &owners, std::string_view &rest) {
     const std::expected<std::string, std::string> glass =
         scanArgument(rest, "Error parsing isBroken parameters.");
     if (!glass) {
@@ -206,7 +201,7 @@ Result checkIsBroken(const SEventListOwners &owners, std::string_view &rest) {
 }
 
 // The original's message misspells the function.
-Result checkIsCurrentCamera(const SEventListOwners & /*owners*/, std::string_view &rest) {
+Result checkIsCurrentCamera(const SCheckContext & /*owners*/, std::string_view &rest) {
     const std::expected<std::string, std::string> camera =
         scanName(rest, "Error parsing icCurrentCamera parameters.");
     if (!camera) {
@@ -215,18 +210,18 @@ Result checkIsCurrentCamera(const SEventListOwners & /*owners*/, std::string_vie
     return {};
 }
 
-Result checkIsDead(const SEventListOwners &owners, std::string_view &rest) {
+Result checkIsDead(const SCheckContext &owners, std::string_view &rest) {
     return checkNamedActor(owners, rest, "Error parsing isDead parameters.", CCharacter::kType);
 }
 
-Result checkIsFadeFinished(const SEventListOwners & /*owners*/, std::string_view &rest) {
+Result checkIsFadeFinished(const SCheckContext & /*owners*/, std::string_view &rest) {
     return consume(rest, common::scanPrefix(rest, " ( )"),
                    "Error parsing isFadeFinished function.");
 }
 
 // "(place, place, distance)", each place a vector or an actor. The '(' that made the name a
 // function's opens it.
-Result checkIsInRange(const SEventListOwners &owners, std::string_view &rest) {
+Result checkIsInRange(const SCheckContext &owners, std::string_view &rest) {
     constexpr std::string_view kError = "Error parsing isInRange parameters.";
     rest.remove_prefix(1);
     if (Result first = parseVectorLocation(owners, rest); !first) {
@@ -242,7 +237,7 @@ Result checkIsInRange(const SEventListOwners &owners, std::string_view &rest) {
     return consume(rest, common::scanPrefix(rest, " , %f )", distance), kError);
 }
 
-Result checkIsOfType(const SEventListOwners &owners, std::string_view &rest) {
+Result checkIsOfType(const SCheckContext &owners, std::string_view &rest) {
     std::string actor;
     std::string class_name;
     if (Result scanned =
@@ -255,7 +250,7 @@ Result checkIsOfType(const SEventListOwners &owners, std::string_view &rest) {
 }
 
 // "(actor, target[, degrees])": whether the target is within the angle of straight ahead.
-Result checkIsFacing(const SEventListOwners &owners, std::string_view &rest) {
+Result checkIsFacing(const SCheckContext &owners, std::string_view &rest) {
     constexpr std::string_view kError = "Error parsing isFacing parameters.";
     std::string actor;
     std::string target;
@@ -288,7 +283,7 @@ Result checkIsFacing(const SEventListOwners &owners, std::string_view &rest) {
     return {};
 }
 
-Result checkIsLightOn(const SEventListOwners &owners, std::string_view &rest) {
+Result checkIsLightOn(const SCheckContext &owners, std::string_view &rest) {
     const std::expected<std::string, std::string> light =
         scanName(rest, "Error parsing isLightOn parameters.");
     if (!light) {
@@ -300,11 +295,11 @@ Result checkIsLightOn(const SEventListOwners &owners, std::string_view &rest) {
     return {};
 }
 
-Result checkIsNudityEnabled(const SEventListOwners & /*owners*/, std::string_view &rest) {
+Result checkIsNudityEnabled(const SCheckContext & /*owners*/, std::string_view &rest) {
     return consume(rest, common::scanPrefix(rest, " ( )"), "Error parsing isNudityEnabled().");
 }
 
-Result checkIsSfxActive(const SEventListOwners & /*owners*/, std::string_view &rest) {
+Result checkIsSfxActive(const SCheckContext & /*owners*/, std::string_view &rest) {
     const std::expected<std::string, std::string> sound =
         scanName(rest, "Error parsing isSfxActive parameters.");
     if (!sound) {
@@ -313,25 +308,25 @@ Result checkIsSfxActive(const SEventListOwners & /*owners*/, std::string_view &r
     return {};
 }
 
-Result checkIsTalking(const SEventListOwners &owners, std::string_view &rest) {
+Result checkIsTalking(const SCheckContext &owners, std::string_view &rest) {
     return checkNamedActor(owners, rest, "Error parsing isTalking parameters.", CCharacter::kType);
 }
 
-Result checkIsVictim(const SEventListOwners &owners, std::string_view &rest) {
+Result checkIsVictim(const SCheckContext &owners, std::string_view &rest) {
     return checkNamedActor(owners, rest, "Error parsing isVictim parameters.", CCharacter::kType);
 }
 
-Result checkIsWeaponDrawn(const SEventListOwners &owners, std::string_view &rest) {
+Result checkIsWeaponDrawn(const SCheckContext &owners, std::string_view &rest) {
     return checkNamedActor(owners, rest, "Error parsing isWeaponDrawn parameters.", CHero::kType);
 }
 
-Result checkIsWearingGasMask(const SEventListOwners &owners, std::string_view &rest) {
+Result checkIsWearingGasMask(const SCheckContext &owners, std::string_view &rest) {
     return checkNamedActor(owners, rest, "Error parsing isWearingGasMask parameters.",
                            CHero::kType);
 }
 
 // The chance is drawn while checking too.
-Result checkRandBool(const SEventListOwners &owners, std::string_view &rest) {
+Result checkRandBool(const SCheckContext &owners, std::string_view &rest) {
     float chance = 0.0F;
     if (Result scanned = consume(rest, common::scanPrefix(rest, " ( %f )", chance),
                                  "Error parsing randBool parameters.");
@@ -342,7 +337,7 @@ Result checkRandBool(const SEventListOwners &owners, std::string_view &rest) {
     return {};
 }
 
-Result checkReachedDest(const SEventListOwners &owners, std::string_view &rest) {
+Result checkReachedDest(const SCheckContext &owners, std::string_view &rest) {
     return checkNamedActor(owners, rest, "Error parsing reachedDest parameters.",
                            CCharacter::kType);
 }
@@ -350,7 +345,7 @@ Result checkReachedDest(const SEventListOwners &owners, std::string_view &rest) 
 // The functions a condition can call, by name, and their checks.
 struct SMetaFunction {
     std::string_view name;
-    Result (*check)(const SEventListOwners &owners, std::string_view &rest);
+    Result (*check)(const SCheckContext &owners, std::string_view &rest);
 };
 
 constexpr std::array kMetaFunctions{
@@ -474,7 +469,7 @@ Result CEventList::evaluateAtom(std::string_view expression, std::size_t &positi
             return std::unexpected("Invalid meta-function");
         }
         std::string_view rest = expression.substr(position);
-        if (Result checked = function->check(owners_, rest); !checked) {
+        if (Result checked = function->check(SCheckContext{owners_, *this}, rest); !checked) {
             return checked;
         }
         position = expression.size() - rest.size();
