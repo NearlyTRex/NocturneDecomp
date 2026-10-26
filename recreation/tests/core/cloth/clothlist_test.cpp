@@ -1,11 +1,14 @@
 #include "core/cloth/clothlist.h"
 
+#include <gmock/gmock.h>
 #include <gtest/gtest.h>
 
 #include <type_traits>
 
 namespace nocturne::core {
 namespace {
+
+using ::testing::ElementsAre;
 
 TEST(CClothList, IsConcrete) {
     static_assert(!std::is_abstract_v<CClothList>);
@@ -27,6 +30,14 @@ TEST(CClothList, PublicInterface) {
                                                       float, float, CDeformableModelInstance *)>);
     static_assert(std::is_same_v<decltype(&CClothList::render),
                                  void (CClothList::*)(CDeformableModelInstance *)>);
+}
+
+TEST(CClothList, AListHoldsTheFileNamesItIsGiven) {
+    CClothList cloth_list;
+    EXPECT_TRUE(cloth_list.getFilenames().empty());
+    cloth_list.setFilenames({"coat.cls", "hat.cls"});
+    cloth_list.setFilenames({"cape.cls"});
+    EXPECT_THAT(cloth_list.getFilenames(), ElementsAre("cape.cls"));
 }
 
 } // namespace

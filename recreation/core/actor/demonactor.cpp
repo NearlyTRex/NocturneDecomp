@@ -123,7 +123,7 @@ void CDemonActor::archive(CActorArchive &actor_archive) {
 
 // The original also quit on a read error after the end tag, which text in memory can't have.
 // nocedit 0x0040b050
-void CDemonActor::load(common::CTextScanner &scanner, const CActor &actor_classes) {
+void CDemonActor::load(common::CTextScanner &scanner, const SActorArchiveOwners &owners) {
     const std::string_view class_name = getActorClassName();
     const STag start = readTag(scanner, '{');
     if (!common::equalsIgnoringAsciiCase(class_name, start.class_name)) {
@@ -131,7 +131,7 @@ void CDemonActor::load(common::CTextScanner &scanner, const CActor &actor_classe
             std::format("Start of actor file tag mismatch for class {}", class_name));
     }
     actor_name_ = start.actor_name;
-    CActorArchive actor_archive(scanner, *this, actor_classes);
+    CActorArchive actor_archive(scanner, *this, owners);
     archive(actor_archive);
     const STag end = readTag(scanner, '}');
     if (!common::equalsIgnoringAsciiCase(class_name, end.class_name) ||

@@ -125,7 +125,7 @@ public:
     // Reads the actor as a mission or save file holds it: a start tag with its class and name,
     // the class's fields, and an end tag that repeats both. A tag naming another class or actor
     // is fatal. Each class's fields are read as the version the file saved them in.
-    void load(common::CTextScanner &scanner, const CActor &actor_classes);
+    void load(common::CTextScanner &scanner, const SActorArchiveOwners &owners);
     [[nodiscard]] EActorLifecycleState getLifecycleState() const;
     // The chance the actor is created when its creation event comes.
     [[nodiscard]] float getCreateProbability() const;

@@ -8,13 +8,19 @@
 
 namespace nocturne::core {
 
+// What an archive finds each class's saved version in, and the actors fields name.
+struct SActorArchiveOwners {
+    const CActor &actor_classes;
+    const IActorLookup &actors;
+};
+
 // What an actor's archive() reads its fields from: the mission or save file it is loaded from,
 // which the original kept in actor.cpp's globals while an actor was read. Each field is a value
 // and its description, which runs to the end of the line; a field that can't be read is fatal.
 class CActorArchive {
 public:
     CActorArchive(common::CTextScanner &scanner, const CDemonActor &actor,
-                  const CActor &actor_classes);
+                  const SActorArchiveOwners &owners);
 
     [[nodiscard]] common::CTextScanner &getScanner() const;
     // The version the file saved the class's fields in.
@@ -29,15 +35,22 @@ public:
     void archiveInteger(int &value, std::string_view description);
     // Quoted, after any whitespace; the quotes may hold nothing.
     void archiveString(std::string &value, std::string_view description);
+    // A string marked for translation, which its description says.
+    void archiveLocalizedString(std::string &value, std::string_view description);
+    // Quoted by name, or "(none)" for no actor.
+    void archiveActor(CDemonActor *&actor, std::string_view description);
+    // A line, the count, then each file name quoted on its own line, and a closing line.
+    void archiveClothList(CClothList &cloth_list, std::string_view description);
 
 private:
+    // The rest of the line; the end of the file before its newline is fatal.
     void archiveDescription(std::string_view type, std::string_view description);
     [[noreturn]] void quitOnPropertyError(std::string_view type,
                                           std::string_view description) const;
 
     common::CTextScanner &scanner_;
     const CDemonActor &actor_;
-    const CActor &actor_classes_;
+    SActorArchiveOwners owners_;
 };
 
 } // namespace nocturne::core

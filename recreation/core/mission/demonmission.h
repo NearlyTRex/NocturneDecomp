@@ -1,6 +1,7 @@
 #pragma once
 
 #include "common/fwd.h"
+#include "core/actor/actorlookup.h"
 #include "core/fwd.h"
 #include "engine/fwd.h"
 #include "shape/fwd.h"
@@ -33,13 +34,13 @@ struct SMissionOwners {
 };
 
 // The mission: its file, and the actors it places, in the order its file lists them.
-class CDemonMission {
+class CDemonMission : public IActorLookup {
 public:
     // The most heroes a mission can hold.
     static constexpr std::size_t kMaxHeroes = 4;
 
     explicit CDemonMission(const SMissionOwners &owners);
-    ~CDemonMission();
+    ~CDemonMission() override;
     CDemonMission(const CDemonMission &) = delete;
     CDemonMission &operator=(const CDemonMission &) = delete;
     CDemonMission(CDemonMission &&) = delete;
@@ -59,7 +60,10 @@ public:
     void freeAllAssets();
     CDemonActor *getNextLoadedInventoryActor(char *actor_name);
     void writeFile(std::FILE *file_handle);
-    CDemonActor *loadActor(std::FILE *file, CDemonActor *current_actor, char *property_description);
+    // A reference that isn't quoted, as save files write a script's marker for no victim, quits
+    // as not ported yet.
+    [[nodiscard]] CDemonActor *loadActor(common::CTextScanner &scanner, const CDemonActor &owner,
+                                         std::string_view description) const override;
     void saveActor(CDemonActor *actor_ptr, std::FILE *file, CDemonActor *current_actor,
                    char *description);
     // Takes the actor to the end of the list, naming it first if it has no name.

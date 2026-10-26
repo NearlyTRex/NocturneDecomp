@@ -2,10 +2,14 @@
 
 #include "common/fwd.h"
 #include "core/actor/demonactor.h"
+#include "core/cloth/clothlist.h"
 #include "core/fwd.h"
 #include "core/skeleton/deformablemodelinstance.h"
 
+#include <array>
+#include <cstddef>
 #include <cstdint>
+#include <string>
 
 namespace nocturne::core {
 
@@ -43,6 +47,7 @@ public:
     virtual int canBeGrabbed(CDemonActor *grabber, int grab_type);
     virtual int getGrabbed(CDemonActor *grabber, int grab_type);
     virtual void releaseFromGrab();
+    // What holds the character; null for nothing.
     virtual CDemonActor *getGrabber();
     virtual void releaseVictim();
     virtual void onVictimLost(CDemonActor *lost_actor);
@@ -90,7 +95,7 @@ public:
     void pickupObjectNow(int hand_index, CDemonActor *object, float blend_time);
     void dropAllCarriedObjects();
     void updateCarriedObjects(float delta_time);
-    int isCarryingAnything();
+    [[nodiscard]] bool isCarryingAnything() const;
     int initGesture(char *motion_name);
     void computeBoundingBox();
     void findSomethingToLookAt(float delta_time, int disable_search);
@@ -109,9 +114,38 @@ public:
 
     // The character's body and the motions it plays.
     [[nodiscard]] CDeformableModelInstance &getModel();
+    [[nodiscard]] float getHitPoints() const;
+    [[nodiscard]] float getMaxHitPoints() const;
+    // What the hand carries; null for nothing.
+    [[nodiscard]] CDemonActor *getCarriedActor(std::size_t hand) const;
+    // The event raised when the hero talks to the character.
+    [[nodiscard]] const std::string &getTalkToMeEvent() const;
+    // How the grabber holds the character.
+    [[nodiscard]] int getGrabbedType() const;
+    [[nodiscard]] const CClothList &getClothList() const;
+    // The character's size, as a multiple of its model's.
+    [[nodiscard]] float getSizeScale() const;
+    [[nodiscard]] int getHealthBarMode() const;
+    // The name the character is shown by, marked for translation.
+    [[nodiscard]] const std::string &getDescriptiveName() const;
+
+    // One for each hand.
+    static constexpr std::size_t kCarryHands = 2;
 
 private:
+    static constexpr float kFullHitPoints = 100.0F;
+
     CDeformableModelInstance model_;
+    float hit_points_ = kFullHitPoints;
+    float max_hit_points_ = kFullHitPoints;
+    std::array<CDemonActor *, kCarryHands> carried_actors_{};
+    std::string talk_to_me_event_;
+    CDemonActor *grabbed_by_ = nullptr;
+    int grabbed_type_ = 0;
+    CClothList cloth_list_;
+    float size_scale_ = 1.0F;
+    int health_bar_mode_ = 0;
+    std::string descriptive_name_;
 };
 
 } // namespace nocturne::core

@@ -6,6 +6,7 @@
 #include "core/actor/demonactor.h"
 #include "core/actor/demonactortype.h"
 #include "core/game/game.h"
+#include "tests/mocks/core/mockactorlookup.h"
 #include "tests/mocks/core/testactor.h"
 #include "tests/mocks/engine/mockgameclock.h"
 
@@ -166,8 +167,9 @@ TEST(CDemonActor, PublicInterface) {
                                                         SActorRayHit *, SCollisionInfo *, int,
                                                         CBoundingBox3D *)>);
     static_assert(std::is_same_v<decltype(&CDemonActor::save), void (CDemonActor::*)(std::FILE *)>);
-    static_assert(std::is_same_v<decltype(&CDemonActor::load),
-                                 void (CDemonActor::*)(common::CTextScanner &, const CActor &)>);
+    static_assert(
+        std::is_same_v<decltype(&CDemonActor::load),
+                       void (CDemonActor::*)(common::CTextScanner &, const SActorArchiveOwners &)>);
 }
 
 TEST(CDemonActor, ItsRecordIsAnAbstractBaseClass) {
@@ -198,6 +200,8 @@ protected:
     CGame game_{clock_};
     common::CWatcomRandom crt_;
     const CActor classes_{game_, crt_};
+    ::testing::NiceMock<MockActorLookup> actors_;
+    const SActorArchiveOwners owners_{.actor_classes = classes_, .actors = actors_};
 };
 
 // The class's fields come between the tags, read by archive().
@@ -206,7 +210,7 @@ TEST_F(CDemonActorLoadTest, LoadingReadsTheNameFromTheStartTagAndTheFieldsBetwee
     std::optional<int> field;
     actor.onArchive([&](CActorArchive &archive) { field = archive.getScanner().scanInteger(); });
     common::CTextScanner scanner(" { ctestleaf \"Door 1\"\n  42\n } CTestLeaf \"DOOR 1\"\nnext");
-    actor.load(scanner, classes_);
+    actor.load(scanner, owners_);
     EXPECT_EQ(actor.getActorName(), "Door 1");
     EXPECT_EQ(field, 42);
     EXPECT_EQ(scanner.scanWord(), "next");
@@ -215,7 +219,7 @@ TEST_F(CDemonActorLoadTest, LoadingReadsTheNameFromTheStartTagAndTheFieldsBetwee
 TEST_F(CDemonActorLoadTest, AStartTagForAnotherClassIsFatal) {
     CTestActor actor(kTestLeafType);
     common::CTextScanner scanner("{ CTestOther \"a\"\n} CTestOther \"a\"\n");
-    EXPECT_THAT([&] { actor.load(scanner, classes_); },
+    EXPECT_THAT([&] { actor.load(scanner, owners_); },
                 ThrowsMessage<common::CFatalError>(
                     StrEq("Start of actor file tag mismatch for class CTestLeaf")));
 }
@@ -223,13 +227,13 @@ TEST_F(CDemonActorLoadTest, AStartTagForAnotherClassIsFatal) {
 TEST_F(CDemonActorLoadTest, AMissingStartTagIsFatal) {
     CTestActor actor(kTestLeafType);
     common::CTextScanner scanner("CTestLeaf \"a\"\n");
-    EXPECT_THROW(actor.load(scanner, classes_), common::CFatalError);
+    EXPECT_THROW(actor.load(scanner, owners_), common::CFatalError);
 }
 
 TEST_F(CDemonActorLoadTest, ATagWithoutANameLeavesTheActorUnnamed) {
     CTestActor actor(kTestLeafType);
     common::CTextScanner scanner("{ CTestLeaf\n} CTestLeaf \"\"");
-    actor.load(scanner, classes_);
+    actor.load(scanner, owners_);
     EXPECT_EQ(actor.getActorName(), "");
 }
 
@@ -238,7 +242,7 @@ TEST_F(CDemonActorLoadTest, ATagWithoutANameLeavesTheActorUnnamed) {
 TEST_F(CDemonActorLoadTest, AnEmptyQuotedNameIsFatal) {
     CTestActor actor(kTestLeafType);
     common::CTextScanner scanner("{ CTestLeaf \"\"\n} CTestLeaf \"\"");
-    EXPECT_THAT([&] { actor.load(scanner, classes_); },
+    EXPECT_THAT([&] { actor.load(scanner, owners_); },
                 ThrowsMessage<common::CFatalError>(
                     StrEq("End of actor file tag mismatch for class CTestLeaf name \"\"")));
 }
@@ -248,7 +252,7 @@ TEST_F(CDemonActorLoadTest, AnEndTagForAnotherClassOrActorIsFatal) {
         CTestActor actor(kTestLeafType);
         const std::string text = "{ CTestLeaf \"a\"\n" + std::string(end);
         common::CTextScanner scanner(text);
-        EXPECT_THAT([&] { actor.load(scanner, classes_); },
+        EXPECT_THAT([&] { actor.load(scanner, owners_); },
                     ThrowsMessage<common::CFatalError>(
                         StrEq("End of actor file tag mismatch for class CTestLeaf name \"a\"")));
     }

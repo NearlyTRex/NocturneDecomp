@@ -1,9 +1,12 @@
 #include "common/error/error.h"
+#include "common/text/ascii.h"
 #include "common/text/textscanner.h"
 #include "core/actor/actor.h"
 #include "core/actor/actor_functions.h"
+#include "core/actor/actorarchive.h"
 #include "core/actor/demonactor.h"
 #include "core/actor/demonactortype.h"
+#include "core/actor/notported.h"
 #include "core/hero/heroplaceholder.h"
 #include "core/loadingscreen.h"
 #include "core/mission/demonmission.h"
@@ -75,6 +78,12 @@ std::pair<std::string, std::string> readActorEntry(CTextScanner &scanner) {
     scanner.expect('"');
     scanner.skipWhitespace();
     return {class_name, std::string(*name)};
+}
+
+[[noreturn]] void quitReadingActor(const CDemonActor &owner, std::string_view description) {
+    common::displayErrorAndQuit(
+        std::format("Error reading actor pointer.\nOwner: {}\nDescription: {}\n",
+                    owner.getActorName(), description));
 }
 
 } // namespace
@@ -160,12 +169,47 @@ void CDemonMission::readMissionFile(CTextScanner &scanner, bool keep_assets) {
         if (static_cast<std::size_t>(i) >= actors_.size()) {
             common::displayErrorAndQuit("CDemonMission::load - actor list count mismatch #1!");
         }
-        actors_[static_cast<std::size_t>(i)]->load(scanner, owners_.actor);
+        actors_[static_cast<std::size_t>(i)]->load(
+            scanner, {.actor_classes = owners_.actor, .actors = *this});
     }
     if (actors_.size() > static_cast<std::size_t>(std::max(actor_count, 0))) {
         common::displayErrorAndQuit("CDemonMission::load - actor list count mismatch #3!");
     }
     current_set_index_ = -1;
+}
+
+// deferred: reading the hex number save files write a script's marker for no victim as, and the
+//   error for a reference that is neither, with save games
+// nocedit 0x00523990
+CDemonActor *CDemonMission::loadActor(CTextScanner &scanner, const CDemonActor &owner,
+                                      std::string_view description) const {
+    const std::string_view described = description.empty() ? "(unknown)" : description;
+    scanner.skipWhitespace();
+    if (!scanner.expect('"')) {
+        quitNotPorted("CDemonMission", "loadActor's actor saved as a number");
+    }
+    const std::optional<std::string_view> name = scanner.scanUntil('"');
+    if (!name) {
+        quitReadingActor(owner, described);
+    }
+    CDemonActor *actor = nullptr;
+    if (!common::equalsIgnoringAsciiCase(*name, "(none)")) {
+        actor = findActorByName(*name);
+        if (actor == nullptr) {
+            owners_.editor_tools.showError(std::format(
+                "WARNING.  Can't find actor '{}' in {} property {}.  (Please note this in a bug "
+                "report...)",
+                *name, owner.getActorName(), described));
+        }
+    }
+    if (!scanner.expect('"')) {
+        quitReadingActor(owner, described);
+    }
+    static_cast<void>(scanner.scanUntil('\n'));
+    if (!scanner.expect('\n')) {
+        quitReadingActor(owner, described);
+    }
+    return actor;
 }
 
 // A class's saved version newer than the game's own is fatal.

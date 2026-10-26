@@ -5,13 +5,17 @@
 #include "common/text/scanformat.h"
 #include "common/text/textscanner.h"
 #include "core/actor/actor.h"
+#include "core/actor/actorlookup.h"
 #include "core/actor/demonactor.h"
+#include "core/cloth/clothlist.h"
 #include "core/location.h"
 
 #include <format>
 #include <optional>
 #include <string>
 #include <string_view>
+#include <utility>
+#include <vector>
 
 namespace nocturne::core {
 namespace {
@@ -26,15 +30,15 @@ constexpr std::string_view kStringType = "String";
 } // namespace
 
 CActorArchive::CActorArchive(common::CTextScanner &scanner, const CDemonActor &actor,
-                             const CActor &actor_classes)
-    : scanner_(scanner), actor_(actor), actor_classes_(actor_classes) {}
+                             const SActorArchiveOwners &owners)
+    : scanner_(scanner), actor_(actor), owners_(owners) {}
 
 common::CTextScanner &CActorArchive::getScanner() const {
     return scanner_;
 }
 
 int CActorArchive::getSavedVersion(const CDemonActorType &type) const {
-    return actor_classes_.getSavedVersion(type);
+    return owners_.actor_classes.getSavedVersion(type);
 }
 
 // deferred: writing the value to a save file, with CDemonActor::save
@@ -107,6 +111,41 @@ void CActorArchive::archiveString(std::string &value, std::string_view descripti
         value = *text;
     }
     archiveDescription(kStringType, description);
+}
+
+// nocedit 0x0040b6e0
+void CActorArchive::archiveLocalizedString(std::string &value, std::string_view description) {
+    archiveString(value, std::string(description) + " !LOCALIZE!");
+}
+
+// deferred: writing the actor's name to a save file, with CDemonMission::saveActor
+// nocedit 0x0040b870
+void CActorArchive::archiveActor(CDemonActor *&actor, std::string_view description) {
+    actor = owners_.actors.loadActor(scanner_, actor_, description);
+}
+
+// The original held ten names, which more overran.
+// deferred: writing the list to a save file, with CDemonActor::save
+// nocedit 0x0040be60
+void CActorArchive::archiveClothList(CClothList &cloth_list, std::string_view description) {
+    archiveDescription("Cloth list opening brace", description);
+    int count = 0;
+    if (const std::optional<int> read = scanner_.scanInteger()) {
+        count = *read;
+    } else {
+        quitOnPropertyError("cloth count", description);
+    }
+    archiveDescription("clothCount", description);
+    std::vector<std::string> filenames;
+    for (int i = 0; i < count; ++i) {
+        std::string filename;
+        if (common::scanFormat(scanner_, " \"%[^\"]\"\n", filename) != 1) {
+            quitOnPropertyError("cloth filename entry", description);
+        }
+        filenames.push_back(std::move(filename));
+    }
+    archiveDescription("Cloth list closing brace", description);
+    cloth_list.setFilenames(std::move(filenames));
 }
 
 // The rest of the line; a last line without its newline is fatal, as the file's end was.

@@ -5,8 +5,10 @@
 #include "core/actor/actor.h"
 #include "core/actor/actorarchive.h"
 #include "core/actor/demonactor.h"
+#include "core/cloth/clothlist.h"
 #include "core/game/game.h"
 #include "core/location.h"
+#include "tests/mocks/core/mockactorlookup.h"
 #include "tests/mocks/core/testactor.h"
 #include "tests/mocks/engine/mockgameclock.h"
 
@@ -21,6 +23,9 @@
 namespace nocturne::core {
 namespace {
 
+using ::testing::_;
+using ::testing::ElementsAre;
+using ::testing::Ref;
 using ::testing::StrEq;
 using ::testing::ThrowsMessage;
 
@@ -34,7 +39,7 @@ protected:
     // Reads with a fresh archive over the text, then gives what is left of it.
     std::string read(std::string_view text, const std::function<void(CActorArchive &)> &fields) {
         common::CTextScanner scanner(text);
-        CActorArchive archive(scanner, actor_, classes_);
+        CActorArchive archive(scanner, actor_, owners_);
         fields(archive);
         return std::string(scanner.readLine());
     }
@@ -53,6 +58,8 @@ protected:
     CGame game_{clock_};
     common::CWatcomRandom crt_;
     CActor classes_{game_, crt_};
+    ::testing::StrictMock<MockActorLookup> actors_;
+    const SActorArchiveOwners owners_{.actor_classes = classes_, .actors = actors_};
     CTestActor actor_{kTestLeafType};
 };
 
@@ -154,6 +161,56 @@ TEST_F(CActorArchiveTest, AFieldWithNoDescriptionIsUnknown) {
         "Integer value");
 }
 
+// The text after the description names it for whoever translates the game.
+TEST_F(CActorArchiveTest, ALocalizedStringIsMarkedSo) {
+    std::string text;
+    read("\"Mob boss\"\n",
+         [&](CActorArchive &archive) { archive.archiveLocalizedString(text, "descriptiveName"); });
+    EXPECT_EQ(text, "Mob boss");
+    expectFatal(
+        "x\n", [&](CActorArchive &archive) { archive.archiveLocalizedString(text, "name"); },
+        "name !LOCALIZE!", "String");
+}
+
+// The mission finds the actor, reading its reference for the actor being read.
+TEST_F(CActorArchiveTest, AnActorIsFoundByTheMission) {
+    CTestActor carried(kTestOtherType);
+    CDemonActor *actor = nullptr;
+    EXPECT_CALL(actors_, loadActor(_, Ref(actor_), StrEq("carry actor")))
+        .WillOnce([&](common::CTextScanner &scanner, const CDemonActor &, std::string_view) {
+            scanner.skipLine();
+            return &carried;
+        });
+    EXPECT_EQ(read("\"Crate\"\nnext",
+                   [&](CActorArchive &archive) { archive.archiveActor(actor, "carry actor"); }),
+              "next");
+    EXPECT_EQ(actor, &carried);
+}
+
+// A line opening the list, the count, a name to a line, and a line closing it.
+TEST_F(CActorArchiveTest, AClothListIsItsFileNames) {
+    CClothList cloth_list;
+    EXPECT_EQ(read("\t{ // clothList\n\t\t2 // clothCount\n\t\t\"coat.cls\"\n\t\t\"skirt.cls\"\n"
+                   "\t}\nnext",
+                   [&](CActorArchive &archive) { archive.archiveClothList(cloth_list, "c"); }),
+              "next");
+    EXPECT_THAT(cloth_list.getFilenames(), ElementsAre("coat.cls", "skirt.cls"));
+    read("{\n0\n}\n", [&](CActorArchive &archive) { archive.archiveClothList(cloth_list, "c"); });
+    EXPECT_TRUE(cloth_list.getFilenames().empty());
+}
+
+TEST_F(CActorArchiveTest, AClothListThatCantBeReadIsFatal) {
+    CClothList cloth_list;
+    const auto read_list = [&](CActorArchive &archive) {
+        archive.archiveClothList(cloth_list, "clothList");
+    };
+    expectFatal("{", read_list, "clothList", "Cloth list opening brace");
+    expectFatal("{\nnone\n", read_list, "clothList", "cloth count");
+    expectFatal("{\n1", read_list, "clothList", "clothCount");
+    expectFatal("{\n1\ncoat.cls\n}\n", read_list, "clothList", "cloth filename entry");
+    expectFatal("{\n1\n\"coat.cls\"\n}", read_list, "clothList", "Cloth list closing brace");
+}
+
 TEST_F(CActorArchiveTest, ItGivesTheVersionTheFileSavedAClassIn) {
     classes_.setSavedVersion(kTestBaseType, 4);
     read("", [&](CActorArchive &archive) {
@@ -174,7 +231,7 @@ protected:
         const std::string text =
             std::format("{{ CTestLeaf \"Door\"\n{}}} CTestLeaf \"Door\"\n", fields);
         common::CTextScanner scanner(text);
-        actor_.load(scanner, classes_);
+        actor_.load(scanner, owners_);
     }
 };
 

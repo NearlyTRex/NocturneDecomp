@@ -36,6 +36,7 @@ std::unique_ptr<CDemonActor> makeDoor();
 std::unique_ptr<CDemonActor> makeHero();
 std::unique_ptr<CDemonActor> makeSpot();
 std::unique_ptr<CDemonActor> makePlaced();
+std::unique_ptr<CDemonActor> makeLinked();
 
 const CDemonActorType kDoorType = makeActorType("CTestDoor", &kTestBaseType, &makeDoor, 2);
 // A kind of the game's hero class, which is what a hero placeholder is offered for.
@@ -45,6 +46,22 @@ const CDemonActorType kSpotType =
 // Of a class whose fields are only CDemonActor's.
 const CDemonActorType kPlacedType =
     makeActorType("CTestPlaced", &CDemonActor::kType, &makePlaced, 1);
+const CDemonActorType kLinkedType = makeActorType("CTestLinked", &kTestBaseType, &makeLinked, 1);
+
+// An actor whose body names another.
+class CTestLinked : public CTestActor {
+public:
+    CTestLinked() : CTestActor(kLinkedType) {}
+    void archive(CActorArchive &actor_archive) override {
+        actor_archive.archiveActor(linked_, "linked");
+    }
+    [[nodiscard]] CDemonActor *getLinked() const {
+        return linked_;
+    }
+
+private:
+    CDemonActor *linked_ = nullptr;
+};
 
 // A hero placeholder whose body holds its hero index, as CHeroPlaceholder's can't be read yet.
 class CTestSpot : public CHeroPlaceholder {
@@ -91,6 +108,10 @@ std::unique_ptr<CDemonActor> makePlaced() {
     return placed;
 }
 
+std::unique_ptr<CDemonActor> makeLinked() {
+    return std::make_unique<CTestLinked>();
+}
+
 // An actor's start and end tags with nothing between.
 std::string body(std::string_view class_name, std::string_view name) {
     return std::format("{{ {} \"{}\"\n}} {} \"{}\"\n", class_name, name, class_name, name);
@@ -112,6 +133,7 @@ protected:
         actor_.registerActorClass(kHeroType);
         actor_.registerActorClass(kSpotType);
         actor_.registerActorClass(kPlacedType);
+        actor_.registerActorClass(kLinkedType);
     }
 
     void read(const std::string &text, bool keep_assets = true) {
@@ -353,6 +375,74 @@ TEST_F(CDemonMissionLoadTest, CancellingThePickLeavesTheMissionAsItIs) {
     EXPECT_CALL(raw_input_, getNextKeypress(_)).Times(0);
     mission_.load("test.msn", true);
     EXPECT_EQ(names(), (std::vector<std::string>{"Door", "Gabriel", "Stranger", "Spot"}));
+}
+
+// Every actor is made before any body is read, so a body can name one later in the list.
+TEST_F(CDemonMissionLoadTest, ABodyNamesAnotherActor) {
+    read(mission("0\n", 2, 0, "CTestLinked \"L\"\nCTestDoor \"Door 1\"\n",
+                 "{ CTestLinked \"L\"\n\t\"door 1\"\t// linked\n} CTestLinked \"L\"\n" +
+                     body("CTestDoor", "Door 1")));
+    const auto &linked = dynamic_cast<const CTestLinked &>(*mission_.getActors()[0]);
+    EXPECT_EQ(linked.getLinked(), mission_.getActors()[1].get());
+}
+
+class CDemonMissionLoadActorTest : public CDemonMissionLoadTest {
+protected:
+    CDemonMissionLoadActorTest() {
+        owner_.setActorName("Owner");
+        auto door = std::make_unique<CTestActor>(kDoorType);
+        door->setActorName("Door 1");
+        door_ = door.get();
+        mission_.addActorToList(std::move(door));
+    }
+
+    // The actor the reference names, checking the rest of its line was read.
+    CDemonActor *loadActor(std::string_view text) {
+        common::CTextScanner scanner(text);
+        CDemonActor *actor = mission_.loadActor(scanner, owner_, "linked");
+        EXPECT_EQ(scanner.readLine(), "next") << text;
+        return actor;
+    }
+
+    void expectFatal(std::string_view text, std::string_view description,
+                     const std::string &message) {
+        common::CTextScanner scanner(text);
+        EXPECT_THAT([&] { static_cast<void>(mission_.loadActor(scanner, owner_, description)); },
+                    ThrowsMessage<common::CFatalError>(StrEq(message)))
+            << text;
+    }
+
+    CTestActor owner_{kTestBaseType};
+    CDemonActor *door_ = nullptr;
+};
+
+TEST_F(CDemonMissionLoadActorTest, AQuotedNameIsTheActorSoNamed) {
+    EXPECT_EQ(loadActor(" \n \"DOOR 1\"  // linked\nnext"), door_);
+}
+
+TEST_F(CDemonMissionLoadActorTest, NoneIsNoActor) {
+    EXPECT_EQ(loadActor("\"(None)\"\nnext"), nullptr);
+}
+
+// The warning waits for a key, and the mission goes on without the actor.
+TEST_F(CDemonMissionLoadActorTest, AnActorNotInTheMissionIsWarnedOfAndTakenAsNone) {
+    EXPECT_CALL(raw_input_, getNextKeypress(_)).WillOnce(Return('x'));
+    EXPECT_EQ(loadActor("\"Nobody\"\nnext"), nullptr);
+}
+
+TEST_F(CDemonMissionLoadActorTest, AReferenceThatCantBeReadIsFatal) {
+    const std::string message = "Error reading actor pointer.\nOwner: Owner\nDescription: linked\n";
+    expectFatal("\"\"\n", "linked", message);
+    expectFatal("\"(none)", "linked", message);
+    expectFatal("\"(none)\"", "linked", message);
+    expectFatal("\"\"\n", "",
+                "Error reading actor pointer.\nOwner: Owner\nDescription: (unknown)\n");
+}
+
+// Only save files write one, for a script's marker of no victim.
+TEST_F(CDemonMissionLoadActorTest, AnUnquotedReferenceIsNotPortedYet) {
+    expectFatal("ffffffff\n", "linked",
+                "CDemonMission::loadActor's actor saved as a number is not ported yet");
 }
 
 } // namespace

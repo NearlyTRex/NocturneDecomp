@@ -24,7 +24,7 @@ functions don't count as done. Sizes are in instructions.
 | 8 | `renderMenuAndGetChoice`, `CMoon::free`, `CSound::reset`, `CEditorTools::showFileSelectionDialog` | 8 | 63 | 5314 | 60 | 3 | 95.2% |
 | 9 | `CPickList::enableItem`, `CEventList::resetGameFlags`, `CLevelLoader::show`, `CDemonMission::load` | 15 | 56 | 3298 | 27 | 9 | 48.2% |
 | 10 | `CDemonMission::createHeros`, `CDemonMission::prepareAllActors`, `CEventList::reset`, `CDemonMission::loadSet` | 15 | 42 | 5112 | 32 | 9 | 76.1% |
-| 11 | `CScript::loadScript` | 63 | 579 | 67400 | 36 | 24 | 6.2% |
+| 11 | `CScript::loadScript` | 63 | 579 | 67400 | 36 | 26 | 6.2% |
 | 12 | `CDemonMission::loadScript`, `CScript::executeInitSection`, `CDemonMission::startMission`, `CDemonMission::buildActiveSetActorList`, `CConsole::reset`, `CEditorTools::displayMemoryDiagnostics`, `CGame::setGameRes`, `CDemonLight::init`, `CDemonSet::initScene` | 12 | 26 | 1658 | 2 | 0 | 7.6% |
 | 13 | `CFireEffect::init`, `CDemonSet::loadMasterLightStates`, `CDemonSet::setGamma`, `CGame::clearOverlay`, `CGame::loadAssets` | 7 | 27 | 735 | 0 | 0 | 0.0% |
 | 14 | `CNetGame::syncPlayers`, `CNetGame::processServerFrame`, `CLevelLoader::cleanup`, `CKeys::toggleInputMask`, `CGame::processHotkeys` | 17 | 51 | 5302 | 1 | 0 | 1.9% |
@@ -36,8 +36,8 @@ functions don't count as done. Sizes are in instructions.
 | 20 | Not reached from startup: `support/` | 2 | 24 | 593 | 3 | 1 | 12.5% |
 | 21 | Not reached from startup: `cockpit/` | 4 | 178 | 11527 | 0 | 0 | 0.0% |
 | 22 | Not reached from startup: `shape/` | 2 | 42 | 3178 | 4 | 2 | 9.5% |
-| 23 | Not reached from startup: `core/` (part 1 of 9) | 18 | 292 | 16011 | 24 | 1 | 8.2% |
-| 24 | Not reached from startup: `core/` (part 2 of 9) | 11 | 277 | 24965 | 15 | 2 | 5.4% |
+| 23 | Not reached from startup: `core/` (part 1 of 9) | 18 | 292 | 16011 | 25 | 2 | 8.5% |
+| 24 | Not reached from startup: `core/` (part 2 of 9) | 11 | 277 | 24965 | 18 | 4 | 6.4% |
 | 25 | Not reached from startup: `core/` (part 3 of 9) | 24 | 278 | 24134 | 20 | 9 | 7.1% |
 | 26 | Not reached from startup: `core/` (part 4 of 9) | 18 | 300 | 20148 | 40 | 5 | 13.3% |
 | 27 | Not reached from startup: `core/` (part 5 of 9) | 21 | 294 | 20910 | 29 | 5 | 9.8% |
@@ -46,7 +46,7 @@ functions don't count as done. Sizes are in instructions.
 | 30 | Not reached from startup: `core/` (part 8 of 9) | 20 | 300 | 31826 | 29 | 2 | 9.6% |
 | 31 | Not reached from startup: `core/` (part 9 of 9) | 5 | 111 | 10905 | 7 | 1 | 6.3% |
 | 32 | Not reached from startup: `wincore/` | 2 | 11 | 482 | 4 | 0 | 36.3% |
-| | **All** | | **4479** | **402407** | **783** | **135** | **17.4%** |
+| | **All** | | **4479** | **402407** | **787** | **140** | **17.5%** |
 
 ## Step 0: Math value types
 
@@ -1233,7 +1233,7 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `archive` 0x005dab30 (17)
   - [ ] `dtor` 0x005dae50 (31)
 
-### `core/actor.cpp` (66 functions, 3653 instructions, 5 done, 8 partial)
+### `core/actor.cpp` (66 functions, 3653 instructions, 5 done, 9 partial)
 - free functions
   - [ ] `copyVector` 0x00410360 (12)
   - [ ] `rayCylinderIntersect` 0x00408340 (354)
@@ -1260,7 +1260,8 @@ functions don't count as done. Sizes are in instructions.
     - deferred: writing the value to a save file, with CDemonActor::save
   - [~] `archiveVector` 0x0040b340 (49)
     - deferred: writing the value to a save file, with CDemonActor::save
-  - [ ] `archiveActor` 0x0040b870 (46)
+  - [~] `archiveActor` 0x0040b870 (46)
+    - deferred: writing the actor's name to a save file, with CDemonMission::saveActor
 - class `CDemonActor`
   - [ ] `transformVector` 0x00408e80 (13)
   - [ ] `localToWorldPoint` 0x00408ec0 (26)
@@ -1485,11 +1486,12 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `getItemDisplayName` 0x004fcf00 (43)
   - [ ] `getItemDescription` 0x004fcf70 (43)
 
-### `core/mission.cpp` (5 functions, 217 instructions, 1 done, 0 partial)
+### `core/mission.cpp` (5 functions, 217 instructions, 1 done, 1 partial)
 - class `CDemonMission`
   - [ ] `markActorToDelete` 0x005240a0 (35)
   - [ ] `setTeleportTarget` 0x00524070 (11)
-  - [ ] `loadActor` 0x00523990 (111)
+  - [~] `loadActor` 0x00523990 (111)
+    - deferred: reading the hex number save files write a script's marker for no victim as, and the error for a reference that is neither, with save games
   - [ ] `saveActor` 0x00523af0 (41)
   - [x] `setMissionName` 0x00524630 (19)
 
@@ -3489,20 +3491,21 @@ functions don't count as done. Sizes are in instructions.
 
 ## Step 23: Not reached from startup: `core/` (part 1 of 9)
 
-### `core/actor.cpp` (19 functions, 1173 instructions, 5 done, 0 partial)
+### `core/actor.cpp` (19 functions, 1173 instructions, 6 done, 1 partial)
 - free functions
   - [x] `registerActorClass` 0x0040c2e0 (73)
   - [x] `staticInit` 0x00408320 (9)
   - [ ] `draw3DPointMarker` 0x00409930 (173)
   - [ ] `copyToActorDebugBuffer` 0x0040ac30 (27)
   - [ ] `archiveQuaternion` 0x0040b520 (54)
-  - [ ] `archiveLocalizedString` 0x0040b6e0 (54)
+  - [x] `archiveLocalizedString` 0x0040b6e0 (54)
   - [ ] `archiveKeyframedModelInstance` 0x0040b8f0 (44)
   - [ ] `archiveDeformableModelInstance` 0x0040b970 (44)
   - [ ] `archiveMotionState` 0x0040b9f0 (81)
   - [ ] `archivePartStatus` 0x0040bae0 (202)
   - [ ] `archiveBox` 0x0040bd70 (81)
-  - [ ] `archiveClothList` 0x0040be60 (136)
+  - [~] `archiveClothList` 0x0040be60 (136)
+    - deferred: writing the list to a save file, with CDemonActor::save
   - [ ] `archiveRules` 0x0040c000 (147)
   - [ ] `copyFloat1` 0x004104d0 (6)
   - [ ] `copyFloat2` 0x004104e0 (6)
@@ -3918,10 +3921,10 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `getBugState` 0x00427b60 (3)
   - [ ] `swapIntegers` 0x00427b80 (8)
 
-### `core/charactr.cpp` (91 functions, 8559 instructions, 2 done, 1 partial)
+### `core/charactr.cpp` (91 functions, 8559 instructions, 5 done, 1 partial)
 - class `CCharacter`
   - [~] `ctor` 0x00427e20 (125)
-    - deferred: the cloth, collision points, fires and flames, and the defaults the constructor gives the movement, walking, looking, carrying, health, layer action and smoking fields, with the steps that read them
+    - deferred: the collision points, fires and flames, and the defaults the constructor gives the movement, walking, looking, carrying bones, layer action and smoking fields, with the steps that read them
   - [ ] `detachBodyPart` 0x0042bcc0 (45)
   - [ ] `dismember` 0x0042b9e0 (178)
   - [ ] `processFire` 0x0042a830 (336)
@@ -3936,7 +3939,7 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `computeBoundingBox` 0x0042d530 (41)
   - [ ] `applyLookAt` 0x0042dcd0 (111)
   - [ ] `applyGestureLookAt` 0x0042dfc0 (44)
-  - [ ] `archive` 0x004283a0 (154)
+  - [x] `archive` 0x004283a0 (154)
   - [ ] `addDamageDecal` 0x0042b190 (236)
   - [ ] `shatter` 0x0042b8e0 (26)
   - [ ] `explode` 0x0042b930 (57)
@@ -3958,7 +3961,7 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `getBoundingBox` 0x0042b8a0 (24)
   - [ ] `isGrabbable` 0x0042bf30 (2)
   - [ ] `releaseFromGrab` 0x0042bf40 (13)
-  - [ ] `getGrabber` 0x0042bf80 (3)
+  - [x] `getGrabber` 0x0042bf80 (3)
   - [ ] `drop` 0x0042bf90 (45)
   - [ ] `attractActorToward` 0x0042c010 (98)
   - [ ] `checkCylinderCollisionWorld` 0x0042c110 (35)
@@ -3994,7 +3997,7 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `spawnGoreAtBone` 0x0042b760 (57)
   - [ ] `spawnBloodAtBone` 0x0042b810 (50)
   - [ ] `turnTowardPoint` 0x00428d80 (55)
-  - [ ] `isCarryingAnything` 0x0042d360 (19)
+  - [x] `isCarryingAnything` 0x0042d360 (19)
   - [ ] `findSomethingToLookAt` 0x0042d5a0 (481)
   - [ ] `advanceLayerAction` 0x0042e370 (153)
   - [ ] `blendLayerActionMotion` 0x0042e570 (27)
@@ -4034,12 +4037,14 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `passthroughInt2` 0x00431340 (2)
   - [ ] `fastSqrt` 0x00431350 (5)
 
-### `core/cloth.cpp` (35 functions, 4019 instructions, 1 done, 0 partial)
+### `core/cloth.cpp` (35 functions, 4019 instructions, 1 done, 2 partial)
 - class `CClothList`
-  - [ ] `ctor` 0x0043bf40 (18)
+  - [~] `ctor` 0x0043bf40 (18)
+    - deferred: clearing the loaded cloth, with CCloth
   - [ ] `process` 0x0043c2d0 (32)
   - [ ] `reset` 0x0043c070 (46)
-  - [ ] `dtor` 0x0043bf80 (8)
+  - [~] `dtor` 0x0043bf80 (8)
+    - deferred: freeing the loaded cloth, with reset
   - [ ] `render` 0x0043c320 (47)
   - [ ] `load` 0x0043bfa0 (62)
   - [ ] `setup` 0x0043c290 (30)
