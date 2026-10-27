@@ -51,7 +51,7 @@ void __cdecl core_boxactor_cpp_CLightActor_setupLightModel_FUN_00422d60(CLightAc
       (this_ptr->light).light_enabled_flag = 0;
       (this_ptr->light).base.base.focal_length = 56.0;
       (this_ptr->light).base.max_distance = 32.0;
-      (this_ptr->base).pickup_type = 3;
+      (this_ptr->base).pickup_type = BOX_PICKUP_CARRY;
       return;
     }
     if (EVar1 == LIGHT_TYPE_LANTERN) {
@@ -71,7 +71,7 @@ void __cdecl core_boxactor_cpp_CLightActor_setupLightModel_FUN_00422d60(CLightAc
       (this_ptr->light).base.base.focal_length = 56.0;
       (this_ptr->light).base.max_distance = 32.0;
       iVar2 = INT_008229ac;
-      (this_ptr->base).pickup_type = 3;
+      (this_ptr->base).pickup_type = BOX_PICKUP_CARRY;
       if (iVar2 == 0) {
         this_ptr_01 = CDemonFilter_ARRAY_008229ec;
         iVar3 = 0;

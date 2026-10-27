@@ -16,9 +16,9 @@ void __cdecl core_door_cpp_CDoor_archive_FUN_00480aa0(CDoor *this_ptr)
   core_actor_cpp_CDemonActor_archive_FUN_0040c1c0(&this_ptr->base);
   core_actor_cpp_archiveKeyframedModelInstance_FUN_0040b8f0(&this_ptr->model,"modelName");
   core_actor_cpp_archiveInteger_FUN_0040b7f0((int *)&this_ptr->door_type,"doorType");
-  core_actor_cpp_archiveInteger_FUN_0040b7f0(&this_ptr->door_side,"doorSide");
+  core_actor_cpp_archiveInteger_FUN_0040b7f0((int *)&this_ptr->door_side,"doorSide");
   core_actor_cpp_archiveInteger_FUN_0040b7f0((int *)&this_ptr->door_state,"doorState");
-  core_actor_cpp_archiveInteger_FUN_0040b7f0(&this_ptr->door_swing,"doorSwing");
+  core_actor_cpp_archiveInteger_FUN_0040b7f0((int *)&this_ptr->door_swing,"doorSwing");
   core_actor_cpp_archiveString_FUN_0040b5c0(this_ptr->open_condition,"openEvent");
   core_actor_cpp_archiveString_FUN_0040b5c0(this_ptr->close_condition,"closeEvent");
   core_actor_cpp_archiveString_FUN_0040b5c0(this_ptr->open_sound,"openSound");
@@ -40,7 +40,7 @@ void __cdecl core_door_cpp_CDoor_archive_FUN_00480aa0(CDoor *this_ptr)
               (this_ptr->on_close_trigger_event,"eventToTriggerWhenClosed");
   }
   if (3 < g_CDoorClassVersion) {
-    core_actor_cpp_archiveInteger_FUN_0040b7f0(&this_ptr->one_shot,"oneShot");
+    core_actor_cpp_archiveInteger_FUN_0040b7f0((int *)&this_ptr->one_shot,"oneShot");
   }
   if (g_CDoorClassVersion < 7) {
     if (4 < g_CDoorClassVersion) {
@@ -77,7 +77,8 @@ void __cdecl core_door_cpp_CDoor_archive_FUN_00480aa0(CDoor *this_ptr)
               (&this_ptr->plot_as_box_in_shadow,"plotAsBoxInShadow");
   }
   if (8 < g_CDoorClassVersion) {
-    core_actor_cpp_archiveInteger_FUN_0040b7f0(&this_ptr->allowed_sides,"allowedSides");
+    core_actor_cpp_archiveInteger_FUN_0040b7f0
+              ((int *)&this_ptr->allowed_sides,"allowedSides");
   }
   if (9 < g_CDoorClassVersion) {
     core_actor_cpp_archiveInteger_FUN_0040b7f0

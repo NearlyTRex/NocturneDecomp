@@ -38,7 +38,7 @@ void __cdecl core_lever_cpp_CLever_getPropertyList_FUN_00505240(CLever *this_ptr
             (property_list,"Rule",&this_ptr->rule,-1);
   core_actor_cpp_CActorPropertyList_addEnumPair_FUN_0040e640
             (property_list,"Open from side",3,g_LeverOpenFromSideTypePairs,
-             &this_ptr->allowed_sides);
+             (int *)&this_ptr->allowed_sides);
   core_actor_cpp_CActorPropertyList_addBool_FUN_0040e330
             (property_list,"Enable collision",&this_ptr->enable_collision);
   return;

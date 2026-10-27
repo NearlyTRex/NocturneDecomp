@@ -11,7 +11,7 @@ int __cdecl core_trigger_cpp_CTrigger_acceptsDamageFrom_FUN_005e0ac0(CTrigger *t
 {
   int iVar1;
   
-  if ((actor != (CDemonActor *)0x0) && (this_ptr->hero_triggers_me == 7)) {
+  if ((actor != (CDemonActor *)0x0) && (this_ptr->trigger_cause == TRIGGER_CAUSE_DAMAGE)) {
     if (this_ptr->damage_actor_wildcard_name[0] == '\0') {
       return 1;
     }

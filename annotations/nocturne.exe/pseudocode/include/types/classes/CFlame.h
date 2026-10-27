@@ -7,6 +7,7 @@
 #include "types/classes/CDemonActor.h"
 #include "types/classes/CDemonGlobe.h"
 #include "types/classes/CVector3f.h"
+#include "types/enums/EFlameType.h"
 
 // Structure: CFlame
 // Ghidra size: 0x29c (668 bytes)
@@ -16,7 +17,7 @@ typedef struct CFlame {
     CVector3f flame_size; // 0x150
     float animation_time; // 0x15c
     CDemonGlobe globe; // 0x160
-    int which_flame; // 0x1a0
+    EFlameType which_flame; // 0x1a0
     float globe_scalar; // 0x1a4
     uint sfx_handle; // 0x1a8
     int flame_state; // 0x1ac

@@ -15,7 +15,7 @@ int __cdecl core_trigger_cpp_CTrigger_getTargetPoints_FUN_005e0c30(CTrigger *thi
   CBoundingBox3D CStack_34;
   CVector3f aCStack_1c [2];
   
-  if (this_ptr->hero_triggers_me != 4) {
+  if (this_ptr->trigger_cause != TRIGGER_CAUSE_BULLET) {
     return 0;
   }
   pCVar3 = (*((this_ptr->base).vtable._ub)->getBoundingBox)(&this_ptr->base,&CStack_34);

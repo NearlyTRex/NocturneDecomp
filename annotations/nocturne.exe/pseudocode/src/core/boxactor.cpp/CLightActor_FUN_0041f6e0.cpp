@@ -50,7 +50,7 @@ void __cdecl core_boxactor_cpp_CLightActor_FUN_0041f6e0(CLightActor *this_ptr)
       (this_ptr->light).light_enabled_flag = 0;
       (local_18->base).focal_length = 56.0;
       (this_ptr->light).base.fixed_point_scale = 32.0;
-      (this_ptr->base).pickup_type = 3;
+      (this_ptr->base).pickup_type = BOX_PICKUP_CARRY;
       return;
     }
     if (EVar1 == LIGHT_TYPE_LANTERN) {
@@ -82,7 +82,7 @@ void __cdecl core_boxactor_cpp_CLightActor_FUN_0041f6e0(CLightActor *this_ptr)
       (local_18->base).focal_length = 56.0;
       (this_ptr->light).base.fixed_point_scale = 32.0;
       iVar3 = DAT_007647fc;
-      (this_ptr->base).pickup_type = 3;
+      (this_ptr->base).pickup_type = BOX_PICKUP_CARRY;
       if (iVar3 == 0) {
         this_ptr_01 = g_CDemonFilter_ARRAY_0076483c;
         iVar3 = 0;

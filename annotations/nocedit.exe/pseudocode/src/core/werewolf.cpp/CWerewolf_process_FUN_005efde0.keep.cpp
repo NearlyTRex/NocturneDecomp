@@ -586,7 +586,7 @@ LAB_005f0481:
     }
     goto LAB_005f0010;
   }
-  uVar4 = (this_ptr->base).base.is_walking;
+  uVar4 = (this_ptr->base).base.walk_state;
   if (uVar4 < 2) {
     if (uVar4 == 1) {
       if ((uVar5 == 0xe) || (uVar5 == 0xf)) {

@@ -36,7 +36,7 @@ void __cdecl core_flame_cpp_CFlame_renderBackground_FUN_0048df20(CFlame *this_pt
     if ((this_ptr->is_visible != 0) &&
        (((fVar1 = (this_ptr->flame_size).y, fVar2 = (this_ptr->flame_size).x,
          fVar3 = (this_ptr->flame_size).z, 1.0 < SQRT(fVar3 * fVar3 + fVar2 * fVar2 + fVar1 * fVar1)
-         && (0.0 < this_ptr->globe_scalar)) && (this_ptr->which_flame == 0)))) {
+         && (0.0 < this_ptr->globe_scalar)) && (this_ptr->which_flame == FLAME_TYPE_TORCH)))) {
       iVar4 = 0;
       iStack_14 = 0;
       for (iVar6 = 0; iVar6 < g_CDemonSet_PTR_005be368->actor_count; iVar6 = iVar6 + 1) {

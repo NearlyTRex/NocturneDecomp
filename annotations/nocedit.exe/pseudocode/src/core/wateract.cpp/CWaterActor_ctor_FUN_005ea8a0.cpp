@@ -55,7 +55,7 @@ CWaterActor * __cdecl core_wateract_cpp_CWaterActor_ctor_FUN_005ea8a0(CWaterActo
     pcVar4[1] = cVar1;
     pcVar4 = pcVar4 + 2;
   } while (cVar1 != '\0');
-  ADJ(pvVar2)->state = 0;
+  ADJ(pvVar2)->state = WATER_ACTOR_LOWERED;
   ADJ(pvVar2)->patch_size = 1.0;
   ADJ(pvVar2)->round_flag = 0;
   (ADJ(pvVar2)->color).b = 0xff;

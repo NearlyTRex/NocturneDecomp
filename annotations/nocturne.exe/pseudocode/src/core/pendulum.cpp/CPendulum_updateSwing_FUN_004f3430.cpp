@@ -31,7 +31,7 @@ void __cdecl core_pendulum_cpp_CPendulum_updateSwing_FUN_004f3430(CPendulum *thi
   local_1c = floor(local_24);
   local_48 = (float)((float10)local_24 - (float10)local_1c);
   this_ptr->param = delta_time / this_ptr->period + this_ptr->param;
-  if ((this_ptr->one_shot != 0) && (1.0 < this_ptr->param)) {
+  if ((this_ptr->half_movement != 0) && (1.0 < this_ptr->param)) {
     this_ptr->param = this_ptr->param + 0.5f;
   }
   local_1c = floor((double)this_ptr->param);

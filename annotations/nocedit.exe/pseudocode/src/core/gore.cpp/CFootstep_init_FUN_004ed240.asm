@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_gore_cpp_CFootstep_init_FUN_004ed240(CFootstep *this_ptr,CVector3f *position,UOrientationVector *orientation,int is_bloody,int alpha,int blood_type)
+; void __cdecl core_gore_cpp_CFootstep_init_FUN_004ed240(CFootstep *this_ptr,CVector3f *position,UOrientationVector *orientation,int is_bloody,int alpha,EBloodType blood_type)
 ;
 ; Parameters:
 ; CFootstep *      Stack[0x4]:4   this_ptr
@@ -9,7 +9,7 @@
 ; UOrientationVector * Stack[0xc]:4   orientation
 ; int              Stack[0x10]:4   is_bloody
 ; int              Stack[0x14]:4   alpha
-; int              Stack[0x18]:4   blood_type
+; EBloodType       Stack[0x18]:4   blood_type
 ; Local Variables:
 ; CVector3f        Stack[-0x40]:12  local_40
 ; CVector3f[2]     Stack[-0x34]:24  local_34

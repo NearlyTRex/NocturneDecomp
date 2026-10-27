@@ -13,6 +13,6 @@ void __cdecl core_ammo_cpp_CAmmo_archive_FUN_00410f40(CAmmo *this_ptr)
   core_actor_cpp_archiveKeyframedModelInstance_FUN_0040b8f0(&this_ptr->model,"modelName");
   core_actor_cpp_archiveString_FUN_0040b5c0(this_ptr->weapon_class_name,"weaponClassName");
   core_actor_cpp_archiveInteger_FUN_0040b7f0(&this_ptr->ammo_count,"ammoCount");
-  core_actor_cpp_archiveInteger_FUN_0040b7f0((int *)&this_ptr->ammo_type,"ammoType");
+  core_actor_cpp_archiveInteger_FUN_0040b7f0(&this_ptr->ammo_type,"ammoType");
   return;
 }

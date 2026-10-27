@@ -48,8 +48,8 @@ void __cdecl core_trigger_cpp_CTrigger_process_FUN_005dfac0(CTrigger *this_ptr,f
   
   local_34 = 0;
   this_ptr->triggering_actor = (CDemonActor *)0x0;
-  switch(this_ptr->hero_triggers_me) {
-  case 0:
+  switch(this_ptr->trigger_cause) {
+  case TRIGGER_CAUSE_HERO:
     iVar12 = core_hero_cpp_isAnyHeroWithinRadius_FUN_004f2220
                        (&(this_ptr->base).location.position,this_ptr->test_radius);
     if (iVar12 != 0) {
@@ -70,7 +70,7 @@ void __cdecl core_trigger_cpp_CTrigger_process_FUN_005dfac0(CTrigger *this_ptr,f
       }
     }
     break;
-  case 1:
+  case TRIGGER_CAUSE_ACTOR:
     if (this_ptr->cached_actor == (CDemonActor *)0x0) {
       pCVar6 = core_mission_cpp_CDemonMission_findActorByName_FUN_00524030
                          (g_CDemonMissionPtr,this_ptr->actor_name);
@@ -95,7 +95,7 @@ LAB_005dfb52:
       }
     }
     break;
-  case 2:
+  case TRIGGER_CAUSE_LIGHT:
     iVar12 = core_hero_cpp_isAnyHeroWithinRadius_FUN_004f2220
                        (&(this_ptr->base).location.position,this_ptr->test_radius);
     if (iVar12 != 0) {
@@ -121,13 +121,13 @@ LAB_005dfb52:
       }
     }
     break;
-  case 3:
-  case 4:
-  case 5:
+  case TRIGGER_CAUSE_ACTION_BUTTON:
+  case TRIGGER_CAUSE_BULLET:
+  case TRIGGER_CAUSE_LASER:
     local_34 = this_ptr->event_flag;
     this_ptr->event_flag = 0;
     break;
-  case 6:
+  case TRIGGER_CAUSE_EXPLOSION:
     pCVar2 = &(this_ptr->base).location;
     iVar12 = core_hero_cpp_isAnyHeroWithinRadius_FUN_004f2220
                        (&pCVar2->position,this_ptr->test_radius);
@@ -141,7 +141,7 @@ LAB_005dfb52:
                                    g_FastSqrtMagic),(CVector3f *)0x0,(float *)0x0);
     }
     break;
-  case 7:
+  case TRIGGER_CAUSE_DAMAGE:
     fVar5 = this_ptr->damage_cooldown - delta_time;
     this_ptr->damage_cooldown = fVar5;
     if (fVar5 < 0.0) {
@@ -154,7 +154,7 @@ LAB_005dfb52:
       local_34 = 1;
     }
     break;
-  case 8:
+  case TRIGGER_CAUSE_MOTION:
     iVar12 = core_hero_cpp_isAnyHeroWithinRadius_FUN_004f2220
                        (&(this_ptr->base).location.position,this_ptr->test_radius);
     if (iVar12 != 0) {
@@ -173,7 +173,7 @@ LAB_005dfb52:
       }
     }
     break;
-  case 9:
+  case TRIGGER_CAUSE_MATCHED_ACTORS:
     pCVar2 = &(this_ptr->base).location;
     iVar9 = core_hero_cpp_isAnyHeroWithinRadius_FUN_004f2220
                       (&pCVar2->position,this_ptr->test_radius);
@@ -201,19 +201,19 @@ LAB_005dfb52:
     }
   }
   switch(this_ptr->event_type) {
-  case TRIGGER_EVENT_SINGLE:
-  case TRIGGER_EVENT_REPEAT:
+  case TRIGGER_EVENT_MOMENTARY:
+  case TRIGGER_EVENT_ONE_SHOT:
     if (local_34 == 0) {
-      if (this_ptr->event_type == TRIGGER_EVENT_SINGLE) {
+      if (this_ptr->event_type == TRIGGER_EVENT_MOMENTARY) {
         this_ptr->trigger_state = 0;
       }
       goto switchD_005dfb63_default;
     }
     break;
-  case TRIGGER_EVENT_ON_ENTER:
+  case TRIGGER_EVENT_RISING_EDGE:
     if ((this_ptr->prev_triggered != 0) || (local_34 == 0)) goto LAB_005e0053;
     break;
-  case TRIGGER_EVENT_ON_EXIT:
+  case TRIGGER_EVENT_FALLING_EDGE:
     if ((this_ptr->prev_triggered == 1) && (local_34 == 0)) {
       this_ptr->trigger_state = 1;
       goto switchD_005dfb63_default;

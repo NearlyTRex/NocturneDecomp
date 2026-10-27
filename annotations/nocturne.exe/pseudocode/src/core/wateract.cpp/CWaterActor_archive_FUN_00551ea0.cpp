@@ -29,7 +29,7 @@ void __cdecl core_wateract_cpp_CWaterActor_archive_FUN_00551ea0(CWaterActor *thi
     core_actor_cpp_archiveString_FUN_0040c6d0(this_ptr->move_event,"moveUpEvent");
     core_actor_cpp_archiveString_FUN_0040c6d0(this_ptr->move_down_event,"moveDownEvent");
     core_actor_cpp_archiveFloat_FUN_0040c880(&this_ptr->param,"param");
-    core_actor_cpp_archiveInteger_FUN_0040c900(&this_ptr->state,"state");
+    core_actor_cpp_archiveInteger_FUN_0040c900((int *)&this_ptr->state,"state");
   }
   if (3 < g_INT_005c154c) {
     core_actor_cpp_archiveFloat_FUN_0040c880(&this_ptr->patch_size,"patchSize");

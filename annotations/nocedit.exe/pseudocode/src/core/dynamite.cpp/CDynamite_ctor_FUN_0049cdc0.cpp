@@ -21,7 +21,7 @@ CDynamite * __cdecl core_dynamite_cpp_CDynamite_ctor_FUN_0049cdc0(CDynamite *thi
   (pCVar1->toss_velocity).x = (pCVar1->toss_velocity).y;
   pCVar1->fuse_timer = -1.0;
   (pCVar1->base).is_spread_weapon = 0;
-  (pCVar1->base).fire_mode = 0;
+  (pCVar1->base).fire_mode = FIRE_MODE_AUTOMATIC;
   (pCVar1->base).weapon_type = WEAPON_TYPE_DYNAMITE;
   (pCVar1->base).can_penetrate = 0;
   (pCVar1->base).bolt_velocity = 200.0;

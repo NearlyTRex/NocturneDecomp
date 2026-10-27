@@ -373,7 +373,7 @@ section .text
     PUSH EAX                            ; 005db461 | g_CGoreInstance
     INC ESI                             ; 005db462
     CALL core_gore.cpp_CGore_spawnBloodParticles_FUN_004edaa0 ; 005db463
-        ;   XREF to: 004edaa0 (UNCONDITIONAL_CALL)  ; void core_gore.cpp_CGore_spawnBloodParticles_FUN_004edaa0(CGore * this_ptr, CVector3f * position, CVector3f * velocity, int blood_type)
+        ;   XREF to: 004edaa0 (UNCONDITIONAL_CALL)  ; void core_gore.cpp_CGore_spawnBloodParticles_FUN_004edaa0(CGore * this_ptr, CVector3f * position, CVector3f * velocity, EBloodType blood_type)
     ADD ESP,0x10                        ; 005db468
     CMP ESI,0x46                        ; 005db46b
     JGE 0x005db0b1                      ; 005db46e

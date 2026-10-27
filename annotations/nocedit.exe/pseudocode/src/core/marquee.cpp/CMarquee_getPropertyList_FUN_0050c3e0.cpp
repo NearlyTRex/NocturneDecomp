@@ -17,8 +17,9 @@ void __cdecl core_marquee_cpp_CMarquee_getPropertyList_FUN_0050c3e0(CMarquee *th
             (property_list,"totalTime",&this_ptr->total_time,
              (CActorPropertyValidatorFunc *)0x0);
   core_actor_cpp_CActorPropertyList_addEnumPair_FUN_0040e640
-            (property_list,"Display type",2,g_MarqueeDisplayTypePairs,&this_ptr->type);
-  if (this_ptr->type != 0) {
+            (property_list,"Display type",2,g_MarqueeDisplayTypePairs,
+             (int *)&this_ptr->type);
+  if (this_ptr->type != MARQUEE_DISPLAY_RING) {
     (*((this_ptr->base).vtable._ub)->setup)(&this_ptr->base);
     return;
   }

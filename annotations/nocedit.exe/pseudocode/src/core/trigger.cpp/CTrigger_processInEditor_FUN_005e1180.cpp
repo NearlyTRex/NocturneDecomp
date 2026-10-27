@@ -56,7 +56,7 @@ void __cdecl core_trigger_cpp_CTrigger_processInEditor_FUN_005e1180(CTrigger *th
       (this_ptr->trigger_size).z = 0.01;
     }
   }
-  if (this_ptr->shape == 1) {
+  if (this_ptr->trigger_shape == TRIGGER_SHAPE_CYLINDER) {
     if (fVar3 != (this_ptr->trigger_size).x) {
       (this_ptr->trigger_size).z = (this_ptr->trigger_size).x;
     }

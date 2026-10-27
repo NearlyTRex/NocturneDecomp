@@ -32,7 +32,7 @@ typedef struct CPendulum {
     float decay; // 0x428
     float decay_timer; // 0x42c
     EGroundType ground_type; // 0x430
-    int one_shot; // 0x434
+    int half_movement; // 0x434
     int is_stopped; // 0x438
 } CPendulum;
 #pragma pack(pop)

@@ -41,6 +41,6 @@ void __cdecl core_pendulum_cpp_CPendulum_archive_FUN_004f3c50(CPendulum *this_pt
   if (INT_005be164 < 8) {
     return;
   }
-  core_actor_cpp_archiveInteger_FUN_0040c900(&this_ptr->one_shot,"oneShot");
+  core_actor_cpp_archiveInteger_FUN_0040c900(&this_ptr->half_movement,"oneShot");
   return;
 }

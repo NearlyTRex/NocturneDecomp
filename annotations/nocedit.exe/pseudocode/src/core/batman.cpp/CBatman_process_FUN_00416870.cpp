@@ -14,14 +14,15 @@ void __cdecl core_batman_cpp_CBatman_process_FUN_00416870(CBatman *this_ptr,floa
   CLocation *pCVar1;
   CDeformableModelInstance *pCVar6;
   float fVar7;
-  CCharacter *pCVar8;
-  float fVar9;
+  EWalkState EVar8;
+  CCharacter *pCVar9;
   float fVar10;
+  float fVar11;
   int iVar6;
   SMotion *pSVar7;
   int iVar8;
   EDeathState EVar9;
-  UOrientationVector *pUVar11;
+  UOrientationVector *pUVar12;
   CVector3f *pCVar10;
   uint uVar11;
   CVector3f *pCVar14;
@@ -100,10 +101,10 @@ void __cdecl core_batman_cpp_CBatman_process_FUN_00416870(CBatman *this_ptr,floa
     core_charactr_cpp_CCharacter_processMotion_FUN_0042ec40((CCharacter *)this_ptr,iVar17);
   }
   fVar7 = (this_ptr->base).speed;
-  fVar9 = (float)3.1415926535000001;
+  fVar10 = (float)3.1415926535000001;
   pCVar6 = &(this_ptr->base).base.model;
   (this_ptr->base).base.walk_step_speed = (this_ptr->base).base.model.accumulated_root_motion.z;
-  (this_ptr->base).base.turn_speed = delta_time * fVar9 * fVar7;
+  (this_ptr->base).base.turn_speed = delta_time * fVar10 * fVar7;
   pSVar7 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0(&pCVar6->base);
   iVar17 = pSVar7->state_index;
   local_28 = iVar17;
@@ -138,13 +139,13 @@ void __cdecl core_batman_cpp_CBatman_process_FUN_00416870(CBatman *this_ptr,floa
           if (iVar17 == g_CDemonSetPtr->enemy_count) {
             core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
                       (&(this_ptr->base).base.model.base,0xd,1);
-            pCVar8 = (this_ptr->base).victim;
-            pCVar12 = &(pCVar8->base).location;
+            pCVar9 = (this_ptr->base).victim;
+            pCVar12 = &(pCVar9->base).location;
             this_ptr->mist_state = 1;
             if ((CLocation *)&this_ptr->new_pos != pCVar12) {
               (this_ptr->new_pos).x = (pCVar12->position).x;
-              (this_ptr->new_pos).y = (pCVar8->base).location.position.y;
-              (this_ptr->new_pos).z = (pCVar8->base).location.position.z;
+              (this_ptr->new_pos).y = (pCVar9->base).location.position.y;
+              (this_ptr->new_pos).z = (pCVar9->base).location.position.z;
             }
             pCVar4 = (this_ptr->base).base.base.vtable._ub;
             this_ptr->vanish_timer = 0.0;
@@ -153,12 +154,12 @@ void __cdecl core_batman_cpp_CBatman_process_FUN_00416870(CBatman *this_ptr,floa
             break;
           }
         }
-        pCVar8 = (this_ptr->base).victim;
-        local_c8.x = (pCVar8->base).location.position.x -
+        pCVar9 = (this_ptr->base).victim;
+        local_c8.x = (pCVar9->base).location.position.x -
                      (this_ptr->base).base.base.location.position.x;
-        local_c8.y = (pCVar8->base).location.position.y -
+        local_c8.y = (pCVar9->base).location.position.y -
                      (this_ptr->base).base.base.location.position.y;
-        local_c8.z = (pCVar8->base).location.position.z -
+        local_c8.z = (pCVar9->base).location.position.z -
                      (this_ptr->base).base.base.location.position.z;
         if (SQRT(local_c8.z * local_c8.z + local_c8.x * local_c8.x + local_c8.y * local_c8.y) <
             3.5f) {
@@ -200,26 +201,26 @@ void __cdecl core_batman_cpp_CBatman_process_FUN_00416870(CBatman *this_ptr,floa
         local_110.z = fVar7;
         pCVar14 = &local_110;
         local_110.y = 0.0;
-        pCVar8 = (this_ptr->base).victim;
-        path_map = (*((pCVar8->base).vtable._ub)->getPathMap)(&pCVar8->base);
+        pCVar9 = (this_ptr->base).victim;
+        path_map = (*((pCVar9->base).vtable._ub)->getPathMap)(&pCVar9->base);
         iVar17 = core_charactr_cpp_CCharacter_walkToPoint_FUN_004286e0
                            ((CCharacter *)this_ptr,
                             &(((this_ptr->base).victim)->base).location.position,path_map,pCVar14,
                             fVar14,max_distance);
         if (-1 < iVar17) {
           pCVar1 = &(this_ptr->base).base.base.location;
-          pCVar8 = (this_ptr->base).victim;
-          fVar7 = (pCVar1->position).x - (pCVar8->base).location.position.x;
-          fVar9 = (this_ptr->base).base.base.location.position.z -
-                  (pCVar8->base).location.position.z;
-          local_38 = SQRT(fVar9 * fVar9 + fVar7 * fVar7);
+          pCVar9 = (this_ptr->base).victim;
+          fVar7 = (pCVar1->position).x - (pCVar9->base).location.position.x;
+          fVar10 = (this_ptr->base).base.base.location.position.z -
+                   (pCVar9->base).location.position.z;
+          local_38 = SQRT(fVar10 * fVar10 + fVar7 * fVar7);
           local_34 = local_38;
           if ((local_38 <= local_2c) && ((this_ptr->base).attack_cooldown <= 0.0)) {
-            pCVar8 = (this_ptr->base).victim;
-            local_5c.x = (pCVar8->base).location.position.x - (pCVar1->position).x;
-            local_5c.y = (pCVar8->base).location.position.y -
+            pCVar9 = (this_ptr->base).victim;
+            local_5c.x = (pCVar9->base).location.position.x - (pCVar1->position).x;
+            local_5c.y = (pCVar9->base).location.position.y -
                          (this_ptr->base).base.base.location.position.y;
-            local_5c.z = (pCVar8->base).location.position.z -
+            local_5c.z = (pCVar9->base).location.position.z -
                          (this_ptr->base).base.base.location.position.z;
             core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830(&local_98,&local_5c);
             local_14 = core_actor_cpp_normalizeAngleToPi_FUN_0040cd70
@@ -269,7 +270,7 @@ void __cdecl core_batman_cpp_CBatman_process_FUN_00416870(CBatman *this_ptr,floa
                             (pCVar6,&local_ec,0);
         core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
                   ((CDemonActor *)this_ptr,&local_74,pCVar10);
-        core_gore_cpp_CGore_createBloodPool_FUN_004ede30(g_CGorePtr,&local_74,0);
+        core_gore_cpp_CGore_createBloodPool_FUN_004ede30(g_CGorePtr,&local_74,BLOOD_TYPE_RED);
         (this_ptr->base).pool_me = 1;
       }
       break;
@@ -338,9 +339,9 @@ void __cdecl core_batman_cpp_CBatman_process_FUN_00416870(CBatman *this_ptr,floa
               (EVar9 = (*(((this_ptr_00->base).base.base.vtable._uc)->_uc).getDeathState)
                                  ((CCharacter *)this_ptr_00), (int)EVar9 < 1)) &&
              (fVar7 = (this_ptr_00->base).base.base.location.position.x - (this_ptr->new_pos).x,
-             fVar9 = (this_ptr_00->base).base.base.location.position.y - (this_ptr->new_pos).y,
-             fVar10 = (this_ptr_00->base).base.base.location.position.z - (this_ptr->new_pos).z,
-             SQRT(fVar10 * fVar10 + fVar7 * fVar7 + fVar9 * fVar9) < (float)5))
+             fVar10 = (this_ptr_00->base).base.base.location.position.y - (this_ptr->new_pos).y,
+             fVar11 = (this_ptr_00->base).base.base.location.position.z - (this_ptr->new_pos).z,
+             SQRT(fVar11 * fVar11 + fVar7 * fVar7 + fVar10 * fVar10) < (float)5))
           goto switchD_004173a5_caseD_4;
           local_1c = local_1c + 4;
         }
@@ -351,21 +352,21 @@ void __cdecl core_batman_cpp_CBatman_process_FUN_00416870(CBatman *this_ptr,floa
           (pCVar1->position).x = (this_ptr->new_pos).x;
           (this_ptr->base).base.base.location.position.y = (this_ptr->new_pos).y;
           (this_ptr->base).base.base.location.position.z = (this_ptr->new_pos).z;
-          pCVar8 = (this_ptr->base).victim;
-          if (pCVar8 != (CCharacter *)0x0) {
-            local_a4.x = (pCVar8->base).location.position.x - (pCVar1->position).x;
-            local_a4.y = (pCVar8->base).location.position.y -
+          pCVar9 = (this_ptr->base).victim;
+          if (pCVar9 != (CCharacter *)0x0) {
+            local_a4.x = (pCVar9->base).location.position.x - (pCVar1->position).x;
+            local_a4.y = (pCVar9->base).location.position.y -
                          (this_ptr->base).base.base.location.position.y;
-            local_a4.z = (pCVar8->base).location.position.z -
+            local_a4.z = (pCVar9->base).location.position.z -
                          (this_ptr->base).base.base.location.position.z;
             pUVar1 = &(this_ptr->base).base.base.orient;
-            pUVar11 = (UOrientationVector *)
+            pUVar12 = (UOrientationVector *)
                       core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830
                                 (&local_b0,&local_a4);
-            if (pUVar1 != pUVar11) {
-              (pUVar1->vec).x = (pUVar11->vec).x;
-              (this_ptr->base).base.base.orient.vec.y = (pUVar11->vec).y;
-              (this_ptr->base).base.base.orient.vec.z = (pUVar11->vec).z;
+            if (pUVar1 != pUVar12) {
+              (pUVar1->vec).x = (pUVar12->vec).x;
+              (this_ptr->base).base.base.orient.vec.y = (pUVar12->vec).y;
+              (this_ptr->base).base.base.orient.vec.z = (pUVar12->vec).z;
             }
             (this_ptr->base).base.base.orient.vec.z = 0.0;
             (this_ptr->base).base.base.orient.vec.x = 0.0;
@@ -402,9 +403,9 @@ void __cdecl core_batman_cpp_CBatman_process_FUN_00416870(CBatman *this_ptr,floa
     }
     goto switchD_004173a5_caseD_4;
   }
-  uVar15 = (this_ptr->base).base.is_walking;
-  if (uVar15 < 2) {
-    if (uVar15 == 1) {
+  EVar8 = (this_ptr->base).base.walk_state;
+  if (EVar8 < 2) {
+    if (EVar8 == WALK_STATE_WALKING) {
 LAB_00416943:
       iVar17 = 1;
     }
@@ -416,8 +417,8 @@ LAB_00416b03:
               (&(this_ptr->base).base.model.base,iVar17,1);
   }
   else {
-    if (uVar15 < 3) goto LAB_00416943;
-    if (uVar15 != 3) goto LAB_00416b03;
+    if (EVar8 < WALK_STATE_NO_PATH) goto LAB_00416943;
+    if (EVar8 != WALK_STATE_NO_PATH) goto LAB_00416b03;
     core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
               (&(this_ptr->base).base.model.base,0,1);
     engine_console_cpp_CConsole_printf_FUN_00441890

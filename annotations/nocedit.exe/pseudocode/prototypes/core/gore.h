@@ -11,11 +11,11 @@ void __cdecl staticInit(void);
 
 // Original: core_gore.cpp_getBloodColorParams_FUN_004eb950
 // Address: 004eb950
-void __cdecl getBloodColorParams(int blood_type,int *out_light,int *out_color,int *out_fog);
+void __cdecl getBloodColorParams(EBloodType blood_type,int *out_light,int *out_color,int *out_fog);
 
 // Original: core_gore.cpp_CBloodParticle_setup_FUN_004eb9a0
 // Address: 004eb9a0
-void __cdecl CBloodParticle::setup(CBloodParticle *this_ptr,CVector3f *position,CVector3f *velocity,int blood_type);
+void __cdecl CBloodParticle::setup(CBloodParticle *this_ptr,CVector3f *position,CVector3f *velocity,EBloodType blood_type);
 
 // Original: core_gore.cpp_CBloodParticle_setupRenderState_FUN_004eb9d0
 // Address: 004eb9d0
@@ -31,11 +31,11 @@ int __cdecl CBloodParticle::onCollision(CBloodParticle *this_ptr,CVector3f *coll
 
 // Original: core_gore.cpp_CBloodSplat_initGroundSplat_FUN_004ec2f0
 // Address: 004ec2f0
-void __cdecl CBloodSplat::initGroundSplat(CBloodSplat *this_ptr,CVector3f *position,int blood_type);
+void __cdecl CBloodSplat::initGroundSplat(CBloodSplat *this_ptr,CVector3f *position,EBloodType blood_type);
 
 // Original: core_gore.cpp_CBloodSplat_initWallSplat_FUN_004ec390
 // Address: 004ec390
-void __cdecl CBloodSplat::initWallSplat(CBloodSplat *this_ptr,CVector3f *position,CVector3f *normal,int blood_type);
+void __cdecl CBloodSplat::initWallSplat(CBloodSplat *this_ptr,CVector3f *position,CVector3f *normal,EBloodType blood_type);
 
 // Original: core_gore.cpp_CBloodSplat_setupRenderState_FUN_004ec470
 // Address: 004ec470
@@ -71,7 +71,7 @@ void __cdecl CBloodPool::processAge(CBloodPool *this_ptr);
 
 // Original: core_gore.cpp_CBloodPool_init_FUN_004ed0d0
 // Address: 004ed0d0
-void __cdecl CBloodPool::init(CBloodPool *this_ptr,CVector3f *position,int blood_type);
+void __cdecl CBloodPool::init(CBloodPool *this_ptr,CVector3f *position,EBloodType blood_type);
 
 // Original: core_gore.cpp_CBloodPool_load_FUN_004ed160
 // Address: 004ed160
@@ -83,7 +83,7 @@ int __cdecl CBloodPool::save(CBloodPool *this_ptr,_FILE *file_handle);
 
 // Original: core_gore.cpp_CFootstep_init_FUN_004ed240
 // Address: 004ed240
-void __cdecl CFootstep::init(CFootstep *this_ptr,CVector3f *position,UOrientationVector *orientation,int is_bloody,int alpha,int blood_type);
+void __cdecl CFootstep::init(CFootstep *this_ptr,CVector3f *position,UOrientationVector *orientation,int is_bloody,int alpha,EBloodType blood_type);
 
 // Original: core_gore.cpp_CFootstep_render_FUN_004ed3c0
 // Address: 004ed3c0
@@ -115,7 +115,7 @@ void __cdecl CGore::process(CGore *this_ptr);
 
 // Original: core_gore.cpp_CGore_spawnBloodParticles_FUN_004edaa0
 // Address: 004edaa0
-void __cdecl CGore::spawnBloodParticles(CGore *this_ptr,CVector3f *position,CVector3f *velocity,int blood_type);
+void __cdecl CGore::spawnBloodParticles(CGore *this_ptr,CVector3f *position,CVector3f *velocity,EBloodType blood_type);
 
 // Original: core_gore.cpp_CGore_allocateBloodSplat_FUN_004edaf0
 // Address: 004edaf0
@@ -123,15 +123,15 @@ CBloodSplat * __cdecl CGore::allocateBloodSplat(CGore *this_ptr);
 
 // Original: core_gore.cpp_CGore_createGroundBloodSplat_FUN_004edb40
 // Address: 004edb40
-void __cdecl CGore::createGroundBloodSplat(CGore *this_ptr,CVector3f *position,int blood_type);
+void __cdecl CGore::createGroundBloodSplat(CGore *this_ptr,CVector3f *position,EBloodType blood_type);
 
 // Original: core_gore.cpp_CGore_createWallBloodSplat_FUN_004edb70
 // Address: 004edb70
-void __cdecl CGore::createWallBloodSplat(CGore *this_ptr,CVector3f *position,CVector3f *normal,int blood_type);
+void __cdecl CGore::createWallBloodSplat(CGore *this_ptr,CVector3f *position,CVector3f *normal,EBloodType blood_type);
 
 // Original: core_gore.cpp_CGore_spawnBloodBurst_FUN_004edbb0
 // Address: 004edbb0
-void __cdecl CGore::spawnBloodBurst(CGore *this_ptr,CVector3f *position,CVector3f *direction,int count,int blood_type);
+void __cdecl CGore::spawnBloodBurst(CGore *this_ptr,CVector3f *position,CVector3f *direction,int count,EBloodType blood_type);
 
 // Original: core_gore.cpp_CGore_allocateBloodPool_FUN_004edde0
 // Address: 004edde0
@@ -139,7 +139,7 @@ CBloodPool * __cdecl CGore::allocateBloodPool(CGore *this_ptr);
 
 // Original: core_gore.cpp_CGore_createBloodPool_FUN_004ede30
 // Address: 004ede30
-void __cdecl CGore::createBloodPool(CGore *this_ptr,CVector3f *position,int blood_type);
+void __cdecl CGore::createBloodPool(CGore *this_ptr,CVector3f *position,EBloodType blood_type);
 
 // Original: core_gore.cpp_CGore_loadAssets_FUN_004ede60
 // Address: 004ede60
@@ -155,7 +155,7 @@ void __cdecl CGore::spawnFliesOnActor(CGore *this_ptr,CDemonActor *actor,int gat
 
 // Original: core_gore.cpp_CGore_createFootstep_FUN_004ee070
 // Address: 004ee070
-void __cdecl CGore::createFootstep(CGore *this_ptr,CVector3f *position,UOrientationVector *orientation,int surface_type ,int alpha,int blood_type);
+void __cdecl CGore::createFootstep(CGore *this_ptr,CVector3f *position,UOrientationVector *orientation,int surface_type ,int alpha,EBloodType blood_type);
 
 // Original: core_gore.cpp_CGore_findBloodTypeAtPosition_FUN_004ee0f0
 // Address: 004ee0f0

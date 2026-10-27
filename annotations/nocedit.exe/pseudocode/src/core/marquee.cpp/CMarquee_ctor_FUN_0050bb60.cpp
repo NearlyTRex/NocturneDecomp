@@ -39,6 +39,6 @@ CMarquee * __cdecl core_marquee_cpp_CMarquee_ctor_FUN_0050bb60(CMarquee *this_pt
   (ADJ(pCVar3)->bounding_box).max.y = 0.0;
   (ADJ(pCVar3)->bounding_box).max.z = 0.0;
   ADJ(pCVar3)->base.is_transparent = 1;
-  ADJ(pCVar3)->type = 1;
+  ADJ(pCVar3)->type = MARQUEE_DISPLAY_CURSIVE;
   return ADJ(pCVar3);
 }

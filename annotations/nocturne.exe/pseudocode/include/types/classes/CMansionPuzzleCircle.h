@@ -4,8 +4,12 @@
 
 // Dependencies
 #include "system/basetypes.h"
+#include "types/classes/CColor3f.h"
+#include "types/classes/CColor3i.h"
 #include "types/classes/CDemonActor.h"
+#include "types/classes/CDemonTriangle.h"
 #include "types/classes/CKeyFramedModelInstance.h"
+#include "types/classes/CMatrix3x3f.h"
 #include "types/classes/CVector3f.h"
 #include "types/structs/SGem.h"
 #include "types/structs/SMRGLTextureModel.h"

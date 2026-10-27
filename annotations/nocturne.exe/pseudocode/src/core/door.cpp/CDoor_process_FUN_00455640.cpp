@@ -44,7 +44,7 @@ void __cdecl core_door_cpp_CDoor_process_FUN_00455640(CDoor *this_ptr,float delt
   local_74 = (this_ptr->base).location.position.y;
   local_70 = (this_ptr->base).location.position.z;
   local_50 = this_ptr->param;
-  if (1 < this_ptr->one_shot) {
+  if (1 < (int)this_ptr->one_shot) {
     return;
   }
   switch(this_ptr->door_state) {
@@ -67,16 +67,16 @@ void __cdecl core_door_cpp_CDoor_process_FUN_00455640(CDoor *this_ptr,float delt
       if (this_ptr->param < this_ptr->max_param) {
         this_ptr->door_state = DOOR_STATE_OPEN;
         this_ptr->param = this_ptr->max_param;
-        if (this_ptr->one_shot != 0) {
-          this_ptr->one_shot = 2;
+        if (this_ptr->one_shot != ONE_SHOT_NO) {
+          this_ptr->one_shot = ONE_SHOT_DONE;
         }
       }
     }
     else if (this_ptr->max_param < this_ptr->param) {
       this_ptr->door_state = DOOR_STATE_OPEN;
       this_ptr->param = this_ptr->max_param;
-      if (this_ptr->one_shot != 0) {
-        this_ptr->one_shot = 2;
+      if (this_ptr->one_shot != ONE_SHOT_NO) {
+        this_ptr->one_shot = ONE_SHOT_DONE;
       }
     }
     break;
@@ -95,8 +95,8 @@ void __cdecl core_door_cpp_CDoor_process_FUN_00455640(CDoor *this_ptr,float delt
       if (0.0 < this_ptr->param) {
         this_ptr->door_state = DOOR_STATE_CLOSED;
         this_ptr->param = 0.0;
-        if (this_ptr->one_shot != 0) {
-          this_ptr->one_shot = 2;
+        if (this_ptr->one_shot != ONE_SHOT_NO) {
+          this_ptr->one_shot = ONE_SHOT_DONE;
         }
         core_setcolid_cpp_CDemonSet_castVoxelShadow_FUN_00511a10
                   (g_CDemonSet_PTR_005be368,&this_ptr->base);
@@ -105,8 +105,8 @@ void __cdecl core_door_cpp_CDoor_process_FUN_00455640(CDoor *this_ptr,float delt
     else if (this_ptr->param < 0.0) {
       this_ptr->door_state = DOOR_STATE_CLOSED;
       this_ptr->param = 0.0;
-      if (this_ptr->one_shot != 0) {
-        this_ptr->one_shot = 2;
+      if (this_ptr->one_shot != ONE_SHOT_NO) {
+        this_ptr->one_shot = ONE_SHOT_DONE;
       }
       core_setcolid_cpp_CDemonSet_castVoxelShadow_FUN_00511a10
                 (g_CDemonSet_PTR_005be368,&this_ptr->base);

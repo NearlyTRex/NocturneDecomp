@@ -36,7 +36,7 @@ void __cdecl core_pendulum_cpp_CPendulum_updateSwing_FUN_00549b90(CPendulum *thi
   dVar10 = floor((double)fVar2);
   local_48 = fVar2 - (float)dVar10;
   this_ptr->param = delta_time / this_ptr->period + this_ptr->param;
-  if ((this_ptr->one_shot != 0) && (1.0 < this_ptr->param)) {
+  if ((this_ptr->half_movement != 0) && (1.0 < this_ptr->param)) {
     this_ptr->param = this_ptr->param + 0.5f;
   }
   dVar10 = floor((double)this_ptr->param);

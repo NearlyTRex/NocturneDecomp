@@ -19,7 +19,8 @@ int __cdecl core_emitter_cpp_CEmitter_renderOpaque_FUN_00478f80(CEmitter *this_p
   
   iVar1 = engine_drender_cpp_CDemonRenderer_isShadowPass_FUN_00461090(g_CDemonRenderer_PTR_005ae704)
   ;
-  if (((iVar1 == 0) && (this_ptr->emitter_type == 3)) && (this_ptr->emitter_state != 0)) {
+  if (((iVar1 == 0) && (this_ptr->emitter_type == EMITTER_TYPE_LASER)) &&
+     (this_ptr->emitter_state != 0)) {
     core_setcolid_cpp_CDemonSet_init_FUN_00511750(g_CDemonSet_PTR_005be368);
     core_setcolid_cpp_CDemonSet_ignore_FUN_00511780(g_CDemonSet_PTR_005be368,&this_ptr->base);
     core_fire_cpp_SLaserInfo_ctor_FUN_0048b6b0(&local_cc);

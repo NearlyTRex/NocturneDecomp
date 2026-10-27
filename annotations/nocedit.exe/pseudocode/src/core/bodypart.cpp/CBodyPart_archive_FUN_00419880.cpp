@@ -127,7 +127,7 @@ void __cdecl core_bodypart_cpp_CBodyPart_archive_FUN_00419880(CBodyPart *this_pt
     core_actor_cpp_archiveActor_FUN_0040b870(&this_ptr->carried_by_actor,"carriedByActor");
   }
   if (2 < g_CBodyPartClassVersion) {
-    core_actor_cpp_archiveInteger_FUN_0040b7f0(&this_ptr->blood_type,"bloodType");
+    core_actor_cpp_archiveInteger_FUN_0040b7f0((int *)&this_ptr->blood_type,"bloodType");
     core_actor_cpp_archiveInteger_FUN_0040b7f0
               (&this_ptr->dont_use_normals,"dontUseNormals");
     core_actor_cpp_archiveInteger_FUN_0040b7f0

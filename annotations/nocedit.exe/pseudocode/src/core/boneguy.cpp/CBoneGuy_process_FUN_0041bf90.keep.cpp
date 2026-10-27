@@ -311,7 +311,7 @@ void __cdecl core_boneguy_cpp_CBoneGuy_process_FUN_0041bf90(CBoneGuy *this_ptr,f
     }
   }
   else {
-    uVar7 = (this_ptr->base).base.is_walking;
+    uVar7 = (this_ptr->base).base.walk_state;
     if (uVar7 < 2) {
       if (uVar7 == 1) {
 LAB_0041c3c9:

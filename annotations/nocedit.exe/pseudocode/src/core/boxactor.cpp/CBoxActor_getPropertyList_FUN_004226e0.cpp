@@ -30,8 +30,8 @@ void __cdecl core_boxactor_cpp_CBoxActor_getPropertyList_FUN_004226e0(CBoxActor 
   core_actor_cpp_CActorPropertyList_addSound_FUN_0040e2d0
             (property_list,"Collision WAV",this_ptr->collision_wav_name);
   core_actor_cpp_CActorPropertyList_addEnumPair_FUN_0040e640
-            (property_list,"Pickup type",5,g_BoxActorPickupTypePairs,&this_ptr->pickup_type
-            );
+            (property_list,"Pickup type",5,g_BoxActorPickupTypePairs,
+             (int *)&this_ptr->pickup_type);
   core_actor_cpp_CActorPropertyList_addBool_FUN_0040e330
             (property_list,"canBePushed",&this_ptr->can_be_pushed);
   if (this_ptr->can_be_pushed != 0) {
@@ -53,7 +53,7 @@ void __cdecl core_boxactor_cpp_CBoxActor_getPropertyList_FUN_004226e0(CBoxActor 
             (property_list,"dontUseNormals",&this_ptr->dont_use_normals);
   core_actor_cpp_CActorPropertyList_addButton_FUN_0040e480
             (property_list,"Raise event when used",this_ptr->use_event);
-  if ((this_ptr->pickup_type != 0) && (this_ptr->pickup_type != 1)) {
+  if ((this_ptr->pickup_type != BOX_PICKUP_CANT) && (this_ptr->pickup_type != BOX_PICKUP_RUMMAGE)) {
     core_actor_cpp_CActorPropertyList_addFlags_FUN_0040e6a0
               (property_list,"Melee attack types",&this_ptr->allowed_melee_attack_types);
   }

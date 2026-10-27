@@ -219,7 +219,7 @@ NOCTURNE_TEST(a_spot_is_in_the_gas_inside_the_room) {
     CHECK_EQ(nocturne_net_sim_spot_in_gas(&feet), 0);
 
     // Round, its size the diameter: (1.5, 1.5) is outside a size-4 circle.
-    gas.shape = 1;
+    gas.trigger_shape = TRIGGER_SHAPE_CYLINDER;
     gas.trigger_size = {4.0f, 4.0f, 4.0f};
     stand.world_to_local_elsewhere = 1;
     feet = {1.0f, 0.0f, 1.0f};

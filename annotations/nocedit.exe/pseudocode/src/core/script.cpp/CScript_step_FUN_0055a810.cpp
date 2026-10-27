@@ -1158,7 +1158,8 @@ LAB_0055cd52:
                                                   }
                                                   }
                                                   if (g_ScriptEventsEnabled == 0) {
-                                                    pCVar27->health_bar_mode = (int)pCVar8;
+                                                    pCVar27->health_bar_mode =
+                                                         (EHealthBarMode)pCVar8;
                                                   }
                                                   }
                                                   else {

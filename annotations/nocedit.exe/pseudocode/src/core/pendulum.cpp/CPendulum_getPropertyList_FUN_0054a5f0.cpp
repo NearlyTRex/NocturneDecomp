@@ -53,6 +53,6 @@ void __cdecl core_pendulum_cpp_CPendulum_getPropertyList_FUN_0054a5f0(CPendulum 
   core_actor_cpp_CActorPropertyList_addGroundType_FUN_0040e300
             (property_list,"groundType",(int *)&this_ptr->ground_type);
   core_actor_cpp_CActorPropertyList_addBool_FUN_0040e330
-            (property_list,"Half movement",&this_ptr->one_shot);
+            (property_list,"Half movement",&this_ptr->half_movement);
   return;
 }

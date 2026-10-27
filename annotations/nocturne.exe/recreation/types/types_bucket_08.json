@@ -1018,6 +1018,33 @@
   },
   {
     "kind":"enum",
+    "name":"EFlameType",
+    "size":4,
+    "values":[
+      {
+        "name":"FLAME_TYPE_TORCH",
+        "value":0
+      },
+      {
+        "name":"FLAME_TYPE_CANDLE",
+        "value":1
+      },
+      {
+        "name":"FLAME_TYPE_BLUE",
+        "value":2
+      },
+      {
+        "name":"FLAME_TYPE_NONE",
+        "value":3
+      },
+      {
+        "name":"FLAME_TYPE_BODY",
+        "value":4
+      }
+    ]
+  },
+  {
+    "kind":"enum",
     "name":"EPlatformStateType",
     "size":4,
     "values":[
@@ -1030,7 +1057,34 @@
         "value":1
       },
       {
-        "name":"PLATFORM_STATE_TYPE_WTF",
+        "name":"PLATFORM_STATE_TYPE_STOPPED",
+        "value":2
+      },
+      {
+        "name":"PLATFORM_STATE_TYPE_MOVING_TO_END",
+        "value":3
+      },
+      {
+        "name":"PLATFORM_STATE_TYPE_MOVING_TO_START",
+        "value":4
+      }
+    ]
+  },
+  {
+    "kind":"enum",
+    "name":"ESpikeType",
+    "size":4,
+    "values":[
+      {
+        "name":"SPIKE_TYPE_PERIODIC",
+        "value":0
+      },
+      {
+        "name":"SPIKE_TYPE_RANDOM",
+        "value":1
+      },
+      {
+        "name":"SPIKE_TYPE_ONE_SHOT",
         "value":2
       }
     ]

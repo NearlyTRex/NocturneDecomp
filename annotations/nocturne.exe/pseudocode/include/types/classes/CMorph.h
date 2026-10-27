@@ -2,9 +2,16 @@
 // fix the type in Ghidra or the generator, or the next export overwrites the change.
 #pragma once
 
+// Forward declarations
+struct SMRGLPrimitiveTriangle;
+struct SMorphPoint;
+
 // Dependencies
 #include "system/basetypes.h"
 #include "types/classes/CMorphModel.h"
+#include "types/structs/SMRGLHeaderBasic.h"
+#include "types/structs/SMRGLTextureModel.h"
+#include "types/structs/SMorphPart.h"
 
 // Structure: CMorph
 // Ghidra size: 0xc2c (3116 bytes)

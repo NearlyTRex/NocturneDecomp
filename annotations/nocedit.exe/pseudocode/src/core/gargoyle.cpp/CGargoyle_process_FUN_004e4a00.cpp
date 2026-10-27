@@ -12,7 +12,8 @@ void __cdecl core_gargoyle_cpp_CGargoyle_process_FUN_004e4a00(CGargoyle *this_pt
 
 {
   CDeformableModelInstance *pCVar4;
-  CCharacter *pCVar5;
+  EWalkState EVar5;
+  CCharacter *pCVar6;
   int iVar4;
   int iVar7;
   SMotion *pSVar8;
@@ -112,19 +113,19 @@ void __cdecl core_gargoyle_cpp_CGargoyle_process_FUN_004e4a00(CGargoyle *this_pt
       }
       else {
         if (this_ptr->returning_home == 0) {
-          pCVar5 = (this_ptr->base).victim;
-          if (pCVar5 == (CCharacter *)0x0) {
+          pCVar6 = (this_ptr->base).victim;
+          if (pCVar6 == (CCharacter *)0x0) {
             iVar7 = core_enemy_cpp_CEnemy_updatePatrol_FUN_004a9fd0(&this_ptr->base,delta_time);
             if (iVar7 != 0) {
               core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00(&pCVar4->base,1,1);
             }
             break;
           }
-          local_a4.x = (pCVar5->base).location.position.x -
+          local_a4.x = (pCVar6->base).location.position.x -
                        (this_ptr->base).base.base.location.position.x;
-          local_a4.y = (pCVar5->base).location.position.y -
+          local_a4.y = (pCVar6->base).location.position.y -
                        (this_ptr->base).base.base.location.position.y;
-          local_a4.z = (pCVar5->base).location.position.z -
+          local_a4.z = (pCVar6->base).location.position.z -
                        (this_ptr->base).base.base.location.position.z;
           local_1c = SQRT(local_a4.z * local_a4.z +
                           local_a4.x * local_a4.x + local_a4.y * local_a4.y);
@@ -192,21 +193,21 @@ void __cdecl core_gargoyle_cpp_CGargoyle_process_FUN_004e4a00(CGargoyle *this_pt
                  (this_ptr->base).base.model.accumulated_root_motion.z;
             pCVar10->x = (this_ptr->base).base.model.accumulated_root_motion.y;
             pCVar10 = &local_80;
-            pCVar5 = (this_ptr->base).victim;
+            pCVar6 = (this_ptr->base).victim;
             local_20 = local_80.z;
             local_80.x = fVar13;
             local_80.y = fVar13;
-            pCVar9 = (*((pCVar5->base).vtable._ub)->getPathMap)(&pCVar5->base);
+            pCVar9 = (*((pCVar6->base).vtable._ub)->getPathMap)(&pCVar6->base);
             iVar7 = core_charactr_cpp_CCharacter_walkToPoint_FUN_004286e0
                               ((CCharacter *)this_ptr,
                                &(((this_ptr->base).victim)->base).location.position,pCVar9,pCVar10,
                                fVar11,max_distance);
             if (-1 < iVar7) {
-              pCVar5 = (this_ptr->base).victim;
+              pCVar6 = (this_ptr->base).victim;
               fVar13 = (this_ptr->base).base.base.location.position.x -
-                       (pCVar5->base).location.position.x;
+                       (pCVar6->base).location.position.x;
               fVar14 = (this_ptr->base).base.base.location.position.z -
-                       (pCVar5->base).location.position.z;
+                       (pCVar6->base).location.position.z;
               local_24 = SQRT(fVar14 * fVar14 + fVar13 * fVar13);
               if (10.0f < local_24) {
                 iVar7 = core_actor_cpp_randomChance_FUN_0040cd10(0.1);
@@ -220,12 +221,12 @@ void __cdecl core_gargoyle_cpp_CGargoyle_process_FUN_004e4a00(CGargoyle *this_pt
                           (&pCVar4->base,iVar7,1);
               }
               if ((local_24 <= local_20) && ((this_ptr->base).attack_cooldown <= 0.0)) {
-                pCVar5 = (this_ptr->base).victim;
-                local_50.x = (pCVar5->base).location.position.x -
+                pCVar6 = (this_ptr->base).victim;
+                local_50.x = (pCVar6->base).location.position.x -
                              (this_ptr->base).base.base.location.position.x;
-                local_50.y = (pCVar5->base).location.position.y -
+                local_50.y = (pCVar6->base).location.position.y -
                              (this_ptr->base).base.base.location.position.y;
-                local_50.z = (pCVar5->base).location.position.z -
+                local_50.z = (pCVar6->base).location.position.z -
                              (this_ptr->base).base.base.location.position.z;
                 core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830
                           (&local_c8,&local_50);
@@ -297,9 +298,9 @@ void __cdecl core_gargoyle_cpp_CGargoyle_process_FUN_004e4a00(CGargoyle *this_pt
     }
     goto switchD_004e531f_caseD_4;
   }
-  uVar11 = (this_ptr->base).base.is_walking;
-  if (uVar11 < 2) {
-    if (uVar11 == 1) {
+  EVar5 = (this_ptr->base).base.walk_state;
+  if (EVar5 < 2) {
+    if (EVar5 == WALK_STATE_WALKING) {
 LAB_004e4b02:
       iVar7 = 1;
     }
@@ -311,8 +312,8 @@ LAB_004e4d57:
               (&(this_ptr->base).base.model.base,iVar7,1);
   }
   else {
-    if (uVar11 < 3) goto LAB_004e4b02;
-    if (uVar11 != 3) goto LAB_004e4d57;
+    if (EVar5 < WALK_STATE_NO_PATH) goto LAB_004e4b02;
+    if (EVar5 != WALK_STATE_NO_PATH) goto LAB_004e4d57;
     core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00(&pCVar4->base,0,1);
     engine_console_cpp_CConsole_printf_FUN_00441890
               (g_CConsolePtr,"%s confused while walking to scriptDest!\n",this_ptr);

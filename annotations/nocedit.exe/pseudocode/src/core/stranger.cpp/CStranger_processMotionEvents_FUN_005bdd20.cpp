@@ -196,7 +196,7 @@ LAB_005bde44:
           if (0.0 < (double)local_b0.damage_amount) {
             local_14 = (float)(int)ROUND(ROUND((double)local_b0.damage_amount * 0.20000000000000001));
             core_gore_cpp_CGore_spawnBloodBurst_FUN_004edbb0
-                      (g_CGorePtr,local_38,(CVector3f *)0x0,(int)local_14 + 1,0);
+                      (g_CGorePtr,local_38,(CVector3f *)0x0,(int)local_14 + 1,BLOOD_TYPE_RED);
             (*((this_ptr->base).base.base.vtable._ub)->playSound)
                       ((CDemonActor *)this_ptr,"kick1.wav");
           }

@@ -23,7 +23,7 @@ CEmitter * __cdecl core_emitter_cpp_CEmitter_ctor_FUN_004a7ca0(CEmitter *this_pt
   (ADJ(this_ptr_00)->emitter_size).y = 1.0;
   (ADJ(this_ptr_00)->emitter_size).z = 1.0;
   pcVar3 = ADJ(this_ptr_00)->event_on;
-  ADJ(this_ptr_00)->emitter_type = 0;
+  ADJ(this_ptr_00)->emitter_type = EMITTER_TYPE_SPARK;
   do {
     cVar1 = *pcVar2;
     *pcVar3 = cVar1;
@@ -60,7 +60,7 @@ CEmitter * __cdecl core_emitter_cpp_CEmitter_ctor_FUN_004a7ca0(CEmitter *this_pt
   ADJ(this_ptr_00)->max_wait_time = 0.0;
   ADJ(this_ptr_00)->dest_actor = (CDemonActor *)0x0;
   ADJ(this_ptr_00)->wav_name[0] = '\0';
-  ADJ(this_ptr_00)->sfx_type = 1;
+  ADJ(this_ptr_00)->sfx_type = EMITTER_SOUND_ONE_SHOT;
   ADJ(this_ptr_00)->was_on_screen = 0;
   return ADJ(this_ptr_00);
 }

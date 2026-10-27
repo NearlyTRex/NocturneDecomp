@@ -7,15 +7,15 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 592,
-    "complexity_score": 274,
+    "complexity_score": 275,
     "cross_reference_count": 0,
     "function_call_count": 23,
     "global_count": 22,
     "max_suspect_severity": "clean",
-    "pseudocode_lines": 274,
+    "pseudocode_lines": 275,
     "suspect_count": 0,
     "suspect_types": [],
-    "total_lines": 866
+    "total_lines": 867
   },
   "cross_references": [],
   "function": {
@@ -347,7 +347,7 @@
     },
     {
       "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
-      "line": 58,
+      "line": 59,
       "match": "cascade_constant_fill",
       "resolution_source": "keep",
       "severity": "moderate",
@@ -356,7 +356,7 @@
     },
     {
       "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
-      "line": 144,
+      "line": 145,
       "match": "cascade_constant_fill",
       "resolution_source": "keep",
       "severity": "moderate",
@@ -365,7 +365,7 @@
     },
     {
       "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
-      "line": 235,
+      "line": 236,
       "match": "cascade_constant_fill",
       "resolution_source": "keep",
       "severity": "moderate",
@@ -374,7 +374,7 @@
     },
     {
       "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
-      "line": 264,
+      "line": 265,
       "match": "cascade_constant_fill",
       "resolution_source": "keep",
       "severity": "moderate",
@@ -383,7 +383,7 @@
     },
     {
       "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
-      "line": 267,
+      "line": 268,
       "match": "cascade_constant_fill",
       "resolution_source": "keep",
       "severity": "moderate",
@@ -392,11 +392,11 @@
     },
     {
       "description": "Inlined fast sqrt bit-trick (bias `g_FastSqrtMagic`). Ghidra's numeric `(int)` cast is wrong; the asm reinterprets the float's bit pattern. Replace with `fastSqrt(<expr>)` in a .keep - the helper function exists in the binary (FUN_00431350).",
-      "line": 95,
-      "match": "local_18 = (float)(((int)(fVar7 * fVar7 + fVar12 * fVar12 + fVar6 * fVar6) >> 1)",
+      "line": 96,
+      "match": "local_18 = (float)(((int)(fVar8 * fVar8 + fVar13 * fVar13 + fVar7 * fVar7) >> 1)",
       "resolution_source": "keep",
       "severity": "moderate",
-      "text": "local_18 = (float)(((int)(fVar7 * fVar7 + fVar12 * fVar12 + fVar6 * fVar6) >> 1) + g_FastSqrtMagic);",
+      "text": "local_18 = (float)(((int)(fVar8 * fVar8 + fVar13 * fVar13 + fVar7 * fVar7) >> 1) + g_FastSqrtMagic);",
       "type": "fast_sqrt_inline"
     }
   ],

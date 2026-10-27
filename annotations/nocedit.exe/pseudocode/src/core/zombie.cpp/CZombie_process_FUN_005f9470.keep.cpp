@@ -855,7 +855,7 @@ LAB_005fa18b:
     }
   }
   else {
-    uVar8 = (this_ptr->base).base.is_walking;
+    uVar8 = (this_ptr->base).base.walk_state;
     if (uVar8 < 2) {
       if (uVar8 == 1) {
 LAB_005f9ea6:

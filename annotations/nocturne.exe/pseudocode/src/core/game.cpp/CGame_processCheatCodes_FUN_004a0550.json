@@ -2150,25 +2150,25 @@
     {
       "description": "Complex pointer cast (int-cast of parenthesized pointer arithmetic)",
       "line": 1503,
-      "match": "(int *)((int)(&pCVar5->physics_box + 1) +",
+      "match": "(EAmmoType *)((int)(&pCVar5->physics_box + 1) +",
       "severity": "moderate",
-      "text": "if (*(int *)((int)(&pCVar5->physics_box + 1) + 0xc) == 5) {",
+      "text": "if (*(EAmmoType *)((int)(&pCVar5->physics_box + 1) + 0xc) == AMMO_TYPE_FLAMING) {",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast (int-cast of parenthesized pointer arithmetic)",
       "line": 1505,
-      "match": "(int *)((int)(&pCVar5->physics_box + 1) +",
+      "match": "(EAmmoType *)((int)(&pCVar5->physics_box + 1) +",
       "severity": "moderate",
-      "text": "*(int *)((int)(&pCVar5->physics_box + 1) + 0xc) = 0;",
+      "text": "*(EAmmoType *)((int)(&pCVar5->physics_box + 1) + 0xc) = AMMO_TYPE_GENERIC;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast (int-cast of parenthesized pointer arithmetic)",
       "line": 1518,
-      "match": "(int *)((int)(&pCVar5->physics_box + 1) +",
+      "match": "(EAmmoType *)((int)(&pCVar5->physics_box + 1) +",
       "severity": "moderate",
-      "text": "*(int *)((int)(&pCVar5->physics_box + 1) + 0xc) = 5;",
+      "text": "*(EAmmoType *)((int)(&pCVar5->physics_box + 1) + 0xc) = AMMO_TYPE_FLAMING;",
       "type": "pointer_cast"
     },
     {
@@ -2304,7 +2304,7 @@
       "line": 1503,
       "match": "(int)(&pCVar5->physics_box + 1)",
       "severity": "moderate",
-      "text": "if (*(int *)((int)(&pCVar5->physics_box + 1) + 0xc) == 5) {",
+      "text": "if (*(EAmmoType *)((int)(&pCVar5->physics_box + 1) + 0xc) == AMMO_TYPE_FLAMING) {",
       "type": "pointer_truncation"
     },
     {
@@ -2312,7 +2312,7 @@
       "line": 1505,
       "match": "(int)(&pCVar5->physics_box + 1)",
       "severity": "moderate",
-      "text": "*(int *)((int)(&pCVar5->physics_box + 1) + 0xc) = 0;",
+      "text": "*(EAmmoType *)((int)(&pCVar5->physics_box + 1) + 0xc) = AMMO_TYPE_GENERIC;",
       "type": "pointer_truncation"
     },
     {
@@ -2320,7 +2320,7 @@
       "line": 1518,
       "match": "(int)(&pCVar5->physics_box + 1)",
       "severity": "moderate",
-      "text": "*(int *)((int)(&pCVar5->physics_box + 1) + 0xc) = 5;",
+      "text": "*(EAmmoType *)((int)(&pCVar5->physics_box + 1) + 0xc) = AMMO_TYPE_FLAMING;",
       "type": "pointer_truncation"
     },
     {

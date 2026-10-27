@@ -1,10 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_gore_cpp_getBloodColorParams_FUN_004eb950(int blood_type,int *out_light,int *out_color,int *out_fog)
+; void __cdecl core_gore_cpp_getBloodColorParams_FUN_004eb950(EBloodType blood_type,int *out_light,int *out_color,int *out_fog)
 ;
 ; Parameters:
-; int              Stack[0x4]:4   blood_type
+; EBloodType       Stack[0x4]:4   blood_type
 ; int *            Stack[0x8]:4   out_light
 ; int *            Stack[0xc]:4   out_color
 ; int *            Stack[0x10]:4   out_fog

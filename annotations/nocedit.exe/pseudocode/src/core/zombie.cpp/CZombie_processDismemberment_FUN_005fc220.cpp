@@ -67,7 +67,7 @@ switchD_005fc256_default:
       body_part = core_bodypart_cpp_createBodyPart_FUN_00418e10
                             (&(this_ptr->base).base.base.location.position,
                              &(this_ptr->base).base.base.orient,&damage_info->impact_point,
-                             (CDemonActor *)this_ptr,0,0,0);
+                             (CDemonActor *)this_ptr,0,0,BLOOD_TYPE_RED);
       core_charactr_cpp_CCharacter_dismemberPartInternal_FUN_0042bd30
                 ((CCharacter *)this_ptr,body_part,damage_info->hit_part_index,0);
       if (damage_info->hit_part_index == this_ptr->part_indices[0]) {

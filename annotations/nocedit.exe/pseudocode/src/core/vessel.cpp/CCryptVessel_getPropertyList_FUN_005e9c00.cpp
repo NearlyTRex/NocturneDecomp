@@ -33,6 +33,6 @@ void __cdecl core_vessel_cpp_CCryptVessel_getPropertyList_FUN_005e9c00(CCryptVes
              (CActorPropertyValidatorFunc *)0x0);
   core_actor_cpp_CActorPropertyList_addEnumPair_FUN_0040e640
             (property_list,"Visual type",3,g_CryptVesselVisualTypePairs,
-             &this_ptr->visual_type);
+             (int *)&this_ptr->visual_type);
   return;
 }

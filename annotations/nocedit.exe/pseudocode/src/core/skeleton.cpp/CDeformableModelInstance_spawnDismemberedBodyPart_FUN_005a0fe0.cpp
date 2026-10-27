@@ -12,7 +12,7 @@ CBodyPart * __cdecl core_skeleton_cpp_CDeformableModelInstance_spawnDismemberedB
   CBodyPart *body_part;
   
   body_part = core_bodypart_cpp_createBodyPart_FUN_00418e10
-                        (position,orientation,initial_velocity,scale_source,0,0,0);
+                        (position,orientation,initial_velocity,scale_source,0,0,BLOOD_TYPE_RED);
   core_skeleton_cpp_CDeformableModelInstance_dismemberPart_FUN_005a1040
             (this_ptr,body_part,part_index);
   if (body_part == (CBodyPart *)0x0) {

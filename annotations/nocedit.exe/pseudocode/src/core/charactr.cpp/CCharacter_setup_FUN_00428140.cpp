@@ -70,7 +70,7 @@ void __cdecl core_charactr_cpp_CCharacter_setup_FUN_00428140(CCharacter *this_pt
   if (this_ptr->is_ethereal != 0) {
     skeleton = core_skeleton_cpp_CDeformableModelInstance_getSkeletonPtr_FUN_005a0820
                          (&this_ptr->model);
-    this_ptr->pending_flame_type = 4;
+    this_ptr->pending_flame_type = FLAME_TYPE_BODY;
     iVar3 = 0;
     if (0 < skeleton->bone_count) {
       do {
@@ -85,7 +85,7 @@ void __cdecl core_charactr_cpp_CCharacter_setup_FUN_00428140(CCharacter *this_pt
     if (0 < this_ptr->fire_count) {
       do {
         pCVar4 = (CCharacter *)((pCVar4->base).actor_name + 0x18);
-        pCVar6->flames[0].which_flame = 4;
+        pCVar6->flames[0].which_flame = FLAME_TYPE_BODY;
         pCVar4->fires[0].size = 2.0;
         iVar3 = iVar3 + 1;
         pCVar4 = pCVar4;

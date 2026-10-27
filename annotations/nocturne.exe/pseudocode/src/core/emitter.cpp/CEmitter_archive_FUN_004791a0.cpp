@@ -10,14 +10,14 @@ void __cdecl core_emitter_cpp_CEmitter_archive_FUN_004791a0(CEmitter *this_ptr)
 
 {
   core_actor_cpp_CDemonActor_archive_FUN_0040d2d0(&this_ptr->base);
-  core_actor_cpp_archiveInteger_FUN_0040c900(&this_ptr->emitter_type,"emitterType");
+  core_actor_cpp_archiveInteger_FUN_0040c900((int *)&this_ptr->emitter_type,"emitterType");
   core_actor_cpp_archiveVector_FUN_0040c450(&this_ptr->emitter_size,"emitterSize");
   core_actor_cpp_archiveString_FUN_0040c6d0(this_ptr->event_on,"eventOn");
   core_actor_cpp_archiveString_FUN_0040c6d0(this_ptr->event_off,"eventOff");
   if (1 < INT_005b75dc) {
     core_actor_cpp_archiveInteger_FUN_0040c900(&this_ptr->emitter_state,"emitterState");
   }
-  if (this_ptr->emitter_type == 3) {
+  if (this_ptr->emitter_type == EMITTER_TYPE_LASER) {
     core_actor_cpp_archiveInteger_FUN_0040c900(&(this_ptr->laser_color).r,"laserR");
     core_actor_cpp_archiveInteger_FUN_0040c900(&(this_ptr->laser_color).g,"laserG");
     core_actor_cpp_archiveInteger_FUN_0040c900(&(this_ptr->laser_color).b,"laserB");
@@ -45,6 +45,6 @@ void __cdecl core_emitter_cpp_CEmitter_archive_FUN_004791a0(CEmitter *this_ptr)
     return;
   }
   core_actor_cpp_archiveString_FUN_0040c6d0(this_ptr->wav_name,"wavName");
-  core_actor_cpp_archiveInteger_FUN_0040c900(&this_ptr->sfx_type,"sfxType");
+  core_actor_cpp_archiveInteger_FUN_0040c900((int *)&this_ptr->sfx_type,"sfxType");
   return;
 }

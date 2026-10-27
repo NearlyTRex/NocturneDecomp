@@ -2,16 +2,16 @@
 // Address: 004ede30
 // Address Range: [[004ede30, 004ede5c]]
 // Convention: __cdecl
-// Signature: void __cdecl core_gore_cpp_CGore_createBloodPool_FUN_004ede30(CGore *this_ptr,CVector3f *position,int blood_type)
+// Signature: void __cdecl core_gore_cpp_CGore_createBloodPool_FUN_004ede30(CGore *this_ptr,CVector3f *position,EBloodType blood_type)
 
 #include "nocturne.h"
 
-void __cdecl core_gore_cpp_CGore_createBloodPool_FUN_004ede30(CGore *this_ptr,CVector3f *position,int blood_type)
+void __cdecl core_gore_cpp_CGore_createBloodPool_FUN_004ede30(CGore *this_ptr,CVector3f *position,EBloodType blood_type)
 
 {
   CBloodPool *this_ptr_00;
   
-  if (blood_type == 2) {
+  if (blood_type == BLOOD_TYPE_NONE) {
     return;
   }
   this_ptr_00 = core_gore_cpp_CGore_allocateBloodPool_FUN_004edde0(this_ptr);

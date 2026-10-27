@@ -13,8 +13,8 @@ void __cdecl core_door_cpp_CDoor_renderBackground_FUN_00455e10(CDoor *this_ptr,i
   int iVar1;
   CBoundingBox3D local_1c;
   
-  if ((layer_flag != 0) && (1 < this_ptr->one_shot)) {
-    this_ptr->one_shot = 3;
+  if ((layer_flag != 0) && (1 < (int)this_ptr->one_shot)) {
+    this_ptr->one_shot = ONE_SHOT_DONE_IN_BACKGROUND;
     core_actor_cpp_CDemonActor_setupRenderState_FUN_00409f20(&this_ptr->base);
     this_ptr_00 = (*((this_ptr->base).vtable._ub)->getBoundingBox)(&this_ptr->base,&local_1c);
     iVar1 = core_box_cpp_CBoundingBox3D_isVisible_FUN_0041ceb0(this_ptr_00);

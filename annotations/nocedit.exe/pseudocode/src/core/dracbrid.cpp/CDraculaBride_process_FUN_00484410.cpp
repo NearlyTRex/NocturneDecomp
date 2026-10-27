@@ -8,6 +8,7 @@
 
 /* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */
 /* WARNING: Type propagation algorithm not settling */
+/* WARNING: Unable to use type for symbol uVar5 */
 
 void __cdecl core_dracbrid_cpp_CDraculaBride_process_FUN_00484410(CDraculaBride *this_ptr,float delta_time)
 
@@ -97,7 +98,7 @@ void __cdecl core_dracbrid_cpp_CDraculaBride_process_FUN_00484410(CDraculaBride 
   int local_1c;
   int local_18;
   float local_14;
-  uint uVar5;
+  EWalkState uVar5;
   CCharacter *pCVar6;
   UOrientationVector *pUVar1;
   CDeformableModelInstance *pCVar2;
@@ -194,9 +195,9 @@ void __cdecl core_dracbrid_cpp_CDraculaBride_process_FUN_00484410(CDraculaBride 
   iVar9 = core_charactr_cpp_CCharacter_processWalking_FUN_0042ca70
                     ((CCharacter *)this_ptr,delta_time);
   if (iVar9 != 0) {
-    uVar5 = (this_ptr->base).base.is_walking;
+    uVar5 = (this_ptr->base).base.walk_state;
     if (uVar5 < 2) {
-      if (uVar5 == 1) {
+      if (uVar5 == WALK_STATE_WALKING) {
 LAB_004846a6:
         iVar10 = 0xe;
       }
@@ -208,8 +209,8 @@ LAB_004848f9:
                 (&(this_ptr->base).base.model.base,iVar10,1);
     }
     else {
-      if (uVar5 < 3) goto LAB_004846a6;
-      if (uVar5 != 3) goto LAB_004848f9;
+      if (uVar5 < WALK_STATE_NO_PATH) goto LAB_004846a6;
+      if (uVar5 != WALK_STATE_NO_PATH) goto LAB_004848f9;
       core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
                 (&(this_ptr->base).base.model.base,0,1);
       engine_console_cpp_CConsole_printf_FUN_00441890
@@ -514,7 +515,7 @@ LAB_004852f8:
                         (&(this_ptr->base).base.model,&local_1b4,0);
     core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
               ((CDemonActor *)this_ptr,&local_1cc,pCVar13);
-    core_gore_cpp_CGore_createBloodPool_FUN_004ede30(g_CGorePtr,&local_1cc,0);
+    core_gore_cpp_CGore_createBloodPool_FUN_004ede30(g_CGorePtr,&local_1cc,BLOOD_TYPE_RED);
     goto switchD_004858cd_caseD_10;
   case 0x12:
     EVar13 = (*(((g_HeroActors[g_LocalHeroIndex]->base).base.vtable._uc)->_uc).getDeathState)

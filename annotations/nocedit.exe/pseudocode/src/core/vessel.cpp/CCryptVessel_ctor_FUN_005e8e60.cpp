@@ -55,7 +55,7 @@ CCryptVessel * __cdecl core_vessel_cpp_CCryptVessel_ctor_FUN_005e8e60(CCryptVess
   } while (cVar1 != '\0');
   ADJ(this_ptr_00)->eat_distance = 10.0;
   ADJ(this_ptr_00)->init_frame = 1;
-  ADJ(this_ptr_00)->visual_type = 0;
+  ADJ(this_ptr_00)->visual_type = CRYPT_VESSEL_AIR;
   ADJ(this_ptr_00)->spin_angle = 0.0;
   core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_00478dd0
             (this_ptr_00,"vsslorb.kfm");

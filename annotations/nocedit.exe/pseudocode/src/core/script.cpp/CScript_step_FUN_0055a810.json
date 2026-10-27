@@ -7,15 +7,15 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 7459,
-    "complexity_score": 3337,
+    "complexity_score": 3338,
     "cross_reference_count": 4,
     "function_call_count": 81,
     "global_count": 341,
     "max_suspect_severity": "clean",
-    "pseudocode_lines": 3337,
+    "pseudocode_lines": 3338,
     "suspect_count": 0,
     "suspect_types": [],
-    "total_lines": 10796
+    "total_lines": 10797
   },
   "cross_references": [
     {
@@ -2648,7 +2648,7 @@
     },
     {
       "description": "Two uint locals reconstructed as a double via __BITCAST_DOUBLE(CONCAT44(...)) \u2014 fixable by merging into a single double local",
-      "line": 1378,
+      "line": 1379,
       "match": "__BITCAST_DOUBLE(CONCAT44(",
       "resolution_source": "keep",
       "severity": "moderate",
@@ -2657,7 +2657,7 @@
     },
     {
       "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
-      "line": 1382,
+      "line": 1383,
       "match": "SUB84(",
       "resolution_source": "keep",
       "severity": "moderate",
@@ -2666,21 +2666,12 @@
     },
     {
       "description": "Two uint locals reconstructed as a double via __BITCAST_DOUBLE(CONCAT44(...)) \u2014 fixable by merging into a single double local",
-      "line": 1417,
+      "line": 1418,
       "match": "__BITCAST_DOUBLE(CONCAT44(",
       "resolution_source": "keep",
       "severity": "moderate",
       "text": "dVar1 = __BITCAST_DOUBLE(CONCAT44(iVar4,local_11c));",
       "type": "bitcast_double_pair"
-    },
-    {
-      "description": "Pointer value `pCVar8` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 1154,
-      "match": "(int)pCVar8",
-      "resolution_source": "keep",
-      "severity": "moderate",
-      "text": "pCVar27->health_bar_mode = (int)pCVar8;",
-      "type": "pointer_truncation"
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
@@ -2765,7 +2756,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 1631,
+      "line": 1632,
       "match": "do {",
       "resolution_source": "keep",
       "severity": "moderate",
@@ -2774,7 +2765,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 1966,
+      "line": 1967,
       "match": "do {",
       "resolution_source": "keep",
       "severity": "moderate",
@@ -2783,7 +2774,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 2202,
+      "line": 2203,
       "match": "do {",
       "resolution_source": "keep",
       "severity": "moderate",
@@ -2792,7 +2783,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 2465,
+      "line": 2466,
       "match": "do {",
       "resolution_source": "keep",
       "severity": "moderate",
@@ -2801,7 +2792,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 2650,
+      "line": 2651,
       "match": "do {",
       "resolution_source": "keep",
       "severity": "moderate",
@@ -2810,7 +2801,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 2730,
+      "line": 2731,
       "match": "do {",
       "resolution_source": "keep",
       "severity": "moderate",
@@ -2819,7 +2810,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 2891,
+      "line": 2892,
       "match": "do {",
       "resolution_source": "keep",
       "severity": "moderate",
@@ -2828,7 +2819,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 2941,
+      "line": 2942,
       "match": "do {",
       "resolution_source": "keep",
       "severity": "moderate",
@@ -2837,7 +2828,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 2979,
+      "line": 2980,
       "match": "do {",
       "resolution_source": "keep",
       "severity": "moderate",
@@ -2846,7 +2837,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 2994,
+      "line": 2995,
       "match": "do {",
       "resolution_source": "keep",
       "severity": "moderate",
@@ -2855,7 +2846,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 3053,
+      "line": 3054,
       "match": "do {",
       "resolution_source": "keep",
       "severity": "moderate",
@@ -2864,7 +2855,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 3080,
+      "line": 3081,
       "match": "do {",
       "resolution_source": "keep",
       "severity": "moderate",
@@ -2882,7 +2873,7 @@
     },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 1485,
+      "line": 1486,
       "match": "do { if (v==0) break; v=v-1; ... }",
       "resolution_source": "keep",
       "severity": "moderate",
@@ -2891,7 +2882,7 @@
     },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 2970,
+      "line": 2971,
       "match": "do { if (v==0) break; v=v-1; ... }",
       "resolution_source": "keep",
       "severity": "moderate",
@@ -2900,7 +2891,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcat (strlen scan followed by `= <p> + -1` adjust and a 2-byte strcpy onto the null terminator). Replace the whole strlen + strcpy pair with strcat(dst, src) in a .keep.",
-      "line": 2970,
+      "line": 2971,
       "match": "strlen + <p> + -1 + strcpy",
       "resolution_source": "keep",
       "severity": "moderate",
@@ -2909,7 +2900,7 @@
     },
     {
       "description": "Watcom loop-unrolled strchr (2-byte-at-a-time scan for literal ',' with null-terminator break). Replace the whole loop + fallback `= NULL` with strchr(ptr, ',') in a .keep.",
-      "line": 2955,
+      "line": 2956,
       "match": "do { snap; if (*p=='X') goto; if (*p=='\\0') break; ... }",
       "resolution_source": "keep",
       "severity": "moderate",

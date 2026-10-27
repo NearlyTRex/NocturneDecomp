@@ -39,7 +39,8 @@ void __cdecl core_flame_cpp_CFlame_process_FUN_004c9c00(CFlame *this_ptr,float d
   if (((this_ptr->on_event[0] != '\0') && (this_ptr->flame_state == 0)) &&
      (iVar3 = core_event_cpp_CEventList_evaluateCondition_FUN_004adca0
                         (g_CEventListPtr,this_ptr->on_event), iVar3 != 0)) {
-    if ((this_ptr->which_flame != 1) && (this_ptr->which_flame != 3)) {
+    if ((this_ptr->which_flame != FLAME_TYPE_CANDLE) && (this_ptr->which_flame != FLAME_TYPE_NONE))
+    {
       iVar6 = 0;
       do {
         iVar6 = iVar6 + 1;
@@ -54,7 +55,7 @@ void __cdecl core_flame_cpp_CFlame_process_FUN_004c9c00(CFlame *this_ptr,float d
   if (((this_ptr->off_event[0] != '\0') && (this_ptr->flame_state != 0)) &&
      ((iVar6 = core_event_cpp_CEventList_evaluateCondition_FUN_004adca0
                          (g_CEventListPtr,this_ptr->off_event), iVar6 != 0 &&
-      (this_ptr->flame_state = 0, this_ptr->which_flame != 3)))) {
+      (this_ptr->flame_state = 0, this_ptr->which_flame != FLAME_TYPE_NONE)))) {
     core_fire_cpp_CFireEffect_createSmokeParticle_FUN_004c7b20
               (g_CFireEffectPtr,&(this_ptr->base).location.position,
                (this_ptr->flame_size).y * (float)0.5,(CVector3f *)0x0,0xffff);

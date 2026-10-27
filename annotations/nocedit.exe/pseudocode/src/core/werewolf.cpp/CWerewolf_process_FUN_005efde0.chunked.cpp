@@ -107,7 +107,7 @@ typedef struct CWerewolf_process_Ctx {
     float local_14;
     SDamageInfo *pSVar17;
     double dVar6;
-    uint uVar4;
+    EWalkState uVar4;
     float fVar16;
     float fVar5;
     EWerewolfType EVar3;
@@ -498,7 +498,7 @@ static int CWerewolf_process_branch_0_else_2(CWerewolf_process_Ctx *ctx) {
                                 (pCVar3,&local_1ac,0);
             core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
                       ((CDemonActor *)this_ptr,&local_1b8,pCVar18);
-            core_gore_cpp_CGore_createBloodPool_FUN_004ede30(g_CGorePtr,&local_1b8,0);
+            core_gore_cpp_CGore_createBloodPool_FUN_004ede30(g_CGorePtr,&local_1b8,BLOOD_TYPE_RED);
             (this_ptr->base).pool_me = 1;
           }
           return GOTO_LAB_005f0010;
@@ -769,7 +769,7 @@ void __cdecl core_werewolf_cpp_CWerewolf_process_FUN_005efde0(CWerewolf *this_pt
     float &local_14 = ctx->local_14;
     SDamageInfo *&pSVar17 = ctx->pSVar17;
     double &dVar6 = ctx->dVar6;
-    uint &uVar4 = ctx->uVar4;
+    EWalkState &uVar4 = ctx->uVar4;
     float &fVar16 = ctx->fVar16;
     float &fVar5 = ctx->fVar5;
     EWerewolfType &EVar3 = ctx->EVar3;
@@ -808,7 +808,7 @@ void __cdecl core_werewolf_cpp_CWerewolf_process_FUN_005efde0(CWerewolf *this_pt
       fVar13 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc10(8.0,12.0);
       core_gore_cpp_CGore_spawnBloodBurst_FUN_004edbb0
                 (g_CGorePtr,&local_98,(CVector3f *)0x0,
-                 (int)ROUND(ROUND(fVar13 * (float)0.25)),0);
+                 (int)ROUND(ROUND(fVar13 * (float)0.25)),BLOOD_TYPE_RED);
     }
     else if (uVar8 == 0x29a) {
       core_mission_cpp_CDemonMission_markActorToDelete_FUN_005240a0
@@ -889,9 +889,9 @@ LAB_005f092a:
     }
     goto LAB_005f0010;
   }
-  uVar4 = (this_ptr->base).base.is_walking;
+  uVar4 = (this_ptr->base).base.walk_state;
   if (uVar4 < 2) {
-    if (uVar4 == 1) {
+    if (uVar4 == WALK_STATE_WALKING) {
       if ((uVar5 == 0xe) || (uVar5 == 0xf)) {
 LAB_005effe5:
         iVar14 = 0xf;
@@ -909,7 +909,7 @@ LAB_005efff0:
               (&(this_ptr->base).base.model.base,iVar14,1);
   }
   else {
-    if (uVar4 < 3) {
+    if (uVar4 < WALK_STATE_NO_PATH) {
       if ((uVar5 == 0xe) || (uVar5 == 0xf)) goto LAB_005effe5;
       if ((this_ptr->base).base.turn_speed <= ABS((this_ptr->base).base.turn_angle_accumulator)) {
         iVar14 = 1;
@@ -919,7 +919,7 @@ LAB_005efff0:
       }
       goto LAB_005efff0;
     }
-    if (uVar4 != 3) goto LAB_005f028d;
+    if (uVar4 != WALK_STATE_NO_PATH) goto LAB_005f028d;
     core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00(&pCVar3->base,0,1);
     engine_console_cpp_CConsole_printf_FUN_00441890
               (g_CConsolePtr,"%s confused while walking to scriptDest!\n",this_ptr);

@@ -64,7 +64,8 @@ void __cdecl core_charactr_cpp_CCharacter_archive_FUN_004283a0(CCharacter *this_
     core_actor_cpp_archiveFloat_FUN_0040b770(&this_ptr->size_scale,"sizeScale");
   }
   if (5 < g_CCharacterClassVersion) {
-    core_actor_cpp_archiveInteger_FUN_0040b7f0(&this_ptr->health_bar_mode,"healthBarMode");
+    core_actor_cpp_archiveInteger_FUN_0040b7f0
+              ((int *)&this_ptr->health_bar_mode,"healthBarMode");
     core_actor_cpp_archiveLocalizedString_FUN_0040b6e0
               (this_ptr->descriptive_name,"descriptiveName");
     core_actor_cpp_archiveFloat_FUN_0040b770(&this_ptr->max_hit_points,"maxHitPoints");

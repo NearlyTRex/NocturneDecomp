@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CBodyPart * __cdecl core_bodypart_cpp_createBodyPart_FUN_00418e10(CVector3f *position,UOrientationVector *orientation,CVector3f *initial_velocity,CDemonActor *scale_source,int dont_use_normals,int is_transparent,int blood_type)
+; CBodyPart * __cdecl core_bodypart_cpp_createBodyPart_FUN_00418e10(CVector3f *position,UOrientationVector *orientation,CVector3f *initial_velocity,CDemonActor *scale_source,int dont_use_normals,int is_transparent,EBloodType blood_type)
 ;
 ; Parameters:
 ; CVector3f *      Stack[0x4]:4   position
@@ -10,7 +10,7 @@
 ; CDemonActor *    Stack[0x10]:4   scale_source
 ; int              Stack[0x14]:4   dont_use_normals
 ; int              Stack[0x18]:4   is_transparent
-; int              Stack[0x1c]:4   blood_type
+; EBloodType       Stack[0x1c]:4   blood_type
 ;
 ; XREF[15]:
 ;   core_batcreat.cpp_CBatCreature_processDismemberment_FUN_00415dd0 at 00415f25

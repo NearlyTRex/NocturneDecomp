@@ -5,6 +5,7 @@
 // Dependencies
 #include "system/basetypes.h"
 #include "types/classes/CMatrix3x4f.h"
+#include "types/classes/CQuaternion4f.h"
 #include "types/structs/SPoseData.h"
 
 // Structure: SPose

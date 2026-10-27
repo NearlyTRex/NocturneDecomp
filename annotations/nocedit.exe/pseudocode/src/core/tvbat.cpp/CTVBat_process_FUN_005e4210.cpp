@@ -259,7 +259,8 @@ LAB_005e4342:
       (*(((pCVar12->base).vtable._uc)->_uc).processDamage)(pCVar12,&SStack_164);
       if (0.0 < SStack_164.damage_amount) {
         core_gore_cpp_CGore_spawnBloodBurst_FUN_004edbb0
-                  (g_CGorePtr,&(this_ptr->base).base.base.location.position,(CVector3f *)0x0,3,0);
+                  (g_CGorePtr,&(this_ptr->base).base.base.location.position,(CVector3f *)0x0,3,
+                   BLOOD_TYPE_RED);
       }
     }
   }

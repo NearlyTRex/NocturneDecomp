@@ -1293,7 +1293,7 @@ int __cdecl core_event_cpp_CEventList_evaluateAtom_FUN_004ae140(CEventList *this
                               *parse_position = *parse_position + local_1c;
                             }
                             else {
-                              local_e0 = (uint)(pCVar7->is_wearing_gas_mask == 2);
+                              local_e0 = (uint)(pCVar7->is_wearing_gas_mask == GAS_MASK_ON_FACE);
                               *parse_position = *parse_position + local_1c;
                             }
                           }

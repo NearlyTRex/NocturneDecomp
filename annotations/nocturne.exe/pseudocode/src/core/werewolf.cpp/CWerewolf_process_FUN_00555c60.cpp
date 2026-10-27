@@ -12,7 +12,7 @@ void __cdecl core_werewolf_cpp_CWerewolf_process_FUN_00555c60(CWerewolf *this_pt
   CDeformableModelInstance *pCVar1;
   CVector3f *pCVar2;
   EWerewolfType EVar3;
-  uint uVar4;
+  EWalkState EVar4;
   float fVar5;
   int iVar6;
   uint uVar7;
@@ -614,9 +614,9 @@ LAB_00556301:
     }
     goto LAB_00555e90;
   }
-  uVar4 = (this_ptr->base).base.is_walking;
-  if (uVar4 < 2) {
-    if (uVar4 == 1) {
+  EVar4 = (this_ptr->base).base.walk_state;
+  if (EVar4 < 2) {
+    if (EVar4 == WALK_STATE_WALKING) {
       if ((uVar7 == 0xe) || (uVar7 == 0xf)) {
 LAB_00555e65:
         iVar6 = 0xf;
@@ -634,7 +634,7 @@ LAB_00555e70:
               (&(this_ptr->base).base.model.base,iVar6,1);
   }
   else {
-    if (uVar4 < 3) {
+    if (EVar4 < WALK_STATE_NO_PATH) {
       if ((uVar7 == 0xe) || (uVar7 == 0xf)) goto LAB_00555e65;
       if ((this_ptr->base).base.turn_speed <= ABS((this_ptr->base).base.turn_angle_accumulator)) {
         iVar6 = 1;
@@ -644,7 +644,7 @@ LAB_00555e70:
       }
       goto LAB_00555e70;
     }
-    if (uVar4 != 3) goto LAB_0055610d;
+    if (EVar4 != WALK_STATE_NO_PATH) goto LAB_0055610d;
     core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0(&pCVar1->base,0,1);
     engine_console_cpp_CConsole_printf_FUN_0043ac60
               (g_CConsole_PTR_005ad350,"%s confused while walking to scriptDest!\n",this_ptr);

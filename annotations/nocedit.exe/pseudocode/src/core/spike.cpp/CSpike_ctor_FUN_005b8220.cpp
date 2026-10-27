@@ -21,8 +21,8 @@ CSpike * __cdecl core_spike_cpp_CSpike_ctor_FUN_005b8220(CSpike *this_ptr)
   ADJ(this_ptr_00)->base.vtable._ub = &g_CSpikeVTable;
   core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_00478dd0
             (this_ptr_00,"bgate.kfm");
-  ADJ(this_ptr_00)->spike_type = 0;
-  ADJ(this_ptr_00)->spike_state = 0;
+  ADJ(this_ptr_00)->spike_type = SPIKE_TYPE_PERIODIC;
+  ADJ(this_ptr_00)->spike_state = SPIKE_STATE_RETRACTED;
   pcVar3 = ADJ(this_ptr_00)->start_event;
   ADJ(this_ptr_00)->are_we_active = 0;
   do {

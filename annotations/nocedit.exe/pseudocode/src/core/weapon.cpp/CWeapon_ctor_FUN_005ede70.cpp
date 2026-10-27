@@ -22,10 +22,10 @@ CWeapon * __cdecl core_weapon_cpp_CWeapon_ctor_FUN_005ede70(CWeapon *this_ptr)
   ADJ(pCVar3)->weapon_state = WEAPON_STATE_LYING_AROUND;
   ADJ(pCVar3)->carried_by_actor = (CDemonActor *)0x0;
   ADJ(pCVar3)->ammo_count = 0x14;
-  ADJ(pCVar3)->ammo_type = 0;
+  ADJ(pCVar3)->ammo_type = AMMO_TYPE_GENERIC;
   ADJ(pCVar3)->base.collision_disabled = 1;
   ADJ(pCVar3)->is_spread_weapon = 0;
-  ADJ(pCVar3)->fire_mode = 0;
+  ADJ(pCVar3)->fire_mode = FIRE_MODE_AUTOMATIC;
   ADJ(pCVar3)->weapon_type = WEAPON_TYPE_GUN;
   ADJ(pCVar3)->can_penetrate = 0;
   ADJ(pCVar3)->bolt_velocity = 200.0;

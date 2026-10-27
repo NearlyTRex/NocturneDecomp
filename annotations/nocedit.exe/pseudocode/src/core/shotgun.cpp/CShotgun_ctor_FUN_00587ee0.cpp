@@ -18,7 +18,7 @@ CShotgun * __cdecl core_shotgun_cpp_CShotgun_ctor_FUN_00587ee0(CShotgun *this_pt
             (&(pCVar2->base).model,"shotgun.kfm");
   pCVar2->spread_angle = 10.0;
   (pCVar2->base).is_spread_weapon = 1;
-  (pCVar2->base).fire_mode = 2;
+  (pCVar2->base).fire_mode = FIRE_MODE_PUMP;
   (pCVar2->base).weapon_type = WEAPON_TYPE_SHOTGUN;
   (pCVar2->base).can_penetrate = 1;
   (pCVar2->base).bolt_velocity = 15.0;

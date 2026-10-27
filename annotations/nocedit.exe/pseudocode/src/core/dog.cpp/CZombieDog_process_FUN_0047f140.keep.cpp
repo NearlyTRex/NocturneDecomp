@@ -207,7 +207,7 @@ void __cdecl core_dog_cpp_CZombieDog_process_FUN_0047f140(CZombieDog *this_ptr,f
     }
     goto switchD_0047f7a3_caseD_5;
   }
-  uVar9 = (this_ptr->base).base.is_walking;
+  uVar9 = (this_ptr->base).base.walk_state;
   if (uVar9 < 2) {
     if (uVar9 == 1) {
 LAB_0047f227:

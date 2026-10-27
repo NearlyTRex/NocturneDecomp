@@ -10,7 +10,7 @@ void __cdecl core_haystack_cpp_CHaystack_process_FUN_004f0e40(CHaystack *this_pt
 
 {
   CDeformableModelInstance *pCVar3;
-  uint uVar4;
+  EWalkState EVar4;
   CCharacter_full_vtable *pCVar5;
   int iVar5;
   int iVar6;
@@ -160,9 +160,9 @@ LAB_004f11f7:
     }
   }
   else {
-    uVar4 = (this_ptr->base).base.is_walking;
-    if (uVar4 < 2) {
-      if (uVar4 == 1) {
+    EVar4 = (this_ptr->base).base.walk_state;
+    if (EVar4 < 2) {
+      if (EVar4 == WALK_STATE_WALKING) {
         iVar6 = 1;
       }
       else {
@@ -171,8 +171,8 @@ LAB_004f1134:
       }
     }
     else {
-      if (2 < uVar4) {
-        if (uVar4 == 3) {
+      if (2 < EVar4) {
+        if (EVar4 == WALK_STATE_NO_PATH) {
           core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00(&pCVar3->base,0,1);
           engine_console_cpp_CConsole_printf_FUN_00441890
                     (g_CConsolePtr,"%s confused while walking to scriptDest!\n",this_ptr);

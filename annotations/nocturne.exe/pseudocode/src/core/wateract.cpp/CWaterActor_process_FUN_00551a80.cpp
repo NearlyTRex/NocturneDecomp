@@ -33,28 +33,28 @@ void __cdecl core_wateract_cpp_CWaterActor_process_FUN_00551a80(CWaterActor *thi
   iVar2 = core_event_cpp_CEventList_evaluateCondition_FUN_0047dc30(this_ptr_00,this_ptr->move_event)
   ;
   if (iVar2 != 0) {
-    this_ptr->state = 1;
+    this_ptr->state = WATER_ACTOR_RISING;
   }
   iVar2 = core_event_cpp_CEventList_evaluateCondition_FUN_0047dc30
                     (0x01C03A10,this_ptr->move_down_event);
   if (iVar2 != 0) {
-    this_ptr->state = 3;
+    this_ptr->state = WATER_ACTOR_LOWERING;
   }
   switch(this_ptr->state) {
-  case 1:
+  case WATER_ACTOR_RISING:
     fVar1 = (float)this_ptr / this_ptr->time_to_move + this_ptr->param;
     this_ptr->param = fVar1;
     if (fVar1 <= 1.0) break;
-    this_ptr->state = 2;
-  case 2:
+    this_ptr->state = WATER_ACTOR_RAISED;
+  case WATER_ACTOR_RAISED:
     this_ptr->param = 1.0;
     break;
-  case 3:
+  case WATER_ACTOR_LOWERING:
     fVar1 = this_ptr->param - (float)this_ptr / this_ptr->time_to_move_down;
     this_ptr->param = fVar1;
     if (0.0 <= fVar1) break;
-    this_ptr->state = 0;
-  case 0:
+    this_ptr->state = WATER_ACTOR_LOWERED;
+  case WATER_ACTOR_LOWERED:
     this_ptr->param = 0.0;
     break;
   default:

@@ -2,16 +2,16 @@
 // Address: 004edb40
 // Address Range: [[004edb40, 004edb6c]]
 // Convention: __cdecl
-// Signature: void __cdecl core_gore_cpp_CGore_createGroundBloodSplat_FUN_004edb40(CGore *this_ptr,CVector3f *position,int blood_type)
+// Signature: void __cdecl core_gore_cpp_CGore_createGroundBloodSplat_FUN_004edb40(CGore *this_ptr,CVector3f *position,EBloodType blood_type)
 
 #include "nocturne.h"
 
-void __cdecl core_gore_cpp_CGore_createGroundBloodSplat_FUN_004edb40(CGore *this_ptr,CVector3f *position,int blood_type)
+void __cdecl core_gore_cpp_CGore_createGroundBloodSplat_FUN_004edb40(CGore *this_ptr,CVector3f *position,EBloodType blood_type)
 
 {
   CBloodSplat *this_ptr_00;
   
-  if (blood_type == 2) {
+  if (blood_type == BLOOD_TYPE_NONE) {
     return;
   }
   this_ptr_00 = core_gore_cpp_CGore_allocateBloodSplat_FUN_004edaf0(this_ptr);

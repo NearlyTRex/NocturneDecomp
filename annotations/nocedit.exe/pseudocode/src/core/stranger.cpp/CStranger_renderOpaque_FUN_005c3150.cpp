@@ -152,11 +152,11 @@ LAB_005c336f:
   }
   core_stranger_cpp_CStranger_updateWeaponPosition_FUN_005c06b0(this_ptr,0);
 LAB_005c33d7:
-  if ((((this_ptr->base).is_wearing_gas_mask != 0) &&
+  if ((((this_ptr->base).is_wearing_gas_mask != GAS_MASK_AWAY) &&
       ((this_ptr->base).base.model.part_data.visibility_flags[g_StrangerIndices[0x16]] != 0)) &&
      (pCVar3 = (this_ptr->base).inventory.light_gun_ptr, pCVar3 != (CLightGun *)0x0)) {
     core_actor_cpp_CDemonActor_setupRenderState_FUN_00408b00((CDemonActor *)this_ptr);
-    if ((this_ptr->base).is_wearing_gas_mask == 2) {
+    if ((this_ptr->base).is_wearing_gas_mask == GAS_MASK_ON_FACE) {
       local_88.z = 0.0;
       local_88.x = -0.140457;
       local_64.z = 0.537644;

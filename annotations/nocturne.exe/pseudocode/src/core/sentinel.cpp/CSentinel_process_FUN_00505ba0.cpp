@@ -14,7 +14,7 @@ void __cdecl core_sentinel_cpp_CSentinel_process_FUN_00505ba0(CSentinel *this_pt
 {
   CDeformableModelInstance *pCVar1;
   CVector3f *pCVar2;
-  uint uVar3;
+  EWalkState EVar3;
   CCharacter *pCVar4;
   int iVar5;
   SMotion *pSVar6;
@@ -403,9 +403,9 @@ LAB_005062ff:
     }
     goto switchD_00505ff7_caseD_5;
   }
-  uVar3 = (this_ptr->base).base.is_walking;
-  if (uVar3 < 2) {
-    if (uVar3 == 1) {
+  EVar3 = (this_ptr->base).base.walk_state;
+  if (EVar3 < 2) {
+    if (EVar3 == WALK_STATE_WALKING) {
 LAB_00505c6d:
       iVar5 = 2;
     }
@@ -417,8 +417,8 @@ LAB_00505fcd:
               (&(this_ptr->base).base.model.base,iVar5,1);
   }
   else {
-    if (uVar3 < 3) goto LAB_00505c6d;
-    if (uVar3 != 3) goto LAB_00505fcd;
+    if (EVar3 < WALK_STATE_NO_PATH) goto LAB_00505c6d;
+    if (EVar3 != WALK_STATE_NO_PATH) goto LAB_00505fcd;
     core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0(&pCVar1->base,0,1);
     engine_console_cpp_CConsole_printf_FUN_0043ac60
               (g_CConsole_PTR_005ad350,"%s confused while walking to scriptDest!\n",this_ptr);

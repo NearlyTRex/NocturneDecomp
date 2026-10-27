@@ -117,7 +117,7 @@ void __cdecl core_moloch_cpp_CMoloch_process_FUN_00528d20(CMoloch *this_ptr,floa
     }
   }
   else {
-    uVar5 = (this_ptr->base).base.is_walking;
+    uVar5 = (this_ptr->base).base.walk_state;
     if (uVar5 < 2) {
       if (uVar5 == 1) goto LAB_00528e31;
 LAB_0052903e:

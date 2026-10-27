@@ -28,6 +28,6 @@ void __cdecl core_vessel_cpp_CCryptVessel_archive_FUN_005e9a80(CCryptVessel *thi
   if (g_CCryptVesselClassVersion < 4) {
     return;
   }
-  core_actor_cpp_archiveInteger_FUN_0040b7f0(&this_ptr->visual_type,"visualType");
+  core_actor_cpp_archiveInteger_FUN_0040b7f0((int *)&this_ptr->visual_type,"visualType");
   return;
 }

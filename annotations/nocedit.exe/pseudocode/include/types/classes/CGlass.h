@@ -8,8 +8,10 @@
 #include "types/classes/CMirror.h"
 #include "types/classes/CVector3f.h"
 #include "types/classes/CVector3i.h"
+#include "types/structs/SMRGLHeaderPrimitive.h"
 #include "types/structs/SMRGLPrimitiveQuad.h"
 #include "types/structs/SMRGLTextureBasic.h"
+#include "types/structs/SMRGLVertex.h"
 
 // Structure: CGlass
 // Ghidra size: 0xb40 (2880 bytes)

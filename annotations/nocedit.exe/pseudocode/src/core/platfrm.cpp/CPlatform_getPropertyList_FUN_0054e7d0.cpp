@@ -53,7 +53,7 @@ void __cdecl core_platfrm_cpp_CPlatform_getPropertyList_FUN_0054e7d0(CPlatform *
             (property_list,"Paramater (0..1)",&this_ptr->param,0.0,1.0,
              (CActorPropertyValidatorFunc *)0x0);
   core_actor_cpp_CActorPropertyList_addInt_FUN_0040e1e0
-            (property_list,"One shot (0=no,1=yes,2=done)",&this_ptr->one_shot,
+            (property_list,"One shot (0=no,1=yes,2=done)",(int *)&this_ptr->one_shot,
              (CActorPropertyValidatorFunc *)0x0);
   core_actor_cpp_CActorPropertyList_addBool_FUN_0040e330
             (property_list,"Block virtual director",&this_ptr->block_virtual_director_flag)

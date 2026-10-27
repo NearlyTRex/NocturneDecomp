@@ -11,7 +11,7 @@ void __cdecl core_emitter_cpp_CEmitter_setup_FUN_00478520(CEmitter *this_ptr)
 {
   core_actor_cpp_CDemonActor_setup_FUN_00409fc0(&this_ptr->base);
   this_ptr->state_timer = this_ptr->max_emit_time;
-  if (this_ptr->emitter_type == 4) {
+  if (this_ptr->emitter_type == EMITTER_TYPE_ROCK) {
     core_dmodel_cpp_CKeyFramedModelInstance_preCache_FUN_00454510(&this_ptr->model);
   }
   if (this_ptr->dest_actor == (CDemonActor *)0x0) {

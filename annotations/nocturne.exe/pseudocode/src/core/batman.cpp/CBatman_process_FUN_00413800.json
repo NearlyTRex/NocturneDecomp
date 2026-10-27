@@ -4,13 +4,13 @@
       {
         "category": "incompatible_types",
         "column": 19,
-        "line": 271,
+        "line": 272,
         "message": "no matching function for call to 'core_event_cpp_CEventList_evaluateCondition_FUN_0047dc30'"
       },
       {
         "category": "format_error",
         "column": 85,
-        "line": 416,
+        "line": 417,
         "message": "format specifies type 'char *' but the argument has type 'CBatman *' [-Werror,-Wformat]"
       }
     ],
@@ -20,12 +20,12 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 1015,
-    "complexity_score": 593,
+    "complexity_score": 594,
     "cross_reference_count": 0,
     "function_call_count": 32,
     "global_count": 27,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 448,
+    "pseudocode_lines": 449,
     "suspect_count": 12,
     "suspect_types": [
       "pointer_cast",
@@ -34,7 +34,7 @@
       "unrolled_memset",
       "warning_type_propagation"
     ],
-    "total_lines": 1463
+    "total_lines": 1464
   },
   "cross_references": [],
   "function": {
@@ -898,7 +898,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 244,
+      "line": 245,
       "match": "DAT_00764610",
       "severity": "mild",
       "text": "DAT_00764610);",
@@ -906,7 +906,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 321,
+      "line": 322,
       "match": "(CBatman **)((int)g_CDemonSet_PTR_005be368",
       "severity": "moderate",
       "text": "this_ptr_00 = *(CBatman **)((int)g_CDemonSet_PTR_005be368->characters + local_1c);",
@@ -914,31 +914,31 @@
     },
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
-      "line": 129,
+      "line": 130,
       "match": "field-by-field struct copy",
       "severity": "moderate",
-      "text": "(this_ptr->new_pos).x = (pCVar13->position).x;",
+      "text": "(this_ptr->new_pos).x = (pCVar14->position).x;",
       "type": "unrolled_memcpy"
     },
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
-      "line": 337,
+      "line": 338,
       "match": "field-by-field struct copy",
       "severity": "moderate",
-      "text": "(pCVar13->position).x = (this_ptr->new_pos).x;",
+      "text": "(pCVar14->position).x = (this_ptr->new_pos).x;",
       "type": "unrolled_memcpy"
     },
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
-      "line": 351,
+      "line": 352,
       "match": "field-by-field struct copy",
       "severity": "moderate",
-      "text": "(pUVar1->vec).x = pCVar10->x;",
+      "text": "(pUVar1->vec).x = pCVar11->x;",
       "type": "unrolled_memcpy"
     },
     {
       "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
-      "line": 74,
+      "line": 75,
       "match": "cascade_constant_fill",
       "severity": "moderate",
       "text": "(this_ptr->base).base.model.accumulated_root_motion.z = 0.0;",
@@ -946,7 +946,7 @@
     },
     {
       "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
-      "line": 178,
+      "line": 179,
       "match": "cascade_constant_fill",
       "severity": "moderate",
       "text": "(this_ptr->base).base.model.accumulated_root_motion.z = 0.0;",
@@ -954,7 +954,7 @@
     },
     {
       "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
-      "line": 411,
+      "line": 412,
       "match": "cascade_constant_fill",
       "severity": "moderate",
       "text": "(this_ptr->base).base.model.accumulated_root_motion.z = 0.0;",
@@ -962,7 +962,7 @@
     },
     {
       "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
-      "line": 435,
+      "line": 436,
       "match": "cascade_constant_fill",
       "severity": "moderate",
       "text": "(this_ptr->base).base.position_delta.z = 0.0;",
@@ -970,7 +970,7 @@
     },
     {
       "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
-      "line": 438,
+      "line": 439,
       "match": "cascade_constant_fill",
       "severity": "moderate",
       "text": "(this_ptr->base).base.model.accumulated_root_motion.z = 0.0;",
@@ -978,7 +978,7 @@
     },
     {
       "description": "Pointer cast wraps onto the next line \u2014 same byte-offset trampolining as single-line `pointer_cast`, just split by Ghidra. Replace with indexed/named field access in a .keep.",
-      "line": 114,
+      "line": 115,
       "match": "(TYPE *) ((int)NAME ...) split across lines",
       "severity": "moderate",
       "text": "(*(CDemonActor **)",

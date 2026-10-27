@@ -7,6 +7,7 @@
 #include "types/classes/CMirrorReflection.h"
 #include "types/structs/SClipPlane.h"
 #include "types/structs/SMRGLPrimitivePolyIndex.h"
+#include "types/unions/UIntegerFloat.h"
 
 // Structure: CMirror
 // Ghidra size: 0x120 (288 bytes)

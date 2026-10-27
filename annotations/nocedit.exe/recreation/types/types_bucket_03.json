@@ -140,7 +140,7 @@
   {
     "kind":"class",
     "name":"CBackgroundActor",
-    "parent":"CCharacter",
+    "parent":"CDemonActor",
     "rtti_file":"core/backgnd.cpp",
     "size":732
   },
@@ -947,6 +947,10 @@
     "size":4,
     "values":[
       {
+        "name":"AMMO_TYPE_NONE",
+        "value":-1
+      },
+      {
         "name":"AMMO_TYPE_GENERIC",
         "value":0
       },
@@ -1199,29 +1203,6 @@
       {
         "name":"DAMAGE_TYPE_BURN",
         "value":108
-      }
-    ]
-  },
-  {
-    "kind":"enum",
-    "name":"EPlatformType",
-    "size":4,
-    "values":[
-      {
-        "name":"PLATFORM_TYPE_DISABLED",
-        "value":0
-      },
-      {
-        "name":"PLATFORM_TYPE_START",
-        "value":1
-      },
-      {
-        "name":"PLATFORM_TYPE_END",
-        "value":2
-      },
-      {
-        "name":"PLATFORM_TYPE_BOTH",
-        "value":3
       }
     ]
   },

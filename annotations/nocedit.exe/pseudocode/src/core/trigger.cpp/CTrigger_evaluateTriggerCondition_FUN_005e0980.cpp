@@ -14,7 +14,7 @@ float __cdecl core_trigger_cpp_CTrigger_evaluateTriggerCondition_FUN_005e0980(CT
   CBoundingBox3D CStack_30;
   CVector3f local_18;
   
-  if (this_ptr->hero_triggers_me == 3) {
+  if (this_ptr->trigger_cause == TRIGGER_CAUSE_ACTION_BUTTON) {
     pCVar1 = core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_00408f10
                        (&this_ptr->base,&local_18,query_position);
     pCVar2 = (*((this_ptr->base).vtable._ub)->getBoundingBox)(&this_ptr->base,&CStack_30);

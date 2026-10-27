@@ -287,7 +287,7 @@ LAB_004158fb:
     }
     goto switchD_00415d62_caseD_2;
   }
-  uVar9 = (this_ptr->base).base.is_walking;
+  uVar9 = (this_ptr->base).base.walk_state;
   if (uVar9 < 2) {
     if (uVar9 == 1) {
 LAB_00415540:

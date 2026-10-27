@@ -153,7 +153,7 @@ void __cdecl core_succubus_cpp_CSuccubus_process_FUN_005c6e90(CSuccubus *this_pt
     }
     goto LAB_005c6fd0;
   }
-  uVar6 = (this_ptr->base).base.is_walking;
+  uVar6 = (this_ptr->base).base.walk_state;
   if (uVar6 < 2) {
     if (uVar6 == 1) {
 LAB_005c6fa5:

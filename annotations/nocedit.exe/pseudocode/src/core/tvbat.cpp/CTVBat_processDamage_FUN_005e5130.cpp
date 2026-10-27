@@ -21,7 +21,8 @@ void __cdecl core_tvbat_cpp_CTVBat_processDamage_FUN_005e5130(CTVBat *this_ptr,S
   }
   (this_ptr->base).base.hit_points = 0.0;
   core_gore_cpp_CGore_spawnBloodBurst_FUN_004edbb0
-            (this_ptr_00,&(this_ptr->base).base.base.location.position,(CVector3f *)0x0,10,0);
+            (this_ptr_00,&(this_ptr->base).base.base.location.position,(CVector3f *)0x0,10,
+             BLOOD_TYPE_RED);
   this_ptr->state = 1;
   core_enemy_cpp_CEnemy_processDamage_FUN_004a9f10(&this_ptr->base,damage_info);
   return;

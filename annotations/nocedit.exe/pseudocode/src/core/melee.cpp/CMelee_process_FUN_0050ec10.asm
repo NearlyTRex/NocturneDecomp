@@ -83,7 +83,7 @@ section .text
     MOV EDI,dword ptr [0x0067b9a0]      ; 0050ecad | g_CGorePtr
     PUSH EDI                            ; 0050ecb3 | g_CGoreInstance
     CALL core_gore.cpp_CGore_spawnBloodParticles_FUN_004edaa0 ; 0050ecb4
-        ;   XREF to: 004edaa0 (UNCONDITIONAL_CALL)  ; void core_gore.cpp_CGore_spawnBloodParticles_FUN_004edaa0(CGore * this_ptr, CVector3f * position, CVector3f * velocity, int blood_type)
+        ;   XREF to: 004edaa0 (UNCONDITIONAL_CALL)  ; void core_gore.cpp_CGore_spawnBloodParticles_FUN_004edaa0(CGore * this_ptr, CVector3f * position, CVector3f * velocity, EBloodType blood_type)
     ADD ESP,0x10                        ; 0050ecb9
     POP ESI                             ; 0050ecbc
     POP EDI                             ; 0050ecbd

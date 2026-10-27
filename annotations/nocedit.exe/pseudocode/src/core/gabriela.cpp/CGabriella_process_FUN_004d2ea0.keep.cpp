@@ -280,7 +280,7 @@ LAB_004d3af9:
         }
         goto LAB_004d321d;
       }
-      uVar9 = (this_ptr->base).base.is_walking;
+      uVar9 = (this_ptr->base).base.walk_state;
       if (uVar9 < 2) {
         if (uVar9 != 1) goto LAB_004d320e;
         iVar17 = 1;

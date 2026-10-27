@@ -14,7 +14,7 @@ void __cdecl core_smiley_cpp_CSmiley_process_FUN_005a2800(CSmiley *this_ptr,floa
   CDeformableModelInstance *pCVar4;
   CVector3f *pCVar5;
   CCharacter *pCVar6;
-  uint uVar7;
+  EWalkState EVar7;
   float fVar8;
   float fVar9;
   EDeathState EVar4;
@@ -263,7 +263,7 @@ void __cdecl core_smiley_cpp_CSmiley_process_FUN_005a2800(CSmiley *this_ptr,floa
                             (pCVar4,local_40,0);
         core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
                   ((CDemonActor *)this_ptr,&local_4c,pCVar12);
-        core_gore_cpp_CGore_createBloodPool_FUN_004ede30(g_CGorePtr,&local_4c,0);
+        core_gore_cpp_CGore_createBloodPool_FUN_004ede30(g_CGorePtr,&local_4c,BLOOD_TYPE_RED);
         (this_ptr->base).pool_me = 1;
       }
       break;
@@ -309,9 +309,9 @@ void __cdecl core_smiley_cpp_CSmiley_process_FUN_005a2800(CSmiley *this_ptr,floa
     }
     goto switchD_005a3055_caseD_7;
   }
-  uVar7 = (this_ptr->base).base.is_walking;
-  if (uVar7 < 2) {
-    if (uVar7 == 1) {
+  EVar7 = (this_ptr->base).base.walk_state;
+  if (EVar7 < 2) {
+    if (EVar7 == WALK_STATE_WALKING) {
 LAB_005a2a90:
       iVar10 = 2;
     }
@@ -323,8 +323,8 @@ LAB_005a2b8e:
               (&(this_ptr->base).base.model.base,iVar10,1);
   }
   else {
-    if (uVar7 < 3) goto LAB_005a2a90;
-    if (uVar7 != 3) goto LAB_005a2b8e;
+    if (EVar7 < WALK_STATE_NO_PATH) goto LAB_005a2a90;
+    if (EVar7 != WALK_STATE_NO_PATH) goto LAB_005a2b8e;
     core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
               (&(this_ptr->base).base.model.base,1,1);
     engine_console_cpp_CConsole_printf_FUN_00441890

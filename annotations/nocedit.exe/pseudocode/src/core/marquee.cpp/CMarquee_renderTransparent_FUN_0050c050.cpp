@@ -45,7 +45,7 @@ int __cdecl core_marquee_cpp_CMarquee_renderTransparent_FUN_0050c050(CMarquee *t
               (g_CDemonRendererPtr2,&SMRGLTextureBasic_0067d150);
     this_ptr_01 = &this_ptr->course;
     if (g_CDemonMissionPtr->is_in_editor == 0) {
-      if (this_ptr->type == 1) {
+      if (this_ptr->type == MARQUEE_DISPLAY_CURSIVE) {
         fVar1 = this_ptr->param;
         iVar4 = 0;
         if (0 < (int)ROUND(ROUND(fVar1))) {
@@ -64,7 +64,7 @@ int __cdecl core_marquee_cpp_CMarquee_renderTransparent_FUN_0050c050(CMarquee *t
           } while (iVar4 < (int)ROUND(ROUND(fVar1)));
         }
       }
-      else if (this_ptr->type == 0) {
+      else if (this_ptr->type == MARQUEE_DISPLAY_RING) {
         iVar4 = this_ptr_01->len;
         iVar5 = 0;
         iVar2 = (int)ROUND(ROUND(this_ptr->param));

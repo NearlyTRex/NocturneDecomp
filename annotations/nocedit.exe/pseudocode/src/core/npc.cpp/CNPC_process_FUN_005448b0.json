@@ -7,15 +7,15 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 267,
-    "complexity_score": 116,
+    "complexity_score": 117,
     "cross_reference_count": 1,
     "function_call_count": 17,
     "global_count": 12,
     "max_suspect_severity": "clean",
-    "pseudocode_lines": 116,
+    "pseudocode_lines": 117,
     "suspect_count": 0,
     "suspect_types": [],
-    "total_lines": 383
+    "total_lines": 384
   },
   "cross_references": [
     {
@@ -261,8 +261,17 @@
   },
   "resolved_suspects": [
     {
+      "description": "Ghidra could not apply type to a symbol",
+      "line": 2,
+      "match": "WARNING: Unable to use type for symbol",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "/* WARNING: Unable to use type for symbol uVar3 */",
+      "type": "warning_unable_to_use_type"
+    },
+    {
       "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
-      "line": 35,
+      "line": 37,
       "match": "cascade_constant_fill",
       "resolution_source": "keep",
       "severity": "moderate",
@@ -271,7 +280,7 @@
     },
     {
       "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
-      "line": 93,
+      "line": 95,
       "match": "cascade_constant_fill",
       "resolution_source": "keep",
       "severity": "moderate",
@@ -280,7 +289,7 @@
     },
     {
       "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
-      "line": 107,
+      "line": 109,
       "match": "cascade_constant_fill",
       "resolution_source": "keep",
       "severity": "moderate",
@@ -289,7 +298,7 @@
     },
     {
       "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
-      "line": 110,
+      "line": 112,
       "match": "cascade_constant_fill",
       "resolution_source": "keep",
       "severity": "moderate",

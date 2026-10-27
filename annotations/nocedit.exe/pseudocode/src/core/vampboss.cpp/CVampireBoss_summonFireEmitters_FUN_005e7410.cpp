@@ -21,7 +21,7 @@ void __cdecl core_vampboss_cpp_CVampireBoss_summonFireEmitters_FUN_005e7410(CVam
                   core_actor_cpp_castToClassHash_FUN_0040c790
                             (*(CDemonActor **)((int)g_CDemonSetPtr->actors + iVar1),
                              g_CEmitterClassInfo.name_hash);
-    if ((this_ptr_00 != (CEmitter *)0x0) && (this_ptr_00->emitter_type == 2)) {
+    if ((this_ptr_00 != (CEmitter *)0x0) && (this_ptr_00->emitter_type == EMITTER_TYPE_FIREBALL)) {
       core_emitter_cpp_CEmitter_launchFireballAtHero_FUN_004a7e80(this_ptr_00);
     }
     iVar1 = iVar1 + 4;

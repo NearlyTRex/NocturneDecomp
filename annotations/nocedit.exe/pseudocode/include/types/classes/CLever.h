@@ -7,6 +7,7 @@
 #include "types/classes/CDemonActor.h"
 #include "types/classes/CKeyFramedModelInstance.h"
 #include "types/classes/CRuleList.h"
+#include "types/enums/ELeverOpenSides.h"
 #include "types/enums/ELeverType.h"
 
 // Structure: CLever
@@ -27,7 +28,7 @@ typedef struct CLever {
     int moving; // 0x418
     float move_to_pct; // 0x41c
     CRuleList rule; // 0x420
-    int allowed_sides; // 0x80c
+    ELeverOpenSides allowed_sides; // 0x80c
     int enable_collision; // 0x810
 } CLever;
 #pragma pack(pop)

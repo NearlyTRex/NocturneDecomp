@@ -14,7 +14,7 @@ void __cdecl core_inv_cpp_CInventory_createAmmoFromWeapon_FUN_004fe900(CInventor
   CAmmo *this_ptr_00;
   char *pcVar3;
   
-  if (weapon->ammo_type == -1) {
+  if (weapon->ammo_type == AMMO_TYPE_NONE) {
     return;
   }
   pCVar2 = (CAmmo *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0(0x31c,"..\\core\\inv.cpp",764);

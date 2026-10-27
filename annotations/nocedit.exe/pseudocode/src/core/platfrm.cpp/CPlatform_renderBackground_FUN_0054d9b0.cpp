@@ -22,12 +22,12 @@ void __cdecl core_platfrm_cpp_CPlatform_renderBackground_FUN_0054d9b0(CPlatform 
   if (layer_flag == 0) {
     return;
   }
-  if ((this_ptr->one_shot < 2) && (this_ptr->render_in_background_when_not_moving_flag == 0)) {
+  if (((int)this_ptr->one_shot < 2) && (this_ptr->render_in_background_when_not_moving_flag == 0)) {
     return;
   }
   if (this_ptr->render_in_background_when_not_moving_flag != 0) {
-    if ((this_ptr->state == (PLATFORM_STATE_TYPE_WTF|PLATFORM_STATE_TYPE_AT_END)) ||
-       (this_ptr->state == 4)) {
+    if ((this_ptr->state == PLATFORM_STATE_TYPE_MOVING_TO_END) ||
+       (this_ptr->state == PLATFORM_STATE_TYPE_MOVING_TO_START)) {
       return;
     }
     iVar2 = core_event_cpp_CEventList_evaluateCondition_FUN_004adca0
@@ -44,7 +44,7 @@ void __cdecl core_platfrm_cpp_CPlatform_renderBackground_FUN_0054d9b0(CPlatform 
   iVar2 = engine_drender_cpp_CDemonRenderer_isShadowPass_FUN_0048cae0(g_CDemonRendererPtr2);
   if (iVar2 == 0) {
     if (this_ptr->render_in_background_when_not_moving_flag == 0) {
-      this_ptr->one_shot = 3;
+      this_ptr->one_shot = ONE_SHOT_DONE_IN_BACKGROUND;
     }
     else {
       this_ptr->rendered_in_background = 1;

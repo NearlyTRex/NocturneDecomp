@@ -39,7 +39,7 @@ int __cdecl core_marquee_cpp_CMarquee_renderTransparent_FUN_004cc5d0(CMarquee *t
               (g_CDemonRenderer_PTR_005ae704,(SMRGLTextureBasic *)&DAT_005badbc);
     this_ptr_00 = &this_ptr->course;
     if (g_CDemonMission_PTR_005baf90->is_in_editor == 0) {
-      if (this_ptr->type == 1) {
+      if (this_ptr->type == MARQUEE_DISPLAY_CURSIVE) {
         dVar4 = round((double)this_ptr->param);
         iVar2 = (int)ROUND(dVar4);
         iVar3 = 0;
@@ -62,7 +62,7 @@ int __cdecl core_marquee_cpp_CMarquee_renderTransparent_FUN_004cc5d0(CMarquee *t
           } while (iVar3 < iVar2);
         }
       }
-      else if (this_ptr->type == 0) {
+      else if (this_ptr->type == MARQUEE_DISPLAY_RING) {
         dVar4 = round((double)this_ptr->param);
         local_18 = (CCourse *)this_ptr_00->len;
         iVar3 = 0;

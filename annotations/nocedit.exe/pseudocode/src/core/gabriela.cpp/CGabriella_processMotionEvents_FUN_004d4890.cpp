@@ -126,7 +126,7 @@ void __cdecl core_gabriela_cpp_CGabriella_processMotionEvents_FUN_004d4890(CGabr
         if (0.0 < (double)SStack_a0.damage_amount) {
           local_18 = (float)(int)ROUND(ROUND((double)SStack_a0.damage_amount * 0.20000000000000001));
           core_gore_cpp_CGore_spawnBloodBurst_FUN_004edbb0
-                    (g_CGorePtr,&local_64,(CVector3f *)0x0,(int)local_18 + 1,0);
+                    (g_CGorePtr,&local_64,(CVector3f *)0x0,(int)local_18 + 1,BLOOD_TYPE_RED);
           (*((this_ptr->base).base.base.vtable._ub)->playSound)
                     ((CDemonActor *)this_ptr,"kick1.wav");
           (this_ptr->base).base.grabbed_by = (CDemonActor *)0x0;

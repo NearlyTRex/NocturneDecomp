@@ -2,12 +2,10 @@
 // fix the type in Ghidra or the generator, or the next export overwrites the change.
 #pragma once
 
-// Enum: EPlatformType
+// Enum: EEmitterSoundType
 enum {
-    PLATFORM_TYPE_DISABLED = 0x0,
-    PLATFORM_TYPE_START = 0x1,
-    PLATFORM_TYPE_END = 0x2,
-    PLATFORM_TYPE_BOTH = 0x3
+    EMITTER_SOUND_NORMAL = 0x0,
+    EMITTER_SOUND_ONE_SHOT = 0x1
 };
-typedef int EPlatformType;
+typedef int EEmitterSoundType;
 

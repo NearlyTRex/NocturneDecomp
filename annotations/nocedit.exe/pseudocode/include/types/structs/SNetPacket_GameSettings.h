@@ -4,8 +4,10 @@
 
 // Dependencies
 #include "system/basetypes.h"
+#include "types/enums/EHeroType.h"
 #include "types/structs/SGameSettingsPlayer.h"
 #include "types/structs/SNetPacketHeader.h"
+#include "types/structs/SNetworkAddr.h"
 
 // Structure: SNetPacket_GameSettings
 // Ghidra size: 0xb1 (177 bytes)

@@ -11,7 +11,7 @@
 void __cdecl core_gore_cpp_CFootstep_render_FUN_004afa20(CFootstep *this_ptr,int expire_flag)
 
 {
-  uint uVar1;
+  EBloodType EVar1;
   CVector3f *pCVar2;
   SProjectedVertex *output;
   CVector3i local_1c;
@@ -62,63 +62,63 @@ void __cdecl core_gore_cpp_CFootstep_render_FUN_004afa20(CFootstep *this_ptr,int
     DAT_005c5034 = 0x7ff;
     goto LAB_004afc11;
   }
-  uVar1 = this_ptr->blood_type;
-  if (uVar1 == 0) {
+  EVar1 = this_ptr->blood_type;
+  if (EVar1 == BLOOD_TYPE_RED) {
 LAB_004afca4:
     DAT_005c5034 = 0x2000;
     DAT_005c5038 = 0;
   }
-  else if (uVar1 < 2) {
+  else if (EVar1 < BLOOD_TYPE_NONE) {
     DAT_005c5038 = 0x7f80;
     DAT_005c5034 = 0;
   }
   else {
-    if (uVar1 != 2) goto LAB_004afca4;
+    if (EVar1 != BLOOD_TYPE_NONE) goto LAB_004afca4;
     DAT_005c5038 = 0;
     DAT_005c5034 = 0;
   }
   DAT_005c503c = 0;
-  uVar1 = this_ptr->blood_type;
-  if (uVar1 == 0) {
+  EVar1 = this_ptr->blood_type;
+  if (EVar1 == BLOOD_TYPE_RED) {
 LAB_004afb8a:
     DAT_005c5064 = 0x2000;
     DAT_005c5068 = 0;
   }
-  else if (uVar1 < 2) {
+  else if (EVar1 < BLOOD_TYPE_NONE) {
     DAT_005c5068 = 0x7f80;
     DAT_005c5064 = 0;
   }
   else {
-    if (uVar1 != 2) goto LAB_004afb8a;
+    if (EVar1 != BLOOD_TYPE_NONE) goto LAB_004afb8a;
     DAT_005c5068 = 0;
     DAT_005c5064 = 0;
   }
   DAT_005c506c = 0;
-  uVar1 = this_ptr->blood_type;
-  if (uVar1 == 0) {
+  EVar1 = this_ptr->blood_type;
+  if (EVar1 == BLOOD_TYPE_RED) {
 LAB_004afbbc:
     DAT_005c5094 = 0x2000;
     DAT_005c5098 = 0;
   }
-  else if (uVar1 < 2) {
+  else if (EVar1 < BLOOD_TYPE_NONE) {
     DAT_005c5098 = 0x7f80;
     DAT_005c5094 = 0;
   }
   else {
-    if (uVar1 != 2) goto LAB_004afbbc;
+    if (EVar1 != BLOOD_TYPE_NONE) goto LAB_004afbbc;
     DAT_005c5098 = 0;
     DAT_005c5094 = 0;
   }
   DAT_005c509c = 0;
-  uVar1 = this_ptr->blood_type;
-  if (uVar1 != 0) {
-    if (uVar1 < 2) {
+  EVar1 = this_ptr->blood_type;
+  if (EVar1 != BLOOD_TYPE_RED) {
+    if (EVar1 < BLOOD_TYPE_NONE) {
       DAT_005c50c8 = 0x7f80;
       DAT_005c50cc = 0;
       DAT_005c50c4 = 0;
       goto LAB_004afc11;
     }
-    if (uVar1 == 2) {
+    if (EVar1 == BLOOD_TYPE_NONE) {
       DAT_005c50c8 = 0;
       DAT_005c50cc = 0;
       DAT_005c50c4 = 0;

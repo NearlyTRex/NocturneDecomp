@@ -59,7 +59,7 @@ void __cdecl core_npc_cpp_CNPC_process_FUN_005448b0(CNPC *this_ptr,float delta_t
   (this_ptr->base).turn_speed = delta_time * fVar5 * fVar4;
   iVar5 = core_charactr_cpp_CCharacter_processWalking_FUN_0042ca70(&this_ptr->base,delta_time);
   if (iVar5 == 0) goto LAB_00544a0c;
-  uVar3 = (this_ptr->base).is_walking;
+  uVar3 = (this_ptr->base).walk_state;
   if (uVar3 < 2) {
     if (uVar3 == 1) {
 LAB_005449de:

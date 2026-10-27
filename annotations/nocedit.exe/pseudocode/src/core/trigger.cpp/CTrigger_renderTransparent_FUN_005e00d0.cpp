@@ -63,48 +63,48 @@ int __cdecl core_trigger_cpp_CTrigger_renderTransparent_FUN_005e00d0(CTrigger *t
   if (iVar5 == 0) {
     return 0;
   }
-  switch(this_ptr->hero_triggers_me) {
+  switch(this_ptr->trigger_cause) {
   default:
     iVar6 = 0xff;
     blue = 0;
     goto LAB_005e0160;
-  case 1:
+  case TRIGGER_CAUSE_ACTOR:
     iVar4 = 0xff;
     iVar6 = 0;
     blue = 0xff;
     break;
-  case 2:
+  case TRIGGER_CAUSE_LIGHT:
     iVar4 = 0xff;
     iVar6 = 0xff;
     blue = 0xff;
     break;
-  case 3:
+  case TRIGGER_CAUSE_ACTION_BUTTON:
     blue = 0xff;
     iVar6 = 0;
 LAB_005e0160:
     iVar4 = 0;
     break;
-  case 4:
+  case TRIGGER_CAUSE_BULLET:
     iVar4 = 0xff;
     blue = 0;
     iVar6 = iVar4;
     break;
-  case 5:
+  case TRIGGER_CAUSE_LASER:
     blue = 0xff;
     iVar4 = 0;
     iVar6 = blue;
     break;
-  case 6:
+  case TRIGGER_CAUSE_EXPLOSION:
     iVar4 = 0xff;
     blue = 0;
     iVar6 = 0x80;
     break;
-  case 7:
+  case TRIGGER_CAUSE_DAMAGE:
     iVar4 = 0xff;
     blue = 0;
     iVar6 = 0;
     break;
-  case 8:
+  case TRIGGER_CAUSE_MOTION:
     blue = 0x100;
     iVar4 = 0x80;
     iVar6 = 0;
@@ -115,7 +115,7 @@ LAB_005e0160:
   else {
     alpha = 0x40;
   }
-  if (this_ptr->shape != 1) {
+  if (this_ptr->trigger_shape != TRIGGER_SHAPE_CYLINDER) {
     core_actor_cpp_CDemonActor_renderBoundingBoxSolid_FUN_0040dec0
               (&this_ptr->base,iVar4,iVar6,blue,alpha);
     return iVar5;

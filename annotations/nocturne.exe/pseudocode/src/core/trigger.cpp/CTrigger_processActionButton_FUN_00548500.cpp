@@ -9,7 +9,7 @@
 int __cdecl core_trigger_cpp_CTrigger_processActionButton_FUN_00548500(CTrigger *this_ptr)
 
 {
-  if (this_ptr->hero_triggers_me != 3) {
+  if (this_ptr->trigger_cause != TRIGGER_CAUSE_ACTION_BUTTON) {
     return 1;
   }
   this_ptr->event_flag = 1;

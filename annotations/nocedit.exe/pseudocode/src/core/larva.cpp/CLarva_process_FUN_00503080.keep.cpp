@@ -223,7 +223,7 @@ void __cdecl core_larva_cpp_CLarva_process_FUN_00503080(CLarva *this_ptr,float d
     }
     goto LAB_00503184;
   }
-  uVar3 = (this_ptr->base).base.is_walking;
+  uVar3 = (this_ptr->base).base.walk_state;
   if (uVar3 < 2) {
     if (uVar3 == 1) {
 LAB_00503159:

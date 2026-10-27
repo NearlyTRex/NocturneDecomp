@@ -179,7 +179,8 @@ void __cdecl core_set_cpp_CDemonSet_processActors_FUN_00509140(CDemonSet *this_p
         this_ptr_03 = (CTrigger *)
                       core_actor_cpp_castToClassHash_FUN_0040d890
                                 (pCVar7->actors[0],g_CTriggerActorType_02dd1084.name_hash);
-        if (((this_ptr_03 != (CTrigger *)0x0) && (this_ptr_03->hero_triggers_me == 7)) &&
+        if (((this_ptr_03 != (CTrigger *)0x0) &&
+            (this_ptr_03->trigger_cause == TRIGGER_CAUSE_DAMAGE)) &&
            (this_ptr_03->damage_actor_wildcard_name[0] == '\0')) {
           fStack_4c = 0.0;
           iVar8 = core_fire_cpp_CFireEffect_getExplosionEffect_FUN_0048c160

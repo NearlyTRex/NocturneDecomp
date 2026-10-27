@@ -16,19 +16,20 @@ int __cdecl core_door_cpp_CDoor_getMoveType_FUN_00481070(CDoor *this_ptr,CDemonA
             (&this_ptr->base,&local_18,&(opener->location).position);
   message = support_newmsg_cpp_getLocalizedString_FUN_005441f0("The door is locked from the other side.");
   if (local_18.z <= 0.0) {
-    if ((this_ptr->allowed_sides & 2) != 0) goto LAB_004811fd;
-    if (this_ptr->allowed_sides != 0) {
+    if ((this_ptr->allowed_sides & DOOR_OPEN_SIDES_NEG_Z) != DOOR_OPEN_SIDES_NEITHER)
+    goto LAB_004811fd;
+    if (this_ptr->allowed_sides != DOOR_OPEN_SIDES_NEITHER) {
       core_door_cpp_CDoor_onLocked_FUN_00481210(this_ptr);
       core_game_cpp_CGame_displayMessage_FUN_004d7f20(g_CGamePtr,message,5.0);
       return 0;
     }
   }
   else {
-    if ((this_ptr->allowed_sides & 1) != 0) {
+    if ((this_ptr->allowed_sides & DOOR_OPEN_SIDES_POS_Z) != DOOR_OPEN_SIDES_NEITHER) {
 LAB_004811fd:
       switch(this_ptr->door_type) {
       case DOOR_TYPE_SWING:
-        if (this_ptr->door_swing != 0) {
+        if (this_ptr->door_swing != DOOR_SWING_CLOCKWISE) {
           local_18.z = -local_18.z;
         }
         if (this_ptr->door_state != DOOR_STATE_CLOSED) {
@@ -54,14 +55,14 @@ LAB_004811fd:
         return 0;
       }
     }
-    if (this_ptr->allowed_sides != 0) {
+    if (this_ptr->allowed_sides != DOOR_OPEN_SIDES_NEITHER) {
       core_door_cpp_CDoor_onLocked_FUN_00481210(this_ptr);
       core_game_cpp_CGame_displayMessage_FUN_004d7f20(g_CGamePtr,message,5.0);
     }
   }
   return 0;
 switchD_00481208_caseD_2:
-  if (this_ptr->door_side != 1) {
+  if (this_ptr->door_side != DOOR_SIDE_RIGHT) {
     local_18.z = -local_18.z;
   }
   if (this_ptr->door_state != DOOR_STATE_CLOSED) {

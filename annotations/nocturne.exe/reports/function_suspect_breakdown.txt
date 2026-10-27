@@ -774,14 +774,14 @@ EASY WINS: FUNCTIONS WITH 1 SUSPECT
       SStack_44.impact_point.x = damage_direction->x;...
     core_charactr.cpp_CCharacter_dropCarriedObject_FUN ( 24 lines)
       local_10.x = pCVar1->x;...
-    core_crossbow.cpp_CCrossbow_process_FUN_0043cfd0   ( 24 lines)
-      (this_ptr->bolt_flame).base.location.position.x = pCVar1->x;...
     core_dtrace.cpp_CDemonRaytrace_rayIntersection_FUN ( 24 lines)
       output_point->x = ray_end->x;...
     core_bodypart.cpp_CBodyPart_addAttachedModel_FUN_0 ( 25 lines)
       pCVar2[1].x = euler_angles->x;...
     core_crate.cpp_CCrate_explode_FUN_0043cdb0         ( 25 lines)
       CStack_10.x = (pCVar1->position).x;...
+    core_crossbow.cpp_CCrossbow_process_FUN_0043cfd0   ( 25 lines)
+      (this_ptr->bolt_flame).base.location.position.x = pCVar1->x;...
     core_dglobe.cpp_CDemonGlobe_intersectAABB_FUN_0044 ( 25 lines)
       local_24.x = pCVar1->x;...
     core_emitter.cpp_SLaserInfo_copy_FUN_00479470      ( 25 lines)
@@ -1272,7 +1272,7 @@ EASY WINS: FUNCTIONS WITH 1 SUSPECT
       do {...
     engine_font.cpp_CBitFont_loadBitmap_FUN_0048ff70   ( 72 lines)
       do {...
-    core_door.cpp_CDoor_archive_FUN_00455ee0           ( 81 lines)
+    core_door.cpp_CDoor_archive_FUN_00455ee0           ( 82 lines)
       do {...
     core_ammo.cpp_CAmmo_setWeaponClass_FUN_0040ed80    ( 85 lines)
       do {...
@@ -1826,8 +1826,6 @@ FUNCTIONS WITH 2-3 SUSPECTS
     File: engine/3d.c, Lines: 15, Types: ['concat_reconstruction', 'undefined_data']
   engine_3d.c_setVertexTextureU_FUN_00406840
     File: engine/3d.c, Lines: 15, Types: ['shadow_pointer_walk', 'undefined_data']
-  core_gabriela.cpp_CGabriella_tryFireWeapon_FUN_00498b60
-    File: core/gabriela.cpp, Lines: 15, Types: ['unaffected_reg']
   core_set.cpp_CDemonSet_addQueuedCoronaGlobe_FUN_0050aa20
     File: core/set.cpp, Lines: 15, Types: ['raw_address_pointer_store', 'warning_overlapping_globals']
   sound_sndmain.cpp_resetSoundDevice_FUN_00528080
@@ -1840,6 +1838,8 @@ FUNCTIONS WITH 2-3 SUSPECTS
     File: cockpit/ckptutil.c, Lines: 16, Types: ['pointer_cast']
   core_fire.cpp_CFireEffect_hasActiveMuzzleFlash_FUN_0048c8a0
     File: core/fire.cpp, Lines: 16, Types: ['pointer_cast', 'pointer_truncation']
+  core_gabriela.cpp_CGabriella_tryFireWeapon_FUN_00498b60
+    File: core/gabriela.cpp, Lines: 16, Types: ['unaffected_reg']
   core_game.cpp_CGame_resetInputAndCenterCursor_FUN_0049f8c0
     File: core/game.cpp, Lines: 16, Types: ['undefined_data', 'warning_overlapping_globals']
   core_path.cpp_CPathMap_reset_FUN_004f1e10
@@ -2310,8 +2310,6 @@ FUNCTIONS WITH 2-3 SUSPECTS
     File: core/dtrace.cpp, Lines: 57, Types: ['undefined_data', 'warning_overlapping_globals']
   core_inv.cpp_CInventory_selectItem_FUN_004c0950
     File: core/inv.cpp, Lines: 58, Types: ['shadow_pointer_walk']
-  core_lever.cpp_CLever_archive_FUN_004c66f0
-    File: core/lever.cpp, Lines: 58, Types: ['undefined_data', 'unrolled_strcpy']
   core_menu.cpp_renderAudioSpectrumBar_FUN_004cf2b0
     File: core/menu.cpp, Lines: 58, Types: ['undefined_data', 'warning_overlapping_globals']
   core_script.cpp_CScript_process_FUN_004fe5b0
@@ -2320,6 +2318,8 @@ FUNCTIONS WITH 2-3 SUSPECTS
     File: core/trap.cpp, Lines: 58, Types: ['pointer_cast', 'warning_type_propagation']
   core_fire.cpp_CGlassParticle_render_FUN_004853c0
     File: core/fire.cpp, Lines: 59, Types: ['undefined_data', 'warning_overlapping_globals']
+  core_lever.cpp_CLever_archive_FUN_004c66f0
+    File: core/lever.cpp, Lines: 59, Types: ['undefined_data', 'unrolled_strcpy']
   core_chain.cpp_CChain_getBoundingBox_FUN_0042ca90
     File: core/chain.cpp, Lines: 60, Types: ['unrolled_memcpy']
   core_mirror.cpp_clipPolygonAgainstPlane_FUN_004d6420
@@ -2338,14 +2338,14 @@ FUNCTIONS WITH 2-3 SUSPECTS
     File: core/dfilter.cpp, Lines: 64, Types: ['raw_address_constant', 'unrolled_strcpy']
   sound_mp3.cpp_CFileBitStream_readAllocationValues_FUN_004e31
     File: sound/mp3.cpp, Lines: 64, Types: ['pointer_cast']
-  core_charactr.cpp_CCharacter_archive_FUN_004244b0
-    File: core/charactr.cpp, Lines: 65, Types: ['shadow_pointer_walk', 'undefined_data']
   engine_fpoly.c_addPolygonEdge_FUN_004940e0
     File: engine/fpoly.c, Lines: 65, Types: ['undefined_data', 'warning_overlapping_globals']
   core_setcolid.cpp_CDemonSet_iterativeRaycast_FUN_0050fdd0
     File: core/setcolid.cpp, Lines: 65, Types: ['unrolled_memcpy']
   core_weapon.cpp_CWeapon_renderAimBeam_FUN_00554750
     File: core/weapon.cpp, Lines: 65, Types: ['unrolled_memcpy']
+  core_charactr.cpp_CCharacter_archive_FUN_004244b0
+    File: core/charactr.cpp, Lines: 66, Types: ['shadow_pointer_walk', 'undefined_data']
   core_glass.cpp_CGlass_renderTransparent_FUN_004ac600
     File: core/glass.cpp, Lines: 66, Types: ['shadow_pointer_walk', 'warning_overlapping_globals']
   core_glass.cpp_CGlass_renderBackground_FUN_004ac9b0
@@ -2734,10 +2734,10 @@ FUNCTIONS WITH 2-3 SUSPECTS
     File: sound/snddx.cpp, Lines: 56, Types: ['unresolved_funcptr', 'warning_overlapping_globals']
   core_skeleton.cpp_CDeformableModelInstance_initializeFromMod
     File: core/skeleton.cpp, Lines: 57, Types: ['shadow_pointer_walk', 'unrolled_memcpy']
-  core_emitter.cpp_CEmitter_renderOpaque_FUN_00478f80
-    File: core/emitter.cpp, Lines: 58, Types: ['unrolled_memcpy']
   core_event.cpp_CEventList_addOrRemoveGameFlag_FUN_00480420
     File: core/event.cpp, Lines: 58, Types: ['pointer_stride_bytecount', 'unrolled_strcpy', 'unrolled_strlen']
+  core_emitter.cpp_CEmitter_renderOpaque_FUN_00478f80
+    File: core/emitter.cpp, Lines: 59, Types: ['unrolled_memcpy']
   core_event.cpp_CEventList_addOrRemovePersistentEvent_FUN_004
     File: core/event.cpp, Lines: 59, Types: ['pointer_stride_bytecount', 'unrolled_strcpy', 'unrolled_strlen']
   core_set.cpp_CDemonSet_buildActorTypeLists_FUN_0050e6b0

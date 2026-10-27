@@ -4,6 +4,7 @@
 
 // Dependencies
 #include "system/basetypes.h"
+#include "types/structs/SPlayerActionState.h"
 #include "types/structs/SPlayerInput.h"
 
 // Structure: SSimFrame

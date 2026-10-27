@@ -12,7 +12,7 @@ void __cdecl core_cow_cpp_CZombieCow_process_FUN_00444310(CZombieCow *this_ptr,f
 
 {
   CDeformableModelInstance *this_ptr_01;
-  uint uVar1;
+  EWalkState EVar1;
   CCharacter *this_ptr_02;
   float fVar2;
   int iVar4;
@@ -159,15 +159,15 @@ void __cdecl core_cow_cpp_CZombieCow_process_FUN_00444310(CZombieCow *this_ptr,f
                            (this_ptr_01,&local_78,0);
         core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
                   ((CDemonActor *)this_ptr,&local_84,pCVar8);
-        core_gore_cpp_CGore_createBloodPool_FUN_004ede30(g_CGorePtr,&local_84,0);
+        core_gore_cpp_CGore_createBloodPool_FUN_004ede30(g_CGorePtr,&local_84,BLOOD_TYPE_RED);
         (this_ptr->base).pool_me = 1;
       }
     }
     goto switchD_0044482d_caseD_3;
   }
-  uVar1 = (this_ptr->base).base.is_walking;
-  if (uVar1 < 2) {
-    if (uVar1 == 1) {
+  EVar1 = (this_ptr->base).base.walk_state;
+  if (EVar1 < 2) {
+    if (EVar1 == WALK_STATE_WALKING) {
 LAB_004443e0:
       iVar5 = 1;
     }
@@ -179,8 +179,8 @@ LAB_004445a0:
               (&(this_ptr->base).base.model.base,iVar5,1);
   }
   else {
-    if (uVar1 < 3) goto LAB_004443e0;
-    if (uVar1 != 3) goto LAB_004445a0;
+    if (EVar1 < WALK_STATE_NO_PATH) goto LAB_004443e0;
+    if (EVar1 != WALK_STATE_NO_PATH) goto LAB_004445a0;
     core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00(&this_ptr_01->base,0,1);
     engine_console_cpp_CConsole_printf_FUN_00441890
               (g_CConsolePtr,"%s confused while walking to scriptDest!\n",this_ptr);

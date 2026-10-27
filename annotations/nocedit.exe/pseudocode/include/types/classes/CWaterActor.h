@@ -7,7 +7,10 @@
 #include "types/classes/CColor3i.h"
 #include "types/classes/CDemonActor.h"
 #include "types/classes/CVector3f.h"
+#include "types/enums/EWaterActorState.h"
+#include "types/structs/SMRGLHeaderPrimitive.h"
 #include "types/structs/SMRGLPrimitiveQuad.h"
+#include "types/structs/SMRGLVertex.h"
 #include "types/structs/SWaterVertex.h"
 
 // Structure: CWaterActor
@@ -25,7 +28,7 @@ typedef struct CWaterActor {
     char move_event[100]; // 0x1b4
     char move_down_event[100]; // 0x218
     float param; // 0x27c
-    int state; // 0x280
+    EWaterActorState state; // 0x280
     float patch_size; // 0x284
     int round_flag; // 0x288
     CColor3i color; // 0x28c

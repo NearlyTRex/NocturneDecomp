@@ -36,6 +36,6 @@ void __cdecl core_gore_cpp_CBloodSplat_initWallSplat_FUN_004aea00(CBloodSplat *t
   (this_ptr->normal_fixed).y = (int)ROUND(normal->y * 65536.0f);
   (this_ptr->normal_fixed).z = (int)ROUND(normal->z * 65536.0f);
   this_ptr->expired = 0;
-  this_ptr->blood_type = (int)position;
+  this_ptr->blood_type = (EBloodType)position;
   return;
 }

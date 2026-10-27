@@ -26,7 +26,7 @@ int __cdecl core_enemy_cpp_CEnemy_testAttackRadius_FUN_004a9880(CEnemy *this_ptr
                                    0.25));
       CStack_20.z = point->z;
       core_gore_cpp_CGore_spawnBloodBurst_FUN_004edbb0
-                (g_CGorePtr,&CStack_20,(CVector3f *)0x0,iStack_14,0);
+                (g_CGorePtr,&CStack_20,(CVector3f *)0x0,iStack_14,BLOOD_TYPE_RED);
       return 1;
     }
   }

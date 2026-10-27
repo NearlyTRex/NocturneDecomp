@@ -67,7 +67,7 @@ void __cdecl core_hero_cpp_CHero_archive_FUN_004b49a0(CHero *this_ptr)
     }
     if (0xb < g_INT_005ba940) {
       core_actor_cpp_archiveInteger_FUN_0040c900
-                (&this_ptr->is_wearing_gas_mask,"isWearingGasMask");
+                ((int *)&this_ptr->is_wearing_gas_mask,"isWearingGasMask");
     }
     if (5 < g_INT_005ba940) {
       if (DAT_00763e88 != 1) {

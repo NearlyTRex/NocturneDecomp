@@ -40,7 +40,7 @@ void __cdecl core_door_cpp_CDoor_reposition_FUN_004552a0(CDoor *this_ptr)
     (this_ptr->base).location.position.x = (this_ptr->orig_pos).x;
     (this_ptr->base).location.position.y = (this_ptr->orig_pos).y;
     (this_ptr->base).location.position.z = (this_ptr->orig_pos).z;
-    if (this_ptr->door_swing == 0) {
+    if (this_ptr->door_swing == DOOR_SWING_CLOCKWISE) {
       fVar2 = this_ptr->param * (float)1.57079632675 + (this_ptr->orig_orient).y;
     }
     else {
@@ -69,7 +69,7 @@ void __cdecl core_door_cpp_CDoor_reposition_FUN_004552a0(CDoor *this_ptr)
                        (&this_ptr->base,&CStack_74,&CStack_44);
     break;
   case DOOR_TYPE_SLIDE:
-    if (this_ptr->door_side == 1) {
+    if (this_ptr->door_side == DOOR_SIDE_RIGHT) {
       CStack_a4.x = this_ptr->param;
     }
     else {

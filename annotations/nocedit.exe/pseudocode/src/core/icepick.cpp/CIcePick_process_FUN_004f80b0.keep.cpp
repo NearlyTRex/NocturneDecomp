@@ -200,7 +200,7 @@ switchD_004f8665_default:
     (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
     (this_ptr->base).base.model.accumulated_root_motion.y = 0.0;
     pCVar7->x = 0.0;
-    uVar9 = (this_ptr->base).base.is_walking;
+    uVar9 = (this_ptr->base).base.walk_state;
     if (uVar9 < 2) {
       if (uVar9 == 1) {
         iVar6 = 1;

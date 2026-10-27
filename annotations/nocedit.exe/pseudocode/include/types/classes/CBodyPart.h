@@ -11,9 +11,13 @@ struct SMRGLPrimitiveTriangle;
 #include "types/classes/CBoundingBox3D.h"
 #include "types/classes/CBox.h"
 #include "types/classes/CDemonActor.h"
+#include "types/classes/CFlame.h"
+#include "types/classes/CKeyFramedModelInstance.h"
 #include "types/classes/CVector3f.h"
+#include "types/enums/EBloodType.h"
 #include "types/structs/SBodyPartFire.h"
 #include "types/structs/SBodyPartModel.h"
+#include "types/structs/SMRGLHeaderBasic.h"
 #include "types/structs/SMRGLTextureBasic.h"
 
 // Structure: CBodyPart
@@ -38,7 +42,7 @@ typedef struct CBodyPart {
     SBodyPartFire fires[2]; // 0x750
     int dont_use_normals; // 0xcb0
     int transparent_geometry_flag; // 0xcb4
-    int blood_type; // 0xcb8
+    EBloodType blood_type; // 0xcb8
     float physics_timer; // 0xcbc
     int render_alpha; // 0xcc0
     int dont_pick_me_up; // 0xcc4

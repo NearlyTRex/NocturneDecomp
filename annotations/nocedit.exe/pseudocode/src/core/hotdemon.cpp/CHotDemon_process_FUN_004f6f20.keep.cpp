@@ -72,7 +72,7 @@ void __cdecl core_hotdemon_cpp_CHotDemon_process_FUN_004f6f20(CHotDemon *this_pt
   iVar6 = core_charactr_cpp_CCharacter_processWalking_FUN_0042ca70
                     ((CCharacter *)this_ptr,delta_time);
   if (iVar6 != 0) {
-    uVar9 = (this_ptr->base).base.is_walking;
+    uVar9 = (this_ptr->base).base.walk_state;
     if (uVar9 < 2) {
       if (uVar9 == 1) {
 LAB_004f6fec:

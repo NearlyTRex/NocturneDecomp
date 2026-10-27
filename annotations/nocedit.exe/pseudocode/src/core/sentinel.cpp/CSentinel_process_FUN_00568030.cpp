@@ -7,6 +7,7 @@
 #include "nocturne.h"
 
 /* WARNING: Type propagation algorithm not settling */
+/* WARNING: Unable to use type for symbol uVar3 */
 
 void __cdecl core_sentinel_cpp_CSentinel_process_FUN_00568030(CSentinel *this_ptr,float delta_time)
 
@@ -65,7 +66,7 @@ void __cdecl core_sentinel_cpp_CSentinel_process_FUN_00568030(CSentinel *this_pt
   float local_18;
   float local_14;
   CDeformableModelInstance *pCVar1;
-  uint uVar3;
+  EWalkState uVar3;
   CVector3f *pCVar2;
   CCharacter *pCVar4;
   float fVar14;
@@ -363,7 +364,7 @@ LAB_0056878f:
                             (&(this_ptr->base).base.model,local_44,0);
         core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
                   ((CDemonActor *)this_ptr,&local_128,pCVar10);
-        core_gore_cpp_CGore_createBloodPool_FUN_004ede30(g_CGorePtr,&local_128,0);
+        core_gore_cpp_CGore_createBloodPool_FUN_004ede30(g_CGorePtr,&local_128,BLOOD_TYPE_RED);
         (this_ptr->base).pool_me = 1;
       }
       break;
@@ -396,9 +397,9 @@ LAB_0056878f:
     }
     goto switchD_00568487_caseD_d;
   }
-  uVar3 = (this_ptr->base).base.is_walking;
+  uVar3 = (this_ptr->base).base.walk_state;
   if (uVar3 < 2) {
-    if (uVar3 == 1) {
+    if (uVar3 == WALK_STATE_WALKING) {
 LAB_005680fd:
       iVar8 = 2;
     }
@@ -410,8 +411,8 @@ LAB_0056845d:
               (&(this_ptr->base).base.model.base,iVar8,1);
   }
   else {
-    if (uVar3 < 3) goto LAB_005680fd;
-    if (uVar3 != 3) goto LAB_0056845d;
+    if (uVar3 < WALK_STATE_NO_PATH) goto LAB_005680fd;
+    if (uVar3 != WALK_STATE_NO_PATH) goto LAB_0056845d;
     core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00(&pCVar3->base,0,1);
     engine_console_cpp_CConsole_printf_FUN_00441890
               (g_CConsolePtr,"%s confused while walking to scriptDest!\n",this_ptr);

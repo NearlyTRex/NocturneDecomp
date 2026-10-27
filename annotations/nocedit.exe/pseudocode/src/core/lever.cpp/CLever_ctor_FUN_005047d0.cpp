@@ -28,7 +28,7 @@ CLever * __cdecl core_lever_cpp_CLever_ctor_FUN_005047d0(CLever *this_ptr)
   ADJ(this_ptr_00)->end_vertex_index = 0x17;
   ADJ(this_ptr_00)->moving = 0;
   ADJ(this_ptr_00)->move_to_pct = 0.0;
-  ADJ(this_ptr_00)->allowed_sides = 2;
+  ADJ(this_ptr_00)->allowed_sides = LEVER_OPEN_SIDES_BOTH;
   ADJ(this_ptr_00)->enable_collision = 1;
   return ADJ(this_ptr_00);
 }

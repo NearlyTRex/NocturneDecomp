@@ -2,13 +2,13 @@
 // Address: 004ec390
 // Address Range: [[004ec390, 004ec462]]
 // Convention: __cdecl
-// Signature: void __cdecl core_gore_cpp_CBloodSplat_initWallSplat_FUN_004ec390(CBloodSplat *this_ptr,CVector3f *position,CVector3f *normal,int blood_type)
+// Signature: void __cdecl core_gore_cpp_CBloodSplat_initWallSplat_FUN_004ec390(CBloodSplat *this_ptr,CVector3f *position,CVector3f *normal,EBloodType blood_type)
 
 #include "nocturne.h"
 
 /* WARNING: Inlined function: crt_math.c_atan2_FUN_006013b1 */
 
-void __cdecl core_gore_cpp_CBloodSplat_initWallSplat_FUN_004ec390(CBloodSplat *this_ptr,CVector3f *position,CVector3f *normal,int blood_type)
+void __cdecl core_gore_cpp_CBloodSplat_initWallSplat_FUN_004ec390(CBloodSplat *this_ptr,CVector3f *position,CVector3f *normal,EBloodType blood_type)
 
 {
   int iVar1;

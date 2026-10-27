@@ -10,6 +10,7 @@ struct CPoly_vtable;
 #include "system/basetypes.h"
 #include "types/classes/CP2D.h"
 #include "types/classes/CP3D.h"
+#include "types/classes/CVector2d.h"
 
 // Structure: CPoly
 // Ghidra size: 0x68 (104 bytes)

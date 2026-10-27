@@ -12,7 +12,7 @@ void __cdecl core_gore_cpp_CBloodParticle_render_FUN_004ae190(CBloodParticle *th
 
 {
   SRenderVertex *output;
-  uint uVar1;
+  EBloodType EVar1;
   longlong lVar2;
   int iVar3;
   int iVar4;
@@ -112,14 +112,14 @@ void __cdecl core_gore_cpp_CBloodParticle_render_FUN_004ae190(CBloodParticle *th
   _DAT_005c50c0 = _DAT_005c5090;
   core_set_cpp_CDemonSet_computeLighting_FUN_0050bb50
             (g_CDemonSet_PTR_005be368,(CVector3i *)local_7c,(CVector3i *)&DAT_01c78cb4,0,4);
-  uVar1 = this_ptr->blood_type;
-  if (uVar1 != 0) {
-    if (uVar1 < 2) {
+  EVar1 = this_ptr->blood_type;
+  if (EVar1 != BLOOD_TYPE_RED) {
+    if (EVar1 < BLOOD_TYPE_NONE) {
       local_24 = 0;
       local_28 = 0x7f80;
       goto LAB_004ae466;
     }
-    if (uVar1 == 2) {
+    if (EVar1 == BLOOD_TYPE_NONE) {
       local_28 = 0;
       local_24 = 0;
       goto LAB_004ae466;

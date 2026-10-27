@@ -441,7 +441,7 @@ LAB_004f4fc0:
         }
       }
       else {
-        uVar7 = (this_ptr->base).base.is_walking;
+        uVar7 = (this_ptr->base).base.walk_state;
         if (uVar7 < 2) {
           if (uVar7 == 1) {
             core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00

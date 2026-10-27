@@ -34,7 +34,7 @@ void __cdecl core_wateract_cpp_CWaterActor_getPropertyList_FUN_005eb940(CWaterAc
             (property_list,"Parameter",&this_ptr->param,(CActorPropertyValidatorFunc *)0x0)
   ;
   core_actor_cpp_CActorPropertyList_addEnumPair_FUN_0040e640
-            (property_list,"State",4,g_WaterActorStateTypePairs,&this_ptr->state);
+            (property_list,"State",4,g_WaterActorStateTypePairs,(int *)&this_ptr->state);
   core_actor_cpp_CActorPropertyList_addFloat_FUN_0040e160
             (property_list,"Patch size",&this_ptr->patch_size,
              (CActorPropertyValidatorFunc *)0x0);

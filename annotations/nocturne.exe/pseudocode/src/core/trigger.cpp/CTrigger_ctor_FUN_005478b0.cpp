@@ -19,14 +19,14 @@ CTrigger * __cdecl core_trigger_cpp_CTrigger_ctor_FUN_005478b0(CTrigger *this_pt
   (pCVar2->trigger_size).x = 5.0;
   (pCVar2->trigger_size).y = 9.0;
   (pCVar2->trigger_size).z = 5.0;
-  pCVar2->shape = 0;
-  pCVar2->event_type = TRIGGER_EVENT_SINGLE;
+  pCVar2->trigger_shape = TRIGGER_SHAPE_BOX;
+  pCVar2->event_type = TRIGGER_EVENT_MOMENTARY;
   pcVar3 = "nobody";
   pCVar2->on_event[0] = '\0';
   pCVar2->off_event[0] = '\0';
   pCVar2->trigger_state = 0;
   pcVar4 = pCVar2->actor_name;
-  pCVar2->hero_triggers_me = 0;
+  pCVar2->trigger_cause = TRIGGER_CAUSE_HERO;
   do {
     cVar1 = *pcVar3;
     *pcVar4 = cVar1;

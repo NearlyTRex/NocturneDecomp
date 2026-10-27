@@ -157,7 +157,7 @@ void __cdecl core_scat_cpp_CScat_process_FUN_005571f0(CScat *this_ptr,float delt
     (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
     (this_ptr->base).base.model.accumulated_root_motion.y = 0.0;
     pCVar8->x = 0.0;
-    uVar3 = (this_ptr->base).base.is_walking;
+    uVar3 = (this_ptr->base).base.walk_state;
     if (uVar3 < 2) {
       if (uVar3 == 1) {
         iVar7 = core_scat_cpp_CScat_isWeaponReady_FUN_00558010(this_ptr);

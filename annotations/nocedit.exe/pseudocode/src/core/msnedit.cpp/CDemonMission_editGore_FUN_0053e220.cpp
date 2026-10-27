@@ -170,7 +170,7 @@ void __cdecl core_msnedit_cpp_CDemonMission_editGore_FUN_0053e220(CDemonMission 
       if (local_c8 < 0.0) {
         local_c8 = local_c8 + 0.1f;
         core_gore_cpp_CGore_spawnBloodParticles_FUN_004edaa0
-                  (g_CGorePtr,&local_bc.position,(CVector3f *)0x0,0);
+                  (g_CGorePtr,&local_bc.position,(CVector3f *)0x0,BLOOD_TYPE_RED);
       }
     }
     iVar3 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_RETURN);
@@ -186,7 +186,7 @@ void __cdecl core_msnedit_cpp_CDemonMission_editGore_FUN_0053e220(CDemonMission 
         CStack_64.z = fVar4 * (actor_00->base).orient_matrix.m[2].z;
         local_c0 = local_c0 + 0.1f;
         core_gore_cpp_CGore_spawnBloodParticles_FUN_004edaa0
-                  (g_CGorePtr,&local_bc.position,&CStack_64,0);
+                  (g_CGorePtr,&local_bc.position,&CStack_64,BLOOD_TYPE_RED);
       }
     }
     iVar3 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_P);
@@ -205,7 +205,7 @@ void __cdecl core_msnedit_cpp_CDemonMission_editGore_FUN_0053e220(CDemonMission 
         fStack_84 = CStack_7c.y + (CStack_a0.y - CStack_7c.y) * fVar4;
         fStack_80 = CStack_7c.z + (CStack_a0.z - CStack_7c.z) * fVar4;
         core_gore_cpp_CGore_createBloodPool_FUN_004ede30
-                  (g_CGorePtr,(CVector3f *)(auStack_94 + 0xc),0);
+                  (g_CGorePtr,(CVector3f *)(auStack_94 + 0xc),BLOOD_TYPE_RED);
       }
     }
     iVar3 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_R);

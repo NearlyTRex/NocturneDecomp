@@ -37,10 +37,10 @@ CHero * __cdecl core_hero_cpp_CHero_ctor_FUN_004f2340(CHero *this_ptr)
   ADJ(pCVar3)->ladder_to_climb = (CLadder *)0x0;
   ADJ(pCVar3)->nearby_interactive_actor = (CDemonActor *)0x0;
   ADJ(pCVar3)->target_actor = (CDemonActor *)0x0;
-  ADJ(pCVar3)->is_wearing_gas_mask = 0;
+  ADJ(pCVar3)->is_wearing_gas_mask = GAS_MASK_AWAY;
   core_hero_cpp_CHero_createDefaultWeapon_FUN_004f2a30(this_ptr_00);
   ADJ(pCVar3)->ai_task = HERO_TASK_KILL;
   ADJ(pCVar3)->base.gun_flame_ignitable = 0;
-  ADJ(pCVar3)->base.health_bar_mode = 1;
+  ADJ(pCVar3)->base.health_bar_mode = HEALTH_BAR_WHEN_HURT;
   return this_ptr_00;
 }

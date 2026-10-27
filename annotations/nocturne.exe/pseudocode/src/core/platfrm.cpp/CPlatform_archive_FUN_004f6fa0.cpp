@@ -43,7 +43,7 @@ void __cdecl core_platfrm_cpp_CPlatform_archive_FUN_004f6fa0(CPlatform *this_ptr
   }
   core_actor_cpp_archiveInteger_FUN_0040c900((int *)&this_ptr->ground_type,"groundType");
   if (1 < INT_005be19c) {
-    core_actor_cpp_archiveInteger_FUN_0040c900(&this_ptr->one_shot,"oneShot");
+    core_actor_cpp_archiveInteger_FUN_0040c900((int *)&this_ptr->one_shot,"oneShot");
   }
   if (2 < INT_005be19c) {
     core_actor_cpp_archiveInteger_FUN_0040c900

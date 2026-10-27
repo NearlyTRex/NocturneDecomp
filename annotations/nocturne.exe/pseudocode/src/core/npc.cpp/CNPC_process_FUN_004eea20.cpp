@@ -11,7 +11,7 @@ void __cdecl core_npc_cpp_CNPC_process_FUN_004eea20(CNPC *this_ptr,float delta_t
 {
   CDeformableModelInstance *pCVar1;
   CVector3f *pCVar2;
-  uint uVar3;
+  EWalkState EVar3;
   float fVar4;
   float fVar5;
   int iVar6;
@@ -62,9 +62,9 @@ void __cdecl core_npc_cpp_CNPC_process_FUN_004eea20(CNPC *this_ptr,float delta_t
   (this_ptr->base).turn_speed = delta_time * fVar5 * fVar4;
   iVar6 = core_charactr_cpp_CCharacter_processWalking_FUN_00428c00(&this_ptr->base,delta_time);
   if (iVar6 == 0) goto LAB_004eeb7c;
-  uVar3 = (this_ptr->base).is_walking;
-  if (uVar3 < 2) {
-    if (uVar3 == 1) {
+  EVar3 = (this_ptr->base).walk_state;
+  if (EVar3 < 2) {
+    if (EVar3 == WALK_STATE_WALKING) {
 LAB_004eeb4e:
       pcVar9 = "WALK";
     }
@@ -77,7 +77,7 @@ LAB_004eecd2:
   }
   else {
     pCVar1 = &(this_ptr->base).model;
-    if (uVar3 < 3) {
+    if (EVar3 < WALK_STATE_NO_PATH) {
       iVar6 = 0;
       pcVar9 = "RUN";
       this_ptr_00 = core_motion_cpp_CMotionController_getMotionList_FUN_004e1890(&pCVar1->base);
@@ -86,7 +86,7 @@ LAB_004eecd2:
       core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0(&pCVar1->base,iVar6,1);
     }
     else {
-      if (uVar3 != 3) goto LAB_004eecd2;
+      if (EVar3 != WALK_STATE_NO_PATH) goto LAB_004eecd2;
       core_motion_cpp_CMotionController_setDesiredStateByName_FUN_004e1740
                 (&pCVar1->base,"STAND",1);
       engine_console_cpp_CConsole_printf_FUN_0043ac60

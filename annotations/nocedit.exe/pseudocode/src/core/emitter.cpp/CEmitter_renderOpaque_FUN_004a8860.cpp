@@ -23,7 +23,7 @@ int __cdecl core_emitter_cpp_CEmitter_renderOpaque_FUN_004a8860(CEmitter *this_p
   
   iVar1 = engine_drender_cpp_CDemonRenderer_isShadowPass_FUN_0048cae0(g_CDemonRendererPtr2);
   if (iVar1 == 0) {
-    if ((this_ptr->emitter_type == 3) && (this_ptr->emitter_state != 0)) {
+    if ((this_ptr->emitter_type == EMITTER_TYPE_LASER) && (this_ptr->emitter_state != 0)) {
       core_setcolid_cpp_CDemonSet_init_FUN_00574180(g_CDemonSetPtr);
       core_setcolid_cpp_CDemonSet_ignore_FUN_005741b0(g_CDemonSetPtr,&this_ptr->base);
       core_fire_cpp_SLaserInfo_ctor_FUN_004c81f0(&local_7c);
@@ -71,7 +71,7 @@ int __cdecl core_emitter_cpp_CEmitter_renderOpaque_FUN_004a8860(CEmitter *this_p
       iVar2 = engine_drender_cpp_CDemonRenderer_isShadowPass_FUN_0048cae0(g_CDemonRendererPtr2);
       if (iVar2 == 0) {
         core_actor_cpp_CDemonActor_renderBoundingBox_FUN_0040d940(&this_ptr->base,0xfb);
-        if ((((this_ptr->emitter_type == 3) && (g_SlewTargetMode != 0)) &&
+        if ((((this_ptr->emitter_type == EMITTER_TYPE_LASER) && (g_SlewTargetMode != 0)) &&
             (this_ptr == g_EditorSelectedEmitter)) &&
            (g_EditorSelectedEmitter == (CEmitter *)g_CDemonMissionPtr->selected_actor)) {
           orientation = &g_EmitterEditorOrientation;

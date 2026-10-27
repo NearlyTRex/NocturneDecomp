@@ -4,6 +4,7 @@
 
 // Enum: EAmmoType
 enum {
+    AMMO_TYPE_NONE = -1,
     AMMO_TYPE_GENERIC = 0x0,
     AMMO_TYPE_HOLY = 0x1,
     AMMO_TYPE_WOOD = 0x2,

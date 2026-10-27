@@ -4,6 +4,7 @@
 
 // Dependencies
 #include "system/basetypes.h"
+#include "types/structs/SLightGlowParams.h"
 #include "types/structs/SLightGlowSprite.h"
 #include "types/structs/SMRGLTextureBasic.h"
 

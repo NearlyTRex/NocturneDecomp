@@ -34,7 +34,7 @@ void __cdecl core_flamecan_cpp_CFlameCan_setup_FUN_0048e410(CFlameCan *this_ptr)
     (this_ptr->flame).flame_size.z = local_38.max.z - local_38.min.z;
   }
   fVar2 = (this_ptr->flame).flame_size.x;
-  (this_ptr->flame).which_flame = 0;
+  (this_ptr->flame).which_flame = FLAME_TYPE_TORCH;
   fVar2 = fVar2 * (float)2;
   fVar3 = (this_ptr->flame).flame_size.y;
   (this_ptr->flame).globe_scalar = 0.0;

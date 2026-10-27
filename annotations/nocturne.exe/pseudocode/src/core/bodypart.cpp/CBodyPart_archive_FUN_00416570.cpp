@@ -123,7 +123,7 @@ void __cdecl core_bodypart_cpp_CBodyPart_archive_FUN_00416570(CBodyPart *this_pt
     core_actor_cpp_archiveActor_FUN_0040c980(&this_ptr->carried_by_actor,"carriedByActor");
   }
   if (2 < g_INT_005ad00c) {
-    core_actor_cpp_archiveInteger_FUN_0040c900(&this_ptr->blood_type,"bloodType");
+    core_actor_cpp_archiveInteger_FUN_0040c900((int *)&this_ptr->blood_type,"bloodType");
     core_actor_cpp_archiveInteger_FUN_0040c900
               (&this_ptr->dont_use_normals,"dontUseNormals");
     core_actor_cpp_archiveInteger_FUN_0040c900

@@ -17,23 +17,23 @@ void __cdecl core_trigger_cpp_CTrigger_archive_FUN_005e0690(CTrigger *this_ptr)
   core_actor_cpp_archiveString_FUN_0040b5c0(this_ptr->off_event,"offName");
   if (g_CTriggerClassVersion < 7) {
     if (1 < g_CTriggerClassVersion) {
-      core_actor_cpp_archiveInteger_FUN_0040b7f0(&this_ptr->hero_triggers_me,"whoTriggers")
-      ;
+      core_actor_cpp_archiveInteger_FUN_0040b7f0
+                ((int *)&this_ptr->trigger_cause,"whoTriggers");
       core_actor_cpp_archiveString_FUN_0040b5c0(this_ptr->actor_name,"actorTriggerName");
     }
     if (2 < g_CTriggerClassVersion) {
       core_actor_cpp_archiveFloat_FUN_0040b770(&this_ptr->light_min,"lightMin");
       core_actor_cpp_archiveFloat_FUN_0040b770(&this_ptr->light_max,"lightMax");
     }
-    if ((3 < g_CTriggerClassVersion) && (this_ptr->hero_triggers_me == 5)) {
+    if ((3 < g_CTriggerClassVersion) && (this_ptr->trigger_cause == TRIGGER_CAUSE_LASER)) {
       core_actor_cpp_archiveInteger_FUN_0040b7f0(&this_ptr->laser_type,"laserType");
     }
     if (4 < g_CTriggerClassVersion) {
-      if (this_ptr->hero_triggers_me == 1) {
+      if (this_ptr->trigger_cause == TRIGGER_CAUSE_ACTOR) {
         core_actor_cpp_archiveString_FUN_0040b5c0(this_ptr->actor_type,"actorTriggerTypes")
         ;
       }
-      if (this_ptr->hero_triggers_me == 7) {
+      if (this_ptr->trigger_cause == TRIGGER_CAUSE_DAMAGE) {
         core_actor_cpp_archiveFloat_FUN_0040b770(&this_ptr->hit_points,"hitPoints");
       }
     }
@@ -44,7 +44,8 @@ void __cdecl core_trigger_cpp_CTrigger_archive_FUN_005e0690(CTrigger *this_ptr)
     }
   }
   else {
-    core_actor_cpp_archiveInteger_FUN_0040b7f0(&this_ptr->hero_triggers_me,"whoTriggers");
+    core_actor_cpp_archiveInteger_FUN_0040b7f0
+              ((int *)&this_ptr->trigger_cause,"whoTriggers");
     core_actor_cpp_archiveString_FUN_0040b5c0(this_ptr->actor_name,"actorTriggerName");
     core_actor_cpp_archiveString_FUN_0040b5c0(this_ptr->actor_type,"actorTriggerTypes");
     core_actor_cpp_archiveFloat_FUN_0040b770(&this_ptr->light_min,"lightMin");
@@ -62,7 +63,7 @@ void __cdecl core_trigger_cpp_CTrigger_archive_FUN_005e0690(CTrigger *this_ptr)
       core_actor_cpp_archiveInteger_FUN_0040b7f0(&this_ptr->auto_aim_at_me,"autoAimAtMe");
     }
     if (9 < g_CTriggerClassVersion) {
-      core_actor_cpp_archiveInteger_FUN_0040b7f0(&this_ptr->shape,"shape");
+      core_actor_cpp_archiveInteger_FUN_0040b7f0((int *)&this_ptr->trigger_shape,"shape");
     }
     if (10 < g_CTriggerClassVersion) {
       core_actor_cpp_archiveString_FUN_0040b5c0

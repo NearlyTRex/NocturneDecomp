@@ -6,6 +6,7 @@
 #include "system/basetypes.h"
 #include "types/classes/CDemonActor.h"
 #include "types/classes/CDemonTriangle.h"
+#include "types/classes/CVector3f.h"
 #include "types/enums/EGroundType.h"
 
 // Structure: CStairs

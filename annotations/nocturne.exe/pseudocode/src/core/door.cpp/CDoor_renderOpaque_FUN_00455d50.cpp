@@ -15,7 +15,7 @@ int __cdecl core_door_cpp_CDoor_renderOpaque_FUN_00455d50(CDoor *this_ptr)
   CBoundingBox3D CStack_34;
   CBoundingBox3D local_1c;
   
-  if (2 < this_ptr->one_shot) {
+  if (2 < (int)this_ptr->one_shot) {
     return 0;
   }
   core_actor_cpp_CDemonActor_setupRenderState_FUN_00409f20(&this_ptr->base);

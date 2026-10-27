@@ -13,7 +13,7 @@ void __cdecl core_boneguy_cpp_CBoneGuy_process_FUN_0041bf90(CBoneGuy *this_ptr,f
 {
   CDeformableModelInstance *pCVar1;
   CBodyPart *pCVar6;
-  uint uVar7;
+  EWalkState EVar7;
   CDemonActor *this_ptr_00;
   CCharacter *pCVar8;
   float fVar9;
@@ -348,9 +348,9 @@ void __cdecl core_boneguy_cpp_CBoneGuy_process_FUN_0041bf90(CBoneGuy *this_ptr,f
     }
   }
   else {
-    uVar7 = (this_ptr->base).base.is_walking;
-    if (uVar7 < 2) {
-      if (uVar7 == 1) {
+    EVar7 = (this_ptr->base).base.walk_state;
+    if (EVar7 < 2) {
+      if (EVar7 == WALK_STATE_WALKING) {
 LAB_0041c3c9:
         iVar11 = 1;
       }
@@ -362,8 +362,8 @@ LAB_0041c60c:
                 (&(this_ptr->base).base.model.base,iVar11,1);
     }
     else {
-      if (uVar7 < 3) goto LAB_0041c3c9;
-      if (uVar7 != 3) goto LAB_0041c60c;
+      if (EVar7 < WALK_STATE_NO_PATH) goto LAB_0041c3c9;
+      if (EVar7 != WALK_STATE_NO_PATH) goto LAB_0041c60c;
       core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00(&pCVar1->base,0,1);
       engine_console_cpp_CConsole_printf_FUN_00441890
                 (g_CConsolePtr,"%s confused while walking to scriptDest!\n",this_ptr);

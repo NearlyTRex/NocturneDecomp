@@ -12,7 +12,7 @@ void __cdecl core_flame_cpp_CFlame_archive_FUN_0048e100(CFlame *this_ptr)
   core_actor_cpp_CDemonActor_archive_FUN_0040d2d0(&this_ptr->base);
   core_actor_cpp_archiveVector_FUN_0040c450(&this_ptr->flame_size,"flameSize");
   if (1 < g_INT_005b91c0) {
-    core_actor_cpp_archiveInteger_FUN_0040c900(&this_ptr->which_flame,"whichFlame");
+    core_actor_cpp_archiveInteger_FUN_0040c900((int *)&this_ptr->which_flame,"whichFlame");
     core_actor_cpp_archiveFloat_FUN_0040c880(&this_ptr->globe_scalar,"globeScalar");
   }
   if (2 < g_INT_005b91c0) {

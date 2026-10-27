@@ -415,7 +415,7 @@ void __cdecl core_stranger_cpp_CStranger_processFrame_FUN_005bb960(CStranger *th
               }
             }
             else {
-              uVar23 = (this_ptr->base).base.is_walking;
+              uVar23 = (this_ptr->base).base.walk_state;
               if (uVar23 < 2) {
                 if (uVar23 == 1) {
                   iVar20 = 1;

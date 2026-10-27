@@ -14,7 +14,7 @@ void __cdecl core_svetlana_cpp_CSvetlana_process_FUN_005d8ba0(CSvetlana *this_pt
   UOrientationVector *euler_00;
   CLocation *position;
   CDeformableModelInstance *this_ptr_01;
-  uint uVar1;
+  EWalkState EVar1;
   CCharacter_full_vtable *pCVar2;
   int iVar4;
   int iVar3;
@@ -179,9 +179,9 @@ LAB_005d9032:
            (this_ptr->base).base.model.accumulated_root_motion.z;
       pCVar4->x = (this_ptr->base).base.model.accumulated_root_motion.y;
     }
-    uVar1 = (this_ptr->base).base.is_walking;
-    if (uVar1 < 2) {
-      if (uVar1 == 1) {
+    EVar1 = (this_ptr->base).base.walk_state;
+    if (EVar1 < 2) {
+      if (EVar1 == WALK_STATE_WALKING) {
         iVar3 = 1;
       }
       else {
@@ -190,8 +190,8 @@ LAB_005d8f37:
       }
     }
     else {
-      if (2 < uVar1) {
-        if (uVar1 == 3) {
+      if (2 < EVar1) {
+        if (EVar1 == WALK_STATE_NO_PATH) {
           core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
                     (&(this_ptr->base).base.model.base,0,1);
           engine_console_cpp_CConsole_printf_FUN_00441890

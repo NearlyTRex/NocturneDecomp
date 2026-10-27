@@ -17,7 +17,7 @@ void __cdecl core_dracbrid_cpp_CDraculaBride_process_FUN_00458a90(CDraculaBride 
   CVector3f *pCVar3;
   CDemonActor_vtable *pCVar4;
   CBodyPart *pCVar5;
-  uint uVar6;
+  EWalkState EVar6;
   CCharacter *pCVar7;
   int iVar8;
   SMotion *pSVar9;
@@ -186,9 +186,9 @@ void __cdecl core_dracbrid_cpp_CDraculaBride_process_FUN_00458a90(CDraculaBride 
   iVar10 = core_charactr_cpp_CCharacter_processWalking_FUN_00428c00
                      ((CCharacter *)this_ptr,delta_time);
   if (iVar10 != 0) {
-    uVar6 = (this_ptr->base).base.is_walking;
-    if (uVar6 < 2) {
-      if (uVar6 == 1) {
+    EVar6 = (this_ptr->base).base.walk_state;
+    if (EVar6 < 2) {
+      if (EVar6 == WALK_STATE_WALKING) {
 LAB_00458d26:
         iVar8 = 0xe;
       }
@@ -200,8 +200,8 @@ LAB_00458f79:
                 (&(this_ptr->base).base.model.base,iVar8,1);
     }
     else {
-      if (uVar6 < 3) goto LAB_00458d26;
-      if (uVar6 != 3) goto LAB_00458f79;
+      if (EVar6 < WALK_STATE_NO_PATH) goto LAB_00458d26;
+      if (EVar6 != WALK_STATE_NO_PATH) goto LAB_00458f79;
       core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0
                 (&(this_ptr->base).base.model.base,0,1);
       engine_console_cpp_CConsole_printf_FUN_0043ac60

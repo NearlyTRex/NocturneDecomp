@@ -16,10 +16,10 @@ CShovel * __cdecl core_shovel_cpp_CShovel_ctor_FUN_00588ba0(CShovel *this_ptr)
   core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_00478dd0
             (&pCVar1->model,"shoveit.kfm");
   pCVar1->weapon_type = WEAPON_TYPE_MELEE;
-  pCVar1->ammo_type = -1;
+  pCVar1->ammo_type = AMMO_TYPE_NONE;
   pCVar1->ammo_count = 0;
   pCVar1->is_spread_weapon = 0;
-  pCVar1->fire_mode = 0;
+  pCVar1->fire_mode = FIRE_MODE_AUTOMATIC;
   pCVar1->can_penetrate = 0;
   pCVar1->bolt_velocity = 5.0;
   pCVar1->fire_cooldown = 0;

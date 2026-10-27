@@ -1,12 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_gore_cpp_CGore_createBloodPool_FUN_004ede30(CGore *this_ptr,CVector3f *position,int blood_type)
+; void __cdecl core_gore_cpp_CGore_createBloodPool_FUN_004ede30(CGore *this_ptr,CVector3f *position,EBloodType blood_type)
 ;
 ; Parameters:
 ; CGore *          Stack[0x4]:4   this_ptr
 ; CVector3f *      Stack[0x8]:4   position
-; int              Stack[0xc]:4   blood_type
+; EBloodType       Stack[0xc]:4   blood_type
 ;
 ; XREF[19]:
 ;   core_batcreat.cpp_CBatCreature_process_FUN_00415470 at 00415722
@@ -48,7 +48,7 @@ section .text
     PUSH ESI                            ; 004ede50
     PUSH EAX                            ; 004ede51
     CALL core_gore.cpp_CBloodPool_init_FUN_004ed0d0 ; 004ede52
-        ;   XREF to: 004ed0d0 (UNCONDITIONAL_CALL)  ; void core_gore.cpp_CBloodPool_init_FUN_004ed0d0(CBloodPool * this_ptr, CVector3f * position, int blood_type)
+        ;   XREF to: 004ed0d0 (UNCONDITIONAL_CALL)  ; void core_gore.cpp_CBloodPool_init_FUN_004ed0d0(CBloodPool * this_ptr, CVector3f * position, EBloodType blood_type)
     ADD ESP,0xc                         ; 004ede57
     POP EBX                             ; 004ede5a
     POP ESI                             ; 004ede5b

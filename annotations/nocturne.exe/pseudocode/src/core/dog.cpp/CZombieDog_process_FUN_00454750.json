@@ -4,13 +4,13 @@
       {
         "category": "format_error",
         "column": 82,
-        "line": 162,
+        "line": 163,
         "message": "format specifies type 'char *' but the argument has type 'CZombieDog *' [-Werror,-Wformat]"
       },
       {
         "category": "format_error",
         "column": 85,
-        "line": 235,
+        "line": 236,
         "message": "format specifies type 'char *' but the argument has type 'CZombieDog *' [-Werror,-Wformat]"
       }
     ],
@@ -20,19 +20,19 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 592,
-    "complexity_score": 356,
+    "complexity_score": 357,
     "cross_reference_count": 0,
     "function_call_count": 23,
     "global_count": 19,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 271,
+    "pseudocode_lines": 272,
     "suspect_count": 7,
     "suspect_types": [
       "fast_sqrt_inline",
       "unrolled_memset",
       "warning_type_propagation"
     ],
-    "total_lines": 863
+    "total_lines": 864
   },
   "cross_references": [],
   "function": {
@@ -592,7 +592,7 @@
     },
     {
       "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
-      "line": 50,
+      "line": 51,
       "match": "cascade_constant_fill",
       "severity": "moderate",
       "text": "(this_ptr->base).base.model.accumulated_root_motion.z = 0.0;",
@@ -600,7 +600,7 @@
     },
     {
       "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
-      "line": 138,
+      "line": 139,
       "match": "cascade_constant_fill",
       "severity": "moderate",
       "text": "(this_ptr->base).base.model.accumulated_root_motion.z = 0.0;",
@@ -608,7 +608,7 @@
     },
     {
       "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
-      "line": 230,
+      "line": 231,
       "match": "cascade_constant_fill",
       "severity": "moderate",
       "text": "(this_ptr->base).base.model.accumulated_root_motion.z = 0.0;",
@@ -616,7 +616,7 @@
     },
     {
       "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
-      "line": 261,
+      "line": 262,
       "match": "cascade_constant_fill",
       "severity": "moderate",
       "text": "(this_ptr->base).base.position_delta.z = 0.0;",
@@ -624,7 +624,7 @@
     },
     {
       "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
-      "line": 264,
+      "line": 265,
       "match": "cascade_constant_fill",
       "severity": "moderate",
       "text": "(this_ptr->base).base.model.accumulated_root_motion.z = 0.0;",
@@ -632,7 +632,7 @@
     },
     {
       "description": "Inlined fast sqrt bit-trick (bias `g_FastSqrtMagic`). Ghidra's numeric `(int)` cast is wrong; the asm reinterprets the float's bit pattern. Replace with `fastSqrt(<expr>)` in a .keep - the helper function exists in the binary (FUN_00431350).",
-      "line": 88,
+      "line": 89,
       "match": "local_18 = (float)(((int)local_24 >> 1) + g_FastSqrtMagic);",
       "severity": "moderate",
       "text": "local_18 = (float)(((int)local_24 >> 1) + g_FastSqrtMagic);",

@@ -11,7 +11,7 @@
 void __cdecl core_gore_cpp_CBloodSplat_render_FUN_004ec500(CBloodSplat *this_ptr,int expire_flag)
 
 {
-  uint uVar2;
+  EBloodType EVar1;
   CVector3i *input;
   CVector3i local_8c;
   CVector3i local_80;
@@ -111,46 +111,46 @@ LAB_004ec747:
     g_RenderVertexBuffer[0].r = 0;
   }
   g_RenderVertexBuffer[0].b = 0;
-  uVar2 = this_ptr->blood_type;
-  if (uVar2 == 0) {
+  EVar1 = this_ptr->blood_type;
+  if (EVar1 == BLOOD_TYPE_RED) {
 LAB_004ec774:
     g_RenderVertexBuffer[1].r = 0x2000;
     g_RenderVertexBuffer[1].g = 0;
   }
-  else if (uVar2 < 2) {
+  else if (EVar1 < BLOOD_TYPE_NONE) {
     g_RenderVertexBuffer[1].g = 0x7f80;
     g_RenderVertexBuffer[1].r = 0;
   }
   else {
-    if (uVar2 != 2) goto LAB_004ec774;
+    if (EVar1 != BLOOD_TYPE_NONE) goto LAB_004ec774;
     g_RenderVertexBuffer[1].g = 0;
     g_RenderVertexBuffer[1].r = 0;
   }
   g_RenderVertexBuffer[1].b = 0;
-  uVar2 = this_ptr->blood_type;
-  if (uVar2 == 0) {
+  EVar1 = this_ptr->blood_type;
+  if (EVar1 == BLOOD_TYPE_RED) {
 LAB_004ec7a1:
     g_RenderVertexBuffer[2].r = 0x2000;
     g_RenderVertexBuffer[2].g = 0;
   }
-  else if (uVar2 < 2) {
+  else if (EVar1 < BLOOD_TYPE_NONE) {
     g_RenderVertexBuffer[2].g = 0x7f80;
     g_RenderVertexBuffer[2].r = 0;
   }
   else {
-    if (uVar2 != 2) goto LAB_004ec7a1;
+    if (EVar1 != BLOOD_TYPE_NONE) goto LAB_004ec7a1;
     g_RenderVertexBuffer[2].g = 0;
     g_RenderVertexBuffer[2].r = 0;
   }
   g_RenderVertexBuffer[2].b = 0;
-  uVar2 = this_ptr->blood_type;
-  if (uVar2 != 0) {
-    if (uVar2 < 2) {
+  EVar1 = this_ptr->blood_type;
+  if (EVar1 != BLOOD_TYPE_RED) {
+    if (EVar1 < BLOOD_TYPE_NONE) {
       g_RenderVertexBuffer[3].g = 0x7f80;
       g_RenderVertexBuffer[3].r = 0;
       goto LAB_004ec7e0;
     }
-    if (uVar2 == 2) {
+    if (EVar1 == BLOOD_TYPE_NONE) {
       g_RenderVertexBuffer[3].g = 0;
       g_RenderVertexBuffer[3].r = 0;
       goto LAB_004ec7e0;

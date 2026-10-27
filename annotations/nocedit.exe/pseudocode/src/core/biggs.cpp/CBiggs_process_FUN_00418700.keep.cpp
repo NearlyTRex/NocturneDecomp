@@ -47,7 +47,7 @@ void __cdecl core_biggs_cpp_CBiggs_process_FUN_00418700(CBiggs *this_ptr,float d
   iVar2 = core_charactr_cpp_CCharacter_processWalking_FUN_0042ca70
                     ((CCharacter *)this_ptr,delta_time);
   if (iVar2 == 0) goto LAB_004187db;
-  uVar4 = (this_ptr->base).base.is_walking;
+  uVar4 = (this_ptr->base).base.walk_state;
   if (uVar4 < 2) {
     if (uVar4 == 1) {
 LAB_004187b0:

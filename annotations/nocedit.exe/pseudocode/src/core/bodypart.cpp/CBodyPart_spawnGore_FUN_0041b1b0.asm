@@ -41,7 +41,7 @@ section .text
     MOV ECX,dword ptr [0x0067b9a0]      ; 0041b1d6 | g_CGoreInstance | g_CGorePtr
     PUSH ECX                            ; 0041b1dc | g_CGoreInstance
     CALL core_gore.cpp_CGore_spawnBloodParticles_FUN_004edaa0 ; 0041b1dd
-        ;   XREF to: 004edaa0 (UNCONDITIONAL_CALL)  ; void core_gore.cpp_CGore_spawnBloodParticles_FUN_004edaa0(CGore * this_ptr, CVector3f * position, CVector3f * velocity, int blood_type)
+        ;   XREF to: 004edaa0 (UNCONDITIONAL_CALL)  ; void core_gore.cpp_CGore_spawnBloodParticles_FUN_004edaa0(CGore * this_ptr, CVector3f * position, CVector3f * velocity, EBloodType blood_type)
     ADD ESP,0x10                        ; 0041b1e2
     RET                                 ; 0041b1e5
 
