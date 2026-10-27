@@ -114,9 +114,7 @@ void CDemonActor::archive(CActorArchive &actor_archive) {
     if (saved_version < kCreationVersion) {
         return;
     }
-    auto was_created = static_cast<int>(lifecycle_state_);
-    actor_archive.archiveInteger(was_created, "wasCreated");
-    lifecycle_state_ = static_cast<EActorLifecycleState>(was_created);
+    actor_archive.archiveEnum(lifecycle_state_, "wasCreated");
     actor_archive.archiveFloat(create_probability_, "createProb");
     actor_archive.archiveString(create_event_, "createEvent");
 }

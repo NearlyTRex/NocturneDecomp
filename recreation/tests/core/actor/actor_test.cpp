@@ -4,21 +4,27 @@
 #include "core/actor/demonactor.h"
 #include "core/actor/demonactortype.h"
 #include "core/ammo/ammo.h"
+#include "core/backgnd/backgroundactor.h"
 #include "core/baron/baron.h"
 #include "core/baron/baronweapon.h"
+#include "core/barrier/barrier.h"
 #include "core/charactr/character.h"
 #include "core/colonel/colonel.h"
 #include "core/gabriela/gabriella.h"
 #include "core/game/game.h"
 #include "core/gun/gun.h"
 #include "core/haystack/haystack.h"
+#include "core/health/healthitem.h"
 #include "core/hero/hero.h"
 #include "core/hero/heroplaceholder.h"
 #include "core/icepick/icepick.h"
+#include "core/litecone/lightcone.h"
 #include "core/moloch/moloch.h"
 #include "core/scat/scat.h"
 #include "core/stranger/stranger.h"
 #include "core/svetlana/svetlana.h"
+#include "core/trigger/trigger.h"
+#include "core/waypoint/waypoint.h"
 #include "core/weapon/weapon.h"
 #include "tests/mocks/core/testactor.h"
 #include "tests/mocks/engine/mockgameclock.h"
@@ -88,7 +94,13 @@ TEST_F(CActorRegistryTest, ThePortedClassesAreRegistered) {
     EXPECT_EQ(actor_.getActorClassByName("CGun"), &CGun::kType);
     EXPECT_EQ(actor_.getActorClassByName("CBaronWeapon"), &CBaronWeapon::kType);
     EXPECT_EQ(actor_.getActorClassByName("CAmmo"), &CAmmo::kType);
-    EXPECT_EQ(actor_.getActorClassCount(), 17U);
+    EXPECT_EQ(actor_.getActorClassByName("CTrigger"), &CTrigger::kType);
+    EXPECT_EQ(actor_.getActorClassByName("CWayPoint"), &CWayPoint::kType);
+    EXPECT_EQ(actor_.getActorClassByName("CBarrier"), &CBarrier::kType);
+    EXPECT_EQ(actor_.getActorClassByName("CBackgroundActor"), &CBackgroundActor::kType);
+    EXPECT_EQ(actor_.getActorClassByName("CHealthItem"), &CHealthItem::kType);
+    EXPECT_EQ(actor_.getActorClassByName("CLightCone"), &CLightCone::kType);
+    EXPECT_EQ(actor_.getActorClassCount(), 23U);
 }
 
 // Only the letters and digits count, in either case.

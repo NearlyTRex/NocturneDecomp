@@ -5,6 +5,7 @@
 
 #include <string>
 #include <string_view>
+#include <type_traits>
 
 namespace nocturne::core {
 
@@ -37,6 +38,16 @@ public:
     void archiveVector(common::CVector3f &vector, std::string_view description);
     void archiveFloat(float &value, std::string_view description);
     void archiveInteger(int &value, std::string_view description);
+    // An integer that is any number but 0 for true.
+    void archiveFlag(bool &value, std::string_view description);
+    // An integer that is the enumeration's value.
+    template <typename TEnum>
+        requires std::is_enum_v<TEnum>
+    void archiveEnum(TEnum &value, std::string_view description) {
+        auto number = static_cast<int>(value);
+        archiveInteger(number, description);
+        value = static_cast<TEnum>(number);
+    }
     // Quoted, after any whitespace; the quotes may hold nothing.
     void archiveString(std::string &value, std::string_view description);
     // A string marked for translation, which its description says.

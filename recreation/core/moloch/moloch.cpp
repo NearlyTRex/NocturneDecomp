@@ -52,12 +52,8 @@ void CMoloch::archive(CActorArchive &actor_archive) {
     CHero::archive(actor_archive);
     actor_archive.archiveString(human_to_demon_condition_, "humanToDemonCond");
     actor_archive.archiveString(demon_to_human_condition_, "demonToHumanCond");
-    auto in_human_form = static_cast<int>(in_human_form_);
-    actor_archive.archiveInteger(in_human_form, "inHumanForm");
-    in_human_form_ = in_human_form != 0;
-    auto morphing = static_cast<int>(morphing_);
-    actor_archive.archiveInteger(morphing, "morphing");
-    morphing_ = morphing != 0;
+    actor_archive.archiveFlag(in_human_form_, "inHumanForm");
+    actor_archive.archiveFlag(morphing_, "morphing");
     actor_archive.archiveFloat(morph_timer_, "morphTimer");
 }
 

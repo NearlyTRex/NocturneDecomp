@@ -87,9 +87,7 @@ void CCharacter::archive(CActorArchive &actor_archive) {
         max_hit_points_ = hit_points_;
         return;
     }
-    auto health_bar_mode = static_cast<int>(health_bar_mode_);
-    actor_archive.archiveInteger(health_bar_mode, "healthBarMode");
-    health_bar_mode_ = static_cast<EHealthBarMode>(health_bar_mode);
+    actor_archive.archiveEnum(health_bar_mode_, "healthBarMode");
     actor_archive.archiveLocalizedString(descriptive_name_, "descriptiveName");
     actor_archive.archiveFloat(max_hit_points_, "maxHitPoints");
 }

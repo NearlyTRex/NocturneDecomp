@@ -52,9 +52,7 @@ void CAmmo::archive(CActorArchive &actor_archive) {
     actor_archive.archiveKeyframedModelInstance(model_, "modelName");
     actor_archive.archiveString(weapon_class_name_, "weaponClassName");
     actor_archive.archiveInteger(ammo_count_, "ammoCount");
-    auto ammo_type = static_cast<int>(ammo_type_);
-    actor_archive.archiveInteger(ammo_type, "ammoType");
-    ammo_type_ = static_cast<EAmmoType>(ammo_type);
+    actor_archive.archiveEnum(ammo_type_, "ammoType");
 }
 
 const CKeyFramedModelInstance &CAmmo::getModel() const {

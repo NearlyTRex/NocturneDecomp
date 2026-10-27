@@ -16,7 +16,7 @@ TEST(CBloodPool, PublicInterface) {
     static_assert(std::is_same_v<decltype(&CBloodPool::render), void (CBloodPool::*)(int)>);
     static_assert(std::is_same_v<decltype(&CBloodPool::processAge), void (CBloodPool::*)()>);
     static_assert(std::is_same_v<decltype(&CBloodPool::init),
-                                 void (CBloodPool::*)(common::CVector3f *, int)>);
+                                 void (CBloodPool::*)(common::CVector3f *, EBloodType)>);
     static_assert(std::is_same_v<decltype(&CBloodPool::load), int (CBloodPool::*)(std::FILE *)>);
     static_assert(std::is_same_v<decltype(&CBloodPool::save), int (CBloodPool::*)(std::FILE *)>);
 }

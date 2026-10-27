@@ -118,9 +118,7 @@ void CHero::archive(CActorArchive &actor_archive) {
         clearGrabbedType();
     }
     if (saved_version >= kControlVersion) {
-        auto control_type = static_cast<int>(control_type_);
-        actor_archive.archiveInteger(control_type, "controlType");
-        control_type_ = static_cast<EHeroControlType>(control_type);
+        actor_archive.archiveEnum(control_type_, "controlType");
     }
     if (saved_version >= kInteractionVersion) {
         archiveInteractionTargets(actor_archive);
@@ -137,14 +135,10 @@ void CHero::archive(CActorArchive &actor_archive) {
         }
     }
     if (saved_version >= kTaskVersion) {
-        auto ai_task = static_cast<int>(ai_task_);
-        actor_archive.archiveInteger(ai_task, "AITask");
-        ai_task_ = static_cast<EHeroTask>(ai_task);
+        actor_archive.archiveEnum(ai_task_, "AITask");
     }
     if (saved_version >= kGasMaskVersion) {
-        auto wearing_gas_mask = static_cast<int>(is_wearing_gas_mask_);
-        actor_archive.archiveInteger(wearing_gas_mask, "isWearingGasMask");
-        is_wearing_gas_mask_ = wearing_gas_mask != 0;
+        actor_archive.archiveEnum(gas_mask_state_, "isWearingGasMask");
     }
     if (saved_version >= kInventoryVersion) {
         inventory_.load(actor_archive);
@@ -190,8 +184,8 @@ EHeroTask CHero::getAiTask() const {
     return ai_task_;
 }
 
-bool CHero::isWearingGasMask() const {
-    return is_wearing_gas_mask_;
+EGasMaskState CHero::getGasMaskState() const {
+    return gas_mask_state_;
 }
 
 } // namespace nocturne::core

@@ -43,9 +43,7 @@ void CBaron::archive(CActorArchive &actor_archive) {
     }
     actor_archive.archiveString(summon_event_, "summonEvent");
     actor_archive.archiveString(go_away_event_, "goAwayEvent");
-    auto summoned = static_cast<int>(summoned_);
-    actor_archive.archiveInteger(summoned, "summoned");
-    summoned_ = summoned != 0;
+    actor_archive.archiveFlag(summoned_, "summoned");
 }
 
 const std::string &CBaron::getSummonEvent() const {

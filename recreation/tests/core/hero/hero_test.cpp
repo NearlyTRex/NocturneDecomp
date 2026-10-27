@@ -7,6 +7,7 @@
 #include "core/charactr/character.h"
 #include "core/charactr/healthbarmode.h"
 #include "core/game/game.h"
+#include "core/hero/gasmaskstate.h"
 #include "core/hero/hero.h"
 #include "core/hero/herocontroltype.h"
 #include "core/hero/herotask.h"
@@ -109,7 +110,7 @@ TEST(CHero, AHeroIsSteeredByTheGameToKillUntilToldOtherwise) {
     const CTestHero hero;
     EXPECT_EQ(hero.getControlType(), EHeroControlType::kAi);
     EXPECT_EQ(hero.getAiTask(), EHeroTask::kKill);
-    EXPECT_FALSE(hero.isWearingGasMask());
+    EXPECT_EQ(hero.getGasMaskState(), EGasMaskState::kAway);
     EXPECT_EQ(hero.getHealthBarMode(), EHealthBarMode::kWhenHurt);
     EXPECT_EQ(hero.getObjectToPickUp(), nullptr);
     EXPECT_EQ(hero.getPushedObject(), nullptr);
@@ -178,7 +179,7 @@ TEST_F(CHeroArchiveTest, AHeroIsReadWithAllItsFields) {
     readWithInventory(12, "60\n" + std::string(kMotion) + std::string(kParts) +
                               "0 // controlType\n\"Box\" // objectToPickUp\n\"(none)\"\n"
                               "\"(none)\"\n\"Hook\"\n\"Box\"\n3 // AITask\n"
-                              "1 // isWearingGasMask\n");
+                              "2 // isWearingGasMask\n");
     EXPECT_EQ(hero_.getHitPoints(), 60.0F);
     EXPECT_EQ(hero_.getInventory().getBatteryCharge(), 40.0F);
     expectMotionAndParts();
@@ -189,7 +190,7 @@ TEST_F(CHeroArchiveTest, AHeroIsReadWithAllItsFields) {
     EXPECT_EQ(hero_.getLadderToClimb(), &hook_);
     EXPECT_EQ(hero_.getPushedObject(), &box_);
     EXPECT_EQ(hero_.getAiTask(), EHeroTask::kGuard);
-    EXPECT_TRUE(hero_.isWearingGasMask());
+    EXPECT_EQ(hero_.getGasMaskState(), EGasMaskState::kOnFace);
 }
 
 // Version 10 held the keys as a count, and 8 to 10 the names of 32 keys, which are passed over.

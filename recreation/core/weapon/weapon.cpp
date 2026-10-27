@@ -48,13 +48,9 @@ void CWeapon::archive(CActorArchive &actor_archive) {
         actor_archive.archiveActor(carried_by_actor_, "carriedByActor");
     }
     if (saved_version >= kStateVersion) {
-        auto weapon_state = static_cast<int>(weapon_state_);
-        actor_archive.archiveInteger(weapon_state, "weaponState");
-        weapon_state_ = static_cast<EWeaponState>(weapon_state);
+        actor_archive.archiveEnum(weapon_state_, "weaponState");
         actor_archive.archiveInteger(ammo_count_, "ammoCount");
-        auto ammo_type = static_cast<int>(ammo_type_);
-        actor_archive.archiveInteger(ammo_type, "ammoType");
-        ammo_type_ = static_cast<EAmmoType>(ammo_type);
+        actor_archive.archiveEnum(ammo_type_, "ammoType");
     }
     if (saved_version == kNamedVersion) {
         std::string descriptive_name;

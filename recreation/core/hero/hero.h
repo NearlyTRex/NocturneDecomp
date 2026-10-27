@@ -3,6 +3,7 @@
 #include "common/fwd.h"
 #include "core/charactr/character.h"
 #include "core/fwd.h"
+#include "core/hero/gasmaskstate.h"
 #include "core/hero/herocontroltype.h"
 #include "core/hero/herotask.h"
 #include "core/inv/inventory.h"
@@ -68,7 +69,7 @@ public:
     [[nodiscard]] CDemonActor *getLadderToClimb() const;
     [[nodiscard]] CDemonActor *getPushedObject() const;
     [[nodiscard]] EHeroTask getAiTask() const;
-    [[nodiscard]] bool isWearingGasMask() const;
+    [[nodiscard]] EGasMaskState getGasMaskState() const;
     [[nodiscard]] const CInventory &getInventory() const;
 
 protected:
@@ -85,7 +86,7 @@ private:
     CDemonActor *ladder_to_climb_ = nullptr;
     CDemonActor *pushed_object_ = nullptr;
     EHeroTask ai_task_ = EHeroTask::kKill;
-    bool is_wearing_gas_mask_ = false;
+    EGasMaskState gas_mask_state_ = EGasMaskState::kAway;
 };
 
 } // namespace nocturne::core

@@ -60,9 +60,7 @@ void CStranger::archive(CActorArchive &actor_archive) {
         actor_archive.archiveActor(ladder_to_descend_, "ladderToDescend");
     }
     if (saved_version >= kGunsVersion) {
-        auto guns_drawn = static_cast<int>(guns_drawn_);
-        actor_archive.archiveInteger(guns_drawn, "gunsDrawn");
-        guns_drawn_ = guns_drawn != 0;
+        actor_archive.archiveFlag(guns_drawn_, "gunsDrawn");
     }
     if (saved_version >= kWeaponVersion) {
         actor_archive.archiveActor(weapon_, "weapon");

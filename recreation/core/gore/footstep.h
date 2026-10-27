@@ -11,7 +11,7 @@ public:
     ~CFootstep();
 
     void init(common::CVector3f *position, common::UOrientationVector *orientation, int is_bloody,
-              int alpha, int blood_type);
+              int alpha, EBloodType blood_type);
     void render(int expire_flag);
 };
 

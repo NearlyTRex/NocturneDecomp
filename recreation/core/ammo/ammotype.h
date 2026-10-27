@@ -5,7 +5,9 @@
 namespace nocturne::core {
 
 // What a weapon fires; files save the number.
-enum class EAmmoType : std::uint8_t {
+enum class EAmmoType : std::int8_t {
+    // A weapon that fires nothing: a melee weapon or the shovel.
+    kNone = -1,
     kGeneric = 0,
     kHoly = 1,
     kWood = 2,

@@ -102,6 +102,12 @@ void CActorArchive::archiveInteger(int &value, std::string_view description) {
     archiveDescription(kIntegerType, description);
 }
 
+void CActorArchive::archiveFlag(bool &value, std::string_view description) {
+    auto number = static_cast<int>(value);
+    archiveInteger(number, description);
+    value = number != 0;
+}
+
 // The original's buffer took whatever length the quotes held.
 // deferred: writing the value to a save file, with CDemonActor::save
 // nocedit 0x0040b5c0

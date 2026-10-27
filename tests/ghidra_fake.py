@@ -216,10 +216,12 @@ class TypedefDataType(TypeDef):
 
 
 class DataTypeComponent(JavaObject):
-    def __init__(self, data_type, field_name = None):
+    def __init__(self, data_type, field_name = None, offset = 0, comment = None):
         super().__init__(data_type, field_name)
         self.data_type = data_type
         self.field_name = field_name
+        self.offset = offset
+        self.comment = comment
 
     def getDataType(self):
         return self.data_type
@@ -227,14 +229,71 @@ class DataTypeComponent(JavaObject):
     def getFieldName(self):
         return self.field_name
 
+    def getOffset(self):
+        return self.offset
 
+    def getLength(self):
+        return self.data_type.getLength()
+
+    def getComment(self):
+        return self.comment
+
+
+# Its components laid end to end; a (data type, field name) pair names the field
 class StructureDataType(Structure):
     def __init__(self, name, components = (), **kwargs):
         super().__init__(name, **kwargs)
-        self.components = [DataTypeComponent(dt) for dt in components]
+        self.components = []
+        offset = 0
+        for component in components:
+            data_type, field_name = component if isinstance(component, tuple) else (component, None)
+            self.components.append(DataTypeComponent(data_type, field_name, offset))
+            offset += data_type.getLength()
 
     def getComponents(self):
         return self.components
+
+    # The component holding the byte, as Ghidra's does
+    def getComponentAt(self, offset):
+        for component in self.components:
+            if component.getOffset() <= offset < component.getOffset() + component.getLength():
+                return component
+        return None
+
+    def replaceAtOffset(self, offset, data_type, length, field_name, comment):
+        index = self.components.index(self.getComponentAt(offset))
+        self.components[index] = DataTypeComponent(data_type, field_name, offset, comment)
+        assert length == data_type.getLength()
+
+
+class Enum(DefinedDataType):
+    pass
+
+
+# Names and values in the order added. An unsigned enum refuses a negative value, as
+# Ghidra's does.
+class EnumDataType(Enum):
+    def __init__(self, name, length = 4, values = None, signed = True, **kwargs):
+        super().__init__(name, length, **kwargs)
+        self.values = dict(values or {})
+        self.signed = signed
+
+    def getNames(self):
+        return list(self.values)
+
+    def getValue(self, name):
+        return self.values[name]
+
+    def add(self, name, value):
+        if name in self.values or (value < 0 and not self.signed):
+            raise IllegalArgumentException(f"{name} = {value}")
+        self.values[name] = value
+
+    def remove(self, name):
+        del self.values[name]
+
+    def setName(self, name):
+        self.name = name
 
 
 class UnionDataType(Union):
@@ -326,6 +385,10 @@ class MemoryAccessException(JavaException):
     pass
 
 
+class IllegalArgumentException(JavaException):
+    pass
+
+
 # The built-in primitives, by the path Ghidra files them under ("/int")
 class BuiltInDataTypeManager(JavaObject):
     instance = None
@@ -355,6 +418,7 @@ MODELLED = {
         "FunctionDefinition": FunctionDefinition, "Undefined": Undefined, "DefaultDataType": DefaultDataType,
         "PointerDataType": PointerDataType, "ArrayDataType": ArrayDataType, "TypedefDataType": TypedefDataType,
         "DataTypeComponent": DataTypeComponent, "StructureDataType": StructureDataType,
+        "Enum": Enum, "EnumDataType": EnumDataType,
         "UnionDataType": UnionDataType, "ParameterDefinition": ParameterDefinition,
         "FunctionDefinitionDataType": FunctionDefinitionDataType,
         "AbstractStringDataType": AbstractStringDataType,
@@ -362,6 +426,7 @@ MODELLED = {
         **{string_class.__name__: string_class for string_class in STRING_TYPES},
     },
     "ghidra.program.model.mem": {"MemoryAccessException": MemoryAccessException},
+    "java.lang": {"IllegalArgumentException": IllegalArgumentException},
 }
 
 

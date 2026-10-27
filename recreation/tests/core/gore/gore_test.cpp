@@ -20,23 +20,25 @@ TEST(CGore, PublicInterface) {
     static_assert(std::is_same_v<decltype(&CGore::renderParticles), void (CGore::*)()>);
     static_assert(std::is_same_v<decltype(&CGore::renderDecals), void (CGore::*)(int, int)>);
     static_assert(std::is_same_v<decltype(&CGore::process), void (CGore::*)()>);
-    static_assert(std::is_same_v<decltype(&CGore::spawnBloodParticles),
-                                 void (CGore::*)(common::CVector3f *, common::CVector3f *, int)>);
+    static_assert(
+        std::is_same_v<decltype(&CGore::spawnBloodParticles),
+                       void (CGore::*)(common::CVector3f *, common::CVector3f *, EBloodType)>);
     static_assert(std::is_same_v<decltype(&CGore::createGroundBloodSplat),
-                                 void (CGore::*)(common::CVector3f *, int)>);
-    static_assert(std::is_same_v<decltype(&CGore::createWallBloodSplat),
-                                 void (CGore::*)(common::CVector3f *, common::CVector3f *, int)>);
+                                 void (CGore::*)(common::CVector3f *, EBloodType)>);
+    static_assert(
+        std::is_same_v<decltype(&CGore::createWallBloodSplat),
+                       void (CGore::*)(common::CVector3f *, common::CVector3f *, EBloodType)>);
     static_assert(
         std::is_same_v<decltype(&CGore::spawnBloodBurst),
-                       void (CGore::*)(common::CVector3f *, common::CVector3f *, int, int)>);
+                       void (CGore::*)(common::CVector3f *, common::CVector3f *, int, EBloodType)>);
     static_assert(std::is_same_v<decltype(&CGore::createBloodPool),
-                                 void (CGore::*)(common::CVector3f *, int)>);
+                                 void (CGore::*)(common::CVector3f *, EBloodType)>);
     static_assert(std::is_same_v<decltype(&CGore::loadAssets), void (CGore::*)()>);
     static_assert(std::is_same_v<decltype(&CGore::spawnFliesOnActor),
                                  void (CGore::*)(CDemonActor *, int, float, common::CVector3f *)>);
     static_assert(std::is_same_v<decltype(&CGore::createFootstep),
                                  void (CGore::*)(common::CVector3f *, common::UOrientationVector *,
-                                                 int, int, int)>);
+                                                 int, int, EBloodType)>);
     static_assert(std::is_same_v<decltype(&CGore::findBloodTypeAtPosition),
                                  int (CGore::*)(common::CVector3f *, int *)>);
     static_assert(std::is_same_v<decltype(&CGore::load), int (CGore::*)(std::FILE *)>);

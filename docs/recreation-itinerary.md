@@ -36,17 +36,17 @@ functions don't count as done. Sizes are in instructions.
 | 20 | Not reached from startup: `support/` | 2 | 24 | 593 | 3 | 1 | 12.5% |
 | 21 | Not reached from startup: `cockpit/` | 4 | 178 | 11527 | 0 | 0 | 0.0% |
 | 22 | Not reached from startup: `shape/` | 2 | 42 | 3178 | 4 | 2 | 9.5% |
-| 23 | Not reached from startup: `core/` (part 1 of 9) | 18 | 292 | 16011 | 33 | 6 | 11.3% |
+| 23 | Not reached from startup: `core/` (part 1 of 9) | 18 | 292 | 16011 | 45 | 6 | 15.4% |
 | 24 | Not reached from startup: `core/` (part 2 of 9) | 11 | 277 | 24965 | 19 | 4 | 6.8% |
 | 25 | Not reached from startup: `core/` (part 3 of 9) | 24 | 278 | 24134 | 20 | 9 | 7.1% |
 | 26 | Not reached from startup: `core/` (part 4 of 9) | 18 | 300 | 20148 | 41 | 5 | 13.6% |
-| 27 | Not reached from startup: `core/` (part 5 of 9) | 21 | 294 | 20910 | 37 | 7 | 12.5% |
+| 27 | Not reached from startup: `core/` (part 5 of 9) | 21 | 294 | 20910 | 47 | 8 | 15.9% |
 | 28 | Not reached from startup: `core/` (part 6 of 9) | 18 | 282 | 21809 | 27 | 7 | 9.5% |
 | 29 | Not reached from startup: `core/` (part 7 of 9) | 18 | 263 | 22721 | 23 | 9 | 8.7% |
-| 30 | Not reached from startup: `core/` (part 8 of 9) | 20 | 300 | 31826 | 31 | 2 | 10.3% |
+| 30 | Not reached from startup: `core/` (part 8 of 9) | 20 | 300 | 31826 | 40 | 5 | 13.3% |
 | 31 | Not reached from startup: `core/` (part 9 of 9) | 5 | 111 | 10905 | 10 | 2 | 9.0% |
 | 32 | Not reached from startup: `wincore/` | 2 | 11 | 482 | 4 | 0 | 36.3% |
-| | **All** | | **4479** | **402407** | **816** | **155** | **18.2%** |
+| | **All** | | **4479** | **402407** | **847** | **159** | **18.9%** |
 
 ## Step 0: Math value types
 
@@ -3599,21 +3599,21 @@ functions don't count as done. Sizes are in instructions.
 - class `CEnemy`
   - [ ] `dtor` 0x004125c0 (62)
 
-### `core/backgnd.cpp` (13 functions, 248 instructions, 1 done, 0 partial)
+### `core/backgnd.cpp` (13 functions, 248 instructions, 8 done, 0 partial)
 - class `CBackgroundActor`
-  - [ ] `ctor` 0x004127b0 (21)
-  - [ ] `getActorType` 0x004127a0 (2)
-  - [ ] `process` 0x00412850 (1)
+  - [x] `ctor` 0x004127b0 (21)
+  - [x] `getActorType` 0x004127a0 (2)
+  - [x] `process` 0x00412850 (1)
   - [ ] `renderBackground` 0x00412860 (37)
   - [ ] `renderOpaque` 0x004128d0 (40)
   - [ ] `getBoundingBox` 0x00412940 (28)
-  - [ ] `archive` 0x00412990 (27)
+  - [x] `archive` 0x00412990 (27)
   - [ ] `getCollisionType` 0x004129f0 (20)
-  - [ ] `getGroundType` 0x00412a30 (3)
-  - [ ] `dtor` 0x00412ad0 (31)
+  - [x] `getGroundType` 0x00412a30 (3)
+  - [x] `dtor` 0x00412ad0 (31)
   - [ ] `setup` 0x00412810 (17)
 - free functions
-  - [ ] `factoryFuncBackgroundActor` 0x00412770 (12)
+  - [x] `factoryFuncBackgroundActor` 0x00412770 (12)
   - [x] `staticInit` 0x00412740 (9)
 
 ### `core/baron.cpp` (30 functions, 1554 instructions, 8 done, 2 partial)
@@ -3655,19 +3655,19 @@ functions don't count as done. Sizes are in instructions.
   - [x] `dtor` 0x004140b0 (31)
   - [ ] `setup` 0x00413da0 (8)
 
-### `core/barrier.cpp` (11 functions, 219 instructions, 1 done, 0 partial)
+### `core/barrier.cpp` (11 functions, 219 instructions, 6 done, 0 partial)
 - class `CBarrier`
-  - [ ] `ctor` 0x004141c0 (13)
-  - [ ] `getActorType` 0x004141b0 (2)
+  - [x] `ctor` 0x004141c0 (13)
+  - [x] `getActorType` 0x004141b0 (2)
   - [ ] `renderTransparent` 0x00414240 (59)
   - [ ] `getBoundingBox` 0x004142e0 (22)
-  - [ ] `archive` 0x00414340 (27)
+  - [x] `archive` 0x00414340 (27)
   - [ ] `getCollisionType` 0x004143a0 (23)
   - [ ] `updateCollisionData` 0x004143e0 (10)
-  - [ ] `dtor` 0x00414670 (31)
+  - [x] `dtor` 0x00414670 (31)
   - [ ] `setup` 0x00414210 (11)
 - free functions
-  - [ ] `factoryFuncBarrier` 0x00414180 (12)
+  - [x] `factoryFuncBarrier` 0x00414180 (12)
   - [x] `staticInit` 0x00414150 (9)
 
 ### `core/bat.cpp` (12 functions, 548 instructions, 1 done, 0 partial)
@@ -5063,22 +5063,22 @@ functions don't count as done. Sizes are in instructions.
   - [x] `factoryFuncHaystack` 0x004f0bd0 (12)
   - [x] `staticInit` 0x004f0ba0 (9)
 
-### `core/health.cpp` (14 functions, 221 instructions, 1 done, 0 partial)
+### `core/health.cpp` (14 functions, 221 instructions, 7 done, 0 partial)
 - class `CHealthItem`
-  - [ ] `ctor` 0x004f1dd0 (21)
-  - [ ] `getActorType` 0x004f1dc0 (2)
-  - [ ] `process` 0x004f1e50 (1)
+  - [x] `ctor` 0x004f1dd0 (21)
+  - [x] `getActorType` 0x004f1dc0 (2)
+  - [x] `process` 0x004f1e50 (1)
   - [ ] `renderOpaque` 0x004f1e60 (41)
   - [ ] `getBoundingBox` 0x004f1ed0 (28)
-  - [ ] `archive` 0x004f1f20 (35)
+  - [x] `archive` 0x004f1f20 (35)
   - [ ] `getCollisionType` 0x004f1fa0 (2)
   - [ ] `canPickup` 0x004f1fb0 (9)
   - [ ] `onPickup` 0x004f2020 (7)
-  - [ ] `dtor` 0x004f20d0 (31)
+  - [x] `dtor` 0x004f20d0 (31)
   - [ ] `setup` 0x004f1e30 (8)
   - [ ] `useItem` 0x004f1fd0 (15)
 - free functions
-  - [ ] `factoryFuncHealthItem` 0x004f1d90 (12)
+  - [x] `factoryFuncHealthItem` 0x004f1d90 (12)
   - [x] `staticInit` 0x004f1d60 (9)
 
 ### `core/hero.cpp` (35 functions, 2025 instructions, 4 done, 1 partial)
@@ -5346,19 +5346,20 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `factoryFuncLightGun` 0x005058c0 (12)
   - [x] `staticInit` 0x00505890 (9)
 
-### `core/litecone.cpp` (11 functions, 243 instructions, 1 done, 0 partial)
+### `core/litecone.cpp` (11 functions, 243 instructions, 5 done, 1 partial)
 - class `CLightCone`
-  - [ ] `ctor` 0x00506b10 (44)
-  - [ ] `getActorType` 0x00506b00 (2)
+  - [~] `ctor` 0x00506b10 (44)
+    - deferred: drawing the cone transparent, with the set's renderable lists
+  - [x] `getActorType` 0x00506b00 (2)
   - [ ] `process` 0x00506bc0 (32)
   - [ ] `renderTransparent` 0x00506c20 (50)
   - [ ] `getBoundingBox` 0x00506cb0 (19)
-  - [ ] `archive` 0x00506d00 (37)
+  - [x] `archive` 0x00506d00 (37)
   - [ ] `getCollisionType` 0x00506d90 (2)
-  - [ ] `dtor` 0x00506e30 (31)
+  - [x] `dtor` 0x00506e30 (31)
   - [ ] `setup` 0x00506bb0 (5)
 - free functions
-  - [ ] `factoryFuncLightCone` 0x00506ad0 (12)
+  - [x] `factoryFuncLightCone` 0x00506ad0 (12)
   - [x] `staticInit` 0x00506aa0 (9)
 
 ### `core/main.c` (3 functions, 261 instructions, 0 done, 0 partial)
@@ -6365,26 +6366,28 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `factoryFuncTrash` 0x005deb30 (12)
   - [x] `staticInit` 0x005deb00 (9)
 
-### `core/trigger.cpp` (18 functions, 1660 instructions, 1 done, 0 partial)
+### `core/trigger.cpp` (18 functions, 1660 instructions, 6 done, 2 partial)
 - class `CTrigger`
   - [ ] `onProjectileHit` 0x005e0aa0 (6)
-  - [ ] `ctor` 0x005df840 (63)
-  - [ ] `getActorType` 0x005df830 (2)
+  - [~] `ctor` 0x005df840 (63)
+    - deferred: the defaults the constructor gives CDemonActor's health, and the trigger's previous state, event flag, cached and triggering actors and damage cooldown, with the steps that read them
+  - [x] `getActorType` 0x005df830 (2)
   - [ ] `containsActor` 0x005e0cd0 (207)
   - [ ] `process` 0x005dfac0 (408)
   - [ ] `renderTransparent` 0x005e00d0 (461)
-  - [ ] `getBoundingBox` 0x005e0630 (22)
-  - [ ] `calculateTestRadius` 0x005e0ba0 (43)
-  - [ ] `archive` 0x005e0690 (171)
+  - [x] `getBoundingBox` 0x005e0630 (22)
+  - [~] `calculateTestRadius` 0x005e0ba0 (43)
+    - unverified: the diagonal's x87 sum and square root, worked in double here, not run against nocedit's own code
+  - [x] `archive` 0x005e0690 (171)
   - [ ] `getCollisionType` 0x005e0930 (27)
   - [ ] `evaluateTriggerCondition` 0x005e0980 (64)
   - [ ] `processActionButton` 0x005e0a20 (8)
   - [ ] `onLaserHit` 0x005e0a50 (23)
   - [ ] `getTargetPoints` 0x005e0c30 (53)
-  - [ ] `dtor` 0x005e1660 (31)
+  - [x] `dtor` 0x005e1660 (31)
   - [ ] `setup` 0x005df990 (50)
 - free functions
-  - [ ] `factoryFuncTrigger` 0x005df800 (12)
+  - [x] `factoryFuncTrigger` 0x005df800 (12)
   - [x] `staticInit` 0x005df7d0 (9)
 
 ### `core/turret.cpp` (22 functions, 2055 instructions, 1 done, 0 partial)
@@ -6534,18 +6537,19 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `factoryFuncWaterActor` 0x005ea860 (12)
   - [x] `staticInit` 0x005ea810 (19)
 
-### `core/waypoint.cpp` (10 functions, 650 instructions, 1 done, 0 partial)
+### `core/waypoint.cpp` (10 functions, 650 instructions, 5 done, 1 partial)
 - class `CWayPoint`
   - [ ] `isReachable` 0x005ebd40 (91)
   - [ ] `findNearestReachable` 0x005ec320 (133)
-  - [ ] `ctor` 0x005ebe70 (10)
-  - [ ] `getActorType` 0x005ebe60 (2)
+  - [x] `ctor` 0x005ebe70 (10)
+  - [x] `getActorType` 0x005ebe60 (2)
   - [ ] `renderOpaque` 0x005ebf70 (241)
-  - [ ] `archive` 0x005ec280 (53)
-  - [ ] `dtor` 0x005ec8d0 (31)
+  - [~] `archive` 0x005ec280 (53)
+    - deferred: each adjacent waypoint's distance, with setup
+  - [x] `dtor` 0x005ec8d0 (31)
   - [ ] `setup` 0x005ebeb0 (68)
 - free functions
-  - [ ] `factoryFuncWayPoint` 0x005ebe30 (12)
+  - [x] `factoryFuncWayPoint` 0x005ebe30 (12)
   - [x] `staticInit` 0x005ebd10 (9)
 
 ## Step 31: Not reached from startup: `core/` (part 9 of 9)
