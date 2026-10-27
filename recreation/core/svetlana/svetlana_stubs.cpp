@@ -27,10 +27,6 @@ int CSvetlana::renderOpaque() {
     notPorted("renderOpaque");
 }
 
-void CSvetlana::archive(CActorArchive & /*actor_archive*/) {
-    notPorted("archive");
-}
-
 int CSvetlana::getGrabbed(CDemonActor * /*grabber*/, int /*grab_type*/) {
     notPorted("getGrabbed");
 }

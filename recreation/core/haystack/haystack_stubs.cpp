@@ -27,10 +27,6 @@ int CHaystack::renderOpaque() {
     notPorted("renderOpaque");
 }
 
-void CHaystack::archive(CActorArchive & /*actor_archive*/) {
-    notPorted("archive");
-}
-
 void CHaystack::processDamage(SDamageInfo * /*damage_info*/) {
     notPorted("processDamage");
 }

@@ -17,36 +17,36 @@ functions don't count as done. Sizes are in instructions.
 | 1 | File system: `dosio`, pods | 5 | 44 | 2518 | 44 | 0 | 100.0% |
 | 2 | `doNothing`, `readMessageFile`, `getLocalizedString`, `initializeTrigTables`, `initTextureCache`, `initGraphicsSystem` | 8 | 30 | 2804 | 28 | 2 | 93.3% |
 | 3 | Sound system: `sndmain`, `CSound` lifetime, `readIniData` | 7 | 123 | 8346 | 122 | 1 | 99.1% |
-| 4 | `initFonts`, `CEditorTools::showWarning` | 11 | 46 | 4804 | 46 | 0 | 100.0% |
+| 4 | `initFonts`, `CEditorTools::showWarning` | 11 | 46 | 4804 | 45 | 1 | 97.8% |
 | 5 | `showCalibrationTest`, `playMovie`, `CAlphaBitmap::ctor`, `CAlphaBitmap::dtor`, `CSound::findAllSoundFiles`, `CDemonMission::reset`, `CDemonFilter::init`, `CMouse::load`, `CNetGame::init` | 14 | 50 | 4789 | 31 | 3 | 62.0% |
-| 6 | `initializeGameSystems`, `CAlphaBitmap::scale`, `clearTextureCache`, `CMoon::init`, `CGame::saveClockTime`, `CGame::updateDT` | 11 | 25 | 2988 | 20 | 5 | 80.0% |
+| 6 | `initializeGameSystems`, `CAlphaBitmap::scale`, `clearTextureCache`, `CMoon::init`, `CGame::saveClockTime`, `CGame::updateDT` | 11 | 25 | 2988 | 19 | 6 | 76.0% |
 | 7 | `CMoon::update`, `CMoon::render` | 17 | 120 | 17616 | 68 | 31 | 56.6% |
 | 8 | `renderMenuAndGetChoice`, `CMoon::free`, `CSound::reset`, `CEditorTools::showFileSelectionDialog` | 8 | 63 | 5314 | 60 | 3 | 95.2% |
-| 9 | `CPickList::enableItem`, `CEventList::resetGameFlags`, `CLevelLoader::show`, `CDemonMission::load` | 15 | 56 | 3298 | 28 | 9 | 50.0% |
-| 10 | `CDemonMission::createHeros`, `CDemonMission::prepareAllActors`, `CEventList::reset`, `CDemonMission::loadSet` | 15 | 42 | 5112 | 32 | 9 | 76.1% |
+| 9 | `CPickList::enableItem`, `CEventList::resetGameFlags`, `CLevelLoader::show`, `CDemonMission::load` | 15 | 56 | 3298 | 26 | 11 | 46.4% |
+| 10 | `CDemonMission::createHeros`, `CDemonMission::prepareAllActors`, `CEventList::reset`, `CDemonMission::loadSet` | 15 | 42 | 5112 | 31 | 10 | 73.8% |
 | 11 | `CScript::loadScript` | 63 | 579 | 67400 | 38 | 29 | 6.5% |
 | 12 | `CDemonMission::loadScript`, `CScript::executeInitSection`, `CDemonMission::startMission`, `CDemonMission::buildActiveSetActorList`, `CConsole::reset`, `CEditorTools::displayMemoryDiagnostics`, `CGame::setGameRes`, `CDemonLight::init`, `CDemonSet::initScene` | 12 | 26 | 1658 | 2 | 0 | 7.6% |
 | 13 | `CFireEffect::init`, `CDemonSet::loadMasterLightStates`, `CDemonSet::setGamma`, `CGame::clearOverlay`, `CGame::loadAssets` | 7 | 27 | 735 | 0 | 0 | 0.0% |
 | 14 | `CNetGame::syncPlayers`, `CNetGame::processServerFrame`, `CLevelLoader::cleanup`, `CKeys::toggleInputMask`, `CGame::processHotkeys` | 17 | 51 | 5302 | 1 | 0 | 1.9% |
 | 15 | `CGame::updateStatusDisplays`, `CGame::processFudge`, `CGame::playerControls`, `CGame::processFrame` | 43 | 189 | 28837 | 5 | 1 | 2.6% |
-| 16 | `CGame::setScreenResolutionAndDisplayFangs`, `showOptionsScreen`, `CScript::skipCinematic`, `CGame::showFullscreenBitmap`, `CDemonMission::countDamageableEnemies`, `freeInventory`, `CGame::runGameSession`, `CGame::displayActStats` | 10 | 25 | 6938 | 1 | 0 | 4.0% |
+| 16 | `CGame::setScreenResolutionAndDisplayFangs`, `showOptionsScreen`, `CScript::skipCinematic`, `CGame::showFullscreenBitmap`, `CDemonMission::countDamageableEnemies`, `freeInventory`, `CGame::runGameSession`, `CGame::displayActStats` | 10 | 25 | 6938 | 0 | 1 | 0.0% |
 | 17 | `CGame::finishAct`, `CDemonMission::run`, `CGame::loadGame`, `CGame::showChapterSelect`, `showDeveloperToolsMenu` | 12 | 26 | 3707 | 4 | 1 | 15.3% |
 | 18 | `enterMainGameMenu`, `finalizeGameSystems` | 11 | 13 | 539 | 3 | 0 | 23.0% |
 | 19 | Not reached from startup: `engine/` | 23 | 279 | 19702 | 24 | 1 | 8.6% |
 | 20 | Not reached from startup: `support/` | 2 | 24 | 593 | 3 | 1 | 12.5% |
 | 21 | Not reached from startup: `cockpit/` | 4 | 178 | 11527 | 0 | 0 | 0.0% |
 | 22 | Not reached from startup: `shape/` | 2 | 42 | 3178 | 4 | 2 | 9.5% |
-| 23 | Not reached from startup: `core/` (part 1 of 9) | 18 | 292 | 16011 | 32 | 6 | 10.9% |
-| 24 | Not reached from startup: `core/` (part 2 of 9) | 11 | 277 | 24965 | 18 | 4 | 6.4% |
+| 23 | Not reached from startup: `core/` (part 1 of 9) | 18 | 292 | 16011 | 33 | 6 | 11.3% |
+| 24 | Not reached from startup: `core/` (part 2 of 9) | 11 | 277 | 24965 | 19 | 4 | 6.8% |
 | 25 | Not reached from startup: `core/` (part 3 of 9) | 24 | 278 | 24134 | 20 | 9 | 7.1% |
-| 26 | Not reached from startup: `core/` (part 4 of 9) | 18 | 300 | 20148 | 40 | 5 | 13.3% |
-| 27 | Not reached from startup: `core/` (part 5 of 9) | 21 | 294 | 20910 | 35 | 7 | 11.9% |
-| 28 | Not reached from startup: `core/` (part 6 of 9) | 18 | 282 | 21809 | 26 | 7 | 9.2% |
-| 29 | Not reached from startup: `core/` (part 7 of 9) | 18 | 263 | 22721 | 22 | 9 | 8.3% |
-| 30 | Not reached from startup: `core/` (part 8 of 9) | 20 | 300 | 31826 | 29 | 2 | 9.6% |
+| 26 | Not reached from startup: `core/` (part 4 of 9) | 18 | 300 | 20148 | 41 | 5 | 13.6% |
+| 27 | Not reached from startup: `core/` (part 5 of 9) | 21 | 294 | 20910 | 37 | 7 | 12.5% |
+| 28 | Not reached from startup: `core/` (part 6 of 9) | 18 | 282 | 21809 | 27 | 7 | 9.5% |
+| 29 | Not reached from startup: `core/` (part 7 of 9) | 18 | 263 | 22721 | 23 | 9 | 8.7% |
+| 30 | Not reached from startup: `core/` (part 8 of 9) | 20 | 300 | 31826 | 31 | 2 | 10.3% |
 | 31 | Not reached from startup: `core/` (part 9 of 9) | 5 | 111 | 10905 | 10 | 2 | 9.0% |
 | 32 | Not reached from startup: `wincore/` | 2 | 11 | 482 | 4 | 0 | 36.3% |
-| | **All** | | **4479** | **402407** | **813** | **149** | **18.1%** |
+| | **All** | | **4479** | **402407** | **816** | **155** | **18.2%** |
 
 ## Step 0: Math value types
 
@@ -413,11 +413,12 @@ functions don't count as done. Sizes are in instructions.
   - [x] `pushViewport` 0x0050e320 (71)
   - [x] `popViewport` 0x0050e480 (55)
 
-### `wincore/winrun.cpp` (3 functions, 44 instructions, 3 done, 0 partial)
+### `wincore/winrun.cpp` (3 functions, 44 instructions, 2 done, 1 partial)
 - free functions
   - [x] `clearKeypresses` 0x005f2e70 (6)
   - [x] `clearMouseClicks` 0x005f30c0 (3)
-  - [x] `getNextKeypress` 0x005f2e90 (35)
+  - [~] `getNextKeypress` 0x005f2e90 (35)
+    - deferred: servicing the network on each pass of the wait, so a netplay peer doesn't time out while a mission waits for a key (the decomp's net_keepalive.h nocturne_net_keepalive), with CNetGame's keepalive
 
 ### `engine/keys.cpp` (2 functions, 4 instructions, 2 done, 0 partial)
 - free functions
@@ -539,9 +540,11 @@ functions don't count as done. Sizes are in instructions.
 
 ## Step 6: `initializeGameSystems`, `CAlphaBitmap::scale`, `clearTextureCache`, `CMoon::init`, `CGame::saveClockTime`, `CGame::updateDT`
 
-### `core/main.c` (1 functions, 642 instructions, 1 done, 0 partial)
+### `core/main.c` (1 functions, 642 instructions, 0 done, 1 partial)
 - free functions
-  - [x] `initializeGameSystems` 0x00507a60 (642)
+  - [~] `initializeGameSystems` 0x00507a60 (642)
+    - deferred: arming the attract movies only when opening.avi played this launch (the decomp's attract.h nocturne_attract_set_opening_played), with the attract movies
+    - deferred: reading the save folder and each save's mission name beside findAllSoundFiles, so the save and load pickers open with nothing left to read (the decomp's save_slots.h nocturne_save_slots_prewarm, SAVE_SLOTS), with the save and load pickers
 
 ### `engine/alphabit.cpp` (1 functions, 71 instructions, 1 done, 0 partial)
 - class `CAlphaBitmap`
@@ -602,6 +605,9 @@ functions don't count as done. Sizes are in instructions.
   - [x] `saveClockTime` 0x004d7d80 (4)
   - [~] `updateDT` 0x004d7d90 (44)
     - deferred: the fixed thirtieth of a second, scaled, while a debug movie records, with setupMovieRecording
+    - deferred: refusing the draw and flashlight requests in a mission whose name starts "HQ-", before netplay sends the input (the decomp's hq_weapon.h, FLASHLIGHT_DRAW), with CGame::playerControls
+    - deferred: withholding the hero's input while the script camera is on a dead character who is not a player hero (the decomp's helper_death.h nocturne_helper_death_hold_hero), with CGame::playerControls
+    - deferred: a session the script ended with "end" closing on the Game Over menu, as a helper's death ends it, where the original drops to the main menu (the decomp's helper_death.h), with CGame::runGameSession
 
 ## Step 7: `CMoon::update`, `CMoon::render`
 
@@ -1025,19 +1031,23 @@ functions don't count as done. Sizes are in instructions.
   - [~] `ctor` 0x004f3c00 (8)
     - deferred: drawing it transparent, with the set's renderable list
 
-### `core/mission.cpp` (13 functions, 995 instructions, 8 done, 5 partial)
+### `core/mission.cpp` (13 functions, 995 instructions, 6 done, 7 partial)
 - class `CDemonMission`
   - [x] `removeActorFromList` 0x00523be0 (67)
   - [~] `buildSetActorList` 0x00523e60 (50)
     - deferred: the set's lists of actors that collide and of each class, with their readers
-  - [x] `removeActor` 0x00523f20 (18)
+  - [~] `removeActor` 0x00523f20 (18)
+    - deferred: clearing what the player heroes hold of the actor (the weapon in hand, both carry hands, the inventory's selected weapon and item), which the original left dangling (the decomp's actor_delete.h nocturne_actor_delete_unbind_heroes, ACTOR_DELETE), with CStranger's weapon in hand and CInventory's selection
+    - deferred: a sound tracking the actor's position finishing where the actor last was instead of reading it after it is freed (the decomp's actor_delete.h nocturne_actor_delete_unbind_sounds, ACTOR_DELETE), with CDemonActor::playSound and CSound::playActorSound
   - [~] `removeAllActors` 0x00523f50 (32)
     - deferred: clearing the delete queue, with markActorToDelete
     - deferred: committing the raytracer's shadow voxels and resetting the path maps, with the raytracer and the path maps
+    - deferred: rewinding the path lookup cache and forgetting which hero set each trigger off, so a network game's next mission starts in step (the decomp's nocturne_net_pathcache_rewind and nocturne_net_sim_forget_trigger_hero), with CNetGame and the path maps
   - [~] `clearMissionData` 0x00522d30 (20)
     - deferred: clearing actor_lookup_count, with saveActor
   - [x] `findActorByName` 0x00524030 (24)
-  - [x] `generateUniqueActorName` 0x00524660 (65)
+  - [~] `generateUniqueActorName` 0x00524660 (65)
+    - deferred: counting the names of the items in every hero's inventory too, which the original's lookup of the mission's actors misses, so a save holds no two actors of one name (the decomp's item_names.h, ITEM_NAMES), with CInventory's items
   - [x] `generateActorName` 0x00524700 (39)
   - [x] `addActorToList` 0x00523b70 (31)
   - [~] `freeAllAssets` 0x005248e0 (13)
@@ -1142,13 +1152,16 @@ functions don't count as done. Sizes are in instructions.
     - deferred: resetting every path map after new geometry, with resetAllPathMaps and the path maps
     - deferred: resetting the automap after new geometry, with the automap
 
-### `core/mission.cpp` (4 functions, 375 instructions, 2 done, 2 partial)
+### `core/mission.cpp` (4 functions, 375 instructions, 1 done, 3 partial)
 - class `CDemonMission`
-  - [x] `createOneHero` 0x00524920 (109)
+  - [~] `createOneHero` 0x00524920 (109)
+    - deferred: giving a newly built player hero the weapon its class attacks with, by hero type: the Colonel's pistol, an empty slot for Haystack and Ice Pick, and Scat's network pistol (the decomp's hero_weapon.h nocturne_hero_default_weapon), with the weapon classes
+    - deferred: putting every hero's shoves, grab hold, Gabriella's throw, switch, pump, mask, ladder and held presses, Moloch's attacks and the Colonel's aim back at rest as the first hero is built (the decomp's hero_*_reset calls), with CColonel::process, CGabriella::process, CMoloch::process and the grab escape and shoves in CHero
   - [~] `createHeros` 0x00524a80 (110)
     - deferred: making each network player's hero, and noting which is this machine's, with CNetGame
     - deferred: giving the hero the game's aim mode and the player's control, with the hero's aiming and control
     - deferred: rebuilding the set's actor lists after, with the set's per-frame readers
+    - deferred: reviving a hero carried into the next mission: its most hit points back, a destroying death undone and STAND forced (the decomp's hero_death.h nocturne_hero_revive), with CCharacter::getDeathState
   - [~] `prepareAllActors` 0x00523cf0 (114)
     - deferred: setting a hero up as the local hero in a network game, with CNetGame's sessions
   - [x] `loadSet` 0x00523fb0 (42)
@@ -2689,9 +2702,10 @@ functions don't count as done. Sizes are in instructions.
 - class `CMoon`
   - [ ] `renderJoystickCalibration` 0x0052a2c0 (84)
 
-### `core/sound.cpp` (1 functions, 112 instructions, 1 done, 0 partial)
+### `core/sound.cpp` (1 functions, 112 instructions, 0 done, 1 partial)
 - class `CSound`
-  - [x] `configure` 0x005b3830 (112)
+  - [~] `configure` 0x005b3830 (112)
+    - deferred: giving the attract movies the splash music's length from getSoundDuration, a length of 0 or less disarming them (the decomp's attract.h nocturne_attract_set_music_duration), with the attract movies and CSound::getSoundDuration
 
 ### `core/menu.cpp` (9 functions, 4659 instructions, 0 done, 0 partial)
 - free functions
@@ -3602,18 +3616,18 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `factoryFuncBackgroundActor` 0x00412770 (12)
   - [x] `staticInit` 0x00412740 (9)
 
-### `core/baron.cpp` (30 functions, 1554 instructions, 7 done, 2 partial)
+### `core/baron.cpp` (30 functions, 1554 instructions, 8 done, 2 partial)
 - class `CBaron`
   - [~] `ctor` 0x00412bc0 (63)
     - deferred: loading the model baron.dfm, with CDeformableModelInstance::init
-    - deferred: naming the shell's model baronshell.kfm, and the defaults the constructor gives the Baron's own fields, with the steps that read them
+    - deferred: naming the shell's model baronshell.kfm, and the defaults the constructor gives the head, target, attack, transparency and shell fields, with the steps that read them
   - [x] `getActorType` 0x00412bb0 (2)
   - [ ] `detachFromOwner` 0x004135a0 (19)
   - [ ] `updateMountedPosition` 0x004135e0 (72)
   - [ ] `performLightningAttack` 0x004136b0 (231)
   - [ ] `advanceMotion` 0x00413a00 (37)
   - [ ] `process` 0x00412e80 (409)
-  - [ ] `archive` 0x00413a70 (27)
+  - [x] `archive` 0x00413a70 (27)
   - [ ] `renderOpaque` 0x00413ad0 (2)
   - [ ] `renderTransparent` 0x00413ae0 (155)
   - [ ] `processDamage` 0x00413cd0 (9)
@@ -3629,6 +3643,7 @@ functions don't count as done. Sizes are in instructions.
 - class `CBaronWeapon`
   - [~] `ctor` 0x00413d40 (12)
     - deferred: the defaults the constructor gives the weapon type, firing and light fields, and the Baron it belongs to, with the steps that read them
+    - deferred: each Baron weapon claiming a Baron of its own in a network game, where the original shares the set's first (the decomp's hero_baron.h), with findOrCreateBaron and CNetGame
   - [x] `getActorType` 0x00413d30 (2)
   - [ ] `findOrCreateBaron` 0x00413f20 (65)
   - [ ] `process` 0x00413dc0 (10)
@@ -3929,7 +3944,9 @@ functions don't count as done. Sizes are in instructions.
 ### `core/charactr.cpp` (91 functions, 8559 instructions, 5 done, 1 partial)
 - class `CCharacter`
   - [~] `ctor` 0x00427e20 (125)
-    - deferred: the collision points, fires and flames, and the defaults the constructor gives the movement, walking, looking, carrying bones, layer action and smoking fields, with the steps that read them
+    - deferred: the collision points, fires and flames, and the defaults the constructor gives the movement, walking, looking, carrying bones, smoking fields and the layer action fields other than the current action and its time, with the steps that read them
+    - deferred: a living character more than 32 units below the collision grid taking 9999 fall damage, and the Stranger playing his splat (the decomp's hero_fall.h nocturne_fall_out_of_world, BOTTOMLESS_FALL), with CCharacter::process
+    - deferred: a scripted walk's forward step scaled by how far the facing is off the path heading, full speed to 30 degrees and stopped at 90, so the walker turns before arcing through a doorway (the decomp's walk_turn.h, WALK_TURN), with CCharacter::walkToPoint
   - [ ] `detachBodyPart` 0x0042bcc0 (45)
   - [ ] `dismember` 0x0042b9e0 (178)
   - [ ] `processFire` 0x0042a830 (336)
@@ -4084,16 +4101,19 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `applyLightAttenuation` 0x0043e380 (28)
   - [ ] `scaleVector` 0x0043e3d0 (13)
 
-### `core/colonel.cpp` (15 functions, 1081 instructions, 4 done, 1 partial)
+### `core/colonel.cpp` (15 functions, 1081 instructions, 5 done, 1 partial)
 - class `CColonel`
   - [~] `ctor` 0x0043f7e0 (24)
     - deferred: loading the model colonel.dfm, with CDeformableModelInstance::init
     - deferred: the defaults the constructor gives the Colonel's own fields, with the steps that read them
+    - deferred: a player Colonel's pistol: draw plays "draw" and puts it in his right hand, the arm aims at the nearest enemy in a 30 degree cone with the laser sight, fire shoots and plays "shoot", both layered from Spine2 up so he keeps moving, the reserve topped up after each shot (the decomp's hero_colonel.h), with CColonel::process and renderOpaque
+    - deferred: a player Colonel killed going to DIE and DEAD, where the original asks for DAMAGE2 and DAMAGE3 and he stands back up (the decomp's nocturne_colonel_death_state), with CColonel::processDamage
+    - deferred: a player Colonel breaking free of a grab dealing every enemy in reach 10 to 15 damage and shoving it back (the decomp's nocturne_colonel_push_off and hero_shove.h), with CColonel::process
   - [x] `getActorType` 0x0043f7d0 (2)
   - [ ] `processAI` 0x0043ff20 (345)
   - [ ] `processMotionEvents` 0x00440430 (41)
   - [ ] `process` 0x0043fa00 (381)
-  - [ ] `archive` 0x00440490 (5)
+  - [x] `archive` 0x00440490 (5)
   - [ ] `renderOpaque` 0x004404a0 (5)
   - [ ] `processDamage` 0x004404b0 (96)
   - [ ] `isWeaponDrawn` 0x004405d0 (3)
@@ -4810,12 +4830,24 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `getFrameCount` 0x004d2880 (3)
   - [ ] `getActorName` 0x004d2890 (3)
 
-### `core/gabriela.cpp` (34 functions, 5722 instructions, 4 done, 1 partial)
+### `core/gabriela.cpp` (34 functions, 5722 instructions, 5 done, 1 partial)
 - class `CGabriella`
   - [~] `ctor` 0x004d2b20 (50)
     - deferred: loading the model gabriela.dfm, with CDeformableModelInstance::init
     - deferred: naming the gun's model gabgun.kfm, with the weapon classes
     - deferred: the coat's cloth, and the defaults the constructor gives Gabriella's own fields, with the steps that read them
+    - deferred: a player Gabriella picking up from the action button at the head of its chain, within 5 units up or down rather than 2 (the decomp's hero_gabriella.h PICKUP IS ON THE WRONG BUTTON), with CGabriella::process and findAndPickupNearbyObject
+    - deferred: strafe input asking for STRAFE_L or STRAFE_R, through STAND where no route reaches it, played faster while a strafe plays untweened (STRAFES ARE NEVER SELECTED, STRAFES PLAY TOO SLOWLY), with CGabriella::process
+    - deferred: turn input alone held 0.15 s asking for TURN_LEFT or TURN_RIGHT, chained step to step with a 0.2 s crossfade at 0.8 of the authored rate (TURNS IN PLACE ARE NEVER SELECTED), with CGabriella::process
+    - deferred: the climb starting only from STAND, a press held up to 0.5 s while she settles, the ladder let go when LADDER has no weight, the Stranger's ladder test and eased placement, and the climb played faster (THE LADDER), with CGabriella::process and tryClimbLadder
+    - deferred: an action press with the weapon away and nothing to interact with kicking an enemy in reach in front, 10 to 15 damage from the left foot at a fixed frame and a shove back (AN UNARMED KICK), with CGabriella::process and processMotionEvents
+    - deferred: a press a pickup, kick or draw used reading as released until let go (ONE PRESS, ONE ACTION), with CGabriella::process
+    - deferred: dynamite's fuse lit on the first frame of the charge and burning 3.5 s, aimed and charged to 70 by the Stranger's rules, thrown one-armed with a wind-up and swing, the next stick fetched from her hip, a burnt-out stick dropped at her feet, and the throw's arc drawn while charging (DYNAMITE IS THROWN UNLIT), with CGabriella::process, renderOpaque and updateWeaponAndAimAnimation
+    - deferred: a new selection holstering the weapon in hand and drawing the new one at her hip, with her own code seeing the weapon in hand and the rest the selection (A SWITCH SWAPS THE WEAPON IN HER HAND), with CGabriella::process and renderOpaque
+    - deferred: a held fire repeating once the weapon is ready, a pump-action shot's recoil, pump and shell, and a shot pending on the weapon's refire dropped (FIRE AS THE STRANGER FIRES), with CGabriella::process and tryFireWeapon
+    - deferred: a carried throwable charged and thrown from the action button with her left arm's swing and arc, anything else put down through PUTDOWN when the floor ahead takes it (A CARRIED PART IS PUT DOWN OR THROWN), with CGabriella::process and dropCarriedObject
+    - deferred: a player's use_item going to CHero::tryUseSelectedItem (USE_ITEM USES THE SELECTED ITEM), with CGabriella::process
+    - deferred: the gas mask raised to her face and lowered by a posed right arm stepping is_wearing_gas_mask through 0, 1 and 2, and drawn in her hand or on her head (THE GAS MASK), with CGabriella::process and renderOpaque
   - [x] `getActorType` 0x004d2b10 (2)
   - [ ] `processAI` 0x004d4190 (431)
   - [ ] `collectAmmo` 0x004d5c10 (22)
@@ -4835,7 +4867,7 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `binarySearchClavicleBlend` 0x004d6f80 (152)
   - [ ] `updateClavicleCollisionAvoidance` 0x004d6d40 (170)
   - [ ] `process` 0x004d2ea0 (1307)
-  - [ ] `archive` 0x004d6090 (46)
+  - [x] `archive` 0x004d6090 (46)
   - [ ] `renderOpaque` 0x004d6140 (80)
   - [ ] `renderTransparent` 0x004d6230 (12)
   - [ ] `processDamage` 0x004d6b30 (151)
@@ -5010,7 +5042,7 @@ functions don't count as done. Sizes are in instructions.
   - [x] `factoryFuncGun` 0x004f02b0 (12)
   - [x] `staticInit` 0x004f0280 (9)
 
-### `core/haystack.cpp` (15 functions, 1231 instructions, 4 done, 1 partial)
+### `core/haystack.cpp` (15 functions, 1231 instructions, 5 done, 1 partial)
 - class `CHaystack`
   - [~] `ctor` 0x004f0c10 (24)
     - deferred: loading the model haystack.dfm, with CDeformableModelInstance::init
@@ -5020,7 +5052,7 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `checkMeleeHit` 0x004f1ab0 (55)
   - [ ] `advanceMotion` 0x004f1970 (100)
   - [ ] `process` 0x004f0e40 (418)
-  - [ ] `archive` 0x004f1b50 (5)
+  - [x] `archive` 0x004f1b50 (5)
   - [ ] `renderOpaque` 0x004f1b60 (5)
   - [ ] `processDamage` 0x004f1b70 (89)
   - [ ] `isWeaponDrawn` 0x004f1c90 (3)
@@ -5060,6 +5092,16 @@ functions don't count as done. Sizes are in instructions.
   - [~] `ctor` 0x004f2340 (48)
     - deferred: the path map and input, the inventory's owner, and the defaults the constructor gives the collision, invincibility, aiming, nearby actor, target and flame fields, with the steps that read them
     - deferred: creating the default weapon, with the weapon classes
+    - deferred: a hero breaking out of a non-scripted grab after 1.5 s held, steered through STAND into GETGRABBED, then ESCAPEGRAB or PUSHOFF, released once neither is blended in, with fire consumed while held (the decomp's hero_grab.h nocturne_hero_grab_escape), with CColonel::process, CGabriella::process, CHaystack::process, CIcePick::process, CMoloch::process, CScat::process and CSvetlana::process
+    - deferred: a sentinel carrying a grabbed hero to its claws through CCharacter::moveAndCollide, where the original writes the position through walls and out of the level (the decomp's hero_grab.h nocturne_grab_carry_move), with CSentinel::attractActorToward
+    - deferred: a player hero's use_item spending a selected health item, and the health bar's timer ticking (the decomp's hero_items.h nocturne_hero_items_process), with CColonel::process, CGabriella::process, CHaystack::process, CIcePick::process, CMoloch::process, CScat::process and CSvetlana::process
+    - deferred: a killing blow spending a health item when autoUseHealth is set, and every hit restarting the health bar's timer (the decomp's nocturne_hero_items_damage_taken), with CColonel::processDamage, CGabriella::processDamage, CHaystack::processDamage, CIcePick::processDamage, CScat::processDamage and CSvetlana::processDamage
+    - deferred: a player hero at zero hit points that reads alive and no longer wants DIE or DEAD jumped into DIE (the decomp's hero_death.h nocturne_hero_check_death), with CColonel::process, CGabriella::process, CHaystack::process, CIcePick::process, CScat::process and CSvetlana::process
+    - deferred: the Stranger's landing damage for a player hero: (speed - 20) * 5 from 20 units/s and fatal over 100, none in god mode or with damage off (the decomp's hero_fall.h nocturne_hero_fall_move), with CColonel::process, CGabriella::process, CHaystack::process, CIcePick::process and CScat::process
+    - deferred: cold breath for a player hero standing idle in fog under 32 degrees (the decomp's hero_breath.h), with CCharacter::processSmoking, CColonel::process, CGabriella::process, CHaystack::process, CIcePick::process and CScat::process
+    - deferred: what a player hero may hold by class (the Stranger anything, Gabriella guns, ammo, dynamite and the Baron, the rest health items, keys and plain items for all), the slot text of a hero's own item, weapons not in hand put back in the inventory each frame, and no ammo shown for the Baron weapon or a melee hero's shovel (the decomp's hero_weapon.h), with CInventory's items and display
+    - deferred: each network player's own flashlight switch, beam, lens glow, goggles flag and battery drain, another hero's beam giving way when the dynamic lights are full (the decomp's hero_light.h), with CNetGame and the weapons' lights
+    - deferred: the light button toggling a player Gabriella's, Scat's or the Colonel's gun light by the Stranger's rules: only while the selected weapon takes a light, drawing it when switched on with the weapon away, and off with a click on holstering (the decomp's gun_flashlight.h), with CNetGame::applySimFrameHistory
   - [ ] `closestEnemy` 0x004f3960 (120)
   - [x] `archive` 0x004f2610 (162)
   - [x] `dtor` 0x004f2470 (59)
@@ -5150,11 +5192,12 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `factoryFuncHighPriestOfGardath` 0x004f7b30 (12)
   - [x] `staticInit` 0x004f7b00 (9)
 
-### `core/icepick.cpp` (19 functions, 1820 instructions, 4 done, 1 partial)
+### `core/icepick.cpp` (19 functions, 1820 instructions, 5 done, 1 partial)
 - class `CIcePick`
   - [~] `ctor` 0x004f7df0 (27)
     - deferred: loading the model icepick.dfm, with CDeformableModelInstance::init
     - deferred: the defaults the constructor gives Ice Pick's own fields, with the steps that read them
+    - deferred: 300 hit points, and 300 the most, where the original left the most at CCharacter's 100, so health items and the health bar measure against Ice Pick's own (the decomp's HERO_ACTIONS in the constructor), with CCharacter's hit point setters
   - [x] `getActorType` 0x004f7de0 (2)
   - [ ] `updateShootBlend` 0x004f8810 (101)
   - [ ] `findAndPickupGun` 0x004f8970 (112)
@@ -5164,7 +5207,7 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `processMotionEvents` 0x004f93a0 (80)
   - [ ] `process` 0x004f80b0 (514)
   - [ ] `getCarryObjToBodyXForm` 0x004f8b20 (110)
-  - [ ] `archive` 0x004f9590 (5)
+  - [x] `archive` 0x004f9590 (5)
   - [ ] `renderOpaque` 0x004f95a0 (5)
   - [ ] `processDamage` 0x004f95b0 (133)
   - [ ] `isWeaponDrawn` 0x004f9760 (3)
@@ -5428,7 +5471,8 @@ functions don't count as done. Sizes are in instructions.
     - deferred: loading a saved game from LOAD, then starting the moon and music again, with CGame::loadGame
     - deferred: the developer tools on Ctrl+D or Ctrl+L, with showDeveloperToolsMenu
     - deferred: dropping a press of F with a control key held, with the game's hotkeys
-    - deferred: the enhanced game's menu (PLAY's single-player menu with its continue, MULTIPLAYER and its hotkeys, attract movies when idle, its menu font, the window sized to the game's resolution and the items centred), with the enhanced front end
+    - deferred: the enhanced game's menu (PLAY's single-player menu with its continue, MULTIPLAYER and its hotkeys, its menu font, the window sized to the game's resolution and the items centred), with the enhanced front end
+    - deferred: an attract movie, one of NOC1 to NOC4.AVI that nothing in the original plays, at the end of a pass of the splash music with the main menu on screen, after a short silence, then the music restarted with reset and configure; a pass ending under a submenu or dialog is skipped (the decomp's attract.h nocturne_attract_tick), with the attract movies
   - [ ] `addCustomKeyBinding` 0x00513460 (40)
   - [ ] `getSinglePressedKey` 0x00513860 (40)
 
@@ -5518,18 +5562,23 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `getObjectGrabPointWorld` 0x00525110 (60)
   - [ ] `setEulerAngles` 0x00526b00 (8)
 
-### `core/moloch.cpp` (13 functions, 1031 instructions, 4 done, 1 partial)
+### `core/moloch.cpp` (13 functions, 1031 instructions, 5 done, 1 partial)
 - class `CMoloch`
   - [~] `ctor` 0x00528b30 (58)
     - deferred: loading the human model moloch_h.dfm, with CDeformableModelInstance::init
-    - deferred: the morph, the events that change Moloch's form, and the defaults the constructor gives its own fields, with the steps that read them
+    - deferred: the morph, with the steps that read it
+    - deferred: a processDamage override for a player's Moloch, which the original lacks so nothing hurts it: damage down to a floor of 1 hit point, none while invincible or in god mode, and destroying damage dealt as generic (the decomp's HERO_ACTIONS moloch_process_damage), with CCharacter::processDamage
+    - deferred: regenerating a player's Moloch 5 hit points a second up to its most, with the heroes' per-frame update (the decomp's nocturne_moloch_regenerate)
+    - deferred: fire attacking in demon form, alternating PUNCH and OVERHEADSMASH with the hit landing at a fixed frame from either hand bone, morphs held off while attacking, and attacks starting over at the punch as a mission builds its heroes (the decomp's nocturne_moloch_fire, _attack_hit, _is_attacking and _reset), with CMoloch::process
+    - deferred: leaving Moloch out of fall damage, which reaches the other heroes through their process (the decomp's hero_fall.h), with CMoloch::process
+    - deferred: a player Moloch's fire opening doors, pulling levers and talking, which the original never reaches (the decomp's hero_interact.h nocturne_hero_fire_interact), with CMoloch::process
   - [x] `getActorType` 0x00528b20 (2)
   - [x] `dtor` 0x00528bf0 (43)
   - [ ] `processAI` 0x005293b0 (255)
   - [ ] `startMorph` 0x00529900 (18)
   - [ ] `process` 0x00528d20 (456)
   - [ ] `renderOpaque` 0x00529750 (90)
-  - [ ] `archive` 0x00529880 (32)
+  - [x] `archive` 0x00529880 (32)
   - [ ] `drawWeapon` 0x005299d0 (1)
   - [ ] `isWeaponDrawn` 0x005299e0 (2)
   - [ ] `setup` 0x00528c70 (53)
@@ -5751,7 +5800,7 @@ functions don't count as done. Sizes are in instructions.
 
 ## Step 29: Not reached from startup: `core/` (part 7 of 9)
 
-### `core/scat.cpp` (22 functions, 2672 instructions, 4 done, 1 partial)
+### `core/scat.cpp` (22 functions, 2672 instructions, 5 done, 1 partial)
 - class `CScat`
   - [ ] `createDefaultWeapon` 0x00557150 (41)
   - [~] `ctor` 0x00556ed0 (46)
@@ -5759,6 +5808,9 @@ functions don't count as done. Sizes are in instructions.
     - deferred: creating Scat's default weapon, with the weapon classes
     - deferred: adding the layer actions that draw the pistols, with addLayerAction
     - deferred: the defaults the constructor gives Scat's own fields, with the steps that read them
+    - deferred: a player Scat's fire opening doors, pulling levers and talking with the weapon away, which the original never reaches (the decomp's hero_interact.h nocturne_hero_fire_interact), with CScat::process
+    - deferred: a player Scat putting the Baron away when deselected while standing, where the original leaves him summoned (the decomp's hero_weapon.h nocturne_hero_put_away_weapon), with CScat::updateWeaponState
+    - deferred: the network pistol's reserve topped up after each shot (the decomp's hero_weapon.h nocturne_hero_reload_extra_gun), with CScat::process and CNetGame
   - [x] `getActorType` 0x00556ec0 (2)
   - [ ] `updateAI` 0x005578e0 (310)
   - [ ] `advanceMotionWithGrabDamage` 0x00557d20 (55)
@@ -5770,7 +5822,7 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `updateAiming` 0x00558720 (344)
   - [ ] `updateWeaponAttachment` 0x00558fd0 (155)
   - [ ] `process` 0x005571f0 (526)
-  - [ ] `archive` 0x00557db0 (5)
+  - [x] `archive` 0x00557db0 (5)
   - [ ] `renderOpaque` 0x00557df0 (59)
   - [ ] `processDamage` 0x00557ea0 (114)
   - [ ] `isWeaponDrawn` 0x00557ff0 (3)
@@ -6106,13 +6158,13 @@ functions don't count as done. Sizes are in instructions.
 
 ## Step 30: Not reached from startup: `core/` (part 8 of 9)
 
-### `core/stranger.cpp` (57 functions, 13459 instructions, 4 done, 1 partial)
+### `core/stranger.cpp` (57 functions, 13459 instructions, 5 done, 1 partial)
 - class `CStranger`
   - [~] `ctor` 0x005bb120 (207)
     - deferred: loading the model stranger.dfm, with CDeformableModelInstance::init
     - deferred: naming the gun's model gat.kfm, with the weapon classes
     - deferred: adding the layer actions that draw each weapon, with addLayerAction
-    - deferred: the defaults the constructor gives the Stranger's own fields, with the steps that read them
+    - deferred: the defaults the constructor gives the Stranger's aiming, recoil, melee, turning, carried object and airborne fields, with the steps that read them
   - [x] `getActorType` 0x005bb110 (2)
   - [ ] `processPickupComplete` 0x005c1f00 (36)
   - [ ] `dropRightHandObject` 0x005c1f80 (22)
@@ -6142,7 +6194,7 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `processFrame` 0x005bb960 (2235)
   - [ ] `process` 0x005bb830 (61)
   - [ ] `setPositionAndOrientation` 0x005bfb10 (27)
-  - [ ] `archive` 0x005c2fe0 (86)
+  - [x] `archive` 0x005c2fe0 (86)
   - [ ] `renderOpaque` 0x005c3150 (463)
   - [ ] `renderTransparent` 0x005c3710 (19)
   - [ ] `processDamage` 0x005c48b0 (245)
@@ -6187,17 +6239,19 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `factoryFuncSuccubus` 0x005c6a40 (12)
   - [x] `staticInit` 0x005c6a10 (9)
 
-### `core/svetlana.cpp` (16 functions, 1634 instructions, 4 done, 1 partial)
+### `core/svetlana.cpp` (16 functions, 1634 instructions, 5 done, 1 partial)
 - class `CSvetlana`
   - [~] `ctor` 0x005d8850 (32)
     - deferred: loading the model svetlana.dfm, with CDeformableModelInstance::init
     - deferred: the cape's and hair's cloth, and the defaults the constructor gives Svetlana's own fields, with the steps that read them
+    - deferred: a player Svetlana grabbed through CHero::getGrabbed, where the original refuses every grab, which the NPC keeps (the decomp's hero_svetlana.h), with CSvetlana::getGrabbed
+    - deferred: a player Svetlana at zero hit points not regenerating, so the death check sees her (the decomp's hero_death.h nocturne_hero_regenerates), with CSvetlana::process
   - [x] `getActorType` 0x005d8840 (2)
   - [ ] `processAI` 0x005d9260 (436)
   - [ ] `performBladeAttack` 0x005d9a10 (120)
   - [ ] `advanceMotion` 0x005d9970 (59)
   - [ ] `process` 0x005d8ba0 (497)
-  - [ ] `archive` 0x005d9bb0 (5)
+  - [x] `archive` 0x005d9bb0 (5)
   - [ ] `renderOpaque` 0x005d9bc0 (101)
   - [ ] `processDamage` 0x005d9d30 (119)
   - [ ] `getGrabbed` 0x005d9ec0 (2)

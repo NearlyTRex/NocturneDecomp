@@ -27,10 +27,6 @@ int CMoloch::renderOpaque() {
     notPorted("renderOpaque");
 }
 
-void CMoloch::archive(CActorArchive & /*actor_archive*/) {
-    notPorted("archive");
-}
-
 void CMoloch::drawWeapon(int /*drawn*/) {
     notPorted("drawWeapon");
 }

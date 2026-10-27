@@ -33,8 +33,14 @@ constinit const CDemonActorType CCharacter::kType =
     makeActorType("CCharacter", &CDemonActor::kType, nullptr, kVersion);
 
 // deferred: the collision points, fires and flames, and the defaults the constructor gives the
-//   movement, walking, looking, carrying bones, layer action and smoking fields, with the steps
-//   that read them
+//   movement, walking, looking, carrying bones, smoking fields and the layer action fields other
+//   than the current action and its time, with the steps that read them
+// deferred: a living character more than 32 units below the collision grid taking 9999 fall
+//   damage, and the Stranger playing his splat (the decomp's hero_fall.h
+//   nocturne_fall_out_of_world, BOTTOMLESS_FALL), with CCharacter::process
+// deferred: a scripted walk's forward step scaled by how far the facing is off the path heading,
+//   full speed to 30 degrees and stopped at 90, so the walker turns before arcing through a
+//   doorway (the decomp's walk_turn.h, WALK_TURN), with CCharacter::walkToPoint
 // nocedit 0x00427e20
 CCharacter::CCharacter() = default;
 
@@ -100,6 +106,16 @@ void CCharacter::archiveHitPoints(CActorArchive &actor_archive) {
     actor_archive.archiveFloat(hit_points_, "hitPoints");
 }
 
+void CCharacter::archiveCarryObjects(CActorArchive &actor_archive) {
+    actor_archive.archiveActor(carried_actors_[0], "lhCarryObject");
+    actor_archive.archiveActor(carried_actors_[1], "rhCarryObject");
+}
+
+void CCharacter::archiveLayerAction(CActorArchive &actor_archive) {
+    actor_archive.archiveInteger(layer_action_index_, "layerActionIndex");
+    actor_archive.archiveFloat(layer_action_t_, "layerActionT");
+}
+
 void CCharacter::clearGrabbedType() {
     grabbed_type_ = kOrdinaryGrab;
 }
@@ -153,6 +169,14 @@ EHealthBarMode CCharacter::getHealthBarMode() const {
 
 const std::string &CCharacter::getDescriptiveName() const {
     return descriptive_name_;
+}
+
+int CCharacter::getLayerActionIndex() const {
+    return layer_action_index_;
+}
+
+float CCharacter::getLayerActionT() const {
+    return layer_action_t_;
 }
 
 } // namespace nocturne::core

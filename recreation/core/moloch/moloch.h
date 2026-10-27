@@ -4,6 +4,7 @@
 #include "core/hero/hero.h"
 
 #include <memory>
+#include <string>
 
 namespace nocturne::core {
 
@@ -27,8 +28,21 @@ public:
     void drawWeapon(int drawn) override;
     int isWeaponDrawn() override;
 
+    // The conditions that turn Moloch into the demon and back into the human.
+    [[nodiscard]] const std::string &getHumanToDemonCondition() const;
+    [[nodiscard]] const std::string &getDemonToHumanCondition() const;
+    [[nodiscard]] bool isInHumanForm() const;
+    [[nodiscard]] bool isMorphing() const;
+    [[nodiscard]] float getMorphTimer() const;
+
 private:
     static std::unique_ptr<CDemonActor> create();
+
+    std::string human_to_demon_condition_ = "molochToDemon";
+    std::string demon_to_human_condition_ = "molochToHuman";
+    bool in_human_form_ = true;
+    bool morphing_ = false;
+    float morph_timer_ = 0.0F;
 };
 
 } // namespace nocturne::core

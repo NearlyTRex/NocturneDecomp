@@ -161,6 +161,9 @@ void CWinRun::clearKeypresses() {
 }
 
 // Each present pumps the window, which is what fills the queue.
+// deferred: servicing the network on each pass of the wait, so a netplay peer doesn't time out
+//   while a mission waits for a key (the decomp's net_keepalive.h nocturne_net_keepalive), with
+//   CNetGame's keepalive
 // nocedit 0x005f2e90
 int CWinRun::getNextKeypress(engine::IScreenDevice &screen) {
     while (input_read_index_ == input_write_index_ && !input_disabled_) {

@@ -43,6 +43,45 @@ constinit const CDemonActorType CHero::kType =
 //   the collision, invincibility, aiming, nearby actor, target and flame fields, with the steps
 //   that read them
 // deferred: creating the default weapon, with the weapon classes
+// deferred: a hero breaking out of a non-scripted grab after 1.5 s held, steered through STAND
+//   into GETGRABBED, then ESCAPEGRAB or PUSHOFF, released once neither is blended in, with fire
+//   consumed while held (the decomp's hero_grab.h nocturne_hero_grab_escape), with
+//   CColonel::process, CGabriella::process, CHaystack::process, CIcePick::process,
+//   CMoloch::process, CScat::process and CSvetlana::process
+// deferred: a sentinel carrying a grabbed hero to its claws through CCharacter::moveAndCollide,
+//   where the original writes the position through walls and out of the level (the decomp's
+//   hero_grab.h nocturne_grab_carry_move), with CSentinel::attractActorToward
+// deferred: a player hero's use_item spending a selected health item, and the health bar's timer
+//   ticking (the decomp's hero_items.h nocturne_hero_items_process), with CColonel::process,
+//   CGabriella::process, CHaystack::process, CIcePick::process, CMoloch::process,
+//   CScat::process and CSvetlana::process
+// deferred: a killing blow spending a health item when autoUseHealth is set, and every hit
+//   restarting the health bar's timer (the decomp's nocturne_hero_items_damage_taken), with
+//   CColonel::processDamage, CGabriella::processDamage, CHaystack::processDamage,
+//   CIcePick::processDamage, CScat::processDamage and CSvetlana::processDamage
+// deferred: a player hero at zero hit points that reads alive and no longer wants DIE or DEAD
+//   jumped into DIE (the decomp's hero_death.h nocturne_hero_check_death), with
+//   CColonel::process, CGabriella::process, CHaystack::process, CIcePick::process,
+//   CScat::process and CSvetlana::process
+// deferred: the Stranger's landing damage for a player hero: (speed - 20) * 5 from 20 units/s
+//   and fatal over 100, none in god mode or with damage off (the decomp's hero_fall.h
+//   nocturne_hero_fall_move), with CColonel::process, CGabriella::process, CHaystack::process,
+//   CIcePick::process and CScat::process
+// deferred: cold breath for a player hero standing idle in fog under 32 degrees (the decomp's
+//   hero_breath.h), with CCharacter::processSmoking, CColonel::process, CGabriella::process,
+//   CHaystack::process, CIcePick::process and CScat::process
+// deferred: what a player hero may hold by class (the Stranger anything, Gabriella guns, ammo,
+//   dynamite and the Baron, the rest health items, keys and plain items for all), the slot text
+//   of a hero's own item, weapons not in hand put back in the inventory each frame, and no ammo
+//   shown for the Baron weapon or a melee hero's shovel (the decomp's hero_weapon.h), with
+//   CInventory's items and display
+// deferred: each network player's own flashlight switch, beam, lens glow, goggles flag and
+//   battery drain, another hero's beam giving way when the dynamic lights are full (the decomp's
+//   hero_light.h), with CNetGame and the weapons' lights
+// deferred: the light button toggling a player Gabriella's, Scat's or the Colonel's gun light by
+//   the Stranger's rules: only while the selected weapon takes a light, drawing it when switched
+//   on with the weapon away, and off with a click on holstering (the decomp's gun_flashlight.h),
+//   with CNetGame::applySimFrameHistory
 // nocedit 0x004f2340
 CHero::CHero() {
     setHealthBarMode(EHealthBarMode::kWhenHurt);
@@ -84,10 +123,7 @@ void CHero::archive(CActorArchive &actor_archive) {
         control_type_ = static_cast<EHeroControlType>(control_type);
     }
     if (saved_version >= kInteractionVersion) {
-        actor_archive.archiveActor(object_to_pick_up_, "objectToPickUp");
-        actor_archive.archiveActor(door_to_open_, "doorToOpen");
-        actor_archive.archiveActor(lever_to_pull_, "leverToPull");
-        actor_archive.archiveActor(ladder_to_climb_, "ladderToClimb");
+        archiveInteractionTargets(actor_archive);
         actor_archive.archiveActor(pushed_object_, "pushedObject");
     }
     if (saved_version == kKeyCountVersion) {
@@ -113,6 +149,13 @@ void CHero::archive(CActorArchive &actor_archive) {
     if (saved_version >= kInventoryVersion) {
         inventory_.load(actor_archive);
     }
+}
+
+void CHero::archiveInteractionTargets(CActorArchive &actor_archive) {
+    actor_archive.archiveActor(object_to_pick_up_, "objectToPickUp");
+    actor_archive.archiveActor(door_to_open_, "doorToOpen");
+    actor_archive.archiveActor(lever_to_pull_, "leverToPull");
+    actor_archive.archiveActor(ladder_to_climb_, "ladderToClimb");
 }
 
 const CInventory &CHero::getInventory() const {

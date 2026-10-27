@@ -26,10 +26,6 @@ int CScat::renderOpaque() {
     notPorted("renderOpaque");
 }
 
-void CScat::archive(CActorArchive & /*actor_archive*/) {
-    notPorted("archive");
-}
-
 void CScat::processDamage(SDamageInfo * /*damage_info*/) {
     notPorted("processDamage");
 }

@@ -35,10 +35,6 @@ ECollisionType CBaron::getCollisionType(SCollisionInfo * /*collision_info*/) {
     notPorted("getCollisionType");
 }
 
-void CBaron::archive(CActorArchive & /*actor_archive*/) {
-    notPorted("archive");
-}
-
 int CBaron::isGrabbable(CDemonActor * /*grabber*/) {
     notPorted("isGrabbable");
 }

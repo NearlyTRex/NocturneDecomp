@@ -31,6 +31,11 @@ const CDemonActorType &CHaystack::getActorType() const {
     return kType;
 }
 
+// nocedit 0x004f1b50
+void CHaystack::archive(CActorArchive &actor_archive) {
+    CHero::archive(actor_archive);
+}
+
 // nocedit 0x004f0bd0
 std::unique_ptr<CDemonActor> CHaystack::create() {
     return std::make_unique<CHaystack>();

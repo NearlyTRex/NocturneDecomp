@@ -1,7 +1,7 @@
 #include "core/actor/demonactortype.h"
 #include "core/svetlana/svetlana.h"
 #include "tests/mocks/core/notportedcalls.h"
-#include "tests/mocks/core/testarchive.h"
+#include "tests/mocks/core/testheroarchive.h"
 
 #include <gtest/gtest.h>
 
@@ -53,20 +53,26 @@ TEST(CSvetlana, ItsRecordIsAVersionOneHeroThatMissionsCanCreate) {
     EXPECT_EQ(&actor->getActorType(), &CSvetlana::kType);
 }
 
+TEST(CSvetlana, ItsFieldsAreAHerosFields) {
+    CSvetlana hero;
+    CTestHeroArchive archive(hero, CSvetlana::kType, 1, "");
+    hero.archive(archive.get());
+    EXPECT_EQ(hero.getLocation().area_id, CTestHeroArchive::kArea);
+    EXPECT_TRUE(archive.isFinished());
+}
+
 TEST(CSvetlana, TheFunctionsNotPortedYetQuit) {
     CSvetlana hero;
-    CTestArchive archive(hero);
     const NotPortedCalls calls = {
         {"setup", [&] { hero.setup(); }},
         {"process", [&] { hero.process(0.0F); }},
         {"renderOpaque", [&] { static_cast<void>(hero.renderOpaque()); }},
-        {"archive", [&] { hero.archive(archive.get()); }},
         {"getGrabbed", [&] { static_cast<void>(hero.getGrabbed(nullptr, 0)); }},
         {"processDamage", [&] { hero.processDamage(nullptr); }},
         {"drawWeapon", [&] { hero.drawWeapon(0); }},
         {"isWeaponDrawn", [&] { static_cast<void>(hero.isWeaponDrawn()); }},
     };
-    EXPECT_EQ(calls.size(), 8U);
+    EXPECT_EQ(calls.size(), 7U);
     expectEachQuitsNotPorted("CSvetlana", calls);
 }
 

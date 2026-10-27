@@ -1,8 +1,10 @@
 #include "core/baron/baron.h"
 
+#include "core/actor/actorarchive.h"
 #include "core/actor/demonactortype.h"
 
 #include <memory>
+#include <string>
 
 namespace nocturne::core {
 
@@ -10,6 +12,8 @@ namespace {
 
 // Of the class's fields, as save files write them.
 constexpr int kVersion = 2;
+// The version that first held the events and whether the Baron is summoned.
+constexpr int kSummonVersion = 2;
 
 } // namespace
 
@@ -19,7 +23,7 @@ constinit const CDemonActorType CBaron::kType =
 
 // deferred: loading the model baron.dfm, with CDeformableModelInstance::init
 // deferred: naming the shell's model baronshell.kfm, and the defaults the constructor gives the
-//   Baron's own fields, with the steps that read them
+//   head, target, attack, transparency and shell fields, with the steps that read them
 // nocedit 0x00412bc0
 CBaron::CBaron() = default;
 
@@ -29,6 +33,31 @@ CBaron::~CBaron() = default;
 // nocedit 0x00412bb0
 const CDemonActorType &CBaron::getActorType() const {
     return kType;
+}
+
+// nocedit 0x00413a70
+void CBaron::archive(CActorArchive &actor_archive) {
+    CHero::archive(actor_archive);
+    if (actor_archive.getSavedVersion(kType) < kSummonVersion) {
+        return;
+    }
+    actor_archive.archiveString(summon_event_, "summonEvent");
+    actor_archive.archiveString(go_away_event_, "goAwayEvent");
+    auto summoned = static_cast<int>(summoned_);
+    actor_archive.archiveInteger(summoned, "summoned");
+    summoned_ = summoned != 0;
+}
+
+const std::string &CBaron::getSummonEvent() const {
+    return summon_event_;
+}
+
+const std::string &CBaron::getGoAwayEvent() const {
+    return go_away_event_;
+}
+
+bool CBaron::isSummoned() const {
+    return summoned_;
 }
 
 // nocedit 0x00412b80

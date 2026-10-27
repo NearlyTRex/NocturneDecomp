@@ -31,10 +31,6 @@ int CGabriella::renderTransparent() {
     notPorted("renderTransparent");
 }
 
-void CGabriella::archive(CActorArchive & /*actor_archive*/) {
-    notPorted("archive");
-}
-
 void CGabriella::processDamage(SDamageInfo * /*damage_info*/) {
     notPorted("processDamage");
 }

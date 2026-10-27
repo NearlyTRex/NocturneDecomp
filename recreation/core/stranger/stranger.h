@@ -39,8 +39,21 @@ public:
     int isWeaponDrawn() override;
     void reset() override;
 
+    // The ladder the Stranger was on the way down; null for none.
+    [[nodiscard]] CDemonActor *getLadderToDescend() const;
+    [[nodiscard]] bool areGunsDrawn() const;
+    // The weapon in the Stranger's hands; null for none.
+    [[nodiscard]] CDemonActor *getWeapon() const;
+    // The action waiting to start, 0 for none.
+    [[nodiscard]] int getActionPending() const;
+
 private:
     static std::unique_ptr<CDemonActor> create();
+
+    CDemonActor *ladder_to_descend_ = nullptr;
+    bool guns_drawn_ = false;
+    CDemonActor *weapon_ = nullptr;
+    int action_pending_ = 0;
 };
 
 } // namespace nocturne::core

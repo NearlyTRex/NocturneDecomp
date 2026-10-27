@@ -1,7 +1,7 @@
 #include "core/actor/demonactortype.h"
 #include "core/haystack/haystack.h"
 #include "tests/mocks/core/notportedcalls.h"
-#include "tests/mocks/core/testarchive.h"
+#include "tests/mocks/core/testheroarchive.h"
 
 #include <gtest/gtest.h>
 
@@ -51,19 +51,25 @@ TEST(CHaystack, ItsRecordIsAVersionOneHeroThatMissionsCanCreate) {
     EXPECT_EQ(&actor->getActorType(), &CHaystack::kType);
 }
 
+TEST(CHaystack, ItsFieldsAreAHerosFields) {
+    CHaystack hero;
+    CTestHeroArchive archive(hero, CHaystack::kType, 1, "");
+    hero.archive(archive.get());
+    EXPECT_EQ(hero.getLocation().area_id, CTestHeroArchive::kArea);
+    EXPECT_TRUE(archive.isFinished());
+}
+
 TEST(CHaystack, TheFunctionsNotPortedYetQuit) {
     CHaystack hero;
-    CTestArchive archive(hero);
     const NotPortedCalls calls = {
         {"setup", [&] { hero.setup(); }},
         {"process", [&] { hero.process(0.0F); }},
         {"renderOpaque", [&] { static_cast<void>(hero.renderOpaque()); }},
-        {"archive", [&] { hero.archive(archive.get()); }},
         {"processDamage", [&] { hero.processDamage(nullptr); }},
         {"drawWeapon", [&] { hero.drawWeapon(0); }},
         {"isWeaponDrawn", [&] { static_cast<void>(hero.isWeaponDrawn()); }},
     };
-    EXPECT_EQ(calls.size(), 7U);
+    EXPECT_EQ(calls.size(), 6U);
     expectEachQuitsNotPorted("CHaystack", calls);
 }
 

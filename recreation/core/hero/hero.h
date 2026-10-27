@@ -71,6 +71,11 @@ public:
     [[nodiscard]] bool isWearingGasMask() const;
     [[nodiscard]] const CInventory &getInventory() const;
 
+protected:
+    // What the hero was on the way to, but not what it pushed, for a derived class whose older
+    // files held them.
+    void archiveInteractionTargets(CActorArchive &actor_archive);
+
 private:
     CInventory inventory_;
     EHeroControlType control_type_ = EHeroControlType::kAi;

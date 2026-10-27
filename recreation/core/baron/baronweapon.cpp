@@ -25,6 +25,8 @@ constinit const CDemonActorType CBaronWeapon::kType =
 
 // deferred: the defaults the constructor gives the weapon type, firing and light fields, and
 //   the Baron it belongs to, with the steps that read them
+// deferred: each Baron weapon claiming a Baron of its own in a network game, where the original
+//   shares the set's first (the decomp's hero_baron.h), with findOrCreateBaron and CNetGame
 // nocedit 0x00413d40
 CBaronWeapon::CBaronWeapon() = default;
 

@@ -48,8 +48,12 @@ constexpr int kQuitChoice = 3;
 // deferred: the developer tools on Ctrl+D or Ctrl+L, with showDeveloperToolsMenu
 // deferred: dropping a press of F with a control key held, with the game's hotkeys
 // deferred: the enhanced game's menu (PLAY's single-player menu with its continue, MULTIPLAYER
-//   and its hotkeys, attract movies when idle, its menu font, the window sized to the game's
-//   resolution and the items centred), with the enhanced front end
+//   and its hotkeys, its menu font, the window sized to the game's resolution and the items
+//   centred), with the enhanced front end
+// deferred: an attract movie, one of NOC1 to NOC4.AVI that nothing in the original plays, at the
+//   end of a pass of the splash music with the main menu on screen, after a short silence, then
+//   the music restarted with reset and configure; a pass ending under a submenu or dialog is
+//   skipped (the decomp's attract.h nocturne_attract_tick), with the attract movies
 // nocedit 0x00512f40
 int CMenu::showMainGameMenu() {
     if (owners_.screen.getWindowHeight() < kSmallestWindowHeight) {

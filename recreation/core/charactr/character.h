@@ -129,6 +129,9 @@ public:
     [[nodiscard]] EHealthBarMode getHealthBarMode() const;
     // The name the character is shown by, marked for translation.
     [[nodiscard]] const std::string &getDescriptiveName() const;
+    // The layer action the character is in, and how far through it.
+    [[nodiscard]] int getLayerActionIndex() const;
+    [[nodiscard]] float getLayerActionT() const;
 
     // One for each hand.
     static constexpr std::size_t kCarryHands = 2;
@@ -140,6 +143,9 @@ protected:
     void archiveDemonActorFields(CActorArchive &actor_archive);
     void archiveGrabbedBy(CActorArchive &actor_archive);
     void archiveHitPoints(CActorArchive &actor_archive);
+    // What the left hand, then the right, carries.
+    void archiveCarryObjects(CActorArchive &actor_archive);
+    void archiveLayerAction(CActorArchive &actor_archive);
     void clearGrabbedType();
     void setHealthBarMode(EHealthBarMode health_bar_mode);
 
@@ -157,6 +163,8 @@ private:
     float size_scale_ = 1.0F;
     EHealthBarMode health_bar_mode_ = EHealthBarMode::kNone;
     std::string descriptive_name_;
+    int layer_action_index_ = 0;
+    float layer_action_t_ = 0.0F;
 };
 
 } // namespace nocturne::core

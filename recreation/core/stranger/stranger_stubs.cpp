@@ -40,10 +40,6 @@ void CStranger::drop(CDemonActor * /*carrier*/, common::CVector3f * /*drop_posit
     notPorted("drop");
 }
 
-void CStranger::archive(CActorArchive & /*actor_archive*/) {
-    notPorted("archive");
-}
-
 int CStranger::getGrabbed(CDemonActor * /*grabber*/, int /*grab_type*/) {
     notPorted("getGrabbed");
 }
