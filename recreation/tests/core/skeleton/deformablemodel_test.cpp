@@ -26,10 +26,9 @@ TEST(CDeformableModel, PublicInterface) {
     static_assert(std::is_same_v<decltype(&CDeformableModel::skinVertices),
                                  void (CDeformableModel::*)(int, common::CMatrix3x4f *, int *,
                                                             SPartInstanceData *)>);
-    static_assert(
-        std::is_same_v<decltype(&CDeformableModel::skinSingleVertex),
-                       common::CVector3f *(CDeformableModel::*)(common::CVector3f *, int, int,
-                                                                common::CMatrix3x4f *)>);
+    static_assert(std::is_same_v<decltype(&CDeformableModel::skinSingleVertex),
+                                 common::CVector3f *(CDeformableModel::*)(
+                                     common::CVector3f *, int, int, common::CMatrix3x4f *)>);
     static_assert(std::is_same_v<decltype(&CDeformableModel::rotateVertices),
                                  void (CDeformableModel::*)(int, int *)>);
     static_assert(std::is_same_v<decltype(&CDeformableModel::lightVertices),

@@ -18,10 +18,10 @@ TEST(CMirrorReflection, PublicInterface) {
     static_assert(std::is_same_v<decltype(&CMirrorReflection::transformMirrorVertex),
                                  common::CVector3i *(CMirrorReflection::*)(common::CVector3i *,
                                                                            common::CVector3i *)>);
-    static_assert(std::is_same_v<decltype(&CMirrorReflection::transformMirrorEdgeToIntegerSpace),
-                                 common::CVector3i *(CMirrorReflection::*)(common::CVector3i *,
-                                                                           common::CVector3i *,
-                                                                           common::CVector3i *)>);
+    static_assert(
+        std::is_same_v<decltype(&CMirrorReflection::transformMirrorEdgeToIntegerSpace),
+                       common::CVector3i *(CMirrorReflection::*)(
+                           common::CVector3i *, common::CVector3i *, common::CVector3i *)>);
 }
 
 } // namespace

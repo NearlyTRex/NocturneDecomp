@@ -20,10 +20,10 @@ TEST(CDemonRaytrace, PublicInterface) {
                                  bool (CDemonRaytrace::*)(std::string_view)>);
     static_assert(std::is_same_v<decltype(&CDemonRaytrace::getCubeAt),
                                  const CDemonCube *(CDemonRaytrace::*)(int, int, int) const>);
-    static_assert(std::is_same_v<decltype(&CDemonRaytrace::rayIntersection),
-                                 common::CVector3f *(CDemonRaytrace::*)(common::CVector3f *,
-                                                                        common::CVector3f *,
-                                                                        common::CVector3f *)>);
+    static_assert(
+        std::is_same_v<decltype(&CDemonRaytrace::rayIntersection),
+                       common::CVector3f *(CDemonRaytrace::*)(
+                           common::CVector3f *, common::CVector3f *, common::CVector3f *)>);
     static_assert(std::is_same_v<decltype(&CDemonRaytrace::rayVoxelIntersection),
                                  float (CDemonRaytrace::*)(common::CVector3f *, common::CVector3f *,
                                                            common::CVector3f *, int *)>);
