@@ -342,7 +342,9 @@ TEST_F(CEdScrollBarTest, ABarLetsGoOfTheMouseWhenItGoes) {
     ASSERT_EQ(controls_.getActiveControl(), held.get());
     held.reset();
     EXPECT_EQ(controls_.getActiveControl(), nullptr);
-    { const CEdScrollBar other(controls_); }
+    {
+        const CEdScrollBar other(controls_);
+    }
     EXPECT_EQ(controls_.getActiveControl(), nullptr);
 }
 

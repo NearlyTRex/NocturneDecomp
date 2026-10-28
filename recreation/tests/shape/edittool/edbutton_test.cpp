@@ -137,7 +137,9 @@ TEST_F(CEdButtonTest, AButtonLetsGoOfTheMouseWhenItGoes) {
 TEST_F(CEdButtonTest, AButtonNotHoldingTheMouseLeavesItWhenItGoes) {
     mouseAt(15, 15, true);
     button_.wasClicked();
-    { const CEdButton other(controls_); }
+    {
+        const CEdButton other(controls_);
+    }
     EXPECT_EQ(controls_.getActiveControl(), &button_);
 }
 
