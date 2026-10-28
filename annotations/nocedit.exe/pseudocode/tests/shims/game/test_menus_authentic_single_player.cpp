@@ -2,7 +2,7 @@
 // MENUS, AUTHENTIC SINGLE PLAYER — no submenu
 // =============================================================================
 //
-// Built with NOCTURNE_AUTHENTIC_SINGLE_PLAYER_MENU: the main menu starts a game
+// Built with NOCTURNE_AUTHENTIC_MENU: the main menu starts a game
 // directly, so there is no submenu to show and nothing to continue.
 
 #include "game/save_slots.h"

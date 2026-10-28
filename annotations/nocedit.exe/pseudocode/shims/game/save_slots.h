@@ -61,7 +61,7 @@ extern "C" {
 // backs out. Returns one of the three above, or
 // NOCTURNE_SP_MENU_CANCEL for Escape or a window close.
 //
-// Gated by NOCTURNE_AUTHENTIC_SINGLE_PLAYER_MENU, not by the save-slot flag:
+// Gated by NOCTURNE_AUTHENTIC_MENU, not by the save-slot flag:
 // where the main menu puts Load and what the picker then looks like are
 // separate choices.
 //

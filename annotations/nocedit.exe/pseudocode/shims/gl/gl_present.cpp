@@ -18,6 +18,7 @@
 #include "gl/gl_api.h"
 #include "gl/gl_blit.h"
 #include "gl/gl_pixels.h"
+#include "gl/upscaler.h"
 
 #include <cmath>
 #include <stdlib.h>
@@ -404,14 +405,29 @@ void present_to_window(GLuint texture, int fallback_w, int fallback_h, bool flip
     // Nearest keeps whole-multiple scaling crisp; at a fractional scale it makes
     // pixel sizes visibly uneven (some source pixels land on 1 screen pixel,
     // their neighbours on 2), so blend instead.
-    set_sampling(texture, viewport_is_integer_scale(vp_w, logical_w) ? GL_NEAREST : GL_LINEAR);
+    const GLint standard_filter =
+        viewport_is_integer_scale(vp_w, logical_w) ? GL_NEAREST : GL_LINEAR;
+
+    // FSR only enlarges: the texture is `fallback_w` x `fallback_h`, and a
+    // picture shown at that size or smaller takes the standard filter. It
+    // samples linearly; if it cannot be had, the standard filter is put back.
+    int drawn = 0;
+    if (nocturne_upscaler_get() == NOCTURNE_UPSCALER_FSR &&
+        (vp_w > fallback_w || vp_h > fallback_h)) {
+        set_sampling(texture, GL_LINEAR);
+        drawn = nocturne_gl_blit_quad_fsr(texture, flipped ? 1 : 0, fallback_w, fallback_h,
+                                          (float)nocturne_upscaler_sharpness_get() /
+                                              (float)NOCTURNE_UPSCALER_SHARPNESS_MAX);
+    }
 
     // Every frame reaches the screen through this one quad — software mode
     // included, since nothing else draws there. A failure here is a black window
     // and it says so, rather than being carried by a second path that would hide
     // a program that stopped building.
-    const int drawn =
-        flipped ? nocturne_gl_blit_quad_flipped(texture) : nocturne_gl_blit_quad(texture);
+    if (!drawn) {
+        set_sampling(texture, standard_filter);
+        drawn = flipped ? nocturne_gl_blit_quad_flipped(texture) : nocturne_gl_blit_quad(texture);
+    }
     if (!drawn) {
         DLOG_RL("render", 1, 600, "gl_present: present quad unavailable — frame not drawn");
     }

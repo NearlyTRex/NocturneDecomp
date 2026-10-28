@@ -6,9 +6,6 @@
 // Signature: int __cdecl core_main_c_enterMainGameMenu_FUN_00507a50(void)
 
 #include "nocturne.h"
-#if !NOCTURNE_AUTHENTIC_ATTRACT_MOVIES
-#include "core/debug_log.h"
-#endif
 
 int __cdecl core_main_c_enterMainGameMenu_FUN_00507a50(void)
 
@@ -20,40 +17,14 @@ int __cdecl core_main_c_enterMainGameMenu_FUN_00507a50(void)
   char (*pacVar6) [256];
   int iStack_c;
   int iStack_8;
-#if !NOCTURNE_AUTHENTIC_ATTRACT_MOVIES
-  char attract_movie [16];
-  int attract_result;
-#endif
-#if !NOCTURNE_AUTHENTIC_NETPLAY || !NOCTURNE_AUTHENTIC_SINGLE_PLAYER_MENU
-  char *menu_ptrs [8];
-  int menu_count;
-  int menu_y;
-  int start_item;
-  int options_item;
-  int load_item;
-  int quit_item;
-  int multiplayer_item;
-#endif
-#if !NOCTURNE_AUTHENTIC_NETPLAY
-  char multiplayer_line [256];
-#endif
-#if !NOCTURNE_AUTHENTIC_SINGLE_PLAYER_MENU
-  int sp_choice;
-#if !NOCTURNE_AUTHENTIC_AUTOSAVE
-  char continue_filename [260];
-#endif
-#endif
 
+#if !NOCTURNE_AUTHENTIC_MENU
+  return nocturne_main_menu();
+#endif
   pCVar2 = g_CGamePtr;
   if (g_WindowHeight < 0x1e0) {
     return 1;
   }
-#if !NOCTURNE_AUTHENTIC_MENU_FONT
-  if ((g_ThemeFont != (CBitFont *)0x0) &&
-      ((g_CDemonMissionPtr == (CDemonMission *)0x0) || (g_CDemonMissionPtr->is_in_editor == 0))) {
-    g_EditorFont = nocturne_menu_font();
-  }
-#endif
   if ((g_UseDirect3D == 0) && (0x1e0 < g_CGamePtr->game_pixy)) {
     g_CGamePtr->game_pixy = 0x1e0;
     pCVar2->game_pixx = 0x280;
@@ -79,18 +50,10 @@ int __cdecl core_main_c_enterMainGameMenu_FUN_00507a50(void)
   core_game_cpp_CGame_saveClockTime_FUN_004d7d80(g_CGamePtr);
   do {
     core_game_cpp_CGame_updateDT_FUN_004d7d90(g_CGamePtr);
-#if !NOCTURNE_AUTHENTIC_MENU_RESOLUTION
-    nocturne_window_set_size(g_CGamePtr->game_pixx,g_CGamePtr->game_pixy);
-#endif
     core_moon_cpp_CMoon_update_FUN_00529d60(&g_CMoonInstance,g_CGamePtr->delta_time_float);
     core_moon_cpp_CMoon_render_FUN_00529ed0(&g_CMoonInstance);
-#if NOCTURNE_AUTHENTIC_SINGLE_PLAYER_MENU
     strcpy(g_MainMenuTextBuffers[0],
            support_newmsg_cpp_getLocalizedString_FUN_005441f0("S T A R T"));
-#else
-    strcpy(g_MainMenuTextBuffers[0],
-           support_newmsg_cpp_getLocalizedString_FUN_005441f0("P L A Y"));
-#endif
     strcpy(g_MainMenuTextBuffers[1],
            support_newmsg_cpp_getLocalizedString_FUN_005441f0("O P T I O N S"));
     strcpy(g_MainMenuTextBuffers[2],
@@ -104,98 +67,12 @@ int __cdecl core_main_c_enterMainGameMenu_FUN_00507a50(void)
       iVar4 = iVar4 + 4;
       pacVar6 = pacVar6 + 1;
     } while (iVar4 != 0x10);
-#if NOCTURNE_AUTHENTIC_NETPLAY && NOCTURNE_AUTHENTIC_SINGLE_PLAYER_MENU
     iVar4 = core_menu_cpp_renderMenuAndGetChoice_FUN_00510000(g_MenuTextPointers,4,&iStack_c,0xfa,0)
     ;
-#else
-    menu_count = 0;
-    start_item = menu_count;
-    menu_ptrs[menu_count] = g_MenuTextPointers[0];
-    menu_count = menu_count + 1;
-    multiplayer_item = -1;
-#if !NOCTURNE_AUTHENTIC_NETPLAY
-    strcpy(multiplayer_line,
-           support_newmsg_cpp_getLocalizedString_FUN_005441f0("M U L T I P L A Y E R"));
-    multiplayer_item = menu_count;
-    menu_ptrs[menu_count] = multiplayer_line;
-    menu_count = menu_count + 1;
-#endif
-    options_item = menu_count;
-    menu_ptrs[menu_count] = g_MenuTextPointers[1];
-    menu_count = menu_count + 1;
-    load_item = -1;
-#if NOCTURNE_AUTHENTIC_SINGLE_PLAYER_MENU
-    load_item = menu_count;
-    menu_ptrs[menu_count] = g_MenuTextPointers[2];
-    menu_count = menu_count + 1;
-#endif
-#if !NOCTURNE_AUTHENTIC_APP_QUIT
-    quit_item = -1;
-    if (g_nocturne_no_quit == 0) {
-      quit_item = menu_count;
-      menu_ptrs[menu_count] = g_MenuTextPointers[3];
-      menu_count = menu_count + 1;
-    }
-#else
-    quit_item = menu_count;
-    menu_ptrs[menu_count] = g_MenuTextPointers[3];
-    menu_count = menu_count + 1;
-#endif
-    menu_y = nocturne_menu_start_y(NOCTURNE_MENU_ROWS_UNTITLED(menu_count));
-    iVar4 = core_menu_cpp_renderMenuAndGetChoice_FUN_00510000
-                      (menu_ptrs,menu_count,&iStack_c,menu_y,0);
-#endif
     if (iStack_8 != 0) {
       engine_special_cpp_clearScreen_FUN_005b3e70();
     }
     wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();
-#if !NOCTURNE_AUTHENTIC_NETPLAY || !NOCTURNE_AUTHENTIC_SINGLE_PLAYER_MENU
-    if (0 <= iVar4) {
-      if (iVar4 == start_item) {
-#if NOCTURNE_AUTHENTIC_SINGLE_PLAYER_MENU
-        iVar4 = 0;
-#else
-        sp_choice = nocturne_single_player_menu();
-        if (sp_choice == NOCTURNE_SP_MENU_START) {
-          iVar4 = 0;
-        }
-        else if (sp_choice == NOCTURNE_SP_MENU_LOAD) {
-          iVar4 = 2;
-        }
-        else if (sp_choice == NOCTURNE_SP_MENU_CONTINUE) {
-          iVar4 = 4;
-        }
-        else {
-          iVar4 = -1;
-        }
-#endif
-      }
-      else if (iVar4 == multiplayer_item) {
-        iVar4 = nocturne_net_menu_multiplayer();
-        if (iVar4 == NOCTURNE_NET_MENU_HOST) {
-          core_sound_cpp_CSound_reset_FUN_005b39a0(g_CSoundPtr);
-          core_game_cpp_hostNetworkGame_FUN_004e2f10();
-          core_sound_cpp_CSound_configure_FUN_005b3830(g_CSoundPtr);
-        }
-        else if (iVar4 == NOCTURNE_NET_MENU_JOIN) {
-          core_sound_cpp_CSound_reset_FUN_005b39a0(g_CSoundPtr);
-          core_game_cpp_joinNetworkGame_FUN_004e2fc0();
-          core_sound_cpp_CSound_configure_FUN_005b3830(g_CSoundPtr);
-        }
-        engine_2d_c_clearInputAndWait_FUN_00403260();
-        iVar4 = -1;
-      }
-      else if (iVar4 == options_item) {
-        iVar4 = 1;
-      }
-      else if (iVar4 == load_item) {
-        iVar4 = 2;
-      }
-      else if (iVar4 == quit_item) {
-        iVar4 = 3;
-      }
-    }
-#endif
     switch(iVar4) {
     case 0:
       core_moon_cpp_CMoon_free_FUN_00529ce0(&g_CMoonInstance);
@@ -224,24 +101,8 @@ int __cdecl core_main_c_enterMainGameMenu_FUN_00507a50(void)
       engine_2d_c_clearInputAndWait_FUN_00403260();
       break;
     case 2:
-#if !NOCTURNE_AUTHENTIC_SINGLE_PLAYER_MENU && !NOCTURNE_AUTHENTIC_AUTOSAVE
-    case 4:
-#endif
       core_moon_cpp_CMoon_free_FUN_00529ce0(&g_CMoonInstance);
       core_sound_cpp_CSound_reset_FUN_005b39a0(g_CSoundPtr);
-#if !NOCTURNE_AUTHENTIC_SINGLE_PLAYER_MENU && !NOCTURNE_AUTHENTIC_AUTOSAVE
-      if (iVar4 == 4) {
-        if (nocturne_save_continue_target(continue_filename,sizeof(continue_filename)) == 0) {
-          shape_edittool_cpp_CEditorTools_showError_FUN_0049e740
-                    (g_CEditorToolsPtr,"%s",
-                     support_newmsg_cpp_getLocalizedString_FUN_005441f0("No files found"));
-        }
-        else {
-          core_game_cpp_CGame_loadGame_FUN_004e12b0(g_CGamePtr,continue_filename,1);
-        }
-      }
-      else
-#endif
       core_game_cpp_CGame_loadGame_FUN_004e12b0(g_CGamePtr,(char *)0x0,1);
       engine_2d_c_clearInputAndWait_FUN_00403260();
       engine_texture_cpp_clearTextureCache_FUN_005dd8e0();
@@ -252,15 +113,7 @@ LAB_005131d5:
     case 3:
       iVar5 = 99;
     }
-#if !NOCTURNE_AUTHENTIC_GAMEPAD
-    nocturne_gamepad_withdraw_nav(DIK_ESCAPE);
-#endif
     iVar4 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_ESCAPE);
-#if !NOCTURNE_AUTHENTIC_APP_QUIT
-    if (g_nocturne_no_quit != 0) {
-      iVar4 = 0;
-    }
-#endif
     if (iVar4 != 0) {
       iVar5 = 99;
     }
@@ -302,26 +155,11 @@ LAB_005131d5:
       core_fileman_cpp_CDemonFileManager_showEditorMenu_FUN_004be270(&g_CDemonFileManagerInstance);
       core_sound_cpp_CSound_configure_FUN_005b3830(g_CSoundPtr);
     }
-#if !NOCTURNE_AUTHENTIC_NETPLAY
-    nocturne_net_menu_hotkeys();
-#endif
     if (iStack_8 != 0) {
       iStack_8 = 0;
       core_sound_cpp_CSound_configure_FUN_005b3830(g_CSoundPtr);
       engine_2d_c_clearInputAndWait_FUN_00403260();
     }
-#if !NOCTURNE_AUTHENTIC_ATTRACT_MOVIES
-    if (nocturne_attract_tick() != 0) {
-      _sprintf(attract_movie,"noc%d.avi",core_actor_cpp_getRandomInt_FUN_0040cc70(1,4));
-      DLOG("frontend","playing '%s'",attract_movie);
-      engine_2d_c_clearInputAndWait_FUN_00403260();
-      core_sound_cpp_CSound_reset_FUN_005b39a0(g_CSoundPtr);
-      nocturne_attract_pre_movie_pause();
-      attract_result = wincore_winvideo_cpp_playMovie_FUN_005f4a00("video",attract_movie);
-      DLOG("frontend","playMovie returned %d",attract_result);
-      core_sound_cpp_CSound_configure_FUN_005b3830(g_CSoundPtr);
-    }
-#endif
     if (iVar5 != 0) {
       core_sound_cpp_CSound_reset_FUN_005b39a0(g_CSoundPtr);
       core_moon_cpp_CMoon_free_FUN_00529ce0(&g_CMoonInstance);

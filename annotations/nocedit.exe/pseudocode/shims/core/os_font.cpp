@@ -2,7 +2,7 @@
 // OS FONT — implementation
 // =============================================================================
 //
-// See os_font.h, and NOCTURNE_AUTHENTIC_OS_FONT in config/shim_config_authentic.h.
+// See os_font.h, and NOCTURNE_AUTHENTIC_MENU in config/shim_config_authentic.h.
 
 #include "core/os_font.h"
 
@@ -10,7 +10,7 @@
 #include "nocturne.h"
 #include "shim_config.h"
 
-#if !NOCTURNE_AUTHENTIC_OS_FONT
+#if !NOCTURNE_AUTHENTIC_MENU
 
 namespace {
 
@@ -86,4 +86,4 @@ extern "C" const char *nocturne_os_font_name(int) {
 }
 extern "C" void nocturne_os_font_apply(void) {}
 
-#endif // !NOCTURNE_AUTHENTIC_OS_FONT
+#endif // !NOCTURNE_AUTHENTIC_MENU

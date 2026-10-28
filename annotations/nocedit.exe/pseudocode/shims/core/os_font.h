@@ -4,10 +4,9 @@
 // OS FONT — which of the engine's two text paths is used
 // =============================================================================
 //
-// Gated by NOCTURNE_AUTHENTIC_OS_FONT, which carries the reasoning; the short
-// version is that the engine has always been able to draw text through OS fonts
-// instead of its bitmap sheets, and nothing in either shipped binary ever turns
-// that on.
+// Gated by NOCTURNE_AUTHENTIC_MENU, whose Gameplay page sets it. The engine
+// has always been able to draw text through OS fonts instead of its bitmap
+// sheets, and nothing in either shipped binary ever turns that on.
 //
 // The choice is read at startup by CGame::initFonts, which is the only place
 // that acts on it — it is what decides whether the CWinFont objects are built.

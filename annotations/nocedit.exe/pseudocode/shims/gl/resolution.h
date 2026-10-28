@@ -31,7 +31,8 @@
 // This replaces the chain with one ordered table, so the labels and the
 // stepping cannot disagree.
 //
-// Gated by NOCTURNE_AUTHENTIC_RESOLUTION_LIST in shim_config_authentic.h.
+// Used by the Graphic Options page under NOCTURNE_AUTHENTIC_MENU=0; the shipped
+// chain is in the configureGraphicsOptions keep, and research/18 has its gaps.
 //
 // The table is 4:3 throughout except 1280x1024, which the shipped game already
 // offered. That matters because CDemonCamera::init derives its width as
@@ -53,8 +54,7 @@ extern "C" {
 // Without it the selector steps onto a mode the caller then has to refuse: the
 // Options screen clamps anything past 480 lines back to 640x480 while
 // acceleration is off, but it clamps on the NEXT pass, so the refused mode has
-// already been stored and, with NOCTURNE_AUTHENTIC_MENU_RESOLUTION off,
-// already resized the window. Wrapping inside the reachable range instead means
+// already been stored and, under the menu pages, already resized the window. Wrapping inside the reachable range instead means
 // right from the largest software mode reaches the smallest, and nothing is
 // ever selected only to be taken back.
 //

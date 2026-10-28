@@ -10,7 +10,7 @@ set_source_files_properties("${NOCTURNE_PSEUDOCODE_DIR}/shims/core/version.cpp"
     PROPERTIES COMPILE_DEFINITIONS "NOCTURNE_VERSION_GENERATED=1")
 
 nocturne_test_suite(shims_core
-    EXCLUDE "/test_(console|ui_scale|menu_font|menu_font_saved|menu_font_negative|os_font|menu_screen|audio_backend|window_icon)\\.cpp$"
+    EXCLUDE "/test_(console|ui_scale|menu_font|menu_font_saved|menu_font_negative|os_font|menu_screen|menu_render|audio_backend|window_icon)\\.cpp$"
     SUBJECTS
         # Reaches the filesystem but nothing else; tested against a directory
         # the test builds itself.
@@ -50,6 +50,16 @@ nocturne_test_suite(shims_core_ui
     SUPPORT
         ui_support.cpp
         ../gl/ini_support.cpp
+)
+
+# How a menu list is drawn and what a key does to it, over text routines and
+# keys menu_render_support.cpp stands in for.
+nocturne_test_suite(shims_core_menu_render
+    TESTS test_menu_render.cpp
+    SUBJECTS
+        shims/core/menu_render.cpp
+    SUPPORT
+        menu_render_support.cpp
 )
 
 # The audio backend's name and the window icon, their SDL calls renamed in this

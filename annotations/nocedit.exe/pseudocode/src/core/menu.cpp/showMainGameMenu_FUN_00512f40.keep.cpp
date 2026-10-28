@@ -150,9 +150,6 @@ LAB_005131d5:
       core_fileman_cpp_CDemonFileManager_showEditorMenu_FUN_004be270(&g_CDemonFileManagerInstance);
       core_sound_cpp_CSound_configure_FUN_005b3830(g_CSoundPtr);
     }
-#if !NOCTURNE_AUTHENTIC_NETPLAY
-    nocturne_net_menu_hotkeys();
-#endif
     if (iStack_8 != 0) {
       iStack_8 = 0;
       core_sound_cpp_CSound_configure_FUN_005b3830(g_CSoundPtr);

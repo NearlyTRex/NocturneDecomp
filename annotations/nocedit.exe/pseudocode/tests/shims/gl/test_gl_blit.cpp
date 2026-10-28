@@ -13,6 +13,7 @@
 #include "shims/renderer/gl_recorder.h"
 
 #include <cstddef>
+#include <cstring>
 #include <string>
 
 namespace {
@@ -36,6 +37,35 @@ void APIENTRY no_buffer(GLsizei n, GLuint *out) {
 
 void APIENTRY failed(GLuint, GLenum, GLint *out) {
     *out = GL_FALSE;
+}
+
+// The plain quad's program is the first made, FSR's the second.
+const unsigned kFsrProgram = 2;
+
+void APIENTRY fsr_fails_to_link(GLuint program, GLenum, GLint *out) {
+    *out = program == kFsrProgram ? GL_FALSE : GL_TRUE;
+}
+
+// a_uv where the recorder puts it, except in the FSR program.
+GLint APIENTRY uv_moves_in_fsr(GLuint program, const GLchar *name) {
+    if (std::strcmp(name, "a_uv") != 0)
+        return 0;
+    return program == kFsrProgram ? 5 : 3;
+}
+
+// The last call named `name`: what it was given.
+const gl_recorder::Call &last(const gl_recorder::State &s, const char *name) {
+    return s.calls[(size_t)s.index_of_last(name)];
+}
+
+// How many times `program` was made current.
+int used(const gl_recorder::State &s, unsigned program) {
+    int n = 0;
+    for (const gl_recorder::Call &c : s.calls) {
+        if (c.name == "UseProgram" && c.a == program)
+            ++n;
+    }
+    return n;
 }
 
 } // namespace
@@ -137,6 +167,83 @@ NOCTURNE_TEST(a_quad_the_driver_will_not_make_is_none) {
     CHECK_EQ(s.count("DeleteBuffers"), 1);
     CHECK_EQ(nocturne_gl_blit_quad(1), 0); // and is not tried again
     CHECK_EQ(s.count("GenBuffers"), 1);
+}
+
+// FSR draws the texture with a program of its own over the plain quad's
+// buffer, told the source size and how hard to sharpen: a quarter at the soft
+// end, all of it at the other. The pipeline before is put back.
+NOCTURNE_TEST(fsr_draws_through_its_own_program_and_puts_the_pipeline_back) {
+    gl_recorder::State &s = start();
+    gl.UseProgram(42);
+    gl.BindVertexArray(7);
+    CHECK_EQ(nocturne_gl_blit_quad_fsr(5, 0, 640, 480, 0.0f), 1);
+    CHECK_EQ(s.count("CreateProgram"), 2);
+    CHECK_EQ(s.count("BufferData"), 1);
+    CHECK_EQ(used(s, kFsrProgram), 1);
+    CHECK_EQ(last(s, "DrawArrays").a, 5u);
+    CHECK_EQ(drawn_first(s), 0u);
+    CHECK_EQ(last(s, "Uniform2f").b, 640u);
+    CHECK_EQ(last(s, "Uniform2f").c, 480u);
+    CHECK_EQ(last(s, "Uniform1f").b, 250u);
+    CHECK_EQ(s.bound_program, 42u);
+    CHECK_EQ(s.bound_vao, 7u);
+
+    // A render target bottom-up, at the strongest, from what was built.
+    CHECK_EQ(nocturne_gl_blit_quad_fsr(6, 1, 320, 240, 1.0f), 1);
+    CHECK_EQ(drawn_first(s), 4u);
+    CHECK_EQ(last(s, "Uniform1f").b, 1000u);
+    CHECK_EQ(s.count("CreateProgram"), 2);
+}
+
+// Without the uniforms it sets, there is no FSR, and it is not asked for
+// again; the plain quad is unaffected.
+NOCTURNE_TEST(without_its_uniforms_there_is_no_fsr) {
+    for (int which = 0; which < 2; ++which) {
+        gl_recorder::State &s = start();
+        if (which == 0)
+            gl.Uniform1f = nullptr;
+        else
+            gl.Uniform2f = nullptr;
+        CHECK_EQ(nocturne_gl_blit_quad_fsr(1, 0, 640, 480, 0.5f), 0);
+        CHECK_EQ(nocturne_gl_blit_quad_fsr(1, 0, 640, 480, 0.5f), 0);
+        CHECK_EQ(s.count("CreateProgram"), 1);
+        CHECK_EQ(nocturne_gl_blit_quad(1), 1);
+    }
+}
+
+// An FSR program that will not link, or that reads its coordinates from
+// somewhere the quad's vertex array does not feed, is none.
+NOCTURNE_TEST(an_fsr_program_that_will_not_serve_is_none) {
+    gl_recorder::State &s = start();
+    gl.GetProgramiv = fsr_fails_to_link;
+    CHECK_EQ(nocturne_gl_blit_quad_fsr(1, 0, 640, 480, 0.5f), 0);
+    CHECK_EQ(nocturne_gl_blit_quad_fsr(1, 0, 640, 480, 0.5f), 0);
+    CHECK_EQ(s.count("CreateProgram"), 2);
+    CHECK_EQ(nocturne_gl_blit_quad(1), 1);
+
+    start();
+    gl.GetAttribLocation = uv_moves_in_fsr;
+    CHECK_EQ(nocturne_gl_blit_quad_fsr(1, 0, 640, 480, 0.5f), 0);
+    CHECK_EQ(s.count("DeleteProgram"), 1);
+    CHECK_EQ(used(s, kFsrProgram), 0);
+}
+
+// No plain quad, no FSR: it draws over the quad's buffer.
+NOCTURNE_TEST(without_the_quad_there_is_no_fsr) {
+    gl_recorder::State &s = start();
+    gl.GenBuffers = no_buffer;
+    CHECK_EQ(nocturne_gl_blit_quad_fsr(1, 0, 640, 480, 0.5f), 0);
+    CHECK_EQ(s.count("CreateProgram"), 1);
+}
+
+// FSR's program goes with the quad, and both are built again after.
+NOCTURNE_TEST(shutting_down_lets_fsr_go_too) {
+    gl_recorder::State &s = start();
+    CHECK_EQ(nocturne_gl_blit_quad_fsr(1, 0, 640, 480, 0.5f), 1);
+    nocturne_gl_blit_shutdown();
+    CHECK_EQ(s.count("DeleteProgram"), 2);
+    CHECK_EQ(nocturne_gl_blit_quad_fsr(1, 0, 640, 480, 0.5f), 1);
+    CHECK_EQ(s.count("CreateProgram"), 4);
 }
 
 NOCTURNE_TEST_MAIN()

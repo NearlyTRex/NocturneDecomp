@@ -34,6 +34,16 @@ NOCTURNE_TEST(a_menu_starts_where_it_fits) {
     CHECK_EQ(nocturne_menu_start_y(60), 0);
 }
 
+// A title sits below the logo, lifted only as far as a long list needs, and
+// never above the top.
+NOCTURNE_TEST(a_title_sits_below_the_logo) {
+    ui_support::screen(640, 480, 32);
+    stand.reset();
+    CHECK_EQ(nocturne_menu_titled_y(5), NOCTURNE_MENU_TITLE_Y);
+    CHECK_EQ(nocturne_menu_titled_y(30), 480 - 340);
+    CHECK_EQ(nocturne_menu_titled_y(60), 0);
+}
+
 // Escape, or the window closing, backs out.
 NOCTURNE_TEST(escape_or_closing_backs_out) {
     ui_support::screen(640, 480, 32);

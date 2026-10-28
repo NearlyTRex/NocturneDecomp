@@ -44,7 +44,7 @@ window or find the game data. The same line goes to the console at session start
 shipped `game.cpp built on` banner, so it is in every `nocturne_debug.log` anyone sends.
 
 The menu corner carries `git describe`, right-aligned under the copyright line, behind
-`NOCTURNE_AUTHENTIC_MENU_VERSION` — see [authenticity-flags.md](authenticity-flags.md).
+`NOCTURNE_AUTHENTIC_MENU` — see [authenticity-flags.md](authenticity-flags.md).
 
 ## The vanilla lane
 

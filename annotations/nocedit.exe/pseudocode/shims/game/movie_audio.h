@@ -8,7 +8,7 @@
 // which mixed them at the desktop's volume and knew nothing about the game's
 // own settings. So the opening movie played at whatever level the file was
 // mastered at, through a mute the rest of the game respected. The line below is
-// gated on NOCTURNE_AUTHENTIC_FMV.
+// the Sound Options page's, under NOCTURNE_AUTHENTIC_MENU.
 //
 // This gives movies a level of their own, on the "Movie Vol" line in Sound
 // Options, persisted as [Sound] MovieVolume. It is deliberately not one of the
@@ -41,7 +41,7 @@ void nocturne_movie_volume_set(float volume);
 // The gain to actually apply to movie audio: the level above, or 0 when sound
 // is muted. This is what the movie decoder multiplies its samples by; it is
 // separate from the level so that muting does not overwrite the player's
-// chosen volume. Always 1 under NOCTURNE_AUTHENTIC_FMV.
+// chosen volume. Always 1 under NOCTURNE_AUTHENTIC_MENU.
 float nocturne_movie_audio_gain(void);
 
 #ifdef __cplusplus
