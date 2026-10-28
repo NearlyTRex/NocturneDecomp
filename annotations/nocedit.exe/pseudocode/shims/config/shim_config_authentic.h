@@ -73,7 +73,7 @@
 // | `NOCTURNE_AUTHENTIC_ACTOR_DELETE` | 0 | defect | references are cleared before the memory is freed |
 // | `NOCTURNE_AUTHENTIC_HERO_WEAPON` | 0 | defect | each hero class starts with, and only holds, what it can actually use |
 // | `NOCTURNE_AUTHENTIC_HERO_ACTIONS` | 0 | defect | the other eight classes can interact, escape a grab and use health items |
-// | `NOCTURNE_AUTHENTIC_INPUT_REPEAT` | 0 | defect | a held button starts an action once instead of every frame |
+// | `NOCTURNE_AUTHENTIC_INPUT_REPEAT` | 0 | defect | an empty weapon's click repeats at a rate, not every frame |
 // | `NOCTURNE_AUTHENTIC_ITEM_HELP_POSITION` | 0 | defect | the pickup help text does not sit on top of the pickup name |
 // | `NOCTURNE_AUTHENTIC_DEATH_MESSAGE_POSITION` | 0 | defect | the death banner is centred, clear of the message line |
 // | `NOCTURNE_AUTHENTIC_TEXT_RENDER_ALPHA` | 0 | defect | 2D text blends at its own alpha, not the last pass's leftover |
@@ -112,6 +112,7 @@
 // | `NOCTURNE_AUTHENTIC_CHEAT_MENU` | 0 | addition | a CHEATS entry on Options, and WARPS on pause |
 // | `NOCTURNE_AUTHENTIC_HUD_SCALE` | 0 | addition | the HUD scales with the framebuffer |
 // | `NOCTURNE_AUTHENTIC_STATUS_BAR_WIDTH` | 0 | addition | a hero's status bar is as long as its maximum health |
+// | `NOCTURNE_AUTHENTIC_PUSH_SOUND` | 0 | addition | a pushed box scrapes on every shove, not only the first |
 // | `NOCTURNE_AUTHENTIC_MENU` | 0 | addition | the front end's screens are shim pages, with every menu addition |
 // | `NOCTURNE_AUTHENTIC_CONSOLE` | 0 | addition | the console fills the window and keeps scrollback |
 // | `NOCTURNE_AUTHENTIC_ATTRACT_MOVIES` | 0 | addition | the menu cycles NOC1..NOC4 after its music |
@@ -1238,35 +1239,29 @@
 #endif
 
 // NOCTURNE_AUTHENTIC_INPUT_REPEAT
-//   Two places where holding a button restarts an action every frame instead of
-//   starting it once. Both are the Stranger's own button handlers, so unlike
-//   NOCTURNE_AUTHENTIC_HERO_ACTIONS above these are reached in ordinary play,
-//   and both get worse the higher the frame rate goes: the repeat rate IS the
-//   frame rate, so what was rough on period hardware is a buzz at 60fps and
-//   above.
+//   Holding fire with no ammunition retriggers the dry-fire click every frame,
+//   so the repeat rate is the frame rate: rough on period hardware, a buzz at
+//   60fps and above.
 //
-//   PUSHING A BOX. CStranger::handleActionButton dispatches the action button
-//   through a chain of attempts, and every branch that succeeds ends by clearing
-//   player_input.action_state.fire — consuming the press so a held button does
-//   not re-enter. The push-box branch is the one that does not:
+//   NOT A BOX'S PUSH SOUND. A push sound restarting every frame, and a box
+//   that will not move, came from the CStranger::processFrame keep, not the
+//   binary: Ghidra lost the stack depth across two PUSHes between the FPU
+//   loads at 005bcf5b-005bcfd2 and read the box's centre and half-extents out
+//   of the wrong slots, so the test that keeps a push going failed every frame,
+//   stopPushingBox killed the sound, and the held press took the box again.
+//   The keep now computes them as the asm does, as Gabriella's always did.
 //
-//       if (tryPushNearbyBox(hero)) { setDesiredState(mc, 6, 1); return; }
-//
-//   Confirmed missing in the binary, not dropped by the decompiler: the asm at
-//   LAB_005c5db0 has no `MOV [EBX + 0xbe38], 0` where its siblings do.
-//
-//   It is self-sustaining rather than merely noisy. setDesiredState calls
-//   findAndStartTransition unconditionally when force_immediate is set, so
-//   re-entering with the same state index restarts the transition and the push
-//   state's blend weight never climbs off zero -- and CStranger::processFrame
-//   ends the push on exactly that test:
-//
-//       if (getStateBlendWeight(mc, 6) <= 0.0) stopPushingBox(hero);
-//
-//   stopPushingBox calls killSfx and clears pushed_object, so the next frame
-//   acquires the box again and replays its push sound from the top. The visible
-//   result is a shove animation and a scraping sound both restarting every
-//   frame for as long as the button is held, and a box that never moves.
+//   NOR THE PUSH-BOX BRANCH. CStranger::handleActionButton clears
+//   player_input.action_state.fire in every successful branch but the push
+//   (LAB_005c5db0 has no `MOV [EBX + 0xbe38], 0`), and that is required, not a
+//   defect. fire is latched: processKeyboardControls writes it only when the
+//   key changes, so it stays 1 while the button is held. A push is carried by
+//   CStranger::processFrame's pushed_object branch, which keeps the box only
+//   while fire reads non-zero, and handleActionButton is not called at all
+//   while a box is held (bVar13 is cleared with pushed_object set), so a held
+//   press cannot re-enter it. Clearing fire there ends every push the frame
+//   after it starts: a pushable box, the castle chapel's statue among them,
+//   never moves.
 //
 //   FIRING AN EMPTY WEAPON. Holding fire with no ammunition retriggers the
 //   dry-fire click every frame. CWeapon::fire is the single ammunition test for
@@ -1279,10 +1274,9 @@
 //   deliberately does not consume the press; it is the failure path that is
 //   missing a rate limit rather than the input handling.
 //
-//   1: shipped behaviour — both actions restart at the frame rate.
-//   0: the push-box branch consumes the press like its siblings, and a failed
-//      fire arms CWeapon::fire_cooldown_timer so the click cannot retrigger
-//      until it expires. That timer is the engine's own: CWeapon::ctor zeroes
+//   1: shipped behaviour — the click restarts at the frame rate.
+//   0: a failed fire arms CWeapon::fire_cooldown_timer so the click cannot
+//      retrigger until it expires. That timer is the engine's own: CWeapon::ctor zeroes
 //      it, CWeapon::process counts it down, CWeapon::isReadyToFire is the gate
 //      that reads it, and nothing in the shipped binary ever sets it, so this
 //      uses the mechanism as built rather than adding state.
@@ -1290,6 +1284,23 @@
 //   Override with -DNOCTURNE_AUTHENTIC_INPUT_REPEAT=1.
 #ifndef NOCTURNE_AUTHENTIC_INPUT_REPEAT
 #define NOCTURNE_AUTHENTIC_INPUT_REPEAT 0
+#endif
+
+// NOCTURNE_AUTHENTIC_PUSH_SOUND
+//   How often a pushed box is heard. CHero::tryPushNearbyBox plays the box's
+//   pushSound once, as the push is taken, through playAmbientSound, which
+//   does not loop; nothing plays it again until the push is let go and taken
+//   anew. A push is a run of shoves, each moving the box as the push motion
+//   passes its marker (CBoxActor::resolveRayPush), so a long push - the castle
+//   chapel's statue - scrapes on its first shove and slides silently after.
+//   1: shipped behaviour - one scrape per push.
+//   0: each shove that moves the box plays the scrape again once the last one
+//      has finished, never over it, under the same handle stopPushingBox
+//      kills. See shims/game/box_push.h.
+//
+//   Override with -DNOCTURNE_AUTHENTIC_PUSH_SOUND=1.
+#ifndef NOCTURNE_AUTHENTIC_PUSH_SOUND
+#define NOCTURNE_AUTHENTIC_PUSH_SOUND 0
 #endif
 
 // NOCTURNE_AUTHENTIC_ITEM_HELP_POSITION

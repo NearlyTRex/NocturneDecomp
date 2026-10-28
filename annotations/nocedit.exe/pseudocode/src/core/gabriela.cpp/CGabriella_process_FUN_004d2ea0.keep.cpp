@@ -650,6 +650,9 @@ LAB_004d344b:
                           ((CDemonActor *)this_ptr,&local_154,&local_190);
       if (0.0 < pCVar16->z) {
         core_boxactor_cpp_CBoxActor_resolveRayPush_FUN_00422390(pCVar14,&local_184,&local_190);
+#if !NOCTURNE_AUTHENTIC_PUSH_SOUND
+        nocturne_box_push_sound(pCVar14);
+#endif
       }
     }
   }

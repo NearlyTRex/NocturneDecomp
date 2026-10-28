@@ -299,6 +299,11 @@ void nocturne_trigl_envmap_pass_end(void);
 // Gabriella's kick and the Colonel's push-off.
 #include "game/hero_shove.h"
 
+// A pushed box's scrape on each shove (nocturne_box_push_sound), reached from
+// the Stranger's and Gabriella's frames where a push moves its box. Gated
+// there on NOCTURNE_AUTHENTIC_PUSH_SOUND.
+#include "game/box_push.h"
+
 // Status bars sized by a hero's maximum health (nocturne_status_bar_*), noted
 // from CCharacter::process and processDamage and read by CGame::renderOverlay.
 // Gated at those call sites on NOCTURNE_AUTHENTIC_STATUS_BAR_WIDTH.

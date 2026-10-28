@@ -81,7 +81,7 @@ flag.
 
 ## What is gated
 
-78 toggles. The kinds below are the same ones the header's table names, and a flag's kind is the
+79 toggles. The kinds below are the same ones the header's table names, and a flag's kind is the
 honest reason its default is what it is.
 
 **`host` — the shipped behaviour depends on Win32 + DirectDraw and cannot be reproduced**
@@ -150,7 +150,7 @@ shipped", but it is not a bug in the retail game.
 | `GOGGLES_CAMERA_HOLD` | a script's timed camera hold (a scare cut such as CASTLE1's ghoul spook) runs out while the goggles are on, instead of cutting the view away when they next come off |
 | `LIGHT_FILTER_LOAD` | the HQ projector keeps the briefing slides its script added when a save is loaded, instead of showing one image throughout |
 | `HELPER_DEATH` | when a companion the mission needs dies, the hero is held still through the death sequence and the game ends on the Game Over menu instead of dropping to the main menu |
-| `INPUT_REPEAT` | a held button starts an action once instead of restarting it every frame |
+| `INPUT_REPEAT` | holding fire on an empty weapon clicks at a rate rather than every frame |
 | `ITEM_HELP_POSITION` | the pickup help text does not sit on top of the pickup name |
 | `DEATH_MESSAGE_POSITION` | the death banner is centred, clear of the message line |
 | `TEXT_RENDER_ALPHA` | 2D text blends at its own alpha, not the last pass's leftover |
@@ -184,6 +184,7 @@ shipped", but it is not a bug in the retail game.
 | `CHEAT_MENU` | a CHEATS entry on Options, and WARPS on the pause menu |
 | `HUD_SCALE` | HUD bitmaps, text and the goggles scale with the framebuffer |
 | `STATUS_BAR_WIDTH` | another player's or a companion's status bar is as long as its maximum health, 100 being the shipped width |
+| `PUSH_SOUND` | a pushed box scrapes on every shove of a long push, not only the first |
 | `MENU` | the front end's screens are shim pages carrying every menu addition: titles below the logo, a Gameplay page beside Graphic Options, PLAY and MULTIPLAYER, window mode, the resolution table applied at once, FSR, system text, Movie Vol, the gamepad's tuning, bindings that follow the control type, and the build's version in the corner |
 | `CONSOLE` | the console fills the window and keeps scrollback |
 | `ATTRACT_MOVIES` | the menu cycles NOC1..NOC4 after its splash music |

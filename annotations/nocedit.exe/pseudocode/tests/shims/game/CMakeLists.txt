@@ -165,6 +165,13 @@ nocturne_test_suite(shims_game_front
         front_support.cpp
 )
 
+# A pushed box's scrape, against a box whose sound calls the test answers.
+nocturne_test_suite(shims_game_box_push
+    TESTS test_box_push.cpp
+    SUBJECTS
+        shims/game/box_push.cpp
+)
+
 # The cheat presets, against the menu, the inventory and the world
 # cheats_support.cpp stands in for. Their settings go through a stand-in for the
 # engine's CIni, and the Watcom runtime brings _stricmp. Settings load once a
