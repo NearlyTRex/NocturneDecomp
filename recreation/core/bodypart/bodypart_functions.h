@@ -5,10 +5,9 @@
 
 namespace nocturne::core {
 
-void staticInit();
 CBodyPart *createBodyPart(common::CVector3f *position, common::UOrientationVector *orientation,
                           common::CVector3f *initial_velocity, CDemonActor *scale_source,
-                          int dont_use_normals, int is_transparent, int blood_type);
+                          int dont_use_normals, int is_transparent, EBloodType blood_type);
 CBodyPart *factoryFuncBodyPart();
 common::CVector3f *scaleVector(common::CVector3f *src, common::CVector3f *dst, float *scalar);
 common::CVector3f *subtractVector(common::CVector3f *a, common::CVector3f *dst,

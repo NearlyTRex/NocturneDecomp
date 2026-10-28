@@ -1,13 +1,13 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_gore_cpp_CBloodParticle_setup_FUN_004eb9a0(CBloodParticle *this_ptr,CVector3f *position,CVector3f *velocity,int blood_type)
+; void __cdecl core_gore_cpp_CBloodParticle_setup_FUN_004eb9a0(CBloodParticle *this_ptr,CVector3f *position,CVector3f *velocity,EBloodType blood_type)
 ;
 ; Parameters:
 ; CBloodParticle * Stack[0x4]:4   this_ptr
 ; CVector3f *      Stack[0x8]:4   position
 ; CVector3f *      Stack[0xc]:4   velocity
-; int              Stack[0x10]:4   blood_type
+; EBloodType       Stack[0x10]:4   blood_type
 ;
 ; XREF[1]:
 ;   core_gore.cpp_CGore_spawnBloodParticles_FUN_004edaa0 at 004edae3

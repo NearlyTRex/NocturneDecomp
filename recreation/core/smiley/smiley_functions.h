@@ -4,7 +4,6 @@
 
 namespace nocturne::core {
 
-void staticInit();
 CSmiley *factorFunc();
 
 } // namespace nocturne::core

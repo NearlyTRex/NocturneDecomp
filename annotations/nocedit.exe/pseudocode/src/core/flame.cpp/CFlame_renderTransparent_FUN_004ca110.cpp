@@ -72,7 +72,7 @@ int __cdecl core_flame_cpp_CFlame_renderTransparent_FUN_004ca110(CFlame *this_pt
        1.0 < SQRT(fVar4 * fVar4 + fVar3 * fVar3 + fVar2 * fVar2) * this_ptr->globe_scalar)) {
       core_set_cpp_CDemonSet_addQueuedCoronaGlobe_FUN_0056d140(g_CDemonSetPtr,&this_ptr->globe);
     }
-    if ((this_ptr->is_visible != 0) && (this_ptr->which_flame != 3)) {
+    if ((this_ptr->is_visible != 0) && (this_ptr->which_flame != FLAME_TYPE_NONE)) {
       engine_drender_cpp_CDemonRenderer_getCameraRotationFixed_FUN_0048c7e0
                 (g_CDemonRendererPtr2,&CStack_64);
       CStack_58.x = 0;
@@ -123,10 +123,10 @@ int __cdecl core_flame_cpp_CFlame_renderTransparent_FUN_004ca110(CFlame *this_pt
           if (fStack_1c == 4.2039e-45) {
             g_RenderVertexBuffer[0].a = g_RenderVertexBuffer[0].a / 2;
           }
-          if (this_ptr->which_flame == 4) {
+          if (this_ptr->which_flame == FLAME_TYPE_BODY) {
             g_RenderVertexBuffer[0].a = g_RenderVertexBuffer[0].a / 4;
           }
-          if (this_ptr->which_flame == 1) {
+          if (this_ptr->which_flame == FLAME_TYPE_CANDLE) {
             g_RenderVertexBuffer[0].a = g_RenderVertexBuffer[0].a / 2;
           }
           g_RenderVertexBuffer[0].r = 0xffff;
@@ -176,7 +176,7 @@ int __cdecl core_flame_cpp_CFlame_renderTransparent_FUN_004ca110(CFlame *this_pt
       engine_drender_cpp_CDemonRenderer_matrixPop_FUN_0048c640(g_CDemonRendererPtr2);
     }
     core_actor_cpp_CDemonActor_restoreRenderState_FUN_00408b40(&this_ptr->base);
-    if ((this_ptr->which_flame == 1) &&
+    if ((this_ptr->which_flame == FLAME_TYPE_CANDLE) &&
        (fVar1 = (this_ptr->flame_size).y, fVar5 = (float)2, this_ptr->is_visible != 0)
        ) {
       engine_drender_cpp_CDemonRenderer_getCameraRotationRadians_FUN_0048c800

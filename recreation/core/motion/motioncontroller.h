@@ -1,9 +1,11 @@
 #pragma once
 
+#include "common/fwd.h"
 #include "core/fwd.h"
 #include "core/motion/motiontransitioncmd.h"
 
 #include <cstdio>
+#include <string>
 
 namespace nocturne::core {
 
@@ -41,12 +43,16 @@ public:
     float markerPositionToFrame(int motion_index, float marker_position);
     void getFramesForInterpolation(int motion_index, float frame_number, int *out_frame1,
                                    int *out_frame2, float *out_blend_weight);
-    void load(std::FILE *file_handle);
+    // Reads the motion and frame a file saved, as an index or a quoted name, to the end of the
+    // line. Neither is fatal.
+    void load(common::CTextScanner &scanner);
     void save(std::FILE *file_handle, char *indent_prefix);
     void render(CDemonActor *actor);
 
     [[nodiscard]] int getCurrentMotionIndex() const;
     [[nodiscard]] float getCurrentFrameNumber() const;
+    // The motion a file named instead of giving its index, until it is looked up; empty for none.
+    [[nodiscard]] const std::string &getCurrentMotionName() const;
     // The state setDesiredState last moved to, or -1.
     [[nodiscard]] int getStateIndex() const;
     [[nodiscard]] const SMotionTransition *getInTransition() const;
@@ -60,6 +66,7 @@ private:
 
     int current_motion_index_ = 0;
     float current_frame_number_ = 0.0F;
+    std::string current_motion_name_;
     int state_index_ = -1;
     const SMotionTransition *in_transition_ = nullptr;
     EMotionTransitionCmd tween_type_ = EMotionTransitionCmd::MOTION_CMD_NONE;

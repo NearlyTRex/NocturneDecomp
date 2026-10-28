@@ -26,7 +26,7 @@ CBoxActor * __cdecl core_boxactor_cpp_CBoxActor_ctor_FUN_00421700(CBoxActor *thi
   ADJ(pCVar3)->loop_wav_name[0] = '\0';
   ADJ(pCVar3)->collision_wav_name[0] = '\0';
   ADJ(pCVar3)->sfx_handle = 0;
-  ADJ(pCVar3)->pickup_type = 0;
+  ADJ(pCVar3)->pickup_type = BOX_PICKUP_CANT;
   ADJ(pCVar3)->can_be_pushed = 0;
   ADJ(pCVar3)->carrier_actor = (CDemonActor *)0x0;
   ADJ(pCVar3)->pushed_by_actor = (CDemonActor *)0x0;

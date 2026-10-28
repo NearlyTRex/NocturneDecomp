@@ -81,7 +81,7 @@ flag.
 
 ## What is gated
 
-75 toggles. The kinds below are the same ones the header's table names, and a flag's kind is the
+79 toggles. The kinds below are the same ones the header's table names, and a flag's kind is the
 honest reason its default is what it is.
 
 **`host` — the shipped behaviour depends on Win32 + DirectDraw and cannot be reproduced**
@@ -91,7 +91,6 @@ honest reason its default is what it is.
 | `FORMAT_STRINGS` | pointers print at their native width on 64-bit *(defaults on)* |
 | `WINDOWS` | the game keeps running unfocused and the window stays put |
 | `UI_CURSOR_WARP` | no `SetCursorPos` warping; the cursor moves freely |
-| `APP_QUIT` | where the platform file says the system ends the app, the main menu offers no QUIT |
 | `SOUND_DEVICE` | the Sound Options Device line names the host audio API SDL opened |
 | `RENDERER_DLL` | a compiled-in renderer loads without a file on disk |
 | `HEAP_REPORT` | the memory line reports the host allocator, since the Watcom heap it walks is not there |
@@ -126,7 +125,6 @@ shipped", but it is not a bug in the retail game.
 | `HUD_ICON_SPACE` | inventory icons stay on screen above 640x480 |
 | `FOG_PLANE_SCALE` | fog covers the view at modes whose camera grid is not 320 wide |
 | `BACKDROP_FILTER` | a backdrop rescaled to the camera framebuffer keeps its own brightness |
-| `CONTROL_SETUP` | picking a control type leaves you with bindings that type can produce |
 | `FLASHLIGHT_DRAW` | in the HQ missions neither the draw nor the flashlight key brings the weapon out; elsewhere the flashlight key draws it as shipped |
 | `MODAL_FIT` | a modal too wide for the screen is clamped rather than pushed off both edges |
 | `BURN_BONE_COUNT` | a burning character can reach fully-burned and die instead of burning forever |
@@ -152,7 +150,7 @@ shipped", but it is not a bug in the retail game.
 | `GOGGLES_CAMERA_HOLD` | a script's timed camera hold (a scare cut such as CASTLE1's ghoul spook) runs out while the goggles are on, instead of cutting the view away when they next come off |
 | `LIGHT_FILTER_LOAD` | the HQ projector keeps the briefing slides its script added when a save is loaded, instead of showing one image throughout |
 | `HELPER_DEATH` | when a companion the mission needs dies, the hero is held still through the death sequence and the game ends on the Game Over menu instead of dropping to the main menu |
-| `INPUT_REPEAT` | a held button starts an action once instead of restarting it every frame |
+| `INPUT_REPEAT` | holding fire on an empty weapon clicks at a rate rather than every frame |
 | `ITEM_HELP_POSITION` | the pickup help text does not sit on top of the pickup name |
 | `DEATH_MESSAGE_POSITION` | the death banner is centred, clear of the message line |
 | `TEXT_RENDER_ALPHA` | 2D text blends at its own alpha, not the last pass's leftover |
@@ -166,7 +164,6 @@ shipped", but it is not a bug in the retail game.
 |---|---|
 | `PICKUP_WIELDS` | a weapon picked up is never drawn without the player asking |
 | `OPTIONS_RESUMES_GAME` | leaving Options returns to the pause menu, simulation held |
-| `MENU_RESOLUTION` | a picked resolution applies straight away |
 | `CONFIRM_PROMPTS` | no bracketed hotkey letters, and a short form when the long one will not fit |
 | `SAVE` | saves are written as readable plain text *(defaults on, i.e. compressed)* |
 | `BUILD_STAMP` | the console banner carries this build's date and version, not Terminal Reality's |
@@ -179,21 +176,17 @@ shipped", but it is not a bug in the retail game.
 | `AUTOMAP` | a bindable Doom-style map that fills in as you explore |
 | `GOGGLE_LOOK` | the goggle view looks up and down with empty hands, not only with a gun drawn, and for every hero rather than only the Stranger; every hero's goggle view is held level as the Stranger's is, rather than swaying with the head's animation |
 | `HERO_LOOK_AIM` | Scat's aim follows look input under auto-aim until a target takes it, as the Stranger's does |
-| `MENU_VERSION` | the menu carries a line naming this build, alongside everything it already drew |
 | `SAVE_SLOTS` | saves are picked from a slot list instead of typed |
-| `SINGLE_PLAYER_MENU` | START becomes PLAY, with Start and Load behind it |
 | `AUTOSAVE` | `AUTO.NOC` is written when a cutscene ends and when a mission starts, and the single-player submenu offers Continue |
 | `GAMEPAD` | SDL's game-controller layer instead of 1999's joyGetPos |
 | `WINDOW_MESSAGES` | the window proc sees a mouse wheel |
 | `TEXT_PROMPTS` | a text prompt brings up the platform's own keyboard, where it has one |
 | `CHEAT_MENU` | a CHEATS entry on Options, and WARPS on the pause menu |
-| `RESOLUTION_LIST` | one ordered table drives both the label and the stepping |
 | `HUD_SCALE` | HUD bitmaps, text and the goggles scale with the framebuffer |
 | `STATUS_BAR_WIDTH` | another player's or a companion's status bar is as long as its maximum health, 100 being the shipped width |
-| `WINDOW_MODE` | Graphics Options picks windowed, fullscreen or borderless; on, the game is always fullscreen |
-| `OS_FONT` | Graphics Options can pick bitmap or system text |
+| `PUSH_SOUND` | a pushed box scrapes on every shove of a long push, not only the first |
+| `MENU` | the front end's screens are shim pages carrying every menu addition: titles below the logo, a Gameplay page beside Graphic Options, PLAY and MULTIPLAYER, window mode, the resolution table applied at once, a choice of upscaling filters (FSR, Lanczos, GSR, NIS, xBR), system text, Movie Vol, the gamepad's tuning, bindings that follow the control type, and the build's version in the corner |
 | `CONSOLE` | the console fills the window and keeps scrollback |
-| `FMV` | Sound Options has a Movie Vol line; the opening movie plays either way |
 | `ATTRACT_MOVIES` | the menu cycles NOC1..NOC4 after its splash music |
 | `ENVMAP_SHADING` | reflections are shaded per pixel rather than flat per facet |
 | `NETPLAY` | netplay is reachable, with its fixes |

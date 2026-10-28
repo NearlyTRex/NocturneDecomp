@@ -57,7 +57,7 @@ void __cdecl core_platfrm_cpp_CPlatform_processInEditor_FUN_0054ea00(CPlatform *
   CVector3f *local_18;
   CLocation *pCVar1;
   
-  if (this_ptr->platform_type != 4) {
+  if (this_ptr->slew_mode != PLATFORM_SLEW_CONVEYOR) {
     if (this_ptr->course_filename[0] == '\0') {
       local_4c = (this_ptr->start_pos).x - (this_ptr->end_pos).x;
       local_48 = (this_ptr->start_pos).y - (this_ptr->end_pos).y;
@@ -98,8 +98,8 @@ void __cdecl core_platfrm_cpp_CPlatform_processInEditor_FUN_0054ea00(CPlatform *
       if (iVar3 != 0) {
         core_platfrm_cpp_CPlatform_propertyActionSlewCallback_FUN_0054e480(this_ptr,0);
       }
-      switch(this_ptr->platform_type) {
-      case PLATFORM_TYPE_START:
+      switch(this_ptr->slew_mode) {
+      case PLATFORM_SLEW_START:
         if (&auStack_104 != (CSlew *)&this_ptr->start_pos) {
           auStack_104.position.x = (this_ptr->start_pos).x;
           auStack_104.position.y = (this_ptr->start_pos).y;
@@ -124,7 +124,7 @@ void __cdecl core_platfrm_cpp_CPlatform_processInEditor_FUN_0054ea00(CPlatform *
         (this_ptr->orig_orient).y = CStack_bc.y;
         (this_ptr->orig_orient).z = CStack_bc.z;
         break;
-      case PLATFORM_TYPE_END:
+      case PLATFORM_SLEW_END:
         if (&auStack_e8 != (CSlew *)&this_ptr->end_pos) {
           auStack_e8.position.x = (this_ptr->end_pos).x;
           auStack_e8.position.y = (this_ptr->end_pos).y;
@@ -149,7 +149,7 @@ void __cdecl core_platfrm_cpp_CPlatform_processInEditor_FUN_0054ea00(CPlatform *
         (this_ptr->end_orient).y = CStack_ac.y;
         (this_ptr->end_orient).z = CStack_ac.z;
         break;
-      case PLATFORM_TYPE_BOTH:
+      case PLATFORM_SLEW_BOTH:
         pCStack_20 = (CVector3f *)&(this_ptr->base).orient;
         local_18 = &(this_ptr->base).location.position;
         core_xform_cpp_buildMatrixFromEulerAndPosition_FUN_005f5390(&CStack_194,local_18,pCStack_20)

@@ -27,10 +27,6 @@ int CColonel::renderOpaque() {
     notPorted("renderOpaque");
 }
 
-void CColonel::archive(CActorArchive & /*actor_archive*/) {
-    notPorted("archive");
-}
-
 void CColonel::processDamage(SDamageInfo * /*damage_info*/) {
     notPorted("processDamage");
 }

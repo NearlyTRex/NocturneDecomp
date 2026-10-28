@@ -5,6 +5,7 @@
 // Dependencies
 #include "system/basetypes.h"
 #include "types/structs/SMRGLTextureModel.h"
+#include "types/structs/SProjectedVertex.h"
 #include "types/structs/SRenderVertex.h"
 
 // Structure: SRenderBufferEntry

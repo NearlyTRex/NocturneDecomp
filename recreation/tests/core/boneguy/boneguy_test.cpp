@@ -1,3 +1,4 @@
+#include "core/actor/demonactortype.h"
 #include "core/boneguy/boneguy.h"
 
 #include <gtest/gtest.h>
@@ -41,6 +42,13 @@ TEST(CBoneGuy, PublicInterface) {
     static_assert(std::is_same_v<decltype(&CBoneGuy::getCarryObjToBodyXForm),
                                  common::CMatrix3x4f *(CBoneGuy::*)(int, common::CMatrix3x4f *)>);
     static_assert(std::is_same_v<decltype(&CBoneGuy::reset), void (CBoneGuy::*)()>);
+}
+
+TEST(CBoneGuy, ItsRecordIsVersion5UnderCEnemy) {
+    EXPECT_EQ(CBoneGuy::kType.class_name, "CBoneGuy");
+    EXPECT_EQ(CBoneGuy::kType.parent_type, &CEnemy::kType);
+    EXPECT_EQ(CBoneGuy::kType.factory_func, nullptr);
+    EXPECT_EQ(CBoneGuy::kType.latest_version, 5);
 }
 
 } // namespace

@@ -6,8 +6,11 @@
 #include "system/basetypes.h"
 #include "types/classes/CSocket.h"
 #include "types/enums/EConnectionType.h"
+#include "types/enums/EHeroType.h"
 #include "types/enums/ENetworkMode.h"
 #include "types/structs/SNetPlayer.h"
+#include "types/structs/SNetworkAddr.h"
+#include "types/structs/SPlayerInput.h"
 
 // Structure: CNetGame
 // Ghidra size: 0x174 (372 bytes)

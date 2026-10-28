@@ -61,7 +61,7 @@ int toBin(float frequency, std::size_t bin_count, int sample_rate) {
 }
 
 double magnitude(const std::complex<double> &bin) {
-    return std::sqrt(bin.real() * bin.real() + bin.imag() * bin.imag());
+    return std::sqrt((bin.real() * bin.real()) + (bin.imag() * bin.imag()));
 }
 
 } // namespace
@@ -96,7 +96,7 @@ void CSfxAnalyzer::record(std::span<const float> frames) {
 // the spectrum of the last window until a whole new one is mixed.
 float CSfxAnalyzer::analyzeFrequencyBand(int channel, float freq_start_hz, float freq_end_hz) {
     const std::scoped_lock lock(mutex_);
-    if (channel < 0 || static_cast<std::size_t>(channel) >= channel_count_) {
+    if (channel < 0 || std::cmp_greater_equal(channel, channel_count_)) {
         return 0.0F;
     }
     const auto index = static_cast<std::size_t>(channel);
@@ -132,7 +132,7 @@ void CSfxAnalyzer::transform(std::size_t channel, std::uint64_t window) {
     bins.resize(window_size_);
     for (std::size_t frame = 0; frame < window_size_; ++frame) {
         const std::size_t source = (write_frame_ + frame) % window_size_;
-        bins[frame] = history_[source * channel_count_ + channel];
+        bins[frame] = history_[(source * channel_count_) + channel];
     }
     fft(bins);
     spectra_[channel].window = window;

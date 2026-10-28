@@ -23,7 +23,7 @@ int __cdecl core_door_cpp_CDoor_renderOpaque_FUN_004807d0(CDoor *this_ptr)
   float fVar1;
   CDoor *this_ptr_00;
   
-  if (2 < this_ptr->one_shot) {
+  if (2 < (int)this_ptr->one_shot) {
     return 0;
   }
   core_actor_cpp_CDemonActor_setupRenderState_FUN_00408b00(&this_ptr->base);

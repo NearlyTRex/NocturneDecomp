@@ -23,7 +23,7 @@ int __cdecl core_enemy_cpp_CEnemy_testAttackLine_FUN_004a9930(CEnemy *this_ptr,C
       core_gore_cpp_CGore_spawnBloodBurst_FUN_004edbb0
                 (g_CGorePtr,&local_20,(CVector3f *)0x0,
                  (int)ROUND(ROUND((double)damage_info->damage_amount * 1.2 *
-                                  0.25)),0);
+                                  0.25)),BLOOD_TYPE_RED);
       return 1;
     }
   }

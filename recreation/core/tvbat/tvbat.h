@@ -8,6 +8,8 @@ namespace nocturne::core {
 
 class CTVBat : public CEnemy {
 public:
+    static const CDemonActorType kType;
+
     CTVBat();
     ~CTVBat() override;
 

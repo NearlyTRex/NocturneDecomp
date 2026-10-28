@@ -11,8 +11,8 @@ void __cdecl core_spike_cpp_CSpike_archive_FUN_005b87f0(CSpike *this_ptr)
 {
   core_actor_cpp_CDemonActor_archive_FUN_0040c1c0(&this_ptr->base);
   core_actor_cpp_archiveKeyframedModelInstance_FUN_0040b8f0(&this_ptr->model,"modelName");
-  core_actor_cpp_archiveInteger_FUN_0040b7f0(&this_ptr->spike_type,"spikeType");
-  core_actor_cpp_archiveInteger_FUN_0040b7f0(&this_ptr->spike_state,"spikeState");
+  core_actor_cpp_archiveInteger_FUN_0040b7f0((int *)&this_ptr->spike_type,"spikeType");
+  core_actor_cpp_archiveInteger_FUN_0040b7f0((int *)&this_ptr->spike_state,"spikeState");
   core_actor_cpp_archiveInteger_FUN_0040b7f0(&this_ptr->are_we_active,"areWeActive");
   core_actor_cpp_archiveFloat_FUN_0040b770(&this_ptr->extend_distance,"extendDistance");
   core_actor_cpp_archiveString_FUN_0040b5c0(this_ptr->start_event,"startEvent");

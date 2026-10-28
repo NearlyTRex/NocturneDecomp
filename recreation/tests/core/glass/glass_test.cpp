@@ -1,3 +1,4 @@
+#include "core/actor/demonactortype.h"
 #include "core/glass/glass.h"
 
 #include <gtest/gtest.h>
@@ -42,6 +43,13 @@ TEST(CGlass, PublicInterface) {
     static_assert(
         std::is_same_v<decltype(&CGlass::shatter), void (CGlass::*)(common::CVector3f *)>);
     static_assert(std::is_same_v<decltype(&CGlass::checkBreakableCondition), int (CGlass::*)()>);
+}
+
+TEST(CGlass, ItsRecordIsVersion6UnderCDemonActor) {
+    EXPECT_EQ(CGlass::kType.class_name, "CGlass");
+    EXPECT_EQ(CGlass::kType.parent_type, &CDemonActor::kType);
+    EXPECT_EQ(CGlass::kType.factory_func, nullptr);
+    EXPECT_EQ(CGlass::kType.latest_version, 6);
 }
 
 } // namespace

@@ -10,6 +10,7 @@
 #include <span>
 #include <string>
 #include <string_view>
+#include <utility>
 
 namespace nocturne::core {
 namespace {
@@ -102,7 +103,7 @@ const CDemonCube *CDemonRaytrace::getCubeAt(int grid_x, int grid_y, int grid_z) 
     }
     const std::int64_t index = (static_cast<std::int64_t>(grid_y) * grid_coord_.z) + grid_z +
                                (static_cast<std::int64_t>(grid_x) * grid_coord_.y * grid_coord_.z);
-    if (index >= static_cast<std::int64_t>(cube_data_.size())) {
+    if (std::cmp_greater_equal(index, cube_data_.size())) {
         return nullptr;
     }
     return &cube_data_[static_cast<std::size_t>(index)];

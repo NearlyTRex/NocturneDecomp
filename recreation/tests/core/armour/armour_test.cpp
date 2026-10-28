@@ -1,3 +1,4 @@
+#include "core/actor/demonactortype.h"
 #include "core/armour/armour.h"
 
 #include <gtest/gtest.h>
@@ -35,6 +36,13 @@ TEST(CArmour, PublicInterface) {
     static_assert(std::is_same_v<decltype(&CArmour::archive), void (CArmour::*)(CActorArchive &)>);
     static_assert(
         std::is_same_v<decltype(&CArmour::processDamage), void (CArmour::*)(SDamageInfo *)>);
+}
+
+TEST(CArmour, ItsRecordIsVersion1UnderCEnemy) {
+    EXPECT_EQ(CArmour::kType.class_name, "CArmour");
+    EXPECT_EQ(CArmour::kType.parent_type, &CEnemy::kType);
+    EXPECT_EQ(CArmour::kType.factory_func, nullptr);
+    EXPECT_EQ(CArmour::kType.latest_version, 1);
 }
 
 } // namespace

@@ -39,7 +39,7 @@ int __cdecl core_charactr_cpp_CCharacter_processWalking_FUN_0042ca70(CCharacter 
      (fVar1 = this_ptr->walk_timeout - delta_time, this_ptr->walk_timeout = fVar1, fVar1 <= 0.0)) {
     this_ptr->walk_timeout = 0.0;
     pCVar2 = this_ptr->walk_to_target;
-    this_ptr->is_walking = 0;
+    this_ptr->walk_state = WALK_STATE_IDLE;
     (this_ptr->base).location.position.x = (pCVar2->location).position.x;
     (this_ptr->base).location.position.y = (pCVar2->location).position.y;
     (this_ptr->base).location.position.z = (pCVar2->location).position.z;
@@ -73,7 +73,7 @@ int __cdecl core_charactr_cpp_CCharacter_processWalking_FUN_0042ca70(CCharacter 
     }
     core_charactr_cpp_CCharacter_followActor_FUN_0042c5f0
               (this_ptr,(CDemonActor *)actor_ptr,this_ptr->walk_min_distance,
-               this_ptr->walk_max_distance,&this_ptr->is_walking);
+               this_ptr->walk_max_distance,(int *)&this_ptr->walk_state);
     return 1;
   }
   core_door_cpp_CDoor_getOpenStandPos_FUN_00480e20
@@ -86,11 +86,11 @@ int __cdecl core_charactr_cpp_CCharacter_processWalking_FUN_0042ca70(CCharacter 
   iVar4 = core_charactr_cpp_CCharacter_walkToPoint_FUN_004286e0
                     (this_ptr,&local_3c,path_map,&direction->f,fVar6,fVar7);
   if (iVar4 < 0) {
-    this_ptr->is_walking = 3;
+    this_ptr->walk_state = WALK_STATE_NO_PATH;
     return 1;
   }
   if (iVar4 < 1) {
-    this_ptr->is_walking = 1;
+    this_ptr->walk_state = WALK_STATE_WALKING;
     return 1;
   }
   pCVar5 = core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_00408f10
@@ -99,11 +99,11 @@ int __cdecl core_charactr_cpp_CCharacter_processWalking_FUN_0042ca70(CCharacter 
   fVar1 = pCVar7->y;
   this_ptr->turn_angle_accumulator = fVar1;
   if ((float)0.62831853069999999 <= fVar1) {
-    this_ptr->is_walking = 1;
+    this_ptr->walk_state = WALK_STATE_WALKING;
   }
   else {
     pCVar3 = (this_ptr->base).vtable._uc;
-    this_ptr->is_walking = 0;
+    this_ptr->walk_state = WALK_STATE_IDLE;
     (*(pCVar3->_uc).clearDoorTarget)(this_ptr);
   }
   fVar1 = this_ptr->turn_speed;

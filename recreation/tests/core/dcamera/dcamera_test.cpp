@@ -8,7 +8,6 @@ namespace nocturne::core {
 namespace {
 
 TEST(CoreDcameraFunctions, PublicInterface) {
-    static_assert(std::is_same_v<decltype(&staticInit), void (*)()>);
     static_assert(std::is_same_v<decltype(&initializeCoronaBuffers), void (*)()>);
     static_assert(std::is_same_v<decltype(&renderCoronaDepthScanline),
                                  void (*)(int, engine::SSoftwareEdge *, engine::SSoftwareEdge *)>);

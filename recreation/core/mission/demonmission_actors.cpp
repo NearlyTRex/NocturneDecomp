@@ -40,6 +40,13 @@ std::unique_ptr<CDemonActor> CDemonMission::removeActorFromList(const CDemonActo
 // The original's flag to keep the actor is removeActorFromList here, which hands it back. Its
 // deleteActor checked the actor for corruption first in the editor build; retail doesn't. It
 // also destroyed an actor that wasn't on the list, which here belongs to its caller.
+// deferred: clearing what the player heroes hold of the actor (the weapon in hand, both carry
+//   hands, the inventory's selected weapon and item), which the original left dangling (the
+//   decomp's actor_delete.h nocturne_actor_delete_unbind_heroes, ACTOR_DELETE), with
+//   CStranger's weapon in hand and CInventory's selection
+// deferred: a sound tracking the actor's position finishing where the actor last was instead of
+//   reading it after it is freed (the decomp's actor_delete.h nocturne_actor_delete_unbind_sounds,
+//   ACTOR_DELETE), with CDemonActor::playSound and CSound::playActorSound
 // nocedit 0x00523f20
 // nocedit 0x00408820
 // nocedit 0x0040ac80
@@ -50,17 +57,21 @@ void CDemonMission::removeActor(const CDemonActor &actor) {
     }
 }
 
-// deferred: rebuilding the set's actor lists after, with the set's per-frame readers
-// deferred: clearing actors_prepared and the delete queue, with prepareAllActors and
-//   markActorToDelete
+// The set's list is rebuilt, so it holds none of them.
+// deferred: clearing the delete queue, with markActorToDelete
 // deferred: committing the raytracer's shadow voxels and resetting the path maps, with the
 //   raytracer and the path maps
+// deferred: rewinding the path lookup cache and forgetting which hero set each trigger off, so a
+//   network game's next mission starts in step (the decomp's nocturne_net_pathcache_rewind and
+//   nocturne_net_sim_forget_trigger_hero), with CNetGame and the path maps
 // nocedit 0x00523f50
 void CDemonMission::removeAllActors() {
     while (!actors_.empty()) {
         removeActor(*actors_.front());
     }
+    buildSetActorList();
     hero_count_ = 0;
+    actors_prepared_ = false;
 }
 
 // nocedit 0x00524030
@@ -73,6 +84,9 @@ CDemonActor *CDemonMission::findActorByName(std::string_view name) const {
 
 // A number is whatever sscanf's "%d" reads after the base name, so "Door-2" counts as -2. The
 // original went on to skip a name already taken, which the highest number rules out.
+// deferred: counting the names of the items in every hero's inventory too, which the original's
+//   lookup of the mission's actors misses, so a save holds no two actors of one name (the
+//   decomp's item_names.h, ITEM_NAMES), with CInventory's items
 // nocedit 0x00524660
 std::string CDemonMission::generateUniqueActorName(std::string_view base_name) const {
     int highest = -1;

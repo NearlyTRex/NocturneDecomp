@@ -55,7 +55,7 @@ TEST(CMotionController, PublicInterface) {
     static_assert(std::is_same_v<decltype(&CMotionController::getFramesForInterpolation),
                                  void (CMotionController::*)(int, float, int *, int *, float *)>);
     static_assert(std::is_same_v<decltype(&CMotionController::load),
-                                 void (CMotionController::*)(std::FILE *)>);
+                                 void (CMotionController::*)(common::CTextScanner &)>);
     static_assert(std::is_same_v<decltype(&CMotionController::save),
                                  void (CMotionController::*)(std::FILE *, char *)>);
     static_assert(std::is_same_v<decltype(&CMotionController::render),

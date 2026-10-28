@@ -23,14 +23,14 @@ void __cdecl core_boxactor_cpp_CBoxActor_archive_FUN_0041ec60(CBoxActor *this_pt
   if (g_INT_005ad09c < 7) {
     core_actor_cpp_archiveInteger_FUN_0040c900(&local_c,"canBeCarried");
     if (local_c == 0) {
-      this_ptr->pickup_type = 0;
+      this_ptr->pickup_type = BOX_PICKUP_CANT;
     }
     else {
-      this_ptr->pickup_type = 3;
+      this_ptr->pickup_type = BOX_PICKUP_CARRY;
     }
   }
   else {
-    core_actor_cpp_archiveInteger_FUN_0040c900(&this_ptr->pickup_type,"pickupType");
+    core_actor_cpp_archiveInteger_FUN_0040c900((int *)&this_ptr->pickup_type,"pickupType");
   }
   core_actor_cpp_archiveActor_FUN_0040c980(&this_ptr->carrier_actor,"carriedByActor");
   if (1 < g_INT_005ad09c) {

@@ -1,13 +1,13 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_gore_cpp_CGore_spawnBloodParticles_FUN_004edaa0(CGore *this_ptr,CVector3f *position,CVector3f *velocity,int blood_type)
+; void __cdecl core_gore_cpp_CGore_spawnBloodParticles_FUN_004edaa0(CGore *this_ptr,CVector3f *position,CVector3f *velocity,EBloodType blood_type)
 ;
 ; Parameters:
 ; CGore *          Stack[0x4]:4   this_ptr
 ; CVector3f *      Stack[0x8]:4   position
 ; CVector3f *      Stack[0xc]:4   velocity
-; int              Stack[0x10]:4   blood_type
+; EBloodType       Stack[0x10]:4   blood_type
 ;
 ; XREF[9]:
 ;   core_bodypart.cpp_CBodyPart_spawnGore_FUN_0041b1b0 at 0041b1dd
@@ -59,7 +59,7 @@ section .text
     PUSH EBP                            ; 004edae1
     PUSH EAX                            ; 004edae2
     CALL core_gore.cpp_CBloodParticle_setup_FUN_004eb9a0 ; 004edae3
-        ;   XREF to: 004eb9a0 (UNCONDITIONAL_CALL)  ; void core_gore.cpp_CBloodParticle_setup_FUN_004eb9a0(CBloodParticle * this_ptr, CVector3f * position, CVector3f * velocity, int blood_type)
+        ;   XREF to: 004eb9a0 (UNCONDITIONAL_CALL)  ; void core_gore.cpp_CBloodParticle_setup_FUN_004eb9a0(CBloodParticle * this_ptr, CVector3f * position, CVector3f * velocity, EBloodType blood_type)
     ADD ESP,0x10                        ; 004edae8
     POP EDI                             ; 004edaeb
     POP EBP                             ; 004edaec

@@ -37,7 +37,7 @@ CBoneGuy * __cdecl core_boneguy_cpp_CBoneGuy_ctor_FUN_0041bbc0(CBoneGuy *this_pt
   pcVar6 = ADJ(dest)->death_event;
   ADJ(dest)->blown_up = 0;
   fVar4 = 50.0f;
-  ADJ(dest)->base.base.blood_type = 2;
+  ADJ(dest)->base.base.blood_type = BLOOD_TYPE_NONE;
   fVar3 = 100.0f;
   ADJ(dest)->recombine_time = 10.0;
   ADJ(dest)->base.base.ai_detection_range_min = fVar4;

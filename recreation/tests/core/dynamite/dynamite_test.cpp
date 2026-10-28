@@ -1,3 +1,4 @@
+#include "core/actor/demonactortype.h"
 #include "core/dynamite/dynamite.h"
 
 #include <gtest/gtest.h>
@@ -33,6 +34,13 @@ TEST(CDynamite, PublicInterface) {
     static_assert(std::is_same_v<decltype(&CDynamite::lightFuse), void (CDynamite::*)()>);
     static_assert(std::is_same_v<decltype(&CDynamite::isFuseLit), int (CDynamite::*)()>);
     static_assert(std::is_same_v<decltype(&CDynamite::isFuseBurnedOut), int (CDynamite::*)()>);
+}
+
+TEST(CDynamite, ItsRecordIsVersion1UnderCWeapon) {
+    EXPECT_EQ(CDynamite::kType.class_name, "CDynamite");
+    EXPECT_EQ(CDynamite::kType.parent_type, &CWeapon::kType);
+    EXPECT_EQ(CDynamite::kType.factory_func, nullptr);
+    EXPECT_EQ(CDynamite::kType.latest_version, 1);
 }
 
 } // namespace

@@ -5,7 +5,6 @@
 
 namespace nocturne::core {
 
-void staticInit();
 CHero *closestHeroToPoint(CLocation *location);
 int isAnyHeroWithinRadius(common::CVector3f *point, float radius);
 int isAnyHeroWithinCylinder(common::CVector3f *point, float horizontal_radius,

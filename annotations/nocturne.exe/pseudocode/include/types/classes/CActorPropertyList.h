@@ -8,6 +8,10 @@ struct CDemonActor;
 // Dependencies
 #include "system/basetypes.h"
 #include "types/classes/CActorProperty.h"
+#include "types/enums/EActorPropertyType.h"
+#include "types/unions/UActorPropertyCallback.h"
+#include "types/unions/UActorPropertyData.h"
+#include "types/unions/UActorPropertyParam.h"
 
 // Structure: CActorPropertyList
 // Ghidra size: 0x2504 (9476 bytes)

@@ -252,7 +252,7 @@ TEST_F(CStrListFilesTest, AFileWithOnlyAnExtensionIsListedOnce) {
         .WillOnce(Return(std::vector<platform::SFileInfo>{{.name = ".WAV"}}));
     list_.populateFromFileSearch(&pod_, file_system_, &localTime, "sound", "*.wav");
     EXPECT_EQ(std::ranges::count_if(getItems(list_),
-                                    [](const std::string &item) { return item.starts_with("\t"); }),
+                                    [](const std::string &item) { return item.starts_with('\t'); }),
               1);
 }
 

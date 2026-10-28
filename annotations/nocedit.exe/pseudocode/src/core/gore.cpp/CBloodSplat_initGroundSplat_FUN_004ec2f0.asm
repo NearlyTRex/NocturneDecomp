@@ -1,12 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_gore_cpp_CBloodSplat_initGroundSplat_FUN_004ec2f0(CBloodSplat *this_ptr,CVector3f *position,int blood_type)
+; void __cdecl core_gore_cpp_CBloodSplat_initGroundSplat_FUN_004ec2f0(CBloodSplat *this_ptr,CVector3f *position,EBloodType blood_type)
 ;
 ; Parameters:
 ; CBloodSplat *    Stack[0x4]:4   this_ptr
 ; CVector3f *      Stack[0x8]:4   position
-; int              Stack[0xc]:4   blood_type
+; EBloodType       Stack[0xc]:4   blood_type
 ;
 ; XREF[1]:
 ;   core_gore.cpp_CGore_createGroundBloodSplat_FUN_004edb40 at 004edb62

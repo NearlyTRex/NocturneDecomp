@@ -1,3 +1,4 @@
+#include "core/actor/demonactortype.h"
 #include "core/elephant/elephantgun.h"
 
 #include <gtest/gtest.h>
@@ -31,6 +32,13 @@ TEST(CElephantGun, PublicInterface) {
     static_assert(std::is_same_v<decltype(&CElephantGun::fire), int (CElephantGun::*)()>);
     static_assert(std::is_same_v<decltype(&CElephantGun::getDamage), float (CElephantGun::*)()>);
     static_assert(std::is_same_v<decltype(&CElephantGun::renderAimBeam), void (CElephantGun::*)()>);
+}
+
+TEST(CElephantGun, ItsRecordIsVersion1UnderCWeapon) {
+    EXPECT_EQ(CElephantGun::kType.class_name, "CElephantGun");
+    EXPECT_EQ(CElephantGun::kType.parent_type, &CWeapon::kType);
+    EXPECT_EQ(CElephantGun::kType.factory_func, nullptr);
+    EXPECT_EQ(CElephantGun::kType.latest_version, 1);
 }
 
 } // namespace

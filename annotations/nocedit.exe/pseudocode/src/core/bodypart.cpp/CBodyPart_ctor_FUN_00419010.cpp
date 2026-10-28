@@ -34,7 +34,7 @@ CBodyPart * __cdecl core_bodypart_cpp_CBodyPart_ctor_FUN_00419010(CBodyPart *thi
   ADJ(pCVar2)->fire_count = 0;
   ADJ(pCVar2)->attached_model_count = 0;
   ADJ(pCVar2)->physics_timer = 5.0;
-  ADJ(pCVar2)->blood_type = 0;
+  ADJ(pCVar2)->blood_type = BLOOD_TYPE_RED;
   ADJ(pCVar2)->render_alpha = 0xffff;
   ADJ(pCVar2)->is_visible = 0;
   ADJ(pCVar2)->dont_pick_me_up = 0;

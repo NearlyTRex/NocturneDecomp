@@ -6,7 +6,9 @@
 #include "system/basetypes.h"
 #include "types/classes/CDemonActor.h"
 #include "types/classes/CVector3f.h"
+#include "types/enums/ETriggerCause.h"
 #include "types/enums/ETriggerEventType.h"
+#include "types/enums/ETriggerShape.h"
 
 // Structure: CTrigger
 // Ghidra size: 0x370 (880 bytes)
@@ -17,8 +19,8 @@ typedef struct CTrigger {
     ETriggerEventType event_type; // 0x15c
     CVector3f trigger_size; // 0x160
     int trigger_state; // 0x16c
-    int shape; // 0x170
-    int hero_triggers_me; // 0x174
+    ETriggerShape trigger_shape; // 0x170
+    ETriggerCause trigger_cause; // 0x174
     char actor_name[80]; // 0x178
     char actor_type[80]; // 0x1c8
     int pressure_plate; // 0x218

@@ -1,3 +1,4 @@
+#include "core/actor/demonactortype.h"
 #include "core/boxactor/lightactor.h"
 
 #include <gtest/gtest.h>
@@ -30,6 +31,13 @@ TEST(CLightActor, PublicInterface) {
                                  const CDemonActorType &(CLightActor::*)() const>);
     static_assert(
         std::is_same_v<decltype(&CLightActor::archive), void (CLightActor::*)(CActorArchive &)>);
+}
+
+TEST(CLightActor, ItsRecordIsVersion2UnderCBoxActor) {
+    EXPECT_EQ(CLightActor::kType.class_name, "CLightActor");
+    EXPECT_EQ(CLightActor::kType.parent_type, &CBoxActor::kType);
+    EXPECT_EQ(CLightActor::kType.factory_func, nullptr);
+    EXPECT_EQ(CLightActor::kType.latest_version, 2);
 }
 
 } // namespace

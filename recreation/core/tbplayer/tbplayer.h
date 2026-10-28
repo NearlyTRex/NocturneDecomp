@@ -4,7 +4,6 @@
 
 namespace nocturne::core {
 
-void staticInit();
 CBassPlayer *factoryFuncBassPlayer();
 CDrummer *factoryFuncDrummer();
 

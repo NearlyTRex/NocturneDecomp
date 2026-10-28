@@ -11,15 +11,16 @@ void __cdecl core_moloch_cpp_CMoloch_process_FUN_00528d20(CMoloch *this_ptr,floa
 {
   CDeformableModelInstance *pCVar4;
   CDeformableModelInstance *this_ptr_03;
-  uint uVar5;
+  EWalkState EVar5;
   CCharacter_full_vtable *pCVar6;
-  float fVar7;
+  uint uVar7;
+  float fVar8;
   int iVar6;
-  int iVar8;
+  int iVar9;
   CVector3f *pCVar7;
-  CVector3f *pCVar9;
+  CVector3f *pCVar10;
   SMotion *pSVar8;
-  SMotion *pSVar10;
+  SMotion *pSVar11;
   CMorph *this_ptr_02;
   char *model_name;
   float local_1b18;
@@ -69,26 +70,26 @@ void __cdecl core_moloch_cpp_CMoloch_process_FUN_00528d20(CMoloch *this_ptr,floa
        (this_ptr->base).base.model.accumulated_root_motion.y;
   local_1b14 = delta_time;
   while (pCVar5 = g_CGamePtr, 0.0 < local_1b14) {
-    iVar8 = core_motion_cpp_CMotionController_advance_FUN_0052d610
+    iVar9 = core_motion_cpp_CMotionController_advance_FUN_0052d610
                       (&(this_ptr->base).base.model.base,&local_1b14);
-    core_charactr_cpp_CCharacter_processMotion_FUN_0042ec40((CCharacter *)this_ptr,iVar8);
+    core_charactr_cpp_CCharacter_processMotion_FUN_0042ec40((CCharacter *)this_ptr,iVar9);
   }
-  fVar7 = (float)12.566370614;
+  fVar8 = (float)12.566370614;
   (this_ptr->base).base.walk_step_speed = (this_ptr->base).base.model.accumulated_root_motion.z;
-  (this_ptr->base).base.turn_speed = delta_time * fVar7;
+  (this_ptr->base).base.turn_speed = delta_time * fVar8;
   if (pCVar5->letterbox_mode != 0) {
     (this_ptr->base).base.turn_speed = (this_ptr->base).base.turn_speed * (float)0.33333333333333298;
   }
-  iVar8 = core_charactr_cpp_CCharacter_processWalking_FUN_0042ca70
+  iVar9 = core_charactr_cpp_CCharacter_processWalking_FUN_0042ca70
                     ((CCharacter *)this_ptr,delta_time);
-  if (iVar8 == 0) {
+  if (iVar9 == 0) {
     if ((this_ptr->base).control_type == HERO_CONTROL_AI) {
       core_moloch_cpp_CMoloch_processAI_FUN_005293b0(this_ptr,delta_time);
     }
-    pSVar10 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
+    pSVar11 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
                         (&(this_ptr->base).base.model.base);
-    uVar5 = pSVar10->state_index;
-    if ((((uVar5 == 0) || (uVar5 < 2)) || (uVar5 == 2)) && ((this_ptr->base).base.is_on_ground != 0)
+    uVar7 = pSVar11->state_index;
+    if ((((uVar7 == 0) || (uVar7 < 2)) || (uVar7 == 2)) && ((this_ptr->base).base.is_on_ground != 0)
        ) {
       uVar9 = (uint)((this_ptr->base).player_input.action_state.walk != 0);
       if ((this_ptr->base).player_input.action_state.backup != 0) {
@@ -102,21 +103,21 @@ void __cdecl core_moloch_cpp_CMoloch_process_FUN_00528d20(CMoloch *this_ptr,floa
       }
       (this_ptr->base).base.turn_angle_accumulator =
            (this_ptr->base).player_input.turn_speed * (this_ptr->base).base.turn_speed;
-      pSVar10 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
+      pSVar11 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
                           (&(this_ptr->base).base.model.base);
-      if (uVar9 != pSVar10->state_index) goto LAB_00528e32;
+      if (uVar9 != pSVar11->state_index) goto LAB_00528e32;
     }
   }
   else {
-    uVar5 = (this_ptr->base).base.is_walking;
-    if (uVar5 < 2) {
-      if (uVar5 == 1) goto LAB_00528e31;
+    EVar5 = (this_ptr->base).base.walk_state;
+    if (EVar5 < 2) {
+      if (EVar5 == WALK_STATE_WALKING) goto LAB_00528e31;
 LAB_0052903e:
       uVar9 = 0;
     }
     else {
-      if (2 < uVar5) {
-        if (uVar5 == 3) {
+      if (2 < EVar5) {
+        if (EVar5 == WALK_STATE_NO_PATH) {
           core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
                     (&(this_ptr->base).base.model.base,0,1);
           engine_console_cpp_CConsole_printf_FUN_00441890
@@ -137,9 +138,9 @@ LAB_00528e3a:
   if (pCVar3 == (CDemonActor *)0x0) {
     (this_ptr->base).base.velocity.y =
          (this_ptr->base).base.velocity.y - delta_time * (float)32;
-    pCVar9 = &(this_ptr->base).base.model.accumulated_root_motion;
+    pCVar10 = &(this_ptr->base).base.model.accumulated_root_motion;
     pCVar1 = &(this_ptr->base).base.position_delta;
-    local_68.x = pCVar9->x + pCVar1->x + (this_ptr->base).base.velocity.x * delta_time;
+    local_68.x = pCVar10->x + pCVar1->x + (this_ptr->base).base.velocity.x * delta_time;
     local_68.y = (this_ptr->base).base.model.accumulated_root_motion.y +
                  (this_ptr->base).base.position_delta.y +
                  (this_ptr->base).base.velocity.y * delta_time;
@@ -149,7 +150,7 @@ LAB_00528e3a:
     (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
     (this_ptr->base).base.model.accumulated_root_motion.y =
          (this_ptr->base).base.model.accumulated_root_motion.z;
-    pCVar9->x = (this_ptr->base).base.model.accumulated_root_motion.y;
+    pCVar10->x = (this_ptr->base).base.model.accumulated_root_motion.y;
     (this_ptr->base).base.position_delta.z = 0.0;
     (this_ptr->base).base.position_delta.y = (this_ptr->base).base.position_delta.z;
     pCVar1->x = (this_ptr->base).base.position_delta.y;
@@ -159,20 +160,20 @@ LAB_00528e3a:
     if ((this_ptr->base).base.grabbed_type == 0) {
       pCVar7 = core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_00408f10
                          ((CDemonActor *)this_ptr,&local_5c,&(pCVar3->location).position);
-      pCVar9 = core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830(&local_50,pCVar7);
-      local_1b18 = core_actor_cpp_normalizeAngleToPi_FUN_0040cd70(pCVar9->y);
+      pCVar10 = core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830(&local_50,pCVar7);
+      local_1b18 = core_actor_cpp_normalizeAngleToPi_FUN_0040cd70(pCVar10->y);
       if (local_1b18 < (float)-1.57079632675) {
         local_1b18 = local_1b18 + 3.141593f;
       }
       if ((float)1.57079632675 < local_1b18) {
         local_1b18 = local_1b18 + -3.141593f;
       }
-      fVar7 = delta_time * (float)3.1415926535000001;
-      if (local_1b18 < -fVar7) {
-        local_1b18 = -fVar7;
+      fVar8 = delta_time * (float)3.1415926535000001;
+      if (local_1b18 < -fVar8) {
+        local_1b18 = -fVar8;
       }
-      if (fVar7 < local_1b18) {
-        local_1b18 = fVar7;
+      if (fVar8 < local_1b18) {
+        local_1b18 = fVar8;
       }
       (this_ptr->base).base.base.orient.vec.y = (this_ptr->base).base.base.orient.vec.y + local_1b18
       ;
@@ -180,10 +181,10 @@ LAB_00528e3a:
     }
     this_ptr_01 = (CCharacter *)(this_ptr->base).base.grabbed_by;
     pCVar6 = (this_ptr_01->base).vtable._uc;
-    pCVar9 = core_skeleton_cpp_CDeformableModelInstance_getBoneCachedModelPosition_FUN_0059fb00
-                       (&(this_ptr->base).base.model,&local_44,0);
-    iVar8 = (*(pCVar6->_uc).attractActorToward)(this_ptr_01,(CDemonActor *)this_ptr,pCVar9);
-    if (iVar8 == 0) {
+    pCVar10 = core_skeleton_cpp_CDeformableModelInstance_getBoneCachedModelPosition_FUN_0059fb00
+                        (&(this_ptr->base).base.model,&local_44,0);
+    iVar9 = (*(pCVar6->_uc).attractActorToward)(this_ptr_01,(CDemonActor *)this_ptr,pCVar10);
+    if (iVar9 == 0) {
       (this_ptr->base).base.grabbed_by = (CDemonActor *)0x0;
     }
     else if (((this_ptr->base).base.grabbed_by != (CDemonActor *)0x0) &&
@@ -199,17 +200,17 @@ LAB_00528f8e:
   core_charactr_cpp_CCharacter_applyGestureLookAt_FUN_0042dfc0((CCharacter *)this_ptr,delta_time);
   if (this_ptr->morphing == 0) {
     if (this_ptr->in_human_form == 0) {
-      iVar8 = core_event_cpp_CEventList_evaluateCondition_FUN_004adca0
+      iVar9 = core_event_cpp_CEventList_evaluateCondition_FUN_004adca0
                         (g_CEventListPtr,this_ptr->demon_to_human_condition);
-      if (iVar8 != 0) {
+      if (iVar9 != 0) {
         core_moloch_cpp_CMoloch_startMorph_FUN_00529900(this_ptr);
         return;
       }
     }
     else {
-      iVar8 = core_event_cpp_CEventList_evaluateCondition_FUN_004adca0
+      iVar9 = core_event_cpp_CEventList_evaluateCondition_FUN_004adca0
                         (g_CEventListPtr,this_ptr->human_to_demon_condition);
-      if (iVar8 != 0) {
+      if (iVar9 != 0) {
         core_moloch_cpp_CMoloch_startMorph_FUN_00529900(this_ptr);
         return;
       }
@@ -222,9 +223,9 @@ LAB_00528f8e:
                (this_ptr->base).base.model.base.current_frame_number);
     core_skeleton_cpp_CDeformableModelInstance_updateAnimationAndTransforms_FUN_0059e000
               (&this_ptr->model);
-    fVar7 = this_ptr->morph_timer + delta_time;
-    this_ptr->morph_timer = fVar7;
-    if (2.0f < fVar7) {
+    fVar8 = this_ptr->morph_timer + delta_time;
+    this_ptr->morph_timer = fVar8;
+    if (2.0f < fVar8) {
       if (this_ptr->in_human_form == 0) {
         model_name = "moloch_h.dfm";
         this_ptr->in_human_form = 1;
@@ -239,13 +240,13 @@ LAB_00528f8e:
       this_ptr->morphing = 0;
       this_ptr->morph_timer = 0.0;
       core_skeleton_cpp_CDeformableModelInstance_getBoneTransform_FUN_005a1510(pCVar4,&SStack_1b10);
-      pSVar10 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0(&pCVar4->base);
+      pSVar11 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0(&pCVar4->base);
       this_ptr_03 = &(this_ptr->base).base.model;
-      fVar7 = (this_ptr->model).base.current_frame_number;
+      fVar8 = (this_ptr->model).base.current_frame_number;
       core_skeleton_cpp_CDeformableModelInstance_init_FUN_005a0840(this_ptr_03,model_name);
       core_skeleton_cpp_CDeformableModelInstance_preCache_FUN_005a0450(this_ptr_03);
       core_motion_cpp_CMotionController_jumpToMotionByName_FUN_0052ddb0
-                (&this_ptr_03->base,pSVar10->motion_name,fVar7);
+                (&this_ptr_03->base,pSVar11->motion_name,fVar8);
       core_skeleton_cpp_CDeformableModelInstance_init_FUN_005a0840(pCVar4,pcStack_20);
       core_skeleton_cpp_CDeformableModelInstance_preCache_FUN_005a0450(pCVar4);
       this_ptr_02 = &this_ptr->morph;

@@ -46,7 +46,7 @@ CCharacter * __cdecl core_charactr_cpp_CCharacter_ctor_FUN_00427e20(CCharacter *
   ADJ(pvVar4)->gesture_motion_index = -1;
   ADJ(pvVar4)->gesture_branch_root = -1;
   ADJ(pvVar4)->sound_cooldown = 0.0;
-  ADJ(pvVar4)->is_walking = 0;
+  ADJ(pvVar4)->walk_state = 0;
   ADJ(pvVar4)->walk_to_target = (CDemonActor *)0x0;
   ADJ(pvVar4)->walk_min_distance = 3.0;
   ADJ(pvVar4)->walk_max_distance = 1e+30;

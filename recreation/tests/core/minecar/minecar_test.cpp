@@ -1,3 +1,4 @@
+#include "core/actor/demonactortype.h"
 #include "core/minecar/minecar.h"
 
 #include <gtest/gtest.h>
@@ -28,6 +29,13 @@ TEST(CMineCar, PublicInterface) {
     static_assert(std::is_same_v<decltype(&CMineCar::process), void (CMineCar::*)(float)>);
     static_assert(std::is_same_v<decltype(&CMineCar::getActorType),
                                  const CDemonActorType &(CMineCar::*)() const>);
+}
+
+TEST(CMineCar, ItsRecordIsVersion1UnderCPlatform) {
+    EXPECT_EQ(CMineCar::kType.class_name, "CMineCar");
+    EXPECT_EQ(CMineCar::kType.parent_type, &CPlatform::kType);
+    EXPECT_EQ(CMineCar::kType.factory_func, nullptr);
+    EXPECT_EQ(CMineCar::kType.latest_version, 1);
 }
 
 } // namespace

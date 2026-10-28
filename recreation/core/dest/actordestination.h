@@ -7,6 +7,8 @@ namespace nocturne::core {
 
 class CActorDestination : public CDemonActor {
 public:
+    static const CDemonActorType kType;
+
     CActorDestination();
     ~CActorDestination() override;
 

@@ -1,11 +1,14 @@
 #include "common/error/error.h"
+#include "common/text/ascii.h"
 #include "common/text/textscanner.h"
 #include "core/actor/actor.h"
 #include "core/actor/actor_functions.h"
+#include "core/actor/actorarchive.h"
 #include "core/actor/demonactor.h"
 #include "core/actor/demonactortype.h"
+#include "core/actor/notported.h"
 #include "core/hero/heroplaceholder.h"
-#include "core/level/levelloader.h"
+#include "core/loadingscreen.h"
 #include "core/mission/demonmission.h"
 #include "engine/dosio/dosio.h"
 #include "engine/texture/texture.h"
@@ -77,6 +80,12 @@ std::pair<std::string, std::string> readActorEntry(CTextScanner &scanner) {
     return {class_name, std::string(*name)};
 }
 
+[[noreturn]] void quitReadingActor(const CDemonActor &owner, std::string_view description) {
+    common::displayErrorAndQuit(
+        std::format("Error reading actor pointer.\nOwner: {}\nDescription: {}\n",
+                    owner.getActorName(), description));
+}
+
 } // namespace
 
 // The original read the file as text, turning CR LF into LF; the scanner reads either.
@@ -86,7 +95,7 @@ void CDemonMission::load(std::string_view mission_filename, bool keep_assets) {
     if (!text) {
         common::displayErrorAndQuit("CDemonMission::load - Unable to open file");
     }
-    owners_.level_loader.update(owners_.messages.getLocalizedString("Loading mission"), false);
+    owners_.loading_screen.update(owners_.messages.getLocalizedString("Loading mission"), false);
     CTextScanner scanner(*text);
     readMissionFile(scanner, keep_assets);
     ensureHeroPlaceholder();
@@ -94,14 +103,12 @@ void CDemonMission::load(std::string_view mission_filename, bool keep_assets) {
 
 // Each section starts after a line of its own; a number that can't be read leaves what was
 // there, which for a count is none. nocedit could also skip the blood, an editor setting.
-// deferred: noting each class's saved version for archive() to read, and resetting them first,
-//   with the archive helpers
-// deferred: keeping the set names, with loadSet
-// deferred: recording each actor in the table archives refer to actors by, and where the
-//   carried items start, with archiveActor and CInventory::load
-// deferred: taking each hero's carried items off the list, with CHero
-// deferred: reading the blood pools and splats the file ends with, and forgetting the current
-//   set, with CGore's renderers and loadSet
+// The current set is forgotten after; the editor's actor import kept it.
+// The carried items come after the actors, each taken off the list as a hero's inventory claims
+// it, so any left over are fatal. The original's check that none was left unclaimed after that
+// could never fail.
+// deferred: recording each actor in the table save files refer to actors by, with saveActor
+// deferred: reading the blood pools and splats the file ends with, with CGore's renderers
 // nocedit 0x00522eb0
 void CDemonMission::readMissionFile(CTextScanner &scanner, bool keep_assets) {
     clearMissionData();
@@ -135,8 +142,9 @@ void CDemonMission::readMissionFile(CTextScanner &scanner, bool keep_assets) {
     scanner.skipLine();
     const int set_count = readNumber(scanner, 0);
     for (int i = 0; i < set_count; ++i) {
-        static_cast<void>(readWord(scanner));
+        set_names_.emplace_back(readWord(scanner));
     }
+    owners_.actor.resetSavedVersions();
     if (mission_version_num_ >= kTypedVersion) {
         readActorTypes(scanner);
     }
@@ -158,19 +166,79 @@ void CDemonMission::readMissionFile(CTextScanner &scanner, bool keep_assets) {
         }
     }
     scanner.skipLine();
+    if (mission_version_num_ >= kInventoryVersion) {
+        carried_start_ = static_cast<std::size_t>(std::max(actor_count, 0));
+    }
     for (int i = 0; i < actor_count; ++i) {
         if (static_cast<std::size_t>(i) >= actors_.size()) {
             common::displayErrorAndQuit("CDemonMission::load - actor list count mismatch #1!");
         }
-        actors_[static_cast<std::size_t>(i)]->load(scanner);
+        actors_[static_cast<std::size_t>(i)]->load(
+            scanner,
+            {.actor_classes = owners_.actor, .actors = *this, .crt_random = owners_.crt_random});
     }
+    carried_start_.reset();
     if (actors_.size() > static_cast<std::size_t>(std::max(actor_count, 0))) {
         common::displayErrorAndQuit("CDemonMission::load - actor list count mismatch #3!");
     }
+    current_set_index_ = -1;
+}
+
+// deferred: reading the hex number save files write a script's marker for no victim as, and the
+//   error for a reference that is neither, with save games
+// nocedit 0x00523990
+CDemonActor *CDemonMission::loadActor(CTextScanner &scanner, const CDemonActor &owner,
+                                      std::string_view description) const {
+    const std::string_view described = description.empty() ? "(unknown)" : description;
+    scanner.skipWhitespace();
+    if (!scanner.expect('"')) {
+        quitNotPorted("CDemonMission", "loadActor's actor saved as a number");
+    }
+    const std::optional<std::string_view> name = scanner.scanUntil('"');
+    if (!name) {
+        quitReadingActor(owner, described);
+    }
+    CDemonActor *actor = nullptr;
+    if (!common::equalsIgnoringAsciiCase(*name, "(none)")) {
+        actor = findActorByName(*name);
+        if (actor == nullptr) {
+            owners_.editor_tools.showError(std::format(
+                "WARNING.  Can't find actor '{}' in {} property {}.  (Please note this in a bug "
+                "report...)",
+                *name, owner.getActorName(), described));
+        }
+    }
+    if (!scanner.expect('"')) {
+        quitReadingActor(owner, described);
+    }
+    static_cast<void>(scanner.scanUntil('\n'));
+    if (!scanner.expect('\n')) {
+        quitReadingActor(owner, described);
+    }
+    return actor;
+}
+
+// Each claimed comes off the list, which leaves the next where the first was.
+// nocedit 0x00523520
+std::unique_ptr<CDemonActor> CDemonMission::takeCarriedActor(std::string_view name) {
+    if (!carried_start_) {
+        return nullptr;
+    }
+    if (*carried_start_ >= actors_.size()) {
+        common::displayErrorAndQuit("CDemonMission::getNextLoadedInventoryActor - no more!");
+    }
+    const CDemonActor &next = *actors_[*carried_start_];
+    if (!common::equalsIgnoringAsciiCase(next.getActorName(), name)) {
+        common::displayErrorAndQuit(
+            std::format("CDemonMission::getNextLoadedInventoryActor - requested {}, but next "
+                        "actor was {}!",
+                        name, next.getActorName()));
+    }
+    return removeActorFromList(next);
 }
 
 // A class's saved version newer than the game's own is fatal.
-void CDemonMission::readActorTypes(CTextScanner &scanner) const {
+void CDemonMission::readActorTypes(CTextScanner &scanner) {
     scanner.skipLine();
     const int type_count = readNumber(scanner, 0);
     // The original kept the last version read when a line had none.
@@ -183,22 +251,26 @@ void CDemonMission::readActorTypes(CTextScanner &scanner) const {
             saved_version = readNumber(scanner, saved_version);
         }
         const CDemonActorType *type = owners_.actor.getActorClassByName(class_name);
-        if (type != nullptr && type->latest_version < saved_version) {
+        if (type == nullptr) {
+            continue;
+        }
+        if (type->latest_version < saved_version) {
             common::displayErrorAndQuit(
                 std::format("Actor type {} is saved in mission in format version {}, but the "
                             "latest version this .EXE supports is {}!",
                             class_name, saved_version, type->latest_version));
         }
+        owners_.actor.setSavedVersion(*type, saved_version);
     }
 }
 
 // nocedit also zeroed the count of visible corona globes; retail doesn't.
-// deferred: clearing the set count, with loadSet
-// deferred: clearing has_inventory_actors, next_inventory_actor and actor_lookup_count, with
-//   archiveActor, getNextLoadedInventoryActor and CInventory::load
+// deferred: clearing actor_lookup_count, with saveActor
 // nocedit 0x00522d30
 void CDemonMission::clearMissionData() {
     removeAllActors();
+    carried_start_.reset();
+    set_names_.clear();
     mission_name_.clear();
 }
 

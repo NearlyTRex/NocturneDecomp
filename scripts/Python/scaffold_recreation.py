@@ -406,6 +406,10 @@ class Model:
         return caller["tu"] != f["tu"]
 
     def is_public(self, f):
+        # A TU's static initializer is only the CRT's to call. Its logic goes to the constructor
+        # or owner that covers it, which takes its address line, so it is never declared.
+        if f["method"] == "staticInit" and not f.get("cls"):
+            return False
         if any(self.is_external_caller(c, f) for c in f.get("callers", [])):
             return True
         return any(ref not in self.slot_addrs for ref in f.get("data_refs", []))
@@ -1071,7 +1075,9 @@ class Scaffold:
             pointer = "%s(%s::*)(%s)" % (pointer_join(e["ret"]), owner, params)
             target = "&%s::%s" % (owner, e["name"])
         if overloaded:
-            return "static_assert(std::is_same_v<decltype(static_cast<%s>(%s)), %s>);" % (pointer, target, pointer)
+            # A template argument of the pointer's type picks the overload, as a cast would.
+            return "static_assert(std::is_same_v<std::integral_constant<%s, %s>::value_type, %s>);" % (
+                pointer, target, pointer)
         return "static_assert(std::is_same_v<decltype(%s), %s>);" % (target, pointer)
 
     def emit_class_test(self, emit, cls, path, module, parent, base_spelled, is_poly, abstract, ctors, members, names):
@@ -1164,6 +1170,19 @@ def included_headers(root):
     return included
 
 
+def find_clang_format():
+    """The clang-format of the LLVM release the recreation's presets build with.
+
+    Releases format the same file differently, so the scaffold must write what
+    the recreation's format-check accepts. None when that release isn't installed.
+    """
+    with open(os.path.join(OUTPUT, "CMakePresets.json"), encoding="utf-8") as f:
+        presets = json.load(f)
+    default = next(p for p in presets["configurePresets"] if p["name"] == "default")
+    version = default["environment"]["NOCTURNE_LLVM_VERSION"]
+    return shutil.which("clang-format-%s" % version)
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__.split("\n\n")[0])
     parser.add_argument("--report-only", action="store_true", help="print the report, write nothing")
@@ -1198,9 +1217,9 @@ def main():
     elif stale:
         model.report["stale generated files (remove with --prune)"].extend(stale)
     if written:
-        clang_format = shutil.which("clang-format")
+        clang_format = find_clang_format()
         if clang_format is None:
-            print("WARNING: clang-format not found; written files are unformatted")
+            print("WARNING: the recreation's clang-format not found; written files are unformatted")
         else:
             paths = [os.path.join(args.output, p) for p in written]
             for i in range(0, len(paths), 200):

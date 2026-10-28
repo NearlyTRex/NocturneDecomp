@@ -7,11 +7,13 @@
 #include "types/classes/CCourse.h"
 #include "types/classes/CDemonActor.h"
 #include "types/classes/CKeyFramedModelInstance.h"
+#include "types/classes/CMatrix3x4f.h"
 #include "types/classes/CQuaternion4f.h"
 #include "types/classes/CVector3f.h"
 #include "types/enums/EGroundType.h"
+#include "types/enums/EOneShotState.h"
+#include "types/enums/EPlatformSlewMode.h"
 #include "types/enums/EPlatformStateType.h"
-#include "types/enums/EPlatformType.h"
 #include "types/structs/SPlatformAttachment.h"
 
 // Structure: CPlatform
@@ -40,7 +42,7 @@ typedef struct CPlatform {
     char stop_sound[20]; // 0x494
     char active_sound[20]; // 0x4a8
     uint sfx_handle; // 0x4bc
-    int one_shot; // 0x4c0
+    EOneShotState one_shot; // 0x4c0
     int block_virtual_director_flag; // 0x4c4
     int render_in_background_when_not_moving_flag; // 0x4c8
     char camera_while_moving[64]; // 0x4cc
@@ -49,7 +51,7 @@ typedef struct CPlatform {
     int recompute_fog; // 0x514
     int plot_in_shadow_flag; // 0x518
     SPlatformAttachment attach_actors[10]; // 0x51c
-    EPlatformType platform_type; // 0x724
+    EPlatformSlewMode slew_mode; // 0x724
     int rendered_in_background; // 0x728
 } CPlatform;
 #pragma pack(pop)

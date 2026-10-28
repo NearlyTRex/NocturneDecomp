@@ -13,7 +13,7 @@
   {
     "kind":"class",
     "name":"CAnvil",
-    "parent":"CCharacter",
+    "parent":"CDemonActor",
     "rtti_file":"core/anvil.cpp",
     "size":836
   },
@@ -1089,6 +1089,44 @@
       {
         "name":"HOSTAGE_TYPE_UNKNOWN",
         "value":6
+      }
+    ]
+  },
+  {
+    "kind":"enum",
+    "name":"ETriggerShape",
+    "size":4,
+    "values":[
+      {
+        "name":"TRIGGER_SHAPE_BOX",
+        "value":0
+      },
+      {
+        "name":"TRIGGER_SHAPE_CYLINDER",
+        "value":1
+      }
+    ]
+  },
+  {
+    "kind":"enum",
+    "name":"EWaterActorState",
+    "size":4,
+    "values":[
+      {
+        "name":"WATER_ACTOR_LOWERED",
+        "value":0
+      },
+      {
+        "name":"WATER_ACTOR_RISING",
+        "value":1
+      },
+      {
+        "name":"WATER_ACTOR_RAISED",
+        "value":2
+      },
+      {
+        "name":"WATER_ACTOR_LOWERING",
+        "value":3
       }
     ]
   },

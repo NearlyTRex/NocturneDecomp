@@ -79,7 +79,8 @@ LAB_00428579:
               (g_CGore_PTR_005b96c4,(CVector3f *)(local_28 + 8),&damage_info->impact_point,
                (int)ROUND(dVar6) + 1,this_ptr->blood_type);
   }
-  if ((this_ptr->health_bar_mode == 1) && ((CHero *)this_ptr != g_HeroActors[g_LocalHeroIndex])) {
+  if ((this_ptr->health_bar_mode == HEALTH_BAR_WHEN_HURT) &&
+     ((CHero *)this_ptr != g_HeroActors[g_LocalHeroIndex])) {
     core_game_cpp_CGame_setStatusDisplay_FUN_004a3ab0
               (g_CGame_PTR_005b9354,this_ptr->descriptive_name,
                this_ptr->hit_points / this_ptr->max_hit_points,5.0);

@@ -14,7 +14,8 @@ void __cdecl core_charactr_cpp_CCharacter_setWalkTarget_FUN_00428ab0(CCharacter 
   int iVar1;
   
   if (target == (CDemonActor *)0x0) {
-    if (((this_ptr->is_walking != 0) && (this_ptr->walk_to_target != (CDemonActor *)0x0)) &&
+    if (((this_ptr->walk_state != WALK_STATE_IDLE) &&
+        (this_ptr->walk_to_target != (CDemonActor *)0x0)) &&
        ((this_ptr->model).model_name[0] != '\0')) {
       iVar1 = 0;
       state_name = "STAND";
@@ -26,10 +27,10 @@ void __cdecl core_charactr_cpp_CCharacter_setWalkTarget_FUN_00428ab0(CCharacter 
                   (&(this_ptr->model).base,"STAND",1);
       }
     }
-    this_ptr->is_walking = 0;
+    this_ptr->walk_state = WALK_STATE_IDLE;
   }
   else {
-    this_ptr->is_walking = 1;
+    this_ptr->walk_state = WALK_STATE_WALKING;
   }
   this_ptr->walk_to_target = target;
   this_ptr->walk_min_distance = min_distance;

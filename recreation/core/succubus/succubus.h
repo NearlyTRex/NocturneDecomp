@@ -8,6 +8,8 @@ namespace nocturne::core {
 
 class CSuccubus : public CEnemy {
 public:
+    static const CDemonActorType kType;
+
     CSuccubus();
     ~CSuccubus() override;
 

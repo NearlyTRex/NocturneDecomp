@@ -1,3 +1,4 @@
+#include "core/actor/demonactortype.h"
 #include "core/manpuz/mirrorhack.h"
 
 #include <gtest/gtest.h>
@@ -44,6 +45,13 @@ TEST(CMirrorHack, PublicInterface) {
         std::is_same_v<decltype(&CMirrorHack::onLaserHit), void (CMirrorHack::*)(SLaserInfo *)>);
     static_assert(std::is_same_v<decltype(&CMirrorHack::getActorType),
                                  const CDemonActorType &(CMirrorHack::*)() const>);
+}
+
+TEST(CMirrorHack, ItsRecordIsVersion1UnderCDemonActor) {
+    EXPECT_EQ(CMirrorHack::kType.class_name, "CMirrorHack");
+    EXPECT_EQ(CMirrorHack::kType.parent_type, &CDemonActor::kType);
+    EXPECT_EQ(CMirrorHack::kType.factory_func, nullptr);
+    EXPECT_EQ(CMirrorHack::kType.latest_version, 1);
 }
 
 } // namespace

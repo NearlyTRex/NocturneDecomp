@@ -5,6 +5,7 @@
 // Dependencies
 #include "system/basetypes.h"
 #include "types/classes/CCmdParm.h"
+#include "types/enums/ECmdParmType.h"
 
 // Structure: CCmdParse
 // Ghidra size: 0x2128 (8488 bytes)

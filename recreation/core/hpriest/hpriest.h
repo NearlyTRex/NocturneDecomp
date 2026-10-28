@@ -4,7 +4,6 @@
 
 namespace nocturne::core {
 
-void staticInit();
 CHighPriestOfGardath *factoryFuncHighPriestOfGardath();
 
 } // namespace nocturne::core

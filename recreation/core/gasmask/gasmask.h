@@ -7,6 +7,8 @@ namespace nocturne::core {
 
 class CGasMask : public CDemonActor {
 public:
+    static const CDemonActorType kType;
+
     CGasMask();
     ~CGasMask() override;
 

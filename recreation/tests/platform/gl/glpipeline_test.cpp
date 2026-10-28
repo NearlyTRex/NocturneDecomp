@@ -107,39 +107,44 @@ struct SChange {
 
 TEST(CGlPipeline, AChangeStatesOnlyWhatChanged) {
     const std::vector<SChange> changes = {
-        {"source blend",
-         [](auto &s) { s.source_blend = common::EBlendFactor::SourceAlpha; },
-         {glCall("BlendFunc", GL_SRC_ALPHA, GL_ZERO)}},
-        {"destination blend",
-         [](auto &s) { s.destination_blend = common::EBlendFactor::InverseSourceAlpha; },
-         {glCall("BlendFunc", GL_ONE, GL_ONE_MINUS_SRC_ALPHA)}},
-        {"depth write",
-         [](auto &s) { s.depth_write_enabled = false; },
-         {glCall("DepthMask", GL_FALSE)}},
-        {"depth function",
-         [](auto &s) { s.depth_function = common::EDepthFunction::Always; },
-         {glCall("DepthFunc", GL_ALWAYS)}},
-        {"texture",
-         [](auto &s) { s.texture_enabled = false; },
-         {glCall("Uniform1i", kTextureEnabled, 0)}},
-        {"texture alpha",
-         [](auto &s) { s.modulate_texture_alpha = true; },
-         {glCall("Uniform1i", kModulateAlpha, 1)}},
-        {"alpha test",
-         [](auto &s) { s.alpha_test_enabled = true; },
-         {glCall("Uniform1i", kAlphaTest, 1)}},
-        {"fog", [](auto &s) { s.fog_enabled = false; }, {glCall("Uniform1i", kFogEnabled, 0)}},
+        {.name = "source blend",
+         .change = [](auto &s) { s.source_blend = common::EBlendFactor::SourceAlpha; },
+         .calls = {glCall("BlendFunc", GL_SRC_ALPHA, GL_ZERO)}},
+        {.name = "destination blend",
+         .change = [](auto &s) { s.destination_blend = common::EBlendFactor::InverseSourceAlpha; },
+         .calls = {glCall("BlendFunc", GL_ONE, GL_ONE_MINUS_SRC_ALPHA)}},
+        {.name = "depth write",
+         .change = [](auto &s) { s.depth_write_enabled = false; },
+         .calls = {glCall("DepthMask", GL_FALSE)}},
+        {.name = "depth function",
+         .change = [](auto &s) { s.depth_function = common::EDepthFunction::Always; },
+         .calls = {glCall("DepthFunc", GL_ALWAYS)}},
+        {.name = "texture",
+         .change = [](auto &s) { s.texture_enabled = false; },
+         .calls = {glCall("Uniform1i", kTextureEnabled, 0)}},
+        {.name = "texture alpha",
+         .change = [](auto &s) { s.modulate_texture_alpha = true; },
+         .calls = {glCall("Uniform1i", kModulateAlpha, 1)}},
+        {.name = "alpha test",
+         .change = [](auto &s) { s.alpha_test_enabled = true; },
+         .calls = {glCall("Uniform1i", kAlphaTest, 1)}},
+        {.name = "fog",
+         .change = [](auto &s) { s.fog_enabled = false; },
+         .calls = {glCall("Uniform1i", kFogEnabled, 0)}},
         // Without a depth test a blend is no overlay, so the bias stays off.
-        {"depth test",
-         [](auto &s) { s.depth_test_enabled = false; },
-         {glCall("Disable", GL_DEPTH_TEST)}},
-        {"blend without depth test",
-         [](auto &s) {
-             s.blend_enabled = true;
-             s.depth_test_enabled = false;
-         },
-         {glCall("Enable", GL_BLEND), glCall("Disable", GL_DEPTH_TEST)}},
-        {"filters", [](auto &s) { s.min_filter = common::ETextureFilter::Linear; }, {}},
+        {.name = "depth test",
+         .change = [](auto &s) { s.depth_test_enabled = false; },
+         .calls = {glCall("Disable", GL_DEPTH_TEST)}},
+        {.name = "blend without depth test",
+         .change =
+             [](auto &s) {
+                 s.blend_enabled = true;
+                 s.depth_test_enabled = false;
+             },
+         .calls = {glCall("Enable", GL_BLEND), glCall("Disable", GL_DEPTH_TEST)}},
+        {.name = "filters",
+         .change = [](auto &s) { s.min_filter = common::ETextureFilter::Linear; },
+         .calls = {}},
     };
     for (const SChange &change : changes) {
         SCOPED_TRACE(change.name);

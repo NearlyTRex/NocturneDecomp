@@ -378,7 +378,7 @@ void __cdecl core_batman_cpp_CBatman_process_FUN_00416870(CBatman *this_ptr,floa
     }
     goto switchD_004173a5_caseD_4;
   }
-  uVar15 = (this_ptr->base).base.is_walking;
+  uVar15 = (this_ptr->base).base.walk_state;
   if (uVar15 < 2) {
     if (uVar15 == 1) {
 LAB_00416943:

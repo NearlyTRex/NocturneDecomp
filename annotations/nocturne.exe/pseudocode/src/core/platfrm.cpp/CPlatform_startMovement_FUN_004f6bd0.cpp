@@ -18,10 +18,10 @@ void __cdecl core_platfrm_cpp_CPlatform_startMovement_FUN_004f6bd0(CPlatform *th
   }
   this_ptr->current_movement_rate = movement_rate;
   if (this_ptr->param < goal_param) {
-    this_ptr->state = PLATFORM_STATE_TYPE_WTF|PLATFORM_STATE_TYPE_AT_END;
+    this_ptr->state = PLATFORM_STATE_TYPE_MOVING_TO_END;
   }
   if (goal_param < this_ptr->param) {
-    this_ptr->state = 4;
+    this_ptr->state = PLATFORM_STATE_TYPE_MOVING_TO_START;
   }
   if (this_ptr->start_sound[0] == '\0') {
     return;

@@ -9,6 +9,7 @@
 
 #include "gl_recorder.h"
 
+#include <cmath>
 #include <cstdio>
 #include <cstdlib>
 
@@ -166,6 +167,7 @@ GLint APIENTRY r_GetUniformLocation(GLuint, const GLchar *name) {
     static const char *known[] = {
         "u_projection", "u_tex",         "u_tex_enabled", "u_modulate_alpha",
         "u_alpha_test", "u_fog_enabled", "u_fog_color",   "u_debug",
+        "u_src",        "u_sharp",
     };
     for (int i = 0; i < (int)(sizeof(known) / sizeof(known[0])); ++i) {
         if (strcmp(known[i], name) == 0)
@@ -191,8 +193,12 @@ void APIENTRY r_BindAttribLocation(GLuint, GLuint index, const GLchar *) {
 void APIENTRY r_Uniform1i(GLint loc, GLint v) {
     note("Uniform1i", (unsigned)loc, (unsigned)v);
 }
-void APIENTRY r_Uniform1f(GLint loc, GLfloat) {
-    note("Uniform1f", (unsigned)loc);
+// The value in thousandths, rounded, so a test can read it as a whole number.
+void APIENTRY r_Uniform1f(GLint loc, GLfloat v) {
+    note("Uniform1f", (unsigned)loc, (unsigned)std::lround(v * 1000.0f));
+}
+void APIENTRY r_Uniform2f(GLint loc, GLfloat x, GLfloat y) {
+    note("Uniform2f", (unsigned)loc, (unsigned)x, (unsigned)y);
 }
 void APIENTRY r_Uniform3f(GLint loc, GLfloat, GLfloat, GLfloat) {
     note("Uniform3f", (unsigned)loc);
@@ -467,6 +473,7 @@ void install() {
     gl.BindAttribLocation = r_BindAttribLocation;
     gl.Uniform1i = r_Uniform1i;
     gl.Uniform1f = r_Uniform1f;
+    gl.Uniform2f = r_Uniform2f;
     gl.Uniform3f = r_Uniform3f;
     gl.Uniform4f = r_Uniform4f;
     gl.UniformMatrix4fv = r_UniformMatrix4fv;

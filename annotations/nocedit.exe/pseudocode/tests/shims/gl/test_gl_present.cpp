@@ -15,13 +15,16 @@
 #include "gl/gl_api.h"
 #include "gl/gl_present.h"
 #include "gl/gl_version.h"
+#include "gl/upscaler.h"
 #include "nocturne_test.h"
 #include "sdl_gl_support.h"
 #include "shims/renderer/gl_recorder.h"
 
 #include <cstdlib>
 #include <cstring>
+#include <filesystem>
 #include <string>
+#include <system_error>
 #include <vector>
 
 extern SDL_Window *g_sdlWindow;
@@ -503,6 +506,89 @@ NOCTURNE_TEST(a_point_on_the_window_is_the_point_in_the_game) {
         CHECK_EQ(x, 7);
         CHECK_EQ(y, 9);
     }
+}
+
+// -----------------------------------------------------------------------------
+// The upscaler
+// -----------------------------------------------------------------------------
+//
+// Last, since the choice is read once and kept: everything above presents
+// through the standard filter, as the ini it finds names none.
+
+// Under FSR a frame that is enlarged, in either direction, is drawn through
+// FSR: sampled linear even at a whole multiple, told the frame's size and the
+// sharpness. One shown at its own size or smaller takes the standard path. The
+// other filters are reached the same way; xBR's own sampling is below.
+NOCTURNE_TEST(under_fsr_an_enlarged_frame_is_drawn_through_fsr) {
+    std::error_code ec;
+    const std::filesystem::path dir =
+        std::filesystem::temp_directory_path(ec) / "nocturne_gl_present_test";
+    std::filesystem::remove_all(dir, ec);
+    std::filesystem::create_directories(dir, ec);
+    std::filesystem::current_path(dir, ec);
+
+    gl_recorder::State &s = up();
+    CHECK_EQ(nocturne_upscaler_cycle(1), NOCTURNE_UPSCALER_FSR);
+    nocturne_gl_set_logical_size(640, 480);
+    stand.drawable_width = 1280;
+    stand.drawable_height = 960;
+    present(640, 480);
+    CHECK_EQ(s.count("Uniform2f"), 1);
+    CHECK_EQ(s.calls[(size_t)s.index_of_last("Uniform2f")].b, 640u);
+    CHECK_EQ(s.calls[(size_t)s.index_of_last("Uniform2f")].c, 480u);
+    CHECK_EQ(s.calls[(size_t)s.index_of_last("Uniform1f")].b, 500u); // 50%
+    CHECK_EQ(last_min_filter(s), (unsigned)GL_LINEAR);
+
+    // A frame shorter than the game's picture is enlarged in height alone.
+    stand.drawable_width = 640;
+    stand.drawable_height = 480;
+    present(640, 400);
+    CHECK_EQ(s.count("Uniform2f"), 2);
+
+    // At its own size, or shrunk, the standard path.
+    present(640, 480);
+    CHECK_EQ(last_min_filter(s), (unsigned)GL_NEAREST);
+    stand.drawable_width = 320;
+    stand.drawable_height = 240;
+    present(640, 480);
+    CHECK_EQ(s.count("Uniform2f"), 2);
+
+    // The scene the renderer drew, bottom-up.
+    nocturne_gl_scene_target_bind(320, 240);
+    stand.drawable_width = 1280;
+    stand.drawable_height = 960;
+    nocturne_gl_present_scene();
+    CHECK_EQ(s.count("Uniform2f"), 3);
+    CHECK_EQ(s.calls[(size_t)s.index_of_last("DrawArrays")].b, 4u);
+}
+
+// xBR reads its frame unfiltered, so it is set to nearest even where the
+// standard path would blend.
+NOCTURNE_TEST(xbr_reads_its_frame_unfiltered) {
+    gl_recorder::State &s = up();
+    CHECK_EQ(nocturne_upscaler_cycle(-1), NOCTURNE_UPSCALER_STANDARD);
+    CHECK_EQ(nocturne_upscaler_cycle(-1), NOCTURNE_UPSCALER_XBR);
+    nocturne_gl_set_logical_size(640, 480);
+    stand.drawable_width = 1000;
+    stand.drawable_height = 750;
+    present(640, 480);
+    CHECK_EQ(s.count("Uniform2f"), 1);
+    CHECK_EQ(last_min_filter(s), (unsigned)GL_NEAREST);
+}
+
+// When the upscaler cannot be had the frame is drawn the standard way, filter
+// and all.
+NOCTURNE_TEST(without_its_upscaler_a_frame_takes_the_standard_path) {
+    gl_recorder::State &s = up();
+    gl.Uniform2f = nullptr;
+    nocturne_gl_set_logical_size(640, 480);
+    stand.drawable_width = 1280;
+    stand.drawable_height = 960;
+    present(640, 480);
+    CHECK_EQ(stand.swaps, 1);
+    CHECK_EQ(s.count("DrawArrays"), 1);
+    CHECK_EQ(last_min_filter(s), (unsigned)GL_NEAREST);
+    CHECK_EQ(nocturne_upscaler_cycle(1), NOCTURNE_UPSCALER_STANDARD);
 }
 
 NOCTURNE_TEST_MAIN()

@@ -16,17 +16,17 @@ void __cdecl core_platfrm_cpp_CPlatform_propertyDisplaySlewCallback_FUN_0054e400
   pCVar2 = (CPlatform *)
            core_actor_cpp_castToClassHash_FUN_0040c790
                      (&this_ptr->base,g_CPlatformClassInfo.name_hash);
-  switch(pCVar2->platform_type) {
+  switch(pCVar2->slew_mode) {
   default:
     pcVar2 = "Disabled";
     break;
-  case PLATFORM_TYPE_START:
+  case PLATFORM_SLEW_START:
     pcVar2 = "Start";
     break;
-  case PLATFORM_TYPE_END:
+  case PLATFORM_SLEW_END:
     pcVar2 = "End";
     break;
-  case PLATFORM_TYPE_BOTH:
+  case PLATFORM_SLEW_BOTH:
     pcVar2 = "Both";
   }
   do {

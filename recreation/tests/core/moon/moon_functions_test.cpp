@@ -9,7 +9,6 @@ namespace nocturne::core {
 namespace {
 
 TEST(CoreMoonFunctions, PublicInterface) {
-    static_assert(std::is_same_v<decltype(&staticInit), void (*)()>);
     static_assert(std::is_same_v<decltype(&getBatAmbient), int (*)(float, int)>);
 }
 

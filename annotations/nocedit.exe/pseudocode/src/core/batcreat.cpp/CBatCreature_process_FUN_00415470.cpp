@@ -13,6 +13,7 @@ void __cdecl core_batcreat_cpp_CBatCreature_process_FUN_00415470(CBatCreature *t
 {
   CDeformableModelInstance *this_ptr_01;
   float fVar1;
+  EWalkState EVar2;
   CCharacter *pCVar4;
   float fVar5;
   int iVar4;
@@ -292,15 +293,15 @@ LAB_004158fb:
                            (this_ptr_01,&local_4c,0);
         core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
                   ((CDemonActor *)this_ptr,&local_100,pCVar7);
-        core_gore_cpp_CGore_createBloodPool_FUN_004ede30(g_CGorePtr,&local_100,0);
+        core_gore_cpp_CGore_createBloodPool_FUN_004ede30(g_CGorePtr,&local_100,BLOOD_TYPE_RED);
         (this_ptr->base).pool_me = 1;
       }
     }
     goto switchD_00415d62_caseD_2;
   }
-  uVar9 = (this_ptr->base).base.is_walking;
-  if (uVar9 < 2) {
-    if (uVar9 == 1) {
+  EVar2 = (this_ptr->base).base.walk_state;
+  if (EVar2 < 2) {
+    if (EVar2 == WALK_STATE_WALKING) {
 LAB_00415540:
       iVar10 = 1;
     }
@@ -312,8 +313,8 @@ LAB_004156d6:
               (&(this_ptr->base).base.model.base,iVar10,1);
   }
   else {
-    if (uVar9 < 3) goto LAB_00415540;
-    if (uVar9 != 3) goto LAB_004156d6;
+    if (EVar2 < WALK_STATE_NO_PATH) goto LAB_00415540;
+    if (EVar2 != WALK_STATE_NO_PATH) goto LAB_004156d6;
     core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
               (&(this_ptr->base).base.model.base,0,1);
     engine_console_cpp_CConsole_printf_FUN_00441890

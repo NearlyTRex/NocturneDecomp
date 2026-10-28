@@ -18,9 +18,12 @@ extern "C" void nocturne_menu_backdrop_frame(void) {
     core_moon_cpp_CMoon_render_FUN_00529ed0(&g_CMoonInstance);
 }
 
-extern "C" int nocturne_menu_start_y(int rows) {
+namespace {
+
+// `menu_y`, lifted where `rows` character heights below it would run off the
+// window, and never above the top.
+int fit(int menu_y, int rows) {
     int menu_ch = engine_font_cpp_CBitFont_getCharHeight_FUN_004d01d0(g_ThemeFont, 0x58);
-    int menu_y = NOCTURNE_MENU_START_Y;
 
     if (g_WindowHeight < menu_y + rows * menu_ch) {
         menu_y = g_WindowHeight - rows * menu_ch;
@@ -29,6 +32,20 @@ extern "C" int nocturne_menu_start_y(int rows) {
         menu_y = 0;
     }
     return menu_y;
+}
+
+} // namespace
+
+extern "C" int nocturne_menu_start_y(int rows) {
+    return fit(NOCTURNE_MENU_START_Y, rows);
+}
+
+extern "C" int nocturne_menu_titled_y(int lines) {
+#if NOCTURNE_AUTHENTIC_MENU
+    return nocturne_menu_start_y(NOCTURNE_MENU_ROWS_TITLED(lines));
+#else
+    return fit(NOCTURNE_MENU_TITLE_Y, NOCTURNE_MENU_ROWS_TITLED(lines));
+#endif
 }
 
 extern "C" int nocturne_menu_cancelled(void) {

@@ -1,8 +1,7 @@
-#include "common/text/textscanner.h"
-#include "core/actor/actorarchive.h"
 #include "core/actor/demonactortype.h"
 #include "core/scat/scat.h"
 #include "tests/mocks/core/notportedcalls.h"
+#include "tests/mocks/core/testheroarchive.h"
 
 #include <gtest/gtest.h>
 
@@ -51,21 +50,26 @@ TEST(CScat, ItsRecordIsAVersionOneHeroThatMissionsCanCreate) {
     EXPECT_EQ(&actor->getActorType(), &CScat::kType);
 }
 
+TEST(CScat, ItsFieldsAreAHerosFields) {
+    CScat hero;
+    CTestHeroArchive archive(hero, CScat::kType, 1, "");
+    hero.archive(archive.get());
+    EXPECT_EQ(hero.getLocation().area_id, CTestHeroArchive::kArea);
+    EXPECT_TRUE(archive.isFinished());
+}
+
 TEST(CScat, TheFunctionsNotPortedYetQuit) {
     CScat hero;
-    common::CTextScanner scanner("");
-    CActorArchive archive(scanner);
     const NotPortedCalls calls = {
         {"setup", [&] { hero.setup(); }},
         {"process", [&] { hero.process(0.0F); }},
         {"renderOpaque", [&] { static_cast<void>(hero.renderOpaque()); }},
-        {"archive", [&] { hero.archive(archive); }},
         {"processDamage", [&] { hero.processDamage(nullptr); }},
         {"createDefaultWeapon", [&] { hero.createDefaultWeapon(); }},
         {"drawWeapon", [&] { hero.drawWeapon(0); }},
         {"isWeaponDrawn", [&] { static_cast<void>(hero.isWeaponDrawn()); }},
     };
-    EXPECT_EQ(calls.size(), 8U);
+    EXPECT_EQ(calls.size(), 7U);
     expectEachQuitsNotPorted("CScat", calls);
 }
 

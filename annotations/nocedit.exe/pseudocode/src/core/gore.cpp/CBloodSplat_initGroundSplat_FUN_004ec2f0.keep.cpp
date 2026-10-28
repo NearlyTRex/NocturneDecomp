@@ -3,11 +3,11 @@
 // MANUAL RECONSTRUCTION
 // Address Range: [[004ec2f0, 004ec38e]]
 // Convention: __cdecl
-// Signature: void __cdecl core_gore_cpp_CBloodSplat_initGroundSplat_FUN_004ec2f0(CBloodSplat *this_ptr,CVector3f *position,int blood_type)
+// Signature: void __cdecl core_gore_cpp_CBloodSplat_initGroundSplat_FUN_004ec2f0(CBloodSplat *this_ptr,CVector3f *position,EBloodType blood_type)
 
 #include "nocturne.h"
 
-void __cdecl core_gore_cpp_CBloodSplat_initGroundSplat_FUN_004ec2f0(CBloodSplat *this_ptr,CVector3f *position,int blood_type)
+void __cdecl core_gore_cpp_CBloodSplat_initGroundSplat_FUN_004ec2f0(CBloodSplat *this_ptr,CVector3f *position,EBloodType blood_type)
 
 {
   int iVar1;

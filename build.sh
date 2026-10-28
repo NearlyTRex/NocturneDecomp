@@ -26,10 +26,8 @@
 #   ./build.sh exe-linux-asan-x86_64 -j 4
 #   ./build.sh exe-linux-asan-x86_64 --target nocturne_globals
 #
-# Re-glob trigger: collect_sources.py runs at cmake-configure time, so newly
-# added .keep.cpp files don't enter the ninja graph unless cmake reconfigures.
-# `touch`ing a CMAKE_CONFIGURE_DEPENDS file makes the next `cmake --build`
-# reconfigure first; reconfigure is a no-op (~0.2s) when nothing else changed.
+# Every run configures from the preset first, which also re-globs the sources
+# collect_sources.py finds.
 #
 # Before building, every scripts/Bash/regen_*.sh runs to refresh committed
 # test/check artifacts (struct-layout checks, etc.). Skip with SKIP_REGEN=1:
@@ -81,17 +79,9 @@ if [[ "${SKIP_REGEN:-0}" != "1" ]]; then
     done
 fi
 
-# First-time configure — skipped once the tree has been configured. Test the
-# CMake cache, not the directory: CI restores _deps/ffmpeg into an otherwise
-# empty build dir.
-if [[ ! -f "${BUILD_DIR}/CMakeCache.txt" ]]; then
-    echo "build.sh: configuring preset '${PRESET}' (first run)"
-    cmake --preset "${PRESET}" ${CONFIGURE_ARGS[@]+"${CONFIGURE_ARGS[@]}"} || exit $?
-fi
-
-# Force a re-glob so newly added .keep.cpp / .keep.c files end up in the ninja
-# graph. Without this, cmake only reconfigures when something already in
-# CMAKE_CONFIGURE_DEPENDS changes, which keep files aren't.
-touch "${SCRIPT_DIR}/cmake/skip_list.txt"
+# Configure every run, from the preset: a build's own reconfigure reuses the
+# cache, so a preset change (a new compiler, say) would never reach it. It also
+# re-globs, so newly added .keep.cpp / .keep.c files enter the ninja graph.
+cmake --preset "${PRESET}" ${CONFIGURE_ARGS[@]+"${CONFIGURE_ARGS[@]}"} || exit $?
 
 exec cmake --build "${BUILD_DIR}" "$@"

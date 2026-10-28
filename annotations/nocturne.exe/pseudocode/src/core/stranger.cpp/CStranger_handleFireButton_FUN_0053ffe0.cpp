@@ -139,7 +139,7 @@ switchD_005400cd_caseD_3:
         this_ptr->can_grab_weapon = 1;
       }
       core_stranger_cpp_CStranger_updateWeaponPosition_FUN_0053a660(this_ptr,0);
-      if (this_ptr->weapon->fire_mode == 2) {
+      if (this_ptr->weapon->fire_mode == FIRE_MODE_PUMP) {
         (this_ptr->base).base.layer_action_t = 0.0;
         (this_ptr->base).base.layer_action_index = 8;
         return;

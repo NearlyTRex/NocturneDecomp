@@ -4,7 +4,10 @@
 
 // Dependencies
 #include "system/basetypes.h"
+#include "types/enums/EMotionTransitionCmd.h"
 #include "types/structs/SMotion.h"
+#include "types/structs/SMotionSignal.h"
+#include "types/structs/SMotionTransition.h"
 
 // Structure: CMotionList
 // Ghidra size: 0x28508 (165128 bytes)

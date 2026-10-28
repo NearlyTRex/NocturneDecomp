@@ -8,6 +8,8 @@ namespace nocturne::core {
 
 class CDrummer : public CNPC {
 public:
+    static const CDemonActorType kType;
+
     CDrummer();
     ~CDrummer() override;
 

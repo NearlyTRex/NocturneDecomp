@@ -3,11 +3,11 @@
 // MANUAL RECONSTRUCTION
 // Address Range: [[004edbb0, 004eddd4]]
 // Convention: __cdecl
-// Signature: void __cdecl core_gore_cpp_CGore_spawnBloodBurst_FUN_004edbb0(CGore *this_ptr,CVector3f *position,CVector3f *direction,int count,int blood_type)
+// Signature: void __cdecl core_gore_cpp_CGore_spawnBloodBurst_FUN_004edbb0(CGore *this_ptr,CVector3f *position,CVector3f *direction,int count,EBloodType blood_type)
 
 #include "nocturne.h"
 
-void __cdecl core_gore_cpp_CGore_spawnBloodBurst_FUN_004edbb0(CGore *this_ptr,CVector3f *position,CVector3f *direction,int count,int blood_type)
+void __cdecl core_gore_cpp_CGore_spawnBloodBurst_FUN_004edbb0(CGore *this_ptr,CVector3f *position,CVector3f *direction,int count,EBloodType blood_type)
 
 {
   float fVar2;

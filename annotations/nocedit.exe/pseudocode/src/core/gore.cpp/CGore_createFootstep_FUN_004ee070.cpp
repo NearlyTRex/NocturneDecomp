@@ -2,11 +2,11 @@
 // Address: 004ee070
 // Address Range: [[004ee070, 004ee0e6]]
 // Convention: __cdecl
-// Signature: void __cdecl core_gore_cpp_CGore_createFootstep_FUN_004ee070(CGore *this_ptr,CVector3f *position,UOrientationVector *orientation,int surface_type ,int alpha,int blood_type)
+// Signature: void __cdecl core_gore_cpp_CGore_createFootstep_FUN_004ee070(CGore *this_ptr,CVector3f *position,UOrientationVector *orientation,int surface_type ,int alpha,EBloodType blood_type)
 
 #include "nocturne.h"
 
-void __cdecl core_gore_cpp_CGore_createFootstep_FUN_004ee070(CGore *this_ptr,CVector3f *position,UOrientationVector *orientation,int surface_type ,int alpha,int blood_type)
+void __cdecl core_gore_cpp_CGore_createFootstep_FUN_004ee070(CGore *this_ptr,CVector3f *position,UOrientationVector *orientation,int surface_type ,int alpha,EBloodType blood_type)
 
 {
   int iVar1;

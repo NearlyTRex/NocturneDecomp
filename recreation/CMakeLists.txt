@@ -1,5 +1,15 @@
 cmake_minimum_required(VERSION 3.24)
-project(NocturneRecreation VERSION 0.1.0 LANGUAGES CXX)
+project(NocturneRecreation VERSION 0.1.0 LANGUAGES C CXX)
+
+# The code uses the C++23 library LLVM 23's libc++ provides; the presets select both.
+if(NOT CMAKE_CXX_COMPILER_ID STREQUAL "Clang" OR CMAKE_CXX_COMPILER_VERSION VERSION_LESS 23)
+    message(FATAL_ERROR "The recreation needs clang 23 or newer, as the presets select; "
+                        "found ${CMAKE_CXX_COMPILER_ID} ${CMAKE_CXX_COMPILER_VERSION}")
+endif()
+# The coverage tools and clang-tidy must match the compiler: the profile format and the
+# checks change between releases.
+string(REGEX MATCH "^[0-9]+" NOCTURNE_LLVM_MAJOR "${CMAKE_CXX_COMPILER_VERSION}")
+set(NOCTURNE_LLVM_BIN "/usr/lib/llvm-${NOCTURNE_LLVM_MAJOR}/bin")
 
 set(CMAKE_CXX_STANDARD 23)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
@@ -205,8 +215,10 @@ foreach(_module IN LISTS NOCTURNE_RECREATION_MODULES)
 endforeach()
 
 if(NOCTURNE_RECREATION_COVERAGE)
-    find_program(LLVM_PROFDATA llvm-profdata REQUIRED)
-    find_program(LLVM_COV llvm-cov REQUIRED)
+    find_program(LLVM_PROFDATA NAMES llvm-profdata-${NOCTURNE_LLVM_MAJOR} llvm-profdata
+                 HINTS "${NOCTURNE_LLVM_BIN}" REQUIRED)
+    find_program(LLVM_COV NAMES llvm-cov-${NOCTURNE_LLVM_MAJOR} llvm-cov
+                 HINTS "${NOCTURNE_LLVM_BIN}" REQUIRED)
     add_custom_target(coverage
         COMMAND ${CMAKE_COMMAND}
             -DBINARY_DIR=${CMAKE_CURRENT_BINARY_DIR}
@@ -219,7 +231,8 @@ if(NOCTURNE_RECREATION_COVERAGE)
         VERBATIM)
 endif()
 
-find_program(CLANG_TIDY NAMES clang-tidy clang-tidy-18)
+find_program(CLANG_TIDY NAMES clang-tidy-${NOCTURNE_LLVM_MAJOR} clang-tidy
+             HINTS "${NOCTURNE_LLVM_BIN}")
 find_package(Python3 COMPONENTS Interpreter)
 if(CLANG_TIDY AND Python3_FOUND)
     # Source and test files, and header checks for headers no .cpp includes; clean results are
@@ -241,7 +254,8 @@ if(CLANG_TIDY AND Python3_FOUND)
         VERBATIM)
 endif()
 
-find_program(CLANG_FORMAT clang-format)
+find_program(CLANG_FORMAT NAMES clang-format-${NOCTURNE_LLVM_MAJOR} clang-format
+             HINTS "${NOCTURNE_LLVM_BIN}")
 if(CLANG_FORMAT)
     file(GLOB_RECURSE _format_files CONFIGURE_DEPENDS
          "${CMAKE_CURRENT_SOURCE_DIR}/*.h" "${CMAKE_CURRENT_SOURCE_DIR}/*.cpp")

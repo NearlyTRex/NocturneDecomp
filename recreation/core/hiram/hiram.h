@@ -7,6 +7,8 @@ namespace nocturne::core {
 
 class CHiram : public CNPC {
 public:
+    static const CDemonActorType kType;
+
     CHiram();
     ~CHiram() override;
 

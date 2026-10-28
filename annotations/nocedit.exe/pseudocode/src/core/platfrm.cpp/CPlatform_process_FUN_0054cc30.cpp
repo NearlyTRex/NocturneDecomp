@@ -60,7 +60,7 @@ void __cdecl core_platfrm_cpp_CPlatform_process_FUN_0054cc30(CPlatform *this_ptr
   float fStack_1c;
   CVector3f *pCStack_18;
   
-  if (1 < this_ptr->one_shot) {
+  if (1 < (int)this_ptr->one_shot) {
     return;
   }
   bVar12 = false;
@@ -88,7 +88,7 @@ void __cdecl core_platfrm_cpp_CPlatform_process_FUN_0054cc30(CPlatform *this_ptr
     }
     this_ptr->param = 1.0;
     break;
-  case PLATFORM_STATE_TYPE_WTF:
+  case PLATFORM_STATE_TYPE_STOPPED:
     iVar3 = core_event_cpp_CEventList_evaluateCondition_FUN_004adca0
                       (g_CEventListPtr,this_ptr->to_end_event);
     if (iVar3 == 0) {
@@ -104,11 +104,11 @@ void __cdecl core_platfrm_cpp_CPlatform_process_FUN_0054cc30(CPlatform *this_ptr
                 (this_ptr,1.0,1.0 / this_ptr->travel_time_to_end);
     }
     break;
-  case PLATFORM_STATE_TYPE_WTF|PLATFORM_STATE_TYPE_AT_END:
+  case PLATFORM_STATE_TYPE_MOVING_TO_END:
     iVar3 = core_event_cpp_CEventList_evaluateCondition_FUN_004adca0
                       (g_CEventListPtr,this_ptr->stop_event);
     if (iVar3 != 0) {
-      this_ptr->state = PLATFORM_STATE_TYPE_WTF;
+      this_ptr->state = PLATFORM_STATE_TYPE_STOPPED;
       if (this_ptr->stop_sound[0] != '\0') {
         (*((this_ptr->base).vtable._ub)->playSound)(&this_ptr->base,this_ptr->stop_sound);
       }
@@ -124,18 +124,18 @@ LAB_0054d0a2:
     this_ptr->param = this_ptr->goal_param;
     if (1.0 <= this_ptr->param) {
       this_ptr->state = PLATFORM_STATE_TYPE_AT_END;
-      if (this_ptr->one_shot != 0) {
-        this_ptr->one_shot = 2;
+      if (this_ptr->one_shot != ONE_SHOT_NO) {
+        this_ptr->one_shot = ONE_SHOT_DONE;
       }
       local_30 = 1;
       break;
     }
     goto LAB_0054d090;
-  case 4:
+  case PLATFORM_STATE_TYPE_MOVING_TO_START:
     iVar3 = core_event_cpp_CEventList_evaluateCondition_FUN_004adca0
                       (g_CEventListPtr,this_ptr->stop_event);
     if (iVar3 != 0) {
-      this_ptr->state = PLATFORM_STATE_TYPE_WTF;
+      this_ptr->state = PLATFORM_STATE_TYPE_STOPPED;
       if (this_ptr->stop_sound[0] != '\0') {
         (*((this_ptr->base).vtable._ub)->playSound)(&this_ptr->base,this_ptr->stop_sound);
       }
@@ -147,14 +147,14 @@ LAB_0054d0a2:
     this_ptr->param = this_ptr->goal_param;
     if (this_ptr->param <= 0.0) {
       this_ptr->state = PLATFORM_STATE_TYPE_AT_START;
-      if (this_ptr->one_shot != 0) {
-        this_ptr->one_shot = 2;
+      if (this_ptr->one_shot != ONE_SHOT_NO) {
+        this_ptr->one_shot = ONE_SHOT_DONE;
       }
       local_30 = 1;
       break;
     }
 LAB_0054d090:
-    this_ptr->state = PLATFORM_STATE_TYPE_WTF;
+    this_ptr->state = PLATFORM_STATE_TYPE_STOPPED;
   }
   if (this_ptr->render_in_background_when_not_moving_flag != 0) {
     if (bVar12) {

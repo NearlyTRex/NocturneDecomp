@@ -12,6 +12,7 @@
 
 #include <algorithm>
 #include <array>
+#include <bit>
 #include <cstddef>
 #include <cstdint>
 #include <optional>
@@ -335,7 +336,7 @@ void drawPerspectiveRow(TPixels pixels, std::uint32_t *depths, const SRowSpan &s
     const bool blending = (flags & common::kRenderBlend) != 0;
     for (int x = 0; x < span.count; ++x, walk.step()) {
         if ((flags & common::kRenderDepthTest) != 0 &&
-            walk.depth < static_cast<std::int32_t>(depths[x])) {
+            walk.depth < std::bit_cast<std::int32_t>(depths[x])) {
             continue;
         }
         const std::size_t texel = getTexelIndex(static_cast<std::uint32_t>(walk.u),

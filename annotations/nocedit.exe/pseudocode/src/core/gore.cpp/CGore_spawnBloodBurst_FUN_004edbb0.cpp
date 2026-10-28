@@ -2,13 +2,13 @@
 // Address: 004edbb0
 // Address Range: [[004edbb0, 004eddd4]]
 // Convention: __cdecl
-// Signature: void __cdecl core_gore_cpp_CGore_spawnBloodBurst_FUN_004edbb0(CGore *this_ptr,CVector3f *position,CVector3f *direction,int count,int blood_type)
+// Signature: void __cdecl core_gore_cpp_CGore_spawnBloodBurst_FUN_004edbb0(CGore *this_ptr,CVector3f *position,CVector3f *direction,int count,EBloodType blood_type)
 
 #include "nocturne.h"
 
 /* WARNING: Inlined function: crt_math.c_atan2_FUN_006013b1 */
 
-void __cdecl core_gore_cpp_CGore_spawnBloodBurst_FUN_004edbb0(CGore *this_ptr,CVector3f *position,CVector3f *direction,int count,int blood_type)
+void __cdecl core_gore_cpp_CGore_spawnBloodBurst_FUN_004edbb0(CGore *this_ptr,CVector3f *position,CVector3f *direction,int count,EBloodType blood_type)
 
 {
   float fVar2;
@@ -28,7 +28,7 @@ void __cdecl core_gore_cpp_CGore_spawnBloodBurst_FUN_004edbb0(CGore *this_ptr,CV
   float local_18;
   float fVar1;
   
-  if (blood_type != 2) {
+  if (blood_type != BLOOD_TYPE_NONE) {
     if (direction == (CVector3f *)0x0) {
       iVar2 = 0;
       if (0 < count) {

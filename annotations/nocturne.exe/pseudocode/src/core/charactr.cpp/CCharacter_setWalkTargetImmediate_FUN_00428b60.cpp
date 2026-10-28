@@ -11,7 +11,7 @@ void __cdecl core_charactr_cpp_CCharacter_setWalkTargetImmediate_FUN_00428b60(CC
 {
   CCharacter_full_vtable *pCVar1;
   
-  this_ptr->is_walking = 1;
+  this_ptr->walk_state = WALK_STATE_WALKING;
   this_ptr->walk_min_distance = -1.0;
   this_ptr->walk_to_target = target;
   pCVar1 = (this_ptr->base).vtable._uc;

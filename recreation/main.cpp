@@ -171,7 +171,10 @@ private:
     nocturne::support::CNewMsg messages_{dosio_};
     core::CDFont fonts_{dosio_,  screen_,   two_d_,    three_d_,
                         colors_, os_fonts_, messages_, editor_tools_};
+    // deferred: the scene's 256 by 256 CDemonLight, with CDemonLight's constructor
+    // nocedit 0x004d76d0
     core::CGame game_{winrun_};
+    // nocedit 0x004417e0
     engine::CConsole console_{file_system_, engine::CConsole::kMaxColumns,
                               engine::CConsole::kMaxRows, 1, 1};
     nocturne::sound::CSndMain sound_main_{dosio_, file_system_, audio_, console_, &getLocalTime};
@@ -187,17 +190,34 @@ private:
                                .screen = screen_,
                                .special = special_,
                                .current_texture = current_texture_}};
+    // deferred: the 10 train noises, with processTrainSounds
+    // nocedit 0x005b1760
     core::CSound sound_{sound_main_, pod_, file_system_};
+    // deferred: the filter cache and filter effects, with CFilterCache's and CFilterFX's
+    //   constructors
+    // nocedit 0x0046ff50
     std::array<core::CDemonFilter, 8> global_filters_;
     std::array<core::CDemonFilter, 4> player_filters_;
+    // nocedit 0x00544360
     engine::CMouse mouse_{dosio_, screen_, special_};
+    // deferred: the 400 chat history entries, with CNetGame::addChatHistory
+    // deferred: the receive packet's header, size 0x405 and PACKET_NONE, with
+    //   CNetGame::receivePackets
+    // nocedit 0x0053f310
     core::CNetGame net_game_{file_system_, environment_, winrun_};
-    wincore::SMovieOwners movie_owners_{file_system_, movies_,  window_, clock_,
-                                        winrun_,      special_, screen_, two_d_};
+    wincore::SMovieOwners movie_owners_{.file_system = file_system_,
+                                        .movies = movies_,
+                                        .window = window_,
+                                        .clock = clock_,
+                                        .winrun = winrun_,
+                                        .special = special_,
+                                        .screen = screen_,
+                                        .two_d = two_d_};
     std::vector<nocturne::platform::SRenderVertex> vertex_buffer_ =
         std::vector<nocturne::platform::SRenderVertex>(kRenderVertexCount);
     engine::CPrim prim_{special_, two_d_, three_d_, current_texture_};
     engine::CZRaster zraster_{special_, two_d_, three_d_, current_texture_};
+    // nocedit 0x0048a6b0
     engine::CDemonRenderer demon_renderer_{matrix_,
                                            two_d_,
                                            three_d_,
@@ -210,10 +230,15 @@ private:
                                            screen_,
                                            &core::transformAndClipGeometry};
     core::CDemonRaytrace raytrace_{dosio_};
+    // nocedit 0x004eeb90
     core::CGround ground_{dosio_, kGroundSize, kGroundSize};
     core::CTerrain terrain_{ground_};
+    // nocedit 0x005e9da0
     core::CWater water_;
     core::CKeyFramedModel enviro_model_{dosio_};
+    // deferred: the camera, with CDemonCamera's constructor
+    // deferred: the 4000 face normals, with lightVerticies' face lists
+    // nocedit 0x00569040
     core::CDemonSet set_{{.renderer = demon_renderer_,
                           .matrix = matrix_,
                           .special = special_,
@@ -271,7 +296,9 @@ private:
                                   .messages = messages_,
                                   .game = game_,
                                   .actor = actor_,
-                                  .level_loader = level_loader_,
+                                  .crt_random = crt_random_,
+                                  .loading_screen = level_loader_,
+                                  .set = set_,
                                   .textures = texture_,
                                   .editor_tools = editor_tools_,
                                   .pick_list = pick_list_owners_}};
@@ -315,7 +342,10 @@ int main() {
     try {
         return run();
     } catch (const std::exception &error) {
-        std::fputs(std::format("nocturne: {}\n", error.what()).c_str(), stderr);
+        // In pieces, so reporting the error can't throw another.
+        std::fputs("nocturne: ", stderr);
+        std::fputs(error.what(), stderr);
+        std::fputs("\n", stderr);
         return 1;
     }
 }

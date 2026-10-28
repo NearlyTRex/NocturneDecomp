@@ -1,3 +1,4 @@
+#include "core/actor/demonactortype.h"
 #include "core/crate/crate.h"
 
 #include <gtest/gtest.h>
@@ -43,6 +44,13 @@ TEST(CCrate, PublicInterface) {
                                  const CDemonActorType &(CCrate::*)() const>);
     static_assert(std::is_same_v<decltype(&CCrate::archive), void (CCrate::*)(CActorArchive &)>);
     static_assert(std::is_same_v<decltype(&CCrate::explode), void (CCrate::*)()>);
+}
+
+TEST(CCrate, ItsRecordIsVersion2UnderCDemonActor) {
+    EXPECT_EQ(CCrate::kType.class_name, "CCrate");
+    EXPECT_EQ(CCrate::kType.parent_type, &CDemonActor::kType);
+    EXPECT_EQ(CCrate::kType.factory_func, nullptr);
+    EXPECT_EQ(CCrate::kType.latest_version, 2);
 }
 
 } // namespace

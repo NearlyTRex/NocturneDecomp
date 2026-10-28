@@ -1,3 +1,4 @@
+#include "core/actor/demonactortype.h"
 #include "core/drone/drone.h"
 
 #include <gtest/gtest.h>
@@ -33,6 +34,13 @@ TEST(CDrone, PublicInterface) {
     static_assert(std::is_same_v<decltype(&CDrone::archive), void (CDrone::*)(CActorArchive &)>);
     static_assert(
         std::is_same_v<decltype(&CDrone::processDamage), void (CDrone::*)(SDamageInfo *)>);
+}
+
+TEST(CDrone, ItsRecordIsVersion2UnderCEnemy) {
+    EXPECT_EQ(CDrone::kType.class_name, "CDrone");
+    EXPECT_EQ(CDrone::kType.parent_type, &CEnemy::kType);
+    EXPECT_EQ(CDrone::kType.factory_func, nullptr);
+    EXPECT_EQ(CDrone::kType.latest_version, 2);
 }
 
 } // namespace

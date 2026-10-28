@@ -1,3 +1,4 @@
+#include "core/actor/demonactortype.h"
 #include "core/keyactor/keyactor.h"
 
 #include <gtest/gtest.h>
@@ -39,6 +40,13 @@ TEST(CKeyActor, PublicInterface) {
                                  const CDemonActorType &(CKeyActor::*)() const>);
     static_assert(
         std::is_same_v<decltype(&CKeyActor::archive), void (CKeyActor::*)(CActorArchive &)>);
+}
+
+TEST(CKeyActor, ItsRecordIsVersion3UnderCDemonActor) {
+    EXPECT_EQ(CKeyActor::kType.class_name, "CKeyActor");
+    EXPECT_EQ(CKeyActor::kType.parent_type, &CDemonActor::kType);
+    EXPECT_EQ(CKeyActor::kType.factory_func, nullptr);
+    EXPECT_EQ(CKeyActor::kType.latest_version, 3);
 }
 
 } // namespace

@@ -18,6 +18,7 @@
 #include <cstddef>
 #include <cstdint>
 #include <cstdio>
+#include <optional>
 #include <span>
 #include <string>
 #include <string_view>
@@ -32,6 +33,12 @@ struct SRoom {
     common::CVector3f extents;
     common::CMatrix3x3f rotation_matrix;
     int reverb_size = 0;
+};
+
+// A light of the set that is a spotlight, and which of the spotlights it is.
+struct SSpotlight {
+    const C3DSLight *light = nullptr;
+    std::size_t index = 0;
 };
 
 // What a set loads with and into, and draws with.
@@ -66,7 +73,8 @@ public:
     void initScene();
     void snapshotActorTransformState(CDemonActor *actor);
     void setCameraView(int index);
-    int findCameraByName(char *name);
+    // The camera of that name, compared ignoring case.
+    [[nodiscard]] std::optional<std::size_t> findCameraByName(std::string_view name) const;
     void reinitCamera(int clear_enabled, int is_clearing, int screen_height);
     void processActors();
     void renderStaticLights();
@@ -111,7 +119,9 @@ public:
     void setCameraAmbientValueByGroup(int group_id, float value);
     void setCameraEnabled(int camera_index, int enabled);
     void setCameraEnabledByGroup(int group_id, int enabled);
-    void addLightFilter(char *light_name, C3DSLight **out_light, CDemonLight **out_master_light);
+    // The spotlight of that name, compared ignoring case, and its place among the set's
+    // spotlights, which is its master light's.
+    [[nodiscard]] std::optional<SSpotlight> addLightFilter(std::string_view light_name) const;
     void initCameraShake(float peak, float attack, float sustain, float decay);
     void buildActorTypeLists();
     void loadMasterLightStates(int *light_state_buffer);
@@ -129,6 +139,8 @@ public:
                                  common::CMatrix3x3f *orientation_matrix);
     float testCylinderCollision(float start_x, float start_z, float dir_x, float dir_z,
                                 float radius, float bottom_y, float top_y);
+    // deferred: the five-deep raytrace state stack, with this
+    // nocedit 0x005715b0
     void pushRaytraceState();
     void popRaytraceState();
     void skipExactCollisions();
@@ -145,6 +157,8 @@ public:
     void transferVoxelShadow(CDemonActor *actor);
     void commitVoxelBuffer();
     int isPointInWater(common::CVector3f *point);
+    // deferred: the pool of 1500 thumbs and the 2000 nearby actors' boxes, with this
+    // nocedit 0x00574790
     int evaluateVirtualDirector(CDemonActor *actor, int force_evaluation_mode);
     void setPendingCamera(int camera_index, float hold_time);
     void clearCameraSwitchCooldown();
@@ -171,6 +185,9 @@ public:
     [[nodiscard]] EWeatherType getWeatherType() const;
     [[nodiscard]] bool getPlayerOnTrain() const;
     [[nodiscard]] std::span<const C3DSLight> getLights() const;
+    // The mission's actors in this set, which the mission owns.
+    [[nodiscard]] std::span<CDemonActor *const> getActors() const;
+    void setActors(std::vector<CDemonActor *> actors);
     [[nodiscard]] std::span<const C3DSCamera> getCameras() const;
     [[nodiscard]] int getDefaultRoomSize() const;
     [[nodiscard]] std::span<const SRoom> getRooms() const;
@@ -219,6 +236,7 @@ private:
     EWeatherType weather_type_ = EWeatherType::WEATHER_TYPE_NONE;
     bool player_on_train_ = false;
     std::vector<C3DSLight> lights_;
+    std::vector<CDemonActor *> actors_;
     std::vector<C3DSCamera> cameras_;
     int default_room_size_ = 0;
     std::vector<SRoom> rooms_;

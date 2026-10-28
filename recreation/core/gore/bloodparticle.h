@@ -16,7 +16,7 @@ public:
     void render() override;
     int onCollision(common::CVector3f *collision_normal) override;
 
-    void setup(common::CVector3f *position, common::CVector3f *velocity, int blood_type);
+    void setup(common::CVector3f *position, common::CVector3f *velocity, EBloodType blood_type);
     void setupRenderState();
 };
 

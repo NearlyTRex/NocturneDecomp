@@ -7,6 +7,8 @@ namespace nocturne::core {
 
 class CHighPriestOfGardath : public CNPC {
 public:
+    static const CDemonActorType kType;
+
     CHighPriestOfGardath();
     ~CHighPriestOfGardath() override;
 

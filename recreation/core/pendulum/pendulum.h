@@ -7,6 +7,8 @@ namespace nocturne::core {
 
 class CPendulum : public CDemonActor {
 public:
+    static const CDemonActorType kType;
+
     CPendulum();
     ~CPendulum() override;
 

@@ -243,7 +243,9 @@ protected:
                             .messages = messages_,
                             .game = game_,
                             .actor = actor_,
-                            .level_loader = level_loader_,
+                            .crt_random = crt_random_,
+                            .loading_screen = level_loader_,
+                            .set = set_,
                             .textures = texture_,
                             .editor_tools = editor_tools_,
                             .pick_list = pick_list_owners_}};
@@ -305,6 +307,19 @@ TEST_F(CInitializeGameSystemsTest, MountedPodsAreSearchedBeforeTheDisk) {
     engine::SFoundFileInfo info("door.wav");
     ASSERT_TRUE(dosio_.findFile(info));
     EXPECT_EQ(info.target_path, "/game/ACT1.POD");
+}
+
+// As the retail build's dismount did, so no texture outlives the pod it came from.
+TEST_F(CInitializeGameSystemsTest, DismountingAPodClearsTheTextureCache) {
+    givenFile("ACT1.POD", engine::makePod2("", {{.name = "door.wav", .data = "D"}}));
+    givenFile("art\\a.raw", std::string(std::size_t{32} * 32, '\0'));
+    pod_.mount("ACT1.POD");
+    start();
+    platform::SMRGLTextureBasic texture{.texture_name = "a.raw", .cache_index = 0};
+    texture_.ensureTextureLoaded(texture);
+    pod_.dismount("ACT1.POD");
+    EXPECT_CALL(file_system_, openFile).Times(::testing::AtLeast(1));
+    texture_.ensureTextureLoaded(texture);
 }
 
 TEST_F(CInitializeGameSystemsTest, PlaysTheOpeningMovieThenShowsTheLoadingScreen) {

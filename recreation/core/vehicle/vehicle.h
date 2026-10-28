@@ -7,6 +7,8 @@ namespace nocturne::core {
 
 class CVehicle : public CDemonActor {
 public:
+    static const CDemonActorType kType;
+
     CVehicle();
     ~CVehicle() override;
 

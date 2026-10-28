@@ -8,7 +8,6 @@ namespace nocturne::core {
 namespace {
 
 TEST(CoreVecdirFunctions, PublicInterface) {
-    static_assert(std::is_same_v<decltype(&staticInit), void (*)()>);
     static_assert(std::is_same_v<decltype(&convertDirectionVectorToEulerAngles),
                                  common::CVector3f *(*)(common::CVector3f *, common::CVector3f *)>);
 }

@@ -8,6 +8,8 @@ namespace nocturne::core {
 
 class CDrone : public CEnemy {
 public:
+    static const CDemonActorType kType;
+
     CDrone();
     ~CDrone() override;
 

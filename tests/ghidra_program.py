@@ -356,6 +356,15 @@ class DataTypeManager:
         return iter(self.types)
 
 
+# The program's file in the project, counting the times it is saved
+class DomainFile:
+    def __init__(self):
+        self.saves = 0
+
+    def save(self, _monitor):
+        self.saves += 1
+
+
 class Program:
     def __init__(self, pointer_size = 4):
         self.global_namespace = Namespace("Global")
@@ -368,6 +377,19 @@ class Program:
         self.address_factory = AddressFactory(self.space)
         self.language = Language(self.space)
         self.data_type_manager = DataTypeManager()
+        self.domain_file = DomainFile()
+        # (name, committed) for each transaction, committed None while it is open
+        self.transactions = []
+
+    def startTransaction(self, name):
+        self.transactions.append([name, None])
+        return len(self.transactions) - 1
+
+    def endTransaction(self, transaction, commit):
+        self.transactions[transaction][1] = commit
+
+    def getDomainFile(self):
+        return self.domain_file
 
     def getDataTypeManager(self):
         return self.data_type_manager

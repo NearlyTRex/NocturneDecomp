@@ -6,6 +6,8 @@ namespace nocturne::shape {
 
 class CSpotView {
 public:
+    // deferred: the game's spot view, with this constructor
+    // nocedit 0x005b95b0
     CSpotView();
 };
 

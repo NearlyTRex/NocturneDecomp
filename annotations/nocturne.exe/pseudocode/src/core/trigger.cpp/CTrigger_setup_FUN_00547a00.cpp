@@ -10,7 +10,7 @@ void __cdecl core_trigger_cpp_CTrigger_setup_FUN_00547a00(CTrigger *this_ptr)
 
 {
   char cVar1;
-  int iVar2;
+  ETriggerCause EVar2;
   CDemonMission *pCVar3;
   int iVar4;
   
@@ -19,15 +19,15 @@ void __cdecl core_trigger_cpp_CTrigger_setup_FUN_00547a00(CTrigger *this_ptr)
   (this_ptr->base).is_renderable = 0;
   iVar4 = pCVar3->is_in_editor;
   (this_ptr->base).collision_disabled = 1;
-  iVar2 = this_ptr->hero_triggers_me;
+  EVar2 = this_ptr->trigger_cause;
   (this_ptr->base).is_transparent = iVar4;
-  if (iVar2 == 5) {
+  if (EVar2 == TRIGGER_CAUSE_LASER) {
     (this_ptr->base).collision_disabled = 0;
   }
-  if (this_ptr->hero_triggers_me == 4) {
+  if (this_ptr->trigger_cause == TRIGGER_CAUSE_BULLET) {
     (this_ptr->base).collision_disabled = 0;
   }
-  if (this_ptr->hero_triggers_me == 7) {
+  if (this_ptr->trigger_cause == TRIGGER_CAUSE_DAMAGE) {
     (this_ptr->base).collision_disabled = 0;
   }
   this_ptr->event_flag = 0;

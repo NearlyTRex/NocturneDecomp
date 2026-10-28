@@ -1,3 +1,4 @@
+#include "core/actor/demonactortype.h"
 #include "core/marquee/marquee.h"
 
 #include <gtest/gtest.h>
@@ -36,6 +37,13 @@ TEST(CMarquee, PublicInterface) {
                                  const CDemonActorType &(CMarquee::*)() const>);
     static_assert(
         std::is_same_v<decltype(&CMarquee::archive), void (CMarquee::*)(CActorArchive &)>);
+}
+
+TEST(CMarquee, ItsRecordIsVersion1UnderCDemonActor) {
+    EXPECT_EQ(CMarquee::kType.class_name, "CMarquee");
+    EXPECT_EQ(CMarquee::kType.parent_type, &CDemonActor::kType);
+    EXPECT_EQ(CMarquee::kType.factory_func, nullptr);
+    EXPECT_EQ(CMarquee::kType.latest_version, 1);
 }
 
 } // namespace

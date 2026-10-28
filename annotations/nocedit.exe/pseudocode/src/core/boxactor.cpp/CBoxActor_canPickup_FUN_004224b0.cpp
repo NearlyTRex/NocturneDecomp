@@ -11,7 +11,7 @@ int __cdecl core_boxactor_cpp_CBoxActor_canPickup_FUN_004224b0(CBoxActor *this_p
 {
   int iVar1;
   
-  if (this_ptr->pickup_type != 3) {
+  if (this_ptr->pickup_type != BOX_PICKUP_CARRY) {
     iVar1 = core_actor_cpp_isOfClass_FUN_0040c6d0(picker,"CHero");
     if (iVar1 == 0) {
       return 0;

@@ -1,3 +1,4 @@
+#include "core/actor/demonactortype.h"
 #include "core/battery/battery.h"
 
 #include <gtest/gtest.h>
@@ -7,8 +8,8 @@
 namespace nocturne::core {
 namespace {
 
-TEST(CBattery, DerivesFromCCharacter) {
-    static_assert(std::is_base_of_v<CCharacter, CBattery>);
+TEST(CBattery, DerivesFromCDemonActor) {
+    static_assert(std::is_base_of_v<CDemonActor, CBattery>);
 }
 
 TEST(CBattery, HasVirtualDestructor) {
@@ -40,6 +41,13 @@ TEST(CBattery, PublicInterface) {
                                  const CDemonActorType &(CBattery::*)() const>);
     static_assert(
         std::is_same_v<decltype(&CBattery::archive), void (CBattery::*)(CActorArchive &)>);
+}
+
+TEST(CBattery, ItsRecordIsVersion1UnderCDemonActor) {
+    EXPECT_EQ(CBattery::kType.class_name, "CBattery");
+    EXPECT_EQ(CBattery::kType.parent_type, &CDemonActor::kType);
+    EXPECT_EQ(CBattery::kType.factory_func, nullptr);
+    EXPECT_EQ(CBattery::kType.latest_version, 1);
 }
 
 } // namespace

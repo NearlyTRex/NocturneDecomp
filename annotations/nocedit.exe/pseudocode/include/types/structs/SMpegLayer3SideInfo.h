@@ -4,6 +4,7 @@
 
 // Dependencies
 #include "system/basetypes.h"
+#include "types/structs/SMpegLayer3GranuleInfo.h"
 #include "types/structs/SMpegLayer3SideInfoChannel.h"
 
 // Structure: SMpegLayer3SideInfo

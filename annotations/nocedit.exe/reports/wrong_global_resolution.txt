@@ -13,7 +13,7 @@ SUMMARY
 
   Functions checked: 6911
   Functions with suspicious globals: 97
-  Total suspicious global references: 160
+  Total suspicious global references: 162
 
   Most commonly misresolved globals:
     g_SfxOptions                                       13 functions
@@ -45,11 +45,11 @@ DETAILED FINDINGS
 ====================================================================================================
 
 ----------------------------------------------------------------------------------------------------
-core_main.c_enterMainGameMenu_FUN_00507a50  [.keep]  (19 suspicious globals)
+core_main.c_enterMainGameMenu_FUN_00507a50  [.keep]  (20 suspicious globals)
   File: core/main.c
 
   g_CDemonFileManagerInstance
-    Used at lines: 285
+    Used at lines: 302
     NOT found in function reference list
 
   g_CDemonMissionPtr
@@ -57,7 +57,7 @@ core_main.c_enterMainGameMenu_FUN_00507a50  [.keep]  (19 suspicious globals)
     NOT found in function reference list
 
   g_CEditorToolsPtr
-    Used at lines: 227
+    Used at lines: 236
     NOT found in function reference list
 
   g_CGamePtr
@@ -65,15 +65,15 @@ core_main.c_enterMainGameMenu_FUN_00507a50  [.keep]  (19 suspicious globals)
     NOT found in function reference list
 
   g_CKeysPtr
-    Used at lines: 194, 194, 196, 196, 197, ...
+    Used at lines: 203, 203, 205, 205, 206, ...
     NOT found in function reference list
 
   g_CMoonInstance
-    Used at lines: 77, 85, 86, 192, 211, ...
+    Used at lines: 77, 85, 86, 201, 220, ...
     NOT found in function reference list
 
   g_CSoundPtr
-    Used at lines: 167, 169, 172, 174, 193, ...
+    Used at lines: 176, 178, 181, 183, 202, ...
     NOT found in function reference list
 
   g_EditorFont
@@ -81,7 +81,7 @@ core_main.c_enterMainGameMenu_FUN_00507a50  [.keep]  (19 suspicious globals)
     NOT found in function reference list
 
   g_InputDisabled
-    Used at lines: 250
+    Used at lines: 267
     NOT found in function reference list
 
   g_MainMenuTextBuffers
@@ -117,11 +117,15 @@ core_main.c_enterMainGameMenu_FUN_00507a50  [.keep]  (19 suspicious globals)
     NOT found in function reference list
 
   g_UseDirect3D
-    Used at lines: 57, 266, 274
+    Used at lines: 57, 283, 291
     NOT found in function reference list
 
   g_WindowHeight
     Used at lines: 48
+    NOT found in function reference list
+
+  g_nocturne_no_quit
+    Used at lines: 134, 260
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
@@ -177,6 +181,26 @@ core_game.cpp_calculateIrisFadeCenter_FUN_004e09a0  [.keep]  (5 suspicious globa
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
+core_menu.cpp_configureGraphicsOptions_FUN_00510c80  [.keep]  (4 suspicious globals)
+  File: core/menu.cpp
+
+  g_CDemonMissionPtr
+    Used at lines: 377, 378
+    NOT found in function reference list
+
+  g_EditorFont
+    Used at lines: 379
+    NOT found in function reference list
+
+  g_WindowHeight
+    Used at lines: 376
+    NOT found in function reference list
+
+  g_nocturne_fixed_display
+    Used at lines: 316
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
 core_script.cpp_clearSelections_FUN_005644e0  [.keep]  (4 suspicious globals)
   File: core/script.cpp
 
@@ -194,22 +218,6 @@ core_script.cpp_clearSelections_FUN_005644e0  [.keep]  (4 suspicious globals)
 
   g_SelectionStartLine
     Used at lines: 13
-    NOT found in function reference list
-
-----------------------------------------------------------------------------------------------------
-core_menu.cpp_configureGraphicsOptions_FUN_00510c80  [.keep]  (3 suspicious globals)
-  File: core/menu.cpp
-
-  g_CDemonMissionPtr
-    Used at lines: 374, 375
-    NOT found in function reference list
-
-  g_EditorFont
-    Used at lines: 376
-    NOT found in function reference list
-
-  g_WindowHeight
-    Used at lines: 373
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------

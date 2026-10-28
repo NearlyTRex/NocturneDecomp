@@ -24,6 +24,9 @@ int __cdecl core_menu_cpp_renderMenuAndGetChoice_FUN_00510000(char **menu_text_a
   char *pcVar7;
   CBitFont *this_ptr;
 
+#if !NOCTURNE_AUTHENTIC_MENU
+  return nocturne_menu_render(menu_text_array,menu_count,selected_index_ptr,y_position,title);
+#endif
   this_ptr = g_ThemeFont;
   if (title != (char *)0x0) {
     engine_font_cpp_CBitFont_drawText_FUN_004cda80
@@ -47,15 +50,9 @@ int __cdecl core_menu_cpp_renderMenuAndGetChoice_FUN_00510000(char **menu_text_a
         else {
           iVar4 = 0;
           do {
-#if NOCTURNE_AUTHENTIC_RNG
             uVar3 = rand();
             uVar4 = rand();
             iVar5 = rand();
-#else
-            uVar3 = nocturne_rng_fx();
-            uVar4 = nocturne_rng_fx();
-            iVar5 = (int)nocturne_rng_fx();
-#endif
             engine_3d_c_setRenderAlpha_FUN_00406d80
                       ((uint)((longlong)iVar5 * 48000) >> 0x10 |
                        (int)((ulonglong)((longlong)iVar5 * 48000) >> 0x20) << 0x10);
@@ -96,10 +93,6 @@ int __cdecl core_menu_cpp_renderMenuAndGetChoice_FUN_00510000(char **menu_text_a
   engine_3d_c_setRenderAlpha_FUN_00406d80(0x8000);
   engine_font_cpp_CBitFont_drawText_FUN_004cda80
             (g_SmallEditorFont,g_MenuTrademarkGlyph,0x206,99,0xf8,0);
-#if !NOCTURNE_AUTHENTIC_MENU_VERSION
-  engine_font_cpp_CBitFont_drawText_FUN_004cda80
-            (g_SmallEditorFont,(char *)nocturne_version_short(),4,0x1df - iVar4,0xf8,0);
-#endif
   engine_3d_c_setRenderAlpha_FUN_00406d80(0xffff);
 #if NOCTURNE_EDITOR_BUILD
   engine_font_cpp_CBitFont_drawText_FUN_004cda80

@@ -117,7 +117,7 @@ void __cdecl core_charactr_cpp_CCharacter_spawnFireOnBone_FUN_004266a0(CCharacte
           *(float *)((int)this_ptr->fires + this_ptr->fire_count * 0x29c + 0x36c) =
                fVar3 * pSVar8->size;
           iVar5 = iVar5 + 1;
-          *(int *)((int)this_ptr->fires + this_ptr->fire_count * 0x29c + 0x3b4) =
+          *(EFlameType *)((int)this_ptr->fires + this_ptr->fire_count * 0x29c + 0x3b4) =
                this_ptr->pending_flame_type;
           if (local_30 <= iVar5) {
             return;

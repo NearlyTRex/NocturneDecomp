@@ -68,7 +68,8 @@ protected:
         }
         givenFile("art\\vga.act", palette);
         two_d_.loadPaletteFile("vga.act");
-        ON_CALL(*os_font_, measureText).WillByDefault(Return(common::SExtent{2, 2}));
+        ON_CALL(*os_font_, measureText)
+            .WillByDefault(Return(common::SExtent{.width = 2, .height = 2}));
         ON_CALL(*os_font_, renderText).WillByDefault(Return(mask({"#.", "##"})));
     }
 
@@ -105,7 +106,7 @@ protected:
 TEST_F(CWinFontTest, MeasuresWithTheOsFontAndAddsBothOffsetsToTheHeight) {
     const std::unique_ptr<CWinFont> font = makeFont(2, 3);
     EXPECT_CALL(*os_font_, measureText(std::string_view("ab")))
-        .WillRepeatedly(Return(common::SExtent{11, 7}));
+        .WillRepeatedly(Return(common::SExtent{.width = 11, .height = 7}));
     EXPECT_EQ(font->getStringWidth("ab"), 11);
     EXPECT_EQ(font->getStringHeight("ab"), 12);
     EXPECT_EQ(font->getLineSpacing(), 0);
@@ -232,7 +233,8 @@ TEST_F(CWinFontTest, AStringIsCutToTheImage) {
     const std::unique_ptr<CWinFont> font = makeFont(0, 0);
     const std::vector<std::string> rows(101, std::string(10, '#'));
     EXPECT_CALL(*os_font_, renderText).WillOnce(Return(mask(rows)));
-    EXPECT_CALL(*os_font_, measureText).WillRepeatedly(Return(common::SExtent{10, 101}));
+    EXPECT_CALL(*os_font_, measureText)
+        .WillRepeatedly(Return(common::SExtent{.width = 10, .height = 101}));
     font->drawText("ab", 0, 0, 5, -1);
     EXPECT_EQ(screen_.pixel(kScreenWidth - 1, kScreenHeight - 1), 0x050a0fU);
 }

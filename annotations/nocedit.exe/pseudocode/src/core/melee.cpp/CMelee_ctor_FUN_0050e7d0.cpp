@@ -19,10 +19,10 @@ CMelee * __cdecl core_melee_cpp_CMelee_ctor_FUN_0050e7d0(CMelee *this_ptr)
   core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_00478dd0
             (&(pCVar2->base).model,"melee.kfm");
   (pCVar2->base).weapon_type = WEAPON_TYPE_MELEE;
-  pCVar2->ammo_type = -1;
+  pCVar2->ammo_type = AMMO_TYPE_NONE;
   (pCVar2->base).ammo_count = 0;
   (pCVar2->base).is_spread_weapon = 0;
-  (pCVar2->base).fire_mode = 0;
+  (pCVar2->base).fire_mode = FIRE_MODE_AUTOMATIC;
   (pCVar2->base).can_penetrate = 0;
   (pCVar2->base).bolt_velocity = 5.0;
   (pCVar2->base).fire_cooldown = 0;
@@ -36,7 +36,7 @@ CMelee * __cdecl core_melee_cpp_CMelee_ctor_FUN_0050e7d0(CMelee *this_ptr)
   pCVar2->blood_spurt_count = 0;
   pCVar2->blood_spurt_timer = 0.0;
   pcVar4 = pCVar2->thrust_hit_character_sound;
-  pCVar2->ammo_type = 0;
+  pCVar2->ammo_type = AMMO_TYPE_GENERIC;
   do {
     cVar1 = *pcVar3;
     *pcVar4 = cVar1;

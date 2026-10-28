@@ -28,6 +28,6 @@ void __cdecl core_vessel_cpp_CCryptVessel_archive_FUN_00550540(CCryptVessel *thi
   if (g_INT_005c11c4 < 4) {
     return;
   }
-  core_actor_cpp_archiveInteger_FUN_0040c900(&this_ptr->visual_type,"visualType");
+  core_actor_cpp_archiveInteger_FUN_0040c900((int *)&this_ptr->visual_type,"visualType");
   return;
 }

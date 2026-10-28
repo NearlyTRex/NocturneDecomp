@@ -200,8 +200,8 @@ char *__cdecl support_newmsg_cpp_getLocalizedString_FUN_005441f0(char *key) {
 
 void nocturne_menu_backdrop_frame(void) {}
 
-int nocturne_menu_start_y(int rows) {
-    return rows * 10;
+int nocturne_menu_titled_y(int lines) {
+    return lines * 10;
 }
 
 int nocturne_menu_cancelled(void) {

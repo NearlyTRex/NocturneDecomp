@@ -68,7 +68,7 @@ void __cdecl core_hero_cpp_CHero_archive_FUN_004f2610(CHero *this_ptr)
     }
     if (0xb < g_CHeroClassVersion) {
       core_actor_cpp_archiveInteger_FUN_0040b7f0
-                (&this_ptr->is_wearing_gas_mask,"isWearingGasMask");
+                ((int *)&this_ptr->is_wearing_gas_mask,"isWearingGasMask");
     }
     if (5 < g_CHeroClassVersion) {
       if (g_ActorReadingMode != 1) {

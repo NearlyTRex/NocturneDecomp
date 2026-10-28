@@ -12,8 +12,14 @@ struct CWayPoint;
 #include "types/classes/CClothList.h"
 #include "types/classes/CDeformableModelInstance.h"
 #include "types/classes/CDemonActor.h"
+#include "types/classes/CDemonGlobe.h"
 #include "types/classes/CFlame.h"
+#include "types/classes/CMatrix3x4f.h"
 #include "types/classes/CVector3f.h"
+#include "types/enums/EBloodType.h"
+#include "types/enums/EFlameType.h"
+#include "types/enums/EHealthBarMode.h"
+#include "types/enums/EWalkState.h"
 #include "types/structs/SCarryHand.h"
 #include "types/structs/SDamageDecal.h"
 #include "types/structs/SFire.h"
@@ -35,7 +41,7 @@ typedef struct CCharacter {
     float turn_speed; // 0x2438
     float hit_points; // 0x243c
     float max_hit_points; // 0x2440
-    int health_bar_mode; // 0x2444
+    EHealthBarMode health_bar_mode; // 0x2444
     char descriptive_name[100]; // 0x2448
     SCarryHand carry_hands[2]; // 0x24ac
     char talk_to_me_event[100]; // 0x2534
@@ -45,7 +51,7 @@ typedef struct CCharacter {
     float walk_min_distance; // 0x25a4
     float walk_max_distance; // 0x25a8
     float walk_timeout; // 0x25ac
-    int is_walking; // 0x25b0
+    EWalkState walk_state; // 0x25b0
     struct CDoor* door_target; // 0x25b4
     CVector3f look_offset; // 0x25b8
     int gesture_branch_root; // 0x25c4
@@ -62,7 +68,7 @@ typedef struct CCharacter {
     struct CWayPoint* wander_nearest_waypoint; // 0x25f0
     float wander_cooldown; // 0x25f4
     CBoundingBox3D cached_bounding_box; // 0x25f8
-    int blood_type; // 0x2610
+    EBloodType blood_type; // 0x2610
     int is_ethereal; // 0x2614
     float speech_timer; // 0x2618
     float size_scale; // 0x261c
@@ -91,7 +97,7 @@ typedef struct CCharacter {
     int damage_decal_count; // 0x2df4
     SDamageDecal damage_decals[5]; // 0x2df8
     int fire_count; // 0x2f10
-    int pending_flame_type; // 0x2f14
+    EFlameType pending_flame_type; // 0x2f14
     float flame_scale; // 0x2f18
     SFire fires[50]; // 0x2f1c
     CFlame flames[50]; // 0x33cc

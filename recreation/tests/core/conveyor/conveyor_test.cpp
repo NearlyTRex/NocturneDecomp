@@ -1,3 +1,4 @@
+#include "core/actor/demonactortype.h"
 #include "core/conveyor/conveyor.h"
 
 #include <gtest/gtest.h>
@@ -36,6 +37,13 @@ TEST(CConveyor, PublicInterface) {
                                  const CDemonActorType &(CConveyor::*)() const>);
     static_assert(
         std::is_same_v<decltype(&CConveyor::archive), void (CConveyor::*)(CActorArchive &)>);
+}
+
+TEST(CConveyor, ItsRecordIsVersion2UnderCPlatform) {
+    EXPECT_EQ(CConveyor::kType.class_name, "CConveyor");
+    EXPECT_EQ(CConveyor::kType.parent_type, &CPlatform::kType);
+    EXPECT_EQ(CConveyor::kType.factory_func, nullptr);
+    EXPECT_EQ(CConveyor::kType.latest_version, 2);
 }
 
 } // namespace

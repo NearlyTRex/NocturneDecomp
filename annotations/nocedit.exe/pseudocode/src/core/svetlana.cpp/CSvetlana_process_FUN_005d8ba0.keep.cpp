@@ -169,7 +169,7 @@ LAB_005d9032:
       (this_ptr->base).base.model.accumulated_root_motion.y = 0.0f;
       (this_ptr->base).base.model.accumulated_root_motion.z = 0.0f;
     }
-    uVar1 = (this_ptr->base).base.is_walking;
+    uVar1 = (this_ptr->base).base.walk_state;
     if (uVar1 < 2) {
       if (uVar1 == 1) {
         iVar3 = 1;

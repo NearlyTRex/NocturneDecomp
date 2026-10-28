@@ -8,7 +8,6 @@ namespace nocturne::core {
 namespace {
 
 TEST(CoreCowFunctions, PublicInterface) {
-    static_assert(std::is_same_v<decltype(&staticInit), void (*)()>);
     static_assert(std::is_same_v<decltype(&factoryFuncZombieCow), CZombieCow *(*)()>);
 }
 

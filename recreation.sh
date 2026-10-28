@@ -24,9 +24,9 @@ build_dir="$root/build/recreation/$preset"
 exe="$build_dir/nocturne"
 
 build() {
-    if [ ! -f "$build_dir/CMakeCache.txt" ]; then
-        (cd "$root/recreation" && cmake --preset "$preset")
-    fi
+    # Configured every run: a build's own reconfigure reuses the cache, so a preset change, such
+    # as a new compiler, would never reach it.
+    (cd "$root/recreation" && cmake --preset "$preset")
     (cd "$root/recreation" && cmake --build --preset "$preset" --target nocturne)
 }
 

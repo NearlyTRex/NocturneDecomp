@@ -1,6 +1,7 @@
 #pragma once
 
 #include "common/fwd.h"
+#include "core/actor/actorlookup.h"
 #include "core/fwd.h"
 #include "engine/fwd.h"
 #include "shape/fwd.h"
@@ -11,6 +12,7 @@
 #include <cstdint>
 #include <cstdio>
 #include <memory>
+#include <optional>
 #include <span>
 #include <string>
 #include <string_view>
@@ -18,27 +20,30 @@
 
 namespace nocturne::core {
 
-// What a mission reads its file with, makes its actors from, asks about a missing hero with, and
-// picks its hero by.
+// What a mission reads its file with, makes its actors from, draws the C library's random numbers
+// from, shows its loading on, asks about a missing hero with, picks its hero by, and loads its
+// sets into.
 struct SMissionOwners {
     const engine::CDosIo &dosio;
     const support::CNewMsg &messages;
     const CGame &game;
-    const CActor &actor;
-    CLevelLoader &level_loader;
+    CActor &actor;
+    common::CWatcomRandom &crt_random;
+    ILoadingScreen &loading_screen;
+    CDemonSet &set;
     engine::CTexture &textures;
     shape::CEditorTools &editor_tools;
     const shape::SPickListOwners &pick_list;
 };
 
 // The mission: its file, and the actors it places, in the order its file lists them.
-class CDemonMission {
+class CDemonMission : public IActorLookup {
 public:
     // The most heroes a mission can hold.
     static constexpr std::size_t kMaxHeroes = 4;
 
     explicit CDemonMission(const SMissionOwners &owners);
-    ~CDemonMission();
+    ~CDemonMission() override;
     CDemonMission(const CDemonMission &) = delete;
     CDemonMission &operator=(const CDemonMission &) = delete;
     CDemonMission(CDemonMission &&) = delete;
@@ -56,9 +61,14 @@ public:
     void readMissionFile(common::CTextScanner &scanner, bool keep_assets);
     // Frees the textures, and the models the mission's actors loaded.
     void freeAllAssets();
-    CDemonActor *getNextLoadedInventoryActor(char *actor_name);
+    // While the mission file is read, the carried items it lists, in order: one not named as asked,
+    // or none left, is fatal.
+    [[nodiscard]] std::unique_ptr<CDemonActor> takeCarriedActor(std::string_view name) override;
     void writeFile(std::FILE *file_handle);
-    CDemonActor *loadActor(std::FILE *file, CDemonActor *current_actor, char *property_description);
+    // A reference that isn't quoted, as save files write a script's marker for no victim, quits
+    // as not ported yet.
+    [[nodiscard]] CDemonActor *loadActor(common::CTextScanner &scanner, const CDemonActor &owner,
+                                         std::string_view description) const override;
     void saveActor(CDemonActor *actor_ptr, std::FILE *file, CDemonActor *current_actor,
                    char *description);
     // Takes the actor to the end of the list, naming it first if it has no name.
@@ -82,6 +92,11 @@ public:
     // number following that in any actor's name, counting on past names already taken.
     void generateActorName(CDemonActor &actor) const;
     int startMission();
+    // Loads the set of that number, unless it is loaded already, gives it the actors in it, and
+    // sets every actor up the first time a set loads. A set the mission doesn't name is fatal.
+    void loadSet(int set_index);
+    // Sets every actor up, showing the loading screen's progress.
+    void prepareAllActors();
     // Puts the game's hero at the place for the first hero: the hero given, or a new one when none
     // is, then takes away every hero placeholder. False, the hero given destroyed, when there is
     // no place for it.
@@ -100,11 +115,18 @@ public:
     [[nodiscard]] int getHeroCount() const;
     // The hero of that number, the first being 0; null when it hasn't been made.
     [[nodiscard]] CHero *getHero(std::size_t index) const;
+    // The sets the mission file names, the first being 0.
+    [[nodiscard]] std::span<const std::string> getSetNames() const;
+    // The set loaded, or -1 when none is since the mission was read.
+    [[nodiscard]] int getCurrentSetIndex() const;
 
 private:
+    // Gives the set the actors whose place is in it, in list order.
+    void buildSetActorList();
     [[nodiscard]] std::string generateUniqueActorName(std::string_view base_name) const;
     void clearMissionData();
-    void readActorTypes(common::CTextScanner &scanner) const;
+    // Notes the version each class's fields were saved in.
+    void readActorTypes(common::CTextScanner &scanner);
     // Unless a hero placeholder for the first hero is there, offers to turn a hero into one.
     void ensureHeroPlaceholder();
     // Puts the hero given, or a new one of the type, at the place for that hero and adds it to
@@ -118,6 +140,12 @@ private:
     std::string mission_name_;
     std::string pending_mission_name_;
     std::vector<std::unique_ptr<CDemonActor>> actors_;
+    std::vector<std::string> set_names_;
+    // Zero, as the original's began, until a mission file is read.
+    int current_set_index_ = 0;
+    bool actors_prepared_ = false;
+    // Where the carried items not yet claimed start, while a file that lists them is read.
+    std::optional<std::size_t> carried_start_;
     int hero_count_ = 0;
     // On the list, which owns them.
     std::array<CHero *, kMaxHeroes> heroes_{};

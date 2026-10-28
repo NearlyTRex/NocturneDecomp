@@ -15,7 +15,7 @@ void __cdecl core_dfont_cpp_initFonts_FUN_004709a0(void)
   CWinFont *pCVar3;
   CWinFont *pCVar4;
 
-#if !NOCTURNE_AUTHENTIC_OS_FONT
+#if !NOCTURNE_AUTHENTIC_MENU
   nocturne_os_font_apply();
 #endif
 

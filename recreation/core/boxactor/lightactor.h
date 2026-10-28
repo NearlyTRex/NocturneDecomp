@@ -7,6 +7,8 @@ namespace nocturne::core {
 
 class CLightActor : public CBoxActor {
 public:
+    static const CDemonActorType kType;
+
     CLightActor();
     ~CLightActor() override;
 

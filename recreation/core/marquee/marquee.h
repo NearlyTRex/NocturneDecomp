@@ -7,6 +7,8 @@ namespace nocturne::core {
 
 class CMarquee : public CDemonActor {
 public:
+    static const CDemonActorType kType;
+
     CMarquee();
     ~CMarquee() override;
 

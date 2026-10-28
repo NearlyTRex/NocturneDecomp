@@ -292,7 +292,7 @@ void __cdecl core_gargoyle_cpp_CGargoyle_process_FUN_004e4a00(CGargoyle *this_pt
     }
     goto switchD_004e531f_caseD_4;
   }
-  uVar11 = (this_ptr->base).base.is_walking;
+  uVar11 = (this_ptr->base).base.walk_state;
   if (uVar11 < 2) {
     if (uVar11 == 1) {
 LAB_004e4b02:

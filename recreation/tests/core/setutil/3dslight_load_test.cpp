@@ -22,7 +22,7 @@ using ::testing::StrEq;
 using ::testing::ThrowsMessage;
 
 // A light as a file of the version holds it, its visibility section given.
-std::string light(int version, const std::string &visibility) {
+std::string light(int version, std::string_view visibility) {
     const std::string label = version >= 11 ? "label\n" : "";
     std::string text =
         label + "moon light\n" + label + "1,2,3\n" + label + "0.1,0.2,0.3\n" + label + "30\n";
@@ -42,11 +42,11 @@ std::string light(int version, const std::string &visibility) {
     if (version >= 19) {
         text += "move\n1,2,3,4,5\n";
     }
-    return text + label + "0.5,2\nvisible\n" + visibility + "next";
+    return text + label + "0.5,2\nvisible\n" + std::string(visibility) + "next";
 }
 
 // The visibility of a version 11 or later file: cameras 0 and 249.
-const std::string kListed = "2\n0,1,319,1,239\n249,10,20,30,40\n";
+constexpr std::string_view kListed = "2\n0,1,319,1,239\n249,10,20,30,40\n";
 
 // One line for each camera, as files before 11 held them.
 std::string everyCamera(int count, const std::string &line) {

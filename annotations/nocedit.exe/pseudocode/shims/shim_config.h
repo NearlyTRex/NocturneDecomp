@@ -64,6 +64,11 @@
 // reach it through nocturne.h.
 #include "gl/window_mode.h"
 
+// The filter that enlarges the frame onto the window (nocturne_upscaler_*),
+// read by the presenter and set from the Graphic Options page. Inert under
+// NOCTURNE_AUTHENTIC_MENU=1.
+#include "gl/upscaler.h"
+
 // The draws between these carry a reflection direction rather than a position in
 // an image, which only the pass emitting them knows. Reached from
 // CDemonSet::renderEnvMapTriangles and gated there on
@@ -294,6 +299,11 @@ void nocturne_trigl_envmap_pass_end(void);
 // Gabriella's kick and the Colonel's push-off.
 #include "game/hero_shove.h"
 
+// A pushed box's scrape on each shove (nocturne_box_push_sound), reached from
+// the Stranger's and Gabriella's frames where a push moves its box. Gated
+// there on NOCTURNE_AUTHENTIC_PUSH_SOUND.
+#include "game/box_push.h"
+
 // Status bars sized by a hero's maximum health (nocturne_status_bar_*), noted
 // from CCharacter::process and processDamage and read by CGame::renderOverlay.
 // Gated at those call sites on NOCTURNE_AUTHENTIC_STATUS_BAR_WIDTH.
@@ -320,8 +330,8 @@ void nocturne_trigl_envmap_pass_end(void);
 #include "game/hero_gabriella.h"
 
 // Which of the engine's two text paths is used (nocturne_os_font_*), reached
-// from CGame::initFonts to apply the stored choice and from the menu TU for the
-// Graphics Options line. Inert under NOCTURNE_AUTHENTIC_OS_FONT=1.
+// from CGame::initFonts to apply the stored choice and set from the Text
+// Options page. Inert under NOCTURNE_AUTHENTIC_MENU=1.
 #include "core/os_font.h"
 
 // The dialog widgets' font (nocturne_menu_font*), chosen on the Graphics
@@ -332,6 +342,23 @@ void nocturne_trigl_envmap_pass_end(void);
 // The moon backdrop, start-y and cancel test every front-end list shares
 // (nocturne_menu_*), reached from the main menu, Options and Graphics Options.
 #include "core/menu_screen.h"
+
+// The front end as pages, and how a menu list is drawn (nocturne_main_menu,
+// nocturne_options_menu, nocturne_graphics_options_menu,
+// nocturne_sound_options_menu, nocturne_control_options_menu,
+// nocturne_key_bindings_menu, nocturne_menu_render), reached from the tops of
+// the keeps of the screens they stand for. Gated there on
+// NOCTURNE_AUTHENTIC_MENU.
+#include "core/menu_render.h"
+#include "game/control_options.h"
+#include "game/main_menu.h"
+#include "game/options_menu.h"
+#include "game/sound_options.h"
+
+// The names bindings are shown by (nocturne_key_display_name), with the
+// controller's own, reached from getKeyDisplayName's top. Gated there on
+// NOCTURNE_AUTHENTIC_GAMEPAD.
+#include "game/key_names.h"
 
 // What this build calls itself (nocturne_version*), reached from the entry
 // point for --version and from the game TU for the console banner and the menu

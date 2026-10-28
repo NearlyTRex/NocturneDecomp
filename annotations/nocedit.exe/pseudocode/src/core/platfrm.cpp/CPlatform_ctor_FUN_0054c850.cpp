@@ -63,8 +63,8 @@ CPlatform * __cdecl core_platfrm_cpp_CPlatform_ctor_FUN_0054c850(CPlatform *this
   (ADJ(pCVar5)->orig_orient).x = (ADJ(pCVar5)->end_orient).x;
   (ADJ(pCVar5)->orig_orient).y = (ADJ(pCVar5)->end_orient).y;
   (ADJ(pCVar5)->orig_orient).z = (ADJ(pCVar5)->end_orient).z;
-  ADJ(pCVar5)->platform_type = PLATFORM_TYPE_DISABLED;
-  ADJ(pCVar5)->one_shot = 0;
+  ADJ(pCVar5)->slew_mode = PLATFORM_SLEW_DISABLED;
+  ADJ(pCVar5)->one_shot = ONE_SHOT_NO;
   ADJ(pCVar5)->block_virtual_director_flag = 0;
   ADJ(pCVar5)->render_in_background_when_not_moving_flag = 0;
   ADJ(pCVar5)->camera_while_moving[0] = '\0';

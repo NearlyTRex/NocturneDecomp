@@ -10,6 +10,7 @@ struct CActorDestination;
 #include "types/classes/CDemonActor.h"
 #include "types/classes/CFlame.h"
 #include "types/classes/CKeyFramedModelInstance.h"
+#include "types/enums/ECryptVesselVisual.h"
 
 // Structure: CCryptVessel
 // Ghidra size: 0x7f4 (2036 bytes)
@@ -25,7 +26,7 @@ typedef struct CCryptVessel {
     struct CActorDestination* start_loc; // 0x3a8
     struct CActorDestination* end_loc; // 0x3ac
     float eat_distance; // 0x3b0
-    int visual_type; // 0x3b4
+    ECryptVesselVisual visual_type; // 0x3b4
     int state; // 0x3b8
     float timer; // 0x3bc
     int init_frame; // 0x3c0

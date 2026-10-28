@@ -2,6 +2,9 @@
 
 #include <gtest/gtest.h>
 
+#include <cstdio>
+#include <span>
+#include <string_view>
 #include <type_traits>
 
 namespace nocturne::core {
@@ -12,7 +15,9 @@ TEST(CScript, IsConcrete) {
 }
 
 TEST(CScript, Constructors) {
-    static_assert(std::is_constructible_v<CScript>);
+    static_assert(std::is_constructible_v<CScript, const SScriptOwners &>);
+    static_assert(!std::is_copy_constructible_v<CScript>);
+    static_assert(!std::is_move_constructible_v<CScript>);
 }
 
 TEST(CScript, PublicInterface) {
@@ -22,7 +27,8 @@ TEST(CScript, PublicInterface) {
     static_assert(std::is_same_v<decltype(&CScript::renderSubtitles), void (CScript::*)()>);
     static_assert(
         std::is_same_v<decltype(&CScript::renderEditor), void (CScript::*)(int, int, int, int)>);
-    static_assert(std::is_same_v<decltype(&CScript::loadScript), int (CScript::*)(char *, int)>);
+    static_assert(
+        std::is_same_v<decltype(&CScript::loadScript), bool (CScript::*)(std::string_view, bool)>);
     static_assert(std::is_same_v<decltype(&CScript::initRuntime), void (CScript::*)()>);
     static_assert(std::is_same_v<decltype(&CScript::executeInitSection), void (CScript::*)()>);
     static_assert(std::is_same_v<decltype(&CScript::setSpeaker), void (CScript::*)(CDemonActor *)>);
@@ -30,6 +36,10 @@ TEST(CScript, PublicInterface) {
     static_assert(std::is_same_v<decltype(&CScript::skipCinematic), int (CScript::*)()>);
     static_assert(std::is_same_v<decltype(&CScript::loadState), void (CScript::*)(std::FILE *)>);
     static_assert(std::is_same_v<decltype(&CScript::saveState), void (CScript::*)(std::FILE *)>);
+    static_assert(std::is_same_v<decltype(&CScript::getParsedLines),
+                                 std::span<const SScriptLine> (CScript::*)() const>);
+    static_assert(std::is_same_v<decltype(&CScript::getDialogEntries),
+                                 std::span<const SDialogEntry> (CScript::*)() const>);
 }
 
 } // namespace

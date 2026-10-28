@@ -4,7 +4,9 @@
 
 // Dependencies
 #include "system/basetypes.h"
+#include "types/structs/SMRGLHeaderPrimitive.h"
 #include "types/structs/SMRGLPrimitiveQuad.h"
+#include "types/structs/SMRGLVertex.h"
 
 // Structure: SCurtainMeshData
 // Ghidra size: 0x493ec (300012 bytes)

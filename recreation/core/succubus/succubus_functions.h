@@ -4,7 +4,6 @@
 
 namespace nocturne::core {
 
-void staticInit();
 CSuccubus *factoryFuncSuccubus();
 
 } // namespace nocturne::core

@@ -63,7 +63,7 @@ void __cdecl core_emitter_cpp_CEmitter_process_FUN_00478790(CEmitter *this_ptr,f
   if (iVar4 != 0) {
     this_ptr->emitter_state = 0;
   }
-  if (this_ptr->emitter_type == 10) {
+  if (this_ptr->emitter_type == EMITTER_TYPE_SOUND) {
     iVar8 = 0;
     iVar4 = sound_sndmain_cpp_isWithinListenerRadius_FUN_00527880
                       ((double)(this_ptr->base).location.position.x,
@@ -90,7 +90,7 @@ LAB_0047883d:
      (this_ptr->emit_timer = this_ptr->emit_timer - this_ptr->emit_period, iVar8 == 0))
   goto LAB_00478941;
   switch(this_ptr->emitter_type) {
-  case 0:
+  case EMITTER_TYPE_SPARK:
     pCVar1 = &(this_ptr->base).location;
     core_fire_cpp_CFireEffect_createSpark_FUN_0048ae90
               (g_CFireEffect_PTR_005b80f0,&pCVar1->position,(CVector3f *)0x0,0x4000,0x10000,0,0xffff
@@ -104,7 +104,7 @@ LAB_0047883d:
     (this_ptr->globe).intensity.bytes[0] =
          (uchar)((int)(((iVar8 >> 8) + iVar4 * -4) - (uint)(iVar4 << 1 < 0)) >> 2);
     goto LAB_00478902;
-  case 1:
+  case EMITTER_TYPE_SMOKE:
     pCVar1 = &(this_ptr->base).location;
     iVar8 = 0;
     do {
@@ -125,7 +125,7 @@ LAB_0047883d:
                 (g_CFireEffect_PTR_005b80f0,&local_70,1.0,&local_d0,0xffff);
     } while (iVar8 < 4);
     break;
-  case 4:
+  case EMITTER_TYPE_ROCK:
     local_28 = core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0(0.7853982,1.5707964);
     local_14 = local_28;
     local_14 = core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0(0.0,6.2831855);
@@ -141,7 +141,7 @@ LAB_0047883d:
     core_fire_cpp_CFireEffect_createRock_FUN_0048b320
               (g_CFireEffect_PTR_005b80f0,&(this_ptr->base).location.position,&local_94,model_ptr);
     break;
-  case 5:
+  case EMITTER_TYPE_FLAME:
     core_emitter_cpp_CEmitter_getRandomBoundingBoxPoint_FUN_00479390(this_ptr,&local_b8);
     core_fire_cpp_CFireEffect_createGunFlames_FUN_0048c3c0
               (g_CFireEffect_PTR_005b80f0,&local_b8,&(this_ptr->base).orient.vec,2,1);
@@ -158,7 +158,7 @@ LAB_0047883d:
                 (&g_HeroActors[g_LocalHeroIndex]->base,&local_a0,0,0,1.0,1);
     }
     break;
-  case 6:
+  case EMITTER_TYPE_POPCORN:
     pCVar1 = &(this_ptr->base).location;
     core_fire_cpp_CFireEffect_createPopcorn_FUN_0048c710
               (g_CFireEffect_PTR_005b80f0,&pCVar1->position,(CVector3f *)0x0);
@@ -169,7 +169,7 @@ LAB_0047883d:
     core_fire_cpp_CFireEffect_createPopcorn_FUN_0048c710
               (g_CFireEffect_PTR_005b80f0,&pCVar1->position,(CVector3f *)0x0);
     break;
-  case 7:
+  case EMITTER_TYPE_LIGHTNING:
     pCVar1 = &(this_ptr->base).location;
     core_fire_cpp_CFireEffect_createLightningBolt_FUN_0048c420
               (g_CFireEffect_PTR_005b80f0,&pCVar1->position,(this_ptr->emitter_size).y,0,
@@ -194,12 +194,12 @@ LAB_00478902:
     (this_ptr->globe).corona_mode = 0;
     core_set_cpp_CDemonSet_addCoronaGlobe_FUN_0050a9f0(pCVar3,&this_ptr->globe);
     break;
-  case 8:
+  case EMITTER_TYPE_BLUE_SPARK:
     core_fire_cpp_CFireEffect_createSpark_FUN_0048ae90
               (g_CFireEffect_PTR_005b80f0,&(this_ptr->base).location.position,(CVector3f *)0x0,
                0x4000,0x10000,1,0xffff);
     break;
-  case 9:
+  case EMITTER_TYPE_POINT_TO_POINT_LIGHTNING:
     pCVar2 = this_ptr->dest_actor;
     if (pCVar2 != (CDemonActor *)0x0) {
       pCVar5 = (*((pCVar2->vtable)._ub)->getBoundingBox)(pCVar2,&CStack_e8);
@@ -227,7 +227,7 @@ LAB_00478902:
   }
   if (((this_ptr->wav_name[0] != '\0') &&
       (iVar8 = sound_sndmain_cpp_isSfxPlaying_FUN_00526c50(this_ptr->sfx_handle), iVar8 == 0)) &&
-     ((this_ptr->sfx_type != 1 || (this_ptr->prev_emitter_state == 0)))) {
+     ((this_ptr->sfx_type != EMITTER_SOUND_ONE_SHOT || (this_ptr->prev_emitter_state == 0)))) {
     uVar7 = (*((this_ptr->base).vtable._ub)->playSound)(&this_ptr->base,this_ptr->wav_name);
     this_ptr->sfx_handle = uVar7;
   }

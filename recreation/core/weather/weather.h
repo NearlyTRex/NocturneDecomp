@@ -7,6 +7,8 @@ namespace nocturne::core {
 
 class CWeather {
 public:
+    // deferred: the game's weather and its 200 particle positions, with this constructor
+    // nocedit 0x005eeaa0
     CWeather();
 
     void update();

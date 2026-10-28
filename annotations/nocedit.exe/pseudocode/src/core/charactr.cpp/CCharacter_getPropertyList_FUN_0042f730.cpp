@@ -39,6 +39,6 @@ LAB_0042f793:
              (CActorPropertyValidatorFunc *)0x0);
   core_actor_cpp_CActorPropertyList_addEnumPair_FUN_0040e640
             (property_list,"Health bar",3,g_CharacterHealthBarTypePairs,
-             &this_ptr->health_bar_mode);
+             (int *)&this_ptr->health_bar_mode);
   return;
 }

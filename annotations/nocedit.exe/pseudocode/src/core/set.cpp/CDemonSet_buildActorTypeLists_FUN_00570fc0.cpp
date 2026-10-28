@@ -48,7 +48,7 @@ void __cdecl core_set_cpp_CDemonSet_buildActorTypeLists_FUN_00570fc0(CDemonSet *
         pCVar4 = (CTrigger *)
                  core_actor_cpp_castToClassHash_FUN_0040c790
                            (actor_ptr,g_CTriggerClassInfo.name_hash);
-        if (((pCVar4 != (CTrigger *)0x0) && (pCVar4->hero_triggers_me == 4)) &&
+        if (((pCVar4 != (CTrigger *)0x0) && (pCVar4->trigger_cause == TRIGGER_CAUSE_BULLET)) &&
            (pCVar4->auto_aim_at_me != 0)) goto LAB_005710a5;
       }
       else {

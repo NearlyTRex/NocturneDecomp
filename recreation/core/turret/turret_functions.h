@@ -4,7 +4,6 @@
 
 namespace nocturne::core {
 
-void staticInit();
 CTurret *factoryFuncTurret();
 
 } // namespace nocturne::core

@@ -19,7 +19,7 @@ CTommyGun * __cdecl core_tommygun_cpp_CTommyGun_ctor_FUN_00545b90(CTommyGun *thi
   core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_00454580
             (&(pCVar2->base).model,"tommygun.kfm");
   (pCVar2->base).is_spread_weapon = 0;
-  (pCVar2->base).fire_mode = 0;
+  (pCVar2->base).fire_mode = FIRE_MODE_AUTOMATIC;
   (pCVar2->base).weapon_type = WEAPON_TYPE_TOMMY_GUN;
   (pCVar2->base).can_penetrate = 1;
   (pCVar2->base).bolt_velocity = 100.0;

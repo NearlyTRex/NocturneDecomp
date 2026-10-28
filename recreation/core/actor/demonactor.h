@@ -12,6 +12,13 @@
 
 namespace nocturne::core {
 
+// Whether an actor has come into the mission yet, or gone from it.
+enum class EActorLifecycleState : std::uint8_t {
+    kNotCreated = 0,
+    kCreated = 1,
+    kDestroyed = 2,
+};
+
 // Anything a mission places: what every actor class has, and what each may do differently. The
 // virtual functions not ported yet quit when called.
 class CDemonActor {
@@ -88,7 +95,7 @@ public:
     // The original's quit when called, since nothing can be just a CDemonActor.
     // nocedit 0x00408b50
     [[nodiscard]] virtual const CDemonActorType &getActorType() const = 0;
-    // Reads the class's own fields, between the tags load reads.
+    // Reads the class's own fields, between the tags load reads, after its parent's.
     virtual void archive(CActorArchive &actor_archive);
 
     void setupRenderState();
@@ -117,13 +124,21 @@ public:
     void save(std::FILE *file_handle);
     // Reads the actor as a mission or save file holds it: a start tag with its class and name,
     // the class's fields, and an end tag that repeats both. A tag naming another class or actor
-    // is fatal.
-    void load(common::CTextScanner &scanner);
+    // is fatal. Each class's fields are read as the version the file saved them in.
+    void load(common::CTextScanner &scanner, const SActorArchiveOwners &owners);
+    [[nodiscard]] EActorLifecycleState getLifecycleState() const;
+    // The chance the actor is created when its creation event comes.
+    [[nodiscard]] float getCreateProbability() const;
+    // The event that creates the actor, or "none".
+    [[nodiscard]] const std::string &getCreateEvent() const;
 
 private:
     std::string actor_name_;
     CLocation location_;
     common::CVector3f orientation_;
+    EActorLifecycleState lifecycle_state_ = EActorLifecycleState::kNotCreated;
+    float create_probability_ = 1.0F;
+    std::string create_event_ = "none";
 };
 
 } // namespace nocturne::core

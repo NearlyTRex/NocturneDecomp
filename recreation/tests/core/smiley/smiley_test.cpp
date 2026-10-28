@@ -1,3 +1,4 @@
+#include "core/actor/demonactortype.h"
 #include "core/smiley/smiley.h"
 
 #include <gtest/gtest.h>
@@ -38,6 +39,13 @@ TEST(CSmiley, PublicInterface) {
     static_assert(std::is_same_v<decltype(&CSmiley::attractActorToward),
                                  int (CSmiley::*)(CDemonActor *, common::CVector3f *)>);
     static_assert(std::is_same_v<decltype(&CSmiley::reset), void (CSmiley::*)()>);
+}
+
+TEST(CSmiley, ItsRecordIsVersion1UnderCEnemy) {
+    EXPECT_EQ(CSmiley::kType.class_name, "CSmiley");
+    EXPECT_EQ(CSmiley::kType.parent_type, &CEnemy::kType);
+    EXPECT_EQ(CSmiley::kType.factory_func, nullptr);
+    EXPECT_EQ(CSmiley::kType.latest_version, 1);
 }
 
 } // namespace

@@ -11,7 +11,7 @@
 void __cdecl core_baron_cpp_CBaron_process_FUN_00410490(CBaron *this_ptr,float delta_time)
 
 {
-  uint uVar1;
+  EWalkState EVar1;
   CGame *pCVar2;
   int iVar3;
   CVector3f *pCVar4;
@@ -164,16 +164,16 @@ void __cdecl core_baron_cpp_CBaron_process_FUN_00410490(CBaron *this_ptr,float d
     }
     goto switchD_00410a6d_default;
   }
-  uVar1 = (this_ptr->base).base.is_walking;
-  if (uVar1 < 2) {
-    if (uVar1 != 1) goto LAB_00410847;
+  EVar1 = (this_ptr->base).base.walk_state;
+  if (EVar1 < 2) {
+    if (EVar1 != WALK_STATE_WALKING) goto LAB_00410847;
     iVar3 = 1;
   }
-  else if (uVar1 < 3) {
+  else if (EVar1 < WALK_STATE_NO_PATH) {
     iVar3 = 3;
   }
   else {
-    if (uVar1 == 3) {
+    if (EVar1 == WALK_STATE_NO_PATH) {
       core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0(&pCVar9->base,0,1);
       engine_console_cpp_CConsole_printf_FUN_0043ac60
                 (g_CConsole_PTR_005ad350,"%s confused while walking to scriptDest!\n",this_ptr);

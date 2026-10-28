@@ -141,7 +141,35 @@ nocturne_test_suite(shims_game_menus_authentic_single_player
     TESTS test_menus_authentic_single_player.cpp
     SUBJECTS ${_menus_subjects}
     SUPPORT ${_menus_support}
-    DEFINITIONS NOCTURNE_AUTHENTIC_SINGLE_PLAYER_MENU=1
+    DEFINITIONS NOCTURNE_AUTHENTIC_MENU=1
+)
+
+# The front end's pages and the loop that runs them, the key bindings and the
+# names keys are shown by, over the menu routine, the renderer, the mixer and
+# the shims front_support.cpp stands in for. The attract movie's log line goes
+# through the path resolver.
+nocturne_test_suite(shims_game_front
+    TESTS test_menu_page.cpp test_main_menu.cpp test_options_menu.cpp test_sound_options.cpp
+          test_control_options.cpp test_key_names.cpp
+    SUBJECTS
+        shims/core/menu_page.cpp
+        shims/core/menu_screen.cpp
+        shims/game/main_menu.cpp
+        shims/game/options_menu.cpp
+        shims/game/sound_options.cpp
+        shims/game/control_options.cpp
+        shims/game/key_names.cpp
+        shims/watcom/path.cpp
+        shims/core/file_search.cpp
+    SUPPORT
+        front_support.cpp
+)
+
+# A pushed box's scrape, against a box whose sound calls the test answers.
+nocturne_test_suite(shims_game_box_push
+    TESTS test_box_push.cpp
+    SUBJECTS
+        shims/game/box_push.cpp
 )
 
 # The cheat presets, against the menu, the inventory and the world
@@ -225,7 +253,7 @@ nocturne_test_suite(shims_game_authentic
     DEFINITIONS
         NOCTURNE_AUTHENTIC_HERO_ACTIONS=1 NOCTURNE_AUTHENTIC_HELPER_DEATH=1
         NOCTURNE_AUTHENTIC_CUE_RETRIGGER=1 NOCTURNE_AUTHENTIC_STATUS_BAR_WIDTH=1
-        NOCTURNE_AUTHENTIC_FMV=1
+        NOCTURNE_AUTHENTIC_MENU=1
 )
 
 # The map, against a level and actors automap_support.cpp builds and the engine

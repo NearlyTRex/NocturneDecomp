@@ -4,6 +4,7 @@
 
 // Dependencies
 #include "system/basetypes.h"
+#include "types/classes/CVector3f.h"
 #include "types/structs/SShapeEditorPolygon.h"
 #include "types/structs/SVertexData.h"
 

@@ -1,3 +1,4 @@
+#include "core/actor/demonactortype.h"
 #include "core/bugs/bugs.h"
 
 #include <gtest/gtest.h>
@@ -36,6 +37,13 @@ TEST(CBugs, PublicInterface) {
     static_assert(std::is_same_v<decltype(&CBugs::archive), void (CBugs::*)(CActorArchive &)>);
     static_assert(std::is_same_v<decltype(&CBugs::processDamage), void (CBugs::*)(SDamageInfo *)>);
     static_assert(std::is_same_v<decltype(&CBugs::getDeathState), EDeathState (CBugs::*)()>);
+}
+
+TEST(CBugs, ItsRecordIsVersion1UnderCEnemy) {
+    EXPECT_EQ(CBugs::kType.class_name, "CBugs");
+    EXPECT_EQ(CBugs::kType.parent_type, &CEnemy::kType);
+    EXPECT_EQ(CBugs::kType.factory_func, nullptr);
+    EXPECT_EQ(CBugs::kType.latest_version, 1);
 }
 
 } // namespace

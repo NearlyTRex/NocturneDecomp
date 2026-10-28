@@ -51,17 +51,17 @@ void __cdecl core_menu_cpp_configureCustomKeyBindings_FUN_005138e0(void)
   bool bVar36;
   bool bVar35;
   CPickList local_a7c;
-#if NOCTURNE_AUTHENTIC_GAMEPAD && NOCTURNE_AUTHENTIC_CONTROL_SETUP
   char local_6d4 [512];
-#endif
   char acStack_4d4 [512];
-#if NOCTURNE_AUTHENTIC_CONTROL_SETUP
   char local_2d4 [512];
-#endif
   char local_d4 [200];
   int local_c;
   uint window_flags;
 
+#if !NOCTURNE_AUTHENTIC_MENU
+  nocturne_key_bindings_menu();
+  return;
+#endif
   if (((g_CGamePtr->game_control == CONTROL_MODE_GAMEPAD) && (g_CGamePtr->x_center == 0)) &&
      (iVar4_00 = core_menu_cpp_calibrateGamepad_FUN_005104d0(), iVar4_00 == 0)) {
     return;
@@ -373,19 +373,6 @@ LAB_0051390e:
     g_CustomKeyPointers[g_CustomKeyCount] = piVar28;
     strcpy(pcVar32, pcVar3);
     g_CustomKeyCount = g_CustomKeyCount + 1;
-#if !NOCTURNE_AUTHENTIC_AUTOMAP
-    pcVar3 = nocturne_automap_key_label();
-    piVar28 = nocturne_automap_key_binding();
-    if (0x1d < g_CustomKeyCount) {
-      g_CurrentFilename = "..\\core\\menu.cpp";
-      g_CurrentLineNumber = 2091;
-      core_main_c_displayErrorAndQuit_FUN_00506f10("Too many custom keys!");
-    }
-    pcVar32 = g_CustomKeyNames[g_CustomKeyCount];
-    g_CustomKeyPointers[g_CustomKeyCount] = piVar28;
-    strcpy(pcVar32, pcVar3);
-    g_CustomKeyCount = g_CustomKeyCount + 1;
-#endif
     engine_special_cpp_clearScreen_FUN_005b3e70();
     wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();
     shape_edittool_cpp_CPickList_ctor_FUN_004a3b90(&local_a7c);
@@ -514,7 +501,6 @@ LAB_0051390e:
       iVar15_00 = iVar4_00 + -1;
       local_c = iVar4_00;
       switch(*g_CustomKeyPointers[iVar15_00]) {
-#if NOCTURNE_AUTHENTIC_GAMEPAD && NOCTURNE_AUTHENTIC_CONTROL_SETUP
       case 0x251:
       case 0x252:
       case 0x253:
@@ -525,8 +511,6 @@ LAB_0051390e:
         shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
                   (g_CEditorToolsPtr,local_6d4);
         break;
-#endif
-#if NOCTURNE_AUTHENTIC_CONTROL_SETUP
       case 0x255:
       case 0x256:
         strcpy(local_2d4, g_CustomKeyNames[iVar15_00]);
@@ -534,11 +518,7 @@ LAB_0051390e:
                             (" is assigned to the mouse.  Can't assign a key."));
         shape_edittool_cpp_CEditorTools_showError_FUN_0049e740(g_CEditorToolsPtr,local_2d4);
         break;
-#endif
       default:
-#if !NOCTURNE_AUTHENTIC_GAMEPAD
-        nocturne_gamepad_suppress_nav(1);
-#endif
         while( true ) {
           if (g_CGamePtr->game_control == CONTROL_MODE_GAMEPAD) {
             core_game_cpp_CGame_resetKeyState_FUN_004dbe60(g_CGamePtr);
@@ -563,9 +543,6 @@ LAB_00514913:
         }
         iVar4_00 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_ESCAPE);
         if (iVar4_00 != 0) {
-#if !NOCTURNE_AUTHENTIC_GAMEPAD
-          nocturne_gamepad_suppress_nav(0);
-#endif
           engine_2d_c_clearInputAndWait_FUN_00403260();
           shape_edittool_cpp_CPickList_dtor_FUN_004a3c80(&local_a7c,0);
           goto LAB_0051390e;
@@ -623,17 +600,11 @@ LAB_00514a9c:
           } while (iVar4_00 < g_CustomKeyCount);
         }
         engine_keys_cpp_CKeys_toggleInputMask_FUN_005024b0(g_CKeysPtr,0);
-#if !NOCTURNE_AUTHENTIC_GAMEPAD
-        nocturne_gamepad_suppress_nav(0);
-#endif
       }
       shape_edittool_cpp_CPickList_dtor_FUN_004a3c80(&local_a7c,0);
       goto LAB_0051390e;
     }
     core_game_cpp_CGame_restoreDefaultControls_FUN_004dbbc0(g_CGamePtr);
     shape_edittool_cpp_CPickList_dtor_FUN_004a3c80(&local_a7c,0);
-#if !NOCTURNE_AUTHENTIC_CONTROL_SETUP
-    return;
-#endif
   } while( true );
 }

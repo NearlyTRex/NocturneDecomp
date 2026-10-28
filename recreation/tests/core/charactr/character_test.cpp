@@ -1,15 +1,33 @@
+#include "common/error/fatalerror.h"
+#include "common/random/watcomrandom.h"
 #include "common/text/textscanner.h"
+#include "core/actor/actor.h"
 #include "core/actor/actorarchive.h"
+#include "core/actor/demonactor.h"
 #include "core/actor/demonactortype.h"
 #include "core/charactr/character.h"
+#include "core/charactr/healthbarmode.h"
+#include "core/cloth/clothlist.h"
+#include "core/game/game.h"
+#include "tests/mocks/core/mockactorlookup.h"
 #include "tests/mocks/core/notportedcalls.h"
+#include "tests/mocks/core/testactor.h"
+#include "tests/mocks/engine/mockgameclock.h"
 
+#include <gmock/gmock.h>
 #include <gtest/gtest.h>
 
+#include <format>
+#include <string>
+#include <string_view>
 #include <type_traits>
 
 namespace nocturne::core {
 namespace {
+
+using ::testing::ElementsAre;
+using ::testing::StrEq;
+using ::testing::ThrowsMessage;
 
 TEST(CCharacter, DerivesFromCDemonActor) {
     static_assert(std::is_base_of_v<CDemonActor, CCharacter>);
@@ -130,7 +148,8 @@ TEST(CCharacter, PublicInterface) {
         std::is_same_v<decltype(&CCharacter::dropAllCarriedObjects), void (CCharacter::*)()>);
     static_assert(
         std::is_same_v<decltype(&CCharacter::updateCarriedObjects), void (CCharacter::*)(float)>);
-    static_assert(std::is_same_v<decltype(&CCharacter::isCarryingAnything), int (CCharacter::*)()>);
+    static_assert(
+        std::is_same_v<decltype(&CCharacter::isCarryingAnything), bool (CCharacter::*)() const>);
     static_assert(std::is_same_v<decltype(&CCharacter::initGesture), int (CCharacter::*)(char *)>);
     static_assert(
         std::is_same_v<decltype(&CCharacter::computeBoundingBox), void (CCharacter::*)()>);
@@ -177,10 +196,95 @@ TEST(CCharacter, ItsRecordIsAVersionSixActorThatMissionsCantCreate) {
     EXPECT_EQ(CCharacter::kType.name_hash, hashClassName("CCharacter"));
 }
 
+TEST(CCharacter, ACharacterStartsWithFullHealthCarryingNothing) {
+    CTestCharacter character;
+    EXPECT_EQ(character.getHitPoints(), 100.0F);
+    EXPECT_EQ(character.getMaxHitPoints(), 100.0F);
+    EXPECT_FALSE(character.isCarryingAnything());
+    EXPECT_EQ(character.getGrabber(), nullptr);
+    EXPECT_EQ(character.getSizeScale(), 1.0F);
+    EXPECT_EQ(character.getTalkToMeEvent(), "");
+    EXPECT_TRUE(character.getClothList().getFilenames().empty());
+}
+
+// A character Mob, whose actor fields name the actors Crate and Hook.
+class CCharacterArchiveTest : public ::testing::Test {
+protected:
+    CCharacterArchiveTest() {
+        character_.setActorName("Mob");
+        crate_.setActorName("Crate");
+        hook_.setActorName("Hook");
+        ON_CALL(actors_, loadActor)
+            .WillByDefault([this](common::CTextScanner &scanner, const CDemonActor &,
+                                  std::string_view) -> CDemonActor * {
+                const std::string_view line = scanner.readLine();
+                if (line.starts_with("\"Crate\"")) {
+                    return &crate_;
+                }
+                return line.starts_with("\"Hook\"") ? &hook_ : nullptr;
+            });
+    }
+
+    // Reads the character's own fields as the version given, after CDemonActor's.
+    void readAs(int saved_version, std::string_view fields) {
+        classes_.setSavedVersion(CCharacter::kType, saved_version);
+        const std::string text = std::format(
+            "{{ CCharacter \"Mob\"\n0,0,0,0\n0,0,0\n0\n{}}} CCharacter \"Mob\"\n", fields);
+        common::CTextScanner scanner(text);
+        character_.load(scanner,
+                        {.actor_classes = classes_, .actors = actors_, .crt_random = crt_});
+    }
+
+    ::testing::NiceMock<engine::MockGameClock> clock_;
+    CGame game_{clock_};
+    common::CWatcomRandom crt_;
+    CActor classes_{game_, crt_};
+    ::testing::NiceMock<MockActorLookup> actors_;
+    CTestCharacter character_;
+    CTestActor crate_{kTestBaseType};
+    CTestActor hook_{kTestBaseType};
+};
+
+TEST_F(CCharacterArchiveTest, ACharacterIsReadWithAllItsFields) {
+    readAs(6, "50 // hitPoints\n2 // numCarryHands\n1 // carry hand\n\"Crate\" // carry actor\n"
+              "0\n\"(none)\"\n\"ask_mob\" // talkToMeEvent\n\"Hook\" // grabbedBy\n3\n"
+              "{ // clothList\n1\n\"coat.cls\"\n}\n1.5 // sizeScale\n2\n\"The Mob\"\n80\n");
+    EXPECT_EQ(character_.getHitPoints(), 50.0F);
+    EXPECT_EQ(character_.getCarriedActor(0), nullptr);
+    EXPECT_EQ(character_.getCarriedActor(1), &crate_);
+    EXPECT_TRUE(character_.isCarryingAnything());
+    EXPECT_EQ(character_.getTalkToMeEvent(), "ask_mob");
+    EXPECT_EQ(character_.getGrabber(), &hook_);
+    EXPECT_EQ(character_.getGrabbedType(), 3);
+    EXPECT_THAT(character_.getClothList().getFilenames(), ElementsAre("coat.cls"));
+    EXPECT_EQ(character_.getSizeScale(), 1.5F);
+    EXPECT_EQ(character_.getHealthBarMode(), EHealthBarMode::kAlways);
+    EXPECT_EQ(character_.getDescriptiveName(), "The Mob");
+    EXPECT_EQ(character_.getMaxHitPoints(), 80.0F);
+}
+
+// Before version 6 the most hit points aren't saved, and are the hit points read.
+TEST_F(CCharacterArchiveTest, AnOlderCharacterHasOnlyTheFieldsItsVersionHeld) {
+    readAs(5, "40\n0\n\"\"\n\"(none)\"\n0\n{\n0\n}\n2\n");
+    EXPECT_EQ(character_.getSizeScale(), 2.0F);
+    EXPECT_EQ(character_.getMaxHitPoints(), 40.0F);
+    EXPECT_EQ(character_.getHealthBarMode(), EHealthBarMode::kNone);
+    readAs(1, "30\n");
+    EXPECT_EQ(character_.getHitPoints(), 30.0F);
+    EXPECT_EQ(character_.getMaxHitPoints(), 30.0F);
+    EXPECT_FALSE(character_.isCarryingAnything());
+}
+
+TEST_F(CCharacterArchiveTest, AHandPastTheTwoIsFatal) {
+    for (const int hand : {2, -1}) {
+        EXPECT_THAT([&] { readAs(2, std::format("50\n1\n{}\n\"Crate\"\n", hand)); },
+                    ThrowsMessage<common::CFatalError>(StrEq(
+                        std::format("CCharacter::archive - Mob has no carry hand {}", hand))));
+    }
+}
+
 TEST(CCharacter, TheFunctionsNotPortedYetQuit) {
     CTestCharacter character;
-    common::CTextScanner scanner("");
-    CActorArchive archive(scanner);
     const NotPortedCalls calls = {
         {"setup", [&] { character.setup(); }},
         {"renderOpaque", [&] { static_cast<void>(character.renderOpaque()); }},
@@ -194,7 +298,6 @@ TEST(CCharacter, TheFunctionsNotPortedYetQuit) {
         {"drop", [&] { character.drop(nullptr, nullptr); }},
         {"spawnFlies", [&] { character.spawnFlies(0, 0.0F); }},
         {"calculateChecksum", [&] { character.calculateChecksum(nullptr); }},
-        {"archive", [&] { character.archive(archive); }},
         {"applyDamage", [&] { character.applyDamage(0, 0.0F); }},
         {"kill", [&] { character.kill(0, nullptr, 0.0F); }},
         {"isInvulnerable", [&] { static_cast<void>(character.isInvulnerable()); }},
@@ -202,7 +305,6 @@ TEST(CCharacter, TheFunctionsNotPortedYetQuit) {
         {"canBeGrabbed", [&] { static_cast<void>(character.canBeGrabbed(nullptr, 0)); }},
         {"getGrabbed", [&] { static_cast<void>(character.getGrabbed(nullptr, 0)); }},
         {"releaseFromGrab", [&] { character.releaseFromGrab(); }},
-        {"getGrabber", [&] { static_cast<void>(character.getGrabber()); }},
         {"releaseVictim", [&] { character.releaseVictim(); }},
         {"onVictimLost", [&] { character.onVictimLost(nullptr); }},
         {"checkCylinderCollisionWorld",
@@ -226,7 +328,7 @@ TEST(CCharacter, TheFunctionsNotPortedYetQuit) {
         {"setWalkTimeout", [&] { character.setWalkTimeout(0.0F); }},
         {"isWalkComplete", [&] { static_cast<void>(character.isWalkComplete()); }},
     };
-    EXPECT_EQ(calls.size(), 38U);
+    EXPECT_EQ(calls.size(), 36U);
     expectEachQuitsNotPorted("CCharacter", calls);
 }
 

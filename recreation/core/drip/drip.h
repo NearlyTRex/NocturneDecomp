@@ -7,6 +7,8 @@ namespace nocturne::core {
 
 class CDrip : public CDemonActor {
 public:
+    static const CDemonActorType kType;
+
     CDrip();
     ~CDrip() override;
 

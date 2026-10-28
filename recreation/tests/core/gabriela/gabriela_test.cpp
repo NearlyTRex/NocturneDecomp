@@ -8,7 +8,6 @@ namespace nocturne::core {
 namespace {
 
 TEST(CoreGabrielaFunctions, PublicInterface) {
-    static_assert(std::is_same_v<decltype(&staticInit), void (*)()>);
     static_assert(std::is_same_v<decltype(&weaponDrawBlendWeightCallback),
                                  float (*)(int, int, float, int, CDeformableModelInstance *)>);
     static_assert(std::is_same_v<decltype(&flashlightBlendWeightCallback),

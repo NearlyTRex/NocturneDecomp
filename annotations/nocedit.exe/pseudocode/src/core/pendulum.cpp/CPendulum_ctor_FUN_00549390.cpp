@@ -54,6 +54,6 @@ CPendulum * __cdecl core_pendulum_cpp_CPendulum_ctor_FUN_00549390(CPendulum *thi
   ADJ(this_ptr_00)->decay = 0.0;
   ADJ(this_ptr_00)->decay_timer = 0.0;
   ADJ(this_ptr_00)->is_stopped = 0;
-  ADJ(this_ptr_00)->one_shot = 0;
+  ADJ(this_ptr_00)->half_movement = 0;
   return ADJ(this_ptr_00);
 }

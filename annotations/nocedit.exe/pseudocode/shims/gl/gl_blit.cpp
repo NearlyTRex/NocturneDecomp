@@ -12,6 +12,8 @@
 #include "gl/gl_api.h"
 #include "gl/gl_blit.h"
 #include "gl/gl_program.h"
+#include "gl/upscale_shaders.h"
+#include "gl/upscaler.h"
 
 #include <stdint.h>
 #include <stdlib.h>
@@ -67,6 +69,18 @@ const GLfloat kQuad[32] = {
 };
 const int kQuadTopDown = 0;
 const int kQuadBottomUp = 4;
+
+// One upscaler's program, built from gl/upscale_shaders.h on its first use
+// over the plain quad's vertex shader, so it reads the same vertex array.
+struct UpscaleProgram {
+    bool tried; // as g_tried, for this filter
+    GLuint program;
+    GLint loc_tex;
+    GLint loc_src;
+    GLint loc_sharp; // -1 where the filter does not read it, which GL ignores
+};
+
+UpscaleProgram g_upscale[NOCTURNE_UPSCALER_COUNT];
 
 bool have_entry_points() {
     return gl.CreateShader != nullptr && gl.ShaderSource != nullptr &&
@@ -135,34 +149,40 @@ bool build_program() {
     return true;
 }
 
-int blit_quad(unsigned int texture, int first) {
-    if (g_program == 0) {
-        if (g_tried)
-            return 0;
-        g_tried = true;
-        if (!have_entry_points()) {
-            DLOG("render", "gl_blit: no shader/buffer entry points — quad unavailable");
-            return 0;
-        }
-        if (!build_program())
-            return 0;
+// The quad and its program, built on first use and once only.
+bool ensure_quad() {
+    if (g_program != 0)
+        return true;
+    if (g_tried)
+        return false;
+    g_tried = true;
+    if (!have_entry_points()) {
+        DLOG("render", "gl_blit: no shader/buffer entry points — quad unavailable");
+        return false;
     }
+    return build_program();
+}
 
-    // Put back whatever the caller had. The scene-FBO seed runs mid-frame
-    // between the renderer's own draws, so anything left changed here lands
-    // directly on those draws.
+// Draws the quad with `program` and puts back whatever the caller had. The
+// scene-FBO seed runs mid-frame between the renderer's own draws, so anything
+// left changed here lands directly on those draws. `set_uniforms` gives the
+// program anything beyond its sampler.
+void draw_quad(GLuint program, GLint loc_tex, unsigned int texture, int first,
+               void (*set_uniforms)(const void *), const void *uniforms) {
     GLint prev_program = 0;
     GLint prev_array = 0;
     gl.GetIntegerv(GL_CURRENT_PROGRAM, &prev_program);
     gl.GetIntegerv(GL_VERTEX_ARRAY_BINDING, &prev_array);
 
-    gl.UseProgram(g_program);
+    gl.UseProgram(program);
     // After glUseProgram, never before: glUniform writes to the currently bound
     // program, and setting it earlier leaves the sampler at its default with no
     // error to show for it. The unit is 0, which is the one the caller bound the
     // texture on — nothing here calls glActiveTexture, and the fallback quad
     // assumes the same unit.
-    gl.Uniform1i(g_loc_tex, 0);
+    gl.Uniform1i(loc_tex, 0);
+    if (set_uniforms != nullptr)
+        set_uniforms(uniforms);
     gl.BindTexture(GL_TEXTURE_2D, (GLuint)texture);
 
     gl.BindVertexArray(g_vao);
@@ -170,7 +190,65 @@ int blit_quad(unsigned int texture, int first) {
 
     gl.BindVertexArray((GLuint)prev_array);
     gl.UseProgram((GLuint)prev_program);
+}
+
+int blit_quad(unsigned int texture, int first) {
+    if (!ensure_quad())
+        return 0;
+    draw_quad(g_program, g_loc_tex, texture, first, nullptr, nullptr);
     return 1;
+}
+
+// An upscaler's program reads the plain quad's vertex array, which recorded
+// a_uv at the plain program's location. Only the position is pinned, so the
+// linker could put a_uv elsewhere here; drawing then would read the wrong
+// attribute, so such a program is refused rather than used.
+bool build_upscale_program(int mode, UpscaleProgram *out) {
+    const char *fragment = nocturne_upscale_fragment_source(mode);
+    if (fragment == nullptr)
+        return false;
+    if (gl.Uniform1f == nullptr || gl.Uniform2f == nullptr) {
+        DLOG("render", "gl_blit: no Uniform1f/Uniform2f — upscaler %d unavailable", mode);
+        return false;
+    }
+    GLuint program = nocturne_gl_build_program(kVertexSource, fragment, "gl_blit_upscale");
+    if (program == 0) {
+        return false;
+    }
+    if (gl.GetAttribLocation(program, "a_uv") != g_attr_uv) {
+        DLOG("render", "gl_blit: upscaler %d put a_uv elsewhere — unavailable", mode);
+        gl.DeleteProgram(program);
+        return false;
+    }
+    out->loc_tex = gl.GetUniformLocation(program, "u_tex");
+    out->loc_src = gl.GetUniformLocation(program, "u_src");
+    out->loc_sharp = gl.GetUniformLocation(program, "u_sharp");
+    out->program = program;
+    DLOG("render", "gl_blit: upscaler %d linked (id=%u)", mode, (unsigned)program);
+    return true;
+}
+
+UpscaleProgram *ensure_upscale(int mode) {
+    if (mode < 0 || mode >= NOCTURNE_UPSCALER_COUNT)
+        return nullptr;
+    UpscaleProgram *up = &g_upscale[mode];
+    if (up->program != 0)
+        return up;
+    if (up->tried)
+        return nullptr;
+    up->tried = true;
+    return build_upscale_program(mode, up) ? up : nullptr;
+}
+
+struct UpscaleUniforms {
+    const UpscaleProgram *program;
+    GLfloat src_w, src_h, sharp;
+};
+
+void set_upscale_uniforms(const void *uniforms) {
+    const UpscaleUniforms *u = (const UpscaleUniforms *)uniforms;
+    gl.Uniform2f(u->program->loc_src, u->src_w, u->src_h);
+    gl.Uniform1f(u->program->loc_sharp, u->sharp);
 }
 
 } // namespace
@@ -183,8 +261,27 @@ extern "C" int nocturne_gl_blit_quad_flipped(unsigned int texture) {
     return blit_quad(texture, kQuadBottomUp);
 }
 
-// Only a built quad has anything to delete; a failed build leaves nothing.
+// The plain quad first: its buffer and vertex array are the ones drawn.
+extern "C" int nocturne_gl_blit_quad_upscaled(int mode, unsigned int texture, int flipped,
+                                              int src_w, int src_h, float sharpness) {
+    if (!ensure_quad())
+        return 0;
+    const UpscaleProgram *up = ensure_upscale(mode);
+    if (up == nullptr)
+        return 0;
+    const UpscaleUniforms uniforms = {up, (GLfloat)src_w, (GLfloat)src_h, sharpness};
+    draw_quad(up->program, up->loc_tex, texture, flipped ? kQuadBottomUp : kQuadTopDown,
+              set_upscale_uniforms, &uniforms);
+    return 1;
+}
+
+// Only a built program has anything to delete; a failed build leaves nothing.
 extern "C" void nocturne_gl_blit_shutdown(void) {
+    for (UpscaleProgram &up : g_upscale) {
+        if (up.program != 0)
+            gl.DeleteProgram(up.program);
+        up = UpscaleProgram();
+    }
     if (g_program != 0) {
         gl.DeleteProgram(g_program);
         gl.DeleteBuffers(1, &g_vbo);
@@ -206,6 +303,16 @@ extern "C" int nocturne_gl_blit_quad(unsigned int texture) {
 }
 extern "C" int nocturne_gl_blit_quad_flipped(unsigned int t) {
     (void)t;
+    return 0;
+}
+extern "C" int nocturne_gl_blit_quad_upscaled(int mode, unsigned int t, int flipped, int w, int h,
+                                              float s) {
+    (void)mode;
+    (void)t;
+    (void)flipped;
+    (void)w;
+    (void)h;
+    (void)s;
     return 0;
 }
 extern "C" void nocturne_gl_blit_shutdown(void) {}

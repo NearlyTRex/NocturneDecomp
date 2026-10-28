@@ -64,13 +64,21 @@ std::string_view CTextScanner::scanWord() {
 }
 
 std::optional<std::string_view> CTextScanner::scanUntil(char delimiter) {
-    const std::size_t end = std::min(text_.find(delimiter, position_), text_.size());
+    return scanUntilAny({&delimiter, 1});
+}
+
+std::optional<std::string_view> CTextScanner::scanUntilAny(std::string_view delimiters) {
+    const std::size_t end = std::min(text_.find_first_of(delimiters, position_), text_.size());
     if (end == position_) {
         return std::nullopt;
     }
     const std::string_view match = text_.substr(position_, end - position_);
     position_ = end;
     return match;
+}
+
+std::size_t CTextScanner::getPosition() const {
+    return position_;
 }
 
 } // namespace nocturne::common

@@ -9,7 +9,7 @@
 void __cdecl core_gore_cpp_CBloodPool_render_FUN_004af340(CBloodPool *this_ptr,int expire_flag)
 
 {
-  uint uVar1;
+  EBloodType EVar1;
   double dVar2;
   CVector3i CStack_54;
   CVector3i local_48;
@@ -68,62 +68,62 @@ void __cdecl core_gore_cpp_CBloodPool_render_FUN_004af340(CBloodPool *this_ptr,i
   local_3c.z = (int)ROUND(256.0f * 1.333);
   engine_special_cpp_transformAndProjectPoint_FUN_0053075c
             (&g_CDemonRenderer_PTR_005ae704->vertex_buffer_ptr[3].projected_vertex,&local_3c);
-  uVar1 = this_ptr->blood_type;
-  if (uVar1 == 0) {
+  EVar1 = this_ptr->blood_type;
+  if (EVar1 == BLOOD_TYPE_RED) {
 LAB_004af532:
     DAT_005c5034 = 0x2000;
     DAT_005c5038 = 0;
   }
-  else if (uVar1 < 2) {
+  else if (EVar1 < BLOOD_TYPE_NONE) {
     DAT_005c5034 = 0;
     DAT_005c5038 = 0x7f80;
   }
   else {
-    if (uVar1 != 2) goto LAB_004af532;
+    if (EVar1 != BLOOD_TYPE_NONE) goto LAB_004af532;
     DAT_005c5038 = 0;
     DAT_005c5034 = 0;
   }
   DAT_005c503c = 0;
-  uVar1 = this_ptr->blood_type;
-  if (uVar1 == 0) {
+  EVar1 = this_ptr->blood_type;
+  if (EVar1 == BLOOD_TYPE_RED) {
 LAB_004af55f:
     DAT_005c5064 = 0x2000;
     DAT_005c5068 = 0;
   }
-  else if (uVar1 < 2) {
+  else if (EVar1 < BLOOD_TYPE_NONE) {
     DAT_005c5068 = 0x7f80;
     DAT_005c5064 = 0;
   }
   else {
-    if (uVar1 != 2) goto LAB_004af55f;
+    if (EVar1 != BLOOD_TYPE_NONE) goto LAB_004af55f;
     DAT_005c5068 = 0;
     DAT_005c5064 = 0;
   }
   DAT_005c506c = 0;
-  uVar1 = this_ptr->blood_type;
-  if (uVar1 == 0) {
+  EVar1 = this_ptr->blood_type;
+  if (EVar1 == BLOOD_TYPE_RED) {
 LAB_004af58c:
     DAT_005c5094 = 0x2000;
     DAT_005c5098 = 0;
   }
-  else if (uVar1 < 2) {
+  else if (EVar1 < BLOOD_TYPE_NONE) {
     DAT_005c5098 = 0x7f80;
     DAT_005c5094 = 0;
   }
   else {
-    if (uVar1 != 2) goto LAB_004af58c;
+    if (EVar1 != BLOOD_TYPE_NONE) goto LAB_004af58c;
     DAT_005c5098 = 0;
     DAT_005c5094 = 0;
   }
   DAT_005c509c = 0;
-  uVar1 = this_ptr->blood_type;
-  if (uVar1 != 0) {
-    if (uVar1 < 2) {
+  EVar1 = this_ptr->blood_type;
+  if (EVar1 != BLOOD_TYPE_RED) {
+    if (EVar1 < BLOOD_TYPE_NONE) {
       DAT_005c50c8 = 0x7f80;
       DAT_005c50c4 = 0;
       goto LAB_004af5dc;
     }
-    if (uVar1 == 2) {
+    if (EVar1 == BLOOD_TYPE_NONE) {
       DAT_005c50c8 = 0;
       DAT_005c50c4 = 0;
       goto LAB_004af5dc;

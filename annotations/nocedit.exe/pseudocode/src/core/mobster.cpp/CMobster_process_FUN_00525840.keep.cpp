@@ -503,7 +503,7 @@ void __cdecl core_mobster_cpp_CMobster_process_FUN_00525840(CMobster *this_ptr,f
     }
     goto switchD_0052677f_caseD_7;
   }
-  uVar9 = (this_ptr->base).base.is_walking;
+  uVar9 = (this_ptr->base).base.walk_state;
   if (uVar9 < 2) {
     if (uVar9 == 1) {
 LAB_00525b6c:

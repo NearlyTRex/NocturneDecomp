@@ -305,7 +305,7 @@ void __cdecl core_smiley_cpp_CSmiley_process_FUN_005a2800(CSmiley *this_ptr,floa
     }
     goto switchD_005a3055_caseD_7;
   }
-  uVar7 = (this_ptr->base).base.is_walking;
+  uVar7 = (this_ptr->base).base.walk_state;
   if (uVar7 < 2) {
     if (uVar7 == 1) {
 LAB_005a2a90:

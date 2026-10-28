@@ -8,7 +8,6 @@ namespace nocturne::core {
 namespace {
 
 TEST(CoreInvFunctions, PublicInterface) {
-    static_assert(std::is_same_v<decltype(&staticInit), void (*)()>);
     static_assert(std::is_same_v<decltype(&loadAssets), void (*)()>);
     static_assert(std::is_same_v<decltype(&freeInventory), void (*)()>);
 }

@@ -6,6 +6,8 @@
 
 #include "nocturne.h"
 
+/* WARNING: Unable to use type for symbol uVar3 */
+
 void __cdecl core_npc_cpp_CNPC_process_FUN_005448b0(CNPC *this_ptr,float delta_time)
 
 {
@@ -30,7 +32,7 @@ void __cdecl core_npc_cpp_CNPC_process_FUN_005448b0(CNPC *this_ptr,float delta_t
   float fVar5;
   char *pcVar9;
   float fVar4;
-  uint uVar3;
+  EWalkState uVar3;
   CVector3f *pCVar2;
   CDeformableModelInstance *pCVar1;
   
@@ -57,7 +59,7 @@ void __cdecl core_npc_cpp_CNPC_process_FUN_005448b0(CNPC *this_ptr,float delta_t
                        (pCVar3,&CStack_48,0);
     core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
               ((CDemonActor *)this_ptr,&CStack_30,pCVar8);
-    core_gore_cpp_CGore_createBloodPool_FUN_004ede30(g_CGorePtr,&CStack_30,0);
+    core_gore_cpp_CGore_createBloodPool_FUN_004ede30(g_CGorePtr,&CStack_30,BLOOD_TYPE_RED);
     this_ptr->pool_me = 1;
   }
   fVar5 = (float)3.1415926535000001;
@@ -66,9 +68,9 @@ void __cdecl core_npc_cpp_CNPC_process_FUN_005448b0(CNPC *this_ptr,float delta_t
   (this_ptr->base).turn_speed = delta_time * fVar5 * fVar4;
   iVar5 = core_charactr_cpp_CCharacter_processWalking_FUN_0042ca70(&this_ptr->base,delta_time);
   if (iVar5 == 0) goto LAB_00544a0c;
-  uVar3 = (this_ptr->base).is_walking;
+  uVar3 = (this_ptr->base).walk_state;
   if (uVar3 < 2) {
-    if (uVar3 == 1) {
+    if (uVar3 == WALK_STATE_WALKING) {
 LAB_005449de:
       pcVar9 = "WALK";
     }
@@ -81,7 +83,7 @@ LAB_00544b62:
   }
   else {
     pCVar3 = &(this_ptr->base).model;
-    if (uVar3 < 3) {
+    if (uVar3 < WALK_STATE_NO_PATH) {
       iVar5 = 0;
       state_name = "RUN";
       this_ptr_00 = core_motion_cpp_CMotionController_getMotionList_FUN_0052dce0(&pCVar3->base);
@@ -90,7 +92,7 @@ LAB_00544b62:
       core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00(&pCVar3->base,iVar5,1);
     }
     else {
-      if (uVar3 != 3) goto LAB_00544b62;
+      if (uVar3 != WALK_STATE_NO_PATH) goto LAB_00544b62;
       core_motion_cpp_CMotionController_setDesiredStateByName_FUN_0052db90
                 (&pCVar3->base,"STAND",1);
       engine_console_cpp_CConsole_printf_FUN_00441890

@@ -48,7 +48,7 @@ int __cdecl core_trigger_cpp_CTrigger_containsActor_FUN_005e0cd0(CTrigger *this_
       if (&CStack_40 != pCVar5) {
         CStack_40 = *pCVar5;
       }
-      if (this_ptr->shape == 0) {
+      if (this_ptr->trigger_shape == 0) {
         pCVar1 = (*((this_ptr->base).vtable._ub)->getBoundingBox)(&this_ptr->base,&CStack_64);
         if ((((((pCVar1->min).x <= CStack_40.x) && ((pCVar1->min).y <= CStack_40.y)) &&
              ((pCVar1->min).z <= CStack_40.z)) &&
@@ -58,11 +58,11 @@ int __cdecl core_trigger_cpp_CTrigger_containsActor_FUN_005e0cd0(CTrigger *this_
         }
       }
       else {
-        if (this_ptr->shape != 1) {
+        if (this_ptr->trigger_shape != 1) {
           g_CurrentFilename = "..\\core\\trigger.cpp";
           g_CurrentLineNumber = 893;
           core_main_c_displayErrorAndQuit_FUN_00506f10
-                    ("CTrigger::containsActor - invalid trigger shape %d for %s",this_ptr->shape,this_ptr->base.actor_name);
+                    ("CTrigger::containsActor - invalid trigger shape %d for %s",this_ptr->trigger_shape,this_ptr->base.actor_name);
           g_CurrentLineNumber = 899;
           g_CurrentFilename = "..\\core\\trigger.cpp";
           core_main_c_displayErrorAndQuit_FUN_00506f10("Hell froze...");

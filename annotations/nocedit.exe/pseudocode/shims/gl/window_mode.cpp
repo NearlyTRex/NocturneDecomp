@@ -77,7 +77,7 @@ void apply_pref_size() {
 } // namespace
 
 extern "C" int nocturne_window_mode_get(void) {
-#if NOCTURNE_AUTHENTIC_WINDOW_MODE
+#if NOCTURNE_AUTHENTIC_MENU
     // DDSCL_FULLSCREEN | DDSCL_EXCLUSIVE is the only mode the shipped game has.
     return NOCTURNE_WINDOW_MODE_FULLSCREEN;
 #endif

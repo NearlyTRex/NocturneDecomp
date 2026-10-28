@@ -38,7 +38,7 @@ uint __cdecl core_actor_cpp_CDemonActor_handleFootstep_FUN_0040ca10(CDemonActor 
     if (this_ptr->blood_effect_timer < 1) {
       if (ground_type == GROUND_TYPE_DIRT) {
         core_gore_cpp_CGore_createFootstep_FUN_004ee070
-                  (g_CGorePtr,position,&this_ptr->orient,3,0x4000,0);
+                  (g_CGorePtr,position,&this_ptr->orient,3,0x4000,BLOOD_TYPE_RED);
       }
       goto LAB_0040cb07;
     }

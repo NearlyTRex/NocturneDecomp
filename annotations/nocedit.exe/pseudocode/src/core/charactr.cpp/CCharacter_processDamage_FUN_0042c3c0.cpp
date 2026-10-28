@@ -80,7 +80,8 @@ LAB_0042c429:
               (g_CGorePtr,&local_1c,&damage_info->impact_point,(int)ROUND(ROUND(fVar1 * fVar5)) + 1,
                this_ptr->blood_type);
   }
-  if ((this_ptr->health_bar_mode == 1) && ((CHero *)this_ptr != g_HeroActors[g_LocalHeroIndex])) {
+  if ((this_ptr->health_bar_mode == HEALTH_BAR_WHEN_HURT) &&
+     ((CHero *)this_ptr != g_HeroActors[g_LocalHeroIndex])) {
     core_game_cpp_CGame_setStatusDisplay_FUN_004e0bf0
               (g_CGamePtr,this_ptr->descriptive_name,this_ptr->hit_points / this_ptr->max_hit_points
                ,5.0);

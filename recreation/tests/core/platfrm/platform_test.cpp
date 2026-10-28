@@ -1,3 +1,4 @@
+#include "core/actor/demonactortype.h"
 #include "core/platfrm/platform.h"
 
 #include <gtest/gtest.h>
@@ -9,6 +10,13 @@ namespace {
 
 TEST(CPlatform, DerivesFromCDemonActor) {
     static_assert(std::is_base_of_v<CDemonActor, CPlatform>);
+}
+
+TEST(CPlatform, ItsRecordIsAVersionElevenActor) {
+    EXPECT_EQ(CPlatform::kType.class_name, "CPlatform");
+    EXPECT_EQ(CPlatform::kType.parent_type, &CDemonActor::kType);
+    EXPECT_EQ(CPlatform::kType.latest_version, 11);
+    EXPECT_EQ(CPlatform::kType.name_hash, hashClassName("CPlatform"));
 }
 
 TEST(CPlatform, HasVirtualDestructor) {

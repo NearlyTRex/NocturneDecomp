@@ -6,7 +6,6 @@
 
 namespace nocturne::core {
 
-void staticInit();
 void initializeCoronaBuffers();
 void renderCoronaDepthScanline(int scanline_y, engine::SSoftwareEdge *right,
                                engine::SSoftwareEdge *left);

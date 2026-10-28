@@ -9,13 +9,15 @@
 #include "types/classes/CDemonGlobe.h"
 #include "types/classes/CKeyFramedModelInstance.h"
 #include "types/classes/CVector3f.h"
+#include "types/enums/EEmitterSoundType.h"
+#include "types/enums/EEmitterType.h"
 
 // Structure: CEmitter
 // Ghidra size: 0x48c (1164 bytes)
 #pragma pack(push, 1)
 typedef struct CEmitter {
     CDemonActor base; // 0x0
-    int emitter_type; // 0x150
+    EEmitterType emitter_type; // 0x150
     CVector3f emitter_size; // 0x154
     int emitter_state; // 0x160
     char event_on[100]; // 0x164
@@ -30,7 +32,7 @@ typedef struct CEmitter {
     struct CDemonActor* dest_actor; // 0x3c8
     char wav_name[100]; // 0x3cc
     uint sfx_handle; // 0x430
-    int sfx_type; // 0x434
+    EEmitterSoundType sfx_type; // 0x434
     float emit_timer; // 0x438
     float emit_period; // 0x43c
     float state_timer; // 0x440

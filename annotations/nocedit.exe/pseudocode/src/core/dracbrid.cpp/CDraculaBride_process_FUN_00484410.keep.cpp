@@ -183,7 +183,7 @@ void __cdecl core_dracbrid_cpp_CDraculaBride_process_FUN_00484410(CDraculaBride 
   iVar9 = core_charactr_cpp_CCharacter_processWalking_FUN_0042ca70
                     ((CCharacter *)this_ptr,delta_time);
   if (iVar9 != 0) {
-    uVar5 = (this_ptr->base).base.is_walking;
+    uVar5 = (this_ptr->base).base.walk_state;
     if (uVar5 < 2) {
       if (uVar5 == 1) {
 LAB_004846a6:

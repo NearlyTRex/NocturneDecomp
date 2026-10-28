@@ -11,7 +11,7 @@ void __cdecl core_flame_cpp_CFlame_getPropertyList_FUN_004cae70(CFlame *this_ptr
 {
   core_actor_cpp_CDemonActor_getPropertyList_FUN_0040d290(&this_ptr->base,property_list);
   core_actor_cpp_CActorPropertyList_addEnumPair_FUN_0040e640
-            (property_list,"Flame type",4,g_FlameTypePairs,&this_ptr->which_flame);
+            (property_list,"Flame type",4,g_FlameTypePairs,(int *)&this_ptr->which_flame);
   core_actor_cpp_CActorPropertyList_addFloat_FUN_0040e160
             (property_list,"Globe scalar",&this_ptr->globe_scalar,
              (CActorPropertyValidatorFunc *)0x0);

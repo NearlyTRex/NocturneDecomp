@@ -1,3 +1,4 @@
+#include "core/actor/demonactortype.h"
 #include "core/boxactor/boxactor.h"
 
 #include <gtest/gtest.h>
@@ -7,8 +8,8 @@
 namespace nocturne::core {
 namespace {
 
-TEST(CBoxActor, DerivesFromCCharacter) {
-    static_assert(std::is_base_of_v<CCharacter, CBoxActor>);
+TEST(CBoxActor, DerivesFromCDemonActor) {
+    static_assert(std::is_base_of_v<CDemonActor, CBoxActor>);
 }
 
 TEST(CBoxActor, HasVirtualDestructor) {
@@ -54,6 +55,13 @@ TEST(CBoxActor, PublicInterface) {
         std::is_same_v<decltype(&CBoxActor::archive), void (CBoxActor::*)(CActorArchive &)>);
     static_assert(std::is_same_v<decltype(&CBoxActor::resolveRayPush),
                                  void (CBoxActor::*)(common::CVector3f *, common::CVector3f *)>);
+}
+
+TEST(CBoxActor, ItsRecordIsVersion15UnderCDemonActor) {
+    EXPECT_EQ(CBoxActor::kType.class_name, "CBoxActor");
+    EXPECT_EQ(CBoxActor::kType.parent_type, &CDemonActor::kType);
+    EXPECT_EQ(CBoxActor::kType.factory_func, nullptr);
+    EXPECT_EQ(CBoxActor::kType.latest_version, 15);
 }
 
 } // namespace

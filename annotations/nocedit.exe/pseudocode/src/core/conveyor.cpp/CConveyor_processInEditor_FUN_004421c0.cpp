@@ -14,7 +14,7 @@ void __cdecl core_conveyor_cpp_CConveyor_processInEditor_FUN_004421c0(CConveyor 
   int iVar2;
   
   this_ptr_00 = g_CKeysPtr;
-  (this_ptr->base).platform_type = 4;
+  (this_ptr->base).slew_mode = PLATFORM_SLEW_CONVEYOR;
   iVar2 = (*this_ptr_00->vtable->getKeyState)(this_ptr_00,DIK_LCONTROL);
   if (iVar2 == 0) {
     core_platfrm_cpp_CPlatform_processInEditor_FUN_0054ea00(&this_ptr->base);

@@ -1,12 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_gore_cpp_CGore_createGroundBloodSplat_FUN_004edb40(CGore *this_ptr,CVector3f *position,int blood_type)
+; void __cdecl core_gore_cpp_CGore_createGroundBloodSplat_FUN_004edb40(CGore *this_ptr,CVector3f *position,EBloodType blood_type)
 ;
 ; Parameters:
 ; CGore *          Stack[0x4]:4   this_ptr
 ; CVector3f *      Stack[0x8]:4   position
-; int              Stack[0xc]:4   blood_type
+; EBloodType       Stack[0xc]:4   blood_type
 ;
 ; XREF[1]:
 ;   core_gore.cpp_CBloodParticle_onCollision_FUN_004ec290 at 004ec2b4
@@ -38,7 +38,7 @@ section .text
     PUSH ESI                            ; 004edb60
     PUSH EAX                            ; 004edb61
     CALL core_gore.cpp_CBloodSplat_initGroundSplat_FUN_004ec2f0 ; 004edb62
-        ;   XREF to: 004ec2f0 (UNCONDITIONAL_CALL)  ; void core_gore.cpp_CBloodSplat_initGroundSplat_FUN_004ec2f0(CBloodSplat * this_ptr, CVector3f * position, int blood_type)
+        ;   XREF to: 004ec2f0 (UNCONDITIONAL_CALL)  ; void core_gore.cpp_CBloodSplat_initGroundSplat_FUN_004ec2f0(CBloodSplat * this_ptr, CVector3f * position, EBloodType blood_type)
     ADD ESP,0xc                         ; 004edb67
     POP EBX                             ; 004edb6a
     POP ESI                             ; 004edb6b

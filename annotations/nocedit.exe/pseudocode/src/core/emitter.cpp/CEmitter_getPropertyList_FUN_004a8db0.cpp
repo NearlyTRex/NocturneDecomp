@@ -11,13 +11,14 @@ void __cdecl core_emitter_cpp_CEmitter_getPropertyList_FUN_004a8db0(CEmitter *th
 {
   core_actor_cpp_CDemonActor_getPropertyList_FUN_0040d290(&this_ptr->base,property_list);
   core_actor_cpp_CActorPropertyList_addEnumPair_FUN_0040e640
-            (property_list,"Emitter type",0xb,g_EmitterTypePairs,&this_ptr->emitter_type);
+            (property_list,"Emitter type",0xb,g_EmitterTypePairs,
+             (int *)&this_ptr->emitter_type);
   core_actor_cpp_CActorPropertyList_addBool_FUN_0040e330
             (property_list,"State",&this_ptr->emitter_state);
   core_actor_cpp_CActorPropertyList_addFloat_FUN_0040e160
             (property_list,"Max Emit Time",&this_ptr->max_emit_time,
              (CActorPropertyValidatorFunc *)0x0);
-  if (this_ptr->emitter_type != 3) {
+  if (this_ptr->emitter_type != EMITTER_TYPE_LASER) {
     core_actor_cpp_CActorPropertyList_addFloatRange_FUN_0040e1a0
               (property_list,"Emit period",&this_ptr->emit_period,0.0,9999.0,
                (CActorPropertyValidatorFunc *)0x0);
@@ -26,7 +27,7 @@ void __cdecl core_emitter_cpp_CEmitter_getPropertyList_FUN_004a8db0(CEmitter *th
             (property_list,"On event",this_ptr->event_on);
   core_actor_cpp_CActorPropertyList_addEvent_FUN_0040e460
             (property_list,"Off event",this_ptr->event_off);
-  if (this_ptr->emitter_type == 3) {
+  if (this_ptr->emitter_type == EMITTER_TYPE_LASER) {
     core_actor_cpp_CActorPropertyList_addInt_FUN_0040e1e0
               (property_list,"Laser R",&(this_ptr->laser_color).r,
                (CActorPropertyValidatorFunc *)0x0);
@@ -47,7 +48,7 @@ void __cdecl core_emitter_cpp_CEmitter_getPropertyList_FUN_004a8db0(CEmitter *th
                 );
     }
   }
-  if (this_ptr->emitter_type == 4) {
+  if (this_ptr->emitter_type == EMITTER_TYPE_ROCK) {
     core_actor_cpp_CActorPropertyList_addModelKFM_FUN_0040e3b0
               (property_list,"Model file (.kfm)",&this_ptr->model,0);
     core_actor_cpp_CActorPropertyList_addFloat_FUN_0040e160
@@ -61,7 +62,7 @@ void __cdecl core_emitter_cpp_CEmitter_getPropertyList_FUN_004a8db0(CEmitter *th
               (property_list,"Off time",&this_ptr->max_wait_time,
                (CActorPropertyValidatorFunc *)0x0);
   }
-  if (this_ptr->emitter_type == 9) {
+  if (this_ptr->emitter_type == EMITTER_TYPE_POINT_TO_POINT_LIGHTNING) {
     core_actor_cpp_CActorPropertyList_addChoice_FUN_0040e350
               (property_list,"Actor to fry",&this_ptr->dest_actor,1,"CDemonActor",
                (CActorPropertyValidatorFunc *)0x0);
@@ -69,6 +70,7 @@ void __cdecl core_emitter_cpp_CEmitter_getPropertyList_FUN_004a8db0(CEmitter *th
   core_actor_cpp_CActorPropertyList_addSound_FUN_0040e2d0
             (property_list,"Sound",this_ptr->wav_name);
   core_actor_cpp_CActorPropertyList_addEnumPair_FUN_0040e640
-            (property_list,"Sound type",2,g_EmitterSoundTypePairs,&this_ptr->sfx_type);
+            (property_list,"Sound type",2,g_EmitterSoundTypePairs,
+             (int *)&this_ptr->sfx_type);
   return;
 }

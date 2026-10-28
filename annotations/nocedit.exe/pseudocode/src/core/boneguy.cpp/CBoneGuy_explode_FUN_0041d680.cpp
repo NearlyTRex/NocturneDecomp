@@ -58,7 +58,7 @@ void __cdecl core_boneguy_cpp_CBoneGuy_explode_FUN_0041d680(CBoneGuy *this_ptr)
       body_part = core_bodypart_cpp_createBodyPart_FUN_00418e10
                             (&(this_ptr->base).base.base.location.position,
                              &(this_ptr->base).base.base.orient,&local_38,(CDemonActor *)this_ptr,1,
-                             1,2);
+                             1,BLOOD_TYPE_NONE);
       core_charactr_cpp_CCharacter_dismemberPartInternal_FUN_0042bd30
                 ((CCharacter *)this_ptr,body_part,local_18,0);
       body_part->dont_pick_me_up = 1;

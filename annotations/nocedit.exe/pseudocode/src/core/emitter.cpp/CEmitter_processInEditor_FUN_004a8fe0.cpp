@@ -25,7 +25,7 @@ void __cdecl core_emitter_cpp_CEmitter_processInEditor_FUN_004a8fe0(CEmitter *th
   float fStack_1c;
   float fStack_14;
   
-  if (this_ptr->emitter_type == 3) {
+  if (this_ptr->emitter_type == EMITTER_TYPE_LASER) {
     if (g_SlewTargetMode != 0) goto LAB_004a9009;
   }
   else {

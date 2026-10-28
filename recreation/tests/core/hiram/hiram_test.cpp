@@ -1,3 +1,4 @@
+#include "core/actor/demonactortype.h"
 #include "core/hiram/hiram.h"
 
 #include <gtest/gtest.h>
@@ -29,6 +30,13 @@ TEST(CHiram, PublicInterface) {
     static_assert(std::is_same_v<decltype(&CHiram::getActorType),
                                  const CDemonActorType &(CHiram::*)() const>);
     static_assert(std::is_same_v<decltype(&CHiram::archive), void (CHiram::*)(CActorArchive &)>);
+}
+
+TEST(CHiram, ItsRecordIsVersion1UnderCNPC) {
+    EXPECT_EQ(CHiram::kType.class_name, "CHiram");
+    EXPECT_EQ(CHiram::kType.parent_type, &CNPC::kType);
+    EXPECT_EQ(CHiram::kType.factory_func, nullptr);
+    EXPECT_EQ(CHiram::kType.latest_version, 1);
 }
 
 } // namespace

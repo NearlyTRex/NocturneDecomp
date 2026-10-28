@@ -2,11 +2,11 @@
 // Address: 004eb9a0
 // Address Range: [[004eb9a0, 004eb9cf]]
 // Convention: __cdecl
-// Signature: void __cdecl core_gore_cpp_CBloodParticle_setup_FUN_004eb9a0(CBloodParticle *this_ptr,CVector3f *position,CVector3f *velocity,int blood_type)
+// Signature: void __cdecl core_gore_cpp_CBloodParticle_setup_FUN_004eb9a0(CBloodParticle *this_ptr,CVector3f *position,CVector3f *velocity,EBloodType blood_type)
 
 #include "nocturne.h"
 
-void __cdecl core_gore_cpp_CBloodParticle_setup_FUN_004eb9a0(CBloodParticle *this_ptr,CVector3f *position,CVector3f *velocity,int blood_type)
+void __cdecl core_gore_cpp_CBloodParticle_setup_FUN_004eb9a0(CBloodParticle *this_ptr,CVector3f *position,CVector3f *velocity,EBloodType blood_type)
 
 {
   int iVar1;

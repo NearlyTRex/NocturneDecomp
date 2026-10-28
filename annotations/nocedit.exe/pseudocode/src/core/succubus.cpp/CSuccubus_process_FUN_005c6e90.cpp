@@ -17,15 +17,16 @@ void __cdecl core_succubus_cpp_CSuccubus_process_FUN_005c6e90(CSuccubus *this_pt
   float fVar4;
   char cVar5;
   uint uVar6;
-  CCharacter *pCVar7;
-  CDemonActor_vtable *pCVar9;
-  float fVar10;
+  EWalkState EVar7;
+  CCharacter *pCVar9;
+  CDemonActor_vtable *pCVar10;
   float fVar11;
+  float fVar12;
   CDemonMission *this_ptr_01;
   CHotDemon *actor;
   int iVar9;
   SMotion *pSVar10;
-  int iVar12;
+  int iVar13;
   CHotDemon *this_ptr_00;
   CHotDemon *pCVar11;
   CPathMap *path_map;
@@ -74,9 +75,9 @@ void __cdecl core_succubus_cpp_CSuccubus_process_FUN_005c6e90(CSuccubus *this_pt
        (this_ptr->base).base.model.accumulated_root_motion.y;
   local_24 = delta_time * (this_ptr->base).speed;
   while (0.0 < local_24) {
-    iVar12 = core_motion_cpp_CMotionController_advance_FUN_0052d610
+    iVar13 = core_motion_cpp_CMotionController_advance_FUN_0052d610
                        (&(this_ptr->base).base.model.base,&local_24);
-    core_charactr_cpp_CCharacter_processMotion_FUN_0042ec40((CCharacter *)this_ptr,iVar12);
+    core_charactr_cpp_CCharacter_processMotion_FUN_0042ec40((CCharacter *)this_ptr,iVar13);
   }
   (this_ptr->hotdemon_model).accumulated_root_motion.z = 0.0;
   (this_ptr->hotdemon_model).accumulated_root_motion.y =
@@ -89,31 +90,31 @@ void __cdecl core_succubus_cpp_CSuccubus_process_FUN_005c6e90(CSuccubus *this_pt
               (&(this_ptr->hotdemon_model).base,&local_24);
   }
   fVar4 = (this_ptr->base).speed;
-  fVar10 = (float)3.1415926535000001;
+  fVar11 = (float)3.1415926535000001;
   pCVar1 = &(this_ptr->base).base.model;
   (this_ptr->base).base.walk_step_speed = (this_ptr->base).base.model.accumulated_root_motion.z;
-  (this_ptr->base).base.turn_speed = delta_time * fVar10 * fVar4;
+  (this_ptr->base).base.turn_speed = delta_time * fVar11 * fVar4;
   pSVar10 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0(&pCVar1->base);
   uVar6 = pSVar10->state_index;
-  iVar12 = core_charactr_cpp_CCharacter_processWalking_FUN_0042ca70
+  iVar13 = core_charactr_cpp_CCharacter_processWalking_FUN_0042ca70
                      ((CCharacter *)this_ptr,delta_time);
-  if (iVar12 == 0) {
+  if (iVar13 == 0) {
     if (uVar6 == 0) {
       (*(((this_ptr->base).base.base.vtable._ue)->_ue).updateVictim)(&this_ptr->base,delta_time);
       pCVar5 = (this_ptr->base).victim;
       if (pCVar5 == (CCharacter *)0x0) {
-        iVar12 = core_enemy_cpp_CEnemy_updatePatrol_FUN_004a9fd0(&this_ptr->base,delta_time);
-        if (iVar12 != 0) {
+        iVar13 = core_enemy_cpp_CEnemy_updatePatrol_FUN_004a9fd0(&this_ptr->base,delta_time);
+        if (iVar13 != 0) {
           core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00(&pCVar1->base,1,1);
         }
       }
       else {
         fVar4 = (this_ptr->base).base.base.location.position.x - (pCVar5->base).location.position.x;
-        fVar10 = (this_ptr->base).base.base.location.position.y - (pCVar5->base).location.position.y
+        fVar11 = (this_ptr->base).base.base.location.position.y - (pCVar5->base).location.position.y
         ;
-        fVar11 = (this_ptr->base).base.base.location.position.z - (pCVar5->base).location.position.z
+        fVar12 = (this_ptr->base).base.base.location.position.z - (pCVar5->base).location.position.z
         ;
-        if (SQRT(fVar11 * fVar11 + fVar4 * fVar4 + fVar10 * fVar10) <
+        if (SQRT(fVar12 * fVar12 + fVar4 * fVar4 + fVar11 * fVar11) <
             (this_ptr->base).guard_distance) {
           core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00(&pCVar1->base,1,1);
         }
@@ -122,9 +123,9 @@ void __cdecl core_succubus_cpp_CSuccubus_process_FUN_005c6e90(CSuccubus *this_pt
     else if ((uVar6 < 2) || (uVar6 == 2)) {
       (*(((this_ptr->base).base.base.vtable._ue)->_ue).updateVictim)(&this_ptr->base,delta_time);
       if ((this_ptr->base).victim == (CCharacter *)0x0) {
-        iVar12 = core_enemy_cpp_CEnemy_updatePatrol_FUN_004a9fd0(&this_ptr->base,delta_time);
+        iVar13 = core_enemy_cpp_CEnemy_updatePatrol_FUN_004a9fd0(&this_ptr->base,delta_time);
         pCVar1 = &(this_ptr->base).base.model;
-        if (iVar12 == 0) {
+        if (iVar13 == 0) {
           core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00(&pCVar1->base,0,1);
         }
         else {
@@ -143,49 +144,49 @@ void __cdecl core_succubus_cpp_CSuccubus_process_FUN_005c6e90(CSuccubus *this_pt
         local_68.z = 1.5f;
         pCVar17 = &local_68;
         local_68.y = 0.0;
-        pCVar7 = (this_ptr->base).victim;
-        path_map = (*((pCVar7->base).vtable._ub)->getPathMap)(&pCVar7->base);
-        iVar12 = core_charactr_cpp_CCharacter_walkToPoint_FUN_004286e0
+        pCVar9 = (this_ptr->base).victim;
+        path_map = (*((pCVar9->base).vtable._ub)->getPathMap)(&pCVar9->base);
+        iVar13 = core_charactr_cpp_CCharacter_walkToPoint_FUN_004286e0
                            ((CCharacter *)this_ptr,
                             &(((this_ptr->base).victim)->base).location.position,path_map,pCVar17,
                             fVar18,fVar19);
-        if (((-1 < iVar12) &&
-            (pCVar7 = (this_ptr->base).victim,
-            fVar4 = (pCVar7->base).location.position.x -
+        if (((-1 < iVar13) &&
+            (pCVar9 = (this_ptr->base).victim,
+            fVar4 = (pCVar9->base).location.position.x -
                     (this_ptr->base).base.base.location.position.x,
-            fVar10 = (pCVar7->base).location.position.y -
+            fVar11 = (pCVar9->base).location.position.y -
                      (this_ptr->base).base.base.location.position.y,
-            fVar7 = (pCVar7->base).location.position.z -
+            fVar7 = (pCVar9->base).location.position.z -
                     (this_ptr->base).base.base.location.position.z,
-            SQRT(fVar7 * fVar7 + fVar4 * fVar4 + fVar10 * fVar10) < 15.0f)) &&
+            SQRT(fVar7 * fVar7 + fVar4 * fVar4 + fVar11 * fVar11) < 15.0f)) &&
            (this_ptr->morph_started == 0)) {
           this_ptr->morph_started = 1;
           this_ptr->morph_timer = 0.0;
           sound_sndmain_cpp_killSfx_FUN_005a9c40(this_ptr->sfx_handle);
-          pCVar9 = (this_ptr->base).base.base.vtable._ub;
+          pCVar10 = (this_ptr->base).base.base.vtable._ub;
           this_ptr->ambient_sfx_cooldown = 9999.9;
-          (*pCVar9->playAmbientSound)((CDemonActor *)this_ptr,"succubus-morph.wav");
+          (*pCVar10->playAmbientSound)((CDemonActor *)this_ptr,"succubus-morph.wav");
         }
       }
     }
     goto LAB_005c6fd0;
   }
-  uVar6 = (this_ptr->base).base.is_walking;
-  if (uVar6 < 2) {
-    if (uVar6 == 1) {
+  EVar7 = (this_ptr->base).base.walk_state;
+  if (EVar7 < 2) {
+    if (EVar7 == WALK_STATE_WALKING) {
 LAB_005c6fa5:
-      iVar12 = 1;
+      iVar13 = 1;
     }
     else {
 LAB_005c731a:
-      iVar12 = 0;
+      iVar13 = 0;
     }
     core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
-              (&(this_ptr->base).base.model.base,iVar12,1);
+              (&(this_ptr->base).base.model.base,iVar13,1);
   }
   else {
-    if (uVar6 < 3) goto LAB_005c6fa5;
-    if (uVar6 != 3) goto LAB_005c731a;
+    if (EVar7 < WALK_STATE_NO_PATH) goto LAB_005c6fa5;
+    if (EVar7 != WALK_STATE_NO_PATH) goto LAB_005c731a;
     core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00(&pCVar1->base,0,1);
     engine_console_cpp_CConsole_printf_FUN_00441890
               (g_CConsolePtr,"%s confused while walking to scriptDest!\n",this_ptr);
@@ -199,8 +200,8 @@ LAB_005c6fd0:
   if (0.0 < (this_ptr->base).attack_cooldown) {
     (this_ptr->base).attack_cooldown = (this_ptr->base).attack_cooldown - delta_time;
   }
-  iVar12 = core_charactr_cpp_CCharacter_isOnGround_FUN_004297e0((CCharacter *)this_ptr);
-  if (iVar12 != 0) {
+  iVar13 = core_charactr_cpp_CCharacter_isOnGround_FUN_004297e0((CCharacter *)this_ptr);
+  if (iVar13 != 0) {
     (this_ptr->base).base.velocity.y =
          (this_ptr->base).base.velocity.y - delta_time * (float)32;
     pCVar3 = &(this_ptr->base).base.position_delta;
@@ -293,11 +294,11 @@ LAB_005c6fd0:
                &(this_ptr->base).base.base.orient.vec,delta_time,
                (this_ptr->base).base.closest_distance_threshold,&this_ptr->hotdemon_model);
   }
-  iVar12 = core_event_cpp_CEventList_evaluateCondition_FUN_004adca0
+  iVar13 = core_event_cpp_CEventList_evaluateCondition_FUN_004adca0
                      (g_CEventListPtr,"succubusShutUp");
-  if (iVar12 == 0) {
-    iVar12 = sound_sndmain_cpp_isSfxPlaying_FUN_005a9660(this_ptr->sfx_handle);
-    if ((iVar12 == 0) &&
+  if (iVar13 == 0) {
+    iVar13 = sound_sndmain_cpp_isSfxPlaying_FUN_005a9660(this_ptr->sfx_handle);
+    if ((iVar13 == 0) &&
        (fVar4 = this_ptr->ambient_sfx_cooldown - delta_time, this_ptr->ambient_sfx_cooldown = fVar4,
        fVar4 < 0.0)) {
       local_14 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc10(5.0,10.0);

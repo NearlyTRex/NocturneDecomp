@@ -9,7 +9,7 @@
 void __cdecl core_trigger_cpp_CTrigger_onProjectileHit_FUN_00548580(CTrigger *this_ptr)
 
 {
-  if (this_ptr->hero_triggers_me != 4) {
+  if (this_ptr->trigger_cause != TRIGGER_CAUSE_BULLET) {
     return;
   }
   this_ptr->event_flag = 1;

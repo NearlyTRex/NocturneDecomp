@@ -4,6 +4,7 @@
 
 // Dependencies
 #include "system/basetypes.h"
+#include "types/enums/EMotionTransitionCmd.h"
 #include "types/structs/SMotionSignal.h"
 #include "types/structs/SMotionTransition.h"
 

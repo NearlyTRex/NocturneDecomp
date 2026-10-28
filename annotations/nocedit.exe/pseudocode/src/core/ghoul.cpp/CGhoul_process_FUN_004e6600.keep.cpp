@@ -827,7 +827,7 @@ LAB_004e7d9a:
     }
     goto LAB_004e6754;
   }
-  uVar15 = (this_ptr->base).base.is_walking;
+  uVar15 = (this_ptr->base).base.walk_state;
   if (uVar15 < 2) {
     if (uVar15 == 1) {
       iVar9 = 1;

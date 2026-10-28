@@ -456,7 +456,7 @@ TEST_F(CEditorToolsTest, UnderTheHardwareRendererTheFrameIsPulledIntoTheScreenFi
         return 1;
     });
     EXPECT_CALL(renderer_, unlockFrame).WillOnce([&] {
-        std::copy(software_rows.begin(), software_rows.end(), rows.begin());
+        std::ranges::copy(software_rows, rows.begin());
         return 1;
     });
     editor_tools_.createModalWindow(10, 20, 50, 40, "", 0);

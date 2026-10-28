@@ -7,6 +7,8 @@ namespace nocturne::core {
 
 class CLightGun : public CWeapon {
 public:
+    static const CDemonActorType kType;
+
     CLightGun();
     ~CLightGun() override;
 

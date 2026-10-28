@@ -18,7 +18,7 @@ int __cdecl core_stone_cpp_CTempleStone_canPickup_FUN_005bad70(CTempleStone *thi
   if ((pCVar1 != (CActorDestination *)0x0) && (pCVar1->triggered != 0)) {
     return 0;
   }
-  if ((this_ptr->base).pickup_type != 3) {
+  if ((this_ptr->base).pickup_type != BOX_PICKUP_CARRY) {
     iVar1 = core_actor_cpp_isOfClass_FUN_0040c6d0(picker,"CHero");
     if (iVar1 == 0) {
       return 0;

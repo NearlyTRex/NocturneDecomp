@@ -1,14 +1,14 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_gore_cpp_CGore_spawnBloodBurst_FUN_004edbb0(CGore *this_ptr,CVector3f *position,CVector3f *direction,int count,int blood_type)
+; void __cdecl core_gore_cpp_CGore_spawnBloodBurst_FUN_004edbb0(CGore *this_ptr,CVector3f *position,CVector3f *direction,int count,EBloodType blood_type)
 ;
 ; Parameters:
 ; CGore *          Stack[0x4]:4   this_ptr
 ; CVector3f *      Stack[0x8]:4   position
 ; CVector3f *      Stack[0xc]:4   direction
 ; int              Stack[0x10]:4   count
-; int              Stack[0x14]:4   blood_type
+; EBloodType       Stack[0x14]:4   blood_type
 ; Local Variables:
 ; CMatrix3x3f      Stack[-0x74]:36  local_74
 ; CVector3f        Stack[-0x4c]:12  local_4c
@@ -73,7 +73,7 @@ section .text
     PUSH EDX                            ; 004edbde
     INC EBX                             ; 004edbdf
     CALL core_gore.cpp_CGore_spawnBloodParticles_FUN_004edaa0 ; 004edbe0
-        ;   XREF to: 004edaa0 (UNCONDITIONAL_CALL)  ; void core_gore.cpp_CGore_spawnBloodParticles_FUN_004edaa0(CGore * this_ptr, CVector3f * position, CVector3f * velocity, int blood_type)
+        ;   XREF to: 004edaa0 (UNCONDITIONAL_CALL)  ; void core_gore.cpp_CGore_spawnBloodParticles_FUN_004edaa0(CGore * this_ptr, CVector3f * position, CVector3f * velocity, EBloodType blood_type)
     ADD ESP,0x10                        ; 004edbe5
     CMP EBX,ESI                         ; 004edbe8
     JL 0x004edbd4                       ; 004edbea
@@ -238,7 +238,7 @@ section .text
     PUSH ECX                            ; 004eddab
     INC EBX                             ; 004eddac
     CALL core_gore.cpp_CGore_spawnBloodParticles_FUN_004edaa0 ; 004eddad
-        ;   XREF to: 004edaa0 (UNCONDITIONAL_CALL)  ; void core_gore.cpp_CGore_spawnBloodParticles_FUN_004edaa0(CGore * this_ptr, CVector3f * position, CVector3f * velocity, int blood_type)
+        ;   XREF to: 004edaa0 (UNCONDITIONAL_CALL)  ; void core_gore.cpp_CGore_spawnBloodParticles_FUN_004edaa0(CGore * this_ptr, CVector3f * position, CVector3f * velocity, EBloodType blood_type)
     ADD ESP,0x10                        ; 004eddb2
     CMP EBX,ESI                         ; 004eddb5
     JGE 0x004edbf0                      ; 004eddb7

@@ -1,3 +1,4 @@
+#include "core/actor/demonactortype.h"
 #include "core/pendulum/pendulum.h"
 
 #include <gtest/gtest.h>
@@ -37,6 +38,13 @@ TEST(CPendulum, PublicInterface) {
                                  const CDemonActorType &(CPendulum::*)() const>);
     static_assert(
         std::is_same_v<decltype(&CPendulum::archive), void (CPendulum::*)(CActorArchive &)>);
+}
+
+TEST(CPendulum, ItsRecordIsVersion8UnderCDemonActor) {
+    EXPECT_EQ(CPendulum::kType.class_name, "CPendulum");
+    EXPECT_EQ(CPendulum::kType.parent_type, &CDemonActor::kType);
+    EXPECT_EQ(CPendulum::kType.factory_func, nullptr);
+    EXPECT_EQ(CPendulum::kType.latest_version, 8);
 }
 
 } // namespace

@@ -264,7 +264,7 @@ extern "C" int nocturne_net_sim_spot_in_gas(const CVector3f *feet) {
     if ((local.y < box.min.y) || (box.max.y < local.y)) {
         return 0;
     }
-    if (gas->shape == 1) {
+    if (gas->trigger_shape == TRIGGER_SHAPE_CYLINDER) {
         return local.x * local.x + local.z * local.z <=
                (gas->trigger_size).x * (gas->trigger_size).z * 0.25f;
     }

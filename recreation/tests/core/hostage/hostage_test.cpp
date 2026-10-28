@@ -1,3 +1,4 @@
+#include "core/actor/demonactortype.h"
 #include "core/hostage/hostage.h"
 
 #include <gtest/gtest.h>
@@ -42,6 +43,13 @@ TEST(CHostage, PublicInterface) {
         std::is_same_v<decltype(&CHostage::processDamage), void (CHostage::*)(SDamageInfo *)>);
     static_assert(std::is_same_v<decltype(&CHostage::getCarryObjToBodyXForm),
                                  common::CMatrix3x4f *(CHostage::*)(int, common::CMatrix3x4f *)>);
+}
+
+TEST(CHostage, ItsRecordIsVersion12UnderCNPC) {
+    EXPECT_EQ(CHostage::kType.class_name, "CHostage");
+    EXPECT_EQ(CHostage::kType.parent_type, &CNPC::kType);
+    EXPECT_EQ(CHostage::kType.factory_func, nullptr);
+    EXPECT_EQ(CHostage::kType.latest_version, 12);
 }
 
 } // namespace

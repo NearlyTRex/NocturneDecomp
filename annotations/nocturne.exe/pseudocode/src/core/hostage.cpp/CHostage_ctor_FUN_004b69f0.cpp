@@ -51,6 +51,6 @@ CHostage * __cdecl core_hostage_cpp_CHostage_ctor_FUN_004b69f0(CHostage *this_pt
   (pCVar2->base).base.descriptive_name[0] = '\0';
   pCVar2->damage_sound[0] = '\0';
   pCVar2->die_sound[0] = '\0';
-  (pCVar2->base).base.health_bar_mode = 1;
+  (pCVar2->base).base.health_bar_mode = HEALTH_BAR_WHEN_HURT;
   return pCVar2;
 }

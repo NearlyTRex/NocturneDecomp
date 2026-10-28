@@ -4,7 +4,6 @@
 
 namespace nocturne::core {
 
-void staticInit();
 CBatman *factoryFuncBatman();
 
 } // namespace nocturne::core

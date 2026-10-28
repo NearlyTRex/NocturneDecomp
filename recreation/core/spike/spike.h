@@ -7,6 +7,8 @@ namespace nocturne::core {
 
 class CSpike : public CDemonActor {
 public:
+    static const CDemonActorType kType;
+
     CSpike();
     ~CSpike() override;
 

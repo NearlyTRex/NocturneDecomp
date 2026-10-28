@@ -4,7 +4,6 @@
 
 namespace nocturne::core {
 
-void staticInit();
 CBoneGuy *factoryFuncBoneGuy();
 
 } // namespace nocturne::core

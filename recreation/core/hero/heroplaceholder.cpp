@@ -2,6 +2,7 @@
 
 #include "common/error/error.h"
 #include "core/actor/actor.h"
+#include "core/actor/actorarchive.h"
 #include "core/actor/demonactortype.h"
 #include "core/game/herotype.h"
 #include "core/hero/hero.h"
@@ -42,6 +43,7 @@ std::string_view getHeroClassName(EHeroType hero_type) {
 
 } // namespace
 
+// nocedit 0x004f2120
 constinit const CDemonActorType CHeroPlaceholder::kType =
     makeActorType("CHeroPlaceholder", &CDemonActor::kType, &CHeroPlaceholder::create, kVersion);
 
@@ -55,6 +57,12 @@ CHeroPlaceholder::~CHeroPlaceholder() = default;
 // nocedit 0x004f3bf0
 const CDemonActorType &CHeroPlaceholder::getActorType() const {
     return kType;
+}
+
+// nocedit 0x004f3ef0
+void CHeroPlaceholder::archive(CActorArchive &actor_archive) {
+    CDemonActor::archive(actor_archive);
+    actor_archive.archiveInteger(index_, "index");
 }
 
 // nocedit 0x004f3bc0

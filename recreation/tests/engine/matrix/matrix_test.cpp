@@ -66,12 +66,20 @@ TEST_F(CMatrixTest, TheTablesHoldTruncatedSixteenSixteenSinesAndCosines) {
         int sine;
         int cosine;
     };
-    for (const SEntry &entry :
-         {SEntry{0, 0, 65536}, SEntry{1, 1608, 65516}, SEntry{2, 3215, 65457},
-          SEntry{16, 25079, 60547}, SEntry{32, 46340, 46340}, SEntry{43, 57022, 32302},
-          SEntry{64, 65536, 0}, SEntry{96, 46340, -46340}, SEntry{128, 0, -65536},
-          SEntry{129, -1608, -65516}, SEntry{160, -46340, -46340}, SEntry{192, -65536, 0},
-          SEntry{200, -64276, 12785}, SEntry{255, -1608, 65516}}) {
+    for (const SEntry &entry : {SEntry{.index = 0, .sine = 0, .cosine = 65536},
+                                SEntry{.index = 1, .sine = 1608, .cosine = 65516},
+                                SEntry{.index = 2, .sine = 3215, .cosine = 65457},
+                                SEntry{.index = 16, .sine = 25079, .cosine = 60547},
+                                SEntry{.index = 32, .sine = 46340, .cosine = 46340},
+                                SEntry{.index = 43, .sine = 57022, .cosine = 32302},
+                                SEntry{.index = 64, .sine = 65536, .cosine = 0},
+                                SEntry{.index = 96, .sine = 46340, .cosine = -46340},
+                                SEntry{.index = 128, .sine = 0, .cosine = -65536},
+                                SEntry{.index = 129, .sine = -1608, .cosine = -65516},
+                                SEntry{.index = 160, .sine = -46340, .cosine = -46340},
+                                SEntry{.index = 192, .sine = -65536, .cosine = 0},
+                                SEntry{.index = 200, .sine = -64276, .cosine = 12785},
+                                SEntry{.index = 255, .sine = -1608, .cosine = 65516}}) {
         EXPECT_EQ(matrix.interpolatedSin(entry.index * kEntry), entry.sine) << entry.index;
         EXPECT_EQ(matrix.interpolatedCos(entry.index * kEntry), entry.cosine) << entry.index;
     }

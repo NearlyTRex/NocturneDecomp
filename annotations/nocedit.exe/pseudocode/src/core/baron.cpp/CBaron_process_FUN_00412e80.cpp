@@ -168,7 +168,7 @@ void __cdecl core_baron_cpp_CBaron_process_FUN_00412e80(CBaron *this_ptr,float d
     }
     goto switchD_0041345d_default;
   }
-  uVar1 = (this_ptr->base).base.is_walking;
+  uVar1 = (this_ptr->base).base.walk_state;
   if (uVar1 < 2) {
     if (uVar1 != 1) goto LAB_00413237;
     iVar2 = 1;

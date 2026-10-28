@@ -1,3 +1,4 @@
+#include "core/actor/demonactortype.h"
 #include "core/drip/drip.h"
 
 #include <gtest/gtest.h>
@@ -35,6 +36,13 @@ TEST(CDrip, PublicInterface) {
         std::is_same_v<decltype(&CDrip::getActorType), const CDemonActorType &(CDrip::*)() const>);
     static_assert(std::is_same_v<decltype(&CDrip::archive), void (CDrip::*)(CActorArchive &)>);
     static_assert(std::is_same_v<decltype(&CDrip::reset), void (CDrip::*)()>);
+}
+
+TEST(CDrip, ItsRecordIsVersion6UnderCDemonActor) {
+    EXPECT_EQ(CDrip::kType.class_name, "CDrip");
+    EXPECT_EQ(CDrip::kType.parent_type, &CDemonActor::kType);
+    EXPECT_EQ(CDrip::kType.factory_func, nullptr);
+    EXPECT_EQ(CDrip::kType.latest_version, 6);
 }
 
 } // namespace

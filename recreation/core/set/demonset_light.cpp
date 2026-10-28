@@ -2,6 +2,7 @@
 #include "common/math/fixed.h"
 #include "common/math/vector3f.h"
 #include "common/math/vector3i.h"
+#include "common/text/ascii.h"
 #include "core/cloth/cloth_functions.h"
 #include "core/set/demonset.h"
 #include "core/set/set.h"
@@ -15,8 +16,10 @@
 #include <cmath>
 #include <cstddef>
 #include <format>
+#include <optional>
 #include <span>
 #include <string_view>
+#include <utility>
 #include <vector>
 
 namespace nocturne::core {
@@ -33,7 +36,7 @@ constexpr double kUnitNormal = 65535.0;
 constexpr int kBrightest = 0xffff;
 
 void checkVertexCount(std::string_view what, int vertex_count, std::size_t capacity) {
-    if (vertex_count > static_cast<int>(capacity)) {
+    if (std::cmp_greater(vertex_count, capacity)) {
         common::displayErrorAndQuit(
             std::format("CDemonSet::{} {} vertices, but GLOBAL_VERTEX_COUNT = {}", what,
                         vertex_count, capacity));
@@ -171,6 +174,21 @@ void CDemonSet::lightVertexColor(const CVector3i &surface_normal, SRenderVertex 
     vertex.g = common::fixedMultiply(flat_color_.g, level);
     vertex.b = common::fixedMultiply(flat_color_.b, level);
     vertex.a = 0;
+}
+
+// nocedit 0x00570f10
+std::optional<SSpotlight> CDemonSet::addLightFilter(std::string_view light_name) const {
+    std::size_t index = 0;
+    for (const C3DSLight &light : lights_) {
+        if (light.getLightType() != C3DSLight::kSpotlightType) {
+            continue;
+        }
+        if (common::equalsIgnoringAsciiCase(light.getName(), light_name)) {
+            return SSpotlight{.light = &light, .index = index};
+        }
+        ++index;
+    }
+    return std::nullopt;
 }
 
 } // namespace nocturne::core

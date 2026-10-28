@@ -16,6 +16,7 @@ struct CLever;
 #include "types/classes/CPathMap.h"
 #include "types/classes/CVector3f.h"
 #include "types/enums/EAimMode.h"
+#include "types/enums/EGasMaskState.h"
 #include "types/enums/EHeroControlType.h"
 #include "types/enums/EHeroTask.h"
 #include "types/structs/SPlayerInput.h"
@@ -32,7 +33,7 @@ typedef struct CHero {
     CPathMap path_map; // 0xbe58
     EAimMode aim_mode; // 0x1f734
     CInventory inventory; // 0x1f738
-    int is_wearing_gas_mask; // 0x1fb98
+    EGasMaskState is_wearing_gas_mask; // 0x1fb98
     struct CDoor* door_to_open; // 0x1fb9c
     struct CDemonActor* object_to_pick_up; // 0x1fba0
     struct CBoxActor* pushed_object; // 0x1fba4

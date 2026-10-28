@@ -20,18 +20,29 @@ foreach(_module IN LISTS NOCTURNE_MODULES)
             ${NOCTURNE_SANITIZE_FLAGS})
         target_compile_features(nocturne_${_module} PRIVATE cxx_std_17)
 
-        # Performance: the per-pixel software span rasterizers
-        # (render{MMXPerspective,PerspectiveCorrect}Scanline{16,32}) are the
-        # renderer's hot inner loops. At the Debug build's -O0 they dominate
-        # framerate — e.g. the flashlight volumetric halo blends ~19 near
-        # screen-filling additive quads/frame here. Build just these files at
-        # -O2 so the rest of the tree stays -O0/debuggable. Output is
-        # bit-identical: -fwrapv (global) preserves signed-overflow wrap, and
-        # -fno-strict-aliasing keeps the decompiler's pervasive pointer
-        # type-punning (framebuffer/z reads, packed-channel casts) valid that
-        # -O2 would otherwise miscompile. -g and ASan still apply.
+        # Performance: the software renderer's per-pixel and per-polygon
+        # loops — span rasterizers, lightmap blends, the 3D pipeline, alpha
+        # rows, lines and the iris fade. At the Debug build's -O0 they
+        # dominate framerate — e.g. the flashlight volumetric halo blends ~19
+        # near screen-filling additive quads/frame. Build just these files at
+        # -O2 so the rest of the tree stays -O0/debuggable. Only rendering:
+        # nothing here steps the simulation. Output is bit-identical: -fwrapv
+        # (global) preserves signed-overflow wrap, and -fno-strict-aliasing
+        # keeps the decompiler's pervasive pointer type-punning
+        # (framebuffer/z reads, packed-channel casts) valid that -O2 would
+        # otherwise miscompile. -g and ASan still apply.
         foreach(_src IN LISTS _sources)
-            if(_src MATCHES "Scanline(16|32)_FUN_")
+            if(_src MATCHES "Scanline(16|32)_FUN_"
+               OR _src MATCHES "/src/core/dstrender\\.cpp/"
+               OR _src MATCHES "/src/engine/3d\\.c/"
+               OR _src MATCHES "/src/core/door\\.cpp/CDoor_render"
+               OR _src MATCHES "/src/core/flame\\.cpp/CFlame_(render|updateGlobe)"
+               OR _src MATCHES "/src/core/dpart\\.cpp/(CDemonPart_renderFaces|setup|findEdgeByYStart)"
+               OR _src MATCHES "/src/engine/font\\.cpp/drawAlphaBlendedPixels_"
+               OR _src MATCHES "/src/engine/special\\.cpp/render(AlphaRow32|Scanline)_"
+               OR _src MATCHES "/src/engine/2d\\.c/(plotPixel|drawHLine)_"
+               OR _src MATCHES "/src/core/dcamera\\.cpp/CDemonCamera_(addLightmapToCorona|compositeLightmapToFramebuffer|blendLightmapPixel32)_"
+               OR _src MATCHES "/src/core/game\\.cpp/CGame_renderIrisFade_")
                 # SKIP_PRECOMPILE_HEADERS: the shared PCH is built at -O0, so a
                 # file at -O2 can't REUSE_FROM it (__OPTIMIZE__ mismatch). These
                 # few files just re-include nocturne.h directly.

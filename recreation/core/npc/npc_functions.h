@@ -4,7 +4,6 @@
 
 namespace nocturne::core {
 
-void staticInit();
 CNPC *factoryFuncNPC();
 
 } // namespace nocturne::core

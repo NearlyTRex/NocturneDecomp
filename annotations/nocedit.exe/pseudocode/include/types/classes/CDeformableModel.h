@@ -11,6 +11,8 @@ struct CSkeleton;
 #include "types/classes/CVector3f.h"
 #include "types/structs/SInputFace.h"
 #include "types/structs/SLod.h"
+#include "types/structs/SMRGLHeaderBasic.h"
+#include "types/structs/SMRGLTextureModel.h"
 #include "types/structs/SPart.h"
 #include "types/structs/STextureSet.h"
 #include "types/structs/SVert.h"

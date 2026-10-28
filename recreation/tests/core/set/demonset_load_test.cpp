@@ -11,6 +11,7 @@
 
 #include <cstddef>
 #include <cstdint>
+#include <optional>
 #include <span>
 #include <string>
 
@@ -37,9 +38,9 @@ void expectMatrix(const common::CMatrix3x3f &actual, const common::CVector3f &an
 }
 
 // A one-square text model, as models\moon.kfm.
-const std::string kMoonModel = "/\n5\n;\n4,1,1,1,1\n;\n0\n;\n"
-                               "0,0,2048\n512,0,2048\n512,512,2048\n0,512,2048\n;\n"
-                               "0,3, 0,0,0, 2,0,0, 1,0,0\n;\na.raw\n;\n4,1\n";
+constexpr std::string_view kMoonModel = "/\n5\n;\n4,1,1,1,1\n;\n0\n;\n"
+                                        "0,0,2048\n512,0,2048\n512,512,2048\n0,512,2048\n;\n"
+                                        "0,3, 0,0,0, 2,0,0, 1,0,0\n;\na.raw\n;\n4,1\n";
 
 TEST_F(CDemonSetLoadTest, ACurrentFileGivesEverySetting) {
     load({});
@@ -92,14 +93,30 @@ TEST_F(CDemonSetLoadTest, EveryCameraIsEnabledInGroupZeroAtTheLeastAmbient) {
     EXPECT_THAT(set_.getCameras()[0].getPVSList(), ::testing::ElementsAre(4, 5));
 }
 
+TEST_F(CDemonSetLoadTest, ACameraIsFoundByName) {
+    load(
+        {.cameras = "2\n" + cameraText("first") + cameraText("Second"), .pvs = "2\n\t4\n\t5\n0\n"});
+    EXPECT_EQ(set_.findCameraByName("FIRST"), 0U);
+    EXPECT_EQ(set_.findCameraByName("second"), 1U);
+    EXPECT_FALSE(set_.findCameraByName("third").has_value());
+}
+
 TEST_F(CDemonSetLoadTest, EachLightIsReadInTurn) {
-    const std::string light = "label\nlamp\nlabel\n1,2,3\nlabel\n0.1,0.2,0.3\nlabel\n30\n"
-                              "aspect\n1.5\nintensity\n0.25\nlabel\n2\nlabel\n0.5,0.6,0.7,10,4\n"
-                              "label\n512,128\nlabel\n2\nlabel\n0\n1.5,3,glow.raw\n2.5,4,dim.raw\n"
-                              "label\n1\nmove\n1,2,3,4,5\nlabel\n0.5,2\nvisible\n0\n";
-    load({.lights = "1\n" + light});
+    load({.lights = "1\n" + lightText("lamp", 2)});
     ASSERT_EQ(set_.getLights().size(), 1U);
     EXPECT_EQ(set_.getLights()[0].getName(), "lamp");
+}
+
+// Other lights are passed over, and don't count among the spotlights.
+TEST_F(CDemonSetLoadTest, ASpotlightIsFoundByNameAmongTheSpotlights) {
+    load({.lights = "4\n" + lightText("first", 0) + lightText("omni", 1) + lightText("Beam", 0) +
+                    lightText("last", 0)});
+    const std::optional<SSpotlight> beam = set_.addLightFilter("BEAM");
+    ASSERT_TRUE(beam.has_value());
+    EXPECT_EQ(beam->light, &set_.getLights()[2]);
+    EXPECT_EQ(beam->index, 1U);
+    EXPECT_FALSE(set_.addLightFilter("omni").has_value());
+    EXPECT_FALSE(set_.addLightFilter("absent").has_value());
 }
 
 TEST_F(CDemonSetLoadTest, AMissingFileIsFatal) {
@@ -181,7 +198,7 @@ TEST_F(CDemonSetLoadTest, ATrainSetPutsTheTerrainDown) {
 }
 
 TEST_F(CDemonSetLoadTest, TheEnviroModelIsLoadedWhenTheSetUsesOneAndFreedWithTheNext) {
-    givenFile("models\\moon.kfm", kMoonModel);
+    givenFile("models\\moon.kfm", std::string(kMoonModel));
     load({.enviro = "1,moon.kfm"});
     EXPECT_TRUE(set_.getUseEnviroModel());
     EXPECT_EQ(set_parts_.enviro_model.getVertexCount(), 4);

@@ -538,7 +538,7 @@ extern "C" int nocturne_load_pick_slot(char *, int) {
 // The single-player submenu
 // ---------------------------------------------------------------------------
 
-#if !NOCTURNE_AUTHENTIC_SINGLE_PLAYER_MENU
+#if !NOCTURNE_AUTHENTIC_MENU
 
 // Continue, Start, Load — the most the submenu ever lists.
 #define SP_MENU_MAX_ITEMS 3
@@ -650,7 +650,7 @@ extern "C" int nocturne_save_continue_target(char *, int) {
     return 0;
 }
 
-#endif // !NOCTURNE_AUTHENTIC_SINGLE_PLAYER_MENU
+#endif // !NOCTURNE_AUTHENTIC_MENU
 
 // ---------------------------------------------------------------------------
 // Autosave

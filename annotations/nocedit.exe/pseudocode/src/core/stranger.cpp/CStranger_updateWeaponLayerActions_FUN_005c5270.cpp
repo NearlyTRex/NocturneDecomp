@@ -115,18 +115,20 @@ LAB_005c52fa:
     }
     else {
       pCVar15 = core_inv_cpp_CInventory_getActiveLightGun_FUN_004ffab0(this_ptr_00);
-      if ((pCVar15 != (CLightGun *)0x0) && ((this_ptr->base).is_wearing_gas_mask == 0))
+      if ((pCVar15 != (CLightGun *)0x0) && ((this_ptr->base).is_wearing_gas_mask == GAS_MASK_AWAY))
       goto LAB_005c52fa;
       pCVar15 = core_inv_cpp_CInventory_getActiveLightGun_FUN_004ffab0(this_ptr_00);
-      if ((pCVar15 == (CLightGun *)0x0) || ((this_ptr->base).is_wearing_gas_mask != 1)) {
+      if ((pCVar15 == (CLightGun *)0x0) ||
+         ((this_ptr->base).is_wearing_gas_mask != GAS_MASK_IN_HAND)) {
         pCVar15 = core_inv_cpp_CInventory_getActiveLightGun_FUN_004ffab0(this_ptr_00);
-        if ((pCVar15 == (CLightGun *)0x0) && ((this_ptr->base).is_wearing_gas_mask == 2)) {
+        if ((pCVar15 == (CLightGun *)0x0) &&
+           ((this_ptr->base).is_wearing_gas_mask == GAS_MASK_ON_FACE)) {
           iVar15 = 10;
         }
         else {
           pCVar15 = core_inv_cpp_CInventory_getActiveLightGun_FUN_004ffab0(this_ptr_00);
-          if ((pCVar15 == (CLightGun *)0x0) && ((this_ptr->base).is_wearing_gas_mask == 1))
-          goto LAB_005c52fa;
+          if ((pCVar15 == (CLightGun *)0x0) &&
+             ((this_ptr->base).is_wearing_gas_mask == GAS_MASK_IN_HAND)) goto LAB_005c52fa;
           iVar15 = local_40;
           if (local_40 < 0) {
             pCVar3 = this_ptr->weapon;
@@ -362,16 +364,16 @@ LAB_005c53f2:
         pCVar12 = core_inv_cpp_CInventory_getActiveLightGun_FUN_004ffab0(this_ptr_00);
         if (pCVar12 == (CLightGun *)0x0) {
 LAB_005c54e8:
-          (this_ptr->base).is_wearing_gas_mask = 1;
+          (this_ptr->base).is_wearing_gas_mask = GAS_MASK_IN_HAND;
         }
         else {
-          (this_ptr->base).is_wearing_gas_mask = 2;
+          (this_ptr->base).is_wearing_gas_mask = GAS_MASK_ON_FACE;
         }
       }
-      else if ((iVar5 == 3) && ((this_ptr->base).is_wearing_gas_mask < 2)) {
+      else if ((iVar5 == 3) && ((int)(this_ptr->base).is_wearing_gas_mask < 2)) {
         pCVar15 = core_inv_cpp_CInventory_getActiveLightGun_FUN_004ffab0(this_ptr_00);
         if (pCVar15 != (CLightGun *)0x0) goto LAB_005c54e8;
-        (this_ptr->base).is_wearing_gas_mask = 0;
+        (this_ptr->base).is_wearing_gas_mask = GAS_MASK_AWAY;
       }
       if ((this_ptr->action_pending == 7) && ((iVar5 == 0 || (iVar5 == 8)))) {
         this_ptr->action_pending = 0;

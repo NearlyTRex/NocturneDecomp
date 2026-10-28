@@ -158,7 +158,7 @@ void __cdecl core_cow_cpp_CZombieCow_process_FUN_00444310(CZombieCow *this_ptr,f
     }
     goto switchD_0044482d_caseD_3;
   }
-  uVar1 = (this_ptr->base).base.is_walking;
+  uVar1 = (this_ptr->base).base.walk_state;
   if (uVar1 < 2) {
     if (uVar1 == 1) {
 LAB_004443e0:

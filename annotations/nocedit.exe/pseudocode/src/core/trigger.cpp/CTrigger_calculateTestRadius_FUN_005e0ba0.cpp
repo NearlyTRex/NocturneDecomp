@@ -16,9 +16,9 @@ void __cdecl core_trigger_cpp_CTrigger_calculateTestRadius_FUN_005e0ba0(CTrigger
   float fStack_14;
   float fStack_10;
   
-  switch(this_ptr->hero_triggers_me) {
-  case 0:
-  case 1:
+  switch(this_ptr->trigger_cause) {
+  case TRIGGER_CAUSE_HERO:
+  case TRIGGER_CAUSE_ACTOR:
     pCVar1 = (*((this_ptr->base).vtable._ub)->getBoundingBox)(&this_ptr->base,&CStack_30);
     fStack_18 = (pCVar1->max).x - (pCVar1->min).x;
     fStack_14 = (pCVar1->max).y - (pCVar1->min).y;

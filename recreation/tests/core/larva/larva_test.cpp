@@ -1,3 +1,4 @@
+#include "core/actor/demonactortype.h"
 #include "core/larva/larva.h"
 
 #include <gtest/gtest.h>
@@ -33,6 +34,13 @@ TEST(CLarva, PublicInterface) {
     static_assert(std::is_same_v<decltype(&CLarva::archive), void (CLarva::*)(CActorArchive &)>);
     static_assert(
         std::is_same_v<decltype(&CLarva::processDamage), void (CLarva::*)(SDamageInfo *)>);
+}
+
+TEST(CLarva, ItsRecordIsVersion2UnderCEnemy) {
+    EXPECT_EQ(CLarva::kType.class_name, "CLarva");
+    EXPECT_EQ(CLarva::kType.parent_type, &CEnemy::kType);
+    EXPECT_EQ(CLarva::kType.factory_func, nullptr);
+    EXPECT_EQ(CLarva::kType.latest_version, 2);
 }
 
 } // namespace

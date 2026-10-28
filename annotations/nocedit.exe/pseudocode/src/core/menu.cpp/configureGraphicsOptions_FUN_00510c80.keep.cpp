@@ -29,28 +29,11 @@ void __cdecl core_menu_cpp_configureGraphicsOptions_FUN_00510c80(void)
   int local_1c [3];
   CGame *pCVar2;
   int iVar3;
-#if !NOCTURNE_AUTHENTIC_WINDOW_MODE || !NOCTURNE_AUTHENTIC_OS_FONT || !NOCTURNE_AUTHENTIC_MENU_FONT
-  char *menu_ptrs [12];
-  int extra_count;
-  int menu_y;
-#endif
-#if !NOCTURNE_AUTHENTIC_WINDOW_MODE
-  char window_line [256];
-  int window_item;
-#endif
-#if !NOCTURNE_AUTHENTIC_OS_FONT
-  char os_font_line [256];
-  int os_font_item;
-#endif
-#if !NOCTURNE_AUTHENTIC_MENU_FONT
-  char menu_font_line [256];
-  int menu_font_item;
-#endif
-#if !NOCTURNE_AUTHENTIC_MENU_RESOLUTION
-  int prev_pixx;
-  int prev_pixy;
-#endif
 
+#if !NOCTURNE_AUTHENTIC_MENU
+  nocturne_graphics_options_menu();
+  return;
+#endif
   local_20 = 0;
   core_game_cpp_CGame_saveClockTime_FUN_004d7d80(g_CGamePtr);
   pacVar6 = g_GraphicsMenuTextBuffers;
@@ -143,7 +126,6 @@ LAB_00510e1f:
       pCVar4->game_pixx = 0x280;
     }
 #endif
-#if NOCTURNE_AUTHENTIC_RESOLUTION_LIST
     iVar7 = g_CGamePtr->game_pixy;
     if (iVar7 == 0xf0) {
       pcVar14 = "Resolution : 320x240";
@@ -169,10 +151,6 @@ LAB_00510e1f:
     else {
       pcVar14 = "Resolution : 320x240";
     }
-#else
-    pcVar14 = (char *)nocturne_resolution_label(g_CGamePtr->game_pixx,
-                                                g_CGamePtr->game_pixy);
-#endif
     pcVar14 = support_newmsg_cpp_getLocalizedString_FUN_005441f0(pcVar14);
     _sprintf(g_GraphicsMenuTextBuffers[0],pcVar14);
     uVar3 = g_CGamePtr->halo_mode;
@@ -295,105 +273,21 @@ LAB_00510f71:
       iVar7 = 8;
     }
     pcVar14 = support_newmsg_cpp_getLocalizedString_FUN_005441f0("Graphic Options");
-#if !NOCTURNE_AUTHENTIC_MENU_RESOLUTION
-    prev_pixx = g_CGamePtr->game_pixx;
-    prev_pixy = g_CGamePtr->game_pixy;
-#endif
-#if !NOCTURNE_AUTHENTIC_WINDOW_MODE || !NOCTURNE_AUTHENTIC_OS_FONT || !NOCTURNE_AUTHENTIC_MENU_FONT
-    for (iVar4 = 0; iVar4 < iVar7; iVar4++) {
-      menu_ptrs[iVar4] = g_GraphicsMenuTextPointers[iVar4];
-    }
-    extra_count = iVar7;
-#if !NOCTURNE_AUTHENTIC_OS_FONT
-    _sprintf(os_font_line,"Text : %s",
-             nocturne_os_font_name(nocturne_os_font_get()));
-    os_font_item = extra_count;
-    menu_ptrs[extra_count] = os_font_line;
-    extra_count = extra_count + 1;
-#endif
-#if !NOCTURNE_AUTHENTIC_WINDOW_MODE
-    window_item = -2;
-    if (g_nocturne_fixed_display == 0) {
-      _sprintf(window_line,"Window : %s",
-               nocturne_window_mode_name(nocturne_window_mode_get()));
-      window_item = extra_count;
-      menu_ptrs[extra_count] = window_line;
-      extra_count = extra_count + 1;
-    }
-#endif
-#if !NOCTURNE_AUTHENTIC_MENU_FONT
-    _sprintf(menu_font_line,"Menu text : %s",
-             nocturne_menu_font_name(nocturne_menu_font_get()));
-    menu_font_item = extra_count;
-    menu_ptrs[extra_count] = menu_font_line;
-    extra_count = extra_count + 1;
-#endif
-    menu_y = nocturne_menu_start_y(extra_count + 3);
-    iVar7 = core_menu_cpp_renderMenuAndGetChoice_FUN_00510000
-                      (menu_ptrs,extra_count,&local_20,menu_y,pcVar14);
-#else
     iVar7 = core_menu_cpp_renderMenuAndGetChoice_FUN_00510000
                       (g_GraphicsMenuTextPointers,iVar7,&local_20,0xfa,pcVar14);
-#endif
     wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();
     iVar6 = _stricmp(g_RendererDllPath,"trid3d.dll");
     pCVar4 = g_CGamePtr;
     bVar12 = iVar6 != 0;
-#if !NOCTURNE_AUTHENTIC_MENU_RESOLUTION
-    if (g_UseDirect3D == 0) {
-      bVar12 = false;
-    }
-#endif
     if ((!bVar12) && (0x1e0 < g_CGamePtr->game_pixy)) {
       g_CGamePtr->game_pixy = 0x1e0;
       pCVar4->game_pixx = 0x280;
     }
-#if !NOCTURNE_AUTHENTIC_OS_FONT
-    if (iVar7 == os_font_item) {
-      if (g_MenuLeftRightPressed == 1) {
-        nocturne_os_font_cycle(-1);
-      }
-      else {
-        nocturne_os_font_cycle(1);
-      }
-      iVar7 = -1;   /* consumed; matches no case below */
-    }
-#endif
-#if !NOCTURNE_AUTHENTIC_WINDOW_MODE
-    if (iVar7 == window_item) {
-      if (g_MenuLeftRightPressed == 1) {
-        nocturne_window_mode_cycle(-1);
-      }
-      else {
-        nocturne_window_mode_cycle(1);
-      }
-      iVar7 = -1;   /* consumed; matches no case below */
-    }
-#endif
-#if !NOCTURNE_AUTHENTIC_MENU_FONT
-    if (iVar7 == menu_font_item) {
-      nocturne_menu_font_cycle(g_MenuLeftRightPressed == 1 ? -1 : 1);
-      if ((0xf0 < g_WindowHeight) &&
-          ((g_CDemonMissionPtr == (CDemonMission *)0x0) ||
-           (g_CDemonMissionPtr->is_in_editor == 0))) {
-        g_EditorFont = nocturne_menu_font();
-      }
-      iVar7 = -1;   /* consumed; matches no case below */
-    }
-#endif
     pCVar4 = g_CGamePtr;
     iVar6 = g_CurrentGraphicsBoard;
     iVar3 = g_GraphicsCardCount;
     switch(iVar7) {
     case 0:
-#if !NOCTURNE_AUTHENTIC_RESOLUTION_LIST
-      nocturne_resolution_step(g_CGamePtr->game_pixx,g_CGamePtr->game_pixy,
-                               (g_MenuLeftRightPressed == 1) ? -1 : 1,
-                               bVar12 ? 0 : 0x1e0,
-                               &g_CGamePtr->game_pixx,&g_CGamePtr->game_pixy);
-      iVar6 = g_CurrentGraphicsBoard;
-      iVar3 = g_GraphicsCardCount;
-#else
       if (g_MenuLeftRightPressed == 1) {
         if (((g_CGamePtr->game_pixy == 0xf0) && (24000000 < local_1c[0])) && (bVar12)) {
           g_CGamePtr->game_pixx = 0x500;
@@ -489,7 +383,6 @@ LAB_005114dd:
           iVar3 = g_GraphicsCardCount;
         }
       }
-#endif
       break;
     case 1:
       if (g_MenuLeftRightPressed == 1) {
@@ -636,11 +529,6 @@ LAB_005116c3:
       iVar6 = g_CurrentGraphicsBoard;
       iVar3 = g_GraphicsCardCount;
     }
-#if !NOCTURNE_AUTHENTIC_MENU_RESOLUTION
-    if ((prev_pixx != g_CGamePtr->game_pixx) || (prev_pixy != g_CGamePtr->game_pixy)) {
-      nocturne_window_set_size(g_CGamePtr->game_pixx,g_CGamePtr->game_pixy);
-    }
-#endif
     g_GraphicsCardCount = iVar3;
     g_CurrentGraphicsBoard = iVar6;
     iVar7 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_ESCAPE);

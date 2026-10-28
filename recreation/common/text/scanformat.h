@@ -4,6 +4,7 @@
 
 #include <array>
 #include <cstddef>
+#include <optional>
 #include <span>
 #include <string>
 #include <string_view>
@@ -35,7 +36,7 @@ consteval char conversionFor() {
 } // namespace detail
 
 // A scanf format whose conversions are checked against its fields as it compiles: "%d" takes an
-// int, "%f" a float, and "%s" and "%[^c]" a std::string.
+// int, "%f" a float, and "%s" and "%[^...]" a std::string.
 template <typename... Fields>
 class CScanFormat {
 public:
@@ -49,10 +50,11 @@ public:
             }
             char conversion = format_[++i];
             if (conversion == '[') {
-                if (format_.substr(i + 1, 1) != "^" || format_.substr(i + 3, 1) != "]") {
+                const std::size_t close = format_.find(']', i + 3);
+                if (format_.substr(i + 1, 1) != "^" || close == std::string_view::npos) {
                     detail::scanFormatDoesNotMatchItsFields();
                 }
-                i += 3;
+                i = close;
                 conversion = 's';
             }
             if (field >= kExpected.size() || kExpected.at(field) != conversion) {
@@ -83,6 +85,19 @@ int scanFormat(CTextScanner &scanner, std::type_identity_t<CScanFormat<Fields...
                Fields &...fields) {
     const std::array<ScanField, sizeof...(Fields)> targets{&fields...};
     return scanFields(scanner, format.get(), targets);
+}
+
+// sscanf with "%n" at the end of the format: how much of the text the whole format took, or
+// nothing when any of it fails. The fields before a failure are filled, as sscanf fills them.
+std::optional<std::size_t> scanPrefixFields(std::string_view text, std::string_view format,
+                                            std::span<const ScanField> fields);
+
+template <typename... Fields>
+std::optional<std::size_t> scanPrefix(std::string_view text,
+                                      std::type_identity_t<CScanFormat<Fields...>> format,
+                                      Fields &...fields) {
+    const std::array<ScanField, sizeof...(Fields)> targets{&fields...};
+    return scanPrefixFields(text, format.get(), targets);
 }
 
 } // namespace nocturne::common

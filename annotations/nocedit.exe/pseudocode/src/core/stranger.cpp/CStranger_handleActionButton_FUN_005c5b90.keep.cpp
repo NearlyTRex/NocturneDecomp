@@ -92,9 +92,6 @@ void __cdecl core_stranger_cpp_CStranger_handleActionButton_FUN_005c5b90(CStrang
       iVar5 = core_hero_cpp_CHero_tryPushNearbyBox_FUN_004f3120(&this_ptr->base);
       pCVar3 = &(this_ptr->base).base.model;
       if (iVar5 != 0) {
-#if !NOCTURNE_AUTHENTIC_INPUT_REPEAT
-        (this_ptr->base).player_input.action_state.fire = 0;
-#endif
         core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
                   (&pCVar3->base,6,1);
         return;

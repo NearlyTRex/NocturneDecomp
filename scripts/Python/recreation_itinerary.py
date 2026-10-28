@@ -186,7 +186,8 @@ class Itinerary:
         self.retail = {p["a"]: retail_sources.get(p["b"]) for p in pairs if p["a"] in RETAIL_BODIES}
         self.from_retail = {p["b"]: p["a"] for p in pairs}
         # What pass 1 leaves to the compiler counts as done: a default constructor or destructor
-        # that only returns `this`, and a copy constructor or assignment that calls nothing.
+        # that only returns `this`, a copy constructor or assignment that calls nothing, and an
+        # empty static initializer.
         self.generated = {a for a in self.in_scope if self.is_compiler_generated(self.functions[a])}
         ported = done_addresses()
         self.deferred = {a: items for a, items in ported.items() if items}
@@ -201,8 +202,11 @@ class Itinerary:
 
     def is_compiler_generated(self, f):
         method = f["method"]
-        if not f.get("cls") or f.get("calls"):
+        if f.get("calls"):
             return False
+        # A static initializer with nothing to construct is a lone RET.
+        if not f.get("cls"):
+            return method == "staticInit" and f.get("instructions") == 1
         if scaffold.is_trivial(f) and (re.match(r"^dtor\d*$", method)
                                        or (re.match(r"^ctor\d*$", method) and not f.get("params"))):
             return True

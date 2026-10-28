@@ -7,6 +7,8 @@ namespace nocturne::core {
 
 class CCurtain : public CDemonActor {
 public:
+    static const CDemonActorType kType;
+
     CCurtain();
     ~CCurtain() override;
 

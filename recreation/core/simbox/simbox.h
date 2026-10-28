@@ -7,6 +7,8 @@ namespace nocturne::core {
 
 class CSimBox : public CDemonActor {
 public:
+    static const CDemonActorType kType;
+
     CSimBox();
     ~CSimBox() override;
 

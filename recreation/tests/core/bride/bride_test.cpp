@@ -1,3 +1,4 @@
+#include "core/actor/demonactortype.h"
 #include "core/bride/bride.h"
 
 #include <gtest/gtest.h>
@@ -35,6 +36,13 @@ TEST(CBride, PublicInterface) {
         std::is_same_v<decltype(&CBride::processDamage), void (CBride::*)(SDamageInfo *)>);
     static_assert(std::is_same_v<decltype(&CBride::getTargetPoint),
                                  common::CVector3f *(CBride::*)(common::CVector3f *)>);
+}
+
+TEST(CBride, ItsRecordIsVersion4UnderCEnemy) {
+    EXPECT_EQ(CBride::kType.class_name, "CBride");
+    EXPECT_EQ(CBride::kType.parent_type, &CEnemy::kType);
+    EXPECT_EQ(CBride::kType.factory_func, nullptr);
+    EXPECT_EQ(CBride::kType.latest_version, 4);
 }
 
 } // namespace

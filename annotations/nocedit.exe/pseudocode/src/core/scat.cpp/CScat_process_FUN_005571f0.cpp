@@ -10,7 +10,7 @@ void __cdecl core_scat_cpp_CScat_process_FUN_005571f0(CScat *this_ptr,float delt
 
 {
   CDeformableModelInstance *pCVar2;
-  uint uVar3;
+  EWalkState EVar3;
   CDemonActor *pCVar4;
   CCharacter *this_ptr_00;
   CCharacter_full_vtable *pCVar5;
@@ -160,9 +160,9 @@ void __cdecl core_scat_cpp_CScat_process_FUN_005571f0(CScat *this_ptr,float delt
     (this_ptr->base).base.model.accumulated_root_motion.y =
          (this_ptr->base).base.model.accumulated_root_motion.z;
     pCVar8->x = (this_ptr->base).base.model.accumulated_root_motion.y;
-    uVar3 = (this_ptr->base).base.is_walking;
-    if (uVar3 < 2) {
-      if (uVar3 == 1) {
+    EVar3 = (this_ptr->base).base.walk_state;
+    if (EVar3 < 2) {
+      if (EVar3 == WALK_STATE_WALKING) {
         iVar7 = core_scat_cpp_CScat_isWeaponReady_FUN_00558010(this_ptr);
         if (iVar7 == 0) {
           iVar7 = 1;
@@ -183,13 +183,13 @@ LAB_00557637:
         }
       }
     }
-    else if (uVar3 < 3) {
+    else if (EVar3 < WALK_STATE_NO_PATH) {
       iVar7 = core_scat_cpp_CScat_isWeaponReady_FUN_00558010(this_ptr);
       if (iVar7 != 0) goto LAB_005572db;
       iVar7 = 2;
     }
     else {
-      if (uVar3 != 3) goto LAB_00557637;
+      if (EVar3 != WALK_STATE_NO_PATH) goto LAB_00557637;
       engine_console_cpp_CConsole_printf_FUN_00441890
                 (g_CConsolePtr,"%s confused while walking to scriptDest!\n",this_ptr);
       iVar7 = core_scat_cpp_CScat_isWeaponReady_FUN_00558010(this_ptr);

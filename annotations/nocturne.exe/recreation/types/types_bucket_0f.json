@@ -121,7 +121,7 @@
   {
     "kind":"class",
     "name":"CAmmoBox",
-    "parent":"CCharacter",
+    "parent":"CDemonActor",
     "rtti_file":"core/ammobox.cpp",
     "size":836
   },
@@ -1108,23 +1108,42 @@
   },
   {
     "kind":"enum",
+    "name":"ELeverOpenSides",
+    "size":4,
+    "values":[
+      {
+        "name":"LEVER_OPEN_SIDES_POS_Z",
+        "value":0
+      },
+      {
+        "name":"LEVER_OPEN_SIDES_NEG_Z",
+        "value":1
+      },
+      {
+        "name":"LEVER_OPEN_SIDES_BOTH",
+        "value":2
+      }
+    ]
+  },
+  {
+    "kind":"enum",
     "name":"ETriggerEventType",
     "size":4,
     "values":[
       {
-        "name":"TRIGGER_EVENT_SINGLE",
+        "name":"TRIGGER_EVENT_MOMENTARY",
         "value":0
       },
       {
-        "name":"TRIGGER_EVENT_REPEAT",
+        "name":"TRIGGER_EVENT_ONE_SHOT",
         "value":1
       },
       {
-        "name":"TRIGGER_EVENT_ON_ENTER",
+        "name":"TRIGGER_EVENT_RISING_EDGE",
         "value":2
       },
       {
-        "name":"TRIGGER_EVENT_ON_EXIT",
+        "name":"TRIGGER_EVENT_FALLING_EDGE",
         "value":3
       }
     ]

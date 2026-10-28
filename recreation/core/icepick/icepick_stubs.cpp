@@ -27,10 +27,6 @@ int CIcePick::renderOpaque() {
     notPorted("renderOpaque");
 }
 
-void CIcePick::archive(CActorArchive & /*actor_archive*/) {
-    notPorted("archive");
-}
-
 void CIcePick::processDamage(SDamageInfo * /*damage_info*/) {
     notPorted("processDamage");
 }

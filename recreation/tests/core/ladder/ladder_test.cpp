@@ -1,3 +1,4 @@
+#include "core/actor/demonactortype.h"
 #include "core/ladder/ladder.h"
 
 #include <gtest/gtest.h>
@@ -35,6 +36,13 @@ TEST(CLadder, PublicInterface) {
     static_assert(std::is_same_v<decltype(&CLadder::getActorType),
                                  const CDemonActorType &(CLadder::*)() const>);
     static_assert(std::is_same_v<decltype(&CLadder::archive), void (CLadder::*)(CActorArchive &)>);
+}
+
+TEST(CLadder, ItsRecordIsVersion2UnderCDemonActor) {
+    EXPECT_EQ(CLadder::kType.class_name, "CLadder");
+    EXPECT_EQ(CLadder::kType.parent_type, &CDemonActor::kType);
+    EXPECT_EQ(CLadder::kType.factory_func, nullptr);
+    EXPECT_EQ(CLadder::kType.latest_version, 2);
 }
 
 } // namespace

@@ -1,3 +1,4 @@
+#include "core/actor/demonactortype.h"
 #include "core/dog/zombiedog.h"
 
 #include <gtest/gtest.h>
@@ -34,6 +35,13 @@ TEST(CZombieDog, PublicInterface) {
         std::is_same_v<decltype(&CZombieDog::archive), void (CZombieDog::*)(CActorArchive &)>);
     static_assert(
         std::is_same_v<decltype(&CZombieDog::processDamage), void (CZombieDog::*)(SDamageInfo *)>);
+}
+
+TEST(CZombieDog, ItsRecordIsVersion2UnderCEnemy) {
+    EXPECT_EQ(CZombieDog::kType.class_name, "CZombieDog");
+    EXPECT_EQ(CZombieDog::kType.parent_type, &CEnemy::kType);
+    EXPECT_EQ(CZombieDog::kType.factory_func, nullptr);
+    EXPECT_EQ(CZombieDog::kType.latest_version, 2);
 }
 
 } // namespace

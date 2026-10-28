@@ -1,3 +1,4 @@
+#include "core/actor/demonactortype.h"
 #include "core/anvil/anvil.h"
 
 #include <gtest/gtest.h>
@@ -7,8 +8,8 @@
 namespace nocturne::core {
 namespace {
 
-TEST(CAnvil, DerivesFromCCharacter) {
-    static_assert(std::is_base_of_v<CCharacter, CAnvil>);
+TEST(CAnvil, DerivesFromCDemonActor) {
+    static_assert(std::is_base_of_v<CDemonActor, CAnvil>);
 }
 
 TEST(CAnvil, HasVirtualDestructor) {
@@ -34,6 +35,13 @@ TEST(CAnvil, PublicInterface) {
     static_assert(std::is_same_v<decltype(&CAnvil::getActorType),
                                  const CDemonActorType &(CAnvil::*)() const>);
     static_assert(std::is_same_v<decltype(&CAnvil::archive), void (CAnvil::*)(CActorArchive &)>);
+}
+
+TEST(CAnvil, ItsRecordIsVersion1UnderCDemonActor) {
+    EXPECT_EQ(CAnvil::kType.class_name, "CAnvil");
+    EXPECT_EQ(CAnvil::kType.parent_type, &CDemonActor::kType);
+    EXPECT_EQ(CAnvil::kType.factory_func, nullptr);
+    EXPECT_EQ(CAnvil::kType.latest_version, 1);
 }
 
 } // namespace

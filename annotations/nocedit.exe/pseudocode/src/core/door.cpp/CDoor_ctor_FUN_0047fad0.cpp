@@ -23,10 +23,10 @@ CDoor * __cdecl core_door_cpp_CDoor_ctor_FUN_0047fad0(CDoor *this_ptr)
   core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_00478dd0
             (this_ptr_00,"churchd01.kfm");
   ADJ(this_ptr_00)->door_type = DOOR_TYPE_SWING;
-  ADJ(this_ptr_00)->door_side = 1;
+  ADJ(this_ptr_00)->door_side = DOOR_SIDE_RIGHT;
   ADJ(this_ptr_00)->door_state = DOOR_STATE_CLOSED;
   pCVar1 = &ADJ(this_ptr_00)->base.location;
-  ADJ(this_ptr_00)->door_swing = 0;
+  ADJ(this_ptr_00)->door_swing = DOOR_SWING_CLOCKWISE;
   if ((CLocation *)&ADJ(this_ptr_00)->orig_pos != pCVar1) {
     (ADJ(this_ptr_00)->orig_pos).x = (pCVar1->position).x;
     (ADJ(this_ptr_00)->orig_pos).y = ADJ(this_ptr_00)->base.location.position.y;
@@ -75,11 +75,11 @@ CDoor * __cdecl core_door_cpp_CDoor_ctor_FUN_0047fad0(CDoor *this_ptr)
   ADJ(this_ptr_00)->ground_type = GROUND_TYPE_DEFAULT;
   ADJ(this_ptr_00)->on_open_trigger_event[0] = '\0';
   ADJ(this_ptr_00)->on_close_trigger_event[0] = '\0';
-  ADJ(this_ptr_00)->one_shot = 0;
+  ADJ(this_ptr_00)->one_shot = ONE_SHOT_NO;
   ADJ(this_ptr_00)->swing_range = 0.0;
   ADJ(this_ptr_00)->block_virtual_director_flag = 1;
   ADJ(this_ptr_00)->plot_as_box_in_shadow = 0;
-  ADJ(this_ptr_00)->allowed_sides = 3;
+  ADJ(this_ptr_00)->allowed_sides = DOOR_OPEN_SIDES_BOTH;
   ADJ(this_ptr_00)->allow_bullet_holes = 1;
   return ADJ(this_ptr_00);
 }

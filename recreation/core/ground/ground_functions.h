@@ -6,7 +6,6 @@
 
 namespace nocturne::core {
 
-void staticInit();
 char *getGroundTypeCode(EGroundType type);
 std::uint32_t getGroundTypeColor(EGroundType type);
 

@@ -1,3 +1,4 @@
+#include "core/actor/demonactortype.h"
 #include "core/vessel/cryptvessel.h"
 
 #include <gtest/gtest.h>
@@ -47,6 +48,13 @@ TEST(CCryptVessel, PublicInterface) {
                                  const CDemonActorType &(CCryptVessel::*)() const>);
     static_assert(
         std::is_same_v<decltype(&CCryptVessel::archive), void (CCryptVessel::*)(CActorArchive &)>);
+}
+
+TEST(CCryptVessel, ItsRecordIsVersion4UnderCDemonActor) {
+    EXPECT_EQ(CCryptVessel::kType.class_name, "CCryptVessel");
+    EXPECT_EQ(CCryptVessel::kType.parent_type, &CDemonActor::kType);
+    EXPECT_EQ(CCryptVessel::kType.factory_func, nullptr);
+    EXPECT_EQ(CCryptVessel::kType.latest_version, 4);
 }
 
 } // namespace

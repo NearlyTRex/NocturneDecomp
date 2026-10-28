@@ -4,6 +4,7 @@
 
 // Dependencies
 #include "system/basetypes.h"
+#include "types/classes/CMatrix3x4f.h"
 #include "types/structs/SBoneData.h"
 
 // Structure: CBoneStructure

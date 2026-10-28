@@ -1,3 +1,4 @@
+#include "core/actor/demonactortype.h"
 #include "core/trash/trash.h"
 
 #include <gtest/gtest.h>
@@ -34,6 +35,13 @@ TEST(CTrash, PublicInterface) {
     static_assert(std::is_same_v<decltype(&CTrash::getActorType),
                                  const CDemonActorType &(CTrash::*)() const>);
     static_assert(std::is_same_v<decltype(&CTrash::archive), void (CTrash::*)(CActorArchive &)>);
+}
+
+TEST(CTrash, ItsRecordIsVersion1UnderCDemonActor) {
+    EXPECT_EQ(CTrash::kType.class_name, "CTrash");
+    EXPECT_EQ(CTrash::kType.parent_type, &CDemonActor::kType);
+    EXPECT_EQ(CTrash::kType.factory_func, nullptr);
+    EXPECT_EQ(CTrash::kType.latest_version, 1);
 }
 
 } // namespace

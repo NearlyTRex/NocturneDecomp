@@ -334,14 +334,16 @@ extern int _mkdir(const char* path);
 // Watcom File Attribute Functions (io.h)
 // ---------------------------------------------------------------------------
 //
-// Windows' own _chmod takes the same arguments and paths, so the shim only
-// stands in for it elsewhere.
+// Windows' own _chmod takes the same arguments but looks the path up from the
+// working directory, not the data and user directories, so the shim stands in
+// there too, under its own name. <io.h> is included first so its guard absorbs
+// any later inclusion.
 
 #ifdef _WIN32
 #include <io.h>
-#else
-extern int _chmod(const char* path, int mode);
+#define _chmod nocturne_watcom_chmod
 #endif
+extern int _chmod(const char* path, int mode);
 
 // ---------------------------------------------------------------------------
 // Watcom Heap Functions (malloc.h)

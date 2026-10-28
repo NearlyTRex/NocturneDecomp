@@ -23,8 +23,8 @@ TEST(SGlApi, LoadResolvesEveryEntryPointByItsGlName) {
     EXPECT_EQ(asked.size(), 65U);
     EXPECT_TRUE(asked.contains("glBlitFramebuffer"));
     EXPECT_TRUE(asked.contains("glUniformMatrix4fv"));
-    EXPECT_EQ(std::bit_cast<GlProc>(api.ActiveTexture), &entryPoint);
-    EXPECT_EQ(std::bit_cast<GlProc>(api.Viewport), &entryPoint);
+    EXPECT_EQ(reinterpret_cast<GlProc>(api.ActiveTexture), &entryPoint);
+    EXPECT_EQ(reinterpret_cast<GlProc>(api.Viewport), &entryPoint);
 }
 
 TEST(SGlApi, LoadNamesTheEntryPointTheDriverLacks) {

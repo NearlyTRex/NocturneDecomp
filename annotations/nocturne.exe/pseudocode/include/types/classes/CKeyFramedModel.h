@@ -13,6 +13,7 @@ struct SMRGLPrimitiveQuad;
 #include "types/classes/CKeyFramedModelPart.h"
 #include "types/classes/CMatrix3x3f.h"
 #include "types/classes/CVector3f.h"
+#include "types/structs/SMRGLHeaderBasic.h"
 #include "types/structs/SMRGLTextureModel.h"
 
 // Structure: CKeyFramedModel

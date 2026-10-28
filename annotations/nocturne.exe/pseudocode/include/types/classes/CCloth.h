@@ -5,6 +5,8 @@
 // Dependencies
 #include "system/basetypes.h"
 #include "types/classes/CKeyFramedModel.h"
+#include "types/classes/CMatrix3x3f.h"
+#include "types/classes/CMatrix3x4f.h"
 #include "types/classes/CVector3f.h"
 #include "types/structs/SClothBone.h"
 #include "types/structs/SClothVertex.h"

@@ -1,3 +1,4 @@
+#include "core/actor/demonactortype.h"
 #include "core/flies/flies.h"
 
 #include <gtest/gtest.h>
@@ -34,6 +35,13 @@ TEST(CFlies, PublicInterface) {
     static_assert(std::is_same_v<decltype(&CFlies::getActorType),
                                  const CDemonActorType &(CFlies::*)() const>);
     static_assert(std::is_same_v<decltype(&CFlies::archive), void (CFlies::*)(CActorArchive &)>);
+}
+
+TEST(CFlies, ItsRecordIsVersion3UnderCDemonActor) {
+    EXPECT_EQ(CFlies::kType.class_name, "CFlies");
+    EXPECT_EQ(CFlies::kType.parent_type, &CDemonActor::kType);
+    EXPECT_EQ(CFlies::kType.factory_func, nullptr);
+    EXPECT_EQ(CFlies::kType.latest_version, 3);
 }
 
 } // namespace

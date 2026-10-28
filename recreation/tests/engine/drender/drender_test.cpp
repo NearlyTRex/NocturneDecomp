@@ -33,7 +33,6 @@ using TriangleRenderer = void (*)(std::span<SRenderVertex>, std::span<const int>
                                   const SCurrentTexture &);
 
 TEST(EngineDrenderFunctions, PublicInterface) {
-    static_assert(std::is_same_v<decltype(&staticInit), void (*)()>);
     static_assert(
         std::is_same_v<decltype(&qsortByCapturedFaceDepthAscending), int (*)(SFace **, SFace **)>);
     static_assert(

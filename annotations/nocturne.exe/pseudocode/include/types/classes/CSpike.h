@@ -7,6 +7,8 @@
 #include "types/classes/CDemonActor.h"
 #include "types/classes/CKeyFramedModelInstance.h"
 #include "types/classes/CVector3f.h"
+#include "types/enums/ESpikeState.h"
+#include "types/enums/ESpikeType.h"
 
 // Structure: CSpike
 // Ghidra size: 0x558 (1368 bytes)
@@ -14,8 +16,8 @@
 typedef struct CSpike {
     CDemonActor base; // 0x0
     CKeyFramedModelInstance model; // 0x150
-    int spike_type; // 0x2cc
-    int spike_state; // 0x2d0
+    ESpikeType spike_type; // 0x2cc
+    ESpikeState spike_state; // 0x2d0
     int are_we_active; // 0x2d4
     CVector3f base_position; // 0x2d8
     float extend_distance; // 0x2e4

@@ -7,8 +7,10 @@ nocturne_test_suite(shims_gl
     SUBJECTS
         shims/gl/gl_program.cpp
         shims/gl/gl_blit.cpp
+        shims/gl/upscale_shaders.cpp
         shims/gl/resolution.cpp
         shims/gl/window_mode.cpp
+        shims/gl/upscaler.cpp
         shims/core/ini_setting.cpp
         shims/watcom/path.cpp
         shims/core/file_search.cpp
@@ -43,7 +45,7 @@ nocturne_test_suite(shims_gl_api
 
 # The presenter, its GL calls to the recorder and its SDL ones renamed in this
 # directory's build of it, for sdl_gl_support.cpp to answer: no window, context
-# or driver.
+# or driver. The upscaler it asks is the real one, its ini the stand-in's.
 set(_presenter_sdl
     SDL_GL_SetAttribute SDL_GL_CreateContext SDL_GL_MakeCurrent SDL_GL_DeleteContext
     SDL_GL_SetSwapInterval SDL_GL_GetDrawableSize SDL_GL_SwapWindow SDL_GetWindowSize
@@ -58,7 +60,13 @@ nocturne_test_suite(shims_gl_present
         shims/gl/gl_present.cpp
         shims/gl/gl_blit.cpp
         shims/gl/gl_program.cpp
+        shims/gl/upscale_shaders.cpp
+        shims/gl/upscaler.cpp
+        shims/core/ini_setting.cpp
+        shims/watcom/path.cpp
+        shims/core/file_search.cpp
     SUPPORT
         ../renderer/gl_recorder.cpp
         sdl_gl_support.cpp
+        ini_support.cpp
 )

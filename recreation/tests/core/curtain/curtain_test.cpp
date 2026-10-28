@@ -1,3 +1,4 @@
+#include "core/actor/demonactortype.h"
 #include "core/curtain/curtain.h"
 
 #include <gtest/gtest.h>
@@ -38,6 +39,13 @@ TEST(CCurtain, PublicInterface) {
                                  const CDemonActorType &(CCurtain::*)() const>);
     static_assert(
         std::is_same_v<decltype(&CCurtain::archive), void (CCurtain::*)(CActorArchive &)>);
+}
+
+TEST(CCurtain, ItsRecordIsVersion6UnderCDemonActor) {
+    EXPECT_EQ(CCurtain::kType.class_name, "CCurtain");
+    EXPECT_EQ(CCurtain::kType.parent_type, &CDemonActor::kType);
+    EXPECT_EQ(CCurtain::kType.factory_func, nullptr);
+    EXPECT_EQ(CCurtain::kType.latest_version, 6);
 }
 
 } // namespace

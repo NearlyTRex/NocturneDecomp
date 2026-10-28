@@ -1056,8 +1056,7 @@ void cheatsPage(int page) {
                         stateLabel(items[i], effectiveState(items[i]))));
         }
         choice = core_menu_cpp_renderMenuAndGetChoice_FUN_00510000(
-            menu_ptrs, item_count, &selected,
-            nocturne_menu_start_y(NOCTURNE_MENU_ROWS_TITLED(item_count)),
+            menu_ptrs, item_count, &selected, nocturne_menu_titled_y(item_count),
             menuTitle(title, sizeof(title), kPageTitles[page]));
         wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();
 
@@ -1104,8 +1103,7 @@ void nocturne_cheats_menu(void) {
                      support_newmsg_cpp_getLocalizedString_FUN_005441f0(kPageTitles[i]));
         }
         choice = core_menu_cpp_renderMenuAndGetChoice_FUN_00510000(
-            menu_ptrs, CHEAT_PAGE_COUNT, &selected,
-            nocturne_menu_start_y(NOCTURNE_MENU_ROWS_TITLED(CHEAT_PAGE_COUNT)),
+            menu_ptrs, CHEAT_PAGE_COUNT, &selected, nocturne_menu_titled_y(CHEAT_PAGE_COUNT),
             menuTitle(title, sizeof(title), (char *)"Cheats"));
         wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();
 

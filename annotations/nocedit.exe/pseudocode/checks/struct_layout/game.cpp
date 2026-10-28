@@ -996,8 +996,8 @@ static_assert(__builtin_offsetof(CCharacter, walk_max_distance) == 9640,
               "offsetof(CCharacter, walk_max_distance) != 9640");
 static_assert(__builtin_offsetof(CCharacter, walk_timeout) == 9644,
               "offsetof(CCharacter, walk_timeout) != 9644");
-static_assert(__builtin_offsetof(CCharacter, is_walking) == 9648,
-              "offsetof(CCharacter, is_walking) != 9648");
+static_assert(__builtin_offsetof(CCharacter, walk_state) == 9648,
+              "offsetof(CCharacter, walk_state) != 9648");
 static_assert(__builtin_offsetof(CCharacter, door_target) == 9652,
               "offsetof(CCharacter, door_target) != 9652");
 static_assert(__builtin_offsetof(CCharacter, look_offset) == 9656,
@@ -5556,8 +5556,8 @@ static_assert(__builtin_offsetof(CPendulum, decay_timer) == 1076,
               "offsetof(CPendulum, decay_timer) != 1076");
 static_assert(__builtin_offsetof(CPendulum, ground_type) == 1080,
               "offsetof(CPendulum, ground_type) != 1080");
-static_assert(__builtin_offsetof(CPendulum, one_shot) == 1084,
-              "offsetof(CPendulum, one_shot) != 1084");
+static_assert(__builtin_offsetof(CPendulum, half_movement) == 1084,
+              "offsetof(CPendulum, half_movement) != 1084");
 static_assert(__builtin_offsetof(CPendulum, is_stopped) == 1088,
               "offsetof(CPendulum, is_stopped) != 1088");
 
@@ -5696,8 +5696,8 @@ static_assert(__builtin_offsetof(CPlatform, plot_in_shadow_flag) == 1304,
               "offsetof(CPlatform, plot_in_shadow_flag) != 1304");
 static_assert(__builtin_offsetof(CPlatform, attach_actors) == 1308,
               "offsetof(CPlatform, attach_actors) != 1308");
-static_assert(__builtin_offsetof(CPlatform, platform_type) == 1828,
-              "offsetof(CPlatform, platform_type) != 1828");
+static_assert(__builtin_offsetof(CPlatform, slew_mode) == 1828,
+              "offsetof(CPlatform, slew_mode) != 1828");
 static_assert(__builtin_offsetof(CPlatform, rendered_in_background) == 1832,
               "offsetof(CPlatform, rendered_in_background) != 1832");
 
@@ -6970,10 +6970,10 @@ static_assert(__builtin_offsetof(CTrigger, trigger_size) == 352,
               "offsetof(CTrigger, trigger_size) != 352");
 static_assert(__builtin_offsetof(CTrigger, trigger_state) == 364,
               "offsetof(CTrigger, trigger_state) != 364");
-static_assert(__builtin_offsetof(CTrigger, shape) == 368,
-              "offsetof(CTrigger, shape) != 368");
-static_assert(__builtin_offsetof(CTrigger, hero_triggers_me) == 372,
-              "offsetof(CTrigger, hero_triggers_me) != 372");
+static_assert(__builtin_offsetof(CTrigger, trigger_shape) == 368,
+              "offsetof(CTrigger, trigger_shape) != 368");
+static_assert(__builtin_offsetof(CTrigger, trigger_cause) == 372,
+              "offsetof(CTrigger, trigger_cause) != 372");
 static_assert(__builtin_offsetof(CTrigger, actor_name) == 376,
               "offsetof(CTrigger, actor_name) != 376");
 static_assert(__builtin_offsetof(CTrigger, actor_type) == 456,

@@ -1,3 +1,4 @@
+#include "core/actor/demonactortype.h"
 #include "core/stone/templestone.h"
 
 #include <gtest/gtest.h>
@@ -30,6 +31,13 @@ TEST(CTempleStone, PublicInterface) {
                                  const CDemonActorType &(CTempleStone::*)() const>);
     static_assert(
         std::is_same_v<decltype(&CTempleStone::archive), void (CTempleStone::*)(CActorArchive &)>);
+}
+
+TEST(CTempleStone, ItsRecordIsVersion1UnderCBoxActor) {
+    EXPECT_EQ(CTempleStone::kType.class_name, "CTempleStone");
+    EXPECT_EQ(CTempleStone::kType.parent_type, &CBoxActor::kType);
+    EXPECT_EQ(CTempleStone::kType.factory_func, nullptr);
+    EXPECT_EQ(CTempleStone::kType.latest_version, 1);
 }
 
 } // namespace

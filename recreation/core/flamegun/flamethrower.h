@@ -7,6 +7,8 @@ namespace nocturne::core {
 
 class CFlameThrower : public CWeapon {
 public:
+    static const CDemonActorType kType;
+
     CFlameThrower();
     ~CFlameThrower() override;
 

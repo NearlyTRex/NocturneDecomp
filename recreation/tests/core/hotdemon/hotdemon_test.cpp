@@ -1,3 +1,4 @@
+#include "core/actor/demonactortype.h"
 #include "core/hotdemon/hotdemon.h"
 
 #include <gtest/gtest.h>
@@ -38,6 +39,13 @@ TEST(CHotDemon, PublicInterface) {
         std::is_same_v<decltype(&CHotDemon::processDamage), void (CHotDemon::*)(SDamageInfo *)>);
     static_assert(
         std::is_same_v<decltype(&CHotDemon::getDeathState), EDeathState (CHotDemon::*)()>);
+}
+
+TEST(CHotDemon, ItsRecordIsVersion1UnderCEnemy) {
+    EXPECT_EQ(CHotDemon::kType.class_name, "CHotDemon");
+    EXPECT_EQ(CHotDemon::kType.parent_type, &CEnemy::kType);
+    EXPECT_EQ(CHotDemon::kType.factory_func, nullptr);
+    EXPECT_EQ(CHotDemon::kType.latest_version, 1);
 }
 
 } // namespace

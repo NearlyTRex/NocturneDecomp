@@ -18,7 +18,8 @@ void __cdecl core_door_cpp_CDoor_getPropertyList_FUN_00481320(CDoor *this_ptr,CA
             (property_list,"Door type",4,g_DoorTypePairs,(int *)&this_ptr->door_type);
   if (this_ptr->door_type == DOOR_TYPE_SLIDE) {
     core_actor_cpp_CActorPropertyList_addEnumPair_FUN_0040e640
-              (property_list,"Door side",2,g_DoorSideTypePairs,&this_ptr->door_side);
+              (property_list,"Door side",2,g_DoorSideTypePairs,(int *)&this_ptr->door_side)
+    ;
   }
   core_actor_cpp_CActorPropertyList_addAction_FUN_0040e670
             (property_list,"Door state",
@@ -26,7 +27,8 @@ void __cdecl core_door_cpp_CDoor_getPropertyList_FUN_00481320(CDoor *this_ptr,CA
              core_door_cpp_CDoor_propertyActionCallback_FUN_004812b0);
   if (this_ptr->door_type == DOOR_TYPE_SWING) {
     core_actor_cpp_CActorPropertyList_addEnumPair_FUN_0040e640
-              (property_list,"Door swing",2,g_DoorSwingTypePairs,&this_ptr->door_swing);
+              (property_list,"Door swing",2,g_DoorSwingTypePairs,
+               (int *)&this_ptr->door_swing);
   }
   core_actor_cpp_CActorPropertyList_addEvent_FUN_0040e460
             (property_list,"Open condition",this_ptr->open_condition);
@@ -65,12 +67,12 @@ void __cdecl core_door_cpp_CDoor_getPropertyList_FUN_00481320(CDoor *this_ptr,CA
             (property_list,"Block virtual director",&this_ptr->block_virtual_director_flag)
   ;
   core_actor_cpp_CActorPropertyList_addEnumPair_FUN_0040e640
-            (property_list,"One shot",3,g_DoorOneShotTypePairs,&this_ptr->one_shot);
+            (property_list,"One shot",3,g_DoorOneShotTypePairs,(int *)&this_ptr->one_shot);
   core_actor_cpp_CActorPropertyList_addBool_FUN_0040e330
             (property_list,"Plot as box in shadow",&this_ptr->plot_as_box_in_shadow);
   core_actor_cpp_CActorPropertyList_addEnumPair_FUN_0040e640
             (property_list,"Open from side",4,g_DoorOpenFromSideTypePairs,
-             &this_ptr->allowed_sides);
+             (int *)&this_ptr->allowed_sides);
   core_actor_cpp_CActorPropertyList_addBool_FUN_0040e330
             (property_list,"Leave bullet holes on me",&this_ptr->allow_bullet_holes);
   core_actor_cpp_CActorPropertyList_addSound_FUN_0040e2d0

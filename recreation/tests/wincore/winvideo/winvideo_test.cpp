@@ -74,8 +74,14 @@ protected:
     engine::C3d three_d_{matrix_};
     engine::SCurrentTexture current_texture_;
     engine::CSpecial special_{renderer_, screen_, two_d_, matrix_, three_d_, current_texture_};
-    SMovieOwners owners_{file_system_, movies_,  window_, clock_,
-                         winrun_,      special_, screen_, two_d_};
+    SMovieOwners owners_{.file_system = file_system_,
+                         .movies = movies_,
+                         .window = window_,
+                         .clock = clock_,
+                         .winrun = winrun_,
+                         .special = special_,
+                         .screen = screen_,
+                         .two_d = two_d_};
 };
 
 TEST_F(CPlayMovieTest, WithoutTheFileNothingHappens) {

@@ -1,8 +1,7 @@
-#include "common/text/textscanner.h"
-#include "core/actor/actorarchive.h"
 #include "core/actor/demonactortype.h"
 #include "core/moloch/moloch.h"
 #include "tests/mocks/core/notportedcalls.h"
+#include "tests/mocks/core/testheroarchive.h"
 
 #include <gtest/gtest.h>
 
@@ -49,19 +48,40 @@ TEST(CMoloch, ItsRecordIsAVersionOneHeroThatMissionsCanCreate) {
     EXPECT_EQ(&actor->getActorType(), &CMoloch::kType);
 }
 
+TEST(CMoloch, MolochStartsHumanWithTheShippedConditions) {
+    const CMoloch hero;
+    EXPECT_EQ(hero.getHumanToDemonCondition(), "molochToDemon");
+    EXPECT_EQ(hero.getDemonToHumanCondition(), "molochToHuman");
+    EXPECT_TRUE(hero.isInHumanForm());
+    EXPECT_FALSE(hero.isMorphing());
+    EXPECT_EQ(hero.getMorphTimer(), 0.0F);
+}
+
+TEST(CMoloch, MolochIsReadWithItsFormAndMorph) {
+    CMoloch hero;
+    CTestHeroArchive archive(hero, CMoloch::kType, 1,
+                             "\"toDemon\" // humanToDemonCond\n\"toHuman\"\n0 // inHumanForm\n"
+                             "1 // morphing\n0.75 // morphTimer\n");
+    hero.archive(archive.get());
+    EXPECT_EQ(hero.getLocation().area_id, CTestHeroArchive::kArea);
+    EXPECT_EQ(hero.getHumanToDemonCondition(), "toDemon");
+    EXPECT_EQ(hero.getDemonToHumanCondition(), "toHuman");
+    EXPECT_FALSE(hero.isInHumanForm());
+    EXPECT_TRUE(hero.isMorphing());
+    EXPECT_EQ(hero.getMorphTimer(), 0.75F);
+    EXPECT_TRUE(archive.isFinished());
+}
+
 TEST(CMoloch, TheFunctionsNotPortedYetQuit) {
     CMoloch hero;
-    common::CTextScanner scanner("");
-    CActorArchive archive(scanner);
     const NotPortedCalls calls = {
         {"setup", [&] { hero.setup(); }},
         {"process", [&] { hero.process(0.0F); }},
         {"renderOpaque", [&] { static_cast<void>(hero.renderOpaque()); }},
-        {"archive", [&] { hero.archive(archive); }},
         {"drawWeapon", [&] { hero.drawWeapon(0); }},
         {"isWeaponDrawn", [&] { static_cast<void>(hero.isWeaponDrawn()); }},
     };
-    EXPECT_EQ(calls.size(), 6U);
+    EXPECT_EQ(calls.size(), 5U);
     expectEachQuitsNotPorted("CMoloch", calls);
 }
 

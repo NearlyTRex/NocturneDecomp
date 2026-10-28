@@ -8,7 +8,6 @@ namespace nocturne::core {
 namespace {
 
 TEST(CoreStrangerFunctions, PublicInterface) {
-    static_assert(std::is_same_v<decltype(&staticInit), void (*)()>);
     static_assert(std::is_same_v<decltype(&blendWeightCallback),
                                  float (*)(int, int, float, int, CDeformableModelInstance *)>);
     static_assert(std::is_same_v<decltype(&factoryFuncStranger), CStranger *(*)()>);

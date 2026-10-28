@@ -10,7 +10,8 @@ void __cdecl core_trigger_cpp_CTrigger_onLaserHit_FUN_00548530(CTrigger *this_pt
 
 {
   core_actor_cpp_CDemonActor_onLaserHit_FUN_0040ab10(&this_ptr->base,laser_info);
-  if ((this_ptr->hero_triggers_me == 5) && (this_ptr->laser_type == laser_info->laser_type)) {
+  if ((this_ptr->trigger_cause == TRIGGER_CAUSE_LASER) &&
+     (this_ptr->laser_type == laser_info->laser_type)) {
     this_ptr->event_flag = 1;
   }
   laser_info->transparency = 0.0;

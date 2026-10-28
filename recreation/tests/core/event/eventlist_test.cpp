@@ -12,7 +12,7 @@ TEST(CEventList, IsConcrete) {
 }
 
 TEST(CEventList, Constructors) {
-    static_assert(std::is_constructible_v<CEventList>);
+    static_assert(std::is_constructible_v<CEventList, const SEventListOwners &>);
 }
 
 TEST(CEventList, PublicInterface) {
@@ -22,10 +22,6 @@ TEST(CEventList, PublicInterface) {
         std::is_same_v<decltype(&CEventList::executeCommands), int (CEventList::*)(char *)>);
     static_assert(
         std::is_same_v<decltype(&CEventList::evaluateCondition), int (CEventList::*)(char *)>);
-    static_assert(
-        std::is_same_v<decltype(&CEventList::validateCondition), char *(CEventList::*)(char *)>);
-    static_assert(
-        std::is_same_v<decltype(&CEventList::validateCommands), char *(CEventList::*)(char *)>);
     static_assert(std::is_same_v<decltype(&CEventList::render), void (CEventList::*)()>);
     static_assert(std::is_same_v<decltype(&CEventList::addOrRemovePersistentEvent),
                                  void (CEventList::*)(char *, int)>);
@@ -34,10 +30,6 @@ TEST(CEventList, PublicInterface) {
         std::is_same_v<decltype(&CEventList::setCounter), void (CEventList::*)(char *, int)>);
     static_assert(
         std::is_same_v<decltype(&CEventList::getCounterValue), int (CEventList::*)(char *)>);
-    static_assert(std::is_same_v<decltype(&CEventList::setActorVariable),
-                                 void (CEventList::*)(char *, CDemonActor *)>);
-    static_assert(std::is_same_v<decltype(&CEventList::getActorByVarName),
-                                 CDemonActor *(CEventList::*)(char *)>);
     static_assert(std::is_same_v<decltype(&CEventList::restartSfxEntries), void (CEventList::*)()>);
     static_assert(
         std::is_same_v<decltype(&CEventList::loadState), int (CEventList::*)(std::FILE *)>);

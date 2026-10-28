@@ -58,7 +58,8 @@ void __cdecl core_lever_cpp_CLever_archive_FUN_00504e80(CLever *this_ptr)
     core_actor_cpp_archiveRules_FUN_0040c000(&this_ptr->rule,"rules");
   }
   if (6 < g_CLeverClassVersion) {
-    core_actor_cpp_archiveInteger_FUN_0040b7f0(&this_ptr->allowed_sides,"allowedSides");
+    core_actor_cpp_archiveInteger_FUN_0040b7f0
+              ((int *)&this_ptr->allowed_sides,"allowedSides");
   }
   if (g_CLeverClassVersion < 8) {
     return;

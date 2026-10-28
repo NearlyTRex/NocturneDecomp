@@ -8,6 +8,8 @@ namespace nocturne::core {
 
 class CGhoul : public CEnemy {
 public:
+    static const CDemonActorType kType;
+
     CGhoul();
     ~CGhoul() override;
 

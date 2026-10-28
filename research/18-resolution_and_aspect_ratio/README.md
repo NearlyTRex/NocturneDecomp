@@ -12,7 +12,7 @@ writes its scanlines straight into `g_ScreenBufferArray[scanline_y]` at the nati
 Neither is a limit on the picture. What does limit software is two renderer-owned pieces past
 480 lines — see *What actually caps software*. Software above 640x480 is not viable.
 
-**The resolution list is one table.** Gated by `NOCTURNE_AUTHENTIC_RESOLUTION_LIST`;
+**The resolution list is one table.** Gated by `NOCTURNE_AUTHENTIC_MENU` (formerly `NOCTURNE_AUTHENTIC_RESOLUTION_LIST`);
 `shims/gl/resolution.{h,cpp}` drives both the label and the stepping so they cannot disagree.
 Eight modes, including 1600x1200 and a reachable 400x300. Accelerated only: the acceleration
 gate is a correctness requirement and is **not** part of that flag.
@@ -157,7 +157,7 @@ screen the per-pixel lighting and fog would cover only a 640x480 corner — and 
 pass **is** the lighting, not an enhancement.
 
 So making software work above 640x480 means scaling that composite, not removing a guard. The
-guard is unconditional and deliberately not tied to `NOCTURNE_AUTHENTIC_RESOLUTION_LIST`: it is
+guard is unconditional and deliberately not tied to `NOCTURNE_AUTHENTIC_MENU`: it is
 a correctness requirement, not an authenticity choice.
 
 ## The two coordinate spaces
@@ -269,7 +269,7 @@ from 1280x1024 falls through the chain's default and snaps to 320x240, making th
 list a two-entry loop. Both shipped binaries do this — in `nocedit.exe` it is the missing
 `CMP EDI,0x300` case, so the `JNZ` at `0x0051151b` takes the default.
 
-`NOCTURNE_AUTHENTIC_RESOLUTION_LIST = 0` replaces both the label and the stepping with one
+`NOCTURNE_AUTHENTIC_MENU = 0` replaces both the label and the stepping with one
 ordered table in `shims/gl/resolution.cpp`:
 
 ```
@@ -357,12 +357,11 @@ room geometry at backdrop quality. Confirm that before anyone plans around it.
 
 | Flag | 0 (default) | 1 (shipped) |
 |---|---|---|
-| `NOCTURNE_AUTHENTIC_RESOLUTION_LIST` | one table, 8 modes, and left from 1280x1024 steps to 1024x768 | hardcoded chain, 6 modes, and left from 1280x1024 snaps to 320x240 |
-| `NOCTURNE_AUTHENTIC_MENU_RESOLUTION` | a picked resolution resizes the window at once | the selector only edits `game_pixx`/`game_pixy`; nothing applies them until a mission loads |
+| `NOCTURNE_AUTHENTIC_MENU` | one table, 8 modes, and left from 1280x1024 steps to 1024x768; a picked resolution resizes the window at once | hardcoded chain, 6 modes, and left from 1280x1024 snaps to 320x240; the selector only edits `game_pixx`/`game_pixy`, and nothing applies them until a mission loads |
 | `NOCTURNE_AUTHENTIC_HUD_SCALE` | HUD and goggles scale with the framebuffer; boxed text takes its box's stretch and is clipped to it | one screen pixel per art pixel |
 | `NOCTURNE_AUTHENTIC_HUD_ICON_SPACE` | icon panel *and its text* in camera space | both in native pixels; icons invisible above 640x480 |
 
-The shipped left-step gap is part of `NOCTURNE_AUTHENTIC_RESOLUTION_LIST`; it does not have a
+The shipped left-step gap is part of `NOCTURNE_AUTHENTIC_MENU`; it does not have a
 flag of its own.
 
 ## Key symbols

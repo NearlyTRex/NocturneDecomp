@@ -16,9 +16,10 @@ TEST(CFootstep, Constructors) {
 }
 
 TEST(CFootstep, PublicInterface) {
-    static_assert(std::is_same_v<decltype(&CFootstep::init),
-                                 void (CFootstep::*)(common::CVector3f *,
-                                                     common::UOrientationVector *, int, int, int)>);
+    static_assert(
+        std::is_same_v<decltype(&CFootstep::init),
+                       void (CFootstep::*)(common::CVector3f *, common::UOrientationVector *, int,
+                                           int, EBloodType)>);
     static_assert(std::is_same_v<decltype(&CFootstep::render), void (CFootstep::*)(int)>);
 }
 

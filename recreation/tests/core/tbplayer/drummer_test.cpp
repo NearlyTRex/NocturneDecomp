@@ -1,3 +1,4 @@
+#include "core/actor/demonactortype.h"
 #include "core/tbplayer/drummer.h"
 
 #include <gtest/gtest.h>
@@ -31,6 +32,13 @@ TEST(CDrummer, PublicInterface) {
         std::is_same_v<decltype(&CDrummer::processDamage), void (CDrummer::*)(SDamageInfo *)>);
     static_assert(std::is_same_v<decltype(&CDrummer::getCarryObjToBodyXForm),
                                  common::CMatrix3x4f *(CDrummer::*)(int, common::CMatrix3x4f *)>);
+}
+
+TEST(CDrummer, ItsRecordIsVersion1UnderCNPC) {
+    EXPECT_EQ(CDrummer::kType.class_name, "CDrummer");
+    EXPECT_EQ(CDrummer::kType.parent_type, &CNPC::kType);
+    EXPECT_EQ(CDrummer::kType.factory_func, nullptr);
+    EXPECT_EQ(CDrummer::kType.latest_version, 1);
 }
 
 } // namespace

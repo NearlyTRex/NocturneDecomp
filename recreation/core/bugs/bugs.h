@@ -7,6 +7,8 @@ namespace nocturne::core {
 
 class CBugs : public CEnemy {
 public:
+    static const CDemonActorType kType;
+
     CBugs();
     ~CBugs() override;
 

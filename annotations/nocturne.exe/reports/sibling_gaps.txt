@@ -267,11 +267,11 @@ C. SIGNATURE DIVERGENCE ON MATCHED PAIRS
 ==============================================================================
   pairs compared        : 5267
   never transferred     : 6   (nocturne side has no signature at all -- transfer work, not drift)
-  genuine divergence    : 41   (both sides typed, and they disagree -- investigate)
+  genuine divergence    : 53   (both sides typed, and they disagree -- investigate)
   name core differs     : 62   (mapped as the same function under two different names)
 
   -- genuine divergence, highest confidence first --
-  by kind: {'ret': 28, 'param': 13, 'param0': 7, 'param1': 4, 'param2': 4, 'param3': 1, 'conv': 1}
+  by kind: {'ret': 28, 'param': 13, 'param2': 8, 'param0': 7, 'param3': 5, 'param1': 4, 'param5': 2, 'param6': 1, 'param4': 1, 'conv': 1}
 
     00403740 -> 00404430  conf 1.00  shape same_mnemonics
       engine_3d.c_abortOldFuncNoOpcode
@@ -314,6 +314,33 @@ C. SIGNATURE DIVERGENCE ON MATCHED PAIRS
     00606b17 -> 0056c007  conf 1.00  shape identical
       crt_math.c_fdiv_thunk
         ret float10 -> void
+    004eb9a0 -> 004ae070  conf 0.99  shape identical
+      core_gore.cpp_CBloodParticle_setup
+        param3 EBloodType -> int
+    004ec2f0 -> 004ae960  conf 0.99  shape identical
+      core_gore.cpp_CBloodSplat_initGroundSplat
+        param2 EBloodType -> int
+    004ec390 -> 004aea00  conf 0.99  shape identical
+      core_gore.cpp_CBloodSplat_initWallSplat
+        param3 EBloodType -> int
+    004ed0d0 -> 004af730  conf 0.99  shape identical
+      core_gore.cpp_CBloodPool_init
+        param2 EBloodType -> int
+    004ed240 -> 004af8a0  conf 0.99  shape identical
+      core_gore.cpp_CFootstep_init
+        param5 EBloodType -> int
+    004edaa0 -> 004b00f0  conf 0.99  shape identical
+      core_gore.cpp_CGore_spawnBloodParticles
+        param3 EBloodType -> int
+    004edb70 -> 004b01c0  conf 0.99  shape identical
+      core_gore.cpp_CGore_createWallBloodSplat
+        param3 EBloodType -> int
+    004edbb0 -> 004b0200  conf 0.99  shape identical
+      core_gore.cpp_CGore_spawnBloodBurst
+        param4 EBloodType -> int
+    004ee070 -> 004b06b0  conf 0.99  shape identical
+      core_gore.cpp_CGore_createFootstep
+        param5 EBloodType -> int
     0053ee30 -> 00540a10  conf 0.99  shape identical
       shape_multicrm.cpp_CMultiCram_getSecondModel
         param0 CMultiCram* -> void*
@@ -375,6 +402,15 @@ C. SIGNATURE DIVERGENCE ON MATCHED PAIRS
       crt_exception.c_installExceptionHandler
         param count 1 -> 0
         ret void -> undefined1
+    004edb40 -> 004b0190  conf 0.96  shape identical
+      core_gore.cpp_CGore_createGroundBloodSplat
+        param2 EBloodType -> int
+    004ede30 -> 004b0480  conf 0.96  shape identical
+      core_gore.cpp_CGore_createBloodPool
+        param2 EBloodType -> int
+    00418e10 -> 00415b30  conf 0.93  shape similar_size
+      core_bodypart.cpp_createBodyPart
+        param6 EBloodType -> int
     00570ea0 -> 0050e550  conf 0.93  shape size_mismatch
       core_set.cpp_CDemonSet_setCameraEnabled
         param2 int -> undefined4

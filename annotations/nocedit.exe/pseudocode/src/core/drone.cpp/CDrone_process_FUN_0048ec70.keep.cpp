@@ -186,7 +186,7 @@ void __cdecl core_drone_cpp_CDrone_process_FUN_0048ec70(CDrone *this_ptr,float d
     }
     goto switchD_0048f284_caseD_3;
   }
-  uVar4 = (this_ptr->base).base.is_walking;
+  uVar4 = (this_ptr->base).base.walk_state;
   if (uVar4 < 2) {
     if (uVar4 == 1) {
 LAB_0048ed51:

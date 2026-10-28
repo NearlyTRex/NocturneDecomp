@@ -46,7 +46,7 @@ CPlatform * __cdecl core_platfrm_cpp_CPlatform_ctor_FUN_0054c850(CPlatform *this
   core_xform_cpp_eulerToQuaternion_FUN_005f7b20(&ADJ(pCVar5)->base.orient.vec,&local_14);
   ADJ(pCVar5)->end_orient = local_14;
   ADJ(pCVar5)->orig_orient = ADJ(pCVar5)->end_orient;
-  ADJ(pCVar5)->platform_type = PLATFORM_TYPE_DISABLED;
+  ADJ(pCVar5)->slew_mode = PLATFORM_SLEW_DISABLED;
   ADJ(pCVar5)->one_shot = 0;
   ADJ(pCVar5)->block_virtual_director_flag = 0;
   ADJ(pCVar5)->render_in_background_when_not_moving_flag = 0;

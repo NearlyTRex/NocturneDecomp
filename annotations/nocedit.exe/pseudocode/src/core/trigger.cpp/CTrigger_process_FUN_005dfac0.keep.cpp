@@ -37,7 +37,7 @@ void __cdecl core_trigger_cpp_CTrigger_process_FUN_005dfac0(CTrigger *this_ptr,f
 
   local_34 = 0;
   this_ptr->triggering_actor = (CDemonActor *)0x0;
-  switch(this_ptr->hero_triggers_me) {
+  switch(this_ptr->trigger_cause) {
   case 0:
     iVar12 = core_hero_cpp_isAnyHeroWithinRadius_FUN_004f2220
                        (&(this_ptr->base).location.position,this_ptr->test_radius);
@@ -183,19 +183,19 @@ LAB_005dfb52:
     }
   }
   switch(this_ptr->event_type) {
-  case TRIGGER_EVENT_SINGLE:
-  case TRIGGER_EVENT_REPEAT:
+  case TRIGGER_EVENT_MOMENTARY:
+  case TRIGGER_EVENT_ONE_SHOT:
     if (local_34 == 0) {
-      if (this_ptr->event_type == TRIGGER_EVENT_SINGLE) {
+      if (this_ptr->event_type == TRIGGER_EVENT_MOMENTARY) {
         this_ptr->trigger_state = 0;
       }
       goto switchD_005dfb63_default;
     }
     break;
-  case TRIGGER_EVENT_ON_ENTER:
+  case TRIGGER_EVENT_RISING_EDGE:
     if ((this_ptr->prev_triggered != 0) || (local_34 == 0)) goto LAB_005e0053;
     break;
-  case TRIGGER_EVENT_ON_EXIT:
+  case TRIGGER_EVENT_FALLING_EDGE:
     if ((this_ptr->prev_triggered == 1) && (local_34 == 0)) {
       this_ptr->trigger_state = 1;
       goto switchD_005dfb63_default;

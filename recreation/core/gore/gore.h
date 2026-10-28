@@ -9,6 +9,9 @@ namespace nocturne::core {
 
 class CGore {
 public:
+    // deferred: the game's gore and its blood, splat, pool and footstep arrays, with this
+    //   constructor
+    // nocedit 0x004eb8c0
     CGore();
 
     void reset();
@@ -16,18 +19,18 @@ public:
     void renderDecals(int render_all, int expire_flag);
     void process();
     void spawnBloodParticles(common::CVector3f *position, common::CVector3f *velocity,
-                             int blood_type);
-    void createGroundBloodSplat(common::CVector3f *position, int blood_type);
+                             EBloodType blood_type);
+    void createGroundBloodSplat(common::CVector3f *position, EBloodType blood_type);
     void createWallBloodSplat(common::CVector3f *position, common::CVector3f *normal,
-                              int blood_type);
+                              EBloodType blood_type);
     void spawnBloodBurst(common::CVector3f *position, common::CVector3f *direction, int count,
-                         int blood_type);
-    void createBloodPool(common::CVector3f *position, int blood_type);
+                         EBloodType blood_type);
+    void createBloodPool(common::CVector3f *position, EBloodType blood_type);
     void loadAssets();
     void spawnFliesOnActor(CDemonActor *actor, int gather_count, float spawn_rate,
                            common::CVector3f *box_size);
     void createFootstep(common::CVector3f *position, common::UOrientationVector *orientation,
-                        int surface_type, int alpha, int blood_type);
+                        int surface_type, int alpha, EBloodType blood_type);
     int findBloodTypeAtPosition(common::CVector3f *position, int *out_blood_type);
     int load(std::FILE *file_handle);
     int save(std::FILE *file_handle);

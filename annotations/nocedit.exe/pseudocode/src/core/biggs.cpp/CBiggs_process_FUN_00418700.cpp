@@ -6,6 +6,8 @@
 
 #include "nocturne.h"
 
+/* WARNING: Unable to use type for symbol uVar4 */
+
 void __cdecl core_biggs_cpp_CBiggs_process_FUN_00418700(CBiggs *this_ptr,float delta_time)
 
 {
@@ -24,7 +26,7 @@ void __cdecl core_biggs_cpp_CBiggs_process_FUN_00418700(CBiggs *this_ptr,float d
   CDeformableModelInstance *this_ptr_00;
   CVector3f *pCVar2;
   CVector3f *pCVar1;
-  uint uVar4;
+  EWalkState uVar4;
   float fVar3;
   float fVar5;
   
@@ -52,9 +54,9 @@ void __cdecl core_biggs_cpp_CBiggs_process_FUN_00418700(CBiggs *this_ptr,float d
   iVar2 = core_charactr_cpp_CCharacter_processWalking_FUN_0042ca70
                     ((CCharacter *)this_ptr,delta_time);
   if (iVar2 == 0) goto LAB_004187db;
-  uVar4 = (this_ptr->base).base.is_walking;
+  uVar4 = (this_ptr->base).base.walk_state;
   if (uVar4 < 2) {
-    if (uVar4 == 1) {
+    if (uVar4 == WALK_STATE_WALKING) {
 LAB_004187b0:
       iVar2 = 1;
     }
@@ -66,8 +68,8 @@ LAB_00418994:
               (&(this_ptr->base).base.model.base,iVar2,1);
   }
   else {
-    if (uVar4 < 3) goto LAB_004187b0;
-    if (uVar4 != 3) goto LAB_00418994;
+    if (uVar4 < WALK_STATE_NO_PATH) goto LAB_004187b0;
+    if (uVar4 != WALK_STATE_NO_PATH) goto LAB_00418994;
     core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00(&this_ptr_01->base,0,1);
     engine_console_cpp_CConsole_printf_FUN_00441890
               (g_CConsolePtr,"%s confused while walking to scriptDest!\n",this_ptr);

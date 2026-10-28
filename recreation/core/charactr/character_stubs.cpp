@@ -61,10 +61,6 @@ void CCharacter::calculateChecksum(std::uint32_t * /*out_crc*/) {
     notPorted("calculateChecksum");
 }
 
-void CCharacter::archive(CActorArchive & /*actor_archive*/) {
-    notPorted("archive");
-}
-
 void CCharacter::applyDamage(int /*damage_type*/, float /*damage_amount*/) {
     notPorted("applyDamage");
 }
@@ -92,10 +88,6 @@ int CCharacter::getGrabbed(CDemonActor * /*grabber*/, int /*grab_type*/) {
 
 void CCharacter::releaseFromGrab() {
     notPorted("releaseFromGrab");
-}
-
-CDemonActor *CCharacter::getGrabber() {
-    notPorted("getGrabber");
 }
 
 void CCharacter::releaseVictim() {

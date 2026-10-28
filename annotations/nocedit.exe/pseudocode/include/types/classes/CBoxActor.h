@@ -8,6 +8,7 @@
 #include "types/classes/CDemonActor.h"
 #include "types/classes/CKeyFramedModelInstance.h"
 #include "types/classes/CVector3f.h"
+#include "types/enums/EBoxActorPickupType.h"
 #include "types/enums/EGroundType.h"
 
 // Structure: CBoxActor
@@ -22,7 +23,7 @@ typedef struct CBoxActor {
     CVector3f rpm; // 0x300
     float fps; // 0x30c
     float anim_frame; // 0x310
-    int pickup_type; // 0x314
+    EBoxActorPickupType pickup_type; // 0x314
     struct CDemonActor* carrier_actor; // 0x318
     int can_be_pushed; // 0x31c
     struct CDemonActor* pushed_by_actor; // 0x320

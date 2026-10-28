@@ -1,3 +1,4 @@
+#include "core/actor/demonactortype.h"
 #include "core/stairs/stairs.h"
 
 #include <gtest/gtest.h>
@@ -43,6 +44,13 @@ TEST(CStairs, PublicInterface) {
                                  const CDemonActorType &(CStairs::*)() const>);
     static_assert(std::is_same_v<decltype(&CStairs::archive), void (CStairs::*)(CActorArchive &)>);
     static_assert(std::is_same_v<decltype(&CStairs::buildCollision), void (CStairs::*)()>);
+}
+
+TEST(CStairs, ItsRecordIsVersion2UnderCDemonActor) {
+    EXPECT_EQ(CStairs::kType.class_name, "CStairs");
+    EXPECT_EQ(CStairs::kType.parent_type, &CDemonActor::kType);
+    EXPECT_EQ(CStairs::kType.factory_func, nullptr);
+    EXPECT_EQ(CStairs::kType.latest_version, 2);
 }
 
 } // namespace

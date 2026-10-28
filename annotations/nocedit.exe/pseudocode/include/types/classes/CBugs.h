@@ -5,6 +5,7 @@
 // Forward declarations
 struct CDeformableModelInstance;
 struct CDemonActor;
+struct CKeyFramedModel;
 
 // Dependencies
 #include "system/basetypes.h"
@@ -12,6 +13,7 @@ struct CDemonActor;
 #include "types/classes/CEnemy.h"
 #include "types/classes/CKeyFramedModelInstance.h"
 #include "types/classes/CMatrix3x4f.h"
+#include "types/classes/CVector3f.h"
 #include "types/enums/EBugsState.h"
 #include "types/structs/SBug.h"
 #include "types/structs/SSwarmVertex.h"

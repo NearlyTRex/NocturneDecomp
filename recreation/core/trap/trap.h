@@ -8,6 +8,8 @@ namespace nocturne::core {
 
 class CTrap : public CDemonActor {
 public:
+    static const CDemonActorType kType;
+
     CTrap();
     ~CTrap() override;
 

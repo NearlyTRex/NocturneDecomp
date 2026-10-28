@@ -11,7 +11,7 @@ void __cdecl staticInit(void);
 
 // Original: core_bodypart.cpp_createBodyPart_FUN_00418e10
 // Address: 00418e10
-CBodyPart * __cdecl createBodyPart(CVector3f *position,UOrientationVector *orientation,CVector3f *initial_velocity,CDemonActor *scale_source,int dont_use_normals,int is_transparent,int blood_type);
+CBodyPart * __cdecl createBodyPart(CVector3f *position,UOrientationVector *orientation,CVector3f *initial_velocity,CDemonActor *scale_source,int dont_use_normals,int is_transparent,EBloodType blood_type);
 
 // Original: core_bodypart.cpp_factoryFuncBodyPart_FUN_00418fd0
 // Address: 00418fd0

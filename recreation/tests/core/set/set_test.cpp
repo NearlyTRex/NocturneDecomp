@@ -17,7 +17,6 @@ using common::CVector3i;
 constexpr int kOne = 0x10000;
 
 TEST(CoreSetFunctions, PublicInterface) {
-    static_assert(std::is_same_v<decltype(&staticInit), void (*)()>);
     static_assert(std::is_same_v<decltype(&qsortByDisplayListEntry),
                                  int (*)(SDisplayListSortEntry *, SDisplayListSortEntry *)>);
     static_assert(std::is_same_v<decltype(&transformToWorldSpace),

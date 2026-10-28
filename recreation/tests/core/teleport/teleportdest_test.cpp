@@ -1,3 +1,4 @@
+#include "core/actor/demonactortype.h"
 #include "core/teleport/teleportdest.h"
 
 #include <gtest/gtest.h>
@@ -30,6 +31,13 @@ TEST(CTeleportDest, PublicInterface) {
                                  ECollisionType (CTeleportDest::*)(SCollisionInfo *)>);
     static_assert(std::is_same_v<decltype(&CTeleportDest::getActorType),
                                  const CDemonActorType &(CTeleportDest::*)() const>);
+}
+
+TEST(CTeleportDest, ItsRecordIsVersion1UnderCDemonActor) {
+    EXPECT_EQ(CTeleportDest::kType.class_name, "CTeleportDest");
+    EXPECT_EQ(CTeleportDest::kType.parent_type, &CDemonActor::kType);
+    EXPECT_EQ(CTeleportDest::kType.factory_func, nullptr);
+    EXPECT_EQ(CTeleportDest::kType.latest_version, 1);
 }
 
 } // namespace

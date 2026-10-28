@@ -141,10 +141,9 @@ bool CSdlFileSystem::makeDirectory(std::string_view path) {
 
 bool CSdlFileSystem::setModifiedTime(std::string_view path, std::time_t modified) {
     std::error_code error;
-    std::filesystem::last_write_time(resolve(path),
-                                     std::chrono::clock_cast<std::chrono::file_clock>(
-                                         std::chrono::system_clock::from_time_t(modified)),
-                                     error);
+    std::filesystem::last_write_time(
+        resolve(path),
+        std::chrono::file_clock::from_sys(std::chrono::system_clock::from_time_t(modified)), error);
     return !error;
 }
 

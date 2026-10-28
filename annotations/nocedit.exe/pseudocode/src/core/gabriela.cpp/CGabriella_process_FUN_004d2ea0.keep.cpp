@@ -280,7 +280,7 @@ LAB_004d3af9:
         }
         goto LAB_004d321d;
       }
-      uVar9 = (this_ptr->base).base.is_walking;
+      uVar9 = (this_ptr->base).base.walk_state;
       if (uVar9 < 2) {
         if (uVar9 != 1) goto LAB_004d320e;
         iVar17 = 1;
@@ -650,6 +650,9 @@ LAB_004d344b:
                           ((CDemonActor *)this_ptr,&local_154,&local_190);
       if (0.0 < pCVar16->z) {
         core_boxactor_cpp_CBoxActor_resolveRayPush_FUN_00422390(pCVar14,&local_184,&local_190);
+#if !NOCTURNE_AUTHENTIC_PUSH_SOUND
+        nocturne_box_push_sound(pCVar14);
+#endif
       }
     }
   }

@@ -44,7 +44,7 @@ window or find the game data. The same line goes to the console at session start
 shipped `game.cpp built on` banner, so it is in every `nocturne_debug.log` anyone sends.
 
 The menu corner carries `git describe`, right-aligned under the copyright line, behind
-`NOCTURNE_AUTHENTIC_MENU_VERSION` — see [authenticity-flags.md](authenticity-flags.md).
+`NOCTURNE_AUTHENTIC_MENU` — see [authenticity-flags.md](authenticity-flags.md).
 
 ## The vanilla lane
 
@@ -131,8 +131,9 @@ on the first finding, which for a player is a crash.
 
 ## What an archive holds
 
-The executable, the shared libraries it needs, `LICENSE`, `gamecontrollerdb.txt` and its
-licence, `README.md`, and a `VERSION.txt` that is the binary's own `--version` output — so an
+The executable, the shared libraries it needs, `LICENSE`, `THIRD_PARTY_NOTICES.txt` (the
+licences of the upscaling shaders compiled in), `gamecontrollerdb.txt` and its licence,
+`README.md`, and a `VERSION.txt` that is the binary's own `--version` output — so an
 unpacked directory can still say what it is.
 
 **No game data.** The PODs and the original executables are not in the repository and are not

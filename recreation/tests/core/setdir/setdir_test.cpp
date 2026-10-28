@@ -10,7 +10,6 @@ namespace nocturne::core {
 namespace {
 
 TEST(CoreSetdirFunctions, PublicInterface) {
-    static_assert(std::is_same_v<decltype(&staticInit), void (*)()>);
     static_assert(
         std::is_same_v<decltype(&testOBBIntersection), bool (*)(const SVDBox &, const SVDBox &)>);
 }
@@ -22,14 +21,16 @@ SVDBox makeBox(const common::CVector3f &position, const common::CVector3f &exten
     return box;
 }
 
-const SVDBox kUnitBox = makeBox({}, {.x = 1, .y = 1, .z = 1});
+SVDBox unitBox() {
+    return makeBox({}, {.x = 1, .y = 1, .z = 1});
+}
 
 TEST(CoreSetdirFunctions, ABoxWithACornerInsideTheOtherIntersects) {
-    EXPECT_TRUE(testOBBIntersection(makeBox({.x = 1.5F}, {.x = 1, .y = 1, .z = 1}), kUnitBox));
+    EXPECT_TRUE(testOBBIntersection(makeBox({.x = 1.5F}, {.x = 1, .y = 1, .z = 1}), unitBox()));
 }
 
 TEST(CoreSetdirFunctions, ABarWhoseEdgesCrossTheOtherBoxIntersects) {
-    EXPECT_TRUE(testOBBIntersection(makeBox({}, {.x = 5, .y = 0.1F, .z = 0.1F}), kUnitBox));
+    EXPECT_TRUE(testOBBIntersection(makeBox({}, {.x = 5, .y = 0.1F, .z = 0.1F}), unitBox()));
 }
 
 TEST(CoreSetdirFunctions, BoxesApartOnAnyAxisDoNotIntersect) {
@@ -37,26 +38,26 @@ TEST(CoreSetdirFunctions, BoxesApartOnAnyAxisDoNotIntersect) {
     for (const common::CVector3f position :
          {common::CVector3f{.x = -3}, common::CVector3f{.x = 3}, common::CVector3f{.y = -3},
           common::CVector3f{.y = 3}, common::CVector3f{.z = -3}, common::CVector3f{.z = 3}}) {
-        EXPECT_FALSE(testOBBIntersection(makeBox(position, extents), kUnitBox));
+        EXPECT_FALSE(testOBBIntersection(makeBox(position, extents), unitBox()));
     }
 }
 
 TEST(CoreSetdirFunctions, OneCallDoesNotSeeTheSecondBoxInsideTheFirst) {
     const SVDBox outer = makeBox({}, {.x = 10, .y = 10, .z = 10});
-    EXPECT_FALSE(testOBBIntersection(outer, kUnitBox));
-    EXPECT_TRUE(testOBBIntersection(kUnitBox, outer));
+    EXPECT_FALSE(testOBBIntersection(outer, unitBox()));
+    EXPECT_TRUE(testOBBIntersection(unitBox(), outer));
 }
 
 TEST(CoreSetdirFunctions, TheFirstBoxsTurnSwingsItsCornersOut) {
     const common::CVector3f extents{.x = 1, .y = 1, .z = 1};
-    EXPECT_FALSE(testOBBIntersection(makeBox({.x = 2.3F}, extents), kUnitBox));
+    EXPECT_FALSE(testOBBIntersection(makeBox({.x = 2.3F}, extents), unitBox()));
     EXPECT_TRUE(testOBBIntersection(makeBox({.x = 2.3F}, extents, std::numbers::pi_v<float> / 4),
-                                    kUnitBox));
+                                    unitBox()));
 }
 
 TEST(CoreSetdirFunctions, TheSecondBoxsTurnIsTheFrameCornersAreTestedIn) {
     const SVDBox speck = makeBox({.x = 1.2F}, {.x = 0.05F, .y = 0.05F, .z = 0.05F});
-    EXPECT_FALSE(testOBBIntersection(speck, kUnitBox));
+    EXPECT_FALSE(testOBBIntersection(speck, unitBox()));
     EXPECT_TRUE(testOBBIntersection(
         speck, makeBox({}, {.x = 1, .y = 1, .z = 1}, std::numbers::pi_v<float> / 4)));
 }

@@ -1,3 +1,4 @@
+#include "core/actor/demonactortype.h"
 #include "core/turret/turret.h"
 
 #include <gtest/gtest.h>
@@ -45,6 +46,13 @@ TEST(CTurret, PublicInterface) {
                                  common::CVector3f *(CTurret::*)(common::CVector3f *)>);
     static_assert(std::is_same_v<decltype(&CTurret::fire), int (CTurret::*)()>);
     static_assert(std::is_same_v<decltype(&CTurret::getDamage), float (CTurret::*)()>);
+}
+
+TEST(CTurret, ItsRecordIsVersion2UnderCWeapon) {
+    EXPECT_EQ(CTurret::kType.class_name, "CTurret");
+    EXPECT_EQ(CTurret::kType.parent_type, &CWeapon::kType);
+    EXPECT_EQ(CTurret::kType.factory_func, nullptr);
+    EXPECT_EQ(CTurret::kType.latest_version, 2);
 }
 
 } // namespace

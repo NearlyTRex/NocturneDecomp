@@ -134,19 +134,19 @@ void __cdecl core_inv_cpp_CInventory_renderAllItems_FUN_00500690(CInventory *thi
       iVar3 = core_actor_cpp_isOfClass_FUN_0040c6d0
                         (&this_ptr->selected_weapon->base,"CGun");
       if (iVar3 != 0) {
-        if (this_ptr->selected_weapon->ammo_type == 0) {
+        if (this_ptr->selected_weapon->ammo_type == AMMO_TYPE_GENERIC) {
           this_ptr_00 = &g_BulletIconBitmap;
         }
-        if (this_ptr->selected_weapon->ammo_type == 3) {
+        if (this_ptr->selected_weapon->ammo_type == AMMO_TYPE_SILVER) {
           this_ptr_00 = &g_LithiumIconBitmap;
         }
-        if (this_ptr->selected_weapon->ammo_type == 7) {
+        if (this_ptr->selected_weapon->ammo_type == AMMO_TYPE_LITHIUM) {
           this_ptr_00 = &g_MercuryBulletIconBitmap;
         }
-        if (this_ptr->selected_weapon->ammo_type == 8) {
+        if (this_ptr->selected_weapon->ammo_type == AMMO_TYPE_MERCURY) {
           this_ptr_00 = &g_SilverBulletIconBitmap;
         }
-        if (this_ptr->selected_weapon->ammo_type == 1) {
+        if (this_ptr->selected_weapon->ammo_type == AMMO_TYPE_HOLY) {
           this_ptr_00 = &g_HolyBulletIconBitmap;
         }
       }

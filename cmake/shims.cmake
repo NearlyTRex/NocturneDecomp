@@ -28,6 +28,15 @@ foreach(_exclude IN LISTS NOCTURNE_PLATFORM_SHIM_EXCLUDE)
 endforeach()
 list(APPEND _shim_sources ${NOCTURNE_PLATFORM_SOURCES})
 set_source_files_properties(${_shim_sources} PROPERTIES LANGUAGE CXX)
+# The pixel conversion, upload and draw paths every frame goes through, at -O2
+# beside the game's own hot renderer files (game_modules.cmake), with the same
+# -fno-strict-aliasing. The rest stays at the build's own level.
+foreach(_src IN LISTS _shim_sources)
+    if(_src MATCHES "/shims/(gl|renderer)/[^/]+\\.cpp$")
+        set_source_files_properties("${_src}" PROPERTIES
+            COMPILE_OPTIONS "-O2;-fno-strict-aliasing")
+    endif()
+endforeach()
 
 include("${CMAKE_SOURCE_DIR}/cmake/window_icon.cmake")
 

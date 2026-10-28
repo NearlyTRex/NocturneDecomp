@@ -1,3 +1,4 @@
+#include "core/actor/demonactortype.h"
 #include "core/lever/lever.h"
 
 #include <gtest/gtest.h>
@@ -40,6 +41,13 @@ TEST(CLever, PublicInterface) {
                                  common::CVector3f *(CLever::*)(common::CVector3f *)>);
     static_assert(
         std::is_same_v<decltype(&CLever::isAccessibleFrom), int (CLever::*)(common::CVector3f *)>);
+}
+
+TEST(CLever, ItsRecordIsVersion8UnderCDemonActor) {
+    EXPECT_EQ(CLever::kType.class_name, "CLever");
+    EXPECT_EQ(CLever::kType.parent_type, &CDemonActor::kType);
+    EXPECT_EQ(CLever::kType.factory_func, nullptr);
+    EXPECT_EQ(CLever::kType.latest_version, 8);
 }
 
 } // namespace

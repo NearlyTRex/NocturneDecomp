@@ -1,3 +1,4 @@
+#include "core/actor/demonactortype.h"
 #include "core/zombie/zombie.h"
 
 #include <gtest/gtest.h>
@@ -45,6 +46,13 @@ TEST(CZombie, PublicInterface) {
         std::is_same_v<decltype(&CZombie::canBeAttracted), int (CZombie::*)(common::CVector3f *)>);
     static_assert(std::is_same_v<decltype(&CZombie::getCarryObjToBodyXForm),
                                  common::CMatrix3x4f *(CZombie::*)(int, common::CMatrix3x4f *)>);
+}
+
+TEST(CZombie, ItsRecordIsVersion11UnderCEnemy) {
+    EXPECT_EQ(CZombie::kType.class_name, "CZombie");
+    EXPECT_EQ(CZombie::kType.parent_type, &CEnemy::kType);
+    EXPECT_EQ(CZombie::kType.factory_func, nullptr);
+    EXPECT_EQ(CZombie::kType.latest_version, 11);
 }
 
 } // namespace

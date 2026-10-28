@@ -1,3 +1,4 @@
+#include "core/actor/demonactortype.h"
 #include "core/npc/npc.h"
 
 #include <gtest/gtest.h>
@@ -33,6 +34,13 @@ TEST(CNPC, PublicInterface) {
     static_assert(std::is_same_v<decltype(&CNPC::archive), void (CNPC::*)(CActorArchive &)>);
     static_assert(std::is_same_v<decltype(&CNPC::isInvulnerable), int (CNPC::*)()>);
     static_assert(std::is_same_v<decltype(&CNPC::processDamage), void (CNPC::*)(SDamageInfo *)>);
+}
+
+TEST(CNPC, ItsRecordIsVersion4UnderCCharacter) {
+    EXPECT_EQ(CNPC::kType.class_name, "CNPC");
+    EXPECT_EQ(CNPC::kType.parent_type, &CCharacter::kType);
+    EXPECT_EQ(CNPC::kType.factory_func, nullptr);
+    EXPECT_EQ(CNPC::kType.latest_version, 4);
 }
 
 } // namespace

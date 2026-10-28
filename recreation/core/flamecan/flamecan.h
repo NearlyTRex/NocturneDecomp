@@ -8,6 +8,8 @@ namespace nocturne::core {
 
 class CFlameCan : public CDemonActor {
 public:
+    static const CDemonActorType kType;
+
     CFlameCan();
     ~CFlameCan() override;
 

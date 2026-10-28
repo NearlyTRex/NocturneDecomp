@@ -3,11 +3,14 @@
 #pragma once
 
 // Forward declarations
+struct CBodyPart;
 struct CDemonActor;
 
 // Dependencies
 #include "system/basetypes.h"
 #include "types/classes/CEnemy.h"
+#include "types/classes/CQuaternion4f.h"
+#include "types/classes/CVector3f.h"
 #include "types/structs/SBoneGuyBox.h"
 
 // Structure: CBoneGuy

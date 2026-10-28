@@ -48,7 +48,8 @@ TEST_F(CMatrixTransformTest, APopPutsBackASetRelativeOrigin) {
 }
 
 TEST_F(CMatrixTransformTest, WithoutATurnOnlyTheOriginMoves) {
-    matrix_.setTransformMatrix(fixedRows({1, 2, 3}, {4, 5, 6}, {7, 8, 9}));
+    matrix_.setTransformMatrix(
+        fixedRows({.x = 1, .y = 2, .z = 3}, {.x = 4, .y = 5, .z = 6}, {.x = 7, .y = 8, .z = 9}));
     light_.setLightDirection({.x = kOne});
     matrix_.matrixPushAndTransform(0, 0, 0, 5, -6, 7);
     EXPECT_EQ(matrix_.getRelativeOrigin(), (CVector3i{.x = -5, .y = 6, .z = -7}));
@@ -57,7 +58,8 @@ TEST_F(CMatrixTransformTest, WithoutATurnOnlyTheOriginMoves) {
 }
 
 TEST_F(CMatrixTransformTest, ATurnRotatesTheTransformTheLightAndTheMovedOrigin) {
-    matrix_.setTransformMatrix(fixedRows({1, 2, 3}, {4, 5, 6}, {7, 8, 9}));
+    matrix_.setTransformMatrix(
+        fixedRows({.x = 1, .y = 2, .z = 3}, {.x = 4, .y = 5, .z = 6}, {.x = 7, .y = 8, .z = 9}));
     light_.setLightDirection({.x = kOne, .y = 2 * kOne, .z = 3 * kOne});
     matrix_.matrixPushAndTransform(0, 0, kQuarterTurn, -kOne, 0, 0);
     EXPECT_EQ(matrix_.getTransformMatrix(), fixedRows({-7, -8, -9}, {4, 5, 6}, {1, 2, 3}));
@@ -72,7 +74,8 @@ TEST_F(CMatrixTransformTest, TheSecondAngleAloneAlsoTurns) {
 }
 
 TEST_F(CMatrixTransformTest, PopPutsBackWhatThePushSaved) {
-    matrix_.setTransformMatrix(fixedRows({1, 0, 0}, {0, 1, 0}, {0, 0, 1}));
+    matrix_.setTransformMatrix(
+        fixedRows({.x = 1, .y = 0, .z = 0}, {.x = 0, .y = 1, .z = 0}, {.x = 0, .y = 0, .z = 1}));
     light_.setLightDirection({.y = kOne});
     matrix_.matrixPush();
     matrix_.matrixPushAndTransform(kQuarterTurn, kQuarterTurn, kQuarterTurn, 1, 2, 3);
@@ -97,7 +100,8 @@ TEST_F(CMatrixTransformTest, PoppingWithNothingSavedIsFatal) {
 }
 
 TEST_F(CMatrixTransformTest, TheInverseOfARotationIsItsTranspose) {
-    matrix_.setTransformMatrix(fixedRows({0, 0, -1}, {0, 1, 0}, {1, 0, 0}));
+    matrix_.setTransformMatrix(
+        fixedRows({.x = 0, .y = 0, .z = -1}, {.x = 0, .y = 1, .z = 0}, {.x = 1, .y = 0, .z = 0}));
     matrix_.invertTransformMatrix();
     EXPECT_EQ(matrix_.getInverseMatrix(), fixedRows({0, 0, 1}, {0, 1, 0}, {-1, 0, 0}));
 }

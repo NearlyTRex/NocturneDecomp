@@ -11,7 +11,7 @@ void __cdecl core_trigger_cpp_CTrigger_applyDamage_FUN_005485e0(CTrigger *this_p
 {
   float fVar1;
   
-  if ((this_ptr->hero_triggers_me == 7) && (this_ptr->damage_cooldown <= 0.0)) {
+  if ((this_ptr->trigger_cause == TRIGGER_CAUSE_DAMAGE) && (this_ptr->damage_cooldown <= 0.0)) {
     fVar1 = this_ptr->hit_points - hit_points;
     this_ptr->hit_points = fVar1;
     if (fVar1 < 0.0) {

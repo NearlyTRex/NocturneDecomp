@@ -8,6 +8,8 @@ namespace nocturne::core {
 
 class CLarva : public CEnemy {
 public:
+    static const CDemonActorType kType;
+
     CLarva();
     ~CLarva() override;
 

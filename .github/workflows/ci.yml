@@ -29,7 +29,7 @@ jobs:
   # preset also runs clang-tidy over each shim as it compiles.
   build-linux:
     name: Build (${{ matrix.preset }})
-    uses: NearlyTRex/Workflows/.github/workflows/cpp-build.yml@32d5879909bb8344868510909ec6476ed6d49afd # v0.2.23
+    uses: NearlyTRex/Workflows/.github/workflows/cpp-build.yml@6e8e0c0f27714a5cba8022c834c6e2c3c71f870d # v0.2.24
     permissions:
       contents: read
     strategy:
@@ -97,7 +97,7 @@ jobs:
   # Apple clang's cross build works. Xcode's clang and CMake are on the runner.
   build-macos:
     name: Build (${{ matrix.preset }})
-    uses: NearlyTRex/Workflows/.github/workflows/cpp-build.yml@32d5879909bb8344868510909ec6476ed6d49afd # v0.2.23
+    uses: NearlyTRex/Workflows/.github/workflows/cpp-build.yml@6e8e0c0f27714a5cba8022c834c6e2c3c71f870d # v0.2.24
     permissions:
       contents: read
     strategy:
@@ -127,7 +127,7 @@ jobs:
   # it up on Linux and macOS runners only.
   build-windows:
     name: Build (${{ matrix.preset }})
-    uses: NearlyTRex/Workflows/.github/workflows/cpp-build.yml@32d5879909bb8344868510909ec6476ed6d49afd # v0.2.23
+    uses: NearlyTRex/Workflows/.github/workflows/cpp-build.yml@6e8e0c0f27714a5cba8022c834c6e2c3c71f870d # v0.2.24
     permissions:
       contents: read
     strategy:
@@ -164,7 +164,7 @@ jobs:
   # loader and heap are not Windows'.
   build-windows-tests:
     name: Build (exe-windows-x86_64 tests)
-    uses: NearlyTRex/Workflows/.github/workflows/cpp-build.yml@32d5879909bb8344868510909ec6476ed6d49afd # v0.2.23
+    uses: NearlyTRex/Workflows/.github/workflows/cpp-build.yml@6e8e0c0f27714a5cba8022c834c6e2c3c71f870d # v0.2.24
     permissions:
       contents: read
     with:
@@ -192,7 +192,7 @@ jobs:
   windows-tests:
     name: Windows tests (exe-windows-x86_64)
     needs: build-windows-tests
-    uses: NearlyTRex/Workflows/.github/workflows/windows-test.yml@32d5879909bb8344868510909ec6476ed6d49afd # v0.2.23
+    uses: NearlyTRex/Workflows/.github/workflows/windows-test.yml@6e8e0c0f27714a5cba8022c834c6e2c3c71f870d # v0.2.24
     permissions:
       contents: read
     with:
@@ -201,7 +201,7 @@ jobs:
   windows-tests-msvc:
     name: Windows tests (exe-windows-msvc)
     needs: build-windows
-    uses: NearlyTRex/Workflows/.github/workflows/windows-test.yml@32d5879909bb8344868510909ec6476ed6d49afd # v0.2.23
+    uses: NearlyTRex/Workflows/.github/workflows/windows-test.yml@6e8e0c0f27714a5cba8022c834c6e2c3c71f870d # v0.2.24
     permissions:
       contents: read
     with:
@@ -214,21 +214,24 @@ jobs:
   # a row of timings on the run's summary page.
   recreation:
     name: Recreation
-    uses: NearlyTRex/Workflows/.github/workflows/cpp-build.yml@32d5879909bb8344868510909ec6476ed6d49afd # v0.2.23
+    uses: NearlyTRex/Workflows/.github/workflows/cpp-build.yml@6e8e0c0f27714a5cba8022c834c6e2c3c71f870d # v0.2.24
     permissions:
       contents: read
     with:
       # SDL3 needs the native lane's X11/Wayland/audio headers plus XTest.
       apt-packages: >-
-        cmake clang clang-format llvm ninja-build pkg-config
+        cmake ninja-build pkg-config
         libx11-dev libxext-dev libxcursor-dev libxi-dev libxfixes-dev
         libxrandr-dev libxss-dev libxtst-dev libwayland-dev libxkbcommon-dev
         wayland-protocols libegl-dev libdecor-0-dev libpulse-dev
         libasound2-dev
+      # The release the presets name: clang, libc++, clang-format and llvm-cov.
+      llvm-version: "23"
       cache-paths: build/recreation/ci/_deps
-      # The pinned dependency versions live in both.
+      # The pinned dependency versions live in the CMake files, the compiler in the presets.
       cache-key-files: |
         recreation/CMakeLists.txt
+        recreation/CMakePresets.json
         recreation/cmake/*.cmake
         cmake/ffmpeg.cmake
       # About 950 translation units, rebuilt with coverage flags on every run.
@@ -250,19 +253,22 @@ jobs:
   # carries those results from run to run.
   recreation-tidy:
     name: Recreation tidy
-    uses: NearlyTRex/Workflows/.github/workflows/cpp-build.yml@32d5879909bb8344868510909ec6476ed6d49afd # v0.2.23
+    uses: NearlyTRex/Workflows/.github/workflows/cpp-build.yml@6e8e0c0f27714a5cba8022c834c6e2c3c71f870d # v0.2.24
     permissions:
       contents: read
     with:
       apt-packages: >-
-        cmake clang clang-tidy llvm ninja-build pkg-config python3
+        cmake ninja-build pkg-config python3
         libx11-dev libxext-dev libxcursor-dev libxi-dev libxfixes-dev
         libxrandr-dev libxss-dev libxtst-dev libwayland-dev libxkbcommon-dev
         wayland-protocols libegl-dev libdecor-0-dev libpulse-dev
         libasound2-dev
+      # The release the presets name, whose clang-tidy the checks are tuned to.
+      llvm-version: "23"
       cache-paths: build/recreation/ci/_deps
       cache-key-files: |
         recreation/CMakeLists.txt
+        recreation/CMakePresets.json
         recreation/cmake/*.cmake
         cmake/ffmpeg.cmake
       # FFmpeg is the only compile, and only on a cold cache.
@@ -280,7 +286,7 @@ jobs:
   # omit list in pyproject.toml; everything else is held to every line and branch.
   python:
     name: Python
-    uses: NearlyTRex/Workflows/.github/workflows/python-ci.yml@32d5879909bb8344868510909ec6476ed6d49afd # v0.2.23
+    uses: NearlyTRex/Workflows/.github/workflows/python-ci.yml@6e8e0c0f27714a5cba8022c834c6e2c3c71f870d # v0.2.24
     permissions:
       contents: read
     with:
@@ -295,7 +301,7 @@ jobs:
 
   lint:
     name: Lint
-    uses: NearlyTRex/Workflows/.github/workflows/lint.yml@32d5879909bb8344868510909ec6476ed6d49afd # v0.2.23
+    uses: NearlyTRex/Workflows/.github/workflows/lint.yml@6e8e0c0f27714a5cba8022c834c6e2c3c71f870d # v0.2.24
     permissions:
       contents: read
     with:

@@ -12,6 +12,7 @@
 
 #include <algorithm>
 #include <format>
+#include <utility>
 
 namespace nocturne::engine {
 namespace {
@@ -108,7 +109,7 @@ int CBitFont::calculateCharacterHeight(std::span<const std::uint8_t> char_bitmap
             static_cast<std::size_t>(row) * static_cast<std::size_t>(bitmap_stride),
             static_cast<std::size_t>(char_width));
         if (std::ranges::any_of(pixels, [this](std::uint8_t pixel) {
-                return pixel != static_cast<std::uint32_t>(load_flags_);
+                return std::cmp_not_equal(pixel, load_flags_);
             })) {
             height = row + 1;
         }
@@ -124,7 +125,7 @@ void CBitFont::parseCharacterMetrics(std::size_t bitmap, int bitmap_width, int b
                                      int first_char) {
     const SSheet &sheet = sheets_[bitmap];
     const auto marker_at = std::ranges::find_if(sheet.pixels, [this](std::uint8_t pixel) {
-        return pixel != static_cast<std::uint32_t>(load_flags_);
+        return std::cmp_not_equal(pixel, load_flags_);
     });
     if (marker_at == sheet.pixels.end()) {
         common::displayErrorAndQuit(

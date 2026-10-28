@@ -46,9 +46,9 @@ void CSfxVoice::setGains(std::span<const float> channel_volumes) {
     if (louder <= 0.0F) {
         ma_sound_set_pan(&sound_, 0.0F);
     } else if (right < left) {
-        ma_sound_set_pan(&sound_, right / left - 1.0F);
+        ma_sound_set_pan(&sound_, (right / left) - 1.0F);
     } else {
-        ma_sound_set_pan(&sound_, 1.0F - left / right);
+        ma_sound_set_pan(&sound_, 1.0F - (left / right));
     }
 }
 

@@ -61,6 +61,9 @@ void CSound::reset() {
 
 // The original also pointed the listener's right at the origin, which only the DirectSound
 // device read. The music plays without a position.
+// deferred: giving the attract movies the splash music's length from getSoundDuration, a length
+//   of 0 or less disarming them (the decomp's attract.h nocturne_attract_set_music_duration),
+//   with the attract movies and CSound::getSoundDuration
 // nocedit 0x005b3830
 void CSound::configure() {
     capChannelVolume(sound_main_, kMusicChannel, kMenuMusicVolume);

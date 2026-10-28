@@ -47,7 +47,6 @@
 // | `NOCTURNE_AUTHENTIC_FORMAT_STRINGS` | 1 | host | prints pointers at their native width on 64-bit |
 // | `NOCTURNE_AUTHENTIC_WINDOWS` | 0 | host | keeps running unfocused; the window stays put |
 // | `NOCTURNE_AUTHENTIC_UI_CURSOR_WARP` | 0 | host | no SetCursorPos warping; the cursor moves freely |
-// | `NOCTURNE_AUTHENTIC_APP_QUIT` | 0 | host | where the system ends the app, the main menu offers no QUIT |
 // | `NOCTURNE_AUTHENTIC_SOUND_DEVICE` | 0 | host | the Device line names the host audio API SDL opened |
 // | `NOCTURNE_AUTHENTIC_RENDERER_DLL` | 0 | host | a compiled-in renderer loads without a file on disk |
 // | `NOCTURNE_AUTHENTIC_HEAP_REPORT` | 0 | host | the memory line reports the host allocator, not an unwalkable heap |
@@ -64,7 +63,6 @@
 // | `NOCTURNE_AUTHENTIC_HUD_ICON_SPACE` | 0 | defect | inventory icons stay on screen above 640x480 |
 // | `NOCTURNE_AUTHENTIC_FOG_PLANE_SCALE` | 0 | defect | the fog plane is resampled onto the camera grid, not cropped to it |
 // | `NOCTURNE_AUTHENTIC_BACKDROP_FILTER` | 0 | defect | a rescaled backdrop keeps its own brightness |
-// | `NOCTURNE_AUTHENTIC_CONTROL_SETUP` | 0 | defect | picking a control type leaves you able to play with it |
 // | `NOCTURNE_AUTHENTIC_FLASHLIGHT_DRAW` | 0 | defect | at HQ neither the draw nor the flashlight key brings the weapon out |
 // | `NOCTURNE_AUTHENTIC_MODAL_FIT` | 0 | defect | a modal too wide for the screen is clamped, not pushed off both edges |
 // | `NOCTURNE_AUTHENTIC_BURN_BONE_COUNT` | 0 | defect | a burning character can reach fully-burned and die |
@@ -75,7 +73,7 @@
 // | `NOCTURNE_AUTHENTIC_ACTOR_DELETE` | 0 | defect | references are cleared before the memory is freed |
 // | `NOCTURNE_AUTHENTIC_HERO_WEAPON` | 0 | defect | each hero class starts with, and only holds, what it can actually use |
 // | `NOCTURNE_AUTHENTIC_HERO_ACTIONS` | 0 | defect | the other eight classes can interact, escape a grab and use health items |
-// | `NOCTURNE_AUTHENTIC_INPUT_REPEAT` | 0 | defect | a held button starts an action once instead of every frame |
+// | `NOCTURNE_AUTHENTIC_INPUT_REPEAT` | 0 | defect | an empty weapon's click repeats at a rate, not every frame |
 // | `NOCTURNE_AUTHENTIC_ITEM_HELP_POSITION` | 0 | defect | the pickup help text does not sit on top of the pickup name |
 // | `NOCTURNE_AUTHENTIC_DEATH_MESSAGE_POSITION` | 0 | defect | the death banner is centred, clear of the message line |
 // | `NOCTURNE_AUTHENTIC_TEXT_RENDER_ALPHA` | 0 | defect | 2D text blends at its own alpha, not the last pass's leftover |
@@ -100,28 +98,23 @@
 // | `NOCTURNE_AUTHENTIC_PICKUP_WIELDS` | 0 | choice | a pickup is never drawn without the player asking |
 // | `NOCTURNE_AUTHENTIC_OPTIONS_RESUMES_GAME` | 0 | choice | leaving Options returns to the pause menu |
 // | `NOCTURNE_AUTHENTIC_CONFIRM_PROMPTS` | 0 | choice | no bracketed hotkey letters, and a short form when the long one will not fit |
-// | `NOCTURNE_AUTHENTIC_MENU_RESOLUTION` | 0 | choice | a picked resolution applies straight away |
 // | `NOCTURNE_AUTHENTIC_SAVE` | 1 | choice | saves are written as readable plain text |
 // | `NOCTURNE_AUTHENTIC_BUILD_STAMP` | 0 | choice | the console banner dates this build, not Terminal Reality's |
 // | `NOCTURNE_AUTHENTIC_ENEMY_RETAIN` | 0 | choice | an enemy drops a victim it can neither see nor path to |
 // | `NOCTURNE_AUTHENTIC_AUTOMAP` | 0 | addition | a bindable Doom-style map that fills in as you explore |
 // | `NOCTURNE_AUTHENTIC_GOGGLE_LOOK` | 0 | addition | the goggle view looks up and down with empty hands, for every hero, and is held level as the Stranger's is |
 // | `NOCTURNE_AUTHENTIC_HERO_LOOK_AIM` | 0 | addition | Scat's aim follows look input under auto-aim until a target takes it |
-// | `NOCTURNE_AUTHENTIC_MENU_VERSION` | 0 | addition | the menu carries a line naming this build |
 // | `NOCTURNE_AUTHENTIC_SAVE_SLOTS` | 0 | addition | saves are picked from a slot list, not typed |
-// | `NOCTURNE_AUTHENTIC_SINGLE_PLAYER_MENU` | 0 | addition | START becomes PLAY, with Start and Load behind it |
 // | `NOCTURNE_AUTHENTIC_AUTOSAVE` | 0 | addition | AUTO.NOC is written at a cutscene end and a mission start |
 // | `NOCTURNE_AUTHENTIC_GAMEPAD` | 0 | addition | SDL's game-controller layer instead of joyGetPos |
 // | `NOCTURNE_AUTHENTIC_WINDOW_MESSAGES` | 0 | addition | the window proc sees a mouse wheel |
 // | `NOCTURNE_AUTHENTIC_TEXT_PROMPTS` | 0 | addition | a text prompt brings up the platform's own keyboard |
 // | `NOCTURNE_AUTHENTIC_CHEAT_MENU` | 0 | addition | a CHEATS entry on Options, and WARPS on pause |
-// | `NOCTURNE_AUTHENTIC_RESOLUTION_LIST` | 0 | addition | one ordered table drives label and stepping |
 // | `NOCTURNE_AUTHENTIC_HUD_SCALE` | 0 | addition | the HUD scales with the framebuffer |
 // | `NOCTURNE_AUTHENTIC_STATUS_BAR_WIDTH` | 0 | addition | a hero's status bar is as long as its maximum health |
-// | `NOCTURNE_AUTHENTIC_WINDOW_MODE` | 0 | addition | Graphics Options picks windowed, fullscreen or borderless |
-// | `NOCTURNE_AUTHENTIC_OS_FONT` | 0 | addition | Graphics Options can pick bitmap or system text |
+// | `NOCTURNE_AUTHENTIC_PUSH_SOUND` | 0 | addition | a pushed box scrapes on every shove, not only the first |
+// | `NOCTURNE_AUTHENTIC_MENU` | 0 | addition | the front end's screens are shim pages, with every menu addition |
 // | `NOCTURNE_AUTHENTIC_CONSOLE` | 0 | addition | the console fills the window and keeps scrollback |
-// | `NOCTURNE_AUTHENTIC_FMV` | 0 | addition | Sound Options has a Movie Vol line |
 // | `NOCTURNE_AUTHENTIC_ATTRACT_MOVIES` | 0 | addition | the menu cycles NOC1..NOC4 after its music |
 // | `NOCTURNE_AUTHENTIC_ENVMAP_SHADING` | 0 | addition | reflections are shaded per pixel, not per facet |
 // | `NOCTURNE_AUTHENTIC_NETPLAY` | 0 | addition | netplay is reachable, with its fixes |
@@ -193,22 +186,6 @@
 // exercise the authentic behavior.
 #ifndef NOCTURNE_AUTHENTIC_WINDOWS
 #define NOCTURNE_AUTHENTIC_WINDOWS 0
-#endif
-
-// NOCTURNE_AUTHENTIC_APP_QUIT
-//   The main menu's QUIT line, and Escape on the main menu, end the process.
-//   On a console that is not the app's to do: the system ends it, and an app
-//   that closes itself is one the platform's rules turn away.
-//   1: shipped behaviour, everywhere — QUIT is on the main menu and Escape there
-//      ends the game.
-//   0: the same, except where the platform file sets
-//      NOCTURNE_PLATFORM_NO_QUIT=1 (g_nocturne_no_quit, core/menu_screen.h):
-//      there the line is left off and Escape on the main menu does nothing.
-//      Leaving a mission for the main menu is unchanged either way.
-//
-//   Override with -DNOCTURNE_AUTHENTIC_APP_QUIT=1.
-#ifndef NOCTURNE_AUTHENTIC_APP_QUIT
-#define NOCTURNE_AUTHENTIC_APP_QUIT 0
 #endif
 
 // NOCTURNE_AUTHENTIC_UI_CURSOR_WARP
@@ -715,57 +692,6 @@
 //   Override with -DNOCTURNE_AUTHENTIC_BACKDROP_FILTER=1.
 #ifndef NOCTURNE_AUTHENTIC_BACKDROP_FILTER
 #define NOCTURNE_AUTHENTIC_BACKDROP_FILTER 0
-#endif
-
-// NOCTURNE_AUTHENTIC_CONTROL_SETUP
-//   What picking a control type on the Controls screen leaves you with.
-//
-//   Two shipped behaviours combine into a dead end.
-//
-//   menu.cpp configureCustomKeyBindings switches on a binding's CURRENT code
-//   before it will prompt for a new one. Mouse codes (0x255, 0x256) and, on the
-//   joystick build, buttons 1-4 (0x251..0x254) are answered with
-//   "<name> is assigned to the mouse.  Can't assign a key." and the row is
-//   dropped. The row keeps the code that got it refused, so the refusal never
-//   lifts -- nothing in the screen can move that binding back onto a key.
-//
-//   And changing the control type only changes the type. CGame::game_control is
-//   stepped and nothing reseeds the bindings, so the codes from the previous
-//   type stay. CGame::restoreDefaultControls, the one thing that writes a mode's
-//   defaults, is reachable only from Restore defaults.
-//
-//   Together: pick a type whose defaults were never applied and the rows still
-//   hold the old type's codes; where those are mouse or joystick codes the
-//   screen refuses to change them, and with every row refused it accepts
-//   nothing but Escape.
-//
-//   The one way out of that, Restore defaults, is itself hard to tell from a
-//   no-op. It is row 0 of the same pick list, and choosing it applies the
-//   defaults and then rebuilds the screen at the row the cursor was on -- row 0.
-//   Enter restores again. On a set already at its defaults nothing on screen
-//   changes either, so the screen reads as refusing to close.
-//
-//   1: shipped behaviour -- device-assigned rows refuse, permanently; a change
-//      of control type reseeds nothing; and Restore defaults reopens the screen
-//      on itself.
-//   0: the refusing labels are dropped, so any row reaches the capture path;
-//      a change of control type applies that type's defaults, so the bindings
-//      always match the device selected; and Restore defaults returns to
-//      Control Options, which is both the acknowledgement and the way out.
-//
-//   The cost of reseeding is that stepping the control type replaces custom
-//   bindings -- the setting is a left/right cycle, so passing through a type
-//   costs the same as landing on it. That is the trade for never landing on a
-//   type you cannot play with.
-//
-//   The capture only ever reads codes the input layer reports, and the mouse
-//   AXIS codes are not among them -- they are only ever written as defaults --
-//   so moving a row off 0x255/0x256 is one-way within the screen. Restoring
-//   defaults, or reselecting the type, puts them back.
-//
-//   Override with -DNOCTURNE_AUTHENTIC_CONTROL_SETUP=1.
-#ifndef NOCTURNE_AUTHENTIC_CONTROL_SETUP
-#define NOCTURNE_AUTHENTIC_CONTROL_SETUP 0
 #endif
 
 // NOCTURNE_AUTHENTIC_FLASHLIGHT_DRAW
@@ -1313,35 +1239,29 @@
 #endif
 
 // NOCTURNE_AUTHENTIC_INPUT_REPEAT
-//   Two places where holding a button restarts an action every frame instead of
-//   starting it once. Both are the Stranger's own button handlers, so unlike
-//   NOCTURNE_AUTHENTIC_HERO_ACTIONS above these are reached in ordinary play,
-//   and both get worse the higher the frame rate goes: the repeat rate IS the
-//   frame rate, so what was rough on period hardware is a buzz at 60fps and
-//   above.
+//   Holding fire with no ammunition retriggers the dry-fire click every frame,
+//   so the repeat rate is the frame rate: rough on period hardware, a buzz at
+//   60fps and above.
 //
-//   PUSHING A BOX. CStranger::handleActionButton dispatches the action button
-//   through a chain of attempts, and every branch that succeeds ends by clearing
-//   player_input.action_state.fire — consuming the press so a held button does
-//   not re-enter. The push-box branch is the one that does not:
+//   NOT A BOX'S PUSH SOUND. A push sound restarting every frame, and a box
+//   that will not move, came from the CStranger::processFrame keep, not the
+//   binary: Ghidra lost the stack depth across two PUSHes between the FPU
+//   loads at 005bcf5b-005bcfd2 and read the box's centre and half-extents out
+//   of the wrong slots, so the test that keeps a push going failed every frame,
+//   stopPushingBox killed the sound, and the held press took the box again.
+//   The keep now computes them as the asm does, as Gabriella's always did.
 //
-//       if (tryPushNearbyBox(hero)) { setDesiredState(mc, 6, 1); return; }
-//
-//   Confirmed missing in the binary, not dropped by the decompiler: the asm at
-//   LAB_005c5db0 has no `MOV [EBX + 0xbe38], 0` where its siblings do.
-//
-//   It is self-sustaining rather than merely noisy. setDesiredState calls
-//   findAndStartTransition unconditionally when force_immediate is set, so
-//   re-entering with the same state index restarts the transition and the push
-//   state's blend weight never climbs off zero -- and CStranger::processFrame
-//   ends the push on exactly that test:
-//
-//       if (getStateBlendWeight(mc, 6) <= 0.0) stopPushingBox(hero);
-//
-//   stopPushingBox calls killSfx and clears pushed_object, so the next frame
-//   acquires the box again and replays its push sound from the top. The visible
-//   result is a shove animation and a scraping sound both restarting every
-//   frame for as long as the button is held, and a box that never moves.
+//   NOR THE PUSH-BOX BRANCH. CStranger::handleActionButton clears
+//   player_input.action_state.fire in every successful branch but the push
+//   (LAB_005c5db0 has no `MOV [EBX + 0xbe38], 0`), and that is required, not a
+//   defect. fire is latched: processKeyboardControls writes it only when the
+//   key changes, so it stays 1 while the button is held. A push is carried by
+//   CStranger::processFrame's pushed_object branch, which keeps the box only
+//   while fire reads non-zero, and handleActionButton is not called at all
+//   while a box is held (bVar13 is cleared with pushed_object set), so a held
+//   press cannot re-enter it. Clearing fire there ends every push the frame
+//   after it starts: a pushable box, the castle chapel's statue among them,
+//   never moves.
 //
 //   FIRING AN EMPTY WEAPON. Holding fire with no ammunition retriggers the
 //   dry-fire click every frame. CWeapon::fire is the single ammunition test for
@@ -1354,10 +1274,9 @@
 //   deliberately does not consume the press; it is the failure path that is
 //   missing a rate limit rather than the input handling.
 //
-//   1: shipped behaviour — both actions restart at the frame rate.
-//   0: the push-box branch consumes the press like its siblings, and a failed
-//      fire arms CWeapon::fire_cooldown_timer so the click cannot retrigger
-//      until it expires. That timer is the engine's own: CWeapon::ctor zeroes
+//   1: shipped behaviour — the click restarts at the frame rate.
+//   0: a failed fire arms CWeapon::fire_cooldown_timer so the click cannot
+//      retrigger until it expires. That timer is the engine's own: CWeapon::ctor zeroes
 //      it, CWeapon::process counts it down, CWeapon::isReadyToFire is the gate
 //      that reads it, and nothing in the shipped binary ever sets it, so this
 //      uses the mechanism as built rather than adding state.
@@ -1365,6 +1284,23 @@
 //   Override with -DNOCTURNE_AUTHENTIC_INPUT_REPEAT=1.
 #ifndef NOCTURNE_AUTHENTIC_INPUT_REPEAT
 #define NOCTURNE_AUTHENTIC_INPUT_REPEAT 0
+#endif
+
+// NOCTURNE_AUTHENTIC_PUSH_SOUND
+//   How often a pushed box is heard. CHero::tryPushNearbyBox plays the box's
+//   pushSound once, as the push is taken, through playAmbientSound, which
+//   does not loop; nothing plays it again until the push is let go and taken
+//   anew. A push is a run of shoves, each moving the box as the push motion
+//   passes its marker (CBoxActor::resolveRayPush), so a long push - the castle
+//   chapel's statue - scrapes on its first shove and slides silently after.
+//   1: shipped behaviour - one scrape per push.
+//   0: each shove that moves the box plays the scrape again once the last one
+//      has finished, never over it, under the same handle stopPushingBox
+//      kills. See shims/game/box_push.h.
+//
+//   Override with -DNOCTURNE_AUTHENTIC_PUSH_SOUND=1.
+#ifndef NOCTURNE_AUTHENTIC_PUSH_SOUND
+#define NOCTURNE_AUTHENTIC_PUSH_SOUND 0
 #endif
 
 // NOCTURNE_AUTHENTIC_ITEM_HELP_POSITION
@@ -2062,27 +1998,6 @@
 #define NOCTURNE_AUTHENTIC_OPTIONS_RESUMES_GAME 0
 #endif
 
-// NOCTURNE_AUTHENTIC_MENU_RESOLUTION
-//   When a resolution picked on the Graphics Options screen takes effect. In
-//   both shipped binaries the selector only edits CGame::game_pixx/game_pixy;
-//   the sole thing that applies them is CGame::setGameRes, called from
-//   runGameSession and the editor screens and never from the menu. So picking a
-//   resolution appears to do nothing until a mission starts.
-//   1: shipped behaviour — the selector changes nothing until a mission loads.
-//   0: changing the resolution resizes the window straight away. The menu keeps
-//      RENDERING at 640x480 (its layout is hardcoded for that — fixed drawText
-//      coordinates; only the mouse-sensitivity slider reads g_WindowWidth) and
-//      the presenter scales it to fit, so nothing is mispositioned. Missions
-//      still get a real framebuffer at the selected resolution via setGameRes.
-//      Also stops the selector offering resolutions above 640x480 while
-//      hardware acceleration is off, since the menu clamps those back and the
-//      choice would silently revert.
-//
-//   Override with -DNOCTURNE_AUTHENTIC_MENU_RESOLUTION=1.
-#ifndef NOCTURNE_AUTHENTIC_MENU_RESOLUTION
-#define NOCTURNE_AUTHENTIC_MENU_RESOLUTION 0
-#endif
-
 // NOCTURNE_AUTHENTIC_SAVE
 //   Controls the on-disk save-game format written by CGame::saveGame.
 //   1: authentic — matches the original retail nocturne.exe. The plain-text
@@ -2149,7 +2064,7 @@
 //      written and the play time, read out of the save itself.
 //
 //   This is the picker only. Where the main menu offers Load is
-//   NOCTURNE_AUTHENTIC_SINGLE_PLAYER_MENU's business, and the two are
+//   NOCTURNE_AUTHENTIC_MENU's business, and the two are
 //   independent: either menu shape reaches whichever picker this selects.
 //
 //   Typing is the only way the shipped game can name a save, so a machine with
@@ -2277,7 +2192,7 @@
 //   This is the console line only. --version is not gated: a build always
 //   knows its own identity, and a bug report that cannot get it out of the
 //   binary is worse than an unfaithful console banner. Where the same line is
-//   painted on the menu screen is NOCTURNE_AUTHENTIC_MENU_VERSION's business.
+//   painted on the menu screen is NOCTURNE_AUTHENTIC_MENU's business.
 //
 //   Override with -DNOCTURNE_AUTHENTIC_BUILD_STAMP=1.
 #ifndef NOCTURNE_AUTHENTIC_BUILD_STAMP
@@ -2301,26 +2216,6 @@
 //   Override with -DNOCTURNE_AUTHENTIC_ENEMY_RETAIN=1.
 #ifndef NOCTURNE_AUTHENTIC_ENEMY_RETAIN
 #define NOCTURNE_AUTHENTIC_ENEMY_RETAIN 0
-#endif
-
-// NOCTURNE_AUTHENTIC_MENU_VERSION
-//   What the menu corner says. renderMenuAndGetChoice draws g_MenuVersionText
-//   at x 0x206, y 99, under the copyright line.
-//   1: shipped behaviour — nothing on the menu names the build.
-//   0: the build's version and `git describe` in the bottom left, facing the
-//      copyright notice in the bottom right: same baseline, opposite margin.
-//
-//   Nothing shipped is replaced: the line is drawn in addition to what the menu
-//   already draws, and the trademark glyph at x 0x206, y 99 is untouched.
-//
-//   A release someone is playing should be able to say which build it is
-//   without being started under a debugger. The same identity also reaches the
-//   console and --version, and neither of those is gated; this flag is only
-//   about putting a line on the shipped menu screen.
-//
-//   Override with -DNOCTURNE_AUTHENTIC_MENU_VERSION=1.
-#ifndef NOCTURNE_AUTHENTIC_MENU_VERSION
-#define NOCTURNE_AUTHENTIC_MENU_VERSION 0
 #endif
 
 // NOCTURNE_AUTHENTIC_GOGGLE_LOOK
@@ -2390,32 +2285,6 @@
 #define NOCTURNE_AUTHENTIC_HERO_LOOK_AIM 0
 #endif
 
-// NOCTURNE_AUTHENTIC_SINGLE_PLAYER_MENU
-//   How the main menu is arranged.
-//   1: shipped behaviour — START / OPTIONS / LOAD / QUIT, four entries, with
-//      START going straight to CGame::showChapterSelect.
-//   0: START becomes PLAY and opens a submenu holding Start and Load, so the
-//      single-player entries sit together rather than either side of Options.
-//      Load leaves the main menu, which therefore keeps its count.
-//
-//   The submenu is the one NOCTURNE_AUTHENTIC_NETPLAY's MULTIPLAYER entry
-//   already uses — same backdrop, same start-y, same Escape handling — so the
-//   two read as a pair rather than as two different kinds of menu.
-//
-//   Whether the submenu also offers Continue is NOCTURNE_AUTHENTIC_AUTOSAVE's
-//   decision, not this flag's: Continue resumes the most recent save, which is
-//   a promise the game can only keep if it has been making saves on its own.
-//   With autosave off the submenu is Start and Load, and the player picks the
-//   save they meant from the list.
-//
-//   Independent of NOCTURNE_AUTHENTIC_SAVE_SLOTS, which decides what Load and
-//   Save then put on screen.
-//
-//   Override with -DNOCTURNE_AUTHENTIC_SINGLE_PLAYER_MENU=1.
-#ifndef NOCTURNE_AUTHENTIC_SINGLE_PLAYER_MENU
-#define NOCTURNE_AUTHENTIC_SINGLE_PLAYER_MENU 0
-#endif
-
 // NOCTURNE_AUTHENTIC_AUTOSAVE
 //   Whether the game saves on its own. Neither shipped binary did: every write
 //   to save\ comes from CTRL+S, F2, F6 or the pause menu's Save game.
@@ -2427,7 +2296,7 @@
 //
 //   This also decides whether the single-player submenu offers Continue, since
 //   Continue resumes the most recent save and is only worth offering to a game
-//   that makes them by itself. See NOCTURNE_AUTHENTIC_SINGLE_PLAYER_MENU.
+//   that makes them by itself. See NOCTURNE_AUTHENTIC_MENU.
 //
 //   Never in a network session: CGame::saveGame writes one machine's world,
 //   and restoring it on one peer of a lockstep session would desync it.
@@ -2530,47 +2399,6 @@
 #define NOCTURNE_AUTHENTIC_CHEAT_MENU 0
 #endif
 
-// NOCTURNE_AUTHENTIC_RESOLUTION_LIST
-//   Which resolutions the Graphics Options selector offers, and whether the
-//   software renderer is allowed any of the larger ones.
-//   The shipped selector is a hardcoded chain of game_pixy comparisons that can
-//   reach six modes (320x240, 512x384, 640x480, 800x600, 1024x768, 1280x1024).
-//   It is not driven by g_ResolutionTable[9] — that table's only reader is
-//   engine/2d.c initGraphicsSystem, for the 8bpp mode the external SETUP
-//   program picked — so 1600x1200 sits in the table unreachable, and 400x300
-//   has a label and a step case in both directions while nothing ever assigns
-//   it. Everything above 640x480 is additionally gated on hardware
-//   acceleration, and the menu clamps back to 640x480 whenever acceleration is
-//   off.
-//   The acceleration gate stays, and is NOT part of this flag: software really
-//   cannot go above 480 lines. The rasteriser itself is fine — it writes
-//   scanlines straight into g_ScreenBufferArray at the native resolution — but
-//   CDemonCamera::lockAndRenderToBuffer routes the lightmap composite through
-//   the renderer's hold buffer past 480 lines, and lockHoldBuffer returns 0
-//   with no renderer DLL loaded, which is fatal. Even with that fixed,
-//   compositeLightmapToFramebuffer maps the 640x480 lighting grid onto
-//   g_ScreenBufferArray row-for-row, so the per-pixel lighting would cover only
-//   a 640x480 corner of a larger screen.
-//   The chain is also incomplete going left. Stepping DOWN runs
-//   1024x768 -> 800x600 -> 640x480 -> 512x384 -> 320x240 and then wraps to the
-//   largest mode the card's memory allows, but there is no case for 1280x1024
-//   (pixy 0x400), so from there left falls through to the chain's default and
-//   snaps straight to 320x240. Since the wrap at 320x240 returns to 1280x1024,
-//   the top of the list is a two-entry loop with 1024x768 and 800x600
-//   unreachable going left. The step-UP chain is complete; only left is
-//   affected. Both shipped binaries do this (nocedit.exe: the CMP EDI,0x300 /
-//   JNZ default at 0051151b).
-//   1: shipped behaviour — the six-mode chain, left-step gap included.
-//   0: dev-friendly default. One ordered table in shims/gl/resolution.cpp
-//      drives both the label and the stepping, so the two cannot disagree; it
-//      adds 1600x1200, makes 400x300 reachable, and steps left from 1280x1024
-//      to 1024x768 like every other entry. Accelerated only, as before.
-//
-//   Override with -DNOCTURNE_AUTHENTIC_RESOLUTION_LIST=1.
-#ifndef NOCTURNE_AUTHENTIC_RESOLUTION_LIST
-#define NOCTURNE_AUTHENTIC_RESOLUTION_LIST 0
-#endif
-
 // NOCTURNE_AUTHENTIC_HUD_SCALE
 //   The in-game HUD is fixed-size 640x480 pixel art — the battery and health
 //   bitmaps, the ammo icons, and every string, since CBitFont draws glyph
@@ -2612,54 +2440,62 @@
 #define NOCTURNE_AUTHENTIC_STATUS_BAR_WIDTH 0
 #endif
 
-// NOCTURNE_AUTHENTIC_WINDOW_MODE
-//   The original is DirectDraw exclusive fullscreen only: it asks for
-//   DDSCL_FULLSCREEN and has no concept of a window mode.
-//   1: shipped behaviour - the window is always fullscreen at the game's
-//      resolution, and Graphics Options has no window line.
-//   0: a "Window : Windowed/Fullscreen/Borderless" line on the Graphics Options
-//      screen, applied immediately and persisted to the INI as
-//      [Graphics] windowMode.
+// NOCTURNE_AUTHENTIC_MENU
+//   The front end: the main menu, Options and the screens under it, and how a
+//   menu list is drawn. Each shipped screen is one function holding its loop,
+//   its lines and what each line does, at a start-y of its own.
+//   1: shipped behaviour - the reconstructed screens, as the binary has them.
+//      The window is always fullscreen, the picture is scaled with the
+//      standard filter, text is whatever the message file picks, movies play
+//      at their mastered level, and a resolution picked in the menu waits for
+//      a mission to load.
+//   0: the screens are pages in the shims, each a title, the lines it lists
+//      this frame and what a press on each does, run by one loop
+//      (core/menu_page) and drawn by one routine (core/menu_render). The menu
+//      .keep files call them at their tops and are otherwise the binary's. The
+//      pages bring:
+//        - Layout. A titled screen draws its title at the height the shipped
+//          Sound Options uses, below the logo. The settings that are neither
+//          display nor device move from Graphics and Control Options to a
+//          Gameplay page, so each page fits. Options ends on Credits.
+//        - Main menu (game/main_menu). PLAY opens Start, Load and, with
+//          autosave, Continue; MULTIPLAYER is listed with netplay; attract
+//          movies play at the end of the menu music. Where the platform ends
+//          the app (NOCTURNE_PLATFORM_NO_QUIT) there is no QUIT, and Escape
+//          does nothing. The build's version sits in the bottom left.
+//        - Graphic Options (game/options_menu). Resolutions come from one
+//          ordered table (shims/gl/resolution.cpp; research/18 has the shipped
+//          chain and its left-step gap) and apply straight away. Window picks
+//          windowed, fullscreen or borderless; Upscaler picks the filter that
+//          enlarges the picture - Standard, FSR, Lanczos, GSR, NIS or xBR - and
+//          Sharpness tunes the three that sharpen (shims/gl/upscaler.h,
+//          shims/gl/upscale_shaders.h; their licences are in
+//          THIRD_PARTY_NOTICES.txt).
+//        - Gameplay, first on Options. Always run, aiming, auto health,
+//          subtitles and the rating, with Text font picking bitmap or system
+//          text from the next launch (shims/core/os_font.h) and Menu text the
+//          menus' font.
+//        - Sound Options (game/sound_options). A Movie Vol line.
+//        - Control Options (game/control_options). The gamepad's tuning lines,
+//          with Calibrate after them.
+//          A change of control type applies that type's defaults, any binding
+//          can be moved onto a key, and Restore defaults goes back to Control
+//          Options. The shipped screen did none of the three, so a type whose
+//          defaults were never applied left a list that accepted only Escape.
+//        - Options. A Cheats line, and in the editor build Developer tools.
+//        - The chosen line's shimmer takes the cosmetic random stream.
+//      Settings persist in system\nocturne.ini: [Graphics] windowMode,
+//      upscaler, fsrSharpness and osFont, and [Sound] MovieVolume.
 //
-//   The extra menu line is carried in a local pointer array inside the keep,
-//   because the engine's g_GraphicsMenuTextPointers/Buffers globals are exactly
-//   9 entries and resizing them would be a generator change.
+//   THE PAGES CARRY EVERY ADDITION. MENU_FONT, CHEAT_MENU, AUTOSAVE,
+//   ATTRACT_MOVIES, NETPLAY, GAMEPAD, RNG and AUTOMAP also reach play outside
+//   the front end and keep those sites; on these screens their additions are
+//   this flag's. NOCTURNE_EDITOR_BUILD, D3D_OPTIONS and RENDERER_DLL choose the
+//   binary or the host rather than the fidelity, and both sides read them.
 //
-//   Override with -DNOCTURNE_AUTHENTIC_WINDOW_MODE=1.
-#ifndef NOCTURNE_AUTHENTIC_WINDOW_MODE
-#define NOCTURNE_AUTHENTIC_WINDOW_MODE 0
-#endif
-
-// NOCTURNE_AUTHENTIC_OS_FONT
-//   The engine can draw text two ways. Normally it blits glyphs out of the
-//   bitmap sheets (fnte_pfd.RAW and friends); when one global is non-zero,
-//   CGame::initFonts instead builds CWinFont objects over the OS font named by
-//   g_OSFontName, and CBitFont::drawText dispatches to those. The only writer
-//   of that global in either shipped binary is CSupport::readMessageFile, from
-//   msglist.txt field two, and the shipped POD carries no msglist.txt.
-//   1: shipped behaviour - the message file's answer is the only one, which in
-//      practice means the bitmap sheets.
-//   0: a "Text : Auto/Bitmap/System" line on the Graphics Options screen,
-//      persisted to the INI as [Graphics] osFont and read back by initFonts at
-//      startup.
-//
-//   AUTO IS THE DEFAULT AND WRITES NOTHING. readMessageFile runs before
-//   initFonts, so an unconditional override would defeat the message file's
-//   choice. Bitmap and System are overrides; Auto leaves it alone.
-//
-//   APPLIED AT STARTUP, NOT ON SELECTION. The global is read once, by
-//   initFonts, which allocates the CWinFont objects. Switching live would mean
-//   freeFonts() + initFonts() from inside the Options screen, which is drawing
-//   through g_EditorFont and g_ThemeFont at the time, so the menu line says the
-//   choice takes effect next launch.
-//
-//   The system path degrades safely: CBitFont::drawText checks CFont::drawText's
-//   return and, on -1, clears win_font_enabled and redraws through the bitmap
-//   sheet.
-//
-//   Override with -DNOCTURNE_AUTHENTIC_OS_FONT=1.
-#ifndef NOCTURNE_AUTHENTIC_OS_FONT
-#define NOCTURNE_AUTHENTIC_OS_FONT 0
+//   Override with -DNOCTURNE_AUTHENTIC_MENU=1.
+#ifndef NOCTURNE_AUTHENTIC_MENU
+#define NOCTURNE_AUTHENTIC_MENU 0
 #endif
 
 // NOCTURNE_AUTHENTIC_CONSOLE
@@ -2684,21 +2520,6 @@
 //   Override with -DNOCTURNE_AUTHENTIC_CONSOLE=1.
 #ifndef NOCTURNE_AUTHENTIC_CONSOLE
 #define NOCTURNE_AUTHENTIC_CONSOLE 0
-#endif
-
-// NOCTURNE_AUTHENTIC_FMV
-//   Whether movies get a level of their own. The opening movie itself is not
-//   gated: both binaries call playMovie("video", "opening.avi") unconditionally
-//   from initializeGameSystems, and it plays whenever video\opening.avi exists,
-//   decoded by the MCI shim (shims/mci_video.cpp). NOC1..NOC4.AVI are a
-//   separate question — see NOCTURNE_AUTHENTIC_ATTRACT_MOVIES.
-//   1: shipped behaviour — MCI mixed movies at the desktop's volume, so there
-//      is no Movie Vol line and a movie plays at its mastered level.
-//   0: a "Movie Vol" line in Sound Options, persisted as [Sound] MovieVolume.
-//
-//   Override with -DNOCTURNE_AUTHENTIC_FMV=1.
-#ifndef NOCTURNE_AUTHENTIC_FMV
-#define NOCTURNE_AUTHENTIC_FMV 0
 #endif
 
 // NOCTURNE_AUTHENTIC_ATTRACT_MOVIES

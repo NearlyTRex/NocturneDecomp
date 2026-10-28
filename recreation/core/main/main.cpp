@@ -75,6 +75,11 @@ void initFilters(const SGameSystemOwners &owners) {
 // g_AGPTextureMode to 2 for writeIniData's useAGPFlag, whose line is left as it is; checked for
 // MMX, which every host has; warned below 64MB of RAM and 200MB of swap, which no host the
 // enhanced game runs on is short of; and set a Matrox driver's registry value.
+// deferred: arming the attract movies only when opening.avi played this launch (the decomp's
+//   attract.h nocturne_attract_set_opening_played), with the attract movies
+// deferred: reading the save folder and each save's mission name beside findAllSoundFiles, so
+//   the save and load pickers open with nothing left to read (the decomp's save_slots.h
+//   nocturne_save_slots_prewarm, SAVE_SLOTS), with the save and load pickers
 // nocedit 0x00507a60
 void initializeGameSystems(const SGameSystemOwners &owners) {
     readIniData(owners.ini, owners.file_system, owners.ini_owners);
@@ -86,6 +91,8 @@ void initializeGameSystems(const SGameSystemOwners &owners) {
     });
     owners.messages.readMessageFile("msglist.txt");
     owners.texture.initTextureCache();
+    // The retail build's dismount cleared the texture cache.
+    owners.pod.setDismountHandler([&texture = owners.texture] { texture.clearTextureCache(); });
     owners.two_d.initGraphicsSystem();
     if (!owners.screen.setScreenResolution(kWidth, kHeight, kBitsPerPixel)) {
         displayErrorAndQuit("Unable to set 640x480x32bpp.  Please make sure that you have a video "

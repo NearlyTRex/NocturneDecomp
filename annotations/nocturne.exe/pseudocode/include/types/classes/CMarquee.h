@@ -7,6 +7,7 @@
 #include "types/classes/CBoundingBox3D.h"
 #include "types/classes/CCourse.h"
 #include "types/classes/CDemonActor.h"
+#include "types/enums/EMarqueeDisplayType.h"
 
 // Structure: CMarquee
 // Ghidra size: 0x1b4 (436 bytes)
@@ -19,7 +20,7 @@ typedef struct CMarquee {
     int phase; // 0x178
     CBoundingBox3D bounding_box; // 0x17c
     int is_visible; // 0x194
-    int type; // 0x198
+    EMarqueeDisplayType type; // 0x198
     CCourse course; // 0x19c
     char dead[12]; // 0x1a8
 } CMarquee;

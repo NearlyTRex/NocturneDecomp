@@ -7,6 +7,8 @@ namespace nocturne::core {
 
 class CFrankenstienMachine : public CDemonActor {
 public:
+    static const CDemonActorType kType;
+
     CFrankenstienMachine();
     ~CFrankenstienMachine() override;
 

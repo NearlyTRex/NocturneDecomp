@@ -71,7 +71,7 @@ int __cdecl core_flame_cpp_CFlame_renderTransparent_FUN_0048d5d0(CFlame *this_pt
       core_set_cpp_CDemonSet_addQueuedCoronaGlobe_FUN_0050aa20
                 (g_CDemonSet_PTR_005be368,&this_ptr->globe);
     }
-    if ((this_ptr->is_visible != 0) && (this_ptr->which_flame != 3)) {
+    if ((this_ptr->is_visible != 0) && (this_ptr->which_flame != FLAME_TYPE_NONE)) {
       engine_drender_cpp_CDemonRenderer_getCameraRotationFixed_FUN_00460d90
                 (g_CDemonRenderer_PTR_005ae704,&CStack_30);
       CStack_a8.x = CStack_30.x;
@@ -138,11 +138,11 @@ int __cdecl core_flame_cpp_CFlame_renderTransparent_FUN_0048d5d0(CFlame *this_pt
           if (iStack_14 == 3) {
             DAT_005c5040 = DAT_005c5040 / 2;
           }
-          if (this_ptr->which_flame == 4) {
+          if (this_ptr->which_flame == FLAME_TYPE_BODY) {
             DAT_005c5040 = (int)((DAT_005c5040 + (DAT_005c5040 >> 0x1f) * -4) -
                                 (uint)((DAT_005c5040 >> 0x1f) << 1 < 0)) >> 2;
           }
-          if (this_ptr->which_flame == 1) {
+          if (this_ptr->which_flame == FLAME_TYPE_CANDLE) {
             DAT_005c5040 = DAT_005c5040 / 2;
           }
           DAT_005c5034 = 0xffff;
@@ -197,7 +197,7 @@ int __cdecl core_flame_cpp_CFlame_renderTransparent_FUN_0048d5d0(CFlame *this_pt
       engine_drender_cpp_CDemonRenderer_matrixPop_FUN_00460bf0(g_CDemonRenderer_PTR_005ae704);
     }
     core_actor_cpp_CDemonActor_restoreRenderState_FUN_00409f60(&this_ptr->base);
-    if ((this_ptr->which_flame == 1) &&
+    if ((this_ptr->which_flame == FLAME_TYPE_CANDLE) &&
        (fStack_18 = (this_ptr->flame_size).y * (float)2, this_ptr->is_visible != 0)) {
       engine_drender_cpp_CDemonRenderer_getCameraRotationRadians_FUN_00460db0
                 (g_CDemonRenderer_PTR_005ae704,&CStack_90);

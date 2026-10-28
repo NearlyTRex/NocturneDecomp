@@ -7,6 +7,8 @@ namespace nocturne::core {
 
 class CGrave : public CDemonActor {
 public:
+    static const CDemonActorType kType;
+
     CGrave();
     ~CGrave() override;
 

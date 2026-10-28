@@ -86,7 +86,7 @@
   {
     "kind":"class",
     "name":"CBattery",
-    "parent":"CCharacter",
+    "parent":"CDemonActor",
     "rtti_file":"core/battery.cpp",
     "size":736
   },
@@ -1221,6 +1221,71 @@
       "name":"CZombie",
       "ptr":1
     }
+  },
+  {
+    "kind":"enum",
+    "name":"EBoxActorPickupType",
+    "size":4,
+    "values":[
+      {
+        "name":"BOX_PICKUP_CANT",
+        "value":0
+      },
+      {
+        "name":"BOX_PICKUP_RUMMAGE",
+        "value":1
+      },
+      {
+        "name":"BOX_PICKUP_INVENTORY",
+        "value":2
+      },
+      {
+        "name":"BOX_PICKUP_CARRY",
+        "value":3
+      },
+      {
+        "name":"BOX_PICKUP_HEAVY",
+        "value":4
+      }
+    ]
+  },
+  {
+    "kind":"enum",
+    "name":"EDoorSwing",
+    "size":4,
+    "values":[
+      {
+        "name":"DOOR_SWING_CLOCKWISE",
+        "value":0
+      },
+      {
+        "name":"DOOR_SWING_COUNTER_CLOCKWISE",
+        "value":1
+      }
+    ]
+  },
+  {
+    "kind":"enum",
+    "name":"ESpikeState",
+    "size":4,
+    "values":[
+      {
+        "name":"SPIKE_STATE_RETRACTED",
+        "value":0
+      },
+      {
+        "name":"SPIKE_STATE_EXTENDING",
+        "value":1
+      },
+      {
+        "name":"SPIKE_STATE_EXTENDED",
+        "value":2
+      },
+      {
+        "name":"SPIKE_STATE_RETRACTING",
+        "value":3
+      }
+    ]
   },
   {
     "kind":"typedef",

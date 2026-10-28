@@ -8,6 +8,8 @@ namespace nocturne::core {
 
 class CArmour : public CEnemy {
 public:
+    static const CDemonActorType kType;
+
     CArmour();
     ~CArmour() override;
 

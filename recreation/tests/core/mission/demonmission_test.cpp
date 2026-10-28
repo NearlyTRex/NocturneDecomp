@@ -31,13 +31,15 @@ TEST(CDemonMission, PublicInterface) {
                                  void (CDemonMission::*)(common::CTextScanner &, bool)>);
     static_assert(
         std::is_same_v<decltype(&CDemonMission::freeAllAssets), void (CDemonMission::*)()>);
-    static_assert(std::is_same_v<decltype(&CDemonMission::getNextLoadedInventoryActor),
-                                 CDemonActor *(CDemonMission::*)(char *)>);
+    static_assert(
+        std::is_same_v<decltype(&CDemonMission::takeCarriedActor),
+                       std::unique_ptr<CDemonActor> (CDemonMission::*)(std::string_view)>);
     static_assert(
         std::is_same_v<decltype(&CDemonMission::writeFile), void (CDemonMission::*)(std::FILE *)>);
     static_assert(
         std::is_same_v<decltype(&CDemonMission::loadActor),
-                       CDemonActor *(CDemonMission::*)(std::FILE *, CDemonActor *, char *)>);
+                       CDemonActor *(CDemonMission::*)(common::CTextScanner &, const CDemonActor &,
+                                                       std::string_view) const>);
     static_assert(
         std::is_same_v<decltype(&CDemonMission::saveActor),
                        void (CDemonMission::*)(CDemonActor *, std::FILE *, CDemonActor *, char *)>);

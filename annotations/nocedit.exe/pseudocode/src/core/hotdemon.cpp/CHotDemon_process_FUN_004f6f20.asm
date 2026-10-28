@@ -322,7 +322,7 @@ section .text
     MOV EDI,dword ptr [0x0067b9a0]      ; 004f71c4 | g_CGorePtr
     PUSH EDI                            ; 004f71ca | g_CGoreInstance
     CALL core_gore.cpp_CGore_createBloodPool_FUN_004ede30 ; 004f71cb
-        ;   XREF to: 004ede30 (UNCONDITIONAL_CALL)  ; void core_gore.cpp_CGore_createBloodPool_FUN_004ede30(CGore * this_ptr, CVector3f * position, int blood_type)
+        ;   XREF to: 004ede30 (UNCONDITIONAL_CALL)  ; void core_gore.cpp_CGore_createBloodPool_FUN_004ede30(CGore * this_ptr, CVector3f * position, EBloodType blood_type)
     ADD ESP,0xc                         ; 004f71d0
     MOV dword ptr [EBX + 0xbe28],0x1    ; 004f71d3
     JMP 0x004f7017                      ; 004f71dd

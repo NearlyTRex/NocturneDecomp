@@ -18,14 +18,14 @@ int __cdecl core_platfrm_cpp_CPlatform_renderOpaque_FUN_004f6c60(CPlatform *this
   iVar1 = engine_drender_cpp_CDemonRenderer_isShadowPass_FUN_00461090(g_CDemonRenderer_PTR_005ae704)
   ;
   if ((iVar1 == 0) || (this_ptr->plot_in_shadow_flag != 0)) {
-    if ((2 < this_ptr->one_shot) &&
+    if ((2 < (int)this_ptr->one_shot) &&
        (iVar1 = engine_drender_cpp_CDemonRenderer_isShadowPass_FUN_00461090
                           (g_CDemonRenderer_PTR_005ae704), iVar1 == 0)) {
       return 0;
     }
     if ((((this_ptr->render_in_background_when_not_moving_flag != 0) &&
-         (this_ptr->state != (PLATFORM_STATE_TYPE_WTF|PLATFORM_STATE_TYPE_AT_END))) &&
-        (this_ptr->state != 4)) &&
+         (this_ptr->state != PLATFORM_STATE_TYPE_MOVING_TO_END)) &&
+        (this_ptr->state != PLATFORM_STATE_TYPE_MOVING_TO_START)) &&
        ((this_ptr->rendered_in_background != 0 &&
         (iVar1 = engine_drender_cpp_CDemonRenderer_isShadowPass_FUN_00461090
                            (g_CDemonRenderer_PTR_005ae704), iVar1 == 0)))) {

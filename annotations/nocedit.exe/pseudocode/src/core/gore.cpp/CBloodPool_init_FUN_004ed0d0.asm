@@ -1,12 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_gore_cpp_CBloodPool_init_FUN_004ed0d0(CBloodPool *this_ptr,CVector3f *position,int blood_type)
+; void __cdecl core_gore_cpp_CBloodPool_init_FUN_004ed0d0(CBloodPool *this_ptr,CVector3f *position,EBloodType blood_type)
 ;
 ; Parameters:
 ; CBloodPool *     Stack[0x4]:4   this_ptr
 ; CVector3f *      Stack[0x8]:4   position
-; int              Stack[0xc]:4   blood_type
+; EBloodType       Stack[0xc]:4   blood_type
 ;
 ; XREF[1]:
 ;   core_gore.cpp_CGore_createBloodPool_FUN_004ede30 at 004ede52

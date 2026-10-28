@@ -2,17 +2,17 @@
 // Address: 004edaa0
 // Address Range: [[004edaa0, 004edaed]]
 // Convention: __cdecl
-// Signature: void __cdecl core_gore_cpp_CGore_spawnBloodParticles_FUN_004edaa0(CGore *this_ptr,CVector3f *position,CVector3f *velocity,int blood_type)
+// Signature: void __cdecl core_gore_cpp_CGore_spawnBloodParticles_FUN_004edaa0(CGore *this_ptr,CVector3f *position,CVector3f *velocity,EBloodType blood_type)
 
 #include "nocturne.h"
 
-void __cdecl core_gore_cpp_CGore_spawnBloodParticles_FUN_004edaa0(CGore *this_ptr,CVector3f *position,CVector3f *velocity,int blood_type)
+void __cdecl core_gore_cpp_CGore_spawnBloodParticles_FUN_004edaa0(CGore *this_ptr,CVector3f *position,CVector3f *velocity,EBloodType blood_type)
 
 {
   CBloodParticle *this_ptr_00;
   int iVar1;
   
-  if (blood_type != 2) {
+  if (blood_type != BLOOD_TYPE_NONE) {
     iVar1 = g_BloodParticleIndex + 1;
     this_ptr_00 = g_BloodParticles + g_BloodParticleIndex;
     g_BloodParticleIndex = iVar1;

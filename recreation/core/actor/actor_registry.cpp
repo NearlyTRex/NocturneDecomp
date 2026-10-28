@@ -2,18 +2,28 @@
 #include "core/actor/actor.h"
 #include "core/actor/demonactor.h"
 #include "core/actor/demonactortype.h"
+#include "core/ammo/ammo.h"
+#include "core/backgnd/backgroundactor.h"
 #include "core/baron/baron.h"
+#include "core/baron/baronweapon.h"
+#include "core/barrier/barrier.h"
 #include "core/charactr/character.h"
 #include "core/colonel/colonel.h"
 #include "core/gabriela/gabriella.h"
+#include "core/gun/gun.h"
 #include "core/haystack/haystack.h"
+#include "core/health/healthitem.h"
 #include "core/hero/hero.h"
 #include "core/hero/heroplaceholder.h"
 #include "core/icepick/icepick.h"
+#include "core/litecone/lightcone.h"
 #include "core/moloch/moloch.h"
 #include "core/scat/scat.h"
 #include "core/stranger/stranger.h"
 #include "core/svetlana/svetlana.h"
+#include "core/trigger/trigger.h"
+#include "core/waypoint/waypoint.h"
+#include "core/weapon/weapon.h"
 
 #include <algorithm>
 #include <array>
@@ -22,16 +32,26 @@
 #include <string_view>
 
 namespace nocturne::core {
+namespace {
+
+// What a class the file doesn't list reads as.
+constexpr int kUnlistedVersion = 1;
+
+} // namespace
 
 // Each class's file registered it as the game started; here the ported classes are listed in
 // one place, and each port adds its own.
 // nocedit 0x00408320
 void CActor::registerActorClasses() {
-    static constexpr std::array<const CDemonActorType *, 13> kTypes = {
-        &CDemonActor::kType, &CCharacter::kType, &CHero::kType,     &CHeroPlaceholder::kType,
-        &CGabriella::kType,  &CSvetlana::kType,  &CStranger::kType, &CScat::kType,
-        &CBaron::kType,      &CIcePick::kType,   &CHaystack::kType, &CColonel::kType,
-        &CMoloch::kType};
+    static constexpr std::array<const CDemonActorType *, 23> kTypes = {
+        &CDemonActor::kType,      &CCharacter::kType, &CHero::kType,
+        &CHeroPlaceholder::kType, &CGabriella::kType, &CSvetlana::kType,
+        &CStranger::kType,        &CScat::kType,      &CBaron::kType,
+        &CIcePick::kType,         &CHaystack::kType,  &CColonel::kType,
+        &CMoloch::kType,          &CWeapon::kType,    &CGun::kType,
+        &CBaronWeapon::kType,     &CAmmo::kType,      &CTrigger::kType,
+        &CWayPoint::kType,        &CBarrier::kType,   &CBackgroundActor::kType,
+        &CHealthItem::kType,      &CLightCone::kType};
     for (const CDemonActorType *type : kTypes) {
         registerActorClass(*type);
     }
@@ -70,6 +90,21 @@ std::unique_ptr<CDemonActor> CActor::createActorByName(std::string_view class_na
 
 std::size_t CActor::getActorClassCount() const {
     return registrations_.size();
+}
+
+// The original set every class's version to 1; here a class not set reads as 1.
+// nocedit 0x0040c7f0
+void CActor::resetSavedVersions() {
+    saved_versions_.clear();
+}
+
+void CActor::setSavedVersion(const CDemonActorType &type, int saved_version) {
+    saved_versions_.insert_or_assign(&type, saved_version);
+}
+
+int CActor::getSavedVersion(const CDemonActorType &type) const {
+    const auto found = saved_versions_.find(&type);
+    return found == saved_versions_.end() ? kUnlistedVersion : found->second;
 }
 
 } // namespace nocturne::core

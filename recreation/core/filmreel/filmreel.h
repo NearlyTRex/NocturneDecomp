@@ -8,6 +8,8 @@ namespace nocturne::core {
 
 class CFilmReel : public CDemonActor {
 public:
+    static const CDemonActorType kType;
+
     CFilmReel();
     ~CFilmReel() override;
 

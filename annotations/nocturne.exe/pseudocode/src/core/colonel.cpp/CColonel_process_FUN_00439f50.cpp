@@ -12,7 +12,7 @@ void __cdecl core_colonel_cpp_CColonel_process_FUN_00439f50(CColonel *this_ptr,f
 
 {
   CVector3f *pCVar1;
-  uint uVar2;
+  EWalkState EVar2;
   CDemonActor *pCVar3;
   CCharacter *this_ptr_00;
   bool bVar4;
@@ -138,9 +138,9 @@ LAB_0043a2be:
     }
   }
   else {
-    uVar2 = (this_ptr->base).base.is_walking;
-    if (uVar2 < 2) {
-      if (uVar2 == 1) {
+    EVar2 = (this_ptr->base).base.walk_state;
+    if (EVar2 < 2) {
+      if (EVar2 == WALK_STATE_WALKING) {
         iVar5 = 1;
       }
       else {
@@ -149,8 +149,8 @@ LAB_0043a224:
       }
     }
     else {
-      if (2 < uVar2) {
-        if (uVar2 == 3) {
+      if (2 < EVar2) {
+        if (EVar2 == WALK_STATE_NO_PATH) {
           core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0(&pCVar13->base,0,1);
           engine_console_cpp_CConsole_printf_FUN_0043ac60
                     (g_CConsole_PTR_005ad350,"%s confused while walking to scriptDest!\n",this_ptr);

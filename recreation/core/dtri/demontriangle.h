@@ -9,6 +9,9 @@ namespace nocturne::core {
 
 // A collision triangle with its plane: the unit normal, the plane's distance along it, and the
 // axis the normal leans on most, 0 to 2 for x to z.
+// deferred: the clipper's 16-vertex buffers and 8-triangle fan, with clipTriangleToBounds and
+//   buildClipTriangleFan
+// nocedit 0x0049a430
 class CDemonTriangle {
 public:
     common::CVector3f vertex1;

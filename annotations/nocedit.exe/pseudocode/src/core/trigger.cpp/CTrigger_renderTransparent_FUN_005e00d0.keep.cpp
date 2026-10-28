@@ -49,7 +49,7 @@ int __cdecl core_trigger_cpp_CTrigger_renderTransparent_FUN_005e00d0(CTrigger *t
   if (iVar5 == 0) {
     return 0;
   }
-  switch(this_ptr->hero_triggers_me) {
+  switch(this_ptr->trigger_cause) {
   default:
     iVar6 = 0xff;
     blue = 0;
@@ -101,7 +101,7 @@ LAB_005e0160:
   else {
     alpha = 0x40;
   }
-  if (this_ptr->shape != 1) {
+  if (this_ptr->trigger_shape != 1) {
     core_actor_cpp_CDemonActor_renderBoundingBoxSolid_FUN_0040dec0
               (&this_ptr->base,iVar4,iVar6,blue,alpha);
     return iVar5;

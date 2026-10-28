@@ -47,7 +47,7 @@ void __cdecl core_vessel_cpp_CCryptVessel_setup_FUN_0054fa80(CCryptVessel *this_
     }
   }
   this_ptr->init_frame = 1;
-  (this_ptr->flame).which_flame = 0;
+  (this_ptr->flame).which_flame = FLAME_TYPE_TORCH;
   (this_ptr->flame).flame_state = 1;
   (this_ptr->flame).globe_scalar = 0.0;
   (this_ptr->flame).flame_size.x = 0.5;

@@ -47,7 +47,7 @@ CCharacter * __cdecl core_charactr_cpp_CCharacter_ctor_FUN_00427e20(CCharacter *
   ADJ(pvVar4)->gesture_motion_index = -1;
   ADJ(pvVar4)->gesture_branch_root = -1;
   ADJ(pvVar4)->sound_cooldown = 0.0;
-  ADJ(pvVar4)->is_walking = 0;
+  ADJ(pvVar4)->walk_state = WALK_STATE_IDLE;
   ADJ(pvVar4)->walk_to_target = (CDemonActor *)0x0;
   ADJ(pvVar4)->walk_min_distance = 3.0;
   ADJ(pvVar4)->walk_max_distance = 1e+30;
@@ -77,7 +77,7 @@ CCharacter * __cdecl core_charactr_cpp_CCharacter_ctor_FUN_00427e20(CCharacter *
   ADJ(pvVar4)->look_at_weight = 0.0;
   ADJ(pvVar4)->look_at_candidate = (CCharacter *)0x0;
   ADJ(pvVar4)->look_at_target = (CCharacter *)0x0;
-  ADJ(pvVar4)->blood_type = 0;
+  ADJ(pvVar4)->blood_type = BLOOD_TYPE_RED;
   ADJ(pvVar4)->is_fully_burned = 0;
   ADJ(pvVar4)->is_ethereal = 0;
   ADJ(pvVar4)->grabbed_by = (CDemonActor *)0x0;
@@ -90,7 +90,7 @@ CCharacter * __cdecl core_charactr_cpp_CCharacter_ctor_FUN_00427e20(CCharacter *
   ADJ(pvVar4)->layer_action_index = 0;
   ADJ(pvVar4)->layer_action_t = 0.0;
   ADJ(pvVar4)->gun_flame_ignitable = 1;
-  ADJ(pvVar4)->health_bar_mode = 0;
+  ADJ(pvVar4)->health_bar_mode = HEALTH_BAR_NONE;
   ADJ(pvVar4)->descriptive_name[0] = '\0';
   ADJ(pvVar4)->smoke_emit_timer = 0.0;
   ADJ(pvVar4)->smoke_check_timer = 0.0;

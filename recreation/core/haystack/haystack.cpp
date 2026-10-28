@@ -13,6 +13,7 @@ constexpr int kVersion = 1;
 
 } // namespace
 
+// nocedit 0x004f0ba0
 constinit const CDemonActorType CHaystack::kType =
     makeActorType("CHaystack", &CHero::kType, &CHaystack::create, kVersion);
 
@@ -28,6 +29,11 @@ CHaystack::~CHaystack() = default;
 // nocedit 0x004f0c00
 const CDemonActorType &CHaystack::getActorType() const {
     return kType;
+}
+
+// nocedit 0x004f1b50
+void CHaystack::archive(CActorArchive &actor_archive) {
+    CHero::archive(actor_archive);
 }
 
 // nocedit 0x004f0bd0

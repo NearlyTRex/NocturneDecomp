@@ -13,7 +13,7 @@ void __cdecl core_biggs_cpp_CBiggs_process_FUN_004154b0(CBiggs *this_ptr,float d
   CVector3f *pCVar1;
   CVector3f *pCVar2;
   float fVar3;
-  uint uVar4;
+  EWalkState EVar4;
   float fVar5;
   int iVar6;
   float local_40;
@@ -49,9 +49,9 @@ void __cdecl core_biggs_cpp_CBiggs_process_FUN_004154b0(CBiggs *this_ptr,float d
   iVar6 = core_charactr_cpp_CCharacter_processWalking_FUN_00428c00
                     ((CCharacter *)this_ptr,delta_time);
   if (iVar6 == 0) goto LAB_0041558b;
-  uVar4 = (this_ptr->base).base.is_walking;
-  if (uVar4 < 2) {
-    if (uVar4 == 1) {
+  EVar4 = (this_ptr->base).base.walk_state;
+  if (EVar4 < 2) {
+    if (EVar4 == WALK_STATE_WALKING) {
 LAB_00415560:
       iVar6 = 1;
     }
@@ -63,8 +63,8 @@ LAB_00415744:
               (&(this_ptr->base).base.model.base,iVar6,1);
   }
   else {
-    if (uVar4 < 3) goto LAB_00415560;
-    if (uVar4 != 3) goto LAB_00415744;
+    if (EVar4 < WALK_STATE_NO_PATH) goto LAB_00415560;
+    if (EVar4 != WALK_STATE_NO_PATH) goto LAB_00415744;
     core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0(&this_ptr_00->base,0,1);
     engine_console_cpp_CConsole_printf_FUN_0043ac60
               (g_CConsole_PTR_005ad350,"%s confused while walking to scriptDest!\n",this_ptr);

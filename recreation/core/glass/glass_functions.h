@@ -4,7 +4,6 @@
 
 namespace nocturne::core {
 
-void staticInit();
 CGlass *factoryFuncGlass();
 
 } // namespace nocturne::core

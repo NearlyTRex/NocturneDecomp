@@ -1,9 +1,14 @@
 #include "common/error/fatalerror.h"
+#include "common/random/watcomrandom.h"
 #include "common/text/textscanner.h"
+#include "core/actor/actor.h"
 #include "core/actor/actorarchive.h"
 #include "core/actor/demonactor.h"
 #include "core/actor/demonactortype.h"
+#include "core/game/game.h"
+#include "tests/mocks/core/mockactorlookup.h"
 #include "tests/mocks/core/testactor.h"
+#include "tests/mocks/engine/mockgameclock.h"
 
 #include <gmock/gmock.h>
 #include <gtest/gtest.h>
@@ -162,8 +167,9 @@ TEST(CDemonActor, PublicInterface) {
                                                         SActorRayHit *, SCollisionInfo *, int,
                                                         CBoundingBox3D *)>);
     static_assert(std::is_same_v<decltype(&CDemonActor::save), void (CDemonActor::*)(std::FILE *)>);
-    static_assert(std::is_same_v<decltype(&CDemonActor::load),
-                                 void (CDemonActor::*)(common::CTextScanner &)>);
+    static_assert(
+        std::is_same_v<decltype(&CDemonActor::load),
+                       void (CDemonActor::*)(common::CTextScanner &, const SActorArchiveOwners &)>);
 }
 
 TEST(CDemonActor, ItsRecordIsAnAbstractBaseClass) {
@@ -180,55 +186,74 @@ TEST(CDemonActor, AnActorStartsWithNoName) {
     EXPECT_EQ(actor.getActorClassName(), "CTestLeaf");
 }
 
+// The creation fields' defaults, which a file before version 6 leaves.
+TEST(CDemonActor, AnActorIsNotCreatedUntilItsEventComes) {
+    const CTestActor actor(kTestLeafType);
+    EXPECT_EQ(actor.getLifecycleState(), EActorLifecycleState::kNotCreated);
+    EXPECT_EQ(actor.getCreateProbability(), 1.0F);
+    EXPECT_EQ(actor.getCreateEvent(), "none");
+}
+
+class CDemonActorLoadTest : public ::testing::Test {
+protected:
+    ::testing::NiceMock<engine::MockGameClock> clock_;
+    CGame game_{clock_};
+    common::CWatcomRandom crt_;
+    const CActor classes_{game_, crt_};
+    ::testing::NiceMock<MockActorLookup> actors_;
+    const SActorArchiveOwners owners_{
+        .actor_classes = classes_, .actors = actors_, .crt_random = crt_};
+};
+
 // The class's fields come between the tags, read by archive().
-TEST(CDemonActor, LoadingReadsTheNameFromTheStartTagAndTheFieldsBetween) {
+TEST_F(CDemonActorLoadTest, LoadingReadsTheNameFromTheStartTagAndTheFieldsBetween) {
     CTestActor actor(kTestLeafType);
     std::optional<int> field;
     actor.onArchive([&](CActorArchive &archive) { field = archive.getScanner().scanInteger(); });
     common::CTextScanner scanner(" { ctestleaf \"Door 1\"\n  42\n } CTestLeaf \"DOOR 1\"\nnext");
-    actor.load(scanner);
+    actor.load(scanner, owners_);
     EXPECT_EQ(actor.getActorName(), "Door 1");
     EXPECT_EQ(field, 42);
     EXPECT_EQ(scanner.scanWord(), "next");
 }
 
-TEST(CDemonActor, AStartTagForAnotherClassIsFatal) {
+TEST_F(CDemonActorLoadTest, AStartTagForAnotherClassIsFatal) {
     CTestActor actor(kTestLeafType);
     common::CTextScanner scanner("{ CTestOther \"a\"\n} CTestOther \"a\"\n");
-    EXPECT_THAT([&] { actor.load(scanner); },
+    EXPECT_THAT([&] { actor.load(scanner, owners_); },
                 ThrowsMessage<common::CFatalError>(
                     StrEq("Start of actor file tag mismatch for class CTestLeaf")));
 }
 
-TEST(CDemonActor, AMissingStartTagIsFatal) {
+TEST_F(CDemonActorLoadTest, AMissingStartTagIsFatal) {
     CTestActor actor(kTestLeafType);
     common::CTextScanner scanner("CTestLeaf \"a\"\n");
-    EXPECT_THROW(actor.load(scanner), common::CFatalError);
+    EXPECT_THROW(actor.load(scanner, owners_), common::CFatalError);
 }
 
-TEST(CDemonActor, ATagWithoutANameLeavesTheActorUnnamed) {
+TEST_F(CDemonActorLoadTest, ATagWithoutANameLeavesTheActorUnnamed) {
     CTestActor actor(kTestLeafType);
     common::CTextScanner scanner("{ CTestLeaf\n} CTestLeaf \"\"");
-    actor.load(scanner);
+    actor.load(scanner, owners_);
     EXPECT_EQ(actor.getActorName(), "");
 }
 
 // fscanf's %[^"] fails on nothing, so the read stops at the closing quote, where the end tag is
 // then looked for.
-TEST(CDemonActor, AnEmptyQuotedNameIsFatal) {
+TEST_F(CDemonActorLoadTest, AnEmptyQuotedNameIsFatal) {
     CTestActor actor(kTestLeafType);
     common::CTextScanner scanner("{ CTestLeaf \"\"\n} CTestLeaf \"\"");
-    EXPECT_THAT([&] { actor.load(scanner); },
+    EXPECT_THAT([&] { actor.load(scanner, owners_); },
                 ThrowsMessage<common::CFatalError>(
                     StrEq("End of actor file tag mismatch for class CTestLeaf name \"\"")));
 }
 
-TEST(CDemonActor, AnEndTagForAnotherClassOrActorIsFatal) {
+TEST_F(CDemonActorLoadTest, AnEndTagForAnotherClassOrActorIsFatal) {
     for (const std::string_view end : {"} CTestOther \"a\"", "} CTestLeaf \"b\"", "CTestLeaf"}) {
         CTestActor actor(kTestLeafType);
         const std::string text = "{ CTestLeaf \"a\"\n" + std::string(end);
         common::CTextScanner scanner(text);
-        EXPECT_THAT([&] { actor.load(scanner); },
+        EXPECT_THAT([&] { actor.load(scanner, owners_); },
                     ThrowsMessage<common::CFatalError>(
                         StrEq("End of actor file tag mismatch for class CTestLeaf name \"a\"")));
     }
@@ -237,10 +262,8 @@ TEST(CDemonActor, AnEndTagForAnotherClassOrActorIsFatal) {
 // Each quits, naming itself, until its function is ported.
 TEST(CDemonActor, TheFunctionsNotPortedYetQuit) {
     CTestActor actor(kTestLeafType);
-    common::CTextScanner scanner("");
-    CActorArchive archive(scanner);
     const std::vector<std::pair<std::string_view, std::function<void()>>> calls = {
-        {"setup", [&] { actor.setup(); }},
+        {"setup", [&] { actor.CDemonActor::setup(); }},
         {"process", [&] { actor.process(0.0F); }},
         {"renderOpaque", [&] { static_cast<void>(actor.renderOpaque()); }},
         {"renderTransparent", [&] { static_cast<void>(actor.renderTransparent()); }},
@@ -263,7 +286,7 @@ TEST(CDemonActor, TheFunctionsNotPortedYetQuit) {
         {"getBlockVirtualDirectorFlag",
          [&] { static_cast<void>(actor.getBlockVirtualDirectorFlag()); }},
         {"allowBulletHoles", [&] { static_cast<void>(actor.allowBulletHoles()); }},
-        {"updateCollisionData", [&] { actor.updateCollisionData(); }},
+        {"updateCollisionData", [&] { actor.CDemonActor::updateCollisionData(); }},
         {"getTargetPoints", [&] { static_cast<void>(actor.getTargetPoints(nullptr)); }},
         {"renderTargetPoints", [&] { actor.renderTargetPoints(); }},
         {"canLookAt", [&] { static_cast<void>(actor.canLookAt()); }},
@@ -301,9 +324,8 @@ TEST(CDemonActor, TheFunctionsNotPortedYetQuit) {
          [&] { static_cast<void>(actor.customGetFloorHeight(nullptr, 0.0F, nullptr)); }},
         {"getPathMap", [&] { static_cast<void>(actor.getPathMap()); }},
         {"calculateChecksum", [&] { actor.calculateChecksum(nullptr); }},
-        {"archive", [&] { actor.CDemonActor::archive(archive); }},
     };
-    EXPECT_EQ(calls.size(), 50U);
+    EXPECT_EQ(calls.size(), 49U);
     for (const auto &[name, call] : calls) {
         EXPECT_THAT(call, ThrowsMessage<common::CFatalError>(
                               StrEq("CDemonActor::" + std::string(name) + " is not ported yet")));

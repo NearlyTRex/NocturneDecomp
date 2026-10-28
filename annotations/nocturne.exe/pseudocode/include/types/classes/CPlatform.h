@@ -7,9 +7,11 @@
 #include "types/classes/CCourse.h"
 #include "types/classes/CDemonActor.h"
 #include "types/classes/CKeyFramedModelInstance.h"
+#include "types/classes/CMatrix3x4f.h"
 #include "types/classes/CQuaternion4f.h"
 #include "types/classes/CVector3f.h"
 #include "types/enums/EGroundType.h"
+#include "types/enums/EOneShotState.h"
 #include "types/enums/EPlatformStateType.h"
 #include "types/structs/SPlatformAttachment.h"
 
@@ -39,7 +41,7 @@ typedef struct CPlatform {
     char stop_sound[20]; // 0x48c
     char active_sound[20]; // 0x4a0
     uint sfx_handle; // 0x4b4
-    int one_shot; // 0x4b8
+    EOneShotState one_shot; // 0x4b8
     int block_virtual_director_flag; // 0x4bc
     int render_in_background_when_not_moving_flag; // 0x4c0
     char camera_while_moving[64]; // 0x4c4

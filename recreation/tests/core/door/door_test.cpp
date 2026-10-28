@@ -1,3 +1,4 @@
+#include "core/actor/demonactortype.h"
 #include "core/door/door.h"
 
 #include <gtest/gtest.h>
@@ -9,6 +10,13 @@ namespace {
 
 TEST(CDoor, DerivesFromCDemonActor) {
     static_assert(std::is_base_of_v<CDemonActor, CDoor>);
+}
+
+TEST(CDoor, ItsRecordIsAVersionElevenActor) {
+    EXPECT_EQ(CDoor::kType.class_name, "CDoor");
+    EXPECT_EQ(CDoor::kType.parent_type, &CDemonActor::kType);
+    EXPECT_EQ(CDoor::kType.latest_version, 11);
+    EXPECT_EQ(CDoor::kType.name_hash, hashClassName("CDoor"));
 }
 
 TEST(CDoor, HasVirtualDestructor) {

@@ -27,7 +27,7 @@ void __cdecl core_vessel_cpp_CCryptVessel_process_FUN_0054fc60(CCryptVessel *thi
   float local_18;
   float local_14;
   
-  if (this_ptr->visual_type == 1) {
+  if (this_ptr->visual_type == CRYPT_VESSEL_FIRE) {
     (this_ptr->flame).base.location.position.x = (this_ptr->base).location.position.x;
     (this_ptr->flame).base.location.position.y = (this_ptr->base).location.position.y;
     (this_ptr->flame).base.location.position.z = (this_ptr->base).location.position.z;
@@ -43,7 +43,7 @@ void __cdecl core_vessel_cpp_CCryptVessel_process_FUN_0054fc60(CCryptVessel *thi
     }
     core_flame_cpp_CFlame_process_FUN_0048d0c0(&this_ptr->flame,delta_time);
   }
-  else if (this_ptr->visual_type == 0) {
+  else if (this_ptr->visual_type == CRYPT_VESSEL_AIR) {
     this_ptr->spin_angle = delta_time * (float)3.1415926535000001 + this_ptr->spin_angle;
   }
   else {

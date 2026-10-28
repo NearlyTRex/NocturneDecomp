@@ -66,7 +66,9 @@ protected:
                             .messages = messages_,
                             .game = game_,
                             .actor = actor_,
-                            .level_loader = level_loader_,
+                            .crt_random = crt_random_,
+                            .loading_screen = set_parts_.loading_screen,
+                            .set = set_,
                             .textures = textures_,
                             .editor_tools = editor_tools_,
                             .pick_list = pick_list_owners_}};

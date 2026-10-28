@@ -58,13 +58,13 @@
 #include <cstring>
 
 // Strip the directory prefix from __FILE__.
+constexpr const char *_dlog_leaf_after(const char *path, const char *leaf) {
+    return *path == '\0'
+               ? leaf
+               : _dlog_leaf_after(path + 1, (*path == '/' || *path == '\\') ? path + 1 : leaf);
+}
 constexpr const char *_dlog_leaf(const char *path) {
-    const char *leaf = path;
-    for (; *path; ++path) {
-        if (*path == '/' || *path == '\\')
-            leaf = path + 1;
-    }
-    return leaf;
+    return _dlog_leaf_after(path, path);
 }
 #define _DLOG_FILE _dlog_leaf(__FILE__)
 

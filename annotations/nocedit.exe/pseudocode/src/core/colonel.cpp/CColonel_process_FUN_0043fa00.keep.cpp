@@ -136,7 +136,7 @@ LAB_0043fd6e:
     }
   }
   else {
-    uVar2 = (this_ptr->base).base.is_walking;
+    uVar2 = (this_ptr->base).base.walk_state;
     if (uVar2 < 2) {
       if (uVar2 == 1) {
         iVar6 = 1;

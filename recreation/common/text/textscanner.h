@@ -29,6 +29,10 @@ public:
     [[nodiscard]] std::string_view scanWord();
     // "%[^c]": everything up to the delimiter. scanf fails on an empty match, and so does this.
     [[nodiscard]] std::optional<std::string_view> scanUntil(char delimiter);
+    // "%[^...]": everything up to any of the delimiters, likewise.
+    [[nodiscard]] std::optional<std::string_view> scanUntilAny(std::string_view delimiters);
+    // How much of the text has been read: scanf's "%n".
+    [[nodiscard]] std::size_t getPosition() const;
 
 private:
     std::string_view text_;

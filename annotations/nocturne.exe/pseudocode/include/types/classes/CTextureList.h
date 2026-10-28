@@ -4,6 +4,7 @@
 
 // Dependencies
 #include "system/basetypes.h"
+#include "types/structs/SMRGLHeaderBasic.h"
 #include "types/structs/SMRGLTextureBasic.h"
 
 // Structure: CTextureList

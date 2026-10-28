@@ -13,10 +13,10 @@ TEST(CBloodSplat, IsConcrete) {
 
 TEST(CBloodSplat, PublicInterface) {
     static_assert(std::is_same_v<decltype(&CBloodSplat::initGroundSplat),
-                                 void (CBloodSplat::*)(common::CVector3f *, int)>);
-    static_assert(
-        std::is_same_v<decltype(&CBloodSplat::initWallSplat),
-                       void (CBloodSplat::*)(common::CVector3f *, common::CVector3f *, int)>);
+                                 void (CBloodSplat::*)(common::CVector3f *, EBloodType)>);
+    static_assert(std::is_same_v<decltype(&CBloodSplat::initWallSplat),
+                                 void (CBloodSplat::*)(common::CVector3f *, common::CVector3f *,
+                                                       EBloodType)>);
     static_assert(
         std::is_same_v<decltype(&CBloodSplat::setupRenderState), void (CBloodSplat::*)()>);
     static_assert(std::is_same_v<decltype(&CBloodSplat::render), void (CBloodSplat::*)(int)>);

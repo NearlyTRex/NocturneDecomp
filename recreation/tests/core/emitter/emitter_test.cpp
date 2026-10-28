@@ -1,3 +1,4 @@
+#include "core/actor/demonactortype.h"
 #include "core/emitter/emitter.h"
 
 #include <gtest/gtest.h>
@@ -37,6 +38,13 @@ TEST(CEmitter, PublicInterface) {
     static_assert(
         std::is_same_v<decltype(&CEmitter::archive), void (CEmitter::*)(CActorArchive &)>);
     static_assert(std::is_same_v<decltype(&CEmitter::launchFireballAtHero), void (CEmitter::*)()>);
+}
+
+TEST(CEmitter, ItsRecordIsVersion7UnderCDemonActor) {
+    EXPECT_EQ(CEmitter::kType.class_name, "CEmitter");
+    EXPECT_EQ(CEmitter::kType.parent_type, &CDemonActor::kType);
+    EXPECT_EQ(CEmitter::kType.factory_func, nullptr);
+    EXPECT_EQ(CEmitter::kType.latest_version, 7);
 }
 
 } // namespace

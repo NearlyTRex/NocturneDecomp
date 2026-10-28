@@ -8,7 +8,6 @@ namespace nocturne::core {
 namespace {
 
 TEST(CoreBoxactorFunctions, PublicInterface) {
-    static_assert(std::is_same_v<decltype(&staticInit), void (*)()>);
     static_assert(std::is_same_v<decltype(&factoryFuncBoxActor), CBoxActor *(*)()>);
     static_assert(std::is_same_v<decltype(&factoryFuncLightActor), CLightActor *(*)()>);
 }

@@ -1,3 +1,4 @@
+#include "core/actor/demonactortype.h"
 #include "core/dracbrid/draculabride.h"
 
 #include <gtest/gtest.h>
@@ -40,6 +41,13 @@ TEST(CDraculaBride, PublicInterface) {
                                  void (CDraculaBride::*)(SDamageInfo *)>);
     static_assert(
         std::is_same_v<decltype(&CDraculaBride::getDeathState), EDeathState (CDraculaBride::*)()>);
+}
+
+TEST(CDraculaBride, ItsRecordIsVersion9UnderCEnemy) {
+    EXPECT_EQ(CDraculaBride::kType.class_name, "CDraculaBride");
+    EXPECT_EQ(CDraculaBride::kType.parent_type, &CEnemy::kType);
+    EXPECT_EQ(CDraculaBride::kType.factory_func, nullptr);
+    EXPECT_EQ(CDraculaBride::kType.latest_version, 9);
 }
 
 } // namespace

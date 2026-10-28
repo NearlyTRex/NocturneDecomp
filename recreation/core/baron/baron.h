@@ -4,6 +4,7 @@
 #include "core/hero/hero.h"
 
 #include <memory>
+#include <string>
 
 namespace nocturne::core {
 
@@ -34,8 +35,17 @@ public:
     void attachToOwner(CDemonActor *target);
     void detachFromOwner(CDemonActor *target);
 
+    // The events that summon the Baron and send the Baron away; "none" for no event.
+    [[nodiscard]] const std::string &getSummonEvent() const;
+    [[nodiscard]] const std::string &getGoAwayEvent() const;
+    [[nodiscard]] bool isSummoned() const;
+
 private:
     static std::unique_ptr<CDemonActor> create();
+
+    std::string summon_event_ = "none";
+    std::string go_away_event_ = "none";
+    bool summoned_ = false;
 };
 
 } // namespace nocturne::core

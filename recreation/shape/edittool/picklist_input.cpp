@@ -11,6 +11,7 @@
 
 #include <algorithm>
 #include <cstddef>
+#include <utility>
 
 namespace nocturne::shape {
 namespace {
@@ -75,7 +76,7 @@ bool CPickList::pickByHotkey(int key) {
     for (int index = 0; index < count; ++index) {
         const auto hotkey = static_cast<unsigned char>(
             common::upperAscii(hotkeys_[static_cast<std::size_t>(index)]));
-        if (hotkey != key) {
+        if (std::cmp_not_equal(hotkey, key)) {
             continue;
         }
         current_index_ = index;

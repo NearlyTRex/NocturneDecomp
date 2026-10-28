@@ -8,6 +8,8 @@
 #include "types/classes/CColor3i.h"
 #include "types/classes/CDemonActor.h"
 #include "types/classes/CKeyFramedModelInstance.h"
+#include "types/enums/EAmmoType.h"
+#include "types/enums/EFireMode.h"
 #include "types/enums/EWeaponState.h"
 #include "types/enums/EWeaponType.h"
 
@@ -19,7 +21,7 @@ typedef struct CWeapon {
     CKeyFramedModelInstance model; // 0x150
     EWeaponState weapon_state; // 0x2cc
     int is_spread_weapon; // 0x2d0
-    int fire_mode; // 0x2d4
+    EFireMode fire_mode; // 0x2d4
     EWeaponType weapon_type; // 0x2d8
     int can_penetrate; // 0x2dc
     float bolt_velocity; // 0x2e0
@@ -32,7 +34,7 @@ typedef struct CWeapon {
     float ground_height; // 0x558
     float weight; // 0x55c
     int ammo_count; // 0x560
-    int ammo_type; // 0x564
+    EAmmoType ammo_type; // 0x564
     float sim_timer; // 0x568
     int is_rendered; // 0x56c
 } CWeapon;

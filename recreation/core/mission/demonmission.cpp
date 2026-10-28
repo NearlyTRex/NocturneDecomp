@@ -15,9 +15,7 @@ CDemonMission::~CDemonMission() = default;
 // deferred: clearing the pending teleport to area -1 at the origin, with setTeleportTarget and
 //   process
 // deferred: emptying the queue of actors to delete, with markActorToDelete and process
-// deferred: clearing actors_prepared, with prepareAllActors and loadSet
-// deferred: clearing has_inventory_actors, next_inventory_actor and actor_lookup_count, with
-//   readMissionFile, getNextLoadedInventoryActor and CInventory::load
+// deferred: clearing actor_lookup_count, with saveActor
 // The original let go of any actors without destroying them.
 // nocedit 0x00522c80
 void CDemonMission::reset() {
@@ -26,6 +24,8 @@ void CDemonMission::reset() {
     mission_name_.clear();
     pending_mission_name_.clear();
     actors_.clear();
+    actors_prepared_ = false;
+    carried_start_.reset();
 }
 
 // nocedit 0x00524630

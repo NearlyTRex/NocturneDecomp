@@ -1,3 +1,4 @@
+#include "core/actor/demonactortype.h"
 #include "core/passngr/passenger.h"
 
 #include <gtest/gtest.h>
@@ -31,6 +32,13 @@ TEST(CPassenger, PublicInterface) {
                                  const CDemonActorType &(CPassenger::*)() const>);
     static_assert(
         std::is_same_v<decltype(&CPassenger::archive), void (CPassenger::*)(CActorArchive &)>);
+}
+
+TEST(CPassenger, ItsRecordIsVersion6UnderCNPC) {
+    EXPECT_EQ(CPassenger::kType.class_name, "CPassenger");
+    EXPECT_EQ(CPassenger::kType.parent_type, &CNPC::kType);
+    EXPECT_EQ(CPassenger::kType.factory_func, nullptr);
+    EXPECT_EQ(CPassenger::kType.latest_version, 6);
 }
 
 } // namespace

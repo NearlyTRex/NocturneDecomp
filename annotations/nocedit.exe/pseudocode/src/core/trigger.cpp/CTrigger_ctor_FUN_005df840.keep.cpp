@@ -17,12 +17,12 @@ CTrigger * __cdecl core_trigger_cpp_CTrigger_ctor_FUN_005df840(CTrigger *this_pt
   (pCVar2->trigger_size).x = 5.0;
   (pCVar2->trigger_size).y = 9.0;
   (pCVar2->trigger_size).z = 5.0;
-  pCVar2->shape = 0;
-  pCVar2->event_type = TRIGGER_EVENT_SINGLE;
+  pCVar2->trigger_shape = TRIGGER_SHAPE_BOX;
+  pCVar2->event_type = TRIGGER_EVENT_MOMENTARY;
   pCVar2->on_event[0] = '\0';
   pCVar2->off_event[0] = '\0';
   pCVar2->trigger_state = 0;
-  pCVar2->hero_triggers_me = 0;
+  pCVar2->trigger_cause = TRIGGER_CAUSE_HERO;
   strcpy(pCVar2->actor_name,"nobody");
   strcpy(pCVar2->actor_type,"CDemonActor");
   pCVar2->pressure_plate = 0;

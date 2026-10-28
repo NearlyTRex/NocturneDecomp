@@ -120,7 +120,7 @@ whichever port needs it:
 | Definition | What it does |
 |---|---|
 | `NOCTURNE_PLATFORM_FIXED_DISPLAY=1` | The window is the screen: made full-screen, never sized or moved, and the Graphics Options screen has no Window line (`shims/gl/window_mode.h`). |
-| `NOCTURNE_PLATFORM_NO_QUIT=1` | The system ends the app: the main menu has no QUIT, and Escape there does nothing (`NOCTURNE_AUTHENTIC_APP_QUIT`). |
+| `NOCTURNE_PLATFORM_NO_QUIT=1` | The system ends the app: the main menu has no QUIT, and Escape there does nothing (the main menu page of `NOCTURNE_AUTHENTIC_MENU`). |
 | `NOCTURNE_PLATFORM_CRASH_SIGNALS=1` | Outside Windows, a fault signal leaves a crash report, for a platform with no core dump to fall back on (`shims/core/crash_report.h`). |
 
 `NOCTURNE_PLATFORM_SDL_MAIN` in the platform file, rather than a definition, lets SDL own the

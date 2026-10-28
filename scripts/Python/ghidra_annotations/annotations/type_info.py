@@ -27,7 +27,8 @@ def get_class_hierarchy():
             "CHeroPlaceholder", "CHealthItem", "CGrave", "CGlass", "CGasMask",
             "CFrankenstienMachine", "CFlies", "CFlameCan", "CFlame", "CFilmReel",
             "CEmitter", "CDrip", "CDoor", "CActorDestination", "CCurtain",
-            "CCrate", "CChain", "CCharacter"
+            "CCrate", "CChain", "CCharacter", "CBoxActor", "CBodyPart", "CBattery",
+            "CBat", "CBarrier", "CBackgroundActor", "CAnvil", "CAmmoBox", "CAmmo"
         ],
         "CWeapon": [
             "CTurret", "CTommyGun", "CShovel", "CShotgun", "CMelee", "CLightGun",
@@ -37,10 +38,7 @@ def get_class_hierarchy():
         "CTrigger": ["CWayPoint"],
         "CPlatform": ["CMineCar", "CConveyor"],
         "CActorDestination": ["CFilmProjector"],
-        "CCharacter": [
-            "CNPC", "CHero", "CEnemy", "CBoxActor", "CBodyPart", "CBattery",
-            "CBat", "CBarrier", "CBackgroundActor", "CAnvil", "CAmmoBox", "CAmmo"
-        ],
+        "CCharacter": ["CNPC", "CHero", "CEnemy"],
         "CNPC": [
             "CBassPlayer", "CDrummer", "CPassenger", "CHighPriestOfGardath",
             "CHostage", "CHiram"

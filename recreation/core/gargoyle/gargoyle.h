@@ -8,6 +8,8 @@ namespace nocturne::core {
 
 class CGargoyle : public CEnemy {
 public:
+    static const CDemonActorType kType;
+
     CGargoyle();
     ~CGargoyle() override;
 

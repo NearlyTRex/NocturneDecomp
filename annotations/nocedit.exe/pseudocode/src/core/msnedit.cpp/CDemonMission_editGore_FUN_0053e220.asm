@@ -449,7 +449,7 @@ section .text
     PUSH EDX                            ; 0053e6c9 | g_CGoreInstance
     FSTP float ptr [ESP + 0x18]         ; 0053e6ca
     CALL core_gore.cpp_CGore_spawnBloodParticles_FUN_004edaa0 ; 0053e6ce
-        ;   XREF to: 004edaa0 (UNCONDITIONAL_CALL)  ; void core_gore.cpp_CGore_spawnBloodParticles_FUN_004edaa0(CGore * this_ptr, CVector3f * position, CVector3f * velocity, int blood_type)
+        ;   XREF to: 004edaa0 (UNCONDITIONAL_CALL)  ; void core_gore.cpp_CGore_spawnBloodParticles_FUN_004edaa0(CGore * this_ptr, CVector3f * position, CVector3f * velocity, EBloodType blood_type)
     ADD ESP,0x10                        ; 0053e6d3
     PUSH 0x1c                           ; 0053e6d6
         ;   Label: LAB_0053e6d6
@@ -492,7 +492,7 @@ section .text
     PUSH EBX                            ; 0053e74b | g_CGoreInstance
     FSTP float ptr [ESP + 0x84]         ; 0053e74c
     CALL core_gore.cpp_CGore_spawnBloodParticles_FUN_004edaa0 ; 0053e753
-        ;   XREF to: 004edaa0 (UNCONDITIONAL_CALL)  ; void core_gore.cpp_CGore_spawnBloodParticles_FUN_004edaa0(CGore * this_ptr, CVector3f * position, CVector3f * velocity, int blood_type)
+        ;   XREF to: 004edaa0 (UNCONDITIONAL_CALL)  ; void core_gore.cpp_CGore_spawnBloodParticles_FUN_004edaa0(CGore * this_ptr, CVector3f * position, CVector3f * velocity, EBloodType blood_type)
     ADD ESP,0x10                        ; 0053e758
     PUSH 0x19                           ; 0053e75b
         ;   Label: LAB_0053e75b
@@ -592,7 +592,7 @@ section .text
     FSTP float ptr [ESP + 0x58]         ; 0053e88e
     FSTP float ptr [ESP + 0x5c]         ; 0053e892
     CALL core_gore.cpp_CGore_createBloodPool_FUN_004ede30 ; 0053e896
-        ;   XREF to: 004ede30 (UNCONDITIONAL_CALL)  ; void core_gore.cpp_CGore_createBloodPool_FUN_004ede30(CGore * this_ptr, CVector3f * position, int blood_type)
+        ;   XREF to: 004ede30 (UNCONDITIONAL_CALL)  ; void core_gore.cpp_CGore_createBloodPool_FUN_004ede30(CGore * this_ptr, CVector3f * position, EBloodType blood_type)
     ADD ESP,0xc                         ; 0053e89b
     PUSH 0x13                           ; 0053e89e
         ;   Label: LAB_0053e89e

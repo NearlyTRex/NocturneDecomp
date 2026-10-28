@@ -7,6 +7,8 @@ namespace nocturne::core {
 
 class CLadder : public CDemonActor {
 public:
+    static const CDemonActorType kType;
+
     CLadder();
     ~CLadder() override;
 

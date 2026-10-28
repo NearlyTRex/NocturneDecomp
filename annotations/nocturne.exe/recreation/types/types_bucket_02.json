@@ -68,7 +68,7 @@
   {
     "kind":"class",
     "name":"CBat",
-    "parent":"CCharacter",
+    "parent":"CDemonActor",
     "rtti_file":"core/bat.cpp",
     "size":896
   },
@@ -1082,6 +1082,25 @@
   },
   {
     "kind":"enum",
+    "name":"EBloodType",
+    "size":4,
+    "values":[
+      {
+        "name":"BLOOD_TYPE_RED",
+        "value":0
+      },
+      {
+        "name":"BLOOD_TYPE_ICHOR",
+        "value":1
+      },
+      {
+        "name":"BLOOD_TYPE_NONE",
+        "value":2
+      }
+    ]
+  },
+  {
+    "kind":"enum",
     "name":"EEditorActionType",
     "size":4,
     "values":[
@@ -1165,6 +1184,57 @@
   },
   {
     "kind":"enum",
+    "name":"EEmitterType",
+    "size":4,
+    "values":[
+      {
+        "name":"EMITTER_TYPE_SPARK",
+        "value":0
+      },
+      {
+        "name":"EMITTER_TYPE_SMOKE",
+        "value":1
+      },
+      {
+        "name":"EMITTER_TYPE_FIREBALL",
+        "value":2
+      },
+      {
+        "name":"EMITTER_TYPE_LASER",
+        "value":3
+      },
+      {
+        "name":"EMITTER_TYPE_ROCK",
+        "value":4
+      },
+      {
+        "name":"EMITTER_TYPE_FLAME",
+        "value":5
+      },
+      {
+        "name":"EMITTER_TYPE_POPCORN",
+        "value":6
+      },
+      {
+        "name":"EMITTER_TYPE_LIGHTNING",
+        "value":7
+      },
+      {
+        "name":"EMITTER_TYPE_BLUE_SPARK",
+        "value":8
+      },
+      {
+        "name":"EMITTER_TYPE_POINT_TO_POINT_LIGHTNING",
+        "value":9
+      },
+      {
+        "name":"EMITTER_TYPE_SOUND",
+        "value":10
+      }
+    ]
+  },
+  {
+    "kind":"enum",
     "name":"ELeverType",
     "size":4,
     "values":[
@@ -1179,6 +1249,25 @@
       {
         "name":"LEVER_TYPE_UNKNOWN",
         "value":2
+      }
+    ]
+  },
+  {
+    "kind":"enum",
+    "name":"EWalkState",
+    "size":4,
+    "values":[
+      {
+        "name":"WALK_STATE_IDLE",
+        "value":0
+      },
+      {
+        "name":"WALK_STATE_WALKING",
+        "value":1
+      },
+      {
+        "name":"WALK_STATE_NO_PATH",
+        "value":3
       }
     ]
   },

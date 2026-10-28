@@ -4,7 +4,6 @@
 
 namespace nocturne::core {
 
-void staticInit();
 CBat *factoryFuncBat();
 
 } // namespace nocturne::core

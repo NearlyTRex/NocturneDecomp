@@ -54,7 +54,6 @@ void __cdecl core_stranger_cpp_CStranger_processFrame_FUN_005bb960(CStranger *th
   CVector3f local_1dc;
   UOrientationVector local_1c8;
   float local_1bc;
-  float local_1b0;
   CVector3f local_1ac;
   CVector3f local_194 [2];
   CVector3f local_174;
@@ -415,7 +414,7 @@ void __cdecl core_stranger_cpp_CStranger_processFrame_FUN_005bb960(CStranger *th
               }
             }
             else {
-              uVar23 = (this_ptr->base).base.is_walking;
+              uVar23 = (this_ptr->base).base.walk_state;
               if (uVar23 < 2) {
                 if (uVar23 == 1) {
                   iVar20 = 1;
@@ -451,12 +450,9 @@ LAB_005bd19f:
             if ((this_ptr->base).player_input.action_state.fire != 0) {
               pCVar19 = (this_ptr->base).pushed_object;
               (*((pCVar19->base).vtable._ub)->getBoundingBox)(&pCVar19->base,&local_248);
-              local_1b0 = local_248.min.z + local_248.max.z;
-              local_1ac.x = local_248.max.x + local_230.x;
-              local_168.x = local_1b0 * 0.5f;
-              local_168.y = local_1ac.x * 0.5f;
-              local_1ac.y = local_248.max.y + local_230.y;
-              local_168.z = local_1ac.y * 0.5f;
+              local_168.x = (local_248.min.x + local_248.max.x) * 0.5f;
+              local_168.y = (local_248.min.y + local_248.max.y) * 0.5f;
+              local_168.z = (local_248.min.z + local_248.max.z) * 0.5f;
               core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
                         (&((this_ptr->base).pushed_object)->base,&local_174,&local_168);
               core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_00408f10
@@ -464,8 +460,8 @@ LAB_005bd19f:
               pCVar16 = core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830
                                   (local_114,local_9c);
               local_2c4 = core_actor_cpp_normalizeAngleToPi_FUN_0040cd70(pCVar16->y);
-              local_fc.x = (local_248.max.z - local_248.min.z) * 0.5f;
-              local_fc.z = (local_230.y - local_248.max.y) * 0.5f;
+              local_fc.x = (local_248.max.x - local_248.min.x) * 0.5f;
+              local_fc.z = (local_248.max.z - local_248.min.z) * 0.5f;
               local_fc.y = 0.0;
               if ((((local_9c[0].z - SQRT(local_fc.z * local_fc.z + local_fc.x * local_fc.x) <
                      (float)3) && (1.0 < local_9c[0].y)) &&
@@ -1078,6 +1074,9 @@ LAB_005bc1a6:
                           ((CDemonActor *)this_ptr,local_1f4,&local_200);
       if (0.0 < pCVar16->z) {
         core_boxactor_cpp_CBoxActor_resolveRayPush_FUN_00422390(pCVar19,&local_230,&local_200);
+#if !NOCTURNE_AUTHENTIC_PUSH_SOUND
+        nocturne_box_push_sound(pCVar19);
+#endif
       }
     }
   }

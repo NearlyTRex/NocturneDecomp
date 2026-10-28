@@ -4,10 +4,14 @@
 #include "core/actor/actorarchive.h"
 #include "core/actor/demonactor.h"
 #include "core/actor/demonactortype.h"
+#include "core/ammo/ammo.h"
+#include "core/gun/gun.h"
 #include "core/hero/hero.h"
 #include "core/hero/heroplaceholder.h"
+#include "core/inv/inventory.h"
 #include "core/location.h"
 #include "core/mission/demonmission.h"
+#include "core/weapon/weaponstate.h"
 #include "engine/keys/inputcodetype.h"
 #include "platform/mrgltexturebasic.h"
 #include "tests/mocks/core/missionfixture.h"
@@ -35,12 +39,50 @@ using ::testing::ThrowsMessage;
 std::unique_ptr<CDemonActor> makeDoor();
 std::unique_ptr<CDemonActor> makeHero();
 std::unique_ptr<CDemonActor> makeSpot();
+std::unique_ptr<CDemonActor> makePlaced();
+std::unique_ptr<CDemonActor> makeLinked();
+std::unique_ptr<CDemonActor> makeCarrier();
 
 const CDemonActorType kDoorType = makeActorType("CTestDoor", &kTestBaseType, &makeDoor, 2);
 // A kind of the game's hero class, which is what a hero placeholder is offered for.
 const CDemonActorType kHeroType = makeActorType("CTestHero", &CHero::kType, &makeHero, 1);
 const CDemonActorType kSpotType =
     makeActorType("CTestSpot", &CHeroPlaceholder::kType, &makeSpot, 1);
+// Of a class whose fields are only CDemonActor's.
+const CDemonActorType kPlacedType =
+    makeActorType("CTestPlaced", &CDemonActor::kType, &makePlaced, 1);
+const CDemonActorType kLinkedType = makeActorType("CTestLinked", &kTestBaseType, &makeLinked, 1);
+const CDemonActorType kCarrierType = makeActorType("CTestCarrier", &kTestBaseType, &makeCarrier, 1);
+
+// An actor whose body is an inventory.
+class CTestCarrier : public CTestActor {
+public:
+    CTestCarrier() : CTestActor(kCarrierType) {}
+    void archive(CActorArchive &actor_archive) override {
+        inventory_.load(actor_archive);
+    }
+    [[nodiscard]] const CInventory &getInventory() const {
+        return inventory_;
+    }
+
+private:
+    CInventory inventory_;
+};
+
+// An actor whose body names another.
+class CTestLinked : public CTestActor {
+public:
+    CTestLinked() : CTestActor(kLinkedType) {}
+    void archive(CActorArchive &actor_archive) override {
+        actor_archive.archiveActor(linked_, "linked");
+    }
+    [[nodiscard]] CDemonActor *getLinked() const {
+        return linked_;
+    }
+
+private:
+    CDemonActor *linked_ = nullptr;
+};
 
 // A hero placeholder whose body holds its hero index, as CHeroPlaceholder's can't be read yet.
 class CTestSpot : public CHeroPlaceholder {
@@ -80,6 +122,21 @@ std::unique_ptr<CDemonActor> makeSpot() {
     return std::make_unique<CTestSpot>();
 }
 
+std::unique_ptr<CDemonActor> makePlaced() {
+    auto placed = std::make_unique<CTestActor>(kPlacedType);
+    CTestActor &actor = *placed;
+    actor.onArchive([&actor](CActorArchive &archive) { actor.CDemonActor::archive(archive); });
+    return placed;
+}
+
+std::unique_ptr<CDemonActor> makeLinked() {
+    return std::make_unique<CTestLinked>();
+}
+
+std::unique_ptr<CDemonActor> makeCarrier() {
+    return std::make_unique<CTestCarrier>();
+}
+
 // An actor's start and end tags with nothing between.
 std::string body(std::string_view class_name, std::string_view name) {
     return std::format("{{ {} \"{}\"\n}} {} \"{}\"\n", class_name, name, class_name, name);
@@ -100,6 +157,9 @@ protected:
         actor_.registerActorClass(kDoorType);
         actor_.registerActorClass(kHeroType);
         actor_.registerActorClass(kSpotType);
+        actor_.registerActorClass(kPlacedType);
+        actor_.registerActorClass(kLinkedType);
+        actor_.registerActorClass(kCarrierType);
     }
 
     void read(const std::string &text, bool keep_assets = true) {
@@ -128,6 +188,18 @@ TEST_F(CDemonMissionLoadTest, TheFileGivesTheNameVersionAndActorsInOrder) {
     EXPECT_EQ(mission_.getMissionVersionNum(), 7);
     EXPECT_EQ(names(), (std::vector<std::string>{"Door 1", "Start"}));
     EXPECT_EQ(&mission_.getActors()[0]->getActorType(), &kDoorType);
+}
+
+// The table's versions are the ones each class's fields are read as, and a mission that doesn't
+// list a class reads it as version 1, whatever the mission before said.
+TEST_F(CDemonMissionLoadTest, TheClassTableSaysWhichVersionTheFieldsAreIn) {
+    const std::string fields = "1,0,0,0\n0,0,0\n";
+    read(mission("1\nCDemonActor 6\n", 1, 0, "CTestPlaced \"P\"\n",
+                 "{ CTestPlaced \"P\"\n" + fields + "90\n1\n0.5\n\"go\"\n} CTestPlaced \"P\"\n"));
+    EXPECT_EQ(mission_.getActors()[0]->getCreateEvent(), "go");
+    read(mission("0\n", 1, 0, "CTestPlaced \"P\"\n",
+                 "{ CTestPlaced \"P\"\n" + fields + "90\n} CTestPlaced \"P\"\n"));
+    EXPECT_EQ(mission_.getActors()[0]->getCreateEvent(), "none");
 }
 
 // A new mission replaces the actors and the name of the last.
@@ -329,6 +401,159 @@ TEST_F(CDemonMissionLoadTest, CancellingThePickLeavesTheMissionAsItIs) {
     EXPECT_CALL(raw_input_, getNextKeypress(_)).Times(0);
     mission_.load("test.msn", true);
     EXPECT_EQ(names(), (std::vector<std::string>{"Door", "Gabriel", "Stranger", "Spot"}));
+}
+
+// Every actor is made before any body is read, so a body can name one later in the list.
+TEST_F(CDemonMissionLoadTest, ABodyNamesAnotherActor) {
+    read(mission("0\n", 2, 0, "CTestLinked \"L\"\nCTestDoor \"Door 1\"\n",
+                 "{ CTestLinked \"L\"\n\t\"door 1\"\t// linked\n} CTestLinked \"L\"\n" +
+                     body("CTestDoor", "Door 1")));
+    const auto &linked = dynamic_cast<const CTestLinked &>(*mission_.getActors()[0]);
+    EXPECT_EQ(linked.getLinked(), mission_.getActors()[1].get());
+}
+
+// A carrier C whose inventory lists the doors named, each body empty.
+std::string carrierBody(const std::vector<std::string> &items) {
+    std::string list;
+    std::string bodies;
+    for (const std::string &item : items) {
+        list += std::format("CTestDoor \"{}\"\n", item);
+        bodies += body("CTestDoor", item);
+    }
+    return std::format("{{ CTestCarrier \"C\"\n{{ // Inventory\n// fileVersion\n2\n// itemCount\n"
+                       "{}\n// currentWeapon\n-1\n// battery strength\n100\n// actor name list\n"
+                       "{}// actor data list\n{}}}\n}} CTestCarrier \"C\"\n",
+                       items.size(), list, bodies);
+}
+
+// The carried items listed after the actors leave the mission for the inventories that carry
+// them, claimed by name in either case; the item's body then names it.
+TEST_F(CDemonMissionLoadTest, TheCarriedItemsGoToTheirCarriers) {
+    read(mission("0\n", 1, 2, "CTestCarrier \"C\"\nCTestDoor \"a\"\nCTestDoor \"b\"\n",
+                 carrierBody({"A", "b"})));
+    EXPECT_EQ(names(), (std::vector<std::string>{"C"}));
+    const auto &carrier = dynamic_cast<const CTestCarrier &>(*mission_.getActors()[0]);
+    ASSERT_EQ(carrier.getInventory().getItems().size(), 2U);
+    EXPECT_EQ(carrier.getInventory().getItems()[0]->getActorName(), "A");
+    EXPECT_EQ(carrier.getInventory().getItems()[1]->getActorName(), "b");
+}
+
+TEST_F(CDemonMissionLoadTest, ACarriedItemNoOneClaimsIsFatal) {
+    expectFatal(mission("0\n", 1, 1, "CTestCarrier \"C\"\nCTestDoor \"a\"\n", carrierBody({})),
+                "CDemonMission::load - actor list count mismatch #3!");
+}
+
+TEST_F(CDemonMissionLoadTest, ClaimingTheItemsOutOfOrderIsFatal) {
+    expectFatal(mission("0\n", 1, 2, "CTestCarrier \"C\"\nCTestDoor \"a\"\nCTestDoor \"b\"\n",
+                        carrierBody({"b", "a"})),
+                "CDemonMission::getNextLoadedInventoryActor - requested b, but next actor was a!");
+}
+
+TEST_F(CDemonMissionLoadTest, ClaimingMoreItemsThanListedIsFatal) {
+    expectFatal(mission("0\n", 1, 0, "CTestCarrier \"C\"\n", carrierBody({"a"})),
+                "CDemonMission::getNextLoadedInventoryActor - no more!");
+}
+
+// The ammunition and gun a hero carries in the shipped missions, as ACT1 saves them.
+TEST_F(CDemonMissionLoadTest, TheShippedMissionsItemsAreRead) {
+    const std::string demon_fields = "\t\t\t0,0,0,0    // location\n\t\t\t0,0,0    // orient\n"
+                                     "\t\t\t0    // wasCreated\n\t\t\t1    // createProb\n"
+                                     "\t\t\t\"none\"    // createEvent\n";
+    const std::string carrier =
+        "{ CTestCarrier \"C\"\n\t{ // Inventory\n\t\t// fileVersion\n\t\t2\n\t\t// "
+        "itemCount\n\t\t2\n"
+        "\t\t// currentWeapon\n\t\t1\n\t\t// battery strength\n\t\t100.000000\n"
+        "\t\t// actor name list\n\t\tCAmmo \"Some_ammo\"\n\t\tCGun \"Your_weapon\"\n"
+        "\t\t// actor data list\n\t\t{ CAmmo \"Some_ammo\"\n" +
+        demon_fields +
+        "\t\t\t\"gatbullet.kfm\"    // modelName\n\t\t\t\"CGun\"    // weaponClassName\n"
+        "\t\t\t20    // ammoCount\n\t\t\t0    // ammoType\n\t\t} CAmmo \"Some_ammo\"\n"
+        "\t\t{ CGun \"Your_weapon\"\n" +
+        demon_fields +
+        "\t\t\t\"gat.kfm\"    // modelName\n\t\t\t\"C\"\t\t// carriedByActor\n"
+        "\t\t\t1    // weaponState\n\t\t\t20    // ammoCount\n\t\t\t0    // ammoType\n"
+        "\t\t\t0    // simTimer\n\t\t} CGun \"Your_weapon\"\n\t}\n} CTestCarrier \"C\"\n";
+    read(mission("4\nCDemonActor 7\nCWeapon 7\nCGun 1\nCAmmo 1\n", 1, 2,
+                 "CTestCarrier \"C\"\nCAmmo \"Some_ammo\"\nCGun \"Your_weapon\"\n", carrier));
+    const auto &holder = dynamic_cast<const CTestCarrier &>(*mission_.getActors()[0]);
+    const CInventory &inventory = holder.getInventory();
+    ASSERT_EQ(inventory.getItems().size(), 2U);
+    const auto &ammo = dynamic_cast<const CAmmo &>(*inventory.getItems()[0]);
+    EXPECT_EQ(ammo.getModel().getModelName(), "gatbullet.kfm");
+    auto &gun = dynamic_cast<CGun &>(*inventory.getItems()[1]);
+    EXPECT_EQ(inventory.getSelectedWeapon(), &gun);
+    EXPECT_EQ(gun.getCarrier(), &holder);
+    EXPECT_EQ(gun.getWeaponState(), EWeaponState::kInInventory);
+}
+
+// Before version 6 a mission listed no carried items, so an inventory makes its own.
+TEST_F(CDemonMissionLoadTest, AnOlderMissionsInventoriesMakeTheirItems) {
+    read("; mission\n5,4\n; name\nOld\n; sets\n0\n; types\n0\n; actors\n1\n; list\n"
+         "CTestCarrier \"C\"\n; bodies\n" +
+         carrierBody({"a"}));
+    EXPECT_EQ(names(), (std::vector<std::string>{"C"}));
+    const auto &carrier = dynamic_cast<const CTestCarrier &>(*mission_.getActors()[0]);
+    ASSERT_EQ(carrier.getInventory().getItems().size(), 1U);
+    EXPECT_EQ(&carrier.getInventory().getItems()[0]->getActorType(), &kDoorType);
+}
+
+class CDemonMissionLoadActorTest : public CDemonMissionLoadTest {
+protected:
+    CDemonMissionLoadActorTest() {
+        owner_.setActorName("Owner");
+        auto door = std::make_unique<CTestActor>(kDoorType);
+        door->setActorName("Door 1");
+        door_ = door.get();
+        mission_.addActorToList(std::move(door));
+    }
+
+    // The actor the reference names, checking the rest of its line was read.
+    CDemonActor *loadActor(std::string_view text) {
+        common::CTextScanner scanner(text);
+        CDemonActor *actor = mission_.loadActor(scanner, owner_, "linked");
+        EXPECT_EQ(scanner.readLine(), "next") << text;
+        return actor;
+    }
+
+    void expectFatal(std::string_view text, std::string_view description,
+                     const std::string &message) {
+        common::CTextScanner scanner(text);
+        EXPECT_THAT([&] { static_cast<void>(mission_.loadActor(scanner, owner_, description)); },
+                    ThrowsMessage<common::CFatalError>(StrEq(message)))
+            << text;
+    }
+
+    CTestActor owner_{kTestBaseType};
+    CDemonActor *door_ = nullptr;
+};
+
+TEST_F(CDemonMissionLoadActorTest, AQuotedNameIsTheActorSoNamed) {
+    EXPECT_EQ(loadActor(" \n \"DOOR 1\"  // linked\nnext"), door_);
+}
+
+TEST_F(CDemonMissionLoadActorTest, NoneIsNoActor) {
+    EXPECT_EQ(loadActor("\"(None)\"\nnext"), nullptr);
+}
+
+// The warning waits for a key, and the mission goes on without the actor.
+TEST_F(CDemonMissionLoadActorTest, AnActorNotInTheMissionIsWarnedOfAndTakenAsNone) {
+    EXPECT_CALL(raw_input_, getNextKeypress(_)).WillOnce(Return('x'));
+    EXPECT_EQ(loadActor("\"Nobody\"\nnext"), nullptr);
+}
+
+TEST_F(CDemonMissionLoadActorTest, AReferenceThatCantBeReadIsFatal) {
+    const std::string message = "Error reading actor pointer.\nOwner: Owner\nDescription: linked\n";
+    expectFatal("\"\"\n", "linked", message);
+    expectFatal("\"(none)", "linked", message);
+    expectFatal("\"(none)\"", "linked", message);
+    expectFatal("\"\"\n", "",
+                "Error reading actor pointer.\nOwner: Owner\nDescription: (unknown)\n");
+}
+
+// Only save files write one, for a script's marker of no victim.
+TEST_F(CDemonMissionLoadActorTest, AnUnquotedReferenceIsNotPortedYet) {
+    expectFatal("ffffffff\n", "linked",
+                "CDemonMission::loadActor's actor saved as a number is not ported yet");
 }
 
 } // namespace

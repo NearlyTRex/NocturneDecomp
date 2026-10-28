@@ -1,8 +1,7 @@
-#include "common/text/textscanner.h"
-#include "core/actor/actorarchive.h"
 #include "core/actor/demonactortype.h"
 #include "core/baron/baron.h"
 #include "tests/mocks/core/notportedcalls.h"
+#include "tests/mocks/core/testheroarchive.h"
 
 #include <gtest/gtest.h>
 
@@ -59,23 +58,48 @@ TEST(CBaron, ItsRecordIsAVersionTwoHeroThatMissionsCanCreate) {
     EXPECT_EQ(&actor->getActorType(), &CBaron::kType);
 }
 
+TEST(CBaron, TheBaronHasNoEventsAndIsNotSummonedUntilToldOtherwise) {
+    const CBaron hero;
+    EXPECT_EQ(hero.getSummonEvent(), "none");
+    EXPECT_EQ(hero.getGoAwayEvent(), "none");
+    EXPECT_FALSE(hero.isSummoned());
+}
+
+TEST(CBaron, TheBaronIsReadWithItsEventsAndWhetherItIsSummoned) {
+    CBaron hero;
+    CTestHeroArchive archive(hero, CBaron::kType, 2,
+                             "\"callBaron\" // summonEvent\n\"dismissBaron\"\n1 // summoned\n");
+    hero.archive(archive.get());
+    EXPECT_EQ(hero.getLocation().area_id, CTestHeroArchive::kArea);
+    EXPECT_EQ(hero.getSummonEvent(), "callBaron");
+    EXPECT_EQ(hero.getGoAwayEvent(), "dismissBaron");
+    EXPECT_TRUE(hero.isSummoned());
+    EXPECT_TRUE(archive.isFinished());
+}
+
+TEST(CBaron, AVersionOneBaronHasOnlyAHerosFields) {
+    CBaron hero;
+    CTestHeroArchive archive(hero, CBaron::kType, 1, "");
+    hero.archive(archive.get());
+    EXPECT_EQ(hero.getLocation().area_id, CTestHeroArchive::kArea);
+    EXPECT_EQ(hero.getSummonEvent(), "none");
+    EXPECT_FALSE(hero.isSummoned());
+}
+
 TEST(CBaron, TheFunctionsNotPortedYetQuit) {
     CBaron hero;
-    common::CTextScanner scanner("");
-    CActorArchive archive(scanner);
     const NotPortedCalls calls = {
         {"setup", [&] { hero.setup(); }},
         {"process", [&] { hero.process(0.0F); }},
         {"renderOpaque", [&] { static_cast<void>(hero.renderOpaque()); }},
         {"renderTransparent", [&] { static_cast<void>(hero.renderTransparent()); }},
         {"getCollisionType", [&] { static_cast<void>(hero.getCollisionType(nullptr)); }},
-        {"archive", [&] { hero.archive(archive); }},
         {"isGrabbable", [&] { static_cast<void>(hero.isGrabbable(nullptr)); }},
         {"processDamage", [&] { hero.processDamage(nullptr); }},
         {"drawWeapon", [&] { hero.drawWeapon(0); }},
         {"isWeaponDrawn", [&] { static_cast<void>(hero.isWeaponDrawn()); }},
     };
-    EXPECT_EQ(calls.size(), 10U);
+    EXPECT_EQ(calls.size(), 9U);
     expectEachQuitsNotPorted("CBaron", calls);
 }
 

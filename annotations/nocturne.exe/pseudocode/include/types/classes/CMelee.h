@@ -5,6 +5,7 @@
 // Dependencies
 #include "system/basetypes.h"
 #include "types/classes/CWeapon.h"
+#include "types/enums/EAmmoType.h"
 
 // Structure: CMelee
 // Ghidra size: 0x6c4 (1732 bytes)
@@ -20,7 +21,7 @@ typedef struct CMelee {
     int blood_spurt_count; // 0x588
     float blood_spurt_timer; // 0x58c
     float blood_spurt_interval; // 0x590
-    int ammo_type; // 0x594
+    EAmmoType ammo_type; // 0x594
     char thrust_hit_character_sound[100]; // 0x598
     char swing_hit_character_sound[100]; // 0x5fc
     char hit_other_sound[100]; // 0x660

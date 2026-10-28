@@ -40,6 +40,8 @@ public:
                               common::CVector3f *normal_out);
     void testCylinderCollision(SIntersectXZCylinder *cylinder);
     void renderFrustumCubes(float fov_or_radius, int render_mode);
+    // deferred: the 20000 PVS cube positions, with this
+    // nocedit 0x004941e0
     void setPVS(int visible_cube_count, int *visible_cube_indices);
     void savePVS(int *output_count, int **input_indices_array);
     float getVoxelHeightAtPosition(common::CVector3f *world_position);

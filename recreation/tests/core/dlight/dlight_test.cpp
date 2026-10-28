@@ -8,7 +8,6 @@ namespace nocturne::core {
 namespace {
 
 TEST(CoreDlightFunctions, PublicInterface) {
-    static_assert(std::is_same_v<decltype(&staticInit), void (*)()>);
     static_assert(std::is_same_v<decltype(&resetRestoreMemoryAllocator), void (*)()>);
     static_assert(std::is_same_v<decltype(&captureLightTextures), void (*)()>);
     static_assert(std::is_same_v<decltype(&renderConeLightGeometry),

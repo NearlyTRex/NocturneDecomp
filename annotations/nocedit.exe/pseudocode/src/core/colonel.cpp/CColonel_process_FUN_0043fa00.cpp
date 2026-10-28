@@ -7,6 +7,7 @@
 #include "nocturne.h"
 
 /* WARNING: Type propagation algorithm not settling */
+/* WARNING: Unable to use type for symbol uVar2 */
 
 void __cdecl core_colonel_cpp_CColonel_process_FUN_0043fa00(CColonel *this_ptr,float delta_time)
 
@@ -51,7 +52,7 @@ void __cdecl core_colonel_cpp_CColonel_process_FUN_0043fa00(CColonel *this_ptr,f
   CCharacter *this_ptr_00;
   bool bVar4;
   CDeformableModelInstance *pCVar13;
-  uint uVar2;
+  EWalkState uVar2;
   CDemonActor *pCVar3;
   CVector3f *pCVar1;
   
@@ -144,9 +145,9 @@ LAB_0043fd6e:
     }
   }
   else {
-    uVar2 = (this_ptr->base).base.is_walking;
+    uVar2 = (this_ptr->base).base.walk_state;
     if (uVar2 < 2) {
-      if (uVar2 == 1) {
+      if (uVar2 == WALK_STATE_WALKING) {
         iVar6 = 1;
       }
       else {
@@ -156,7 +157,7 @@ LAB_0043fcd4:
     }
     else {
       if (2 < uVar2) {
-        if (uVar2 == 3) {
+        if (uVar2 == WALK_STATE_NO_PATH) {
           core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00(&pCVar2->base,0,1);
           engine_console_cpp_CConsole_printf_FUN_00441890
                     (g_CConsolePtr,"%s confused while walking to scriptDest!\n",this_ptr);
