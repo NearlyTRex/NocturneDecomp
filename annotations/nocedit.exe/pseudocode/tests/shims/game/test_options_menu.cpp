@@ -172,7 +172,7 @@ NOCTURNE_TEST(graphic_options_reads_the_display) {
     CHECK_EQ(graphic_line(4), std::string("3D Card : Riva (0)"));
     CHECK_EQ(graphic_line(5), std::string("Bits per pixel : 32"));
     CHECK_EQ(graphic_line(6), std::string("Upscaler : FSR"));
-    CHECK_EQ(graphic_line(7), std::string("FSR sharpness : 50%"));
+    CHECK_EQ(graphic_line(7), std::string("Sharpness : 50%"));
     CHECK_EQ(lines_of(kGraphic).size(), (size_t)9);
 
     stand.reset();

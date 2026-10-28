@@ -175,8 +175,8 @@ public:
         lines.add(GRAPHIC_BITS, "%s%d", localized("Bits per pixel : "), g_CGamePtr->game_bpp);
         lines.add(GRAPHIC_UPSCALER, "Upscaler : %s",
                   nocturne_upscaler_name(nocturne_upscaler_get()));
-        if (nocturne_upscaler_get() == NOCTURNE_UPSCALER_FSR)
-            lines.add(GRAPHIC_SHARPNESS, "FSR sharpness : %d%%", nocturne_upscaler_sharpness_get());
+        if (nocturne_upscaler_sharpens(nocturne_upscaler_get()))
+            lines.add(GRAPHIC_SHARPNESS, "Sharpness : %d%%", nocturne_upscaler_sharpness_get());
         lines.add_localized(GRAPHIC_CALIBRATION, "Monitor calibration");
     }
 

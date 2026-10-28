@@ -6,7 +6,7 @@
 //
 // Gated by NOCTURNE_AUTHENTIC_MENU, which carries the reasoning. A page
 // lists its lines afresh every frame, each under an id of its own, so a line
-// that comes and goes (FSR sharpness, a QUIT the host withholds) renumbers
+// that comes and goes (the upscaler's sharpness, a QUIT the host withholds) renumbers
 // nothing, and the cursor stays on the line it was on rather than on the
 // position. run() draws the page over the moon through renderMenuAndGetChoice,
 // which is core/menu_render's; where the page sits is menu_screen's.

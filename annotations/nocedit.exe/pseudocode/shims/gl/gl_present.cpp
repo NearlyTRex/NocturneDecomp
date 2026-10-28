@@ -18,6 +18,7 @@
 #include "gl/gl_api.h"
 #include "gl/gl_blit.h"
 #include "gl/gl_pixels.h"
+#include "gl/upscale_shaders.h"
 #include "gl/upscaler.h"
 
 #include <cmath>
@@ -408,16 +409,17 @@ void present_to_window(GLuint texture, int fallback_w, int fallback_h, bool flip
     const GLint standard_filter =
         viewport_is_integer_scale(vp_w, logical_w) ? GL_NEAREST : GL_LINEAR;
 
-    // FSR only enlarges: the texture is `fallback_w` x `fallback_h`, and a
-    // picture shown at that size or smaller takes the standard filter. It
-    // samples linearly; if it cannot be had, the standard filter is put back.
+    // An upscaler only enlarges: the texture is `fallback_w` x `fallback_h`, and
+    // a picture shown at that size or smaller takes the standard filter. Each
+    // reads the texture filtered as it asks; one that cannot be had puts the
+    // standard filter back.
     int drawn = 0;
-    if (nocturne_upscaler_get() == NOCTURNE_UPSCALER_FSR &&
-        (vp_w > fallback_w || vp_h > fallback_h)) {
-        set_sampling(texture, GL_LINEAR);
-        drawn = nocturne_gl_blit_quad_fsr(texture, flipped ? 1 : 0, fallback_w, fallback_h,
-                                          (float)nocturne_upscaler_sharpness_get() /
-                                              (float)NOCTURNE_UPSCALER_SHARPNESS_MAX);
+    const int upscaler = nocturne_upscaler_get();
+    if (upscaler != NOCTURNE_UPSCALER_STANDARD && (vp_w > fallback_w || vp_h > fallback_h)) {
+        set_sampling(texture, nocturne_upscale_wants_nearest(upscaler) ? GL_NEAREST : GL_LINEAR);
+        drawn = nocturne_gl_blit_quad_upscaled(
+            upscaler, texture, flipped ? 1 : 0, fallback_w, fallback_h,
+            (float)nocturne_upscaler_sharpness_get() / (float)NOCTURNE_UPSCALER_SHARPNESS_MAX);
     }
 
     // Every frame reaches the screen through this one quad — software mode

@@ -56,7 +56,14 @@ extern "C" int nocturne_upscaler_cycle(int step) {
 }
 
 extern "C" const char *nocturne_upscaler_name(int mode) {
-    return mode == NOCTURNE_UPSCALER_FSR ? "FSR" : "Standard";
+    static const char *const kNames[NOCTURNE_UPSCALER_COUNT] = {"Standard", "FSR", "Lanczos",
+                                                                "GSR",      "NIS", "xBR"};
+    return kNames[clamp_mode(mode)];
+}
+
+extern "C" int nocturne_upscaler_sharpens(int mode) {
+    return mode == NOCTURNE_UPSCALER_FSR || mode == NOCTURNE_UPSCALER_GSR ||
+           mode == NOCTURNE_UPSCALER_NIS;
 }
 
 extern "C" int nocturne_upscaler_sharpness_get(void) {
@@ -86,6 +93,9 @@ extern "C" int nocturne_upscaler_cycle(int) {
 }
 extern "C" const char *nocturne_upscaler_name(int) {
     return "Standard";
+}
+extern "C" int nocturne_upscaler_sharpens(int) {
+    return 0;
 }
 extern "C" int nocturne_upscaler_sharpness_get(void) {
     return NOCTURNE_UPSCALER_SHARPNESS_DEFAULT;

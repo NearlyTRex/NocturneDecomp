@@ -131,8 +131,9 @@ on the first finding, which for a player is a crash.
 
 ## What an archive holds
 
-The executable, the shared libraries it needs, `LICENSE`, `gamecontrollerdb.txt` and its
-licence, `README.md`, and a `VERSION.txt` that is the binary's own `--version` output — so an
+The executable, the shared libraries it needs, `LICENSE`, `THIRD_PARTY_NOTICES.txt` (the
+licences of the upscaling shaders compiled in), `gamecontrollerdb.txt` and its licence,
+`README.md`, and a `VERSION.txt` that is the binary's own `--version` output — so an
 unpacked directory can still say what it is.
 
 **No game data.** The PODs and the original executables are not in the repository and are not

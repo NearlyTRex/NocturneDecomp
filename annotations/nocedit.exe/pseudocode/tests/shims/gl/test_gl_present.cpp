@@ -517,7 +517,8 @@ NOCTURNE_TEST(a_point_on_the_window_is_the_point_in_the_game) {
 
 // Under FSR a frame that is enlarged, in either direction, is drawn through
 // FSR: sampled linear even at a whole multiple, told the frame's size and the
-// sharpness. One shown at its own size or smaller takes the standard path.
+// sharpness. One shown at its own size or smaller takes the standard path. The
+// other filters are reached the same way; xBR's own sampling is below.
 NOCTURNE_TEST(under_fsr_an_enlarged_frame_is_drawn_through_fsr) {
     std::error_code ec;
     const std::filesystem::path dir =
@@ -535,7 +536,7 @@ NOCTURNE_TEST(under_fsr_an_enlarged_frame_is_drawn_through_fsr) {
     CHECK_EQ(s.count("Uniform2f"), 1);
     CHECK_EQ(s.calls[(size_t)s.index_of_last("Uniform2f")].b, 640u);
     CHECK_EQ(s.calls[(size_t)s.index_of_last("Uniform2f")].c, 480u);
-    CHECK_EQ(s.calls[(size_t)s.index_of_last("Uniform1f")].b, 438u); // 50%
+    CHECK_EQ(s.calls[(size_t)s.index_of_last("Uniform1f")].b, 500u); // 50%
     CHECK_EQ(last_min_filter(s), (unsigned)GL_LINEAR);
 
     // A frame shorter than the game's picture is enlarged in height alone.
@@ -561,8 +562,23 @@ NOCTURNE_TEST(under_fsr_an_enlarged_frame_is_drawn_through_fsr) {
     CHECK_EQ(s.calls[(size_t)s.index_of_last("DrawArrays")].b, 4u);
 }
 
-// When FSR cannot be had the frame is drawn the standard way, filter and all.
-NOCTURNE_TEST(without_fsr_a_frame_takes_the_standard_path) {
+// xBR reads its frame unfiltered, so it is set to nearest even where the
+// standard path would blend.
+NOCTURNE_TEST(xbr_reads_its_frame_unfiltered) {
+    gl_recorder::State &s = up();
+    CHECK_EQ(nocturne_upscaler_cycle(-1), NOCTURNE_UPSCALER_STANDARD);
+    CHECK_EQ(nocturne_upscaler_cycle(-1), NOCTURNE_UPSCALER_XBR);
+    nocturne_gl_set_logical_size(640, 480);
+    stand.drawable_width = 1000;
+    stand.drawable_height = 750;
+    present(640, 480);
+    CHECK_EQ(s.count("Uniform2f"), 1);
+    CHECK_EQ(last_min_filter(s), (unsigned)GL_NEAREST);
+}
+
+// When the upscaler cannot be had the frame is drawn the standard way, filter
+// and all.
+NOCTURNE_TEST(without_its_upscaler_a_frame_takes_the_standard_path) {
     gl_recorder::State &s = up();
     gl.Uniform2f = nullptr;
     nocturne_gl_set_logical_size(640, 480);

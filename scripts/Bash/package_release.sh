@@ -66,9 +66,11 @@ mkdir -p "${OUT_DIR}"
 # tracked in git — that is the test for whether it is ours to redistribute.
 #
 # gamecontrollerdb.txt is runtime data the pad layer reads and is zlib-licensed,
-# so it ships with its licence beside it.
+# so it ships with its licence beside it. THIRD_PARTY_NOTICES.txt carries the
+# notices of the upscaling shaders compiled into the binary.
 COMMON_FILES=(
     "LICENSE"
+    "THIRD_PARTY_NOTICES.txt"
     "gamecontrollerdb.txt"
     "gamecontrollerdb.license.txt"
     "README.md"

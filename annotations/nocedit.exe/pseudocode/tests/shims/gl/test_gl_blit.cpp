@@ -9,6 +9,7 @@
 // that a context which cannot build it says so, once, rather than half drawing.
 
 #include "gl/gl_blit.h"
+#include "gl/upscaler.h"
 #include "nocturne_test.h"
 #include "shims/renderer/gl_recorder.h"
 
@@ -39,7 +40,8 @@ void APIENTRY failed(GLuint, GLenum, GLint *out) {
     *out = GL_FALSE;
 }
 
-// The plain quad's program is the first made, FSR's the second.
+// The plain quad's program is the first made, the first upscaler's (FSR in
+// these tests) the second.
 const unsigned kFsrProgram = 2;
 
 void APIENTRY fsr_fails_to_link(GLuint program, GLenum, GLint *out) {
@@ -169,14 +171,14 @@ NOCTURNE_TEST(a_quad_the_driver_will_not_make_is_none) {
     CHECK_EQ(s.count("GenBuffers"), 1);
 }
 
-// FSR draws the texture with a program of its own over the plain quad's
-// buffer, told the source size and how hard to sharpen: a quarter at the soft
-// end, all of it at the other. The pipeline before is put back.
-NOCTURNE_TEST(fsr_draws_through_its_own_program_and_puts_the_pipeline_back) {
+// An upscaler draws the texture with a program of its own over the plain
+// quad's buffer, told the source size and the sharpness as it stands. The
+// pipeline before is put back.
+NOCTURNE_TEST(an_upscaler_draws_through_its_own_program_and_puts_the_pipeline_back) {
     gl_recorder::State &s = start();
     gl.UseProgram(42);
     gl.BindVertexArray(7);
-    CHECK_EQ(nocturne_gl_blit_quad_fsr(5, 0, 640, 480, 0.0f), 1);
+    CHECK_EQ(nocturne_gl_blit_quad_upscaled(NOCTURNE_UPSCALER_FSR, 5, 0, 640, 480, 0.25f), 1);
     CHECK_EQ(s.count("CreateProgram"), 2);
     CHECK_EQ(s.count("BufferData"), 1);
     CHECK_EQ(used(s, kFsrProgram), 1);
@@ -189,61 +191,87 @@ NOCTURNE_TEST(fsr_draws_through_its_own_program_and_puts_the_pipeline_back) {
     CHECK_EQ(s.bound_vao, 7u);
 
     // A render target bottom-up, at the strongest, from what was built.
-    CHECK_EQ(nocturne_gl_blit_quad_fsr(6, 1, 320, 240, 1.0f), 1);
+    CHECK_EQ(nocturne_gl_blit_quad_upscaled(NOCTURNE_UPSCALER_FSR, 6, 1, 320, 240, 1.0f), 1);
     CHECK_EQ(drawn_first(s), 4u);
     CHECK_EQ(last(s, "Uniform1f").b, 1000u);
     CHECK_EQ(s.count("CreateProgram"), 2);
 }
 
-// Without the uniforms it sets, there is no FSR, and it is not asked for
+// Each filter has a program of its own, built on its first use and kept.
+NOCTURNE_TEST(each_filter_builds_its_own_program_once) {
+    gl_recorder::State &s = start();
+    for (int mode = NOCTURNE_UPSCALER_FSR; mode < NOCTURNE_UPSCALER_COUNT; mode++)
+        CHECK_EQ_AT(nocturne_gl_blit_quad_upscaled(mode, 1, 0, 640, 480, 0.5f), 1,
+                    std::to_string(mode));
+    CHECK_EQ(s.count("CreateProgram"), NOCTURNE_UPSCALER_COUNT);
+    CHECK_EQ(nocturne_gl_blit_quad_upscaled(NOCTURNE_UPSCALER_NIS, 1, 0, 640, 480, 0.5f), 1);
+    CHECK_EQ(s.count("CreateProgram"), NOCTURNE_UPSCALER_COUNT);
+}
+
+// Standard has no program, and nor has a mode that does not exist: nothing is
+// built for them and nothing drawn.
+NOCTURNE_TEST(standard_and_unknown_modes_are_no_upscaler) {
+    gl_recorder::State &s = start();
+    const int modes[] = {NOCTURNE_UPSCALER_STANDARD, NOCTURNE_UPSCALER_COUNT, -1};
+    for (int mode : modes)
+        CHECK_EQ_AT(nocturne_gl_blit_quad_upscaled(mode, 1, 0, 640, 480, 0.5f), 0,
+                    std::to_string(mode));
+    CHECK_EQ(s.count("CreateProgram"), 1); // the plain quad's
+    CHECK_EQ(s.count("DrawArrays"), 0);
+}
+
+// Without the uniforms it sets, there is no upscaler, and it is not asked for
 // again; the plain quad is unaffected.
-NOCTURNE_TEST(without_its_uniforms_there_is_no_fsr) {
+NOCTURNE_TEST(without_its_uniforms_there_is_no_upscaler) {
     for (int which = 0; which < 2; ++which) {
         gl_recorder::State &s = start();
         if (which == 0)
             gl.Uniform1f = nullptr;
         else
             gl.Uniform2f = nullptr;
-        CHECK_EQ(nocturne_gl_blit_quad_fsr(1, 0, 640, 480, 0.5f), 0);
-        CHECK_EQ(nocturne_gl_blit_quad_fsr(1, 0, 640, 480, 0.5f), 0);
+        CHECK_EQ(nocturne_gl_blit_quad_upscaled(NOCTURNE_UPSCALER_FSR, 1, 0, 640, 480, 0.5f), 0);
+        CHECK_EQ(nocturne_gl_blit_quad_upscaled(NOCTURNE_UPSCALER_FSR, 1, 0, 640, 480, 0.5f), 0);
         CHECK_EQ(s.count("CreateProgram"), 1);
         CHECK_EQ(nocturne_gl_blit_quad(1), 1);
     }
 }
 
-// An FSR program that will not link, or that reads its coordinates from
-// somewhere the quad's vertex array does not feed, is none.
-NOCTURNE_TEST(an_fsr_program_that_will_not_serve_is_none) {
+// A program that will not link, or that reads its coordinates from somewhere
+// the quad's vertex array does not feed, is none; another filter is still
+// built.
+NOCTURNE_TEST(a_program_that_will_not_serve_is_none) {
     gl_recorder::State &s = start();
     gl.GetProgramiv = fsr_fails_to_link;
-    CHECK_EQ(nocturne_gl_blit_quad_fsr(1, 0, 640, 480, 0.5f), 0);
-    CHECK_EQ(nocturne_gl_blit_quad_fsr(1, 0, 640, 480, 0.5f), 0);
+    CHECK_EQ(nocturne_gl_blit_quad_upscaled(NOCTURNE_UPSCALER_FSR, 1, 0, 640, 480, 0.5f), 0);
+    CHECK_EQ(nocturne_gl_blit_quad_upscaled(NOCTURNE_UPSCALER_FSR, 1, 0, 640, 480, 0.5f), 0);
     CHECK_EQ(s.count("CreateProgram"), 2);
     CHECK_EQ(nocturne_gl_blit_quad(1), 1);
+    CHECK_EQ(nocturne_gl_blit_quad_upscaled(NOCTURNE_UPSCALER_LANCZOS, 1, 0, 640, 480, 0.5f), 1);
 
     start();
     gl.GetAttribLocation = uv_moves_in_fsr;
-    CHECK_EQ(nocturne_gl_blit_quad_fsr(1, 0, 640, 480, 0.5f), 0);
+    CHECK_EQ(nocturne_gl_blit_quad_upscaled(NOCTURNE_UPSCALER_FSR, 1, 0, 640, 480, 0.5f), 0);
     CHECK_EQ(s.count("DeleteProgram"), 1);
     CHECK_EQ(used(s, kFsrProgram), 0);
 }
 
-// No plain quad, no FSR: it draws over the quad's buffer.
-NOCTURNE_TEST(without_the_quad_there_is_no_fsr) {
+// No plain quad, no upscaler: it draws over the quad's buffer.
+NOCTURNE_TEST(without_the_quad_there_is_no_upscaler) {
     gl_recorder::State &s = start();
     gl.GenBuffers = no_buffer;
-    CHECK_EQ(nocturne_gl_blit_quad_fsr(1, 0, 640, 480, 0.5f), 0);
+    CHECK_EQ(nocturne_gl_blit_quad_upscaled(NOCTURNE_UPSCALER_FSR, 1, 0, 640, 480, 0.5f), 0);
     CHECK_EQ(s.count("CreateProgram"), 1);
 }
 
-// FSR's program goes with the quad, and both are built again after.
-NOCTURNE_TEST(shutting_down_lets_fsr_go_too) {
+// The upscalers' programs go with the quad, and are built again after.
+NOCTURNE_TEST(shutting_down_lets_the_upscalers_go_too) {
     gl_recorder::State &s = start();
-    CHECK_EQ(nocturne_gl_blit_quad_fsr(1, 0, 640, 480, 0.5f), 1);
+    CHECK_EQ(nocturne_gl_blit_quad_upscaled(NOCTURNE_UPSCALER_FSR, 1, 0, 640, 480, 0.5f), 1);
+    CHECK_EQ(nocturne_gl_blit_quad_upscaled(NOCTURNE_UPSCALER_XBR, 1, 0, 640, 480, 0.5f), 1);
     nocturne_gl_blit_shutdown();
-    CHECK_EQ(s.count("DeleteProgram"), 2);
-    CHECK_EQ(nocturne_gl_blit_quad_fsr(1, 0, 640, 480, 0.5f), 1);
-    CHECK_EQ(s.count("CreateProgram"), 4);
+    CHECK_EQ(s.count("DeleteProgram"), 3);
+    CHECK_EQ(nocturne_gl_blit_quad_upscaled(NOCTURNE_UPSCALER_FSR, 1, 0, 640, 480, 0.5f), 1);
+    CHECK_EQ(s.count("CreateProgram"), 5);
 }
 
 NOCTURNE_TEST_MAIN()

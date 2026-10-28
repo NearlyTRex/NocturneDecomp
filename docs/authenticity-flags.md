@@ -185,7 +185,7 @@ shipped", but it is not a bug in the retail game.
 | `HUD_SCALE` | HUD bitmaps, text and the goggles scale with the framebuffer |
 | `STATUS_BAR_WIDTH` | another player's or a companion's status bar is as long as its maximum health, 100 being the shipped width |
 | `PUSH_SOUND` | a pushed box scrapes on every shove of a long push, not only the first |
-| `MENU` | the front end's screens are shim pages carrying every menu addition: titles below the logo, a Gameplay page beside Graphic Options, PLAY and MULTIPLAYER, window mode, the resolution table applied at once, FSR, system text, Movie Vol, the gamepad's tuning, bindings that follow the control type, and the build's version in the corner |
+| `MENU` | the front end's screens are shim pages carrying every menu addition: titles below the logo, a Gameplay page beside Graphic Options, PLAY and MULTIPLAYER, window mode, the resolution table applied at once, a choice of upscaling filters (FSR, Lanczos, GSR, NIS, xBR), system text, Movie Vol, the gamepad's tuning, bindings that follow the control type, and the build's version in the corner |
 | `CONSOLE` | the console fills the window and keeps scrollback |
 | `ATTRACT_MOVIES` | the menu cycles NOC1..NOC4 after its splash music |
 | `ENVMAP_SHADING` | reflections are shaded per pixel rather than flat per facet |

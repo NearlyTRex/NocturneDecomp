@@ -2466,8 +2466,11 @@
 //        - Graphic Options (game/options_menu). Resolutions come from one
 //          ordered table (shims/gl/resolution.cpp; research/18 has the shipped
 //          chain and its left-step gap) and apply straight away. Window picks
-//          windowed, fullscreen or borderless; Upscaler picks Standard or FSR
-//          (shims/gl/upscaler.h).
+//          windowed, fullscreen or borderless; Upscaler picks the filter that
+//          enlarges the picture - Standard, FSR, Lanczos, GSR, NIS or xBR - and
+//          Sharpness tunes the three that sharpen (shims/gl/upscaler.h,
+//          shims/gl/upscale_shaders.h; their licences are in
+//          THIRD_PARTY_NOTICES.txt).
 //        - Gameplay, first on Options. Always run, aiming, auto health,
 //          subtitles and the rating, with Text font picking bitmap or system
 //          text from the next launch (shims/core/os_font.h) and Menu text the

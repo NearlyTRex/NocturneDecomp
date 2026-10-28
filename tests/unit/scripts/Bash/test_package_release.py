@@ -20,7 +20,8 @@ def checkout(tmp_path):
     root = tmp_path / "checkout"
     root.mkdir()
     (root / "CMakeLists.txt").write_text("project(NocturneDecomp VERSION 1.2.3 LANGUAGES C CXX)\n", encoding = "utf-8")
-    for name in ("LICENSE", "README.md", "gamecontrollerdb.txt", "gamecontrollerdb.license.txt"):
+    for name in ("LICENSE", "THIRD_PARTY_NOTICES.txt", "README.md", "gamecontrollerdb.txt",
+                 "gamecontrollerdb.license.txt"):
         (root / name).write_text(name, encoding = "utf-8")
     stub(root, "build.sh")
     return root
@@ -74,8 +75,8 @@ def test_packages_the_binary_its_libraries_and_the_shipped_files(checkout, shell
     assert result.stdout == f"package_release.sh: {archive}\n"
     names = members(archive)
     assert sorted(names) == [STEM] + [f"{STEM}/{name}" for name in sorted(
-        ["nocturne", "libSDL2-2.0.so.0", "LICENSE", "README.md", "gamecontrollerdb.txt",
-         "gamecontrollerdb.license.txt", "VERSION.txt"])]
+        ["nocturne", "libSDL2-2.0.so.0", "LICENSE", "THIRD_PARTY_NOTICES.txt", "README.md",
+         "gamecontrollerdb.txt", "gamecontrollerdb.license.txt", "VERSION.txt"])]
     assert names[f"{STEM}/libSDL2-2.0.so.0"].isfile()
     assert read_member(archive, f"{STEM}/VERSION.txt") == "NocturneDecomp 1.2.3 (test)\n"
     assert not (checkout / "dist" / STEM).exists()
@@ -104,7 +105,7 @@ def test_a_bundle_ships_whole_with_its_symlinks_and_without_loose_mappings(check
     assert f"{STEM}/Nocturne.app/Contents/MacOS/Nocturne" in names
     assert f"{STEM}/nocturne" not in names
     assert sorted(name.split("/")[1] for name in names if name.count("/") == 1) == [
-        "LICENSE", "Nocturne.app", "VERSION.txt"]
+        "LICENSE", "Nocturne.app", "THIRD_PARTY_NOTICES.txt", "VERSION.txt"]
 
 
 def test_a_binary_that_cannot_report_itself_gets_a_version_from_the_checkout(checkout, tmp_path, shell_traced_env):

@@ -457,6 +457,10 @@ const char *nocturne_upscaler_name(int mode) {
     return mode == NOCTURNE_UPSCALER_FSR ? "FSR" : "Standard";
 }
 
+int nocturne_upscaler_sharpens(int mode) {
+    return mode == NOCTURNE_UPSCALER_FSR;
+}
+
 int nocturne_upscaler_get(void) {
     return stand.upscaler;
 }
