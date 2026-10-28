@@ -33,6 +33,7 @@
 #include "tests/mocks/engine/mockrawinput.h"
 #include "tests/mocks/platform/mockclipboard.h"
 #include "tests/mocks/platform/mockclock.h"
+#include "tests/mocks/platform/mockdisplay.h"
 #include "tests/mocks/platform/mockosfont.h"
 #include "tests/mocks/platform/mockosfontfactory.h"
 #include "tests/mocks/platform/mockrenderer.h"
@@ -71,6 +72,8 @@ TEST(CMenu, PublicInterface) {
     static_assert(std::is_same_v<decltype(&CMenu::renderMenuAndGetChoice),
                                  int (CMenu::*)(std::span<const std::string>, int &, int,
                                                 std::optional<std::string_view>)>);
+    static_assert(std::is_same_v<decltype(&CMenu::runPage), void (CMenu::*)(CMenuPage &)>);
+    static_assert(std::is_same_v<decltype(&CMenu::takeMenuCancel), bool (CMenu::*)()>);
     static_assert(std::is_same_v<decltype(&CMenu::getMoon), CMoon &(CMenu::*)()>);
     static_assert(std::is_same_v<decltype(&CMenu::getMenuInputHappened), bool (CMenu::*)() const>);
     static_assert(
@@ -178,6 +181,7 @@ protected:
     engine::CKeys keys_{raw_input_, screen_};
     NiceMock<platform::MockClock> clock_;
     NiceMock<platform::MockClipboard> clipboard_;
+    NiceMock<platform::MockDisplay> display_;
     shape::CEditorTools editor_tools_{{.two_d = two_d_,
                                        .matrix = matrix_,
                                        .three_d = three_d_,
@@ -230,6 +234,8 @@ protected:
                  .textures = texture_,
                  .sound = game_sound_,
                  .sound_main = sound_,
+                 .display = display_,
+                 .editor_tools = editor_tools_,
                  .build_version = "X"}};
 };
 

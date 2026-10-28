@@ -5467,12 +5467,15 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `renderAudioSpectrumBarByBounds` 0x00511e00 (14)
   - [~] `showMainGameMenu` 0x00512f40 (394)
     - deferred: loading the flame and blur bitmaps, with their readers
-    - deferred: choosing a chapter from START, its debug modes picked by the shift and control keys, then starting the moon and music again, with CGame::showChapterSelect
+    - deferred: choosing a chapter from PLAY's START, its debug modes picked by the shift and control keys, then starting the moon and music again, with CGame::showChapterSelect
+    - deferred: loading a saved game from PLAY's LOAD, then starting the moon and music again, with CGame::loadGame
+    - deferred: resuming the newest save from PLAY's CONTINUE, or showing "No files found" without one, then starting the moon and music again, with the save slots and CGame::loadGame
+    - deferred: hosting or joining from MULTIPLAYER, or with Ctrl+H or Ctrl+J, the music reset around the session, with hostNetworkGame and joinNetworkGame
     - deferred: the options from OPTIONS, with showOptionsScreen
-    - deferred: loading a saved game from LOAD, then starting the moon and music again, with CGame::loadGame
     - deferred: the developer tools on Ctrl+D or Ctrl+L, with showDeveloperToolsMenu
     - deferred: dropping a press of F with a control key held, with the game's hotkeys
-    - deferred: the enhanced game's menu (PLAY's single-player menu with its continue, MULTIPLAYER and its hotkeys, its menu font, the window sized to the game's resolution and the items centred), with the enhanced front end
+    - deferred: the dialogs in the small editor font when Menu text asks for it, with the Gameplay options
+    - deferred: no QUIT, and Cancel quitting nothing, where the platform ends the app itself (the decomp's NOCTURNE_PLATFORM_NO_QUIT), with a platform that does
     - deferred: an attract movie, one of NOC1 to NOC4.AVI that nothing in the original plays, at the end of a pass of the splash music with the main menu on screen, after a short silence, then the music restarted with reset and configure; a pass ending under a submenu or dialog is skipped (the decomp's attract.h nocturne_attract_tick), with the attract movies
   - [ ] `addCustomKeyBinding` 0x00513460 (40)
   - [ ] `getSinglePressedKey` 0x00513860 (40)

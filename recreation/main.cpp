@@ -272,6 +272,8 @@ private:
                        .textures = texture_,
                        .sound = sound_,
                        .sound_main = sound_main_,
+                       .display = display_,
+                       .editor_tools = editor_tools_,
                        .build_version = nocturne::kBuildVersion}};
     nocturne::shape::CEdControls controls_{{.two_d = two_d_,
                                             .screen = screen_,

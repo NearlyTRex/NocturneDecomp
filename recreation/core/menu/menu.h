@@ -4,6 +4,8 @@
 #include "core/fwd.h"
 #include "core/moon/moon.h"
 #include "engine/fwd.h"
+#include "platform/fwd.h"
+#include "shape/fwd.h"
 #include "sound/fwd.h"
 #include "support/fwd.h"
 
@@ -33,6 +35,8 @@ struct SMenuOwners {
     engine::CTexture &textures;
     CSound &sound;
     sound::CSndMain &sound_main;
+    platform::IDisplay &display;
+    shape::CEditorTools &editor_tools;
     // The line naming this build, drawn at the foot of every menu.
     std::string_view build_version;
 };
@@ -58,6 +62,11 @@ public:
     int renderMenuAndGetChoice(std::span<const std::string> items, int &selected_index,
                                int y_position, std::optional<std::string_view> title);
 
+    // Draws the page over the moon each frame and passes it the presses, until it leaves.
+    void runPage(CMenuPage &page);
+    // Whether Cancel was pressed, taking the press, or the window is closing.
+    [[nodiscard]] bool takeMenuCancel();
+
     [[nodiscard]] CMoon &getMoon();
     // Whether the last menu frame moved the selection.
     [[nodiscard]] bool getMenuInputHappened() const;
@@ -65,6 +74,20 @@ public:
     [[nodiscard]] bool getMenuLeftRightPressed() const;
 
 private:
+    class CMainMenuPage;
+    class CSubmenuPage;
+
+    // PLAY's Continue, Start and Load.
+    void showPlayMenu();
+    // MULTIPLAYER's Host and Join.
+    void showMultiplayerMenu();
+    // An untitled page of the localized items from the main menu's top: the item chosen, or
+    // nothing for Cancel.
+    [[nodiscard]] std::optional<int> showSubmenu(std::span<const std::string_view> items);
+    void drawMenuBackdrop();
+    // `top`, raised where `rows` lines of the theme font would run off the window, and never
+    // above it.
+    [[nodiscard]] int fitMenuTop(int top, int rows) const;
     void showCalibrationTestPattern(engine::CAlphaBitmap &bitmap, std::string_view message_text);
     // The selected item: five faint copies jittered about it, then the item over them.
     void drawGlowingItem(engine::CBitFont &font, std::string_view item, int y);
