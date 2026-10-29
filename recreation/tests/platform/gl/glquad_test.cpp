@@ -6,7 +6,9 @@
 
 #include <array>
 #include <cstring>
+#include <memory>
 #include <optional>
+#include <stdexcept>
 
 namespace nocturne::platform::gl {
 namespace {
@@ -72,6 +74,28 @@ TEST(CGlQuad, DrawsEachOrientationFromItsOwnStrip) {
     const std::vector<SGlCall> flipped = drawn(4);
     expected.insert(expected.end(), flipped.begin(), flipped.end());
     EXPECT_EQ(gl.getCalls(), expected);
+}
+
+// Shaders 6 and 7 make program 8, its vertices read where the quad's own program reads them.
+TEST(CGlQuad, DrawsThroughAProgramOfTheCallers) {
+    CGlRecorder gl;
+    const CGlQuad quad(gl.getApi());
+    gl.clear();
+    const std::unique_ptr<CGlProgram> program = quad.makeProgram("fragment");
+    EXPECT_THAT(gl.getCalls("BindAttribLocation"), ElementsAre(glCall("BindAttribLocation", 8, 0),
+                                                               glCall("BindAttribLocation", 8, 1)));
+    gl.clear();
+    quad.draw(9, EQuadRows::TopFirst, *program);
+    EXPECT_THAT(gl.getCalls("UseProgram"), ElementsAre(glCall("UseProgram", 8)));
+    EXPECT_THAT(gl.getCalls("DrawArrays"),
+                ElementsAre(glCall("DrawArrays", GL_TRIANGLE_STRIP, 0, 4)));
+}
+
+TEST(CGlQuad, AProgramThatWontLinkThrows) {
+    CGlRecorder gl;
+    const CGlQuad quad(gl.getApi());
+    gl.link_fails = true;
+    EXPECT_THROW(static_cast<void>(quad.makeProgram("fragment")), std::runtime_error);
 }
 
 TEST(CGlQuad, DeletesItsObjectsWhenDestroyed) {

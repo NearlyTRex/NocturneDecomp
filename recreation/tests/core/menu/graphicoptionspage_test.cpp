@@ -4,6 +4,7 @@
 #include "engine/keys/inputcodetype.h"
 #include "engine/special/special.h"
 #include "platform/display.h"
+#include "platform/upscaler.h"
 #include "tests/mocks/core/menufixture.h"
 #include "tests/mocks/engine/fontsheet.h"
 
@@ -19,6 +20,7 @@
 namespace nocturne::core {
 namespace {
 
+using platform::EUpscaler;
 using platform::EWindowMode;
 using ::testing::_;
 using ::testing::Return;
@@ -31,7 +33,9 @@ constexpr int kAcceleration = 3;
 constexpr int kApi = 4;
 constexpr int kCard = 5;
 constexpr int kBits = 6;
-constexpr int kCalibration = 7;
+constexpr int kUpscaler = 7;
+constexpr int kSharpness = 8;
+constexpr int kCalibration = 9;
 
 TEST(CGraphicOptionsPage, PublicInterface) {
     static_assert(std::is_base_of_v<CMenuPage, CGraphicOptionsPage>);
@@ -96,10 +100,11 @@ TEST_F(CGraphicOptionsPageTest, TheTitleIsGraphicOptions) {
 
 TEST_F(CGraphicOptionsPageTest, WithoutAccelerationThereIsNoApiOrCard) {
     CGraphicOptionsPage page(menu_, menu_owners_);
-    EXPECT_EQ(texts(page), (std::vector<std::string>{
-                               "Resolution : 640x480", "Window : Windowed", "Flashlight halo : Off",
-                               "Acceleration : Off", "3D API : None", "No 3D Hardware detected",
-                               "Bits per pixel : 32", "Monitor calibration"}));
+    EXPECT_EQ(texts(page), (std::vector<std::string>{"Resolution : 640x480", "Window : Windowed",
+                                                     "Flashlight halo : Off", "Acceleration : Off",
+                                                     "3D API : None", "No 3D Hardware detected",
+                                                     "Bits per pixel : 32", "Upscaler : Standard",
+                                                     "Monitor calibration"}));
 }
 
 TEST_F(CGraphicOptionsPageTest, TheRenderersCardsAndApiAreListed) {
@@ -271,6 +276,46 @@ TEST_F(CGraphicOptionsPageTest, TheDepthTogglesBetween16And32) {
     EXPECT_EQ(game_.game_bpp, 16);
     EXPECT_EQ(page.choose(kBits, EMenuStep::Back), EMenuOutcome::Stay);
     EXPECT_EQ(game_.game_bpp, 32);
+}
+
+TEST_F(CGraphicOptionsPageTest, TheUpscalerStepsEitherWayAndWraps) {
+    CGraphicOptionsPage page(menu_, menu_owners_);
+    EXPECT_CALL(display_, setUpscaler(EUpscaler::Fsr));
+    EXPECT_EQ(page.choose(kUpscaler, EMenuStep::On), EMenuOutcome::Stay);
+    EXPECT_CALL(display_, setUpscaler(EUpscaler::Xbr));
+    EXPECT_EQ(page.choose(kUpscaler, EMenuStep::Back), EMenuOutcome::Stay);
+    ON_CALL(display_, getUpscaler()).WillByDefault(Return(EUpscaler::Xbr));
+    EXPECT_EQ(texts(page).at(kUpscaler), "Upscaler : xBR");
+}
+
+// The sharpness line is the upscaler's next, for a filter that sharpens.
+TEST_F(CGraphicOptionsPageTest, AFilterThatSharpensShowsItsSharpness) {
+    ON_CALL(display_, getUpscaler()).WillByDefault(Return(EUpscaler::Lanczos));
+    ON_CALL(display_, getUpscalerSharpness()).WillByDefault(Return(50));
+    CGraphicOptionsPage page(menu_, menu_owners_);
+    EXPECT_EQ(texts(page).at(kSharpness), "Monitor calibration");
+    ON_CALL(display_, getUpscaler()).WillByDefault(Return(EUpscaler::Nis));
+    EXPECT_EQ(texts(page).at(kSharpness), "Sharpness : 50%");
+}
+
+TEST_F(CGraphicOptionsPageTest, TheSharpnessStepsByAQuarterAndWraps) {
+    CGraphicOptionsPage page(menu_, menu_owners_);
+    ON_CALL(display_, getUpscalerSharpness()).WillByDefault(Return(100));
+    EXPECT_CALL(display_, setUpscalerSharpness(0));
+    EXPECT_EQ(page.choose(kSharpness, EMenuStep::On), EMenuOutcome::Stay);
+    ON_CALL(display_, getUpscalerSharpness()).WillByDefault(Return(0));
+    EXPECT_CALL(display_, setUpscalerSharpness(100));
+    EXPECT_EQ(page.choose(kSharpness, EMenuStep::Back), EMenuOutcome::Stay);
+}
+
+// As an INI edited by hand can leave it.
+TEST_F(CGraphicOptionsPageTest, ASharpnessBetweenStepsStepsFromTheOneBelow) {
+    CGraphicOptionsPage page(menu_, menu_owners_);
+    ON_CALL(display_, getUpscalerSharpness()).WillByDefault(Return(60));
+    EXPECT_CALL(display_, setUpscalerSharpness(75));
+    EXPECT_EQ(page.choose(kSharpness, EMenuStep::On), EMenuOutcome::Stay);
+    EXPECT_CALL(display_, setUpscalerSharpness(25));
+    EXPECT_EQ(page.choose(kSharpness, EMenuStep::Back), EMenuOutcome::Stay);
 }
 
 // Five screens over the brightness image, each until a key.

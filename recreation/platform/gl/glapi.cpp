@@ -77,7 +77,9 @@ void SGlApi::load(const GlResolver &resolver) {
     resolve(resolver, TexImage2D, "glTexImage2D");
     resolve(resolver, TexParameteri, "glTexParameteri");
     resolve(resolver, TexSubImage2D, "glTexSubImage2D");
+    resolve(resolver, Uniform1f, "glUniform1f");
     resolve(resolver, Uniform1i, "glUniform1i");
+    resolve(resolver, Uniform2f, "glUniform2f");
     resolve(resolver, Uniform3f, "glUniform3f");
     resolve(resolver, UniformMatrix4fv, "glUniformMatrix4fv");
     resolve(resolver, UseProgram, "glUseProgram");

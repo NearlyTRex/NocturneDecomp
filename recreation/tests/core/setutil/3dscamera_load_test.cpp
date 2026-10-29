@@ -9,6 +9,7 @@
 #include <gtest/gtest.h>
 
 #include <string>
+#include <string_view>
 #include <vector>
 
 namespace nocturne::core {
@@ -59,19 +60,20 @@ SFog setFog() {
     return fog;
 }
 
-C3DSCamera load(const std::string &text, int version, common::CTextScanner *rest = nullptr) {
+// The camera in the text; next_line, when asked for, gets the line after it.
+C3DSCamera load(std::string_view text, int version, std::string *next_line = nullptr) {
     common::CTextScanner scanner(text);
     C3DSCamera loaded;
     loaded.load(scanner, version, setFog());
-    if (rest != nullptr) {
-        *rest = scanner;
+    if (next_line != nullptr) {
+        *next_line = scanner.readLine();
     }
     return loaded;
 }
 
 TEST(C3DSCameraLoad, ReadsTheCameraAfterEachLabel) {
-    common::CTextScanner rest("");
-    const C3DSCamera loaded = load(camera(), 26, &rest);
+    std::string next_line;
+    const C3DSCamera loaded = load(camera(), 26, &next_line);
     EXPECT_EQ(loaded.getName(), "townx1");
     expectVector(loaded.getPosition(), {.x = 1.0F, .y = 2.0F, .z = 3.0F});
     expectVector(loaded.getOrientation(), {.x = 0.1F, .y = 0.3F, .z = 0.2F});
@@ -84,7 +86,7 @@ TEST(C3DSCameraLoad, ReadsTheCameraAfterEachLabel) {
     expectVector(loaded.getBox().min, {.x = -1.0F, .y = -2.0F, .z = -3.0F});
     expectVector(loaded.getBox().max, {.x = 4.0F, .y = 5.0F, .z = 6.0F});
     EXPECT_EQ(loaded.getReverbPreset(), 7);
-    EXPECT_EQ(rest.readLine(), "next");
+    EXPECT_EQ(next_line, "next");
 }
 
 TEST(C3DSCameraLoad, ACameraNotUsingTheSetsFogReadsItsOwn) {
@@ -97,24 +99,24 @@ TEST(C3DSCameraLoad, ACameraNotUsingTheSetsFogReadsItsOwn) {
 }
 
 TEST(C3DSCameraLoad, BeforeEighteenACameraTakesTheSetsFog) {
-    common::CTextScanner rest("");
-    const C3DSCamera loaded = load(camera(""), 17, &rest);
+    std::string next_line;
+    const C3DSCamera loaded = load(camera(""), 17, &next_line);
     EXPECT_TRUE(loaded.getUseGlobalFog());
     EXPECT_EQ(loaded.getFog().color_index, setFog().color_index);
     expectVector(loaded.getFog().scroll, setFog().scroll);
     EXPECT_FLOAT_EQ(loaded.getFog().height_threshold, 7.0F);
     EXPECT_FLOAT_EQ(loaded.getFog().density_multiplier, 8.0F);
     EXPECT_FLOAT_EQ(loaded.getFog().temperature, 9.0F);
-    EXPECT_EQ(rest.readLine(), "box min, max");
+    EXPECT_EQ(next_line, "box min, max");
 }
 
 TEST(C3DSCameraLoad, BeforeTwentyThreeTheBoxAndReverbStayDefault) {
-    common::CTextScanner rest("");
-    const C3DSCamera loaded = load(camera(), 22, &rest);
+    std::string next_line;
+    const C3DSCamera loaded = load(camera(), 22, &next_line);
     expectVector(loaded.getBox().min, {.x = -300.0F, .y = -300.0F, .z = 0.0F});
     expectVector(loaded.getBox().max, {.x = 300.0F, .y = 300.0F, .z = 300.0F});
     EXPECT_EQ(loaded.getReverbPreset(), 0);
-    EXPECT_EQ(rest.readLine(), "box min, max");
+    EXPECT_EQ(next_line, "box min, max");
 }
 
 TEST(C3DSCameraLoad, BeforeElevenFieldsHaveNoLabels) {
@@ -141,7 +143,8 @@ TEST(C3DSCamera, StartsUsingTheSetsFogWithNothingElse) {
 }
 
 TEST(C3DSCamera, ResetEmptiesTheCameraBackToTheDefaultLensAndBox) {
-    common::CTextScanner scanner(camera() + "\n2\n\t5\n\t6\n");
+    const std::string text = camera() + "\n2\n\t5\n\t6\n";
+    common::CTextScanner scanner(text);
     C3DSCamera reused;
     reused.load(scanner, 26, setFog());
     scanner.skipLine();

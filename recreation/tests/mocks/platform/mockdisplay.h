@@ -15,6 +15,10 @@ public:
     MOCK_METHOD(void, setWindowMode, (EWindowMode mode), (override));
     MOCK_METHOD(EWindowMode, getWindowMode, (), (const, override));
     MOCK_METHOD(void, setWindowSize, (int width, int height), (override));
+    MOCK_METHOD(void, setUpscaler, (EUpscaler upscaler), (override));
+    MOCK_METHOD(EUpscaler, getUpscaler, (), (const, override));
+    MOCK_METHOD(void, setUpscalerSharpness, (int percent), (override));
+    MOCK_METHOD(int, getUpscalerSharpness, (), (const, override));
 };
 
 } // namespace nocturne::platform

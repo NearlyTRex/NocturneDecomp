@@ -2,6 +2,7 @@
 
 #include <array>
 #include <cstddef>
+#include <memory>
 
 namespace nocturne::platform::gl {
 namespace {
@@ -82,13 +83,21 @@ CGlQuad::~CGlQuad() {
 }
 
 void CGlQuad::draw(GLuint texture, EQuadRows rows) const {
+    draw(texture, rows, program_);
+}
+
+void CGlQuad::draw(GLuint texture, EQuadRows rows, const CGlProgram &program) const {
     const GLint first = rows == EQuadRows::TopFirst ? 0 : kQuadVertices;
     gl_.ActiveTexture(GL_TEXTURE0);
     gl_.BindTexture(GL_TEXTURE_2D, texture);
-    program_.use();
+    program.use();
     gl_.BindVertexArray(vertex_array_);
     gl_.DrawArrays(GL_TRIANGLE_STRIP, first, kQuadVertices);
     gl_.BindVertexArray(0);
+}
+
+std::unique_ptr<CGlProgram> CGlQuad::makeProgram(const char *fragment_source) const {
+    return std::make_unique<CGlProgram>(gl_, kVertexSource, fragment_source, kAttributes);
 }
 
 } // namespace nocturne::platform::gl

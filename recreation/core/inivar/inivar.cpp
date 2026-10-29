@@ -8,6 +8,7 @@
 #include "engine/special/special.h"
 #include "platform/display.h"
 #include "platform/filesystem.h"
+#include "platform/upscaler.h"
 #include "sound/sndmain/sndmain.h"
 
 #include <cstddef>
@@ -66,6 +67,15 @@ void readGraphics(const engine::CIniFile &file, const SIniDataOwners &owners) {
     owners.display.setWindowMode(static_cast<platform::EWindowMode>(
         readEnumValue(file, "windowMode", static_cast<int>(owners.display.getWindowMode()),
                       static_cast<int>(platform::EWindowMode::Borderless))));
+    owners.display.setUpscaler(static_cast<platform::EUpscaler>(
+        readEnumValue(file, "upscaler", static_cast<int>(owners.display.getUpscaler()),
+                      platform::kUpscalerCount - 1)));
+    // One out of range is the default.
+    const int sharpness =
+        file.getInteger("upscalerSharpness", owners.display.getUpscalerSharpness());
+    owners.display.setUpscalerSharpness(sharpness < 0 || sharpness > platform::kUpscalerSharpnessMax
+                                            ? platform::kUpscalerSharpnessDefault
+                                            : sharpness);
 }
 
 // The defaults for the control mode come first, then whatever the file binds over them.
@@ -120,6 +130,8 @@ void writeGraphics(engine::CIniFile &file, const SIniDataOwners &owners) {
     file.setInteger("osFont", static_cast<int>(owners.fonts.getOsFontChoice()));
     file.setInteger("menuFont", static_cast<int>(owners.fonts.getMenuFontChoice()));
     file.setInteger("windowMode", static_cast<int>(owners.display.getWindowMode()));
+    file.setInteger("upscaler", static_cast<int>(owners.display.getUpscaler()));
+    file.setInteger("upscalerSharpness", owners.display.getUpscalerSharpness());
 }
 
 void writeControls(engine::CIniFile &file, const CGame &game) {
@@ -148,7 +160,7 @@ void writeControls(engine::CIniFile &file, const CGame &game) {
 // The renderer DLL and AGP texturing the original also read have no reader in the game now, so
 // their lines are left as they are; retail has no Editor section. The window
 // opens at the resolution the game will run at, as the decomp's menu resolution change has it,
-// in the enhanced game's window mode.
+// in the enhanced game's window mode and upscaler.
 // nocedit 0x004fbd90
 void readIniData(engine::CIni &ini, platform::IFileSystem &file_system,
                  const SIniDataOwners &owners) {

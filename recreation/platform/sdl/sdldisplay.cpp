@@ -15,10 +15,6 @@
 namespace nocturne::platform::sdl {
 namespace {
 
-// Indexed by whether the frame is a whole multiple of its size on screen: nearest stays even
-// there, and makes pixels uneven anywhere else.
-constexpr std::array<GLint, 2> kFilters = {GL_LINEAR, GL_NEAREST};
-
 // By EWindowMode.
 constexpr std::array<std::string_view, 3> kWindowModeNames{"windowed", "fullscreen", "borderless"};
 
@@ -56,6 +52,7 @@ CSdlDisplay::CSdlDisplay(CSdlWindow &window, ILog &log) : window_(window), log_(
         SDL_GL_SetSwapInterval(1);
     }
     quad_ = std::make_unique<gl::CGlQuad>(gl_);
+    upscaler_ = std::make_unique<gl::CGlUpscaler>(gl_, *quad_, log_);
     gl_.GenTextures(1, &texture_);
 }
 
@@ -159,6 +156,22 @@ EWindowMode CSdlDisplay::getWindowMode() const {
     return window_mode_;
 }
 
+void CSdlDisplay::setUpscaler(EUpscaler upscaler) {
+    upscaler_mode_ = upscaler;
+}
+
+EUpscaler CSdlDisplay::getUpscaler() const {
+    return upscaler_mode_;
+}
+
+void CSdlDisplay::setUpscalerSharpness(int percent) {
+    upscaler_sharpness_ = percent;
+}
+
+int CSdlDisplay::getUpscalerSharpness() const {
+    return upscaler_sharpness_;
+}
+
 void CSdlDisplay::setWindowSize(int width, int height) {
     window_size_ = {.width = width, .height = height};
     if (window_mode_ == EWindowMode::Windowed) {
@@ -197,16 +210,7 @@ void CSdlDisplay::drawFrame(GLuint texture, common::SExtent frame, gl::EQuadRows
     // GL counts viewport rows from the bottom.
     gl_.Viewport(viewport.x, drawable.height - viewport.y - viewport.height, viewport.width,
                  viewport.height);
-    // Sampling is restated every frame: a mipmap filter another texture user left behind would
-    // make this texture incomplete, and the quad would draw white.
-    const GLint filter = kFilters.at(common::isWholeMultiple(viewport, frame) ? 1 : 0);
-    gl_.ActiveTexture(GL_TEXTURE0);
-    gl_.BindTexture(GL_TEXTURE_2D, texture);
-    gl_.TexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, filter);
-    gl_.TexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, filter);
-    gl_.TexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_EDGE);
-    gl_.TexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_EDGE);
-    quad_->draw(texture, rows);
+    upscaler_->draw(texture, rows, frame, viewport, upscaler_mode_, upscaler_sharpness_);
 }
 
 } // namespace nocturne::platform::sdl

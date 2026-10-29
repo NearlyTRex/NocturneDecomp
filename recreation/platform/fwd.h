@@ -45,6 +45,7 @@ enum class EGamepadButton : std::uint8_t;
 enum class EGamepadType : std::uint8_t;
 enum class ELogSubsystem : std::uint8_t;
 enum class EMouseButton : std::uint8_t;
+enum class EUpscaler : std::uint8_t;
 enum class EWindowMode : std::uint8_t;
 enum class EWindowEventType : std::uint8_t;
 

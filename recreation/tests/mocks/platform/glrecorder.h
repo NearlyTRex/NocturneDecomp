@@ -310,7 +310,11 @@ private:
             note("TexSubImage2D", target, level, x, y, width, height, format, type).pointer =
                 pixels;
         };
+        api_.Uniform1f = [](GLint location, GLfloat value) { note("Uniform1f", location, value); };
         api_.Uniform1i = [](GLint location, GLint value) { note("Uniform1i", location, value); };
+        api_.Uniform2f = [](GLint location, GLfloat x, GLfloat y) {
+            note("Uniform2f", location, x, y);
+        };
         api_.Uniform3f = [](GLint location, GLfloat x, GLfloat y, GLfloat z) {
             note("Uniform3f", location, x, y, z);
         };

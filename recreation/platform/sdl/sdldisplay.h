@@ -7,7 +7,9 @@
 #include "platform/gl/glapi.h"
 #include "platform/gl/glframepresenter.h"
 #include "platform/gl/glquad.h"
+#include "platform/gl/glupscaler.h"
 #include "platform/lograte.h"
+#include "platform/upscaler.h"
 
 #include <memory>
 
@@ -18,8 +20,8 @@ namespace nocturne::platform::sdl {
 class CSdlWindow;
 
 // Owns the window's OpenGL 3.3 core context, which the hardware renderer shares. Each present
-// uploads the frame to a texture, draws it as one letterboxed quad and swaps; a hardware frame
-// is drawn the same way from the renderer's scene.
+// uploads the frame to a texture, draws it as one letterboxed quad through the upscaler and
+// swaps; a hardware frame is drawn the same way from the renderer's scene.
 class CSdlDisplay final : public IDisplay, public gl::IGlFramePresenter {
 public:
     CSdlDisplay(CSdlWindow &window, ILog &log);
@@ -34,6 +36,10 @@ public:
     void setWindowMode(EWindowMode mode) override;
     [[nodiscard]] EWindowMode getWindowMode() const override;
     void setWindowSize(int width, int height) override;
+    void setUpscaler(EUpscaler upscaler) override;
+    [[nodiscard]] EUpscaler getUpscaler() const override;
+    void setUpscalerSharpness(int percent) override;
+    [[nodiscard]] int getUpscalerSharpness() const override;
     void presentScene(GLuint texture, int width, int height) override;
 
     // The context's GL, for the hardware renderer to draw with.
@@ -54,6 +60,7 @@ private:
     gl::SGlApi gl_;
     // Built once the context is current.
     std::unique_ptr<gl::CGlQuad> quad_;
+    std::unique_ptr<gl::CGlUpscaler> upscaler_;
     GLuint texture_ = 0;
     common::CFrameConverter converter_;
     common::EPixelLayout layout_ = common::EPixelLayout::Indexed8;
@@ -61,6 +68,8 @@ private:
     // The player's windowed size; empty until chosen, when the first mode's size stands in.
     common::SExtent window_size_;
     EWindowMode window_mode_ = EWindowMode::Windowed;
+    EUpscaler upscaler_mode_ = EUpscaler::Standard;
+    int upscaler_sharpness_ = kUpscalerSharpnessDefault;
 };
 
 } // namespace nocturne::platform::sdl

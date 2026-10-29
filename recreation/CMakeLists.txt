@@ -18,6 +18,7 @@ set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
 option(NOCTURNE_RECREATION_COVERAGE "Instrument for clang source-based coverage" OFF)
 option(NOCTURNE_RECREATION_GAME "Build the SDL adapters and the nocturne executable" OFF)
+option(NOCTURNE_RECREATION_SANITIZE "Build with AddressSanitizer and UBSan" OFF)
 
 # Modules are the directories that carry a fwd.h.
 file(GLOB _fwd_headers RELATIVE "${CMAKE_CURRENT_SOURCE_DIR}" CONFIGURE_DEPENDS
@@ -38,6 +39,13 @@ if(NOCTURNE_RECREATION_COVERAGE)
     target_compile_options(nocturne_recreation_options INTERFACE
         -fprofile-instr-generate -fcoverage-mapping)
     target_link_options(nocturne_recreation_options INTERFACE -fprofile-instr-generate)
+endif()
+# The first error stops the run, so a test or the game can't carry on past it.
+if(NOCTURNE_RECREATION_SANITIZE)
+    set(_sanitize_flags -fsanitize=address,undefined -fno-sanitize-recover=all
+        -fno-omit-frame-pointer)
+    target_compile_options(nocturne_recreation_options INTERFACE ${_sanitize_flags})
+    target_link_options(nocturne_recreation_options INTERFACE ${_sanitize_flags})
 endif()
 
 set(_sources "")

@@ -4,6 +4,7 @@
 #include "platform/gl/glprogram.h"
 
 #include <cstdint>
+#include <memory>
 
 namespace nocturne::platform::gl {
 
@@ -25,6 +26,11 @@ public:
     CGlQuad &operator=(const CGlQuad &) = delete;
 
     void draw(GLuint texture, EQuadRows rows) const;
+    // Through a program of the caller's, made by makeProgram, its uniforms already set.
+    void draw(GLuint texture, EQuadRows rows, const CGlProgram &program) const;
+    // A program over this quad's vertices: v_uv in, o_color out. Throws std::runtime_error
+    // when it doesn't build.
+    [[nodiscard]] std::unique_ptr<CGlProgram> makeProgram(const char *fragment_source) const;
 
 private:
     const SGlApi &gl_;

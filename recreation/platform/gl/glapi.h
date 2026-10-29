@@ -74,7 +74,9 @@ struct SGlApi {
     PFNGLTEXIMAGE2DPROC TexImage2D = nullptr;
     PFNGLTEXPARAMETERIPROC TexParameteri = nullptr;
     PFNGLTEXSUBIMAGE2DPROC TexSubImage2D = nullptr;
+    PFNGLUNIFORM1FPROC Uniform1f = nullptr;
     PFNGLUNIFORM1IPROC Uniform1i = nullptr;
+    PFNGLUNIFORM2FPROC Uniform2f = nullptr;
     PFNGLUNIFORM3FPROC Uniform3f = nullptr;
     PFNGLUNIFORMMATRIX4FVPROC UniformMatrix4fv = nullptr;
     PFNGLUSEPROGRAMPROC UseProgram = nullptr;

@@ -1,6 +1,7 @@
 #pragma once
 
 #include "common/video/framebuffer.h"
+#include "platform/upscaler.h"
 
 #include <cstddef>
 #include <cstdint>
@@ -35,6 +36,12 @@ public:
     [[nodiscard]] virtual EWindowMode getWindowMode() const = 0;
     // The windowed size, applied now when windowed and on returning to windowed otherwise.
     virtual void setWindowSize(int width, int height) = 0;
+    // How the frame is enlarged onto the window, from the next frame.
+    virtual void setUpscaler(EUpscaler upscaler) = 0;
+    [[nodiscard]] virtual EUpscaler getUpscaler() const = 0;
+    // 0 to 100, for the filters that sharpen.
+    virtual void setUpscalerSharpness(int percent) = 0;
+    [[nodiscard]] virtual int getUpscalerSharpness() const = 0;
 };
 
 } // namespace nocturne::platform

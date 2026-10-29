@@ -4,6 +4,7 @@
 #include "core/menu/menu.h"
 #include "engine/special/special.h"
 #include "platform/display.h"
+#include "platform/upscaler.h"
 #include "support/newmsg/newmsg.h"
 
 #include <algorithm>
@@ -29,6 +30,8 @@ enum class EGraphicLine : std::uint8_t {
     Api,
     Card,
     Bits,
+    Upscaler,
+    Sharpness,
     Calibration,
 };
 
@@ -64,6 +67,12 @@ constexpr int kHaloModeCount = static_cast<int>(kHaloLabels.size());
 
 constexpr int kLowBitDepth = 16;
 constexpr int kHighBitDepth = 32;
+
+// By EUpscaler.
+constexpr std::array<std::string_view, platform::kUpscalerCount> kUpscalerNames{
+    "Standard", "FSR", "Lanczos", "GSR", "NIS", "xBR"};
+constexpr int kSharpnessSteps =
+    (platform::kUpscalerSharpnessMax / platform::kUpscalerSharpnessStep) + 1;
 // The most cards a renderer lists.
 constexpr std::size_t kMaxCards = 16;
 
@@ -126,6 +135,13 @@ void CGraphicOptionsPage::build(std::vector<SMenuLine> &lines) {
     addLine(lines, EGraphicLine::Card, getCardText());
     addLine(lines, EGraphicLine::Bits,
             std::format("{}{}", localize("Bits per pixel : "), game.game_bpp));
+    const platform::EUpscaler upscaler = owners_.display.getUpscaler();
+    addLine(lines, EGraphicLine::Upscaler,
+            std::format("Upscaler : {}", kUpscalerNames.at(static_cast<std::size_t>(upscaler))));
+    if (platform::getUpscalerSharpens(upscaler)) {
+        addLine(lines, EGraphicLine::Sharpness,
+                std::format("Sharpness : {}%", owners_.display.getUpscalerSharpness()));
+    }
     addLine(lines, EGraphicLine::Calibration, localize("Monitor calibration"));
 }
 
@@ -162,6 +178,12 @@ EMenuOutcome CGraphicOptionsPage::choose(int id, EMenuStep step) {
         break;
     case EGraphicLine::Bits:
         game.game_bpp = game.game_bpp == kLowBitDepth ? kHighBitDepth : kLowBitDepth;
+        break;
+    case EGraphicLine::Upscaler:
+        stepUpscaler(step);
+        break;
+    case EGraphicLine::Sharpness:
+        stepSharpness(step);
         break;
     default:
         getMenu().showCalibrationTest();
@@ -260,6 +282,22 @@ void CGraphicOptionsPage::toggleAcceleration() {
         special.loadExternalRenderer();
     }
     listCards();
+}
+
+// The enhanced game's: the original never scaled its picture.
+void CGraphicOptionsPage::stepUpscaler(EMenuStep step) {
+    const int upscaler = static_cast<int>(owners_.display.getUpscaler());
+    owners_.display.setUpscaler(static_cast<platform::EUpscaler>(
+        (upscaler + std::to_underlying(step) + platform::kUpscalerCount) %
+        platform::kUpscalerCount));
+}
+
+// A sharpness set by hand between steps steps from the one below it.
+void CGraphicOptionsPage::stepSharpness(EMenuStep step) {
+    const int index = owners_.display.getUpscalerSharpness() / platform::kUpscalerSharpnessStep;
+    owners_.display.setUpscalerSharpness(
+        ((index + std::to_underlying(step) + kSharpnessSteps) % kSharpnessSteps) *
+        platform::kUpscalerSharpnessStep);
 }
 
 // Always on, whichever way.

@@ -12,6 +12,7 @@
 #include "engine/special/special.h"
 #include "engine/texture/currenttexture.h"
 #include "platform/display.h"
+#include "platform/upscaler.h"
 #include "shape/edittool/editortools.h"
 #include "support/newmsg/newmsg.h"
 #include "tests/mocks/core/gameparts.h"
@@ -28,7 +29,9 @@
 #include <gmock/gmock.h>
 #include <gtest/gtest.h>
 
+#include <format>
 #include <string>
+#include <string_view>
 #include <type_traits>
 
 namespace nocturne::core {
@@ -173,6 +176,41 @@ TEST_F(CInivarTest, TheWindowModeIsAppliedAfterTheSizeUnlessItIsOutOfRange) {
     ON_CALL(display_, getWindowMode()).WillByDefault(Return(platform::EWindowMode::Fullscreen));
     text_ = "[Graphics]\r\ngamePIXX=800\r\ngamePIXY=600\r\nwindowMode=3\r\n";
     read();
+}
+
+TEST_F(CInivarTest, TheUpscalerIsReadUnlessItIsOutOfRange) {
+    text_ = "[Graphics]\r\nupscaler=5\r\nupscalerSharpness=75\r\n";
+    EXPECT_CALL(display_, setUpscaler(platform::EUpscaler::Xbr));
+    EXPECT_CALL(display_, setUpscalerSharpness(75));
+    read();
+    ::testing::Mock::VerifyAndClearExpectations(&display_);
+    ON_CALL(display_, getUpscaler()).WillByDefault(Return(platform::EUpscaler::Nis));
+    text_ = "[Graphics]\r\nupscaler=6\r\n";
+    EXPECT_CALL(display_, setUpscaler(platform::EUpscaler::Nis));
+    read();
+}
+
+// As an INI edited by hand can leave it.
+TEST_F(CInivarTest, ASharpnessOutOfRangeIsTheDefault) {
+    for (const std::string_view value : {"-1", "101"}) {
+        text_ = std::format("[Graphics]\r\nupscalerSharpness={}\r\n", value);
+        EXPECT_CALL(display_, setUpscalerSharpness(50));
+        read();
+    }
+    text_ = "[Graphics]\r\nupscalerSharpness=100\r\n";
+    EXPECT_CALL(display_, setUpscalerSharpness(100));
+    read();
+    text_ = "[Graphics]\r\nupscalerSharpness=0\r\n";
+    EXPECT_CALL(display_, setUpscalerSharpness(0));
+    read();
+}
+
+TEST_F(CInivarTest, TheUpscalerIsWritten) {
+    ON_CALL(display_, getUpscaler()).WillByDefault(Return(platform::EUpscaler::Gsr));
+    ON_CALL(display_, getUpscalerSharpness()).WillByDefault(Return(25));
+    writeIniData(ini_, owners_);
+    EXPECT_THAT(text_, HasSubstr("upscaler=3\r\n"));
+    EXPECT_THAT(text_, HasSubstr("upscalerSharpness=25\r\n"));
 }
 
 TEST_F(CInivarTest, TheWindowModeIsWritten) {

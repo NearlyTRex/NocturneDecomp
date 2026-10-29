@@ -1,7 +1,9 @@
 #pragma once
 
+#include <concepts>
 #include <cstddef>
 #include <optional>
+#include <string>
 #include <string_view>
 
 namespace nocturne::common {
@@ -10,7 +12,11 @@ namespace nocturne::common {
 // where the read stopped, as fscanf does.
 class CTextScanner {
 public:
+    // It keeps a view of the text, so the text must outlive it; a temporary would not.
     explicit CTextScanner(std::string_view text);
+    template <typename TText>
+        requires std::same_as<TText, std::string>
+    explicit CTextScanner(TText &&text) = delete;
 
     [[nodiscard]] bool atEnd() const;
     // A space in a scanf format: any run of whitespace, including none.

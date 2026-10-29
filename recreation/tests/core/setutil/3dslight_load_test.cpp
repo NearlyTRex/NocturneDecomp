@@ -57,19 +57,20 @@ std::string everyCamera(int count, const std::string &line) {
     return lines;
 }
 
-C3DSLight load(const std::string &text, int version, common::CTextScanner *rest = nullptr) {
+// The light in the text; next_line, when asked for, gets the line after it.
+C3DSLight load(std::string_view text, int version, std::string *next_line = nullptr) {
     common::CTextScanner scanner(text);
     C3DSLight loaded;
     loaded.load(scanner, version);
-    if (rest != nullptr) {
-        *rest = scanner;
+    if (next_line != nullptr) {
+        *next_line = scanner.readLine();
     }
     return loaded;
 }
 
 TEST(C3DSLightLoad, ReadsTheLightAfterEachLabel) {
-    common::CTextScanner rest("");
-    const C3DSLight loaded = load(light(26, kListed), 26, &rest);
+    std::string next_line;
+    const C3DSLight loaded = load(light(26, kListed), 26, &next_line);
     EXPECT_EQ(loaded.getName(), "moon light");
     EXPECT_FLOAT_EQ(loaded.getPos().z, 3.0F);
     EXPECT_FLOAT_EQ(loaded.getOrient().y, 0.3F);
@@ -87,7 +88,7 @@ TEST(C3DSLightLoad, ReadsTheLightAfterEachLabel) {
     EXPECT_EQ(loaded.getCurrentFilterFrame(), 1);
     EXPECT_FLOAT_EQ(loaded.getOnTime(), 0.5F);
     EXPECT_FLOAT_EQ(loaded.getCycleTime(), 2.0F);
-    EXPECT_EQ(rest.readLine(), "next");
+    EXPECT_EQ(next_line, "next");
 }
 
 TEST(C3DSLightLoad, ReadsTheFilters) {
@@ -115,7 +116,8 @@ TEST(C3DSLightLoad, ListsOnlyTheCamerasThatSeeTheLight) {
 }
 
 TEST(C3DSLightLoad, AListClearsWhatTheLightSawBefore) {
-    common::CTextScanner scanner(light(26, kListed) + "\n" + light(26, "1\n5,1,2,3,4\n"));
+    const std::string text = light(26, kListed) + "\n" + light(26, "1\n5,1,2,3,4\n");
+    common::CTextScanner scanner(text);
     C3DSLight reloaded;
     reloaded.load(scanner, 26);
     scanner.skipLine();
@@ -151,7 +153,8 @@ TEST(C3DSLightLoad, BeforeTwentyOneTheAspectIsOne) {
 }
 
 TEST(C3DSLightLoad, BeforeNineteenNoFilterMoves) {
-    common::CTextScanner scanner(light(26, kListed) + "\n" + light(18, kListed));
+    const std::string text = light(26, kListed) + "\n" + light(18, kListed);
+    common::CTextScanner scanner(text);
     C3DSLight reloaded;
     reloaded.load(scanner, 26);
     scanner.skipLine();
@@ -175,22 +178,22 @@ TEST(C3DSLightLoad, BeforeNineFiltersBlend) {
 }
 
 TEST(C3DSLightLoad, BeforeElevenEachOfTwoHundredCamerasHasALine) {
-    common::CTextScanner rest("");
-    const C3DSLight loaded = load(light(7, everyCamera(200, "257,1,2,3,4\n")), 7, &rest);
+    std::string next_line;
+    const C3DSLight loaded = load(light(7, everyCamera(200, "257,1,2,3,4\n")), 7, &next_line);
     const std::span<const std::uint8_t> flags = loaded.getVisibleFlags();
     EXPECT_THAT(flags.first(200), Each(1));
     EXPECT_EQ(flags[200], 0);
     EXPECT_EQ(loaded.getCameraLightBounds()[199],
               (CRect{.x_min = 1, .x_max = 2, .y_min = 3, .y_max = 4}));
-    EXPECT_EQ(rest.readLine(), "next");
+    EXPECT_EQ(next_line, "next");
 }
 
 TEST(C3DSLightLoad, BeforeSevenOnlyAHundredCamerasHaveLines) {
-    common::CTextScanner rest("");
-    const C3DSLight loaded = load(light(6, everyCamera(100, "1,1,2,3,4\n")), 6, &rest);
+    std::string next_line;
+    const C3DSLight loaded = load(light(6, everyCamera(100, "1,1,2,3,4\n")), 6, &next_line);
     EXPECT_EQ(loaded.getVisibleFlags()[99], 1);
     EXPECT_EQ(loaded.getVisibleFlags()[100], 0);
-    EXPECT_EQ(rest.readLine(), "next");
+    EXPECT_EQ(next_line, "next");
 }
 
 TEST(C3DSLightLoad, BeforeTwoACameraSeesTheLightInTheWholeView) {
@@ -206,11 +209,11 @@ TEST(C3DSLightLoad, ANegativeFilterCountReadsNoFilters) {
     std::string text = light(26, kListed);
     text.replace(text.find(count), count.size(), "label\n-1\nlabel\n0\n");
     text.replace(text.find(filters), filters.size(), "");
-    common::CTextScanner rest("");
-    const C3DSLight loaded = load(text, 26, &rest);
+    std::string next_line;
+    const C3DSLight loaded = load(text, 26, &next_line);
     EXPECT_EQ(loaded.getFilterCount(), -1);
     EXPECT_THAT(loaded.getFilterNames(), IsEmpty());
-    EXPECT_EQ(rest.readLine(), "next");
+    EXPECT_EQ(next_line, "next");
 }
 
 TEST(C3DSLight, StartsWithTheDefaultLens) {
