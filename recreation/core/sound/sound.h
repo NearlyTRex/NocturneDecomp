@@ -8,6 +8,8 @@
 #include "sound/fwd.h"
 
 #include <cstdint>
+#include <functional>
+#include <string_view>
 
 namespace nocturne::core {
 
@@ -36,6 +38,9 @@ public:
     // unless sound is muted, stops every sound, puts the listener at the origin and starts the
     // menu music at the output's rate.
     void configure();
+    // Given the length of the menu music configure starts, and 0 whenever none plays: muted, or
+    // every sound stopped by reset.
+    void setMusicHandler(std::function<void(float)> handler);
     void reset();
     void playAmbientSound(char *sound_name);
     std::uint32_t playSound(void *user_data, char *sound_name);
@@ -48,17 +53,21 @@ public:
                                                  common::CVector3f *position_tracker, float delay);
     int isSoundPlaying(std::uint32_t sfx_handle);
     void killSound(std::uint32_t sfx_handle);
-    float getSoundDuration(char *sound_name);
+    // In seconds, the name ending at an '@', a '*' or whitespace; -1 when there is no such sound.
+    [[nodiscard]] float getSoundDuration(std::string_view sound_name);
     void setReverbPreset(int index);
     void setVolumeFade(float target_volume, float fade_time);
 
     [[nodiscard]] const shape::CStrList &getSoundFileList() const;
 
 private:
+    void reportMusic(float seconds) const;
+
     sound::CSndMain &sound_main_;
     engine::CPod &pod_;
     platform::IFileSystem &file_system_;
     shape::CStrList sound_file_list_;
+    std::function<void(float)> music_handler_;
 };
 
 } // namespace nocturne::core

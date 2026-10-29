@@ -13,6 +13,7 @@ class CAmmo;
 class CAmmoBox;
 class CAnvil;
 class CArmour;
+class CAttractMovies;
 class CBackgroundActor;
 class CBaron;
 class CBaronWeapon;

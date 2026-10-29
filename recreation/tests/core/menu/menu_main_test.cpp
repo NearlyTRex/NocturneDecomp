@@ -5,10 +5,13 @@
 #include "engine/keys/inputcodetype.h"
 #include "shape/edittool/editortools.h"
 #include "tests/mocks/core/menufixture.h"
+#include "tests/mocks/sound/wavfile.h"
 
 #include <gmock/gmock.h>
 #include <gtest/gtest.h>
 
+#include <chrono>
+#include <functional>
 #include <string>
 #include <utility>
 #include <vector>
@@ -17,6 +20,9 @@ namespace nocturne::core {
 namespace {
 
 using engine::EInputCodeType;
+using ::testing::AnyOf;
+using ::testing::ElementsAre;
+using ::testing::IsEmpty;
 using ::testing::Return;
 
 using CMainMenuTest = CMenuFixture;
@@ -86,6 +92,71 @@ TEST_F(CMainMenuTest, ClosingTheWindowQuits) {
     };
     EXPECT_EQ(menu_.showMainGameMenu(), 99);
     EXPECT_EQ(frames_, 1);
+}
+
+// A second of music, a tenth of a second a frame, after the opening played.
+class CMainMenuAttractTest : public CMenuFixture {
+protected:
+    CMainMenuAttractTest() {
+        givenFile("sound\\splash-music-22.wav", sound::makeConstantWav(22050, 0));
+        attract_movies_.setOpeningPlayed(true);
+    }
+
+    // Moves the clock on a frame's worth before the frame's own work.
+    void runFrames(int count, const std::function<void(int)> &each = {}) {
+        on_frame_ = [this, count, each](int frame) {
+            now_ms_ += 100;
+            if (each) {
+                each(frame);
+            }
+            if (frame >= count) {
+                press(EInputCodeType::DIK_ESCAPE);
+            }
+        };
+        EXPECT_EQ(menu_.showMainGameMenu(), 99);
+    }
+};
+
+// The music starts on the first frame, at 100ms, so its pass less the lead ends at 850ms.
+TEST_F(CMainMenuAttractTest, AMovieFollowsThePassOfMusicAndTheMusicStartsAgain) {
+    EXPECT_CALL(attract_clock_, sleep(std::chrono::duration<double>(0.4)));
+    std::vector<int> playing;
+    runFrames(12, [&](int frame) {
+        if (frame >= 8) {
+            playing.push_back(sound_main_.countActiveSfx());
+        }
+    });
+    EXPECT_THAT(movies_, ElementsAre(AnyOf("video\\noc1.avi", "video\\noc2.avi", "video\\noc3.avi",
+                                           "video\\noc4.avi")));
+    EXPECT_EQ(playing, (std::vector<int>{1, 1, 1, 1, 1}));
+}
+
+TEST_F(CMainMenuAttractTest, TheNextPassEndsAfterTheMusicStartsAgain) {
+    runFrames(17);
+    EXPECT_EQ(movies_.size(), 2U);
+}
+
+TEST_F(CMainMenuAttractTest, MutedThereIsNoMusicToFollow) {
+    sound_main_.setSoundMuted(true);
+    runFrames(15);
+    EXPECT_THAT(movies_, IsEmpty());
+}
+
+// Muting stopped the music the wait was for, and unmuting starts it again from the start.
+TEST_F(CMainMenuAttractTest, MutingInTheMiddleOfAPassStartsTheWaitAgain) {
+    runFrames(13, [&](int frame) {
+        if (frame == 5 || frame == 6) {
+            press(EInputCodeType::DIK_LCONTROL);
+            press(EInputCodeType::DIK_M);
+        }
+    });
+    EXPECT_THAT(movies_, IsEmpty());
+}
+
+TEST_F(CMainMenuAttractTest, WithoutTheOpeningNoMovieFollows) {
+    attract_movies_.setOpeningPlayed(false);
+    runFrames(15);
+    EXPECT_THAT(movies_, IsEmpty());
 }
 
 TEST_F(CMainMenuTest, TheSoftwareRendererTakesAtMost640x480) {

@@ -2,6 +2,7 @@
 
 #include "core/dfont/dfont.h"
 #include "core/inivar/inivar.h"
+#include "core/menu/attractmovies.h"
 #include "core/menu/menu.h"
 #include "core/sound/sound.h"
 #include "engine/console/console.h"
@@ -34,11 +35,13 @@
 #include <cstddef>
 #include <cstdint>
 #include <ctime>
+#include <format>
 #include <functional>
 #include <optional>
 #include <span>
 #include <string>
 #include <string_view>
+#include <vector>
 
 namespace nocturne::core {
 
@@ -72,6 +75,10 @@ protected:
         ON_CALL(screen_, getColorTable32())
             .WillByDefault(Return(std::span<const std::uint32_t, 256>(color_table_)));
         ON_CALL(audio_device_, open).WillByDefault(Return(true));
+        ON_CALL(attract_clock_, getCounterFrequency()).WillByDefault(Return(1000U));
+        ON_CALL(attract_clock_, getCounter()).WillByDefault([this] { return now_ms_; });
+        sound_.setMusicHandler(
+            [this](float seconds) { attract_movies_.setMusicDuration(seconds); });
         sound_main_.initializeSoundDevice();
         ON_CALL(file_system_, readFile(kIniFile)).WillByDefault([this](std::string_view) {
             return std::optional(ini_text_);
@@ -85,6 +92,11 @@ protected:
 
     void press(engine::EInputCodeType code) {
         keyboard_[static_cast<std::size_t>(code)] = 1;
+    }
+
+    bool recordMovie(std::string_view directory, std::string_view filename) {
+        movies_.push_back(std::format("{}\\{}", directory, filename));
+        return true;
     }
 
     // Whether anything is drawn anywhere on the screen.
@@ -140,6 +152,12 @@ protected:
                                   .raw_input = raw_input_,
                                   .clock = clock_,
                                   .editor_tools = editor_tools_}};
+    // The attract movies' wall clock, in milliseconds; it stands still unless a test moves it.
+    std::uint64_t now_ms_ = 0;
+    ::testing::NiceMock<platform::MockClock> attract_clock_;
+    CAttractMovies attract_movies_{attract_clock_};
+    // Each movie the menu played, as directory\filename.
+    std::vector<std::string> movies_;
     shape::SPickListOwners pick_list_owners_{.controls = controls_,
                                              .keys = keys_,
                                              .menu_input = menu_input_,
@@ -167,7 +185,9 @@ protected:
                              .ini = ini_,
                              .ini_owners = ini_owners_,
                              .pick_list = pick_list_owners_,
-                             .build_version = "X"};
+                             .build_version = "X",
+                             .attract_movies = attract_movies_,
+                             .play_movie = std::bind_front(&CMenuFixture::recordMovie, this)};
     CMenu menu_{menu_owners_};
 };
 

@@ -4,6 +4,7 @@
 #include "core/dfont/dfont.h"
 #include "core/game/game.h"
 #include "core/inivar/inivar.h"
+#include "core/menu/attractmovies.h"
 #include "core/menu/menu.h"
 #include "core/mission/demonmission.h"
 #include "core/netgame/netgame.h"
@@ -75,8 +76,6 @@ void initFilters(const SGameSystemOwners &owners) {
 // g_AGPTextureMode to 2 for writeIniData's useAGPFlag, whose line is left as it is; checked for
 // MMX, which every host has; warned below 64MB of RAM and 200MB of swap, which no host the
 // enhanced game runs on is short of; and set a Matrox driver's registry value.
-// deferred: arming the attract movies only when opening.avi played this launch (the decomp's
-//   attract.h nocturne_attract_set_opening_played), with the attract movies
 // deferred: reading the save folder and each save's mission name beside findAllSoundFiles, so
 //   the save and load pickers open with nothing left to read (the decomp's save_slots.h
 //   nocturne_save_slots_prewarm, SAVE_SLOTS), with the save and load pickers
@@ -101,7 +100,7 @@ void initializeGameSystems(const SGameSystemOwners &owners) {
     }
     owners.ini_owners.fonts.initFonts();
     showFirstRunCalibration(owners);
-    owners.play_movie("video", "opening.avi");
+    owners.attract_movies.setOpeningPlayed(owners.play_movie("video", "opening.avi"));
     showLoadingScreen(owners);
     owners.sound.findAllSoundFiles();
     owners.mission.reset();

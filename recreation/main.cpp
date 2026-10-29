@@ -12,6 +12,7 @@
 #include "core/ground/ground.h"
 #include "core/inivar/inivar.h"
 #include "core/level/levelloader.h"
+#include "core/menu/attractmovies.h"
 #include "core/menu/menu.h"
 #include "core/mission/demonmission.h"
 #include "core/netgame/netgame.h"
@@ -99,7 +100,10 @@ class CGameSystems {
 public:
     CGameSystems(sdl::CSdlWindow &window, sdl::CSdlFileSystem &file_system, sdl::CSdlClock &clock,
                  wincore::CWinRun &winrun)
-        : window_(window), file_system_(file_system), clock_(clock), winrun_(winrun) {}
+        : window_(window), file_system_(file_system), clock_(clock), winrun_(winrun) {
+        sound_.setMusicHandler(
+            [this](float seconds) { attract_movies_.setMusicDuration(seconds); });
+    }
 
     void initializeGameSystems() {
         core::initializeGameSystems(
@@ -124,7 +128,8 @@ public:
              .player_filters = player_filters_,
              .mouse = mouse_,
              .net_game = net_game_,
-             .menu = menu_});
+             .menu = menu_,
+             .attract_movies = attract_movies_});
     }
 
     // The main menu, until it quits or the window closes.
@@ -204,6 +209,7 @@ private:
     // deferred: the 10 train noises, with processTrainSounds
     // nocedit 0x005b1760
     core::CSound sound_{sound_main_, pod_, file_system_};
+    core::CAttractMovies attract_movies_{clock_};
     // deferred: the filter cache and filter effects, with CFilterCache's and CFilterFX's
     //   constructors
     // nocedit 0x0046ff50
@@ -298,7 +304,11 @@ private:
                        .ini = ini_,
                        .ini_owners = ini_owners_,
                        .pick_list = pick_list_owners_,
-                       .build_version = nocturne::kBuildVersion}};
+                       .build_version = nocturne::kBuildVersion,
+                       .attract_movies = attract_movies_,
+                       .play_movie = [this](std::string_view directory, std::string_view filename) {
+                           return wincore::playMovie(movie_owners_, directory, filename);
+                       }}};
     core::CLevelLoader level_loader_{{.dosio = dosio_,
                                       .screen = screen_,
                                       .special = special_,

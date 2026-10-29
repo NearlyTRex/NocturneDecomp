@@ -1,6 +1,8 @@
+#include "core/actor/actor.h"
 #include "core/actor/notported.h"
 #include "core/dfont/dfont.h"
 #include "core/game/game.h"
+#include "core/menu/attractmovies.h"
 #include "core/menu/menu.h"
 #include "core/menu/menupage.h"
 #include "core/sound/sound.h"
@@ -18,6 +20,7 @@
 #include <array>
 #include <cstddef>
 #include <cstdint>
+#include <format>
 #include <optional>
 #include <span>
 #include <string>
@@ -34,6 +37,9 @@ constexpr int kSmallestWindowHeight = 480;
 // The largest game resolution the software renderer takes.
 constexpr int kSoftwareGameWidth = 640;
 constexpr int kSoftwareGameHeight = 480;
+// NOC1.AVI to NOC4.AVI.
+constexpr int kAttractMovieCount = 4;
+constexpr std::string_view kMovieDirectory = "video";
 
 enum class EMainLine : std::uint8_t {
     Play,
@@ -118,10 +124,24 @@ public:
             owners_.sound.configure();
             owners_.two_d.clearInputAndWait();
         }
+        if (owners_.attract_movies.tick()) {
+            playAttractMovie();
+        }
         return quit_ ? EMenuOutcome::Leave : EMenuOutcome::Stay;
     }
 
 private:
+    // Starting the music again sets the wait for the next.
+    void playAttractMovie() {
+        const std::string movie =
+            std::format("noc{}.avi", owners_.actor.getRandomInt(1, kAttractMovieCount));
+        owners_.two_d.clearInputAndWait();
+        owners_.sound.reset();
+        owners_.attract_movies.pauseBeforeMovie();
+        owners_.play_movie(kMovieDirectory, movie);
+        owners_.sound.configure();
+    }
+
     const SMenuOwners &owners_;
     bool first_frame_ = true;
     bool quit_ = false;
@@ -172,10 +192,8 @@ private:
 // deferred: dropping a press of F with a control key held, with the game's hotkeys
 // deferred: no QUIT, and Cancel quitting nothing, where the platform ends the app itself (the
 //   decomp's NOCTURNE_PLATFORM_NO_QUIT), with a platform that does
-// deferred: an attract movie, one of NOC1 to NOC4.AVI that nothing in the original plays, at the
-//   end of a pass of the splash music with the main menu on screen, after a short silence, then
-//   the music restarted with reset and configure; a pass ending under a submenu or dialog is
-//   skipped (the decomp's attract.h nocturne_attract_tick), with the attract movies
+// An attract movie, one of NOC1 to NOC4.AVI that nothing in the original plays, follows a pass of
+// the music ending with the menu on screen, and the music then starts again.
 // nocedit 0x00512f40
 int CMenu::showMainGameMenu() {
     if (owners_.screen.getWindowHeight() < kSmallestWindowHeight) {

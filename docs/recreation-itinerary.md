@@ -24,12 +24,12 @@ functions don't count as done. Sizes are in instructions.
 | 8 | `renderMenuAndGetChoice`, `CMoon::free`, `CSound::reset`, `CEditorTools::showFileSelectionDialog` | 8 | 63 | 5314 | 60 | 3 | 95.2% |
 | 9 | `CPickList::enableItem`, `CEventList::resetGameFlags`, `CLevelLoader::show`, `CDemonMission::load` | 15 | 56 | 3298 | 26 | 11 | 46.4% |
 | 10 | `CDemonMission::createHeros`, `CDemonMission::prepareAllActors`, `CEventList::reset`, `CDemonMission::loadSet` | 15 | 42 | 5112 | 31 | 10 | 73.8% |
-| 11 | `CScript::loadScript` | 63 | 579 | 67400 | 39 | 30 | 6.7% |
+| 11 | `CScript::loadScript` | 63 | 579 | 67400 | 40 | 30 | 6.9% |
 | 12 | `CDemonMission::loadScript`, `CScript::executeInitSection`, `CDemonMission::startMission`, `CDemonMission::buildActiveSetActorList`, `CConsole::reset`, `CEditorTools::displayMemoryDiagnostics`, `CGame::setGameRes`, `CDemonLight::init`, `CDemonSet::initScene` | 12 | 26 | 1658 | 2 | 0 | 7.6% |
 | 13 | `CFireEffect::init`, `CDemonSet::loadMasterLightStates`, `CDemonSet::setGamma`, `CGame::clearOverlay`, `CGame::loadAssets` | 7 | 27 | 735 | 0 | 0 | 0.0% |
 | 14 | `CNetGame::syncPlayers`, `CNetGame::processServerFrame`, `CLevelLoader::cleanup`, `CKeys::toggleInputMask`, `CGame::processHotkeys` | 17 | 51 | 5302 | 4 | 0 | 7.8% |
 | 15 | `CGame::updateStatusDisplays`, `CGame::processFudge`, `CGame::playerControls`, `CGame::processFrame` | 43 | 189 | 28837 | 5 | 1 | 2.6% |
-| 16 | `CGame::setScreenResolutionAndDisplayFangs`, `showOptionsScreen`, `CScript::skipCinematic`, `CGame::showFullscreenBitmap`, `CDemonMission::countDamageableEnemies`, `freeInventory`, `CGame::runGameSession`, `CGame::displayActStats` | 10 | 25 | 6938 | 8 | 4 | 32.0% |
+| 16 | `CGame::setScreenResolutionAndDisplayFangs`, `showOptionsScreen`, `CScript::skipCinematic`, `CGame::showFullscreenBitmap`, `CDemonMission::countDamageableEnemies`, `freeInventory`, `CGame::runGameSession`, `CGame::displayActStats` | 10 | 25 | 6938 | 9 | 3 | 36.0% |
 | 17 | `CGame::finishAct`, `CDemonMission::run`, `CGame::loadGame`, `CGame::showChapterSelect`, `showDeveloperToolsMenu` | 12 | 26 | 3707 | 4 | 1 | 15.3% |
 | 18 | `enterMainGameMenu`, `finalizeGameSystems` | 11 | 13 | 539 | 3 | 0 | 23.0% |
 | 19 | Not reached from startup: `engine/` | 23 | 279 | 19702 | 24 | 1 | 8.6% |
@@ -46,7 +46,7 @@ functions don't count as done. Sizes are in instructions.
 | 30 | Not reached from startup: `core/` (part 8 of 9) | 20 | 300 | 31826 | 40 | 5 | 13.3% |
 | 31 | Not reached from startup: `core/` (part 9 of 9) | 5 | 111 | 10905 | 10 | 2 | 9.0% |
 | 32 | Not reached from startup: `wincore/` | 2 | 11 | 482 | 4 | 0 | 36.3% |
-| | **All** | | **4479** | **402407** | **859** | **163** | **19.1%** |
+| | **All** | | **4479** | **402407** | **861** | **162** | **19.2%** |
 
 ## Step 0: Math value types
 
@@ -543,7 +543,6 @@ functions don't count as done. Sizes are in instructions.
 ### `core/main.c` (1 functions, 642 instructions, 0 done, 1 partial)
 - free functions
   - [~] `initializeGameSystems` 0x00507a60 (642)
-    - deferred: arming the attract movies only when opening.avi played this launch (the decomp's attract.h nocturne_attract_set_opening_played), with the attract movies
     - deferred: reading the save folder and each save's mission name beside findAllSoundFiles, so the save and load pickers open with nothing left to read (the decomp's save_slots.h nocturne_save_slots_prewarm, SAVE_SLOTS), with the save and load pickers
 
 ### `engine/alphabit.cpp` (1 functions, 71 instructions, 1 done, 0 partial)
@@ -1873,7 +1872,7 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `setupRenderState` 0x004ecc40 (39)
   - [ ] `render` 0x004ecce0 (243)
 
-### `core/sound.cpp` (14 functions, 825 instructions, 0 done, 0 partial)
+### `core/sound.cpp` (14 functions, 825 instructions, 1 done, 0 partial)
 - class `CSound`
   - [ ] `findRandomSoundFile` 0x005b1ed0 (89)
   - [ ] `playSound` 0x005b3a20 (12)
@@ -1885,7 +1884,7 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `playTrackedActorSoundWithDelay` 0x005b3b30 (24)
   - [ ] `isSoundPlaying` 0x005b3b80 (5)
   - [ ] `setVolumeFade` 0x005b3dc0 (5)
-  - [ ] `getSoundDuration` 0x005b3ba0 (53)
+  - [x] `getSoundDuration` 0x005b3ba0 (53)
   - [ ] `set3DListenerOrientRight` 0x005b3c90 (12)
   - [ ] `setReverbPreset` 0x005b3cc0 (25)
 - free functions
@@ -2703,10 +2702,9 @@ functions don't count as done. Sizes are in instructions.
 - class `CMoon`
   - [ ] `renderJoystickCalibration` 0x0052a2c0 (84)
 
-### `core/sound.cpp` (1 functions, 112 instructions, 0 done, 1 partial)
+### `core/sound.cpp` (1 functions, 112 instructions, 1 done, 0 partial)
 - class `CSound`
-  - [~] `configure` 0x005b3830 (112)
-    - deferred: giving the attract movies the splash music's length from getSoundDuration, a length of 0 or less disarming them (the decomp's attract.h nocturne_attract_set_music_duration), with the attract movies and CSound::getSoundDuration
+  - [x] `configure` 0x005b3830 (112)
 
 ### `core/menu.cpp` (9 functions, 4659 instructions, 5 done, 3 partial)
 - free functions
@@ -5480,7 +5478,6 @@ functions don't count as done. Sizes are in instructions.
     - deferred: the developer tools on Ctrl+D or Ctrl+L, with showDeveloperToolsMenu
     - deferred: dropping a press of F with a control key held, with the game's hotkeys
     - deferred: no QUIT, and Cancel quitting nothing, where the platform ends the app itself (the decomp's NOCTURNE_PLATFORM_NO_QUIT), with a platform that does
-    - deferred: an attract movie, one of NOC1 to NOC4.AVI that nothing in the original plays, at the end of a pass of the splash music with the main menu on screen, after a short silence, then the music restarted with reset and configure; a pass ending under a submenu or dialog is skipped (the decomp's attract.h nocturne_attract_tick), with the attract movies
   - [ ] `addCustomKeyBinding` 0x00513460 (40)
   - [ ] `getSinglePressedKey` 0x00513860 (40)
 

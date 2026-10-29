@@ -9,6 +9,7 @@
 #include <gmock/gmock.h>
 #include <gtest/gtest.h>
 
+#include <functional>
 #include <string>
 #include <string_view>
 #include <type_traits>
@@ -54,7 +55,10 @@ TEST(CSound, PublicInterface) {
     static_assert(
         std::is_same_v<decltype(&CSound::isSoundPlaying), int (CSound::*)(std::uint32_t)>);
     static_assert(std::is_same_v<decltype(&CSound::killSound), void (CSound::*)(std::uint32_t)>);
-    static_assert(std::is_same_v<decltype(&CSound::getSoundDuration), float (CSound::*)(char *)>);
+    static_assert(
+        std::is_same_v<decltype(&CSound::getSoundDuration), float (CSound::*)(std::string_view)>);
+    static_assert(std::is_same_v<decltype(&CSound::setMusicHandler),
+                                 void (CSound::*)(std::function<void(float)>)>);
     static_assert(std::is_same_v<decltype(&CSound::setReverbPreset), void (CSound::*)(int)>);
     static_assert(std::is_same_v<decltype(&CSound::setVolumeFade), void (CSound::*)(float, float)>);
 }
@@ -182,6 +186,77 @@ TEST_F(CSoundMusicTest, MutedConfiguringOnlyTurnsTheChannelsDown) {
     game_sound_.configure();
     EXPECT_EQ(sound_.getSfxChannelVol(CSound::kEffectsChannel), 0.25F);
     EXPECT_EQ(sound_.countActiveSfx(), 0);
+}
+
+// The music is 22050 frames at 22050 Hz: a second.
+class CSoundMusicHandlerTest : public CSoundTest {
+protected:
+    CSoundMusicHandlerTest() {
+        givenSound("splash-music-22.wav", sound::makeConstantWav(22050, 0));
+        game_sound_.setMusicHandler([this](float seconds) { lengths_.push_back(seconds); });
+        startOutput();
+    }
+
+    std::vector<float> lengths_;
+    CSound game_sound_{sound_, pod_, file_system_};
+};
+
+// Stopping every sound first is a stop of the music too.
+TEST_F(CSoundMusicHandlerTest, ConfiguringGivesTheMusicsLength) {
+    game_sound_.configure();
+    EXPECT_THAT(lengths_, ElementsAre(0.0F, 1.0F));
+}
+
+TEST_F(CSoundMusicHandlerTest, MutedThereIsNoMusic) {
+    sound_.setSoundMuted(true);
+    game_sound_.configure();
+    EXPECT_THAT(lengths_, ElementsAre(0.0F));
+}
+
+TEST_F(CSoundMusicHandlerTest, ResettingStopsTheMusic) {
+    game_sound_.reset();
+    EXPECT_THAT(lengths_, ElementsAre(0.0F));
+}
+
+TEST_F(CSoundTest, MusicThatIsntThereHasNoLength) {
+    startOutput();
+    CSound game_sound(sound_, pod_, file_system_);
+    std::vector<float> lengths;
+    game_sound.setMusicHandler([&](float seconds) { lengths.push_back(seconds); });
+    game_sound.configure();
+    EXPECT_THAT(lengths, ElementsAre(0.0F, -1.0F));
+}
+
+TEST_F(CSoundTest, WithoutAHandlerConfiguringAndResettingStillRun) {
+    givenSound("splash-music-22.wav", sound::makeConstantWav(100, 0));
+    startOutput();
+    CSound game_sound(sound_, pod_, file_system_);
+    game_sound.configure();
+    EXPECT_EQ(sound_.countActiveSfx(), 1);
+    game_sound.reset();
+    EXPECT_EQ(sound_.countActiveSfx(), 0);
+    sound_.setSoundMuted(true);
+    game_sound.configure();
+}
+
+TEST_F(CSoundTest, ASoundsDurationIsItsLengthInSeconds) {
+    givenSound("tone.wav", sound::makeConstantWav(11025, 0));
+    CSound game_sound(sound_, pod_, file_system_);
+    EXPECT_FLOAT_EQ(game_sound.getSoundDuration("tone.wav"), 0.5F);
+}
+
+// What follows those in a name is for playing the sound, not finding it.
+TEST_F(CSoundTest, ADurationsNameEndsAtAnAtAStarOrWhitespace) {
+    givenSound("tone.wav", sound::makeConstantWav(11025, 0));
+    CSound game_sound(sound_, pod_, file_system_);
+    for (const std::string_view name : {"tone.wav@2", "tone.wav*", "tone.wav 1", "tone.wav\t"}) {
+        EXPECT_FLOAT_EQ(game_sound.getSoundDuration(name), 0.5F) << name;
+    }
+}
+
+TEST_F(CSoundTest, AMissingSoundHasADurationOfMinusOne) {
+    CSound game_sound(sound_, pod_, file_system_);
+    EXPECT_EQ(game_sound.getSoundDuration("missing.wav"), -1.0F);
 }
 
 TEST_F(CSoundTest, WithNoSoundFilesTheSearchRunsEachTime) {

@@ -7,6 +7,7 @@
 #include "core/inivar/inivar.h"
 #include "core/level/levelloader.h"
 #include "core/main/main.h"
+#include "core/menu/attractmovies.h"
 #include "core/menu/menu.h"
 #include "core/mission/demonmission.h"
 #include "core/netgame/netgame.h"
@@ -103,6 +104,7 @@ protected:
             return std::optional(ini_text_);
         });
         ON_CALL(file_system_, setReadOnly(kIni, false)).WillByDefault(Return(true));
+        ON_CALL(attract_clock_, getCounterFrequency()).WillByDefault(Return(1000U));
         givenFile("art\\vga.act", engine::makePalette({}));
         givenFile("fog\\vga.lte", std::string(engine::C2d::kLightLevels * 256, '\0'));
         givenFile("fog\\vga.map", std::string(engine::C2d::kColorCubeSize, '\0'));
@@ -220,6 +222,9 @@ protected:
                                              .menu_input = menu_input_,
                                              .three_d = three_d_,
                                              .screen = screen_};
+    // Its clock stands still, so music shorter than the lead is a pass ending at once.
+    NiceMock<platform::MockClock> attract_clock_;
+    CAttractMovies attract_movies_{attract_clock_};
     CMenu menu_{{.dosio = dosio_,
                  .screen = screen_,
                  .special = special_,
@@ -242,7 +247,9 @@ protected:
                  .ini = ini_,
                  .ini_owners = ini_owners_,
                  .pick_list = pick_list_owners_,
-                 .build_version = "0.1.0"}};
+                 .build_version = "0.1.0",
+                 .attract_movies = attract_movies_,
+                 .play_movie = {}}};
     CLevelLoader level_loader_{{.dosio = dosio_,
                                 .screen = screen_,
                                 .special = special_,
@@ -285,7 +292,8 @@ protected:
                               .player_filters = player_filters_,
                               .mouse = mouse_,
                               .net_game = net_game_,
-                              .menu = menu_};
+                              .menu = menu_,
+                              .attract_movies = attract_movies_};
 };
 
 TEST_F(CInitializeGameSystemsTest, ReadsTheIniAndKeepsItsModeAfterTheFirstRun) {
@@ -341,6 +349,19 @@ TEST_F(CInitializeGameSystemsTest, PlaysTheOpeningMovieThenShowsTheLoadingScreen
     // The fangs' grey of 200 at half opacity over black.
     EXPECT_EQ(screen_.pixel(kWidth - 1, kHeight - 1), 0x636363U);
     EXPECT_EQ(screen_.swaps, 1);
+}
+
+TEST_F(CInitializeGameSystemsTest, TheOpeningPlayingLetsTheAttractMoviesFollow) {
+    start();
+    attract_movies_.setMusicDuration(0.1F);
+    EXPECT_TRUE(attract_movies_.tick());
+}
+
+TEST_F(CInitializeGameSystemsTest, WithoutTheOpeningNoAttractMovieFollows) {
+    owners_.play_movie = [](std::string_view, std::string_view) { return false; };
+    start();
+    attract_movies_.setMusicDuration(0.1F);
+    EXPECT_FALSE(attract_movies_.tick());
 }
 
 TEST_F(CInitializeGameSystemsTest, TakesUpTheSoundDevice) {

@@ -3,6 +3,7 @@
 #include "core/dfont/dfont.h"
 #include "core/game/game.h"
 #include "core/inivar/inivar.h"
+#include "core/menu/attractmovies.h"
 #include "core/menu/menu.h"
 #include "core/set/demonset.h"
 #include "core/sound/sound.h"
@@ -243,6 +244,7 @@ protected:
                                              .menu_input = menu_input_,
                                              .three_d = three_d_,
                                              .screen = screen_};
+    CAttractMovies attract_movies_{clock_};
     CMenu menu_{{.dosio = dosio_,
                  .screen = screen_,
                  .special = special_,
@@ -265,7 +267,9 @@ protected:
                  .ini = ini_,
                  .ini_owners = ini_owners_,
                  .pick_list = pick_list_owners_,
-                 .build_version = "X"}};
+                 .build_version = "X",
+                 .attract_movies = attract_movies_,
+                 .play_movie = {}}};
 };
 
 TEST_F(CMenuTest, CalibrationShowsEachStepWithThePromptOverTheImageUntilAKey) {

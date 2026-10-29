@@ -34,12 +34,13 @@ struct SGameSystemOwners {
     engine::CMouse &mouse;
     CNetGame &net_game;
     CMenu &menu;
+    CAttractMovies &attract_movies;
 };
 
 using common::displayErrorAndQuit;
 // Reads the INI, mounts the pods and brings up graphics at 640x480x32, then fonts, the first
 // run's calibration, the opening movie, a loading screen, sound, the light filters, the mouse
-// and the network.
+// and the network. The attract movies wait for the opening to have played.
 void initializeGameSystems(const SGameSystemOwners &owners);
 // The main menu, until it quits; showMainGameMenu's result.
 int enterMainGameMenu(CMenu &menu);

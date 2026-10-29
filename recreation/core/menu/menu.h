@@ -11,6 +11,7 @@
 #include "support/fwd.h"
 
 #include <array>
+#include <functional>
 #include <optional>
 #include <span>
 #include <string>
@@ -45,6 +46,9 @@ struct SMenuOwners {
     const shape::SPickListOwners &pick_list;
     // The line naming this build, drawn at the foot of every menu.
     std::string_view build_version;
+    CAttractMovies &attract_movies;
+    // Plays directory\filename to its end, as startup's play_movie does.
+    std::function<bool(std::string_view, std::string_view)> play_movie;
 };
 
 // The menu screens' state: the moon behind them, and what the last menu frame read from the keys.
