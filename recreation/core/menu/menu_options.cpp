@@ -65,7 +65,8 @@ public:
         case EOptionsLine::Graphic:
             quitNotPorted("CMenu", "configureGraphicsOptions");
         case EOptionsLine::Sound:
-            quitNotPorted("CMenu", "configureSoundOptions");
+            getMenu().configureSoundOptions();
+            break;
         case EOptionsLine::Control:
             quitNotPorted("CMenu", "configureCustomKeys");
         case EOptionsLine::Cheats:
@@ -85,7 +86,6 @@ private:
 // The original's lines were Graphic, Sound and Control options, and Credits, and it left on
 // Escape alone, not on the window closing.
 // deferred: the graphic options, with configureGraphicsOptions
-// deferred: the sound options, with configureSoundOptions
 // deferred: the control options, then the key bindings when the control type changed, with
 //   configureCustomKeys and configureCustomKeyBindings
 // deferred: the cheats, which nothing in the original lists (the decomp's cheats.h

@@ -1,12 +1,15 @@
 #include "engine/2d/2d.h"
 #include "engine/3d/3d.h"
+#include "engine/console/console.h"
 #include "engine/dosio/dosio.h"
 #include "engine/light/light.h"
 #include "engine/matrix/matrix.h"
 #include "engine/special/special.h"
 #include "engine/texture/currenttexture.h"
+#include "sound/sndmain/sndmain.h"
 #include "tests/mocks/engine/memoryscreen.h"
 #include "tests/mocks/platform/memoryfile.h"
+#include "tests/mocks/platform/mockaudiodevice.h"
 #include "tests/mocks/platform/mockclock.h"
 #include "tests/mocks/platform/mockfilesystem.h"
 #include "tests/mocks/platform/mockmovieplayer.h"
@@ -19,6 +22,7 @@
 #include <gtest/gtest.h>
 
 #include <chrono>
+#include <ctime>
 #include <memory>
 #include <optional>
 #include <string>
@@ -74,6 +78,10 @@ protected:
     engine::C3d three_d_{matrix_};
     engine::SCurrentTexture current_texture_;
     engine::CSpecial special_{renderer_, screen_, two_d_, matrix_, three_d_, current_texture_};
+    NiceMock<platform::MockAudioDevice> audio_device_;
+    engine::CConsole console_{file_system_, 80, 50, 0, 0};
+    sound::CSndMain sound_main_{dosio_, file_system_, audio_device_, console_,
+                                [] { return std::tm{}; }};
     SMovieOwners owners_{.file_system = file_system_,
                          .movies = movies_,
                          .window = window_,
@@ -81,8 +89,24 @@ protected:
                          .winrun = winrun_,
                          .special = special_,
                          .screen = screen_,
-                         .two_d = two_d_};
+                         .two_d = two_d_,
+                         .sound_main = sound_main_};
 };
+
+TEST_F(CPlayMovieTest, TheMoviePlaysAtTheMovieVolume) {
+    sound_main_.setMovieVolume(0.4F);
+    EXPECT_CALL(movies_, setMovieVolume(0.4F));
+    ON_CALL(movies_, isMoviePlaying).WillByDefault(Return(false));
+    EXPECT_TRUE(play());
+}
+
+TEST_F(CPlayMovieTest, AMovieIsSilentWhileTheSoundIsMuted) {
+    sound_main_.setMovieVolume(0.4F);
+    sound_main_.setSoundMuted(true);
+    EXPECT_CALL(movies_, setMovieVolume(0.0F));
+    ON_CALL(movies_, isMoviePlaying).WillByDefault(Return(false));
+    EXPECT_TRUE(play());
+}
 
 TEST_F(CPlayMovieTest, WithoutTheFileNothingHappens) {
     ON_CALL(file_system_, openFile).WillByDefault(::testing::ReturnNull());

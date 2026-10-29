@@ -29,7 +29,7 @@ functions don't count as done. Sizes are in instructions.
 | 13 | `CFireEffect::init`, `CDemonSet::loadMasterLightStates`, `CDemonSet::setGamma`, `CGame::clearOverlay`, `CGame::loadAssets` | 7 | 27 | 735 | 0 | 0 | 0.0% |
 | 14 | `CNetGame::syncPlayers`, `CNetGame::processServerFrame`, `CLevelLoader::cleanup`, `CKeys::toggleInputMask`, `CGame::processHotkeys` | 17 | 51 | 5302 | 1 | 0 | 1.9% |
 | 15 | `CGame::updateStatusDisplays`, `CGame::processFudge`, `CGame::playerControls`, `CGame::processFrame` | 43 | 189 | 28837 | 5 | 1 | 2.6% |
-| 16 | `CGame::setScreenResolutionAndDisplayFangs`, `showOptionsScreen`, `CScript::skipCinematic`, `CGame::showFullscreenBitmap`, `CDemonMission::countDamageableEnemies`, `freeInventory`, `CGame::runGameSession`, `CGame::displayActStats` | 10 | 25 | 6938 | 1 | 2 | 4.0% |
+| 16 | `CGame::setScreenResolutionAndDisplayFangs`, `showOptionsScreen`, `CScript::skipCinematic`, `CGame::showFullscreenBitmap`, `CDemonMission::countDamageableEnemies`, `freeInventory`, `CGame::runGameSession`, `CGame::displayActStats` | 10 | 25 | 6938 | 3 | 2 | 12.0% |
 | 17 | `CGame::finishAct`, `CDemonMission::run`, `CGame::loadGame`, `CGame::showChapterSelect`, `showDeveloperToolsMenu` | 12 | 26 | 3707 | 4 | 1 | 15.3% |
 | 18 | `enterMainGameMenu`, `finalizeGameSystems` | 11 | 13 | 539 | 3 | 0 | 23.0% |
 | 19 | Not reached from startup: `engine/` | 23 | 279 | 19702 | 24 | 1 | 8.6% |
@@ -46,7 +46,7 @@ functions don't count as done. Sizes are in instructions.
 | 30 | Not reached from startup: `core/` (part 8 of 9) | 20 | 300 | 31826 | 40 | 5 | 13.3% |
 | 31 | Not reached from startup: `core/` (part 9 of 9) | 5 | 111 | 10905 | 10 | 2 | 9.0% |
 | 32 | Not reached from startup: `wincore/` | 2 | 11 | 482 | 4 | 0 | 36.3% |
-| | **All** | | **4479** | **402407** | **848** | **160** | **18.9%** |
+| | **All** | | **4479** | **402407** | **850** | **160** | **18.9%** |
 
 ## Step 0: Math value types
 
@@ -2707,7 +2707,7 @@ functions don't count as done. Sizes are in instructions.
   - [~] `configure` 0x005b3830 (112)
     - deferred: giving the attract movies the splash music's length from getSoundDuration, a length of 0 or less disarming them (the decomp's attract.h nocturne_attract_set_music_duration), with the attract movies and CSound::getSoundDuration
 
-### `core/menu.cpp` (9 functions, 4659 instructions, 0 done, 1 partial)
+### `core/menu.cpp` (9 functions, 4659 instructions, 2 done, 1 partial)
 - free functions
   - [ ] `configureGraphicsOptions` 0x00510c80 (770)
   - [ ] `calibrateGamepad` 0x005104d0 (215)
@@ -2715,11 +2715,10 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `isKeyCodeValidForMode` 0x00513720 (87)
   - [ ] `configureCustomKeyBindings` 0x005138e0 (1634)
   - [ ] `configureCustomKeys` 0x00511890 (375)
-  - [ ] `renderAudioSpectrumBar` 0x0050fe70 (116)
-  - [ ] `configureSoundOptions` 0x00511e50 (1124)
+  - [x] `renderAudioSpectrumBar` 0x0050fe70 (116)
+  - [x] `configureSoundOptions` 0x00511e50 (1124)
   - [~] `showOptionsScreen` 0x00512d30 (138)
     - deferred: the graphic options, with configureGraphicsOptions
-    - deferred: the sound options, with configureSoundOptions
     - deferred: the control options, then the key bindings when the control type changed, with configureCustomKeys and configureCustomKeyBindings
     - deferred: the cheats, which nothing in the original lists (the decomp's cheats.h nocturne_cheats_menu), with the cheats menu
 

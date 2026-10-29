@@ -266,12 +266,16 @@ TEST_F(CPickListInputTest, ADoubleClickOnADisabledItemDoesntPick) {
     frame();
 }
 
-TEST_F(CPickListInputTest, ThePointerIsHeldInsideTheList) {
-    open(0);
-    mouseAt(0, 200, false);
+// The enhanced game never moves the OS cursor; retail held it in the box.
+TEST_F(CPickListInputTest, APointerOutsideTheListIsLeftThereAndCountsAsAtItsEdge) {
+    EXPECT_CALL(raw_input_, setCursorPosition).Times(0);
+    open(3);
+    clickAt(0, 0);
     frame();
-    EXPECT_EQ(mouse_x_, clip().left);
-    EXPECT_EQ(mouse_y_, clip().bottom);
+    EXPECT_EQ(mouse_x_, 0);
+    EXPECT_EQ(mouse_y_, 0);
+    mouseAt(0, 0, false);
+    EXPECT_EQ(confirm(), 0);
 }
 
 } // namespace

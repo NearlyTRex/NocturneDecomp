@@ -210,6 +210,16 @@ protected:
         set_parts_.owners(demon_renderer_, matrix_, special_, two_d_, screen_, raw_input_)};
     common::CWatcomRandom crt_random_;
     CActor actor_{game_, crt_random_};
+    shape::CEdControls controls_{{.two_d = two_d_,
+                                  .screen = screen_,
+                                  .raw_input = raw_input_,
+                                  .clock = game_clock_,
+                                  .editor_tools = editor_tools_}};
+    shape::SPickListOwners pick_list_owners_{.controls = controls_,
+                                             .keys = keys_,
+                                             .menu_input = menu_input_,
+                                             .three_d = three_d_,
+                                             .screen = screen_};
     CMenu menu_{{.dosio = dosio_,
                  .screen = screen_,
                  .special = special_,
@@ -231,17 +241,8 @@ protected:
                  .editor_tools = editor_tools_,
                  .ini = ini_,
                  .ini_owners = ini_owners_,
+                 .pick_list = pick_list_owners_,
                  .build_version = "0.1.0"}};
-    shape::CEdControls controls_{{.two_d = two_d_,
-                                  .screen = screen_,
-                                  .raw_input = raw_input_,
-                                  .clock = game_clock_,
-                                  .editor_tools = editor_tools_}};
-    shape::SPickListOwners pick_list_owners_{.controls = controls_,
-                                             .keys = keys_,
-                                             .menu_input = menu_input_,
-                                             .three_d = three_d_,
-                                             .screen = screen_};
     CLevelLoader level_loader_{{.dosio = dosio_,
                                 .screen = screen_,
                                 .special = special_,

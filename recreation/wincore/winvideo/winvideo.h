@@ -2,6 +2,7 @@
 
 #include "engine/fwd.h"
 #include "platform/fwd.h"
+#include "sound/fwd.h"
 #include "wincore/fwd.h"
 
 #include <string_view>
@@ -18,6 +19,7 @@ struct SMovieOwners {
     engine::CSpecial &special;
     engine::IScreenDevice &screen;
     engine::C2d &two_d;
+    const sound::CSndMain &sound_main;
 };
 
 // Plays directory_path\movie_filename over a cleared screen until it ends or a key is typed.

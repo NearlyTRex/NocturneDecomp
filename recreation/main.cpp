@@ -221,7 +221,8 @@ private:
                                         .winrun = winrun_,
                                         .special = special_,
                                         .screen = screen_,
-                                        .two_d = two_d_};
+                                        .two_d = two_d_,
+                                        .sound_main = sound_main_};
     std::vector<nocturne::platform::SRenderVertex> vertex_buffer_ =
         std::vector<nocturne::platform::SRenderVertex>(kRenderVertexCount);
     engine::CPrim prim_{special_, two_d_, three_d_, current_texture_};
@@ -263,6 +264,16 @@ private:
                           .raw_input = winrun_}};
     nocturne::common::CWatcomRandom crt_random_;
     core::CActor actor_{game_, crt_random_};
+    nocturne::shape::CEdControls controls_{{.two_d = two_d_,
+                                            .screen = screen_,
+                                            .raw_input = winrun_,
+                                            .clock = winrun_,
+                                            .editor_tools = editor_tools_}};
+    nocturne::shape::SPickListOwners pick_list_owners_{.controls = controls_,
+                                                       .keys = keys_,
+                                                       .menu_input = menu_input_,
+                                                       .three_d = three_d_,
+                                                       .screen = screen_};
     core::CMenu menu_{{.dosio = dosio_,
                        .screen = screen_,
                        .special = special_,
@@ -284,17 +295,8 @@ private:
                        .editor_tools = editor_tools_,
                        .ini = ini_,
                        .ini_owners = ini_owners_,
+                       .pick_list = pick_list_owners_,
                        .build_version = nocturne::kBuildVersion}};
-    nocturne::shape::CEdControls controls_{{.two_d = two_d_,
-                                            .screen = screen_,
-                                            .raw_input = winrun_,
-                                            .clock = winrun_,
-                                            .editor_tools = editor_tools_}};
-    nocturne::shape::SPickListOwners pick_list_owners_{.controls = controls_,
-                                                       .keys = keys_,
-                                                       .menu_input = menu_input_,
-                                                       .three_d = three_d_,
-                                                       .screen = screen_};
     core::CLevelLoader level_loader_{{.dosio = dosio_,
                                       .screen = screen_,
                                       .special = special_,

@@ -87,6 +87,8 @@ TEST(CSndMain, PublicInterface) {
         std::is_same_v<decltype(&CSndMain::isSfxChannelEnabled), bool (CSndMain::*)(int) const>);
     static_assert(std::is_same_v<decltype(&CSndMain::isSoundMuted), bool (CSndMain::*)() const>);
     static_assert(std::is_same_v<decltype(&CSndMain::setSoundMuted), void (CSndMain::*)(bool)>);
+    static_assert(std::is_same_v<decltype(&CSndMain::getMovieVolume), float (CSndMain::*)() const>);
+    static_assert(std::is_same_v<decltype(&CSndMain::setMovieVolume), void (CSndMain::*)(float)>);
     static_assert(std::is_same_v<decltype(&CSndMain::set3DListenerPos),
                                  void (CSndMain::*)(double, double, double)>);
     static_assert(std::is_same_v<decltype(&CSndMain::set3DListenerOrient),
@@ -239,6 +241,23 @@ TEST_F(CSndMainTest, UnmutingLeavesTheOutputToBeEnabled) {
     EXPECT_FALSE(sound_.isSoundMuted());
 }
 
+// In hundredths, so the menu's five steps of a fifth land on full.
+TEST_F(CSndMainTest, TheMovieVolumeStartsFullAndIsHeldInHundredths) {
+    EXPECT_EQ(sound_.getMovieVolume(), 1.0F);
+    float volume = 0.0F;
+    for (int step = 0; step < 5; ++step) {
+        volume += 0.2F;
+    }
+    sound_.setMovieVolume(volume);
+    EXPECT_EQ(sound_.getMovieVolume(), 1.0F);
+    sound_.setMovieVolume(0.333F);
+    EXPECT_EQ(sound_.getMovieVolume(), 0.33F);
+    sound_.setMovieVolume(2.0F);
+    EXPECT_EQ(sound_.getMovieVolume(), 1.0F);
+    sound_.setMovieVolume(-1.0F);
+    EXPECT_EQ(sound_.getMovieVolume(), 0.0F);
+}
+
 TEST_F(CSndMainTest, TheOutputFormatIsKeptUntilADeviceOpensInIt) {
     EXPECT_CALL(audio_device_, open).Times(0);
     sound_.setAudioBitDepth(8);
@@ -360,9 +379,24 @@ TEST_F(CSndMainIniTest, WritesWhatItReads) {
     sound_.writeIni(ini_file_);
     EXPECT_EQ(ini_text_, "[Sound]\r\nSfxChannel2Vol=1\r\nSfxChannel2Enabled=0\r\n"
                          "SfxChannel1Vol=0.5\r\nSfxChannel1Enabled=1\r\nSfxChannel0Vol=1\r\n"
-                         "SfxChannel0Enabled=1\r\nMute=0\r\nMaxSwLatency=0.5\r\n"
+                         "SfxChannel0Enabled=1\r\nMovieVolume=100\r\nMute=0\r\nMaxSwLatency=0.5\r\n"
                          "HwMixingEnabled=1\r\nHz=44100\r\nChannels=2\r\nBits=16\r\n"
                          "DeviceName=pipewire: Speakers\r\n");
+}
+
+TEST_F(CSndMainIniTest, TheMovieVolumeIsAPercentageHeldAtZeroToAHundred) {
+    ini_text_ = "[Sound]\r\nMovieVolume=40\r\n";
+    sound_.readIni(ini_file_);
+    EXPECT_EQ(sound_.getMovieVolume(), 0.4F);
+    ini_text_ = "[Sound]\r\nMovieVolume=150\r\n";
+    sound_.readIni(ini_file_);
+    EXPECT_EQ(sound_.getMovieVolume(), 1.0F);
+    ini_text_ = "[Sound]\r\nMovieVolume=-5\r\n";
+    sound_.readIni(ini_file_);
+    EXPECT_EQ(sound_.getMovieVolume(), 0.0F);
+    sound_.setMovieVolume(0.6F);
+    sound_.writeIni(ini_file_);
+    EXPECT_THAT(ini_text_, ::testing::HasSubstr("MovieVolume=60\r\n"));
 }
 
 TEST_F(CSndMainIniTest, TheOriginalsMixerSettingsAreWrittenBackAsRead) {

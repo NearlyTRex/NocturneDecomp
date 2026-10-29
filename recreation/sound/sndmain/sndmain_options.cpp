@@ -1,6 +1,8 @@
 #include "common/error/error.h"
 #include "sound/sndmain/sndmain.h"
 
+#include <algorithm>
+#include <cmath>
 #include <format>
 
 namespace nocturne::sound {
@@ -91,10 +93,17 @@ void CSndMain::checkSfxChannel(std::string_view function, int channel_index) {
     }
 }
 
+// The original's audio thread took the new volume up at its next mix, and pushed it to a
+// hardware voice at once; here the channel's sounds take it at once, without waiting on a poll.
 // nocedit 0x005a9cf0
 void CSndMain::setSfxChannelVol(int channel_index, float volume) {
     checkSfxChannel("setSfxChannelVol", channel_index);
     sfx_channel_volumes_.at(static_cast<std::size_t>(channel_index)) = volume;
+    for (CSfxSlot &slot : sfx_slots_) {
+        if (slot.options.channel_index == channel_index) {
+            static_cast<void>(slot.compute(0.0F));
+        }
+    }
 }
 
 // nocedit 0x005a9d90
@@ -142,6 +151,17 @@ void CSndMain::setSoundMuted(bool muted) {
     if (muted) {
         resetSoundDevice();
     }
+}
+
+float CSndMain::getMovieVolume() const {
+    return static_cast<float>(movie_volume_percent_) / kFullMovieVolumePercent;
+}
+
+// Rounded: the menu steps in fifths, and five steps of 0.2 come to a hair under 1.
+void CSndMain::setMovieVolume(float volume) {
+    movie_volume_percent_ =
+        std::clamp(static_cast<int>(std::lround(volume * kFullMovieVolumePercent)), 0,
+                   kFullMovieVolumePercent);
 }
 
 } // namespace nocturne::sound

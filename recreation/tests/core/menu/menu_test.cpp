@@ -25,7 +25,9 @@
 #include "engine/texture/texture.h"
 #include "engine/zraster/zraster.h"
 #include "platform/rendervertex.h"
+#include "shape/edittool/edcontrols.h"
 #include "shape/edittool/editortools.h"
+#include "shape/edittool/picklist.h"
 #include "support/newmsg/newmsg.h"
 #include "tests/mocks/core/gameparts.h"
 #include "tests/mocks/core/menufontfiles.h"
@@ -228,6 +230,16 @@ protected:
                                .special = special_,
                                .display = display_,
                                .fonts = fonts_};
+    shape::CEdControls controls_{{.two_d = two_d_,
+                                  .screen = screen_,
+                                  .raw_input = raw_input_,
+                                  .clock = game_clock_,
+                                  .editor_tools = editor_tools_}};
+    shape::SPickListOwners pick_list_owners_{.controls = controls_,
+                                             .keys = keys_,
+                                             .menu_input = menu_input_,
+                                             .three_d = three_d_,
+                                             .screen = screen_};
     CMenu menu_{{.dosio = dosio_,
                  .screen = screen_,
                  .special = special_,
@@ -249,6 +261,7 @@ protected:
                  .editor_tools = editor_tools_,
                  .ini = ini_,
                  .ini_owners = ini_owners_,
+                 .pick_list = pick_list_owners_,
                  .build_version = "X"}};
 };
 

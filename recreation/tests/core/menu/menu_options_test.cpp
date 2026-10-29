@@ -106,6 +106,14 @@ TEST_F(COptionsScreenTest, CreditsRollThenTheMusicStartsAgain) {
     EXPECT_EQ(playing.front(), 0);
 }
 
+// The mute is Sound Options' first line; Cancel there goes back to Options.
+TEST_F(COptionsScreenTest, SoundOptionsOpensItsPage) {
+    pressEachFrame({kDown, kDown, kReturn, kReturn, kEscape, kEscape});
+    menu_.showOptionsScreen(0);
+    EXPECT_TRUE(sound_main_.isSoundMuted());
+    EXPECT_EQ(frames_, 6);
+}
+
 // Always run is the Gameplay page's first line; Cancel there goes back to Options.
 TEST_F(COptionsScreenTest, GameplayOpensItsPage) {
     pressEachFrame({kReturn, kReturn, kEscape, kEscape});
@@ -127,9 +135,8 @@ TEST_P(COptionsScreenNotPortedTest, AScreenNotPortedYetQuits) {
 }
 
 INSTANTIATE_TEST_SUITE_P(
-    GraphicSoundControlAndCheats, COptionsScreenNotPortedTest,
+    GraphicControlAndCheats, COptionsScreenNotPortedTest,
     ::testing::Values(std::pair{1, std::string("CMenu::configureGraphicsOptions")},
-                      std::pair{2, std::string("CMenu::configureSoundOptions")},
                       std::pair{3, std::string("CMenu::configureCustomKeys")},
                       std::pair{4, std::string("CMenu::showCheatsMenu")}));
 

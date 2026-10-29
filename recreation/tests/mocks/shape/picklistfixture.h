@@ -45,10 +45,6 @@ protected:
             typed_.pop_front();
             return key;
         });
-        ON_CALL(raw_input_, setCursorPosition(_, _)).WillByDefault([this](int x, int y) {
-            mouse_x_ = x;
-            mouse_y_ = y;
-        });
         ON_CALL(raw_input_, getInputKeyMask()).WillByDefault([this] { return key_mask_; });
         ON_CALL(raw_input_, setInputKeyMask(_)).WillByDefault([this](int mask) {
             key_mask_ = mask;

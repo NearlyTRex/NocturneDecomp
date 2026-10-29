@@ -104,6 +104,29 @@ TEST_F(CSndMainSfxTest, VolumeAndFrequencyChangeAPlayingSound) {
     EXPECT_GE(sound_.getSfxPlaybackPosition(handle, EPlaybackPosType::Samples), 4000.0);
 }
 
+// Without waiting for a poll; a sound on another channel keeps its level.
+TEST_F(CSndMainSfxTest, AChannelsVolumeReachesItsPlayingSoundsAtOnce) {
+    sound_.setNextSfxChannel(1);
+    sound_.setNextSfxFlags(kSfxNonPositional);
+    static_cast<void>(sound_.startSfx("tone.wav"));
+    EXPECT_THAT(level(), FloatNear(0.5F, kTolerance));
+    sound_.setSfxChannelVol(1, 0.5F);
+    EXPECT_THAT(level(), FloatNear(0.25F, kTolerance));
+    sound_.setSfxChannelVol(0, 0.0F);
+    EXPECT_THAT(level(), FloatNear(0.25F, kTolerance));
+}
+
+// The music restarted at a channel volume of nothing, then the volume raised.
+TEST_F(CSndMainSfxTest, ASoundStartedSilentIsHeardOnceItsChannelIsTurnedUp) {
+    sound_.setSfxChannelVol(1, 0.0F);
+    sound_.setNextSfxChannel(1);
+    sound_.setNextSfxFlags(kSfxNonPositional);
+    static_cast<void>(sound_.startSfx("tone.wav"));
+    EXPECT_EQ(level(), 0.0F);
+    sound_.setSfxChannelVol(1, 1.0F);
+    EXPECT_THAT(level(), FloatNear(0.5F, kTolerance));
+}
+
 TEST_F(CSndMainSfxTest, APlayingSoundCanBeMovedOrMadeToFollow) {
     sound_.setNextSfxFlags(0);
     sound_.setNextSfxDelay(0.0);

@@ -9,6 +9,7 @@
 #include "platform/filesystem.h"
 #include "platform/movieplayer.h"
 #include "platform/window.h"
+#include "sound/sndmain/sndmain.h"
 #include "wincore/winrun/winrun.h"
 
 #include <chrono>
@@ -52,7 +53,8 @@ void waitForMovie(const SMovieOwners &owners) {
 
 } // namespace
 
-// The original also raised the thread's priority while the movie played.
+// The original also raised the thread's priority while the movie played. Its sound is at the
+// enhanced game's movie volume, and silent while muted; MCI played it at the desktop's.
 // nocedit 0x005f4a00
 bool playMovie(const SMovieOwners &owners, std::string_view directory_path,
                std::string_view movie_filename) {
@@ -60,6 +62,8 @@ bool playMovie(const SMovieOwners &owners, std::string_view directory_path,
     if (owners.file_system.openFile(path, platform::EFileMode::Read) == nullptr) {
         return false;
     }
+    owners.movies.setMovieVolume(
+        owners.sound_main.isSoundMuted() ? 0.0F : owners.sound_main.getMovieVolume());
     owners.special.clearScreen();
     owners.screen.swapBuffers();
     if (startMovie(owners, path)) {

@@ -5,10 +5,12 @@
 #include "core/moon/moon.h"
 #include "engine/fwd.h"
 #include "platform/fwd.h"
+#include "platform/mrgltexturebasic.h"
 #include "shape/fwd.h"
 #include "sound/fwd.h"
 #include "support/fwd.h"
 
+#include <array>
 #include <optional>
 #include <span>
 #include <string>
@@ -40,6 +42,7 @@ struct SMenuOwners {
     // Where Options saves the settings as it closes.
     engine::CIni &ini;
     const SIniDataOwners &ini_owners;
+    const shape::SPickListOwners &pick_list;
     // The line naming this build, drawn at the foot of every menu.
     std::string_view build_version;
 };
@@ -72,6 +75,9 @@ public:
     void runPage(CMenuPage &page);
     // Whether Cancel was pressed, taking the press, or the window is closing.
     [[nodiscard]] bool takeMenuCancel();
+    // Sound Options' backdrop: a bar of flame up from the foot of the screen for each band of
+    // what plays, the left channel's on the left.
+    void drawAudioSpectrum();
 
     [[nodiscard]] CMoon &getMoon();
     // Whether the last menu frame moved the selection.
@@ -85,6 +91,11 @@ private:
     class COptionsPage;
 
     void showGameplayOptions();
+    void configureSoundOptions();
+    // 32 pixels wide on x_center, rising from y_top to twice height_half above it.
+    void renderAudioSpectrumBar(int x_center, int y_top, int height_half);
+    // The flame frame a bar at x_center shows now.
+    [[nodiscard]] int getAudioSpectrumFrame(int x_center) const;
     // PLAY's Continue, Start and Load.
     void showPlayMenu();
     // MULTIPLAYER's Host and Join.
@@ -107,6 +118,18 @@ private:
     CMoon moon_;
     bool menu_input_happened_ = false;
     bool menu_left_right_pressed_ = false;
+    // Which flame frame the bars show, in 16.16; it runs through eight a third of a second.
+    int audio_visualization_counter_ = 0;
+    std::array<platform::SMRGLTextureBasic, 8> audio_spectrum_textures_{{
+        {.texture_name = "F0100.RAW"},
+        {.texture_name = "F0300.RAW"},
+        {.texture_name = "F0500.RAW"},
+        {.texture_name = "F0700.RAW"},
+        {.texture_name = "F0900.RAW"},
+        {.texture_name = "F1100.RAW"},
+        {.texture_name = "F1300.RAW"},
+        {.texture_name = "F1500.RAW"},
+    }};
 };
 
 } // namespace nocturne::core
