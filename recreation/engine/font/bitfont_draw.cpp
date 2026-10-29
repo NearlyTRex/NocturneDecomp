@@ -235,6 +235,11 @@ int CBitFont::drawTextWrapper(int x, int y, int color_mode, int color_value,
     return drawText(text, x, y, color_mode, color_value);
 }
 
+// nocedit 0x004cdde0
+int CBitFont::drawTextCenter(int x, int y, int color_mode, int color_value, std::string_view text) {
+    return drawTextWrapper(x - (getTextWidth(text) / 2), y, color_mode, color_value, text);
+}
+
 // nocedit 0x004cdee0
 int CBitFont::drawTextCenterInBounds(int left_x, int right_x, int y, int color_mode,
                                      int color_value, std::string_view text) {

@@ -37,10 +37,9 @@ std::byte *rowAt(std::span<void *> rows, int y) {
 } // namespace
 
 // staticInit built the global instance and init set its colours; the windows, prompts and
-// progress bar read these seven.
-// deferred: the seven colours retail's init sets for CInputString::draw,
-//   displayCenteredStatusMessage, showFilenameInputDialog and draw3DAxisLabels, with those
-//   functions
+// progress bar read these seven, and the status message its own.
+// deferred: the six colours retail's init sets for CInputString::draw, showFilenameInputDialog
+//   and draw3DAxisLabels, with those functions
 // nocedit 0x0049d170
 // nocedit 0x0049df80
 // nocedit 0x0049e020
@@ -50,7 +49,7 @@ CEditorTools::CEditorTools(const SEditorToolsOwners &owners)
       raw_input_(owners.raw_input), game_clock_(owners.game_clock), clock_(owners.clock),
       clipboard_(owners.clipboard), window_border_highlight_color_(7), title_bar_color_(0xfb),
       window_font_color_(0xff), warning_text_color_(0xff), window_status_text_color_(0xff),
-      progress_bar_border_color_(0xff), progress_bar_fill_color_(4) {}
+      status_text_color_(0xff), progress_bar_border_color_(0xff), progress_bar_fill_color_(4) {}
 
 CEditorTools::~CEditorTools() = default;
 
@@ -106,6 +105,17 @@ void CEditorTools::showWarning(std::string_view message) {
 // nocedit 0x0049e740
 void CEditorTools::showError(std::string_view message) {
     showPrompt(kErrorTitle, message, warning_text_color_);
+}
+
+// The message is drawn at the font's own size, as the enhanced game leaves it.
+// nocedit 0x0049e790
+void CEditorTools::displayCenteredStatusMessage(std::string_view message) {
+    initEditorFontMetrics();
+    special_.clearScreen();
+    three_d_.setRenderAlpha(kOpaqueAlpha);
+    editor_font_->drawTextCenter(screen_.getWindowWidth() / 2, screen_.getWindowHeight() / 2,
+                                 status_text_color_, engine::CBitFont::kNoShadow, message);
+    screen_.swapBuffers();
 }
 
 void CEditorTools::showPrompt(std::string_view title, std::string_view message, int text_color) {

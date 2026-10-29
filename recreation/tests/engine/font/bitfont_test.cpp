@@ -45,7 +45,7 @@ TEST(CBitFont, PublicInterface) {
     static_assert(std::is_same_v<decltype(&CBitFont::drawTextRight),
                                  int (CBitFont::*)(int, int, int, int, char *)>);
     static_assert(std::is_same_v<decltype(&CBitFont::drawTextCenter),
-                                 int (CBitFont::*)(int, int, int, int, char *)>);
+                                 int (CBitFont::*)(int, int, int, int, std::string_view)>);
     static_assert(std::is_same_v<decltype(&CBitFont::drawTextCenterInBounds),
                                  int (CBitFont::*)(int, int, int, int, int, std::string_view)>);
     static_assert(std::is_same_v<decltype(&CBitFont::drawTextCenterInBoundsF<int>),
@@ -388,6 +388,13 @@ TEST_F(CBitFontTest, TheWrapperDrawsTheTextAtThePoint) {
     EXPECT_EQ(rig.picture(0xff0000, 5, 3), ".....\n"
                                            "..#..\n"
                                            "..##.\n");
+}
+
+TEST_F(CBitFontTest, TextIsCentredOnAPoint) {
+    SRig rig(*this, 32);
+    open(rig);
+    EXPECT_EQ(rig.font.drawTextCenter(4, 0, CBitFont::kSheetColors, CBitFont::kNoShadow, "!"), 3);
+    EXPECT_EQ(rig.picture(0xff0000, 7, 1), "...#...\n");
 }
 
 TEST_F(CBitFontTest, TextIsCentredBetweenInclusiveEdges) {

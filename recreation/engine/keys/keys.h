@@ -25,7 +25,8 @@ public:
     int getUppercasedInputKey();
     void setKeyAsPressed(EInputCodeType key_code);
     void clearKeyPressState(EInputCodeType key_code);
-    void toggleInputMask(int enable_extended);
+    // Extended keys keep their own codes, or fold onto their twins as they do outside missions.
+    void toggleInputMask(bool enable_extended);
 
 private:
     IRawInput &raw_input_;

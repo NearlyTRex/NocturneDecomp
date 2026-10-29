@@ -71,7 +71,7 @@ public:
             const EControlMode before = owners_.game.game_control;
             getMenu().configureCustomKeys();
             if (owners_.game.game_control != before) {
-                quitNotPorted("CMenu", "configureCustomKeyBindings");
+                getMenu().configureCustomKeyBindings();
             }
             break;
         }
@@ -90,10 +90,8 @@ private:
 };
 
 // The original's lines were Graphic, Sound and Control options, and Credits, and it left on
-// Escape alone, not on the window closing.
+// Escape alone, not on the window closing. A control type left changed goes on to its bindings.
 // deferred: the graphic options, with configureGraphicsOptions
-// deferred: the key bindings after the control options when the control type changed, with
-//   configureCustomKeyBindings
 // deferred: the cheats, which nothing in the original lists (the decomp's cheats.h
 //   nocturne_cheats_menu), with the cheats menu
 // nocedit 0x00512d30

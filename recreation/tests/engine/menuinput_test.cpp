@@ -102,6 +102,17 @@ TEST_F(CMenuInputTest, ThePadDrivesThemWhateverTheControlMode) {
     EXPECT_TRUE(input_.takeMenuAction(EMenuAction::Cancel));
 }
 
+// Delete folds onto the keypad's point under the default mask.
+TEST_F(CMenuInputTest, DeleteIsDeleteOrThePadsX) {
+    press(EInputCodeType::DIK_DECIMAL);
+    EXPECT_TRUE(input_.takeMenuAction(EMenuAction::Delete));
+    press(EInputCodeType::DIK_DELETE);
+    EXPECT_TRUE(input_.takeMenuAction(EMenuAction::Delete));
+    press(EInputCodeType::PAD_X);
+    EXPECT_TRUE(input_.takeMenuAction(EMenuAction::Delete));
+    EXPECT_FALSE(input_.takeMenuAction(EMenuAction::Delete));
+}
+
 TEST_F(CMenuInputTest, StartCancelsToo) {
     press(EInputCodeType::PAD_START);
     EXPECT_TRUE(input_.takeMenuAction(EMenuAction::Cancel));

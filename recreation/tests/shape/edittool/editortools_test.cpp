@@ -48,7 +48,7 @@ TEST(CEditorTools, PublicInterface) {
     static_assert(std::is_same_v<decltype(&CEditorTools::showError),
                                  void (CEditorTools::*)(std::string_view)>);
     static_assert(std::is_same_v<decltype(&CEditorTools::displayCenteredStatusMessage),
-                                 void (CEditorTools::*)(char *, ...)>);
+                                 void (CEditorTools::*)(std::string_view)>);
     static_assert(std::is_same_v<decltype(&CEditorTools::showFileSelectionDialog),
                                  bool (CEditorTools::*)(const SFileSelectionOwners &,
                                                         std::string_view, std::string_view,
@@ -163,6 +163,7 @@ TEST_F(CEditorToolsTest, WithoutAnEditorFontEveryDialogIsFatal) {
     EXPECT_THAT([this] { editor_tools_.createCenteredModal(10, 10, "", 0); }, fatal);
     EXPECT_THAT([this] { editor_tools_.createModalWindow(0, 0, 10, 10, "", 0); }, fatal);
     EXPECT_THAT([this] { editor_tools_.paintCurrentWindow(); }, fatal);
+    EXPECT_THAT([this] { editor_tools_.displayCenteredStatusMessage("!"); }, fatal);
 }
 
 TEST_F(CEditorToolsTest, TheLineHeightIsAJsAsLastMeasured) {
@@ -311,6 +312,13 @@ TEST_F(CEditorToolsTest, AnErrorIsDrawnInTheWarningColourAndWaitsForAKey) {
     editor_tools_.showError("!");
     EXPECT_EQ(screen_.swaps, 2);
     EXPECT_EQ(editor_tools_.getWindowCount(), 0U);
+}
+
+TEST_F(CEditorToolsTest, AStatusMessageIsShownAloneInTheMiddleOfTheScreen) {
+    editor_tools_.displayCenteredStatusMessage("!");
+    EXPECT_EQ(screen_.swaps, 1);
+    EXPECT_EQ(screen_.pixel(63, 48), 0xffffffU);
+    EXPECT_EQ(screen_.pixel(0, 0), 0U);
 }
 
 TEST_F(CEditorToolsTest, TextIsCopiedToTheClipboard) {

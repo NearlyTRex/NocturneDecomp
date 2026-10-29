@@ -19,6 +19,8 @@ enum class EMenuAction : std::uint8_t {
     End,
     PageUp,
     PageDown,
+    // Removes what is selected, where a list can.
+    Delete,
     // These only while a control key is held.
     Copy,
     ToggleMute,

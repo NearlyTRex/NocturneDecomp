@@ -73,7 +73,8 @@ EMenuOutcome CControlOptionsPage::choose(int id, EMenuStep step) {
         stepControlType(step);
         break;
     case EControlLine::Keys:
-        quitNotPorted("CMenu", "configureCustomKeyBindings");
+        getMenu().configureCustomKeyBindings();
+        break;
     case EControlLine::XSensitivity:
         getMenu().adjustMouseSensitivity(game.x_mouse_sensitivity,
                                          localize("Adjust X-Axis sensitivity"));

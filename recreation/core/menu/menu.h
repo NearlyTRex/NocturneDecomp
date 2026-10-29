@@ -63,7 +63,16 @@ public:
     // The main menu over the moon, with its music, until QUIT, Cancel or the window closing: 99.
     // A window under 480 rows shows nothing: 1.
     int showMainGameMenu();
-    char *getKeyDisplayName(engine::EInputCodeType key_code);
+    // The name a binding shows: the mouse's and the joystick's by what they are, the keys by
+    // getKeyName.
+    [[nodiscard]] std::string getKeyDisplayName(engine::EInputCodeType key_code) const;
+    // Whether the game's control type has the device behind the code: the keyboard alone, or
+    // with the mouse, or with the joystick.
+    [[nodiscard]] bool isKeyCodeValidForMode(engine::EInputCodeType key_code) const;
+    // Each action with what it is bound to, Restore defaults first. An action opens a list of
+    // its codes and Add binding, where Delete removes one. Leaving puts the defaults back if any
+    // code doesn't suit the control type.
+    void configureCustomKeyBindings();
     // Draws the items down the left of the screen under the title, the selected one glowing,
     // with the copyright and the build's line, then moves the selection up and down. Confirm
     // chooses the selected item, and so do left and right on one whose text has a colon; the
@@ -93,9 +102,21 @@ private:
     class CSubmenuPage;
     class COptionsPage;
 
+    static constexpr int kNoCodeHeld = -1;
+    static constexpr int kSeveralCodesHeld = -2;
+
     void showGameplayOptions();
     void configureSoundOptions();
     void configureCustomKeys();
+    // The codes of one action, as a list with Add binding after them, until Cancel.
+    void editActionBindings(EGameAction action, std::string_view label);
+    // The one code next pressed, after any held are let go; nothing for Escape while they are
+    // held, or for the window closing.
+    [[nodiscard]] std::optional<engine::EInputCodeType> captureKeyCode(std::string_view label);
+    // The one code held, kNoCodeHeld for none and kSeveralCodesHeld for more.
+    [[nodiscard]] int getHeldKeyCode() const;
+    // The defaults back, with an error, if any code doesn't suit the control type.
+    void validateBindings();
     // 32 pixels wide on x_center, rising from y_top to twice height_half above it.
     void renderAudioSpectrumBar(int x_center, int y_top, int height_half);
     // The flame frame a bar at x_center shows now.

@@ -73,7 +73,10 @@ TEST(CMenu, PublicInterface) {
     static_assert(std::is_same_v<decltype(&CMenu::showOptionsScreen), void (CMenu::*)(int)>);
     static_assert(std::is_same_v<decltype(&CMenu::showMainGameMenu), int (CMenu::*)()>);
     static_assert(std::is_same_v<decltype(&CMenu::getKeyDisplayName),
-                                 char *(CMenu::*)(engine::EInputCodeType)>);
+                                 std::string (CMenu::*)(engine::EInputCodeType) const>);
+    static_assert(std::is_same_v<decltype(&CMenu::isKeyCodeValidForMode),
+                                 bool (CMenu::*)(engine::EInputCodeType) const>);
+    static_assert(std::is_same_v<decltype(&CMenu::configureCustomKeyBindings), void (CMenu::*)()>);
     static_assert(std::is_same_v<decltype(&CMenu::renderMenuAndGetChoice),
                                  int (CMenu::*)(std::span<const std::string>, int &, int,
                                                 std::optional<std::string_view>)>);

@@ -50,7 +50,6 @@ int toSliderOffset(int sensitivity, int span) {
 //   Calibrate (the decomp's pad_tuning.h), with the gamepad layer
 // deferred: calibrating the gamepad from Calibrate, or on Cancel for one nobody has centred,
 //   with calibrateGamepad
-// deferred: the key bindings from Customize Keys, with configureCustomKeyBindings
 // nocedit 0x00511890
 void CMenu::configureCustomKeys() {
     owners_.game.saveClockTime();

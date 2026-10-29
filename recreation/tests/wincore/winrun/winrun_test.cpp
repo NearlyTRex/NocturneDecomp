@@ -26,8 +26,6 @@ TEST(CWinRun, PublicInterface) {
     static_assert(
         std::is_same_v<decltype(&CWinRun::setCursorPosition), void (CWinRun::*)(int, int)>);
     static_assert(std::is_same_v<decltype(&CWinRun::processWindowMessages), void (CWinRun::*)()>);
-    static_assert(
-        std::is_same_v<decltype(&CWinRun::getKeyName), char *(CWinRun::*)(engine::EInputCodeType)>);
     static_assert(std::is_same_v<decltype(&CWinRun::getInputDisabled), bool (CWinRun::*)() const>);
     static_assert(std::is_same_v<decltype(&CWinRun::getFocusRegained), bool (CWinRun::*)() const>);
     static_assert(std::is_same_v<decltype(&CWinRun::setFocusRegained), void (CWinRun::*)(bool)>);

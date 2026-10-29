@@ -81,4 +81,8 @@ void CPickList::setForcedColumnCount(bool single_column) {
     forced_column_count_ = single_column;
 }
 
+int CPickList::getCurrentIndex() const {
+    return current_index_;
+}
+
 } // namespace nocturne::shape

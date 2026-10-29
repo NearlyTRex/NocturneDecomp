@@ -34,7 +34,6 @@ public:
     // Releases the keys let go during the last pump, then handles every waiting event.
     void processWindowMessages();
     void displayMessageBoxAndQuit(const common::CFatalError &error);
-    char *getKeyName(engine::EInputCodeType keycode);
     // The window was closed: waits for input give up, and menus take it as a cancel.
     [[nodiscard]] bool getInputDisabled() const override;
     // Set when the window regains focus; the game takes it to restore its camera view.

@@ -1,4 +1,5 @@
-#include "common/error/fatalerror.h"
+#include "core/game/controlmode.h"
+#include "core/game/game.h"
 #include "core/menu/menu.h"
 #include "engine/keys/inputcodetype.h"
 #include "tests/mocks/core/menufixture.h"
@@ -119,14 +120,16 @@ TEST_F(CConfigureCustomKeysTest, CancelGoesBackToOptions) {
     EXPECT_EQ(frames_, 7);
 }
 
-// A new control type takes the bindings screen next.
-TEST_F(CConfigureCustomKeysTest, ANewTypeQuitsUntilTheBindingsArePorted) {
+// A new control type takes the bindings screen next, which clears the screen a frame before its
+// list; Options takes its Cancel in the frame the bindings close.
+TEST_F(CConfigureCustomKeysTest, ANewTypeGoesOnToItsBindings) {
     pressEachFrame({EInputCodeType::DIK_DOWN, EInputCodeType::DIK_DOWN, EInputCodeType::DIK_DOWN,
                     EInputCodeType::DIK_RETURN, EInputCodeType::DIK_RETURN,
+                    EInputCodeType::DIK_ESCAPE, EInputCodeType::DIK_ESCAPE,
                     EInputCodeType::DIK_ESCAPE});
-    EXPECT_THAT([this] { menu_.showOptionsScreen(0); },
-                ::testing::ThrowsMessage<common::CFatalError>(
-                    ::testing::StrEq("CMenu::configureCustomKeyBindings is not ported yet")));
+    menu_.showOptionsScreen(0);
+    EXPECT_EQ(game_.game_control, EControlMode::CONTROL_MODE_MOUSE);
+    EXPECT_EQ(frames_, 8);
 }
 
 } // namespace

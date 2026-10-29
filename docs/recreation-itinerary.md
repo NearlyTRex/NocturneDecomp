@@ -24,12 +24,12 @@ functions don't count as done. Sizes are in instructions.
 | 8 | `renderMenuAndGetChoice`, `CMoon::free`, `CSound::reset`, `CEditorTools::showFileSelectionDialog` | 8 | 63 | 5314 | 60 | 3 | 95.2% |
 | 9 | `CPickList::enableItem`, `CEventList::resetGameFlags`, `CLevelLoader::show`, `CDemonMission::load` | 15 | 56 | 3298 | 26 | 11 | 46.4% |
 | 10 | `CDemonMission::createHeros`, `CDemonMission::prepareAllActors`, `CEventList::reset`, `CDemonMission::loadSet` | 15 | 42 | 5112 | 31 | 10 | 73.8% |
-| 11 | `CScript::loadScript` | 63 | 579 | 67400 | 38 | 29 | 6.5% |
+| 11 | `CScript::loadScript` | 63 | 579 | 67400 | 39 | 30 | 6.7% |
 | 12 | `CDemonMission::loadScript`, `CScript::executeInitSection`, `CDemonMission::startMission`, `CDemonMission::buildActiveSetActorList`, `CConsole::reset`, `CEditorTools::displayMemoryDiagnostics`, `CGame::setGameRes`, `CDemonLight::init`, `CDemonSet::initScene` | 12 | 26 | 1658 | 2 | 0 | 7.6% |
 | 13 | `CFireEffect::init`, `CDemonSet::loadMasterLightStates`, `CDemonSet::setGamma`, `CGame::clearOverlay`, `CGame::loadAssets` | 7 | 27 | 735 | 0 | 0 | 0.0% |
-| 14 | `CNetGame::syncPlayers`, `CNetGame::processServerFrame`, `CLevelLoader::cleanup`, `CKeys::toggleInputMask`, `CGame::processHotkeys` | 17 | 51 | 5302 | 1 | 0 | 1.9% |
+| 14 | `CNetGame::syncPlayers`, `CNetGame::processServerFrame`, `CLevelLoader::cleanup`, `CKeys::toggleInputMask`, `CGame::processHotkeys` | 17 | 51 | 5302 | 4 | 0 | 7.8% |
 | 15 | `CGame::updateStatusDisplays`, `CGame::processFudge`, `CGame::playerControls`, `CGame::processFrame` | 43 | 189 | 28837 | 5 | 1 | 2.6% |
-| 16 | `CGame::setScreenResolutionAndDisplayFangs`, `showOptionsScreen`, `CScript::skipCinematic`, `CGame::showFullscreenBitmap`, `CDemonMission::countDamageableEnemies`, `freeInventory`, `CGame::runGameSession`, `CGame::displayActStats` | 10 | 25 | 6938 | 4 | 3 | 16.0% |
+| 16 | `CGame::setScreenResolutionAndDisplayFangs`, `showOptionsScreen`, `CScript::skipCinematic`, `CGame::showFullscreenBitmap`, `CDemonMission::countDamageableEnemies`, `freeInventory`, `CGame::runGameSession`, `CGame::displayActStats` | 10 | 25 | 6938 | 5 | 4 | 20.0% |
 | 17 | `CGame::finishAct`, `CDemonMission::run`, `CGame::loadGame`, `CGame::showChapterSelect`, `showDeveloperToolsMenu` | 12 | 26 | 3707 | 4 | 1 | 15.3% |
 | 18 | `enterMainGameMenu`, `finalizeGameSystems` | 11 | 13 | 539 | 3 | 0 | 23.0% |
 | 19 | Not reached from startup: `engine/` | 23 | 279 | 19702 | 24 | 1 | 8.6% |
@@ -46,7 +46,7 @@ functions don't count as done. Sizes are in instructions.
 | 30 | Not reached from startup: `core/` (part 8 of 9) | 20 | 300 | 31826 | 40 | 5 | 13.3% |
 | 31 | Not reached from startup: `core/` (part 9 of 9) | 5 | 111 | 10905 | 10 | 2 | 9.0% |
 | 32 | Not reached from startup: `wincore/` | 2 | 11 | 482 | 4 | 0 | 36.3% |
-| | **All** | | **4479** | **402407** | **851** | **161** | **18.9%** |
+| | **All** | | **4479** | **402407** | **856** | **163** | **19.1%** |
 
 ## Step 0: Math value types
 
@@ -1470,13 +1470,14 @@ functions don't count as done. Sizes are in instructions.
 - class `CAmmo`
   - [ ] `setWeaponClass` 0x00410fd0 (139)
 
-### `wincore/winrun.cpp` (1 functions, 520 instructions, 0 done, 0 partial)
+### `wincore/winrun.cpp` (1 functions, 520 instructions, 1 done, 0 partial)
 - free functions
-  - [ ] `getKeyName` 0x005f3980 (520)
+  - [x] `getKeyName` 0x005f3980 (520)
 
-### `core/menu.cpp` (1 functions, 161 instructions, 0 done, 0 partial)
+### `core/menu.cpp` (1 functions, 161 instructions, 0 done, 1 partial)
 - free functions
-  - [ ] `getKeyDisplayName` 0x005134e0 (161)
+  - [~] `getKeyDisplayName` 0x005134e0 (161)
+    - deferred: the gamepad's buttons, named for the pad plugged in (the decomp's gamepad.h nocturne_gamepad_code_name), with the gamepad layer
 
 ### `core/inv.cpp` (15 functions, 2404 instructions, 0 done, 2 partial)
 - class `CInventory`
@@ -2236,9 +2237,9 @@ functions don't count as done. Sizes are in instructions.
 - class `CLevelLoader`
   - [ ] `cleanup` 0x00504720 (13)
 
-### `engine/keys.cpp` (1 functions, 8 instructions, 0 done, 0 partial)
+### `engine/keys.cpp` (1 functions, 8 instructions, 1 done, 0 partial)
 - class `CKeys`
-  - [ ] `toggleInputMask` 0x005024b0 (8)
+  - [x] `toggleInputMask` 0x005024b0 (8)
 
 ### `support/codec.cpp` (2 functions, 107 instructions, 0 done, 0 partial)
 - class `CLZWDictionary`
@@ -2260,11 +2261,11 @@ functions don't count as done. Sizes are in instructions.
 - class `CDemonActor`
   - [ ] `save` 0x0040af30 (79)
 
-### `engine/font.cpp` (1 functions, 28 instructions, 0 done, 0 partial)
+### `engine/font.cpp` (1 functions, 28 instructions, 1 done, 0 partial)
 - class `CBitFont`
-  - [ ] `drawTextCenter` 0x004cdde0 (28)
+  - [x] `drawTextCenter` 0x004cdde0 (28)
 
-### `shape/edittool.cpp` (14 functions, 1087 instructions, 0 done, 0 partial)
+### `shape/edittool.cpp` (14 functions, 1087 instructions, 1 done, 0 partial)
 - class `CInputString`
   - [ ] `init` 0x0049d3d0 (42)
   - [ ] `setSelectionToCursor` 0x0049d460 (4)
@@ -2280,7 +2281,7 @@ functions don't count as done. Sizes are in instructions.
 - class `CEditorTools`
   - [ ] `getClipboardText` 0x004a1b30 (54)
   - [ ] `showFilenameInputDialog` 0x0049fb70 (341)
-  - [ ] `displayCenteredStatusMessage` 0x0049e790 (65)
+  - [x] `displayCenteredStatusMessage` 0x0049e790 (65)
 
 ### `core/gore.cpp` (3 functions, 169 instructions, 0 done, 0 partial)
 - class `CBloodSplat`
@@ -2707,22 +2708,22 @@ functions don't count as done. Sizes are in instructions.
   - [~] `configure` 0x005b3830 (112)
     - deferred: giving the attract movies the splash music's length from getSoundDuration, a length of 0 or less disarming them (the decomp's attract.h nocturne_attract_set_music_duration), with the attract movies and CSound::getSoundDuration
 
-### `core/menu.cpp` (9 functions, 4659 instructions, 3 done, 2 partial)
+### `core/menu.cpp` (9 functions, 4659 instructions, 4 done, 3 partial)
 - free functions
   - [ ] `configureGraphicsOptions` 0x00510c80 (770)
   - [ ] `calibrateGamepad` 0x005104d0 (215)
   - [x] `adjustMouseSensitivity` 0x005107c0 (200)
-  - [ ] `isKeyCodeValidForMode` 0x00513720 (87)
-  - [ ] `configureCustomKeyBindings` 0x005138e0 (1634)
+  - [x] `isKeyCodeValidForMode` 0x00513720 (87)
+  - [~] `configureCustomKeyBindings` 0x005138e0 (1634)
+    - deferred: polling the gamepad while a code is waited for, with resetKeyState
+    - deferred: keeping the gamepad off the menus while a code is waited for (the decomp's gamepad.h nocturne_gamepad_suppress_nav), with the gamepad layer
   - [~] `configureCustomKeys` 0x00511890 (375)
     - deferred: the gamepad's deadzone, turn and look speeds and look inversion lines, before Calibrate (the decomp's pad_tuning.h), with the gamepad layer
     - deferred: calibrating the gamepad from Calibrate, or on Cancel for one nobody has centred, with calibrateGamepad
-    - deferred: the key bindings from Customize Keys, with configureCustomKeyBindings
   - [x] `renderAudioSpectrumBar` 0x0050fe70 (116)
   - [x] `configureSoundOptions` 0x00511e50 (1124)
   - [~] `showOptionsScreen` 0x00512d30 (138)
     - deferred: the graphic options, with configureGraphicsOptions
-    - deferred: the key bindings after the control options when the control type changed, with configureCustomKeyBindings
     - deferred: the cheats, which nothing in the original lists (the decomp's cheats.h nocturne_cheats_menu), with the cheats menu
 
 ### `core/script.cpp` (1 functions, 68 instructions, 0 done, 0 partial)
@@ -3474,7 +3475,7 @@ functions don't count as done. Sizes are in instructions.
   - [x] `setMousePointerType` 0x004a2920 (75)
 - free functions
   - [~] `staticInit` 0x0049d170 (7)
-    - deferred: the seven colours retail's init sets for CInputString::draw, displayCenteredStatusMessage, showFilenameInputDialog and draw3DAxisLabels, with those functions
+    - deferred: the six colours retail's init sets for CInputString::draw, showFilenameInputDialog and draw3DAxisLabels, with those functions
   - [ ] `plotPixelWithClipping` 0x0049d190 (26)
   - [x] `initEditorFontMetrics` 0x0049d1f0 (21)
   - [ ] `extractTabDelimitedField` 0x0049d250 (24)

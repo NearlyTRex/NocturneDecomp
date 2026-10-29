@@ -93,6 +93,14 @@ TEST_F(CPickListInputTest, OtherCharactersDontSearch) {
 }
 
 // Without the reset, "BA" would find BANANA.
+TEST_F(CPickListInputTest, TheCursorIsOnTheItemMovedTo) {
+    open(1);
+    EXPECT_EQ(list_.getCurrentIndex(), 1);
+    press(EInputCodeType::DIK_NUMPAD2);
+    frame();
+    EXPECT_EQ(list_.getCurrentIndex(), 2);
+}
+
 TEST_F(CPickListInputTest, MovingStartsTheSearchAgain) {
     open(0);
     type("b");

@@ -118,10 +118,11 @@ TEST_F(CControlOptionsPageTest, TheSensitivitiesOpenTheSlider) {
     EXPECT_EQ(game_.y_mouse_sensitivity, 0x10000);
 }
 
-TEST_F(CControlOptionsPageTest, CustomizeKeysQuitsUntilItsScreenIsPorted) {
-    EXPECT_THAT([this] { static_cast<void>(page_.choose(kKeys, EMenuStep::On)); },
-                ThrowsMessage<common::CFatalError>(
-                    StrEq("CMenu::configureCustomKeyBindings is not ported yet")));
+// The bindings' list is up from the second frame; the first clears the screen.
+TEST_F(CControlOptionsPageTest, CustomizeKeysOpensTheBindings) {
+    on_frame_ = [this](int /*frame*/) { press(engine::EInputCodeType::DIK_ESCAPE); };
+    EXPECT_EQ(page_.choose(kKeys, EMenuStep::On), EMenuOutcome::Stay);
+    EXPECT_EQ(frames_, 2);
 }
 
 TEST_F(CControlOptionsPageTest, CancelLeaves) {

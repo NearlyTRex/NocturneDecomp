@@ -73,7 +73,8 @@ public:
     int drawCharacter(int char_code, int x, int y, int color_mode, int color_value, int scale = 1);
     int drawTextWrapper(int x, int y, int color_mode, int color_value, std::string_view text);
     int drawTextRight(int x, int y, int color_mode, int color_value, char *text);
-    int drawTextCenter(int x, int y, int color_mode, int color_value, char *text);
+    // Centred on x.
+    int drawTextCenter(int x, int y, int color_mode, int color_value, std::string_view text);
     // Centred between two inclusive edges.
     int drawTextCenterInBounds(int left_x, int right_x, int y, int color_mode, int color_value,
                                std::string_view text);
