@@ -45,6 +45,7 @@ class CColonel;
 class CColor3f;
 struct CColor3i;
 class CControlBindings;
+class CControlOptionsPage;
 class CConveyor;
 class CCourse;
 class CCrate;

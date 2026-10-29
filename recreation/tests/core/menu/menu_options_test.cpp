@@ -135,9 +135,8 @@ TEST_P(COptionsScreenNotPortedTest, AScreenNotPortedYetQuits) {
 }
 
 INSTANTIATE_TEST_SUITE_P(
-    GraphicControlAndCheats, COptionsScreenNotPortedTest,
+    GraphicAndCheats, COptionsScreenNotPortedTest,
     ::testing::Values(std::pair{1, std::string("CMenu::configureGraphicsOptions")},
-                      std::pair{3, std::string("CMenu::configureCustomKeys")},
                       std::pair{4, std::string("CMenu::showCheatsMenu")}));
 
 } // namespace

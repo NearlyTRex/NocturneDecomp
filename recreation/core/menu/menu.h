@@ -78,6 +78,9 @@ public:
     // Sound Options' backdrop: a bar of flame up from the foot of the screen for each band of
     // what plays, the left channel's on the left.
     void drawAudioSpectrum();
+    // A bar from 0.25 to 4 across a window, set by the pointer's x or the left and right
+    // actions; Confirm or a click keeps it, Cancel leaves the setting as it was.
+    void adjustMouseSensitivity(int &sensitivity_value, std::string_view window_title);
 
     [[nodiscard]] CMoon &getMoon();
     // Whether the last menu frame moved the selection.
@@ -92,6 +95,7 @@ private:
 
     void showGameplayOptions();
     void configureSoundOptions();
+    void configureCustomKeys();
     // 32 pixels wide on x_center, rising from y_top to twice height_half above it.
     void renderAudioSpectrumBar(int x_center, int y_top, int height_half);
     // The flame frame a bar at x_center shows now.
