@@ -168,7 +168,8 @@ bool CMenu::isKeyCodeValidForMode(EInputCodeType key_code) const {
 
 // The original bound one code to each action, which a pick replaced, and kept the joystick's
 // and the mouse's directions from being moved; the enhanced game can move any binding, and lists
-// the map's after the rest. Restore defaults goes back once it is done.
+// the map's after the rest. Restore defaults goes back once it is done. Both lists keep to one
+// column, as the original forced its own, whatever the names' widths.
 // deferred: polling the gamepad while a code is waited for, with resetKeyState
 // deferred: keeping the gamepad off the menus while a code is waited for (the decomp's
 //   gamepad.h nocturne_gamepad_suppress_nav), with the gamepad layer
@@ -183,6 +184,7 @@ void CMenu::configureCustomKeyBindings() {
         owners_.special.clearScreen();
         owners_.screen.swapBuffers();
         shape::CPickList list(owners_.pick_list);
+        list.setForcedColumnCount(true);
         list.add(owners_.messages.getLocalizedString("Restore defaults"));
         std::vector<std::string_view> labels;
         labels.reserve(kBindingRows.size());
@@ -225,6 +227,7 @@ void CMenu::editActionBindings(EGameAction action, std::string_view label) {
     while (true) {
         std::vector<EInputCodeType> codes(std::from_range, controls.getBindings(action));
         CBindingList list(owners_.pick_list);
+        list.setForcedColumnCount(true);
         for (const EInputCodeType code : codes) {
             list.add(getKeyDisplayName(code));
         }
