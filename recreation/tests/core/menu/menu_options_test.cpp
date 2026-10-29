@@ -122,22 +122,20 @@ TEST_F(COptionsScreenTest, GameplayOpensItsPage) {
     EXPECT_EQ(frames_, 4);
 }
 
-class COptionsScreenNotPortedTest
-    : public COptionsScreenTest,
-      public ::testing::WithParamInterface<std::pair<int, std::string>> {};
-
-TEST_P(COptionsScreenNotPortedTest, AScreenNotPortedYetQuits) {
-    const int downs = GetParam().first;
-    on_frame_ = [&](int frame) { press(frame <= downs ? kDown : kReturn); };
-    EXPECT_THAT([this] { menu_.showOptionsScreen(0); },
-                ::testing::ThrowsMessage<common::CFatalError>(
-                    ::testing::StrEq(GetParam().second + " is not ported yet")));
+// The halo is the Graphic page's third line.
+TEST_F(COptionsScreenTest, GraphicOpensItsPage) {
+    pressEachFrame({kDown, kReturn, kDown, kDown, kReturn, kEscape, kEscape});
+    menu_.showOptionsScreen(0);
+    EXPECT_EQ(game_.halo_mode, 1);
+    EXPECT_EQ(frames_, 7);
 }
 
-INSTANTIATE_TEST_SUITE_P(
-    GraphicAndCheats, COptionsScreenNotPortedTest,
-    ::testing::Values(std::pair{1, std::string("CMenu::configureGraphicsOptions")},
-                      std::pair{4, std::string("CMenu::showCheatsMenu")}));
+TEST_F(COptionsScreenTest, TheCheatsQuitUntilTheyArePorted) {
+    on_frame_ = [&](int frame) { press(frame <= 4 ? kDown : kReturn); };
+    EXPECT_THAT([this] { menu_.showOptionsScreen(0); },
+                ::testing::ThrowsMessage<common::CFatalError>(
+                    ::testing::StrEq("CMenu::showCheatsMenu is not ported yet")));
+}
 
 } // namespace
 } // namespace nocturne::core

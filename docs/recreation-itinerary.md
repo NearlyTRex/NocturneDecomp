@@ -29,7 +29,7 @@ functions don't count as done. Sizes are in instructions.
 | 13 | `CFireEffect::init`, `CDemonSet::loadMasterLightStates`, `CDemonSet::setGamma`, `CGame::clearOverlay`, `CGame::loadAssets` | 7 | 27 | 735 | 0 | 0 | 0.0% |
 | 14 | `CNetGame::syncPlayers`, `CNetGame::processServerFrame`, `CLevelLoader::cleanup`, `CKeys::toggleInputMask`, `CGame::processHotkeys` | 17 | 51 | 5302 | 4 | 0 | 7.8% |
 | 15 | `CGame::updateStatusDisplays`, `CGame::processFudge`, `CGame::playerControls`, `CGame::processFrame` | 43 | 189 | 28837 | 5 | 1 | 2.6% |
-| 16 | `CGame::setScreenResolutionAndDisplayFangs`, `showOptionsScreen`, `CScript::skipCinematic`, `CGame::showFullscreenBitmap`, `CDemonMission::countDamageableEnemies`, `freeInventory`, `CGame::runGameSession`, `CGame::displayActStats` | 10 | 25 | 6938 | 5 | 4 | 20.0% |
+| 16 | `CGame::setScreenResolutionAndDisplayFangs`, `showOptionsScreen`, `CScript::skipCinematic`, `CGame::showFullscreenBitmap`, `CDemonMission::countDamageableEnemies`, `freeInventory`, `CGame::runGameSession`, `CGame::displayActStats` | 10 | 25 | 6938 | 7 | 5 | 28.0% |
 | 17 | `CGame::finishAct`, `CDemonMission::run`, `CGame::loadGame`, `CGame::showChapterSelect`, `showDeveloperToolsMenu` | 12 | 26 | 3707 | 4 | 1 | 15.3% |
 | 18 | `enterMainGameMenu`, `finalizeGameSystems` | 11 | 13 | 539 | 3 | 0 | 23.0% |
 | 19 | Not reached from startup: `engine/` | 23 | 279 | 19702 | 24 | 1 | 8.6% |
@@ -46,7 +46,7 @@ functions don't count as done. Sizes are in instructions.
 | 30 | Not reached from startup: `core/` (part 8 of 9) | 20 | 300 | 31826 | 40 | 5 | 13.3% |
 | 31 | Not reached from startup: `core/` (part 9 of 9) | 5 | 111 | 10905 | 10 | 2 | 9.0% |
 | 32 | Not reached from startup: `wincore/` | 2 | 11 | 482 | 4 | 0 | 36.3% |
-| | **All** | | **4479** | **402407** | **856** | **163** | **19.1%** |
+| | **All** | | **4479** | **402407** | **858** | **164** | **19.1%** |
 
 ## Step 0: Math value types
 
@@ -2688,12 +2688,12 @@ functions don't count as done. Sizes are in instructions.
 - free functions
   - [ ] `reinitializeGraphicsSystem` 0x00402a80 (1)
 
-### `engine/special.cpp` (4 functions, 65 instructions, 0 done, 0 partial)
+### `engine/special.cpp` (4 functions, 65 instructions, 2 done, 0 partial)
 - free functions
   - [ ] `restoreVideoMode` 0x005b75b0 (14)
-  - [ ] `kill` 0x005b71e0 (8)
+  - [x] `kill` 0x005b71e0 (8)
   - [ ] `getVideoMemory` 0x005b7d60 (17)
-  - [ ] `buildCardList` 0x005b7db0 (26)
+  - [x] `buildCardList` 0x005b7db0 (26)
 
 ### `engine/matrix.c` (1 functions, 94 instructions, 0 done, 0 partial)
 - free functions
@@ -2708,9 +2708,10 @@ functions don't count as done. Sizes are in instructions.
   - [~] `configure` 0x005b3830 (112)
     - deferred: giving the attract movies the splash music's length from getSoundDuration, a length of 0 or less disarming them (the decomp's attract.h nocturne_attract_set_music_duration), with the attract movies and CSound::getSoundDuration
 
-### `core/menu.cpp` (9 functions, 4659 instructions, 4 done, 3 partial)
+### `core/menu.cpp` (9 functions, 4659 instructions, 4 done, 4 partial)
 - free functions
-  - [ ] `configureGraphicsOptions` 0x00510c80 (770)
+  - [~] `configureGraphicsOptions` 0x00510c80 (770)
+    - deferred: the upscaler and its sharpness lines, after the depth (the decomp's upscaler.h), with the upscaler
   - [ ] `calibrateGamepad` 0x005104d0 (215)
   - [x] `adjustMouseSensitivity` 0x005107c0 (200)
   - [x] `isKeyCodeValidForMode` 0x00513720 (87)
@@ -2723,7 +2724,6 @@ functions don't count as done. Sizes are in instructions.
   - [x] `renderAudioSpectrumBar` 0x0050fe70 (116)
   - [x] `configureSoundOptions` 0x00511e50 (1124)
   - [~] `showOptionsScreen` 0x00512d30 (138)
-    - deferred: the graphic options, with configureGraphicsOptions
     - deferred: the cheats, which nothing in the original lists (the decomp's cheats.h nocturne_cheats_menu), with the cheats menu
 
 ### `core/script.cpp` (1 functions, 68 instructions, 0 done, 0 partial)

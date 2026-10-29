@@ -5,12 +5,31 @@
 
 #include <cstddef>
 #include <stdexcept>
+#include <string>
+#include <string_view>
 
 namespace nocturne::platform::gl {
 namespace {
 
 int result(bool succeeded) {
     return succeeded ? 1 : 0;
+}
+
+// What the driver answers, empty for nothing.
+std::string toString(const GLubyte *reported) {
+    std::string text;
+    for (const GLubyte *c = reported; c != nullptr && *c != 0; ++c) {
+        text.push_back(static_cast<char>(*c));
+    }
+    return text;
+}
+
+// GL_VERSION's leading major.minor, which drivers follow with their own release.
+std::string getShortVersion(std::string_view version) {
+    const std::size_t end = version.find_first_not_of("0123456789.");
+    const std::string_view number = version.substr(0, end);
+    const std::size_t minor_end = number.find('.', number.find('.') + 1);
+    return std::string(number.substr(0, minor_end));
 }
 
 } // namespace
@@ -50,15 +69,16 @@ int CGlRenderer::selectCard(int /*card_index*/) {
     return 1;
 }
 
-// One card: the context the display already has. The engine is handed pointers to strings
-// that outlive it rather than buffers to copy into.
+// One card: the context the display already has, its driver named for the API and its version.
+// The engine is handed pointers to strings that outlive it rather than buffers to copy into.
 int CGlRenderer::buildCardList(int *out_card_count, char **out_driver_names, char **out_card_names,
                                int *out_vendor_ids, int *out_device_ids) {
     if (card_name_.empty()) {
-        const GLubyte *reported = gl_.GetString(GL_RENDERER);
-        for (const GLubyte *c = reported; c != nullptr && *c != 0; ++c) {
-            card_name_.push_back(static_cast<char>(*c));
+        const std::string version = getShortVersion(toString(gl_.GetString(GL_VERSION)));
+        if (!version.empty()) {
+            driver_name_ += " " + version;
         }
+        card_name_ = toString(gl_.GetString(GL_RENDERER));
         if (card_name_.empty()) {
             card_name_ = driver_name_;
         }

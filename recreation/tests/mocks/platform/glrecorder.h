@@ -105,6 +105,10 @@ public:
     // What GetString answers for GL_RENDERER; null as a driver that answers nothing.
     static constexpr std::array<GLubyte, 5> kRendererName = {'T', 'e', 's', 't', '\0'};
     const GLubyte *renderer_name = kRendererName.data();
+    // And for GL_VERSION.
+    static constexpr std::array<GLubyte, 13> kVersionName = {'3', '.', '3', '.', '0', ' ', 'T',
+                                                             'e', 's', 't', ' ', '1', '\0'};
+    const GLubyte *version_name = kVersionName.data();
 
 private:
     static CGlRecorder *&live() {
@@ -259,6 +263,9 @@ private:
         };
         api_.GetString = [](GLenum name) {
             note("GetString", name);
+            if (name == GL_VERSION) {
+                return self().version_name;
+            }
             return name == GL_RENDERER ? self().renderer_name : nullptr;
         };
         api_.GetUniformLocation = [](GLuint program, const GLchar *name) {

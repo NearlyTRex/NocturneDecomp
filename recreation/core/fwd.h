@@ -99,6 +99,7 @@ class CFrankenstienMachine;
 class CGabriella;
 class CGame;
 class CGameplayPage;
+class CGraphicOptionsPage;
 class CGargoyle;
 class CGasMask;
 class CGhoul;

@@ -23,6 +23,8 @@ TEST(IDisplay, PublicInterface) {
                                  void (IDisplay::*)(std::span<const std::byte>, int)>);
     static_assert(
         std::is_same_v<decltype(&IDisplay::setWindowMode), void (IDisplay::*)(EWindowMode)>);
+    static_assert(
+        std::is_same_v<decltype(&IDisplay::getWindowMode), EWindowMode (IDisplay::*)() const>);
     static_assert(std::is_same_v<decltype(&IDisplay::setWindowSize), void (IDisplay::*)(int, int)>);
 }
 

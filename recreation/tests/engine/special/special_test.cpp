@@ -398,6 +398,31 @@ TEST_F(CSpecialTest, AFailedInitTurnsDirect3DOffAndLeavesNothingLoaded) {
     EXPECT_EQ(special_.loadExternalRenderer(), 0);
     EXPECT_FALSE(special_.getUseDirect3D());
     EXPECT_EQ(special_.selectCard(0), 0);
+    EXPECT_CALL(renderer_, buildCardList).Times(0);
+    int count = -1;
+    EXPECT_EQ(special_.buildCardList(&count, nullptr, nullptr, nullptr, nullptr), 0);
+    EXPECT_EQ(count, -1);
+}
+
+TEST_F(CSpecialTest, KillingTheRendererLetsGoOfItUntilTheNextLoad) {
+    EXPECT_CALL(renderer_, kill).Times(0);
+    EXPECT_EQ(special_.kill(), 1);
+    startRenderer();
+    EXPECT_TRUE(special_.getUseExternalRenderer());
+    EXPECT_CALL(renderer_, kill);
+    EXPECT_EQ(special_.kill(), 1);
+    EXPECT_FALSE(special_.getUseExternalRenderer());
+    EXPECT_EQ(special_.selectCard(0), 0);
+}
+
+TEST_F(CSpecialTest, TheCardsAreTheRenderersOnceItIsLoaded) {
+    special_.setUseDirect3D(true);
+    EXPECT_CALL(renderer_, init(_)).WillOnce(Return(1));
+    EXPECT_EQ(special_.loadExternalRenderer(), 1);
+    int count = 0;
+    EXPECT_CALL(renderer_, buildCardList(&count, nullptr, nullptr, nullptr, nullptr))
+        .WillOnce(Return(1));
+    EXPECT_EQ(special_.buildCardList(&count, nullptr, nullptr, nullptr, nullptr), 1);
 }
 
 TEST_F(CSpecialTest, SettingTheModeLoadsTheRendererAndHandsItTheScreen) {

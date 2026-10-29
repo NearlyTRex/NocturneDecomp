@@ -63,18 +63,14 @@ public:
             getMenu().showGameplayOptions();
             break;
         case EOptionsLine::Graphic:
-            quitNotPorted("CMenu", "configureGraphicsOptions");
+            getMenu().configureGraphicsOptions();
+            break;
         case EOptionsLine::Sound:
             getMenu().configureSoundOptions();
             break;
-        case EOptionsLine::Control: {
-            const EControlMode before = owners_.game.game_control;
-            getMenu().configureCustomKeys();
-            if (owners_.game.game_control != before) {
-                getMenu().configureCustomKeyBindings();
-            }
+        case EOptionsLine::Control:
+            configureControls();
             break;
-        }
         case EOptionsLine::Cheats:
             quitNotPorted("CMenu", "showCheatsMenu");
         default:
@@ -86,12 +82,20 @@ public:
     }
 
 private:
+    // A control type left changed goes on to its bindings.
+    void configureControls() {
+        const EControlMode before = owners_.game.game_control;
+        getMenu().configureCustomKeys();
+        if (owners_.game.game_control != before) {
+            getMenu().configureCustomKeyBindings();
+        }
+    }
+
     const SMenuOwners &owners_;
 };
 
 // The original's lines were Graphic, Sound and Control options, and Credits, and it left on
-// Escape alone, not on the window closing. A control type left changed goes on to its bindings.
-// deferred: the graphic options, with configureGraphicsOptions
+// Escape alone, not on the window closing.
 // deferred: the cheats, which nothing in the original lists (the decomp's cheats.h
 //   nocturne_cheats_menu), with the cheats menu
 // nocedit 0x00512d30

@@ -250,12 +250,35 @@ void CSpecial::presentToExternalRenderer() {
     renderer_.toggle();
 }
 
+// The original then unloaded the DLL and cleared its entry points; the adapter keeps the
+// renderer, and what goes is the game's hold on it until the next load.
+// nocedit 0x005b71e0
+int CSpecial::kill() {
+    if (!loaded_) {
+        return 1;
+    }
+    renderer_.kill();
+    use_external_renderer_ = false;
+    loaded_ = false;
+    return 1;
+}
+
 // nocedit 0x005b7d90
 int CSpecial::selectCard(int card_index) {
     if (!loaded_) {
         return 0;
     }
     return renderer_.selectCard(card_index);
+}
+
+// nocedit 0x005b7db0
+int CSpecial::buildCardList(int *out_card_count, char **out_driver_names, char **out_card_names,
+                            int *out_vendor_ids, int *out_device_ids) {
+    if (!loaded_) {
+        return 0;
+    }
+    return renderer_.buildCardList(out_card_count, out_driver_names, out_card_names, out_vendor_ids,
+                                   out_device_ids);
 }
 
 } // namespace nocturne::engine

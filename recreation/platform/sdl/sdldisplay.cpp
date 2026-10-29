@@ -155,6 +155,10 @@ void CSdlDisplay::setWindowMode(EWindowMode mode) {
     SDL_SetWindowFullscreen(window, true);
 }
 
+EWindowMode CSdlDisplay::getWindowMode() const {
+    return window_mode_;
+}
+
 void CSdlDisplay::setWindowSize(int width, int height) {
     window_size_ = {.width = width, .height = height};
     if (window_mode_ == EWindowMode::Windowed) {

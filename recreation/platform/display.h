@@ -32,6 +32,7 @@ public:
     // One frame in the current mode's format, top row first; shown and swapped.
     virtual void present(std::span<const std::byte> pixels, int pitch) = 0;
     virtual void setWindowMode(EWindowMode mode) = 0;
+    [[nodiscard]] virtual EWindowMode getWindowMode() const = 0;
     // The windowed size, applied now when windowed and on returning to windowed otherwise.
     virtual void setWindowSize(int width, int height) = 0;
 };

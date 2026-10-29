@@ -106,6 +106,7 @@ private:
     static constexpr int kSeveralCodesHeld = -2;
 
     void showGameplayOptions();
+    void configureGraphicsOptions();
     void configureSoundOptions();
     void configureCustomKeys();
     // The codes of one action, as a list with Add binding after them, until Cancel.

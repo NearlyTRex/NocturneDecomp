@@ -13,6 +13,7 @@ public:
     MOCK_METHOD(void, setPalette, ((std::span<const std::uint8_t, 768> rgb)), (override));
     MOCK_METHOD(void, present, (std::span<const std::byte> pixels, int pitch), (override));
     MOCK_METHOD(void, setWindowMode, (EWindowMode mode), (override));
+    MOCK_METHOD(EWindowMode, getWindowMode, (), (const, override));
     MOCK_METHOD(void, setWindowSize, (int width, int height), (override));
 };
 

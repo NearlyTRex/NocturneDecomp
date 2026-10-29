@@ -11,6 +11,7 @@
 #include "engine/matrix/matrix.h"
 #include "engine/special/special.h"
 #include "engine/texture/currenttexture.h"
+#include "platform/display.h"
 #include "shape/edittool/editortools.h"
 #include "support/newmsg/newmsg.h"
 #include "tests/mocks/core/gameparts.h"
@@ -158,6 +159,26 @@ TEST_F(CInivarTest, TheMenuFontChoiceIsWritten) {
     fonts_.setMenuFontChoice(EMenuFontChoice::Small);
     writeIniData(ini_, owners_);
     EXPECT_THAT(text_, HasSubstr("menuFont=1\r\n"));
+}
+
+// The size first, so a window that stays windowed opens at it.
+TEST_F(CInivarTest, TheWindowModeIsAppliedAfterTheSizeUnlessItIsOutOfRange) {
+    text_ = "[Graphics]\r\ngamePIXX=800\r\ngamePIXY=600\r\nwindowMode=2\r\n";
+    const ::testing::InSequence in_order;
+    EXPECT_CALL(display_, setWindowSize(800, 600));
+    EXPECT_CALL(display_, setWindowMode(platform::EWindowMode::Borderless));
+    EXPECT_CALL(display_, setWindowSize(800, 600));
+    EXPECT_CALL(display_, setWindowMode(platform::EWindowMode::Fullscreen));
+    read();
+    ON_CALL(display_, getWindowMode()).WillByDefault(Return(platform::EWindowMode::Fullscreen));
+    text_ = "[Graphics]\r\ngamePIXX=800\r\ngamePIXY=600\r\nwindowMode=3\r\n";
+    read();
+}
+
+TEST_F(CInivarTest, TheWindowModeIsWritten) {
+    ON_CALL(display_, getWindowMode()).WillByDefault(Return(platform::EWindowMode::Fullscreen));
+    writeIniData(ini_, owners_);
+    EXPECT_THAT(text_, HasSubstr("windowMode=1\r\n"));
 }
 
 TEST_F(CInivarTest, MissingKeysKeepTheirSettings) {

@@ -32,6 +32,7 @@ public:
     void setPalette(std::span<const std::uint8_t, 768> rgb) override;
     void present(std::span<const std::byte> pixels, int pitch) override;
     void setWindowMode(EWindowMode mode) override;
+    [[nodiscard]] EWindowMode getWindowMode() const override;
     void setWindowSize(int width, int height) override;
     void presentScene(GLuint texture, int width, int height) override;
 
