@@ -9,6 +9,7 @@
 #include "core/charactr/healthbarmode.h"
 #include "core/cloth/clothlist.h"
 #include "core/game/game.h"
+#include "tests/mocks/core/gameparts.h"
 #include "tests/mocks/core/mockactorlookup.h"
 #include "tests/mocks/core/notportedcalls.h"
 #include "tests/mocks/core/testactor.h"
@@ -236,7 +237,8 @@ protected:
     }
 
     ::testing::NiceMock<engine::MockGameClock> clock_;
-    CGame game_{clock_};
+    CGameParts game_parts_{clock_};
+    CGame &game_ = game_parts_.getGame();
     common::CWatcomRandom crt_;
     CActor classes_{game_, crt_};
     ::testing::NiceMock<MockActorLookup> actors_;

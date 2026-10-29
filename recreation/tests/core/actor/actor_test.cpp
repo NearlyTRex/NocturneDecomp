@@ -26,6 +26,7 @@
 #include "core/trigger/trigger.h"
 #include "core/waypoint/waypoint.h"
 #include "core/weapon/weapon.h"
+#include "tests/mocks/core/gameparts.h"
 #include "tests/mocks/core/testactor.h"
 #include "tests/mocks/engine/mockgameclock.h"
 
@@ -71,7 +72,8 @@ TEST(CActor, PublicInterface) {
 class CActorRegistryTest : public ::testing::Test {
 protected:
     ::testing::NiceMock<engine::MockGameClock> clock_;
-    CGame game_{clock_};
+    CGameParts game_parts_{clock_};
+    CGame &game_ = game_parts_.getGame();
     common::CWatcomRandom crt_;
     CActor actor_{game_, crt_};
 };
@@ -157,7 +159,8 @@ protected:
     }
 
     ::testing::StrictMock<engine::MockGameClock> clock_;
-    CGame game_{clock_};
+    CGameParts game_parts_{clock_};
+    CGame &game_ = game_parts_.getGame();
     common::CWatcomRandom crt_;
     CActor actor_{game_, crt_};
 };

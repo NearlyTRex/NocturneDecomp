@@ -59,6 +59,9 @@ void readGraphics(const engine::CIniFile &file, const SIniDataOwners &owners) {
     owners.fonts.setOsFontChoice(static_cast<EOsFontChoice>(
         readEnumValue(file, "osFont", static_cast<int>(owners.fonts.getOsFontChoice()),
                       static_cast<int>(EOsFontChoice::System))));
+    owners.fonts.setMenuFontChoice(static_cast<EMenuFontChoice>(
+        readEnumValue(file, "menuFont", static_cast<int>(owners.fonts.getMenuFontChoice()),
+                      static_cast<int>(EMenuFontChoice::Small))));
 }
 
 // The defaults for the control mode come first, then whatever the file binds over them.
@@ -111,6 +114,7 @@ void writeGraphics(engine::CIniFile &file, const SIniDataOwners &owners) {
     file.setInteger("quimbyFlag", game.quimby_flag);
     file.setInteger("currentBoard", owners.special.getCurrentGraphicsBoard());
     file.setInteger("osFont", static_cast<int>(owners.fonts.getOsFontChoice()));
+    file.setInteger("menuFont", static_cast<int>(owners.fonts.getMenuFontChoice()));
 }
 
 void writeControls(engine::CIniFile &file, const CGame &game) {

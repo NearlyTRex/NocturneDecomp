@@ -2,6 +2,7 @@
 #include "core/actor/actor.h"
 #include "core/dfont/dfont.h"
 #include "core/game/game.h"
+#include "core/inivar/inivar.h"
 #include "core/menu/menu.h"
 #include "core/set/demonset.h"
 #include "core/sound/sound.h"
@@ -11,6 +12,7 @@
 #include "engine/drender/demonrenderer.h"
 #include "engine/font/bitfont.h"
 #include "engine/font/font.h"
+#include "engine/ini/ini.h"
 #include "engine/keys/inputcodetype.h"
 #include "engine/keys/keys.h"
 #include "engine/light/light.h"
@@ -25,6 +27,7 @@
 #include "platform/rendervertex.h"
 #include "shape/edittool/editortools.h"
 #include "support/newmsg/newmsg.h"
+#include "tests/mocks/core/gameparts.h"
 #include "tests/mocks/core/menufontfiles.h"
 #include "tests/mocks/core/setparts.h"
 #include "tests/mocks/engine/fontsheet.h"
@@ -197,7 +200,8 @@ protected:
     support::CNewMsg messages_{dosio_};
     CDFont fonts_{dosio_, screen_, two_d_, three_d_, colors_, os_fonts_, messages_, editor_tools_};
     NiceMock<engine::MockGameClock> game_clock_;
-    CGame game_{game_clock_};
+    CGameParts game_parts_{game_clock_};
+    CGame &game_ = game_parts_.getGame();
     engine::CTexture texture_{{.dosio = dosio_,
                                .two_d = two_d_,
                                .screen = screen_,
@@ -217,6 +221,13 @@ protected:
     engine::CMenuInput menu_input_{keys_};
     engine::CPod pod_{file_system_, dosio_};
     CSound game_sound_{sound_, pod_, file_system_};
+    engine::CIni ini_{file_system_};
+    SIniDataOwners ini_owners_{.game = game_,
+                               .sound_main = sound_,
+                               .console = console_,
+                               .special = special_,
+                               .display = display_,
+                               .fonts = fonts_};
     CMenu menu_{{.dosio = dosio_,
                  .screen = screen_,
                  .special = special_,
@@ -236,6 +247,8 @@ protected:
                  .sound_main = sound_,
                  .display = display_,
                  .editor_tools = editor_tools_,
+                 .ini = ini_,
+                 .ini_owners = ini_owners_,
                  .build_version = "X"}};
 };
 

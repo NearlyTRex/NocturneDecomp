@@ -252,4 +252,8 @@ void CBitFont::setWinFont(CFont &font) {
     win_font_helper_ = &font;
 }
 
+CFont *CBitFont::releaseWinFont() {
+    return std::exchange(win_font_helper_, nullptr);
+}
+
 } // namespace nocturne::engine

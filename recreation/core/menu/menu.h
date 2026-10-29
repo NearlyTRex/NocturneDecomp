@@ -25,7 +25,7 @@ struct SMenuOwners {
     engine::C3d &three_d;
     engine::IRawInput &raw_input;
     engine::CMenuInput &menu_input;
-    const CDFont &fonts;
+    CDFont &fonts;
     const support::CNewMsg &messages;
     engine::CDemonRenderer &renderer;
     CDemonSet &set;
@@ -37,6 +37,9 @@ struct SMenuOwners {
     sound::CSndMain &sound_main;
     platform::IDisplay &display;
     shape::CEditorTools &editor_tools;
+    // Where Options saves the settings as it closes.
+    engine::CIni &ini;
+    const SIniDataOwners &ini_owners;
     // The line naming this build, drawn at the foot of every menu.
     std::string_view build_version;
 };
@@ -50,6 +53,9 @@ public:
     // Four steps for setting the monitor up over art/brightness, then a last screen, each shown
     // until a key is typed.
     void showCalibrationTest();
+    // Options over the moon until Cancel, then the settings saved. From a mission's pause menu,
+    // initialize_systems is set and the menu's music and moon run only while it is up; from the
+    // main menu both are running already.
     void showOptionsScreen(int initialize_systems);
     // The main menu over the moon, with its music, until QUIT, Cancel or the window closing: 99.
     // A window under 480 rows shows nothing: 1.
@@ -76,7 +82,9 @@ public:
 private:
     class CMainMenuPage;
     class CSubmenuPage;
+    class COptionsPage;
 
+    void showGameplayOptions();
     // PLAY's Continue, Start and Load.
     void showPlayMenu();
     // MULTIPLAYER's Host and Join.

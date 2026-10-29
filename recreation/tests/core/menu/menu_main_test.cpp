@@ -1,4 +1,5 @@
 #include "common/error/fatalerror.h"
+#include "core/dfont/dfont.h"
 #include "core/main/main.h"
 #include "core/menu/menu.h"
 #include "engine/keys/inputcodetype.h"
@@ -126,13 +127,26 @@ TEST_F(CMainMenuTest, TheDialogsDrawInTheThemeFont) {
     EXPECT_EQ(editor_tools_.getEditorFont(), fonts_.getThemeFont());
 }
 
-TEST_F(CMainMenuTest, OptionsQuitsUntilItsScreenIsPorted) {
+// Options saves the settings as it closes, then the main menu is back.
+TEST_F(CMainMenuTest, OptionsOpensTheOptionsScreen) {
+    game_.always_run = 1;
     on_frame_ = [&](int frame) {
-        press(frame <= 2 ? EInputCodeType::DIK_DOWN : EInputCodeType::DIK_RETURN);
+        if (frame <= 2) {
+            press(EInputCodeType::DIK_DOWN);
+        } else {
+            press(frame == 3 ? EInputCodeType::DIK_RETURN : EInputCodeType::DIK_ESCAPE);
+        }
     };
-    EXPECT_THAT([this] { static_cast<void>(menu_.showMainGameMenu()); },
-                ::testing::ThrowsMessage<common::CFatalError>(
-                    ::testing::StrEq("CMenu::showOptionsScreen is not ported yet")));
+    EXPECT_EQ(menu_.showMainGameMenu(), 99);
+    EXPECT_THAT(ini_text_, ::testing::HasSubstr("alwaysRun=1\r\n"));
+    EXPECT_EQ(frames_, 6);
+}
+
+TEST_F(CMainMenuTest, TheDialogsDrawInTheMenuTextFont) {
+    fonts_.setMenuFontChoice(EMenuFontChoice::Small);
+    on_frame_ = [&](int /*frame*/) { press(EInputCodeType::DIK_ESCAPE); };
+    EXPECT_EQ(menu_.showMainGameMenu(), 99);
+    EXPECT_EQ(editor_tools_.getEditorFont(), fonts_.getSmallEditorFont());
 }
 
 // Cancel leaves the submenu for the main menu, and a second Cancel quits that.

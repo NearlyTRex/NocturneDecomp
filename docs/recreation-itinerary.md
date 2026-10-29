@@ -29,7 +29,7 @@ functions don't count as done. Sizes are in instructions.
 | 13 | `CFireEffect::init`, `CDemonSet::loadMasterLightStates`, `CDemonSet::setGamma`, `CGame::clearOverlay`, `CGame::loadAssets` | 7 | 27 | 735 | 0 | 0 | 0.0% |
 | 14 | `CNetGame::syncPlayers`, `CNetGame::processServerFrame`, `CLevelLoader::cleanup`, `CKeys::toggleInputMask`, `CGame::processHotkeys` | 17 | 51 | 5302 | 1 | 0 | 1.9% |
 | 15 | `CGame::updateStatusDisplays`, `CGame::processFudge`, `CGame::playerControls`, `CGame::processFrame` | 43 | 189 | 28837 | 5 | 1 | 2.6% |
-| 16 | `CGame::setScreenResolutionAndDisplayFangs`, `showOptionsScreen`, `CScript::skipCinematic`, `CGame::showFullscreenBitmap`, `CDemonMission::countDamageableEnemies`, `freeInventory`, `CGame::runGameSession`, `CGame::displayActStats` | 10 | 25 | 6938 | 0 | 1 | 0.0% |
+| 16 | `CGame::setScreenResolutionAndDisplayFangs`, `showOptionsScreen`, `CScript::skipCinematic`, `CGame::showFullscreenBitmap`, `CDemonMission::countDamageableEnemies`, `freeInventory`, `CGame::runGameSession`, `CGame::displayActStats` | 10 | 25 | 6938 | 1 | 2 | 4.0% |
 | 17 | `CGame::finishAct`, `CDemonMission::run`, `CGame::loadGame`, `CGame::showChapterSelect`, `showDeveloperToolsMenu` | 12 | 26 | 3707 | 4 | 1 | 15.3% |
 | 18 | `enterMainGameMenu`, `finalizeGameSystems` | 11 | 13 | 539 | 3 | 0 | 23.0% |
 | 19 | Not reached from startup: `engine/` | 23 | 279 | 19702 | 24 | 1 | 8.6% |
@@ -46,7 +46,7 @@ functions don't count as done. Sizes are in instructions.
 | 30 | Not reached from startup: `core/` (part 8 of 9) | 20 | 300 | 31826 | 40 | 5 | 13.3% |
 | 31 | Not reached from startup: `core/` (part 9 of 9) | 5 | 111 | 10905 | 10 | 2 | 9.0% |
 | 32 | Not reached from startup: `wincore/` | 2 | 11 | 482 | 4 | 0 | 36.3% |
-| | **All** | | **4479** | **402407** | **847** | **159** | **18.9%** |
+| | **All** | | **4479** | **402407** | **848** | **160** | **18.9%** |
 
 ## Step 0: Math value types
 
@@ -2707,7 +2707,7 @@ functions don't count as done. Sizes are in instructions.
   - [~] `configure` 0x005b3830 (112)
     - deferred: giving the attract movies the splash music's length from getSoundDuration, a length of 0 or less disarming them (the decomp's attract.h nocturne_attract_set_music_duration), with the attract movies and CSound::getSoundDuration
 
-### `core/menu.cpp` (9 functions, 4659 instructions, 0 done, 0 partial)
+### `core/menu.cpp` (9 functions, 4659 instructions, 0 done, 1 partial)
 - free functions
   - [ ] `configureGraphicsOptions` 0x00510c80 (770)
   - [ ] `calibrateGamepad` 0x005104d0 (215)
@@ -2717,7 +2717,11 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `configureCustomKeys` 0x00511890 (375)
   - [ ] `renderAudioSpectrumBar` 0x0050fe70 (116)
   - [ ] `configureSoundOptions` 0x00511e50 (1124)
-  - [ ] `showOptionsScreen` 0x00512d30 (138)
+  - [~] `showOptionsScreen` 0x00512d30 (138)
+    - deferred: the graphic options, with configureGraphicsOptions
+    - deferred: the sound options, with configureSoundOptions
+    - deferred: the control options, then the key bindings when the control type changed, with configureCustomKeys and configureCustomKeyBindings
+    - deferred: the cheats, which nothing in the original lists (the decomp's cheats.h nocturne_cheats_menu), with the cheats menu
 
 ### `core/script.cpp` (1 functions, 68 instructions, 0 done, 0 partial)
 - class `CScript`
@@ -2731,10 +2735,10 @@ functions don't count as done. Sizes are in instructions.
 - free functions
   - [ ] `freeInventory` 0x004fd510 (43)
 
-### `core/game.cpp` (5 functions, 1777 instructions, 0 done, 0 partial)
+### `core/game.cpp` (5 functions, 1777 instructions, 1 done, 0 partial)
 - class `CGame`
   - [ ] `setScreenResolutionAndDisplayFangs` 0x004daed0 (47)
-  - [ ] `rollCredits` 0x004e4010 (280)
+  - [x] `rollCredits` 0x004e4010 (280)
   - [ ] `showFullscreenBitmap` 0x004e2910 (387)
   - [ ] `runGameSession` 0x004daf80 (791)
   - [ ] `displayActStats` 0x004e3800 (272)
@@ -5471,10 +5475,8 @@ functions don't count as done. Sizes are in instructions.
     - deferred: loading a saved game from PLAY's LOAD, then starting the moon and music again, with CGame::loadGame
     - deferred: resuming the newest save from PLAY's CONTINUE, or showing "No files found" without one, then starting the moon and music again, with the save slots and CGame::loadGame
     - deferred: hosting or joining from MULTIPLAYER, or with Ctrl+H or Ctrl+J, the music reset around the session, with hostNetworkGame and joinNetworkGame
-    - deferred: the options from OPTIONS, with showOptionsScreen
     - deferred: the developer tools on Ctrl+D or Ctrl+L, with showDeveloperToolsMenu
     - deferred: dropping a press of F with a control key held, with the game's hotkeys
-    - deferred: the dialogs in the small editor font when Menu text asks for it, with the Gameplay options
     - deferred: no QUIT, and Cancel quitting nothing, where the platform ends the app itself (the decomp's NOCTURNE_PLATFORM_NO_QUIT), with a platform that does
     - deferred: an attract movie, one of NOC1 to NOC4.AVI that nothing in the original plays, at the end of a pass of the splash music with the main menu on screen, after a short silence, then the music restarted with reset and configure; a pass ending under a submenu or dialog is skipped (the decomp's attract.h nocturne_attract_tick), with the attract movies
   - [ ] `addCustomKeyBinding` 0x00513460 (40)

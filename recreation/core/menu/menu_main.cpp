@@ -94,7 +94,9 @@ public:
             getMenu().showMultiplayerMenu();
             break;
         case EMainLine::Options:
-            quitNotPorted("CMenu", "showOptionsScreen");
+            getMenu().showOptionsScreen(0);
+            owners_.two_d.clearInputAndWait();
+            break;
         default:
             quit_ = true;
             break;
@@ -154,8 +156,8 @@ private:
     std::optional<int> chosen_;
 };
 
-// The enhanced game's: PLAY, MULTIPLAYER, OPTIONS and QUIT, the dialogs in the theme font. PLAY's
-// items and MULTIPLAYER's quit until the screens they lead to are ported. Closing the window
+// The enhanced game's: PLAY, MULTIPLAYER, OPTIONS and QUIT, the dialogs in the Menu text font.
+// PLAY's items and MULTIPLAYER's quit until the screens they lead to are ported. Closing the window
 // quits the menu as Cancel does, which retail's never looked for.
 // deferred: loading the flame and blur bitmaps, with their readers
 // deferred: choosing a chapter from PLAY's START, its debug modes picked by the shift and control
@@ -166,11 +168,8 @@ private:
 //   one, then starting the moon and music again, with the save slots and CGame::loadGame
 // deferred: hosting or joining from MULTIPLAYER, or with Ctrl+H or Ctrl+J, the music reset
 //   around the session, with hostNetworkGame and joinNetworkGame
-// deferred: the options from OPTIONS, with showOptionsScreen
 // deferred: the developer tools on Ctrl+D or Ctrl+L, with showDeveloperToolsMenu
 // deferred: dropping a press of F with a control key held, with the game's hotkeys
-// deferred: the dialogs in the small editor font when Menu text asks for it, with the Gameplay
-//   options
 // deferred: no QUIT, and Cancel quitting nothing, where the platform ends the app itself (the
 //   decomp's NOCTURNE_PLATFORM_NO_QUIT), with a platform that does
 // deferred: an attract movie, one of NOC1 to NOC4.AVI that nothing in the original plays, at the
@@ -182,7 +181,7 @@ int CMenu::showMainGameMenu() {
     if (owners_.screen.getWindowHeight() < kSmallestWindowHeight) {
         return kWindowTooSmallResult;
     }
-    owners_.editor_tools.setEditorFont(owners_.fonts.getThemeFont());
+    owners_.editor_tools.setEditorFont(owners_.fonts.getMenuFont());
     if (!owners_.special.getUseDirect3D() && owners_.game.game_pixy > kSoftwareGameHeight) {
         owners_.game.game_pixy = kSoftwareGameHeight;
         owners_.game.game_pixx = kSoftwareGameWidth;

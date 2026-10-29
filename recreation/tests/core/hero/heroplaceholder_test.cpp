@@ -6,6 +6,7 @@
 #include "core/actor/demonactortype.h"
 #include "core/game/game.h"
 #include "core/hero/heroplaceholder.h"
+#include "tests/mocks/core/gameparts.h"
 #include "tests/mocks/core/mockactorlookup.h"
 #include "tests/mocks/engine/mockgameclock.h"
 
@@ -55,7 +56,8 @@ TEST(CHeroPlaceholder, ItsRecordIsAVersionOneActorThatMissionsCanCreate) {
 // After CDemonActor's fields, which hero the place is for.
 TEST(CHeroPlaceholder, ItsFileSaysWhichHeroItIsFor) {
     ::testing::NiceMock<engine::MockGameClock> clock;
-    const CGame game{clock};
+    CGameParts game_parts{clock};
+    const CGame &game = game_parts.getGame();
     common::CWatcomRandom crt;
     const CActor classes{game, crt};
     ::testing::NiceMock<MockActorLookup> actors;

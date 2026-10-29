@@ -6,6 +6,7 @@
 #include "core/actor/demonactor.h"
 #include "core/actor/demonactortype.h"
 #include "core/game/game.h"
+#include "tests/mocks/core/gameparts.h"
 #include "tests/mocks/core/mockactorlookup.h"
 #include "tests/mocks/core/testactor.h"
 #include "tests/mocks/engine/mockgameclock.h"
@@ -197,7 +198,8 @@ TEST(CDemonActor, AnActorIsNotCreatedUntilItsEventComes) {
 class CDemonActorLoadTest : public ::testing::Test {
 protected:
     ::testing::NiceMock<engine::MockGameClock> clock_;
-    CGame game_{clock_};
+    CGameParts game_parts_{clock_};
+    CGame &game_ = game_parts_.getGame();
     common::CWatcomRandom crt_;
     const CActor classes_{game_, crt_};
     ::testing::NiceMock<MockActorLookup> actors_;

@@ -12,8 +12,6 @@
 
 namespace nocturne::core {
 
-struct SIniDataOwners;
-
 // Everything startup brings up. play_movie plays directory\filename to its end, false when there
 // is no such file; it reaches wincore, which this module may not name.
 struct SGameSystemOwners {

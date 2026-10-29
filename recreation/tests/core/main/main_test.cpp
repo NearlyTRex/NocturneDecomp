@@ -171,7 +171,16 @@ protected:
     engine::CFontColors colors_;
     support::CNewMsg messages_{dosio_};
     CDFont fonts_{dosio_, screen_, two_d_, three_d_, colors_, os_fonts_, messages_, editor_tools_};
-    CGame game_{game_clock_};
+    engine::CMenuInput menu_input_{keys_};
+    CGame game_{{.clock = game_clock_,
+                 .dosio = dosio_,
+                 .screen = screen_,
+                 .special = special_,
+                 .two_d = two_d_,
+                 .three_d = three_d_,
+                 .menu_input = menu_input_,
+                 .fonts = fonts_,
+                 .sound_main = sound_}};
     engine::CIni ini_{file_system_};
     SIniDataOwners ini_owners_{.game = game_,
                                .sound_main = sound_,
@@ -201,7 +210,6 @@ protected:
         set_parts_.owners(demon_renderer_, matrix_, special_, two_d_, screen_, raw_input_)};
     common::CWatcomRandom crt_random_;
     CActor actor_{game_, crt_random_};
-    engine::CMenuInput menu_input_{keys_};
     CMenu menu_{{.dosio = dosio_,
                  .screen = screen_,
                  .special = special_,
@@ -221,6 +229,8 @@ protected:
                  .sound_main = sound_,
                  .display = display_,
                  .editor_tools = editor_tools_,
+                 .ini = ini_,
+                 .ini_owners = ini_owners_,
                  .build_version = "0.1.0"}};
     shape::CEdControls controls_{{.two_d = two_d_,
                                   .screen = screen_,

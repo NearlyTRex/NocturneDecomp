@@ -1,10 +1,12 @@
 #pragma once
 
 #include "core/dfont/dfont.h"
+#include "core/inivar/inivar.h"
 #include "core/menu/menu.h"
 #include "core/sound/sound.h"
 #include "engine/console/console.h"
 #include "engine/font/font.h"
+#include "engine/ini/ini.h"
 #include "engine/keys/inputcodetype.h"
 #include "engine/keys/keys.h"
 #include "engine/menuinput.h"
@@ -31,8 +33,10 @@
 #include <cstdint>
 #include <ctime>
 #include <functional>
+#include <optional>
 #include <span>
 #include <string>
+#include <string_view>
 
 namespace nocturne::core {
 
@@ -42,6 +46,7 @@ namespace nocturne::core {
 class CMenuFixture : public CMoonFixture {
 protected:
     static constexpr int kFrameLimit = 20;
+    static constexpr std::string_view kIniFile = ".\\system\\nocturne.ini";
 
     CMenuFixture() {
         using ::testing::Return;
@@ -66,6 +71,14 @@ protected:
             .WillByDefault(Return(std::span<const std::uint32_t, 256>(color_table_)));
         ON_CALL(audio_device_, open).WillByDefault(Return(true));
         sound_main_.initializeSoundDevice();
+        ON_CALL(file_system_, readFile(kIniFile)).WillByDefault([this](std::string_view) {
+            return std::optional(ini_text_);
+        });
+        ON_CALL(file_system_, writeFile(kIniFile, ::testing::_))
+            .WillByDefault([this](std::string_view, std::string_view text) {
+                ini_text_ = text;
+                return true;
+            });
     }
 
     void press(engine::EInputCodeType code) {
@@ -111,26 +124,38 @@ protected:
                                 [] { return std::tm{}; }};
     engine::CPod pod_{file_system_, dosio_};
     CSound sound_{sound_main_, pod_, file_system_};
-    CMenu menu_{{.dosio = dosio_,
-                 .screen = screen_,
-                 .special = special_,
-                 .two_d = two_d_,
-                 .three_d = three_d_,
-                 .raw_input = raw_input_,
-                 .menu_input = menu_input_,
-                 .fonts = fonts_,
-                 .messages = messages_,
-                 .renderer = demon_renderer_,
-                 .set = set_,
-                 .game = game_,
-                 .actor = actor_,
-                 .crt_random = crt_random_,
-                 .textures = textures_,
-                 .sound = sound_,
-                 .sound_main = sound_main_,
-                 .display = display_,
-                 .editor_tools = editor_tools_,
-                 .build_version = "X"}};
+    // What nocturne.ini holds, and what Options writes to it.
+    std::string ini_text_ = "[Graphics]\r\n[Sound]\r\n[Control]\r\n[Debug]\r\n";
+    engine::CIni ini_{file_system_};
+    SIniDataOwners ini_owners_{.game = game_,
+                               .sound_main = sound_main_,
+                               .console = console_,
+                               .special = special_,
+                               .display = display_,
+                               .fonts = fonts_};
+    SMenuOwners menu_owners_{.dosio = dosio_,
+                             .screen = screen_,
+                             .special = special_,
+                             .two_d = two_d_,
+                             .three_d = three_d_,
+                             .raw_input = raw_input_,
+                             .menu_input = menu_input_,
+                             .fonts = fonts_,
+                             .messages = messages_,
+                             .renderer = demon_renderer_,
+                             .set = set_,
+                             .game = game_,
+                             .actor = actor_,
+                             .crt_random = crt_random_,
+                             .textures = textures_,
+                             .sound = sound_,
+                             .sound_main = sound_main_,
+                             .display = display_,
+                             .editor_tools = editor_tools_,
+                             .ini = ini_,
+                             .ini_owners = ini_owners_,
+                             .build_version = "X"};
+    CMenu menu_{menu_owners_};
 };
 
 } // namespace nocturne::core

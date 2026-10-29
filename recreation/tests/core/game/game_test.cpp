@@ -1,5 +1,6 @@
 #include "core/game/game.h"
 #include "engine/gameclock.h"
+#include "tests/mocks/core/gameparts.h"
 #include "tests/mocks/engine/mockgameclock.h"
 
 #include <gmock/gmock.h>
@@ -18,7 +19,7 @@ TEST(CGame, IsConcrete) {
 }
 
 TEST(CGame, Constructors) {
-    static_assert(std::is_constructible_v<CGame, engine::IGameClock &>);
+    static_assert(std::is_constructible_v<CGame, const SGameOwners &>);
     static_assert(!std::is_default_constructible_v<CGame>);
 }
 
@@ -61,7 +62,8 @@ protected:
     }
 
     ::testing::StrictMock<engine::MockGameClock> clock_;
-    CGame game_{clock_};
+    CGameParts parts_{clock_};
+    CGame &game_ = parts_.getGame();
 };
 
 // The values the original constructor gives the INI's settings before the INI is read.

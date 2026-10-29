@@ -7,14 +7,28 @@
 #include "core/game/controlmode.h"
 #include "core/game/herotype.h"
 #include "engine/fwd.h"
+#include "sound/fwd.h"
 
 #include <cstdint>
 
 namespace nocturne::core {
 
+// What the game times its frames by, and draws and plays its own screens with.
+struct SGameOwners {
+    engine::IGameClock &clock;
+    const engine::CDosIo &dosio;
+    engine::IScreenDevice &screen;
+    engine::CSpecial &special;
+    engine::C2d &two_d;
+    engine::C3d &three_d;
+    engine::CMenuInput &menu_input;
+    const CDFont &fonts;
+    sound::CSndMain &sound_main;
+};
+
 class CGame {
 public:
-    explicit CGame(engine::IGameClock &clock);
+    explicit CGame(const SGameOwners &owners);
 
     void saveClockTime();
     // The time since the last saveClockTime or updateDT, scaled, at most a quarter second.
@@ -40,6 +54,8 @@ public:
     void slamDT(float delta_time);
     void displayActStats();
     void finishAct();
+    // data\credits.txt up the right of the stats image to the credits music, until the music ends
+    // or Cancel is pressed.
     void rollCredits();
 
     // The settings nocturne.ini carries, read by readIniData under the keys their names spell.
@@ -86,7 +102,7 @@ public:
 private:
     void seedCalibration();
 
-    engine::IGameClock &clock_;
+    SGameOwners owners_;
     // In the game clock's ticks.
     int clocktime_ = 0;
     int delta_time_int_ = 0;

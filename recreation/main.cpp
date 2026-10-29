@@ -171,13 +171,22 @@ private:
     nocturne::support::CNewMsg messages_{dosio_};
     core::CDFont fonts_{dosio_,  screen_,   two_d_,    three_d_,
                         colors_, os_fonts_, messages_, editor_tools_};
-    // deferred: the scene's 256 by 256 CDemonLight, with CDemonLight's constructor
-    // nocedit 0x004d76d0
-    core::CGame game_{winrun_};
     // nocedit 0x004417e0
     engine::CConsole console_{file_system_, engine::CConsole::kMaxColumns,
                               engine::CConsole::kMaxRows, 1, 1};
     nocturne::sound::CSndMain sound_main_{dosio_, file_system_, audio_, console_, &getLocalTime};
+    engine::CMenuInput menu_input_{keys_};
+    // deferred: the scene's 256 by 256 CDemonLight, with CDemonLight's constructor
+    // nocedit 0x004d76d0
+    core::CGame game_{{.clock = winrun_,
+                       .dosio = dosio_,
+                       .screen = screen_,
+                       .special = special_,
+                       .two_d = two_d_,
+                       .three_d = three_d_,
+                       .menu_input = menu_input_,
+                       .fonts = fonts_,
+                       .sound_main = sound_main_}};
     engine::CIni ini_{file_system_};
     core::SIniDataOwners ini_owners_{.game = game_,
                                      .sound_main = sound_main_,
@@ -254,7 +263,6 @@ private:
                           .raw_input = winrun_}};
     nocturne::common::CWatcomRandom crt_random_;
     core::CActor actor_{game_, crt_random_};
-    engine::CMenuInput menu_input_{keys_};
     core::CMenu menu_{{.dosio = dosio_,
                        .screen = screen_,
                        .special = special_,
@@ -274,6 +282,8 @@ private:
                        .sound_main = sound_main_,
                        .display = display_,
                        .editor_tools = editor_tools_,
+                       .ini = ini_,
+                       .ini_owners = ini_owners_,
                        .build_version = nocturne::kBuildVersion}};
     nocturne::shape::CEdControls controls_{{.two_d = two_d_,
                                             .screen = screen_,

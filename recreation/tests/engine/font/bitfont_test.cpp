@@ -8,6 +8,7 @@
 #include "engine/palette/font.h"
 #include "tests/mocks/engine/fontsheet.h"
 #include "tests/mocks/engine/memoryscreen.h"
+#include "tests/mocks/engine/mockfont.h"
 #include "tests/mocks/engine/mockrawinput.h"
 #include "tests/mocks/engine/podfixture.h"
 
@@ -66,6 +67,8 @@ TEST(CBitFont, PublicInterface) {
                                  void (CBitFont::*)(int, int, int)>);
     static_assert(std::is_same_v<decltype(&CBitFont::setFontReady), void (CBitFont::*)(int)>);
     static_assert(std::is_same_v<decltype(&CBitFont::remapPalette), void (CBitFont::*)()>);
+    static_assert(std::is_same_v<decltype(&CBitFont::setWinFont), void (CBitFont::*)(CFont &)>);
+    static_assert(std::is_same_v<decltype(&CBitFont::releaseWinFont), CFont *(CBitFont::*)()>);
 }
 
 constexpr int kScreenWidth = 16;
@@ -90,13 +93,6 @@ std::string twoGlyphPalette() {
     levels[faint + 2] = 0x80;
     return makePalette(levels);
 }
-
-class COsFont : public CFont {
-public:
-    MOCK_METHOD(int, drawText, (std::string_view, int, int, int, int), (override));
-    MOCK_METHOD(int, getStringWidth, (std::string_view), (override));
-    MOCK_METHOD(int, getStringHeight, (std::string_view), (override));
-};
 
 class CBitFontTest : public CPodFixture {
 protected:
@@ -511,7 +507,7 @@ protected:
     }
 
     SRig rig_{*this, 32};
-    NiceMock<COsFont> os_font_;
+    NiceMock<MockFont> os_font_;
 };
 
 TEST_F(CBitFontOsFontTest, TheOsFontDrawsEachLineALineApart) {
@@ -536,6 +532,14 @@ TEST_F(CBitFontOsFontTest, TheOsFontMeasuresEachLineUnscaled) {
     EXPECT_EQ(rig_.font.getTextHeight("ab", 2), 9);
     // Several lines are measured from the sheet, still unscaled.
     EXPECT_EQ(rig_.font.getTextHeight("a\nb", 2), 6);
+}
+
+TEST_F(CBitFontOsFontTest, OnceReleasedTheOsFontIsHandedBackAndTheSheetDraws) {
+    EXPECT_CALL(os_font_, drawText).Times(0);
+    EXPECT_EQ(rig_.font.releaseWinFont(), &os_font_);
+    EXPECT_EQ(rig_.font.drawText("!", 0, 0, CBitFont::kSheetColors, CBitFont::kNoShadow), 3);
+    EXPECT_EQ(rig_.screen.pixel(0, 0), 0xff0000U);
+    EXPECT_EQ(rig_.font.releaseWinFont(), nullptr);
 }
 
 } // namespace

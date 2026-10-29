@@ -49,6 +49,8 @@ public:
     void setShadowOffset(int x, int y);
     // Hands every line to font from now on.
     void setWinFont(CFont &font);
+    // Draws from the sheets from now on; the OS font setWinFont gave, if any, for handing back.
+    [[nodiscard]] CFont *releaseWinFont();
     // The display colours for the current depth, from each sheet's palette.
     void remapPalette();
 

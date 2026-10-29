@@ -13,6 +13,7 @@
 #include "engine/texture/currenttexture.h"
 #include "shape/edittool/editortools.h"
 #include "support/newmsg/newmsg.h"
+#include "tests/mocks/core/gameparts.h"
 #include "tests/mocks/engine/mockgameclock.h"
 #include "tests/mocks/engine/mockrawinput.h"
 #include "tests/mocks/engine/mockscreendevice.h"
@@ -95,7 +96,8 @@ protected:
     support::CNewMsg messages_{dosio_};
     CDFont fonts_{dosio_, screen_, two_d_, three_d_, colors_, os_fonts_, messages_, editor_tools_};
     ::testing::StrictMock<engine::MockGameClock> game_clock_;
-    CGame game_{game_clock_};
+    CGameParts game_parts_{game_clock_};
+    CGame &game_ = game_parts_.getGame();
     engine::CIni ini_{file_system_};
     SIniDataOwners owners_{.game = game_,
                            .sound_main = sound_,
@@ -141,6 +143,21 @@ TEST_F(CInivarTest, TheOsFontChoiceIsWritten) {
     fonts_.setOsFontChoice(EOsFontChoice::Bitmap);
     writeIniData(ini_, owners_);
     EXPECT_THAT(text_, HasSubstr("osFont=1\r\n"));
+}
+
+TEST_F(CInivarTest, TheMenuFontChoiceIsReadUnlessItIsOutOfRange) {
+    text_ = "[Graphics]\r\nmenuFont=1\r\n";
+    read();
+    EXPECT_EQ(fonts_.getMenuFontChoice(), EMenuFontChoice::Small);
+    text_ = "[Graphics]\r\nmenuFont=2\r\n";
+    read();
+    EXPECT_EQ(fonts_.getMenuFontChoice(), EMenuFontChoice::Small);
+}
+
+TEST_F(CInivarTest, TheMenuFontChoiceIsWritten) {
+    fonts_.setMenuFontChoice(EMenuFontChoice::Small);
+    writeIniData(ini_, owners_);
+    EXPECT_THAT(text_, HasSubstr("menuFont=1\r\n"));
 }
 
 TEST_F(CInivarTest, MissingKeysKeepTheirSettings) {
@@ -254,7 +271,8 @@ TEST_F(CInivarTest, WhatIsWrittenReadsBackTheSame) {
     game_.map_zoom = 150;
     game_.y_stick_max = 40000;
     writeIniData(ini_, owners_);
-    CGame copy(game_clock_);
+    CGameParts copy_parts(game_clock_);
+    CGame &copy = copy_parts.getGame();
     const SIniDataOwners reread{.game = copy,
                                 .sound_main = sound_,
                                 .console = console_,
