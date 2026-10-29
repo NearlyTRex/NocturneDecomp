@@ -1,6 +1,7 @@
 #include "platform/sdl/sdlmovieplayer.h"
 
 #include "platform/display.h"
+#include "platform/log.h"
 
 #include <SDL3/SDL.h>
 #include <algorithm>
@@ -21,6 +22,9 @@ namespace {
 constexpr std::size_t kQueuedFrames = 8;
 constexpr int kPacketsPerUpdate = 256;
 constexpr double kDefaultFrameRate = 15.0;
+// A step of the pump this long is logged: several frames of a 15 frames a second movie.
+constexpr double kSlowStep = 0.1;
+constexpr double kMillisecondsPerSecond = 1000.0;
 
 // Indexed by EPixelLayout. An 8-bit screen has no movie format: playMovie only runs at 32 bits.
 constexpr std::array kScreenFormats = {AV_PIX_FMT_NONE, AV_PIX_FMT_RGB565, AV_PIX_FMT_BGR0};
@@ -60,10 +64,10 @@ void CSdlMoviePlayer::SStreamDeleter::operator()(SDL_AudioStream *stream) const 
     SDL_DestroyAudioStream(stream);
 }
 
-CSdlMoviePlayer::CSdlMoviePlayer(IDisplay &display) : display_(display) {}
+CSdlMoviePlayer::CSdlMoviePlayer(IDisplay &display, ILog &log) : display_(display), log_(log) {}
 
 CSdlMoviePlayer::~CSdlMoviePlayer() {
-    closeMovie();
+    release();
 }
 
 bool CSdlMoviePlayer::openMovie(const std::filesystem::path &movie_filename, common::SExtent screen,
@@ -85,6 +89,12 @@ bool CSdlMoviePlayer::openMovie(const std::filesystem::path &movie_filename, com
     packet_.reset(av_packet_alloc());
     frame_.reset(av_frame_alloc());
     playing_ = true;
+    opened_at_ = secondsNow();
+    last_update_at_ = opened_at_;
+    log_.print(ELogSubsystem::Frontend, "movie {}: {}x{} at {:.2f} frames a second, {:.1f}s, {}",
+               movie_filename.filename().string(), movie_size_.width, movie_size_.height,
+               1.0 / frame_duration_, static_cast<double>(format_->duration) / AV_TIME_BASE,
+               audio_ ? "with sound" : "silent");
     return true;
 }
 
@@ -107,8 +117,12 @@ void CSdlMoviePlayer::updateMovie() {
     if (!playing_) {
         return;
     }
+    const double started = secondsNow();
+    logSlowStep("update came", started - last_update_at_);
+    last_update_at_ = started;
     decode();
     const double now = secondsNow();
+    logSlowStep("decode took", now - started);
     frame_times_.clear();
     std::ranges::transform(frames_, std::back_inserter(frame_times_),
                            [](const SQueuedFrame &frame) { return frame.time; });
@@ -118,6 +132,11 @@ void CSdlMoviePlayer::updateMovie() {
         const SQueuedFrame &frame = frames_.at(*due);
         display_.present(std::as_bytes(std::span(frame.pixels)),
                          screen_.width * common::getBytesPerPixel(layout_));
+        const double presented = secondsNow();
+        logSlowStep("present took", presented - now);
+        slowest_present_ = std::max(slowest_present_, presented - now);
+        ++frames_presented_;
+        frames_dropped_ += *due;
         frames_.erase(frames_.begin(), frames_.begin() + static_cast<std::ptrdiff_t>(*due) + 1);
         last_frame_at_ = now;
     }
@@ -135,7 +154,28 @@ void CSdlMoviePlayer::setMovieVolume(float gain) {
     gain_ = gain;
 }
 
+void CSdlMoviePlayer::logSlowStep(std::string_view step, double seconds) {
+    if (seconds > kSlowStep) {
+        log_.print(ELogSubsystem::Frontend, "movie {} {:.0f}ms, at {:.2f}s into it", step,
+                   seconds * kMillisecondsPerSecond, secondsNow() - opened_at_);
+    }
+}
+
 void CSdlMoviePlayer::closeMovie() {
+    if (format_) {
+        log_.print(ELogSubsystem::Frontend,
+                   "movie closed after {:.1f}s: {} frames shown, {} dropped, the slowest "
+                   "present {:.0f}ms",
+                   secondsNow() - opened_at_, frames_presented_, frames_dropped_,
+                   slowest_present_ * kMillisecondsPerSecond);
+    }
+    release();
+}
+
+void CSdlMoviePlayer::release() noexcept {
+    frames_presented_ = 0;
+    frames_dropped_ = 0;
+    slowest_present_ = 0.0;
     audio_.reset();
     resampler_.reset();
     scaler_.reset();

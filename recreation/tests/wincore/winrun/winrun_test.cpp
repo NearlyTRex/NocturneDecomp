@@ -66,15 +66,29 @@ TEST_F(CWinRunTest, GetTimeCountsTicksFromTheCounterReadAtConstruction) {
     EXPECT_EQ(winrun_.getTime(), 65536 * 18);
 }
 
-// A microsecond is 1.18 ticks: each call keeps the whole tick and drops the rest.
-TEST_F(CWinRunTest, GetTimeTruncatesEachStep) {
+// A microsecond is 1.18 ticks: each call counts the whole ticks and carries the rest on.
+TEST_F(CWinRunTest, GetTimeCountsWholeTicksAndCarriesTheFraction) {
     EXPECT_CALL(clock_, getCounter)
         .WillOnce(Return(kStart + 1))
         .WillOnce(Return(kStart + 2))
-        .WillOnce(Return(kStart + 3));
+        .WillOnce(Return(kStart + 3))
+        .WillOnce(Return(kStart + 6));
     EXPECT_EQ(winrun_.getTime(), 1);
     EXPECT_EQ(winrun_.getTime(), 2);
     EXPECT_EQ(winrun_.getTime(), 3);
+    EXPECT_EQ(winrun_.getTime(), 7);
+}
+
+// The original dropped each call's fraction, so a loop reading the clock every microsecond saw
+// it run at 1 tick a microsecond instead of 1.18; over a hundred reads it lost 17 ticks.
+TEST_F(CWinRunTest, ATightLoopLosesNoTime) {
+    std::uint64_t counter = kStart;
+    EXPECT_CALL(clock_, getCounter).WillRepeatedly([&] { return ++counter; });
+    int time = 0;
+    for (int read = 0; read < 100; ++read) {
+        time = winrun_.getTime();
+    }
+    EXPECT_EQ(time, 117);
 }
 
 // About half an hour in, the count passes what an int holds and goes negative, as it did.

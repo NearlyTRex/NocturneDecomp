@@ -54,7 +54,7 @@ void CWinRun::processWindowMessages() {
     }
 }
 
-// The cursor stays visible, Alt+F4 closes the game and the screensaver is the adapter's. A
+// The hidden cursor, Alt+F4 closing the game and the screensaver are the adapter's. A
 // finished movie is seen by playMovie polling the player rather than by a message. Retail
 // ignores the wheel; its notches are counted for the decomp's console scrolling.
 // nocedit 0x005f3150

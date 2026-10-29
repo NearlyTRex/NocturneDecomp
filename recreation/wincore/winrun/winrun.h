@@ -66,6 +66,8 @@ private:
     double timer_calibration_;
     std::uint64_t performance_counter_;
     std::uint32_t accumulated_game_time_ = 0;
+    // The fraction of a tick the last call didn't count.
+    double tick_remainder_ = 0.0;
     std::array<std::uint8_t, kInputCodeCount> keyboard_state_{};
     // Codes released during the current pump, cleared from the state at the next.
     std::array<bool, kInputCodeCount> message_flags_{};

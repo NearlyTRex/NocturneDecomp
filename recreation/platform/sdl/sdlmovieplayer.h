@@ -9,6 +9,7 @@
 #include <deque>
 #include <memory>
 #include <optional>
+#include <string_view>
 #include <vector>
 
 struct AVCodecContext;
@@ -26,7 +27,9 @@ namespace nocturne::platform::sdl {
 // device, as MCI's did. Needs a CSdlContext.
 class CSdlMoviePlayer final : public IMoviePlayer {
 public:
-    explicit CSdlMoviePlayer(IDisplay &display);
+    // The frontend log takes each movie's opening, any present or update that ran long, and
+    // what was shown and dropped, as the decomp's mci_video logged its own.
+    CSdlMoviePlayer(IDisplay &display, ILog &log);
     ~CSdlMoviePlayer() override;
     CSdlMoviePlayer(const CSdlMoviePlayer &) = delete;
     CSdlMoviePlayer &operator=(const CSdlMoviePlayer &) = delete;
@@ -77,7 +80,12 @@ private:
     void receiveAudio();
     void queueFrame(const AVFrame &frame);
 
+    void logSlowStep(std::string_view step, double seconds);
+    // closeMovie without its log line, for the destructor.
+    void release() noexcept;
+
     IDisplay &display_;
+    ILog &log_;
     std::unique_ptr<AVFormatContext, SFormatDeleter> format_;
     std::unique_ptr<AVCodecContext, SCodecDeleter> video_codec_;
     std::unique_ptr<AVCodecContext, SCodecDeleter> audio_codec_;
@@ -100,6 +108,11 @@ private:
     std::vector<std::uint8_t> samples_;
     common::CMovieClock clock_;
     double last_frame_at_ = 0.0;
+    double last_update_at_ = 0.0;
+    double opened_at_ = 0.0;
+    int frames_presented_ = 0;
+    std::size_t frames_dropped_ = 0;
+    double slowest_present_ = 0.0;
     float gain_ = 1.0F;
     bool decoder_finished_ = false;
     bool playing_ = false;

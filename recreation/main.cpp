@@ -147,7 +147,7 @@ private:
     sdl::CSdlNetwork network_;
     sdl::CSdlAudioDevice audio_;
     sdl::CSdlOsFontFactory os_fonts_;
-    sdl::CSdlMoviePlayer movies_{display_};
+    sdl::CSdlMoviePlayer movies_{display_, log_};
     sdl::CSdlEnvironment environment_;
     engine::CDosIo dosio_{file_system_};
     core::CDemonPod pod_{file_system_, dosio_};
