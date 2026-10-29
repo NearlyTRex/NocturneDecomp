@@ -1,8 +1,10 @@
 #pragma once
 
+#include "common/video/framerate.h"
 #include "engine/fwd.h"
 #include "engine/screendevice.h"
 #include "platform/fwd.h"
+#include "platform/lograte.h"
 #include "wincore/fwd.h"
 
 #include <array>
@@ -21,8 +23,10 @@ public:
     // The tallest mode the resolution list offers.
     static constexpr std::size_t kMaxScanlines = 1200;
 
+    // The clock times the frames for the render log's frame rate.
     CWddVMem(platform::IDisplay &display, platform::IRenderer &renderer, CWinRun &winrun,
-             engine::CSpecial &special, engine::C2d &two_d);
+             engine::CSpecial &special, engine::C2d &two_d, platform::IClock &clock,
+             platform::ILog &log);
 
     // The buffers take the current mode's size; the arguments are not read.
     int initializeGraphicsSystem(int width, int height) override;
@@ -51,6 +55,7 @@ public:
 
 private:
     [[nodiscard]] std::size_t getRowBytes() const;
+    void logFrameRate();
     void allocateRenderBuffers();
     void initializeScanlinePointers();
     void analyzePixelFormat();
@@ -61,6 +66,10 @@ private:
     CWinRun &winrun_;
     engine::CSpecial &special_;
     engine::C2d &two_d_;
+    platform::IClock &clock_;
+    platform::ILog &log_;
+    platform::CLogRate present_rate_{4, 300};
+    common::CFrameRateMeter frame_rate_;
     int window_width_ = 320;
     int window_height_ = 200;
     int bits_per_pixel_ = 8;

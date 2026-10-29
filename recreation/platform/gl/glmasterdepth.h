@@ -1,5 +1,6 @@
 #pragma once
 
+#include "platform/fwd.h"
 #include "platform/gl/glapi.h"
 
 #include <array>
@@ -22,7 +23,7 @@ public:
     // fewer.
     static constexpr int kSlots = 8;
 
-    explicit CGlMasterDepth(const SGlApi &gl);
+    CGlMasterDepth(const SGlApi &gl, ILog &log);
     ~CGlMasterDepth();
     CGlMasterDepth(const CGlMasterDepth &) = delete;
     CGlMasterDepth &operator=(const CGlMasterDepth &) = delete;
@@ -46,6 +47,7 @@ private:
     void destroy(SSlot &slot) const;
 
     const SGlApi &gl_;
+    ILog &log_;
     std::array<SSlot, kSlots> slots_{};
 };
 

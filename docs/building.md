@@ -22,12 +22,15 @@ The source recreation under `recreation/` is a separate CMake project with its o
 builds with LLVM 23's clang and libc++ (`clang++-23`, from apt.llvm.org; JoyBox's `llvm` bootstrap
 component installs it), which its presets select and its configure insists on; the release is
 `NOCTURNE_LLVM_VERSION` in `recreation/CMakePresets.json`. It builds the `game` preset into
-`build/recreation/game` and runs the executable from the repo root:
+`build/recreation/game` and runs the executable from the repo root. `game` is optimized with
+debug info, the playable build; `--debug` takes `game-debug`, at `-O0` but for the hot rendering
+paths, which build at `-O2` in any Debug build as the decomp's lanes keep theirs:
 
 ```sh
-./recreation.sh          # build, then run
-./recreation.sh build    # build only
-./recreation.sh run      # run the last build
+./recreation.sh            # build, then run
+./recreation.sh build      # build only
+./recreation.sh run        # run the last build
+./recreation.sh --debug    # the same on game-debug
 ```
 
 ## Presets

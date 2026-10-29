@@ -4,6 +4,8 @@
 
 namespace nocturne::platform {
 
+class CFileLog;
+class CLogRate;
 class IAudioDevice;
 class IAudioSource;
 class IClipboard;
@@ -13,6 +15,7 @@ class IEnvironment;
 class IFile;
 class IFileSystem;
 class IGamepad;
+class ILog;
 class IMoviePlayer;
 class INetwork;
 class IOsFont;
@@ -40,6 +43,7 @@ enum class EFileMode : std::uint8_t;
 enum class EGamepadAxis : std::uint8_t;
 enum class EGamepadButton : std::uint8_t;
 enum class EGamepadType : std::uint8_t;
+enum class ELogSubsystem : std::uint8_t;
 enum class EMouseButton : std::uint8_t;
 enum class EWindowMode : std::uint8_t;
 enum class EWindowEventType : std::uint8_t;

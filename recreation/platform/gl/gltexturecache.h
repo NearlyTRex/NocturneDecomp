@@ -1,6 +1,7 @@
 #pragma once
 
 #include "common/fwd.h"
+#include "platform/fwd.h"
 #include "platform/gl/glapi.h"
 
 #include <cstddef>
@@ -24,7 +25,7 @@ public:
     // its terminator; asset names share long prefixes, so a shorter compare merges images.
     static constexpr std::size_t kNameLength = 63;
 
-    explicit CGlTextureCache(const SGlApi &gl);
+    CGlTextureCache(const SGlApi &gl, ILog &log);
     ~CGlTextureCache();
     CGlTextureCache(const CGlTextureCache &) = delete;
     CGlTextureCache &operator=(const CGlTextureCache &) = delete;
@@ -56,6 +57,7 @@ private:
     void evictLeastRecentlyUsed();
 
     const SGlApi &gl_;
+    ILog &log_;
     std::map<Key, SEntry> entries_;
     // Textures with a mip chain; an upload replaces the chain with one level.
     std::set<GLuint> chained_;

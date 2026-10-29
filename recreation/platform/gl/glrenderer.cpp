@@ -1,6 +1,7 @@
 #include "platform/gl/glrenderer.h"
 
 #include "platform/gl/gldevice.h"
+#include "platform/log.h"
 
 #include <cstddef>
 #include <stdexcept>
@@ -14,8 +15,8 @@ int result(bool succeeded) {
 
 } // namespace
 
-CGlRenderer::CGlRenderer(const SGlApi &gl, IGlFramePresenter &presenter)
-    : gl_(gl), presenter_(presenter) {}
+CGlRenderer::CGlRenderer(const SGlApi &gl, IGlFramePresenter &presenter, ILog &log)
+    : gl_(gl), presenter_(presenter), log_(log) {}
 
 CGlRenderer::~CGlRenderer() = default;
 
@@ -28,11 +29,13 @@ int CGlRenderer::init(CExternalRendererBridge *bridge) {
         return 1;
     }
     try {
-        device_ = std::make_unique<CGlDevice>(gl_, presenter_);
-    } catch (const std::runtime_error &) {
+        device_ = std::make_unique<CGlDevice>(gl_, presenter_, log_);
+    } catch (const std::runtime_error &error) {
+        log_.print(ELogSubsystem::Render, "the hardware renderer could not open: {}", error.what());
         return 0;
     }
     device_->getPipeline().setFogColor(fog_colour_[0], fog_colour_[1], fog_colour_[2]);
+    log_.print(ELogSubsystem::Render, "the hardware renderer is open");
     return 1;
 }
 

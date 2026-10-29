@@ -1,6 +1,7 @@
 #include "platform/gl/gltexturecache.h"
 
 #include "common/render/renderstate.h"
+#include "platform/log.h"
 
 #include <algorithm>
 #include <array>
@@ -19,7 +20,7 @@ GLint toGl(common::ETextureFilter filter) {
 
 } // namespace
 
-CGlTextureCache::CGlTextureCache(const SGlApi &gl) : gl_(gl) {}
+CGlTextureCache::CGlTextureCache(const SGlApi &gl, ILog &log) : gl_(gl), log_(log) {}
 
 CGlTextureCache::~CGlTextureCache() {
     release();
@@ -76,6 +77,8 @@ void CGlTextureCache::bind(GLuint texture, const common::SPipelineState &state, 
         gl_.TexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAX_LEVEL, kAllLevels);
         gl_.GenerateMipmap(GL_TEXTURE_2D);
         chained_.insert(texture);
+        log_.print(ELogSubsystem::Render, "built a mip chain for the reflection (texture {})",
+                   texture);
     }
     // Only a texture with a chain filters across levels; with one level the minification
     // filter is the magnification filter, as the engine's own renderer samples.

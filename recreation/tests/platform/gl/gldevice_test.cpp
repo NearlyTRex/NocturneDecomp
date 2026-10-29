@@ -1,6 +1,7 @@
 #include "platform/gl/gldevice.h"
 #include "tests/mocks/platform/glrecorder.h"
 #include "tests/mocks/platform/mockglframepresenter.h"
+#include "tests/mocks/platform/mocklog.h"
 
 #include <gmock/gmock.h>
 #include <gtest/gtest.h>
@@ -21,7 +22,8 @@ constexpr GLuint kSceneFramebuffer = 15;
 struct SFixture {
     CGlRecorder gl;
     StrictMock<MockGlFramePresenter> presenter;
-    CGlDevice device{gl.getApi(), presenter};
+    ::testing::NiceMock<MockLog> log;
+    CGlDevice device{gl.getApi(), presenter, log};
     std::vector<void *> scanlines = std::vector<void *>(480);
 };
 
@@ -56,6 +58,23 @@ TEST(CGlDevice, AModePointsTheEnginesRowsAtTheFrame) {
     }
 }
 
+// The decomp's trigl_device lines; a mode set again unchanged keeps the textures.
+TEST(CGlDevice, EachModeIsLogged) {
+    SFixture f;
+    const ::testing::InSequence order;
+    EXPECT_CALL(f.log, write(ELogSubsystem::Render,
+                             ::testing::EndsWith("] 640x480 at 8 bits per pixel is no mode this "
+                                                 "renderer has")));
+    EXPECT_CALL(f.log, write(ELogSubsystem::Render,
+                             ::testing::EndsWith("] mode 640x480 at 16 bits per pixel, textures "
+                                                 "dropped")));
+    EXPECT_CALL(f.log, write(ELogSubsystem::Render,
+                             ::testing::EndsWith("] mode 640x480 at 16 bits per pixel")));
+    EXPECT_FALSE(f.device.setMode(640, 480, 8, f.scanlines));
+    ASSERT_TRUE(f.device.setMode(640, 480, 16, f.scanlines));
+    ASSERT_TRUE(f.device.setMode(640, 480, 16, f.scanlines));
+}
+
 TEST(CGlDevice, TheEnginesArrayIsNeverWrittenPastItsEnd) {
     SFixture f;
     std::vector<void *> short_array(10);
@@ -73,6 +92,8 @@ TEST(CGlDevice, ATargetGlCannotCompleteLeavesNoMode) {
     ASSERT_TRUE(f.device.beginScene());
     addTriangle(f.device);
     f.gl.framebuffer_status = GL_FRAMEBUFFER_UNSUPPORTED;
+    EXPECT_CALL(f.log,
+                write(ELogSubsystem::Render, ::testing::EndsWith("] no scene target at 800x600")));
     EXPECT_FALSE(f.device.setMode(800, 600, 16, f.scanlines));
     EXPECT_EQ(f.device.getBitsPerPixel(), 0);
     EXPECT_FALSE(f.device.isInScene());

@@ -3,9 +3,11 @@
 #include "common/video/framebuffer.h"
 #include "common/video/presentation.h"
 #include "platform/display.h"
+#include "platform/fwd.h"
 #include "platform/gl/glapi.h"
 #include "platform/gl/glframepresenter.h"
 #include "platform/gl/glquad.h"
+#include "platform/lograte.h"
 
 #include <memory>
 
@@ -20,7 +22,7 @@ class CSdlWindow;
 // is drawn the same way from the renderer's scene.
 class CSdlDisplay final : public IDisplay, public gl::IGlFramePresenter {
 public:
-    explicit CSdlDisplay(CSdlWindow &window);
+    CSdlDisplay(CSdlWindow &window, ILog &log);
     ~CSdlDisplay() override;
     CSdlDisplay(const CSdlDisplay &) = delete;
     CSdlDisplay &operator=(const CSdlDisplay &) = delete;
@@ -45,6 +47,8 @@ private:
     void drawFrame(GLuint texture, common::SExtent frame, gl::EQuadRows rows);
 
     CSdlWindow &window_;
+    ILog &log_;
+    CLogRate unconverted_rate_{4, 300};
     std::unique_ptr<SDL_GLContextState, SContextDeleter> context_;
     gl::SGlApi gl_;
     // Built once the context is current.

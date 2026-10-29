@@ -1,6 +1,7 @@
 #include "platform/gl/gldevice.h"
 
 #include "platform/gl/glframepresenter.h"
+#include "platform/log.h"
 
 #include <algorithm>
 #include <optional>
@@ -18,13 +19,15 @@ std::vector<void *> makeRows(std::vector<std::byte> &pixels, int pitch, int heig
 
 } // namespace
 
-CGlDevice::CGlDevice(const SGlApi &gl, IGlFramePresenter &presenter)
-    : gl_(gl), presenter_(presenter), quad_(gl), pipeline_(gl), textures_(gl), scene_(gl, quad_),
-      depth_(gl), batch_(kBatchVertices, kBatchIndices) {}
+CGlDevice::CGlDevice(const SGlApi &gl, IGlFramePresenter &presenter, ILog &log)
+    : gl_(gl), presenter_(presenter), log_(log), quad_(gl), pipeline_(gl), textures_(gl, log),
+      scene_(gl, quad_), depth_(gl, log), batch_(kBatchVertices, kBatchIndices) {}
 
 bool CGlDevice::setMode(int width, int height, int bits_per_pixel, std::span<void *> scanlines) {
     const std::optional<common::EPixelLayout> layout = common::layoutForDepth(bits_per_pixel);
     if (!layout || *layout == common::EPixelLayout::Indexed8 || width <= 0 || height <= 0) {
+        log_.print(ELogSubsystem::Render, "{}x{} at {} bits per pixel is no mode this renderer has",
+                   width, height, bits_per_pixel);
         return false;
     }
     if (!scene_.resize(width, height)) {
@@ -33,6 +36,7 @@ bool CGlDevice::setMode(int width, int height, int bits_per_pixel, std::span<voi
         in_scene_ = false;
         frame_locked_ = false;
         batch_.reset();
+        log_.print(ELogSubsystem::Render, "no scene target at {}x{}", width, height);
         return false;
     }
     // A new target was cleared with depth writes on.
@@ -59,6 +63,8 @@ bool CGlDevice::setMode(int width, int height, int bits_per_pixel, std::span<voi
     if (moved) {
         textures_.release();
     }
+    log_.print(ELogSubsystem::Render, "mode {}x{} at {} bits per pixel{}", width, height,
+               bits_per_pixel, moved ? ", textures dropped" : "");
     return true;
 }
 

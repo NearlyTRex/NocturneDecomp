@@ -29,7 +29,16 @@
     },
     {
       "name": "game",
-      "displayName": "Recreation with the SDL adapters and the nocturne executable",
+      "displayName": "Recreation with the SDL adapters and the nocturne executable, optimized",
+      "inherits": "default",
+      "cacheVariables": {
+        "NOCTURNE_RECREATION_GAME": "ON",
+        "CMAKE_BUILD_TYPE": "RelWithDebInfo"
+      }
+    },
+    {
+      "name": "game-debug",
+      "displayName": "The game at -O0 but for its hot rendering paths, for stepping through",
       "inherits": "default",
       "cacheVariables": {
         "NOCTURNE_RECREATION_GAME": "ON"
@@ -48,6 +57,7 @@
     { "name": "default", "configurePreset": "default" },
     { "name": "coverage", "configurePreset": "coverage" },
     { "name": "game", "configurePreset": "game" },
+    { "name": "game-debug", "configurePreset": "game-debug" },
     { "name": "ci", "configurePreset": "ci" }
   ],
   "testPresets": [

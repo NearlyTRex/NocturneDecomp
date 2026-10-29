@@ -53,6 +53,26 @@ foreach(_module IN LISTS NOCTURNE_RECREATION_MODULES)
     list(APPEND _headers ${_module_headers})
 endforeach()
 
+# The software renderer's per-pixel and per-polygon loops, the frame's conversion and the
+# hardware renderer: at a Debug build's -O0 they hold the frame rate to a crawl, so they build
+# at -O2 there, as the decomp's game_modules.cmake builds its own, and the rest stays
+# debuggable.
+set(_hot_paths
+    "/engine/(2d|3d|clipper|drender|font|matrix|prim|special|zraster)/"
+    "/engine/rasteredges\\.cpp$" "/common/(render|video)/" "/platform/(gl|sdl)/")
+string(JOIN "|" _hot_regex ${_hot_paths})
+function(nocturne_optimize_hot_paths)
+    if(NOT CMAKE_BUILD_TYPE STREQUAL "Debug")
+        return()
+    endif()
+    foreach(_source IN LISTS ARGN)
+        if(_source MATCHES "${_hot_regex}")
+            set_source_files_properties("${_source}" PROPERTIES COMPILE_OPTIONS -O2)
+        endif()
+    endforeach()
+endfunction()
+nocturne_optimize_hot_paths(${_sources})
+
 include(FetchContent)
 
 include(cmake/khronos.cmake)
@@ -159,6 +179,7 @@ if(NOCTURNE_RECREATION_GAME)
     include(cmake/ffmpeg.cmake)
 
     file(GLOB _sdl_sources CONFIGURE_DEPENDS "platform/sdl/*.cpp")
+    nocturne_optimize_hot_paths(${_sdl_sources})
     add_library(nocturne_platform_sdl STATIC ${_sdl_sources})
     target_link_libraries(nocturne_platform_sdl
         PUBLIC nocturne_recreation

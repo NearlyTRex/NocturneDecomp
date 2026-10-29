@@ -38,6 +38,7 @@
 #include "engine/texture/currenttexture.h"
 #include "engine/texture/texture.h"
 #include "engine/zraster/zraster.h"
+#include "platform/filelog.h"
 #include "platform/gl/glrenderer.h"
 #include "platform/rendervertex.h"
 #include "platform/sdl/sdlaudiodevice.h"
@@ -136,10 +137,11 @@ private:
     sdl::CSdlFileSystem &file_system_;
     sdl::CSdlClock &clock_;
     wincore::CWinRun &winrun_;
-    sdl::CSdlDisplay display_{window_};
+    nocturne::platform::CFileLog log_{file_system_};
+    sdl::CSdlDisplay display_{window_, log_};
     // Declared after the display, so it is gone before the context it draws in. The engine calls
     // init, with its bridge, only when the INI turns acceleration on.
-    nocturne::platform::gl::CGlRenderer renderer_{display_.getGlApi(), display_};
+    nocturne::platform::gl::CGlRenderer renderer_{display_.getGlApi(), display_, log_};
     sdl::CSdlGamepad gamepad_;
     sdl::CSdlClipboard clipboard_;
     sdl::CSdlNetwork network_;
@@ -149,7 +151,7 @@ private:
     sdl::CSdlEnvironment environment_;
     engine::CDosIo dosio_{file_system_};
     core::CDemonPod pod_{file_system_, dosio_};
-    wincore::CWddVMem screen_{display_, renderer_, winrun_, special_, two_d_};
+    wincore::CWddVMem screen_{display_, renderer_, winrun_, special_, two_d_, clock_, log_};
     engine::C2d two_d_{dosio_, screen_, winrun_};
     engine::CLight light_;
     engine::CMatrix matrix_{two_d_, light_};

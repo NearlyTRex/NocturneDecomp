@@ -44,6 +44,8 @@ TEST(CGlRenderer, NothingNeedingTheDeviceRunsBeforeInit) {
 
 TEST(CGlRenderer, InitOpensTheDeviceOnce) {
     SRendererFixture f;
+    EXPECT_CALL(f.log, write(ELogSubsystem::Render,
+                             ::testing::EndsWith("] the hardware renderer is open")));
     EXPECT_EQ(f.renderer.init(nullptr), 1);
     const std::size_t programs = f.gl.count("CreateProgram");
     EXPECT_GT(programs, 0U);
@@ -54,6 +56,10 @@ TEST(CGlRenderer, InitOpensTheDeviceOnce) {
 TEST(CGlRenderer, InitFailsWhenTheProgramDoesNotBuild) {
     SRendererFixture f;
     f.gl.link_fails = true;
+    EXPECT_CALL(f.log, write).Times(::testing::AnyNumber());
+    EXPECT_CALL(f.log, write(ELogSubsystem::Render,
+                             ::testing::HasSubstr("the hardware renderer could not open: program "
+                                                  "did not link")));
     EXPECT_EQ(f.renderer.init(nullptr), 0);
     EXPECT_EQ(f.renderer.beginScene(), 0);
     f.gl.link_fails = false;
