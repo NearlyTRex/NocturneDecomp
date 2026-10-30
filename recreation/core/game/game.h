@@ -117,6 +117,8 @@ public:
     float time_scale_factor = 1.0F;
     // Set while a sim frame runs, when the game's random draws come off the sim stream.
     int is_processing = 0;
+    // Set while a saved game loads, whose script is then not checked again.
+    bool is_loading = false;
 
 private:
     void seedCalibration();

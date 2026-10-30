@@ -117,8 +117,9 @@ public:
     void setGamma(int gamma);
     void setCameraAmbientValue(int index, float value);
     void setCameraAmbientValueByGroup(int group_id, float value);
-    void setCameraEnabled(int camera_index, int enabled);
-    void setCameraEnabledByGroup(int group_id, int enabled);
+    void setCameraEnabled(std::size_t camera_index, bool enabled);
+    // Every camera of the group.
+    void setCameraEnabledByGroup(int group_id, bool enabled);
     // The spotlight of that name, compared ignoring case, and its place among the set's
     // spotlights, which is its master light's.
     [[nodiscard]] std::optional<SSpotlight> addLightFilter(std::string_view light_name) const;
@@ -189,6 +190,7 @@ public:
     [[nodiscard]] std::span<CDemonActor *const> getActors() const;
     void setActors(std::vector<CDemonActor *> actors);
     [[nodiscard]] std::span<const C3DSCamera> getCameras() const;
+    [[nodiscard]] std::span<C3DSCamera> getCameras();
     [[nodiscard]] int getDefaultRoomSize() const;
     [[nodiscard]] std::span<const SRoom> getRooms() const;
     [[nodiscard]] int getDefaultGroundType() const;

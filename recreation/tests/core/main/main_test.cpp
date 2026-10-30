@@ -3,6 +3,7 @@
 #include "core/actor/actor.h"
 #include "core/dfilter/demonfilter.h"
 #include "core/dfont/dfont.h"
+#include "core/event/eventlist.h"
 #include "core/game/game.h"
 #include "core/inivar/inivar.h"
 #include "core/level/levelloader.h"
@@ -11,6 +12,7 @@
 #include "core/menu/menu.h"
 #include "core/mission/demonmission.h"
 #include "core/netgame/netgame.h"
+#include "core/script/script.h"
 #include "core/set/demonset.h"
 #include "core/sound/sound.h"
 #include "core/xform/xform.h"
@@ -269,7 +271,16 @@ protected:
                             .set = set_,
                             .textures = texture_,
                             .editor_tools = editor_tools_,
-                            .pick_list = pick_list_owners_}};
+                            .pick_list = pick_list_owners_,
+                            .script = script_,
+                            .events = events_}};
+    CEventList events_{
+        {.mission = mission_, .actor = actor_, .set = set_, .dosio = dosio_, .console = console_}};
+    CScript script_{{.dosio = dosio_,
+                     .editor_tools = editor_tools_,
+                     .mission = mission_,
+                     .events = events_,
+                     .set = set_}};
     std::vector<std::string> movies_;
     SGameSystemOwners owners_{.ini = ini_,
                               .file_system = file_system_,

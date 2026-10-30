@@ -21,8 +21,8 @@
 namespace nocturne::core {
 
 // What a mission reads its file with, makes its actors from, draws the C library's random numbers
-// from, shows its loading on, asks about a missing hero with, picks its hero by, and loads its
-// sets into.
+// from, shows its loading on, asks about a missing hero with, picks its hero by, loads its sets
+// into, and starts its script and events with.
 struct SMissionOwners {
     const engine::CDosIo &dosio;
     const support::CNewMsg &messages;
@@ -34,6 +34,8 @@ struct SMissionOwners {
     engine::CTexture &textures;
     shape::CEditorTools &editor_tools;
     const shape::SPickListOwners &pick_list;
+    CScript &script;
+    CEventList &events;
 };
 
 // The mission: its file, and the actors it places, in the order its file lists them.
@@ -91,7 +93,11 @@ public:
     // Names the actor after its class, without the leading 'C', and one more than the highest
     // number following that in any actor's name, counting on past names already taken.
     void generateActorName(CDemonActor &actor) const;
-    int startMission();
+    // Sets the actors up, loads the set the hero is in, then loads the mission's script and runs
+    // its initSection. False, after an error box, with no hero, or when the script won't load.
+    [[nodiscard]] bool startMission();
+    // world\<mission name>.scr, checked unless a saved game is being loaded.
+    [[nodiscard]] bool loadScript(bool is_loading);
     // Loads the set of that number, unless it is loaded already, gives it the actors in it, and
     // sets every actor up the first time a set loads. A set the mission doesn't name is fatal.
     void loadSet(int set_index);

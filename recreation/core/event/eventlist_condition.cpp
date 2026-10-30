@@ -4,6 +4,7 @@
 #include "common/text/scanformat.h"
 #include "core/actor/actor.h"
 #include "core/actor/demonactor.h"
+#include "core/actor/notported.h"
 #include "core/charactr/character.h"
 #include "core/event/eventchecks.h"
 #include "core/event/eventlist.h"
@@ -11,6 +12,7 @@
 #include "core/hero/hero.h"
 #include "core/script/script_functions.h"
 #include "core/set/demonset.h"
+#include "engine/console/console.h"
 
 #include <algorithm>
 #include <array>
@@ -374,61 +376,81 @@ constexpr std::array kMetaFunctions{
 
 } // namespace
 
-// deferred: evaluating the condition while running, printing an error to the console, with
-//   evaluateCondition
+// nocedit 0x004adca0
+bool CEventList::evaluateCondition(std::string_view condition_expression) {
+    condition_expression = condition_expression.substr(0, condition_expression.find('\0'));
+    if (condition_expression.empty() ||
+        common::equalsIgnoringAsciiCase(condition_expression, "none")) {
+        return false;
+    }
+    const ValueResult value = evaluateExpression(condition_expression);
+    if (!value) {
+        owners_.console.printf(std::format("{}\n", value.error()));
+        return false;
+    }
+    return *value;
+}
+
 // nocedit 0x004add00
 Result CEventList::validateCondition(std::string_view expression) {
     expression = expression.substr(0, expression.find('\0'));
     if (expression.empty()) {
         return {};
     }
-    return evaluateExpression(expression);
-}
-
-// nocedit 0x004add80
-Result CEventList::evaluateExpression(std::string_view expression) {
-    std::size_t position = 0;
-    if (Result evaluated = evaluateLogicalExpr(expression, position); !evaluated) {
-        return evaluated;
-    }
-    if (position < expression.size()) {
-        return std::unexpected("Syntax error");
+    dry_run_ = true;
+    const ValueResult value = evaluateExpression(expression);
+    dry_run_ = false;
+    if (!value) {
+        return std::unexpected(value.error());
     }
     return {};
 }
 
-// Atoms joined by "|" or "&", either doubled or not, every one evaluated.
-// deferred: the value of the atoms joined, with evaluateCondition
-// nocedit 0x004b0270
-Result CEventList::evaluateLogicalExpr(std::string_view expression, std::size_t &position) {
-    if (Result first = evaluateAtom(expression, position); !first) {
-        return first;
+// nocedit 0x004add80
+CEventList::ValueResult CEventList::evaluateExpression(std::string_view expression) {
+    std::size_t position = 0;
+    const ValueResult value = evaluateLogicalExpr(expression, position);
+    if (value && position < expression.size()) {
+        return std::unexpected("Syntax error");
     }
-    while (true) {
+    return value;
+}
+
+// Atoms joined by "|" or "&", either doubled or not, every one evaluated, each joined to the
+// value so far from left to right, neither binding tighter.
+// nocedit 0x004b0270
+CEventList::ValueResult CEventList::evaluateLogicalExpr(std::string_view expression,
+                                                        std::size_t &position) {
+    ValueResult value = evaluateAtom(expression, position);
+    while (value) {
         const char op = charAt(expression, position);
         if (op != '|' && op != '&') {
-            return {};
+            return value;
         }
         ++position;
         if (charAt(expression, position) == op) {
             ++position;
         }
-        if (Result next = evaluateAtom(expression, position); !next) {
+        const ValueResult next = evaluateAtom(expression, position);
+        if (!next) {
             return next;
         }
+        value = op == '|' ? (*value || *next) : (*value && *next);
     }
+    return value;
 }
 
 // A parenthesised expression, "!" before an atom, a function of the table's, or a flag's name.
 // A '.' before any of them is passed over.
-// deferred: each atom's value: a flag, event or timer by its name, the counters a cmp compares,
+// deferred: the functions' values while a condition is evaluated: the counters a cmp compares,
 //   the heroes' items and keys, the actors' state, the camera, the fade, the nudity setting and
-//   the event sounds, with evaluateCondition
+//   the event sounds, with the game state each reads
 // deferred: hasItem and hasKeyMask asking every hero in a network game, isCurrentCamera asking
 //   the network camera, and isWearingGasMask holding for the hero the gas room spares, with
 //   CNetGame's sessions
 // nocedit 0x004ae140
-Result CEventList::evaluateAtom(std::string_view expression, std::size_t &position) {
+CEventList::ValueResult CEventList::evaluateAtom(std::string_view expression,
+                                                 std::size_t &position) {
     skipSpaces(expression, position);
     if (charAt(expression, position) == '.') {
         ++position;
@@ -439,7 +461,8 @@ Result CEventList::evaluateAtom(std::string_view expression, std::size_t &positi
     }
     if (first == '(') {
         ++position;
-        if (Result inner = evaluateLogicalExpr(expression, position); !inner) {
+        const ValueResult inner = evaluateLogicalExpr(expression, position);
+        if (!inner) {
             return inner;
         }
         if (charAt(expression, position) != ')') {
@@ -447,11 +470,12 @@ Result CEventList::evaluateAtom(std::string_view expression, std::size_t &positi
         }
         ++position;
         skipSpaces(expression, position);
-        return {};
+        return inner;
     }
     if (first == '!') {
         ++position;
-        return evaluateAtom(expression, position);
+        const ValueResult operand = evaluateAtom(expression, position);
+        return operand ? ValueResult(!*operand) : operand;
     }
     if (!isValidIdentifierChar(first)) {
         return std::unexpected("Syntax error");
@@ -461,21 +485,33 @@ Result CEventList::evaluateAtom(std::string_view expression, std::size_t &positi
         ++position;
     }
     const std::string_view name = expression.substr(start, position - start);
-    if (charAt(expression, position) == '(') {
-        const auto *function = std::ranges::find_if(kMetaFunctions, [name](const SMetaFunction &f) {
-            return common::equalsIgnoringAsciiCase(f.name, name);
-        });
-        if (function == kMetaFunctions.end()) {
-            return std::unexpected("Invalid meta-function");
-        }
-        std::string_view rest = expression.substr(position);
-        if (Result checked = function->check(SCheckContext{owners_, *this}, rest); !checked) {
-            return checked;
-        }
-        position = expression.size() - rest.size();
+    if (charAt(expression, position) != '(') {
+        skipSpaces(expression, position);
+        return resolveVariable(name);
     }
+    const auto *function = std::ranges::find_if(kMetaFunctions, [name](const SMetaFunction &f) {
+        return common::equalsIgnoringAsciiCase(f.name, name);
+    });
+    if (function == kMetaFunctions.end()) {
+        return std::unexpected("Invalid meta-function");
+    }
+    std::string_view rest = expression.substr(position);
+    if (Result checked = function->check(SCheckContext{owners_, *this}, rest); !checked) {
+        return std::unexpected(checked.error());
+    }
+    if (!dry_run_) {
+        quitNotPorted("CEventList", std::format("evaluateAtom's {} function", function->name));
+    }
+    position = expression.size() - rest.size();
     skipSpaces(expression, position);
-    return {};
+    return false;
+}
+
+// deferred: a raised event, a persistent event, a game flag or a timer of that name holding,
+//   with raise, flagOn, gameFlagOn and setTimer
+// nocedit 0x004adc10
+bool CEventList::resolveVariable(std::string_view identifier) {
+    return common::equalsIgnoringAsciiCase(identifier, "TRUE");
 }
 
 } // namespace nocturne::core

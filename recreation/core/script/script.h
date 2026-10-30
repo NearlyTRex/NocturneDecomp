@@ -16,14 +16,14 @@
 namespace nocturne::core {
 
 // What a script reads its files with, reports a bad file through, finds the actors its commands
-// name in, checks its conditions and event commands with, and finds the set's lights and
-// cameras in.
+// name in, checks and evaluates its conditions and event commands with, and finds and changes
+// the set's lights and cameras in.
 struct SScriptOwners {
     const engine::CDosIo &dosio;
     shape::CEditorTools &editor_tools;
     const CDemonMission &mission;
     CEventList &events;
-    const CDemonSet &set;
+    CDemonSet &set;
 };
 
 // A line of the script that holds something, trimmed, and its line in the file, from 1.
@@ -54,6 +54,8 @@ struct SScriptStatement {
     std::string_view command;
     std::string_view rest;
     int line_number = 0;
+    // Set while the script runs, when a check that passes also does what the command says.
+    bool running = false;
     const SScriptOwners &owners;
 };
 
@@ -79,6 +81,9 @@ public:
     // false when the file isn't text.
     [[nodiscard]] bool loadScript(std::string_view filename, bool skip_validation);
     void initRuntime();
+    // Runs the commands from the label initSection to the label initSectionEnd, if there is an
+    // initSection, then goes back to where the script was. A command that fails is fatal, as is
+    // an initSection without its end or one that runs 10000 steps.
     void executeInitSection();
     void setSpeaker(CDemonActor *actor);
     void resetDialogState();
@@ -92,9 +97,11 @@ public:
 private:
     using SStatement = SScriptStatement;
     using CommandCheck = CommandResult (*)(CScript &script, SStatement &statement);
+    // Running a command whose running isn't ported yet quits.
     struct SCommand {
         std::string_view name;
         CommandCheck check;
+        bool runs = false;
     };
     // Where a syntax error is and what it is.
     struct SSyntaxError {
@@ -115,6 +122,7 @@ private:
 
     [[nodiscard]] std::optional<SSyntaxError> validateSyntax();
     [[nodiscard]] CommandResult step();
+    [[nodiscard]] CommandResult stepCommand(SStatement &statement, std::string_view word);
     [[nodiscard]] CommandResult checkLabel(std::size_t index, const SStatement &statement) const;
     [[nodiscard]] std::optional<std::size_t> findLabelIndex(std::string_view label_name) const;
     [[nodiscard]] std::optional<std::size_t> skipCommands(std::size_t start) const;
@@ -130,6 +138,8 @@ private:
     std::vector<SScriptLine> parsed_lines_;
     std::vector<SDialogEntry> dialog_entries_;
     std::size_t next_cmd_ = 0;
+    // Set while the script's syntax is checked rather than its commands run.
+    bool checking_ = false;
     // syntaxCheckOff: the check passes over commands until syntaxCheckOn.
     bool checks_suspended_ = false;
 };

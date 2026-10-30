@@ -95,10 +95,10 @@ TEST(CDemonSet, PublicInterface) {
                                  void (CDemonSet::*)(int, float)>);
     static_assert(std::is_same_v<decltype(&CDemonSet::setCameraAmbientValueByGroup),
                                  void (CDemonSet::*)(int, float)>);
-    static_assert(
-        std::is_same_v<decltype(&CDemonSet::setCameraEnabled), void (CDemonSet::*)(int, int)>);
+    static_assert(std::is_same_v<decltype(&CDemonSet::setCameraEnabled),
+                                 void (CDemonSet::*)(std::size_t, bool)>);
     static_assert(std::is_same_v<decltype(&CDemonSet::setCameraEnabledByGroup),
-                                 void (CDemonSet::*)(int, int)>);
+                                 void (CDemonSet::*)(int, bool)>);
     static_assert(std::is_same_v<decltype(&CDemonSet::initCameraShake),
                                  void (CDemonSet::*)(float, float, float, float)>);
     static_assert(std::is_same_v<decltype(&CDemonSet::buildActorTypeLists), void (CDemonSet::*)()>);

@@ -12,6 +12,7 @@
 #include "tests/mocks/core/gameparts.h"
 #include "tests/mocks/core/missionfixture.h"
 #include "tests/mocks/core/mockloadingscreen.h"
+#include "tests/mocks/core/setfilefixture.h"
 
 #include <gmock/gmock.h>
 #include <gtest/gtest.h>
@@ -42,22 +43,24 @@ constexpr EInputCodeType kEnd = EInputCodeType::DIK_END;
 constexpr EInputCodeType kEscape = EInputCodeType::DIK_ESCAPE;
 constexpr EInputCodeType kReturn = EInputCodeType::DIK_RETURN;
 
-// A mission of that name whose one actor is the place for the first hero.
+// A mission of that name in the set first.set, whose one actor is the place for the first hero.
 std::string heroMission(std::string_view name) {
-    return std::format("; mission\n7,4\n; name\n{}\n; sets\n1\nSET1\n; types\n0\n; actors\n1\n"
+    return std::format("; mission\n7,4\n; name\n{}\n; sets\n1\nfirst.set\n; types\n0\n; actors\n1\n"
                        "; carried\n0\n; list\nCHeroPlaceholder \"Start\"\n; bodies\n"
-                       "{{ CHeroPlaceholder \"Start\"\n1,0,0,0\n0,0,0\n0\n0\n}} "
+                       "{{ CHeroPlaceholder \"Start\"\n0,0,0,0\n0,0,0\n0\n0\n}} "
                        "CHeroPlaceholder \"Start\"\n",
                        name);
 }
 
 // Every mission in world, each named after its file, in a whole install, with nocturne.ini's
 // Game section as each test gives it. Each key a test gives is pressed once the one before it
-// has been taken.
+// has been taken; a prompt is answered at once.
 class CChapterSelectTest : public CMissionFixture {
 protected:
     CChapterSelectTest() {
         givenFile("enemy.pod", "");
+        givenFile("models\\first.set", SSetFile{}.text());
+        ON_CALL(raw_input_, getNextKeypress(_)).WillByDefault(Return('x'));
         for (const char *mission :
              {"hq-act1", "gtown",    "forest",  "castle1",  "dungeon",  "train",    "town",
               "mine",    "trans",    "temple",  "town2",    "hq-act2b", "hq-act3",  "chicago1",
@@ -109,11 +112,11 @@ protected:
         chapter_game_.showChapterSelect(owners_, mode);
     }
 
-    // As choose, where the mission chosen has its heroes made and then can't be started yet.
+    // As choose, where the mission chosen is started, which stops at the hero's setup, the first
+    // thing starting a mission does that isn't ported yet.
     void chooseToStart(EChapterSelectMode mode, std::initializer_list<EInputCodeType> keys) {
-        EXPECT_THAT([&] { choose(mode, keys); },
-                    ThrowsMessage<common::CFatalError>(
-                        StrEq("CDemonMission::startMission is not ported yet")));
+        EXPECT_THAT([&] { choose(mode, keys); }, ThrowsMessage<common::CFatalError>(
+                                                     StrEq("CGabriella::setup is not ported yet")));
     }
 
     static std::tm localTime(std::time_t /*timestamp*/) {
@@ -262,7 +265,6 @@ TEST_F(CChapterSelectTest, AMissionWithNoPlaceForTheHeroIsNotStarted) {
     givenFile("world\\hq-act1.msn",
               "; mission\n7,4\n; name\nEmpty\n; sets\n1\nSET1\n; types\n0\n; actors\n0\n"
               "; carried\n0\n; list\n; bodies\n");
-    EXPECT_CALL(raw_input_, getNextKeypress(_)).WillRepeatedly(Return('x'));
     choose(EChapterSelectMode::kStories, {kReturn});
     EXPECT_EQ(mission_.getMissionName(), "Empty");
     EXPECT_EQ(mission_.getHero(0), nullptr);

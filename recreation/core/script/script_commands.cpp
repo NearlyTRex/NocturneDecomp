@@ -6,6 +6,7 @@
 #include "core/script/script.h"
 #include "core/script/script_functions.h"
 #include "core/set/demonset.h"
+#include "core/setutil/3dscamera.h"
 #include "engine/dosio/dosio.h"
 
 #include <algorithm>
@@ -148,8 +149,13 @@ Result checkSetCameraGroup(CScript & /*script*/, SScriptStatement &statement) {
         !scanned) {
         return scanned;
     }
-    if (!statement.owners.set.findCameraByName(trimString(camera))) {
+    const std::optional<std::size_t> index =
+        statement.owners.set.findCameraByName(trimString(camera));
+    if (!index) {
         return std::unexpected(std::format("Camera \"{}\" does not exist.", trimString(camera)));
+    }
+    if (statement.running) {
+        statement.owners.set.getCameras()[*index].setCameraGroup(group);
     }
     return {};
 }
@@ -192,6 +198,11 @@ Result checkEnableCameraGroup(CScript & /*script*/, SScriptStatement &statement)
             "Error parsing enableCameraGroup parms");
         !scanned) {
         return scanned;
+    }
+    if (statement.running) {
+        statement.owners.set.setCameraEnabledByGroup(
+            group, statement.owners.events.evaluateCondition(trimString(condition)));
+        return {};
     }
     return statement.owners.events.validateCondition(trimString(condition));
 }
@@ -328,7 +339,7 @@ const CScript::SCommand *CScript::findCommand(std::string_view name) {
         SCommand{.name = "displayBitmap", .check = &checkEventCommand},
         SCommand{.name = "else", .check = &checkElse},
         SCommand{.name = "enableCamera", .check = &checkEnableCamera},
-        SCommand{.name = "enableCameraGroup", .check = &checkEnableCameraGroup},
+        SCommand{.name = "enableCameraGroup", .check = &checkEnableCameraGroup, .runs = true},
         SCommand{.name = "enableHealthBar", .check = &checkEnableHealthBar},
         SCommand{.name = "end", .check = &checkNothing},
         SCommand{.name = "fadeAmbientSound", .check = &checkEventCommand},
@@ -374,7 +385,7 @@ const CScript::SCommand *CScript::findCommand(std::string_view name) {
         SCommand{.name = "setActorVariable", .check = &checkSetActorVariable},
         SCommand{.name = "setAmbientSound", .check = &checkShortArgument},
         SCommand{.name = "setCameraAmbient", .check = &checkEventCommand},
-        SCommand{.name = "setCameraGroup", .check = &checkSetCameraGroup},
+        SCommand{.name = "setCameraGroup", .check = &checkSetCameraGroup, .runs = true},
         SCommand{.name = "setCharacterHealth", .check = &checkSetCharacterHealth},
         SCommand{.name = "setCounter", .check = &checkEventCommand},
         SCommand{.name = "setFocusActor", .check = &checkSetFocusActor},

@@ -2,6 +2,7 @@
 
 #include <gtest/gtest.h>
 
+#include <string_view>
 #include <type_traits>
 
 namespace nocturne::core {
@@ -20,8 +21,8 @@ TEST(CEventList, PublicInterface) {
     static_assert(std::is_same_v<decltype(&CEventList::process), void (CEventList::*)()>);
     static_assert(
         std::is_same_v<decltype(&CEventList::executeCommands), int (CEventList::*)(char *)>);
-    static_assert(
-        std::is_same_v<decltype(&CEventList::evaluateCondition), int (CEventList::*)(char *)>);
+    static_assert(std::is_same_v<decltype(&CEventList::evaluateCondition),
+                                 bool (CEventList::*)(std::string_view)>);
     static_assert(std::is_same_v<decltype(&CEventList::render), void (CEventList::*)()>);
     static_assert(std::is_same_v<decltype(&CEventList::addOrRemovePersistentEvent),
                                  void (CEventList::*)(char *, int)>);

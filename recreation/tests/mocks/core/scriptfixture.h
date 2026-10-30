@@ -100,13 +100,6 @@ protected:
         givenFile("models\\test.set", file.text());
         set_.load("test.set");
     }
-
-    CEventList events_{{.mission = mission_, .actor = actor_, .set = set_, .dosio = dosio_}};
-    CScript script_{{.dosio = dosio_,
-                     .editor_tools = editor_tools_,
-                     .mission = mission_,
-                     .events = events_,
-                     .set = set_}};
 };
 
 } // namespace nocturne::core

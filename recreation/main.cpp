@@ -8,6 +8,7 @@
 #include "core/dfont/dfont.h"
 #include "core/dmodel/keyframedmodel.h"
 #include "core/dtrace/demonraytrace.h"
+#include "core/event/eventlist.h"
 #include "core/game/chapterselectmode.h"
 #include "core/game/game.h"
 #include "core/ground/ground.h"
@@ -18,6 +19,7 @@
 #include "core/mission/demonmission.h"
 #include "core/netgame/netgame.h"
 #include "core/podmain/demonpod.h"
+#include "core/script/script.h"
 #include "core/set/demonset.h"
 #include "core/sound/sound.h"
 #include "core/terrain/terrain.h"
@@ -338,7 +340,16 @@ private:
                                   .set = set_,
                                   .textures = texture_,
                                   .editor_tools = editor_tools_,
-                                  .pick_list = pick_list_owners_}};
+                                  .pick_list = pick_list_owners_,
+                                  .script = script_,
+                                  .events = events_}};
+    core::CEventList events_{
+        {.mission = mission_, .actor = actor_, .set = set_, .dosio = dosio_, .console = console_}};
+    core::CScript script_{{.dosio = dosio_,
+                           .editor_tools = editor_tools_,
+                           .mission = mission_,
+                           .events = events_,
+                           .set = set_}};
     nocturne::shape::CStrList::LocalTime local_time_ = &toLocalTime;
     nocturne::shape::SFileSelectionOwners file_selection_owners_{.pick_list = pick_list_owners_,
                                                                  .pod = &pod_,

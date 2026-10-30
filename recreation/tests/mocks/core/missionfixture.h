@@ -3,11 +3,14 @@
 #include "common/random/watcomrandom.h"
 #include "core/actor/actor.h"
 #include "core/dfont/dfont.h"
+#include "core/event/eventlist.h"
 #include "core/game/game.h"
 #include "core/level/levelloader.h"
 #include "core/mission/demonmission.h"
+#include "core/script/script.h"
 #include "core/set/demonset.h"
 #include "core/xform/xform.h"
+#include "engine/console/console.h"
 #include "engine/drender/demonrenderer.h"
 #include "engine/prim/prim.h"
 #include "engine/texture/texture.h"
@@ -26,7 +29,7 @@
 namespace nocturne::core {
 
 // A mission over the pick list fixture, with the actor classes ported so far, a loading screen
-// that hasn't been shown, and files on disk under world.
+// that hasn't been shown, files on disk under world, and the script and events it starts.
 class CMissionFixture : public shape::CPickListFixture {
 protected:
     CGameParts game_parts_{game_clock_};
@@ -73,7 +76,17 @@ protected:
                             .set = set_,
                             .textures = textures_,
                             .editor_tools = editor_tools_,
-                            .pick_list = pick_list_owners_}};
+                            .pick_list = pick_list_owners_,
+                            .script = script_,
+                            .events = events_}};
+    engine::CConsole console_{file_system_, 80, 50, 0, 0};
+    CEventList events_{
+        {.mission = mission_, .actor = actor_, .set = set_, .dosio = dosio_, .console = console_}};
+    CScript script_{{.dosio = dosio_,
+                     .editor_tools = editor_tools_,
+                     .mission = mission_,
+                     .events = events_,
+                     .set = set_}};
 };
 
 } // namespace nocturne::core

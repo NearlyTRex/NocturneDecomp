@@ -93,6 +93,23 @@ TEST_F(CDemonSetLoadTest, EveryCameraIsEnabledInGroupZeroAtTheLeastAmbient) {
     EXPECT_THAT(set_.getCameras()[0].getPVSList(), ::testing::ElementsAre(4, 5));
 }
 
+TEST_F(CDemonSetLoadTest, ACameraGroupIsEnabledAndDisabledTogether) {
+    load({.cameras = "3\n" + cameraText("first") + cameraText("second") + cameraText("third"),
+          .pvs = "0\n0\n0\n"});
+    set_.getCameras()[0].setCameraGroup(2);
+    set_.getCameras()[2].setCameraGroup(2);
+    set_.setCameraEnabledByGroup(2, false);
+    EXPECT_THAT(set_.getCameras(),
+                ::testing::ElementsAre(Property(&C3DSCamera::getEnabled, false),
+                                       Property(&C3DSCamera::getEnabled, true),
+                                       Property(&C3DSCamera::getEnabled, false)));
+    set_.setCameraEnabled(1, false);
+    set_.setCameraEnabledByGroup(2, true);
+    EXPECT_THAT(set_.getCameras(), ::testing::ElementsAre(Property(&C3DSCamera::getEnabled, true),
+                                                          Property(&C3DSCamera::getEnabled, false),
+                                                          Property(&C3DSCamera::getEnabled, true)));
+}
+
 TEST_F(CDemonSetLoadTest, ACameraIsFoundByName) {
     load(
         {.cameras = "2\n" + cameraText("first") + cameraText("Second"), .pvs = "2\n\t4\n\t5\n0\n"});

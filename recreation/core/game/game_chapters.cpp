@@ -1,5 +1,4 @@
 #include "common/text/ascii.h"
-#include "core/actor/notported.h"
 #include "core/game/chapterselectmode.h"
 #include "core/game/game.h"
 #include "core/hero/hero.h"
@@ -211,15 +210,16 @@ private:
 // The original also sent START to the browser when pod.ini was there, put its lists in the menu
 // font, which the main menu that calls it has them in already, and checked the chosen mission's
 // file again, which the lists' greying of every missing one makes unneeded.
-// deferred: zeroing the act's enemy and kill counts, its game and play times and the loading
-//   flag, with CGame::displayActStats and CDemonMission::startMission
+// deferred: zeroing the act's enemy and kill counts and its game and play times, with
+//   CGame::displayActStats
 // deferred: showing the story's year and title for eight seconds, or nothing after the browser,
 //   with CGame::renderOverlay and CGame::updateStatusDisplays
 // deferred: clearing the events' game flags, with CEventList::resetGameFlags
-// deferred: starting and running the mission, then loading the save a run asks to reload, with
-//   CDemonMission::startMission, CDemonMission::run and CGame::loadGame
+// deferred: running the mission, then loading the save a run asks to reload, with
+//   CDemonMission::run and CGame::loadGame
 // nocedit 0x004e1cb0
 void CGame::showChapterSelect(const SChapterSelectOwners &owners, EChapterSelectMode select_mode) {
+    is_loading = false;
     // Without enemy.pod the install is partial: every story offers its chapters, the stories
     // aren't greyed for a missing first mission, and Volume 2 has no 'Failure'.
     const bool full_install =
@@ -252,7 +252,8 @@ void CGame::showChapterSelect(const SChapterSelectOwners &owners, EChapterSelect
     if (!owners.mission.createHeros(nullptr)) {
         return;
     }
-    quitNotPorted("CDemonMission", "startMission");
+    // The original ran the mission whether or not it started.
+    static_cast<void>(owners.mission.startMission());
 }
 
 const std::string &CGame::getCurrentSaveFile() const {
