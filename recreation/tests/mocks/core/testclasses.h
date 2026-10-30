@@ -18,6 +18,11 @@ public:
         return classes_;
     }
 
+    // Where a test opens a sim frame.
+    [[nodiscard]] CGame &getGame() {
+        return game_parts_.getGame();
+    }
+
 private:
     ::testing::NiceMock<engine::MockGameClock> clock_;
     CGameParts game_parts_{clock_};

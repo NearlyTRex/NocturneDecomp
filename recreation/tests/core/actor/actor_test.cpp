@@ -13,6 +13,7 @@
 #include "core/colonel/colonel.h"
 #include "core/door/door.h"
 #include "core/enemy/enemy.h"
+#include "core/flame/flame.h"
 #include "core/gabriela/gabriella.h"
 #include "core/game/game.h"
 #include "core/ghoul/ghoul.h"
@@ -23,6 +24,7 @@
 #include "core/hero/heroplaceholder.h"
 #include "core/icepick/icepick.h"
 #include "core/lever/lever.h"
+#include "core/lightgun/lightgun.h"
 #include "core/litecone/lightcone.h"
 #include "core/mobster/mobster.h"
 #include "core/moloch/moloch.h"
@@ -69,6 +71,8 @@ TEST(CActor, PublicInterface) {
     static_assert(
         std::is_same_v<decltype(&CActor::setRandomSeed), void (CActor::*)(std::uint32_t)>);
     static_assert(std::is_same_v<decltype(&CActor::getRandomFloatFromRange),
+                                 float (CActor::*)(float, float)>);
+    static_assert(std::is_same_v<decltype(&CActor::getCosmeticFloatFromRange),
                                  float (CActor::*)(float, float)>);
     static_assert(std::is_same_v<decltype(&CActor::getRandomInt), int (CActor::*)(int, int)>);
     static_assert(std::is_same_v<decltype(&CActor::randomChance), int (CActor::*)(float)>);
@@ -123,7 +127,9 @@ TEST_F(CActorRegistryTest, ThePortedClassesAreRegistered) {
     EXPECT_EQ(actor_.getActorClassByName("CWerewolf"), &CWerewolf::kType);
     EXPECT_EQ(actor_.getActorClassByName("CMobster"), &CMobster::kType);
     EXPECT_EQ(actor_.getActorClassByName("CGhoul"), &CGhoul::kType);
-    EXPECT_EQ(actor_.getActorClassCount(), 33U);
+    EXPECT_EQ(actor_.getActorClassByName("CFlame"), &CFlame::kType);
+    EXPECT_EQ(actor_.getActorClassByName("CLightGun"), &CLightGun::kType);
+    EXPECT_EQ(actor_.getActorClassCount(), 35U);
 }
 
 TEST_F(CActorRegistryTest, EachHeroIsMadeWithItsOwnModel) {
@@ -221,6 +227,12 @@ TEST_F(CActorTest, TheSimStreamReplaysFromItsSeed) {
     EXPECT_EQ(actor_.getRandomFloatFromRange(0.0F, 1.0F), first);
     EXPECT_EQ(actor_.getRandomFloatFromRange(0.0F, 1.0F), second);
     EXPECT_NE(first, second);
+}
+
+TEST_F(CActorTest, ACosmeticDrawComesOffTheCrtStreamEvenInASimFrame) {
+    inSimFrame(1);
+    EXPECT_EQ(actor_.getCosmeticFloatFromRange(0.0F, 10.0F), 5.13870668F);
+    EXPECT_EQ(actor_.getRandomFloatFromRange(-1.0F, 1.0F), -0.625465631F);
 }
 
 TEST_F(CActorTest, AReversedRangeDrawsFromTheMaximumDown) {

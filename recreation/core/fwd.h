@@ -227,6 +227,7 @@ enum class EDoorSide : std::uint8_t;
 enum class EDoorState : std::uint8_t;
 enum class EDoorSwing : std::uint8_t;
 enum class EDoorType : std::uint8_t;
+enum class EFlameType : std::uint8_t;
 enum class EGameAction : std::uint8_t;
 enum class EGasMaskState : std::uint8_t;
 enum class EGroundType : std::uint8_t;

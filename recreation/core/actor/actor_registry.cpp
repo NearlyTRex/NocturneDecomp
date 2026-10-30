@@ -12,6 +12,7 @@
 #include "core/colonel/colonel.h"
 #include "core/door/door.h"
 #include "core/enemy/enemy.h"
+#include "core/flame/flame.h"
 #include "core/gabriela/gabriella.h"
 #include "core/ghoul/ghoul.h"
 #include "core/gun/gun.h"
@@ -21,6 +22,7 @@
 #include "core/hero/heroplaceholder.h"
 #include "core/icepick/icepick.h"
 #include "core/lever/lever.h"
+#include "core/lightgun/lightgun.h"
 #include "core/litecone/lightcone.h"
 #include "core/mobster/mobster.h"
 #include "core/moloch/moloch.h"
@@ -53,7 +55,7 @@ constexpr int kUnlistedVersion = 1;
 // one place, and each port adds its own.
 // nocedit 0x00408320
 void CActor::registerActorClasses() {
-    static constexpr std::array<const CDemonActorType *, 33> kTypes = {
+    static constexpr std::array<const CDemonActorType *, 35> kTypes = {
         &CDemonActor::kType,
         &CCharacter::kType,
         &CHero::kType,
@@ -87,6 +89,8 @@ void CActor::registerActorClasses() {
         &CWerewolf::kType,
         &CMobster::kType,
         &CGhoul::kType,
+        &CFlame::kType,
+        &CLightGun::kType,
     };
     for (const CDemonActorType *type : kTypes) {
         registerActorClass(*type);

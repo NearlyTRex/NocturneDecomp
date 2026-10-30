@@ -24,7 +24,7 @@ functions don't count as done. Sizes are in instructions.
 | 8 | `renderMenuAndGetChoice`, `CMoon::free`, `CSound::reset`, `CEditorTools::showFileSelectionDialog` | 8 | 63 | 5314 | 60 | 3 | 95.2% |
 | 9 | `CPickList::enableItem`, `CEventList::resetGameFlags`, `CLevelLoader::show`, `CDemonMission::load` | 15 | 56 | 3298 | 26 | 11 | 46.4% |
 | 10 | `CDemonMission::createHeros`, `CDemonMission::prepareAllActors`, `CEventList::reset`, `CDemonMission::loadSet` | 15 | 42 | 5112 | 31 | 10 | 73.8% |
-| 11 | `CScript::loadScript` | 63 | 579 | 67400 | 40 | 31 | 6.9% |
+| 11 | `CScript::loadScript` | 63 | 579 | 67400 | 45 | 31 | 7.7% |
 | 12 | `CDemonMission::loadScript`, `CScript::executeInitSection`, `CDemonMission::startMission`, `CDemonMission::buildActiveSetActorList`, `CConsole::reset`, `CEditorTools::displayMemoryDiagnostics`, `CGame::setGameRes`, `CDemonLight::init`, `CDemonSet::initScene` | 12 | 26 | 1658 | 2 | 0 | 7.6% |
 | 13 | `CFireEffect::init`, `CDemonSet::loadMasterLightStates`, `CDemonSet::setGamma`, `CGame::clearOverlay`, `CGame::loadAssets` | 7 | 27 | 735 | 0 | 0 | 0.0% |
 | 14 | `CNetGame::syncPlayers`, `CNetGame::processServerFrame`, `CLevelLoader::cleanup`, `CKeys::toggleInputMask`, `CGame::processHotkeys` | 17 | 51 | 5302 | 4 | 0 | 7.8% |
@@ -39,14 +39,14 @@ functions don't count as done. Sizes are in instructions.
 | 23 | Not reached from startup: `core/` (part 1 of 9) | 18 | 292 | 16011 | 57 | 12 | 19.5% |
 | 24 | Not reached from startup: `core/` (part 2 of 9) | 11 | 277 | 24965 | 20 | 4 | 7.2% |
 | 25 | Not reached from startup: `core/` (part 3 of 9) | 24 | 278 | 24134 | 31 | 10 | 11.1% |
-| 26 | Not reached from startup: `core/` (part 4 of 9) | 18 | 300 | 20148 | 45 | 6 | 15.0% |
-| 27 | Not reached from startup: `core/` (part 5 of 9) | 21 | 294 | 20910 | 53 | 8 | 18.0% |
+| 26 | Not reached from startup: `core/` (part 4 of 9) | 18 | 300 | 20148 | 47 | 7 | 15.6% |
+| 27 | Not reached from startup: `core/` (part 5 of 9) | 21 | 294 | 20910 | 56 | 9 | 19.0% |
 | 28 | Not reached from startup: `core/` (part 6 of 9) | 18 | 282 | 21809 | 42 | 10 | 14.8% |
 | 29 | Not reached from startup: `core/` (part 7 of 9) | 18 | 263 | 22721 | 23 | 10 | 8.7% |
 | 30 | Not reached from startup: `core/` (part 8 of 9) | 20 | 300 | 31826 | 40 | 5 | 13.3% |
 | 31 | Not reached from startup: `core/` (part 9 of 9) | 5 | 111 | 10905 | 18 | 4 | 16.2% |
 | 32 | Not reached from startup: `wincore/` | 2 | 11 | 482 | 4 | 0 | 36.3% |
-| | **All** | | **4479** | **402407** | **918** | **177** | **20.4%** |
+| | **All** | | **4479** | **402407** | **928** | **179** | **20.7%** |
 
 ## Step 0: Math value types
 
@@ -1322,9 +1322,9 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `restoreRenderState` 0x00408b40 (5)
   - [ ] `setup` 0x00408bb0 (27)
 
-### `core/armour.cpp` (1 functions, 31 instructions, 0 done, 0 partial)
+### `core/armour.cpp` (1 functions, 31 instructions, 1 done, 0 partial)
 - class `CFlame`
-  - [ ] `dtor` 0x00412690 (31)
+  - [x] `dtor` 0x00412690 (31)
 
 ### `core/dglobe.cpp` (3 functions, 178 instructions, 0 done, 0 partial)
 - class `CDemonGlobe`
@@ -1332,16 +1332,16 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `precomputeAttenuation` 0x00471360 (48)
   - [ ] `renderCoronaTextured` 0x004715e0 (103)
 
-### `core/flame.cpp` (9 functions, 1240 instructions, 0 done, 0 partial)
+### `core/flame.cpp` (9 functions, 1240 instructions, 4 done, 0 partial)
 - class `CFlame`
-  - [ ] `getActorType` 0x004c9a90 (2)
+  - [x] `getActorType` 0x004c9a90 (2)
   - [ ] `updateGlobe` 0x004cad90 (69)
   - [ ] `process` 0x004c9c00 (313)
   - [ ] `renderTransparent` 0x004ca110 (597)
   - [ ] `renderBackground` 0x004caa80 (127)
-  - [ ] `getBoundingBox` 0x004cac00 (22)
-  - [ ] `archive` 0x004cac60 (73)
-  - [ ] `getCollisionType` 0x004cad80 (2)
+  - [x] `getBoundingBox` 0x004cac00 (22)
+  - [x] `archive` 0x004cac60 (73)
+  - [x] `getCollisionType` 0x004cad80 (2)
   - [ ] `setup` 0x004c9b90 (35)
 
 ### `core/bodypart.cpp` (11 functions, 1593 instructions, 0 done, 0 partial)
@@ -4748,12 +4748,17 @@ functions don't count as done. Sizes are in instructions.
 - class `CKeyFramedModelInstance`
   - [x] `dtor` 0x004c97c0 (2, compiler-generated)
 
-### `core/flame.cpp` (4 functions, 61 instructions, 1 done, 0 partial)
+### `core/flame.cpp` (4 functions, 61 instructions, 3 done, 1 partial)
 - class `CFlame`
-  - [ ] `hide` 0x004caa70 (3)
-  - [ ] `ctor` 0x004c9aa0 (37)
+  - [x] `hide` 0x004caa70 (3)
+  - [~] `ctor` 0x004c9aa0 (37)
+    - deferred: the sound handle, the visibility check, the enemy it burns next and the corona flag, with CFlame::process and CFlame::renderTransparent
+    - deferred: setting alight the hero netplay gives it rather than the local one (the decomp's nocturne_net_sim_target_for), with CFlame::process
+    - deferred: drawing the torch sound's pitch and start time from the cosmetic stream (the decomp's nocturne_rng_fx_range), with CFlame::process
+    - deferred: drawing the globe's flicker from the cosmetic stream, with CFlame::updateGlobe
+    - deferred: drawing the texture flip from the cosmetic stream (the decomp's nocturne_rng_fx), with CFlame::setup
 - free functions
-  - [ ] `factoryFuncFlame` 0x004c9a60 (12)
+  - [x] `factoryFuncFlame` 0x004c9a60 (12)
   - [x] `staticInit` 0x004c9a30 (9)
 
 ### `core/flamecan.cpp` (13 functions, 455 instructions, 1 done, 0 partial)
@@ -5342,21 +5347,24 @@ functions don't count as done. Sizes are in instructions.
   - [x] `factoryFuncLever` 0x00504790 (12)
   - [x] `staticInit` 0x00504760 (9)
 
-### `core/lightgun.cpp` (13 functions, 1262 instructions, 1 done, 0 partial)
+### `core/lightgun.cpp` (13 functions, 1262 instructions, 4 done, 1 partial)
 - class `CLightGun`
-  - [ ] `getActorType` 0x005058f0 (2)
+  - [x] `getActorType` 0x005058f0 (2)
   - [ ] `updateBeamLight` 0x00505ac0 (48)
   - [ ] `fire` 0x00505c70 (520)
   - [ ] `process` 0x00506450 (136)
   - [ ] `getDamage` 0x00506670 (19)
   - [ ] `renderAimBeam` 0x005066b0 (276)
-  - [ ] `dtor` 0x00506a50 (31)
-  - [ ] `ctor` 0x00505900 (31)
+  - [x] `dtor` 0x00506a50 (31)
+  - [~] `ctor` 0x00505900 (31)
+    - deferred: the defaults the constructor gives the firing fields, the weight, the charge and the hit flag, with CLightGun::fire and CLightGun::process
+    - deferred: lighting the beam with the carrying hero's own light rather than the one shared light (the decomp's nocturne_hero_light), with CLightGun::process, CLightGun::fire and CLightGun::updateBeamLight
+    - deferred: charging from the batteries of the hero netplay gives it rather than the local one (the decomp's nocturne_net_sim_target_for), with CLightGun::process
   - [ ] `isVampireType` 0x005059c0 (31)
   - [ ] `isLightVulnerable` 0x00505a20 (56)
   - [ ] `canSeeTarget` 0x00505b70 (91)
 - free functions
-  - [ ] `factoryFuncLightGun` 0x005058c0 (12)
+  - [x] `factoryFuncLightGun` 0x005058c0 (12)
   - [x] `staticInit` 0x00505890 (9)
 
 ### `core/litecone.cpp` (11 functions, 243 instructions, 5 done, 1 partial)
