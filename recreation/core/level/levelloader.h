@@ -40,7 +40,7 @@ public:
     // screen to itself, or a window in the top-right corner when use_custom_viewport is set.
     // image_variant 0 to 3 draws that picture instead and puts the moon in its window;
     // kRandomImage picks one when the moon would have had the screen.
-    void show(int total_frames, bool use_custom_viewport, int image_variant);
+    void show(int total_frames, bool use_custom_viewport, int image_variant) override;
     // Without a window the step's text is centred in a black box near the bottom.
     void update(std::string_view text, bool clear_screen) override;
     void cleanup();

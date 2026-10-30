@@ -269,7 +269,8 @@ protected:
                  .pick_list = pick_list_owners_,
                  .build_version = "X",
                  .attract_movies = attract_movies_,
-                 .play_movie = {}}};
+                 .play_movie = {},
+                 .show_chapter_select = {}}};
 };
 
 TEST_F(CMenuTest, CalibrationShowsEachStepWithThePromptOverTheImageUntilAKey) {

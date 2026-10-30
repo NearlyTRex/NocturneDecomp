@@ -30,7 +30,7 @@ functions don't count as done. Sizes are in instructions.
 | 14 | `CNetGame::syncPlayers`, `CNetGame::processServerFrame`, `CLevelLoader::cleanup`, `CKeys::toggleInputMask`, `CGame::processHotkeys` | 17 | 51 | 5302 | 4 | 0 | 7.8% |
 | 15 | `CGame::updateStatusDisplays`, `CGame::processFudge`, `CGame::playerControls`, `CGame::processFrame` | 43 | 189 | 28837 | 5 | 1 | 2.6% |
 | 16 | `CGame::setScreenResolutionAndDisplayFangs`, `showOptionsScreen`, `CScript::skipCinematic`, `CGame::showFullscreenBitmap`, `CDemonMission::countDamageableEnemies`, `freeInventory`, `CGame::runGameSession`, `CGame::displayActStats` | 10 | 25 | 6938 | 9 | 3 | 36.0% |
-| 17 | `CGame::finishAct`, `CDemonMission::run`, `CGame::loadGame`, `CGame::showChapterSelect`, `showDeveloperToolsMenu` | 12 | 26 | 3707 | 4 | 1 | 15.3% |
+| 17 | `CGame::finishAct`, `CDemonMission::run`, `CGame::loadGame`, `CGame::showChapterSelect`, `showDeveloperToolsMenu` | 12 | 26 | 3707 | 4 | 2 | 15.3% |
 | 18 | `enterMainGameMenu`, `finalizeGameSystems` | 11 | 13 | 539 | 3 | 0 | 23.0% |
 | 19 | Not reached from startup: `engine/` | 23 | 279 | 19702 | 24 | 1 | 8.6% |
 | 20 | Not reached from startup: `support/` | 2 | 24 | 593 | 3 | 1 | 12.5% |
@@ -46,7 +46,7 @@ functions don't count as done. Sizes are in instructions.
 | 30 | Not reached from startup: `core/` (part 8 of 9) | 20 | 300 | 31826 | 40 | 5 | 13.3% |
 | 31 | Not reached from startup: `core/` (part 9 of 9) | 5 | 111 | 10905 | 18 | 4 | 16.2% |
 | 32 | Not reached from startup: `wincore/` | 2 | 11 | 482 | 4 | 0 | 36.3% |
-| | **All** | | **4479** | **402407** | **928** | **179** | **20.7%** |
+| | **All** | | **4479** | **402407** | **928** | **180** | **20.7%** |
 
 ## Step 0: Math value types
 
@@ -2781,11 +2781,15 @@ functions don't count as done. Sizes are in instructions.
 - class `CDemonSet`
   - [ ] `loadStateInfo` 0x00571230 (75)
 
-### `core/game.cpp` (3 functions, 1839 instructions, 0 done, 0 partial)
+### `core/game.cpp` (3 functions, 1839 instructions, 0 done, 1 partial)
 - class `CGame`
   - [ ] `finishAct` 0x004e3b90 (349)
   - [ ] `loadGame` 0x004e12b0 (645)
-  - [ ] `showChapterSelect` 0x004e1cb0 (845)
+  - [~] `showChapterSelect` 0x004e1cb0 (845)
+    - deferred: zeroing the act's enemy and kill counts, its game and play times and the loading flag, with CGame::displayActStats and CDemonMission::startMission
+    - deferred: showing the story's year and title for eight seconds, or nothing after the browser, with CGame::renderOverlay and CGame::updateStatusDisplays
+    - deferred: clearing the events' game flags, with CEventList::resetGameFlags
+    - deferred: starting and running the mission, then loading the save a run asks to reload, with CDemonMission::startMission, CDemonMission::run and CGame::loadGame
 
 ### `core/course.cpp` (2 functions, 13 instructions, 2 done, 0 partial)
 - class `CCourse`
@@ -5488,7 +5492,6 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `renderAudioSpectrumBarByBounds` 0x00511e00 (14)
   - [~] `showMainGameMenu` 0x00512f40 (394)
     - deferred: loading the flame and blur bitmaps, with their readers
-    - deferred: choosing a chapter from PLAY's START, its debug modes picked by the shift and control keys, then starting the moon and music again, with CGame::showChapterSelect
     - deferred: loading a saved game from PLAY's LOAD, then starting the moon and music again, with CGame::loadGame
     - deferred: resuming the newest save from PLAY's CONTINUE, or showing "No files found" without one, then starting the moon and music again, with the save slots and CGame::loadGame
     - deferred: hosting or joining from MULTIPLAYER, or with Ctrl+H or Ctrl+J, the music reset around the session, with hostNetworkGame and joinNetworkGame

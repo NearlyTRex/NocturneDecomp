@@ -7,6 +7,7 @@
 #include <cstddef>
 #include <cstdint>
 #include <cstring>
+#include <functional>
 #include <span>
 #include <vector>
 
@@ -64,6 +65,9 @@ public:
     void closeScreenDevice() override {}
     void swapBuffers() override {
         ++swaps;
+        if (on_swap) {
+            on_swap();
+        }
     }
     [[nodiscard]] int getWindowWidth() const override {
         return reported_width_ > 0 ? reported_width_ : width_;
@@ -131,6 +135,8 @@ public:
     }
 
     int swaps = 0;
+    // What a test does as each frame is shown.
+    std::function<void()> on_swap;
     // Every mode change is refused while set.
     bool refuse_modes = false;
 

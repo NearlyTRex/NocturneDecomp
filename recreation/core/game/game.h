@@ -7,9 +7,12 @@
 #include "core/game/controlmode.h"
 #include "core/game/herotype.h"
 #include "engine/fwd.h"
+#include "shape/fwd.h"
 #include "sound/fwd.h"
+#include "support/fwd.h"
 
 #include <cstdint>
+#include <string>
 
 namespace nocturne::core {
 
@@ -24,6 +27,18 @@ struct SGameOwners {
     engine::CMenuInput &menu_input;
     const CDFont &fonts;
     sound::CSndMain &sound_main;
+};
+
+// What chapter select reads the stories' unlock codes from, offers its lists with, and loads the
+// chosen mission with.
+struct SChapterSelectOwners {
+    const support::CNewMsg &messages;
+    shape::CEditorTools &editor_tools;
+    const shape::SPickListOwners &pick_list;
+    const shape::SFileSelectionOwners &file_selection;
+    engine::CIni &ini;
+    ILoadingScreen &loading_screen;
+    CDemonMission &mission;
 };
 
 class CGame {
@@ -49,7 +64,11 @@ public:
     void resetInventoryDisplayTimer();
     void setStatusDisplay(char *name, float value, float duration);
     void loadGame(char *save_filename, int load_mode);
-    void showChapterSelect(int select_mode);
+    // A story to play, or a chapter of one, then the mission it starts with is loaded and its
+    // heroes made.
+    void showChapterSelect(const SChapterSelectOwners &owners, EChapterSelectMode select_mode);
+    // The mission file last started; starting it again keeps its loaded models and textures.
+    [[nodiscard]] const std::string &getCurrentSaveFile() const;
     void displayBitmap(char *filename, int width, int height);
     void slamDT(float delta_time);
     void displayActStats();
@@ -107,6 +126,7 @@ private:
     int clocktime_ = 0;
     int delta_time_int_ = 0;
     float delta_time_float_ = 0.0F;
+    std::string current_save_file_;
 };
 
 } // namespace nocturne::core

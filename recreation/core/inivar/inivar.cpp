@@ -17,7 +17,6 @@
 namespace nocturne::core {
 namespace {
 
-constexpr std::string_view kIniFilename = ".\\system\\nocturne.ini";
 // Room for a list of bindings; the original read each key as one number.
 constexpr std::size_t kBindingsBufferSize = 256;
 

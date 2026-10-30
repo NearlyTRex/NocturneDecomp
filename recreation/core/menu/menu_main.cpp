@@ -1,6 +1,7 @@
 #include "core/actor/actor.h"
 #include "core/actor/notported.h"
 #include "core/dfont/dfont.h"
+#include "core/game/chapterselectmode.h"
 #include "core/game/game.h"
 #include "core/menu/attractmovies.h"
 #include "core/menu/menu.h"
@@ -180,8 +181,6 @@ private:
 // PLAY's items and MULTIPLAYER's quit until the screens they lead to are ported. Closing the window
 // quits the menu as Cancel does, which retail's never looked for.
 // deferred: loading the flame and blur bitmaps, with their readers
-// deferred: choosing a chapter from PLAY's START, its debug modes picked by the shift and control
-//   keys, then starting the moon and music again, with CGame::showChapterSelect
 // deferred: loading a saved game from PLAY's LOAD, then starting the moon and music again, with
 //   CGame::loadGame
 // deferred: resuming the newest save from PLAY's CONTINUE, or showing "No files found" without
@@ -221,10 +220,32 @@ void CMenu::showPlayMenu() {
     case kLoadItem:
         quitNotPorted("CGame", "loadGame");
     case kStartItem:
-        quitNotPorted("CGame", "showChapterSelect");
+        startChapterSelect();
+        break;
     default:
         break;
     }
+}
+
+// The moon and the music stop while the game runs, and start again once it is back.
+void CMenu::startChapterSelect() {
+    moon_.free();
+    owners_.sound.reset();
+    owners_.show_chapter_select(getChapterSelectMode());
+    owners_.two_d.clearInputAndWait();
+    owners_.textures.clearTextureCache();
+    moon_.init();
+    owners_.sound.configure();
+}
+
+// Ctrl+Shift for every story's chapters, Ctrl for the mission browser.
+EChapterSelectMode CMenu::getChapterSelectMode() const {
+    if (!owners_.menu_input.isModifierHeld(engine::EMenuModifier::Control)) {
+        return EChapterSelectMode::kStories;
+    }
+    return owners_.menu_input.isModifierHeld(engine::EMenuModifier::Shift)
+               ? EChapterSelectMode::kChapters
+               : EChapterSelectMode::kMissionBrowser;
 }
 
 void CMenu::showMultiplayerMenu() {

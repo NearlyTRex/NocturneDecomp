@@ -1,6 +1,7 @@
 #pragma once
 
 #include "core/dfont/dfont.h"
+#include "core/game/chapterselectmode.h"
 #include "core/inivar/inivar.h"
 #include "core/menu/attractmovies.h"
 #include "core/menu/menu.h"
@@ -158,6 +159,9 @@ protected:
     CAttractMovies attract_movies_{attract_clock_};
     // Each movie the menu played, as directory\filename.
     std::vector<std::string> movies_;
+    // Each chapter select START opened, and what a test does while one is open.
+    std::vector<EChapterSelectMode> chapter_selects_;
+    std::function<void()> on_chapter_select_;
     shape::SPickListOwners pick_list_owners_{.controls = controls_,
                                              .keys = keys_,
                                              .menu_input = menu_input_,
@@ -187,7 +191,13 @@ protected:
                              .pick_list = pick_list_owners_,
                              .build_version = "X",
                              .attract_movies = attract_movies_,
-                             .play_movie = std::bind_front(&CMenuFixture::recordMovie, this)};
+                             .play_movie = std::bind_front(&CMenuFixture::recordMovie, this),
+                             .show_chapter_select = [this](EChapterSelectMode mode) {
+                                 chapter_selects_.push_back(mode);
+                                 if (on_chapter_select_) {
+                                     on_chapter_select_();
+                                 }
+                             }};
     CMenu menu_{menu_owners_};
 };
 

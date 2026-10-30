@@ -263,6 +263,60 @@ TEST_F(CMainMenuTest, ASubmenuClearsTheInputThatOpenedIt) {
     EXPECT_EQ(menu_.showMainGameMenu(), 99);
 }
 
+// PLAY, then START, then Cancel back on the main menu, a press a frame; the keys given are held
+// with START's press.
+class CMainMenuStartTest : public CMainMenuTest {
+protected:
+    void chooseStart(const std::vector<EInputCodeType> &held) {
+        on_frame_ = [this, &held](int frame) {
+            if (frame == 1) {
+                press(EInputCodeType::DIK_RETURN);
+            } else if (frame == 2) {
+                press(EInputCodeType::DIK_DOWN);
+            } else if (frame == 3) {
+                for (const EInputCodeType code : held) {
+                    press(code);
+                }
+                press(EInputCodeType::DIK_RETURN);
+            } else {
+                music_after_.push_back(sound_main_.countActiveSfx());
+                drawn_after_.push_back(anythingDrawn());
+                press(EInputCodeType::DIK_ESCAPE);
+            }
+        };
+        EXPECT_EQ(menu_.showMainGameMenu(), 99);
+    }
+
+    std::vector<int> music_after_;
+    std::vector<bool> drawn_after_;
+};
+
+// The music is stopped while it runs, and plays again with the moon once the menu is back.
+TEST_F(CMainMenuStartTest, StartOpensTheStoriesThenTheMenuComesBack) {
+    std::vector<int> music_during;
+    on_chapter_select_ = [&] { music_during.push_back(sound_main_.countActiveSfx()); };
+    chooseStart({});
+    EXPECT_THAT(chapter_selects_, ElementsAre(EChapterSelectMode::kStories));
+    EXPECT_THAT(music_during, ElementsAre(0));
+    EXPECT_THAT(music_after_, ElementsAre(1));
+    EXPECT_THAT(drawn_after_, ElementsAre(true));
+}
+
+TEST_F(CMainMenuStartTest, ControlOpensTheMissionBrowser) {
+    chooseStart({EInputCodeType::DIK_LCONTROL});
+    EXPECT_THAT(chapter_selects_, ElementsAre(EChapterSelectMode::kMissionBrowser));
+}
+
+TEST_F(CMainMenuStartTest, ControlAndShiftOpenEveryStorysChapters) {
+    chooseStart({EInputCodeType::DIK_LCONTROL, EInputCodeType::DIK_LSHIFT});
+    EXPECT_THAT(chapter_selects_, ElementsAre(EChapterSelectMode::kChapters));
+}
+
+TEST_F(CMainMenuStartTest, ShiftAloneOpensTheStories) {
+    chooseStart({EInputCodeType::DIK_LSHIFT});
+    EXPECT_THAT(chapter_selects_, ElementsAre(EChapterSelectMode::kStories));
+}
+
 // Each is reached from its submenu with one press a frame.
 class CMainMenuSubmenuTest
     : public CMainMenuTest,
@@ -283,15 +337,15 @@ TEST_P(CMainMenuSubmenuTest, AScreenNotPortedYetQuits) {
 constexpr EInputCodeType kDown = EInputCodeType::DIK_DOWN;
 constexpr EInputCodeType kReturn = EInputCodeType::DIK_RETURN;
 
-INSTANTIATE_TEST_SUITE_P(
-    PlayAndMultiplayer, CMainMenuSubmenuTest,
-    ::testing::Values(
-        std::pair{std::vector{kReturn, kReturn}, std::string("CGame::loadGame")},
-        std::pair{std::vector{kReturn, kDown, kReturn}, std::string("CGame::showChapterSelect")},
-        std::pair{std::vector{kReturn, kDown, kDown, kReturn}, std::string("CGame::loadGame")},
-        std::pair{std::vector{kDown, kReturn, kReturn}, std::string("core::hostNetworkGame")},
-        std::pair{std::vector{kDown, kReturn, kDown, kReturn},
-                  std::string("core::joinNetworkGame")}));
+INSTANTIATE_TEST_SUITE_P(PlayAndMultiplayer, CMainMenuSubmenuTest,
+                         ::testing::Values(std::pair{std::vector{kReturn, kReturn},
+                                                     std::string("CGame::loadGame")},
+                                           std::pair{std::vector{kReturn, kDown, kDown, kReturn},
+                                                     std::string("CGame::loadGame")},
+                                           std::pair{std::vector{kDown, kReturn, kReturn},
+                                                     std::string("core::hostNetworkGame")},
+                                           std::pair{std::vector{kDown, kReturn, kDown, kReturn},
+                                                     std::string("core::joinNetworkGame")}));
 
 } // namespace
 } // namespace nocturne::core

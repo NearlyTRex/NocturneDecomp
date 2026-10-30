@@ -8,6 +8,7 @@
 #include "core/dfont/dfont.h"
 #include "core/dmodel/keyframedmodel.h"
 #include "core/dtrace/demonraytrace.h"
+#include "core/game/chapterselectmode.h"
 #include "core/game/game.h"
 #include "core/ground/ground.h"
 #include "core/inivar/inivar.h"
@@ -56,7 +57,9 @@
 #include "platform/sdl/sdlwindow.h"
 #include "shape/edittool/edcontrols.h"
 #include "shape/edittool/editortools.h"
+#include "shape/edittool/fileselection.h"
 #include "shape/edittool/picklist.h"
+#include "shape/edittool/strlist.h"
 #include "sound/sndmain/sndmain.h"
 #include "support/newmsg/newmsg.h"
 #include "wincore/wddvmem/wddvmem.h"
@@ -87,11 +90,14 @@ constexpr std::size_t kRenderVertexCount = 20000;
 // The original's one ground grid, as ground.cpp's static initialiser made it.
 constexpr int kGroundSize = 0x100;
 
-std::tm getLocalTime() {
-    const std::time_t now = std::time(nullptr);
+std::tm toLocalTime(std::time_t time) {
     std::tm local_time{};
-    localtime_r(&now, &local_time);
+    localtime_r(&time, &local_time);
     return local_time;
+}
+
+std::tm getLocalTime() {
+    return toLocalTime(std::time(nullptr));
 }
 
 // Every system the game runs on, made once and handed to what needs it. Several refer to ones
@@ -306,9 +312,14 @@ private:
                        .pick_list = pick_list_owners_,
                        .build_version = nocturne::kBuildVersion,
                        .attract_movies = attract_movies_,
-                       .play_movie = [this](std::string_view directory, std::string_view filename) {
-                           return wincore::playMovie(movie_owners_, directory, filename);
-                       }}};
+                       .play_movie =
+                           [this](std::string_view directory, std::string_view filename) {
+                               return wincore::playMovie(movie_owners_, directory, filename);
+                           },
+                       .show_chapter_select =
+                           [this](core::EChapterSelectMode mode) {
+                               game_.showChapterSelect(chapter_select_owners_, mode);
+                           }}};
     core::CLevelLoader level_loader_{{.dosio = dosio_,
                                       .screen = screen_,
                                       .special = special_,
@@ -328,6 +339,19 @@ private:
                                   .textures = texture_,
                                   .editor_tools = editor_tools_,
                                   .pick_list = pick_list_owners_}};
+    nocturne::shape::CStrList::LocalTime local_time_ = &toLocalTime;
+    nocturne::shape::SFileSelectionOwners file_selection_owners_{.pick_list = pick_list_owners_,
+                                                                 .pod = &pod_,
+                                                                 .file_system = file_system_,
+                                                                 .local_time = local_time_,
+                                                                 .messages = messages_};
+    core::SChapterSelectOwners chapter_select_owners_{.messages = messages_,
+                                                      .editor_tools = editor_tools_,
+                                                      .pick_list = pick_list_owners_,
+                                                      .file_selection = file_selection_owners_,
+                                                      .ini = ini_,
+                                                      .loading_screen = level_loader_,
+                                                      .mission = mission_};
 };
 
 // Everything is gone by the time a fatal error is reported, as the original tore down its sound

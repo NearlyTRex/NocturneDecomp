@@ -26,6 +26,12 @@ enum class EMenuAction : std::uint8_t {
     ToggleMute,
 };
 
+// The keys held with a menu choice to pick its developers' variant.
+enum class EMenuModifier : std::uint8_t {
+    Control,
+    Shift,
+};
+
 // The menu actions, read off the keys.
 class CMenuInput {
 public:
@@ -34,6 +40,7 @@ public:
     // Whether an input bound to the action was pressed since it was last taken; takes every one,
     // so a press on two of them at once counts once.
     [[nodiscard]] bool takeMenuAction(EMenuAction action);
+    [[nodiscard]] bool isModifierHeld(EMenuModifier modifier) const;
 
 private:
     CKeys &keys_;

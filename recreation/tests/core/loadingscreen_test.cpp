@@ -14,6 +14,8 @@ TEST(ILoadingScreen, IsAbstractWithVirtualDestructor) {
 }
 
 TEST(ILoadingScreen, PublicInterface) {
+    static_assert(
+        std::is_same_v<decltype(&ILoadingScreen::show), void (ILoadingScreen::*)(int, bool, int)>);
     static_assert(std::is_same_v<decltype(&ILoadingScreen::update),
                                  void (ILoadingScreen::*)(std::string_view, bool)>);
 }

@@ -1,3 +1,4 @@
+#include "core/game/chapterselectmode.h"
 #include "core/game/game.h"
 #include "engine/gameclock.h"
 #include "tests/mocks/core/gameparts.h"
@@ -7,6 +8,7 @@
 #include <gtest/gtest.h>
 
 #include <climits>
+#include <string>
 #include <type_traits>
 
 namespace nocturne::core {
@@ -43,7 +45,11 @@ TEST(CGame, PublicInterface) {
     static_assert(
         std::is_same_v<decltype(&CGame::setStatusDisplay), void (CGame::*)(char *, float, float)>);
     static_assert(std::is_same_v<decltype(&CGame::loadGame), void (CGame::*)(char *, int)>);
-    static_assert(std::is_same_v<decltype(&CGame::showChapterSelect), void (CGame::*)(int)>);
+    static_assert(
+        std::is_same_v<decltype(&CGame::showChapterSelect),
+                       void (CGame::*)(const SChapterSelectOwners &, EChapterSelectMode)>);
+    static_assert(std::is_same_v<decltype(&CGame::getCurrentSaveFile),
+                                 const std::string &(CGame::*)() const>);
     static_assert(
         std::is_same_v<decltype(&CGame::displayBitmap), void (CGame::*)(char *, int, int)>);
     static_assert(std::is_same_v<decltype(&CGame::slamDT), void (CGame::*)(float)>);

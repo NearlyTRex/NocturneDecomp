@@ -49,6 +49,8 @@ struct SMenuOwners {
     CAttractMovies &attract_movies;
     // Plays directory\filename to its end, as startup's play_movie does.
     std::function<bool(std::string_view, std::string_view)> play_movie;
+    // START's chapter select, which plays the mission chosen.
+    std::function<void(EChapterSelectMode)> show_chapter_select;
 };
 
 // The menu screens' state: the moon behind them, and what the last menu frame read from the keys.
@@ -128,6 +130,8 @@ private:
     [[nodiscard]] int getAudioSpectrumFrame(int x_center) const;
     // PLAY's Continue, Start and Load.
     void showPlayMenu();
+    void startChapterSelect();
+    [[nodiscard]] EChapterSelectMode getChapterSelectMode() const;
     // MULTIPLAYER's Host and Join.
     void showMultiplayerMenu();
     // An untitled page of the localized items from the main menu's top: the item chosen, or

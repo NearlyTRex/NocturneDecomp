@@ -249,7 +249,8 @@ protected:
                  .pick_list = pick_list_owners_,
                  .build_version = "0.1.0",
                  .attract_movies = attract_movies_,
-                 .play_movie = {}}};
+                 .play_movie = {},
+                 .show_chapter_select = {}}};
     CLevelLoader level_loader_{{.dosio = dosio_,
                                 .screen = screen_,
                                 .special = special_,

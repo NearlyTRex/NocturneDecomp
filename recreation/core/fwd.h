@@ -218,6 +218,7 @@ enum class EAimMode : std::uint8_t;
 enum class EAmmoType : std::int8_t;
 enum class EBloodType : std::uint8_t;
 enum class EBoxPickupType : std::uint8_t;
+enum class EChapterSelectMode : std::uint8_t;
 enum class ECollisionType : std::uint8_t;
 enum class EConnectionType : std::uint8_t;
 enum class EControlMode : std::uint8_t;

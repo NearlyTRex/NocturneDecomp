@@ -6,6 +6,7 @@
 #include <algorithm>
 #include <array>
 #include <cstddef>
+#include <span>
 
 namespace nocturne::engine {
 namespace {
@@ -46,6 +47,8 @@ constexpr std::array<std::array<EInputCodeType, 4>, 13> kBindings{{
 // The right control key folds onto the left under the default mask.
 constexpr std::array<EInputCodeType, 2> kControlKeys{EInputCodeType::DIK_LCONTROL,
                                                      EInputCodeType::DIK_RCONTROL};
+// The original's menus look only at the left shift key.
+constexpr std::array<EInputCodeType, 1> kShiftKeys{EInputCodeType::DIK_LSHIFT};
 
 } // namespace
 
@@ -53,8 +56,7 @@ CMenuInput::CMenuInput(CKeys &keys) : keys_(keys) {}
 
 bool CMenuInput::takeMenuAction(EMenuAction action) {
     if ((action == EMenuAction::Copy || action == EMenuAction::ToggleMute) &&
-        std::ranges::none_of(
-            kControlKeys, [this](EInputCodeType code) { return keys_.getKeyState(code) != 0; })) {
+        !isModifierHeld(EMenuModifier::Control)) {
         return false;
     }
     bool pressed = false;
@@ -64,6 +66,14 @@ bool CMenuInput::takeMenuAction(EMenuAction action) {
         }
     }
     return pressed;
+}
+
+bool CMenuInput::isModifierHeld(EMenuModifier modifier) const {
+    const std::span<const EInputCodeType> codes =
+        modifier == EMenuModifier::Control ? std::span<const EInputCodeType>(kControlKeys)
+                                           : std::span<const EInputCodeType>(kShiftKeys);
+    return std::ranges::any_of(
+        codes, [this](EInputCodeType code) { return keys_.getKeyState(code) != 0; });
 }
 
 } // namespace nocturne::engine

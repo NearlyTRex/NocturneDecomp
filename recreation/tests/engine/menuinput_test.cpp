@@ -23,6 +23,8 @@ TEST(CMenuInput, PublicInterface) {
     static_assert(std::is_constructible_v<CMenuInput, CKeys &>);
     static_assert(
         std::is_same_v<decltype(&CMenuInput::takeMenuAction), bool (CMenuInput::*)(EMenuAction)>);
+    static_assert(std::is_same_v<decltype(&CMenuInput::isModifierHeld),
+                                 bool (CMenuInput::*)(EMenuModifier) const>);
 }
 
 class CMenuInputTest : public ::testing::Test {
@@ -163,6 +165,23 @@ TEST_F(CMenuInputTest, MutingIsMOnlyWhileAControlKeyIsHeld) {
     press(EInputCodeType::DIK_LCONTROL);
     EXPECT_TRUE(input_.takeMenuAction(EMenuAction::ToggleMute));
     EXPECT_FALSE(input_.takeMenuAction(EMenuAction::ToggleMute));
+}
+
+// Holding is asked about, so it takes nothing.
+TEST_F(CMenuInputTest, EitherControlKeyHeldIsTheControlModifier) {
+    EXPECT_FALSE(input_.isModifierHeld(EMenuModifier::Control));
+    press(EInputCodeType::DIK_RCONTROL);
+    EXPECT_TRUE(input_.isModifierHeld(EMenuModifier::Control));
+    EXPECT_TRUE(input_.isModifierHeld(EMenuModifier::Control));
+    EXPECT_FALSE(input_.isModifierHeld(EMenuModifier::Shift));
+}
+
+TEST_F(CMenuInputTest, OnlyTheLeftShiftKeyIsTheShiftModifier) {
+    press(EInputCodeType::DIK_RSHIFT);
+    EXPECT_FALSE(input_.isModifierHeld(EMenuModifier::Shift));
+    press(EInputCodeType::DIK_LSHIFT);
+    EXPECT_TRUE(input_.isModifierHeld(EMenuModifier::Shift));
+    EXPECT_FALSE(input_.isModifierHeld(EMenuModifier::Control));
 }
 
 } // namespace
