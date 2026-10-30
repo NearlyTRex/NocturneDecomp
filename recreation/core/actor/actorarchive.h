@@ -36,6 +36,8 @@ public:
     // "%f,%f,%f": pitch, heading and bank, into x, z and y.
     void archiveOrientation(common::CVector3f &orientation, std::string_view description);
     void archiveVector(common::CVector3f &vector, std::string_view description);
+    // "%f,%f,%f,%f": w, x, y and z.
+    void archiveQuaternion(common::CQuaternion4f &quaternion, std::string_view description);
     void archiveFloat(float &value, std::string_view description);
     void archiveInteger(int &value, std::string_view description);
     // An integer that is any number but 0 for true.
@@ -59,6 +61,11 @@ public:
     // The model's file name, quoted.
     void archiveKeyframedModelInstance(CKeyFramedModelInstance &model,
                                        std::string_view description);
+    // A line, the box, and a closing line.
+    void archiveBox(CBox &box, std::string_view description);
+    // A line, the count, then each rule's condition and event quoted with "=>" between them on a
+    // line of its own, and a closing line.
+    void archiveRules(CRuleList &rules, std::string_view description);
     // A line, the motion and frame, and a closing line.
     void archiveMotionState(CMotionController &motion, std::string_view description);
     // A line, the count of parts, each part's visibility, then each one's texture set, and a

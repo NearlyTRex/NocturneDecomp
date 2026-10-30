@@ -20,8 +20,8 @@
 namespace nocturne::core {
 
 // An archive reading the actor's fields from the text, which must outlive it, with the ported
-// classes registered and a lookup that finds the actors added to it by quoted name, and no
-// others.
+// classes registered and a lookup that finds the actors added to it by quoted name, after any
+// whitespace, and no others.
 class CTestArchive {
 public:
     explicit CTestArchive(const CDemonActor &actor, std::string_view text = "")
@@ -31,6 +31,7 @@ public:
         ON_CALL(actors_, loadActor)
             .WillByDefault([this](common::CTextScanner &reference, const CDemonActor &,
                                   std::string_view) -> CDemonActor * {
+                reference.skipWhitespace();
                 const std::string_view line = reference.readLine();
                 const auto found = std::ranges::find_if(known_, [line](const CDemonActor *known) {
                     return line.starts_with(std::format("\"{}\"", known->getActorName()));

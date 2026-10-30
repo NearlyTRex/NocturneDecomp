@@ -15,12 +15,8 @@ namespace {
 TEST(CoreActorFunctions, PublicInterface) {
     static_assert(std::is_same_v<decltype(&deleteActor), void (*)(CDemonActor *)>);
     static_assert(std::is_same_v<decltype(&adjustIndentationLevel), int (*)(int)>);
-    static_assert(
-        std::is_same_v<decltype(&archiveQuaternion), void (*)(common::CQuaternion4f *, char *)>);
     static_assert(std::is_same_v<decltype(&archiveDeformableModelInstance),
                                  void (*)(CDeformableModelInstance *, char *)>);
-    static_assert(std::is_same_v<decltype(&archiveBox), void (*)(CBox *, char *)>);
-    static_assert(std::is_same_v<decltype(&archiveRules), void (*)(CRuleList *, char *)>);
     static_assert(
         std::is_same_v<decltype(&isOfClass), bool (*)(const CDemonActor *, std::string_view)>);
     static_assert(

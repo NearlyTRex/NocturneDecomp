@@ -1,14 +1,17 @@
 #include "core/actor/actorarchive.h"
 
 #include "common/error/error.h"
+#include "common/math/quaternion4f.h"
 #include "common/math/vector3f.h"
 #include "common/text/scanformat.h"
 #include "common/text/textscanner.h"
 #include "core/actor/actor.h"
 #include "core/actor/actorlookup.h"
 #include "core/actor/demonactor.h"
+#include "core/box/box.h"
 #include "core/cloth/clothlist.h"
 #include "core/dmodel/keyframedmodelinstance.h"
+#include "core/event/rulelist.h"
 #include "core/location.h"
 #include "core/motion/motioncontroller.h"
 #include "core/skeleton/deformablemodelinstance.h"
@@ -28,6 +31,7 @@ namespace {
 constexpr std::string_view kLocationType = "4D location";
 constexpr std::string_view kOrientationType = "Euler PBH orientation";
 constexpr std::string_view kVectorType = "3D vector";
+constexpr std::string_view kQuaternionType = "Quaternion";
 constexpr std::string_view kFloatType = "Floating point value";
 constexpr std::string_view kIntegerType = "Integer value";
 constexpr std::string_view kStringType = "String";
@@ -78,6 +82,17 @@ void CActorArchive::archiveVector(common::CVector3f &vector, std::string_view de
         quitOnPropertyError(kVectorType, description);
     }
     archiveDescription(kVectorType, description);
+}
+
+// deferred: writing the value to a save file, with CDemonActor::save
+// nocedit 0x0040b520
+void CActorArchive::archiveQuaternion(common::CQuaternion4f &quaternion,
+                                      std::string_view description) {
+    if (common::scanFormat(scanner_, "%f,%f,%f,%f", quaternion.w, quaternion.x, quaternion.y,
+                           quaternion.z) != 4) {
+        quitOnPropertyError(kQuaternionType, description);
+    }
+    archiveDescription(kQuaternionType, description);
 }
 
 // deferred: writing the value to a save file, with CDemonActor::save
@@ -170,6 +185,37 @@ void CActorArchive::archiveKeyframedModelInstance(CKeyFramedModelInstance &model
     std::string filename;
     archiveString(filename, description);
     model.setModelName(filename);
+}
+
+// deferred: writing the box to a save file, with CBox::saveToFile
+// nocedit 0x0040bd70
+void CActorArchive::archiveBox(CBox &box, std::string_view description) {
+    archiveDescription("sim box state info opening brace", description);
+    box.loadFromFile(scanner_);
+    archiveDescription("sim box state info closing brace", description);
+}
+
+// The original held five rules, which more overran.
+// deferred: writing the rules to a save file, with CDemonActor::save
+// nocedit 0x0040c000
+void CActorArchive::archiveRules(CRuleList &rules, std::string_view description) {
+    archiveDescription("Rule list opening brace", description);
+    const std::optional<int> count = scanner_.scanInteger();
+    if (!count) {
+        quitOnPropertyError("rule count", description);
+    }
+    archiveDescription("ruleCount", description);
+    std::vector<SRule> read;
+    for (int i = 0; i < *count; ++i) {
+        SRule rule;
+        if (common::scanFormat(scanner_, " \"%[^\"]\" => \"%[^\"]\"\n", rule.condition,
+                               rule.event) != 2) {
+            quitOnPropertyError("rule", description);
+        }
+        read.push_back(std::move(rule));
+    }
+    archiveDescription("Rule list closing brace", description);
+    rules.setRules(std::move(read));
 }
 
 // deferred: writing the motion to a save file, with CMotionController::save

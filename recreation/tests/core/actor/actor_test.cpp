@@ -8,8 +8,10 @@
 #include "core/baron/baron.h"
 #include "core/baron/baronweapon.h"
 #include "core/barrier/barrier.h"
+#include "core/boxactor/boxactor.h"
 #include "core/charactr/character.h"
 #include "core/colonel/colonel.h"
+#include "core/door/door.h"
 #include "core/gabriela/gabriella.h"
 #include "core/game/game.h"
 #include "core/gun/gun.h"
@@ -18,8 +20,10 @@
 #include "core/hero/hero.h"
 #include "core/hero/heroplaceholder.h"
 #include "core/icepick/icepick.h"
+#include "core/lever/lever.h"
 #include "core/litecone/lightcone.h"
 #include "core/moloch/moloch.h"
+#include "core/platfrm/platform.h"
 #include "core/scat/scat.h"
 #include "core/stranger/stranger.h"
 #include "core/svetlana/svetlana.h"
@@ -102,7 +106,11 @@ TEST_F(CActorRegistryTest, ThePortedClassesAreRegistered) {
     EXPECT_EQ(actor_.getActorClassByName("CBackgroundActor"), &CBackgroundActor::kType);
     EXPECT_EQ(actor_.getActorClassByName("CHealthItem"), &CHealthItem::kType);
     EXPECT_EQ(actor_.getActorClassByName("CLightCone"), &CLightCone::kType);
-    EXPECT_EQ(actor_.getActorClassCount(), 23U);
+    EXPECT_EQ(actor_.getActorClassByName("CDoor"), &CDoor::kType);
+    EXPECT_EQ(actor_.getActorClassByName("CLever"), &CLever::kType);
+    EXPECT_EQ(actor_.getActorClassByName("CBoxActor"), &CBoxActor::kType);
+    EXPECT_EQ(actor_.getActorClassByName("CPlatform"), &CPlatform::kType);
+    EXPECT_EQ(actor_.getActorClassCount(), 27U);
 }
 
 // Only the letters and digits count, in either case.

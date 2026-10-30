@@ -52,7 +52,8 @@ constinit const CDemonActorType CDemonActor::kType =
     makeActorType("CDemonActor", nullptr, nullptr, kVersion);
 
 // deferred: the defaults the constructor gives the orientation's matrix, and the scale,
-//   platform, rendering, health and footstep fields, with the steps that read them
+//   platform, rendering (but for the transparency), health and footstep fields, with the steps
+//   that read them
 // nocedit 0x004088b0
 CDemonActor::CDemonActor() = default;
 
@@ -99,6 +100,14 @@ float CDemonActor::getCreateProbability() const {
 
 const std::string &CDemonActor::getCreateEvent() const {
     return create_event_;
+}
+
+bool CDemonActor::isTransparent() const {
+    return transparent_;
+}
+
+void CDemonActor::setTransparent(bool transparent) {
+    transparent_ = transparent;
 }
 
 // Files before version 7 held a field of view, which is read and dropped.

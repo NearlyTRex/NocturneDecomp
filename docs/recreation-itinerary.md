@@ -24,7 +24,7 @@ functions don't count as done. Sizes are in instructions.
 | 8 | `renderMenuAndGetChoice`, `CMoon::free`, `CSound::reset`, `CEditorTools::showFileSelectionDialog` | 8 | 63 | 5314 | 60 | 3 | 95.2% |
 | 9 | `CPickList::enableItem`, `CEventList::resetGameFlags`, `CLevelLoader::show`, `CDemonMission::load` | 15 | 56 | 3298 | 26 | 11 | 46.4% |
 | 10 | `CDemonMission::createHeros`, `CDemonMission::prepareAllActors`, `CEventList::reset`, `CDemonMission::loadSet` | 15 | 42 | 5112 | 31 | 10 | 73.8% |
-| 11 | `CScript::loadScript` | 63 | 579 | 67400 | 40 | 30 | 6.9% |
+| 11 | `CScript::loadScript` | 63 | 579 | 67400 | 40 | 31 | 6.9% |
 | 12 | `CDemonMission::loadScript`, `CScript::executeInitSection`, `CDemonMission::startMission`, `CDemonMission::buildActiveSetActorList`, `CConsole::reset`, `CEditorTools::displayMemoryDiagnostics`, `CGame::setGameRes`, `CDemonLight::init`, `CDemonSet::initScene` | 12 | 26 | 1658 | 2 | 0 | 7.6% |
 | 13 | `CFireEffect::init`, `CDemonSet::loadMasterLightStates`, `CDemonSet::setGamma`, `CGame::clearOverlay`, `CGame::loadAssets` | 7 | 27 | 735 | 0 | 0 | 0.0% |
 | 14 | `CNetGame::syncPlayers`, `CNetGame::processServerFrame`, `CLevelLoader::cleanup`, `CKeys::toggleInputMask`, `CGame::processHotkeys` | 17 | 51 | 5302 | 4 | 0 | 7.8% |
@@ -36,17 +36,17 @@ functions don't count as done. Sizes are in instructions.
 | 20 | Not reached from startup: `support/` | 2 | 24 | 593 | 3 | 1 | 12.5% |
 | 21 | Not reached from startup: `cockpit/` | 4 | 178 | 11527 | 0 | 0 | 0.0% |
 | 22 | Not reached from startup: `shape/` | 2 | 42 | 3178 | 4 | 2 | 9.5% |
-| 23 | Not reached from startup: `core/` (part 1 of 9) | 18 | 292 | 16011 | 45 | 6 | 15.4% |
-| 24 | Not reached from startup: `core/` (part 2 of 9) | 11 | 277 | 24965 | 19 | 4 | 6.8% |
-| 25 | Not reached from startup: `core/` (part 3 of 9) | 24 | 278 | 24134 | 20 | 9 | 7.1% |
+| 23 | Not reached from startup: `core/` (part 1 of 9) | 18 | 292 | 16011 | 56 | 11 | 19.1% |
+| 24 | Not reached from startup: `core/` (part 2 of 9) | 11 | 277 | 24965 | 20 | 4 | 7.2% |
+| 25 | Not reached from startup: `core/` (part 3 of 9) | 24 | 278 | 24134 | 30 | 9 | 10.7% |
 | 26 | Not reached from startup: `core/` (part 4 of 9) | 18 | 300 | 20148 | 41 | 5 | 13.6% |
-| 27 | Not reached from startup: `core/` (part 5 of 9) | 21 | 294 | 20910 | 47 | 8 | 15.9% |
-| 28 | Not reached from startup: `core/` (part 6 of 9) | 18 | 282 | 21809 | 27 | 7 | 9.5% |
+| 27 | Not reached from startup: `core/` (part 5 of 9) | 21 | 294 | 20910 | 53 | 8 | 18.0% |
+| 28 | Not reached from startup: `core/` (part 6 of 9) | 18 | 282 | 21809 | 33 | 8 | 11.7% |
 | 29 | Not reached from startup: `core/` (part 7 of 9) | 18 | 263 | 22721 | 23 | 9 | 8.7% |
 | 30 | Not reached from startup: `core/` (part 8 of 9) | 20 | 300 | 31826 | 40 | 5 | 13.3% |
 | 31 | Not reached from startup: `core/` (part 9 of 9) | 5 | 111 | 10905 | 10 | 2 | 9.0% |
 | 32 | Not reached from startup: `wincore/` | 2 | 11 | 482 | 4 | 0 | 36.3% |
-| | **All** | | **4479** | **402407** | **861** | **162** | **19.2%** |
+| | **All** | | **4479** | **402407** | **895** | **169** | **19.9%** |
 
 ## Step 0: Math value types
 
@@ -1009,7 +1009,7 @@ functions don't count as done. Sizes are in instructions.
   - [x] `doCheckForInvalidPointers` 0x0040ac80 (193)
   - [ ] `updateOrientationMatrix` 0x00408c10 (30)
   - [~] `ctor` 0x004088b0 (88)
-    - deferred: the defaults the constructor gives the orientation's matrix, and the scale, platform, rendering, health and footstep fields, with the steps that read them
+    - deferred: the defaults the constructor gives the orientation's matrix, and the scale, platform, rendering (but for the transparency), health and footstep fields, with the steps that read them
 - free functions
   - [x] `getActorClassByName` 0x0040c3c0 (45)
   - [x] `createActorByName` 0x0040c430 (51)
@@ -1943,9 +1943,10 @@ functions don't count as done. Sizes are in instructions.
 - free functions
   - [ ] `qsortByDisplayListEntry` 0x0056fba0 (18)
 
-### `core/box.cpp` (11 functions, 944 instructions, 0 done, 0 partial)
+### `core/box.cpp` (11 functions, 944 instructions, 0 done, 1 partial)
 - class `CBox`
-  - [ ] `ctor` 0x0041dc50 (45)
+  - [~] `ctor` 0x0041dc50 (45)
+    - deferred: the eight scrape points, the mass and the world velocity, with CBox::setupCorners
   - [ ] `updateTransform` 0x0041e0e0 (158)
   - [ ] `setupCorners` 0x0041dd20 (127)
 - class `CBoundingBox3D`
@@ -3510,13 +3511,14 @@ functions don't count as done. Sizes are in instructions.
 
 ## Step 23: Not reached from startup: `core/` (part 1 of 9)
 
-### `core/actor.cpp` (19 functions, 1173 instructions, 6 done, 4 partial)
+### `core/actor.cpp` (19 functions, 1173 instructions, 6 done, 7 partial)
 - free functions
   - [x] `registerActorClass` 0x0040c2e0 (73)
   - [x] `staticInit` 0x00408320 (9)
   - [ ] `draw3DPointMarker` 0x00409930 (173)
   - [ ] `copyToActorDebugBuffer` 0x0040ac30 (27)
-  - [ ] `archiveQuaternion` 0x0040b520 (54)
+  - [~] `archiveQuaternion` 0x0040b520 (54)
+    - deferred: writing the value to a save file, with CDemonActor::save
   - [x] `archiveLocalizedString` 0x0040b6e0 (54)
   - [~] `archiveKeyframedModelInstance` 0x0040b8f0 (44)
     - deferred: writing the model's name to a save file, with CDemonActor::save
@@ -3525,10 +3527,12 @@ functions don't count as done. Sizes are in instructions.
     - deferred: writing the motion to a save file, with CMotionController::save
   - [~] `archivePartStatus` 0x0040bae0 (202)
     - deferred: writing the parts to a save file, with CDemonActor::save
-  - [ ] `archiveBox` 0x0040bd70 (81)
+  - [~] `archiveBox` 0x0040bd70 (81)
+    - deferred: writing the box to a save file, with CBox::saveToFile
   - [~] `archiveClothList` 0x0040be60 (136)
     - deferred: writing the list to a save file, with CDemonActor::save
-  - [ ] `archiveRules` 0x0040c000 (147)
+  - [~] `archiveRules` 0x0040c000 (147)
+    - deferred: writing the rules to a save file, with CDemonActor::save
   - [ ] `copyFloat1` 0x004104d0 (6)
   - [ ] `copyFloat2` 0x004104e0 (6)
   - [ ] `copyFloat3` 0x004104f0 (6)
@@ -3831,11 +3835,12 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `dtor` 0x0041da40 (67)
   - [ ] `setup` 0x0041bd90 (135)
 
-### `core/box.cpp` (12 functions, 1030 instructions, 0 done, 0 partial)
+### `core/box.cpp` (12 functions, 1030 instructions, 1 done, 1 partial)
 - class `CBox`
-  - [ ] `loadFromFile` 0x0041fe90 (122)
+  - [~] `loadFromFile` 0x0041fe90 (122)
+    - deferred: the corners, mass and transform from the position, orientation, extents and volume read, then the velocity along the box's axes turned into the world's, with CBox::setupCorners
   - [ ] `saveToFile` 0x00420020 (112)
-  - [ ] `dtor` 0x0041dd00 (8)
+  - [x] `dtor` 0x0041dd00 (8)
   - [ ] `setupVelocities` 0x00420180 (53)
   - [ ] `setupN` 0x0041df50 (133)
 - class `CBoundingBox3D`
@@ -3847,32 +3852,33 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `isInverted` 0x00420fe0 (20)
   - [ ] `render` 0x004210b0 (270)
 
-### `core/boxactor.cpp` (33 functions, 1770 instructions, 1 done, 0 partial)
+### `core/boxactor.cpp` (33 functions, 1770 instructions, 11 done, 1 partial)
 - class `CBoxActor`
-  - [ ] `ctor` 0x00421700 (49)
-  - [ ] `getActorType` 0x004216f0 (2)
+  - [~] `ctor` 0x00421700 (49)
+    - deferred: the animation frame and the looping sound's handle, with CBoxActor::setup
+  - [x] `getActorType` 0x004216f0 (2)
   - [ ] `setupPhysicsBox` 0x004218d0 (82)
   - [ ] `process` 0x004219e0 (289)
   - [ ] `renderOpaque` 0x00421e00 (79)
   - [ ] `renderTransparent` 0x00421ef0 (74)
   - [ ] `getBoundingBox` 0x00421fe0 (39)
-  - [ ] `archive` 0x00422060 (171)
-  - [ ] `getBlockVirtualDirectorFlag` 0x00422330 (3)
+  - [x] `archive` 0x00422060 (171)
+  - [x] `getBlockVirtualDirectorFlag` 0x00422330 (3)
   - [ ] `getCollisionType` 0x00422340 (24)
-  - [ ] `canPickup` 0x004224b0 (14)
-  - [ ] `pickup` 0x004224e0 (4)
+  - [x] `canPickup` 0x004224b0 (14)
+  - [x] `pickup` 0x004224e0 (4)
   - [ ] `onDropped` 0x004224f0 (30)
-  - [ ] `getCarrier` 0x00422550 (3)
-  - [ ] `getGroundType` 0x00422560 (3)
+  - [x] `getCarrier` 0x00422550 (3)
+  - [x] `getGroundType` 0x00422560 (3)
   - [ ] `onPickup` 0x00422570 (7)
   - [ ] `setPositionAndOrientation` 0x00422640 (50)
-  - [ ] `getAllowedMeleeAttackTypes` 0x004226d0 (3)
-  - [ ] `dtor` 0x00423670 (37)
+  - [x] `getAllowedMeleeAttackTypes` 0x004226d0 (3)
+  - [x] `dtor` 0x00423670 (37)
   - [ ] `setup` 0x00421830 (48)
   - [ ] `constrainToExtents` 0x00422590 (59)
   - [ ] `resolveRayPush` 0x00422390 (105)
 - free functions
-  - [ ] `factoryFuncBoxActor` 0x004216c0 (12)
+  - [x] `factoryFuncBoxActor` 0x004216c0 (12)
   - [ ] `factoryFuncLightActor` 0x00422950 (12)
   - [x] `staticInit` 0x00421650 (25)
 - class `CLightActor`
@@ -4129,7 +4135,7 @@ functions don't count as done. Sizes are in instructions.
   - [x] `staticInit` 0x0043f770 (9)
   - [ ] `getCurrentMotionState` 0x00440650 (6)
 
-### `core/conveyor.cpp` (13 functions, 378 instructions, 1 done, 0 partial)
+### `core/conveyor.cpp` (13 functions, 378 instructions, 2 done, 0 partial)
 - class `CConveyor`
   - [ ] `ctor` 0x00441ca0 (48)
   - [ ] `getActorType` 0x00441c90 (2)
@@ -4145,7 +4151,7 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `factoryFuncConveyor` 0x00441c60 (12)
   - [x] `staticInit` 0x00441c30 (9)
 - class `CPlatform`
-  - [ ] `dtor` 0x00442380 (37)
+  - [x] `dtor` 0x00442380 (37)
 
 ### `core/cow.cpp` (11 functions, 903 instructions, 1 done, 0 partial)
 - class `CZombieCow`
@@ -4361,30 +4367,30 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `factoryFuncZombieDog` 0x0047f010 (12)
   - [x] `staticInit` 0x0047efe0 (9)
 
-### `core/door.cpp` (23 functions, 1740 instructions, 1 done, 0 partial)
+### `core/door.cpp` (23 functions, 1740 instructions, 10 done, 0 partial)
 - class `CDoor`
   - [ ] `getOpenStandPos` 0x00480e20 (177)
   - [ ] `onOpened` 0x0047fcf0 (8)
   - [ ] `onLocked` 0x00481210 (19)
   - [ ] `getMoveType` 0x00481070 (150)
-  - [ ] `ctor` 0x0047fad0 (99)
-  - [ ] `getActorType` 0x0047fac0 (2)
+  - [x] `ctor` 0x0047fad0 (99)
+  - [x] `getActorType` 0x0047fac0 (2)
   - [ ] `reposition` 0x0047fd20 (241)
   - [ ] `process` 0x004800c0 (472)
   - [ ] `renderOpaque` 0x004807d0 (166)
   - [ ] `renderBackground` 0x004809e0 (37)
   - [ ] `getBoundingBox` 0x00480a50 (28)
-  - [ ] `archive` 0x00480aa0 (193)
+  - [x] `archive` 0x00480aa0 (193)
   - [ ] `getCollisionType` 0x00480d90 (16)
-  - [ ] `getGroundType` 0x00480dd0 (3)
-  - [ ] `getBlockVirtualDirectorFlag` 0x00480df0 (3)
-  - [ ] `allowBulletHoles` 0x00480e00 (3)
+  - [x] `getGroundType` 0x00480dd0 (3)
+  - [x] `getBlockVirtualDirectorFlag` 0x00480df0 (3)
+  - [x] `allowBulletHoles` 0x00480e00 (3)
   - [ ] `updateCollisionData` 0x00481020 (19)
-  - [ ] `dtor` 0x00481670 (31)
+  - [x] `dtor` 0x00481670 (31)
   - [ ] `setup` 0x0047fc70 (40)
-  - [ ] `setSwingRange` 0x00480de0 (4)
+  - [x] `setSwingRange` 0x00480de0 (4)
 - free functions
-  - [ ] `factoryFuncDoor` 0x0047fa90 (12)
+  - [x] `factoryFuncDoor` 0x0047fa90 (12)
   - [x] `staticInit` 0x0047fa60 (9)
   - [ ] `clearRuleList` 0x00481650 (8)
 
@@ -4584,11 +4590,11 @@ functions don't count as done. Sizes are in instructions.
 - free functions
   - [x] `staticInit` 0x004a94d0 (9)
 
-### `core/event.cpp` (14 functions, 435 instructions, 2 done, 2 partial)
+### `core/event.cpp` (14 functions, 435 instructions, 3 done, 2 partial)
 - class `CRuleList`
   - [ ] `findFirst` 0x004b1890 (34)
   - [ ] `evaluateAndRun` 0x004b18e0 (24)
-  - [ ] `clear` 0x004b1670 (3)
+  - [x] `clear` 0x004b1670 (3)
   - [ ] `insert` 0x004b1680 (109)
   - [ ] `remove` 0x004b17c0 (67)
 - class `CEventList`
@@ -5315,22 +5321,22 @@ functions don't count as done. Sizes are in instructions.
 - free functions
   - [x] `staticInit` 0x00503d80 (10)
 
-### `core/lever.cpp` (14 functions, 639 instructions, 1 done, 0 partial)
+### `core/lever.cpp` (14 functions, 639 instructions, 7 done, 0 partial)
 - class `CLever`
   - [ ] `isAccessibleFrom` 0x00505080 (56)
   - [ ] `activate` 0x00504c90 (34)
-  - [ ] `ctor` 0x005047d0 (35)
-  - [ ] `getActorType` 0x005047c0 (2)
+  - [x] `ctor` 0x005047d0 (35)
+  - [x] `getActorType` 0x005047c0 (2)
   - [ ] `process` 0x00504920 (136)
   - [ ] `renderOpaque` 0x00504cf0 (57)
   - [ ] `getBoundingBox` 0x00504d80 (28)
-  - [ ] `archive` 0x00504e80 (131)
-  - [ ] `getCollisionType` 0x00505060 (5)
-  - [ ] `dtor` 0x00505430 (31)
+  - [x] `archive` 0x00504e80 (131)
+  - [x] `getCollisionType` 0x00505060 (5)
+  - [x] `dtor` 0x00505430 (31)
   - [ ] `setup` 0x005048a0 (47)
   - [ ] `getHandlePosition` 0x00504dd0 (56)
 - free functions
-  - [ ] `factoryFuncLever` 0x00504790 (12)
+  - [x] `factoryFuncLever` 0x00504790 (12)
   - [x] `staticInit` 0x00504760 (9)
 
 ### `core/lightgun.cpp` (13 functions, 1262 instructions, 1 done, 0 partial)
@@ -5781,11 +5787,12 @@ functions don't count as done. Sizes are in instructions.
   - [x] `staticInit` 0x00549320 (9)
   - [ ] `didPhaseCross` 0x00549aa0 (73)
 
-### `core/platfrm.cpp` (18 functions, 1935 instructions, 1 done, 0 partial)
+### `core/platfrm.cpp` (18 functions, 1935 instructions, 7 done, 1 partial)
 - class `CPlatform`
-  - [ ] `ctor` 0x0054c850 (115)
-  - [ ] `archive` 0x0054dbc0 (251)
-  - [ ] `getActorType` 0x0054c840 (2)
+  - [~] `ctor` 0x0054c850 (115)
+    - deferred: the course, the slew mode the editor sets, being drawn in the background, the health of 50 and the attached actors' places, with CPlatform::setup and CPlatform::process
+  - [x] `archive` 0x0054dbc0 (251)
+  - [x] `getActorType` 0x0054c840 (2)
   - [ ] `evaluatePosition` 0x0054cab0 (131)
   - [ ] `isActorOnPlatform` 0x0054df80 (169)
   - [ ] `updateAttachedActors` 0x0054e320 (91)
@@ -5794,13 +5801,13 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `renderBackground` 0x0054d9b0 (129)
   - [ ] `getBoundingBox` 0x0054db70 (28)
   - [ ] `getCollisionType` 0x0054e180 (15)
-  - [ ] `allowBulletHoles` 0x0054e1a0 (2)
-  - [ ] `getGroundType` 0x0054e1c0 (3)
-  - [ ] `getBlockVirtualDirectorFlag` 0x0054e1d0 (3)
+  - [x] `allowBulletHoles` 0x0054e1a0 (2)
+  - [x] `getGroundType` 0x0054e1c0 (3)
+  - [x] `getBlockVirtualDirectorFlag` 0x0054e1d0 (3)
   - [ ] `setup` 0x0054ca20 (49)
   - [ ] `onActorDeleted` 0x0054e2e0 (15)
 - free functions
-  - [ ] `factoryFuncPlatform` 0x0054c810 (12)
+  - [x] `factoryFuncPlatform` 0x0054c810 (12)
   - [x] `staticInit` 0x0054c7e0 (9)
 
 ## Step 29: Not reached from startup: `core/` (part 7 of 9)

@@ -1,11 +1,14 @@
 #include "common/error/fatalerror.h"
+#include "common/math/quaternion4f.h"
 #include "common/math/vector3f.h"
 #include "common/random/watcomrandom.h"
 #include "common/text/textscanner.h"
 #include "core/actor/actor.h"
 #include "core/actor/actorarchive.h"
 #include "core/actor/demonactor.h"
+#include "core/box/box.h"
 #include "core/cloth/clothlist.h"
+#include "core/event/rulelist.h"
 #include "core/game/game.h"
 #include "core/location.h"
 #include "core/skeleton/deformablemodelinstance.h"
@@ -214,6 +217,61 @@ TEST_F(CActorArchiveTest, AClothListThatCantBeReadIsFatal) {
     expectFatal("{\n1", read_list, "clothList", "clothCount");
     expectFatal("{\n1\ncoat.cls\n}\n", read_list, "clothList", "cloth filename entry");
     expectFatal("{\n1\n\"coat.cls\"\n}", read_list, "clothList", "Cloth list closing brace");
+}
+
+TEST_F(CActorArchiveTest, AQuaternionIsWThenXYAndZ) {
+    common::CQuaternion4f quaternion;
+    EXPECT_EQ(read("1,0.5,-2,3    // origOrient\nnext",
+                   [&](CActorArchive &archive) { archive.archiveQuaternion(quaternion, "q"); }),
+              "next");
+    EXPECT_EQ(quaternion, (common::CQuaternion4f{.w = 1.0F, .x = 0.5F, .y = -2.0F, .z = 3.0F}));
+    const auto read_quaternion = [&](CActorArchive &archive) {
+        archive.archiveQuaternion(quaternion, "q");
+    };
+    expectFatal("1,2,3\n", read_quaternion, "q", "Quaternion");
+}
+
+TEST_F(CActorArchiveTest, ABoxIsBetweenItsBraces) {
+    CBox box;
+    EXPECT_EQ(read("\t{ // simBox\n\t\tboxVersion\n\t\t1\n\t\tboxStateInfo\n\t\t1,2,3\n\t\t0,0,0\n"
+                   "\t\t4,5,6\n\t\t7\n\t\t0,0,0\n\t\t0,0,0\n\t\t1\n\t}\nnext",
+                   [&](CActorArchive &archive) { archive.archiveBox(box, "simBox"); }),
+              "next");
+    EXPECT_EQ(box.getPosition().y, 2.0F);
+    EXPECT_EQ(box.getExtents().z, 6.0F);
+    EXPECT_EQ(box.getValidity(), 1);
+}
+
+TEST_F(CActorArchiveTest, ABoxWithoutItsBracesIsFatal) {
+    CBox box;
+    const auto read_box = [&](CActorArchive &archive) { archive.archiveBox(box, "simBox"); };
+    expectFatal("{", read_box, "simBox", "sim box state info opening brace");
+    expectFatal("{\nv\n1\ns\n0,0,0\n0,0,0\n0,0,0\n0\n0,0,0\n0,0,0\n1\n}", read_box, "simBox",
+                "sim box state info closing brace");
+}
+
+TEST_F(CActorArchiveTest, RulesAreEachConditionAndItsEvent) {
+    CRuleList rules;
+    EXPECT_EQ(read("\t{ // openRules\n\t\t2 // ruleCount\n\t\t\"true\" => \"Open\"\n"
+                   "\t\t\"@flag\" => \"Shut it\"\n\t}\nnext",
+                   [&](CActorArchive &archive) { archive.archiveRules(rules, "openRules"); }),
+              "next");
+    EXPECT_THAT(rules.getRules(), ElementsAre(SRule{.condition = "true", .event = "Open"},
+                                              SRule{.condition = "@flag", .event = "Shut it"}));
+    read("{\n0 // ruleCount\n}\n",
+         [&](CActorArchive &archive) { archive.archiveRules(rules, "openRules"); });
+    EXPECT_TRUE(rules.getRules().empty());
+}
+
+TEST_F(CActorArchiveTest, RulesThatCantBeReadAreFatal) {
+    CRuleList rules;
+    const auto read_rules = [&](CActorArchive &archive) { archive.archiveRules(rules, "rules"); };
+    expectFatal("{", read_rules, "rules", "Rule list opening brace");
+    expectFatal("{\nnone\n", read_rules, "rules", "rule count");
+    expectFatal("{\n1", read_rules, "rules", "ruleCount");
+    expectFatal("{\n1\n\"true\" \"Open\"\n}\n", read_rules, "rules", "rule");
+    expectFatal("{\n1\n\"\" => \"Open\"\n}\n", read_rules, "rules", "rule");
+    expectFatal("{\n1\n\"true\" => \"Open\"\n}", read_rules, "rules", "Rule list closing brace");
 }
 
 TEST_F(CActorArchiveTest, AMotionStateIsTheMotionAndFrame) {

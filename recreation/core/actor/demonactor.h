@@ -131,6 +131,9 @@ public:
     [[nodiscard]] float getCreateProbability() const;
     // The event that creates the actor, or "none".
     [[nodiscard]] const std::string &getCreateEvent() const;
+    // Drawn with the transparent things, after the rest.
+    [[nodiscard]] bool isTransparent() const;
+    void setTransparent(bool transparent);
 
 private:
     std::string actor_name_;
@@ -139,6 +142,7 @@ private:
     EActorLifecycleState lifecycle_state_ = EActorLifecycleState::kNotCreated;
     float create_probability_ = 1.0F;
     std::string create_event_ = "none";
+    bool transparent_ = false;
 };
 
 } // namespace nocturne::core

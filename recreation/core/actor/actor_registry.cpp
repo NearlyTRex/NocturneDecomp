@@ -7,8 +7,10 @@
 #include "core/baron/baron.h"
 #include "core/baron/baronweapon.h"
 #include "core/barrier/barrier.h"
+#include "core/boxactor/boxactor.h"
 #include "core/charactr/character.h"
 #include "core/colonel/colonel.h"
+#include "core/door/door.h"
 #include "core/gabriela/gabriella.h"
 #include "core/gun/gun.h"
 #include "core/haystack/haystack.h"
@@ -16,8 +18,10 @@
 #include "core/hero/hero.h"
 #include "core/hero/heroplaceholder.h"
 #include "core/icepick/icepick.h"
+#include "core/lever/lever.h"
 #include "core/litecone/lightcone.h"
 #include "core/moloch/moloch.h"
+#include "core/platfrm/platform.h"
 #include "core/scat/scat.h"
 #include "core/stranger/stranger.h"
 #include "core/svetlana/svetlana.h"
@@ -43,7 +47,7 @@ constexpr int kUnlistedVersion = 1;
 // one place, and each port adds its own.
 // nocedit 0x00408320
 void CActor::registerActorClasses() {
-    static constexpr std::array<const CDemonActorType *, 23> kTypes = {
+    static constexpr std::array<const CDemonActorType *, 27> kTypes = {
         &CDemonActor::kType,      &CCharacter::kType, &CHero::kType,
         &CHeroPlaceholder::kType, &CGabriella::kType, &CSvetlana::kType,
         &CStranger::kType,        &CScat::kType,      &CBaron::kType,
@@ -51,7 +55,8 @@ void CActor::registerActorClasses() {
         &CMoloch::kType,          &CWeapon::kType,    &CGun::kType,
         &CBaronWeapon::kType,     &CAmmo::kType,      &CTrigger::kType,
         &CWayPoint::kType,        &CBarrier::kType,   &CBackgroundActor::kType,
-        &CHealthItem::kType,      &CLightCone::kType};
+        &CHealthItem::kType,      &CLightCone::kType, &CDoor::kType,
+        &CLever::kType,           &CBoxActor::kType,  &CPlatform::kType};
     for (const CDemonActorType *type : kTypes) {
         registerActorClass(*type);
     }
