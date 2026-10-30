@@ -2,6 +2,7 @@
 
 #include <gtest/gtest.h>
 
+#include <string>
 #include <string_view>
 #include <type_traits>
 #include <vector>
@@ -13,6 +14,7 @@ using Lines = std::vector<std::string_view>;
 
 TEST(TextLines, PublicInterface) {
     static_assert(std::is_same_v<decltype(&splitTextLines), Lines (*)(std::string_view)>);
+    static_assert(std::is_same_v<decltype(&toTextMode), std::string (*)(std::string_view)>);
 }
 
 TEST(TextLines, EachLineLosesItsNewline) {
@@ -33,6 +35,13 @@ TEST(TextLines, BlankLinesAreKept) {
 
 TEST(TextLines, NoTextHasNoLines) {
     EXPECT_TRUE(splitTextLines("").empty());
+}
+
+// A carriage return not before a newline stays, as text mode keeps it.
+TEST(TextMode, EachCrlfBecomesANewline) {
+    EXPECT_EQ(toTextMode("one\r\ntwo\n\r\n"), "one\ntwo\n\n");
+    EXPECT_EQ(toTextMode("a\rb\r"), "a\rb\r");
+    EXPECT_EQ(toTextMode(""), "");
 }
 
 } // namespace

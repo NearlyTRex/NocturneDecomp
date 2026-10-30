@@ -1,6 +1,7 @@
 #include "common/text/textlines.h"
 
 #include <cstddef>
+#include <string>
 #include <string_view>
 #include <vector>
 
@@ -18,6 +19,17 @@ std::vector<std::string_view> splitTextLines(std::string_view text) {
         lines.push_back(line);
     }
     return lines;
+}
+
+std::string toTextMode(std::string_view text) {
+    std::string read;
+    read.reserve(text.size());
+    for (std::size_t i = 0; i < text.size(); ++i) {
+        if (text[i] != '\r' || i + 1 == text.size() || text[i + 1] != '\n') {
+            read.push_back(text[i]);
+        }
+    }
+    return read;
 }
 
 } // namespace nocturne::common

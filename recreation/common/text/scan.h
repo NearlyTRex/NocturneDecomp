@@ -25,5 +25,7 @@ struct SScanned {
 // "%d" and "%f" with the length each took, leading whitespace included.
 [[nodiscard]] std::optional<SScanned<int>> scanIntegerPrefix(std::string_view text);
 [[nodiscard]] std::optional<SScanned<float>> scanFloatPrefix(std::string_view text);
+// A count a file gave, as a size: none when it is negative.
+[[nodiscard]] std::size_t toCount(int value);
 
 } // namespace nocturne::common

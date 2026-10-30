@@ -2,7 +2,9 @@
 
 #include <gtest/gtest.h>
 
+#include <bit>
 #include <cmath>
+#include <cstdint>
 #include <limits>
 #include <type_traits>
 
@@ -37,6 +39,21 @@ TEST(CBoundingBox3D, PublicInterface) {
                                                                         common::CVector3f *)>);
     static_assert(std::is_same_v<decltype(&CBoundingBox3D::doesSphereIntersect),
                                  int (CBoundingBox3D::*)(common::CVector3f *, float)>);
+}
+
+// The original's bits for 1e37 and -1e37.
+TEST(CBoundingBox3D, AResetBoxIsInsideOutSoAPointIsTheWholeBox) {
+    CBoundingBox3D box;
+    box.reset();
+    EXPECT_EQ(std::bit_cast<std::uint32_t>(box.min.x), 0x7cf0bdc2U);
+    EXPECT_EQ(box.min.y, 1e37F);
+    EXPECT_EQ(box.min.z, 1e37F);
+    EXPECT_EQ(std::bit_cast<std::uint32_t>(box.max.x), 0xfcf0bdc2U);
+    EXPECT_EQ(box.max.y, -1e37F);
+    EXPECT_EQ(box.max.z, -1e37F);
+    box.expand({.x = 1.0F, .y = 2.0F, .z = 3.0F});
+    EXPECT_TRUE(box.min.equals({.x = 1.0F, .y = 2.0F, .z = 3.0F}));
+    EXPECT_TRUE(box.max.equals({.x = 1.0F, .y = 2.0F, .z = 3.0F}));
 }
 
 TEST(CBoundingBox3D, ExpandingGrowsEachSideToTakeInThePoint) {

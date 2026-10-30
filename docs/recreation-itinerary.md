@@ -22,9 +22,9 @@ functions don't count as done. Sizes are in instructions.
 | 6 | `initializeGameSystems`, `CAlphaBitmap::scale`, `clearTextureCache`, `CMoon::init`, `CGame::saveClockTime`, `CGame::updateDT` | 11 | 25 | 2988 | 19 | 6 | 76.0% |
 | 7 | `CMoon::update`, `CMoon::render` | 17 | 120 | 17616 | 68 | 31 | 56.6% |
 | 8 | `renderMenuAndGetChoice`, `CMoon::free`, `CSound::reset`, `CEditorTools::showFileSelectionDialog` | 8 | 63 | 5314 | 60 | 3 | 95.2% |
-| 9 | `CPickList::enableItem`, `CEventList::resetGameFlags`, `CLevelLoader::show`, `CDemonMission::load` | 15 | 56 | 3298 | 26 | 11 | 46.4% |
+| 9 | `CPickList::enableItem`, `CEventList::resetGameFlags`, `CLevelLoader::show`, `CDemonMission::load` | 15 | 56 | 3298 | 30 | 11 | 53.5% |
 | 10 | `CDemonMission::createHeros`, `CDemonMission::prepareAllActors`, `CEventList::reset`, `CDemonMission::loadSet` | 15 | 42 | 5112 | 31 | 10 | 73.8% |
-| 11 | `CScript::loadScript` | 63 | 579 | 67400 | 50 | 30 | 8.6% |
+| 11 | `CScript::loadScript` | 63 | 579 | 67400 | 51 | 30 | 8.8% |
 | 12 | `CDemonMission::loadScript`, `CScript::executeInitSection`, `CDemonMission::startMission`, `CDemonMission::buildActiveSetActorList`, `CConsole::reset`, `CEditorTools::displayMemoryDiagnostics`, `CGame::setGameRes`, `CDemonLight::init`, `CDemonSet::initScene` | 12 | 26 | 1658 | 3 | 2 | 11.5% |
 | 13 | `CFireEffect::init`, `CDemonSet::loadMasterLightStates`, `CDemonSet::setGamma`, `CGame::clearOverlay`, `CGame::loadAssets` | 7 | 27 | 735 | 0 | 0 | 0.0% |
 | 14 | `CNetGame::syncPlayers`, `CNetGame::processServerFrame`, `CLevelLoader::cleanup`, `CKeys::toggleInputMask`, `CGame::processHotkeys` | 17 | 51 | 5302 | 4 | 0 | 7.8% |
@@ -36,17 +36,17 @@ functions don't count as done. Sizes are in instructions.
 | 20 | Not reached from startup: `support/` | 2 | 24 | 593 | 3 | 1 | 12.5% |
 | 21 | Not reached from startup: `cockpit/` | 4 | 178 | 11527 | 0 | 0 | 0.0% |
 | 22 | Not reached from startup: `shape/` | 2 | 42 | 3178 | 4 | 2 | 9.5% |
-| 23 | Not reached from startup: `core/` (part 1 of 9) | 18 | 292 | 16011 | 57 | 12 | 19.5% |
+| 23 | Not reached from startup: `core/` (part 1 of 9) | 18 | 292 | 16011 | 58 | 12 | 19.8% |
 | 24 | Not reached from startup: `core/` (part 2 of 9) | 11 | 277 | 24965 | 20 | 4 | 7.2% |
 | 25 | Not reached from startup: `core/` (part 3 of 9) | 24 | 278 | 24134 | 32 | 9 | 11.5% |
 | 26 | Not reached from startup: `core/` (part 4 of 9) | 18 | 300 | 20148 | 47 | 7 | 15.6% |
 | 27 | Not reached from startup: `core/` (part 5 of 9) | 21 | 294 | 20910 | 56 | 9 | 19.0% |
-| 28 | Not reached from startup: `core/` (part 6 of 9) | 18 | 282 | 21809 | 42 | 10 | 14.8% |
-| 29 | Not reached from startup: `core/` (part 7 of 9) | 18 | 263 | 22721 | 23 | 10 | 8.7% |
+| 28 | Not reached from startup: `core/` (part 6 of 9) | 18 | 282 | 21809 | 44 | 10 | 15.6% |
+| 29 | Not reached from startup: `core/` (part 7 of 9) | 18 | 263 | 22721 | 41 | 11 | 15.5% |
 | 30 | Not reached from startup: `core/` (part 8 of 9) | 20 | 300 | 31826 | 40 | 5 | 13.3% |
 | 31 | Not reached from startup: `core/` (part 9 of 9) | 5 | 111 | 10905 | 18 | 4 | 16.2% |
 | 32 | Not reached from startup: `wincore/` | 2 | 11 | 482 | 4 | 0 | 36.3% |
-| | **All** | | **4479** | **402407** | **935** | **180** | **20.8%** |
+| | **All** | | **4479** | **402407** | **961** | **181** | **21.4%** |
 
 ## Step 0: Math value types
 
@@ -993,14 +993,14 @@ functions don't count as done. Sizes are in instructions.
 - free functions
   - [ ] `freeAllModels` 0x00478cb0 (15)
 
-### `core/skeleton.cpp` (4 functions, 151 instructions, 0 done, 0 partial)
+### `core/skeleton.cpp` (4 functions, 151 instructions, 4 done, 0 partial)
 - class `CDeformableModel`
-  - [ ] `free` 0x0059a2b0 (73)
+  - [x] `free` 0x0059a2b0 (73)
 - free functions
-  - [ ] `freeAllModels` 0x005a1dc0 (15)
-  - [ ] `freeAllSkeletons` 0x005a1ea0 (16)
+  - [x] `freeAllModels` 0x005a1dc0 (15)
+  - [x] `freeAllSkeletons` 0x005a1ea0 (16)
 - class `CSkeleton`
-  - [ ] `free` 0x00599a50 (47)
+  - [x] `free` 0x00599a50 (47)
 
 ### `core/actor.cpp` (18 functions, 918 instructions, 14 done, 1 partial)
 - class `CDemonActor`
@@ -1512,13 +1512,13 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `startMovement` 0x0054d690 (38)
   - [ ] `attachActor` 0x0054e1e0 (112)
 
-### `core/skeleton.cpp` (13 functions, 1277 instructions, 0 done, 0 partial)
+### `core/skeleton.cpp` (13 functions, 1277 instructions, 1 done, 0 partial)
 - class `CDeformableModel`
   - [ ] `findMaxWeightBone` 0x0059dca0 (69)
   - [ ] `exactRayTrace` 0x0059cba0 (199)
   - [ ] `skinVertices` 0x0059a880 (122)
   - [ ] `getBonePart` 0x0059c2d0 (8)
-  - [ ] `getSkeletonPtr` 0x0059a810 (18)
+  - [x] `getSkeletonPtr` 0x0059a810 (18)
   - [ ] `dismember` 0x0059c5e0 (426)
   - [ ] `findPartByName` 0x0059c240 (52)
 - class `CDeformableModelInstance`
@@ -3837,7 +3837,7 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `dtor` 0x0041da40 (67)
   - [ ] `setup` 0x0041bd90 (135)
 
-### `core/box.cpp` (12 functions, 1030 instructions, 1 done, 1 partial)
+### `core/box.cpp` (12 functions, 1030 instructions, 2 done, 1 partial)
 - class `CBox`
   - [~] `loadFromFile` 0x0041fe90 (122)
     - deferred: the corners, mass and transform from the position, orientation, extents and volume read, then the velocity along the box's axes turned into the world's, with CBox::setupCorners
@@ -3846,7 +3846,7 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `setupVelocities` 0x00420180 (53)
   - [ ] `setupN` 0x0041df50 (133)
 - class `CBoundingBox3D`
-  - [ ] `reset` 0x00420fb0 (11)
+  - [x] `reset` 0x00420fb0 (11)
   - [ ] `getBoundingBoxScreenSize` 0x00420840 (82)
   - [ ] `normalize` 0x00420d70 (37)
   - [ ] `computeFromPoints` 0x00420dc0 (90)
@@ -5654,7 +5654,7 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `countTrianglesFromPolygons` 0x0052a490 (19)
   - [ ] `addInts` 0x0052cc40 (3)
 
-### `core/motion.cpp` (23 functions, 1941 instructions, 5 done, 1 partial)
+### `core/motion.cpp` (23 functions, 1941 instructions, 7 done, 1 partial)
 - class `CMotionController`
   - [x] `load` 0x0052e5d0 (50)
   - [ ] `save` 0x0052e670 (50)
@@ -5679,8 +5679,8 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `jumpToMotionByName` 0x0052ddb0 (17)
   - [ ] `markerPositionToFrame` 0x0052e3a0 (98)
 - class `CMotionList`
-  - [ ] `load` 0x0052cd70 (332)
-  - [ ] `ctor` 0x0052cd50 (4)
+  - [x] `load` 0x0052cd70 (332)
+  - [x] `ctor` 0x0052cd50 (4)
   - [ ] `save` 0x0052d170 (248)
 
 ### `core/netgame.cpp` (35 functions, 1904 instructions, 0 done, 3 partial)
@@ -5989,7 +5989,7 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `factoryFuncSimBox` 0x00588d00 (12)
   - [x] `staticInit` 0x00588cd0 (9)
 
-### `core/skeleton.cpp` (88 functions, 8882 instructions, 2 done, 4 partial)
+### `core/skeleton.cpp` (88 functions, 8882 instructions, 20 done, 5 partial)
 - class `CDeformableModelInstance`
   - [x] `showAllParts` 0x005a0410 (8)
   - [x] `clearAllTextureSetIndices` 0x005a0430 (8)
@@ -6044,10 +6044,9 @@ functions don't count as done. Sizes are in instructions.
 - free functions
   - [ ] `blendWeightCallback` 0x0059ddb0 (2)
   - [ ] `computeBoneModelMatrices` 0x005a1950 (126)
-  - [ ] `loadSkeleton` 0x005a1df0 (57)
-  - [ ] `getDeformableModel` 0x005a1cf0 (67)
-  - [~] `staticInit` 0x00599670 (17)
-    - deferred: the pools of 64 deformable models and 40 skeletons, with this and loadSkeleton
+  - [x] `loadSkeleton` 0x005a1df0 (57)
+  - [x] `getDeformableModel` 0x005a1cf0 (67)
+  - [x] `staticInit` 0x00599670 (17)
   - [ ] `skipToEndOfLine` 0x005996c0 (11)
   - [ ] `distancePointToLineSegment` 0x005996e0 (149)
   - [ ] `getRootMotionDeltaForMotion` 0x005a0f50 (51)
@@ -6056,11 +6055,11 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `getBoneAngleAtFrame` 0x0059a050 (8)
   - [ ] `getBoneAngleInterpolated` 0x0059a070 (78)
   - [ ] `getHierarchyDistance` 0x0059a100 (23)
-  - [ ] `allocMemory` 0x00599910 (86)
-  - [ ] `loadStream` 0x00599bb0 (319)
-  - [ ] `load` 0x00599b10 (50)
-  - [ ] `ctor` 0x00599880 (28)
-  - [ ] `dtor` 0x005998e0 (23)
+  - [x] `allocMemory` 0x00599910 (86)
+  - [x] `loadStream` 0x00599bb0 (319)
+  - [x] `load` 0x00599b10 (50)
+  - [x] `ctor` 0x00599880 (28)
+  - [x] `dtor` 0x005998e0 (23)
 - class `CDeformableModel`
   - [ ] `shatter` 0x0059cec0 (341)
   - [ ] `selectLOD` 0x0059ce40 (50)
@@ -6069,19 +6068,21 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `initVertexWRecip` 0x0059ab90 (31)
   - [ ] `renderParts` 0x0059abf0 (577)
   - [ ] `getPartPtr` 0x0059c220 (9)
-  - [ ] `getVertexPoolPtr` 0x0059a860 (8)
-  - [ ] `computeBoneBoundsAndFlags` 0x0059d9e0 (154)
-  - [ ] `computeFarthestChildBones` 0x0059dbe0 (67)
-  - [ ] `bindSkeleton` 0x0059c1f0 (12)
-  - [ ] `captureTextures` 0x0059a780 (48)
-  - [ ] `allocMemory` 0x0059a3f0 (81)
-  - [ ] `allocLOD` 0x0059a510 (152)
+  - [x] `getVertexPoolPtr` 0x0059a860 (8)
+  - [x] `computeBoneBoundsAndFlags` 0x0059d9e0 (154)
+  - [~] `computeFarthestChildBones` 0x0059dbe0 (67)
+    - unverified: comparing the children's distances in double where the x87 holds them at its extended precision, by running nocedit's code on children of near-equal distance
+  - [x] `bindSkeleton` 0x0059c1f0 (12)
+  - [x] `captureTextures` 0x0059a780 (48)
+  - [x] `allocMemory` 0x0059a3f0 (81)
+  - [x] `allocLOD` 0x0059a510 (152)
   - [ ] `computeBoneDominantPart` 0x0059c2f0 (224)
-  - [ ] `computePartDominantBones` 0x0059d460 (330)
-  - [ ] `loadStream` 0x0059b970 (691)
-  - [ ] `load` 0x0059b8d0 (50)
-  - [ ] `ctor` 0x0059a160 (66)
-  - [ ] `dtor` 0x0059a270 (18)
+  - [~] `computePartDominantBones` 0x0059d460 (330)
+    - deferred: weighing each part's triangles by their area on the bones their vertices follow, at the rest pose, to find its dominant bone and then each bone's part, for a model of more than one part, with CDeformableModelInstance::initializeFromModel and computeBoneDominantPart
+  - [x] `loadStream` 0x0059b970 (691)
+  - [x] `load` 0x0059b8d0 (50)
+  - [x] `ctor` 0x0059a160 (66)
+  - [x] `dtor` 0x0059a270 (18)
   - [ ] `skinSingleVertex` 0x0059aa00 (99)
   - [ ] `renderWireframe` 0x0059b5a0 (56)
   - [ ] `renderSkeleton` 0x0059b640 (189)

@@ -53,4 +53,8 @@ std::optional<SScanned<float>> scanFloatPrefix(std::string_view text) {
     return scan<float>(text, std::chars_format::general);
 }
 
+std::size_t toCount(int value) {
+    return value < 0 ? 0 : static_cast<std::size_t>(value);
+}
+
 } // namespace nocturne::common

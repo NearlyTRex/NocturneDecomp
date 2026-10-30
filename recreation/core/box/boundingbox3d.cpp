@@ -4,6 +4,7 @@
 
 #include <algorithm>
 #include <array>
+#include <bit>
 #include <cmath>
 #include <cstddef>
 #include <optional>
@@ -67,6 +68,15 @@ common::CVector3f reversedAndNormalised(const common::CVector3f &direction) {
 }
 
 } // namespace
+
+// Inside out, so the first point expanded by is the whole box.
+// nocedit 0x00420fb0
+void CBoundingBox3D::reset() {
+    // 1e37, the original's bits.
+    const auto empty_bound = std::bit_cast<float>(0x7cf0bdc2U);
+    min = {.x = empty_bound, .y = empty_bound, .z = empty_bound};
+    max = {.x = -empty_bound, .y = -empty_bound, .z = -empty_bound};
+}
 
 // A NaN on either side of a min test stores the point, as the original's unordered compare does.
 // nocedit 0x00420240
