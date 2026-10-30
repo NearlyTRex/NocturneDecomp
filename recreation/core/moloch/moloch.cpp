@@ -19,7 +19,6 @@ constexpr int kVersion = 1;
 constinit const CDemonActorType CMoloch::kType =
     makeActorType("CMoloch", &CHero::kType, &CMoloch::create, kVersion);
 
-// deferred: loading the human model moloch_h.dfm, with CDeformableModelInstance::init
 // deferred: the morph, with the steps that read it
 // deferred: a processDamage override for a player's Moloch, which the original lacks so nothing
 //   hurts it: damage down to a floor of 1 hit point, none while invincible or in god mode, and
@@ -37,7 +36,9 @@ constinit const CDemonActorType CMoloch::kType =
 //   never reaches (the decomp's hero_interact.h nocturne_hero_fire_interact), with
 //   CMoloch::process
 // nocedit 0x00528b30
-CMoloch::CMoloch() = default;
+CMoloch::CMoloch() {
+    getModel().init("moloch_h.dfm");
+}
 
 // nocedit 0x00528bf0
 CMoloch::~CMoloch() = default;
@@ -78,7 +79,7 @@ float CMoloch::getMorphTimer() const {
 }
 
 // nocedit 0x00528af0
-std::unique_ptr<CDemonActor> CMoloch::create() {
+std::unique_ptr<CDemonActor> CMoloch::create(CActor & /*classes*/) {
     return std::make_unique<CMoloch>();
 }
 

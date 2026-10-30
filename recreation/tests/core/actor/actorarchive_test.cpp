@@ -274,6 +274,18 @@ TEST_F(CActorArchiveTest, RulesThatCantBeReadAreFatal) {
     expectFatal("{\n1\n\"true\" => \"Open\"\n}", read_rules, "rules", "Rule list closing brace");
 }
 
+TEST_F(CActorArchiveTest, ADeformableModelIsItsFileNameWithEveryPartShown) {
+    CDeformableModelInstance model;
+    model.setPartVisibility(0, EPartVisibility::kHidden);
+    EXPECT_EQ(read("\t\"ZOMBIE2.DFM\"    // modelName\nnext",
+                   [&](CActorArchive &archive) {
+                       archive.archiveDeformableModelInstance(model, "modelName");
+                   }),
+              "next");
+    EXPECT_EQ(model.getModelName(), "ZOMBIE2.DFM");
+    EXPECT_EQ(model.getPartVisibility(0), EPartVisibility::kShown);
+}
+
 TEST_F(CActorArchiveTest, AMotionStateIsTheMotionAndFrame) {
     CDeformableModelInstance model;
     EXPECT_EQ(read("\t{ // motion state\n\t\t12,3.5\n\t}\nnext",

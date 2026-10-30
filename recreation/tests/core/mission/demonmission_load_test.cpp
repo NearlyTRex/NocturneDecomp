@@ -36,12 +36,12 @@ using ::testing::Return;
 using ::testing::StrEq;
 using ::testing::ThrowsMessage;
 
-std::unique_ptr<CDemonActor> makeDoor();
-std::unique_ptr<CDemonActor> makeHero();
-std::unique_ptr<CDemonActor> makeSpot();
-std::unique_ptr<CDemonActor> makePlaced();
-std::unique_ptr<CDemonActor> makeLinked();
-std::unique_ptr<CDemonActor> makeCarrier();
+std::unique_ptr<CDemonActor> makeDoor(CActor &classes);
+std::unique_ptr<CDemonActor> makeHero(CActor &classes);
+std::unique_ptr<CDemonActor> makeSpot(CActor &classes);
+std::unique_ptr<CDemonActor> makePlaced(CActor &classes);
+std::unique_ptr<CDemonActor> makeLinked(CActor &classes);
+std::unique_ptr<CDemonActor> makeCarrier(CActor &classes);
 
 const CDemonActorType kDoorType = makeActorType("CTestDoor", &kTestBaseType, &makeDoor, 2);
 // A kind of the game's hero class, which is what a hero placeholder is offered for.
@@ -110,30 +110,30 @@ public:
     }
 };
 
-std::unique_ptr<CDemonActor> makeDoor() {
+std::unique_ptr<CDemonActor> makeDoor(CActor & /*classes*/) {
     return std::make_unique<CTestActor>(kDoorType);
 }
 
-std::unique_ptr<CDemonActor> makeHero() {
+std::unique_ptr<CDemonActor> makeHero(CActor & /*classes*/) {
     return std::make_unique<CTestHero>();
 }
 
-std::unique_ptr<CDemonActor> makeSpot() {
+std::unique_ptr<CDemonActor> makeSpot(CActor & /*classes*/) {
     return std::make_unique<CTestSpot>();
 }
 
-std::unique_ptr<CDemonActor> makePlaced() {
+std::unique_ptr<CDemonActor> makePlaced(CActor & /*classes*/) {
     auto placed = std::make_unique<CTestActor>(kPlacedType);
     CTestActor &actor = *placed;
     actor.onArchive([&actor](CActorArchive &archive) { actor.CDemonActor::archive(archive); });
     return placed;
 }
 
-std::unique_ptr<CDemonActor> makeLinked() {
+std::unique_ptr<CDemonActor> makeLinked(CActor & /*classes*/) {
     return std::make_unique<CTestLinked>();
 }
 
-std::unique_ptr<CDemonActor> makeCarrier() {
+std::unique_ptr<CDemonActor> makeCarrier(CActor & /*classes*/) {
     return std::make_unique<CTestCarrier>();
 }
 

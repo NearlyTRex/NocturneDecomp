@@ -35,7 +35,7 @@ const CDemonActorType &CBackgroundActor::getActorType() const {
 }
 
 // nocedit 0x00412770
-std::unique_ptr<CDemonActor> CBackgroundActor::create() {
+std::unique_ptr<CDemonActor> CBackgroundActor::create(CActor & /*classes*/) {
     return std::make_unique<CBackgroundActor>();
 }
 

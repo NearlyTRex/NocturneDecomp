@@ -40,7 +40,7 @@ public:
 private:
     static constexpr common::CVector3f kDefaultSize{.x = 5.0F, .y = 5.0F, .z = 5.0F};
 
-    static std::unique_ptr<CDemonActor> create();
+    static std::unique_ptr<CDemonActor> create(CActor &classes);
 
     common::CVector3f size_ = kDefaultSize;
     std::string effect_class_name_list_;

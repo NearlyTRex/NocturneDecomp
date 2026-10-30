@@ -2,6 +2,7 @@
 
 #include "common/fwd.h"
 #include "common/math/vector3f.h"
+#include "common/math/vector3i.h"
 #include "core/fwd.h"
 #include "core/location.h"
 
@@ -134,6 +135,12 @@ public:
     // Drawn with the transparent things, after the rest.
     [[nodiscard]] bool isTransparent() const;
     void setTransparent(bool transparent);
+    // How much larger than its model the actor is drawn along each axis, in 16.16.
+    [[nodiscard]] const common::CVector3i &getScale() const;
+    void setScale(const common::CVector3i &scale);
+
+    // A scale of 1 in 16.16.
+    static constexpr int kUnitScale = 0x10000;
 
 private:
     std::string actor_name_;
@@ -143,6 +150,7 @@ private:
     float create_probability_ = 1.0F;
     std::string create_event_ = "none";
     bool transparent_ = false;
+    common::CVector3i scale_{.x = kUnitScale, .y = kUnitScale, .z = kUnitScale};
 };
 
 } // namespace nocturne::core

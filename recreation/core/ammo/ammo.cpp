@@ -41,7 +41,7 @@ const CDemonActorType &CAmmo::getActorType() const {
 }
 
 // nocedit 0x00410d80
-std::unique_ptr<CDemonActor> CAmmo::create() {
+std::unique_ptr<CDemonActor> CAmmo::create(CActor & /*classes*/) {
     return std::make_unique<CAmmo>();
 }
 

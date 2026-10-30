@@ -51,9 +51,9 @@ STag readTag(common::CTextScanner &scanner, char brace) {
 constinit const CDemonActorType CDemonActor::kType =
     makeActorType("CDemonActor", nullptr, nullptr, kVersion);
 
-// deferred: the defaults the constructor gives the orientation's matrix, and the scale,
-//   platform, rendering (but for the transparency), health and footstep fields, with the steps
-//   that read them
+// deferred: the defaults the constructor gives the orientation's matrix, and the platform,
+//   rendering (but for the transparency), health and footstep fields, with the steps that read
+//   them
 // nocedit 0x004088b0
 CDemonActor::CDemonActor() = default;
 
@@ -108,6 +108,14 @@ bool CDemonActor::isTransparent() const {
 
 void CDemonActor::setTransparent(bool transparent) {
     transparent_ = transparent;
+}
+
+const common::CVector3i &CDemonActor::getScale() const {
+    return scale_;
+}
+
+void CDemonActor::setScale(const common::CVector3i &scale) {
+    scale_ = scale;
 }
 
 // Files before version 7 held a field of view, which is read and dropped.

@@ -36,7 +36,7 @@ const CDemonActorType &CHealthItem::getActorType() const {
 }
 
 // nocedit 0x004f1d90
-std::unique_ptr<CDemonActor> CHealthItem::create() {
+std::unique_ptr<CDemonActor> CHealthItem::create(CActor & /*classes*/) {
     return std::make_unique<CHealthItem>();
 }
 

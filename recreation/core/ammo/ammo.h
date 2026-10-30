@@ -44,7 +44,7 @@ public:
     [[nodiscard]] EAmmoType getAmmoType() const;
 
 private:
-    static std::unique_ptr<CDemonActor> create();
+    static std::unique_ptr<CDemonActor> create(CActor &classes);
 
     CKeyFramedModelInstance model_;
     std::string weapon_class_name_ = "CGun";

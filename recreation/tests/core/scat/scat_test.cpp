@@ -1,6 +1,7 @@
 #include "core/actor/demonactortype.h"
 #include "core/scat/scat.h"
 #include "tests/mocks/core/notportedcalls.h"
+#include "tests/mocks/core/testclasses.h"
 #include "tests/mocks/core/testheroarchive.h"
 
 #include <gtest/gtest.h>
@@ -46,7 +47,8 @@ TEST(CScat, ItsRecordIsAVersionOneHeroThatMissionsCanCreate) {
     EXPECT_EQ(CScat::kType.latest_version, 1);
     EXPECT_EQ(CScat::kType.name_hash, hashClassName("CScat"));
     ASSERT_NE(CScat::kType.factory_func, nullptr);
-    const std::unique_ptr<CDemonActor> actor = CScat::kType.factory_func();
+    CTestClasses classes;
+    const std::unique_ptr<CDemonActor> actor = CScat::kType.factory_func(classes.get());
     EXPECT_EQ(&actor->getActorType(), &CScat::kType);
 }
 

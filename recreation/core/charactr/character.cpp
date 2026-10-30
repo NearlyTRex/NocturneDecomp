@@ -10,6 +10,7 @@
 #include <cstddef>
 #include <format>
 #include <string>
+#include <string_view>
 #include <utility>
 
 namespace nocturne::core {
@@ -107,6 +108,15 @@ void CCharacter::archiveHitPoints(CActorArchive &actor_archive) {
 void CCharacter::archiveCarryObjects(CActorArchive &actor_archive) {
     actor_archive.archiveActor(carried_actors_[0], "lhCarryObject");
     actor_archive.archiveActor(carried_actors_[1], "rhCarryObject");
+}
+
+void CCharacter::archiveCarriedActor(CActorArchive &actor_archive, std::size_t hand,
+                                     std::string_view description) {
+    actor_archive.archiveActor(carried_actors_.at(hand), description);
+}
+
+void CCharacter::archiveClothList(CActorArchive &actor_archive) {
+    actor_archive.archiveClothList(cloth_list_, "clothList");
 }
 
 void CCharacter::archiveLayerAction(CActorArchive &actor_archive) {

@@ -1,6 +1,7 @@
 #include "core/actor/demonactortype.h"
 #include "core/barrier/barrier.h"
 #include "tests/mocks/core/notportedcalls.h"
+#include "tests/mocks/core/testclasses.h"
 #include "tests/mocks/core/testfieldsarchive.h"
 
 #include <gtest/gtest.h>
@@ -46,7 +47,8 @@ TEST(CBarrier, ItsRecordIsVersion2UnderCDemonActorAndMissionsCanCreateOne) {
     EXPECT_EQ(CBarrier::kType.parent_type, &CDemonActor::kType);
     EXPECT_EQ(CBarrier::kType.latest_version, 2);
     ASSERT_NE(CBarrier::kType.factory_func, nullptr);
-    const std::unique_ptr<CDemonActor> actor = CBarrier::kType.factory_func();
+    CTestClasses classes;
+    const std::unique_ptr<CDemonActor> actor = CBarrier::kType.factory_func(classes.get());
     EXPECT_EQ(&actor->getActorType(), &CBarrier::kType);
 }
 

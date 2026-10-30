@@ -218,6 +218,15 @@ void CActorArchive::archiveRules(CRuleList &rules, std::string_view description)
     rules.setRules(std::move(read));
 }
 
+// deferred: writing the model's name to a save file, with CDemonActor::save
+// nocedit 0x0040b970
+void CActorArchive::archiveDeformableModelInstance(CDeformableModelInstance &model,
+                                                   std::string_view description) {
+    std::string filename;
+    archiveString(filename, description);
+    model.init(filename);
+}
+
 // deferred: writing the motion to a save file, with CMotionController::save
 // nocedit 0x0040b9f0
 void CActorArchive::archiveMotionState(CMotionController &motion, std::string_view description) {

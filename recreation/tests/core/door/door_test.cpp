@@ -4,6 +4,7 @@
 #include "core/door/doortype.h"
 #include "core/event/rulelist.h"
 #include "tests/mocks/core/notportedcalls.h"
+#include "tests/mocks/core/testclasses.h"
 #include "tests/mocks/core/testfieldsarchive.h"
 
 #include <gmock/gmock.h>
@@ -30,7 +31,8 @@ TEST(CDoor, ItsRecordIsVersion11UnderCDemonActorAndMissionsCanCreateOne) {
     EXPECT_EQ(CDoor::kType.latest_version, 11);
     EXPECT_EQ(CDoor::kType.name_hash, hashClassName("CDoor"));
     ASSERT_NE(CDoor::kType.factory_func, nullptr);
-    const std::unique_ptr<CDemonActor> actor = CDoor::kType.factory_func();
+    CTestClasses classes;
+    const std::unique_ptr<CDemonActor> actor = CDoor::kType.factory_func(classes.get());
     EXPECT_EQ(&actor->getActorType(), &CDoor::kType);
 }
 

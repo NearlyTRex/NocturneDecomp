@@ -17,7 +17,6 @@ constexpr int kVersion = 1;
 constinit const CDemonActorType CColonel::kType =
     makeActorType("CColonel", &CHero::kType, &CColonel::create, kVersion);
 
-// deferred: loading the model colonel.dfm, with CDeformableModelInstance::init
 // deferred: the defaults the constructor gives the Colonel's own fields, with the steps that read
 //   them
 // deferred: a player Colonel's pistol: draw plays "draw" and puts it in his right hand, the arm
@@ -31,7 +30,9 @@ constinit const CDemonActorType CColonel::kType =
 //   damage and shoving it back (the decomp's nocturne_colonel_push_off and hero_shove.h), with
 //   CColonel::process
 // nocedit 0x0043f7e0
-CColonel::CColonel() = default;
+CColonel::CColonel() {
+    getModel().init("colonel.dfm");
+}
 
 // nocedit 0x00440670
 CColonel::~CColonel() = default;
@@ -47,7 +48,7 @@ void CColonel::archive(CActorArchive &actor_archive) {
 }
 
 // nocedit 0x0043f7a0
-std::unique_ptr<CDemonActor> CColonel::create() {
+std::unique_ptr<CDemonActor> CColonel::create(CActor & /*classes*/) {
     return std::make_unique<CColonel>();
 }
 

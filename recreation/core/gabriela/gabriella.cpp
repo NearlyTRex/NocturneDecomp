@@ -22,7 +22,6 @@ constexpr int kCarryVersion = 2;
 constinit const CDemonActorType CGabriella::kType =
     makeActorType("CGabriella", &CHero::kType, &CGabriella::create, kVersion);
 
-// deferred: loading the model gabriela.dfm, with CDeformableModelInstance::init
 // deferred: naming the gun's model gabgun.kfm, with the weapon classes
 // deferred: the coat's cloth, and the defaults the constructor gives Gabriella's own fields, with
 //   the steps that read them
@@ -63,7 +62,9 @@ constinit const CDemonActorType CGabriella::kType =
 //   is_wearing_gas_mask through 0, 1 and 2, and drawn in her hand or on her head (THE GAS MASK),
 //   with CGabriella::process and renderOpaque
 // nocedit 0x004d2b20
-CGabriella::CGabriella() = default;
+CGabriella::CGabriella() {
+    getModel().init("gabriela.dfm");
+}
 
 // nocedit 0x004d7660
 CGabriella::~CGabriella() = default;
@@ -88,7 +89,7 @@ void CGabriella::archive(CActorArchive &actor_archive) {
 }
 
 // nocedit 0x004d2ae0
-std::unique_ptr<CDemonActor> CGabriella::create() {
+std::unique_ptr<CDemonActor> CGabriella::create(CActor & /*classes*/) {
     return std::make_unique<CGabriella>();
 }
 

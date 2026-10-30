@@ -24,7 +24,7 @@ public:
 
     // A new hero of the type, named by the mission, standing here and facing as this place does.
     // A type that isn't a hero's is fatal.
-    [[nodiscard]] std::unique_ptr<CHero> createHero(EHeroType hero_type, const CActor &actor,
+    [[nodiscard]] std::unique_ptr<CHero> createHero(EHeroType hero_type, CActor &actor,
                                                     const CDemonMission &mission) const;
 
     // Which of the mission's heroes this place is for, the first being 0.
@@ -32,7 +32,7 @@ public:
     void setIndex(int index);
 
 private:
-    static std::unique_ptr<CDemonActor> create();
+    static std::unique_ptr<CDemonActor> create(CActor &classes);
 
     int index_ = 0;
 };

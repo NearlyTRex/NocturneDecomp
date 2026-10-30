@@ -61,7 +61,7 @@ public:
 private:
     static constexpr int kDefaultEndVertexIndex = 23;
 
-    static std::unique_ptr<CDemonActor> create();
+    static std::unique_ptr<CDemonActor> create(CActor &classes);
 
     CKeyFramedModelInstance model_;
     ELeverType lever_type_ = ELeverType::kGround;

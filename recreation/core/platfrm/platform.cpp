@@ -55,7 +55,7 @@ const CDemonActorType &CPlatform::getActorType() const {
 }
 
 // nocedit 0x0054c810
-std::unique_ptr<CDemonActor> CPlatform::create() {
+std::unique_ptr<CDemonActor> CPlatform::create(CActor & /*classes*/) {
     return std::make_unique<CPlatform>();
 }
 

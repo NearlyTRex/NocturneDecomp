@@ -36,7 +36,7 @@ public:
     [[nodiscard]] float getMorphTimer() const;
 
 private:
-    static std::unique_ptr<CDemonActor> create();
+    static std::unique_ptr<CDemonActor> create(CActor &classes);
 
     std::string human_to_demon_condition_ = "molochToDemon";
     std::string demon_to_human_condition_ = "molochToHuman";

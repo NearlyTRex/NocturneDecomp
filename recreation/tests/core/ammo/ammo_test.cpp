@@ -4,6 +4,7 @@
 #include "core/ammo/ammotype.h"
 #include "tests/mocks/core/notportedcalls.h"
 #include "tests/mocks/core/testarchive.h"
+#include "tests/mocks/core/testclasses.h"
 
 #include <gtest/gtest.h>
 
@@ -51,7 +52,8 @@ TEST(CAmmo, ItsRecordIsAVersion1ActorThatMissionsCanCreate) {
     EXPECT_EQ(CAmmo::kType.parent_type, &CDemonActor::kType);
     EXPECT_EQ(CAmmo::kType.latest_version, 1);
     ASSERT_NE(CAmmo::kType.factory_func, nullptr);
-    const std::unique_ptr<CDemonActor> ammo = CAmmo::kType.factory_func();
+    CTestClasses classes;
+    const std::unique_ptr<CDemonActor> ammo = CAmmo::kType.factory_func(classes.get());
     EXPECT_EQ(&ammo->getActorType(), &CAmmo::kType);
 }
 

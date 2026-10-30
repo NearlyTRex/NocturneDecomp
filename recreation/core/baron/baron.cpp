@@ -21,11 +21,12 @@ constexpr int kSummonVersion = 2;
 constinit const CDemonActorType CBaron::kType =
     makeActorType("CBaron", &CHero::kType, &CBaron::create, kVersion);
 
-// deferred: loading the model baron.dfm, with CDeformableModelInstance::init
 // deferred: naming the shell's model baronshell.kfm, and the defaults the constructor gives the
 //   head, target, attack, transparency and shell fields, with the steps that read them
 // nocedit 0x00412bc0
-CBaron::CBaron() = default;
+CBaron::CBaron() {
+    getModel().init("baron.dfm");
+}
 
 // nocedit 0x00414100
 CBaron::~CBaron() = default;
@@ -59,7 +60,7 @@ bool CBaron::isSummoned() const {
 }
 
 // nocedit 0x00412b80
-std::unique_ptr<CDemonActor> CBaron::create() {
+std::unique_ptr<CDemonActor> CBaron::create(CActor & /*classes*/) {
     return std::make_unique<CBaron>();
 }
 

@@ -33,7 +33,7 @@ const CDemonActorType &CBarrier::getActorType() const {
 }
 
 // nocedit 0x00414180
-std::unique_ptr<CDemonActor> CBarrier::create() {
+std::unique_ptr<CDemonActor> CBarrier::create(CActor & /*classes*/) {
     return std::make_unique<CBarrier>();
 }
 

@@ -74,7 +74,7 @@ public:
 private:
     static constexpr float kDefaultFps = 20.0F;
 
-    static std::unique_ptr<CDemonActor> create();
+    static std::unique_ptr<CDemonActor> create(CActor &classes);
 
     CKeyFramedModelInstance model_;
     float weight_in_pounds_ = 0.0F;

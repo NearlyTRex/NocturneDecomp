@@ -11,6 +11,7 @@
 #include <cstddef>
 #include <cstdint>
 #include <string>
+#include <string_view>
 
 namespace nocturne::core {
 
@@ -145,6 +146,9 @@ protected:
     void archiveHitPoints(CActorArchive &actor_archive);
     // What the left hand, then the right, carries.
     void archiveCarryObjects(CActorArchive &actor_archive);
+    void archiveCarriedActor(CActorArchive &actor_archive, std::size_t hand,
+                             std::string_view description);
+    void archiveClothList(CActorArchive &actor_archive);
     void archiveLayerAction(CActorArchive &actor_archive);
     void clearGrabbedType();
     void setHealthBarMode(EHealthBarMode health_bar_mode);

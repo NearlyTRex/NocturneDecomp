@@ -3,6 +3,8 @@
 #include "core/skeleton/partvisibility.h"
 
 #include <cstddef>
+#include <string>
+#include <string_view>
 
 namespace nocturne::core {
 
@@ -23,6 +25,19 @@ void CDeformableModelInstance::showAllParts() {
 // nocedit 0x005a0430
 void CDeformableModelInstance::clearAllTextureSetIndices() {
     part_texture_sets_.fill(kFirstTextureSet);
+}
+
+// deferred: forgetting the loaded model and the level of detail last skinned, with getModelPtr
+//   and skinVerticesForLOD
+// nocedit 0x005a0840
+void CDeformableModelInstance::init(std::string_view model_name) {
+    model_name_ = model_name;
+    showAllParts();
+    clearAllTextureSetIndices();
+}
+
+const std::string &CDeformableModelInstance::getModelName() const {
+    return model_name_;
 }
 
 EPartVisibility CDeformableModelInstance::getPartVisibility(std::size_t part) const {

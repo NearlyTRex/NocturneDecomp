@@ -42,7 +42,7 @@ public:
 private:
     static constexpr float kDefaultHpRestored = 50.0F;
 
-    static std::unique_ptr<CDemonActor> create();
+    static std::unique_ptr<CDemonActor> create(CActor &classes);
 
     CKeyFramedModelInstance model_;
     int use_count_ = 1;

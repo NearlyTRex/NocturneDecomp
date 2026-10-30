@@ -34,7 +34,7 @@ const CDemonActorType &CLightCone::getActorType() const {
 }
 
 // nocedit 0x00506ad0
-std::unique_ptr<CDemonActor> CLightCone::create() {
+std::unique_ptr<CDemonActor> CLightCone::create(CActor & /*classes*/) {
     return std::make_unique<CLightCone>();
 }
 

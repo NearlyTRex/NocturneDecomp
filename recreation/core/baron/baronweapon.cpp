@@ -39,7 +39,7 @@ const CDemonActorType &CBaronWeapon::getActorType() const {
 }
 
 // nocedit 0x00413d00
-std::unique_ptr<CDemonActor> CBaronWeapon::create() {
+std::unique_ptr<CDemonActor> CBaronWeapon::create(CActor & /*classes*/) {
     return std::make_unique<CBaronWeapon>();
 }
 

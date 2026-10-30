@@ -28,7 +28,7 @@ public:
     // The class whose name has the same hash, letters and digits in either case; null when none.
     [[nodiscard]] const CDemonActorType *getActorClassByName(std::string_view class_name) const;
     // A new actor of the named class; fatal when the class is unknown or can't be created.
-    [[nodiscard]] std::unique_ptr<CDemonActor> createActorByName(std::string_view class_name) const;
+    [[nodiscard]] std::unique_ptr<CDemonActor> createActorByName(std::string_view class_name);
     [[nodiscard]] std::size_t getActorClassCount() const;
     // Forgets the versions a file saved its classes' fields in, so each reads as version 1.
     void resetSavedVersions();

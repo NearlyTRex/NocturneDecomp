@@ -9,6 +9,8 @@
 #include <array>
 #include <cstddef>
 #include <cstdint>
+#include <string>
+#include <string_view>
 
 namespace nocturne::core {
 
@@ -59,7 +61,8 @@ public:
     void initializeFromModel(CDeformableModel *model_ptr);
     CDeformableModel *getModelPtr();
     CSkeleton *getSkeletonPtr();
-    void init(char *model_name);
+    // Names the model, from the models folder, with every part shown in its first texture set.
+    void init(std::string_view model_name);
     common::CVector3f *getRootMotionDelta(common::CVector3f *output_buffer, float start_frame,
                                           float end_frame);
     void dismemberPart(CBodyPart *body_part, int part_index);
@@ -72,6 +75,7 @@ public:
     CBoundingBox3D *computeBoundingBoxFromBones(CBoundingBox3D *output_bbox);
     void computeCylindricalUVs(int u_offset, int v_offset);
 
+    [[nodiscard]] const std::string &getModelName() const;
     [[nodiscard]] EPartVisibility getPartVisibility(std::size_t part) const;
     void setPartVisibility(std::size_t part, EPartVisibility visibility);
     // Which of its texture sets the part wears.
@@ -84,6 +88,7 @@ public:
     static constexpr int kFirstTextureSet = 0;
 
 private:
+    std::string model_name_;
     std::array<EPartVisibility, kMaxParts> part_visibility_{};
     std::array<int, kMaxParts> part_texture_sets_{};
 };

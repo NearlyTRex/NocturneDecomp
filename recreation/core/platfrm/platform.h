@@ -87,7 +87,7 @@ private:
     // How an actor is turned as it is made: not at all.
     static constexpr common::CQuaternion4f kNoTurn{.w = 1.0F};
 
-    static std::unique_ptr<CDemonActor> create();
+    static std::unique_ptr<CDemonActor> create(CActor &classes);
 
     CKeyFramedModelInstance model_;
     std::string to_start_event_;

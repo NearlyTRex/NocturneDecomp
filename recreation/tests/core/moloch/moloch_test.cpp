@@ -1,6 +1,7 @@
 #include "core/actor/demonactortype.h"
 #include "core/moloch/moloch.h"
 #include "tests/mocks/core/notportedcalls.h"
+#include "tests/mocks/core/testclasses.h"
 #include "tests/mocks/core/testheroarchive.h"
 
 #include <gtest/gtest.h>
@@ -44,7 +45,8 @@ TEST(CMoloch, ItsRecordIsAVersionOneHeroThatMissionsCanCreate) {
     EXPECT_EQ(CMoloch::kType.latest_version, 1);
     EXPECT_EQ(CMoloch::kType.name_hash, hashClassName("CMoloch"));
     ASSERT_NE(CMoloch::kType.factory_func, nullptr);
-    const std::unique_ptr<CDemonActor> actor = CMoloch::kType.factory_func();
+    CTestClasses classes;
+    const std::unique_ptr<CDemonActor> actor = CMoloch::kType.factory_func(classes.get());
     EXPECT_EQ(&actor->getActorType(), &CMoloch::kType);
 }
 

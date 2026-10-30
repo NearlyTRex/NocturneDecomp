@@ -44,7 +44,7 @@ const CDemonActorType &CLever::getActorType() const {
 }
 
 // nocedit 0x00504790
-std::unique_ptr<CDemonActor> CLever::create() {
+std::unique_ptr<CDemonActor> CLever::create(CActor & /*classes*/) {
     return std::make_unique<CLever>();
 }
 

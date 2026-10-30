@@ -6,6 +6,7 @@
 #include "core/hero/hero.h"
 #include "tests/mocks/core/notportedcalls.h"
 #include "tests/mocks/core/testactor.h"
+#include "tests/mocks/core/testclasses.h"
 #include "tests/mocks/core/testfieldsarchive.h"
 
 #include <gtest/gtest.h>
@@ -72,7 +73,8 @@ TEST(CBoxActor, ItsRecordIsVersion15UnderCDemonActorAndMissionsCanCreateOne) {
     EXPECT_EQ(CBoxActor::kType.parent_type, &CDemonActor::kType);
     EXPECT_EQ(CBoxActor::kType.latest_version, 15);
     ASSERT_NE(CBoxActor::kType.factory_func, nullptr);
-    const std::unique_ptr<CDemonActor> actor = CBoxActor::kType.factory_func();
+    CTestClasses classes;
+    const std::unique_ptr<CDemonActor> actor = CBoxActor::kType.factory_func(classes.get());
     EXPECT_EQ(&actor->getActorType(), &CBoxActor::kType);
 }
 

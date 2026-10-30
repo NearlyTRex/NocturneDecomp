@@ -39,7 +39,7 @@ const CDemonActorType &CWayPoint::getActorType() const {
 }
 
 // nocedit 0x005ebe30
-std::unique_ptr<CDemonActor> CWayPoint::create() {
+std::unique_ptr<CDemonActor> CWayPoint::create(CActor & /*classes*/) {
     return std::make_unique<CWayPoint>();
 }
 

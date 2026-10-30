@@ -2,6 +2,7 @@
 #include "core/actor/groundtype.h"
 #include "core/backgnd/backgroundactor.h"
 #include "tests/mocks/core/notportedcalls.h"
+#include "tests/mocks/core/testclasses.h"
 #include "tests/mocks/core/testfieldsarchive.h"
 
 #include <gtest/gtest.h>
@@ -53,7 +54,8 @@ TEST(CBackgroundActor, ItsRecordIsVersion2UnderCDemonActorAndMissionsCanCreateOn
     EXPECT_EQ(CBackgroundActor::kType.parent_type, &CDemonActor::kType);
     EXPECT_EQ(CBackgroundActor::kType.latest_version, 2);
     ASSERT_NE(CBackgroundActor::kType.factory_func, nullptr);
-    const std::unique_ptr<CDemonActor> actor = CBackgroundActor::kType.factory_func();
+    CTestClasses classes;
+    const std::unique_ptr<CDemonActor> actor = CBackgroundActor::kType.factory_func(classes.get());
     EXPECT_EQ(&actor->getActorType(), &CBackgroundActor::kType);
 }
 

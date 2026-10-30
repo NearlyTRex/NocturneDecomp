@@ -11,7 +11,6 @@ namespace nocturne::core {
 
 void deleteActor(CDemonActor *actor_ptr);
 int adjustIndentationLevel(int indent_delta);
-void archiveDeformableModelInstance(CDeformableModelInstance *model_ptr, char *property_name);
 // Whether the actor's class matches a class expression: class names, '!' before a name or a
 // bracketed expression, and '&' or '|' (or "&&", "||") between them, applied left to right with
 // neither taking precedence. A name matches its own class and every class derived from it.

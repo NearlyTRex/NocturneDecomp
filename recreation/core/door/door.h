@@ -81,7 +81,7 @@ public:
     [[nodiscard]] float getSwingRange() const;
 
 private:
-    static std::unique_ptr<CDemonActor> create();
+    static std::unique_ptr<CDemonActor> create(CActor &classes);
 
     CKeyFramedModelInstance model_;
     EDoorType door_type_ = EDoorType::kSwing;

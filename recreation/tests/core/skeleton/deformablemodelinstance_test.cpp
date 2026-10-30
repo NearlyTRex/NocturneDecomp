@@ -1,8 +1,10 @@
 #include "core/skeleton/deformablemodelinstance.h"
+#include "core/skeleton/partvisibility.h"
 #include "tests/mocks/core/notportedcalls.h"
 
 #include <gtest/gtest.h>
 
+#include <string_view>
 #include <type_traits>
 
 namespace nocturne::core {
@@ -89,7 +91,7 @@ TEST(CDeformableModelInstance, PublicInterface) {
     static_assert(std::is_same_v<decltype(&CDeformableModelInstance::getSkeletonPtr),
                                  CSkeleton *(CDeformableModelInstance::*)()>);
     static_assert(std::is_same_v<decltype(&CDeformableModelInstance::init),
-                                 void (CDeformableModelInstance::*)(char *)>);
+                                 void (CDeformableModelInstance::*)(std::string_view)>);
     static_assert(std::is_same_v<decltype(&CDeformableModelInstance::getRootMotionDelta),
                                  common::CVector3f *(CDeformableModelInstance::*)(
                                      common::CVector3f *, float, float)>);
@@ -111,6 +113,17 @@ TEST(CDeformableModelInstance, PublicInterface) {
                                  CBoundingBox3D *(CDeformableModelInstance::*)(CBoundingBox3D *)>);
     static_assert(std::is_same_v<decltype(&CDeformableModelInstance::computeCylindricalUVs),
                                  void (CDeformableModelInstance::*)(int, int)>);
+}
+
+TEST(CDeformableModelInstance, NamingTheModelShowsEveryPartInItsFirstTextureSet) {
+    CDeformableModelInstance model;
+    EXPECT_EQ(model.getModelName(), "");
+    model.setPartVisibility(3, EPartVisibility::kHidden);
+    model.setPartTextureSet(4, 2);
+    model.init("zombie1.dfm");
+    EXPECT_EQ(model.getModelName(), "zombie1.dfm");
+    EXPECT_EQ(model.getPartVisibility(3), EPartVisibility::kShown);
+    EXPECT_EQ(model.getPartTextureSet(4), CDeformableModelInstance::kFirstTextureSet);
 }
 
 TEST(CDeformableModelInstance, TheFunctionsNotPortedYetQuit) {

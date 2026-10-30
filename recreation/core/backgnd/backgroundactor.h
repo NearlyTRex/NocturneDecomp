@@ -35,7 +35,7 @@ public:
     [[nodiscard]] bool isCollidedWith() const;
 
 private:
-    static std::unique_ptr<CDemonActor> create();
+    static std::unique_ptr<CDemonActor> create(CActor &classes);
 
     CKeyFramedModelInstance model_;
     bool collide_with_me_ = false;

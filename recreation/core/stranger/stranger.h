@@ -48,7 +48,7 @@ public:
     [[nodiscard]] int getActionPending() const;
 
 private:
-    static std::unique_ptr<CDemonActor> create();
+    static std::unique_ptr<CDemonActor> create(CActor &classes);
 
     CDemonActor *ladder_to_descend_ = nullptr;
     bool guns_drawn_ = false;

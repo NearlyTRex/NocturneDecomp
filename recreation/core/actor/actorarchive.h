@@ -12,7 +12,7 @@ namespace nocturne::core {
 // What an archive finds each class's saved version in, makes and finds the actors fields name
 // with, and draws the C library's random numbers from.
 struct SActorArchiveOwners {
-    const CActor &actor_classes;
+    CActor &actor_classes;
     IActorLookup &actors;
     common::CWatcomRandom &crt_random;
 };
@@ -66,6 +66,9 @@ public:
     // A line, the count, then each rule's condition and event quoted with "=>" between them on a
     // line of its own, and a closing line.
     void archiveRules(CRuleList &rules, std::string_view description);
+    // The model's file name, quoted.
+    void archiveDeformableModelInstance(CDeformableModelInstance &model,
+                                        std::string_view description);
     // A line, the motion and frame, and a closing line.
     void archiveMotionState(CMotionController &motion, std::string_view description);
     // A line, the count of parts, each part's visibility, then each one's texture set, and a

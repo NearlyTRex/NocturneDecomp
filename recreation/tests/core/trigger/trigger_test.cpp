@@ -5,6 +5,7 @@
 #include "core/trigger/triggereventtype.h"
 #include "core/trigger/triggershape.h"
 #include "tests/mocks/core/notportedcalls.h"
+#include "tests/mocks/core/testclasses.h"
 #include "tests/mocks/core/testfieldsarchive.h"
 
 #include <gtest/gtest.h>
@@ -27,7 +28,8 @@ TEST(CTrigger, ItsRecordIsAVersionElevenActorThatMissionsCanCreate) {
     EXPECT_EQ(CTrigger::kType.latest_version, 11);
     EXPECT_EQ(CTrigger::kType.name_hash, hashClassName("CTrigger"));
     ASSERT_NE(CTrigger::kType.factory_func, nullptr);
-    const std::unique_ptr<CDemonActor> actor = CTrigger::kType.factory_func();
+    CTestClasses classes;
+    const std::unique_ptr<CDemonActor> actor = CTrigger::kType.factory_func(classes.get());
     EXPECT_EQ(&actor->getActorType(), &CTrigger::kType);
 }
 

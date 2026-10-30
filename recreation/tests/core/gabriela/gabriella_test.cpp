@@ -2,6 +2,7 @@
 #include "core/gabriela/gabriella.h"
 #include "tests/mocks/core/notportedcalls.h"
 #include "tests/mocks/core/testactor.h"
+#include "tests/mocks/core/testclasses.h"
 #include "tests/mocks/core/testheroarchive.h"
 
 #include <gtest/gtest.h>
@@ -51,7 +52,8 @@ TEST(CGabriella, ItsRecordIsAVersionThreeHeroThatMissionsCanCreate) {
     EXPECT_EQ(CGabriella::kType.latest_version, 3);
     EXPECT_EQ(CGabriella::kType.name_hash, hashClassName("CGabriella"));
     ASSERT_NE(CGabriella::kType.factory_func, nullptr);
-    const std::unique_ptr<CDemonActor> actor = CGabriella::kType.factory_func();
+    CTestClasses classes;
+    const std::unique_ptr<CDemonActor> actor = CGabriella::kType.factory_func(classes.get());
     EXPECT_EQ(&actor->getActorType(), &CGabriella::kType);
 }
 

@@ -66,14 +66,14 @@ void CHeroPlaceholder::archive(CActorArchive &actor_archive) {
 }
 
 // nocedit 0x004f3bc0
-std::unique_ptr<CDemonActor> CHeroPlaceholder::create() {
+std::unique_ptr<CDemonActor> CHeroPlaceholder::create(CActor & /*classes*/) {
     return std::make_unique<CHeroPlaceholder>();
 }
 
 // The original also quit when the class it made wasn't a hero, which none of these can be.
 // deferred: updating the hero's orientation matrix, with updateOrientationMatrix
 // nocedit 0x004f3d80
-std::unique_ptr<CHero> CHeroPlaceholder::createHero(EHeroType hero_type, const CActor &actor,
+std::unique_ptr<CHero> CHeroPlaceholder::createHero(EHeroType hero_type, CActor &actor,
                                                     const CDemonMission &mission) const {
     std::unique_ptr<CHero> hero(
         &dynamic_cast<CHero &>(*actor.createActorByName(getHeroClassName(hero_type)).release()));

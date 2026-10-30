@@ -57,7 +57,7 @@ const CDemonActorType &CTrigger::getActorType() const {
 }
 
 // nocedit 0x005df800
-std::unique_ptr<CDemonActor> CTrigger::create() {
+std::unique_ptr<CDemonActor> CTrigger::create(CActor & /*classes*/) {
     return std::make_unique<CTrigger>();
 }
 

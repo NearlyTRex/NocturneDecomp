@@ -41,7 +41,7 @@ public:
     [[nodiscard]] bool isSummoned() const;
 
 private:
-    static std::unique_ptr<CDemonActor> create();
+    static std::unique_ptr<CDemonActor> create(CActor &classes);
 
     std::string summon_event_ = "none";
     std::string go_away_event_ = "none";

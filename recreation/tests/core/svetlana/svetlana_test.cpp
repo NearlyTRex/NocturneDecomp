@@ -1,6 +1,7 @@
 #include "core/actor/demonactortype.h"
 #include "core/svetlana/svetlana.h"
 #include "tests/mocks/core/notportedcalls.h"
+#include "tests/mocks/core/testclasses.h"
 #include "tests/mocks/core/testheroarchive.h"
 
 #include <gtest/gtest.h>
@@ -49,7 +50,8 @@ TEST(CSvetlana, ItsRecordIsAVersionOneHeroThatMissionsCanCreate) {
     EXPECT_EQ(CSvetlana::kType.latest_version, 1);
     EXPECT_EQ(CSvetlana::kType.name_hash, hashClassName("CSvetlana"));
     ASSERT_NE(CSvetlana::kType.factory_func, nullptr);
-    const std::unique_ptr<CDemonActor> actor = CSvetlana::kType.factory_func();
+    CTestClasses classes;
+    const std::unique_ptr<CDemonActor> actor = CSvetlana::kType.factory_func(classes.get());
     EXPECT_EQ(&actor->getActorType(), &CSvetlana::kType);
 }
 

@@ -33,7 +33,7 @@ public:
     int isWeaponDrawn() override;
 
 private:
-    static std::unique_ptr<CDemonActor> create();
+    static std::unique_ptr<CDemonActor> create(CActor &classes);
 };
 
 } // namespace nocturne::core

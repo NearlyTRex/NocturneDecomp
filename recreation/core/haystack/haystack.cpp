@@ -17,11 +17,12 @@ constexpr int kVersion = 1;
 constinit const CDemonActorType CHaystack::kType =
     makeActorType("CHaystack", &CHero::kType, &CHaystack::create, kVersion);
 
-// deferred: loading the model haystack.dfm, with CDeformableModelInstance::init
 // deferred: the defaults the constructor gives Haystack's own fields, with the steps that read
 //   them
 // nocedit 0x004f0c10
-CHaystack::CHaystack() = default;
+CHaystack::CHaystack() {
+    getModel().init("haystack.dfm");
+}
 
 // nocedit 0x004f1d10
 CHaystack::~CHaystack() = default;
@@ -37,7 +38,7 @@ void CHaystack::archive(CActorArchive &actor_archive) {
 }
 
 // nocedit 0x004f0bd0
-std::unique_ptr<CDemonActor> CHaystack::create() {
+std::unique_ptr<CDemonActor> CHaystack::create(CActor & /*classes*/) {
     return std::make_unique<CHaystack>();
 }
 

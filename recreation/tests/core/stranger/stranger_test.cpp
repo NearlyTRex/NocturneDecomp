@@ -2,6 +2,7 @@
 #include "core/stranger/stranger.h"
 #include "tests/mocks/core/notportedcalls.h"
 #include "tests/mocks/core/testactor.h"
+#include "tests/mocks/core/testclasses.h"
 #include "tests/mocks/core/testheroarchive.h"
 
 #include <gtest/gtest.h>
@@ -62,7 +63,8 @@ TEST(CStranger, ItsRecordIsAVersionNineHeroThatMissionsCanCreate) {
     EXPECT_EQ(CStranger::kType.latest_version, 9);
     EXPECT_EQ(CStranger::kType.name_hash, hashClassName("CStranger"));
     ASSERT_NE(CStranger::kType.factory_func, nullptr);
-    const std::unique_ptr<CDemonActor> actor = CStranger::kType.factory_func();
+    CTestClasses classes;
+    const std::unique_ptr<CDemonActor> actor = CStranger::kType.factory_func(classes.get());
     EXPECT_EQ(&actor->getActorType(), &CStranger::kType);
 }
 

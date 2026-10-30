@@ -30,13 +30,14 @@ constexpr int kLayerActionVersion = 9;
 constinit const CDemonActorType CStranger::kType =
     makeActorType("CStranger", &CHero::kType, &CStranger::create, kVersion);
 
-// deferred: loading the model stranger.dfm, with CDeformableModelInstance::init
 // deferred: naming the gun's model gat.kfm, with the weapon classes
 // deferred: adding the layer actions that draw each weapon, with addLayerAction
 // deferred: the defaults the constructor gives the Stranger's aiming, recoil, melee, turning,
 //   carried object and airborne fields, with the steps that read them
 // nocedit 0x005bb120
-CStranger::CStranger() = default;
+CStranger::CStranger() {
+    getModel().init("stranger.dfm");
+}
 
 // nocedit 0x005c69c0
 CStranger::~CStranger() = default;
@@ -90,7 +91,7 @@ int CStranger::getActionPending() const {
 }
 
 // nocedit 0x005bb0e0
-std::unique_ptr<CDemonActor> CStranger::create() {
+std::unique_ptr<CDemonActor> CStranger::create(CActor & /*classes*/) {
     return std::make_unique<CStranger>();
 }
 

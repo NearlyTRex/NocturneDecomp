@@ -58,7 +58,7 @@ const CDemonActorType &CBoxActor::getActorType() const {
 }
 
 // nocedit 0x004216c0
-std::unique_ptr<CDemonActor> CBoxActor::create() {
+std::unique_ptr<CDemonActor> CBoxActor::create(CActor & /*classes*/) {
     return std::make_unique<CBoxActor>();
 }
 

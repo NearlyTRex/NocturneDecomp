@@ -248,6 +248,7 @@ enum class ETriggerEventType : std::uint8_t;
 enum class ETriggerShape : std::uint8_t;
 enum class EWeaponState : std::uint8_t;
 enum class EWeatherType : std::uint8_t;
+enum class EWerewolfType : std::uint8_t;
 struct SActorArchiveOwners;
 struct SActorRayHit;
 struct SBug;

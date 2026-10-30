@@ -78,7 +78,7 @@ private:
     static constexpr float kFullHitPoints = 100.0F;
     static constexpr float kUntestedRadius = 99999.9F;
 
-    static std::unique_ptr<CDemonActor> create();
+    static std::unique_ptr<CDemonActor> create(CActor &classes);
     void calculateTestRadius();
     void archiveFieldsByVersion(CActorArchive &actor_archive, int saved_version);
 

@@ -85,18 +85,18 @@ TEST(CInventory, PublicInterface) {
     static_assert(std::is_same_v<decltype(&CInventory::autoUseHealthItem), void (CInventory::*)()>);
 }
 
-std::unique_ptr<CDemonActor> makeItem();
-std::unique_ptr<CDemonActor> makeGun();
+std::unique_ptr<CDemonActor> makeItem(CActor &classes);
+std::unique_ptr<CDemonActor> makeGun(CActor &classes);
 
 const CDemonActorType kItemType = makeActorType("CTestItem", &kTestBaseType, &makeItem, 1);
 // Of a weapon's class, by its record.
 const CDemonActorType kGunType = makeActorType("CTestGun", &CWeapon::kType, &makeGun, 1);
 
-std::unique_ptr<CDemonActor> makeItem() {
+std::unique_ptr<CDemonActor> makeItem(CActor & /*classes*/) {
     return std::make_unique<CTestActor>(kItemType);
 }
 
-std::unique_ptr<CDemonActor> makeGun() {
+std::unique_ptr<CDemonActor> makeGun(CActor & /*classes*/) {
     return std::make_unique<CTestActor>(kGunType);
 }
 

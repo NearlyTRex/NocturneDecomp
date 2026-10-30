@@ -36,17 +36,17 @@ functions don't count as done. Sizes are in instructions.
 | 20 | Not reached from startup: `support/` | 2 | 24 | 593 | 3 | 1 | 12.5% |
 | 21 | Not reached from startup: `cockpit/` | 4 | 178 | 11527 | 0 | 0 | 0.0% |
 | 22 | Not reached from startup: `shape/` | 2 | 42 | 3178 | 4 | 2 | 9.5% |
-| 23 | Not reached from startup: `core/` (part 1 of 9) | 18 | 292 | 16011 | 56 | 11 | 19.1% |
+| 23 | Not reached from startup: `core/` (part 1 of 9) | 18 | 292 | 16011 | 57 | 12 | 19.5% |
 | 24 | Not reached from startup: `core/` (part 2 of 9) | 11 | 277 | 24965 | 20 | 4 | 7.2% |
-| 25 | Not reached from startup: `core/` (part 3 of 9) | 24 | 278 | 24134 | 30 | 9 | 10.7% |
-| 26 | Not reached from startup: `core/` (part 4 of 9) | 18 | 300 | 20148 | 41 | 5 | 13.6% |
+| 25 | Not reached from startup: `core/` (part 3 of 9) | 24 | 278 | 24134 | 31 | 10 | 11.1% |
+| 26 | Not reached from startup: `core/` (part 4 of 9) | 18 | 300 | 20148 | 45 | 6 | 15.0% |
 | 27 | Not reached from startup: `core/` (part 5 of 9) | 21 | 294 | 20910 | 53 | 8 | 18.0% |
-| 28 | Not reached from startup: `core/` (part 6 of 9) | 18 | 282 | 21809 | 33 | 8 | 11.7% |
-| 29 | Not reached from startup: `core/` (part 7 of 9) | 18 | 263 | 22721 | 23 | 9 | 8.7% |
+| 28 | Not reached from startup: `core/` (part 6 of 9) | 18 | 282 | 21809 | 42 | 10 | 14.8% |
+| 29 | Not reached from startup: `core/` (part 7 of 9) | 18 | 263 | 22721 | 23 | 10 | 8.7% |
 | 30 | Not reached from startup: `core/` (part 8 of 9) | 20 | 300 | 31826 | 40 | 5 | 13.3% |
-| 31 | Not reached from startup: `core/` (part 9 of 9) | 5 | 111 | 10905 | 10 | 2 | 9.0% |
+| 31 | Not reached from startup: `core/` (part 9 of 9) | 5 | 111 | 10905 | 18 | 4 | 16.2% |
 | 32 | Not reached from startup: `wincore/` | 2 | 11 | 482 | 4 | 0 | 36.3% |
-| | **All** | | **4479** | **402407** | **895** | **169** | **19.9%** |
+| | **All** | | **4479** | **402407** | **918** | **177** | **20.4%** |
 
 ## Step 0: Math value types
 
@@ -1009,7 +1009,7 @@ functions don't count as done. Sizes are in instructions.
   - [x] `doCheckForInvalidPointers` 0x0040ac80 (193)
   - [ ] `updateOrientationMatrix` 0x00408c10 (30)
   - [~] `ctor` 0x004088b0 (88)
-    - deferred: the defaults the constructor gives the orientation's matrix, and the scale, platform, rendering (but for the transparency), health and footstep fields, with the steps that read them
+    - deferred: the defaults the constructor gives the orientation's matrix, and the platform, rendering (but for the transparency), health and footstep fields, with the steps that read them
 - free functions
   - [x] `getActorClassByName` 0x0040c3c0 (45)
   - [x] `createActorByName` 0x0040c430 (51)
@@ -3511,7 +3511,7 @@ functions don't count as done. Sizes are in instructions.
 
 ## Step 23: Not reached from startup: `core/` (part 1 of 9)
 
-### `core/actor.cpp` (19 functions, 1173 instructions, 6 done, 7 partial)
+### `core/actor.cpp` (19 functions, 1173 instructions, 6 done, 8 partial)
 - free functions
   - [x] `registerActorClass` 0x0040c2e0 (73)
   - [x] `staticInit` 0x00408320 (9)
@@ -3522,7 +3522,8 @@ functions don't count as done. Sizes are in instructions.
   - [x] `archiveLocalizedString` 0x0040b6e0 (54)
   - [~] `archiveKeyframedModelInstance` 0x0040b8f0 (44)
     - deferred: writing the model's name to a save file, with CDemonActor::save
-  - [ ] `archiveDeformableModelInstance` 0x0040b970 (44)
+  - [~] `archiveDeformableModelInstance` 0x0040b970 (44)
+    - deferred: writing the model's name to a save file, with CDemonActor::save
   - [~] `archiveMotionState` 0x0040b9f0 (81)
     - deferred: writing the motion to a save file, with CMotionController::save
   - [~] `archivePartStatus` 0x0040bae0 (202)
@@ -3590,7 +3591,7 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `factoryFuncAnvil` 0x00411ca0 (12)
   - [x] `staticInit` 0x00411c70 (9)
 
-### `core/armour.cpp` (12 functions, 358 instructions, 1 done, 0 partial)
+### `core/armour.cpp` (12 functions, 358 instructions, 2 done, 0 partial)
 - class `CArmour`
   - [ ] `ctor` 0x004121a0 (41)
   - [ ] `getActorType` 0x00412190 (2)
@@ -3605,7 +3606,7 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `factoryFuncArmour` 0x00412160 (12)
   - [x] `staticInit` 0x00412130 (9)
 - class `CEnemy`
-  - [ ] `dtor` 0x004125c0 (62)
+  - [x] `dtor` 0x004125c0 (62)
 
 ### `core/backgnd.cpp` (13 functions, 248 instructions, 8 done, 0 partial)
 - class `CBackgroundActor`
@@ -3627,7 +3628,6 @@ functions don't count as done. Sizes are in instructions.
 ### `core/baron.cpp` (30 functions, 1554 instructions, 8 done, 2 partial)
 - class `CBaron`
   - [~] `ctor` 0x00412bc0 (63)
-    - deferred: loading the model baron.dfm, with CDeformableModelInstance::init
     - deferred: naming the shell's model baronshell.kfm, and the defaults the constructor gives the head, target, attack, transparency and shell fields, with the steps that read them
   - [x] `getActorType` 0x00412bb0 (2)
   - [ ] `detachFromOwner` 0x004135a0 (19)
@@ -4114,7 +4114,6 @@ functions don't count as done. Sizes are in instructions.
 ### `core/colonel.cpp` (15 functions, 1081 instructions, 5 done, 1 partial)
 - class `CColonel`
   - [~] `ctor` 0x0043f7e0 (24)
-    - deferred: loading the model colonel.dfm, with CDeformableModelInstance::init
     - deferred: the defaults the constructor gives the Colonel's own fields, with the steps that read them
     - deferred: a player Colonel's pistol: draw plays "draw" and puts it in his right hand, the arm aims at the nearest enemy in a 30 degree cone with the laser sight, fire shoots and plays "shoot", both layered from Spine2 up so he keeps moving, the reserve topped up after each shot (the decomp's hero_colonel.h), with CColonel::process and renderOpaque
     - deferred: a player Colonel killed going to DIE and DEAD, where the original asks for DAMAGE2 and DAMAGE3 and he stands back up (the decomp's nocturne_colonel_death_state), with CColonel::processDamage
@@ -4570,10 +4569,13 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `factoryFuncEmitter` 0x004a7c60 (12)
   - [x] `staticInit` 0x004a7c30 (9)
 
-### `core/enemy.cpp` (16 functions, 931 instructions, 1 done, 0 partial)
+### `core/enemy.cpp` (16 functions, 931 instructions, 2 done, 1 partial)
 - class `CEnemy`
-  - [ ] `ctor` 0x004a9500 (68)
-  - [ ] `archive` 0x004a9660 (93)
+  - [~] `ctor` 0x004a9500 (68)
+    - deferred: the special form, the victim search's timer and radius, being in combat, the attack cooldown, finding paths to new targets and the enemy's footsteps, with CEnemy::updateVictim and CCharacter::process
+    - deferred: dropping a victim the enemy can neither see nor path to, where the original kept it, so an enemy doesn't hold a hero two floors away (the decomp's ENEMY_RETAIN), with CEnemy::updateVictim
+    - deferred: counting the enemies of its class attacking the hero netplay gives it to chase, rather than the local one (the decomp's nocturne_net_sim_target_for), with CEnemy::countSameClassAttackingHero
+  - [x] `archive` 0x004a9660 (93)
   - [ ] `processDamage` 0x004a9f10 (50)
   - [ ] `getTargetPoints` 0x004a97c0 (63)
   - [ ] `getTargetPoint` 0x004a99d0 (43)
@@ -4843,7 +4845,6 @@ functions don't count as done. Sizes are in instructions.
 ### `core/gabriela.cpp` (34 functions, 5722 instructions, 5 done, 1 partial)
 - class `CGabriella`
   - [~] `ctor` 0x004d2b20 (50)
-    - deferred: loading the model gabriela.dfm, with CDeformableModelInstance::init
     - deferred: naming the gun's model gabgun.kfm, with the weapon classes
     - deferred: the coat's cloth, and the defaults the constructor gives Gabriella's own fields, with the steps that read them
     - deferred: a player Gabriella picking up from the action button at the head of its chain, within 5 units up or down rather than 2 (the decomp's hero_gabriella.h PICKUP IS ON THE WRONG BUTTON), with CGabriella::process and findAndPickupNearbyObject
@@ -4950,23 +4951,27 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `dtor` 0x004e5f40 (31)
   - [ ] `setup` 0x004e5d50 (10)
 
-### `core/ghoul.cpp` (15 functions, 3297 instructions, 1 done, 0 partial)
+### `core/ghoul.cpp` (15 functions, 3297 instructions, 5 done, 1 partial)
 - class `CGhoul`
-  - [ ] `ctor` 0x004e6030 (56)
-  - [ ] `getActorType` 0x004e6020 (2)
+  - [~] `ctor` 0x004e6030 (56)
+    - deferred: the collision cylinder, the detection range, the eating state, flinching, the stun, heal and stuck timers, the dark waypoint and going berserk, with CGhoul::setup and CGhoul::process
+    - deferred: chasing the hero netplay gives it rather than the local one (the decomp's nocturne_net_sim_target_for), with CGhoul::process
+    - deferred: drawing the part a blow takes off from the simulation's random numbers rather than rand, so netplay agrees on it (the decomp's nocturne_rng_sim), with CGhoul::processDismemberment
+    - deferred: tracing each blow for netplay debugging (the decomp's nocturne_sim_trace_damage), with CGhoul::processDamage
+  - [x] `getActorType` 0x004e6020 (2)
   - [ ] `findDarkWayPoint` 0x004e63d0 (129)
   - [ ] `process` 0x004e6600 (1937)
   - [ ] `renderBackground` 0x004e8190 (14)
-  - [ ] `archive` 0x004e81c0 (69)
+  - [x] `archive` 0x004e81c0 (69)
   - [ ] `canBeAttracted` 0x004e82d0 (142)
   - [ ] `getTargetPoint` 0x004e84a0 (66)
   - [ ] `processDismemberment` 0x004e8520 (211)
   - [ ] `processDamage` 0x004e87e0 (265)
   - [ ] `getTargetPoints` 0x004e8bc0 (149)
-  - [ ] `dtor` 0x004e8f10 (62)
+  - [x] `dtor` 0x004e8f10 (62)
   - [ ] `setup` 0x004e6160 (163)
 - free functions
-  - [ ] `factoryFuncGhoul` 0x004e5ff0 (12)
+  - [x] `factoryFuncGhoul` 0x004e5ff0 (12)
   - [x] `staticInit` 0x004e5f90 (20)
 
 ### `core/glass.cpp` (15 functions, 1227 instructions, 1 done, 0 partial)
@@ -5055,7 +5060,6 @@ functions don't count as done. Sizes are in instructions.
 ### `core/haystack.cpp` (15 functions, 1231 instructions, 5 done, 1 partial)
 - class `CHaystack`
   - [~] `ctor` 0x004f0c10 (24)
-    - deferred: loading the model haystack.dfm, with CDeformableModelInstance::init
     - deferred: the defaults the constructor gives Haystack's own fields, with the steps that read them
   - [x] `getActorType` 0x004f0c00 (2)
   - [ ] `updateAI` 0x004f13f0 (357)
@@ -5205,7 +5209,6 @@ functions don't count as done. Sizes are in instructions.
 ### `core/icepick.cpp` (19 functions, 1820 instructions, 5 done, 1 partial)
 - class `CIcePick`
   - [~] `ctor` 0x004f7df0 (27)
-    - deferred: loading the model icepick.dfm, with CDeformableModelInstance::init
     - deferred: the defaults the constructor gives Ice Pick's own fields, with the steps that read them
     - deferred: 300 hit points, and 300 the most, where the original left the most at CCharacter's 100, so health items and the health bar measure against Ice Pick's own (the decomp's HERO_ACTIONS in the constructor), with CCharacter's hit point setters
   - [x] `getActorType` 0x004f7de0 (2)
@@ -5546,10 +5549,13 @@ functions don't count as done. Sizes are in instructions.
   - [x] `staticInit` 0x00522c50 (1, compiler-generated)
   - [ ] `skipLine` 0x00522c60 (11)
 
-### `core/mobster.cpp` (23 functions, 3180 instructions, 1 done, 0 partial)
+### `core/mobster.cpp` (23 functions, 3180 instructions, 5 done, 1 partial)
 - class `CMobster`
-  - [ ] `ctor` 0x00525200 (64)
-  - [ ] `getActorType` 0x005251f0 (2)
+  - [~] `ctor` 0x00525200 (64)
+    - deferred: the collision cylinder, the detection range, the idle, weapon, firing and taunt timers, the weapon it heads for and how often it has looked, and not finding paths to new targets, with CMobster::setup and CMobster::process
+    - deferred: chasing the hero netplay gives it rather than the local one (the decomp's nocturne_net_sim_target_for), with CMobster::process
+    - deferred: drawing the part a blow takes off from the simulation's random numbers rather than rand, so netplay agrees on it (the decomp's nocturne_rng_sim), with CMobster::processDismemberment
+  - [x] `getActorType` 0x005251f0 (2)
   - [ ] `positionOnVehicle` 0x00525650 (60)
   - [ ] `dismountVehicle` 0x00525720 (68)
   - [ ] `aimTommyGun` 0x005267a0 (275)
@@ -5558,16 +5564,16 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `playTaunt` 0x005279f0 (128)
   - [ ] `process` 0x00525840 (1094)
   - [ ] `getCarryObjToBodyXForm` 0x00526b20 (164)
-  - [ ] `archive` 0x00527230 (77)
+  - [x] `archive` 0x00527230 (77)
   - [ ] `reset` 0x00527360 (2)
   - [ ] `processDismemberment` 0x00527380 (281)
   - [ ] `processDamage` 0x00527740 (126)
   - [ ] `getTargetPoints` 0x005278d0 (89)
   - [ ] `getCollisionType` 0x005279d0 (7)
-  - [ ] `dtor` 0x00527c70 (62)
+  - [x] `dtor` 0x00527c70 (62)
   - [ ] `setup` 0x00525340 (210)
 - free functions
-  - [ ] `factoryFuncMobster` 0x005251c0 (12)
+  - [x] `factoryFuncMobster` 0x005251c0 (12)
   - [x] `staticInit` 0x00525070 (9)
   - [ ] `getObjectGrabPointLocal` 0x005250a0 (38)
   - [ ] `getObjectGrabPointWorld` 0x00525110 (60)
@@ -5576,7 +5582,6 @@ functions don't count as done. Sizes are in instructions.
 ### `core/moloch.cpp` (13 functions, 1031 instructions, 5 done, 1 partial)
 - class `CMoloch`
   - [~] `ctor` 0x00528b30 (58)
-    - deferred: loading the human model moloch_h.dfm, with CDeformableModelInstance::init
     - deferred: the morph, with the steps that read it
     - deferred: a processDamage override for a player's Moloch, which the original lacks so nothing hurts it: damage down to a floor of 1 hit point, none while invincible or in god mode, and destroying damage dealt as generic (the decomp's HERO_ACTIONS moloch_process_damage), with CCharacter::processDamage
     - deferred: regenerating a player's Moloch 5 hit points a second up to its most, with the heroes' per-frame update (the decomp's nocturne_moloch_regenerate)
@@ -5714,21 +5719,22 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `copyPlayerInput` 0x00543db0 (25)
   - [ ] `copyNetAddr` 0x00543e00 (7)
 
-### `core/npc.cpp` (13 functions, 589 instructions, 1 done, 0 partial)
+### `core/npc.cpp` (13 functions, 589 instructions, 6 done, 1 partial)
 - class `CNPC`
-  - [ ] `ctor` 0x005447e0 (26)
-  - [ ] `archive` 0x00544ba0 (51)
-  - [ ] `dtor` 0x004f4700 (67)
+  - [~] `ctor` 0x005447e0 (26)
+    - deferred: the path map, the collision cylinder and catching fire from a gun's flame, with CNPC::setup and CCharacter::process
+  - [x] `archive` 0x00544ba0 (51)
+  - [x] `dtor` 0x004f4700 (67)
   - [ ] `process` 0x005448b0 (220)
-  - [ ] `getActorType` 0x005447d0 (2)
+  - [x] `getActorType` 0x005447d0 (2)
   - [ ] `renderBackground` 0x00544b70 (12)
   - [ ] `setRandomMotionVariant` 0x00544c50 (86)
   - [ ] `processDamage` 0x00544d30 (75)
-  - [ ] `isInvulnerable` 0x00544e10 (5)
+  - [x] `isInvulnerable` 0x00544e10 (5)
   - [ ] `getPathMap` 0x00544e30 (3)
   - [ ] `setup` 0x00544870 (21)
 - free functions
-  - [ ] `factoryFuncNPC` 0x005447a0 (12)
+  - [x] `factoryFuncNPC` 0x005447a0 (12)
   - [x] `staticInit` 0x00544770 (9)
 
 ### `core/passngr.cpp` (9 functions, 601 instructions, 1 done, 0 partial)
@@ -5816,7 +5822,6 @@ functions don't count as done. Sizes are in instructions.
 - class `CScat`
   - [ ] `createDefaultWeapon` 0x00557150 (41)
   - [~] `ctor` 0x00556ed0 (46)
-    - deferred: loading the model scat.dfm, with CDeformableModelInstance::init
     - deferred: creating Scat's default weapon, with the weapon classes
     - deferred: adding the layer actions that draw the pistols, with addLayerAction
     - deferred: the defaults the constructor gives Scat's own fields, with the steps that read them
@@ -5976,11 +5981,12 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `factoryFuncSimBox` 0x00588d00 (12)
   - [x] `staticInit` 0x00588cd0 (9)
 
-### `core/skeleton.cpp` (88 functions, 8882 instructions, 2 done, 3 partial)
+### `core/skeleton.cpp` (88 functions, 8882 instructions, 2 done, 4 partial)
 - class `CDeformableModelInstance`
   - [x] `showAllParts` 0x005a0410 (8)
   - [x] `clearAllTextureSetIndices` 0x005a0430 (8)
-  - [ ] `init` 0x005a0840 (30)
+  - [~] `init` 0x005a0840 (30)
+    - deferred: forgetting the loaded model and the level of detail last skinned, with getModelPtr and skinVerticesForLOD
   - [~] `ctor` 0x0059ddc0 (25)
     - deferred: the transformed vertices, and the defaults the constructor gives the model, skinning, root motion and scale fields, with the steps that read them
   - [ ] `blendMotion` 0x0059eb50 (479)
@@ -6173,7 +6179,6 @@ functions don't count as done. Sizes are in instructions.
 ### `core/stranger.cpp` (57 functions, 13459 instructions, 5 done, 1 partial)
 - class `CStranger`
   - [~] `ctor` 0x005bb120 (207)
-    - deferred: loading the model stranger.dfm, with CDeformableModelInstance::init
     - deferred: naming the gun's model gat.kfm, with the weapon classes
     - deferred: adding the layer actions that draw each weapon, with addLayerAction
     - deferred: the defaults the constructor gives the Stranger's aiming, recoil, melee, turning, carried object and airborne fields, with the steps that read them
@@ -6254,7 +6259,6 @@ functions don't count as done. Sizes are in instructions.
 ### `core/svetlana.cpp` (16 functions, 1634 instructions, 5 done, 1 partial)
 - class `CSvetlana`
   - [~] `ctor` 0x005d8850 (32)
-    - deferred: loading the model svetlana.dfm, with CDeformableModelInstance::init
     - deferred: the cape's and hair's cloth, and the defaults the constructor gives Svetlana's own fields, with the steps that read them
     - deferred: a player Svetlana grabbed through CHero::getGrabbed, where the original refuses every grab, which the NPC keeps (the decomp's hero_svetlana.h), with CSvetlana::getGrabbed
     - deferred: a player Svetlana at zero hit points not regenerating, so the death check sees her (the decomp's hero_death.h nocturne_hero_regenerates), with CSvetlana::process
@@ -6604,24 +6608,26 @@ functions don't count as done. Sizes are in instructions.
   - [~] `staticInit` 0x005eeaa0 (9)
     - deferred: the game's weather and its 200 particle positions, with this constructor
 
-### `core/werewolf.cpp` (16 functions, 2629 instructions, 1 done, 0 partial)
+### `core/werewolf.cpp` (16 functions, 2629 instructions, 5 done, 1 partial)
 - class `CWerewolf`
-  - [ ] `ctor` 0x005efc10 (31)
-  - [ ] `getActorType` 0x005efc00 (2)
+  - [~] `ctor` 0x005efc10 (31)
+    - deferred: the collision cylinder and the detection range, with CWerewolf::process
+    - deferred: chasing the hero netplay gives it rather than the local one (the decomp's nocturne_net_sim_target_for), with CWerewolf::process
+  - [x] `getActorType` 0x005efc00 (2)
   - [ ] `playHowl` 0x005f11e0 (20)
   - [ ] `processChainConstraint` 0x005f1e40 (166)
   - [ ] `process` 0x005efde0 (1387)
   - [ ] `setWalkTarget` 0x005f11a0 (18)
   - [ ] `renderEyeGlow` 0x005f1230 (337)
   - [ ] `renderTransparent` 0x005f1820 (131)
-  - [ ] `archive` 0x005f1980 (82)
+  - [x] `archive` 0x005f1980 (82)
   - [ ] `processDamage` 0x005f1ac0 (236)
   - [ ] `getDeathState` 0x005f1db0 (22)
   - [ ] `getTargetPoints` 0x005f1df0 (28)
-  - [ ] `dtor` 0x005f2220 (62)
+  - [x] `dtor` 0x005f2220 (62)
   - [ ] `setup` 0x005efcc0 (72)
 - free functions
-  - [ ] `factoryFuncWerewolf` 0x005efbd0 (12)
+  - [x] `factoryFuncWerewolf` 0x005efbd0 (12)
   - [x] `staticInit` 0x005efb70 (23)
 
 ### `core/xform.cpp` (42 functions, 2952 instructions, 1 done, 0 partial)
@@ -6669,10 +6675,14 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `clipPolygonStage4` 0x005f8330 (120)
   - [ ] `clampClippedVertices` 0x005f84a0 (47)
 
-### `core/zombie.cpp` (25 functions, 4452 instructions, 1 done, 0 partial)
+### `core/zombie.cpp` (25 functions, 4452 instructions, 5 done, 1 partial)
 - class `CZombie`
-  - [ ] `ctor` 0x005f8fe0 (77)
-  - [ ] `getActorType` 0x005f8fd0 (2)
+  - [~] `ctor` 0x005f8fe0 (77)
+    - deferred: being a miner when the set's geometry is mine.geo, with CActor::createActorByName given the set
+    - deferred: the collision cylinder, the detection range, what it is picking up and how far it has come, the door it heads for, the pain cooldown, rising and burial timers, and not finding paths to new targets, with CZombie::setup and CZombie::process
+    - deferred: chasing the hero netplay gives it rather than the local one (the decomp's nocturne_net_sim_target_for), with CZombie::process
+    - deferred: drawing the part a blow takes off from the simulation's random numbers rather than rand, so netplay agrees on it (the decomp's nocturne_rng_sim), with CZombie::processDismemberment
+  - [x] `getActorType` 0x005f8fd0 (2)
   - [ ] `getPickupHandIndex` 0x005fbd00 (67)
   - [ ] `canPickupWithHand` 0x005fbda0 (21)
   - [ ] `resetChaseState` 0x005fca10 (39)
@@ -6681,7 +6691,7 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `getCarryObjToBodyXForm` 0x005fb1f0 (315)
   - [ ] `renderOpaque` 0x005fbe20 (24)
   - [ ] `renderTransparent` 0x005fbe70 (152)
-  - [ ] `archive` 0x005fbfd0 (90)
+  - [x] `archive` 0x005fbfd0 (90)
   - [ ] `canBeAttracted` 0x005fc120 (81)
   - [ ] `dropAndClearTarget` 0x005fbde0 (17)
   - [ ] `processDismemberment` 0x005fc220 (215)
@@ -6691,10 +6701,10 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `canBeGrabbed` 0x005fc960 (4)
   - [ ] `getGrabbed` 0x005fc970 (29)
   - [ ] `shouldIgnoreForTargeting` 0x005fc9e0 (15)
-  - [ ] `dtor` 0x005fcc50 (62)
+  - [x] `dtor` 0x005fcc50 (62)
   - [ ] `setup` 0x005f9140 (217)
 - free functions
-  - [ ] `factoryFuncZombie` 0x005f8fa0 (12)
+  - [x] `factoryFuncZombie` 0x005f8fa0 (12)
   - [x] `staticInit` 0x005f8c90 (9)
   - [ ] `classifyObjectShape` 0x005f8e50 (117)
 

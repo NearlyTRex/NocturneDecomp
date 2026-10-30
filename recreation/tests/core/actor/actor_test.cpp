@@ -12,8 +12,10 @@
 #include "core/charactr/character.h"
 #include "core/colonel/colonel.h"
 #include "core/door/door.h"
+#include "core/enemy/enemy.h"
 #include "core/gabriela/gabriella.h"
 #include "core/game/game.h"
+#include "core/ghoul/ghoul.h"
 #include "core/gun/gun.h"
 #include "core/haystack/haystack.h"
 #include "core/health/healthitem.h"
@@ -22,7 +24,9 @@
 #include "core/icepick/icepick.h"
 #include "core/lever/lever.h"
 #include "core/litecone/lightcone.h"
+#include "core/mobster/mobster.h"
 #include "core/moloch/moloch.h"
+#include "core/npc/npc.h"
 #include "core/platfrm/platform.h"
 #include "core/scat/scat.h"
 #include "core/stranger/stranger.h"
@@ -30,6 +34,8 @@
 #include "core/trigger/trigger.h"
 #include "core/waypoint/waypoint.h"
 #include "core/weapon/weapon.h"
+#include "core/werewolf/werewolf.h"
+#include "core/zombie/zombie.h"
 #include "tests/mocks/core/gameparts.h"
 #include "tests/mocks/core/testactor.h"
 #include "tests/mocks/engine/mockgameclock.h"
@@ -43,6 +49,7 @@
 #include <memory>
 #include <string_view>
 #include <type_traits>
+#include <utility>
 
 namespace nocturne::core {
 namespace {
@@ -70,7 +77,7 @@ TEST(CActor, PublicInterface) {
     static_assert(std::is_same_v<decltype(&CActor::getActorClassByName),
                                  const CDemonActorType *(CActor::*)(std::string_view) const>);
     static_assert(std::is_same_v<decltype(&CActor::createActorByName),
-                                 std::unique_ptr<CDemonActor> (CActor::*)(std::string_view) const>);
+                                 std::unique_ptr<CDemonActor> (CActor::*)(std::string_view)>);
 }
 
 class CActorRegistryTest : public ::testing::Test {
@@ -110,7 +117,26 @@ TEST_F(CActorRegistryTest, ThePortedClassesAreRegistered) {
     EXPECT_EQ(actor_.getActorClassByName("CLever"), &CLever::kType);
     EXPECT_EQ(actor_.getActorClassByName("CBoxActor"), &CBoxActor::kType);
     EXPECT_EQ(actor_.getActorClassByName("CPlatform"), &CPlatform::kType);
-    EXPECT_EQ(actor_.getActorClassCount(), 27U);
+    EXPECT_EQ(actor_.getActorClassByName("CNPC"), &CNPC::kType);
+    EXPECT_EQ(actor_.getActorClassByName("CEnemy"), &CEnemy::kType);
+    EXPECT_EQ(actor_.getActorClassByName("CZombie"), &CZombie::kType);
+    EXPECT_EQ(actor_.getActorClassByName("CWerewolf"), &CWerewolf::kType);
+    EXPECT_EQ(actor_.getActorClassByName("CMobster"), &CMobster::kType);
+    EXPECT_EQ(actor_.getActorClassByName("CGhoul"), &CGhoul::kType);
+    EXPECT_EQ(actor_.getActorClassCount(), 33U);
+}
+
+TEST_F(CActorRegistryTest, EachHeroIsMadeWithItsOwnModel) {
+    for (const auto &[class_name, model_name] :
+         {std::pair{"CGabriella", "gabriela.dfm"}, std::pair{"CSvetlana", "svetlana.dfm"},
+          std::pair{"CStranger", "stranger.dfm"}, std::pair{"CScat", "scat.dfm"},
+          std::pair{"CBaron", "baron.dfm"}, std::pair{"CIcePick", "icepick.dfm"},
+          std::pair{"CHaystack", "haystack.dfm"}, std::pair{"CColonel", "colonel.dfm"},
+          std::pair{"CMoloch", "moloch_h.dfm"}}) {
+        const std::unique_ptr<CDemonActor> hero = actor_.createActorByName(class_name);
+        EXPECT_EQ(dynamic_cast<CCharacter &>(*hero).getModel().getModelName(), model_name)
+            << class_name;
+    }
 }
 
 // Only the letters and digits count, in either case.

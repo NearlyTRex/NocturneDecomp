@@ -51,7 +51,7 @@ const CDemonActorType &CDoor::getActorType() const {
 }
 
 // nocedit 0x0047fa90
-std::unique_ptr<CDemonActor> CDoor::create() {
+std::unique_ptr<CDemonActor> CDoor::create(CActor & /*classes*/) {
     return std::make_unique<CDoor>();
 }
 

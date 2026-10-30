@@ -41,7 +41,7 @@ private:
     static constexpr float kDefaultFov = 56.0F;
     static constexpr float kDefaultFalloff = 6.0F;
 
-    static std::unique_ptr<CDemonActor> create();
+    static std::unique_ptr<CDemonActor> create(CActor &classes);
 
     float fov_ = kDefaultFov;
     float falloff_ = kDefaultFalloff;

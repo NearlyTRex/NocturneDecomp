@@ -5,6 +5,7 @@
 #include "core/lever/levertype.h"
 #include "tests/mocks/core/notportedcalls.h"
 #include "tests/mocks/core/testactor.h"
+#include "tests/mocks/core/testclasses.h"
 #include "tests/mocks/core/testfieldsarchive.h"
 
 #include <gmock/gmock.h>
@@ -60,7 +61,8 @@ TEST(CLever, ItsRecordIsVersion8UnderCDemonActorAndMissionsCanCreateOne) {
     EXPECT_EQ(CLever::kType.parent_type, &CDemonActor::kType);
     EXPECT_EQ(CLever::kType.latest_version, 8);
     ASSERT_NE(CLever::kType.factory_func, nullptr);
-    const std::unique_ptr<CDemonActor> actor = CLever::kType.factory_func();
+    CTestClasses classes;
+    const std::unique_ptr<CDemonActor> actor = CLever::kType.factory_func(classes.get());
     EXPECT_EQ(&actor->getActorType(), &CLever::kType);
 }
 

@@ -3,6 +3,7 @@
 #include "core/waypoint/waypoint.h"
 #include "tests/mocks/core/notportedcalls.h"
 #include "tests/mocks/core/testactor.h"
+#include "tests/mocks/core/testclasses.h"
 #include "tests/mocks/core/testfieldsarchive.h"
 
 #include <gtest/gtest.h>
@@ -47,7 +48,8 @@ TEST(CWayPoint, ItsRecordIsVersion2UnderCTriggerAndMissionsCanCreateOne) {
     EXPECT_EQ(CWayPoint::kType.parent_type, &CTrigger::kType);
     EXPECT_EQ(CWayPoint::kType.latest_version, 2);
     ASSERT_NE(CWayPoint::kType.factory_func, nullptr);
-    const std::unique_ptr<CDemonActor> actor = CWayPoint::kType.factory_func();
+    CTestClasses classes;
+    const std::unique_ptr<CDemonActor> actor = CWayPoint::kType.factory_func(classes.get());
     EXPECT_EQ(&actor->getActorType(), &CWayPoint::kType);
 }
 

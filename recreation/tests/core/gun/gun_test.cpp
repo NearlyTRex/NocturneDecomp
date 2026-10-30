@@ -2,6 +2,7 @@
 #include "core/actor/demonactortype.h"
 #include "core/gun/gun.h"
 #include "tests/mocks/core/notportedcalls.h"
+#include "tests/mocks/core/testclasses.h"
 
 #include <gtest/gtest.h>
 
@@ -39,7 +40,8 @@ TEST(CGun, ItsRecordIsAVersion1WeaponThatMissionsCanCreate) {
     EXPECT_EQ(CGun::kType.parent_type, &CWeapon::kType);
     EXPECT_EQ(CGun::kType.latest_version, 1);
     ASSERT_NE(CGun::kType.factory_func, nullptr);
-    const std::unique_ptr<CDemonActor> gun = CGun::kType.factory_func();
+    CTestClasses classes;
+    const std::unique_ptr<CDemonActor> gun = CGun::kType.factory_func(classes.get());
     EXPECT_EQ(&gun->getActorType(), &CGun::kType);
 }
 
