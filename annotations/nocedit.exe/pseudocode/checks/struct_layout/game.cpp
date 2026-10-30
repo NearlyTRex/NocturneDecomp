@@ -1722,12 +1722,12 @@ static_assert(__builtin_offsetof(CDeformableModel, parts) == 28996,
               "offsetof(CDeformableModel, parts) != 28996");
 static_assert(__builtin_offsetof(CDeformableModel, model_scale) == 31876,
               "offsetof(CDeformableModel, model_scale) != 31876");
-static_assert(__builtin_offsetof(CDeformableModel, vertex_pool) == 31888,
-              "offsetof(CDeformableModel, vertex_pool) != 31888");
-static_assert(__builtin_offsetof(CDeformableModel, bbox_pool) == 33088,
-              "offsetof(CDeformableModel, bbox_pool) != 33088");
-static_assert(__builtin_offsetof(CDeformableModel, dead) == 35488,
-              "offsetof(CDeformableModel, dead) != 35488");
+static_assert(__builtin_offsetof(CDeformableModel, bone_origins) == 31888,
+              "offsetof(CDeformableModel, bone_origins) != 31888");
+static_assert(__builtin_offsetof(CDeformableModel, bias_used) == 33088,
+              "offsetof(CDeformableModel, bias_used) != 33088");
+static_assert(__builtin_offsetof(CDeformableModel, bone_bounds) == 33100,
+              "offsetof(CDeformableModel, bone_bounds) != 33100");
 static_assert(__builtin_offsetof(CDeformableModel, bone_flags) == 35500,
               "offsetof(CDeformableModel, bone_flags) != 35500");
 static_assert(__builtin_offsetof(CDeformableModel, bone_to_part_map) == 35900,
@@ -6302,8 +6302,8 @@ static_assert(__builtin_offsetof(CSkeleton, frame_positions_1) == 168820,
               "offsetof(CSkeleton, frame_positions_1) != 168820");
 static_assert(__builtin_offsetof(CSkeleton, frame_positions_2) == 168824,
               "offsetof(CSkeleton, frame_positions_2) != 168824");
-static_assert(__builtin_offsetof(CSkeleton, bone_scales) == 168828,
-              "offsetof(CSkeleton, bone_scales) != 168828");
+static_assert(__builtin_offsetof(CSkeleton, reference_bone_origins) == 168828,
+              "offsetof(CSkeleton, reference_bone_origins) != 168828");
 
 // ---- CSlew (28 bytes) ----
 static_assert(sizeof(CSlew) == 28,
@@ -10536,12 +10536,8 @@ static_assert(__builtin_offsetof(SVert, bone_indices) == 1,
               "offsetof(SVert, bone_indices) != 1");
 static_assert(__builtin_offsetof(SVert, bone_weights) == 4,
               "offsetof(SVert, bone_weights) != 4");
-static_assert(__builtin_offsetof(SVert, position) == 16,
-              "offsetof(SVert, position) != 16");
-static_assert(__builtin_offsetof(SVert, normal) == 28,
-              "offsetof(SVert, normal) != 28");
-static_assert(__builtin_offsetof(SVert, tangent) == 40,
-              "offsetof(SVert, tangent) != 40");
+static_assert(__builtin_offsetof(SVert, bone_offsets) == 16,
+              "offsetof(SVert, bone_offsets) != 16");
 
 // ---- SVertexData (20 bytes) ----
 static_assert(sizeof(SVertexData) == 20,
