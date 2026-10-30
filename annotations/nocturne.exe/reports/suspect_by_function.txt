@@ -7,7 +7,7 @@ SUMMARY
 Total functions analyzed: 4923
 Clean: 2518 (51.1%)
 With suspects: 2405
-Total suspects: 20725
+Total suspects: 20723
 
 ====================================================================================================
 cockpit_ckptutil.c_applyActPalette_FUN_0042d370 (1 suspect)
@@ -11606,25 +11606,23 @@ core_game.cpp_CGame_FUN_004a4170 (16 suspects)
   Line 298 [undefined_data]: puVar6 = &DAT_01c786a0;
 
 ====================================================================================================
-core_game.cpp_CGame_FUN_004a4b50 (16 suspects)
+core_game.cpp_CGame_FUN_004a4b50 (14 suspects)
   File: core/game.cpp
 ====================================================================================================
   Line 2 [warning_overlapping_globals]: /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
   Line 82 [undefined_data]: DAT_01c789c0 = 0;
-  Line 109 [undefined_data]: ("world",*(char **)(&DAT_005b9450 + iVar3),"rt");
-  Line 162 [undefined_data]: ("world",*(char **)(&DAT_005b9450 + iVar5),"rt");
-  Line 207 [undefined_data]: ("world",*(char **)(&DAT_005b9450 + iVar5),"rt");
-  Line 259 [undefined_data]: ("world",*(char **)(&DAT_005b9450 + iVar5),"rt");
-  Line 290 [undefined_data]: ("world",*(char **)(&DAT_005b9450 + iVar5),"rt");
-  Line 312 [undefined_data]: ("world",*(char **)(&DAT_005b9450 + iVar5),"rt");
-  Line 334 [undefined_data]: pcVar4 = *(char **)(&DAT_005b9450 + iVar3 * 0x34 + iVar6 * 4);
-  Line 335 [unrolled_strcpy]: do {
-  Line 348 [undefined_data]: pcVar4 = &DAT_01c789c0;
-  Line 350 [undefined_data]: _DAT_01c78ac0 = *(uint *)(&DAT_005b9554 + iVar3 * 4);
-  Line 352 [unrolled_strcpy]: do {
-  Line 365 [undefined_data]: iVar6 = _stricmp(&DAT_01c78598,local_144);
-  Line 368 [undefined_data]: pcVar4 = &DAT_01c78598;
-  Line 369 [unrolled_strcpy]: do {
+  Line 109 [pointer_cast]: ("world",*(char **)((int)g_ChapterMissionFiles[0] + iVar3),
+  Line 163 [pointer_cast]: ("world",*(char **)((int)g_ChapterMissionFiles[0] + iVar5),
+  Line 209 [pointer_cast]: ("world",*(char **)((int)g_ChapterMissionFiles[0] + iVar5),
+  Line 262 [pointer_cast]: ("world",*(char **)((int)g_ChapterMissionFiles[0] + iVar5),
+  Line 294 [pointer_cast]: ("world",*(char **)((int)g_ChapterMissionFiles[0] + iVar5),
+  Line 317 [pointer_cast]: ("world",*(char **)((int)g_ChapterMissionFiles[0] + iVar5),
+  Line 341 [unrolled_strcpy]: do {
+  Line 354 [undefined_data]: pcVar4 = &DAT_01c789c0;
+  Line 358 [unrolled_strcpy]: do {
+  Line 371 [undefined_data]: iVar6 = _stricmp(&DAT_01c78598,local_144);
+  Line 374 [undefined_data]: pcVar4 = &DAT_01c78598;
+  Line 375 [unrolled_strcpy]: do {
 
 ====================================================================================================
 core_game.cpp_CGame_FUN_004a57c0 (16 suspects)

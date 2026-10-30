@@ -131,7 +131,7 @@ void __cdecl core_skeledit_cpp_CDeformableModel_saveStream_FUN_0058f120(CDeforma
   _fprintf(file_handle,"// bone origin list\n");
   iVar1 = 0;
   if (0 < iVar13) {
-    pCVar19 = this_ptr->vertex_pool;
+    pCVar19 = this_ptr->bone_origins;
     do {
       pfVar2 = &pCVar19->z;
       pfVar3 = &pCVar19->y;
@@ -145,8 +145,8 @@ void __cdecl core_skeledit_cpp_CDeformableModel_saveStream_FUN_0058f120(CDeforma
   _fprintf(file_handle,"%g,%g,%g\n",(double)(this_ptr->model_scale).x,
              (double)(this_ptr->model_scale).y,(double)(this_ptr->model_scale).z);
   _fprintf(file_handle,"// biasUsed\n");
-  _fprintf(file_handle,"%g,%g,%g\n",(double)this_ptr->bbox_pool[0].min.x,
-             (double)this_ptr->bbox_pool[0].min.y,(double)this_ptr->bbox_pool[0].min.z);
+  _fprintf(file_handle,"%g,%g,%g\n",(double)this_ptr->bias_used.x,
+             (double)this_ptr->bias_used.y,(double)this_ptr->bias_used.z);
   _fprintf(file_handle,"// partForBoneList\n");
   iVar1 = 0;
   if (0 < iVar13) {

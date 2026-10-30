@@ -356,9 +356,9 @@ static int CDeformableModel_buildFromPosFile_check_0_4(CDeformableModel_buildFro
     do {
       pSVar2 = this_ptr->vertex_data_ptr[0];
       pcVar21 = (local_1f4.vertex_data)->lod_workspace + local_64 + -0x10;
-      *(uint *)pcVar21 = *(uint *)((int)pSVar2->bone_weights + local_68 + 0xc);
-      *(uint *)(pcVar21 + 4) = *(uint *)((int)pSVar2->bone_weights + local_68 + 0x10);
-      *(uint *)(pcVar21 + 8) = *(uint *)((int)pSVar2->bone_weights + local_68 + 0x14);
+      *(uint *)pcVar21 = *(uint *)((int)&pSVar2->bone_offsets[0].x + local_68);
+      *(uint *)(pcVar21 + 4) = *(uint *)((int)&pSVar2->bone_offsets[0].y + local_68);
+      *(uint *)(pcVar21 + 8) = *(uint *)((int)&pSVar2->bone_offsets[0].z + local_68);
       pcVar16 = pcVar21;
       do {
         pcVar19 = pcVar16 + 4;

@@ -2,23 +2,23 @@
 GLOBALS GAP ANALYSIS REPORT
 ================================================================================
 
-Total globals analyzed:      12954
-  Named globals:             10452
-  DAT_ globals:              2502
+Total globals analyzed:      12953
+  Named globals:             10455
+  DAT_ globals:              2498
 Gaps found:                  2047
   With exact size bounds:    1596
   With estimated bounds:     451
-Total gap bytes:             2,142,969,858
-  Exact gap bytes:           41,379,883
-Overlaps (size <= 0):        7150
+Total gap bytes:             2,142,969,933
+  Exact gap bytes:           41,379,958
+Overlaps (size <= 0):        7148
 
 --------------------------------------------------------------------------------
 GAP SIZE DISTRIBUTION
 --------------------------------------------------------------------------------
   1-4 bytes (likely padding/alignment)          413
-  5-16 bytes (small vars)                       262
+  5-16 bytes (small vars)                       261
   17-64 bytes (structs/small arrays)            607
-  65-256 bytes (medium data)                    294
+  65-256 bytes (medium data)                    295
   257-1024 bytes (large structs/arrays)         183
   1-4 KB                                        117
   4-64 KB                                       125
@@ -599,7 +599,7 @@ ALL EXACT GAPS (1596) - size bounds are known precisely
          228 bytes  at 0x01c5d73c  between g_CExplosion_ARRAY_01c5d708[1] and DAT_01c5d820
          216 bytes  at 0x005be238  between DAT_005be234                   and INT_005be310
          208 bytes  at 0x005b8020  between g_INT_005b801c                 and g_CFireEffect_PTR_005b80f0
-         203 bytes  at 0x005b9489  between DAT_005b9485                   and DAT_005b9554
+         203 bytes  at 0x005b9489  between g_ChapterMissionFiles[1][0]+1  and g_ChapterDisplayYears
          200 bytes  at 0x005ad288  between g_FarPlaneDistance             and g_CConsole_PTR_005ad350
          196 bytes  at 0x01c09e10  between DAT_01c09e0c                   and DAT_01c09ed4
          192 bytes  at 0x005b7660  between DAT_005b765c                   and DAT_005b7720
@@ -672,6 +672,7 @@ ALL EXACT GAPS (1596) - size bounds are known precisely
           92 bytes  at 0x005babd8  between INT_005babd4                   and DAT_005bac34
           92 bytes  at 0x005c2070  between DAT_005c206c                   and DAT_005c20cc
           92 bytes  at 0x02dbd498  between g_CSfxSlot_ARRAY_02dbd374[1].o and g_CSfxSlot_ARRAY_02dbd374[1].o
+          88 bytes  at 0x005b95cc  between g_IpAddress                    and INT_005b9624
           88 bytes  at 0x005b966c  between INT_005b9668                   and g_CGore_PTR_005b96c4
           88 bytes  at 0x02dc9254  between DAT_02dc9250                   and DAT_02dc92ac
           87 bytes  at 0x005804b5  between s_mask_value_must_be_a_pow_005 and s_isBroken_0058050c
@@ -776,7 +777,7 @@ ALL EXACT GAPS (1596) - size bounds are known precisely
           56 bytes  at 0x02dd11cc  between g_CVehicleActorType_02dd1190.n and g_CCryptVesselActorType_02dd11
           52 bytes  at 0x004a91f4  between switchdataD_004a91f0           and switchdataD_004a9228
           52 bytes  at 0x005ae694  between g_INT_005ae690                 and g_INT_005ae6c8
-          52 bytes  at 0x005b941c  between DAT_005b9418                   and DAT_005b9450
+          52 bytes  at 0x005b941c  between DAT_005b9418                   and g_ChapterMissionFiles
           52 bytes  at 0x01b4d778  between DAT_01b4d774                   and DAT_01b4d7ac
           52 bytes  at 0x01c70f80  between DAT_01c70f7c                   and DAT_01c70fb4
           52 bytes  at 0x01c7cd08  between g_CBloodSplat_ARRAY_01c7ccf4[0 and g_CBloodSplat_ARRAY_01c7ccf4[1
@@ -786,10 +787,10 @@ ALL EXACT GAPS (1596) - size bounds are known precisely
           48 bytes  at 0x0059c000  between DAT_0059bffc                   and DAT_0059c030
           48 bytes  at 0x005a49d0  between PTR_crt_iostream.cpp_istream_d and g_istreamTypeInfo_005a4a00
           48 bytes  at 0x005a4a30  between PTR_crt_fstream.cpp_fstream_de and g_fstreambaseTypeInfo_005a4a60
+          48 bytes  at 0x005b9455  between g_ChapterMissionFiles[0][0]+1  and g_ChapterMissionFiles[1][0]+1
           48 bytes  at 0x005bbc10  between DAT_005bbc08                   and DAT_005bbc40
           47 bytes  at 0x00763e15  between DAT_00763e14                   and DAT_00763e44
           45 bytes  at 0x00587d07  between s_If_you_think_you_have_at_005 and s_anon_00587d34
-          45 bytes  at 0x005b9458  between PTR_s_gtown_msn_005846ed_005b9 and DAT_005b9485
           45 bytes  at 0x005c1d23  between DAT_005c1d1f                   and DAT_005c1d50
           44 bytes  at 0x0059f7f8  between FLOAT_0059f7f4                 and g_CKeyActorVTable
           44 bytes  at 0x005a450c  between DAT_005a4508                   and FLOAT_005a4538
@@ -1175,7 +1176,6 @@ ALL EXACT GAPS (1596) - size bounds are known precisely
           16 bytes  at 0x005acf84  between g_INT_005acf80                 and g_INT_005acf94
           16 bytes  at 0x005b0650  between g_INT_005b064c                 and g_INT_005b0660
           16 bytes  at 0x005b0664  between g_INT_005b0660                 and PTR_DAT_005b0674
-          16 bytes  at 0x005b9558  between DAT_005b9554                   and s_s_10_0_0_105_005b9568
           16 bytes  at 0x005b9658  between PTR_s_darkPoint_00584ead_005b9 and INT_005b9668
           16 bytes  at 0x005bac6c  between INT_005bac68                   and INT_005bac7c
           16 bytes  at 0x005bacc0  between INT_005bacbc                   and DAT_005bacd0
@@ -1779,7 +1779,7 @@ ALL EXACT GAPS (1596) - size bounds are known precisely
            1 bytes  at 0x005c505b  between DAT_005c5054+3                 and DAT_005c505c
 
 --------------------------------------------------------------------------------
-OVERLAPS (7150) - next global starts inside previous
+OVERLAPS (7148) - next global starts inside previous
 --------------------------------------------------------------------------------
   241 bytes overlap ~
     s_engine_2d_c_00577004                   TerminatedCString    at 0x00577004  size=256
@@ -22556,15 +22556,9 @@ OVERLAPS (7150) - next global starts inside previous
   252 bytes overlap ~
     s_file_corrupt_005b9388                  TerminatedCString    at 0x005b9388  size=256
     s_file_corrupt_005b9388+4                undefined4           at 0x005b938c
-  3 bytes overlap
-    DAT_005b9450                             undefined4           at 0x005b9450  size=4
-    DAT_005b9451                             undefined4           at 0x005b9451
-  1 bytes overlap
-    DAT_005b9451                             undefined4           at 0x005b9451  size=4
-    PTR_s_gtown_msn_005846ed_005b9454        void*                at 0x005b9454
-  68 bytes overlap ~
-    s_s_10_0_0_105_005b9568                  TerminatedCString    at 0x005b9568  size=256
-    INT_005b9624                             int                  at 0x005b9624
+  259 bytes overlap ~
+    g_ChapterMissionFiles                    char*[5][13]         at 0x005b9450  size=260
+    g_ChapterMissionFiles[0][0]+1            undefined4           at 0x005b9451
   224 bytes overlap ~
     s_system_nocturne_ini_005baa00           TerminatedCString    at 0x005baa00  size=256
     s_Sound_005baa20                         TerminatedCString    at 0x005baa20

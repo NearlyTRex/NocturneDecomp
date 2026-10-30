@@ -108,8 +108,8 @@ void __cdecl core_skeledit_cpp_CDeformableModel_importVertexAssignmentsVPH_FUN_0
         vert->bone_indices[1] = (uchar)bone_structure->bones[iVar2].parent_index;
         vert->bone_weights[1] = 1.0 - fVar2;
       }
-      local_58 = vert->position;
-      pCVar5 = &vert->position;
+      local_58 = vert->bone_offsets[0];
+      pCVar5 = vert->bone_offsets;
       for (local_18 = 0; local_18 < (int)(uint)vert->num_bone_influences; local_18 = local_18 + 1) {
         core_xform_cpp_inverse_FUN_005f6210(&local_24[vert->bone_indices[local_18]].world_matrix,&local_d8);
         local_a8 = local_d8;

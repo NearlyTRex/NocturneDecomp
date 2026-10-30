@@ -153,7 +153,7 @@ void __cdecl core_skeledit_cpp_CDeformableModel_extractLodLevel_FUN_0058d790(CDe
       pfVar18->bone_weights[pfVar18->num_bone_influences] = local_538;
       pCVar6 = core_xform_cpp_transformVector3x4_FUN_005f4dc0
                          (local_70,&local_534,inverse_matrices + iVar16);
-      pCVar14 = (&pfVar18->position) + pfVar18->num_bone_influences;
+      pCVar14 = &pfVar18->bone_offsets[pfVar18->num_bone_influences];
       if (pCVar14 != pCVar6) {
         *pCVar14 = *pCVar6;
       }

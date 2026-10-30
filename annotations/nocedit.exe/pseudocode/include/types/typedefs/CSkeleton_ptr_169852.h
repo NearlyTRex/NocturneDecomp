@@ -21,7 +21,7 @@ struct CSkeleton_ptr_169852 {
     template<typename T> CSkeleton_ptr_169852(T* p) : _raw((void*)p) {}
     template<typename T> CSkeleton_ptr_169852& operator=(T* p) { _raw = (void*)p; return *this; }
     CSkeleton* operator->() const { return (CSkeleton*)_raw; }
-    CSkeleton* adj() const { return (CSkeleton*)((char*)_raw - offsetof(CSkeleton, bone_scales[85].y)); }
+    CSkeleton* adj() const { return (CSkeleton*)((char*)_raw - offsetof(CSkeleton, reference_bone_origins[85].y)); }
     template<typename T> operator T*() const { return (T*)_raw; }
     explicit operator bool() const { return _raw != 0; }
 };

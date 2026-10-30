@@ -31686,21 +31686,21 @@
         },
         {
           "len":1200,
-          "name":"vertex_pool",
+          "name":"bone_origins",
           "offset":31888,
           "type":"CVector3f[100]"
         },
         {
-          "len":2400,
-          "name":"bbox_pool",
+          "len":12,
+          "name":"bias_used",
           "offset":33088,
-          "type":"CBoundingBox3D[100]"
+          "type":"CVector3f"
         },
         {
-          "len":12,
-          "name":"dead",
-          "offset":35488,
-          "type":"char[12]"
+          "len":2400,
+          "name":"bone_bounds",
+          "offset":33100,
+          "type":"CBoundingBox3D[100]"
         },
         {
           "len":400,
@@ -45478,7 +45478,7 @@
         },
         {
           "len":1200,
-          "name":"bone_scales",
+          "name":"reference_bone_origins",
           "offset":168828,
           "type":"CVector3f[100]"
         }
@@ -63169,22 +63169,10 @@
           "type":"float[3]"
         },
         {
-          "len":12,
-          "name":"position",
+          "len":36,
+          "name":"bone_offsets",
           "offset":16,
-          "type":"CVector3f"
-        },
-        {
-          "len":12,
-          "name":"normal",
-          "offset":28,
-          "type":"CVector3f"
-        },
-        {
-          "len":12,
-          "name":"tangent",
-          "offset":40,
-          "type":"CVector3f"
+          "type":"CVector3f[3]"
         }
       ],
       "importable":true,

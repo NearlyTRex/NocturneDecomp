@@ -15,9 +15,9 @@ CDeformableModel * __cdecl core_skeleton_cpp_CDeformableModel_ctor_FUN_0059a160(
   CDeformableModel *pCVar2;
   SLod *pSVar3;
   
-  pvVar2 = __arrinit(this_ptr->vertex_pool,100,&g_CVectorTypeInfo);
+  pvVar2 = __arrinit(this_ptr->bone_origins,100,&g_CVectorTypeInfo);
   pvVar3 = __arrinit
-                     (&ADJ(pvVar2)->bbox_pool[0].max,100,&g_CBoundingBox3DTypeInfo);
+                     (ADJ(pvVar2)->bone_bounds,100,&g_CBoundingBox3DTypeInfo);
   pCVar1 = ADJ(pvVar3);
   pCVar2 = pCVar1;
   do {
@@ -43,8 +43,8 @@ CDeformableModel * __cdecl core_skeleton_cpp_CDeformableModel_ctor_FUN_0059a160(
   (ADJ(pvVar3)->model_scale).y = (ADJ(pvVar3)->model_scale).z;
   (ADJ(pvVar3)->model_scale).x = (ADJ(pvVar3)->model_scale).y;
   memset(ADJ(pvVar3)->lod_info,0,0x28);
-  ADJ(pvVar3)->bbox_pool[0].min.z = 0.0;
-  ADJ(pvVar3)->bbox_pool[0].min.y = ADJ(pvVar3)->bbox_pool[0].min.z;
-  ADJ(pvVar3)->bbox_pool[0].min.x = ADJ(pvVar3)->bbox_pool[0].min.y;
+  (ADJ(pvVar3)->bias_used).z = 0.0;
+  (ADJ(pvVar3)->bias_used).y = (ADJ(pvVar3)->bias_used).z;
+  (ADJ(pvVar3)->bias_used).x = (ADJ(pvVar3)->bias_used).y;
   return pCVar1;
 }

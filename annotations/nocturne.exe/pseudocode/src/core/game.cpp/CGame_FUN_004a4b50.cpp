@@ -113,7 +113,8 @@ void __cdecl core_game_cpp_CGame_FUN_004a4b50(CGame *this_ptr,int select_mode)
         if (0 < local_2b4.base.item_count) {
           do {
             p_Var2 = engine_dosio_cpp_getFile_FUN_00456a60
-                               ("world",*(char **)(&DAT_005b9450 + iVar3),"rt");
+                               ("world",*(char **)((int)g_ChapterMissionFiles[0] + iVar3),
+                                "rt");
             if (p_Var2 == (_FILE *)0x0) {
               shape_edittool_cpp_CPickList_enableItem_FUN_00475f80(&local_2b4,iVar5,0);
             }
@@ -166,7 +167,8 @@ LAB_004a50dc:
           shape_edittool_cpp_CStrList_add_FUN_00473cb0(&local_2b4.base,pcVar7);
           while (iVar6 < local_2b4.base.item_count) {
             p_Var2 = engine_dosio_cpp_getFile_FUN_00456a60
-                               ("world",*(char **)(&DAT_005b9450 + iVar5),"rt");
+                               ("world",*(char **)((int)g_ChapterMissionFiles[0] + iVar5),
+                                "rt");
             if (p_Var2 == (_FILE *)0x0) {
               shape_edittool_cpp_CPickList_enableItem_FUN_00475f80(&local_2b4,iVar6,0);
               iVar6 = iVar6 + 1;
@@ -211,7 +213,8 @@ LAB_004a50dc:
           iVar5 = 0x34;
           for (iVar6 = 0; iVar6 < local_2b4.base.item_count; iVar6 = iVar6 + 1) {
             p_Var2 = engine_dosio_cpp_getFile_FUN_00456a60
-                               ("world",*(char **)(&DAT_005b9450 + iVar5),"rt");
+                               ("world",*(char **)((int)g_ChapterMissionFiles[0] + iVar5),
+                                "rt");
             if (p_Var2 == (_FILE *)0x0) {
               shape_edittool_cpp_CPickList_enableItem_FUN_00475f80(&local_2b4,iVar6,0);
             }
@@ -263,7 +266,8 @@ LAB_004a50dc:
           shape_edittool_cpp_CStrList_add_FUN_00473cb0(&local_2b4.base,pcVar7);
           for (iVar6 = 0; iVar6 < local_2b4.base.item_count; iVar6 = iVar6 + 1) {
             p_Var2 = engine_dosio_cpp_getFile_FUN_00456a60
-                               ("world",*(char **)(&DAT_005b9450 + iVar5),"rt");
+                               ("world",*(char **)((int)g_ChapterMissionFiles[0] + iVar5),
+                                "rt");
             if (p_Var2 == (_FILE *)0x0) {
               shape_edittool_cpp_CPickList_enableItem_FUN_00475f80(&local_2b4,iVar6,0);
             }
@@ -294,7 +298,8 @@ LAB_004a50dc:
           shape_edittool_cpp_CStrList_add_FUN_00473cb0(&local_2b4.base,pcVar7);
           for (iVar6 = 0; iVar6 < local_2b4.base.item_count; iVar6 = iVar6 + 1) {
             p_Var2 = engine_dosio_cpp_getFile_FUN_00456a60
-                               ("world",*(char **)(&DAT_005b9450 + iVar5),"rt");
+                               ("world",*(char **)((int)g_ChapterMissionFiles[0] + iVar5),
+                                "rt");
             if (p_Var2 == (_FILE *)0x0) {
               shape_edittool_cpp_CPickList_enableItem_FUN_00475f80(&local_2b4,iVar6,0);
             }
@@ -316,7 +321,8 @@ LAB_004a50dc:
           shape_edittool_cpp_CStrList_add_FUN_00473cb0(&local_2b4.base,pcVar7);
           for (iVar6 = 0; iVar6 < local_2b4.base.item_count; iVar6 = iVar6 + 1) {
             p_Var2 = engine_dosio_cpp_getFile_FUN_00456a60
-                               ("world",*(char **)(&DAT_005b9450 + iVar5),"rt");
+                               ("world",*(char **)((int)g_ChapterMissionFiles[0] + iVar5),
+                                "rt");
             if (p_Var2 == (_FILE *)0x0) {
               shape_edittool_cpp_CPickList_enableItem_FUN_00475f80(&local_2b4,iVar6,0);
             }
@@ -338,7 +344,7 @@ LAB_004a50dc:
       shape_edittool_cpp_CPickList_dtor_FUN_00474cf0(&local_2b4,0);
     }
     pcVar7 = local_144;
-    pcVar4 = *(char **)(&DAT_005b9450 + iVar3 * 0x34 + iVar6 * 4);
+    pcVar4 = g_ChapterMissionFiles[iVar3][iVar6];
     do {
       cVar1 = *pcVar4;
       *pcVar7 = cVar1;
@@ -354,7 +360,7 @@ LAB_004a50dc:
     }
     pcVar4 = &DAT_01c789c0;
     _fclose(p_Var2);
-    _DAT_01c78ac0 = *(uint *)(&DAT_005b9554 + iVar3 * 4);
+    _DAT_01c78ac0 = g_ChapterDisplayYears[iVar3];
     pcVar7 = local_40[iVar3];
     do {
       cVar1 = *pcVar7;

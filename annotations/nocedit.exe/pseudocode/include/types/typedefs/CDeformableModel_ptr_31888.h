@@ -22,7 +22,7 @@ struct CDeformableModel_ptr_31888 {
     template<typename T> CDeformableModel_ptr_31888(T* p) : _raw((void*)p) {}
     template<typename T> CDeformableModel_ptr_31888& operator=(T* p) { _raw = (void*)p; return *this; }
     CVector3f* operator->() const { return (CVector3f*)_raw; }
-    CDeformableModel* adj() const { return (CDeformableModel*)((char*)_raw - offsetof(CDeformableModel, vertex_pool)); }
+    CDeformableModel* adj() const { return (CDeformableModel*)((char*)_raw - offsetof(CDeformableModel, bone_origins)); }
     template<typename T> operator T*() const { return (T*)_raw; }
     explicit operator bool() const { return _raw != 0; }
 };

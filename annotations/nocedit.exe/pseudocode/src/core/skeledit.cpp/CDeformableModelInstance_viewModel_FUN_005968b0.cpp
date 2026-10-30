@@ -206,7 +206,7 @@ void __cdecl core_skeledit_cpp_CDeformableModelInstance_viewModel_FUN_005968b0(C
   g_CDemonSetPtr->lighting_quality_mode = 1;
   local_30 = this_ptr_02->bone_list;
   local_34 = this_ptr_01->parts;
-  local_5c = this_ptr_01->vertex_pool;
+  local_5c = this_ptr_01->bone_origins;
   local_58 = this_ptr->transformed_vertices;
   local_54 = (this_ptr->bone_transform).bone_model_matrices;
   local_60 = &this_ptr->bounding_box;

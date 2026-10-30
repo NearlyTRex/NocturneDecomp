@@ -15,7 +15,7 @@ void __cdecl core_game_cpp_joinNetworkGame_FUN_004a5e40(void)
   uint *puVar3;
   uint uStack_10;
   
-  pcVar2 = "10.0.0.105";
+  pcVar2 = g_IpAddress;
   puVar3 = (uint *)&stack0xffffff8c;
   for (iVar1 = 0x19; iVar1 != 0; iVar1 = iVar1 + -1) {
     *puVar3 = *(uint *)pcVar2;

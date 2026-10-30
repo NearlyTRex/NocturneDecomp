@@ -323,7 +323,7 @@ LAB_0058c4df:
     do {
       pSVar2 = this_ptr->vertex_data_ptr[0];
       pCLodVert = local_1f4.vertex_data + iVar5;
-      pCLodVert->position = pSVar2[iVar5].position;
+      pCLodVert->position = pSVar2[iVar5].bone_offsets[0];
       memset(&pCLodVert->material_id, 0, 400);
       iVar8 = _fscanf((_FILE *)local_24,"%d\n",&local_94);
       if (((iVar8 != 1) || (local_94 < 1)) || ((int)local_a228.bone_count < local_94)) {

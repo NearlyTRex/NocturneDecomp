@@ -2093,6 +2093,9 @@ int g_SpecialColor = 0xFFFFFF;
 int* g_CurrentScreenPtr = nullptr;
 int* g_CurrentZBufferPtr = nullptr;
 
+// int[5]
+int g_ChapterDisplayYears[5] = {0x00000787, 0x0000078B, 0x0000078D, 0x0000078F, 0x00000796};
+
 // undefined1
 undefined1 DAT_005b9258 = 0x00;
 undefined1 DAT_005b9259 = 0x00;

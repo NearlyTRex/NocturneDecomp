@@ -23,7 +23,7 @@ typedef struct CSkeleton {
     struct CQuaternion4f* bone_angle_frames; // 0x29370
     struct CVector3f* frame_positions_1; // 0x29374
     struct CVector3f* frame_positions_2; // 0x29378
-    CVector3f bone_scales[100]; // 0x2937c
+    CVector3f reference_bone_origins[100]; // 0x2937c
 } CSkeleton;
 #pragma pack(pop)
 

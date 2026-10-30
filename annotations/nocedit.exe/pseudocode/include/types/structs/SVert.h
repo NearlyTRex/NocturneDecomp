@@ -13,9 +13,7 @@ typedef struct SVert {
     uchar num_bone_influences; // 0x0
     uchar bone_indices[3]; // 0x1
     float bone_weights[3]; // 0x4
-    CVector3f position; // 0x10
-    CVector3f normal; // 0x1c
-    CVector3f tangent; // 0x28
+    CVector3f bone_offsets[3]; // 0x10
 } SVert;
 #pragma pack(pop)
 

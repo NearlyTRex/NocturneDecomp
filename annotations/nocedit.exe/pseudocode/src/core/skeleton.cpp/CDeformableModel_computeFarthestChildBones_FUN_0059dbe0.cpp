@@ -26,7 +26,7 @@ void __cdecl core_skeleton_cpp_CDeformableModel_computeFarthestChildBones_FUN_00
       local_1c->farthest_child_bone[0] = -1;
       iVar3 = 0;
       local_18 = 0.0;
-      pCVar4 = this_ptr->vertex_pool;
+      pCVar4 = this_ptr->bone_origins;
       pCVar5 = pCVar2;
       if (0 < pCVar2->bone_count) {
         do {

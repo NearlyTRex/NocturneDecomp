@@ -12,7 +12,7 @@
 ;   TerminatedCString s_world_0062cc74
 ;   TerminatedCString s_core_game_cpp_0062cc7a
 ;   char*[5][13] g_ChapterMissionFiles
-;   undefined4 PTR_s_gtown_msn_0062d684_0067b754
+;   undefined4 g_ChapterMissionFiles[0][1]
 ;
 ; Called Functions:
 ;   engine_dosio.cpp_getFile_FUN_00481a50
@@ -45,7 +45,7 @@ section .text
     RET                                 ; 004e1c57
     PUSH 0x62cc71                       ; 004e1c58 | = "rt"
         ;   Label: LAB_004e1c58
-    MOV EDX,dword ptr [ESI + 0x67b750]  ; 004e1c5d | g_ChapterMissionFiles | PTR_s_gtown_msn_0062d684_0067b754
+    MOV EDX,dword ptr [ESI + 0x67b750]  ; 004e1c5d | g_ChapterMissionFiles | g_ChapterMissionFiles[0][1]
     PUSH EDX                            ; 004e1c63
     PUSH 0x62cc74                       ; 004e1c64 | = "world"
     CALL engine_dosio.cpp_getFile_FUN_00481a50 ; 004e1c69
