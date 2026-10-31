@@ -26,7 +26,7 @@ void __cdecl core_actor_cpp_archivePartStatus_FUN_0040cbf0(CDeformableModelInsta
       pSVar4 = &pCVar3->part_data;
       pCVar3 = (CDeformableModelInstance *)&(pCVar3->base).current_motion_index;
       _fprintf(DAT_00763e84,"%d ",pSVar4->visibility_flags[0]);
-    } while (pCVar3 != (CDeformableModelInstance *)&model_ptr->transformed_vertices[2].z);
+    } while (pCVar3 != (CDeformableModelInstance *)&model_ptr->bone_origins[2].z);
     _fprintf(DAT_00763e84,"\n");
     iVar1 = 0;
     _fprintf(DAT_00763e84,"%s",&DAT_005acc90);

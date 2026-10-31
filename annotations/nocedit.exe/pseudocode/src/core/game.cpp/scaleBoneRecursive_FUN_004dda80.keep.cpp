@@ -12,8 +12,8 @@ void __cdecl core_game_cpp_scaleBoneRecursive_FUN_004dda80(CDeformableModelInsta
 {
   int bone_index_00;
 
-  model_instance->rest_pose_data[bone_index] =
-       model_instance->rest_pose_data[bone_index] * scale_factor;
+  model_instance->rest_bone_scales[bone_index] =
+       model_instance->rest_bone_scales[bone_index] * scale_factor;
   bone_index_00 = 0;
   if (0 < skeleton->bone_count) {
     do {

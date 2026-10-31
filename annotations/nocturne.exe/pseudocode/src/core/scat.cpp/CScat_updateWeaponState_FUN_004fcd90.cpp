@@ -32,7 +32,7 @@ void __cdecl core_scat_cpp_CScat_updateWeaponState_FUN_004fcd90(CScat *this_ptr,
     }
     pCVar5 = (CCharacter *)this_ptr->weapon_actor;
     if (((pCVar5 != (CCharacter *)0x0) && (this_ptr_00 != pCVar5)) &&
-       ((pCVar5->model).transformed_vertices[0x19].y == 1.12104e-44)) {
+       ((pCVar5->model).bone_origins[0x19].y == 1.12104e-44)) {
       pCVar1 = &(this_ptr->base).base.model;
       pSVar3 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_004e1660(&pCVar1->base);
       if (pSVar3->state_index == 0) {
@@ -48,7 +48,7 @@ void __cdecl core_scat_cpp_CScat_updateWeaponState_FUN_004fcd90(CScat *this_ptr,
       pCVar5 = (CCharacter *)this_ptr->weapon_actor;
       if (this_ptr_00 == pCVar5) {
         if (pCVar5 != (CCharacter *)0x0) {
-          switch((pCVar5->model).transformed_vertices[0x19].y) {
+          switch((pCVar5->model).bone_origins[0x19].y) {
           default:
             pCVar5 = (CCharacter *)0x2;
             break;
@@ -59,13 +59,13 @@ void __cdecl core_scat_cpp_CScat_updateWeaponState_FUN_004fcd90(CScat *this_ptr,
       }
       else if (pCVar5 == (CCharacter *)0x0) {
         if ((this_ptr_00 != (CCharacter *)0x0) &&
-           ((this_ptr_00->model).transformed_vertices[0x19].y != 1.12104e-44)) {
+           ((this_ptr_00->model).bone_origins[0x19].y != 1.12104e-44)) {
 LAB_004fcf93:
           pCVar5 = (CCharacter *)0x1;
         }
       }
       else {
-        if ((pCVar5->model).transformed_vertices[0x19].y != 1.12104e-44) goto LAB_004fcf93;
+        if ((pCVar5->model).bone_origins[0x19].y != 1.12104e-44) goto LAB_004fcf93;
         pCVar5 = (CCharacter *)0x0;
       }
       damage_direction =
@@ -78,15 +78,14 @@ LAB_004fcf93:
         pCVar2 = (CCharacter *)this_ptr->weapon_actor;
         if (this_ptr_00 != pCVar2) {
           if ((pCVar2 != (CCharacter *)0x0) &&
-             ((CVector3f *)(uint)((pCVar2->model).transformed_vertices[0x19].y != 1.12104e-44) ==
-              pCVar6)) {
+             ((CVector3f *)(uint)((pCVar2->model).bone_origins[0x19].y != 1.12104e-44) == pCVar6)) {
             (*(((((CCharacter *)this_ptr->weapon_actor)->base).vtable._uc)->_uc).kill)
                       ((CCharacter *)this_ptr->weapon_actor,1,damage_direction,(float)this_ptr_01);
             this_ptr->weapon_actor = (CWeapon *)0x0;
           }
           if (this_ptr->guns_drawn != 0) {
             if ((this_ptr_00 == (CCharacter *)0x0) ||
-               ((this_ptr_00->model).transformed_vertices[0x19].y == 1.12104e-44)) {
+               ((this_ptr_00->model).bone_origins[0x19].y == 1.12104e-44)) {
               pCVar4 = (CVector3f *)0x0;
             }
             else {

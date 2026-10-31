@@ -95,8 +95,8 @@ void __cdecl core_skeleton_cpp_CDeformableModelInstance_blendWithQuaternions_FUN
       core_main_c_displayErrorAndQuit_FUN_00506f10("Write me!");
     }
     if (bone_index < 0) {
-      fVar5 = (this_ptr->scaled_model_dimensions).y;
-      fVar6 = (this_ptr->scaled_model_dimensions).z;
+      fVar5 = (this_ptr->root_offset_scale).y;
+      fVar6 = (this_ptr->root_offset_scale).z;
       fVar1 = source_position->y;
       fVar2 = source_position->z;
       fVar7 = 1.0 - blend_weight;
@@ -105,7 +105,7 @@ void __cdecl core_skeleton_cpp_CDeformableModelInstance_blendWithQuaternions_FUN
       if (&this_ptr->bone_transform != (SPose *)afStack_44) {
         (this_ptr->bone_transform).pose_data.root_position.x =
              (this_ptr->bone_transform).pose_data.root_position.x * fVar7 +
-             (this_ptr->scaled_model_dimensions).x * source_position->x * blend_weight;
+             (this_ptr->root_offset_scale).x * source_position->x * blend_weight;
         (this_ptr->bone_transform).pose_data.root_position.y =
              fVar3 * fVar7 + fVar5 * fVar1 * blend_weight;
         (this_ptr->bone_transform).pose_data.root_position.z =

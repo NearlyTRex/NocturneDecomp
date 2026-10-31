@@ -21,7 +21,7 @@ struct CSuccubus_ptr_48828 {
     template<typename T> CSuccubus_ptr_48828(T* p) : _raw((void*)p) {}
     template<typename T> CSuccubus_ptr_48828& operator=(T* p) { _raw = (void*)p; return *this; }
     CSuccubus* operator->() const { return (CSuccubus*)_raw; }
-    CSuccubus* adj() const { return (CSuccubus*)((char*)_raw - offsetof(CSuccubus, hotdemon_model.transformed_vertices[26].z)); }
+    CSuccubus* adj() const { return (CSuccubus*)((char*)_raw - offsetof(CSuccubus, hotdemon_model.bone_origins[26].z)); }
     template<typename T> operator T*() const { return (T*)_raw; }
     explicit operator bool() const { return _raw != 0; }
 };

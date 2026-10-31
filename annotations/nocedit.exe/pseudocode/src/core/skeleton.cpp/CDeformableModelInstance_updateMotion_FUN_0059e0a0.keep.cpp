@@ -83,7 +83,7 @@ void __cdecl core_skeleton_cpp_CDeformableModelInstance_updateMotion_FUN_0059e0a
         core_skeleton_cpp_CSkeleton_getBoneAngleInterpolated_FUN_0059a070
                   (this_ptr_00,local_34,local_84,local_88,local_1870,&local_24c);
         (this_ptr->bone_transform).pose_data.bone_rotations[local_34] = local_24c;
-        (this_ptr->bone_transform).bone_scales[local_34] = this_ptr->rest_pose_data[local_34];
+        (this_ptr->bone_transform).bone_scales[local_34] = this_ptr->rest_bone_scales[local_34];
         local_34 = local_34 + 1;
       } while (local_34 < this_ptr_00->bone_count);
     }
@@ -100,12 +100,12 @@ void __cdecl core_skeleton_cpp_CDeformableModelInstance_updateMotion_FUN_0059e0a
       (this_ptr->bone_transform).pose_data.root_position.y = fVar3 * fVar7 + fVar1 * local_1870;
       (this_ptr->bone_transform).pose_data.root_position.z = fVar4 * fVar7 + fVar2 * local_1870;
     }
-    fVar5 = (this_ptr->scaled_model_dimensions).x;
+    fVar5 = (this_ptr->root_offset_scale).x;
     fVar6 = (this_ptr->bone_transform).pose_data.root_position.x;
-    fVar8 = (this_ptr->scaled_model_dimensions).z;
+    fVar8 = (this_ptr->root_offset_scale).z;
     fVar9 = (this_ptr->bone_transform).pose_data.root_position.z;
     (this_ptr->bone_transform).pose_data.root_position.y =
-         (this_ptr->scaled_model_dimensions).y *
+         (this_ptr->root_offset_scale).y *
          (this_ptr->bone_transform).pose_data.root_position.y;
     (this_ptr->bone_transform).pose_data.root_position.z = fVar8 * fVar9;
     (this_ptr->bone_transform).pose_data.root_position.x = fVar5 * fVar6;

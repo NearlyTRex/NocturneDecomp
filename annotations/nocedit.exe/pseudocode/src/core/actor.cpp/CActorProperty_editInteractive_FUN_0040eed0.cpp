@@ -745,7 +745,7 @@ LAB_00410083:
     if (cVar2 == '\0') break;
   }
   pcVar6 = local_175 + 1;
-  pcVar8 = (char *)((int)((this_ptr->data).v_dfm_ptr)->transformed_vertices +
+  pcVar8 = (char *)((int)((this_ptr->data).v_dfm_ptr)->bone_origins +
                    (this_ptr->param1).v_int * 100 + 0x1a0);
   do {
     cVar2 = *pcVar6;

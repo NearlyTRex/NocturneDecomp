@@ -20,9 +20,9 @@ struct CVector3i;
 typedef struct CDeformableModelInstance {
     CMotionController base; // 0x0
     float scale_factor; // 0x54
-    CVector3f transformed_vertices[100]; // 0x58
-    CVector3f scaled_model_dimensions; // 0x508
-    float rest_pose_data[100]; // 0x514
+    CVector3f bone_origins[100]; // 0x58
+    CVector3f root_offset_scale; // 0x508
+    float rest_bone_scales[100]; // 0x514
     SPose bone_transform; // 0x6a4
     SPartInstanceData part_data; // 0x2140
     int cached_skinned_lod_index; // 0x2230

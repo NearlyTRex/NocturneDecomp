@@ -1456,7 +1456,8 @@ LAB_004df408:
             iVar6 = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0
                               (pCVar17,"Bip01 head",0);
             if (iVar6 != -1) {
-              this_ptr_04->rest_pose_data[iVar6] = this_ptr_04->rest_pose_data[iVar6] * fStack_144;
+              this_ptr_04->rest_bone_scales[iVar6] =
+                   this_ptr_04->rest_bone_scales[iVar6] * fStack_144;
               iVar13 = 0;
               pCVar18 = pCVar17;
               if (0 < pCVar17->bone_count) {
@@ -1473,7 +1474,8 @@ LAB_004df408:
             iVar6 = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0
                               (pCVar17,"bipltit02",0);
             if (iVar6 != -1) {
-              this_ptr_04->rest_pose_data[iVar6] = this_ptr_04->rest_pose_data[iVar6] * fStack_144;
+              this_ptr_04->rest_bone_scales[iVar6] =
+                   this_ptr_04->rest_bone_scales[iVar6] * fStack_144;
               iVar13 = 0;
               pCVar18 = pCVar17;
               if (0 < pCVar17->bone_count) {
@@ -1490,7 +1492,8 @@ LAB_004df408:
             iVar6 = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0
                               (pCVar17,"biprtit02",0);
             if (iVar6 != -1) {
-              this_ptr_04->rest_pose_data[iVar6] = this_ptr_04->rest_pose_data[iVar6] * fStack_144;
+              this_ptr_04->rest_bone_scales[iVar6] =
+                   this_ptr_04->rest_bone_scales[iVar6] * fStack_144;
               iVar13 = 0;
               pCVar20 = pCVar17;
               if (0 < pCVar17->bone_count) {

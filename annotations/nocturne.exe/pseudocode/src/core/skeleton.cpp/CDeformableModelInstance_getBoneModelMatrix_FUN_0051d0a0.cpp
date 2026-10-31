@@ -34,13 +34,13 @@ CMatrix3x4f * __stack2_esi core_skeleton_cpp_CDeformableModelInstance_getBoneMod
     if (iVar2 < 0) {
       local_7c.m[0].z =
            (this_ptr->bone_transform).pose_data.root_position.x +
-           this_ptr->transformed_vertices[bone_index].x;
+           this_ptr->bone_origins[bone_index].x;
       local_7c.m[1].z =
            (this_ptr->bone_transform).pose_data.root_position.y +
-           this_ptr->transformed_vertices[bone_index].y;
+           this_ptr->bone_origins[bone_index].y;
       local_7c.m[2].z =
            (this_ptr->bone_transform).pose_data.root_position.z +
-           this_ptr->transformed_vertices[bone_index].z;
+           this_ptr->bone_origins[bone_index].z;
     }
     else {
       core_skeleton_cpp_CDeformableModelInstance_getBoneModelMatrix_FUN_0051d0a0
@@ -53,8 +53,7 @@ CMatrix3x4f * __stack2_esi core_skeleton_cpp_CDeformableModelInstance_getBoneMod
         pCVar4 = (CMatrix3x4f *)((int)pCVar4 + ((uint)bVar5 * -2 + 1) * 4);
       }
       core_xform_cpp_transformVector3x4_FUN_0055a8b0
-                (&local_1c,(CVector3f *)((int)&this_ptr->transformed_vertices[0].x + local_10),
-                 &local_4c);
+                (&local_1c,(CVector3f *)((int)&this_ptr->bone_origins[0].x + local_10),&local_4c);
       local_7c.m[0].z = local_1c.x;
       local_7c.m[1].z = local_1c.y;
       local_7c.m[2].z = local_1c.z;

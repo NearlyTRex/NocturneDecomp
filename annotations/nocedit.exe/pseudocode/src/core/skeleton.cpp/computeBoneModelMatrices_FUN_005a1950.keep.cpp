@@ -47,18 +47,18 @@ void __cdecl core_skeleton_cpp_computeBoneModelMatrices_FUN_005a1950(SPose *bone
       iVar1 = pCVar1->bone_list[local_14].parent_index;
       if (iVar1 < 0) {
         bone_data->bone_model_matrices[local_14].m[0].z =
-             instance_ptr->transformed_vertices[local_14].x +
+             instance_ptr->bone_origins[local_14].x +
              (bone_data->pose_data).root_position.x;
         bone_data->bone_model_matrices[local_14].m[1].z =
-             instance_ptr->transformed_vertices[local_14].y +
+             instance_ptr->bone_origins[local_14].y +
              (bone_data->pose_data).root_position.y;
         bone_data->bone_model_matrices[local_14].m[2].z =
-             instance_ptr->transformed_vertices[local_14].z +
+             instance_ptr->bone_origins[local_14].z +
              (bone_data->pose_data).root_position.z;
       }
       else {
         core_xform_cpp_transformVector3x4_FUN_005f4dc0
-                  (&local_3c,&instance_ptr->transformed_vertices[local_14],
+                  (&local_3c,&instance_ptr->bone_origins[local_14],
                    bone_data->bone_model_matrices + iVar1);
         bone_data->bone_model_matrices[local_14].m[0].z = local_3c.x;
         bone_data->bone_model_matrices[local_14].m[1].z = local_3c.y;

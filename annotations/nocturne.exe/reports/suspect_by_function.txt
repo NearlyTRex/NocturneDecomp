@@ -3939,7 +3939,7 @@ core_charactr.cpp_CCharacter_computePickup_FUN_00429010 (16 suspects)
 core_charactr.cpp_CCharacter_ctor_FUN_00423f40 (138 suspects)
   File: core/charactr.cpp
 ====================================================================================================
-  Line 17 [pointer_cast]: ((CClothList *)(pCVar2[1].rest_pose_data + 0x5d));
+  Line 17 [pointer_cast]: ((CClothList *)(pCVar2[1].rest_bone_scales + 0x5d));
   Line 21 [pointer_cast]: ((void *)((int)pvVar4 + 0xb4),0xf,&g_CVectorTypeInfo_005993b0);
   Line 21 [pointer_truncation]: ((void *)((int)pvVar4 + 0xb4),0xf,&g_CVectorTypeInfo_005993b0);
   Line 23 [pointer_cast]: ((void *)((int)pvVar4 + 0x20c),0x32,&g_SFireTypeInfo_00599960);
@@ -4228,7 +4228,7 @@ core_charactr.cpp_CCharacter_processFire_FUN_004269b0 (20 suspects)
   Line 138 [pointer_cast]: pCVar11 = (CLocation *)((int)(pCVar11 + 0x29) + 0xc);
   Line 138 [pointer_truncation]: pCVar11 = (CLocation *)((int)(pCVar11 + 0x29) + 0xc);
   Line 138 [shadow_pointer_walk]: pCVar11 = (CLocation *)((int)(pCVar11 + 0x29) + 0xc);
-  Line 139 [shadow_pointer_walk]: local_24 = (CCharacter *)&(local_24->model).transformed_vertices[0x14].y;
+  Line 139 [shadow_pointer_walk]: local_24 = (CCharacter *)&(local_24->model).bone_origins[0x14].y;
   Line 165 [shadow_pointer_walk]: pCVar9 = (CCharacter *)((pCVar9->base).actor_name + 0x18);
   Line 173 [shadow_pointer_walk]: pCVar3 = (CSkeleton *)((pCVar3->motion_list).state_names[1] + 2);
   Line 183 [shadow_pointer_walk]: pCVar9 = (CCharacter *)((pCVar9->base).actor_name + 0x18);
@@ -4373,7 +4373,7 @@ core_charactr.cpp_CCharacter_setup_FUN_00424260 (6 suspects)
   Line 26 [undefined_data]: ((CKeyFramedModelInstance *)&DAT_007658e4);
   Line 42 [shadow_pointer_walk]: pCVar4 = (CCharacter *)&(pCVar4->base).orient_matrix.m[0].z;
   Line 75 [shadow_pointer_walk]: pCVar4 = (CCharacter *)((pCVar4->base).actor_name + 0x18);
-  Line 76 [shadow_pointer_walk]: pCVar5 = (CCharacter *)&(pCVar5->model).transformed_vertices[0x14].y;
+  Line 76 [shadow_pointer_walk]: pCVar5 = (CCharacter *)&(pCVar5->model).bone_origins[0x14].y;
   Line 97 [unrolled_strcpy]: do {
 
 ====================================================================================================
@@ -13720,7 +13720,7 @@ core_hostage.cpp_CHostage_process_FUN_004b6d80 (14 suspects)
   Line 530 [unrolled_memset]: (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
   Line 583 [unrolled_memset]: (this_ptr->base).base.position_delta.z = 0.0;
   Line 586 [unrolled_memset]: (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
-  Line 671 [suspect_float]: (pCVar18->model).transformed_vertices[0x4f].z = 8.40779e-45;
+  Line 671 [suspect_float]: (pCVar18->model).bone_origins[0x4f].z = 8.40779e-45;
 
 ====================================================================================================
 core_hostage.cpp_CHostage_setup_FUN_004b6b20 (1 suspect)
@@ -15978,11 +15978,11 @@ core_mobster.cpp_CMobster_process_FUN_004da790 (32 suspects)
   Line 292 [stack_param]: fVar16,(float)in_stack_fffffe74);
   Line 372 [unrolled_memset]: (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
   Line 383 [stack_param]: pCVar13,fVar16,(float)in_stack_fffffe74);
-  Line 407 [suspect_float]: (pCVar14->model).transformed_vertices[0x4f].y = 1.4013e-43;
+  Line 407 [suspect_float]: (pCVar14->model).bone_origins[0x4f].y = 1.4013e-43;
   Line 408 [stack_param]: iVar6 = (*(pCVar5->_uc).canBeGrabbed)(pCVar14,in_stack_fffffe74,(int)in_stack_fffffe78);
   Line 408 [stack_param]: iVar6 = (*(pCVar5->_uc).canBeGrabbed)(pCVar14,in_stack_fffffe74,(int)in_stack_fffffe78);
   Line 411 [stack_param]: (pCVar14,(CDemonActor *)in_stack_fffffe80);
-  Line 424 [suspect_float]: (pCVar14->model).transformed_vertices[0x4f].y = 1.4013e-43;
+  Line 424 [suspect_float]: (pCVar14->model).bone_origins[0x4f].y = 1.4013e-43;
   Line 425 [stack_param]: iVar6 = (*(pCVar5->_uc).canBeGrabbed)(pCVar14,in_stack_fffffe88,in_stack_fffffe8c);
   Line 425 [stack_param]: iVar6 = (*(pCVar5->_uc).canBeGrabbed)(pCVar14,in_stack_fffffe88,in_stack_fffffe8c);
   Line 430 [stack_param]: (*(((pCVar14->base).vtable._uc)->_uc).isGrabbable)(pCVar14,in_stack_fffffe94);
@@ -17704,17 +17704,17 @@ core_scat.cpp_CScat_updateWeaponState_FUN_004fcd90 (12 suspects)
   File: core/scat.cpp
 ====================================================================================================
   Line 11 [unaffected_reg]: CMotionController *unaff_EDI;
-  Line 28 [suspect_float]: ((pCVar5->model).transformed_vertices[0x19].y == 1.12104e-44)) {
+  Line 28 [suspect_float]: ((pCVar5->model).bone_origins[0x19].y == 1.12104e-44)) {
   Line 48 [suspect_float]: case 1.12104e-44:
-  Line 55 [suspect_float]: ((this_ptr_00->model).transformed_vertices[0x19].y != 1.12104e-44)) {
-  Line 61 [suspect_float]: if ((pCVar5->model).transformed_vertices[0x19].y != 1.12104e-44) goto LAB_004fcf93;
+  Line 55 [suspect_float]: ((this_ptr_00->model).bone_origins[0x19].y != 1.12104e-44)) {
+  Line 61 [suspect_float]: if ((pCVar5->model).bone_origins[0x19].y != 1.12104e-44) goto LAB_004fcf93;
   Line 67 [pointer_truncation]: ((CCharacter *)this_ptr,&delta_time,(int)pCVar5);
   Line 70 [pointer_truncation]: if (-1 < (int)damage_direction) {
-  Line 74 [suspect_float]: ((CVector3f *)(uint)((pCVar2->model).transformed_vertices[0x19].y != 1.12104e-44) ==
-  Line 82 [suspect_float]: ((this_ptr_00->model).transformed_vertices[0x19].y == 1.12104e-44)) {
-  Line 94 [unaffected_reg]: this_ptr_01 = unaff_EDI;
-  Line 95 [unaffected_reg]: core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0(unaff_EDI,6,1);
-  Line 100 [pointer_truncation]: ((CCharacter *)this_ptr,(int)pCVar5);
+  Line 74 [suspect_float]: ((CVector3f *)(uint)((pCVar2->model).bone_origins[0x19].y != 1.12104e-44) == pCVar6)) {
+  Line 81 [suspect_float]: ((this_ptr_00->model).bone_origins[0x19].y == 1.12104e-44)) {
+  Line 93 [unaffected_reg]: this_ptr_01 = unaff_EDI;
+  Line 94 [unaffected_reg]: core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0(unaff_EDI,6,1);
+  Line 99 [pointer_truncation]: ((CCharacter *)this_ptr,(int)pCVar5);
 
 ====================================================================================================
 core_scat.cpp_FUN_004fbb70 (4 suspects)
@@ -20007,7 +20007,7 @@ core_skeleton.cpp_CDeformableModelInstance_clearAllTextureSetIndices_FUN_0051dcb
   File: core/skeleton.cpp
 ====================================================================================================
   Line 9 [preinc_loop_idiom]: do {
-  Line 20 [static_invalid_pointer_cast]: } while ((float *)piVar2 != &this_ptr->transformed_vertices[2].z);
+  Line 20 [static_invalid_pointer_cast]: } while ((float *)piVar2 != &this_ptr->bone_origins[2].z);
 
 ====================================================================================================
 core_skeleton.cpp_CDeformableModelInstance_computeBoneTransformsForFrame_FUN_0051e350 (13 suspects)
@@ -20049,12 +20049,12 @@ core_skeleton.cpp_CDeformableModelInstance_computeBoneTransforms_FUN_0051d3c0 (2
   Line 57 [pointer_cast]: *(float *)((int)&(this_ptr->bone_transform).bone_model_matrices[0].m[2].x + local_28);
   Line 58 [pointer_cast]: *(float *)((int)&(this_ptr->bone_transform).bone_model_matrices[0].m[2].y + local_28) =
   Line 60 [pointer_cast]: *(float *)((int)&(this_ptr->bone_transform).bone_model_matrices[0].m[2].y + local_28);
-  Line 65 [pointer_truncation]: *(float *)((int)&this_ptr->transformed_vertices[0].x + local_18) +
-  Line 65 [pointer_cast]: *(float *)((int)&this_ptr->transformed_vertices[0].x + local_18) +
-  Line 68 [pointer_truncation]: *(float *)((int)&this_ptr->transformed_vertices[0].y + local_18) +
-  Line 68 [pointer_cast]: *(float *)((int)&this_ptr->transformed_vertices[0].y + local_18) +
-  Line 71 [pointer_truncation]: *(float *)((int)&this_ptr->transformed_vertices[0].z + local_18) +
-  Line 71 [pointer_cast]: *(float *)((int)&this_ptr->transformed_vertices[0].z + local_18) +
+  Line 65 [pointer_truncation]: *(float *)((int)&this_ptr->bone_origins[0].x + local_18) +
+  Line 65 [pointer_cast]: *(float *)((int)&this_ptr->bone_origins[0].x + local_18) +
+  Line 68 [pointer_truncation]: *(float *)((int)&this_ptr->bone_origins[0].y + local_18) +
+  Line 68 [pointer_cast]: *(float *)((int)&this_ptr->bone_origins[0].y + local_18) +
+  Line 71 [pointer_truncation]: *(float *)((int)&this_ptr->bone_origins[0].z + local_18) +
+  Line 71 [pointer_cast]: *(float *)((int)&this_ptr->bone_origins[0].z + local_18) +
   Line 76 [pointer_truncation]: (&local_3c,(CVector3f *)((int)&local_30->x + local_18),local_14 + iVar1);
   Line 76 [pointer_cast]: (&local_3c,(CVector3f *)((int)&local_30->x + local_18),local_14 + iVar1);
   Line 81 [shadow_pointer_walk]: pCVar2 = (CDeformableModelInstance *)&(pCVar2->base).current_motion_index;
@@ -20160,13 +20160,13 @@ core_skeleton.cpp_CDeformableModelInstance_getBoneModelMatrix_FUN_0051d0a0 (13 s
   Line 45 [pointer_truncation]: pCVar3 = (CMatrix3x4f *)((int)pCVar3 + ((uint)bVar5 * -2 + 1) * 4);
   Line 46 [pointer_cast]: pCVar4 = (CMatrix3x4f *)((int)pCVar4 + ((uint)bVar5 * -2 + 1) * 4);
   Line 46 [pointer_truncation]: pCVar4 = (CMatrix3x4f *)((int)pCVar4 + ((uint)bVar5 * -2 + 1) * 4);
-  Line 49 [pointer_truncation]: (&local_1c,(CVector3f *)((int)&this_ptr->transformed_vertices[0].x + local_10),
-  Line 49 [pointer_cast]: (&local_1c,(CVector3f *)((int)&this_ptr->transformed_vertices[0].x + local_10),
-  Line 71 [unrolled_memcpy]: for (iVar2 = 0xc; iVar2 != 0; iVar2 = iVar2 + -1) {
-  Line 73 [pointer_cast]: pCVar3 = (CMatrix3x4f *)((int)pCVar3 + ((uint)bVar5 * -2 + 1) * 4);
-  Line 73 [pointer_truncation]: pCVar3 = (CMatrix3x4f *)((int)pCVar3 + ((uint)bVar5 * -2 + 1) * 4);
-  Line 74 [pointer_cast]: pCVar4 = (CMatrix3x4f *)((int)pCVar4 + ((uint)bVar5 * -2 + 1) * 4);
-  Line 74 [pointer_truncation]: pCVar4 = (CMatrix3x4f *)((int)pCVar4 + ((uint)bVar5 * -2 + 1) * 4);
+  Line 49 [pointer_truncation]: (&local_1c,(CVector3f *)((int)&this_ptr->bone_origins[0].x + local_10),&local_4c);
+  Line 49 [pointer_cast]: (&local_1c,(CVector3f *)((int)&this_ptr->bone_origins[0].x + local_10),&local_4c);
+  Line 70 [unrolled_memcpy]: for (iVar2 = 0xc; iVar2 != 0; iVar2 = iVar2 + -1) {
+  Line 72 [pointer_cast]: pCVar3 = (CMatrix3x4f *)((int)pCVar3 + ((uint)bVar5 * -2 + 1) * 4);
+  Line 72 [pointer_truncation]: pCVar3 = (CMatrix3x4f *)((int)pCVar3 + ((uint)bVar5 * -2 + 1) * 4);
+  Line 73 [pointer_cast]: pCVar4 = (CMatrix3x4f *)((int)pCVar4 + ((uint)bVar5 * -2 + 1) * 4);
+  Line 73 [pointer_truncation]: pCVar4 = (CMatrix3x4f *)((int)pCVar4 + ((uint)bVar5 * -2 + 1) * 4);
   Line 75 [unrolled_memcpy]: // 0051d1a0: MOVSD.REP ES:EDI,ESI
 
 ====================================================================================================
@@ -20266,7 +20266,7 @@ core_skeleton.cpp_CDeformableModelInstance_showAllParts_FUN_0051dc90 (2 suspects
   File: core/skeleton.cpp
 ====================================================================================================
   Line 9 [preinc_loop_idiom]: do {
-  Line 20 [static_invalid_pointer_cast]: } while ((float *)piVar2 != &this_ptr->transformed_vertices[2].z);
+  Line 20 [static_invalid_pointer_cast]: } while ((float *)piVar2 != &this_ptr->bone_origins[2].z);
 
 ====================================================================================================
 core_skeleton.cpp_CDeformableModelInstance_updateMotion_FUN_0051b920 (181 suspects)
@@ -20283,176 +20283,176 @@ core_skeleton.cpp_CDeformableModelInstance_updateMotion_FUN_0051b920 (181 suspec
   Line 111 [pointer_cast]: *puVar16 = *(uint *)((int)&local_24c + (uint)bVar17 * -8 + 4);
   Line 116 [shadow_pointer_walk]: local_5c = (CDeformableModelInstance *)&(local_5c->base).tween_speed;
   Line 129 [static_legacy_uninitvar]: fVar7 = 1.0 - local_1870;
-  Line 151 [pointer_cast]: *(int *)((int)aiStack_5ac + local_38) = iVar11;
-  Line 155 [pointer_cast]: puVar16 = (uint *)((int)local_bec + (uint)bVar17 * -8 + local_54 + 4);
-  Line 156 [pointer_truncation]: *(float *)((int)&local_bec[0].w + local_54) = local_cc.w;
-  Line 156 [pointer_cast]: *(float *)((int)&local_bec[0].w + local_54) = local_cc.w;
-  Line 158 [pointer_cast]: puVar13 = (uint *)((int)local_bc + (uint)bVar17 * -8 + (uint)bVar17 * -8 + -8);
-  Line 159 [pointer_cast]: *puVar16 = *(uint *)((int)local_bc + (uint)bVar17 * -8 + -0xc);
-  Line 172 [pointer_cast]: puVar16 = (uint *)((int)local_bec + (uint)bVar17 * -8 + iVar11 * 0x10 + 4);
-  Line 175 [pointer_truncation]: puVar13 = (uint *)((int)&local_1bc + (uint)bVar17 * -8 + (uint)bVar17 * -8 + 8);
-  Line 175 [pointer_cast]: puVar13 = (uint *)((int)&local_1bc + (uint)bVar17 * -8 + (uint)bVar17 * -8 + 8);
-  Line 176 [pointer_truncation]: *puVar16 = *(uint *)((int)&local_1bc + (uint)bVar17 * -8 + 4);
-  Line 176 [pointer_cast]: *puVar16 = *(uint *)((int)&local_1bc + (uint)bVar17 * -8 + 4);
-  Line 187 [pointer_cast]: if (-1 < *(int *)((int)aiStack_5ac + local_58)) {
-  Line 197 [pointer_truncation]: quat1_in = (CQuaternion4f *)((int)&local_bec[0].w + local_68);
-  Line 197 [pointer_cast]: quat1_in = (CQuaternion4f *)((int)&local_bec[0].w + local_68);
-  Line 199 [pointer_truncation]: puVar16 = (uint *)((int)&local_20c + (uint)bVar17 * -8 + (uint)bVar17 * -8 + 8);
-  Line 199 [pointer_cast]: puVar16 = (uint *)((int)&local_20c + (uint)bVar17 * -8 + (uint)bVar17 * -8 + 8);
-  Line 200 [pointer_truncation]: puVar13 = (uint *)((int)&local_15c + (uint)bVar17 * -8 + (uint)bVar17 * -8 + 8);
-  Line 200 [pointer_cast]: puVar13 = (uint *)((int)&local_15c + (uint)bVar17 * -8 + (uint)bVar17 * -8 + 8);
-  Line 201 [pointer_truncation]: *(uint *)((int)&local_20c + (uint)bVar17 * -8 + 4) =
-  Line 201 [pointer_cast]: *(uint *)((int)&local_20c + (uint)bVar17 * -8 + 4) =
-  Line 202 [pointer_truncation]: *(uint *)((int)&local_15c + (uint)bVar17 * -8 + 4);
-  Line 202 [pointer_cast]: *(uint *)((int)&local_15c + (uint)bVar17 * -8 + 4);
-  Line 206 [pointer_truncation]: pCVar12 = (CQuaternion4f *)((int)&local_74->w + local_80);
-  Line 206 [pointer_cast]: pCVar12 = (CQuaternion4f *)((int)&local_74->w + local_80);
-  Line 208 [pointer_cast]: puVar16 = (uint *)((int)local_bc + (uint)bVar17 * -8 + (uint)bVar17 * -8 + 8);
-  Line 209 [pointer_truncation]: puVar13 = (uint *)((int)&local_14c + (uint)bVar17 * -8 + (uint)bVar17 * -8 + 8);
-  Line 209 [pointer_cast]: puVar13 = (uint *)((int)&local_14c + (uint)bVar17 * -8 + (uint)bVar17 * -8 + 8);
-  Line 210 [pointer_cast]: *(uint *)((int)local_bc + (uint)bVar17 * -8 + 4) =
-  Line 211 [pointer_truncation]: *(uint *)((int)&local_14c + (uint)bVar17 * -8 + 4);
-  Line 211 [pointer_cast]: *(uint *)((int)&local_14c + (uint)bVar17 * -8 + 4);
-  Line 217 [pointer_cast]: puVar15 = (uint *)((int)local_48 + (uint)bVar17 * -8 + 0x6b4);
-  Line 217 [pointer_truncation]: puVar15 = (uint *)((int)local_48 + (uint)bVar17 * -8 + 0x6b4);
-  Line 218 [pointer_cast]: puVar13 = (uint *)((int)pCVar12 + ((uint)bVar17 * -2 + 1) * 4);
-  Line 218 [pointer_truncation]: puVar13 = (uint *)((int)pCVar12 + ((uint)bVar17 * -2 + 1) * 4);
-  Line 228 [shadow_pointer_walk]: local_48 = (CDeformableModelInstance *)&(local_48->base).tween_speed;
-  Line 229 [shadow_pointer_walk]: local_4c = (CSkeleton *)((local_4c->motion_list).state_names[1] + 2);
-  Line 243 [pointer_cast]: *(int *)((int)aiStack_41c + local_40) = iVar11;
-  Line 247 [pointer_truncation]: puVar15 = (uint *)((int)&local_122c + (uint)bVar17 * -8 + local_44 + 4);
-  Line 247 [pointer_cast]: puVar15 = (uint *)((int)&local_122c + (uint)bVar17 * -8 + local_44 + 4);
-  Line 248 [pointer_cast]: puVar13 = (uint *)((int)pCVar12 + (uint)bVar17 * -8 + 4);
-  Line 248 [pointer_truncation]: puVar13 = (uint *)((int)pCVar12 + (uint)bVar17 * -8 + 4);
-  Line 249 [pointer_truncation]: *(float *)((int)&local_122c.w + local_44) = pCVar12->w;
-  Line 249 [pointer_cast]: *(float *)((int)&local_122c.w + local_44) = pCVar12->w;
-  Line 257 [pointer_cast]: puVar16 = (uint *)((int)local_186c + (uint)bVar17 * -8 + local_44 + 4);
-  Line 258 [pointer_truncation]: *(float *)((int)&local_186c[0].w + local_44) = local_16c.w;
-  Line 258 [pointer_cast]: *(float *)((int)&local_186c[0].w + local_44) = local_16c.w;
-  Line 260 [pointer_truncation]: puVar13 = (uint *)((int)&local_16c + (uint)bVar17 * -8 + (uint)bVar17 * -8 + 8);
-  Line 260 [pointer_cast]: puVar13 = (uint *)((int)&local_16c + (uint)bVar17 * -8 + (uint)bVar17 * -8 + 8);
-  Line 261 [pointer_truncation]: *puVar16 = *(uint *)((int)&local_16c + (uint)bVar17 * -8 + 4);
-  Line 261 [pointer_cast]: *puVar16 = *(uint *)((int)&local_16c + (uint)bVar17 * -8 + 4);
-  Line 275 [pointer_truncation]: puVar15 = (uint *)((int)&local_122c + (uint)bVar17 * -8 + iVar11 * 0x10 + 4);
-  Line 275 [pointer_cast]: puVar15 = (uint *)((int)&local_122c + (uint)bVar17 * -8 + iVar11 * 0x10 + 4);
-  Line 276 [pointer_cast]: puVar13 = (uint *)((int)pCVar12 + (uint)bVar17 * -8 + 4);
-  Line 276 [pointer_truncation]: puVar13 = (uint *)((int)pCVar12 + (uint)bVar17 * -8 + 4);
-  Line 284 [static_object_index]: (&local_122c)[iVar11].w = pCVar12->w;
-  Line 286 [pointer_cast]: puVar16 = (uint *)((int)local_186c + (uint)bVar17 * -8 + local_80 + 4);
-  Line 287 [pointer_truncation]: *(float *)((int)&local_186c[0].w + local_80) = local_22c.w;
-  Line 287 [pointer_cast]: *(float *)((int)&local_186c[0].w + local_80) = local_22c.w;
-  Line 289 [pointer_truncation]: puVar13 = (uint *)((int)&local_22c + (uint)bVar17 * -8 + (uint)bVar17 * -8 + 8);
-  Line 289 [pointer_cast]: puVar13 = (uint *)((int)&local_22c + (uint)bVar17 * -8 + (uint)bVar17 * -8 + 8);
-  Line 290 [pointer_truncation]: *puVar16 = *(uint *)((int)&local_22c + (uint)bVar17 * -8 + 4);
-  Line 290 [pointer_cast]: *puVar16 = *(uint *)((int)&local_22c + (uint)bVar17 * -8 + 4);
-  Line 302 [pointer_cast]: if (-1 < *(int *)((int)aiStack_41c + local_64)) {
-  Line 305 [pointer_truncation]: puVar13 = (uint *)((int)&local_122c + (uint)bVar17 * -8 + iVar9 + 4);
-  Line 305 [pointer_cast]: puVar13 = (uint *)((int)&local_122c + (uint)bVar17 * -8 + iVar9 + 4);
-  Line 307 [pointer_truncation]: puVar15 = (uint *)((int)&local_1cc + (uint)bVar17 * -8 + (uint)bVar17 * -8 + 8);
-  Line 307 [pointer_cast]: puVar15 = (uint *)((int)&local_1cc + (uint)bVar17 * -8 + (uint)bVar17 * -8 + 8);
-  Line 309 [pointer_truncation]: *(uint *)((int)&local_1cc + (uint)bVar17 * -8 + 4) = *puVar13;
-  Line 309 [pointer_cast]: *(uint *)((int)&local_1cc + (uint)bVar17 * -8 + 4) = *puVar13;
-  Line 312 [pointer_cast]: puVar13 = (uint *)((int)local_186c + (uint)bVar17 * -8 + iVar9 + 4);
-  Line 313 [static_object_index]: local_1cc.w = (&local_122c)[local_30].w;
-  Line 314 [pointer_truncation]: puVar15 = (uint *)((int)&local_dc + (uint)bVar17 * -8 + (uint)bVar17 * -8 + 8);
-  Line 314 [pointer_cast]: puVar15 = (uint *)((int)&local_dc + (uint)bVar17 * -8 + (uint)bVar17 * -8 + 8);
-  Line 316 [pointer_truncation]: *(uint *)((int)&local_dc + (uint)bVar17 * -8 + 4) = *puVar13;
-  Line 316 [pointer_cast]: *(uint *)((int)&local_dc + (uint)bVar17 * -8 + 4) = *puVar13;
-  Line 320 [pointer_cast]: puVar13 = (uint *)((int)local_20 + (uint)bVar17 * -8 + 0x6b4);
-  Line 320 [pointer_truncation]: puVar13 = (uint *)((int)local_20 + (uint)bVar17 * -8 + 0x6b4);
-  Line 322 [pointer_truncation]: puVar15 = (uint *)((int)&local_ec + (uint)bVar17 * -8 + (uint)bVar17 * -8 + 8);
-  Line 322 [pointer_cast]: puVar15 = (uint *)((int)&local_ec + (uint)bVar17 * -8 + (uint)bVar17 * -8 + 8);
-  Line 324 [pointer_truncation]: *(uint *)((int)&local_ec + (uint)bVar17 * -8 + 4) = *puVar13;
-  Line 324 [pointer_cast]: *(uint *)((int)&local_ec + (uint)bVar17 * -8 + 4) = *puVar13;
-  Line 332 [pointer_truncation]: puVar16 = (uint *)((int)&local_1ac + (uint)bVar17 * -8 + (uint)bVar17 * -8 + 8);
-  Line 332 [pointer_cast]: puVar16 = (uint *)((int)&local_1ac + (uint)bVar17 * -8 + (uint)bVar17 * -8 + 8);
-  Line 333 [pointer_truncation]: puVar13 = (uint *)((int)&local_fc + (uint)bVar17 * -8 + (uint)bVar17 * -8 + 8);
-  Line 333 [pointer_cast]: puVar13 = (uint *)((int)&local_fc + (uint)bVar17 * -8 + (uint)bVar17 * -8 + 8);
-  Line 334 [pointer_truncation]: *(uint *)((int)&local_1ac + (uint)bVar17 * -8 + 4) =
-  Line 334 [pointer_cast]: *(uint *)((int)&local_1ac + (uint)bVar17 * -8 + 4) =
-  Line 335 [pointer_truncation]: *(uint *)((int)&local_fc + (uint)bVar17 * -8 + 4);
-  Line 335 [pointer_cast]: *(uint *)((int)&local_fc + (uint)bVar17 * -8 + 4);
-  Line 340 [pointer_truncation]: puVar16 = (uint *)((int)&local_1cc + (uint)bVar17 * -8 + (uint)bVar17 * -8 + 8);
-  Line 340 [pointer_cast]: puVar16 = (uint *)((int)&local_1cc + (uint)bVar17 * -8 + (uint)bVar17 * -8 + 8);
-  Line 341 [pointer_truncation]: puVar13 = (uint *)((int)&local_25c + (uint)bVar17 * -8 + (uint)bVar17 * -8 + 8);
-  Line 341 [pointer_cast]: puVar13 = (uint *)((int)&local_25c + (uint)bVar17 * -8 + (uint)bVar17 * -8 + 8);
-  Line 342 [pointer_truncation]: *(uint *)((int)&local_1cc + (uint)bVar17 * -8 + 4) =
-  Line 342 [pointer_cast]: *(uint *)((int)&local_1cc + (uint)bVar17 * -8 + 4) =
-  Line 343 [pointer_truncation]: *(uint *)((int)&local_25c + (uint)bVar17 * -8 + 4);
-  Line 343 [pointer_cast]: *(uint *)((int)&local_25c + (uint)bVar17 * -8 + 4);
-  Line 347 [pointer_truncation]: ((CQuaternion4f *)((int)&local_186c[0].w + local_80),&local_1fc);
-  Line 347 [pointer_cast]: ((CQuaternion4f *)((int)&local_186c[0].w + local_80),&local_1fc);
-  Line 350 [pointer_truncation]: puVar16 = (uint *)((int)&local_28c + (uint)bVar17 * -8 + (uint)bVar17 * -8 + 8);
-  Line 350 [pointer_cast]: puVar16 = (uint *)((int)&local_28c + (uint)bVar17 * -8 + (uint)bVar17 * -8 + 8);
-  Line 351 [pointer_truncation]: puVar13 = (uint *)((int)&local_1fc + (uint)bVar17 * -8 + (uint)bVar17 * -8 + 8);
-  Line 351 [pointer_cast]: puVar13 = (uint *)((int)&local_1fc + (uint)bVar17 * -8 + (uint)bVar17 * -8 + 8);
-  Line 352 [pointer_truncation]: *(uint *)((int)&local_28c + (uint)bVar17 * -8 + 4) =
-  Line 352 [pointer_cast]: *(uint *)((int)&local_28c + (uint)bVar17 * -8 + 4) =
-  Line 353 [pointer_truncation]: *(uint *)((int)&local_1fc + (uint)bVar17 * -8 + 4);
-  Line 353 [pointer_cast]: *(uint *)((int)&local_1fc + (uint)bVar17 * -8 + 4);
-  Line 357 [pointer_truncation]: pCVar12 = (CQuaternion4f *)((int)&local_6c->w + local_80);
-  Line 357 [pointer_cast]: pCVar12 = (CQuaternion4f *)((int)&local_6c->w + local_80);
-  Line 359 [pointer_truncation]: puVar16 = (uint *)((int)&local_dc + (uint)bVar17 * -8 + (uint)bVar17 * -8 + 8);
-  Line 359 [pointer_cast]: puVar16 = (uint *)((int)&local_dc + (uint)bVar17 * -8 + (uint)bVar17 * -8 + 8);
-  Line 360 [pointer_truncation]: puVar13 = (uint *)((int)&local_19c + (uint)bVar17 * -8 + (uint)bVar17 * -8 + 8);
-  Line 360 [pointer_cast]: puVar13 = (uint *)((int)&local_19c + (uint)bVar17 * -8 + (uint)bVar17 * -8 + 8);
-  Line 361 [pointer_truncation]: *(uint *)((int)&local_dc + (uint)bVar17 * -8 + 4) =
-  Line 361 [pointer_cast]: *(uint *)((int)&local_dc + (uint)bVar17 * -8 + 4) =
-  Line 362 [pointer_truncation]: *(uint *)((int)&local_19c + (uint)bVar17 * -8 + 4);
-  Line 362 [pointer_cast]: *(uint *)((int)&local_19c + (uint)bVar17 * -8 + 4);
-  Line 368 [pointer_truncation]: puVar16 = (uint *)((int)&local_18c + (uint)bVar17 * -8 + (uint)bVar17 * -8 + 8);
-  Line 368 [pointer_cast]: puVar16 = (uint *)((int)&local_18c + (uint)bVar17 * -8 + (uint)bVar17 * -8 + 8);
-  Line 369 [pointer_truncation]: puVar13 = (uint *)((int)&local_10c + (uint)bVar17 * -8 + (uint)bVar17 * -8 + 8);
-  Line 369 [pointer_cast]: puVar13 = (uint *)((int)&local_10c + (uint)bVar17 * -8 + (uint)bVar17 * -8 + 8);
-  Line 370 [pointer_truncation]: *(uint *)((int)&local_18c + (uint)bVar17 * -8 + 4) =
-  Line 370 [pointer_cast]: *(uint *)((int)&local_18c + (uint)bVar17 * -8 + 4) =
-  Line 371 [pointer_truncation]: *(uint *)((int)&local_10c + (uint)bVar17 * -8 + 4);
-  Line 371 [pointer_cast]: *(uint *)((int)&local_10c + (uint)bVar17 * -8 + 4);
-  Line 376 [pointer_truncation]: puVar16 = (uint *)((int)&local_ec + (uint)bVar17 * -8 + (uint)bVar17 * -8 + 8);
-  Line 376 [pointer_cast]: puVar16 = (uint *)((int)&local_ec + (uint)bVar17 * -8 + (uint)bVar17 * -8 + 8);
-  Line 377 [pointer_truncation]: puVar13 = (uint *)((int)&local_13c + (uint)bVar17 * -8 + (uint)bVar17 * -8 + 8);
-  Line 377 [pointer_cast]: puVar13 = (uint *)((int)&local_13c + (uint)bVar17 * -8 + (uint)bVar17 * -8 + 8);
-  Line 378 [pointer_truncation]: *(uint *)((int)&local_ec + (uint)bVar17 * -8 + 4) =
-  Line 378 [pointer_cast]: *(uint *)((int)&local_ec + (uint)bVar17 * -8 + 4) =
-  Line 379 [pointer_truncation]: *(uint *)((int)&local_13c + (uint)bVar17 * -8 + 4);
-  Line 379 [pointer_cast]: *(uint *)((int)&local_13c + (uint)bVar17 * -8 + 4);
-  Line 386 [pointer_truncation]: puVar16 = (uint *)((int)&local_1dc + (uint)bVar17 * -8 + (uint)bVar17 * -8 + 8);
-  Line 386 [pointer_cast]: puVar16 = (uint *)((int)&local_1dc + (uint)bVar17 * -8 + (uint)bVar17 * -8 + 8);
-  Line 387 [pointer_truncation]: puVar13 = (uint *)((int)&local_12c + (uint)bVar17 * -8 + (uint)bVar17 * -8 + 8);
-  Line 387 [pointer_cast]: puVar13 = (uint *)((int)&local_12c + (uint)bVar17 * -8 + (uint)bVar17 * -8 + 8);
-  Line 388 [pointer_truncation]: *(uint *)((int)&local_1dc + (uint)bVar17 * -8 + 4) =
-  Line 388 [pointer_cast]: *(uint *)((int)&local_1dc + (uint)bVar17 * -8 + 4) =
-  Line 389 [pointer_truncation]: *(uint *)((int)&local_12c + (uint)bVar17 * -8 + 4);
-  Line 389 [pointer_cast]: *(uint *)((int)&local_12c + (uint)bVar17 * -8 + 4);
-  Line 395 [pointer_truncation]: puVar16 = (uint *)((int)&local_1ec + (uint)bVar17 * -8 + (uint)bVar17 * -8 + 8);
-  Line 395 [pointer_cast]: puVar16 = (uint *)((int)&local_1ec + (uint)bVar17 * -8 + (uint)bVar17 * -8 + 8);
-  Line 396 [pointer_truncation]: puVar13 = (uint *)((int)&local_27c + (uint)bVar17 * -8 + (uint)bVar17 * -8 + 8);
-  Line 396 [pointer_cast]: puVar13 = (uint *)((int)&local_27c + (uint)bVar17 * -8 + (uint)bVar17 * -8 + 8);
-  Line 397 [pointer_truncation]: *(uint *)((int)&local_1ec + (uint)bVar17 * -8 + 4) =
-  Line 397 [pointer_cast]: *(uint *)((int)&local_1ec + (uint)bVar17 * -8 + 4) =
-  Line 398 [pointer_truncation]: *(uint *)((int)&local_27c + (uint)bVar17 * -8 + 4);
-  Line 398 [pointer_cast]: *(uint *)((int)&local_27c + (uint)bVar17 * -8 + 4);
-  Line 404 [pointer_truncation]: puVar16 = (uint *)((int)&local_17c + (uint)bVar17 * -8 + (uint)bVar17 * -8 + 8);
-  Line 404 [pointer_cast]: puVar16 = (uint *)((int)&local_17c + (uint)bVar17 * -8 + (uint)bVar17 * -8 + 8);
-  Line 405 [pointer_truncation]: puVar13 = (uint *)((int)&local_26c + (uint)bVar17 * -8 + (uint)bVar17 * -8 + 8);
-  Line 405 [pointer_cast]: puVar13 = (uint *)((int)&local_26c + (uint)bVar17 * -8 + (uint)bVar17 * -8 + 8);
-  Line 406 [pointer_truncation]: *(uint *)((int)&local_17c + (uint)bVar17 * -8 + 4) =
-  Line 406 [pointer_cast]: *(uint *)((int)&local_17c + (uint)bVar17 * -8 + 4) =
-  Line 407 [pointer_truncation]: *(uint *)((int)&local_26c + (uint)bVar17 * -8 + 4);
-  Line 407 [pointer_cast]: *(uint *)((int)&local_26c + (uint)bVar17 * -8 + 4);
-  Line 417 [pointer_cast]: puVar15 = (uint *)((int)local_20 + (uint)bVar17 * -8 + 0x6b4);
-  Line 417 [pointer_truncation]: puVar15 = (uint *)((int)local_20 + (uint)bVar17 * -8 + 0x6b4);
-  Line 418 [pointer_cast]: puVar13 = (uint *)((int)pCVar12 + ((uint)bVar17 * -2 + 1) * 4);
-  Line 418 [pointer_truncation]: puVar13 = (uint *)((int)pCVar12 + ((uint)bVar17 * -2 + 1) * 4);
-  Line 428 [shadow_pointer_walk]: local_50 = (CSkeleton *)((local_50->motion_list).state_names[1] + 2);
-  Line 429 [shadow_pointer_walk]: local_20 = (CDeformableModelInstance *)&(local_20->base).tween_speed;
-  Line 444 [pointer_cast]: puVar16 = (uint *)((int)local_60 + (uint)bVar17 * -8 + 0x6b4);
-  Line 444 [pointer_truncation]: puVar16 = (uint *)((int)local_60 + (uint)bVar17 * -8 + 0x6b4);
-  Line 447 [pointer_truncation]: puVar13 = (uint *)((int)&local_21c + (uint)bVar17 * -8 + (uint)bVar17 * -8 + 8);
-  Line 447 [pointer_cast]: puVar13 = (uint *)((int)&local_21c + (uint)bVar17 * -8 + (uint)bVar17 * -8 + 8);
-  Line 448 [pointer_truncation]: *puVar16 = *(uint *)((int)&local_21c + (uint)bVar17 * -8 + 4);
-  Line 448 [pointer_cast]: *puVar16 = *(uint *)((int)&local_21c + (uint)bVar17 * -8 + 4);
-  Line 452 [shadow_pointer_walk]: local_60 = (CDeformableModelInstance *)&(local_60->base).tween_speed;
+  Line 150 [pointer_cast]: *(int *)((int)aiStack_5ac + local_38) = iVar11;
+  Line 154 [pointer_cast]: puVar16 = (uint *)((int)local_bec + (uint)bVar17 * -8 + local_54 + 4);
+  Line 155 [pointer_truncation]: *(float *)((int)&local_bec[0].w + local_54) = local_cc.w;
+  Line 155 [pointer_cast]: *(float *)((int)&local_bec[0].w + local_54) = local_cc.w;
+  Line 157 [pointer_cast]: puVar13 = (uint *)((int)local_bc + (uint)bVar17 * -8 + (uint)bVar17 * -8 + -8);
+  Line 158 [pointer_cast]: *puVar16 = *(uint *)((int)local_bc + (uint)bVar17 * -8 + -0xc);
+  Line 171 [pointer_cast]: puVar16 = (uint *)((int)local_bec + (uint)bVar17 * -8 + iVar11 * 0x10 + 4);
+  Line 174 [pointer_truncation]: puVar13 = (uint *)((int)&local_1bc + (uint)bVar17 * -8 + (uint)bVar17 * -8 + 8);
+  Line 174 [pointer_cast]: puVar13 = (uint *)((int)&local_1bc + (uint)bVar17 * -8 + (uint)bVar17 * -8 + 8);
+  Line 175 [pointer_truncation]: *puVar16 = *(uint *)((int)&local_1bc + (uint)bVar17 * -8 + 4);
+  Line 175 [pointer_cast]: *puVar16 = *(uint *)((int)&local_1bc + (uint)bVar17 * -8 + 4);
+  Line 186 [pointer_cast]: if (-1 < *(int *)((int)aiStack_5ac + local_58)) {
+  Line 196 [pointer_truncation]: quat1_in = (CQuaternion4f *)((int)&local_bec[0].w + local_68);
+  Line 196 [pointer_cast]: quat1_in = (CQuaternion4f *)((int)&local_bec[0].w + local_68);
+  Line 198 [pointer_truncation]: puVar16 = (uint *)((int)&local_20c + (uint)bVar17 * -8 + (uint)bVar17 * -8 + 8);
+  Line 198 [pointer_cast]: puVar16 = (uint *)((int)&local_20c + (uint)bVar17 * -8 + (uint)bVar17 * -8 + 8);
+  Line 199 [pointer_truncation]: puVar13 = (uint *)((int)&local_15c + (uint)bVar17 * -8 + (uint)bVar17 * -8 + 8);
+  Line 199 [pointer_cast]: puVar13 = (uint *)((int)&local_15c + (uint)bVar17 * -8 + (uint)bVar17 * -8 + 8);
+  Line 200 [pointer_truncation]: *(uint *)((int)&local_20c + (uint)bVar17 * -8 + 4) =
+  Line 200 [pointer_cast]: *(uint *)((int)&local_20c + (uint)bVar17 * -8 + 4) =
+  Line 201 [pointer_truncation]: *(uint *)((int)&local_15c + (uint)bVar17 * -8 + 4);
+  Line 201 [pointer_cast]: *(uint *)((int)&local_15c + (uint)bVar17 * -8 + 4);
+  Line 205 [pointer_truncation]: pCVar12 = (CQuaternion4f *)((int)&local_74->w + local_80);
+  Line 205 [pointer_cast]: pCVar12 = (CQuaternion4f *)((int)&local_74->w + local_80);
+  Line 207 [pointer_cast]: puVar16 = (uint *)((int)local_bc + (uint)bVar17 * -8 + (uint)bVar17 * -8 + 8);
+  Line 208 [pointer_truncation]: puVar13 = (uint *)((int)&local_14c + (uint)bVar17 * -8 + (uint)bVar17 * -8 + 8);
+  Line 208 [pointer_cast]: puVar13 = (uint *)((int)&local_14c + (uint)bVar17 * -8 + (uint)bVar17 * -8 + 8);
+  Line 209 [pointer_cast]: *(uint *)((int)local_bc + (uint)bVar17 * -8 + 4) =
+  Line 210 [pointer_truncation]: *(uint *)((int)&local_14c + (uint)bVar17 * -8 + 4);
+  Line 210 [pointer_cast]: *(uint *)((int)&local_14c + (uint)bVar17 * -8 + 4);
+  Line 216 [pointer_cast]: puVar15 = (uint *)((int)local_48 + (uint)bVar17 * -8 + 0x6b4);
+  Line 216 [pointer_truncation]: puVar15 = (uint *)((int)local_48 + (uint)bVar17 * -8 + 0x6b4);
+  Line 217 [pointer_cast]: puVar13 = (uint *)((int)pCVar12 + ((uint)bVar17 * -2 + 1) * 4);
+  Line 217 [pointer_truncation]: puVar13 = (uint *)((int)pCVar12 + ((uint)bVar17 * -2 + 1) * 4);
+  Line 227 [shadow_pointer_walk]: local_48 = (CDeformableModelInstance *)&(local_48->base).tween_speed;
+  Line 228 [shadow_pointer_walk]: local_4c = (CSkeleton *)((local_4c->motion_list).state_names[1] + 2);
+  Line 242 [pointer_cast]: *(int *)((int)aiStack_41c + local_40) = iVar11;
+  Line 246 [pointer_truncation]: puVar15 = (uint *)((int)&local_122c + (uint)bVar17 * -8 + local_44 + 4);
+  Line 246 [pointer_cast]: puVar15 = (uint *)((int)&local_122c + (uint)bVar17 * -8 + local_44 + 4);
+  Line 247 [pointer_cast]: puVar13 = (uint *)((int)pCVar12 + (uint)bVar17 * -8 + 4);
+  Line 247 [pointer_truncation]: puVar13 = (uint *)((int)pCVar12 + (uint)bVar17 * -8 + 4);
+  Line 248 [pointer_truncation]: *(float *)((int)&local_122c.w + local_44) = pCVar12->w;
+  Line 248 [pointer_cast]: *(float *)((int)&local_122c.w + local_44) = pCVar12->w;
+  Line 256 [pointer_cast]: puVar16 = (uint *)((int)local_186c + (uint)bVar17 * -8 + local_44 + 4);
+  Line 257 [pointer_truncation]: *(float *)((int)&local_186c[0].w + local_44) = local_16c.w;
+  Line 257 [pointer_cast]: *(float *)((int)&local_186c[0].w + local_44) = local_16c.w;
+  Line 259 [pointer_truncation]: puVar13 = (uint *)((int)&local_16c + (uint)bVar17 * -8 + (uint)bVar17 * -8 + 8);
+  Line 259 [pointer_cast]: puVar13 = (uint *)((int)&local_16c + (uint)bVar17 * -8 + (uint)bVar17 * -8 + 8);
+  Line 260 [pointer_truncation]: *puVar16 = *(uint *)((int)&local_16c + (uint)bVar17 * -8 + 4);
+  Line 260 [pointer_cast]: *puVar16 = *(uint *)((int)&local_16c + (uint)bVar17 * -8 + 4);
+  Line 274 [pointer_truncation]: puVar15 = (uint *)((int)&local_122c + (uint)bVar17 * -8 + iVar11 * 0x10 + 4);
+  Line 274 [pointer_cast]: puVar15 = (uint *)((int)&local_122c + (uint)bVar17 * -8 + iVar11 * 0x10 + 4);
+  Line 275 [pointer_cast]: puVar13 = (uint *)((int)pCVar12 + (uint)bVar17 * -8 + 4);
+  Line 275 [pointer_truncation]: puVar13 = (uint *)((int)pCVar12 + (uint)bVar17 * -8 + 4);
+  Line 283 [static_object_index]: (&local_122c)[iVar11].w = pCVar12->w;
+  Line 285 [pointer_cast]: puVar16 = (uint *)((int)local_186c + (uint)bVar17 * -8 + local_80 + 4);
+  Line 286 [pointer_truncation]: *(float *)((int)&local_186c[0].w + local_80) = local_22c.w;
+  Line 286 [pointer_cast]: *(float *)((int)&local_186c[0].w + local_80) = local_22c.w;
+  Line 288 [pointer_truncation]: puVar13 = (uint *)((int)&local_22c + (uint)bVar17 * -8 + (uint)bVar17 * -8 + 8);
+  Line 288 [pointer_cast]: puVar13 = (uint *)((int)&local_22c + (uint)bVar17 * -8 + (uint)bVar17 * -8 + 8);
+  Line 289 [pointer_truncation]: *puVar16 = *(uint *)((int)&local_22c + (uint)bVar17 * -8 + 4);
+  Line 289 [pointer_cast]: *puVar16 = *(uint *)((int)&local_22c + (uint)bVar17 * -8 + 4);
+  Line 301 [pointer_cast]: if (-1 < *(int *)((int)aiStack_41c + local_64)) {
+  Line 304 [pointer_truncation]: puVar13 = (uint *)((int)&local_122c + (uint)bVar17 * -8 + iVar9 + 4);
+  Line 304 [pointer_cast]: puVar13 = (uint *)((int)&local_122c + (uint)bVar17 * -8 + iVar9 + 4);
+  Line 306 [pointer_truncation]: puVar15 = (uint *)((int)&local_1cc + (uint)bVar17 * -8 + (uint)bVar17 * -8 + 8);
+  Line 306 [pointer_cast]: puVar15 = (uint *)((int)&local_1cc + (uint)bVar17 * -8 + (uint)bVar17 * -8 + 8);
+  Line 308 [pointer_truncation]: *(uint *)((int)&local_1cc + (uint)bVar17 * -8 + 4) = *puVar13;
+  Line 308 [pointer_cast]: *(uint *)((int)&local_1cc + (uint)bVar17 * -8 + 4) = *puVar13;
+  Line 311 [pointer_cast]: puVar13 = (uint *)((int)local_186c + (uint)bVar17 * -8 + iVar9 + 4);
+  Line 312 [static_object_index]: local_1cc.w = (&local_122c)[local_30].w;
+  Line 313 [pointer_truncation]: puVar15 = (uint *)((int)&local_dc + (uint)bVar17 * -8 + (uint)bVar17 * -8 + 8);
+  Line 313 [pointer_cast]: puVar15 = (uint *)((int)&local_dc + (uint)bVar17 * -8 + (uint)bVar17 * -8 + 8);
+  Line 315 [pointer_truncation]: *(uint *)((int)&local_dc + (uint)bVar17 * -8 + 4) = *puVar13;
+  Line 315 [pointer_cast]: *(uint *)((int)&local_dc + (uint)bVar17 * -8 + 4) = *puVar13;
+  Line 319 [pointer_cast]: puVar13 = (uint *)((int)local_20 + (uint)bVar17 * -8 + 0x6b4);
+  Line 319 [pointer_truncation]: puVar13 = (uint *)((int)local_20 + (uint)bVar17 * -8 + 0x6b4);
+  Line 321 [pointer_truncation]: puVar15 = (uint *)((int)&local_ec + (uint)bVar17 * -8 + (uint)bVar17 * -8 + 8);
+  Line 321 [pointer_cast]: puVar15 = (uint *)((int)&local_ec + (uint)bVar17 * -8 + (uint)bVar17 * -8 + 8);
+  Line 323 [pointer_truncation]: *(uint *)((int)&local_ec + (uint)bVar17 * -8 + 4) = *puVar13;
+  Line 323 [pointer_cast]: *(uint *)((int)&local_ec + (uint)bVar17 * -8 + 4) = *puVar13;
+  Line 331 [pointer_truncation]: puVar16 = (uint *)((int)&local_1ac + (uint)bVar17 * -8 + (uint)bVar17 * -8 + 8);
+  Line 331 [pointer_cast]: puVar16 = (uint *)((int)&local_1ac + (uint)bVar17 * -8 + (uint)bVar17 * -8 + 8);
+  Line 332 [pointer_truncation]: puVar13 = (uint *)((int)&local_fc + (uint)bVar17 * -8 + (uint)bVar17 * -8 + 8);
+  Line 332 [pointer_cast]: puVar13 = (uint *)((int)&local_fc + (uint)bVar17 * -8 + (uint)bVar17 * -8 + 8);
+  Line 333 [pointer_truncation]: *(uint *)((int)&local_1ac + (uint)bVar17 * -8 + 4) =
+  Line 333 [pointer_cast]: *(uint *)((int)&local_1ac + (uint)bVar17 * -8 + 4) =
+  Line 334 [pointer_truncation]: *(uint *)((int)&local_fc + (uint)bVar17 * -8 + 4);
+  Line 334 [pointer_cast]: *(uint *)((int)&local_fc + (uint)bVar17 * -8 + 4);
+  Line 339 [pointer_truncation]: puVar16 = (uint *)((int)&local_1cc + (uint)bVar17 * -8 + (uint)bVar17 * -8 + 8);
+  Line 339 [pointer_cast]: puVar16 = (uint *)((int)&local_1cc + (uint)bVar17 * -8 + (uint)bVar17 * -8 + 8);
+  Line 340 [pointer_truncation]: puVar13 = (uint *)((int)&local_25c + (uint)bVar17 * -8 + (uint)bVar17 * -8 + 8);
+  Line 340 [pointer_cast]: puVar13 = (uint *)((int)&local_25c + (uint)bVar17 * -8 + (uint)bVar17 * -8 + 8);
+  Line 341 [pointer_truncation]: *(uint *)((int)&local_1cc + (uint)bVar17 * -8 + 4) =
+  Line 341 [pointer_cast]: *(uint *)((int)&local_1cc + (uint)bVar17 * -8 + 4) =
+  Line 342 [pointer_truncation]: *(uint *)((int)&local_25c + (uint)bVar17 * -8 + 4);
+  Line 342 [pointer_cast]: *(uint *)((int)&local_25c + (uint)bVar17 * -8 + 4);
+  Line 346 [pointer_truncation]: ((CQuaternion4f *)((int)&local_186c[0].w + local_80),&local_1fc);
+  Line 346 [pointer_cast]: ((CQuaternion4f *)((int)&local_186c[0].w + local_80),&local_1fc);
+  Line 349 [pointer_truncation]: puVar16 = (uint *)((int)&local_28c + (uint)bVar17 * -8 + (uint)bVar17 * -8 + 8);
+  Line 349 [pointer_cast]: puVar16 = (uint *)((int)&local_28c + (uint)bVar17 * -8 + (uint)bVar17 * -8 + 8);
+  Line 350 [pointer_truncation]: puVar13 = (uint *)((int)&local_1fc + (uint)bVar17 * -8 + (uint)bVar17 * -8 + 8);
+  Line 350 [pointer_cast]: puVar13 = (uint *)((int)&local_1fc + (uint)bVar17 * -8 + (uint)bVar17 * -8 + 8);
+  Line 351 [pointer_truncation]: *(uint *)((int)&local_28c + (uint)bVar17 * -8 + 4) =
+  Line 351 [pointer_cast]: *(uint *)((int)&local_28c + (uint)bVar17 * -8 + 4) =
+  Line 352 [pointer_truncation]: *(uint *)((int)&local_1fc + (uint)bVar17 * -8 + 4);
+  Line 352 [pointer_cast]: *(uint *)((int)&local_1fc + (uint)bVar17 * -8 + 4);
+  Line 356 [pointer_truncation]: pCVar12 = (CQuaternion4f *)((int)&local_6c->w + local_80);
+  Line 356 [pointer_cast]: pCVar12 = (CQuaternion4f *)((int)&local_6c->w + local_80);
+  Line 358 [pointer_truncation]: puVar16 = (uint *)((int)&local_dc + (uint)bVar17 * -8 + (uint)bVar17 * -8 + 8);
+  Line 358 [pointer_cast]: puVar16 = (uint *)((int)&local_dc + (uint)bVar17 * -8 + (uint)bVar17 * -8 + 8);
+  Line 359 [pointer_truncation]: puVar13 = (uint *)((int)&local_19c + (uint)bVar17 * -8 + (uint)bVar17 * -8 + 8);
+  Line 359 [pointer_cast]: puVar13 = (uint *)((int)&local_19c + (uint)bVar17 * -8 + (uint)bVar17 * -8 + 8);
+  Line 360 [pointer_truncation]: *(uint *)((int)&local_dc + (uint)bVar17 * -8 + 4) =
+  Line 360 [pointer_cast]: *(uint *)((int)&local_dc + (uint)bVar17 * -8 + 4) =
+  Line 361 [pointer_truncation]: *(uint *)((int)&local_19c + (uint)bVar17 * -8 + 4);
+  Line 361 [pointer_cast]: *(uint *)((int)&local_19c + (uint)bVar17 * -8 + 4);
+  Line 367 [pointer_truncation]: puVar16 = (uint *)((int)&local_18c + (uint)bVar17 * -8 + (uint)bVar17 * -8 + 8);
+  Line 367 [pointer_cast]: puVar16 = (uint *)((int)&local_18c + (uint)bVar17 * -8 + (uint)bVar17 * -8 + 8);
+  Line 368 [pointer_truncation]: puVar13 = (uint *)((int)&local_10c + (uint)bVar17 * -8 + (uint)bVar17 * -8 + 8);
+  Line 368 [pointer_cast]: puVar13 = (uint *)((int)&local_10c + (uint)bVar17 * -8 + (uint)bVar17 * -8 + 8);
+  Line 369 [pointer_truncation]: *(uint *)((int)&local_18c + (uint)bVar17 * -8 + 4) =
+  Line 369 [pointer_cast]: *(uint *)((int)&local_18c + (uint)bVar17 * -8 + 4) =
+  Line 370 [pointer_truncation]: *(uint *)((int)&local_10c + (uint)bVar17 * -8 + 4);
+  Line 370 [pointer_cast]: *(uint *)((int)&local_10c + (uint)bVar17 * -8 + 4);
+  Line 375 [pointer_truncation]: puVar16 = (uint *)((int)&local_ec + (uint)bVar17 * -8 + (uint)bVar17 * -8 + 8);
+  Line 375 [pointer_cast]: puVar16 = (uint *)((int)&local_ec + (uint)bVar17 * -8 + (uint)bVar17 * -8 + 8);
+  Line 376 [pointer_truncation]: puVar13 = (uint *)((int)&local_13c + (uint)bVar17 * -8 + (uint)bVar17 * -8 + 8);
+  Line 376 [pointer_cast]: puVar13 = (uint *)((int)&local_13c + (uint)bVar17 * -8 + (uint)bVar17 * -8 + 8);
+  Line 377 [pointer_truncation]: *(uint *)((int)&local_ec + (uint)bVar17 * -8 + 4) =
+  Line 377 [pointer_cast]: *(uint *)((int)&local_ec + (uint)bVar17 * -8 + 4) =
+  Line 378 [pointer_truncation]: *(uint *)((int)&local_13c + (uint)bVar17 * -8 + 4);
+  Line 378 [pointer_cast]: *(uint *)((int)&local_13c + (uint)bVar17 * -8 + 4);
+  Line 385 [pointer_truncation]: puVar16 = (uint *)((int)&local_1dc + (uint)bVar17 * -8 + (uint)bVar17 * -8 + 8);
+  Line 385 [pointer_cast]: puVar16 = (uint *)((int)&local_1dc + (uint)bVar17 * -8 + (uint)bVar17 * -8 + 8);
+  Line 386 [pointer_truncation]: puVar13 = (uint *)((int)&local_12c + (uint)bVar17 * -8 + (uint)bVar17 * -8 + 8);
+  Line 386 [pointer_cast]: puVar13 = (uint *)((int)&local_12c + (uint)bVar17 * -8 + (uint)bVar17 * -8 + 8);
+  Line 387 [pointer_truncation]: *(uint *)((int)&local_1dc + (uint)bVar17 * -8 + 4) =
+  Line 387 [pointer_cast]: *(uint *)((int)&local_1dc + (uint)bVar17 * -8 + 4) =
+  Line 388 [pointer_truncation]: *(uint *)((int)&local_12c + (uint)bVar17 * -8 + 4);
+  Line 388 [pointer_cast]: *(uint *)((int)&local_12c + (uint)bVar17 * -8 + 4);
+  Line 394 [pointer_truncation]: puVar16 = (uint *)((int)&local_1ec + (uint)bVar17 * -8 + (uint)bVar17 * -8 + 8);
+  Line 394 [pointer_cast]: puVar16 = (uint *)((int)&local_1ec + (uint)bVar17 * -8 + (uint)bVar17 * -8 + 8);
+  Line 395 [pointer_truncation]: puVar13 = (uint *)((int)&local_27c + (uint)bVar17 * -8 + (uint)bVar17 * -8 + 8);
+  Line 395 [pointer_cast]: puVar13 = (uint *)((int)&local_27c + (uint)bVar17 * -8 + (uint)bVar17 * -8 + 8);
+  Line 396 [pointer_truncation]: *(uint *)((int)&local_1ec + (uint)bVar17 * -8 + 4) =
+  Line 396 [pointer_cast]: *(uint *)((int)&local_1ec + (uint)bVar17 * -8 + 4) =
+  Line 397 [pointer_truncation]: *(uint *)((int)&local_27c + (uint)bVar17 * -8 + 4);
+  Line 397 [pointer_cast]: *(uint *)((int)&local_27c + (uint)bVar17 * -8 + 4);
+  Line 403 [pointer_truncation]: puVar16 = (uint *)((int)&local_17c + (uint)bVar17 * -8 + (uint)bVar17 * -8 + 8);
+  Line 403 [pointer_cast]: puVar16 = (uint *)((int)&local_17c + (uint)bVar17 * -8 + (uint)bVar17 * -8 + 8);
+  Line 404 [pointer_truncation]: puVar13 = (uint *)((int)&local_26c + (uint)bVar17 * -8 + (uint)bVar17 * -8 + 8);
+  Line 404 [pointer_cast]: puVar13 = (uint *)((int)&local_26c + (uint)bVar17 * -8 + (uint)bVar17 * -8 + 8);
+  Line 405 [pointer_truncation]: *(uint *)((int)&local_17c + (uint)bVar17 * -8 + 4) =
+  Line 405 [pointer_cast]: *(uint *)((int)&local_17c + (uint)bVar17 * -8 + 4) =
+  Line 406 [pointer_truncation]: *(uint *)((int)&local_26c + (uint)bVar17 * -8 + 4);
+  Line 406 [pointer_cast]: *(uint *)((int)&local_26c + (uint)bVar17 * -8 + 4);
+  Line 416 [pointer_cast]: puVar15 = (uint *)((int)local_20 + (uint)bVar17 * -8 + 0x6b4);
+  Line 416 [pointer_truncation]: puVar15 = (uint *)((int)local_20 + (uint)bVar17 * -8 + 0x6b4);
+  Line 417 [pointer_cast]: puVar13 = (uint *)((int)pCVar12 + ((uint)bVar17 * -2 + 1) * 4);
+  Line 417 [pointer_truncation]: puVar13 = (uint *)((int)pCVar12 + ((uint)bVar17 * -2 + 1) * 4);
+  Line 427 [shadow_pointer_walk]: local_50 = (CSkeleton *)((local_50->motion_list).state_names[1] + 2);
+  Line 428 [shadow_pointer_walk]: local_20 = (CDeformableModelInstance *)&(local_20->base).tween_speed;
+  Line 443 [pointer_cast]: puVar16 = (uint *)((int)local_60 + (uint)bVar17 * -8 + 0x6b4);
+  Line 443 [pointer_truncation]: puVar16 = (uint *)((int)local_60 + (uint)bVar17 * -8 + 0x6b4);
+  Line 446 [pointer_truncation]: puVar13 = (uint *)((int)&local_21c + (uint)bVar17 * -8 + (uint)bVar17 * -8 + 8);
+  Line 446 [pointer_cast]: puVar13 = (uint *)((int)&local_21c + (uint)bVar17 * -8 + (uint)bVar17 * -8 + 8);
+  Line 447 [pointer_truncation]: *puVar16 = *(uint *)((int)&local_21c + (uint)bVar17 * -8 + 4);
+  Line 447 [pointer_cast]: *puVar16 = *(uint *)((int)&local_21c + (uint)bVar17 * -8 + 4);
+  Line 451 [shadow_pointer_walk]: local_60 = (CDeformableModelInstance *)&(local_60->base).tween_speed;
 
 ====================================================================================================
 core_skeleton.cpp_CDeformableModel_allocLOD_FUN_00517ec0 (1 suspect)
@@ -20862,12 +20862,12 @@ core_skeleton.cpp_computeBoneModelMatrices_FUN_0051f1d0 (47 suspects)
   Line 58 [pointer_cast]: *(float *)((int)&bone_data->bone_model_matrices[0].m[2].y + local_24) =
   Line 60 [pointer_truncation]: *(float *)((int)&bone_data->bone_model_matrices[0].m[2].y + local_24);
   Line 60 [pointer_cast]: *(float *)((int)&bone_data->bone_model_matrices[0].m[2].y + local_24);
-  Line 65 [pointer_truncation]: *(float *)((int)&instance_ptr->transformed_vertices[0].x + iVar3) +
-  Line 65 [pointer_cast]: *(float *)((int)&instance_ptr->transformed_vertices[0].x + iVar3) +
-  Line 68 [pointer_truncation]: *(float *)((int)&instance_ptr->transformed_vertices[0].y + iVar3) +
-  Line 68 [pointer_cast]: *(float *)((int)&instance_ptr->transformed_vertices[0].y + iVar3) +
-  Line 71 [pointer_truncation]: *(float *)((int)&instance_ptr->transformed_vertices[0].z + iVar3) +
-  Line 71 [pointer_cast]: *(float *)((int)&instance_ptr->transformed_vertices[0].z + iVar3) +
+  Line 65 [pointer_truncation]: *(float *)((int)&instance_ptr->bone_origins[0].x + iVar3) +
+  Line 65 [pointer_cast]: *(float *)((int)&instance_ptr->bone_origins[0].x + iVar3) +
+  Line 68 [pointer_truncation]: *(float *)((int)&instance_ptr->bone_origins[0].y + iVar3) +
+  Line 68 [pointer_cast]: *(float *)((int)&instance_ptr->bone_origins[0].y + iVar3) +
+  Line 71 [pointer_truncation]: *(float *)((int)&instance_ptr->bone_origins[0].z + iVar3) +
+  Line 71 [pointer_cast]: *(float *)((int)&instance_ptr->bone_origins[0].z + iVar3) +
   Line 76 [pointer_truncation]: (&local_3c,(CVector3f *)((int)&local_30->x + iVar3),local_28 + iVar1);
   Line 76 [pointer_cast]: (&local_3c,(CVector3f *)((int)&local_30->x + iVar3),local_28 + iVar1);
   Line 81 [shadow_pointer_walk]: pSVar2 = (SPose *)&(pSVar2->pose_data).root_position.y;
@@ -21858,8 +21858,8 @@ core_stranger.cpp_CStranger_processWeaponTick_FUN_00540660 (3 suspects)
   File: core/stranger.cpp
 ====================================================================================================
   Line 9 [unaffected_reg]: CDemonActor *unaff_EBX;
-  Line 20 [unrolled_memset]: (this_ptr_01->model).transformed_vertices[0x51].z = 0.0;
-  Line 25 [unaffected_reg]: (*(((this_ptr_01->base).vtable._uc)->_uc).isGrabbable)(this_ptr_01,unaff_EBX);
+  Line 20 [unrolled_memset]: (this_ptr_01->model).bone_origins[0x51].z = 0.0;
+  Line 23 [unaffected_reg]: (*(((this_ptr_01->base).vtable._uc)->_uc).isGrabbable)(this_ptr_01,unaff_EBX);
 
 ====================================================================================================
 core_stranger.cpp_CStranger_renderOpaque_FUN_0053d100 (13 suspects)
@@ -22064,7 +22064,7 @@ core_succubus.cpp_CSuccubus_dtor_FUN_00541860 (4 suspects)
   File: core/succubus.cpp
 ====================================================================================================
   Line 21 [negative_offset]: ((CClothList *)(pCVar1[-1].models[1].textures + 0xe),0);
-  Line 25 [negative_offset]: ((CFlame *)&pCVar3[-4].transformed_vertices[0x17].y,0);
+  Line 25 [negative_offset]: ((CFlame *)&pCVar3[-4].bone_origins[0x17].y,0);
   Line 27 [negative_offset]: ((SFire *)(pCVar4[-2].base.create_event + 0x10),0);
   Line 36 [negative_offset]: ((CDemonActor *)(pCVar3[-1].part_data.visibility_flags + 9),1);
 
@@ -22691,7 +22691,7 @@ core_vampboss.cpp_CVampireBoss_dtor_FUN_0054e370 (4 suspects)
   File: core/vampboss.cpp
 ====================================================================================================
   Line 27 [negative_offset]: (pCVar2[-1].collide_bones[0x13].world_matrix.m + 2),0);
-  Line 29 [negative_offset]: ((CFlame *)&pCVar3[-4].transformed_vertices[0x17].y,0);
+  Line 29 [negative_offset]: ((CFlame *)&pCVar3[-4].bone_origins[0x17].y,0);
   Line 31 [negative_offset]: ((SFire *)(pCVar4[-2].base.create_event + 0x10),0);
   Line 40 [negative_offset]: ((CDemonActor *)(pCVar3[-1].part_data.visibility_flags + 9),1);
 

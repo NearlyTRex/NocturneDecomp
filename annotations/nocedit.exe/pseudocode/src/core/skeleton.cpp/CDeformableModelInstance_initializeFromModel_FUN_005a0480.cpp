@@ -30,16 +30,16 @@ void __cdecl core_skeleton_cpp_CDeformableModelInstance_initializeFromModel_FUN_
   local_24 = (pCVar1->model_scale).x * this_ptr->scale_factor;
   local_20 = (pCVar1->model_scale).y * this_ptr->scale_factor;
   local_1c = (pCVar1->model_scale).z * this_ptr->scale_factor;
-  if (&this_ptr->scaled_model_dimensions != (CVector3f *)&local_24) {
-    (this_ptr->scaled_model_dimensions).x = local_24;
-    (this_ptr->scaled_model_dimensions).y = local_20;
-    (this_ptr->scaled_model_dimensions).z = local_1c;
+  if (&this_ptr->root_offset_scale != (CVector3f *)&local_24) {
+    (this_ptr->root_offset_scale).x = local_24;
+    (this_ptr->root_offset_scale).y = local_20;
+    (this_ptr->root_offset_scale).z = local_1c;
   }
   index = 0;
   if (0 < local_14) {
     pfVar4 = &this_ptr->scale_factor;
     local_18 = this_ptr;
-    pCVar3 = this_ptr->transformed_vertices;
+    pCVar3 = this_ptr->bone_origins;
     do {
       pCVar2 = core_skeleton_cpp_CDeformableModel_getVertexPoolPtr_FUN_0059a860
                          (this_ptr->model_ptr,index);
@@ -48,7 +48,7 @@ void __cdecl core_skeleton_cpp_CDeformableModelInstance_initializeFromModel_FUN_
         pCVar3->y = pCVar2->y;
         pCVar3->z = pCVar2->z;
       }
-      local_18->rest_pose_data[0] = this_ptr->scale_factor;
+      local_18->rest_bone_scales[0] = this_ptr->scale_factor;
       if (motion_list->bone_list[0].parent_index < 0) {
         pCVar3->x = *pfVar4 * pCVar3->x;
         pCVar3->y = *pfVar4 * pCVar3->y;

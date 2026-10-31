@@ -14,7 +14,7 @@ CDeformableModelInstance * __cdecl core_skeleton_cpp_CDeformableModelInstance_ct
   
   pCVar1 = (CDeformableModelInstance *)
            core_motion_cpp_CMotionController_ctor_FUN_0052d570(&this_ptr->base);
-  pvVar2 = __arrinit(pCVar1->transformed_vertices,100,&g_CVectorTypeInfo);
+  pvVar2 = __arrinit(pCVar1->bone_origins,100,&g_CVectorTypeInfo);
   ADJ(pvVar2)->base.vtable = &g_CDeformableModelInstanceVTable;
   ADJ(pvVar2)->model_name[0] = '\0';
   ADJ(pvVar2)->model_ptr = (CDeformableModel *)0x0;

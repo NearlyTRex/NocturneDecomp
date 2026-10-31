@@ -238,13 +238,13 @@ NOCTURNE_TEST(big_head_scales_the_set_and_swaps_the_hat) {
     skeleton->bone_count = 5;
     skeleton->bone_list[3].parent_index = 2;
     skeleton->bone_list[4].parent_index = 2;
-    c->model.rest_pose_data[2] = 1.0f;
-    c->model.rest_pose_data[3] = 2.0f;
+    c->model.rest_bone_scales[2] = 1.0f;
+    c->model.rest_bone_scales[3] = 2.0f;
 
     step(NOCTURNE_CHEAT_BIG_HEAD);
     CHECK_EQ(game->big_hat_cheat, 1);
-    CHECK_EQ(c->model.rest_pose_data[2], 4.0f);
-    CHECK_EQ(c->model.rest_pose_data[3], 8.0f);
+    CHECK_EQ(c->model.rest_bone_scales[2], 4.0f);
+    CHECK_EQ(c->model.rest_bone_scales[3], 8.0f);
     CHECK_EQ(stand.scaled.size(), (size_t)2);
     CHECK_EQ(stand.scaled[0].first, 3);
     CHECK_EQ(stand.scaled[0].second, 4.0f);
@@ -253,7 +253,7 @@ NOCTURNE_TEST(big_head_scales_the_set_and_swaps_the_hat) {
 
     step(NOCTURNE_CHEAT_BIG_HEAD);
     CHECK_EQ(game->big_hat_cheat, 0);
-    CHECK_EQ(c->model.rest_pose_data[2], 1.0f);
+    CHECK_EQ(c->model.rest_bone_scales[2], 1.0f);
     CHECK_EQ(std::string(stranger->model.model_name), std::string("stranger-hat.kfm"));
 
     // A set already scaled, as the flag says, is not scaled again.

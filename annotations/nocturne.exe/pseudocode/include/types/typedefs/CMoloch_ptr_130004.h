@@ -21,7 +21,7 @@ struct CMoloch_ptr_130004 {
     template<typename T> CMoloch_ptr_130004(T* p) : _raw((void*)p) {}
     template<typename T> CMoloch_ptr_130004& operator=(T* p) { _raw = (void*)p; return *this; }
     CMoloch* operator->() const { return (CMoloch*)_raw; }
-    CMoloch* adj() const { return (CMoloch*)((char*)_raw - offsetof(CMoloch, model.transformed_vertices[26].z)); }
+    CMoloch* adj() const { return (CMoloch*)((char*)_raw - offsetof(CMoloch, model.bone_origins[26].z)); }
     template<typename T> operator T*() const { return (T*)_raw; }
     explicit operator bool() const { return _raw != 0; }
 };

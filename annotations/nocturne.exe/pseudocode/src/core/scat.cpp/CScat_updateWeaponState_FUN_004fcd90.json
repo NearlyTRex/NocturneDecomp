@@ -16,13 +16,13 @@
       {
         "category": "cast_error",
         "column": 80,
-        "line": 84,
+        "line": 83,
         "message": "C-style cast from 'CMotionController *' to 'float' is not allowed"
       },
       {
         "category": "cast_error",
         "column": 62,
-        "line": 98,
+        "line": 97,
         "message": "C-style cast from 'CMotionController *' to 'float' is not allowed"
       }
     ],
@@ -32,19 +32,19 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 243,
-    "complexity_score": 241,
+    "complexity_score": 240,
     "cross_reference_count": 1,
     "function_call_count": 5,
     "global_count": 1,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 106,
+    "pseudocode_lines": 105,
     "suspect_count": 12,
     "suspect_types": [
       "pointer_truncation",
       "suspect_float",
       "unaffected_reg"
     ],
-    "total_lines": 349
+    "total_lines": 348
   },
   "cross_references": [
     {
@@ -244,7 +244,7 @@
       "line": 28,
       "match": "1.12104e-44",
       "severity": "mild",
-      "text": "((pCVar5->model).transformed_vertices[0x19].y == 1.12104e-44)) {",
+      "text": "((pCVar5->model).bone_origins[0x19].y == 1.12104e-44)) {",
       "type": "suspect_float"
     },
     {
@@ -260,7 +260,7 @@
       "line": 55,
       "match": "1.12104e-44",
       "severity": "mild",
-      "text": "((this_ptr_00->model).transformed_vertices[0x19].y != 1.12104e-44)) {",
+      "text": "((this_ptr_00->model).bone_origins[0x19].y != 1.12104e-44)) {",
       "type": "suspect_float"
     },
     {
@@ -268,7 +268,7 @@
       "line": 61,
       "match": "1.12104e-44",
       "severity": "mild",
-      "text": "if ((pCVar5->model).transformed_vertices[0x19].y != 1.12104e-44) goto LAB_004fcf93;",
+      "text": "if ((pCVar5->model).bone_origins[0x19].y != 1.12104e-44) goto LAB_004fcf93;",
       "type": "suspect_float"
     },
     {
@@ -276,20 +276,20 @@
       "line": 74,
       "match": "1.12104e-44",
       "severity": "mild",
-      "text": "((CVector3f *)(uint)((pCVar2->model).transformed_vertices[0x19].y != 1.12104e-44) ==",
+      "text": "((CVector3f *)(uint)((pCVar2->model).bone_origins[0x19].y != 1.12104e-44) == pCVar6)) {",
       "type": "suspect_float"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 82,
+      "line": 81,
       "match": "1.12104e-44",
       "severity": "mild",
-      "text": "((this_ptr_00->model).transformed_vertices[0x19].y == 1.12104e-44)) {",
+      "text": "((this_ptr_00->model).bone_origins[0x19].y == 1.12104e-44)) {",
       "type": "suspect_float"
     },
     {
       "description": "Unaffected register variable",
-      "line": 94,
+      "line": 93,
       "match": "unaff_EDI",
       "severity": "moderate",
       "text": "this_ptr_01 = unaff_EDI;",
@@ -297,7 +297,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 95,
+      "line": 94,
       "match": "unaff_EDI",
       "severity": "moderate",
       "text": "core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0(unaff_EDI,6,1);",
@@ -321,7 +321,7 @@
     },
     {
       "description": "Pointer value `pCVar5` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 100,
+      "line": 99,
       "match": "(int)pCVar5",
       "severity": "moderate",
       "text": "((CCharacter *)this_ptr,(int)pCVar5);",

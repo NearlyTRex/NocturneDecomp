@@ -50,8 +50,8 @@ void __cdecl core_mimic_cpp_CMimic_updatePose_FUN_0051f930(CMimic *this_ptr)
          (pCVar5->base).model.bone_transform.pose_data.bone_rotations[iVar7];
     (this_ptr->base).base.model.bone_transform.bone_model_matrices[iVar7] =
          (pCVar5->base).model.bone_transform.bone_model_matrices[iVar7];
-    (this_ptr->base).base.model.transformed_vertices[iVar7] =
-         (pCVar5->base).model.transformed_vertices[iVar7];
+    (this_ptr->base).base.model.bone_origins[iVar7] =
+         (pCVar5->base).model.bone_origins[iVar7];
   }
   pCVar2 = mirror_hero;
   pSVar8 = &(this_ptr->base).base.model.bone_transform;

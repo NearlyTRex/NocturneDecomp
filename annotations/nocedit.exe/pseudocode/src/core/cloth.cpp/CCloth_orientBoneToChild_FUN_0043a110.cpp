@@ -35,7 +35,7 @@ void __cdecl core_cloth_cpp_CCloth_orientBoneToChild_FUN_0043a110(CCloth *this_p
   bone_name->parent_bone_index = iVar1;
   iVar2 = 0;
   if (0 < this_ptr_00->bone_count) {
-    pCVar2 = model_ptr->transformed_vertices;
+    pCVar2 = model_ptr->bone_origins;
     pCVar5 = this_ptr_00;
     do {
       if ((bone_name->parent_bone_index == pCVar5->bone_list[0].parent_index) &&
@@ -55,7 +55,7 @@ void __cdecl core_cloth_cpp_CCloth_orientBoneToChild_FUN_0043a110(CCloth *this_p
     core_main_c_displayErrorAndQuit_FUN_00506f10("Can't orient bone with no children!");
   }
   core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830
-            (&local_34,model_ptr->transformed_vertices + local_18);
+            (&local_34,model_ptr->bone_origins + local_18);
   local_28.x = 0.0;
   local_28.y = 0.0;
   local_28.z = 0.0;

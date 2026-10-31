@@ -20,7 +20,7 @@ CMoloch * __cdecl core_moloch_cpp_CMoloch_ctor_FUN_004dd930(CMoloch *this_ptr)
   pCVar2 = core_hero_cpp_CHero_ctor_FUN_004b46d0(&this_ptr->base);
   pCVar3 = core_skeleton_cpp_CDeformableModelInstance_ctor_FUN_0051b660
                      ((CDeformableModelInstance *)(pCVar2 + 1));
-  pCVar4 = core_morph_cpp_CMorph_ctor_FUN_004e0050((CMorph *)&pCVar3[1].transformed_vertices[10].y);
+  pCVar4 = core_morph_cpp_CMorph_ctor_FUN_004e0050((CMorph *)&pCVar3[1].bone_origins[10].y);
   *(CHero_full_vtable **)(pCVar4[-0x2d].models[1].textures[2].texture_name + 0x3c) =
        &g_CMolochVTable;
   core_skeleton_cpp_CDeformableModelInstance_init_FUN_0051e0c0

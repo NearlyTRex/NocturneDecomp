@@ -87,7 +87,7 @@ void __cdecl core_charactr_cpp_CCharacter_buildLayerActionTransitionCosts_FUN_00
         local_18 = (CCharacter *)((local_18->base).actor_name + 4);
       } while (iVar6 < 0x14);
       local_20 = (CCharacter *)&(local_20->base).orient_matrix.m[1].z;
-    } while (local_20 != (CCharacter *)((this_ptr->model).transformed_vertices + 0x62));
+    } while (local_20 != (CCharacter *)((this_ptr->model).bone_origins + 0x62));
   }
   return;
 }

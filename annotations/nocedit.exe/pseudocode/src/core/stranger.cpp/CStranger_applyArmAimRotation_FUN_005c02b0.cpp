@@ -112,9 +112,9 @@ void __cdecl core_stranger_cpp_CStranger_applyArmAimRotation_FUN_005c02b0(CStran
     quat1_in = (this_ptr->base).base.model.bone_transform.pose_data.bone_rotations + local_24;
     core_xform_cpp_slerpQuaternion_FUN_005f77e0(quat1_in,&local_14c,fVar3,&local_6c);
     (this_ptr->base).base.model.bone_transform.pose_data.bone_rotations[local_24].w = local_6c.w;
-    (this_ptr->base).base.model.rest_pose_data[local_24 * 4 + 0x68] = local_6c.x;
-    (this_ptr->base).base.model.rest_pose_data[local_24 * 4 + 0x69] = local_6c.y;
-    (this_ptr->base).base.model.rest_pose_data[local_24 * 4 + 0x6a] = local_6c.z;
+    (this_ptr->base).base.model.rest_bone_scales[local_24 * 4 + 0x68] = local_6c.x;
+    (this_ptr->base).base.model.rest_bone_scales[local_24 * 4 + 0x69] = local_6c.y;
+    (this_ptr->base).base.model.rest_bone_scales[local_24 * 4 + 0x6a] = local_6c.z;
     pCVar4 = &local_18c;
     core_xform_cpp_multiplyQuaternion_FUN_005f7640(&local_1cc,&local_1bc,&local_8c);
     core_xform_cpp_multiplyQuaternion_FUN_005f7640(&local_12c,pCVar4,&local_7c);
@@ -127,9 +127,9 @@ void __cdecl core_stranger_cpp_CStranger_applyArmAimRotation_FUN_005c02b0(CStran
       core_xform_cpp_slerpQuaternion_FUN_005f77e0
                 (quat1_in,&local_10c,this_ptr->arm_recoil_blend,&local_cc);
       (this_ptr->base).base.model.bone_transform.pose_data.bone_rotations[local_24].w = local_cc.w;
-      (this_ptr->base).base.model.rest_pose_data[local_24 * 4 + 0x68] = local_cc.x;
-      (this_ptr->base).base.model.rest_pose_data[local_24 * 4 + 0x69] = local_cc.y;
-      (this_ptr->base).base.model.rest_pose_data[local_24 * 4 + 0x6a] = local_cc.z;
+      (this_ptr->base).base.model.rest_bone_scales[local_24 * 4 + 0x68] = local_cc.x;
+      (this_ptr->base).base.model.rest_bone_scales[local_24 * 4 + 0x69] = local_cc.y;
+      (this_ptr->base).base.model.rest_bone_scales[local_24 * 4 + 0x6a] = local_cc.z;
       return;
     }
   }

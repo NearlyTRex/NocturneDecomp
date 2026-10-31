@@ -152,7 +152,7 @@ void __cdecl core_charactr_cpp_CCharacter_processFire_FUN_0042a830(CCharacter *t
       }
       pSVar10 = pSVar10 + 1;
       pCVar11 = (CLocation *)&pCVar11[0x2a].position.y;
-      local_24 = (CCharacter *)&(local_24->model).transformed_vertices[0x14].y;
+      local_24 = (CCharacter *)&(local_24->model).bone_origins[0x14].y;
       local_28 = local_28 + 1;
     } while (local_28 < this_ptr->fire_count);
   }

@@ -33,7 +33,7 @@ CVampireBoss * __cdecl core_vampboss_cpp_CVampireBoss_dtor_FUN_0054e370(CVampire
                      ((CDeformableModelInstance *)
                       (pCVar2[-1].collide_bones[0x13].world_matrix.m + 2),0);
   pCVar4 = core_armour_cpp_CFlame_arrdtor50_FUN_0040fe50
-                     ((CFlame *)&pCVar3[-4].transformed_vertices[0x17].y,0);
+                     ((CFlame *)&pCVar3[-4].bone_origins[0x17].y,0);
   pSVar5 = core_armour_cpp_SFire_arrdtor50_FUN_0040fe30
                      ((SFire *)(pCVar4[-2].base.create_event + 0x10),0);
   pCVar6 = core_armour_cpp_CVector3f_arrdtor15_FUN_0040fe10

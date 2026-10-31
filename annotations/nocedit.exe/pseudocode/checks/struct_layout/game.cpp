@@ -1748,12 +1748,12 @@ static_assert(__builtin_offsetof(CDeformableModelInstance, base) == 0,
               "offsetof(CDeformableModelInstance, base) != 0");
 static_assert(__builtin_offsetof(CDeformableModelInstance, scale_factor) == 84,
               "offsetof(CDeformableModelInstance, scale_factor) != 84");
-static_assert(__builtin_offsetof(CDeformableModelInstance, transformed_vertices) == 88,
-              "offsetof(CDeformableModelInstance, transformed_vertices) != 88");
-static_assert(__builtin_offsetof(CDeformableModelInstance, scaled_model_dimensions) == 1288,
-              "offsetof(CDeformableModelInstance, scaled_model_dimensions) != 1288");
-static_assert(__builtin_offsetof(CDeformableModelInstance, rest_pose_data) == 1300,
-              "offsetof(CDeformableModelInstance, rest_pose_data) != 1300");
+static_assert(__builtin_offsetof(CDeformableModelInstance, bone_origins) == 88,
+              "offsetof(CDeformableModelInstance, bone_origins) != 88");
+static_assert(__builtin_offsetof(CDeformableModelInstance, root_offset_scale) == 1288,
+              "offsetof(CDeformableModelInstance, root_offset_scale) != 1288");
+static_assert(__builtin_offsetof(CDeformableModelInstance, rest_bone_scales) == 1300,
+              "offsetof(CDeformableModelInstance, rest_bone_scales) != 1300");
 static_assert(__builtin_offsetof(CDeformableModelInstance, bone_transform) == 1700,
               "offsetof(CDeformableModelInstance, bone_transform) != 1700");
 static_assert(__builtin_offsetof(CDeformableModelInstance, part_data) == 8512,
