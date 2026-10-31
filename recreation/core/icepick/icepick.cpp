@@ -23,7 +23,7 @@ constinit const CDemonActorType CIcePick::kType =
 //   100, so health items and the health bar measure against Ice Pick's own (the decomp's HERO_ACTIONS
 //   in the constructor), with CCharacter's hit point setters
 // nocedit 0x004f7df0
-CIcePick::CIcePick() {
+CIcePick::CIcePick(CActor &classes) : CHero(classes) {
     getModel().init("icepick.dfm");
 }
 
@@ -41,8 +41,8 @@ void CIcePick::archive(CActorArchive &actor_archive) {
 }
 
 // nocedit 0x004f7db0
-std::unique_ptr<CDemonActor> CIcePick::create(CActor & /*classes*/) {
-    return std::make_unique<CIcePick>();
+std::unique_ptr<CDemonActor> CIcePick::create(CActor &classes) {
+    return std::make_unique<CIcePick>(classes);
 }
 
 } // namespace nocturne::core

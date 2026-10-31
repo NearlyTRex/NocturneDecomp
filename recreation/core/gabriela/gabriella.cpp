@@ -62,7 +62,7 @@ constinit const CDemonActorType CGabriella::kType =
 //   is_wearing_gas_mask through 0, 1 and 2, and drawn in her hand or on her head (THE GAS MASK),
 //   with CGabriella::process and renderOpaque
 // nocedit 0x004d2b20
-CGabriella::CGabriella() {
+CGabriella::CGabriella(CActor &classes) : CHero(classes) {
     getModel().init("gabriela.dfm");
 }
 
@@ -89,8 +89,8 @@ void CGabriella::archive(CActorArchive &actor_archive) {
 }
 
 // nocedit 0x004d2ae0
-std::unique_ptr<CDemonActor> CGabriella::create(CActor & /*classes*/) {
-    return std::make_unique<CGabriella>();
+std::unique_ptr<CDemonActor> CGabriella::create(CActor &classes) {
+    return std::make_unique<CGabriella>(classes);
 }
 
 } // namespace nocturne::core

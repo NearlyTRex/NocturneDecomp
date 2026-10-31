@@ -13,7 +13,7 @@ class CGabriella : public CHero {
 public:
     static const CDemonActorType kType;
 
-    CGabriella();
+    explicit CGabriella(CActor &classes);
     ~CGabriella() override;
     CGabriella(const CGabriella &) = delete;
     CGabriella &operator=(const CGabriella &) = delete;

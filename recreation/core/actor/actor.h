@@ -14,14 +14,14 @@ namespace nocturne::core {
 
 // actor.cpp's shared state: the actor classes missions can name, and the game's random draws.
 // Those come off its sim stream while a sim frame runs and off the CRT's stream outside one; only
-// the sim stream is seeded alike on every machine.
+// the sim stream is seeded alike on every machine. The actors it makes find their models in it.
 class CActor {
 public:
     // The most actor classes there can be.
     static constexpr std::size_t kMaxActorTypes = 200;
 
     // Registers the actor classes ported so far.
-    CActor(const CGame &game, common::CWatcomRandom &crt_random);
+    CActor(const CGame &game, common::CWatcomRandom &crt_random, IDeformableModels &models);
 
     // More than kMaxActorTypes is fatal.
     void registerActorClass(const CDemonActorType &type);
@@ -46,6 +46,8 @@ public:
     // 1 when a draw from 0 to 1 falls below the threshold.
     [[nodiscard]] int randomChance(float probability_threshold);
 
+    [[nodiscard]] IDeformableModels &getModels() const;
+
 private:
     void registerActorClasses();
     // 24 bits.
@@ -55,6 +57,7 @@ private:
 
     const CGame &game_;
     common::CWatcomRandom &crt_random_;
+    IDeformableModels &models_;
     std::uint32_t random_seed_value_ = 0;
     std::vector<const CDemonActorType *> registrations_;
     // Only the classes the file listed; the rest read as version 1.

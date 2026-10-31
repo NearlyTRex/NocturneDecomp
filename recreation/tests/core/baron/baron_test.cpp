@@ -25,7 +25,7 @@ TEST(CBaron, IsConcrete) {
 }
 
 TEST(CBaron, Constructors) {
-    static_assert(std::is_constructible_v<CBaron>);
+    static_assert(std::is_constructible_v<CBaron, CActor &>);
 }
 
 TEST(CBaron, PublicInterface) {
@@ -61,14 +61,16 @@ TEST(CBaron, ItsRecordIsAVersionTwoHeroThatMissionsCanCreate) {
 }
 
 TEST(CBaron, TheBaronHasNoEventsAndIsNotSummonedUntilToldOtherwise) {
-    const CBaron hero;
+    CTestClasses classes;
+    const CBaron hero(classes.get());
     EXPECT_EQ(hero.getSummonEvent(), "none");
     EXPECT_EQ(hero.getGoAwayEvent(), "none");
     EXPECT_FALSE(hero.isSummoned());
 }
 
 TEST(CBaron, TheBaronIsReadWithItsEventsAndWhetherItIsSummoned) {
-    CBaron hero;
+    CTestClasses classes;
+    CBaron hero(classes.get());
     CTestHeroArchive archive(hero, CBaron::kType, 2,
                              "\"callBaron\" // summonEvent\n\"dismissBaron\"\n1 // summoned\n");
     hero.archive(archive.get());
@@ -80,7 +82,8 @@ TEST(CBaron, TheBaronIsReadWithItsEventsAndWhetherItIsSummoned) {
 }
 
 TEST(CBaron, AVersionOneBaronHasOnlyAHerosFields) {
-    CBaron hero;
+    CTestClasses classes;
+    CBaron hero(classes.get());
     CTestHeroArchive archive(hero, CBaron::kType, 1, "");
     hero.archive(archive.get());
     EXPECT_EQ(hero.getLocation().area_id, CTestHeroArchive::kArea);
@@ -89,7 +92,8 @@ TEST(CBaron, AVersionOneBaronHasOnlyAHerosFields) {
 }
 
 TEST(CBaron, TheFunctionsNotPortedYetQuit) {
-    CBaron hero;
+    CTestClasses classes;
+    CBaron hero(classes.get());
     const NotPortedCalls calls = {
         {"setup", [&] { hero.setup(); }},
         {"process", [&] { hero.process(0.0F); }},

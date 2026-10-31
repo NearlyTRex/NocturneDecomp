@@ -24,7 +24,7 @@ functions don't count as done. Sizes are in instructions.
 | 8 | `renderMenuAndGetChoice`, `CMoon::free`, `CSound::reset`, `CEditorTools::showFileSelectionDialog` | 8 | 63 | 5314 | 60 | 3 | 95.2% |
 | 9 | `CPickList::enableItem`, `CEventList::resetGameFlags`, `CLevelLoader::show`, `CDemonMission::load` | 15 | 56 | 3298 | 30 | 11 | 53.5% |
 | 10 | `CDemonMission::createHeros`, `CDemonMission::prepareAllActors`, `CEventList::reset`, `CDemonMission::loadSet` | 15 | 42 | 5112 | 31 | 10 | 73.8% |
-| 11 | `CScript::loadScript` | 63 | 579 | 67400 | 51 | 30 | 8.8% |
+| 11 | `CScript::loadScript` | 63 | 579 | 67400 | 56 | 30 | 9.6% |
 | 12 | `CDemonMission::loadScript`, `CScript::executeInitSection`, `CDemonMission::startMission`, `CDemonMission::buildActiveSetActorList`, `CConsole::reset`, `CEditorTools::displayMemoryDiagnostics`, `CGame::setGameRes`, `CDemonLight::init`, `CDemonSet::initScene` | 12 | 26 | 1658 | 3 | 2 | 11.5% |
 | 13 | `CFireEffect::init`, `CDemonSet::loadMasterLightStates`, `CDemonSet::setGamma`, `CGame::clearOverlay`, `CGame::loadAssets` | 7 | 27 | 735 | 0 | 0 | 0.0% |
 | 14 | `CNetGame::syncPlayers`, `CNetGame::processServerFrame`, `CLevelLoader::cleanup`, `CKeys::toggleInputMask`, `CGame::processHotkeys` | 17 | 51 | 5302 | 4 | 0 | 7.8% |
@@ -41,12 +41,12 @@ functions don't count as done. Sizes are in instructions.
 | 25 | Not reached from startup: `core/` (part 3 of 9) | 24 | 278 | 24134 | 32 | 9 | 11.5% |
 | 26 | Not reached from startup: `core/` (part 4 of 9) | 18 | 300 | 20148 | 47 | 7 | 15.6% |
 | 27 | Not reached from startup: `core/` (part 5 of 9) | 21 | 294 | 20910 | 56 | 9 | 19.0% |
-| 28 | Not reached from startup: `core/` (part 6 of 9) | 18 | 282 | 21809 | 44 | 10 | 15.6% |
-| 29 | Not reached from startup: `core/` (part 7 of 9) | 18 | 263 | 22721 | 41 | 11 | 15.5% |
+| 28 | Not reached from startup: `core/` (part 6 of 9) | 18 | 282 | 21809 | 45 | 11 | 15.9% |
+| 29 | Not reached from startup: `core/` (part 7 of 9) | 18 | 263 | 22721 | 54 | 11 | 20.5% |
 | 30 | Not reached from startup: `core/` (part 8 of 9) | 20 | 300 | 31826 | 40 | 5 | 13.3% |
-| 31 | Not reached from startup: `core/` (part 9 of 9) | 5 | 111 | 10905 | 18 | 4 | 16.2% |
+| 31 | Not reached from startup: `core/` (part 9 of 9) | 5 | 111 | 10905 | 19 | 4 | 17.1% |
 | 32 | Not reached from startup: `wincore/` | 2 | 11 | 482 | 4 | 0 | 36.3% |
-| | **All** | | **4479** | **402407** | **961** | **181** | **21.4%** |
+| | **All** | | **4479** | **402407** | **981** | **182** | **21.9%** |
 
 ## Step 0: Math value types
 
@@ -1375,12 +1375,12 @@ functions don't count as done. Sizes are in instructions.
 - class `CLever`
   - [ ] `setState` 0x00504b20 (113)
 
-### `core/motion.cpp` (8 functions, 368 instructions, 0 done, 0 partial)
+### `core/motion.cpp` (8 functions, 368 instructions, 1 done, 0 partial)
 - class `CMotionList`
   - [ ] `findMotionIndex` 0x0052d460 (50)
   - [ ] `findStateIndex` 0x0052d4f0 (50)
 - class `CMotionController`
-  - [ ] `getMotionList` 0x0052dce0 (3)
+  - [x] `getMotionList` 0x0052dce0 (3)
   - [ ] `getCurrentMotion` 0x0052dab0 (6)
   - [ ] `startTransition` 0x0052dbc0 (73)
   - [ ] `findAndStartTransition` 0x0052d950 (101)
@@ -1512,20 +1512,20 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `startMovement` 0x0054d690 (38)
   - [ ] `attachActor` 0x0054e1e0 (112)
 
-### `core/skeleton.cpp` (13 functions, 1277 instructions, 1 done, 0 partial)
+### `core/skeleton.cpp` (13 functions, 1277 instructions, 5 done, 0 partial)
 - class `CDeformableModel`
   - [ ] `findMaxWeightBone` 0x0059dca0 (69)
   - [ ] `exactRayTrace` 0x0059cba0 (199)
-  - [ ] `skinVertices` 0x0059a880 (122)
+  - [x] `skinVertices` 0x0059a880 (122)
   - [ ] `getBonePart` 0x0059c2d0 (8)
   - [x] `getSkeletonPtr` 0x0059a810 (18)
   - [ ] `dismember` 0x0059c5e0 (426)
   - [ ] `findPartByName` 0x0059c240 (52)
 - class `CDeformableModelInstance`
-  - [ ] `getModelPtr` 0x005a07a0 (36)
-  - [ ] `skinVerticesForLOD` 0x005a01d0 (20)
+  - [x] `getModelPtr` 0x005a07a0 (36)
+  - [x] `skinVerticesForLOD` 0x005a01d0 (20)
   - [ ] `rayIntersect` 0x005a10e0 (47)
-  - [ ] `getSkeletonPtr` 0x005a0820 (8)
+  - [x] `getSkeletonPtr` 0x005a0820 (8)
   - [ ] `findClosestBone` 0x005a1160 (214)
   - [ ] `dismemberPart` 0x005a1040 (58)
 
@@ -5654,15 +5654,14 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `countTrianglesFromPolygons` 0x0052a490 (19)
   - [ ] `addInts` 0x0052cc40 (3)
 
-### `core/motion.cpp` (23 functions, 1941 instructions, 7 done, 1 partial)
+### `core/motion.cpp` (23 functions, 1941 instructions, 8 done, 2 partial)
 - class `CMotionController`
   - [x] `load` 0x0052e5d0 (50)
   - [ ] `save` 0x0052e670 (50)
   - [x] `reset` 0x0052dad0 (9)
   - [~] `ctor` 0x0052d570 (11)
-    - deferred: starting with no motion list, with setMotionList, getMotionList and getCurrentStateName
     - deferred: starting the tween at speed 0 towards motion 0, frame 0, direction 1 and no new state (MOTION_TWEEN_INIT), with advanceTween and reverseTransition
-  - [ ] `getFramesForInterpolation` 0x0052e4c0 (97)
+  - [x] `getFramesForInterpolation` 0x0052e4c0 (97)
   - [ ] `advanceFrameAndCheckSignals` 0x0052de70 (154)
   - [ ] `advanceFrameToExitPoint` 0x0052e020 (153)
   - [ ] `advanceTween` 0x0052e1d0 (79)
@@ -5674,7 +5673,8 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `render` 0x0052e700 (155)
   - [ ] `setDesiredStateByName` 0x0052db90 (20)
   - [ ] `getStateBlendWeight` 0x0052dd20 (45)
-  - [ ] `setMotionList` 0x0052dcb0 (19)
+  - [~] `setMotionList` 0x0052dcb0 (19)
+    - deferred: looking up the motion a file named, with CMotionList::findMotionIndex
   - [ ] `frameToMarkerPosition` 0x0052e2b0 (83)
   - [ ] `jumpToMotionByName` 0x0052ddb0 (17)
   - [ ] `markerPositionToFrame` 0x0052e3a0 (98)
@@ -5989,27 +5989,27 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `factoryFuncSimBox` 0x00588d00 (12)
   - [x] `staticInit` 0x00588cd0 (9)
 
-### `core/skeleton.cpp` (88 functions, 8882 instructions, 20 done, 5 partial)
+### `core/skeleton.cpp` (88 functions, 8882 instructions, 33 done, 5 partial)
 - class `CDeformableModelInstance`
   - [x] `showAllParts` 0x005a0410 (8)
   - [x] `clearAllTextureSetIndices` 0x005a0430 (8)
-  - [~] `init` 0x005a0840 (30)
-    - deferred: forgetting the loaded model and the level of detail last skinned, with getModelPtr and skinVerticesForLOD
+  - [x] `init` 0x005a0840 (30)
   - [~] `ctor` 0x0059ddc0 (25)
-    - deferred: the transformed vertices, and the defaults the constructor gives the model, skinning, root motion and scale fields, with the steps that read them
+    - deferred: the root motion gathered, and which bones a partial pose builds on, with getRootMotionDelta and updateMotion's partial poses
   - [ ] `blendMotion` 0x0059eb50 (479)
   - [ ] `computeBoundingBoxFromBones` 0x005a16c0 (76)
-  - [ ] `computeBoneTransforms` 0x0059fb40 (124)
-  - [ ] `updateMotion` 0x0059e0a0 (855)
-  - [ ] `updateAnimation` 0x0059e020 (27)
+  - [x] `computeBoneTransforms` 0x0059fb40 (124)
+  - [~] `updateMotion` 0x0059e0a0 (855)
+    - deferred: posing only the bone and those below it, each of the three ways the bone update mode picks, with the aiming and layered motions that ask for it
+  - [~] `updateAnimation` 0x0059e020 (27)
+    - deferred: blending towards the tween's target while one runs, with blendMotion and setDesiredState's start of a tween
   - [ ] `shatter` 0x005a14b0 (36)
-  - [ ] `free` 0x0059df40 (19)
+  - [x] `free` 0x0059df40 (19)
   - [ ] `computeBoneTransformsForFrame` 0x005a0ad0 (150)
   - [ ] `findPatchToFrame` 0x005a08a0 (124)
   - [ ] `getRootMotionDelta` 0x005a0d10 (166)
   - [ ] `accumulateScaledRootMotion` 0x005a0c90 (32)
-  - [~] `dtor` 0x0059de40 (41)
-    - deferred: freeing what the model loaded, with free
+  - [x] `dtor` 0x0059de40 (41)
   - [ ] `skinAndRotateVertices` 0x005a0250 (24)
   - [ ] `skinAndLightVertices` 0x005a02a0 (24)
   - [ ] `skinAndInitWRecip` 0x005a02f0 (24)
@@ -6019,15 +6019,15 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `getBoneTransform` 0x005a1510 (102)
   - [ ] `setBoneTransform` 0x005a15e0 (78)
   - [ ] `computeCylindricalUVs` 0x005a1800 (102)
-  - [ ] `resetToRestPose` 0x0059df80 (38)
-  - [ ] `updateAnimationAndTransforms` 0x0059e000 (9)
-  - [ ] `allocPointList` 0x0059deb0 (39)
-  - [ ] `updateMotionAtFrame` 0x0059e070 (15)
-  - [ ] `computeBoundingBoxFromVertices` 0x005a05e0 (149)
-  - [ ] `initializeFromModel` 0x005a0480 (110)
+  - [x] `resetToRestPose` 0x0059df80 (38)
+  - [x] `updateAnimationAndTransforms` 0x0059e000 (9)
+  - [x] `allocPointList` 0x0059deb0 (39)
+  - [x] `updateMotionAtFrame` 0x0059e070 (15)
+  - [x] `computeBoundingBoxFromVertices` 0x005a05e0 (149)
+  - [x] `initializeFromModel` 0x005a0480 (110)
   - [ ] `getBoneModelMatrix` 0x0059f820 (184)
   - [ ] `getBoneModelPosition` 0x0059fa20 (112)
-  - [ ] `preCache` 0x005a0450 (11)
+  - [x] `preCache` 0x005a0450 (11)
   - [ ] `blendBoneRotations` 0x0059f750 (83)
   - [ ] `getBoneCachedModelPosition` 0x0059fb00 (15)
   - [ ] `applyRotationToHierarchy` 0x0059ff20 (191)
@@ -6052,8 +6052,8 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `getRootMotionDeltaForMotion` 0x005a0f50 (51)
   - [ ] `blendBoneTransformData` 0x005a1b70 (131)
 - class `CSkeleton`
-  - [ ] `getBoneAngleAtFrame` 0x0059a050 (8)
-  - [ ] `getBoneAngleInterpolated` 0x0059a070 (78)
+  - [x] `getBoneAngleAtFrame` 0x0059a050 (8)
+  - [x] `getBoneAngleInterpolated` 0x0059a070 (78)
   - [ ] `getHierarchyDistance` 0x0059a100 (23)
   - [x] `allocMemory` 0x00599910 (86)
   - [x] `loadStream` 0x00599bb0 (319)
@@ -6639,7 +6639,7 @@ functions don't count as done. Sizes are in instructions.
   - [x] `factoryFuncWerewolf` 0x005efbd0 (12)
   - [x] `staticInit` 0x005efb70 (23)
 
-### `core/xform.cpp` (42 functions, 2952 instructions, 1 done, 0 partial)
+### `core/xform.cpp` (42 functions, 2952 instructions, 2 done, 0 partial)
 - free functions
   - [ ] `getTranslation` 0x005f6110 (15)
   - [ ] `matrixToQuaternion` 0x005f7420 (205)
@@ -6650,7 +6650,7 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `quaternionFromAngleY` 0x005f79f0 (33)
   - [ ] `buildRotationX` 0x005f6c40 (39)
   - [ ] `buildRotationY` 0x005f6cc0 (37)
-  - [ ] `setIdentityQuaternion` 0x005f7620 (6)
+  - [x] `setIdentityQuaternion` 0x005f7620 (6)
   - [ ] `setRotationScaleIdentity` 0x005f5190 (11)
   - [ ] `eulerToQuaternion` 0x005f7b20 (43)
   - [ ] `quaternionToEulerAngles` 0x005f7ac0 (18)

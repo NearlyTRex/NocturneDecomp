@@ -13,7 +13,7 @@ class CBaron : public CHero {
 public:
     static const CDemonActorType kType;
 
-    CBaron();
+    explicit CBaron(CActor &classes);
     ~CBaron() override;
     CBaron(const CBaron &) = delete;
     CBaron &operator=(const CBaron &) = delete;

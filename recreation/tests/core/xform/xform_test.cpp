@@ -66,7 +66,7 @@ TEST(CoreXformFunctions, PublicInterface) {
                                  common::CQuaternion4f *(*)(common::CQuaternion4f *,
                                                             common::CQuaternion4f *)>);
     static_assert(
-        std::is_same_v<decltype(&setIdentityQuaternion), void (*)(common::CQuaternion4f *)>);
+        std::is_same_v<decltype(&setIdentityQuaternion), void (*)(common::CQuaternion4f &)>);
     static_assert(
         std::is_same_v<decltype(&multiplyQuaternion),
                        common::CQuaternion4f *(*)(common::CQuaternion4f *, common::CQuaternion4f *,
@@ -188,6 +188,12 @@ TEST(CoreXformFunctions, EulerAnglesMatchTheOriginal) {
 TEST(CoreXformFunctions, AZeroRotationReadsAsNoAngle) {
     const common::CVector3f angles = matrixToEulerAngles({});
     EXPECT_EQ(angles.x, 0.0F);
+}
+
+TEST(CoreXformFunctions, TheIdentityQuaternionIsNoTurn) {
+    common::CQuaternion4f quaternion{.w = 0.5F, .x = 1.0F, .y = 2.0F, .z = 3.0F};
+    setIdentityQuaternion(quaternion);
+    EXPECT_EQ(quaternion, (common::CQuaternion4f{.w = 1.0F}));
 }
 
 TEST(CoreXformFunctions, SlerpHoldsItsEndsOutsideZeroToOne) {

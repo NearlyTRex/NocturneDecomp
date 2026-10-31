@@ -19,7 +19,7 @@ public:
     // Abstract: missions can't hold one.
     static const CDemonActorType kType;
 
-    CHero();
+    explicit CHero(CActor &classes);
     ~CHero() override;
     CHero(const CHero &) = delete;
     CHero &operator=(const CHero &) = delete;

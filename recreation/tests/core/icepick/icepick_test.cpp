@@ -25,7 +25,7 @@ TEST(CIcePick, IsConcrete) {
 }
 
 TEST(CIcePick, Constructors) {
-    static_assert(std::is_constructible_v<CIcePick>);
+    static_assert(std::is_constructible_v<CIcePick, CActor &>);
 }
 
 TEST(CIcePick, PublicInterface) {
@@ -56,7 +56,8 @@ TEST(CIcePick, ItsRecordIsAVersionOneHeroThatMissionsCanCreate) {
 }
 
 TEST(CIcePick, ItsFieldsAreAHerosFields) {
-    CIcePick hero;
+    CTestClasses classes;
+    CIcePick hero(classes.get());
     CTestHeroArchive archive(hero, CIcePick::kType, 1, "");
     hero.archive(archive.get());
     EXPECT_EQ(hero.getLocation().area_id, CTestHeroArchive::kArea);
@@ -64,7 +65,8 @@ TEST(CIcePick, ItsFieldsAreAHerosFields) {
 }
 
 TEST(CIcePick, TheFunctionsNotPortedYetQuit) {
-    CIcePick hero;
+    CTestClasses classes;
+    CIcePick hero(classes.get());
     const NotPortedCalls calls = {
         {"setup", [&] { hero.setup(); }},
         {"process", [&] { hero.process(0.0F); }},

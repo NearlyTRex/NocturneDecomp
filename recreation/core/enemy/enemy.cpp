@@ -50,7 +50,7 @@ constinit const CDemonActorType CEnemy::kType =
 //   CEnemy::countSameClassAttackingHero
 // nocedit 0x004a9500
 CEnemy::CEnemy(CActor &classes)
-    : speed_(classes.getRandomFloatFromRange(kSlowestSpeed, kFastestSpeed)) {
+    : CCharacter(classes), speed_(classes.getRandomFloatFromRange(kSlowestSpeed, kFastestSpeed)) {
     const int scale_x = drawScale(classes);
     const int scale_y = drawScale(classes);
     const int scale_z = drawScale(classes);

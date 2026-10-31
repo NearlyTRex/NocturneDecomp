@@ -15,6 +15,7 @@
 #include "core/skeleton/partvisibility.h"
 #include "tests/mocks/core/gameparts.h"
 #include "tests/mocks/core/mockactorlookup.h"
+#include "tests/mocks/core/mockdeformablemodels.h"
 #include "tests/mocks/core/testactor.h"
 #include "tests/mocks/engine/mockgameclock.h"
 
@@ -64,7 +65,8 @@ protected:
     CGameParts game_parts_{clock_};
     CGame &game_ = game_parts_.getGame();
     common::CWatcomRandom crt_;
-    CActor classes_{game_, crt_};
+    ::testing::NiceMock<MockDeformableModels> models_;
+    CActor classes_{game_, crt_, models_};
     ::testing::StrictMock<MockActorLookup> actors_;
     const SActorArchiveOwners owners_{
         .actor_classes = classes_, .actors = actors_, .crt_random = crt_};
@@ -275,7 +277,7 @@ TEST_F(CActorArchiveTest, RulesThatCantBeReadAreFatal) {
 }
 
 TEST_F(CActorArchiveTest, ADeformableModelIsItsFileNameWithEveryPartShown) {
-    CDeformableModelInstance model;
+    CDeformableModelInstance model(models_);
     model.setPartVisibility(0, EPartVisibility::kHidden);
     EXPECT_EQ(read("\t\"ZOMBIE2.DFM\"    // modelName\nnext",
                    [&](CActorArchive &archive) {
@@ -287,7 +289,7 @@ TEST_F(CActorArchiveTest, ADeformableModelIsItsFileNameWithEveryPartShown) {
 }
 
 TEST_F(CActorArchiveTest, AMotionStateIsTheMotionAndFrame) {
-    CDeformableModelInstance model;
+    CDeformableModelInstance model(models_);
     EXPECT_EQ(read("\t{ // motion state\n\t\t12,3.5\n\t}\nnext",
                    [&](CActorArchive &archive) { archive.archiveMotionState(model, "m"); }),
               "next");
@@ -298,7 +300,7 @@ TEST_F(CActorArchiveTest, AMotionStateIsTheMotionAndFrame) {
 
 // A motion named instead of numbered has no index until it is looked up.
 TEST_F(CActorArchiveTest, AMotionStateCanNameTheMotion) {
-    CDeformableModelInstance model;
+    CDeformableModelInstance model(models_);
     read("{\n\"run fast\" , 7\n}\n",
          [&](CActorArchive &archive) { archive.archiveMotionState(model, "m"); });
     EXPECT_EQ(model.getCurrentMotionIndex(), -1);
@@ -307,7 +309,7 @@ TEST_F(CActorArchiveTest, AMotionStateCanNameTheMotion) {
 }
 
 TEST_F(CActorArchiveTest, AMotionStateThatCantBeReadIsFatal) {
-    CDeformableModelInstance model;
+    CDeformableModelInstance model(models_);
     const auto read_motion = [&](CActorArchive &archive) {
         archive.archiveMotionState(model, "motion state");
     };
@@ -324,7 +326,7 @@ TEST_F(CActorArchiveTest, AMotionStateThatCantBeReadIsFatal) {
 // Every part is shown in its first texture set until the file says otherwise, and any number but
 // 0 shows a part.
 TEST_F(CActorArchiveTest, APartStatusIsEachPartsVisibilityThenTextureSet) {
-    CDeformableModelInstance model;
+    CDeformableModelInstance model(models_);
     model.setPartVisibility(2, EPartVisibility::kHidden);
     model.setPartTextureSet(2, 9);
     EXPECT_EQ(read("\t{ // partStatus\n\t\t2\n\t\t0 3 \n\t\t5 6 \n\t}\nnext",
@@ -340,7 +342,7 @@ TEST_F(CActorArchiveTest, APartStatusIsEachPartsVisibilityThenTextureSet) {
 
 // The original read on with whatever its stack held for a count it couldn't read.
 TEST_F(CActorArchiveTest, APartCountThatCantBeReadIsNone) {
-    CDeformableModelInstance model;
+    CDeformableModelInstance model(models_);
     model.setPartVisibility(0, EPartVisibility::kHidden);
     EXPECT_EQ(
         read("{\n}\nnext", [&](CActorArchive &archive) { archive.archivePartStatus(model, "p"); }),
@@ -349,7 +351,7 @@ TEST_F(CActorArchiveTest, APartCountThatCantBeReadIsNone) {
 }
 
 TEST_F(CActorArchiveTest, APartStatusThatCantBeReadIsFatal) {
-    CDeformableModelInstance model;
+    CDeformableModelInstance model(models_);
     const auto read_parts = [&](CActorArchive &archive) {
         archive.archivePartStatus(model, "partStatus");
     };

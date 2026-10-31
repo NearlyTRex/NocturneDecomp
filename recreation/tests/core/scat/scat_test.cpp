@@ -25,7 +25,7 @@ TEST(CScat, IsConcrete) {
 }
 
 TEST(CScat, Constructors) {
-    static_assert(std::is_constructible_v<CScat>);
+    static_assert(std::is_constructible_v<CScat, CActor &>);
 }
 
 TEST(CScat, PublicInterface) {
@@ -53,7 +53,8 @@ TEST(CScat, ItsRecordIsAVersionOneHeroThatMissionsCanCreate) {
 }
 
 TEST(CScat, ItsFieldsAreAHerosFields) {
-    CScat hero;
+    CTestClasses classes;
+    CScat hero(classes.get());
     CTestHeroArchive archive(hero, CScat::kType, 1, "");
     hero.archive(archive.get());
     EXPECT_EQ(hero.getLocation().area_id, CTestHeroArchive::kArea);
@@ -61,7 +62,8 @@ TEST(CScat, ItsFieldsAreAHerosFields) {
 }
 
 TEST(CScat, TheFunctionsNotPortedYetQuit) {
-    CScat hero;
+    CTestClasses classes;
+    CScat hero(classes.get());
     const NotPortedCalls calls = {
         {"setup", [&] { hero.setup(); }},
         {"process", [&] { hero.process(0.0F); }},

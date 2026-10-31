@@ -13,7 +13,7 @@ class CIcePick : public CHero {
 public:
     static const CDemonActorType kType;
 
-    CIcePick();
+    explicit CIcePick(CActor &classes);
     ~CIcePick() override;
     CIcePick(const CIcePick &) = delete;
     CIcePick &operator=(const CIcePick &) = delete;

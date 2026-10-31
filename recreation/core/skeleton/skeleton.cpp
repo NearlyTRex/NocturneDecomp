@@ -5,6 +5,7 @@
 #include "common/text/scanformat.h"
 #include "common/text/textlines.h"
 #include "common/text/textscanner.h"
+#include "core/xform/xform.h"
 #include "engine/dosio/dosio.h"
 
 #include <cstddef>
@@ -117,6 +118,26 @@ void CSkeleton::loadStream(common::CTextScanner &scanner) {
     for (std::size_t i = 0; i < bones_.size(); ++i) {
         scanner.skipLine();
     }
+}
+
+// nocedit 0x0059a050
+const common::CQuaternion4f &CSkeleton::getBoneAngleAtFrame(int bone_index, int frame_index) const {
+    const int index = (frame_index * getBoneCount()) + bone_index;
+    return bone_angle_frames_[static_cast<std::size_t>(index)];
+}
+
+// nocedit 0x0059a070
+common::CQuaternion4f CSkeleton::getBoneAngleInterpolated(int bone_index, int frame_index_1,
+                                                          int frame_index_2,
+                                                          float interpolation) const {
+    if (interpolation <= 0.0F) {
+        return getBoneAngleAtFrame(bone_index, frame_index_1);
+    }
+    if (!(1.0F > interpolation)) {
+        return getBoneAngleAtFrame(bone_index, frame_index_2);
+    }
+    return slerpQuaternion(getBoneAngleAtFrame(bone_index, frame_index_1),
+                           getBoneAngleAtFrame(bone_index, frame_index_2), interpolation);
 }
 
 const std::string &CSkeleton::getLoadedFilename() const {

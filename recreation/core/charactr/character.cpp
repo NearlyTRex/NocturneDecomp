@@ -1,6 +1,7 @@
 #include "core/charactr/character.h"
 
 #include "common/error/error.h"
+#include "core/actor/actor.h"
 #include "core/actor/actorarchive.h"
 #include "core/actor/demonactortype.h"
 #include "core/charactr/healthbarmode.h"
@@ -43,7 +44,7 @@ constinit const CDemonActorType CCharacter::kType =
 //   full speed to 30 degrees and stopped at 90, so the walker turns before arcing through a
 //   doorway (the decomp's walk_turn.h, WALK_TURN), with CCharacter::walkToPoint
 // nocedit 0x00427e20
-CCharacter::CCharacter() = default;
+CCharacter::CCharacter(CActor &classes) : model_(classes.getModels()) {}
 
 // nocedit 0x0042f9f0
 CCharacter::~CCharacter() = default;

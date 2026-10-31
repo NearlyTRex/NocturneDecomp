@@ -24,7 +24,7 @@ constinit const CDemonActorType CSvetlana::kType =
 // deferred: a player Svetlana at zero hit points not regenerating, so the death check sees her
 //   (the decomp's hero_death.h nocturne_hero_regenerates), with CSvetlana::process
 // nocedit 0x005d8850
-CSvetlana::CSvetlana() {
+CSvetlana::CSvetlana(CActor &classes) : CHero(classes) {
     getModel().init("svetlana.dfm");
 }
 
@@ -42,8 +42,8 @@ void CSvetlana::archive(CActorArchive &actor_archive) {
 }
 
 // nocedit 0x005d8810
-std::unique_ptr<CDemonActor> CSvetlana::create(CActor & /*classes*/) {
-    return std::make_unique<CSvetlana>();
+std::unique_ptr<CDemonActor> CSvetlana::create(CActor &classes) {
+    return std::make_unique<CSvetlana>(classes);
 }
 
 } // namespace nocturne::core

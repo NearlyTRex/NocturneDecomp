@@ -18,6 +18,7 @@
 #include "platform/rendervertex.h"
 #include "support/newmsg/newmsg.h"
 #include "tests/mocks/core/gameparts.h"
+#include "tests/mocks/core/mockdeformablemodels.h"
 #include "tests/mocks/core/setparts.h"
 #include "tests/mocks/platform/mockosfontfactory.h"
 #include "tests/mocks/shape/picklistfixture.h"
@@ -35,7 +36,8 @@ protected:
     CGameParts game_parts_{game_clock_};
     CGame &game_ = game_parts_.getGame();
     common::CWatcomRandom crt_random_;
-    CActor actor_{game_, crt_random_};
+    ::testing::NiceMock<MockDeformableModels> models_;
+    CActor actor_{game_, crt_random_, models_};
     engine::CTexture textures_{{.dosio = dosio_,
                                 .two_d = two_d_,
                                 .screen = screen_,

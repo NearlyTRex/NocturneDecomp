@@ -12,7 +12,7 @@ class CColonel : public CHero {
 public:
     static const CDemonActorType kType;
 
-    CColonel();
+    explicit CColonel(CActor &classes);
     ~CColonel() override;
     CColonel(const CColonel &) = delete;
     CColonel &operator=(const CColonel &) = delete;

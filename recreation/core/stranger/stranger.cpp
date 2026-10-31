@@ -35,7 +35,7 @@ constinit const CDemonActorType CStranger::kType =
 // deferred: the defaults the constructor gives the Stranger's aiming, recoil, melee, turning,
 //   carried object and airborne fields, with the steps that read them
 // nocedit 0x005bb120
-CStranger::CStranger() {
+CStranger::CStranger(CActor &classes) : CHero(classes) {
     getModel().init("stranger.dfm");
 }
 
@@ -91,8 +91,8 @@ int CStranger::getActionPending() const {
 }
 
 // nocedit 0x005bb0e0
-std::unique_ptr<CDemonActor> CStranger::create(CActor & /*classes*/) {
-    return std::make_unique<CStranger>();
+std::unique_ptr<CDemonActor> CStranger::create(CActor &classes) {
+    return std::make_unique<CStranger>(classes);
 }
 
 } // namespace nocturne::core

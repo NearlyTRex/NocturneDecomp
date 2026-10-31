@@ -83,7 +83,7 @@ constinit const CDemonActorType CHero::kType =
 //   on with the weapon away, and off with a click on holstering (the decomp's gun_flashlight.h),
 //   with CNetGame::applySimFrameHistory
 // nocedit 0x004f2340
-CHero::CHero() {
+CHero::CHero(CActor &classes) : CCharacter(classes) {
     setHealthBarMode(EHealthBarMode::kWhenHurt);
 }
 

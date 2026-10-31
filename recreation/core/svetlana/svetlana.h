@@ -12,7 +12,7 @@ class CSvetlana : public CHero {
 public:
     static const CDemonActorType kType;
 
-    CSvetlana();
+    explicit CSvetlana(CActor &classes);
     ~CSvetlana() override;
     CSvetlana(const CSvetlana &) = delete;
     CSvetlana &operator=(const CSvetlana &) = delete;

@@ -26,7 +26,7 @@ TEST(CStranger, IsConcrete) {
 }
 
 TEST(CStranger, Constructors) {
-    static_assert(std::is_constructible_v<CStranger>);
+    static_assert(std::is_constructible_v<CStranger, CActor &>);
 }
 
 TEST(CStranger, PublicInterface) {
@@ -69,7 +69,8 @@ TEST(CStranger, ItsRecordIsAVersionNineHeroThatMissionsCanCreate) {
 }
 
 TEST(CStranger, TheStrangerHasNothingInHandAndNothingPendingUntilToldOtherwise) {
-    const CStranger hero;
+    CTestClasses classes;
+    const CStranger hero(classes.get());
     EXPECT_EQ(hero.getLadderToDescend(), nullptr);
     EXPECT_FALSE(hero.areGunsDrawn());
     EXPECT_EQ(hero.getWeapon(), nullptr);
@@ -94,7 +95,8 @@ protected:
         EXPECT_TRUE(archive.isFinished());
     }
 
-    CStranger hero_;
+    CTestClasses classes_;
+    CStranger hero_{classes_.get()};
     CTestActor ladder_{kTestBaseType};
     CTestActor gun_{kTestBaseType};
 };
@@ -149,7 +151,8 @@ TEST_F(CStrangerArchiveTest, AVersionOneStrangerHasOnlyAHerosFields) {
 }
 
 TEST(CStranger, TheFunctionsNotPortedYetQuit) {
-    CStranger hero;
+    CTestClasses classes;
+    CStranger hero(classes.get());
     const NotPortedCalls calls = {
         {"setup", [&] { hero.setup(); }},
         {"process", [&] { hero.process(0.0F); }},

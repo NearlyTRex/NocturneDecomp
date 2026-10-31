@@ -36,6 +36,8 @@ const CDemonActorType kStartHeroType = makeActorType("CTestStartHero", &CHero::k
 // A hero from the last mission, which counts how often it is set up.
 class CTestStartHero : public CHero {
 public:
+    using CHero::CHero;
+
     [[nodiscard]] const CDemonActorType &getActorType() const override {
         return kStartHeroType;
     }
@@ -86,7 +88,7 @@ protected:
         placeholder->setIndex(0);
         placeholder->setLocation({.position = {}, .area_id = 1});
         mission_.addActorToList(std::move(placeholder));
-        auto hero = std::make_unique<CTestStartHero>();
+        auto hero = std::make_unique<CTestStartHero>(actor_);
         hero_ = hero.get();
         ASSERT_TRUE(mission_.createHeros(std::move(hero)));
     }

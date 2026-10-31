@@ -16,8 +16,10 @@
 #include "core/skeleton/partvisibility.h"
 #include "tests/mocks/core/gameparts.h"
 #include "tests/mocks/core/mockactorlookup.h"
+#include "tests/mocks/core/mockdeformablemodels.h"
 #include "tests/mocks/core/notportedcalls.h"
 #include "tests/mocks/core/testactor.h"
+#include "tests/mocks/core/testclasses.h"
 #include "tests/mocks/engine/mockgameclock.h"
 
 #include <gmock/gmock.h>
@@ -88,6 +90,8 @@ TEST(CHero, PublicInterface) {
 // A hero of no class but its own, so its calls reach CHero's.
 class CTestHero : public CHero {
 public:
+    using CHero::CHero;
+
     [[nodiscard]] const CDemonActorType &getActorType() const override {
         return kType;
     }
@@ -108,7 +112,8 @@ TEST(CHero, ItsRecordIsAVersionTwelveCharacterThatMissionsCantCreate) {
 }
 
 TEST(CHero, AHeroIsSteeredByTheGameToKillUntilToldOtherwise) {
-    const CTestHero hero;
+    CTestClasses classes;
+    const CTestHero hero(classes.get());
     EXPECT_EQ(hero.getControlType(), EHeroControlType::kAi);
     EXPECT_EQ(hero.getAiTask(), EHeroTask::kKill);
     EXPECT_EQ(hero.getGasMaskState(), EGasMaskState::kAway);
@@ -170,9 +175,10 @@ protected:
     CGameParts game_parts_{clock_};
     CGame &game_ = game_parts_.getGame();
     common::CWatcomRandom crt_;
-    CActor classes_{game_, crt_};
+    ::testing::NiceMock<MockDeformableModels> models_;
+    CActor classes_{game_, crt_, models_};
     ::testing::NiceMock<MockActorLookup> actors_;
-    CTestHero hero_;
+    CTestHero hero_{classes_};
     CTestActor box_{kTestBaseType};
     CTestActor hook_{kTestBaseType};
 };
@@ -240,7 +246,8 @@ TEST_F(CHeroArchiveTest, AVeryOldHeroHasFewerFields) {
 }
 
 TEST(CHero, TheFunctionsNotPortedYetQuit) {
-    CTestHero hero;
+    CTestClasses classes;
+    CTestHero hero(classes.get());
     const NotPortedCalls calls = {
         {"setup", [&] { hero.setup(); }},
         {"canLookAt", [&] { static_cast<void>(hero.canLookAt()); }},

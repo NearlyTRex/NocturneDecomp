@@ -26,7 +26,7 @@ TEST(CGabriella, IsConcrete) {
 }
 
 TEST(CGabriella, Constructors) {
-    static_assert(std::is_constructible_v<CGabriella>);
+    static_assert(std::is_constructible_v<CGabriella, CActor &>);
 }
 
 TEST(CGabriella, PublicInterface) {
@@ -73,7 +73,8 @@ protected:
         EXPECT_TRUE(archive.isFinished());
     }
 
-    CGabriella hero_;
+    CTestClasses classes_;
+    CGabriella hero_{classes_.get()};
     CTestActor box_{kTestBaseType};
     CTestActor hook_{kTestBaseType};
 };
@@ -107,7 +108,8 @@ TEST_F(CGabriellaArchiveTest, AVersionOneGabriellaHasOnlyAHerosFields) {
 }
 
 TEST(CGabriella, TheFunctionsNotPortedYetQuit) {
-    CGabriella hero;
+    CTestClasses classes;
+    CGabriella hero(classes.get());
     const NotPortedCalls calls = {
         {"setup", [&] { hero.setup(); }},
         {"process", [&] { hero.process(0.0F); }},

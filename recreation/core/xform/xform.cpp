@@ -78,6 +78,11 @@ common::CMatrix3x4f quaternionToMatrix3x4(const common::CQuaternion4f &quat_in) 
     return matrix;
 }
 
+// nocedit 0x005f7620
+void setIdentityQuaternion(common::CQuaternion4f &quaternion) {
+    quaternion = {.w = 1.0F};
+}
+
 // As the original's unordered compares do, a NaN t gives the second rotation and a NaN cosine
 // takes the arc.
 // nocedit 0x005f77e0

@@ -1,10 +1,16 @@
 #include "common/error/fatalerror.h"
+#include "common/text/textscanner.h"
 #include "core/motion/motioncontroller.h"
+#include "core/motion/motionlist.h"
 
 #include <gmock/gmock.h>
 #include <gtest/gtest.h>
 
+#include <cmath>
+#include <format>
 #include <limits>
+#include <string>
+#include <string_view>
 #include <type_traits>
 #include <vector>
 
@@ -37,9 +43,9 @@ TEST(CMotionController, PublicInterface) {
     static_assert(std::is_same_v<decltype(&CMotionController::setDesiredStateByName),
                                  void (CMotionController::*)(char *, int)>);
     static_assert(std::is_same_v<decltype(&CMotionController::setMotionList),
-                                 void (CMotionController::*)(CMotionList *)>);
+                                 void (CMotionController::*)(const CMotionList &)>);
     static_assert(std::is_same_v<decltype(&CMotionController::getMotionList),
-                                 CMotionList *(CMotionController::*)()>);
+                                 const CMotionList *(CMotionController::*)() const>);
     static_assert(std::is_same_v<decltype(&CMotionController::getCurrentStateName),
                                  char *(CMotionController::*)()>);
     static_assert(std::is_same_v<decltype(&CMotionController::getStateBlendWeight),
@@ -53,7 +59,7 @@ TEST(CMotionController, PublicInterface) {
     static_assert(std::is_same_v<decltype(&CMotionController::markerPositionToFrame),
                                  float (CMotionController::*)(int, float)>);
     static_assert(std::is_same_v<decltype(&CMotionController::getFramesForInterpolation),
-                                 void (CMotionController::*)(int, float, int *, int *, float *)>);
+                                 SInterpolationFrames (CMotionController::*)(int, float) const>);
     static_assert(std::is_same_v<decltype(&CMotionController::load),
                                  void (CMotionController::*)(common::CTextScanner &)>);
     static_assert(std::is_same_v<decltype(&CMotionController::save),
@@ -135,6 +141,83 @@ TEST(CMotionController, ItsOwnRootMotionChangesNothing) {
     controller.accumulateScaledRootMotion(0.0F, 2.0F, 1.0F);
     EXPECT_EQ(controller.getCurrentMotionIndex(), 4);
     EXPECT_EQ(controller.getCurrentFrameNumber(), 2.0F);
+}
+
+// A motion as its list gives it: the frames, then where its forward exit leaves from and to, and
+// how.
+std::string motionText(std::string_view frames, std::string_view exit_forward, int exit_cmd) {
+    return std::format("// motion\n\"m\",30,0,{}\n// exit\n{}\n// cmd\n{},0,0\n// back\n0,0\n"
+                       "// transitions\n0\n// signals\n0\n// markers\n0\n",
+                       frames, exit_forward, exit_cmd);
+}
+
+// Frames 2 to 6, jumping from the last to motion 1's frame 1.5; frames 10 to 12, whose exit
+// leaves before the last; and frames 20 to 23, tweening from the last.
+class CMotionControllerFramesTest : public ::testing::Test {
+protected:
+    CMotionControllerFramesTest() {
+        const std::string text = "// version\n2\n// states\n0\n// motions\n3\n" +
+                                 motionText("2,5", "4,1,1.5", 1) + motionText("10,3", "1,0,0", 1) +
+                                 motionText("20,4", "3,0,0", 3);
+        common::CTextScanner scanner(text);
+        list_.load(scanner);
+        controller_.setMotionList(list_);
+    }
+
+    void expectFrames(int motion, float frame, int frame_1, int frame_2, float weight) const {
+        const SInterpolationFrames frames = controller_.getFramesForInterpolation(motion, frame);
+        EXPECT_EQ(frames.frame_1, frame_1) << motion << " at " << frame;
+        EXPECT_EQ(frames.frame_2, frame_2) << motion << " at " << frame;
+        EXPECT_EQ(frames.blend_weight, weight) << motion << " at " << frame;
+    }
+
+    CMotionList list_;
+    CMotionController controller_;
+};
+
+TEST(CMotionController, ItHasNoMotionListUntilItIsGivenOne) {
+    CMotionController controller;
+    EXPECT_EQ(controller.getMotionList(), nullptr);
+    const CMotionList list;
+    controller.setMotionList(list);
+    EXPECT_EQ(controller.getMotionList(), &list);
+}
+
+TEST(CMotionController, AMotionAFileNamedIsntLookedUpYet) {
+    CMotionController controller;
+    common::CTextScanner scanner("\"walk\",2\n");
+    controller.load(scanner);
+    const CMotionList list;
+    EXPECT_THAT([&] { controller.setMotionList(list); },
+                ::testing::ThrowsMessage<common::CFatalError>(
+                    ::testing::StrEq("CMotionList::findMotionIndex is not ported yet")));
+}
+
+TEST_F(CMotionControllerFramesTest, AtOrBeforeTheStartItIsTheMotionsFirstFrame) {
+    expectFrames(0, 0.0F, 2, 2, 0.0F);
+    expectFrames(0, -3.0F, 2, 2, 0.0F);
+}
+
+TEST_F(CMotionControllerFramesTest, InsideTheMotionItIsBetweenTwoFrames) {
+    expectFrames(0, 1.25F, 3, 4, 0.25F);
+    // The sum is chopped, so a position just short of a frame is still before it.
+    expectFrames(0, std::nextafter(1.0F, 0.0F), 2, 3, std::nextafter(1.0F, 0.0F));
+}
+
+TEST_F(CMotionControllerFramesTest, PastTheLastFrameItMovesTowardsWhereTheExitJumpsTo) {
+    expectFrames(0, 4.0F, 6, 11, 0.0F);
+    expectFrames(0, 4.5F, 6, 11, 0.5F);
+}
+
+TEST_F(CMotionControllerFramesTest, AWholeFramePastTheLastItHasJumped) {
+    expectFrames(0, 5.0F, 11, 11, 0.0F);
+    expectFrames(0, std::numeric_limits<float>::quiet_NaN(), 11, 11, 0.0F);
+}
+
+// The second's exit leaves before its last frame, and the third's tweens.
+TEST_F(CMotionControllerFramesTest, PastTheLastFrameOfAMotionThatDoesntJumpFromThereItStays) {
+    expectFrames(1, 2.5F, 12, 12, 0.0F);
+    expectFrames(2, 3.5F, 23, 23, 0.0F);
 }
 
 } // namespace

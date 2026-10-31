@@ -25,7 +25,7 @@ TEST(CSvetlana, IsConcrete) {
 }
 
 TEST(CSvetlana, Constructors) {
-    static_assert(std::is_constructible_v<CSvetlana>);
+    static_assert(std::is_constructible_v<CSvetlana, CActor &>);
 }
 
 TEST(CSvetlana, PublicInterface) {
@@ -56,7 +56,8 @@ TEST(CSvetlana, ItsRecordIsAVersionOneHeroThatMissionsCanCreate) {
 }
 
 TEST(CSvetlana, ItsFieldsAreAHerosFields) {
-    CSvetlana hero;
+    CTestClasses classes;
+    CSvetlana hero(classes.get());
     CTestHeroArchive archive(hero, CSvetlana::kType, 1, "");
     hero.archive(archive.get());
     EXPECT_EQ(hero.getLocation().area_id, CTestHeroArchive::kArea);
@@ -64,7 +65,8 @@ TEST(CSvetlana, ItsFieldsAreAHerosFields) {
 }
 
 TEST(CSvetlana, TheFunctionsNotPortedYetQuit) {
-    CSvetlana hero;
+    CTestClasses classes;
+    CSvetlana hero(classes.get());
     const NotPortedCalls calls = {
         {"setup", [&] { hero.setup(); }},
         {"process", [&] { hero.process(0.0F); }},

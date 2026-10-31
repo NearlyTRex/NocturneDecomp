@@ -24,7 +24,7 @@ constinit const CDemonActorType CBaron::kType =
 // deferred: naming the shell's model baronshell.kfm, and the defaults the constructor gives the
 //   head, target, attack, transparency and shell fields, with the steps that read them
 // nocedit 0x00412bc0
-CBaron::CBaron() {
+CBaron::CBaron(CActor &classes) : CHero(classes) {
     getModel().init("baron.dfm");
 }
 
@@ -60,8 +60,8 @@ bool CBaron::isSummoned() const {
 }
 
 // nocedit 0x00412b80
-std::unique_ptr<CDemonActor> CBaron::create(CActor & /*classes*/) {
-    return std::make_unique<CBaron>();
+std::unique_ptr<CDemonActor> CBaron::create(CActor &classes) {
+    return std::make_unique<CBaron>(classes);
 }
 
 } // namespace nocturne::core

@@ -22,7 +22,8 @@ public:
     // Abstract: missions can't hold one.
     static const CDemonActorType kType;
 
-    CCharacter();
+    // Its model is found among those the classes hold.
+    explicit CCharacter(CActor &classes);
     ~CCharacter() override;
     CCharacter(const CCharacter &) = delete;
     CCharacter &operator=(const CCharacter &) = delete;

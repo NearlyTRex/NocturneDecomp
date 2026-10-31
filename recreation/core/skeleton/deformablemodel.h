@@ -9,6 +9,7 @@
 #include "platform/mrgltexturebasic.h"
 
 #include <array>
+#include <cstddef>
 #include <cstdint>
 #include <span>
 #include <string>
@@ -91,8 +92,10 @@ public:
     CSkeleton *getSkeletonPtr();
     // The bone's origin.
     common::CVector3f *getVertexPoolPtr(int index);
-    void skinVertices(int lod_index, common::CMatrix3x4f *bone_matrices, int *output_buffer,
-                      SPartInstanceData *part_data);
+    // Each of the level's vertices moved by the bones it follows, weighed, in 24.8 fixed point.
+    // A level the model hasn't got has no vertices.
+    void skinVertices(std::size_t lod_index, std::span<const common::CMatrix3x4f> bone_matrices,
+                      std::span<common::CVector3i> output) const;
     common::CVector3f *skinSingleVertex(common::CVector3f *output_pos, int lod_index,
                                         int vertex_index, common::CMatrix3x4f *bone_matrices);
     void rotateVertices(int lod_index, int *input_vertices);

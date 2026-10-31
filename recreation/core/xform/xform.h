@@ -43,7 +43,7 @@ void quaternionToMatrix3x3(common::CMatrix3x4f &matrix_out, const common::CQuate
 [[nodiscard]] common::CMatrix3x4f quaternionToMatrix3x4(const common::CQuaternion4f &quat_in);
 common::CQuaternion4f *negateFirstComponent(common::CQuaternion4f *vector_in,
                                             common::CQuaternion4f *vector_out);
-void setIdentityQuaternion(common::CQuaternion4f *quaternion);
+void setIdentityQuaternion(common::CQuaternion4f &quaternion);
 common::CQuaternion4f *multiplyQuaternion(common::CQuaternion4f *quat1_in,
                                           common::CQuaternion4f *quat2_in,
                                           common::CQuaternion4f *quat_out);

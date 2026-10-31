@@ -25,7 +25,7 @@ TEST(CHaystack, IsConcrete) {
 }
 
 TEST(CHaystack, Constructors) {
-    static_assert(std::is_constructible_v<CHaystack>);
+    static_assert(std::is_constructible_v<CHaystack, CActor &>);
 }
 
 TEST(CHaystack, PublicInterface) {
@@ -54,7 +54,8 @@ TEST(CHaystack, ItsRecordIsAVersionOneHeroThatMissionsCanCreate) {
 }
 
 TEST(CHaystack, ItsFieldsAreAHerosFields) {
-    CHaystack hero;
+    CTestClasses classes;
+    CHaystack hero(classes.get());
     CTestHeroArchive archive(hero, CHaystack::kType, 1, "");
     hero.archive(archive.get());
     EXPECT_EQ(hero.getLocation().area_id, CTestHeroArchive::kArea);
@@ -62,7 +63,8 @@ TEST(CHaystack, ItsFieldsAreAHerosFields) {
 }
 
 TEST(CHaystack, TheFunctionsNotPortedYetQuit) {
-    CHaystack hero;
+    CTestClasses classes;
+    CHaystack hero(classes.get());
     const NotPortedCalls calls = {
         {"setup", [&] { hero.setup(); }},
         {"process", [&] { hero.process(0.0F); }},

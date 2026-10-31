@@ -25,7 +25,7 @@ TEST(CMoloch, IsConcrete) {
 }
 
 TEST(CMoloch, Constructors) {
-    static_assert(std::is_constructible_v<CMoloch>);
+    static_assert(std::is_constructible_v<CMoloch, CActor &>);
 }
 
 TEST(CMoloch, PublicInterface) {
@@ -51,7 +51,8 @@ TEST(CMoloch, ItsRecordIsAVersionOneHeroThatMissionsCanCreate) {
 }
 
 TEST(CMoloch, MolochStartsHumanWithTheShippedConditions) {
-    const CMoloch hero;
+    CTestClasses classes;
+    const CMoloch hero(classes.get());
     EXPECT_EQ(hero.getHumanToDemonCondition(), "molochToDemon");
     EXPECT_EQ(hero.getDemonToHumanCondition(), "molochToHuman");
     EXPECT_TRUE(hero.isInHumanForm());
@@ -60,7 +61,8 @@ TEST(CMoloch, MolochStartsHumanWithTheShippedConditions) {
 }
 
 TEST(CMoloch, MolochIsReadWithItsFormAndMorph) {
-    CMoloch hero;
+    CTestClasses classes;
+    CMoloch hero(classes.get());
     CTestHeroArchive archive(hero, CMoloch::kType, 1,
                              "\"toDemon\" // humanToDemonCond\n\"toHuman\"\n0 // inHumanForm\n"
                              "1 // morphing\n0.75 // morphTimer\n");
@@ -75,7 +77,8 @@ TEST(CMoloch, MolochIsReadWithItsFormAndMorph) {
 }
 
 TEST(CMoloch, TheFunctionsNotPortedYetQuit) {
-    CMoloch hero;
+    CTestClasses classes;
+    CMoloch hero(classes.get());
     const NotPortedCalls calls = {
         {"setup", [&] { hero.setup(); }},
         {"process", [&] { hero.process(0.0F); }},

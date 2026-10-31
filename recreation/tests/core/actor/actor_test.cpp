@@ -39,6 +39,7 @@
 #include "core/werewolf/werewolf.h"
 #include "core/zombie/zombie.h"
 #include "tests/mocks/core/gameparts.h"
+#include "tests/mocks/core/mockdeformablemodels.h"
 #include "tests/mocks/core/testactor.h"
 #include "tests/mocks/engine/mockgameclock.h"
 
@@ -64,7 +65,8 @@ TEST(CActor, IsConcrete) {
 }
 
 TEST(CActor, Constructors) {
-    static_assert(std::is_constructible_v<CActor, const CGame &, common::CWatcomRandom &>);
+    static_assert(std::is_constructible_v<CActor, const CGame &, common::CWatcomRandom &,
+                                          IDeformableModels &>);
 }
 
 TEST(CActor, PublicInterface) {
@@ -90,8 +92,13 @@ protected:
     CGameParts game_parts_{clock_};
     CGame &game_ = game_parts_.getGame();
     common::CWatcomRandom crt_;
-    CActor actor_{game_, crt_};
+    ::testing::NiceMock<MockDeformableModels> models_;
+    CActor actor_{game_, crt_, models_};
 };
+
+TEST_F(CActorRegistryTest, TheActorsItMakesFindTheirModelsInWhatItWasGiven) {
+    EXPECT_EQ(&actor_.getModels(), &models_);
+}
 
 TEST_F(CActorRegistryTest, ThePortedClassesAreRegistered) {
     EXPECT_EQ(actor_.getActorClassByName("CDemonActor"), &CDemonActor::kType);
@@ -202,7 +209,8 @@ protected:
     CGameParts game_parts_{clock_};
     CGame &game_ = game_parts_.getGame();
     common::CWatcomRandom crt_;
-    CActor actor_{game_, crt_};
+    ::testing::NiceMock<MockDeformableModels> models_;
+    CActor actor_{game_, crt_, models_};
 };
 
 TEST_F(CActorTest, OutsideASimFrameDrawsFromTheCrtStream) {

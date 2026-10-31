@@ -190,5 +190,43 @@ TEST(CExtendedFloat, OrdersAsTheX87ComparesThem) {
     EXPECT_FALSE(X(kNaN) == X(kNaN));
 }
 
+TEST(CExtendedFloat, TruncatesTowardZero) {
+    EXPECT_EQ(X(2.75).truncateToInt(), 2);
+    EXPECT_EQ(X(-2.75).truncateToInt(), -2);
+    EXPECT_EQ(X(-0.0).truncateToInt(), 0);
+    EXPECT_EQ(X(0.0).truncateToInt(), 0);
+    EXPECT_EQ(X(std::ldexp(1.0, -70)).truncateToInt(), 0);
+    // Below 1 but within the 64-bit mantissa of it.
+    EXPECT_EQ((X(1.0) + X(-std::ldexp(1.0, -63))).truncateToInt(), 0);
+    EXPECT_EQ(X(2147483647.5).truncateToInt(), 2147483647);
+    EXPECT_EQ(X(-2147483648.5).truncateToInt(), std::numeric_limits<std::int32_t>::min());
+}
+
+TEST(CExtendedFloat, TruncatesWhatNoIntHoldsToTheIndefinite) {
+    constexpr std::int32_t kIndefinite = std::numeric_limits<std::int32_t>::min();
+    EXPECT_EQ(X(2147483648.0).truncateToInt(), kIndefinite);
+    EXPECT_EQ(X(-2147483649.0).truncateToInt(), kIndefinite);
+    EXPECT_EQ(X(std::ldexp(1.0, 70)).truncateToInt(), kIndefinite);
+    EXPECT_EQ(X(kNaN).truncateToInt(), kIndefinite);
+    EXPECT_EQ(X(-kInfinity).truncateToInt(), kIndefinite);
+}
+
+// A whole number around an int's range plus a fraction, as a frame's start and position add up.
+TEST_F(CExtendedFloatAgainstX87, TruncatesSumsAsTheX87Does) {
+    std::uniform_real_distribution<double> unit(-1.0, 1.0);
+    std::uniform_int_distribution<int> exponent(-4, 33);
+    for (int i = 0; i < 100000; ++i) {
+        const double a = std::round(std::ldexp(unit(random_), exponent(random_)));
+        const double b = std::ldexp(unit(random_), exponent(random_) - 30);
+        const long double sum = static_cast<long double>(a) + b;
+        const long double whole = std::trunc(sum);
+        const std::int32_t expected =
+            std::isfinite(sum) && whole >= -2147483648.0L && whole <= 2147483647.0L
+                ? static_cast<std::int32_t>(whole)
+                : std::numeric_limits<std::int32_t>::min();
+        ASSERT_EQ((X(a) + X(b)).truncateToInt(), expected) << a << " + " << b;
+    }
+}
+
 } // namespace
 } // namespace nocturne::common

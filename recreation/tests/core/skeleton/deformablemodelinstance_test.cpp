@@ -1,7 +1,9 @@
 #include "core/skeleton/deformablemodelinstance.h"
 #include "core/skeleton/partvisibility.h"
+#include "tests/mocks/core/mockdeformablemodels.h"
 #include "tests/mocks/core/notportedcalls.h"
 
+#include <gmock/gmock.h>
 #include <gtest/gtest.h>
 
 #include <string_view>
@@ -23,7 +25,7 @@ TEST(CDeformableModelInstance, IsConcrete) {
 }
 
 TEST(CDeformableModelInstance, Constructors) {
-    static_assert(std::is_constructible_v<CDeformableModelInstance>);
+    static_assert(std::is_constructible_v<CDeformableModelInstance, IDeformableModels &>);
 }
 
 TEST(CDeformableModelInstance, PublicInterface) {
@@ -85,7 +87,7 @@ TEST(CDeformableModelInstance, PublicInterface) {
     static_assert(std::is_same_v<decltype(&CDeformableModelInstance::preCache),
                                  void (CDeformableModelInstance::*)()>);
     static_assert(std::is_same_v<decltype(&CDeformableModelInstance::initializeFromModel),
-                                 void (CDeformableModelInstance::*)(CDeformableModel *)>);
+                                 void (CDeformableModelInstance::*)(CDeformableModel &)>);
     static_assert(std::is_same_v<decltype(&CDeformableModelInstance::getModelPtr),
                                  CDeformableModel *(CDeformableModelInstance::*)()>);
     static_assert(std::is_same_v<decltype(&CDeformableModelInstance::getSkeletonPtr),
@@ -116,7 +118,8 @@ TEST(CDeformableModelInstance, PublicInterface) {
 }
 
 TEST(CDeformableModelInstance, NamingTheModelShowsEveryPartInItsFirstTextureSet) {
-    CDeformableModelInstance model;
+    ::testing::NiceMock<MockDeformableModels> models;
+    CDeformableModelInstance model(models);
     EXPECT_EQ(model.getModelName(), "");
     model.setPartVisibility(3, EPartVisibility::kHidden);
     model.setPartTextureSet(4, 2);
@@ -127,7 +130,8 @@ TEST(CDeformableModelInstance, NamingTheModelShowsEveryPartInItsFirstTextureSet)
 }
 
 TEST(CDeformableModelInstance, TheFunctionsNotPortedYetQuit) {
-    CDeformableModelInstance model;
+    ::testing::NiceMock<MockDeformableModels> models;
+    CDeformableModelInstance model(models);
     const NotPortedCalls calls = {
         {"findPatchToFrame", [&] { static_cast<void>(model.findPatchToFrame(0, 0.0F, 0)); }},
         {"accumulateScaledRootMotion", [&] { model.accumulateScaledRootMotion(0.0F, 0.0F, 0.0F); }},

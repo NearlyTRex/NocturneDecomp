@@ -14,6 +14,7 @@
 #include "core/netgame/netgame.h"
 #include "core/script/script.h"
 #include "core/set/demonset.h"
+#include "core/skeleton/deformablemodelmanager.h"
 #include "core/sound/sound.h"
 #include "core/xform/xform.h"
 #include "engine/2d/2d.h"
@@ -213,7 +214,8 @@ protected:
     CDemonSet set_{
         set_parts_.owners(demon_renderer_, matrix_, special_, two_d_, screen_, raw_input_)};
     common::CWatcomRandom crt_random_;
-    CActor actor_{game_, crt_random_};
+    CDeformableModelManager deformable_models_{dosio_, demon_renderer_};
+    CActor actor_{game_, crt_random_, deformable_models_};
     shape::CEdControls controls_{{.two_d = two_d_,
                                   .screen = screen_,
                                   .raw_input = raw_input_,

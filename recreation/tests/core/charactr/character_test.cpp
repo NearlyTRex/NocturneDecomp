@@ -11,8 +11,10 @@
 #include "core/game/game.h"
 #include "tests/mocks/core/gameparts.h"
 #include "tests/mocks/core/mockactorlookup.h"
+#include "tests/mocks/core/mockdeformablemodels.h"
 #include "tests/mocks/core/notportedcalls.h"
 #include "tests/mocks/core/testactor.h"
+#include "tests/mocks/core/testclasses.h"
 #include "tests/mocks/engine/mockgameclock.h"
 
 #include <gmock/gmock.h>
@@ -184,6 +186,8 @@ TEST(CCharacter, PublicInterface) {
 // A character of no class but its own, so its calls reach CCharacter's.
 class CTestCharacter : public CCharacter {
 public:
+    using CCharacter::CCharacter;
+
     [[nodiscard]] const CDemonActorType &getActorType() const override {
         return kType;
     }
@@ -198,7 +202,8 @@ TEST(CCharacter, ItsRecordIsAVersionSixActorThatMissionsCantCreate) {
 }
 
 TEST(CCharacter, ACharacterStartsWithFullHealthCarryingNothing) {
-    CTestCharacter character;
+    CTestClasses classes;
+    CTestCharacter character(classes.get());
     EXPECT_EQ(character.getHitPoints(), 100.0F);
     EXPECT_EQ(character.getMaxHitPoints(), 100.0F);
     EXPECT_FALSE(character.isCarryingAnything());
@@ -240,9 +245,10 @@ protected:
     CGameParts game_parts_{clock_};
     CGame &game_ = game_parts_.getGame();
     common::CWatcomRandom crt_;
-    CActor classes_{game_, crt_};
+    ::testing::NiceMock<MockDeformableModels> models_;
+    CActor classes_{game_, crt_, models_};
     ::testing::NiceMock<MockActorLookup> actors_;
-    CTestCharacter character_;
+    CTestCharacter character_{classes_};
     CTestActor crate_{kTestBaseType};
     CTestActor hook_{kTestBaseType};
 };
@@ -286,7 +292,8 @@ TEST_F(CCharacterArchiveTest, AHandPastTheTwoIsFatal) {
 }
 
 TEST(CCharacter, TheFunctionsNotPortedYetQuit) {
-    CTestCharacter character;
+    CTestClasses classes;
+    CTestCharacter character(classes.get());
     const NotPortedCalls calls = {
         {"setup", [&] { character.setup(); }},
         {"renderOpaque", [&] { static_cast<void>(character.renderOpaque()); }},

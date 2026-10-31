@@ -25,7 +25,7 @@ TEST(CColonel, IsConcrete) {
 }
 
 TEST(CColonel, Constructors) {
-    static_assert(std::is_constructible_v<CColonel>);
+    static_assert(std::is_constructible_v<CColonel, CActor &>);
 }
 
 TEST(CColonel, PublicInterface) {
@@ -54,7 +54,8 @@ TEST(CColonel, ItsRecordIsAVersionOneHeroThatMissionsCanCreate) {
 }
 
 TEST(CColonel, ItsFieldsAreAHerosFields) {
-    CColonel hero;
+    CTestClasses classes;
+    CColonel hero(classes.get());
     CTestHeroArchive archive(hero, CColonel::kType, 1, "");
     hero.archive(archive.get());
     EXPECT_EQ(hero.getLocation().area_id, CTestHeroArchive::kArea);
@@ -62,7 +63,8 @@ TEST(CColonel, ItsFieldsAreAHerosFields) {
 }
 
 TEST(CColonel, TheFunctionsNotPortedYetQuit) {
-    CColonel hero;
+    CTestClasses classes;
+    CColonel hero(classes.get());
     const NotPortedCalls calls = {
         {"setup", [&] { hero.setup(); }},
         {"process", [&] { hero.process(0.0F); }},

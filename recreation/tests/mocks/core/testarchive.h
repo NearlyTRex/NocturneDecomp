@@ -8,6 +8,7 @@
 #include "core/game/game.h"
 #include "tests/mocks/core/gameparts.h"
 #include "tests/mocks/core/mockactorlookup.h"
+#include "tests/mocks/core/mockdeformablemodels.h"
 #include "tests/mocks/engine/mockgameclock.h"
 
 #include <gmock/gmock.h>
@@ -63,7 +64,8 @@ private:
     CGameParts game_parts_{clock_};
     CGame &game_ = game_parts_.getGame();
     common::CWatcomRandom crt_;
-    CActor classes_{game_, crt_};
+    ::testing::NiceMock<MockDeformableModels> models_;
+    CActor classes_{game_, crt_, models_};
     ::testing::NiceMock<MockActorLookup> actors_;
     std::vector<CDemonActor *> known_;
     common::CTextScanner scanner_;

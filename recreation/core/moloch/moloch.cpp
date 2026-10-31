@@ -36,7 +36,7 @@ constinit const CDemonActorType CMoloch::kType =
 //   never reaches (the decomp's hero_interact.h nocturne_hero_fire_interact), with
 //   CMoloch::process
 // nocedit 0x00528b30
-CMoloch::CMoloch() {
+CMoloch::CMoloch(CActor &classes) : CHero(classes) {
     getModel().init("moloch_h.dfm");
 }
 
@@ -79,8 +79,8 @@ float CMoloch::getMorphTimer() const {
 }
 
 // nocedit 0x00528af0
-std::unique_ptr<CDemonActor> CMoloch::create(CActor & /*classes*/) {
-    return std::make_unique<CMoloch>();
+std::unique_ptr<CDemonActor> CMoloch::create(CActor &classes) {
+    return std::make_unique<CMoloch>(classes);
 }
 
 } // namespace nocturne::core

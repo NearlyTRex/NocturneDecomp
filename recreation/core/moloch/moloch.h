@@ -13,7 +13,7 @@ class CMoloch : public CHero {
 public:
     static const CDemonActorType kType;
 
-    CMoloch();
+    explicit CMoloch(CActor &classes);
     ~CMoloch() override;
     CMoloch(const CMoloch &) = delete;
     CMoloch &operator=(const CMoloch &) = delete;

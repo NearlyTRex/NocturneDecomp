@@ -2,6 +2,8 @@
 
 #include <algorithm>
 #include <bit>
+#include <cstdint>
+#include <limits>
 
 namespace nocturne::common {
 namespace {
@@ -242,6 +244,24 @@ float CExtendedFloat::toFloat() const {
         return std::bit_cast<float>(sign | kFloatInfinity);
     }
     return std::bit_cast<float>(sign | (biased << 23U) | (kept & 0x7fffffU));
+}
+
+std::int32_t CExtendedFloat::truncateToInt() const {
+    constexpr std::int32_t kIndefinite = std::numeric_limits<std::int32_t>::min();
+    if (kind_ != EKind::Finite) {
+        return kIndefinite;
+    }
+    // The value is under 2^64 here, so its whole part fits a uint64.
+    if (scale_ >= 0) {
+        return isZero() ? 0 : kIndefinite;
+    }
+    const std::uint64_t whole = scale_ <= -64 ? 0 : mantissa_ >> static_cast<unsigned>(-scale_);
+    const std::uint64_t limit = negative_ ? std::uint64_t{1} << 31U : (std::uint64_t{1} << 31U) - 1;
+    if (whole > limit) {
+        return kIndefinite;
+    }
+    const auto magnitude = static_cast<std::int64_t>(whole);
+    return static_cast<std::int32_t>(negative_ ? -magnitude : magnitude);
 }
 
 } // namespace nocturne::common

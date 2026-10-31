@@ -12,7 +12,7 @@ class CHaystack : public CHero {
 public:
     static const CDemonActorType kType;
 
-    CHaystack();
+    explicit CHaystack(CActor &classes);
     ~CHaystack() override;
     CHaystack(const CHaystack &) = delete;
     CHaystack &operator=(const CHaystack &) = delete;

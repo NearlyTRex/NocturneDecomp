@@ -38,10 +38,13 @@ public:
     // data\<filename>; a file that won't open, or of a version that can't be read, is fatal.
     void load(std::string_view filename);
     int findBone(char *bone_name, int assert_if_not_found);
-    common::CQuaternion4f *getBoneAngleAtFrame(int bone_index, int frame_index);
-    common::CQuaternion4f *getBoneAngleInterpolated(int bone_index, int frame_index_1,
-                                                    int frame_index_2, float interpolation,
-                                                    common::CQuaternion4f *result_out);
+    [[nodiscard]] const common::CQuaternion4f &getBoneAngleAtFrame(int bone_index,
+                                                                   int frame_index) const;
+    // The first frame's at 0 or less, the second's at 1 or more or a NaN, and between them the
+    // slerp of the two.
+    [[nodiscard]] common::CQuaternion4f getBoneAngleInterpolated(int bone_index, int frame_index_1,
+                                                                 int frame_index_2,
+                                                                 float interpolation) const;
     int getHierarchyDistance(int start_bone_index, int target_bone_index);
     int calculateFrameDataSize();
 

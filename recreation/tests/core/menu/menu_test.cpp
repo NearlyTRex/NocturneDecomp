@@ -32,6 +32,7 @@
 #include "support/newmsg/newmsg.h"
 #include "tests/mocks/core/gameparts.h"
 #include "tests/mocks/core/menufontfiles.h"
+#include "tests/mocks/core/mockdeformablemodels.h"
 #include "tests/mocks/core/setparts.h"
 #include "tests/mocks/engine/fontsheet.h"
 #include "tests/mocks/engine/memoryscreen.h"
@@ -223,7 +224,8 @@ protected:
     CDemonSet set_{
         set_parts_.owners(demon_renderer_, matrix_, special_, two_d_, screen_, raw_input_)};
     common::CWatcomRandom crt_random_;
-    CActor actor_{game_, crt_random_};
+    ::testing::NiceMock<MockDeformableModels> models_;
+    CActor actor_{game_, crt_random_, models_};
     engine::CMenuInput menu_input_{keys_};
     engine::CPod pod_{file_system_, dosio_};
     CSound game_sound_{sound_, pod_, file_system_};

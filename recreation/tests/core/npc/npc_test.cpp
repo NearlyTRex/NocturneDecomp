@@ -26,7 +26,7 @@ TEST(CNPC, IsConcrete) {
 }
 
 TEST(CNPC, Constructors) {
-    static_assert(std::is_constructible_v<CNPC>);
+    static_assert(std::is_constructible_v<CNPC, CActor &>);
 }
 
 TEST(CNPC, PublicInterface) {
@@ -52,7 +52,8 @@ TEST(CNPC, ItsRecordIsVersion4UnderCCharacterAndMissionsCanCreateOne) {
 }
 
 TEST(CNPC, AnNPCIsAPriestNobodyCanShoot) {
-    CNPC npc;
+    CTestClasses classes;
+    CNPC npc(classes.get());
     EXPECT_EQ(npc.getModel().getModelName(), "priest.dfm");
     EXPECT_FALSE(npc.isShootable());
     EXPECT_EQ(npc.isInvulnerable(), 1);
@@ -61,7 +62,8 @@ TEST(CNPC, AnNPCIsAPriestNobodyCanShoot) {
 
 // CDemonActor's fields and the hit points of a version 1 CCharacter, then the NPC's own.
 TEST(CNPC, AnNPCIsReadWithItsModelAndMotion) {
-    CNPC npc;
+    CTestClasses classes;
+    CNPC npc(classes.get());
     CTestFieldsArchive archive(npc, CNPC::kType, 4,
                                "75 // hitPoints\n\t\"MOBSTER4.DFM\"    // modelName\n"
                                "\t{ // motion state\n\t\t2,1.5\n\t}\n\t1    // shootMe\n");
@@ -76,7 +78,8 @@ TEST(CNPC, AnNPCIsReadWithItsModelAndMotion) {
 
 // A version that no shipped file holds: the blood pool after shootMe.
 TEST(CNPC, AVersionFiveNPCKnowsWhetherItHasLeftItsBloodPool) {
-    CNPC npc;
+    CTestClasses classes;
+    CNPC npc(classes.get());
     CTestFieldsArchive archive(npc, CNPC::kType, 5, "75\n\"p.dfm\"\n{\n0,0\n}\n0\n1 // poolMe\n");
     npc.archive(archive.get());
     EXPECT_TRUE(npc.hasLeftBloodPool());
@@ -84,7 +87,8 @@ TEST(CNPC, AVersionFiveNPCKnowsWhetherItHasLeftItsBloodPool) {
 }
 
 TEST(CNPC, AVersionTwoNPCHasOnlyCCharactersFields) {
-    CNPC npc;
+    CTestClasses classes;
+    CNPC npc(classes.get());
     CTestFieldsArchive archive(npc, CNPC::kType, 2, "55 // hitPoints\n");
     npc.archive(archive.get());
     EXPECT_EQ(npc.getHitPoints(), 55.0F);
@@ -96,7 +100,8 @@ TEST(CNPC, AVersionTwoNPCHasOnlyCCharactersFields) {
 // Version 1 saved only CDemonActor's fields and the hit points, skipping the rest of
 // CCharacter's.
 TEST(CNPC, AVersionOneNPCHasOnlyItsHitPoints) {
-    CNPC npc;
+    CTestClasses classes;
+    CNPC npc(classes.get());
     CTestFieldsArchive archive(npc, CNPC::kType, 1, "40 // hitPoints\n");
     archive.getClasses().setSavedVersion(CCharacter::kType, 9);
     npc.archive(archive.get());
@@ -106,7 +111,8 @@ TEST(CNPC, AVersionOneNPCHasOnlyItsHitPoints) {
 }
 
 TEST(CNPC, TheFunctionsNotPortedYetQuit) {
-    CNPC npc;
+    CTestClasses classes;
+    CNPC npc(classes.get());
     const NotPortedCalls calls = {
         {"setup", [&] { npc.setup(); }},
         {"process", [&] { npc.process(0.0F); }},

@@ -21,6 +21,7 @@
 #include "core/podmain/demonpod.h"
 #include "core/script/script.h"
 #include "core/set/demonset.h"
+#include "core/skeleton/deformablemodelmanager.h"
 #include "core/sound/sound.h"
 #include "core/terrain/terrain.h"
 #include "core/water/water.h"
@@ -279,7 +280,8 @@ private:
                           .screen = screen_,
                           .raw_input = winrun_}};
     nocturne::common::CWatcomRandom crt_random_;
-    core::CActor actor_{game_, crt_random_};
+    core::CDeformableModelManager deformable_models_{dosio_, demon_renderer_};
+    core::CActor actor_{game_, crt_random_, deformable_models_};
     nocturne::shape::CEdControls controls_{{.two_d = two_d_,
                                             .screen = screen_,
                                             .raw_input = winrun_,

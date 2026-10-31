@@ -20,7 +20,7 @@ constinit const CDemonActorType CHaystack::kType =
 // deferred: the defaults the constructor gives Haystack's own fields, with the steps that read
 //   them
 // nocedit 0x004f0c10
-CHaystack::CHaystack() {
+CHaystack::CHaystack(CActor &classes) : CHero(classes) {
     getModel().init("haystack.dfm");
 }
 
@@ -38,8 +38,8 @@ void CHaystack::archive(CActorArchive &actor_archive) {
 }
 
 // nocedit 0x004f0bd0
-std::unique_ptr<CDemonActor> CHaystack::create(CActor & /*classes*/) {
-    return std::make_unique<CHaystack>();
+std::unique_ptr<CDemonActor> CHaystack::create(CActor &classes) {
+    return std::make_unique<CHaystack>(classes);
 }
 
 } // namespace nocturne::core

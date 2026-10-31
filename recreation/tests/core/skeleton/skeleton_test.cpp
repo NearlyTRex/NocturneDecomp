@@ -1,12 +1,14 @@
 #include "common/error/fatalerror.h"
 #include "common/math/quaternion4f.h"
 #include "core/skeleton/skeleton.h"
+#include "core/xform/xform.h"
 #include "engine/dosio/dosio.h"
 #include "tests/mocks/engine/podfixture.h"
 
 #include <gmock/gmock.h>
 #include <gtest/gtest.h>
 
+#include <cmath>
 #include <format>
 #include <string>
 #include <string_view>
@@ -32,10 +34,9 @@ TEST(CSkeleton, PublicInterface) {
         std::is_same_v<decltype(&CSkeleton::load), void (CSkeleton::*)(std::string_view)>);
     static_assert(std::is_same_v<decltype(&CSkeleton::findBone), int (CSkeleton::*)(char *, int)>);
     static_assert(std::is_same_v<decltype(&CSkeleton::getBoneAngleAtFrame),
-                                 common::CQuaternion4f *(CSkeleton::*)(int, int)>);
+                                 const common::CQuaternion4f &(CSkeleton::*)(int, int) const>);
     static_assert(std::is_same_v<decltype(&CSkeleton::getBoneAngleInterpolated),
-                                 common::CQuaternion4f *(CSkeleton::*)(int, int, int, float,
-                                                                       common::CQuaternion4f *)>);
+                                 common::CQuaternion4f (CSkeleton::*)(int, int, int, float) const>);
     static_assert(
         std::is_same_v<decltype(&CSkeleton::getHierarchyDistance), int (CSkeleton::*)(int, int)>);
     static_assert(
@@ -112,6 +113,28 @@ TEST_F(CSkeletonTest, AVersionTwoSkeletonEndsAtItsMotions) {
     skeleton_.load("old.skl");
     EXPECT_EQ(skeleton_.getBoneCount(), 2);
     EXPECT_EQ(skeleton_.getMotionList().getStateNames()[0], "STAND");
+}
+
+TEST_F(CSkeletonTest, EachFrameHoldsEveryBonesAngle) {
+    givenFile("data\\GABRIELA.SKL", skeletonFile(3));
+    skeleton_.load("GABRIELA.SKL");
+    EXPECT_EQ(skeleton_.getBoneAngleAtFrame(1, 0),
+              (common::CQuaternion4f{.w = 0.5F, .x = 0.25F, .y = 0.125F, .z = 1.0F}));
+    EXPECT_EQ(skeleton_.getBoneAngleAtFrame(0, 1), (common::CQuaternion4f{.x = 1.0F}));
+}
+
+// A NaN takes the second frame, as the original's unordered compares do.
+TEST_F(CSkeletonTest, AnAngleBetweenFramesIsTheirSlerpInsideZeroToOne) {
+    givenFile("data\\GABRIELA.SKL", skeletonFile(3));
+    skeleton_.load("GABRIELA.SKL");
+    const common::CQuaternion4f first{.w = 1.0F};
+    const common::CQuaternion4f second{.x = 1.0F};
+    EXPECT_EQ(skeleton_.getBoneAngleInterpolated(0, 0, 1, 0.0F), first);
+    EXPECT_EQ(skeleton_.getBoneAngleInterpolated(0, 0, 1, -1.0F), first);
+    EXPECT_EQ(skeleton_.getBoneAngleInterpolated(0, 0, 1, 1.0F), second);
+    EXPECT_EQ(skeleton_.getBoneAngleInterpolated(0, 0, 1, std::nanf("")), second);
+    EXPECT_EQ(skeleton_.getBoneAngleInterpolated(0, 0, 1, 0.25F),
+              slerpQuaternion(first, second, 0.25F));
 }
 
 TEST_F(CSkeletonTest, FreeingForgetsTheBonesAndFrames) {

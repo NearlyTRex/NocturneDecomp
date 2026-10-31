@@ -6,7 +6,9 @@
 #include <gmock/gmock.h>
 #include <gtest/gtest.h>
 
+#include <cstddef>
 #include <cstdint>
+#include <span>
 #include <string_view>
 #include <type_traits>
 
@@ -32,9 +34,10 @@ TEST(CDeformableModel, PublicInterface) {
                                  CSkeleton *(CDeformableModel::*)()>);
     static_assert(std::is_same_v<decltype(&CDeformableModel::getVertexPoolPtr),
                                  common::CVector3f *(CDeformableModel::*)(int)>);
-    static_assert(std::is_same_v<decltype(&CDeformableModel::skinVertices),
-                                 void (CDeformableModel::*)(int, common::CMatrix3x4f *, int *,
-                                                            SPartInstanceData *)>);
+    static_assert(
+        std::is_same_v<decltype(&CDeformableModel::skinVertices),
+                       void (CDeformableModel::*)(std::size_t, std::span<const common::CMatrix3x4f>,
+                                                  std::span<common::CVector3i>) const>);
     static_assert(std::is_same_v<decltype(&CDeformableModel::skinSingleVertex),
                                  common::CVector3f *(CDeformableModel::*)(
                                      common::CVector3f *, int, int, common::CMatrix3x4f *)>);

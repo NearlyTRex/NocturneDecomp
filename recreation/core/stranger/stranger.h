@@ -13,7 +13,7 @@ class CStranger : public CHero {
 public:
     static const CDemonActorType kType;
 
-    CStranger();
+    explicit CStranger(CActor &classes);
     ~CStranger() override;
     CStranger(const CStranger &) = delete;
     CStranger &operator=(const CStranger &) = delete;

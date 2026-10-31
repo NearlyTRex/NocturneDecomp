@@ -13,7 +13,7 @@ class CNPC : public CCharacter {
 public:
     static const CDemonActorType kType;
 
-    CNPC();
+    explicit CNPC(CActor &classes);
     ~CNPC() override;
     CNPC(const CNPC &) = delete;
     CNPC &operator=(const CNPC &) = delete;

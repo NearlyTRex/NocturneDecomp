@@ -10,6 +10,7 @@
 #include "core/weapon/weapon.h"
 #include "tests/mocks/core/gameparts.h"
 #include "tests/mocks/core/mockactorlookup.h"
+#include "tests/mocks/core/mockdeformablemodels.h"
 #include "tests/mocks/core/testactor.h"
 #include "tests/mocks/engine/mockgameclock.h"
 
@@ -167,7 +168,8 @@ protected:
     CGameParts game_parts_{clock_};
     CGame &game_ = game_parts_.getGame();
     common::CWatcomRandom crt_;
-    CActor classes_{game_, crt_};
+    ::testing::NiceMock<MockDeformableModels> models_;
+    CActor classes_{game_, crt_, models_};
     ::testing::NiceMock<MockActorLookup> actors_;
     CTestActor owner_{kTestBaseType};
     CInventory inventory_;

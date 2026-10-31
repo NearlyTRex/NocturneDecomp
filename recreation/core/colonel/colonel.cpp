@@ -30,7 +30,7 @@ constinit const CDemonActorType CColonel::kType =
 //   damage and shoving it back (the decomp's nocturne_colonel_push_off and hero_shove.h), with
 //   CColonel::process
 // nocedit 0x0043f7e0
-CColonel::CColonel() {
+CColonel::CColonel(CActor &classes) : CHero(classes) {
     getModel().init("colonel.dfm");
 }
 
@@ -48,8 +48,8 @@ void CColonel::archive(CActorArchive &actor_archive) {
 }
 
 // nocedit 0x0043f7a0
-std::unique_ptr<CDemonActor> CColonel::create(CActor & /*classes*/) {
-    return std::make_unique<CColonel>();
+std::unique_ptr<CDemonActor> CColonel::create(CActor &classes) {
+    return std::make_unique<CColonel>(classes);
 }
 
 } // namespace nocturne::core

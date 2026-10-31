@@ -9,6 +9,14 @@
 
 namespace nocturne::core {
 
+// The two of the skeleton's frames a point in a motion lies between, and how far towards the
+// second it is.
+struct SInterpolationFrames {
+    int frame_1 = 0;
+    int frame_2 = 0;
+    float blend_weight = 0.0F;
+};
+
 // Plays an actor's motions from its motion list: which motion and frame it is at, and how it is
 // moving to the next.
 class CMotionController {
@@ -31,8 +39,10 @@ public:
     SMotion *getCurrentMotion();
     void setDesiredState(int desired_state_index, int force_immediate);
     void setDesiredStateByName(char *state_name, int force_immediate);
-    void setMotionList(CMotionList *motion_list);
-    CMotionList *getMotionList();
+    // Looks up the motion a file named, which isn't ported yet.
+    void setMotionList(const CMotionList &motion_list);
+    // Null until setMotionList.
+    [[nodiscard]] const CMotionList *getMotionList() const;
     char *getCurrentStateName();
     float getStateBlendWeight(int desired_state_index);
     void jumpToMotionByName(char *motion_name, float frame_number);
@@ -41,8 +51,10 @@ public:
     void jumpToMotion(int target_motion_index, float target_frame_number);
     float frameToMarkerPosition();
     float markerPositionToFrame(int motion_index, float marker_position);
-    void getFramesForInterpolation(int motion_index, float frame_number, int *out_frame1,
-                                   int *out_frame2, float *out_blend_weight);
+    // From the motion's first frame up to its last; past the last, towards where its forward
+    // exit jumps to when it jumps from there.
+    [[nodiscard]] SInterpolationFrames getFramesForInterpolation(int motion_index,
+                                                                 float frame_number) const;
     // Reads the motion and frame a file saved, as an index or a quoted name, to the end of the
     // line. Neither is fatal.
     void load(common::CTextScanner &scanner);
@@ -64,6 +76,7 @@ private:
     void reset();
     void clearTweenState();
 
+    const CMotionList *motion_list_ = nullptr;
     int current_motion_index_ = 0;
     float current_frame_number_ = 0.0F;
     std::string current_motion_name_;

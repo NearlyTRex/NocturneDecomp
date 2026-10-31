@@ -27,7 +27,7 @@ constinit const CDemonActorType CNPC::kType =
 // deferred: the path map, the collision cylinder and catching fire from a gun's flame, with
 //   CNPC::setup and CCharacter::process
 // nocedit 0x005447e0
-CNPC::CNPC() {
+CNPC::CNPC(CActor &classes) : CCharacter(classes) {
     getModel().init("priest.dfm");
 }
 
@@ -40,8 +40,8 @@ const CDemonActorType &CNPC::getActorType() const {
 }
 
 // nocedit 0x005447a0
-std::unique_ptr<CDemonActor> CNPC::create(CActor & /*classes*/) {
-    return std::make_unique<CNPC>();
+std::unique_ptr<CDemonActor> CNPC::create(CActor &classes) {
+    return std::make_unique<CNPC>(classes);
 }
 
 // nocedit 0x00544ba0
