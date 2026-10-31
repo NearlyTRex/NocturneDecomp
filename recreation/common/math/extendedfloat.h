@@ -24,6 +24,8 @@ public:
     [[nodiscard]] bool operator==(const CExtendedFloat &other) const;
     // To the nearest float, ties to even, as FST stores it.
     [[nodiscard]] float toFloat() const;
+    // To the nearest double, ties to even, as FST stores it.
+    [[nodiscard]] double toDouble() const;
     // Chopped toward zero, as the CRT round and FISTP leave it, and the x87's integer indefinite
     // when no int holds it.
     [[nodiscard]] std::int32_t truncateToInt() const;

@@ -95,6 +95,13 @@ void CBoundingBox3D::expand(const common::CVector3f &point) {
     max.z = std::max(max.z, point.z);
 }
 
+// nocedit 0x004202b0
+common::CVector3f CBoundingBox3D::getCorner(std::uint32_t corner_index) const {
+    return {.x = (corner_index & kCornerMaxX) != 0 ? max.x : min.x,
+            .y = (corner_index & kCornerMaxY) != 0 ? max.y : min.y,
+            .z = (corner_index & kCornerMaxZ) != 0 ? max.z : min.z};
+}
+
 // nocedit 0x00420940
 float CBoundingBox3D::doesRayIntersect(const common::CVector3f &ray_origin,
                                        const common::CVector3f &ray_direction,

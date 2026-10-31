@@ -426,13 +426,14 @@ void CMotionController::load(common::CTextScanner &scanner) {
     scanner.skipLine();
 }
 
-// deferred: looking up the motion a file named, with CMotionList::findMotionIndex
 // nocedit 0x0052dcb0
 void CMotionController::setMotionList(const CMotionList &motion_list) {
     motion_list_ = &motion_list;
-    if (!current_motion_name_.empty()) {
-        quitNotPorted("CMotionList", "findMotionIndex");
+    if (current_motion_name_.empty()) {
+        return;
     }
+    current_motion_index_ = motion_list_->findMotionIndex(current_motion_name_, true);
+    current_motion_name_.clear();
 }
 
 // nocedit 0x0052dce0

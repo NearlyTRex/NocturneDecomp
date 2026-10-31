@@ -116,7 +116,7 @@ TEST(CDeformableModelInstance, PublicInterface) {
     static_assert(std::is_same_v<decltype(&CDeformableModelInstance::setBoneTransform),
                                  void (CDeformableModelInstance::*)(SPose *)>);
     static_assert(std::is_same_v<decltype(&CDeformableModelInstance::computeBoundingBoxFromBones),
-                                 CBoundingBox3D *(CDeformableModelInstance::*)(CBoundingBox3D *)>);
+                                 CBoundingBox3D (CDeformableModelInstance::*)()>);
     static_assert(std::is_same_v<decltype(&CDeformableModelInstance::computeCylindricalUVs),
                                  void (CDeformableModelInstance::*)(int, int)>);
 }

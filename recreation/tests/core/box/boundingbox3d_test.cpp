@@ -18,9 +18,8 @@ TEST(CBoundingBox3D, IsConcrete) {
 TEST(CBoundingBox3D, PublicInterface) {
     static_assert(std::is_same_v<decltype(&CBoundingBox3D::expand),
                                  void (CBoundingBox3D::*)(const common::CVector3f &)>);
-    static_assert(
-        std::is_same_v<decltype(&CBoundingBox3D::getCorner),
-                       common::CVector3f *(CBoundingBox3D::*)(common::CVector3f *, std::uint32_t)>);
+    static_assert(std::is_same_v<decltype(&CBoundingBox3D::getCorner),
+                                 common::CVector3f (CBoundingBox3D::*)(std::uint32_t) const>);
     static_assert(std::is_same_v<decltype(&CBoundingBox3D::isVisible), int (CBoundingBox3D::*)()>);
     static_assert(std::is_same_v<decltype(&CBoundingBox3D::getBoundingBoxScreenSize),
                                  float (CBoundingBox3D::*)()>);
@@ -171,6 +170,15 @@ TEST(CBoundingBox3D, AnUnorderedMaxLetsThePointThrough) {
     const CBoundingBox3D box{.min = {.x = 0, .y = 0, .z = 0},
                              .max = {.x = 1, .y = std::numeric_limits<float>::quiet_NaN(), .z = 1}};
     EXPECT_EQ(box.doesRayIntersect({.x = -1, .y = 0.5F, .z = 0.5F}, {.x = 4}, nullptr), 0.25F);
+}
+
+TEST(CBoundingBox3D, EachIndexBitTakesItsAxissMax) {
+    const CBoundingBox3D box{.min = {.x = 1, .y = 2, .z = 3}, .max = {.x = 4, .y = 5, .z = 6}};
+    EXPECT_TRUE(box.getCorner(0).equals({.x = 1, .y = 2, .z = 3}));
+    EXPECT_TRUE(box.getCorner(1).equals({.x = 4, .y = 2, .z = 3}));
+    EXPECT_TRUE(box.getCorner(2).equals({.x = 1, .y = 5, .z = 3}));
+    EXPECT_TRUE(box.getCorner(4).equals({.x = 1, .y = 2, .z = 6}));
+    EXPECT_TRUE(box.getCorner(7).equals({.x = 4, .y = 5, .z = 6}));
 }
 
 } // namespace

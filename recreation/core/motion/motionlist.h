@@ -6,6 +6,7 @@
 
 #include <span>
 #include <string>
+#include <string_view>
 #include <vector>
 
 namespace nocturne::core {
@@ -57,7 +58,8 @@ public:
     // A version past 2 is fatal; markers come from version 2. The original's fixed lists of 80
     // states, 120 motions and 45 transitions, 15 signals and 10 markers a motion overran.
     void load(common::CTextScanner &scanner);
-    int findMotionIndex(char *motion_name, int error_on_not_found);
+    // The first motion of the name in any case; -1 for none, or fatal when asked.
+    [[nodiscard]] int findMotionIndex(std::string_view motion_name, bool error_on_not_found) const;
     int findStateIndex(char *state_name, int error_on_not_found);
 
     [[nodiscard]] std::span<const std::string> getStateNames() const;

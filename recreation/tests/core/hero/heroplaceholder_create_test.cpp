@@ -1,5 +1,6 @@
 #include "common/error/fatalerror.h"
 #include "common/math/vector3f.h"
+#include "core/actor/actor_functions.h"
 #include "core/actor/demonactortype.h"
 #include "core/baron/baron.h"
 #include "core/colonel/colonel.h"
@@ -64,6 +65,14 @@ TEST_F(CHeroPlaceholderCreateTest, TheHeroIsNamedAndStandsWhereThePlaceIs) {
     EXPECT_EQ(orientation.x, 0.5F);
     EXPECT_EQ(orientation.y, 0.25F);
     EXPECT_EQ(orientation.z, 0.125F);
+}
+
+TEST_F(CHeroPlaceholderCreateTest, TheHerosAnglesAreBroughtToWithinPi) {
+    CHeroPlaceholder placeholder;
+    placeholder.setOrientation(common::CVector3f(0.0F, 0.0F, 7.0F));
+    const std::unique_ptr<CHero> hero =
+        placeholder.createHero(EHeroType::HERO_TYPE_SCAT, actor_, mission_);
+    EXPECT_EQ(hero->getOrientation().z, normalizeAngleToPi(7.0F));
 }
 
 // Types past the last hero's, as a settings file could hold them.

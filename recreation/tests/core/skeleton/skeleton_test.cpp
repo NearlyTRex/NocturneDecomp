@@ -32,7 +32,8 @@ TEST(CSkeleton, PublicInterface) {
     static_assert(std::is_same_v<decltype(&CSkeleton::free), void (CSkeleton::*)()>);
     static_assert(
         std::is_same_v<decltype(&CSkeleton::load), void (CSkeleton::*)(std::string_view)>);
-    static_assert(std::is_same_v<decltype(&CSkeleton::findBone), int (CSkeleton::*)(char *, int)>);
+    static_assert(std::is_same_v<decltype(&CSkeleton::findBone),
+                                 int (CSkeleton::*)(std::string_view, bool) const>);
     static_assert(std::is_same_v<decltype(&CSkeleton::getBoneAngleAtFrame),
                                  const common::CQuaternion4f &(CSkeleton::*)(int, int) const>);
     static_assert(std::is_same_v<decltype(&CSkeleton::getBoneAngleInterpolated),
@@ -135,6 +136,16 @@ TEST_F(CSkeletonTest, AnAngleBetweenFramesIsTheirSlerpInsideZeroToOne) {
     EXPECT_EQ(skeleton_.getBoneAngleInterpolated(0, 0, 1, std::nanf("")), second);
     EXPECT_EQ(skeleton_.getBoneAngleInterpolated(0, 0, 1, 0.25F),
               slerpQuaternion(first, second, 0.25F));
+}
+
+TEST_F(CSkeletonTest, ABoneIsFoundByItsNameInAnyCase) {
+    givenFile("data\\GABRIELA.SKL", skeletonFile(3));
+    skeleton_.load("GABRIELA.SKL");
+    EXPECT_EQ(skeleton_.findBone("bip01 spine", true), 1);
+    EXPECT_EQ(skeleton_.findBone("Bip01 Head", false), -1);
+    EXPECT_THAT([this] { static_cast<void>(skeleton_.findBone("Bip01 Head", true)); },
+                ThrowsMessage<common::CFatalError>(
+                    StrEq("Can't find bone Bip01 Head in skeleton GABRIELA.SKL!")));
 }
 
 TEST_F(CSkeletonTest, TheHierarchyDistanceCountsTheBonesUpToTheTarget) {

@@ -71,7 +71,6 @@ std::unique_ptr<CDemonActor> CHeroPlaceholder::create(CActor & /*classes*/) {
 }
 
 // The original also quit when the class it made wasn't a hero, which none of these can be.
-// deferred: updating the hero's orientation matrix, with updateOrientationMatrix
 // nocedit 0x004f3d80
 std::unique_ptr<CHero> CHeroPlaceholder::createHero(EHeroType hero_type, CActor &actor,
                                                     const CDemonMission &mission) const {
@@ -80,6 +79,7 @@ std::unique_ptr<CHero> CHeroPlaceholder::createHero(EHeroType hero_type, CActor 
     mission.generateActorName(*hero);
     hero->setLocation(getLocation());
     hero->CDemonActor::setOrientation(getOrientation());
+    hero->updateOrientationMatrix();
     return hero;
 }
 

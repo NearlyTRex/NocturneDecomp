@@ -4,7 +4,9 @@
 
 #include <gtest/gtest.h>
 
+#include <cmath>
 #include <cstdint>
+#include <limits>
 #include <string>
 #include <string_view>
 #include <type_traits>
@@ -126,6 +128,25 @@ TEST_F(CoreActorClassTest, AnUnreadableExpressionMatchesNothing) {
 // A ')' with nothing open ends the expression, whatever follows it.
 TEST_F(CoreActorClassTest, AStrayClosingBracketEndsTheExpression) {
     EXPECT_TRUE(isOfClass(&leaf_, "CTestLeaf ) & CTestOther"));
+}
+
+TEST(CoreActorFunctions, AnAngleWithinPiIsLeftAsItIs) {
+    EXPECT_EQ(normalizeAngleToPi(2.6444902F), 2.6444902F);
+    EXPECT_EQ(normalizeAngleToPi(-3.14159F), -3.14159F);
+    EXPECT_EQ(normalizeAngleToPi(0.0F), 0.0F);
+}
+
+// The values nocedit's own code gives.
+TEST(CoreActorFunctions, AnAngleIsMovedByWholeTurnsToWithinPi) {
+    EXPECT_EQ(normalizeAngleToPi(93.18992614746094F), -0x1.0ecf7cp+0F);
+    EXPECT_EQ(normalizeAngleToPi(-41.827919006347656F), 0x1.13c2aap+1F);
+    EXPECT_EQ(normalizeAngleToPi(572007.875F), -0x1.7f7a22p-1F);
+}
+
+TEST(CoreActorFunctions, AnAngleThatIsntFiniteIsNaN) {
+    EXPECT_TRUE(std::isnan(normalizeAngleToPi(std::numeric_limits<float>::infinity())));
+    EXPECT_TRUE(std::isnan(normalizeAngleToPi(-std::numeric_limits<float>::infinity())));
+    EXPECT_TRUE(std::isnan(normalizeAngleToPi(std::numeric_limits<float>::quiet_NaN())));
 }
 
 } // namespace

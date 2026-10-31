@@ -113,7 +113,9 @@ public:
                  int desired_lod_index);
     SPose *getBoneTransform(SPose *bone_transform);
     void setBoneTransform(SPose *bone_transform);
-    CBoundingBox3D *computeBoundingBoxFromBones(CBoundingBox3D *output_bbox);
+    // The box the posed bones that end chains take up: each one's box, carried by its matrix, by
+    // all eight corners. The empty box when there are none.
+    [[nodiscard]] CBoundingBox3D computeBoundingBoxFromBones();
     void computeCylindricalUVs(int u_offset, int v_offset);
 
     [[nodiscard]] const std::string &getModelName() const;

@@ -28,8 +28,8 @@ TEST(CMotionList, Constructors) {
 TEST(CMotionList, PublicInterface) {
     static_assert(std::is_same_v<decltype(&CMotionList::load),
                                  void (CMotionList::*)(common::CTextScanner &)>);
-    static_assert(
-        std::is_same_v<decltype(&CMotionList::findMotionIndex), int (CMotionList::*)(char *, int)>);
+    static_assert(std::is_same_v<decltype(&CMotionList::findMotionIndex),
+                                 int (CMotionList::*)(std::string_view, bool) const>);
     static_assert(
         std::is_same_v<decltype(&CMotionList::findStateIndex), int (CMotionList::*)(char *, int)>);
 }
@@ -85,6 +85,23 @@ TEST(CMotionList, AListIsReadWithItsStatesMotionsTransitionsSignalsAndMarkers) {
     EXPECT_EQ(motion.signals[0].value, 9);
     EXPECT_THAT(motion.markers, ElementsAre(5, 10));
     EXPECT_EQ(scanner.readLine(), "// after");
+}
+
+// Two motions, walk listed twice: the first is found.
+TEST(CMotionList, AMotionIsFoundByItsNameInAnyCase) {
+    const std::string text = "// v\n2\n// s\n0\n// m\n3\n// m0\n\"stand\",1,0,0,1\n" +
+                             motionBody("0\n", "0\n") + "// k\n0\n// m1\n\"Walk\",1,0,0,1\n" +
+                             motionBody("0\n", "0\n") + "// k\n0\n// m2\n\"walk\",1,0,0,1\n" +
+                             motionBody("0\n", "0\n") + "// k\n0\n";
+    common::CTextScanner scanner(text);
+    CMotionList list;
+    list.load(scanner);
+    EXPECT_EQ(list.findMotionIndex("STAND", false), 0);
+    EXPECT_EQ(list.findMotionIndex("walk", true), 1);
+    EXPECT_EQ(list.findMotionIndex("run", false), -1);
+    EXPECT_THAT(
+        [&] { static_cast<void>(list.findMotionIndex("run", true)); },
+        ThrowsMessage<common::CFatalError>(StrEq("Can't find motion \"run\" in motion list")));
 }
 
 // No markers, and nothing kept from the list read before.

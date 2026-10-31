@@ -16,10 +16,6 @@ namespace {
 
 } // namespace
 
-void CDemonActor::setup() {
-    notPorted("setup");
-}
-
 void CDemonActor::process(float /*delta_time*/) {
     notPorted("process");
 }

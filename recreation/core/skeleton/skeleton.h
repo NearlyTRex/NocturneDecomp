@@ -37,7 +37,8 @@ public:
     void free();
     // data\<filename>; a file that won't open, or of a version that can't be read, is fatal.
     void load(std::string_view filename);
-    int findBone(char *bone_name, int assert_if_not_found);
+    // The first bone of the name in any case; -1 for none, or fatal when asked.
+    [[nodiscard]] int findBone(std::string_view bone_name, bool assert_if_not_found) const;
     [[nodiscard]] const common::CQuaternion4f &getBoneAngleAtFrame(int bone_index,
                                                                    int frame_index) const;
     // The first frame's at 0 or less, the second's at 1 or more or a NaN, and between them the

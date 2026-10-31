@@ -15,7 +15,9 @@ public:
 
     // Grows the box to take in the point.
     void expand(const common::CVector3f &point);
-    common::CVector3f *getCorner(common::CVector3f *out_point, std::uint32_t corner_index);
+    // One of the eight corners: each of the index's lowest three bits takes the max for its axis,
+    // x, y and z from the lowest up, and the min when clear.
+    [[nodiscard]] common::CVector3f getCorner(std::uint32_t corner_index) const;
     int isVisible();
     float getBoundingBoxScreenSize();
     // Where the segment from ray_origin to ray_origin + ray_direction enters the box, as a fraction
@@ -30,6 +32,13 @@ public:
     void render();
     common::CVector3f *clampPoint(common::CVector3f *out_point, common::CVector3f *in_point);
     int doesSphereIntersect(common::CVector3f *sphere_center, float radius);
+
+    static constexpr std::uint32_t kCorners = 8;
+
+private:
+    static constexpr std::uint32_t kCornerMaxX = 1;
+    static constexpr std::uint32_t kCornerMaxY = 2;
+    static constexpr std::uint32_t kCornerMaxZ = 4;
 };
 
 } // namespace nocturne::core

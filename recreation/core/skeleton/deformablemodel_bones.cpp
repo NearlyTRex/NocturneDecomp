@@ -14,7 +14,7 @@ namespace {
 
 constexpr int kNoFollowers = 0;
 constexpr int kFollowed = 1;
-constexpr int kChainEnd = 2;
+constexpr int kChainEnd = CDeformableModel::kBoneEndsChain;
 // How many ancestors are looked through for a chain's end.
 constexpr int kChainDepth = 2;
 

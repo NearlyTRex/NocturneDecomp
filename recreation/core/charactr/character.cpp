@@ -138,6 +138,61 @@ CDemonActor *CCharacter::getGrabber() {
     return grabbed_by_;
 }
 
+// The original also checks each carried actor is one it made, which an object always is.
+// deferred: no damage decals yet, with processDamageDecals
+// deferred: a closest distance threshold of 9999, with processCharacter and moveAndCollide
+// deferred: the stake model the characters share, stake_b.kfm, set and loaded, with
+//   renderAttachedModels
+// deferred: the model's head bone looked at, "bip01 head", with applyLookAt
+// deferred: an ethereal character's flames, one on every bone, the first twice its size, with
+//   getPropertyList's Etheral, the only way a character becomes one
+// deferred: each layer action's motion and length, and the cheapest time between any two of
+//   their bones, with advanceLayerAction
+// deferred: no sound playing, with processCharacter
+// nocedit 0x00428140
+void CCharacter::setup() {
+    CDemonActor::setup();
+    for (CDemonActor *carried : carried_actors_) {
+        if (carried == nullptr) {
+            continue;
+        }
+        const CDemonActor *carrier = carried->getCarrier();
+        if (carrier == nullptr) {
+            carried->pickup(this);
+        } else if (carrier != this) {
+            common::displayErrorAndQuit(std::format(
+                "{} is carrying {}, but {} thinks it is being carried by {}", getActorName(),
+                carried->getActorName(), carried->getActorName(), carrier->getActorName()));
+        }
+    }
+    if (!model_.getModelName().empty()) {
+        model_.setScaleFactor(size_scale_);
+        model_.preCache();
+    }
+    computeBoundingBox();
+    cloth_list_.load();
+    common::CVector3f position = getLocation().position;
+    common::CVector3f orientation = getOrientation();
+    cloth_list_.setup(&position, &orientation, &model_);
+    cloth_list_.process(&position, &orientation, kClothSettleTime, kNoFloor, &model_);
+    if (descriptive_name_.empty()) {
+        descriptive_name_ = getActorClassName().substr(1);
+    }
+}
+
+// nocedit 0x0042b8a0
+CBoundingBox3D *CCharacter::getBoundingBox(CBoundingBox3D *out_box) {
+    *out_box = bounding_box_;
+    return out_box;
+}
+
+// nocedit 0x0042d530
+void CCharacter::computeBoundingBox() {
+    if (!model_.getModelName().empty()) {
+        bounding_box_ = model_.computeBoundingBoxFromBones();
+    }
+}
+
 // nocedit 0x0042d360
 bool CCharacter::isCarryingAnything() const {
     return std::ranges::any_of(carried_actors_,

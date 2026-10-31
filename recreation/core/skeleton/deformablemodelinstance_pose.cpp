@@ -416,6 +416,26 @@ common::CVector3f CDeformableModelInstance::getRootMotionDelta(float start_frame
             .z = z * root_offset_scale_.z};
 }
 
+// nocedit 0x005a16c0
+CBoundingBox3D CDeformableModelInstance::computeBoundingBoxFromBones() {
+    CDeformableModel &model = *getModelPtr();
+    const std::size_t bone_count = model.getSkeletonPtr()->getBones().size();
+    const std::span<const CBoundingBox3D> bounds = model.getBoneBounds();
+    const std::span<const int> flags = model.getBoneFlags();
+    CBoundingBox3D box;
+    box.reset();
+    for (std::size_t i = 0; i < bone_count; ++i) {
+        if (flags[i] != CDeformableModel::kBoneEndsChain) {
+            continue;
+        }
+        for (std::uint32_t corner = 0; corner < CBoundingBox3D::kCorners; ++corner) {
+            box.expand(transformVector3x4(bounds[i].getCorner(corner),
+                                          bone_transform_.bone_model_matrices.at(i)));
+        }
+    }
+    return box;
+}
+
 // nocedit 0x005a01d0
 void CDeformableModelInstance::skinVerticesForLOD(int lod_index) {
     getModelPtr()->skinVertices(static_cast<std::size_t>(lod_index),

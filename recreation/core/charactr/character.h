@@ -30,10 +30,13 @@ public:
     CCharacter(CCharacter &&) = delete;
     CCharacter &operator=(CCharacter &&) = delete;
 
+    // Picks up what it carries, finds its model at its size, takes the box its bones make and
+    // loads its cloth. With no descriptive name, it is named after its class.
     void setup() override;
     int renderOpaque() override;
     int renderTransparent() override;
     void renderBackground(int layer_flag) override;
+    // The box computeBoundingBox last took.
     CBoundingBox3D *getBoundingBox(CBoundingBox3D *out_box) override;
     ECollisionType getCollisionType(SCollisionInfo *collision_info) override;
     int canLookAt() override;
@@ -100,6 +103,7 @@ public:
     void updateCarriedObjects(float delta_time);
     [[nodiscard]] bool isCarryingAnything() const;
     int initGesture(char *motion_name);
+    // The box the model's posed bones take up; none without a model.
     void computeBoundingBox();
     void findSomethingToLookAt(float delta_time, int disable_search);
     void setLookAtTarget(CDemonActor *target);
@@ -156,6 +160,9 @@ protected:
 
 private:
     static constexpr float kFullHitPoints = 100.0F;
+    // The step the cloth is moved on by as it is set up, and the floor below it then: none.
+    static constexpr float kClothSettleTime = 0.05F;
+    static constexpr float kNoFloor = 9999.0F;
 
     CDeformableModelInstance model_;
     float hit_points_ = kFullHitPoints;
@@ -170,6 +177,7 @@ private:
     std::string descriptive_name_;
     int layer_action_index_ = 0;
     float layer_action_t_ = 0.0F;
+    CBoundingBox3D bounding_box_;
 };
 
 } // namespace nocturne::core

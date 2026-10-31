@@ -1,6 +1,7 @@
 #include "core/skeleton/skeleton.h"
 
 #include "common/error/error.h"
+#include "common/text/ascii.h"
 #include "common/text/scan.h"
 #include "common/text/scanformat.h"
 #include "common/text/textlines.h"
@@ -118,6 +119,20 @@ void CSkeleton::loadStream(common::CTextScanner &scanner) {
     for (std::size_t i = 0; i < bones_.size(); ++i) {
         scanner.skipLine();
     }
+}
+
+// nocedit 0x00599fc0
+int CSkeleton::findBone(std::string_view bone_name, bool assert_if_not_found) const {
+    for (std::size_t i = 0; i < bones_.size(); ++i) {
+        if (common::equalsIgnoringAsciiCase(bones_[i].bone_name, bone_name)) {
+            return static_cast<int>(i);
+        }
+    }
+    if (assert_if_not_found) {
+        common::displayErrorAndQuit(
+            std::format("Can't find bone {} in skeleton {}!", bone_name, loaded_filename_));
+    }
+    return -1;
 }
 
 // nocedit 0x0059a050

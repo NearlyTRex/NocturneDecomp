@@ -22,13 +22,13 @@ functions don't count as done. Sizes are in instructions.
 | 6 | `initializeGameSystems`, `CAlphaBitmap::scale`, `clearTextureCache`, `CMoon::init`, `CGame::saveClockTime`, `CGame::updateDT` | 11 | 25 | 2988 | 19 | 6 | 76.0% |
 | 7 | `CMoon::update`, `CMoon::render` | 17 | 120 | 17616 | 68 | 31 | 56.6% |
 | 8 | `renderMenuAndGetChoice`, `CMoon::free`, `CSound::reset`, `CEditorTools::showFileSelectionDialog` | 8 | 63 | 5314 | 60 | 3 | 95.2% |
-| 9 | `CPickList::enableItem`, `CEventList::resetGameFlags`, `CLevelLoader::show`, `CDemonMission::load` | 15 | 56 | 3298 | 30 | 11 | 53.5% |
-| 10 | `CDemonMission::createHeros`, `CDemonMission::prepareAllActors`, `CEventList::reset`, `CDemonMission::loadSet` | 15 | 42 | 5112 | 31 | 10 | 73.8% |
-| 11 | `CScript::loadScript` | 63 | 579 | 67400 | 61 | 30 | 10.5% |
+| 9 | `CPickList::enableItem`, `CEventList::resetGameFlags`, `CLevelLoader::show`, `CDemonMission::load` | 15 | 56 | 3298 | 31 | 12 | 55.3% |
+| 10 | `CDemonMission::createHeros`, `CDemonMission::prepareAllActors`, `CEventList::reset`, `CDemonMission::loadSet` | 15 | 42 | 5112 | 32 | 9 | 76.1% |
+| 11 | `CScript::loadScript` | 63 | 579 | 67400 | 63 | 31 | 10.8% |
 | 12 | `CDemonMission::loadScript`, `CScript::executeInitSection`, `CDemonMission::startMission`, `CDemonMission::buildActiveSetActorList`, `CConsole::reset`, `CEditorTools::displayMemoryDiagnostics`, `CGame::setGameRes`, `CDemonLight::init`, `CDemonSet::initScene` | 12 | 26 | 1658 | 3 | 2 | 11.5% |
 | 13 | `CFireEffect::init`, `CDemonSet::loadMasterLightStates`, `CDemonSet::setGamma`, `CGame::clearOverlay`, `CGame::loadAssets` | 7 | 27 | 735 | 0 | 0 | 0.0% |
 | 14 | `CNetGame::syncPlayers`, `CNetGame::processServerFrame`, `CLevelLoader::cleanup`, `CKeys::toggleInputMask`, `CGame::processHotkeys` | 17 | 51 | 5302 | 4 | 0 | 7.8% |
-| 15 | `CGame::updateStatusDisplays`, `CGame::processFudge`, `CGame::playerControls`, `CGame::processFrame` | 43 | 189 | 28837 | 5 | 1 | 2.6% |
+| 15 | `CGame::updateStatusDisplays`, `CGame::processFudge`, `CGame::playerControls`, `CGame::processFrame` | 43 | 189 | 28837 | 6 | 1 | 3.1% |
 | 16 | `CGame::setScreenResolutionAndDisplayFangs`, `showOptionsScreen`, `CScript::skipCinematic`, `CGame::showFullscreenBitmap`, `CDemonMission::countDamageableEnemies`, `freeInventory`, `CGame::runGameSession`, `CGame::displayActStats` | 10 | 25 | 6938 | 9 | 3 | 36.0% |
 | 17 | `CGame::finishAct`, `CDemonMission::run`, `CGame::loadGame`, `CGame::showChapterSelect`, `showDeveloperToolsMenu` | 12 | 26 | 3707 | 4 | 2 | 15.3% |
 | 18 | `enterMainGameMenu`, `finalizeGameSystems` | 11 | 13 | 539 | 3 | 0 | 23.0% |
@@ -37,16 +37,16 @@ functions don't count as done. Sizes are in instructions.
 | 21 | Not reached from startup: `cockpit/` | 4 | 178 | 11527 | 0 | 0 | 0.0% |
 | 22 | Not reached from startup: `shape/` | 2 | 42 | 3178 | 4 | 2 | 9.5% |
 | 23 | Not reached from startup: `core/` (part 1 of 9) | 18 | 292 | 16011 | 58 | 12 | 19.8% |
-| 24 | Not reached from startup: `core/` (part 2 of 9) | 11 | 277 | 24965 | 20 | 4 | 7.2% |
+| 24 | Not reached from startup: `core/` (part 2 of 9) | 11 | 277 | 24965 | 22 | 8 | 7.9% |
 | 25 | Not reached from startup: `core/` (part 3 of 9) | 24 | 278 | 24134 | 32 | 9 | 11.5% |
 | 26 | Not reached from startup: `core/` (part 4 of 9) | 18 | 300 | 20148 | 47 | 7 | 15.6% |
 | 27 | Not reached from startup: `core/` (part 5 of 9) | 21 | 294 | 20910 | 56 | 9 | 19.0% |
-| 28 | Not reached from startup: `core/` (part 6 of 9) | 18 | 282 | 21809 | 50 | 10 | 17.7% |
-| 29 | Not reached from startup: `core/` (part 7 of 9) | 18 | 263 | 22721 | 65 | 8 | 24.7% |
+| 28 | Not reached from startup: `core/` (part 6 of 9) | 18 | 282 | 21809 | 51 | 9 | 18.0% |
+| 29 | Not reached from startup: `core/` (part 7 of 9) | 18 | 263 | 22721 | 66 | 8 | 25.0% |
 | 30 | Not reached from startup: `core/` (part 8 of 9) | 20 | 300 | 31826 | 40 | 5 | 13.3% |
 | 31 | Not reached from startup: `core/` (part 9 of 9) | 5 | 111 | 10905 | 21 | 4 | 18.9% |
 | 32 | Not reached from startup: `wincore/` | 2 | 11 | 482 | 4 | 0 | 36.3% |
-| | **All** | | **4479** | **402407** | **1004** | **178** | **22.4%** |
+| | **All** | | **4479** | **402407** | **1013** | **182** | **22.6%** |
 
 ## Step 0: Math value types
 
@@ -1002,12 +1002,13 @@ functions don't count as done. Sizes are in instructions.
 - class `CSkeleton`
   - [x] `free` 0x00599a50 (47)
 
-### `core/actor.cpp` (18 functions, 918 instructions, 14 done, 1 partial)
+### `core/actor.cpp` (18 functions, 918 instructions, 15 done, 2 partial)
 - class `CDemonActor`
   - [x] `getActorClassName` 0x00408b90 (6)
   - [x] `load` 0x0040b050 (125)
   - [x] `doCheckForInvalidPointers` 0x0040ac80 (193)
-  - [ ] `updateOrientationMatrix` 0x00408c10 (30)
+  - [~] `updateOrientationMatrix` 0x00408c10 (30)
+    - deferred: the orientation matrix built from the angles, with transformVector and the other transforms that read it
   - [~] `ctor` 0x004088b0 (88)
     - deferred: the defaults the constructor gives the orientation's matrix, and the platform, rendering (but for the transparency), health and footstep fields, with the steps that read them
 - free functions
@@ -1023,7 +1024,7 @@ functions don't count as done. Sizes are in instructions.
   - [x] `matchesClassName` 0x0040c740 (10)
   - [x] `isOfClass` 0x0040c6d0 (14)
   - [ ] `initTransformCache` 0x00408870 (14)
-  - [ ] `normalizeAngleToPi` 0x0040cd70 (56)
+  - [x] `normalizeAngleToPi` 0x0040cd70 (56)
 
 ### `core/hero.cpp` (1 functions, 8 instructions, 0 done, 1 partial)
 - class `CHeroPlaceholder`
@@ -1059,10 +1060,9 @@ functions don't count as done. Sizes are in instructions.
 
 ## Step 10: `CDemonMission::createHeros`, `CDemonMission::prepareAllActors`, `CEventList::reset`, `CDemonMission::loadSet`
 
-### `core/hero.cpp` (1 functions, 102 instructions, 0 done, 1 partial)
+### `core/hero.cpp` (1 functions, 102 instructions, 1 done, 0 partial)
 - class `CHeroPlaceholder`
-  - [~] `createHero` 0x004f3d80 (102)
-    - deferred: updating the hero's orientation matrix, with updateOrientationMatrix
+  - [x] `createHero` 0x004f3d80 (102)
 
 ### `core/motion.cpp` (2 functions, 36 instructions, 2 done, 0 partial)
 - class `CMotionController`
@@ -1243,7 +1243,7 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `archive` 0x005dab30 (17)
   - [ ] `dtor` 0x005dae50 (31)
 
-### `core/actor.cpp` (66 functions, 3653 instructions, 5 done, 9 partial)
+### `core/actor.cpp` (66 functions, 3653 instructions, 5 done, 10 partial)
 - free functions
   - [ ] `copyVector` 0x00410360 (12)
   - [ ] `rayCylinderIntersect` 0x00408340 (354)
@@ -1320,7 +1320,9 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `handleFootstep` 0x0040ca10 (118)
   - [ ] `setupRenderState` 0x00408b00 (16)
   - [ ] `restoreRenderState` 0x00408b40 (5)
-  - [ ] `setup` 0x00408bb0 (27)
+  - [~] `setup` 0x00408bb0 (27)
+    - deferred: clearing the blood effect timer, with handleFootstep
+    - deferred: bringing the path map up to the actor's position, with CPathMap::findPathWithRetry
 
 ### `core/armour.cpp` (1 functions, 31 instructions, 1 done, 0 partial)
 - class `CFlame`
@@ -1375,9 +1377,9 @@ functions don't count as done. Sizes are in instructions.
 - class `CLever`
   - [ ] `setState` 0x00504b20 (113)
 
-### `core/motion.cpp` (8 functions, 368 instructions, 6 done, 0 partial)
+### `core/motion.cpp` (8 functions, 368 instructions, 7 done, 0 partial)
 - class `CMotionList`
-  - [ ] `findMotionIndex` 0x0052d460 (50)
+  - [x] `findMotionIndex` 0x0052d460 (50)
   - [ ] `findStateIndex` 0x0052d4f0 (50)
 - class `CMotionController`
   - [x] `getMotionList` 0x0052dce0 (3)
@@ -1942,14 +1944,14 @@ functions don't count as done. Sizes are in instructions.
 - free functions
   - [ ] `qsortByDisplayListEntry` 0x0056fba0 (18)
 
-### `core/box.cpp` (11 functions, 944 instructions, 0 done, 1 partial)
+### `core/box.cpp` (11 functions, 944 instructions, 1 done, 1 partial)
 - class `CBox`
   - [~] `ctor` 0x0041dc50 (45)
     - deferred: the eight scrape points, the mass and the world velocity, with CBox::setupCorners
   - [ ] `updateTransform` 0x0041e0e0 (158)
   - [ ] `setupCorners` 0x0041dd20 (127)
 - class `CBoundingBox3D`
-  - [ ] `getCorner` 0x004202b0 (39)
+  - [x] `getCorner` 0x004202b0 (39)
   - [ ] `doesBoxIntersect` 0x00421010 (34)
   - [ ] `clampPoint` 0x00421550 (66)
   - [ ] `doesSphereIntersect` 0x004215f0 (35)
@@ -2627,9 +2629,9 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `renderGogglesView` 0x0056c990 (308)
   - [ ] `renderLightDebugView` 0x0056d190 (91)
 
-### `core/skeleton.cpp` (4 functions, 144 instructions, 0 done, 0 partial)
+### `core/skeleton.cpp` (4 functions, 144 instructions, 1 done, 0 partial)
 - class `CSkeleton`
-  - [ ] `findBone` 0x00599fc0 (52)
+  - [x] `findBone` 0x00599fc0 (52)
   - [ ] `calculateFrameDataSize` 0x0059a140 (7)
 - class `CDeformableModel`
   - [ ] `calculateMemorySize` 0x0059dd60 (31)
@@ -3953,7 +3955,7 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `getBugState` 0x00427b60 (3)
   - [ ] `swapIntegers` 0x00427b80 (8)
 
-### `core/charactr.cpp` (91 functions, 8559 instructions, 5 done, 1 partial)
+### `core/charactr.cpp` (91 functions, 8559 instructions, 7 done, 2 partial)
 - class `CCharacter`
   - [~] `ctor` 0x00427e20 (125)
     - deferred: the collision points, fires and flames, and the defaults the constructor gives the movement, walking, looking, carrying bones, smoking fields and the layer action fields other than the current action and its time, with the steps that read them
@@ -3970,7 +3972,7 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `processWalking` 0x0042ca70 (228)
   - [ ] `updateCarriedObjects` 0x0042d090 (335)
   - [ ] `applyGesture` 0x0042d3d0 (66)
-  - [ ] `computeBoundingBox` 0x0042d530 (41)
+  - [x] `computeBoundingBox` 0x0042d530 (41)
   - [ ] `applyLookAt` 0x0042dcd0 (111)
   - [ ] `applyGestureLookAt` 0x0042dfc0 (44)
   - [x] `archive` 0x004283a0 (154)
@@ -3992,7 +3994,7 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `getPartDominantBone` 0x0042a3f0 (12)
   - [ ] `renderFlames` 0x0042b110 (41)
   - [ ] `renderTransparent` 0x0042b0e0 (15)
-  - [ ] `getBoundingBox` 0x0042b8a0 (24)
+  - [x] `getBoundingBox` 0x0042b8a0 (24)
   - [ ] `isGrabbable` 0x0042bf30 (2)
   - [ ] `releaseFromGrab` 0x0042bf40 (13)
   - [x] `getGrabber` 0x0042bf80 (3)
@@ -4018,7 +4020,14 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `releaseVictim` 0x0042bf70 (1)
   - [ ] `buildLayerActionTransitionCosts` 0x0042e670 (134)
   - [x] `dtor` 0x0042f9f0 (62)
-  - [ ] `setup` 0x00428140 (178)
+  - [~] `setup` 0x00428140 (178)
+    - deferred: no damage decals yet, with processDamageDecals
+    - deferred: a closest distance threshold of 9999, with processCharacter and moveAndCollide
+    - deferred: the stake model the characters share, stake_b.kfm, set and loaded, with renderAttachedModels
+    - deferred: the model's head bone looked at, "bip01 head", with applyLookAt
+    - deferred: an ethereal character's flames, one on every bone, the first twice its size, with getPropertyList's Etheral, the only way a character becomes one
+    - deferred: each layer action's motion and length, and the cheapest time between any two of their bones, with advanceLayerAction
+    - deferred: no sound playing, with processCharacter
   - [ ] `moveAndCollide` 0x00428f40 (585)
   - [ ] `setOrientation` 0x0042ded0 (71)
   - [ ] `preProcess` 0x00429820 (22)
@@ -4071,17 +4080,20 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `passthroughInt2` 0x00431340 (2)
   - [ ] `fastSqrt` 0x00431350 (5)
 
-### `core/cloth.cpp` (35 functions, 4019 instructions, 1 done, 2 partial)
+### `core/cloth.cpp` (35 functions, 4019 instructions, 1 done, 5 partial)
 - class `CClothList`
   - [~] `ctor` 0x0043bf40 (18)
     - deferred: clearing the loaded cloth, with CCloth
-  - [ ] `process` 0x0043c2d0 (32)
+  - [~] `process` 0x0043c2d0 (32)
+    - deferred: each piece moved on with the model, with CCloth::process
   - [ ] `reset` 0x0043c070 (46)
   - [~] `dtor` 0x0043bf80 (8)
     - deferred: freeing the loaded cloth, with reset
   - [ ] `render` 0x0043c320 (47)
-  - [ ] `load` 0x0043bfa0 (62)
-  - [ ] `setup` 0x0043c290 (30)
+  - [~] `load` 0x0043bfa0 (62)
+    - deferred: each piece loaded from its file in place of the one before, with CCloth::load
+  - [~] `setup` 0x0043c290 (30)
+    - deferred: each piece set up on the model where the character stands, with CCloth::setup
   - [ ] `add` 0x0043c0f0 (40)
   - [ ] `remove` 0x0043c170 (91)
   - [ ] `applyRotation` 0x0043c3a0 (26)
@@ -5654,7 +5666,7 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `countTrianglesFromPolygons` 0x0052a490 (19)
   - [ ] `addInts` 0x0052cc40 (3)
 
-### `core/motion.cpp` (23 functions, 1941 instructions, 13 done, 1 partial)
+### `core/motion.cpp` (23 functions, 1941 instructions, 14 done, 0 partial)
 - class `CMotionController`
   - [x] `load` 0x0052e5d0 (50)
   - [ ] `save` 0x0052e670 (50)
@@ -5672,8 +5684,7 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `render` 0x0052e700 (155)
   - [ ] `setDesiredStateByName` 0x0052db90 (20)
   - [ ] `getStateBlendWeight` 0x0052dd20 (45)
-  - [~] `setMotionList` 0x0052dcb0 (19)
-    - deferred: looking up the motion a file named, with CMotionList::findMotionIndex
+  - [x] `setMotionList` 0x0052dcb0 (19)
   - [ ] `frameToMarkerPosition` 0x0052e2b0 (83)
   - [ ] `jumpToMotionByName` 0x0052ddb0 (17)
   - [ ] `markerPositionToFrame` 0x0052e3a0 (98)
@@ -5988,14 +5999,14 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `factoryFuncSimBox` 0x00588d00 (12)
   - [x] `staticInit` 0x00588cd0 (9)
 
-### `core/skeleton.cpp` (88 functions, 8882 instructions, 44 done, 2 partial)
+### `core/skeleton.cpp` (88 functions, 8882 instructions, 45 done, 2 partial)
 - class `CDeformableModelInstance`
   - [x] `showAllParts` 0x005a0410 (8)
   - [x] `clearAllTextureSetIndices` 0x005a0430 (8)
   - [x] `init` 0x005a0840 (30)
   - [x] `ctor` 0x0059ddc0 (25)
   - [x] `blendMotion` 0x0059eb50 (479)
-  - [ ] `computeBoundingBoxFromBones` 0x005a16c0 (76)
+  - [x] `computeBoundingBoxFromBones` 0x005a16c0 (76)
   - [x] `computeBoneTransforms` 0x0059fb40 (124)
   - [x] `updateMotion` 0x0059e0a0 (855)
   - [x] `updateAnimation` 0x0059e020 (27)

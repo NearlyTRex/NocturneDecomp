@@ -21,7 +21,8 @@ int adjustIndentationLevel(int indent_delta);
 // The actor when isOfClassHash holds; null otherwise.
 [[nodiscard]] CDemonActor *castToClassHash(CDemonActor *actor_ptr, std::uint32_t class_name_hash);
 void syncActorTypeIDs();
-float normalizeAngleToPi(float angle_radians);
+// The angle moved by whole turns to within pi of 0; one already there is left as it is.
+[[nodiscard]] float normalizeAngleToPi(float angle_radians);
 void crc32ProcessByte(std::uint32_t *crc_state, std::uint8_t input_byte);
 void crc32ProcessInt(std::uint32_t *crc_state, int value);
 void crc32ProcessString(std::uint32_t *crc_state, char *string);

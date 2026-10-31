@@ -184,14 +184,31 @@ TEST(CMotionController, ItHasNoMotionListUntilItIsGivenOne) {
     EXPECT_EQ(controller.getMotionList(), &list);
 }
 
-TEST(CMotionController, AMotionAFileNamedIsntLookedUpYet) {
+// The name is looked up once, and the frame kept.
+TEST(CMotionController, AMotionAFileNamedIsLookedUpInTheList) {
+    CMotionController controller;
+    common::CTextScanner scanner("\"WALK\",2\n");
+    controller.load(scanner);
+    CMotionList list;
+    const std::string text = "// version\n2\n// states\n0\n// motions\n2\n" +
+                             motionText("0,1", "1,0,0", 1) +
+                             motionText("1,1", "1,1,0", 1).replace(10, 3, "\"walk\"");
+    common::CTextScanner list_text(text);
+    list.load(list_text);
+    controller.setMotionList(list);
+    EXPECT_EQ(controller.getCurrentMotionIndex(), 1);
+    EXPECT_EQ(controller.getCurrentFrameNumber(), 2.0F);
+    EXPECT_TRUE(controller.getCurrentMotionName().empty());
+}
+
+TEST(CMotionController, AMotionAFileNamedThatTheListHasntIsFatal) {
     CMotionController controller;
     common::CTextScanner scanner("\"walk\",2\n");
     controller.load(scanner);
     const CMotionList list;
     EXPECT_THAT([&] { controller.setMotionList(list); },
                 ::testing::ThrowsMessage<common::CFatalError>(
-                    ::testing::StrEq("CMotionList::findMotionIndex is not ported yet")));
+                    ::testing::StrEq("Can't find motion \"walk\" in motion list")));
 }
 
 TEST_F(CMotionControllerFramesTest, AtOrBeforeTheStartItIsTheMotionsFirstFrame) {

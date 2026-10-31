@@ -77,6 +77,8 @@ public:
     static constexpr int kMaxTextureSets = 5;
     static constexpr int kMaxTextures = 80;
     static constexpr int kMaxParts = 30;
+    // A bone's flag when it ends a chain of followed bones.
+    static constexpr int kBoneEndsChain = 2;
     // What each bone's tables hold.
     static constexpr int kMaxBones = 100;
 

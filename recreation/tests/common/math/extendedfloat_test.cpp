@@ -107,6 +107,32 @@ TEST_F(CExtendedFloatAgainstX87, QuotientsRoundAsTheX87Does) {
     }
 }
 
+TEST_F(CExtendedFloatAgainstX87, DoublesStoreAsTheX87StoresThem) {
+    for (int i = 0; i < 200000; ++i) {
+        const double a = pick();
+        const double b = pick();
+        const double c = pick();
+        const long double value = (static_cast<long double>(a) * b) + c;
+        const auto stored = static_cast<double>(value);
+        ASSERT_EQ(std::bit_cast<std::uint64_t>(((X(a) * X(b)) + X(c)).toDouble()),
+                  std::bit_cast<std::uint64_t>(stored))
+            << a << " * " << b << " + " << c;
+    }
+    const auto tiny = [](int bits_below) {
+        return static_cast<double>(static_cast<long double>(std::ldexp(1.0, -1022)) *
+                                   std::ldexp(1.0L, -bits_below) * 1.5L);
+    };
+    EXPECT_EQ((X(std::ldexp(1.0, -1022)) * X(std::ldexp(1.5, -10))).toDouble(), tiny(10));
+}
+
+TEST(CExtendedFloat, StoresDoublesSpecialValues) {
+    EXPECT_EQ(std::bit_cast<std::uint64_t>(X(-kNaN).toDouble()), 0xfff8000000000000U);
+    EXPECT_EQ(X(kInfinity).toDouble(), kInfinity);
+    EXPECT_EQ(std::bit_cast<std::uint64_t>(X(-0.0).toDouble()), 0x8000000000000000U);
+    EXPECT_EQ((X(std::ldexp(1.0, 1000)) * X(std::ldexp(1.0, 100))).toDouble(), kInfinity);
+    EXPECT_EQ(X(0.1).toDouble(), 0.1);
+}
+
 TEST(CExtendedFloat, DividesWithTheX87sSpecialCases) {
     EXPECT_TRUE(X(3.0) / X(4.0) == X(0.75));
     EXPECT_TRUE(X(1.0) / X(3.0) * X(3.0) == X(1.0));

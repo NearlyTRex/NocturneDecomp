@@ -1,6 +1,7 @@
 #include "core/motion/motionlist.h"
 
 #include "common/error/error.h"
+#include "common/text/ascii.h"
 #include "common/text/scan.h"
 #include "common/text/scanformat.h"
 #include "common/text/textscanner.h"
@@ -103,6 +104,20 @@ void CMotionList::loadMotion(common::CTextScanner &scanner, int version, SMotion
         common::scanFormat(scanner, "%d", marker);
     }
     scanner.skipLine();
+}
+
+// nocedit 0x0052d460
+int CMotionList::findMotionIndex(std::string_view motion_name, bool error_on_not_found) const {
+    for (std::size_t i = 0; i < motions_.size(); ++i) {
+        if (common::equalsIgnoringAsciiCase(motions_[i].motion_name, motion_name)) {
+            return static_cast<int>(i);
+        }
+    }
+    if (error_on_not_found) {
+        common::displayErrorAndQuit(
+            std::format("Can't find motion \"{}\" in motion list", motion_name));
+    }
+    return -1;
 }
 
 std::span<const std::string> CMotionList::getStateNames() const {

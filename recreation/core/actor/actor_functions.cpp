@@ -1,10 +1,12 @@
 #include "core/actor/actor_functions.h"
 
+#include "common/math/extendedfloat.h"
 #include "common/text/scan.h"
 #include "core/actor/demonactor.h"
 #include "core/actor/demonactortype.h"
 
 #include <algorithm>
+#include <cmath>
 #include <cstdint>
 #include <optional>
 #include <string_view>
@@ -88,6 +90,11 @@ std::optional<bool> matchClassExpression(const CDemonActorType &type, std::strin
 }
 
 // nocedit 0x0040c740
+// Pi, a whole turn and turns to a radian, as the original's doubles hold them.
+constexpr double kHalfTurn = 3.1415926535;
+constexpr double kTurn = 6.283185307;
+constexpr double kTurnsPerRadian = 0.15915494309644432;
+
 bool matchesClassName(const CDemonActorType &type, std::string_view class_name) {
     return matchClassExpression(type, class_name).value_or(false);
 }
@@ -107,6 +114,31 @@ bool isOfClassHash(const CDemonActor *actor_ptr, std::uint32_t class_name_hash) 
 // nocedit 0x0040c790
 CDemonActor *castToClassHash(CDemonActor *actor_ptr, std::uint32_t class_name_hash) {
     return isOfClassHash(actor_ptr, class_name_hash) ? actor_ptr : nullptr;
+}
+
+// Whole turns are counted from the scaled angle stored as a double, and taken off at the x87's
+// precision. A NaN goes the way of an angle below -pi and stays NaN.
+// nocedit 0x0040cd70
+float normalizeAngleToPi(float angle_radians) {
+    using common::CExtendedFloat;
+    const double angle = angle_radians;
+    if (!(angle >= -kHalfTurn)) {
+        const double turns = std::floor(
+            ((CExtendedFloat(angle) + CExtendedFloat(kHalfTurn)) * CExtendedFloat(-kTurnsPerRadian))
+                .toDouble());
+        return (((CExtendedFloat(turns) + CExtendedFloat(1.0)) * CExtendedFloat(kTurn)) +
+                CExtendedFloat(angle))
+            .toFloat();
+    }
+    if (angle > kHalfTurn) {
+        const double turns = std::floor(
+            ((CExtendedFloat(angle) + CExtendedFloat(-kHalfTurn)) * CExtendedFloat(kTurnsPerRadian))
+                .toDouble());
+        return (((CExtendedFloat(turns) + CExtendedFloat(1.0)) * CExtendedFloat(-kTurn)) +
+                CExtendedFloat(angle))
+            .toFloat();
+    }
+    return angle_radians;
 }
 
 } // namespace nocturne::core

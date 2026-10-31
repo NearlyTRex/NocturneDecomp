@@ -163,6 +163,15 @@ TEST_F(CDeformableModelInstancePoseTest, AScaledModelScalesItsRootBonesAndRootMo
     EXPECT_TRUE(pose().pose_data.root_position.equals({.x = 40.0F}));
 }
 
+// Both bones end chains: the root's box, from 0 to its vertex (1, 0, 0) and half of (0, 1, 0),
+// carried to (1, 2, 3), and the child's point (0, 0, 2) carried to (1, 6, 5).
+TEST_F(CDeformableModelInstancePoseTest, TheBonesBoxIsTheChainEndsBoxesCarriedByTheirMatrices) {
+    model_.preCache();
+    const CBoundingBox3D box = model_.computeBoundingBoxFromBones();
+    EXPECT_TRUE(box.min.equals({.x = 1.0F, .y = 2.0F, .z = 3.0F}));
+    EXPECT_TRUE(box.max.equals({.x = 2.0F, .y = 6.0F, .z = 5.0F}));
+}
+
 TEST_F(CDeformableModelInstancePoseTest, TheRestPoseHasNoTurnAtTheRestScale) {
     model_.setScaleFactor(3.0F);
     model_.preCache();

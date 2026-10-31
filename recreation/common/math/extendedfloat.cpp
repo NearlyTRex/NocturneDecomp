@@ -17,6 +17,14 @@ constexpr int kFloatMantissaBits = 24;
 constexpr int kFloatMinExponent = -126;
 constexpr int kFloatBias = 127;
 constexpr std::uint32_t kFloatExponentLimit = 255;
+constexpr std::uint64_t kDoubleSign = std::uint64_t{1} << 63U;
+constexpr std::uint64_t kDoubleInfinity = 0x7ff0000000000000U;
+constexpr std::uint64_t kDoubleQuietNaN = 0x7ff8000000000000U;
+constexpr std::uint64_t kDoubleFraction = 0x000fffffffffffffU;
+constexpr int kDoubleMantissaBits = 53;
+constexpr int kDoubleMinExponent = -1022;
+constexpr int kDoubleExponentBias = 1023;
+constexpr std::uint64_t kDoubleExponentLimit = 2047;
 
 // A 128-bit value, hi above lo.
 struct SWide {
@@ -290,6 +298,36 @@ float CExtendedFloat::toFloat() const {
         return std::bit_cast<float>(sign | kFloatInfinity);
     }
     return std::bit_cast<float>(sign | (biased << 23U) | (kept & 0x7fffffU));
+}
+
+double CExtendedFloat::toDouble() const {
+    const std::uint64_t sign = negative_ ? kDoubleSign : 0U;
+    if (kind_ == EKind::NaN) {
+        return std::bit_cast<double>(sign | kDoubleQuietNaN);
+    }
+    if (kind_ == EKind::Infinite) {
+        return std::bit_cast<double>(sign | kDoubleInfinity);
+    }
+    if (isZero()) {
+        return std::bit_cast<double>(sign);
+    }
+    const int exponent = scale_ + 63;
+    if (exponent < kDoubleMinExponent) {
+        const std::uint64_t kept =
+            roundBelow(mantissa_, 64 - kDoubleMantissaBits + (kDoubleMinExponent - exponent));
+        return std::bit_cast<double>(sign | kept);
+    }
+    std::uint64_t kept = roundBelow(mantissa_, 64 - kDoubleMantissaBits);
+    const int biased_exponent = exponent + kDoubleExponentBias;
+    auto biased = static_cast<std::uint64_t>(biased_exponent);
+    if (kept >> kDoubleMantissaBits != 0) {
+        kept >>= 1U;
+        ++biased;
+    }
+    if (biased >= kDoubleExponentLimit) {
+        return std::bit_cast<double>(sign | kDoubleInfinity);
+    }
+    return std::bit_cast<double>(sign | (biased << 52U) | (kept & kDoubleFraction));
 }
 
 std::int32_t CExtendedFloat::truncateToInt() const {

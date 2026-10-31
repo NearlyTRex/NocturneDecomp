@@ -34,6 +34,7 @@ public:
     CDemonActor(CDemonActor &&) = delete;
     CDemonActor &operator=(CDemonActor &&) = delete;
 
+    // Ready for play once the mission has loaded every actor: its angles brought to within pi.
     virtual void setup();
     virtual void process(float delta_time);
     virtual int renderOpaque();
@@ -109,6 +110,7 @@ public:
     // Pitch, bank and heading in radians, as x, y and z.
     [[nodiscard]] const common::CVector3f &getOrientation() const;
     void setOrientation(const common::CVector3f &orientation);
+    // Each angle brought to within pi.
     void updateOrientationMatrix();
     common::CVector3f *transformVector(common::CVector3f *output, common::CVector3f *input);
     common::CVector3f *inverseTransformVector(common::CVector3f *output_vector,

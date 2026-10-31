@@ -2,6 +2,7 @@
 #include "common/random/watcomrandom.h"
 #include "common/text/textscanner.h"
 #include "core/actor/actor.h"
+#include "core/actor/actor_functions.h"
 #include "core/actor/actorarchive.h"
 #include "core/actor/demonactor.h"
 #include "core/actor/demonactortype.h"
@@ -263,11 +264,20 @@ TEST_F(CDemonActorLoadTest, AnEndTagForAnotherClassOrActorIsFatal) {
     }
 }
 
+TEST(CDemonActor, SettingUpBringsItsAnglesToWithinPi) {
+    CTestActor actor(kTestLeafType);
+    actor.setOrientation({.x = 4.0F, .y = -1.0F, .z = -7.0F});
+    actor.CDemonActor::setup();
+    EXPECT_EQ(actor.getOrientation().x, normalizeAngleToPi(4.0F));
+    EXPECT_EQ(actor.getOrientation().y, -1.0F);
+    EXPECT_EQ(actor.getOrientation().z, normalizeAngleToPi(-7.0F));
+    EXPECT_LT(actor.getOrientation().x, 0.0F);
+}
+
 // Each quits, naming itself, until its function is ported.
 TEST(CDemonActor, TheFunctionsNotPortedYetQuit) {
     CTestActor actor(kTestLeafType);
     const std::vector<std::pair<std::string_view, std::function<void()>>> calls = {
-        {"setup", [&] { actor.CDemonActor::setup(); }},
         {"process", [&] { actor.process(0.0F); }},
         {"renderOpaque", [&] { static_cast<void>(actor.renderOpaque()); }},
         {"renderTransparent", [&] { static_cast<void>(actor.renderTransparent()); }},
@@ -329,7 +339,7 @@ TEST(CDemonActor, TheFunctionsNotPortedYetQuit) {
         {"getPathMap", [&] { static_cast<void>(actor.getPathMap()); }},
         {"calculateChecksum", [&] { actor.calculateChecksum(nullptr); }},
     };
-    EXPECT_EQ(calls.size(), 49U);
+    EXPECT_EQ(calls.size(), 48U);
     for (const auto &[name, call] : calls) {
         EXPECT_THAT(call, ThrowsMessage<common::CFatalError>(
                               StrEq("CDemonActor::" + std::string(name) + " is not ported yet")));

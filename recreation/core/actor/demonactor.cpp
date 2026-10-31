@@ -3,6 +3,7 @@
 #include "common/error/error.h"
 #include "common/text/ascii.h"
 #include "common/text/textscanner.h"
+#include "core/actor/actor_functions.h"
 #include "core/actor/actorarchive.h"
 #include "core/actor/demonactortype.h"
 
@@ -88,6 +89,23 @@ const common::CVector3f &CDemonActor::getOrientation() const {
 
 void CDemonActor::setOrientation(const common::CVector3f &orientation) {
     orientation_ = orientation;
+}
+
+// The original also checks the actor is one it made, which an object always is.
+// deferred: clearing the blood effect timer, with handleFootstep
+// deferred: bringing the path map up to the actor's position, with CPathMap::findPathWithRetry
+// nocedit 0x00408bb0
+void CDemonActor::setup() {
+    updateOrientationMatrix();
+}
+
+// deferred: the orientation matrix built from the angles, with transformVector and the other
+//   transforms that read it
+// nocedit 0x00408c10
+void CDemonActor::updateOrientationMatrix() {
+    orientation_ = {.x = normalizeAngleToPi(orientation_.x),
+                    .y = normalizeAngleToPi(orientation_.y),
+                    .z = normalizeAngleToPi(orientation_.z)};
 }
 
 EActorLifecycleState CDemonActor::getLifecycleState() const {
