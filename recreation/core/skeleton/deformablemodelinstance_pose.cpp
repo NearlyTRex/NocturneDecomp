@@ -20,6 +20,7 @@
 #include <cstdint>
 #include <limits>
 #include <span>
+#include <utility>
 
 namespace nocturne::core {
 namespace {
@@ -83,6 +84,19 @@ void CDeformableModelInstance::resetToRestPose() {
     bone_transform_.pose_data.root_position = {};
 }
 
+// The bone, or every bone for a negative index, at rest; the root too for every bone.
+void CDeformableModelInstance::restBones(const CSkeleton &skeleton, int bone_index) {
+    if (bone_index < 0) {
+        resetToRestPose();
+        return;
+    }
+    const auto bone = static_cast<std::size_t>(bone_index);
+    if (bone < skeleton.getBones().size()) {
+        setIdentityQuaternion(bone_transform_.pose_data.bone_rotations.at(bone));
+        bone_transform_.bone_scales.at(bone) = rest_bone_scales_.at(bone);
+    }
+}
+
 // nocedit 0x0059e000
 void CDeformableModelInstance::updateAnimationAndTransforms() {
     updateAnimation();
@@ -106,9 +120,16 @@ void CDeformableModelInstance::updateMotionAtFrame(int motion_index, float frame
     computeBoneTransforms();
 }
 
+// A motion the skeleton hasn't, as any of one with no motions, leaves the bones it poses at rest;
+// the original read past the end of the motions and their frames.
 // nocedit 0x0059e0a0
 void CDeformableModelInstance::updateMotion(int motion_index, float frame_number, int bone_index) {
     const CSkeleton &skeleton = *getSkeletonPtr();
+    if (motion_index < 0 ||
+        std::cmp_greater_equal(motion_index, skeleton.getMotionList().getMotions().size())) {
+        restBones(skeleton, bone_index);
+        return;
+    }
     const SInterpolationFrames frames = getFramesForInterpolation(motion_index, frame_number);
     std::array<common::CQuaternion4f, kMaxPoseBones> &rotations =
         bone_transform_.pose_data.bone_rotations;

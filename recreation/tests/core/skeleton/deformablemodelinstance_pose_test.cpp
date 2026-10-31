@@ -137,6 +137,30 @@ TEST_F(CDeformableModelInstancePoseTest, BetweenFramesTheBonesTurnAndTheRootMove
     EXPECT_TRUE(pose().pose_data.root_position.equals({.x = 10.0F}));
 }
 
+// The original read past the skeleton's motions; the bones it would pose rest instead.
+TEST_F(CDeformableModelInstancePoseTest, AMotionTheSkeletonHasntLeavesTheBonesAtRest) {
+    model_.preCache();
+    model_.jumpToMotion(0, 0.5F);
+    model_.updateAnimationAndTransforms();
+    model_.updateMotion(99, 0.0F, 1);
+    model_.updateMotion(99, 0.0F, 40);
+    EXPECT_EQ(pose().pose_data.bone_rotations[1], (common::CQuaternion4f{.w = 1.0F}));
+    EXPECT_NE(pose().pose_data.bone_rotations[0], (common::CQuaternion4f{.w = 1.0F}));
+    model_.updateMotion(-1, 0.0F, -1);
+    EXPECT_EQ(pose().pose_data.bone_rotations[0], (common::CQuaternion4f{.w = 1.0F}));
+    EXPECT_TRUE(pose().pose_data.root_position.equals({}));
+}
+
+// The default skeleton has none, and its model is boxed at rest.
+TEST_F(CDeformableModelInstancePoseTest, AModelOnASkeletonWithNoMotionsIsPrecached) {
+    givenModel("test.dfm", {});
+    CDeformableModelInstance model{models_};
+    model.init("test.dfm");
+    model.preCache();
+    EXPECT_EQ(model.getMotionList()->getMotions().size(), 0U);
+    EXPECT_LT(model.getBoundingBox().min.x, model.getBoundingBox().max.x);
+}
+
 // The child's origin turns with the root, so it lies 4 along -x of the root's.
 TEST_F(CDeformableModelInstancePoseTest, AChildIsCarriedByItsParentsMatrix) {
     model_.preCache();

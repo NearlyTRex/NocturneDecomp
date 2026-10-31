@@ -150,6 +150,7 @@ private:
     // No level skinned since the pose last changed.
     static constexpr int kNoSkinnedLod = -1;
 
+    void restBones(const CSkeleton &skeleton, int bone_index);
     // The motion's turns, relative to their parents', carried onto the pose's: for the bone and
     // those below it, the share of the way there the weight gives.
     void poseRelativeToParents(const CSkeleton &skeleton, const SInterpolationFrames &frames,

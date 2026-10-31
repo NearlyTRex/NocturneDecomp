@@ -120,6 +120,20 @@ int CMotionList::findMotionIndex(std::string_view motion_name, bool error_on_not
     return -1;
 }
 
+// nocedit 0x0052d4f0
+int CMotionList::findStateIndex(std::string_view state_name, bool error_on_not_found) const {
+    for (std::size_t i = 0; i < state_names_.size(); ++i) {
+        if (common::equalsIgnoringAsciiCase(state_names_[i], state_name)) {
+            return static_cast<int>(i);
+        }
+    }
+    if (error_on_not_found) {
+        common::displayErrorAndQuit(
+            std::format("Can't find state \"{}\" in motion list", state_name));
+    }
+    return -1;
+}
+
 std::span<const std::string> CMotionList::getStateNames() const {
     return state_names_;
 }

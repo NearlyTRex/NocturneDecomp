@@ -60,7 +60,8 @@ public:
     void load(common::CTextScanner &scanner);
     // The first motion of the name in any case; -1 for none, or fatal when asked.
     [[nodiscard]] int findMotionIndex(std::string_view motion_name, bool error_on_not_found) const;
-    int findStateIndex(char *state_name, int error_on_not_found);
+    // The state's index, in any case; -1 when the list hasn't it, which is fatal when asked.
+    [[nodiscard]] int findStateIndex(std::string_view state_name, bool error_on_not_found) const;
 
     [[nodiscard]] std::span<const std::string> getStateNames() const;
     [[nodiscard]] std::span<const SMotion> getMotions() const;

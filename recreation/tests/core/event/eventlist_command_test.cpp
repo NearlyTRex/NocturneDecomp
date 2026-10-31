@@ -2,6 +2,11 @@
 #include "core/actor/demonactortype.h"
 #include "core/event/eventlist.h"
 #include "core/lever/lever.h"
+#include "core/npc/npc.h"
+#include "core/skeleton/deformablemodel.h"
+#include "core/skeleton/deformablemodelinstance.h"
+#include "core/skeleton/deformablemodelmanager.h"
+#include "tests/mocks/core/deformablemodelfixture.h"
 #include "tests/mocks/core/scriptfixture.h"
 #include "tests/mocks/core/setfilefixture.h"
 
@@ -9,8 +14,10 @@
 #include <gtest/gtest.h>
 
 #include <format>
+#include <memory>
 #include <string>
 #include <string_view>
+#include <utility>
 
 namespace nocturne::core {
 namespace {
@@ -236,11 +243,32 @@ TEST_F(CEventListCommandTest, SetLeverStateTakesALeverAndACondition) {
     expectError("setLeverState(Lever1)", "Error parsing setLeverState command parms");
 }
 
-TEST_F(CEventListCommandTest, TheModelCommandsNeedTheModelsMotionsWhichAreNotPortedYet) {
+// The priest's model's skeleton has the state walk and the motion run, in any case.
+TEST_F(CEventListCommandTest, TheModelCommandsNeedTheModelsStateOrMotion) {
+    givenFile("data\\TEST.SKL",
+              "// v\n3\n// counts\n6,1\n// bones\n\"root\",-1\n\"one\",0\n\"two\",1\n\"three\",2\n"
+              "\"four\",3\n\"five\",0\n// angles\n1,0,0,0\n1,0,0,0\n1,0,0,0\n1,0,0,0\n1,0,0,0\n"
+              "1,0,0,0\n// roots\n0,0,0\n// canceled\n0,0,0\n// motion list version\n2\n"
+              "// states\n1\nwalk\n// motions\n1\n// m\n\"run\",30,0,0,1\n// exit\n1,0,0\n"
+              "// cmd\n1,0,0\n// back\n0,0\n// transitions\n0\n// signals\n0\n// markers\n0\n"
+              "// origins\n0,0,0\n0,0,0\n0,0,0\n0,0,0\n0,0,0\n0,0,0\n");
+    givenFile("models\\priest.dfm", SDfmFile{}.text());
+    for (const char *texture : {"SKIN.RAW", "FACE.RAW", "SKIN2.RAW", "FACE2.RAW"}) {
+        givenFile(std::format("art\\{}", texture), std::string(std::size_t{32} * 32, '\x01'));
+    }
+    CDeformableModelManager models{dosio_, demon_renderer_};
+    ON_CALL(models_, getDeformableModel)
+        .WillByDefault([&models](std::string_view name) -> CDeformableModel & {
+            return models.getDeformableModel(name);
+        });
+    auto priest = std::make_unique<CNPC>(actor_);
+    priest->setActorName("Priest");
+    priest->getModel().preCache();
+    mission_.addActorToList(std::move(priest));
     expectValid("setModelState($, walk) ; slamModelToMotion($, run)");
-    expectNotPorted("setModelState(Mob, walk)", "CMotionList::findStateIndex is not ported yet");
-    expectNotPorted("slamModelToMotion(Mob, run)",
-                    "CMotionList::findMotionIndex is not ported yet");
+    expectValid("setModelState(Priest, WALK) ; slamModelToMotion( Priest , Run )");
+    expectError("setModelState(Priest, run)", "Model priest.dfm does not have state run");
+    expectError("slamModelToMotion(Priest, walk)", "Model priest.dfm does not have motion walk");
     expectError("setModelState(Nobody, walk)", "Actor \"Nobody\" does not exist.");
     expectError("setModelState(Mob)", "Error parsing setModelState command parms");
     expectError("slamModelToMotion(Mob)", "Error parsing slamModelToMotion command parms");

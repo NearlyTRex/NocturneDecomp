@@ -30,8 +30,8 @@ TEST(CMotionList, PublicInterface) {
                                  void (CMotionList::*)(common::CTextScanner &)>);
     static_assert(std::is_same_v<decltype(&CMotionList::findMotionIndex),
                                  int (CMotionList::*)(std::string_view, bool) const>);
-    static_assert(
-        std::is_same_v<decltype(&CMotionList::findStateIndex), int (CMotionList::*)(char *, int)>);
+    static_assert(std::is_same_v<decltype(&CMotionList::findStateIndex),
+                                 int (CMotionList::*)(std::string_view, bool) const>);
 }
 
 // A motion's lines after its name and frames, each after its comment.
@@ -102,6 +102,19 @@ TEST(CMotionList, AMotionIsFoundByItsNameInAnyCase) {
     EXPECT_THAT(
         [&] { static_cast<void>(list.findMotionIndex("run", true)); },
         ThrowsMessage<common::CFatalError>(StrEq("Can't find motion \"run\" in motion list")));
+}
+
+TEST(CMotionList, AStateIsFoundByItsNameInAnyCase) {
+    const std::string text = "// v\n2\n// s\n2\nTEST\nWALK\n// m\n1\n// m0\n\"stand\",1,0,0,1\n" +
+                             motionBody("0\n", "0\n") + "// k\n0\n";
+    common::CTextScanner scanner(text);
+    CMotionList list;
+    list.load(scanner);
+    EXPECT_EQ(list.findStateIndex("walk", true), 1);
+    EXPECT_EQ(list.findStateIndex("run", false), -1);
+    EXPECT_THAT(
+        [&] { static_cast<void>(list.findStateIndex("run", true)); },
+        ThrowsMessage<common::CFatalError>(StrEq("Can't find state \"run\" in motion list")));
 }
 
 // No markers, and nothing kept from the list read before.

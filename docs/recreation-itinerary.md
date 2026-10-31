@@ -24,7 +24,7 @@ functions don't count as done. Sizes are in instructions.
 | 8 | `renderMenuAndGetChoice`, `CMoon::free`, `CSound::reset`, `CEditorTools::showFileSelectionDialog` | 8 | 63 | 5314 | 60 | 3 | 95.2% |
 | 9 | `CPickList::enableItem`, `CEventList::resetGameFlags`, `CLevelLoader::show`, `CDemonMission::load` | 15 | 56 | 3298 | 33 | 11 | 58.9% |
 | 10 | `CDemonMission::createHeros`, `CDemonMission::prepareAllActors`, `CEventList::reset`, `CDemonMission::loadSet` | 15 | 42 | 5112 | 32 | 9 | 76.1% |
-| 11 | `CScript::loadScript` | 63 | 579 | 67400 | 75 | 34 | 12.9% |
+| 11 | `CScript::loadScript` | 63 | 579 | 67400 | 76 | 34 | 13.1% |
 | 12 | `CDemonMission::loadScript`, `CScript::executeInitSection`, `CDemonMission::startMission`, `CDemonMission::buildActiveSetActorList`, `CConsole::reset`, `CEditorTools::displayMemoryDiagnostics`, `CGame::setGameRes`, `CDemonLight::init`, `CDemonSet::initScene` | 12 | 26 | 1658 | 3 | 2 | 11.5% |
 | 13 | `CFireEffect::init`, `CDemonSet::loadMasterLightStates`, `CDemonSet::setGamma`, `CGame::clearOverlay`, `CGame::loadAssets` | 7 | 27 | 735 | 0 | 0 | 0.0% |
 | 14 | `CNetGame::syncPlayers`, `CNetGame::processServerFrame`, `CLevelLoader::cleanup`, `CKeys::toggleInputMask`, `CGame::processHotkeys` | 17 | 51 | 5302 | 4 | 0 | 7.8% |
@@ -46,7 +46,7 @@ functions don't count as done. Sizes are in instructions.
 | 30 | Not reached from startup: `core/` (part 8 of 9) | 20 | 300 | 31826 | 41 | 7 | 13.6% |
 | 31 | Not reached from startup: `core/` (part 9 of 9) | 5 | 111 | 10905 | 22 | 6 | 19.8% |
 | 32 | Not reached from startup: `wincore/` | 2 | 11 | 482 | 4 | 0 | 36.3% |
-| | **All** | | **4479** | **402407** | **1058** | **192** | **23.6%** |
+| | **All** | | **4479** | **402407** | **1059** | **192** | **23.6%** |
 
 ## Step 0: Math value types
 
@@ -1375,10 +1375,10 @@ functions don't count as done. Sizes are in instructions.
 - class `CLever`
   - [ ] `setState` 0x00504b20 (113)
 
-### `core/motion.cpp` (8 functions, 368 instructions, 7 done, 0 partial)
+### `core/motion.cpp` (8 functions, 368 instructions, 8 done, 0 partial)
 - class `CMotionList`
   - [x] `findMotionIndex` 0x0052d460 (50)
-  - [ ] `findStateIndex` 0x0052d4f0 (50)
+  - [x] `findStateIndex` 0x0052d4f0 (50)
 - class `CMotionController`
   - [x] `getMotionList` 0x0052dce0 (3)
   - [x] `getCurrentMotion` 0x0052dab0 (6)
