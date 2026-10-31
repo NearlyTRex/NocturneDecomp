@@ -202,6 +202,16 @@ TEST(CDemonActor, AnActorIsNotCreatedUntilItsEventComes) {
     EXPECT_EQ(actor.getCreateEvent(), "none");
 }
 
+TEST(CDemonActor, AnActorIsDrawnAndCollidesUntilToldOtherwise) {
+    CTestActor actor(kTestLeafType);
+    EXPECT_TRUE(actor.isRenderable());
+    EXPECT_FALSE(actor.isCollisionDisabled());
+    actor.setRenderable(false);
+    actor.setCollisionDisabled(true);
+    EXPECT_FALSE(actor.isRenderable());
+    EXPECT_TRUE(actor.isCollisionDisabled());
+}
+
 class CDemonActorLoadTest : public ::testing::Test {
 protected:
     ::testing::NiceMock<engine::MockGameClock> clock_;

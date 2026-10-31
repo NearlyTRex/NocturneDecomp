@@ -47,10 +47,11 @@ TEST(CLightGun, ItsRecordIsAVersion1WeaponThatMissionsCanCreate) {
     EXPECT_EQ(&gun->getActorType(), &CLightGun::kType);
 }
 
-TEST(CLightGun, ALightGunIsTheCreModel) {
+TEST(CLightGun, ALightGunIsTheCreModelAndWeighsEight) {
     CTestClasses classes;
     const CLightGun gun{classes.get()};
     EXPECT_EQ(gun.getModel().getModelName(), "cre.kfm");
+    EXPECT_EQ(gun.getWeight(), 8.0F);
 }
 
 TEST(CLightGun, TheFunctionsNotPortedYetQuit) {

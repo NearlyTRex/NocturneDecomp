@@ -8,6 +8,7 @@
 #include "platform/renderer.h"
 #include "wincore/winrun/winrun.h"
 
+#include <array>
 #include <optional>
 #include <string_view>
 #include <utility>
@@ -18,6 +19,22 @@ namespace {
 // What the original's setScreenResolution does to clear every buffer of the flip chain.
 constexpr int kClearedSwaps = 3;
 constexpr double kMillisecondsPerSecond = 1000.0;
+// The shallowest depth the hardware renderer draws in.
+constexpr int kAcceleratedDepth = 16;
+
+struct SWarningLine {
+    std::string_view text;
+    int y = 0;
+};
+
+// What the original shows before it forces an 8-bit mode to 16 bits for the renderer.
+constexpr std::array<SWarningLine, 5> kDepthWarning = {{
+    {.text = "You have hit a kludge in the program.", .y = 0},
+    {.text = "You are setting acceleration mode without setting", .y = 22},
+    {.text = "the appropriate bit depth first.", .y = 33},
+    {.text = "I am forcing the screen to switch to 16bpp mode.", .y = 44},
+    {.text = "Press any key to continue.", .y = 66},
+}};
 
 } // namespace
 
@@ -80,6 +97,31 @@ bool CWddVMem::setScreenResolution(int width, int height, int bits_per_pixel) {
         swapBuffers();
     }
     return true;
+}
+
+// The DirectDraw objects it released and recreated belong to the display adapter. The original
+// also cleared the renderer's flag on a refusal, which the refused mode has cleared already.
+// deferred: marking the graphics as reset, with reinitializeGraphicsSystem and videoRestore
+// nocedit 0x005ed2a0
+void CWddVMem::resetGraphicsSystem() {
+    if (!special_.getUseDirect3D()) {
+        return;
+    }
+    if (bits_per_pixel_ < kAcceleratedDepth) {
+        setScreenResolution(window_width_, window_height_, kAcceleratedDepth);
+        special_.clearScreen();
+        for (const SWarningLine &line : kDepthWarning) {
+            two_d_.drawText(line.text, 0, line.y);
+        }
+        swapBuffers();
+        winrun_.getNextKeypress(*this);
+    }
+    special_.clearScreen();
+    if (special_.setResolutionAndColorTable(window_width_, window_height_, bits_per_pixel_) != 0) {
+        return;
+    }
+    special_.setUseDirect3D(false);
+    setScreenResolution(window_width_, window_height_, bits_per_pixel_);
 }
 
 // nocedit 0x005ed580

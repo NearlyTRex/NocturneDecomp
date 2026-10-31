@@ -125,6 +125,11 @@ TEST_F(C2dTest, AScreenWithNoRoomIsFatal) {
         ThrowsMessage<common::CFatalError>(StrEq("No room for frame buffer.  Please run SETUP")));
 }
 
+TEST_F(C2dTest, ResettingTheGraphicsIsTheScreens) {
+    EXPECT_CALL(screen_, resetGraphicsSystem());
+    two_d_.resetGraphicsSystem();
+}
+
 TEST_F(C2dTest, AMissingPaletteIsFatal) {
     EXPECT_THAT([this] { two_d_.loadPaletteFile("vga.act"); },
                 ThrowsMessage<common::CFatalError>(StrEq("Unable to open VGA palette")));

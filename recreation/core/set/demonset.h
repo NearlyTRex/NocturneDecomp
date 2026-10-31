@@ -189,6 +189,15 @@ public:
     // The mission's actors in this set, which the mission owns.
     [[nodiscard]] std::span<CDemonActor *const> getActors() const;
     void setActors(std::vector<CDemonActor *> actors);
+    // Of the actors, as buildActorTypeLists last sorted them: those drawn opaque or transparent,
+    // the characters, the enemies among them, the waypoints, and what auto-aim may turn to.
+    [[nodiscard]] std::span<CDemonActor *const> getRenderableActors() const;
+    [[nodiscard]] std::span<CCharacter *const> getCharacters() const;
+    [[nodiscard]] std::span<CEnemy *const> getEnemies() const;
+    [[nodiscard]] std::span<CWayPoint *const> getWaypoints() const;
+    [[nodiscard]] std::span<CDemonActor *const> getThreats() const;
+    // As buildCollidableActorList last listed them.
+    [[nodiscard]] std::span<CDemonActor *const> getCollidableActors() const;
     [[nodiscard]] std::span<const C3DSCamera> getCameras() const;
     [[nodiscard]] std::span<C3DSCamera> getCameras();
     [[nodiscard]] int getDefaultRoomSize() const;
@@ -239,6 +248,12 @@ private:
     bool player_on_train_ = false;
     std::vector<C3DSLight> lights_;
     std::vector<CDemonActor *> actors_;
+    std::vector<CDemonActor *> renderable_actors_;
+    std::vector<CCharacter *> characters_;
+    std::vector<CEnemy *> enemies_;
+    std::vector<CWayPoint *> waypoints_;
+    std::vector<CDemonActor *> threats_;
+    std::vector<CDemonActor *> collidable_actors_;
     std::vector<C3DSCamera> cameras_;
     int default_room_size_ = 0;
     std::vector<SRoom> rooms_;

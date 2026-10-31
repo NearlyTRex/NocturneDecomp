@@ -28,8 +28,7 @@ namespace nocturne::core {
 bool CDemonMission::createOneHero(std::size_t index, EHeroType hero_type,
                                   std::unique_ptr<CHero> existing_hero) {
     const auto found = std::ranges::find_if(actors_, [index](const auto &actor) {
-        const auto *placeholder = dynamic_cast<const CHeroPlaceholder *>(
-            castToClassHash(actor.get(), CHeroPlaceholder::kType.name_hash));
+        const auto *placeholder = castToClass<CHeroPlaceholder>(actor.get());
         return placeholder != nullptr && std::cmp_equal(placeholder->getIndex(), index);
     });
     if (found == actors_.end()) {

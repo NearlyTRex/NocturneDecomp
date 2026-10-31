@@ -47,9 +47,10 @@ std::string_view getHeroClassName(EHeroType hero_type) {
 constinit const CDemonActorType CHeroPlaceholder::kType =
     makeActorType("CHeroPlaceholder", &CDemonActor::kType, &CHeroPlaceholder::create, kVersion);
 
-// deferred: drawing it transparent, with the set's renderable list
 // nocedit 0x004f3c00
-CHeroPlaceholder::CHeroPlaceholder() = default;
+CHeroPlaceholder::CHeroPlaceholder() {
+    setTransparent(true);
+}
 
 // nocedit 0x004f3c30
 CHeroPlaceholder::~CHeroPlaceholder() = default;

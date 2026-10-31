@@ -139,6 +139,12 @@ public:
     // Drawn with the transparent things, after the rest.
     [[nodiscard]] bool isTransparent() const;
     void setTransparent(bool transparent);
+    // Drawn with the opaque things.
+    [[nodiscard]] bool isRenderable() const;
+    void setRenderable(bool renderable);
+    // Left out of the set's collisions.
+    [[nodiscard]] bool isCollisionDisabled() const;
+    void setCollisionDisabled(bool collision_disabled);
     // How much larger than its model the actor is drawn along each axis, in 16.16.
     [[nodiscard]] const common::CVector3i &getScale() const;
     void setScale(const common::CVector3i &scale);
@@ -155,6 +161,8 @@ private:
     float create_probability_ = 1.0F;
     std::string create_event_ = "none";
     bool transparent_ = false;
+    bool renderable_ = true;
+    bool collision_disabled_ = false;
     common::CVector3i scale_{.x = kUnitScale, .y = kUnitScale, .z = kUnitScale};
 };
 

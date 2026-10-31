@@ -55,6 +55,7 @@ TEST(CHeroPlaceholder, ItsRecordIsAVersionOneActorThatMissionsCanCreate) {
     CTestClasses classes;
     const std::unique_ptr<CDemonActor> actor = CHeroPlaceholder::kType.factory_func(classes.get());
     EXPECT_EQ(&actor->getActorType(), &CHeroPlaceholder::kType);
+    EXPECT_TRUE(actor->isTransparent());
 }
 
 // After CDemonActor's fields, which hero the place is for.

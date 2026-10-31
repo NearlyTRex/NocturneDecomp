@@ -59,6 +59,7 @@ public:
     bool setScreenResolution(int, int, int) override {
         return !refuse_modes;
     }
+    void resetGraphicsSystem() override {}
     void setupColorPalette() override {}
     void convertPaletteToDirectColor() override {}
     void openScreenDevice() override {}

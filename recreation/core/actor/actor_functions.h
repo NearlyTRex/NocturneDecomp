@@ -2,6 +2,7 @@
 
 #include "common/fwd.h"
 #include "core/actor/demonactor.h"
+#include "core/actor/demonactortype.h"
 #include "core/fwd.h"
 
 #include <cstdint>
@@ -20,6 +21,11 @@ int adjustIndentationLevel(int indent_delta);
 [[nodiscard]] bool isOfClassHash(const CDemonActor *actor_ptr, std::uint32_t class_name_hash);
 // The actor when isOfClassHash holds; null otherwise.
 [[nodiscard]] CDemonActor *castToClassHash(CDemonActor *actor_ptr, std::uint32_t class_name_hash);
+// castToClassHash by the class's own type, as that class.
+template <typename T>
+[[nodiscard]] T *castToClass(CDemonActor *actor_ptr) {
+    return dynamic_cast<T *>(castToClassHash(actor_ptr, T::kType.name_hash));
+}
 void syncActorTypeIDs();
 // The angle moved by whole turns to within pi of 0; one already there is left as it is.
 [[nodiscard]] float normalizeAngleToPi(float angle_radians);

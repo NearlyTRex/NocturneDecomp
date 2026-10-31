@@ -64,7 +64,6 @@ void CDemonMission::prepareAllActors() {
     actors_prepared_ = true;
 }
 
-// deferred: the set's lists of actors that collide and of each class, with their readers
 // nocedit 0x00523e60
 void CDemonMission::buildSetActorList() {
     std::vector<CDemonActor *> in_set;
@@ -78,7 +77,13 @@ void CDemonMission::buildSetActorList() {
         }
         in_set.push_back(actor.get());
     }
-    owners_.set.setActors(std::move(in_set));
+    giveSetActors(std::move(in_set));
+}
+
+void CDemonMission::giveSetActors(std::vector<CDemonActor *> actors) {
+    owners_.set.setActors(std::move(actors));
+    owners_.set.buildCollidableActorList();
+    owners_.set.buildActorTypeLists();
 }
 
 std::span<const std::string> CDemonMission::getSetNames() const {

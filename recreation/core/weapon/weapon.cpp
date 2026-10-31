@@ -4,9 +4,14 @@
 #include "core/actor/actorarchive.h"
 #include "core/actor/demonactortype.h"
 #include "core/ammo/ammotype.h"
+#include "core/box/actorphysicsbox.h"
+#include "core/box/boundingbox3d.h"
+#include "core/box/box.h"
+#include "core/dmodel/keyframedmodel.h"
 #include "core/dmodel/keyframedmodelinstance.h"
 #include "core/weapon/weaponstate.h"
 
+#include <span>
 #include <string>
 #include <string_view>
 
@@ -29,15 +34,41 @@ constexpr int kTimedVersion = 7;
 constinit const CDemonActorType CWeapon::kType =
     makeActorType("CWeapon", &CDemonActor::kType, nullptr, kVersion);
 
-// deferred: the physics box, and the defaults the constructor gives the weight, collision,
-//   firing, light, muzzle flash and rendering fields, with the steps that read them
+// deferred: the defaults the constructor gives the firing, light, muzzle flash and rendering
+//   fields, with the steps that read them
 // nocedit 0x005ede70
 CWeapon::CWeapon(CActor &classes) : model_(classes.getKeyFramedModels()) {
+    setCollisionDisabled(true);
     model_.setModelName("gat.kfm");
 }
 
 // nocedit 0x005edf80
 CWeapon::~CWeapon() = default;
+
+// deferred: clearing is_rendered, with renderOpaque
+// nocedit 0x005edff0
+void CWeapon::setup() {
+    CDemonActor::setup();
+    model_.preCache();
+    setupPhysicsBox();
+}
+
+// The original also checked the actor hadn't been deleted and its model had been found; setup
+// finds the model first, and not finding it is fatal.
+// nocedit 0x005ee740
+void CWeapon::setupPhysicsBox() {
+    CBoundingBox3D bounds;
+    getBoundingBox(&bounds);
+    setupPhysicsBoxAround(physics_box_, *this, bounds, weight_);
+}
+
+// The original read past the end of a model with no frames, which has no bounds here.
+// nocedit 0x005ee0c0
+CBoundingBox3D *CWeapon::getBoundingBox(CBoundingBox3D *out_box) {
+    const std::span<const CBoundingBox3D> bounds = model_.getModelPtr().getFrameBounds();
+    *out_box = bounds.empty() ? CBoundingBox3D{} : bounds.front();
+    return out_box;
+}
 
 // Version 5 held a shown name, which is read and dropped.
 // nocedit 0x005ee250
@@ -89,6 +120,18 @@ EAmmoType CWeapon::getAmmoType() const {
 
 float CWeapon::getSimTimer() const {
     return sim_timer_;
+}
+
+const CBox &CWeapon::getPhysicsBox() const {
+    return physics_box_;
+}
+
+float CWeapon::getWeight() const {
+    return weight_;
+}
+
+void CWeapon::setWeight(float weight) {
+    weight_ = weight;
 }
 
 } // namespace nocturne::core

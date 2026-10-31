@@ -74,6 +74,16 @@ TEST_F(CDemonMissionSetTest, LoadingASetGivesItTheActorsInIt) {
     EXPECT_THAT(setActorNames(), ElementsAre("a", "c"));
 }
 
+TEST_F(CDemonMissionSetTest, LoadingASetSortsItsActorsIntoItsLists) {
+    const CTestActor &solid = addActor("a", 0);
+    CTestActor &ghost = addActor("b", 0);
+    ghost.setCollisionDisabled(true);
+    ghost.setRenderable(false);
+    loadSet(0);
+    EXPECT_THAT(set_.getCollidableActors(), ElementsAre(&solid));
+    EXPECT_THAT(set_.getRenderableActors(), ElementsAre(&solid));
+}
+
 // Every actor is set up with the first set, and each in the set has its collision data updated.
 TEST_F(CDemonMissionSetTest, TheFirstSetLoadedSetsEveryActorUp) {
     const CTestActor &in_set = addActor("a", 0);

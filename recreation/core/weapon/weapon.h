@@ -3,6 +3,7 @@
 #include "common/fwd.h"
 #include "core/actor/demonactor.h"
 #include "core/ammo/ammotype.h"
+#include "core/box/box.h"
 #include "core/dmodel/keyframedmodelinstance.h"
 #include "core/fwd.h"
 #include "core/weapon/weaponstate.h"
@@ -55,12 +56,22 @@ public:
     [[nodiscard]] EAmmoType getAmmoType() const;
     // Seconds of the weapon's own clock.
     [[nodiscard]] float getSimTimer() const;
+    [[nodiscard]] const CBox &getPhysicsBox() const;
+    [[nodiscard]] float getWeight() const;
 
 protected:
     void setModelName(std::string_view filename);
+    void setWeight(float weight);
 
 private:
+    static constexpr float kDefaultWeight = 5.0F;
+
+    // Put into the physics where the model's first frame sits.
+    void setupPhysicsBox();
+
     CKeyFramedModelInstance model_;
+    CBox physics_box_;
+    float weight_ = kDefaultWeight;
     CDemonActor *carried_by_actor_ = nullptr;
     EWeaponState weapon_state_ = EWeaponState::kLyingAround;
     int ammo_count_ = kStartingAmmo;

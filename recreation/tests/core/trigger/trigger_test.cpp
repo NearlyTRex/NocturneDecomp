@@ -254,6 +254,22 @@ TEST(CTrigger, SettingUpTakesAnEventOfNoneAsNone) {
     EXPECT_EQ(trigger.getOnEvent(), "");
     EXPECT_EQ(trigger.getOffEvent(), "open");
     EXPECT_FALSE(trigger.isTransparent());
+    EXPECT_FALSE(trigger.isRenderable());
+}
+
+// Only a trigger a laser, a bullet or damage sets off collides.
+TEST(CTrigger, OnlyTriggersSetOffByHitsCollide) {
+    for (int cause = 0; cause <= 9; ++cause) {
+        CTrigger trigger;
+        CTestFieldsArchive archive(
+            trigger, CTrigger::kType, 11,
+            std::format("0\n1,1,1\n0\n\"\"\n\"\"\n{}\n\"\"\n\"\"\n0\n0\n0\n0\n0\n0\n1\n0\n\"\"\n",
+                        cause));
+        trigger.archive(archive.get());
+        trigger.setup();
+        EXPECT_EQ(trigger.isCollisionDisabled(), cause != 4 && cause != 5 && cause != 7)
+            << "cause " << cause;
+    }
 }
 
 } // namespace

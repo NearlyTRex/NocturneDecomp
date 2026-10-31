@@ -48,6 +48,12 @@ void C2d::initGraphicsSystem() {
     }
 }
 
+// The original jumps straight to wddvmem's.
+// nocedit 0x00402a70
+void C2d::resetGraphicsSystem() {
+    screen_.resetGraphicsSystem();
+}
+
 // A short file replaces only the entries it has.
 // nocedit 0x004015a0
 void C2d::loadPaletteFile(std::string_view filename) {

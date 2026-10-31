@@ -10,6 +10,7 @@ class MockScreenDevice : public IScreenDevice {
 public:
     MOCK_METHOD(int, initializeGraphicsSystem, (int width, int height), (override));
     MOCK_METHOD(bool, setScreenResolution, (int width, int height, int bits_per_pixel), (override));
+    MOCK_METHOD(void, resetGraphicsSystem, (), (override));
     MOCK_METHOD(void, setupColorPalette, (), (override));
     MOCK_METHOD(void, convertPaletteToDirectColor, (), (override));
     MOCK_METHOD(void, openScreenDevice, (), (override));

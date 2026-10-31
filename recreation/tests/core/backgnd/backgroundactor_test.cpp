@@ -8,6 +8,7 @@
 #include <gmock/gmock.h>
 #include <gtest/gtest.h>
 
+#include <format>
 #include <memory>
 #include <type_traits>
 
@@ -117,6 +118,18 @@ TEST(CBackgroundActor, SettingUpFindsItsModel) {
     EXPECT_CALL(classes.getKeyFramedModels(), loadModel(::testing::StrEq("candle.kfm")))
         .WillOnce(::testing::ReturnRef(classes.getKeyFramedModel()));
     scenery.setup();
+}
+
+TEST(CBackgroundActor, ItCollidesOnlyWhenItsFileSaysTo) {
+    for (const bool collide_with_me : {false, true}) {
+        CTestClasses classes;
+        CBackgroundActor scenery{classes.get()};
+        CTestFieldsArchive archive(scenery, CBackgroundActor::kType, 1,
+                                   std::format("\"candle.kfm\"\n{}\n", collide_with_me ? 1 : 0));
+        scenery.archive(archive.get());
+        scenery.setup();
+        EXPECT_EQ(scenery.isCollisionDisabled(), !collide_with_me);
+    }
 }
 
 } // namespace

@@ -11,6 +11,8 @@ namespace {
 
 // Of the class's fields, as save files write them.
 constexpr int kVersion = 1;
+// Heavier than the other weapons' 5.
+constexpr float kWeight = 8.0F;
 
 } // namespace
 
@@ -18,8 +20,8 @@ constexpr int kVersion = 1;
 constinit const CDemonActorType CLightGun::kType =
     makeActorType("CLightGun", &CWeapon::kType, &CLightGun::create, kVersion);
 
-// deferred: the defaults the constructor gives the firing fields, the weight, the charge and the
-//   hit flag, with CLightGun::fire and CLightGun::process
+// deferred: the defaults the constructor gives the firing fields, the charge and the hit flag,
+//   with CLightGun::fire and CLightGun::process
 // deferred: lighting the beam with the carrying hero's own light rather than the one shared light
 //   (the decomp's nocturne_hero_light), with CLightGun::process, CLightGun::fire and
 //   CLightGun::updateBeamLight
@@ -28,6 +30,7 @@ constinit const CDemonActorType CLightGun::kType =
 // nocedit 0x00505900
 CLightGun::CLightGun(CActor &classes) : CWeapon(classes) {
     setModelName("cre.kfm");
+    setWeight(kWeight);
 }
 
 // nocedit 0x00506a50

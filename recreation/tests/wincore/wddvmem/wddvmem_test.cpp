@@ -314,5 +314,60 @@ TEST_F(CWddVMemTest, TheDepthCanBeHandedToTheRenderer) {
     EXPECT_EQ(wddvmem_.getBitsPerPixel(), 16);
 }
 
+TEST_F(CWddVMemTest, ResettingWithoutDirect3DLeavesTheModeAlone) {
+    ASSERT_TRUE(wddvmem_.setScreenResolution(4, 2, 32));
+    EXPECT_CALL(renderer_, init).Times(0);
+    EXPECT_CALL(display_, setDisplayMode).Times(0);
+    wddvmem_.resetGraphicsSystem();
+    EXPECT_FALSE(special_.getUseExternalRenderer());
+}
+
+TEST_F(CWddVMemTest, ResettingWithDirect3DHandsTheModeToTheRenderer) {
+    ASSERT_TRUE(wddvmem_.setScreenResolution(4, 2, 32));
+    ON_CALL(renderer_, init).WillByDefault(Return(1));
+    ON_CALL(renderer_, lockFrame).WillByDefault(Return(1));
+    special_.setUseDirect3D(true);
+    EXPECT_CALL(renderer_, setVideoMode2(4, 2, 32, _)).WillOnce(Return(1));
+    EXPECT_CALL(display_, setDisplayMode).Times(0);
+    wddvmem_.resetGraphicsSystem();
+    EXPECT_TRUE(special_.getUseExternalRenderer());
+    EXPECT_TRUE(special_.getUseDirect3D());
+}
+
+// A renderer that won't start leaves the game drawing the same mode in software.
+TEST_F(CWddVMemTest, ARendererThatRefusesTheModeTurnsDirect3DOff) {
+    ASSERT_TRUE(wddvmem_.setScreenResolution(4, 2, 32));
+    ON_CALL(renderer_, init).WillByDefault(Return(1));
+    special_.setUseDirect3D(true);
+    EXPECT_CALL(renderer_, setVideoMode2).WillOnce(Return(0));
+    EXPECT_CALL(display_, setDisplayMode(4, 2, 32)).WillOnce(Return(true));
+    wddvmem_.resetGraphicsSystem();
+    EXPECT_FALSE(special_.getUseExternalRenderer());
+    EXPECT_FALSE(special_.getUseDirect3D());
+}
+
+// An 8-bit mode is switched to 16 bits, with a warning that waits for a key.
+TEST_F(CWddVMemTest, ResettingAnEightBitModeForcesSixteenBitsAfterAWarning) {
+    ASSERT_TRUE(wddvmem_.setScreenResolution(400, 100, 8));
+    ON_CALL(renderer_, init).WillByDefault(Return(1));
+    ON_CALL(renderer_, lockFrame).WillByDefault(Return(1));
+    special_.setUseDirect3D(true);
+    bool typed = false;
+    ON_CALL(window_, pollEvent).WillByDefault([&typed](platform::SWindowEvent &event) {
+        if (typed) {
+            return false;
+        }
+        typed = true;
+        event = {.type = platform::EWindowEventType::Character, .character = 'x'};
+        return true;
+    });
+    EXPECT_CALL(display_, setDisplayMode(400, 100, 16)).WillOnce(Return(true));
+    EXPECT_CALL(renderer_, setVideoMode2(400, 100, 16, _)).WillOnce(Return(1));
+    wddvmem_.resetGraphicsSystem();
+    EXPECT_TRUE(typed);
+    EXPECT_EQ(wddvmem_.getBitsPerPixel(), 16);
+    EXPECT_TRUE(special_.getUseExternalRenderer());
+}
+
 } // namespace
 } // namespace nocturne::wincore

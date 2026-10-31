@@ -289,8 +289,7 @@ void CDemonMission::ensureHeroPlaceholder() {
         if (isOfClass(actor.get(), "CHero")) {
             heroes.add(actor->getActorName());
         }
-        const auto *placeholder = dynamic_cast<const CHeroPlaceholder *>(
-            castToClassHash(actor.get(), CHeroPlaceholder::kType.name_hash));
+        const auto *placeholder = castToClass<CHeroPlaceholder>(actor.get());
         if (placeholder != nullptr && placeholder->getIndex() == 0) {
             return;
         }

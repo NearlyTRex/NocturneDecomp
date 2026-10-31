@@ -22,10 +22,10 @@ functions don't count as done. Sizes are in instructions.
 | 6 | `initializeGameSystems`, `CAlphaBitmap::scale`, `clearTextureCache`, `CMoon::init`, `CGame::saveClockTime`, `CGame::updateDT` | 11 | 25 | 2988 | 20 | 5 | 80.0% |
 | 7 | `CMoon::update`, `CMoon::render` | 17 | 120 | 17616 | 68 | 31 | 56.6% |
 | 8 | `renderMenuAndGetChoice`, `CMoon::free`, `CSound::reset`, `CEditorTools::showFileSelectionDialog` | 8 | 63 | 5314 | 60 | 3 | 95.2% |
-| 9 | `CPickList::enableItem`, `CEventList::resetGameFlags`, `CLevelLoader::show`, `CDemonMission::load` | 15 | 56 | 3298 | 33 | 11 | 58.9% |
+| 9 | `CPickList::enableItem`, `CEventList::resetGameFlags`, `CLevelLoader::show`, `CDemonMission::load` | 15 | 56 | 3298 | 37 | 9 | 66.0% |
 | 10 | `CDemonMission::createHeros`, `CDemonMission::prepareAllActors`, `CEventList::reset`, `CDemonMission::loadSet` | 15 | 42 | 5112 | 32 | 9 | 76.1% |
 | 11 | `CScript::loadScript` | 63 | 579 | 67400 | 76 | 34 | 13.1% |
-| 12 | `CDemonMission::loadScript`, `CScript::executeInitSection`, `CDemonMission::startMission`, `CDemonMission::buildActiveSetActorList`, `CConsole::reset`, `CEditorTools::displayMemoryDiagnostics`, `CGame::setGameRes`, `CDemonLight::init`, `CDemonSet::initScene` | 12 | 26 | 1658 | 3 | 2 | 11.5% |
+| 12 | `CDemonMission::loadScript`, `CScript::executeInitSection`, `CDemonMission::startMission`, `CDemonMission::buildActiveSetActorList`, `CConsole::reset`, `CEditorTools::displayMemoryDiagnostics`, `CGame::setGameRes`, `CDemonLight::init`, `CDemonSet::initScene` | 12 | 26 | 1658 | 4 | 3 | 15.3% |
 | 13 | `CFireEffect::init`, `CDemonSet::loadMasterLightStates`, `CDemonSet::setGamma`, `CGame::clearOverlay`, `CGame::loadAssets` | 7 | 27 | 735 | 0 | 0 | 0.0% |
 | 14 | `CNetGame::syncPlayers`, `CNetGame::processServerFrame`, `CLevelLoader::cleanup`, `CKeys::toggleInputMask`, `CGame::processHotkeys` | 17 | 51 | 5302 | 4 | 0 | 7.8% |
 | 15 | `CGame::updateStatusDisplays`, `CGame::processFudge`, `CGame::playerControls`, `CGame::processFrame` | 43 | 189 | 28837 | 7 | 0 | 3.7% |
@@ -36,7 +36,7 @@ functions don't count as done. Sizes are in instructions.
 | 20 | Not reached from startup: `support/` | 2 | 24 | 593 | 3 | 1 | 12.5% |
 | 21 | Not reached from startup: `cockpit/` | 4 | 178 | 11527 | 0 | 0 | 0.0% |
 | 22 | Not reached from startup: `shape/` | 2 | 42 | 3178 | 4 | 2 | 9.5% |
-| 23 | Not reached from startup: `core/` (part 1 of 9) | 18 | 292 | 16011 | 61 | 15 | 20.8% |
+| 23 | Not reached from startup: `core/` (part 1 of 9) | 18 | 292 | 16011 | 63 | 13 | 21.5% |
 | 24 | Not reached from startup: `core/` (part 2 of 9) | 11 | 277 | 24965 | 35 | 7 | 12.6% |
 | 25 | Not reached from startup: `core/` (part 3 of 9) | 24 | 278 | 24134 | 35 | 8 | 12.5% |
 | 26 | Not reached from startup: `core/` (part 4 of 9) | 18 | 300 | 20148 | 48 | 8 | 16.0% |
@@ -44,9 +44,9 @@ functions don't count as done. Sizes are in instructions.
 | 28 | Not reached from startup: `core/` (part 6 of 9) | 18 | 282 | 21809 | 53 | 12 | 18.7% |
 | 29 | Not reached from startup: `core/` (part 7 of 9) | 18 | 263 | 22721 | 66 | 8 | 25.0% |
 | 30 | Not reached from startup: `core/` (part 8 of 9) | 20 | 300 | 31826 | 41 | 7 | 13.6% |
-| 31 | Not reached from startup: `core/` (part 9 of 9) | 5 | 111 | 10905 | 22 | 6 | 19.8% |
+| 31 | Not reached from startup: `core/` (part 9 of 9) | 5 | 111 | 10905 | 24 | 7 | 21.6% |
 | 32 | Not reached from startup: `wincore/` | 2 | 11 | 482 | 4 | 0 | 36.3% |
-| | **All** | | **4479** | **402407** | **1059** | **192** | **23.6%** |
+| | **All** | | **4479** | **402407** | **1068** | **190** | **23.8%** |
 
 ## Step 0: Math value types
 
@@ -968,9 +968,9 @@ functions don't count as done. Sizes are in instructions.
 - class `CInventory`
   - [x] `loadItems` 0x004ff740 (27)
 
-### `core/set.cpp` (1 functions, 88 instructions, 0 done, 0 partial)
+### `core/set.cpp` (1 functions, 88 instructions, 1 done, 0 partial)
 - class `CDemonSet`
-  - [ ] `buildActorTypeLists` 0x00570fc0 (88)
+  - [x] `buildActorTypeLists` 0x00570fc0 (88)
 
 ### `core/dtrace.cpp` (2 functions, 110 instructions, 1 done, 0 partial)
 - class `CDemonRaytrace`
@@ -983,9 +983,9 @@ functions don't count as done. Sizes are in instructions.
 - free functions
   - [ ] `resetAllPathMaps` 0x00548590 (30)
 
-### `core/setcolid.cpp` (2 functions, 28 instructions, 0 done, 0 partial)
+### `core/setcolid.cpp` (2 functions, 28 instructions, 1 done, 0 partial)
 - class `CDemonSet`
-  - [ ] `buildCollidableActorList` 0x005743e0 (24)
+  - [x] `buildCollidableActorList` 0x005743e0 (24)
   - [ ] `commitVoxelBuffer` 0x00574560 (4)
 
 ### `core/dmodel.cpp` (1 functions, 15 instructions, 1 done, 0 partial)
@@ -1024,16 +1024,14 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `initTransformCache` 0x00408870 (14)
   - [x] `normalizeAngleToPi` 0x0040cd70 (56)
 
-### `core/hero.cpp` (1 functions, 8 instructions, 0 done, 1 partial)
+### `core/hero.cpp` (1 functions, 8 instructions, 1 done, 0 partial)
 - class `CHeroPlaceholder`
-  - [~] `ctor` 0x004f3c00 (8)
-    - deferred: drawing it transparent, with the set's renderable list
+  - [x] `ctor` 0x004f3c00 (8)
 
-### `core/mission.cpp` (13 functions, 995 instructions, 6 done, 7 partial)
+### `core/mission.cpp` (13 functions, 995 instructions, 7 done, 6 partial)
 - class `CDemonMission`
   - [x] `removeActorFromList` 0x00523be0 (67)
-  - [~] `buildSetActorList` 0x00523e60 (50)
-    - deferred: the set's lists of actors that collide and of each class, with their readers
+  - [x] `buildSetActorList` 0x00523e60 (50)
   - [~] `removeActor` 0x00523f20 (18)
     - deferred: clearing what the player heroes hold of the actor (the weapon in hand, both carry hands, the inventory's selected weapon and item), which the original left dangling (the decomp's actor_delete.h nocturne_actor_delete_unbind_heroes, ACTOR_DELETE), with CStranger's weapon in hand and CInventory's selection
     - deferred: a sound tracking the actor's position finishing where the actor last was instead of reading it after it is freed (the decomp's actor_delete.h nocturne_actor_delete_unbind_sounds, ACTOR_DELETE), with CDemonActor::playSound and CSound::playActorSound
@@ -2120,13 +2118,14 @@ functions don't count as done. Sizes are in instructions.
 - class `CEditorTools`
   - [ ] `displayMemoryDiagnostics` 0x004a2590 (80)
 
-### `wincore/wddvmem.cpp` (1 functions, 160 instructions, 0 done, 0 partial)
+### `wincore/wddvmem.cpp` (1 functions, 160 instructions, 0 done, 1 partial)
 - free functions
-  - [ ] `resetGraphicsSystem` 0x005ed2a0 (160)
+  - [~] `resetGraphicsSystem` 0x005ed2a0 (160)
+    - deferred: marking the graphics as reset, with reinitializeGraphicsSystem and videoRestore
 
-### `engine/2d.c` (1 functions, 1 instructions, 0 done, 0 partial)
+### `engine/2d.c` (1 functions, 1 instructions, 1 done, 0 partial)
 - free functions
-  - [ ] `resetGraphicsSystem` 0x00402a70 (1)
+  - [x] `resetGraphicsSystem` 0x00402a70 (1)
 
 ### `core/game.cpp` (1 functions, 75 instructions, 0 done, 0 partial)
 - class `CGame`
@@ -3610,7 +3609,7 @@ functions don't count as done. Sizes are in instructions.
 - class `CEnemy`
   - [x] `dtor` 0x004125c0 (62)
 
-### `core/backgnd.cpp` (13 functions, 248 instructions, 8 done, 1 partial)
+### `core/backgnd.cpp` (13 functions, 248 instructions, 9 done, 0 partial)
 - class `CBackgroundActor`
   - [x] `ctor` 0x004127b0 (21)
   - [x] `getActorType` 0x004127a0 (2)
@@ -3622,8 +3621,7 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `getCollisionType` 0x004129f0 (20)
   - [x] `getGroundType` 0x00412a30 (3)
   - [x] `dtor` 0x00412ad0 (31)
-  - [~] `setup` 0x00412810 (17)
-    - deferred: colliding only when collideWithMe is set, with CDemonSet::buildCollidableActorList
+  - [x] `setup` 0x00412810 (17)
 - free functions
   - [x] `factoryFuncBackgroundActor` 0x00412770 (12)
   - [x] `staticInit` 0x00412740 (9)
@@ -3666,7 +3664,7 @@ functions don't count as done. Sizes are in instructions.
   - [x] `dtor` 0x004140b0 (31)
   - [ ] `setup` 0x00413da0 (8)
 
-### `core/barrier.cpp` (11 functions, 219 instructions, 6 done, 1 partial)
+### `core/barrier.cpp` (11 functions, 219 instructions, 7 done, 0 partial)
 - class `CBarrier`
   - [x] `ctor` 0x004141c0 (13)
   - [x] `getActorType` 0x004141b0 (2)
@@ -3676,8 +3674,7 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `getCollisionType` 0x004143a0 (23)
   - [ ] `updateCollisionData` 0x004143e0 (10)
   - [x] `dtor` 0x00414670 (31)
-  - [~] `setup` 0x00414210 (11)
-    - deferred: not drawn, with CDemonSet::buildActorTypeLists and renderOpaqueActors
+  - [x] `setup` 0x00414210 (11)
 - free functions
   - [x] `factoryFuncBarrier` 0x00414180 (12)
   - [x] `staticInit` 0x00414150 (9)
@@ -5377,7 +5374,7 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `renderAimBeam` 0x005066b0 (276)
   - [x] `dtor` 0x00506a50 (31)
   - [~] `ctor` 0x00505900 (31)
-    - deferred: the defaults the constructor gives the firing fields, the weight, the charge and the hit flag, with CLightGun::fire and CLightGun::process
+    - deferred: the defaults the constructor gives the firing fields, the charge and the hit flag, with CLightGun::fire and CLightGun::process
     - deferred: lighting the beam with the carrying hero's own light rather than the one shared light (the decomp's nocturne_hero_light), with CLightGun::process, CLightGun::fire and CLightGun::updateBeamLight
     - deferred: charging from the batteries of the hero netplay gives it rather than the local one (the decomp's nocturne_net_sim_target_for), with CLightGun::process
   - [ ] `isVampireType` 0x005059c0 (31)
@@ -6430,8 +6427,6 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `getTargetPoints` 0x005e0c30 (53)
   - [x] `dtor` 0x005e1660 (31)
   - [~] `setup` 0x005df990 (50)
-    - deferred: not drawn, with CDemonSet::buildActorTypeLists and renderOpaqueActors
-    - deferred: colliding only when a laser, bullet or damage sets it off, with CDemonSet::buildCollidableActorList
     - deferred: no event raised and no actor held yet, with CTrigger::process
     - deferred: not processed with neither event, with CDemonSet::processActors
 - free functions
@@ -6602,21 +6597,21 @@ functions don't count as done. Sizes are in instructions.
 
 ## Step 31: Not reached from startup: `core/` (part 9 of 9)
 
-### `core/weapon.cpp` (25 functions, 852 instructions, 6 done, 1 partial)
+### `core/weapon.cpp` (25 functions, 852 instructions, 8 done, 2 partial)
 - class `CWeapon`
   - [~] `ctor` 0x005ede70 (42)
-    - deferred: the physics box, and the defaults the constructor gives the weight, collision, firing, light, muzzle flash and rendering fields, with the steps that read them
+    - deferred: the defaults the constructor gives the firing, light, muzzle flash and rendering fields, with the steps that read them
   - [ ] `process` 0x005ee110 (95)
   - [ ] `renderOpaque` 0x005ee030 (48)
   - [ ] `setWeaponState` 0x005ee640 (4)
   - [x] `dtor` 0x005edf80 (38)
   - [ ] `fire` 0x005ee6e0 (11)
   - [x] `archive` 0x005ee250 (57)
-  - [ ] `getBoundingBox` 0x005ee0c0 (28)
+  - [x] `getBoundingBox` 0x005ee0c0 (28)
   - [ ] `getCollisionType` 0x005ee330 (2)
   - [ ] `canPickup` 0x005ee340 (58)
   - [ ] `pickup` 0x005ee3e0 (4)
-  - [ ] `setupPhysicsBox` 0x005ee740 (74)
+  - [x] `setupPhysicsBox` 0x005ee740 (74)
   - [ ] `onDropped` 0x005ee3f0 (47)
   - [x] `getCarrier` 0x005ee490 (3)
   - [ ] `updateLighting` 0x005ee4a0 (114)
@@ -6626,7 +6621,8 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `getDamage` 0x005ee730 (3)
   - [ ] `renderAimBeam` 0x005ee830 (148)
   - [ ] `onFired` 0x005ee860 (1)
-  - [ ] `setup` 0x005edff0 (15)
+  - [~] `setup` 0x005edff0 (15)
+    - deferred: clearing is_rendered, with renderOpaque
 - free functions
   - [x] `staticInit` 0x005ede40 (9)
 - class `CDemonGlobe`

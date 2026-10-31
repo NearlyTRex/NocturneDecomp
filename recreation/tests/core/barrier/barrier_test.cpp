@@ -93,12 +93,14 @@ TEST(CBarrier, TheFunctionsNotPortedYetQuit) {
     expectEachQuitsNotPorted("CBarrier", calls);
 }
 
-// Outside the editor a barrier isn't drawn as transparent.
-TEST(CBarrier, SettingUpLeavesItOpaque) {
+// Outside the editor a barrier isn't drawn as transparent either.
+TEST(CBarrier, SettingUpLeavesItUndrawn) {
     CBarrier barrier;
     barrier.setTransparent(true);
     barrier.setup();
+    EXPECT_FALSE(barrier.isRenderable());
     EXPECT_FALSE(barrier.isTransparent());
+    EXPECT_FALSE(barrier.isCollisionDisabled());
 }
 
 } // namespace

@@ -129,6 +129,8 @@ public:
 private:
     // Gives the set the actors whose place is in it, in list order.
     void buildSetActorList();
+    // Makes them the set's actors, and has it sort them into its lists.
+    void giveSetActors(std::vector<CDemonActor *> actors);
     [[nodiscard]] std::string generateUniqueActorName(std::string_view base_name) const;
     void clearMissionData();
     // Notes the version each class's fields were saved in.

@@ -32,7 +32,7 @@ public:
     int initializeGraphicsSystem(int width, int height) override;
     void cleanupGraphicsSystem();
     bool setScreenResolution(int width, int height, int bits_per_pixel) override;
-    void resetGraphicsSystem();
+    void resetGraphicsSystem() override;
     void reinitializeGraphicsSystem();
     void openScreenDevice() override;
     void closeScreenDevice() override;

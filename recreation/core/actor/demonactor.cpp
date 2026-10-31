@@ -137,6 +137,22 @@ void CDemonActor::setTransparent(bool transparent) {
     transparent_ = transparent;
 }
 
+bool CDemonActor::isRenderable() const {
+    return renderable_;
+}
+
+void CDemonActor::setRenderable(bool renderable) {
+    renderable_ = renderable;
+}
+
+bool CDemonActor::isCollisionDisabled() const {
+    return collision_disabled_;
+}
+
+void CDemonActor::setCollisionDisabled(bool collision_disabled) {
+    collision_disabled_ = collision_disabled;
+}
+
 const common::CVector3i &CDemonActor::getScale() const {
     return scale_;
 }

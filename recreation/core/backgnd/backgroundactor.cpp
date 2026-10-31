@@ -40,11 +40,11 @@ std::unique_ptr<CDemonActor> CBackgroundActor::create(CActor &classes) {
     return std::make_unique<CBackgroundActor>(classes);
 }
 
-// deferred: colliding only when collideWithMe is set, with CDemonSet::buildCollidableActorList
 // nocedit 0x00412810
 void CBackgroundActor::setup() {
     model_.preCache();
     CDemonActor::setup();
+    setCollisionDisabled(!collide_with_me_);
 }
 
 // nocedit 0x00412990

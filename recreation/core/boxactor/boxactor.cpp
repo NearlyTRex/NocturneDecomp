@@ -4,6 +4,7 @@
 #include "core/actor/actor_functions.h"
 #include "core/actor/actorarchive.h"
 #include "core/actor/demonactortype.h"
+#include "core/box/actorphysicsbox.h"
 #include "core/box/boundingbox3d.h"
 #include "core/box/box.h"
 #include "core/dmodel/keyframedmodel.h"
@@ -41,8 +42,6 @@ constexpr int kPushSoundVersion = 14;
 constexpr int kBlockDirectorVersion = 15;
 // A box still to be set up from its model when the mission starts.
 constexpr int kBoxToSetUp = -1;
-// Halfway between a frame's bounds is its centre.
-constexpr float kHalf = 0.5F;
 
 } // namespace
 
@@ -160,16 +159,7 @@ void CBoxActor::setupPhysicsBox() {
     }
     CBoundingBox3D bounds;
     getBoundingBox(&bounds);
-    common::CVector3f centre = {.x = (bounds.min.x + bounds.max.x) * kHalf,
-                                .y = (bounds.min.y + bounds.max.y) * kHalf,
-                                .z = (bounds.min.z + bounds.max.z) * kHalf};
-    common::CVector3f position;
-    localToWorldPoint(&position, &centre);
-    common::CVector3f orientation = getOrientation();
-    common::CVector3f extents = {.x = bounds.max.x - bounds.min.x,
-                                 .y = bounds.max.y - bounds.min.y,
-                                 .z = bounds.max.z - bounds.min.z};
-    physics_box_.setupCorners(&position, &orientation, &extents, weight_in_pounds_);
+    setupPhysicsBoxAround(physics_box_, *this, bounds, weight_in_pounds_);
 }
 
 // The frame is rounded to the nearest and kept within the model's. The original read past the

@@ -64,15 +64,16 @@ std::unique_ptr<CDemonActor> CTrigger::create(CActor & /*classes*/) {
 
 // An event of "none" in any case is none. The original draws a trigger as transparent while the
 // mission is in the editor, which the game never is.
-// deferred: not drawn, with CDemonSet::buildActorTypeLists and renderOpaqueActors
-// deferred: colliding only when a laser, bullet or damage sets it off, with
-//   CDemonSet::buildCollidableActorList
 // deferred: no event raised and no actor held yet, with CTrigger::process
 // deferred: not processed with neither event, with CDemonSet::processActors
 // nocedit 0x005df990
 void CTrigger::setup() {
     CDemonActor::setup();
+    setRenderable(false);
     setTransparent(false);
+    setCollisionDisabled(trigger_cause_ != ETriggerCause::kLaser &&
+                         trigger_cause_ != ETriggerCause::kBullet &&
+                         trigger_cause_ != ETriggerCause::kDamage);
     for (std::string *event : {&on_event_, &off_event_}) {
         if (common::equalsIgnoringAsciiCase(*event, "none")) {
             event->clear();
