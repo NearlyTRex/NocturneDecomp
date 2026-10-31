@@ -18,8 +18,6 @@
 
 namespace nocturne::core {
 
-// deferred: the root motion gathered, and which bones a partial pose builds on, with
-//   getRootMotionDelta and updateMotion's partial poses
 // nocedit 0x0059ddc0
 CDeformableModelInstance::CDeformableModelInstance(IDeformableModels &models) : models_(models) {}
 
@@ -143,6 +141,10 @@ EBoneUpdateMode CDeformableModelInstance::getBoneUpdateMode() const {
 
 void CDeformableModelInstance::setBoneUpdateMode(EBoneUpdateMode mode) {
     bone_update_mode_ = mode;
+}
+
+const common::CVector3f &CDeformableModelInstance::getAccumulatedRootMotion() const {
+    return accumulated_root_motion_;
 }
 
 EPartVisibility CDeformableModelInstance::getPartVisibility(std::size_t part) const {

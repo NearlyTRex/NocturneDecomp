@@ -94,6 +94,32 @@ TEST_F(CExtendedFloatAgainstX87, DifferencesRoundAsTheX87Does) {
     }
 }
 
+TEST_F(CExtendedFloatAgainstX87, QuotientsRoundAsTheX87Does) {
+    for (int i = 0; i < 200000; ++i) {
+        const double a = pick();
+        const double b = pick();
+        const double c = pick();
+        const long double quotient = ((static_cast<long double>(a) - b) / c);
+        const X x_quotient = (X(a) - X(b)) / X(c);
+        ASSERT_EQ(storedBits(x_quotient), floatBits(static_cast<float>(quotient)))
+            << a << " - " << b << " / " << c;
+        ASSERT_EQ(x_quotient > X(a), quotient > a) << a << " - " << b << " / " << c;
+    }
+}
+
+TEST(CExtendedFloat, DividesWithTheX87sSpecialCases) {
+    EXPECT_TRUE(X(3.0) / X(4.0) == X(0.75));
+    EXPECT_TRUE(X(1.0) / X(3.0) * X(3.0) == X(1.0));
+    EXPECT_EQ(storedBits(X(1.0) / X(0.0)), 0x7f800000U);
+    EXPECT_EQ(storedBits(X(-1.0) / X(0.0)), 0xff800000U);
+    EXPECT_EQ(storedBits(X(0.0) / X(0.0)), 0xffc00000U);
+    EXPECT_EQ(storedBits(X(kInfinity) / X(kInfinity)), 0xffc00000U);
+    EXPECT_EQ(storedBits(X(kInfinity) / X(-2.0)), 0xff800000U);
+    EXPECT_EQ(storedBits(X(-2.0) / X(kInfinity)), 0x80000000U);
+    EXPECT_EQ(storedBits(X(0.0) / X(-2.0)), 0x80000000U);
+    EXPECT_EQ(storedBits(X(2.0) / X(-kNaN)), 0xffc00000U);
+}
+
 TEST(CExtendedFloat, SubtractsWithTheX87sZerosAndNaNs) {
     EXPECT_TRUE(X(3.0) - X(0.25) == X(2.75));
     EXPECT_TRUE(X(0.25) - X(3.0) == X(-2.75));

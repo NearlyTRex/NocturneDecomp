@@ -35,7 +35,11 @@ public:
                                  int target_motion_index);
     virtual void accumulateScaledRootMotion(float start_frame, float end_frame, float scale_factor);
 
-    int advance(float *delta_time);
+    // Plays the time on, in at most five steps, each first taking any route to the wanted state:
+    // the motion runs to its exit, or the tween to its midpoint, where the motions swap, and on to
+    // its end. A step stops at a signal, and the signal is returned with the time not yet played
+    // left in delta_time. Otherwise 0, and delta_time is 0.
+    int advance(float &delta_time);
     // From the motion list.
     [[nodiscard]] const SMotion &getCurrentMotion() const;
     // Wants the state, -1 for none; one past the list's states is fatal. A new state drops the
@@ -98,6 +102,20 @@ private:
     void startTransition(const SMotionTransition &transition);
     // Swaps the motion and frame with the tween's target, and the tween's progress runs back.
     void reverseTransition();
+    // One step of advance outside a tween: as far as the exit, then through it.
+    int stepToExit(float &step_time);
+    // One step of advance in a tween: as far as its midpoint or end, playing the motions it plays.
+    int stepTween(float &step_time);
+    // The frame played on for the time, gathering the root motion scaled; past the motion's end
+    // it holds the last frame for a tween exit, else takes the exit.
+    int advanceFrameAndCheckSignals(int &motion_index, float &frame_number, float delta_time,
+                                    float scale_factor);
+    // The frame played on towards the exit; out_transition is where the step goes and
+    // delta_time is cut to the time it took.
+    int advanceFrameToExitPoint(int motion_index, float current_frame, float &delta_time,
+                                SMotionTransition &out_transition);
+    // remaining_time cut to what the motion can play from the frame.
+    void advanceTween(int motion_index, float current_frame, float &remaining_time) const;
 
     const CMotionList *motion_list_ = nullptr;
     int current_motion_index_ = 0;

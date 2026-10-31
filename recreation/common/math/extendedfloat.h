@@ -18,6 +18,7 @@ public:
     [[nodiscard]] CExtendedFloat operator+(const CExtendedFloat &other) const;
     // A NaN operand comes out as it went in, its sign included.
     [[nodiscard]] CExtendedFloat operator-(const CExtendedFloat &other) const;
+    [[nodiscard]] CExtendedFloat operator/(const CExtendedFloat &other) const;
     // Unordered when either is a NaN; zeros of either sign are equal.
     [[nodiscard]] std::partial_ordering operator<=>(const CExtendedFloat &other) const;
     [[nodiscard]] bool operator==(const CExtendedFloat &other) const;

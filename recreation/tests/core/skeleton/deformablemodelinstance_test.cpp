@@ -1,7 +1,6 @@
 #include "core/skeleton/deformablemodelinstance.h"
 #include "core/skeleton/partvisibility.h"
 #include "tests/mocks/core/mockdeformablemodels.h"
-#include "tests/mocks/core/notportedcalls.h"
 
 #include <gmock/gmock.h>
 #include <gtest/gtest.h>
@@ -101,8 +100,7 @@ TEST(CDeformableModelInstance, PublicInterface) {
     static_assert(std::is_same_v<decltype(&CDeformableModelInstance::init),
                                  void (CDeformableModelInstance::*)(std::string_view)>);
     static_assert(std::is_same_v<decltype(&CDeformableModelInstance::getRootMotionDelta),
-                                 common::CVector3f *(CDeformableModelInstance::*)(
-                                     common::CVector3f *, float, float)>);
+                                 common::CVector3f (CDeformableModelInstance::*)(float, float)>);
     static_assert(std::is_same_v<decltype(&CDeformableModelInstance::dismemberPart),
                                  void (CDeformableModelInstance::*)(CBodyPart *, int)>);
     static_assert(std::is_same_v<decltype(&CDeformableModelInstance::rayIntersect),
@@ -133,16 +131,6 @@ TEST(CDeformableModelInstance, NamingTheModelShowsEveryPartInItsFirstTextureSet)
     EXPECT_EQ(model.getModelName(), "zombie1.dfm");
     EXPECT_EQ(model.getPartVisibility(3), EPartVisibility::kShown);
     EXPECT_EQ(model.getPartTextureSet(4), CDeformableModelInstance::kFirstTextureSet);
-}
-
-TEST(CDeformableModelInstance, TheFunctionsNotPortedYetQuit) {
-    ::testing::NiceMock<MockDeformableModels> models;
-    CDeformableModelInstance model(models);
-    const NotPortedCalls calls = {
-        {"accumulateScaledRootMotion", [&] { model.accumulateScaledRootMotion(0.0F, 0.0F, 0.0F); }},
-    };
-    EXPECT_EQ(calls.size(), 1U);
-    expectEachQuitsNotPorted("CDeformableModelInstance", calls);
 }
 
 } // namespace

@@ -318,6 +318,58 @@ TEST_F(CDeformableModelInstanceBlendTest, ARootFramePastTheSkeletonsLastIsReadAs
         {.x = 0.1F * 2.0F, .y = 0.2F * 2.0F, .z = 0.7F * 2.0F}));
 }
 
+// The canceled movements 1,2,3 to 10,11,12, scaled by the model's 2.
+class CDeformableModelInstanceRootMotionTest : public CDeformableModelInstanceBlendTest {
+protected:
+    CDeformableModelInstanceRootMotionTest() {
+        loadVariant("MOVES", replaced(kBlendSkeleton, "// canceled\n0,0,0\n0,0,0\n0,0,0\n0,0,0\n",
+                                      "// canceled\n1,2,3\n4,5,6\n7,8,9\n10,11,12\n"));
+    }
+};
+
+TEST_F(CDeformableModelInstanceRootMotionTest, NoneMovesUnlessTheEndIsAfterTheStart) {
+    EXPECT_TRUE(variant_.getRootMotionDelta(2.0F, 1.0F).equals({}));
+    EXPECT_TRUE(variant_.getRootMotionDelta(1.5F, 1.5F).equals({}));
+}
+
+// Frames 0 to 2 less half of each end frame: (12, 15, 18) - (0.5, 1, 1.5) - (3.5, 4, 4.5), scaled.
+TEST_F(CDeformableModelInstanceRootMotionTest, TheEndFramesCountOnlyThePartsBetween) {
+    EXPECT_TRUE(
+        variant_.getRootMotionDelta(0.5F, 2.5F).equals({.x = 16.0F, .y = 20.0F, .z = 24.0F}));
+    EXPECT_TRUE(
+        variant_.getRootMotionDelta(1.0F, 2.0F).equals({.x = 8.0F, .y = 10.0F, .z = 12.0F}));
+}
+
+TEST_F(CDeformableModelInstanceRootMotionTest, AFrameThatIsntFiniteMovesByNaN) {
+    EXPECT_TRUE(std::isnan(variant_.getRootMotionDelta(0.0F, std::nanf("")).x));
+    EXPECT_TRUE(
+        std::isnan(variant_.getRootMotionDelta(-std::numeric_limits<float>::infinity(), 1.0F).y));
+}
+
+// Frames -1, 4 and 5 are outside the list: only frame 0's first half moves, or frame 3's second.
+TEST_F(CDeformableModelInstanceRootMotionTest, AFrameOutsideTheListHasNoMovement) {
+    EXPECT_TRUE(variant_.getRootMotionDelta(-1.0F, 0.5F).equals({.x = 1.0F, .y = 2.0F, .z = 3.0F}));
+    EXPECT_TRUE(
+        variant_.getRootMotionDelta(3.5F, 5.5F).equals({.x = 10.0F, .y = 11.0F, .z = 12.0F}));
+}
+
+TEST_F(CDeformableModelInstanceRootMotionTest, TheRootMotionIsGatheredScaled) {
+    EXPECT_TRUE(variant_.getAccumulatedRootMotion().equals({}));
+    variant_.accumulateScaledRootMotion(1.0F, 2.0F, 0.5F);
+    variant_.accumulateScaledRootMotion(1.0F, 2.0F, 0.5F);
+    EXPECT_TRUE(variant_.getAccumulatedRootMotion().equals({.x = 8.0F, .y = 10.0F, .z = 12.0F}));
+}
+
+// Stand plays from frame 0 about half way to 1, at 30 a second.
+TEST_F(CDeformableModelInstanceRootMotionTest, AdvancingGathersTheRootMotionPlayed) {
+    float time = 1.0F / 60.0F;
+    variant_.advance(time);
+    const float frame = variant_.getCurrentFrameNumber();
+    EXPECT_NEAR(frame, 0.5F, 1e-6F);
+    EXPECT_GT(variant_.getAccumulatedRootMotion().x, 0.0F);
+    EXPECT_EQ(variant_.getAccumulatedRootMotion().x, variant_.getRootMotionDelta(0.0F, frame).x);
+}
+
 // A tween's progress blends the pose towards its target as it is updated: stand routes to state
 // T by tweening to wave's second frame over half a second.
 TEST_F(CDeformableModelInstanceBlendTest, UpdatingDuringATweenBlendsTowardsItsTarget) {

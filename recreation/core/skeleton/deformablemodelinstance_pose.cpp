@@ -15,6 +15,7 @@
 
 #include <algorithm>
 #include <array>
+#include <cmath>
 #include <cstddef>
 #include <cstdint>
 #include <limits>
@@ -364,6 +365,55 @@ int CDeformableModelInstance::findPatchToFrame(int source_motion_index, float so
         }
     }
     return nearest_frame;
+}
+
+// nocedit 0x005a0c90
+void CDeformableModelInstance::accumulateScaledRootMotion(float start_frame, float end_frame,
+                                                          float scale_factor) {
+    const common::CVector3f delta = getRootMotionDelta(start_frame, end_frame);
+    accumulated_root_motion_ = {.x = accumulated_root_motion_.x + (delta.x * scale_factor),
+                                .y = accumulated_root_motion_.y + (delta.y * scale_factor),
+                                .z = accumulated_root_motion_.z + (scale_factor * delta.z)};
+}
+
+// x takes off the last frame's part and is scaled at the x87's precision before it is stored. A
+// frame that isn't finite gives a NaN delta: the original reads outside the frames for one, and
+// for a start at NaN or minus infinity loops through most of the int range. A frame outside the
+// list has no movement, where the original reads past its ends; a motion's exit cutting to its
+// frame -1 reaches one, which no shipped skeleton has.
+// nocedit 0x005a0d10
+common::CVector3f CDeformableModelInstance::getRootMotionDelta(float start_frame, float end_frame) {
+    if (start_frame >= end_frame) {
+        return {};
+    }
+    if (!std::isfinite(start_frame) || !std::isfinite(end_frame)) {
+        const float nan = std::numeric_limits<float>::quiet_NaN();
+        return {.x = nan, .y = nan, .z = nan};
+    }
+    const std::span<const common::CVector3f> moves = getSkeletonPtr()->getCanceledMovements();
+    const auto moveAt = [moves](int frame) {
+        return frame >= 0 && toIndex(frame) < moves.size() ? moves[toIndex(frame)]
+                                                           : common::CVector3f{};
+    };
+    const int first = common::CExtendedFloat(std::floor(start_frame)).truncateToInt();
+    const int last = common::CExtendedFloat(std::ceil(end_frame)).truncateToInt();
+    common::CVector3f sum;
+    for (int frame = first; frame < last; ++frame) {
+        const common::CVector3f move = moveAt(frame);
+        sum = {.x = sum.x + move.x, .y = sum.y + move.y, .z = sum.z + move.z};
+    }
+    const common::CVector3f first_move = moveAt(first);
+    const common::CVector3f last_move = moveAt(last - 1);
+    const float before_start = start_frame - static_cast<float>(first);
+    const float after_end = static_cast<float>(last) - end_frame;
+    const float x = sum.x - (first_move.x * before_start);
+    const float y = (sum.y - (first_move.y * before_start)) - (last_move.y * after_end);
+    const float z = (sum.z - (first_move.z * before_start)) - (last_move.z * after_end);
+    return {.x = ((common::CExtendedFloat(x) - common::CExtendedFloat(last_move.x * after_end)) *
+                  common::CExtendedFloat(root_offset_scale_.x))
+                     .toFloat(),
+            .y = y * root_offset_scale_.y,
+            .z = z * root_offset_scale_.z};
 }
 
 // nocedit 0x005a01d0

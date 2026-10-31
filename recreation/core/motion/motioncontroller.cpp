@@ -11,11 +11,74 @@
 #include <cmath>
 #include <cstddef>
 #include <cstdint>
+#include <format>
 #include <span>
 #include <string>
 #include <utility>
 
 namespace nocturne::core {
+namespace {
+
+// The most steps one advance takes; time left after them is dropped.
+constexpr int kMaxAdvanceSteps = 5;
+// Time to advance at or below this is none. The original holds it as a double.
+constexpr double kMinAdvanceTime = 1e-05;
+// A tween swaps its motions once its progress passes this, before half way, as a double.
+constexpr double kTweenMidpoint = 0.4999;
+// Where a tween's progress runs to, and as a double the original works it from.
+constexpr double kTweenHalf = 0.5;
+// A tween past its midpoint ends once its progress is below this, as a double.
+constexpr double kTweenEnd = 0.0001;
+// How short of an exit a frame still counts as before it, as a double.
+constexpr double kExitMargin = 0.0001;
+// A signal's frame is taken from this far ahead, and the frame stops this far past it, as a double.
+constexpr double kSignalReach = 0.001;
+
+bool isTween(EMotionTransitionCmd command) {
+    return command >= EMotionTransitionCmd::MOTION_CMD_TWEEN &&
+           command <= EMotionTransitionCmd::MOTION_CMD_TWEEN_BIDIR;
+}
+
+common::CExtendedFloat extended(double value) {
+    return common::CExtendedFloat(value);
+}
+
+// The int and the float added at the x87's precision, then stored.
+float addStored(int whole, float part) {
+    return (extended(whole) + extended(part)).toFloat();
+}
+
+// As far as delta_time takes the frame at the motion's rate, at the x87's precision, then stored.
+float stepFrame(const SMotion &motion, float frame, float delta_time) {
+    return ((extended(delta_time) * extended(motion.fps)) + extended(frame)).toFloat();
+}
+
+// The time from the frame to the end frame at the motion's rate.
+float timeBetween(const SMotion &motion, float frame, double end) {
+    return ((extended(end) - extended(frame)) / extended(motion.fps)).toFloat();
+}
+
+// The last signal the step from the frame reaches, each one reached cutting it short to just past
+// that signal; 0 for none. A NaN end reaches none.
+struct SSignalStep {
+    float end = 0.0F;
+    int signal = 0;
+};
+
+SSignalStep findSignal(const SMotion &motion, float frame, float end) {
+    SSignalStep step{.end = end};
+    for (const SMotionSignal &signal : motion.signals) {
+        const auto signal_frame = static_cast<float>(signal.frame_number);
+        if (!(frame > signal_frame) &&
+            extended(step.end) + extended(kSignalReach) >= extended(signal_frame)) {
+            step.end = (extended(signal_frame) + extended(kSignalReach)).toFloat();
+            step.signal = signal.value;
+        }
+    }
+    return step;
+}
+
+} // namespace
 
 // nocedit 0x0052d570
 CMotionController::CMotionController() {
@@ -88,15 +151,14 @@ void CMotionController::setDesiredState(int desired_state_index, bool force_imme
     }
 }
 
-// A command of none matches the state and drops what was under way without going anywhere. The
-// original also checks the route found isn't the one under way, which the check before rules out.
-// deferred: no state wanted dropping the route under way and taking none, with advance
-// deferred: a route under way for another state than the one wanted, as keepState leaves one at a
-//   tween's midpoint, giving way to the wanted state's route, with advance
+// A command that isn't a cut, a wait or a tween matches the state and drops what was under way
+// without going anywhere. The original also takes the wanted state's route when the one under way
+// is for another, which can't be: a new state drops the route, and keepState only changes the
+// state as a route lands, in the step that drops it. Nor can the route found be the one under way.
 // nocedit 0x0052d950
 bool CMotionController::findAndStartTransition() {
     const SMotion &motion = getCurrentMotion();
-    if (state_index_ == motion.state_index) {
+    if (state_index_ < 0 || state_index_ == motion.state_index) {
         in_transition_ = nullptr;
         return false;
     }
@@ -119,7 +181,7 @@ bool CMotionController::findAndStartTransition() {
     }
     if (transition.cmd == EMotionTransitionCmd::MOTION_CMD_WAIT_EXIT) {
         in_transition_ = &transition;
-    } else if (transition.cmd != EMotionTransitionCmd::MOTION_CMD_NONE) {
+    } else if (isTween(transition.cmd)) {
         in_transition_ = &transition;
         startTransition(transition);
     }
@@ -164,6 +226,189 @@ void CMotionController::reverseTransition() {
         tween_type_ = EMotionTransitionCmd::MOTION_CMD_TWEEN_ADVANCE_BOTH;
     }
     tween_progress_ = 1.0F - tween_progress_;
+}
+
+// nocedit 0x0052d610
+int CMotionController::advance(float &delta_time) {
+    for (int step = 0; step < kMaxAdvanceSteps; ++step) {
+        if (!(static_cast<double>(delta_time) > kMinAdvanceTime)) {
+            break;
+        }
+        if (findAndStartTransition()) {
+            continue;
+        }
+        float step_time = delta_time;
+        const int signal = 0.0F > tween_progress_ ? stepToExit(step_time) : stepTween(step_time);
+        delta_time -= step_time;
+        if (in_transition_ != nullptr &&
+            in_transition_->to_motion_number == current_motion_index_) {
+            in_transition_ = nullptr;
+        }
+        if (signal != 0) {
+            return signal;
+        }
+    }
+    delta_time = 0.0F;
+    return 0;
+}
+
+int CMotionController::stepToExit(float &step_time) {
+    SMotionTransition exit;
+    const int signal =
+        advanceFrameToExitPoint(current_motion_index_, current_frame_number_, step_time, exit);
+    if (exit.cmd == EMotionTransitionCmd::MOTION_CMD_JUMP ||
+        exit.cmd == EMotionTransitionCmd::MOTION_CMD_WAIT_EXIT) {
+        current_motion_index_ = exit.to_motion_number;
+        current_frame_number_ = exit.to_frame_number;
+        if (exit.set_new_state_as_desired) {
+            state_index_ = getCurrentMotion().state_index;
+        }
+    } else if (isTween(exit.cmd)) {
+        startTransition(exit);
+    } else {
+        common::displayErrorAndQuit(std::format(
+            "Invalid transition command returned by CMotionControler::advanceComplex: {}",
+            static_cast<int>(exit.cmd)));
+    }
+    return signal;
+}
+
+// The original also quits on a tween of any other type, which startTransition never starts.
+int CMotionController::stepTween(float &step_time) {
+    const common::CExtendedFloat left_to_run =
+        tween_past_midpoint_ ? extended(tween_progress_)
+                             : extended(kTweenHalf) - extended(tween_progress_);
+    // A NaN time left stays NaN.
+    const float time_left = std::max((left_to_run / extended(tween_speed_)).toFloat(), 0.0F);
+    if (!(time_left >= step_time)) {
+        step_time = time_left;
+    }
+    int signal = 0;
+    bool target_plays = false;
+    if (!(0.0F >= step_time)) {
+        if (tween_type_ == EMotionTransitionCmd::MOTION_CMD_TWEEN_ADVANCE) {
+            target_plays = true;
+            advanceTween(tween_target_motion_, tween_target_frame_, step_time);
+        } else if (tween_type_ == EMotionTransitionCmd::MOTION_CMD_TWEEN_ADVANCE_BOTH ||
+                   tween_type_ == EMotionTransitionCmd::MOTION_CMD_TWEEN_BIDIR) {
+            advanceTween(current_motion_index_, current_frame_number_, step_time);
+            if (tween_type_ == EMotionTransitionCmd::MOTION_CMD_TWEEN_BIDIR) {
+                target_plays = true;
+                advanceTween(tween_target_motion_, tween_target_frame_, step_time);
+            }
+            signal = advanceFrameAndCheckSignals(current_motion_index_, current_frame_number_,
+                                                 step_time, tween_progress_);
+        }
+    }
+    if (target_plays) {
+        const int target_signal = advanceFrameAndCheckSignals(
+            tween_target_motion_, tween_target_frame_, step_time, 1.0F - tween_progress_);
+        if (signal == 0) {
+            signal = target_signal;
+        }
+    }
+    const common::CExtendedFloat moved = extended(step_time) * extended(tween_speed_);
+    if (!tween_past_midpoint_) {
+        const common::CExtendedFloat progress = moved + extended(tween_progress_);
+        tween_progress_ = progress.toFloat();
+        if (progress > extended(kTweenMidpoint)) {
+            reverseTransition();
+            if (tween_sets_new_state_) {
+                state_index_ = getCurrentMotion().state_index;
+            }
+        }
+        return signal;
+    }
+    const common::CExtendedFloat progress = extended(tween_progress_) - moved;
+    tween_progress_ = progress.toFloat();
+    if (!(progress >= extended(kTweenEnd))) {
+        clearTweenState();
+    }
+    return signal;
+}
+
+// A NaN step runs the frame to NaN, before the motion's end.
+// nocedit 0x0052de70
+int CMotionController::advanceFrameAndCheckSignals(int &motion_index, float &frame_number,
+                                                   float delta_time, float scale_factor) {
+    const SMotion &motion = motion_list_->getMotions()[static_cast<std::size_t>(motion_index)];
+    const SSignalStep step =
+        findSignal(motion, frame_number, stepFrame(motion, frame_number, delta_time));
+    if (!(extended(step.end) >= extended(motion.frame_count) + extended(-kExitMargin))) {
+        accumulateScaledRootMotion(addStored(motion.frame_start, frame_number),
+                                   addStored(motion.frame_start, step.end), scale_factor);
+        frame_number = step.end;
+        return step.signal;
+    }
+    accumulateScaledRootMotion(addStored(motion.frame_start, frame_number),
+                               static_cast<float>(motion.frame_start + motion.frame_count),
+                               scale_factor);
+    const int last_frame = motion.frame_count - 1;
+    if (isTween(motion.exit_forward_cmd)) {
+        frame_number = static_cast<float>(last_frame);
+        return step.signal;
+    }
+    float exit_frame = motion.exit_forward_to_frame;
+    if (!std::islessgreater(exit_frame, kPatchFrame)) {
+        exit_frame = static_cast<float>(findPatchToFrame(
+            motion_index, static_cast<float>(last_frame), motion.exit_forward_to_motion));
+    }
+    motion_index = motion.exit_forward_to_motion;
+    frame_number = exit_frame;
+    return step.signal;
+}
+
+// Before the exit frame the step is a cut to where it reached; otherwise the motion's exit, taken
+// to the target of a route waiting for it. A NaN step counts as before the exit.
+// nocedit 0x0052e020
+int CMotionController::advanceFrameToExitPoint(int motion_index, float current_frame,
+                                               float &delta_time,
+                                               SMotionTransition &out_transition) {
+    const SMotion &motion = motion_list_->getMotions()[static_cast<std::size_t>(motion_index)];
+    const float full_step = stepFrame(motion, current_frame, delta_time);
+    const SSignalStep step = findSignal(motion, current_frame, full_step);
+    if (!(extended(step.end) >=
+          extended(motion.exit_forward_from_frame) + extended(-kExitMargin))) {
+        accumulateScaledRootMotion(addStored(motion.frame_start, current_frame),
+                                   addStored(motion.frame_start, step.end), 1.0F);
+        out_transition.cmd = EMotionTransitionCmd::MOTION_CMD_JUMP;
+        out_transition.set_new_state_as_desired = false;
+        out_transition.to_motion_number = motion_index;
+        out_transition.to_frame_number = step.end;
+        if (!(step.end >= full_step)) {
+            delta_time = timeBetween(motion, current_frame, step.end);
+        }
+        return step.signal;
+    }
+    accumulateScaledRootMotion(
+        addStored(motion.frame_start, current_frame),
+        static_cast<float>(motion.frame_start + motion.exit_forward_from_frame), 1.0F);
+    out_transition.cmd = motion.exit_forward_cmd;
+    out_transition.to_motion_number = motion.exit_forward_to_motion;
+    out_transition.to_frame_number = motion.exit_forward_to_frame;
+    out_transition.tween_time = motion.exit_forward_tween_time;
+    out_transition.set_new_state_as_desired = motion.exit_forward_set_new_state;
+    if (in_transition_ != nullptr &&
+        in_transition_->cmd == EMotionTransitionCmd::MOTION_CMD_WAIT_EXIT) {
+        out_transition.to_motion_number = in_transition_->to_motion_number;
+        out_transition.to_frame_number = in_transition_->to_frame_number;
+    }
+    delta_time = timeBetween(motion, current_frame, motion.exit_forward_from_frame);
+    return step.signal;
+}
+
+// The step cut short at the first signal it reaches, or at the motion's end.
+// nocedit 0x0052e1d0
+void CMotionController::advanceTween(int motion_index, float current_frame,
+                                     float &remaining_time) const {
+    const SMotion &motion = motion_list_->getMotions()[static_cast<std::size_t>(motion_index)];
+    const float full_step = stepFrame(motion, current_frame, remaining_time);
+    // A NaN end stays NaN.
+    const float end = std::min(findSignal(motion, current_frame, full_step).end,
+                               static_cast<float>(motion.frame_count));
+    if (!(end >= full_step)) {
+        remaining_time = timeBetween(motion, current_frame, end);
+    }
 }
 
 // The motion by its index, or failing that by its quoted name with no index, then the frame. A
@@ -235,10 +480,14 @@ const std::string &CMotionController::getCurrentMotionName() const {
     return current_motion_name_;
 }
 
+// A dropped tween leaves nothing to turn back. The original leaves one dropped before its midpoint
+// unturned, so a new state with a route waiting turns back the tween that has gone: the motion
+// swaps for its stale target, and its progress of 2 runs advance into a fatal error.
 // nocedit 0x0052de40
 void CMotionController::clearTweenState() {
     tween_progress_ = -1.0F;
     tween_type_ = EMotionTransitionCmd::MOTION_CMD_NONE;
+    tween_past_midpoint_ = true;
 }
 
 int CMotionController::getCurrentMotionIndex() const {

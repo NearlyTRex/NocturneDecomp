@@ -36,6 +36,7 @@ public:
     // motion with no frames.
     int findPatchToFrame(int source_motion_index, float source_frame,
                          int target_motion_index) override;
+    // Adds the root motion between the frames, scaled, to the accumulated root motion.
     void accumulateScaledRootMotion(float start_frame, float end_frame,
                                     float scale_factor) override;
 
@@ -101,8 +102,10 @@ public:
     // The first motion's first frame skinned, its whole fixed-point vertices' extent, padded by
     // a twentieth of it on each side.
     void computeBoundingBoxFromVertices();
-    common::CVector3f *getRootMotionDelta(common::CVector3f *output_buffer, float start_frame,
-                                          float end_frame);
+    // How far the root moves between the frames, over the skeleton's canceled movements: each
+    // whole frame's, less the parts of the first and last frames outside them, scaled as the
+    // root offsets are. None unless the end is after the start.
+    [[nodiscard]] common::CVector3f getRootMotionDelta(float start_frame, float end_frame);
     void dismemberPart(CBodyPart *body_part, int part_index);
     float rayIntersect(common::CVector3f *ray_origin, common::CVector3f *ray_direction);
     int findClosestBone(common::CVector3f *point);
@@ -125,6 +128,8 @@ public:
     [[nodiscard]] const CBoundingBox3D &getBoundingBox() const;
     // Absolute unless set.
     [[nodiscard]] EBoneUpdateMode getBoneUpdateMode() const;
+    // Gathered as the motions play, none to start with.
+    [[nodiscard]] const common::CVector3f &getAccumulatedRootMotion() const;
     void setBoneUpdateMode(EBoneUpdateMode mode);
     [[nodiscard]] EPartVisibility getPartVisibility(std::size_t part) const;
     void setPartVisibility(std::size_t part, EPartVisibility visibility);
@@ -167,6 +172,7 @@ private:
     std::string model_name_;
     CDeformableModel *model_ptr_ = nullptr;
     EBoneUpdateMode bone_update_mode_ = EBoneUpdateMode::kAbsolute;
+    common::CVector3f accumulated_root_motion_;
 };
 
 // The blend's weight, the same for every bone.

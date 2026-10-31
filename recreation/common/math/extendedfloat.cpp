@@ -190,6 +190,43 @@ CExtendedFloat CExtendedFloat::operator-(const CExtendedFloat &other) const {
     return *this + negated;
 }
 
+// A finite value over zero is infinite, as the x87 leaves it with the division masked.
+CExtendedFloat CExtendedFloat::operator/(const CExtendedFloat &other) const {
+    if (const CExtendedFloat *nan = findNaN(other)) {
+        return *nan;
+    }
+    const bool negative = negative_ != other.negative_;
+    const bool infinite = kind_ == EKind::Infinite;
+    const bool other_infinite = other.kind_ == EKind::Infinite;
+    if ((infinite && other_infinite) || (isZero() && other.isZero())) {
+        return indefinite();
+    }
+    if (infinite || other.isZero()) {
+        return {EKind::Infinite, negative, 0, 0};
+    }
+    if (isZero() || other_infinite) {
+        return {EKind::Finite, negative, 0, 0};
+    }
+    // Long division to 66 quotient bits, then one more for whether anything was left over.
+    constexpr int kQuotientBits = 66;
+    std::uint64_t remainder = mantissa_;
+    bool carry = false;
+    SWide quotient;
+    for (int bit = 0; bit < kQuotientBits; ++bit) {
+        quotient = {.hi = (quotient.hi << 1U) | (quotient.lo >> 63U), .lo = quotient.lo << 1U};
+        if (carry || remainder >= other.mantissa_) {
+            remainder -= other.mantissa_;
+            quotient.lo |= 1U;
+        }
+        carry = (remainder & kTopBit) != 0;
+        remainder <<= 1U;
+    }
+    const bool inexact = carry || remainder != 0;
+    quotient = {.hi = (quotient.hi << 1U) | (quotient.lo >> 63U),
+                .lo = (quotient.lo << 1U) | static_cast<std::uint64_t>(inexact)};
+    return round(negative, quotient.hi, quotient.lo, scale_ - other.scale_ - kQuotientBits);
+}
+
 // Both are finite and not zero, this the larger. Each is moved down a bit first so the sum
 // can't carry out of 128 bits.
 CExtendedFloat CExtendedFloat::addFinite(const CExtendedFloat &other) const {
