@@ -24,7 +24,7 @@ functions don't count as done. Sizes are in instructions.
 | 8 | `renderMenuAndGetChoice`, `CMoon::free`, `CSound::reset`, `CEditorTools::showFileSelectionDialog` | 8 | 63 | 5314 | 60 | 3 | 95.2% |
 | 9 | `CPickList::enableItem`, `CEventList::resetGameFlags`, `CLevelLoader::show`, `CDemonMission::load` | 15 | 56 | 3298 | 33 | 11 | 58.9% |
 | 10 | `CDemonMission::createHeros`, `CDemonMission::prepareAllActors`, `CEventList::reset`, `CDemonMission::loadSet` | 15 | 42 | 5112 | 32 | 9 | 76.1% |
-| 11 | `CScript::loadScript` | 63 | 579 | 67400 | 70 | 34 | 12.0% |
+| 11 | `CScript::loadScript` | 63 | 579 | 67400 | 75 | 34 | 12.9% |
 | 12 | `CDemonMission::loadScript`, `CScript::executeInitSection`, `CDemonMission::startMission`, `CDemonMission::buildActiveSetActorList`, `CConsole::reset`, `CEditorTools::displayMemoryDiagnostics`, `CGame::setGameRes`, `CDemonLight::init`, `CDemonSet::initScene` | 12 | 26 | 1658 | 3 | 2 | 11.5% |
 | 13 | `CFireEffect::init`, `CDemonSet::loadMasterLightStates`, `CDemonSet::setGamma`, `CGame::clearOverlay`, `CGame::loadAssets` | 7 | 27 | 735 | 0 | 0 | 0.0% |
 | 14 | `CNetGame::syncPlayers`, `CNetGame::processServerFrame`, `CLevelLoader::cleanup`, `CKeys::toggleInputMask`, `CGame::processHotkeys` | 17 | 51 | 5302 | 4 | 0 | 7.8% |
@@ -37,16 +37,16 @@ functions don't count as done. Sizes are in instructions.
 | 21 | Not reached from startup: `cockpit/` | 4 | 178 | 11527 | 0 | 0 | 0.0% |
 | 22 | Not reached from startup: `shape/` | 2 | 42 | 3178 | 4 | 2 | 9.5% |
 | 23 | Not reached from startup: `core/` (part 1 of 9) | 18 | 292 | 16011 | 61 | 15 | 20.8% |
-| 24 | Not reached from startup: `core/` (part 2 of 9) | 11 | 277 | 24965 | 22 | 8 | 7.9% |
+| 24 | Not reached from startup: `core/` (part 2 of 9) | 11 | 277 | 24965 | 35 | 7 | 12.6% |
 | 25 | Not reached from startup: `core/` (part 3 of 9) | 24 | 278 | 24134 | 35 | 8 | 12.5% |
-| 26 | Not reached from startup: `core/` (part 4 of 9) | 18 | 300 | 20148 | 47 | 9 | 15.6% |
+| 26 | Not reached from startup: `core/` (part 4 of 9) | 18 | 300 | 20148 | 48 | 8 | 16.0% |
 | 27 | Not reached from startup: `core/` (part 5 of 9) | 21 | 294 | 20910 | 60 | 11 | 20.4% |
 | 28 | Not reached from startup: `core/` (part 6 of 9) | 18 | 282 | 21809 | 53 | 12 | 18.7% |
 | 29 | Not reached from startup: `core/` (part 7 of 9) | 18 | 263 | 22721 | 66 | 8 | 25.0% |
-| 30 | Not reached from startup: `core/` (part 8 of 9) | 20 | 300 | 31826 | 41 | 6 | 13.6% |
+| 30 | Not reached from startup: `core/` (part 8 of 9) | 20 | 300 | 31826 | 41 | 7 | 13.6% |
 | 31 | Not reached from startup: `core/` (part 9 of 9) | 5 | 111 | 10905 | 22 | 6 | 19.8% |
 | 32 | Not reached from startup: `wincore/` | 2 | 11 | 482 | 4 | 0 | 36.3% |
-| | **All** | | **4479** | **402407** | **1039** | **193** | **23.1%** |
+| | **All** | | **4479** | **402407** | **1058** | **192** | **23.6%** |
 
 ## Step 0: Math value types
 
@@ -1200,9 +1200,9 @@ functions don't count as done. Sizes are in instructions.
 - class `CFlameCan`
   - [ ] `ignite` 0x004cb340 (25)
 
-### `core/vecdir.cpp` (1 functions, 58 instructions, 0 done, 0 partial)
+### `core/vecdir.cpp` (1 functions, 58 instructions, 1 done, 0 partial)
 - free functions
-  - [ ] `convertDirectionVectorToEulerAngles` 0x005e7830 (58)
+  - [x] `convertDirectionVectorToEulerAngles` 0x005e7830 (58)
 
 ### `core/dmodel.cpp` (9 functions, 549 instructions, 6 done, 0 partial)
 - class `CKeyFramedModel`
@@ -1658,15 +1658,15 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `checkBreakableCondition` 0x004eb3a0 (8)
   - [ ] `renderBrokenGlass` 0x004e9ca0 (141)
 
-### `core/xform.cpp` (7 functions, 1005 instructions, 0 done, 0 partial)
+### `core/xform.cpp` (7 functions, 1005 instructions, 4 done, 0 partial)
 - free functions
-  - [ ] `multiplyMatrix3x4` 0x005f4f10 (165)
-  - [ ] `buildMatrixFromEulerAndPosition` 0x005f5390 (112)
+  - [x] `multiplyMatrix3x4` 0x005f4f10 (165)
+  - [x] `buildMatrixFromEulerAndPosition` 0x005f5390 (112)
   - [ ] `buildMatrixFromEulerAndPositionDirect` 0x005f54c0 (88)
   - [ ] `matrixToEulerAnglesZYX` 0x005f5bd0 (376)
   - [ ] `setIdentityMatrix3x4` 0x005f5100 (14)
-  - [ ] `determinant` 0x005f61c0 (27)
-  - [ ] `inverse` 0x005f6210 (223)
+  - [x] `determinant` 0x005f61c0 (27)
+  - [x] `inverse` 0x005f6210 (223)
 
 ### `core/mirror.cpp` (8 functions, 1667 instructions, 0 done, 0 partial)
 - free functions
@@ -4029,6 +4029,7 @@ functions don't count as done. Sizes are in instructions.
     - deferred: an ethereal character's flames, one on every bone, the first twice its size, with getPropertyList's Etheral, the only way a character becomes one
     - deferred: each layer action's motion and length, and the cheapest time between any two of their bones, with advanceLayerAction
     - deferred: no sound playing, with processCharacter
+    - deferred: the set's active fog drifting as the wind the cloth settles in, with CDemonSet::initScene and setCameraView, which set it
   - [ ] `moveAndCollide` 0x00428f40 (585)
   - [ ] `setOrientation` 0x0042ded0 (71)
   - [ ] `preProcess` 0x00429820 (22)
@@ -4061,7 +4062,7 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `getDeformableModelPartCount` 0x0042f9c0 (3)
   - [ ] `getActorCreateEvent` 0x0042f9d0 (3)
 
-### `core/chain.cpp` (16 functions, 1639 instructions, 1 done, 0 partial)
+### `core/chain.cpp` (16 functions, 1639 instructions, 2 done, 0 partial)
 - class `CChain`
   - [ ] `ctor` 0x0042fb80 (74)
   - [ ] `getActorType` 0x0042fb70 (2)
@@ -4079,41 +4080,45 @@ functions don't count as done. Sizes are in instructions.
   - [x] `staticInit` 0x0042fb10 (9)
   - [ ] `passthroughInt1` 0x00431330 (2)
   - [ ] `passthroughInt2` 0x00431340 (2)
-  - [ ] `fastSqrt` 0x00431350 (5)
+  - [x] `fastSqrt` 0x00431350 (5)
 
-### `core/cloth.cpp` (35 functions, 4019 instructions, 1 done, 5 partial)
+### `core/cloth.cpp` (35 functions, 4019 instructions, 13 done, 4 partial)
 - class `CClothList`
-  - [~] `ctor` 0x0043bf40 (18)
-    - deferred: clearing the loaded cloth, with CCloth
-  - [~] `process` 0x0043c2d0 (32)
-    - deferred: each piece moved on with the model, with CCloth::process
+  - [x] `ctor` 0x0043bf40 (18)
+  - [x] `process` 0x0043c2d0 (32)
   - [ ] `reset` 0x0043c070 (46)
-  - [~] `dtor` 0x0043bf80 (8)
-    - deferred: freeing the loaded cloth, with reset
+  - [x] `dtor` 0x0043bf80 (8)
   - [ ] `render` 0x0043c320 (47)
-  - [~] `load` 0x0043bfa0 (62)
-    - deferred: each piece loaded from its file in place of the one before, with CCloth::load
-  - [~] `setup` 0x0043c290 (30)
-    - deferred: each piece set up on the model where the character stands, with CCloth::setup
+  - [x] `load` 0x0043bfa0 (62)
+  - [x] `setup` 0x0043c290 (30)
   - [ ] `add` 0x0043c0f0 (40)
   - [ ] `remove` 0x0043c170 (91)
   - [ ] `applyRotation` 0x0043c3a0 (26)
   - [ ] `setWindVelocity` 0x0043c3e0 (38)
 - class `CCloth`
-  - [ ] `computeBoneTransform` 0x0043a2b0 (172)
-  - [ ] `applyConstraints` 0x0043a420 (448)
-  - [ ] `step` 0x0043abb0 (750)
-  - [ ] `process` 0x0043ab80 (17)
+  - [x] `computeBoneTransform` 0x0043a2b0 (172)
+  - [~] `applyConstraints` 0x0043a420 (448)
+    - unverified: the push out of a bone, as its assembly reads, not run against the original with a model
+  - [~] `step` 0x0043abb0 (750)
+    - deferred: a point held by a bone's end, at the bone's end, with CCloth::grabCloth
+    - deferred: the model's vertices at the points, with CCloth::render
+    - unverified: the pins' skinned sums, not run against the original with a model
+  - [x] `process` 0x0043ab80 (17)
   - [ ] `free` 0x00438cb0 (19)
-  - [ ] `dtor` 0x00438c00 (22)
+  - [x] `dtor` 0x00438c00 (22)
   - [ ] `saveJoinedLight` 0x0043b9f0 (63)
   - [ ] `render` 0x0043bae0 (340)
-  - [ ] `ctor` 0x00438ba0 (21)
-  - [ ] `allocMemory` 0x00438c50 (26)
-  - [ ] `initializeConnections` 0x004394e0 (171)
-  - [ ] `load` 0x00438cf0 (335)
-  - [ ] `orientBoneToChild` 0x0043a110 (171)
-  - [ ] `setup` 0x00439710 (620)
+  - [x] `ctor` 0x00438ba0 (21)
+  - [x] `allocMemory` 0x00438c50 (26)
+  - [x] `initializeConnections` 0x004394e0 (171)
+  - [x] `load` 0x00438cf0 (335)
+  - [~] `orientBoneToChild` 0x0043a110 (171)
+    - unverified: the children's lengths and the radii's reciprocals, worked in double here, not run against the original with a model
+  - [~] `setup` 0x00439710 (620)
+    - deferred: the model's vertices at the points, with CCloth::render
+    - deferred: no point held by a bone's end, with CCloth::grabCloth
+    - deferred: each pin's nearest vertex at each of the model's levels, with CCloth::render
+    - unverified: the pins' skinned sums and distances, worked in double here, not run against the original with a model
   - [ ] `renderBone` 0x0043b7e0 (163)
   - [ ] `renderCollisionBones` 0x0043b790 (26)
   - [ ] `applyRotation` 0x0043e1a0 (84)
@@ -4814,10 +4819,9 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `factoryFuncFlashlight` 0x004cbb80 (12)
   - [x] `staticInit` 0x004cbb50 (9)
 
-### `core/flattn.cpp` (1 functions, 12 instructions, 0 done, 1 partial)
+### `core/flattn.cpp` (1 functions, 12 instructions, 1 done, 0 partial)
 - free functions
-  - [~] `staticInit` 0x004cbcb0 (12)
-    - deferred: the fast square root's half of 1.0's bits, with its first reader
+  - [x] `staticInit` 0x004cbcb0 (12)
 
 ### `core/flies.cpp` (13 functions, 1038 instructions, 1 done, 0 partial)
 - free functions
@@ -4904,7 +4908,6 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `drawWeapon` 0x004d75b0 (10)
   - [x] `dtor` 0x004d7660 (37)
   - [~] `setup` 0x004d2c40 (170)
-    - deferred: her coat, gabcoat.cth, loaded and set up on her model where she stands, with CCloth::load and CCloth::setup
     - deferred: her left hand as the bone her first hand carries at, with getCarryObjToBodyXForm
 - free functions
   - [x] `factoryFuncGabriella` 0x004d2ae0 (12)
@@ -6280,10 +6283,10 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `factoryFuncSuccubus` 0x005c6a40 (12)
   - [x] `staticInit` 0x005c6a10 (9)
 
-### `core/svetlana.cpp` (16 functions, 1634 instructions, 5 done, 1 partial)
+### `core/svetlana.cpp` (16 functions, 1634 instructions, 5 done, 2 partial)
 - class `CSvetlana`
   - [~] `ctor` 0x005d8850 (32)
-    - deferred: the cape's and hair's cloth, and the defaults the constructor gives Svetlana's own fields, with the steps that read them
+    - deferred: the defaults the constructor gives Svetlana's own fields, with the steps that read them
     - deferred: a player Svetlana grabbed through CHero::getGrabbed, where the original refuses every grab, which the NPC keeps (the decomp's hero_svetlana.h), with CSvetlana::getGrabbed
     - deferred: a player Svetlana at zero hit points not regenerating, so the death check sees her (the decomp's hero_death.h nocturne_hero_regenerates), with CSvetlana::process
   - [x] `getActorType` 0x005d8840 (2)
@@ -6298,7 +6301,9 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `isWeaponDrawn` 0x005d9ed0 (3)
   - [ ] `drawWeapon` 0x005d9ee0 (4)
   - [x] `dtor` 0x005d9f50 (42)
-  - [ ] `setup` 0x005d88e0 (191)
+  - [~] `setup` 0x005d88e0 (191)
+    - deferred: her blades not drawn, with CSvetlana::drawWeapon and isWeaponDrawn
+    - deferred: no sound playing, with CSvetlana::process
 - free functions
   - [x] `factoryFuncSvetlana` 0x005d8810 (12)
   - [x] `staticInit` 0x005d87e0 (9)

@@ -1,5 +1,10 @@
+#include "common/error/fatalerror.h"
+#include "common/math/matrix3x4f.h"
+#include "common/math/quaternion4f.h"
+#include "common/math/vector3f.h"
 #include "core/xform/xform.h"
 
+#include <gmock/gmock.h>
 #include <gtest/gtest.h>
 
 #include <array>
@@ -21,17 +26,16 @@ TEST(CoreXformFunctions, PublicInterface) {
     static_assert(
         std::is_same_v<decltype(&transformVector3x4InPlace),
                        common::CVector3f *(*)(common::CVector3f *, common::CMatrix3x4f *)>);
-    static_assert(
-        std::is_same_v<decltype(&multiplyMatrix3x4),
-                       common::CMatrix3x4f *(*)(common::CMatrix3x4f *, common::CMatrix3x4f *,
-                                                common::CMatrix3x4f *)>);
+    static_assert(std::is_same_v<decltype(&multiplyMatrix3x4),
+                                 common::CMatrix3x4f (*)(const common::CMatrix3x4f &,
+                                                         const common::CMatrix3x4f &)>);
     static_assert(std::is_same_v<decltype(&setIdentityMatrix3x4), void (*)(common::CMatrix3x4f *)>);
     static_assert(
         std::is_same_v<decltype(&setRotationScaleIdentity), void (*)(common::CMatrix3x4f *)>);
     static_assert(std::is_same_v<decltype(&clearTranslation), void (*)(common::CMatrix3x4f &)>);
-    static_assert(
-        std::is_same_v<decltype(&buildMatrixFromEulerAndPosition),
-                       void (*)(common::CMatrix3x4f *, common::CVector3f *, common::CVector3f *)>);
+    static_assert(std::is_same_v<decltype(&buildMatrixFromEulerAndPosition),
+                                 common::CMatrix3x4f (*)(const common::CVector3f &,
+                                                         const common::CVector3f &)>);
     static_assert(
         std::is_same_v<decltype(&buildMatrixFromEulerAndPositionDirect),
                        void (*)(common::CMatrix3x4f *, common::CVector3f *, common::CVector3f *)>);
@@ -44,8 +48,8 @@ TEST(CoreXformFunctions, PublicInterface) {
         std::is_same_v<decltype(&getTranslation),
                        common::CVector3f *(*)(common::CMatrix3x4f *, common::CVector3f *)>);
     static_assert(
-        std::is_same_v<decltype(&inverse),
-                       common::CMatrix3x4f *(*)(common::CMatrix3x4f *, common::CMatrix3x4f *)>);
+        std::is_same_v<decltype(&inverse), common::CMatrix3x4f (*)(const common::CMatrix3x4f &)>);
+    static_assert(std::is_same_v<decltype(&determinant), double (*)(const common::CMatrix3x4f &)>);
     static_assert(std::is_same_v<decltype(&buildRotationX),
                                  common::CMatrix3x4f *(*)(float, common::CMatrix3x4f *)>);
     static_assert(std::is_same_v<decltype(&buildRotationY),
@@ -261,6 +265,46 @@ TEST(CoreXformFunctions, NearlyEqualRotationsBlendLinearly) {
     const common::CQuaternion4f a{.w = 1};
     const common::CQuaternion4f b{.w = 0.999999F, .x = 0.001F};
     expectNear(slerpQuaternion(a, b, 0.25F), {.w = 0.99999976F, .x = 0.00025F});
+}
+
+// Unturned, the frame at a point only moves points back by it.
+TEST(CoreXformFunctions, AnUnturnedFrameAtAPointTakesThePointToTheOrigin) {
+    const common::CMatrix3x4f frame = buildMatrixFromEulerAndPosition({.x = 1.0F, .y = 2.0F}, {});
+    const common::CMatrix3x4f expected{
+        .m = {{{1.0F, 0.0F, 0.0F, -1.0F}, {0.0F, 1.0F, 0.0F, -2.0F}, {0.0F, 0.0F, 1.0F, -0.0F}}}};
+    EXPECT_EQ(frame, expected);
+    EXPECT_EQ(determinant(frame), 1.0);
+}
+
+// A point taken through the product goes through the first, then the second.
+TEST(CoreXformFunctions, AProductTakesAPointThroughTheFirstThenTheSecond) {
+    const common::CMatrix3x4f move = buildMatrixFromEulerAndPosition({.x = -1.0F}, {});
+    const common::CMatrix3x4f double_x{
+        .m = {{{2.0F, 0.0F, 0.0F, 0.0F}, {0.0F, 1.0F, 0.0F, 0.0F}, {0.0F, 0.0F, 1.0F, 0.0F}}}};
+    const common::CVector3f moved =
+        transformVector3x4({.x = 1.0F}, multiplyMatrix3x4(move, double_x));
+    EXPECT_EQ(moved.x, 4.0F);
+}
+
+TEST(CoreXformFunctions, AnInverseUndoesItsMatrixAndASingularOneIsFatal) {
+    const common::CMatrix3x4f frame =
+        buildMatrixFromEulerAndPosition({.x = 1.0F, .y = 2.0F, .z = 3.0F}, {.y = 0.5F});
+    const common::CVector3f back = transformVector3x4(
+        transformVector3x4({.x = 4.0F, .y = 5.0F, .z = 6.0F}, frame), inverse(frame));
+    EXPECT_NEAR(back.x, 4.0F, 1e-5F);
+    EXPECT_NEAR(back.y, 5.0F, 1e-5F);
+    EXPECT_NEAR(back.z, 6.0F, 1e-5F);
+    EXPECT_THAT([] { static_cast<void>(inverse({})); },
+                ::testing::ThrowsMessage<common::CFatalError>(
+                    ::testing::StrEq("inverse() - Singular matrix")));
+}
+
+TEST(CoreXformFunctions, ATurnAboutYIsReadBackAsItsAngle) {
+    const common::CQuaternion4f turn{.w = std::cos(0.25F), .y = std::sin(0.25F)};
+    const common::CVector3f angles = quaternionToEulerAngles(turn);
+    EXPECT_NEAR(std::abs(angles.y), 0.5F, 1e-6F);
+    EXPECT_NEAR(angles.x, 0.0F, 1e-6F);
+    EXPECT_NEAR(angles.z, 0.0F, 1e-6F);
 }
 
 } // namespace

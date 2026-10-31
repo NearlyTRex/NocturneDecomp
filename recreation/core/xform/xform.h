@@ -16,13 +16,17 @@ namespace nocturne::core {
                                                    const common::CMatrix3x4f &matrix);
 common::CVector3f *transformVector3x4InPlace(common::CVector3f *input_output_vector,
                                              common::CMatrix3x4f *matrix);
-common::CMatrix3x4f *multiplyMatrix3x4(common::CMatrix3x4f *matrix_a, common::CMatrix3x4f *matrix_b,
-                                       common::CMatrix3x4f *matrix_out);
+// The second after the first: a point taken through the result is taken through a, then b.
+[[nodiscard]] common::CMatrix3x4f multiplyMatrix3x4(const common::CMatrix3x4f &matrix_a,
+                                                    const common::CMatrix3x4f &matrix_b);
 void setIdentityMatrix3x4(common::CMatrix3x4f *matrix);
 void setRotationScaleIdentity(common::CMatrix3x4f *matrix);
 void clearTranslation(common::CMatrix3x4f &matrix);
-void buildMatrixFromEulerAndPosition(common::CMatrix3x4f *output_matrix,
-                                     common::CVector3f *position, common::CVector3f *euler_angles);
+// Into the frame at the position turned by the angles about x, y and z: the rotation's transpose,
+// then the position taken back through it.
+[[nodiscard]] common::CMatrix3x4f
+buildMatrixFromEulerAndPosition(const common::CVector3f &position,
+                                const common::CVector3f &euler_angles);
 void buildMatrixFromEulerAndPositionDirect(common::CMatrix3x4f *output_matrix,
                                            common::CVector3f *position,
                                            common::CVector3f *euler_angles);
@@ -31,7 +35,10 @@ void buildMatrixFromEulerAndPositionDirect(common::CMatrix3x4f *output_matrix,
 common::CVector3f *matrixToEulerAnglesZYX(common::CMatrix3x4f *matrix_ptr,
                                           common::CVector3f *euler_out);
 common::CVector3f *getTranslation(common::CMatrix3x4f *matrix_in, common::CVector3f *vector_out);
-common::CMatrix3x4f *inverse(common::CMatrix3x4f *matrix_in, common::CMatrix3x4f *matrix_out);
+// Of the rotation; the translation plays no part.
+[[nodiscard]] double determinant(const common::CMatrix3x4f &matrix);
+// Fatal for a rotation whose determinant is zero.
+[[nodiscard]] common::CMatrix3x4f inverse(const common::CMatrix3x4f &matrix_in);
 common::CMatrix3x4f *buildRotationX(float angle_radians, common::CMatrix3x4f *matrix_out);
 common::CMatrix3x4f *buildRotationY(float angle_radians, common::CMatrix3x4f *matrix_out);
 common::CMatrix3x4f *buildXFlipMatrix(float x_offset, common::CMatrix3x4f *matrix_out);

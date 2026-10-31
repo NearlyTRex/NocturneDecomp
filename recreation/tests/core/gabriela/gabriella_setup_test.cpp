@@ -80,6 +80,9 @@ class CGabriellaSetupTest : public CDeformableModelFixture {
 protected:
     // Her model on the skeleton, missing what's named.
     void givenGabriella(std::string_view missing = "") {
+        givenFile("models\\gabcoat.cth",
+                  "//\n3\n//\ngabcoat.kfm\n//\n0.1,32,0.9,0.1,0.5,0.5,0.1,0.1\n"
+                  "//\n1\n//\n0\n//\n0\n//\n//\n0\n");
         const std::string skeleton = gabriellaSkeleton(missing);
         givenFile("data\\GABS.SKL", skeleton);
         const int bones = missing.starts_with("Bip01") ? 17 : 18;
@@ -104,7 +107,7 @@ protected:
     }
 
     ::testing::NiceMock<engine::MockGameClock> clock_;
-    CGameParts game_parts_{clock_};
+    CGameParts game_parts_{clock_, dosio_};
     common::CWatcomRandom crt_;
     ::testing::NiceMock<MockKeyFramedModels> keyframed_models_;
     CActor classes_{game_parts_.getGame(), crt_, models_, keyframed_models_};
@@ -142,6 +145,7 @@ TEST_F(CGabriellaSetupTest, SheFindsTheBonesAndMotionsSheNeeds) {
     EXPECT_EQ(gabriella_.getLeverToPull(), nullptr);
     EXPECT_EQ(gabriella_.getLadderToClimb(), nullptr);
     EXPECT_EQ(gabriella_.getDescriptiveName(), "Gabriella");
+    EXPECT_EQ(gabriella_.getCoat().getVersion(), 3);
 }
 
 TEST_F(CGabriellaSetupTest, ASkeletonWithoutOneOfHerBonesIsFatal) {

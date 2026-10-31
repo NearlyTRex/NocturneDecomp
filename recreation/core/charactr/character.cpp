@@ -44,7 +44,8 @@ constinit const CDemonActorType CCharacter::kType =
 //   full speed to 30 degrees and stopped at 90, so the walker turns before arcing through a
 //   doorway (the decomp's walk_turn.h, WALK_TURN), with CCharacter::walkToPoint
 // nocedit 0x00427e20
-CCharacter::CCharacter(CActor &classes) : model_(classes.getModels()) {}
+CCharacter::CCharacter(CActor &classes)
+    : model_(classes.getModels()), cloth_list_(classes.getDosIo(), classes.getKeyFramedModels()) {}
 
 // nocedit 0x0042f9f0
 CCharacter::~CCharacter() = default;
@@ -149,6 +150,8 @@ CDemonActor *CCharacter::getGrabber() {
 // deferred: each layer action's motion and length, and the cheapest time between any two of
 //   their bones, with advanceLayerAction
 // deferred: no sound playing, with processCharacter
+// deferred: the set's active fog drifting as the wind the cloth settles in, with
+//   CDemonSet::initScene and setCameraView, which set it
 // nocedit 0x00428140
 void CCharacter::setup() {
     CDemonActor::setup();
@@ -171,10 +174,10 @@ void CCharacter::setup() {
     }
     computeBoundingBox();
     cloth_list_.load();
-    common::CVector3f position = getLocation().position;
-    common::CVector3f orientation = getOrientation();
-    cloth_list_.setup(&position, &orientation, &model_);
-    cloth_list_.process(&position, &orientation, kClothSettleTime, kNoFloor, &model_);
+    const common::CVector3f &position = getLocation().position;
+    const common::CVector3f &orientation = getOrientation();
+    cloth_list_.setup(position, orientation, &model_);
+    cloth_list_.process(position, orientation, kClothSettleTime, kNoFloor, &model_, kNoWind);
     if (descriptive_name_.empty()) {
         descriptive_name_ = getActorClassName().substr(1);
     }

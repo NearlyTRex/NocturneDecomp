@@ -44,6 +44,10 @@ const engine::CDosIo &CActor::getDosIo() const {
     return game_.getDosIo();
 }
 
+const CGame &CActor::getGame() const {
+    return game_;
+}
+
 // nocedit 0x0040cb90
 void CActor::setRandomSeed(std::uint32_t seed_value) {
     random_seed_value_ = seed_value;

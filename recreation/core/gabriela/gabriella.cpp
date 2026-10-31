@@ -1,5 +1,6 @@
 #include "core/gabriela/gabriella.h"
 
+#include "core/actor/actor.h"
 #include "core/actor/actorarchive.h"
 #include "core/actor/demonactortype.h"
 #include "core/hero/herobones.h"
@@ -67,8 +68,13 @@ constinit const CDemonActorType CGabriella::kType =
 //   is_wearing_gas_mask through 0, 1 and 2, and drawn in her hand or on her head (THE GAS MASK),
 //   with CGabriella::process and renderOpaque
 // nocedit 0x004d2b20
-CGabriella::CGabriella(CActor &classes) : CHero(classes) {
+CGabriella::CGabriella(CActor &classes)
+    : CHero(classes), coat_(classes.getDosIo(), classes.getKeyFramedModels()) {
     getModel().init("gabriela.dfm");
+}
+
+const CCloth &CGabriella::getCoat() const {
+    return coat_;
 }
 
 // nocedit 0x004d7660
@@ -76,8 +82,6 @@ CGabriella::~CGabriella() = default;
 
 // Her model is named again and found a third time. The original keeps the bones and motions for
 // every Gabriella in one global; here each keeps her own.
-// deferred: her coat, gabcoat.cth, loaded and set up on her model where she stands, with
-//   CCloth::load and CCloth::setup
 // deferred: her left hand as the bone her first hand carries at, with getCarryObjToBodyXForm
 // nocedit 0x004d2c40
 void CGabriella::setup() {
@@ -85,6 +89,8 @@ void CGabriella::setup() {
     CDeformableModelInstance &model = getModel();
     model.init("gabriela.dfm");
     model.preCache();
+    coat_.load("gabcoat.cth");
+    coat_.setup(getLocation().position, getOrientation(), &model);
     parts_.bones = findHeroBones(*model.getSkeletonPtr());
     const CMotionList &motions = *model.getMotionList();
     parts_.draw_motion = motions.findMotionIndex("gab draw", true);

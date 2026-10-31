@@ -1,5 +1,6 @@
 #include "core/xform/xform.h"
 
+#include "common/error/error.h"
 #include "common/math/extendedfloat.h"
 #include "common/math/matrix3x3f.h"
 
@@ -28,6 +29,88 @@ common::CVector3f transformVector3x4(const common::CVector3f &input_vector,
             m[3]);
     };
     return {.x = row(matrix.m[0]), .y = row(matrix.m[1]), .z = row(matrix.m[2])};
+}
+
+// nocedit 0x005f4f10
+common::CMatrix3x4f multiplyMatrix3x4(const common::CMatrix3x4f &matrix_a,
+                                      const common::CMatrix3x4f &matrix_b) {
+    common::CMatrix3x4f out;
+    for (std::size_t r = 0; r < out.m.size(); ++r) {
+        const std::array<float, 4> &b = matrix_b.m[r];
+        for (std::size_t c = 0; c < 4; ++c) {
+            const double sum =
+                ((widen(b[2]) * matrix_a.m[2][c]) + (widen(b[0]) * matrix_a.m[0][c])) +
+                (widen(b[1]) * matrix_a.m[1][c]);
+            out.m[r][c] = static_cast<float>(c == 3 ? sum + b[3] : sum);
+        }
+    }
+    return out;
+}
+
+// nocedit 0x005f5390
+common::CMatrix3x4f buildMatrixFromEulerAndPosition(const common::CVector3f &position,
+                                                    const common::CVector3f &euler_angles) {
+    const double sx = std::sin(widen(euler_angles.x));
+    const double cx = std::cos(widen(euler_angles.x));
+    const double sz = std::sin(widen(euler_angles.z));
+    const double cz = std::cos(widen(euler_angles.z));
+    const double sy = std::sin(widen(euler_angles.y));
+    const double cy = std::cos(widen(euler_angles.y));
+    common::CMatrix3x4f out;
+    out.m[0] = {static_cast<float>((cy * cz) + (sy * sx * sz)), static_cast<float>(sz * cx),
+                static_cast<float>((-sy * cz) + (cy * sx * sz)), 0.0F};
+    out.m[1] = {static_cast<float>((-cy * sz) + (sy * sx * cz)), static_cast<float>(cz * cx),
+                static_cast<float>((sz * sy) + (cy * sx * cz)), 0.0F};
+    out.m[2] = {static_cast<float>(sy * cx), static_cast<float>(-sx), static_cast<float>(cy * cx),
+                0.0F};
+    for (std::array<float, 4> &row : out.m) {
+        row[3] =
+            static_cast<float>(-(((widen(position.z) * row[2]) + (widen(position.x) * row[0])) +
+                                 (widen(position.y) * row[1])));
+    }
+    return out;
+}
+
+// nocedit 0x005f61c0
+double determinant(const common::CMatrix3x4f &matrix) {
+    const auto &m = matrix.m;
+    return (((widen(m[1][0]) * m[2][1]) - (widen(m[1][1]) * m[2][0])) * m[0][2]) +
+           ((((widen(m[1][1]) * m[2][2]) - (widen(m[1][2]) * m[2][1])) * m[0][0]) -
+            (((widen(m[1][0]) * m[2][2]) - (widen(m[1][2]) * m[2][0])) * m[0][1]));
+}
+
+// nocedit 0x005f6210
+common::CMatrix3x4f inverse(const common::CMatrix3x4f &matrix_in) {
+    const double det = determinant(matrix_in);
+    if (det == 0.0) {
+        common::displayErrorAndQuit("inverse() - Singular matrix");
+    }
+    const double scale = 1.0 / det;
+    const auto &m = matrix_in.m;
+    const auto cofactor = [scale](float a, float b, float c, float d, bool negate) {
+        const double minor = (widen(a) * b) - (widen(c) * d);
+        return static_cast<float>((negate ? -minor : minor) * scale);
+    };
+    common::CMatrix3x4f out;
+    out.m[0] = {cofactor(m[1][1], m[2][2], m[1][2], m[2][1], false),
+                cofactor(m[0][1], m[2][2], m[0][2], m[2][1], true),
+                cofactor(m[0][1], m[1][2], m[0][2], m[1][1], false), 0.0F};
+    out.m[1] = {cofactor(m[1][0], m[2][2], m[1][2], m[2][0], true),
+                cofactor(m[0][0], m[2][2], m[0][2], m[2][0], false),
+                cofactor(m[0][0], m[1][2], m[0][2], m[1][0], true), 0.0F};
+    out.m[2] = {cofactor(m[1][0], m[2][1], m[1][1], m[2][0], false),
+                cofactor(m[0][0], m[2][1], m[0][1], m[2][0], true),
+                cofactor(m[0][0], m[1][1], m[0][1], m[1][0], false), 0.0F};
+    // Each row takes z's term, then its own column's before the other's; the first row's own is 0.
+    const auto translate = [&m](const std::array<float, 4> &row, std::size_t own,
+                                std::size_t other) {
+        return static_cast<float>(-(((widen(m[2][3]) * row[2]) + (widen(m[own][3]) * row[own])) +
+                                    (widen(m[other][3]) * row[other])));
+    };
+    out.m[0][3] = translate(out.m[0], 0, 1);
+    out.m[1][3] = translate(out.m[1], 1, 0);
+    out.m[2][3] = translate(out.m[2], 1, 0);
+    return out;
 }
 
 // nocedit 0x005f5370

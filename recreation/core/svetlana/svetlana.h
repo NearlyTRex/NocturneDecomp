@@ -1,7 +1,9 @@
 #pragma once
 
+#include "core/cloth/cloth.h"
 #include "core/fwd.h"
 #include "core/hero/hero.h"
+#include "core/hero/herobones.h"
 
 #include <memory>
 
@@ -29,8 +31,27 @@ public:
     void drawWeapon(int drawn) override;
     int isWeaponDrawn() override;
 
+    [[nodiscard]] const SHeroBones &getBones() const;
+    // The bones of her left blade and of her hair's ribbon.
+    [[nodiscard]] int getBladeBone() const;
+    [[nodiscard]] int getRibbonBone() const;
+    // Her blades' parts, left then right.
+    [[nodiscard]] int getLeftBladePart() const;
+    [[nodiscard]] int getRightBladePart() const;
+    [[nodiscard]] const CCloth &getCape() const;
+    [[nodiscard]] const CCloth &getHair() const;
+
 private:
     static std::unique_ptr<CDemonActor> create(CActor &classes);
+
+    const CGame &game_;
+    SHeroBones bones_;
+    int blade_bone_ = 0;
+    int ribbon_bone_ = 0;
+    int left_blade_part_ = 0;
+    int right_blade_part_ = 0;
+    CCloth cape_;
+    CCloth hair_;
 };
 
 } // namespace nocturne::core

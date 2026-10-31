@@ -68,7 +68,6 @@ TEST(CSvetlana, TheFunctionsNotPortedYetQuit) {
     CTestClasses classes;
     CSvetlana hero(classes.get());
     const NotPortedCalls calls = {
-        {"setup", [&] { hero.setup(); }},
         {"process", [&] { hero.process(0.0F); }},
         {"renderOpaque", [&] { static_cast<void>(hero.renderOpaque()); }},
         {"getGrabbed", [&] { static_cast<void>(hero.getGrabbed(nullptr, 0)); }},
@@ -76,7 +75,7 @@ TEST(CSvetlana, TheFunctionsNotPortedYetQuit) {
         {"drawWeapon", [&] { hero.drawWeapon(0); }},
         {"isWeaponDrawn", [&] { static_cast<void>(hero.isWeaponDrawn()); }},
     };
-    EXPECT_EQ(calls.size(), 7U);
+    EXPECT_EQ(calls.size(), 6U);
     expectEachQuitsNotPorted("CSvetlana", calls);
 }
 

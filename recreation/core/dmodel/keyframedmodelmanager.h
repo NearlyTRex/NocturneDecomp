@@ -27,6 +27,7 @@ public:
 
     // models\<filename>. More than kMaxModels is fatal.
     CKeyFramedModel &loadModel(std::string_view filename) override;
+    void loadOwnedModel(CKeyFramedModel &model, std::string_view filename) override;
     void freeAllModels();
 
     [[nodiscard]] std::size_t getModelCount() const;

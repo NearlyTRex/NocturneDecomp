@@ -304,10 +304,12 @@ TEST_F(CCharacterArchiveTest, ACharacterWithNoDescriptiveNameIsNamedAfterItsClas
     EXPECT_EQ(character_.getDescriptiveName(), "Character");
 }
 
-TEST_F(CCharacterArchiveTest, ClothIsntLoadedYet) {
+// The disk here holds no cloth.
+TEST_F(CCharacterArchiveTest, ItsClothIsLoadedFromTheFilesItLists) {
     readAs(5, "40\n0\n\"\"\n\"(none)\"\n0\n{\n1\n\"coat.cls\"\n}\n2\n");
-    EXPECT_THAT([this] { character_.setup(); },
-                ThrowsMessage<common::CFatalError>(StrEq("CCloth::load is not ported yet")));
+    EXPECT_THAT(
+        [this] { character_.setup(); },
+        ThrowsMessage<common::CFatalError>(StrEq("CCloth::load - Unable to open file coat.cls")));
 }
 
 // With no model there are no bones to take a box from.

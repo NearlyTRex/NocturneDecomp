@@ -1,6 +1,7 @@
 #pragma once
 
 #include "common/fwd.h"
+#include "core/cloth/cloth.h"
 #include "core/fwd.h"
 #include "core/hero/hero.h"
 #include "core/hero/herobones.h"
@@ -44,11 +45,13 @@ public:
     int isWeaponDrawn() override;
 
     [[nodiscard]] const SGabriellaParts &getParts() const;
+    [[nodiscard]] const CCloth &getCoat() const;
 
 private:
     static std::unique_ptr<CDemonActor> create(CActor &classes);
 
     SGabriellaParts parts_;
+    CCloth coat_;
 };
 
 } // namespace nocturne::core

@@ -54,6 +54,8 @@ public:
     [[nodiscard]] IKeyFramedModels &getKeyFramedModels() const;
     // Where the game reads its files from.
     [[nodiscard]] const engine::CDosIo &getDosIo() const;
+    // Its options, which some actors follow.
+    [[nodiscard]] const CGame &getGame() const;
 
 private:
     void registerActorClasses();

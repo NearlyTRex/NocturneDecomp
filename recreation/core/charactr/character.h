@@ -163,6 +163,7 @@ private:
     // The step the cloth is moved on by as it is set up, and the floor below it then: none.
     static constexpr float kClothSettleTime = 0.05F;
     static constexpr float kNoFloor = 9999.0F;
+    static constexpr common::CVector3f kNoWind{};
 
     CDeformableModelInstance model_;
     float hit_points_ = kFullHitPoints;

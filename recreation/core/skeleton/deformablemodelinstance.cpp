@@ -123,6 +123,10 @@ const SPose &CDeformableModelInstance::getPose() const {
     return bone_transform_;
 }
 
+std::span<const common::CVector3f> CDeformableModelInstance::getBoneOrigins() const {
+    return bone_origins_;
+}
+
 std::span<const common::CVector3i> CDeformableModelInstance::getSkinnedVertices() const {
     return skinned_vertices_;
 }

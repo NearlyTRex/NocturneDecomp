@@ -201,7 +201,7 @@ TEST_F(CActorArchiveTest, AnActorIsFoundByTheMission) {
 
 // A line opening the list, the count, a name to a line, and a line closing it.
 TEST_F(CActorArchiveTest, AClothListIsItsFileNames) {
-    CClothList cloth_list;
+    CClothList cloth_list{game_parts_.getDosIo(), keyframed_models_};
     EXPECT_EQ(read("\t{ // clothList\n\t\t2 // clothCount\n\t\t\"coat.cls\"\n\t\t\"skirt.cls\"\n"
                    "\t}\nnext",
                    [&](CActorArchive &archive) { archive.archiveClothList(cloth_list, "c"); }),
@@ -212,7 +212,7 @@ TEST_F(CActorArchiveTest, AClothListIsItsFileNames) {
 }
 
 TEST_F(CActorArchiveTest, AClothListThatCantBeReadIsFatal) {
-    CClothList cloth_list;
+    CClothList cloth_list{game_parts_.getDosIo(), keyframed_models_};
     const auto read_list = [&](CActorArchive &archive) {
         archive.archiveClothList(cloth_list, "clothList");
     };

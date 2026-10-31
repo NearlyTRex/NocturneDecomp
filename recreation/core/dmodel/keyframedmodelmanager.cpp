@@ -36,9 +36,13 @@ CKeyFramedModel &CKeyFramedModelManager::loadModel(std::string_view filename) {
     }
     CKeyFramedModel &model = *models_[model_count_];
     ++model_count_;
+    loadOwnedModel(model, filename);
+    return model;
+}
+
+void CKeyFramedModelManager::loadOwnedModel(CKeyFramedModel &model, std::string_view filename) {
     model.load(filename);
     model.captureTextures(renderer_);
-    return model;
 }
 
 // nocedit 0x00478cb0

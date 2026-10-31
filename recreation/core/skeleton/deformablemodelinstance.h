@@ -123,6 +123,8 @@ public:
     [[nodiscard]] float getScaleFactor() const;
     void setScaleFactor(float scale_factor);
     [[nodiscard]] const SPose &getPose() const;
+    // Where each bone sits on its parent, at the model's size.
+    [[nodiscard]] std::span<const common::CVector3f> getBoneOrigins() const;
     // In 24.8 fixed point.
     [[nodiscard]] std::span<const common::CVector3i> getSkinnedVertices() const;
     // The level last skinned, or -1 once the pose has changed.

@@ -73,7 +73,7 @@ protected:
     }
 
     ::testing::NiceMock<engine::MockGameClock> clock_;
-    CGameParts game_parts_{clock_};
+    CGameParts game_parts_{clock_, dosio_};
     common::CWatcomRandom crt_;
     ::testing::NiceMock<MockKeyFramedModels> keyframed_models_;
     CActor classes_{game_parts_.getGame(), crt_, models_, keyframed_models_};
