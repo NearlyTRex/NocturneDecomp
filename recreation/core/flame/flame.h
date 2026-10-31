@@ -49,10 +49,14 @@ public:
     [[nodiscard]] bool isVisible() const;
     // Frames of its eight-frame animation, from 0 to 8.
     [[nodiscard]] float getAnimationTime() const;
+    // Whether its frames are drawn mirrored, chosen as it is set up.
+    [[nodiscard]] bool isTextureFlipped() const;
 
 private:
     static std::unique_ptr<CDemonActor> create(CActor &classes);
 
+    CActor &classes_;
+    bool texture_flipped_ = false;
     common::CVector3f flame_size_{.x = 1.0F, .y = 2.0F, .z = 1.0F};
     float animation_time_;
     EFlameType which_flame_;

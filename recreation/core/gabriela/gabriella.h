@@ -3,6 +3,7 @@
 #include "common/fwd.h"
 #include "core/fwd.h"
 #include "core/hero/hero.h"
+#include "core/hero/herobones.h"
 
 #include <memory>
 
@@ -10,23 +11,7 @@ namespace nocturne::core {
 
 // The bones and motions of Gabriella's skeleton her own code poses and plays.
 struct SGabriellaParts {
-    int head = 0;
-    int left_clavicle = 0;
-    int right_clavicle = 0;
-    int left_upper_arm = 0;
-    int right_upper_arm = 0;
-    int left_forearm = 0;
-    int right_forearm = 0;
-    int left_foot = 0;
-    int right_foot = 0;
-    int left_thigh = 0;
-    int right_thigh = 0;
-    int left_calf = 0;
-    int right_calf = 0;
-    int left_hand = 0;
-    int right_hand = 0;
-    int spine2 = 0;
-    int spine = 0;
+    SHeroBones bones;
     int draw_motion = 0;
     int shoot_motion = 0;
     int crossbow_shoot_motion = 0;

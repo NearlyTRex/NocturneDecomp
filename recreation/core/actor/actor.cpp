@@ -71,6 +71,10 @@ float CActor::getCosmeticFloatFromRange(float min_value, float max_value) {
     return scaleToRange(drawCrtUnitFloat(crt_random_), min_value, max_value);
 }
 
+int CActor::getCosmeticRand() {
+    return crt_random_.rand();
+}
+
 // nocedit 0x0040cc70
 int CActor::getRandomInt(int min_value, int max_value) {
     const double span =

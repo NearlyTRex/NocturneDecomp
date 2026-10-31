@@ -2,6 +2,7 @@
 
 #include "core/actor/actorarchive.h"
 #include "core/actor/demonactortype.h"
+#include "core/hero/herobones.h"
 #include "core/motion/motionlist.h"
 #include "core/skeleton/deformablemodelinstance.h"
 #include "core/skeleton/skeleton.h"
@@ -84,25 +85,7 @@ void CGabriella::setup() {
     CDeformableModelInstance &model = getModel();
     model.init("gabriela.dfm");
     model.preCache();
-    const CSkeleton &skeleton = *model.getSkeletonPtr();
-    const auto bone = [&skeleton](std::string_view name) { return skeleton.findBone(name, true); };
-    parts_.head = bone("Bip01 head");
-    parts_.left_clavicle = bone("Bip01 L Clavicle");
-    parts_.right_clavicle = bone("Bip01 R Clavicle");
-    parts_.left_upper_arm = bone("Bip01 L UpperArm");
-    parts_.right_upper_arm = bone("Bip01 R UpperArm");
-    parts_.left_forearm = bone("Bip01 L ForeArm");
-    parts_.right_forearm = bone("Bip01 R ForeArm");
-    parts_.left_foot = bone("Bip01 L Foot");
-    parts_.right_foot = bone("Bip01 R Foot");
-    parts_.left_thigh = bone("Bip01 L Thigh");
-    parts_.right_thigh = bone("Bip01 R Thigh");
-    parts_.left_calf = bone("Bip01 L Calf");
-    parts_.right_calf = bone("Bip01 R Calf");
-    parts_.left_hand = bone("Bip01 L Hand");
-    parts_.right_hand = bone("Bip01 R Hand");
-    parts_.spine2 = bone("Bip01 Spine2");
-    parts_.spine = bone("Bip01 Spine");
+    parts_.bones = findHeroBones(*model.getSkeletonPtr());
     const CMotionList &motions = *model.getMotionList();
     parts_.draw_motion = motions.findMotionIndex("gab draw", true);
     parts_.shoot_motion = motions.findMotionIndex("gab shoot", true);

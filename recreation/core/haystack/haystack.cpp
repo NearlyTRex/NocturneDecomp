@@ -1,6 +1,8 @@
 #include "core/haystack/haystack.h"
 
 #include "core/actor/demonactortype.h"
+#include "core/hero/herobones.h"
+#include "core/skeleton/deformablemodelinstance.h"
 
 #include <memory>
 
@@ -26,6 +28,18 @@ CHaystack::CHaystack(CActor &classes) : CHero(classes) {
 
 // nocedit 0x004f1d10
 CHaystack::~CHaystack() = default;
+
+// The original keeps the bones for every Haystack in one global; here each keeps his own.
+// deferred: his guns not drawn, with CHaystack::drawWeapon and isWeaponDrawn
+// nocedit 0x004f0c80
+void CHaystack::setup() {
+    CHero::setup();
+    bones_ = findHeroBones(*getModel().getSkeletonPtr());
+}
+
+const SHeroBones &CHaystack::getBones() const {
+    return bones_;
+}
 
 // nocedit 0x004f0c00
 const CDemonActorType &CHaystack::getActorType() const {

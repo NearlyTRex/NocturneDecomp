@@ -15,10 +15,6 @@ namespace {
 
 } // namespace
 
-void CFlame::setup() {
-    notPorted("setup");
-}
-
 void CFlame::process(float /*delta_time*/) {
     notPorted("process");
 }

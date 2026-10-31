@@ -1,3 +1,4 @@
+#include "common/random/watcomrandom.h"
 #include "core/actor/actor.h"
 #include "core/actor/collisiontype.h"
 #include "core/actor/demonactortype.h"
@@ -189,11 +190,23 @@ TEST(CFlame, HidingAFlameMakesItInvisible) {
     EXPECT_FALSE(flame.isVisible());
 }
 
+// Made, a flame draws its animation time from the CRT's stream; set up, its flip from the next.
+TEST(CFlame, SettingUpDrawsItsFlipFromTheCosmeticStream) {
+    CTestClasses classes;
+    CFlame flame(classes.get());
+    common::CWatcomRandom crt;
+    static_cast<void>(crt.rand());
+    const bool flipped = (crt.rand() & 1) != 0;
+    flame.setOrientation({.y = 7.0F});
+    flame.setup();
+    EXPECT_EQ(flame.isTextureFlipped(), flipped);
+    EXPECT_LT(flame.getOrientation().y, 3.2F);
+}
+
 TEST(CFlame, TheFunctionsNotPortedYetQuit) {
     CTestClasses classes;
     CFlame flame(classes.get());
     const NotPortedCalls calls = {
-        {"setup", [&] { flame.setup(); }},
         {"process", [&] { flame.process(0.0F); }},
         {"renderTransparent", [&] { static_cast<void>(flame.renderTransparent()); }},
         {"renderBackground", [&] { flame.renderBackground(0); }},

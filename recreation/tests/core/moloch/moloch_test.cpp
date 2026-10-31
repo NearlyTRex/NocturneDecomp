@@ -80,13 +80,12 @@ TEST(CMoloch, TheFunctionsNotPortedYetQuit) {
     CTestClasses classes;
     CMoloch hero(classes.get());
     const NotPortedCalls calls = {
-        {"setup", [&] { hero.setup(); }},
         {"process", [&] { hero.process(0.0F); }},
         {"renderOpaque", [&] { static_cast<void>(hero.renderOpaque()); }},
         {"drawWeapon", [&] { hero.drawWeapon(0); }},
         {"isWeaponDrawn", [&] { static_cast<void>(hero.isWeaponDrawn()); }},
     };
-    EXPECT_EQ(calls.size(), 5U);
+    EXPECT_EQ(calls.size(), 4U);
     expectEachQuitsNotPorted("CMoloch", calls);
 }
 

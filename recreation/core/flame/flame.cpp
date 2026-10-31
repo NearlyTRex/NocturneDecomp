@@ -42,13 +42,25 @@ constinit const CDemonActorType CFlame::kType =
 // deferred: drawing the torch sound's pitch and start time from the cosmetic stream (the decomp's
 //   nocturne_rng_fx_range), with CFlame::process
 // deferred: drawing the globe's flicker from the cosmetic stream, with CFlame::updateGlobe
-// deferred: drawing the texture flip from the cosmetic stream (the decomp's nocturne_rng_fx), with
-//   CFlame::setup
 // nocedit 0x004c9aa0
 CFlame::CFlame(CActor &classes)
-    : animation_time_(classes.getCosmeticFloatFromRange(0.0F, kAnimationFrames)),
+    : classes_(classes), animation_time_(classes.getCosmeticFloatFromRange(0.0F, kAnimationFrames)),
       which_flame_(EFlameType::kTorch) {
     setTransparent(true);
+}
+
+// The flip is drawn from the cosmetic stream, as the decomp's nocturne_rng_fx draws it, so
+// netplay can't fall out of step over it.
+// deferred: capturing every flame's eight frames, the torch's F, the candle's CAN and the other
+//   three's BF, with CFlame::renderTransparent
+// nocedit 0x004c9b90
+void CFlame::setup() {
+    CDemonActor::setup();
+    texture_flipped_ = (classes_.getCosmeticRand() & 1) != 0;
+}
+
+bool CFlame::isTextureFlipped() const {
+    return texture_flipped_;
 }
 
 // nocedit 0x00412690

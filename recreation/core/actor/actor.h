@@ -43,6 +43,8 @@ public:
     // Off the CRT's stream even in a sim frame, for a value that never reaches the simulation, so
     // drawing it can't put netplay out of step.
     [[nodiscard]] float getCosmeticFloatFromRange(float min_value, float max_value);
+    // The CRT's rand, off its stream as the cosmetic float is.
+    [[nodiscard]] int getCosmeticRand();
     // A draw past either end is clamped to it.
     [[nodiscard]] int getRandomInt(int min_value, int max_value);
     // 1 when a draw from 0 to 1 falls below the threshold.

@@ -66,14 +66,13 @@ TEST(CHaystack, TheFunctionsNotPortedYetQuit) {
     CTestClasses classes;
     CHaystack hero(classes.get());
     const NotPortedCalls calls = {
-        {"setup", [&] { hero.setup(); }},
         {"process", [&] { hero.process(0.0F); }},
         {"renderOpaque", [&] { static_cast<void>(hero.renderOpaque()); }},
         {"processDamage", [&] { hero.processDamage(nullptr); }},
         {"drawWeapon", [&] { hero.drawWeapon(0); }},
         {"isWeaponDrawn", [&] { static_cast<void>(hero.isWeaponDrawn()); }},
     };
-    EXPECT_EQ(calls.size(), 6U);
+    EXPECT_EQ(calls.size(), 5U);
     expectEachQuitsNotPorted("CHaystack", calls);
 }
 

@@ -24,7 +24,7 @@ functions don't count as done. Sizes are in instructions.
 | 8 | `renderMenuAndGetChoice`, `CMoon::free`, `CSound::reset`, `CEditorTools::showFileSelectionDialog` | 8 | 63 | 5314 | 60 | 3 | 95.2% |
 | 9 | `CPickList::enableItem`, `CEventList::resetGameFlags`, `CLevelLoader::show`, `CDemonMission::load` | 15 | 56 | 3298 | 33 | 11 | 58.9% |
 | 10 | `CDemonMission::createHeros`, `CDemonMission::prepareAllActors`, `CEventList::reset`, `CDemonMission::loadSet` | 15 | 42 | 5112 | 32 | 9 | 76.1% |
-| 11 | `CScript::loadScript` | 63 | 579 | 67400 | 70 | 33 | 12.0% |
+| 11 | `CScript::loadScript` | 63 | 579 | 67400 | 70 | 34 | 12.0% |
 | 12 | `CDemonMission::loadScript`, `CScript::executeInitSection`, `CDemonMission::startMission`, `CDemonMission::buildActiveSetActorList`, `CConsole::reset`, `CEditorTools::displayMemoryDiagnostics`, `CGame::setGameRes`, `CDemonLight::init`, `CDemonSet::initScene` | 12 | 26 | 1658 | 3 | 2 | 11.5% |
 | 13 | `CFireEffect::init`, `CDemonSet::loadMasterLightStates`, `CDemonSet::setGamma`, `CGame::clearOverlay`, `CGame::loadAssets` | 7 | 27 | 735 | 0 | 0 | 0.0% |
 | 14 | `CNetGame::syncPlayers`, `CNetGame::processServerFrame`, `CLevelLoader::cleanup`, `CKeys::toggleInputMask`, `CGame::processHotkeys` | 17 | 51 | 5302 | 4 | 0 | 7.8% |
@@ -40,13 +40,13 @@ functions don't count as done. Sizes are in instructions.
 | 24 | Not reached from startup: `core/` (part 2 of 9) | 11 | 277 | 24965 | 22 | 8 | 7.9% |
 | 25 | Not reached from startup: `core/` (part 3 of 9) | 24 | 278 | 24134 | 35 | 8 | 12.5% |
 | 26 | Not reached from startup: `core/` (part 4 of 9) | 18 | 300 | 20148 | 47 | 9 | 15.6% |
-| 27 | Not reached from startup: `core/` (part 5 of 9) | 21 | 294 | 20910 | 60 | 10 | 20.4% |
-| 28 | Not reached from startup: `core/` (part 6 of 9) | 18 | 282 | 21809 | 53 | 11 | 18.7% |
+| 27 | Not reached from startup: `core/` (part 5 of 9) | 21 | 294 | 20910 | 60 | 11 | 20.4% |
+| 28 | Not reached from startup: `core/` (part 6 of 9) | 18 | 282 | 21809 | 53 | 12 | 18.7% |
 | 29 | Not reached from startup: `core/` (part 7 of 9) | 18 | 263 | 22721 | 66 | 8 | 25.0% |
 | 30 | Not reached from startup: `core/` (part 8 of 9) | 20 | 300 | 31826 | 41 | 6 | 13.6% |
 | 31 | Not reached from startup: `core/` (part 9 of 9) | 5 | 111 | 10905 | 22 | 6 | 19.8% |
 | 32 | Not reached from startup: `wincore/` | 2 | 11 | 482 | 4 | 0 | 36.3% |
-| | **All** | | **4479** | **402407** | **1039** | **190** | **23.1%** |
+| | **All** | | **4479** | **402407** | **1039** | **193** | **23.1%** |
 
 ## Step 0: Math value types
 
@@ -1331,7 +1331,7 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `precomputeAttenuation` 0x00471360 (48)
   - [ ] `renderCoronaTextured` 0x004715e0 (103)
 
-### `core/flame.cpp` (9 functions, 1240 instructions, 4 done, 0 partial)
+### `core/flame.cpp` (9 functions, 1240 instructions, 4 done, 1 partial)
 - class `CFlame`
   - [x] `getActorType` 0x004c9a90 (2)
   - [ ] `updateGlobe` 0x004cad90 (69)
@@ -1341,7 +1341,8 @@ functions don't count as done. Sizes are in instructions.
   - [x] `getBoundingBox` 0x004cac00 (22)
   - [x] `archive` 0x004cac60 (73)
   - [x] `getCollisionType` 0x004cad80 (2)
-  - [ ] `setup` 0x004c9b90 (35)
+  - [~] `setup` 0x004c9b90 (35)
+    - deferred: capturing every flame's eight frames, the torch's F, the candle's CAN and the other three's BF, with CFlame::renderTransparent
 
 ### `core/bodypart.cpp` (11 functions, 1593 instructions, 0 done, 0 partial)
 - class `CBodyPart`
@@ -4768,7 +4769,6 @@ functions don't count as done. Sizes are in instructions.
     - deferred: setting alight the hero netplay gives it rather than the local one (the decomp's nocturne_net_sim_target_for), with CFlame::process
     - deferred: drawing the torch sound's pitch and start time from the cosmetic stream (the decomp's nocturne_rng_fx_range), with CFlame::process
     - deferred: drawing the globe's flicker from the cosmetic stream, with CFlame::updateGlobe
-    - deferred: drawing the texture flip from the cosmetic stream (the decomp's nocturne_rng_fx), with CFlame::setup
 - free functions
   - [x] `factoryFuncFlame` 0x004c9a60 (12)
   - [x] `staticInit` 0x004c9a30 (9)
@@ -5077,7 +5077,7 @@ functions don't count as done. Sizes are in instructions.
   - [x] `factoryFuncGun` 0x004f02b0 (12)
   - [x] `staticInit` 0x004f0280 (9)
 
-### `core/haystack.cpp` (15 functions, 1231 instructions, 5 done, 1 partial)
+### `core/haystack.cpp` (15 functions, 1231 instructions, 5 done, 2 partial)
 - class `CHaystack`
   - [~] `ctor` 0x004f0c10 (24)
     - deferred: the defaults the constructor gives Haystack's own fields, with the steps that read them
@@ -5092,7 +5092,8 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `isWeaponDrawn` 0x004f1c90 (3)
   - [ ] `drawWeapon` 0x004f1ca0 (4)
   - [x] `dtor` 0x004f1d10 (31)
-  - [ ] `setup` 0x004f0c80 (117)
+  - [~] `setup` 0x004f0c80 (117)
+    - deferred: his guns not drawn, with CHaystack::drawWeapon and isWeaponDrawn
 - free functions
   - [x] `factoryFuncHaystack` 0x004f0bd0 (12)
   - [x] `staticInit` 0x004f0ba0 (9)
@@ -5604,7 +5605,7 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `getObjectGrabPointWorld` 0x00525110 (60)
   - [ ] `setEulerAngles` 0x00526b00 (8)
 
-### `core/moloch.cpp` (13 functions, 1031 instructions, 5 done, 1 partial)
+### `core/moloch.cpp` (13 functions, 1031 instructions, 5 done, 2 partial)
 - class `CMoloch`
   - [~] `ctor` 0x00528b30 (58)
     - deferred: the morph, with the steps that read it
@@ -5622,7 +5623,8 @@ functions don't count as done. Sizes are in instructions.
   - [x] `archive` 0x00529880 (32)
   - [ ] `drawWeapon` 0x005299d0 (1)
   - [ ] `isWeaponDrawn` 0x005299e0 (2)
-  - [ ] `setup` 0x00528c70 (53)
+  - [~] `setup` 0x00528c70 (53)
+    - deferred: the morph between the two, ready to draw, with CMoloch::renderOpaque
 - free functions
   - [x] `factoryFuncMoloch` 0x00528af0 (12)
   - [x] `staticInit` 0x00528ac0 (9)
