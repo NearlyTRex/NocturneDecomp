@@ -55,7 +55,9 @@ public:
     virtual EGroundType getGroundType();
     virtual int getBlockVirtualDirectorFlag();
     virtual int allowBulletHoles();
-    virtual void updateCollisionData();
+    // As the set is loaded: casts what the actor keeps paths out of into the set's voxels.
+    // Nothing for most actors.
+    virtual void updateCollisionData(CDemonSet &set);
     virtual int getTargetPoints(common::CVector3f *out_points_array);
     virtual void renderTargetPoints();
     virtual int canLookAt();

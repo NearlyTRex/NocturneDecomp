@@ -2,7 +2,12 @@
 #include "core/dcamera/demoncamera.h"
 #include "core/dfont/dfont.h"
 #include "core/dlight/demonlight.h"
+#include "core/dlight/lightglow.h"
+#include "core/dmodel/keyframedmodelinstance.h"
+#include "core/fire/fireeffect.h"
 #include "core/game/game.h"
+#include "core/gore/gore.h"
+#include "core/inv/inventoryassets.h"
 #include "core/set/demonset.h"
 #include "engine/console/console.h"
 #include "engine/font/font.h"
@@ -38,6 +43,7 @@ protected:
                 depth_ = depth;
                 return true;
             });
+        givenSessionAssets();
     }
 
     void play() {
@@ -149,6 +155,17 @@ TEST_F(CGameSessionTest, TheSceneIsSetUpAtAGammaHeldInRange) {
     game_.gamma = 0x20000;
     play();
     EXPECT_EQ(game_.gamma, 0x10000);
+}
+
+// The set's, the fire effects', the gore's and the inventory's, in that order.
+TEST_F(CGameSessionTest, TheSessionsAssetsAreLoaded) {
+    play();
+    EXPECT_EQ(set_parts_.light_parts.glow.headlight.cache_index, 0);
+    EXPECT_EQ(fire_.getBlackHoleTexture().cache_index, 24);
+    EXPECT_EQ(fire_.getGunFlashModel().getModelName(), "gunflash.kfm");
+    EXPECT_EQ(gore_.getBloodParticleTexture().cache_index, 53);
+    EXPECT_EQ(inventory_assets_.getWidth(), CInventoryAssets::kDefaultWidth);
+    EXPECT_EQ(inventory_assets_.getScreenHeight(), screen_.getWindowHeight());
 }
 
 } // namespace

@@ -3,18 +3,25 @@
 #include "common/random/watcomrandom.h"
 #include "core/actor/actor.h"
 #include "core/dfont/dfont.h"
+#include "core/dlight/lightglow.h"
+#include "core/dmodel/keyframedmodel.h"
 #include "core/event/eventlist.h"
+#include "core/fire/fireeffect.h"
 #include "core/game/game.h"
+#include "core/gore/gore.h"
+#include "core/inv/inventoryassets.h"
 #include "core/level/levelloader.h"
 #include "core/mission/demonmission.h"
 #include "core/script/script.h"
 #include "core/set/demonset.h"
+#include "core/water/water.h"
 #include "core/xform/xform.h"
 #include "engine/console/console.h"
 #include "engine/drender/demonrenderer.h"
 #include "engine/prim/prim.h"
 #include "engine/texture/texture.h"
 #include "engine/zraster/zraster.h"
+#include "platform/mrgltexturebasic.h"
 #include "platform/rendervertex.h"
 #include "support/newmsg/newmsg.h"
 #include "tests/mocks/core/gameparts.h"
@@ -26,6 +33,11 @@
 
 #include <gmock/gmock.h>
 
+#include <cstddef>
+#include <format>
+#include <span>
+#include <string>
+#include <string_view>
 #include <vector>
 
 namespace nocturne::core {
@@ -91,12 +103,59 @@ protected:
                      .mission = mission_,
                      .events = events_,
                      .set = set_}};
+    CFireEffect fire_{{.renderer = demon_renderer_, .keyframed_models = keyframed_models_}};
+    CGore gore_{demon_renderer_};
+    CInventoryAssets inventory_assets_{
+        {.dosio = dosio_, .screen = screen_, .special = special_, .game = game_}};
     SGameSessionOwners session_{.console = console_,
                                 .camera = *set_parts_.camera,
                                 .flashlight = *set_parts_.flashlight,
                                 .set = set_,
                                 .editor_tools = editor_tools_,
-                                .build_version = "1.2.3 (test)"};
+                                .build_version = "1.2.3 (test)",
+                                .fire = fire_,
+                                .gore = gore_,
+                                .inventory_assets = inventory_assets_};
+
+    // Every texture and picture the session loads on disk, 32 by 32, and every model it finds
+    // the one model.
+    void givenSessionAssets() {
+        ON_CALL(keyframed_models_, loadModel(::testing::_))
+            .WillByDefault(::testing::ReturnRef(effect_model_));
+        const auto give = [this](std::string_view name) {
+            givenFile(std::format("art\\{}", name), std::string(std::size_t{32} * 32, '\x10'));
+        };
+        const SLightGlowTextures &glow = set_parts_.light_parts.glow;
+        give(glow.headlight.texture_name);
+        for (const platform::SMRGLTextureBasic &sprite : glow.sprites) {
+            give(sprite.texture_name);
+        }
+        for (const std::span<const platform::SMRGLTextureBasic> textures :
+             {set_parts_.water.getTextures(), fire_.getLightningBoltTextures(),
+              gore_.getSplatTextures(), gore_.getSplatFrameTextures(),
+              gore_.getPoolFrameTextures()}) {
+            for (const platform::SMRGLTextureBasic &texture : textures) {
+                give(texture.texture_name);
+            }
+        }
+        for (const platform::SMRGLTextureBasic *texture :
+             {&fire_.getBlackHoleTexture(), &fire_.getSparkTexture(), &fire_.getBlueSparkTexture(),
+              &gore_.getBloodParticleTexture(), &gore_.getFootstepTexture()}) {
+            give(texture->texture_name);
+        }
+        for (int frame = 190; frame < 210; ++frame) {
+            give(std::format("fr46{}.raw", frame));
+        }
+        for (const char *picture :
+             {"invback", "invback2", "weapback", "weapback2", "battery", "hbar1", "hbar2",
+              "tommyclip24x24", "bullet24x24", "lithium24x24", "mercurybullet24x24",
+              "shotshell24x24", "silverbullet24x24", "holybullet24x24"}) {
+            givenFile(std::format("art\\{}.raw", picture), "");
+            givenFile(std::format("art\\{}.act", picture), "");
+        }
+    }
+
+    CKeyFramedModel effect_model_{dosio_};
 };
 
 } // namespace nocturne::core

@@ -107,6 +107,17 @@ void CDemonActor::updateOrientationMatrix() {
     orientation_matrix_.buildRotationMatrix(orientation_);
 }
 
+// nocedit 0x00408e80
+common::CVector3f *CDemonActor::transformVector(common::CVector3f *output,
+                                                common::CVector3f *input) {
+    *output = orientation_matrix_.transformVector(*input);
+    return output;
+}
+
+// The original checked the actor's pointers here in its debug builds.
+// nocedit 0x004098c0
+void CDemonActor::updateCollisionData(CDemonSet & /*set*/) {}
+
 // nocedit 0x00408ec0
 common::CVector3f *CDemonActor::localToWorldPoint(common::CVector3f *output_world_point,
                                                   common::CVector3f *input_local_point) {

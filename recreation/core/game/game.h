@@ -31,8 +31,8 @@ struct SGameOwners {
 };
 
 // What a session plays with besides the game's own: the console it reports to, the scene camera,
-// the flashlight, the set it shows, the editor tools whose font follows the screen's size, and
-// the version the console names.
+// the flashlight, the set it shows, the editor tools whose font follows the screen's size, the
+// version the console names, and the fire effects, gore and inventory whose assets it loads.
 struct SGameSessionOwners {
     engine::CConsole &console;
     CDemonCamera &camera;
@@ -40,6 +40,9 @@ struct SGameSessionOwners {
     CDemonSet &set;
     shape::CEditorTools &editor_tools;
     std::string_view build_version;
+    CFireEffect &fire;
+    CGore &gore;
+    CInventoryAssets &inventory_assets;
 };
 
 // What chapter select reads the stories' unlock codes from, offers its lists with, and loads the
@@ -142,6 +145,8 @@ private:
     void seedCalibration();
     // The screen at the game's resolution, falling back to 640x480, its camera sized for it.
     void setGameRes(const SGameSessionOwners &session);
+    // The set's, the fire effects', the gore's and the inventory's textures, models and pictures.
+    static void loadAssets(const SGameSessionOwners &session);
 
     SGameOwners owners_;
     // In the game clock's ticks.

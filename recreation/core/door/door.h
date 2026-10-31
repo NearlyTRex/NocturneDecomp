@@ -36,12 +36,14 @@ public:
     void process(float delta_time) override;
     int renderOpaque() override;
     void renderBackground(int layer_flag) override;
+    // Its model's first frame's box.
     CBoundingBox3D *getBoundingBox(CBoundingBox3D *out_box) override;
     ECollisionType getCollisionType(SCollisionInfo *collision_info) override;
     EGroundType getGroundType() override;
     int getBlockVirtualDirectorFlag() override;
     int allowBulletHoles() override;
-    void updateCollisionData() override;
+    // A closed door is put where it is closed and keeps paths out of where it stands.
+    void updateCollisionData(CDemonSet &set) override;
     [[nodiscard]] const CDemonActorType &getActorType() const override;
     void archive(CActorArchive &actor_archive) override;
 
@@ -83,10 +85,19 @@ public:
     [[nodiscard]] bool isPlottedAsBoxInShadow() const;
     [[nodiscard]] EDoorOpenSides getAllowedSides() const;
     [[nodiscard]] float getSwingRange() const;
+    // Where whoever opens the door reaches for it, in the world.
+    [[nodiscard]] const common::CVector3f &getOpenPosition() const;
 
 private:
     static std::unique_ptr<CDemonActor> create(CActor &classes);
 
+    // Moves and turns the door as far open as its param has it, from where it is closed, and
+    // finds where it is reached for. A swing range nudges it once by up to that much along x and
+    // z, then is spent. An unknown type is fatal.
+    void reposition();
+
+    CActor &classes_;
+    common::CVector3f open_position_;
     static constexpr std::string_view kDefaultOpenEvent = "defaultDoorOpen";
     static constexpr std::string_view kDefaultCloseEvent = "defaultDoorClose";
 

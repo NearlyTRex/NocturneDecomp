@@ -144,7 +144,7 @@ TEST(CDemonSet, PublicInterface) {
     static_assert(
         std::is_same_v<decltype(&CDemonSet::buildCollidableActorList), void (CDemonSet::*)()>);
     static_assert(
-        std::is_same_v<decltype(&CDemonSet::castVoxelShadow), void (CDemonSet::*)(CDemonActor *)>);
+        std::is_same_v<decltype(&CDemonSet::castVoxelShadow), void (CDemonSet::*)(CDemonActor &)>);
     static_assert(std::is_same_v<decltype(&CDemonSet::transferVoxelShadow),
                                  void (CDemonSet::*)(CDemonActor *)>);
     static_assert(std::is_same_v<decltype(&CDemonSet::commitVoxelBuffer), void (CDemonSet::*)()>);

@@ -207,9 +207,7 @@ TEST(CDoor, TheFunctionsNotPortedYetQuit) {
         {"process", [&] { door.process(0.0F); }},
         {"renderOpaque", [&] { static_cast<void>(door.renderOpaque()); }},
         {"renderBackground", [&] { door.renderBackground(0); }},
-        {"getBoundingBox", [&] { static_cast<void>(door.getBoundingBox(nullptr)); }},
         {"getCollisionType", [&] { static_cast<void>(door.getCollisionType(nullptr)); }},
-        {"updateCollisionData", [&] { door.updateCollisionData(); }},
     };
     expectEachQuitsNotPorted("CDoor", calls);
 }
@@ -238,7 +236,8 @@ TEST(CDoor, PublicInterface) {
     static_assert(std::is_same_v<decltype(&CDoor::getGroundType), EGroundType (CDoor::*)()>);
     static_assert(std::is_same_v<decltype(&CDoor::getBlockVirtualDirectorFlag), int (CDoor::*)()>);
     static_assert(std::is_same_v<decltype(&CDoor::allowBulletHoles), int (CDoor::*)()>);
-    static_assert(std::is_same_v<decltype(&CDoor::updateCollisionData), void (CDoor::*)()>);
+    static_assert(
+        std::is_same_v<decltype(&CDoor::updateCollisionData), void (CDoor::*)(CDemonSet &)>);
     static_assert(
         std::is_same_v<decltype(&CDoor::getActorType), const CDemonActorType &(CDoor::*)() const>);
     static_assert(std::is_same_v<decltype(&CDoor::archive), void (CDoor::*)(CActorArchive &)>);

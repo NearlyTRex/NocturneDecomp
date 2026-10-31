@@ -2,6 +2,7 @@
 
 #include <gtest/gtest.h>
 
+#include <optional>
 #include <type_traits>
 
 namespace nocturne::core {
@@ -30,6 +31,14 @@ TEST(CDemonCube, PublicInterface) {
         std::is_same_v<decltype(&CDemonCube::testCylinderGroundCollision),
                        int (CDemonCube::*)(common::CVector3f *, float, common::CVector3f *,
                                            common::CVector3f *, std::uint32_t *)>);
+}
+
+TEST(CDemonCube, VoxelMemoryIsTwoEmptyCopies) {
+    CDemonCube cube;
+    EXPECT_FALSE(cube.getVoxelBuffer1().has_value());
+    cube.allocVoxelMemory();
+    EXPECT_EQ(cube.getVoxelBuffer1(), std::optional<SVoxelGrid>(SVoxelGrid{}));
+    EXPECT_EQ(cube.getVoxelBuffer2(), std::optional<SVoxelGrid>(SVoxelGrid{}));
 }
 
 } // namespace

@@ -9,7 +9,8 @@ namespace {
 
 TEST(CoreDlightFunctions, PublicInterface) {
     static_assert(std::is_same_v<decltype(&resetRestoreMemoryAllocator), void (*)()>);
-    static_assert(std::is_same_v<decltype(&captureLightTextures), void (*)()>);
+    static_assert(std::is_same_v<decltype(&captureLightTextures),
+                                 void (*)(engine::CDemonRenderer &, SLightGlowTextures &)>);
     static_assert(std::is_same_v<decltype(&renderConeLightGeometry),
                                  void (*)(common::CVector3f *, common::CVector3f *, float, float)>);
 }

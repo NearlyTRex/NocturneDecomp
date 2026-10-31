@@ -2,6 +2,7 @@
 
 #include "common/fwd.h"
 #include "common/math/vector3f.h"
+#include "common/math/vector3i.h"
 #include "core/dcube/demoncubetriangle.h"
 #include "core/fwd.h"
 
@@ -33,6 +34,9 @@ public:
     CDemonCube &operator=(CDemonCube &&) = delete;
 
     void allocVoxelMemory();
+    // Sets the voxel's bit in the first copy, at the voxel's place in its cube, making both
+    // copies first if the cube has none. The voxel is counted across the whole grid.
+    void setShadowVoxel(const common::CVector3i &voxel);
     // The bounds, the vertices, the triangles, each triangle's ground type and the voxels, the
     // last three only when the cube has triangles. A negative count where memory is needed is
     // fatal, as the allocation it asked for failed.

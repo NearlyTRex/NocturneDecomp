@@ -86,10 +86,6 @@ int CDemonActor::allowBulletHoles() {
     notPorted("allowBulletHoles");
 }
 
-void CDemonActor::updateCollisionData() {
-    notPorted("updateCollisionData");
-}
-
 int CDemonActor::getTargetPoints(common::CVector3f * /*out_points_array*/) {
     notPorted("getTargetPoints");
 }

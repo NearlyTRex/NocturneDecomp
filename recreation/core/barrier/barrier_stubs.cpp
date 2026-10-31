@@ -19,16 +19,8 @@ int CBarrier::renderTransparent() {
     notPorted("renderTransparent");
 }
 
-CBoundingBox3D *CBarrier::getBoundingBox(CBoundingBox3D * /*out_box*/) {
-    notPorted("getBoundingBox");
-}
-
 ECollisionType CBarrier::getCollisionType(SCollisionInfo * /*collision_info*/) {
     notPorted("getCollisionType");
-}
-
-void CBarrier::updateCollisionData() {
-    notPorted("updateCollisionData");
 }
 
 } // namespace nocturne::core

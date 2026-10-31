@@ -63,6 +63,25 @@ void CDemonCube::load(common::CBinaryReader &reader) {
     voxel_buffer2_ = voxels;
 }
 
+// Both copies empty.
+// nocedit 0x004567b0
+void CDemonCube::allocVoxelMemory() {
+    voxel_buffer1_.emplace();
+    voxel_buffer2_.emplace();
+}
+
+void CDemonCube::setShadowVoxel(const common::CVector3i &voxel) {
+    SVoxelGrid *grid = voxel_buffer1_ ? &*voxel_buffer1_ : nullptr;
+    if (grid == nullptr) {
+        voxel_buffer2_.emplace();
+        grid = &voxel_buffer1_.emplace();
+    }
+    constexpr int kSide = 8;
+    grid->voxels.at(static_cast<std::size_t>(voxel.z % kSide))
+        .at(static_cast<std::size_t>(voxel.y % kSide)) |=
+        static_cast<std::uint8_t>(1U << static_cast<unsigned>(voxel.x % kSide));
+}
+
 // nocedit 0x00456840
 void CDemonCube::allocGeometryMemory(int vertex_count, int triangle_count) {
     if (vertex_count < 0) {

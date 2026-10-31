@@ -52,7 +52,7 @@ public:
         ++setups;
     }
 
-    void updateCollisionData() override {}
+    void updateCollisionData(CDemonSet & /*set*/) override {}
 
     void drawWeapon(int /*drawn*/) override {}
 
@@ -193,6 +193,7 @@ protected:
 
     // Runs the mission, which stops where the play loop would start.
     void run() {
+        givenSessionAssets();
         EXPECT_THAT([this] { mission_.run(game_, session_); },
                     ThrowsMessage<common::CFatalError>(
                         StrEq("CGame::runGameSession's play loop is not ported yet")));

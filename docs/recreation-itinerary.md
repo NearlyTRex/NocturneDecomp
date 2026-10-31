@@ -24,9 +24,9 @@ functions don't count as done. Sizes are in instructions.
 | 8 | `renderMenuAndGetChoice`, `CMoon::free`, `CSound::reset`, `CEditorTools::showFileSelectionDialog` | 8 | 63 | 5314 | 60 | 3 | 95.2% |
 | 9 | `CPickList::enableItem`, `CEventList::resetGameFlags`, `CLevelLoader::show`, `CDemonMission::load` | 15 | 56 | 3298 | 37 | 9 | 66.0% |
 | 10 | `CDemonMission::createHeros`, `CDemonMission::prepareAllActors`, `CEventList::reset`, `CDemonMission::loadSet` | 15 | 42 | 5112 | 33 | 8 | 78.5% |
-| 11 | `CScript::loadScript` | 63 | 579 | 67400 | 87 | 33 | 15.0% |
+| 11 | `CScript::loadScript` | 63 | 579 | 67400 | 90 | 33 | 15.5% |
 | 12 | `CDemonMission::loadScript`, `CScript::executeInitSection`, `CDemonMission::startMission`, `CDemonMission::buildActiveSetActorList`, `CConsole::reset`, `CEditorTools::displayMemoryDiagnostics`, `CGame::setGameRes`, `CDemonLight::init`, `CDemonSet::initScene` | 12 | 26 | 1658 | 16 | 9 | 61.5% |
-| 13 | `CFireEffect::init`, `CDemonSet::loadMasterLightStates`, `CDemonSet::setGamma`, `CGame::clearOverlay`, `CGame::loadAssets` | 7 | 27 | 735 | 1 | 0 | 3.7% |
+| 13 | `CFireEffect::init`, `CDemonSet::loadMasterLightStates`, `CDemonSet::setGamma`, `CGame::clearOverlay`, `CGame::loadAssets` | 7 | 27 | 735 | 16 | 1 | 59.2% |
 | 14 | `CNetGame::syncPlayers`, `CNetGame::processServerFrame`, `CLevelLoader::cleanup`, `CKeys::toggleInputMask`, `CGame::processHotkeys` | 17 | 51 | 5302 | 4 | 0 | 7.8% |
 | 15 | `CGame::updateStatusDisplays`, `CGame::processFudge`, `CGame::playerControls`, `CGame::processFrame` | 43 | 189 | 28837 | 8 | 0 | 4.2% |
 | 16 | `CGame::setScreenResolutionAndDisplayFangs`, `showOptionsScreen`, `CScript::skipCinematic`, `CGame::showFullscreenBitmap`, `CDemonMission::countDamageableEnemies`, `freeInventory`, `CGame::runGameSession`, `CGame::displayActStats` | 10 | 25 | 6938 | 9 | 4 | 36.0% |
@@ -36,17 +36,17 @@ functions don't count as done. Sizes are in instructions.
 | 20 | Not reached from startup: `support/` | 2 | 24 | 593 | 3 | 1 | 12.5% |
 | 21 | Not reached from startup: `cockpit/` | 4 | 178 | 11527 | 0 | 0 | 0.0% |
 | 22 | Not reached from startup: `shape/` | 2 | 42 | 3178 | 4 | 2 | 9.5% |
-| 23 | Not reached from startup: `core/` (part 1 of 9) | 18 | 292 | 16011 | 63 | 13 | 21.5% |
+| 23 | Not reached from startup: `core/` (part 1 of 9) | 18 | 292 | 16011 | 65 | 13 | 22.2% |
 | 24 | Not reached from startup: `core/` (part 2 of 9) | 11 | 277 | 24965 | 35 | 7 | 12.6% |
-| 25 | Not reached from startup: `core/` (part 3 of 9) | 24 | 278 | 24134 | 39 | 8 | 14.0% |
-| 26 | Not reached from startup: `core/` (part 4 of 9) | 18 | 300 | 20148 | 49 | 7 | 16.3% |
+| 25 | Not reached from startup: `core/` (part 3 of 9) | 24 | 278 | 24134 | 45 | 9 | 16.1% |
+| 26 | Not reached from startup: `core/` (part 4 of 9) | 18 | 300 | 20148 | 51 | 7 | 17.0% |
 | 27 | Not reached from startup: `core/` (part 5 of 9) | 21 | 294 | 20910 | 60 | 11 | 20.4% |
 | 28 | Not reached from startup: `core/` (part 6 of 9) | 18 | 282 | 21809 | 53 | 12 | 18.7% |
-| 29 | Not reached from startup: `core/` (part 7 of 9) | 18 | 263 | 22721 | 68 | 8 | 25.8% |
+| 29 | Not reached from startup: `core/` (part 7 of 9) | 18 | 263 | 22721 | 68 | 9 | 25.8% |
 | 30 | Not reached from startup: `core/` (part 8 of 9) | 20 | 300 | 31826 | 41 | 8 | 13.6% |
 | 31 | Not reached from startup: `core/` (part 9 of 9) | 5 | 111 | 10905 | 26 | 7 | 23.4% |
 | 32 | Not reached from startup: `wincore/` | 2 | 11 | 482 | 4 | 0 | 36.3% |
-| | **All** | | **4479** | **402407** | **1103** | **196** | **24.6%** |
+| | **All** | | **4479** | **402407** | **1131** | **199** | **25.2%** |
 
 ## Step 0: Math value types
 
@@ -1237,7 +1237,7 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `archive` 0x005dab30 (17)
   - [ ] `dtor` 0x005dae50 (31)
 
-### `core/actor.cpp` (66 functions, 3653 instructions, 6 done, 10 partial)
+### `core/actor.cpp` (66 functions, 3653 instructions, 8 done, 10 partial)
 - free functions
   - [ ] `copyVector` 0x00410360 (12)
   - [ ] `rayCylinderIntersect` 0x00408340 (354)
@@ -1267,7 +1267,7 @@ functions don't count as done. Sizes are in instructions.
   - [~] `archiveActor` 0x0040b870 (46)
     - deferred: writing the actor's name to a save file, with CDemonMission::saveActor
 - class `CDemonActor`
-  - [ ] `transformVector` 0x00408e80 (13)
+  - [x] `transformVector` 0x00408e80 (13)
   - [x] `localToWorldPoint` 0x00408ec0 (26)
   - [x] `dtor` 0x00408a30 (28)
   - [ ] `process` 0x00408a80 (7)
@@ -1291,7 +1291,7 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `testCylinderCollision` 0x004090c0 (53)
   - [ ] `testLineIntersection` 0x00409150 (104)
   - [ ] `onLaserHit` 0x00409840 (14)
-  - [ ] `updateCollisionData` 0x004098c0 (7)
+  - [x] `updateCollisionData` 0x004098c0 (7)
   - [ ] `renderTargetPoints` 0x00409b90 (205)
   - [ ] `spawnFlies` 0x00409e70 (25)
   - [ ] `calculateChecksum` 0x00409ec0 (31)
@@ -1634,12 +1634,12 @@ functions don't count as done. Sizes are in instructions.
   - [x] `setFogColor` 0x005b7b80 (20)
   - [ ] `sync` 0x005b7bc0 (6)
 
-### `core/dtrace.cpp` (11 functions, 2901 instructions, 2 done, 0 partial)
+### `core/dtrace.cpp` (11 functions, 2901 instructions, 3 done, 0 partial)
 - class `CDemonRaytrace`
   - [ ] `getGroundHeight` 0x004966f0 (179)
   - [ ] `cylinderGroundCheck` 0x00496950 (186)
   - [ ] `rayVoxelIntersection` 0x00495b70 (471)
-  - [ ] `worldPositionToVoxelCoords` 0x00499880 (59)
+  - [x] `worldPositionToVoxelCoords` 0x00499880 (59)
   - [x] `getBBoxMin` 0x00499b40 (15)
   - [x] `getBBoxMax` 0x00499b70 (15)
   - [ ] `renderCubeForPVS` 0x00497500 (599)
@@ -2175,7 +2175,7 @@ functions don't count as done. Sizes are in instructions.
 
 ## Step 13: `CFireEffect::init`, `CDemonSet::loadMasterLightStates`, `CDemonSet::setGamma`, `CGame::clearOverlay`, `CGame::loadAssets`
 
-### `core/fire.cpp` (17 functions, 327 instructions, 0 done, 0 partial)
+### `core/fire.cpp` (17 functions, 327 instructions, 9 done, 0 partial)
 - class `CSmokeParticle`
   - [ ] `reset` 0x004bf2e0 (3)
 - class `CExplosion`
@@ -2192,44 +2192,45 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `reset` 0x004c5de0 (3)
 - class `CFireEffect`
   - [ ] `init` 0x004c6c80 (153)
-  - [ ] `loadAssets` 0x004c7ab0 (26)
+  - [x] `loadAssets` 0x004c7ab0 (26)
 - free functions
-  - [ ] `loadStakeAssets` 0x004bfe00 (8)
-  - [ ] `loadFireBallAssets` 0x004c0ad0 (22)
-  - [ ] `loadRockAssets` 0x004c17e0 (1)
-  - [ ] `loadGunFlashAssets` 0x004c1be0 (8)
-  - [ ] `loadDebrisAssets` 0x004c38d0 (36)
-  - [ ] `loadDynamiteAssets` 0x004c41d0 (4)
-  - [ ] `loadGunFlameAssets` 0x004c4d50 (31)
-  - [ ] `loadLightningBoltAssets` 0x004c5600 (15)
+  - [x] `loadStakeAssets` 0x004bfe00 (8)
+  - [x] `loadFireBallAssets` 0x004c0ad0 (22)
+  - [x] `loadRockAssets` 0x004c17e0 (1)
+  - [x] `loadGunFlashAssets` 0x004c1be0 (8)
+  - [x] `loadDebrisAssets` 0x004c38d0 (36)
+  - [x] `loadDynamiteAssets` 0x004c41d0 (4)
+  - [x] `loadGunFlameAssets` 0x004c4d50 (31)
+  - [x] `loadLightningBoltAssets` 0x004c5600 (15)
 
-### `core/gore.cpp` (1 functions, 65 instructions, 0 done, 0 partial)
+### `core/gore.cpp` (1 functions, 65 instructions, 1 done, 0 partial)
 - class `CGore`
-  - [ ] `loadAssets` 0x004ede60 (65)
+  - [x] `loadAssets` 0x004ede60 (65)
 
-### `core/inv.cpp` (2 functions, 220 instructions, 0 done, 0 partial)
+### `core/inv.cpp` (2 functions, 220 instructions, 2 done, 0 partial)
 - free functions
-  - [ ] `loadItem` 0x004fcfe0 (15)
-  - [ ] `loadAssets` 0x004fd220 (205)
+  - [x] `loadItem` 0x004fcfe0 (15)
+  - [x] `loadAssets` 0x004fd220 (205)
 
-### `core/dlight.cpp` (1 functions, 20 instructions, 0 done, 0 partial)
+### `core/dlight.cpp` (1 functions, 20 instructions, 0 done, 1 partial)
 - free functions
-  - [ ] `captureLightTextures` 0x00474a90 (20)
+  - [~] `captureLightTextures` 0x00474a90 (20)
+    - deferred: each flare sprite's size and texture coordinates beside its texture, with renderLightGlowSprites
 
-### `core/water.cpp` (1 functions, 15 instructions, 0 done, 0 partial)
+### `core/water.cpp` (1 functions, 15 instructions, 1 done, 0 partial)
 - class `CWater`
-  - [ ] `captureTextures` 0x005e9e40 (15)
+  - [x] `captureTextures` 0x005e9e40 (15)
 
-### `core/set.cpp` (3 functions, 68 instructions, 1 done, 0 partial)
+### `core/set.cpp` (3 functions, 68 instructions, 2 done, 0 partial)
 - class `CDemonSet`
   - [ ] `loadMasterLightStates` 0x00571130 (21)
   - [x] `setGamma` 0x00570d60 (41)
-  - [ ] `loadAssets` 0x0056fb80 (6)
+  - [x] `loadAssets` 0x0056fb80 (6)
 
-### `core/game.cpp` (2 functions, 20 instructions, 0 done, 0 partial)
+### `core/game.cpp` (2 functions, 20 instructions, 1 done, 0 partial)
 - class `CGame`
   - [ ] `clearOverlay` 0x004d7f80 (4)
-  - [ ] `loadAssets` 0x004e07a0 (16)
+  - [x] `loadAssets` 0x004e07a0 (16)
 
 ## Step 14: `CNetGame::syncPlayers`, `CNetGame::processServerFrame`, `CLevelLoader::cleanup`, `CKeys::toggleInputMask`, `CGame::processHotkeys`
 
@@ -2754,7 +2755,9 @@ functions don't count as done. Sizes are in instructions.
     - deferred: starting the session's autosave (the decomp's nocturne_autosave_session_start), with the autosave poll in the play loop
     - deferred: developer mode when VELOCITY is set, with processHotkeys
     - deferred: starting the fire effects, or the master lights' saved states after a load, with CFireEffect::init and CDemonSet::loadMasterLightStates
-    - deferred: clearing the overlay and the pick list, choosing the first camera, fading in and loading the session's assets, with clearOverlay, setCameraView, evaluateVirtualDirector, beginFadeIn and loadAssets
+    - deferred: clearing the overlay's status lines and message timer, with clearOverlay and updateStatusDisplays
+    - deferred: choosing the first camera, with setCameraView and evaluateVirtualDirector
+    - deferred: opening the iris on the focus actor, with beginFadeIn and renderIrisFade
     - deferred: the cheats the menu turned on (the decomp's nocturne_cheats_apply), with showCheatsMenu
     - deferred: waiting for every player and starting the server's frames, with CNetGame::syncPlayers and processServerFrame
     - deferred: saving the clock, centring the input, freeing the loading screen, the hero's aim mode and the act not yet complete, then the play loop, with the play loop
@@ -3685,15 +3688,15 @@ functions don't count as done. Sizes are in instructions.
   - [x] `dtor` 0x004140b0 (31)
   - [ ] `setup` 0x00413da0 (8)
 
-### `core/barrier.cpp` (11 functions, 219 instructions, 7 done, 0 partial)
+### `core/barrier.cpp` (11 functions, 219 instructions, 9 done, 0 partial)
 - class `CBarrier`
   - [x] `ctor` 0x004141c0 (13)
   - [x] `getActorType` 0x004141b0 (2)
   - [ ] `renderTransparent` 0x00414240 (59)
   - [ ] `getBoundingBox` 0x004142e0 (22)
   - [x] `archive` 0x00414340 (27)
-  - [ ] `getCollisionType` 0x004143a0 (23)
-  - [ ] `updateCollisionData` 0x004143e0 (10)
+  - [x] `getCollisionType` 0x004143a0 (23)
+  - [x] `updateCollisionData` 0x004143e0 (10)
   - [x] `dtor` 0x00414670 (31)
   - [x] `setup` 0x00414210 (11)
 - free functions
@@ -4298,7 +4301,7 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `transformAndStoreVertex` 0x00452110 (34)
   - [ ] `saveCameraFog` 0x00453f10 (57)
 
-### `core/dcube.cpp` (21 functions, 2237 instructions, 2 done, 1 partial)
+### `core/dcube.cpp` (21 functions, 2237 instructions, 3 done, 1 partial)
 - free functions
   - [ ] `intersectXZCylinder` 0x004556b0 (256)
   - [ ] `intersectXZCylinderWithHeight` 0x00455990 (63)
@@ -4316,7 +4319,7 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `clipTriangleToAABB` 0x00456400 (240)
 - class `CDemonCube`
   - [ ] `testCylinderCollision` 0x00457a90 (74)
-  - [ ] `allocVoxelMemory` 0x004567b0 (43)
+  - [x] `allocVoxelMemory` 0x004567b0 (43)
   - [x] `ctor` 0x00456750 (9)
   - [ ] `freeMemory` 0x004569b0 (67)
   - [x] `dtor` 0x00456790 (8)
@@ -4403,7 +4406,7 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `factoryFuncZombieDog` 0x0047f010 (12)
   - [x] `staticInit` 0x0047efe0 (9)
 
-### `core/door.cpp` (23 functions, 1740 instructions, 11 done, 0 partial)
+### `core/door.cpp` (23 functions, 1740 instructions, 14 done, 0 partial)
 - class `CDoor`
   - [ ] `getOpenStandPos` 0x00480e20 (177)
   - [ ] `onOpened` 0x0047fcf0 (8)
@@ -4411,17 +4414,17 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `getMoveType` 0x00481070 (150)
   - [x] `ctor` 0x0047fad0 (99)
   - [x] `getActorType` 0x0047fac0 (2)
-  - [ ] `reposition` 0x0047fd20 (241)
+  - [x] `reposition` 0x0047fd20 (241)
   - [ ] `process` 0x004800c0 (472)
   - [ ] `renderOpaque` 0x004807d0 (166)
   - [ ] `renderBackground` 0x004809e0 (37)
-  - [ ] `getBoundingBox` 0x00480a50 (28)
+  - [x] `getBoundingBox` 0x00480a50 (28)
   - [x] `archive` 0x00480aa0 (193)
   - [ ] `getCollisionType` 0x00480d90 (16)
   - [x] `getGroundType` 0x00480dd0 (3)
   - [x] `getBlockVirtualDirectorFlag` 0x00480df0 (3)
   - [x] `allowBulletHoles` 0x00480e00 (3)
-  - [ ] `updateCollisionData` 0x00481020 (19)
+  - [x] `updateCollisionData` 0x00481020 (19)
   - [x] `dtor` 0x00481670 (31)
   - [x] `setup` 0x0047fc70 (40)
   - [x] `setSwingRange` 0x00480de0 (4)
@@ -4509,14 +4512,15 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `blendLightmapShared4U64toU64pBB12Px4MMX` 0x004924a9 (84)
   - [ ] `blendLightmapShared4U64toU64pAmbientPx4MMX` 0x004925c5 (84)
 
-### `core/dtrace.cpp` (18 functions, 2180 instructions, 2 done, 1 partial)
+### `core/dtrace.cpp` (18 functions, 2180 instructions, 4 done, 2 partial)
 - class `CDemonRaytrace`
   - [ ] `getVoxelHeightAtVoxelCoords` 0x00499a50 (95)
   - [ ] `voxelRaycast3D` 0x00499330 (379)
   - [ ] `testCylinderCollision` 0x00496c60 (163)
-  - [ ] `worldPositionToGridCoords` 0x004997d0 (59)
-  - [ ] `setVoxelShadowBit` 0x0049a160 (120)
-  - [ ] `markShadowVoxels` 0x00499c20 (178)
+  - [x] `worldPositionToGridCoords` 0x004997d0 (59)
+  - [x] `setVoxelShadowBit` 0x0049a160 (120)
+  - [~] `markShadowVoxels` 0x00499c20 (178)
+    - unverified: each sample's sums, the index's stride, then the corner, then the half stride, as read from the asm, not run against the original's code
   - [ ] `restoreShadowBitFromBuffer` 0x0049a280 (125)
   - [ ] `transferShadowVoxels` 0x00499f10 (178)
   - [ ] `rayIntersection` 0x00495aa0 (87)
@@ -4686,7 +4690,7 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `ctor` 0x00545650 (4)
   - [ ] `dtor` 0x00545670 (3)
 
-### `core/fire.cpp` (72 functions, 3038 instructions, 18 done, 1 partial)
+### `core/fire.cpp` (72 functions, 3038 instructions, 19 done, 1 partial)
 - class `CLightningBolt`
   - [ ] `activateDirectional` 0x004c5680 (34)
   - [x] `ctor` 0x004c9540 (2, compiler-generated)
@@ -4706,7 +4710,7 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `createLaserSegment` 0x004c7eb0 (39)
   - [ ] `traceLaser` 0x004c8230 (746)
   - [ ] `createPopcorn` 0x004c9240 (32)
-  - [ ] `ctor` 0x004c6c60 (8)
+  - [x] `ctor` 0x004c6c60 (8)
   - [ ] `createLaserPath` 0x004c7f80 (201)
 - class `CTrail`
   - [ ] `activate` 0x004c5df0 (23)
@@ -4728,7 +4732,7 @@ functions don't count as done. Sizes are in instructions.
 - free functions
   - [ ] `allocateBulletHole` 0x004c6c10 (20)
   - [~] `staticInit` 0x004bef20 (149)
-    - deferred: the game's fire effect, its five models and its particle pools, with this constructor
+    - deferred: the particle pools, with the particles' process and render steps
   - [ ] `safeAcos` 0x004bf1a0 (30)
   - [ ] `transformWorldToScreen` 0x004c9400 (22)
 - class `CMuzzleFlash`
@@ -5033,7 +5037,7 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `factoryFuncGlass` 0x004e9000 (12)
   - [x] `staticInit` 0x004e8fd0 (9)
 
-### `core/gore.cpp` (14 functions, 163 instructions, 5 done, 1 partial)
+### `core/gore.cpp` (14 functions, 163 instructions, 6 done, 1 partial)
 - class `CBloodPool`
   - [ ] `init` 0x004ed0d0 (44)
   - [x] `ctor` 0x004ee3b0 (2, compiler-generated)
@@ -5041,11 +5045,11 @@ functions don't count as done. Sizes are in instructions.
 - class `CGore`
   - [ ] `allocateBloodPool` 0x004edde0 (20)
   - [ ] `createBloodPool` 0x004ede30 (19)
-  - [ ] `ctor` 0x004ed730 (8)
+  - [x] `ctor` 0x004ed730 (8)
   - [x] `dtor` 0x004ed750 (2, compiler-generated)
 - free functions
   - [~] `staticInit` 0x004eb8c0 (33)
-    - deferred: the game's gore and its blood, splat, pool and footstep arrays, with this constructor
+    - deferred: the blood particle, splat, pool and footstep arrays, and emptying them, with reset and the steps that spawn them
 - class `CFootstep`
   - [ ] `ctor` 0x004ee370 (9)
   - [ ] `dtor` 0x004ee390 (8)
@@ -5943,13 +5947,14 @@ functions don't count as done. Sizes are in instructions.
 - class `CBoundingBox3D`
   - [x] `assign` 0x005714c0 (29, compiler-generated)
 
-### `core/setcolid.cpp` (14 functions, 1616 instructions, 0 done, 1 partial)
+### `core/setcolid.cpp` (14 functions, 1616 instructions, 0 done, 2 partial)
 - class `CDemonSet`
   - [ ] `testVoxelRaycast` 0x00572510 (8)
   - [ ] `testOBBCylinderCollision` 0x00573140 (248)
   - [ ] `testCylinderCollision` 0x00573470 (580)
   - [ ] `setRayTypeLaser` 0x00574270 (11)
-  - [ ] `castVoxelShadow` 0x00574440 (46)
+  - [~] `castVoxelShadow` 0x00574440 (46)
+    - deferred: resetting every path map around the new shadow, with resetAllPathMaps and the path maps
   - [ ] `notifyDamageListeners` 0x005742b0 (82)
   - [ ] `transferVoxelShadow` 0x005744d0 (46)
   - [ ] `getVoxelHeight` 0x005724e0 (12)

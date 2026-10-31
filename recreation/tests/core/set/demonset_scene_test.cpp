@@ -2,10 +2,13 @@
 #include "core/dcamera/fog.h"
 #include "core/dfilter/filtercache.h"
 #include "core/dlight/demonlight.h"
+#include "core/dlight/lightglow.h"
 #include "core/set/demonset.h"
 #include "core/setutil/3dscamera.h"
+#include "core/water/water.h"
 #include "core/weather/weather.h"
 #include "core/weather/weathertype.h"
+#include "platform/mrgltexturebasic.h"
 #include "tests/mocks/core/setfilefixture.h"
 #include "tests/mocks/core/setparts.h"
 #include "tests/mocks/engine/demonrendererfixture.h"
@@ -13,10 +16,14 @@
 #include <gmock/gmock.h>
 #include <gtest/gtest.h>
 
+#include <array>
 #include <cstddef>
 #include <cstdint>
+#include <format>
 #include <span>
 #include <string>
+#include <string_view>
+#include <vector>
 
 namespace nocturne::core {
 namespace {
@@ -147,6 +154,58 @@ TEST_F(CDemonSetInitSceneTest, MoreThanNinetySixSpotlightsIsFatal) {
     EXPECT_THAT([this] { set_.initScene(); },
                 ::testing::ThrowsMessage<common::CFatalError>(
                     ::testing::StrEq("CDemonSet::initScene - Too many spotlights!")));
+}
+
+// The art of the headlight, the flare sprites and the water, each 32 by 32, but for any named
+// missing.
+class CDemonSetAssetsTest : public CDemonSetSceneTest {
+protected:
+    CDemonSetAssetsTest() {
+        ON_CALL(screen_, getHardwarePalette16())
+            .WillByDefault(::testing::Return(std::span<std::uint16_t, 256>(palette16_)));
+        ON_CALL(screen_, getHardwarePalette32())
+            .WillByDefault(::testing::Return(std::span<std::uint32_t, 256>(palette32_)));
+    }
+
+    void givenArt(std::string_view missing = "") {
+        std::vector<std::string> names = {"HEADLITE.RAW", "SUN06.RAW", "SUN07.RAW", "SUN09.RAW",
+                                          "SUNCRAM.RAW",  "SUN11.RAW", "SUN12.RAW", "SUN13.RAW"};
+        for (int frame = 0; frame < 16; ++frame) {
+            names.push_back(std::format("WATER{}.RAW", frame));
+        }
+        for (const std::string &name : names) {
+            if (name != missing) {
+                givenFile("art\\" + name, std::string(std::size_t{32} * 32, '\x10'));
+            }
+        }
+    }
+
+    std::array<std::uint16_t, 256> palette16_{};
+    std::array<std::uint32_t, 256> palette32_{};
+};
+
+// Each texture is found in the cache; the cramped sprite is loaded once for its three places.
+TEST_F(CDemonSetAssetsTest, TheGlowAndWaterTexturesAreLoaded) {
+    givenArt();
+    set_.loadAssets();
+    const SLightGlowTextures &glow = set_parts_.light_parts.glow;
+    EXPECT_EQ(glow.headlight.cache_index, 0);
+    EXPECT_EQ(glow.sprites[0].cache_index, 1);
+    EXPECT_EQ(glow.sprites[3].cache_index, 4);
+    EXPECT_EQ(glow.sprites[7].cache_index, 4);
+    EXPECT_EQ(glow.sprites[8].cache_index, 4);
+    const std::span<const platform::SMRGLTextureBasic> water = set_parts_.water.getTextures();
+    EXPECT_EQ(water[0].texture_name, "WATER0.RAW");
+    EXPECT_EQ(water[0].cache_index, 8);
+    EXPECT_EQ(water[15].texture_name, "WATER15.RAW");
+    EXPECT_EQ(water[15].cache_index, 23);
+}
+
+TEST_F(CDemonSetAssetsTest, AMissingWaterFrameIsFatal) {
+    givenArt("WATER15.RAW");
+    EXPECT_THAT([this] { set_.loadAssets(); },
+                ThrowsMessage<common::CFatalError>(::testing::StartsWith(
+                    "CTextureCache::load - Bad texture length : WATER15.RAW")));
 }
 
 } // namespace

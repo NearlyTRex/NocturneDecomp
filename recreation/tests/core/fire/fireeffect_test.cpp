@@ -12,7 +12,7 @@ TEST(CFireEffect, IsConcrete) {
 }
 
 TEST(CFireEffect, Constructors) {
-    static_assert(std::is_constructible_v<CFireEffect>);
+    static_assert(std::is_constructible_v<CFireEffect, const SFireEffectOwners &>);
 }
 
 TEST(CFireEffect, PublicInterface) {

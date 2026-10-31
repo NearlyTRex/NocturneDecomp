@@ -22,7 +22,7 @@ public:
         ++setup_count_;
     }
 
-    void updateCollisionData() override {
+    void updateCollisionData(CDemonSet & /*set*/) override {
         ++collision_updates_;
     }
 

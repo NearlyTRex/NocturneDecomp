@@ -115,6 +115,7 @@ public:
                         std::span<const common::CVector3i> vertex_normals);
     void process();
     int getReverbPresetAtPosition(common::CVector3f *position);
+    // Loads the lights' glow textures and the water's.
     void loadAssets();
     // A model's polygons, drawn as the renderer's quad batch.
     void renderPrimitiveBatch(std::span<const platform::SMRGLPrimitiveQuad> primitives,
@@ -166,7 +167,9 @@ public:
     void notifyDamageListeners(common::CVector3f *position, common::CVector3f *actor_position,
                                SDamageInfo *damage_info);
     void buildCollidableActorList();
-    void castVoxelShadow(CDemonActor *actor);
+    // Marks the voxels the actor's box fills, as the actor is placed and turned, for the path
+    // maps to keep out of.
+    void castVoxelShadow(CDemonActor &actor);
     void transferVoxelShadow(CDemonActor *actor);
     void commitVoxelBuffer();
     int isPointInWater(common::CVector3f *point);

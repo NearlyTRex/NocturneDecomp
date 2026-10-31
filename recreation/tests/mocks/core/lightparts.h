@@ -4,6 +4,7 @@
 #include "core/dcamera/cameratables.h"
 #include "core/dfilter/demonfilter.h"
 #include "core/dlight/demonlight.h"
+#include "core/dlight/lightglow.h"
 #include "engine/fwd.h"
 
 #include <array>
@@ -36,10 +37,12 @@ public:
                            .special = special,
                            .crt_random = crt_random},
                 .global_filters = global_filters,
-                .player_filters = player_filters};
+                .player_filters = player_filters,
+                .glow = glow};
     }
 
     SCameraTables tables;
+    SLightGlowTextures glow;
     common::CWatcomRandom crt_random;
     std::array<CDemonFilter, 8> global_filters;
     std::array<CDemonFilter, 4> player_filters;

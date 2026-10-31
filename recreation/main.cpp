@@ -10,14 +10,18 @@
 #include "core/dfilter/filtercache.h"
 #include "core/dfont/dfont.h"
 #include "core/dlight/demonlight.h"
+#include "core/dlight/lightglow.h"
 #include "core/dmodel/keyframedmodel.h"
 #include "core/dmodel/keyframedmodelmanager.h"
 #include "core/dtrace/demonraytrace.h"
 #include "core/event/eventlist.h"
+#include "core/fire/fireeffect.h"
 #include "core/game/chapterselectmode.h"
 #include "core/game/game.h"
+#include "core/gore/gore.h"
 #include "core/ground/ground.h"
 #include "core/inivar/inivar.h"
+#include "core/inv/inventoryassets.h"
 #include "core/level/levelloader.h"
 #include "core/menu/attractmovies.h"
 #include "core/menu/menu.h"
@@ -275,12 +279,14 @@ private:
     core::CKeyFramedModelManager keyframed_models_{dosio_, demon_renderer_};
     core::CActor actor_{game_, crt_random_, deformable_models_, keyframed_models_};
     core::SCameraTables camera_tables_;
+    core::SLightGlowTextures light_glow_;
     core::SDemonLightOwners light_owners_{.camera = {.tables = camera_tables_,
                                                      .screen = screen_,
                                                      .special = special_,
                                                      .crt_random = crt_random_},
                                           .global_filters = global_filters_,
-                                          .player_filters = player_filters_};
+                                          .player_filters = player_filters_,
+                                          .glow = light_glow_};
     core::CDemonCamera camera_{light_owners_.camera};
     core::CDemonLight flashlight_{light_owners_, kFlashlightSize, kFlashlightSize};
     core::CFilterCache filter_cache_{dosio_};
@@ -381,12 +387,20 @@ private:
                                                                  .file_system = file_system_,
                                                                  .local_time = local_time_,
                                                                  .messages = messages_};
+    core::CFireEffect fire_effect_{
+        {.renderer = demon_renderer_, .keyframed_models = keyframed_models_}};
+    core::CGore gore_{demon_renderer_};
+    core::CInventoryAssets inventory_assets_{
+        {.dosio = dosio_, .screen = screen_, .special = special_, .game = game_}};
     core::SGameSessionOwners session_owners_{.console = console_,
                                              .camera = camera_,
                                              .flashlight = flashlight_,
                                              .set = set_,
                                              .editor_tools = editor_tools_,
-                                             .build_version = nocturne::kBuildVersion};
+                                             .build_version = nocturne::kBuildVersion,
+                                             .fire = fire_effect_,
+                                             .gore = gore_,
+                                             .inventory_assets = inventory_assets_};
     core::SChapterSelectOwners chapter_select_owners_{.messages = messages_,
                                                       .editor_tools = editor_tools_,
                                                       .pick_list = pick_list_owners_,

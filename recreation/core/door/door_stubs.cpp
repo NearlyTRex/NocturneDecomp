@@ -27,16 +27,8 @@ void CDoor::renderBackground(int /*layer_flag*/) {
     notPorted("renderBackground");
 }
 
-CBoundingBox3D *CDoor::getBoundingBox(CBoundingBox3D * /*out_box*/) {
-    notPorted("getBoundingBox");
-}
-
 ECollisionType CDoor::getCollisionType(SCollisionInfo * /*collision_info*/) {
     notPorted("getCollisionType");
-}
-
-void CDoor::updateCollisionData() {
-    notPorted("updateCollisionData");
 }
 
 } // namespace nocturne::core

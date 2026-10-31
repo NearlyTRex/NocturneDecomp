@@ -42,7 +42,7 @@ void CDemonMission::loadSet(int set_index) {
         prepareAllActors();
     }
     for (CDemonActor *actor : owners_.set.getActors()) {
-        actor->updateCollisionData();
+        actor->updateCollisionData(owners_.set);
     }
 }
 

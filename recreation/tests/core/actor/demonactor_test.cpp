@@ -78,8 +78,8 @@ TEST(CDemonActor, PublicInterface) {
     static_assert(std::is_same_v<decltype(&CDemonActor::getBlockVirtualDirectorFlag),
                                  int (CDemonActor::*)()>);
     static_assert(std::is_same_v<decltype(&CDemonActor::allowBulletHoles), int (CDemonActor::*)()>);
-    static_assert(
-        std::is_same_v<decltype(&CDemonActor::updateCollisionData), void (CDemonActor::*)()>);
+    static_assert(std::is_same_v<decltype(&CDemonActor::updateCollisionData),
+                                 void (CDemonActor::*)(CDemonSet &)>);
     static_assert(std::is_same_v<decltype(&CDemonActor::getTargetPoints),
                                  int (CDemonActor::*)(common::CVector3f *)>);
     static_assert(
@@ -335,7 +335,6 @@ TEST(CDemonActor, TheFunctionsNotPortedYetQuit) {
         {"getBlockVirtualDirectorFlag",
          [&] { static_cast<void>(actor.getBlockVirtualDirectorFlag()); }},
         {"allowBulletHoles", [&] { static_cast<void>(actor.allowBulletHoles()); }},
-        {"updateCollisionData", [&] { actor.CDemonActor::updateCollisionData(); }},
         {"getTargetPoints", [&] { static_cast<void>(actor.getTargetPoints(nullptr)); }},
         {"renderTargetPoints", [&] { actor.renderTargetPoints(); }},
         {"canLookAt", [&] { static_cast<void>(actor.canLookAt()); }},
@@ -374,7 +373,7 @@ TEST(CDemonActor, TheFunctionsNotPortedYetQuit) {
         {"getPathMap", [&] { static_cast<void>(actor.getPathMap()); }},
         {"calculateChecksum", [&] { actor.calculateChecksum(nullptr); }},
     };
-    EXPECT_EQ(calls.size(), 48U);
+    EXPECT_EQ(calls.size(), 47U);
     for (const auto &[name, call] : calls) {
         EXPECT_THAT(call, ThrowsMessage<common::CFatalError>(
                               StrEq("CDemonActor::" + std::string(name) + " is not ported yet")));

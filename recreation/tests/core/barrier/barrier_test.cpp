@@ -35,7 +35,8 @@ TEST(CBarrier, PublicInterface) {
                                  CBoundingBox3D *(CBarrier::*)(CBoundingBox3D *)>);
     static_assert(std::is_same_v<decltype(&CBarrier::getCollisionType),
                                  ECollisionType (CBarrier::*)(SCollisionInfo *)>);
-    static_assert(std::is_same_v<decltype(&CBarrier::updateCollisionData), void (CBarrier::*)()>);
+    static_assert(
+        std::is_same_v<decltype(&CBarrier::updateCollisionData), void (CBarrier::*)(CDemonSet &)>);
     static_assert(std::is_same_v<decltype(&CBarrier::getActorType),
                                  const CDemonActorType &(CBarrier::*)() const>);
     static_assert(
@@ -86,9 +87,7 @@ TEST(CBarrier, TheFunctionsNotPortedYetQuit) {
     CBarrier barrier;
     const NotPortedCalls calls = {
         {"renderTransparent", [&] { static_cast<void>(barrier.renderTransparent()); }},
-        {"getBoundingBox", [&] { static_cast<void>(barrier.getBoundingBox(nullptr)); }},
         {"getCollisionType", [&] { static_cast<void>(barrier.getCollisionType(nullptr)); }},
-        {"updateCollisionData", [&] { barrier.updateCollisionData(); }},
     };
     expectEachQuitsNotPorted("CBarrier", calls);
 }

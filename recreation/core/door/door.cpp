@@ -1,12 +1,19 @@
 #include "core/door/door.h"
 
+#include "common/error/error.h"
+#include "common/math/extendedfloat.h"
 #include "common/math/vector3f.h"
 #include "core/actor/actor.h"
 #include "core/actor/actorarchive.h"
 #include "core/actor/demonactortype.h"
+#include "core/box/boundingbox3d.h"
+#include "core/dmodel/keyframedmodel.h"
 #include "core/dmodel/keyframedmodelinstance.h"
 #include "core/event/rulelist.h"
+#include "core/location.h"
+#include "core/set/demonset.h"
 
+#include <cmath>
 #include <format>
 #include <memory>
 #include <string>
@@ -32,6 +39,11 @@ constexpr int kBulletHolesVersion = 10;
 constexpr int kLockedSoundVersion = 11;
 // What an old door's one script event became: a rule that always holds.
 constexpr std::string_view kAlwaysCondition = "true";
+// A param of 1 swings or tilts a door a quarter turn, as the float the original multiplies by.
+constexpr float kQuarterTurn = 1.57079632675F;
+// How high up the door it is reached for, and how far in from a swinging door's far edge.
+constexpr float kReachHeight = 3.5F;
+constexpr float kReachInset = 0.3F;
 
 } // namespace
 
@@ -40,7 +52,7 @@ constinit const CDemonActorType CDoor::kType =
     makeActorType("CDoor", &CDemonActor::kType, &CDoor::create, kVersion);
 
 // nocedit 0x0047fad0
-CDoor::CDoor(CActor &classes) : model_(classes.getKeyFramedModels()) {
+CDoor::CDoor(CActor &classes) : classes_(classes), model_(classes.getKeyFramedModels()) {
     model_.setModelName("churchd01.kfm");
 }
 
@@ -58,6 +70,92 @@ void CDoor::setup() {
 
 // nocedit 0x00481670
 CDoor::~CDoor() = default;
+
+// A swinging door's angle is worked out at the x87's precision and stored.
+// nocedit 0x0047fd20
+void CDoor::reposition() {
+    CBoundingBox3D box;
+    getBoundingBox(&box);
+    CLocation location = getLocation();
+    common::CVector3f orientation = getOrientation();
+    common::CVector3f reach;
+    switch (door_type_) {
+    case EDoorType::kSwing: {
+        location.position = original_position_;
+        setLocation(location);
+        const common::CExtendedFloat turn =
+            common::CExtendedFloat(param_) * common::CExtendedFloat(kQuarterTurn);
+        const common::CExtendedFloat closed(original_orientation_.y);
+        orientation = {
+            .x = 0.0F,
+            .y = (door_swing_ == EDoorSwing::kClockwise ? turn + closed : closed - turn).toFloat(),
+            .z = 0.0F};
+        setOrientation(orientation);
+        updateOrientationMatrix();
+        reach = {.x = std::abs(box.min.x) <= std::abs(box.max.x) ? box.max.x - kReachInset
+                                                                 : box.min.x + kReachInset,
+                 .y = kReachHeight};
+    } break;
+    case EDoorType::kVertical:
+        location.position.y = original_position_.y + param_;
+        setLocation(location);
+        reach = {.y = kReachHeight};
+        break;
+    case EDoorType::kSlide: {
+        common::CVector3f offset{.x = door_side_ == EDoorSide::kRight ? param_ : -param_};
+        common::CVector3f moved;
+        transformVector(&moved, &offset);
+        location.position = {.x = original_position_.x + moved.x,
+                             .y = original_position_.y + moved.y,
+                             .z = original_position_.z + moved.z};
+        setLocation(location);
+        reach = {.y = kReachHeight};
+    } break;
+    case EDoorType::kTilt:
+        orientation.x = param_ * kQuarterTurn;
+        setOrientation(orientation);
+        updateOrientationMatrix();
+        reach = {.x = (box.min.x + box.max.x) * 0.5F,
+                 .y = (box.min.y + box.max.y) * 0.5F,
+                 .z = (box.min.z + box.max.z) * 0.5F};
+        break;
+    default:
+        common::displayErrorAndQuit("CDoor::reposition - Unknown type");
+    }
+    localToWorldPoint(&open_position_, &reach);
+    if (swing_range_ > 0.0F) {
+        common::CVector3f nudge{.x = classes_.getRandomFloatFromRange(-swing_range_, swing_range_),
+                                .z = classes_.getRandomFloatFromRange(-swing_range_, swing_range_)};
+        common::CVector3f moved;
+        transformVector(&moved, &nudge);
+        location = getLocation();
+        location.position = {.x = moved.x + location.position.x,
+                             .y = moved.y + location.position.y,
+                             .z = moved.z + location.position.z};
+        setLocation(location);
+        swing_range_ = 0.0F;
+    }
+}
+
+// nocedit 0x00480a50
+CBoundingBox3D *CDoor::getBoundingBox(CBoundingBox3D *out_box) {
+    *out_box = model_.getModelPtr().getFrameBounds().front();
+    return out_box;
+}
+
+// The original leaves the doors where they are while the mission is in the editor, which the
+// game never is.
+// nocedit 0x00481020
+void CDoor::updateCollisionData(CDemonSet &set) {
+    if (door_state_ == EDoorState::kClosed) {
+        reposition();
+        set.castVoxelShadow(*this);
+    }
+}
+
+const common::CVector3f &CDoor::getOpenPosition() const {
+    return open_position_;
+}
 
 // nocedit 0x0047fac0
 const CDemonActorType &CDoor::getActorType() const {

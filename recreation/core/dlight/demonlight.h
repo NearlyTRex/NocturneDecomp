@@ -12,11 +12,13 @@
 namespace nocturne::core {
 
 // What a light draws with besides a camera's: the eight spot filters a light's volumetric
-// intensity picks between, and the four a light wider than 256 picks between instead.
+// intensity picks between, the four a light wider than 256 picks between instead, and the
+// textures lights glow with.
 struct SDemonLightOwners {
     SDemonCameraOwners camera;
     std::span<const CDemonFilter> global_filters;
     std::span<const CDemonFilter> player_filters;
+    SLightGlowTextures &glow;
 };
 
 // A spotlight: a camera at the light whose depth buffer is its shadow map, and the filter that

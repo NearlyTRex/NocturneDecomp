@@ -3,10 +3,12 @@
 #include "core/dcamera/gammacurve.h"
 #include "core/dfilter/filtercache.h"
 #include "core/dlight/demonlight.h"
+#include "core/dlight/dlight.h"
 #include "core/loadingscreen.h"
 #include "core/set/demonset.h"
 #include "core/setutil/3dscamera.h"
 #include "core/setutil/3dslight.h"
+#include "core/water/water.h"
 #include "core/weather/weather.h"
 #include "support/newmsg/newmsg.h"
 
@@ -92,6 +94,12 @@ void CDemonSet::setGamma(int gamma) {
 
 std::span<const int> CDemonSet::getIntensityToValueLookupTable() const {
     return intensity_to_value_;
+}
+
+// nocedit 0x0056fb80
+void CDemonSet::loadAssets() {
+    captureLightTextures(owners_.renderer, owners_.light_owners.glow);
+    owners_.water.captureTextures(owners_.renderer);
 }
 
 } // namespace nocturne::core

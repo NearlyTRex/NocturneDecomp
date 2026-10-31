@@ -24,9 +24,11 @@ public:
 
     void setup() override;
     int renderTransparent() override;
+    // Its size about its foot, a tenth below and a tenth above.
     CBoundingBox3D *getBoundingBox(CBoundingBox3D *out_box) override;
     ECollisionType getCollisionType(SCollisionInfo *collision_info) override;
-    void updateCollisionData() override;
+    // Keeps paths out of the barrier when it is added to the path grid.
+    void updateCollisionData(CDemonSet &set) override;
     [[nodiscard]] const CDemonActorType &getActorType() const override;
     void archive(CActorArchive &actor_archive) override;
 

@@ -3,7 +3,10 @@
 #include "core/dcamera/demoncamera.h"
 #include "core/dfont/dfont.h"
 #include "core/dlight/demonlight.h"
+#include "core/fire/fireeffect.h"
 #include "core/game/game.h"
+#include "core/gore/gore.h"
+#include "core/inv/inventoryassets.h"
 #include "core/set/demonset.h"
 #include "engine/2d/2d.h"
 #include "engine/console/console.h"
@@ -67,9 +70,11 @@ void CGame::setGameRes(const SGameSessionOwners &session) {
 // deferred: developer mode when VELOCITY is set, with processHotkeys
 // deferred: starting the fire effects, or the master lights' saved states after a load, with
 //   CFireEffect::init and CDemonSet::loadMasterLightStates
-// deferred: clearing the overlay and the pick list, choosing the first camera, fading in and
-//   loading the session's assets, with clearOverlay, setCameraView, evaluateVirtualDirector,
-//   beginFadeIn and loadAssets
+// The original also cleared its one pick list; here each dialog makes its own.
+// deferred: clearing the overlay's status lines and message timer, with clearOverlay and
+//   updateStatusDisplays
+// deferred: choosing the first camera, with setCameraView and evaluateVirtualDirector
+// deferred: opening the iris on the focus actor, with beginFadeIn and renderIrisFade
 // deferred: the cheats the menu turned on (the decomp's nocturne_cheats_apply), with
 //   showCheatsMenu
 // deferred: waiting for every player and starting the server's frames, with CNetGame::syncPlayers
@@ -91,7 +96,16 @@ int CGame::runGameSession(const SGameSessionOwners &session) {
     session.set.initScene();
     gamma = std::clamp(gamma, kMinGamma, kMaxGamma);
     session.set.setGamma(gamma);
+    loadAssets(session);
     quitNotPorted("CGame", "runGameSession's play loop");
+}
+
+// nocedit 0x004e07a0
+void CGame::loadAssets(const SGameSessionOwners &session) {
+    session.set.loadAssets();
+    session.fire.loadAssets();
+    session.gore.loadAssets();
+    session.inventory_assets.load();
 }
 
 } // namespace nocturne::core
