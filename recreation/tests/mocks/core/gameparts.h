@@ -48,6 +48,25 @@ public:
         return dosio_;
     }
 
+    // The screen the game sets its resolution on.
+    ::testing::NiceMock<engine::MockScreenDevice> &getScreen() {
+        return screen_;
+    }
+
+    // The renderer switch the game picks its graphics board on, and the renderer behind it.
+    engine::CSpecial &getSpecial() {
+        return special_;
+    }
+
+    ::testing::NiceMock<platform::MockRenderer> &getRenderer() {
+        return renderer_;
+    }
+
+    // The fonts the game takes its small editor font from.
+    const CDFont &getFonts() const {
+        return fonts_;
+    }
+
 private:
     engine::IGameClock &clock_;
     ::testing::NiceMock<platform::MockFileSystem> file_system_;

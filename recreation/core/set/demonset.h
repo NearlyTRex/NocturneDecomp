@@ -6,6 +6,7 @@
 #include "common/math/vector3i.h"
 #include "core/color3i.h"
 #include "core/dcamera/fog.h"
+#include "core/dlight/demonlight.h"
 #include "core/fwd.h"
 #include "core/setdir/vdbox.h"
 #include "core/setutil/3dscamera.h"
@@ -18,6 +19,7 @@
 #include <cstddef>
 #include <cstdint>
 #include <cstdio>
+#include <memory>
 #include <optional>
 #include <span>
 #include <string>
@@ -56,6 +58,13 @@ struct SDemonSetOwners {
     engine::C2d &two_d;
     engine::IScreenDevice &screen;
     engine::IRawInput &raw_input;
+    CDemonCamera &camera;
+    // The hero's flashlight, whose filter each scene picks again.
+    CDemonLight &flashlight;
+    CFilterCache &filter_cache;
+    // What the scene's master lights are made with.
+    SDemonLightOwners light_owners;
+    CWeather &weather;
 };
 
 class CDemonSet {
@@ -70,6 +79,8 @@ public:
     // geometry and path maps are reloaded only when the geometry file differs from the last set's.
     void load(std::string_view filename);
     void renderSceneGeometry(float frustum_param, int render_mode);
+    // Sets the scene up for play: the camera's tables and fog, a master light for each
+    // spotlight, each camera's virtual director group, and the weather.
     void initScene();
     void snapshotActorTransformState(CDemonActor *actor);
     void setCameraView(int index);
@@ -114,6 +125,7 @@ public:
     void markMirrorCameraDirty();
     void setFlatColor(int light_scale, int color_scale, int fog_scale);
     void cacheMirrorLighting(common::CVector3f *position);
+    // 16.16. Builds the camera's light-map palette and the set's intensity table for it.
     void setGamma(int gamma);
     void setCameraAmbientValue(int index, float value);
     void setCameraAmbientValueByGroup(int group_id, float value);
@@ -209,6 +221,13 @@ public:
     [[nodiscard]] const std::string &getGeometryFilename() const;
     // The camera's depth thumb, kThumbWidth * kThumbHeight depths.
     [[nodiscard]] std::span<const std::uint32_t> getThumb(std::size_t camera_index) const;
+    // For each 16.16 intensity below one, its level after gamma, at least 0x100; empty until
+    // setGamma.
+    [[nodiscard]] std::span<const int> getIntensityToValueLookupTable() const;
+    // The fog the scene shows now: the set's own until a camera brings its own.
+    [[nodiscard]] const SFog &getActiveFog() const;
+    // One for each of the set's spotlights, in their order, made by initScene.
+    [[nodiscard]] std::span<const std::unique_ptr<CDemonLight>> getMasterLights() const;
 
 private:
     void lightVertexColor(const common::CVector3i &surface_normal,
@@ -225,6 +244,9 @@ private:
     void showMissingGeometryWarning();
     static void skipDeprecatedVirtualDirectorData(common::CTextScanner &scanner);
     int findVdirBoxRoot(int box_index);
+    [[nodiscard]] bool isPointInVdirBox(std::size_t box_index,
+                                        const common::CVector3f &point) const;
+    int findVdirBoxAtPosition(const common::CVector3f &position);
     void buildVdirBoxGroups();
     void refreshThumbs(std::string_view filename);
 
@@ -262,6 +284,9 @@ private:
     std::vector<SVDBox> vdir_boxes_;
     std::string geometry_filename_;
     std::vector<std::uint32_t> thumbs_;
+    std::vector<int> intensity_to_value_;
+    SFog active_fog_;
+    std::vector<std::unique_ptr<CDemonLight>> master_lights_;
 };
 
 } // namespace nocturne::core

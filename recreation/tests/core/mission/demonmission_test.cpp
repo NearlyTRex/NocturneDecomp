@@ -62,7 +62,8 @@ TEST(CDemonMission, PublicInterface) {
     static_assert(std::is_same_v<decltype(&CDemonMission::markActorToDelete),
                                  void (CDemonMission::*)(CDemonActor *, std::uint32_t)>);
     static_assert(std::is_same_v<decltype(&CDemonMission::process), void (CDemonMission::*)()>);
-    static_assert(std::is_same_v<decltype(&CDemonMission::run), void (CDemonMission::*)()>);
+    static_assert(std::is_same_v<decltype(&CDemonMission::run),
+                                 void (CDemonMission::*)(CGame &, const SGameSessionOwners &)>);
     static_assert(std::is_same_v<decltype(&CDemonMission::setMissionName),
                                  void (CDemonMission::*)(std::string_view)>);
     static_assert(std::is_same_v<decltype(&CDemonMission::generateActorName),

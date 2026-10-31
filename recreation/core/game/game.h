@@ -13,6 +13,7 @@
 
 #include <cstdint>
 #include <string>
+#include <string_view>
 
 namespace nocturne::core {
 
@@ -29,8 +30,20 @@ struct SGameOwners {
     sound::CSndMain &sound_main;
 };
 
+// What a session plays with besides the game's own: the console it reports to, the scene camera,
+// the flashlight, the set it shows, the editor tools whose font follows the screen's size, and
+// the version the console names.
+struct SGameSessionOwners {
+    engine::CConsole &console;
+    CDemonCamera &camera;
+    CDemonLight &flashlight;
+    CDemonSet &set;
+    shape::CEditorTools &editor_tools;
+    std::string_view build_version;
+};
+
 // What chapter select reads the stories' unlock codes from, offers its lists with, and loads the
-// chosen mission with.
+// chosen mission with, and the session it plays it in.
 struct SChapterSelectOwners {
     const support::CNewMsg &messages;
     shape::CEditorTools &editor_tools;
@@ -39,6 +52,7 @@ struct SChapterSelectOwners {
     engine::CIni &ini;
     ILoadingScreen &loading_screen;
     CDemonMission &mission;
+    const SGameSessionOwners &session;
 };
 
 class CGame {
@@ -53,7 +67,9 @@ public:
     [[nodiscard]] float getDeltaTimeFloat() const;
     void displayMessage(char *message, float duration);
     void setFudgeTarget(common::CVector3f *fudge_target, float fudge_step);
-    int runGameSession();
+    // Brings the game up for play at its resolution, with the scene and its lights set up, then
+    // plays until the session ends.
+    int runGameSession(const SGameSessionOwners &session);
     void restoreDefaultControls();
     void resetKeyState();
     void resetInputAndCenterCursor();
@@ -124,6 +140,8 @@ public:
 
 private:
     void seedCalibration();
+    // The screen at the game's resolution, falling back to 640x480, its camera sized for it.
+    void setGameRes(const SGameSessionOwners &session);
 
     SGameOwners owners_;
     // In the game clock's ticks.

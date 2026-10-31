@@ -263,6 +263,18 @@ int CSpecial::kill() {
     return 1;
 }
 
+// Kept for the renderer's next mode set; the running renderer takes it now.
+// nocedit 0x005b7b80
+int CSpecial::setFogColor(int red, int green, int blue) {
+    fog_red_ = red;
+    fog_green_ = green;
+    fog_blue_ = blue;
+    if (!use_external_renderer_) {
+        return 0;
+    }
+    return renderer_.setFogColor(red, green, blue);
+}
+
 // nocedit 0x005b7d90
 int CSpecial::selectCard(int card_index) {
     if (!loaded_) {

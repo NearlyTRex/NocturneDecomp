@@ -1,3 +1,4 @@
+#include "common/error/error.h"
 #include "core/actor/demonactor.h"
 #include "core/event/eventlist.h"
 #include "core/game/game.h"
@@ -41,6 +42,29 @@ bool CDemonMission::startMission() {
     owners_.script.initRuntime();
     owners_.script.executeInitSection();
     return true;
+}
+
+// deferred: the set loaded being the area netplay respawns the hero in (the decomp's
+//   nocturne_net_respawn_world_area), with CNetGame's sessions
+// deferred: after the session, taking the hero off the list and resetting it, clearing the
+//   mission, and going on to the mission the session asked for, with its act's stats, a loading
+//   screen and a key to continue away from headquarters, or finishing the act, with the play
+//   loop, CDemonMission::removeActorFromList, CHero::reset, displayActStats and finishAct
+// deferred: netplay agreeing on the next mission and skipping the key to continue (the decomp's
+//   nocturne_net_mission_*), with CNetGame's sessions
+// nocedit 0x00524420
+void CDemonMission::run(CGame &game, const SGameSessionOwners &session) {
+    if (hero_count_ < 1) {
+        common::displayErrorAndQuit("CDemonMission::run - hero list empty");
+    }
+    const CHero *hero = getHero(0);
+    if (hero == nullptr) {
+        common::displayErrorAndQuit("CDemonMission::run - no gLocalHero");
+    }
+    loadSet(hero->getLocation().area_id);
+    pending_mission_name_.clear();
+    buildActiveSetActorList();
+    static_cast<void>(game.runGameSession(session));
 }
 
 // nocedit 0x005235b0

@@ -113,6 +113,14 @@ const common::CVector3f &C3DSCamera::getPosition() const {
     return position_;
 }
 
+int C3DSCamera::getVdirZone() const {
+    return vdir_zone_;
+}
+
+void C3DSCamera::setVdirZone(int vdir_zone) {
+    vdir_zone_ = vdir_zone;
+}
+
 const common::CVector3f &C3DSCamera::getOrientation() const {
     return orientation_;
 }

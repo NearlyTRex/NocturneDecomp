@@ -121,6 +121,10 @@ EActorLifecycleState CDemonActor::getLifecycleState() const {
     return lifecycle_state_;
 }
 
+void CDemonActor::setLifecycleState(EActorLifecycleState lifecycle_state) {
+    lifecycle_state_ = lifecycle_state;
+}
+
 float CDemonActor::getCreateProbability() const {
     return create_probability_;
 }

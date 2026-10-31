@@ -445,6 +445,18 @@ TEST_F(CSpecialTest, SettingTheModeLoadsTheRendererAndHandsItTheScreen) {
     EXPECT_EQ(bits_per_pixel_, 32);
 }
 
+// With the renderer off the colour waits for its next mode set; a running one takes it now.
+TEST_F(CSpecialTest, TheFogColourGoesToTheRendererWhenItRuns) {
+    EXPECT_CALL(renderer_, setFogColor).Times(0);
+    EXPECT_EQ(special_.setFogColor(10, 20, 30), 0);
+    ::testing::Mock::VerifyAndClearExpectations(&renderer_);
+    special_.setUseDirect3D(true);
+    EXPECT_CALL(renderer_, setFogColor(10, 20, 30)).WillOnce(Return(1));
+    ASSERT_EQ(special_.setResolutionAndColorTable(kWidth, kHeight, 32), 1);
+    EXPECT_CALL(renderer_, setFogColor(1, 2, 3)).WillOnce(Return(7));
+    EXPECT_EQ(special_.setFogColor(1, 2, 3), 7);
+}
+
 TEST_F(CSpecialTest, AnEightBitModeDrivesTheRendererAtSixteen) {
     special_.setUseDirect3D(true);
     EXPECT_CALL(renderer_, setVideoMode2(kWidth, kHeight, 16, _)).WillOnce(Return(1));

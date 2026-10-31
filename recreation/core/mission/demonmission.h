@@ -87,7 +87,8 @@ public:
     void setTeleportTarget(CLocation *teleport_target);
     void markActorToDelete(CDemonActor *actor, std::uint32_t flags);
     void process();
-    void run();
+    // Loads the set the hero is in, gives it the actors created so far, and plays the session.
+    void run(CGame &game, const SGameSessionOwners &session);
     // Asks for the mission to load next, by name.
     void setMissionName(std::string_view name);
     // Names the actor after its class, without the leading 'C', and one more than the highest
@@ -129,6 +130,10 @@ public:
 private:
     // Gives the set the actors whose place is in it, in list order.
     void buildSetActorList();
+    // As buildSetActorList, but only actors that have been created. One not yet created is
+    // created, or destroyed, by its chance once its creation event holds.
+    void buildActiveSetActorList();
+    [[nodiscard]] bool isCreationDue(const CDemonActor &actor) const;
     // Makes them the set's actors, and has it sort them into its lists.
     void giveSetActors(std::vector<CDemonActor *> actors);
     [[nodiscard]] std::string generateUniqueActorName(std::string_view base_name) const;

@@ -1,5 +1,8 @@
 #include "common/error/error.h"
+#include "common/text/ascii.h"
+#include "core/actor/actor.h"
 #include "core/actor/demonactor.h"
+#include "core/event/eventlist.h"
 #include "core/loadingscreen.h"
 #include "core/location.h"
 #include "core/mission/demonmission.h"
@@ -78,6 +81,38 @@ void CDemonMission::buildSetActorList() {
         in_set.push_back(actor.get());
     }
     giveSetActors(std::move(in_set));
+}
+
+// An actor whose creation event is "none" in any case, or empty, needs only its chance.
+// nocedit 0x00524120
+void CDemonMission::buildActiveSetActorList() {
+    std::vector<CDemonActor *> in_set;
+    for (const std::unique_ptr<CDemonActor> &actor : actors_) {
+        if (actor->getLocation().area_id != current_set_index_) {
+            continue;
+        }
+        if (actor->getLifecycleState() == EActorLifecycleState::kNotCreated &&
+            isCreationDue(*actor)) {
+            actor->setLifecycleState(owners_.actor.randomChance(actor->getCreateProbability()) != 0
+                                         ? EActorLifecycleState::kCreated
+                                         : EActorLifecycleState::kDestroyed);
+        }
+        if (actor->getLifecycleState() != EActorLifecycleState::kCreated) {
+            continue;
+        }
+        if (in_set.size() >= kMaxSetActors) {
+            common::displayErrorAndQuit(
+                "CDemonMission::buildActiveSetActorList - Too many actors in current set!");
+        }
+        in_set.push_back(actor.get());
+    }
+    giveSetActors(std::move(in_set));
+}
+
+bool CDemonMission::isCreationDue(const CDemonActor &actor) const {
+    const std::string &event = actor.getCreateEvent();
+    return event.empty() || common::equalsIgnoringAsciiCase(event, "none") ||
+           owners_.events.evaluateCondition(event);
 }
 
 void CDemonMission::giveSetActors(std::vector<CDemonActor *> actors) {

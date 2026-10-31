@@ -51,6 +51,9 @@ public:
     [[nodiscard]] float getAmbientValue() const;
     [[nodiscard]] int getCameraGroup() const;
     [[nodiscard]] bool getEnabled() const;
+    // The group of virtual director boxes the camera stands in, or -1 for none.
+    [[nodiscard]] int getVdirZone() const;
+    void setVdirZone(int vdir_zone);
 
 private:
     std::string name_;
@@ -66,6 +69,7 @@ private:
     float ambient_value_ = 0.0F;
     int camera_group_ = 0;
     bool enabled_ = false;
+    int vdir_zone_ = 0;
 };
 
 } // namespace nocturne::core

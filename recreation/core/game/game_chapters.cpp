@@ -215,8 +215,8 @@ private:
 // deferred: showing the story's year and title for eight seconds, or nothing after the browser,
 //   with CGame::renderOverlay and CGame::updateStatusDisplays
 // deferred: clearing the events' game flags, with CEventList::resetGameFlags
-// deferred: running the mission, then loading the save a run asks to reload, with
-//   CDemonMission::run and CGame::loadGame
+// deferred: loading the save a run asks to reload, then the editor's font as it was, with
+//   CGame::loadGame and the play loop
 // nocedit 0x004e1cb0
 void CGame::showChapterSelect(const SChapterSelectOwners &owners, EChapterSelectMode select_mode) {
     is_loading = false;
@@ -254,6 +254,7 @@ void CGame::showChapterSelect(const SChapterSelectOwners &owners, EChapterSelect
     }
     // The original ran the mission whether or not it started.
     static_cast<void>(owners.mission.startMission());
+    owners.mission.run(*this, owners.session);
 }
 
 const std::string &CGame::getCurrentSaveFile() const {

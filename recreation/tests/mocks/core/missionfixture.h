@@ -91,6 +91,12 @@ protected:
                      .mission = mission_,
                      .events = events_,
                      .set = set_}};
+    SGameSessionOwners session_{.console = console_,
+                                .camera = *set_parts_.camera,
+                                .flashlight = *set_parts_.flashlight,
+                                .set = set_,
+                                .editor_tools = editor_tools_,
+                                .build_version = "1.2.3 (test)"};
 };
 
 } // namespace nocturne::core

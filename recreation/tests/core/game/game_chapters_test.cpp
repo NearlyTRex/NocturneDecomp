@@ -150,7 +150,8 @@ protected:
                                  .file_selection = file_selection_,
                                  .ini = ini_,
                                  .loading_screen = loading_screen_,
-                                 .mission = mission_};
+                                 .mission = mission_,
+                                 .session = session_};
 };
 
 // The loading screen shows the story's picture as its mission loads.

@@ -132,6 +132,7 @@ public:
     // is fatal. Each class's fields are read as the version the file saved them in.
     void load(common::CTextScanner &scanner, const SActorArchiveOwners &owners);
     [[nodiscard]] EActorLifecycleState getLifecycleState() const;
+    void setLifecycleState(EActorLifecycleState lifecycle_state);
     // The chance the actor is created when its creation event comes.
     [[nodiscard]] float getCreateProbability() const;
     // The event that creates the actor, or "none".
