@@ -6,6 +6,7 @@
 #include "core/box/boundingbox3d.h"
 #include "core/fwd.h"
 #include "core/motion/motioncontroller.h"
+#include "core/skeleton/boneupdatemode.h"
 #include "core/skeleton/deformablemodel.h"
 #include "core/skeleton/partvisibility.h"
 #include "core/skeleton/pose.h"
@@ -31,6 +32,8 @@ public:
     CDeformableModelInstance(CDeformableModelInstance &&) = delete;
     CDeformableModelInstance &operator=(CDeformableModelInstance &&) = delete;
 
+    // The target motion's frame whose bones sit nearest where the source frame has them, -1 for a
+    // motion with no frames.
     int findPatchToFrame(int source_motion_index, float source_frame,
                          int target_motion_index) override;
     void accumulateScaledRootMotion(float start_frame, float end_frame,
@@ -39,13 +42,16 @@ public:
     // Every bone unturned at its rest scale, the root unmoved.
     void resetToRestPose();
     void updateAnimationAndTransforms();
-    // Poses the model at its motion's frame.
+    // Poses the model at its motion's frame, blended towards the tween's target while one runs.
     void updateAnimation();
     void updateMotionAtFrame(int motion_index, float frame_number);
     // Every bone, for a bone_index below 0, as the motion turns it at the frame, and the root
-    // moved as far along as the frames' root offsets are, scaled. Posing only the bone and those
-    // below it isn't ported yet.
+    // moved as far along as the frames' root offsets are, scaled. Otherwise the bone and those
+    // below it only, as the bone update mode takes the motion's turns.
     void updateMotion(int motion_index, float frame_number, int bone_index);
+    // Turns the bones part of the way to the motion's frame: for a bone_index below 0 every bone,
+    // and the root as far, otherwise the bone and those below it. Absolute, the callback gives
+    // each bone's share. Nothing for a weight of 0.001 or less; additively it is fatal.
     void blendMotion(int target_motion_index, float target_frame_number, float blend_weight,
                      int bone_index, CDeformableModel::MotionBlendWeightFunc *callback_func);
     void blendWithPoseData(SPoseData *pose_data, float blend_weight, int bone_index,
@@ -56,9 +62,15 @@ public:
     common::CMatrix3x4f *getBoneModelMatrix(int bone_index, common::CMatrix3x4f *out_matrix);
     common::CVector3f *getBoneModelPosition(common::CVector3f *out_position, int bone_index);
     common::CVector3f *getBoneCachedModelPosition(common::CVector3f *out_position, int bone_index);
+    // The pose's bone matrices, as computeBoneModelMatrices makes them.
+    void computeBoneTransforms();
     // Each bone's matrix from its rotation and scale, carried to its origin: a root's offset by
     // the root's position, any other's moved by its parent's matrix, which comes first.
-    void computeBoneTransforms();
+    void computeBoneModelMatrices(SPose &bone_data);
+    // The motion's turns at the frame, every bone unscaled, and its root moved as updateMotion
+    // moves it.
+    void computeBoneTransformsForFrame(int motion_index, float animation_time,
+                                       SPose &output_bone_data);
     void applyRotationToHierarchy(common::CQuaternion4f *rotation_quat, float blend_weight,
                                   int bone_index,
                                   CDeformableModel::MotionBlendWeightFunc *blend_callback);
@@ -111,6 +123,9 @@ public:
     // The level last skinned, or -1 once the pose has changed.
     [[nodiscard]] int getCachedSkinnedLodIndex() const;
     [[nodiscard]] const CBoundingBox3D &getBoundingBox() const;
+    // Absolute unless set.
+    [[nodiscard]] EBoneUpdateMode getBoneUpdateMode() const;
+    void setBoneUpdateMode(EBoneUpdateMode mode);
     [[nodiscard]] EPartVisibility getPartVisibility(std::size_t part) const;
     void setPartVisibility(std::size_t part, EPartVisibility visibility);
     // Which of its texture sets the part wears.
@@ -125,6 +140,15 @@ public:
 private:
     // No level skinned since the pose last changed.
     static constexpr int kNoSkinnedLod = -1;
+
+    // The motion's turns, relative to their parents', carried onto the pose's: for the bone and
+    // those below it, the share of the way there the weight gives.
+    void poseRelativeToParents(const CSkeleton &skeleton, const SInterpolationFrames &frames,
+                               int bone_index, float blend_weight);
+    // The bone and those below it turned further by as much as the motion has turned each from
+    // its first frame, each relative to its parent.
+    void poseAdditively(const CSkeleton &skeleton, const SInterpolationFrames &frames,
+                        int motion_index, int bone_index);
 
     IDeformableModels &models_;
     float scale_factor_ = 1.0F;
@@ -142,6 +166,11 @@ private:
     CBoundingBox3D bounding_box_;
     std::string model_name_;
     CDeformableModel *model_ptr_ = nullptr;
+    EBoneUpdateMode bone_update_mode_ = EBoneUpdateMode::kAbsolute;
 };
+
+// The blend's weight, the same for every bone.
+float blendWeightCallback(int current_bone_index, int target_bone_index, float blend_weight,
+                          int hierarchy_distance, CDeformableModelInstance &instance);
 
 } // namespace nocturne::core

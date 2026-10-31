@@ -15,11 +15,6 @@ namespace {
 
 } // namespace
 
-int CDeformableModelInstance::findPatchToFrame(int /*source_motion_index*/, float /*source_frame*/,
-                                               int /*target_motion_index*/) {
-    notPorted("findPatchToFrame");
-}
-
 void CDeformableModelInstance::accumulateScaledRootMotion(float /*start_frame*/,
                                                           float /*end_frame*/,
                                                           float /*scale_factor*/) {

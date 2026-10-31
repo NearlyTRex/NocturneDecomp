@@ -94,7 +94,7 @@ CExtendedFloat CExtendedFloat::indefinite() {
 
 const CExtendedFloat *CExtendedFloat::findNaN(const CExtendedFloat &other) const {
     if (kind_ == EKind::NaN) {
-        return this;
+        return other.kind_ == EKind::NaN && negative_ ? &other : this;
     }
     return other.kind_ == EKind::NaN ? &other : nullptr;
 }
@@ -179,6 +179,15 @@ CExtendedFloat CExtendedFloat::operator+(const CExtendedFloat &other) const {
         return other;
     }
     return compareMagnitude(other) < 0 ? other.addFinite(*this) : addFinite(other);
+}
+
+CExtendedFloat CExtendedFloat::operator-(const CExtendedFloat &other) const {
+    if (const CExtendedFloat *nan = findNaN(other)) {
+        return *nan;
+    }
+    CExtendedFloat negated = other;
+    negated.negative_ = !negated.negative_;
+    return *this + negated;
 }
 
 // Both are finite and not zero, this the larger. Each is moved down a bit first so the sum

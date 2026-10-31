@@ -66,6 +66,12 @@ TEST(CDeformableModelInstance, PublicInterface) {
                        common::CVector3f *(CDeformableModelInstance::*)(common::CVector3f *, int)>);
     static_assert(std::is_same_v<decltype(&CDeformableModelInstance::computeBoneTransforms),
                                  void (CDeformableModelInstance::*)()>);
+    static_assert(std::is_same_v<decltype(&CDeformableModelInstance::computeBoneModelMatrices),
+                                 void (CDeformableModelInstance::*)(SPose &)>);
+    static_assert(std::is_same_v<decltype(&CDeformableModelInstance::computeBoneTransformsForFrame),
+                                 void (CDeformableModelInstance::*)(int, float, SPose &)>);
+    static_assert(
+        std::is_same_v<decltype(&blendWeightCallback), CDeformableModel::MotionBlendWeightFunc *>);
     static_assert(std::is_same_v<decltype(&CDeformableModelInstance::applyRotationToHierarchy),
                                  void (CDeformableModelInstance::*)(
                                      common::CQuaternion4f *, float, int,
@@ -133,10 +139,9 @@ TEST(CDeformableModelInstance, TheFunctionsNotPortedYetQuit) {
     ::testing::NiceMock<MockDeformableModels> models;
     CDeformableModelInstance model(models);
     const NotPortedCalls calls = {
-        {"findPatchToFrame", [&] { static_cast<void>(model.findPatchToFrame(0, 0.0F, 0)); }},
         {"accumulateScaledRootMotion", [&] { model.accumulateScaledRootMotion(0.0F, 0.0F, 0.0F); }},
     };
-    EXPECT_EQ(calls.size(), 2U);
+    EXPECT_EQ(calls.size(), 1U);
     expectEachQuitsNotPorted("CDeformableModelInstance", calls);
 }
 

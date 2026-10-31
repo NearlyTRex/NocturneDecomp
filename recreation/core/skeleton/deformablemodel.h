@@ -68,7 +68,9 @@ struct SPart {
 // A skinned model as a models\*.DFM file holds it, bound to the skeleton the file names.
 class CDeformableModel {
 public:
-    using MotionBlendWeightFunc = float(int, int, float, int, CDeformableModelInstance *);
+    // A bone's share of a blend: from the bone, the bone posed from, the blend's weight and how
+    // far up the first is from the second.
+    using MotionBlendWeightFunc = float(int, int, float, int, CDeformableModelInstance &);
 
     static constexpr int kLatestVersion = 7;
     static constexpr int kMaxLods = 5;

@@ -36,8 +36,12 @@ public:
     virtual void accumulateScaledRootMotion(float start_frame, float end_frame, float scale_factor);
 
     int advance(float *delta_time);
-    SMotion *getCurrentMotion();
-    void setDesiredState(int desired_state_index, int force_immediate);
+    // From the motion list.
+    [[nodiscard]] const SMotion &getCurrentMotion() const;
+    // Wants the state, -1 for none; one past the list's states is fatal. A new state drops the
+    // transition under way, turning a tween back from before its midpoint. Forced, the current
+    // motion's route to the state is taken at once.
+    void setDesiredState(int desired_state_index, bool force_immediate);
     void setDesiredStateByName(char *state_name, int force_immediate);
     // Looks up the motion a file named, which isn't ported yet.
     void setMotionList(const CMotionList &motion_list);
@@ -71,10 +75,29 @@ public:
     [[nodiscard]] EMotionTransitionCmd getTweenType() const;
     // From 0 to 1 through a tween, -1 outside one.
     [[nodiscard]] float getTweenProgress() const;
+    // The motion and frame the tween blends towards.
+    [[nodiscard]] int getTweenTargetMotion() const;
+    [[nodiscard]] float getTweenTargetFrame() const;
+    // Of the tween, a second.
+    [[nodiscard]] float getTweenSpeed() const;
+    // Once it has swapped its motions at the midpoint.
+    [[nodiscard]] bool isTweenPastMidpoint() const;
+    // keepState: the midpoint makes the state landed in the one wanted.
+    [[nodiscard]] bool getTweenSetsNewState() const;
 
 private:
+    // The progress a tween starts at, as the original's float holds it.
+    static constexpr float kTweenStartProgress = 0.001F;
+
     void reset();
     void clearTweenState();
+    // The current motion's route to the wanted state, taken unless it is the one under way.
+    // True when it cut straight to the motion.
+    bool findAndStartTransition();
+    // Cuts to the motion at once without a tween time, else starts the tween towards it.
+    void startTransition(const SMotionTransition &transition);
+    // Swaps the motion and frame with the tween's target, and the tween's progress runs back.
+    void reverseTransition();
 
     const CMotionList *motion_list_ = nullptr;
     int current_motion_index_ = 0;
@@ -84,6 +107,12 @@ private:
     const SMotionTransition *in_transition_ = nullptr;
     EMotionTransitionCmd tween_type_ = EMotionTransitionCmd::MOTION_CMD_NONE;
     float tween_progress_ = -1.0F;
+    float tween_speed_ = 0.0F;
+    int tween_target_motion_ = 0;
+    float tween_target_frame_ = 0.0F;
+    // Past the midpoint from the start, so a new controller has no stale tween to turn back.
+    bool tween_past_midpoint_ = true;
+    bool tween_sets_new_state_ = false;
 };
 
 } // namespace nocturne::core

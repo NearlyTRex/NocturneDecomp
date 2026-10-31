@@ -37,8 +37,8 @@ TEST(CSkeleton, PublicInterface) {
                                  const common::CQuaternion4f &(CSkeleton::*)(int, int) const>);
     static_assert(std::is_same_v<decltype(&CSkeleton::getBoneAngleInterpolated),
                                  common::CQuaternion4f (CSkeleton::*)(int, int, int, float) const>);
-    static_assert(
-        std::is_same_v<decltype(&CSkeleton::getHierarchyDistance), int (CSkeleton::*)(int, int)>);
+    static_assert(std::is_same_v<decltype(&CSkeleton::getHierarchyDistance),
+                                 int (CSkeleton::*)(int, int) const>);
     static_assert(
         std::is_same_v<decltype(&CSkeleton::calculateFrameDataSize), int (CSkeleton::*)()>);
 }
@@ -135,6 +135,16 @@ TEST_F(CSkeletonTest, AnAngleBetweenFramesIsTheirSlerpInsideZeroToOne) {
     EXPECT_EQ(skeleton_.getBoneAngleInterpolated(0, 0, 1, std::nanf("")), second);
     EXPECT_EQ(skeleton_.getBoneAngleInterpolated(0, 0, 1, 0.25F),
               slerpQuaternion(first, second, 0.25F));
+}
+
+TEST_F(CSkeletonTest, TheHierarchyDistanceCountsTheBonesUpToTheTarget) {
+    givenFile("data\\GABRIELA.SKL", skeletonFile(3));
+    skeleton_.load("GABRIELA.SKL");
+    EXPECT_EQ(skeleton_.getHierarchyDistance(1, 1), 0);
+    EXPECT_EQ(skeleton_.getHierarchyDistance(1, 0), 1);
+    EXPECT_EQ(skeleton_.getHierarchyDistance(0, 1), -1);
+    EXPECT_EQ(skeleton_.getHierarchyDistance(1, -1), 2);
+    EXPECT_EQ(skeleton_.getHierarchyDistance(0, -1), 1);
 }
 
 TEST_F(CSkeletonTest, FreeingForgetsTheBonesAndFrames) {

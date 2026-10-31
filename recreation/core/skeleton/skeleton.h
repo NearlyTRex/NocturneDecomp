@@ -45,7 +45,9 @@ public:
     [[nodiscard]] common::CQuaternion4f getBoneAngleInterpolated(int bone_index, int frame_index_1,
                                                                  int frame_index_2,
                                                                  float interpolation) const;
-    int getHierarchyDistance(int start_bone_index, int target_bone_index);
+    // How many bones up from the start the target is, 0 for the start itself, and -1 when it is
+    // neither. A target below 0 is past the root: one more than the start's depth.
+    [[nodiscard]] int getHierarchyDistance(int start_bone_index, int target_bone_index) const;
     int calculateFrameDataSize();
 
     [[nodiscard]] const std::string &getLoadedFilename() const;

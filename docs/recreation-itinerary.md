@@ -24,7 +24,7 @@ functions don't count as done. Sizes are in instructions.
 | 8 | `renderMenuAndGetChoice`, `CMoon::free`, `CSound::reset`, `CEditorTools::showFileSelectionDialog` | 8 | 63 | 5314 | 60 | 3 | 95.2% |
 | 9 | `CPickList::enableItem`, `CEventList::resetGameFlags`, `CLevelLoader::show`, `CDemonMission::load` | 15 | 56 | 3298 | 30 | 11 | 53.5% |
 | 10 | `CDemonMission::createHeros`, `CDemonMission::prepareAllActors`, `CEventList::reset`, `CDemonMission::loadSet` | 15 | 42 | 5112 | 31 | 10 | 73.8% |
-| 11 | `CScript::loadScript` | 63 | 579 | 67400 | 56 | 30 | 9.6% |
+| 11 | `CScript::loadScript` | 63 | 579 | 67400 | 60 | 31 | 10.3% |
 | 12 | `CDemonMission::loadScript`, `CScript::executeInitSection`, `CDemonMission::startMission`, `CDemonMission::buildActiveSetActorList`, `CConsole::reset`, `CEditorTools::displayMemoryDiagnostics`, `CGame::setGameRes`, `CDemonLight::init`, `CDemonSet::initScene` | 12 | 26 | 1658 | 3 | 2 | 11.5% |
 | 13 | `CFireEffect::init`, `CDemonSet::loadMasterLightStates`, `CDemonSet::setGamma`, `CGame::clearOverlay`, `CGame::loadAssets` | 7 | 27 | 735 | 0 | 0 | 0.0% |
 | 14 | `CNetGame::syncPlayers`, `CNetGame::processServerFrame`, `CLevelLoader::cleanup`, `CKeys::toggleInputMask`, `CGame::processHotkeys` | 17 | 51 | 5302 | 4 | 0 | 7.8% |
@@ -41,12 +41,12 @@ functions don't count as done. Sizes are in instructions.
 | 25 | Not reached from startup: `core/` (part 3 of 9) | 24 | 278 | 24134 | 32 | 9 | 11.5% |
 | 26 | Not reached from startup: `core/` (part 4 of 9) | 18 | 300 | 20148 | 47 | 7 | 15.6% |
 | 27 | Not reached from startup: `core/` (part 5 of 9) | 21 | 294 | 20910 | 56 | 9 | 19.0% |
-| 28 | Not reached from startup: `core/` (part 6 of 9) | 18 | 282 | 21809 | 45 | 11 | 15.9% |
-| 29 | Not reached from startup: `core/` (part 7 of 9) | 18 | 263 | 22721 | 54 | 11 | 20.5% |
+| 28 | Not reached from startup: `core/` (part 6 of 9) | 18 | 282 | 21809 | 46 | 10 | 16.3% |
+| 29 | Not reached from startup: `core/` (part 7 of 9) | 18 | 263 | 22721 | 62 | 9 | 23.5% |
 | 30 | Not reached from startup: `core/` (part 8 of 9) | 20 | 300 | 31826 | 40 | 5 | 13.3% |
-| 31 | Not reached from startup: `core/` (part 9 of 9) | 5 | 111 | 10905 | 19 | 4 | 17.1% |
+| 31 | Not reached from startup: `core/` (part 9 of 9) | 5 | 111 | 10905 | 21 | 4 | 18.9% |
 | 32 | Not reached from startup: `wincore/` | 2 | 11 | 482 | 4 | 0 | 36.3% |
-| | **All** | | **4479** | **402407** | **981** | **182** | **21.9%** |
+| | **All** | | **4479** | **402407** | **996** | **180** | **22.2%** |
 
 ## Step 0: Math value types
 
@@ -1375,17 +1375,19 @@ functions don't count as done. Sizes are in instructions.
 - class `CLever`
   - [ ] `setState` 0x00504b20 (113)
 
-### `core/motion.cpp` (8 functions, 368 instructions, 1 done, 0 partial)
+### `core/motion.cpp` (8 functions, 368 instructions, 5 done, 1 partial)
 - class `CMotionList`
   - [ ] `findMotionIndex` 0x0052d460 (50)
   - [ ] `findStateIndex` 0x0052d4f0 (50)
 - class `CMotionController`
   - [x] `getMotionList` 0x0052dce0 (3)
-  - [ ] `getCurrentMotion` 0x0052dab0 (6)
-  - [ ] `startTransition` 0x0052dbc0 (73)
-  - [ ] `findAndStartTransition` 0x0052d950 (101)
-  - [ ] `reverseTransition` 0x0052da50 (38)
-  - [ ] `setDesiredState` 0x0052db00 (47)
+  - [x] `getCurrentMotion` 0x0052dab0 (6)
+  - [x] `startTransition` 0x0052dbc0 (73)
+  - [~] `findAndStartTransition` 0x0052d950 (101)
+    - deferred: no state wanted dropping the route under way and taking none, with advance
+    - deferred: a route under way for another state than the one wanted, as keepState leaves one at a tween's midpoint, giving way to the wanted state's route, with advance
+  - [x] `reverseTransition` 0x0052da50 (38)
+  - [x] `setDesiredState` 0x0052db00 (47)
 
 ### `core/event.cpp` (34 functions, 8671 instructions, 13 done, 5 partial)
 - class `CEventList`
@@ -5654,13 +5656,12 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `countTrianglesFromPolygons` 0x0052a490 (19)
   - [ ] `addInts` 0x0052cc40 (3)
 
-### `core/motion.cpp` (23 functions, 1941 instructions, 8 done, 2 partial)
+### `core/motion.cpp` (23 functions, 1941 instructions, 9 done, 1 partial)
 - class `CMotionController`
   - [x] `load` 0x0052e5d0 (50)
   - [ ] `save` 0x0052e670 (50)
   - [x] `reset` 0x0052dad0 (9)
-  - [~] `ctor` 0x0052d570 (11)
-    - deferred: starting the tween at speed 0 towards motion 0, frame 0, direction 1 and no new state (MOTION_TWEEN_INIT), with advanceTween and reverseTransition
+  - [x] `ctor` 0x0052d570 (11)
   - [x] `getFramesForInterpolation` 0x0052e4c0 (97)
   - [ ] `advanceFrameAndCheckSignals` 0x0052de70 (154)
   - [ ] `advanceFrameToExitPoint` 0x0052e020 (153)
@@ -5989,24 +5990,22 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `factoryFuncSimBox` 0x00588d00 (12)
   - [x] `staticInit` 0x00588cd0 (9)
 
-### `core/skeleton.cpp` (88 functions, 8882 instructions, 33 done, 5 partial)
+### `core/skeleton.cpp` (88 functions, 8882 instructions, 41 done, 3 partial)
 - class `CDeformableModelInstance`
   - [x] `showAllParts` 0x005a0410 (8)
   - [x] `clearAllTextureSetIndices` 0x005a0430 (8)
   - [x] `init` 0x005a0840 (30)
   - [~] `ctor` 0x0059ddc0 (25)
     - deferred: the root motion gathered, and which bones a partial pose builds on, with getRootMotionDelta and updateMotion's partial poses
-  - [ ] `blendMotion` 0x0059eb50 (479)
+  - [x] `blendMotion` 0x0059eb50 (479)
   - [ ] `computeBoundingBoxFromBones` 0x005a16c0 (76)
   - [x] `computeBoneTransforms` 0x0059fb40 (124)
-  - [~] `updateMotion` 0x0059e0a0 (855)
-    - deferred: posing only the bone and those below it, each of the three ways the bone update mode picks, with the aiming and layered motions that ask for it
-  - [~] `updateAnimation` 0x0059e020 (27)
-    - deferred: blending towards the tween's target while one runs, with blendMotion and setDesiredState's start of a tween
+  - [x] `updateMotion` 0x0059e0a0 (855)
+  - [x] `updateAnimation` 0x0059e020 (27)
   - [ ] `shatter` 0x005a14b0 (36)
   - [x] `free` 0x0059df40 (19)
-  - [ ] `computeBoneTransformsForFrame` 0x005a0ad0 (150)
-  - [ ] `findPatchToFrame` 0x005a08a0 (124)
+  - [x] `computeBoneTransformsForFrame` 0x005a0ad0 (150)
+  - [x] `findPatchToFrame` 0x005a08a0 (124)
   - [ ] `getRootMotionDelta` 0x005a0d10 (166)
   - [ ] `accumulateScaledRootMotion` 0x005a0c90 (32)
   - [x] `dtor` 0x0059de40 (41)
@@ -6042,8 +6041,8 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `renderSkeleton` 0x005a17b0 (16)
   - [ ] `renderBones` 0x005a17e0 (10)
 - free functions
-  - [ ] `blendWeightCallback` 0x0059ddb0 (2)
-  - [ ] `computeBoneModelMatrices` 0x005a1950 (126)
+  - [x] `blendWeightCallback` 0x0059ddb0 (2)
+  - [x] `computeBoneModelMatrices` 0x005a1950 (126)
   - [x] `loadSkeleton` 0x005a1df0 (57)
   - [x] `getDeformableModel` 0x005a1cf0 (67)
   - [x] `staticInit` 0x00599670 (17)
@@ -6054,7 +6053,7 @@ functions don't count as done. Sizes are in instructions.
 - class `CSkeleton`
   - [x] `getBoneAngleAtFrame` 0x0059a050 (8)
   - [x] `getBoneAngleInterpolated` 0x0059a070 (78)
-  - [ ] `getHierarchyDistance` 0x0059a100 (23)
+  - [x] `getHierarchyDistance` 0x0059a100 (23)
   - [x] `allocMemory` 0x00599910 (86)
   - [x] `loadStream` 0x00599bb0 (319)
   - [x] `load` 0x00599b10 (50)
@@ -6639,13 +6638,13 @@ functions don't count as done. Sizes are in instructions.
   - [x] `factoryFuncWerewolf` 0x005efbd0 (12)
   - [x] `staticInit` 0x005efb70 (23)
 
-### `core/xform.cpp` (42 functions, 2952 instructions, 2 done, 0 partial)
+### `core/xform.cpp` (42 functions, 2952 instructions, 4 done, 0 partial)
 - free functions
   - [ ] `getTranslation` 0x005f6110 (15)
   - [ ] `matrixToQuaternion` 0x005f7420 (205)
   - [ ] `lerpMatrix3x4` 0x005f7140 (188)
-  - [ ] `negateFirstComponent` 0x005f75e0 (31)
-  - [ ] `multiplyQuaternion` 0x005f7640 (82)
+  - [x] `negateFirstComponent` 0x005f75e0 (31)
+  - [x] `multiplyQuaternion` 0x005f7640 (82)
   - [ ] `quaternionFromAngleX` 0x005f79b0 (33)
   - [ ] `quaternionFromAngleY` 0x005f79f0 (33)
   - [ ] `buildRotationX` 0x005f6c40 (39)

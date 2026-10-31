@@ -1,5 +1,6 @@
 #include "core/xform/xform.h"
 
+#include "common/math/extendedfloat.h"
 #include "common/math/matrix3x3f.h"
 
 #include <cmath>
@@ -78,9 +79,33 @@ common::CMatrix3x4f quaternionToMatrix3x4(const common::CQuaternion4f &quat_in) 
     return matrix;
 }
 
+// nocedit 0x005f75e0
+common::CQuaternion4f negateFirstComponent(const common::CQuaternion4f &vector_in) {
+    return {.w = -vector_in.w, .x = vector_in.x, .y = vector_in.y, .z = vector_in.z};
+}
+
 // nocedit 0x005f7620
 void setIdentityQuaternion(common::CQuaternion4f &quaternion) {
     quaternion = {.w = 1.0F};
+}
+
+// Each component's products summed at the x87's precision in the original's order, then stored.
+// nocedit 0x005f7640
+common::CQuaternion4f multiplyQuaternion(const common::CQuaternion4f &quat1_in,
+                                         const common::CQuaternion4f &quat2_in) {
+    const auto x = [](float value) { return common::CExtendedFloat(value); };
+    const common::CQuaternion4f &a = quat1_in;
+    const common::CQuaternion4f &b = quat2_in;
+    return {
+        .w = ((x(b.w) * x(a.w)) - (((x(b.x) * x(a.x)) + (x(b.y) * x(a.y))) + (x(b.z) * x(a.z))))
+                 .toFloat(),
+        .x = ((((x(b.w) * x(a.x)) + (x(a.w) * x(b.x))) + (x(b.y) * x(a.z))) - (x(b.z) * x(a.y)))
+                 .toFloat(),
+        .y = ((((x(b.w) * x(a.y)) + (x(a.w) * x(b.y))) + (x(b.z) * x(a.x))) - (x(b.x) * x(a.z)))
+                 .toFloat(),
+        .z = ((((x(b.w) * x(a.z)) + (x(a.w) * x(b.z))) + (x(b.x) * x(a.y))) - (x(b.y) * x(a.x)))
+                 .toFloat(),
+    };
 }
 
 // As the original's unordered compares do, a NaN t gives the second rotation and a NaN cosine

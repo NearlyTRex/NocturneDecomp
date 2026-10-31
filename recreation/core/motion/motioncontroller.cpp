@@ -7,16 +7,16 @@
 #include "core/actor/notported.h"
 #include "core/motion/motionlist.h"
 
+#include <algorithm>
 #include <cmath>
 #include <cstddef>
 #include <cstdint>
 #include <span>
 #include <string>
+#include <utility>
 
 namespace nocturne::core {
 
-// deferred: starting the tween at speed 0 towards motion 0, frame 0, direction 1 and no new
-//   state (MOTION_TWEEN_INIT), with advanceTween and reverseTransition
 // nocedit 0x0052d570
 CMotionController::CMotionController() {
     reset();
@@ -57,6 +57,113 @@ void CMotionController::jumpToMotion(int target_motion_index, float target_frame
     current_motion_index_ = target_motion_index;
     current_frame_number_ = target_frame_number;
     clearTweenState();
+}
+
+// nocedit 0x0052dab0
+const SMotion &CMotionController::getCurrentMotion() const {
+    return motion_list_->getMotions()[static_cast<std::size_t>(current_motion_index_)];
+}
+
+// nocedit 0x0052db00
+void CMotionController::setDesiredState(int desired_state_index, bool force_immediate) {
+    if (desired_state_index < 0) {
+        state_index_ = -1;
+        return;
+    }
+    if (static_cast<std::size_t>(desired_state_index) >= motion_list_->getStateNames().size()) {
+        common::displayErrorAndQuit("CMotionController::setDesiredState - invalid state index");
+    }
+    if (desired_state_index != state_index_) {
+        if (in_transition_ != nullptr) {
+            if (!tween_past_midpoint_) {
+                reverseTransition();
+            }
+            in_transition_ = nullptr;
+        }
+        tween_sets_new_state_ = false;
+        state_index_ = desired_state_index;
+    }
+    if (force_immediate) {
+        findAndStartTransition();
+    }
+}
+
+// A command of none matches the state and drops what was under way without going anywhere. The
+// original also checks the route found isn't the one under way, which the check before rules out.
+// deferred: no state wanted dropping the route under way and taking none, with advance
+// deferred: a route under way for another state than the one wanted, as keepState leaves one at a
+//   tween's midpoint, giving way to the wanted state's route, with advance
+// nocedit 0x0052d950
+bool CMotionController::findAndStartTransition() {
+    const SMotion &motion = getCurrentMotion();
+    if (state_index_ == motion.state_index) {
+        in_transition_ = nullptr;
+        return false;
+    }
+    if (in_transition_ != nullptr) {
+        return false;
+    }
+    const auto route =
+        std::ranges::find(motion.transitions, state_index_, &SMotionTransition::desired_state);
+    if (route == motion.transitions.end()) {
+        return false;
+    }
+    const SMotionTransition &transition = *route;
+    clearTweenState();
+    if (transition.cmd == EMotionTransitionCmd::MOTION_CMD_JUMP) {
+        jumpToMotion(transition.to_motion_number, transition.to_frame_number);
+        if (transition.set_new_state_as_desired) {
+            state_index_ = getCurrentMotion().state_index;
+        }
+        return true;
+    }
+    if (transition.cmd == EMotionTransitionCmd::MOTION_CMD_WAIT_EXIT) {
+        in_transition_ = &transition;
+    } else if (transition.cmd != EMotionTransitionCmd::MOTION_CMD_NONE) {
+        in_transition_ = &transition;
+        startTransition(transition);
+    }
+    return false;
+}
+
+// A NaN frame takes the patch, and a NaN tween time tweens, as the original's unordered compares
+// do.
+// nocedit 0x0052dbc0
+void CMotionController::startTransition(const SMotionTransition &transition) {
+    float target_frame = transition.to_frame_number;
+    if (!std::islessgreater(target_frame, kPatchFrame)) {
+        target_frame = static_cast<float>(findPatchToFrame(
+            current_motion_index_, current_frame_number_, transition.to_motion_number));
+    }
+    if (transition.tween_time <= 0.0F) {
+        jumpToMotion(transition.to_motion_number, target_frame);
+        if (transition.set_new_state_as_desired) {
+            state_index_ = getCurrentMotion().state_index;
+        }
+        return;
+    }
+    tween_target_motion_ = transition.to_motion_number;
+    tween_target_frame_ = target_frame;
+    tween_progress_ = kTweenStartProgress;
+    tween_type_ = transition.cmd;
+    tween_past_midpoint_ = false;
+    tween_speed_ = 1.0F / transition.tween_time;
+    tween_sets_new_state_ = transition.set_new_state_as_desired;
+}
+
+// A tween that plays only its target plays only the current motion once they swap, and the
+// other way about.
+// nocedit 0x0052da50
+void CMotionController::reverseTransition() {
+    tween_past_midpoint_ = true;
+    std::swap(current_motion_index_, tween_target_motion_);
+    std::swap(current_frame_number_, tween_target_frame_);
+    if (tween_type_ == EMotionTransitionCmd::MOTION_CMD_TWEEN_ADVANCE_BOTH) {
+        tween_type_ = EMotionTransitionCmd::MOTION_CMD_TWEEN_ADVANCE;
+    } else if (tween_type_ == EMotionTransitionCmd::MOTION_CMD_TWEEN_ADVANCE) {
+        tween_type_ = EMotionTransitionCmd::MOTION_CMD_TWEEN_ADVANCE_BOTH;
+    }
+    tween_progress_ = 1.0F - tween_progress_;
 }
 
 // The motion by its index, or failing that by its quoted name with no index, then the frame. A
@@ -156,6 +263,26 @@ EMotionTransitionCmd CMotionController::getTweenType() const {
 
 float CMotionController::getTweenProgress() const {
     return tween_progress_;
+}
+
+int CMotionController::getTweenTargetMotion() const {
+    return tween_target_motion_;
+}
+
+float CMotionController::getTweenTargetFrame() const {
+    return tween_target_frame_;
+}
+
+float CMotionController::getTweenSpeed() const {
+    return tween_speed_;
+}
+
+bool CMotionController::isTweenPastMidpoint() const {
+    return tween_past_midpoint_;
+}
+
+bool CMotionController::getTweenSetsNewState() const {
+    return tween_sets_new_state_;
 }
 
 } // namespace nocturne::core

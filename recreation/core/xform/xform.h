@@ -41,12 +41,12 @@ common::CMatrix3x4f *lerpMatrix3x4(common::CMatrix3x4f *matrix_a, common::CMatri
 // Writes the rotation and leaves the translation as it was. The quaternion need not be unit.
 void quaternionToMatrix3x3(common::CMatrix3x4f &matrix_out, const common::CQuaternion4f &quat_in);
 [[nodiscard]] common::CMatrix3x4f quaternionToMatrix3x4(const common::CQuaternion4f &quat_in);
-common::CQuaternion4f *negateFirstComponent(common::CQuaternion4f *vector_in,
-                                            common::CQuaternion4f *vector_out);
+// The opposite turn: w negated.
+[[nodiscard]] common::CQuaternion4f negateFirstComponent(const common::CQuaternion4f &vector_in);
 void setIdentityQuaternion(common::CQuaternion4f &quaternion);
-common::CQuaternion4f *multiplyQuaternion(common::CQuaternion4f *quat1_in,
-                                          common::CQuaternion4f *quat2_in,
-                                          common::CQuaternion4f *quat_out);
+// Hamilton's product of the second and the first, in that order.
+[[nodiscard]] common::CQuaternion4f multiplyQuaternion(const common::CQuaternion4f &quat1_in,
+                                                       const common::CQuaternion4f &quat2_in);
 void quaternionToAxisAngle(common::CQuaternion4f *quat_in, float *angle_out,
                            common::CVector3f *axis_out);
 // The first at t of 0 or less, the second at 1 or more, along the shorter arc between.

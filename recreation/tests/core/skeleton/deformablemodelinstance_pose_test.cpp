@@ -173,13 +173,6 @@ TEST_F(CDeformableModelInstancePoseTest, TheRestPoseHasNoTurnAtTheRestScale) {
     EXPECT_TRUE(pose().pose_data.root_position.equals({}));
 }
 
-TEST_F(CDeformableModelInstancePoseTest, PosingPartOfTheModelIsntPortedYet) {
-    model_.preCache();
-    EXPECT_THAT([this] { model_.updateMotion(0, 0.0F, 1); },
-                ThrowsMessage<common::CFatalError>(
-                    StrEq("CDeformableModelInstance::updateMotion is not ported yet")));
-}
-
 // A level the model hasn't got skins nothing.
 TEST_F(CDeformableModelInstancePoseTest, FreeingForgetsTheSkinnedVerticesUntilRoomIsMade) {
     model_.preCache();

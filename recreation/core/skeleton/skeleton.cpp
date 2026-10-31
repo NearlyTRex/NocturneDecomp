@@ -140,6 +140,20 @@ common::CQuaternion4f CSkeleton::getBoneAngleInterpolated(int bone_index, int fr
                            getBoneAngleAtFrame(bone_index, frame_index_2), interpolation);
 }
 
+// nocedit 0x0059a100
+int CSkeleton::getHierarchyDistance(int start_bone_index, int target_bone_index) const {
+    int distance = 0;
+    int bone = start_bone_index;
+    do {
+        if (bone == target_bone_index) {
+            return distance;
+        }
+        bone = bones_[static_cast<std::size_t>(bone)].parent_index;
+        ++distance;
+    } while (bone >= 0);
+    return target_bone_index < 0 ? distance : -1;
+}
+
 const std::string &CSkeleton::getLoadedFilename() const {
     return loaded_filename_;
 }

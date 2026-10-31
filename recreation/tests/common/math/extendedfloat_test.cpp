@@ -83,6 +83,29 @@ TEST_F(CExtendedFloatAgainstX87, SumsOfNearlyCancellingValuesKeepTheirLowBits) {
     }
 }
 
+TEST_F(CExtendedFloatAgainstX87, DifferencesRoundAsTheX87Does) {
+    for (int i = 0; i < 200000; ++i) {
+        const double a = pick();
+        const double b = pick();
+        const double c = pick();
+        const long double difference = (static_cast<long double>(a) * b) - c;
+        ASSERT_EQ(storedBits((X(a) * X(b)) - X(c)), floatBits(static_cast<float>(difference)))
+            << a << " * " << b << " - " << c;
+    }
+}
+
+TEST(CExtendedFloat, SubtractsWithTheX87sZerosAndNaNs) {
+    EXPECT_TRUE(X(3.0) - X(0.25) == X(2.75));
+    EXPECT_TRUE(X(0.25) - X(3.0) == X(-2.75));
+    EXPECT_EQ(storedBits(X(1.5) - X(1.5)), 0U);
+    EXPECT_EQ(storedBits(X(0.0) - X(0.0)), 0U);
+    EXPECT_EQ(storedBits(X(-0.0) - X(0.0)), 0x80000000U);
+    EXPECT_EQ(storedBits(X(2.0) - X(kNaN)), 0x7fc00000U);
+    EXPECT_EQ(storedBits(X(2.0) - X(-kNaN)), 0xffc00000U);
+    EXPECT_EQ(storedBits(X(-kNaN) - X(2.0)), 0xffc00000U);
+    EXPECT_EQ(storedBits(X(kInfinity) - X(kInfinity)), 0xffc00000U);
+}
+
 TEST(CExtendedFloat, KeepsADoubleExactly) {
     EXPECT_EQ(X(0.1) <=> X(0.1), std::partial_ordering::equivalent);
     EXPECT_EQ(X(0.1).toFloat(), 0.1F);
@@ -137,6 +160,31 @@ TEST(CExtendedFloat, ANaNOperandIsWhatComesOut) {
     EXPECT_EQ(storedBits(X(2.0) * X(kNaN)), 0x7fc00000U);
     EXPECT_EQ(storedBits(X(kNaN) + X(2.0)), 0x7fc00000U);
     EXPECT_EQ(storedBits(X(2.0) + nan), 0xffc00000U);
+}
+
+TEST(CExtendedFloat, OfTwoNaNsThePositiveComesOut) {
+    const X negative(-kNaN);
+    const X positive(kNaN);
+    EXPECT_EQ(storedBits(negative + positive), 0x7fc00000U);
+    EXPECT_EQ(storedBits(positive + negative), 0x7fc00000U);
+    EXPECT_EQ(storedBits(negative * positive), 0x7fc00000U);
+    EXPECT_EQ(storedBits(negative - positive), 0x7fc00000U);
+    EXPECT_EQ(storedBits(negative + negative), 0xffc00000U);
+}
+
+// Each of the four pairs of NaN signs, through each operation.
+TEST_F(CExtendedFloatAgainstX87, PicksBetweenTwoNaNsAsTheX87Does) {
+    const auto expectSame = [](double a, double b) {
+        const long double hardware_a = a;
+        const long double hardware_b = b;
+        EXPECT_EQ(storedBits(X(a) + X(b)), floatBits(static_cast<float>(hardware_a + hardware_b)));
+        EXPECT_EQ(storedBits(X(a) * X(b)), floatBits(static_cast<float>(hardware_a * hardware_b)));
+        EXPECT_EQ(storedBits(X(a) - X(b)), floatBits(static_cast<float>(hardware_a - hardware_b)));
+    };
+    expectSame(kNaN, kNaN);
+    expectSame(kNaN, -kNaN);
+    expectSame(-kNaN, kNaN);
+    expectSame(-kNaN, -kNaN);
 }
 
 TEST(CExtendedFloat, InvalidOperationsGiveTheRealIndefinite) {

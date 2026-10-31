@@ -63,14 +63,12 @@ TEST(CoreXformFunctions, PublicInterface) {
     static_assert(std::is_same_v<decltype(&quaternionToMatrix3x4),
                                  common::CMatrix3x4f (*)(const common::CQuaternion4f &)>);
     static_assert(std::is_same_v<decltype(&negateFirstComponent),
-                                 common::CQuaternion4f *(*)(common::CQuaternion4f *,
-                                                            common::CQuaternion4f *)>);
+                                 common::CQuaternion4f (*)(const common::CQuaternion4f &)>);
     static_assert(
         std::is_same_v<decltype(&setIdentityQuaternion), void (*)(common::CQuaternion4f &)>);
-    static_assert(
-        std::is_same_v<decltype(&multiplyQuaternion),
-                       common::CQuaternion4f *(*)(common::CQuaternion4f *, common::CQuaternion4f *,
-                                                  common::CQuaternion4f *)>);
+    static_assert(std::is_same_v<decltype(&multiplyQuaternion),
+                                 common::CQuaternion4f (*)(const common::CQuaternion4f &,
+                                                           const common::CQuaternion4f &)>);
     static_assert(std::is_same_v<decltype(&quaternionToAxisAngle),
                                  void (*)(common::CQuaternion4f *, float *, common::CVector3f *)>);
     static_assert(std::is_same_v<decltype(&slerpQuaternion),
@@ -194,6 +192,27 @@ TEST(CoreXformFunctions, TheIdentityQuaternionIsNoTurn) {
     common::CQuaternion4f quaternion{.w = 0.5F, .x = 1.0F, .y = 2.0F, .z = 3.0F};
     setIdentityQuaternion(quaternion);
     EXPECT_EQ(quaternion, (common::CQuaternion4f{.w = 1.0F}));
+}
+
+TEST(CoreXformFunctions, NegatingTheFirstComponentTurnsBack) {
+    EXPECT_EQ(negateFirstComponent({.w = 0.5F, .x = 1.0F, .y = -2.0F, .z = 3.0F}),
+              (common::CQuaternion4f{.w = -0.5F, .x = 1.0F, .y = -2.0F, .z = 3.0F}));
+}
+
+// i then j: Hamilton's j times i, which is -k.
+TEST(CoreXformFunctions, TheProductIsTheSecondTimesTheFirst) {
+    EXPECT_EQ(multiplyQuaternion({.x = 1.0F}, {.y = 1.0F}), (common::CQuaternion4f{.z = -1.0F}));
+    const common::CQuaternion4f turn{.w = 0.5F, .x = 0.5F, .y = 0.5F, .z = 0.5F};
+    EXPECT_EQ(multiplyQuaternion({.w = 1.0F}, turn), turn);
+    EXPECT_EQ(multiplyQuaternion(turn, {.w = 1.0F}), turn);
+}
+
+TEST(CoreXformFunctions, TheProductMatchesTheOriginal) {
+    EXPECT_EQ(
+        multiplyQuaternion({.w = 0.3F, .x = 0.1F, .y = 0.9F, .z = 0.3F},
+                           {.w = 0.7F, .x = 0.1F, .y = 0.7F, .z = 0.1F}),
+        (common::CQuaternion4f{
+            .w = -0x1.d70a3cp-2F, .x = 0x1.c28f5ep-3F, .y = 0x1.a3d70ap-1F, .z = 0x1.0a3d72p-2F}));
 }
 
 TEST(CoreXformFunctions, SlerpHoldsItsEndsOutsideZeroToOne) {

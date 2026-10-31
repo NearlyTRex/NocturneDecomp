@@ -16,6 +16,8 @@ public:
 
     [[nodiscard]] CExtendedFloat operator*(const CExtendedFloat &other) const;
     [[nodiscard]] CExtendedFloat operator+(const CExtendedFloat &other) const;
+    // A NaN operand comes out as it went in, its sign included.
+    [[nodiscard]] CExtendedFloat operator-(const CExtendedFloat &other) const;
     // Unordered when either is a NaN; zeros of either sign are equal.
     [[nodiscard]] std::partial_ordering operator<=>(const CExtendedFloat &other) const;
     [[nodiscard]] bool operator==(const CExtendedFloat &other) const;
@@ -30,7 +32,8 @@ private:
 
     CExtendedFloat(EKind kind, bool negative, std::uint64_t mantissa, int scale);
     [[nodiscard]] static CExtendedFloat indefinite();
-    // This if it is a NaN, else the other if that is, which is what an operation on one returns.
+    // The NaN an operation on one returns: of two, the positive, as the x87 picks between NaNs of
+    // equal payload; else whichever is one.
     [[nodiscard]] const CExtendedFloat *findNaN(const CExtendedFloat &other) const;
     // The exact value hi * 2^(scale + 64) + lo * 2^scale, rounded.
     [[nodiscard]] static CExtendedFloat round(bool negative, std::uint64_t hi, std::uint64_t lo,

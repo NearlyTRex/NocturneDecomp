@@ -137,6 +137,14 @@ const CBoundingBox3D &CDeformableModelInstance::getBoundingBox() const {
     return bounding_box_;
 }
 
+EBoneUpdateMode CDeformableModelInstance::getBoneUpdateMode() const {
+    return bone_update_mode_;
+}
+
+void CDeformableModelInstance::setBoneUpdateMode(EBoneUpdateMode mode) {
+    bone_update_mode_ = mode;
+}
+
 EPartVisibility CDeformableModelInstance::getPartVisibility(std::size_t part) const {
     return part_visibility_.at(part);
 }
