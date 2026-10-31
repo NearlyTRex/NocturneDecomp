@@ -13,6 +13,7 @@
 #include <gtest/gtest.h>
 
 #include <cmath>
+#include <cstddef>
 #include <format>
 #include <span>
 #include <string>
@@ -78,6 +79,16 @@ protected:
 
     [[nodiscard]] const SPose &pose() const {
         return model_.getPose();
+    }
+
+    // The bone's matrix and position, worked out on their own, are the pose's.
+    void expectPosesOwn(int bone) {
+        common::CMatrix3x4f matrix{};
+        common::CVector3f position;
+        EXPECT_EQ(model_.getBoneModelMatrix(bone, &matrix), &matrix);
+        EXPECT_EQ(matrix.m, pose().bone_model_matrices.at(static_cast<std::size_t>(bone)).m);
+        EXPECT_EQ(model_.getBoneModelPosition(&position, bone), &position);
+        EXPECT_TRUE(position.equals(translationOf(matrix)));
     }
 
     CDeformableModelInstance model_{models_};
@@ -169,6 +180,32 @@ TEST_F(CDeformableModelInstancePoseTest, AChildIsCarriedByItsParentsMatrix) {
     expectNear(translationOf(pose().bone_model_matrices[0]), {.x = 21.0F, .y = 2.0F, .z = 3.0F});
     expectNear(translationOf(pose().bone_model_matrices[1]), {.x = 17.0F, .y = 2.0F, .z = 3.0F});
     EXPECT_NEAR(pose().bone_model_matrices[0].m[1][0], 1.0F, 1e-6F);
+}
+
+// Each bone's matrix and position, worked out on their own, are the pose's; below 0 they are the
+// root's position, unturned.
+TEST_F(CDeformableModelInstancePoseTest, ABonesMatrixAndPositionAreThePosesOwn) {
+    model_.preCache();
+    model_.updateMotionAtFrame(0, 1.0F);
+    expectPosesOwn(0);
+    expectPosesOwn(1);
+    common::CMatrix3x4f matrix{};
+    common::CVector3f position;
+    static_cast<void>(model_.getBoneModelMatrix(-1, &matrix));
+    EXPECT_EQ(matrix.m[0][0], 1.0F);
+    EXPECT_EQ(matrix.m[0][1], 0.0F);
+    EXPECT_TRUE(translationOf(matrix).equals({.x = 20.0F}));
+    static_cast<void>(model_.getBoneModelPosition(&position, -1));
+    EXPECT_TRUE(position.equals({.x = 20.0F}));
+}
+
+// A scaled bone's matrix is scaled as the pose's is.
+TEST_F(CDeformableModelInstancePoseTest, AScaledBonesMatrixIsThePosesOwn) {
+    model_.setScaleFactor(2.0F);
+    model_.preCache();
+    common::CMatrix3x4f matrix{};
+    static_cast<void>(model_.getBoneModelMatrix(1, &matrix));
+    EXPECT_EQ(matrix.m, pose().bone_model_matrices[1].m);
 }
 
 // The root's origin, every bone's scale and the root offsets are scaled with the model.

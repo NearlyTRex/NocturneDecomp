@@ -307,6 +307,54 @@ void CDeformableModelInstance::computeBoneTransforms() {
     cached_skinned_lod_index_ = kNoSkinnedLod;
 }
 
+// Below 0, no turn and the root's position.
+// nocedit 0x0059f820
+common::CMatrix3x4f *CDeformableModelInstance::getBoneModelMatrix(int bone_index,
+                                                                  common::CMatrix3x4f *out_matrix) {
+    common::CMatrix3x4f matrix{};
+    common::CVector3f position = bone_transform_.pose_data.root_position;
+    if (bone_index < 0) {
+        setRotationScaleIdentity(&matrix);
+    } else {
+        getBoneModelPosition(&position, bone_index);
+        const std::size_t bone = toIndex(bone_index);
+        quaternionToMatrix3x3(matrix, bone_transform_.pose_data.bone_rotations.at(bone));
+        const float scale = bone_transform_.bone_scales.at(bone);
+        if (scale != 1.0F) {
+            for (std::array<float, 4> &row : matrix.m) {
+                for (std::size_t column = 0; column < kRotationColumns; ++column) {
+                    row.at(column) = row.at(column) * scale;
+                }
+            }
+        }
+    }
+    matrix.m[0][3] = position.x;
+    matrix.m[1][3] = position.y;
+    matrix.m[2][3] = position.z;
+    *out_matrix = matrix;
+    return out_matrix;
+}
+
+// Below 0, the root's position.
+// nocedit 0x0059fa20
+common::CVector3f *CDeformableModelInstance::getBoneModelPosition(common::CVector3f *out_position,
+                                                                  int bone_index) {
+    const common::CVector3f &root = bone_transform_.pose_data.root_position;
+    if (bone_index < 0) {
+        *out_position = root;
+        return out_position;
+    }
+    const common::CVector3f &origin = bone_origins_.at(toIndex(bone_index));
+    const int parent = getSkeletonPtr()->getBones()[toIndex(bone_index)].parent_index;
+    if (parent < 0) {
+        *out_position = {.x = origin.x + root.x, .y = origin.y + root.y, .z = origin.z + root.z};
+        return out_position;
+    }
+    common::CMatrix3x4f parent_matrix{};
+    *out_position = transformVector3x4(origin, *getBoneModelMatrix(parent, &parent_matrix));
+    return out_position;
+}
+
 // nocedit 0x005a1950
 void CDeformableModelInstance::computeBoneModelMatrices(SPose &bone_data) {
     const std::span<const SBone> bones = getSkeletonPtr()->getBones();

@@ -139,6 +139,12 @@ TEST(CoreXformFunctions, ClearingTheTranslationLeavesTheRotation) {
     EXPECT_EQ(matrix, rows({1, 2, 3, 0}, {4, 5, 6, 0}, {7, 8, 9, 0}));
 }
 
+TEST(CoreXformFunctions, ARotationScaleIdentityKeepsItsTranslation) {
+    common::CMatrix3x4f matrix = rows({2, 2, 3, 4}, {5, 6, 7, 8}, {9, 10, 11, 12});
+    setRotationScaleIdentity(&matrix);
+    EXPECT_EQ(matrix, rows({1, 0, 0, 4}, {0, 1, 0, 8}, {0, 0, 1, 12}));
+}
+
 TEST(CoreXformFunctions, AQuarterTurnAboutZBecomesItsRotationMatrix) {
     const common::CMatrix3x4f matrix = quaternionToMatrix3x4({.w = kRootHalf, .z = kRootHalf});
     const common::CMatrix3x4f expected = rows({0, -1, 0, 0}, {1, 0, 0, 0}, {0, 0, 1, 0});

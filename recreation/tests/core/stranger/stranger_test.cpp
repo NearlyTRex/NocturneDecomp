@@ -154,7 +154,6 @@ TEST(CStranger, TheFunctionsNotPortedYetQuit) {
     CTestClasses classes;
     CStranger hero(classes.get());
     const NotPortedCalls calls = {
-        {"setup", [&] { hero.setup(); }},
         {"process", [&] { hero.process(0.0F); }},
         {"renderOpaque", [&] { static_cast<void>(hero.renderOpaque()); }},
         {"renderTransparent", [&] { static_cast<void>(hero.renderTransparent()); }},
@@ -170,7 +169,7 @@ TEST(CStranger, TheFunctionsNotPortedYetQuit) {
         {"isWeaponDrawn", [&] { static_cast<void>(hero.isWeaponDrawn()); }},
         {"reset", [&] { hero.reset(); }},
     };
-    EXPECT_EQ(calls.size(), 14U);
+    EXPECT_EQ(calls.size(), 13U);
     expectEachQuitsNotPorted("CStranger", calls);
 }
 

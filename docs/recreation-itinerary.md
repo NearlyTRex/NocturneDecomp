@@ -42,11 +42,11 @@ functions don't count as done. Sizes are in instructions.
 | 26 | Not reached from startup: `core/` (part 4 of 9) | 18 | 300 | 20148 | 49 | 7 | 16.3% |
 | 27 | Not reached from startup: `core/` (part 5 of 9) | 21 | 294 | 20910 | 60 | 11 | 20.4% |
 | 28 | Not reached from startup: `core/` (part 6 of 9) | 18 | 282 | 21809 | 53 | 12 | 18.7% |
-| 29 | Not reached from startup: `core/` (part 7 of 9) | 18 | 263 | 22721 | 66 | 8 | 25.0% |
-| 30 | Not reached from startup: `core/` (part 8 of 9) | 20 | 300 | 31826 | 41 | 7 | 13.6% |
-| 31 | Not reached from startup: `core/` (part 9 of 9) | 5 | 111 | 10905 | 25 | 7 | 22.5% |
+| 29 | Not reached from startup: `core/` (part 7 of 9) | 18 | 263 | 22721 | 68 | 8 | 25.8% |
+| 30 | Not reached from startup: `core/` (part 8 of 9) | 20 | 300 | 31826 | 41 | 8 | 13.6% |
+| 31 | Not reached from startup: `core/` (part 9 of 9) | 5 | 111 | 10905 | 26 | 7 | 23.4% |
 | 32 | Not reached from startup: `wincore/` | 2 | 11 | 482 | 4 | 0 | 36.3% |
-| | **All** | | **4479** | **402407** | **1100** | **195** | **24.5%** |
+| | **All** | | **4479** | **402407** | **1103** | **196** | **24.6%** |
 
 ## Step 0: Math value types
 
@@ -6026,7 +6026,7 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `factoryFuncSimBox` 0x00588d00 (12)
   - [x] `staticInit` 0x00588cd0 (9)
 
-### `core/skeleton.cpp` (88 functions, 8882 instructions, 45 done, 2 partial)
+### `core/skeleton.cpp` (88 functions, 8882 instructions, 47 done, 2 partial)
 - class `CDeformableModelInstance`
   - [x] `showAllParts` 0x005a0410 (8)
   - [x] `clearAllTextureSetIndices` 0x005a0430 (8)
@@ -6059,8 +6059,8 @@ functions don't count as done. Sizes are in instructions.
   - [x] `updateMotionAtFrame` 0x0059e070 (15)
   - [x] `computeBoundingBoxFromVertices` 0x005a05e0 (149)
   - [x] `initializeFromModel` 0x005a0480 (110)
-  - [ ] `getBoneModelMatrix` 0x0059f820 (184)
-  - [ ] `getBoneModelPosition` 0x0059fa20 (112)
+  - [x] `getBoneModelMatrix` 0x0059f820 (184)
+  - [x] `getBoneModelPosition` 0x0059fa20 (112)
   - [x] `preCache` 0x005a0450 (11)
   - [ ] `blendBoneRotations` 0x0059f750 (83)
   - [ ] `getBoneCachedModelPosition` 0x0059fb00 (15)
@@ -6219,7 +6219,7 @@ functions don't count as done. Sizes are in instructions.
 
 ## Step 30: Not reached from startup: `core/` (part 8 of 9)
 
-### `core/stranger.cpp` (57 functions, 13459 instructions, 5 done, 1 partial)
+### `core/stranger.cpp` (57 functions, 13459 instructions, 5 done, 2 partial)
 - class `CStranger`
   - [~] `ctor` 0x005bb120 (207)
     - deferred: naming the gun's model gat.kfm, with the weapon classes
@@ -6267,7 +6267,10 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `dropCarriedObject` 0x005c67f0 (27)
   - [ ] `drop` 0x005c6850 (23)
   - [x] `dtor` 0x005c69c0 (31)
-  - [ ] `setup` 0x005bb4b0 (232)
+  - [~] `setup` 0x005bb4b0 (232)
+    - deferred: his hands as the bones each hand carries at, with getCarryObjToBodyXForm
+    - deferred: posing him as his motion, turn and aim have him, with updateProceduralAnimation
+    - deferred: clearing his grab timer, ladder blend, fall speed and goggle sounds, with the steps that read them
   - [ ] `getCarryLightIntensity` 0x005be430 (26)
 - free functions
   - [x] `factoryFuncStranger` 0x005bb0e0 (12)
@@ -6680,7 +6683,7 @@ functions don't count as done. Sizes are in instructions.
   - [x] `factoryFuncWerewolf` 0x005efbd0 (12)
   - [x] `staticInit` 0x005efb70 (23)
 
-### `core/xform.cpp` (42 functions, 2952 instructions, 5 done, 0 partial)
+### `core/xform.cpp` (42 functions, 2952 instructions, 6 done, 0 partial)
 - free functions
   - [ ] `getTranslation` 0x005f6110 (15)
   - [ ] `matrixToQuaternion` 0x005f7420 (205)
@@ -6692,7 +6695,7 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `buildRotationX` 0x005f6c40 (39)
   - [ ] `buildRotationY` 0x005f6cc0 (37)
   - [x] `setIdentityQuaternion` 0x005f7620 (6)
-  - [ ] `setRotationScaleIdentity` 0x005f5190 (11)
+  - [x] `setRotationScaleIdentity` 0x005f5190 (11)
   - [ ] `eulerToQuaternion` 0x005f7b20 (43)
   - [x] `quaternionToEulerAngles` 0x005f7ac0 (18)
   - [ ] `transformVector3x4InPlace` 0x005f4e20 (49)

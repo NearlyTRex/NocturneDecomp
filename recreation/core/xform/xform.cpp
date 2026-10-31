@@ -113,6 +113,16 @@ common::CMatrix3x4f inverse(const common::CMatrix3x4f &matrix_in) {
     return out;
 }
 
+// The translation is left as it is.
+// nocedit 0x005f5190
+void setRotationScaleIdentity(common::CMatrix3x4f *matrix) {
+    for (std::size_t row = 0; row < matrix->m.size(); ++row) {
+        for (std::size_t column = 0; column < matrix->m.size(); ++column) {
+            matrix->m.at(row).at(column) = row == column ? 1.0F : 0.0F;
+        }
+    }
+}
+
 // nocedit 0x005f5370
 void clearTranslation(common::CMatrix3x4f &matrix) {
     for (std::array<float, 4> &row : matrix.m) {

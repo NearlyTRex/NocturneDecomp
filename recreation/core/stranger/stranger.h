@@ -1,12 +1,26 @@
 #pragma once
 
 #include "common/fwd.h"
+#include "common/math/vector3f.h"
+#include "core/dmodel/keyframedmodelinstance.h"
 #include "core/fwd.h"
 #include "core/hero/hero.h"
+#include "core/hero/herobones.h"
 
 #include <memory>
 
 namespace nocturne::core {
+
+// The bones and motions of the Stranger's skeleton his own code poses and plays.
+struct SStrangerBones {
+    SHeroBones bones;
+    int neck = 0;
+    int spine1 = 0;
+    int pelvis = 0;
+    // The motions that start his turns on the spot, left then right.
+    int turn_left_start_motion = 0;
+    int turn_right_start_motion = 0;
+};
 
 // The hero the Stranger. The virtual functions not ported yet quit when called.
 class CStranger : public CHero {
@@ -46,10 +60,22 @@ public:
     [[nodiscard]] CDemonActor *getWeapon() const;
     // The action waiting to start, 0 for none.
     [[nodiscard]] int getActionPending() const;
+    [[nodiscard]] const SStrangerBones &getBones() const;
+    // Where his right hand and right upper arm are as he picks something up, in his model's space:
+    // the reach his arm is aimed by.
+    [[nodiscard]] const common::CVector3f &getPickupRightHandPosition() const;
+    [[nodiscard]] const common::CVector3f &getPickupRightUpperArmPosition() const;
+    [[nodiscard]] const CKeyFramedModelInstance &getHat() const;
+    [[nodiscard]] int getHeadPart() const;
 
 private:
     static std::unique_ptr<CDemonActor> create(CActor &classes);
 
+    SStrangerBones bones_;
+    common::CVector3f pickup_right_hand_position_;
+    common::CVector3f pickup_right_upper_arm_position_;
+    CKeyFramedModelInstance hat_;
+    int head_part_ = 0;
     CDemonActor *ladder_to_descend_ = nullptr;
     bool guns_drawn_ = false;
     CDemonActor *weapon_ = nullptr;
