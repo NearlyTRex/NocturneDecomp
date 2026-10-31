@@ -21,7 +21,7 @@ TEST(CFlashlight, IsConcrete) {
 }
 
 TEST(CFlashlight, Constructors) {
-    static_assert(std::is_constructible_v<CFlashlight>);
+    static_assert(std::is_constructible_v<CFlashlight, CActor &>);
 }
 
 TEST(CFlashlight, PublicInterface) {

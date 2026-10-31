@@ -18,7 +18,8 @@ class CLever : public CDemonActor {
 public:
     static const CDemonActorType kType;
 
-    CLever();
+    // Its model is found among those the classes hold.
+    explicit CLever(CActor &classes);
     ~CLever() override;
     CLever(const CLever &) = delete;
     CLever &operator=(const CLever &) = delete;

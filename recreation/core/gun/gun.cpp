@@ -20,7 +20,7 @@ constinit const CDemonActorType CGun::kType =
 
 // deferred: the defaults the constructor gives the firing fields, with fire
 // nocedit 0x004f02f0
-CGun::CGun() {
+CGun::CGun(CActor &classes) : CWeapon(classes) {
     setModelName("gat.kfm");
 }
 
@@ -33,8 +33,8 @@ const CDemonActorType &CGun::getActorType() const {
 }
 
 // nocedit 0x004f02b0
-std::unique_ptr<CDemonActor> CGun::create(CActor & /*classes*/) {
-    return std::make_unique<CGun>();
+std::unique_ptr<CDemonActor> CGun::create(CActor &classes) {
+    return std::make_unique<CGun>(classes);
 }
 
 int CGun::fire() {

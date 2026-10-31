@@ -89,13 +89,19 @@ TEST(CLightCone, AVersionOneConeHasOnlyItsShape) {
 TEST(CLightCone, TheFunctionsNotPortedYetQuit) {
     CLightCone cone;
     const NotPortedCalls calls = {
-        {"setup", [&] { cone.setup(); }},
         {"process", [&] { cone.process(0.0F); }},
         {"renderTransparent", [&] { static_cast<void>(cone.renderTransparent()); }},
         {"getBoundingBox", [&] { static_cast<void>(cone.getBoundingBox(nullptr)); }},
         {"getCollisionType", [&] { static_cast<void>(cone.getCollisionType(nullptr)); }},
     };
     expectEachQuitsNotPorted("CLightCone", calls);
+}
+
+TEST(CLightCone, SettingUpBringsItsAnglesToWithinPi) {
+    CLightCone cone;
+    cone.setOrientation({.y = 7.0F});
+    cone.setup();
+    EXPECT_LT(cone.getOrientation().y, 3.2F);
 }
 
 } // namespace

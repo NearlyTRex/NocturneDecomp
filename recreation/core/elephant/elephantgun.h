@@ -9,7 +9,7 @@ class CElephantGun : public CWeapon {
 public:
     static const CDemonActorType kType;
 
-    CElephantGun();
+    explicit CElephantGun(CActor &classes);
     ~CElephantGun() override;
 
     void process(float delta_time) override;

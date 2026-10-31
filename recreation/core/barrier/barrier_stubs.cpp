@@ -15,10 +15,6 @@ namespace {
 
 } // namespace
 
-void CBarrier::setup() {
-    notPorted("setup");
-}
-
 int CBarrier::renderTransparent() {
     notPorted("renderTransparent");
 }

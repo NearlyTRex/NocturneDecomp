@@ -25,7 +25,7 @@ TEST(CGun, IsConcrete) {
 }
 
 TEST(CGun, Constructors) {
-    static_assert(std::is_constructible_v<CGun>);
+    static_assert(std::is_constructible_v<CGun, CActor &>);
 }
 
 TEST(CGun, PublicInterface) {
@@ -46,12 +46,14 @@ TEST(CGun, ItsRecordIsAVersion1WeaponThatMissionsCanCreate) {
 }
 
 TEST(CGun, AGunIsTheGatlingModel) {
-    const CGun gun;
+    CTestClasses classes;
+    const CGun gun{classes.get()};
     EXPECT_EQ(gun.getModel().getModelName(), "gat.kfm");
 }
 
 TEST(CGun, TheFunctionsNotPortedYetQuit) {
-    CGun gun;
+    CTestClasses classes;
+    CGun gun{classes.get()};
     const NotPortedCalls calls = {
         {"fire", [&] { static_cast<void>(gun.fire()); }},
         {"getDamage", [&] { static_cast<void>(gun.getDamage()); }},

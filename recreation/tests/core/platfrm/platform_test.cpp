@@ -41,7 +41,8 @@ TEST(CPlatform, ItsRecordIsVersion11UnderCDemonActorAndMissionsCanCreateOne) {
 constexpr common::CQuaternion4f kNoTurn{.w = 1.0F};
 
 TEST(CPlatform, APlatformIsASliderAtItsStartWithBothEndsAtTheOriginUnturned) {
-    CPlatform platform;
+    CTestClasses classes;
+    CPlatform platform{classes.get()};
     EXPECT_EQ(platform.getModel().getModelName(), "slider1.kfm");
     EXPECT_EQ(platform.getToStartEvent(), "");
     EXPECT_EQ(platform.getActiveSound(), "");
@@ -83,7 +84,8 @@ protected:
         EXPECT_TRUE(archive.isFinished());
     }
 
-    CPlatform platform_;
+    CTestClasses classes_;
+    CPlatform platform_{classes_.get()};
     CTestActor crate_{kTestBaseType};
 };
 
@@ -153,7 +155,8 @@ TEST_F(CPlatformArchiveTest, MoreThanTenAttachedActorsIsFatal) {
 }
 
 TEST(CPlatform, TheFunctionsNotPortedYetQuit) {
-    CPlatform platform;
+    CTestClasses classes;
+    CPlatform platform{classes.get()};
     const NotPortedCalls calls = {
         {"setup", [&] { platform.setup(); }},
         {"process", [&] { platform.process(0.0F); }},
@@ -174,7 +177,7 @@ TEST(CPlatform, IsConcrete) {
 }
 
 TEST(CPlatform, Constructors) {
-    static_assert(std::is_constructible_v<CPlatform>);
+    static_assert(std::is_constructible_v<CPlatform, CActor &>);
 }
 
 TEST(CPlatform, PublicInterface) {

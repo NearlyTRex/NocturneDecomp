@@ -1,5 +1,6 @@
 #include "core/ammo/ammo.h"
 
+#include "core/actor/actor.h"
 #include "core/actor/actorarchive.h"
 #include "core/actor/demonactortype.h"
 #include "core/actor/notported.h"
@@ -28,7 +29,7 @@ constinit const CDemonActorType CAmmo::kType =
     makeActorType("CAmmo", &CDemonActor::kType, &CAmmo::create, kVersion);
 
 // nocedit 0x00410dc0
-CAmmo::CAmmo() {
+CAmmo::CAmmo(CActor &classes) : model_(classes.getKeyFramedModels()) {
     model_.setModelName("bullet.kfm");
 }
 
@@ -41,8 +42,8 @@ const CDemonActorType &CAmmo::getActorType() const {
 }
 
 // nocedit 0x00410d80
-std::unique_ptr<CDemonActor> CAmmo::create(CActor & /*classes*/) {
-    return std::make_unique<CAmmo>();
+std::unique_ptr<CDemonActor> CAmmo::create(CActor &classes) {
+    return std::make_unique<CAmmo>(classes);
 }
 
 // The original's buffer for the weapon class held 64 characters.
@@ -71,8 +72,10 @@ EAmmoType CAmmo::getAmmoType() const {
     return ammo_type_;
 }
 
+// nocedit 0x00410e50
 void CAmmo::setup() {
-    notPorted("setup");
+    model_.preCache();
+    CDemonActor::setup();
 }
 
 void CAmmo::process(float /*delta_time*/) {

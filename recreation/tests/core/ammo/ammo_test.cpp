@@ -6,6 +6,7 @@
 #include "tests/mocks/core/testarchive.h"
 #include "tests/mocks/core/testclasses.h"
 
+#include <gmock/gmock.h>
 #include <gtest/gtest.h>
 
 #include <memory>
@@ -28,7 +29,7 @@ TEST(CAmmo, IsConcrete) {
 }
 
 TEST(CAmmo, Constructors) {
-    static_assert(std::is_constructible_v<CAmmo>);
+    static_assert(std::is_constructible_v<CAmmo, CActor &>);
 }
 
 TEST(CAmmo, PublicInterface) {
@@ -58,7 +59,8 @@ TEST(CAmmo, ItsRecordIsAVersion1ActorThatMissionsCanCreate) {
 }
 
 TEST(CAmmo, AmmoIsTwentyOrdinaryBulletsForTheGun) {
-    const CAmmo ammo;
+    CTestClasses classes;
+    const CAmmo ammo{classes.get()};
     EXPECT_EQ(ammo.getModel().getModelName(), "bullet.kfm");
     EXPECT_EQ(ammo.getWeaponClassName(), "CGun");
     EXPECT_EQ(ammo.getAmmoCount(), 20);
@@ -67,7 +69,8 @@ TEST(CAmmo, AmmoIsTwentyOrdinaryBulletsForTheGun) {
 
 // After CDemonActor's fields: its model, the weapon class, how many rounds, and of which kind.
 TEST(CAmmo, ItsFileSaysWhatRoundsItHolds) {
-    CAmmo ammo;
+    CTestClasses classes;
+    CAmmo ammo{classes.get()};
     const std::string text =
         "0,0,0,0\n0,0,0\n0\n\"gatbullet.kfm\"    // modelName\n"
         "\"CGun\"    // weaponClassName\n12    // ammoCount\n5    // ammoType\n";
@@ -81,9 +84,9 @@ TEST(CAmmo, ItsFileSaysWhatRoundsItHolds) {
 }
 
 TEST(CAmmo, TheFunctionsNotPortedYetQuit) {
-    CAmmo ammo;
+    CTestClasses classes;
+    CAmmo ammo{classes.get()};
     const NotPortedCalls calls = {
-        {"setup", [&] { ammo.setup(); }},
         {"process", [&] { ammo.process(0.0F); }},
         {"renderOpaque", [&] { static_cast<void>(ammo.renderOpaque()); }},
         {"getBoundingBox", [&] { static_cast<void>(ammo.getBoundingBox(nullptr)); }},
@@ -91,6 +94,14 @@ TEST(CAmmo, TheFunctionsNotPortedYetQuit) {
         {"canPickup", [&] { static_cast<void>(ammo.canPickup(nullptr)); }},
     };
     expectEachQuitsNotPorted("CAmmo", calls);
+}
+
+TEST(CAmmo, SettingUpFindsItsModel) {
+    CTestClasses classes;
+    CAmmo ammo{classes.get()};
+    EXPECT_CALL(classes.getKeyFramedModels(), loadModel(::testing::StrEq("bullet.kfm")))
+        .WillOnce(::testing::ReturnRef(classes.getKeyFramedModel()));
+    ammo.setup();
 }
 
 } // namespace

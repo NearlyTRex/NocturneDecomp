@@ -41,7 +41,10 @@ public:
                           CDemonSet &set);
     // Out-of-range frames clamp to the first or last.
     [[nodiscard]] std::span<const common::CVector3i> getFrameVertices(int frame_index) const;
-    void captureTextures();
+    // Each texture captured by the renderer, loading it.
+    void captureTextures(engine::CDemonRenderer &renderer);
+    // The name it was last loaded from; empty before.
+    [[nodiscard]] const std::string &getModelFilename() const;
     float intersectRay(int frame_index, common::CVector3f *ray_origin,
                        common::CVector3f *ray_direction, common::CVector3f *output_normal);
     void intersectCylinder(int frame_index, SIntersectXZCylinder *cylinder,
@@ -84,6 +87,7 @@ private:
                            int &current_texture, engine::CDemonRenderer &renderer, CDemonSet &set);
 
     const engine::CDosIo &dosio_;
+    std::string model_filename_;
     int vertex_count_ = 0;
     int frame_count_ = 0;
     std::vector<common::CVector3i> vertices_;

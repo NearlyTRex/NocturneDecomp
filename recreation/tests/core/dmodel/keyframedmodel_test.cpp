@@ -40,8 +40,8 @@ TEST(CKeyFramedModel, PublicInterface) {
                        void (CKeyFramedModel::*)(int, int, engine::CDemonRenderer &, CDemonSet &)>);
     static_assert(std::is_same_v<decltype(&CKeyFramedModel::getFrameVertices),
                                  std::span<const CVector3i> (CKeyFramedModel::*)(int) const>);
-    static_assert(
-        std::is_same_v<decltype(&CKeyFramedModel::captureTextures), void (CKeyFramedModel::*)()>);
+    static_assert(std::is_same_v<decltype(&CKeyFramedModel::captureTextures),
+                                 void (CKeyFramedModel::*)(engine::CDemonRenderer &)>);
     static_assert(
         std::is_same_v<decltype(&CKeyFramedModel::intersectRay),
                        float (CKeyFramedModel::*)(int, CVector3f *, CVector3f *, CVector3f *)>);

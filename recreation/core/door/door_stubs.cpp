@@ -15,10 +15,6 @@ namespace {
 
 } // namespace
 
-void CDoor::setup() {
-    notPorted("setup");
-}
-
 void CDoor::process(float /*delta_time*/) {
     notPorted("process");
 }

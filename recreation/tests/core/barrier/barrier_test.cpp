@@ -85,13 +85,20 @@ TEST(CBarrier, AVersionOneBarrierHasOnlyItsSize) {
 TEST(CBarrier, TheFunctionsNotPortedYetQuit) {
     CBarrier barrier;
     const NotPortedCalls calls = {
-        {"setup", [&] { barrier.setup(); }},
         {"renderTransparent", [&] { static_cast<void>(barrier.renderTransparent()); }},
         {"getBoundingBox", [&] { static_cast<void>(barrier.getBoundingBox(nullptr)); }},
         {"getCollisionType", [&] { static_cast<void>(barrier.getCollisionType(nullptr)); }},
         {"updateCollisionData", [&] { barrier.updateCollisionData(); }},
     };
     expectEachQuitsNotPorted("CBarrier", calls);
+}
+
+// Outside the editor a barrier isn't drawn as transparent.
+TEST(CBarrier, SettingUpLeavesItOpaque) {
+    CBarrier barrier;
+    barrier.setTransparent(true);
+    barrier.setup();
+    EXPECT_FALSE(barrier.isTransparent());
 }
 
 } // namespace

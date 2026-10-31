@@ -2,6 +2,7 @@
 
 #include "common/error/error.h"
 #include "engine/dosio/dosio.h"
+#include "engine/drender/demonrenderer.h"
 
 #include <algorithm>
 #include <format>
@@ -9,15 +10,12 @@
 
 namespace nocturne::core {
 
-// deferred: the empty filename, with loadModel
 // nocedit 0x00476cf0
 CKeyFramedModel::CKeyFramedModel(const engine::CDosIo &dosio) : dosio_(dosio) {}
 
 // nocedit 0x00476d90
 CKeyFramedModel::~CKeyFramedModel() = default;
 
-// deferred: keeping the filename in the model, which loadModel's pool lookup and
-//   CShell::onCollision read, with loadModel and CShell
 // nocedit 0x00476db0
 void CKeyFramedModel::load(std::string_view filename) {
     free();
@@ -25,6 +23,7 @@ void CKeyFramedModel::load(std::string_view filename) {
     if (!file) {
         common::displayErrorAndQuit(std::format("Can't open keyframed model {}", filename));
     }
+    model_filename_ = filename;
     if (file->starts_with('/')) {
         readTextModel(*file);
     } else {
@@ -115,6 +114,17 @@ std::span<const std::uint8_t> CKeyFramedModel::getEnvMapOpacities() const {
 
 std::span<const platform::SMRGLTextureBasic> CKeyFramedModel::getTextures() const {
     return textures_;
+}
+
+// nocedit 0x00478190
+void CKeyFramedModel::captureTextures(engine::CDemonRenderer &renderer) {
+    for (platform::SMRGLTextureBasic &texture : textures_) {
+        renderer.captureTexture(texture);
+    }
+}
+
+const std::string &CKeyFramedModel::getModelFilename() const {
+    return model_filename_;
 }
 
 std::span<const CKeyFramedModel::SPart> CKeyFramedModel::getParts() const {

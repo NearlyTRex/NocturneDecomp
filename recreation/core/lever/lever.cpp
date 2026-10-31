@@ -1,5 +1,7 @@
 #include "core/lever/lever.h"
 
+#include "common/text/ascii.h"
+#include "core/actor/actor.h"
 #include "core/actor/actorarchive.h"
 #include "core/actor/collisiontype.h"
 #include "core/actor/demonactortype.h"
@@ -31,7 +33,7 @@ constinit const CDemonActorType CLever::kType =
     makeActorType("CLever", &CDemonActor::kType, &CLever::create, kVersion);
 
 // nocedit 0x005047d0
-CLever::CLever() {
+CLever::CLever(CActor &classes) : model_(classes.getKeyFramedModels()) {
     model_.setModelName("glever.kfm");
 }
 
@@ -44,8 +46,19 @@ const CDemonActorType &CLever::getActorType() const {
 }
 
 // nocedit 0x00504790
-std::unique_ptr<CDemonActor> CLever::create(CActor & /*classes*/) {
-    return std::make_unique<CLever>();
+std::unique_ptr<CDemonActor> CLever::create(CActor &classes) {
+    return std::make_unique<CLever>(classes);
+}
+
+// A lever with no sound sounds of metal, unless it is the elevator button.
+// nocedit 0x005048a0
+void CLever::setup() {
+    model_.preCache();
+    CDemonActor::setup();
+    if (sound_.empty() &&
+        !common::equalsIgnoringAsciiCase(model_.getModelName(), "elevbutton.kfm")) {
+        sound_ = "lever-metal.wav";
+    }
 }
 
 // nocedit 0x00504e80

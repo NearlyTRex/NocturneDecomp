@@ -9,7 +9,7 @@ class CConveyor : public CPlatform {
 public:
     static const CDemonActorType kType;
 
-    CConveyor();
+    explicit CConveyor(CActor &classes);
     ~CConveyor() override;
 
     void setup() override;

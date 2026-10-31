@@ -1,5 +1,6 @@
 #include "core/weapon/weapon.h"
 
+#include "core/actor/actor.h"
 #include "core/actor/actorarchive.h"
 #include "core/actor/demonactortype.h"
 #include "core/ammo/ammotype.h"
@@ -31,7 +32,7 @@ constinit const CDemonActorType CWeapon::kType =
 // deferred: the physics box, and the defaults the constructor gives the weight, collision,
 //   firing, light, muzzle flash and rendering fields, with the steps that read them
 // nocedit 0x005ede70
-CWeapon::CWeapon() {
+CWeapon::CWeapon(CActor &classes) : model_(classes.getKeyFramedModels()) {
     model_.setModelName("gat.kfm");
 }
 

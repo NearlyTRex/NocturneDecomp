@@ -20,7 +20,8 @@ public:
     // The rounds a weapon holds until told otherwise.
     static constexpr int kStartingAmmo = 20;
 
-    CWeapon();
+    // Its model is found among those the classes hold.
+    explicit CWeapon(CActor &classes);
     ~CWeapon() override;
     CWeapon(const CWeapon &) = delete;
     CWeapon &operator=(const CWeapon &) = delete;

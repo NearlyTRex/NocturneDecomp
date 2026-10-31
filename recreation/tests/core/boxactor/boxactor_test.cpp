@@ -32,7 +32,7 @@ TEST(CBoxActor, IsConcrete) {
 }
 
 TEST(CBoxActor, Constructors) {
-    static_assert(std::is_constructible_v<CBoxActor>);
+    static_assert(std::is_constructible_v<CBoxActor, CActor &>);
 }
 
 TEST(CBoxActor, PublicInterface) {
@@ -79,7 +79,8 @@ TEST(CBoxActor, ItsRecordIsVersion15UnderCDemonActorAndMissionsCanCreateOne) {
 }
 
 TEST(CBoxActor, ABoxActorIsAWeightlessQuestionMarkNobodyCanPickUp) {
-    CBoxActor box;
+    CTestClasses classes;
+    CBoxActor box{classes.get()};
     EXPECT_EQ(box.getModel().getModelName(), "question.kfm");
     EXPECT_EQ(box.getWeightInPounds(), 0.0F);
     EXPECT_EQ(box.getFps(), 20.0F);
@@ -103,7 +104,8 @@ TEST(CBoxActor, ABoxActorIsAWeightlessQuestionMarkNobodyCanPickUp) {
 }
 
 TEST(CBoxActor, PickingItUpMakesTheCarrierItsOwn) {
-    CBoxActor box;
+    CTestClasses classes;
+    CBoxActor box{classes.get()};
     CTestActor carrier(kTestBaseType);
     box.pickup(&carrier);
     EXPECT_EQ(box.getCarrier(), &carrier);
@@ -125,7 +127,8 @@ protected:
         EXPECT_TRUE(archive.isFinished());
     }
 
-    CBoxActor box_;
+    CTestClasses classes_;
+    CBoxActor box_{classes_.get()};
     CTestActor hero_{CHero::kType};
     CTestActor dummy_{kTestBaseType};
 };
@@ -210,7 +213,8 @@ TEST_F(CBoxActorArchiveTest, AHeroPicksUpWhatOthersCantUnlessItIsCarried) {
 }
 
 TEST(CBoxActor, TheFunctionsNotPortedYetQuit) {
-    CBoxActor box;
+    CTestClasses classes;
+    CBoxActor box{classes.get()};
     const NotPortedCalls calls = {
         {"setup", [&] { box.setup(); }},
         {"process", [&] { box.process(0.0F); }},

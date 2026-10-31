@@ -5,6 +5,7 @@
 #include "tests/mocks/core/testclasses.h"
 #include "tests/mocks/core/testfieldsarchive.h"
 
+#include <gmock/gmock.h>
 #include <gtest/gtest.h>
 
 #include <memory>
@@ -26,7 +27,7 @@ TEST(CBackgroundActor, IsConcrete) {
 }
 
 TEST(CBackgroundActor, Constructors) {
-    static_assert(std::is_constructible_v<CBackgroundActor>);
+    static_assert(std::is_constructible_v<CBackgroundActor, CActor &>);
 }
 
 TEST(CBackgroundActor, PublicInterface) {
@@ -60,14 +61,16 @@ TEST(CBackgroundActor, ItsRecordIsVersion2UnderCDemonActorAndMissionsCanCreateOn
 }
 
 TEST(CBackgroundActor, SceneryIsACandleNothingCollidesWithOnDefaultGround) {
-    CBackgroundActor scenery;
+    CTestClasses classes;
+    CBackgroundActor scenery{classes.get()};
     EXPECT_EQ(scenery.getModel().getModelName(), "candle.kfm");
     EXPECT_FALSE(scenery.isCollidedWith());
     EXPECT_EQ(scenery.getGroundType(), EGroundType::kDefault);
 }
 
 TEST(CBackgroundActor, SceneryIsReadWithItsModelAndGround) {
-    CBackgroundActor scenery;
+    CTestClasses classes;
+    CBackgroundActor scenery{classes.get()};
     CTestFieldsArchive archive(scenery, CBackgroundActor::kType, 2,
                                "\"chair.kfm\" // modelName\n1 // collideWithMe\n7 // groundType\n");
     scenery.archive(archive.get());
@@ -79,7 +82,8 @@ TEST(CBackgroundActor, SceneryIsReadWithItsModelAndGround) {
 }
 
 TEST(CBackgroundActor, AVersionOneSceneryKeepsTheDefaultGround) {
-    CBackgroundActor scenery;
+    CTestClasses classes;
+    CBackgroundActor scenery{classes.get()};
     CTestFieldsArchive archive(scenery, CBackgroundActor::kType, 1, "\"chair.kfm\"\n0\n");
     scenery.archive(archive.get());
     EXPECT_EQ(scenery.getGroundType(), EGroundType::kDefault);
@@ -87,7 +91,8 @@ TEST(CBackgroundActor, AVersionOneSceneryKeepsTheDefaultGround) {
 }
 
 TEST(CBackgroundActor, ProcessingLeavesSceneryAsItIs) {
-    CBackgroundActor scenery;
+    CTestClasses classes;
+    CBackgroundActor scenery{classes.get()};
     scenery.setActorName("Candle");
     scenery.process(1.0F);
     EXPECT_EQ(scenery.getActorName(), "Candle");
@@ -95,15 +100,23 @@ TEST(CBackgroundActor, ProcessingLeavesSceneryAsItIs) {
 }
 
 TEST(CBackgroundActor, TheFunctionsNotPortedYetQuit) {
-    CBackgroundActor scenery;
+    CTestClasses classes;
+    CBackgroundActor scenery{classes.get()};
     const NotPortedCalls calls = {
-        {"setup", [&] { scenery.setup(); }},
         {"renderOpaque", [&] { static_cast<void>(scenery.renderOpaque()); }},
         {"renderBackground", [&] { scenery.renderBackground(0); }},
         {"getBoundingBox", [&] { static_cast<void>(scenery.getBoundingBox(nullptr)); }},
         {"getCollisionType", [&] { static_cast<void>(scenery.getCollisionType(nullptr)); }},
     };
     expectEachQuitsNotPorted("CBackgroundActor", calls);
+}
+
+TEST(CBackgroundActor, SettingUpFindsItsModel) {
+    CTestClasses classes;
+    CBackgroundActor scenery{classes.get()};
+    EXPECT_CALL(classes.getKeyFramedModels(), loadModel(::testing::StrEq("candle.kfm")))
+        .WillOnce(::testing::ReturnRef(classes.getKeyFramedModel()));
+    scenery.setup();
 }
 
 } // namespace

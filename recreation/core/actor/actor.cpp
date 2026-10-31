@@ -26,13 +26,18 @@ float scaleToRange(float unit, float min_value, float max_value) {
 
 } // namespace
 
-CActor::CActor(const CGame &game, common::CWatcomRandom &crt_random, IDeformableModels &models)
-    : game_(game), crt_random_(crt_random), models_(models) {
+CActor::CActor(const CGame &game, common::CWatcomRandom &crt_random, IDeformableModels &models,
+               IKeyFramedModels &keyframed_models)
+    : game_(game), crt_random_(crt_random), models_(models), keyframed_models_(keyframed_models) {
     registerActorClasses();
 }
 
 IDeformableModels &CActor::getModels() const {
     return models_;
+}
+
+IKeyFramedModels &CActor::getKeyFramedModels() const {
+    return keyframed_models_;
 }
 
 // nocedit 0x0040cb90

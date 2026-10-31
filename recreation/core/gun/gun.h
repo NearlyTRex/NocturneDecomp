@@ -12,7 +12,7 @@ class CGun : public CWeapon {
 public:
     static const CDemonActorType kType;
 
-    CGun();
+    explicit CGun(CActor &classes);
     ~CGun() override;
     CGun(const CGun &) = delete;
     CGun &operator=(const CGun &) = delete;

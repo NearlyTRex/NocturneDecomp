@@ -44,6 +44,10 @@ public:
         return game_;
     }
 
+    [[nodiscard]] const engine::CDosIo &getDosIo() const {
+        return dosio_;
+    }
+
 private:
     engine::IGameClock &clock_;
     ::testing::NiceMock<platform::MockFileSystem> file_system_;

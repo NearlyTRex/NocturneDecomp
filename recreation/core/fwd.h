@@ -215,6 +215,7 @@ class CZombieCow;
 class CZombieDog;
 class IActorLookup;
 class IDeformableModels;
+class IKeyFramedModels;
 class ILoadingScreen;
 enum class EAimMode : std::uint8_t;
 enum class EAmmoType : std::int8_t;

@@ -10,7 +10,7 @@ class CCrossbow : public CWeapon {
 public:
     static const CDemonActorType kType;
 
-    CCrossbow();
+    explicit CCrossbow(CActor &classes);
     ~CCrossbow() override;
 
     void process(float delta_time) override;

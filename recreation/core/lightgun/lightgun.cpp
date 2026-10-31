@@ -26,7 +26,7 @@ constinit const CDemonActorType CLightGun::kType =
 // deferred: charging from the batteries of the hero netplay gives it rather than the local one
 //   (the decomp's nocturne_net_sim_target_for), with CLightGun::process
 // nocedit 0x00505900
-CLightGun::CLightGun() {
+CLightGun::CLightGun(CActor &classes) : CWeapon(classes) {
     setModelName("cre.kfm");
 }
 
@@ -39,8 +39,8 @@ const CDemonActorType &CLightGun::getActorType() const {
 }
 
 // nocedit 0x005058c0
-std::unique_ptr<CDemonActor> CLightGun::create(CActor & /*classes*/) {
-    return std::make_unique<CLightGun>();
+std::unique_ptr<CDemonActor> CLightGun::create(CActor &classes) {
+    return std::make_unique<CLightGun>(classes);
 }
 
 void CLightGun::process(float /*delta_time*/) {

@@ -13,7 +13,7 @@ class CLightGun : public CWeapon {
 public:
     static const CDemonActorType kType;
 
-    CLightGun();
+    explicit CLightGun(CActor &classes);
     ~CLightGun() override;
     CLightGun(const CLightGun &) = delete;
     CLightGun &operator=(const CLightGun &) = delete;

@@ -28,7 +28,7 @@ constinit const CDemonActorType CBaronWeapon::kType =
 // deferred: each Baron weapon claiming a Baron of its own in a network game, where the original
 //   shares the set's first (the decomp's hero_baron.h), with findOrCreateBaron and CNetGame
 // nocedit 0x00413d40
-CBaronWeapon::CBaronWeapon() = default;
+CBaronWeapon::CBaronWeapon(CActor &classes) : CWeapon(classes) {}
 
 // nocedit 0x004140b0
 CBaronWeapon::~CBaronWeapon() = default;
@@ -39,8 +39,8 @@ const CDemonActorType &CBaronWeapon::getActorType() const {
 }
 
 // nocedit 0x00413d00
-std::unique_ptr<CDemonActor> CBaronWeapon::create(CActor & /*classes*/) {
-    return std::make_unique<CBaronWeapon>();
+std::unique_ptr<CDemonActor> CBaronWeapon::create(CActor &classes) {
+    return std::make_unique<CBaronWeapon>(classes);
 }
 
 void CBaronWeapon::setup() {

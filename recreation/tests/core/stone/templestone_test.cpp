@@ -21,7 +21,7 @@ TEST(CTempleStone, IsConcrete) {
 }
 
 TEST(CTempleStone, Constructors) {
-    static_assert(std::is_constructible_v<CTempleStone>);
+    static_assert(std::is_constructible_v<CTempleStone, CActor &>);
 }
 
 TEST(CTempleStone, PublicInterface) {

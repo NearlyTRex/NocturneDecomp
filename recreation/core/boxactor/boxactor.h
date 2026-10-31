@@ -20,7 +20,8 @@ class CBoxActor : public CDemonActor {
 public:
     static const CDemonActorType kType;
 
-    CBoxActor();
+    // Its model is found among those the classes hold.
+    explicit CBoxActor(CActor &classes);
     ~CBoxActor() override;
     CBoxActor(const CBoxActor &) = delete;
     CBoxActor &operator=(const CBoxActor &) = delete;

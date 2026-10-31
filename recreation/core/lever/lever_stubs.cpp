@@ -15,10 +15,6 @@ namespace {
 
 } // namespace
 
-void CLever::setup() {
-    notPorted("setup");
-}
-
 void CLever::process(float /*delta_time*/) {
     notPorted("process");
 }

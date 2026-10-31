@@ -15,10 +15,6 @@ namespace {
 
 } // namespace
 
-void CWayPoint::setup() {
-    notPorted("setup");
-}
-
 int CWayPoint::renderOpaque() {
     notPorted("renderOpaque");
 }

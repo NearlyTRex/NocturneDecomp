@@ -37,7 +37,8 @@ TEST(CDoor, ItsRecordIsVersion11UnderCDemonActorAndMissionsCanCreateOne) {
 }
 
 TEST(CDoor, ADoorIsAClosedChurchDoorThatSwingsFromItsRightOnTheDefaultEvents) {
-    CDoor door;
+    CTestClasses classes;
+    CDoor door{classes.get()};
     EXPECT_EQ(door.getModel().getModelName(), "churchd01.kfm");
     EXPECT_EQ(door.getDoorType(), EDoorType::kSwing);
     EXPECT_EQ(door.getDoorSide(), EDoorSide::kRight);
@@ -63,7 +64,8 @@ TEST(CDoor, ADoorIsAClosedChurchDoorThatSwingsFromItsRightOnTheDefaultEvents) {
 }
 
 TEST(CDoor, TheSwingRangeIsSet) {
-    CDoor door;
+    CTestClasses classes;
+    CDoor door{classes.get()};
     door.setSwingRange(1.5F);
     EXPECT_EQ(door.getSwingRange(), 1.5F);
 }
@@ -99,8 +101,30 @@ constexpr std::string_view kLatestDoor = "\t\"OFFICEDOOR.KFM\"    // modelName\n
                                          "\t0    // allowBulletHoles\n"
                                          "\t\"rattle.wav\"    // lockedSound\n";
 
+TEST(CDoor, SettingUpFindsTheModelAndNamesTheDefaultEventsAfterTheDoor) {
+    CTestClasses classes;
+    CDoor door{classes.get()};
+    door.setActorName("HQDoor3");
+    EXPECT_CALL(classes.getKeyFramedModels(), loadModel(::testing::StrEq("churchd01.kfm")))
+        .WillOnce(::testing::ReturnRef(classes.getKeyFramedModel()));
+    door.setup();
+    EXPECT_EQ(door.getOpenEvent(), "HQDoor3Open");
+    EXPECT_EQ(door.getCloseEvent(), "HQDoor3Close");
+}
+
+TEST(CDoor, EventsAFileNamedAreKept) {
+    CTestClasses classes;
+    CDoor door{classes.get()};
+    CTestFieldsArchive archive(door, CDoor::kType, 11, kLatestDoor);
+    door.archive(archive.get());
+    door.setup();
+    EXPECT_EQ(door.getOpenEvent(), "HQDoor0Open");
+    EXPECT_EQ(door.getCloseEvent(), "HQDoor0Close");
+}
+
 TEST(CDoor, ADoorIsReadWithItsRulesAndLockedSound) {
-    CDoor door;
+    CTestClasses classes;
+    CDoor door{classes.get()};
     CTestFieldsArchive archive(door, CDoor::kType, 11, kLatestDoor);
     door.archive(archive.get());
     EXPECT_EQ(door.getLocation().area_id, CTestFieldsArchive::kArea);
@@ -139,7 +163,8 @@ constexpr std::string_view kFirstDoor = "\"d.kfm\"\n1\n1\n0\n0\n\"o\"\n\"c\"\n\"
                                         "1,2,3\n0,0,0\n0\n1\n1\n1\n";
 
 TEST(CDoor, AVersionOneDoorHasOnlyTheFieldsUpToItsSpeeds) {
-    CDoor door;
+    CTestClasses classes;
+    CDoor door{classes.get()};
     CTestFieldsArchive archive(door, CDoor::kType, 1, kFirstDoor);
     door.archive(archive.get());
     EXPECT_EQ(door.getOriginalPosition().z, 3.0F);
@@ -150,7 +175,8 @@ TEST(CDoor, AVersionOneDoorHasOnlyTheFieldsUpToItsSpeeds) {
 
 // Versions 5 and 6 held one event the script ran, which becomes a rule that always holds.
 TEST(CDoor, AnOldDoorsScriptEventIsARuleThatAlwaysHolds) {
-    CDoor door;
+    CTestClasses classes;
+    CDoor door{classes.get()};
     CTestFieldsArchive archive(door, CDoor::kType, 6,
                                std::string(kFirstDoor) +
                                    "3\n\"\"\n\"\"\n0\n\"OpenVault\"\n0 // blockVirtualDirector\n");
@@ -164,7 +190,8 @@ TEST(CDoor, AnOldDoorsScriptEventIsARuleThatAlwaysHolds) {
 }
 
 TEST(CDoor, AnOldDoorWithoutAScriptEventHasNoRules) {
-    CDoor door;
+    CTestClasses classes;
+    CDoor door{classes.get()};
     CTestFieldsArchive archive(door, CDoor::kType, 5,
                                std::string(kFirstDoor) + "0\n\"\"\n\"\"\n0\n\"\"\n");
     door.archive(archive.get());
@@ -174,9 +201,9 @@ TEST(CDoor, AnOldDoorWithoutAScriptEventHasNoRules) {
 }
 
 TEST(CDoor, TheFunctionsNotPortedYetQuit) {
-    CDoor door;
+    CTestClasses classes;
+    CDoor door{classes.get()};
     const NotPortedCalls calls = {
-        {"setup", [&] { door.setup(); }},
         {"process", [&] { door.process(0.0F); }},
         {"renderOpaque", [&] { static_cast<void>(door.renderOpaque()); }},
         {"renderBackground", [&] { door.renderBackground(0); }},
@@ -196,7 +223,7 @@ TEST(CDoor, IsConcrete) {
 }
 
 TEST(CDoor, Constructors) {
-    static_assert(std::is_constructible_v<CDoor>);
+    static_assert(std::is_constructible_v<CDoor, CActor &>);
 }
 
 TEST(CDoor, PublicInterface) {

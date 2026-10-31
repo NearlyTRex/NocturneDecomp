@@ -34,7 +34,7 @@ TEST(CLever, IsConcrete) {
 }
 
 TEST(CLever, Constructors) {
-    static_assert(std::is_constructible_v<CLever>);
+    static_assert(std::is_constructible_v<CLever, CActor &>);
 }
 
 TEST(CLever, PublicInterface) {
@@ -67,7 +67,8 @@ TEST(CLever, ItsRecordIsVersion8UnderCDemonActorAndMissionsCanCreateOne) {
 }
 
 TEST(CLever, ALeverIsAMomentaryGroundLeverPulledFromEitherSide) {
-    CLever lever;
+    CTestClasses classes;
+    CLever lever{classes.get()};
     EXPECT_EQ(lever.getModel().getModelName(), "glever.kfm");
     EXPECT_EQ(lever.getLeverType(), ELeverType::kGround);
     EXPECT_EQ(lever.getOnEvent(), "");
@@ -98,7 +99,8 @@ protected:
         EXPECT_TRUE(archive.isFinished());
     }
 
-    CLever lever_;
+    CTestClasses classes_;
+    CLever lever_{classes_.get()};
     CTestActor other_{kTestBaseType};
 };
 
@@ -125,6 +127,21 @@ TEST_F(CLeverArchiveTest, ALeverIsReadWithTheLeverItMovesAndItsRules) {
     EXPECT_EQ(lever_.getCollisionType(nullptr), ECollisionType::kNone);
 }
 
+TEST_F(CLeverArchiveTest, ALeverWithNoSoundSoundsOfMetal) {
+    read(1, "\"g.kfm\"\n0\n\"On\"\n\"Off\"\n\"\"\n0.25\n");
+    lever_.setup();
+    EXPECT_EQ(lever_.getSound(), "lever-metal.wav");
+}
+
+TEST_F(CLeverArchiveTest, AnElevatorButtonOrALeverWithASoundKeepsIt) {
+    read(1, "\"ElevButton.kfm\"\n0\n\"On\"\n\"Off\"\n\"\"\n0.25\n");
+    lever_.setup();
+    EXPECT_EQ(lever_.getSound(), "");
+    read(1, "\"g.kfm\"\n0\n\"On\"\n\"Off\"\n\"clunk.wav\"\n0.25\n");
+    lever_.setup();
+    EXPECT_EQ(lever_.getSound(), "clunk.wav");
+}
+
 TEST_F(CLeverArchiveTest, AVersionOneLeverHasOnlyItsModelEventsSoundAndPosition) {
     read(1, "\"g.kfm\"\n0\n\"On\"\n\"Off\"\n\"\"\n0.25\n");
     EXPECT_EQ(lever_.getParam(), 0.25F);
@@ -134,9 +151,9 @@ TEST_F(CLeverArchiveTest, AVersionOneLeverHasOnlyItsModelEventsSoundAndPosition)
 }
 
 TEST(CLever, TheFunctionsNotPortedYetQuit) {
-    CLever lever;
+    CTestClasses classes;
+    CLever lever{classes.get()};
     const NotPortedCalls calls = {
-        {"setup", [&] { lever.setup(); }},
         {"process", [&] { lever.process(0.0F); }},
         {"renderOpaque", [&] { static_cast<void>(lever.renderOpaque()); }},
         {"getBoundingBox", [&] { static_cast<void>(lever.getBoundingBox(nullptr)); }},

@@ -1,11 +1,13 @@
 #include "core/door/door.h"
 
 #include "common/math/vector3f.h"
+#include "core/actor/actor.h"
 #include "core/actor/actorarchive.h"
 #include "core/actor/demonactortype.h"
 #include "core/dmodel/keyframedmodelinstance.h"
 #include "core/event/rulelist.h"
 
+#include <format>
 #include <memory>
 #include <string>
 #include <string_view>
@@ -38,8 +40,20 @@ constinit const CDemonActorType CDoor::kType =
     makeActorType("CDoor", &CDemonActor::kType, &CDoor::create, kVersion);
 
 // nocedit 0x0047fad0
-CDoor::CDoor() {
+CDoor::CDoor(CActor &classes) : model_(classes.getKeyFramedModels()) {
     model_.setModelName("churchd01.kfm");
+}
+
+// nocedit 0x0047fc70
+void CDoor::setup() {
+    model_.preCache();
+    CDemonActor::setup();
+    if (open_event_ == kDefaultOpenEvent) {
+        open_event_ = std::format("{}Open", getActorName());
+    }
+    if (close_event_ == kDefaultCloseEvent) {
+        close_event_ = std::format("{}Close", getActorName());
+    }
 }
 
 // nocedit 0x00481670
@@ -51,8 +65,8 @@ const CDemonActorType &CDoor::getActorType() const {
 }
 
 // nocedit 0x0047fa90
-std::unique_ptr<CDemonActor> CDoor::create(CActor & /*classes*/) {
-    return std::make_unique<CDoor>();
+std::unique_ptr<CDemonActor> CDoor::create(CActor &classes) {
+    return std::make_unique<CDoor>(classes);
 }
 
 // nocedit 0x00480aa0

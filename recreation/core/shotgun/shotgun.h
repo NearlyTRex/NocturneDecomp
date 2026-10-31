@@ -9,7 +9,7 @@ class CShotgun : public CWeapon {
 public:
     static const CDemonActorType kType;
 
-    CShotgun();
+    explicit CShotgun(CActor &classes);
     ~CShotgun() override;
 
     void process(float delta_time) override;

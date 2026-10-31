@@ -17,12 +17,15 @@ public:
     // The most parts a model can have.
     static constexpr std::size_t kMaxParts = 30;
 
-    CKeyFramedModelInstance();
+    // Its model is found among the models given.
+    explicit CKeyFramedModelInstance(IKeyFramedModels &models);
 
     void prepareForRendering(float animation_frame, int render_flags);
-    CKeyFramedModel *preCache();
-    CKeyFramedModel *getModelPtr();
-    // Names the model, from the models folder, and shows every part.
+    // Finds the model named, loading it the first time.
+    CKeyFramedModel &preCache();
+    // Fatal before preCache.
+    CKeyFramedModel &getModelPtr();
+    // Names the model, from the models folder, lets go of the one found and shows every part.
     void setModelName(std::string_view filename);
 
     [[nodiscard]] const std::string &getModelName() const;
@@ -31,7 +34,9 @@ public:
 private:
     void init();
 
+    IKeyFramedModels &models_;
     std::string model_name_;
+    CKeyFramedModel *model_ptr_ = nullptr;
     std::array<EPartVisibility, kMaxParts> part_visibility_{};
 };
 

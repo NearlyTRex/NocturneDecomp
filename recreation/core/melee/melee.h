@@ -9,7 +9,7 @@ class CMelee : public CWeapon {
 public:
     static const CDemonActorType kType;
 
-    CMelee();
+    explicit CMelee(CActor &classes);
     ~CMelee() override;
 
     void process(float delta_time) override;

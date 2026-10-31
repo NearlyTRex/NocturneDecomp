@@ -25,7 +25,8 @@ public:
     // The most actors a platform carries.
     static constexpr std::size_t kMaxAttachedActors = 10;
 
-    CPlatform();
+    // Its model is found among those the classes hold.
+    explicit CPlatform(CActor &classes);
     ~CPlatform() override;
     CPlatform(const CPlatform &) = delete;
     CPlatform &operator=(const CPlatform &) = delete;

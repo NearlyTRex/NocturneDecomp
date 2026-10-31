@@ -4,6 +4,7 @@
 #include "tests/mocks/core/testclasses.h"
 #include "tests/mocks/core/testfieldsarchive.h"
 
+#include <gmock/gmock.h>
 #include <gtest/gtest.h>
 
 #include <memory>
@@ -25,7 +26,7 @@ TEST(CHealthItem, IsConcrete) {
 }
 
 TEST(CHealthItem, Constructors) {
-    static_assert(std::is_constructible_v<CHealthItem>);
+    static_assert(std::is_constructible_v<CHealthItem, CActor &>);
 }
 
 TEST(CHealthItem, PublicInterface) {
@@ -59,14 +60,16 @@ TEST(CHealthItem, ItsRecordIsVersion3UnderCDemonActorAndMissionsCanCreateOne) {
 }
 
 TEST(CHealthItem, AHealthItemGivesBackFiftyHitPointsOnce) {
-    const CHealthItem item;
+    CTestClasses classes;
+    const CHealthItem item{classes.get()};
     EXPECT_EQ(item.getModel().getModelName(), "bullet.kfm");
     EXPECT_EQ(item.getUseCount(), 1);
     EXPECT_EQ(item.getHpRestored(), 50.0F);
 }
 
 TEST(CHealthItem, AHealthItemIsReadWithItsModelAndUses) {
-    CHealthItem item;
+    CTestClasses classes;
+    CHealthItem item{classes.get()};
     CTestFieldsArchive archive(item, CHealthItem::kType, 3,
                                "\"medkit.kfm\"\n3 // useCount\n25 // hpRestored\n");
     item.archive(archive.get());
@@ -79,7 +82,8 @@ TEST(CHealthItem, AHealthItemIsReadWithItsModelAndUses) {
 
 // Version 2 also held a shown name, which is passed over.
 TEST(CHealthItem, AVersionTwoHealthItemsNameIsDropped) {
-    CHealthItem item;
+    CTestClasses classes;
+    CHealthItem item{classes.get()};
     CTestFieldsArchive archive(item, CHealthItem::kType, 2,
                                "\"medkit.kfm\"\n3\n25\n\"Medkit\" // descriptiveName\n");
     item.archive(archive.get());
@@ -88,16 +92,17 @@ TEST(CHealthItem, AVersionTwoHealthItemsNameIsDropped) {
 }
 
 TEST(CHealthItem, ProcessingLeavesTheItemAsItIs) {
-    CHealthItem item;
+    CTestClasses classes;
+    CHealthItem item{classes.get()};
     item.process(1.0F);
     EXPECT_EQ(item.getUseCount(), 1);
     EXPECT_EQ(item.getHpRestored(), 50.0F);
 }
 
 TEST(CHealthItem, TheFunctionsNotPortedYetQuit) {
-    CHealthItem item;
+    CTestClasses classes;
+    CHealthItem item{classes.get()};
     const NotPortedCalls calls = {
-        {"setup", [&] { item.setup(); }},
         {"renderOpaque", [&] { static_cast<void>(item.renderOpaque()); }},
         {"getBoundingBox", [&] { static_cast<void>(item.getBoundingBox(nullptr)); }},
         {"getCollisionType", [&] { static_cast<void>(item.getCollisionType(nullptr)); }},
@@ -105,6 +110,14 @@ TEST(CHealthItem, TheFunctionsNotPortedYetQuit) {
         {"canPickup", [&] { static_cast<void>(item.canPickup(nullptr)); }},
     };
     expectEachQuitsNotPorted("CHealthItem", calls);
+}
+
+TEST(CHealthItem, SettingUpFindsItsModel) {
+    CTestClasses classes;
+    CHealthItem item{classes.get()};
+    EXPECT_CALL(classes.getKeyFramedModels(), loadModel(::testing::StrEq("bullet.kfm")))
+        .WillOnce(::testing::ReturnRef(classes.getKeyFramedModel()));
+    item.setup();
 }
 
 } // namespace

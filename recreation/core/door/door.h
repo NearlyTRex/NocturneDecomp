@@ -12,6 +12,7 @@
 #include <cstdint>
 #include <memory>
 #include <string>
+#include <string_view>
 
 namespace nocturne::core {
 
@@ -21,13 +22,16 @@ class CDoor : public CDemonActor {
 public:
     static const CDemonActorType kType;
 
-    CDoor();
+    // Its model is found among those the classes hold.
+    explicit CDoor(CActor &classes);
     ~CDoor() override;
     CDoor(const CDoor &) = delete;
     CDoor &operator=(const CDoor &) = delete;
     CDoor(CDoor &&) = delete;
     CDoor &operator=(CDoor &&) = delete;
 
+    // Finds its model; events left at their defaults are named after the door, as <name>Open and
+    // <name>Close.
     void setup() override;
     void process(float delta_time) override;
     int renderOpaque() override;
@@ -83,13 +87,16 @@ public:
 private:
     static std::unique_ptr<CDemonActor> create(CActor &classes);
 
+    static constexpr std::string_view kDefaultOpenEvent = "defaultDoorOpen";
+    static constexpr std::string_view kDefaultCloseEvent = "defaultDoorClose";
+
     CKeyFramedModelInstance model_;
     EDoorType door_type_ = EDoorType::kSwing;
     EDoorSide door_side_ = EDoorSide::kRight;
     EDoorState door_state_ = EDoorState::kClosed;
     EDoorSwing door_swing_ = EDoorSwing::kClockwise;
-    std::string open_event_ = "defaultDoorOpen";
-    std::string close_event_ = "defaultDoorClose";
+    std::string open_event_{kDefaultOpenEvent};
+    std::string close_event_{kDefaultCloseEvent};
     std::string open_sound_;
     std::string close_sound_;
     std::string locked_sound_ = "door-locked.wav";

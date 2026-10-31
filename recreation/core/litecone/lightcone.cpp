@@ -38,6 +38,11 @@ std::unique_ptr<CDemonActor> CLightCone::create(CActor & /*classes*/) {
     return std::make_unique<CLightCone>();
 }
 
+// nocedit 0x00506bb0
+void CLightCone::setup() {
+    CDemonActor::setup();
+}
+
 // nocedit 0x00506d00
 void CLightCone::archive(CActorArchive &actor_archive) {
     CDemonActor::archive(actor_archive);

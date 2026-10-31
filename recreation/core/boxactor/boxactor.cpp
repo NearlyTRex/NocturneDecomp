@@ -1,5 +1,6 @@
 #include "core/boxactor/boxactor.h"
 
+#include "core/actor/actor.h"
 #include "core/actor/actor_functions.h"
 #include "core/actor/actorarchive.h"
 #include "core/actor/demonactortype.h"
@@ -44,7 +45,7 @@ constinit const CDemonActorType CBoxActor::kType =
 
 // deferred: the animation frame and the looping sound's handle, with CBoxActor::setup
 // nocedit 0x00421700
-CBoxActor::CBoxActor() {
+CBoxActor::CBoxActor(CActor &classes) : model_(classes.getKeyFramedModels()) {
     model_.setModelName("question.kfm");
     physics_box_.setValidity(kBoxToSetUp);
 }
@@ -58,8 +59,8 @@ const CDemonActorType &CBoxActor::getActorType() const {
 }
 
 // nocedit 0x004216c0
-std::unique_ptr<CDemonActor> CBoxActor::create(CActor & /*classes*/) {
-    return std::make_unique<CBoxActor>();
+std::unique_ptr<CDemonActor> CBoxActor::create(CActor &classes) {
+    return std::make_unique<CBoxActor>(classes);
 }
 
 // nocedit 0x00422060

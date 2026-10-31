@@ -25,7 +25,7 @@ TEST(CLightGun, IsConcrete) {
 }
 
 TEST(CLightGun, Constructors) {
-    static_assert(std::is_constructible_v<CLightGun>);
+    static_assert(std::is_constructible_v<CLightGun, CActor &>);
 }
 
 TEST(CLightGun, PublicInterface) {
@@ -48,12 +48,14 @@ TEST(CLightGun, ItsRecordIsAVersion1WeaponThatMissionsCanCreate) {
 }
 
 TEST(CLightGun, ALightGunIsTheCreModel) {
-    const CLightGun gun;
+    CTestClasses classes;
+    const CLightGun gun{classes.get()};
     EXPECT_EQ(gun.getModel().getModelName(), "cre.kfm");
 }
 
 TEST(CLightGun, TheFunctionsNotPortedYetQuit) {
-    CLightGun gun;
+    CTestClasses classes;
+    CLightGun gun{classes.get()};
     const NotPortedCalls calls = {
         {"process", [&] { gun.process(0.0F); }},
         {"fire", [&] { static_cast<void>(gun.fire()); }},

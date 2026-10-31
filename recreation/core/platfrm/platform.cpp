@@ -3,6 +3,7 @@
 #include "common/error/error.h"
 #include "common/math/quaternion4f.h"
 #include "common/math/vector3f.h"
+#include "core/actor/actor.h"
 #include "core/actor/actorarchive.h"
 #include "core/actor/demonactortype.h"
 #include "core/dmodel/keyframedmodelinstance.h"
@@ -42,7 +43,7 @@ constinit const CDemonActorType CPlatform::kType =
 // deferred: the course, the slew mode the editor sets, being drawn in the background, the health
 //   of 50 and the attached actors' places, with CPlatform::setup and CPlatform::process
 // nocedit 0x0054c850
-CPlatform::CPlatform() {
+CPlatform::CPlatform(CActor &classes) : model_(classes.getKeyFramedModels()) {
     model_.setModelName("slider1.kfm");
 }
 
@@ -55,8 +56,8 @@ const CDemonActorType &CPlatform::getActorType() const {
 }
 
 // nocedit 0x0054c810
-std::unique_ptr<CDemonActor> CPlatform::create(CActor & /*classes*/) {
-    return std::make_unique<CPlatform>();
+std::unique_ptr<CDemonActor> CPlatform::create(CActor &classes) {
+    return std::make_unique<CPlatform>(classes);
 }
 
 // A platform on a course has no ends of its own to read.

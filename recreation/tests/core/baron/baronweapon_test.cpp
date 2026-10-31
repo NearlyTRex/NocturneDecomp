@@ -25,7 +25,7 @@ TEST(CBaronWeapon, IsConcrete) {
 }
 
 TEST(CBaronWeapon, Constructors) {
-    static_assert(std::is_constructible_v<CBaronWeapon>);
+    static_assert(std::is_constructible_v<CBaronWeapon, CActor &>);
 }
 
 TEST(CBaronWeapon, PublicInterface) {
@@ -52,7 +52,8 @@ TEST(CBaronWeapon, ItsRecordIsAVersion1WeaponThatMissionsCanCreate) {
 }
 
 TEST(CBaronWeapon, TheFunctionsNotPortedYetQuit) {
-    CBaronWeapon weapon;
+    CTestClasses classes;
+    CBaronWeapon weapon{classes.get()};
     const NotPortedCalls calls = {
         {"setup", [&] { weapon.setup(); }},
         {"process", [&] { weapon.process(0.0F); }},

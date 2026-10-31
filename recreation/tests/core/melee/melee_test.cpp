@@ -21,7 +21,7 @@ TEST(CMelee, IsConcrete) {
 }
 
 TEST(CMelee, Constructors) {
-    static_assert(std::is_constructible_v<CMelee>);
+    static_assert(std::is_constructible_v<CMelee, CActor &>);
 }
 
 TEST(CMelee, PublicInterface) {

@@ -14,7 +14,8 @@ class CBackgroundActor : public CDemonActor {
 public:
     static const CDemonActorType kType;
 
-    CBackgroundActor();
+    // Its model is found among those the classes hold.
+    explicit CBackgroundActor(CActor &classes);
     ~CBackgroundActor() override;
     CBackgroundActor(const CBackgroundActor &) = delete;
     CBackgroundActor &operator=(const CBackgroundActor &) = delete;

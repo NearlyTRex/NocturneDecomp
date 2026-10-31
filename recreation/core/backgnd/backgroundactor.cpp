@@ -1,5 +1,6 @@
 #include "core/backgnd/backgroundactor.h"
 
+#include "core/actor/actor.h"
 #include "core/actor/actorarchive.h"
 #include "core/actor/demonactortype.h"
 #include "core/dmodel/keyframedmodelinstance.h"
@@ -22,7 +23,7 @@ constinit const CDemonActorType CBackgroundActor::kType =
     makeActorType("CBackgroundActor", &CDemonActor::kType, &CBackgroundActor::create, kVersion);
 
 // nocedit 0x004127b0
-CBackgroundActor::CBackgroundActor() {
+CBackgroundActor::CBackgroundActor(CActor &classes) : model_(classes.getKeyFramedModels()) {
     model_.setModelName("candle.kfm");
 }
 
@@ -35,8 +36,15 @@ const CDemonActorType &CBackgroundActor::getActorType() const {
 }
 
 // nocedit 0x00412770
-std::unique_ptr<CDemonActor> CBackgroundActor::create(CActor & /*classes*/) {
-    return std::make_unique<CBackgroundActor>();
+std::unique_ptr<CDemonActor> CBackgroundActor::create(CActor &classes) {
+    return std::make_unique<CBackgroundActor>(classes);
+}
+
+// deferred: colliding only when collideWithMe is set, with CDemonSet::buildCollidableActorList
+// nocedit 0x00412810
+void CBackgroundActor::setup() {
+    model_.preCache();
+    CDemonActor::setup();
 }
 
 // nocedit 0x00412990

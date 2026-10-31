@@ -12,7 +12,7 @@ class CBaronWeapon : public CWeapon {
 public:
     static const CDemonActorType kType;
 
-    CBaronWeapon();
+    explicit CBaronWeapon(CActor &classes);
     ~CBaronWeapon() override;
     CBaronWeapon(const CBaronWeapon &) = delete;
     CBaronWeapon &operator=(const CBaronWeapon &) = delete;

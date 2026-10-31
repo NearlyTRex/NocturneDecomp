@@ -11,8 +11,10 @@
 #include "tests/mocks/core/gameparts.h"
 #include "tests/mocks/core/mockactorlookup.h"
 #include "tests/mocks/core/mockdeformablemodels.h"
+#include "tests/mocks/core/mockkeyframedmodels.h"
 #include "tests/mocks/core/notportedcalls.h"
 #include "tests/mocks/core/testactor.h"
+#include "tests/mocks/core/testclasses.h"
 #include "tests/mocks/engine/mockgameclock.h"
 
 #include <gmock/gmock.h>
@@ -74,13 +76,16 @@ TEST(CWeapon, ItsRecordIsVersion7UnderCDemonActor) {
 // A weapon of no class but its own, so its calls reach CWeapon's.
 class CTestWeapon : public CWeapon {
 public:
+    using CWeapon::CWeapon;
+
     [[nodiscard]] const CDemonActorType &getActorType() const override {
         return kType;
     }
 };
 
 TEST(CWeapon, AWeaponLiesAroundWithTwentyRoundsUntilCarried) {
-    CTestWeapon weapon;
+    CTestClasses classes;
+    CTestWeapon weapon{classes.get()};
     EXPECT_EQ(weapon.getModel().getModelName(), "gat.kfm");
     EXPECT_EQ(weapon.getCarrier(), nullptr);
     EXPECT_EQ(weapon.getWeaponState(), EWeaponState::kLyingAround);
@@ -117,9 +122,10 @@ protected:
     CGame &game_ = game_parts_.getGame();
     common::CWatcomRandom crt_;
     ::testing::NiceMock<MockDeformableModels> models_;
-    CActor classes_{game_, crt_, models_};
+    ::testing::NiceMock<MockKeyFramedModels> keyframed_models_;
+    CActor classes_{game_, crt_, models_, keyframed_models_};
     ::testing::NiceMock<MockActorLookup> actors_;
-    CTestWeapon weapon_;
+    CTestWeapon weapon_{classes_};
     CTestActor carrier_{kTestBaseType};
 };
 
@@ -152,7 +158,8 @@ TEST_F(CWeaponArchiveTest, AnOlderWeaponHasFewerFields) {
 }
 
 TEST(CWeapon, TheFunctionsNotPortedYetQuit) {
-    CTestWeapon weapon;
+    CTestClasses classes;
+    CTestWeapon weapon{classes.get()};
     const NotPortedCalls calls = {
         {"setup", [&] { weapon.setup(); }},
         {"process", [&] { weapon.process(0.0F); }},

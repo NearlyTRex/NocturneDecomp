@@ -3,6 +3,7 @@
 #include "core/actor/actor.h"
 #include "core/dfilter/demonfilter.h"
 #include "core/dfont/dfont.h"
+#include "core/dmodel/keyframedmodelmanager.h"
 #include "core/event/eventlist.h"
 #include "core/game/game.h"
 #include "core/inivar/inivar.h"
@@ -215,7 +216,8 @@ protected:
         set_parts_.owners(demon_renderer_, matrix_, special_, two_d_, screen_, raw_input_)};
     common::CWatcomRandom crt_random_;
     CDeformableModelManager deformable_models_{dosio_, demon_renderer_};
-    CActor actor_{game_, crt_random_, deformable_models_};
+    CKeyFramedModelManager keyframed_models_{dosio_, demon_renderer_};
+    CActor actor_{game_, crt_random_, deformable_models_, keyframed_models_};
     shape::CEdControls controls_{{.two_d = two_d_,
                                   .screen = screen_,
                                   .raw_input = raw_input_,

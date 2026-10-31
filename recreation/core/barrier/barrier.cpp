@@ -37,6 +37,15 @@ std::unique_ptr<CDemonActor> CBarrier::create(CActor & /*classes*/) {
     return std::make_unique<CBarrier>();
 }
 
+// The original draws a barrier as transparent while the mission is in the editor, which the game
+// never is.
+// deferred: not drawn, with CDemonSet::buildActorTypeLists and renderOpaqueActors
+// nocedit 0x00414210
+void CBarrier::setup() {
+    CDemonActor::setup();
+    setTransparent(false);
+}
+
 // nocedit 0x00414340
 void CBarrier::archive(CActorArchive &actor_archive) {
     CDemonActor::archive(actor_archive);

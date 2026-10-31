@@ -1,5 +1,7 @@
 #include "core/waypoint/waypoint.h"
 
+#include "common/error/error.h"
+#include "common/text/ascii.h"
 #include "core/actor/actorarchive.h"
 #include "core/actor/demonactortype.h"
 
@@ -7,6 +9,7 @@
 #include <cstddef>
 #include <memory>
 #include <span>
+#include <string>
 
 namespace nocturne::core {
 
@@ -43,9 +46,19 @@ std::unique_ptr<CDemonActor> CWayPoint::create(CActor & /*classes*/) {
     return std::make_unique<CWayPoint>();
 }
 
+// deferred: each adjacent waypoint's distance, with addAdj and findNearestReachable
+// nocedit 0x005ebeb0
+void CWayPoint::setup() {
+    CTrigger::setup();
+    const std::string &event = getCreateEvent();
+    if (!event.empty() && !common::equalsIgnoringAsciiCase(event, "none") &&
+        !common::equalsIgnoringAsciiCase(event, "true")) {
+        common::displayErrorAndQuit("Can't have creation event for waypoint.");
+    }
+}
+
 // Version 1's next waypoint is read and dropped. The original held 60 waypoints, which more
 // overran.
-// deferred: each adjacent waypoint's distance, with setup
 // nocedit 0x005ec280
 void CWayPoint::archive(CActorArchive &actor_archive) {
     CTrigger::archive(actor_archive);

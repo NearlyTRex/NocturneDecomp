@@ -7,6 +7,7 @@
 #include "core/dfilter/demonfilter.h"
 #include "core/dfont/dfont.h"
 #include "core/dmodel/keyframedmodel.h"
+#include "core/dmodel/keyframedmodelmanager.h"
 #include "core/dtrace/demonraytrace.h"
 #include "core/event/eventlist.h"
 #include "core/game/chapterselectmode.h"
@@ -281,7 +282,8 @@ private:
                           .raw_input = winrun_}};
     nocturne::common::CWatcomRandom crt_random_;
     core::CDeformableModelManager deformable_models_{dosio_, demon_renderer_};
-    core::CActor actor_{game_, crt_random_, deformable_models_};
+    core::CKeyFramedModelManager keyframed_models_{dosio_, demon_renderer_};
+    core::CActor actor_{game_, crt_random_, deformable_models_, keyframed_models_};
     nocturne::shape::CEdControls controls_{{.two_d = two_d_,
                                             .screen = screen_,
                                             .raw_input = winrun_,

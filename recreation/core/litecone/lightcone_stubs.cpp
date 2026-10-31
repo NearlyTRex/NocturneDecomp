@@ -15,10 +15,6 @@ namespace {
 
 } // namespace
 
-void CLightCone::setup() {
-    notPorted("setup");
-}
-
 void CLightCone::process(float /*delta_time*/) {
     notPorted("process");
 }

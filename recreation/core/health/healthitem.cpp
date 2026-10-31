@@ -1,5 +1,6 @@
 #include "core/health/healthitem.h"
 
+#include "core/actor/actor.h"
 #include "core/actor/actorarchive.h"
 #include "core/actor/demonactortype.h"
 #include "core/dmodel/keyframedmodelinstance.h"
@@ -23,7 +24,7 @@ constinit const CDemonActorType CHealthItem::kType =
     makeActorType("CHealthItem", &CDemonActor::kType, &CHealthItem::create, kVersion);
 
 // nocedit 0x004f1dd0
-CHealthItem::CHealthItem() {
+CHealthItem::CHealthItem(CActor &classes) : model_(classes.getKeyFramedModels()) {
     model_.setModelName("bullet.kfm");
 }
 
@@ -36,8 +37,14 @@ const CDemonActorType &CHealthItem::getActorType() const {
 }
 
 // nocedit 0x004f1d90
-std::unique_ptr<CDemonActor> CHealthItem::create(CActor & /*classes*/) {
-    return std::make_unique<CHealthItem>();
+std::unique_ptr<CDemonActor> CHealthItem::create(CActor &classes) {
+    return std::make_unique<CHealthItem>(classes);
+}
+
+// nocedit 0x004f1e30
+void CHealthItem::setup() {
+    model_.preCache();
+    CDemonActor::setup();
 }
 
 // Version 2 held a shown name, which is read and dropped.

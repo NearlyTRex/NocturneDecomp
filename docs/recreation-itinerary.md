@@ -19,34 +19,34 @@ functions don't count as done. Sizes are in instructions.
 | 3 | Sound system: `sndmain`, `CSound` lifetime, `readIniData` | 7 | 123 | 8346 | 122 | 1 | 99.1% |
 | 4 | `initFonts`, `CEditorTools::showWarning` | 11 | 46 | 4804 | 45 | 1 | 97.8% |
 | 5 | `showCalibrationTest`, `playMovie`, `CAlphaBitmap::ctor`, `CAlphaBitmap::dtor`, `CSound::findAllSoundFiles`, `CDemonMission::reset`, `CDemonFilter::init`, `CMouse::load`, `CNetGame::init` | 14 | 50 | 4789 | 31 | 3 | 62.0% |
-| 6 | `initializeGameSystems`, `CAlphaBitmap::scale`, `clearTextureCache`, `CMoon::init`, `CGame::saveClockTime`, `CGame::updateDT` | 11 | 25 | 2988 | 19 | 6 | 76.0% |
+| 6 | `initializeGameSystems`, `CAlphaBitmap::scale`, `clearTextureCache`, `CMoon::init`, `CGame::saveClockTime`, `CGame::updateDT` | 11 | 25 | 2988 | 20 | 5 | 80.0% |
 | 7 | `CMoon::update`, `CMoon::render` | 17 | 120 | 17616 | 68 | 31 | 56.6% |
 | 8 | `renderMenuAndGetChoice`, `CMoon::free`, `CSound::reset`, `CEditorTools::showFileSelectionDialog` | 8 | 63 | 5314 | 60 | 3 | 95.2% |
-| 9 | `CPickList::enableItem`, `CEventList::resetGameFlags`, `CLevelLoader::show`, `CDemonMission::load` | 15 | 56 | 3298 | 31 | 12 | 55.3% |
+| 9 | `CPickList::enableItem`, `CEventList::resetGameFlags`, `CLevelLoader::show`, `CDemonMission::load` | 15 | 56 | 3298 | 32 | 12 | 57.1% |
 | 10 | `CDemonMission::createHeros`, `CDemonMission::prepareAllActors`, `CEventList::reset`, `CDemonMission::loadSet` | 15 | 42 | 5112 | 32 | 9 | 76.1% |
-| 11 | `CScript::loadScript` | 63 | 579 | 67400 | 63 | 31 | 10.8% |
+| 11 | `CScript::loadScript` | 63 | 579 | 67400 | 68 | 30 | 11.7% |
 | 12 | `CDemonMission::loadScript`, `CScript::executeInitSection`, `CDemonMission::startMission`, `CDemonMission::buildActiveSetActorList`, `CConsole::reset`, `CEditorTools::displayMemoryDiagnostics`, `CGame::setGameRes`, `CDemonLight::init`, `CDemonSet::initScene` | 12 | 26 | 1658 | 3 | 2 | 11.5% |
 | 13 | `CFireEffect::init`, `CDemonSet::loadMasterLightStates`, `CDemonSet::setGamma`, `CGame::clearOverlay`, `CGame::loadAssets` | 7 | 27 | 735 | 0 | 0 | 0.0% |
 | 14 | `CNetGame::syncPlayers`, `CNetGame::processServerFrame`, `CLevelLoader::cleanup`, `CKeys::toggleInputMask`, `CGame::processHotkeys` | 17 | 51 | 5302 | 4 | 0 | 7.8% |
-| 15 | `CGame::updateStatusDisplays`, `CGame::processFudge`, `CGame::playerControls`, `CGame::processFrame` | 43 | 189 | 28837 | 6 | 1 | 3.1% |
+| 15 | `CGame::updateStatusDisplays`, `CGame::processFudge`, `CGame::playerControls`, `CGame::processFrame` | 43 | 189 | 28837 | 7 | 0 | 3.7% |
 | 16 | `CGame::setScreenResolutionAndDisplayFangs`, `showOptionsScreen`, `CScript::skipCinematic`, `CGame::showFullscreenBitmap`, `CDemonMission::countDamageableEnemies`, `freeInventory`, `CGame::runGameSession`, `CGame::displayActStats` | 10 | 25 | 6938 | 9 | 3 | 36.0% |
-| 17 | `CGame::finishAct`, `CDemonMission::run`, `CGame::loadGame`, `CGame::showChapterSelect`, `showDeveloperToolsMenu` | 12 | 26 | 3707 | 4 | 2 | 15.3% |
+| 17 | `CGame::finishAct`, `CDemonMission::run`, `CGame::loadGame`, `CGame::showChapterSelect`, `showDeveloperToolsMenu` | 12 | 26 | 3707 | 5 | 1 | 19.2% |
 | 18 | `enterMainGameMenu`, `finalizeGameSystems` | 11 | 13 | 539 | 3 | 0 | 23.0% |
 | 19 | Not reached from startup: `engine/` | 23 | 279 | 19702 | 24 | 1 | 8.6% |
 | 20 | Not reached from startup: `support/` | 2 | 24 | 593 | 3 | 1 | 12.5% |
 | 21 | Not reached from startup: `cockpit/` | 4 | 178 | 11527 | 0 | 0 | 0.0% |
 | 22 | Not reached from startup: `shape/` | 2 | 42 | 3178 | 4 | 2 | 9.5% |
-| 23 | Not reached from startup: `core/` (part 1 of 9) | 18 | 292 | 16011 | 58 | 12 | 19.8% |
+| 23 | Not reached from startup: `core/` (part 1 of 9) | 18 | 292 | 16011 | 59 | 14 | 20.2% |
 | 24 | Not reached from startup: `core/` (part 2 of 9) | 11 | 277 | 24965 | 22 | 8 | 7.9% |
-| 25 | Not reached from startup: `core/` (part 3 of 9) | 24 | 278 | 24134 | 32 | 9 | 11.5% |
+| 25 | Not reached from startup: `core/` (part 3 of 9) | 24 | 278 | 24134 | 34 | 8 | 12.2% |
 | 26 | Not reached from startup: `core/` (part 4 of 9) | 18 | 300 | 20148 | 47 | 8 | 15.6% |
-| 27 | Not reached from startup: `core/` (part 5 of 9) | 21 | 294 | 20910 | 57 | 10 | 19.3% |
+| 27 | Not reached from startup: `core/` (part 5 of 9) | 21 | 294 | 20910 | 60 | 10 | 20.4% |
 | 28 | Not reached from startup: `core/` (part 6 of 9) | 18 | 282 | 21809 | 51 | 9 | 18.0% |
 | 29 | Not reached from startup: `core/` (part 7 of 9) | 18 | 263 | 22721 | 66 | 8 | 25.0% |
-| 30 | Not reached from startup: `core/` (part 8 of 9) | 20 | 300 | 31826 | 40 | 5 | 13.3% |
+| 30 | Not reached from startup: `core/` (part 8 of 9) | 20 | 300 | 31826 | 41 | 6 | 13.6% |
 | 31 | Not reached from startup: `core/` (part 9 of 9) | 5 | 111 | 10905 | 21 | 4 | 18.9% |
 | 32 | Not reached from startup: `wincore/` | 2 | 11 | 482 | 4 | 0 | 36.3% |
-| | **All** | | **4479** | **402407** | **1014** | **184** | **22.6%** |
+| | **All** | | **4479** | **402407** | **1030** | **182** | **22.9%** |
 
 ## Step 0: Math value types
 
@@ -580,7 +580,7 @@ functions don't count as done. Sizes are in instructions.
 - class `CBoundingBox3D`
   - [x] `expand` 0x00420240 (47)
 
-### `core/dmodel.cpp` (9 functions, 1490 instructions, 6 done, 3 partial)
+### `core/dmodel.cpp` (9 functions, 1490 instructions, 7 done, 2 partial)
 - class `CKeyFramedModel`
   - [x] `free` 0x00477690 (89)
   - [x] `allocate` 0x00477bf0 (152)
@@ -592,8 +592,7 @@ functions don't count as done. Sizes are in instructions.
   - [~] `calcNormals` 0x00477e60 (135)
     - unverified: the scale and its products, which the x87 kept in extended precision before the chop, by running calcNormals against nocedit's own code with axis-aligned and large sums
   - [x] `calculateFrameBounds` 0x00478010 (121)
-  - [~] `load` 0x00476db0 (112)
-    - deferred: keeping the filename in the model, which loadModel's pool lookup and CShell::onCollision read, with loadModel and CShell
+  - [x] `load` 0x00476db0 (112)
 
 ### `core/moon.cpp` (1 functions, 127 instructions, 1 done, 0 partial)
 - class `CMoon`
@@ -989,9 +988,9 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `buildCollidableActorList` 0x005743e0 (24)
   - [ ] `commitVoxelBuffer` 0x00574560 (4)
 
-### `core/dmodel.cpp` (1 functions, 15 instructions, 0 done, 0 partial)
+### `core/dmodel.cpp` (1 functions, 15 instructions, 1 done, 0 partial)
 - free functions
-  - [ ] `freeAllModels` 0x00478cb0 (15)
+  - [x] `freeAllModels` 0x00478cb0 (15)
 
 ### `core/skeleton.cpp` (4 functions, 151 instructions, 4 done, 0 partial)
 - class `CDeformableModel`
@@ -1206,19 +1205,18 @@ functions don't count as done. Sizes are in instructions.
 - free functions
   - [ ] `convertDirectionVectorToEulerAngles` 0x005e7830 (58)
 
-### `core/dmodel.cpp` (9 functions, 549 instructions, 1 done, 1 partial)
+### `core/dmodel.cpp` (9 functions, 549 instructions, 6 done, 0 partial)
 - class `CKeyFramedModel`
-  - [ ] `captureTextures` 0x00478190 (25)
+  - [x] `captureTextures` 0x00478190 (25)
   - [ ] `getFloorHeight` 0x00478740 (81)
   - [ ] `intersectRay` 0x004781d0 (313)
 - free functions
-  - [ ] `loadModel` 0x00478c00 (51)
+  - [x] `loadModel` 0x00478c00 (51)
 - class `CKeyFramedModelInstance`
-  - [ ] `preCache` 0x00478d60 (8)
+  - [x] `preCache` 0x00478d60 (8)
   - [x] `init` 0x00478d00 (8)
-  - [~] `setModelName` 0x00478dd0 (24)
-    - deferred: letting go of the model loaded, with getModelPtr
-  - [ ] `getModelPtr` 0x00478d80 (21)
+  - [x] `setModelName` 0x00478dd0 (24)
+  - [x] `getModelPtr` 0x00478d80 (21)
   - [ ] `prepareForRendering` 0x00478d20 (18)
 
 ### `core/trigger.cpp` (2 functions, 53 instructions, 0 done, 0 partial)
@@ -2376,10 +2374,9 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `promptForValidFloat` 0x004a00f0 (91)
   - [ ] `showCheatInputDialog` 0x004a0400 (16)
 
-### `core/dmodel.cpp` (1 functions, 10 instructions, 0 done, 1 partial)
+### `core/dmodel.cpp` (1 functions, 10 instructions, 1 done, 0 partial)
 - class `CKeyFramedModelInstance`
-  - [~] `ctor` 0x00478ce0 (10)
-    - deferred: starting with no model loaded, with getModelPtr
+  - [x] `ctor` 0x00478ce0 (10)
 
 ### `core/ammo.cpp` (1 functions, 39 instructions, 1 done, 0 partial)
 - class `CAmmo`
@@ -2796,10 +2793,9 @@ functions don't count as done. Sizes are in instructions.
   - [x] `ctor` 0x004424c0 (5)
   - [x] `dtor` 0x004424e0 (8)
 
-### `core/dmodel.cpp` (2 functions, 26 instructions, 1 done, 1 partial)
+### `core/dmodel.cpp` (2 functions, 26 instructions, 2 done, 0 partial)
 - class `CKeyFramedModel`
-  - [~] `ctor` 0x00476cf0 (18)
-    - deferred: the empty filename, with loadModel
+  - [x] `ctor` 0x00476cf0 (18)
   - [x] `dtor` 0x00476d90 (8)
 
 ### `shape/edittool.cpp` (1 functions, 27 instructions, 1 done, 0 partial)
@@ -3546,7 +3542,7 @@ functions don't count as done. Sizes are in instructions.
   - [x] `copy` 0x00410440 (26, compiler-generated)
   - [x] `dtor` 0x00410490 (2, compiler-generated)
 
-### `core/ammo.cpp` (12 functions, 174 instructions, 5 done, 0 partial)
+### `core/ammo.cpp` (12 functions, 174 instructions, 6 done, 0 partial)
 - free functions
   - [x] `factoryFuncAmmo` 0x00410d80 (12)
   - [x] `staticInit` 0x00410d50 (9)
@@ -3559,7 +3555,7 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `getCollisionType` 0x00410fa0 (2)
   - [ ] `canPickup` 0x004111c0 (9)
   - [x] `dtor` 0x004114e0 (31)
-  - [ ] `setup` 0x00410e50 (8)
+  - [x] `setup` 0x00410e50 (8)
   - [ ] `setAmmoCount` 0x004111b0 (4)
 
 ### `core/ammobox.cpp` (14 functions, 380 instructions, 1 done, 0 partial)
@@ -3612,7 +3608,7 @@ functions don't count as done. Sizes are in instructions.
 - class `CEnemy`
   - [x] `dtor` 0x004125c0 (62)
 
-### `core/backgnd.cpp` (13 functions, 248 instructions, 8 done, 0 partial)
+### `core/backgnd.cpp` (13 functions, 248 instructions, 8 done, 1 partial)
 - class `CBackgroundActor`
   - [x] `ctor` 0x004127b0 (21)
   - [x] `getActorType` 0x004127a0 (2)
@@ -3624,7 +3620,8 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `getCollisionType` 0x004129f0 (20)
   - [x] `getGroundType` 0x00412a30 (3)
   - [x] `dtor` 0x00412ad0 (31)
-  - [ ] `setup` 0x00412810 (17)
+  - [~] `setup` 0x00412810 (17)
+    - deferred: colliding only when collideWithMe is set, with CDemonSet::buildCollidableActorList
 - free functions
   - [x] `factoryFuncBackgroundActor` 0x00412770 (12)
   - [x] `staticInit` 0x00412740 (9)
@@ -3667,7 +3664,7 @@ functions don't count as done. Sizes are in instructions.
   - [x] `dtor` 0x004140b0 (31)
   - [ ] `setup` 0x00413da0 (8)
 
-### `core/barrier.cpp` (11 functions, 219 instructions, 6 done, 0 partial)
+### `core/barrier.cpp` (11 functions, 219 instructions, 6 done, 1 partial)
 - class `CBarrier`
   - [x] `ctor` 0x004141c0 (13)
   - [x] `getActorType` 0x004141b0 (2)
@@ -3677,7 +3674,8 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `getCollisionType` 0x004143a0 (23)
   - [ ] `updateCollisionData` 0x004143e0 (10)
   - [x] `dtor` 0x00414670 (31)
-  - [ ] `setup` 0x00414210 (11)
+  - [~] `setup` 0x00414210 (11)
+    - deferred: not drawn, with CDemonSet::buildActorTypeLists and renderOpaqueActors
 - free functions
   - [x] `factoryFuncBarrier` 0x00414180 (12)
   - [x] `staticInit` 0x00414150 (9)
@@ -4355,12 +4353,11 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `drawGrayscalePixel` 0x00473360 (16)
   - [ ] `renderConeLightGeometry` 0x004760d0 (333)
 
-### `core/dmodel.cpp` (5 functions, 108 instructions, 2 done, 1 partial)
+### `core/dmodel.cpp` (5 functions, 108 instructions, 3 done, 0 partial)
 - class `CKeyFramedModel`
   - [ ] `intersectCylinder` 0x00478650 (76)
 - free functions
-  - [~] `staticInit` 0x00476c50 (9)
-    - deferred: the pool of 256 models, with this
+  - [x] `staticInit` 0x00476c50 (9)
   - [ ] `skipLines` 0x00476c80 (19)
 - class `CDemonTriangle`
   - [x] `ctor` 0x0047eef0 (2, compiler-generated)
@@ -4380,7 +4377,7 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `factoryFuncZombieDog` 0x0047f010 (12)
   - [x] `staticInit` 0x0047efe0 (9)
 
-### `core/door.cpp` (23 functions, 1740 instructions, 10 done, 0 partial)
+### `core/door.cpp` (23 functions, 1740 instructions, 11 done, 0 partial)
 - class `CDoor`
   - [ ] `getOpenStandPos` 0x00480e20 (177)
   - [ ] `onOpened` 0x0047fcf0 (8)
@@ -4400,7 +4397,7 @@ functions don't count as done. Sizes are in instructions.
   - [x] `allowBulletHoles` 0x00480e00 (3)
   - [ ] `updateCollisionData` 0x00481020 (19)
   - [x] `dtor` 0x00481670 (31)
-  - [ ] `setup` 0x0047fc70 (40)
+  - [x] `setup` 0x0047fc70 (40)
   - [x] `setSwingRange` 0x00480de0 (4)
 - free functions
   - [x] `factoryFuncDoor` 0x0047fa90 (12)
@@ -5097,7 +5094,7 @@ functions don't count as done. Sizes are in instructions.
   - [x] `factoryFuncHaystack` 0x004f0bd0 (12)
   - [x] `staticInit` 0x004f0ba0 (9)
 
-### `core/health.cpp` (14 functions, 221 instructions, 7 done, 0 partial)
+### `core/health.cpp` (14 functions, 221 instructions, 8 done, 0 partial)
 - class `CHealthItem`
   - [x] `ctor` 0x004f1dd0 (21)
   - [x] `getActorType` 0x004f1dc0 (2)
@@ -5109,7 +5106,7 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `canPickup` 0x004f1fb0 (9)
   - [ ] `onPickup` 0x004f2020 (7)
   - [x] `dtor` 0x004f20d0 (31)
-  - [ ] `setup` 0x004f1e30 (8)
+  - [x] `setup` 0x004f1e30 (8)
   - [ ] `useItem` 0x004f1fd0 (15)
 - free functions
   - [x] `factoryFuncHealthItem` 0x004f1d90 (12)
@@ -5345,7 +5342,7 @@ functions don't count as done. Sizes are in instructions.
 - free functions
   - [x] `staticInit` 0x00503d80 (10)
 
-### `core/lever.cpp` (14 functions, 639 instructions, 7 done, 0 partial)
+### `core/lever.cpp` (14 functions, 639 instructions, 8 done, 0 partial)
 - class `CLever`
   - [ ] `isAccessibleFrom` 0x00505080 (56)
   - [ ] `activate` 0x00504c90 (34)
@@ -5357,7 +5354,7 @@ functions don't count as done. Sizes are in instructions.
   - [x] `archive` 0x00504e80 (131)
   - [x] `getCollisionType` 0x00505060 (5)
   - [x] `dtor` 0x00505430 (31)
-  - [ ] `setup` 0x005048a0 (47)
+  - [x] `setup` 0x005048a0 (47)
   - [ ] `getHandlePosition` 0x00504dd0 (56)
 - free functions
   - [x] `factoryFuncLever` 0x00504790 (12)
@@ -5383,7 +5380,7 @@ functions don't count as done. Sizes are in instructions.
   - [x] `factoryFuncLightGun` 0x005058c0 (12)
   - [x] `staticInit` 0x00505890 (9)
 
-### `core/litecone.cpp` (11 functions, 243 instructions, 5 done, 1 partial)
+### `core/litecone.cpp` (11 functions, 243 instructions, 6 done, 1 partial)
 - class `CLightCone`
   - [~] `ctor` 0x00506b10 (44)
     - deferred: drawing the cone transparent, with the set's renderable lists
@@ -5394,7 +5391,7 @@ functions don't count as done. Sizes are in instructions.
   - [x] `archive` 0x00506d00 (37)
   - [ ] `getCollisionType` 0x00506d90 (2)
   - [x] `dtor` 0x00506e30 (31)
-  - [ ] `setup` 0x00506bb0 (5)
+  - [x] `setup` 0x00506bb0 (5)
 - free functions
   - [x] `factoryFuncLightCone` 0x00506ad0 (12)
   - [x] `staticInit` 0x00506aa0 (9)
@@ -6400,7 +6397,7 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `factoryFuncTrash` 0x005deb30 (12)
   - [x] `staticInit` 0x005deb00 (9)
 
-### `core/trigger.cpp` (18 functions, 1660 instructions, 6 done, 2 partial)
+### `core/trigger.cpp` (18 functions, 1660 instructions, 6 done, 3 partial)
 - class `CTrigger`
   - [ ] `onProjectileHit` 0x005e0aa0 (6)
   - [~] `ctor` 0x005df840 (63)
@@ -6419,7 +6416,11 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `onLaserHit` 0x005e0a50 (23)
   - [ ] `getTargetPoints` 0x005e0c30 (53)
   - [x] `dtor` 0x005e1660 (31)
-  - [ ] `setup` 0x005df990 (50)
+  - [~] `setup` 0x005df990 (50)
+    - deferred: not drawn, with CDemonSet::buildActorTypeLists and renderOpaqueActors
+    - deferred: colliding only when a laser, bullet or damage sets it off, with CDemonSet::buildCollidableActorList
+    - deferred: no event raised and no actor held yet, with CTrigger::process
+    - deferred: not processed with neither event, with CDemonSet::processActors
 - free functions
   - [x] `factoryFuncTrigger` 0x005df800 (12)
   - [x] `staticInit` 0x005df7d0 (9)
@@ -6571,17 +6572,17 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `factoryFuncWaterActor` 0x005ea860 (12)
   - [x] `staticInit` 0x005ea810 (19)
 
-### `core/waypoint.cpp` (10 functions, 650 instructions, 5 done, 1 partial)
+### `core/waypoint.cpp` (10 functions, 650 instructions, 6 done, 1 partial)
 - class `CWayPoint`
   - [ ] `isReachable` 0x005ebd40 (91)
   - [ ] `findNearestReachable` 0x005ec320 (133)
   - [x] `ctor` 0x005ebe70 (10)
   - [x] `getActorType` 0x005ebe60 (2)
   - [ ] `renderOpaque` 0x005ebf70 (241)
-  - [~] `archive` 0x005ec280 (53)
-    - deferred: each adjacent waypoint's distance, with setup
+  - [x] `archive` 0x005ec280 (53)
   - [x] `dtor` 0x005ec8d0 (31)
-  - [ ] `setup` 0x005ebeb0 (68)
+  - [~] `setup` 0x005ebeb0 (68)
+    - deferred: each adjacent waypoint's distance, with addAdj and findNearestReachable
 - free functions
   - [x] `factoryFuncWayPoint` 0x005ebe30 (12)
   - [x] `staticInit` 0x005ebd10 (9)

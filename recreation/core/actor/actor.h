@@ -21,7 +21,8 @@ public:
     static constexpr std::size_t kMaxActorTypes = 200;
 
     // Registers the actor classes ported so far.
-    CActor(const CGame &game, common::CWatcomRandom &crt_random, IDeformableModels &models);
+    CActor(const CGame &game, common::CWatcomRandom &crt_random, IDeformableModels &models,
+           IKeyFramedModels &keyframed_models);
 
     // More than kMaxActorTypes is fatal.
     void registerActorClass(const CDemonActorType &type);
@@ -47,6 +48,7 @@ public:
     [[nodiscard]] int randomChance(float probability_threshold);
 
     [[nodiscard]] IDeformableModels &getModels() const;
+    [[nodiscard]] IKeyFramedModels &getKeyFramedModels() const;
 
 private:
     void registerActorClasses();
@@ -58,6 +60,7 @@ private:
     const CGame &game_;
     common::CWatcomRandom &crt_random_;
     IDeformableModels &models_;
+    IKeyFramedModels &keyframed_models_;
     std::uint32_t random_seed_value_ = 0;
     std::vector<const CDemonActorType *> registrations_;
     // Only the classes the file listed; the rest read as version 1.

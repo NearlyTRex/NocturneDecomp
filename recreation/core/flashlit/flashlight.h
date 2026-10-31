@@ -9,7 +9,7 @@ class CFlashlight : public CWeapon {
 public:
     static const CDemonActorType kType;
 
-    CFlashlight();
+    explicit CFlashlight(CActor &classes);
     ~CFlashlight() override;
 
     [[nodiscard]] const CDemonActorType &getActorType() const override;

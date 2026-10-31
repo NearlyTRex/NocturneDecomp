@@ -21,7 +21,7 @@ TEST(CElephantGun, IsConcrete) {
 }
 
 TEST(CElephantGun, Constructors) {
-    static_assert(std::is_constructible_v<CElephantGun>);
+    static_assert(std::is_constructible_v<CElephantGun, CActor &>);
 }
 
 TEST(CElephantGun, PublicInterface) {

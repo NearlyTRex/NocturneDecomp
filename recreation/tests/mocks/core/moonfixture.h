@@ -10,6 +10,7 @@
 #include "platform/rendervertex.h"
 #include "tests/mocks/core/gameparts.h"
 #include "tests/mocks/core/mockdeformablemodels.h"
+#include "tests/mocks/core/mockkeyframedmodels.h"
 #include "tests/mocks/core/moonfiles.h"
 #include "tests/mocks/core/setparts.h"
 #include "tests/mocks/engine/demonrendererfixture.h"
@@ -96,7 +97,8 @@ protected:
     CGame &game_ = game_parts_.getGame();
     common::CWatcomRandom crt_random_;
     ::testing::NiceMock<MockDeformableModels> models_;
-    CActor actor_{game_, crt_random_, models_};
+    ::testing::NiceMock<MockKeyFramedModels> keyframed_models_;
+    CActor actor_{game_, crt_random_, models_, keyframed_models_};
     CSetParts set_parts_{dosio_};
     CDemonSet set_{
         set_parts_.owners(demon_renderer_, matrix_, special_, two_d_, screen_, raw_input_)};

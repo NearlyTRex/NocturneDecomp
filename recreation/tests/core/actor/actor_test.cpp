@@ -40,6 +40,7 @@
 #include "core/zombie/zombie.h"
 #include "tests/mocks/core/gameparts.h"
 #include "tests/mocks/core/mockdeformablemodels.h"
+#include "tests/mocks/core/mockkeyframedmodels.h"
 #include "tests/mocks/core/testactor.h"
 #include "tests/mocks/engine/mockgameclock.h"
 
@@ -66,7 +67,7 @@ TEST(CActor, IsConcrete) {
 
 TEST(CActor, Constructors) {
     static_assert(std::is_constructible_v<CActor, const CGame &, common::CWatcomRandom &,
-                                          IDeformableModels &>);
+                                          IDeformableModels &, IKeyFramedModels &>);
 }
 
 TEST(CActor, PublicInterface) {
@@ -93,7 +94,8 @@ protected:
     CGame &game_ = game_parts_.getGame();
     common::CWatcomRandom crt_;
     ::testing::NiceMock<MockDeformableModels> models_;
-    CActor actor_{game_, crt_, models_};
+    ::testing::NiceMock<MockKeyFramedModels> keyframed_models_;
+    CActor actor_{game_, crt_, models_, keyframed_models_};
 };
 
 TEST_F(CActorRegistryTest, TheActorsItMakesFindTheirModelsInWhatItWasGiven) {
@@ -210,7 +212,8 @@ protected:
     CGame &game_ = game_parts_.getGame();
     common::CWatcomRandom crt_;
     ::testing::NiceMock<MockDeformableModels> models_;
-    CActor actor_{game_, crt_, models_};
+    ::testing::NiceMock<MockKeyFramedModels> keyframed_models_;
+    CActor actor_{game_, crt_, models_, keyframed_models_};
 };
 
 TEST_F(CActorTest, OutsideASimFrameDrawsFromTheCrtStream) {

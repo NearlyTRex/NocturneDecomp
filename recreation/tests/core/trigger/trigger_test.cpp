@@ -193,7 +193,6 @@ TEST(CTrigger, TheOldestTriggersHoldFewerFields) {
 TEST(CTrigger, TheFunctionsNotPortedYetQuit) {
     CTrigger trigger;
     const NotPortedCalls calls = {
-        {"setup", [&] { trigger.setup(); }},
         {"process", [&] { trigger.process(0.0F); }},
         {"renderTransparent", [&] { static_cast<void>(trigger.renderTransparent()); }},
         {"getCollisionType", [&] { static_cast<void>(trigger.getCollisionType(nullptr)); }},
@@ -203,7 +202,7 @@ TEST(CTrigger, TheFunctionsNotPortedYetQuit) {
         {"processActionButton", [&] { static_cast<void>(trigger.processActionButton()); }},
         {"onLaserHit", [&] { trigger.onLaserHit(nullptr); }},
     };
-    EXPECT_EQ(calls.size(), 8U);
+    EXPECT_EQ(calls.size(), 7U);
     expectEachQuitsNotPorted("CTrigger", calls);
 }
 
@@ -242,6 +241,19 @@ TEST(CTrigger, PublicInterface) {
     static_assert(
         std::is_same_v<decltype(&CTrigger::acceptsDamageFrom), int (CTrigger::*)(CDemonActor *)>);
     static_assert(std::is_same_v<decltype(&CTrigger::applyDamage), void (CTrigger::*)(float)>);
+}
+
+// "none" in any case is no event; nor is a trigger drawn as transparent outside the editor.
+TEST(CTrigger, SettingUpTakesAnEventOfNoneAsNone) {
+    CTrigger trigger;
+    CTestFieldsArchive archive(trigger, CTrigger::kType, 1,
+                               "0\n0.5,1,0.5\n0\n\"NONE\"\n\"open\"\n");
+    trigger.archive(archive.get());
+    trigger.setTransparent(true);
+    trigger.setup();
+    EXPECT_EQ(trigger.getOnEvent(), "");
+    EXPECT_EQ(trigger.getOffEvent(), "open");
+    EXPECT_FALSE(trigger.isTransparent());
 }
 
 } // namespace

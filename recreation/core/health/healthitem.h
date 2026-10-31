@@ -14,7 +14,8 @@ class CHealthItem : public CDemonActor {
 public:
     static const CDemonActorType kType;
 
-    CHealthItem();
+    // Its model is found among those the classes hold.
+    explicit CHealthItem(CActor &classes);
     ~CHealthItem() override;
     CHealthItem(const CHealthItem &) = delete;
     CHealthItem &operator=(const CHealthItem &) = delete;

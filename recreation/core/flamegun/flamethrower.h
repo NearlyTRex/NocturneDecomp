@@ -9,7 +9,7 @@ class CFlameThrower : public CWeapon {
 public:
     static const CDemonActorType kType;
 
-    CFlameThrower();
+    explicit CFlameThrower(CActor &classes);
     ~CFlameThrower() override;
 
     void process(float delta_time) override;

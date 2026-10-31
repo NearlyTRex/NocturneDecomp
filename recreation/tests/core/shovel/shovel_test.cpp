@@ -21,7 +21,7 @@ TEST(CShovel, IsConcrete) {
 }
 
 TEST(CShovel, Constructors) {
-    static_assert(std::is_constructible_v<CShovel>);
+    static_assert(std::is_constructible_v<CShovel, CActor &>);
 }
 
 TEST(CShovel, PublicInterface) {
