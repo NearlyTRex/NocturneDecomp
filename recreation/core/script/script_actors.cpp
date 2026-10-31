@@ -176,9 +176,24 @@ Result checkAddItemToInventory(CScript & /*script*/, SScriptStatement &statement
 }
 
 Result checkAttachActorToPlatform(CScript & /*script*/, SScriptStatement &statement) {
-    return checkPairOfActors(statement, "(%[^,], %[^)])",
-                             "Error parsing attachActorToPlatform command parms",
-                             CDemonActor::kType, CPlatform::kType, true);
+    const std::expected<SPair, std::string> pair =
+        scanPair(statement, "(%[^,], %[^)])", "Error parsing attachActorToPlatform command parms");
+    if (!pair) {
+        return std::unexpected(pair.error());
+    }
+    if (Result checked =
+            checkBoth(statement, pair->second, CPlatform::kType, pair->first, CDemonActor::kType);
+        !checked || !statement.running) {
+        return checked;
+    }
+    const auto platform =
+        getActor(pair->second, CPlatform::kType, statement.owners.mission, statement.owners.events);
+    const auto actor = getActor(pair->first, CDemonActor::kType, statement.owners.mission,
+                                statement.owners.events);
+    if (platform && actor) {
+        static_cast<CPlatform *>(*platform)->attachActor(*actor);
+    }
+    return {};
 }
 
 Result checkCancelWalkTo(CScript & /*script*/, SScriptStatement &statement) {

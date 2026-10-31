@@ -15,10 +15,6 @@ namespace {
 
 } // namespace
 
-void CBoxActor::setup() {
-    notPorted("setup");
-}
-
 void CBoxActor::process(float /*delta_time*/) {
     notPorted("process");
 }
@@ -29,10 +25,6 @@ int CBoxActor::renderOpaque() {
 
 int CBoxActor::renderTransparent() {
     notPorted("renderTransparent");
-}
-
-CBoundingBox3D *CBoxActor::getBoundingBox(CBoundingBox3D * /*out_box*/) {
-    notPorted("getBoundingBox");
 }
 
 ECollisionType CBoxActor::getCollisionType(SCollisionInfo * /*collision_info*/) {

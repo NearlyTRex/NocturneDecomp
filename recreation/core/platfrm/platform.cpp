@@ -6,8 +6,12 @@
 #include "core/actor/actor.h"
 #include "core/actor/actorarchive.h"
 #include "core/actor/demonactortype.h"
+#include "core/course/course.h"
 #include "core/dmodel/keyframedmodelinstance.h"
+#include "core/location.h"
+#include "core/xform/xform.h"
 
+#include <algorithm>
 #include <cstddef>
 #include <memory>
 #include <span>
@@ -40,11 +44,66 @@ constinit const CDemonActorType CPlatform::kType =
     makeActorType("CPlatform", &CDemonActor::kType, &CPlatform::create, kVersion);
 
 // The ends start where the actor is made, at the origin, and turned as it is.
-// deferred: the course, the slew mode the editor sets, being drawn in the background, the health
-//   of 50 and the attached actors' places, with CPlatform::setup and CPlatform::process
+// deferred: the slew mode the editor sets, being drawn in the background, the health of 50 and
+//   the attached actors' places, with CPlatform::process
 // nocedit 0x0054c850
-CPlatform::CPlatform(CActor &classes) : model_(classes.getKeyFramedModels()) {
+CPlatform::CPlatform(CActor &classes)
+    : model_(classes.getKeyFramedModels()), course_(classes.getDosIo()) {
     model_.setModelName("slider1.kfm");
+}
+
+// Each actor read is attached again, so one read twice is carried once.
+// nocedit 0x0054ca20
+void CPlatform::setup() {
+    CDemonActor::setup();
+    if (!course_filename_.empty()) {
+        course_.load(course_filename_);
+        course_.setLooping(false);
+    }
+    evaluatePosition();
+    static_cast<void>(model_.preCache());
+    for (CDemonActor *actor : std::exchange(attached_actors_, {})) {
+        attachActor(actor);
+    }
+}
+
+// A param that isn't a number goes to the end, as the original's comparison sent it.
+// nocedit 0x0054cab0
+void CPlatform::evaluatePosition() {
+    param_ = std::max(param_, 0.0F);
+    if (!(param_ <= 1.0F)) {
+        param_ = 1.0F;
+    }
+    CLocation location = getLocation();
+    common::CVector3f orientation;
+    if (course_filename_.empty()) {
+        const float keep = 1.0F - param_;
+        // z adds the start's product unrounded, as the original's register stack left it.
+        location.position = {
+            .x = (start_position_.x * keep) + (end_position_.x * param_),
+            .y = (start_position_.y * keep) + (end_position_.y * param_),
+            .z = static_cast<float>((static_cast<double>(start_position_.z) * keep) +
+                                    (end_position_.z * param_))};
+        orientation =
+            quaternionToEulerAngles(slerpQuaternion(start_orientation_, end_orientation_, param_));
+    } else {
+        course_.evaluate(static_cast<float>(course_.getLength()) * param_, location.position,
+                         orientation);
+    }
+    setLocation(location);
+    setOrientation(orientation);
+}
+
+// deferred: where the actor sits on the platform, with CPlatform::updateAttachedActors
+// nocedit 0x0054e1e0
+void CPlatform::attachActor(CDemonActor *actor) {
+    if (actor == nullptr || std::ranges::contains(attached_actors_, actor)) {
+        return;
+    }
+    if (attached_actors_.size() == kMaxAttachedActors) {
+        common::displayErrorAndQuit("CPlatform::attachActor - too many!");
+    }
+    attached_actors_.push_back(actor);
 }
 
 // nocedit 0x00442380

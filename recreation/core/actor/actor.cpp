@@ -40,6 +40,10 @@ IKeyFramedModels &CActor::getKeyFramedModels() const {
     return keyframed_models_;
 }
 
+const engine::CDosIo &CActor::getDosIo() const {
+    return game_.getDosIo();
+}
+
 // nocedit 0x0040cb90
 void CActor::setRandomSeed(std::uint32_t seed_value) {
     random_seed_value_ = seed_value;

@@ -1,8 +1,12 @@
+#include "core/platfrm/platform.h"
 #include "tests/mocks/core/scriptfixture.h"
+#include "tests/mocks/core/testclasses.h"
 
 #include <gtest/gtest.h>
 
+#include <memory>
 #include <string>
+#include <utility>
 
 namespace nocturne::core {
 namespace {
@@ -71,6 +75,22 @@ TEST_F(CScriptActorsTest, AttachActorToPlatformLooksThePlatformUpFirst) {
                       "Actor \"Nobody\" does not exist.");
     expectSyntaxError("attachActorToPlatform Door1\n", 1,
                       "Error parsing attachActorToPlatform command parms");
+}
+
+// Either side missing through a variable attaches nothing.
+TEST_F(CScriptActorsTest, RunningAttachActorToPlatformAttachesTheActor) {
+    CTestClasses classes;
+    auto owned = std::make_unique<CPlatform>(classes.get());
+    owned->setActorName("Elevator");
+    const CPlatform &elevator = *owned;
+    mission_.addActorToList(std::move(owned));
+    givenFile("world\\m1.scr", ":initSection\nattachActorToPlatform(@who, Elevator)\n"
+                               "attachActorToPlatform(Door1, @where)\n"
+                               "attachActorToPlatform(Door1, Elevator)\n:initSectionEnd\n");
+    ASSERT_TRUE(script_.loadScript("m1.scr", true));
+    script_.executeInitSection();
+    ASSERT_EQ(elevator.getAttachedActors().size(), 1U);
+    EXPECT_EQ(elevator.getAttachedActors()[0]->getActorName(), "Door1");
 }
 
 TEST_F(CScriptActorsTest, CancelWalkToTakesACharacterOrAll) {

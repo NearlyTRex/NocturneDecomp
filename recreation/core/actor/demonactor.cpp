@@ -99,13 +99,22 @@ void CDemonActor::setup() {
     updateOrientationMatrix();
 }
 
-// deferred: the orientation matrix built from the angles, with transformVector and the other
-//   transforms that read it
 // nocedit 0x00408c10
 void CDemonActor::updateOrientationMatrix() {
     orientation_ = {.x = normalizeAngleToPi(orientation_.x),
                     .y = normalizeAngleToPi(orientation_.y),
                     .z = normalizeAngleToPi(orientation_.z)};
+    orientation_matrix_.buildRotationMatrix(orientation_);
+}
+
+// nocedit 0x00408ec0
+common::CVector3f *CDemonActor::localToWorldPoint(common::CVector3f *output_world_point,
+                                                  common::CVector3f *input_local_point) {
+    const common::CVector3f turned = orientation_matrix_.transformVector(*input_local_point);
+    *output_world_point = {.x = turned.x + location_.position.x,
+                           .y = turned.y + location_.position.y,
+                           .z = turned.z + location_.position.z};
+    return output_world_point;
 }
 
 EActorLifecycleState CDemonActor::getLifecycleState() const {

@@ -83,9 +83,8 @@ TEST(CoreXformFunctions, PublicInterface) {
     static_assert(std::is_same_v<decltype(&quaternionFromAxisAngle),
                                  common::CQuaternion4f *(*)(float, common::CVector3f *,
                                                             common::CQuaternion4f *)>);
-    static_assert(
-        std::is_same_v<decltype(&quaternionToEulerAngles),
-                       common::CVector3f *(*)(common::CVector3f *, common::CQuaternion4f *)>);
+    static_assert(std::is_same_v<decltype(&quaternionToEulerAngles),
+                                 common::CVector3f (*)(const common::CQuaternion4f &)>);
     static_assert(
         std::is_same_v<decltype(&eulerToQuaternion),
                        common::CQuaternion4f *(*)(common::CVector3f *, common::CQuaternion4f *)>);

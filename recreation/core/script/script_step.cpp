@@ -126,7 +126,6 @@ void CScript::initRuntime() {
 //   CEventList::evaluateCondition
 // deferred: running addItemToInventory, adding the item to the hero's inventory, with
 //   CInventory::addItem
-// deferred: running attachActorToPlatform, attaching the actor, with CPlatform::attachActor
 // deferred: running cancelWalkTo, stopping the character's walk, or every character's in the
 //   set, with the characters' walk targets
 // deferred: running enableHealthBar, setting the character's health bar, with its health bar

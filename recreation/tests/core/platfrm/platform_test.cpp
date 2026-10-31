@@ -8,13 +8,18 @@
 #include "tests/mocks/core/testactor.h"
 #include "tests/mocks/core/testclasses.h"
 #include "tests/mocks/core/testfieldsarchive.h"
+#include "tests/mocks/engine/podfixture.h"
 
 #include <gmock/gmock.h>
 #include <gtest/gtest.h>
 
+#include <cstddef>
 #include <memory>
+#include <string>
 #include <string_view>
 #include <type_traits>
+#include <utility>
+#include <vector>
 
 namespace nocturne::core {
 namespace {
@@ -154,11 +159,83 @@ TEST_F(CPlatformArchiveTest, MoreThanTenAttachedActorsIsFatal) {
             StrEq("CPlatform::archive - too many attached actors.")));
 }
 
+// The fields up to the attached actors for a version 8 platform between unturned ends.
+constexpr std::string_view kBetweenEnds = "\"p.kfm\"\n\"\"\n\"\"\n\"\"\n\"\"\n\"\"\n\"\"\n\"\"\n"
+                                          "0,0,0\n1,0,0,0\n4,8,12\n1,0,0,0\n0\n0.25 // param\n"
+                                          "2\n2\n0\n0\n0\n0\n\"\"\n0\n0\n0\n";
+
+TEST_F(CPlatformArchiveTest, SettingUpCarriesEachActorReadOnce) {
+    read(8, std::string(kBetweenEnds) + "3 // attachCount\n\"Crate\"\n\"(none)\"\n\"Crate\"\n");
+    platform_.setup();
+    EXPECT_THAT(platform_.getAttachedActors(), ElementsAre(&crate_));
+}
+
+TEST_F(CPlatformArchiveTest, SettingUpPutsItAsFarAlongAsItsParamBetweenItsEnds) {
+    read(8, std::string(kBetweenEnds) + "0\n");
+    platform_.setup();
+    EXPECT_EQ(platform_.getLocation().position.x, 1.0F);
+    EXPECT_EQ(platform_.getLocation().position.y, 2.0F);
+    EXPECT_EQ(platform_.getLocation().position.z, 3.0F);
+    EXPECT_EQ(platform_.getOrientation().x, 0.0F);
+    EXPECT_EQ(platform_.getOrientation().z, 0.0F);
+}
+
+// A param that isn't a number goes to the end.
+TEST_F(CPlatformArchiveTest, AParamPastEitherEndIsHeldThere) {
+    for (const auto &[param, x] : {std::pair{"-1", 0.0F}, {"2", 4.0F}, {"nan", 4.0F}}) {
+        std::string fields(kBetweenEnds);
+        fields.replace(fields.find("0.25"), 4, param);
+        read(8, fields + "0\n");
+        platform_.setup();
+        EXPECT_EQ(platform_.getLocation().position.x, x) << param;
+        EXPECT_EQ(platform_.getParam(), x / 4.0F) << param;
+    }
+}
+
+// A course of two frames ten apart along x, marked to loop.
+class CPlatformCourseTest : public engine::CPodFixture {
+protected:
+    CPlatformCourseTest() {
+        givenFile("data\\lift.crs",
+                  "// course\n1\n// count, loop\n2,1\n// frames\n0,0,0,1,0,0,0\n10,0,0,1,0,0,0\n");
+    }
+
+    CTestClasses classes_{dosio_};
+    CPlatform platform_{classes_.get()};
+};
+
+// Three quarters along a course that looped would be halfway back to its start.
+TEST_F(CPlatformCourseTest, APlatformOnACourseFollowsItWithoutLooping) {
+    CTestFieldsArchive archive(platform_, CPlatform::kType, 1,
+                               "\"p.kfm\"\n\"\"\n\"\"\n\"\"\n\"\"\n\"\"\n\"\"\n\"lift.crs\"\n"
+                               "0\n0.75\n2\n0\n");
+    platform_.archive(archive.get());
+    platform_.setup();
+    EXPECT_EQ(platform_.getLocation().position.x, 10.0F);
+}
+
+TEST(CPlatform, AnActorIsAttachedOnceAndNoneIsPassedOver) {
+    CTestClasses classes;
+    CPlatform platform{classes.get()};
+    std::vector<std::unique_ptr<CTestActor>> actors;
+    for (std::size_t i = 0; i <= CPlatform::kMaxAttachedActors; ++i) {
+        actors.push_back(std::make_unique<CTestActor>(kTestBaseType));
+    }
+    platform.attachActor(nullptr);
+    platform.attachActor(actors[0].get());
+    platform.attachActor(actors[0].get());
+    EXPECT_THAT(platform.getAttachedActors(), ElementsAre(actors[0].get()));
+    for (std::size_t i = 1; i < CPlatform::kMaxAttachedActors; ++i) {
+        platform.attachActor(actors[i].get());
+    }
+    EXPECT_THAT([&] { platform.attachActor(actors.back().get()); },
+                ThrowsMessage<common::CFatalError>(StrEq("CPlatform::attachActor - too many!")));
+}
+
 TEST(CPlatform, TheFunctionsNotPortedYetQuit) {
     CTestClasses classes;
     CPlatform platform{classes.get()};
     const NotPortedCalls calls = {
-        {"setup", [&] { platform.setup(); }},
         {"process", [&] { platform.process(0.0F); }},
         {"renderOpaque", [&] { static_cast<void>(platform.renderOpaque()); }},
         {"renderBackground", [&] { platform.renderBackground(0); }},

@@ -145,4 +145,9 @@ common::CQuaternion4f slerpQuaternion(const common::CQuaternion4f &quat1_in,
             .z = blend(quat1_in.z, target.z)};
 }
 
+// nocedit 0x005f7ac0
+common::CVector3f quaternionToEulerAngles(const common::CQuaternion4f &quat_in) {
+    return matrixToEulerAngles(quaternionToMatrix3x4(quat_in));
+}
+
 } // namespace nocturne::core

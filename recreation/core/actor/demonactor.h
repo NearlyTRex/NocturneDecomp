@@ -1,6 +1,7 @@
 #pragma once
 
 #include "common/fwd.h"
+#include "common/math/matrix3x3f.h"
 #include "common/math/vector3f.h"
 #include "common/math/vector3i.h"
 #include "core/fwd.h"
@@ -110,11 +111,12 @@ public:
     // Pitch, bank and heading in radians, as x, y and z.
     [[nodiscard]] const common::CVector3f &getOrientation() const;
     void setOrientation(const common::CVector3f &orientation);
-    // Each angle brought to within pi.
+    // Each angle brought to within pi, and the transforms turned by them from here on.
     void updateOrientationMatrix();
     common::CVector3f *transformVector(common::CVector3f *output, common::CVector3f *input);
     common::CVector3f *inverseTransformVector(common::CVector3f *output_vector,
                                               common::CVector3f *input_vector);
+    // Turned by the orientation as last updated, then moved to the actor's position.
     common::CVector3f *localToWorldPoint(common::CVector3f *output_world_point,
                                          common::CVector3f *input_local_point);
     common::CVector3f *worldToLocalPoint(common::CVector3f *output_local_point,
@@ -148,6 +150,7 @@ private:
     std::string actor_name_;
     CLocation location_;
     common::CVector3f orientation_;
+    common::CMatrix3x3f orientation_matrix_;
     EActorLifecycleState lifecycle_state_ = EActorLifecycleState::kNotCreated;
     float create_probability_ = 1.0F;
     std::string create_event_ = "none";

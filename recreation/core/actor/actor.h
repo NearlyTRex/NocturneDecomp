@@ -2,6 +2,7 @@
 
 #include "common/fwd.h"
 #include "core/fwd.h"
+#include "engine/fwd.h"
 
 #include <cstddef>
 #include <cstdint>
@@ -49,6 +50,8 @@ public:
 
     [[nodiscard]] IDeformableModels &getModels() const;
     [[nodiscard]] IKeyFramedModels &getKeyFramedModels() const;
+    // Where the game reads its files from.
+    [[nodiscard]] const engine::CDosIo &getDosIo() const;
 
 private:
     void registerActorClasses();

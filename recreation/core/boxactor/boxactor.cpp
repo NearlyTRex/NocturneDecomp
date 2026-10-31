@@ -4,10 +4,16 @@
 #include "core/actor/actor_functions.h"
 #include "core/actor/actorarchive.h"
 #include "core/actor/demonactortype.h"
+#include "core/box/boundingbox3d.h"
 #include "core/box/box.h"
+#include "core/dmodel/keyframedmodel.h"
 #include "core/dmodel/keyframedmodelinstance.h"
 
+#include <algorithm>
+#include <cmath>
+#include <cstddef>
 #include <memory>
+#include <span>
 #include <string>
 #include <utility>
 
@@ -35,6 +41,8 @@ constexpr int kPushSoundVersion = 14;
 constexpr int kBlockDirectorVersion = 15;
 // A box still to be set up from its model when the mission starts.
 constexpr int kBoxToSetUp = -1;
+// Halfway between a frame's bounds is its centre.
+constexpr float kHalf = 0.5F;
 
 } // namespace
 
@@ -43,7 +51,7 @@ constexpr int kBoxToSetUp = -1;
 constinit const CDemonActorType CBoxActor::kType =
     makeActorType("CBoxActor", &CDemonActor::kType, &CBoxActor::create, kVersion);
 
-// deferred: the animation frame and the looping sound's handle, with CBoxActor::setup
+// deferred: the looping sound's handle, with CBoxActor::process
 // nocedit 0x00421700
 CBoxActor::CBoxActor(CActor &classes) : model_(classes.getKeyFramedModels()) {
     model_.setModelName("question.kfm");
@@ -128,6 +136,56 @@ void CBoxActor::archive(CActorArchive &actor_archive) {
     if (version >= kBlockDirectorVersion) {
         actor_archive.archiveFlag(block_virtual_director_, "blockVirtualDirectorFlag");
     }
+}
+
+// The frame is still the first here, so only a model with no frames moves it: to -1.
+// deferred: no looping sound playing yet, with CBoxActor::process
+// nocedit 0x00421830
+void CBoxActor::setup() {
+    CDemonActor::setup();
+    const int frame_count = model_.preCache().getFrameCount();
+    anim_frame_ = std::min(anim_frame_, static_cast<float>(frame_count - 1));
+    if (physics_box_.getValidity() < 0) {
+        setupPhysicsBox();
+    }
+}
+
+// The original also checked the actor hadn't been deleted, and left a box whose model wasn't
+// found yet to set up later; finding its model is fatal here before that.
+// nocedit 0x004218d0
+void CBoxActor::setupPhysicsBox() {
+    physics_box_.setValidity(0);
+    if (!(weight_in_pounds_ > 0.0F)) {
+        return;
+    }
+    CBoundingBox3D bounds;
+    getBoundingBox(&bounds);
+    common::CVector3f centre = {.x = (bounds.min.x + bounds.max.x) * kHalf,
+                                .y = (bounds.min.y + bounds.max.y) * kHalf,
+                                .z = (bounds.min.z + bounds.max.z) * kHalf};
+    common::CVector3f position;
+    localToWorldPoint(&position, &centre);
+    common::CVector3f orientation = getOrientation();
+    common::CVector3f extents = {.x = bounds.max.x - bounds.min.x,
+                                 .y = bounds.max.y - bounds.min.y,
+                                 .z = bounds.max.z - bounds.min.z};
+    physics_box_.setupCorners(&position, &orientation, &extents, weight_in_pounds_);
+}
+
+// The frame is rounded to the nearest and kept within the model's. The original read past the
+// last frame when the frame rounded up to the count, and before the first for a model with none,
+// which has no bounds here.
+// nocedit 0x00421fe0
+CBoundingBox3D *CBoxActor::getBoundingBox(CBoundingBox3D *out_box) {
+    const std::span<const CBoundingBox3D> bounds = model_.getModelPtr().getFrameBounds();
+    if (bounds.empty()) {
+        *out_box = {};
+        return out_box;
+    }
+    const auto last = static_cast<long>(bounds.size()) - 1;
+    const long frame = std::clamp(std::lrint(anim_frame_), 0L, last);
+    *out_box = bounds[static_cast<std::size_t>(frame)];
+    return out_box;
 }
 
 // nocedit 0x00422330

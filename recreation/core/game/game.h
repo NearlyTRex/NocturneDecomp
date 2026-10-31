@@ -69,6 +69,8 @@ public:
     void showChapterSelect(const SChapterSelectOwners &owners, EChapterSelectMode select_mode);
     // The mission file last started; starting it again keeps its loaded models and textures.
     [[nodiscard]] const std::string &getCurrentSaveFile() const;
+    // Where the game reads its files from.
+    [[nodiscard]] const engine::CDosIo &getDosIo() const;
     void displayBitmap(char *filename, int width, int height);
     void slamDT(float delta_time);
     void displayActStats();

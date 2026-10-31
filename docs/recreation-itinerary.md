@@ -22,9 +22,9 @@ functions don't count as done. Sizes are in instructions.
 | 6 | `initializeGameSystems`, `CAlphaBitmap::scale`, `clearTextureCache`, `CMoon::init`, `CGame::saveClockTime`, `CGame::updateDT` | 11 | 25 | 2988 | 20 | 5 | 80.0% |
 | 7 | `CMoon::update`, `CMoon::render` | 17 | 120 | 17616 | 68 | 31 | 56.6% |
 | 8 | `renderMenuAndGetChoice`, `CMoon::free`, `CSound::reset`, `CEditorTools::showFileSelectionDialog` | 8 | 63 | 5314 | 60 | 3 | 95.2% |
-| 9 | `CPickList::enableItem`, `CEventList::resetGameFlags`, `CLevelLoader::show`, `CDemonMission::load` | 15 | 56 | 3298 | 32 | 12 | 57.1% |
+| 9 | `CPickList::enableItem`, `CEventList::resetGameFlags`, `CLevelLoader::show`, `CDemonMission::load` | 15 | 56 | 3298 | 33 | 11 | 58.9% |
 | 10 | `CDemonMission::createHeros`, `CDemonMission::prepareAllActors`, `CEventList::reset`, `CDemonMission::loadSet` | 15 | 42 | 5112 | 32 | 9 | 76.1% |
-| 11 | `CScript::loadScript` | 63 | 579 | 67400 | 68 | 30 | 11.7% |
+| 11 | `CScript::loadScript` | 63 | 579 | 67400 | 69 | 33 | 11.9% |
 | 12 | `CDemonMission::loadScript`, `CScript::executeInitSection`, `CDemonMission::startMission`, `CDemonMission::buildActiveSetActorList`, `CConsole::reset`, `CEditorTools::displayMemoryDiagnostics`, `CGame::setGameRes`, `CDemonLight::init`, `CDemonSet::initScene` | 12 | 26 | 1658 | 3 | 2 | 11.5% |
 | 13 | `CFireEffect::init`, `CDemonSet::loadMasterLightStates`, `CDemonSet::setGamma`, `CGame::clearOverlay`, `CGame::loadAssets` | 7 | 27 | 735 | 0 | 0 | 0.0% |
 | 14 | `CNetGame::syncPlayers`, `CNetGame::processServerFrame`, `CLevelLoader::cleanup`, `CKeys::toggleInputMask`, `CGame::processHotkeys` | 17 | 51 | 5302 | 4 | 0 | 7.8% |
@@ -36,17 +36,17 @@ functions don't count as done. Sizes are in instructions.
 | 20 | Not reached from startup: `support/` | 2 | 24 | 593 | 3 | 1 | 12.5% |
 | 21 | Not reached from startup: `cockpit/` | 4 | 178 | 11527 | 0 | 0 | 0.0% |
 | 22 | Not reached from startup: `shape/` | 2 | 42 | 3178 | 4 | 2 | 9.5% |
-| 23 | Not reached from startup: `core/` (part 1 of 9) | 18 | 292 | 16011 | 59 | 14 | 20.2% |
+| 23 | Not reached from startup: `core/` (part 1 of 9) | 18 | 292 | 16011 | 61 | 15 | 20.8% |
 | 24 | Not reached from startup: `core/` (part 2 of 9) | 11 | 277 | 24965 | 22 | 8 | 7.9% |
 | 25 | Not reached from startup: `core/` (part 3 of 9) | 24 | 278 | 24134 | 34 | 8 | 12.2% |
 | 26 | Not reached from startup: `core/` (part 4 of 9) | 18 | 300 | 20148 | 47 | 8 | 15.6% |
 | 27 | Not reached from startup: `core/` (part 5 of 9) | 21 | 294 | 20910 | 60 | 10 | 20.4% |
-| 28 | Not reached from startup: `core/` (part 6 of 9) | 18 | 282 | 21809 | 51 | 9 | 18.0% |
+| 28 | Not reached from startup: `core/` (part 6 of 9) | 18 | 282 | 21809 | 53 | 9 | 18.7% |
 | 29 | Not reached from startup: `core/` (part 7 of 9) | 18 | 263 | 22721 | 66 | 8 | 25.0% |
 | 30 | Not reached from startup: `core/` (part 8 of 9) | 20 | 300 | 31826 | 41 | 6 | 13.6% |
-| 31 | Not reached from startup: `core/` (part 9 of 9) | 5 | 111 | 10905 | 21 | 4 | 18.9% |
+| 31 | Not reached from startup: `core/` (part 9 of 9) | 5 | 111 | 10905 | 22 | 4 | 19.8% |
 | 32 | Not reached from startup: `wincore/` | 2 | 11 | 482 | 4 | 0 | 36.3% |
-| | **All** | | **4479** | **402407** | **1030** | **182** | **22.9%** |
+| | **All** | | **4479** | **402407** | **1037** | **185** | **23.1%** |
 
 ## Step 0: Math value types
 
@@ -1001,13 +1001,12 @@ functions don't count as done. Sizes are in instructions.
 - class `CSkeleton`
   - [x] `free` 0x00599a50 (47)
 
-### `core/actor.cpp` (18 functions, 918 instructions, 15 done, 2 partial)
+### `core/actor.cpp` (18 functions, 918 instructions, 16 done, 1 partial)
 - class `CDemonActor`
   - [x] `getActorClassName` 0x00408b90 (6)
   - [x] `load` 0x0040b050 (125)
   - [x] `doCheckForInvalidPointers` 0x0040ac80 (193)
-  - [~] `updateOrientationMatrix` 0x00408c10 (30)
-    - deferred: the orientation matrix built from the angles, with transformVector and the other transforms that read it
+  - [x] `updateOrientationMatrix` 0x00408c10 (30)
   - [~] `ctor` 0x004088b0 (88)
     - deferred: the defaults the constructor gives the orientation's matrix, and the platform, rendering (but for the transparency), health and footstep fields, with the steps that read them
 - free functions
@@ -1241,7 +1240,7 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `archive` 0x005dab30 (17)
   - [ ] `dtor` 0x005dae50 (31)
 
-### `core/actor.cpp` (66 functions, 3653 instructions, 5 done, 10 partial)
+### `core/actor.cpp` (66 functions, 3653 instructions, 6 done, 10 partial)
 - free functions
   - [ ] `copyVector` 0x00410360 (12)
   - [ ] `rayCylinderIntersect` 0x00408340 (354)
@@ -1272,7 +1271,7 @@ functions don't count as done. Sizes are in instructions.
     - deferred: writing the actor's name to a save file, with CDemonMission::saveActor
 - class `CDemonActor`
   - [ ] `transformVector` 0x00408e80 (13)
-  - [ ] `localToWorldPoint` 0x00408ec0 (26)
+  - [x] `localToWorldPoint` 0x00408ec0 (26)
   - [x] `dtor` 0x00408a30 (28)
   - [ ] `process` 0x00408a80 (7)
   - [ ] `renderTransparent` 0x00408ac0 (8)
@@ -1507,10 +1506,11 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `saveActor` 0x00523af0 (41)
   - [x] `setMissionName` 0x00524630 (19)
 
-### `core/platfrm.cpp` (2 functions, 150 instructions, 0 done, 0 partial)
+### `core/platfrm.cpp` (2 functions, 150 instructions, 0 done, 1 partial)
 - class `CPlatform`
   - [ ] `startMovement` 0x0054d690 (38)
-  - [ ] `attachActor` 0x0054e1e0 (112)
+  - [~] `attachActor` 0x0054e1e0 (112)
+    - deferred: where the actor sits on the platform, with CPlatform::updateAttachedActors
 
 ### `core/skeleton.cpp` (13 functions, 1277 instructions, 5 done, 0 partial)
 - class `CDeformableModel`
@@ -1942,12 +1942,14 @@ functions don't count as done. Sizes are in instructions.
 - free functions
   - [ ] `qsortByDisplayListEntry` 0x0056fba0 (18)
 
-### `core/box.cpp` (11 functions, 944 instructions, 1 done, 1 partial)
+### `core/box.cpp` (11 functions, 944 instructions, 1 done, 3 partial)
 - class `CBox`
   - [~] `ctor` 0x0041dc50 (45)
-    - deferred: the eight scrape points, the mass and the world velocity, with CBox::setupCorners
-  - [ ] `updateTransform` 0x0041e0e0 (158)
-  - [ ] `setupCorners` 0x0041dd20 (127)
+    - deferred: the eight scrape points, the mass and the world velocity, with CBox::processPhysics
+  - [~] `updateTransform` 0x0041e0e0 (158)
+    - deferred: the turn, the mass from the volume, how hard it is to spin and the scrape points' places, with CBox::processPhysics
+  - [~] `setupCorners` 0x0041dd20 (127)
+    - deferred: the eight scrape points at the corners, with CBox::processPhysics
 - class `CBoundingBox3D`
   - [x] `getCorner` 0x004202b0 (39)
   - [ ] `doesBoxIntersect` 0x00421010 (34)
@@ -2020,7 +2022,6 @@ functions don't count as done. Sizes are in instructions.
     - deferred: running if, skipping the next statement, and an else after it, when its condition is false, with CEventList::evaluateCondition
     - deferred: running waitFor, holding the script until its condition holds, with CEventList::evaluateCondition
     - deferred: running addItemToInventory, adding the item to the hero's inventory, with CInventory::addItem
-    - deferred: running attachActorToPlatform, attaching the actor, with CPlatform::attachActor
     - deferred: running cancelWalkTo, stopping the character's walk, or every character's in the set, with the characters' walk targets
     - deferred: running enableHealthBar, setting the character's health bar, with its health bar
     - deferred: running getTriggerActor, storing who set the trigger off in the variable, with CTrigger's triggering actor
@@ -3840,7 +3841,7 @@ functions don't count as done. Sizes are in instructions.
 ### `core/box.cpp` (12 functions, 1030 instructions, 2 done, 1 partial)
 - class `CBox`
   - [~] `loadFromFile` 0x0041fe90 (122)
-    - deferred: the corners, mass and transform from the position, orientation, extents and volume read, then the velocity along the box's axes turned into the world's, with CBox::setupCorners
+    - deferred: the velocity along the box's axes turned into the world's, with CBox::processPhysics
   - [ ] `saveToFile` 0x00420020 (112)
   - [x] `dtor` 0x0041dd00 (8)
   - [ ] `setupVelocities` 0x00420180 (53)
@@ -3854,16 +3855,16 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `isInverted` 0x00420fe0 (20)
   - [ ] `render` 0x004210b0 (270)
 
-### `core/boxactor.cpp` (33 functions, 1770 instructions, 11 done, 1 partial)
+### `core/boxactor.cpp` (33 functions, 1770 instructions, 13 done, 2 partial)
 - class `CBoxActor`
   - [~] `ctor` 0x00421700 (49)
-    - deferred: the animation frame and the looping sound's handle, with CBoxActor::setup
+    - deferred: the looping sound's handle, with CBoxActor::process
   - [x] `getActorType` 0x004216f0 (2)
-  - [ ] `setupPhysicsBox` 0x004218d0 (82)
+  - [x] `setupPhysicsBox` 0x004218d0 (82)
   - [ ] `process` 0x004219e0 (289)
   - [ ] `renderOpaque` 0x00421e00 (79)
   - [ ] `renderTransparent` 0x00421ef0 (74)
-  - [ ] `getBoundingBox` 0x00421fe0 (39)
+  - [x] `getBoundingBox` 0x00421fe0 (39)
   - [x] `archive` 0x00422060 (171)
   - [x] `getBlockVirtualDirectorFlag` 0x00422330 (3)
   - [ ] `getCollisionType` 0x00422340 (24)
@@ -3876,7 +3877,8 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `setPositionAndOrientation` 0x00422640 (50)
   - [x] `getAllowedMeleeAttackTypes` 0x004226d0 (3)
   - [x] `dtor` 0x00423670 (37)
-  - [ ] `setup` 0x00421830 (48)
+  - [~] `setup` 0x00421830 (48)
+    - deferred: no looping sound playing yet, with CBoxActor::process
   - [ ] `constrainToExtents` 0x00422590 (59)
   - [ ] `resolveRayPush` 0x00422390 (105)
 - free functions
@@ -5811,13 +5813,13 @@ functions don't count as done. Sizes are in instructions.
   - [x] `staticInit` 0x00549320 (9)
   - [ ] `didPhaseCross` 0x00549aa0 (73)
 
-### `core/platfrm.cpp` (18 functions, 1935 instructions, 7 done, 1 partial)
+### `core/platfrm.cpp` (18 functions, 1935 instructions, 9 done, 1 partial)
 - class `CPlatform`
   - [~] `ctor` 0x0054c850 (115)
-    - deferred: the course, the slew mode the editor sets, being drawn in the background, the health of 50 and the attached actors' places, with CPlatform::setup and CPlatform::process
+    - deferred: the slew mode the editor sets, being drawn in the background, the health of 50 and the attached actors' places, with CPlatform::process
   - [x] `archive` 0x0054dbc0 (251)
   - [x] `getActorType` 0x0054c840 (2)
-  - [ ] `evaluatePosition` 0x0054cab0 (131)
+  - [x] `evaluatePosition` 0x0054cab0 (131)
   - [ ] `isActorOnPlatform` 0x0054df80 (169)
   - [ ] `updateAttachedActors` 0x0054e320 (91)
   - [ ] `process` 0x0054cc30 (709)
@@ -5828,7 +5830,7 @@ functions don't count as done. Sizes are in instructions.
   - [x] `allowBulletHoles` 0x0054e1a0 (2)
   - [x] `getGroundType` 0x0054e1c0 (3)
   - [x] `getBlockVirtualDirectorFlag` 0x0054e1d0 (3)
-  - [ ] `setup` 0x0054ca20 (49)
+  - [x] `setup` 0x0054ca20 (49)
   - [ ] `onActorDeleted` 0x0054e2e0 (15)
 - free functions
   - [x] `factoryFuncPlatform` 0x0054c810 (12)
@@ -6650,7 +6652,7 @@ functions don't count as done. Sizes are in instructions.
   - [x] `factoryFuncWerewolf` 0x005efbd0 (12)
   - [x] `staticInit` 0x005efb70 (23)
 
-### `core/xform.cpp` (42 functions, 2952 instructions, 4 done, 0 partial)
+### `core/xform.cpp` (42 functions, 2952 instructions, 5 done, 0 partial)
 - free functions
   - [ ] `getTranslation` 0x005f6110 (15)
   - [ ] `matrixToQuaternion` 0x005f7420 (205)
@@ -6664,7 +6666,7 @@ functions don't count as done. Sizes are in instructions.
   - [x] `setIdentityQuaternion` 0x005f7620 (6)
   - [ ] `setRotationScaleIdentity` 0x005f5190 (11)
   - [ ] `eulerToQuaternion` 0x005f7b20 (43)
-  - [ ] `quaternionToEulerAngles` 0x005f7ac0 (18)
+  - [x] `quaternionToEulerAngles` 0x005f7ac0 (18)
   - [ ] `transformVector3x4InPlace` 0x005f4e20 (49)
   - [ ] `quaternionToAxisAngle` 0x005f7730 (68)
   - [ ] `quaternionFromAxisAngle` 0x005f7a70 (39)

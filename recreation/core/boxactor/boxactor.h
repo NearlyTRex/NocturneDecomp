@@ -77,7 +77,11 @@ private:
 
     static std::unique_ptr<CDemonActor> create(CActor &classes);
 
+    // A box with weight is put into the physics where its model's frame sits.
+    void setupPhysicsBox();
+
     CKeyFramedModelInstance model_;
+    float anim_frame_ = 0.0F;
     float weight_in_pounds_ = 0.0F;
     float fps_ = kDefaultFps;
     common::CVector3f rpm_;

@@ -148,4 +148,8 @@ int CCourse::getLength() const {
     return static_cast<int>(frames_.size());
 }
 
+void CCourse::setLooping(bool looping) {
+    loop_ = looping;
+}
+
 } // namespace nocturne::core

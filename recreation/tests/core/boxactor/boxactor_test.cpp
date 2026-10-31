@@ -1,16 +1,20 @@
 #include "core/actor/demonactortype.h"
 #include "core/actor/groundtype.h"
+#include "core/box/boundingbox3d.h"
 #include "core/box/box.h"
 #include "core/boxactor/boxactor.h"
 #include "core/boxactor/boxpickuptype.h"
+#include "core/dmodel/keyframedmodel.h"
 #include "core/hero/hero.h"
 #include "tests/mocks/core/notportedcalls.h"
 #include "tests/mocks/core/testactor.h"
 #include "tests/mocks/core/testclasses.h"
 #include "tests/mocks/core/testfieldsarchive.h"
+#include "tests/mocks/engine/podfixture.h"
 
 #include <gtest/gtest.h>
 
+#include <format>
 #include <memory>
 #include <string>
 #include <string_view>
@@ -212,15 +216,85 @@ TEST_F(CBoxActorArchiveTest, AHeroPicksUpWhatOthersCantUnlessItIsCarried) {
     EXPECT_EQ(box_.canPickup(&dummy_), 3);
 }
 
+// A crate of one frame, one unit wide and high and flat, at a mission's place.
+class CBoxActorSetupTest : public engine::CPodFixture {
+protected:
+    CBoxActorSetupTest() {
+        givenFile("models\\crate.kfm", "/\n5\n;\n3,1,1,0,1\n;\n1\n;\n0,0,0\n256,0,0\n0,256,0\n"
+                                       ";\n0,3, 0,0,0, 1,0,0, 2,0,0\n;\nSKIN.RAW\n");
+        classes_.getKeyFramedModel().load("crate.kfm");
+    }
+
+    // A version 1 box of the weight, whose box is still to be set up, at (1,2,3) unturned.
+    void read(std::string_view weight) {
+        CTestFieldsArchive archive(
+            box_, CBoxActor::kType, 1,
+            std::format("\"crate.kfm\"\n{}\n20\n0,0,0\n\"\"\n\"\"\n0\n\"(none)\"\n", weight));
+        box_.archive(archive.get());
+        box_.setLocation({.position = {.x = 1.0F, .y = 2.0F, .z = 3.0F}});
+        box_.setOrientation({});
+    }
+
+    CTestClasses classes_{dosio_};
+    CBoxActor box_{classes_.get()};
+};
+
+TEST_F(CBoxActorSetupTest, AHeavyBoxIsPutInThePhysicsWhereItsFrameSits) {
+    read("50");
+    box_.setup();
+    const CBox &box = box_.getPhysicsBox();
+    EXPECT_EQ(box.getValidity(), 1);
+    EXPECT_EQ(box.getPosition().x, 1.5F);
+    EXPECT_EQ(box.getPosition().y, 2.5F);
+    EXPECT_EQ(box.getPosition().z, 3.0F);
+    EXPECT_EQ(box.getExtents().x, 1.0F);
+    EXPECT_EQ(box.getExtents().y, 1.0F);
+    EXPECT_EQ(box.getExtents().z, 0.0F);
+    CBoundingBox3D bounds;
+    EXPECT_EQ(box_.getBoundingBox(&bounds), &bounds);
+    EXPECT_EQ(bounds.max.x, 1.0F);
+}
+
+TEST_F(CBoxActorSetupTest, ABoxWithNoWeightIsLeftOutOfThePhysics) {
+    for (const std::string_view weight : {"0", "nan"}) {
+        read(weight);
+        box_.setup();
+        EXPECT_EQ(box_.getPhysicsBox().getValidity(), 0);
+    }
+}
+
+TEST_F(CBoxActorSetupTest, ABoxAlreadyInThePhysicsStaysWhereItWas) {
+    CTestFieldsArchive archive(box_, CBoxActor::kType, 4,
+                               "\"crate.kfm\"\n50\n20\n0,0,0\n\"\"\n\"\"\n0\n\"(none)\"\n0\n"
+                               "\"(none)\"\n0\n{\nv\n1\ns\n7,8,9\n0,0,0\n1,1,1\n1\n0,0,0\n"
+                               "0,0,0\n1\n}\n");
+    box_.archive(archive.get());
+    box_.setup();
+    EXPECT_EQ(box_.getPhysicsBox().getPosition().x, 7.0F);
+}
+
+// The test classes' one model has no frames until it is loaded.
+TEST(CBoxActor, AModelWithNoFramesHasNoBounds) {
+    CTestClasses classes;
+    CBoxActor box{classes.get()};
+    CTestFieldsArchive archive(box, CBoxActor::kType, 1,
+                               "\"none.kfm\"\n50\n20\n0,0,0\n\"\"\n\"\"\n0\n\"(none)\"\n");
+    box.archive(archive.get());
+    box.setup();
+    CBoundingBox3D bounds{.min = {.x = 1.0F}, .max = {.x = 2.0F}};
+    static_cast<void>(box.getBoundingBox(&bounds));
+    EXPECT_EQ(bounds.min.x, 0.0F);
+    EXPECT_EQ(bounds.max.x, 0.0F);
+    EXPECT_EQ(box.getPhysicsBox().getValidity(), 1);
+}
+
 TEST(CBoxActor, TheFunctionsNotPortedYetQuit) {
     CTestClasses classes;
     CBoxActor box{classes.get()};
     const NotPortedCalls calls = {
-        {"setup", [&] { box.setup(); }},
         {"process", [&] { box.process(0.0F); }},
         {"renderOpaque", [&] { static_cast<void>(box.renderOpaque()); }},
         {"renderTransparent", [&] { static_cast<void>(box.renderTransparent()); }},
-        {"getBoundingBox", [&] { static_cast<void>(box.getBoundingBox(nullptr)); }},
         {"getCollisionType", [&] { static_cast<void>(box.getCollisionType(nullptr)); }},
         {"setPositionAndOrientation", [&] { box.setPositionAndOrientation(nullptr, nullptr); }},
         {"onPickup", [&] { box.onPickup(nullptr); }},

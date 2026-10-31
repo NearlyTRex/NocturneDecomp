@@ -5,6 +5,7 @@
 #include "common/math/vector3f.h"
 #include "core/actor/demonactor.h"
 #include "core/actor/groundtype.h"
+#include "core/course/course.h"
 #include "core/dmodel/keyframedmodelinstance.h"
 #include "core/fwd.h"
 #include "core/platfrm/platformstate.h"
@@ -47,6 +48,7 @@ public:
     void archive(CActorArchive &actor_archive) override;
 
     void startMovement(float goal_param, float movement_rate);
+    // An actor already carried, or none, is passed over. More than kMaxAttachedActors is fatal.
     void attachActor(CDemonActor *actor);
 
     [[nodiscard]] const CKeyFramedModelInstance &getModel() const;
@@ -90,7 +92,11 @@ private:
 
     static std::unique_ptr<CDemonActor> create(CActor &classes);
 
+    // The platform is put as far along as its param says, its param kept from 0 to 1.
+    void evaluatePosition();
+
     CKeyFramedModelInstance model_;
+    CCourse course_;
     std::string to_start_event_;
     std::string to_end_event_;
     std::string stop_event_;

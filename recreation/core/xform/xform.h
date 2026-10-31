@@ -57,8 +57,8 @@ common::CQuaternion4f *quaternionFromAngleY(float angle_radians, common::CQuater
 common::CQuaternion4f *quaternionFromAngleZ(float angle_radians, common::CQuaternion4f *quat_out);
 common::CQuaternion4f *quaternionFromAxisAngle(float angle_radians, common::CVector3f *axis_ptr,
                                                common::CQuaternion4f *quat_out);
-common::CVector3f *quaternionToEulerAngles(common::CVector3f *out_euler,
-                                           common::CQuaternion4f *quat_in);
+// Angles in radians about x, y and z, as matrixToEulerAngles reads them from the turn.
+[[nodiscard]] common::CVector3f quaternionToEulerAngles(const common::CQuaternion4f &quat_in);
 common::CQuaternion4f *eulerToQuaternion(common::CVector3f *euler_angles,
                                          common::CQuaternion4f *quat_out);
 // Each writes the vertex where the edge from vertex_a, inside, to vertex_b, past the plane, meets

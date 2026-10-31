@@ -15,10 +15,6 @@ namespace {
 
 } // namespace
 
-void CPlatform::setup() {
-    notPorted("setup");
-}
-
 void CPlatform::process(float /*delta_time*/) {
     notPorted("process");
 }

@@ -321,7 +321,8 @@ const CScript::SCommand *CScript::findCommand(std::string_view name) {
         SCommand{.name = "allowEnemyAttack", .check = &checkCondition},
         SCommand{.name = "allowHeroControls", .check = &checkCondition},
         SCommand{.name = "allowHeroDamage", .check = &checkCondition},
-        SCommand{.name = "attachActorToPlatform", .check = &checkAttachActorToPlatform},
+        SCommand{
+            .name = "attachActorToPlatform", .check = &checkAttachActorToPlatform, .runs = true},
         SCommand{.name = "beginFadeIn", .check = &checkNothing},
         SCommand{.name = "beginFadeOut", .check = &checkNothing},
         SCommand{.name = "breakPoint", .check = &checkNothing},

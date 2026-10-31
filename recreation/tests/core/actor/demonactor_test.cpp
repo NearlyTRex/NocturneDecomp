@@ -1,4 +1,6 @@
 #include "common/error/fatalerror.h"
+#include "common/math/matrix3x3f.h"
+#include "common/math/vector3f.h"
 #include "common/random/watcomrandom.h"
 #include "common/text/textscanner.h"
 #include "core/actor/actor.h"
@@ -17,9 +19,11 @@
 #include <gmock/gmock.h>
 #include <gtest/gtest.h>
 
+#include <cmath>
 #include <cstdint>
 #include <cstdio>
 #include <functional>
+#include <numbers>
 #include <optional>
 #include <string>
 #include <string_view>
@@ -274,6 +278,25 @@ TEST(CDemonActor, SettingUpBringsItsAnglesToWithinPi) {
     EXPECT_EQ(actor.getOrientation().y, -1.0F);
     EXPECT_EQ(actor.getOrientation().z, normalizeAngleToPi(-7.0F));
     EXPECT_LT(actor.getOrientation().x, 0.0F);
+}
+
+// Turned a quarter about z, x becomes y; a turn after the update isn't taken until the next.
+TEST(CDemonActor, ALocalPointIsTurnedAsLastUpdatedThenMovedToTheActor) {
+    CTestActor actor(kTestLeafType);
+    actor.setLocation({.position = {.x = 1.0F, .y = 2.0F, .z = 3.0F}});
+    actor.setOrientation({.z = std::numbers::pi_v<float> / 2.0F});
+    actor.updateOrientationMatrix();
+    actor.setOrientation({});
+    common::CVector3f local{.x = 1.0F};
+    common::CVector3f world;
+    EXPECT_EQ(actor.localToWorldPoint(&world, &local), &world);
+    common::CMatrix3x3f turn;
+    turn.buildRotationMatrix({.z = std::numbers::pi_v<float> / 2.0F});
+    const common::CVector3f turned = turn.transformVector(local);
+    EXPECT_EQ(world.x, turned.x + 1.0F);
+    EXPECT_EQ(world.y, turned.y + 2.0F);
+    EXPECT_EQ(world.z, turned.z + 3.0F);
+    EXPECT_NEAR(std::abs(turned.y), 1.0F, 1e-6F);
 }
 
 // Each quits, naming itself, until its function is ported.

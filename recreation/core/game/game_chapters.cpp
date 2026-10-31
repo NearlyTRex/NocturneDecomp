@@ -260,4 +260,8 @@ const std::string &CGame::getCurrentSaveFile() const {
     return current_save_file_;
 }
 
+const engine::CDosIo &CGame::getDosIo() const {
+    return owners_.dosio;
+}
+
 } // namespace nocturne::core

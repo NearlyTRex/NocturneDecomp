@@ -62,16 +62,34 @@ TEST(CBox, ReadsTheBoxAfterItsVersion) {
     EXPECT_EQ(scanner.readLine(), "}\r");
 }
 
-TEST(CBox, AShortBoxKeepsWhatItCouldntRead) {
+// Being set up as its shape is read, a box short of its validity is valid at rest.
+TEST(CBox, AShortBoxKeepsWhatItCouldntReadButIsSetUp) {
+    const std::string full = "v\n1\ns\n0,0,0\n0.5,0,0\n4,0,0\n1\n1,1,1\n2,2,2\n0\n";
+    common::CTextScanner full_scanner(full);
+    CBox box;
+    box.loadFromFile(full_scanner);
     const std::string text = "boxVersion\n1\nboxStateInfo\n1,2,3\n";
     common::CTextScanner scanner(text);
-    CBox box;
-    box.setValidity(-1);
     box.loadFromFile(scanner);
     expectVector(box.getPosition(), {.x = 1.0F, .y = 2.0F, .z = 3.0F});
-    expectVector(box.getExtents(), {});
-    EXPECT_EQ(box.getValidity(), -1);
+    expectVector(box.getOrientation(), {.x = 0.5F});
+    expectVector(box.getExtents(), {.x = 4.0F});
+    expectVector(box.getLocalLinearVelocity(), {});
+    expectVector(box.getAngularVelocity(), {});
+    EXPECT_EQ(box.getValidity(), 1);
     EXPECT_TRUE(scanner.atEnd());
+}
+
+TEST(CBox, SettingItsCornersPutsItAtRestWhereItIsPut) {
+    CBox box;
+    common::CVector3f position{.x = 1.0F, .y = 2.0F, .z = 3.0F};
+    common::CVector3f orientation{.z = 0.25F};
+    common::CVector3f extents{.x = 4.0F, .y = 5.0F, .z = 6.0F};
+    box.setupCorners(&position, &orientation, &extents, 7.0F);
+    expectVector(box.getPosition(), position);
+    expectVector(box.getOrientation(), orientation);
+    expectVector(box.getExtents(), extents);
+    EXPECT_EQ(box.getValidity(), 1);
 }
 
 } // namespace

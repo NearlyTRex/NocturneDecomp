@@ -36,6 +36,9 @@ public:
     void setValidity(int validity);
 
 private:
+    void updateTransform(const common::CVector3f &position, const common::CVector3f &orientation,
+                         float volume);
+
     common::CVector3f position_;
     common::CVector3f orientation_;
     common::CVector3f extents_;

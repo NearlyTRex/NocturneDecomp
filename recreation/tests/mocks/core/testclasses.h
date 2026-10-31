@@ -4,6 +4,7 @@
 #include "core/actor/actor.h"
 #include "core/dmodel/keyframedmodel.h"
 #include "core/game/game.h"
+#include "engine/dosio/dosio.h"
 #include "tests/mocks/core/gameparts.h"
 #include "tests/mocks/core/mockdeformablemodels.h"
 #include "tests/mocks/core/mockkeyframedmodels.h"
@@ -17,9 +18,13 @@ namespace nocturne::core {
 // random numbers and models. Every keyframed model asked for is the one empty model.
 class CTestClasses {
 public:
-    CTestClasses() {
-        ON_CALL(keyframed_models_, loadModel(::testing::_))
-            .WillByDefault(::testing::ReturnRef(keyframed_model_));
+    CTestClasses() : game_parts_(clock_) {
+        returnTheOneModel();
+    }
+
+    // The game reads its files, and the one model loads, from the given disk.
+    explicit CTestClasses(const engine::CDosIo &dosio) : game_parts_(clock_, dosio) {
+        returnTheOneModel();
     }
 
     [[nodiscard]] CActor &get() {
@@ -44,8 +49,13 @@ public:
     }
 
 private:
+    void returnTheOneModel() {
+        ON_CALL(keyframed_models_, loadModel(::testing::_))
+            .WillByDefault(::testing::ReturnRef(keyframed_model_));
+    }
+
     ::testing::NiceMock<engine::MockGameClock> clock_;
-    CGameParts game_parts_{clock_};
+    CGameParts game_parts_;
     common::CWatcomRandom crt_;
     ::testing::NiceMock<MockDeformableModels> models_;
     ::testing::NiceMock<MockKeyFramedModels> keyframed_models_;
