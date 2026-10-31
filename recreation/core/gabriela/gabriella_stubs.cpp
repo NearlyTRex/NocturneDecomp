@@ -15,10 +15,6 @@ namespace {
 
 } // namespace
 
-void CGabriella::setup() {
-    notPorted("setup");
-}
-
 void CGabriella::process(float /*delta_time*/) {
     notPorted("process");
 }

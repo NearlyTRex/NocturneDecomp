@@ -45,6 +45,7 @@ public:
     // and a closing line from version 2. Items the file lists as carried are taken from the
     // mission; otherwise they are made. A held weapon that isn't one of the items is fatal.
     void load(CActorArchive &actor_archive);
+    // Sets each item up, as the mission does its actors.
     void setupItems();
     int select(CDemonActor *actor_ptr);
     CLightGun *getActiveLightGun();

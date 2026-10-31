@@ -192,6 +192,16 @@ TEST_F(CInventoryLoadTest, ACarriedItemComesFromTheMission) {
     EXPECT_EQ(inventory_.getItems()[0].get(), carried_item);
 }
 
+TEST_F(CInventoryLoadTest, SettingUpTheItemsSetsEachUp) {
+    auto carried = std::make_unique<CTestActor>(kGunType);
+    const CTestActor &item = *carried;
+    EXPECT_CALL(actors_, takeCarriedActor(StrEq("Your_weapon")))
+        .WillOnce(Return(::testing::ByMove(std::move(carried))));
+    load(text(2, 0, {"CTestGun \"Your_weapon\""}));
+    inventory_.setupItems();
+    EXPECT_EQ(item.getSetupCount(), 1);
+}
+
 // Version 0 had no battery and 1 no closing line.
 TEST_F(CInventoryLoadTest, OlderInventoriesHaveFewerParts) {
     EXPECT_EQ(load(text(0, -1, {"CTestItem \"Key\""})), "next");

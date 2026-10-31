@@ -249,7 +249,6 @@ TEST(CHero, TheFunctionsNotPortedYetQuit) {
     CTestClasses classes;
     CTestHero hero(classes.get());
     const NotPortedCalls calls = {
-        {"setup", [&] { hero.setup(); }},
         {"canLookAt", [&] { static_cast<void>(hero.canLookAt()); }},
         {"testCylinderCollision",
          [&] { static_cast<void>(hero.testCylinderCollision(nullptr, 0.0F)); }},
@@ -265,7 +264,7 @@ TEST(CHero, TheFunctionsNotPortedYetQuit) {
         {"createDefaultWeapon", [&] { hero.createDefaultWeapon(); }},
         {"reset", [&] { hero.reset(); }},
     };
-    EXPECT_EQ(calls.size(), 13U);
+    EXPECT_EQ(calls.size(), 12U);
     expectEachQuitsNotPorted("CHero", calls);
 }
 

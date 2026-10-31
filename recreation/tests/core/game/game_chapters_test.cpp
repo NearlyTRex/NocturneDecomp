@@ -61,6 +61,10 @@ protected:
         givenFile("enemy.pod", "");
         givenFile("models\\first.set", SSetFile{}.text());
         ON_CALL(raw_input_, getNextKeypress(_)).WillByDefault(Return('x'));
+        ON_CALL(models_, getDeformableModel(_))
+            .WillByDefault([](std::string_view name) -> CDeformableModel & {
+                throw common::CFatalError(std::format("no model {} here", name), "", 0, 0);
+            });
         for (const char *mission :
              {"hq-act1", "gtown",    "forest",  "castle1",  "dungeon",  "train",    "town",
               "mine",    "trans",    "temple",  "town2",    "hq-act2b", "hq-act3",  "chicago1",
@@ -112,11 +116,11 @@ protected:
         chapter_game_.showChapterSelect(owners_, mode);
     }
 
-    // As choose, where the mission chosen is started, which stops at the hero's setup, the first
-    // thing starting a mission does that isn't ported yet.
+    // As choose, where the mission chosen is started, which stops as the hero's setup looks for
+    // her model, which these tests haven't.
     void chooseToStart(EChapterSelectMode mode, std::initializer_list<EInputCodeType> keys) {
-        EXPECT_THAT([&] { choose(mode, keys); }, ThrowsMessage<common::CFatalError>(
-                                                     StrEq("CGabriella::setup is not ported yet")));
+        EXPECT_THAT([&] { choose(mode, keys); },
+                    ThrowsMessage<common::CFatalError>(StrEq("no model gabriela.dfm here")));
     }
 
     static std::tm localTime(std::time_t /*timestamp*/) {

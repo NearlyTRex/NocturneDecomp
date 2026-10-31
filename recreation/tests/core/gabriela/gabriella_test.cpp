@@ -111,7 +111,6 @@ TEST(CGabriella, TheFunctionsNotPortedYetQuit) {
     CTestClasses classes;
     CGabriella hero(classes.get());
     const NotPortedCalls calls = {
-        {"setup", [&] { hero.setup(); }},
         {"process", [&] { hero.process(0.0F); }},
         {"renderOpaque", [&] { static_cast<void>(hero.renderOpaque()); }},
         {"renderTransparent", [&] { static_cast<void>(hero.renderTransparent()); }},
@@ -121,7 +120,7 @@ TEST(CGabriella, TheFunctionsNotPortedYetQuit) {
         {"drawWeapon", [&] { hero.drawWeapon(0); }},
         {"isWeaponDrawn", [&] { static_cast<void>(hero.isWeaponDrawn()); }},
     };
-    EXPECT_EQ(calls.size(), 8U);
+    EXPECT_EQ(calls.size(), 7U);
     expectEachQuitsNotPorted("CGabriella", calls);
 }
 

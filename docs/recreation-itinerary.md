@@ -39,14 +39,14 @@ functions don't count as done. Sizes are in instructions.
 | 23 | Not reached from startup: `core/` (part 1 of 9) | 18 | 292 | 16011 | 58 | 12 | 19.8% |
 | 24 | Not reached from startup: `core/` (part 2 of 9) | 11 | 277 | 24965 | 22 | 8 | 7.9% |
 | 25 | Not reached from startup: `core/` (part 3 of 9) | 24 | 278 | 24134 | 32 | 9 | 11.5% |
-| 26 | Not reached from startup: `core/` (part 4 of 9) | 18 | 300 | 20148 | 47 | 7 | 15.6% |
-| 27 | Not reached from startup: `core/` (part 5 of 9) | 21 | 294 | 20910 | 56 | 9 | 19.0% |
+| 26 | Not reached from startup: `core/` (part 4 of 9) | 18 | 300 | 20148 | 47 | 8 | 15.6% |
+| 27 | Not reached from startup: `core/` (part 5 of 9) | 21 | 294 | 20910 | 57 | 10 | 19.3% |
 | 28 | Not reached from startup: `core/` (part 6 of 9) | 18 | 282 | 21809 | 51 | 9 | 18.0% |
 | 29 | Not reached from startup: `core/` (part 7 of 9) | 18 | 263 | 22721 | 66 | 8 | 25.0% |
 | 30 | Not reached from startup: `core/` (part 8 of 9) | 20 | 300 | 31826 | 40 | 5 | 13.3% |
 | 31 | Not reached from startup: `core/` (part 9 of 9) | 5 | 111 | 10905 | 21 | 4 | 18.9% |
 | 32 | Not reached from startup: `wincore/` | 2 | 11 | 482 | 4 | 0 | 36.3% |
-| | **All** | | **4479** | **402407** | **1013** | **182** | **22.6%** |
+| | **All** | | **4479** | **402407** | **1014** | **184** | **22.6%** |
 
 ## Step 0: Math value types
 
@@ -4860,7 +4860,7 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `getFrameCount` 0x004d2880 (3)
   - [ ] `getActorName` 0x004d2890 (3)
 
-### `core/gabriela.cpp` (34 functions, 5722 instructions, 5 done, 1 partial)
+### `core/gabriela.cpp` (34 functions, 5722 instructions, 5 done, 2 partial)
 - class `CGabriella`
   - [~] `ctor` 0x004d2b20 (50)
     - deferred: naming the gun's model gabgun.kfm, with the weapon classes
@@ -4904,7 +4904,9 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `isWeaponDrawn` 0x004d7590 (5)
   - [ ] `drawWeapon` 0x004d75b0 (10)
   - [x] `dtor` 0x004d7660 (37)
-  - [ ] `setup` 0x004d2c40 (170)
+  - [~] `setup` 0x004d2c40 (170)
+    - deferred: her coat, gabcoat.cth, loaded and set up on her model where she stands, with CCloth::load and CCloth::setup
+    - deferred: her left hand as the bone her first hand carries at, with getCarryObjToBodyXForm
 - free functions
   - [x] `factoryFuncGabriella` 0x004d2ae0 (12)
   - [x] `staticInit` 0x004d2910 (49)
@@ -5113,7 +5115,7 @@ functions don't count as done. Sizes are in instructions.
   - [x] `factoryFuncHealthItem` 0x004f1d90 (12)
   - [x] `staticInit` 0x004f1d60 (9)
 
-### `core/hero.cpp` (35 functions, 2025 instructions, 4 done, 1 partial)
+### `core/hero.cpp` (35 functions, 2025 instructions, 4 done, 2 partial)
 - free functions
   - [ ] `isAnyHeroWithinCylinder` 0x004f22a0 (63)
   - [ ] `closestHeroToPoint` 0x004f2170 (66)
@@ -5148,7 +5150,8 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `canLookAt` 0x004f37d0 (49)
   - [ ] `kill` 0x004f3af0 (11)
   - [ ] `reset` 0x004f3b20 (28)
-  - [ ] `setup` 0x004f2540 (16)
+  - [~] `setup` 0x004f2540 (16)
+    - deferred: no invincibility left, with CHero::kill and the heroes' process
   - [ ] `tryInteract` 0x004f2af0 (113)
   - [ ] `tryTalkToNearbyCharacter` 0x004f2c40 (105)
   - [ ] `tryOpenNearbyDoor` 0x004f2d70 (124)
@@ -5268,14 +5271,14 @@ functions don't count as done. Sizes are in instructions.
   - [x] `staticInit` 0x004f9830 (9)
   - [ ] `setVector` 0x004fa900 (8)
 
-### `core/inv.cpp` (13 functions, 1155 instructions, 2 done, 2 partial)
+### `core/inv.cpp` (13 functions, 1155 instructions, 3 done, 2 partial)
 - class `CInventory`
   - [x] `ctor` 0x004fd020 (18)
   - [ ] `save` 0x004ff210 (133)
   - [~] `load` 0x004ff400 (221)
     - deferred: showing the held weapon's ammo, with CAmmo
   - [x] `dtor` 0x004fd0c0 (8)
-  - [ ] `setupItems` 0x004ff780 (42)
+  - [x] `setupItems` 0x004ff780 (42)
   - [ ] `calculateTotalBatteryCharge` 0x004ffda0 (47)
   - [ ] `resetInventoryDisplayTimer` 0x00500020 (8)
   - [ ] `select` 0x004ff800 (232)

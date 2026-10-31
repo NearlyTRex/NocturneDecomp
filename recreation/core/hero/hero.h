@@ -26,6 +26,7 @@ public:
     CHero(CHero &&) = delete;
     CHero &operator=(CHero &&) = delete;
 
+    // Finds its model, sets the character up, then each item it carries.
     void setup() override;
     int canLookAt() override;
     int testCylinderCollision(SCollisionReturnInfo *collision_info, float tolerance) override;
@@ -76,6 +77,8 @@ protected:
     // What the hero was on the way to, but not what it pushed, for a derived class whose older
     // files held them.
     void archiveInteractionTargets(CActorArchive &actor_archive);
+    // Nothing pushed, and no lever or ladder to go to.
+    void clearPushLeverAndLadder();
 
 private:
     CInventory inventory_;

@@ -2,8 +2,12 @@
 
 #include "core/actor/actorarchive.h"
 #include "core/actor/demonactortype.h"
+#include "core/motion/motionlist.h"
+#include "core/skeleton/deformablemodelinstance.h"
+#include "core/skeleton/skeleton.h"
 
 #include <memory>
+#include <string_view>
 
 namespace nocturne::core {
 
@@ -68,6 +72,47 @@ CGabriella::CGabriella(CActor &classes) : CHero(classes) {
 
 // nocedit 0x004d7660
 CGabriella::~CGabriella() = default;
+
+// Her model is named again and found a third time. The original keeps the bones and motions for
+// every Gabriella in one global; here each keeps her own.
+// deferred: her coat, gabcoat.cth, loaded and set up on her model where she stands, with
+//   CCloth::load and CCloth::setup
+// deferred: her left hand as the bone her first hand carries at, with getCarryObjToBodyXForm
+// nocedit 0x004d2c40
+void CGabriella::setup() {
+    CHero::setup();
+    CDeformableModelInstance &model = getModel();
+    model.init("gabriela.dfm");
+    model.preCache();
+    const CSkeleton &skeleton = *model.getSkeletonPtr();
+    const auto bone = [&skeleton](std::string_view name) { return skeleton.findBone(name, true); };
+    parts_.head = bone("Bip01 head");
+    parts_.left_clavicle = bone("Bip01 L Clavicle");
+    parts_.right_clavicle = bone("Bip01 R Clavicle");
+    parts_.left_upper_arm = bone("Bip01 L UpperArm");
+    parts_.right_upper_arm = bone("Bip01 R UpperArm");
+    parts_.left_forearm = bone("Bip01 L ForeArm");
+    parts_.right_forearm = bone("Bip01 R ForeArm");
+    parts_.left_foot = bone("Bip01 L Foot");
+    parts_.right_foot = bone("Bip01 R Foot");
+    parts_.left_thigh = bone("Bip01 L Thigh");
+    parts_.right_thigh = bone("Bip01 R Thigh");
+    parts_.left_calf = bone("Bip01 L Calf");
+    parts_.right_calf = bone("Bip01 R Calf");
+    parts_.left_hand = bone("Bip01 L Hand");
+    parts_.right_hand = bone("Bip01 R Hand");
+    parts_.spine2 = bone("Bip01 Spine2");
+    parts_.spine = bone("Bip01 Spine");
+    const CMotionList &motions = *model.getMotionList();
+    parts_.draw_motion = motions.findMotionIndex("gab draw", true);
+    parts_.shoot_motion = motions.findMotionIndex("gab shoot", true);
+    parts_.crossbow_shoot_motion = motions.findMotionIndex("gab crossbow shoot", true);
+    clearPushLeverAndLadder();
+}
+
+const SGabriellaParts &CGabriella::getParts() const {
+    return parts_;
+}
 
 // nocedit 0x004d2b10
 const CDemonActorType &CGabriella::getActorType() const {

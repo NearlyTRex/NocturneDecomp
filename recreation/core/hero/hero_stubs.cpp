@@ -15,10 +15,6 @@ namespace {
 
 } // namespace
 
-void CHero::setup() {
-    notPorted("setup");
-}
-
 int CHero::canLookAt() {
     notPorted("canLookAt");
 }

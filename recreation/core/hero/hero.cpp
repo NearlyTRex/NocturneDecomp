@@ -87,6 +87,21 @@ CHero::CHero(CActor &classes) : CCharacter(classes) {
     setHealthBarMode(EHealthBarMode::kWhenHurt);
 }
 
+// The model is found before the character is set up, and so found twice.
+// deferred: no invincibility left, with CHero::kill and the heroes' process
+// nocedit 0x004f2540
+void CHero::setup() {
+    getModel().preCache();
+    CCharacter::setup();
+    inventory_.setupItems();
+}
+
+void CHero::clearPushLeverAndLadder() {
+    pushed_object_ = nullptr;
+    lever_to_pull_ = nullptr;
+    ladder_to_climb_ = nullptr;
+}
+
 // The original also took the hero off the mission's heroes, which the mission does here as it
 // destroys one.
 // nocedit 0x004f2470
