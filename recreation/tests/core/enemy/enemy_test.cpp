@@ -158,7 +158,6 @@ TEST(CEnemy, TheFunctionsNotPortedYetQuit) {
     CTestClasses classes;
     CTestEnemy enemy(classes.get());
     const NotPortedCalls calls = {
-        {"setup", [&] { enemy.setup(); }},
         {"renderBackground", [&] { enemy.renderBackground(0); }},
         {"getTargetPoints", [&] { static_cast<void>(enemy.getTargetPoints(nullptr)); }},
         {"releaseVictim", [&] { enemy.releaseVictim(); }},

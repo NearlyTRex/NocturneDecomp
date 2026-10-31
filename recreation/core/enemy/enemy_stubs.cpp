@@ -15,10 +15,6 @@ namespace {
 
 } // namespace
 
-void CEnemy::setup() {
-    notPorted("setup");
-}
-
 void CEnemy::renderBackground(int /*layer_flag*/) {
     notPorted("renderBackground");
 }

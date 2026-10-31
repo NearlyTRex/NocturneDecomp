@@ -15,10 +15,6 @@ namespace {
 
 } // namespace
 
-void CGhoul::setup() {
-    notPorted("setup");
-}
-
 void CGhoul::process(float /*delta_time*/) {
     notPorted("process");
 }

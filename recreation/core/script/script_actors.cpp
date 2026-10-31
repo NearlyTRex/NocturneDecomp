@@ -236,8 +236,8 @@ Result checkGetTriggerActor(CScript & /*script*/, SScriptStatement &statement) {
     return missing(statement, pair->second, CTrigger::kType).value_or(Result{});
 }
 
-// "(character, parts...": the character's model must have each part, which the model's parts
-// aren't ported to find yet. The original's scan had to take five characters, which "(a,b" falls
+// "(character, parts...": the character's model must have each part, which reading the parts
+// isn't ported to do yet. The original's scan had to take five characters, which "(a,b" falls
 // short of.
 Result checkDismember(CScript & /*script*/, SScriptStatement &statement) {
     constexpr std::size_t kMinScan = 5;
@@ -253,11 +253,11 @@ Result checkDismember(CScript & /*script*/, SScriptStatement &statement) {
             missing(statement, trimmed(character), CCharacter::kType)) {
         return *stop;
     }
-    quitNotPorted("CDeformableModel", "findPartByName");
+    quitNotPorted("core", "parseBodyPartMask");
 }
 
-// "(character, motion)": the character's model must have the motion, which the model's motions
-// aren't ported to find yet.
+// "(character, motion)": the character's model must have the motion, which checking isn't
+// ported to look for yet.
 Result checkGesture(CScript & /*script*/, SScriptStatement &statement) {
     const std::expected<SPair, std::string> pair =
         scanPair(statement, "(%[^,], %[^)])", "Error parsing gesture command parms");
@@ -267,7 +267,7 @@ Result checkGesture(CScript & /*script*/, SScriptStatement &statement) {
     if (const std::optional<Result> stop = missing(statement, pair->first, CCharacter::kType)) {
         return *stop;
     }
-    quitNotPorted("CMotionList", "findMotionIndex");
+    quitNotPorted("CScript", "step checking gesture");
 }
 
 Result checkPressButton(CScript & /*script*/, SScriptStatement &statement) {

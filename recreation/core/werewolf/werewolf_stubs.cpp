@@ -15,10 +15,6 @@ namespace {
 
 } // namespace
 
-void CWerewolf::setup() {
-    notPorted("setup");
-}
-
 void CWerewolf::process(float /*delta_time*/) {
     notPorted("process");
 }

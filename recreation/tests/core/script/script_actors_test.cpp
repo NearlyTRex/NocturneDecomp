@@ -121,8 +121,8 @@ TEST_F(CScriptActorsTest, PressAndReleaseButtonTakeAHeroAndAButton) {
 // A character missing through a variable passes before its model is needed.
 TEST_F(CScriptActorsTest, GestureAndDismemberNeedTheModelWhichIsNotPortedYet) {
     expectPasses("gesture($, wave)\ndismember($, arm)\n");
-    expectQuit("gesture(Mob, wave)\n", "CMotionList::findMotionIndex is not ported yet");
-    expectQuit("dismember( Mob , arm leg)\n", "CDeformableModel::findPartByName is not ported yet");
+    expectQuit("gesture(Mob, wave)\n", "CScript::step checking gesture is not ported yet");
+    expectQuit("dismember( Mob , arm leg)\n", "core::parseBodyPartMask is not ported yet");
     expectSyntaxError("gesture(Door1, wave)\n", 1, wrongClass("Door1", "CTestDoor", "CCharacter"));
     expectSyntaxError("dismember(Door1, arm)\n", 1, wrongClass("Door1", "CTestDoor", "CCharacter"));
     expectSyntaxError("gesture(Mob)\n", 1, "Error parsing gesture command parms");

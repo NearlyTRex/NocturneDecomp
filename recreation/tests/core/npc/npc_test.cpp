@@ -114,7 +114,6 @@ TEST(CNPC, TheFunctionsNotPortedYetQuit) {
     CTestClasses classes;
     CNPC npc(classes.get());
     const NotPortedCalls calls = {
-        {"setup", [&] { npc.setup(); }},
         {"process", [&] { npc.process(0.0F); }},
         {"renderBackground", [&] { npc.renderBackground(0); }},
         {"getPathMap", [&] { static_cast<void>(npc.getPathMap()); }},

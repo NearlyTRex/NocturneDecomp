@@ -157,7 +157,6 @@ TEST(CZombie, TheFunctionsNotPortedYetQuit) {
     CTestClasses classes;
     CZombie zombie(classes.get());
     const NotPortedCalls calls = {
-        {"setup", [&] { zombie.setup(); }},
         {"process", [&] { zombie.process(0.0F); }},
         {"renderOpaque", [&] { static_cast<void>(zombie.renderOpaque()); }},
         {"renderTransparent", [&] { static_cast<void>(zombie.renderTransparent()); }},

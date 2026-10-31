@@ -1,13 +1,20 @@
 #include "core/zombie/zombie.h"
 
+#include "common/text/ascii.h"
 #include "core/actor/actor.h"
 #include "core/actor/actorarchive.h"
 #include "core/actor/demonactortype.h"
+#include "core/enemy/bipedbones.h"
+#include "core/skeleton/deformablemodel.h"
 #include "core/skeleton/deformablemodelinstance.h"
+#include "core/skeleton/partvisibility.h"
 
 #include <cstddef>
 #include <memory>
+#include <span>
 #include <string>
+#include <string_view>
+#include <utility>
 
 namespace nocturne::core {
 
@@ -34,6 +41,11 @@ constexpr std::size_t kRightHand = 1;
 constexpr float kNearestReach = 0.3F;
 constexpr float kFarthestReach = 1.0F;
 constexpr int kMostPickupSeed = 0xff;
+// Where each arm part sits among the parts.
+constexpr std::size_t kLeftArm = 0;
+constexpr std::size_t kLeftForearm = 1;
+constexpr std::size_t kRightArm = 2;
+constexpr std::size_t kRightForearm = 3;
 
 } // namespace
 
@@ -45,7 +57,7 @@ constinit const CDemonActorType CZombie::kType =
 //   given the set
 // deferred: the collision cylinder, the detection range, what it is picking up and how far it
 //   has come, the door it heads for, the pain cooldown, rising and burial timers, and not finding
-//   paths to new targets, with CZombie::setup and CZombie::process
+//   paths to new targets, with CZombie::process
 // deferred: chasing the hero netplay gives it rather than the local one (the decomp's
 //   nocturne_net_sim_target_for), with CZombie::process
 // deferred: drawing the part a blow takes off from the simulation's random numbers rather than
@@ -53,7 +65,7 @@ constinit const CDemonActorType CZombie::kType =
 //   CZombie::processDismemberment
 // nocedit 0x005f8fe0
 CZombie::CZombie(CActor &classes)
-    : CEnemy(classes),
+    : CEnemy(classes), classes_(classes),
       pickup_range_factor_(classes.getRandomFloatFromRange(kNearestReach, kFarthestReach)),
       pickup_seed_(classes.getRandomInt(0, kMostPickupSeed)) {
     getModel().init("zombie1.dfm");
@@ -61,6 +73,37 @@ CZombie::CZombie(CActor &classes)
 
 // nocedit 0x005fcc50
 CZombie::~CZombie() = default;
+
+// newzomb1.dfm's arms are named the other way about. A miner is drawn as transparent.
+// deferred: each hand's bone and forearm part as where it carries, with getCarryObjToBodyXForm
+// deferred: a zombie with a waist and no cylinder top of its own taking the model's top less
+//   0.75, with the characters' collision
+// deferred: no bleeding out, whether newzchik.dfm, zombho1.dfm or zombho2.dfm makes it female,
+//   and no sounds playing, with CZombie::process
+// nocedit 0x005f9140
+void CZombie::setup() {
+    CDeformableModelInstance &model = getModel();
+    model.preCache();
+    bones_ = findBipedBones(*model.getSkeletonPtr(), false);
+    const CDeformableModel &parts = *model.getModelPtr();
+    const auto part = [&parts](std::string_view name, bool required) {
+        return parts.findPartByName(name, required);
+    };
+    parts_ = {part("larm01", true),   part("l4arm01", true),  part("rarm01", true),
+              part("r4arm01", false), part("waist01", false), part("torso01", true),
+              part("head01", true)};
+    if (parts_[kRightForearm] < 0) {
+        parts_[kRightForearm] = kSpareForearmPart;
+    }
+    model.setPartVisibility(static_cast<std::size_t>(kSpareForearmPart), EPartVisibility::kHidden);
+    if (common::equalsIgnoringAsciiCase(model.getModelName(), "newzomb1.dfm")) {
+        std::swap(parts_[kLeftArm], parts_[kRightArm]);
+        std::swap(parts_[kLeftForearm], parts_[kRightForearm]);
+    }
+    CEnemy::setup();
+    setTransparent(miner_zombie_);
+    rise_delay_ = classes_.getRandomFloatFromRange(0.0F, 1.0F);
+}
 
 // nocedit 0x005f8fd0
 const CDemonActorType &CZombie::getActorType() const {
@@ -130,6 +173,18 @@ bool CZombie::isMinerZombie() const {
 
 bool CZombie::alwaysChasesFast() const {
     return always_chase_fast_;
+}
+
+const SBipedBones &CZombie::getBones() const {
+    return bones_;
+}
+
+std::span<const int> CZombie::getParts() const {
+    return parts_;
+}
+
+float CZombie::getRiseDelay() const {
+    return rise_delay_;
 }
 
 } // namespace nocturne::core

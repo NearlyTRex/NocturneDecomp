@@ -15,10 +15,6 @@ namespace {
 
 } // namespace
 
-void CMobster::setup() {
-    notPorted("setup");
-}
-
 void CMobster::process(float /*delta_time*/) {
     notPorted("process");
 }

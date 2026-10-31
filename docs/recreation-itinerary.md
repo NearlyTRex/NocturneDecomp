@@ -24,7 +24,7 @@ functions don't count as done. Sizes are in instructions.
 | 8 | `renderMenuAndGetChoice`, `CMoon::free`, `CSound::reset`, `CEditorTools::showFileSelectionDialog` | 8 | 63 | 5314 | 60 | 3 | 95.2% |
 | 9 | `CPickList::enableItem`, `CEventList::resetGameFlags`, `CLevelLoader::show`, `CDemonMission::load` | 15 | 56 | 3298 | 33 | 11 | 58.9% |
 | 10 | `CDemonMission::createHeros`, `CDemonMission::prepareAllActors`, `CEventList::reset`, `CDemonMission::loadSet` | 15 | 42 | 5112 | 32 | 9 | 76.1% |
-| 11 | `CScript::loadScript` | 63 | 579 | 67400 | 69 | 33 | 11.9% |
+| 11 | `CScript::loadScript` | 63 | 579 | 67400 | 70 | 33 | 12.0% |
 | 12 | `CDemonMission::loadScript`, `CScript::executeInitSection`, `CDemonMission::startMission`, `CDemonMission::buildActiveSetActorList`, `CConsole::reset`, `CEditorTools::displayMemoryDiagnostics`, `CGame::setGameRes`, `CDemonLight::init`, `CDemonSet::initScene` | 12 | 26 | 1658 | 3 | 2 | 11.5% |
 | 13 | `CFireEffect::init`, `CDemonSet::loadMasterLightStates`, `CDemonSet::setGamma`, `CGame::clearOverlay`, `CGame::loadAssets` | 7 | 27 | 735 | 0 | 0 | 0.0% |
 | 14 | `CNetGame::syncPlayers`, `CNetGame::processServerFrame`, `CLevelLoader::cleanup`, `CKeys::toggleInputMask`, `CGame::processHotkeys` | 17 | 51 | 5302 | 4 | 0 | 7.8% |
@@ -38,15 +38,15 @@ functions don't count as done. Sizes are in instructions.
 | 22 | Not reached from startup: `shape/` | 2 | 42 | 3178 | 4 | 2 | 9.5% |
 | 23 | Not reached from startup: `core/` (part 1 of 9) | 18 | 292 | 16011 | 61 | 15 | 20.8% |
 | 24 | Not reached from startup: `core/` (part 2 of 9) | 11 | 277 | 24965 | 22 | 8 | 7.9% |
-| 25 | Not reached from startup: `core/` (part 3 of 9) | 24 | 278 | 24134 | 34 | 8 | 12.2% |
-| 26 | Not reached from startup: `core/` (part 4 of 9) | 18 | 300 | 20148 | 47 | 8 | 15.6% |
+| 25 | Not reached from startup: `core/` (part 3 of 9) | 24 | 278 | 24134 | 35 | 8 | 12.5% |
+| 26 | Not reached from startup: `core/` (part 4 of 9) | 18 | 300 | 20148 | 47 | 9 | 15.6% |
 | 27 | Not reached from startup: `core/` (part 5 of 9) | 21 | 294 | 20910 | 60 | 10 | 20.4% |
-| 28 | Not reached from startup: `core/` (part 6 of 9) | 18 | 282 | 21809 | 53 | 9 | 18.7% |
+| 28 | Not reached from startup: `core/` (part 6 of 9) | 18 | 282 | 21809 | 53 | 11 | 18.7% |
 | 29 | Not reached from startup: `core/` (part 7 of 9) | 18 | 263 | 22721 | 66 | 8 | 25.0% |
 | 30 | Not reached from startup: `core/` (part 8 of 9) | 20 | 300 | 31826 | 41 | 6 | 13.6% |
-| 31 | Not reached from startup: `core/` (part 9 of 9) | 5 | 111 | 10905 | 22 | 4 | 19.8% |
+| 31 | Not reached from startup: `core/` (part 9 of 9) | 5 | 111 | 10905 | 22 | 6 | 19.8% |
 | 32 | Not reached from startup: `wincore/` | 2 | 11 | 482 | 4 | 0 | 36.3% |
-| | **All** | | **4479** | **402407** | **1037** | **185** | **23.1%** |
+| | **All** | | **4479** | **402407** | **1039** | **190** | **23.1%** |
 
 ## Step 0: Math value types
 
@@ -1512,7 +1512,7 @@ functions don't count as done. Sizes are in instructions.
   - [~] `attachActor` 0x0054e1e0 (112)
     - deferred: where the actor sits on the platform, with CPlatform::updateAttachedActors
 
-### `core/skeleton.cpp` (13 functions, 1277 instructions, 5 done, 0 partial)
+### `core/skeleton.cpp` (13 functions, 1277 instructions, 6 done, 0 partial)
 - class `CDeformableModel`
   - [ ] `findMaxWeightBone` 0x0059dca0 (69)
   - [ ] `exactRayTrace` 0x0059cba0 (199)
@@ -1520,7 +1520,7 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `getBonePart` 0x0059c2d0 (8)
   - [x] `getSkeletonPtr` 0x0059a810 (18)
   - [ ] `dismember` 0x0059c5e0 (426)
-  - [ ] `findPartByName` 0x0059c240 (52)
+  - [x] `findPartByName` 0x0059c240 (52)
 - class `CDeformableModelInstance`
   - [x] `getModelPtr` 0x005a07a0 (36)
   - [x] `skinVerticesForLOD` 0x005a01d0 (20)
@@ -4582,7 +4582,7 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `factoryFuncEmitter` 0x004a7c60 (12)
   - [x] `staticInit` 0x004a7c30 (9)
 
-### `core/enemy.cpp` (16 functions, 931 instructions, 2 done, 1 partial)
+### `core/enemy.cpp` (16 functions, 931 instructions, 3 done, 1 partial)
 - class `CEnemy`
   - [~] `ctor` 0x004a9500 (68)
     - deferred: the special form, the victim search's timer and radius, being in combat, the attack cooldown, finding paths to new targets and the enemy's footsteps, with CEnemy::updateVictim and CCharacter::process
@@ -4597,7 +4597,7 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `renderBackground` 0x004a9fa0 (12)
   - [ ] `releaseVictim` 0x004aa030 (42)
   - [ ] `onVictimLost` 0x004aa0c0 (10)
-  - [ ] `setup` 0x004a9650 (5)
+  - [x] `setup` 0x004a9650 (5)
   - [ ] `testAttackRadius` 0x004a9880 (63)
   - [ ] `updatePatrol` 0x004a9fd0 (27)
   - [ ] `testAttackLine` 0x004a9930 (61)
@@ -4970,10 +4970,10 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `dtor` 0x004e5f40 (31)
   - [ ] `setup` 0x004e5d50 (10)
 
-### `core/ghoul.cpp` (15 functions, 3297 instructions, 5 done, 1 partial)
+### `core/ghoul.cpp` (15 functions, 3297 instructions, 5 done, 2 partial)
 - class `CGhoul`
   - [~] `ctor` 0x004e6030 (56)
-    - deferred: the collision cylinder, the detection range, the eating state, flinching, the stun, heal and stuck timers, the dark waypoint and going berserk, with CGhoul::setup and CGhoul::process
+    - deferred: the collision cylinder, the detection range, the eating state, flinching, the stun, heal and stuck timers, the dark waypoint and going berserk, with CGhoul::process
     - deferred: chasing the hero netplay gives it rather than the local one (the decomp's nocturne_net_sim_target_for), with CGhoul::process
     - deferred: drawing the part a blow takes off from the simulation's random numbers rather than rand, so netplay agrees on it (the decomp's nocturne_rng_sim), with CGhoul::processDismemberment
     - deferred: tracing each blow for netplay debugging (the decomp's nocturne_sim_trace_damage), with CGhoul::processDamage
@@ -4988,7 +4988,8 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `processDamage` 0x004e87e0 (265)
   - [ ] `getTargetPoints` 0x004e8bc0 (149)
   - [x] `dtor` 0x004e8f10 (62)
-  - [ ] `setup` 0x004e6160 (163)
+  - [~] `setup` 0x004e6160 (163)
+    - deferred: no stun, healing or being stuck, no dark waypoint, not berserk and no sounds playing, with CGhoul::process
 - free functions
   - [x] `factoryFuncGhoul` 0x004e5ff0 (12)
   - [x] `staticInit` 0x004e5f90 (20)
@@ -5571,10 +5572,10 @@ functions don't count as done. Sizes are in instructions.
   - [x] `staticInit` 0x00522c50 (1, compiler-generated)
   - [ ] `skipLine` 0x00522c60 (11)
 
-### `core/mobster.cpp` (23 functions, 3180 instructions, 5 done, 1 partial)
+### `core/mobster.cpp` (23 functions, 3180 instructions, 5 done, 2 partial)
 - class `CMobster`
   - [~] `ctor` 0x00525200 (64)
-    - deferred: the collision cylinder, the detection range, the idle, weapon, firing and taunt timers, the weapon it heads for and how often it has looked, and not finding paths to new targets, with CMobster::setup and CMobster::process
+    - deferred: the collision cylinder, the detection range, the idle, weapon, firing and taunt timers, the weapon it heads for and how often it has looked, and not finding paths to new targets, with CMobster::process
     - deferred: chasing the hero netplay gives it rather than the local one (the decomp's nocturne_net_sim_target_for), with CMobster::process
     - deferred: drawing the part a blow takes off from the simulation's random numbers rather than rand, so netplay agrees on it (the decomp's nocturne_rng_sim), with CMobster::processDismemberment
   - [x] `getActorType` 0x005251f0 (2)
@@ -5593,7 +5594,9 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `getTargetPoints` 0x005278d0 (89)
   - [ ] `getCollisionType` 0x005279d0 (7)
   - [x] `dtor` 0x00527c70 (62)
-  - [ ] `setup` 0x00525340 (210)
+  - [~] `setup` 0x00525340 (210)
+    - deferred: each hand's bone and forearm part as where it carries, with getCarryObjToBodyXForm
+    - deferred: no firing, no sounds playing and finding paths to new targets when posted, with CMobster::process
 - free functions
   - [x] `factoryFuncMobster` 0x005251c0 (12)
   - [x] `staticInit` 0x00525070 (9)
@@ -5739,10 +5742,10 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `copyPlayerInput` 0x00543db0 (25)
   - [ ] `copyNetAddr` 0x00543e00 (7)
 
-### `core/npc.cpp` (13 functions, 589 instructions, 6 done, 1 partial)
+### `core/npc.cpp` (13 functions, 589 instructions, 6 done, 2 partial)
 - class `CNPC`
   - [~] `ctor` 0x005447e0 (26)
-    - deferred: the path map, the collision cylinder and catching fire from a gun's flame, with CNPC::setup and CCharacter::process
+    - deferred: the path map, the collision cylinder and catching fire from a gun's flame, with CCharacter::process
   - [x] `archive` 0x00544ba0 (51)
   - [x] `dtor` 0x004f4700 (67)
   - [ ] `process` 0x005448b0 (220)
@@ -5752,7 +5755,8 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `processDamage` 0x00544d30 (75)
   - [x] `isInvulnerable` 0x00544e10 (5)
   - [ ] `getPathMap` 0x00544e30 (3)
-  - [ ] `setup` 0x00544870 (21)
+  - [~] `setup` 0x00544870 (21)
+    - deferred: a priest, priest.dfm in any case, bleeding nothing, with CCharacter::processDamage and the gore it spawns
 - free functions
   - [x] `factoryFuncNPC` 0x005447a0 (12)
   - [x] `staticInit` 0x00544770 (9)
@@ -6630,7 +6634,7 @@ functions don't count as done. Sizes are in instructions.
   - [~] `staticInit` 0x005eeaa0 (9)
     - deferred: the game's weather and its 200 particle positions, with this constructor
 
-### `core/werewolf.cpp` (16 functions, 2629 instructions, 5 done, 1 partial)
+### `core/werewolf.cpp` (16 functions, 2629 instructions, 5 done, 2 partial)
 - class `CWerewolf`
   - [~] `ctor` 0x005efc10 (31)
     - deferred: the collision cylinder and the detection range, with CWerewolf::process
@@ -6647,7 +6651,9 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `getDeathState` 0x005f1db0 (22)
   - [ ] `getTargetPoints` 0x005f1df0 (28)
   - [x] `dtor` 0x005f2220 (62)
-  - [ ] `setup` 0x005efcc0 (72)
+  - [~] `setup` 0x005efcc0 (72)
+    - deferred: a train werewolf's collision radius of 1.5, with the characters' collision
+    - deferred: no sounds playing, with CWerewolf::process
 - free functions
   - [x] `factoryFuncWerewolf` 0x005efbd0 (12)
   - [x] `staticInit` 0x005efb70 (23)
@@ -6697,11 +6703,11 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `clipPolygonStage4` 0x005f8330 (120)
   - [ ] `clampClippedVertices` 0x005f84a0 (47)
 
-### `core/zombie.cpp` (25 functions, 4452 instructions, 5 done, 1 partial)
+### `core/zombie.cpp` (25 functions, 4452 instructions, 5 done, 2 partial)
 - class `CZombie`
   - [~] `ctor` 0x005f8fe0 (77)
     - deferred: being a miner when the set's geometry is mine.geo, with CActor::createActorByName given the set
-    - deferred: the collision cylinder, the detection range, what it is picking up and how far it has come, the door it heads for, the pain cooldown, rising and burial timers, and not finding paths to new targets, with CZombie::setup and CZombie::process
+    - deferred: the collision cylinder, the detection range, what it is picking up and how far it has come, the door it heads for, the pain cooldown, rising and burial timers, and not finding paths to new targets, with CZombie::process
     - deferred: chasing the hero netplay gives it rather than the local one (the decomp's nocturne_net_sim_target_for), with CZombie::process
     - deferred: drawing the part a blow takes off from the simulation's random numbers rather than rand, so netplay agrees on it (the decomp's nocturne_rng_sim), with CZombie::processDismemberment
   - [x] `getActorType` 0x005f8fd0 (2)
@@ -6724,7 +6730,10 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `getGrabbed` 0x005fc970 (29)
   - [ ] `shouldIgnoreForTargeting` 0x005fc9e0 (15)
   - [x] `dtor` 0x005fcc50 (62)
-  - [ ] `setup` 0x005f9140 (217)
+  - [~] `setup` 0x005f9140 (217)
+    - deferred: each hand's bone and forearm part as where it carries, with getCarryObjToBodyXForm
+    - deferred: a zombie with a waist and no cylinder top of its own taking the model's top less 0.75, with the characters' collision
+    - deferred: no bleeding out, whether newzchik.dfm, zombho1.dfm or zombho2.dfm makes it female, and no sounds playing, with CZombie::process
 - free functions
   - [x] `factoryFuncZombie` 0x005f8fa0 (12)
   - [x] `staticInit` 0x005f8c90 (9)

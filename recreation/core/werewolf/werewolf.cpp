@@ -1,10 +1,13 @@
 #include "core/werewolf/werewolf.h"
 
+#include "core/actor/actor.h"
 #include "core/actor/actorarchive.h"
 #include "core/actor/demonactortype.h"
 #include "core/skeleton/deformablemodelinstance.h"
+#include "core/skeleton/skeleton.h"
 
 #include <memory>
+#include <string_view>
 
 namespace nocturne::core {
 
@@ -19,6 +22,9 @@ constexpr int kEnemyGuardVersion = 3;
 constexpr int kChainVersion = 4;
 constexpr int kTypeVersion = 5;
 constexpr int kPhaseVersion = 6;
+// Seconds before a werewolf first may howl.
+constexpr float kSoonestHowl = 10.0F;
+constexpr float kLatestHowl = 30.0F;
 
 } // namespace
 
@@ -30,12 +36,32 @@ constinit const CDemonActorType CWerewolf::kType =
 // deferred: chasing the hero netplay gives it rather than the local one (the decomp's
 //   nocturne_net_sim_target_for), with CWerewolf::process
 // nocedit 0x005efc10
-CWerewolf::CWerewolf(CActor &classes) : CEnemy(classes) {
+CWerewolf::CWerewolf(CActor &classes) : CEnemy(classes), classes_(classes) {
     getModel().init("wolfbrn.dfm");
 }
 
 // nocedit 0x005f2220
 CWerewolf::~CWerewolf() = default;
+
+// Each bone is fatal when the skeleton hasn't it. Lit eyes are drawn as transparent.
+// deferred: a train werewolf's collision radius of 1.5, with the characters' collision
+// deferred: no sounds playing, with CWerewolf::process
+// nocedit 0x005efcc0
+void CWerewolf::setup() {
+    CDeformableModelInstance &model = getModel();
+    model.preCache();
+    const CSkeleton &skeleton = *model.getSkeletonPtr();
+    const auto bone = [&skeleton](std::string_view name) { return skeleton.findBone(name, true); };
+    bones_.spine3 = bone("Bip01 Spine3");
+    bones_.left_finger = bone("Bip01 L Finger1");
+    bones_.right_finger = bone("Bip01 R Finger1");
+    bones_.jaw = bone("Bip01jaw2");
+    bones_.head = bone("Bip01 Head");
+    CEnemy::setup();
+    setTransparent(eyes_lit_);
+    eye_glow_phase_ = classes_.getRandomFloatFromRange(0.0F, 1.0F);
+    howl_cooldown_ = classes_.getRandomFloatFromRange(kSoonestHowl, kLatestHowl);
+}
 
 // nocedit 0x005efc00
 const CDemonActorType &CWerewolf::getActorType() const {
@@ -106,6 +132,18 @@ CDemonActor *CWerewolf::getFirstAlpha() const {
 
 CDemonActor *CWerewolf::getSecondAlpha() const {
     return second_alpha_;
+}
+
+const SWerewolfBones &CWerewolf::getBones() const {
+    return bones_;
+}
+
+float CWerewolf::getEyeGlowPhase() const {
+    return eye_glow_phase_;
+}
+
+float CWerewolf::getHowlCooldown() const {
+    return howl_cooldown_;
 }
 
 } // namespace nocturne::core

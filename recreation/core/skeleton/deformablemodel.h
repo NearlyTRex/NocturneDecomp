@@ -113,7 +113,8 @@ public:
     // models\<filename>; a file that won't open, is too new or doesn't parse is fatal.
     void load(std::string_view filename);
     SPart *getPartPtr(int part_index);
-    int findPartByName(char *part_name, int error_if_not_found);
+    // The part's index, in any case; -1 when the model hasn't it, which is fatal when asked.
+    [[nodiscard]] int findPartByName(std::string_view part_name, bool error_if_not_found) const;
     int getBonePart(int bone_index);
     void dismember(int lod_index, CBodyPart *body_part_ptr, int part_index,
                    common::CVector3i *skinned_vertices, int texture_set_index);

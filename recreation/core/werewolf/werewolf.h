@@ -9,6 +9,15 @@
 
 namespace nocturne::core {
 
+// The bones of a werewolf's skeleton its own code poses and hits.
+struct SWerewolfBones {
+    int spine3 = 0;
+    int left_finger = 0;
+    int right_finger = 0;
+    int jaw = 0;
+    int head = 0;
+};
+
 // An enemy that runs the heroes down, howling, its eyes alight; one may be chained, and one leads
 // the pack. The virtual functions not ported yet quit when called.
 class CWerewolf : public CEnemy {
@@ -43,12 +52,22 @@ public:
     // The pack's two leaders.
     [[nodiscard]] CDemonActor *getFirstAlpha() const;
     [[nodiscard]] CDemonActor *getSecondAlpha() const;
+    [[nodiscard]] const SWerewolfBones &getBones() const;
+    // Where its eyes' glow starts, from 0 to 1.
+    [[nodiscard]] float getEyeGlowPhase() const;
+    // Seconds, from 10 to 30, until it may howl.
+    [[nodiscard]] float getHowlCooldown() const;
 
 private:
     static constexpr float kDefaultChainLength = 5.0F;
     static constexpr float kDefaultPhaseTimer = 10.0F;
 
     static std::unique_ptr<CDemonActor> create(CActor &classes);
+
+    CActor &classes_;
+    SWerewolfBones bones_;
+    float eye_glow_phase_ = 0.0F;
+    float howl_cooldown_ = 0.0F;
 
     EWerewolfType werewolf_type_ = EWerewolfType::kTrain;
     bool eyes_lit_ = true;

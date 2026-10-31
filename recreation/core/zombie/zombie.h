@@ -1,10 +1,14 @@
 #pragma once
 
 #include "common/fwd.h"
+#include "core/enemy/bipedbones.h"
 #include "core/enemy/enemy.h"
 #include "core/fwd.h"
 
+#include <array>
+#include <cstddef>
 #include <memory>
+#include <span>
 #include <string>
 
 namespace nocturne::core {
@@ -48,10 +52,24 @@ public:
     // A miner, in the mine.
     [[nodiscard]] bool isMinerZombie() const;
     [[nodiscard]] bool alwaysChasesFast() const;
+    [[nodiscard]] const SBipedBones &getBones() const;
+    // The model's parts, each fatal when it hasn't it but the right forearm and waist: the arms,
+    // upper then lower, left then right, the waist, torso and head. -1 for no waist.
+    [[nodiscard]] std::span<const int> getParts() const;
+    // How long, from 0 to 1 second, it waits before rising.
+    [[nodiscard]] float getRiseDelay() const;
+
+    static constexpr std::size_t kPartCount = 7;
+    // Where a model without a right forearm keeps one, hidden.
+    static constexpr int kSpareForearmPart = 29;
 
 private:
     static std::unique_ptr<CDemonActor> create(CActor &classes);
 
+    CActor &classes_;
+    SBipedBones bones_;
+    std::array<int, kPartCount> parts_{};
+    float rise_delay_ = 0.0F;
     float pickup_range_factor_;
     int pickup_seed_;
     std::string rise_from_grave_condition_ = "true";

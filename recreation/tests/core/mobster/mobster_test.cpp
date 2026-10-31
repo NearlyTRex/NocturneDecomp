@@ -142,7 +142,6 @@ TEST(CMobster, TheFunctionsNotPortedYetQuit) {
     CTestClasses classes;
     CMobster mobster(classes.get());
     const NotPortedCalls calls = {
-        {"setup", [&] { mobster.setup(); }},
         {"process", [&] { mobster.process(0.0F); }},
         {"getCollisionType", [&] { static_cast<void>(mobster.getCollisionType(nullptr)); }},
         {"getTargetPoints", [&] { static_cast<void>(mobster.getTargetPoints(nullptr)); }},

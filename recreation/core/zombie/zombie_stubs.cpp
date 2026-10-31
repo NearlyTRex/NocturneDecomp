@@ -15,10 +15,6 @@ namespace {
 
 } // namespace
 
-void CZombie::setup() {
-    notPorted("setup");
-}
-
 void CZombie::process(float /*delta_time*/) {
     notPorted("process");
 }

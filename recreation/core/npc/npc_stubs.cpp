@@ -15,10 +15,6 @@ namespace {
 
 } // namespace
 
-void CNPC::setup() {
-    notPorted("setup");
-}
-
 void CNPC::process(float /*delta_time*/) {
     notPorted("process");
 }

@@ -60,7 +60,7 @@ TEST(CDeformableModel, PublicInterface) {
     static_assert(
         std::is_same_v<decltype(&CDeformableModel::getPartPtr), SPart *(CDeformableModel::*)(int)>);
     static_assert(std::is_same_v<decltype(&CDeformableModel::findPartByName),
-                                 int (CDeformableModel::*)(char *, int)>);
+                                 int (CDeformableModel::*)(std::string_view, bool) const>);
     static_assert(
         std::is_same_v<decltype(&CDeformableModel::getBonePart), int (CDeformableModel::*)(int)>);
     static_assert(std::is_same_v<decltype(&CDeformableModel::dismember),

@@ -1,10 +1,14 @@
 #pragma once
 
 #include "common/fwd.h"
+#include "core/enemy/bipedbones.h"
 #include "core/enemy/enemy.h"
 #include "core/fwd.h"
 
+#include <array>
+#include <cstddef>
 #include <memory>
+#include <span>
 #include <string>
 
 namespace nocturne::core {
@@ -46,9 +50,18 @@ public:
     // Whether it holds its place until the condition holds.
     [[nodiscard]] bool isHoldingPosition() const;
     [[nodiscard]] const std::string &getHoldPositionCondition() const;
+    [[nodiscard]] const SBipedBones &getBones() const;
+    // The model's parts, each fatal when it hasn't it: the arms, upper then lower, left then
+    // right, the legs, thigh then shin, right then left, the waist, torso and head.
+    [[nodiscard]] std::span<const int> getParts() const;
+
+    static constexpr std::size_t kPartCount = 11;
 
 private:
     static std::unique_ptr<CDemonActor> create(CActor &classes);
+
+    SBipedBones bones_;
+    std::array<int, kPartCount> parts_{};
 
     int idle_counter_;
     char voice_;

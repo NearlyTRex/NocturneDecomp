@@ -4,9 +4,15 @@
 #include "core/actor/actor.h"
 #include "core/actor/actorarchive.h"
 #include "core/actor/demonactortype.h"
+#include "core/enemy/bipedbones.h"
+#include "core/skeleton/deformablemodel.h"
 #include "core/skeleton/deformablemodelinstance.h"
 
+#include <array>
+#include <cstddef>
 #include <memory>
+#include <span>
+#include <string_view>
 
 namespace nocturne::core {
 
@@ -43,8 +49,7 @@ constinit const CDemonActorType CGhoul::kType =
     makeActorType("CGhoul", &CEnemy::kType, &CGhoul::create, kVersion);
 
 // deferred: the collision cylinder, the detection range, the eating state, flinching, the stun,
-//   heal and stuck timers, the dark waypoint and going berserk, with CGhoul::setup and
-//   CGhoul::process
+//   heal and stuck timers, the dark waypoint and going berserk, with CGhoul::process
 // deferred: chasing the hero netplay gives it rather than the local one (the decomp's
 //   nocturne_net_sim_target_for), with CGhoul::process
 // deferred: drawing the part a blow takes off from the simulation's random numbers rather than
@@ -62,6 +67,32 @@ CGhoul::CGhoul(CActor &classes)
 
 // nocedit 0x004e8f10
 CGhoul::~CGhoul() = default;
+
+// The original keeps the bones for every ghoul in one global; here each keeps its own.
+// deferred: no stun, healing or being stuck, no dark waypoint, not berserk and no sounds
+//   playing, with CGhoul::process
+// nocedit 0x004e6160
+void CGhoul::setup() {
+    CDeformableModelInstance &model = getModel();
+    model.preCache();
+    bones_ = findBipedBones(*model.getSkeletonPtr(), false);
+    const CDeformableModel &parts = *model.getModelPtr();
+    constexpr std::array<std::string_view, kPartCount> kPartNames = {
+        "r high arm01", "r lo arm01", "l high arm01", "l lo arm01",   "r thigh01", "r shin01",
+        "l thigh01",    "l shin01",   "lo torso01",   "high torso01", "head01"};
+    for (std::size_t i = 0; i < kPartCount; ++i) {
+        parts_[i] = parts.findPartByName(kPartNames[i], true);
+    }
+    CEnemy::setup();
+}
+
+const SBipedBones &CGhoul::getBones() const {
+    return bones_;
+}
+
+std::span<const int> CGhoul::getParts() const {
+    return parts_;
+}
 
 // nocedit 0x004e6020
 const CDemonActorType &CGhoul::getActorType() const {

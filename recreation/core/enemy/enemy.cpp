@@ -60,6 +60,11 @@ CEnemy::CEnemy(CActor &classes)
 // nocedit 0x004125c0
 CEnemy::~CEnemy() = default;
 
+// nocedit 0x004a9650
+void CEnemy::setup() {
+    CCharacter::setup();
+}
+
 // nocedit 0x004a9660
 void CEnemy::archive(CActorArchive &actor_archive) {
     const int version = actor_archive.getSavedVersion(kType);

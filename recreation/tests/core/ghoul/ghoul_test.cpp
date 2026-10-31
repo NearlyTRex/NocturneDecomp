@@ -135,7 +135,6 @@ TEST(CGhoul, TheFunctionsNotPortedYetQuit) {
     CTestClasses classes;
     CGhoul ghoul(classes.get());
     const NotPortedCalls calls = {
-        {"setup", [&] { ghoul.setup(); }},
         {"process", [&] { ghoul.process(0.0F); }},
         {"renderBackground", [&] { ghoul.renderBackground(0); }},
         {"getTargetPoints", [&] { static_cast<void>(ghoul.getTargetPoints(nullptr)); }},

@@ -25,10 +25,17 @@ constinit const CDemonActorType CNPC::kType =
     makeActorType("CNPC", &CCharacter::kType, &CNPC::create, kVersion);
 
 // deferred: the path map, the collision cylinder and catching fire from a gun's flame, with
-//   CNPC::setup and CCharacter::process
+//   CCharacter::process
 // nocedit 0x005447e0
 CNPC::CNPC(CActor &classes) : CCharacter(classes) {
     getModel().init("priest.dfm");
+}
+
+// deferred: a priest, priest.dfm in any case, bleeding nothing, with CCharacter::processDamage
+//   and the gore it spawns
+// nocedit 0x00544870
+void CNPC::setup() {
+    CCharacter::setup();
 }
 
 // nocedit 0x004f4700

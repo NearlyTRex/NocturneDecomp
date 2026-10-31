@@ -3,10 +3,16 @@
 #include "core/actor/actor.h"
 #include "core/actor/actorarchive.h"
 #include "core/actor/demonactortype.h"
+#include "core/enemy/bipedbones.h"
+#include "core/skeleton/deformablemodel.h"
 #include "core/skeleton/deformablemodelinstance.h"
 
+#include <array>
+#include <cstddef>
 #include <memory>
+#include <span>
 #include <string>
+#include <string_view>
 
 namespace nocturne::core {
 
@@ -34,7 +40,7 @@ constinit const CDemonActorType CMobster::kType =
 
 // deferred: the collision cylinder, the detection range, the idle, weapon, firing and taunt
 //   timers, the weapon it heads for and how often it has looked, and not finding paths to new
-//   targets, with CMobster::setup and CMobster::process
+//   targets, with CMobster::process
 // deferred: chasing the hero netplay gives it rather than the local one (the decomp's
 //   nocturne_net_sim_target_for), with CMobster::process
 // deferred: drawing the part a blow takes off from the simulation's random numbers rather than
@@ -50,6 +56,34 @@ CMobster::CMobster(CActor &classes)
 
 // nocedit 0x00527c70
 CMobster::~CMobster() = default;
+
+// The original keeps the bones for every mobster in one global, looking five of them up twice;
+// here each keeps its own, looked up once.
+// deferred: each hand's bone and forearm part as where it carries, with getCarryObjToBodyXForm
+// deferred: no firing, no sounds playing and finding paths to new targets when posted, with
+//   CMobster::process
+// nocedit 0x00525340
+void CMobster::setup() {
+    CDeformableModelInstance &model = getModel();
+    model.preCache();
+    bones_ = findBipedBones(*model.getSkeletonPtr(), true);
+    const CDeformableModel &parts = *model.getModelPtr();
+    constexpr std::array<std::string_view, kPartCount> kPartNames = {
+        "larm01",   "l4arm01", "rarm01",  "r4arm01", "rthigh01", "rshin01",
+        "lthigh01", "lshin01", "waist01", "torso01", "head01"};
+    for (std::size_t i = 0; i < kPartCount; ++i) {
+        parts_[i] = parts.findPartByName(kPartNames[i], true);
+    }
+    CEnemy::setup();
+}
+
+const SBipedBones &CMobster::getBones() const {
+    return bones_;
+}
+
+std::span<const int> CMobster::getParts() const {
+    return parts_;
+}
 
 // nocedit 0x005251f0
 const CDemonActorType &CMobster::getActorType() const {

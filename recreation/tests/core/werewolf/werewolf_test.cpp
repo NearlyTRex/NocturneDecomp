@@ -131,7 +131,6 @@ TEST(CWerewolf, TheFunctionsNotPortedYetQuit) {
     CTestClasses classes;
     CWerewolf werewolf(classes.get());
     const NotPortedCalls calls = {
-        {"setup", [&] { werewolf.setup(); }},
         {"process", [&] { werewolf.process(0.0F); }},
         {"renderTransparent", [&] { static_cast<void>(werewolf.renderTransparent()); }},
         {"getTargetPoints", [&] { static_cast<void>(werewolf.getTargetPoints(nullptr)); }},

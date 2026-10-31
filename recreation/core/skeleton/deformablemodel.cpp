@@ -1,6 +1,7 @@
 #include "core/skeleton/deformablemodel.h"
 
 #include "common/error/error.h"
+#include "common/text/ascii.h"
 #include "common/text/scan.h"
 #include "core/skeleton/deformablemodelmanager.h"
 #include "core/skeleton/skeleton.h"
@@ -106,6 +107,20 @@ CSkeleton *CDeformableModel::getSkeletonPtr() {
 // nocedit 0x0059a860
 common::CVector3f *CDeformableModel::getVertexPoolPtr(int index) {
     return &bone_origins_.at(static_cast<std::size_t>(index));
+}
+
+// nocedit 0x0059c240
+int CDeformableModel::findPartByName(std::string_view part_name, bool error_if_not_found) const {
+    for (std::size_t i = 0; i < parts_.size(); ++i) {
+        if (common::equalsIgnoringAsciiCase(parts_[i].part_name, part_name)) {
+            return static_cast<int>(i);
+        }
+    }
+    if (error_if_not_found) {
+        common::displayErrorAndQuit(
+            std::format("Can't find part {} in model {}", part_name, model_filename_));
+    }
+    return -1;
 }
 
 const std::string &CDeformableModel::getModelFilename() const {
