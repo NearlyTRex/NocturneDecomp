@@ -16,6 +16,7 @@
 #include "tests/mocks/core/missionfixture.h"
 #include "tests/mocks/core/setfilefixture.h"
 #include "tests/mocks/core/testactor.h"
+#include "tests/mocks/core/testhero.h"
 
 #include <gmock/gmock.h>
 #include <gtest/gtest.h>
@@ -37,37 +38,7 @@ using ::testing::Return;
 using ::testing::StrEq;
 using ::testing::ThrowsMessage;
 
-const CDemonActorType kStartHeroType = makeActorType("CTestStartHero", &CHero::kType, nullptr, 1);
-
-// A hero from the last mission, which counts how often it is set up.
-class CTestStartHero : public CHero {
-public:
-    using CHero::CHero;
-
-    [[nodiscard]] const CDemonActorType &getActorType() const override {
-        return kStartHeroType;
-    }
-
-    void setup() override {
-        ++setups;
-    }
-
-    void updateCollisionData(CDemonSet & /*set*/) override {}
-
-    void drawWeapon(int /*drawn*/) override {}
-
-    int isWeaponDrawn() override {
-        return 0;
-    }
-
-    void setPositionAndOrientation(common::CVector3f * /*new_position*/,
-                                   common::CVector3f * /*new_orientation*/) override {}
-
-    void setWalkTarget(CDemonActor * /*target*/, float /*min_distance*/,
-                       float /*max_distance*/) override {}
-
-    int setups = 0;
-};
+using CTestStartHero = CTestHero;
 
 // The mission Test, whose sets are first.set and second.set, the second with the camera cam, and
 // whose door and place for the first hero are in that second set. Prompts are answered at once.
@@ -191,12 +162,14 @@ protected:
         return added;
     }
 
-    // Runs the mission, which stops where the play loop would start.
+    // Runs the mission, which, with no script started to give the cameras a focus, stops as the
+    // first camera is shown.
     void run() {
         givenSessionAssets();
         EXPECT_THAT([this] { mission_.run(game_, session_); },
                     ThrowsMessage<common::CFatalError>(
-                        StrEq("CGame::runGameSession's play loop is not ported yet")));
+                        StrEq("CDemonSet::setCameraView's scene rendering is not ported yet")));
+        EXPECT_EQ(set_.getSelectedCameraIndex(), 0);
     }
 };
 

@@ -1,6 +1,7 @@
 #include "support/newmsg/newmsg.h"
 
 #include "common/error/error.h"
+#include "common/text/textlines.h"
 #include "common/text/textscanner.h"
 #include "engine/dosio/dosio.h"
 
@@ -56,7 +57,8 @@ void CNewMsg::readMessageFile(std::string_view message_file) {
     if (!text || text->empty()) {
         return;
     }
-    common::CTextScanner scanner(*text);
+    const std::string lines = common::toTextMode(*text);
+    common::CTextScanner scanner(lines);
     scanner.skipLine();
     const int version = scanner.scanInteger().value_or(0);
     scanner.skipWhitespace();

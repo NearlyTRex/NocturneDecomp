@@ -65,6 +65,8 @@ struct SDemonSetOwners {
     // What the scene's master lights are made with.
     SDemonLightOwners light_owners;
     CWeather &weather;
+    // Whose frame time the virtual director counts its holds down by.
+    const CGame &game;
 };
 
 class CDemonSet {
@@ -173,11 +175,29 @@ public:
     void transferVoxelShadow(CDemonActor *actor);
     void commitVoxelBuffer();
     int isPointInWater(common::CVector3f *point);
+    // Chooses the camera that shows the actor best and switches to it, returning whether it
+    // switched. With no actor it shows the first camera unless one is chosen. Unforced, it waits
+    // out a switch's hold and scores a few cameras a frame; a mode of 1 scores every camera at
+    // once, and above 1 switches even when a camera is chosen.
     // deferred: the pool of 1500 thumbs and the 2000 nearby actors' boxes, with this
     // nocedit 0x00574790
     int evaluateVirtualDirector(CDemonActor *actor, int force_evaluation_mode);
+    // Switches to the camera, holding it for the time unless a script lets go first.
     void setPendingCamera(int camera_index, float hold_time);
+    // Lets the next frame end a hold.
     void clearCameraSwitchCooldown();
+    // The camera shown, or -1 for none since the scene began; the one shown before it, and how
+    // long it is held back from being chosen again.
+    [[nodiscard]] int getSelectedCameraIndex() const;
+    [[nodiscard]] int getPreviousBestCameraIndex() const;
+    [[nodiscard]] float getPreviousBestCameraTimer() const;
+    // What is left of a switch's hold, and the camera it holds.
+    [[nodiscard]] float getCameraSwitchCooldown() const;
+    [[nodiscard]] int getPendingCameraIndex() const;
+    // Each camera's score as the director last worked it out.
+    [[nodiscard]] std::span<const float> getCameraScores() const;
+    // Whether the actor stood outside every virtual director box at the last switch.
+    [[nodiscard]] bool wasLastSwitchAreaInvalid() const;
 
     // The quick light's direction, and the ambient level it adds, 0xffff being full.
     void setLightDirection(const common::CVector3i &light_direction);
@@ -251,6 +271,11 @@ private:
                                         const common::CVector3f &point) const;
     int findVdirBoxAtPosition(const common::CVector3f &position);
     void buildVdirBoxGroups();
+    // How much of the actor the camera sees, from the camera's depth thumb.
+    static float calculateActorVisibility(std::size_t camera_index, CDemonActor &actor);
+    // Scores up to count cameras from where the last call stopped, against an actor in the
+    // virtual director area, whose sphere of the radius is tested against each camera's view.
+    void scoreCameras(CDemonActor &actor, int area, float radius, int count);
     void refreshThumbs(std::string_view filename);
 
     SDemonSetOwners owners_;
@@ -290,6 +315,15 @@ private:
     std::vector<int> intensity_to_value_;
     SFog active_fog_;
     std::vector<std::unique_ptr<CDemonLight>> master_lights_;
+    int selected_camera_index_ = -1;
+    int previous_best_camera_index_ = -1;
+    float previous_best_camera_timer_ = 0.0F;
+    float camera_switch_cooldown_ = 0.0F;
+    int pending_camera_index_ = 0;
+    bool last_switch_area_invalid_ = false;
+    // The next camera the director scores, and each camera's last score.
+    int next_scored_camera_ = 0;
+    std::vector<float> camera_scores_;
 };
 
 } // namespace nocturne::core

@@ -63,7 +63,8 @@ public:
                 .flashlight = *flashlight,
                 .filter_cache = filter_cache,
                 .light_owners = light_owners,
-                .weather = weather};
+                .weather = weather,
+                .game = classes.getGame()};
     }
 
     ::testing::NiceMock<MockLoadingScreen> loading_screen;

@@ -310,7 +310,8 @@ private:
                           .flashlight = flashlight_,
                           .filter_cache = filter_cache_,
                           .light_owners = light_owners_,
-                          .weather = weather_}};
+                          .weather = weather_,
+                          .game = game_}};
     nocturne::shape::CEdControls controls_{{.two_d = two_d_,
                                             .screen = screen_,
                                             .raw_input = winrun_,
@@ -396,6 +397,7 @@ private:
                                              .camera = camera_,
                                              .flashlight = flashlight_,
                                              .set = set_,
+                                             .script = script_,
                                              .editor_tools = editor_tools_,
                                              .build_version = nocturne::kBuildVersion,
                                              .fire = fire_effect_,

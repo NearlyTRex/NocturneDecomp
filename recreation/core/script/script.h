@@ -93,6 +93,8 @@ public:
 
     [[nodiscard]] std::span<const SScriptLine> getParsedLines() const;
     [[nodiscard]] std::span<const SDialogEntry> getDialogEntries() const;
+    // The actor the cameras follow; null for none.
+    [[nodiscard]] CDemonActor *getFocusActor() const;
 
 private:
     using SStatement = SScriptStatement;
@@ -138,6 +140,7 @@ private:
     std::vector<SScriptLine> parsed_lines_;
     std::vector<SDialogEntry> dialog_entries_;
     std::size_t next_cmd_ = 0;
+    CDemonActor *focus_actor_ = nullptr;
     // Set while the script's syntax is checked rather than its commands run.
     bool checking_ = false;
     // syntaxCheckOff: the check passes over commands until syntaxCheckOn.

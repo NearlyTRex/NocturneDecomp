@@ -1,6 +1,7 @@
 #include "core/inv/inventoryassets.h"
 
 #include "common/text/scanformat.h"
+#include "common/text/textlines.h"
 #include "common/text/textscanner.h"
 #include "core/game/game.h"
 #include "engine/alphabit/alphabitmap.h"
@@ -71,7 +72,8 @@ CInventoryAssets::CInventoryAssets(const SInventoryAssetsOwners &owners) : owner
 void CInventoryAssets::load() {
     screen_height_ = owners_.screen.getWindowHeight();
     if (const std::optional<std::string> size = owners_.dosio.readFile("data", "invsize.txt")) {
-        common::CTextScanner scanner(*size);
+        const std::string lines = common::toTextMode(*size);
+        common::CTextScanner scanner(lines);
         common::scanFormat(scanner, "%d,%d\n", width_, height_);
     }
     const bool halve = owners_.game.game_pixy < kFullSizeLines;
@@ -101,7 +103,8 @@ void CInventoryAssets::loadItems() {
     if (!list) {
         return;
     }
-    common::CTextScanner scanner(*list);
+    const std::string lines = common::toTextMode(*list);
+    common::CTextScanner scanner(lines);
     while (!scanner.atEnd()) {
         SInventoryItemInfo item;
         if (common::scanFormat(scanner, "\"%[^\"]\", \"%[^\"]\", \"%[^\"]\"\n", item.model_name,

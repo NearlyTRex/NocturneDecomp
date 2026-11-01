@@ -7,7 +7,10 @@
 #include "core/fire/fireeffect.h"
 #include "core/game/game.h"
 #include "core/gore/gore.h"
+#include "core/hero/heroplaceholder.h"
 #include "core/inv/inventoryassets.h"
+#include "core/location.h"
+#include "core/script/script.h"
 #include "core/set/demonset.h"
 #include "engine/console/console.h"
 #include "engine/font/font.h"
@@ -15,11 +18,13 @@
 #include "engine/special/special.h"
 #include "shape/edittool/editortools.h"
 #include "tests/mocks/core/missionfixture.h"
+#include "tests/mocks/core/testhero.h"
 #include "tests/mocks/platform/mockrenderer.h"
 
 #include <gmock/gmock.h>
 #include <gtest/gtest.h>
 
+#include <memory>
 #include <string>
 
 namespace nocturne::core {
@@ -30,8 +35,8 @@ using ::testing::Return;
 using ::testing::StrEq;
 using ::testing::ThrowsMessage;
 
-// A session on a screen already at 640x480x32 that takes any mode, which stops where the play loop
-// would start.
+// A session on a screen already at 640x480x32 that takes any mode, with a hero for the script to
+// focus on in a set with no cameras to switch to, which stops where the play loop would start.
 class CGameSessionTest : public CMissionFixture {
 protected:
     CGameSessionTest() {
@@ -44,6 +49,12 @@ protected:
                 return true;
             });
         givenSessionAssets();
+        auto placeholder = std::make_unique<CHeroPlaceholder>();
+        placeholder->setIndex(0);
+        placeholder->setLocation({.position = {}, .area_id = 0});
+        mission_.addActorToList(std::move(placeholder));
+        EXPECT_TRUE(mission_.createHeros(std::make_unique<CTestHero>(actor_)));
+        script_.initRuntime();
     }
 
     void play() {

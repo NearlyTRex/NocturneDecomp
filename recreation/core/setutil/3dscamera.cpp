@@ -1,6 +1,7 @@
 #include "core/setutil/3dscamera.h"
 
 #include "common/error/error.h"
+#include "common/math/extendedfloat.h"
 #include "common/text/scanformat.h"
 #include "common/text/textscanner.h"
 #include "core/dcamera/dcamera.h"
@@ -103,6 +104,23 @@ void C3DSCamera::loadPVS(common::CTextScanner &scanner) {
     for (int &cube : pvs_list_) {
         scanFormat(scanner, "\t%d\n", cube);
     }
+}
+
+// Each side compared with the point moved by the radius at the x87's precision.
+// nocedit 0x00585970
+bool C3DSCamera::testSphereInFrustum(const common::CVector3f &world_position, float radius) const {
+    const common::CVector3f local =
+        rotation_matrix_.transformVectorTranspose({.x = world_position.x - position_.x,
+                                                   .y = world_position.y - position_.y,
+                                                   .z = world_position.z - position_.z});
+    const common::CExtendedFloat reach(radius);
+    const auto inside = [&reach](float point, float low, float high) {
+        const common::CExtendedFloat at(point);
+        return common::CExtendedFloat(low) <= at + reach &&
+               at - reach <= common::CExtendedFloat(high);
+    };
+    return inside(local.x, box_.min.x, box_.max.x) && inside(local.y, box_.min.y, box_.max.y) &&
+           inside(local.z, box_.min.z, box_.max.z);
 }
 
 const std::string &C3DSCamera::getName() const {

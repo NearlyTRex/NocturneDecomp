@@ -136,6 +136,18 @@ TEST_F(CDemonSetLoadTest, ASpotlightIsFoundByNameAmongTheSpotlights) {
     EXPECT_FALSE(set_.addLightFilter("absent").has_value());
 }
 
+// The set is read as text, so a name on a line ending CRLF has no CR, as HQ.SET's lights don't.
+TEST_F(CDemonSetLoadTest, ALineEndingCrlfEndsAtItsNewline) {
+    std::string text = SSetFile{.lights = "1\n" + lightText("projector", 0)}.text();
+    for (std::size_t at = text.find('\n'); at != std::string::npos; at = text.find('\n', at + 2)) {
+        text.insert(at, "\r");
+    }
+    givenFile("models\\test.set", text);
+    set_.load("test.set");
+    EXPECT_EQ(set_.getLights()[0].getName(), "projector");
+    EXPECT_TRUE(set_.addLightFilter("projector").has_value());
+}
+
 TEST_F(CDemonSetLoadTest, AMissingFileIsFatal) {
     EXPECT_THAT([this] { set_.load("absent.set"); }, ThrowsMessage<common::CFatalError>(HasSubstr(
                                                          "CDemonSet::Unable to open absent.set")));

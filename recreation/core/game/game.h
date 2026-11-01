@@ -32,12 +32,14 @@ struct SGameOwners {
 
 // What a session plays with besides the game's own: the console it reports to, the scene camera,
 // the flashlight, the set it shows, the editor tools whose font follows the screen's size, the
-// version the console names, and the fire effects, gore and inventory whose assets it loads.
+// version the console names, the fire effects, gore and inventory whose assets it loads, and the
+// script whose focus the first camera shows.
 struct SGameSessionOwners {
     engine::CConsole &console;
     CDemonCamera &camera;
     CDemonLight &flashlight;
     CDemonSet &set;
+    const CScript &script;
     shape::CEditorTools &editor_tools;
     std::string_view build_version;
     CFireEffect &fire;

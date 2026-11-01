@@ -30,8 +30,8 @@ TEST(CBoundingBox3D, PublicInterface) {
     static_assert(std::is_same_v<decltype(&CBoundingBox3D::reset), void (CBoundingBox3D::*)()>);
     static_assert(std::is_same_v<decltype(&CBoundingBox3D::doesBoxIntersect),
                                  int (CBoundingBox3D::*)(CBoundingBox3D *)>);
-    static_assert(
-        std::is_same_v<decltype(&CBoundingBox3D::getMaximumBound), float (CBoundingBox3D::*)()>);
+    static_assert(std::is_same_v<decltype(&CBoundingBox3D::getMaximumBound),
+                                 float (CBoundingBox3D::*)() const>);
     static_assert(std::is_same_v<decltype(&CBoundingBox3D::render), void (CBoundingBox3D::*)()>);
     static_assert(std::is_same_v<decltype(&CBoundingBox3D::clampPoint),
                                  common::CVector3f *(CBoundingBox3D::*)(common::CVector3f *,
@@ -179,6 +179,18 @@ TEST(CBoundingBox3D, EachIndexBitTakesItsAxissMax) {
     EXPECT_TRUE(box.getCorner(2).equals({.x = 1, .y = 5, .z = 3}));
     EXPECT_TRUE(box.getCorner(4).equals({.x = 1, .y = 2, .z = 6}));
     EXPECT_TRUE(box.getCorner(7).equals({.x = 4, .y = 5, .z = 6}));
+}
+
+// x wins only when above both; y over z only when above it.
+TEST(CBoundingBox3D, TheMaximumBoundIsTheMaxCornersLargest) {
+    const auto bound = [](float x, float y, float z) {
+        return CBoundingBox3D{.min = {}, .max = {.x = x, .y = y, .z = z}}.getMaximumBound();
+    };
+    EXPECT_EQ(bound(3.0F, 1.0F, 2.0F), 3.0F);
+    EXPECT_EQ(bound(1.0F, 3.0F, 2.0F), 3.0F);
+    EXPECT_EQ(bound(2.0F, 1.0F, 3.0F), 3.0F);
+    EXPECT_EQ(bound(1.0F, 2.0F, 2.0F), 2.0F);
+    EXPECT_EQ(bound(2.0F, 2.0F, 1.0F), 2.0F);
 }
 
 } // namespace

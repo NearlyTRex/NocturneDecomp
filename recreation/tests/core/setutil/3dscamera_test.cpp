@@ -25,7 +25,7 @@ TEST(C3DSCamera, PublicInterface) {
     static_assert(
         std::is_same_v<decltype(&C3DSCamera::apply), void (C3DSCamera::*)(CDemonCamera *)>);
     static_assert(std::is_same_v<decltype(&C3DSCamera::testSphereInFrustum),
-                                 int (C3DSCamera::*)(common::CVector3f *, float)>);
+                                 bool (C3DSCamera::*)(const common::CVector3f &, float) const>);
 }
 
 TEST(C3DSCamera, TheAmbientGroupAndSwitchingCanBeSetAndAResetClearsThem) {

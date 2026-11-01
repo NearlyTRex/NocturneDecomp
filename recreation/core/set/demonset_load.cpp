@@ -3,6 +3,7 @@
 #include "common/math/vector3f.h"
 #include "common/text/ascii.h"
 #include "common/text/scanformat.h"
+#include "common/text/textlines.h"
 #include "common/text/textscanner.h"
 #include "core/dcamera/dcamera.h"
 #include "core/dmodel/keyframedmodel.h"
@@ -141,7 +142,8 @@ void CDemonSet::load(std::string_view filename) {
     if (!text) {
         common::displayErrorAndQuit(std::format("CDemonSet::Unable to open {}", filename));
     }
-    CTextScanner scanner(*text);
+    const std::string lines = common::toTextMode(*text);
+    CTextScanner scanner(lines);
     const std::string geometry_name = loadHeader(scanner);
     loadFog(scanner);
     loadEnvironment(scanner, geometry_name);

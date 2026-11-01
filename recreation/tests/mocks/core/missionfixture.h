@@ -111,6 +111,7 @@ protected:
                                 .camera = *set_parts_.camera,
                                 .flashlight = *set_parts_.flashlight,
                                 .set = set_,
+                                .script = script_,
                                 .editor_tools = editor_tools_,
                                 .build_version = "1.2.3 (test)",
                                 .fire = fire_,

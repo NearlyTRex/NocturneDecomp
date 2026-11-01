@@ -6,6 +6,7 @@
 #include "core/loadingscreen.h"
 #include "core/mission/demonmission.h"
 #include "core/script/script.h"
+#include "core/set/demonset.h"
 #include "shape/edittool/editortools.h"
 #include "support/newmsg/newmsg.h"
 
@@ -19,8 +20,6 @@ namespace nocturne::core {
 // deferred: clearing the pending teleport to area -1 at the origin, with setTeleportTarget and
 //   process
 // deferred: clearing the letterbox, with CGame's readers of it
-// deferred: ending the cooldown on the next camera switch, with
-//   CDemonSet::clearCameraSwitchCooldown and the scene camera
 // nocedit 0x00524760
 bool CDemonMission::startMission() {
     if (hero_count_ < 1) {
@@ -41,6 +40,7 @@ bool CDemonMission::startMission() {
     }
     owners_.script.initRuntime();
     owners_.script.executeInitSection();
+    owners_.set.clearCameraSwitchCooldown();
     return true;
 }
 

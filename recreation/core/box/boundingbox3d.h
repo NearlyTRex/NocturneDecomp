@@ -28,7 +28,8 @@ public:
                                          common::CVector3f *out_normal) const;
     void reset();
     int doesBoxIntersect(CBoundingBox3D *other);
-    float getMaximumBound();
+    // The largest of the max corner's coordinates.
+    [[nodiscard]] float getMaximumBound() const;
     void render();
     common::CVector3f *clampPoint(common::CVector3f *out_point, common::CVector3f *in_point);
     int doesSphereIntersect(common::CVector3f *sphere_center, float radius);

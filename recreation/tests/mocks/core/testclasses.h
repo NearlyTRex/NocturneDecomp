@@ -36,6 +36,11 @@ public:
         return game_parts_.getGame();
     }
 
+    // The game's clock, whose time the game's frame time follows.
+    [[nodiscard]] engine::MockGameClock &getClock() {
+        return clock_;
+    }
+
     [[nodiscard]] MockDeformableModels &getModels() {
         return models_;
     }

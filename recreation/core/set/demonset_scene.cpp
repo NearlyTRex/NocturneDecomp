@@ -39,8 +39,6 @@ constexpr std::size_t kMaxMasterLights = 96;
 // deferred: drawing the set into each master light's shadow map, its edges cleared for a circular
 //   shadow, with renderSceneGeometry and CDemonLight's beginScene, clearCircularShadowMapEdges
 //   and endScene
-// deferred: no camera chosen and none the best, its timer at zero, with setCameraView and
-//   evaluateVirtualDirector
 // deferred: no spot, omni or corona lights gathered, with renderScene
 // nocedit 0x0056aa10
 void CDemonSet::initScene() {
@@ -64,6 +62,9 @@ void CDemonSet::initScene() {
             common::displayErrorAndQuit("CDemonSet::initScene - Too many spotlights!");
         }
     }
+    selected_camera_index_ = -1;
+    previous_best_camera_index_ = -1;
+    previous_best_camera_timer_ = 0.0F;
     buildVdirBoxGroups();
     for (C3DSCamera &camera : cameras_) {
         camera.setVdirZone(findVdirBoxAtPosition(camera.getPosition()));

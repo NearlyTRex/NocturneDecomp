@@ -2,6 +2,7 @@
 
 #include "common/error/error.h"
 #include "common/math/matrix3x4f.h"
+#include "common/text/textlines.h"
 #include "common/text/textscanner.h"
 #include "core/xform/xform.h"
 #include "engine/dosio/dosio.h"
@@ -54,7 +55,8 @@ void CCourse::load(std::string_view filename) {
     if (!text) {
         common::displayErrorAndQuit(std::format("CCourse::load - can't open data\\{}", filename));
     }
-    common::CTextScanner scanner(*text);
+    const std::string lines = common::toTextMode(*text);
+    common::CTextScanner scanner(lines);
     scanner.skipLine();
     static_cast<void>(scanner.scanInteger());
     scanner.skipWhitespace();

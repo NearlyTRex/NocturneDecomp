@@ -1,6 +1,8 @@
 #include "common/error/error.h"
 #include "common/text/ascii.h"
 #include "core/actor/notported.h"
+#include "core/hero/hero.h"
+#include "core/mission/demonmission.h"
 #include "core/script/script.h"
 #include "core/script/script_functions.h"
 
@@ -19,6 +21,8 @@ namespace {
 constexpr std::size_t kMaxSkipLabelLength = 100;
 // Steps an initSection may take without reaching its end.
 constexpr int kMaxInitSectionSteps = 10000;
+// The hero this machine plays, as a game without netplay always has it.
+constexpr std::size_t kLocalHero = 0;
 
 // The run of letters and digits a line starts with: a command matches when the line starts with
 // its name and the next character is neither.
@@ -88,8 +92,11 @@ void CScript::executeInitSection() {
 //   processTimer and startDialogLine
 // deferred: clearing the ending flag, the breakpoint state, the call stack, the skip label and
 //   the loop warning, with process and skipCinematic
-// deferred: choosing the focus actor, the local hero or else the first hero placed in an area,
-//   and clearing the speaker and the focus lock, with setFocusActor and the scene camera
+// The cameras follow the local hero.
+// deferred: following the first hero placed in an area when the local hero is in none (the
+//   decomp's netplay focus fallback), with CNetGame's sessions, which bring the other heroes
+// deferred: marking the focus changed, with the play loop's virtual director call
+// deferred: clearing the speaker and the focus lock, with setFocusActor and setSpeaker
 // deferred: letting the heroes be damaged and the enemies attack, and clearing the letterbox,
 //   with CGame's readers of them
 // deferred: clearing the script's time scale, with process
@@ -98,6 +105,11 @@ void CScript::executeInitSection() {
 // nocedit 0x0055a540
 void CScript::initRuntime() {
     next_cmd_ = 0;
+    focus_actor_ = owners_.mission.getHero(kLocalHero);
+}
+
+CDemonActor *CScript::getFocusActor() const {
+    return focus_actor_;
 }
 
 // The original first set a placeholder message, which every error replaces.

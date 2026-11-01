@@ -28,7 +28,9 @@ public:
     void load(common::CTextScanner &scanner, int set_file_version, const SFog &set_fog);
     void loadPVS(common::CTextScanner &scanner);
     void apply(CDemonCamera *camera);
-    int testSphereInFrustum(common::CVector3f *world_position, float radius);
+    // Whether a sphere about the point, in the camera's frame, reaches into the camera's box.
+    [[nodiscard]] bool testSphereInFrustum(const common::CVector3f &world_position,
+                                           float radius) const;
 
     [[nodiscard]] const std::string &getName() const;
     [[nodiscard]] const common::CVector3f &getPosition() const;

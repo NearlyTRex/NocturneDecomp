@@ -5,6 +5,7 @@
 #include "common/math/vector3f.h"
 #include "common/math/vector3i.h"
 #include "common/text/scanformat.h"
+#include "common/text/textlines.h"
 #include "common/text/textscanner.h"
 #include "core/dmodel/keyframedmodel.h"
 #include "core/dmodel/keyframedmodels.h"
@@ -65,7 +66,8 @@ void CCloth::load(std::string_view filename) {
     if (!text) {
         common::displayErrorAndQuit(std::format("CCloth::load - Unable to open file {}", filename));
     }
-    common::CTextScanner scanner(*text);
+    const std::string lines = common::toTextMode(*text);
+    common::CTextScanner scanner(lines);
     scanner.skipLine();
     common::scanFormat(scanner, "%d\n", version_);
     if (version_ > kLatestVersion) {

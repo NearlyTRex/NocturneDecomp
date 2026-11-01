@@ -145,4 +145,13 @@ float CBoundingBox3D::doesRayIntersect(const common::CVector3f &ray_origin,
     return distance;
 }
 
+// x only when it is above both the others; of y and z, z when they are equal.
+// nocedit 0x00421060
+float CBoundingBox3D::getMaximumBound() const {
+    if (max.x <= max.y || max.x <= max.z) {
+        return max.y <= max.z ? max.z : max.y;
+    }
+    return max.x;
+}
+
 } // namespace nocturne::core

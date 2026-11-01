@@ -24,7 +24,7 @@ functions don't count as done. Sizes are in instructions.
 | 8 | `renderMenuAndGetChoice`, `CMoon::free`, `CSound::reset`, `CEditorTools::showFileSelectionDialog` | 8 | 63 | 5314 | 60 | 3 | 95.2% |
 | 9 | `CPickList::enableItem`, `CEventList::resetGameFlags`, `CLevelLoader::show`, `CDemonMission::load` | 15 | 56 | 3298 | 37 | 9 | 66.0% |
 | 10 | `CDemonMission::createHeros`, `CDemonMission::prepareAllActors`, `CEventList::reset`, `CDemonMission::loadSet` | 15 | 42 | 5112 | 33 | 8 | 78.5% |
-| 11 | `CScript::loadScript` | 63 | 579 | 67400 | 90 | 33 | 15.5% |
+| 11 | `CScript::loadScript` | 63 | 579 | 67400 | 94 | 35 | 16.2% |
 | 12 | `CDemonMission::loadScript`, `CScript::executeInitSection`, `CDemonMission::startMission`, `CDemonMission::buildActiveSetActorList`, `CConsole::reset`, `CEditorTools::displayMemoryDiagnostics`, `CGame::setGameRes`, `CDemonLight::init`, `CDemonSet::initScene` | 12 | 26 | 1658 | 16 | 9 | 61.5% |
 | 13 | `CFireEffect::init`, `CDemonSet::loadMasterLightStates`, `CDemonSet::setGamma`, `CGame::clearOverlay`, `CGame::loadAssets` | 7 | 27 | 735 | 16 | 1 | 59.2% |
 | 14 | `CNetGame::syncPlayers`, `CNetGame::processServerFrame`, `CLevelLoader::cleanup`, `CKeys::toggleInputMask`, `CGame::processHotkeys` | 17 | 51 | 5302 | 4 | 0 | 7.8% |
@@ -46,7 +46,7 @@ functions don't count as done. Sizes are in instructions.
 | 30 | Not reached from startup: `core/` (part 8 of 9) | 20 | 300 | 31826 | 41 | 8 | 13.6% |
 | 31 | Not reached from startup: `core/` (part 9 of 9) | 5 | 111 | 10905 | 26 | 7 | 23.4% |
 | 32 | Not reached from startup: `wincore/` | 2 | 11 | 482 | 4 | 0 | 36.3% |
-| | **All** | | **4479** | **402407** | **1131** | **199** | **25.2%** |
+| | **All** | | **4479** | **402407** | **1135** | **201** | **25.3%** |
 
 ## Step 0: Math value types
 
@@ -1909,7 +1909,7 @@ functions don't count as done. Sizes are in instructions.
   - [x] `setWeatherType` 0x005ef8c0 (30)
   - [ ] `setOriginAndRotation` 0x005ef940 (154)
 
-### `core/set.cpp` (27 functions, 2403 instructions, 4 done, 0 partial)
+### `core/set.cpp` (27 functions, 2403 instructions, 4 done, 1 partial)
 - class `CDemonSet`
   - [ ] `getReverbPresetAtPosition` 0x0056fac0 (77)
   - [ ] `addCoronaGlobe` 0x0056d110 (12)
@@ -1934,13 +1934,15 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `buildDisplayList` 0x0056fbd0 (291)
   - [ ] `renderStaticLights` 0x0056be80 (231)
   - [ ] `process` 0x0056f940 (100)
-  - [ ] `setCameraView` 0x0056ae50 (639)
+  - [~] `setCameraView` 0x0056ae50 (639)
+    - deferred: restoring the dynamic lights' and spotlights' dirty regions, freeing the spotlights' master z-buffers and resetting their restore memory, with restoreDirtyRegions, freeMasterZBuffer and resetRestoreMemoryAllocator
+    - deferred: drawing the camera's background, its shadows and lights, its fog, reverb and weather, then the scene's static lights, with setCameraView's scene rendering
   - [x] `setCameraEnabled` 0x00570ea0 (5)
   - [x] `setCameraEnabledByGroup` 0x00570ec0 (30)
 - free functions
   - [ ] `qsortByDisplayListEntry` 0x0056fba0 (18)
 
-### `core/box.cpp` (11 functions, 944 instructions, 1 done, 3 partial)
+### `core/box.cpp` (11 functions, 944 instructions, 2 done, 3 partial)
 - class `CBox`
   - [~] `ctor` 0x0041dc50 (45)
     - deferred: the eight scrape points, the mass and the world velocity, with CBox::processPhysics
@@ -1956,15 +1958,17 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `isVisibleWithShadow` 0x00420320 (147)
   - [ ] `isVisibleWithCamera` 0x00420680 (136)
   - [ ] `isVisible` 0x004204f0 (128)
-  - [ ] `getMaximumBound` 0x00421060 (29)
+  - [x] `getMaximumBound` 0x00421060 (29)
 
-### `core/setdir.cpp` (5 functions, 729 instructions, 2 done, 0 partial)
+### `core/setdir.cpp` (5 functions, 729 instructions, 4 done, 1 partial)
 - class `CDemonSet`
-  - [ ] `setPendingCamera` 0x00575b00 (6)
+  - [x] `setPendingCamera` 0x00575b00 (6)
   - [x] `isPointInVdirBox` 0x005762a0 (62)
   - [x] `findVdirBoxAtPosition` 0x00576870 (32)
-  - [ ] `evaluateVirtualDirector` 0x005751d0 (619)
-  - [ ] `clearCameraSwitchCooldown` 0x00575b20 (10)
+  - [~] `evaluateVirtualDirector` 0x005751d0 (619)
+    - deferred: the actor's box corners and its faces' planes, the nearby actors that block the view and their boxes, and the depth table saved round the scoring with the shadow pass and the external renderer off, with calculateActorVisibility
+    - deferred: an unforced pass favouring the camera shown three times and the one shown before it a fifth as much, and switching to a better camera that shows some of the actor, with calculateActorVisibility, whose scores alone are above 0
+  - [x] `clearCameraSwitchCooldown` 0x00575b20 (10)
 
 ### `core/dfilter.cpp` (3 functions, 286 instructions, 3 done, 0 partial)
 - class `CDemonFilter`
@@ -1973,7 +1977,7 @@ functions don't count as done. Sizes are in instructions.
 - class `CFilterCache`
   - [x] `getFilter` 0x00470060 (103)
 
-### `core/setutil.cpp` (6 functions, 437 instructions, 0 done, 0 partial)
+### `core/setutil.cpp` (6 functions, 437 instructions, 1 done, 0 partial)
 - class `C3DSLight`
   - [ ] `advanceFilter` 0x00586e70 (40)
   - [ ] `setFilterFrame` 0x00586f00 (44)
@@ -1981,7 +1985,7 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `addFilter` 0x00586fa0 (63)
 - class `C3DSCamera`
   - [ ] `apply` 0x00585870 (106)
-  - [ ] `testSphereInFrustum` 0x00585970 (66)
+  - [x] `testSphereInFrustum` 0x00585970 (66)
 
 ### `core/script.cpp` (25 functions, 7596 instructions, 11 done, 9 partial)
 - class `CScript`
@@ -1993,7 +1997,9 @@ functions don't count as done. Sizes are in instructions.
     - deferred: clearing the shown message, with renderSubtitles
     - deferred: clearing the wait and dialogue timers and the time a message shows for, with processTimer and startDialogLine
     - deferred: clearing the ending flag, the breakpoint state, the call stack, the skip label and the loop warning, with process and skipCinematic
-    - deferred: choosing the focus actor, the local hero or else the first hero placed in an area, and clearing the speaker and the focus lock, with setFocusActor and the scene camera
+    - deferred: following the first hero placed in an area when the local hero is in none (the decomp's netplay focus fallback), with CNetGame's sessions, which bring the other heroes
+    - deferred: marking the focus changed, with the play loop's virtual director call
+    - deferred: clearing the speaker and the focus lock, with setFocusActor and setSpeaker
     - deferred: letting the heroes be damaged and the enemies attack, and clearing the letterbox, with CGame's readers of them
     - deferred: clearing the script's time scale, with process
     - deferred: playing the set's ambient sound, its geometry file's stem as a .wav and smill and town at 0.85, with CSound::playAmbientSound
@@ -2105,7 +2111,6 @@ functions don't count as done. Sizes are in instructions.
     - deferred: the local hero being the one netplay gives this machine, and the set loaded being the area netplay respawns it in (the decomp's nocturne_net_respawn_world_area), with CNetGame's sessions
     - deferred: clearing the pending teleport to area -1 at the origin, with setTeleportTarget and process
     - deferred: clearing the letterbox, with CGame's readers of it
-    - deferred: ending the cooldown on the next camera switch, with CDemonSet::clearCameraSwitchCooldown and the scene camera
   - [x] `buildActiveSetActorList` 0x00524120 (77)
 
 ### `engine/console.cpp` (1 functions, 15 instructions, 1 done, 0 partial)
@@ -2170,7 +2175,6 @@ functions don't count as done. Sizes are in instructions.
     - deferred: resetting the shadow restore allocator, with allocMasterZBuffer
     - deferred: forgetting the dynamic lights and the mirror glass actors, with addDynamicLight and buildMirrorList
     - deferred: drawing the set into each master light's shadow map, its edges cleared for a circular shadow, with renderSceneGeometry and CDemonLight's beginScene, clearCircularShadowMapEdges and endScene
-    - deferred: no camera chosen and none the best, its timer at zero, with setCameraView and evaluateVirtualDirector
     - deferred: no spot, omni or corona lights gathered, with renderScene
 
 ## Step 13: `CFireEffect::init`, `CDemonSet::loadMasterLightStates`, `CDemonSet::setGamma`, `CGame::clearOverlay`, `CGame::loadAssets`
@@ -2756,7 +2760,6 @@ functions don't count as done. Sizes are in instructions.
     - deferred: developer mode when VELOCITY is set, with processHotkeys
     - deferred: starting the fire effects, or the master lights' saved states after a load, with CFireEffect::init and CDemonSet::loadMasterLightStates
     - deferred: clearing the overlay's status lines and message timer, with clearOverlay and updateStatusDisplays
-    - deferred: choosing the first camera, with setCameraView and evaluateVirtualDirector
     - deferred: opening the iris on the focus actor, with beginFadeIn and renderIrisFade
     - deferred: the cheats the menu turned on (the decomp's nocturne_cheats_apply), with showCheatsMenu
     - deferred: waiting for every player and starting the server's frames, with CNetGame::syncPlayers and processServerFrame

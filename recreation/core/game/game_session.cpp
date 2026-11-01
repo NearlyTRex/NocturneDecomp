@@ -7,6 +7,7 @@
 #include "core/game/game.h"
 #include "core/gore/gore.h"
 #include "core/inv/inventoryassets.h"
+#include "core/script/script.h"
 #include "core/set/demonset.h"
 #include "engine/2d/2d.h"
 #include "engine/console/console.h"
@@ -73,7 +74,8 @@ void CGame::setGameRes(const SGameSessionOwners &session) {
 // The original also cleared its one pick list; here each dialog makes its own.
 // deferred: clearing the overlay's status lines and message timer, with clearOverlay and
 //   updateStatusDisplays
-// deferred: choosing the first camera, with setCameraView and evaluateVirtualDirector
+// The game is always active as a session starts, so the virtual director chooses the first camera
+// for the script's focus; the camera view the game keeps is for when it isn't.
 // deferred: opening the iris on the focus actor, with beginFadeIn and renderIrisFade
 // deferred: the cheats the menu turned on (the decomp's nocturne_cheats_apply), with
 //   showCheatsMenu
@@ -96,6 +98,7 @@ int CGame::runGameSession(const SGameSessionOwners &session) {
     session.set.initScene();
     gamma = std::clamp(gamma, kMinGamma, kMaxGamma);
     session.set.setGamma(gamma);
+    static_cast<void>(session.set.evaluateVirtualDirector(session.script.getFocusActor(), 1));
     loadAssets(session);
     quitNotPorted("CGame", "runGameSession's play loop");
 }

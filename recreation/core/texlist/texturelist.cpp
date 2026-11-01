@@ -4,6 +4,7 @@
 #include "common/text/ascii.h"
 #include "common/text/scan.h"
 #include "common/text/scanformat.h"
+#include "common/text/textlines.h"
 #include "common/text/textscanner.h"
 #include "engine/dosio/dosio.h"
 
@@ -32,7 +33,8 @@ void CTextureList::load(std::string_view filename) {
     if (!text) {
         common::displayErrorAndQuit("CTextureList::load - Bad filename!");
     }
-    common::CTextScanner scanner(*text);
+    const std::string lines = common::toTextMode(*text);
+    common::CTextScanner scanner(lines);
     int texture_count = static_cast<int>(texture_entries_.size());
     common::scanFormat(scanner, "%d\n", texture_count);
     const auto count = static_cast<std::size_t>(std::max(texture_count, 0));
