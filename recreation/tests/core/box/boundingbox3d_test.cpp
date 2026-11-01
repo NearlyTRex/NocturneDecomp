@@ -2,7 +2,9 @@
 
 #include <gtest/gtest.h>
 
+#include <bit>
 #include <cmath>
+#include <cstdint>
 #include <limits>
 #include <type_traits>
 
@@ -16,9 +18,8 @@ TEST(CBoundingBox3D, IsConcrete) {
 TEST(CBoundingBox3D, PublicInterface) {
     static_assert(std::is_same_v<decltype(&CBoundingBox3D::expand),
                                  void (CBoundingBox3D::*)(const common::CVector3f &)>);
-    static_assert(
-        std::is_same_v<decltype(&CBoundingBox3D::getCorner),
-                       common::CVector3f *(CBoundingBox3D::*)(common::CVector3f *, std::uint32_t)>);
+    static_assert(std::is_same_v<decltype(&CBoundingBox3D::getCorner),
+                                 common::CVector3f (CBoundingBox3D::*)(std::uint32_t) const>);
     static_assert(std::is_same_v<decltype(&CBoundingBox3D::isVisible), int (CBoundingBox3D::*)()>);
     static_assert(std::is_same_v<decltype(&CBoundingBox3D::getBoundingBoxScreenSize),
                                  float (CBoundingBox3D::*)()>);
@@ -29,14 +30,29 @@ TEST(CBoundingBox3D, PublicInterface) {
     static_assert(std::is_same_v<decltype(&CBoundingBox3D::reset), void (CBoundingBox3D::*)()>);
     static_assert(std::is_same_v<decltype(&CBoundingBox3D::doesBoxIntersect),
                                  int (CBoundingBox3D::*)(CBoundingBox3D *)>);
-    static_assert(
-        std::is_same_v<decltype(&CBoundingBox3D::getMaximumBound), float (CBoundingBox3D::*)()>);
+    static_assert(std::is_same_v<decltype(&CBoundingBox3D::getMaximumBound),
+                                 float (CBoundingBox3D::*)() const>);
     static_assert(std::is_same_v<decltype(&CBoundingBox3D::render), void (CBoundingBox3D::*)()>);
     static_assert(std::is_same_v<decltype(&CBoundingBox3D::clampPoint),
                                  common::CVector3f *(CBoundingBox3D::*)(common::CVector3f *,
                                                                         common::CVector3f *)>);
     static_assert(std::is_same_v<decltype(&CBoundingBox3D::doesSphereIntersect),
                                  int (CBoundingBox3D::*)(common::CVector3f *, float)>);
+}
+
+// The original's bits for 1e37 and -1e37.
+TEST(CBoundingBox3D, AResetBoxIsInsideOutSoAPointIsTheWholeBox) {
+    CBoundingBox3D box;
+    box.reset();
+    EXPECT_EQ(std::bit_cast<std::uint32_t>(box.min.x), 0x7cf0bdc2U);
+    EXPECT_EQ(box.min.y, 1e37F);
+    EXPECT_EQ(box.min.z, 1e37F);
+    EXPECT_EQ(std::bit_cast<std::uint32_t>(box.max.x), 0xfcf0bdc2U);
+    EXPECT_EQ(box.max.y, -1e37F);
+    EXPECT_EQ(box.max.z, -1e37F);
+    box.expand({.x = 1.0F, .y = 2.0F, .z = 3.0F});
+    EXPECT_TRUE(box.min.equals({.x = 1.0F, .y = 2.0F, .z = 3.0F}));
+    EXPECT_TRUE(box.max.equals({.x = 1.0F, .y = 2.0F, .z = 3.0F}));
 }
 
 TEST(CBoundingBox3D, ExpandingGrowsEachSideToTakeInThePoint) {
@@ -154,6 +170,27 @@ TEST(CBoundingBox3D, AnUnorderedMaxLetsThePointThrough) {
     const CBoundingBox3D box{.min = {.x = 0, .y = 0, .z = 0},
                              .max = {.x = 1, .y = std::numeric_limits<float>::quiet_NaN(), .z = 1}};
     EXPECT_EQ(box.doesRayIntersect({.x = -1, .y = 0.5F, .z = 0.5F}, {.x = 4}, nullptr), 0.25F);
+}
+
+TEST(CBoundingBox3D, EachIndexBitTakesItsAxissMax) {
+    const CBoundingBox3D box{.min = {.x = 1, .y = 2, .z = 3}, .max = {.x = 4, .y = 5, .z = 6}};
+    EXPECT_TRUE(box.getCorner(0).equals({.x = 1, .y = 2, .z = 3}));
+    EXPECT_TRUE(box.getCorner(1).equals({.x = 4, .y = 2, .z = 3}));
+    EXPECT_TRUE(box.getCorner(2).equals({.x = 1, .y = 5, .z = 3}));
+    EXPECT_TRUE(box.getCorner(4).equals({.x = 1, .y = 2, .z = 6}));
+    EXPECT_TRUE(box.getCorner(7).equals({.x = 4, .y = 5, .z = 6}));
+}
+
+// x wins only when above both; y over z only when above it.
+TEST(CBoundingBox3D, TheMaximumBoundIsTheMaxCornersLargest) {
+    const auto bound = [](float x, float y, float z) {
+        return CBoundingBox3D{.min = {}, .max = {.x = x, .y = y, .z = z}}.getMaximumBound();
+    };
+    EXPECT_EQ(bound(3.0F, 1.0F, 2.0F), 3.0F);
+    EXPECT_EQ(bound(1.0F, 3.0F, 2.0F), 3.0F);
+    EXPECT_EQ(bound(2.0F, 1.0F, 3.0F), 3.0F);
+    EXPECT_EQ(bound(1.0F, 2.0F, 2.0F), 2.0F);
+    EXPECT_EQ(bound(2.0F, 2.0F, 1.0F), 2.0F);
 }
 
 } // namespace

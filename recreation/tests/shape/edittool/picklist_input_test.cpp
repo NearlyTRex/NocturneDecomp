@@ -93,6 +93,14 @@ TEST_F(CPickListInputTest, OtherCharactersDontSearch) {
 }
 
 // Without the reset, "BA" would find BANANA.
+TEST_F(CPickListInputTest, TheCursorIsOnTheItemMovedTo) {
+    open(1);
+    EXPECT_EQ(list_.getCurrentIndex(), 1);
+    press(EInputCodeType::DIK_NUMPAD2);
+    frame();
+    EXPECT_EQ(list_.getCurrentIndex(), 2);
+}
+
 TEST_F(CPickListInputTest, MovingStartsTheSearchAgain) {
     open(0);
     type("b");
@@ -266,12 +274,16 @@ TEST_F(CPickListInputTest, ADoubleClickOnADisabledItemDoesntPick) {
     frame();
 }
 
-TEST_F(CPickListInputTest, ThePointerIsHeldInsideTheList) {
-    open(0);
-    mouseAt(0, 200, false);
+// The enhanced game never moves the OS cursor; retail held it in the box.
+TEST_F(CPickListInputTest, APointerOutsideTheListIsLeftThereAndCountsAsAtItsEdge) {
+    EXPECT_CALL(raw_input_, setCursorPosition).Times(0);
+    open(3);
+    clickAt(0, 0);
     frame();
-    EXPECT_EQ(mouse_x_, clip().left);
-    EXPECT_EQ(mouse_y_, clip().bottom);
+    EXPECT_EQ(mouse_x_, 0);
+    EXPECT_EQ(mouse_y_, 0);
+    mouseAt(0, 0, false);
+    EXPECT_EQ(confirm(), 0);
 }
 
 } // namespace

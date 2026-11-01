@@ -112,7 +112,6 @@ static TerminatedCString s_CFrankenstienMachine_005b9290 = "$CFrankenstienMachin
 static TerminatedCString s_CGabriella_005b92b0 = "$CGabriella$$";
 static TerminatedCString s_save_SAVE_TMP_005b9370 = "save\\$$SAVE$$.TMP";
 static TerminatedCString s_file_corrupt_005b9388 = "(file corrupt)";
-static TerminatedCString s_s_10_0_0_105_005b9568 = "10.0.0.105";
 static TerminatedCString s_CAlphaBitmap_005b95d4 = "$CAlphaBitmap$$";
 static TerminatedCString s_CSlew_005b95f4 = "$CSlew$$";
 static TerminatedCString s_CGame_005b9604 = "$CGame$$";
@@ -293,6 +292,18 @@ static TerminatedCString s_SfxSlot_005bed04 = "$SfxSlot$$";
 static TerminatedCString s_DEST_005bed39 = ":DEST";
 static TerminatedCString s_STrainNoise_005beff4 = "$STrainNoise$$";
 
+// char*[5][13] constants
+static char* g_ChapterMissionFiles[5][13] = {
+    {"hq-act1.msn", "gtown.msn", "forest.msn", "castle1.msn", "dungeon.msn", nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr},
+    {"train.msn", "town.msn", "mine.msn", "trans.msn", "temple.msn", "town2.msn", "hq-act2b.msn", nullptr, nullptr, nullptr, nullptr, nullptr, nullptr},
+    {"hq-act3.msn", "chicago1.msn", "speak.msn", "chicago2.msn", "wworks.msn", "chicago3.msn", "theater.msn", "chicago4.msn", "ware2.msn", "factory.msn", "intfact.msn", nullptr, nullptr},
+    {"hq-act4.msn", "grave.msn", "mansion.msn", "hq-act4b.msn", nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr},
+    {"hq-act5.msn", nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr}
+};
+
+// char[100] constants
+static char g_IpAddress[100] = "10.0.0.105";
+
 // float constants
 static float FLOAT_005ba82c = 1.0f;
 static float FLOAT_005ba830 = -1.0f;
@@ -332,29 +343,6 @@ static undefined1 DAT_005b9384 = 0x45;
 static undefined1 DAT_005b9385 = 0x46;
 
 // undefined1* constants
-static undefined1* DAT_005B9458 = (undefined1*)s_forest_msn_005846f7;
-static undefined1* DAT_005B945C = (undefined1*)s_castle1_msn_00584702;
-static undefined1* DAT_005B9460 = (undefined1*)s_dungeon_msn_0058470e;
-static undefined1* DAT_005B948C = (undefined1*)s_mine_msn_0058472d;
-static undefined1* DAT_005B9490 = (undefined1*)s_trans_msn_00584736;
-static undefined1* DAT_005B9494 = (undefined1*)s_temple_msn_00584740;
-static undefined1* DAT_005B9498 = (undefined1*)s_town2_msn_0058474b;
-static undefined1* DAT_005B949C = (undefined1*)s_hq_act2b_msn_00584755;
-static undefined1* DAT_005B94B8 = (undefined1*)s_hq_act3_msn_00584762;
-static undefined1* DAT_005B94BC = (undefined1*)s_chicago1_msn_0058476e;
-static undefined1* DAT_005B94C0 = (undefined1*)s_speak_msn_0058477b;
-static undefined1* DAT_005B94C4 = (undefined1*)s_chicago2_msn_00584785;
-static undefined1* DAT_005B94C8 = (undefined1*)s_wworks_msn_00584792;
-static undefined1* DAT_005B94CC = (undefined1*)s_chicago3_msn_0058479d;
-static undefined1* DAT_005B94D0 = (undefined1*)s_theater_msn_005847aa;
-static undefined1* DAT_005B94D4 = (undefined1*)s_chicago4_msn_005847b6;
-static undefined1* DAT_005B94D8 = (undefined1*)s_ware2_msn_005847c3;
-static undefined1* DAT_005B94DC = (undefined1*)s_factory_msn_005847cd;
-static undefined1* DAT_005B94E0 = (undefined1*)s_intfact_msn_005847d9;
-static undefined1* DAT_005B94EC = (undefined1*)s_hq_act4_msn_005847e5;
-static undefined1* DAT_005B94F0 = (undefined1*)s_grave_msn_005847f1;
-static undefined1* DAT_005B94F4 = (undefined1*)s_mansion_msn_005847fb;
-static undefined1* DAT_005B94F8 = (undefined1*)s_hq_act4b_msn_00584807;
 static undefined1* DAT_005BAF20 = (undefined1*)s_f0500_00589213;
 static undefined1* DAT_005BAF24 = (undefined1*)s_f0700_00589219;
 static undefined1* DAT_005BAF28 = (undefined1*)s_f0900_0058921f;
@@ -473,7 +461,6 @@ static undefined4 DAT_005b6d00 = 0x00000004;
 static undefined4 DAT_005b7650 = 0x01C03A10;
 static undefined4 DAT_005b9364 = 0x00000040;
 static undefined4 DAT_005b9368 = 0x00000040;
-static undefined4 DAT_005b9485 = 0x24005847;
 static undefined4 DAT_005bc00c = 0x00000080;
 static undefined4 DAT_005bc030 = 0x000000FF;
 static undefined4 DAT_005be180 = 0x1A474250;

@@ -9,5 +9,5 @@
 CVector3f * __cdecl core_skeleton_cpp_CDeformableModel_getVertexPoolPtr_FUN_0059a860(CDeformableModel *this_ptr,int index)
 
 {
-  return this_ptr->vertex_pool + index;
+  return this_ptr->bone_origins + index;
 }

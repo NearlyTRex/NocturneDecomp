@@ -17,14 +17,15 @@ constexpr int kVersion = 1;
 constinit const CDemonActorType CIcePick::kType =
     makeActorType("CIcePick", &CHero::kType, &CIcePick::create, kVersion);
 
-// deferred: loading the model icepick.dfm, with CDeformableModelInstance::init
 // deferred: the defaults the constructor gives Ice Pick's own fields, with the steps that read
 //   them
 // deferred: 300 hit points, and 300 the most, where the original left the most at CCharacter's
 //   100, so health items and the health bar measure against Ice Pick's own (the decomp's HERO_ACTIONS
 //   in the constructor), with CCharacter's hit point setters
 // nocedit 0x004f7df0
-CIcePick::CIcePick() = default;
+CIcePick::CIcePick(CActor &classes) : CHero(classes) {
+    getModel().init("icepick.dfm");
+}
 
 // nocedit 0x004f97e0
 CIcePick::~CIcePick() = default;
@@ -40,8 +41,8 @@ void CIcePick::archive(CActorArchive &actor_archive) {
 }
 
 // nocedit 0x004f7db0
-std::unique_ptr<CDemonActor> CIcePick::create() {
-    return std::make_unique<CIcePick>();
+std::unique_ptr<CDemonActor> CIcePick::create(CActor &classes) {
+    return std::make_unique<CIcePick>(classes);
 }
 
 } // namespace nocturne::core

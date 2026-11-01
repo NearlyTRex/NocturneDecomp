@@ -41,6 +41,10 @@ bool CSpecial::getUseExternalRenderer() const {
     return use_external_renderer_;
 }
 
+void CSpecial::setUseExternalRenderer(bool use_external_renderer) {
+    use_external_renderer_ = use_external_renderer;
+}
+
 int CSpecial::getCurrentGraphicsBoard() const {
     return current_graphics_board_;
 }
@@ -226,6 +230,38 @@ int CSpecial::clear() {
     return renderer_.clear();
 }
 
+// nocedit 0x005b7280
+int CSpecial::beginScene() {
+    if (!use_external_renderer_) {
+        return 0;
+    }
+    return renderer_.beginScene();
+}
+
+// nocedit 0x005b7be0
+int CSpecial::clearZBuffer() {
+    if (!use_external_renderer_) {
+        return 0;
+    }
+    return renderer_.clearZBuffer();
+}
+
+// nocedit 0x005b72a0
+int CSpecial::endScene() {
+    if (!use_external_renderer_) {
+        return 0;
+    }
+    return renderer_.endScene();
+}
+
+// nocedit 0x005b7d00
+int CSpecial::masterZBuffer(int slot) {
+    if (!use_external_renderer_) {
+        return 0;
+    }
+    return renderer_.masterZBuffer(slot);
+}
+
 // Software drawing since the last present goes into the renderer's image first. The renderer
 // usually points the rows at that image already, so the copy may run a row onto itself.
 // The original's skip_buffer_copy parameter, which skipped the copy, is not in retail.
@@ -250,12 +286,47 @@ void CSpecial::presentToExternalRenderer() {
     renderer_.toggle();
 }
 
+// The original then unloaded the DLL and cleared its entry points; the adapter keeps the
+// renderer, and what goes is the game's hold on it until the next load.
+// nocedit 0x005b71e0
+int CSpecial::kill() {
+    if (!loaded_) {
+        return 1;
+    }
+    renderer_.kill();
+    use_external_renderer_ = false;
+    loaded_ = false;
+    return 1;
+}
+
+// Kept for the renderer's next mode set; the running renderer takes it now.
+// nocedit 0x005b7b80
+int CSpecial::setFogColor(int red, int green, int blue) {
+    fog_red_ = red;
+    fog_green_ = green;
+    fog_blue_ = blue;
+    if (!use_external_renderer_) {
+        return 0;
+    }
+    return renderer_.setFogColor(red, green, blue);
+}
+
 // nocedit 0x005b7d90
 int CSpecial::selectCard(int card_index) {
     if (!loaded_) {
         return 0;
     }
     return renderer_.selectCard(card_index);
+}
+
+// nocedit 0x005b7db0
+int CSpecial::buildCardList(int *out_card_count, char **out_driver_names, char **out_card_names,
+                            int *out_vendor_ids, int *out_device_ids) {
+    if (!loaded_) {
+        return 0;
+    }
+    return renderer_.buildCardList(out_card_count, out_driver_names, out_card_names, out_vendor_ids,
+                                   out_device_ids);
 }
 
 } // namespace nocturne::engine

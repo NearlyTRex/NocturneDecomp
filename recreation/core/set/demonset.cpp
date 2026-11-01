@@ -120,6 +120,24 @@ std::span<const C3DSCamera> CDemonSet::getCameras() const {
     return cameras_;
 }
 
+std::span<C3DSCamera> CDemonSet::getCameras() {
+    return cameras_;
+}
+
+// nocedit 0x00570ea0
+void CDemonSet::setCameraEnabled(std::size_t camera_index, bool enabled) {
+    cameras_[camera_index].setEnabled(enabled);
+}
+
+// nocedit 0x00570ec0
+void CDemonSet::setCameraEnabledByGroup(int group_id, bool enabled) {
+    for (std::size_t i = 0; i < cameras_.size(); ++i) {
+        if (cameras_[i].getCameraGroup() == group_id) {
+            setCameraEnabled(i, enabled);
+        }
+    }
+}
+
 int CDemonSet::getDefaultRoomSize() const {
     return default_room_size_;
 }

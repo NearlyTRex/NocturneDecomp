@@ -503,7 +503,7 @@ LAB_005902c8:
           } while (iVar30 < (int)local_168);
         }
         pSVar5 = this_ptr->vertex_data_ptr[0];
-        pCVar19 = &pSVar5->position;
+        pCVar19 = pSVar5->bone_offsets;
         if (&local_324 != (CBoundingBox3D *)pCVar19) {
           local_324.min = *pCVar19;
         }
@@ -514,7 +514,7 @@ LAB_005902c8:
         if (1 < this_ptr->vertex_count[0]) {
           do {
             core_box_cpp_CBoundingBox3D_expand_FUN_00420240
-                      (&local_324,&this_ptr->vertex_data_ptr[0][iVar30].position);
+                      (&local_324,&this_ptr->vertex_data_ptr[0][iVar30].bone_offsets[0]);
             iVar30 = iVar30 + 1;
           } while (iVar30 < this_ptr->vertex_count[0]);
         }
@@ -614,12 +614,12 @@ LAB_005902c8:
             uVar3 = *puVar24;
             pSVar9 = this_ptr->vertex_data_ptr[0];
             uVar4 = puVar24[2];
-            fVar8 = pSVar9[uVar2].position.x - pSVar9[uVar3].position.x;
-            fVar12 = pSVar9[uVar2].position.y - pSVar9[uVar3].position.y;
-            fVar13 = pSVar9[uVar2].position.z - pSVar9[uVar3].position.z;
-            local_260 = pSVar9[uVar4].position.x - pSVar9[uVar2].position.x;
-            local_25c = pSVar9[uVar4].position.y - pSVar9[uVar2].position.y;
-            local_258 = pSVar9[uVar4].position.z - pSVar9[uVar2].position.z;
+            fVar8 = pSVar9[uVar2].bone_offsets[0].x - pSVar9[uVar3].bone_offsets[0].x;
+            fVar12 = pSVar9[uVar2].bone_offsets[0].y - pSVar9[uVar3].bone_offsets[0].y;
+            fVar13 = pSVar9[uVar2].bone_offsets[0].z - pSVar9[uVar3].bone_offsets[0].z;
+            local_260 = pSVar9[uVar4].bone_offsets[0].x - pSVar9[uVar2].bone_offsets[0].x;
+            local_25c = pSVar9[uVar4].bone_offsets[0].y - pSVar9[uVar2].bone_offsets[0].y;
+            local_258 = pSVar9[uVar4].bone_offsets[0].z - pSVar9[uVar2].bone_offsets[0].z;
             fVar14 = fVar13 * local_260 - fVar8 * local_258;
             fVar13 = fVar12 * local_258 - fVar13 * local_25c;
             fVar8 = fVar8 * local_25c - fVar12 * local_260;
@@ -703,10 +703,10 @@ LAB_005902c8:
                           pCVar19 = local_188 + pvVar35->vertex_index;
                           uVar7 = (&(local_120->vertex_indices).vertex_index_0)[iVar30 % 3];
                           pSVar9 = this_ptr->vertex_data_ptr[0];
-                          local_1d0 = pSVar9[uVar7].position.x;
-                          local_1cc = pSVar9[uVar7].position.y;
+                          local_1d0 = pSVar9[uVar7].bone_offsets[0].x;
+                          local_1cc = pSVar9[uVar7].bone_offsets[0].y;
                           local_20c = local_1d0 - pCVar19->x;
-                          local_1c8 = pSVar9[uVar7].position.z;
+                          local_1c8 = pSVar9[uVar7].bone_offsets[0].z;
                           local_208 = local_1cc - pCVar19->y;
                           local_204 = local_1c8 - pCVar19->z;
                           if ((((float)0.20000000000000001 < ABS(local_20c)) ||
@@ -1086,9 +1086,9 @@ LAB_00591f48:
                       if (0 < this_ptr->vertex_count[0]) {
                         do {
                           pSVar9 = this_ptr->vertex_data_ptr[0];
-                          local_218 = pSVar9[iVar30].position.x - local_1c4;
-                          local_214 = pSVar9[iVar30].position.y - local_1c0;
-                          local_210 = pSVar9[iVar30].position.z - local_1bc;
+                          local_218 = pSVar9[iVar30].bone_offsets[0].x - local_1c4;
+                          local_214 = pSVar9[iVar30].bone_offsets[0].y - local_1c0;
+                          local_210 = pSVar9[iVar30].bone_offsets[0].z - local_1bc;
                           local_a0 = local_210 * local_210 +
                                      local_218 * local_218 + local_214 * local_214;
                           if (local_a0 < local_a1f0) {

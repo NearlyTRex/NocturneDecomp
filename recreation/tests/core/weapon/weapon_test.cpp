@@ -5,13 +5,21 @@
 #include "core/actor/demonactor.h"
 #include "core/actor/demonactortype.h"
 #include "core/ammo/ammotype.h"
+#include "core/box/boundingbox3d.h"
+#include "core/box/box.h"
+#include "core/dmodel/keyframedmodel.h"
 #include "core/game/game.h"
 #include "core/weapon/weapon.h"
 #include "core/weapon/weaponstate.h"
+#include "tests/mocks/core/gameparts.h"
 #include "tests/mocks/core/mockactorlookup.h"
+#include "tests/mocks/core/mockdeformablemodels.h"
+#include "tests/mocks/core/mockkeyframedmodels.h"
 #include "tests/mocks/core/notportedcalls.h"
 #include "tests/mocks/core/testactor.h"
+#include "tests/mocks/core/testclasses.h"
 #include "tests/mocks/engine/mockgameclock.h"
+#include "tests/mocks/engine/podfixture.h"
 
 #include <gmock/gmock.h>
 #include <gtest/gtest.h>
@@ -72,13 +80,17 @@ TEST(CWeapon, ItsRecordIsVersion7UnderCDemonActor) {
 // A weapon of no class but its own, so its calls reach CWeapon's.
 class CTestWeapon : public CWeapon {
 public:
+    using CWeapon::CWeapon;
+
     [[nodiscard]] const CDemonActorType &getActorType() const override {
         return kType;
     }
 };
 
 TEST(CWeapon, AWeaponLiesAroundWithTwentyRoundsUntilCarried) {
-    CTestWeapon weapon;
+    CTestClasses classes;
+    CTestWeapon weapon{classes.get()};
+    EXPECT_TRUE(weapon.isCollisionDisabled());
     EXPECT_EQ(weapon.getModel().getModelName(), "gat.kfm");
     EXPECT_EQ(weapon.getCarrier(), nullptr);
     EXPECT_EQ(weapon.getWeaponState(), EWeaponState::kLyingAround);
@@ -111,11 +123,14 @@ protected:
     }
 
     ::testing::NiceMock<engine::MockGameClock> clock_;
-    CGame game_{clock_};
+    CGameParts game_parts_{clock_};
+    CGame &game_ = game_parts_.getGame();
     common::CWatcomRandom crt_;
-    CActor classes_{game_, crt_};
+    ::testing::NiceMock<MockDeformableModels> models_;
+    ::testing::NiceMock<MockKeyFramedModels> keyframed_models_;
+    CActor classes_{game_, crt_, models_, keyframed_models_};
     ::testing::NiceMock<MockActorLookup> actors_;
-    CTestWeapon weapon_;
+    CTestWeapon weapon_{classes_};
     CTestActor carrier_{kTestBaseType};
 };
 
@@ -147,13 +162,56 @@ TEST_F(CWeaponArchiveTest, AnOlderWeaponHasFewerFields) {
     EXPECT_EQ(weapon_.getModel().getModelName(), "c.kfm");
 }
 
+// A gun of one frame, one unit wide and high and flat, lying at (1,2,3) unturned.
+class CWeaponSetupTest : public engine::CPodFixture {
+protected:
+    CWeaponSetupTest() {
+        givenFile("models\\gat.kfm", "/\n5\n;\n3,1,1,0,1\n;\n1\n;\n0,0,0\n256,0,0\n0,256,0\n"
+                                     ";\n0,3, 0,0,0, 1,0,0, 2,0,0\n;\nSKIN.RAW\n");
+        classes_.getKeyFramedModel().load("gat.kfm");
+        weapon_.setLocation({.position = {.x = 1.0F, .y = 2.0F, .z = 3.0F}});
+        weapon_.setOrientation({});
+    }
+
+    CTestClasses classes_{dosio_};
+    CTestWeapon weapon_{classes_.get()};
+};
+
+TEST_F(CWeaponSetupTest, AWeaponOfFiveIsPutInThePhysicsWhereItsFirstFrameSits) {
+    EXPECT_EQ(weapon_.getWeight(), 5.0F);
+    weapon_.setup();
+    const CBox &box = weapon_.getPhysicsBox();
+    EXPECT_EQ(box.getValidity(), 1);
+    EXPECT_EQ(box.getPosition().x, 1.5F);
+    EXPECT_EQ(box.getPosition().y, 2.5F);
+    EXPECT_EQ(box.getPosition().z, 3.0F);
+    EXPECT_EQ(box.getExtents().x, 1.0F);
+    EXPECT_EQ(box.getExtents().y, 1.0F);
+    EXPECT_EQ(box.getExtents().z, 0.0F);
+    CBoundingBox3D bounds;
+    EXPECT_EQ(weapon_.getBoundingBox(&bounds), &bounds);
+    EXPECT_EQ(bounds.max.x, 1.0F);
+    EXPECT_EQ(bounds.max.y, 1.0F);
+}
+
+// The test classes' one model has no frames until it is loaded.
+TEST(CWeapon, AModelWithNoFramesHasNoBounds) {
+    CTestClasses classes;
+    CTestWeapon weapon{classes.get()};
+    weapon.setup();
+    CBoundingBox3D bounds{.min = {.x = 1.0F}, .max = {.x = 2.0F}};
+    static_cast<void>(weapon.getBoundingBox(&bounds));
+    EXPECT_EQ(bounds.min.x, 0.0F);
+    EXPECT_EQ(bounds.max.x, 0.0F);
+    EXPECT_EQ(weapon.getPhysicsBox().getValidity(), 1);
+}
+
 TEST(CWeapon, TheFunctionsNotPortedYetQuit) {
-    CTestWeapon weapon;
+    CTestClasses classes;
+    CTestWeapon weapon{classes.get()};
     const NotPortedCalls calls = {
-        {"setup", [&] { weapon.setup(); }},
         {"process", [&] { weapon.process(0.0F); }},
         {"renderOpaque", [&] { static_cast<void>(weapon.renderOpaque()); }},
-        {"getBoundingBox", [&] { static_cast<void>(weapon.getBoundingBox(nullptr)); }},
         {"getCollisionType", [&] { static_cast<void>(weapon.getCollisionType(nullptr)); }},
         {"onPickup", [&] { weapon.onPickup(nullptr); }},
         {"canPickup", [&] { static_cast<void>(weapon.canPickup(nullptr)); }},
@@ -168,7 +226,7 @@ TEST(CWeapon, TheFunctionsNotPortedYetQuit) {
         {"renderAimBeam", [&] { weapon.renderAimBeam(); }},
         {"updateLighting", [&] { weapon.updateLighting(); }},
     };
-    EXPECT_EQ(calls.size(), 17U);
+    EXPECT_EQ(calls.size(), 15U);
     expectEachQuitsNotPorted("CWeapon", calls);
 }
 

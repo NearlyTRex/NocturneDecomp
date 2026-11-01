@@ -7,15 +7,15 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 409,
-    "complexity_score": 148,
+    "complexity_score": 149,
     "cross_reference_count": 1,
     "function_call_count": 6,
     "global_count": 20,
     "max_suspect_severity": "clean",
-    "pseudocode_lines": 148,
+    "pseudocode_lines": 149,
     "suspect_count": 0,
     "suspect_types": [],
-    "total_lines": 557
+    "total_lines": 558
   },
   "cross_references": [
     {
@@ -292,7 +292,7 @@
     },
     {
       "description": "Watcom shadow-pointer walk \u2014 `pfVar7` was initialized to the address of an array element's subfield (`pfVar7 = &BASE->ARR[K].SUBFIELD;`) and is advanced here by `+ N` whole pointees, where `N * sizeof(*pfVar7)` equals the array's element stride. The pointer is a smaller-typed walker striding a larger struct array. Replace the `pfVar7->subfield` reads with direct indexing on the original array (`BASE->ARR[i].SUBFIELD`); drop the shadow init and advance.",
-      "line": 138,
+      "line": 139,
       "match": "pfVar7 = pfVar7 + N",
       "resolution_source": "keep",
       "severity": "moderate",
@@ -301,7 +301,7 @@
     },
     {
       "description": "Watcom shadow-pointer walk \u2014 `pfVar6` was initialized to the address of an array element's subfield (`pfVar6 = &BASE->ARR[K].SUBFIELD;`) and is advanced here by `+ N` whole pointees, where `N * sizeof(*pfVar6)` equals the array's element stride. The pointer is a smaller-typed walker striding a larger struct array. Replace the `pfVar6->subfield` reads with direct indexing on the original array (`BASE->ARR[i].SUBFIELD`); drop the shadow init and advance.",
-      "line": 140,
+      "line": 141,
       "match": "pfVar6 = pfVar6 + N",
       "resolution_source": "keep",
       "severity": "moderate",

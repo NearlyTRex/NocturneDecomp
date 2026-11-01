@@ -1,6 +1,8 @@
 #include "core/haystack/haystack.h"
 
 #include "core/actor/demonactortype.h"
+#include "core/hero/herobones.h"
+#include "core/skeleton/deformablemodelinstance.h"
 
 #include <memory>
 
@@ -17,14 +19,27 @@ constexpr int kVersion = 1;
 constinit const CDemonActorType CHaystack::kType =
     makeActorType("CHaystack", &CHero::kType, &CHaystack::create, kVersion);
 
-// deferred: loading the model haystack.dfm, with CDeformableModelInstance::init
 // deferred: the defaults the constructor gives Haystack's own fields, with the steps that read
 //   them
 // nocedit 0x004f0c10
-CHaystack::CHaystack() = default;
+CHaystack::CHaystack(CActor &classes) : CHero(classes) {
+    getModel().init("haystack.dfm");
+}
 
 // nocedit 0x004f1d10
 CHaystack::~CHaystack() = default;
+
+// The original keeps the bones for every Haystack in one global; here each keeps his own.
+// deferred: his guns not drawn, with CHaystack::drawWeapon and isWeaponDrawn
+// nocedit 0x004f0c80
+void CHaystack::setup() {
+    CHero::setup();
+    bones_ = findHeroBones(*getModel().getSkeletonPtr());
+}
+
+const SHeroBones &CHaystack::getBones() const {
+    return bones_;
+}
 
 // nocedit 0x004f0c00
 const CDemonActorType &CHaystack::getActorType() const {
@@ -37,8 +52,8 @@ void CHaystack::archive(CActorArchive &actor_archive) {
 }
 
 // nocedit 0x004f0bd0
-std::unique_ptr<CDemonActor> CHaystack::create() {
-    return std::make_unique<CHaystack>();
+std::unique_ptr<CDemonActor> CHaystack::create(CActor &classes) {
+    return std::make_unique<CHaystack>(classes);
 }
 
 } // namespace nocturne::core

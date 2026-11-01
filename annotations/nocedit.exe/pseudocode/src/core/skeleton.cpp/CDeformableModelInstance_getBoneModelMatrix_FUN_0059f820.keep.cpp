@@ -28,19 +28,19 @@ CMatrix3x4f * __stack2_esi core_skeleton_cpp_CDeformableModelInstance_getBoneMod
     if (bone_index_00 < 0) {
       local_7c.m[0].z =
            (this_ptr->bone_transform).pose_data.root_position.x +
-           this_ptr->transformed_vertices[bone_index].x;
+           this_ptr->bone_origins[bone_index].x;
       local_7c.m[1].z =
            (this_ptr->bone_transform).pose_data.root_position.y +
-           this_ptr->transformed_vertices[bone_index].y;
+           this_ptr->bone_origins[bone_index].y;
       local_7c.m[2].z =
            (this_ptr->bone_transform).pose_data.root_position.z +
-           this_ptr->transformed_vertices[bone_index].z;
+           this_ptr->bone_origins[bone_index].z;
     }
     else {
       core_skeleton_cpp_CDeformableModelInstance_getBoneModelMatrix_FUN_0059f820
                 (this_ptr,bone_index_00,&local_ac);
       core_xform_cpp_transformVector3x4_FUN_005f4dc0
-                (&local_1c,this_ptr->transformed_vertices + bone_index,&local_ac);
+                (&local_1c,this_ptr->bone_origins + bone_index,&local_ac);
       local_7c.m[0].z = local_1c.x;
       local_7c.m[1].z = local_1c.y;
       local_7c.m[2].z = local_1c.z;

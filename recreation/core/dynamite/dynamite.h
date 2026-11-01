@@ -9,7 +9,7 @@ class CDynamite : public CWeapon {
 public:
     static const CDemonActorType kType;
 
-    CDynamite();
+    explicit CDynamite(CActor &classes);
     ~CDynamite() override;
 
     void process(float delta_time) override;

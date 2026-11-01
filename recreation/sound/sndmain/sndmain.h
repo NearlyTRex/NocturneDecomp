@@ -101,6 +101,10 @@ public:
     [[nodiscard]] bool isSoundMuted() const;
     // Muting stops every sound and the output.
     void setSoundMuted(bool muted);
+    // The enhanced game's level for movies, 0 to 1 in hundredths. It is no channel's: a movie's
+    // sound is speech, score and effects mixed together.
+    [[nodiscard]] float getMovieVolume() const;
+    void setMovieVolume(float volume);
 
     // The listener, in feet; front, up and right are its axes.
     void set3DListenerPos(double pos_x, double pos_y, double pos_z);
@@ -197,6 +201,9 @@ private:
     std::array<bool, kMaxSfxChannels> sfx_channel_enabled_{};
     int max_sound_channels_ = kMaxSfxChannels;
     bool sound_muted_ = false;
+    // As the INI's MovieVolume stores it.
+    static constexpr int kFullMovieVolumePercent = 100;
+    int movie_volume_percent_ = kFullMovieVolumePercent;
 
     common::CVector3d cached_3d_listener_pos_;
     common::CVector3d cached_3d_listener_orient_front_;

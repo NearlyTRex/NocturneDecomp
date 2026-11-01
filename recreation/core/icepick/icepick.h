@@ -13,7 +13,7 @@ class CIcePick : public CHero {
 public:
     static const CDemonActorType kType;
 
-    CIcePick();
+    explicit CIcePick(CActor &classes);
     ~CIcePick() override;
     CIcePick(const CIcePick &) = delete;
     CIcePick &operator=(const CIcePick &) = delete;
@@ -32,7 +32,7 @@ public:
     int isWeaponDrawn() override;
 
 private:
-    static std::unique_ptr<CDemonActor> create();
+    static std::unique_ptr<CDemonActor> create(CActor &classes);
 };
 
 } // namespace nocturne::core

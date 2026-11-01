@@ -89,7 +89,7 @@ void __cdecl core_charactr_cpp_CCharacter_setup_FUN_00428140(CCharacter *this_pt
         pCVar4->fires[0].size = 2.0;
         iVar3 = iVar3 + 1;
         pCVar4 = pCVar4;
-        pCVar6 = (CCharacter *)&(pCVar6->model).transformed_vertices[0x14].y;
+        pCVar6 = (CCharacter *)&(pCVar6->model).bone_origins[0x14].y;
       } while (iVar3 < this_ptr->fire_count);
     }
   }

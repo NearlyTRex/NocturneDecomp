@@ -1,8 +1,23 @@
 #include "core/actor/demonactortype.h"
+#include "core/actor/groundtype.h"
+#include "core/box/boundingbox3d.h"
+#include "core/box/box.h"
 #include "core/boxactor/boxactor.h"
+#include "core/boxactor/boxpickuptype.h"
+#include "core/dmodel/keyframedmodel.h"
+#include "core/hero/hero.h"
+#include "tests/mocks/core/notportedcalls.h"
+#include "tests/mocks/core/testactor.h"
+#include "tests/mocks/core/testclasses.h"
+#include "tests/mocks/core/testfieldsarchive.h"
+#include "tests/mocks/engine/podfixture.h"
 
 #include <gtest/gtest.h>
 
+#include <format>
+#include <memory>
+#include <string>
+#include <string_view>
 #include <type_traits>
 
 namespace nocturne::core {
@@ -21,7 +36,7 @@ TEST(CBoxActor, IsConcrete) {
 }
 
 TEST(CBoxActor, Constructors) {
-    static_assert(std::is_constructible_v<CBoxActor>);
+    static_assert(std::is_constructible_v<CBoxActor, CActor &>);
 }
 
 TEST(CBoxActor, PublicInterface) {
@@ -57,11 +72,235 @@ TEST(CBoxActor, PublicInterface) {
                                  void (CBoxActor::*)(common::CVector3f *, common::CVector3f *)>);
 }
 
-TEST(CBoxActor, ItsRecordIsVersion15UnderCDemonActor) {
+TEST(CBoxActor, ItsRecordIsVersion15UnderCDemonActorAndMissionsCanCreateOne) {
     EXPECT_EQ(CBoxActor::kType.class_name, "CBoxActor");
     EXPECT_EQ(CBoxActor::kType.parent_type, &CDemonActor::kType);
-    EXPECT_EQ(CBoxActor::kType.factory_func, nullptr);
     EXPECT_EQ(CBoxActor::kType.latest_version, 15);
+    ASSERT_NE(CBoxActor::kType.factory_func, nullptr);
+    CTestClasses classes;
+    const std::unique_ptr<CDemonActor> actor = CBoxActor::kType.factory_func(classes.get());
+    EXPECT_EQ(&actor->getActorType(), &CBoxActor::kType);
+}
+
+TEST(CBoxActor, ABoxActorIsAWeightlessQuestionMarkNobodyCanPickUp) {
+    CTestClasses classes;
+    CBoxActor box{classes.get()};
+    EXPECT_EQ(box.getModel().getModelName(), "question.kfm");
+    EXPECT_EQ(box.getWeightInPounds(), 0.0F);
+    EXPECT_EQ(box.getFps(), 20.0F);
+    EXPECT_EQ(box.getRpm().y, 0.0F);
+    EXPECT_EQ(box.getLoopWavName(), "");
+    EXPECT_EQ(box.getPickupType(), EBoxPickupType::kCant);
+    EXPECT_EQ(box.getCarrier(), nullptr);
+    EXPECT_FALSE(box.canBePushed());
+    EXPECT_EQ(box.getPushedBy(), nullptr);
+    EXPECT_EQ(box.getGroundType(), EGroundType::kDefault);
+    EXPECT_EQ(box.getPhysicsBox().getValidity(), -1);
+    EXPECT_TRUE(box.isPlottedInShadow());
+    EXPECT_TRUE(box.isCollisionEnabled());
+    EXPECT_FALSE(box.isTransparent());
+    EXPECT_FALSE(box.isDrawnWithoutNormals());
+    EXPECT_EQ(box.getConstrainExtentsActor(), nullptr);
+    EXPECT_EQ(box.getUseEvent(), "");
+    EXPECT_EQ(box.getAllowedMeleeAttackTypes(), 0);
+    EXPECT_EQ(box.getPushSound(), "");
+    EXPECT_EQ(box.getBlockVirtualDirectorFlag(), 0);
+}
+
+TEST(CBoxActor, PickingItUpMakesTheCarrierItsOwn) {
+    CTestClasses classes;
+    CBoxActor box{classes.get()};
+    CTestActor carrier(kTestBaseType);
+    box.pickup(&carrier);
+    EXPECT_EQ(box.getCarrier(), &carrier);
+}
+
+class CBoxActorArchiveTest : public ::testing::Test {
+protected:
+    CBoxActorArchiveTest() {
+        hero_.setActorName("Stranger");
+        dummy_.setActorName("CRE");
+    }
+
+    void read(int saved_version, std::string_view fields) {
+        CTestFieldsArchive archive(box_, CBoxActor::kType, saved_version, fields);
+        archive.addActor(hero_);
+        archive.addActor(dummy_);
+        box_.archive(archive.get());
+        EXPECT_EQ(box_.getLocation().area_id, CTestFieldsArchive::kArea);
+        EXPECT_TRUE(archive.isFinished());
+    }
+
+    CTestClasses classes_;
+    CBoxActor box_{classes_.get()};
+    CTestActor hero_{CHero::kType};
+    CTestActor dummy_{kTestBaseType};
+};
+
+// CREDummy of HQ-ACT1.MSN, but heavy, carried, pushed, transparent and kept within another.
+TEST_F(CBoxActorArchiveTest, ABoxActorIsReadWithItsBox) {
+    read(15, "\t\"CRE.KFM\"    // modelName\n\t50    // weightInPounds\n\t10    // fps\n"
+             "\t1,2,3    // rpm\n\t\"hum.wav\"    // loopWavName\n"
+             "\t\"thud.wav\"    // collisionWavName\n\t4    // pickupType\n"
+             "\t\"Stranger\"\t\t// carriedByActor\n\t1    // canBePushed\n"
+             "\t\"Stranger\"\t\t// pushedByActor\n\t5    // groundType\n\t{ // simBox\n"
+             "\t\tboxVersion\n\t\t1\n\t\tboxStateInfo\n\t\t1,2,3\n\t\t0,0,0\n\t\t4,5,6\n"
+             "\t\t7\n\t\t0,0,0\n\t\t0,0,0\n\t\t1\n\t}\n\t0    // plotInShadowFlag\n"
+             "\t0    // collisionFlag\n\t1    // isTransparent\n\t1    // dontUseNormals\n"
+             "\t\"CRE\"\t\t// constrainExtentsActor\n\t\"Used\"    // useEvent\n"
+             "\t6    // allowedMeleeAttackTypes\n\t\"scrape.wav\"    // pushSound\n"
+             "\t1    // blockVirtualDirectorFlag\n");
+    EXPECT_EQ(box_.getModel().getModelName(), "CRE.KFM");
+    EXPECT_EQ(box_.getWeightInPounds(), 50.0F);
+    EXPECT_EQ(box_.getFps(), 10.0F);
+    EXPECT_EQ(box_.getRpm().z, 3.0F);
+    EXPECT_EQ(box_.getLoopWavName(), "hum.wav");
+    EXPECT_EQ(box_.getCollisionWavName(), "thud.wav");
+    EXPECT_EQ(box_.getPickupType(), EBoxPickupType::kHeavy);
+    EXPECT_EQ(box_.getCarrier(), &hero_);
+    EXPECT_TRUE(box_.canBePushed());
+    EXPECT_EQ(box_.getPushedBy(), &hero_);
+    EXPECT_EQ(box_.getGroundType(), EGroundType::kMetal);
+    EXPECT_EQ(box_.getPhysicsBox().getExtents().y, 5.0F);
+    EXPECT_EQ(box_.getPhysicsBox().getValidity(), 1);
+    EXPECT_FALSE(box_.isPlottedInShadow());
+    EXPECT_FALSE(box_.isCollisionEnabled());
+    EXPECT_TRUE(box_.isTransparent());
+    EXPECT_TRUE(box_.isDrawnWithoutNormals());
+    EXPECT_EQ(box_.getConstrainExtentsActor(), &dummy_);
+    EXPECT_EQ(box_.getUseEvent(), "Used");
+    EXPECT_EQ(box_.getAllowedMeleeAttackTypes(), 6);
+    EXPECT_EQ(box_.getPushSound(), "scrape.wav");
+    EXPECT_EQ(box_.getBlockVirtualDirectorFlag(), 1);
+}
+
+// The fields every version has, up to the colliding sound, then whether it can be carried.
+constexpr std::string_view kFirstBox = "\"b.kfm\"\n0\n20\n0,0,0\n\"\"\n\"\"\n";
+
+TEST_F(CBoxActorArchiveTest, AVersionOneBoxThatCanBeCarriedIsCarriedAndSetUpFromItsModel) {
+    read(1, std::string(kFirstBox) + "1 // canBeCarried\n\"(none)\"\n");
+    EXPECT_EQ(box_.getPickupType(), EBoxPickupType::kCarry);
+    EXPECT_FALSE(box_.canBePushed());
+    EXPECT_EQ(box_.getPhysicsBox().getValidity(), -1);
+    EXPECT_TRUE(box_.isPlottedInShadow());
+    EXPECT_TRUE(box_.isCollisionEnabled());
+}
+
+TEST_F(CBoxActorArchiveTest, AnOldBoxThatCantBeCarriedCant) {
+    read(3, std::string(kFirstBox) + "0\n\"(none)\"\n0\n\"(none)\"\n2\n");
+    EXPECT_EQ(box_.getPickupType(), EBoxPickupType::kCant);
+    EXPECT_EQ(box_.getGroundType(), EGroundType::kConcrete);
+}
+
+// Version 9 alone named the box for the editor.
+TEST_F(CBoxActorArchiveTest, AVersionNineBoxsNameIsPassedOver) {
+    read(9, std::string(kFirstBox) +
+                "2\n\"(none)\"\n0\n\"(none)\"\n0\n{\nv\n1\ns\n0,0,0\n0,0,0\n0,0,0\n0\n0,0,0\n"
+                "0,0,0\n0\n}\n1\n1\n0\n0\n\"Crate\" // descriptiveName\n");
+    EXPECT_EQ(box_.getPickupType(), EBoxPickupType::kInventory);
+    EXPECT_EQ(box_.getPhysicsBox().getValidity(), 0);
+    EXPECT_EQ(box_.getConstrainExtentsActor(), nullptr);
+}
+
+// Only a hero picks up what can't be carried; anyone picks up what can.
+TEST_F(CBoxActorArchiveTest, AHeroPicksUpWhatOthersCantUnlessItIsCarried) {
+    read(7, std::string(kFirstBox) +
+                "1\n\"(none)\"\n0\n\"(none)\"\n0\n{\nv\n1\ns\n0,0,0\n0,0,0\n0,0,0\n0\n0,0,0\n"
+                "0,0,0\n0\n}\n1\n1\n");
+    EXPECT_EQ(box_.canPickup(&hero_), 1);
+    EXPECT_EQ(box_.canPickup(&dummy_), 0);
+    EXPECT_EQ(box_.canPickup(nullptr), 0);
+    read(7, std::string(kFirstBox) +
+                "3\n\"(none)\"\n0\n\"(none)\"\n0\n{\nv\n1\ns\n0,0,0\n0,0,0\n0,0,0\n0\n0,0,0\n"
+                "0,0,0\n0\n}\n1\n1\n");
+    EXPECT_EQ(box_.canPickup(&dummy_), 3);
+}
+
+// A crate of one frame, one unit wide and high and flat, at a mission's place.
+class CBoxActorSetupTest : public engine::CPodFixture {
+protected:
+    CBoxActorSetupTest() {
+        givenFile("models\\crate.kfm", "/\n5\n;\n3,1,1,0,1\n;\n1\n;\n0,0,0\n256,0,0\n0,256,0\n"
+                                       ";\n0,3, 0,0,0, 1,0,0, 2,0,0\n;\nSKIN.RAW\n");
+        classes_.getKeyFramedModel().load("crate.kfm");
+    }
+
+    // A version 1 box of the weight, whose box is still to be set up, at (1,2,3) unturned.
+    void read(std::string_view weight) {
+        CTestFieldsArchive archive(
+            box_, CBoxActor::kType, 1,
+            std::format("\"crate.kfm\"\n{}\n20\n0,0,0\n\"\"\n\"\"\n0\n\"(none)\"\n", weight));
+        box_.archive(archive.get());
+        box_.setLocation({.position = {.x = 1.0F, .y = 2.0F, .z = 3.0F}});
+        box_.setOrientation({});
+    }
+
+    CTestClasses classes_{dosio_};
+    CBoxActor box_{classes_.get()};
+};
+
+TEST_F(CBoxActorSetupTest, AHeavyBoxIsPutInThePhysicsWhereItsFrameSits) {
+    read("50");
+    box_.setup();
+    const CBox &box = box_.getPhysicsBox();
+    EXPECT_EQ(box.getValidity(), 1);
+    EXPECT_EQ(box.getPosition().x, 1.5F);
+    EXPECT_EQ(box.getPosition().y, 2.5F);
+    EXPECT_EQ(box.getPosition().z, 3.0F);
+    EXPECT_EQ(box.getExtents().x, 1.0F);
+    EXPECT_EQ(box.getExtents().y, 1.0F);
+    EXPECT_EQ(box.getExtents().z, 0.0F);
+    CBoundingBox3D bounds;
+    EXPECT_EQ(box_.getBoundingBox(&bounds), &bounds);
+    EXPECT_EQ(bounds.max.x, 1.0F);
+}
+
+TEST_F(CBoxActorSetupTest, ABoxWithNoWeightIsLeftOutOfThePhysics) {
+    for (const std::string_view weight : {"0", "nan"}) {
+        read(weight);
+        box_.setup();
+        EXPECT_EQ(box_.getPhysicsBox().getValidity(), 0);
+    }
+}
+
+TEST_F(CBoxActorSetupTest, ABoxAlreadyInThePhysicsStaysWhereItWas) {
+    CTestFieldsArchive archive(box_, CBoxActor::kType, 4,
+                               "\"crate.kfm\"\n50\n20\n0,0,0\n\"\"\n\"\"\n0\n\"(none)\"\n0\n"
+                               "\"(none)\"\n0\n{\nv\n1\ns\n7,8,9\n0,0,0\n1,1,1\n1\n0,0,0\n"
+                               "0,0,0\n1\n}\n");
+    box_.archive(archive.get());
+    box_.setup();
+    EXPECT_EQ(box_.getPhysicsBox().getPosition().x, 7.0F);
+}
+
+// The test classes' one model has no frames until it is loaded.
+TEST(CBoxActor, AModelWithNoFramesHasNoBounds) {
+    CTestClasses classes;
+    CBoxActor box{classes.get()};
+    CTestFieldsArchive archive(box, CBoxActor::kType, 1,
+                               "\"none.kfm\"\n50\n20\n0,0,0\n\"\"\n\"\"\n0\n\"(none)\"\n");
+    box.archive(archive.get());
+    box.setup();
+    CBoundingBox3D bounds{.min = {.x = 1.0F}, .max = {.x = 2.0F}};
+    static_cast<void>(box.getBoundingBox(&bounds));
+    EXPECT_EQ(bounds.min.x, 0.0F);
+    EXPECT_EQ(bounds.max.x, 0.0F);
+    EXPECT_EQ(box.getPhysicsBox().getValidity(), 1);
+}
+
+TEST(CBoxActor, TheFunctionsNotPortedYetQuit) {
+    CTestClasses classes;
+    CBoxActor box{classes.get()};
+    const NotPortedCalls calls = {
+        {"process", [&] { box.process(0.0F); }},
+        {"renderOpaque", [&] { static_cast<void>(box.renderOpaque()); }},
+        {"renderTransparent", [&] { static_cast<void>(box.renderTransparent()); }},
+        {"getCollisionType", [&] { static_cast<void>(box.getCollisionType(nullptr)); }},
+        {"setPositionAndOrientation", [&] { box.setPositionAndOrientation(nullptr, nullptr); }},
+        {"onPickup", [&] { box.onPickup(nullptr); }},
+        {"onDropped", [&] { box.onDropped(nullptr); }},
+    };
+    expectEachQuitsNotPorted("CBoxActor", calls);
 }
 
 } // namespace

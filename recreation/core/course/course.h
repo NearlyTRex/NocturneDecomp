@@ -25,6 +25,7 @@ public:
     void evaluate(float time, common::CVector3f &out_pos, common::CVector3f &out_euler) const;
 
     [[nodiscard]] int getLength() const;
+    void setLooping(bool looping);
 
 private:
     struct CCourseFrame {

@@ -3,14 +3,19 @@
 #include "core/actor/actor.h"
 #include "core/dfilter/demonfilter.h"
 #include "core/dfont/dfont.h"
+#include "core/dmodel/keyframedmodelmanager.h"
+#include "core/event/eventlist.h"
 #include "core/game/game.h"
 #include "core/inivar/inivar.h"
 #include "core/level/levelloader.h"
 #include "core/main/main.h"
+#include "core/menu/attractmovies.h"
 #include "core/menu/menu.h"
 #include "core/mission/demonmission.h"
 #include "core/netgame/netgame.h"
+#include "core/script/script.h"
 #include "core/set/demonset.h"
+#include "core/skeleton/deformablemodelmanager.h"
 #include "core/sound/sound.h"
 #include "core/xform/xform.h"
 #include "engine/2d/2d.h"
@@ -103,6 +108,7 @@ protected:
             return std::optional(ini_text_);
         });
         ON_CALL(file_system_, setReadOnly(kIni, false)).WillByDefault(Return(true));
+        ON_CALL(attract_clock_, getCounterFrequency()).WillByDefault(Return(1000U));
         givenFile("art\\vga.act", engine::makePalette({}));
         givenFile("fog\\vga.lte", std::string(engine::C2d::kLightLevels * 256, '\0'));
         givenFile("fog\\vga.map", std::string(engine::C2d::kColorCubeSize, '\0'));
@@ -171,7 +177,16 @@ protected:
     engine::CFontColors colors_;
     support::CNewMsg messages_{dosio_};
     CDFont fonts_{dosio_, screen_, two_d_, three_d_, colors_, os_fonts_, messages_, editor_tools_};
-    CGame game_{game_clock_};
+    engine::CMenuInput menu_input_{keys_};
+    CGame game_{{.clock = game_clock_,
+                 .dosio = dosio_,
+                 .screen = screen_,
+                 .special = special_,
+                 .two_d = two_d_,
+                 .three_d = three_d_,
+                 .menu_input = menu_input_,
+                 .fonts = fonts_,
+                 .sound_main = sound_}};
     engine::CIni ini_{file_system_};
     SIniDataOwners ini_owners_{.game = game_,
                                .sound_main = sound_,
@@ -200,8 +215,22 @@ protected:
     CDemonSet set_{
         set_parts_.owners(demon_renderer_, matrix_, special_, two_d_, screen_, raw_input_)};
     common::CWatcomRandom crt_random_;
-    CActor actor_{game_, crt_random_};
-    engine::CMenuInput menu_input_{keys_};
+    CDeformableModelManager deformable_models_{dosio_, demon_renderer_};
+    CKeyFramedModelManager keyframed_models_{dosio_, demon_renderer_};
+    CActor actor_{game_, crt_random_, deformable_models_, keyframed_models_};
+    shape::CEdControls controls_{{.two_d = two_d_,
+                                  .screen = screen_,
+                                  .raw_input = raw_input_,
+                                  .clock = game_clock_,
+                                  .editor_tools = editor_tools_}};
+    shape::SPickListOwners pick_list_owners_{.controls = controls_,
+                                             .keys = keys_,
+                                             .menu_input = menu_input_,
+                                             .three_d = three_d_,
+                                             .screen = screen_};
+    // Its clock stands still, so music shorter than the lead is a pass ending at once.
+    NiceMock<platform::MockClock> attract_clock_;
+    CAttractMovies attract_movies_{attract_clock_};
     CMenu menu_{{.dosio = dosio_,
                  .screen = screen_,
                  .special = special_,
@@ -219,17 +248,15 @@ protected:
                  .textures = texture_,
                  .sound = game_sound_,
                  .sound_main = sound_,
-                 .build_version = "0.1.0"}};
-    shape::CEdControls controls_{{.two_d = two_d_,
-                                  .screen = screen_,
-                                  .raw_input = raw_input_,
-                                  .clock = game_clock_,
-                                  .editor_tools = editor_tools_}};
-    shape::SPickListOwners pick_list_owners_{.controls = controls_,
-                                             .keys = keys_,
-                                             .menu_input = menu_input_,
-                                             .three_d = three_d_,
-                                             .screen = screen_};
+                 .display = display_,
+                 .editor_tools = editor_tools_,
+                 .ini = ini_,
+                 .ini_owners = ini_owners_,
+                 .pick_list = pick_list_owners_,
+                 .build_version = "0.1.0",
+                 .attract_movies = attract_movies_,
+                 .play_movie = {},
+                 .show_chapter_select = {}}};
     CLevelLoader level_loader_{{.dosio = dosio_,
                                 .screen = screen_,
                                 .special = special_,
@@ -248,7 +275,17 @@ protected:
                             .set = set_,
                             .textures = texture_,
                             .editor_tools = editor_tools_,
-                            .pick_list = pick_list_owners_}};
+                            .pick_list = pick_list_owners_,
+                            .script = script_,
+                            .events = events_}};
+    CEventList events_{
+        {.mission = mission_, .actor = actor_, .set = set_, .dosio = dosio_, .console = console_}};
+    CScript script_{{.dosio = dosio_,
+                     .editor_tools = editor_tools_,
+                     .mission = mission_,
+                     .events = events_,
+                     .set = set_,
+                     .sound = game_sound_}};
     std::vector<std::string> movies_;
     SGameSystemOwners owners_{.ini = ini_,
                               .file_system = file_system_,
@@ -272,7 +309,8 @@ protected:
                               .player_filters = player_filters_,
                               .mouse = mouse_,
                               .net_game = net_game_,
-                              .menu = menu_};
+                              .menu = menu_,
+                              .attract_movies = attract_movies_};
 };
 
 TEST_F(CInitializeGameSystemsTest, ReadsTheIniAndKeepsItsModeAfterTheFirstRun) {
@@ -328,6 +366,19 @@ TEST_F(CInitializeGameSystemsTest, PlaysTheOpeningMovieThenShowsTheLoadingScreen
     // The fangs' grey of 200 at half opacity over black.
     EXPECT_EQ(screen_.pixel(kWidth - 1, kHeight - 1), 0x636363U);
     EXPECT_EQ(screen_.swaps, 1);
+}
+
+TEST_F(CInitializeGameSystemsTest, TheOpeningPlayingLetsTheAttractMoviesFollow) {
+    start();
+    attract_movies_.setMusicDuration(0.1F);
+    EXPECT_TRUE(attract_movies_.tick());
+}
+
+TEST_F(CInitializeGameSystemsTest, WithoutTheOpeningNoAttractMovieFollows) {
+    owners_.play_movie = [](std::string_view, std::string_view) { return false; };
+    start();
+    attract_movies_.setMusicDuration(0.1F);
+    EXPECT_FALSE(attract_movies_.tick());
 }
 
 TEST_F(CInitializeGameSystemsTest, TakesUpTheSoundDevice) {

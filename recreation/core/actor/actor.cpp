@@ -15,11 +15,37 @@ constexpr float kSimRandomScale = std::bit_cast<float>(0x33800001U);
 // Widens the range so the top value is drawn as often as the others.
 constexpr double kRandomIntSpan = 0.99999;
 
+float drawCrtUnitFloat(common::CWatcomRandom &crt_random) {
+    return static_cast<float>(static_cast<double>(crt_random.rand()) * kCrtRandomScale);
+}
+
+float scaleToRange(float unit, float min_value, float max_value) {
+    const auto span = static_cast<float>(static_cast<double>(max_value) - min_value);
+    return static_cast<float>((static_cast<double>(unit) * span) + min_value);
+}
+
 } // namespace
 
-CActor::CActor(const CGame &game, common::CWatcomRandom &crt_random)
-    : game_(game), crt_random_(crt_random) {
+CActor::CActor(const CGame &game, common::CWatcomRandom &crt_random, IDeformableModels &models,
+               IKeyFramedModels &keyframed_models)
+    : game_(game), crt_random_(crt_random), models_(models), keyframed_models_(keyframed_models) {
     registerActorClasses();
+}
+
+IDeformableModels &CActor::getModels() const {
+    return models_;
+}
+
+IKeyFramedModels &CActor::getKeyFramedModels() const {
+    return keyframed_models_;
+}
+
+const engine::CDosIo &CActor::getDosIo() const {
+    return game_.getDosIo();
+}
+
+const CGame &CActor::getGame() const {
+    return game_;
 }
 
 // nocedit 0x0040cb90
@@ -37,14 +63,20 @@ float CActor::drawUnitFloat() {
     if (game_.is_processing != 0) {
         return static_cast<float>(static_cast<double>(generateRandomValue()) * kSimRandomScale);
     }
-    return static_cast<float>(static_cast<double>(crt_random_.rand()) * kCrtRandomScale);
+    return drawCrtUnitFloat(crt_random_);
 }
 
 // nocedit 0x0040cc10
 float CActor::getRandomFloatFromRange(float min_value, float max_value) {
-    const auto span = static_cast<float>(static_cast<double>(max_value) - min_value);
-    const float unit = drawUnitFloat();
-    return static_cast<float>((static_cast<double>(unit) * span) + min_value);
+    return scaleToRange(drawUnitFloat(), min_value, max_value);
+}
+
+float CActor::getCosmeticFloatFromRange(float min_value, float max_value) {
+    return scaleToRange(drawCrtUnitFloat(crt_random_), min_value, max_value);
+}
+
+int CActor::getCosmeticRand() {
+    return crt_random_.rand();
 }
 
 // nocedit 0x0040cc70

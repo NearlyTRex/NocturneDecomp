@@ -7,14 +7,62 @@
 #include "core/game/controlmode.h"
 #include "core/game/herotype.h"
 #include "engine/fwd.h"
+#include "shape/fwd.h"
+#include "sound/fwd.h"
+#include "support/fwd.h"
 
 #include <cstdint>
+#include <string>
+#include <string_view>
 
 namespace nocturne::core {
 
+// What the game times its frames by, and draws and plays its own screens with.
+struct SGameOwners {
+    engine::IGameClock &clock;
+    const engine::CDosIo &dosio;
+    engine::IScreenDevice &screen;
+    engine::CSpecial &special;
+    engine::C2d &two_d;
+    engine::C3d &three_d;
+    engine::CMenuInput &menu_input;
+    const CDFont &fonts;
+    sound::CSndMain &sound_main;
+};
+
+// What a session plays with besides the game's own: the console it reports to, the scene camera,
+// the flashlight, the set it shows, the editor tools whose font follows the screen's size, the
+// version the console names, the fire effects, gore and inventory whose assets it loads, and the
+// script whose focus the first camera shows.
+struct SGameSessionOwners {
+    engine::CConsole &console;
+    CDemonCamera &camera;
+    CDemonLight &flashlight;
+    CDemonSet &set;
+    const CScript &script;
+    shape::CEditorTools &editor_tools;
+    std::string_view build_version;
+    CFireEffect &fire;
+    CGore &gore;
+    CInventoryAssets &inventory_assets;
+};
+
+// What chapter select reads the stories' unlock codes from, offers its lists with, and loads the
+// chosen mission with, and the session it plays it in.
+struct SChapterSelectOwners {
+    const support::CNewMsg &messages;
+    shape::CEditorTools &editor_tools;
+    const shape::SPickListOwners &pick_list;
+    const shape::SFileSelectionOwners &file_selection;
+    engine::CIni &ini;
+    ILoadingScreen &loading_screen;
+    CDemonMission &mission;
+    const SGameSessionOwners &session;
+};
+
 class CGame {
 public:
-    explicit CGame(engine::IGameClock &clock);
+    explicit CGame(const SGameOwners &owners);
 
     void saveClockTime();
     // The time since the last saveClockTime or updateDT, scaled, at most a quarter second.
@@ -24,7 +72,9 @@ public:
     [[nodiscard]] float getDeltaTimeFloat() const;
     void displayMessage(char *message, float duration);
     void setFudgeTarget(common::CVector3f *fudge_target, float fudge_step);
-    int runGameSession();
+    // Brings the game up for play at its resolution, with the scene and its lights set up, then
+    // plays until the session ends.
+    int runGameSession(const SGameSessionOwners &session);
     void restoreDefaultControls();
     void resetKeyState();
     void resetInputAndCenterCursor();
@@ -35,11 +85,19 @@ public:
     void resetInventoryDisplayTimer();
     void setStatusDisplay(char *name, float value, float duration);
     void loadGame(char *save_filename, int load_mode);
-    void showChapterSelect(int select_mode);
+    // A story to play, or a chapter of one, then the mission it starts with is loaded and its
+    // heroes made.
+    void showChapterSelect(const SChapterSelectOwners &owners, EChapterSelectMode select_mode);
+    // The mission file last started; starting it again keeps its loaded models and textures.
+    [[nodiscard]] const std::string &getCurrentSaveFile() const;
+    // Where the game reads its files from.
+    [[nodiscard]] const engine::CDosIo &getDosIo() const;
     void displayBitmap(char *filename, int width, int height);
     void slamDT(float delta_time);
     void displayActStats();
     void finishAct();
+    // data\credits.txt up the right of the stats image to the credits music, until the music ends
+    // or Cancel is pressed.
     void rollCredits();
 
     // The settings nocturne.ini carries, read by readIniData under the keys their names spell.
@@ -82,15 +140,22 @@ public:
     float time_scale_factor = 1.0F;
     // Set while a sim frame runs, when the game's random draws come off the sim stream.
     int is_processing = 0;
+    // Set while a saved game loads, whose script is then not checked again.
+    bool is_loading = false;
 
 private:
     void seedCalibration();
+    // The screen at the game's resolution, falling back to 640x480, its camera sized for it.
+    void setGameRes(const SGameSessionOwners &session);
+    // The set's, the fire effects', the gore's and the inventory's textures, models and pictures.
+    static void loadAssets(const SGameSessionOwners &session);
 
-    engine::IGameClock &clock_;
+    SGameOwners owners_;
     // In the game clock's ticks.
     int clocktime_ = 0;
     int delta_time_int_ = 0;
     float delta_time_float_ = 0.0F;
+    std::string current_save_file_;
 };
 
 } // namespace nocturne::core

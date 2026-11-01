@@ -131,6 +131,19 @@ bool CDFont::getUseOSFonts() const {
     return use_os_fonts_;
 }
 
+EMenuFontChoice CDFont::getMenuFontChoice() const {
+    return menu_font_choice_;
+}
+
+void CDFont::setMenuFontChoice(EMenuFontChoice choice) {
+    menu_font_choice_ = choice;
+}
+
+engine::CBitFont *CDFont::getMenuFont() const {
+    return menu_font_choice_ == EMenuFontChoice::Small ? small_editor_font_.get()
+                                                       : theme_font_.get();
+}
+
 engine::CBitFont *CDFont::getMediumFont() const {
     return medium_font_.get();
 }

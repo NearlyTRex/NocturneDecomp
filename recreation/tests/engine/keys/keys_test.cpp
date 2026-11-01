@@ -36,7 +36,7 @@ TEST(CKeys, PublicInterface) {
         std::is_same_v<decltype(&CKeys::setKeyAsPressed), void (CKeys::*)(EInputCodeType)>);
     static_assert(
         std::is_same_v<decltype(&CKeys::clearKeyPressState), void (CKeys::*)(EInputCodeType)>);
-    static_assert(std::is_same_v<decltype(&CKeys::toggleInputMask), void (CKeys::*)(int)>);
+    static_assert(std::is_same_v<decltype(&CKeys::toggleInputMask), void (CKeys::*)(bool)>);
 }
 
 class CKeysTest : public ::testing::Test {
@@ -68,6 +68,13 @@ TEST_F(CKeysTest, AnUppercasedInputKeyRaisesOnlyAsciiLetters) {
     EXPECT_EQ(keys_.getUppercasedInputKey(), 'A');
     EXPECT_EQ(keys_.getUppercasedInputKey(), '{');
     EXPECT_EQ(keys_.getUppercasedInputKey(), 0xe9);
+}
+
+TEST_F(CKeysTest, TheInputMaskKeepsOrFoldsTheExtendedKeys) {
+    EXPECT_CALL(raw_input_, setInputKeyMask(0x1ff));
+    keys_.toggleInputMask(true);
+    EXPECT_CALL(raw_input_, setInputKeyMask(0x7f));
+    keys_.toggleInputMask(false);
 }
 
 TEST_F(CKeysTest, ClearingKeypressesClearsWinrunsQueue) {

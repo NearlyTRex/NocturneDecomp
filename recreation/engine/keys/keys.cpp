@@ -9,6 +9,12 @@
 #include <utility>
 
 namespace nocturne::engine {
+namespace {
+
+constexpr int kFoldedKeyMask = 0x7f;
+constexpr int kExtendedKeyMask = 0x1ff;
+
+} // namespace
 
 // staticInit only set the global instance's vtable; its owner constructs it now.
 // nocedit 0x00502410
@@ -40,6 +46,11 @@ int CKeys::getInputKey() {
 // nocedit 0x00502470
 int CKeys::getUppercasedInputKey() {
     return static_cast<unsigned char>(common::upperAscii(static_cast<char>(getInputKey())));
+}
+
+// nocedit 0x005024b0
+void CKeys::toggleInputMask(bool enable_extended) {
+    raw_input_.setInputKeyMask(enable_extended ? kExtendedKeyMask : kFoldedKeyMask);
 }
 
 } // namespace nocturne::engine

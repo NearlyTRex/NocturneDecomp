@@ -1,6 +1,7 @@
 #include "core/actor/demonactortype.h"
 #include "core/svetlana/svetlana.h"
 #include "tests/mocks/core/notportedcalls.h"
+#include "tests/mocks/core/testclasses.h"
 #include "tests/mocks/core/testheroarchive.h"
 
 #include <gtest/gtest.h>
@@ -24,7 +25,7 @@ TEST(CSvetlana, IsConcrete) {
 }
 
 TEST(CSvetlana, Constructors) {
-    static_assert(std::is_constructible_v<CSvetlana>);
+    static_assert(std::is_constructible_v<CSvetlana, CActor &>);
 }
 
 TEST(CSvetlana, PublicInterface) {
@@ -49,12 +50,14 @@ TEST(CSvetlana, ItsRecordIsAVersionOneHeroThatMissionsCanCreate) {
     EXPECT_EQ(CSvetlana::kType.latest_version, 1);
     EXPECT_EQ(CSvetlana::kType.name_hash, hashClassName("CSvetlana"));
     ASSERT_NE(CSvetlana::kType.factory_func, nullptr);
-    const std::unique_ptr<CDemonActor> actor = CSvetlana::kType.factory_func();
+    CTestClasses classes;
+    const std::unique_ptr<CDemonActor> actor = CSvetlana::kType.factory_func(classes.get());
     EXPECT_EQ(&actor->getActorType(), &CSvetlana::kType);
 }
 
 TEST(CSvetlana, ItsFieldsAreAHerosFields) {
-    CSvetlana hero;
+    CTestClasses classes;
+    CSvetlana hero(classes.get());
     CTestHeroArchive archive(hero, CSvetlana::kType, 1, "");
     hero.archive(archive.get());
     EXPECT_EQ(hero.getLocation().area_id, CTestHeroArchive::kArea);
@@ -62,9 +65,9 @@ TEST(CSvetlana, ItsFieldsAreAHerosFields) {
 }
 
 TEST(CSvetlana, TheFunctionsNotPortedYetQuit) {
-    CSvetlana hero;
+    CTestClasses classes;
+    CSvetlana hero(classes.get());
     const NotPortedCalls calls = {
-        {"setup", [&] { hero.setup(); }},
         {"process", [&] { hero.process(0.0F); }},
         {"renderOpaque", [&] { static_cast<void>(hero.renderOpaque()); }},
         {"getGrabbed", [&] { static_cast<void>(hero.getGrabbed(nullptr, 0)); }},
@@ -72,7 +75,7 @@ TEST(CSvetlana, TheFunctionsNotPortedYetQuit) {
         {"drawWeapon", [&] { hero.drawWeapon(0); }},
         {"isWeaponDrawn", [&] { static_cast<void>(hero.isWeaponDrawn()); }},
     };
-    EXPECT_EQ(calls.size(), 7U);
+    EXPECT_EQ(calls.size(), 6U);
     expectEachQuitsNotPorted("CSvetlana", calls);
 }
 

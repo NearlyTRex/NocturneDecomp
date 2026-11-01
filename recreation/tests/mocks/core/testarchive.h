@@ -6,7 +6,10 @@
 #include "core/actor/actorarchive.h"
 #include "core/actor/demonactor.h"
 #include "core/game/game.h"
+#include "tests/mocks/core/gameparts.h"
 #include "tests/mocks/core/mockactorlookup.h"
+#include "tests/mocks/core/mockdeformablemodels.h"
+#include "tests/mocks/core/mockkeyframedmodels.h"
 #include "tests/mocks/engine/mockgameclock.h"
 
 #include <gmock/gmock.h>
@@ -19,8 +22,8 @@
 namespace nocturne::core {
 
 // An archive reading the actor's fields from the text, which must outlive it, with the ported
-// classes registered and a lookup that finds the actors added to it by quoted name, and no
-// others.
+// classes registered and a lookup that finds the actors added to it by quoted name, after any
+// whitespace, and no others.
 class CTestArchive {
 public:
     explicit CTestArchive(const CDemonActor &actor, std::string_view text = "")
@@ -30,6 +33,7 @@ public:
         ON_CALL(actors_, loadActor)
             .WillByDefault([this](common::CTextScanner &reference, const CDemonActor &,
                                   std::string_view) -> CDemonActor * {
+                reference.skipWhitespace();
                 const std::string_view line = reference.readLine();
                 const auto found = std::ranges::find_if(known_, [line](const CDemonActor *known) {
                     return line.starts_with(std::format("\"{}\"", known->getActorName()));
@@ -58,9 +62,12 @@ public:
 
 private:
     ::testing::NiceMock<engine::MockGameClock> clock_;
-    CGame game_{clock_};
+    CGameParts game_parts_{clock_};
+    CGame &game_ = game_parts_.getGame();
     common::CWatcomRandom crt_;
-    CActor classes_{game_, crt_};
+    ::testing::NiceMock<MockDeformableModels> models_;
+    ::testing::NiceMock<MockKeyFramedModels> keyframed_models_;
+    CActor classes_{game_, crt_, models_, keyframed_models_};
     ::testing::NiceMock<MockActorLookup> actors_;
     std::vector<CDemonActor *> known_;
     common::CTextScanner scanner_;

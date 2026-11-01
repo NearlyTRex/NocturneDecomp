@@ -21,7 +21,7 @@ CCharacter * __cdecl core_charactr_cpp_CCharacter_ctor_FUN_00423f40(CCharacter *
   pCVar2 = core_skeleton_cpp_CDeformableModelInstance_ctor_FUN_0051b660
                      ((CDeformableModelInstance *)(pCVar1 + 1));
   pCVar3 = core_cloth_cpp_CClothList_ctor_FUN_00438210
-                     ((CClothList *)(pCVar2[1].rest_pose_data + 0x5d));
+                     ((CClothList *)(pCVar2[1].rest_bone_scales + 0x5d));
   pvVar4 = __arrinit
                      (pCVar3[1].filenames[0] + 8,0xf,&g_CVectorTypeInfo_005993b0);
   pvVar4 = __arrinit

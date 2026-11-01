@@ -3,6 +3,7 @@
 #include "common/render/renderstate.h"
 #include "common/render/screenvertex.h"
 #include "platform/externalrendererbridge.h"
+#include "platform/fwd.h"
 #include "platform/gl/glapi.h"
 #include "platform/renderer.h"
 
@@ -29,7 +30,7 @@ public:
     // cancels in the perspective divide, so the two differ only in the precision they keep.
     static constexpr int kListRhwScale = 0x100;
 
-    CGlRenderer(const SGlApi &gl, IGlFramePresenter &presenter);
+    CGlRenderer(const SGlApi &gl, IGlFramePresenter &presenter, ILog &log);
     ~CGlRenderer() override;
     CGlRenderer(const CGlRenderer &) = delete;
     CGlRenderer &operator=(const CGlRenderer &) = delete;
@@ -112,6 +113,7 @@ private:
 
     const SGlApi &gl_;
     IGlFramePresenter &presenter_;
+    ILog &log_;
     std::unique_ptr<CGlDevice> device_;
     std::optional<CExternalRendererBridge> bridge_;
     std::optional<SDrawRecord> record_;

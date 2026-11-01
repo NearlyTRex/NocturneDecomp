@@ -24,11 +24,9 @@ void __cdecl core_stranger_cpp_CStranger_processWeaponTick_FUN_00540660(CStrange
     if (this_ptr_01 != (CCharacter *)0x0) {
       iVar2 = core_dynamite_cpp_CDynamite_isFuseBurnedOut_FUN_0046eda0((CDynamite *)this_ptr_01);
       if (iVar2 != 0) {
-        (this_ptr_01->model).transformed_vertices[0x51].z = 0.0;
-        (this_ptr_01->model).transformed_vertices[0x51].y =
-             (this_ptr_01->model).transformed_vertices[0x51].z;
-        (this_ptr_01->model).transformed_vertices[0x51].x =
-             (this_ptr_01->model).transformed_vertices[0x51].y;
+        (this_ptr_01->model).bone_origins[0x51].z = 0.0;
+        (this_ptr_01->model).bone_origins[0x51].y = (this_ptr_01->model).bone_origins[0x51].z;
+        (this_ptr_01->model).bone_origins[0x51].x = (this_ptr_01->model).bone_origins[0x51].y;
         (*(((this_ptr_01->base).vtable._uc)->_uc).isGrabbable)(this_ptr_01,unaff_EBX);
         this_ptr->weapon = (CWeapon *)0x0;
         (this_ptr->base).base.layer_action_index = 0;

@@ -2,12 +2,12 @@
 DAT_ STRUCT/ARRAY DETECTION REPORT
 ================================================================================
 
-Total DAT_ globals found: 2182
+Total DAT_ globals found: 2178
 Filtered out (inside named data): 320
 Immediate constants (not real globals): 60
-Real globals remaining: 2122
+Real globals remaining: 2118
 Clusters detected: 204
-DAT_ globals in clusters: 2047
+DAT_ globals in clusters: 2043
 
 Classification summary:
   unknown              73 clusters
@@ -1453,20 +1453,6 @@ LOW CONFIDENCE (120 clusters)
       0x01cc7e11  DAT_01cc7e11  undefined4 [byte]
       ... +10 more
 
-  0x005b9258 - 0x005b9554  (13 items, 764 bytes span)
-    Classification: struct
-    Likely type: struct (764 bytes span, 13 fields)
-    Reason: mixed strides, shared by 6 functions
-    Referenced by: 6 functions
-     near: s_CART_Precision_Racing_v1_005b9268 (TerminatedCString) at -16
-      0x005b9258  DAT_005b9258  undefined1 [byte]
-      0x005b9259  DAT_005b9259  undefined1 [byte]
-      0x005b925a  DAT_005b925a  undefined1
-      0x005b925b  DAT_005b925b  undefined1
-      0x005b92f0  DAT_005b92f0  undefined4
-      0x005b9360  DAT_005b9360  undefined4 [float]
-      ... +7 more
-
   0x0059511a - 0x0059516a  (12 items, 80 bytes span)
     Classification: struct
     Likely type: struct (80 bytes span, 12 fields)
@@ -1587,6 +1573,20 @@ LOW CONFIDENCE (120 clusters)
       0x005b4798  DAT_005b4798  undefined8 [short]
       0x005b47a0  DAT_005b47a0  undefined8 [short]
       0x005b47a8  DAT_005b47a8  undefined8 [short]
+      ... +3 more
+
+  0x005b9258 - 0x005b9418  (9 items, 448 bytes span)
+    Classification: struct
+    Likely type: struct (448 bytes span, 9 fields)
+    Reason: mixed strides, shared by 6 functions
+    Referenced by: 6 functions
+     near: s_CART_Precision_Racing_v1_005b9268 (TerminatedCString) at -16
+      0x005b9258  DAT_005b9258  undefined1 [byte]
+      0x005b9259  DAT_005b9259  undefined1 [byte]
+      0x005b925a  DAT_005b925a  undefined1
+      0x005b925b  DAT_005b925b  undefined1
+      0x005b92f0  DAT_005b92f0  undefined4
+      0x005b9360  DAT_005b9360  undefined4 [float]
       ... +3 more
 
   0x005c1a9c - 0x005c1b27  (9 items, 139 bytes span)

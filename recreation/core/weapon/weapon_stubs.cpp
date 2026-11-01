@@ -15,20 +15,12 @@ namespace {
 
 } // namespace
 
-void CWeapon::setup() {
-    notPorted("setup");
-}
-
 void CWeapon::process(float /*delta_time*/) {
     notPorted("process");
 }
 
 int CWeapon::renderOpaque() {
     notPorted("renderOpaque");
-}
-
-CBoundingBox3D *CWeapon::getBoundingBox(CBoundingBox3D * /*out_box*/) {
-    notPorted("getBoundingBox");
 }
 
 ECollisionType CWeapon::getCollisionType(SCollisionInfo * /*collision_info*/) {

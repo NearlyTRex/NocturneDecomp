@@ -1,9 +1,15 @@
 #include "core/gabriela/gabriella.h"
 
+#include "core/actor/actor.h"
 #include "core/actor/actorarchive.h"
 #include "core/actor/demonactortype.h"
+#include "core/hero/herobones.h"
+#include "core/motion/motionlist.h"
+#include "core/skeleton/deformablemodelinstance.h"
+#include "core/skeleton/skeleton.h"
 
 #include <memory>
+#include <string_view>
 
 namespace nocturne::core {
 
@@ -22,7 +28,6 @@ constexpr int kCarryVersion = 2;
 constinit const CDemonActorType CGabriella::kType =
     makeActorType("CGabriella", &CHero::kType, &CGabriella::create, kVersion);
 
-// deferred: loading the model gabriela.dfm, with CDeformableModelInstance::init
 // deferred: naming the gun's model gabgun.kfm, with the weapon classes
 // deferred: the coat's cloth, and the defaults the constructor gives Gabriella's own fields, with
 //   the steps that read them
@@ -63,10 +68,40 @@ constinit const CDemonActorType CGabriella::kType =
 //   is_wearing_gas_mask through 0, 1 and 2, and drawn in her hand or on her head (THE GAS MASK),
 //   with CGabriella::process and renderOpaque
 // nocedit 0x004d2b20
-CGabriella::CGabriella() = default;
+CGabriella::CGabriella(CActor &classes)
+    : CHero(classes), coat_(classes.getDosIo(), classes.getKeyFramedModels()) {
+    getModel().init("gabriela.dfm");
+}
+
+const CCloth &CGabriella::getCoat() const {
+    return coat_;
+}
 
 // nocedit 0x004d7660
 CGabriella::~CGabriella() = default;
+
+// Her model is named again and found a third time. The original keeps the bones and motions for
+// every Gabriella in one global; here each keeps her own.
+// deferred: her left hand as the bone her first hand carries at, with getCarryObjToBodyXForm
+// nocedit 0x004d2c40
+void CGabriella::setup() {
+    CHero::setup();
+    CDeformableModelInstance &model = getModel();
+    model.init("gabriela.dfm");
+    model.preCache();
+    coat_.load("gabcoat.cth");
+    coat_.setup(getLocation().position, getOrientation(), &model);
+    parts_.bones = findHeroBones(*model.getSkeletonPtr());
+    const CMotionList &motions = *model.getMotionList();
+    parts_.draw_motion = motions.findMotionIndex("gab draw", true);
+    parts_.shoot_motion = motions.findMotionIndex("gab shoot", true);
+    parts_.crossbow_shoot_motion = motions.findMotionIndex("gab crossbow shoot", true);
+    clearPushLeverAndLadder();
+}
+
+const SGabriellaParts &CGabriella::getParts() const {
+    return parts_;
+}
 
 // nocedit 0x004d2b10
 const CDemonActorType &CGabriella::getActorType() const {
@@ -88,8 +123,8 @@ void CGabriella::archive(CActorArchive &actor_archive) {
 }
 
 // nocedit 0x004d2ae0
-std::unique_ptr<CDemonActor> CGabriella::create() {
-    return std::make_unique<CGabriella>();
+std::unique_ptr<CDemonActor> CGabriella::create(CActor &classes) {
+    return std::make_unique<CGabriella>(classes);
 }
 
 } // namespace nocturne::core

@@ -44,6 +44,8 @@ TEST(CGlRenderer, NothingNeedingTheDeviceRunsBeforeInit) {
 
 TEST(CGlRenderer, InitOpensTheDeviceOnce) {
     SRendererFixture f;
+    EXPECT_CALL(f.log, write(ELogSubsystem::Render,
+                             ::testing::EndsWith("] the hardware renderer is open")));
     EXPECT_EQ(f.renderer.init(nullptr), 1);
     const std::size_t programs = f.gl.count("CreateProgram");
     EXPECT_GT(programs, 0U);
@@ -54,6 +56,10 @@ TEST(CGlRenderer, InitOpensTheDeviceOnce) {
 TEST(CGlRenderer, InitFailsWhenTheProgramDoesNotBuild) {
     SRendererFixture f;
     f.gl.link_fails = true;
+    EXPECT_CALL(f.log, write).Times(::testing::AnyNumber());
+    EXPECT_CALL(f.log, write(ELogSubsystem::Render,
+                             ::testing::HasSubstr("the hardware renderer could not open: program "
+                                                  "did not link")));
     EXPECT_EQ(f.renderer.init(nullptr), 0);
     EXPECT_EQ(f.renderer.beginScene(), 0);
     f.gl.link_fails = false;
@@ -82,21 +88,40 @@ TEST(CGlRenderer, ReportsOneCardNamedByTheDriver) {
     int device = -1;
     EXPECT_EQ(f.renderer.buildCardList(&count, &driver, &card, &vendor, &device), 1);
     EXPECT_EQ(count, 1);
-    EXPECT_EQ(std::string_view(driver), "OpenGL");
+    EXPECT_EQ(std::string_view(driver), "OpenGL 3.3");
     EXPECT_EQ(std::string_view(card), "Test");
     EXPECT_EQ(vendor, 0);
     EXPECT_EQ(device, 0);
     // Asked once; the engine keeps the pointers.
     EXPECT_EQ(f.renderer.buildCardList(nullptr, nullptr, nullptr, nullptr, nullptr), 1);
-    EXPECT_EQ(f.gl.count("GetString"), 1U);
+    EXPECT_EQ(f.gl.count("GetString"), 2U);
 }
 
-TEST(CGlRenderer, ACardTheDriverDoesNotNameIsOpenGL) {
+TEST(CGlRenderer, ACardTheDriverDoesNotNameIsNamedForTheAPI) {
     SRendererFixture f;
     f.gl.renderer_name = nullptr;
     char *card = nullptr;
     EXPECT_EQ(f.renderer.buildCardList(nullptr, nullptr, &card, nullptr, nullptr), 1);
-    EXPECT_EQ(std::string_view(card), "OpenGL");
+    EXPECT_EQ(std::string_view(card), "OpenGL 3.3");
+}
+
+TEST(CGlRenderer, ADriverWithNoVersionIsJustOpenGL) {
+    SRendererFixture f;
+    f.gl.version_name = nullptr;
+    char *driver = nullptr;
+    EXPECT_EQ(f.renderer.buildCardList(nullptr, &driver, nullptr, nullptr, nullptr), 1);
+    EXPECT_EQ(std::string_view(driver), "OpenGL");
+}
+
+// Only the major and minor numbers, whatever the driver says after them.
+TEST(CGlRenderer, TheVersionIsShortened) {
+    static constexpr std::array<GLubyte, 15> kProfile = {'4', '.', '6', ' ', '(', 'C', 'o', 'r',
+                                                         'e', ')', ' ', 'M', 'e', 's', '\0'};
+    SRendererFixture f;
+    f.gl.version_name = kProfile.data();
+    char *driver = nullptr;
+    EXPECT_EQ(f.renderer.buildCardList(nullptr, &driver, nullptr, nullptr, nullptr), 1);
+    EXPECT_EQ(std::string_view(driver), "OpenGL 4.6");
 }
 
 TEST(CGlRenderer, VideoMemoryIsLargeEnoughNotToConstrainTheEngine) {

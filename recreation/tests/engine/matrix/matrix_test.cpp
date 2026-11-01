@@ -1,16 +1,19 @@
 #include "common/error/fatalerror.h"
 #include "engine/light/light.h"
 #include "engine/matrix/matrix.h"
+#include "platform/projectedvertex.h"
 #include "tests/mocks/engine/twodfixture.h"
 
 #include <gmock/gmock.h>
 #include <gtest/gtest.h>
 
+#include <array>
 #include <type_traits>
 
 namespace nocturne::engine {
 namespace {
 
+using ::testing::ElementsAre;
 using ::testing::StrEq;
 using ::testing::ThrowsMessage;
 
@@ -25,7 +28,7 @@ TEST(CMatrix, PublicInterface) {
                                  void (CMatrix::*)(int, common::CVector3i *)>);
     static_assert(std::is_same_v<decltype(&CMatrix::projectCachedPoint), void (CMatrix::*)(int)>);
     static_assert(std::is_same_v<decltype(&CMatrix::projectTransformedPoint),
-                                 void (CMatrix::*)(platform::SProjectedVertex *)>);
+                                 void (CMatrix::*)(platform::SProjectedVertex &) const>);
     static_assert(
         std::is_same_v<decltype(&CMatrix::projectCachedPointUnchecked), void (CMatrix::*)(int)>);
     static_assert(std::is_same_v<decltype(&CMatrix::matrixPushAndTransform),
@@ -155,6 +158,30 @@ TEST_F(CMatrixTest, ATenthWindowIsFatal) {
 TEST_F(CMatrixTest, ClosingAWindowThatIsntOpenIsFatal) {
     EXPECT_THAT([this] { matrix_.popViewport(); },
                 ThrowsMessage<common::CFatalError>(StrEq("3D Window unbalance")));
+}
+
+// A point in view is put on the 640x480 screen, its reciprocal depth with it; one behind the eye
+// is flagged near alone, and one past the sides each side it is past.
+TEST_F(CMatrixTest, ATransformedPointIsProjectedOrFlagged) {
+    two_d_.setupViewportAndClipping(0, 0, 639, 479);
+    const auto project = [this](int x, int y, int z) {
+        platform::SProjectedVertex point{
+            .transformed_x = x, .transformed_y = y, .transformed_z = z};
+        matrix_.projectTransformedPoint(point);
+        return point;
+    };
+    const platform::SProjectedVertex centre = project(0, 0, 100);
+    const SProjectionParams &projection = two_d_.getProjection();
+    EXPECT_THAT(
+        (std::array{centre.inv_z, centre.screen_x, centre.screen_y}),
+        ElementsAre(0x7fffffff / 100, projection.center_x_fixed, projection.center_y_fixed));
+    using platform::SProjectedVertex;
+    EXPECT_THAT((std::array{project(500, 500, 0).screen_x, project(101, 0, 100).screen_x,
+                            project(-101, 0, 100).screen_x, project(0, 101, 100).screen_x,
+                            project(101, -101, 100).screen_x}),
+                ElementsAre(SProjectedVertex::kClipNear, SProjectedVertex::kClipRight,
+                            SProjectedVertex::kClipLeft, SProjectedVertex::kClipTop,
+                            SProjectedVertex::kClipRight | SProjectedVertex::kClipBottom));
 }
 
 } // namespace

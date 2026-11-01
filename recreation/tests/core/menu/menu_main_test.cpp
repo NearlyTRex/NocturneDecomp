@@ -2,137 +2,30 @@
 #include "core/dfont/dfont.h"
 #include "core/main/main.h"
 #include "core/menu/menu.h"
-#include "core/sound/sound.h"
-#include "engine/console/console.h"
-#include "engine/font/font.h"
 #include "engine/keys/inputcodetype.h"
-#include "engine/keys/keys.h"
-#include "engine/menuinput.h"
-#include "engine/pod/pod.h"
-#include "engine/rawinput.h"
 #include "shape/edittool/editortools.h"
-#include "sound/sndmain/sndmain.h"
-#include "support/newmsg/newmsg.h"
-#include "tests/mocks/core/menufontfiles.h"
-#include "tests/mocks/core/moonfixture.h"
-#include "tests/mocks/platform/mockaudiodevice.h"
-#include "tests/mocks/platform/mockclipboard.h"
-#include "tests/mocks/platform/mockclock.h"
-#include "tests/mocks/platform/mockosfontfactory.h"
+#include "tests/mocks/core/menufixture.h"
 #include "tests/mocks/sound/wavfile.h"
 
 #include <gmock/gmock.h>
 #include <gtest/gtest.h>
 
-#include <algorithm>
-#include <array>
-#include <cstddef>
-#include <cstdint>
-#include <ctime>
+#include <chrono>
 #include <functional>
-#include <span>
 #include <string>
+#include <utility>
 #include <vector>
 
 namespace nocturne::core {
 namespace {
 
 using engine::EInputCodeType;
-using ::testing::NiceMock;
+using ::testing::AnyOf;
+using ::testing::ElementsAre;
+using ::testing::IsEmpty;
 using ::testing::Return;
 
-// Far more frames than any test takes; past it the frame presses Escape and fails.
-constexpr int kFrameLimit = 20;
-
-// The main menu over the moon fixture, its music on disk and the sound output running. Each test
-// presses keys as a frame is shown, for the next to read.
-class CMainMenuTest : public CMoonFixture {
-protected:
-    CMainMenuTest() {
-        givenMenuFontFiles(given_file_);
-        givenFile("msglist.txt", "; version\n0\n; use OS fonts\n0\n; font\n\"Arial\"\n");
-        messages_.readMessageFile("msglist.txt");
-        fonts_.initFonts();
-        givenFile("sound\\splash-music-22.wav", sound::makeConstantWav(1000, 0));
-        ON_CALL(raw_input_, getKeyboardState()).WillByDefault([this] {
-            return std::span<std::uint8_t, engine::IRawInput::kInputCodeCount>(keyboard_);
-        });
-        ON_CALL(screen_, swapBuffers()).WillByDefault([this] {
-            ++frames_;
-            if (frames_ > kFrameLimit) {
-                ADD_FAILURE() << "the menu didn't quit";
-                press(EInputCodeType::DIK_ESCAPE);
-            } else if (on_frame_) {
-                on_frame_(frames_);
-            }
-        });
-        ON_CALL(screen_, getColorTable32())
-            .WillByDefault(Return(std::span<const std::uint32_t, 256>(color_table_)));
-        ON_CALL(audio_device_, open).WillByDefault(Return(true));
-        sound_main_.initializeSoundDevice();
-    }
-
-    void press(EInputCodeType code) {
-        keyboard_[static_cast<std::size_t>(code)] = 1;
-    }
-
-    // Whether anything is drawn anywhere on the screen.
-    [[nodiscard]] bool anythingDrawn() const {
-        return std::ranges::any_of(pixels_, [](std::uint32_t pixel) { return pixel != 0; });
-    }
-
-    std::array<std::uint8_t, engine::IRawInput::kInputCodeCount> keyboard_{};
-    // Every colour white, so text shows wherever it is drawn.
-    std::array<std::uint32_t, 256> color_table_ = [] {
-        std::array<std::uint32_t, 256> table{};
-        table.fill(0xffffffU);
-        return table;
-    }();
-    int frames_ = 0;
-    std::function<void(int)> on_frame_;
-    engine::CKeys keys_{raw_input_, screen_};
-    NiceMock<platform::MockClock> wall_clock_;
-    NiceMock<platform::MockClipboard> clipboard_;
-    shape::CEditorTools editor_tools_{{.two_d = two_d_,
-                                       .matrix = matrix_,
-                                       .three_d = three_d_,
-                                       .screen = screen_,
-                                       .special = special_,
-                                       .keys = keys_,
-                                       .raw_input = raw_input_,
-                                       .game_clock = clock_,
-                                       .clock = wall_clock_,
-                                       .clipboard = clipboard_}};
-    engine::CFontColors colors_;
-    NiceMock<platform::MockOsFontFactory> os_fonts_;
-    support::CNewMsg messages_{dosio_};
-    CDFont fonts_{dosio_, screen_, two_d_, three_d_, colors_, os_fonts_, messages_, editor_tools_};
-    engine::CMenuInput menu_input_{keys_};
-    NiceMock<platform::MockAudioDevice> audio_device_;
-    engine::CConsole console_{file_system_, 80, 50, 0, 0};
-    sound::CSndMain sound_main_{dosio_, file_system_, audio_device_, console_,
-                                [] { return std::tm{}; }};
-    engine::CPod pod_{file_system_, dosio_};
-    CSound sound_{sound_main_, pod_, file_system_};
-    CMenu menu_{{.dosio = dosio_,
-                 .screen = screen_,
-                 .special = special_,
-                 .two_d = two_d_,
-                 .three_d = three_d_,
-                 .raw_input = raw_input_,
-                 .menu_input = menu_input_,
-                 .fonts = fonts_,
-                 .messages = messages_,
-                 .renderer = demon_renderer_,
-                 .set = set_,
-                 .game = game_,
-                 .actor = actor_,
-                 .crt_random = crt_random_,
-                 .textures = textures_,
-                 .sound = sound_,
-                 .sound_main = sound_main_,
-                 .build_version = "X"}};
-};
+using CMainMenuTest = CMenuFixture;
 
 TEST_F(CMainMenuTest, AWindowUnder480RowsShowsNothing) {
     ON_CALL(screen_, getWindowHeight()).WillByDefault(Return(479));
@@ -182,7 +75,7 @@ TEST_F(CMainMenuTest, ControlMMutesAndUnmutesTheSound) {
     EXPECT_EQ(muted, (std::vector<bool>{false, true, false}));
 }
 
-// Up from START wraps to it.
+// Up from PLAY wraps to it.
 TEST_F(CMainMenuTest, QuitQuits) {
     on_frame_ = [&](int /*frame*/) {
         press(EInputCodeType::DIK_UP);
@@ -199,6 +92,71 @@ TEST_F(CMainMenuTest, ClosingTheWindowQuits) {
     };
     EXPECT_EQ(menu_.showMainGameMenu(), 99);
     EXPECT_EQ(frames_, 1);
+}
+
+// A second of music, a tenth of a second a frame, after the opening played.
+class CMainMenuAttractTest : public CMenuFixture {
+protected:
+    CMainMenuAttractTest() {
+        givenFile("sound\\splash-music-22.wav", sound::makeConstantWav(22050, 0));
+        attract_movies_.setOpeningPlayed(true);
+    }
+
+    // Moves the clock on a frame's worth before the frame's own work.
+    void runFrames(int count, const std::function<void(int)> &each = {}) {
+        on_frame_ = [this, count, each](int frame) {
+            now_ms_ += 100;
+            if (each) {
+                each(frame);
+            }
+            if (frame >= count) {
+                press(EInputCodeType::DIK_ESCAPE);
+            }
+        };
+        EXPECT_EQ(menu_.showMainGameMenu(), 99);
+    }
+};
+
+// The music starts on the first frame, at 100ms, so its pass less the lead ends at 850ms.
+TEST_F(CMainMenuAttractTest, AMovieFollowsThePassOfMusicAndTheMusicStartsAgain) {
+    EXPECT_CALL(attract_clock_, sleep(std::chrono::duration<double>(0.4)));
+    std::vector<int> playing;
+    runFrames(12, [&](int frame) {
+        if (frame >= 8) {
+            playing.push_back(sound_main_.countActiveSfx());
+        }
+    });
+    EXPECT_THAT(movies_, ElementsAre(AnyOf("video\\noc1.avi", "video\\noc2.avi", "video\\noc3.avi",
+                                           "video\\noc4.avi")));
+    EXPECT_EQ(playing, (std::vector<int>{1, 1, 1, 1, 1}));
+}
+
+TEST_F(CMainMenuAttractTest, TheNextPassEndsAfterTheMusicStartsAgain) {
+    runFrames(17);
+    EXPECT_EQ(movies_.size(), 2U);
+}
+
+TEST_F(CMainMenuAttractTest, MutedThereIsNoMusicToFollow) {
+    sound_main_.setSoundMuted(true);
+    runFrames(15);
+    EXPECT_THAT(movies_, IsEmpty());
+}
+
+// Muting stopped the music the wait was for, and unmuting starts it again from the start.
+TEST_F(CMainMenuAttractTest, MutingInTheMiddleOfAPassStartsTheWaitAgain) {
+    runFrames(13, [&](int frame) {
+        if (frame == 5 || frame == 6) {
+            press(EInputCodeType::DIK_LCONTROL);
+            press(EInputCodeType::DIK_M);
+        }
+    });
+    EXPECT_THAT(movies_, IsEmpty());
+}
+
+TEST_F(CMainMenuAttractTest, WithoutTheOpeningNoMovieFollows) {
+    attract_movies_.setOpeningPlayed(false);
+    runFrames(15);
+    EXPECT_THAT(movies_, IsEmpty());
 }
 
 TEST_F(CMainMenuTest, TheSoftwareRendererTakesAtMost640x480) {
@@ -220,17 +178,155 @@ TEST_F(CMainMenuTest, Direct3DKeepsTheGameResolution) {
     EXPECT_EQ(game_.game_pixy, 600);
 }
 
-// Each is pressed down to with one press a frame, then chosen.
-class CMainMenuChoiceTest : public CMainMenuTest,
-                            public ::testing::WithParamInterface<std::pair<int, std::string>> {};
-
-TEST_P(CMainMenuChoiceTest, AScreenNotPortedYetQuits) {
-    const int downs = GetParam().first;
+// So a resolution picked under Options applies on the way back.
+TEST_F(CMainMenuTest, EachFrameSizesTheWindowToTheGameResolution) {
+    special_.setUseDirect3D(true);
+    game_.game_pixx = 1024;
+    game_.game_pixy = 768;
+    EXPECT_CALL(display_, setWindowSize(1024, 768)).Times(2);
     on_frame_ = [&](int frame) {
-        if (frame <= downs) {
+        if (frame == 2) {
+            press(EInputCodeType::DIK_ESCAPE);
+        }
+    };
+    EXPECT_EQ(menu_.showMainGameMenu(), 99);
+}
+
+TEST_F(CMainMenuTest, TheDialogsDrawInTheThemeFont) {
+    on_frame_ = [&](int /*frame*/) { press(EInputCodeType::DIK_ESCAPE); };
+    EXPECT_EQ(menu_.showMainGameMenu(), 99);
+    EXPECT_EQ(editor_tools_.getEditorFont(), fonts_.getThemeFont());
+}
+
+// Options saves the settings as it closes, then the main menu is back.
+TEST_F(CMainMenuTest, OptionsOpensTheOptionsScreen) {
+    game_.always_run = 1;
+    on_frame_ = [&](int frame) {
+        if (frame <= 2) {
             press(EInputCodeType::DIK_DOWN);
         } else {
+            press(frame == 3 ? EInputCodeType::DIK_RETURN : EInputCodeType::DIK_ESCAPE);
+        }
+    };
+    EXPECT_EQ(menu_.showMainGameMenu(), 99);
+    EXPECT_THAT(ini_text_, ::testing::HasSubstr("alwaysRun=1\r\n"));
+    EXPECT_EQ(frames_, 6);
+}
+
+TEST_F(CMainMenuTest, TheDialogsDrawInTheMenuTextFont) {
+    fonts_.setMenuFontChoice(EMenuFontChoice::Small);
+    on_frame_ = [&](int /*frame*/) { press(EInputCodeType::DIK_ESCAPE); };
+    EXPECT_EQ(menu_.showMainGameMenu(), 99);
+    EXPECT_EQ(editor_tools_.getEditorFont(), fonts_.getSmallEditorFont());
+}
+
+// Cancel leaves the submenu for the main menu, and a second Cancel quits that.
+TEST_F(CMainMenuTest, CancelInPlayGoesBackToTheMainMenu) {
+    on_frame_ = [&](int frame) {
+        press(frame == 1 ? EInputCodeType::DIK_RETURN : EInputCodeType::DIK_ESCAPE);
+    };
+    EXPECT_EQ(menu_.showMainGameMenu(), 99);
+    EXPECT_EQ(frames_, 4);
+}
+
+TEST_F(CMainMenuTest, CancelInMultiplayerGoesBackToTheMainMenu) {
+    on_frame_ = [&](int frame) {
+        if (frame == 1) {
+            press(EInputCodeType::DIK_DOWN);
+        } else {
+            press(frame == 2 ? EInputCodeType::DIK_RETURN : EInputCodeType::DIK_ESCAPE);
+        }
+    };
+    EXPECT_EQ(menu_.showMainGameMenu(), 99);
+    EXPECT_EQ(frames_, 5);
+}
+
+// The submenu leaves after its first frame, and the main menu quits without another.
+TEST_F(CMainMenuTest, ClosingTheWindowUnderASubmenuQuits) {
+    on_frame_ = [&](int frame) {
+        if (frame == 1) {
             press(EInputCodeType::DIK_RETURN);
+        } else {
+            ON_CALL(raw_input_, getInputDisabled()).WillByDefault(Return(true));
+        }
+    };
+    EXPECT_EQ(menu_.showMainGameMenu(), 99);
+    EXPECT_EQ(frames_, 3);
+}
+
+// The press that opens a submenu is cleared before its first frame.
+TEST_F(CMainMenuTest, ASubmenuClearsTheInputThatOpenedIt) {
+    EXPECT_CALL(raw_input_, clearInput()).Times(3);
+    on_frame_ = [&](int frame) {
+        press(frame == 1 ? EInputCodeType::DIK_RETURN : EInputCodeType::DIK_ESCAPE);
+    };
+    EXPECT_EQ(menu_.showMainGameMenu(), 99);
+}
+
+// PLAY, then START, then Cancel back on the main menu, a press a frame; the keys given are held
+// with START's press.
+class CMainMenuStartTest : public CMainMenuTest {
+protected:
+    void chooseStart(const std::vector<EInputCodeType> &held) {
+        on_frame_ = [this, &held](int frame) {
+            if (frame == 1) {
+                press(EInputCodeType::DIK_RETURN);
+            } else if (frame == 2) {
+                press(EInputCodeType::DIK_DOWN);
+            } else if (frame == 3) {
+                for (const EInputCodeType code : held) {
+                    press(code);
+                }
+                press(EInputCodeType::DIK_RETURN);
+            } else {
+                music_after_.push_back(sound_main_.countActiveSfx());
+                drawn_after_.push_back(anythingDrawn());
+                press(EInputCodeType::DIK_ESCAPE);
+            }
+        };
+        EXPECT_EQ(menu_.showMainGameMenu(), 99);
+    }
+
+    std::vector<int> music_after_;
+    std::vector<bool> drawn_after_;
+};
+
+// The music is stopped while it runs, and plays again with the moon once the menu is back.
+TEST_F(CMainMenuStartTest, StartOpensTheStoriesThenTheMenuComesBack) {
+    std::vector<int> music_during;
+    on_chapter_select_ = [&] { music_during.push_back(sound_main_.countActiveSfx()); };
+    chooseStart({});
+    EXPECT_THAT(chapter_selects_, ElementsAre(EChapterSelectMode::kStories));
+    EXPECT_THAT(music_during, ElementsAre(0));
+    EXPECT_THAT(music_after_, ElementsAre(1));
+    EXPECT_THAT(drawn_after_, ElementsAre(true));
+}
+
+TEST_F(CMainMenuStartTest, ControlOpensTheMissionBrowser) {
+    chooseStart({EInputCodeType::DIK_LCONTROL});
+    EXPECT_THAT(chapter_selects_, ElementsAre(EChapterSelectMode::kMissionBrowser));
+}
+
+TEST_F(CMainMenuStartTest, ControlAndShiftOpenEveryStorysChapters) {
+    chooseStart({EInputCodeType::DIK_LCONTROL, EInputCodeType::DIK_LSHIFT});
+    EXPECT_THAT(chapter_selects_, ElementsAre(EChapterSelectMode::kChapters));
+}
+
+TEST_F(CMainMenuStartTest, ShiftAloneOpensTheStories) {
+    chooseStart({EInputCodeType::DIK_LSHIFT});
+    EXPECT_THAT(chapter_selects_, ElementsAre(EChapterSelectMode::kStories));
+}
+
+// Each is reached from its submenu with one press a frame.
+class CMainMenuSubmenuTest
+    : public CMainMenuTest,
+      public ::testing::WithParamInterface<std::pair<std::vector<EInputCodeType>, std::string>> {};
+
+TEST_P(CMainMenuSubmenuTest, AScreenNotPortedYetQuits) {
+    const std::vector<EInputCodeType> &presses = GetParam().first;
+    on_frame_ = [&](int frame) {
+        if (std::cmp_less_equal(frame, presses.size())) {
+            press(presses[static_cast<std::size_t>(frame) - 1]);
         }
     };
     EXPECT_THAT([this] { static_cast<void>(menu_.showMainGameMenu()); },
@@ -238,10 +334,18 @@ TEST_P(CMainMenuChoiceTest, AScreenNotPortedYetQuits) {
                     ::testing::StrEq(GetParam().second + " is not ported yet")));
 }
 
-INSTANTIATE_TEST_SUITE_P(StartOptionsAndLoad, CMainMenuChoiceTest,
-                         ::testing::Values(std::pair{0, std::string("CGame::showChapterSelect")},
-                                           std::pair{1, std::string("CMenu::showOptionsScreen")},
-                                           std::pair{2, std::string("CGame::loadGame")}));
+constexpr EInputCodeType kDown = EInputCodeType::DIK_DOWN;
+constexpr EInputCodeType kReturn = EInputCodeType::DIK_RETURN;
+
+INSTANTIATE_TEST_SUITE_P(PlayAndMultiplayer, CMainMenuSubmenuTest,
+                         ::testing::Values(std::pair{std::vector{kReturn, kReturn},
+                                                     std::string("CGame::loadGame")},
+                                           std::pair{std::vector{kReturn, kDown, kDown, kReturn},
+                                                     std::string("CGame::loadGame")},
+                                           std::pair{std::vector{kDown, kReturn, kReturn},
+                                                     std::string("core::hostNetworkGame")},
+                                           std::pair{std::vector{kDown, kReturn, kDown, kReturn},
+                                                     std::string("core::joinNetworkGame")}));
 
 } // namespace
 } // namespace nocturne::core

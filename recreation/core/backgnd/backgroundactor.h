@@ -14,7 +14,8 @@ class CBackgroundActor : public CDemonActor {
 public:
     static const CDemonActorType kType;
 
-    CBackgroundActor();
+    // Its model is found among those the classes hold.
+    explicit CBackgroundActor(CActor &classes);
     ~CBackgroundActor() override;
     CBackgroundActor(const CBackgroundActor &) = delete;
     CBackgroundActor &operator=(const CBackgroundActor &) = delete;
@@ -35,7 +36,7 @@ public:
     [[nodiscard]] bool isCollidedWith() const;
 
 private:
-    static std::unique_ptr<CDemonActor> create();
+    static std::unique_ptr<CDemonActor> create(CActor &classes);
 
     CKeyFramedModelInstance model_;
     bool collide_with_me_ = false;

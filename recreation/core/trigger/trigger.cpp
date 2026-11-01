@@ -1,5 +1,6 @@
 #include "core/trigger/trigger.h"
 
+#include "common/text/ascii.h"
 #include "core/actor/actorarchive.h"
 #include "core/actor/demonactortype.h"
 #include "core/box/boundingbox3d.h"
@@ -57,8 +58,27 @@ const CDemonActorType &CTrigger::getActorType() const {
 }
 
 // nocedit 0x005df800
-std::unique_ptr<CDemonActor> CTrigger::create() {
+std::unique_ptr<CDemonActor> CTrigger::create(CActor & /*classes*/) {
     return std::make_unique<CTrigger>();
+}
+
+// An event of "none" in any case is none. The original draws a trigger as transparent while the
+// mission is in the editor, which the game never is.
+// deferred: no event raised and no actor held yet, with CTrigger::process
+// deferred: not processed with neither event, with CDemonSet::processActors
+// nocedit 0x005df990
+void CTrigger::setup() {
+    CDemonActor::setup();
+    setRenderable(false);
+    setTransparent(false);
+    setCollisionDisabled(trigger_cause_ != ETriggerCause::kLaser &&
+                         trigger_cause_ != ETriggerCause::kBullet &&
+                         trigger_cause_ != ETriggerCause::kDamage);
+    for (std::string *event : {&on_event_, &off_event_}) {
+        if (common::equalsIgnoringAsciiCase(*event, "none")) {
+            event->clear();
+        }
+    }
 }
 
 // nocedit 0x005e0630

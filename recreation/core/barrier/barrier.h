@@ -24,9 +24,11 @@ public:
 
     void setup() override;
     int renderTransparent() override;
+    // Its size about its foot, a tenth below and a tenth above.
     CBoundingBox3D *getBoundingBox(CBoundingBox3D *out_box) override;
     ECollisionType getCollisionType(SCollisionInfo *collision_info) override;
-    void updateCollisionData() override;
+    // Keeps paths out of the barrier when it is added to the path grid.
+    void updateCollisionData(CDemonSet &set) override;
     [[nodiscard]] const CDemonActorType &getActorType() const override;
     void archive(CActorArchive &actor_archive) override;
 
@@ -40,7 +42,7 @@ public:
 private:
     static constexpr common::CVector3f kDefaultSize{.x = 5.0F, .y = 5.0F, .z = 5.0F};
 
-    static std::unique_ptr<CDemonActor> create();
+    static std::unique_ptr<CDemonActor> create(CActor &classes);
 
     common::CVector3f size_ = kDefaultSize;
     std::string effect_class_name_list_;

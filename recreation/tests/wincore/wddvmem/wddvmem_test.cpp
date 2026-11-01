@@ -8,6 +8,7 @@
 #include "tests/mocks/engine/podfixture.h"
 #include "tests/mocks/platform/mockclock.h"
 #include "tests/mocks/platform/mockdisplay.h"
+#include "tests/mocks/platform/mocklog.h"
 #include "tests/mocks/platform/mockrenderer.h"
 #include "tests/mocks/platform/mockwindow.h"
 #include "wincore/wddvmem/wddvmem.h"
@@ -17,7 +18,9 @@
 #include <gtest/gtest.h>
 
 #include <cstddef>
+#include <cstdint>
 #include <string>
+#include <string_view>
 #include <type_traits>
 #include <vector>
 
@@ -56,6 +59,7 @@ protected:
         givenFile("art\\vga.act", palette);
         two_d_.loadPaletteFile("vga.act");
         ON_CALL(display_, setDisplayMode).WillByDefault(Return(true));
+        ON_CALL(clock_, getCounterFrequency).WillByDefault(Return(1000));
         ON_CALL(display_, getPixelFormat).WillByDefault([this] {
             return common::getPixelFormat(*common::layoutForDepth(wddvmem_.getBitsPerPixel()));
         });
@@ -81,8 +85,9 @@ protected:
     NiceMock<platform::MockRenderer> renderer_;
     NiceMock<platform::MockWindow> window_;
     NiceMock<platform::MockClock> clock_;
+    NiceMock<platform::MockLog> log_;
     CWinRun winrun_{window_, clock_};
-    CWddVMem wddvmem_{display_, renderer_, winrun_, special_, two_d_};
+    CWddVMem wddvmem_{display_, renderer_, winrun_, special_, two_d_, clock_, log_};
     engine::C2d two_d_{dosio_, wddvmem_, winrun_};
     engine::CLight light_;
     engine::CMatrix matrix_{two_d_, light_};
@@ -252,9 +257,116 @@ TEST_F(CWddVMemTest, WithTheRendererRunningSwapsGoThroughIt) {
     wddvmem_.swapBuffers();
 }
 
+// The decomp's Flip trace: the first four, then every 300th. Setting the mode swaps three times.
+TEST_F(CWddVMemTest, EachSwapIsTracedAtFirstThenOnlyNowAndAgain) {
+    std::vector<std::string> traced;
+    ON_CALL(log_, write(platform::ELogSubsystem::Render, _))
+        .WillByDefault([&](platform::ELogSubsystem, std::string_view line) {
+            if (line.contains(" present ")) {
+                traced.emplace_back(line.substr(line.find("] ") + 2));
+            }
+        });
+    ASSERT_TRUE(wddvmem_.setScreenResolution(4, 2, 8));
+    wddvmem_.openScreenDevice();
+    wddvmem_.closeScreenDevice();
+    for (int swap = 4; swap <= 300; ++swap) {
+        wddvmem_.swapBuffers();
+    }
+    EXPECT_EQ(traced, (std::vector<std::string>{
+                          "#1 present 4x2 at 8 bits per pixel from the back buffer",
+                          "#2 present 4x2 at 8 bits per pixel from the back buffer",
+                          "#3 present 4x2 at 8 bits per pixel from the back buffer",
+                          "#4 present 4x2 at 8 bits per pixel from the back surface",
+                          "#300 present 4x2 at 8 bits per pixel from the back buffer"}));
+}
+
+TEST_F(CWddVMemTest, AHardwareFrameIsTracedAsTheRenderers) {
+    ASSERT_TRUE(wddvmem_.setScreenResolution(4, 2, 32));
+    startRenderer();
+    EXPECT_CALL(log_, write(platform::ELogSubsystem::Render,
+                            ::testing::HasSubstr("#4 present 4x2 at 32 bits per pixel from the "
+                                                 "hardware renderer")));
+    wddvmem_.swapBuffers();
+}
+
+// A frame every tenth of a second after the mode's three, the first starting the count.
+TEST_F(CWddVMemTest, TheFrameRateIsLoggedOnceASecondAtFirst) {
+    std::uint64_t now = 0;
+    ON_CALL(clock_, getCounter).WillByDefault([&] { return now; });
+    ASSERT_TRUE(wddvmem_.setScreenResolution(4, 2, 8));
+    std::vector<std::string> rates;
+    ON_CALL(log_, write(platform::ELogSubsystem::Render, _))
+        .WillByDefault([&](platform::ELogSubsystem, std::string_view line) {
+            if (line.contains("frames a second")) {
+                rates.emplace_back(line.substr(line.find("] ") + 2));
+            }
+        });
+    for (int frame = 0; frame <= 10; ++frame) {
+        wddvmem_.swapBuffers();
+        now += 100;
+    }
+    EXPECT_EQ(rates, std::vector<std::string>{
+                         "13.0 frames a second over 1.0s (13 frames), the slowest 100.0ms"});
+}
+
 TEST_F(CWddVMemTest, TheDepthCanBeHandedToTheRenderer) {
     wddvmem_.setBitsPerPixel(16);
     EXPECT_EQ(wddvmem_.getBitsPerPixel(), 16);
+}
+
+TEST_F(CWddVMemTest, ResettingWithoutDirect3DLeavesTheModeAlone) {
+    ASSERT_TRUE(wddvmem_.setScreenResolution(4, 2, 32));
+    EXPECT_CALL(renderer_, init).Times(0);
+    EXPECT_CALL(display_, setDisplayMode).Times(0);
+    wddvmem_.resetGraphicsSystem();
+    EXPECT_FALSE(special_.getUseExternalRenderer());
+}
+
+TEST_F(CWddVMemTest, ResettingWithDirect3DHandsTheModeToTheRenderer) {
+    ASSERT_TRUE(wddvmem_.setScreenResolution(4, 2, 32));
+    ON_CALL(renderer_, init).WillByDefault(Return(1));
+    ON_CALL(renderer_, lockFrame).WillByDefault(Return(1));
+    special_.setUseDirect3D(true);
+    EXPECT_CALL(renderer_, setVideoMode2(4, 2, 32, _)).WillOnce(Return(1));
+    EXPECT_CALL(display_, setDisplayMode).Times(0);
+    wddvmem_.resetGraphicsSystem();
+    EXPECT_TRUE(special_.getUseExternalRenderer());
+    EXPECT_TRUE(special_.getUseDirect3D());
+}
+
+// A renderer that won't start leaves the game drawing the same mode in software.
+TEST_F(CWddVMemTest, ARendererThatRefusesTheModeTurnsDirect3DOff) {
+    ASSERT_TRUE(wddvmem_.setScreenResolution(4, 2, 32));
+    ON_CALL(renderer_, init).WillByDefault(Return(1));
+    special_.setUseDirect3D(true);
+    EXPECT_CALL(renderer_, setVideoMode2).WillOnce(Return(0));
+    EXPECT_CALL(display_, setDisplayMode(4, 2, 32)).WillOnce(Return(true));
+    wddvmem_.resetGraphicsSystem();
+    EXPECT_FALSE(special_.getUseExternalRenderer());
+    EXPECT_FALSE(special_.getUseDirect3D());
+}
+
+// An 8-bit mode is switched to 16 bits, with a warning that waits for a key.
+TEST_F(CWddVMemTest, ResettingAnEightBitModeForcesSixteenBitsAfterAWarning) {
+    ASSERT_TRUE(wddvmem_.setScreenResolution(400, 100, 8));
+    ON_CALL(renderer_, init).WillByDefault(Return(1));
+    ON_CALL(renderer_, lockFrame).WillByDefault(Return(1));
+    special_.setUseDirect3D(true);
+    bool typed = false;
+    ON_CALL(window_, pollEvent).WillByDefault([&typed](platform::SWindowEvent &event) {
+        if (typed) {
+            return false;
+        }
+        typed = true;
+        event = {.type = platform::EWindowEventType::Character, .character = 'x'};
+        return true;
+    });
+    EXPECT_CALL(display_, setDisplayMode(400, 100, 16)).WillOnce(Return(true));
+    EXPECT_CALL(renderer_, setVideoMode2(400, 100, 16, _)).WillOnce(Return(1));
+    wddvmem_.resetGraphicsSystem();
+    EXPECT_TRUE(typed);
+    EXPECT_EQ(wddvmem_.getBitsPerPixel(), 16);
+    EXPECT_TRUE(special_.getUseExternalRenderer());
 }
 
 } // namespace

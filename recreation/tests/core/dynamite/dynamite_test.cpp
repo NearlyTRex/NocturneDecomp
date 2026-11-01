@@ -21,7 +21,7 @@ TEST(CDynamite, IsConcrete) {
 }
 
 TEST(CDynamite, Constructors) {
-    static_assert(std::is_constructible_v<CDynamite>);
+    static_assert(std::is_constructible_v<CDynamite, CActor &>);
 }
 
 TEST(CDynamite, PublicInterface) {

@@ -15,10 +15,6 @@ namespace {
 
 } // namespace
 
-void CHaystack::setup() {
-    notPorted("setup");
-}
-
 void CHaystack::process(float /*delta_time*/) {
     notPorted("process");
 }

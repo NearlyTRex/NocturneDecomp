@@ -2,6 +2,7 @@
 
 #include "common/render/polygonbatch.h"
 #include "common/video/framebuffer.h"
+#include "platform/fwd.h"
 #include "platform/gl/glapi.h"
 #include "platform/gl/glmasterdepth.h"
 #include "platform/gl/glpipeline.h"
@@ -30,7 +31,7 @@ public:
     static constexpr std::size_t kBatchVertices = 32768;
     static constexpr std::size_t kBatchIndices = 98304;
 
-    CGlDevice(const SGlApi &gl, IGlFramePresenter &presenter);
+    CGlDevice(const SGlApi &gl, IGlFramePresenter &presenter, ILog &log);
 
     // 16 or 32 bits per pixel. The engine keeps addressing the frame through scanlines, which
     // is pointed at its rows. False for another depth or a target GL cannot complete.
@@ -86,6 +87,7 @@ private:
 
     const SGlApi &gl_;
     IGlFramePresenter &presenter_;
+    ILog &log_;
     CGlQuad quad_;
     CGlPipeline pipeline_;
     CGlTextureCache textures_;

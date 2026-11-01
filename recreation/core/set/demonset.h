@@ -6,6 +6,7 @@
 #include "common/math/vector3i.h"
 #include "core/color3i.h"
 #include "core/dcamera/fog.h"
+#include "core/dlight/demonlight.h"
 #include "core/fwd.h"
 #include "core/setdir/vdbox.h"
 #include "core/setutil/3dscamera.h"
@@ -13,11 +14,14 @@
 #include "core/weather/weathertype.h"
 #include "engine/fwd.h"
 #include "platform/fwd.h"
+#include "platform/mrglprimitivequad.h"
 #include "support/fwd.h"
 
+#include <array>
 #include <cstddef>
 #include <cstdint>
 #include <cstdio>
+#include <memory>
 #include <optional>
 #include <span>
 #include <string>
@@ -56,6 +60,15 @@ struct SDemonSetOwners {
     engine::C2d &two_d;
     engine::IScreenDevice &screen;
     engine::IRawInput &raw_input;
+    CDemonCamera &camera;
+    // The hero's flashlight, whose filter each scene picks again.
+    CDemonLight &flashlight;
+    CFilterCache &filter_cache;
+    // What the scene's master lights are made with.
+    SDemonLightOwners light_owners;
+    CWeather &weather;
+    // Whose frame time the virtual director counts its holds down by.
+    const CGame &game;
 };
 
 class CDemonSet {
@@ -70,8 +83,11 @@ public:
     // geometry and path maps are reloaded only when the geometry file differs from the last set's.
     void load(std::string_view filename);
     void renderSceneGeometry(float frustum_param, int render_mode);
+    // Sets the scene up for play: the camera's tables and fog, a master light for each
+    // spotlight, each camera's virtual director group, and the weather.
     void initScene();
-    void snapshotActorTransformState(CDemonActor *actor);
+    // Notes the actor as drawn where it is now, every pass due.
+    static void snapshotActorTransformState(CDemonActor &actor);
     void setCameraView(int index);
     // The camera of that name, compared ignoring case.
     [[nodiscard]] std::optional<std::size_t> findCameraByName(std::string_view name) const;
@@ -104,6 +120,7 @@ public:
                         std::span<const common::CVector3i> vertex_normals);
     void process();
     int getReverbPresetAtPosition(common::CVector3f *position);
+    // Loads the lights' glow textures and the water's.
     void loadAssets();
     // A model's polygons, drawn as the renderer's quad batch.
     void renderPrimitiveBatch(std::span<const platform::SMRGLPrimitiveQuad> primitives,
@@ -114,11 +131,13 @@ public:
     void markMirrorCameraDirty();
     void setFlatColor(int light_scale, int color_scale, int fog_scale);
     void cacheMirrorLighting(common::CVector3f *position);
+    // 16.16. Builds the camera's light-map palette and the set's intensity table for it.
     void setGamma(int gamma);
     void setCameraAmbientValue(int index, float value);
     void setCameraAmbientValueByGroup(int group_id, float value);
-    void setCameraEnabled(int camera_index, int enabled);
-    void setCameraEnabledByGroup(int group_id, int enabled);
+    void setCameraEnabled(std::size_t camera_index, bool enabled);
+    // Every camera of the group.
+    void setCameraEnabledByGroup(int group_id, bool enabled);
     // The spotlight of that name, compared ignoring case, and its place among the set's
     // spotlights, which is its master light's.
     [[nodiscard]] std::optional<SSpotlight> addLightFilter(std::string_view light_name) const;
@@ -153,15 +172,43 @@ public:
     void notifyDamageListeners(common::CVector3f *position, common::CVector3f *actor_position,
                                SDamageInfo *damage_info);
     void buildCollidableActorList();
-    void castVoxelShadow(CDemonActor *actor);
+    // Marks the voxels the actor's box fills, as the actor is placed and turned, for the path
+    // maps to keep out of.
+    void castVoxelShadow(CDemonActor &actor);
     void transferVoxelShadow(CDemonActor *actor);
     void commitVoxelBuffer();
     int isPointInWater(common::CVector3f *point);
+    // Chooses the camera that shows the actor best and switches to it, returning whether it
+    // switched. With no actor it shows the first camera unless one is chosen. Unforced, it waits
+    // out a switch's hold and scores a few cameras a frame; a mode of 1 scores every camera at
+    // once, and above 1 switches even when a camera is chosen.
     // deferred: the pool of 1500 thumbs and the 2000 nearby actors' boxes, with this
     // nocedit 0x00574790
     int evaluateVirtualDirector(CDemonActor *actor, int force_evaluation_mode);
+    // Switches to the camera, holding it for the time unless a script lets go first.
     void setPendingCamera(int camera_index, float hold_time);
+    // Lets the next frame end a hold.
     void clearCameraSwitchCooldown();
+    // The camera shown, or -1 for none since the scene began; the one shown before it, and how
+    // long it is held back from being chosen again.
+    [[nodiscard]] int getSelectedCameraIndex() const;
+    [[nodiscard]] int getPreviousBestCameraIndex() const;
+    [[nodiscard]] float getPreviousBestCameraTimer() const;
+    // What is left of a switch's hold, and the camera it holds.
+    [[nodiscard]] float getCameraSwitchCooldown() const;
+    [[nodiscard]] int getPendingCameraIndex() const;
+    // Each camera's score as the director last worked it out.
+    [[nodiscard]] std::span<const float> getCameraScores() const;
+    // Whether the actor stood outside every virtual director box at the last switch.
+    [[nodiscard]] bool wasLastSwitchAreaInvalid() const;
+    // The hero this machine plays, drawn first; null for none.
+    void setLocalHero(CDemonActor *local_hero);
+    // Lists the renderable actors to draw, nearest the camera first, the local hero before them
+    // all: those moved since they were last drawn, which take the mask's passes, and those with
+    // a pass due.
+    void buildDisplayList(std::uint32_t dirty_flags_mask);
+    // The actors to draw, as buildDisplayList last listed them.
+    [[nodiscard]] std::span<CDemonActor *const> getSortedRenderActors() const;
 
     // The quick light's direction, and the ambient level it adds, 0xffff being full.
     void setLightDirection(const common::CVector3i &light_direction);
@@ -188,7 +235,17 @@ public:
     // The mission's actors in this set, which the mission owns.
     [[nodiscard]] std::span<CDemonActor *const> getActors() const;
     void setActors(std::vector<CDemonActor *> actors);
+    // Of the actors, as buildActorTypeLists last sorted them: those drawn opaque or transparent,
+    // the characters, the enemies among them, the waypoints, and what auto-aim may turn to.
+    [[nodiscard]] std::span<CDemonActor *const> getRenderableActors() const;
+    [[nodiscard]] std::span<CCharacter *const> getCharacters() const;
+    [[nodiscard]] std::span<CEnemy *const> getEnemies() const;
+    [[nodiscard]] std::span<CWayPoint *const> getWaypoints() const;
+    [[nodiscard]] std::span<CDemonActor *const> getThreats() const;
+    // As buildCollidableActorList last listed them.
+    [[nodiscard]] std::span<CDemonActor *const> getCollidableActors() const;
     [[nodiscard]] std::span<const C3DSCamera> getCameras() const;
+    [[nodiscard]] std::span<C3DSCamera> getCameras();
     [[nodiscard]] int getDefaultRoomSize() const;
     [[nodiscard]] std::span<const SRoom> getRooms() const;
     [[nodiscard]] int getDefaultGroundType() const;
@@ -198,6 +255,13 @@ public:
     [[nodiscard]] const std::string &getGeometryFilename() const;
     // The camera's depth thumb, kThumbWidth * kThumbHeight depths.
     [[nodiscard]] std::span<const std::uint32_t> getThumb(std::size_t camera_index) const;
+    // For each 16.16 intensity below one, its level after gamma, at least 0x100; empty until
+    // setGamma.
+    [[nodiscard]] std::span<const int> getIntensityToValueLookupTable() const;
+    // The fog the scene shows now: the set's own until a camera brings its own.
+    [[nodiscard]] const SFog &getActiveFog() const;
+    // One for each of the set's spotlights, in their order, made by initScene.
+    [[nodiscard]] std::span<const std::unique_ptr<CDemonLight>> getMasterLights() const;
 
 private:
     void lightVertexColor(const common::CVector3i &surface_normal,
@@ -214,7 +278,31 @@ private:
     void showMissingGeometryWarning();
     static void skipDeprecatedVirtualDirectorData(common::CTextScanner &scanner);
     int findVdirBoxRoot(int box_index);
+    [[nodiscard]] bool isPointInVdirBox(std::size_t box_index,
+                                        const common::CVector3f &point) const;
+    int findVdirBoxAtPosition(const common::CVector3f &position);
     void buildVdirBoxGroups();
+    // The actor's box as the director draws it into the thumbs: its corners in 24.8, and its
+    // faces, each with its plane.
+    struct SActorOutline {
+        std::array<common::CVector3i, CBoundingBox3D::kCorners> corners{};
+        std::array<platform::SMRGLPrimitiveQuad, 6> faces;
+    };
+    // What the cameras are scored against: the actor's virtual director area, the radius of the
+    // sphere tested against each camera's view, and its outline.
+    struct SScoringTarget {
+        int area = -1;
+        float radius = 0.0F;
+        const SActorOutline &outline;
+    };
+
+    [[nodiscard]] static SActorOutline outlineActor(const CBoundingBox3D &box);
+    // How much of the actor the camera sees, from the camera's depth thumb.
+    float calculateActorVisibility(std::size_t camera_index, const CDemonActor &actor,
+                                   const SActorOutline &outline);
+    // Scores up to count cameras from where the last call stopped.
+    void scoreCameras(CDemonActor &actor, const SScoringTarget &target, int count,
+                      int force_evaluation_mode);
     void refreshThumbs(std::string_view filename);
 
     SDemonSetOwners owners_;
@@ -237,6 +325,12 @@ private:
     bool player_on_train_ = false;
     std::vector<C3DSLight> lights_;
     std::vector<CDemonActor *> actors_;
+    std::vector<CDemonActor *> renderable_actors_;
+    std::vector<CCharacter *> characters_;
+    std::vector<CEnemy *> enemies_;
+    std::vector<CWayPoint *> waypoints_;
+    std::vector<CDemonActor *> threats_;
+    std::vector<CDemonActor *> collidable_actors_;
     std::vector<C3DSCamera> cameras_;
     int default_room_size_ = 0;
     std::vector<SRoom> rooms_;
@@ -245,6 +339,20 @@ private:
     std::vector<SVDBox> vdir_boxes_;
     std::string geometry_filename_;
     std::vector<std::uint32_t> thumbs_;
+    std::vector<int> intensity_to_value_;
+    SFog active_fog_;
+    std::vector<std::unique_ptr<CDemonLight>> master_lights_;
+    int selected_camera_index_ = -1;
+    int previous_best_camera_index_ = -1;
+    float previous_best_camera_timer_ = 0.0F;
+    float camera_switch_cooldown_ = 0.0F;
+    int pending_camera_index_ = 0;
+    bool last_switch_area_invalid_ = false;
+    // The next camera the director scores, and each camera's last score.
+    int next_scored_camera_ = 0;
+    std::vector<float> camera_scores_;
+    CDemonActor *local_hero_ = nullptr;
+    std::vector<CDemonActor *> sorted_render_actors_;
 };
 
 } // namespace nocturne::core

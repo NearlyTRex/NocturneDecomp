@@ -2,6 +2,7 @@
 #include "core/gabriela/gabriella.h"
 #include "tests/mocks/core/notportedcalls.h"
 #include "tests/mocks/core/testactor.h"
+#include "tests/mocks/core/testclasses.h"
 #include "tests/mocks/core/testheroarchive.h"
 
 #include <gtest/gtest.h>
@@ -25,7 +26,7 @@ TEST(CGabriella, IsConcrete) {
 }
 
 TEST(CGabriella, Constructors) {
-    static_assert(std::is_constructible_v<CGabriella>);
+    static_assert(std::is_constructible_v<CGabriella, CActor &>);
 }
 
 TEST(CGabriella, PublicInterface) {
@@ -51,7 +52,8 @@ TEST(CGabriella, ItsRecordIsAVersionThreeHeroThatMissionsCanCreate) {
     EXPECT_EQ(CGabriella::kType.latest_version, 3);
     EXPECT_EQ(CGabriella::kType.name_hash, hashClassName("CGabriella"));
     ASSERT_NE(CGabriella::kType.factory_func, nullptr);
-    const std::unique_ptr<CDemonActor> actor = CGabriella::kType.factory_func();
+    CTestClasses classes;
+    const std::unique_ptr<CDemonActor> actor = CGabriella::kType.factory_func(classes.get());
     EXPECT_EQ(&actor->getActorType(), &CGabriella::kType);
 }
 
@@ -71,7 +73,8 @@ protected:
         EXPECT_TRUE(archive.isFinished());
     }
 
-    CGabriella hero_;
+    CTestClasses classes_;
+    CGabriella hero_{classes_.get()};
     CTestActor box_{kTestBaseType};
     CTestActor hook_{kTestBaseType};
 };
@@ -105,9 +108,9 @@ TEST_F(CGabriellaArchiveTest, AVersionOneGabriellaHasOnlyAHerosFields) {
 }
 
 TEST(CGabriella, TheFunctionsNotPortedYetQuit) {
-    CGabriella hero;
+    CTestClasses classes;
+    CGabriella hero(classes.get());
     const NotPortedCalls calls = {
-        {"setup", [&] { hero.setup(); }},
         {"process", [&] { hero.process(0.0F); }},
         {"renderOpaque", [&] { static_cast<void>(hero.renderOpaque()); }},
         {"renderTransparent", [&] { static_cast<void>(hero.renderTransparent()); }},
@@ -117,7 +120,7 @@ TEST(CGabriella, TheFunctionsNotPortedYetQuit) {
         {"drawWeapon", [&] { hero.drawWeapon(0); }},
         {"isWeaponDrawn", [&] { static_cast<void>(hero.isWeaponDrawn()); }},
     };
-    EXPECT_EQ(calls.size(), 8U);
+    EXPECT_EQ(calls.size(), 7U);
     expectEachQuitsNotPorted("CGabriella", calls);
 }
 

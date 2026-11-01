@@ -93,6 +93,23 @@ TEST_F(CDemonSetLoadTest, EveryCameraIsEnabledInGroupZeroAtTheLeastAmbient) {
     EXPECT_THAT(set_.getCameras()[0].getPVSList(), ::testing::ElementsAre(4, 5));
 }
 
+TEST_F(CDemonSetLoadTest, ACameraGroupIsEnabledAndDisabledTogether) {
+    load({.cameras = "3\n" + cameraText("first") + cameraText("second") + cameraText("third"),
+          .pvs = "0\n0\n0\n"});
+    set_.getCameras()[0].setCameraGroup(2);
+    set_.getCameras()[2].setCameraGroup(2);
+    set_.setCameraEnabledByGroup(2, false);
+    EXPECT_THAT(set_.getCameras(),
+                ::testing::ElementsAre(Property(&C3DSCamera::getEnabled, false),
+                                       Property(&C3DSCamera::getEnabled, true),
+                                       Property(&C3DSCamera::getEnabled, false)));
+    set_.setCameraEnabled(1, false);
+    set_.setCameraEnabledByGroup(2, true);
+    EXPECT_THAT(set_.getCameras(), ::testing::ElementsAre(Property(&C3DSCamera::getEnabled, true),
+                                                          Property(&C3DSCamera::getEnabled, false),
+                                                          Property(&C3DSCamera::getEnabled, true)));
+}
+
 TEST_F(CDemonSetLoadTest, ACameraIsFoundByName) {
     load(
         {.cameras = "2\n" + cameraText("first") + cameraText("Second"), .pvs = "2\n\t4\n\t5\n0\n"});
@@ -117,6 +134,18 @@ TEST_F(CDemonSetLoadTest, ASpotlightIsFoundByNameAmongTheSpotlights) {
     EXPECT_EQ(beam->index, 1U);
     EXPECT_FALSE(set_.addLightFilter("omni").has_value());
     EXPECT_FALSE(set_.addLightFilter("absent").has_value());
+}
+
+// The set is read as text, so a name on a line ending CRLF has no CR, as HQ.SET's lights don't.
+TEST_F(CDemonSetLoadTest, ALineEndingCrlfEndsAtItsNewline) {
+    std::string text = SSetFile{.lights = "1\n" + lightText("projector", 0)}.text();
+    for (std::size_t at = text.find('\n'); at != std::string::npos; at = text.find('\n', at + 2)) {
+        text.insert(at, "\r");
+    }
+    givenFile("models\\test.set", text);
+    set_.load("test.set");
+    EXPECT_EQ(set_.getLights()[0].getName(), "projector");
+    EXPECT_TRUE(set_.addLightFilter("projector").has_value());
 }
 
 TEST_F(CDemonSetLoadTest, AMissingFileIsFatal) {

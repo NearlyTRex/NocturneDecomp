@@ -19,6 +19,13 @@ enum class EOsFontChoice : std::uint8_t {
     System,
 };
 
+// Which font the dialogs and pick lists outside the editor draw in, as the enhanced game's
+// Gameplay options offer it; the values are frozen, as nocturne.ini's menuFont.
+enum class EMenuFontChoice : std::uint8_t {
+    Large,
+    Small,
+};
+
 // The game's fonts: six from glyph sheets, and four OS fonts that draw for them when the game
 // uses OS text.
 class CDFont {
@@ -42,6 +49,10 @@ public:
     void setOsFontChoice(EOsFontChoice choice);
     // Whether initFonts gave the fonts OS text.
     [[nodiscard]] bool getUseOSFonts() const;
+    [[nodiscard]] EMenuFontChoice getMenuFontChoice() const;
+    void setMenuFontChoice(EMenuFontChoice choice);
+    // The theme font for Large, the small editor font for Small.
+    [[nodiscard]] engine::CBitFont *getMenuFont() const;
 
     [[nodiscard]] engine::CBitFont *getMediumFont() const;
     [[nodiscard]] engine::CBitFont *getTinyFont() const;
@@ -65,6 +76,7 @@ private:
     const support::CNewMsg &messages_;
     shape::CEditorTools &editor_tools_;
     EOsFontChoice os_font_choice_ = EOsFontChoice::Auto;
+    EMenuFontChoice menu_font_choice_ = EMenuFontChoice::Large;
     bool use_os_fonts_ = false;
     std::unique_ptr<engine::CBitFont> medium_font_;
     std::unique_ptr<engine::CBitFont> tiny_font_;

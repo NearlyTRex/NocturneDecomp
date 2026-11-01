@@ -22,7 +22,7 @@ struct CDeformableModelInstance_ptr_88 {
     template<typename T> CDeformableModelInstance_ptr_88(T* p) : _raw((void*)p) {}
     template<typename T> CDeformableModelInstance_ptr_88& operator=(T* p) { _raw = (void*)p; return *this; }
     CVector3f* operator->() const { return (CVector3f*)_raw; }
-    CDeformableModelInstance* adj() const { return (CDeformableModelInstance*)((char*)_raw - offsetof(CDeformableModelInstance, transformed_vertices)); }
+    CDeformableModelInstance* adj() const { return (CDeformableModelInstance*)((char*)_raw - offsetof(CDeformableModelInstance, bone_origins)); }
     template<typename T> operator T*() const { return (T*)_raw; }
     explicit operator bool() const { return _raw != 0; }
 };

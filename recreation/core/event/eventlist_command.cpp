@@ -3,14 +3,15 @@
 #include "common/text/scan.h"
 #include "common/text/scanformat.h"
 #include "core/actor/demonactor.h"
-#include "core/actor/notported.h"
 #include "core/charactr/character.h"
 #include "core/event/eventchecks.h"
 #include "core/event/eventlist.h"
 #include "core/lever/lever.h"
+#include "core/motion/motionlist.h"
 #include "core/script/script_functions.h"
 #include "core/set/demonset.h"
 #include "core/setutil/3dslight.h"
+#include "core/skeleton/deformablemodelinstance.h"
 #include "core/weather/weathertype.h"
 #include "engine/dosio/dosio.h"
 
@@ -433,9 +434,12 @@ Result checkSetLeverState(const SCheckContext &owners, std::string_view &rest) {
     return owners.events.validateCondition(pair->second);
 }
 
-// A character's model must have the state or motion; a character missing for now passes.
+// A character's model must have the state or motion, as the finder looks it up; a character
+// missing for now passes.
+using PartFinder = int (*)(const CMotionList &motions, std::string_view name);
+
 Result checkModelPart(const SCheckContext &owners, std::string_view &rest, std::string_view error,
-                      std::string_view finder) {
+                      std::string_view what, PartFinder finder) {
     const auto pair = scanPair(rest, "(%[^,], %[^)])", error);
     if (!pair) {
         return std::unexpected(pair.error());
@@ -444,20 +448,29 @@ Result checkModelPart(const SCheckContext &owners, std::string_view &rest, std::
     if (!character) {
         return std::unexpected(character.error());
     }
-    if (*character != nullptr) {
-        quitNotPorted("CMotionList", finder);
+    if (*character == nullptr) {
+        return {};
+    }
+    const CDeformableModelInstance &model = static_cast<CCharacter *>(*character)->getModel();
+    if (finder(*model.getMotionList(), pair->second) < 0) {
+        return std::unexpected(
+            std::format("Model {} does not have {} {}", model.getModelName(), what, pair->second));
     }
     return {};
 }
 
 Result checkSetModelState(const SCheckContext &owners, std::string_view &rest) {
-    return checkModelPart(owners, rest, "Error parsing setModelState command parms",
-                          "findStateIndex");
+    return checkModelPart(owners, rest, "Error parsing setModelState command parms", "state",
+                          [](const CMotionList &motions, std::string_view name) {
+                              return motions.findStateIndex(name, false);
+                          });
 }
 
 Result checkSlamModelToMotion(const SCheckContext &owners, std::string_view &rest) {
-    return checkModelPart(owners, rest, "Error parsing slamModelToMotion command parms",
-                          "findMotionIndex");
+    return checkModelPart(owners, rest, "Error parsing slamModelToMotion command parms", "motion",
+                          [](const CMotionList &motions, std::string_view name) {
+                              return motions.findMotionIndex(name, false);
+                          });
 }
 
 Result checkSetTimer(const SCheckContext & /*owners*/, std::string_view &rest) {

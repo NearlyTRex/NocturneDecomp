@@ -1,6 +1,7 @@
 #include "platform/gl/gldevice.h"
 #include "tests/mocks/platform/glrecorder.h"
 #include "tests/mocks/platform/mockglframepresenter.h"
+#include "tests/mocks/platform/mocklog.h"
 
 #include <gmock/gmock.h>
 #include <gtest/gtest.h>
@@ -38,7 +39,8 @@ struct SFixture {
 
     CGlRecorder gl;
     StrictMock<MockGlFramePresenter> presenter;
-    CGlDevice device{gl.getApi(), presenter};
+    CNullLog log;
+    CGlDevice device{gl.getApi(), presenter, log};
     std::vector<void *> scanlines = std::vector<void *>(kHeight);
 };
 
@@ -52,7 +54,8 @@ std::vector<std::string> callNames(const CGlRecorder &gl) {
 TEST(CGlDeviceFrame, NothingLocksWithoutAMode) {
     const CGlRecorder gl;
     StrictMock<MockGlFramePresenter> presenter;
-    CGlDevice device(gl.getApi(), presenter);
+    CNullLog log;
+    CGlDevice device(gl.getApi(), presenter, log);
     EXPECT_FALSE(device.lockFrame());
     EXPECT_FALSE(device.lockHoldBuffer());
     EXPECT_FALSE(device.unlockHoldBuffer());
@@ -135,7 +138,8 @@ struct SHoldFixture {
 
     CGlRecorder gl;
     StrictMock<MockGlFramePresenter> presenter;
-    CGlDevice device{gl.getApi(), presenter};
+    CNullLog log;
+    CGlDevice device{gl.getApi(), presenter, log};
     std::vector<void *> scanlines = std::vector<void *>(768);
     std::vector<void *> frame;
 };
@@ -255,7 +259,8 @@ TEST(CGlDeviceFrame, AnEmptyBoxClearsNothing) {
 TEST(CGlDeviceFrame, NothingClearsWithoutAMode) {
     CGlRecorder gl;
     StrictMock<MockGlFramePresenter> presenter;
-    CGlDevice device(gl.getApi(), presenter);
+    CNullLog log;
+    CGlDevice device(gl.getApi(), presenter, log);
     gl.clear();
     device.clearColor();
     device.clearDepth();

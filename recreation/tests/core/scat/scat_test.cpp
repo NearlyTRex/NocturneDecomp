@@ -1,6 +1,7 @@
 #include "core/actor/demonactortype.h"
 #include "core/scat/scat.h"
 #include "tests/mocks/core/notportedcalls.h"
+#include "tests/mocks/core/testclasses.h"
 #include "tests/mocks/core/testheroarchive.h"
 
 #include <gtest/gtest.h>
@@ -24,7 +25,7 @@ TEST(CScat, IsConcrete) {
 }
 
 TEST(CScat, Constructors) {
-    static_assert(std::is_constructible_v<CScat>);
+    static_assert(std::is_constructible_v<CScat, CActor &>);
 }
 
 TEST(CScat, PublicInterface) {
@@ -46,12 +47,14 @@ TEST(CScat, ItsRecordIsAVersionOneHeroThatMissionsCanCreate) {
     EXPECT_EQ(CScat::kType.latest_version, 1);
     EXPECT_EQ(CScat::kType.name_hash, hashClassName("CScat"));
     ASSERT_NE(CScat::kType.factory_func, nullptr);
-    const std::unique_ptr<CDemonActor> actor = CScat::kType.factory_func();
+    CTestClasses classes;
+    const std::unique_ptr<CDemonActor> actor = CScat::kType.factory_func(classes.get());
     EXPECT_EQ(&actor->getActorType(), &CScat::kType);
 }
 
 TEST(CScat, ItsFieldsAreAHerosFields) {
-    CScat hero;
+    CTestClasses classes;
+    CScat hero(classes.get());
     CTestHeroArchive archive(hero, CScat::kType, 1, "");
     hero.archive(archive.get());
     EXPECT_EQ(hero.getLocation().area_id, CTestHeroArchive::kArea);
@@ -59,7 +62,8 @@ TEST(CScat, ItsFieldsAreAHerosFields) {
 }
 
 TEST(CScat, TheFunctionsNotPortedYetQuit) {
-    CScat hero;
+    CTestClasses classes;
+    CScat hero(classes.get());
     const NotPortedCalls calls = {
         {"setup", [&] { hero.setup(); }},
         {"process", [&] { hero.process(0.0F); }},

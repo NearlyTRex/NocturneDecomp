@@ -4,22 +4,37 @@
 #include "common/error/fatalerror.h"
 #include "common/random/watcomrandom.h"
 #include "core/actor/actor.h"
+#include "core/dcamera/cameratables.h"
+#include "core/dcamera/demoncamera.h"
 #include "core/dfilter/demonfilter.h"
+#include "core/dfilter/filtercache.h"
 #include "core/dfont/dfont.h"
+#include "core/dlight/demonlight.h"
+#include "core/dlight/lightglow.h"
 #include "core/dmodel/keyframedmodel.h"
+#include "core/dmodel/keyframedmodelmanager.h"
 #include "core/dtrace/demonraytrace.h"
+#include "core/event/eventlist.h"
+#include "core/fire/fireeffect.h"
+#include "core/game/chapterselectmode.h"
 #include "core/game/game.h"
+#include "core/gore/gore.h"
 #include "core/ground/ground.h"
 #include "core/inivar/inivar.h"
+#include "core/inv/inventoryassets.h"
 #include "core/level/levelloader.h"
+#include "core/menu/attractmovies.h"
 #include "core/menu/menu.h"
 #include "core/mission/demonmission.h"
 #include "core/netgame/netgame.h"
 #include "core/podmain/demonpod.h"
+#include "core/script/script.h"
 #include "core/set/demonset.h"
+#include "core/skeleton/deformablemodelmanager.h"
 #include "core/sound/sound.h"
 #include "core/terrain/terrain.h"
 #include "core/water/water.h"
+#include "core/weather/weather.h"
 #include "core/xform/xform.h"
 #include "engine/2d/2d.h"
 #include "engine/3d/3d.h"
@@ -38,6 +53,7 @@
 #include "engine/texture/currenttexture.h"
 #include "engine/texture/texture.h"
 #include "engine/zraster/zraster.h"
+#include "platform/filelog.h"
 #include "platform/gl/glrenderer.h"
 #include "platform/rendervertex.h"
 #include "platform/sdl/sdlaudiodevice.h"
@@ -54,7 +70,9 @@
 #include "platform/sdl/sdlwindow.h"
 #include "shape/edittool/edcontrols.h"
 #include "shape/edittool/editortools.h"
+#include "shape/edittool/fileselection.h"
 #include "shape/edittool/picklist.h"
+#include "shape/edittool/strlist.h"
 #include "sound/sndmain/sndmain.h"
 #include "support/newmsg/newmsg.h"
 #include "wincore/wddvmem/wddvmem.h"
@@ -84,12 +102,17 @@ constexpr int kHeight = 480;
 constexpr std::size_t kRenderVertexCount = 20000;
 // The original's one ground grid, as ground.cpp's static initialiser made it.
 constexpr int kGroundSize = 0x100;
+// The flashlight's shadow map, as game.cpp's static initialiser made it.
+constexpr int kFlashlightSize = 0x100;
+
+std::tm toLocalTime(std::time_t time) {
+    std::tm local_time{};
+    localtime_r(&time, &local_time);
+    return local_time;
+}
 
 std::tm getLocalTime() {
-    const std::time_t now = std::time(nullptr);
-    std::tm local_time{};
-    localtime_r(&now, &local_time);
-    return local_time;
+    return toLocalTime(std::time(nullptr));
 }
 
 // Every system the game runs on, made once and handed to what needs it. Several refer to ones
@@ -98,7 +121,10 @@ class CGameSystems {
 public:
     CGameSystems(sdl::CSdlWindow &window, sdl::CSdlFileSystem &file_system, sdl::CSdlClock &clock,
                  wincore::CWinRun &winrun)
-        : window_(window), file_system_(file_system), clock_(clock), winrun_(winrun) {}
+        : window_(window), file_system_(file_system), clock_(clock), winrun_(winrun) {
+        sound_.setMusicHandler(
+            [this](float seconds) { attract_movies_.setMusicDuration(seconds); });
+    }
 
     void initializeGameSystems() {
         core::initializeGameSystems(
@@ -123,7 +149,8 @@ public:
              .player_filters = player_filters_,
              .mouse = mouse_,
              .net_game = net_game_,
-             .menu = menu_});
+             .menu = menu_,
+             .attract_movies = attract_movies_});
     }
 
     // The main menu, until it quits or the window closes.
@@ -136,20 +163,21 @@ private:
     sdl::CSdlFileSystem &file_system_;
     sdl::CSdlClock &clock_;
     wincore::CWinRun &winrun_;
-    sdl::CSdlDisplay display_{window_};
+    nocturne::platform::CFileLog log_{file_system_};
+    sdl::CSdlDisplay display_{window_, log_};
     // Declared after the display, so it is gone before the context it draws in. The engine calls
     // init, with its bridge, only when the INI turns acceleration on.
-    nocturne::platform::gl::CGlRenderer renderer_{display_.getGlApi(), display_};
+    nocturne::platform::gl::CGlRenderer renderer_{display_.getGlApi(), display_, log_};
     sdl::CSdlGamepad gamepad_;
     sdl::CSdlClipboard clipboard_;
     sdl::CSdlNetwork network_;
     sdl::CSdlAudioDevice audio_;
     sdl::CSdlOsFontFactory os_fonts_;
-    sdl::CSdlMoviePlayer movies_{display_};
+    sdl::CSdlMoviePlayer movies_{display_, log_};
     sdl::CSdlEnvironment environment_;
     engine::CDosIo dosio_{file_system_};
     core::CDemonPod pod_{file_system_, dosio_};
-    wincore::CWddVMem screen_{display_, renderer_, winrun_, special_, two_d_};
+    wincore::CWddVMem screen_{display_, renderer_, winrun_, special_, two_d_, clock_, log_};
     engine::C2d two_d_{dosio_, screen_, winrun_};
     engine::CLight light_;
     engine::CMatrix matrix_{two_d_, light_};
@@ -171,13 +199,21 @@ private:
     nocturne::support::CNewMsg messages_{dosio_};
     core::CDFont fonts_{dosio_,  screen_,   two_d_,    three_d_,
                         colors_, os_fonts_, messages_, editor_tools_};
-    // deferred: the scene's 256 by 256 CDemonLight, with CDemonLight's constructor
-    // nocedit 0x004d76d0
-    core::CGame game_{winrun_};
     // nocedit 0x004417e0
     engine::CConsole console_{file_system_, engine::CConsole::kMaxColumns,
                               engine::CConsole::kMaxRows, 1, 1};
     nocturne::sound::CSndMain sound_main_{dosio_, file_system_, audio_, console_, &getLocalTime};
+    engine::CMenuInput menu_input_{keys_};
+    // nocedit 0x004d76d0
+    core::CGame game_{{.clock = winrun_,
+                       .dosio = dosio_,
+                       .screen = screen_,
+                       .special = special_,
+                       .two_d = two_d_,
+                       .three_d = three_d_,
+                       .menu_input = menu_input_,
+                       .fonts = fonts_,
+                       .sound_main = sound_main_}};
     engine::CIni ini_{file_system_};
     core::SIniDataOwners ini_owners_{.game = game_,
                                      .sound_main = sound_main_,
@@ -193,6 +229,7 @@ private:
     // deferred: the 10 train noises, with processTrainSounds
     // nocedit 0x005b1760
     core::CSound sound_{sound_main_, pod_, file_system_};
+    core::CAttractMovies attract_movies_{clock_};
     // deferred: the filter cache and filter effects, with CFilterCache's and CFilterFX's
     //   constructors
     // nocedit 0x0046ff50
@@ -212,7 +249,8 @@ private:
                                         .winrun = winrun_,
                                         .special = special_,
                                         .screen = screen_,
-                                        .two_d = two_d_};
+                                        .two_d = two_d_,
+                                        .sound_main = sound_main_};
     std::vector<nocturne::platform::SRenderVertex> vertex_buffer_ =
         std::vector<nocturne::platform::SRenderVertex>(kRenderVertexCount);
     engine::CPrim prim_{special_, two_d_, three_d_, current_texture_};
@@ -236,7 +274,24 @@ private:
     // nocedit 0x005e9da0
     core::CWater water_;
     core::CKeyFramedModel enviro_model_{dosio_};
-    // deferred: the camera, with CDemonCamera's constructor
+    nocturne::common::CWatcomRandom crt_random_;
+    core::CDeformableModelManager deformable_models_{dosio_, demon_renderer_};
+    core::CKeyFramedModelManager keyframed_models_{dosio_, demon_renderer_};
+    core::CActor actor_{game_, crt_random_, deformable_models_, keyframed_models_};
+    core::SCameraTables camera_tables_;
+    core::SLightGlowTextures light_glow_;
+    core::SDemonLightOwners light_owners_{.camera = {.tables = camera_tables_,
+                                                     .screen = screen_,
+                                                     .special = special_,
+                                                     .crt_random = crt_random_,
+                                                     .renderer = demon_renderer_},
+                                          .global_filters = global_filters_,
+                                          .player_filters = player_filters_,
+                                          .glow = light_glow_};
+    core::CDemonCamera camera_{light_owners_.camera};
+    core::CDemonLight flashlight_{light_owners_, kFlashlightSize, kFlashlightSize};
+    core::CFilterCache filter_cache_{dosio_};
+    core::CWeather weather_{actor_};
     // deferred: the 4000 face normals, with lightVerticies' face lists
     // nocedit 0x00569040
     core::CDemonSet set_{{.renderer = demon_renderer_,
@@ -251,10 +306,23 @@ private:
                           .enviro_model = enviro_model_,
                           .two_d = two_d_,
                           .screen = screen_,
-                          .raw_input = winrun_}};
-    nocturne::common::CWatcomRandom crt_random_;
-    core::CActor actor_{game_, crt_random_};
-    engine::CMenuInput menu_input_{keys_};
+                          .raw_input = winrun_,
+                          .camera = camera_,
+                          .flashlight = flashlight_,
+                          .filter_cache = filter_cache_,
+                          .light_owners = light_owners_,
+                          .weather = weather_,
+                          .game = game_}};
+    nocturne::shape::CEdControls controls_{{.two_d = two_d_,
+                                            .screen = screen_,
+                                            .raw_input = winrun_,
+                                            .clock = winrun_,
+                                            .editor_tools = editor_tools_}};
+    nocturne::shape::SPickListOwners pick_list_owners_{.controls = controls_,
+                                                       .keys = keys_,
+                                                       .menu_input = menu_input_,
+                                                       .three_d = three_d_,
+                                                       .screen = screen_};
     core::CMenu menu_{{.dosio = dosio_,
                        .screen = screen_,
                        .special = special_,
@@ -272,17 +340,21 @@ private:
                        .textures = texture_,
                        .sound = sound_,
                        .sound_main = sound_main_,
-                       .build_version = nocturne::kBuildVersion}};
-    nocturne::shape::CEdControls controls_{{.two_d = two_d_,
-                                            .screen = screen_,
-                                            .raw_input = winrun_,
-                                            .clock = winrun_,
-                                            .editor_tools = editor_tools_}};
-    nocturne::shape::SPickListOwners pick_list_owners_{.controls = controls_,
-                                                       .keys = keys_,
-                                                       .menu_input = menu_input_,
-                                                       .three_d = three_d_,
-                                                       .screen = screen_};
+                       .display = display_,
+                       .editor_tools = editor_tools_,
+                       .ini = ini_,
+                       .ini_owners = ini_owners_,
+                       .pick_list = pick_list_owners_,
+                       .build_version = nocturne::kBuildVersion,
+                       .attract_movies = attract_movies_,
+                       .play_movie =
+                           [this](std::string_view directory, std::string_view filename) {
+                               return wincore::playMovie(movie_owners_, directory, filename);
+                           },
+                       .show_chapter_select =
+                           [this](core::EChapterSelectMode mode) {
+                               game_.showChapterSelect(chapter_select_owners_, mode);
+                           }}};
     core::CLevelLoader level_loader_{{.dosio = dosio_,
                                       .screen = screen_,
                                       .special = special_,
@@ -301,7 +373,46 @@ private:
                                   .set = set_,
                                   .textures = texture_,
                                   .editor_tools = editor_tools_,
-                                  .pick_list = pick_list_owners_}};
+                                  .pick_list = pick_list_owners_,
+                                  .script = script_,
+                                  .events = events_}};
+    core::CEventList events_{
+        {.mission = mission_, .actor = actor_, .set = set_, .dosio = dosio_, .console = console_}};
+    core::CScript script_{{.dosio = dosio_,
+                           .editor_tools = editor_tools_,
+                           .mission = mission_,
+                           .events = events_,
+                           .set = set_,
+                           .sound = sound_}};
+    nocturne::shape::CStrList::LocalTime local_time_ = &toLocalTime;
+    nocturne::shape::SFileSelectionOwners file_selection_owners_{.pick_list = pick_list_owners_,
+                                                                 .pod = &pod_,
+                                                                 .file_system = file_system_,
+                                                                 .local_time = local_time_,
+                                                                 .messages = messages_};
+    core::CFireEffect fire_effect_{
+        {.renderer = demon_renderer_, .keyframed_models = keyframed_models_}};
+    core::CGore gore_{demon_renderer_};
+    core::CInventoryAssets inventory_assets_{
+        {.dosio = dosio_, .screen = screen_, .special = special_, .game = game_}};
+    core::SGameSessionOwners session_owners_{.console = console_,
+                                             .camera = camera_,
+                                             .flashlight = flashlight_,
+                                             .set = set_,
+                                             .script = script_,
+                                             .editor_tools = editor_tools_,
+                                             .build_version = nocturne::kBuildVersion,
+                                             .fire = fire_effect_,
+                                             .gore = gore_,
+                                             .inventory_assets = inventory_assets_};
+    core::SChapterSelectOwners chapter_select_owners_{.messages = messages_,
+                                                      .editor_tools = editor_tools_,
+                                                      .pick_list = pick_list_owners_,
+                                                      .file_selection = file_selection_owners_,
+                                                      .ini = ini_,
+                                                      .loading_screen = level_loader_,
+                                                      .mission = mission_,
+                                                      .session = session_owners_};
 };
 
 // Everything is gone by the time a fatal error is reported, as the original tore down its sound

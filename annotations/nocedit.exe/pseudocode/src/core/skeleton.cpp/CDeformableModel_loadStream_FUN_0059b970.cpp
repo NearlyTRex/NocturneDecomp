@@ -169,7 +169,7 @@ LAB_0059b9d7:
         if (iVar3 != 1) goto LAB_0059b9b4;
         pSVar7->num_bone_influences = local_34[0];
         for (iVar3 = 0; iVar3 < (int)(uint)pSVar7->num_bone_influences; iVar3 = iVar3 + 1) {
-          pfVar4 = pSVar7->bone_weights + iVar3 * 3 + 3;
+          pfVar4 = &pSVar7->bone_offsets[iVar3].x;
           iVar7 = _fscanf(file_handle,"%d,%f,%f,%f,%f\n",local_30,pSVar7->bone_weights + iVar3,
                              pfVar4,pfVar4 + 1,pfVar4 + 2);
           if (iVar7 != 5) goto LAB_0059b9b4;
@@ -228,7 +228,7 @@ LAB_0059b9d7:
       if (iVar3 < 0) break;
     } while (iVar3 != 10);
     for (iVar3 = 0; iVar3 < local_64; iVar3 = iVar3 + 1) {
-      pCVar6 = this_ptr->vertex_pool + iVar3;
+      pCVar6 = this_ptr->bone_origins + iVar3;
       iVar7 = _fscanf(file_handle,"%f,%f,%f\n",pCVar6,&pCVar6->y,&pCVar6->z);
       if (iVar7 != 3) goto LAB_0059b9b4;
     }
@@ -246,17 +246,17 @@ LAB_0059b9d7:
                        &(this_ptr->model_scale).y,&(this_ptr->model_scale).z);
   } while (iVar3 != 3);
   if (local_68 < 4) {
-    this_ptr->bbox_pool[0].min.z = 0.0;
-    this_ptr->bbox_pool[0].min.y = this_ptr->bbox_pool[0].min.z;
-    this_ptr->bbox_pool[0].min.x = this_ptr->bbox_pool[0].min.y;
+    (this_ptr->bias_used).z = 0.0;
+    (this_ptr->bias_used).y = (this_ptr->bias_used).z;
+    (this_ptr->bias_used).x = (this_ptr->bias_used).y;
   }
   else {
     do {
       iVar3 = _fgetc(file_handle);
       if (iVar3 < 0) break;
     } while (iVar3 != 10);
-    _fscanf(file_handle,"%f,%f,%f\n",this_ptr->bbox_pool,&this_ptr->bbox_pool[0].min.y,
-               &this_ptr->bbox_pool[0].min.z);
+    _fscanf(file_handle,"%f,%f,%f\n",&this_ptr->bias_used,&(this_ptr->bias_used).y,
+               &(this_ptr->bias_used).z);
   }
   if (6 < local_68) {
     do {

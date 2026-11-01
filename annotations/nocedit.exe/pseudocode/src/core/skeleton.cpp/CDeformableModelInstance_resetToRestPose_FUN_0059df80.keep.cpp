@@ -20,7 +20,7 @@ void __cdecl core_skeleton_cpp_CDeformableModelInstance_resetToRestPose_FUN_0059
     quaternion = (this_ptr->bone_transform).pose_data.bone_rotations;
     do {
       core_xform_cpp_setIdentityQuaternion_FUN_005f7620(quaternion);
-      (this_ptr->bone_transform).bone_scales[iVar3] = this_ptr->rest_pose_data[iVar3];
+      (this_ptr->bone_transform).bone_scales[iVar3] = this_ptr->rest_bone_scales[iVar3];
       iVar3 = iVar3 + 1;
       quaternion = quaternion + 1;
     } while (iVar3 < pCVar1->bone_count);

@@ -21,7 +21,7 @@ TEST(CTurret, IsConcrete) {
 }
 
 TEST(CTurret, Constructors) {
-    static_assert(std::is_constructible_v<CTurret>);
+    static_assert(std::is_constructible_v<CTurret, CActor &>);
 }
 
 TEST(CTurret, PublicInterface) {

@@ -9,9 +9,13 @@
 #include "core/charactr/healthbarmode.h"
 #include "core/cloth/clothlist.h"
 #include "core/game/game.h"
+#include "tests/mocks/core/gameparts.h"
 #include "tests/mocks/core/mockactorlookup.h"
+#include "tests/mocks/core/mockdeformablemodels.h"
+#include "tests/mocks/core/mockkeyframedmodels.h"
 #include "tests/mocks/core/notportedcalls.h"
 #include "tests/mocks/core/testactor.h"
+#include "tests/mocks/core/testclasses.h"
 #include "tests/mocks/engine/mockgameclock.h"
 
 #include <gmock/gmock.h>
@@ -183,6 +187,8 @@ TEST(CCharacter, PublicInterface) {
 // A character of no class but its own, so its calls reach CCharacter's.
 class CTestCharacter : public CCharacter {
 public:
+    using CCharacter::CCharacter;
+
     [[nodiscard]] const CDemonActorType &getActorType() const override {
         return kType;
     }
@@ -197,7 +203,8 @@ TEST(CCharacter, ItsRecordIsAVersionSixActorThatMissionsCantCreate) {
 }
 
 TEST(CCharacter, ACharacterStartsWithFullHealthCarryingNothing) {
-    CTestCharacter character;
+    CTestClasses classes;
+    CTestCharacter character(classes.get());
     EXPECT_EQ(character.getHitPoints(), 100.0F);
     EXPECT_EQ(character.getMaxHitPoints(), 100.0F);
     EXPECT_FALSE(character.isCarryingAnything());
@@ -206,6 +213,23 @@ TEST(CCharacter, ACharacterStartsWithFullHealthCarryingNothing) {
     EXPECT_EQ(character.getTalkToMeEvent(), "");
     EXPECT_TRUE(character.getClothList().getFilenames().empty());
 }
+
+// An actor that says what carries it, and keeps what picks it up.
+class CCarriable : public CTestActor {
+public:
+    using CTestActor::CTestActor;
+
+    CDemonActor *getCarrier() override {
+        return carrier;
+    }
+
+    void pickup(CDemonActor *carrier_actor) override {
+        picked_up_by = carrier_actor;
+    }
+
+    CDemonActor *carrier = nullptr;
+    CDemonActor *picked_up_by = nullptr;
+};
 
 // A character Mob, whose actor fields name the actors Crate and Hook.
 class CCharacterArchiveTest : public ::testing::Test {
@@ -236,14 +260,66 @@ protected:
     }
 
     ::testing::NiceMock<engine::MockGameClock> clock_;
-    CGame game_{clock_};
+    CGameParts game_parts_{clock_};
+    CGame &game_ = game_parts_.getGame();
     common::CWatcomRandom crt_;
-    CActor classes_{game_, crt_};
+    ::testing::NiceMock<MockDeformableModels> models_;
+    ::testing::NiceMock<MockKeyFramedModels> keyframed_models_;
+    CActor classes_{game_, crt_, models_, keyframed_models_};
     ::testing::NiceMock<MockActorLookup> actors_;
-    CTestCharacter character_;
-    CTestActor crate_{kTestBaseType};
+    CTestCharacter character_{classes_};
+    CCarriable crate_{kTestBaseType};
     CTestActor hook_{kTestBaseType};
 };
+
+// Mob carries Crate in its second hand, wears no cloth and is called The Mob.
+constexpr std::string_view kCarryingFields =
+    "50\n2\n1\n\"Crate\"\n0\n\"(none)\"\n\"\"\n\"(none)\"\n0\n{\n0\n}\n1.5\n2\n\"The Mob\"\n80\n";
+
+TEST_F(CCharacterArchiveTest, SettingUpPicksUpWhatItCarries) {
+    readAs(6, kCarryingFields);
+    character_.setup();
+    EXPECT_EQ(crate_.picked_up_by, &character_);
+    EXPECT_EQ(character_.getDescriptiveName(), "The Mob");
+}
+
+TEST_F(CCharacterArchiveTest, WhatItAlreadyCarriesIsntPickedUpAgain) {
+    readAs(6, kCarryingFields);
+    crate_.carrier = &character_;
+    character_.setup();
+    EXPECT_EQ(crate_.picked_up_by, nullptr);
+}
+
+TEST_F(CCharacterArchiveTest, CarryingWhatSomethingElseCarriesIsFatal) {
+    readAs(6, kCarryingFields);
+    crate_.carrier = &hook_;
+    EXPECT_THAT([this] { character_.setup(); },
+                ThrowsMessage<common::CFatalError>(
+                    StrEq("Mob is carrying Crate, but Crate thinks it is being carried by Hook")));
+}
+
+TEST_F(CCharacterArchiveTest, ACharacterWithNoDescriptiveNameIsNamedAfterItsClass) {
+    readAs(1, "30\n");
+    character_.setup();
+    EXPECT_EQ(character_.getDescriptiveName(), "Character");
+}
+
+// The disk here holds no cloth.
+TEST_F(CCharacterArchiveTest, ItsClothIsLoadedFromTheFilesItLists) {
+    readAs(5, "40\n0\n\"\"\n\"(none)\"\n0\n{\n1\n\"coat.cls\"\n}\n2\n");
+    EXPECT_THAT(
+        [this] { character_.setup(); },
+        ThrowsMessage<common::CFatalError>(StrEq("CCloth::load - Unable to open file coat.cls")));
+}
+
+// With no model there are no bones to take a box from.
+TEST_F(CCharacterArchiveTest, ACharacterWithoutAModelKeepsItsBox) {
+    readAs(1, "30\n");
+    character_.setup();
+    CBoundingBox3D box;
+    EXPECT_TRUE(character_.getBoundingBox(&box)->min.equals({}));
+    EXPECT_TRUE(box.max.equals({}));
+}
 
 TEST_F(CCharacterArchiveTest, ACharacterIsReadWithAllItsFields) {
     readAs(6, "50 // hitPoints\n2 // numCarryHands\n1 // carry hand\n\"Crate\" // carry actor\n"
@@ -284,13 +360,12 @@ TEST_F(CCharacterArchiveTest, AHandPastTheTwoIsFatal) {
 }
 
 TEST(CCharacter, TheFunctionsNotPortedYetQuit) {
-    CTestCharacter character;
+    CTestClasses classes;
+    CTestCharacter character(classes.get());
     const NotPortedCalls calls = {
-        {"setup", [&] { character.setup(); }},
         {"renderOpaque", [&] { static_cast<void>(character.renderOpaque()); }},
         {"renderTransparent", [&] { static_cast<void>(character.renderTransparent()); }},
         {"renderBackground", [&] { character.renderBackground(0); }},
-        {"getBoundingBox", [&] { static_cast<void>(character.getBoundingBox(nullptr)); }},
         {"getCollisionType", [&] { static_cast<void>(character.getCollisionType(nullptr)); }},
         {"canLookAt", [&] { static_cast<void>(character.canLookAt()); }},
         {"setPositionAndOrientation",
@@ -328,7 +403,7 @@ TEST(CCharacter, TheFunctionsNotPortedYetQuit) {
         {"setWalkTimeout", [&] { character.setWalkTimeout(0.0F); }},
         {"isWalkComplete", [&] { static_cast<void>(character.isWalkComplete()); }},
     };
-    EXPECT_EQ(calls.size(), 36U);
+    EXPECT_EQ(calls.size(), 34U);
     expectEachQuitsNotPorted("CCharacter", calls);
 }
 

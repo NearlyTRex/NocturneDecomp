@@ -3,8 +3,10 @@
 #include "common/error/error.h"
 #include "common/text/ascii.h"
 #include "common/text/textscanner.h"
+#include "core/actor/actor_functions.h"
 #include "core/actor/actorarchive.h"
 #include "core/actor/demonactortype.h"
+#include "core/box/boundingbox3d.h"
 
 #include <format>
 #include <optional>
@@ -18,6 +20,9 @@ constexpr int kVersion = 7;
 // The version that dropped a field of view, and the one that first held the creation fields.
 constexpr int kNoFovVersion = 7;
 constexpr int kCreationVersion = 6;
+// The box of an actor with no shape of its own.
+constexpr float kDefaultHalfWidth = 4.0F;
+constexpr float kDefaultHeight = 8.0F;
 
 struct STag {
     std::string class_name;
@@ -51,8 +56,9 @@ STag readTag(common::CTextScanner &scanner, char brace) {
 constinit const CDemonActorType CDemonActor::kType =
     makeActorType("CDemonActor", nullptr, nullptr, kVersion);
 
-// deferred: the defaults the constructor gives the orientation's matrix, and the scale,
-//   platform, rendering, health and footstep fields, with the steps that read them
+// deferred: the defaults the constructor gives the orientation's matrix, and the platform,
+//   rendering (but for the transparency), health and footstep fields, with the steps that read
+//   them
 // nocedit 0x004088b0
 CDemonActor::CDemonActor() = default;
 
@@ -89,8 +95,58 @@ void CDemonActor::setOrientation(const common::CVector3f &orientation) {
     orientation_ = orientation;
 }
 
+// The original also checks the actor is one it made, which an object always is.
+// deferred: clearing the blood effect timer, with handleFootstep
+// deferred: bringing the path map up to the actor's position, with CPathMap::findPathWithRetry
+// nocedit 0x00408bb0
+void CDemonActor::setup() {
+    updateOrientationMatrix();
+}
+
+// nocedit 0x00408c10
+void CDemonActor::updateOrientationMatrix() {
+    orientation_ = {.x = normalizeAngleToPi(orientation_.x),
+                    .y = normalizeAngleToPi(orientation_.y),
+                    .z = normalizeAngleToPi(orientation_.z)};
+    orientation_matrix_.buildRotationMatrix(orientation_);
+}
+
+// nocedit 0x00408e80
+common::CVector3f *CDemonActor::transformVector(common::CVector3f *output,
+                                                common::CVector3f *input) {
+    *output = orientation_matrix_.transformVector(*input);
+    return output;
+}
+
+// An actor with no shape of its own takes up a box eight across and eight high, standing on its
+// feet.
+// nocedit 0x00408c70
+CBoundingBox3D *CDemonActor::getBoundingBox(CBoundingBox3D *out_box) {
+    *out_box = {.min = {.x = -kDefaultHalfWidth, .y = 0.0F, .z = -kDefaultHalfWidth},
+                .max = {.x = kDefaultHalfWidth, .y = kDefaultHeight, .z = kDefaultHalfWidth}};
+    return out_box;
+}
+
+// The original checked the actor's pointers here in its debug builds.
+// nocedit 0x004098c0
+void CDemonActor::updateCollisionData(CDemonSet & /*set*/) {}
+
+// nocedit 0x00408ec0
+common::CVector3f *CDemonActor::localToWorldPoint(common::CVector3f *output_world_point,
+                                                  common::CVector3f *input_local_point) {
+    const common::CVector3f turned = orientation_matrix_.transformVector(*input_local_point);
+    *output_world_point = {.x = turned.x + location_.position.x,
+                           .y = turned.y + location_.position.y,
+                           .z = turned.z + location_.position.z};
+    return output_world_point;
+}
+
 EActorLifecycleState CDemonActor::getLifecycleState() const {
     return lifecycle_state_;
+}
+
+void CDemonActor::setLifecycleState(EActorLifecycleState lifecycle_state) {
+    lifecycle_state_ = lifecycle_state;
 }
 
 float CDemonActor::getCreateProbability() const {
@@ -99,6 +155,46 @@ float CDemonActor::getCreateProbability() const {
 
 const std::string &CDemonActor::getCreateEvent() const {
     return create_event_;
+}
+
+bool CDemonActor::isTransparent() const {
+    return transparent_;
+}
+
+void CDemonActor::setTransparent(bool transparent) {
+    transparent_ = transparent;
+}
+
+bool CDemonActor::isRenderable() const {
+    return renderable_;
+}
+
+void CDemonActor::setRenderable(bool renderable) {
+    renderable_ = renderable;
+}
+
+bool CDemonActor::isCollisionDisabled() const {
+    return collision_disabled_;
+}
+
+void CDemonActor::setCollisionDisabled(bool collision_disabled) {
+    collision_disabled_ = collision_disabled;
+}
+
+const SDrawnTransform &CDemonActor::getDrawnTransform() const {
+    return drawn_transform_;
+}
+
+void CDemonActor::setDrawnTransform(const SDrawnTransform &drawn_transform) {
+    drawn_transform_ = drawn_transform;
+}
+
+const common::CVector3i &CDemonActor::getScale() const {
+    return scale_;
+}
+
+void CDemonActor::setScale(const common::CVector3i &scale) {
+    scale_ = scale;
 }
 
 // Files before version 7 held a field of view, which is read and dropped.

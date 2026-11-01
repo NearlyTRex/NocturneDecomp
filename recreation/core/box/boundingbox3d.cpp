@@ -4,6 +4,7 @@
 
 #include <algorithm>
 #include <array>
+#include <bit>
 #include <cmath>
 #include <cstddef>
 #include <optional>
@@ -68,6 +69,15 @@ common::CVector3f reversedAndNormalised(const common::CVector3f &direction) {
 
 } // namespace
 
+// Inside out, so the first point expanded by is the whole box.
+// nocedit 0x00420fb0
+void CBoundingBox3D::reset() {
+    // 1e37, the original's bits.
+    const auto empty_bound = std::bit_cast<float>(0x7cf0bdc2U);
+    min = {.x = empty_bound, .y = empty_bound, .z = empty_bound};
+    max = {.x = -empty_bound, .y = -empty_bound, .z = -empty_bound};
+}
+
 // A NaN on either side of a min test stores the point, as the original's unordered compare does.
 // nocedit 0x00420240
 void CBoundingBox3D::expand(const common::CVector3f &point) {
@@ -83,6 +93,13 @@ void CBoundingBox3D::expand(const common::CVector3f &point) {
         min.z = point.z;
     }
     max.z = std::max(max.z, point.z);
+}
+
+// nocedit 0x004202b0
+common::CVector3f CBoundingBox3D::getCorner(std::uint32_t corner_index) const {
+    return {.x = (corner_index & kCornerMaxX) != 0 ? max.x : min.x,
+            .y = (corner_index & kCornerMaxY) != 0 ? max.y : min.y,
+            .z = (corner_index & kCornerMaxZ) != 0 ? max.z : min.z};
 }
 
 // nocedit 0x00420940
@@ -126,6 +143,15 @@ float CBoundingBox3D::doesRayIntersect(const common::CVector3f &ray_origin,
         out_normal->*kAxes.at(plane) = entries.at(plane).side;
     }
     return distance;
+}
+
+// x only when it is above both the others; of y and z, z when they are equal.
+// nocedit 0x00421060
+float CBoundingBox3D::getMaximumBound() const {
+    if (max.x <= max.y || max.x <= max.z) {
+        return max.y <= max.z ? max.z : max.y;
+    }
+    return max.x;
 }
 
 } // namespace nocturne::core

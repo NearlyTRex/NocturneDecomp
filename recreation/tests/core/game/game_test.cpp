@@ -1,11 +1,14 @@
+#include "core/game/chapterselectmode.h"
 #include "core/game/game.h"
 #include "engine/gameclock.h"
+#include "tests/mocks/core/gameparts.h"
 #include "tests/mocks/engine/mockgameclock.h"
 
 #include <gmock/gmock.h>
 #include <gtest/gtest.h>
 
 #include <climits>
+#include <string>
 #include <type_traits>
 
 namespace nocturne::core {
@@ -18,7 +21,7 @@ TEST(CGame, IsConcrete) {
 }
 
 TEST(CGame, Constructors) {
-    static_assert(std::is_constructible_v<CGame, engine::IGameClock &>);
+    static_assert(std::is_constructible_v<CGame, const SGameOwners &>);
     static_assert(!std::is_default_constructible_v<CGame>);
 }
 
@@ -30,7 +33,8 @@ TEST(CGame, PublicInterface) {
     static_assert(std::is_same_v<decltype(&CGame::displayMessage), void (CGame::*)(char *, float)>);
     static_assert(std::is_same_v<decltype(&CGame::setFudgeTarget),
                                  void (CGame::*)(common::CVector3f *, float)>);
-    static_assert(std::is_same_v<decltype(&CGame::runGameSession), int (CGame::*)()>);
+    static_assert(std::is_same_v<decltype(&CGame::runGameSession),
+                                 int (CGame::*)(const SGameSessionOwners &)>);
     static_assert(std::is_same_v<decltype(&CGame::restoreDefaultControls), void (CGame::*)()>);
     static_assert(std::is_same_v<decltype(&CGame::resetKeyState), void (CGame::*)()>);
     static_assert(std::is_same_v<decltype(&CGame::resetInputAndCenterCursor), void (CGame::*)()>);
@@ -42,7 +46,11 @@ TEST(CGame, PublicInterface) {
     static_assert(
         std::is_same_v<decltype(&CGame::setStatusDisplay), void (CGame::*)(char *, float, float)>);
     static_assert(std::is_same_v<decltype(&CGame::loadGame), void (CGame::*)(char *, int)>);
-    static_assert(std::is_same_v<decltype(&CGame::showChapterSelect), void (CGame::*)(int)>);
+    static_assert(
+        std::is_same_v<decltype(&CGame::showChapterSelect),
+                       void (CGame::*)(const SChapterSelectOwners &, EChapterSelectMode)>);
+    static_assert(std::is_same_v<decltype(&CGame::getCurrentSaveFile),
+                                 const std::string &(CGame::*)() const>);
     static_assert(
         std::is_same_v<decltype(&CGame::displayBitmap), void (CGame::*)(char *, int, int)>);
     static_assert(std::is_same_v<decltype(&CGame::slamDT), void (CGame::*)(float)>);
@@ -61,7 +69,8 @@ protected:
     }
 
     ::testing::StrictMock<engine::MockGameClock> clock_;
-    CGame game_{clock_};
+    CGameParts parts_{clock_};
+    CGame &game_ = parts_.getGame();
 };
 
 // The values the original constructor gives the INI's settings before the INI is read.

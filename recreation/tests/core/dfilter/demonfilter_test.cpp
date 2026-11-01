@@ -1,13 +1,20 @@
+#include "common/error/fatalerror.h"
 #include "core/dfilter/demonfilter.h"
+#include "tests/mocks/engine/podfixture.h"
 
+#include <gmock/gmock.h>
 #include <gtest/gtest.h>
 
 #include <cstddef>
 #include <cstdint>
+#include <string>
 #include <type_traits>
 
 namespace nocturne::core {
 namespace {
+
+using ::testing::StrEq;
+using ::testing::ThrowsMessage;
 
 TEST(CDemonFilter, IsConcrete) {
     static_assert(!std::is_abstract_v<CDemonFilter>);
@@ -19,7 +26,8 @@ TEST(CDemonFilter, Constructors) {
 }
 
 TEST(CDemonFilter, PublicInterface) {
-    static_assert(std::is_same_v<decltype(&CDemonFilter::load), void (CDemonFilter::*)(char *)>);
+    static_assert(std::is_same_v<decltype(&CDemonFilter::load),
+                                 void (CDemonFilter::*)(const engine::CDosIo &, std::string_view)>);
     static_assert(
         std::is_same_v<decltype(&CDemonFilter::init), void (CDemonFilter::*)(float, int)>);
 }
@@ -111,6 +119,58 @@ TEST(CDemonFilter, AFreshSpotReplacesTheLevelsBefore) {
     filter.init(1.0F, 0);
     filter.init(0.5F, 0);
     EXPECT_EQ(at(filter, 2, 2), 32);
+}
+
+class CDemonFilterLoadTest : public engine::CPodFixture {
+protected:
+    CDemonFilter filter_;
+};
+
+// Each byte on disk is a quarter of its level's scale; the name is the file's.
+TEST_F(CDemonFilterLoadTest, AFilterIsASquareOfBytesAQuarterAsBright) {
+    std::string bytes(std::size_t{64} * 64, '\0');
+    bytes[0] = '\xff';
+    bytes[65] = '\x07';
+    givenFile("art\\beam.flt", bytes);
+    EXPECT_EQ(filter_.getName(), "unnamed");
+    filter_.load(dosio_, "beam.flt");
+    EXPECT_EQ(filter_.getSize(), 64);
+    EXPECT_EQ(filter_.getCount(), 64);
+    ASSERT_EQ(filter_.getData().size(), 64U * 64U);
+    EXPECT_EQ(filter_.getData()[0], 0x3f);
+    EXPECT_EQ(filter_.getData()[65], 1);
+    EXPECT_EQ(filter_.getName(), "beam.flt");
+}
+
+// The square root is chopped, so bytes short of the next square are passed over.
+TEST_F(CDemonFilterLoadTest, BytesPastTheSquareArePassedOver) {
+    givenFile("art\\big.flt", std::string((256 * 256) + 3, '\x04'));
+    filter_.load(dosio_, "big.flt");
+    EXPECT_EQ(filter_.getSize(), 256);
+    EXPECT_EQ(filter_.getData().size(), 256U * 256U);
+    EXPECT_EQ(filter_.getData()[0], 1);
+}
+
+TEST_F(CDemonFilterLoadTest, AMissingNonSquareOrBadlySizedFilterIsFatal) {
+    EXPECT_THAT(
+        [this] { filter_.load(dosio_, "none.flt"); },
+        ThrowsMessage<common::CFatalError>(StrEq("CDemonFilter::load - Bad filename : none.flt")));
+    givenFile("art\\long.flt", std::string(std::size_t{64} * 70, '\0'));
+    EXPECT_THAT(
+        [this] { filter_.load(dosio_, "long.flt"); },
+        ThrowsMessage<common::CFatalError>(StrEq("CDemonFilter::load - Non-square filter 66x67")));
+    givenFile("art\\small.flt", std::string(std::size_t{63} * 63, '\0'));
+    EXPECT_THAT(
+        [this] { filter_.load(dosio_, "small.flt"); },
+        ThrowsMessage<common::CFatalError>(StrEq("CDemonFilter::load - Bad filter size 63")));
+    givenFile("art\\huge.flt", std::string(std::size_t{257} * 257, '\0'));
+    EXPECT_THAT(
+        [this] { filter_.load(dosio_, "huge.flt"); },
+        ThrowsMessage<common::CFatalError>(StrEq("CDemonFilter::load - Bad filter size 257")));
+    givenFile("art\\empty.flt", "");
+    EXPECT_THAT(
+        [this] { filter_.load(dosio_, "empty.flt"); },
+        ThrowsMessage<common::CFatalError>(StrEq("CDemonFilter::load - Bad filter size 0")));
 }
 
 } // namespace

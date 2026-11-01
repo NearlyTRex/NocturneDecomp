@@ -9,7 +9,7 @@ class CShovel : public CWeapon {
 public:
     static const CDemonActorType kType;
 
-    CShovel();
+    explicit CShovel(CActor &classes);
     ~CShovel() override;
 
     [[nodiscard]] const CDemonActorType &getActorType() const override;

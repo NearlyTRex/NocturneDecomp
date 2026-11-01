@@ -46,13 +46,18 @@ public:
     void savePVS(int *output_count, int **input_indices_array);
     float getVoxelHeightAtPosition(common::CVector3f *world_position);
     int voxelRaycast3D(common::CVector3f *start_position, common::CVector3f *end_position);
-    common::CVector3i *worldPositionToVoxelCoords(common::CVector3f *world_position,
-                                                  common::CVector3i *output_voxel_coords);
+    // The voxel the position is in, counted from the grid's corner; outside the grid, a voxel
+    // outside it.
+    [[nodiscard]] common::CVector3i
+    worldPositionToVoxelCoords(const common::CVector3f &world_position) const;
     int getVoxelHeightAtVoxelCoords(common::CVector3i *voxel_coords);
     [[nodiscard]] common::CVector3f getBBoxMin() const;
     [[nodiscard]] common::CVector3f getBBoxMax() const;
-    void markShadowVoxels(common::CVector3f *offset, common::CVector3f *rotation,
-                          common::CVector3f *extent, common::CVector3f *light_position);
+    // Marks the voxels a box fills, turned by the angles and moved to the position: the box is
+    // sampled at the middles of a lattice about two to a voxel along each axis, and each sample's
+    // voxel is set.
+    void markShadowVoxels(const common::CVector3f &position, const common::CVector3f &rotation,
+                          const common::CVector3f &box_min, const common::CVector3f &box_max);
     void commitShadowBuffer();
     void transferShadowVoxels(common::CVector3f *offset, common::CVector3f *rotation,
                               common::CVector3f *start, common::CVector3f *end);
@@ -67,6 +72,11 @@ public:
 
 private:
     void loadBinary(common::CBinaryReader &reader);
+    // The cube the position is in; outside the grid, a cube outside it.
+    [[nodiscard]] common::CVector3i
+    worldPositionToGridCoords(const common::CVector3f &world_position) const;
+    // Sets the shadow bit of the voxel the position is in; nothing outside the grid.
+    void setVoxelShadowBit(const common::CVector3f &world_position);
     void allocNewCubeList();
     void freeNewCubeList();
 

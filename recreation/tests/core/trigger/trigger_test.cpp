@@ -5,6 +5,7 @@
 #include "core/trigger/triggereventtype.h"
 #include "core/trigger/triggershape.h"
 #include "tests/mocks/core/notportedcalls.h"
+#include "tests/mocks/core/testclasses.h"
 #include "tests/mocks/core/testfieldsarchive.h"
 
 #include <gtest/gtest.h>
@@ -27,7 +28,8 @@ TEST(CTrigger, ItsRecordIsAVersionElevenActorThatMissionsCanCreate) {
     EXPECT_EQ(CTrigger::kType.latest_version, 11);
     EXPECT_EQ(CTrigger::kType.name_hash, hashClassName("CTrigger"));
     ASSERT_NE(CTrigger::kType.factory_func, nullptr);
-    const std::unique_ptr<CDemonActor> actor = CTrigger::kType.factory_func();
+    CTestClasses classes;
+    const std::unique_ptr<CDemonActor> actor = CTrigger::kType.factory_func(classes.get());
     EXPECT_EQ(&actor->getActorType(), &CTrigger::kType);
 }
 
@@ -191,7 +193,6 @@ TEST(CTrigger, TheOldestTriggersHoldFewerFields) {
 TEST(CTrigger, TheFunctionsNotPortedYetQuit) {
     CTrigger trigger;
     const NotPortedCalls calls = {
-        {"setup", [&] { trigger.setup(); }},
         {"process", [&] { trigger.process(0.0F); }},
         {"renderTransparent", [&] { static_cast<void>(trigger.renderTransparent()); }},
         {"getCollisionType", [&] { static_cast<void>(trigger.getCollisionType(nullptr)); }},
@@ -201,7 +202,7 @@ TEST(CTrigger, TheFunctionsNotPortedYetQuit) {
         {"processActionButton", [&] { static_cast<void>(trigger.processActionButton()); }},
         {"onLaserHit", [&] { trigger.onLaserHit(nullptr); }},
     };
-    EXPECT_EQ(calls.size(), 8U);
+    EXPECT_EQ(calls.size(), 7U);
     expectEachQuitsNotPorted("CTrigger", calls);
 }
 
@@ -240,6 +241,35 @@ TEST(CTrigger, PublicInterface) {
     static_assert(
         std::is_same_v<decltype(&CTrigger::acceptsDamageFrom), int (CTrigger::*)(CDemonActor *)>);
     static_assert(std::is_same_v<decltype(&CTrigger::applyDamage), void (CTrigger::*)(float)>);
+}
+
+// "none" in any case is no event; nor is a trigger drawn as transparent outside the editor.
+TEST(CTrigger, SettingUpTakesAnEventOfNoneAsNone) {
+    CTrigger trigger;
+    CTestFieldsArchive archive(trigger, CTrigger::kType, 1,
+                               "0\n0.5,1,0.5\n0\n\"NONE\"\n\"open\"\n");
+    trigger.archive(archive.get());
+    trigger.setTransparent(true);
+    trigger.setup();
+    EXPECT_EQ(trigger.getOnEvent(), "");
+    EXPECT_EQ(trigger.getOffEvent(), "open");
+    EXPECT_FALSE(trigger.isTransparent());
+    EXPECT_FALSE(trigger.isRenderable());
+}
+
+// Only a trigger a laser, a bullet or damage sets off collides.
+TEST(CTrigger, OnlyTriggersSetOffByHitsCollide) {
+    for (int cause = 0; cause <= 9; ++cause) {
+        CTrigger trigger;
+        CTestFieldsArchive archive(
+            trigger, CTrigger::kType, 11,
+            std::format("0\n1,1,1\n0\n\"\"\n\"\"\n{}\n\"\"\n\"\"\n0\n0\n0\n0\n0\n0\n1\n0\n\"\"\n",
+                        cause));
+        trigger.archive(archive.get());
+        trigger.setup();
+        EXPECT_EQ(trigger.isCollisionDisabled(), cause != 4 && cause != 5 && cause != 7)
+            << "cause " << cause;
+    }
 }
 
 } // namespace

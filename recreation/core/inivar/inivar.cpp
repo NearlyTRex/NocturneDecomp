@@ -8,6 +8,7 @@
 #include "engine/special/special.h"
 #include "platform/display.h"
 #include "platform/filesystem.h"
+#include "platform/upscaler.h"
 #include "sound/sndmain/sndmain.h"
 
 #include <cstddef>
@@ -16,7 +17,6 @@
 namespace nocturne::core {
 namespace {
 
-constexpr std::string_view kIniFilename = ".\\system\\nocturne.ini";
 // Room for a list of bindings; the original read each key as one number.
 constexpr std::size_t kBindingsBufferSize = 256;
 
@@ -59,6 +59,22 @@ void readGraphics(const engine::CIniFile &file, const SIniDataOwners &owners) {
     owners.fonts.setOsFontChoice(static_cast<EOsFontChoice>(
         readEnumValue(file, "osFont", static_cast<int>(owners.fonts.getOsFontChoice()),
                       static_cast<int>(EOsFontChoice::System))));
+    owners.fonts.setMenuFontChoice(static_cast<EMenuFontChoice>(
+        readEnumValue(file, "menuFont", static_cast<int>(owners.fonts.getMenuFontChoice()),
+                      static_cast<int>(EMenuFontChoice::Small))));
+    owners.display.setWindowSize(game.game_pixx, game.game_pixy);
+    owners.display.setWindowMode(static_cast<platform::EWindowMode>(
+        readEnumValue(file, "windowMode", static_cast<int>(owners.display.getWindowMode()),
+                      static_cast<int>(platform::EWindowMode::Borderless))));
+    owners.display.setUpscaler(static_cast<platform::EUpscaler>(
+        readEnumValue(file, "upscaler", static_cast<int>(owners.display.getUpscaler()),
+                      platform::kUpscalerCount - 1)));
+    // One out of range is the default.
+    const int sharpness =
+        file.getInteger("upscalerSharpness", owners.display.getUpscalerSharpness());
+    owners.display.setUpscalerSharpness(sharpness < 0 || sharpness > platform::kUpscalerSharpnessMax
+                                            ? platform::kUpscalerSharpnessDefault
+                                            : sharpness);
 }
 
 // The defaults for the control mode come first, then whatever the file binds over them.
@@ -111,6 +127,10 @@ void writeGraphics(engine::CIniFile &file, const SIniDataOwners &owners) {
     file.setInteger("quimbyFlag", game.quimby_flag);
     file.setInteger("currentBoard", owners.special.getCurrentGraphicsBoard());
     file.setInteger("osFont", static_cast<int>(owners.fonts.getOsFontChoice()));
+    file.setInteger("menuFont", static_cast<int>(owners.fonts.getMenuFontChoice()));
+    file.setInteger("windowMode", static_cast<int>(owners.display.getWindowMode()));
+    file.setInteger("upscaler", static_cast<int>(owners.display.getUpscaler()));
+    file.setInteger("upscalerSharpness", owners.display.getUpscalerSharpness());
 }
 
 void writeControls(engine::CIniFile &file, const CGame &game) {
@@ -138,7 +158,8 @@ void writeControls(engine::CIniFile &file, const CGame &game) {
 
 // The renderer DLL and AGP texturing the original also read have no reader in the game now, so
 // their lines are left as they are; retail has no Editor section. The window
-// opens at the resolution the game will run at, as the decomp's menu resolution change has it.
+// opens at the resolution the game will run at, as the decomp's menu resolution change has it,
+// in the enhanced game's window mode and upscaler.
 // nocedit 0x004fbd90
 void readIniData(engine::CIni &ini, platform::IFileSystem &file_system,
                  const SIniDataOwners &owners) {
@@ -155,7 +176,6 @@ void readIniData(engine::CIni &ini, platform::IFileSystem &file_system,
     file.readIniHeader("Debug");
     readFlag(file, "logConsoleFlag", owners.console.file_logging_enabled);
     readFlag(file, "headOfHorrorCheat", owners.game.head_of_horror_cheat);
-    owners.display.setWindowSize(owners.game.game_pixx, owners.game.game_pixy);
 }
 
 // nocedit 0x004fc510

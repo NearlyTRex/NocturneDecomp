@@ -54,6 +54,8 @@ TEST(CPickList, PublicInterface) {
         std::is_same_v<decltype(&CPickList::setHotkeys), void (CPickList::*)(std::string_view)>);
     static_assert(
         std::is_same_v<decltype(&CPickList::setForcedColumnCount), void (CPickList::*)(bool)>);
+    static_assert(
+        std::is_same_v<decltype(&CPickList::getCurrentIndex), int (CPickList::*)() const>);
     static_assert(CPickList::kStillOpen == -2);
     static_assert(CPickList::kCancelled == -1);
 }

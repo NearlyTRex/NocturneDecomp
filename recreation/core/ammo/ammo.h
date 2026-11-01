@@ -18,7 +18,8 @@ public:
     // The rounds it holds until told otherwise.
     static constexpr int kStartingAmmo = 20;
 
-    CAmmo();
+    // Its model is found among those the classes hold.
+    explicit CAmmo(CActor &classes);
     ~CAmmo() override;
     CAmmo(const CAmmo &) = delete;
     CAmmo &operator=(const CAmmo &) = delete;
@@ -44,7 +45,7 @@ public:
     [[nodiscard]] EAmmoType getAmmoType() const;
 
 private:
-    static std::unique_ptr<CDemonActor> create();
+    static std::unique_ptr<CDemonActor> create(CActor &classes);
 
     CKeyFramedModelInstance model_;
     std::string weapon_class_name_ = "CGun";

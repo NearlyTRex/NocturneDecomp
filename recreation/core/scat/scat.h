@@ -12,7 +12,7 @@ class CScat : public CHero {
 public:
     static const CDemonActorType kType;
 
-    CScat();
+    explicit CScat(CActor &classes);
     ~CScat() override;
     CScat(const CScat &) = delete;
     CScat &operator=(const CScat &) = delete;
@@ -30,7 +30,7 @@ public:
     int isWeaponDrawn() override;
 
 private:
-    static std::unique_ptr<CDemonActor> create();
+    static std::unique_ptr<CDemonActor> create(CActor &classes);
 };
 
 } // namespace nocturne::core

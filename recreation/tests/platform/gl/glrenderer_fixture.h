@@ -5,6 +5,7 @@
 #include "platform/gl/glvertexstream.h"
 #include "tests/mocks/platform/glrecorder.h"
 #include "tests/mocks/platform/mockglframepresenter.h"
+#include "tests/mocks/platform/mocklog.h"
 
 #include <gmock/gmock.h>
 #include <gtest/gtest.h>
@@ -60,7 +61,8 @@ struct SEngineState {
 struct SRendererFixture {
     CGlRecorder gl;
     ::testing::NiceMock<MockGlFramePresenter> presenter;
-    CGlRenderer renderer{gl.getApi(), presenter};
+    ::testing::NiceMock<MockLog> log;
+    CGlRenderer renderer{gl.getApi(), presenter, log};
     SEngineState engine;
     std::vector<void *> scanlines = std::vector<void *>(1200);
 

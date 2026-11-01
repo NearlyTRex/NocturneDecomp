@@ -33,11 +33,11 @@ int __cdecl core_skeledit_cpp_CDeformableModel_importVerticesS3D_FUN_0058bc40(CD
       }
       pSVar1 = &this_ptr->vertex_data_ptr[0][iVar1];
       pSVar1->num_bone_influences = 1;
-      pSVar1->position.x = local_1c;
-      pSVar1->position.y = local_18;
+      pSVar1->bone_offsets[0].x = local_1c;
+      pSVar1->bone_offsets[0].y = local_18;
       pSVar1->bone_indices[0] = '\0';
       pSVar1->bone_weights[0] = 1.0f;
-      pSVar1->position.z = local_14;
+      pSVar1->bone_offsets[0].z = local_14;
       iVar1 = iVar1 + 1;
     } while (iVar1 < this_ptr->vertex_count[0]);
   }

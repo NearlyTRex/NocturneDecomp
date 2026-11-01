@@ -10,7 +10,7 @@ class CTurret : public CWeapon {
 public:
     static const CDemonActorType kType;
 
-    CTurret();
+    explicit CTurret(CActor &classes);
     ~CTurret() override;
 
     void setup() override;

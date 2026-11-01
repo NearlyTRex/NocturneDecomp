@@ -1,15 +1,25 @@
 #include "core/dfilter/demonfilter.h"
 
+#include "common/error/error.h"
 #include "common/math/fixed.h"
+#include "engine/dosio/dosio.h"
 
 #include <algorithm>
 #include <cmath>
 #include <cstddef>
+#include <format>
+#include <optional>
+#include <string>
+#include <string_view>
 
 namespace nocturne::core {
 namespace {
 
 constexpr int kDefaultSize = 0x40;
+constexpr int kMinLoadedSize = 0x40;
+constexpr int kMaxLoadedSize = 0x100;
+// A file holds each level at four times its scale.
+constexpr unsigned kLoadedLevelShift = 2;
 // A fresh spot is its falloff times a quarter of 256.
 constexpr double kFreshScale = 256.0 * 0.25;
 
@@ -22,8 +32,6 @@ std::uint8_t toLevel(double value) {
 
 } // namespace
 
-// deferred: naming the filter "unnamed", which CDemonLight::applyFilter copies into the light,
-//   with CDemonFilter::load and CDemonLight::applyFilter
 // nocedit 0x004701f0
 CDemonFilter::CDemonFilter() : CDemonFilter(kDefaultSize, kDefaultSize) {}
 
@@ -80,6 +88,38 @@ int CDemonFilter::getCount() const {
 
 std::span<const std::uint8_t> CDemonFilter::getData() const {
     return data_buffer_;
+}
+
+const std::string &CDemonFilter::getName() const {
+    return name_;
+}
+
+// The width is the file's size's square root, chopped, and its height the size over that, so a
+// few bytes past a square are passed over.
+// nocedit 0x004702f0
+void CDemonFilter::load(const engine::CDosIo &dosio, std::string_view filename) {
+    const std::optional<std::string> bytes = dosio.readFile("art", filename);
+    if (!bytes) {
+        common::displayErrorAndQuit(
+            std::format("CDemonFilter::load - Bad filename : {}", filename));
+    }
+    const auto file_size = static_cast<int>(bytes->size());
+    size_ = common::truncateToInt(std::sqrt(static_cast<double>(file_size)));
+    count_ = size_ == 0 ? 0 : file_size / size_;
+    if (size_ != count_) {
+        common::displayErrorAndQuit(
+            std::format("CDemonFilter::load - Non-square filter {}x{}", size_, count_));
+    }
+    if (size_ < kMinLoadedSize || size_ > kMaxLoadedSize) {
+        common::displayErrorAndQuit(std::format("CDemonFilter::load - Bad filter size {}", size_));
+    }
+    allocMemory();
+    std::ranges::transform(bytes->begin(), bytes->begin() + static_cast<long>(data_buffer_.size()),
+                           data_buffer_.begin(), [](char byte) {
+                               return static_cast<std::uint8_t>(static_cast<unsigned char>(byte) >>
+                                                                kLoadedLevelShift);
+                           });
+    name_ = filename;
 }
 
 } // namespace nocturne::core

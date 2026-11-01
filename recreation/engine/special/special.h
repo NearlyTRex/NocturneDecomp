@@ -23,8 +23,10 @@ public:
     // The INI's useDirect3D: whether loadExternalRenderer may start the renderer.
     [[nodiscard]] bool getUseDirect3D() const;
     void setUseDirect3D(bool use_direct3d);
-    // Whether frames go through the hardware renderer.
+    // Whether frames go through the hardware renderer. Turning it off for a while draws through
+    // the software rasteriser.
     [[nodiscard]] bool getUseExternalRenderer() const;
+    void setUseExternalRenderer(bool use_external_renderer);
     // The INI's currentBoard: the graphics card the Graphics Options picked.
     [[nodiscard]] int getCurrentGraphicsBoard() const;
     void setCurrentGraphicsBoard(int board);

@@ -21,7 +21,7 @@ TEST(CFlameThrower, IsConcrete) {
 }
 
 TEST(CFlameThrower, Constructors) {
-    static_assert(std::is_constructible_v<CFlameThrower>);
+    static_assert(std::is_constructible_v<CFlameThrower, CActor &>);
 }
 
 TEST(CFlameThrower, PublicInterface) {

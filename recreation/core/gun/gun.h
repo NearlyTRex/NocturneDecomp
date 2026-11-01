@@ -12,7 +12,7 @@ class CGun : public CWeapon {
 public:
     static const CDemonActorType kType;
 
-    CGun();
+    explicit CGun(CActor &classes);
     ~CGun() override;
     CGun(const CGun &) = delete;
     CGun &operator=(const CGun &) = delete;
@@ -24,7 +24,7 @@ public:
     float getDamage() override;
 
 private:
-    static std::unique_ptr<CDemonActor> create();
+    static std::unique_ptr<CDemonActor> create(CActor &classes);
 };
 
 } // namespace nocturne::core

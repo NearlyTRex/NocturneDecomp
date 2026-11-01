@@ -16,10 +16,6 @@ namespace {
 
 } // namespace
 
-void CCharacter::setup() {
-    notPorted("setup");
-}
-
 int CCharacter::renderOpaque() {
     notPorted("renderOpaque");
 }
@@ -30,10 +26,6 @@ int CCharacter::renderTransparent() {
 
 void CCharacter::renderBackground(int /*layer_flag*/) {
     notPorted("renderBackground");
-}
-
-CBoundingBox3D *CCharacter::getBoundingBox(CBoundingBox3D * /*out_box*/) {
-    notPorted("getBoundingBox");
 }
 
 ECollisionType CCharacter::getCollisionType(SCollisionInfo * /*collision_info*/) {

@@ -21,7 +21,7 @@ TEST(CLightActor, IsConcrete) {
 }
 
 TEST(CLightActor, Constructors) {
-    static_assert(std::is_constructible_v<CLightActor>);
+    static_assert(std::is_constructible_v<CLightActor, CActor &>);
 }
 
 TEST(CLightActor, PublicInterface) {

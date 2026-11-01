@@ -2,6 +2,7 @@
 #include "core/stranger/stranger.h"
 #include "tests/mocks/core/notportedcalls.h"
 #include "tests/mocks/core/testactor.h"
+#include "tests/mocks/core/testclasses.h"
 #include "tests/mocks/core/testheroarchive.h"
 
 #include <gtest/gtest.h>
@@ -25,7 +26,7 @@ TEST(CStranger, IsConcrete) {
 }
 
 TEST(CStranger, Constructors) {
-    static_assert(std::is_constructible_v<CStranger>);
+    static_assert(std::is_constructible_v<CStranger, CActor &>);
 }
 
 TEST(CStranger, PublicInterface) {
@@ -62,12 +63,14 @@ TEST(CStranger, ItsRecordIsAVersionNineHeroThatMissionsCanCreate) {
     EXPECT_EQ(CStranger::kType.latest_version, 9);
     EXPECT_EQ(CStranger::kType.name_hash, hashClassName("CStranger"));
     ASSERT_NE(CStranger::kType.factory_func, nullptr);
-    const std::unique_ptr<CDemonActor> actor = CStranger::kType.factory_func();
+    CTestClasses classes;
+    const std::unique_ptr<CDemonActor> actor = CStranger::kType.factory_func(classes.get());
     EXPECT_EQ(&actor->getActorType(), &CStranger::kType);
 }
 
 TEST(CStranger, TheStrangerHasNothingInHandAndNothingPendingUntilToldOtherwise) {
-    const CStranger hero;
+    CTestClasses classes;
+    const CStranger hero(classes.get());
     EXPECT_EQ(hero.getLadderToDescend(), nullptr);
     EXPECT_FALSE(hero.areGunsDrawn());
     EXPECT_EQ(hero.getWeapon(), nullptr);
@@ -92,7 +95,8 @@ protected:
         EXPECT_TRUE(archive.isFinished());
     }
 
-    CStranger hero_;
+    CTestClasses classes_;
+    CStranger hero_{classes_.get()};
     CTestActor ladder_{kTestBaseType};
     CTestActor gun_{kTestBaseType};
 };
@@ -147,9 +151,9 @@ TEST_F(CStrangerArchiveTest, AVersionOneStrangerHasOnlyAHerosFields) {
 }
 
 TEST(CStranger, TheFunctionsNotPortedYetQuit) {
-    CStranger hero;
+    CTestClasses classes;
+    CStranger hero(classes.get());
     const NotPortedCalls calls = {
-        {"setup", [&] { hero.setup(); }},
         {"process", [&] { hero.process(0.0F); }},
         {"renderOpaque", [&] { static_cast<void>(hero.renderOpaque()); }},
         {"renderTransparent", [&] { static_cast<void>(hero.renderTransparent()); }},
@@ -165,7 +169,7 @@ TEST(CStranger, TheFunctionsNotPortedYetQuit) {
         {"isWeaponDrawn", [&] { static_cast<void>(hero.isWeaponDrawn()); }},
         {"reset", [&] { hero.reset(); }},
     };
-    EXPECT_EQ(calls.size(), 14U);
+    EXPECT_EQ(calls.size(), 13U);
     expectEachQuitsNotPorted("CStranger", calls);
 }
 

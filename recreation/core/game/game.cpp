@@ -15,13 +15,13 @@ constexpr double kDeltaTimeToSeconds = 1.0 / 65536.0;
 
 } // namespace
 
-CGame::CGame(engine::IGameClock &clock) : clock_(clock) {
+CGame::CGame(const SGameOwners &owners) : owners_(owners) {
     restoreDefaultControls();
 }
 
 // nocedit 0x004d7d80
 void CGame::saveClockTime() {
-    clocktime_ = clock_.getTime();
+    clocktime_ = owners_.clock.getTime();
 }
 
 // deferred: the fixed thirtieth of a second, scaled, while a debug movie records, with
@@ -37,7 +37,7 @@ void CGame::saveClockTime() {
 //   CGame::runGameSession
 // nocedit 0x004d7d90
 void CGame::updateDT() {
-    const int now = clock_.getTime();
+    const int now = owners_.clock.getTime();
     const int elapsed = common::wrappingSubtract(now, clocktime_) / kTicksPerDeltaUnit;
     clocktime_ = now;
     const int clamped = std::clamp(elapsed, 0, kMaxDeltaTimeInt);

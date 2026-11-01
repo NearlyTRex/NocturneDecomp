@@ -8,24 +8,39 @@
 #include "core/baron/baron.h"
 #include "core/baron/baronweapon.h"
 #include "core/barrier/barrier.h"
+#include "core/boxactor/boxactor.h"
 #include "core/charactr/character.h"
 #include "core/colonel/colonel.h"
+#include "core/door/door.h"
+#include "core/enemy/enemy.h"
+#include "core/flame/flame.h"
 #include "core/gabriela/gabriella.h"
 #include "core/game/game.h"
+#include "core/ghoul/ghoul.h"
 #include "core/gun/gun.h"
 #include "core/haystack/haystack.h"
 #include "core/health/healthitem.h"
 #include "core/hero/hero.h"
 #include "core/hero/heroplaceholder.h"
 #include "core/icepick/icepick.h"
+#include "core/lever/lever.h"
+#include "core/lightgun/lightgun.h"
 #include "core/litecone/lightcone.h"
+#include "core/mobster/mobster.h"
 #include "core/moloch/moloch.h"
+#include "core/npc/npc.h"
+#include "core/platfrm/platform.h"
 #include "core/scat/scat.h"
 #include "core/stranger/stranger.h"
 #include "core/svetlana/svetlana.h"
 #include "core/trigger/trigger.h"
 #include "core/waypoint/waypoint.h"
 #include "core/weapon/weapon.h"
+#include "core/werewolf/werewolf.h"
+#include "core/zombie/zombie.h"
+#include "tests/mocks/core/gameparts.h"
+#include "tests/mocks/core/mockdeformablemodels.h"
+#include "tests/mocks/core/mockkeyframedmodels.h"
 #include "tests/mocks/core/testactor.h"
 #include "tests/mocks/engine/mockgameclock.h"
 
@@ -38,6 +53,7 @@
 #include <memory>
 #include <string_view>
 #include <type_traits>
+#include <utility>
 
 namespace nocturne::core {
 namespace {
@@ -50,13 +66,16 @@ TEST(CActor, IsConcrete) {
 }
 
 TEST(CActor, Constructors) {
-    static_assert(std::is_constructible_v<CActor, const CGame &, common::CWatcomRandom &>);
+    static_assert(std::is_constructible_v<CActor, const CGame &, common::CWatcomRandom &,
+                                          IDeformableModels &, IKeyFramedModels &>);
 }
 
 TEST(CActor, PublicInterface) {
     static_assert(
         std::is_same_v<decltype(&CActor::setRandomSeed), void (CActor::*)(std::uint32_t)>);
     static_assert(std::is_same_v<decltype(&CActor::getRandomFloatFromRange),
+                                 float (CActor::*)(float, float)>);
+    static_assert(std::is_same_v<decltype(&CActor::getCosmeticFloatFromRange),
                                  float (CActor::*)(float, float)>);
     static_assert(std::is_same_v<decltype(&CActor::getRandomInt), int (CActor::*)(int, int)>);
     static_assert(std::is_same_v<decltype(&CActor::randomChance), int (CActor::*)(float)>);
@@ -65,16 +84,23 @@ TEST(CActor, PublicInterface) {
     static_assert(std::is_same_v<decltype(&CActor::getActorClassByName),
                                  const CDemonActorType *(CActor::*)(std::string_view) const>);
     static_assert(std::is_same_v<decltype(&CActor::createActorByName),
-                                 std::unique_ptr<CDemonActor> (CActor::*)(std::string_view) const>);
+                                 std::unique_ptr<CDemonActor> (CActor::*)(std::string_view)>);
 }
 
 class CActorRegistryTest : public ::testing::Test {
 protected:
     ::testing::NiceMock<engine::MockGameClock> clock_;
-    CGame game_{clock_};
+    CGameParts game_parts_{clock_};
+    CGame &game_ = game_parts_.getGame();
     common::CWatcomRandom crt_;
-    CActor actor_{game_, crt_};
+    ::testing::NiceMock<MockDeformableModels> models_;
+    ::testing::NiceMock<MockKeyFramedModels> keyframed_models_;
+    CActor actor_{game_, crt_, models_, keyframed_models_};
 };
+
+TEST_F(CActorRegistryTest, TheActorsItMakesFindTheirModelsInWhatItWasGiven) {
+    EXPECT_EQ(&actor_.getModels(), &models_);
+}
 
 TEST_F(CActorRegistryTest, ThePortedClassesAreRegistered) {
     EXPECT_EQ(actor_.getActorClassByName("CDemonActor"), &CDemonActor::kType);
@@ -100,7 +126,32 @@ TEST_F(CActorRegistryTest, ThePortedClassesAreRegistered) {
     EXPECT_EQ(actor_.getActorClassByName("CBackgroundActor"), &CBackgroundActor::kType);
     EXPECT_EQ(actor_.getActorClassByName("CHealthItem"), &CHealthItem::kType);
     EXPECT_EQ(actor_.getActorClassByName("CLightCone"), &CLightCone::kType);
-    EXPECT_EQ(actor_.getActorClassCount(), 23U);
+    EXPECT_EQ(actor_.getActorClassByName("CDoor"), &CDoor::kType);
+    EXPECT_EQ(actor_.getActorClassByName("CLever"), &CLever::kType);
+    EXPECT_EQ(actor_.getActorClassByName("CBoxActor"), &CBoxActor::kType);
+    EXPECT_EQ(actor_.getActorClassByName("CPlatform"), &CPlatform::kType);
+    EXPECT_EQ(actor_.getActorClassByName("CNPC"), &CNPC::kType);
+    EXPECT_EQ(actor_.getActorClassByName("CEnemy"), &CEnemy::kType);
+    EXPECT_EQ(actor_.getActorClassByName("CZombie"), &CZombie::kType);
+    EXPECT_EQ(actor_.getActorClassByName("CWerewolf"), &CWerewolf::kType);
+    EXPECT_EQ(actor_.getActorClassByName("CMobster"), &CMobster::kType);
+    EXPECT_EQ(actor_.getActorClassByName("CGhoul"), &CGhoul::kType);
+    EXPECT_EQ(actor_.getActorClassByName("CFlame"), &CFlame::kType);
+    EXPECT_EQ(actor_.getActorClassByName("CLightGun"), &CLightGun::kType);
+    EXPECT_EQ(actor_.getActorClassCount(), 35U);
+}
+
+TEST_F(CActorRegistryTest, EachHeroIsMadeWithItsOwnModel) {
+    for (const auto &[class_name, model_name] :
+         {std::pair{"CGabriella", "gabriela.dfm"}, std::pair{"CSvetlana", "svetlana.dfm"},
+          std::pair{"CStranger", "stranger.dfm"}, std::pair{"CScat", "scat.dfm"},
+          std::pair{"CBaron", "baron.dfm"}, std::pair{"CIcePick", "icepick.dfm"},
+          std::pair{"CHaystack", "haystack.dfm"}, std::pair{"CColonel", "colonel.dfm"},
+          std::pair{"CMoloch", "moloch_h.dfm"}}) {
+        const std::unique_ptr<CDemonActor> hero = actor_.createActorByName(class_name);
+        EXPECT_EQ(dynamic_cast<CCharacter &>(*hero).getModel().getModelName(), model_name)
+            << class_name;
+    }
 }
 
 // Only the letters and digits count, in either case.
@@ -157,9 +208,12 @@ protected:
     }
 
     ::testing::StrictMock<engine::MockGameClock> clock_;
-    CGame game_{clock_};
+    CGameParts game_parts_{clock_};
+    CGame &game_ = game_parts_.getGame();
     common::CWatcomRandom crt_;
-    CActor actor_{game_, crt_};
+    ::testing::NiceMock<MockDeformableModels> models_;
+    ::testing::NiceMock<MockKeyFramedModels> keyframed_models_;
+    CActor actor_{game_, crt_, models_, keyframed_models_};
 };
 
 TEST_F(CActorTest, OutsideASimFrameDrawsFromTheCrtStream) {
@@ -184,6 +238,12 @@ TEST_F(CActorTest, TheSimStreamReplaysFromItsSeed) {
     EXPECT_EQ(actor_.getRandomFloatFromRange(0.0F, 1.0F), first);
     EXPECT_EQ(actor_.getRandomFloatFromRange(0.0F, 1.0F), second);
     EXPECT_NE(first, second);
+}
+
+TEST_F(CActorTest, ACosmeticDrawComesOffTheCrtStreamEvenInASimFrame) {
+    inSimFrame(1);
+    EXPECT_EQ(actor_.getCosmeticFloatFromRange(0.0F, 10.0F), 5.13870668F);
+    EXPECT_EQ(actor_.getRandomFloatFromRange(-1.0F, 1.0F), -0.625465631F);
 }
 
 TEST_F(CActorTest, AReversedRangeDrawsFromTheMaximumDown) {

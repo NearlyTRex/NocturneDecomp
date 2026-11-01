@@ -33,7 +33,7 @@ public:
     [[nodiscard]] std::span<CDemonActor *const> getAdjacentWaypoints() const;
 
 private:
-    static std::unique_ptr<CDemonActor> create();
+    static std::unique_ptr<CDemonActor> create(CActor &classes);
 
     std::vector<CDemonActor *> adjacent_waypoints_;
 };

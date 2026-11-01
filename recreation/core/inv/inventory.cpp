@@ -123,6 +123,15 @@ void CInventory::load(CActorArchive &actor_archive) {
     }
 }
 
+// The original also quits when it doesn't yet own its items, which here it does from load on, and
+// checks each is an actor it made, which an object always is.
+// nocedit 0x004ff780
+void CInventory::setupItems() {
+    for (const std::unique_ptr<CDemonActor> &item : items_) {
+        item->setup();
+    }
+}
+
 std::span<const std::unique_ptr<CDemonActor>> CInventory::getItems() const {
     return items_;
 }

@@ -2,10 +2,13 @@
 #include "core/actor/groundtype.h"
 #include "core/backgnd/backgroundactor.h"
 #include "tests/mocks/core/notportedcalls.h"
+#include "tests/mocks/core/testclasses.h"
 #include "tests/mocks/core/testfieldsarchive.h"
 
+#include <gmock/gmock.h>
 #include <gtest/gtest.h>
 
+#include <format>
 #include <memory>
 #include <type_traits>
 
@@ -25,7 +28,7 @@ TEST(CBackgroundActor, IsConcrete) {
 }
 
 TEST(CBackgroundActor, Constructors) {
-    static_assert(std::is_constructible_v<CBackgroundActor>);
+    static_assert(std::is_constructible_v<CBackgroundActor, CActor &>);
 }
 
 TEST(CBackgroundActor, PublicInterface) {
@@ -53,19 +56,22 @@ TEST(CBackgroundActor, ItsRecordIsVersion2UnderCDemonActorAndMissionsCanCreateOn
     EXPECT_EQ(CBackgroundActor::kType.parent_type, &CDemonActor::kType);
     EXPECT_EQ(CBackgroundActor::kType.latest_version, 2);
     ASSERT_NE(CBackgroundActor::kType.factory_func, nullptr);
-    const std::unique_ptr<CDemonActor> actor = CBackgroundActor::kType.factory_func();
+    CTestClasses classes;
+    const std::unique_ptr<CDemonActor> actor = CBackgroundActor::kType.factory_func(classes.get());
     EXPECT_EQ(&actor->getActorType(), &CBackgroundActor::kType);
 }
 
 TEST(CBackgroundActor, SceneryIsACandleNothingCollidesWithOnDefaultGround) {
-    CBackgroundActor scenery;
+    CTestClasses classes;
+    CBackgroundActor scenery{classes.get()};
     EXPECT_EQ(scenery.getModel().getModelName(), "candle.kfm");
     EXPECT_FALSE(scenery.isCollidedWith());
     EXPECT_EQ(scenery.getGroundType(), EGroundType::kDefault);
 }
 
 TEST(CBackgroundActor, SceneryIsReadWithItsModelAndGround) {
-    CBackgroundActor scenery;
+    CTestClasses classes;
+    CBackgroundActor scenery{classes.get()};
     CTestFieldsArchive archive(scenery, CBackgroundActor::kType, 2,
                                "\"chair.kfm\" // modelName\n1 // collideWithMe\n7 // groundType\n");
     scenery.archive(archive.get());
@@ -77,7 +83,8 @@ TEST(CBackgroundActor, SceneryIsReadWithItsModelAndGround) {
 }
 
 TEST(CBackgroundActor, AVersionOneSceneryKeepsTheDefaultGround) {
-    CBackgroundActor scenery;
+    CTestClasses classes;
+    CBackgroundActor scenery{classes.get()};
     CTestFieldsArchive archive(scenery, CBackgroundActor::kType, 1, "\"chair.kfm\"\n0\n");
     scenery.archive(archive.get());
     EXPECT_EQ(scenery.getGroundType(), EGroundType::kDefault);
@@ -85,7 +92,8 @@ TEST(CBackgroundActor, AVersionOneSceneryKeepsTheDefaultGround) {
 }
 
 TEST(CBackgroundActor, ProcessingLeavesSceneryAsItIs) {
-    CBackgroundActor scenery;
+    CTestClasses classes;
+    CBackgroundActor scenery{classes.get()};
     scenery.setActorName("Candle");
     scenery.process(1.0F);
     EXPECT_EQ(scenery.getActorName(), "Candle");
@@ -93,15 +101,35 @@ TEST(CBackgroundActor, ProcessingLeavesSceneryAsItIs) {
 }
 
 TEST(CBackgroundActor, TheFunctionsNotPortedYetQuit) {
-    CBackgroundActor scenery;
+    CTestClasses classes;
+    CBackgroundActor scenery{classes.get()};
     const NotPortedCalls calls = {
-        {"setup", [&] { scenery.setup(); }},
         {"renderOpaque", [&] { static_cast<void>(scenery.renderOpaque()); }},
         {"renderBackground", [&] { scenery.renderBackground(0); }},
         {"getBoundingBox", [&] { static_cast<void>(scenery.getBoundingBox(nullptr)); }},
         {"getCollisionType", [&] { static_cast<void>(scenery.getCollisionType(nullptr)); }},
     };
     expectEachQuitsNotPorted("CBackgroundActor", calls);
+}
+
+TEST(CBackgroundActor, SettingUpFindsItsModel) {
+    CTestClasses classes;
+    CBackgroundActor scenery{classes.get()};
+    EXPECT_CALL(classes.getKeyFramedModels(), loadModel(::testing::StrEq("candle.kfm")))
+        .WillOnce(::testing::ReturnRef(classes.getKeyFramedModel()));
+    scenery.setup();
+}
+
+TEST(CBackgroundActor, ItCollidesOnlyWhenItsFileSaysTo) {
+    for (const bool collide_with_me : {false, true}) {
+        CTestClasses classes;
+        CBackgroundActor scenery{classes.get()};
+        CTestFieldsArchive archive(scenery, CBackgroundActor::kType, 1,
+                                   std::format("\"candle.kfm\"\n{}\n", collide_with_me ? 1 : 0));
+        scenery.archive(archive.get());
+        scenery.setup();
+        EXPECT_EQ(scenery.isCollisionDisabled(), !collide_with_me);
+    }
 }
 
 } // namespace

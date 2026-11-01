@@ -22,7 +22,7 @@ struct CSkeleton_ptr_168828 {
     template<typename T> CSkeleton_ptr_168828(T* p) : _raw((void*)p) {}
     template<typename T> CSkeleton_ptr_168828& operator=(T* p) { _raw = (void*)p; return *this; }
     CVector3f* operator->() const { return (CVector3f*)_raw; }
-    CSkeleton* adj() const { return (CSkeleton*)((char*)_raw - offsetof(CSkeleton, bone_scales)); }
+    CSkeleton* adj() const { return (CSkeleton*)((char*)_raw - offsetof(CSkeleton, reference_bone_origins)); }
     template<typename T> operator T*() const { return (T*)_raw; }
     explicit operator bool() const { return _raw != 0; }
 };

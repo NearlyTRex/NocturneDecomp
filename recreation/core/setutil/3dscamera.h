@@ -27,8 +27,12 @@ public:
     // given.
     void load(common::CTextScanner &scanner, int set_file_version, const SFog &set_fog);
     void loadPVS(common::CTextScanner &scanner);
-    void apply(CDemonCamera *camera);
-    int testSphereInFrustum(common::CVector3f *world_position, float radius);
+    // Puts the scene camera where this one stands, turned and named as it is, with its lens and
+    // its ambient light.
+    void apply(CDemonCamera &camera) const;
+    // Whether a sphere about the point, in the camera's frame, reaches into the camera's box.
+    [[nodiscard]] bool testSphereInFrustum(const common::CVector3f &world_position,
+                                           float radius) const;
 
     [[nodiscard]] const std::string &getName() const;
     [[nodiscard]] const common::CVector3f &getPosition() const;
@@ -51,6 +55,9 @@ public:
     [[nodiscard]] float getAmbientValue() const;
     [[nodiscard]] int getCameraGroup() const;
     [[nodiscard]] bool getEnabled() const;
+    // The group of virtual director boxes the camera stands in, or -1 for none.
+    [[nodiscard]] int getVdirZone() const;
+    void setVdirZone(int vdir_zone);
 
 private:
     std::string name_;
@@ -66,6 +73,7 @@ private:
     float ambient_value_ = 0.0F;
     int camera_group_ = 0;
     bool enabled_ = false;
+    int vdir_zone_ = 0;
 };
 
 } // namespace nocturne::core

@@ -9,7 +9,7 @@ class CMineCar : public CPlatform {
 public:
     static const CDemonActorType kType;
 
-    CMineCar();
+    explicit CMineCar(CActor &classes);
     ~CMineCar() override;
 
     void setup() override;

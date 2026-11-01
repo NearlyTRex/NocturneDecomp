@@ -29,6 +29,8 @@ const CDemonActorType kPlacedHeroType = makeActorType("CTestPlacedHero", &CHero:
 // A hero from the last mission, which records where it is put and what it is told to walk to.
 class CTestPlacedHero : public CHero {
 public:
+    using CHero::CHero;
+
     [[nodiscard]] const CDemonActorType &getActorType() const override {
         return kPlacedHeroType;
     }
@@ -106,7 +108,7 @@ TEST_F(CDemonMissionHeroesTest, TheGamesHeroIsMadeAtThePlaceForTheFirstHero) {
 // It is put where the place is, in its area, and starts its first motion standing still.
 TEST_F(CDemonMissionHeroesTest, AHeroGivenIsPutAtThePlaceInstead) {
     addPlaceholder(0);
-    auto given = std::make_unique<CTestPlacedHero>();
+    auto given = std::make_unique<CTestPlacedHero>(actor_);
     given->setActorName("Gabriel");
     given->getModel().jumpToMotion(3, 5.0F);
     CTestPlacedHero &hero = *given;
@@ -121,6 +123,16 @@ TEST_F(CDemonMissionHeroesTest, AHeroGivenIsPutAtThePlaceInstead) {
     EXPECT_EQ(hero.getModel().getCurrentFrameNumber(), 0.0F);
     EXPECT_EQ(hero.walk_targets, (std::vector<CDemonActor *>{nullptr}));
     EXPECT_EQ(hero.walk_distances, (std::vector<std::pair<float, float>>{{0.0F, 0.0F}}));
+}
+
+// The set draws the first hero before every other actor.
+TEST_F(CDemonMissionHeroesTest, TheFirstHeroIsTheSetsLocalHero) {
+    addPlaceholder(0);
+    auto given = std::make_unique<CTestPlacedHero>(actor_);
+    CDemonActor *const hero = given.get();
+    ASSERT_TRUE(mission_.createHeros(std::move(given)));
+    set_.buildDisplayList(0);
+    EXPECT_THAT(set_.getSortedRenderActors(), ::testing::ElementsAre(hero));
 }
 
 // The error waits for a key, and the placeholders stay.

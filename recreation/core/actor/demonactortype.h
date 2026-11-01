@@ -30,9 +30,10 @@ namespace nocturne::core {
 }
 
 // An actor class as missions name it: its parent, how to make one, and the version of its
-// fields that save files write.
+// fields that save files write. Some classes draw random numbers from the actor classes making
+// them as they are made.
 struct CDemonActorType {
-    using Factory = std::unique_ptr<CDemonActor> (*)();
+    using Factory = std::unique_ptr<CDemonActor> (*)(CActor &classes);
 
     std::string_view class_name;
     const CDemonActorType *parent_type = nullptr;

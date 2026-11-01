@@ -20,7 +20,7 @@ CVector3f * __cdecl core_skeleton_cpp_CDeformableModel_skinSingleVertex_FUN_0059
   float local_24;
 
   pSVar1 = this_ptr->vertex_data_ptr[lod_index] + vertex_index;
-  input_vector = &pSVar1->position;
+  input_vector = pSVar1->bone_offsets;
   if (pSVar1->num_bone_influences == '\x01') {
     core_xform_cpp_transformVector3x4_FUN_005f4dc0
               (output_pos,input_vector,bone_matrices + pSVar1->bone_indices[0]);

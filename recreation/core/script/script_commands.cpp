@@ -6,6 +6,8 @@
 #include "core/script/script.h"
 #include "core/script/script_functions.h"
 #include "core/set/demonset.h"
+#include "core/setutil/3dscamera.h"
+#include "core/sound/sound.h"
 #include "engine/dosio/dosio.h"
 
 #include <algorithm>
@@ -52,8 +54,17 @@ Result checkText(CScript & /*script*/, SScriptStatement &statement) {
     return checkArgument(statement, kMaxText);
 }
 
-Result checkShortArgument(CScript & /*script*/, SScriptStatement &statement) {
-    return checkArgument(statement, kMaxShortArgument);
+// "(sound)": the sound name, played as the set's ambient sound when running.
+Result checkSetAmbientSound(CScript & /*script*/, SScriptStatement &statement) {
+    const std::expected<std::string, std::string> sound =
+        parseArgument(statement.rest, kMaxShortArgument);
+    if (!sound) {
+        return std::unexpected(sound.error());
+    }
+    if (statement.running) {
+        statement.owners.sound.playAmbientSound(*sound);
+    }
+    return {};
 }
 
 Result checkClearActorVariable(CScript & /*script*/, SScriptStatement &statement) {
@@ -148,8 +159,13 @@ Result checkSetCameraGroup(CScript & /*script*/, SScriptStatement &statement) {
         !scanned) {
         return scanned;
     }
-    if (!statement.owners.set.findCameraByName(trimString(camera))) {
+    const std::optional<std::size_t> index =
+        statement.owners.set.findCameraByName(trimString(camera));
+    if (!index) {
         return std::unexpected(std::format("Camera \"{}\" does not exist.", trimString(camera)));
+    }
+    if (statement.running) {
+        statement.owners.set.getCameras()[*index].setCameraGroup(group);
     }
     return {};
 }
@@ -192,6 +208,11 @@ Result checkEnableCameraGroup(CScript & /*script*/, SScriptStatement &statement)
             "Error parsing enableCameraGroup parms");
         !scanned) {
         return scanned;
+    }
+    if (statement.running) {
+        statement.owners.set.setCameraEnabledByGroup(
+            group, statement.owners.events.evaluateCondition(trimString(condition)));
+        return {};
     }
     return statement.owners.events.validateCondition(trimString(condition));
 }
@@ -310,7 +331,8 @@ const CScript::SCommand *CScript::findCommand(std::string_view name) {
         SCommand{.name = "allowEnemyAttack", .check = &checkCondition},
         SCommand{.name = "allowHeroControls", .check = &checkCondition},
         SCommand{.name = "allowHeroDamage", .check = &checkCondition},
-        SCommand{.name = "attachActorToPlatform", .check = &checkAttachActorToPlatform},
+        SCommand{
+            .name = "attachActorToPlatform", .check = &checkAttachActorToPlatform, .runs = true},
         SCommand{.name = "beginFadeIn", .check = &checkNothing},
         SCommand{.name = "beginFadeOut", .check = &checkNothing},
         SCommand{.name = "breakPoint", .check = &checkNothing},
@@ -328,7 +350,7 @@ const CScript::SCommand *CScript::findCommand(std::string_view name) {
         SCommand{.name = "displayBitmap", .check = &checkEventCommand},
         SCommand{.name = "else", .check = &checkElse},
         SCommand{.name = "enableCamera", .check = &checkEnableCamera},
-        SCommand{.name = "enableCameraGroup", .check = &checkEnableCameraGroup},
+        SCommand{.name = "enableCameraGroup", .check = &checkEnableCameraGroup, .runs = true},
         SCommand{.name = "enableHealthBar", .check = &checkEnableHealthBar},
         SCommand{.name = "end", .check = &checkNothing},
         SCommand{.name = "fadeAmbientSound", .check = &checkEventCommand},
@@ -372,9 +394,9 @@ const CScript::SCommand *CScript::findCommand(std::string_view name) {
         SCommand{.name = "say", .check = &checkSay},
         SCommand{.name = "selectWeapon", .check = &checkSelectWeapon},
         SCommand{.name = "setActorVariable", .check = &checkSetActorVariable},
-        SCommand{.name = "setAmbientSound", .check = &checkShortArgument},
+        SCommand{.name = "setAmbientSound", .check = &checkSetAmbientSound, .runs = true},
         SCommand{.name = "setCameraAmbient", .check = &checkEventCommand},
-        SCommand{.name = "setCameraGroup", .check = &checkSetCameraGroup},
+        SCommand{.name = "setCameraGroup", .check = &checkSetCameraGroup, .runs = true},
         SCommand{.name = "setCharacterHealth", .check = &checkSetCharacterHealth},
         SCommand{.name = "setCounter", .check = &checkEventCommand},
         SCommand{.name = "setFocusActor", .check = &checkSetFocusActor},

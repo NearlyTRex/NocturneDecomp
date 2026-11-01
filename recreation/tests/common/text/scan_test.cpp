@@ -53,5 +53,11 @@ TEST(ScanFloat, NoDigitsIsNothing) {
     EXPECT_EQ(scanFloat(""), std::nullopt);
 }
 
+TEST(ToCount, ANegativeCountIsNone) {
+    EXPECT_EQ(toCount(3), 3U);
+    EXPECT_EQ(toCount(0), 0U);
+    EXPECT_EQ(toCount(-2), 0U);
+}
+
 } // namespace
 } // namespace nocturne::common

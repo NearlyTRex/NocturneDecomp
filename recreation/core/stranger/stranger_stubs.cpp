@@ -15,10 +15,6 @@ namespace {
 
 } // namespace
 
-void CStranger::setup() {
-    notPorted("setup");
-}
-
 void CStranger::process(float /*delta_time*/) {
     notPorted("process");
 }

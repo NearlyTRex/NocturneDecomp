@@ -21,7 +21,7 @@ TEST(CConveyor, IsConcrete) {
 }
 
 TEST(CConveyor, Constructors) {
-    static_assert(std::is_constructible_v<CConveyor>);
+    static_assert(std::is_constructible_v<CConveyor, CActor &>);
 }
 
 TEST(CConveyor, PublicInterface) {

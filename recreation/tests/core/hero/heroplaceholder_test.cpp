@@ -6,7 +6,11 @@
 #include "core/actor/demonactortype.h"
 #include "core/game/game.h"
 #include "core/hero/heroplaceholder.h"
+#include "tests/mocks/core/gameparts.h"
 #include "tests/mocks/core/mockactorlookup.h"
+#include "tests/mocks/core/mockdeformablemodels.h"
+#include "tests/mocks/core/mockkeyframedmodels.h"
+#include "tests/mocks/core/testclasses.h"
 #include "tests/mocks/engine/mockgameclock.h"
 
 #include <gmock/gmock.h>
@@ -39,7 +43,7 @@ TEST(CHeroPlaceholder, PublicInterface) {
                                  const CDemonActorType &(CHeroPlaceholder::*)() const>);
     static_assert(std::is_same_v<decltype(&CHeroPlaceholder::createHero),
                                  std::unique_ptr<CHero> (CHeroPlaceholder::*)(
-                                     EHeroType, const CActor &, const CDemonMission &) const>);
+                                     EHeroType, CActor &, const CDemonMission &) const>);
 }
 
 TEST(CHeroPlaceholder, ItsRecordIsAVersionOneActorThatMissionsCanCreate) {
@@ -48,16 +52,21 @@ TEST(CHeroPlaceholder, ItsRecordIsAVersionOneActorThatMissionsCanCreate) {
     EXPECT_EQ(CHeroPlaceholder::kType.latest_version, 1);
     EXPECT_EQ(CHeroPlaceholder::kType.name_hash, hashClassName("CHeroPlaceholder"));
     ASSERT_NE(CHeroPlaceholder::kType.factory_func, nullptr);
-    const std::unique_ptr<CDemonActor> actor = CHeroPlaceholder::kType.factory_func();
+    CTestClasses classes;
+    const std::unique_ptr<CDemonActor> actor = CHeroPlaceholder::kType.factory_func(classes.get());
     EXPECT_EQ(&actor->getActorType(), &CHeroPlaceholder::kType);
+    EXPECT_TRUE(actor->isTransparent());
 }
 
 // After CDemonActor's fields, which hero the place is for.
 TEST(CHeroPlaceholder, ItsFileSaysWhichHeroItIsFor) {
     ::testing::NiceMock<engine::MockGameClock> clock;
-    const CGame game{clock};
+    CGameParts game_parts{clock};
+    const CGame &game = game_parts.getGame();
     common::CWatcomRandom crt;
-    const CActor classes{game, crt};
+    ::testing::NiceMock<MockDeformableModels> models;
+    ::testing::NiceMock<MockKeyFramedModels> keyframed_models;
+    CActor classes{game, crt, models, keyframed_models};
     ::testing::NiceMock<MockActorLookup> actors;
     CHeroPlaceholder placeholder;
     common::CTextScanner scanner("{ CHeroPlaceholder \"Spot\"\n2,1,2,3\n0,0,0\n0\n1 // index\n"

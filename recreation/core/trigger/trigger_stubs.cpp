@@ -15,10 +15,6 @@ namespace {
 
 } // namespace
 
-void CTrigger::setup() {
-    notPorted("setup");
-}
-
 void CTrigger::process(float /*delta_time*/) {
     notPorted("process");
 }

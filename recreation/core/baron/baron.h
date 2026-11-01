@@ -13,7 +13,7 @@ class CBaron : public CHero {
 public:
     static const CDemonActorType kType;
 
-    CBaron();
+    explicit CBaron(CActor &classes);
     ~CBaron() override;
     CBaron(const CBaron &) = delete;
     CBaron &operator=(const CBaron &) = delete;
@@ -41,7 +41,7 @@ public:
     [[nodiscard]] bool isSummoned() const;
 
 private:
-    static std::unique_ptr<CDemonActor> create();
+    static std::unique_ptr<CDemonActor> create(CActor &classes);
 
     std::string summon_event_ = "none";
     std::string go_away_event_ = "none";

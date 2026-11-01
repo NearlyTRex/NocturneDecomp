@@ -2,6 +2,7 @@
 #include "core/actor/demonactortype.h"
 #include "core/gun/gun.h"
 #include "tests/mocks/core/notportedcalls.h"
+#include "tests/mocks/core/testclasses.h"
 
 #include <gtest/gtest.h>
 
@@ -24,7 +25,7 @@ TEST(CGun, IsConcrete) {
 }
 
 TEST(CGun, Constructors) {
-    static_assert(std::is_constructible_v<CGun>);
+    static_assert(std::is_constructible_v<CGun, CActor &>);
 }
 
 TEST(CGun, PublicInterface) {
@@ -39,17 +40,20 @@ TEST(CGun, ItsRecordIsAVersion1WeaponThatMissionsCanCreate) {
     EXPECT_EQ(CGun::kType.parent_type, &CWeapon::kType);
     EXPECT_EQ(CGun::kType.latest_version, 1);
     ASSERT_NE(CGun::kType.factory_func, nullptr);
-    const std::unique_ptr<CDemonActor> gun = CGun::kType.factory_func();
+    CTestClasses classes;
+    const std::unique_ptr<CDemonActor> gun = CGun::kType.factory_func(classes.get());
     EXPECT_EQ(&gun->getActorType(), &CGun::kType);
 }
 
 TEST(CGun, AGunIsTheGatlingModel) {
-    const CGun gun;
+    CTestClasses classes;
+    const CGun gun{classes.get()};
     EXPECT_EQ(gun.getModel().getModelName(), "gat.kfm");
 }
 
 TEST(CGun, TheFunctionsNotPortedYetQuit) {
-    CGun gun;
+    CTestClasses classes;
+    CGun gun{classes.get()};
     const NotPortedCalls calls = {
         {"fire", [&] { static_cast<void>(gun.fire()); }},
         {"getDamage", [&] { static_cast<void>(gun.getDamage()); }},

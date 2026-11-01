@@ -124,6 +124,11 @@ CSdlWindow::CSdlWindow(std::string_view title, int width, int height) {
     if (!window_ || !SDL_StartTextInput(window_.get())) {
         throw std::runtime_error(SDL_GetError());
     }
+    // mainWindowProc answered WM_SETCURSOR with no cursor over the window; the game draws its own
+    // pointer where it wants one.
+    if (!SDL_HideCursor()) {
+        throw std::runtime_error(SDL_GetError());
+    }
 }
 
 SDL_Window *CSdlWindow::getSdlWindow() const {

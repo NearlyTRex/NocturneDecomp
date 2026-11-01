@@ -16,10 +16,6 @@ namespace {
 
 } // namespace
 
-void CDemonActor::setup() {
-    notPorted("setup");
-}
-
 void CDemonActor::process(float /*delta_time*/) {
     notPorted("process");
 }
@@ -34,10 +30,6 @@ int CDemonActor::renderTransparent() {
 
 void CDemonActor::renderBackground(int /*layer_flag*/) {
     notPorted("renderBackground");
-}
-
-CBoundingBox3D *CDemonActor::getBoundingBox(CBoundingBox3D * /*out_box*/) {
-    notPorted("getBoundingBox");
 }
 
 std::uint32_t CDemonActor::processFootstep(float /*volume*/) {
@@ -88,10 +80,6 @@ int CDemonActor::getBlockVirtualDirectorFlag() {
 
 int CDemonActor::allowBulletHoles() {
     notPorted("allowBulletHoles");
-}
-
-void CDemonActor::updateCollisionData() {
-    notPorted("updateCollisionData");
 }
 
 int CDemonActor::getTargetPoints(common::CVector3f * /*out_points_array*/) {

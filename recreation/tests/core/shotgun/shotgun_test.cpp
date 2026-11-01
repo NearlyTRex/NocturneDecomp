@@ -21,7 +21,7 @@ TEST(CShotgun, IsConcrete) {
 }
 
 TEST(CShotgun, Constructors) {
-    static_assert(std::is_constructible_v<CShotgun>);
+    static_assert(std::is_constructible_v<CShotgun, CActor &>);
 }
 
 TEST(CShotgun, PublicInterface) {

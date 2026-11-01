@@ -625,7 +625,7 @@ void bigHeadScaleWorld(float factor) {
             if (bone == -1) {
                 continue;
             }
-            model->rest_pose_data[bone] = model->rest_pose_data[bone] * factor;
+            model->rest_bone_scales[bone] = model->rest_bone_scales[bone] * factor;
             for (child = 0; child < skeleton->bone_count; child++) {
                 if (bone == skeleton->bone_list[child].parent_index) {
                     core_game_cpp_scaleBoneRecursive_FUN_004dda80(model, skeleton, factor, child);

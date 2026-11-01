@@ -1,6 +1,13 @@
+#include "common/error/error.h"
 #include "common/text/ascii.h"
+#include "common/text/path.h"
+#include "core/actor/notported.h"
+#include "core/hero/hero.h"
+#include "core/mission/demonmission.h"
 #include "core/script/script.h"
 #include "core/script/script_functions.h"
+#include "core/set/demonset.h"
+#include "core/sound/sound.h"
 
 #include <algorithm>
 #include <cstddef>
@@ -15,6 +22,12 @@ namespace nocturne::core {
 namespace {
 
 constexpr std::size_t kMaxSkipLabelLength = 100;
+// Steps an initSection may take without reaching its end.
+constexpr int kMaxInitSectionSteps = 10000;
+// The hero this machine plays, as a game without netplay always has it.
+constexpr std::size_t kLocalHero = 0;
+// The volume some sets' ambient sound plays at, as a sound name's modifier.
+constexpr std::string_view kQuietAmbient = "@0.85";
 
 // The run of letters and digits a line starts with: a command matches when the line starts with
 // its name and the next character is neither.
@@ -28,9 +41,9 @@ std::string_view leadingWord(std::string_view text) {
 // The original also passed each step a quarter second, which only a running command reads.
 // deferred: clearing the notes of dialogue missing from the database first, with the dbSay
 //   commands and startDialogLine
-// deferred: going back to running commands once the check passes, with process
 // nocedit 0x0055a4b0
 std::optional<CScript::SSyntaxError> CScript::validateSyntax() {
+    checking_ = true;
     checks_suspended_ = false;
     initRuntime();
     while (next_cmd_ < parsed_lines_.size()) {
@@ -41,7 +54,42 @@ std::optional<CScript::SSyntaxError> CScript::validateSyntax() {
         }
         next_cmd_ = index + 1;
     }
+    checking_ = false;
     return std::nullopt;
+}
+
+// deferred: resetting the heroes' input and centring the pointer when a command in the section
+//   took the input, with pressButton and releaseButton
+// nocedit 0x0055a6c0
+void CScript::executeInitSection() {
+    checking_ = false;
+    const std::optional<std::size_t> start = findLabelIndex("initSection");
+    if (!start) {
+        return;
+    }
+    const std::optional<std::size_t> end = findLabelIndex("initSectionEnd");
+    if (!end) {
+        common::displayErrorAndQuit(
+            R"(Script has "initSection" label, but no "initSectionEnd" label.)");
+    }
+    const std::size_t resume = next_cmd_;
+    next_cmd_ = *start;
+    for (int steps = 1;; ++steps) {
+        const std::size_t index = next_cmd_;
+        if (CommandResult result = step(); !result) {
+            const SScriptLine &line = parsed_lines_[index];
+            common::displayErrorAndQuit(
+                std::format("Error processing script.\nLine: {}\nText: {}\nWhat's wrong: {}\n",
+                            line.line_number, line.text, result.error()));
+        }
+        if (next_cmd_ == *end) {
+            break;
+        }
+        if (steps > kMaxInitSectionSteps) {
+            common::displayErrorAndQuit("Infinite loop detected in initSection.\n");
+        }
+    }
+    next_cmd_ = resume;
 }
 
 // deferred: clearing the shown message, with renderSubtitles
@@ -49,22 +97,33 @@ std::optional<CScript::SSyntaxError> CScript::validateSyntax() {
 //   processTimer and startDialogLine
 // deferred: clearing the ending flag, the breakpoint state, the call stack, the skip label and
 //   the loop warning, with process and skipCinematic
-// deferred: choosing the focus actor, the local hero or else the first hero placed in an area,
-//   and clearing the speaker and the focus lock, with setFocusActor and the scene camera
+// The cameras follow the local hero.
+// deferred: following the first hero placed in an area when the local hero is in none (the
+//   decomp's netplay focus fallback), with CNetGame's sessions, which bring the other heroes
+// deferred: marking the focus changed, with the play loop's virtual director call
+// deferred: clearing the speaker and the focus lock, with setFocusActor and setSpeaker
 // deferred: letting the heroes be damaged and the enemies attack, and clearing the letterbox,
 //   with CGame's readers of them
 // deferred: clearing the script's time scale, with process
-// deferred: playing the set's ambient sound, its geometry file's stem as a .wav and smill and
-//   town at 0.85, with CSound::playAmbientSound
+// The set's ambient sound is its geometry's stem as a .wav, the mill's and the town's quieter.
 // nocedit 0x0055a540
 void CScript::initRuntime() {
     next_cmd_ = 0;
+    focus_actor_ = owners_.mission.getHero(kLocalHero);
+    std::string ambient =
+        std::format("{}.wav", common::pathStem(owners_.set.getGeometryFilename()));
+    if (common::equalsIgnoringAsciiCase(ambient, "smill.wav") ||
+        common::equalsIgnoringAsciiCase(ambient, "town.wav")) {
+        ambient += kQuietAmbient;
+    }
+    owners_.sound.playAmbientSound(ambient);
+}
+
+CDemonActor *CScript::getFocusActor() const {
+    return focus_actor_;
 }
 
 // The original first set a placeholder message, which every error replaces.
-// deferred: quitting on an instruction pointer outside the script, with process
-// deferred: passing over labels without checking them while running, with process
-// deferred: syntaxCheckOn and syntaxCheckOff leaving a running script alone, with process
 // deferred: resetting the wait and dialogue timers once a command finishes, with processTimer
 //   and startDialogLine
 // deferred: staying on a command that hasn't finished, and the overrun past the end of the
@@ -90,7 +149,6 @@ void CScript::initRuntime() {
 //   CEventList::evaluateCondition
 // deferred: running addItemToInventory, adding the item to the hero's inventory, with
 //   CInventory::addItem
-// deferred: running attachActorToPlatform, attaching the actor, with CPlatform::attachActor
 // deferred: running cancelWalkTo, stopping the character's walk, or every character's in the
 //   set, with the characters' walk targets
 // deferred: running enableHealthBar, setting the character's health bar, with its health bar
@@ -125,9 +183,6 @@ void CScript::initRuntime() {
 // deferred: running addLightFilter, adding the filter to the light, with C3DSLight::addFilter
 // deferred: running enableCamera, enabling the camera by its condition, with
 //   CDemonSet::setCameraEnabled and CEventList::evaluateCondition
-// deferred: running enableCameraGroup, enabling the group by its condition, with
-//   CDemonSet::setCameraEnabledByGroup and CEventList::evaluateCondition
-// deferred: running setCameraGroup, moving the camera to the group, with the cameras' groups
 // deferred: running switchCamera, switching to the camera for the hold time, with
 //   CDemonSet::setPendingCamera
 // deferred: gesture, the motion the character's model must have and starting it, with
@@ -164,7 +219,6 @@ void CScript::initRuntime() {
 // deferred: running letterbox, setting the letterbox and what it allows, and turning off the
 //   goggles, with CGame's readers of them
 // deferred: running removeKeys, taking the keys from every hero, with CHero::removeMatchingKeys
-// deferred: running setAmbientSound, playing it, with CSound::playAmbientSound
 // deferred: running setIniInt, writing the INI value, with process
 // deferred: running setSayTimeOverride, setting how long lines show for, with startDialogLine
 // deferred: running setSkipLabel, setting where a skipped cinematic goes, with skipCinematic
@@ -174,6 +228,11 @@ void CScript::initRuntime() {
 // deferred: running wait, holding the script for its time, with processTimer
 // nocedit 0x0055a810
 CScript::CommandResult CScript::step() {
+    if (next_cmd_ >= parsed_lines_.size()) {
+        common::displayErrorAndQuit(
+            "CScript::step - Invalid instruction pointer!\n(This is an internal script processing "
+            "error,\nand doesn't mean there's anything wrong with the\nscript file.)");
+    }
     const std::size_t index = next_cmd_;
     const SScriptLine &line = parsed_lines_[index];
     ++next_cmd_;
@@ -181,30 +240,37 @@ CScript::CommandResult CScript::step() {
                          .command = {},
                          .rest = line.text,
                          .line_number = line.line_number,
+                         .running = !checking_,
                          .owners = owners_};
     const char first = line.text.front();
     if (first == '{' || first == '}') {
         return {};
     }
+    // A running script passes over its labels.
     if (first == ':') {
-        return checkLabel(index, statement);
+        return checking_ ? checkLabel(index, statement) : CommandResult{};
     }
     const std::string_view word = leadingWord(line.text);
-    if (common::equalsIgnoringAsciiCase(word, "syntaxCheckOn")) {
-        checks_suspended_ = false;
+    // Both leave a running script alone.
+    const bool check_on = common::equalsIgnoringAsciiCase(word, "syntaxCheckOn");
+    if (check_on || common::equalsIgnoringAsciiCase(word, "syntaxCheckOff")) {
+        if (checking_) {
+            checks_suspended_ = !check_on;
+        }
         return {};
     }
-    if (common::equalsIgnoringAsciiCase(word, "syntaxCheckOff")) {
-        checks_suspended_ = true;
+    if (checking_ && checks_suspended_) {
         return {};
     }
-    if (checks_suspended_) {
-        return {};
-    }
+    return stepCommand(statement, word);
+}
+
+// The command the line starts with, checked, and run when the script is running.
+CScript::CommandResult CScript::stepCommand(SStatement &statement, std::string_view word) {
     const SCommand *command = findCommand(word);
     if (command == nullptr) {
         return std::unexpected(
-            std::format("Unknown command on line {}: {}", line.line_number, line.text));
+            std::format("Unknown command on line {}: {}", statement.line_number, statement.line));
     }
     statement.command = command->name;
     statement.rest = skipWhitespace(statement.rest.substr(word.size()));
@@ -212,8 +278,11 @@ CScript::CommandResult CScript::step() {
         return result;
     }
     if (!statement.rest.empty()) {
-        return std::unexpected(
-            std::format("Extra characters \"{}\" on line {}", statement.rest, line.line_number));
+        return std::unexpected(std::format("Extra characters \"{}\" on line {}", statement.rest,
+                                           statement.line_number));
+    }
+    if (statement.running && !command->runs) {
+        quitNotPorted("CScript", std::format("step running {}", command->name));
     }
     return {};
 }

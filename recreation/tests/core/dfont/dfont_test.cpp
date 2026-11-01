@@ -43,6 +43,14 @@ TEST(CDFont, PublicInterface) {
     static_assert(
         std::is_same_v<decltype(&CDFont::setOsFontChoice), void (CDFont::*)(EOsFontChoice)>);
     static_assert(std::is_same_v<decltype(&CDFont::getUseOSFonts), bool (CDFont::*)() const>);
+    static_assert(
+        std::is_same_v<decltype(&CDFont::getMenuFontChoice), EMenuFontChoice (CDFont::*)() const>);
+    static_assert(
+        std::is_same_v<decltype(&CDFont::setMenuFontChoice), void (CDFont::*)(EMenuFontChoice)>);
+    static_assert(
+        std::is_same_v<decltype(&CDFont::getMenuFont), engine::CBitFont *(CDFont::*)() const>);
+    static_assert(static_cast<int>(EMenuFontChoice::Large) == 0);
+    static_assert(static_cast<int>(EMenuFontChoice::Small) == 1);
 }
 
 // A font with its glyph, the width of a space and the offset of the printable characters.
@@ -118,6 +126,15 @@ TEST_F(CDFontTest, NothingIsLoadedBeforeInit) {
     EXPECT_EQ(fonts_.getMediumFont(), nullptr);
     EXPECT_EQ(editor_tools_.getEditorFont(), nullptr);
     EXPECT_EQ(fonts_.getOsFontChoice(), EOsFontChoice::Auto);
+    EXPECT_EQ(fonts_.getMenuFontChoice(), EMenuFontChoice::Large);
+}
+
+TEST_F(CDFontTest, TheMenuFontIsTheThemeFontLargeAndTheSmallEditorFontSmall) {
+    fonts_.initFonts();
+    EXPECT_EQ(fonts_.getMenuFont(), fonts_.getThemeFont());
+    fonts_.setMenuFontChoice(EMenuFontChoice::Small);
+    EXPECT_EQ(fonts_.getMenuFontChoice(), EMenuFontChoice::Small);
+    EXPECT_EQ(fonts_.getMenuFont(), fonts_.getSmallEditorFont());
 }
 
 TEST_F(CDFontTest, InitLoadsEachFontWithItsSpacesAndOffsets) {

@@ -1,5 +1,7 @@
 #include "platform/gl/glmasterdepth.h"
 
+#include "platform/log.h"
+
 #include <cstddef>
 
 namespace nocturne::platform::gl {
@@ -11,7 +13,7 @@ bool isSlot(int slot) {
 
 } // namespace
 
-CGlMasterDepth::CGlMasterDepth(const SGlApi &gl) : gl_(gl) {}
+CGlMasterDepth::CGlMasterDepth(const SGlApi &gl, ILog &log) : gl_(gl), log_(log) {}
 
 CGlMasterDepth::~CGlMasterDepth() {
     for (SSlot &slot : slots_) {
@@ -76,6 +78,8 @@ CGlMasterDepth::SSlot *CGlMasterDepth::prepare(int slot, GLuint scene, int width
     gl_.BindFramebuffer(GL_FRAMEBUFFER, scene);
     if (!complete) {
         destroy(saved);
+        log_.print(ELogSubsystem::Render, "master depth slot {} incomplete at {}x{}", slot, width,
+                   height);
         return nullptr;
     }
     saved.width = width;

@@ -49,19 +49,19 @@ TEST(CDemonRaytrace, PublicInterface) {
     static_assert(
         std::is_same_v<decltype(&CDemonRaytrace::voxelRaycast3D),
                        int (CDemonRaytrace::*)(common::CVector3f *, common::CVector3f *)>);
-    static_assert(std::is_same_v<decltype(&CDemonRaytrace::worldPositionToVoxelCoords),
-                                 common::CVector3i *(CDemonRaytrace::*)(common::CVector3f *,
-                                                                        common::CVector3i *)>);
+    static_assert(
+        std::is_same_v<decltype(&CDemonRaytrace::worldPositionToVoxelCoords),
+                       common::CVector3i (CDemonRaytrace::*)(const common::CVector3f &) const>);
     static_assert(std::is_same_v<decltype(&CDemonRaytrace::getVoxelHeightAtVoxelCoords),
                                  int (CDemonRaytrace::*)(common::CVector3i *)>);
     static_assert(std::is_same_v<decltype(&CDemonRaytrace::getBBoxMin),
                                  common::CVector3f (CDemonRaytrace::*)() const>);
     static_assert(std::is_same_v<decltype(&CDemonRaytrace::getBBoxMax),
                                  common::CVector3f (CDemonRaytrace::*)() const>);
-    static_assert(
-        std::is_same_v<decltype(&CDemonRaytrace::markShadowVoxels),
-                       void (CDemonRaytrace::*)(common::CVector3f *, common::CVector3f *,
-                                                common::CVector3f *, common::CVector3f *)>);
+    static_assert(std::is_same_v<decltype(&CDemonRaytrace::markShadowVoxels),
+                                 void (CDemonRaytrace::*)(
+                                     const common::CVector3f &, const common::CVector3f &,
+                                     const common::CVector3f &, const common::CVector3f &)>);
     static_assert(
         std::is_same_v<decltype(&CDemonRaytrace::commitShadowBuffer), void (CDemonRaytrace::*)()>);
     static_assert(

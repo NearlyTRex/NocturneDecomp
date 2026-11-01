@@ -1,4 +1,5 @@
 #include "core/game/game.h"
+#include "tests/mocks/core/gameparts.h"
 #include "tests/mocks/engine/mockgameclock.h"
 
 #include <gmock/gmock.h>
@@ -13,18 +14,19 @@ using ::testing::IsEmpty;
 
 class CGameRestoreDefaultControls : public ::testing::Test {
 protected:
-    CGame gameWith(EControlMode mode) {
-        CGame game(clock_);
+    CGame &gameWith(EControlMode mode) {
+        CGame &game = parts_.getGame();
         game.game_control = mode;
         game.restoreDefaultControls();
         return game;
     }
 
     ::testing::StrictMock<engine::MockGameClock> clock_;
+    CGameParts parts_{clock_};
 };
 
 TEST_F(CGameRestoreDefaultControls, KeyboardBindsTheOriginalKeys) {
-    const CGame game = gameWith(EControlMode::CONTROL_MODE_KEYBOARD);
+    const CGame &game = gameWith(EControlMode::CONTROL_MODE_KEYBOARD);
     EXPECT_THAT(game.controls.getBindings(EGameAction::Walk), ElementsAre(EInputCodeType::DIK_UP));
     EXPECT_THAT(game.controls.getBindings(EGameAction::Strafe),
                 ElementsAre(EInputCodeType::DIK_LMENU));
@@ -35,12 +37,12 @@ TEST_F(CGameRestoreDefaultControls, KeyboardBindsTheOriginalKeys) {
 
 // The map is an action of its own, bound like every other.
 TEST_F(CGameRestoreDefaultControls, TheMapHasItsOwnKey) {
-    const CGame game = gameWith(EControlMode::CONTROL_MODE_KEYBOARD);
+    const CGame &game = gameWith(EControlMode::CONTROL_MODE_KEYBOARD);
     EXPECT_THAT(game.controls.getBindings(EGameAction::Map), ElementsAre(EInputCodeType::DIK_M));
 }
 
 TEST_F(CGameRestoreDefaultControls, MouseModeMovesOntoWasdAndTheMouse) {
-    const CGame game = gameWith(EControlMode::CONTROL_MODE_MOUSE);
+    const CGame &game = gameWith(EControlMode::CONTROL_MODE_MOUSE);
     EXPECT_THAT(game.controls.getBindings(EGameAction::Walk), ElementsAre(EInputCodeType::DIK_W));
     EXPECT_THAT(game.controls.getBindings(EGameAction::Fire),
                 ElementsAre(EInputCodeType::DIM_LBUTTON));
@@ -52,7 +54,7 @@ TEST_F(CGameRestoreDefaultControls, MouseModeMovesOntoWasdAndTheMouse) {
 }
 
 TEST_F(CGameRestoreDefaultControls, GamepadModeBindsTheSticksAndButtons) {
-    const CGame game = gameWith(EControlMode::CONTROL_MODE_GAMEPAD);
+    const CGame &game = gameWith(EControlMode::CONTROL_MODE_GAMEPAD);
     EXPECT_THAT(game.controls.getBindings(EGameAction::Walk), ElementsAre(EInputCodeType::DIJ_UP));
     EXPECT_THAT(game.controls.getBindings(EGameAction::Fire),
                 ElementsAre(EInputCodeType::PAD_RTRIGGER));
@@ -62,14 +64,14 @@ TEST_F(CGameRestoreDefaultControls, GamepadModeBindsTheSticksAndButtons) {
 }
 
 TEST_F(CGameRestoreDefaultControls, GamepadModeLeavesWeaponsOneToFourAndStrafeUnbound) {
-    const CGame game = gameWith(EControlMode::CONTROL_MODE_GAMEPAD);
+    const CGame &game = gameWith(EControlMode::CONTROL_MODE_GAMEPAD);
     EXPECT_THAT(game.controls.getBindings(EGameAction::Strafe), IsEmpty());
     EXPECT_THAT(game.controls.getBindings(EGameAction::Weapon1), IsEmpty());
     EXPECT_THAT(game.controls.getBindings(EGameAction::Weapon4), IsEmpty());
 }
 
 TEST_F(CGameRestoreDefaultControls, GamepadModeSeedsAnUncalibratedStick) {
-    const CGame game = gameWith(EControlMode::CONTROL_MODE_GAMEPAD);
+    const CGame &game = gameWith(EControlMode::CONTROL_MODE_GAMEPAD);
     EXPECT_EQ(game.x_center, 0x8000);
     EXPECT_EQ(game.y_center, 0x8000);
     EXPECT_EQ(game.x_stick_min, 0);
@@ -79,7 +81,7 @@ TEST_F(CGameRestoreDefaultControls, GamepadModeSeedsAnUncalibratedStick) {
 }
 
 TEST_F(CGameRestoreDefaultControls, GamepadModeKeepsAnExistingCalibration) {
-    CGame game(clock_);
+    CGame &game = parts_.getGame();
     game.x_center = 30000;
     game.x_stick_max = 60000;
     game.game_control = EControlMode::CONTROL_MODE_GAMEPAD;
@@ -89,12 +91,12 @@ TEST_F(CGameRestoreDefaultControls, GamepadModeKeepsAnExistingCalibration) {
 }
 
 TEST_F(CGameRestoreDefaultControls, KeyboardModeLeavesTheCalibrationAlone) {
-    const CGame game = gameWith(EControlMode::CONTROL_MODE_KEYBOARD);
+    const CGame &game = gameWith(EControlMode::CONTROL_MODE_KEYBOARD);
     EXPECT_EQ(game.x_center, 0);
 }
 
 TEST_F(CGameRestoreDefaultControls, ExtraBindingsAndMouseSettingsAreReset) {
-    CGame game(clock_);
+    CGame &game = parts_.getGame();
     game.controls.setBindings(EGameAction::Fire,
                               {EInputCodeType::DIK_SPACE, EInputCodeType::DIM_LBUTTON});
     game.invert_mouse_y_axis = 1;

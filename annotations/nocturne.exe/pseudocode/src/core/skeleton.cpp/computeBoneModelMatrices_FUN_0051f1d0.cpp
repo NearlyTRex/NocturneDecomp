@@ -28,7 +28,7 @@ void __cdecl core_skeleton_cpp_computeBoneModelMatrices_FUN_0051f1d0(SPose *bone
   if (0 < local_2c->bone_count) {
     local_28 = bone_data->bone_model_matrices;
     local_18 = (bone_data->pose_data).bone_rotations;
-    local_30 = instance_ptr->transformed_vertices;
+    local_30 = instance_ptr->bone_origins;
     iVar3 = 0;
     pSVar2 = bone_data;
     pSVar4 = bone_data;
@@ -69,13 +69,13 @@ void __cdecl core_skeleton_cpp_computeBoneModelMatrices_FUN_0051f1d0(SPose *bone
       iVar1 = local_20->bone_list[0].parent_index;
       if (iVar1 < 0) {
         pSVar4->bone_model_matrices[0].m[0].z =
-             *(float *)((int)&instance_ptr->transformed_vertices[0].x + iVar3) +
+             *(float *)((int)&instance_ptr->bone_origins[0].x + iVar3) +
              (bone_data->pose_data).root_position.x;
         pSVar4->bone_model_matrices[0].m[1].z =
-             *(float *)((int)&instance_ptr->transformed_vertices[0].y + iVar3) +
+             *(float *)((int)&instance_ptr->bone_origins[0].y + iVar3) +
              (bone_data->pose_data).root_position.y;
         pSVar4->bone_model_matrices[0].m[2].z =
-             *(float *)((int)&instance_ptr->transformed_vertices[0].z + iVar3) +
+             *(float *)((int)&instance_ptr->bone_origins[0].z + iVar3) +
              (bone_data->pose_data).root_position.z;
       }
       else {

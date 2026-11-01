@@ -1,5 +1,6 @@
 #include "common/error/error.h"
 #include "common/text/ascii.h"
+#include "common/text/textlines.h"
 #include "common/text/textscanner.h"
 #include "core/actor/actor.h"
 #include "core/actor/actor_functions.h"
@@ -96,7 +97,8 @@ void CDemonMission::load(std::string_view mission_filename, bool keep_assets) {
         common::displayErrorAndQuit("CDemonMission::load - Unable to open file");
     }
     owners_.loading_screen.update(owners_.messages.getLocalizedString("Loading mission"), false);
-    CTextScanner scanner(*text);
+    const std::string lines = common::toTextMode(*text);
+    CTextScanner scanner(lines);
     readMissionFile(scanner, keep_assets);
     ensureHeroPlaceholder();
 }
@@ -289,8 +291,7 @@ void CDemonMission::ensureHeroPlaceholder() {
         if (isOfClass(actor.get(), "CHero")) {
             heroes.add(actor->getActorName());
         }
-        const auto *placeholder = dynamic_cast<const CHeroPlaceholder *>(
-            castToClassHash(actor.get(), CHeroPlaceholder::kType.name_hash));
+        const auto *placeholder = castToClass<CHeroPlaceholder>(actor.get());
         if (placeholder != nullptr && placeholder->getIndex() == 0) {
             return;
         }

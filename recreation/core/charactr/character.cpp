@@ -1,6 +1,7 @@
 #include "core/charactr/character.h"
 
 #include "common/error/error.h"
+#include "core/actor/actor.h"
 #include "core/actor/actorarchive.h"
 #include "core/actor/demonactortype.h"
 #include "core/charactr/healthbarmode.h"
@@ -10,6 +11,7 @@
 #include <cstddef>
 #include <format>
 #include <string>
+#include <string_view>
 #include <utility>
 
 namespace nocturne::core {
@@ -42,7 +44,8 @@ constinit const CDemonActorType CCharacter::kType =
 //   full speed to 30 degrees and stopped at 90, so the walker turns before arcing through a
 //   doorway (the decomp's walk_turn.h, WALK_TURN), with CCharacter::walkToPoint
 // nocedit 0x00427e20
-CCharacter::CCharacter() = default;
+CCharacter::CCharacter(CActor &classes)
+    : model_(classes.getModels()), cloth_list_(classes.getDosIo(), classes.getKeyFramedModels()) {}
 
 // nocedit 0x0042f9f0
 CCharacter::~CCharacter() = default;
@@ -109,6 +112,15 @@ void CCharacter::archiveCarryObjects(CActorArchive &actor_archive) {
     actor_archive.archiveActor(carried_actors_[1], "rhCarryObject");
 }
 
+void CCharacter::archiveCarriedActor(CActorArchive &actor_archive, std::size_t hand,
+                                     std::string_view description) {
+    actor_archive.archiveActor(carried_actors_.at(hand), description);
+}
+
+void CCharacter::archiveClothList(CActorArchive &actor_archive) {
+    actor_archive.archiveClothList(cloth_list_, "clothList");
+}
+
 void CCharacter::archiveLayerAction(CActorArchive &actor_archive) {
     actor_archive.archiveInteger(layer_action_index_, "layerActionIndex");
     actor_archive.archiveFloat(layer_action_t_, "layerActionT");
@@ -125,6 +137,63 @@ void CCharacter::setHealthBarMode(EHealthBarMode health_bar_mode) {
 // nocedit 0x0042bf80
 CDemonActor *CCharacter::getGrabber() {
     return grabbed_by_;
+}
+
+// The original also checks each carried actor is one it made, which an object always is.
+// deferred: no damage decals yet, with processDamageDecals
+// deferred: a closest distance threshold of 9999, with processCharacter and moveAndCollide
+// deferred: the stake model the characters share, stake_b.kfm, set and loaded, with
+//   renderAttachedModels
+// deferred: the model's head bone looked at, "bip01 head", with applyLookAt
+// deferred: an ethereal character's flames, one on every bone, the first twice its size, with
+//   getPropertyList's Etheral, the only way a character becomes one
+// deferred: each layer action's motion and length, and the cheapest time between any two of
+//   their bones, with advanceLayerAction
+// deferred: no sound playing, with processCharacter
+// deferred: the set's active fog drifting as the wind the cloth settles in, with
+//   CDemonSet::initScene and setCameraView, which set it
+// nocedit 0x00428140
+void CCharacter::setup() {
+    CDemonActor::setup();
+    for (CDemonActor *carried : carried_actors_) {
+        if (carried == nullptr) {
+            continue;
+        }
+        const CDemonActor *carrier = carried->getCarrier();
+        if (carrier == nullptr) {
+            carried->pickup(this);
+        } else if (carrier != this) {
+            common::displayErrorAndQuit(std::format(
+                "{} is carrying {}, but {} thinks it is being carried by {}", getActorName(),
+                carried->getActorName(), carried->getActorName(), carrier->getActorName()));
+        }
+    }
+    if (!model_.getModelName().empty()) {
+        model_.setScaleFactor(size_scale_);
+        model_.preCache();
+    }
+    computeBoundingBox();
+    cloth_list_.load();
+    const common::CVector3f &position = getLocation().position;
+    const common::CVector3f &orientation = getOrientation();
+    cloth_list_.setup(position, orientation, &model_);
+    cloth_list_.process(position, orientation, kClothSettleTime, kNoFloor, &model_, kNoWind);
+    if (descriptive_name_.empty()) {
+        descriptive_name_ = getActorClassName().substr(1);
+    }
+}
+
+// nocedit 0x0042b8a0
+CBoundingBox3D *CCharacter::getBoundingBox(CBoundingBox3D *out_box) {
+    *out_box = bounding_box_;
+    return out_box;
+}
+
+// nocedit 0x0042d530
+void CCharacter::computeBoundingBox() {
+    if (!model_.getModelName().empty()) {
+        bounding_box_ = model_.computeBoundingBoxFromBones();
+    }
 }
 
 // nocedit 0x0042d360

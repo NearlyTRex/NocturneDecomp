@@ -12,7 +12,7 @@ TEST(CGore, IsConcrete) {
 }
 
 TEST(CGore, Constructors) {
-    static_assert(std::is_constructible_v<CGore>);
+    static_assert(std::is_constructible_v<CGore, engine::CDemonRenderer &>);
 }
 
 TEST(CGore, PublicInterface) {

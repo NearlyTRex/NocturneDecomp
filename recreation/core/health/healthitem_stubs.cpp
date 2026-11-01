@@ -15,10 +15,6 @@ namespace {
 
 } // namespace
 
-void CHealthItem::setup() {
-    notPorted("setup");
-}
-
 int CHealthItem::renderOpaque() {
     notPorted("renderOpaque");
 }

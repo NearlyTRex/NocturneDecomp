@@ -8,7 +8,10 @@
 #include "core/game/game.h"
 #include "core/inv/inventory.h"
 #include "core/weapon/weapon.h"
+#include "tests/mocks/core/gameparts.h"
 #include "tests/mocks/core/mockactorlookup.h"
+#include "tests/mocks/core/mockdeformablemodels.h"
+#include "tests/mocks/core/mockkeyframedmodels.h"
 #include "tests/mocks/core/testactor.h"
 #include "tests/mocks/engine/mockgameclock.h"
 
@@ -84,18 +87,18 @@ TEST(CInventory, PublicInterface) {
     static_assert(std::is_same_v<decltype(&CInventory::autoUseHealthItem), void (CInventory::*)()>);
 }
 
-std::unique_ptr<CDemonActor> makeItem();
-std::unique_ptr<CDemonActor> makeGun();
+std::unique_ptr<CDemonActor> makeItem(CActor &classes);
+std::unique_ptr<CDemonActor> makeGun(CActor &classes);
 
 const CDemonActorType kItemType = makeActorType("CTestItem", &kTestBaseType, &makeItem, 1);
 // Of a weapon's class, by its record.
 const CDemonActorType kGunType = makeActorType("CTestGun", &CWeapon::kType, &makeGun, 1);
 
-std::unique_ptr<CDemonActor> makeItem() {
+std::unique_ptr<CDemonActor> makeItem(CActor & /*classes*/) {
     return std::make_unique<CTestActor>(kItemType);
 }
 
-std::unique_ptr<CDemonActor> makeGun() {
+std::unique_ptr<CDemonActor> makeGun(CActor & /*classes*/) {
     return std::make_unique<CTestActor>(kGunType);
 }
 
@@ -163,9 +166,12 @@ protected:
     }
 
     ::testing::NiceMock<engine::MockGameClock> clock_;
-    CGame game_{clock_};
+    CGameParts game_parts_{clock_};
+    CGame &game_ = game_parts_.getGame();
     common::CWatcomRandom crt_;
-    CActor classes_{game_, crt_};
+    ::testing::NiceMock<MockDeformableModels> models_;
+    ::testing::NiceMock<MockKeyFramedModels> keyframed_models_;
+    CActor classes_{game_, crt_, models_, keyframed_models_};
     ::testing::NiceMock<MockActorLookup> actors_;
     CTestActor owner_{kTestBaseType};
     CInventory inventory_;
@@ -186,6 +192,16 @@ TEST_F(CInventoryLoadTest, ACarriedItemComesFromTheMission) {
         .WillOnce(Return(::testing::ByMove(std::move(carried))));
     load(text(2, 0, {"CTestGun \"Your_weapon\""}));
     EXPECT_EQ(inventory_.getItems()[0].get(), carried_item);
+}
+
+TEST_F(CInventoryLoadTest, SettingUpTheItemsSetsEachUp) {
+    auto carried = std::make_unique<CTestActor>(kGunType);
+    const CTestActor &item = *carried;
+    EXPECT_CALL(actors_, takeCarriedActor(StrEq("Your_weapon")))
+        .WillOnce(Return(::testing::ByMove(std::move(carried))));
+    load(text(2, 0, {"CTestGun \"Your_weapon\""}));
+    inventory_.setupItems();
+    EXPECT_EQ(item.getSetupCount(), 1);
 }
 
 // Version 0 had no battery and 1 no closing line.

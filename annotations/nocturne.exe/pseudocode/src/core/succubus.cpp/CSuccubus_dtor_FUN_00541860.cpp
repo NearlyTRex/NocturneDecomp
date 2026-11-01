@@ -29,7 +29,7 @@ CSuccubus * __cdecl core_succubus_cpp_CSuccubus_dtor_FUN_00541860(CSuccubus *thi
   pCVar3 = core_skeleton_cpp_CDeformableModelInstance_dtor_FUN_0051b6e0
                      ((CDeformableModelInstance *)(pCVar2[-0x15].cloths + 9),0);
   pCVar4 = core_armour_cpp_CFlame_arrdtor50_FUN_0040fe50
-                     ((CFlame *)&pCVar3[-4].transformed_vertices[0x17].y,0);
+                     ((CFlame *)&pCVar3[-4].bone_origins[0x17].y,0);
   pSVar5 = core_armour_cpp_SFire_arrdtor50_FUN_0040fe30
                      ((SFire *)(pCVar4[-2].base.create_event + 0x10),0);
   pCVar6 = core_armour_cpp_CVector3f_arrdtor15_FUN_0040fe10

@@ -58,18 +58,18 @@ void __cdecl core_skeleton_cpp_CDeformableModelInstance_computeBoneTransforms_FU
       iVar1 = pCVar3->bone_list[iVar3].parent_index;
       if (iVar1 < 0) {
         (this_ptr->bone_transform).bone_model_matrices[iVar3].m[0].z =
-             this_ptr->transformed_vertices[iVar3].x +
+             this_ptr->bone_origins[iVar3].x +
              (this_ptr->bone_transform).pose_data.root_position.x;
         (this_ptr->bone_transform).bone_model_matrices[iVar3].m[1].z =
-             this_ptr->transformed_vertices[iVar3].y +
+             this_ptr->bone_origins[iVar3].y +
              (this_ptr->bone_transform).pose_data.root_position.y;
         (this_ptr->bone_transform).bone_model_matrices[iVar3].m[2].z =
-             this_ptr->transformed_vertices[iVar3].z +
+             this_ptr->bone_origins[iVar3].z +
              (this_ptr->bone_transform).pose_data.root_position.z;
       }
       else {
         core_xform_cpp_transformVector3x4_FUN_005f4dc0
-                  (&CStack_3c,&this_ptr->transformed_vertices[iVar3],
+                  (&CStack_3c,&this_ptr->bone_origins[iVar3],
                    pCVar1 + iVar1);
         (this_ptr->bone_transform).bone_model_matrices[iVar3].m[0].z = CStack_3c.x;
         (this_ptr->bone_transform).bone_model_matrices[iVar3].m[1].z = CStack_3c.y;

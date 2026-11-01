@@ -28,7 +28,7 @@ void __cdecl core_skeledit_cpp_CDeformableModel_pruneWeakBoneInfluences_FUN_0058
           local_34 = local_34 + 1) {
         pSVar1 = &this_ptr->vertex_data_ptr[local_3c][local_34];
         if (1 < pSVar1->num_bone_influences) {
-          pCVar2 = &pSVar1->position;
+          pCVar2 = pSVar1->bone_offsets;
           local_1c = 0;
           for (iVar4 = 0; iVar4 < (int)(uint)pSVar1->num_bone_influences; iVar4 = iVar4 + 1) {
             if ((float)0.01 < pSVar1->bone_weights[iVar4]) {

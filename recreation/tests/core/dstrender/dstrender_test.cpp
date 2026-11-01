@@ -27,8 +27,6 @@ TEST(CoreDstrenderFunctions, PublicInterface) {
                                  void (*)(engine::SSoftwareEdge *, engine::SSoftwareEdge *, int)>);
     static_assert(std::is_same_v<decltype(&renderScreenDepthTestInterlacedProfiled),
                                  void (*)(engine::SSoftwareEdge *, engine::SSoftwareEdge *, int)>);
-    static_assert(std::is_same_v<decltype(&renderDepthTestStatistics16xUnrolled),
-                                 void (*)(engine::SSoftwareEdge *, engine::SSoftwareEdge *, int)>);
     static_assert(std::is_same_v<decltype(&renderPerspectiveCorrectTextured16xCached),
                                  void (*)(engine::SSoftwareEdge *, engine::SSoftwareEdge *, int)>);
     static_assert(std::is_same_v<decltype(&renderTexturedDecalMMXScanline),

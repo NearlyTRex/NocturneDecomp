@@ -531,12 +531,12 @@ static int CDeformableModel_determinePartsFromS3D_else_0_check_0_4(CDeformableMo
             uVar3 = *puVar24;
             pSVar9 = this_ptr->vertex_data_ptr[0];
             uVar4 = puVar24[2];
-            fVar8 = pSVar9[uVar2].position.x - pSVar9[uVar3].position.x;
-            fVar12 = pSVar9[uVar2].position.y - pSVar9[uVar3].position.y;
-            fVar13 = pSVar9[uVar2].position.z - pSVar9[uVar3].position.z;
-            local_260 = pSVar9[uVar4].position.x - pSVar9[uVar2].position.x;
-            local_25c = pSVar9[uVar4].position.y - pSVar9[uVar2].position.y;
-            local_258 = pSVar9[uVar4].position.z - pSVar9[uVar2].position.z;
+            fVar8 = pSVar9[uVar2].bone_offsets[0].x - pSVar9[uVar3].bone_offsets[0].x;
+            fVar12 = pSVar9[uVar2].bone_offsets[0].y - pSVar9[uVar3].bone_offsets[0].y;
+            fVar13 = pSVar9[uVar2].bone_offsets[0].z - pSVar9[uVar3].bone_offsets[0].z;
+            local_260 = pSVar9[uVar4].bone_offsets[0].x - pSVar9[uVar2].bone_offsets[0].x;
+            local_25c = pSVar9[uVar4].bone_offsets[0].y - pSVar9[uVar2].bone_offsets[0].y;
+            local_258 = pSVar9[uVar4].bone_offsets[0].z - pSVar9[uVar2].bone_offsets[0].z;
             fVar14 = fVar13 * local_260 - fVar8 * local_258;
             fVar13 = fVar12 * local_258 - fVar13 * local_25c;
             fVar8 = fVar8 * local_25c - fVar12 * local_260;
@@ -635,10 +635,10 @@ static int CDeformableModel_determinePartsFromS3D_else_0_check_this_ptr_5_check_
                           pCVar19 = local_188 + *(int *)((int)pvVar35 + 0x18);
                           uVar7 = (&(local_120->vertex_indices).vertex_index_0)[iVar30 % 3];
                           pSVar9 = this_ptr->vertex_data_ptr[0];
-                          local_1d0 = pSVar9[uVar7].position.x;
-                          local_1cc = pSVar9[uVar7].position.y;
+                          local_1d0 = pSVar9[uVar7].bone_offsets[0].x;
+                          local_1cc = pSVar9[uVar7].bone_offsets[0].y;
                           local_20c = local_1d0 - pCVar19->x;
-                          local_1c8 = pSVar9[uVar7].position.z;
+                          local_1c8 = pSVar9[uVar7].bone_offsets[0].z;
                           local_208 = local_1cc - pCVar19->y;
                           local_204 = local_1c8 - pCVar19->z;
                           if ((((float)0.20000000000000001 < ABS(local_20c)) ||
@@ -1050,11 +1050,11 @@ static int CDeformableModel_determinePartsFromS3D_else_0_check_this_ptr_5_check_
                         iVar18 = 0;
                         do {
                           pSVar9 = this_ptr->vertex_data_ptr[0];
-                          local_218 = *(float *)((int)pSVar9->bone_weights + iVar18 + 0xc) -
+                          local_218 = *(float *)((int)&pSVar9->bone_offsets[0].x + iVar18) -
                                       local_1c4;
-                          local_214 = *(float *)((int)pSVar9->bone_weights + iVar18 + 0x10) -
+                          local_214 = *(float *)((int)&pSVar9->bone_offsets[0].y + iVar18) -
                                       local_1c0;
-                          local_210 = *(float *)((int)pSVar9->bone_weights + iVar18 + 0x14) -
+                          local_210 = *(float *)((int)&pSVar9->bone_offsets[0].z + iVar18) -
                                       local_1bc;
                           local_a0 = local_210 * local_210 +
                                      local_218 * local_218 + local_214 * local_214;
@@ -1632,16 +1632,16 @@ int __cdecl core_skeledit_cpp_CDeformableModel_determinePartsFromS3D_FUN_0058f81
           } while (iVar30 < (int)local_168);
         }
         pSVar5 = this_ptr->vertex_data_ptr[0];
-        pCVar19 = &pSVar5->position;
+        pCVar19 = pSVar5->bone_offsets;
         if (&local_324 != (CBoundingBox3D *)pCVar19) {
           local_324.min.x = pCVar19->x;
-          local_324.min.y = (pSVar5->position).y;
-          local_324.min.z = (pSVar5->position).z;
+          local_324.min.y = pSVar5->bone_offsets[0].y;
+          local_324.min.z = pSVar5->bone_offsets[0].z;
         }
         if (&local_324.max != pCVar19) {
           local_324.max.x = pCVar19->x;
-          local_324.max.y = (pSVar5->position).y;
-          local_324.max.z = (pSVar5->position).z;
+          local_324.max.y = pSVar5->bone_offsets[0].y;
+          local_324.max.z = pSVar5->bone_offsets[0].z;
         }
         iVar30 = 1;
         if (1 < this_ptr->vertex_count[0]) {
@@ -1649,7 +1649,7 @@ int __cdecl core_skeledit_cpp_CDeformableModel_determinePartsFromS3D_FUN_0058f81
           do {
             core_box_cpp_CBoundingBox3D_expand_FUN_00420240
                       (&local_324,
-                       (CVector3f *)((int)this_ptr->vertex_data_ptr[0]->bone_weights + iVar18 + 0xc)
+                       (CVector3f *)((int)&this_ptr->vertex_data_ptr[0]->bone_offsets[0].x + iVar18)
                       );
             iVar30 = iVar30 + 1;
             iVar18 = iVar18 + 0x34;

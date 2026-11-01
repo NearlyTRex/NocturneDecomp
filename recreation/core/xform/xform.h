@@ -16,13 +16,17 @@ namespace nocturne::core {
                                                    const common::CMatrix3x4f &matrix);
 common::CVector3f *transformVector3x4InPlace(common::CVector3f *input_output_vector,
                                              common::CMatrix3x4f *matrix);
-common::CMatrix3x4f *multiplyMatrix3x4(common::CMatrix3x4f *matrix_a, common::CMatrix3x4f *matrix_b,
-                                       common::CMatrix3x4f *matrix_out);
+// The second after the first: a point taken through the result is taken through a, then b.
+[[nodiscard]] common::CMatrix3x4f multiplyMatrix3x4(const common::CMatrix3x4f &matrix_a,
+                                                    const common::CMatrix3x4f &matrix_b);
 void setIdentityMatrix3x4(common::CMatrix3x4f *matrix);
 void setRotationScaleIdentity(common::CMatrix3x4f *matrix);
 void clearTranslation(common::CMatrix3x4f &matrix);
-void buildMatrixFromEulerAndPosition(common::CMatrix3x4f *output_matrix,
-                                     common::CVector3f *position, common::CVector3f *euler_angles);
+// Into the frame at the position turned by the angles about x, y and z: the rotation's transpose,
+// then the position taken back through it.
+[[nodiscard]] common::CMatrix3x4f
+buildMatrixFromEulerAndPosition(const common::CVector3f &position,
+                                const common::CVector3f &euler_angles);
 void buildMatrixFromEulerAndPositionDirect(common::CMatrix3x4f *output_matrix,
                                            common::CVector3f *position,
                                            common::CVector3f *euler_angles);
@@ -31,7 +35,10 @@ void buildMatrixFromEulerAndPositionDirect(common::CMatrix3x4f *output_matrix,
 common::CVector3f *matrixToEulerAnglesZYX(common::CMatrix3x4f *matrix_ptr,
                                           common::CVector3f *euler_out);
 common::CVector3f *getTranslation(common::CMatrix3x4f *matrix_in, common::CVector3f *vector_out);
-common::CMatrix3x4f *inverse(common::CMatrix3x4f *matrix_in, common::CMatrix3x4f *matrix_out);
+// Of the rotation; the translation plays no part.
+[[nodiscard]] double determinant(const common::CMatrix3x4f &matrix);
+// Fatal for a rotation whose determinant is zero.
+[[nodiscard]] common::CMatrix3x4f inverse(const common::CMatrix3x4f &matrix_in);
 common::CMatrix3x4f *buildRotationX(float angle_radians, common::CMatrix3x4f *matrix_out);
 common::CMatrix3x4f *buildRotationY(float angle_radians, common::CMatrix3x4f *matrix_out);
 common::CMatrix3x4f *buildXFlipMatrix(float x_offset, common::CMatrix3x4f *matrix_out);
@@ -41,12 +48,12 @@ common::CMatrix3x4f *lerpMatrix3x4(common::CMatrix3x4f *matrix_a, common::CMatri
 // Writes the rotation and leaves the translation as it was. The quaternion need not be unit.
 void quaternionToMatrix3x3(common::CMatrix3x4f &matrix_out, const common::CQuaternion4f &quat_in);
 [[nodiscard]] common::CMatrix3x4f quaternionToMatrix3x4(const common::CQuaternion4f &quat_in);
-common::CQuaternion4f *negateFirstComponent(common::CQuaternion4f *vector_in,
-                                            common::CQuaternion4f *vector_out);
-void setIdentityQuaternion(common::CQuaternion4f *quaternion);
-common::CQuaternion4f *multiplyQuaternion(common::CQuaternion4f *quat1_in,
-                                          common::CQuaternion4f *quat2_in,
-                                          common::CQuaternion4f *quat_out);
+// The opposite turn: w negated.
+[[nodiscard]] common::CQuaternion4f negateFirstComponent(const common::CQuaternion4f &vector_in);
+void setIdentityQuaternion(common::CQuaternion4f &quaternion);
+// Hamilton's product of the second and the first, in that order.
+[[nodiscard]] common::CQuaternion4f multiplyQuaternion(const common::CQuaternion4f &quat1_in,
+                                                       const common::CQuaternion4f &quat2_in);
 void quaternionToAxisAngle(common::CQuaternion4f *quat_in, float *angle_out,
                            common::CVector3f *axis_out);
 // The first at t of 0 or less, the second at 1 or more, along the shorter arc between.
@@ -57,8 +64,8 @@ common::CQuaternion4f *quaternionFromAngleY(float angle_radians, common::CQuater
 common::CQuaternion4f *quaternionFromAngleZ(float angle_radians, common::CQuaternion4f *quat_out);
 common::CQuaternion4f *quaternionFromAxisAngle(float angle_radians, common::CVector3f *axis_ptr,
                                                common::CQuaternion4f *quat_out);
-common::CVector3f *quaternionToEulerAngles(common::CVector3f *out_euler,
-                                           common::CQuaternion4f *quat_in);
+// Angles in radians about x, y and z, as matrixToEulerAngles reads them from the turn.
+[[nodiscard]] common::CVector3f quaternionToEulerAngles(const common::CQuaternion4f &quat_in);
 common::CQuaternion4f *eulerToQuaternion(common::CVector3f *euler_angles,
                                          common::CQuaternion4f *quat_out);
 // Each writes the vertex where the edge from vertex_a, inside, to vertex_b, past the plane, meets

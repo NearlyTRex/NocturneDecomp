@@ -24,7 +24,7 @@ void __cdecl core_skeleton_cpp_CDeformableModel_skinVertices_FUN_0059a880(CDefor
   local_18 = output_buffer;
   for (local_20 = 0; local_20 < this_ptr->vertex_count[lod_index]; local_20 = local_20 + 1) {
     vert = this_ptr->vertex_data_ptr[lod_index] + local_20;
-    input_vector = &vert->position;
+    input_vector = vert->bone_offsets;
     if (vert->num_bone_influences == 1) {
       pCVar2 = core_xform_cpp_transformVector3x4_FUN_005f4dc0
                          (&local_3c,input_vector,bone_matrices + vert->bone_indices[0]);

@@ -91,7 +91,7 @@ void __cdecl core_skeledit_cpp_CSkeleton_saveStream_FUN_0058b3a0(CSkeleton *this
   iVar10 = 0;
   _fprintf(file_handle,"// reference bone org list: x,y,z\n");
   if (0 < this_ptr->bone_count) {
-    pCVar7 = this_ptr->bone_scales;
+    pCVar7 = this_ptr->reference_bone_origins;
     do {
       pfVar5 = &pCVar7->z;
       pfVar6 = &pCVar7->y;

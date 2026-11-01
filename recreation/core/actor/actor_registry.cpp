@@ -7,23 +7,35 @@
 #include "core/baron/baron.h"
 #include "core/baron/baronweapon.h"
 #include "core/barrier/barrier.h"
+#include "core/boxactor/boxactor.h"
 #include "core/charactr/character.h"
 #include "core/colonel/colonel.h"
+#include "core/door/door.h"
+#include "core/enemy/enemy.h"
+#include "core/flame/flame.h"
 #include "core/gabriela/gabriella.h"
+#include "core/ghoul/ghoul.h"
 #include "core/gun/gun.h"
 #include "core/haystack/haystack.h"
 #include "core/health/healthitem.h"
 #include "core/hero/hero.h"
 #include "core/hero/heroplaceholder.h"
 #include "core/icepick/icepick.h"
+#include "core/lever/lever.h"
+#include "core/lightgun/lightgun.h"
 #include "core/litecone/lightcone.h"
+#include "core/mobster/mobster.h"
 #include "core/moloch/moloch.h"
+#include "core/npc/npc.h"
+#include "core/platfrm/platform.h"
 #include "core/scat/scat.h"
 #include "core/stranger/stranger.h"
 #include "core/svetlana/svetlana.h"
 #include "core/trigger/trigger.h"
 #include "core/waypoint/waypoint.h"
 #include "core/weapon/weapon.h"
+#include "core/werewolf/werewolf.h"
+#include "core/zombie/zombie.h"
 
 #include <algorithm>
 #include <array>
@@ -43,15 +55,43 @@ constexpr int kUnlistedVersion = 1;
 // one place, and each port adds its own.
 // nocedit 0x00408320
 void CActor::registerActorClasses() {
-    static constexpr std::array<const CDemonActorType *, 23> kTypes = {
-        &CDemonActor::kType,      &CCharacter::kType, &CHero::kType,
-        &CHeroPlaceholder::kType, &CGabriella::kType, &CSvetlana::kType,
-        &CStranger::kType,        &CScat::kType,      &CBaron::kType,
-        &CIcePick::kType,         &CHaystack::kType,  &CColonel::kType,
-        &CMoloch::kType,          &CWeapon::kType,    &CGun::kType,
-        &CBaronWeapon::kType,     &CAmmo::kType,      &CTrigger::kType,
-        &CWayPoint::kType,        &CBarrier::kType,   &CBackgroundActor::kType,
-        &CHealthItem::kType,      &CLightCone::kType};
+    static constexpr std::array<const CDemonActorType *, 35> kTypes = {
+        &CDemonActor::kType,
+        &CCharacter::kType,
+        &CHero::kType,
+        &CHeroPlaceholder::kType,
+        &CGabriella::kType,
+        &CSvetlana::kType,
+        &CStranger::kType,
+        &CScat::kType,
+        &CBaron::kType,
+        &CIcePick::kType,
+        &CHaystack::kType,
+        &CColonel::kType,
+        &CMoloch::kType,
+        &CWeapon::kType,
+        &CGun::kType,
+        &CBaronWeapon::kType,
+        &CAmmo::kType,
+        &CTrigger::kType,
+        &CWayPoint::kType,
+        &CBarrier::kType,
+        &CBackgroundActor::kType,
+        &CHealthItem::kType,
+        &CLightCone::kType,
+        &CDoor::kType,
+        &CLever::kType,
+        &CBoxActor::kType,
+        &CPlatform::kType,
+        &CNPC::kType,
+        &CEnemy::kType,
+        &CZombie::kType,
+        &CWerewolf::kType,
+        &CMobster::kType,
+        &CGhoul::kType,
+        &CFlame::kType,
+        &CLightGun::kType,
+    };
     for (const CDemonActorType *type : kTypes) {
         registerActorClass(*type);
     }
@@ -75,7 +115,7 @@ const CDemonActorType *CActor::getActorClassByName(std::string_view class_name) 
 
 // The original also quit when there was no memory for the actor.
 // nocedit 0x0040c430
-std::unique_ptr<CDemonActor> CActor::createActorByName(std::string_view class_name) const {
+std::unique_ptr<CDemonActor> CActor::createActorByName(std::string_view class_name) {
     const CDemonActorType *type = getActorClassByName(class_name);
     if (type == nullptr) {
         common::displayErrorAndQuit(
@@ -85,7 +125,7 @@ std::unique_ptr<CDemonActor> CActor::createActorByName(std::string_view class_na
         common::displayErrorAndQuit(
             std::format("Can't create instance of abstract type {}", class_name));
     }
-    return type->factory_func();
+    return type->factory_func(*this);
 }
 
 std::size_t CActor::getActorClassCount() const {

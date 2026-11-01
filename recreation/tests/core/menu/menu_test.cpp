@@ -2,6 +2,8 @@
 #include "core/actor/actor.h"
 #include "core/dfont/dfont.h"
 #include "core/game/game.h"
+#include "core/inivar/inivar.h"
+#include "core/menu/attractmovies.h"
 #include "core/menu/menu.h"
 #include "core/set/demonset.h"
 #include "core/sound/sound.h"
@@ -11,6 +13,7 @@
 #include "engine/drender/demonrenderer.h"
 #include "engine/font/bitfont.h"
 #include "engine/font/font.h"
+#include "engine/ini/ini.h"
 #include "engine/keys/inputcodetype.h"
 #include "engine/keys/keys.h"
 #include "engine/light/light.h"
@@ -23,9 +26,14 @@
 #include "engine/texture/texture.h"
 #include "engine/zraster/zraster.h"
 #include "platform/rendervertex.h"
+#include "shape/edittool/edcontrols.h"
 #include "shape/edittool/editortools.h"
+#include "shape/edittool/picklist.h"
 #include "support/newmsg/newmsg.h"
+#include "tests/mocks/core/gameparts.h"
 #include "tests/mocks/core/menufontfiles.h"
+#include "tests/mocks/core/mockdeformablemodels.h"
+#include "tests/mocks/core/mockkeyframedmodels.h"
 #include "tests/mocks/core/setparts.h"
 #include "tests/mocks/engine/fontsheet.h"
 #include "tests/mocks/engine/memoryscreen.h"
@@ -33,6 +41,7 @@
 #include "tests/mocks/engine/mockrawinput.h"
 #include "tests/mocks/platform/mockclipboard.h"
 #include "tests/mocks/platform/mockclock.h"
+#include "tests/mocks/platform/mockdisplay.h"
 #include "tests/mocks/platform/mockosfont.h"
 #include "tests/mocks/platform/mockosfontfactory.h"
 #include "tests/mocks/platform/mockrenderer.h"
@@ -67,10 +76,15 @@ TEST(CMenu, PublicInterface) {
     static_assert(std::is_same_v<decltype(&CMenu::showOptionsScreen), void (CMenu::*)(int)>);
     static_assert(std::is_same_v<decltype(&CMenu::showMainGameMenu), int (CMenu::*)()>);
     static_assert(std::is_same_v<decltype(&CMenu::getKeyDisplayName),
-                                 char *(CMenu::*)(engine::EInputCodeType)>);
+                                 std::string (CMenu::*)(engine::EInputCodeType) const>);
+    static_assert(std::is_same_v<decltype(&CMenu::isKeyCodeValidForMode),
+                                 bool (CMenu::*)(engine::EInputCodeType) const>);
+    static_assert(std::is_same_v<decltype(&CMenu::configureCustomKeyBindings), void (CMenu::*)()>);
     static_assert(std::is_same_v<decltype(&CMenu::renderMenuAndGetChoice),
                                  int (CMenu::*)(std::span<const std::string>, int &, int,
                                                 std::optional<std::string_view>)>);
+    static_assert(std::is_same_v<decltype(&CMenu::runPage), void (CMenu::*)(CMenuPage &)>);
+    static_assert(std::is_same_v<decltype(&CMenu::takeMenuCancel), bool (CMenu::*)()>);
     static_assert(std::is_same_v<decltype(&CMenu::getMoon), CMoon &(CMenu::*)()>);
     static_assert(std::is_same_v<decltype(&CMenu::getMenuInputHappened), bool (CMenu::*)() const>);
     static_assert(
@@ -178,6 +192,7 @@ protected:
     engine::CKeys keys_{raw_input_, screen_};
     NiceMock<platform::MockClock> clock_;
     NiceMock<platform::MockClipboard> clipboard_;
+    NiceMock<platform::MockDisplay> display_;
     shape::CEditorTools editor_tools_{{.two_d = two_d_,
                                        .matrix = matrix_,
                                        .three_d = three_d_,
@@ -193,7 +208,8 @@ protected:
     support::CNewMsg messages_{dosio_};
     CDFont fonts_{dosio_, screen_, two_d_, three_d_, colors_, os_fonts_, messages_, editor_tools_};
     NiceMock<engine::MockGameClock> game_clock_;
-    CGame game_{game_clock_};
+    CGameParts game_parts_{game_clock_};
+    CGame &game_ = game_parts_.getGame();
     engine::CTexture texture_{{.dosio = dosio_,
                                .two_d = two_d_,
                                .screen = screen_,
@@ -209,10 +225,30 @@ protected:
     CDemonSet set_{
         set_parts_.owners(demon_renderer_, matrix_, special_, two_d_, screen_, raw_input_)};
     common::CWatcomRandom crt_random_;
-    CActor actor_{game_, crt_random_};
+    ::testing::NiceMock<MockDeformableModels> models_;
+    ::testing::NiceMock<MockKeyFramedModels> keyframed_models_;
+    CActor actor_{game_, crt_random_, models_, keyframed_models_};
     engine::CMenuInput menu_input_{keys_};
     engine::CPod pod_{file_system_, dosio_};
     CSound game_sound_{sound_, pod_, file_system_};
+    engine::CIni ini_{file_system_};
+    SIniDataOwners ini_owners_{.game = game_,
+                               .sound_main = sound_,
+                               .console = console_,
+                               .special = special_,
+                               .display = display_,
+                               .fonts = fonts_};
+    shape::CEdControls controls_{{.two_d = two_d_,
+                                  .screen = screen_,
+                                  .raw_input = raw_input_,
+                                  .clock = game_clock_,
+                                  .editor_tools = editor_tools_}};
+    shape::SPickListOwners pick_list_owners_{.controls = controls_,
+                                             .keys = keys_,
+                                             .menu_input = menu_input_,
+                                             .three_d = three_d_,
+                                             .screen = screen_};
+    CAttractMovies attract_movies_{clock_};
     CMenu menu_{{.dosio = dosio_,
                  .screen = screen_,
                  .special = special_,
@@ -230,7 +266,15 @@ protected:
                  .textures = texture_,
                  .sound = game_sound_,
                  .sound_main = sound_,
-                 .build_version = "X"}};
+                 .display = display_,
+                 .editor_tools = editor_tools_,
+                 .ini = ini_,
+                 .ini_owners = ini_owners_,
+                 .pick_list = pick_list_owners_,
+                 .build_version = "X",
+                 .attract_movies = attract_movies_,
+                 .play_movie = {},
+                 .show_chapter_select = {}}};
 };
 
 TEST_F(CMenuTest, CalibrationShowsEachStepWithThePromptOverTheImageUntilAKey) {

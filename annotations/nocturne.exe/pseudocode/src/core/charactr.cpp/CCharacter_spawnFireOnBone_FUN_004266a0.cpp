@@ -40,7 +40,7 @@ void __cdecl core_charactr_cpp_CCharacter_spawnFireOnBone_FUN_004266a0(CCharacte
   
   if (-1 < target_bone_index) {
     iVar5 = -1;
-    local_44 = (CMatrix3x4f *)(this_ptr->model).transformed_vertices;
+    local_44 = (CMatrix3x4f *)(this_ptr->model).bone_origins;
     iVar9 = 0;
     local_24 = 0.0;
     pCVar6 = skeleton;

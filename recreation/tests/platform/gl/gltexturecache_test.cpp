@@ -1,6 +1,7 @@
 #include "common/render/renderstate.h"
 #include "platform/gl/gltexturecache.h"
 #include "tests/mocks/platform/glrecorder.h"
+#include "tests/mocks/platform/mocklog.h"
 
 #include <gmock/gmock.h>
 #include <gtest/gtest.h>
@@ -37,14 +38,16 @@ std::vector<GLuint> deletedNames(const SGlCall &call) {
 
 TEST(CGlTextureCache, FindsNothingBeforeAnUpload) {
     const CGlRecorder gl;
-    CGlTextureCache cache(gl.getApi());
+    CNullLog log;
+    CGlTextureCache cache(gl.getApi(), log);
     EXPECT_EQ(cache.find("ROCK.RAW", 64), 0U);
     EXPECT_TRUE(gl.getCalls().empty());
 }
 
 TEST(CGlTextureCache, UploadIsOneLevelOfBgraAndPutsTheBindingBack) {
     const CGlRecorder gl;
-    CGlTextureCache cache(gl.getApi());
+    CNullLog log;
+    CGlTextureCache cache(gl.getApi(), log);
     const std::vector<std::uint32_t> pixels = image(2);
     EXPECT_EQ(cache.upload("ROCK.RAW", 2, pixels), 1U);
     EXPECT_THAT(gl.getCalls(),
@@ -65,7 +68,8 @@ TEST(CGlTextureCache, UploadIsOneLevelOfBgraAndPutsTheBindingBack) {
 // bound would draw them with the wrong image.
 TEST(CGlTextureCache, UploadLeavesTheBindingThePendingPolygonsUse) {
     CGlRecorder gl;
-    CGlTextureCache cache(gl.getApi());
+    CNullLog log;
+    CGlTextureCache cache(gl.getApi(), log);
     const GLuint first = cache.upload("A.RAW", 1, image(1));
     cache.bind(first, kNearest, false);
     gl.clear();
@@ -75,7 +79,8 @@ TEST(CGlTextureCache, UploadLeavesTheBindingThePendingPolygonsUse) {
 
 TEST(CGlTextureCache, ReuploadingANameReplacesItsImageInPlace) {
     CGlRecorder gl;
-    CGlTextureCache cache(gl.getApi());
+    CNullLog log;
+    CGlTextureCache cache(gl.getApi(), log);
     const GLuint texture = cache.upload("ROCK.RAW", 1, image(1));
     gl.clear();
     EXPECT_EQ(cache.upload("ROCK.RAW", 1, image(1)), texture);
@@ -86,7 +91,8 @@ TEST(CGlTextureCache, ReuploadingANameReplacesItsImageInPlace) {
 
 TEST(CGlTextureCache, OneNameAtTwoDimensionsIsTwoTextures) {
     const CGlRecorder gl;
-    CGlTextureCache cache(gl.getApi());
+    CNullLog log;
+    CGlTextureCache cache(gl.getApi(), log);
     const GLuint large = cache.upload("ROCK.RAW", 2, image(2));
     const GLuint small = cache.upload("ROCK.RAW", 1, image(1));
     EXPECT_NE(large, small);
@@ -96,7 +102,8 @@ TEST(CGlTextureCache, OneNameAtTwoDimensionsIsTwoTextures) {
 
 TEST(CGlTextureCache, NamesCompareOnSixtyThreeCharacters) {
     const CGlRecorder gl;
-    CGlTextureCache cache(gl.getApi());
+    CNullLog log;
+    CGlTextureCache cache(gl.getApi(), log);
     const std::string prefix(62, 'A');
     const GLuint texture = cache.upload(prefix + "BX", 1, image(1));
     EXPECT_EQ(cache.find(prefix + "BY", 1), texture);
@@ -105,7 +112,8 @@ TEST(CGlTextureCache, NamesCompareOnSixtyThreeCharacters) {
 
 TEST(CGlTextureCache, RejectsAnImageThatIsNotDimensionSquared) {
     const CGlRecorder gl;
-    CGlTextureCache cache(gl.getApi());
+    CNullLog log;
+    CGlTextureCache cache(gl.getApi(), log);
     EXPECT_THROW(cache.upload("ROCK.RAW", 2, image(1)), std::invalid_argument);
     EXPECT_THROW(cache.upload("ROCK.RAW", 0, {}), std::invalid_argument);
     EXPECT_TRUE(gl.getCalls().empty());
@@ -113,7 +121,8 @@ TEST(CGlTextureCache, RejectsAnImageThatIsNotDimensionSquared) {
 
 TEST(CGlTextureCache, BindingNothingSetsNoSampling) {
     const CGlRecorder gl;
-    CGlTextureCache cache(gl.getApi());
+    CNullLog log;
+    CGlTextureCache cache(gl.getApi(), log);
     cache.bind(0, kNearest, true);
     EXPECT_THAT(gl.getCalls(), ElementsAre(glCall("ActiveTexture", GL_TEXTURE0),
                                            glCall("BindTexture", GL_TEXTURE_2D, 0)));
@@ -121,7 +130,8 @@ TEST(CGlTextureCache, BindingNothingSetsNoSampling) {
 
 TEST(CGlTextureCache, BindingSamplesAsTheStateAsksAndClamps) {
     CGlRecorder gl;
-    CGlTextureCache cache(gl.getApi());
+    CNullLog log;
+    CGlTextureCache cache(gl.getApi(), log);
     cache.bind(7, filtered(common::ETextureFilter::Linear, common::ETextureFilter::Nearest), false);
     EXPECT_THAT(
         gl.getCalls(),
@@ -142,9 +152,13 @@ TEST(CGlTextureCache, BindingSamplesAsTheStateAsksAndClamps) {
 
 TEST(CGlTextureCache, AReflectionGetsAMipChainOnceAndFiltersAcrossIt) {
     CGlRecorder gl;
-    CGlTextureCache cache(gl.getApi());
+    ::testing::StrictMock<MockLog> log;
+    CGlTextureCache cache(gl.getApi(), log);
     const GLuint sky = cache.upload("SKY.RAW", 1, image(1));
     gl.clear();
+    EXPECT_CALL(log, write(ELogSubsystem::Render,
+                           ::testing::EndsWith(std::format(
+                               "] built a mip chain for the reflection (texture {})", sky))));
     cache.bind(sky, kNearest, true);
     EXPECT_THAT(
         gl.getCalls(),
@@ -167,7 +181,8 @@ TEST(CGlTextureCache, AReflectionGetsAMipChainOnceAndFiltersAcrossIt) {
 
 TEST(CGlTextureCache, AnUploadReplacesTheChainWithOneLevel) {
     CGlRecorder gl;
-    CGlTextureCache cache(gl.getApi());
+    CNullLog log;
+    CGlTextureCache cache(gl.getApi(), log);
     const GLuint sky = cache.upload("SKY.RAW", 1, image(1));
     cache.bind(sky, kNearest, true);
     cache.upload("SKY.RAW", 1, image(1));
@@ -182,7 +197,8 @@ TEST(CGlTextureCache, AnUploadReplacesTheChainWithOneLevel) {
 
 TEST(CGlTextureCache, PastCapacityTheLeastRecentlyUsedGoes) {
     CGlRecorder gl;
-    CGlTextureCache cache(gl.getApi());
+    CNullLog log;
+    CGlTextureCache cache(gl.getApi(), log);
     const std::vector<std::uint32_t> pixel = image(1);
     for (std::size_t i = 0; i < CGlTextureCache::kCapacity; ++i) {
         cache.upload("T" + std::to_string(i), 1, pixel);
@@ -201,7 +217,8 @@ TEST(CGlTextureCache, PastCapacityTheLeastRecentlyUsedGoes) {
 
 TEST(CGlTextureCache, EvictingTheBoundTextureDoesNotRebindItsDeletedName) {
     CGlRecorder gl;
-    CGlTextureCache cache(gl.getApi());
+    CNullLog log;
+    CGlTextureCache cache(gl.getApi(), log);
     const std::vector<std::uint32_t> pixel = image(1);
     const GLuint oldest = cache.upload("T0", 1, pixel);
     for (std::size_t i = 1; i < CGlTextureCache::kCapacity; ++i) {
@@ -216,7 +233,8 @@ TEST(CGlTextureCache, EvictingTheBoundTextureDoesNotRebindItsDeletedName) {
 
 TEST(CGlTextureCache, ReleaseDeletesEveryImageAndForgetsTheBinding) {
     CGlRecorder gl;
-    CGlTextureCache cache(gl.getApi());
+    CNullLog log;
+    CGlTextureCache cache(gl.getApi(), log);
     const GLuint first = cache.upload("A.RAW", 1, image(1));
     const GLuint second = cache.upload("B.RAW", 1, image(1));
     cache.bind(second, kNearest, true);
@@ -232,14 +250,16 @@ TEST(CGlTextureCache, ReleaseDeletesEveryImageAndForgetsTheBinding) {
 
 TEST(CGlTextureCache, ReleasingNothingCallsNothing) {
     const CGlRecorder gl;
-    CGlTextureCache cache(gl.getApi());
+    CNullLog log;
+    CGlTextureCache cache(gl.getApi(), log);
     cache.release();
     EXPECT_TRUE(gl.getCalls().empty());
 }
 
 TEST(CGlTextureCache, AnInvalidatedBindingIsNotPutBack) {
     CGlRecorder gl;
-    CGlTextureCache cache(gl.getApi());
+    CNullLog log;
+    CGlTextureCache cache(gl.getApi(), log);
     cache.bind(5, kNearest, false);
     cache.invalidateBinding();
     gl.clear();
@@ -249,7 +269,8 @@ TEST(CGlTextureCache, AnInvalidatedBindingIsNotPutBack) {
 
 TEST(CGlTextureCache, DestroyingDeletesEveryImage) {
     CGlRecorder gl;
-    std::optional<CGlTextureCache> cache(std::in_place, gl.getApi());
+    CNullLog log;
+    std::optional<CGlTextureCache> cache(std::in_place, gl.getApi(), log);
     const GLuint texture = cache->upload("A.RAW", 1, image(1));
     gl.clear();
     cache.reset();

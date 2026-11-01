@@ -124,9 +124,9 @@ void __cdecl core_cloth_cpp_CCloth_setup_FUN_00439710(CCloth *this_ptr,CVector3f
       pSVar18 = this_ptr->vertices;
       do {
         pCVar12 = &this_ptr->vertices[iVar14].offset_pos;
-        local_e4 = pCVar12->x + this_ptr_00->bbox_pool[0].min.x;
-        local_e0 = pCVar12->y + this_ptr_00->bbox_pool[0].min.y;
-        local_dc = pCVar12->z + this_ptr_00->bbox_pool[0].min.z;
+        local_e4 = pCVar12->x + this_ptr_00->bias_used.x;
+        local_e0 = pCVar12->y + this_ptr_00->bias_used.y;
+        local_dc = pCVar12->z + this_ptr_00->bias_used.z;
         if (pSVar18 != (SClothVertex *)&local_e4) {
           (pSVar18->position).x = local_e4;
           (pSVar18->position).y = local_e0;
@@ -153,7 +153,7 @@ void __cdecl core_cloth_cpp_CCloth_setup_FUN_00439710(CCloth *this_ptr,CVector3f
             local_c8 = 0.0;
             pSVar23 = this_ptr_00->vertex_data_ptr[0] + local_20;
             local_c4 = 0.0;
-            pCVar8 = &pSVar23->position;
+            pCVar8 = pSVar23->bone_offsets;
             for (iVar14 = 0; iVar14 < (int)(uint)pSVar23->num_bone_influences; iVar14 = iVar14 + 1) {
               pCVar10 = core_xform_cpp_transformVector3x4_FUN_005f4dc0
                                   (&local_c0,pCVar8,
@@ -180,7 +180,7 @@ void __cdecl core_cloth_cpp_CCloth_setup_FUN_00439710(CCloth *this_ptr,CVector3f
         pSVar11->bone_influence_count = (uint)bVar2;
         if (bVar2 != 0) {
           pCVar7 = pSVar11->bone_positions;
-          pCVar8 = &pSVar20->position;
+          pCVar8 = pSVar20->bone_offsets;
           do {
             pSVar11->bone_index[iVar14] = (uint)pSVar20->bone_indices[iVar14];
             if (pCVar7 != pCVar8) {
@@ -214,7 +214,7 @@ void __cdecl core_cloth_cpp_CCloth_setup_FUN_00439710(CCloth *this_ptr,CVector3f
             pSVar23 = this_ptr_00->vertex_data_ptr[local_30] + local_24;
             local_f0 = 0.0;
             local_ec = 0.0;
-            pCVar8 = &pSVar23->position;
+            pCVar8 = pSVar23->bone_offsets;
             local_e8 = 0.0;
             for (iVar14 = 0; iVar14 < (int)(uint)pSVar23->num_bone_influences;
                 iVar14 = iVar14 + 1) {

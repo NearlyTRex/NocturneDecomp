@@ -53,6 +53,8 @@ int CPickList::getColumnsNeeded() const {
     return (getItemCount() + rows_per_column_ - 1) / rows_per_column_;
 }
 
+// Retail put the OS cursor back where it was once the list closed; the enhanced game never moves
+// it (the decomp's UI_CURSOR_WARP).
 // deferred: servicing the network each frame the list waits, which the enhanced game does so a
 //   netplay peer doesn't time out, with CNetGame's keepalive
 // nocedit 0x004a3e20
@@ -66,8 +68,6 @@ int CPickList::displayChoicesAndWaitForInput(std::string_view dialog_title,
     engine::IRawInput &input = controls.raw_input;
     const int saved_mask = input.getInputKeyMask();
     input.setInputKeyMask(kDialogKeyMask);
-    const int saved_x = input.getMouseX();
-    const int saved_y = input.getMouseY();
     initializeDialog(dialog_title, initial_selected_index, kSavingWindow);
     int result = kStillOpen;
     while (result == kStillOpen) {
@@ -79,7 +79,6 @@ int CPickList::displayChoicesAndWaitForInput(std::string_view dialog_title,
             result = kCancelled;
         }
     }
-    input.setCursorPosition(saved_x, saved_y);
     controls.two_d.clearInputAndWait();
     controls.editor_tools.restoreWindowAndCleanup();
     input.setInputKeyMask(saved_mask);

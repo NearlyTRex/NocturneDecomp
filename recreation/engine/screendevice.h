@@ -40,6 +40,9 @@ public:
     virtual int initializeGraphicsSystem(int width, int height) = 0;
     // False for a depth other than 8, 16 or 32, or a mode the display refuses.
     virtual bool setScreenResolution(int width, int height, int bits_per_pixel) = 0;
+    // With Direct3D on, hands the current mode to the hardware renderer; when it refuses, turns
+    // Direct3D off and sets the mode again for software.
+    virtual void resetGraphicsSystem() = 0;
     virtual void setupColorPalette() = 0;
     virtual void convertPaletteToDirectColor() = 0;
     // Points the rows at the surface the next swap shows, until closeScreenDevice.

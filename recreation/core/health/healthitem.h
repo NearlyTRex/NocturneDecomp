@@ -14,7 +14,8 @@ class CHealthItem : public CDemonActor {
 public:
     static const CDemonActorType kType;
 
-    CHealthItem();
+    // Its model is found among those the classes hold.
+    explicit CHealthItem(CActor &classes);
     ~CHealthItem() override;
     CHealthItem(const CHealthItem &) = delete;
     CHealthItem &operator=(const CHealthItem &) = delete;
@@ -42,7 +43,7 @@ public:
 private:
     static constexpr float kDefaultHpRestored = 50.0F;
 
-    static std::unique_ptr<CDemonActor> create();
+    static std::unique_ptr<CDemonActor> create(CActor &classes);
 
     CKeyFramedModelInstance model_;
     int use_count_ = 1;

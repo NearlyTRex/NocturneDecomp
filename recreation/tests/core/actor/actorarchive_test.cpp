@@ -1,16 +1,22 @@
 #include "common/error/fatalerror.h"
+#include "common/math/quaternion4f.h"
 #include "common/math/vector3f.h"
 #include "common/random/watcomrandom.h"
 #include "common/text/textscanner.h"
 #include "core/actor/actor.h"
 #include "core/actor/actorarchive.h"
 #include "core/actor/demonactor.h"
+#include "core/box/box.h"
 #include "core/cloth/clothlist.h"
+#include "core/event/rulelist.h"
 #include "core/game/game.h"
 #include "core/location.h"
 #include "core/skeleton/deformablemodelinstance.h"
 #include "core/skeleton/partvisibility.h"
+#include "tests/mocks/core/gameparts.h"
 #include "tests/mocks/core/mockactorlookup.h"
+#include "tests/mocks/core/mockdeformablemodels.h"
+#include "tests/mocks/core/mockkeyframedmodels.h"
 #include "tests/mocks/core/testactor.h"
 #include "tests/mocks/engine/mockgameclock.h"
 
@@ -57,9 +63,12 @@ protected:
     }
 
     ::testing::NiceMock<engine::MockGameClock> clock_;
-    CGame game_{clock_};
+    CGameParts game_parts_{clock_};
+    CGame &game_ = game_parts_.getGame();
     common::CWatcomRandom crt_;
-    CActor classes_{game_, crt_};
+    ::testing::NiceMock<MockDeformableModels> models_;
+    ::testing::NiceMock<MockKeyFramedModels> keyframed_models_;
+    CActor classes_{game_, crt_, models_, keyframed_models_};
     ::testing::StrictMock<MockActorLookup> actors_;
     const SActorArchiveOwners owners_{
         .actor_classes = classes_, .actors = actors_, .crt_random = crt_};
@@ -192,7 +201,7 @@ TEST_F(CActorArchiveTest, AnActorIsFoundByTheMission) {
 
 // A line opening the list, the count, a name to a line, and a line closing it.
 TEST_F(CActorArchiveTest, AClothListIsItsFileNames) {
-    CClothList cloth_list;
+    CClothList cloth_list{game_parts_.getDosIo(), keyframed_models_};
     EXPECT_EQ(read("\t{ // clothList\n\t\t2 // clothCount\n\t\t\"coat.cls\"\n\t\t\"skirt.cls\"\n"
                    "\t}\nnext",
                    [&](CActorArchive &archive) { archive.archiveClothList(cloth_list, "c"); }),
@@ -203,7 +212,7 @@ TEST_F(CActorArchiveTest, AClothListIsItsFileNames) {
 }
 
 TEST_F(CActorArchiveTest, AClothListThatCantBeReadIsFatal) {
-    CClothList cloth_list;
+    CClothList cloth_list{game_parts_.getDosIo(), keyframed_models_};
     const auto read_list = [&](CActorArchive &archive) {
         archive.archiveClothList(cloth_list, "clothList");
     };
@@ -214,8 +223,75 @@ TEST_F(CActorArchiveTest, AClothListThatCantBeReadIsFatal) {
     expectFatal("{\n1\n\"coat.cls\"\n}", read_list, "clothList", "Cloth list closing brace");
 }
 
+TEST_F(CActorArchiveTest, AQuaternionIsWThenXYAndZ) {
+    common::CQuaternion4f quaternion;
+    EXPECT_EQ(read("1,0.5,-2,3    // origOrient\nnext",
+                   [&](CActorArchive &archive) { archive.archiveQuaternion(quaternion, "q"); }),
+              "next");
+    EXPECT_EQ(quaternion, (common::CQuaternion4f{.w = 1.0F, .x = 0.5F, .y = -2.0F, .z = 3.0F}));
+    const auto read_quaternion = [&](CActorArchive &archive) {
+        archive.archiveQuaternion(quaternion, "q");
+    };
+    expectFatal("1,2,3\n", read_quaternion, "q", "Quaternion");
+}
+
+TEST_F(CActorArchiveTest, ABoxIsBetweenItsBraces) {
+    CBox box;
+    EXPECT_EQ(read("\t{ // simBox\n\t\tboxVersion\n\t\t1\n\t\tboxStateInfo\n\t\t1,2,3\n\t\t0,0,0\n"
+                   "\t\t4,5,6\n\t\t7\n\t\t0,0,0\n\t\t0,0,0\n\t\t1\n\t}\nnext",
+                   [&](CActorArchive &archive) { archive.archiveBox(box, "simBox"); }),
+              "next");
+    EXPECT_EQ(box.getPosition().y, 2.0F);
+    EXPECT_EQ(box.getExtents().z, 6.0F);
+    EXPECT_EQ(box.getValidity(), 1);
+}
+
+TEST_F(CActorArchiveTest, ABoxWithoutItsBracesIsFatal) {
+    CBox box;
+    const auto read_box = [&](CActorArchive &archive) { archive.archiveBox(box, "simBox"); };
+    expectFatal("{", read_box, "simBox", "sim box state info opening brace");
+    expectFatal("{\nv\n1\ns\n0,0,0\n0,0,0\n0,0,0\n0\n0,0,0\n0,0,0\n1\n}", read_box, "simBox",
+                "sim box state info closing brace");
+}
+
+TEST_F(CActorArchiveTest, RulesAreEachConditionAndItsEvent) {
+    CRuleList rules;
+    EXPECT_EQ(read("\t{ // openRules\n\t\t2 // ruleCount\n\t\t\"true\" => \"Open\"\n"
+                   "\t\t\"@flag\" => \"Shut it\"\n\t}\nnext",
+                   [&](CActorArchive &archive) { archive.archiveRules(rules, "openRules"); }),
+              "next");
+    EXPECT_THAT(rules.getRules(), ElementsAre(SRule{.condition = "true", .event = "Open"},
+                                              SRule{.condition = "@flag", .event = "Shut it"}));
+    read("{\n0 // ruleCount\n}\n",
+         [&](CActorArchive &archive) { archive.archiveRules(rules, "openRules"); });
+    EXPECT_TRUE(rules.getRules().empty());
+}
+
+TEST_F(CActorArchiveTest, RulesThatCantBeReadAreFatal) {
+    CRuleList rules;
+    const auto read_rules = [&](CActorArchive &archive) { archive.archiveRules(rules, "rules"); };
+    expectFatal("{", read_rules, "rules", "Rule list opening brace");
+    expectFatal("{\nnone\n", read_rules, "rules", "rule count");
+    expectFatal("{\n1", read_rules, "rules", "ruleCount");
+    expectFatal("{\n1\n\"true\" \"Open\"\n}\n", read_rules, "rules", "rule");
+    expectFatal("{\n1\n\"\" => \"Open\"\n}\n", read_rules, "rules", "rule");
+    expectFatal("{\n1\n\"true\" => \"Open\"\n}", read_rules, "rules", "Rule list closing brace");
+}
+
+TEST_F(CActorArchiveTest, ADeformableModelIsItsFileNameWithEveryPartShown) {
+    CDeformableModelInstance model(models_);
+    model.setPartVisibility(0, EPartVisibility::kHidden);
+    EXPECT_EQ(read("\t\"ZOMBIE2.DFM\"    // modelName\nnext",
+                   [&](CActorArchive &archive) {
+                       archive.archiveDeformableModelInstance(model, "modelName");
+                   }),
+              "next");
+    EXPECT_EQ(model.getModelName(), "ZOMBIE2.DFM");
+    EXPECT_EQ(model.getPartVisibility(0), EPartVisibility::kShown);
+}
+
 TEST_F(CActorArchiveTest, AMotionStateIsTheMotionAndFrame) {
-    CDeformableModelInstance model;
+    CDeformableModelInstance model(models_);
     EXPECT_EQ(read("\t{ // motion state\n\t\t12,3.5\n\t}\nnext",
                    [&](CActorArchive &archive) { archive.archiveMotionState(model, "m"); }),
               "next");
@@ -226,7 +302,7 @@ TEST_F(CActorArchiveTest, AMotionStateIsTheMotionAndFrame) {
 
 // A motion named instead of numbered has no index until it is looked up.
 TEST_F(CActorArchiveTest, AMotionStateCanNameTheMotion) {
-    CDeformableModelInstance model;
+    CDeformableModelInstance model(models_);
     read("{\n\"run fast\" , 7\n}\n",
          [&](CActorArchive &archive) { archive.archiveMotionState(model, "m"); });
     EXPECT_EQ(model.getCurrentMotionIndex(), -1);
@@ -235,7 +311,7 @@ TEST_F(CActorArchiveTest, AMotionStateCanNameTheMotion) {
 }
 
 TEST_F(CActorArchiveTest, AMotionStateThatCantBeReadIsFatal) {
-    CDeformableModelInstance model;
+    CDeformableModelInstance model(models_);
     const auto read_motion = [&](CActorArchive &archive) {
         archive.archiveMotionState(model, "motion state");
     };
@@ -252,7 +328,7 @@ TEST_F(CActorArchiveTest, AMotionStateThatCantBeReadIsFatal) {
 // Every part is shown in its first texture set until the file says otherwise, and any number but
 // 0 shows a part.
 TEST_F(CActorArchiveTest, APartStatusIsEachPartsVisibilityThenTextureSet) {
-    CDeformableModelInstance model;
+    CDeformableModelInstance model(models_);
     model.setPartVisibility(2, EPartVisibility::kHidden);
     model.setPartTextureSet(2, 9);
     EXPECT_EQ(read("\t{ // partStatus\n\t\t2\n\t\t0 3 \n\t\t5 6 \n\t}\nnext",
@@ -268,7 +344,7 @@ TEST_F(CActorArchiveTest, APartStatusIsEachPartsVisibilityThenTextureSet) {
 
 // The original read on with whatever its stack held for a count it couldn't read.
 TEST_F(CActorArchiveTest, APartCountThatCantBeReadIsNone) {
-    CDeformableModelInstance model;
+    CDeformableModelInstance model(models_);
     model.setPartVisibility(0, EPartVisibility::kHidden);
     EXPECT_EQ(
         read("{\n}\nnext", [&](CActorArchive &archive) { archive.archivePartStatus(model, "p"); }),
@@ -277,7 +353,7 @@ TEST_F(CActorArchiveTest, APartCountThatCantBeReadIsNone) {
 }
 
 TEST_F(CActorArchiveTest, APartStatusThatCantBeReadIsFatal) {
-    CDeformableModelInstance model;
+    CDeformableModelInstance model(models_);
     const auto read_parts = [&](CActorArchive &archive) {
         archive.archivePartStatus(model, "partStatus");
     };

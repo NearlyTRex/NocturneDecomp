@@ -49,6 +49,8 @@ public:
     void setShadowOffset(int x, int y);
     // Hands every line to font from now on.
     void setWinFont(CFont &font);
+    // Draws from the sheets from now on; the OS font setWinFont gave, if any, for handing back.
+    [[nodiscard]] CFont *releaseWinFont();
     // The display colours for the current depth, from each sheet's palette.
     void remapPalette();
 
@@ -71,7 +73,8 @@ public:
     int drawCharacter(int char_code, int x, int y, int color_mode, int color_value, int scale = 1);
     int drawTextWrapper(int x, int y, int color_mode, int color_value, std::string_view text);
     int drawTextRight(int x, int y, int color_mode, int color_value, char *text);
-    int drawTextCenter(int x, int y, int color_mode, int color_value, char *text);
+    // Centred on x.
+    int drawTextCenter(int x, int y, int color_mode, int color_value, std::string_view text);
     // Centred between two inclusive edges.
     int drawTextCenterInBounds(int left_x, int right_x, int y, int color_mode, int color_value,
                                std::string_view text);

@@ -27,7 +27,7 @@ CVector3f * __cdecl core_skeleton_cpp_CDeformableModelInstance_getBoneModelPosit
   }
   pCVar1 = core_skeleton_cpp_CDeformableModelInstance_getSkeletonPtr_FUN_005a0820(this_ptr);
   bone_index_00 = pCVar1->bone_list[bone_index].parent_index;
-  input_vector = this_ptr->transformed_vertices + bone_index;
+  input_vector = this_ptr->bone_origins + bone_index;
   if (bone_index_00 < 0) {
     out_position->x = input_vector->x + (this_ptr->bone_transform).pose_data.root_position.x;
     out_position->y = input_vector->y + (this_ptr->bone_transform).pose_data.root_position.y;

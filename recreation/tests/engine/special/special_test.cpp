@@ -398,6 +398,31 @@ TEST_F(CSpecialTest, AFailedInitTurnsDirect3DOffAndLeavesNothingLoaded) {
     EXPECT_EQ(special_.loadExternalRenderer(), 0);
     EXPECT_FALSE(special_.getUseDirect3D());
     EXPECT_EQ(special_.selectCard(0), 0);
+    EXPECT_CALL(renderer_, buildCardList).Times(0);
+    int count = -1;
+    EXPECT_EQ(special_.buildCardList(&count, nullptr, nullptr, nullptr, nullptr), 0);
+    EXPECT_EQ(count, -1);
+}
+
+TEST_F(CSpecialTest, KillingTheRendererLetsGoOfItUntilTheNextLoad) {
+    EXPECT_CALL(renderer_, kill).Times(0);
+    EXPECT_EQ(special_.kill(), 1);
+    startRenderer();
+    EXPECT_TRUE(special_.getUseExternalRenderer());
+    EXPECT_CALL(renderer_, kill);
+    EXPECT_EQ(special_.kill(), 1);
+    EXPECT_FALSE(special_.getUseExternalRenderer());
+    EXPECT_EQ(special_.selectCard(0), 0);
+}
+
+TEST_F(CSpecialTest, TheCardsAreTheRenderersOnceItIsLoaded) {
+    special_.setUseDirect3D(true);
+    EXPECT_CALL(renderer_, init(_)).WillOnce(Return(1));
+    EXPECT_EQ(special_.loadExternalRenderer(), 1);
+    int count = 0;
+    EXPECT_CALL(renderer_, buildCardList(&count, nullptr, nullptr, nullptr, nullptr))
+        .WillOnce(Return(1));
+    EXPECT_EQ(special_.buildCardList(&count, nullptr, nullptr, nullptr, nullptr), 1);
 }
 
 TEST_F(CSpecialTest, SettingTheModeLoadsTheRendererAndHandsItTheScreen) {
@@ -418,6 +443,18 @@ TEST_F(CSpecialTest, SettingTheModeLoadsTheRendererAndHandsItTheScreen) {
     EXPECT_EQ(special_.setResolutionAndColorTable(kWidth, kHeight, 32), 1);
     EXPECT_TRUE(special_.getUseExternalRenderer());
     EXPECT_EQ(bits_per_pixel_, 32);
+}
+
+// With the renderer off the colour waits for its next mode set; a running one takes it now.
+TEST_F(CSpecialTest, TheFogColourGoesToTheRendererWhenItRuns) {
+    EXPECT_CALL(renderer_, setFogColor).Times(0);
+    EXPECT_EQ(special_.setFogColor(10, 20, 30), 0);
+    ::testing::Mock::VerifyAndClearExpectations(&renderer_);
+    special_.setUseDirect3D(true);
+    EXPECT_CALL(renderer_, setFogColor(10, 20, 30)).WillOnce(Return(1));
+    ASSERT_EQ(special_.setResolutionAndColorTable(kWidth, kHeight, 32), 1);
+    EXPECT_CALL(renderer_, setFogColor(1, 2, 3)).WillOnce(Return(7));
+    EXPECT_EQ(special_.setFogColor(1, 2, 3), 7);
 }
 
 TEST_F(CSpecialTest, AnEightBitModeDrivesTheRendererAtSixteen) {
@@ -458,9 +495,15 @@ TEST_F(CSpecialTest, WithTheRendererOffTheFrameCallsDoNothing) {
     EXPECT_CALL(renderer_, unlockFrame()).Times(0);
     EXPECT_CALL(renderer_, clear()).Times(0);
     EXPECT_CALL(renderer_, toggle()).Times(0);
+    EXPECT_CALL(renderer_, beginScene()).Times(0);
+    EXPECT_CALL(renderer_, clearZBuffer()).Times(0);
     EXPECT_EQ(special_.lockFrame(), 0);
     EXPECT_EQ(special_.unlockFrame(), 0);
     EXPECT_EQ(special_.clear(), 0);
+    EXPECT_EQ(special_.beginScene(), 0);
+    EXPECT_EQ(special_.clearZBuffer(), 0);
+    EXPECT_EQ(special_.endScene(), 0);
+    EXPECT_EQ(special_.masterZBuffer(0), 0);
     special_.presentToExternalRenderer();
 }
 
@@ -478,6 +521,14 @@ TEST_F(CSpecialTest, ClearAndUnlockReturnTheRenderersResult) {
     EXPECT_EQ(special_.clear(), 7);
     EXPECT_CALL(renderer_, unlockFrame()).WillOnce(Return(5));
     EXPECT_EQ(special_.unlockFrame(), 5);
+    EXPECT_CALL(renderer_, beginScene()).WillOnce(Return(3));
+    EXPECT_EQ(special_.beginScene(), 3);
+    EXPECT_CALL(renderer_, clearZBuffer()).WillOnce(Return(4));
+    EXPECT_EQ(special_.clearZBuffer(), 4);
+    EXPECT_CALL(renderer_, endScene()).WillOnce(Return(6));
+    EXPECT_EQ(special_.endScene(), 6);
+    EXPECT_CALL(renderer_, masterZBuffer(2)).WillOnce(Return(8));
+    EXPECT_EQ(special_.masterZBuffer(2), 8);
 }
 
 // The mode's setup locked the frame, so the first present has nothing to copy.

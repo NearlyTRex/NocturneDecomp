@@ -17,7 +17,6 @@ constexpr int kVersion = 1;
 constinit const CDemonActorType CScat::kType =
     makeActorType("CScat", &CHero::kType, &CScat::create, kVersion);
 
-// deferred: loading the model scat.dfm, with CDeformableModelInstance::init
 // deferred: creating Scat's default weapon, with the weapon classes
 // deferred: adding the layer actions that draw the pistols, with addLayerAction
 // deferred: the defaults the constructor gives Scat's own fields, with the steps that read them
@@ -30,7 +29,9 @@ constinit const CDemonActorType CScat::kType =
 // deferred: the network pistol's reserve topped up after each shot (the decomp's hero_weapon.h
 //   nocturne_hero_reload_extra_gun), with CScat::process and CNetGame
 // nocedit 0x00556ed0
-CScat::CScat() = default;
+CScat::CScat(CActor &classes) : CHero(classes) {
+    getModel().init("scat.dfm");
+}
 
 // nocedit 0x00559160
 CScat::~CScat() = default;
@@ -46,8 +47,8 @@ void CScat::archive(CActorArchive &actor_archive) {
 }
 
 // nocedit 0x00556e90
-std::unique_ptr<CDemonActor> CScat::create() {
-    return std::make_unique<CScat>();
+std::unique_ptr<CDemonActor> CScat::create(CActor &classes) {
+    return std::make_unique<CScat>(classes);
 }
 
 } // namespace nocturne::core

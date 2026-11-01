@@ -26,7 +26,7 @@ void __cdecl core_skeleton_cpp_CDeformableModel_computeBoneBoundsAndFlags_FUN_00
   iVar2 = pCVar3->bone_count;
   iVar7 = 0;
   if (0 < iVar2) {
-    this_ptr_00 = (CBoundingBox3D *)&this_ptr->bbox_pool[0].max;
+    this_ptr_00 = this_ptr->bone_bounds;
     do {
       core_box_cpp_CBoundingBox3D_reset_FUN_00420fb0(this_ptr_00);
       this_ptr_00 = this_ptr_00 + 1;
@@ -38,11 +38,11 @@ void __cdecl core_skeleton_cpp_CDeformableModel_computeBoneBoundsAndFlags_FUN_00
   if (0 < this_ptr->vertex_count[0]) {
     do {
       pSVar4 = this_ptr->vertex_data_ptr[0] + local_2c;
-      point = &pSVar4->position;
+      point = pSVar4->bone_offsets;
       for (iVar1 = 0; iVar1 < (int)(uint)pSVar4->num_bone_influences; iVar1 = iVar1 + 1) {
         bone_idx = pSVar4->bone_indices[iVar1];
         core_box_cpp_CBoundingBox3D_expand_FUN_00420240
-                  ((CBoundingBox3D *)&this_ptr->bbox_pool[bone_idx].max,point);
+                  (&this_ptr->bone_bounds[bone_idx],point);
         point = point + 1;
         this_ptr->bone_flags[bone_idx] = 1;
       }

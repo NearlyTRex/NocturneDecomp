@@ -126,7 +126,7 @@ void __cdecl core_skeleton_cpp_CDeformableModelInstance_updateMotion_FUN_0059e0a
         (local_5c->bone_transform).pose_data.bone_rotations[0].x = auStack_248;
         (local_5c->bone_transform).pose_data.bone_rotations[0].y = fStack_244;
         (local_5c->bone_transform).pose_data.bone_rotations[0].z = (float)pCStack_240;
-        (local_3c->bone_transform).bone_scales[0] = local_3c->rest_pose_data[0];
+        (local_3c->bone_transform).bone_scales[0] = local_3c->rest_bone_scales[0];
         local_34 = local_34 + 1;
         local_5c = pCStack_240;
         local_3c = (CDeformableModelInstance *)&(local_3c->base).current_motion_index;
@@ -145,13 +145,12 @@ void __cdecl core_skeleton_cpp_CDeformableModelInstance_updateMotion_FUN_0059e0a
       (this_ptr->bone_transform).pose_data.root_position.y = fVar3 * fVar7 + fVar1 * local_1870;
       (this_ptr->bone_transform).pose_data.root_position.z = fVar4 * fVar7 + fVar2 * local_1870;
     }
-    fVar5 = (this_ptr->scaled_model_dimensions).x;
+    fVar5 = (this_ptr->root_offset_scale).x;
     fVar6 = (this_ptr->bone_transform).pose_data.root_position.x;
-    fVar8 = (this_ptr->scaled_model_dimensions).z;
+    fVar8 = (this_ptr->root_offset_scale).z;
     fVar9 = (this_ptr->bone_transform).pose_data.root_position.z;
     (this_ptr->bone_transform).pose_data.root_position.y =
-         (this_ptr->scaled_model_dimensions).y *
-         (this_ptr->bone_transform).pose_data.root_position.y;
+         (this_ptr->root_offset_scale).y * (this_ptr->bone_transform).pose_data.root_position.y;
     (this_ptr->bone_transform).pose_data.root_position.z = fVar8 * fVar9;
     (this_ptr->bone_transform).pose_data.root_position.x = fVar5 * fVar6;
     return;

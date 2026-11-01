@@ -426,7 +426,7 @@ LAB_0054d1ae:
                                   (*(CDemonActor **)((int)g_CDemonSet_PTR_005be368->enemies + iVar8)
                                    ,g_CTVBatActorType_02dd110c.name_hash);
           if ((this_ptr_00 != (CCharacter *)0x0) &&
-             (this_ptr_00[1].model.transformed_vertices[0xc].z != 0.0)) {
+             (this_ptr_00[1].model.bone_origins[0xc].z != 0.0)) {
             core_charactr_cpp_SDamageInfo_ctor_FUN_00423ed0(&SStack_208);
             SStack_208.damage_amount = 999.0;
             (*(((this_ptr_00->base).vtable._uc)->_uc).processDamage)(this_ptr_00,&SStack_208);

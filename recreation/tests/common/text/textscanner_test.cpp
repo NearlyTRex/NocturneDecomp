@@ -3,10 +3,22 @@
 #include <gtest/gtest.h>
 
 #include <optional>
+#include <string>
 #include <string_view>
+#include <type_traits>
 
 namespace nocturne::common {
 namespace {
+
+// It views the text, so a string that dies with the statement is refused.
+TEST(CTextScanner, TakesOnlyTextThatOutlivesIt) {
+    static_assert(std::is_constructible_v<CTextScanner, std::string_view>);
+    static_assert(std::is_constructible_v<CTextScanner, const char *>);
+    static_assert(std::is_constructible_v<CTextScanner, const std::string &>);
+    static_assert(std::is_constructible_v<CTextScanner, std::string &>);
+    static_assert(!std::is_constructible_v<CTextScanner, std::string>);
+    static_assert(!std::is_constructible_v<CTextScanner, std::string &&>);
+}
 
 TEST(CTextScanner, EmptyTextIsAtTheEnd) {
     const CTextScanner scanner("");

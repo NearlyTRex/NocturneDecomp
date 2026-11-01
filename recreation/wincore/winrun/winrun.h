@@ -34,7 +34,6 @@ public:
     // Releases the keys let go during the last pump, then handles every waiting event.
     void processWindowMessages();
     void displayMessageBoxAndQuit(const common::CFatalError &error);
-    char *getKeyName(engine::EInputCodeType keycode);
     // The window was closed: waits for input give up, and menus take it as a cancel.
     [[nodiscard]] bool getInputDisabled() const override;
     // Set when the window regains focus; the game takes it to restore its camera view.
@@ -66,6 +65,8 @@ private:
     double timer_calibration_;
     std::uint64_t performance_counter_;
     std::uint32_t accumulated_game_time_ = 0;
+    // The fraction of a tick the last call didn't count.
+    double tick_remainder_ = 0.0;
     std::array<std::uint8_t, kInputCodeCount> keyboard_state_{};
     // Codes released during the current pump, cleared from the state at the next.
     std::array<bool, kInputCodeCount> message_flags_{};

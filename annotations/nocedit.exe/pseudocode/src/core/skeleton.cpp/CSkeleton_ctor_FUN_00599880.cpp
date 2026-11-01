@@ -13,12 +13,13 @@ CSkeleton * __cdecl core_skeleton_cpp_CSkeleton_ctor_FUN_00599880(CSkeleton *thi
   CSkeleton_ptr_168828 puVar1;
   
   pCVar1 = (CSkeleton *)core_motion_cpp_CMotionList_ctor_FUN_0052cd50(&this_ptr->motion_list);
-  puVar1 = __arrinit(pCVar1->bone_scales,100,&g_CVectorTypeInfo);
+  puVar1 = __arrinit
+                     (pCVar1->reference_bone_origins,100,&g_CVectorTypeInfo);
   ADJ(puVar1)->bone_count = 0;
   ADJ(puVar1)->frame_count = 0;
   ADJ(puVar1)->bone_angle_frames = (CQuaternion4f *)0x0;
   ADJ(puVar1)->frame_positions_1 = (CVector3f *)0x0;
   ADJ(puVar1)->frame_positions_2 = (CVector3f *)0x0;
-  ADJ(puVar1)->bone_scales[0].x = -99999.0;
+  ADJ(puVar1)->reference_bone_origins[0].x = -99999.0;
   return ADJ(puVar1);
 }

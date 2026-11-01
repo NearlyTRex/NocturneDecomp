@@ -105,6 +105,10 @@ public:
     // What GetString answers for GL_RENDERER; null as a driver that answers nothing.
     static constexpr std::array<GLubyte, 5> kRendererName = {'T', 'e', 's', 't', '\0'};
     const GLubyte *renderer_name = kRendererName.data();
+    // And for GL_VERSION.
+    static constexpr std::array<GLubyte, 13> kVersionName = {'3', '.', '3', '.', '0', ' ', 'T',
+                                                             'e', 's', 't', ' ', '1', '\0'};
+    const GLubyte *version_name = kVersionName.data();
 
 private:
     static CGlRecorder *&live() {
@@ -259,6 +263,9 @@ private:
         };
         api_.GetString = [](GLenum name) {
             note("GetString", name);
+            if (name == GL_VERSION) {
+                return self().version_name;
+            }
             return name == GL_RENDERER ? self().renderer_name : nullptr;
         };
         api_.GetUniformLocation = [](GLuint program, const GLchar *name) {
@@ -303,7 +310,11 @@ private:
             note("TexSubImage2D", target, level, x, y, width, height, format, type).pointer =
                 pixels;
         };
+        api_.Uniform1f = [](GLint location, GLfloat value) { note("Uniform1f", location, value); };
         api_.Uniform1i = [](GLint location, GLint value) { note("Uniform1i", location, value); };
+        api_.Uniform2f = [](GLint location, GLfloat x, GLfloat y) {
+            note("Uniform2f", location, x, y);
+        };
         api_.Uniform3f = [](GLint location, GLfloat x, GLfloat y, GLfloat z) {
             note("Uniform3f", location, x, y, z);
         };

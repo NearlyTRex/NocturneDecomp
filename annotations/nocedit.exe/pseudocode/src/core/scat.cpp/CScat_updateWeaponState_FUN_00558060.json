@@ -7,15 +7,15 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 255,
-    "complexity_score": 104,
+    "complexity_score": 103,
     "cross_reference_count": 1,
     "function_call_count": 5,
     "global_count": 1,
     "max_suspect_severity": "clean",
-    "pseudocode_lines": 104,
+    "pseudocode_lines": 103,
     "suspect_count": 0,
     "suspect_types": [],
-    "total_lines": 359
+    "total_lines": 358
   },
   "cross_references": [
     {
@@ -140,7 +140,7 @@
       "match": "1.12104e-44",
       "resolution_source": "keep",
       "severity": "mild",
-      "text": "((pCVar5->model).transformed_vertices[0x19].y == 1.12104e-44)) {",
+      "text": "((pCVar5->model).bone_origins[0x19].y == 1.12104e-44)) {",
       "type": "suspect_float"
     },
     {
@@ -158,7 +158,7 @@
       "match": "1.12104e-44",
       "resolution_source": "keep",
       "severity": "mild",
-      "text": "((this_ptr_00->model).transformed_vertices[0x19].y != 1.12104e-44)) {",
+      "text": "((this_ptr_00->model).bone_origins[0x19].y != 1.12104e-44)) {",
       "type": "suspect_float"
     },
     {
@@ -167,7 +167,7 @@
       "match": "1.12104e-44",
       "resolution_source": "keep",
       "severity": "mild",
-      "text": "if ((pCVar5->model).transformed_vertices[0x19].y != 1.12104e-44) goto LAB_00558263;",
+      "text": "if ((pCVar5->model).bone_origins[0x19].y != 1.12104e-44) goto LAB_00558263;",
       "type": "suspect_float"
     },
     {
@@ -176,16 +176,16 @@
       "match": "1.12104e-44",
       "resolution_source": "keep",
       "severity": "mild",
-      "text": "((CVector3f *)(uint)((pCVar2->model).transformed_vertices[0x19].y != 1.12104e-44) ==",
+      "text": "((CVector3f *)(uint)((pCVar2->model).bone_origins[0x19].y != 1.12104e-44) == pCVar6)) {",
       "type": "suspect_float"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 81,
+      "line": 80,
       "match": "1.12104e-44",
       "resolution_source": "keep",
       "severity": "mild",
-      "text": "((this_ptr_00->model).transformed_vertices[0x19].y == 1.12104e-44)) {",
+      "text": "((this_ptr_00->model).bone_origins[0x19].y == 1.12104e-44)) {",
       "type": "suspect_float"
     },
     {
@@ -208,7 +208,7 @@
     },
     {
       "description": "Pointer value `pCVar5` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 98,
+      "line": 97,
       "match": "(int)pCVar5",
       "resolution_source": "keep",
       "severity": "moderate",

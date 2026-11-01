@@ -1,6 +1,7 @@
 #include "engine/ini/ini.h"
 
 #include "common/error/error.h"
+#include "common/text/textlines.h"
 #include "platform/filesystem.h"
 
 #include <algorithm>
@@ -10,22 +11,6 @@
 
 namespace nocturne::engine {
 namespace {
-
-// The lines as text mode reads them: without the newline, or the CR of a CRLF. The original
-// dropped the last character of a final line with no newline.
-std::vector<std::string_view> splitLines(std::string_view text) {
-    std::vector<std::string_view> lines;
-    while (!text.empty()) {
-        const std::size_t end = text.find('\n');
-        std::string_view line = text.substr(0, end);
-        text.remove_prefix(end == std::string_view::npos ? text.size() : end + 1);
-        if (line.ends_with('\r')) {
-            line.remove_suffix(1);
-        }
-        lines.push_back(line);
-    }
-    return lines;
-}
 
 // Each line ending CRLF, as Windows text mode wrote them.
 std::string joinLines(std::span<const std::string_view> lines) {
@@ -66,7 +51,8 @@ std::optional<std::size_t> findKey(std::span<const std::string_view> lines,
 
 CIni::CIni(platform::IFileSystem &file_system) : file_system_(file_system) {}
 
-// The free getProfileString forwarded to the one CIni instance; both are this.
+// The free getProfileString forwarded to the one CIni instance; both are this. The original
+// dropped the last character of a final line with no newline.
 // nocedit 0x004fb250
 // nocedit 0x004fb960
 std::optional<std::string> CIni::getProfileString(std::string_view section, std::string_view key,
@@ -77,7 +63,7 @@ std::optional<std::string> CIni::getProfileString(std::string_view section, std:
     if (!text) {
         common::displayErrorAndQuit("cIni::getProfileString: Unable to open input");
     }
-    const std::vector<std::string_view> lines = splitLines(*text);
+    const std::vector<std::string_view> lines = common::splitTextLines(*text);
     const std::optional<std::size_t> line = findKey(lines, section, key);
     const std::string_view value = line ? getValue(lines[*line]) : default_value;
     if (value.size() >= buffer_size) {
@@ -110,7 +96,7 @@ void CIni::writeProfileString(std::string_view section, std::string_view key,
     if (!text) {
         common::displayErrorAndQuit("cIni::writeProfileString: Unable to open input");
     }
-    std::vector<std::string_view> lines = splitLines(*text);
+    std::vector<std::string_view> lines = common::splitTextLines(*text);
     const std::optional<SVariableLine> variable =
         findLineNumberOfVariable(lines, section, key, value);
     if (variable && variable->unchanged) {

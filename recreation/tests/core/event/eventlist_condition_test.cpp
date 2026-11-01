@@ -1,3 +1,4 @@
+#include "common/error/fatalerror.h"
 #include "common/random/watcomrandom.h"
 #include "core/actor/demonactortype.h"
 #include "core/event/eventlist.h"
@@ -210,6 +211,63 @@ TEST_F(CEventListConditionTest, RandBoolDrawsItsChanceWhileChecking) {
     static_cast<void>(fresh.rand());
     EXPECT_EQ(crt_random_.rand(), fresh.rand());
     expectError("randBool()", "Error parsing randBool parameters.");
+}
+
+// Only TRUE holds, ignoring case, while nothing can raise an event or set a flag.
+TEST_F(CEventListConditionTest, ANameAloneHoldsWhenItIsTrue) {
+    EXPECT_TRUE(events_.evaluateCondition("TRUE"));
+    EXPECT_TRUE(events_.evaluateCondition(" true "));
+    EXPECT_FALSE(events_.evaluateCondition("false"));
+    EXPECT_FALSE(events_.evaluateCondition("open_door"));
+}
+
+TEST_F(CEventListConditionTest, NoConditionOrNoneDoesNotHold) {
+    EXPECT_FALSE(events_.evaluateCondition(""));
+    EXPECT_FALSE(events_.evaluateCondition(std::string_view("\0TRUE", 5)));
+    EXPECT_FALSE(events_.evaluateCondition("None"));
+}
+
+TEST_F(CEventListConditionTest, NotParenthesesAndTheOperatorsGiveTheirValues) {
+    EXPECT_TRUE(events_.evaluateCondition("!false"));
+    EXPECT_FALSE(events_.evaluateCondition("!!false"));
+    EXPECT_TRUE(events_.evaluateCondition("(TRUE)"));
+    EXPECT_TRUE(events_.evaluateCondition("false | TRUE"));
+    EXPECT_FALSE(events_.evaluateCondition("false || false"));
+    EXPECT_FALSE(events_.evaluateCondition("TRUE & false"));
+    EXPECT_TRUE(events_.evaluateCondition("TRUE && .TRUE"));
+}
+
+// Neither binds tighter: false & false | TRUE is (false & false) | TRUE, and TRUE | x & false is
+// (TRUE | x) & false.
+TEST_F(CEventListConditionTest, TheOperatorsJoinFromLeftToRight) {
+    EXPECT_TRUE(events_.evaluateCondition("false & false | TRUE"));
+    EXPECT_FALSE(events_.evaluateCondition("TRUE | x & false"));
+}
+
+// The error goes to the console, and the condition doesn't hold.
+TEST_F(CEventListConditionTest, AConditionThatCantBeEvaluatedSaysWhyOnTheConsole) {
+    EXPECT_FALSE(events_.evaluateCondition("TRUE &"));
+    EXPECT_EQ(console_.getRow(0), "Unexpected end of string");
+    EXPECT_FALSE(events_.evaluateCondition("(TRUE"));
+    EXPECT_EQ(console_.getRow(1), "Matching ')' is missing");
+    EXPECT_FALSE(events_.evaluateCondition("TRUE TRUE"));
+    EXPECT_EQ(console_.getRow(2), "Syntax error");
+    EXPECT_FALSE(events_.evaluateCondition("!"));
+    EXPECT_EQ(console_.getRow(3), "Unexpected end of string");
+}
+
+TEST_F(CEventListConditionTest, AFunctionsValueIsNotPortedYet) {
+    EXPECT_THAT([this] { static_cast<void>(events_.evaluateCondition("isDead(Mob)")); },
+                ::testing::ThrowsMessage<common::CFatalError>(::testing::StrEq(
+                    "CEventList::evaluateAtom's isDead function is not ported yet")));
+    EXPECT_FALSE(events_.evaluateCondition("isDead(Nobody)"));
+}
+
+// A check evaluates nothing it can't, before or after a condition is evaluated.
+TEST_F(CEventListConditionTest, CheckingAConditionStillAsksNoFunctionForItsValue) {
+    expectValid("isDead(Mob)");
+    EXPECT_FALSE(events_.evaluateCondition("false"));
+    expectValid("isDead(Mob) | TRUE");
 }
 
 } // namespace

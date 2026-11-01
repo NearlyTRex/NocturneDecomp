@@ -1,6 +1,7 @@
 #include "core/podmain/demonpod.h"
 
 #include "common/text/scan.h"
+#include "common/text/textlines.h"
 #include "common/text/textscanner.h"
 #include "engine/dosio/filefinder.h"
 #include "platform/filesystem.h"
@@ -34,7 +35,8 @@ void CDemonPod::load() {
         }
         return;
     }
-    common::CTextScanner text(*list);
+    const std::string lines = common::toTextMode(*list);
+    common::CTextScanner text(lines);
     // The original left the count uninitialised when the list didn't start with a number.
     const int count = common::scanInteger(text.scanWord()).value_or(0);
     // The original mounted its last name again for each one the list was short of.

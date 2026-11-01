@@ -1,12 +1,18 @@
 #include "core/setutil/3dslight.h"
 
 #include "common/error/error.h"
+#include "common/math/fixed.h"
+#include "common/math/matrix3x3f.h"
 #include "common/text/scanformat.h"
 #include "common/text/textscanner.h"
+#include "core/dfilter/filtercache.h"
+#include "core/dlight/demonlight.h"
 #include "core/setutil/setfileversion.h"
 
 #include <algorithm>
 #include <cstddef>
+#include <memory>
+#include <span>
 
 namespace nocturne::core {
 namespace {
@@ -27,6 +33,8 @@ constexpr int kFewerCameras = 100;
 constexpr int kMoreCameras = 200;
 // The whole view, where versions before 2 put every light a camera could see.
 constexpr CRect kWholeView{.x_min = 1, .x_max = 318, .y_min = 1, .y_max = 238};
+// The aspect is held 16.16 in the light.
+constexpr double kAspectScale = 65536.0;
 
 void skipLabel(common::CTextScanner &scanner, bool labelled) {
     if (labelled) {
@@ -39,7 +47,6 @@ void skipLabel(common::CTextScanner &scanner, bool labelled) {
 // nocedit 0x005862f0
 C3DSLight::C3DSLight() = default;
 
-// deferred: forgetting each loaded filter's CDemonFilter, with create
 // nocedit 0x00586310
 void C3DSLight::load(common::CTextScanner &scanner, int set_file_version) {
     const bool labelled = set_file_version >= kLabelledSetFileVersion;
@@ -97,12 +104,54 @@ void C3DSLight::load(common::CTextScanner &scanner, int set_file_version) {
     atten_end_reciprocal_ = 1.0F / atten_end_;
 }
 
+// A light with no filters has a circular shadow; one with filters takes its blend flag.
+// nocedit 0x00586a90
+std::unique_ptr<CDemonLight> C3DSLight::create(const SDemonLightOwners &owners,
+                                               CFilterCache &filter_cache) {
+    auto light = std::make_unique<CDemonLight>(owners, size_.x, size_.y);
+    light->init();
+    light->setShadowBoundsMode(filter_count_ < 1 ? 1 : blend_filter_);
+    placeLight(*light);
+    for (std::size_t i = 0; i < filters_.size(); ++i) {
+        filters_[i] = filter_cache.getFilter(filter_names_[i], blend_filter_);
+    }
+    return light;
+}
+
+// A light whose filter moves gets a buffer to draw it into.
+// deferred: restarting the light's on and off cycle and its filter frame's time, with process
+//   and advanceFilter
+// nocedit 0x00586bf0
+void C3DSLight::apply(CDemonLight &light) {
+    placeLight(light);
+    light.setTransformScaleFactor(
+        common::truncateToInt(static_cast<double>(aspect_) * kAspectScale));
+    light.setVolumetricIntensity(intensity_);
+    if (move_filter_ != 0) {
+        light.allocateFilter();
+    }
+}
+
+void C3DSLight::placeLight(CDemonLight &light) const {
+    light.setPosition(pos_);
+    common::CMatrix3x3f rotation;
+    rotation.buildRotationMatrix(orient_);
+    light.setRotationMatrix(rotation);
+    light.setFocalLength(fov_);
+    light.setCameraName(name_);
+}
+
+std::span<CDemonFilter *const> C3DSLight::getFilters() const {
+    return filters_;
+}
+
 // Each filter's duration, index and name; before 16 a filter had no index, and gets 0.
 void C3DSLight::loadFilters(common::CTextScanner &scanner, int set_file_version) {
     const auto count = static_cast<std::size_t>(std::max(filter_count_, 0));
     filter_names_.resize(count);
     filter_durations_.resize(count);
     filter_indices_.resize(count);
+    filters_.assign(count, nullptr);
     for (std::size_t i = 0; i < count; ++i) {
         if (set_file_version < kFilterIndexVersion) {
             scanFormat(scanner, "%f,%s\n", filter_durations_[i], filter_names_[i]);

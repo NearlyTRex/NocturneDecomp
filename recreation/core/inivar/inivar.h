@@ -5,7 +5,11 @@
 #include "platform/fwd.h"
 #include "sound/fwd.h"
 
+#include <string_view>
+
 namespace nocturne::core {
+
+inline constexpr std::string_view kIniFilename = ".\\system\\nocturne.ini";
 
 // What nocturne.ini's settings belong to.
 struct SIniDataOwners {

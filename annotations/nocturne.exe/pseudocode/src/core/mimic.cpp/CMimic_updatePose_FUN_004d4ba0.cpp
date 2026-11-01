@@ -60,7 +60,7 @@ void __cdecl core_mimic_cpp_CMimic_updatePose_FUN_004d4ba0(CMimic *this_ptr)
   pCVar5 = core_skeleton_cpp_CDeformableModelInstance_getSkeletonPtr_FUN_0051e0a0
                      (&(this_ptr->base).base.model);
   local_18 = pCVar5->bone_count;
-  pCVar8 = (this_ptr->base).base.model.transformed_vertices;
+  pCVar8 = (this_ptr->base).base.model.bone_origins;
   local_14 = this_ptr;
   pCVar14 = this_ptr;
   for (iVar6 = 0; iVar4 = g_LocalHeroIndex, iVar6 < local_18; iVar6 = iVar6 + 1) {
@@ -80,7 +80,7 @@ void __cdecl core_mimic_cpp_CMimic_updatePose_FUN_004d4ba0(CMimic *this_ptr)
       pCVar19 = (CMatrix3x4f *)((int)pCVar19 + ((uint)bVar24 * -2 + 1) * 4);
       pCVar18 = (CMatrix3x4f *)((int)pCVar18 + (uint)bVar24 * -8 + 4);
     }
-    pCVar11 = (g_HeroActors[iVar4]->base).model.transformed_vertices + iVar6;
+    pCVar11 = (g_HeroActors[iVar4]->base).model.bone_origins + iVar6;
     if (pCVar8 != pCVar11) {
       pCVar8->x = pCVar11->x;
       pCVar8->y = pCVar11->y;

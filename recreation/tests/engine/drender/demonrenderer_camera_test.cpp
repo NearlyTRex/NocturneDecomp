@@ -8,6 +8,7 @@
 #include "engine/matrix/matrix.h"
 #include "tests/mocks/engine/demonrendererfixture.h"
 
+#include <gmock/gmock.h>
 #include <gtest/gtest.h>
 
 namespace nocturne::engine {
@@ -39,6 +40,13 @@ TEST_F(CDemonRendererCameraTest, TheCameraOriginIsThePointInFixedPointChopped) {
     demon_renderer_.setCameraOriginFromScaledPoint({.x = 1.5F, .y = -2.999F, .z = 0.0039F});
     EXPECT_EQ(demon_renderer_.getCameraOriginFixed(), (CVector3i{.x = 384, .y = -767, .z = 0}));
     EXPECT_EQ(matrix_.getCameraOrigin(), demon_renderer_.getCameraOriginFixed());
+}
+
+TEST_F(CDemonRendererCameraTest, TheWorldCameraOriginIsTheFixedOriginOverTwoFiftySix) {
+    matrix_.setCameraOrigin(384, -767, 1);
+    CVector3f world;
+    EXPECT_EQ(demon_renderer_.getCameraOriginWorld(&world), &world);
+    EXPECT_THAT(world, ::testing::FieldsAre(1.5F, -2.99609375F, 0.00390625F));
 }
 
 TEST_F(CDemonRendererCameraTest, AVertexPutsTheCameraRelativeToIt) {

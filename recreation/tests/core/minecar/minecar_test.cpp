@@ -21,7 +21,7 @@ TEST(CMineCar, IsConcrete) {
 }
 
 TEST(CMineCar, Constructors) {
-    static_assert(std::is_constructible_v<CMineCar>);
+    static_assert(std::is_constructible_v<CMineCar, CActor &>);
 }
 
 TEST(CMineCar, PublicInterface) {

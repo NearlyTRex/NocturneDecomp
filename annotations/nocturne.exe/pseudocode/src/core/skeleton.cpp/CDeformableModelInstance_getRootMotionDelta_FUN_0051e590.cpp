@@ -62,11 +62,11 @@ CVector3f * __cdecl core_skeleton_cpp_CDeformableModelInstance_getRootMotionDelt
   pCVar9 = pCVar12->frame_positions_2;
   fVar4 = pCVar9[iVar13].y;
   fVar5 = pCVar9[iVar13].z;
-  fVar6 = (this_ptr->scaled_model_dimensions).y;
-  fVar7 = (this_ptr->scaled_model_dimensions).z;
+  fVar6 = (this_ptr->root_offset_scale).y;
+  fVar7 = (this_ptr->root_offset_scale).z;
   output_buffer->x =
        ((local_38 - pCVar8[local_18].x * fVar10) - pCVar9[iVar13].x * fVar11) *
-       (this_ptr->scaled_model_dimensions).x;
+       (this_ptr->root_offset_scale).x;
   output_buffer->y = ((local_34 - fVar2 * fVar10) - fVar4 * fVar11) * fVar6;
   output_buffer->z = ((local_30 - fVar3 * fVar10) - fVar5 * fVar11) * fVar7;
   return output_buffer;

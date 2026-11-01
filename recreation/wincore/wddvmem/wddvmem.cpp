@@ -2,10 +2,15 @@
 
 #include "engine/2d/2d.h"
 #include "engine/special/special.h"
+#include "platform/clock.h"
 #include "platform/display.h"
+#include "platform/log.h"
 #include "platform/renderer.h"
 #include "wincore/winrun/winrun.h"
 
+#include <array>
+#include <optional>
+#include <string_view>
 #include <utility>
 
 namespace nocturne::wincore {
@@ -13,12 +18,31 @@ namespace {
 
 // What the original's setScreenResolution does to clear every buffer of the flip chain.
 constexpr int kClearedSwaps = 3;
+constexpr double kMillisecondsPerSecond = 1000.0;
+// The shallowest depth the hardware renderer draws in.
+constexpr int kAcceleratedDepth = 16;
+
+struct SWarningLine {
+    std::string_view text;
+    int y = 0;
+};
+
+// What the original shows before it forces an 8-bit mode to 16 bits for the renderer.
+constexpr std::array<SWarningLine, 5> kDepthWarning = {{
+    {.text = "You have hit a kludge in the program.", .y = 0},
+    {.text = "You are setting acceleration mode without setting", .y = 22},
+    {.text = "the appropriate bit depth first.", .y = 33},
+    {.text = "I am forcing the screen to switch to 16bpp mode.", .y = 44},
+    {.text = "Press any key to continue.", .y = 66},
+}};
 
 } // namespace
 
 CWddVMem::CWddVMem(platform::IDisplay &display, platform::IRenderer &renderer, CWinRun &winrun,
-                   engine::CSpecial &special, engine::C2d &two_d)
-    : display_(display), renderer_(renderer), winrun_(winrun), special_(special), two_d_(two_d) {}
+                   engine::CSpecial &special, engine::C2d &two_d, platform::IClock &clock,
+                   platform::ILog &log)
+    : display_(display), renderer_(renderer), winrun_(winrun), special_(special), two_d_(two_d),
+      clock_(clock), log_(log) {}
 
 // The DirectDraw object it recreated belongs to the display adapter.
 // nocedit 0x005ecc10
@@ -75,6 +99,31 @@ bool CWddVMem::setScreenResolution(int width, int height, int bits_per_pixel) {
     return true;
 }
 
+// The DirectDraw objects it released and recreated belong to the display adapter. The original
+// also cleared the renderer's flag on a refusal, which the refused mode has cleared already.
+// deferred: marking the graphics as reset, with reinitializeGraphicsSystem and videoRestore
+// nocedit 0x005ed2a0
+void CWddVMem::resetGraphicsSystem() {
+    if (!special_.getUseDirect3D()) {
+        return;
+    }
+    if (bits_per_pixel_ < kAcceleratedDepth) {
+        setScreenResolution(window_width_, window_height_, kAcceleratedDepth);
+        special_.clearScreen();
+        for (const SWarningLine &line : kDepthWarning) {
+            two_d_.drawText(line.text, 0, line.y);
+        }
+        swapBuffers();
+        winrun_.getNextKeypress(*this);
+    }
+    special_.clearScreen();
+    if (special_.setResolutionAndColorTable(window_width_, window_height_, bits_per_pixel_) != 0) {
+        return;
+    }
+    special_.setUseDirect3D(false);
+    setScreenResolution(window_width_, window_height_, bits_per_pixel_);
+}
+
 // nocedit 0x005ed580
 void CWddVMem::openScreenDevice() {
     if (special_.getUseExternalRenderer()) {
@@ -94,17 +143,42 @@ void CWddVMem::closeScreenDevice() {
     flip_pending_ = true;
 }
 
-// A frame drawn on the back surface is shown as it is; otherwise the back buffer is.
+// A frame drawn on the back surface is shown as it is; otherwise the back buffer is. The render
+// log's present trace and frame rate are the enhanced game's.
 // nocedit 0x005eda20
 void CWddVMem::swapBuffers() {
-    if (special_.getUseExternalRenderer()) {
+    const bool external = special_.getUseExternalRenderer();
+    if (const std::optional<int> call = present_rate_.take()) {
+        std::string_view source = flip_pending_ ? "the back surface" : "the back buffer";
+        if (external) {
+            source = "the hardware renderer";
+        }
+        log_.print(platform::ELogSubsystem::Render,
+                   "#{} present {}x{} at {} bits per pixel from {}", *call, window_width_,
+                   window_height_, bits_per_pixel_, source);
+    }
+    if (external) {
         special_.presentToExternalRenderer();
     } else {
         display_.present(flip_pending_ ? back_surface_ : back_buffer_,
                          static_cast<int>(getRowBytes()));
     }
     flip_pending_ = false;
+    logFrameRate();
     winrun_.processWindowMessages();
+}
+
+void CWddVMem::logFrameRate() {
+    const double now = static_cast<double>(clock_.getCounter()) /
+                       static_cast<double>(clock_.getCounterFrequency());
+    const std::optional<common::SFrameRateReport> report = frame_rate_.addFrame(now);
+    if (!report) {
+        return;
+    }
+    log_.print(platform::ELogSubsystem::Render,
+               "{:.1f} frames a second over {:.1f}s ({} frames), the slowest {:.1f}ms",
+               report->frames_per_second, report->seconds, report->frames,
+               report->slowest_frame_seconds * kMillisecondsPerSecond);
 }
 
 std::size_t CWddVMem::getRowBytes() const {

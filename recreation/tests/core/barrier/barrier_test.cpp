@@ -1,6 +1,7 @@
 #include "core/actor/demonactortype.h"
 #include "core/barrier/barrier.h"
 #include "tests/mocks/core/notportedcalls.h"
+#include "tests/mocks/core/testclasses.h"
 #include "tests/mocks/core/testfieldsarchive.h"
 
 #include <gtest/gtest.h>
@@ -34,7 +35,8 @@ TEST(CBarrier, PublicInterface) {
                                  CBoundingBox3D *(CBarrier::*)(CBoundingBox3D *)>);
     static_assert(std::is_same_v<decltype(&CBarrier::getCollisionType),
                                  ECollisionType (CBarrier::*)(SCollisionInfo *)>);
-    static_assert(std::is_same_v<decltype(&CBarrier::updateCollisionData), void (CBarrier::*)()>);
+    static_assert(
+        std::is_same_v<decltype(&CBarrier::updateCollisionData), void (CBarrier::*)(CDemonSet &)>);
     static_assert(std::is_same_v<decltype(&CBarrier::getActorType),
                                  const CDemonActorType &(CBarrier::*)() const>);
     static_assert(
@@ -46,7 +48,8 @@ TEST(CBarrier, ItsRecordIsVersion2UnderCDemonActorAndMissionsCanCreateOne) {
     EXPECT_EQ(CBarrier::kType.parent_type, &CDemonActor::kType);
     EXPECT_EQ(CBarrier::kType.latest_version, 2);
     ASSERT_NE(CBarrier::kType.factory_func, nullptr);
-    const std::unique_ptr<CDemonActor> actor = CBarrier::kType.factory_func();
+    CTestClasses classes;
+    const std::unique_ptr<CDemonActor> actor = CBarrier::kType.factory_func(classes.get());
     EXPECT_EQ(&actor->getActorType(), &CBarrier::kType);
 }
 
@@ -83,13 +86,20 @@ TEST(CBarrier, AVersionOneBarrierHasOnlyItsSize) {
 TEST(CBarrier, TheFunctionsNotPortedYetQuit) {
     CBarrier barrier;
     const NotPortedCalls calls = {
-        {"setup", [&] { barrier.setup(); }},
         {"renderTransparent", [&] { static_cast<void>(barrier.renderTransparent()); }},
-        {"getBoundingBox", [&] { static_cast<void>(barrier.getBoundingBox(nullptr)); }},
         {"getCollisionType", [&] { static_cast<void>(barrier.getCollisionType(nullptr)); }},
-        {"updateCollisionData", [&] { barrier.updateCollisionData(); }},
     };
     expectEachQuitsNotPorted("CBarrier", calls);
+}
+
+// Outside the editor a barrier isn't drawn as transparent either.
+TEST(CBarrier, SettingUpLeavesItUndrawn) {
+    CBarrier barrier;
+    barrier.setTransparent(true);
+    barrier.setup();
+    EXPECT_FALSE(barrier.isRenderable());
+    EXPECT_FALSE(barrier.isTransparent());
+    EXPECT_FALSE(barrier.isCollisionDisabled());
 }
 
 } // namespace

@@ -65,6 +65,8 @@ public:
     void setHotkeys(std::string_view hotkeys);
     // Lays the list out in one column, however many would fit.
     void setForcedColumnCount(bool single_column);
+    // The item under the cursor.
+    [[nodiscard]] int getCurrentIndex() const;
 
 private:
     // The most tab-separated fields a string can have.

@@ -3,14 +3,18 @@
 #
 # The recreation is its own CMake project under recreation/, with presets in
 # recreation/CMakePresets.json and build trees in build/recreation/<preset>.
-# The default preset is `game`: a debug build with the SDL adapters and the
-# nocturne executable, without the coverage instrumentation of `ci`, whose
-# runs would leave profile files behind.
+# The default preset is `game`: the SDL adapters and the nocturne executable,
+# optimized with debug info, the playable build. `--debug` (or DEBUG=1) takes
+# `game-debug` instead: -O0 for stepping through, but for the hot rendering
+# paths, which build at -O2 as the decomp's own debug lane keeps them.
+# Neither carries the coverage instrumentation of `ci`, whose runs would leave
+# profile files behind.
 #
 #   ./recreation.sh                  # build, then run
 #   ./recreation.sh build            # build only
 #   ./recreation.sh run              # run the last build
 #   ./recreation.sh run --some-arg   # arguments after the command go to the game
+#   ./recreation.sh --debug          # the same, on the game-debug preset
 #   RECREATION_PRESET=ci ./recreation.sh build
 #
 # The game runs from the repo root, where its data files are, as the decomp's
@@ -19,7 +23,16 @@
 set -euo pipefail
 
 root="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-preset="${RECREATION_PRESET:-game}"
+debug="${DEBUG:-0}"
+if [ "${1:-}" = "--debug" ]; then
+    debug=1
+    shift
+fi
+default_preset=game
+if [ "$debug" = "1" ]; then
+    default_preset=game-debug
+fi
+preset="${RECREATION_PRESET:-$default_preset}"
 build_dir="$root/build/recreation/$preset"
 exe="$build_dir/nocturne"
 
@@ -53,7 +66,7 @@ case "$command" in
         run
         ;;
     -h|--help)
-        sed -n '2,17p' "$0" | sed 's/^# \{0,1\}//'
+        sed -n '2,21p' "$0" | sed 's/^# \{0,1\}//'
         ;;
     *)
         echo "recreation.sh: unknown command '$command' (build, run, or nothing for both)" >&2

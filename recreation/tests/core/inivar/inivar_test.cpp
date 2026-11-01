@@ -11,8 +11,11 @@
 #include "engine/matrix/matrix.h"
 #include "engine/special/special.h"
 #include "engine/texture/currenttexture.h"
+#include "platform/display.h"
+#include "platform/upscaler.h"
 #include "shape/edittool/editortools.h"
 #include "support/newmsg/newmsg.h"
+#include "tests/mocks/core/gameparts.h"
 #include "tests/mocks/engine/mockgameclock.h"
 #include "tests/mocks/engine/mockrawinput.h"
 #include "tests/mocks/engine/mockscreendevice.h"
@@ -26,7 +29,9 @@
 #include <gmock/gmock.h>
 #include <gtest/gtest.h>
 
+#include <format>
 #include <string>
+#include <string_view>
 #include <type_traits>
 
 namespace nocturne::core {
@@ -95,7 +100,8 @@ protected:
     support::CNewMsg messages_{dosio_};
     CDFont fonts_{dosio_, screen_, two_d_, three_d_, colors_, os_fonts_, messages_, editor_tools_};
     ::testing::StrictMock<engine::MockGameClock> game_clock_;
-    CGame game_{game_clock_};
+    CGameParts game_parts_{game_clock_};
+    CGame &game_ = game_parts_.getGame();
     engine::CIni ini_{file_system_};
     SIniDataOwners owners_{.game = game_,
                            .sound_main = sound_,
@@ -141,6 +147,76 @@ TEST_F(CInivarTest, TheOsFontChoiceIsWritten) {
     fonts_.setOsFontChoice(EOsFontChoice::Bitmap);
     writeIniData(ini_, owners_);
     EXPECT_THAT(text_, HasSubstr("osFont=1\r\n"));
+}
+
+TEST_F(CInivarTest, TheMenuFontChoiceIsReadUnlessItIsOutOfRange) {
+    text_ = "[Graphics]\r\nmenuFont=1\r\n";
+    read();
+    EXPECT_EQ(fonts_.getMenuFontChoice(), EMenuFontChoice::Small);
+    text_ = "[Graphics]\r\nmenuFont=2\r\n";
+    read();
+    EXPECT_EQ(fonts_.getMenuFontChoice(), EMenuFontChoice::Small);
+}
+
+TEST_F(CInivarTest, TheMenuFontChoiceIsWritten) {
+    fonts_.setMenuFontChoice(EMenuFontChoice::Small);
+    writeIniData(ini_, owners_);
+    EXPECT_THAT(text_, HasSubstr("menuFont=1\r\n"));
+}
+
+// The size first, so a window that stays windowed opens at it.
+TEST_F(CInivarTest, TheWindowModeIsAppliedAfterTheSizeUnlessItIsOutOfRange) {
+    text_ = "[Graphics]\r\ngamePIXX=800\r\ngamePIXY=600\r\nwindowMode=2\r\n";
+    const ::testing::InSequence in_order;
+    EXPECT_CALL(display_, setWindowSize(800, 600));
+    EXPECT_CALL(display_, setWindowMode(platform::EWindowMode::Borderless));
+    EXPECT_CALL(display_, setWindowSize(800, 600));
+    EXPECT_CALL(display_, setWindowMode(platform::EWindowMode::Fullscreen));
+    read();
+    ON_CALL(display_, getWindowMode()).WillByDefault(Return(platform::EWindowMode::Fullscreen));
+    text_ = "[Graphics]\r\ngamePIXX=800\r\ngamePIXY=600\r\nwindowMode=3\r\n";
+    read();
+}
+
+TEST_F(CInivarTest, TheUpscalerIsReadUnlessItIsOutOfRange) {
+    text_ = "[Graphics]\r\nupscaler=5\r\nupscalerSharpness=75\r\n";
+    EXPECT_CALL(display_, setUpscaler(platform::EUpscaler::Xbr));
+    EXPECT_CALL(display_, setUpscalerSharpness(75));
+    read();
+    ::testing::Mock::VerifyAndClearExpectations(&display_);
+    ON_CALL(display_, getUpscaler()).WillByDefault(Return(platform::EUpscaler::Nis));
+    text_ = "[Graphics]\r\nupscaler=6\r\n";
+    EXPECT_CALL(display_, setUpscaler(platform::EUpscaler::Nis));
+    read();
+}
+
+// As an INI edited by hand can leave it.
+TEST_F(CInivarTest, ASharpnessOutOfRangeIsTheDefault) {
+    for (const std::string_view value : {"-1", "101"}) {
+        text_ = std::format("[Graphics]\r\nupscalerSharpness={}\r\n", value);
+        EXPECT_CALL(display_, setUpscalerSharpness(50));
+        read();
+    }
+    text_ = "[Graphics]\r\nupscalerSharpness=100\r\n";
+    EXPECT_CALL(display_, setUpscalerSharpness(100));
+    read();
+    text_ = "[Graphics]\r\nupscalerSharpness=0\r\n";
+    EXPECT_CALL(display_, setUpscalerSharpness(0));
+    read();
+}
+
+TEST_F(CInivarTest, TheUpscalerIsWritten) {
+    ON_CALL(display_, getUpscaler()).WillByDefault(Return(platform::EUpscaler::Gsr));
+    ON_CALL(display_, getUpscalerSharpness()).WillByDefault(Return(25));
+    writeIniData(ini_, owners_);
+    EXPECT_THAT(text_, HasSubstr("upscaler=3\r\n"));
+    EXPECT_THAT(text_, HasSubstr("upscalerSharpness=25\r\n"));
+}
+
+TEST_F(CInivarTest, TheWindowModeIsWritten) {
+    ON_CALL(display_, getWindowMode()).WillByDefault(Return(platform::EWindowMode::Fullscreen));
+    writeIniData(ini_, owners_);
+    EXPECT_THAT(text_, HasSubstr("windowMode=1\r\n"));
 }
 
 TEST_F(CInivarTest, MissingKeysKeepTheirSettings) {
@@ -254,7 +330,8 @@ TEST_F(CInivarTest, WhatIsWrittenReadsBackTheSame) {
     game_.map_zoom = 150;
     game_.y_stick_max = 40000;
     writeIniData(ini_, owners_);
-    CGame copy(game_clock_);
+    CGameParts copy_parts(game_clock_);
+    CGame &copy = copy_parts.getGame();
     const SIniDataOwners reread{.game = copy,
                                 .sound_main = sound_,
                                 .console = console_,

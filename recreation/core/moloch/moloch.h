@@ -2,6 +2,7 @@
 
 #include "core/fwd.h"
 #include "core/hero/hero.h"
+#include "core/skeleton/deformablemodelinstance.h"
 
 #include <memory>
 #include <string>
@@ -13,7 +14,7 @@ class CMoloch : public CHero {
 public:
     static const CDemonActorType kType;
 
-    CMoloch();
+    explicit CMoloch(CActor &classes);
     ~CMoloch() override;
     CMoloch(const CMoloch &) = delete;
     CMoloch &operator=(const CMoloch &) = delete;
@@ -34,10 +35,13 @@ public:
     [[nodiscard]] bool isInHumanForm() const;
     [[nodiscard]] bool isMorphing() const;
     [[nodiscard]] float getMorphTimer() const;
+    // The model of the form Moloch isn't in, which he morphs into.
+    [[nodiscard]] CDeformableModelInstance &getOtherFormModel();
 
 private:
-    static std::unique_ptr<CDemonActor> create();
+    static std::unique_ptr<CDemonActor> create(CActor &classes);
 
+    CDeformableModelInstance other_form_model_;
     std::string human_to_demon_condition_ = "molochToDemon";
     std::string demon_to_human_condition_ = "molochToHuman";
     bool in_human_form_ = true;

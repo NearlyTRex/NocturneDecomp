@@ -18,6 +18,7 @@ set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
 option(NOCTURNE_RECREATION_COVERAGE "Instrument for clang source-based coverage" OFF)
 option(NOCTURNE_RECREATION_GAME "Build the SDL adapters and the nocturne executable" OFF)
+option(NOCTURNE_RECREATION_SANITIZE "Build with AddressSanitizer and UBSan" OFF)
 
 # Modules are the directories that carry a fwd.h.
 file(GLOB _fwd_headers RELATIVE "${CMAKE_CURRENT_SOURCE_DIR}" CONFIGURE_DEPENDS
@@ -39,6 +40,13 @@ if(NOCTURNE_RECREATION_COVERAGE)
         -fprofile-instr-generate -fcoverage-mapping)
     target_link_options(nocturne_recreation_options INTERFACE -fprofile-instr-generate)
 endif()
+# The first error stops the run, so a test or the game can't carry on past it.
+if(NOCTURNE_RECREATION_SANITIZE)
+    set(_sanitize_flags -fsanitize=address,undefined -fno-sanitize-recover=all
+        -fno-omit-frame-pointer)
+    target_compile_options(nocturne_recreation_options INTERFACE ${_sanitize_flags})
+    target_link_options(nocturne_recreation_options INTERFACE ${_sanitize_flags})
+endif()
 
 set(_sources "")
 set(_headers "")
@@ -52,6 +60,26 @@ foreach(_module IN LISTS NOCTURNE_RECREATION_MODULES)
     list(APPEND _sources ${_module_sources})
     list(APPEND _headers ${_module_headers})
 endforeach()
+
+# The software renderer's per-pixel and per-polygon loops, the frame's conversion and the
+# hardware renderer: at a Debug build's -O0 they hold the frame rate to a crawl, so they build
+# at -O2 there, as the decomp's game_modules.cmake builds its own, and the rest stays
+# debuggable.
+set(_hot_paths
+    "/engine/(2d|3d|clipper|drender|font|matrix|prim|special|zraster)/"
+    "/engine/rasteredges\\.cpp$" "/common/(render|video)/" "/platform/(gl|sdl)/")
+string(JOIN "|" _hot_regex ${_hot_paths})
+function(nocturne_optimize_hot_paths)
+    if(NOT CMAKE_BUILD_TYPE STREQUAL "Debug")
+        return()
+    endif()
+    foreach(_source IN LISTS ARGN)
+        if(_source MATCHES "${_hot_regex}")
+            set_source_files_properties("${_source}" PROPERTIES COMPILE_OPTIONS -O2)
+        endif()
+    endforeach()
+endfunction()
+nocturne_optimize_hot_paths(${_sources})
 
 include(FetchContent)
 
@@ -159,6 +187,7 @@ if(NOCTURNE_RECREATION_GAME)
     include(cmake/ffmpeg.cmake)
 
     file(GLOB _sdl_sources CONFIGURE_DEPENDS "platform/sdl/*.cpp")
+    nocturne_optimize_hot_paths(${_sdl_sources})
     add_library(nocturne_platform_sdl STATIC ${_sdl_sources})
     target_link_libraries(nocturne_platform_sdl
         PUBLIC nocturne_recreation

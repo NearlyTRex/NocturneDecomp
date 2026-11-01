@@ -151,7 +151,7 @@ switchD_0053f7b3_caseD_3:
                 iVar12 = 0;
               }
               else {
-                fVar8 = (local_14->model).transformed_vertices[0x19].y;
+                fVar8 = (local_14->model).bone_origins[0x19].y;
                 if ((uint)fVar8 < 7) goto joined_r0x0053f88b;
                 if (((7 < (uint)fVar8) && (fVar8 != 1.12104e-44)) ||
                    ((pCVar10 = core_actor_cpp_castToClassHash_FUN_0040d890
@@ -162,7 +162,7 @@ switchD_0053f7b3_caseD_3:
               }
             }
             else {
-              fVar8 = (pCVar1->model).transformed_vertices[0x19].y;
+              fVar8 = (pCVar1->model).bone_origins[0x19].y;
               if ((uint)fVar8 < 7) {
 joined_r0x0053f88b:
                 if (fVar8 != 0.0) goto LAB_0053f41f;
@@ -215,11 +215,11 @@ joined_r0x0053f88b:
         if (local_30 != (CCharacter *)0x0) {
           pCVar9 = core_actor_cpp_CDemonActor_transformVector_FUN_0040a200
                              ((CDemonActor *)this_ptr,(CVector3f *)&stack0xffffffa4,&CStack_50);
-          pCVar11 = (local_20->model).transformed_vertices + 0x51;
+          pCVar11 = (local_20->model).bone_origins + 0x51;
           if (pCVar11 != pCVar9) {
             pCVar11->x = pCVar9->x;
-            (local_20->model).transformed_vertices[0x51].y = pCVar9->y;
-            (local_20->model).transformed_vertices[0x51].z = pCVar9->z;
+            (local_20->model).bone_origins[0x51].y = pCVar9->y;
+            (local_20->model).bone_origins[0x51].z = pCVar9->z;
           }
           (*(((local_30->base).vtable._uc)->_uc).isGrabbable)(local_30,in_stack_ffffffa4);
           this_ptr->weapon = (CWeapon *)0x0;
@@ -260,7 +260,7 @@ joined_r0x0053f88b:
       pCVar1 = (CCharacter *)this_ptr->weapon;
       if (pCVar1 != local_14) {
         if (pCVar1 != (CCharacter *)0x0) {
-          fVar8 = (pCVar1->model).transformed_vertices[0x19].y;
+          fVar8 = (pCVar1->model).bone_origins[0x19].y;
           if ((uint)fVar8 < 7) {
             if (fVar8 == 0.0) {
               iVar6 = 1;
@@ -296,7 +296,7 @@ LAB_0053f520:
             iVar6 = 0;
           }
           else {
-            fVar8 = (local_14->model).transformed_vertices[0x19].y;
+            fVar8 = (local_14->model).bone_origins[0x19].y;
             if ((uint)fVar8 < 7) {
               if (fVar8 == 0.0) {
                 iVar6 = 1;

@@ -9,7 +9,7 @@ class CLightActor : public CBoxActor {
 public:
     static const CDemonActorType kType;
 
-    CLightActor();
+    explicit CLightActor(CActor &classes);
     ~CLightActor() override;
 
     void setup() override;

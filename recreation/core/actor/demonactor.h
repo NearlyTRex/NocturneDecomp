@@ -1,7 +1,9 @@
 #pragma once
 
 #include "common/fwd.h"
+#include "common/math/matrix3x3f.h"
 #include "common/math/vector3f.h"
+#include "common/math/vector3i.h"
 #include "core/fwd.h"
 #include "core/location.h"
 
@@ -19,6 +21,16 @@ enum class EActorLifecycleState : std::uint8_t {
     kDestroyed = 2,
 };
 
+// Where an actor was when last drawn into a camera's background, and which of the background's
+// passes must draw it again, a bit each; a new actor is at the origin with every pass due.
+struct SDrawnTransform {
+    static constexpr std::uint32_t kEveryPass = 0x1f;
+
+    common::CVector3f position;
+    common::CVector3f orientation;
+    std::uint32_t dirty_flags = kEveryPass;
+};
+
 // Anything a mission places: what every actor class has, and what each may do differently. The
 // virtual functions not ported yet quit when called.
 class CDemonActor {
@@ -33,6 +45,7 @@ public:
     CDemonActor(CDemonActor &&) = delete;
     CDemonActor &operator=(CDemonActor &&) = delete;
 
+    // Ready for play once the mission has loaded every actor: its angles brought to within pi.
     virtual void setup();
     virtual void process(float delta_time);
     virtual int renderOpaque();
@@ -52,7 +65,9 @@ public:
     virtual EGroundType getGroundType();
     virtual int getBlockVirtualDirectorFlag();
     virtual int allowBulletHoles();
-    virtual void updateCollisionData();
+    // As the set is loaded: casts what the actor keeps paths out of into the set's voxels.
+    // Nothing for most actors.
+    virtual void updateCollisionData(CDemonSet &set);
     virtual int getTargetPoints(common::CVector3f *out_points_array);
     virtual void renderTargetPoints();
     virtual int canLookAt();
@@ -108,10 +123,12 @@ public:
     // Pitch, bank and heading in radians, as x, y and z.
     [[nodiscard]] const common::CVector3f &getOrientation() const;
     void setOrientation(const common::CVector3f &orientation);
+    // Each angle brought to within pi, and the transforms turned by them from here on.
     void updateOrientationMatrix();
     common::CVector3f *transformVector(common::CVector3f *output, common::CVector3f *input);
     common::CVector3f *inverseTransformVector(common::CVector3f *output_vector,
                                               common::CVector3f *input_vector);
+    // Turned by the orientation as last updated, then moved to the actor's position.
     common::CVector3f *localToWorldPoint(common::CVector3f *output_world_point,
                                          common::CVector3f *input_local_point);
     common::CVector3f *worldToLocalPoint(common::CVector3f *output_local_point,
@@ -127,18 +144,44 @@ public:
     // is fatal. Each class's fields are read as the version the file saved them in.
     void load(common::CTextScanner &scanner, const SActorArchiveOwners &owners);
     [[nodiscard]] EActorLifecycleState getLifecycleState() const;
+    void setLifecycleState(EActorLifecycleState lifecycle_state);
     // The chance the actor is created when its creation event comes.
     [[nodiscard]] float getCreateProbability() const;
     // The event that creates the actor, or "none".
     [[nodiscard]] const std::string &getCreateEvent() const;
+    // Drawn with the transparent things, after the rest.
+    [[nodiscard]] bool isTransparent() const;
+    void setTransparent(bool transparent);
+    // Drawn with the opaque things.
+    [[nodiscard]] bool isRenderable() const;
+    void setRenderable(bool renderable);
+    // Left out of the set's collisions.
+    [[nodiscard]] bool isCollisionDisabled() const;
+    void setCollisionDisabled(bool collision_disabled);
+    // Where the actor was when last drawn into a camera's background, and which of the
+    // background's passes must draw it again, a bit each.
+    [[nodiscard]] const SDrawnTransform &getDrawnTransform() const;
+    void setDrawnTransform(const SDrawnTransform &drawn_transform);
+    // How much larger than its model the actor is drawn along each axis, in 16.16.
+    [[nodiscard]] const common::CVector3i &getScale() const;
+    void setScale(const common::CVector3i &scale);
+
+    // A scale of 1 in 16.16.
+    static constexpr int kUnitScale = 0x10000;
 
 private:
     std::string actor_name_;
     CLocation location_;
     common::CVector3f orientation_;
+    common::CMatrix3x3f orientation_matrix_;
     EActorLifecycleState lifecycle_state_ = EActorLifecycleState::kNotCreated;
     float create_probability_ = 1.0F;
     std::string create_event_ = "none";
+    bool transparent_ = false;
+    bool renderable_ = true;
+    bool collision_disabled_ = false;
+    SDrawnTransform drawn_transform_;
+    common::CVector3i scale_{.x = kUnitScale, .y = kUnitScale, .z = kUnitScale};
 };
 
 } // namespace nocturne::core

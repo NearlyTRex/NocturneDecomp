@@ -188,15 +188,15 @@ void CPickList::takeScrollBar() {
     scroll_top_ = scroll_mode_ == EScrollMode::Vertical ? position : position * rows_per_column_;
 }
 
-// The pointer is held inside the list. A click selects, and a second on the same item within a
-// quarter of a second picks it.
+// The pointer counts as inside the list wherever it is. Retail also moved the OS cursor there,
+// which held it in the box; the enhanced game never moves it (the decomp's UI_CURSOR_WARP). A
+// click selects, and a second on the same item within a quarter of a second picks it.
 void CPickList::readMouse() {
     const SEdControlsOwners &controls = owners_.controls.getOwners();
     const engine::SClipRect clip = controls.two_d.getClipRect();
     engine::IRawInput &input = controls.raw_input;
     const int mouse_x = std::clamp(input.getMouseX(), clip.left, clip.right);
     const int mouse_y = std::clamp(input.getMouseY(), clip.top, clip.bottom);
-    input.setCursorPosition(mouse_x, mouse_y);
     if ((input.getMouseButtonFlags() & kLeftButton) == 0) {
         return;
     }

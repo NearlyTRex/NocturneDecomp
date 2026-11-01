@@ -9,6 +9,7 @@
 
 #include <array>
 #include <cstdint>
+#include <memory>
 #include <span>
 #include <string>
 #include <vector>
@@ -28,8 +29,13 @@ public:
     // From a .SET file of the version. Fields older files lack get defaults; the rest keep what
     // the light had where the file has no number.
     void load(common::CTextScanner &scanner, int set_file_version);
-    CDemonLight *create();
-    void apply(CDemonLight *light);
+    // The light's master light: a light of its size, placed, turned and named as it is, with the
+    // filters it names loaded into the cache.
+    [[nodiscard]] std::unique_ptr<CDemonLight> create(const SDemonLightOwners &owners,
+                                                      CFilterCache &filter_cache);
+    // Moves, turns and names the light as this one, and gives it this one's aspect, intensity and
+    // moving filter.
+    void apply(CDemonLight &light);
     void doNothing();
     void process(CDemonLight *light, int apply_filter_flag);
     void advanceFilter(CDemonLight *light);
@@ -66,8 +72,11 @@ public:
     [[nodiscard]] const common::CVector2i &getFilterPos() const;
     [[nodiscard]] const common::CVector2i &getSize() const;
     [[nodiscard]] int getCurrentFilterFrame() const;
+    // The cache's filter for each name; null until create.
+    [[nodiscard]] std::span<CDemonFilter *const> getFilters() const;
 
 private:
+    void placeLight(CDemonLight &light) const;
     void loadFilters(common::CTextScanner &scanner, int set_file_version);
     void loadVisibility(common::CTextScanner &scanner, int set_file_version);
 
@@ -92,6 +101,7 @@ private:
     std::vector<std::string> filter_names_;
     std::vector<float> filter_durations_;
     std::vector<int> filter_indices_;
+    std::vector<CDemonFilter *> filters_;
     int move_filter_ = 0;
     common::CVector2i filter_vel_;
     common::CVector2i filter_pos_;

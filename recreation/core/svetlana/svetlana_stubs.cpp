@@ -15,10 +15,6 @@ namespace {
 
 } // namespace
 
-void CSvetlana::setup() {
-    notPorted("setup");
-}
-
 void CSvetlana::process(float /*delta_time*/) {
     notPorted("process");
 }

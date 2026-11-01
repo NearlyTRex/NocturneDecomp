@@ -1,20 +1,37 @@
 #pragma once
 
 #include "common/fwd.h"
+#include "core/dmodel/keyframedmodelinstance.h"
 #include "core/fwd.h"
+#include "engine/fwd.h"
 #include "platform/fwd.h"
+#include "platform/mrgltexturebasic.h"
 
+#include <array>
+#include <cstddef>
 #include <cstdint>
 #include <cstdio>
+#include <span>
 
 namespace nocturne::core {
 
+// What the fire effects load their textures with and find their models among.
+struct SFireEffectOwners {
+    engine::CDemonRenderer &renderer;
+    IKeyFramedModels &keyframed_models;
+};
+
+// The game's shots, flames, sparks, explosions and the like: the models and textures they are
+// drawn with.
 class CFireEffect {
 public:
-    // deferred: the game's fire effect, its five models and its particle pools, with this
-    //   constructor
+    static constexpr std::size_t kDebrisModelCount = 5;
+    static constexpr std::size_t kGunFlameFrameCount = 20;
+    static constexpr std::size_t kLightningBoltTextureCount = 6;
+
+    // deferred: the particle pools, with the particles' process and render steps
     // nocedit 0x004bef20
-    CFireEffect();
+    explicit CFireEffect(const SFireEffectOwners &owners);
 
     void init();
     void process();
@@ -70,6 +87,46 @@ public:
     void load(std::FILE *file_handle);
     void save(std::FILE *file_handle);
     int hasActiveMuzzleFlash();
+
+    // The models a flaming stake, the three fireballs, large, small and green, the gun flash
+    // and the bits of debris are drawn with.
+    [[nodiscard]] const CKeyFramedModelInstance &getStakeModel() const;
+    [[nodiscard]] const CKeyFramedModelInstance &getFireballModel() const;
+    [[nodiscard]] const CKeyFramedModelInstance &getSmallFireballModel() const;
+    [[nodiscard]] const CKeyFramedModelInstance &getGreenFireballModel() const;
+    [[nodiscard]] const CKeyFramedModelInstance &getGunFlashModel() const;
+    [[nodiscard]] std::span<const CKeyFramedModelInstance> getDebrisModels() const;
+    // The textures of a bullet hole, a spark and a blue spark.
+    [[nodiscard]] const platform::SMRGLTextureBasic &getBlackHoleTexture() const;
+    [[nodiscard]] const platform::SMRGLTextureBasic &getSparkTexture() const;
+    [[nodiscard]] const platform::SMRGLTextureBasic &getBlueSparkTexture() const;
+    // The frames a gun's flames burn through, and the lightning bolts' textures.
+    [[nodiscard]] std::span<const platform::SMRGLTextureBasic> getGunFlameTextures() const;
+    [[nodiscard]] std::span<const platform::SMRGLTextureBasic> getLightningBoltTextures() const;
+
+private:
+    void loadStakeAssets();
+    void loadFireballAssets();
+    // Rocks borrow their models from whoever throws them.
+    static void loadRockAssets();
+    void loadDynamiteAssets();
+    void loadGunFlameAssets();
+    void loadGunFlashAssets();
+    void loadLightningBoltAssets();
+    void loadDebrisAssets();
+
+    SFireEffectOwners owners_;
+    CKeyFramedModelInstance stake_model_;
+    CKeyFramedModelInstance fireball_model_;
+    CKeyFramedModelInstance small_fireball_model_;
+    CKeyFramedModelInstance green_fireball_model_;
+    CKeyFramedModelInstance gun_flash_model_;
+    std::array<CKeyFramedModelInstance, kDebrisModelCount> debris_models_;
+    platform::SMRGLTextureBasic black_hole_texture_{.texture_name = "BHOLE.RAW"};
+    platform::SMRGLTextureBasic spark_texture_{.texture_name = "SPARK.RAW"};
+    platform::SMRGLTextureBasic blue_spark_texture_{.texture_name = "BLUSPARK.RAW"};
+    std::array<platform::SMRGLTextureBasic, kGunFlameFrameCount> gun_flame_textures_;
+    std::array<platform::SMRGLTextureBasic, kLightningBoltTextureCount> lightning_bolt_textures_;
 };
 
 } // namespace nocturne::core

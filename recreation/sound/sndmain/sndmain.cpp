@@ -230,7 +230,7 @@ void CSndMain::setAudioSampleRate(int sample_rate) {
 }
 
 // Retail's: nocedit also closed the device first and read RecordingDeviceName. getAudioFormat's
-// three reads are the getters.
+// three reads are the getters. MovieVolume, as a percentage, is the enhanced game's.
 // nocedit 0x005abf20
 // nocedit 0x005ab210
 void CSndMain::readIni(const engine::CIniFile &ini_file) {
@@ -248,6 +248,8 @@ void CSndMain::readIni(const engine::CIniFile &ini_file) {
     readMixerSettings(ini_file);
     setSoundOutputMode(bits_per_sample, channels, sample_rate);
     setSoundMuted(ini_file.getInteger("Mute", isSoundMuted() ? 1 : 0) != 0);
+    movie_volume_percent_ = std::clamp(ini_file.getInteger("MovieVolume", movie_volume_percent_), 0,
+                                       kFullMovieVolumePercent);
     for (int channel = 0; channel < max_sound_channels_; ++channel) {
         const int enabled = isSfxChannelEnabled(channel) ? 1 : 0;
         enableSfxChannel(channel, ini_file.getInteger(std::format("SfxChannel{}Enabled", channel),
@@ -270,6 +272,7 @@ void CSndMain::readMixerSettings(const engine::CIniFile &ini_file) {
         !(latency >= kMinSwLatency) ? kMinSwLatency : std::min(latency, kMaxSwLatency);
 }
 
+// MovieVolume is the enhanced game's.
 // nocedit 0x005ac220
 void CSndMain::writeIni(engine::CIniFile &ini_file) {
     ini_file.setString("DeviceName", current_sound_device_ >= 0
@@ -281,6 +284,7 @@ void CSndMain::writeIni(engine::CIniFile &ini_file) {
     ini_file.setInteger("HwMixingEnabled", hw_mixing_enabled_);
     ini_file.setFloatValue("MaxSwLatency", max_sw_latency_);
     ini_file.setInteger("Mute", isSoundMuted() ? 1 : 0);
+    ini_file.setInteger("MovieVolume", movie_volume_percent_);
     for (int channel = 0; channel < max_sound_channels_; ++channel) {
         ini_file.setInteger(std::format("SfxChannel{}Enabled", channel),
                             isSfxChannelEnabled(channel) ? 1 : 0);

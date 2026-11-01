@@ -7,6 +7,7 @@
 #include <cstddef>
 #include <cstdint>
 #include <cstring>
+#include <functional>
 #include <span>
 #include <vector>
 
@@ -23,6 +24,11 @@ public:
         const std::size_t row_bytes = static_cast<std::size_t>(width * ((bits_per_pixel + 7) / 8));
         for (std::size_t y = 0; y < rows_.size(); ++y) {
             rows_[y] = pixels_.data() + (y * row_bytes);
+        }
+        depths_.resize(static_cast<std::size_t>(width * height));
+        depth_rows_.resize(static_cast<std::size_t>(height));
+        for (std::size_t y = 0; y < depth_rows_.size(); ++y) {
+            depth_rows_[y] = depths_.data() + (y * static_cast<std::size_t>(width));
         }
         const common::SPixelFormat format = common::getPixelFormat(
             bits_per_pixel == 16 ? common::EPixelLayout::Rgb565 : common::EPixelLayout::Bgra8888);
@@ -58,12 +64,16 @@ public:
     bool setScreenResolution(int, int, int) override {
         return !refuse_modes;
     }
+    void resetGraphicsSystem() override {}
     void setupColorPalette() override {}
     void convertPaletteToDirectColor() override {}
     void openScreenDevice() override {}
     void closeScreenDevice() override {}
     void swapBuffers() override {
         ++swaps;
+        if (on_swap) {
+            on_swap();
+        }
     }
     [[nodiscard]] int getWindowWidth() const override {
         return reported_width_ > 0 ? reported_width_ : width_;
@@ -86,7 +96,7 @@ public:
         return rows_;
     }
     [[nodiscard]] std::span<std::uint32_t *> getZBufferRows() override {
-        return {};
+        return depth_rows_;
     }
     [[nodiscard]] std::span<std::uint16_t, 256> getColorTable16() override {
         return color_table16_;
@@ -131,6 +141,8 @@ public:
     }
 
     int swaps = 0;
+    // What a test does as each frame is shown.
+    std::function<void()> on_swap;
     // Every mode change is refused while set.
     bool refuse_modes = false;
 
@@ -141,6 +153,8 @@ private:
     int bits_per_pixel_;
     std::vector<std::uint8_t> pixels_;
     std::vector<void *> rows_;
+    std::vector<std::uint32_t> depths_;
+    std::vector<std::uint32_t *> depth_rows_;
     std::array<std::uint16_t, 256> color_table16_{};
     std::array<std::uint32_t, 256> color_table32_{};
     std::array<std::uint16_t, 256> hardware_palette16_{};

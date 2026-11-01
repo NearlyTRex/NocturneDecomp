@@ -15,10 +15,6 @@ namespace {
 
 } // namespace
 
-void CMoloch::setup() {
-    notPorted("setup");
-}
-
 void CMoloch::process(float /*delta_time*/) {
     notPorted("process");
 }

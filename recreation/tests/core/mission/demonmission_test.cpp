@@ -62,12 +62,16 @@ TEST(CDemonMission, PublicInterface) {
     static_assert(std::is_same_v<decltype(&CDemonMission::markActorToDelete),
                                  void (CDemonMission::*)(CDemonActor *, std::uint32_t)>);
     static_assert(std::is_same_v<decltype(&CDemonMission::process), void (CDemonMission::*)()>);
-    static_assert(std::is_same_v<decltype(&CDemonMission::run), void (CDemonMission::*)()>);
+    static_assert(std::is_same_v<decltype(&CDemonMission::run),
+                                 void (CDemonMission::*)(CGame &, const SGameSessionOwners &)>);
     static_assert(std::is_same_v<decltype(&CDemonMission::setMissionName),
                                  void (CDemonMission::*)(std::string_view)>);
     static_assert(std::is_same_v<decltype(&CDemonMission::generateActorName),
                                  void (CDemonMission::*)(CDemonActor &) const>);
-    static_assert(std::is_same_v<decltype(&CDemonMission::startMission), int (CDemonMission::*)()>);
+    static_assert(
+        std::is_same_v<decltype(&CDemonMission::startMission), bool (CDemonMission::*)()>);
+    static_assert(
+        std::is_same_v<decltype(&CDemonMission::loadScript), bool (CDemonMission::*)(bool)>);
     static_assert(std::is_same_v<decltype(&CDemonMission::createHeros),
                                  bool (CDemonMission::*)(std::unique_ptr<CHero>)>);
     static_assert(

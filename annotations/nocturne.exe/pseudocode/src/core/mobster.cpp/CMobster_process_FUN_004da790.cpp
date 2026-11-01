@@ -409,15 +409,15 @@ void __cdecl core_mobster_cpp_CMobster_process_FUN_004da790(CMobster *this_ptr,f
                              g_CWeaponActorType_02ddf970.name_hash);
         if (pCVar14 != (CCharacter *)0x0) {
           core_setcolid_cpp_CDemonSet_init_FUN_00511750(g_CDemonSet_PTR_005be368);
-          local_34 = (pCVar14->model).transformed_vertices[0x4f].y;
+          local_34 = (pCVar14->model).bone_origins[0x4f].y;
           pCVar5 = (pCVar14->base).vtable._uc;
-          (pCVar14->model).transformed_vertices[0x4f].y = 1.4013e-43;
+          (pCVar14->model).bone_origins[0x4f].y = 1.4013e-43;
           iVar6 = (*(pCVar5->_uc).canBeGrabbed)(pCVar14,in_stack_fffffe74,(int)in_stack_fffffe78);
           if (iVar6 != 0) {
             (*(((pCVar14->base).vtable._uc)->_uc).isGrabbable)
                       (pCVar14,(CDemonActor *)in_stack_fffffe80);
           }
-          (pCVar14->model).transformed_vertices[0x4f].y = local_34;
+          (pCVar14->model).bone_origins[0x4f].y = local_34;
         }
         pCVar14 = (CCharacter *)
                   core_actor_cpp_castToClassHash_FUN_0040d890
@@ -427,15 +427,15 @@ void __cdecl core_mobster_cpp_CMobster_process_FUN_004da790(CMobster *this_ptr,f
         if (pCVar14 != (CCharacter *)0x0) {
           core_setcolid_cpp_CDemonSet_init_FUN_00511750(g_CDemonSet_PTR_005be368);
           pCVar5 = (pCVar14->base).vtable._uc;
-          fVar16 = (pCVar14->model).transformed_vertices[0x4f].y;
-          (pCVar14->model).transformed_vertices[0x4f].y = 1.4013e-43;
+          fVar16 = (pCVar14->model).bone_origins[0x4f].y;
+          (pCVar14->model).bone_origins[0x4f].y = 1.4013e-43;
           iVar6 = (*(pCVar5->_uc).canBeGrabbed)(pCVar14,in_stack_fffffe88,in_stack_fffffe8c);
           if (iVar6 == 0) {
-            (local_2c->model).transformed_vertices[0x4f].y = fVar16;
+            (local_2c->model).bone_origins[0x4f].y = fVar16;
           }
           else {
             (*(((pCVar14->base).vtable._uc)->_uc).isGrabbable)(pCVar14,in_stack_fffffe94);
-            (local_2c->model).transformed_vertices[0x4f].y = fVar16;
+            (local_2c->model).bone_origins[0x4f].y = fVar16;
           }
         }
       }

@@ -19,34 +19,34 @@ functions don't count as done. Sizes are in instructions.
 | 3 | Sound system: `sndmain`, `CSound` lifetime, `readIniData` | 7 | 123 | 8346 | 122 | 1 | 99.1% |
 | 4 | `initFonts`, `CEditorTools::showWarning` | 11 | 46 | 4804 | 45 | 1 | 97.8% |
 | 5 | `showCalibrationTest`, `playMovie`, `CAlphaBitmap::ctor`, `CAlphaBitmap::dtor`, `CSound::findAllSoundFiles`, `CDemonMission::reset`, `CDemonFilter::init`, `CMouse::load`, `CNetGame::init` | 14 | 50 | 4789 | 31 | 3 | 62.0% |
-| 6 | `initializeGameSystems`, `CAlphaBitmap::scale`, `clearTextureCache`, `CMoon::init`, `CGame::saveClockTime`, `CGame::updateDT` | 11 | 25 | 2988 | 19 | 6 | 76.0% |
+| 6 | `initializeGameSystems`, `CAlphaBitmap::scale`, `clearTextureCache`, `CMoon::init`, `CGame::saveClockTime`, `CGame::updateDT` | 11 | 25 | 2988 | 20 | 5 | 80.0% |
 | 7 | `CMoon::update`, `CMoon::render` | 17 | 120 | 17616 | 68 | 31 | 56.6% |
 | 8 | `renderMenuAndGetChoice`, `CMoon::free`, `CSound::reset`, `CEditorTools::showFileSelectionDialog` | 8 | 63 | 5314 | 60 | 3 | 95.2% |
-| 9 | `CPickList::enableItem`, `CEventList::resetGameFlags`, `CLevelLoader::show`, `CDemonMission::load` | 15 | 56 | 3298 | 26 | 11 | 46.4% |
-| 10 | `CDemonMission::createHeros`, `CDemonMission::prepareAllActors`, `CEventList::reset`, `CDemonMission::loadSet` | 15 | 42 | 5112 | 31 | 10 | 73.8% |
-| 11 | `CScript::loadScript` | 63 | 579 | 67400 | 38 | 29 | 6.5% |
-| 12 | `CDemonMission::loadScript`, `CScript::executeInitSection`, `CDemonMission::startMission`, `CDemonMission::buildActiveSetActorList`, `CConsole::reset`, `CEditorTools::displayMemoryDiagnostics`, `CGame::setGameRes`, `CDemonLight::init`, `CDemonSet::initScene` | 12 | 26 | 1658 | 2 | 0 | 7.6% |
-| 13 | `CFireEffect::init`, `CDemonSet::loadMasterLightStates`, `CDemonSet::setGamma`, `CGame::clearOverlay`, `CGame::loadAssets` | 7 | 27 | 735 | 0 | 0 | 0.0% |
-| 14 | `CNetGame::syncPlayers`, `CNetGame::processServerFrame`, `CLevelLoader::cleanup`, `CKeys::toggleInputMask`, `CGame::processHotkeys` | 17 | 51 | 5302 | 1 | 0 | 1.9% |
-| 15 | `CGame::updateStatusDisplays`, `CGame::processFudge`, `CGame::playerControls`, `CGame::processFrame` | 43 | 189 | 28837 | 5 | 1 | 2.6% |
-| 16 | `CGame::setScreenResolutionAndDisplayFangs`, `showOptionsScreen`, `CScript::skipCinematic`, `CGame::showFullscreenBitmap`, `CDemonMission::countDamageableEnemies`, `freeInventory`, `CGame::runGameSession`, `CGame::displayActStats` | 10 | 25 | 6938 | 0 | 1 | 0.0% |
-| 17 | `CGame::finishAct`, `CDemonMission::run`, `CGame::loadGame`, `CGame::showChapterSelect`, `showDeveloperToolsMenu` | 12 | 26 | 3707 | 4 | 1 | 15.3% |
+| 9 | `CPickList::enableItem`, `CEventList::resetGameFlags`, `CLevelLoader::show`, `CDemonMission::load` | 15 | 56 | 3298 | 37 | 9 | 66.0% |
+| 10 | `CDemonMission::createHeros`, `CDemonMission::prepareAllActors`, `CEventList::reset`, `CDemonMission::loadSet` | 15 | 42 | 5112 | 33 | 8 | 78.5% |
+| 11 | `CScript::loadScript` | 63 | 579 | 67400 | 103 | 42 | 17.7% |
+| 12 | `CDemonMission::loadScript`, `CScript::executeInitSection`, `CDemonMission::startMission`, `CDemonMission::buildActiveSetActorList`, `CConsole::reset`, `CEditorTools::displayMemoryDiagnostics`, `CGame::setGameRes`, `CDemonLight::init`, `CDemonSet::initScene` | 12 | 26 | 1658 | 16 | 9 | 61.5% |
+| 13 | `CFireEffect::init`, `CDemonSet::loadMasterLightStates`, `CDemonSet::setGamma`, `CGame::clearOverlay`, `CGame::loadAssets` | 7 | 27 | 735 | 16 | 1 | 59.2% |
+| 14 | `CNetGame::syncPlayers`, `CNetGame::processServerFrame`, `CLevelLoader::cleanup`, `CKeys::toggleInputMask`, `CGame::processHotkeys` | 17 | 51 | 5302 | 4 | 0 | 7.8% |
+| 15 | `CGame::updateStatusDisplays`, `CGame::processFudge`, `CGame::playerControls`, `CGame::processFrame` | 43 | 189 | 28837 | 8 | 0 | 4.2% |
+| 16 | `CGame::setScreenResolutionAndDisplayFangs`, `showOptionsScreen`, `CScript::skipCinematic`, `CGame::showFullscreenBitmap`, `CDemonMission::countDamageableEnemies`, `freeInventory`, `CGame::runGameSession`, `CGame::displayActStats` | 10 | 25 | 6938 | 9 | 4 | 36.0% |
+| 17 | `CGame::finishAct`, `CDemonMission::run`, `CGame::loadGame`, `CGame::showChapterSelect`, `showDeveloperToolsMenu` | 12 | 26 | 3707 | 5 | 2 | 19.2% |
 | 18 | `enterMainGameMenu`, `finalizeGameSystems` | 11 | 13 | 539 | 3 | 0 | 23.0% |
-| 19 | Not reached from startup: `engine/` | 23 | 279 | 19702 | 24 | 1 | 8.6% |
+| 19 | Not reached from startup: `engine/` | 23 | 279 | 19702 | 25 | 2 | 8.9% |
 | 20 | Not reached from startup: `support/` | 2 | 24 | 593 | 3 | 1 | 12.5% |
 | 21 | Not reached from startup: `cockpit/` | 4 | 178 | 11527 | 0 | 0 | 0.0% |
 | 22 | Not reached from startup: `shape/` | 2 | 42 | 3178 | 4 | 2 | 9.5% |
-| 23 | Not reached from startup: `core/` (part 1 of 9) | 18 | 292 | 16011 | 45 | 6 | 15.4% |
-| 24 | Not reached from startup: `core/` (part 2 of 9) | 11 | 277 | 24965 | 19 | 4 | 6.8% |
-| 25 | Not reached from startup: `core/` (part 3 of 9) | 24 | 278 | 24134 | 20 | 9 | 7.1% |
-| 26 | Not reached from startup: `core/` (part 4 of 9) | 18 | 300 | 20148 | 41 | 5 | 13.6% |
-| 27 | Not reached from startup: `core/` (part 5 of 9) | 21 | 294 | 20910 | 47 | 8 | 15.9% |
-| 28 | Not reached from startup: `core/` (part 6 of 9) | 18 | 282 | 21809 | 27 | 7 | 9.5% |
-| 29 | Not reached from startup: `core/` (part 7 of 9) | 18 | 263 | 22721 | 23 | 9 | 8.7% |
-| 30 | Not reached from startup: `core/` (part 8 of 9) | 20 | 300 | 31826 | 40 | 5 | 13.3% |
-| 31 | Not reached from startup: `core/` (part 9 of 9) | 5 | 111 | 10905 | 10 | 2 | 9.0% |
+| 23 | Not reached from startup: `core/` (part 1 of 9) | 18 | 292 | 16011 | 65 | 13 | 22.2% |
+| 24 | Not reached from startup: `core/` (part 2 of 9) | 11 | 277 | 24965 | 35 | 7 | 12.6% |
+| 25 | Not reached from startup: `core/` (part 3 of 9) | 24 | 278 | 24134 | 46 | 9 | 16.5% |
+| 26 | Not reached from startup: `core/` (part 4 of 9) | 18 | 300 | 20148 | 51 | 7 | 17.0% |
+| 27 | Not reached from startup: `core/` (part 5 of 9) | 21 | 294 | 20910 | 60 | 11 | 20.4% |
+| 28 | Not reached from startup: `core/` (part 6 of 9) | 18 | 282 | 21809 | 53 | 12 | 18.7% |
+| 29 | Not reached from startup: `core/` (part 7 of 9) | 18 | 263 | 22721 | 68 | 9 | 25.8% |
+| 30 | Not reached from startup: `core/` (part 8 of 9) | 20 | 300 | 31826 | 41 | 8 | 13.6% |
+| 31 | Not reached from startup: `core/` (part 9 of 9) | 5 | 111 | 10905 | 26 | 7 | 23.4% |
 | 32 | Not reached from startup: `wincore/` | 2 | 11 | 482 | 4 | 0 | 36.3% |
-| | **All** | | **4479** | **402407** | **847** | **159** | **18.9%** |
+| | **All** | | **4479** | **402407** | **1146** | **209** | **25.5%** |
 
 ## Step 0: Math value types
 
@@ -543,7 +543,6 @@ functions don't count as done. Sizes are in instructions.
 ### `core/main.c` (1 functions, 642 instructions, 0 done, 1 partial)
 - free functions
   - [~] `initializeGameSystems` 0x00507a60 (642)
-    - deferred: arming the attract movies only when opening.avi played this launch (the decomp's attract.h nocturne_attract_set_opening_played), with the attract movies
     - deferred: reading the save folder and each save's mission name beside findAllSoundFiles, so the save and load pickers open with nothing left to read (the decomp's save_slots.h nocturne_save_slots_prewarm, SAVE_SLOTS), with the save and load pickers
 
 ### `engine/alphabit.cpp` (1 functions, 71 instructions, 1 done, 0 partial)
@@ -581,7 +580,7 @@ functions don't count as done. Sizes are in instructions.
 - class `CBoundingBox3D`
   - [x] `expand` 0x00420240 (47)
 
-### `core/dmodel.cpp` (9 functions, 1490 instructions, 6 done, 3 partial)
+### `core/dmodel.cpp` (9 functions, 1490 instructions, 7 done, 2 partial)
 - class `CKeyFramedModel`
   - [x] `free` 0x00477690 (89)
   - [x] `allocate` 0x00477bf0 (152)
@@ -593,8 +592,7 @@ functions don't count as done. Sizes are in instructions.
   - [~] `calcNormals` 0x00477e60 (135)
     - unverified: the scale and its products, which the x87 kept in extended precision before the chop, by running calcNormals against nocedit's own code with axis-aligned and large sums
   - [x] `calculateFrameBounds` 0x00478010 (121)
-  - [~] `load` 0x00476db0 (112)
-    - deferred: keeping the filename in the model, which loadModel's pool lookup and CShell::onCollision read, with loadModel and CShell
+  - [x] `load` 0x00476db0 (112)
 
 ### `core/moon.cpp` (1 functions, 127 instructions, 1 done, 0 partial)
 - class `CMoon`
@@ -970,9 +968,9 @@ functions don't count as done. Sizes are in instructions.
 - class `CInventory`
   - [x] `loadItems` 0x004ff740 (27)
 
-### `core/set.cpp` (1 functions, 88 instructions, 0 done, 0 partial)
+### `core/set.cpp` (1 functions, 88 instructions, 1 done, 0 partial)
 - class `CDemonSet`
-  - [ ] `buildActorTypeLists` 0x00570fc0 (88)
+  - [x] `buildActorTypeLists` 0x00570fc0 (88)
 
 ### `core/dtrace.cpp` (2 functions, 110 instructions, 1 done, 0 partial)
 - class `CDemonRaytrace`
@@ -985,32 +983,32 @@ functions don't count as done. Sizes are in instructions.
 - free functions
   - [ ] `resetAllPathMaps` 0x00548590 (30)
 
-### `core/setcolid.cpp` (2 functions, 28 instructions, 0 done, 0 partial)
+### `core/setcolid.cpp` (2 functions, 28 instructions, 1 done, 0 partial)
 - class `CDemonSet`
-  - [ ] `buildCollidableActorList` 0x005743e0 (24)
+  - [x] `buildCollidableActorList` 0x005743e0 (24)
   - [ ] `commitVoxelBuffer` 0x00574560 (4)
 
-### `core/dmodel.cpp` (1 functions, 15 instructions, 0 done, 0 partial)
+### `core/dmodel.cpp` (1 functions, 15 instructions, 1 done, 0 partial)
 - free functions
-  - [ ] `freeAllModels` 0x00478cb0 (15)
+  - [x] `freeAllModels` 0x00478cb0 (15)
 
-### `core/skeleton.cpp` (4 functions, 151 instructions, 0 done, 0 partial)
+### `core/skeleton.cpp` (4 functions, 151 instructions, 4 done, 0 partial)
 - class `CDeformableModel`
-  - [ ] `free` 0x0059a2b0 (73)
+  - [x] `free` 0x0059a2b0 (73)
 - free functions
-  - [ ] `freeAllModels` 0x005a1dc0 (15)
-  - [ ] `freeAllSkeletons` 0x005a1ea0 (16)
+  - [x] `freeAllModels` 0x005a1dc0 (15)
+  - [x] `freeAllSkeletons` 0x005a1ea0 (16)
 - class `CSkeleton`
-  - [ ] `free` 0x00599a50 (47)
+  - [x] `free` 0x00599a50 (47)
 
-### `core/actor.cpp` (18 functions, 918 instructions, 14 done, 1 partial)
+### `core/actor.cpp` (18 functions, 918 instructions, 16 done, 1 partial)
 - class `CDemonActor`
   - [x] `getActorClassName` 0x00408b90 (6)
   - [x] `load` 0x0040b050 (125)
   - [x] `doCheckForInvalidPointers` 0x0040ac80 (193)
-  - [ ] `updateOrientationMatrix` 0x00408c10 (30)
+  - [x] `updateOrientationMatrix` 0x00408c10 (30)
   - [~] `ctor` 0x004088b0 (88)
-    - deferred: the defaults the constructor gives the orientation's matrix, and the scale, platform, rendering, health and footstep fields, with the steps that read them
+    - deferred: the defaults the constructor gives the orientation's matrix, and the platform, rendering (but for the transparency), health and footstep fields, with the steps that read them
 - free functions
   - [x] `getActorClassByName` 0x0040c3c0 (45)
   - [x] `createActorByName` 0x0040c430 (51)
@@ -1024,18 +1022,16 @@ functions don't count as done. Sizes are in instructions.
   - [x] `matchesClassName` 0x0040c740 (10)
   - [x] `isOfClass` 0x0040c6d0 (14)
   - [ ] `initTransformCache` 0x00408870 (14)
-  - [ ] `normalizeAngleToPi` 0x0040cd70 (56)
+  - [x] `normalizeAngleToPi` 0x0040cd70 (56)
 
-### `core/hero.cpp` (1 functions, 8 instructions, 0 done, 1 partial)
+### `core/hero.cpp` (1 functions, 8 instructions, 1 done, 0 partial)
 - class `CHeroPlaceholder`
-  - [~] `ctor` 0x004f3c00 (8)
-    - deferred: drawing it transparent, with the set's renderable list
+  - [x] `ctor` 0x004f3c00 (8)
 
-### `core/mission.cpp` (13 functions, 995 instructions, 6 done, 7 partial)
+### `core/mission.cpp` (13 functions, 995 instructions, 7 done, 6 partial)
 - class `CDemonMission`
   - [x] `removeActorFromList` 0x00523be0 (67)
-  - [~] `buildSetActorList` 0x00523e60 (50)
-    - deferred: the set's lists of actors that collide and of each class, with their readers
+  - [x] `buildSetActorList` 0x00523e60 (50)
   - [~] `removeActor` 0x00523f20 (18)
     - deferred: clearing what the player heroes hold of the actor (the weapon in hand, both carry hands, the inventory's selected weapon and item), which the original left dangling (the decomp's actor_delete.h nocturne_actor_delete_unbind_heroes, ACTOR_DELETE), with CStranger's weapon in hand and CInventory's selection
     - deferred: a sound tracking the actor's position finishing where the actor last was instead of reading it after it is freed (the decomp's actor_delete.h nocturne_actor_delete_unbind_sounds, ACTOR_DELETE), with CDemonActor::playSound and CSound::playActorSound
@@ -1060,10 +1056,9 @@ functions don't count as done. Sizes are in instructions.
 
 ## Step 10: `CDemonMission::createHeros`, `CDemonMission::prepareAllActors`, `CEventList::reset`, `CDemonMission::loadSet`
 
-### `core/hero.cpp` (1 functions, 102 instructions, 0 done, 1 partial)
+### `core/hero.cpp` (1 functions, 102 instructions, 1 done, 0 partial)
 - class `CHeroPlaceholder`
-  - [~] `createHero` 0x004f3d80 (102)
-    - deferred: updating the hero's orientation matrix, with updateOrientationMatrix
+  - [x] `createHero` 0x004f3d80 (102)
 
 ### `core/motion.cpp` (2 functions, 36 instructions, 2 done, 0 partial)
 - class `CMotionController`
@@ -1115,15 +1110,14 @@ functions don't count as done. Sizes are in instructions.
 - free functions
   - [x] `testOBBIntersection` 0x005763a0 (310)
 
-### `core/setutil.cpp` (5 functions, 819 instructions, 4 done, 1 partial)
+### `core/setutil.cpp` (5 functions, 819 instructions, 5 done, 0 partial)
 - class `C3DSCamera`
   - [x] `free` 0x00585360 (17)
   - [x] `reset` 0x005853b0 (22)
   - [x] `load` 0x00585420 (255)
   - [x] `loadPVS` 0x005857b0 (58)
 - class `C3DSLight`
-  - [~] `load` 0x00586310 (467)
-    - deferred: forgetting each loaded filter's CDemonFilter, with create
+  - [x] `load` 0x00586310 (467)
 
 ### `core/texlist.cpp` (3 functions, 214 instructions, 3 done, 0 partial)
 - class `CTextureList`
@@ -1203,23 +1197,22 @@ functions don't count as done. Sizes are in instructions.
 - class `CFlameCan`
   - [ ] `ignite` 0x004cb340 (25)
 
-### `core/vecdir.cpp` (1 functions, 58 instructions, 0 done, 0 partial)
+### `core/vecdir.cpp` (1 functions, 58 instructions, 1 done, 0 partial)
 - free functions
-  - [ ] `convertDirectionVectorToEulerAngles` 0x005e7830 (58)
+  - [x] `convertDirectionVectorToEulerAngles` 0x005e7830 (58)
 
-### `core/dmodel.cpp` (9 functions, 549 instructions, 1 done, 1 partial)
+### `core/dmodel.cpp` (9 functions, 549 instructions, 6 done, 0 partial)
 - class `CKeyFramedModel`
-  - [ ] `captureTextures` 0x00478190 (25)
+  - [x] `captureTextures` 0x00478190 (25)
   - [ ] `getFloorHeight` 0x00478740 (81)
   - [ ] `intersectRay` 0x004781d0 (313)
 - free functions
-  - [ ] `loadModel` 0x00478c00 (51)
+  - [x] `loadModel` 0x00478c00 (51)
 - class `CKeyFramedModelInstance`
-  - [ ] `preCache` 0x00478d60 (8)
+  - [x] `preCache` 0x00478d60 (8)
   - [x] `init` 0x00478d00 (8)
-  - [~] `setModelName` 0x00478dd0 (24)
-    - deferred: letting go of the model loaded, with getModelPtr
-  - [ ] `getModelPtr` 0x00478d80 (21)
+  - [x] `setModelName` 0x00478dd0 (24)
+  - [x] `getModelPtr` 0x00478d80 (21)
   - [ ] `prepareForRendering` 0x00478d20 (18)
 
 ### `core/trigger.cpp` (2 functions, 53 instructions, 0 done, 0 partial)
@@ -1244,7 +1237,7 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `archive` 0x005dab30 (17)
   - [ ] `dtor` 0x005dae50 (31)
 
-### `core/actor.cpp` (66 functions, 3653 instructions, 5 done, 9 partial)
+### `core/actor.cpp` (66 functions, 3653 instructions, 9 done, 10 partial)
 - free functions
   - [ ] `copyVector` 0x00410360 (12)
   - [ ] `rayCylinderIntersect` 0x00408340 (354)
@@ -1274,14 +1267,14 @@ functions don't count as done. Sizes are in instructions.
   - [~] `archiveActor` 0x0040b870 (46)
     - deferred: writing the actor's name to a save file, with CDemonMission::saveActor
 - class `CDemonActor`
-  - [ ] `transformVector` 0x00408e80 (13)
-  - [ ] `localToWorldPoint` 0x00408ec0 (26)
+  - [x] `transformVector` 0x00408e80 (13)
+  - [x] `localToWorldPoint` 0x00408ec0 (26)
   - [x] `dtor` 0x00408a30 (28)
   - [ ] `process` 0x00408a80 (7)
   - [ ] `renderTransparent` 0x00408ac0 (8)
   - [ ] `renderBackground` 0x00408ae0 (7)
   - [x] `getActorType` 0x00408b50 (17)
-  - [ ] `getBoundingBox` 0x00408c70 (8)
+  - [x] `getBoundingBox` 0x00408c70 (8)
   - [ ] `getCollisionType` 0x00408ca0 (8)
   - [ ] `customRayIntersect` 0x00408cc0 (20)
   - [ ] `customIntersectCylinderXZ` 0x00408d10 (16)
@@ -1298,7 +1291,7 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `testCylinderCollision` 0x004090c0 (53)
   - [ ] `testLineIntersection` 0x00409150 (104)
   - [ ] `onLaserHit` 0x00409840 (14)
-  - [ ] `updateCollisionData` 0x004098c0 (7)
+  - [x] `updateCollisionData` 0x004098c0 (7)
   - [ ] `renderTargetPoints` 0x00409b90 (205)
   - [ ] `spawnFlies` 0x00409e70 (25)
   - [ ] `calculateChecksum` 0x00409ec0 (31)
@@ -1321,11 +1314,13 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `handleFootstep` 0x0040ca10 (118)
   - [ ] `setupRenderState` 0x00408b00 (16)
   - [ ] `restoreRenderState` 0x00408b40 (5)
-  - [ ] `setup` 0x00408bb0 (27)
+  - [~] `setup` 0x00408bb0 (27)
+    - deferred: clearing the blood effect timer, with handleFootstep
+    - deferred: bringing the path map up to the actor's position, with CPathMap::findPathWithRetry
 
-### `core/armour.cpp` (1 functions, 31 instructions, 0 done, 0 partial)
+### `core/armour.cpp` (1 functions, 31 instructions, 1 done, 0 partial)
 - class `CFlame`
-  - [ ] `dtor` 0x00412690 (31)
+  - [x] `dtor` 0x00412690 (31)
 
 ### `core/dglobe.cpp` (3 functions, 178 instructions, 0 done, 0 partial)
 - class `CDemonGlobe`
@@ -1333,17 +1328,18 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `precomputeAttenuation` 0x00471360 (48)
   - [ ] `renderCoronaTextured` 0x004715e0 (103)
 
-### `core/flame.cpp` (9 functions, 1240 instructions, 0 done, 0 partial)
+### `core/flame.cpp` (9 functions, 1240 instructions, 4 done, 1 partial)
 - class `CFlame`
-  - [ ] `getActorType` 0x004c9a90 (2)
+  - [x] `getActorType` 0x004c9a90 (2)
   - [ ] `updateGlobe` 0x004cad90 (69)
   - [ ] `process` 0x004c9c00 (313)
   - [ ] `renderTransparent` 0x004ca110 (597)
   - [ ] `renderBackground` 0x004caa80 (127)
-  - [ ] `getBoundingBox` 0x004cac00 (22)
-  - [ ] `archive` 0x004cac60 (73)
-  - [ ] `getCollisionType` 0x004cad80 (2)
-  - [ ] `setup` 0x004c9b90 (35)
+  - [x] `getBoundingBox` 0x004cac00 (22)
+  - [x] `archive` 0x004cac60 (73)
+  - [x] `getCollisionType` 0x004cad80 (2)
+  - [~] `setup` 0x004c9b90 (35)
+    - deferred: capturing every flame's eight frames, the torch's F, the candle's CAN and the other three's BF, with CFlame::renderTransparent
 
 ### `core/bodypart.cpp` (11 functions, 1593 instructions, 0 done, 0 partial)
 - class `CBodyPart`
@@ -1376,40 +1372,39 @@ functions don't count as done. Sizes are in instructions.
 - class `CLever`
   - [ ] `setState` 0x00504b20 (113)
 
-### `core/motion.cpp` (8 functions, 368 instructions, 0 done, 0 partial)
+### `core/motion.cpp` (8 functions, 368 instructions, 8 done, 0 partial)
 - class `CMotionList`
-  - [ ] `findMotionIndex` 0x0052d460 (50)
-  - [ ] `findStateIndex` 0x0052d4f0 (50)
+  - [x] `findMotionIndex` 0x0052d460 (50)
+  - [x] `findStateIndex` 0x0052d4f0 (50)
 - class `CMotionController`
-  - [ ] `getMotionList` 0x0052dce0 (3)
-  - [ ] `getCurrentMotion` 0x0052dab0 (6)
-  - [ ] `startTransition` 0x0052dbc0 (73)
-  - [ ] `findAndStartTransition` 0x0052d950 (101)
-  - [ ] `reverseTransition` 0x0052da50 (38)
-  - [ ] `setDesiredState` 0x0052db00 (47)
+  - [x] `getMotionList` 0x0052dce0 (3)
+  - [x] `getCurrentMotion` 0x0052dab0 (6)
+  - [x] `startTransition` 0x0052dbc0 (73)
+  - [x] `findAndStartTransition` 0x0052d950 (101)
+  - [x] `reverseTransition` 0x0052da50 (38)
+  - [x] `setDesiredState` 0x0052db00 (47)
 
-### `core/event.cpp` (34 functions, 8671 instructions, 10 done, 6 partial)
+### `core/event.cpp` (34 functions, 8671 instructions, 13 done, 5 partial)
 - class `CEventList`
   - [x] `findActorVariable` 0x004b0bf0 (34)
   - [x] `getActorByVarName` 0x004b0b80 (46)
   - [ ] `findPersistentEvent` 0x004b0860 (34)
   - [ ] `findGameFlag` 0x004b08b0 (34)
   - [ ] `findTimer` 0x004b0900 (34)
-  - [ ] `resolveVariable` 0x004adc10 (58)
+  - [~] `resolveVariable` 0x004adc10 (58)
+    - deferred: a raised event, a persistent event, a game flag or a timer of that name holding, with raise, flagOn, gameFlagOn and setTimer
   - [ ] `findCounter` 0x004b0950 (34)
   - [ ] `getCounterValue` 0x004b0830 (17)
   - [ ] `findSfxEntry` 0x004b0d60 (34)
   - [ ] `updateSfxEntries` 0x004b0db0 (95)
   - [ ] `getSfxHandle` 0x004b0c40 (22)
   - [~] `evaluateAtom` 0x004ae140 (2676)
-    - deferred: each atom's value: a flag, event or timer by its name, the counters a cmp compares, the heroes' items and keys, the actors' state, the camera, the fade, the nudity setting and the event sounds, with evaluateCondition
+    - deferred: the functions' values while a condition is evaluated: the counters a cmp compares, the heroes' items and keys, the actors' state, the camera, the fade, the nudity setting and the event sounds, with the game state each reads
     - deferred: hasItem and hasKeyMask asking every hero in a network game, isCurrentCamera asking the network camera, and isWearingGasMask holding for the hero the gas room spares, with CNetGame's sessions
-  - [~] `evaluateLogicalExpr` 0x004b0270 (74)
-    - deferred: the value of the atoms joined, with evaluateCondition
+  - [x] `evaluateLogicalExpr` 0x004b0270 (74)
   - [x] `evaluateExpression` 0x004add80 (45)
-  - [ ] `evaluateCondition` 0x004adca0 (33)
-  - [~] `validateCondition` 0x004add00 (21)
-    - deferred: evaluating the condition while running, printing an error to the console, with evaluateCondition
+  - [x] `evaluateCondition` 0x004adca0 (33)
+  - [x] `validateCondition` 0x004add00 (21)
   - [ ] `addOrRemovePersistentEvent` 0x004b0330 (101)
   - [ ] `addOrRemoveGameFlag` 0x004b0470 (101)
   - [ ] `setTimerEvent` 0x004b05a0 (131)
@@ -1470,13 +1465,14 @@ functions don't count as done. Sizes are in instructions.
 - class `CAmmo`
   - [ ] `setWeaponClass` 0x00410fd0 (139)
 
-### `wincore/winrun.cpp` (1 functions, 520 instructions, 0 done, 0 partial)
+### `wincore/winrun.cpp` (1 functions, 520 instructions, 1 done, 0 partial)
 - free functions
-  - [ ] `getKeyName` 0x005f3980 (520)
+  - [x] `getKeyName` 0x005f3980 (520)
 
-### `core/menu.cpp` (1 functions, 161 instructions, 0 done, 0 partial)
+### `core/menu.cpp` (1 functions, 161 instructions, 0 done, 1 partial)
 - free functions
-  - [ ] `getKeyDisplayName` 0x005134e0 (161)
+  - [~] `getKeyDisplayName` 0x005134e0 (161)
+    - deferred: the gamepad's buttons, named for the pad plugged in (the decomp's gamepad.h nocturne_gamepad_code_name), with the gamepad layer
 
 ### `core/inv.cpp` (15 functions, 2404 instructions, 0 done, 2 partial)
 - class `CInventory`
@@ -1508,25 +1504,26 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `saveActor` 0x00523af0 (41)
   - [x] `setMissionName` 0x00524630 (19)
 
-### `core/platfrm.cpp` (2 functions, 150 instructions, 0 done, 0 partial)
+### `core/platfrm.cpp` (2 functions, 150 instructions, 0 done, 1 partial)
 - class `CPlatform`
   - [ ] `startMovement` 0x0054d690 (38)
-  - [ ] `attachActor` 0x0054e1e0 (112)
+  - [~] `attachActor` 0x0054e1e0 (112)
+    - deferred: where the actor sits on the platform, with CPlatform::updateAttachedActors
 
-### `core/skeleton.cpp` (13 functions, 1277 instructions, 0 done, 0 partial)
+### `core/skeleton.cpp` (13 functions, 1277 instructions, 6 done, 0 partial)
 - class `CDeformableModel`
   - [ ] `findMaxWeightBone` 0x0059dca0 (69)
   - [ ] `exactRayTrace` 0x0059cba0 (199)
-  - [ ] `skinVertices` 0x0059a880 (122)
+  - [x] `skinVertices` 0x0059a880 (122)
   - [ ] `getBonePart` 0x0059c2d0 (8)
-  - [ ] `getSkeletonPtr` 0x0059a810 (18)
+  - [x] `getSkeletonPtr` 0x0059a810 (18)
   - [ ] `dismember` 0x0059c5e0 (426)
-  - [ ] `findPartByName` 0x0059c240 (52)
+  - [x] `findPartByName` 0x0059c240 (52)
 - class `CDeformableModelInstance`
-  - [ ] `getModelPtr` 0x005a07a0 (36)
-  - [ ] `skinVerticesForLOD` 0x005a01d0 (20)
+  - [x] `getModelPtr` 0x005a07a0 (36)
+  - [x] `skinVerticesForLOD` 0x005a01d0 (20)
   - [ ] `rayIntersect` 0x005a10e0 (47)
-  - [ ] `getSkeletonPtr` 0x005a0820 (8)
+  - [x] `getSkeletonPtr` 0x005a0820 (8)
   - [ ] `findClosestBone` 0x005a1160 (214)
   - [ ] `dismemberPart` 0x005a1040 (58)
 
@@ -1569,20 +1566,27 @@ functions don't count as done. Sizes are in instructions.
 - free functions
   - [ ] `loadAndUpdateTexture` 0x005dd930 (13)
 
-### `core/dcamera.cpp` (26 functions, 3719 instructions, 0 done, 0 partial)
+### `core/dcamera.cpp` (26 functions, 3719 instructions, 3 done, 4 partial)
 - class `CDemonCamera`
   - [ ] `setupPerspectiveAndFog` 0x004537d0 (73)
   - [ ] `initCameraShake` 0x00453fc0 (43)
-  - [ ] `setEffectIntensity` 0x004528e0 (6)
+  - [x] `setEffectIntensity` 0x004528e0 (6)
   - [ ] `worldToScreenWithFrustumCull` 0x0044d7d0 (243)
   - [ ] `setSceneCamera` 0x0044c3e0 (10)
   - [ ] `calculateInverseTransform` 0x0044cf20 (186)
   - [ ] `updateTransformMatrices` 0x0044d1c0 (56)
-  - [ ] `beginScene` 0x0044c430 (196)
+  - [~] `beginScene` 0x0044c430 (196)
+    - deferred: the camera shake's attack, sustain and decay and the screen's jitter, which stay still until a shake starts, with initCameraShake
+    - deferred: becoming the scene camera, and the one whose buffers are kept, with setSceneCamera's readers
+    - deferred: the dirty rectangles and the viewport rectangle, with pushRect and restoreZBufferRectArray
+    - deferred: the camera's copies of the transform, origin and projection and their inverse, with updateTransformMatrices' readers
   - [ ] `resetSceneCamera` 0x0044c410 (4)
-  - [ ] `endScene` 0x0044cb80 (62)
-  - [ ] `beginBackgroundScene` 0x0044cc70 (99)
-  - [ ] `endBackgroundScene` 0x0044cdf0 (87)
+  - [~] `endScene` 0x0044cb80 (62)
+    - deferred: no longer the scene camera, with setSceneCamera's readers
+  - [~] `beginBackgroundScene` 0x0044cc70 (99)
+    - deferred: the projection as the background scene sets it, and the renderer's camera and viewport, with testVisibility
+  - [~] `endBackgroundScene` 0x0044cdf0 (87)
+    - deferred: the projection as the background scene leaves it, with testVisibility
   - [ ] `precomputeLight` 0x0044de10 (380)
   - [ ] `screenToWorldCoord` 0x0044d2a0 (58)
   - [ ] `screenToWorldTransform` 0x0044d370 (90)
@@ -1591,11 +1595,11 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `restoreAlphaTransform` 0x00453a70 (109)
   - [ ] `precomputeNormals` 0x0044e360 (330)
   - [ ] `loadImage` 0x0044f3e0 (921)
-  - [ ] `initCameraFog` 0x00453640 (55)
+  - [x] `initCameraFog` 0x00453640 (55)
   - [ ] `saveZBufferScanlines` 0x00454450 (28)
   - [ ] `restoreZBufferScanlines` 0x004544a0 (28)
 - free functions
-  - [ ] `resetFogSamplingOffset` 0x0044bb70 (5)
+  - [x] `resetFogSamplingOffset` 0x0044bb70 (5)
   - [ ] `sampleFogAlongRay` 0x0044bdd0 (161)
   - [ ] `updateFogScrollOffset` 0x0044bfb0 (41)
 
@@ -1609,10 +1613,10 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `setAmbientLightLevel` 0x00505490 (11)
   - [x] `setDirectionalLightVector` 0x005054d0 (10)
 
-### `engine/matrix.c` (3 functions, 92 instructions, 1 done, 0 partial)
+### `engine/matrix.c` (3 functions, 92 instructions, 2 done, 0 partial)
 - free functions
   - [x] `getCameraRotation` 0x0050e2f0 (17)
-  - [ ] `projectTransformedPoint` 0x0050cdc0 (66)
+  - [x] `projectTransformedPoint` 0x0050cdc0 (66)
   - [ ] `projectCachedPoint` 0x0050cda0 (9)
 
 ### `core/dcube.cpp` (7 functions, 1140 instructions, 0 done, 0 partial)
@@ -1627,22 +1631,22 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `triangleCylinderCollision` 0x00456040 (307)
   - [ ] `buildAndRenderTrianglePrimitive` 0x004566e0 (39)
 
-### `engine/special.cpp` (7 functions, 258 instructions, 0 done, 0 partial)
+### `engine/special.cpp` (7 functions, 258 instructions, 5 done, 0 partial)
 - free functions
   - [ ] `transformPoint` 0x005b5a25 (205)
-  - [ ] `beginScene` 0x005b7280 (6)
-  - [ ] `clearZBuffer` 0x005b7be0 (6)
-  - [ ] `endScene` 0x005b72a0 (6)
-  - [ ] `masterZBuffer` 0x005b7d00 (9)
-  - [ ] `setFogColor` 0x005b7b80 (20)
+  - [x] `beginScene` 0x005b7280 (6)
+  - [x] `clearZBuffer` 0x005b7be0 (6)
+  - [x] `endScene` 0x005b72a0 (6)
+  - [x] `masterZBuffer` 0x005b7d00 (9)
+  - [x] `setFogColor` 0x005b7b80 (20)
   - [ ] `sync` 0x005b7bc0 (6)
 
-### `core/dtrace.cpp` (11 functions, 2901 instructions, 2 done, 0 partial)
+### `core/dtrace.cpp` (11 functions, 2901 instructions, 3 done, 0 partial)
 - class `CDemonRaytrace`
   - [ ] `getGroundHeight` 0x004966f0 (179)
   - [ ] `cylinderGroundCheck` 0x00496950 (186)
   - [ ] `rayVoxelIntersection` 0x00495b70 (471)
-  - [ ] `worldPositionToVoxelCoords` 0x00499880 (59)
+  - [x] `worldPositionToVoxelCoords` 0x00499880 (59)
   - [x] `getBBoxMin` 0x00499b40 (15)
   - [x] `getBBoxMax` 0x00499b70 (15)
   - [ ] `renderCubeForPVS` 0x00497500 (599)
@@ -1658,15 +1662,15 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `checkBreakableCondition` 0x004eb3a0 (8)
   - [ ] `renderBrokenGlass` 0x004e9ca0 (141)
 
-### `core/xform.cpp` (7 functions, 1005 instructions, 0 done, 0 partial)
+### `core/xform.cpp` (7 functions, 1005 instructions, 4 done, 0 partial)
 - free functions
-  - [ ] `multiplyMatrix3x4` 0x005f4f10 (165)
-  - [ ] `buildMatrixFromEulerAndPosition` 0x005f5390 (112)
+  - [x] `multiplyMatrix3x4` 0x005f4f10 (165)
+  - [x] `buildMatrixFromEulerAndPosition` 0x005f5390 (112)
   - [ ] `buildMatrixFromEulerAndPositionDirect` 0x005f54c0 (88)
   - [ ] `matrixToEulerAnglesZYX` 0x005f5bd0 (376)
   - [ ] `setIdentityMatrix3x4` 0x005f5100 (14)
-  - [ ] `determinant` 0x005f61c0 (27)
-  - [ ] `inverse` 0x005f6210 (223)
+  - [x] `determinant` 0x005f61c0 (27)
+  - [x] `inverse` 0x005f6210 (223)
 
 ### `core/mirror.cpp` (8 functions, 1667 instructions, 0 done, 0 partial)
 - free functions
@@ -1719,10 +1723,10 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `calculateVisibleTiles` 0x005e9e70 (308)
   - [ ] `render` 0x005ea320 (346)
 
-### `core/dlight.cpp` (15 functions, 1123 instructions, 0 done, 0 partial)
+### `core/dlight.cpp` (15 functions, 1123 instructions, 1 done, 0 partial)
 - class `CDemonLight`
   - [ ] `testShadowMapRegion` 0x00476000 (75)
-  - [ ] `applyFilter` 0x00474770 (218)
+  - [x] `applyFilter` 0x00474770 (218)
   - [ ] `projectLightAndMarkVisibility` 0x00473270 (88)
   - [ ] `initializeVisibilityBuffer` 0x00475fc0 (16)
   - [ ] `allocMasterZBuffer` 0x004729d0 (32)
@@ -1738,7 +1742,7 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `resetRestoreMemoryAllocator` 0x004729c0 (3)
   - [ ] `getRestoreMemory` 0x00472950 (31)
 
-### `engine/drender.cpp` (28 functions, 1059 instructions, 0 done, 0 partial)
+### `engine/drender.cpp` (28 functions, 1059 instructions, 1 done, 0 partial)
 - class `CDemonRenderer`
   - [ ] `renderVertexAlphaDirect` 0x0048bad0 (64)
   - [ ] `applyDirectTransform` 0x0048c4a0 (42)
@@ -1758,7 +1762,7 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `renderDepthProfiledDirect` 0x0048ab50 (70)
   - [ ] `renderSolidTexturedPoly` 0x0048b550 (77)
   - [ ] `renderZPrepassPoly` 0x0048a950 (80)
-  - [ ] `getCameraOriginWorld` 0x0048c780 (31)
+  - [x] `getCameraOriginWorld` 0x0048c780 (31)
   - [ ] `calculateProjectionFactor` 0x0048c870 (8)
   - [ ] `setAlphaMask` 0x0048cdf0 (5)
   - [ ] `enableAdvancedCulling` 0x0048ce10 (4)
@@ -1872,19 +1876,20 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `setupRenderState` 0x004ecc40 (39)
   - [ ] `render` 0x004ecce0 (243)
 
-### `core/sound.cpp` (14 functions, 825 instructions, 0 done, 0 partial)
+### `core/sound.cpp` (14 functions, 825 instructions, 2 done, 1 partial)
 - class `CSound`
   - [ ] `findRandomSoundFile` 0x005b1ed0 (89)
   - [ ] `playSound` 0x005b3a20 (12)
-  - [ ] `killSound` 0x005b3b90 (5)
-  - [ ] `playAmbientSound` 0x005b39b0 (38)
+  - [x] `killSound` 0x005b3b90 (5)
+  - [~] `playAmbientSound` 0x005b39b0 (38)
+    - deferred: playing the sound when the audio is already up, which only init's flag says, with CSound::init, playSound and playSfxInternal
   - [ ] `playActorSound` 0x005b3a40 (13)
   - [ ] `playTrackedActorSound` 0x005b3a70 (15)
   - [ ] `playActorPositionalSoundWithDelay` 0x005b3ae0 (24)
   - [ ] `playTrackedActorSoundWithDelay` 0x005b3b30 (24)
   - [ ] `isSoundPlaying` 0x005b3b80 (5)
   - [ ] `setVolumeFade` 0x005b3dc0 (5)
-  - [ ] `getSoundDuration` 0x005b3ba0 (53)
+  - [x] `getSoundDuration` 0x005b3ba0 (53)
   - [ ] `set3DListenerOrientRight` 0x005b3c90 (12)
   - [ ] `setReverbPreset` 0x005b3cc0 (25)
 - free functions
@@ -1906,13 +1911,13 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `isPointInWater` 0x00574580 (97)
   - [ ] `disableIgnore` 0x00574210 (3)
 
-### `core/weather.cpp` (3 functions, 372 instructions, 0 done, 0 partial)
+### `core/weather.cpp` (3 functions, 372 instructions, 1 done, 0 partial)
 - class `CWeather`
   - [ ] `createLightningStrike` 0x005eeeb0 (188)
-  - [ ] `setWeatherType` 0x005ef8c0 (30)
+  - [x] `setWeatherType` 0x005ef8c0 (30)
   - [ ] `setOriginAndRotation` 0x005ef940 (154)
 
-### `core/set.cpp` (27 functions, 2403 instructions, 2 done, 0 partial)
+### `core/set.cpp` (27 functions, 2403 instructions, 5 done, 2 partial)
 - class `CDemonSet`
   - [ ] `getReverbPresetAtPosition` 0x0056fac0 (77)
   - [ ] `addCoronaGlobe` 0x0056d110 (12)
@@ -1932,57 +1937,69 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `computeVertexOmniLighting` 0x0056e3e0 (137)
   - [ ] `renderSceneGeometry` 0x0056a190 (204)
   - [ ] `renderBackgroundActors` 0x0056aca0 (101)
-  - [ ] `snapshotActorTransformState` 0x0056ade0 (30)
+  - [x] `snapshotActorTransformState` 0x0056ade0 (30)
   - [ ] `isCameraPanning` 0x00571320 (21)
-  - [ ] `buildDisplayList` 0x0056fbd0 (291)
+  - [~] `buildDisplayList` 0x0056fbd0 (291)
+    - unverified: the order left among actors at the same distance, which the original's Watcom _qsort decides, by running its _qsort on such a list in the machine-code oracle
+    - deferred: the dynamic lights', the goggles' and the spotlights' passes, with addDynamicLight, the goggles and setCameraView's spotlights
+    - deferred: listing the local hero only while netplay has it in the world (the decomp's nocturne_net_respawn_hero_in_world), with CNetGame's sessions
+    - deferred: the time the list took, in profile mode, with processHotkeys
   - [ ] `renderStaticLights` 0x0056be80 (231)
   - [ ] `process` 0x0056f940 (100)
-  - [ ] `setCameraView` 0x0056ae50 (639)
-  - [ ] `setCameraEnabled` 0x00570ea0 (5)
-  - [ ] `setCameraEnabledByGroup` 0x00570ec0 (30)
+  - [~] `setCameraView` 0x0056ae50 (639)
+    - deferred: restoring the dynamic lights' and spotlights' dirty regions, freeing the spotlights' master z-buffers and resetting their restore memory, with restoreDirtyRegions, freeMasterZBuffer and resetRestoreMemoryAllocator
+    - deferred: the full lighting mode and the directional light ratio while the background draws, and no spot, omni or corona lights gathered yet, the coronas kept for the same camera (the decomp's windowed reswitch fix), with renderScene
+    - deferred: the raytrace geometry drawn in its plain mode, with renderFrustumCubes
+    - deferred: drawing the camera's background, its shadows and lights, its reverb and weather, then the scene's static lights, and noting each actor as drawn again, with renderSceneGeometry and what follows it
+  - [x] `setCameraEnabled` 0x00570ea0 (5)
+  - [x] `setCameraEnabledByGroup` 0x00570ec0 (30)
 - free functions
   - [ ] `qsortByDisplayListEntry` 0x0056fba0 (18)
 
-### `core/box.cpp` (11 functions, 944 instructions, 0 done, 0 partial)
+### `core/box.cpp` (11 functions, 944 instructions, 2 done, 3 partial)
 - class `CBox`
-  - [ ] `ctor` 0x0041dc50 (45)
-  - [ ] `updateTransform` 0x0041e0e0 (158)
-  - [ ] `setupCorners` 0x0041dd20 (127)
+  - [~] `ctor` 0x0041dc50 (45)
+    - deferred: the eight scrape points, the mass and the world velocity, with CBox::processPhysics
+  - [~] `updateTransform` 0x0041e0e0 (158)
+    - deferred: the turn, the mass from the volume, how hard it is to spin and the scrape points' places, with CBox::processPhysics
+  - [~] `setupCorners` 0x0041dd20 (127)
+    - deferred: the eight scrape points at the corners, with CBox::processPhysics
 - class `CBoundingBox3D`
-  - [ ] `getCorner` 0x004202b0 (39)
+  - [x] `getCorner` 0x004202b0 (39)
   - [ ] `doesBoxIntersect` 0x00421010 (34)
   - [ ] `clampPoint` 0x00421550 (66)
   - [ ] `doesSphereIntersect` 0x004215f0 (35)
   - [ ] `isVisibleWithShadow` 0x00420320 (147)
   - [ ] `isVisibleWithCamera` 0x00420680 (136)
   - [ ] `isVisible` 0x004204f0 (128)
-  - [ ] `getMaximumBound` 0x00421060 (29)
+  - [x] `getMaximumBound` 0x00421060 (29)
 
-### `core/setdir.cpp` (5 functions, 729 instructions, 0 done, 0 partial)
+### `core/setdir.cpp` (5 functions, 729 instructions, 4 done, 1 partial)
 - class `CDemonSet`
-  - [ ] `setPendingCamera` 0x00575b00 (6)
-  - [ ] `isPointInVdirBox` 0x005762a0 (62)
-  - [ ] `findVdirBoxAtPosition` 0x00576870 (32)
-  - [ ] `evaluateVirtualDirector` 0x005751d0 (619)
-  - [ ] `clearCameraSwitchCooldown` 0x00575b20 (10)
+  - [x] `setPendingCamera` 0x00575b00 (6)
+  - [x] `isPointInVdirBox` 0x005762a0 (62)
+  - [x] `findVdirBoxAtPosition` 0x00576870 (32)
+  - [~] `evaluateVirtualDirector` 0x005751d0 (619)
+    - deferred: scoring with the shadow pass off, with setShadowPass's callers
+  - [x] `clearCameraSwitchCooldown` 0x00575b20 (10)
 
-### `core/dfilter.cpp` (3 functions, 286 instructions, 0 done, 1 partial)
+### `core/dfilter.cpp` (3 functions, 286 instructions, 3 done, 0 partial)
 - class `CDemonFilter`
-  - [~] `ctor` 0x004701f0 (24)
-    - deferred: naming the filter "unnamed", which CDemonLight::applyFilter copies into the light, with CDemonFilter::load and CDemonLight::applyFilter
-  - [ ] `load` 0x004702f0 (159)
+  - [x] `ctor` 0x004701f0 (24)
+  - [x] `load` 0x004702f0 (159)
 - class `CFilterCache`
-  - [ ] `getFilter` 0x00470060 (103)
+  - [x] `getFilter` 0x00470060 (103)
 
-### `core/setutil.cpp` (6 functions, 437 instructions, 0 done, 0 partial)
+### `core/setutil.cpp` (6 functions, 437 instructions, 1 done, 1 partial)
 - class `C3DSLight`
   - [ ] `advanceFilter` 0x00586e70 (40)
   - [ ] `setFilterFrame` 0x00586f00 (44)
   - [ ] `process` 0x00586cb0 (118)
   - [ ] `addFilter` 0x00586fa0 (63)
 - class `C3DSCamera`
-  - [ ] `apply` 0x00585870 (106)
-  - [ ] `testSphereInFrustum` 0x00585970 (66)
+  - [~] `apply` 0x00585870 (106)
+    - deferred: the console's notes on an ambient level below the set's least or above a quarter, with the console among the set's owners
+  - [x] `testSphereInFrustum` 0x00585970 (66)
 
 ### `core/script.cpp` (25 functions, 7596 instructions, 11 done, 9 partial)
 - class `CScript`
@@ -1994,10 +2011,11 @@ functions don't count as done. Sizes are in instructions.
     - deferred: clearing the shown message, with renderSubtitles
     - deferred: clearing the wait and dialogue timers and the time a message shows for, with processTimer and startDialogLine
     - deferred: clearing the ending flag, the breakpoint state, the call stack, the skip label and the loop warning, with process and skipCinematic
-    - deferred: choosing the focus actor, the local hero or else the first hero placed in an area, and clearing the speaker and the focus lock, with setFocusActor and the scene camera
+    - deferred: following the first hero placed in an area when the local hero is in none (the decomp's netplay focus fallback), with CNetGame's sessions, which bring the other heroes
+    - deferred: marking the focus changed, with the play loop's virtual director call
+    - deferred: clearing the speaker and the focus lock, with setFocusActor and setSpeaker
     - deferred: letting the heroes be damaged and the enemies attack, and clearing the letterbox, with CGame's readers of them
     - deferred: clearing the script's time scale, with process
-    - deferred: playing the set's ambient sound, its geometry file's stem as a .wav and smill and town at 0.85, with CSound::playAmbientSound
   - [~] `startDialogLine` 0x0055ff00 (148)
     - deferred: the line's length: the number the sound is, the sound's own, or two hundredths of a second a character and 0.4 more for a missing sound, which the script's pick list notes, with CSound::getSoundDuration and the script editor
     - deferred: the speaker, the focus actor unless it is locked, the caption, the speaker's speech timer and the sound, while running, with renderSubtitles and the scene camera
@@ -2009,9 +2027,6 @@ functions don't count as done. Sizes are in instructions.
     - deferred: stopping at an else on the top level, to skip only an if's own statement, with running if
   - [x] `findDialogEntry` 0x005606e0 (48)
   - [~] `step` 0x0055a810 (5702)
-    - deferred: quitting on an instruction pointer outside the script, with process
-    - deferred: passing over labels without checking them while running, with process
-    - deferred: syntaxCheckOn and syntaxCheckOff leaving a running script alone, with process
     - deferred: resetting the wait and dialogue timers once a command finishes, with processTimer and startDialogLine
     - deferred: staying on a command that hasn't finished, and the overrun past the end of the script, while running, with process
     - deferred: running advanceLightFilter, createExplosion, deleteActor, displayBitmap, hurtCharacter, incCounter, fadeSfx, fadeAmbientSound, flagOn, flagOff, gameFlagOn, gameFlagOff, killCharacter, killHero, killSfx, lightning, playSfx, setCameraAmbient, setCounter, setGroupAmbient, setLightFilterFrame, setLeverState, setModelState, setTimer, setWeather, shakeScreen, slamModelToMotion and warpTo, the line run as event commands, with CEventList::executeCommands
@@ -2023,7 +2038,6 @@ functions don't count as done. Sizes are in instructions.
     - deferred: running if, skipping the next statement, and an else after it, when its condition is false, with CEventList::evaluateCondition
     - deferred: running waitFor, holding the script until its condition holds, with CEventList::evaluateCondition
     - deferred: running addItemToInventory, adding the item to the hero's inventory, with CInventory::addItem
-    - deferred: running attachActorToPlatform, attaching the actor, with CPlatform::attachActor
     - deferred: running cancelWalkTo, stopping the character's walk, or every character's in the set, with the characters' walk targets
     - deferred: running enableHealthBar, setting the character's health bar, with its health bar
     - deferred: running getTriggerActor, storing who set the trigger off in the variable, with CTrigger's triggering actor
@@ -2044,8 +2058,6 @@ functions don't count as done. Sizes are in instructions.
     - deferred: running walkTo, walking the character to the target, with the characters' walk targets
     - deferred: running addLightFilter, adding the filter to the light, with C3DSLight::addFilter
     - deferred: running enableCamera, enabling the camera by its condition, with CDemonSet::setCameraEnabled and CEventList::evaluateCondition
-    - deferred: running enableCameraGroup, enabling the group by its condition, with CDemonSet::setCameraEnabledByGroup and CEventList::evaluateCondition
-    - deferred: running setCameraGroup, moving the camera to the group, with the cameras' groups
     - deferred: running switchCamera, switching to the camera for the hold time, with CDemonSet::setPendingCamera
     - deferred: gesture, the motion the character's model must have and starting it, with CMotionList::findMotionIndex and CCharacter::initGesture
     - deferred: dismember, the parts the character's model must have, the direction and spread, drawing the spread's two random angles while checking too, and cutting the parts off, with parseBodyPartMask and createBodyPart
@@ -2071,7 +2083,6 @@ functions don't count as done. Sizes are in instructions.
     - deferred: running idle, stopping for the frame after moving past it, with process
     - deferred: running letterbox, setting the letterbox and what it allows, and turning off the goggles, with CGame's readers of them
     - deferred: running removeKeys, taking the keys from every hero, with CHero::removeMatchingKeys
-    - deferred: running setAmbientSound, playing it, with CSound::playAmbientSound
     - deferred: running setIniInt, writing the INI value, with process
     - deferred: running setSayTimeOverride, setting how long lines show for, with startDialogLine
     - deferred: running setSkipLabel, setting where a skipped cinematic goes, with skipCinematic
@@ -2080,7 +2091,6 @@ functions don't count as done. Sizes are in instructions.
     - deferred: running wait, holding the script for its time, with processTimer
   - [~] `validateSyntax` 0x0055a4b0 (53)
     - deferred: clearing the notes of dialogue missing from the database first, with the dbSay commands and startDialogLine
-    - deferred: going back to running commands once the check passes, with process
   - [x] `dbLoad` 0x005603c0 (232)
   - [~] `loadScript` 0x00559f80 (308)
     - deferred: clearing the notes of dialogue missing from the database after the check, with the dbSay commands and startDialogLine
@@ -2101,15 +2111,19 @@ functions don't count as done. Sizes are in instructions.
 
 ## Step 12: `CDemonMission::loadScript`, `CScript::executeInitSection`, `CDemonMission::startMission`, `CDemonMission::buildActiveSetActorList`, `CConsole::reset`, `CEditorTools::displayMemoryDiagnostics`, `CGame::setGameRes`, `CDemonLight::init`, `CDemonSet::initScene`
 
-### `core/script.cpp` (1 functions, 99 instructions, 0 done, 0 partial)
+### `core/script.cpp` (1 functions, 99 instructions, 0 done, 1 partial)
 - class `CScript`
-  - [ ] `executeInitSection` 0x0055a6c0 (99)
+  - [~] `executeInitSection` 0x0055a6c0 (99)
+    - deferred: resetting the heroes' input and centring the pointer when a command in the section took the input, with pressButton and releaseButton
 
-### `core/mission.cpp` (3 functions, 193 instructions, 0 done, 0 partial)
+### `core/mission.cpp` (3 functions, 193 instructions, 2 done, 1 partial)
 - class `CDemonMission`
-  - [ ] `loadScript` 0x005235b0 (21)
-  - [ ] `startMission` 0x00524760 (95)
-  - [ ] `buildActiveSetActorList` 0x00524120 (77)
+  - [x] `loadScript` 0x005235b0 (21)
+  - [~] `startMission` 0x00524760 (95)
+    - deferred: the local hero being the one netplay gives this machine, and the set loaded being the area netplay respawns it in (the decomp's nocturne_net_respawn_world_area), with CNetGame's sessions
+    - deferred: clearing the pending teleport to area -1 at the origin, with setTeleportTarget and process
+    - deferred: clearing the letterbox, with CGame's readers of it
+  - [x] `buildActiveSetActorList` 0x00524120 (77)
 
 ### `engine/console.cpp` (1 functions, 15 instructions, 1 done, 0 partial)
 - class `CConsole`
@@ -2119,55 +2133,65 @@ functions don't count as done. Sizes are in instructions.
 - class `CEditorTools`
   - [ ] `displayMemoryDiagnostics` 0x004a2590 (80)
 
-### `wincore/wddvmem.cpp` (1 functions, 160 instructions, 0 done, 0 partial)
+### `wincore/wddvmem.cpp` (1 functions, 160 instructions, 0 done, 1 partial)
 - free functions
-  - [ ] `resetGraphicsSystem` 0x005ed2a0 (160)
+  - [~] `resetGraphicsSystem` 0x005ed2a0 (160)
+    - deferred: marking the graphics as reset, with reinitializeGraphicsSystem and videoRestore
 
-### `engine/2d.c` (1 functions, 1 instructions, 0 done, 0 partial)
+### `engine/2d.c` (1 functions, 1 instructions, 1 done, 0 partial)
 - free functions
-  - [ ] `resetGraphicsSystem` 0x00402a70 (1)
+  - [x] `resetGraphicsSystem` 0x00402a70 (1)
 
-### `core/game.cpp` (1 functions, 75 instructions, 0 done, 0 partial)
+### `core/game.cpp` (1 functions, 75 instructions, 1 done, 0 partial)
 - class `CGame`
-  - [ ] `setGameRes` 0x004dade0 (75)
+  - [x] `setGameRes` 0x004dade0 (75)
 
-### `core/dfilter.cpp` (2 functions, 43 instructions, 1 done, 0 partial)
+### `core/dfilter.cpp` (2 functions, 43 instructions, 2 done, 0 partial)
 - class `CDemonFilter`
   - [x] `dtor` 0x00470240 (8)
 - class `CFilterCache`
-  - [ ] `free` 0x00470000 (35)
+  - [x] `free` 0x00470000 (35)
 
-### `core/dcamera.cpp` (7 functions, 449 instructions, 0 done, 0 partial)
+### `core/dcamera.cpp` (7 functions, 449 instructions, 5 done, 2 partial)
 - class `CDemonCamera`
-  - [ ] `free` 0x0044c360 (29)
-  - [ ] `init` 0x0044c190 (108)
-  - [ ] `generateFogGrid` 0x004529a0 (4)
-  - [ ] `generateGammaPalette` 0x00453bd0 (58)
-  - [ ] `initLookupTable` 0x0044c0f0 (58)
-  - [ ] `ctor` 0x0044c030 (13)
+  - [~] `free` 0x0044c360 (29)
+    - deferred: forgetting the dirty rectangles, with pushRect and restoreZBufferRectArray
+  - [x] `init` 0x0044c190 (108)
+  - [x] `generateFogGrid` 0x004529a0 (4)
+  - [x] `generateGammaPalette` 0x00453bd0 (58)
+  - [x] `initLookupTable` 0x0044c0f0 (58)
+  - [~] `ctor` 0x0044c030 (13)
+    - deferred: the scene not yet open, with beginScene and endScene
 - free functions
-  - [ ] `generateFogGrid` 0x0044bba0 (179)
+  - [x] `generateFogGrid` 0x0044bba0 (179)
 
-### `core/dlight.cpp` (5 functions, 190 instructions, 0 done, 0 partial)
+### `core/dlight.cpp` (5 functions, 190 instructions, 3 done, 2 partial)
 - class `CDemonLight`
-  - [ ] `free` 0x004728b0 (44)
-  - [ ] `init` 0x004727c0 (64)
-  - [ ] `ctor` 0x004726a0 (24)
-  - [ ] `allocateFilter` 0x00474720 (20)
-  - [ ] `setVolumetricIntensity` 0x004765e0 (38)
+  - [~] `free` 0x004728b0 (44)
+    - deferred: letting go of the master z-buffer, with allocMasterZBuffer
+  - [x] `init` 0x004727c0 (64)
+  - [~] `ctor` 0x004726a0 (24)
+    - deferred: the volumetric beam off and antialiasing on, with the light's scene rendering
+  - [x] `allocateFilter` 0x00474720 (20)
+  - [x] `setVolumetricIntensity` 0x004765e0 (38)
 
-### `core/setutil.cpp` (2 functions, 169 instructions, 0 done, 0 partial)
+### `core/setutil.cpp` (2 functions, 169 instructions, 1 done, 1 partial)
 - class `C3DSLight`
-  - [ ] `create` 0x00586a90 (106)
-  - [ ] `apply` 0x00586bf0 (63)
+  - [x] `create` 0x00586a90 (106)
+  - [~] `apply` 0x00586bf0 (63)
+    - deferred: restarting the light's on and off cycle and its filter frame's time, with process and advanceFilter
 
-### `core/set.cpp` (1 functions, 184 instructions, 0 done, 0 partial)
+### `core/set.cpp` (1 functions, 184 instructions, 0 done, 1 partial)
 - class `CDemonSet`
-  - [ ] `initScene` 0x0056aa10 (184)
+  - [~] `initScene` 0x0056aa10 (184)
+    - deferred: resetting the shadow restore allocator, with allocMasterZBuffer
+    - deferred: forgetting the dynamic lights and the mirror glass actors, with addDynamicLight and buildMirrorList
+    - deferred: drawing the set into each master light's shadow map, its edges cleared for a circular shadow, with renderSceneGeometry and CDemonLight's beginScene, clearCircularShadowMapEdges and endScene
+    - deferred: no spot, omni or corona lights gathered, with renderScene
 
 ## Step 13: `CFireEffect::init`, `CDemonSet::loadMasterLightStates`, `CDemonSet::setGamma`, `CGame::clearOverlay`, `CGame::loadAssets`
 
-### `core/fire.cpp` (17 functions, 327 instructions, 0 done, 0 partial)
+### `core/fire.cpp` (17 functions, 327 instructions, 9 done, 0 partial)
 - class `CSmokeParticle`
   - [ ] `reset` 0x004bf2e0 (3)
 - class `CExplosion`
@@ -2184,44 +2208,45 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `reset` 0x004c5de0 (3)
 - class `CFireEffect`
   - [ ] `init` 0x004c6c80 (153)
-  - [ ] `loadAssets` 0x004c7ab0 (26)
+  - [x] `loadAssets` 0x004c7ab0 (26)
 - free functions
-  - [ ] `loadStakeAssets` 0x004bfe00 (8)
-  - [ ] `loadFireBallAssets` 0x004c0ad0 (22)
-  - [ ] `loadRockAssets` 0x004c17e0 (1)
-  - [ ] `loadGunFlashAssets` 0x004c1be0 (8)
-  - [ ] `loadDebrisAssets` 0x004c38d0 (36)
-  - [ ] `loadDynamiteAssets` 0x004c41d0 (4)
-  - [ ] `loadGunFlameAssets` 0x004c4d50 (31)
-  - [ ] `loadLightningBoltAssets` 0x004c5600 (15)
+  - [x] `loadStakeAssets` 0x004bfe00 (8)
+  - [x] `loadFireBallAssets` 0x004c0ad0 (22)
+  - [x] `loadRockAssets` 0x004c17e0 (1)
+  - [x] `loadGunFlashAssets` 0x004c1be0 (8)
+  - [x] `loadDebrisAssets` 0x004c38d0 (36)
+  - [x] `loadDynamiteAssets` 0x004c41d0 (4)
+  - [x] `loadGunFlameAssets` 0x004c4d50 (31)
+  - [x] `loadLightningBoltAssets` 0x004c5600 (15)
 
-### `core/gore.cpp` (1 functions, 65 instructions, 0 done, 0 partial)
+### `core/gore.cpp` (1 functions, 65 instructions, 1 done, 0 partial)
 - class `CGore`
-  - [ ] `loadAssets` 0x004ede60 (65)
+  - [x] `loadAssets` 0x004ede60 (65)
 
-### `core/inv.cpp` (2 functions, 220 instructions, 0 done, 0 partial)
+### `core/inv.cpp` (2 functions, 220 instructions, 2 done, 0 partial)
 - free functions
-  - [ ] `loadItem` 0x004fcfe0 (15)
-  - [ ] `loadAssets` 0x004fd220 (205)
+  - [x] `loadItem` 0x004fcfe0 (15)
+  - [x] `loadAssets` 0x004fd220 (205)
 
-### `core/dlight.cpp` (1 functions, 20 instructions, 0 done, 0 partial)
+### `core/dlight.cpp` (1 functions, 20 instructions, 0 done, 1 partial)
 - free functions
-  - [ ] `captureLightTextures` 0x00474a90 (20)
+  - [~] `captureLightTextures` 0x00474a90 (20)
+    - deferred: each flare sprite's size and texture coordinates beside its texture, with renderLightGlowSprites
 
-### `core/water.cpp` (1 functions, 15 instructions, 0 done, 0 partial)
+### `core/water.cpp` (1 functions, 15 instructions, 1 done, 0 partial)
 - class `CWater`
-  - [ ] `captureTextures` 0x005e9e40 (15)
+  - [x] `captureTextures` 0x005e9e40 (15)
 
-### `core/set.cpp` (3 functions, 68 instructions, 0 done, 0 partial)
+### `core/set.cpp` (3 functions, 68 instructions, 2 done, 0 partial)
 - class `CDemonSet`
   - [ ] `loadMasterLightStates` 0x00571130 (21)
-  - [ ] `setGamma` 0x00570d60 (41)
-  - [ ] `loadAssets` 0x0056fb80 (6)
+  - [x] `setGamma` 0x00570d60 (41)
+  - [x] `loadAssets` 0x0056fb80 (6)
 
-### `core/game.cpp` (2 functions, 20 instructions, 0 done, 0 partial)
+### `core/game.cpp` (2 functions, 20 instructions, 1 done, 0 partial)
 - class `CGame`
   - [ ] `clearOverlay` 0x004d7f80 (4)
-  - [ ] `loadAssets` 0x004e07a0 (16)
+  - [x] `loadAssets` 0x004e07a0 (16)
 
 ## Step 14: `CNetGame::syncPlayers`, `CNetGame::processServerFrame`, `CLevelLoader::cleanup`, `CKeys::toggleInputMask`, `CGame::processHotkeys`
 
@@ -2236,9 +2261,9 @@ functions don't count as done. Sizes are in instructions.
 - class `CLevelLoader`
   - [ ] `cleanup` 0x00504720 (13)
 
-### `engine/keys.cpp` (1 functions, 8 instructions, 0 done, 0 partial)
+### `engine/keys.cpp` (1 functions, 8 instructions, 1 done, 0 partial)
 - class `CKeys`
-  - [ ] `toggleInputMask` 0x005024b0 (8)
+  - [x] `toggleInputMask` 0x005024b0 (8)
 
 ### `support/codec.cpp` (2 functions, 107 instructions, 0 done, 0 partial)
 - class `CLZWDictionary`
@@ -2260,11 +2285,11 @@ functions don't count as done. Sizes are in instructions.
 - class `CDemonActor`
   - [ ] `save` 0x0040af30 (79)
 
-### `engine/font.cpp` (1 functions, 28 instructions, 0 done, 0 partial)
+### `engine/font.cpp` (1 functions, 28 instructions, 1 done, 0 partial)
 - class `CBitFont`
-  - [ ] `drawTextCenter` 0x004cdde0 (28)
+  - [x] `drawTextCenter` 0x004cdde0 (28)
 
-### `shape/edittool.cpp` (14 functions, 1087 instructions, 0 done, 0 partial)
+### `shape/edittool.cpp` (14 functions, 1087 instructions, 1 done, 0 partial)
 - class `CInputString`
   - [ ] `init` 0x0049d3d0 (42)
   - [ ] `setSelectionToCursor` 0x0049d460 (4)
@@ -2280,7 +2305,7 @@ functions don't count as done. Sizes are in instructions.
 - class `CEditorTools`
   - [ ] `getClipboardText` 0x004a1b30 (54)
   - [ ] `showFilenameInputDialog` 0x0049fb70 (341)
-  - [ ] `displayCenteredStatusMessage` 0x0049e790 (65)
+  - [x] `displayCenteredStatusMessage` 0x0049e790 (65)
 
 ### `core/gore.cpp` (3 functions, 169 instructions, 0 done, 0 partial)
 - class `CBloodSplat`
@@ -2346,9 +2371,9 @@ functions don't count as done. Sizes are in instructions.
 - class `CConsole`
   - [ ] `render` 0x00441b00 (106)
 
-### `core/dfilter.cpp` (2 functions, 86 instructions, 0 done, 0 partial)
+### `core/dfilter.cpp` (2 functions, 86 instructions, 1 done, 0 partial)
 - class `CFilterCache`
-  - [ ] `findFilter` 0x004701a0 (36)
+  - [x] `findFilter` 0x004701a0 (36)
 - class `CFilterFX`
   - [ ] `process` 0x004708e0 (50)
 
@@ -2375,10 +2400,9 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `promptForValidFloat` 0x004a00f0 (91)
   - [ ] `showCheatInputDialog` 0x004a0400 (16)
 
-### `core/dmodel.cpp` (1 functions, 10 instructions, 0 done, 1 partial)
+### `core/dmodel.cpp` (1 functions, 10 instructions, 1 done, 0 partial)
 - class `CKeyFramedModelInstance`
-  - [~] `ctor` 0x00478ce0 (10)
-    - deferred: starting with no model loaded, with getModelPtr
+  - [x] `ctor` 0x00478ce0 (10)
 
 ### `core/ammo.cpp` (1 functions, 39 instructions, 1 done, 0 partial)
 - class `CAmmo`
@@ -2628,9 +2652,9 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `renderGogglesView` 0x0056c990 (308)
   - [ ] `renderLightDebugView` 0x0056d190 (91)
 
-### `core/skeleton.cpp` (4 functions, 144 instructions, 0 done, 0 partial)
+### `core/skeleton.cpp` (4 functions, 144 instructions, 1 done, 0 partial)
 - class `CSkeleton`
-  - [ ] `findBone` 0x00599fc0 (52)
+  - [x] `findBone` 0x00599fc0 (52)
   - [ ] `calculateFrameDataSize` 0x0059a140 (7)
 - class `CDeformableModel`
   - [ ] `calculateMemorySize` 0x0059dd60 (31)
@@ -2687,12 +2711,12 @@ functions don't count as done. Sizes are in instructions.
 - free functions
   - [ ] `reinitializeGraphicsSystem` 0x00402a80 (1)
 
-### `engine/special.cpp` (4 functions, 65 instructions, 0 done, 0 partial)
+### `engine/special.cpp` (4 functions, 65 instructions, 2 done, 0 partial)
 - free functions
   - [ ] `restoreVideoMode` 0x005b75b0 (14)
-  - [ ] `kill` 0x005b71e0 (8)
+  - [x] `kill` 0x005b71e0 (8)
   - [ ] `getVideoMemory` 0x005b7d60 (17)
-  - [ ] `buildCardList` 0x005b7db0 (26)
+  - [x] `buildCardList` 0x005b7db0 (26)
 
 ### `engine/matrix.c` (1 functions, 94 instructions, 0 done, 0 partial)
 - free functions
@@ -2702,22 +2726,26 @@ functions don't count as done. Sizes are in instructions.
 - class `CMoon`
   - [ ] `renderJoystickCalibration` 0x0052a2c0 (84)
 
-### `core/sound.cpp` (1 functions, 112 instructions, 0 done, 1 partial)
+### `core/sound.cpp` (1 functions, 112 instructions, 1 done, 0 partial)
 - class `CSound`
-  - [~] `configure` 0x005b3830 (112)
-    - deferred: giving the attract movies the splash music's length from getSoundDuration, a length of 0 or less disarming them (the decomp's attract.h nocturne_attract_set_music_duration), with the attract movies and CSound::getSoundDuration
+  - [x] `configure` 0x005b3830 (112)
 
-### `core/menu.cpp` (9 functions, 4659 instructions, 0 done, 0 partial)
+### `core/menu.cpp` (9 functions, 4659 instructions, 5 done, 3 partial)
 - free functions
-  - [ ] `configureGraphicsOptions` 0x00510c80 (770)
+  - [x] `configureGraphicsOptions` 0x00510c80 (770)
   - [ ] `calibrateGamepad` 0x005104d0 (215)
-  - [ ] `adjustMouseSensitivity` 0x005107c0 (200)
-  - [ ] `isKeyCodeValidForMode` 0x00513720 (87)
-  - [ ] `configureCustomKeyBindings` 0x005138e0 (1634)
-  - [ ] `configureCustomKeys` 0x00511890 (375)
-  - [ ] `renderAudioSpectrumBar` 0x0050fe70 (116)
-  - [ ] `configureSoundOptions` 0x00511e50 (1124)
-  - [ ] `showOptionsScreen` 0x00512d30 (138)
+  - [x] `adjustMouseSensitivity` 0x005107c0 (200)
+  - [x] `isKeyCodeValidForMode` 0x00513720 (87)
+  - [~] `configureCustomKeyBindings` 0x005138e0 (1634)
+    - deferred: polling the gamepad while a code is waited for, with resetKeyState
+    - deferred: keeping the gamepad off the menus while a code is waited for (the decomp's gamepad.h nocturne_gamepad_suppress_nav), with the gamepad layer
+  - [~] `configureCustomKeys` 0x00511890 (375)
+    - deferred: the gamepad's deadzone, turn and look speeds and look inversion lines, before Calibrate (the decomp's pad_tuning.h), with the gamepad layer
+    - deferred: calibrating the gamepad from Calibrate, or on Cancel for one nobody has centred, with calibrateGamepad
+  - [x] `renderAudioSpectrumBar` 0x0050fe70 (116)
+  - [x] `configureSoundOptions` 0x00511e50 (1124)
+  - [~] `showOptionsScreen` 0x00512d30 (138)
+    - deferred: the cheats, which nothing in the original lists (the decomp's cheats.h nocturne_cheats_menu), with the cheats menu
 
 ### `core/script.cpp` (1 functions, 68 instructions, 0 done, 0 partial)
 - class `CScript`
@@ -2731,19 +2759,33 @@ functions don't count as done. Sizes are in instructions.
 - free functions
   - [ ] `freeInventory` 0x004fd510 (43)
 
-### `core/game.cpp` (5 functions, 1777 instructions, 0 done, 0 partial)
+### `core/game.cpp` (5 functions, 1777 instructions, 1 done, 1 partial)
 - class `CGame`
   - [ ] `setScreenResolutionAndDisplayFangs` 0x004daed0 (47)
-  - [ ] `rollCredits` 0x004e4010 (280)
+  - [x] `rollCredits` 0x004e4010 (280)
   - [ ] `showFullscreenBitmap` 0x004e2910 (387)
-  - [ ] `runGameSession` 0x004daf80 (791)
+  - [~] `runGameSession` 0x004daf80 (791)
+    - deferred: the console's system memory, swap file and heap lines, with a platform memory report and CEditorTools::displayMemoryDiagnostics
+    - deferred: clearing the camera view, pause, debug, cheat, subtitle, console, render mode, overlay bitmap, cinematic skip, control block, goggles and flashlight flags, and the modal dialog, with processHotkeys, processFrame and playerControls
+    - deferred: forgetting each hero's own light, the Baron's state and a helper's death (the decomp's hero_light, baron and helper_death resets), with CHero, CBaron and playerControls
+    - deferred: starting the session's autosave (the decomp's nocturne_autosave_session_start), with the autosave poll in the play loop
+    - deferred: developer mode when VELOCITY is set, with processHotkeys
+    - deferred: starting the fire effects, or the master lights' saved states after a load, with CFireEffect::init and CDemonSet::loadMasterLightStates
+    - deferred: clearing the overlay's status lines and message timer, with clearOverlay and updateStatusDisplays
+    - deferred: opening the iris on the focus actor, with beginFadeIn and renderIrisFade
+    - deferred: the cheats the menu turned on (the decomp's nocturne_cheats_apply), with showCheatsMenu
+    - deferred: waiting for every player and starting the server's frames, with CNetGame::syncPlayers and processServerFrame
+    - deferred: saving the clock, centring the input, freeing the loading screen, the hero's aim mode and the act not yet complete, then the play loop, with the play loop
   - [ ] `displayActStats` 0x004e3800 (272)
 
 ## Step 17: `CGame::finishAct`, `CDemonMission::run`, `CGame::loadGame`, `CGame::showChapterSelect`, `showDeveloperToolsMenu`
 
-### `core/mission.cpp` (1 functions, 150 instructions, 0 done, 0 partial)
+### `core/mission.cpp` (1 functions, 150 instructions, 0 done, 1 partial)
 - class `CDemonMission`
-  - [ ] `run` 0x00524420 (150)
+  - [~] `run` 0x00524420 (150)
+    - deferred: the set loaded being the area netplay respawns the hero in (the decomp's nocturne_net_respawn_world_area), with CNetGame's sessions
+    - deferred: after the session, taking the hero off the list and resetting it, clearing the mission, and going on to the mission the session asked for, with its act's stats, a loading screen and a key to continue away from headquarters, or finishing the act, with the play loop, CDemonMission::removeActorFromList, CHero::reset, displayActStats and finishAct
+    - deferred: netplay agreeing on the next mission and skipping the key to continue (the decomp's nocturne_net_mission_*), with CNetGame's sessions
 
 ### `support/codec.cpp` (6 functions, 345 instructions, 0 done, 0 partial)
 - class `CLZWDecompress`
@@ -2776,21 +2818,24 @@ functions don't count as done. Sizes are in instructions.
 - class `CDemonSet`
   - [ ] `loadStateInfo` 0x00571230 (75)
 
-### `core/game.cpp` (3 functions, 1839 instructions, 0 done, 0 partial)
+### `core/game.cpp` (3 functions, 1839 instructions, 0 done, 1 partial)
 - class `CGame`
   - [ ] `finishAct` 0x004e3b90 (349)
   - [ ] `loadGame` 0x004e12b0 (645)
-  - [ ] `showChapterSelect` 0x004e1cb0 (845)
+  - [~] `showChapterSelect` 0x004e1cb0 (845)
+    - deferred: zeroing the act's enemy and kill counts and its game and play times, with CGame::displayActStats
+    - deferred: showing the story's year and title for eight seconds, or nothing after the browser, with CGame::renderOverlay and CGame::updateStatusDisplays
+    - deferred: clearing the events' game flags, with CEventList::resetGameFlags
+    - deferred: loading the save a run asks to reload, then the editor's font as it was, with CGame::loadGame and the play loop
 
 ### `core/course.cpp` (2 functions, 13 instructions, 2 done, 0 partial)
 - class `CCourse`
   - [x] `ctor` 0x004424c0 (5)
   - [x] `dtor` 0x004424e0 (8)
 
-### `core/dmodel.cpp` (2 functions, 26 instructions, 1 done, 1 partial)
+### `core/dmodel.cpp` (2 functions, 26 instructions, 2 done, 0 partial)
 - class `CKeyFramedModel`
-  - [~] `ctor` 0x00476cf0 (18)
-    - deferred: the empty filename, with loadModel
+  - [x] `ctor` 0x00476cf0 (18)
   - [x] `dtor` 0x00476d90 (8)
 
 ### `shape/edittool.cpp` (1 functions, 27 instructions, 1 done, 0 partial)
@@ -3021,11 +3066,12 @@ functions don't count as done. Sizes are in instructions.
 - free functions
   - [x] `staticInit` 0x004417e0 (11)
 
-### `engine/drender.cpp` (18 functions, 1601 instructions, 2 done, 0 partial)
+### `engine/drender.cpp` (18 functions, 1601 instructions, 3 done, 1 partial)
 - class `CDemonRenderer`
   - [x] `ctor` 0x0048a6c0 (10)
   - [ ] `setProjectionMode` 0x0048a700 (14)
-  - [ ] `countVisiblePixelsPoly` 0x0048aa50 (76)
+  - [~] `countVisiblePixelsPoly` 0x0048aa50 (76)
+    - deferred: refusing to count in the shadow pass, with setShadowPass's callers
   - [ ] `renderNearPlaneTexturedPoly` 0x0048ac40 (102)
   - [ ] `renderAlphaBlendedDirect` 0x0048b150 (44)
   - [ ] `renderAlphaBlendedFace` 0x0048b320 (69)
@@ -3034,7 +3080,7 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `renderDestReadBlendDirect` 0x0048b890 (65)
   - [ ] `renderOverlayPoly` 0x0048bfe0 (101)
   - [ ] `setCameraRotationFromPoint` 0x0048c1b0 (12)
-  - [ ] `setProjectionScaleSimple` 0x0048c670 (5)
+  - [x] `setProjectionScaleSimple` 0x0048c670 (5)
   - [ ] `scaleAndSetDirectionalLight` 0x0048c6e0 (30)
   - [ ] `clipAndDrawLine3D` 0x0048caf0 (586)
   - [ ] `processVisiblePrimitive` 0x0048d700 (50)
@@ -3468,7 +3514,7 @@ functions don't count as done. Sizes are in instructions.
   - [x] `setMousePointerType` 0x004a2920 (75)
 - free functions
   - [~] `staticInit` 0x0049d170 (7)
-    - deferred: the seven colours retail's init sets for CInputString::draw, displayCenteredStatusMessage, showFilenameInputDialog and draw3DAxisLabels, with those functions
+    - deferred: the six colours retail's init sets for CInputString::draw, showFilenameInputDialog and draw3DAxisLabels, with those functions
   - [ ] `plotPixelWithClipping` 0x0049d190 (26)
   - [x] `initEditorFontMetrics` 0x0049d1f0 (21)
   - [ ] `extractTabDelimitedField` 0x0049d250 (24)
@@ -3506,25 +3552,29 @@ functions don't count as done. Sizes are in instructions.
 
 ## Step 23: Not reached from startup: `core/` (part 1 of 9)
 
-### `core/actor.cpp` (19 functions, 1173 instructions, 6 done, 4 partial)
+### `core/actor.cpp` (19 functions, 1173 instructions, 6 done, 8 partial)
 - free functions
   - [x] `registerActorClass` 0x0040c2e0 (73)
   - [x] `staticInit` 0x00408320 (9)
   - [ ] `draw3DPointMarker` 0x00409930 (173)
   - [ ] `copyToActorDebugBuffer` 0x0040ac30 (27)
-  - [ ] `archiveQuaternion` 0x0040b520 (54)
+  - [~] `archiveQuaternion` 0x0040b520 (54)
+    - deferred: writing the value to a save file, with CDemonActor::save
   - [x] `archiveLocalizedString` 0x0040b6e0 (54)
   - [~] `archiveKeyframedModelInstance` 0x0040b8f0 (44)
     - deferred: writing the model's name to a save file, with CDemonActor::save
-  - [ ] `archiveDeformableModelInstance` 0x0040b970 (44)
+  - [~] `archiveDeformableModelInstance` 0x0040b970 (44)
+    - deferred: writing the model's name to a save file, with CDemonActor::save
   - [~] `archiveMotionState` 0x0040b9f0 (81)
     - deferred: writing the motion to a save file, with CMotionController::save
   - [~] `archivePartStatus` 0x0040bae0 (202)
     - deferred: writing the parts to a save file, with CDemonActor::save
-  - [ ] `archiveBox` 0x0040bd70 (81)
+  - [~] `archiveBox` 0x0040bd70 (81)
+    - deferred: writing the box to a save file, with CBox::saveToFile
   - [~] `archiveClothList` 0x0040be60 (136)
     - deferred: writing the list to a save file, with CDemonActor::save
-  - [ ] `archiveRules` 0x0040c000 (147)
+  - [~] `archiveRules` 0x0040c000 (147)
+    - deferred: writing the rules to a save file, with CDemonActor::save
   - [ ] `copyFloat1` 0x004104d0 (6)
   - [ ] `copyFloat2` 0x004104e0 (6)
   - [ ] `copyFloat3` 0x004104f0 (6)
@@ -3533,7 +3583,7 @@ functions don't count as done. Sizes are in instructions.
   - [x] `copy` 0x00410440 (26, compiler-generated)
   - [x] `dtor` 0x00410490 (2, compiler-generated)
 
-### `core/ammo.cpp` (12 functions, 174 instructions, 5 done, 0 partial)
+### `core/ammo.cpp` (12 functions, 174 instructions, 6 done, 0 partial)
 - free functions
   - [x] `factoryFuncAmmo` 0x00410d80 (12)
   - [x] `staticInit` 0x00410d50 (9)
@@ -3546,7 +3596,7 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `getCollisionType` 0x00410fa0 (2)
   - [ ] `canPickup` 0x004111c0 (9)
   - [x] `dtor` 0x004114e0 (31)
-  - [ ] `setup` 0x00410e50 (8)
+  - [x] `setup` 0x00410e50 (8)
   - [ ] `setAmmoCount` 0x004111b0 (4)
 
 ### `core/ammobox.cpp` (14 functions, 380 instructions, 1 done, 0 partial)
@@ -3582,7 +3632,7 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `factoryFuncAnvil` 0x00411ca0 (12)
   - [x] `staticInit` 0x00411c70 (9)
 
-### `core/armour.cpp` (12 functions, 358 instructions, 1 done, 0 partial)
+### `core/armour.cpp` (12 functions, 358 instructions, 2 done, 0 partial)
 - class `CArmour`
   - [ ] `ctor` 0x004121a0 (41)
   - [ ] `getActorType` 0x00412190 (2)
@@ -3597,9 +3647,9 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `factoryFuncArmour` 0x00412160 (12)
   - [x] `staticInit` 0x00412130 (9)
 - class `CEnemy`
-  - [ ] `dtor` 0x004125c0 (62)
+  - [x] `dtor` 0x004125c0 (62)
 
-### `core/backgnd.cpp` (13 functions, 248 instructions, 8 done, 0 partial)
+### `core/backgnd.cpp` (13 functions, 248 instructions, 9 done, 0 partial)
 - class `CBackgroundActor`
   - [x] `ctor` 0x004127b0 (21)
   - [x] `getActorType` 0x004127a0 (2)
@@ -3611,7 +3661,7 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `getCollisionType` 0x004129f0 (20)
   - [x] `getGroundType` 0x00412a30 (3)
   - [x] `dtor` 0x00412ad0 (31)
-  - [ ] `setup` 0x00412810 (17)
+  - [x] `setup` 0x00412810 (17)
 - free functions
   - [x] `factoryFuncBackgroundActor` 0x00412770 (12)
   - [x] `staticInit` 0x00412740 (9)
@@ -3619,7 +3669,6 @@ functions don't count as done. Sizes are in instructions.
 ### `core/baron.cpp` (30 functions, 1554 instructions, 8 done, 2 partial)
 - class `CBaron`
   - [~] `ctor` 0x00412bc0 (63)
-    - deferred: loading the model baron.dfm, with CDeformableModelInstance::init
     - deferred: naming the shell's model baronshell.kfm, and the defaults the constructor gives the head, target, attack, transparency and shell fields, with the steps that read them
   - [x] `getActorType` 0x00412bb0 (2)
   - [ ] `detachFromOwner` 0x004135a0 (19)
@@ -3655,17 +3704,17 @@ functions don't count as done. Sizes are in instructions.
   - [x] `dtor` 0x004140b0 (31)
   - [ ] `setup` 0x00413da0 (8)
 
-### `core/barrier.cpp` (11 functions, 219 instructions, 6 done, 0 partial)
+### `core/barrier.cpp` (11 functions, 219 instructions, 9 done, 0 partial)
 - class `CBarrier`
   - [x] `ctor` 0x004141c0 (13)
   - [x] `getActorType` 0x004141b0 (2)
   - [ ] `renderTransparent` 0x00414240 (59)
   - [ ] `getBoundingBox` 0x004142e0 (22)
   - [x] `archive` 0x00414340 (27)
-  - [ ] `getCollisionType` 0x004143a0 (23)
-  - [ ] `updateCollisionData` 0x004143e0 (10)
+  - [x] `getCollisionType` 0x004143a0 (23)
+  - [x] `updateCollisionData` 0x004143e0 (10)
   - [x] `dtor` 0x00414670 (31)
-  - [ ] `setup` 0x00414210 (11)
+  - [x] `setup` 0x00414210 (11)
 - free functions
   - [x] `factoryFuncBarrier` 0x00414180 (12)
   - [x] `staticInit` 0x00414150 (9)
@@ -3827,15 +3876,16 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `dtor` 0x0041da40 (67)
   - [ ] `setup` 0x0041bd90 (135)
 
-### `core/box.cpp` (12 functions, 1030 instructions, 0 done, 0 partial)
+### `core/box.cpp` (12 functions, 1030 instructions, 2 done, 1 partial)
 - class `CBox`
-  - [ ] `loadFromFile` 0x0041fe90 (122)
+  - [~] `loadFromFile` 0x0041fe90 (122)
+    - deferred: the velocity along the box's axes turned into the world's, with CBox::processPhysics
   - [ ] `saveToFile` 0x00420020 (112)
-  - [ ] `dtor` 0x0041dd00 (8)
+  - [x] `dtor` 0x0041dd00 (8)
   - [ ] `setupVelocities` 0x00420180 (53)
   - [ ] `setupN` 0x0041df50 (133)
 - class `CBoundingBox3D`
-  - [ ] `reset` 0x00420fb0 (11)
+  - [x] `reset` 0x00420fb0 (11)
   - [ ] `getBoundingBoxScreenSize` 0x00420840 (82)
   - [ ] `normalize` 0x00420d70 (37)
   - [ ] `computeFromPoints` 0x00420dc0 (90)
@@ -3843,32 +3893,34 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `isInverted` 0x00420fe0 (20)
   - [ ] `render` 0x004210b0 (270)
 
-### `core/boxactor.cpp` (33 functions, 1770 instructions, 1 done, 0 partial)
+### `core/boxactor.cpp` (33 functions, 1770 instructions, 13 done, 2 partial)
 - class `CBoxActor`
-  - [ ] `ctor` 0x00421700 (49)
-  - [ ] `getActorType` 0x004216f0 (2)
-  - [ ] `setupPhysicsBox` 0x004218d0 (82)
+  - [~] `ctor` 0x00421700 (49)
+    - deferred: the looping sound's handle, with CBoxActor::process
+  - [x] `getActorType` 0x004216f0 (2)
+  - [x] `setupPhysicsBox` 0x004218d0 (82)
   - [ ] `process` 0x004219e0 (289)
   - [ ] `renderOpaque` 0x00421e00 (79)
   - [ ] `renderTransparent` 0x00421ef0 (74)
-  - [ ] `getBoundingBox` 0x00421fe0 (39)
-  - [ ] `archive` 0x00422060 (171)
-  - [ ] `getBlockVirtualDirectorFlag` 0x00422330 (3)
+  - [x] `getBoundingBox` 0x00421fe0 (39)
+  - [x] `archive` 0x00422060 (171)
+  - [x] `getBlockVirtualDirectorFlag` 0x00422330 (3)
   - [ ] `getCollisionType` 0x00422340 (24)
-  - [ ] `canPickup` 0x004224b0 (14)
-  - [ ] `pickup` 0x004224e0 (4)
+  - [x] `canPickup` 0x004224b0 (14)
+  - [x] `pickup` 0x004224e0 (4)
   - [ ] `onDropped` 0x004224f0 (30)
-  - [ ] `getCarrier` 0x00422550 (3)
-  - [ ] `getGroundType` 0x00422560 (3)
+  - [x] `getCarrier` 0x00422550 (3)
+  - [x] `getGroundType` 0x00422560 (3)
   - [ ] `onPickup` 0x00422570 (7)
   - [ ] `setPositionAndOrientation` 0x00422640 (50)
-  - [ ] `getAllowedMeleeAttackTypes` 0x004226d0 (3)
-  - [ ] `dtor` 0x00423670 (37)
-  - [ ] `setup` 0x00421830 (48)
+  - [x] `getAllowedMeleeAttackTypes` 0x004226d0 (3)
+  - [x] `dtor` 0x00423670 (37)
+  - [~] `setup` 0x00421830 (48)
+    - deferred: no looping sound playing yet, with CBoxActor::process
   - [ ] `constrainToExtents` 0x00422590 (59)
   - [ ] `resolveRayPush` 0x00422390 (105)
 - free functions
-  - [ ] `factoryFuncBoxActor` 0x004216c0 (12)
+  - [x] `factoryFuncBoxActor` 0x004216c0 (12)
   - [ ] `factoryFuncLightActor` 0x00422950 (12)
   - [x] `staticInit` 0x00421650 (25)
 - class `CLightActor`
@@ -3941,7 +3993,7 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `getBugState` 0x00427b60 (3)
   - [ ] `swapIntegers` 0x00427b80 (8)
 
-### `core/charactr.cpp` (91 functions, 8559 instructions, 5 done, 1 partial)
+### `core/charactr.cpp` (91 functions, 8559 instructions, 7 done, 2 partial)
 - class `CCharacter`
   - [~] `ctor` 0x00427e20 (125)
     - deferred: the collision points, fires and flames, and the defaults the constructor gives the movement, walking, looking, carrying bones, smoking fields and the layer action fields other than the current action and its time, with the steps that read them
@@ -3958,7 +4010,7 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `processWalking` 0x0042ca70 (228)
   - [ ] `updateCarriedObjects` 0x0042d090 (335)
   - [ ] `applyGesture` 0x0042d3d0 (66)
-  - [ ] `computeBoundingBox` 0x0042d530 (41)
+  - [x] `computeBoundingBox` 0x0042d530 (41)
   - [ ] `applyLookAt` 0x0042dcd0 (111)
   - [ ] `applyGestureLookAt` 0x0042dfc0 (44)
   - [x] `archive` 0x004283a0 (154)
@@ -3980,7 +4032,7 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `getPartDominantBone` 0x0042a3f0 (12)
   - [ ] `renderFlames` 0x0042b110 (41)
   - [ ] `renderTransparent` 0x0042b0e0 (15)
-  - [ ] `getBoundingBox` 0x0042b8a0 (24)
+  - [x] `getBoundingBox` 0x0042b8a0 (24)
   - [ ] `isGrabbable` 0x0042bf30 (2)
   - [ ] `releaseFromGrab` 0x0042bf40 (13)
   - [x] `getGrabber` 0x0042bf80 (3)
@@ -4006,7 +4058,15 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `releaseVictim` 0x0042bf70 (1)
   - [ ] `buildLayerActionTransitionCosts` 0x0042e670 (134)
   - [x] `dtor` 0x0042f9f0 (62)
-  - [ ] `setup` 0x00428140 (178)
+  - [~] `setup` 0x00428140 (178)
+    - deferred: no damage decals yet, with processDamageDecals
+    - deferred: a closest distance threshold of 9999, with processCharacter and moveAndCollide
+    - deferred: the stake model the characters share, stake_b.kfm, set and loaded, with renderAttachedModels
+    - deferred: the model's head bone looked at, "bip01 head", with applyLookAt
+    - deferred: an ethereal character's flames, one on every bone, the first twice its size, with getPropertyList's Etheral, the only way a character becomes one
+    - deferred: each layer action's motion and length, and the cheapest time between any two of their bones, with advanceLayerAction
+    - deferred: no sound playing, with processCharacter
+    - deferred: the set's active fog drifting as the wind the cloth settles in, with CDemonSet::initScene and setCameraView, which set it
   - [ ] `moveAndCollide` 0x00428f40 (585)
   - [ ] `setOrientation` 0x0042ded0 (71)
   - [ ] `preProcess` 0x00429820 (22)
@@ -4039,7 +4099,7 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `getDeformableModelPartCount` 0x0042f9c0 (3)
   - [ ] `getActorCreateEvent` 0x0042f9d0 (3)
 
-### `core/chain.cpp` (16 functions, 1639 instructions, 1 done, 0 partial)
+### `core/chain.cpp` (16 functions, 1639 instructions, 2 done, 0 partial)
 - class `CChain`
   - [ ] `ctor` 0x0042fb80 (74)
   - [ ] `getActorType` 0x0042fb70 (2)
@@ -4057,38 +4117,45 @@ functions don't count as done. Sizes are in instructions.
   - [x] `staticInit` 0x0042fb10 (9)
   - [ ] `passthroughInt1` 0x00431330 (2)
   - [ ] `passthroughInt2` 0x00431340 (2)
-  - [ ] `fastSqrt` 0x00431350 (5)
+  - [x] `fastSqrt` 0x00431350 (5)
 
-### `core/cloth.cpp` (35 functions, 4019 instructions, 1 done, 2 partial)
+### `core/cloth.cpp` (35 functions, 4019 instructions, 13 done, 4 partial)
 - class `CClothList`
-  - [~] `ctor` 0x0043bf40 (18)
-    - deferred: clearing the loaded cloth, with CCloth
-  - [ ] `process` 0x0043c2d0 (32)
+  - [x] `ctor` 0x0043bf40 (18)
+  - [x] `process` 0x0043c2d0 (32)
   - [ ] `reset` 0x0043c070 (46)
-  - [~] `dtor` 0x0043bf80 (8)
-    - deferred: freeing the loaded cloth, with reset
+  - [x] `dtor` 0x0043bf80 (8)
   - [ ] `render` 0x0043c320 (47)
-  - [ ] `load` 0x0043bfa0 (62)
-  - [ ] `setup` 0x0043c290 (30)
+  - [x] `load` 0x0043bfa0 (62)
+  - [x] `setup` 0x0043c290 (30)
   - [ ] `add` 0x0043c0f0 (40)
   - [ ] `remove` 0x0043c170 (91)
   - [ ] `applyRotation` 0x0043c3a0 (26)
   - [ ] `setWindVelocity` 0x0043c3e0 (38)
 - class `CCloth`
-  - [ ] `computeBoneTransform` 0x0043a2b0 (172)
-  - [ ] `applyConstraints` 0x0043a420 (448)
-  - [ ] `step` 0x0043abb0 (750)
-  - [ ] `process` 0x0043ab80 (17)
+  - [x] `computeBoneTransform` 0x0043a2b0 (172)
+  - [~] `applyConstraints` 0x0043a420 (448)
+    - unverified: the push out of a bone, as its assembly reads, not run against the original with a model
+  - [~] `step` 0x0043abb0 (750)
+    - deferred: a point held by a bone's end, at the bone's end, with CCloth::grabCloth
+    - deferred: the model's vertices at the points, with CCloth::render
+    - unverified: the pins' skinned sums, not run against the original with a model
+  - [x] `process` 0x0043ab80 (17)
   - [ ] `free` 0x00438cb0 (19)
-  - [ ] `dtor` 0x00438c00 (22)
+  - [x] `dtor` 0x00438c00 (22)
   - [ ] `saveJoinedLight` 0x0043b9f0 (63)
   - [ ] `render` 0x0043bae0 (340)
-  - [ ] `ctor` 0x00438ba0 (21)
-  - [ ] `allocMemory` 0x00438c50 (26)
-  - [ ] `initializeConnections` 0x004394e0 (171)
-  - [ ] `load` 0x00438cf0 (335)
-  - [ ] `orientBoneToChild` 0x0043a110 (171)
-  - [ ] `setup` 0x00439710 (620)
+  - [x] `ctor` 0x00438ba0 (21)
+  - [x] `allocMemory` 0x00438c50 (26)
+  - [x] `initializeConnections` 0x004394e0 (171)
+  - [x] `load` 0x00438cf0 (335)
+  - [~] `orientBoneToChild` 0x0043a110 (171)
+    - unverified: the children's lengths and the radii's reciprocals, worked in double here, not run against the original with a model
+  - [~] `setup` 0x00439710 (620)
+    - deferred: the model's vertices at the points, with CCloth::render
+    - deferred: no point held by a bone's end, with CCloth::grabCloth
+    - deferred: each pin's nearest vertex at each of the model's levels, with CCloth::render
+    - unverified: the pins' skinned sums and distances, worked in double here, not run against the original with a model
   - [ ] `renderBone` 0x0043b7e0 (163)
   - [ ] `renderCollisionBones` 0x0043b790 (26)
   - [ ] `applyRotation` 0x0043e1a0 (84)
@@ -4104,7 +4171,6 @@ functions don't count as done. Sizes are in instructions.
 ### `core/colonel.cpp` (15 functions, 1081 instructions, 5 done, 1 partial)
 - class `CColonel`
   - [~] `ctor` 0x0043f7e0 (24)
-    - deferred: loading the model colonel.dfm, with CDeformableModelInstance::init
     - deferred: the defaults the constructor gives the Colonel's own fields, with the steps that read them
     - deferred: a player Colonel's pistol: draw plays "draw" and puts it in his right hand, the arm aims at the nearest enemy in a 30 degree cone with the laser sight, fire shoots and plays "shoot", both layered from Spine2 up so he keeps moving, the reserve topped up after each shot (the decomp's hero_colonel.h), with CColonel::process and renderOpaque
     - deferred: a player Colonel killed going to DIE and DEAD, where the original asks for DAMAGE2 and DAMAGE3 and he stands back up (the decomp's nocturne_colonel_death_state), with CColonel::processDamage
@@ -4125,7 +4191,7 @@ functions don't count as done. Sizes are in instructions.
   - [x] `staticInit` 0x0043f770 (9)
   - [ ] `getCurrentMotionState` 0x00440650 (6)
 
-### `core/conveyor.cpp` (13 functions, 378 instructions, 1 done, 0 partial)
+### `core/conveyor.cpp` (13 functions, 378 instructions, 2 done, 0 partial)
 - class `CConveyor`
   - [ ] `ctor` 0x00441ca0 (48)
   - [ ] `getActorType` 0x00441c90 (2)
@@ -4141,7 +4207,7 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `factoryFuncConveyor` 0x00441c60 (12)
   - [x] `staticInit` 0x00441c30 (9)
 - class `CPlatform`
-  - [ ] `dtor` 0x00442380 (37)
+  - [x] `dtor` 0x00442380 (37)
 
 ### `core/cow.cpp` (11 functions, 903 instructions, 1 done, 0 partial)
 - class `CZombieCow`
@@ -4218,12 +4284,12 @@ functions don't count as done. Sizes are in instructions.
 
 ## Step 25: Not reached from startup: `core/` (part 3 of 9)
 
-### `core/dcamera.cpp` (27 functions, 2549 instructions, 0 done, 1 partial)
+### `core/dcamera.cpp` (27 functions, 2549 instructions, 1 done, 1 partial)
 - class `CDemonCamera`
   - [ ] `isSphereVisible` 0x00452730 (144)
   - [ ] `getFogValueAtPosition` 0x00453700 (69)
   - [ ] `saveAlphaTransform` 0x00453950 (66)
-  - [ ] `dtor` 0x0044c090 (35)
+  - [x] `dtor` 0x0044c090 (35)
   - [ ] `worldToScreenCoord` 0x0044d310 (34)
   - [ ] `screenToWorldDirection` 0x0044d480 (137)
   - [ ] `screenToWorldWithAlpha` 0x0044d600 (152)
@@ -4251,7 +4317,7 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `transformAndStoreVertex` 0x00452110 (34)
   - [ ] `saveCameraFog` 0x00453f10 (57)
 
-### `core/dcube.cpp` (21 functions, 2237 instructions, 2 done, 1 partial)
+### `core/dcube.cpp` (21 functions, 2237 instructions, 3 done, 1 partial)
 - free functions
   - [ ] `intersectXZCylinder` 0x004556b0 (256)
   - [ ] `intersectXZCylinderWithHeight` 0x00455990 (63)
@@ -4269,7 +4335,7 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `clipTriangleToAABB` 0x00456400 (240)
 - class `CDemonCube`
   - [ ] `testCylinderCollision` 0x00457a90 (74)
-  - [ ] `allocVoxelMemory` 0x004567b0 (43)
+  - [x] `allocVoxelMemory` 0x004567b0 (43)
   - [x] `ctor` 0x00456750 (9)
   - [ ] `freeMemory` 0x004569b0 (67)
   - [x] `dtor` 0x00456790 (8)
@@ -4293,10 +4359,10 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `factoryFuncActorDestination` 0x0046f8c0 (12)
   - [x] `staticInit` 0x0046f890 (9)
 
-### `core/dfilter.cpp` (7 functions, 199 instructions, 0 done, 1 partial)
+### `core/dfilter.cpp` (7 functions, 199 instructions, 2 done, 1 partial)
 - class `CFilterCache`
-  - [ ] `ctor` 0x0046ffd0 (3)
-  - [ ] `dtor` 0x0046ffe0 (8)
+  - [x] `ctor` 0x0046ffd0 (3)
+  - [x] `dtor` 0x0046ffe0 (8)
 - class `CFilterFX`
   - [ ] `ctor` 0x004706c0 (5)
   - [ ] `free` 0x00470700 (15)
@@ -4323,21 +4389,20 @@ functions don't count as done. Sizes are in instructions.
 - free functions
   - [x] `angleFromSinCos` 0x00472090 (75)
 
-### `core/dlight.cpp` (5 functions, 816 instructions, 1 done, 0 partial)
+### `core/dlight.cpp` (5 functions, 816 instructions, 2 done, 0 partial)
 - class `CDemonLight`
-  - [ ] `dtor` 0x00472760 (35)
+  - [x] `dtor` 0x00472760 (35)
   - [ ] `renderRadialVolumetricScattering` 0x00475210 (427)
 - free functions
   - [x] `staticInit` 0x00472680 (5)
   - [ ] `drawGrayscalePixel` 0x00473360 (16)
   - [ ] `renderConeLightGeometry` 0x004760d0 (333)
 
-### `core/dmodel.cpp` (5 functions, 108 instructions, 2 done, 1 partial)
+### `core/dmodel.cpp` (5 functions, 108 instructions, 3 done, 0 partial)
 - class `CKeyFramedModel`
   - [ ] `intersectCylinder` 0x00478650 (76)
 - free functions
-  - [~] `staticInit` 0x00476c50 (9)
-    - deferred: the pool of 256 models, with this
+  - [x] `staticInit` 0x00476c50 (9)
   - [ ] `skipLines` 0x00476c80 (19)
 - class `CDemonTriangle`
   - [x] `ctor` 0x0047eef0 (2, compiler-generated)
@@ -4357,30 +4422,30 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `factoryFuncZombieDog` 0x0047f010 (12)
   - [x] `staticInit` 0x0047efe0 (9)
 
-### `core/door.cpp` (23 functions, 1740 instructions, 1 done, 0 partial)
+### `core/door.cpp` (23 functions, 1740 instructions, 14 done, 0 partial)
 - class `CDoor`
   - [ ] `getOpenStandPos` 0x00480e20 (177)
   - [ ] `onOpened` 0x0047fcf0 (8)
   - [ ] `onLocked` 0x00481210 (19)
   - [ ] `getMoveType` 0x00481070 (150)
-  - [ ] `ctor` 0x0047fad0 (99)
-  - [ ] `getActorType` 0x0047fac0 (2)
-  - [ ] `reposition` 0x0047fd20 (241)
+  - [x] `ctor` 0x0047fad0 (99)
+  - [x] `getActorType` 0x0047fac0 (2)
+  - [x] `reposition` 0x0047fd20 (241)
   - [ ] `process` 0x004800c0 (472)
   - [ ] `renderOpaque` 0x004807d0 (166)
   - [ ] `renderBackground` 0x004809e0 (37)
-  - [ ] `getBoundingBox` 0x00480a50 (28)
-  - [ ] `archive` 0x00480aa0 (193)
+  - [x] `getBoundingBox` 0x00480a50 (28)
+  - [x] `archive` 0x00480aa0 (193)
   - [ ] `getCollisionType` 0x00480d90 (16)
-  - [ ] `getGroundType` 0x00480dd0 (3)
-  - [ ] `getBlockVirtualDirectorFlag` 0x00480df0 (3)
-  - [ ] `allowBulletHoles` 0x00480e00 (3)
-  - [ ] `updateCollisionData` 0x00481020 (19)
-  - [ ] `dtor` 0x00481670 (31)
-  - [ ] `setup` 0x0047fc70 (40)
-  - [ ] `setSwingRange` 0x00480de0 (4)
+  - [x] `getGroundType` 0x00480dd0 (3)
+  - [x] `getBlockVirtualDirectorFlag` 0x00480df0 (3)
+  - [x] `allowBulletHoles` 0x00480e00 (3)
+  - [x] `updateCollisionData` 0x00481020 (19)
+  - [x] `dtor` 0x00481670 (31)
+  - [x] `setup` 0x0047fc70 (40)
+  - [x] `setSwingRange` 0x00480de0 (4)
 - free functions
-  - [ ] `factoryFuncDoor` 0x0047fa90 (12)
+  - [x] `factoryFuncDoor` 0x0047fa90 (12)
   - [x] `staticInit` 0x0047fa60 (9)
   - [ ] `clearRuleList` 0x00481650 (8)
 
@@ -4454,23 +4519,24 @@ functions don't count as done. Sizes are in instructions.
   - [~] `staticInit` 0x00490040 (8)
     - deferred: the sky texture named NITESKY.RAW and the dome centred at the origin, with this
 
-### `core/dstrender.cpp` (6 functions, 916 instructions, 0 done, 0 partial)
+### `core/dstrender.cpp` (6 functions, 916 instructions, 1 done, 0 partial)
 - free functions
   - [ ] `saveMMXRegisters` 0x004906b0 (9)
-  - [ ] `renderDepthTestStatistics16xUnrolled` 0x00490d35 (149)
+  - [x] `renderDepthTestStatistics16xUnrolled` 0x00490d35 (149)
   - [ ] `renderPerspectiveCorrectTextured16xCached` 0x00490ec0 (539)
   - [ ] `spatialFilter9TapMMX` 0x004923ff (51)
   - [ ] `blendLightmapShared4U64toU64pBB12Px4MMX` 0x004924a9 (84)
   - [ ] `blendLightmapShared4U64toU64pAmbientPx4MMX` 0x004925c5 (84)
 
-### `core/dtrace.cpp` (18 functions, 2180 instructions, 2 done, 1 partial)
+### `core/dtrace.cpp` (18 functions, 2180 instructions, 4 done, 2 partial)
 - class `CDemonRaytrace`
   - [ ] `getVoxelHeightAtVoxelCoords` 0x00499a50 (95)
   - [ ] `voxelRaycast3D` 0x00499330 (379)
   - [ ] `testCylinderCollision` 0x00496c60 (163)
-  - [ ] `worldPositionToGridCoords` 0x004997d0 (59)
-  - [ ] `setVoxelShadowBit` 0x0049a160 (120)
-  - [ ] `markShadowVoxels` 0x00499c20 (178)
+  - [x] `worldPositionToGridCoords` 0x004997d0 (59)
+  - [x] `setVoxelShadowBit` 0x0049a160 (120)
+  - [~] `markShadowVoxels` 0x00499c20 (178)
+    - unverified: each sample's sums, the index's stride, then the corner, then the half stride, as read from the asm, not run against the original's code
   - [ ] `restoreShadowBitFromBuffer` 0x0049a280 (125)
   - [ ] `transferShadowVoxels` 0x00499f10 (178)
   - [ ] `rayIntersection` 0x00495aa0 (87)
@@ -4560,10 +4626,13 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `factoryFuncEmitter` 0x004a7c60 (12)
   - [x] `staticInit` 0x004a7c30 (9)
 
-### `core/enemy.cpp` (16 functions, 931 instructions, 1 done, 0 partial)
+### `core/enemy.cpp` (16 functions, 931 instructions, 3 done, 1 partial)
 - class `CEnemy`
-  - [ ] `ctor` 0x004a9500 (68)
-  - [ ] `archive` 0x004a9660 (93)
+  - [~] `ctor` 0x004a9500 (68)
+    - deferred: the special form, the victim search's timer and radius, being in combat, the attack cooldown, finding paths to new targets and the enemy's footsteps, with CEnemy::updateVictim and CCharacter::process
+    - deferred: dropping a victim the enemy can neither see nor path to, where the original kept it, so an enemy doesn't hold a hero two floors away (the decomp's ENEMY_RETAIN), with CEnemy::updateVictim
+    - deferred: counting the enemies of its class attacking the hero netplay gives it to chase, rather than the local one (the decomp's nocturne_net_sim_target_for), with CEnemy::countSameClassAttackingHero
+  - [x] `archive` 0x004a9660 (93)
   - [ ] `processDamage` 0x004a9f10 (50)
   - [ ] `getTargetPoints` 0x004a97c0 (63)
   - [ ] `getTargetPoint` 0x004a99d0 (43)
@@ -4572,7 +4641,7 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `renderBackground` 0x004a9fa0 (12)
   - [ ] `releaseVictim` 0x004aa030 (42)
   - [ ] `onVictimLost` 0x004aa0c0 (10)
-  - [ ] `setup` 0x004a9650 (5)
+  - [x] `setup` 0x004a9650 (5)
   - [ ] `testAttackRadius` 0x004a9880 (63)
   - [ ] `updatePatrol` 0x004a9fd0 (27)
   - [ ] `testAttackLine` 0x004a9930 (61)
@@ -4580,19 +4649,18 @@ functions don't count as done. Sizes are in instructions.
 - free functions
   - [x] `staticInit` 0x004a94d0 (9)
 
-### `core/event.cpp` (14 functions, 435 instructions, 2 done, 2 partial)
+### `core/event.cpp` (14 functions, 435 instructions, 4 done, 1 partial)
 - class `CRuleList`
   - [ ] `findFirst` 0x004b1890 (34)
   - [ ] `evaluateAndRun` 0x004b18e0 (24)
-  - [ ] `clear` 0x004b1670 (3)
+  - [x] `clear` 0x004b1670 (3)
   - [ ] `insert` 0x004b1680 (109)
   - [ ] `remove` 0x004b17c0 (67)
 - class `CEventList`
   - [~] `ctor` 0x004aaa50 (11)
     - deferred: emptying the events, counters, timers, sounds and game flags, with the functions that read them
 - free functions
-  - [~] `staticInit` 0x004aa260 (4)
-    - deferred: the game's event list, with CDemonMission::loadScript
+  - [x] `staticInit` 0x004aa260 (4)
   - [ ] `setEventError` 0x004aa270 (20)
   - [ ] `skipWhitespace` 0x004aa2d0 (8)
   - [ ] `skipWhitespaceIndexed` 0x004aa2f0 (10)
@@ -4638,7 +4706,7 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `ctor` 0x00545650 (4)
   - [ ] `dtor` 0x00545670 (3)
 
-### `core/fire.cpp` (72 functions, 3038 instructions, 18 done, 1 partial)
+### `core/fire.cpp` (72 functions, 3038 instructions, 19 done, 1 partial)
 - class `CLightningBolt`
   - [ ] `activateDirectional` 0x004c5680 (34)
   - [x] `ctor` 0x004c9540 (2, compiler-generated)
@@ -4658,7 +4726,7 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `createLaserSegment` 0x004c7eb0 (39)
   - [ ] `traceLaser` 0x004c8230 (746)
   - [ ] `createPopcorn` 0x004c9240 (32)
-  - [ ] `ctor` 0x004c6c60 (8)
+  - [x] `ctor` 0x004c6c60 (8)
   - [ ] `createLaserPath` 0x004c7f80 (201)
 - class `CTrail`
   - [ ] `activate` 0x004c5df0 (23)
@@ -4680,7 +4748,7 @@ functions don't count as done. Sizes are in instructions.
 - free functions
   - [ ] `allocateBulletHole` 0x004c6c10 (20)
   - [~] `staticInit` 0x004bef20 (149)
-    - deferred: the game's fire effect, its five models and its particle pools, with this constructor
+    - deferred: the particle pools, with the particles' process and render steps
   - [ ] `safeAcos` 0x004bf1a0 (30)
   - [ ] `transformWorldToScreen` 0x004c9400 (22)
 - class `CMuzzleFlash`
@@ -4736,12 +4804,16 @@ functions don't count as done. Sizes are in instructions.
 - class `CKeyFramedModelInstance`
   - [x] `dtor` 0x004c97c0 (2, compiler-generated)
 
-### `core/flame.cpp` (4 functions, 61 instructions, 1 done, 0 partial)
+### `core/flame.cpp` (4 functions, 61 instructions, 3 done, 1 partial)
 - class `CFlame`
-  - [ ] `hide` 0x004caa70 (3)
-  - [ ] `ctor` 0x004c9aa0 (37)
+  - [x] `hide` 0x004caa70 (3)
+  - [~] `ctor` 0x004c9aa0 (37)
+    - deferred: the sound handle, the visibility check, the enemy it burns next and the corona flag, with CFlame::process and CFlame::renderTransparent
+    - deferred: setting alight the hero netplay gives it rather than the local one (the decomp's nocturne_net_sim_target_for), with CFlame::process
+    - deferred: drawing the torch sound's pitch and start time from the cosmetic stream (the decomp's nocturne_rng_fx_range), with CFlame::process
+    - deferred: drawing the globe's flicker from the cosmetic stream, with CFlame::updateGlobe
 - free functions
-  - [ ] `factoryFuncFlame` 0x004c9a60 (12)
+  - [x] `factoryFuncFlame` 0x004c9a60 (12)
   - [x] `staticInit` 0x004c9a30 (9)
 
 ### `core/flamecan.cpp` (13 functions, 455 instructions, 1 done, 0 partial)
@@ -4785,10 +4857,9 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `factoryFuncFlashlight` 0x004cbb80 (12)
   - [x] `staticInit` 0x004cbb50 (9)
 
-### `core/flattn.cpp` (1 functions, 12 instructions, 0 done, 1 partial)
+### `core/flattn.cpp` (1 functions, 12 instructions, 1 done, 0 partial)
 - free functions
-  - [~] `staticInit` 0x004cbcb0 (12)
-    - deferred: the fast square root's half of 1.0's bits, with its first reader
+  - [x] `staticInit` 0x004cbcb0 (12)
 
 ### `core/flies.cpp` (13 functions, 1038 instructions, 1 done, 0 partial)
 - free functions
@@ -4830,10 +4901,9 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `getFrameCount` 0x004d2880 (3)
   - [ ] `getActorName` 0x004d2890 (3)
 
-### `core/gabriela.cpp` (34 functions, 5722 instructions, 5 done, 1 partial)
+### `core/gabriela.cpp` (34 functions, 5722 instructions, 5 done, 2 partial)
 - class `CGabriella`
   - [~] `ctor` 0x004d2b20 (50)
-    - deferred: loading the model gabriela.dfm, with CDeformableModelInstance::init
     - deferred: naming the gun's model gabgun.kfm, with the weapon classes
     - deferred: the coat's cloth, and the defaults the constructor gives Gabriella's own fields, with the steps that read them
     - deferred: a player Gabriella picking up from the action button at the head of its chain, within 5 units up or down rather than 2 (the decomp's hero_gabriella.h PICKUP IS ON THE WRONG BUTTON), with CGabriella::process and findAndPickupNearbyObject
@@ -4875,7 +4945,8 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `isWeaponDrawn` 0x004d7590 (5)
   - [ ] `drawWeapon` 0x004d75b0 (10)
   - [x] `dtor` 0x004d7660 (37)
-  - [ ] `setup` 0x004d2c40 (170)
+  - [~] `setup` 0x004d2c40 (170)
+    - deferred: her left hand as the bone her first hand carries at, with getCarryObjToBodyXForm
 - free functions
   - [x] `factoryFuncGabriella` 0x004d2ae0 (12)
   - [x] `staticInit` 0x004d2910 (49)
@@ -4883,7 +4954,7 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `flashlightBlendWeightCallback` 0x004d2a30 (28)
   - [ ] `aimRotationBlendWeightCallback` 0x004d2a80 (30)
 
-### `core/game.cpp` (19 functions, 959 instructions, 1 done, 1 partial)
+### `core/game.cpp` (19 functions, 959 instructions, 2 done, 0 partial)
 - class `CGame`
   - [ ] `setStatusDisplay` 0x004e0bf0 (79)
   - [ ] `resetWeaponSwitchTimers` 0x004e0bb0 (8)
@@ -4892,8 +4963,7 @@ functions don't count as done. Sizes are in instructions.
   - [x] `dtor` 0x004d7d70 (2, compiler-generated)
   - [ ] `setFudgeTarget` 0x004d8730 (6)
 - free functions
-  - [~] `staticInit` 0x004d76d0 (21)
-    - deferred: the scene's 256 by 256 CDemonLight, with CDemonLight's constructor
+  - [x] `staticInit` 0x004d76d0 (21)
   - [ ] `setupMovieRecording` 0x004d7730 (72)
   - [ ] `captureDebugMovieFrame` 0x004d7810 (224)
   - [ ] `drawHealthBar` 0x004d7fa0 (62)
@@ -4940,23 +5010,28 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `dtor` 0x004e5f40 (31)
   - [ ] `setup` 0x004e5d50 (10)
 
-### `core/ghoul.cpp` (15 functions, 3297 instructions, 1 done, 0 partial)
+### `core/ghoul.cpp` (15 functions, 3297 instructions, 5 done, 2 partial)
 - class `CGhoul`
-  - [ ] `ctor` 0x004e6030 (56)
-  - [ ] `getActorType` 0x004e6020 (2)
+  - [~] `ctor` 0x004e6030 (56)
+    - deferred: the collision cylinder, the detection range, the eating state, flinching, the stun, heal and stuck timers, the dark waypoint and going berserk, with CGhoul::process
+    - deferred: chasing the hero netplay gives it rather than the local one (the decomp's nocturne_net_sim_target_for), with CGhoul::process
+    - deferred: drawing the part a blow takes off from the simulation's random numbers rather than rand, so netplay agrees on it (the decomp's nocturne_rng_sim), with CGhoul::processDismemberment
+    - deferred: tracing each blow for netplay debugging (the decomp's nocturne_sim_trace_damage), with CGhoul::processDamage
+  - [x] `getActorType` 0x004e6020 (2)
   - [ ] `findDarkWayPoint` 0x004e63d0 (129)
   - [ ] `process` 0x004e6600 (1937)
   - [ ] `renderBackground` 0x004e8190 (14)
-  - [ ] `archive` 0x004e81c0 (69)
+  - [x] `archive` 0x004e81c0 (69)
   - [ ] `canBeAttracted` 0x004e82d0 (142)
   - [ ] `getTargetPoint` 0x004e84a0 (66)
   - [ ] `processDismemberment` 0x004e8520 (211)
   - [ ] `processDamage` 0x004e87e0 (265)
   - [ ] `getTargetPoints` 0x004e8bc0 (149)
-  - [ ] `dtor` 0x004e8f10 (62)
-  - [ ] `setup` 0x004e6160 (163)
+  - [x] `dtor` 0x004e8f10 (62)
+  - [~] `setup` 0x004e6160 (163)
+    - deferred: no stun, healing or being stuck, no dark waypoint, not berserk and no sounds playing, with CGhoul::process
 - free functions
-  - [ ] `factoryFuncGhoul` 0x004e5ff0 (12)
+  - [x] `factoryFuncGhoul` 0x004e5ff0 (12)
   - [x] `staticInit` 0x004e5f90 (20)
 
 ### `core/glass.cpp` (15 functions, 1227 instructions, 1 done, 0 partial)
@@ -4978,7 +5053,7 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `factoryFuncGlass` 0x004e9000 (12)
   - [x] `staticInit` 0x004e8fd0 (9)
 
-### `core/gore.cpp` (14 functions, 163 instructions, 5 done, 1 partial)
+### `core/gore.cpp` (14 functions, 163 instructions, 6 done, 1 partial)
 - class `CBloodPool`
   - [ ] `init` 0x004ed0d0 (44)
   - [x] `ctor` 0x004ee3b0 (2, compiler-generated)
@@ -4986,11 +5061,11 @@ functions don't count as done. Sizes are in instructions.
 - class `CGore`
   - [ ] `allocateBloodPool` 0x004edde0 (20)
   - [ ] `createBloodPool` 0x004ede30 (19)
-  - [ ] `ctor` 0x004ed730 (8)
+  - [x] `ctor` 0x004ed730 (8)
   - [x] `dtor` 0x004ed750 (2, compiler-generated)
 - free functions
   - [~] `staticInit` 0x004eb8c0 (33)
-    - deferred: the game's gore and its blood, splat, pool and footstep arrays, with this constructor
+    - deferred: the blood particle, splat, pool and footstep arrays, and emptying them, with reset and the steps that spawn them
 - class `CFootstep`
   - [ ] `ctor` 0x004ee370 (9)
   - [ ] `dtor` 0x004ee390 (8)
@@ -5042,10 +5117,9 @@ functions don't count as done. Sizes are in instructions.
   - [x] `factoryFuncGun` 0x004f02b0 (12)
   - [x] `staticInit` 0x004f0280 (9)
 
-### `core/haystack.cpp` (15 functions, 1231 instructions, 5 done, 1 partial)
+### `core/haystack.cpp` (15 functions, 1231 instructions, 5 done, 2 partial)
 - class `CHaystack`
   - [~] `ctor` 0x004f0c10 (24)
-    - deferred: loading the model haystack.dfm, with CDeformableModelInstance::init
     - deferred: the defaults the constructor gives Haystack's own fields, with the steps that read them
   - [x] `getActorType` 0x004f0c00 (2)
   - [ ] `updateAI` 0x004f13f0 (357)
@@ -5058,12 +5132,13 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `isWeaponDrawn` 0x004f1c90 (3)
   - [ ] `drawWeapon` 0x004f1ca0 (4)
   - [x] `dtor` 0x004f1d10 (31)
-  - [ ] `setup` 0x004f0c80 (117)
+  - [~] `setup` 0x004f0c80 (117)
+    - deferred: his guns not drawn, with CHaystack::drawWeapon and isWeaponDrawn
 - free functions
   - [x] `factoryFuncHaystack` 0x004f0bd0 (12)
   - [x] `staticInit` 0x004f0ba0 (9)
 
-### `core/health.cpp` (14 functions, 221 instructions, 7 done, 0 partial)
+### `core/health.cpp` (14 functions, 221 instructions, 8 done, 0 partial)
 - class `CHealthItem`
   - [x] `ctor` 0x004f1dd0 (21)
   - [x] `getActorType` 0x004f1dc0 (2)
@@ -5075,13 +5150,13 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `canPickup` 0x004f1fb0 (9)
   - [ ] `onPickup` 0x004f2020 (7)
   - [x] `dtor` 0x004f20d0 (31)
-  - [ ] `setup` 0x004f1e30 (8)
+  - [x] `setup` 0x004f1e30 (8)
   - [ ] `useItem` 0x004f1fd0 (15)
 - free functions
   - [x] `factoryFuncHealthItem` 0x004f1d90 (12)
   - [x] `staticInit` 0x004f1d60 (9)
 
-### `core/hero.cpp` (35 functions, 2025 instructions, 4 done, 1 partial)
+### `core/hero.cpp` (35 functions, 2025 instructions, 4 done, 2 partial)
 - free functions
   - [ ] `isAnyHeroWithinCylinder` 0x004f22a0 (63)
   - [ ] `closestHeroToPoint` 0x004f2170 (66)
@@ -5116,7 +5191,8 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `canLookAt` 0x004f37d0 (49)
   - [ ] `kill` 0x004f3af0 (11)
   - [ ] `reset` 0x004f3b20 (28)
-  - [ ] `setup` 0x004f2540 (16)
+  - [~] `setup` 0x004f2540 (16)
+    - deferred: no invincibility left, with CHero::kill and the heroes' process
   - [ ] `tryInteract` 0x004f2af0 (113)
   - [ ] `tryTalkToNearbyCharacter` 0x004f2c40 (105)
   - [ ] `tryOpenNearbyDoor` 0x004f2d70 (124)
@@ -5195,7 +5271,6 @@ functions don't count as done. Sizes are in instructions.
 ### `core/icepick.cpp` (19 functions, 1820 instructions, 5 done, 1 partial)
 - class `CIcePick`
   - [~] `ctor` 0x004f7df0 (27)
-    - deferred: loading the model icepick.dfm, with CDeformableModelInstance::init
     - deferred: the defaults the constructor gives Ice Pick's own fields, with the steps that read them
     - deferred: 300 hit points, and 300 the most, where the original left the most at CCharacter's 100, so health items and the health bar measure against Ice Pick's own (the decomp's HERO_ACTIONS in the constructor), with CCharacter's hit point setters
   - [x] `getActorType` 0x004f7de0 (2)
@@ -5237,14 +5312,14 @@ functions don't count as done. Sizes are in instructions.
   - [x] `staticInit` 0x004f9830 (9)
   - [ ] `setVector` 0x004fa900 (8)
 
-### `core/inv.cpp` (13 functions, 1155 instructions, 2 done, 2 partial)
+### `core/inv.cpp` (13 functions, 1155 instructions, 3 done, 2 partial)
 - class `CInventory`
   - [x] `ctor` 0x004fd020 (18)
   - [ ] `save` 0x004ff210 (133)
   - [~] `load` 0x004ff400 (221)
     - deferred: showing the held weapon's ammo, with CAmmo
   - [x] `dtor` 0x004fd0c0 (8)
-  - [ ] `setupItems` 0x004ff780 (42)
+  - [x] `setupItems` 0x004ff780 (42)
   - [ ] `calculateTotalBatteryCharge` 0x004ffda0 (47)
   - [ ] `resetInventoryDisplayTimer` 0x00500020 (8)
   - [ ] `select` 0x004ff800 (232)
@@ -5311,42 +5386,45 @@ functions don't count as done. Sizes are in instructions.
 - free functions
   - [x] `staticInit` 0x00503d80 (10)
 
-### `core/lever.cpp` (14 functions, 639 instructions, 1 done, 0 partial)
+### `core/lever.cpp` (14 functions, 639 instructions, 8 done, 0 partial)
 - class `CLever`
   - [ ] `isAccessibleFrom` 0x00505080 (56)
   - [ ] `activate` 0x00504c90 (34)
-  - [ ] `ctor` 0x005047d0 (35)
-  - [ ] `getActorType` 0x005047c0 (2)
+  - [x] `ctor` 0x005047d0 (35)
+  - [x] `getActorType` 0x005047c0 (2)
   - [ ] `process` 0x00504920 (136)
   - [ ] `renderOpaque` 0x00504cf0 (57)
   - [ ] `getBoundingBox` 0x00504d80 (28)
-  - [ ] `archive` 0x00504e80 (131)
-  - [ ] `getCollisionType` 0x00505060 (5)
-  - [ ] `dtor` 0x00505430 (31)
-  - [ ] `setup` 0x005048a0 (47)
+  - [x] `archive` 0x00504e80 (131)
+  - [x] `getCollisionType` 0x00505060 (5)
+  - [x] `dtor` 0x00505430 (31)
+  - [x] `setup` 0x005048a0 (47)
   - [ ] `getHandlePosition` 0x00504dd0 (56)
 - free functions
-  - [ ] `factoryFuncLever` 0x00504790 (12)
+  - [x] `factoryFuncLever` 0x00504790 (12)
   - [x] `staticInit` 0x00504760 (9)
 
-### `core/lightgun.cpp` (13 functions, 1262 instructions, 1 done, 0 partial)
+### `core/lightgun.cpp` (13 functions, 1262 instructions, 4 done, 1 partial)
 - class `CLightGun`
-  - [ ] `getActorType` 0x005058f0 (2)
+  - [x] `getActorType` 0x005058f0 (2)
   - [ ] `updateBeamLight` 0x00505ac0 (48)
   - [ ] `fire` 0x00505c70 (520)
   - [ ] `process` 0x00506450 (136)
   - [ ] `getDamage` 0x00506670 (19)
   - [ ] `renderAimBeam` 0x005066b0 (276)
-  - [ ] `dtor` 0x00506a50 (31)
-  - [ ] `ctor` 0x00505900 (31)
+  - [x] `dtor` 0x00506a50 (31)
+  - [~] `ctor` 0x00505900 (31)
+    - deferred: the defaults the constructor gives the firing fields, the charge and the hit flag, with CLightGun::fire and CLightGun::process
+    - deferred: lighting the beam with the carrying hero's own light rather than the one shared light (the decomp's nocturne_hero_light), with CLightGun::process, CLightGun::fire and CLightGun::updateBeamLight
+    - deferred: charging from the batteries of the hero netplay gives it rather than the local one (the decomp's nocturne_net_sim_target_for), with CLightGun::process
   - [ ] `isVampireType` 0x005059c0 (31)
   - [ ] `isLightVulnerable` 0x00505a20 (56)
   - [ ] `canSeeTarget` 0x00505b70 (91)
 - free functions
-  - [ ] `factoryFuncLightGun` 0x005058c0 (12)
+  - [x] `factoryFuncLightGun` 0x005058c0 (12)
   - [x] `staticInit` 0x00505890 (9)
 
-### `core/litecone.cpp` (11 functions, 243 instructions, 5 done, 1 partial)
+### `core/litecone.cpp` (11 functions, 243 instructions, 6 done, 1 partial)
 - class `CLightCone`
   - [~] `ctor` 0x00506b10 (44)
     - deferred: drawing the cone transparent, with the set's renderable lists
@@ -5357,7 +5435,7 @@ functions don't count as done. Sizes are in instructions.
   - [x] `archive` 0x00506d00 (37)
   - [ ] `getCollisionType` 0x00506d90 (2)
   - [x] `dtor` 0x00506e30 (31)
-  - [ ] `setup` 0x00506bb0 (5)
+  - [x] `setup` 0x00506bb0 (5)
 - free functions
   - [x] `factoryFuncLightCone` 0x00506ad0 (12)
   - [x] `staticInit` 0x00506aa0 (9)
@@ -5467,13 +5545,12 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `renderAudioSpectrumBarByBounds` 0x00511e00 (14)
   - [~] `showMainGameMenu` 0x00512f40 (394)
     - deferred: loading the flame and blur bitmaps, with their readers
-    - deferred: choosing a chapter from START, its debug modes picked by the shift and control keys, then starting the moon and music again, with CGame::showChapterSelect
-    - deferred: the options from OPTIONS, with showOptionsScreen
-    - deferred: loading a saved game from LOAD, then starting the moon and music again, with CGame::loadGame
+    - deferred: loading a saved game from PLAY's LOAD, then starting the moon and music again, with CGame::loadGame
+    - deferred: resuming the newest save from PLAY's CONTINUE, or showing "No files found" without one, then starting the moon and music again, with the save slots and CGame::loadGame
+    - deferred: hosting or joining from MULTIPLAYER, or with Ctrl+H or Ctrl+J, the music reset around the session, with hostNetworkGame and joinNetworkGame
     - deferred: the developer tools on Ctrl+D or Ctrl+L, with showDeveloperToolsMenu
     - deferred: dropping a press of F with a control key held, with the game's hotkeys
-    - deferred: the enhanced game's menu (PLAY's single-player menu with its continue, MULTIPLAYER and its hotkeys, its menu font, the window sized to the game's resolution and the items centred), with the enhanced front end
-    - deferred: an attract movie, one of NOC1 to NOC4.AVI that nothing in the original plays, at the end of a pass of the splash music with the main menu on screen, after a short silence, then the music restarted with reset and configure; a pass ending under a submenu or dialog is skipped (the decomp's attract.h nocturne_attract_tick), with the attract movies
+    - deferred: no QUIT, and Cancel quitting nothing, where the platform ends the app itself (the decomp's NOCTURNE_PLATFORM_NO_QUIT), with a platform that does
   - [ ] `addCustomKeyBinding` 0x00513460 (40)
   - [ ] `getSinglePressedKey` 0x00513860 (40)
 
@@ -5536,10 +5613,13 @@ functions don't count as done. Sizes are in instructions.
   - [x] `staticInit` 0x00522c50 (1, compiler-generated)
   - [ ] `skipLine` 0x00522c60 (11)
 
-### `core/mobster.cpp` (23 functions, 3180 instructions, 1 done, 0 partial)
+### `core/mobster.cpp` (23 functions, 3180 instructions, 5 done, 2 partial)
 - class `CMobster`
-  - [ ] `ctor` 0x00525200 (64)
-  - [ ] `getActorType` 0x005251f0 (2)
+  - [~] `ctor` 0x00525200 (64)
+    - deferred: the collision cylinder, the detection range, the idle, weapon, firing and taunt timers, the weapon it heads for and how often it has looked, and not finding paths to new targets, with CMobster::process
+    - deferred: chasing the hero netplay gives it rather than the local one (the decomp's nocturne_net_sim_target_for), with CMobster::process
+    - deferred: drawing the part a blow takes off from the simulation's random numbers rather than rand, so netplay agrees on it (the decomp's nocturne_rng_sim), with CMobster::processDismemberment
+  - [x] `getActorType` 0x005251f0 (2)
   - [ ] `positionOnVehicle` 0x00525650 (60)
   - [ ] `dismountVehicle` 0x00525720 (68)
   - [ ] `aimTommyGun` 0x005267a0 (275)
@@ -5548,25 +5628,26 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `playTaunt` 0x005279f0 (128)
   - [ ] `process` 0x00525840 (1094)
   - [ ] `getCarryObjToBodyXForm` 0x00526b20 (164)
-  - [ ] `archive` 0x00527230 (77)
+  - [x] `archive` 0x00527230 (77)
   - [ ] `reset` 0x00527360 (2)
   - [ ] `processDismemberment` 0x00527380 (281)
   - [ ] `processDamage` 0x00527740 (126)
   - [ ] `getTargetPoints` 0x005278d0 (89)
   - [ ] `getCollisionType` 0x005279d0 (7)
-  - [ ] `dtor` 0x00527c70 (62)
-  - [ ] `setup` 0x00525340 (210)
+  - [x] `dtor` 0x00527c70 (62)
+  - [~] `setup` 0x00525340 (210)
+    - deferred: each hand's bone and forearm part as where it carries, with getCarryObjToBodyXForm
+    - deferred: no firing, no sounds playing and finding paths to new targets when posted, with CMobster::process
 - free functions
-  - [ ] `factoryFuncMobster` 0x005251c0 (12)
+  - [x] `factoryFuncMobster` 0x005251c0 (12)
   - [x] `staticInit` 0x00525070 (9)
   - [ ] `getObjectGrabPointLocal` 0x005250a0 (38)
   - [ ] `getObjectGrabPointWorld` 0x00525110 (60)
   - [ ] `setEulerAngles` 0x00526b00 (8)
 
-### `core/moloch.cpp` (13 functions, 1031 instructions, 5 done, 1 partial)
+### `core/moloch.cpp` (13 functions, 1031 instructions, 5 done, 2 partial)
 - class `CMoloch`
   - [~] `ctor` 0x00528b30 (58)
-    - deferred: loading the human model moloch_h.dfm, with CDeformableModelInstance::init
     - deferred: the morph, with the steps that read it
     - deferred: a processDamage override for a player's Moloch, which the original lacks so nothing hurts it: damage down to a floor of 1 hit point, none while invincible or in god mode, and destroying damage dealt as generic (the decomp's HERO_ACTIONS moloch_process_damage), with CCharacter::processDamage
     - deferred: regenerating a player's Moloch 5 hit points a second up to its most, with the heroes' per-frame update (the decomp's nocturne_moloch_regenerate)
@@ -5582,7 +5663,8 @@ functions don't count as done. Sizes are in instructions.
   - [x] `archive` 0x00529880 (32)
   - [ ] `drawWeapon` 0x005299d0 (1)
   - [ ] `isWeaponDrawn` 0x005299e0 (2)
-  - [ ] `setup` 0x00528c70 (53)
+  - [~] `setup` 0x00528c70 (53)
+    - deferred: the morph between the two, ready to draw, with CMoloch::renderOpaque
 - free functions
   - [x] `factoryFuncMoloch` 0x00528af0 (12)
   - [x] `staticInit` 0x00528ac0 (9)
@@ -5631,19 +5713,17 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `countTrianglesFromPolygons` 0x0052a490 (19)
   - [ ] `addInts` 0x0052cc40 (3)
 
-### `core/motion.cpp` (23 functions, 1941 instructions, 5 done, 1 partial)
+### `core/motion.cpp` (23 functions, 1941 instructions, 14 done, 0 partial)
 - class `CMotionController`
   - [x] `load` 0x0052e5d0 (50)
   - [ ] `save` 0x0052e670 (50)
   - [x] `reset` 0x0052dad0 (9)
-  - [~] `ctor` 0x0052d570 (11)
-    - deferred: starting with no motion list, with setMotionList, getMotionList and getCurrentStateName
-    - deferred: starting the tween at speed 0 towards motion 0, frame 0, direction 1 and no new state (MOTION_TWEEN_INIT), with advanceTween and reverseTransition
-  - [ ] `getFramesForInterpolation` 0x0052e4c0 (97)
-  - [ ] `advanceFrameAndCheckSignals` 0x0052de70 (154)
-  - [ ] `advanceFrameToExitPoint` 0x0052e020 (153)
-  - [ ] `advanceTween` 0x0052e1d0 (79)
-  - [ ] `advance` 0x0052d610 (266)
+  - [x] `ctor` 0x0052d570 (11)
+  - [x] `getFramesForInterpolation` 0x0052e4c0 (97)
+  - [x] `advanceFrameAndCheckSignals` 0x0052de70 (154)
+  - [x] `advanceFrameToExitPoint` 0x0052e020 (153)
+  - [x] `advanceTween` 0x0052e1d0 (79)
+  - [x] `advance` 0x0052d610 (266)
   - [x] `findPatchToFrame` 0x0052dc80 (9)
   - [x] `accumulateScaledRootMotion` 0x0052e570 (1)
   - [x] `dtor` 0x0052d5a0 (27)
@@ -5651,13 +5731,13 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `render` 0x0052e700 (155)
   - [ ] `setDesiredStateByName` 0x0052db90 (20)
   - [ ] `getStateBlendWeight` 0x0052dd20 (45)
-  - [ ] `setMotionList` 0x0052dcb0 (19)
+  - [x] `setMotionList` 0x0052dcb0 (19)
   - [ ] `frameToMarkerPosition` 0x0052e2b0 (83)
   - [ ] `jumpToMotionByName` 0x0052ddb0 (17)
   - [ ] `markerPositionToFrame` 0x0052e3a0 (98)
 - class `CMotionList`
-  - [ ] `load` 0x0052cd70 (332)
-  - [ ] `ctor` 0x0052cd50 (4)
+  - [x] `load` 0x0052cd70 (332)
+  - [x] `ctor` 0x0052cd50 (4)
   - [ ] `save` 0x0052d170 (248)
 
 ### `core/netgame.cpp` (35 functions, 1904 instructions, 0 done, 3 partial)
@@ -5704,21 +5784,23 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `copyPlayerInput` 0x00543db0 (25)
   - [ ] `copyNetAddr` 0x00543e00 (7)
 
-### `core/npc.cpp` (13 functions, 589 instructions, 1 done, 0 partial)
+### `core/npc.cpp` (13 functions, 589 instructions, 6 done, 2 partial)
 - class `CNPC`
-  - [ ] `ctor` 0x005447e0 (26)
-  - [ ] `archive` 0x00544ba0 (51)
-  - [ ] `dtor` 0x004f4700 (67)
+  - [~] `ctor` 0x005447e0 (26)
+    - deferred: the path map, the collision cylinder and catching fire from a gun's flame, with CCharacter::process
+  - [x] `archive` 0x00544ba0 (51)
+  - [x] `dtor` 0x004f4700 (67)
   - [ ] `process` 0x005448b0 (220)
-  - [ ] `getActorType` 0x005447d0 (2)
+  - [x] `getActorType` 0x005447d0 (2)
   - [ ] `renderBackground` 0x00544b70 (12)
   - [ ] `setRandomMotionVariant` 0x00544c50 (86)
   - [ ] `processDamage` 0x00544d30 (75)
-  - [ ] `isInvulnerable` 0x00544e10 (5)
+  - [x] `isInvulnerable` 0x00544e10 (5)
   - [ ] `getPathMap` 0x00544e30 (3)
-  - [ ] `setup` 0x00544870 (21)
+  - [~] `setup` 0x00544870 (21)
+    - deferred: a priest, priest.dfm in any case, bleeding nothing, with CCharacter::processDamage and the gore it spawns
 - free functions
-  - [ ] `factoryFuncNPC` 0x005447a0 (12)
+  - [x] `factoryFuncNPC` 0x005447a0 (12)
   - [x] `staticInit` 0x00544770 (9)
 
 ### `core/passngr.cpp` (9 functions, 601 instructions, 1 done, 0 partial)
@@ -5777,12 +5859,13 @@ functions don't count as done. Sizes are in instructions.
   - [x] `staticInit` 0x00549320 (9)
   - [ ] `didPhaseCross` 0x00549aa0 (73)
 
-### `core/platfrm.cpp` (18 functions, 1935 instructions, 1 done, 0 partial)
+### `core/platfrm.cpp` (18 functions, 1935 instructions, 9 done, 1 partial)
 - class `CPlatform`
-  - [ ] `ctor` 0x0054c850 (115)
-  - [ ] `archive` 0x0054dbc0 (251)
-  - [ ] `getActorType` 0x0054c840 (2)
-  - [ ] `evaluatePosition` 0x0054cab0 (131)
+  - [~] `ctor` 0x0054c850 (115)
+    - deferred: the slew mode the editor sets, being drawn in the background, the health of 50 and the attached actors' places, with CPlatform::process
+  - [x] `archive` 0x0054dbc0 (251)
+  - [x] `getActorType` 0x0054c840 (2)
+  - [x] `evaluatePosition` 0x0054cab0 (131)
   - [ ] `isActorOnPlatform` 0x0054df80 (169)
   - [ ] `updateAttachedActors` 0x0054e320 (91)
   - [ ] `process` 0x0054cc30 (709)
@@ -5790,13 +5873,13 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `renderBackground` 0x0054d9b0 (129)
   - [ ] `getBoundingBox` 0x0054db70 (28)
   - [ ] `getCollisionType` 0x0054e180 (15)
-  - [ ] `allowBulletHoles` 0x0054e1a0 (2)
-  - [ ] `getGroundType` 0x0054e1c0 (3)
-  - [ ] `getBlockVirtualDirectorFlag` 0x0054e1d0 (3)
-  - [ ] `setup` 0x0054ca20 (49)
+  - [x] `allowBulletHoles` 0x0054e1a0 (2)
+  - [x] `getGroundType` 0x0054e1c0 (3)
+  - [x] `getBlockVirtualDirectorFlag` 0x0054e1d0 (3)
+  - [x] `setup` 0x0054ca20 (49)
   - [ ] `onActorDeleted` 0x0054e2e0 (15)
 - free functions
-  - [ ] `factoryFuncPlatform` 0x0054c810 (12)
+  - [x] `factoryFuncPlatform` 0x0054c810 (12)
   - [x] `staticInit` 0x0054c7e0 (9)
 
 ## Step 29: Not reached from startup: `core/` (part 7 of 9)
@@ -5805,7 +5888,6 @@ functions don't count as done. Sizes are in instructions.
 - class `CScat`
   - [ ] `createDefaultWeapon` 0x00557150 (41)
   - [~] `ctor` 0x00556ed0 (46)
-    - deferred: loading the model scat.dfm, with CDeformableModelInstance::init
     - deferred: creating Scat's default weapon, with the weapon classes
     - deferred: adding the layer actions that draw the pistols, with addLayerAction
     - deferred: the defaults the constructor gives Scat's own fields, with the steps that read them
@@ -5873,7 +5955,6 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `renderSinglePrimitive` 0x00570df0 (17)
 - free functions
   - [~] `staticInit` 0x00569040 (30)
-    - deferred: the camera, with CDemonCamera's constructor
     - deferred: the 4000 face normals, with lightVerticies' face lists
   - [ ] `computeTriangleNormal` 0x0056e180 (104)
   - [ ] `computeTriangleNormalIndexed` 0x0056e2b0 (108)
@@ -5882,13 +5963,14 @@ functions don't count as done. Sizes are in instructions.
 - class `CBoundingBox3D`
   - [x] `assign` 0x005714c0 (29, compiler-generated)
 
-### `core/setcolid.cpp` (14 functions, 1616 instructions, 0 done, 1 partial)
+### `core/setcolid.cpp` (14 functions, 1616 instructions, 0 done, 2 partial)
 - class `CDemonSet`
   - [ ] `testVoxelRaycast` 0x00572510 (8)
   - [ ] `testOBBCylinderCollision` 0x00573140 (248)
   - [ ] `testCylinderCollision` 0x00573470 (580)
   - [ ] `setRayTypeLaser` 0x00574270 (11)
-  - [ ] `castVoxelShadow` 0x00574440 (46)
+  - [~] `castVoxelShadow` 0x00574440 (46)
+    - deferred: resetting every path map around the new shadow, with resetAllPathMaps and the path maps
   - [ ] `notifyDamageListeners` 0x005742b0 (82)
   - [ ] `transferVoxelShadow` 0x005744d0 (46)
   - [ ] `getVoxelHeight` 0x005724e0 (12)
@@ -5965,26 +6047,24 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `factoryFuncSimBox` 0x00588d00 (12)
   - [x] `staticInit` 0x00588cd0 (9)
 
-### `core/skeleton.cpp` (88 functions, 8882 instructions, 2 done, 3 partial)
+### `core/skeleton.cpp` (88 functions, 8882 instructions, 47 done, 2 partial)
 - class `CDeformableModelInstance`
   - [x] `showAllParts` 0x005a0410 (8)
   - [x] `clearAllTextureSetIndices` 0x005a0430 (8)
-  - [ ] `init` 0x005a0840 (30)
-  - [~] `ctor` 0x0059ddc0 (25)
-    - deferred: the transformed vertices, and the defaults the constructor gives the model, skinning, root motion and scale fields, with the steps that read them
-  - [ ] `blendMotion` 0x0059eb50 (479)
-  - [ ] `computeBoundingBoxFromBones` 0x005a16c0 (76)
-  - [ ] `computeBoneTransforms` 0x0059fb40 (124)
-  - [ ] `updateMotion` 0x0059e0a0 (855)
-  - [ ] `updateAnimation` 0x0059e020 (27)
+  - [x] `init` 0x005a0840 (30)
+  - [x] `ctor` 0x0059ddc0 (25)
+  - [x] `blendMotion` 0x0059eb50 (479)
+  - [x] `computeBoundingBoxFromBones` 0x005a16c0 (76)
+  - [x] `computeBoneTransforms` 0x0059fb40 (124)
+  - [x] `updateMotion` 0x0059e0a0 (855)
+  - [x] `updateAnimation` 0x0059e020 (27)
   - [ ] `shatter` 0x005a14b0 (36)
-  - [ ] `free` 0x0059df40 (19)
-  - [ ] `computeBoneTransformsForFrame` 0x005a0ad0 (150)
-  - [ ] `findPatchToFrame` 0x005a08a0 (124)
-  - [ ] `getRootMotionDelta` 0x005a0d10 (166)
-  - [ ] `accumulateScaledRootMotion` 0x005a0c90 (32)
-  - [~] `dtor` 0x0059de40 (41)
-    - deferred: freeing what the model loaded, with free
+  - [x] `free` 0x0059df40 (19)
+  - [x] `computeBoneTransformsForFrame` 0x005a0ad0 (150)
+  - [x] `findPatchToFrame` 0x005a08a0 (124)
+  - [x] `getRootMotionDelta` 0x005a0d10 (166)
+  - [x] `accumulateScaledRootMotion` 0x005a0c90 (32)
+  - [x] `dtor` 0x0059de40 (41)
   - [ ] `skinAndRotateVertices` 0x005a0250 (24)
   - [ ] `skinAndLightVertices` 0x005a02a0 (24)
   - [ ] `skinAndInitWRecip` 0x005a02f0 (24)
@@ -5994,15 +6074,15 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `getBoneTransform` 0x005a1510 (102)
   - [ ] `setBoneTransform` 0x005a15e0 (78)
   - [ ] `computeCylindricalUVs` 0x005a1800 (102)
-  - [ ] `resetToRestPose` 0x0059df80 (38)
-  - [ ] `updateAnimationAndTransforms` 0x0059e000 (9)
-  - [ ] `allocPointList` 0x0059deb0 (39)
-  - [ ] `updateMotionAtFrame` 0x0059e070 (15)
-  - [ ] `computeBoundingBoxFromVertices` 0x005a05e0 (149)
-  - [ ] `initializeFromModel` 0x005a0480 (110)
-  - [ ] `getBoneModelMatrix` 0x0059f820 (184)
-  - [ ] `getBoneModelPosition` 0x0059fa20 (112)
-  - [ ] `preCache` 0x005a0450 (11)
+  - [x] `resetToRestPose` 0x0059df80 (38)
+  - [x] `updateAnimationAndTransforms` 0x0059e000 (9)
+  - [x] `allocPointList` 0x0059deb0 (39)
+  - [x] `updateMotionAtFrame` 0x0059e070 (15)
+  - [x] `computeBoundingBoxFromVertices` 0x005a05e0 (149)
+  - [x] `initializeFromModel` 0x005a0480 (110)
+  - [x] `getBoneModelMatrix` 0x0059f820 (184)
+  - [x] `getBoneModelPosition` 0x0059fa20 (112)
+  - [x] `preCache` 0x005a0450 (11)
   - [ ] `blendBoneRotations` 0x0059f750 (83)
   - [ ] `getBoneCachedModelPosition` 0x0059fb00 (15)
   - [ ] `applyRotationToHierarchy` 0x0059ff20 (191)
@@ -6017,25 +6097,24 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `renderSkeleton` 0x005a17b0 (16)
   - [ ] `renderBones` 0x005a17e0 (10)
 - free functions
-  - [ ] `blendWeightCallback` 0x0059ddb0 (2)
-  - [ ] `computeBoneModelMatrices` 0x005a1950 (126)
-  - [ ] `loadSkeleton` 0x005a1df0 (57)
-  - [ ] `getDeformableModel` 0x005a1cf0 (67)
-  - [~] `staticInit` 0x00599670 (17)
-    - deferred: the pools of 64 deformable models and 40 skeletons, with this and loadSkeleton
+  - [x] `blendWeightCallback` 0x0059ddb0 (2)
+  - [x] `computeBoneModelMatrices` 0x005a1950 (126)
+  - [x] `loadSkeleton` 0x005a1df0 (57)
+  - [x] `getDeformableModel` 0x005a1cf0 (67)
+  - [x] `staticInit` 0x00599670 (17)
   - [ ] `skipToEndOfLine` 0x005996c0 (11)
   - [ ] `distancePointToLineSegment` 0x005996e0 (149)
   - [ ] `getRootMotionDeltaForMotion` 0x005a0f50 (51)
   - [ ] `blendBoneTransformData` 0x005a1b70 (131)
 - class `CSkeleton`
-  - [ ] `getBoneAngleAtFrame` 0x0059a050 (8)
-  - [ ] `getBoneAngleInterpolated` 0x0059a070 (78)
-  - [ ] `getHierarchyDistance` 0x0059a100 (23)
-  - [ ] `allocMemory` 0x00599910 (86)
-  - [ ] `loadStream` 0x00599bb0 (319)
-  - [ ] `load` 0x00599b10 (50)
-  - [ ] `ctor` 0x00599880 (28)
-  - [ ] `dtor` 0x005998e0 (23)
+  - [x] `getBoneAngleAtFrame` 0x0059a050 (8)
+  - [x] `getBoneAngleInterpolated` 0x0059a070 (78)
+  - [x] `getHierarchyDistance` 0x0059a100 (23)
+  - [x] `allocMemory` 0x00599910 (86)
+  - [x] `loadStream` 0x00599bb0 (319)
+  - [x] `load` 0x00599b10 (50)
+  - [x] `ctor` 0x00599880 (28)
+  - [x] `dtor` 0x005998e0 (23)
 - class `CDeformableModel`
   - [ ] `shatter` 0x0059cec0 (341)
   - [ ] `selectLOD` 0x0059ce40 (50)
@@ -6044,19 +6123,21 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `initVertexWRecip` 0x0059ab90 (31)
   - [ ] `renderParts` 0x0059abf0 (577)
   - [ ] `getPartPtr` 0x0059c220 (9)
-  - [ ] `getVertexPoolPtr` 0x0059a860 (8)
-  - [ ] `computeBoneBoundsAndFlags` 0x0059d9e0 (154)
-  - [ ] `computeFarthestChildBones` 0x0059dbe0 (67)
-  - [ ] `bindSkeleton` 0x0059c1f0 (12)
-  - [ ] `captureTextures` 0x0059a780 (48)
-  - [ ] `allocMemory` 0x0059a3f0 (81)
-  - [ ] `allocLOD` 0x0059a510 (152)
+  - [x] `getVertexPoolPtr` 0x0059a860 (8)
+  - [x] `computeBoneBoundsAndFlags` 0x0059d9e0 (154)
+  - [~] `computeFarthestChildBones` 0x0059dbe0 (67)
+    - unverified: comparing the children's distances in double where the x87 holds them at its extended precision, by running nocedit's code on children of near-equal distance
+  - [x] `bindSkeleton` 0x0059c1f0 (12)
+  - [x] `captureTextures` 0x0059a780 (48)
+  - [x] `allocMemory` 0x0059a3f0 (81)
+  - [x] `allocLOD` 0x0059a510 (152)
   - [ ] `computeBoneDominantPart` 0x0059c2f0 (224)
-  - [ ] `computePartDominantBones` 0x0059d460 (330)
-  - [ ] `loadStream` 0x0059b970 (691)
-  - [ ] `load` 0x0059b8d0 (50)
-  - [ ] `ctor` 0x0059a160 (66)
-  - [ ] `dtor` 0x0059a270 (18)
+  - [~] `computePartDominantBones` 0x0059d460 (330)
+    - deferred: weighing each part's triangles by their area on the bones their vertices follow, at the rest pose, to find its dominant bone and then each bone's part, for a model of more than one part, with CDeformableModelInstance::initializeFromModel and computeBoneDominantPart
+  - [x] `loadStream` 0x0059b970 (691)
+  - [x] `load` 0x0059b8d0 (50)
+  - [x] `ctor` 0x0059a160 (66)
+  - [x] `dtor` 0x0059a270 (18)
   - [ ] `skinSingleVertex` 0x0059aa00 (99)
   - [ ] `renderWireframe` 0x0059b5a0 (56)
   - [ ] `renderSkeleton` 0x0059b640 (189)
@@ -6159,10 +6240,9 @@ functions don't count as done. Sizes are in instructions.
 
 ## Step 30: Not reached from startup: `core/` (part 8 of 9)
 
-### `core/stranger.cpp` (57 functions, 13459 instructions, 5 done, 1 partial)
+### `core/stranger.cpp` (57 functions, 13459 instructions, 5 done, 2 partial)
 - class `CStranger`
   - [~] `ctor` 0x005bb120 (207)
-    - deferred: loading the model stranger.dfm, with CDeformableModelInstance::init
     - deferred: naming the gun's model gat.kfm, with the weapon classes
     - deferred: adding the layer actions that draw each weapon, with addLayerAction
     - deferred: the defaults the constructor gives the Stranger's aiming, recoil, melee, turning, carried object and airborne fields, with the steps that read them
@@ -6208,7 +6288,10 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `dropCarriedObject` 0x005c67f0 (27)
   - [ ] `drop` 0x005c6850 (23)
   - [x] `dtor` 0x005c69c0 (31)
-  - [ ] `setup` 0x005bb4b0 (232)
+  - [~] `setup` 0x005bb4b0 (232)
+    - deferred: his hands as the bones each hand carries at, with getCarryObjToBodyXForm
+    - deferred: posing him as his motion, turn and aim have him, with updateProceduralAnimation
+    - deferred: clearing his grab timer, ladder blend, fall speed and goggle sounds, with the steps that read them
   - [ ] `getCarryLightIntensity` 0x005be430 (26)
 - free functions
   - [x] `factoryFuncStranger` 0x005bb0e0 (12)
@@ -6240,11 +6323,10 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `factoryFuncSuccubus` 0x005c6a40 (12)
   - [x] `staticInit` 0x005c6a10 (9)
 
-### `core/svetlana.cpp` (16 functions, 1634 instructions, 5 done, 1 partial)
+### `core/svetlana.cpp` (16 functions, 1634 instructions, 5 done, 2 partial)
 - class `CSvetlana`
   - [~] `ctor` 0x005d8850 (32)
-    - deferred: loading the model svetlana.dfm, with CDeformableModelInstance::init
-    - deferred: the cape's and hair's cloth, and the defaults the constructor gives Svetlana's own fields, with the steps that read them
+    - deferred: the defaults the constructor gives Svetlana's own fields, with the steps that read them
     - deferred: a player Svetlana grabbed through CHero::getGrabbed, where the original refuses every grab, which the NPC keeps (the decomp's hero_svetlana.h), with CSvetlana::getGrabbed
     - deferred: a player Svetlana at zero hit points not regenerating, so the death check sees her (the decomp's hero_death.h nocturne_hero_regenerates), with CSvetlana::process
   - [x] `getActorType` 0x005d8840 (2)
@@ -6259,7 +6341,9 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `isWeaponDrawn` 0x005d9ed0 (3)
   - [ ] `drawWeapon` 0x005d9ee0 (4)
   - [x] `dtor` 0x005d9f50 (42)
-  - [ ] `setup` 0x005d88e0 (191)
+  - [~] `setup` 0x005d88e0 (191)
+    - deferred: her blades not drawn, with CSvetlana::drawWeapon and isWeaponDrawn
+    - deferred: no sound playing, with CSvetlana::process
 - free functions
   - [x] `factoryFuncSvetlana` 0x005d8810 (12)
   - [x] `staticInit` 0x005d87e0 (9)
@@ -6366,7 +6450,7 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `factoryFuncTrash` 0x005deb30 (12)
   - [x] `staticInit` 0x005deb00 (9)
 
-### `core/trigger.cpp` (18 functions, 1660 instructions, 6 done, 2 partial)
+### `core/trigger.cpp` (18 functions, 1660 instructions, 6 done, 3 partial)
 - class `CTrigger`
   - [ ] `onProjectileHit` 0x005e0aa0 (6)
   - [~] `ctor` 0x005df840 (63)
@@ -6385,7 +6469,9 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `onLaserHit` 0x005e0a50 (23)
   - [ ] `getTargetPoints` 0x005e0c30 (53)
   - [x] `dtor` 0x005e1660 (31)
-  - [ ] `setup` 0x005df990 (50)
+  - [~] `setup` 0x005df990 (50)
+    - deferred: no event raised and no actor held yet, with CTrigger::process
+    - deferred: not processed with neither event, with CDemonSet::processActors
 - free functions
   - [x] `factoryFuncTrigger` 0x005df800 (12)
   - [x] `staticInit` 0x005df7d0 (9)
@@ -6537,38 +6623,38 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `factoryFuncWaterActor` 0x005ea860 (12)
   - [x] `staticInit` 0x005ea810 (19)
 
-### `core/waypoint.cpp` (10 functions, 650 instructions, 5 done, 1 partial)
+### `core/waypoint.cpp` (10 functions, 650 instructions, 6 done, 1 partial)
 - class `CWayPoint`
   - [ ] `isReachable` 0x005ebd40 (91)
   - [ ] `findNearestReachable` 0x005ec320 (133)
   - [x] `ctor` 0x005ebe70 (10)
   - [x] `getActorType` 0x005ebe60 (2)
   - [ ] `renderOpaque` 0x005ebf70 (241)
-  - [~] `archive` 0x005ec280 (53)
-    - deferred: each adjacent waypoint's distance, with setup
+  - [x] `archive` 0x005ec280 (53)
   - [x] `dtor` 0x005ec8d0 (31)
-  - [ ] `setup` 0x005ebeb0 (68)
+  - [~] `setup` 0x005ebeb0 (68)
+    - deferred: each adjacent waypoint's distance, with addAdj and findNearestReachable
 - free functions
   - [x] `factoryFuncWayPoint` 0x005ebe30 (12)
   - [x] `staticInit` 0x005ebd10 (9)
 
 ## Step 31: Not reached from startup: `core/` (part 9 of 9)
 
-### `core/weapon.cpp` (25 functions, 852 instructions, 6 done, 1 partial)
+### `core/weapon.cpp` (25 functions, 852 instructions, 8 done, 2 partial)
 - class `CWeapon`
   - [~] `ctor` 0x005ede70 (42)
-    - deferred: the physics box, and the defaults the constructor gives the weight, collision, firing, light, muzzle flash and rendering fields, with the steps that read them
+    - deferred: the defaults the constructor gives the firing, light, muzzle flash and rendering fields, with the steps that read them
   - [ ] `process` 0x005ee110 (95)
   - [ ] `renderOpaque` 0x005ee030 (48)
   - [ ] `setWeaponState` 0x005ee640 (4)
   - [x] `dtor` 0x005edf80 (38)
   - [ ] `fire` 0x005ee6e0 (11)
   - [x] `archive` 0x005ee250 (57)
-  - [ ] `getBoundingBox` 0x005ee0c0 (28)
+  - [x] `getBoundingBox` 0x005ee0c0 (28)
   - [ ] `getCollisionType` 0x005ee330 (2)
   - [ ] `canPickup` 0x005ee340 (58)
   - [ ] `pickup` 0x005ee3e0 (4)
-  - [ ] `setupPhysicsBox` 0x005ee740 (74)
+  - [x] `setupPhysicsBox` 0x005ee740 (74)
   - [ ] `onDropped` 0x005ee3f0 (47)
   - [x] `getCarrier` 0x005ee490 (3)
   - [ ] `updateLighting` 0x005ee4a0 (114)
@@ -6578,56 +6664,61 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `getDamage` 0x005ee730 (3)
   - [ ] `renderAimBeam` 0x005ee830 (148)
   - [ ] `onFired` 0x005ee860 (1)
-  - [ ] `setup` 0x005edff0 (15)
+  - [~] `setup` 0x005edff0 (15)
+    - deferred: clearing is_rendered, with renderOpaque
 - free functions
   - [x] `staticInit` 0x005ede40 (9)
 - class `CDemonGlobe`
   - [x] `ctor` 0x005eea80 (2, compiler-generated)
   - [x] `dtor` 0x005eea90 (2, compiler-generated)
 
-### `core/weather.cpp` (3 functions, 20 instructions, 1 done, 1 partial)
+### `core/weather.cpp` (3 functions, 20 instructions, 2 done, 1 partial)
 - class `CWeather`
-  - [ ] `ctor` 0x005eead0 (9)
+  - [x] `ctor` 0x005eead0 (9)
   - [x] `dtor` 0x005efb40 (2, compiler-generated)
 - free functions
   - [~] `staticInit` 0x005eeaa0 (9)
-    - deferred: the game's weather and its 200 particle positions, with this constructor
+    - deferred: the 200 particle positions, with update and renderParticles
 
-### `core/werewolf.cpp` (16 functions, 2629 instructions, 1 done, 0 partial)
+### `core/werewolf.cpp` (16 functions, 2629 instructions, 5 done, 2 partial)
 - class `CWerewolf`
-  - [ ] `ctor` 0x005efc10 (31)
-  - [ ] `getActorType` 0x005efc00 (2)
+  - [~] `ctor` 0x005efc10 (31)
+    - deferred: the collision cylinder and the detection range, with CWerewolf::process
+    - deferred: chasing the hero netplay gives it rather than the local one (the decomp's nocturne_net_sim_target_for), with CWerewolf::process
+  - [x] `getActorType` 0x005efc00 (2)
   - [ ] `playHowl` 0x005f11e0 (20)
   - [ ] `processChainConstraint` 0x005f1e40 (166)
   - [ ] `process` 0x005efde0 (1387)
   - [ ] `setWalkTarget` 0x005f11a0 (18)
   - [ ] `renderEyeGlow` 0x005f1230 (337)
   - [ ] `renderTransparent` 0x005f1820 (131)
-  - [ ] `archive` 0x005f1980 (82)
+  - [x] `archive` 0x005f1980 (82)
   - [ ] `processDamage` 0x005f1ac0 (236)
   - [ ] `getDeathState` 0x005f1db0 (22)
   - [ ] `getTargetPoints` 0x005f1df0 (28)
-  - [ ] `dtor` 0x005f2220 (62)
-  - [ ] `setup` 0x005efcc0 (72)
+  - [x] `dtor` 0x005f2220 (62)
+  - [~] `setup` 0x005efcc0 (72)
+    - deferred: a train werewolf's collision radius of 1.5, with the characters' collision
+    - deferred: no sounds playing, with CWerewolf::process
 - free functions
-  - [ ] `factoryFuncWerewolf` 0x005efbd0 (12)
+  - [x] `factoryFuncWerewolf` 0x005efbd0 (12)
   - [x] `staticInit` 0x005efb70 (23)
 
-### `core/xform.cpp` (42 functions, 2952 instructions, 1 done, 0 partial)
+### `core/xform.cpp` (42 functions, 2952 instructions, 6 done, 0 partial)
 - free functions
   - [ ] `getTranslation` 0x005f6110 (15)
   - [ ] `matrixToQuaternion` 0x005f7420 (205)
   - [ ] `lerpMatrix3x4` 0x005f7140 (188)
-  - [ ] `negateFirstComponent` 0x005f75e0 (31)
-  - [ ] `multiplyQuaternion` 0x005f7640 (82)
+  - [x] `negateFirstComponent` 0x005f75e0 (31)
+  - [x] `multiplyQuaternion` 0x005f7640 (82)
   - [ ] `quaternionFromAngleX` 0x005f79b0 (33)
   - [ ] `quaternionFromAngleY` 0x005f79f0 (33)
   - [ ] `buildRotationX` 0x005f6c40 (39)
   - [ ] `buildRotationY` 0x005f6cc0 (37)
-  - [ ] `setIdentityQuaternion` 0x005f7620 (6)
-  - [ ] `setRotationScaleIdentity` 0x005f5190 (11)
+  - [x] `setIdentityQuaternion` 0x005f7620 (6)
+  - [x] `setRotationScaleIdentity` 0x005f5190 (11)
   - [ ] `eulerToQuaternion` 0x005f7b20 (43)
-  - [ ] `quaternionToEulerAngles` 0x005f7ac0 (18)
+  - [x] `quaternionToEulerAngles` 0x005f7ac0 (18)
   - [ ] `transformVector3x4InPlace` 0x005f4e20 (49)
   - [ ] `quaternionToAxisAngle` 0x005f7730 (68)
   - [ ] `quaternionFromAxisAngle` 0x005f7a70 (39)
@@ -6658,10 +6749,14 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `clipPolygonStage4` 0x005f8330 (120)
   - [ ] `clampClippedVertices` 0x005f84a0 (47)
 
-### `core/zombie.cpp` (25 functions, 4452 instructions, 1 done, 0 partial)
+### `core/zombie.cpp` (25 functions, 4452 instructions, 5 done, 2 partial)
 - class `CZombie`
-  - [ ] `ctor` 0x005f8fe0 (77)
-  - [ ] `getActorType` 0x005f8fd0 (2)
+  - [~] `ctor` 0x005f8fe0 (77)
+    - deferred: being a miner when the set's geometry is mine.geo, with CActor::createActorByName given the set
+    - deferred: the collision cylinder, the detection range, what it is picking up and how far it has come, the door it heads for, the pain cooldown, rising and burial timers, and not finding paths to new targets, with CZombie::process
+    - deferred: chasing the hero netplay gives it rather than the local one (the decomp's nocturne_net_sim_target_for), with CZombie::process
+    - deferred: drawing the part a blow takes off from the simulation's random numbers rather than rand, so netplay agrees on it (the decomp's nocturne_rng_sim), with CZombie::processDismemberment
+  - [x] `getActorType` 0x005f8fd0 (2)
   - [ ] `getPickupHandIndex` 0x005fbd00 (67)
   - [ ] `canPickupWithHand` 0x005fbda0 (21)
   - [ ] `resetChaseState` 0x005fca10 (39)
@@ -6670,7 +6765,7 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `getCarryObjToBodyXForm` 0x005fb1f0 (315)
   - [ ] `renderOpaque` 0x005fbe20 (24)
   - [ ] `renderTransparent` 0x005fbe70 (152)
-  - [ ] `archive` 0x005fbfd0 (90)
+  - [x] `archive` 0x005fbfd0 (90)
   - [ ] `canBeAttracted` 0x005fc120 (81)
   - [ ] `dropAndClearTarget` 0x005fbde0 (17)
   - [ ] `processDismemberment` 0x005fc220 (215)
@@ -6680,10 +6775,13 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `canBeGrabbed` 0x005fc960 (4)
   - [ ] `getGrabbed` 0x005fc970 (29)
   - [ ] `shouldIgnoreForTargeting` 0x005fc9e0 (15)
-  - [ ] `dtor` 0x005fcc50 (62)
-  - [ ] `setup` 0x005f9140 (217)
+  - [x] `dtor` 0x005fcc50 (62)
+  - [~] `setup` 0x005f9140 (217)
+    - deferred: each hand's bone and forearm part as where it carries, with getCarryObjToBodyXForm
+    - deferred: a zombie with a waist and no cylinder top of its own taking the model's top less 0.75, with the characters' collision
+    - deferred: no bleeding out, whether newzchik.dfm, zombho1.dfm or zombho2.dfm makes it female, and no sounds playing, with CZombie::process
 - free functions
-  - [ ] `factoryFuncZombie` 0x005f8fa0 (12)
+  - [x] `factoryFuncZombie` 0x005f8fa0 (12)
   - [x] `staticInit` 0x005f8c90 (9)
   - [ ] `classifyObjectShape` 0x005f8e50 (117)
 

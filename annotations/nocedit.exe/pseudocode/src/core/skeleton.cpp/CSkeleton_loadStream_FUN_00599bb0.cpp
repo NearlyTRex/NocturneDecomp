@@ -129,7 +129,7 @@ void __cdecl core_skeleton_cpp_CSkeleton_loadStream_FUN_00599bb0(CSkeleton *this
   }
   core_motion_cpp_CMotionList_load_FUN_0052cd70(&this_ptr->motion_list,file_handle);
   if (local_24 < 3) {
-    this_ptr->bone_scales[0].x = -99999.0;
+    this_ptr->reference_bone_origins[0].x = -99999.0;
   }
   else {
     do {
@@ -138,10 +138,11 @@ void __cdecl core_skeleton_cpp_CSkeleton_loadStream_FUN_00599bb0(CSkeleton *this
     } while (iVar3 != 10);
     iVar3 = 0;
     if (0 < this_ptr->bone_count) {
-      pfVar6 = &this_ptr->bone_scales[0].y;
-      pfVar7 = &this_ptr->bone_scales[0].z;
+      pfVar6 = &this_ptr->reference_bone_origins[0].y;
+      pfVar7 = &this_ptr->reference_bone_origins[0].z;
       do {
-        _fscanf(file_handle,"%f,%f,%f\n",this_ptr->bone_scales + iVar3,pfVar6,pfVar7);
+        _fscanf(file_handle,"%f,%f,%f\n",this_ptr->reference_bone_origins + iVar3,pfVar6,
+                   pfVar7);
         pfVar7 = pfVar7 + 3;
         iVar3 = iVar3 + 1;
         pfVar6 = pfVar6 + 3;

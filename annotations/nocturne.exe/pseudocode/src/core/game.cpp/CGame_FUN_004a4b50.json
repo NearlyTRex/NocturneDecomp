@@ -39,81 +39,51 @@
       },
       {
         "category": "undeclared_identifier",
-        "column": 53,
-        "line": 116,
-        "message": "use of undeclared identifier 'DAT_005b9450'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 53,
-        "line": 169,
-        "message": "use of undeclared identifier 'DAT_005b9450'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 53,
-        "line": 214,
-        "message": "use of undeclared identifier 'DAT_005b9450'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 53,
-        "line": 266,
-        "message": "use of undeclared identifier 'DAT_005b9450'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 53,
-        "line": 297,
-        "message": "use of undeclared identifier 'DAT_005b9450'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 53,
-        "line": 319,
-        "message": "use of undeclared identifier 'DAT_005b9450'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 26,
-        "line": 341,
-        "message": "use of undeclared identifier 'DAT_005b9450'"
-      },
-      {
-        "category": "undeclared_identifier",
         "column": 15,
-        "line": 355,
+        "line": 361,
         "message": "use of undeclared identifier 'DAT_01c789c0'"
       },
       {
         "category": "undeclared_identifier",
         "column": 5,
-        "line": 357,
+        "line": 363,
         "message": "use of undeclared identifier '_DAT_01c78ac0'"
       },
       {
         "category": "undeclared_identifier",
-        "column": 32,
-        "line": 357,
-        "message": "use of undeclared identifier 'DAT_005b9554'"
-      },
-      {
-        "category": "undeclared_identifier",
         "column": 5,
-        "line": 368,
+        "line": 374,
         "message": "use of undeclared identifier '_DAT_01c78ac4'"
       },
       {
         "category": "incompatible_types",
         "column": 3,
-        "line": 370,
+        "line": 376,
         "message": "no matching function for call to 'core_event_cpp_CEventList_resetGameFlags_FUN_00480410'"
       },
       {
         "category": "undeclared_identifier",
         "column": 21,
-        "line": 372,
+        "line": 378,
         "message": "use of undeclared identifier 'DAT_01c78598'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 15,
+        "line": 381,
+        "message": "use of undeclared identifier 'DAT_01c78598'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 3,
+        "line": 405,
+        "message": "use of undeclared identifier '_DAT_01bcd070'; did you mean 'DAT_005c5070'?"
+      },
+      {
+        "category": "incompatible_types",
+        "column": 19,
+        "line": 405,
+        "message": "incompatible pointer to integer conversion assigning to 'undefined4' (aka 'unsigned int') from 'CBitFont *'"
       }
     ],
     "success": false,
@@ -122,19 +92,20 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 1066,
-    "complexity_score": 565,
+    "complexity_score": 556,
     "cross_reference_count": 2,
     "function_call_count": 21,
     "global_count": 86,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 390,
-    "suspect_count": 16,
+    "pseudocode_lines": 396,
+    "suspect_count": 14,
     "suspect_types": [
+      "pointer_cast",
       "undefined_data",
       "unrolled_strcpy",
       "warning_overlapping_globals"
     ],
-    "total_lines": 1456
+    "total_lines": 1462
   },
   "cross_references": [
     {
@@ -674,32 +645,32 @@
     },
     {
       "addr": "005b9450",
-      "name": "DAT_005b9450",
-      "type": "undefined4",
+      "name": "g_ChapterMissionFiles",
+      "type": "char*[5][13]",
       "value": null
     },
     {
       "addr": "005b9451",
-      "name": "DAT_005b9451",
+      "name": "g_ChapterMissionFiles[0][0]+1",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "005b9454",
-      "name": "PTR_s_gtown_msn_005846ed_005b9454",
-      "type": "void*",
-      "value": "005846ed"
+      "name": "g_ChapterMissionFiles[0][1]",
+      "type": "undefined4",
+      "value": null
     },
     {
       "addr": "005b9485",
-      "name": "DAT_005b9485",
+      "name": "g_ChapterMissionFiles[1][0]+1",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "005b9554",
-      "name": "DAT_005b9554",
-      "type": "undefined4",
+      "name": "g_ChapterDisplayYears",
+      "type": "int[5]",
       "value": null
     },
     {
@@ -1005,64 +976,56 @@
       "type": "undefined_data"
     },
     {
-      "description": "Undefined global data reference",
+      "description": "Complex pointer cast",
       "line": 109,
-      "match": "DAT_005b9450",
-      "severity": "mild",
-      "text": "(\"world\",*(char **)(&DAT_005b9450 + iVar3),\"rt\");",
-      "type": "undefined_data"
+      "match": "(char **)((int)g_ChapterMissionFiles",
+      "severity": "moderate",
+      "text": "(\"world\",*(char **)((int)g_ChapterMissionFiles[0] + iVar3),",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 163,
+      "match": "(char **)((int)g_ChapterMissionFiles",
+      "severity": "moderate",
+      "text": "(\"world\",*(char **)((int)g_ChapterMissionFiles[0] + iVar5),",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 209,
+      "match": "(char **)((int)g_ChapterMissionFiles",
+      "severity": "moderate",
+      "text": "(\"world\",*(char **)((int)g_ChapterMissionFiles[0] + iVar5),",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 262,
+      "match": "(char **)((int)g_ChapterMissionFiles",
+      "severity": "moderate",
+      "text": "(\"world\",*(char **)((int)g_ChapterMissionFiles[0] + iVar5),",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 294,
+      "match": "(char **)((int)g_ChapterMissionFiles",
+      "severity": "moderate",
+      "text": "(\"world\",*(char **)((int)g_ChapterMissionFiles[0] + iVar5),",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 317,
+      "match": "(char **)((int)g_ChapterMissionFiles",
+      "severity": "moderate",
+      "text": "(\"world\",*(char **)((int)g_ChapterMissionFiles[0] + iVar5),",
+      "type": "pointer_cast"
     },
     {
       "description": "Undefined global data reference",
-      "line": 162,
-      "match": "DAT_005b9450",
-      "severity": "mild",
-      "text": "(\"world\",*(char **)(&DAT_005b9450 + iVar5),\"rt\");",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 207,
-      "match": "DAT_005b9450",
-      "severity": "mild",
-      "text": "(\"world\",*(char **)(&DAT_005b9450 + iVar5),\"rt\");",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 259,
-      "match": "DAT_005b9450",
-      "severity": "mild",
-      "text": "(\"world\",*(char **)(&DAT_005b9450 + iVar5),\"rt\");",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 290,
-      "match": "DAT_005b9450",
-      "severity": "mild",
-      "text": "(\"world\",*(char **)(&DAT_005b9450 + iVar5),\"rt\");",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 312,
-      "match": "DAT_005b9450",
-      "severity": "mild",
-      "text": "(\"world\",*(char **)(&DAT_005b9450 + iVar5),\"rt\");",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 334,
-      "match": "DAT_005b9450",
-      "severity": "mild",
-      "text": "pcVar4 = *(char **)(&DAT_005b9450 + iVar3 * 0x34 + iVar6 * 4);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 348,
+      "line": 354,
       "match": "DAT_01c789c0",
       "severity": "mild",
       "text": "pcVar4 = &DAT_01c789c0;",
@@ -1070,15 +1033,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 350,
-      "match": "DAT_005b9554",
-      "severity": "mild",
-      "text": "_DAT_01c78ac0 = *(uint *)(&DAT_005b9554 + iVar3 * 4);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 365,
+      "line": 371,
       "match": "DAT_01c78598",
       "severity": "mild",
       "text": "iVar6 = _stricmp(&DAT_01c78598,local_144);",
@@ -1086,7 +1041,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 368,
+      "line": 374,
       "match": "DAT_01c78598",
       "severity": "mild",
       "text": "pcVar4 = &DAT_01c78598;",
@@ -1094,7 +1049,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 335,
+      "line": 341,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -1102,7 +1057,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 352,
+      "line": 358,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -1110,7 +1065,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 369,
+      "line": 375,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",

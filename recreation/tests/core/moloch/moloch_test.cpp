@@ -1,6 +1,7 @@
 #include "core/actor/demonactortype.h"
 #include "core/moloch/moloch.h"
 #include "tests/mocks/core/notportedcalls.h"
+#include "tests/mocks/core/testclasses.h"
 #include "tests/mocks/core/testheroarchive.h"
 
 #include <gtest/gtest.h>
@@ -24,7 +25,7 @@ TEST(CMoloch, IsConcrete) {
 }
 
 TEST(CMoloch, Constructors) {
-    static_assert(std::is_constructible_v<CMoloch>);
+    static_assert(std::is_constructible_v<CMoloch, CActor &>);
 }
 
 TEST(CMoloch, PublicInterface) {
@@ -44,12 +45,14 @@ TEST(CMoloch, ItsRecordIsAVersionOneHeroThatMissionsCanCreate) {
     EXPECT_EQ(CMoloch::kType.latest_version, 1);
     EXPECT_EQ(CMoloch::kType.name_hash, hashClassName("CMoloch"));
     ASSERT_NE(CMoloch::kType.factory_func, nullptr);
-    const std::unique_ptr<CDemonActor> actor = CMoloch::kType.factory_func();
+    CTestClasses classes;
+    const std::unique_ptr<CDemonActor> actor = CMoloch::kType.factory_func(classes.get());
     EXPECT_EQ(&actor->getActorType(), &CMoloch::kType);
 }
 
 TEST(CMoloch, MolochStartsHumanWithTheShippedConditions) {
-    const CMoloch hero;
+    CTestClasses classes;
+    const CMoloch hero(classes.get());
     EXPECT_EQ(hero.getHumanToDemonCondition(), "molochToDemon");
     EXPECT_EQ(hero.getDemonToHumanCondition(), "molochToHuman");
     EXPECT_TRUE(hero.isInHumanForm());
@@ -58,7 +61,8 @@ TEST(CMoloch, MolochStartsHumanWithTheShippedConditions) {
 }
 
 TEST(CMoloch, MolochIsReadWithItsFormAndMorph) {
-    CMoloch hero;
+    CTestClasses classes;
+    CMoloch hero(classes.get());
     CTestHeroArchive archive(hero, CMoloch::kType, 1,
                              "\"toDemon\" // humanToDemonCond\n\"toHuman\"\n0 // inHumanForm\n"
                              "1 // morphing\n0.75 // morphTimer\n");
@@ -73,15 +77,15 @@ TEST(CMoloch, MolochIsReadWithItsFormAndMorph) {
 }
 
 TEST(CMoloch, TheFunctionsNotPortedYetQuit) {
-    CMoloch hero;
+    CTestClasses classes;
+    CMoloch hero(classes.get());
     const NotPortedCalls calls = {
-        {"setup", [&] { hero.setup(); }},
         {"process", [&] { hero.process(0.0F); }},
         {"renderOpaque", [&] { static_cast<void>(hero.renderOpaque()); }},
         {"drawWeapon", [&] { hero.drawWeapon(0); }},
         {"isWeaponDrawn", [&] { static_cast<void>(hero.isWeaponDrawn()); }},
     };
-    EXPECT_EQ(calls.size(), 5U);
+    EXPECT_EQ(calls.size(), 4U);
     expectEachQuitsNotPorted("CMoloch", calls);
 }
 

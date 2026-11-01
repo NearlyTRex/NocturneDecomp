@@ -2,15 +2,15 @@
 GLOBALS GAP ANALYSIS REPORT
 ================================================================================
 
-Total globals analyzed:      19514
-  Named globals:             19503
+Total globals analyzed:      19513
+  Named globals:             19502
   DAT_ globals:              11
 Gaps found:                  2341
   With exact size bounds:    1307
   With estimated bounds:     1034
-Total gap bytes:             48,439,788
-  Exact gap bytes:           12,436,695
-Overlaps (size <= 0):        13337
+Total gap bytes:             48,439,791
+  Exact gap bytes:           12,436,698
+Overlaps (size <= 0):        13336
 
 --------------------------------------------------------------------------------
 GAP SIZE DISTRIBUTION
@@ -475,7 +475,7 @@ ALL EXACT GAPS (1307) - size bounds are known precisely
          220 bytes  at 0x006088b4  between CAVE_cave_006088b0             and SUB_00608990
          208 bytes  at 0x00670218  between g_ModelLastScaleInput+4        and g_CZombieDogClassVersion
          208 bytes  at 0x00680838  between g_MsnEditCameraStatusBuffer+4  and g_MsnEditLastSelectedPropertyN
-         203 bytes  at 0x0067b789  between PTR_s_train_msn_0067b784+1     and g_ChapterDisplayYears
+         203 bytes  at 0x0067b789  between g_ChapterMissionFiles[1][0]+1  and g_ChapterDisplayYears
          200 bytes  at 0x006813fc  between g_EnvMapTexture                and g_CZThumbPoolDestructorNode
          195 bytes  at 0x03f96a7d  between g_WeatherParticleHitGround+1   and UINT_03f96b40
          192 bytes  at 0x006793e0  between g_DefaultSfxHandleName+4       and g_DefaultCommandArg
@@ -571,10 +571,10 @@ ALL EXACT GAPS (1307) - size bounds are known precisely
           48 bytes  at 0x00665e80  between PTR_FUN_00665e7c               and g_IStreamTypeInfo
           48 bytes  at 0x00665ee0  between g_FStreamBase_IOSDestructor    and g_FStreamBaseTypeInfo
           48 bytes  at 0x0067a300  between g_CFilmProjectorClassVersion   and g_CFireEffectStakesDestructorN
+          48 bytes  at 0x0067b755  between g_ChapterMissionFiles[0][0]+1  and g_ChapterMissionFiles[1][0]+1
           48 bytes  at 0x02f46658  between g_Mp3AntiAliasCA[1]+4          and g_Mp3WindowTables
           47 bytes  at 0x005baf41  between caseD_3                        and switchdataD_005baf70
           45 bytes  at 0x00635460  between s_f_you_think_you_have_at_leas and s_anon_0063548d
-          45 bytes  at 0x0067b758  between PTR_s_gtown_msn_0062d684_0067b and PTR_s_train_msn_0067b784+1
           44 bytes  at 0x0060cd64  between SUB_0060cd60                   and SUB_0060cd90
           44 bytes  at 0x00660488  between FLOAT_00660484                 and g_CKeyActorVTable
           44 bytes  at 0x0066e7d4  between g_CChainClassVersion           and g_LineClippingDisabled
@@ -1490,7 +1490,7 @@ ALL EXACT GAPS (1307) - size bounds are known precisely
            1 bytes  at 0x0068572d  between g_ShiftJIS_TrailByteTable      and g_InitHandlers
 
 --------------------------------------------------------------------------------
-OVERLAPS (13337) - next global starts inside previous
+OVERLAPS (13336) - next global starts inside previous
 --------------------------------------------------------------------------------
   241 bytes overlap ~
     s_engine_2d_c_00613004                   TerminatedCString    at 0x00613004  size=256
@@ -40779,10 +40779,7 @@ OVERLAPS (13337) - next global starts inside previous
     s_e_corrupt)_0067b68c                    undefined4           at 0x0067b68c
   259 bytes overlap ~
     g_ChapterMissionFiles                    char*[5][13]         at 0x0067b750  size=260
-    PTR_s_hq_act1_msn_0067b750+1             undefined4           at 0x0067b751
-  1 bytes overlap
-    PTR_s_hq_act1_msn_0067b750+1             undefined4           at 0x0067b751  size=4
-    PTR_s_gtown_msn_0062d684_0067b754        undefined4           at 0x0067b754
+    g_ChapterMissionFiles[0][0]+1            undefined4           at 0x0067b751
   96 bytes overlap
     g_IpAddress                              char[100]            at 0x0067b868  size=100
     g_IpAddress+4                            undefined4           at 0x0067b86c

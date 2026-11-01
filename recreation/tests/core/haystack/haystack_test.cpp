@@ -1,6 +1,7 @@
 #include "core/actor/demonactortype.h"
 #include "core/haystack/haystack.h"
 #include "tests/mocks/core/notportedcalls.h"
+#include "tests/mocks/core/testclasses.h"
 #include "tests/mocks/core/testheroarchive.h"
 
 #include <gtest/gtest.h>
@@ -24,7 +25,7 @@ TEST(CHaystack, IsConcrete) {
 }
 
 TEST(CHaystack, Constructors) {
-    static_assert(std::is_constructible_v<CHaystack>);
+    static_assert(std::is_constructible_v<CHaystack, CActor &>);
 }
 
 TEST(CHaystack, PublicInterface) {
@@ -47,12 +48,14 @@ TEST(CHaystack, ItsRecordIsAVersionOneHeroThatMissionsCanCreate) {
     EXPECT_EQ(CHaystack::kType.latest_version, 1);
     EXPECT_EQ(CHaystack::kType.name_hash, hashClassName("CHaystack"));
     ASSERT_NE(CHaystack::kType.factory_func, nullptr);
-    const std::unique_ptr<CDemonActor> actor = CHaystack::kType.factory_func();
+    CTestClasses classes;
+    const std::unique_ptr<CDemonActor> actor = CHaystack::kType.factory_func(classes.get());
     EXPECT_EQ(&actor->getActorType(), &CHaystack::kType);
 }
 
 TEST(CHaystack, ItsFieldsAreAHerosFields) {
-    CHaystack hero;
+    CTestClasses classes;
+    CHaystack hero(classes.get());
     CTestHeroArchive archive(hero, CHaystack::kType, 1, "");
     hero.archive(archive.get());
     EXPECT_EQ(hero.getLocation().area_id, CTestHeroArchive::kArea);
@@ -60,16 +63,16 @@ TEST(CHaystack, ItsFieldsAreAHerosFields) {
 }
 
 TEST(CHaystack, TheFunctionsNotPortedYetQuit) {
-    CHaystack hero;
+    CTestClasses classes;
+    CHaystack hero(classes.get());
     const NotPortedCalls calls = {
-        {"setup", [&] { hero.setup(); }},
         {"process", [&] { hero.process(0.0F); }},
         {"renderOpaque", [&] { static_cast<void>(hero.renderOpaque()); }},
         {"processDamage", [&] { hero.processDamage(nullptr); }},
         {"drawWeapon", [&] { hero.drawWeapon(0); }},
         {"isWeaponDrawn", [&] { static_cast<void>(hero.isWeaponDrawn()); }},
     };
-    EXPECT_EQ(calls.size(), 6U);
+    EXPECT_EQ(calls.size(), 5U);
     expectEachQuitsNotPorted("CHaystack", calls);
 }
 

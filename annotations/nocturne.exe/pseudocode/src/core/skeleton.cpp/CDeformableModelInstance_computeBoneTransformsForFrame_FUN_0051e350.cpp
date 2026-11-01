@@ -74,10 +74,10 @@ void __cdecl core_skeleton_cpp_CDeformableModelInstance_computeBoneTransformsFor
     (output_bone_data->pose_data).root_position.z = fVar4 * fVar7 + fVar2 * local_60;
   }
   (output_bone_data->pose_data).root_position.x =
-       (this_ptr->scaled_model_dimensions).x * (output_bone_data->pose_data).root_position.x;
+       (this_ptr->root_offset_scale).x * (output_bone_data->pose_data).root_position.x;
   (output_bone_data->pose_data).root_position.y =
-       (this_ptr->scaled_model_dimensions).y * (output_bone_data->pose_data).root_position.y;
+       (this_ptr->root_offset_scale).y * (output_bone_data->pose_data).root_position.y;
   (output_bone_data->pose_data).root_position.z =
-       (this_ptr->scaled_model_dimensions).z * (output_bone_data->pose_data).root_position.z;
+       (this_ptr->root_offset_scale).z * (output_bone_data->pose_data).root_position.z;
   return;
 }

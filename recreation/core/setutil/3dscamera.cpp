@@ -1,9 +1,11 @@
 #include "core/setutil/3dscamera.h"
 
 #include "common/error/error.h"
+#include "common/math/extendedfloat.h"
 #include "common/text/scanformat.h"
 #include "common/text/textscanner.h"
 #include "core/dcamera/dcamera.h"
+#include "core/dcamera/demoncamera.h"
 #include "core/setutil/setfileversion.h"
 
 #include <algorithm>
@@ -105,12 +107,50 @@ void C3DSCamera::loadPVS(common::CTextScanner &scanner) {
     }
 }
 
+// The original also copied a flag no camera sets, and quit on a panning camera, which retail
+// can't load.
+// deferred: the console's notes on an ambient level below the set's least or above a quarter,
+//   with the console among the set's owners
+// nocedit 0x00585870
+void C3DSCamera::apply(CDemonCamera &camera) const {
+    camera.setPosition(position_);
+    camera.setRotationMatrix(rotation_matrix_);
+    camera.setFocalLength(projection_scale_);
+    camera.setCameraName(name_);
+    camera.setEffectIntensity(ambient_value_);
+}
+
+// Each side compared with the point moved by the radius at the x87's precision.
+// nocedit 0x00585970
+bool C3DSCamera::testSphereInFrustum(const common::CVector3f &world_position, float radius) const {
+    const common::CVector3f local =
+        rotation_matrix_.transformVectorTranspose({.x = world_position.x - position_.x,
+                                                   .y = world_position.y - position_.y,
+                                                   .z = world_position.z - position_.z});
+    const common::CExtendedFloat reach(radius);
+    const auto inside = [&reach](float point, float low, float high) {
+        const common::CExtendedFloat at(point);
+        return common::CExtendedFloat(low) <= at + reach &&
+               at - reach <= common::CExtendedFloat(high);
+    };
+    return inside(local.x, box_.min.x, box_.max.x) && inside(local.y, box_.min.y, box_.max.y) &&
+           inside(local.z, box_.min.z, box_.max.z);
+}
+
 const std::string &C3DSCamera::getName() const {
     return name_;
 }
 
 const common::CVector3f &C3DSCamera::getPosition() const {
     return position_;
+}
+
+int C3DSCamera::getVdirZone() const {
+    return vdir_zone_;
+}
+
+void C3DSCamera::setVdirZone(int vdir_zone) {
+    vdir_zone_ = vdir_zone;
 }
 
 const common::CVector3f &C3DSCamera::getOrientation() const {

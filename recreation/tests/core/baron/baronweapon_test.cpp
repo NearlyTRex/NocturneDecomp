@@ -2,6 +2,7 @@
 #include "core/actor/demonactortype.h"
 #include "core/baron/baronweapon.h"
 #include "tests/mocks/core/notportedcalls.h"
+#include "tests/mocks/core/testclasses.h"
 
 #include <gtest/gtest.h>
 
@@ -24,7 +25,7 @@ TEST(CBaronWeapon, IsConcrete) {
 }
 
 TEST(CBaronWeapon, Constructors) {
-    static_assert(std::is_constructible_v<CBaronWeapon>);
+    static_assert(std::is_constructible_v<CBaronWeapon, CActor &>);
 }
 
 TEST(CBaronWeapon, PublicInterface) {
@@ -45,12 +46,14 @@ TEST(CBaronWeapon, ItsRecordIsAVersion1WeaponThatMissionsCanCreate) {
     EXPECT_EQ(CBaronWeapon::kType.parent_type, &CWeapon::kType);
     EXPECT_EQ(CBaronWeapon::kType.latest_version, 1);
     ASSERT_NE(CBaronWeapon::kType.factory_func, nullptr);
-    const std::unique_ptr<CDemonActor> weapon = CBaronWeapon::kType.factory_func();
+    CTestClasses classes;
+    const std::unique_ptr<CDemonActor> weapon = CBaronWeapon::kType.factory_func(classes.get());
     EXPECT_EQ(&weapon->getActorType(), &CBaronWeapon::kType);
 }
 
 TEST(CBaronWeapon, TheFunctionsNotPortedYetQuit) {
-    CBaronWeapon weapon;
+    CTestClasses classes;
+    CBaronWeapon weapon{classes.get()};
     const NotPortedCalls calls = {
         {"setup", [&] { weapon.setup(); }},
         {"process", [&] { weapon.process(0.0F); }},

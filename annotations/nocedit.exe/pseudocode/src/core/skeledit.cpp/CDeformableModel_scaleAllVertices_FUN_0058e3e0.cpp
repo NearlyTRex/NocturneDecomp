@@ -39,14 +39,14 @@ void __cdecl core_skeledit_cpp_CDeformableModel_scaleAllVertices_FUN_0058e3e0(CD
       local_18 = local_18 + 1;
     } while (local_18 < this_ptr->num_lods);
   }
-  pCVar5 = this_ptr->vertex_pool;
+  pCVar5 = this_ptr->bone_origins;
   do {
     pCVar6 = pCVar5 + 1;
     pCVar5->y = pCVar5->y * scale;
     pCVar5->z = pCVar5->z * scale;
     pCVar5->x = pCVar5->x * scale;
     pCVar5 = pCVar6;
-  } while ((CBoundingBox3D *)pCVar6 != this_ptr->bbox_pool);
+  } while (pCVar6 != &this_ptr->bias_used);
   (this_ptr->model_scale).x = (this_ptr->model_scale).x * scale;
   (this_ptr->model_scale).y = (this_ptr->model_scale).y * scale;
   (this_ptr->model_scale).z = (this_ptr->model_scale).z * scale;

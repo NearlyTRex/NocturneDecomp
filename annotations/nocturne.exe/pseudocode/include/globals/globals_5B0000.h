@@ -257,6 +257,9 @@ extern int g_SpecialColor;
 extern int* g_CurrentScreenPtr;
 extern int* g_CurrentZBufferPtr;
 
+// int[5]
+extern int g_ChapterDisplayYears[5];
+
 // undefined1
 extern undefined1 DAT_005b9258;
 extern undefined1 DAT_005b9259;

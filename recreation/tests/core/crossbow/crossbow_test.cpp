@@ -21,7 +21,7 @@ TEST(CCrossbow, IsConcrete) {
 }
 
 TEST(CCrossbow, Constructors) {
-    static_assert(std::is_constructible_v<CCrossbow>);
+    static_assert(std::is_constructible_v<CCrossbow, CActor &>);
 }
 
 TEST(CCrossbow, PublicInterface) {

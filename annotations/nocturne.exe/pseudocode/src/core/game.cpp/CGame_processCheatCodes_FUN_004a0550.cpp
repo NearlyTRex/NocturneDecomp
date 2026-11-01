@@ -1781,8 +1781,8 @@ LAB_004a2165:
             if (iVar10 != -1) {
               pCStack_12c = pCStack_134;
               fStack_128 = fStack_138;
-              pCStack_134->rest_pose_data[iVar10] = pCStack_134->rest_pose_data[iVar10] * fStack_138
-              ;
+              pCStack_134->rest_bone_scales[iVar10] =
+                   pCStack_134->rest_bone_scales[iVar10] * fStack_138;
               iVar20 = 0;
               pCVar21 = pCVar18;
               iStack_124 = iVar10;
@@ -1803,8 +1803,8 @@ LAB_004a2165:
             if (iVar10 != -1) {
               pCStack_120 = pCStack_134;
               fStack_11c = fStack_138;
-              pCStack_134->rest_pose_data[iVar10] = pCStack_134->rest_pose_data[iVar10] * fStack_138
-              ;
+              pCStack_134->rest_bone_scales[iVar10] =
+                   pCStack_134->rest_bone_scales[iVar10] * fStack_138;
               iVar20 = 0;
               pCVar21 = pCStack_130;
               iStack_118 = iVar10;
@@ -1825,8 +1825,8 @@ LAB_004a2165:
             if (iVar10 != -1) {
               pCStack_114 = pCStack_134;
               fStack_110 = fStack_138;
-              pCStack_134->rest_pose_data[iVar10] = pCStack_134->rest_pose_data[iVar10] * fStack_138
-              ;
+              pCStack_134->rest_bone_scales[iVar10] =
+                   pCStack_134->rest_bone_scales[iVar10] * fStack_138;
               iVar20 = 0;
               pCVar21 = pCStack_130;
               iStack_10c = iVar10;

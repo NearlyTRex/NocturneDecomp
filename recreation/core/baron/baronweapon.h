@@ -12,7 +12,7 @@ class CBaronWeapon : public CWeapon {
 public:
     static const CDemonActorType kType;
 
-    CBaronWeapon();
+    explicit CBaronWeapon(CActor &classes);
     ~CBaronWeapon() override;
     CBaronWeapon(const CBaronWeapon &) = delete;
     CBaronWeapon &operator=(const CBaronWeapon &) = delete;
@@ -29,7 +29,7 @@ public:
     void renderAimBeam() override;
 
 private:
-    static std::unique_ptr<CDemonActor> create();
+    static std::unique_ptr<CDemonActor> create(CActor &classes);
 };
 
 } // namespace nocturne::core

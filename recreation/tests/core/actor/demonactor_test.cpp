@@ -1,21 +1,30 @@
 #include "common/error/fatalerror.h"
+#include "common/math/matrix3x3f.h"
+#include "common/math/vector3f.h"
 #include "common/random/watcomrandom.h"
 #include "common/text/textscanner.h"
 #include "core/actor/actor.h"
+#include "core/actor/actor_functions.h"
 #include "core/actor/actorarchive.h"
 #include "core/actor/demonactor.h"
 #include "core/actor/demonactortype.h"
+#include "core/box/boundingbox3d.h"
 #include "core/game/game.h"
+#include "tests/mocks/core/gameparts.h"
 #include "tests/mocks/core/mockactorlookup.h"
+#include "tests/mocks/core/mockdeformablemodels.h"
+#include "tests/mocks/core/mockkeyframedmodels.h"
 #include "tests/mocks/core/testactor.h"
 #include "tests/mocks/engine/mockgameclock.h"
 
 #include <gmock/gmock.h>
 #include <gtest/gtest.h>
 
+#include <cmath>
 #include <cstdint>
 #include <cstdio>
 #include <functional>
+#include <numbers>
 #include <optional>
 #include <string>
 #include <string_view>
@@ -70,8 +79,8 @@ TEST(CDemonActor, PublicInterface) {
     static_assert(std::is_same_v<decltype(&CDemonActor::getBlockVirtualDirectorFlag),
                                  int (CDemonActor::*)()>);
     static_assert(std::is_same_v<decltype(&CDemonActor::allowBulletHoles), int (CDemonActor::*)()>);
-    static_assert(
-        std::is_same_v<decltype(&CDemonActor::updateCollisionData), void (CDemonActor::*)()>);
+    static_assert(std::is_same_v<decltype(&CDemonActor::updateCollisionData),
+                                 void (CDemonActor::*)(CDemonSet &)>);
     static_assert(std::is_same_v<decltype(&CDemonActor::getTargetPoints),
                                  int (CDemonActor::*)(common::CVector3f *)>);
     static_assert(
@@ -194,12 +203,25 @@ TEST(CDemonActor, AnActorIsNotCreatedUntilItsEventComes) {
     EXPECT_EQ(actor.getCreateEvent(), "none");
 }
 
+TEST(CDemonActor, AnActorIsDrawnAndCollidesUntilToldOtherwise) {
+    CTestActor actor(kTestLeafType);
+    EXPECT_TRUE(actor.isRenderable());
+    EXPECT_FALSE(actor.isCollisionDisabled());
+    actor.setRenderable(false);
+    actor.setCollisionDisabled(true);
+    EXPECT_FALSE(actor.isRenderable());
+    EXPECT_TRUE(actor.isCollisionDisabled());
+}
+
 class CDemonActorLoadTest : public ::testing::Test {
 protected:
     ::testing::NiceMock<engine::MockGameClock> clock_;
-    CGame game_{clock_};
+    CGameParts game_parts_{clock_};
+    CGame &game_ = game_parts_.getGame();
     common::CWatcomRandom crt_;
-    const CActor classes_{game_, crt_};
+    ::testing::NiceMock<MockDeformableModels> models_;
+    ::testing::NiceMock<MockKeyFramedModels> keyframed_models_;
+    CActor classes_{game_, crt_, models_, keyframed_models_};
     ::testing::NiceMock<MockActorLookup> actors_;
     const SActorArchiveOwners owners_{
         .actor_classes = classes_, .actors = actors_, .crt_random = crt_};
@@ -259,16 +281,51 @@ TEST_F(CDemonActorLoadTest, AnEndTagForAnotherClassOrActorIsFatal) {
     }
 }
 
+TEST(CDemonActor, SettingUpBringsItsAnglesToWithinPi) {
+    CTestActor actor(kTestLeafType);
+    actor.setOrientation({.x = 4.0F, .y = -1.0F, .z = -7.0F});
+    actor.CDemonActor::setup();
+    EXPECT_EQ(actor.getOrientation().x, normalizeAngleToPi(4.0F));
+    EXPECT_EQ(actor.getOrientation().y, -1.0F);
+    EXPECT_EQ(actor.getOrientation().z, normalizeAngleToPi(-7.0F));
+    EXPECT_LT(actor.getOrientation().x, 0.0F);
+}
+
+// Turned a quarter about z, x becomes y; a turn after the update isn't taken until the next.
+TEST(CDemonActor, ALocalPointIsTurnedAsLastUpdatedThenMovedToTheActor) {
+    CTestActor actor(kTestLeafType);
+    actor.setLocation({.position = {.x = 1.0F, .y = 2.0F, .z = 3.0F}});
+    actor.setOrientation({.z = std::numbers::pi_v<float> / 2.0F});
+    actor.updateOrientationMatrix();
+    actor.setOrientation({});
+    common::CVector3f local{.x = 1.0F};
+    common::CVector3f world;
+    EXPECT_EQ(actor.localToWorldPoint(&world, &local), &world);
+    common::CMatrix3x3f turn;
+    turn.buildRotationMatrix({.z = std::numbers::pi_v<float> / 2.0F});
+    const common::CVector3f turned = turn.transformVector(local);
+    EXPECT_EQ(world.x, turned.x + 1.0F);
+    EXPECT_EQ(world.y, turned.y + 2.0F);
+    EXPECT_EQ(world.z, turned.z + 3.0F);
+    EXPECT_NEAR(std::abs(turned.y), 1.0F, 1e-6F);
+}
+
+TEST(CDemonActor, AnActorWithNoShapeIsAnEightUnitBoxOnItsFeet) {
+    CTestActor actor(kTestLeafType);
+    CBoundingBox3D box;
+    EXPECT_EQ(actor.getBoundingBox(&box), &box);
+    EXPECT_THAT(box.min, ::testing::FieldsAre(-4.0F, 0.0F, -4.0F));
+    EXPECT_THAT(box.max, ::testing::FieldsAre(4.0F, 8.0F, 4.0F));
+}
+
 // Each quits, naming itself, until its function is ported.
 TEST(CDemonActor, TheFunctionsNotPortedYetQuit) {
     CTestActor actor(kTestLeafType);
     const std::vector<std::pair<std::string_view, std::function<void()>>> calls = {
-        {"setup", [&] { actor.CDemonActor::setup(); }},
         {"process", [&] { actor.process(0.0F); }},
         {"renderOpaque", [&] { static_cast<void>(actor.renderOpaque()); }},
         {"renderTransparent", [&] { static_cast<void>(actor.renderTransparent()); }},
         {"renderBackground", [&] { actor.renderBackground(0); }},
-        {"getBoundingBox", [&] { static_cast<void>(actor.getBoundingBox(nullptr)); }},
         {"processFootstep", [&] { static_cast<void>(actor.processFootstep(0.0F)); }},
         {"processFootstepAtOffset",
          [&] { static_cast<void>(actor.processFootstepAtOffset(nullptr, 0.0F)); }},
@@ -286,7 +343,6 @@ TEST(CDemonActor, TheFunctionsNotPortedYetQuit) {
         {"getBlockVirtualDirectorFlag",
          [&] { static_cast<void>(actor.getBlockVirtualDirectorFlag()); }},
         {"allowBulletHoles", [&] { static_cast<void>(actor.allowBulletHoles()); }},
-        {"updateCollisionData", [&] { actor.CDemonActor::updateCollisionData(); }},
         {"getTargetPoints", [&] { static_cast<void>(actor.getTargetPoints(nullptr)); }},
         {"renderTargetPoints", [&] { actor.renderTargetPoints(); }},
         {"canLookAt", [&] { static_cast<void>(actor.canLookAt()); }},
@@ -325,7 +381,7 @@ TEST(CDemonActor, TheFunctionsNotPortedYetQuit) {
         {"getPathMap", [&] { static_cast<void>(actor.getPathMap()); }},
         {"calculateChecksum", [&] { actor.calculateChecksum(nullptr); }},
     };
-    EXPECT_EQ(calls.size(), 49U);
+    EXPECT_EQ(calls.size(), 46U);
     for (const auto &[name, call] : calls) {
         EXPECT_THAT(call, ThrowsMessage<common::CFatalError>(
                               StrEq("CDemonActor::" + std::string(name) + " is not ported yet")));

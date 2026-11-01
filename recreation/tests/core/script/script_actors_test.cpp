@@ -1,8 +1,12 @@
+#include "core/platfrm/platform.h"
 #include "tests/mocks/core/scriptfixture.h"
+#include "tests/mocks/core/testclasses.h"
 
 #include <gtest/gtest.h>
 
+#include <memory>
 #include <string>
+#include <utility>
 
 namespace nocturne::core {
 namespace {
@@ -73,6 +77,22 @@ TEST_F(CScriptActorsTest, AttachActorToPlatformLooksThePlatformUpFirst) {
                       "Error parsing attachActorToPlatform command parms");
 }
 
+// Either side missing through a variable attaches nothing.
+TEST_F(CScriptActorsTest, RunningAttachActorToPlatformAttachesTheActor) {
+    CTestClasses classes;
+    auto owned = std::make_unique<CPlatform>(classes.get());
+    owned->setActorName("Elevator");
+    const CPlatform &elevator = *owned;
+    mission_.addActorToList(std::move(owned));
+    givenFile("world\\m1.scr", ":initSection\nattachActorToPlatform(@who, Elevator)\n"
+                               "attachActorToPlatform(Door1, @where)\n"
+                               "attachActorToPlatform(Door1, Elevator)\n:initSectionEnd\n");
+    ASSERT_TRUE(script_.loadScript("m1.scr", true));
+    script_.executeInitSection();
+    ASSERT_EQ(elevator.getAttachedActors().size(), 1U);
+    EXPECT_EQ(elevator.getAttachedActors()[0]->getActorName(), "Door1");
+}
+
 TEST_F(CScriptActorsTest, CancelWalkToTakesACharacterOrAll) {
     expectPasses("cancelWalkTo(all)\ncancelWalkTo(ALL)\ncancelWalkTo(Mob)\n");
     expectSyntaxError("cancelWalkTo(Door1)\n", 1, wrongClass("Door1", "CTestDoor", "CCharacter"));
@@ -101,8 +121,8 @@ TEST_F(CScriptActorsTest, PressAndReleaseButtonTakeAHeroAndAButton) {
 // A character missing through a variable passes before its model is needed.
 TEST_F(CScriptActorsTest, GestureAndDismemberNeedTheModelWhichIsNotPortedYet) {
     expectPasses("gesture($, wave)\ndismember($, arm)\n");
-    expectQuit("gesture(Mob, wave)\n", "CMotionList::findMotionIndex is not ported yet");
-    expectQuit("dismember( Mob , arm leg)\n", "CDeformableModel::findPartByName is not ported yet");
+    expectQuit("gesture(Mob, wave)\n", "CScript::step checking gesture is not ported yet");
+    expectQuit("dismember( Mob , arm leg)\n", "core::parseBodyPartMask is not ported yet");
     expectSyntaxError("gesture(Door1, wave)\n", 1, wrongClass("Door1", "CTestDoor", "CCharacter"));
     expectSyntaxError("dismember(Door1, arm)\n", 1, wrongClass("Door1", "CTestDoor", "CCharacter"));
     expectSyntaxError("gesture(Mob)\n", 1, "Error parsing gesture command parms");

@@ -15,10 +15,6 @@ namespace {
 
 } // namespace
 
-void CBackgroundActor::setup() {
-    notPorted("setup");
-}
-
 int CBackgroundActor::renderOpaque() {
     notPorted("renderOpaque");
 }

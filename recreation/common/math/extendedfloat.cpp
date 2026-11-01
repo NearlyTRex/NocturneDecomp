@@ -2,6 +2,8 @@
 
 #include <algorithm>
 #include <bit>
+#include <cstdint>
+#include <limits>
 
 namespace nocturne::common {
 namespace {
@@ -15,6 +17,14 @@ constexpr int kFloatMantissaBits = 24;
 constexpr int kFloatMinExponent = -126;
 constexpr int kFloatBias = 127;
 constexpr std::uint32_t kFloatExponentLimit = 255;
+constexpr std::uint64_t kDoubleSign = std::uint64_t{1} << 63U;
+constexpr std::uint64_t kDoubleInfinity = 0x7ff0000000000000U;
+constexpr std::uint64_t kDoubleQuietNaN = 0x7ff8000000000000U;
+constexpr std::uint64_t kDoubleFraction = 0x000fffffffffffffU;
+constexpr int kDoubleMantissaBits = 53;
+constexpr int kDoubleMinExponent = -1022;
+constexpr int kDoubleExponentBias = 1023;
+constexpr std::uint64_t kDoubleExponentLimit = 2047;
 
 // A 128-bit value, hi above lo.
 struct SWide {
@@ -92,7 +102,7 @@ CExtendedFloat CExtendedFloat::indefinite() {
 
 const CExtendedFloat *CExtendedFloat::findNaN(const CExtendedFloat &other) const {
     if (kind_ == EKind::NaN) {
-        return this;
+        return other.kind_ == EKind::NaN && negative_ ? &other : this;
     }
     return other.kind_ == EKind::NaN ? &other : nullptr;
 }
@@ -179,6 +189,52 @@ CExtendedFloat CExtendedFloat::operator+(const CExtendedFloat &other) const {
     return compareMagnitude(other) < 0 ? other.addFinite(*this) : addFinite(other);
 }
 
+CExtendedFloat CExtendedFloat::operator-(const CExtendedFloat &other) const {
+    if (const CExtendedFloat *nan = findNaN(other)) {
+        return *nan;
+    }
+    CExtendedFloat negated = other;
+    negated.negative_ = !negated.negative_;
+    return *this + negated;
+}
+
+// A finite value over zero is infinite, as the x87 leaves it with the division masked.
+CExtendedFloat CExtendedFloat::operator/(const CExtendedFloat &other) const {
+    if (const CExtendedFloat *nan = findNaN(other)) {
+        return *nan;
+    }
+    const bool negative = negative_ != other.negative_;
+    const bool infinite = kind_ == EKind::Infinite;
+    const bool other_infinite = other.kind_ == EKind::Infinite;
+    if ((infinite && other_infinite) || (isZero() && other.isZero())) {
+        return indefinite();
+    }
+    if (infinite || other.isZero()) {
+        return {EKind::Infinite, negative, 0, 0};
+    }
+    if (isZero() || other_infinite) {
+        return {EKind::Finite, negative, 0, 0};
+    }
+    // Long division to 66 quotient bits, then one more for whether anything was left over.
+    constexpr int kQuotientBits = 66;
+    std::uint64_t remainder = mantissa_;
+    bool carry = false;
+    SWide quotient;
+    for (int bit = 0; bit < kQuotientBits; ++bit) {
+        quotient = {.hi = (quotient.hi << 1U) | (quotient.lo >> 63U), .lo = quotient.lo << 1U};
+        if (carry || remainder >= other.mantissa_) {
+            remainder -= other.mantissa_;
+            quotient.lo |= 1U;
+        }
+        carry = (remainder & kTopBit) != 0;
+        remainder <<= 1U;
+    }
+    const bool inexact = carry || remainder != 0;
+    quotient = {.hi = (quotient.hi << 1U) | (quotient.lo >> 63U),
+                .lo = (quotient.lo << 1U) | static_cast<std::uint64_t>(inexact)};
+    return round(negative, quotient.hi, quotient.lo, scale_ - other.scale_ - kQuotientBits);
+}
+
 // Both are finite and not zero, this the larger. Each is moved down a bit first so the sum
 // can't carry out of 128 bits.
 CExtendedFloat CExtendedFloat::addFinite(const CExtendedFloat &other) const {
@@ -242,6 +298,54 @@ float CExtendedFloat::toFloat() const {
         return std::bit_cast<float>(sign | kFloatInfinity);
     }
     return std::bit_cast<float>(sign | (biased << 23U) | (kept & 0x7fffffU));
+}
+
+double CExtendedFloat::toDouble() const {
+    const std::uint64_t sign = negative_ ? kDoubleSign : 0U;
+    if (kind_ == EKind::NaN) {
+        return std::bit_cast<double>(sign | kDoubleQuietNaN);
+    }
+    if (kind_ == EKind::Infinite) {
+        return std::bit_cast<double>(sign | kDoubleInfinity);
+    }
+    if (isZero()) {
+        return std::bit_cast<double>(sign);
+    }
+    const int exponent = scale_ + 63;
+    if (exponent < kDoubleMinExponent) {
+        const std::uint64_t kept =
+            roundBelow(mantissa_, 64 - kDoubleMantissaBits + (kDoubleMinExponent - exponent));
+        return std::bit_cast<double>(sign | kept);
+    }
+    std::uint64_t kept = roundBelow(mantissa_, 64 - kDoubleMantissaBits);
+    const int biased_exponent = exponent + kDoubleExponentBias;
+    auto biased = static_cast<std::uint64_t>(biased_exponent);
+    if (kept >> kDoubleMantissaBits != 0) {
+        kept >>= 1U;
+        ++biased;
+    }
+    if (biased >= kDoubleExponentLimit) {
+        return std::bit_cast<double>(sign | kDoubleInfinity);
+    }
+    return std::bit_cast<double>(sign | (biased << 52U) | (kept & kDoubleFraction));
+}
+
+std::int32_t CExtendedFloat::truncateToInt() const {
+    constexpr std::int32_t kIndefinite = std::numeric_limits<std::int32_t>::min();
+    if (kind_ != EKind::Finite) {
+        return kIndefinite;
+    }
+    // The value is under 2^64 here, so its whole part fits a uint64.
+    if (scale_ >= 0) {
+        return isZero() ? 0 : kIndefinite;
+    }
+    const std::uint64_t whole = scale_ <= -64 ? 0 : mantissa_ >> static_cast<unsigned>(-scale_);
+    const std::uint64_t limit = negative_ ? std::uint64_t{1} << 31U : (std::uint64_t{1} << 31U) - 1;
+    if (whole > limit) {
+        return kIndefinite;
+    }
+    const auto magnitude = static_cast<std::int64_t>(whole);
+    return static_cast<std::int32_t>(negative_ ? -magnitude : magnitude);
 }
 
 } // namespace nocturne::common

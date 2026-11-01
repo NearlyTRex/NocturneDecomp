@@ -16,7 +16,8 @@ TEST(CWater, Constructors) {
 }
 
 TEST(CWater, PublicInterface) {
-    static_assert(std::is_same_v<decltype(&CWater::captureTextures), void (CWater::*)()>);
+    static_assert(std::is_same_v<decltype(&CWater::captureTextures),
+                                 void (CWater::*)(engine::CDemonRenderer &)>);
     static_assert(std::is_same_v<decltype(&CWater::calculateVisibleTiles), void (CWater::*)()>);
     static_assert(std::is_same_v<decltype(&CWater::process), void (CWater::*)()>);
     static_assert(std::is_same_v<decltype(&CWater::render), void (CWater::*)(int)>);

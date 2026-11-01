@@ -30,7 +30,7 @@ void __cdecl core_skeledit_cpp_CDeformableModel_calcRootOffsetScale_FUN_0058e690
   CVector3i *pCVar1;
   
   local_14 = core_skeleton_cpp_CDeformableModel_getSkeletonPtr_FUN_0059a810(this_ptr);
-  if (local_14->bone_scales[0].x < (float)-9999) {
+  if (local_14->reference_bone_origins[0].x < (float)-9999) {
     g_CurrentFilename = "..\\core\\skeledit.cpp";
     g_CurrentLineNumber = 2552;
     core_main_c_displayErrorAndQuit_FUN_00506f10
@@ -50,8 +50,8 @@ void __cdecl core_skeledit_cpp_CDeformableModel_calcRootOffsetScale_FUN_0058e690
   core_skeleton_cpp_CDeformableModelInstance_initializeFromModel_FUN_005a0480(this_ptr_01,this_ptr);
   iVar5 = 0;
   if (0 < local_14->bone_count) {
-    pCVar8 = local_14->bone_scales;
-    pCVar2 = this_ptr_01->transformed_vertices;
+    pCVar8 = local_14->reference_bone_origins;
+    pCVar2 = this_ptr_01->bone_origins;
     do {
       if (pCVar2 != pCVar8) {
         *pCVar2 = *pCVar8;
@@ -89,15 +89,15 @@ void __cdecl core_skeledit_cpp_CDeformableModel_calcRootOffsetScale_FUN_0058e690
   local_20 = 0x3f800000;
   local_1c = 0x3f800000;
   local_18 = 0x3f800000;
-  if (&this_ptr_01->scaled_model_dimensions != (CVector3f *)&local_20) {
-    (this_ptr_01->scaled_model_dimensions).y = 1.0;
-    (this_ptr_01->scaled_model_dimensions).z = 1.0;
-    (this_ptr_01->scaled_model_dimensions).x = 1.0;
+  if (&this_ptr_01->root_offset_scale != (CVector3f *)&local_20) {
+    (this_ptr_01->root_offset_scale).y = 1.0;
+    (this_ptr_01->root_offset_scale).z = 1.0;
+    (this_ptr_01->root_offset_scale).x = 1.0;
   }
   iVar10 = 0;
   if (0 < local_14->bone_count) {
-    pCVar8 = this_ptr_01->transformed_vertices;
-    pCVar4 = this_ptr->vertex_pool;
+    pCVar8 = this_ptr_01->bone_origins;
+    pCVar4 = this_ptr->bone_origins;
     do {
       if (pCVar8 != pCVar4) {
         *pCVar8 = *pCVar4;

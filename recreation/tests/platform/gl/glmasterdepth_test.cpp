@@ -1,5 +1,6 @@
 #include "platform/gl/glmasterdepth.h"
 #include "tests/mocks/platform/glrecorder.h"
+#include "tests/mocks/platform/mocklog.h"
 
 #include <gmock/gmock.h>
 #include <gtest/gtest.h>
@@ -24,7 +25,8 @@ std::vector<SGlCall> lastCalls(const CGlRecorder &gl, std::size_t count) {
 
 TEST(CGlMasterDepth, OnlySlotsZeroToSevenExist) {
     const CGlRecorder gl;
-    CGlMasterDepth depth(gl.getApi());
+    CNullLog log;
+    CGlMasterDepth depth(gl.getApi(), log);
     EXPECT_FALSE(depth.save(-1, kScene, 640, 480));
     EXPECT_FALSE(depth.save(CGlMasterDepth::kSlots, kScene, 640, 480));
     EXPECT_FALSE(depth.restore(-1, kScene, {.right = 1, .bottom = 1}, 480));
@@ -34,7 +36,8 @@ TEST(CGlMasterDepth, OnlySlotsZeroToSevenExist) {
 
 TEST(CGlMasterDepth, AFirstSaveBuildsADepthOnlySlotAndCopiesTheWholeScene) {
     const CGlRecorder gl;
-    CGlMasterDepth depth(gl.getApi());
+    CNullLog log;
+    CGlMasterDepth depth(gl.getApi(), log);
     EXPECT_TRUE(depth.save(3, kScene, 640, 480));
     EXPECT_THAT(
         gl.getCalls(),
@@ -59,7 +62,8 @@ TEST(CGlMasterDepth, AFirstSaveBuildsADepthOnlySlotAndCopiesTheWholeScene) {
 
 TEST(CGlMasterDepth, SavingAgainAtTheSameSizeReusesTheSlot) {
     CGlRecorder gl;
-    CGlMasterDepth depth(gl.getApi());
+    CNullLog log;
+    CGlMasterDepth depth(gl.getApi(), log);
     ASSERT_TRUE(depth.save(0, kScene, 640, 480));
     gl.clear();
     EXPECT_TRUE(depth.save(0, kScene, 640, 480));
@@ -70,7 +74,8 @@ TEST(CGlMasterDepth, SavingAgainAtTheSameSizeReusesTheSlot) {
 TEST(CGlMasterDepth, SavingAtANewSizeRebuildsTheSlot) {
     for (const auto &[width, height] : {std::pair{800, 480}, std::pair{640, 600}}) {
         CGlRecorder gl;
-        CGlMasterDepth depth(gl.getApi());
+        CNullLog log;
+        CGlMasterDepth depth(gl.getApi(), log);
         ASSERT_TRUE(depth.save(0, kScene, 640, 480));
         gl.clear();
         EXPECT_TRUE(depth.save(0, kScene, width, height));
@@ -86,7 +91,10 @@ TEST(CGlMasterDepth, SavingAtANewSizeRebuildsTheSlot) {
 TEST(CGlMasterDepth, AnIncompleteSlotIsDroppedAndTheSceneStaysBound) {
     CGlRecorder gl;
     gl.framebuffer_status = GL_FRAMEBUFFER_INCOMPLETE_ATTACHMENT;
-    CGlMasterDepth depth(gl.getApi());
+    ::testing::StrictMock<MockLog> log;
+    CGlMasterDepth depth(gl.getApi(), log);
+    EXPECT_CALL(log, write(ELogSubsystem::Render,
+                           ::testing::EndsWith("] master depth slot 0 incomplete at 640x480")));
     EXPECT_FALSE(depth.save(0, kScene, 640, 480));
     EXPECT_THAT(lastCalls(gl, 4), ElementsAre(glCall("CheckFramebufferStatus", GL_FRAMEBUFFER),
                                               glCall("BindFramebuffer", GL_FRAMEBUFFER, kScene),
@@ -99,14 +107,16 @@ TEST(CGlMasterDepth, AnIncompleteSlotIsDroppedAndTheSceneStaysBound) {
 
 TEST(CGlMasterDepth, AnUnsavedSlotHasNothingToRestore) {
     const CGlRecorder gl;
-    CGlMasterDepth depth(gl.getApi());
+    CNullLog log;
+    CGlMasterDepth depth(gl.getApi(), log);
     EXPECT_FALSE(depth.restore(2, kScene, {.right = 10, .bottom = 10}, 480));
     EXPECT_TRUE(gl.getCalls().empty());
 }
 
 TEST(CGlMasterDepth, RestoreCopiesTheRectangleTurnedBottomUp) {
     CGlRecorder gl;
-    CGlMasterDepth depth(gl.getApi());
+    CNullLog log;
+    CGlMasterDepth depth(gl.getApi(), log);
     ASSERT_TRUE(depth.save(1, kScene, 640, 480));
     gl.clear();
     EXPECT_TRUE(
@@ -121,7 +131,8 @@ TEST(CGlMasterDepth, RestoreCopiesTheRectangleTurnedBottomUp) {
 
 TEST(CGlMasterDepth, AnEmptyRectangleSucceedsWithoutACopy) {
     CGlRecorder gl;
-    CGlMasterDepth depth(gl.getApi());
+    CNullLog log;
+    CGlMasterDepth depth(gl.getApi(), log);
     ASSERT_TRUE(depth.save(1, kScene, 640, 480));
     gl.clear();
     EXPECT_TRUE(depth.restore(1, kScene, {.left = 10, .top = 0, .right = 10, .bottom = 50}, 480));
@@ -131,7 +142,8 @@ TEST(CGlMasterDepth, AnEmptyRectangleSucceedsWithoutACopy) {
 
 TEST(CGlMasterDepth, DestroyingDeletesEverySlot) {
     CGlRecorder gl;
-    std::optional<CGlMasterDepth> depth(std::in_place, gl.getApi());
+    CNullLog log;
+    std::optional<CGlMasterDepth> depth(std::in_place, gl.getApi(), log);
     ASSERT_TRUE(depth->save(0, kScene, 4, 4));
     gl.clear();
     depth.reset();

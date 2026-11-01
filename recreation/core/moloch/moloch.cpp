@@ -1,10 +1,13 @@
 #include "core/moloch/moloch.h"
 
+#include "core/actor/actor.h"
 #include "core/actor/actorarchive.h"
 #include "core/actor/demonactortype.h"
+#include "core/skeleton/deformablemodelinstance.h"
 
 #include <memory>
 #include <string>
+#include <string_view>
 
 namespace nocturne::core {
 
@@ -12,6 +15,8 @@ namespace {
 
 // Of the class's fields, as save files write them.
 constexpr int kVersion = 1;
+constexpr std::string_view kHumanModel = "moloch_h.dfm";
+constexpr std::string_view kDemonModel = "moloch_d.dfm";
 
 } // namespace
 
@@ -19,7 +24,6 @@ constexpr int kVersion = 1;
 constinit const CDemonActorType CMoloch::kType =
     makeActorType("CMoloch", &CHero::kType, &CMoloch::create, kVersion);
 
-// deferred: loading the human model moloch_h.dfm, with CDeformableModelInstance::init
 // deferred: the morph, with the steps that read it
 // deferred: a processDamage override for a player's Moloch, which the original lacks so nothing
 //   hurts it: damage down to a floor of 1 hit point, none while invincible or in god mode, and
@@ -37,7 +41,24 @@ constinit const CDemonActorType CMoloch::kType =
 //   never reaches (the decomp's hero_interact.h nocturne_hero_fire_interact), with
 //   CMoloch::process
 // nocedit 0x00528b30
-CMoloch::CMoloch() = default;
+CMoloch::CMoloch(CActor &classes) : CHero(classes), other_form_model_(classes.getModels()) {
+    getModel().init(kHumanModel);
+}
+
+// Each form's model is found: the one he is in as his own, the other to morph into.
+// deferred: the morph between the two, ready to draw, with CMoloch::renderOpaque
+// nocedit 0x00528c70
+void CMoloch::setup() {
+    getModel().init(in_human_form_ ? kHumanModel : kDemonModel);
+    other_form_model_.init(in_human_form_ ? kDemonModel : kHumanModel);
+    getModel().preCache();
+    other_form_model_.preCache();
+    CHero::setup();
+}
+
+CDeformableModelInstance &CMoloch::getOtherFormModel() {
+    return other_form_model_;
+}
 
 // nocedit 0x00528bf0
 CMoloch::~CMoloch() = default;
@@ -78,8 +99,8 @@ float CMoloch::getMorphTimer() const {
 }
 
 // nocedit 0x00528af0
-std::unique_ptr<CDemonActor> CMoloch::create() {
-    return std::make_unique<CMoloch>();
+std::unique_ptr<CDemonActor> CMoloch::create(CActor &classes) {
+    return std::make_unique<CMoloch>(classes);
 }
 
 } // namespace nocturne::core

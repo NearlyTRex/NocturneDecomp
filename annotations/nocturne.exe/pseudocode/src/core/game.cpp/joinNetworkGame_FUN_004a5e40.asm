@@ -7,7 +7,7 @@
 ; Referenced Globals:
 ;   TerminatedCString s_Enter_Server_IP_00584442
 ;   CEditorTools* g_CEditorTools_PTR_005b6d50 = 01bcd074
-;   TerminatedCString s_s_10_0_0_105_005b9568
+;   char[100] g_IpAddress
 ;   CDemonMission* g_CDemonMission_PTR_005baf90 = 01cc9450
 ;   CNetGame* g_CNetGame_PTR_005bdee0 = 01cea280
 ;   undefined4 DAT_01c78598
@@ -37,7 +37,7 @@ section .text
     LEA EDI,[ESP + 0xc]                 ; 004a5e54
     PUSH 0x584442                       ; 004a5e58 | = "Enter Server IP"
     MOV EDX,dword ptr [0x005b6d50]      ; 004a5e5d | g_CEditorTools_PTR_005b6d50
-    MOV ESI,0x5b9568                    ; 004a5e63 | = "10.0.0.105"
+    MOV ESI,0x5b9568                    ; 004a5e63 | g_IpAddress
     PUSH EDX                            ; 004a5e68
     MOVSD.REP ES:EDI,ESI                ; 004a5e69
     CALL shape_edittool.cpp_CEditorTools_showTextInputDialog_FUN_00471600 ; 004a5e6b

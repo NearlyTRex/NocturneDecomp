@@ -452,7 +452,7 @@ section .text
         ;   XREF to: 004e21b2 (CONDITIONAL_JUMP)  ; LAB_004e21b2
     PUSH 0x62ce4b                       ; 004e2177 | = "rt"
         ;   Label: LAB_004e2177
-    MOV EDX,dword ptr [ESI + 0x67b750]  ; 004e217c | PTR_s_hq_act1_msn_0067b750+1 | PTR_s_train_msn_0067b784+1
+    MOV EDX,dword ptr [ESI + 0x67b750]  ; 004e217c | g_ChapterMissionFiles[0][0]+1 | g_ChapterMissionFiles[1][0]+1
     PUSH EDX                            ; 004e2182
     PUSH 0x62ce4e                       ; 004e2183 | = "world"
     CALL engine_dosio.cpp_getFile_FUN_00481a50 ; 004e2188
@@ -590,7 +590,7 @@ section .text
     JGE 0x004e23a6                      ; 004e22f7
         ;   XREF to: 004e23a6 (CONDITIONAL_JUMP)  ; LAB_004e23a6
     PUSH 0x62cc71                       ; 004e22fd | = "rt"
-    MOV EDX,dword ptr [ESI + 0x67b750]  ; 004e2302 | g_ChapterMissionFiles | PTR_s_gtown_msn_0062d684_0067b754
+    MOV EDX,dword ptr [ESI + 0x67b750]  ; 004e2302 | g_ChapterMissionFiles | g_ChapterMissionFiles[0][1]
     PUSH EDX                            ; 004e2308
     PUSH 0x62cc74                       ; 004e2309 | = "world"
     CALL engine_dosio.cpp_getFile_FUN_00481a50 ; 004e230e
@@ -748,7 +748,7 @@ section .text
     JGE 0x004e24e6                      ; 004e2487
         ;   XREF to: 004e24e6 (CONDITIONAL_JUMP)  ; LAB_004e24e6
     PUSH 0x62cc71                       ; 004e2489 | = "rt"
-    MOV EAX,dword ptr [ESI + 0x67b750]  ; 004e248e | g_ChapterMissionFiles | PTR_s_gtown_msn_0062d684_0067b754
+    MOV EAX,dword ptr [ESI + 0x67b750]  ; 004e248e | g_ChapterMissionFiles | g_ChapterMissionFiles[0][1]
     PUSH EAX                            ; 004e2494
     PUSH 0x62cc74                       ; 004e2495 | = "world"
     CALL engine_dosio.cpp_getFile_FUN_00481a50 ; 004e249a
@@ -926,7 +926,7 @@ section .text
     JGE 0x004e2688                      ; 004e2646
         ;   XREF to: 004e2688 (CONDITIONAL_JUMP)  ; LAB_004e2688
     PUSH 0x62cc71                       ; 004e2648 | = "rt"
-    MOV EDX,dword ptr [ESI + 0x67b750]  ; 004e264d | g_ChapterMissionFiles | PTR_s_gtown_msn_0062d684_0067b754
+    MOV EDX,dword ptr [ESI + 0x67b750]  ; 004e264d | g_ChapterMissionFiles | g_ChapterMissionFiles[0][1]
     PUSH EDX                            ; 004e2653
     PUSH 0x62cc74                       ; 004e2654 | = "world"
     CALL engine_dosio.cpp_getFile_FUN_00481a50 ; 004e2659
@@ -1021,7 +1021,7 @@ section .text
     JGE 0x004e276d                      ; 004e272b
         ;   XREF to: 004e276d (CONDITIONAL_JUMP)  ; LAB_004e276d
     PUSH 0x62cc71                       ; 004e272d | = "rt"
-    MOV ECX,dword ptr [ESI + 0x67b750]  ; 004e2732 | g_ChapterMissionFiles | PTR_s_gtown_msn_0062d684_0067b754
+    MOV ECX,dword ptr [ESI + 0x67b750]  ; 004e2732 | g_ChapterMissionFiles | g_ChapterMissionFiles[0][1]
     PUSH ECX                            ; 004e2738
     PUSH 0x62cc74                       ; 004e2739 | = "world"
     CALL engine_dosio.cpp_getFile_FUN_00481a50 ; 004e273e
@@ -1086,7 +1086,7 @@ section .text
     JGE 0x004e2801                      ; 004e27bf
         ;   XREF to: 004e2801 (CONDITIONAL_JUMP)  ; LAB_004e2801
     PUSH 0x62cc71                       ; 004e27c1 | = "rt"
-    MOV EAX,dword ptr [ESI + 0x67b750]  ; 004e27c6 | g_ChapterMissionFiles | PTR_s_gtown_msn_0062d684_0067b754
+    MOV EAX,dword ptr [ESI + 0x67b750]  ; 004e27c6 | g_ChapterMissionFiles | g_ChapterMissionFiles[0][1]
     PUSH EAX                            ; 004e27cc
     PUSH 0x62cc74                       ; 004e27cd | = "world"
     CALL engine_dosio.cpp_getFile_FUN_00481a50 ; 004e27d2

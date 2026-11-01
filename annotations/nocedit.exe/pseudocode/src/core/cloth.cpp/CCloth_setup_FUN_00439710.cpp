@@ -196,9 +196,9 @@ void __cdecl core_cloth_cpp_CCloth_setup_FUN_00439710(CCloth *this_ptr,CVector3f
       iVar10 = 0;
       pCVar12 = &this_ptr->vertices[0].offset_pos;
       do {
-        local_e4 = pCVar12->x + this_ptr_00->bbox_pool[0].min.x;
-        local_e0 = pCVar12->y + this_ptr_00->bbox_pool[0].min.y;
-        local_dc = pCVar12->z + this_ptr_00->bbox_pool[0].min.z;
+        local_e4 = pCVar12->x + (this_ptr_00->bias_used).x;
+        local_e0 = pCVar12->y + (this_ptr_00->bias_used).y;
+        local_dc = pCVar12->z + (this_ptr_00->bias_used).z;
         if (pSVar18 != (SClothVertex *)&local_e4) {
           (pSVar18->position).x = local_e4;
           (pSVar18->position).y = local_e0;
@@ -262,7 +262,7 @@ void __cdecl core_cloth_cpp_CCloth_setup_FUN_00439710(CCloth *this_ptr,CVector3f
         pSVar11->bone_influence_count = (uint)bVar2;
         if (bVar2 != 0) {
           pCVar7 = pSVar11->bone_positions;
-          pCVar8 = &pSVar20->position;
+          pCVar8 = pSVar20->bone_offsets;
           pSVar23 = pSVar20;
           pSVar19 = pSVar11;
           do {

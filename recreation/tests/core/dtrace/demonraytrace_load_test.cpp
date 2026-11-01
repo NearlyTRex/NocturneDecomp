@@ -1,10 +1,10 @@
 #include "common/error/fatalerror.h"
 #include "common/math/vector3f.h"
 #include "common/math/vector3i.h"
-#include "common/serial/binarywriter.h"
 #include "core/dcube/demoncube.h"
 #include "core/dcube/demoncubetriangle.h"
 #include "core/dtrace/demonraytrace.h"
+#include "tests/mocks/core/geofile.h"
 #include "tests/mocks/engine/podfixture.h"
 
 #include <gmock/gmock.h>
@@ -24,74 +24,9 @@ namespace {
 using ::testing::StrEq;
 using ::testing::ThrowsMessage;
 
-struct SGeoTriangle {
-    std::array<std::int32_t, 3> indices{};
-    common::CVector3f normal;
-    float plane_distance = 0.0F;
-    std::uint32_t dominant_axis = 0;
-    std::uint8_t ground_type = 0;
-};
-
-struct SGeoCube {
-    common::CVector3f min_bounds;
-    common::CVector3f max_bounds;
-    std::int32_t vertex_count = 0;
-    std::vector<common::CVector3f> vertices;
-    std::int32_t triangle_count = 0;
-    std::vector<SGeoTriangle> triangles;
-    std::uint8_t voxel_base = 0;
-};
-
-void writeVector(common::CBinaryWriter &writer, const common::CVector3f &vector) {
-    writer.write(vector.x);
-    writer.write(vector.y);
-    writer.write(vector.z);
-}
-
-void writeCube(common::CBinaryWriter &writer, const SGeoCube &cube) {
-    writeVector(writer, cube.min_bounds);
-    writeVector(writer, cube.max_bounds);
-    writer.write(cube.vertex_count);
-    writer.write(cube.triangle_count);
-    for (const common::CVector3f &vertex : cube.vertices) {
-        writeVector(writer, vertex);
-    }
-    for (const SGeoTriangle &triangle : cube.triangles) {
-        for (const std::int32_t index : triangle.indices) {
-            writer.write(index);
-        }
-        writeVector(writer, triangle.normal);
-        writer.write(triangle.plane_distance);
-        writer.write(triangle.dominant_axis);
-    }
-    if (cube.triangle_count == 0) {
-        return;
-    }
-    for (const SGeoTriangle &triangle : cube.triangles) {
-        writer.write(triangle.ground_type);
-    }
-    for (int i = 0; i < 64; ++i) {
-        writer.write(static_cast<std::uint8_t>(cube.voxel_base + i));
-    }
-}
-
-// A .GEO file of the version and grid, its box from (0, 0, 0) to (16, 8, 24) in cubes of
-// (8, 16, 24), and the cubes.
 std::string geo(std::int32_t version, const common::CVector3i &grid,
                 const std::vector<SGeoCube> &cubes) {
-    common::CBinaryWriter writer;
-    writer.write(version);
-    writer.write(grid.x);
-    writer.write(grid.y);
-    writer.write(grid.z);
-    writeVector(writer, {.x = 0.0F, .y = 0.0F, .z = 0.0F});
-    writeVector(writer, {.x = 16.0F, .y = 8.0F, .z = 24.0F});
-    writeVector(writer, {.x = 8.0F, .y = 16.0F, .z = 24.0F});
-    for (const SGeoCube &cube : cubes) {
-        writeCube(writer, cube);
-    }
-    const std::span<const std::byte> data = writer.getData();
-    return {reinterpret_cast<const char *>(data.data()), data.size()};
+    return geoFile(version, grid, cubes);
 }
 
 // A cube with one triangle over its three vertices, of ground type 5.

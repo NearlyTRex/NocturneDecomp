@@ -674,10 +674,10 @@ LAB_004b72a1:
                 core_actor_cpp_castToClassHash_FUN_0040d890
                           ((this_ptr->base).base.carry_hands[1].carry_actor,
                            g_CWeaponActorType_02ddf970.name_hash), pCVar18 != (CCharacter *)0x0)) {
-    fVar4 = (pCVar18->model).transformed_vertices[0x4f].z;
-    (pCVar18->model).transformed_vertices[0x4f].z = 8.40779e-45;
+    fVar4 = (pCVar18->model).bone_origins[0x4f].z;
+    (pCVar18->model).bone_origins[0x4f].z = 8.40779e-45;
     (*(((pCVar18->base).vtable._uc)->_uc).isGrabbable)(pCVar18,pCVar22);
-    (pCVar18->model).transformed_vertices[0x4f].z = fVar4;
+    (pCVar18->model).bone_origins[0x4f].z = fVar4;
     core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0
               (&(this_ptr->base).base.model.base,0xc,1);
     this_ptr->gun_blend_weight = 0.0;

@@ -2,6 +2,7 @@
 
 #include "core/fwd.h"
 #include "core/hero/hero.h"
+#include "core/hero/herobones.h"
 
 #include <memory>
 
@@ -12,7 +13,7 @@ class CHaystack : public CHero {
 public:
     static const CDemonActorType kType;
 
-    CHaystack();
+    explicit CHaystack(CActor &classes);
     ~CHaystack() override;
     CHaystack(const CHaystack &) = delete;
     CHaystack &operator=(const CHaystack &) = delete;
@@ -28,8 +29,12 @@ public:
     void drawWeapon(int drawn) override;
     int isWeaponDrawn() override;
 
+    [[nodiscard]] const SHeroBones &getBones() const;
+
 private:
-    static std::unique_ptr<CDemonActor> create();
+    static std::unique_ptr<CDemonActor> create(CActor &classes);
+
+    SHeroBones bones_;
 };
 
 } // namespace nocturne::core

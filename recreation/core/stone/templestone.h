@@ -9,7 +9,7 @@ class CTempleStone : public CBoxActor {
 public:
     static const CDemonActorType kType;
 
-    CTempleStone();
+    explicit CTempleStone(CActor &classes);
     ~CTempleStone() override;
 
     int canPickup(CDemonActor *picker) override;

@@ -1,8 +1,11 @@
 #include "core/skeleton/deformablemodelinstance.h"
-#include "tests/mocks/core/notportedcalls.h"
+#include "core/skeleton/partvisibility.h"
+#include "tests/mocks/core/mockdeformablemodels.h"
 
+#include <gmock/gmock.h>
 #include <gtest/gtest.h>
 
+#include <string_view>
 #include <type_traits>
 
 namespace nocturne::core {
@@ -21,7 +24,7 @@ TEST(CDeformableModelInstance, IsConcrete) {
 }
 
 TEST(CDeformableModelInstance, Constructors) {
-    static_assert(std::is_constructible_v<CDeformableModelInstance>);
+    static_assert(std::is_constructible_v<CDeformableModelInstance, IDeformableModels &>);
 }
 
 TEST(CDeformableModelInstance, PublicInterface) {
@@ -62,6 +65,12 @@ TEST(CDeformableModelInstance, PublicInterface) {
                        common::CVector3f *(CDeformableModelInstance::*)(common::CVector3f *, int)>);
     static_assert(std::is_same_v<decltype(&CDeformableModelInstance::computeBoneTransforms),
                                  void (CDeformableModelInstance::*)()>);
+    static_assert(std::is_same_v<decltype(&CDeformableModelInstance::computeBoneModelMatrices),
+                                 void (CDeformableModelInstance::*)(SPose &)>);
+    static_assert(std::is_same_v<decltype(&CDeformableModelInstance::computeBoneTransformsForFrame),
+                                 void (CDeformableModelInstance::*)(int, float, SPose &)>);
+    static_assert(
+        std::is_same_v<decltype(&blendWeightCallback), CDeformableModel::MotionBlendWeightFunc *>);
     static_assert(std::is_same_v<decltype(&CDeformableModelInstance::applyRotationToHierarchy),
                                  void (CDeformableModelInstance::*)(
                                      common::CQuaternion4f *, float, int,
@@ -83,16 +92,15 @@ TEST(CDeformableModelInstance, PublicInterface) {
     static_assert(std::is_same_v<decltype(&CDeformableModelInstance::preCache),
                                  void (CDeformableModelInstance::*)()>);
     static_assert(std::is_same_v<decltype(&CDeformableModelInstance::initializeFromModel),
-                                 void (CDeformableModelInstance::*)(CDeformableModel *)>);
+                                 void (CDeformableModelInstance::*)(CDeformableModel &)>);
     static_assert(std::is_same_v<decltype(&CDeformableModelInstance::getModelPtr),
                                  CDeformableModel *(CDeformableModelInstance::*)()>);
     static_assert(std::is_same_v<decltype(&CDeformableModelInstance::getSkeletonPtr),
                                  CSkeleton *(CDeformableModelInstance::*)()>);
     static_assert(std::is_same_v<decltype(&CDeformableModelInstance::init),
-                                 void (CDeformableModelInstance::*)(char *)>);
+                                 void (CDeformableModelInstance::*)(std::string_view)>);
     static_assert(std::is_same_v<decltype(&CDeformableModelInstance::getRootMotionDelta),
-                                 common::CVector3f *(CDeformableModelInstance::*)(
-                                     common::CVector3f *, float, float)>);
+                                 common::CVector3f (CDeformableModelInstance::*)(float, float)>);
     static_assert(std::is_same_v<decltype(&CDeformableModelInstance::dismemberPart),
                                  void (CDeformableModelInstance::*)(CBodyPart *, int)>);
     static_assert(std::is_same_v<decltype(&CDeformableModelInstance::rayIntersect),
@@ -108,19 +116,21 @@ TEST(CDeformableModelInstance, PublicInterface) {
     static_assert(std::is_same_v<decltype(&CDeformableModelInstance::setBoneTransform),
                                  void (CDeformableModelInstance::*)(SPose *)>);
     static_assert(std::is_same_v<decltype(&CDeformableModelInstance::computeBoundingBoxFromBones),
-                                 CBoundingBox3D *(CDeformableModelInstance::*)(CBoundingBox3D *)>);
+                                 CBoundingBox3D (CDeformableModelInstance::*)()>);
     static_assert(std::is_same_v<decltype(&CDeformableModelInstance::computeCylindricalUVs),
                                  void (CDeformableModelInstance::*)(int, int)>);
 }
 
-TEST(CDeformableModelInstance, TheFunctionsNotPortedYetQuit) {
-    CDeformableModelInstance model;
-    const NotPortedCalls calls = {
-        {"findPatchToFrame", [&] { static_cast<void>(model.findPatchToFrame(0, 0.0F, 0)); }},
-        {"accumulateScaledRootMotion", [&] { model.accumulateScaledRootMotion(0.0F, 0.0F, 0.0F); }},
-    };
-    EXPECT_EQ(calls.size(), 2U);
-    expectEachQuitsNotPorted("CDeformableModelInstance", calls);
+TEST(CDeformableModelInstance, NamingTheModelShowsEveryPartInItsFirstTextureSet) {
+    ::testing::NiceMock<MockDeformableModels> models;
+    CDeformableModelInstance model(models);
+    EXPECT_EQ(model.getModelName(), "");
+    model.setPartVisibility(3, EPartVisibility::kHidden);
+    model.setPartTextureSet(4, 2);
+    model.init("zombie1.dfm");
+    EXPECT_EQ(model.getModelName(), "zombie1.dfm");
+    EXPECT_EQ(model.getPartVisibility(3), EPartVisibility::kShown);
+    EXPECT_EQ(model.getPartTextureSet(4), CDeformableModelInstance::kFirstTextureSet);
 }
 
 } // namespace

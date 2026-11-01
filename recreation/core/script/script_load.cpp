@@ -2,6 +2,7 @@
 #include "common/text/ascii.h"
 #include "common/text/path.h"
 #include "common/text/scanformat.h"
+#include "common/text/textlines.h"
 #include "common/text/textscanner.h"
 #include "core/script/script.h"
 #include "core/script/script_functions.h"
@@ -93,7 +94,8 @@ void CScript::dbLoad(std::string_view filename) {
     if (!text) {
         common::displayErrorAndQuit(std::format("Can't open world\\{}", filename));
     }
-    common::CTextScanner scanner(*text);
+    const std::string lines = common::toTextMode(*text);
+    common::CTextScanner scanner(lines);
     for (scanner.skipWhitespace(); !scanner.atEnd(); scanner.skipWhitespace()) {
         std::string name;
         std::string speaker;

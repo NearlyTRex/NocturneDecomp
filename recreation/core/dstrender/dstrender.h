@@ -27,8 +27,6 @@ void renderDepthInterlacedProfiled(engine::SSoftwareEdge *left_edge,
                                    engine::SSoftwareEdge *right_edge, int scanline_y);
 void renderScreenDepthTestInterlacedProfiled(engine::SSoftwareEdge *left_edge,
                                              engine::SSoftwareEdge *right_edge, int scanline_y);
-void renderDepthTestStatistics16xUnrolled(engine::SSoftwareEdge *left_edge,
-                                          engine::SSoftwareEdge *right_edge, int scanline_y);
 void renderPerspectiveCorrectTextured16xCached(engine::SSoftwareEdge *left_edge,
                                                engine::SSoftwareEdge *right_edge, int scanline_y);
 void renderTexturedDecalMMXScanline(engine::SSoftwareEdge *left_edge,

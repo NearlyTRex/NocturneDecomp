@@ -146,8 +146,8 @@ void __cdecl core_skeleton_cpp_CDeformableModelInstance_blendMotion_FUN_0059eb50
       pCVar10 = this_ptr_00->frame_positions_1;
       fVar3 = pCVar10[local_58[0]].y;
       fVar4 = pCVar10[local_58[0]].z;
-      fVar5 = (this_ptr->scaled_model_dimensions).y;
-      fVar6 = (this_ptr->scaled_model_dimensions).z;
+      fVar5 = (this_ptr->root_offset_scale).y;
+      fVar6 = (this_ptr->root_offset_scale).z;
       fVar12 = 1.0 - blend_weight;
       pSVar1 = &this_ptr->bone_transform;
       fVar7 = (this_ptr->bone_transform).pose_data.root_position.y;
@@ -156,7 +156,7 @@ void __cdecl core_skeleton_cpp_CDeformableModelInstance_blendMotion_FUN_0059eb50
         (pSVar1->pose_data).root_position.x =
              (pSVar1->pose_data).root_position.x * fVar12 +
              (pCVar10[local_58[0]].x * fVar11 + pCVar9[local_5c].x * local_938) *
-             (this_ptr->scaled_model_dimensions).x * blend_weight;
+             (this_ptr->root_offset_scale).x * blend_weight;
         (this_ptr->bone_transform).pose_data.root_position.y =
              fVar7 * fVar12 + (fVar3 * fVar11 + fVar1 * local_938) * fVar5 * blend_weight;
         (this_ptr->bone_transform).pose_data.root_position.z =

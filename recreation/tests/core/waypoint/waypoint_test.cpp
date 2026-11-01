@@ -1,12 +1,17 @@
+#include "common/error/fatalerror.h"
 #include "core/actor/demonactortype.h"
 #include "core/trigger/trigger.h"
 #include "core/waypoint/waypoint.h"
 #include "tests/mocks/core/notportedcalls.h"
 #include "tests/mocks/core/testactor.h"
+#include "tests/mocks/core/testarchive.h"
+#include "tests/mocks/core/testclasses.h"
 #include "tests/mocks/core/testfieldsarchive.h"
 
+#include <gmock/gmock.h>
 #include <gtest/gtest.h>
 
+#include <format>
 #include <memory>
 #include <string>
 #include <string_view>
@@ -47,7 +52,8 @@ TEST(CWayPoint, ItsRecordIsVersion2UnderCTriggerAndMissionsCanCreateOne) {
     EXPECT_EQ(CWayPoint::kType.parent_type, &CTrigger::kType);
     EXPECT_EQ(CWayPoint::kType.latest_version, 2);
     ASSERT_NE(CWayPoint::kType.factory_func, nullptr);
-    const std::unique_ptr<CDemonActor> actor = CWayPoint::kType.factory_func();
+    CTestClasses classes;
+    const std::unique_ptr<CDemonActor> actor = CWayPoint::kType.factory_func(classes.get());
     EXPECT_EQ(&actor->getActorType(), &CWayPoint::kType);
 }
 
@@ -108,10 +114,39 @@ TEST_F(CWayPointArchiveTest, AVersionOneWayPointsNextIsDropped) {
 TEST(CWayPoint, TheFunctionsNotPortedYetQuit) {
     CWayPoint waypoint;
     const NotPortedCalls calls = {
-        {"setup", [&] { waypoint.setup(); }},
         {"renderOpaque", [&] { static_cast<void>(waypoint.renderOpaque()); }},
     };
     expectEachQuitsNotPorted("CWayPoint", calls);
+}
+
+// A waypoint of the creation event given, as a version 7 actor and a version 1 trigger.
+void readCreatedBy(CWayPoint &waypoint, CTestArchive &archive) {
+    archive.getClasses().setSavedVersion(CDemonActor::kType, 7);
+    archive.getClasses().setSavedVersion(CTrigger::kType, 1);
+    archive.getClasses().setSavedVersion(CWayPoint::kType, 2);
+    waypoint.archive(archive.get());
+}
+
+TEST(CWayPoint, AWayPointWithACreationEventIsFatal) {
+    CWayPoint waypoint;
+    CTestArchive archive(waypoint,
+                         "3,0,0,0\n0,0,0\n0\n1\n\"bell\"\n0\n0.5,1,0.5\n0\n\"\"\n\"\"\n0\n");
+    readCreatedBy(waypoint, archive);
+    EXPECT_THAT([&] { waypoint.setup(); },
+                ::testing::ThrowsMessage<common::CFatalError>(
+                    ::testing::StrEq("Can't have creation event for waypoint.")));
+}
+
+TEST(CWayPoint, AWayPointCreatedAlwaysOrByNothingIsSetUp) {
+    for (const char *event : {"TRUE", "None", ""}) {
+        CWayPoint waypoint;
+        const std::string text =
+            std::format("3,0,0,0\n0,0,0\n0\n1\n\"{}\"\n0\n0.5,1,0.5\n0\n\"\"\n\"\"\n0\n", event);
+        CTestArchive archive(waypoint, text);
+        readCreatedBy(waypoint, archive);
+        waypoint.setup();
+        EXPECT_EQ(waypoint.getCreateEvent(), event);
+    }
 }
 
 } // namespace

@@ -59,7 +59,8 @@ public:
     void showWarning(std::string_view message);
     // A box titled "Error" holding the message, until a key is pressed.
     void showError(std::string_view message);
-    void displayCenteredStatusMessage(char *format, ...);
+    // A cleared screen with the message in its middle, shown at once. The caller formats it.
+    void displayCenteredStatusMessage(std::string_view message);
     // A pick list of the files matching search_directory\file_pattern, on the file named
     // output_filename when start_on_current is set, which writes the picked file's name there.
     // False when cancelled, or after an error box when nothing matches.
@@ -177,6 +178,7 @@ private:
     int window_font_color_ = 0;
     int warning_text_color_ = 0;
     int window_status_text_color_ = 0;
+    int status_text_color_ = 0;
     int progress_bar_background_color_ = 0;
     int progress_bar_border_color_ = 0;
     int progress_bar_fill_color_ = 0;

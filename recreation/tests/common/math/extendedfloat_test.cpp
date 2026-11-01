@@ -83,6 +83,81 @@ TEST_F(CExtendedFloatAgainstX87, SumsOfNearlyCancellingValuesKeepTheirLowBits) {
     }
 }
 
+TEST_F(CExtendedFloatAgainstX87, DifferencesRoundAsTheX87Does) {
+    for (int i = 0; i < 200000; ++i) {
+        const double a = pick();
+        const double b = pick();
+        const double c = pick();
+        const long double difference = (static_cast<long double>(a) * b) - c;
+        ASSERT_EQ(storedBits((X(a) * X(b)) - X(c)), floatBits(static_cast<float>(difference)))
+            << a << " * " << b << " - " << c;
+    }
+}
+
+TEST_F(CExtendedFloatAgainstX87, QuotientsRoundAsTheX87Does) {
+    for (int i = 0; i < 200000; ++i) {
+        const double a = pick();
+        const double b = pick();
+        const double c = pick();
+        const long double quotient = ((static_cast<long double>(a) - b) / c);
+        const X x_quotient = (X(a) - X(b)) / X(c);
+        ASSERT_EQ(storedBits(x_quotient), floatBits(static_cast<float>(quotient)))
+            << a << " - " << b << " / " << c;
+        ASSERT_EQ(x_quotient > X(a), quotient > a) << a << " - " << b << " / " << c;
+    }
+}
+
+TEST_F(CExtendedFloatAgainstX87, DoublesStoreAsTheX87StoresThem) {
+    for (int i = 0; i < 200000; ++i) {
+        const double a = pick();
+        const double b = pick();
+        const double c = pick();
+        const long double value = (static_cast<long double>(a) * b) + c;
+        const auto stored = static_cast<double>(value);
+        ASSERT_EQ(std::bit_cast<std::uint64_t>(((X(a) * X(b)) + X(c)).toDouble()),
+                  std::bit_cast<std::uint64_t>(stored))
+            << a << " * " << b << " + " << c;
+    }
+    const auto tiny = [](int bits_below) {
+        return static_cast<double>(static_cast<long double>(std::ldexp(1.0, -1022)) *
+                                   std::ldexp(1.0L, -bits_below) * 1.5L);
+    };
+    EXPECT_EQ((X(std::ldexp(1.0, -1022)) * X(std::ldexp(1.5, -10))).toDouble(), tiny(10));
+}
+
+TEST(CExtendedFloat, StoresDoublesSpecialValues) {
+    EXPECT_EQ(std::bit_cast<std::uint64_t>(X(-kNaN).toDouble()), 0xfff8000000000000U);
+    EXPECT_EQ(X(kInfinity).toDouble(), kInfinity);
+    EXPECT_EQ(std::bit_cast<std::uint64_t>(X(-0.0).toDouble()), 0x8000000000000000U);
+    EXPECT_EQ((X(std::ldexp(1.0, 1000)) * X(std::ldexp(1.0, 100))).toDouble(), kInfinity);
+    EXPECT_EQ(X(0.1).toDouble(), 0.1);
+}
+
+TEST(CExtendedFloat, DividesWithTheX87sSpecialCases) {
+    EXPECT_TRUE(X(3.0) / X(4.0) == X(0.75));
+    EXPECT_TRUE(X(1.0) / X(3.0) * X(3.0) == X(1.0));
+    EXPECT_EQ(storedBits(X(1.0) / X(0.0)), 0x7f800000U);
+    EXPECT_EQ(storedBits(X(-1.0) / X(0.0)), 0xff800000U);
+    EXPECT_EQ(storedBits(X(0.0) / X(0.0)), 0xffc00000U);
+    EXPECT_EQ(storedBits(X(kInfinity) / X(kInfinity)), 0xffc00000U);
+    EXPECT_EQ(storedBits(X(kInfinity) / X(-2.0)), 0xff800000U);
+    EXPECT_EQ(storedBits(X(-2.0) / X(kInfinity)), 0x80000000U);
+    EXPECT_EQ(storedBits(X(0.0) / X(-2.0)), 0x80000000U);
+    EXPECT_EQ(storedBits(X(2.0) / X(-kNaN)), 0xffc00000U);
+}
+
+TEST(CExtendedFloat, SubtractsWithTheX87sZerosAndNaNs) {
+    EXPECT_TRUE(X(3.0) - X(0.25) == X(2.75));
+    EXPECT_TRUE(X(0.25) - X(3.0) == X(-2.75));
+    EXPECT_EQ(storedBits(X(1.5) - X(1.5)), 0U);
+    EXPECT_EQ(storedBits(X(0.0) - X(0.0)), 0U);
+    EXPECT_EQ(storedBits(X(-0.0) - X(0.0)), 0x80000000U);
+    EXPECT_EQ(storedBits(X(2.0) - X(kNaN)), 0x7fc00000U);
+    EXPECT_EQ(storedBits(X(2.0) - X(-kNaN)), 0xffc00000U);
+    EXPECT_EQ(storedBits(X(-kNaN) - X(2.0)), 0xffc00000U);
+    EXPECT_EQ(storedBits(X(kInfinity) - X(kInfinity)), 0xffc00000U);
+}
+
 TEST(CExtendedFloat, KeepsADoubleExactly) {
     EXPECT_EQ(X(0.1) <=> X(0.1), std::partial_ordering::equivalent);
     EXPECT_EQ(X(0.1).toFloat(), 0.1F);
@@ -139,6 +214,31 @@ TEST(CExtendedFloat, ANaNOperandIsWhatComesOut) {
     EXPECT_EQ(storedBits(X(2.0) + nan), 0xffc00000U);
 }
 
+TEST(CExtendedFloat, OfTwoNaNsThePositiveComesOut) {
+    const X negative(-kNaN);
+    const X positive(kNaN);
+    EXPECT_EQ(storedBits(negative + positive), 0x7fc00000U);
+    EXPECT_EQ(storedBits(positive + negative), 0x7fc00000U);
+    EXPECT_EQ(storedBits(negative * positive), 0x7fc00000U);
+    EXPECT_EQ(storedBits(negative - positive), 0x7fc00000U);
+    EXPECT_EQ(storedBits(negative + negative), 0xffc00000U);
+}
+
+// Each of the four pairs of NaN signs, through each operation.
+TEST_F(CExtendedFloatAgainstX87, PicksBetweenTwoNaNsAsTheX87Does) {
+    const auto expectSame = [](double a, double b) {
+        const long double hardware_a = a;
+        const long double hardware_b = b;
+        EXPECT_EQ(storedBits(X(a) + X(b)), floatBits(static_cast<float>(hardware_a + hardware_b)));
+        EXPECT_EQ(storedBits(X(a) * X(b)), floatBits(static_cast<float>(hardware_a * hardware_b)));
+        EXPECT_EQ(storedBits(X(a) - X(b)), floatBits(static_cast<float>(hardware_a - hardware_b)));
+    };
+    expectSame(kNaN, kNaN);
+    expectSame(kNaN, -kNaN);
+    expectSame(-kNaN, kNaN);
+    expectSame(-kNaN, -kNaN);
+}
+
 TEST(CExtendedFloat, InvalidOperationsGiveTheRealIndefinite) {
     EXPECT_EQ(storedBits(X(kInfinity) * X(0.0)), 0xffc00000U);
     EXPECT_EQ(storedBits(X(0.0) * X(-kInfinity)), 0xffc00000U);
@@ -188,6 +288,44 @@ TEST(CExtendedFloat, OrdersAsTheX87ComparesThem) {
     EXPECT_EQ(X(-kInfinity) <=> X(-kInfinity), std::partial_ordering::equivalent);
     EXPECT_EQ(X(1.0) <=> X(kInfinity), std::partial_ordering::less);
     EXPECT_FALSE(X(kNaN) == X(kNaN));
+}
+
+TEST(CExtendedFloat, TruncatesTowardZero) {
+    EXPECT_EQ(X(2.75).truncateToInt(), 2);
+    EXPECT_EQ(X(-2.75).truncateToInt(), -2);
+    EXPECT_EQ(X(-0.0).truncateToInt(), 0);
+    EXPECT_EQ(X(0.0).truncateToInt(), 0);
+    EXPECT_EQ(X(std::ldexp(1.0, -70)).truncateToInt(), 0);
+    // Below 1 but within the 64-bit mantissa of it.
+    EXPECT_EQ((X(1.0) + X(-std::ldexp(1.0, -63))).truncateToInt(), 0);
+    EXPECT_EQ(X(2147483647.5).truncateToInt(), 2147483647);
+    EXPECT_EQ(X(-2147483648.5).truncateToInt(), std::numeric_limits<std::int32_t>::min());
+}
+
+TEST(CExtendedFloat, TruncatesWhatNoIntHoldsToTheIndefinite) {
+    constexpr std::int32_t kIndefinite = std::numeric_limits<std::int32_t>::min();
+    EXPECT_EQ(X(2147483648.0).truncateToInt(), kIndefinite);
+    EXPECT_EQ(X(-2147483649.0).truncateToInt(), kIndefinite);
+    EXPECT_EQ(X(std::ldexp(1.0, 70)).truncateToInt(), kIndefinite);
+    EXPECT_EQ(X(kNaN).truncateToInt(), kIndefinite);
+    EXPECT_EQ(X(-kInfinity).truncateToInt(), kIndefinite);
+}
+
+// A whole number around an int's range plus a fraction, as a frame's start and position add up.
+TEST_F(CExtendedFloatAgainstX87, TruncatesSumsAsTheX87Does) {
+    std::uniform_real_distribution<double> unit(-1.0, 1.0);
+    std::uniform_int_distribution<int> exponent(-4, 33);
+    for (int i = 0; i < 100000; ++i) {
+        const double a = std::round(std::ldexp(unit(random_), exponent(random_)));
+        const double b = std::ldexp(unit(random_), exponent(random_) - 30);
+        const long double sum = static_cast<long double>(a) + b;
+        const long double whole = std::trunc(sum);
+        const std::int32_t expected =
+            std::isfinite(sum) && whole >= -2147483648.0L && whole <= 2147483647.0L
+                ? static_cast<std::int32_t>(whole)
+                : std::numeric_limits<std::int32_t>::min();
+        ASSERT_EQ((X(a) + X(b)).truncateToInt(), expected) << a << " + " << b;
+    }
 }
 
 } // namespace

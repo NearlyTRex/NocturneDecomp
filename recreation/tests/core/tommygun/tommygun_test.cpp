@@ -21,7 +21,7 @@ TEST(CTommyGun, IsConcrete) {
 }
 
 TEST(CTommyGun, Constructors) {
-    static_assert(std::is_constructible_v<CTommyGun>);
+    static_assert(std::is_constructible_v<CTommyGun, CActor &>);
 }
 
 TEST(CTommyGun, PublicInterface) {

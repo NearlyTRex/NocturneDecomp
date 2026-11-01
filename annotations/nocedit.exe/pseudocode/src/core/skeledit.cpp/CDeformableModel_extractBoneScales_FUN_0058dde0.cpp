@@ -20,7 +20,7 @@ void __cdecl core_skeledit_cpp_CDeformableModel_extractBoneScales_FUN_0058dde0(C
   iVar6 = 0;
   if (0 < bone_structure->bone_count) {
     pSVar3 = (SBoneData *)&bone_structure->bones[0].local_matrix;
-    pCVar5 = this_ptr->vertex_pool;
+    pCVar5 = this_ptr->bone_origins;
     do {
       fVar1 = *(float *)(pSVar3->name + 0x1c);
       fVar2 = (pSVar3->local_matrix).m[0].y;
