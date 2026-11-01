@@ -4,6 +4,7 @@
 #include "common/math/vector3f.h"
 #include "common/math/vector3i.h"
 #include "core/actor/demonactor.h"
+#include "core/actor/notported.h"
 #include "core/box/boundingbox3d.h"
 #include "core/game/game.h"
 #include "core/location.h"
@@ -320,10 +321,10 @@ float CDemonSet::calculateActorVisibility(std::size_t camera_index, const CDemon
 // deferred: the full lighting mode and the directional light ratio while the background draws,
 //   and no spot, omni or corona lights gathered yet, the coronas kept for the same camera (the
 //   decomp's windowed reswitch fix), with renderScene
-// deferred: noting each actor's place and turn as drawn, with the renderer's dirty regions
 // deferred: the raytrace geometry drawn in its plain mode, with renderFrustumCubes
 // deferred: drawing the camera's background, its shadows and lights, its reverb and weather, then
-//   the scene's static lights, with buildDisplayList and what follows it
+//   the scene's static lights, and noting each actor as drawn again, with renderSceneGeometry and
+//   what follows it
 // nocedit 0x0056ae50
 void CDemonSet::setCameraView(int index) {
     if (static_cast<std::size_t>(index) >= cameras_.size()) {
@@ -335,6 +336,9 @@ void CDemonSet::setCameraView(int index) {
         previous_best_camera_index_ = selected_camera_index_;
     }
     selected_camera_index_ = index;
+    for (CDemonActor *actor : actors_) {
+        snapshotActorTransformState(*actor);
+    }
     const C3DSCamera &camera = cameras_.at(static_cast<std::size_t>(index));
     camera.apply(owners_.camera);
     active_fog_ = camera.getUseGlobalFog() ? scene_fog_ : camera.getFog();
@@ -342,6 +346,7 @@ void CDemonSet::setCameraView(int index) {
     owners_.camera.beginScene(0);
     owners_.camera.beginBackgroundScene();
     buildDisplayList(kBackgroundDisplayListFlags);
+    quitNotPorted("CDemonSet", "renderSceneGeometry");
 }
 
 // nocedit 0x00575b00

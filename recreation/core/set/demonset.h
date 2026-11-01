@@ -86,7 +86,8 @@ public:
     // Sets the scene up for play: the camera's tables and fog, a master light for each
     // spotlight, each camera's virtual director group, and the weather.
     void initScene();
-    void snapshotActorTransformState(CDemonActor *actor);
+    // Notes the actor as drawn where it is now, every pass due.
+    static void snapshotActorTransformState(CDemonActor &actor);
     void setCameraView(int index);
     // The camera of that name, compared ignoring case.
     [[nodiscard]] std::optional<std::size_t> findCameraByName(std::string_view name) const;
@@ -200,6 +201,14 @@ public:
     [[nodiscard]] std::span<const float> getCameraScores() const;
     // Whether the actor stood outside every virtual director box at the last switch.
     [[nodiscard]] bool wasLastSwitchAreaInvalid() const;
+    // The hero this machine plays, drawn first; null for none.
+    void setLocalHero(CDemonActor *local_hero);
+    // Lists the renderable actors to draw, nearest the camera first, the local hero before them
+    // all: those moved since they were last drawn, which take the mask's passes, and those with
+    // a pass due.
+    void buildDisplayList(std::uint32_t dirty_flags_mask);
+    // The actors to draw, as buildDisplayList last listed them.
+    [[nodiscard]] std::span<CDemonActor *const> getSortedRenderActors() const;
 
     // The quick light's direction, and the ambient level it adds, 0xffff being full.
     void setLightDirection(const common::CVector3i &light_direction);
@@ -288,7 +297,6 @@ private:
     };
 
     [[nodiscard]] static SActorOutline outlineActor(const CBoundingBox3D &box);
-    static void buildDisplayList(std::uint32_t dirty_flags_mask);
     // How much of the actor the camera sees, from the camera's depth thumb.
     float calculateActorVisibility(std::size_t camera_index, const CDemonActor &actor,
                                    const SActorOutline &outline);
@@ -343,6 +351,8 @@ private:
     // The next camera the director scores, and each camera's last score.
     int next_scored_camera_ = 0;
     std::vector<float> camera_scores_;
+    CDemonActor *local_hero_ = nullptr;
+    std::vector<CDemonActor *> sorted_render_actors_;
 };
 
 } // namespace nocturne::core

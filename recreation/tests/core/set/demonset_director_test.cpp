@@ -31,7 +31,7 @@ using ::testing::Return;
 using ::testing::StrEq;
 using ::testing::ThrowsMessage;
 
-constexpr std::string_view kSceneNotPorted = "CDemonSet::buildDisplayList is not ported yet";
+constexpr std::string_view kSceneNotPorted = "CDemonSet::renderSceneGeometry is not ported yet";
 
 // An unturned camera at the position, with its box.
 std::string cameraAt(std::string_view name, std::string_view position, std::string_view box) {

@@ -6,6 +6,7 @@
 #include "core/hero/heroplaceholder.h"
 #include "core/location.h"
 #include "core/mission/demonmission.h"
+#include "core/set/demonset.h"
 #include "shape/edittool/editortools.h"
 
 #include <algorithm>
@@ -78,6 +79,7 @@ bool CDemonMission::createHeros(std::unique_ptr<CHero> existing_hero) {
             ++placeholder;
         }
     }
+    owners_.set.setLocalHero(heroes_.front());
     return true;
 }
 

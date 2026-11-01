@@ -24,7 +24,7 @@ functions don't count as done. Sizes are in instructions.
 | 8 | `renderMenuAndGetChoice`, `CMoon::free`, `CSound::reset`, `CEditorTools::showFileSelectionDialog` | 8 | 63 | 5314 | 60 | 3 | 95.2% |
 | 9 | `CPickList::enableItem`, `CEventList::resetGameFlags`, `CLevelLoader::show`, `CDemonMission::load` | 15 | 56 | 3298 | 37 | 9 | 66.0% |
 | 10 | `CDemonMission::createHeros`, `CDemonMission::prepareAllActors`, `CEventList::reset`, `CDemonMission::loadSet` | 15 | 42 | 5112 | 33 | 8 | 78.5% |
-| 11 | `CScript::loadScript` | 63 | 579 | 67400 | 100 | 41 | 17.2% |
+| 11 | `CScript::loadScript` | 63 | 579 | 67400 | 103 | 42 | 17.7% |
 | 12 | `CDemonMission::loadScript`, `CScript::executeInitSection`, `CDemonMission::startMission`, `CDemonMission::buildActiveSetActorList`, `CConsole::reset`, `CEditorTools::displayMemoryDiagnostics`, `CGame::setGameRes`, `CDemonLight::init`, `CDemonSet::initScene` | 12 | 26 | 1658 | 16 | 9 | 61.5% |
 | 13 | `CFireEffect::init`, `CDemonSet::loadMasterLightStates`, `CDemonSet::setGamma`, `CGame::clearOverlay`, `CGame::loadAssets` | 7 | 27 | 735 | 16 | 1 | 59.2% |
 | 14 | `CNetGame::syncPlayers`, `CNetGame::processServerFrame`, `CLevelLoader::cleanup`, `CKeys::toggleInputMask`, `CGame::processHotkeys` | 17 | 51 | 5302 | 4 | 0 | 7.8% |
@@ -46,7 +46,7 @@ functions don't count as done. Sizes are in instructions.
 | 30 | Not reached from startup: `core/` (part 8 of 9) | 20 | 300 | 31826 | 41 | 8 | 13.6% |
 | 31 | Not reached from startup: `core/` (part 9 of 9) | 5 | 111 | 10905 | 26 | 7 | 23.4% |
 | 32 | Not reached from startup: `wincore/` | 2 | 11 | 482 | 4 | 0 | 36.3% |
-| | **All** | | **4479** | **402407** | **1143** | **208** | **25.5%** |
+| | **All** | | **4479** | **402407** | **1146** | **209** | **25.5%** |
 
 ## Step 0: Math value types
 
@@ -1237,7 +1237,7 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `archive` 0x005dab30 (17)
   - [ ] `dtor` 0x005dae50 (31)
 
-### `core/actor.cpp` (66 functions, 3653 instructions, 8 done, 10 partial)
+### `core/actor.cpp` (66 functions, 3653 instructions, 9 done, 10 partial)
 - free functions
   - [ ] `copyVector` 0x00410360 (12)
   - [ ] `rayCylinderIntersect` 0x00408340 (354)
@@ -1274,7 +1274,7 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `renderTransparent` 0x00408ac0 (8)
   - [ ] `renderBackground` 0x00408ae0 (7)
   - [x] `getActorType` 0x00408b50 (17)
-  - [ ] `getBoundingBox` 0x00408c70 (8)
+  - [x] `getBoundingBox` 0x00408c70 (8)
   - [ ] `getCollisionType` 0x00408ca0 (8)
   - [ ] `customRayIntersect` 0x00408cc0 (20)
   - [ ] `customIntersectCylinderXZ` 0x00408d10 (16)
@@ -1742,7 +1742,7 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `resetRestoreMemoryAllocator` 0x004729c0 (3)
   - [ ] `getRestoreMemory` 0x00472950 (31)
 
-### `engine/drender.cpp` (28 functions, 1059 instructions, 0 done, 0 partial)
+### `engine/drender.cpp` (28 functions, 1059 instructions, 1 done, 0 partial)
 - class `CDemonRenderer`
   - [ ] `renderVertexAlphaDirect` 0x0048bad0 (64)
   - [ ] `applyDirectTransform` 0x0048c4a0 (42)
@@ -1762,7 +1762,7 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `renderDepthProfiledDirect` 0x0048ab50 (70)
   - [ ] `renderSolidTexturedPoly` 0x0048b550 (77)
   - [ ] `renderZPrepassPoly` 0x0048a950 (80)
-  - [ ] `getCameraOriginWorld` 0x0048c780 (31)
+  - [x] `getCameraOriginWorld` 0x0048c780 (31)
   - [ ] `calculateProjectionFactor` 0x0048c870 (8)
   - [ ] `setAlphaMask` 0x0048cdf0 (5)
   - [ ] `enableAdvancedCulling` 0x0048ce10 (4)
@@ -1917,7 +1917,7 @@ functions don't count as done. Sizes are in instructions.
   - [x] `setWeatherType` 0x005ef8c0 (30)
   - [ ] `setOriginAndRotation` 0x005ef940 (154)
 
-### `core/set.cpp` (27 functions, 2403 instructions, 4 done, 1 partial)
+### `core/set.cpp` (27 functions, 2403 instructions, 5 done, 2 partial)
 - class `CDemonSet`
   - [ ] `getReverbPresetAtPosition` 0x0056fac0 (77)
   - [ ] `addCoronaGlobe` 0x0056d110 (12)
@@ -1937,17 +1937,20 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `computeVertexOmniLighting` 0x0056e3e0 (137)
   - [ ] `renderSceneGeometry` 0x0056a190 (204)
   - [ ] `renderBackgroundActors` 0x0056aca0 (101)
-  - [ ] `snapshotActorTransformState` 0x0056ade0 (30)
+  - [x] `snapshotActorTransformState` 0x0056ade0 (30)
   - [ ] `isCameraPanning` 0x00571320 (21)
-  - [ ] `buildDisplayList` 0x0056fbd0 (291)
+  - [~] `buildDisplayList` 0x0056fbd0 (291)
+    - unverified: the order left among actors at the same distance, which the original's Watcom _qsort decides, by running its _qsort on such a list in the machine-code oracle
+    - deferred: the dynamic lights', the goggles' and the spotlights' passes, with addDynamicLight, the goggles and setCameraView's spotlights
+    - deferred: listing the local hero only while netplay has it in the world (the decomp's nocturne_net_respawn_hero_in_world), with CNetGame's sessions
+    - deferred: the time the list took, in profile mode, with processHotkeys
   - [ ] `renderStaticLights` 0x0056be80 (231)
   - [ ] `process` 0x0056f940 (100)
   - [~] `setCameraView` 0x0056ae50 (639)
     - deferred: restoring the dynamic lights' and spotlights' dirty regions, freeing the spotlights' master z-buffers and resetting their restore memory, with restoreDirtyRegions, freeMasterZBuffer and resetRestoreMemoryAllocator
     - deferred: the full lighting mode and the directional light ratio while the background draws, and no spot, omni or corona lights gathered yet, the coronas kept for the same camera (the decomp's windowed reswitch fix), with renderScene
-    - deferred: noting each actor's place and turn as drawn, with the renderer's dirty regions
     - deferred: the raytrace geometry drawn in its plain mode, with renderFrustumCubes
-    - deferred: drawing the camera's background, its shadows and lights, its reverb and weather, then the scene's static lights, with buildDisplayList and what follows it
+    - deferred: drawing the camera's background, its shadows and lights, its reverb and weather, then the scene's static lights, and noting each actor as drawn again, with renderSceneGeometry and what follows it
   - [x] `setCameraEnabled` 0x00570ea0 (5)
   - [x] `setCameraEnabledByGroup` 0x00570ec0 (30)
 - free functions

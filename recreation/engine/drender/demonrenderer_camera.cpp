@@ -118,6 +118,17 @@ CVector3i CDemonRenderer::getCameraOriginFixed() const {
     return matrix_.getCameraOrigin();
 }
 
+// The origin's 24.8 coordinates over 256.
+// nocedit 0x0048c780
+CVector3f *CDemonRenderer::getCameraOriginWorld(CVector3f *output) {
+    const CVector3i origin = matrix_.getCameraOrigin();
+    const auto world = [](int fixed) {
+        return static_cast<float>(static_cast<double>(fixed) / kWorldToFixed);
+    };
+    *output = {.x = world(origin.x), .y = world(origin.y), .z = world(origin.z)};
+    return output;
+}
+
 // nocedit 0x0048c890
 void CDemonRenderer::pushViewport(int x, int y, int width, int height) {
     matrix_.pushViewport(x, y, width, height);

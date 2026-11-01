@@ -6,6 +6,7 @@
 #include "core/actor/actor_functions.h"
 #include "core/actor/actorarchive.h"
 #include "core/actor/demonactortype.h"
+#include "core/box/boundingbox3d.h"
 
 #include <format>
 #include <optional>
@@ -19,6 +20,9 @@ constexpr int kVersion = 7;
 // The version that dropped a field of view, and the one that first held the creation fields.
 constexpr int kNoFovVersion = 7;
 constexpr int kCreationVersion = 6;
+// The box of an actor with no shape of its own.
+constexpr float kDefaultHalfWidth = 4.0F;
+constexpr float kDefaultHeight = 8.0F;
 
 struct STag {
     std::string class_name;
@@ -114,6 +118,15 @@ common::CVector3f *CDemonActor::transformVector(common::CVector3f *output,
     return output;
 }
 
+// An actor with no shape of its own takes up a box eight across and eight high, standing on its
+// feet.
+// nocedit 0x00408c70
+CBoundingBox3D *CDemonActor::getBoundingBox(CBoundingBox3D *out_box) {
+    *out_box = {.min = {.x = -kDefaultHalfWidth, .y = 0.0F, .z = -kDefaultHalfWidth},
+                .max = {.x = kDefaultHalfWidth, .y = kDefaultHeight, .z = kDefaultHalfWidth}};
+    return out_box;
+}
+
 // The original checked the actor's pointers here in its debug builds.
 // nocedit 0x004098c0
 void CDemonActor::updateCollisionData(CDemonSet & /*set*/) {}
@@ -166,6 +179,14 @@ bool CDemonActor::isCollisionDisabled() const {
 
 void CDemonActor::setCollisionDisabled(bool collision_disabled) {
     collision_disabled_ = collision_disabled;
+}
+
+const SDrawnTransform &CDemonActor::getDrawnTransform() const {
+    return drawn_transform_;
+}
+
+void CDemonActor::setDrawnTransform(const SDrawnTransform &drawn_transform) {
+    drawn_transform_ = drawn_transform;
 }
 
 const common::CVector3i &CDemonActor::getScale() const {

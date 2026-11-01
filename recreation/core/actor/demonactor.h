@@ -21,6 +21,16 @@ enum class EActorLifecycleState : std::uint8_t {
     kDestroyed = 2,
 };
 
+// Where an actor was when last drawn into a camera's background, and which of the background's
+// passes must draw it again, a bit each; a new actor is at the origin with every pass due.
+struct SDrawnTransform {
+    static constexpr std::uint32_t kEveryPass = 0x1f;
+
+    common::CVector3f position;
+    common::CVector3f orientation;
+    std::uint32_t dirty_flags = kEveryPass;
+};
+
 // Anything a mission places: what every actor class has, and what each may do differently. The
 // virtual functions not ported yet quit when called.
 class CDemonActor {
@@ -148,6 +158,10 @@ public:
     // Left out of the set's collisions.
     [[nodiscard]] bool isCollisionDisabled() const;
     void setCollisionDisabled(bool collision_disabled);
+    // Where the actor was when last drawn into a camera's background, and which of the
+    // background's passes must draw it again, a bit each.
+    [[nodiscard]] const SDrawnTransform &getDrawnTransform() const;
+    void setDrawnTransform(const SDrawnTransform &drawn_transform);
     // How much larger than its model the actor is drawn along each axis, in 16.16.
     [[nodiscard]] const common::CVector3i &getScale() const;
     void setScale(const common::CVector3i &scale);
@@ -166,6 +180,7 @@ private:
     bool transparent_ = false;
     bool renderable_ = true;
     bool collision_disabled_ = false;
+    SDrawnTransform drawn_transform_;
     common::CVector3i scale_{.x = kUnitScale, .y = kUnitScale, .z = kUnitScale};
 };
 

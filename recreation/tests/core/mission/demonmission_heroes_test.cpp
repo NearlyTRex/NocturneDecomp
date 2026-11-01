@@ -125,6 +125,16 @@ TEST_F(CDemonMissionHeroesTest, AHeroGivenIsPutAtThePlaceInstead) {
     EXPECT_EQ(hero.walk_distances, (std::vector<std::pair<float, float>>{{0.0F, 0.0F}}));
 }
 
+// The set draws the first hero before every other actor.
+TEST_F(CDemonMissionHeroesTest, TheFirstHeroIsTheSetsLocalHero) {
+    addPlaceholder(0);
+    auto given = std::make_unique<CTestPlacedHero>(actor_);
+    CDemonActor *const hero = given.get();
+    ASSERT_TRUE(mission_.createHeros(std::move(given)));
+    set_.buildDisplayList(0);
+    EXPECT_THAT(set_.getSortedRenderActors(), ::testing::ElementsAre(hero));
+}
+
 // The error waits for a key, and the placeholders stay.
 TEST_F(CDemonMissionHeroesTest, WithNoPlaceForTheFirstHeroItFails) {
     addPlaceholder(1);

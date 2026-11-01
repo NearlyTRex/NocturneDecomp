@@ -32,10 +32,6 @@ void CDemonActor::renderBackground(int /*layer_flag*/) {
     notPorted("renderBackground");
 }
 
-CBoundingBox3D *CDemonActor::getBoundingBox(CBoundingBox3D * /*out_box*/) {
-    notPorted("getBoundingBox");
-}
-
 std::uint32_t CDemonActor::processFootstep(float /*volume*/) {
     notPorted("processFootstep");
 }

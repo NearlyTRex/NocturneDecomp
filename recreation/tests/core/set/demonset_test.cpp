@@ -28,8 +28,8 @@ TEST(CDemonSet, PublicInterface) {
     static_assert(
         std::is_same_v<decltype(&CDemonSet::renderSceneGeometry), void (CDemonSet::*)(float, int)>);
     static_assert(std::is_same_v<decltype(&CDemonSet::initScene), void (CDemonSet::*)()>);
-    static_assert(std::is_same_v<decltype(&CDemonSet::snapshotActorTransformState),
-                                 void (CDemonSet::*)(CDemonActor *)>);
+    static_assert(
+        std::is_same_v<decltype(&CDemonSet::snapshotActorTransformState), void (*)(CDemonActor &)>);
     static_assert(std::is_same_v<decltype(&CDemonSet::setCameraView), void (CDemonSet::*)(int)>);
     static_assert(
         std::is_same_v<decltype(&CDemonSet::reinitCamera), void (CDemonSet::*)(int, int, int)>);

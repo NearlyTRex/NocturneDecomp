@@ -8,6 +8,7 @@
 #include "core/actor/actorarchive.h"
 #include "core/actor/demonactor.h"
 #include "core/actor/demonactortype.h"
+#include "core/box/boundingbox3d.h"
 #include "core/game/game.h"
 #include "tests/mocks/core/gameparts.h"
 #include "tests/mocks/core/mockactorlookup.h"
@@ -309,6 +310,14 @@ TEST(CDemonActor, ALocalPointIsTurnedAsLastUpdatedThenMovedToTheActor) {
     EXPECT_NEAR(std::abs(turned.y), 1.0F, 1e-6F);
 }
 
+TEST(CDemonActor, AnActorWithNoShapeIsAnEightUnitBoxOnItsFeet) {
+    CTestActor actor(kTestLeafType);
+    CBoundingBox3D box;
+    EXPECT_EQ(actor.getBoundingBox(&box), &box);
+    EXPECT_THAT(box.min, ::testing::FieldsAre(-4.0F, 0.0F, -4.0F));
+    EXPECT_THAT(box.max, ::testing::FieldsAre(4.0F, 8.0F, 4.0F));
+}
+
 // Each quits, naming itself, until its function is ported.
 TEST(CDemonActor, TheFunctionsNotPortedYetQuit) {
     CTestActor actor(kTestLeafType);
@@ -317,7 +326,6 @@ TEST(CDemonActor, TheFunctionsNotPortedYetQuit) {
         {"renderOpaque", [&] { static_cast<void>(actor.renderOpaque()); }},
         {"renderTransparent", [&] { static_cast<void>(actor.renderTransparent()); }},
         {"renderBackground", [&] { actor.renderBackground(0); }},
-        {"getBoundingBox", [&] { static_cast<void>(actor.getBoundingBox(nullptr)); }},
         {"processFootstep", [&] { static_cast<void>(actor.processFootstep(0.0F)); }},
         {"processFootstepAtOffset",
          [&] { static_cast<void>(actor.processFootstepAtOffset(nullptr, 0.0F)); }},
@@ -373,7 +381,7 @@ TEST(CDemonActor, TheFunctionsNotPortedYetQuit) {
         {"getPathMap", [&] { static_cast<void>(actor.getPathMap()); }},
         {"calculateChecksum", [&] { actor.calculateChecksum(nullptr); }},
     };
-    EXPECT_EQ(calls.size(), 47U);
+    EXPECT_EQ(calls.size(), 46U);
     for (const auto &[name, call] : calls) {
         EXPECT_THAT(call, ThrowsMessage<common::CFatalError>(
                               StrEq("CDemonActor::" + std::string(name) + " is not ported yet")));
