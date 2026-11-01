@@ -27,7 +27,9 @@ public:
     // given.
     void load(common::CTextScanner &scanner, int set_file_version, const SFog &set_fog);
     void loadPVS(common::CTextScanner &scanner);
-    void apply(CDemonCamera *camera);
+    // Puts the scene camera where this one stands, turned and named as it is, with its lens and
+    // its ambient light.
+    void apply(CDemonCamera &camera) const;
     // Whether a sphere about the point, in the camera's frame, reaches into the camera's box.
     [[nodiscard]] bool testSphereInFrustum(const common::CVector3f &world_position,
                                            float radius) const;

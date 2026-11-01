@@ -283,7 +283,8 @@ private:
     core::SDemonLightOwners light_owners_{.camera = {.tables = camera_tables_,
                                                      .screen = screen_,
                                                      .special = special_,
-                                                     .crt_random = crt_random_},
+                                                     .crt_random = crt_random_,
+                                                     .renderer = demon_renderer_},
                                           .global_filters = global_filters_,
                                           .player_filters = player_filters_,
                                           .glow = light_glow_};

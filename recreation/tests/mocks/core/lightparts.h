@@ -30,12 +30,13 @@ public:
         }
     }
 
-    [[nodiscard]] SDemonLightOwners owners(engine::IScreenDevice &screen,
-                                           engine::CSpecial &special) {
+    [[nodiscard]] SDemonLightOwners owners(engine::IScreenDevice &screen, engine::CSpecial &special,
+                                           engine::CDemonRenderer &renderer) {
         return {.camera = {.tables = tables,
                            .screen = screen,
                            .special = special,
-                           .crt_random = crt_random},
+                           .crt_random = crt_random,
+                           .renderer = renderer},
                 .global_filters = global_filters,
                 .player_filters = player_filters,
                 .glow = glow};

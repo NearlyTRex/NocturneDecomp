@@ -316,8 +316,13 @@ float CDemonSet::calculateActorVisibility(std::size_t camera_index, const CDemon
 // deferred: restoring the dynamic lights' and spotlights' dirty regions, freeing the spotlights'
 //   master z-buffers and resetting their restore memory, with restoreDirtyRegions,
 //   freeMasterZBuffer and resetRestoreMemoryAllocator
-// deferred: drawing the camera's background, its shadows and lights, its fog, reverb and
-//   weather, then the scene's static lights, with setCameraView's scene rendering
+// deferred: the full lighting mode and the directional light ratio while the background draws,
+//   and no spot, omni or corona lights gathered yet, the coronas kept for the same camera (the
+//   decomp's windowed reswitch fix), with renderScene
+// deferred: noting each actor's place and turn as drawn, with the renderer's dirty regions
+// deferred: the raytrace geometry drawn in its plain mode, with renderFrustumCubes
+// deferred: opening the camera's scene and drawing its background, its shadows and lights, its
+//   reverb and weather, then the scene's static lights, with setCameraView's background scene
 // nocedit 0x0056ae50
 void CDemonSet::setCameraView(int index) {
     if (static_cast<std::size_t>(index) >= cameras_.size()) {
@@ -329,7 +334,11 @@ void CDemonSet::setCameraView(int index) {
         previous_best_camera_index_ = selected_camera_index_;
     }
     selected_camera_index_ = index;
-    quitNotPorted("CDemonSet", "setCameraView's scene rendering");
+    const C3DSCamera &camera = cameras_.at(static_cast<std::size_t>(index));
+    camera.apply(owners_.camera);
+    active_fog_ = camera.getUseGlobalFog() ? scene_fog_ : camera.getFog();
+    owners_.camera.initCameraFog(active_fog_);
+    quitNotPorted("CDemonSet", "setCameraView's background scene");
 }
 
 // nocedit 0x00575b00

@@ -1,3 +1,4 @@
+#include "common/error/fatalerror.h"
 #include "common/math/matrix3x3f.h"
 #include "common/math/vector3i.h"
 #include "common/random/watcomrandom.h"
@@ -6,6 +7,7 @@
 #include "core/dcamera/demoncamera.h"
 #include "core/dcamera/fog.h"
 #include "core/dcamera/foggrid.h"
+#include "engine/matrix/matrix.h"
 #include "tests/mocks/core/notportedcalls.h"
 #include "tests/mocks/engine/demonrendererfixture.h"
 
@@ -13,8 +15,10 @@
 #include <gtest/gtest.h>
 
 #include <algorithm>
+#include <array>
 #include <cstdint>
 #include <numeric>
+#include <span>
 #include <type_traits>
 #include <vector>
 
@@ -136,8 +140,11 @@ class CDemonCameraTest : public engine::CDemonRendererFixture {
 protected:
     SCameraTables tables_;
     common::CWatcomRandom crt_;
-    CDemonCamera camera_{
-        {.tables = tables_, .screen = screen_, .special = special_, .crt_random = crt_}};
+    CDemonCamera camera_{{.tables = tables_,
+                          .screen = screen_,
+                          .special = special_,
+                          .crt_random = crt_,
+                          .renderer = demon_renderer_}};
 };
 
 TEST_F(CDemonCameraTest, ACameraStartsWithNoBuffersAndItsLens) {
@@ -304,6 +311,48 @@ TEST_F(CDemonCameraTest, TheOverridesNotPortedYetQuit) {
         {"saveAlphaTransform", [&] { camera_.saveAlphaTransform(0); }},
     };
     expectEachQuitsNotPorted("CDemonCamera", calls);
+}
+
+// The renderer takes the camera's place in 24.8 and its lens, 18 being the unit scale; a second
+// scene before the first ends is fatal.
+TEST_F(CDemonCameraTest, BeginningASceneSetsTheRendererToTheCamera) {
+    camera_.init(48);
+    camera_.setPosition({.x = 1.0F, .y = 2.0F, .z = 3.0F});
+    camera_.setFocalLength(18.0F);
+    EXPECT_FALSE(camera_.isSceneOpen());
+    camera_.beginScene(1);
+    EXPECT_TRUE(camera_.isSceneOpen());
+    EXPECT_EQ(matrix_.getCameraOrigin(), (common::CVector3i{.x = 256, .y = 512, .z = 768}));
+    EXPECT_EQ(matrix_.getProjectionScale(), 0x10000);
+    EXPECT_THAT([this] { camera_.beginScene(1); },
+                ::testing::ThrowsMessage<common::CFatalError>(
+                    ::testing::StrEq("CDemonCamera::beginScene - Scene already open!")));
+}
+
+// Through the hardware renderer, its scene begins and it is cleared, by clearScreen and again,
+// with its depths; asked to skip the clearing, nothing is.
+TEST_F(CDemonCameraTest, ASceneClearsTheHardwareRendererUnlessToldNotTo) {
+    std::array<std::uint32_t, 64> depth_row{};
+    std::array<std::uint32_t *, 48> depth_rows{};
+    depth_rows.fill(depth_row.data());
+    ON_CALL(screen_, getZBufferRows())
+        .WillByDefault(Return(std::span<std::uint32_t *>(depth_rows)));
+    startRenderer();
+    camera_.init(48);
+    EXPECT_CALL(renderer_, beginScene());
+    EXPECT_CALL(renderer_, clear()).Times(2);
+    EXPECT_CALL(renderer_, clearZBuffer());
+    camera_.beginScene(0);
+    ::testing::Mock::VerifyAndClearExpectations(&renderer_);
+    CDemonCamera skipping{{.tables = tables_,
+                           .screen = screen_,
+                           .special = special_,
+                           .crt_random = crt_,
+                           .renderer = demon_renderer_}};
+    skipping.init(48);
+    EXPECT_CALL(renderer_, beginScene()).Times(0);
+    EXPECT_CALL(renderer_, clear()).Times(0);
+    skipping.beginScene(1);
 }
 
 } // namespace

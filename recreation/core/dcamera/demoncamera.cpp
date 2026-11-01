@@ -1,11 +1,13 @@
 #include "core/dcamera/demoncamera.h"
 
+#include "common/error/error.h"
 #include "common/math/fixed.h"
 #include "common/random/watcomrandom.h"
 #include "core/dcamera/cameratables.h"
 #include "core/dcamera/fog.h"
 #include "core/dcamera/foggrid.h"
 #include "core/dcamera/gammacurve.h"
+#include "engine/drender/demonrenderer.h"
 #include "engine/screendevice.h"
 #include "engine/special/special.h"
 
@@ -176,6 +178,46 @@ void CDemonCamera::generateGammaPalette(int gamma_value) {
 
 const std::string &CDemonCamera::getCameraName() const {
     return camera_name_;
+}
+
+// The viewport is the camera's frame (the decomp's windowed fix), where the original took the
+// screen's size.
+// deferred: the camera shake's attack, sustain and decay and the screen's jitter, which stay
+//   still until a shake starts, with initCameraShake
+// deferred: becoming the scene camera, and the one whose buffers are kept, with setSceneCamera's
+//   readers
+// deferred: the dirty rectangles and the viewport rectangle, and keeping whether the buffers
+//   were cleared, with pushRect and endScene
+// deferred: the camera's copies of the transform, origin and projection and their inverse, with
+//   updateTransformMatrices' readers
+// nocedit 0x0044c430
+void CDemonCamera::beginScene(int skip_clear_buffers) {
+    if (scene_open_) {
+        common::displayErrorAndQuit("CDemonCamera::beginScene - Scene already open!");
+    }
+    scene_open_ = true;
+    engine::CDemonRenderer &renderer = owners_.renderer;
+    renderer.pushViewport(0, 0, framebuffer_width_ - 1, framebuffer_height_ - 1);
+    renderer.setCameraOriginFromScaledPoint(getPosition());
+    renderer.setProjectionScale(getFocalLength());
+    renderer.setupCameraAndProjection(getRotationMatrix());
+    if (skip_clear_buffers != 0) {
+        return;
+    }
+    engine::CSpecial &special = owners_.special;
+    if (special.getUseDirect3D()) {
+        static_cast<void>(special.beginScene());
+    }
+    special.clearScreen();
+    special.clearZBufferNative();
+    if (special.getUseExternalRenderer()) {
+        static_cast<void>(special.clear());
+        static_cast<void>(special.clearZBuffer());
+    }
+}
+
+bool CDemonCamera::isSceneOpen() const {
+    return scene_open_;
 }
 
 void CDemonCamera::setCameraName(std::string_view camera_name) {

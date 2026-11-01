@@ -38,7 +38,7 @@ TEST_F(C3DSLightSceneTest, ALightsMasterLightIsPlacedTurnedNamedAndInitialised) 
     EXPECT_EQ(light_.getFilters().size(), 2U);
     EXPECT_EQ(light_.getFilters()[0], nullptr);
     const std::unique_ptr<CDemonLight> made =
-        light_.create(parts_.owners(screen_, special_), cache_);
+        light_.create(parts_.owners(screen_, special_, demon_renderer_), cache_);
     EXPECT_EQ(made->getShadowMapWidth(), 512);
     EXPECT_EQ(made->getShadowMapHeight(), 128);
     EXPECT_EQ(made->getShadowDepthBuffer().size(), 512U * 128U);
@@ -58,7 +58,7 @@ TEST_F(C3DSLightSceneTest, ALightsMasterLightIsPlacedTurnedNamedAndInitialised) 
 TEST_F(C3DSLightSceneTest, ALightWithNoFiltersHasACircularShadow) {
     C3DSLight plain;
     const std::unique_ptr<CDemonLight> made =
-        plain.create(parts_.owners(screen_, special_), cache_);
+        plain.create(parts_.owners(screen_, special_, demon_renderer_), cache_);
     EXPECT_EQ(made->getShadowBoundsMode(), 1);
     EXPECT_EQ(made->getShadowMapWidth(), 256);
     EXPECT_EQ(cache_.getFilterCount(), 0U);
@@ -66,7 +66,7 @@ TEST_F(C3DSLightSceneTest, ALightWithNoFiltersHasACircularShadow) {
 
 // The aspect becomes 16.16, the intensity picks the filter, and a moving filter gets a buffer.
 TEST_F(C3DSLightSceneTest, ApplyingGivesTheLightItsAspectIntensityAndMovingFilter) {
-    CDemonLight light{parts_.owners(screen_, special_), 256, 256};
+    CDemonLight light{parts_.owners(screen_, special_, demon_renderer_), 256, 256};
     light_.apply(light);
     EXPECT_EQ(light.getCameraName(), "Spot");
     EXPECT_EQ(light.getPosition().x, 1.0F);
@@ -76,7 +76,7 @@ TEST_F(C3DSLightSceneTest, ApplyingGivesTheLightItsAspectIntensityAndMovingFilte
               parts_.global_filters[1].getData().data());
     EXPECT_TRUE(light.hasFilterBuffer());
     C3DSLight still;
-    CDemonLight other{parts_.owners(screen_, special_), 256, 256};
+    CDemonLight other{parts_.owners(screen_, special_, demon_renderer_), 256, 256};
     still.apply(other);
     EXPECT_FALSE(other.hasFilterBuffer());
 }

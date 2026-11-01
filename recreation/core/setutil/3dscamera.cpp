@@ -5,6 +5,7 @@
 #include "common/text/scanformat.h"
 #include "common/text/textscanner.h"
 #include "core/dcamera/dcamera.h"
+#include "core/dcamera/demoncamera.h"
 #include "core/setutil/setfileversion.h"
 
 #include <algorithm>
@@ -104,6 +105,19 @@ void C3DSCamera::loadPVS(common::CTextScanner &scanner) {
     for (int &cube : pvs_list_) {
         scanFormat(scanner, "\t%d\n", cube);
     }
+}
+
+// The original also copied a flag no camera sets, and quit on a panning camera, which retail
+// can't load.
+// deferred: the console's notes on an ambient level below the set's least or above a quarter,
+//   with the console among the set's owners
+// nocedit 0x00585870
+void C3DSCamera::apply(CDemonCamera &camera) const {
+    camera.setPosition(position_);
+    camera.setRotationMatrix(rotation_matrix_);
+    camera.setFocalLength(projection_scale_);
+    camera.setCameraName(name_);
+    camera.setEffectIntensity(ambient_value_);
 }
 
 // Each side compared with the point moved by the radius at the x87's precision.

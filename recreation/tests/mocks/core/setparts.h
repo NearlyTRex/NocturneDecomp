@@ -40,7 +40,7 @@ public:
                                          const engine::CMatrix &matrix, engine::CSpecial &special,
                                          engine::C2d &two_d, engine::IScreenDevice &screen,
                                          engine::IRawInput &raw_input) {
-        const SDemonLightOwners light_owners = light_parts.owners(screen, special);
+        const SDemonLightOwners light_owners = light_parts.owners(screen, special, renderer);
         if (!camera) {
             camera = std::make_unique<CDemonCamera>(light_owners.camera);
             flashlight =

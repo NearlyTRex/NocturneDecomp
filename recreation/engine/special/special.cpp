@@ -230,6 +230,22 @@ int CSpecial::clear() {
     return renderer_.clear();
 }
 
+// nocedit 0x005b7280
+int CSpecial::beginScene() {
+    if (!use_external_renderer_) {
+        return 0;
+    }
+    return renderer_.beginScene();
+}
+
+// nocedit 0x005b7be0
+int CSpecial::clearZBuffer() {
+    if (!use_external_renderer_) {
+        return 0;
+    }
+    return renderer_.clearZBuffer();
+}
+
 // Software drawing since the last present goes into the renderer's image first. The renderer
 // usually points the rows at that image already, so the copy may run a row onto itself.
 // The original's skip_buffer_copy parameter, which skipped the copy, is not in retail.

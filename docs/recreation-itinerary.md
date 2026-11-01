@@ -24,7 +24,7 @@ functions don't count as done. Sizes are in instructions.
 | 8 | `renderMenuAndGetChoice`, `CMoon::free`, `CSound::reset`, `CEditorTools::showFileSelectionDialog` | 8 | 63 | 5314 | 60 | 3 | 95.2% |
 | 9 | `CPickList::enableItem`, `CEventList::resetGameFlags`, `CLevelLoader::show`, `CDemonMission::load` | 15 | 56 | 3298 | 37 | 9 | 66.0% |
 | 10 | `CDemonMission::createHeros`, `CDemonMission::prepareAllActors`, `CEventList::reset`, `CDemonMission::loadSet` | 15 | 42 | 5112 | 33 | 8 | 78.5% |
-| 11 | `CScript::loadScript` | 63 | 579 | 67400 | 96 | 36 | 16.5% |
+| 11 | `CScript::loadScript` | 63 | 579 | 67400 | 98 | 38 | 16.9% |
 | 12 | `CDemonMission::loadScript`, `CScript::executeInitSection`, `CDemonMission::startMission`, `CDemonMission::buildActiveSetActorList`, `CConsole::reset`, `CEditorTools::displayMemoryDiagnostics`, `CGame::setGameRes`, `CDemonLight::init`, `CDemonSet::initScene` | 12 | 26 | 1658 | 16 | 9 | 61.5% |
 | 13 | `CFireEffect::init`, `CDemonSet::loadMasterLightStates`, `CDemonSet::setGamma`, `CGame::clearOverlay`, `CGame::loadAssets` | 7 | 27 | 735 | 16 | 1 | 59.2% |
 | 14 | `CNetGame::syncPlayers`, `CNetGame::processServerFrame`, `CLevelLoader::cleanup`, `CKeys::toggleInputMask`, `CGame::processHotkeys` | 17 | 51 | 5302 | 4 | 0 | 7.8% |
@@ -46,7 +46,7 @@ functions don't count as done. Sizes are in instructions.
 | 30 | Not reached from startup: `core/` (part 8 of 9) | 20 | 300 | 31826 | 41 | 8 | 13.6% |
 | 31 | Not reached from startup: `core/` (part 9 of 9) | 5 | 111 | 10905 | 26 | 7 | 23.4% |
 | 32 | Not reached from startup: `wincore/` | 2 | 11 | 482 | 4 | 0 | 36.3% |
-| | **All** | | **4479** | **402407** | **1139** | **203** | **25.4%** |
+| | **All** | | **4479** | **402407** | **1141** | **205** | **25.4%** |
 
 ## Step 0: Math value types
 
@@ -1566,7 +1566,7 @@ functions don't count as done. Sizes are in instructions.
 - free functions
   - [ ] `loadAndUpdateTexture` 0x005dd930 (13)
 
-### `core/dcamera.cpp` (26 functions, 3719 instructions, 3 done, 0 partial)
+### `core/dcamera.cpp` (26 functions, 3719 instructions, 3 done, 1 partial)
 - class `CDemonCamera`
   - [ ] `setupPerspectiveAndFog` 0x004537d0 (73)
   - [ ] `initCameraShake` 0x00453fc0 (43)
@@ -1575,7 +1575,11 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `setSceneCamera` 0x0044c3e0 (10)
   - [ ] `calculateInverseTransform` 0x0044cf20 (186)
   - [ ] `updateTransformMatrices` 0x0044d1c0 (56)
-  - [ ] `beginScene` 0x0044c430 (196)
+  - [~] `beginScene` 0x0044c430 (196)
+    - deferred: the camera shake's attack, sustain and decay and the screen's jitter, which stay still until a shake starts, with initCameraShake
+    - deferred: becoming the scene camera, and the one whose buffers are kept, with setSceneCamera's readers
+    - deferred: the dirty rectangles and the viewport rectangle, and keeping whether the buffers were cleared, with pushRect and endScene
+    - deferred: the camera's copies of the transform, origin and projection and their inverse, with updateTransformMatrices' readers
   - [ ] `resetSceneCamera` 0x0044c410 (4)
   - [ ] `endScene` 0x0044cb80 (62)
   - [ ] `beginBackgroundScene` 0x0044cc70 (99)
@@ -1624,11 +1628,11 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `triangleCylinderCollision` 0x00456040 (307)
   - [ ] `buildAndRenderTrianglePrimitive` 0x004566e0 (39)
 
-### `engine/special.cpp` (7 functions, 258 instructions, 1 done, 0 partial)
+### `engine/special.cpp` (7 functions, 258 instructions, 3 done, 0 partial)
 - free functions
   - [ ] `transformPoint` 0x005b5a25 (205)
-  - [ ] `beginScene` 0x005b7280 (6)
-  - [ ] `clearZBuffer` 0x005b7be0 (6)
+  - [x] `beginScene` 0x005b7280 (6)
+  - [x] `clearZBuffer` 0x005b7be0 (6)
   - [ ] `endScene` 0x005b72a0 (6)
   - [ ] `masterZBuffer` 0x005b7d00 (9)
   - [x] `setFogColor` 0x005b7b80 (20)
@@ -1937,7 +1941,10 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `process` 0x0056f940 (100)
   - [~] `setCameraView` 0x0056ae50 (639)
     - deferred: restoring the dynamic lights' and spotlights' dirty regions, freeing the spotlights' master z-buffers and resetting their restore memory, with restoreDirtyRegions, freeMasterZBuffer and resetRestoreMemoryAllocator
-    - deferred: drawing the camera's background, its shadows and lights, its fog, reverb and weather, then the scene's static lights, with setCameraView's scene rendering
+    - deferred: the full lighting mode and the directional light ratio while the background draws, and no spot, omni or corona lights gathered yet, the coronas kept for the same camera (the decomp's windowed reswitch fix), with renderScene
+    - deferred: noting each actor's place and turn as drawn, with the renderer's dirty regions
+    - deferred: the raytrace geometry drawn in its plain mode, with renderFrustumCubes
+    - deferred: opening the camera's scene and drawing its background, its shadows and lights, its reverb and weather, then the scene's static lights, with setCameraView's background scene
   - [x] `setCameraEnabled` 0x00570ea0 (5)
   - [x] `setCameraEnabledByGroup` 0x00570ec0 (30)
 - free functions
@@ -1977,14 +1984,15 @@ functions don't count as done. Sizes are in instructions.
 - class `CFilterCache`
   - [x] `getFilter` 0x00470060 (103)
 
-### `core/setutil.cpp` (6 functions, 437 instructions, 1 done, 0 partial)
+### `core/setutil.cpp` (6 functions, 437 instructions, 1 done, 1 partial)
 - class `C3DSLight`
   - [ ] `advanceFilter` 0x00586e70 (40)
   - [ ] `setFilterFrame` 0x00586f00 (44)
   - [ ] `process` 0x00586cb0 (118)
   - [ ] `addFilter` 0x00586fa0 (63)
 - class `C3DSCamera`
-  - [ ] `apply` 0x00585870 (106)
+  - [~] `apply` 0x00585870 (106)
+    - deferred: the console's notes on an ambient level below the set's least or above a quarter, with the console among the set's owners
   - [x] `testSphereInFrustum` 0x00585970 (66)
 
 ### `core/script.cpp` (25 functions, 7596 instructions, 11 done, 9 partial)

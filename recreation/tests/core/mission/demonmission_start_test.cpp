@@ -168,7 +168,7 @@ protected:
         givenSessionAssets();
         EXPECT_THAT([this] { mission_.run(game_, session_); },
                     ThrowsMessage<common::CFatalError>(
-                        StrEq("CDemonSet::setCameraView's scene rendering is not ported yet")));
+                        StrEq("CDemonSet::setCameraView's background scene is not ported yet")));
         EXPECT_EQ(set_.getSelectedCameraIndex(), 0);
     }
 };

@@ -23,7 +23,7 @@ TEST(C3DSCamera, PublicInterface) {
     static_assert(std::is_same_v<decltype(&C3DSCamera::loadPVS),
                                  void (C3DSCamera::*)(common::CTextScanner &)>);
     static_assert(
-        std::is_same_v<decltype(&C3DSCamera::apply), void (C3DSCamera::*)(CDemonCamera *)>);
+        std::is_same_v<decltype(&C3DSCamera::apply), void (C3DSCamera::*)(CDemonCamera &) const>);
     static_assert(std::is_same_v<decltype(&C3DSCamera::testSphereInFrustum),
                                  bool (C3DSCamera::*)(const common::CVector3f &, float) const>);
 }

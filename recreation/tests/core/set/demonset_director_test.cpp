@@ -30,7 +30,7 @@ using ::testing::StrEq;
 using ::testing::ThrowsMessage;
 
 constexpr std::string_view kSceneNotPorted =
-    "CDemonSet::setCameraView's scene rendering is not ported yet";
+    "CDemonSet::setCameraView's background scene is not ported yet";
 
 // An unturned camera at the position, with its box.
 std::string cameraAt(std::string_view name, std::string_view position, std::string_view box) {
@@ -207,6 +207,30 @@ TEST_F(CDemonSetDirectorTest, UnforcedTheShownCameraIsFavouredAndABetterOneTaken
     EXPECT_EQ(set_.evaluateVirtualDirector(&focus_, 0), 0);
     EXPECT_THAT(set_.getCameraScores(),
                 ElementsAre(-99999.9F, static_cast<float>(132.0 * double{0.2F}), 396.0F));
+}
+
+// The scene camera takes the camera shown's place, lens, name and ambient light, and the set's
+// fog, or the camera's own when it has its own.
+TEST_F(CDemonSetDirectorTest, TheSceneCameraTakesTheCameraShownAndItsFog) {
+    givenCameras(
+        cameraAt("sees", "0,0,-10", kWideBox) +
+            std::format("label\nfogged\npos\n0,0,-10\norient\n0,0,0\nfov\n24\nvmat\n1,0,0\n"
+                        "0,1,0\n0,0,1\n0\nfogR,fogG,fogB\n10,20,30\nfogVel\n1,2,3\n4,5\n6\n"
+                        "box\n{}\nreverb\n7\n",
+                        kWideBox),
+        2);
+    set_.getCameras()[1].setAmbientValue(0.2F);
+    chooseTheFirstCamera();
+    const CDemonCamera &scene = *set_parts_.camera;
+    EXPECT_TRUE(scene.getPosition().equals({.x = 0.0F, .y = 0.0F, .z = -10.0F}));
+    EXPECT_EQ(scene.getFocalLength(), 30.0F);
+    EXPECT_EQ(scene.getCameraName(), "sees");
+    EXPECT_EQ(set_.getActiveFog().color_index, set_.getSceneFog().color_index);
+    set_.setPendingCamera(1, 1.0F);
+    expectSwitch(0);
+    EXPECT_EQ(scene.getCameraName(), "fogged");
+    EXPECT_EQ(scene.getFocalLength(), 24.0F);
+    EXPECT_EQ(set_.getActiveFog().color_index, (CColor3i{.r = 10, .g = 20, .b = 30}));
 }
 
 // The external renderer is turned off while the cameras are scored, then back on.

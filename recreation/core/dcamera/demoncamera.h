@@ -21,6 +21,8 @@ struct SDemonCameraOwners {
     engine::IScreenDevice &screen;
     engine::CSpecial &special;
     common::CWatcomRandom &crt_random;
+    // What a scene the camera begins is drawn through.
+    engine::CDemonRenderer &renderer;
 };
 
 // The software renderer's camera: a frame and depth buffer at most 480 lines tall, and the
@@ -49,7 +51,11 @@ public:
     void free();
     void setSceneCamera(int skip_clear_buffers);
     void resetSceneCamera();
+    // Opens the camera's scene: its frame the viewport, the renderer at its place, lens and turn,
+    // and, unless told to skip it, the screen and depth buffers cleared. A scene already open is
+    // fatal.
     void beginScene(int skip_clear_buffers);
+    [[nodiscard]] bool isSceneOpen() const;
     void pushRect(int left, int top, int right, int bottom);
     void restoreZBufferRectArray();
     void endScene(int skip_zbuffer_copy);
@@ -124,6 +130,7 @@ private:
     std::vector<std::uint32_t> framebuffer_;
     std::vector<std::uint32_t> zbuffer_;
     int corona_blend_factor_ = 0;
+    bool scene_open_ = false;
 };
 
 } // namespace nocturne::core
