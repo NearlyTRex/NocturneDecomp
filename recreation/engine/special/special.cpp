@@ -41,6 +41,10 @@ bool CSpecial::getUseExternalRenderer() const {
     return use_external_renderer_;
 }
 
+void CSpecial::setUseExternalRenderer(bool use_external_renderer) {
+    use_external_renderer_ = use_external_renderer;
+}
+
 int CSpecial::getCurrentGraphicsBoard() const {
     return current_graphics_board_;
 }

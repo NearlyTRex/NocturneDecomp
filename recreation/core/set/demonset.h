@@ -14,8 +14,10 @@
 #include "core/weather/weathertype.h"
 #include "engine/fwd.h"
 #include "platform/fwd.h"
+#include "platform/mrglprimitivequad.h"
 #include "support/fwd.h"
 
+#include <array>
 #include <cstddef>
 #include <cstdint>
 #include <cstdio>
@@ -271,11 +273,27 @@ private:
                                         const common::CVector3f &point) const;
     int findVdirBoxAtPosition(const common::CVector3f &position);
     void buildVdirBoxGroups();
+    // The actor's box as the director draws it into the thumbs: its corners in 24.8, and its
+    // faces, each with its plane.
+    struct SActorOutline {
+        std::array<common::CVector3i, CBoundingBox3D::kCorners> corners{};
+        std::array<platform::SMRGLPrimitiveQuad, 6> faces;
+    };
+    // What the cameras are scored against: the actor's virtual director area, the radius of the
+    // sphere tested against each camera's view, and its outline.
+    struct SScoringTarget {
+        int area = -1;
+        float radius = 0.0F;
+        const SActorOutline &outline;
+    };
+
+    [[nodiscard]] static SActorOutline outlineActor(const CBoundingBox3D &box);
     // How much of the actor the camera sees, from the camera's depth thumb.
-    static float calculateActorVisibility(std::size_t camera_index, CDemonActor &actor);
-    // Scores up to count cameras from where the last call stopped, against an actor in the
-    // virtual director area, whose sphere of the radius is tested against each camera's view.
-    void scoreCameras(CDemonActor &actor, int area, float radius, int count);
+    float calculateActorVisibility(std::size_t camera_index, const CDemonActor &actor,
+                                   const SActorOutline &outline);
+    // Scores up to count cameras from where the last call stopped.
+    void scoreCameras(CDemonActor &actor, const SScoringTarget &target, int count,
+                      int force_evaluation_mode);
     void refreshThumbs(std::string_view filename);
 
     SDemonSetOwners owners_;

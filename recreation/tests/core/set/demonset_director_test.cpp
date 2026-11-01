@@ -5,8 +5,12 @@
 #include "core/location.h"
 #include "core/set/demonset.h"
 #include "core/setutil/3dscamera.h"
+#include "core/xform/xform.h"
+#include "engine/drender/demonrenderer.h"
 #include "tests/mocks/core/setfilefixture.h"
+#include "tests/mocks/core/setparts.h"
 #include "tests/mocks/core/testfieldsarchive.h"
+#include "tests/mocks/engine/demonrendererfixture.h"
 #include "tests/mocks/engine/mockgameclock.h"
 
 #include <gmock/gmock.h>
@@ -36,15 +40,31 @@ std::string cameraAt(std::string_view name, std::string_view position, std::stri
 }
 
 constexpr std::string_view kWideBox = "-50,-50,-50\n50,50,50";
+// What cameras 3 and 1.2 in front of the barrier's middle score.
+constexpr float kCloseScore = 146.625F;
+constexpr float kNearScore = 11.140625F;
 
 // A set of the cameras, none in a virtual director box, a 2 by 2 by 2 barrier at the origin to
 // show, so of radius 4.15, and the game's frame time to set.
-class CDemonSetDirectorTest : public CSetFileFixture {
+class CDemonSetDirectorTest : public engine::CDemonRendererFixture {
 protected:
     CDemonSetDirectorTest() {
         CTestFieldsArchive archive(focus_, CBarrier::kType, 1, "2,2,2\n");
         focus_.archive(archive.get());
         focus_.setLocation({.position = {}, .area_id = 0});
+    }
+
+    void load(const SSetFile &file) {
+        givenFile("models\\test.set", file.text());
+        set_.load("test.set");
+    }
+
+    // data\pier.zth, the thumbs of the cameras, each depth's bytes all the byte given.
+    void givenThumbs(int cameras, char byte) {
+        givenFile("data\\pier.zth",
+                  std::string(static_cast<std::size_t>(cameras) * CDemonSet::kThumbWidth *
+                                  CDemonSet::kThumbHeight * 4,
+                              byte));
     }
 
     void givenCameras(const std::string &cameras, int count) {
@@ -89,6 +109,13 @@ protected:
                     ThrowsMessage<common::CFatalError>(StrEq(kSceneNotPorted)));
     }
 
+    CSetParts set_parts_{dosio_};
+    // Clipping as the game does, so faces partly out of view are drawn.
+    engine::CDemonRenderer clipping_renderer_{
+        matrix_,  two_d_,    three_d_, vertex_buffer_,           special_, prim_, zraster_,
+        texture_, textures_, screen_,  &transformAndClipGeometry};
+    CDemonSet set_{
+        set_parts_.owners(clipping_renderer_, matrix_, special_, two_d_, screen_, raw_input_)};
     CBarrier focus_;
     int clock_ = 0;
 };
@@ -126,11 +153,70 @@ TEST_F(CDemonSetDirectorTest, WithNoneChosenEveryCameraIsScoredAndTheBestShown) 
     EXPECT_TRUE(set_.wasLastSwitchAreaInvalid());
 }
 
-TEST_F(CDemonSetDirectorTest, ACameraWhoseViewTakesInTheActorAsksHowMuchItSees) {
+// Ten back from the barrier, its three faces towards the camera cover 132 of the thumb's pixels,
+// none behind the thumb's depths of 0.
+TEST_F(CDemonSetDirectorTest, ACameraScoresThePixelsOfTheActorItSees) {
     givenCameras(cameraAt("sees", "0,0,-10", kWideBox), 1);
-    EXPECT_THAT([this] { static_cast<void>(set_.evaluateVirtualDirector(&focus_, 1)); },
-                ThrowsMessage<common::CFatalError>(
-                    StrEq("CZThumb::calculateActorVisibility is not ported yet")));
+    expectSwitch(1);
+    EXPECT_THAT(set_.getCameraScores(), ElementsAre(132.0F));
+    EXPECT_EQ(set_.getSelectedCameraIndex(), 0);
+}
+
+// Depths nearer than all of the barrier's hide it.
+TEST_F(CDemonSetDirectorTest, AnActorBehindTheThumbsDepthsIsNotSeen) {
+    givenThumbs(1, '\xff');
+    givenCameras(cameraAt("sees", "0,0,-10", kWideBox), 1);
+    expectSwitch(1);
+    EXPECT_THAT(set_.getCameraScores(), ElementsAre(0.0F));
+}
+
+// Behind the camera every corner is past the near side.
+TEST_F(CDemonSetDirectorTest, AnActorBehindTheCameraIsNotSeen) {
+    givenCameras(cameraAt("behind", "0,0,10", kWideBox), 1);
+    expectSwitch(1);
+    EXPECT_THAT(set_.getCameraScores(), ElementsAre(0.0F));
+}
+
+// Up close, corners past a side halve the count each; nearer, those behind the camera take it to
+// a sixteenth each; and from inside the box no face is seen.
+TEST_F(CDemonSetDirectorTest, CornersOutOfViewCutTheScore) {
+    givenCameras(cameraAt("close", "0,1,-3", kWideBox) + cameraAt("near", "0,1,-1.2", kWideBox) +
+                     cameraAt("inside", "0,1,0", kWideBox),
+                 3);
+    expectSwitch(1);
+    EXPECT_THAT(set_.getCameraScores(), ElementsAre(kCloseScore, kNearScore, 0.0F));
+}
+
+// Unforced, the camera shown counts three times over and the one shown before it a fifth, and a
+// better camera that sees the actor is switched to.
+TEST_F(CDemonSetDirectorTest, UnforcedTheShownCameraIsFavouredAndABetterOneTaken) {
+    givenCameras(cameraAt("blind", "0,0,10", kWideBox) + cameraAt("sees", "0,0,-10", kWideBox) +
+                     cameraAt("also", "0,0,-10", kWideBox),
+                 3);
+    chooseTheFirstCamera();
+    expectSwitch(0);
+    EXPECT_EQ(set_.getSelectedCameraIndex(), 1);
+    EXPECT_EQ(set_.getPreviousBestCameraIndex(), 0);
+    set_.getCameras()[0].setVdirZone(5);
+    EXPECT_EQ(set_.evaluateVirtualDirector(&focus_, 0), 0);
+    EXPECT_THAT(set_.getCameraScores(), ElementsAre(-99999.9F, 396.0F, 132.0F));
+    set_.setPendingCamera(2, 1.0F);
+    expectSwitch(0);
+    EXPECT_EQ(set_.getPreviousBestCameraIndex(), 1);
+    set_.setPendingCamera(2, 0.0F);
+    EXPECT_EQ(set_.evaluateVirtualDirector(&focus_, 0), 0);
+    EXPECT_THAT(set_.getCameraScores(),
+                ElementsAre(-99999.9F, static_cast<float>(132.0 * double{0.2F}), 396.0F));
+}
+
+// The external renderer is turned off while the cameras are scored, then back on.
+TEST_F(CDemonSetDirectorTest, TheExternalRendererIsLeftAsItWas) {
+    givenCameras(cameraAt("sees", "0,0,-10", kWideBox), 1);
+    EXPECT_FALSE(special_.getUseExternalRenderer());
+    special_.setUseExternalRenderer(true);
+    expectSwitch(1);
+    EXPECT_TRUE(special_.getUseExternalRenderer());
+    EXPECT_THAT(set_.getCameraScores(), ElementsAre(132.0F));
 }
 
 // Ten a second for each camera: four at a quarter second is all of them.

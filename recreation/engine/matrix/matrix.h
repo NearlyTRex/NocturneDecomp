@@ -28,7 +28,9 @@ public:
     void invertTransformMatrix();
     void transformToCache(int cacheIndex, common::CVector3i *inputPoint);
     void projectCachedPoint(int cacheIndex);
-    void projectTransformedPoint(platform::SProjectedVertex *point);
+    // Puts an eye-space point onto the screen; one behind the eye takes only the near clip flag,
+    // and one past a side of the view the flags for each side it is past.
+    void projectTransformedPoint(platform::SProjectedVertex &point) const;
     void projectCachedPointUnchecked(int cache_index);
     // Saves the transform, origin and light direction, then turns them by the three angles and
     // moves the origin by the translation. Nine can be saved; a tenth is fatal.

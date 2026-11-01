@@ -73,6 +73,13 @@ public:
     void matrixPop();
     // The field of view in the original's units, 18 being the unit projection scale.
     void setProjectionScale(float field_of_view);
+    // The projection scale as a multiple of the unit one.
+    void setProjectionScaleSimple(float scale);
+    // How many of the polygon's pixels are no nearer than the depths in the rows, each row a
+    // screen line's 32-bit depths; none for a polygon facing away while plane culling is on, or
+    // wholly past one side of the view.
+    [[nodiscard]] int countVisiblePixelsPoly(const platform::SMRGLPrimitiveQuad &poly,
+                                             std::span<std::uint32_t *const> depth_rows);
     void setLightIntensity(float intensity);
     void setLightDirection(common::CVector3i *direction);
     [[nodiscard]] common::CVector3i getCameraOriginFixed() const;

@@ -1,7 +1,10 @@
 #include "engine/matrix/matrix.h"
 
 #include "common/error/error.h"
+#include "engine/2d/2d.h"
 #include "engine/light/light.h"
+#include "engine/screenprojection.h"
+#include "platform/projectedvertex.h"
 
 #include <cmath>
 #include <cstddef>
@@ -102,6 +105,35 @@ void CMatrix::setProjectionScale(int scale) {
 
 void CMatrix::storeCameraRotation(const common::CVector3i &rotation) {
     camera_rotation_ = rotation;
+}
+
+// nocedit 0x0050cdc0
+void CMatrix::projectTransformedPoint(platform::SProjectedVertex &point) const {
+    const int x = point.transformed_x;
+    const int y = point.transformed_y;
+    const int z = point.transformed_z;
+    if (z < 1) {
+        point.screen_x = platform::SProjectedVertex::kClipNear;
+        return;
+    }
+    int flags = 0;
+    if (z < x) {
+        flags |= platform::SProjectedVertex::kClipRight;
+    }
+    if (x < -z) {
+        flags |= platform::SProjectedVertex::kClipLeft;
+    }
+    if (z < y) {
+        flags |= platform::SProjectedVertex::kClipTop;
+    }
+    if (y < -z) {
+        flags |= platform::SProjectedVertex::kClipBottom;
+    }
+    if (flags != 0) {
+        point.screen_x = flags;
+        return;
+    }
+    projectToScreen(point, two_d_.getProjection());
 }
 
 } // namespace nocturne::engine

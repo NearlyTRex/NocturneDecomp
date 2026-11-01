@@ -24,7 +24,7 @@ functions don't count as done. Sizes are in instructions.
 | 8 | `renderMenuAndGetChoice`, `CMoon::free`, `CSound::reset`, `CEditorTools::showFileSelectionDialog` | 8 | 63 | 5314 | 60 | 3 | 95.2% |
 | 9 | `CPickList::enableItem`, `CEventList::resetGameFlags`, `CLevelLoader::show`, `CDemonMission::load` | 15 | 56 | 3298 | 37 | 9 | 66.0% |
 | 10 | `CDemonMission::createHeros`, `CDemonMission::prepareAllActors`, `CEventList::reset`, `CDemonMission::loadSet` | 15 | 42 | 5112 | 33 | 8 | 78.5% |
-| 11 | `CScript::loadScript` | 63 | 579 | 67400 | 95 | 36 | 16.4% |
+| 11 | `CScript::loadScript` | 63 | 579 | 67400 | 96 | 36 | 16.5% |
 | 12 | `CDemonMission::loadScript`, `CScript::executeInitSection`, `CDemonMission::startMission`, `CDemonMission::buildActiveSetActorList`, `CConsole::reset`, `CEditorTools::displayMemoryDiagnostics`, `CGame::setGameRes`, `CDemonLight::init`, `CDemonSet::initScene` | 12 | 26 | 1658 | 16 | 9 | 61.5% |
 | 13 | `CFireEffect::init`, `CDemonSet::loadMasterLightStates`, `CDemonSet::setGamma`, `CGame::clearOverlay`, `CGame::loadAssets` | 7 | 27 | 735 | 16 | 1 | 59.2% |
 | 14 | `CNetGame::syncPlayers`, `CNetGame::processServerFrame`, `CLevelLoader::cleanup`, `CKeys::toggleInputMask`, `CGame::processHotkeys` | 17 | 51 | 5302 | 4 | 0 | 7.8% |
@@ -32,13 +32,13 @@ functions don't count as done. Sizes are in instructions.
 | 16 | `CGame::setScreenResolutionAndDisplayFangs`, `showOptionsScreen`, `CScript::skipCinematic`, `CGame::showFullscreenBitmap`, `CDemonMission::countDamageableEnemies`, `freeInventory`, `CGame::runGameSession`, `CGame::displayActStats` | 10 | 25 | 6938 | 9 | 4 | 36.0% |
 | 17 | `CGame::finishAct`, `CDemonMission::run`, `CGame::loadGame`, `CGame::showChapterSelect`, `showDeveloperToolsMenu` | 12 | 26 | 3707 | 5 | 2 | 19.2% |
 | 18 | `enterMainGameMenu`, `finalizeGameSystems` | 11 | 13 | 539 | 3 | 0 | 23.0% |
-| 19 | Not reached from startup: `engine/` | 23 | 279 | 19702 | 24 | 1 | 8.6% |
+| 19 | Not reached from startup: `engine/` | 23 | 279 | 19702 | 25 | 2 | 8.9% |
 | 20 | Not reached from startup: `support/` | 2 | 24 | 593 | 3 | 1 | 12.5% |
 | 21 | Not reached from startup: `cockpit/` | 4 | 178 | 11527 | 0 | 0 | 0.0% |
 | 22 | Not reached from startup: `shape/` | 2 | 42 | 3178 | 4 | 2 | 9.5% |
 | 23 | Not reached from startup: `core/` (part 1 of 9) | 18 | 292 | 16011 | 65 | 13 | 22.2% |
 | 24 | Not reached from startup: `core/` (part 2 of 9) | 11 | 277 | 24965 | 35 | 7 | 12.6% |
-| 25 | Not reached from startup: `core/` (part 3 of 9) | 24 | 278 | 24134 | 45 | 9 | 16.1% |
+| 25 | Not reached from startup: `core/` (part 3 of 9) | 24 | 278 | 24134 | 46 | 9 | 16.5% |
 | 26 | Not reached from startup: `core/` (part 4 of 9) | 18 | 300 | 20148 | 51 | 7 | 17.0% |
 | 27 | Not reached from startup: `core/` (part 5 of 9) | 21 | 294 | 20910 | 60 | 11 | 20.4% |
 | 28 | Not reached from startup: `core/` (part 6 of 9) | 18 | 282 | 21809 | 53 | 12 | 18.7% |
@@ -46,7 +46,7 @@ functions don't count as done. Sizes are in instructions.
 | 30 | Not reached from startup: `core/` (part 8 of 9) | 20 | 300 | 31826 | 41 | 8 | 13.6% |
 | 31 | Not reached from startup: `core/` (part 9 of 9) | 5 | 111 | 10905 | 26 | 7 | 23.4% |
 | 32 | Not reached from startup: `wincore/` | 2 | 11 | 482 | 4 | 0 | 36.3% |
-| | **All** | | **4479** | **402407** | **1136** | **202** | **25.3%** |
+| | **All** | | **4479** | **402407** | **1139** | **203** | **25.4%** |
 
 ## Step 0: Math value types
 
@@ -1606,10 +1606,10 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `setAmbientLightLevel` 0x00505490 (11)
   - [x] `setDirectionalLightVector` 0x005054d0 (10)
 
-### `engine/matrix.c` (3 functions, 92 instructions, 1 done, 0 partial)
+### `engine/matrix.c` (3 functions, 92 instructions, 2 done, 0 partial)
 - free functions
   - [x] `getCameraRotation` 0x0050e2f0 (17)
-  - [ ] `projectTransformedPoint` 0x0050cdc0 (66)
+  - [x] `projectTransformedPoint` 0x0050cdc0 (66)
   - [ ] `projectCachedPoint` 0x0050cda0 (9)
 
 ### `core/dcube.cpp` (7 functions, 1140 instructions, 0 done, 0 partial)
@@ -1967,8 +1967,7 @@ functions don't count as done. Sizes are in instructions.
   - [x] `isPointInVdirBox` 0x005762a0 (62)
   - [x] `findVdirBoxAtPosition` 0x00576870 (32)
   - [~] `evaluateVirtualDirector` 0x005751d0 (619)
-    - deferred: the actor's box corners and its faces' planes, the nearby actors that block the view and their boxes, and the depth table saved round the scoring with the shadow pass and the external renderer off, with calculateActorVisibility
-    - deferred: an unforced pass favouring the camera shown three times and the one shown before it a fifth as much, and switching to a better camera that shows some of the actor, with calculateActorVisibility, whose scores alone are above 0
+    - deferred: scoring with the shadow pass off, with setShadowPass's callers
   - [x] `clearCameraSwitchCooldown` 0x00575b20 (10)
 
 ### `core/dfilter.cpp` (3 functions, 286 instructions, 3 done, 0 partial)
@@ -3053,11 +3052,12 @@ functions don't count as done. Sizes are in instructions.
 - free functions
   - [x] `staticInit` 0x004417e0 (11)
 
-### `engine/drender.cpp` (18 functions, 1601 instructions, 2 done, 0 partial)
+### `engine/drender.cpp` (18 functions, 1601 instructions, 3 done, 1 partial)
 - class `CDemonRenderer`
   - [x] `ctor` 0x0048a6c0 (10)
   - [ ] `setProjectionMode` 0x0048a700 (14)
-  - [ ] `countVisiblePixelsPoly` 0x0048aa50 (76)
+  - [~] `countVisiblePixelsPoly` 0x0048aa50 (76)
+    - deferred: refusing to count in the shadow pass, with setShadowPass's callers
   - [ ] `renderNearPlaneTexturedPoly` 0x0048ac40 (102)
   - [ ] `renderAlphaBlendedDirect` 0x0048b150 (44)
   - [ ] `renderAlphaBlendedFace` 0x0048b320 (69)
@@ -3066,7 +3066,7 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `renderDestReadBlendDirect` 0x0048b890 (65)
   - [ ] `renderOverlayPoly` 0x0048bfe0 (101)
   - [ ] `setCameraRotationFromPoint` 0x0048c1b0 (12)
-  - [ ] `setProjectionScaleSimple` 0x0048c670 (5)
+  - [x] `setProjectionScaleSimple` 0x0048c670 (5)
   - [ ] `scaleAndSetDirectionalLight` 0x0048c6e0 (30)
   - [ ] `clipAndDrawLine3D` 0x0048caf0 (586)
   - [ ] `processVisiblePrimitive` 0x0048d700 (50)
@@ -4505,10 +4505,10 @@ functions don't count as done. Sizes are in instructions.
   - [~] `staticInit` 0x00490040 (8)
     - deferred: the sky texture named NITESKY.RAW and the dome centred at the origin, with this
 
-### `core/dstrender.cpp` (6 functions, 916 instructions, 0 done, 0 partial)
+### `core/dstrender.cpp` (6 functions, 916 instructions, 1 done, 0 partial)
 - free functions
   - [ ] `saveMMXRegisters` 0x004906b0 (9)
-  - [ ] `renderDepthTestStatistics16xUnrolled` 0x00490d35 (149)
+  - [x] `renderDepthTestStatistics16xUnrolled` 0x00490d35 (149)
   - [ ] `renderPerspectiveCorrectTextured16xCached` 0x00490ec0 (539)
   - [ ] `spatialFilter9TapMMX` 0x004923ff (51)
   - [ ] `blendLightmapShared4U64toU64pBB12Px4MMX` 0x004924a9 (84)
