@@ -172,6 +172,8 @@ suspect type, the recognition pattern, and the rewrite, indexed by the detector 
   leaving the decompilation as close to the original as it can run.
 - **More advanced graphics options** in the recreation, beyond what the original renderer
   offered.
+- **Modern game controls** for those who don't like tank controls and want an alternative method.
+- **Mod support** including for extra episodes made by the community.
 - **Console ports**, such as Xbox, Nintendo Switch and PlayStation 4, built from the
   recreation. The decompilation can be built for them already: see "Consoles and packaged
   apps" in [docs/porting.md](docs/porting.md).
