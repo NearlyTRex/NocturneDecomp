@@ -17,7 +17,9 @@
 #include <gtest/gtest.h>
 
 #include <array>
+#include <cstdint>
 #include <format>
+#include <span>
 #include <string>
 #include <string_view>
 
@@ -29,8 +31,7 @@ using ::testing::Return;
 using ::testing::StrEq;
 using ::testing::ThrowsMessage;
 
-constexpr std::string_view kSceneNotPorted =
-    "CDemonSet::setCameraView's background scene is not ported yet";
+constexpr std::string_view kSceneNotPorted = "CDemonSet::buildDisplayList is not ported yet";
 
 // An unturned camera at the position, with its box.
 std::string cameraAt(std::string_view name, std::string_view position, std::string_view box) {
@@ -52,7 +53,19 @@ protected:
         CTestFieldsArchive archive(focus_, CBarrier::kType, 1, "2,2,2\n");
         focus_.archive(archive.get());
         focus_.setLocation({.position = {}, .area_id = 0});
+        set_parts_.camera->init(kFrameHeight);
+        frame_rows_.fill(screen_row_.data());
+        depth_rows_.fill(depth_row_.data());
+        ON_CALL(screen_, getScreenRows()).WillByDefault(Return(std::span<void *>(frame_rows_)));
+        ON_CALL(screen_, getZBufferRows())
+            .WillByDefault(Return(std::span<std::uint32_t *>(depth_rows_)));
     }
+
+    // The scene camera's frame, 64 by 48.
+    static constexpr int kFrameHeight = 48;
+    std::array<void *, kFrameHeight> frame_rows_{};
+    std::array<std::uint32_t, 64> depth_row_{};
+    std::array<std::uint32_t *, kFrameHeight> depth_rows_{};
 
     void load(const SSetFile &file) {
         givenFile("models\\test.set", file.text());
@@ -101,12 +114,20 @@ protected:
             static_cast<void>(set_.evaluateVirtualDirector(&focus_, force_evaluation_mode));
         };
         EXPECT_THAT(evaluate, ThrowsMessage<common::CFatalError>(StrEq(kSceneNotPorted)));
+        closeTheScene();
     }
 
     // The first camera, chosen with no actor to show.
     void chooseTheFirstCamera() {
         EXPECT_THAT([this] { static_cast<void>(set_.evaluateVirtualDirector(nullptr, 0)); },
                     ThrowsMessage<common::CFatalError>(StrEq(kSceneNotPorted)));
+        closeTheScene();
+    }
+
+    // What the rest of setCameraView would close once the camera's background is drawn.
+    void closeTheScene() const {
+        set_parts_.camera->endBackgroundScene(0);
+        set_parts_.camera->endScene(1);
     }
 
     CSetParts set_parts_{dosio_};

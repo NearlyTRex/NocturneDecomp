@@ -51,6 +51,13 @@ namespace nocturne::core {
 // that hasn't been shown, files on disk under world, and the script and events it starts.
 class CMissionFixture : public shape::CPickListFixture {
 protected:
+    // The game's screen is as tall as the one the set draws on, so the scene camera's frame fits
+    // it.
+    CMissionFixture() {
+        ON_CALL(game_parts_.getScreen(), getWindowHeight())
+            .WillByDefault(::testing::Return(kHeight));
+    }
+
     CGameParts game_parts_{game_clock_};
     CGame &game_ = game_parts_.getGame();
     common::CWatcomRandom crt_random_;

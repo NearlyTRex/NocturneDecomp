@@ -4,7 +4,6 @@
 #include "common/math/vector3f.h"
 #include "common/math/vector3i.h"
 #include "core/actor/demonactor.h"
-#include "core/actor/notported.h"
 #include "core/box/boundingbox3d.h"
 #include "core/game/game.h"
 #include "core/location.h"
@@ -30,6 +29,8 @@ namespace {
 // What an unforced pass scores a second for each camera, and the fewest it scores a frame.
 constexpr int kCamerasScoredPerSecond = 10;
 constexpr int kFewestCamerasScored = 3;
+// The actors' dirty flags the camera's background display list is built from.
+constexpr std::uint32_t kBackgroundDisplayListFlags = 0x10;
 // How long a camera switched away from is held back from being chosen again.
 constexpr float kPreviousBestHold = 3.0F;
 // The actor's sphere: its box's largest bound, half as much again, and one more.
@@ -321,8 +322,8 @@ float CDemonSet::calculateActorVisibility(std::size_t camera_index, const CDemon
 //   decomp's windowed reswitch fix), with renderScene
 // deferred: noting each actor's place and turn as drawn, with the renderer's dirty regions
 // deferred: the raytrace geometry drawn in its plain mode, with renderFrustumCubes
-// deferred: opening the camera's scene and drawing its background, its shadows and lights, its
-//   reverb and weather, then the scene's static lights, with setCameraView's background scene
+// deferred: drawing the camera's background, its shadows and lights, its reverb and weather, then
+//   the scene's static lights, with buildDisplayList and what follows it
 // nocedit 0x0056ae50
 void CDemonSet::setCameraView(int index) {
     if (static_cast<std::size_t>(index) >= cameras_.size()) {
@@ -338,7 +339,9 @@ void CDemonSet::setCameraView(int index) {
     camera.apply(owners_.camera);
     active_fog_ = camera.getUseGlobalFog() ? scene_fog_ : camera.getFog();
     owners_.camera.initCameraFog(active_fog_);
-    quitNotPorted("CDemonSet", "setCameraView's background scene");
+    owners_.camera.beginScene(0);
+    owners_.camera.beginBackgroundScene();
+    buildDisplayList(kBackgroundDisplayListFlags);
 }
 
 // nocedit 0x00575b00

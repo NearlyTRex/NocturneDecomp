@@ -17,6 +17,7 @@
 #include <span>
 #include <string>
 #include <string_view>
+#include <utility>
 
 namespace nocturne::core {
 namespace {
@@ -37,6 +38,11 @@ constexpr double kFullIntensity = 65535.0;
 // Each fog density is averaged with its six neighbours.
 constexpr unsigned kFogNeighbourhood = 7;
 constexpr std::size_t kFogMask = SFogGrid::kSize - 1;
+// A background scene draws 32-bit pixels, red above green above blue.
+constexpr int kBackgroundBitsPerPixel = 32;
+constexpr int kRedBitPosition = 16;
+constexpr int kGreenBitPosition = 8;
+constexpr int kBlueBitPosition = 0;
 
 [[nodiscard]] std::uint32_t repeatLevel(int level) {
     const auto byte = static_cast<std::uint32_t>(level) & 0xffU;
@@ -186,8 +192,8 @@ const std::string &CDemonCamera::getCameraName() const {
 //   still until a shake starts, with initCameraShake
 // deferred: becoming the scene camera, and the one whose buffers are kept, with setSceneCamera's
 //   readers
-// deferred: the dirty rectangles and the viewport rectangle, and keeping whether the buffers
-//   were cleared, with pushRect and endScene
+// deferred: the dirty rectangles and the viewport rectangle, with pushRect and
+//   restoreZBufferRectArray
 // deferred: the camera's copies of the transform, origin and projection and their inverse, with
 //   updateTransformMatrices' readers
 // nocedit 0x0044c430
@@ -196,6 +202,7 @@ void CDemonCamera::beginScene(int skip_clear_buffers) {
         common::displayErrorAndQuit("CDemonCamera::beginScene - Scene already open!");
     }
     scene_open_ = true;
+    skip_clear_buffers_ = skip_clear_buffers != 0;
     engine::CDemonRenderer &renderer = owners_.renderer;
     renderer.pushViewport(0, 0, framebuffer_width_ - 1, framebuffer_height_ - 1);
     renderer.setCameraOriginFromScaledPoint(getPosition());
@@ -218,6 +225,84 @@ void CDemonCamera::beginScene(int skip_clear_buffers) {
 
 bool CDemonCamera::isSceneOpen() const {
     return scene_open_;
+}
+
+// deferred: no longer the scene camera, with setSceneCamera's readers
+// nocedit 0x0044cb80
+void CDemonCamera::endScene(int skip_zbuffer_copy) {
+    if (!scene_open_) {
+        common::displayErrorAndQuit("CDemonCamera::endScene - Scene not open!");
+    }
+    scene_open_ = false;
+    engine::CSpecial &special = owners_.special;
+    if (special.getUseDirect3D()) {
+        static_cast<void>(special.endScene());
+    }
+    if (!skip_clear_buffers_ && skip_zbuffer_copy == 0) {
+        if (special.getUseExternalRenderer()) {
+            static_cast<void>(special.masterZBuffer(0));
+        }
+        const std::span<std::uint32_t *> depth_rows = owners_.screen.getZBufferRows();
+        const auto width = static_cast<std::size_t>(framebuffer_width_);
+        for (std::size_t row = 0; std::cmp_less(row, framebuffer_height_); ++row) {
+            std::copy_n(depth_rows[row], width,
+                        zbuffer_.begin() + static_cast<std::ptrdiff_t>(row * width));
+        }
+    }
+    owners_.renderer.popViewport();
+}
+
+// The screen's rows are kept as many as it has, where the original kept the window's height of
+// them.
+// deferred: the projection as the background scene sets it, and the renderer's camera and
+//   viewport, with testVisibility
+// nocedit 0x0044cc70
+void CDemonCamera::beginBackgroundScene() {
+    if (!scene_open_) {
+        common::displayErrorAndQuit("CDemonCamera::beginBackgroundScene - Scene not open");
+    }
+    SCameraTables &tables = owners_.tables;
+    ++tables.background_scene_depth;
+    if (tables.background_scene_depth != 1) {
+        return;
+    }
+    engine::IScreenDevice &screen = owners_.screen;
+    const std::span<void *> rows = screen.getScreenRows();
+    engine::SColorChannels &channels = screen.getColorChannels();
+    tables.background_save = {.bits_per_pixel = screen.getBitsPerPixel(),
+                              .use_external_renderer = owners_.special.getUseExternalRenderer(),
+                              .screen_rows = {rows.begin(), rows.end()},
+                              .channels = channels};
+    screen.setBitsPerPixel(kBackgroundBitsPerPixel);
+    owners_.special.setUseExternalRenderer(false);
+    channels.red.bit_position = kRedBitPosition;
+    channels.green.bit_position = kGreenBitPosition;
+    channels.blue.bit_position = kBlueBitPosition;
+    const auto width = static_cast<std::size_t>(framebuffer_width_);
+    for (std::size_t row = 0; std::cmp_less(row, framebuffer_height_); ++row) {
+        rows[row] = framebuffer_.data() + (row * width);
+    }
+    owners_.renderer.pushViewport(0, 0, framebuffer_width_ - 1, framebuffer_height_ - 1);
+}
+
+// No caller asks for the depths back, so the original's copy of them into the camera's buffer,
+// which read each row from a frame's width in, and its hand-over to the hardware renderer are
+// left out.
+// deferred: the projection as the background scene leaves it, with testVisibility
+// nocedit 0x0044cdf0
+void CDemonCamera::endBackgroundScene(int /*restore_zbuffer*/) {
+    SCameraTables &tables = owners_.tables;
+    --tables.background_scene_depth;
+    if (tables.background_scene_depth != 0) {
+        return;
+    }
+    owners_.renderer.popViewport();
+    engine::IScreenDevice &screen = owners_.screen;
+    const SBackgroundSave &saved = tables.background_save;
+    screen.setBitsPerPixel(saved.bits_per_pixel);
+    owners_.special.setUseExternalRenderer(saved.use_external_renderer);
+    std::ranges::copy(saved.screen_rows, screen.getScreenRows().begin());
+    screen.getColorChannels() = saved.channels;
 }
 
 void CDemonCamera::setCameraName(std::string_view camera_name) {

@@ -355,5 +355,87 @@ TEST_F(CDemonCameraTest, ASceneClearsTheHardwareRendererUnlessToldNotTo) {
     skipping.beginScene(1);
 }
 
+// A camera of a 64 by 48 frame over 48 screen rows and depth rows, the depths all 7.
+class CDemonCameraSceneTest : public CDemonCameraTest {
+protected:
+    CDemonCameraSceneTest() {
+        camera_.init(48);
+        rows_.fill(screen_row_.data());
+        depth_row_.fill(7);
+        depth_rows_.fill(depth_row_.data());
+        ON_CALL(screen_, getScreenRows()).WillByDefault(Return(std::span<void *>(rows_)));
+        ON_CALL(screen_, getZBufferRows())
+            .WillByDefault(Return(std::span<std::uint32_t *>(depth_rows_)));
+        ON_CALL(screen_, getBitsPerPixel()).WillByDefault(Return(16));
+    }
+
+    std::array<void *, 48> rows_{};
+    std::array<std::uint32_t, 64> depth_row_{};
+    std::array<std::uint32_t *, 48> depth_rows_{};
+};
+
+// Closing takes the screen's depths into the camera's; a scene that skipped its clearing, or a
+// close told to skip the copy, keeps the camera's.
+TEST_F(CDemonCameraSceneTest, EndingASceneKeepsTheScreensDepths) {
+    camera_.beginScene(1);
+    camera_.endScene(0);
+    EXPECT_FALSE(camera_.isSceneOpen());
+    EXPECT_EQ(camera_.getZBuffer()[0], 0U);
+    camera_.beginScene(0);
+    camera_.endScene(1);
+    EXPECT_EQ(camera_.getZBuffer()[0], 0U);
+    depth_row_.fill(7);
+    camera_.beginScene(0);
+    camera_.endScene(0);
+    EXPECT_EQ(camera_.getZBuffer()[0], 7U);
+    EXPECT_EQ(camera_.getZBuffer()[(64 * 48) - 1], 7U);
+    EXPECT_THAT([this] { camera_.endScene(0); },
+                ::testing::ThrowsMessage<common::CFatalError>(
+                    ::testing::StrEq("CDemonCamera::endScene - Scene not open!")));
+}
+
+// Through the hardware renderer its scene ends and its depths are kept too.
+TEST_F(CDemonCameraSceneTest, EndingASceneEndsTheHardwareRenderersToo) {
+    startRenderer();
+    camera_.beginScene(0);
+    EXPECT_CALL(renderer_, endScene());
+    EXPECT_CALL(renderer_, masterZBuffer(0));
+    camera_.endScene(0);
+}
+
+// The first background scene draws into the frame's rows at 32 bits, 8-8-8, in software; a second
+// inside it changes nothing, and the last to end puts the screen back.
+TEST_F(CDemonCameraSceneTest, ABackgroundSceneDrawsIntoTheCamerasFrame) {
+    startRenderer();
+    void *const first_row = rows_[0];
+    channels_.red.bit_position = 11;
+    camera_.beginScene(1);
+    EXPECT_CALL(screen_, setBitsPerPixel(32));
+    camera_.beginBackgroundScene();
+    ::testing::Mock::VerifyAndClearExpectations(&screen_);
+    EXPECT_FALSE(special_.getUseExternalRenderer());
+    EXPECT_EQ(rows_[0], camera_.getFramebuffer().data());
+    EXPECT_EQ(rows_[1], camera_.getFramebuffer().data() + 64);
+    EXPECT_EQ(channels_.red.bit_position, 16);
+    EXPECT_EQ(channels_.green.bit_position, 8);
+    EXPECT_EQ(channels_.blue.bit_position, 0);
+    EXPECT_EQ(tables_.background_scene_depth, 1);
+    camera_.beginBackgroundScene();
+    camera_.endBackgroundScene(0);
+    EXPECT_EQ(rows_[0], camera_.getFramebuffer().data());
+    EXPECT_CALL(screen_, setBitsPerPixel(16));
+    camera_.endBackgroundScene(0);
+    EXPECT_EQ(tables_.background_scene_depth, 0);
+    EXPECT_EQ(rows_[0], first_row);
+    EXPECT_EQ(channels_.red.bit_position, 11);
+    EXPECT_TRUE(special_.getUseExternalRenderer());
+}
+
+TEST_F(CDemonCameraSceneTest, ABackgroundSceneNeedsTheSceneOpen) {
+    EXPECT_THAT([this] { camera_.beginBackgroundScene(); },
+                ::testing::ThrowsMessage<common::CFatalError>(
+                    ::testing::StrEq("CDemonCamera::beginBackgroundScene - Scene not open")));
+}
+
 } // namespace
 } // namespace nocturne::core

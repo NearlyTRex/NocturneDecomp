@@ -288,6 +288,7 @@ private:
     };
 
     [[nodiscard]] static SActorOutline outlineActor(const CBoundingBox3D &box);
+    static void buildDisplayList(std::uint32_t dirty_flags_mask);
     // How much of the actor the camera sees, from the camera's depth thumb.
     float calculateActorVisibility(std::size_t camera_index, const CDemonActor &actor,
                                    const SActorOutline &outline);

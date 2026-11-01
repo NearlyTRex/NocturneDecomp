@@ -25,6 +25,11 @@ public:
         for (std::size_t y = 0; y < rows_.size(); ++y) {
             rows_[y] = pixels_.data() + (y * row_bytes);
         }
+        depths_.resize(static_cast<std::size_t>(width * height));
+        depth_rows_.resize(static_cast<std::size_t>(height));
+        for (std::size_t y = 0; y < depth_rows_.size(); ++y) {
+            depth_rows_[y] = depths_.data() + (y * static_cast<std::size_t>(width));
+        }
         const common::SPixelFormat format = common::getPixelFormat(
             bits_per_pixel == 16 ? common::EPixelLayout::Rgb565 : common::EPixelLayout::Bgra8888);
         channels_ = {.red = common::getChannelLayout(format.red_mask),
@@ -91,7 +96,7 @@ public:
         return rows_;
     }
     [[nodiscard]] std::span<std::uint32_t *> getZBufferRows() override {
-        return {};
+        return depth_rows_;
     }
     [[nodiscard]] std::span<std::uint16_t, 256> getColorTable16() override {
         return color_table16_;
@@ -148,6 +153,8 @@ private:
     int bits_per_pixel_;
     std::vector<std::uint8_t> pixels_;
     std::vector<void *> rows_;
+    std::vector<std::uint32_t> depths_;
+    std::vector<std::uint32_t *> depth_rows_;
     std::array<std::uint16_t, 256> color_table16_{};
     std::array<std::uint32_t, 256> color_table32_{};
     std::array<std::uint16_t, 256> hardware_palette16_{};

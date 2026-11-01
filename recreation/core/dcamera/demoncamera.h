@@ -56,11 +56,16 @@ public:
     // fatal.
     void beginScene(int skip_clear_buffers);
     [[nodiscard]] bool isSceneOpen() const;
-    void pushRect(int left, int top, int right, int bottom);
-    void restoreZBufferRectArray();
+    // Closes the scene: the renderer's viewport back, and, unless the scene skipped its clearing
+    // or the copy is skipped, the screen's depths copied into the camera's. A scene not open is
+    // fatal.
     void endScene(int skip_zbuffer_copy);
+    // The first background scene draws into the camera's own frame at 32 bits, its colours
+    // 8-8-8, in software, until the matching end puts the screen back. The scene must be open.
     void beginBackgroundScene();
     void endBackgroundScene(int restore_zbuffer);
+    void pushRect(int left, int top, int right, int bottom);
+    void restoreZBufferRectArray();
     void updateTransformMatrices();
     int screenToWorldCoord(int screen_x, int screen_y, common::CVector3i *output_ptr);
     common::CVector3i *screenToWorldTransform(common::CVector3i *input_ptr,
@@ -131,6 +136,7 @@ private:
     std::vector<std::uint32_t> zbuffer_;
     int corona_blend_factor_ = 0;
     bool scene_open_ = false;
+    bool skip_clear_buffers_ = false;
 };
 
 } // namespace nocturne::core
