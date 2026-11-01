@@ -12,6 +12,9 @@ int __cdecl core_script_cpp_CScript_getLetterboxHeight_FUN_00559ac0(CScript *thi
 {
   int iVar1;
 
+#if !NOCTURNE_AUTHENTIC_HUD
+  return nocturne_hud_letterbox_height();
+#endif
   iVar1 = (g_WindowHeight - (g_WindowWidth * 100) / 0xb9) / 2;
   return (int)ROUND(ROUND((float)iVar1 * g_ScriptTimeScale));
 }

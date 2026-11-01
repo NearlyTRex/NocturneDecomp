@@ -34,11 +34,12 @@
 // Used by the Graphic Options page under NOCTURNE_AUTHENTIC_MENU=0; the shipped
 // chain is in the configureGraphicsOptions keep, and research/18 has its gaps.
 //
-// The table is 4:3 throughout except 1280x1024, which the shipped game already
-// offered. That matters because CDemonCamera::init derives its width as
-// height*4/3 regardless of what the screen is, so a non-4:3 mode renders with a
-// camera whose aspect does not match the framebuffer. g_ResolutionTable's
-// 320x200 and 320x400 are deliberately not carried over for that reason.
+// The table runs by width, then height. Modes wider than 4:3 are there for
+// gl/widescreen.h, which frames the scene for them: CDemonCamera::init derives
+// its width as height*4/3 regardless of what the screen is, so without that
+// framing a non-4:3 mode renders with a camera whose aspect does not match the
+// framebuffer. g_ResolutionTable's 320x200 and 320x400 are narrower than 4:3,
+// which nothing frames, and are deliberately not carried over.
 
 #ifdef __cplusplus
 extern "C" {
@@ -46,8 +47,8 @@ extern "C" {
 
 // Step from the current mode to the next one, wrapping at both ends. `step` is
 // +1 for a larger mode and -1 for a smaller one, matching the Options screen's
-// right/left. A current mode that is not in the table (400x300 from an old INI,
-// say) snaps to the nearest by height rather than falling through to the
+// right/left. A current mode that is not in the table (an old INI, say) snaps
+// to the nearest by height, then width, rather than falling through to the
 // smallest, which is what the shipped chain's default case did.
 //
 // `max_height` is the tallest mode the caller will accept, or 0 for no limit.
@@ -62,8 +63,12 @@ extern "C" {
 void nocturne_resolution_step(int current_width, int current_height, int step, int max_height,
                               int *out_width, int *out_height);
 
-// "Resolution : 1024x768" for the Options line, built into static storage.
-// Never null, so the caller can hand it straight to the localiser.
+// Whether a mode is wider than 4:3.
+int nocturne_resolution_is_wide(int width, int height);
+
+// "Resolution : 1024x768" for the Options line, with " (wide)" after a mode
+// wider than 4:3, built into static storage. Never null, so the caller can hand
+// it straight to the localiser.
 const char *nocturne_resolution_label(int width, int height);
 
 #ifdef __cplusplus

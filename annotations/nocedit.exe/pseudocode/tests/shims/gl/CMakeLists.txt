@@ -11,6 +11,7 @@ nocturne_test_suite(shims_gl
         shims/gl/resolution.cpp
         shims/gl/window_mode.cpp
         shims/gl/upscaler.cpp
+        shims/gl/widescreen.cpp
         shims/core/ini_setting.cpp
         shims/watcom/path.cpp
         shims/core/file_search.cpp

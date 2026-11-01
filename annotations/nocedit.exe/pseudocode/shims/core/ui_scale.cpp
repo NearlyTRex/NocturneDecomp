@@ -9,9 +9,15 @@
 #include "nocturne.h"
 #include "shim_config.h"
 
+#include <cmath>
+
 // Everything on the HUD is drawn for a 480-tall framebuffer.
 #define UI_BASE_HEIGHT 480
 #define UI_MAX_SCALE 4
+
+// The smallest text scale drawn filtered rather than whole. At 1.25 (800x600)
+// the area filter softens the 1-bit fonts more than the extra size is worth.
+static const float kUiSmallestFilteredScale = 1.5f;
 
 // Widest scaled row either blitter will build. A HUD bitmap is at most ~208px
 // and a glyph a few dozen, so this covers UI_MAX_SCALE with room to spare.
@@ -258,6 +264,34 @@ static ushort ui_blend16(uint src_color, uint dst_color, int alpha) {
     return (ushort)out;
 }
 
+// The colour a glyph is drawn in when it is not taking its own palette's:
+// the shadow, the default text colour, or an entry of the bit depth's table.
+// 0 for -1, which takes the palette's per pixel.
+static uint ui_solid_color(int color_mode) {
+    if (g_BitsPerPixel == 0x10) {
+        if (color_mode == -2) {
+            return (uint)g_ShadowColor16;
+        }
+        if (color_mode == -3) {
+            return (uint)g_DefaultTextColor;
+        }
+        if (color_mode == -1) {
+            return 0;
+        }
+        return (uint)g_ColorTable16[color_mode];
+    }
+    if (color_mode == -2) {
+        return (uint)g_ShadowColor32;
+    }
+    if (color_mode == -3) {
+        return (uint)g_DefaultTextColor;
+    }
+    if (color_mode == -1) {
+        return 0;
+    }
+    return g_ColorTable32[color_mode];
+}
+
 // One glyph, scale x scale per source pixel. Mirrors CBitFont::drawCharacter:
 // the keyed copy when the font has no display palette loaded, and the blended
 // form when it has — the 32bpp row helper, or ui_blend16 per pixel. Returns the
@@ -300,27 +334,7 @@ static int ui_draw_char(CBitFont *font, int character_code, int x, int y, int co
         return advance;
     }
 
-    if (g_BitsPerPixel == 0x10) {
-        if (color_mode == -2) {
-            solid_color = (uint)g_ShadowColor16;
-        } else if (color_mode == -3) {
-            solid_color = (uint)g_DefaultTextColor;
-        } else if (color_mode == -1) {
-            solid_color = 0;
-        } else {
-            solid_color = (uint)g_ColorTable16[color_mode];
-        }
-    } else {
-        if (color_mode == -2) {
-            solid_color = (uint)g_ShadowColor32;
-        } else if (color_mode == -3) {
-            solid_color = (uint)g_DefaultTextColor;
-        } else if (color_mode == -1) {
-            solid_color = 0;
-        } else {
-            solid_color = g_ColorTable32[color_mode];
-        }
-    }
+    solid_color = ui_solid_color(color_mode);
 
     for (src_row = 0; src_row < glyph_h; src_row++) {
         const uchar *src = glyph + (ptrdiff_t)src_row * stride;
@@ -415,47 +429,6 @@ static int ui_draw_char(CBitFont *font, int character_code, int x, int y, int co
     return advance;
 }
 
-// A ratio the glyph paths can honour: never a reduction, never past the cap the
-// integer scaler uses, and 1:1 at a bit depth with no scaled glyph path so the
-// caller's metrics follow the text into the engine's own routine.
-int nocturne_ui_box_scale(int num, int den) {
-    int scale;
-
-    if (den < 1 || num < 1) {
-        return 1;
-    }
-    if (!nocturne_ui_text_scale_supported()) {
-        return 1;
-    }
-    // Truncate: a scale above the container's own stretch is what pushes the
-    // block out of it.
-    scale = num / den;
-    if (scale < 1) {
-        scale = 1;
-    }
-    if (scale > UI_MAX_SCALE) {
-        scale = UI_MAX_SCALE;
-    }
-    return scale;
-}
-
-int nocturne_ui_wrap_to_width(struct CBitFont *font, char *text, char *lines, int max_lines,
-                              int line_stride, int box_width, int scale, int *line_pitch) {
-    int wrap_width;
-
-    if (scale < 1) {
-        scale = 1;
-    }
-    // wrapText measures unscaled glyphs, so the box has to be expressed in the
-    // same units.
-    wrap_width = box_width / scale;
-    if (line_pitch != 0) {
-        *line_pitch = nocturne_ui_char_height(font, 0x58, scale);
-    }
-    return engine_font_cpp_CBitFont_wrapText_FUN_004d0010((CBitFont *)font, text, lines, max_lines,
-                                                          line_stride, wrap_width);
-}
-
 int nocturne_ui_draw_text(struct CBitFont *bit_font, char *text, int x, int y, int color_mode,
                           int color_value, int scale) {
     CBitFont *font = (CBitFont *)bit_font;
@@ -507,6 +480,251 @@ int nocturne_ui_char_height(struct CBitFont *font, int character_code, int scale
         return height;
     }
     return height * scale;
+}
+
+// =============================================================================
+// Text at a fractional scale
+// =============================================================================
+//
+// The whole-number path repeats each glyph pixel. A ratio between whole numbers
+// cannot do that without some glyph pixels landing on one screen pixel and
+// their neighbours on two, which on the 1-bit fonts reads as stems of uneven
+// thickness. Here each screen pixel instead takes the glyph pixels under it,
+// weighted by how much of it each covers — an area filter — and is blended by
+// that coverage the way the blended path blends a glyph's own. At a whole
+// number every screen pixel lies over exactly one glyph pixel, and those
+// scales go to the whole-number path, so 640x480 and its multiples draw as
+// they always have.
+
+namespace {
+
+// What the glyph pixels under one screen pixel come to.
+struct UiCoverage {
+    float channel[4] = {0.0f, 0.0f, 0.0f, 0.0f}; // a blended font's palette, per byte
+    float amount = 0.0f; // a keyed font's share covered; a blended one's palette_data
+    uint color = 0;      // the palette colour of the glyph pixel covering most of it
+};
+
+float ui_minf(float a, float b) {
+    return a < b ? a : b;
+}
+
+float ui_maxf(float a, float b) {
+    return a > b ? a : b;
+}
+
+// The glyph's coverage of [x0, x1) x [y0, y1), in glyph pixels.
+UiCoverage ui_cover(const CBitFont *font, const uchar *glyph, int stride, int bitmap_index,
+                    int glyph_w, int glyph_h, float x0, float x1, float y0, float y1) {
+    UiCoverage c;
+    const float area = (x1 - x0) * (y1 - y0);
+    float most = 0.0f;
+    for (int j = (int)y0; j < glyph_h && (float)j < y1; j++) {
+        const float share_y = ui_minf(y1, (float)(j + 1)) - ui_maxf(y0, (float)j);
+        for (int i = (int)x0; i < glyph_w && (float)i < x1; i++) {
+            const float share = (ui_minf(x1, (float)(i + 1)) - ui_maxf(x0, (float)i)) * share_y /
+                                area;
+            const uchar index = glyph[(ptrdiff_t)j * stride + i];
+            const uint color = font->palettes_display[bitmap_index][index];
+            if (font->is_initialized == 0) {
+                if (index == (uchar)font->load_flags)
+                    continue;
+                c.amount += share;
+            } else {
+                c.amount +=
+                    share * (float)(uchar)font->palette_data[index * 3 + bitmap_index * 0x300];
+                if (index == 0)
+                    continue;
+                for (int k = 0; k < 4; k++)
+                    c.channel[k] += share * (float)((color >> (k * 8)) & 0xff);
+            }
+            if (share > most) {
+                most = share;
+                c.color = color;
+            }
+        }
+    }
+    return c;
+}
+
+// A 32bpp colour mixed toward `color` by `amount`, 0 to 1.
+uint ui_mix32(uint color, uint dst, float amount) {
+    uint out = 0;
+    for (int k = 0; k < 4; k++) {
+        const float a = (float)((color >> (k * 8)) & 0xff);
+        const float b = (float)((dst >> (k * 8)) & 0xff);
+        out |= (uint)std::lround(a * amount + b * (1.0f - amount)) << (k * 8);
+    }
+    return out;
+}
+
+// One screen pixel of a glyph, by what covers it.
+void ui_plot(void *line, int x, const UiCoverage &c, const CBitFont *font, int color_mode,
+             uint solid_color) {
+    const uint color = (color_mode == -1) ? c.color : solid_color;
+    const bool keyed = font->is_initialized == 0;
+    if (g_BitsPerPixel == 0x10) {
+        ushort *dst = (ushort *)line + x;
+        if (keyed) {
+            if (c.amount >= 0.999f)
+                *dst = (ushort)color;
+            else if (c.amount > 0.0f)
+                *dst = ui_blend16(color, *dst, (int)std::lround(c.amount * 255.0f));
+            return;
+        }
+        const int cover = (int)((float)g_CurrentAlphaValue * c.amount / 256.0f);
+        if (cover != 0)
+            *dst = ui_blend16(color, *dst, cover);
+        return;
+    }
+    uint *dst = (uint *)line + x;
+    if (keyed) {
+        if (c.amount >= 0.999f)
+            *dst = color;
+        else if (c.amount > 0.0f)
+            *dst = ui_mix32(color, *dst, c.amount);
+        return;
+    }
+    // drawAlphaBlendedPixels' mix, with the glyph's coverage averaged.
+    if (c.channel[0] == 0.0f && c.channel[1] == 0.0f && c.channel[2] == 0.0f &&
+        c.channel[3] == 0.0f)
+        return;
+    const uint render = (uint)g_CurrentRenderColor;
+    uint out = 0;
+    for (int k = 0; k < 4; k++) {
+        const uint alpha = (uint)c.channel[k] * ((render >> (k * 8)) & 0xff) >> 8;
+        // Both weights sum to 0xff, so the mix stays inside a byte.
+        const uint mixed =
+            (((color >> (k * 8)) & 0xff) * alpha + ((*dst >> (k * 8)) & 0xff) * (0xff - alpha)) >>
+            8;
+        out |= mixed << (k * 8);
+    }
+    *dst = out;
+}
+
+// One glyph at `scale`, its top-left at (x, y). Returns the advance.
+float ui_draw_char_f(CBitFont *font, int character_code, float x, float y, int color_mode,
+                     int color_value, float scale) {
+    const float advance =
+        (float)(font->char_widths[character_code] + font->char_spacing) * scale;
+    const uchar *glyph = font->char_positions[character_code];
+    if (glyph == 0)
+        return advance;
+    if (color_value != -1)
+        ui_draw_char_f(font, character_code, x + (float)font->shadow_offset_x * scale,
+                       y + (float)font->shadow_offset_y * scale, color_value, -1, scale);
+    const int glyph_w = font->char_widths[character_code];
+    const int glyph_h = font->char_heights[character_code];
+    if (glyph_w < 1 || glyph_h < 1)
+        return advance;
+    const int bitmap_index = font->char_bitmap_index[character_code];
+    const int stride = font->bitmap_widths[bitmap_index];
+    const int left = (int)std::lround(x);
+    const int top = (int)std::lround(y + (float)font->char_y_offsets[character_code] * scale);
+    const int width = (int)std::ceil((float)glyph_w * scale);
+    const int height = (int)std::ceil((float)glyph_h * scale);
+    const uint solid_color = ui_solid_color(color_mode);
+    for (int dy = 0; dy < height; dy++) {
+        const int dst_y = top + dy;
+        if (dst_y < g_ClipTop || g_ClipBottom < dst_y || dst_y < 0 || g_WindowHeight <= dst_y)
+            continue;
+        void *line = g_ScreenBufferArray[dst_y];
+        if (line == 0)
+            continue;
+        const float y0 = (float)dy / scale;
+        const float y1 = ui_minf((float)(dy + 1) / scale, (float)glyph_h);
+        for (int dx = 0; dx < width; dx++) {
+            const int dst_x = left + dx;
+            if (dst_x < g_ClipLeft || g_ClipRight < dst_x)
+                continue;
+            const float x0 = (float)dx / scale;
+            const float x1 = ui_minf((float)(dx + 1) / scale, (float)glyph_w);
+            ui_plot(line, dst_x,
+                    ui_cover(font, glyph, stride, bitmap_index, glyph_w, glyph_h, x0, x1, y0, y1),
+                    font, color_mode, solid_color);
+        }
+    }
+    return advance;
+}
+
+// `scale` as a whole number when it is one, else 0.
+int ui_whole(float scale) {
+    const long whole = std::lround(scale);
+    if (whole >= 1 && std::fabs(scale - (float)whole) < 0.001f)
+        return (int)whole;
+    return 0;
+}
+
+// A scale the fractional path can draw at: positive, and 1 where no scaled
+// glyph path exists.
+float ui_usable(float scale) {
+    if (scale <= 0.0f || !nocturne_ui_text_scale_supported())
+        return 1.0f;
+    return scale;
+}
+
+} // namespace
+
+int nocturne_ui_draw_text_f(struct CBitFont *bit_font, char *text, int x, int y, int color_mode,
+                            int color_value, float scale) {
+    CBitFont *font = (CBitFont *)bit_font;
+    if (font == 0 || text == 0)
+        return 0;
+    scale = ui_usable(scale);
+    const int whole = ui_whole(scale);
+    if (whole != 0 || font->win_font_enabled != 0)
+        return nocturne_ui_draw_text(bit_font, text, x, y, color_mode, color_value,
+                                     whole != 0 ? whole : 1);
+    float pen = (float)x;
+    float line_y = (float)y;
+    for (; *text != '\0'; text++) {
+        const uint character_code = (uint)(uchar)*text;
+        if (character_code == 0xd)
+            continue;
+        if (character_code == 0xa) {
+            line_y += (float)(font->current_line_height + font->line_spacing) * scale;
+            pen = (float)x;
+            continue;
+        }
+        pen += ui_draw_char_f(font, (int)character_code, pen, line_y, color_mode, color_value,
+                              scale);
+    }
+    return (int)std::lround(pen - (float)x);
+}
+
+int nocturne_ui_text_width_f(struct CBitFont *font, char *text, float scale) {
+    scale = ui_usable(scale);
+    const int width = engine_font_cpp_CBitFont_getTextWidth_FUN_004cfe80((CBitFont *)font, text);
+    return (int)std::lround((float)width * scale);
+}
+
+int nocturne_ui_char_height_f(struct CBitFont *font, int character_code, float scale) {
+    scale = ui_usable(scale);
+    const int height =
+        engine_font_cpp_CBitFont_getCharHeight_FUN_004d01d0((CBitFont *)font, character_code);
+    return (int)std::lround((float)height * scale);
+}
+
+int nocturne_ui_wrap_to_width_f(struct CBitFont *font, char *text, char *lines, int max_lines,
+                                int line_stride, int box_width, float scale, int *line_pitch) {
+    scale = ui_usable(scale);
+    if (line_pitch != 0)
+        *line_pitch = nocturne_ui_char_height_f(font, 0x58, scale);
+    // wrapText measures unscaled glyphs, so the box is put in the same units.
+    return engine_font_cpp_CBitFont_wrapText_FUN_004d0010(
+        (CBitFont *)font, text, lines, max_lines, line_stride, (int)((float)box_width / scale));
+}
+
+float nocturne_ui_text_scale(int height) {
+#if NOCTURNE_AUTHENTIC_HUD_SCALE
+    (void)height;
+    return 1.0f;
+#else
+    // Below 480 lines the game takes smaller fonts instead; under 1.5 the
+    // glyphs stay whole.
+    const float scale = (float)height / (float)UI_BASE_HEIGHT;
+    return scale < kUiSmallestFilteredScale ? 1.0f : scale;
+#endif
 }
 
 // =============================================================================

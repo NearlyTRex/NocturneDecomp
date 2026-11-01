@@ -104,6 +104,9 @@ void __cdecl core_set_cpp_CDemonSet_renderScene_FUN_0056c1a0(CDemonSet *this_ptr
   if (g_CGamePtr->profile_mode != 0) {
     local_44 = wincore_winrun_cpp_getTime_FUN_005f2dc0();
   }
+#if !NOCTURNE_AUTHENTIC_MENU
+  nocturne_widescreen_note_scene();
+#endif
   core_dcamera_cpp_CDemonCamera_lockAndRenderToBuffer_FUN_004511c0(&g_CDemonCameraInstance);
   if (g_CGamePtr->profile_mode != 0) {
     local_3c = wincore_winrun_cpp_getTime_FUN_005f2dc0();

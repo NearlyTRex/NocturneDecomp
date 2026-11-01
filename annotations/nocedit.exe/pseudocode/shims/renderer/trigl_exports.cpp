@@ -178,8 +178,15 @@ void gather_vertex_context(unsigned effective_flags, int rhw_scale,
     // while the engine's own coordinate space never changed.
     ctx->screen_scale_x = 1.0f;
     ctx->screen_scale_y = 1.0f;
+    ctx->screen_offset_x = 0.0f;
+    ctx->screen_offset_y = 0.0f;
     const int height = nocturne_trigl_device_height();
-    if (height > 480) {
+    // An overlay pass places its own space on the screen, and fills the context
+    // with it; outside one the hold buffer's stretch applies.
+    const bool overlay = nocturne_trigl_device_overlay(&ctx->screen_scale_x, &ctx->screen_scale_y,
+                                                       &ctx->screen_offset_x,
+                                                       &ctx->screen_offset_y) != 0;
+    if (!overlay && height > 480) {
         // A mode has both or neither.
         ctx->screen_scale_x = (float)nocturne_trigl_device_width() / 640.0f;
         ctx->screen_scale_y = (float)height / 480.0f;

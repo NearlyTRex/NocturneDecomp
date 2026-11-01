@@ -20,6 +20,7 @@
 
 #include "gl/gl_api.h"
 #include "gl/gl_present.h"
+#include "gl/widescreen.h"
 #include "gl_recorder.h"
 
 namespace gl_present_support {
@@ -69,6 +70,25 @@ void nocturne_gl_present_scene(void) {
     gl.Disable(GL_BLEND);
     gl.Disable(GL_CULL_FACE);
     gl.Disable(GL_SCISSOR_TEST);
+}
+
+// Asked of gl/widescreen.h, which is a setting rather than the presenter, but
+// answered here so the device's one call to it is the test's to decide.
+int nocturne_widescreen_reframe(int, int, NocturneReframe *out) {
+    const int *r = presenter.widescreen_rect;
+    *out = NocturneReframe{r[0], r[1], r[2], r[3], r[4], r[5], r[6], r[7]};
+    return presenter.widescreen;
+}
+
+int nocturne_gl_scene_reframe(int src_x, int src_y, int src_w, int src_h, int dst_x, int dst_y,
+                              int dst_w, int dst_h) {
+    ++presenter.reframes;
+    const int rect[8] = {src_x, src_y, src_w, src_h, dst_x, dst_y, dst_w, dst_h};
+    for (int i = 0; i < 8; ++i)
+        presenter.reframe_rect[i] = rect[i];
+    // A blit binds framebuffers the renderer's record knows nothing of.
+    gl.Disable(GL_SCISSOR_TEST);
+    return 1;
 }
 
 void nocturne_gl_scene_upload(const void *pixels, int width, int height, int, int) {

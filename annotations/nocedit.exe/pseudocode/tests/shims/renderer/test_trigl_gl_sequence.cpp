@@ -1006,6 +1006,37 @@ NOCTURNE_TEST(depth_is_saved_only_to_a_slot_that_can_be_made) {
     end();
 }
 
+// The held copy is the whole depth buffer, aside and back, and none of the
+// engine's slots. Without a context, a scene target or a copy that can be made
+// it does nothing, and nothing comes back that was never set aside.
+NOCTURNE_TEST(depth_is_held_and_returned_whole) {
+    gl_recorder::State &s = gl_recorder::state();
+    gl_recorder::install();
+    s.scene_fbo = 99;
+    CHECK_EQ(nocturne_trigl_gl_hold_depth(64, 64), 0);
+    CHECK_EQ(nocturne_trigl_gl_return_depth(64, 64), 0);
+    begin();
+    CHECK_EQ(nocturne_trigl_gl_hold_depth(64, 64), 0); // no scene target
+    CHECK_EQ(nocturne_trigl_gl_return_depth(64, 64), 0);
+    s.scene_fbo = 99;
+    CHECK_EQ(nocturne_trigl_gl_return_depth(64, 64), 0); // nothing held
+    gl.CheckFramebufferStatus = incomplete;
+    CHECK_EQ(nocturne_trigl_gl_hold_depth(64, 64), 0);
+    gl.CheckFramebufferStatus = nullptr;
+
+    s.calls.clear();
+    CHECK_EQ(nocturne_trigl_gl_hold_depth(64, 64), 1);
+    CHECK_EQ(nocturne_trigl_gl_return_depth(64, 64), 1);
+    CHECK_EQ(s.count("BlitFramebuffer"), 2);
+    CHECK_EQ(s.calls.back().name, std::string("BindFramebuffer"));
+    CHECK_EQ(s.calls.back().a, 99u);
+    // The engine's slots are untouched by it.
+    CHECK_EQ(nocturne_trigl_gl_restore_depth(0, 0, 0, 8, 8, 64, 64), 0);
+    nocturne_trigl_gl_release_depth();
+    CHECK_EQ(nocturne_trigl_gl_return_depth(64, 64), 0);
+    end();
+}
+
 // A restore copies the box back, flipped to GL's rows; an empty box is done
 // already; a slot never saved has nothing to give.
 NOCTURNE_TEST(depth_is_restored_from_a_saved_slot_in_a_box) {

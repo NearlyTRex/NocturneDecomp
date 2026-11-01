@@ -54,19 +54,16 @@ nested:annotations/nocedit.exe/pseudocode/src/core/main.c/enterMainGameMenu_FUN_
 nested:annotations/nocedit.exe/pseudocode/src/core/menu.cpp/showOptionsScreen_FUN_00512d30.keep.cpp:NOCTURNE_AUTHENTIC_CHEAT_MENU
 nested:annotations/nocedit.exe/pseudocode/src/core/menu.cpp/showOptionsScreen_FUN_00512d30.keep.cpp:NOCTURNE_EDITOR_BUILD
 
-# Where the pickup help text is drawn. ITEM_HELP_POSITION picks the anchor,
-# bottom or top; the outer HUD_SCALE decides whether the 4px inset it is offset
-# by is scaled. The nesting is only because `ui_scale` is declared inside
-# HUD_SCALE's own gate, so the unscaled arm cannot name it -- both arms of both
-# flags are present and neither decides the other.
-nested:annotations/nocedit.exe/pseudocode/src/core/inv.cpp/CInventory_renderAllItems_FUN_00500690.keep.cpp:NOCTURNE_AUTHENTIC_ITEM_HELP_POSITION
-
-# Which space the icon panel is measured in. HUD_ICON_SPACE's own site is the
-# unnested one in CInventory::renderSelectedItems; here it only picks the
-# numerator and denominator handed to nocturne_ui_box_scale, and that call
-# exists solely in HUD_SCALE's scaled arm. Both arms of both flags are present;
-# HUD_SCALE=1 simply leaves no scaled panel for the inner flag to place.
-nested:annotations/nocedit.exe/pseudocode/src/core/inv.cpp/CInventory_renderAllItems_FUN_00500690.keep.cpp:NOCTURNE_AUTHENTIC_HUD_ICON_SPACE
+# The HUD shim stands in for the shipped HUD routines whole, so it carries the
+# sites other flags hold in those routines: the ammo count HERO_WEAPON hides,
+# the health fraction HERO_ACTIONS corrects, the bar width STATUS_BAR_WIDTH
+# sizes, and the modal clip NETPLAY adds around the subtitles. Each keeps the
+# same site in the keep's shipped body, so every flag is honoured whichever way
+# HUD is set; HUD only decides which copy of the routine runs.
+nested:annotations/nocedit.exe/pseudocode/shims/game/hud.cpp:NOCTURNE_AUTHENTIC_HERO_WEAPON
+nested:annotations/nocedit.exe/pseudocode/shims/game/hud.cpp:NOCTURNE_AUTHENTIC_HERO_ACTIONS
+nested:annotations/nocedit.exe/pseudocode/shims/game/hud.cpp:NOCTURNE_AUTHENTIC_STATUS_BAR_WIDTH
+nested:annotations/nocedit.exe/pseudocode/shims/game/hud.cpp:NOCTURNE_AUTHENTIC_NETPLAY
 
 # The wording of the confirm dialog's two choices. The two builds do not share a
 # dialog: the editor puts the choices through showMultiChoiceDialog as CStrList

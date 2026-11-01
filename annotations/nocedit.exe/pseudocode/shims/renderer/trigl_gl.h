@@ -182,6 +182,13 @@ int nocturne_trigl_gl_restore_depth(int slot, int left, int top, int right, int 
                                     int height);
 void nocturne_trigl_gl_release_depth(void);
 
+// The whole of the scene's depth copied aside, and copied back: for a pass
+// that draws with depth of its own and must leave the scene's as it found it.
+// Each returns 0, and does nothing, without a context, a scene target, or —
+// returning — a copy.
+int nocturne_trigl_gl_hold_depth(int width, int height);
+int nocturne_trigl_gl_return_depth(int width, int height);
+
 // --- drawing -----------------------------------------------------------------
 // Submit an accumulated batch. Does nothing for an empty one; the caller resets
 // it afterwards.

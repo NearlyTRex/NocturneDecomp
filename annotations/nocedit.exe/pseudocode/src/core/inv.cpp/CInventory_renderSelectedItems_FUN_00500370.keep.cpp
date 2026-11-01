@@ -27,13 +27,12 @@ void __cdecl core_inv_cpp_CInventory_renderSelectedItems_FUN_00500370(CInventory
   int icon_w;
   int icon_h;
 
-#if NOCTURNE_AUTHENTIC_HUD_ICON_SPACE
+#if !NOCTURNE_AUTHENTIC_HUD
+  nocturne_hud_inventory_panels(this_ptr);
+  return;
+#endif
   icon_w = g_WindowWidth;
   icon_h = g_WindowHeight;
-#else
-  icon_w = g_CDemonCameraInstance.framebuffer_width;
-  icon_h = g_CDemonCameraInstance.framebuffer_height;
-#endif
   if ((g_CGamePtr->letterbox_mode == 0) &&
      ((CHero *)this_ptr->owner == g_HeroActors[g_LocalHeroIndex])) {
     if (g_WindowHeight != g_InventoryScreenHeight) {

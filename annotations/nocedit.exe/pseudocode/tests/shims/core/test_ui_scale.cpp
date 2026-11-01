@@ -321,34 +321,6 @@ NOCTURNE_TEST(a_glyph_is_clipped) {
     CHECK_EQ(draw(font, "A", 0, 0, -1, -1, 2), 6002);
 }
 
-// A box's ratio as a whole scale: never a reduction, never past four, one
-// where text cannot scale.
-NOCTURNE_TEST(a_box_scale_is_a_whole_ratio) {
-    ui_support::screen(64, 64, 32);
-    CHECK_EQ(nocturne_ui_box_scale(3, 1), 3);
-    CHECK_EQ(nocturne_ui_box_scale(1, 3), 1);
-    CHECK_EQ(nocturne_ui_box_scale(20, 1), 4);
-    CHECK_EQ(nocturne_ui_box_scale(0, 1), 1);
-    CHECK_EQ(nocturne_ui_box_scale(1, 0), 1);
-    g_BitsPerPixel = 8;
-    CHECK_EQ(nocturne_ui_box_scale(3, 1), 1);
-}
-
-// Wrapping measures the box in unscaled glyphs, and the line pitch is scaled.
-NOCTURNE_TEST(wrapping_measures_the_box_unscaled) {
-    ui_support::screen(64, 64, 32);
-    stand.reset();
-    Font font;
-    char text[] = "words";
-    char lines[4][32];
-    int pitch = 0;
-    CHECK_EQ(nocturne_ui_wrap_to_width(font.get(), text, &lines[0][0], 4, 32, 100, 2, &pitch), 2);
-    CHECK_EQ(stand.wrap_width, 50);
-    CHECK_EQ(pitch, 20);
-    nocturne_ui_wrap_to_width(font.get(), text, &lines[0][0], 4, 32, 100, 0, nullptr);
-    CHECK_EQ(stand.wrap_width, 100);
-}
-
 // Metrics follow the text: scaled where it is.
 NOCTURNE_TEST(the_metrics_follow_the_text) {
     ui_support::screen(64, 64, 32);
@@ -365,6 +337,227 @@ NOCTURNE_TEST(the_metrics_follow_the_text) {
     CHECK_EQ(nocturne_ui_text_width(font.get(), text, 2), 24);
     CHECK_EQ(nocturne_ui_text_height(font.get(), text, 2), 10);
     CHECK_EQ(nocturne_ui_char_height(font.get(), 'X', 2), 10);
+}
+
+// --- text at a fractional scale ---------------------------------------------------
+//
+// At 1.5 the 2 x 2 glyph 'A' covers 3 x 3 screen pixels: the corner ones each
+// lie over one glyph pixel, the edge ones over half of each of two.
+
+namespace {
+
+int draw_f(Font &font, const char *text, int x, int y, int mode, int value, float scale) {
+    char copy[64];
+    std::strcpy(copy, text);
+    return nocturne_ui_draw_text_f(font.get(), copy, x, y, mode, value, scale);
+}
+
+void masks16() {
+    g_GreenMask16.u32[0] = 0x07e0;
+    g_GreenBitPosition.bytes[0] = 5;
+    g_GreenDitherShift.bytes[0] = 2;
+    g_RedMask16.u32[0] = 0xf800;
+    g_RedBitPosition.bytes[0] = 11;
+    g_RedDitherShift.bytes[0] = 3;
+    g_BlueMask16.u32[0] = 0x001f;
+    g_BlueBitPosition.bytes[0] = 0;
+    g_BlueDitherShift.bytes[0] = 3;
+    g_GreenScaleFactor = 4;
+    g_RedScaleFactor = 8;
+    g_BlueScaleFactor = 8;
+    g_CurrentAlphaValue = 256;
+}
+
+} // namespace
+
+// The text's share of 480 lines; whole below one and a half.
+NOCTURNE_TEST(the_text_scale_is_the_share_of_480) {
+    CHECK_EQ(nocturne_ui_text_scale(300), 1.0f);
+    CHECK_EQ(nocturne_ui_text_scale(480), 1.0f);
+    CHECK_EQ(nocturne_ui_text_scale(600), 1.0f);
+    CHECK_EQ(nocturne_ui_text_scale(720), 1.5f);
+    CHECK_EQ(nocturne_ui_text_scale(1080), 2.25f);
+}
+
+// A whole scale, an OS font, a depth with no scaled glyphs, or no scale at all
+// go to the whole-number path; nothing to draw draws nothing.
+NOCTURNE_TEST(a_whole_fractional_scale_is_the_whole_path) {
+    ui_support::screen(64, 64, 32);
+    stand.reset();
+    Font font;
+    char text[] = "A";
+    CHECK_EQ(nocturne_ui_draw_text_f(nullptr, text, 0, 0, 0, -1, 1.5f), 0);
+    CHECK_EQ(nocturne_ui_draw_text_f(font.get(), nullptr, 0, 0, 0, -1, 1.5f), 0);
+    draw_f(font, "A", 0, 0, -1, -1, 1.0f);
+    draw_f(font, "A", 0, 0, -1, -1, 0.0f);
+    font->win_font_enabled = 1;
+    draw_f(font, "A", 0, 0, -1, -1, 1.5f);
+    font->win_font_enabled = 0;
+    g_BitsPerPixel = 8;
+    draw_f(font, "A", 0, 0, -1, -1, 1.5f);
+    CHECK_EQ(stand.drawn.size(), (size_t)4);
+
+    g_BitsPerPixel = 32;
+    CHECK_EQ(draw_f(font, "A", 10, 10, -1, -1, 2.0004f), 6);
+    CHECK_EQ(ui_support::pixel32(11, 11), 0x111111u);
+    CHECK_EQ(stand.drawn.size(), (size_t)4);
+}
+
+// Keyed, a pixel wholly over the glyph takes its colour, one partly over it is
+// mixed toward the colour covering most of it, and one over the transparent
+// index is left alone; the pen advances by the scaled width.
+NOCTURNE_TEST(a_keyed_glyph_is_filtered) {
+    ui_support::screen(64, 64, 32);
+    Font font;
+    CHECK_EQ(draw_f(font, "A", 0, 0, -1, -1, 1.5f), 5);
+    CHECK_EQ(ui_support::pixel32(0, 0), 0x111111u);
+    const unsigned half = ui_support::pixel32(1, 0); // half over index 1
+    CHECK(half >= 0x080808u && half <= 0x090909u && (half & 0xff) == ((half >> 8) & 0xff));
+    CHECK_EQ(ui_support::pixel32(2, 0), 0u);
+    CHECK_EQ(ui_support::pixel32(2, 2), 0x222222u);
+
+    g_ColorTable32[7] = 0x070707;
+    draw_f(font, "A", 10, 0, 7, -1, 1.5f);
+    CHECK_EQ(ui_support::pixel32(10, 0), 0x070707u);
+    CHECK_EQ(ui_support::pixel32(12, 2), 0x070707u);
+
+    // A carriage return is skipped, a newline goes down a scaled line, a
+    // character with no glyph only advances.
+    CHECK_EQ(draw_f(font, "A\rA", 20, 0, -1, -1, 1.5f), 9);
+    CHECK_EQ(draw_f(font, "B", 20, 0, -1, -1, 1.5f), 6);
+    CHECK_EQ(draw_f(font, "A\nA", 30, 20, -1, -1, 1.5f), 5);
+    CHECK_EQ(ui_support::pixel32(30, 28), 0x111111u);
+
+    // A shadow first at the scaled offset, partly covered at its edge.
+    g_ShadowColor32 = 0x0a0a0a;
+    font->shadow_offset_x = 1;
+    font->shadow_offset_y = 1;
+    draw_f(font, "A", 40, 40, 7, -2, 1.5f);
+    CHECK_EQ(ui_support::pixel32(40, 40), 0x070707u);
+    CHECK_EQ(ui_support::pixel32(44, 44), 0x0a0a0au);
+    CHECK_EQ(ui_support::pixel32(43, 43), 0x050505u);
+
+    // At 16 bits, whole and partial coverage, the partial through the blender.
+    ui_support::screen(64, 64, 16);
+    masks16();
+    font->shadow_offset_x = 0;
+    font->shadow_offset_y = 0;
+    font->palettes_display[0][1] = 0xffff;
+    draw_f(font, "A", 0, 0, -1, -1, 1.5f);
+    CHECK_EQ(ui_support::pixel16(0, 0), 0xffffu);
+    CHECK(ui_support::pixel16(1, 1) != 0u);
+    CHECK_EQ(ui_support::pixel16(2, 0), 0u);
+}
+
+// Blended, the coverage is the font's own ramp averaged over the pixel: mixed
+// with the frame where there is any, untouched where there is none.
+NOCTURNE_TEST(a_blended_glyph_is_filtered) {
+    ui_support::screen(64, 64, 32);
+    Font font;
+    font->is_initialized = 1;
+    g_CurrentRenderColor = -1;
+    draw_f(font, "A", 0, 0, -1, -1, 1.5f);
+    CHECK_EQ(ui_support::pixel32(0, 0), 0x010101u);
+    CHECK_EQ(ui_support::pixel32(2, 0), 0u);
+
+    ui_support::screen(64, 64, 16);
+    masks16();
+    font->palettes_display[0][1] = 0xffff;
+    draw_f(font, "A", 0, 0, -1, -1, 1.5f);
+    CHECK(ui_support::pixel16(0, 0) != 0u);
+    CHECK_EQ(ui_support::pixel16(2, 2), 0u); // index 2 has no coverage
+}
+
+// Filtered glyphs are cut by the clip and the window, and pass over a row
+// with no line behind it; one with no size only advances.
+NOCTURNE_TEST(a_filtered_glyph_is_clipped) {
+    ui_support::screen(64, 64, 32);
+    Font font;
+    g_ClipLeft = 1;
+    g_ClipTop = 1;
+    g_ClipRight = 1;
+    g_ClipBottom = 1;
+    draw_f(font, "A", 0, 0, -1, -1, 1.5f);
+    CHECK_EQ(ui_support::pixel32(0, 0), 0u);
+    CHECK(ui_support::pixel32(1, 1) != 0u);
+    CHECK_EQ(ui_support::pixel32(2, 2), 0u);
+
+    g_ClipLeft = -100;
+    g_ClipTop = -100;
+    g_ClipRight = 1000;
+    g_ClipBottom = 1000;
+    draw_f(font, "A", 0, -2, -1, -1, 1.5f); // only its bottom row on screen
+    CHECK_EQ(ui_support::pixel32(2, 0), 0x222222u);
+    draw_f(font, "A", 10, 62, -1, -1, 1.5f);
+    CHECK_EQ(ui_support::pixel32(10, 62), 0x111111u);
+    g_ScreenBufferArray[30] = nullptr;
+    draw_f(font, "A", 20, 30, -1, -1, 1.5f);
+    CHECK_EQ(ui_support::pixel32(22, 32), 0x222222u);
+
+    font->char_heights['A'] = 0;
+    CHECK_EQ(draw_f(font, "A", 0, 0, -1, -1, 1.5f), 5);
+    font->char_heights['A'] = 2;
+    font->char_widths['A'] = 0;
+    CHECK_EQ(draw_f(font, "A", 0, 0, -1, -1, 1.5f), 2);
+}
+
+// Below one, a screen pixel lies over several glyph pixels and takes the
+// colour of the first of those that cover it most.
+NOCTURNE_TEST(a_reduced_glyph_averages_its_pixels) {
+    ui_support::screen(64, 64, 32);
+    Font font;
+    unsigned char solid[4] = {2, 1, 1, 1};
+    font->char_positions['C'] = solid;
+    font->char_widths['C'] = 2;
+    font->char_heights['C'] = 2;
+    draw_f(font, "C", 0, 0, -1, -1, 0.4f);
+    CHECK_EQ(ui_support::pixel32(0, 0), 0x222222u);
+    CHECK_EQ(ui_support::pixel32(1, 0), 0u);
+}
+
+// A blended glyph is drawn where any one of its channels has coverage.
+NOCTURNE_TEST(a_blended_glyph_needs_only_one_channel) {
+    ui_support::screen(64, 64, 32);
+    Font font;
+    font->is_initialized = 1;
+    g_CurrentRenderColor = -1;
+    unsigned char pixels[3] = {3, 4, 5};
+    const char codes[3] = {'D', 'E', 'F'};
+    const unsigned colors[3] = {0x0000ff00u, 0x00ff0000u, 0xff000000u};
+    for (int i = 0; i < 3; i++) {
+        font->char_positions[(unsigned char)codes[i]] = &pixels[i];
+        font->char_widths[(unsigned char)codes[i]] = 1;
+        font->char_heights[(unsigned char)codes[i]] = 1;
+        font->palettes_display[0][3 + i] = colors[i];
+    }
+    font->bitmap_widths[0] = 1;
+    draw_f(font, "D", 0, 0, -1, -1, 1.5f);
+    draw_f(font, "E", 10, 0, -1, -1, 1.5f);
+    draw_f(font, "F", 20, 0, -1, -1, 1.5f);
+    CHECK(ui_support::pixel32(0, 0) != 0u);
+    CHECK(ui_support::pixel32(10, 0) != 0u);
+    CHECK(ui_support::pixel32(20, 0) != 0u);
+}
+
+// Metrics and wrapping at a fractional scale, rounded to whole pixels; the
+// box is wrapped in unscaled glyphs.
+NOCTURNE_TEST(fractional_metrics_follow_the_text) {
+    ui_support::screen(64, 64, 32);
+    stand.reset();
+    Font font;
+    char text[] = "abc";
+    CHECK_EQ(nocturne_ui_text_width_f(font.get(), text, 1.5f), 36);
+    CHECK_EQ(nocturne_ui_char_height_f(font.get(), 'X', 1.5f), 15);
+    char lines[4][32];
+    int pitch = 0;
+    CHECK_EQ(nocturne_ui_wrap_to_width_f(font.get(), text, &lines[0][0], 4, 32, 99, 1.5f, &pitch),
+             2);
+    CHECK_EQ(stand.wrap_width, 66);
+    CHECK_EQ(pitch, 15);
+    nocturne_ui_wrap_to_width_f(font.get(), text, &lines[0][0], 4, 32, 99, 1.5f, nullptr);
+    g_BitsPerPixel = 8;
+    CHECK_EQ(nocturne_ui_text_width_f(font.get(), text, 1.5f), 24);
+    CHECK_EQ(nocturne_ui_char_height_f(font.get(), 'X', 1.5f), 10);
 }
 
 // A pushed clip can only narrow; popping puts back what was there; the stack

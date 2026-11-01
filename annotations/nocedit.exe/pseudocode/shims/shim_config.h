@@ -69,6 +69,24 @@
 // NOCTURNE_AUTHENTIC_MENU=1.
 #include "gl/upscaler.h"
 
+// How a 4:3 scene fills a wider screen (nocturne_widescreen_*), set from the
+// Graphic Options page; the HUD asks it where the picture is, and the iris
+// fade where a scene point lands. Inert under NOCTURNE_AUTHENTIC_MENU=1.
+#include "gl/widescreen.h"
+
+// The crop's per-scene look at the focus actor (nocturne_widescreen_note_scene),
+// reached from CDemonSet::renderScene.
+#include "game/widescreen_focus.h"
+
+// The in-game HUD (nocturne_hud_*), each entry point called at the top of the
+// shipped routine it stands in for. Inert under NOCTURNE_AUTHENTIC_HUD=1.
+#include "game/hud.h"
+
+// Tank or camera movement (nocturne_movement_*), set from the Control Options
+// page and applied in CGame::playerControls. Inert under
+// NOCTURNE_AUTHENTIC_MENU=1.
+#include "game/movement.h"
+
 // The draws between these carry a reflection direction rather than a position in
 // an image, which only the pass emitting them knows. Reached from
 // CDemonSet::renderEnvMapTriangles and gated there on

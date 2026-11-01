@@ -10,7 +10,7 @@ set_source_files_properties("${NOCTURNE_PSEUDOCODE_DIR}/shims/core/version.cpp"
     PROPERTIES COMPILE_DEFINITIONS "NOCTURNE_VERSION_GENERATED=1")
 
 nocturne_test_suite(shims_core
-    EXCLUDE "/test_(console|ui_scale|menu_font|menu_font_saved|menu_font_negative|os_font|menu_screen|menu_render|audio_backend|window_icon)\\.cpp$"
+    EXCLUDE "/test_(console|ui_scale|menu_font|menu_font_saved|menu_font_negative|os_font|menu_screen|menu_render|audio_backend|window_icon|hud_layout)\\.cpp$"
     SUBJECTS
         # Reaches the filesystem but nothing else; tested against a directory
         # the test builds itself.
@@ -49,6 +49,20 @@ nocturne_test_suite(shims_core_ui
         shims/core/file_search.cpp
     SUPPORT
         ui_support.cpp
+        ../gl/ini_support.cpp
+)
+
+# The HUD's boxes, over the widescreen setting that decides its frame, read
+# through a stand-in for the engine's CIni.
+nocturne_test_suite(shims_core_hud_layout
+    TESTS test_hud_layout.cpp
+    SUBJECTS
+        shims/core/hud_layout.cpp
+        shims/gl/widescreen.cpp
+        shims/core/ini_setting.cpp
+        shims/watcom/path.cpp
+        shims/core/file_search.cpp
+    SUPPORT
         ../gl/ini_support.cpp
 )
 

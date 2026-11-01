@@ -60,7 +60,6 @@
 // | `NOCTURNE_AUTHENTIC_MENU_LIGHTING` | 0 | defect | the menu's moon puts back the lighting it found |
 // | `NOCTURNE_AUTHENTIC_MENU_BAT_WRAP` | 0 | defect | a menu bat does not flash across the moon as its path wraps |
 // | `NOCTURNE_AUTHENTIC_CAMERA_SHAKE_TRACE` | 0 | defect | the shake trace prints its value and a newline |
-// | `NOCTURNE_AUTHENTIC_HUD_ICON_SPACE` | 0 | defect | inventory icons stay on screen above 640x480 |
 // | `NOCTURNE_AUTHENTIC_FOG_PLANE_SCALE` | 0 | defect | the fog plane is resampled onto the camera grid, not cropped to it |
 // | `NOCTURNE_AUTHENTIC_BACKDROP_FILTER` | 0 | defect | a rescaled backdrop keeps its own brightness |
 // | `NOCTURNE_AUTHENTIC_FLASHLIGHT_DRAW` | 0 | defect | at HQ neither the draw nor the flashlight key brings the weapon out |
@@ -74,8 +73,6 @@
 // | `NOCTURNE_AUTHENTIC_HERO_WEAPON` | 0 | defect | each hero class starts with, and only holds, what it can actually use |
 // | `NOCTURNE_AUTHENTIC_HERO_ACTIONS` | 0 | defect | the other eight classes can interact, escape a grab and use health items |
 // | `NOCTURNE_AUTHENTIC_INPUT_REPEAT` | 0 | defect | an empty weapon's click repeats at a rate, not every frame |
-// | `NOCTURNE_AUTHENTIC_ITEM_HELP_POSITION` | 0 | defect | the pickup help text does not sit on top of the pickup name |
-// | `NOCTURNE_AUTHENTIC_DEATH_MESSAGE_POSITION` | 0 | defect | the death banner is centred, clear of the message line |
 // | `NOCTURNE_AUTHENTIC_TEXT_RENDER_ALPHA` | 0 | defect | 2D text blends at its own alpha, not the last pass's leftover |
 // | `NOCTURNE_AUTHENTIC_BOTTOMLESS_FALL` | 0 | defect | a fall out of the world kills at once, not on chance geometry |
 // | `NOCTURNE_AUTHENTIC_FILE_TIME` | 0 | defect | a file written under daylight saving is dated its own hour |
@@ -111,6 +108,7 @@
 // | `NOCTURNE_AUTHENTIC_TEXT_PROMPTS` | 0 | addition | a text prompt brings up the platform's own keyboard |
 // | `NOCTURNE_AUTHENTIC_CHEAT_MENU` | 0 | addition | a CHEATS entry on Options, and WARPS on pause |
 // | `NOCTURNE_AUTHENTIC_HUD_SCALE` | 0 | addition | the HUD scales with the framebuffer |
+// | `NOCTURNE_AUTHENTIC_HUD` | 0 | addition | the in-game HUD is laid out in boxes in the scene's picture, with every HUD fix |
 // | `NOCTURNE_AUTHENTIC_STATUS_BAR_WIDTH` | 0 | addition | a hero's status bar is as long as its maximum health |
 // | `NOCTURNE_AUTHENTIC_PUSH_SOUND` | 0 | addition | a pushed box scrapes on every shove, not only the first |
 // | `NOCTURNE_AUTHENTIC_MENU` | 0 | addition | the front end's screens are shim pages, with every menu addition |
@@ -591,25 +589,44 @@
 #define NOCTURNE_AUTHENTIC_CAMERA_SHAKE_TRACE 0
 #endif
 
-// NOCTURNE_AUTHENTIC_HUD_ICON_SPACE
-//   The inventory's weapon/item icons are 3D geometry, and above 480 lines the
-//   renderer runs in a 640x480 virtual space: CDemonCamera::init clamps the
-//   camera framebuffer to 640x480, tridx7 draws into a hardcoded 640x480 hold
-//   buffer (SYSTEM/RENDER.INI [Graphics] useHoldBuffer=1, read only when the
-//   screen is taller than 480) and stretch-Blts it to the back buffer, while
-//   buildTLVertex multiplies every submitted vertex by screenW/640 x
-//   screenH/480 to match. CInventory::renderSelectedItems positions the icon
-//   panel and the model viewport in NATIVE window pixels, so at 1280x1024 the
-//   panel is submitted at x=1088..1279, doubled to 2176..2558, and lands off
-//   the screen entirely. Fine at 640x480, where the two spaces coincide.
-//   1: shipped behaviour — the weapon/item icons are invisible above 640x480.
-//   0: the icons are positioned against the camera framebuffer, i.e. the same
-//      virtual space the renderer expects. The stretch then scales them with
-//      the screen, so they need no HUD scale of their own.
+// NOCTURNE_AUTHENTIC_HUD
+//   The in-game HUD: the inventory panels and their text (CInventory::
+//   renderSelectedItems, renderAllItems), the message line, chapter title and
+//   status bars (CGame::renderOverlay), the letterbox and subtitles
+//   (CScript::renderSubtitles, getLetterboxHeight) and the death banner
+//   (CGame::processFrame). The shipped routines place every element at an
+//   offset from the window's corner, in whichever space it is drawn in, and
+//   that goes wrong in four measured ways:
+//        - Above 480 lines the panels are 3D in the camera's 640x480 space,
+//          which the renderer stretches, but renderSelectedItems positions
+//          them in window pixels: at 1280x1024 a panel is submitted at
+//          x=1088..1279, stretched to 2176..2558, and is off the screen.
+//        - The pickup help sentence and the "You've found" line both anchor to
+//          the bottom: y = (H - 4) - charH * lines at 0x00500f6d against
+//          y = (H - lines * charH) - letterbox - charH at 0x004d84c4, so a
+//          sentence of more than one line overprints the name.
+//        - The death banner, y = H - 2 * max_char_height at 0x004daa7a, lands
+//          on the message line; it is drawn last, so it covers the message, and
+//          centring it instead would put it under the Game Over dialog, which
+//          CGame::runGameSession raises over the frozen frame.
+//        - The letterbox bars are (H - W * 100 / 185) / 2: on a wider screen
+//          they thin to a strip the subtitles do not fit in.
+//   1: shipped behaviour - the keeps run as the binary has them, with each
+//      element at its fixed pixel size.
+//   0: each keep calls game/hud at its top. The HUD is laid out in boxes
+//      (core/hud_layout.h) inside a frame - the scene's picture, so the 4:3
+//      column when pillarboxed and the whole screen otherwise. The panels are
+//      drawn over the finished scene in the camera's space laid onto the
+//      frame's corner, and their text, ammo and counts are placed in the same
+//      boxes. The pickup help moves under the top letterbox; the death banner
+//      moves a quarter of the way down, clear of both; the letterbox is
+//      measured over the 4:3 picture. Bitmaps and text scale as
+//      NOCTURNE_AUTHENTIC_HUD_SCALE=0 describes, and that flag's own sites in
+//      these routines are this one's.
 //
-//   Override with -DNOCTURNE_AUTHENTIC_HUD_ICON_SPACE=1.
-#ifndef NOCTURNE_AUTHENTIC_HUD_ICON_SPACE
-#define NOCTURNE_AUTHENTIC_HUD_ICON_SPACE 0
+//   Override with -DNOCTURNE_AUTHENTIC_HUD=1.
+#ifndef NOCTURNE_AUTHENTIC_HUD
+#define NOCTURNE_AUTHENTIC_HUD 0
 #endif
 
 // NOCTURNE_AUTHENTIC_FOG_PLANE_SCALE
@@ -1301,93 +1318,6 @@
 //   Override with -DNOCTURNE_AUTHENTIC_PUSH_SOUND=1.
 #ifndef NOCTURNE_AUTHENTIC_PUSH_SOUND
 #define NOCTURNE_AUTHENTIC_PUSH_SOUND 0
-#endif
-
-// NOCTURNE_AUTHENTIC_ITEM_HELP_POSITION
-//   Where the pickup tutorial text is drawn. Picking an item up raises two
-//   overlays at once, and CInventory::addItem fills both from the same place:
-//
-//       CGame::displayMessage(game, "You've found : <item>", 10.0);
-//       strcpy(inv->message_text, <how to use the item>);
-//
-//   They are drawn by different owners, and both anchor to the BOTTOM of the
-//   screen. CGame::renderOverlay centres the short name a character height
-//   above the bottom, clearing the letterbox bar:
-//
-//       y = (g_WindowHeight - lines * charH) - letterbox - charH   ; 004d84c4
-//
-//   while CInventory::renderAllItems left-aligns the long sentence flush to it:
-//
-//       y = (g_WindowHeight - 4) - charH * lines                   ; 00500f6d
-//
-//   Confirmed in the binary, not a decompiler artifact: both expressions read
-//   g_WindowHeight at those addresses and subtract from it. Nothing reserves a
-//   band for the other, so the two collide whenever the sentence needs more
-//   than one line -- which is most of them, since its wrap width is reduced by
-//   the inventory panel on the right and the text names two or three keys.
-//   The name is in the larger font and loses.
-//
-//   1: shipped behaviour -- the help sentence overprints the item name.
-//   0: the help sentence moves to the top of the screen, below the letterbox
-//      bar. Nothing else in the HUD claims the top left: renderAllItems draws
-//      the ammo readout, icon panel and battery along the bottom, subtitles
-//      are centred in the lower half, and the health bar is top RIGHT, beyond
-//      the wrap width the sentence already used.
-//
-//   Override with -DNOCTURNE_AUTHENTIC_ITEM_HELP_POSITION=1.
-#ifndef NOCTURNE_AUTHENTIC_ITEM_HELP_POSITION
-#define NOCTURNE_AUTHENTIC_ITEM_HELP_POSITION 0
-#endif
-
-// NOCTURNE_AUTHENTIC_DEATH_MESSAGE_POSITION
-//   Where "You're dead.  Game over." is drawn. CGame::processFrame anchors the
-//   banner two character heights off the bottom, centred across the window:
-//
-//       y = g_WindowHeight - 2 * g_MediumFont->max_char_height   ; 004daa7a
-//       drawTextCenterInBounds(g_MediumFont, 0, g_WindowWidth, y, ...)
-//
-//   CGame::renderOverlay puts CGame::displayMessage's line in the same place,
-//   also centred, one character height off the bottom less the letterbox bar.
-//   g_MediumFont (nocfont.raw) and g_ThemeFont (menufont.raw) are the engine's
-//   two large faces and are close in height, so the two land on top of each
-//   other. Whatever raised the message wins on wall-clock -- "You have used :
-//   <item>." runs 5s from CInventory::select, a pickup name 10s -- but the
-//   banner is drawn last in the frame, after renderSubtitles and renderOverlay,
-//   so it paints over the message rather than the other way round.
-//
-//   1: shipped behaviour -- the banner overprints the message line.
-//   0: the banner sits a quarter of the way down the window, clear of the
-//      message line, the subtitles and the rest of the bottom HUD -- and clear
-//      of the "Game Over" menu, which is the other thing on screen at the only
-//      moment the banner is drawn. CGame::runGameSession raises that menu the
-//      instant the session loop exits on a dead hero:
-//
-//          CPickList_ctor(&list); add("Load game"); add("Quit");
-//          CPickList::displayChoicesAndWaitForInput(&list, "Game Over", ...)
-//
-//      and its loop is handleDialogInput / renderDialog / swapBuffers with no
-//      frame render in it, so what the dialog paints over is the frozen last
-//      frame -- banner included. The dialog is a CEditorTools::createCenteredModal
-//      like every other pick list, so it is centred on g_WindowHeight / 2 and
-//      reaches above that by half its content height plus a border and half a
-//      title bar; a vertically centred banner lands inside that band and is
-//      covered. Centring is therefore only clear of the HUD, not of the one
-//      screen the banner shares. A quarter down clears both, and the menu
-//      cannot be the thing that moves -- createCenteredModal is shared with
-//      every pick list in the game and the editor.
-//
-//   Separate from the netplay client's "Waiting for the host to bring you into
-//   the game.", which the same draw puts at the TOP and which this flag leaves
-//   alone -- it never overlapped anything.
-//
-//   Size is NOCTURNE_AUTHENTIC_HUD_SCALE's business rather than this flag's:
-//   the banner is one of the draws that was never routed through the scaled
-//   text path, so at 1x it is the shipped pixel size and above that it grows
-//   with the framebuffer like the rest of the HUD.
-//
-//   Override with -DNOCTURNE_AUTHENTIC_DEATH_MESSAGE_POSITION=1.
-#ifndef NOCTURNE_AUTHENTIC_DEATH_MESSAGE_POSITION
-#define NOCTURNE_AUTHENTIC_DEATH_MESSAGE_POSITION 0
 #endif
 
 // NOCTURNE_AUTHENTIC_TEXT_RENDER_ALPHA
@@ -2412,12 +2342,13 @@
 //      framebuffer height (1 at 480 and 600, 2 at 768 through 1080, ...), so
 //      they keep the size relative to the screen that they had at 640x480.
 //      Exact at scale 1, so 640x480 is unchanged.
-//      Text inside a box — the inventory description on its camera-space
-//      panel, the subtitles in the letterbox bar — truncates its scale to the
-//      box's own stretch rather than rounding, since rounding up at 1024x768
-//      and 1600x1200 grows the block out of the box. Both are also clipped to
-//      their box, which is what holds the subtitles inside a bar that is still
-//      animating in.
+//      In-game HUD text under NOCTURNE_AUTHENTIC_HUD=0 is instead drawn at
+//      H / 480 unrounded, area-filtered between whole scales, so it keeps the
+//      same share of the screen at every resolution and fits its boxes, which
+//      grow by the same factor. Under 1.5 it stays whole, where filtering
+//      costs more legibility than the size gains. The description and subtitles are also
+//      clipped to their box, which is what holds the subtitles inside a bar
+//      that is still animating in.
 //
 //   Override with -DNOCTURNE_AUTHENTIC_HUD_SCALE=1.
 #ifndef NOCTURNE_AUTHENTIC_HUD_SCALE
@@ -2458,6 +2389,14 @@
 //          Sound Options uses, below the logo. The settings that are neither
 //          display nor device move from Graphics and Control Options to a
 //          Gameplay page, so each page fits. Options ends on Credits.
+//        - The front end's width (core/menu_screen). It runs at the picked
+//          resolution's aspect at 480 lines, with acceleration, rather than at
+//          640x480: the 640-wide layout centred, the clouds across the full
+//          width, and the moon and its bats across it too - drawn there by the
+//          software rasteriser, or by the renderer projected wider into a 640
+//          viewport an overlay pass stretches across the screen. The 640x480
+//          pictures it shows - loading, stats, credits, promo - are centred
+//          with what they place over them.
 //        - Main menu (game/main_menu). PLAY opens Start, Load and, with
 //          autosave, Continue; MULTIPLAYER is listed with netplay; attract
 //          movies play at the end of the menu music. Where the platform ends
@@ -2465,10 +2404,14 @@
 //          does nothing. The build's version sits in the bottom left.
 //        - Graphic Options (game/options_menu). Resolutions come from one
 //          ordered table (shims/gl/resolution.cpp; research/18 has the shipped
-//          chain and its left-step gap) and apply straight away. Window picks
-//          windowed, fullscreen or borderless; Upscaler picks the filter that
-//          enlarges the picture - Standard, FSR, Lanczos, GSR, NIS or xBR - and
-//          Sharpness tunes the three that sharpen (shims/gl/upscaler.h,
+//          chain and its left-step gap), 16:9 and 16:10 among them, and apply
+//          straight away. Window picks windowed, fullscreen or borderless;
+//          Widescreen picks how a scene fills a screen wider than 4:3 -
+//          stretched, pillarboxed, or panned and scanned after the focus actor
+//          (shims/gl/widescreen.h; the HUD lays itself out in its picture, and
+//          the iris fade asks it where a scene point lands); Upscaler picks the filter
+//          that enlarges the picture - Standard, FSR, Lanczos, GSR, NIS or xBR
+//          - and Sharpness tunes the three that sharpen (shims/gl/upscaler.h,
 //          shims/gl/upscale_shaders.h; their licences are in
 //          THIRD_PARTY_NOTICES.txt).
 //        - Gameplay, first on Options. Always run, aiming, auto health,
@@ -2476,8 +2419,11 @@
 //          text from the next launch (shims/core/os_font.h) and Menu text the
 //          menus' font.
 //        - Sound Options (game/sound_options). A Movie Vol line.
-//        - Control Options (game/control_options). The gamepad's tuning lines,
-//          with Calibrate after them.
+//        - Control Options (game/control_options). Movement picks tank
+//          controls or movement relative to the camera (game/movement.h,
+//          applied in CGame::playerControls as the controls SPlayerInput
+//          already carries). The gamepad's tuning lines, with Calibrate after
+//          them.
 //          A change of control type applies that type's defaults, any binding
 //          can be moved onto a key, and Restore defaults goes back to Control
 //          Options. The shipped screen did none of the three, so a type whose
@@ -2485,7 +2431,8 @@
 //        - Options. A Cheats line, and in the editor build Developer tools.
 //        - The chosen line's shimmer takes the cosmetic random stream.
 //      Settings persist in system\nocturne.ini: [Graphics] windowMode,
-//      upscaler, fsrSharpness and osFont, and [Sound] MovieVolume.
+//      widescreen, upscaler, fsrSharpness and osFont, [Control] movement, and
+//      [Sound] MovieVolume.
 //
 //   THE PAGES CARRY EVERY ADDITION. MENU_FONT, CHEAT_MENU, AUTOSAVE,
 //   ATTRACT_MOVIES, NETPLAY, GAMEPAD, RNG and AUTOMAP also reach play outside

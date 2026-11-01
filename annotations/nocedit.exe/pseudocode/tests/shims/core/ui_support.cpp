@@ -96,6 +96,7 @@ ushort g_ShadowColor16 = 0;
 int g_ShadowColor32 = 0;
 int g_DefaultTextColor = 0;
 int g_CurrentAlphaValue = 256;
+int g_CurrentRenderColor = -1;
 CBitFont *g_ThemeFont = nullptr;
 CBitFont *g_SmallEditorFont = nullptr;
 int g_UseOSFonts = 0;
@@ -171,6 +172,28 @@ void __cdecl core_moon_cpp_CMoon_update_FUN_00529d60(CMoon *, float) {
     stand.moon_frames++;
 }
 void __cdecl core_moon_cpp_CMoon_render_FUN_00529ed0(CMoon *) {}
+
+int g_UseDirect3D = 0;
+int g_UseExternalRenderer = 1;
+CDemonRenderer *g_CDemonRendererPtr2 = nullptr;
+
+void __cdecl engine_drender_cpp_CDemonRenderer_pushViewport_FUN_0048c890(CDemonRenderer *, int,
+                                                                         int, int width, int) {
+    stand.viewports.push_back(width);
+}
+
+void __cdecl engine_drender_cpp_CDemonRenderer_popViewport_FUN_0048c8c0(CDemonRenderer *) {
+    stand.viewports.push_back(-1);
+}
+
+extern "C" int nocturne_trigl_device_begin_overlay(float scale_x, float, float, float) {
+    stand.overlays.push_back(scale_x);
+    return stand.overlay_opens;
+}
+
+extern "C" void nocturne_trigl_device_end_overlay(void) {
+    stand.overlays.push_back(0.0f);
+}
 
 // --- the shims they call -----------------------------------------------------------
 

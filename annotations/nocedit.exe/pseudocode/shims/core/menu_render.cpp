@@ -50,8 +50,9 @@ void draw_shimmer(CBitFont *font, char *line, int y) {
         const unsigned dy = nocturne_rng_fx();
         const unsigned alpha = nocturne_rng_fx();
         engine_3d_c_setRenderAlpha_FUN_00406d80((int)(((long long)alpha * kLineAlpha) >> 16));
-        engine_font_cpp_CBitFont_drawText_FUN_004cda80(font, line, (int)(dx & 3) + kShimmerLeft,
-                                                       (int)(dy & 3) - 2 + y, kChosenColour, -1);
+        engine_font_cpp_CBitFont_drawText_FUN_004cda80(
+            font, line, (int)(dx & 3) + kShimmerLeft + nocturne_menu_left(),
+            (int)(dy & 3) - 2 + y, kChosenColour, -1);
     }
 }
 
@@ -62,11 +63,14 @@ void draw_corners() {
         engine_font_cpp_CBitFont_getTextWidth_FUN_004cfe80(g_SmallEditorFont, copyright);
     const int height =
         engine_font_cpp_CBitFont_getTextHeight_FUN_004cff40(g_SmallEditorFont, copyright);
+    // The copyright keeps to the screen's corner; the trademark to the logo's.
+    const int right = kCornerRight + nocturne_menu_left() * 2;
     engine_font_cpp_CBitFont_drawText_FUN_004cda80(
-        g_SmallEditorFont, copyright, kCornerRight - width, kCornerBottom - height, kLineColour, 0);
+        g_SmallEditorFont, copyright, right - width, kCornerBottom - height, kLineColour, 0);
     engine_3d_c_setRenderAlpha_FUN_00406d80(kTrademarkAlpha);
     engine_font_cpp_CBitFont_drawText_FUN_004cda80(g_SmallEditorFont, g_MenuTrademarkGlyph,
-                                                   kTrademarkX, kTrademarkY, kLineColour, 0);
+                                                   kTrademarkX + nocturne_menu_left(), kTrademarkY,
+                                                   kLineColour, 0);
     engine_font_cpp_CBitFont_drawText_FUN_004cda80(g_SmallEditorFont,
                                                    (char *)nocturne_version_short(), kVersionX,
                                                    kCornerBottom - height, kLineColour, 0);
@@ -88,8 +92,11 @@ bool taken(EInputCodeType key) {
 
 extern "C" int nocturne_menu_render(char **lines, int count, int *selected, int y, char *title) {
     CBitFont *font = g_ThemeFont;
+    // The list sits where it does on the 640-wide layout, centred on a wider
+    // screen.
+    const int x = kMenuX + nocturne_menu_left();
     if (title != nullptr) {
-        engine_font_cpp_CBitFont_drawText_FUN_004cda80(font, title, kMenuX, y, kTitleColour, 0);
+        engine_font_cpp_CBitFont_drawText_FUN_004cda80(font, title, x, y, kTitleColour, 0);
         y += line_height(font) * 2;
     }
     for (int i = 0; i < count; i++) {
@@ -103,7 +110,7 @@ extern "C" int nocturne_menu_render(char **lines, int count, int *selected, int 
             }
         }
         engine_3d_c_setRenderAlpha_FUN_00406d80(kLineAlpha);
-        engine_font_cpp_CBitFont_drawText_FUN_004cda80(font, lines[i], kMenuX, y, colour, -1);
+        engine_font_cpp_CBitFont_drawText_FUN_004cda80(font, lines[i], x, y, colour, -1);
         // A titled list is single-spaced.
         y += title != nullptr ? height : height * 2;
     }

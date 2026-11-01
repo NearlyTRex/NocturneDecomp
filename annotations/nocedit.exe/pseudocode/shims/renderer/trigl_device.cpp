@@ -12,6 +12,7 @@
 #include "gl/gl_api.h"
 #include "gl/gl_pixels.h"
 #include "gl/gl_present.h"
+#include "gl/widescreen.h"
 #include "renderer/trigl_batch.h"
 #include "renderer/trigl_device.h"
 #include "renderer/trigl_gl.h"
@@ -73,6 +74,19 @@ struct Device {
     // pause menu among them, would never appear at all.
     bool target_ahead = false;
 
+    // Whether the hold buffer has been put on the target since the last lock:
+    // a camera's scene, as against a screen the engine draws in 2D alone. Only
+    // that is reframed for a wider screen (gl/widescreen.h), at the lock, when
+    // every draw of the scene has landed and none of the 2D has.
+    bool scene_composited = false;
+
+    // An overlay pass, and where it places its space.
+    bool overlay = false;
+    float overlay_scale_x = 1.0f;
+    float overlay_scale_y = 1.0f;
+    float overlay_x = 0.0f;
+    float overlay_y = 0.0f;
+
     std::vector<NocturneTriglScreenVertex> batch_vertices;
     std::vector<unsigned short> batch_indices;
     NocturneTriglBatch batch;
@@ -84,6 +98,19 @@ Device g_dev;
 template <typename T>
 void release(std::vector<T> &storage) {
     std::vector<T>().swap(storage);
+}
+
+// The scene composited since the last lock, reframed for a wider screen if the
+// setting asks; once only.
+void reframe_scene() {
+    const bool scene = g_dev.scene_composited;
+    g_dev.scene_composited = false;
+    NocturneReframe reframe;
+    if (scene && nocturne_widescreen_reframe(g_dev.width, g_dev.height, &reframe)) {
+        nocturne_gl_scene_reframe(reframe.src_x, reframe.src_y, reframe.src_w, reframe.src_h,
+                                  reframe.dst_x, reframe.dst_y, reframe.dst_w, reframe.dst_h);
+        nocturne_trigl_gl_invalidate_state();
+    }
 }
 
 void free_mode_storage() {
@@ -135,6 +162,8 @@ void nocturne_trigl_device_close(void) {
     g_dev.in_scene = false;
     g_dev.frame_locked = false;
     g_dev.target_ahead = false;
+    g_dev.scene_composited = false;
+    g_dev.overlay = false;
     g_dev.open = false;
     g_dev.width = g_dev.height = g_dev.bpp = 0;
 }
@@ -247,9 +276,11 @@ int nocturne_trigl_device_lock_frame(void) {
     // Nothing has been drawn since the two last agreed, so the CPU image is the
     // newer of the pair and reading the target back would overwrite it.
     if (!g_dev.target_ahead) {
+        g_dev.scene_composited = false;
         g_dev.frame_locked = true;
         return 1;
     }
+    reframe_scene();
 
     // A depth set_mode accepted, so there is a format for it.
     GLenum format = 0, type = 0;
@@ -282,6 +313,41 @@ int nocturne_trigl_device_unlock_frame(void) {
 
 int nocturne_trigl_device_frame_locked(void) {
     return g_dev.frame_locked ? 1 : 0;
+}
+
+int nocturne_trigl_device_begin_overlay(float scale_x, float scale_y, float offset_x,
+                                        float offset_y) {
+    if (!g_dev.open || g_dev.image.empty())
+        return 0;
+    nocturne_trigl_device_flush();
+    reframe_scene();
+    nocturne_trigl_gl_hold_depth(g_dev.width, g_dev.height);
+    nocturne_trigl_device_clear_depth();
+    g_dev.overlay = true;
+    g_dev.overlay_scale_x = scale_x;
+    g_dev.overlay_scale_y = scale_y;
+    g_dev.overlay_x = offset_x;
+    g_dev.overlay_y = offset_y;
+    return 1;
+}
+
+void nocturne_trigl_device_end_overlay(void) {
+    if (!g_dev.overlay)
+        return;
+    nocturne_trigl_device_flush();
+    nocturne_trigl_gl_return_depth(g_dev.width, g_dev.height);
+    g_dev.overlay = false;
+}
+
+int nocturne_trigl_device_overlay(float *scale_x, float *scale_y, float *offset_x,
+                                  float *offset_y) {
+    if (!g_dev.overlay)
+        return 0;
+    *scale_x = g_dev.overlay_scale_x;
+    *scale_y = g_dev.overlay_scale_y;
+    *offset_x = g_dev.overlay_x;
+    *offset_y = g_dev.overlay_y;
+    return 1;
 }
 
 int nocturne_trigl_device_lock_hold_buffer(void) {
@@ -322,6 +388,7 @@ int nocturne_trigl_device_unlock_hold_buffer(void) {
     // skips its readback here keeps a composite the engine has already
     // replaced — including the 2D drawn over it on the previous frame.
     g_dev.target_ahead = true;
+    g_dev.scene_composited = true;
     return 1;
 }
 
@@ -420,6 +487,13 @@ int nocturne_trigl_device_unlock_frame(void) {
     return 0;
 }
 int nocturne_trigl_device_frame_locked(void) {
+    return 0;
+}
+int nocturne_trigl_device_begin_overlay(float, float, float, float) {
+    return 0;
+}
+void nocturne_trigl_device_end_overlay(void) {}
+int nocturne_trigl_device_overlay(float *, float *, float *, float *) {
     return 0;
 }
 int nocturne_trigl_device_lock_hold_buffer(void) {

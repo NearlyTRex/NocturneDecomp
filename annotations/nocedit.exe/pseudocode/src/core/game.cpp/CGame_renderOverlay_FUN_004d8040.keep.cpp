@@ -32,6 +32,10 @@ void __cdecl core_game_cpp_CGame_renderOverlay_FUN_004d8040(CGame *this_ptr)
   float fVar1;
   int bar_right;
 
+#if !NOCTURNE_AUTHENTIC_HUD
+  nocturne_hud_overlay(this_ptr);
+  return;
+#endif
   iVar9 = g_WindowHeight;
   iVar1 = g_WindowWidth;
   if (ABS(this_ptr->message_timer) != 0.0) {

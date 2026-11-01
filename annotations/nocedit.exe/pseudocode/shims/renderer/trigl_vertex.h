@@ -51,9 +51,13 @@ typedef struct NocturneTriglVertexContext {
     float rhw_scale; // numerator of the reciprocal-w the draw wants
 
     // A hold buffer renders at 640x480 and is stretched to the real screen, so
-    // vertex positions scale with it. Both are 1.0 when it is not in use.
+    // vertex positions scale with it. Both are 1.0 when it is not in use. The
+    // offsets move the scaled position, for the HUD's overlay pass
+    // (trigl_device.h); both are 0 otherwise.
     float screen_scale_x;
     float screen_scale_y;
+    float screen_offset_x;
+    float screen_offset_y;
 
     // Where a vertex that has no colour of its own gets one: the draw's alpha,
     // and a 256-entry RGB triplet table indexed either by the draw's own colour

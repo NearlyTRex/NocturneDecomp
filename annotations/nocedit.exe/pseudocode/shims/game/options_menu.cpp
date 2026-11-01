@@ -134,6 +134,7 @@ void step_halo(int step) {
 enum GraphicLine {
     GRAPHIC_RESOLUTION,
     GRAPHIC_WINDOW,
+    GRAPHIC_WIDESCREEN,
     GRAPHIC_HALO,
     GRAPHIC_ACCELERATION,
     GRAPHIC_API,
@@ -160,6 +161,8 @@ public:
         if (g_nocturne_fixed_display == 0)
             lines.add(GRAPHIC_WINDOW, "Window : %s",
                       nocturne_window_mode_name(nocturne_window_mode_get()));
+        lines.add(GRAPHIC_WIDESCREEN, "Widescreen : %s",
+                  nocturne_widescreen_name(nocturne_widescreen_get()));
         lines.add_localized(GRAPHIC_HALO, halo_label(g_CGamePtr->halo_mode));
         lines.add_localized(GRAPHIC_ACCELERATION,
                             g_UseDirect3D != 0 ? "Acceleration : On" : "Acceleration : Off");
@@ -198,6 +201,9 @@ public:
             break;
         case GRAPHIC_WINDOW:
             nocturne_window_mode_cycle(step);
+            break;
+        case GRAPHIC_WIDESCREEN:
+            nocturne_widescreen_cycle(step);
             break;
         case GRAPHIC_HALO:
             step_halo(step);

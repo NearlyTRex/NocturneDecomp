@@ -25,6 +25,7 @@ CSound *g_CSoundPtr = nullptr;
 CEditorTools *g_CEditorToolsPtr = nullptr;
 CDemonFileManager g_CDemonFileManagerInstance;
 int g_UseDirect3D = 0;
+int g_UseExternalRenderer = 1;
 int g_MenuLeftRightPressed = 0;
 CAlphaBitmap g_MenuBitmaps[8];
 CAlphaBitmap g_MenuBlurLeft;
@@ -476,6 +477,19 @@ int nocturne_upscaler_sharpness_get(void) {
     return 50;
 }
 
+const char *nocturne_widescreen_name(int mode) {
+    return mode == NOCTURNE_WIDESCREEN_PAN ? "Pan & scan" : "Stretch";
+}
+
+int nocturne_widescreen_get(void) {
+    return NOCTURNE_WIDESCREEN_PAN;
+}
+
+int nocturne_widescreen_cycle(int step) {
+    front_support::log("widescreenCycle " + std::to_string(step));
+    return NOCTURNE_WIDESCREEN_PAN;
+}
+
 int nocturne_upscaler_sharpness_cycle(int step) {
     front_support::log("sharpnessCycle " + std::to_string(step));
     return 50;
@@ -672,6 +686,18 @@ int __cdecl shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3
     return choice;
 }
 
+// --- the moon's widening, which the pages never reach: the moon is stood in for --
+
+CDemonRenderer *g_CDemonRendererPtr2 = nullptr;
+
+void __cdecl engine_drender_cpp_CDemonRenderer_pushViewport_FUN_0048c890(CDemonRenderer *, int,
+                                                                         int, int, int) {}
+void __cdecl engine_drender_cpp_CDemonRenderer_popViewport_FUN_0048c8c0(CDemonRenderer *) {}
+extern "C" int nocturne_trigl_device_begin_overlay(float, float, float, float) {
+    return 0;
+}
+extern "C" void nocturne_trigl_device_end_overlay(void) {}
+
 // --- the Control page's -----------------------------------------------------------
 
 int nocturne_pad_tuning_value(int setting) {
@@ -680,6 +706,19 @@ int nocturne_pad_tuning_value(int setting) {
 
 void nocturne_pad_tuning_step(int setting, int direction) {
     front_support::log("padStep " + std::to_string(setting) + " " + std::to_string(direction));
+}
+
+const char *nocturne_movement_name(int mode) {
+    return mode == NOCTURNE_MOVEMENT_CAMERA ? "Camera" : "Tank";
+}
+
+int nocturne_movement_get(void) {
+    return NOCTURNE_MOVEMENT_TANK;
+}
+
+int nocturne_movement_cycle(int step) {
+    front_support::log("movementCycle " + std::to_string(step));
+    return NOCTURNE_MOVEMENT_TANK;
 }
 
 void nocturne_gamepad_reseed_for_mode(struct CGame *) {

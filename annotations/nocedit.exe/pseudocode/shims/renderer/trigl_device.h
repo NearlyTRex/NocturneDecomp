@@ -63,6 +63,24 @@ int nocturne_trigl_device_frame_locked(void);
 int nocturne_trigl_device_lock_hold_buffer(void);
 int nocturne_trigl_device_unlock_hold_buffer(void);
 
+// An overlay pass: 3D drawn in a space of its own over whatever is in the
+// target — the HUD's inventory panels over a finished scene, the main menu's
+// moon in a 640-wide space stretched across a wider screen. Beginning it lands
+// what is queued, reframes the scene now if it has not been (gl/widescreen.h)
+// so the overlay is drawn after the crop rather than through it, and sets the
+// scene's depth aside behind a cleared buffer; ending it lands the overlay and
+// puts the depth back, so the engine's own depth bookkeeping never sees it.
+// Between the two, every vertex is placed at its position times the scales
+// plus the offsets. Begin returns 0, and nothing changes, without a device and
+// a mode.
+int nocturne_trigl_device_begin_overlay(float scale_x, float scale_y, float offset_x,
+                                        float offset_y);
+void nocturne_trigl_device_end_overlay(void);
+
+// 1 inside an overlay pass, with its placement.
+int nocturne_trigl_device_overlay(float *scale_x, float *scale_y, float *offset_x,
+                                  float *offset_y);
+
 // Clear colour, clear depth, and the box-limited depth clear the engine uses to
 // reset a region rather than the whole buffer.
 void nocturne_trigl_device_clear_color(void);

@@ -54,6 +54,13 @@ struct GLPresentState {
     GLuint scene_depth = 0;
     int scene_width = 0;
     int scene_height = 0;
+
+    // A colour-only copy of the scene target, for reframing it in place: a blit
+    // cannot read and write overlapping parts of one framebuffer.
+    GLuint scratch_fbo = 0;
+    GLuint scratch_color = 0;
+    int scratch_width = 0;
+    int scratch_height = 0;
 };
 
 GLPresentState g_gl;
@@ -321,6 +328,88 @@ extern "C" int nocturne_gl_scene_target_bind(int width, int height) {
 
 extern "C" int nocturne_gl_scene_target_active(void) {
     return (g_gl.active && g_gl.scene_fbo != 0) ? 1 : 0;
+}
+
+namespace {
+
+void drop_scratch() {
+    gl.DeleteFramebuffers(1, &g_gl.scratch_fbo);
+    gl.DeleteTextures(1, &g_gl.scratch_color);
+    g_gl.scratch_fbo = g_gl.scratch_color = 0;
+    g_gl.scratch_width = g_gl.scratch_height = 0;
+}
+
+// The scratch copy at the scene target's size, made or remade as that moves.
+// Leaves the scratch bound; 0 when the driver will not complete one.
+bool ensure_scratch() {
+    if (g_gl.scratch_fbo != 0 && g_gl.scratch_width == g_gl.scene_width &&
+        g_gl.scratch_height == g_gl.scene_height) {
+        gl.BindFramebuffer(GL_FRAMEBUFFER, g_gl.scratch_fbo);
+        return true;
+    }
+    if (g_gl.scratch_fbo != 0)
+        drop_scratch();
+    gl.GenTextures(1, &g_gl.scratch_color);
+    set_sampling(g_gl.scratch_color, GL_NEAREST);
+#if NOCTURNE_GLES
+    gl.TexImage2D(GL_TEXTURE_2D, 0, GL_RGBA8, g_gl.scene_width, g_gl.scene_height, 0, GL_RGBA,
+                  GL_UNSIGNED_BYTE, nullptr);
+#else
+    gl.TexImage2D(GL_TEXTURE_2D, 0, GL_RGBA8, g_gl.scene_width, g_gl.scene_height, 0, GL_BGRA,
+                  GL_UNSIGNED_BYTE, nullptr);
+#endif
+    gl.GenFramebuffers(1, &g_gl.scratch_fbo);
+    gl.BindFramebuffer(GL_FRAMEBUFFER, g_gl.scratch_fbo);
+    gl.FramebufferTexture2D(GL_FRAMEBUFFER, GL_COLOR_ATTACHMENT0, GL_TEXTURE_2D,
+                            g_gl.scratch_color, 0);
+    if (gl.CheckFramebufferStatus(GL_FRAMEBUFFER) != GL_FRAMEBUFFER_COMPLETE) {
+        DLOG("render", "gl_present: reframe copy incomplete (%dx%d)", g_gl.scene_width,
+             g_gl.scene_height);
+        drop_scratch();
+        return false;
+    }
+    g_gl.scratch_width = g_gl.scene_width;
+    g_gl.scratch_height = g_gl.scene_height;
+    return true;
+}
+
+} // namespace
+
+extern "C" int nocturne_gl_scene_reframe(int src_x, int src_y, int src_w, int src_h, int dst_x,
+                                         int dst_y, int dst_w, int dst_h) {
+    if (!g_gl.active || g_gl.scene_fbo == 0)
+        return 0;
+    // A blit is clipped by the scissor; the renderer may have left one on.
+    GLint prev_scissor = 0;
+    gl.GetIntegerv(GL_SCISSOR_TEST, &prev_scissor);
+    gl.Disable(GL_SCISSOR_TEST);
+
+    const int width = g_gl.scene_width;
+    const int height = g_gl.scene_height;
+    const bool copied = ensure_scratch();
+    if (copied) {
+        gl.BindFramebuffer(GL_READ_FRAMEBUFFER, g_gl.scene_fbo);
+        gl.BindFramebuffer(GL_DRAW_FRAMEBUFFER, g_gl.scratch_fbo);
+        gl.BlitFramebuffer(0, 0, width, height, 0, 0, width, height, GL_COLOR_BUFFER_BIT,
+                           GL_NEAREST);
+
+        // What the region leaves uncovered is black.
+        gl.BindFramebuffer(GL_FRAMEBUFFER, g_gl.scene_fbo);
+        gl.ClearColor(0.0f, 0.0f, 0.0f, 1.0f);
+        gl.Clear(GL_COLOR_BUFFER_BIT);
+
+        // The rectangles count rows from the top; the target's rows run from the
+        // bottom, as a render target's do.
+        gl.BindFramebuffer(GL_READ_FRAMEBUFFER, g_gl.scratch_fbo);
+        gl.BindFramebuffer(GL_DRAW_FRAMEBUFFER, g_gl.scene_fbo);
+        gl.BlitFramebuffer(src_x, height - (src_y + src_h), src_x + src_w, height - src_y, dst_x,
+                           height - (dst_y + dst_h), dst_x + dst_w, height - dst_y,
+                           GL_COLOR_BUFFER_BIT, GL_LINEAR);
+    }
+    gl.BindFramebuffer(GL_FRAMEBUFFER, g_gl.scene_fbo);
+    if (prev_scissor)
+        gl.Enable(GL_SCISSOR_TEST);
+    return copied ? 1 : 0;
 }
 
 extern "C" unsigned int nocturne_gl_scene_fbo(void) {
@@ -638,6 +727,7 @@ extern "C" void nocturne_gl_shutdown(void) {
     gl.DeleteFramebuffers(1, &g_gl.scene_fbo);
     gl.DeleteTextures(1, &g_gl.scene_color);
     gl.DeleteRenderbuffers(1, &g_gl.scene_depth);
+    drop_scratch();
     SDL_GL_DeleteContext(g_gl.context);
     g_gl = GLPresentState();
     g_gl_version_short[0] = '\0';
@@ -672,6 +762,9 @@ extern "C" int nocturne_gl_ensure_active(void) {
 }
 extern "C" void nocturne_gl_present_scene(void) {}
 extern "C" void nocturne_gl_scene_upload(const void *, int, int, int, int) {}
+extern "C" int nocturne_gl_scene_reframe(int, int, int, int, int, int, int, int) {
+    return 0;
+}
 extern "C" void nocturne_gl_set_logical_size(int w, int h) {
     (void)w;
     (void)h;

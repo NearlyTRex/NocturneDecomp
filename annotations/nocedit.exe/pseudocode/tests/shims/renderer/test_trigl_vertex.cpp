@@ -26,8 +26,8 @@ OracleVertex oracle(const NocturneTriglVertexContext *ctx, const NocturneTriglVe
     OracleVertex o;
     const unsigned flags = ctx->render_flags;
 
-    o.x = (float)in->screen_x * 1.5258789e-05f * ctx->screen_scale_x;
-    o.y = (float)in->screen_y * 1.5258789e-05f * ctx->screen_scale_y;
+    o.x = (float)in->screen_x * 1.5258789e-05f * ctx->screen_scale_x + ctx->screen_offset_x;
+    o.y = (float)in->screen_y * 1.5258789e-05f * ctx->screen_scale_y + ctx->screen_offset_y;
 
     float local = (float)in->transformed_z;
     o.rhw = ctx->rhw_scale / local;
@@ -121,6 +121,8 @@ NocturneTriglVertexContext base_context(unsigned flags) {
     ctx.rhw_scale = 65536.0f;
     ctx.screen_scale_x = 1.0f;
     ctx.screen_scale_y = 1.0f;
+    ctx.screen_offset_x = 0.0f;
+    ctx.screen_offset_y = 0.0f;
     ctx.current_alpha = 0x80;
     ctx.palette_index = 0x21;
     ctx.palette = g_palette;
@@ -234,6 +236,13 @@ NOCTURNE_TEST(fixed_point_scales) {
     nocturne_trigl_convert_vertex(&ctx, &in, &out);
     CHECK_EQ(out.x, 640.0f);
     CHECK_EQ(out.y, 480.0f);
+
+    // The HUD's overlay moves the scaled position.
+    ctx.screen_offset_x = 160.0f;
+    ctx.screen_offset_y = -8.0f;
+    nocturne_trigl_convert_vertex(&ctx, &in, &out);
+    CHECK_EQ(out.x, 800.0f);
+    CHECK_EQ(out.y, 472.0f);
 }
 
 // Both depth curves are normalised, monotonic and bounded — the three

@@ -32,6 +32,7 @@ struct Stand {
     int first_half = 0;       // CMoon::isAnimationFirstHalf
     std::deque<unsigned> rng; // nocturne_rng_fx, front first; 0 after
     int alpha = 0;            // the last setRenderAlpha
+    int menu_left = 0;        // nocturne_menu_left
 
     void reset();
 
