@@ -37,7 +37,8 @@ TEST(CSound, PublicInterface) {
     static_assert(std::is_same_v<decltype(&CSound::process), void (CSound::*)()>);
     static_assert(std::is_same_v<decltype(&CSound::configure), void (CSound::*)()>);
     static_assert(std::is_same_v<decltype(&CSound::reset), void (CSound::*)()>);
-    static_assert(std::is_same_v<decltype(&CSound::playAmbientSound), void (CSound::*)(char *)>);
+    static_assert(
+        std::is_same_v<decltype(&CSound::playAmbientSound), void (CSound::*)(std::string_view)>);
     static_assert(
         std::is_same_v<decltype(&CSound::playSound), std::uint32_t (CSound::*)(void *, char *)>);
     static_assert(

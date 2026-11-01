@@ -9,6 +9,7 @@
 
 #include <cstdint>
 #include <functional>
+#include <string>
 #include <string_view>
 
 namespace nocturne::core {
@@ -42,7 +43,8 @@ public:
     // every sound stopped by reset.
     void setMusicHandler(std::function<void(float)> handler);
     void reset();
-    void playAmbientSound(char *sound_name);
+    // Stops the ambient sound and makes the one named the set's ambient sound.
+    void playAmbientSound(std::string_view sound_name);
     std::uint32_t playSound(void *user_data, char *sound_name);
     std::uint32_t playActorSound(CDemonActor *actor, char *sound_name, common::CVector3f *position);
     std::uint32_t playTrackedActorSound(CDemonActor *actor, char *sound_name,
@@ -59,6 +61,8 @@ public:
     void setVolumeFade(float target_volume, float fade_time);
 
     [[nodiscard]] const shape::CStrList &getSoundFileList() const;
+    // The ambient sound the set plays, as a sound name with any modifiers.
+    [[nodiscard]] const std::string &getAmbientSoundName() const;
 
 private:
     void reportMusic(float seconds) const;
@@ -68,6 +72,8 @@ private:
     platform::IFileSystem &file_system_;
     shape::CStrList sound_file_list_;
     std::function<void(float)> music_handler_;
+    std::string ambient_sound_name_;
+    std::uint32_t ambient_sfx_handle_ = 0;
 };
 
 } // namespace nocturne::core

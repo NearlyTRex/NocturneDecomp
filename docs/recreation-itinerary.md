@@ -24,7 +24,7 @@ functions don't count as done. Sizes are in instructions.
 | 8 | `renderMenuAndGetChoice`, `CMoon::free`, `CSound::reset`, `CEditorTools::showFileSelectionDialog` | 8 | 63 | 5314 | 60 | 3 | 95.2% |
 | 9 | `CPickList::enableItem`, `CEventList::resetGameFlags`, `CLevelLoader::show`, `CDemonMission::load` | 15 | 56 | 3298 | 37 | 9 | 66.0% |
 | 10 | `CDemonMission::createHeros`, `CDemonMission::prepareAllActors`, `CEventList::reset`, `CDemonMission::loadSet` | 15 | 42 | 5112 | 33 | 8 | 78.5% |
-| 11 | `CScript::loadScript` | 63 | 579 | 67400 | 94 | 35 | 16.2% |
+| 11 | `CScript::loadScript` | 63 | 579 | 67400 | 95 | 36 | 16.4% |
 | 12 | `CDemonMission::loadScript`, `CScript::executeInitSection`, `CDemonMission::startMission`, `CDemonMission::buildActiveSetActorList`, `CConsole::reset`, `CEditorTools::displayMemoryDiagnostics`, `CGame::setGameRes`, `CDemonLight::init`, `CDemonSet::initScene` | 12 | 26 | 1658 | 16 | 9 | 61.5% |
 | 13 | `CFireEffect::init`, `CDemonSet::loadMasterLightStates`, `CDemonSet::setGamma`, `CGame::clearOverlay`, `CGame::loadAssets` | 7 | 27 | 735 | 16 | 1 | 59.2% |
 | 14 | `CNetGame::syncPlayers`, `CNetGame::processServerFrame`, `CLevelLoader::cleanup`, `CKeys::toggleInputMask`, `CGame::processHotkeys` | 17 | 51 | 5302 | 4 | 0 | 7.8% |
@@ -46,7 +46,7 @@ functions don't count as done. Sizes are in instructions.
 | 30 | Not reached from startup: `core/` (part 8 of 9) | 20 | 300 | 31826 | 41 | 8 | 13.6% |
 | 31 | Not reached from startup: `core/` (part 9 of 9) | 5 | 111 | 10905 | 26 | 7 | 23.4% |
 | 32 | Not reached from startup: `wincore/` | 2 | 11 | 482 | 4 | 0 | 36.3% |
-| | **All** | | **4479** | **402407** | **1135** | **201** | **25.3%** |
+| | **All** | | **4479** | **402407** | **1136** | **202** | **25.3%** |
 
 ## Step 0: Math value types
 
@@ -1869,12 +1869,13 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `setupRenderState` 0x004ecc40 (39)
   - [ ] `render` 0x004ecce0 (243)
 
-### `core/sound.cpp` (14 functions, 825 instructions, 1 done, 0 partial)
+### `core/sound.cpp` (14 functions, 825 instructions, 2 done, 1 partial)
 - class `CSound`
   - [ ] `findRandomSoundFile` 0x005b1ed0 (89)
   - [ ] `playSound` 0x005b3a20 (12)
-  - [ ] `killSound` 0x005b3b90 (5)
-  - [ ] `playAmbientSound` 0x005b39b0 (38)
+  - [x] `killSound` 0x005b3b90 (5)
+  - [~] `playAmbientSound` 0x005b39b0 (38)
+    - deferred: playing the sound when the audio is already up, which only init's flag says, with CSound::init, playSound and playSfxInternal
   - [ ] `playActorSound` 0x005b3a40 (13)
   - [ ] `playTrackedActorSound` 0x005b3a70 (15)
   - [ ] `playActorPositionalSoundWithDelay` 0x005b3ae0 (24)
@@ -2002,7 +2003,6 @@ functions don't count as done. Sizes are in instructions.
     - deferred: clearing the speaker and the focus lock, with setFocusActor and setSpeaker
     - deferred: letting the heroes be damaged and the enemies attack, and clearing the letterbox, with CGame's readers of them
     - deferred: clearing the script's time scale, with process
-    - deferred: playing the set's ambient sound, its geometry file's stem as a .wav and smill and town at 0.85, with CSound::playAmbientSound
   - [~] `startDialogLine` 0x0055ff00 (148)
     - deferred: the line's length: the number the sound is, the sound's own, or two hundredths of a second a character and 0.4 more for a missing sound, which the script's pick list notes, with CSound::getSoundDuration and the script editor
     - deferred: the speaker, the focus actor unless it is locked, the caption, the speaker's speech timer and the sound, while running, with renderSubtitles and the scene camera
@@ -2070,7 +2070,6 @@ functions don't count as done. Sizes are in instructions.
     - deferred: running idle, stopping for the frame after moving past it, with process
     - deferred: running letterbox, setting the letterbox and what it allows, and turning off the goggles, with CGame's readers of them
     - deferred: running removeKeys, taking the keys from every hero, with CHero::removeMatchingKeys
-    - deferred: running setAmbientSound, playing it, with CSound::playAmbientSound
     - deferred: running setIniInt, writing the INI value, with process
     - deferred: running setSayTimeOverride, setting how long lines show for, with startDialogLine
     - deferred: running setSkipLabel, setting where a skipped cinematic goes, with skipCinematic

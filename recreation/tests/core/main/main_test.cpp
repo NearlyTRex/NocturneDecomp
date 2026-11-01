@@ -284,7 +284,8 @@ protected:
                      .editor_tools = editor_tools_,
                      .mission = mission_,
                      .events = events_,
-                     .set = set_}};
+                     .set = set_,
+                     .sound = game_sound_}};
     std::vector<std::string> movies_;
     SGameSystemOwners owners_{.ini = ini_,
                               .file_system = file_system_,

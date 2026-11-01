@@ -113,4 +113,22 @@ const shape::CStrList &CSound::getSoundFileList() const {
     return sound_file_list_;
 }
 
+// The name is kept for init to start once the session's audio is up.
+// deferred: playing the sound when the audio is already up, which only init's flag says, with
+//   CSound::init, playSound and playSfxInternal
+// nocedit 0x005b39b0
+void CSound::playAmbientSound(std::string_view sound_name) {
+    killSound(ambient_sfx_handle_);
+    ambient_sound_name_ = sound_name;
+}
+
+// nocedit 0x005b3b90
+void CSound::killSound(std::uint32_t sfx_handle) {
+    static_cast<void>(sound_main_.killSfx(sfx_handle));
+}
+
+const std::string &CSound::getAmbientSoundName() const {
+    return ambient_sound_name_;
+}
+
 } // namespace nocturne::core

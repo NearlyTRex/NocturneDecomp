@@ -14,26 +14,31 @@
 #include "core/mission/demonmission.h"
 #include "core/script/script.h"
 #include "core/set/demonset.h"
+#include "core/sound/sound.h"
 #include "core/water/water.h"
 #include "core/xform/xform.h"
 #include "engine/console/console.h"
 #include "engine/drender/demonrenderer.h"
+#include "engine/pod/pod.h"
 #include "engine/prim/prim.h"
 #include "engine/texture/texture.h"
 #include "engine/zraster/zraster.h"
 #include "platform/mrgltexturebasic.h"
 #include "platform/rendervertex.h"
+#include "sound/sndmain/sndmain.h"
 #include "support/newmsg/newmsg.h"
 #include "tests/mocks/core/gameparts.h"
 #include "tests/mocks/core/mockdeformablemodels.h"
 #include "tests/mocks/core/mockkeyframedmodels.h"
 #include "tests/mocks/core/setparts.h"
+#include "tests/mocks/platform/mockaudiodevice.h"
 #include "tests/mocks/platform/mockosfontfactory.h"
 #include "tests/mocks/shape/picklistfixture.h"
 
 #include <gmock/gmock.h>
 
 #include <cstddef>
+#include <ctime>
 #include <format>
 #include <span>
 #include <string>
@@ -98,11 +103,17 @@ protected:
     engine::CConsole console_{file_system_, 80, 50, 0, 0};
     CEventList events_{
         {.mission = mission_, .actor = actor_, .set = set_, .dosio = dosio_, .console = console_}};
+    ::testing::NiceMock<platform::MockAudioDevice> audio_device_;
+    sound::CSndMain sound_main_{dosio_, file_system_, audio_device_, console_,
+                                [] { return std::tm{}; }};
+    engine::CPod pod_{file_system_, dosio_};
+    CSound sound_{sound_main_, pod_, file_system_};
     CScript script_{{.dosio = dosio_,
                      .editor_tools = editor_tools_,
                      .mission = mission_,
                      .events = events_,
-                     .set = set_}};
+                     .set = set_,
+                     .sound = sound_}};
     CFireEffect fire_{{.renderer = demon_renderer_, .keyframed_models = keyframed_models_}};
     CGore gore_{demon_renderer_};
     CInventoryAssets inventory_assets_{

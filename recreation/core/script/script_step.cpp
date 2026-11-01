@@ -1,10 +1,13 @@
 #include "common/error/error.h"
 #include "common/text/ascii.h"
+#include "common/text/path.h"
 #include "core/actor/notported.h"
 #include "core/hero/hero.h"
 #include "core/mission/demonmission.h"
 #include "core/script/script.h"
 #include "core/script/script_functions.h"
+#include "core/set/demonset.h"
+#include "core/sound/sound.h"
 
 #include <algorithm>
 #include <cstddef>
@@ -23,6 +26,8 @@ constexpr std::size_t kMaxSkipLabelLength = 100;
 constexpr int kMaxInitSectionSteps = 10000;
 // The hero this machine plays, as a game without netplay always has it.
 constexpr std::size_t kLocalHero = 0;
+// The volume some sets' ambient sound plays at, as a sound name's modifier.
+constexpr std::string_view kQuietAmbient = "@0.85";
 
 // The run of letters and digits a line starts with: a command matches when the line starts with
 // its name and the next character is neither.
@@ -100,12 +105,18 @@ void CScript::executeInitSection() {
 // deferred: letting the heroes be damaged and the enemies attack, and clearing the letterbox,
 //   with CGame's readers of them
 // deferred: clearing the script's time scale, with process
-// deferred: playing the set's ambient sound, its geometry file's stem as a .wav and smill and
-//   town at 0.85, with CSound::playAmbientSound
+// The set's ambient sound is its geometry's stem as a .wav, the mill's and the town's quieter.
 // nocedit 0x0055a540
 void CScript::initRuntime() {
     next_cmd_ = 0;
     focus_actor_ = owners_.mission.getHero(kLocalHero);
+    std::string ambient =
+        std::format("{}.wav", common::pathStem(owners_.set.getGeometryFilename()));
+    if (common::equalsIgnoringAsciiCase(ambient, "smill.wav") ||
+        common::equalsIgnoringAsciiCase(ambient, "town.wav")) {
+        ambient += kQuietAmbient;
+    }
+    owners_.sound.playAmbientSound(ambient);
 }
 
 CDemonActor *CScript::getFocusActor() const {
@@ -208,7 +219,6 @@ CDemonActor *CScript::getFocusActor() const {
 // deferred: running letterbox, setting the letterbox and what it allows, and turning off the
 //   goggles, with CGame's readers of them
 // deferred: running removeKeys, taking the keys from every hero, with CHero::removeMatchingKeys
-// deferred: running setAmbientSound, playing it, with CSound::playAmbientSound
 // deferred: running setIniInt, writing the INI value, with process
 // deferred: running setSayTimeOverride, setting how long lines show for, with startDialogLine
 // deferred: running setSkipLabel, setting where a skipped cinematic goes, with skipCinematic

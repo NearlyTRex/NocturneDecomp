@@ -381,7 +381,8 @@ private:
                            .editor_tools = editor_tools_,
                            .mission = mission_,
                            .events = events_,
-                           .set = set_}};
+                           .set = set_,
+                           .sound = sound_}};
     nocturne::shape::CStrList::LocalTime local_time_ = &toLocalTime;
     nocturne::shape::SFileSelectionOwners file_selection_owners_{.pick_list = pick_list_owners_,
                                                                  .pod = &pod_,

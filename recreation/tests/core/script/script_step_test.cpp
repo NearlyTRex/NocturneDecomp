@@ -203,8 +203,25 @@ TEST_F(CScriptInitSectionTest, ACheckedScriptRunsItsSectionToo) {
 }
 
 TEST_F(CScriptInitSectionTest, RunningACommandNotPortedYetQuits) {
-    expectRunQuits(":initSection\nsetAmbientSound(HQ.WAV @ .2)\n:initSectionEnd\n",
-                   "CScript::step running setAmbientSound is not ported yet");
+    expectRunQuits(":initSection\nidle\n:initSectionEnd\n",
+                   "CScript::step running idle is not ported yet");
+}
+
+TEST_F(CScriptInitSectionTest, SetAmbientSoundMakesItTheSetsAmbientSound) {
+    run(":initSection\nsetAmbientSound(HQ.WAV@0.2)\n:initSectionEnd\n");
+    EXPECT_EQ(sound_.getAmbientSoundName(), "HQ.WAV@0.2");
+}
+
+// The set's geometry's stem as a .wav, the mill and the town in any case at 0.85.
+TEST_F(CScriptInitSectionTest, StartingTheScriptPlaysTheSetsAmbientSound) {
+    script_.initRuntime();
+    EXPECT_EQ(sound_.getAmbientSoundName(), "pier.wav");
+    givenSet({.geometry = "smill.geo"});
+    script_.initRuntime();
+    EXPECT_EQ(sound_.getAmbientSoundName(), "smill.wav@0.85");
+    givenSet({.geometry = "TOWN.GEO"});
+    script_.initRuntime();
+    EXPECT_EQ(sound_.getAmbientSoundName(), "TOWN.wav@0.85");
 }
 
 // A running script neither checks a label nor heeds syntaxCheckOff.

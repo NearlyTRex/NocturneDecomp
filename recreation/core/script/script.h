@@ -24,6 +24,7 @@ struct SScriptOwners {
     const CDemonMission &mission;
     CEventList &events;
     CDemonSet &set;
+    CSound &sound;
 };
 
 // A line of the script that holds something, trimmed, and its line in the file, from 1.
