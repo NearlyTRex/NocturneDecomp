@@ -125,7 +125,11 @@ extern "C" void nocturne_widescreen_track(int width, int height, int camera, int
             s_top += std::copysign(beyond, difference) * (1.0f - std::exp(-kEaseRate * step));
         s_top = clampf(s_top, 0.0f, travel);
         // A full look reaches that edge of the shot from wherever the crop is.
-        const float wanted = look >= 0.0f ? look * s_top : look * (travel - s_top);
+        // Under the letterbox the shot is the cutscene's framing, so a look
+        // eases back and the stick moves nothing.
+        float wanted = 0.0f;
+        if (cinematic == 0)
+            wanted = look >= 0.0f ? look * s_top : look * (travel - s_top);
         s_look += (wanted - s_look) * (1.0f - std::exp(-kLookRate * step));
     }
     s_shown = clampf(s_top - s_look, 0.0f, travel);

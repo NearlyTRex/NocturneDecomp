@@ -401,7 +401,9 @@ actors stay locked to the backdrop's camera.
 scene, before `lockAndRenderToBuffer`, `CDemonSet::renderScene` projects the middle of its
 bounding box as the iris fade does. A camera change snaps the crop to it; while the camera holds,
 the crop eases toward it past a 16-row dead band; while the letterbox is up the crop centres, so
-a cutscene keeps the middle of its shot, the band it was composed around.
+a cutscene keeps the middle of its shot, the band it was composed around. The player's look (the
+right stick under camera movement) is ignored there too, and a look held as the letterbox comes
+up eases back to that centre.
 
 **The letterbox is measured over the 4:3 picture.** The shipped bars are
 `(H - W * 100 / 185) / 2`; at 1280x720 that is 14 pixels, too thin for a subtitle, which then

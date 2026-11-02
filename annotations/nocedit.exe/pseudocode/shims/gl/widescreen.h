@@ -59,7 +59,8 @@ const char *nocturne_widescreen_name(int mode);
 // actor's height in scene space when `focus_visible`; `cinematic` whether the
 // letterbox is up; `look` the player's look, -1 (down) to 1 (up), which at full
 // tilt shows that edge of the shot wherever the crop is and eases back when
-// let go; `seconds` the time since the last scene.
+// let go, and is ignored, easing back, while `cinematic`; `seconds` the time
+// since the last scene.
 void nocturne_widescreen_track(int width, int height, int camera, int focus_visible, float focus_y,
                                int cinematic, float look, float seconds);
 

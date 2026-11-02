@@ -214,6 +214,26 @@ NOCTURNE_TEST(a_look_reaches_either_edge_and_eases_back) {
     CHECK_EQ(top(), 60);
 }
 
+// Under the letterbox the stick moves nothing: a look held as it comes up
+// eases back to the centred shot, and one asked for under it is not taken.
+NOCTURNE_TEST(a_cutscene_cannot_be_looked_around) {
+    set_mode(NOCTURNE_WIDESCREEN_PAN);
+    cut_to(30, 240.0f); // top 60, the centre
+    for (int i = 0; i < 60; i++)
+        track(30, 1, 240.0f, 0, 0.1f, 1.0f);
+    CHECK_EQ(top(), 0);
+    track(30, 1, 240.0f, 1, 0.1f, 1.0f);
+    const int easing = top();
+    CHECK(easing > 0);
+    CHECK(easing < 60);
+    for (int i = 0; i < 60; i++)
+        track(30, 1, 240.0f, 1, 0.1f, 1.0f);
+    CHECK_EQ(top(), 60);
+    for (int i = 0; i < 60; i++)
+        track(30, 1, 240.0f, 1, 0.1f, -1.0f);
+    CHECK_EQ(top(), 60);
+}
+
 // A screen that is not reframed leaves the crop where it was.
 NOCTURNE_TEST(a_screen_not_reframed_is_not_tracked) {
     set_mode(NOCTURNE_WIDESCREEN_PAN);

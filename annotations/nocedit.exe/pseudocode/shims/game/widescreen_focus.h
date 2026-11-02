@@ -11,7 +11,8 @@
 // through CDemonCamera::worldToScreenWithFrustumCull. Its height, the camera,
 // whether the letterbox is up and the frame time go to the crop, with the
 // player's look: under camera movement on a pad, the right stick's vertical
-// (game/movement.h gives it to the view rather than to pointing).
+// (game/movement.h gives it to the view rather than to pointing), which the
+// crop ignores while a cutscene's letterbox is up.
 //
 // Reached from CDemonSet::renderScene, gated there on NOCTURNE_AUTHENTIC_MENU.
 
