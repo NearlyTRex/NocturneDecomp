@@ -138,6 +138,7 @@ void Stand::reset() {
     s_classes.clear();
     s_key_type = class_support::make("CKeyActor", 0x600);
     s_cancelled = 0;
+    std::memset(&s_mission, 0, sizeof(s_mission));
     std::memset(&s_item_vtable, 0, sizeof(s_item_vtable));
     s_item_vtable.getActorType = class_support::actor_type;
     s_item_vtable.setup = setup;
@@ -287,6 +288,13 @@ CDemonActor *__cdecl core_inv_cpp_CInventory_findItemByName_FUN_004fe9d0(CInvent
 int __cdecl core_inv_cpp_CInventory_addItem_FUN_004fd600(CInventory *this_ptr,
                                                          CDemonActor *item_actor, int) {
     this_ptr->items[this_ptr->item_count++] = item_actor;
+    // A melee weapon is queued to leave the world, as the real one does.
+    if (class_support::types[item_actor] == &g_CMeleeClassInfo) {
+        CDemonMission *mission = g_CDemonMissionPtr;
+        mission->delete_queue_actors[mission->delete_queue_count] = item_actor;
+        mission->delete_queue_flags[mission->delete_queue_count] = 0;
+        mission->delete_queue_count++;
+    }
     return 1;
 }
 
