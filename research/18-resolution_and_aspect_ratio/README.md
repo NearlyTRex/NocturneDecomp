@@ -12,7 +12,7 @@ writes its scanlines straight into `g_ScreenBufferArray[scanline_y]` at the nati
 Neither is a limit on the picture. What does limit software is two renderer-owned pieces past
 480 lines — see *What actually caps software*. Software above 640x480 is not viable.
 
-**The resolution list is one table.** Gated by `NOCTURNE_AUTHENTIC_MENU` (formerly `NOCTURNE_AUTHENTIC_RESOLUTION_LIST`);
+**The resolution list is one table.** Gated by `NOCTURNE_AUTHENTIC_MENU`;
 `shims/gl/resolution.{h,cpp}` drives both the label and the stepping so they cannot disagree.
 Seventeen modes by width then height: the shipped six, 1600x1200, a reachable 400x300, the 16:9
 modes 1280x720, 1600x900, 1920x1080, 2560x1440 and 3840x2160, which the label marks "(wide)",
@@ -29,8 +29,7 @@ clipped to the box; see *The two coordinate spaces → text inside a box*.
 above 1200 lines or 1598 pixels wide; the port sizes them by equates emitted at 2160 and 3842.
 See *The two ceilings*.
 
-**Widescreen is a reframe of the scene, not wider backdrops.** 16:9 and 16:10 modes are in the
-table; a Graphic Options line picks Stretch, Pillarbox or Pan & scan (`shims/gl/widescreen.h`,
+**Widescreen is a reframe of the scene, not wider backdrops.** 16:9 modes are in the table; a Graphic Options line picks Stretch, Pillarbox or Pan & scan (`shims/gl/widescreen.h`,
 gated by `NOCTURNE_AUTHENTIC_MENU`). True widescreen is still not possible from the shipped
 backdrops; see *Aspect ratio*.
 

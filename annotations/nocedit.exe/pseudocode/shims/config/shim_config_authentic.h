@@ -2411,7 +2411,8 @@
 //          does nothing. The build's version sits in the bottom left.
 //        - Graphic Options (game/options_menu). Resolutions come from one
 //          ordered table (shims/gl/resolution.cpp; research/18 has the shipped
-//          chain and its left-step gap), 16:9 and 16:10 among them, and apply
+//          chain and its left-step gap), 16:9 among them with a 4:3 mode at
+//          each of their heights, up to 3840x2160, and apply
 //          straight away. Window picks windowed, fullscreen or borderless;
 //          Widescreen picks how a scene fills a screen wider than 4:3 -
 //          stretched, pillarboxed, or panned and scanned after the focus actor
