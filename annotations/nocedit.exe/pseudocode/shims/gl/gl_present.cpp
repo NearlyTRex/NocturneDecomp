@@ -361,8 +361,8 @@ bool ensure_scratch() {
 #endif
     gl.GenFramebuffers(1, &g_gl.scratch_fbo);
     gl.BindFramebuffer(GL_FRAMEBUFFER, g_gl.scratch_fbo);
-    gl.FramebufferTexture2D(GL_FRAMEBUFFER, GL_COLOR_ATTACHMENT0, GL_TEXTURE_2D,
-                            g_gl.scratch_color, 0);
+    gl.FramebufferTexture2D(GL_FRAMEBUFFER, GL_COLOR_ATTACHMENT0, GL_TEXTURE_2D, g_gl.scratch_color,
+                            0);
     if (gl.CheckFramebufferStatus(GL_FRAMEBUFFER) != GL_FRAMEBUFFER_COMPLETE) {
         DLOG("render", "gl_present: reframe copy incomplete (%dx%d)", g_gl.scene_width,
              g_gl.scene_height);

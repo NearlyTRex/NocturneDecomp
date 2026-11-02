@@ -62,8 +62,7 @@ CVector3f *__cdecl core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0(
     const float c = std::cos(stand.yaw), s = std::sin(stand.yaw);
     const CVector3f &l = *input_local_point;
     const CVector3f &at = this_ptr->location.position;
-    *output_world_point =
-        CVector3f{at.x + l.x * c + l.z * s, at.y + l.y, at.z - l.x * s + l.z * c};
+    *output_world_point = CVector3f{at.x + l.x * c + l.z * s, at.y + l.y, at.z - l.x * s + l.z * c};
     return output_world_point;
 }
 
@@ -73,8 +72,7 @@ CVector3f *__cdecl core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_00408f10(
     const CVector3f &at = this_ptr->location.position;
     const float dx = input_world_point->x - at.x;
     const float dz = input_world_point->z - at.z;
-    *output_local_point =
-        CVector3f{dx * c - dz * s, input_world_point->y - at.y, dx * s + dz * c};
+    *output_local_point = CVector3f{dx * c - dz * s, input_world_point->y - at.y, dx * s + dz * c};
     return output_local_point;
 }
 
@@ -110,8 +108,8 @@ int nocturne_automap_owns_controls(void) {
     return stand.map_owns;
 }
 
-void nocturne_widescreen_track(int width, int height, int camera, int focus_visible,
-                               float focus_y, int cinematic, float look, float seconds) {
+void nocturne_widescreen_track(int width, int height, int camera, int focus_visible, float focus_y,
+                               int cinematic, float look, float seconds) {
     stand.tracked.push_back(view_support::Track{width, height, camera, focus_visible, focus_y,
                                                 cinematic, look, seconds});
 }

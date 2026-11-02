@@ -212,8 +212,7 @@ extern "C" void nocturne_movement_apply(CGame *game, SPlayerInput *input) {
     }
     CHero *hero = g_HeroActors[g_LocalHeroIndex];
     if (hero == nullptr || held(game->key_strafe) ||
-        (*(((hero->base).base.vtable._uc)->_uc).getDeathState)(&hero->base) !=
-            DEATH_STATE_ALIVE) {
+        (*(((hero->base).base.vtable._uc)->_uc).getDeathState)(&hero->base) != DEATH_STATE_ALIVE) {
         hand_back(game, input);
         return;
     }

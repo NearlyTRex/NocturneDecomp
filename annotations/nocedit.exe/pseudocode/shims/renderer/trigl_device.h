@@ -78,8 +78,7 @@ int nocturne_trigl_device_begin_overlay(float scale_x, float scale_y, float offs
 void nocturne_trigl_device_end_overlay(void);
 
 // 1 inside an overlay pass, with its placement.
-int nocturne_trigl_device_overlay(float *scale_x, float *scale_y, float *offset_x,
-                                  float *offset_y);
+int nocturne_trigl_device_overlay(float *scale_x, float *scale_y, float *offset_x, float *offset_y);
 
 // Clear colour, clear depth, and the box-limited depth clear the engine uses to
 // reset a region rather than the whole buffer.

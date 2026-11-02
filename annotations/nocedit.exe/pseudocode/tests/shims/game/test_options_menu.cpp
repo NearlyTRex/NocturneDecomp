@@ -164,16 +164,11 @@ NOCTURNE_TEST(graphic_options_reads_the_display) {
     graphics({});
     CHECK_EQ(g_CurrentGraphicsBoard, 0); // past the cards listed
     CHECK(stand.in_order({"saveClockTime", "buildCardList", "swap"}));
-    const std::vector<std::string> lines = {"Resolution : 640x480",
-                                            "Window : Windowed",
-                                            "Widescreen : Pan & scan",
-                                            "Flashlight halo : Off",
-                                            "Acceleration : Off",
-                                            "3D API : None",
-                                            "No 3D Hardware detected",
-                                            "Bits per pixel : 16",
-                                            "Upscaler : Standard",
-                                            "Monitor calibration"};
+    const std::vector<std::string> lines = {"Resolution : 640x480",    "Window : Windowed",
+                                            "Widescreen : Pan & scan", "Flashlight halo : Off",
+                                            "Acceleration : Off",      "3D API : None",
+                                            "No 3D Hardware detected", "Bits per pixel : 16",
+                                            "Upscaler : Standard",     "Monitor calibration"};
     CHECK(lines_of(kGraphic) == lines);
     CHECK_EQ(last().y, NOCTURNE_MENU_TITLE_Y);
 

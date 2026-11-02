@@ -154,8 +154,7 @@ void __cdecl core_inv_cpp_loadAssets_FUN_004fd220(void) {
     ++stand.loads;
 }
 
-int __cdecl core_inv_cpp_CInventory_isWeaponInCategory_FUN_004ffe70(CInventory *,
-                                                                    CDemonActor *,
+int __cdecl core_inv_cpp_CInventory_isWeaponInCategory_FUN_004ffe70(CInventory *, CDemonActor *,
                                                                     int weapon_category) {
     return stand.categories[weapon_category];
 }
@@ -218,7 +217,7 @@ int __cdecl engine_font_cpp_CBitFont_getCharHeight_FUN_004d01d0(CBitFont *this_p
 }
 
 int __cdecl engine_font_cpp_CBitFont_drawText_FUN_004cda80(CBitFont *this_ptr, char *text, int x,
-                                                          int y, int, int) {
+                                                           int y, int, int) {
     stand.texts.push_back(hud_support::Text{text, x, y, 0, this_ptr});
     return 0;
 }

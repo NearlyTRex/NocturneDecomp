@@ -36,11 +36,10 @@ Mode step(Mode from, int direction, int max_height = 0) {
 // Right is the next mode by width, then height, and left the one before,
 // through every mode there is, round from the last to the first and back.
 NOCTURNE_TEST(left_and_right_step_through_every_mode_and_wrap) {
-    const Mode modes[] = {{320, 240},   {400, 300},   {512, 384},   {640, 480},
-                          {800, 600},   {1024, 768},  {1200, 900},  {1280, 720},
-                          {1280, 1024}, {1440, 1080}, {1600, 900},  {1600, 1200},
-                          {1920, 1080}, {1920, 1440}, {2560, 1440}, {2880, 2160},
-                          {3840, 2160}};
+    const Mode modes[] = {{320, 240},   {400, 300},   {512, 384},   {640, 480},   {800, 600},
+                          {1024, 768},  {1200, 900},  {1280, 720},  {1280, 1024}, {1440, 1080},
+                          {1600, 900},  {1600, 1200}, {1920, 1080}, {1920, 1440}, {2560, 1440},
+                          {2880, 2160}, {3840, 2160}};
     const int count = (int)(sizeof(modes) / sizeof(modes[0]));
     for (int i = 0; i < count; ++i) {
         CHECK(step(modes[i], kRight) == modes[(i + 1) % count]);
@@ -74,7 +73,7 @@ NOCTURNE_TEST(a_mode_not_in_the_list_snaps_to_the_nearest) {
     CHECK(step({2560, 1080}, kRight) == (Mode{1920, 1080}));
     CHECK(step({5120, 2880}, kRight) == (Mode{3840, 2160}));
     CHECK(step({2700, 2160}, kRight) == (Mode{2880, 2160}));
-    CHECK(step({1280, 800}, kRight) == (Mode{1024, 768})); // 16:10, not listed
+    CHECK(step({1280, 800}, kRight) == (Mode{1024, 768}));   // 16:10, not listed
     CHECK(step({2240, 1440}, kRight) == (Mode{1920, 1440})); // the first of two as near
     CHECK(step({1920, 1080}, kLeft, kSoftwareMax) == (Mode{640, 480}));
     CHECK(step({360, 270}, kRight) == (Mode{320, 240}));

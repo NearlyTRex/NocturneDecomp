@@ -51,8 +51,8 @@ void draw_shimmer(CBitFont *font, char *line, int y) {
         const unsigned alpha = nocturne_rng_fx();
         engine_3d_c_setRenderAlpha_FUN_00406d80((int)(((long long)alpha * kLineAlpha) >> 16));
         engine_font_cpp_CBitFont_drawText_FUN_004cda80(
-            font, line, (int)(dx & 3) + kShimmerLeft + nocturne_menu_left(),
-            (int)(dy & 3) - 2 + y, kChosenColour, -1);
+            font, line, (int)(dx & 3) + kShimmerLeft + nocturne_menu_left(), (int)(dy & 3) - 2 + y,
+            kChosenColour, -1);
     }
 }
 
@@ -65,8 +65,8 @@ void draw_corners() {
         engine_font_cpp_CBitFont_getTextHeight_FUN_004cff40(g_SmallEditorFont, copyright);
     // The copyright keeps to the screen's corner; the trademark to the logo's.
     const int right = kCornerRight + nocturne_menu_left() * 2;
-    engine_font_cpp_CBitFont_drawText_FUN_004cda80(
-        g_SmallEditorFont, copyright, right - width, kCornerBottom - height, kLineColour, 0);
+    engine_font_cpp_CBitFont_drawText_FUN_004cda80(g_SmallEditorFont, copyright, right - width,
+                                                   kCornerBottom - height, kLineColour, 0);
     engine_3d_c_setRenderAlpha_FUN_00406d80(kTrademarkAlpha);
     engine_font_cpp_CBitFont_drawText_FUN_004cda80(g_SmallEditorFont, g_MenuTrademarkGlyph,
                                                    kTrademarkX + nocturne_menu_left(), kTrademarkY,

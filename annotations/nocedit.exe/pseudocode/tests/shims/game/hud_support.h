@@ -59,27 +59,27 @@ struct Wrap {
 };
 
 struct Stand {
-    std::vector<Text> texts;  // nocturne_ui_draw_text_f and CBitFont::drawText (scale 0)
-    std::vector<Blit> blits;  // nocturne_ui_blit_alpha(_rect)
-    std::vector<Fill> fills;  // fillRectColor, fillRectWithBorder
+    std::vector<Text> texts; // nocturne_ui_draw_text_f and CBitFont::drawText (scale 0)
+    std::vector<Blit> blits; // nocturne_ui_blit_alpha(_rect)
+    std::vector<Fill> fills; // fillRectColor, fillRectWithBorder
     std::vector<Backdrop> backdrops;
     std::vector<Model> models;
-    std::vector<Clip> clips;  // nocturne_ui_push_clip
-    int pops = 0;             // nocturne_ui_pop_clip
-    int screen_clips = 0;     // nocturne_ui_push_screen_clip
-    std::vector<int> alphas;  // setRenderAlpha
-    std::vector<Wrap> wraps;  // nocturne_ui_wrap_to_width_f
-    int loads = 0;            // loadAssets
+    std::vector<Clip> clips; // nocturne_ui_push_clip
+    int pops = 0;            // nocturne_ui_pop_clip
+    int screen_clips = 0;    // nocturne_ui_push_screen_clip
+    std::vector<int> alphas; // setRenderAlpha
+    std::vector<Wrap> wraps; // nocturne_ui_wrap_to_width_f
+    int loads = 0;           // loadAssets
     std::vector<Overlay> overlays;
     int overlay_ends = 0;
-    int ui_scale = 1;          // nocturne_ui_scale
-    float text_scale = 1.0f;   // nocturne_ui_text_scale
-    int text_scales = 1;       // nocturne_ui_text_scale_supported
-    int overlay_opens = 1;     // nocturne_trigl_device_begin_overlay
-    int picture_left = 0;      // nocturne_widescreen_picture; right -1 for the width
+    int ui_scale = 1;        // nocturne_ui_scale
+    float text_scale = 1.0f; // nocturne_ui_text_scale
+    int text_scales = 1;     // nocturne_ui_text_scale_supported
+    int overlay_opens = 1;   // nocturne_trigl_device_begin_overlay
+    int picture_left = 0;    // nocturne_widescreen_picture; right -1 for the width
     int picture_right = -1;
-    int shown_rows = 480;      // nocturne_widescreen_shown_rows
-    std::map<int, int> categories;            // isWeaponInCategory, by category
+    int shown_rows = 480;                      // nocturne_widescreen_shown_rows
+    std::map<int, int> categories;             // isWeaponInCategory, by category
     int hides_ammo = 0;                        // nocturne_hero_weapon_hides_ammo
     std::map<const void *, std::string> names; // getItemDisplayName; else "name"
     float delta = 0.0f;                        // getGameDeltaTime

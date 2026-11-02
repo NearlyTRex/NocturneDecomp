@@ -270,8 +270,8 @@ void item_text(CInventory *inventory, const Screen &s, const Space &space, CBitF
                       (double)health->hp_restored);
         draw_in_corner(font, text, box, pad, s.text);
     }
-    CDemonActor *reel = core_actor_cpp_castToClassHash_FUN_0040c790(
-        inventory->selected_item, g_CFilmReelClassInfo.name_hash);
+    CDemonActor *reel = core_actor_cpp_castToClassHash_FUN_0040c790(inventory->selected_item,
+                                                                    g_CFilmReelClassInfo.name_hash);
     if (reel != nullptr) {
         std::snprintf(text, sizeof(text), "%s", core_inv_cpp_getItemDisplayName_FUN_004fcf00(reel));
         draw_in_corner(font, text, box, pad, s.text);
@@ -301,10 +301,10 @@ void battery(const CInventory *inventory, const Screen &s) {
     const int top = s.frame.bottom - 0x21 * ui;
     const int level =
         (int)std::lround((float)bottom + (float)(top - bottom) * inventory->battery_charge * 0.01f);
-    engine_2d_c_fillRectColor_FUN_00403170(s.frame.left + 6 * ui, level,
-                                           s.frame.left + 0x10 * ui, bottom, 2);
-    nocturne_ui_blit_alpha(&g_BatteryIconBitmap, s.frame.left + 4 * ui,
-                           s.frame.bottom - 0x24 * ui, kOpaque, ui);
+    engine_2d_c_fillRectColor_FUN_00403170(s.frame.left + 6 * ui, level, s.frame.left + 0x10 * ui,
+                                           bottom, 2);
+    nocturne_ui_blit_alpha(&g_BatteryIconBitmap, s.frame.left + 4 * ui, s.frame.bottom - 0x24 * ui,
+                           kOpaque, ui);
 }
 
 // The health bar in the frame's top-right corner while the inventory is up.
@@ -353,9 +353,9 @@ void pickup_help(CInventory *inventory, const Screen &s, const Space &space) {
     const int width =
         s.frame.width() - (int)std::lround((float)panel_height * space.scale) - 4 * ui;
     int pitch = 0;
-    const int count = nocturne_ui_wrap_to_width_f(font, inventory->message_text,
-                                                  g_InventoryWrappedTextLines3[0], kMaxLines,
-                                                  0x100, width, s.text, &pitch);
+    const int count =
+        nocturne_ui_wrap_to_width_f(font, inventory->message_text, g_InventoryWrappedTextLines3[0],
+                                    kMaxLines, 0x100, width, s.text, &pitch);
     int y = nocturne_hud_letterbox_height() + 4 * ui;
     for (int i = 0; i < count; i++) {
         nocturne_ui_draw_text_f(font, g_InventoryWrappedTextLines3[i], s.frame.left + 4 * ui, y,
@@ -524,8 +524,8 @@ extern "C" void nocturne_hud_inventory_panels(CInventory *inventory) {
     const int overlay = nocturne_trigl_device_begin_overlay(space.scale, space.scale,
                                                             space.offset_x, space.offset_y);
     if (weapon)
-        draw_panel(inventory, panel(inventory, true), &inventory->selected_weapon->base,
-                   1.5707964f, inventory->weapon_highlight_timer);
+        draw_panel(inventory, panel(inventory, true), &inventory->selected_weapon->base, 1.5707964f,
+                   inventory->weapon_highlight_timer);
     if (item)
         draw_panel(inventory, panel(inventory, false), inventory->selected_item, 0.0f,
                    inventory->item_highlight_timer);
@@ -603,8 +603,7 @@ extern "C" void nocturne_hud_subtitles(CScript *script) {
             y = height - room - block;
         engine_3d_c_setRenderAlpha_FUN_00406d80(kOpaque);
         for (int i = 0; i < count; i++) {
-            const int line_width =
-                nocturne_ui_text_width_f(font, g_ScriptSubtitleLines[i], scale);
+            const int line_width = nocturne_ui_text_width_f(font, g_ScriptSubtitleLines[i], scale);
             nocturne_ui_draw_text_f(font, g_ScriptSubtitleLines[i],
                                     nocturne_hud::centre_x(s.frame, line_width), y, kTextColor, 0,
                                     scale);
@@ -623,11 +622,11 @@ extern "C" void nocturne_hud_death_banner(char *text, int at_top) {
     const Screen s = screen();
     const float scale = nocturne_ui_text_scale_supported() ? s.text : 1.0f;
     const int height = (int)std::lround((float)g_MediumFont->max_char_height * scale);
-    const int y = at_top != 0 ? s.frame.top + height * 2
-                              : s.frame.top + (s.frame.height() - height) / 4;
+    const int y =
+        at_top != 0 ? s.frame.top + height * 2 : s.frame.top + (s.frame.height() - height) / 4;
     const int width = nocturne_ui_text_width_f(g_MediumFont, text, scale);
     nocturne_ui_draw_text_f(g_MediumFont, text, nocturne_hud::centre_x(s.frame, width), y,
-                          (int)g_ColorCubeLookup[0x7c00], 0, scale);
+                            (int)g_ColorCubeLookup[0x7c00], 0, scale);
 }
 
 #else

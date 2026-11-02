@@ -14,7 +14,8 @@
 
 namespace {
 
-template <typename T, size_t N> constexpr size_t length(T (&)[N]) {
+template <typename T, size_t N>
+constexpr size_t length(T (&)[N]) {
     return N;
 }
 
@@ -23,10 +24,8 @@ const int kLargestHeight = 2160;
 
 static_assert(length(g_ScreenBufferArray) == GAME_SCREEN_MAX_HEIGHT, "scanline table");
 static_assert(length(g_ZBufferScanlineArray) == GAME_SCREEN_MAX_HEIGHT, "depth table");
-static_assert(length(g_ZBufferScanlineArrayBackup) == GAME_SCREEN_MAX_HEIGHT,
-              "depth backup table");
-static_assert(length(g_SavedScreenBufferArray) == GAME_SCREEN_MAX_HEIGHT,
-              "saved scanline table");
+static_assert(length(g_ZBufferScanlineArrayBackup) == GAME_SCREEN_MAX_HEIGHT, "depth backup table");
+static_assert(length(g_SavedScreenBufferArray) == GAME_SCREEN_MAX_HEIGHT, "saved scanline table");
 static_assert(length(g_BackgroundSavedScreenBufferArray) == GAME_SCREEN_MAX_HEIGHT,
               "background scanline table");
 static_assert(length(g_ReciprocalLookupTable) == GAME_RECIPROCAL_TABLE_SIZE, "reciprocal table");

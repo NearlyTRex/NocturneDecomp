@@ -33,15 +33,15 @@ struct Track {
 };
 
 struct Stand {
-    float yaw = 0.0f;            // every actor's facing, radians from +z toward +x
-    CVector3i projected = {};    // what worldToScreenWithFrustumCull was last handed
-    CVector3i screen = {};       // and what it answers
-    float move_x = 0.0f;         // nocturne_gamepad_axes' left stick
+    float yaw = 0.0f;         // every actor's facing, radians from +z toward +x
+    CVector3i projected = {}; // what worldToScreenWithFrustumCull was last handed
+    CVector3i screen = {};    // and what it answers
+    float move_x = 0.0f;      // nocturne_gamepad_axes' left stick
     float move_y = 0.0f;
-    float look_x = 0.0f;         // and its right
+    float look_x = 0.0f; // and its right
     float look_y = 0.0f;
-    int map_owns = 0;            // nocturne_automap_owns_controls
-    std::vector<Track> tracked;  // nocturne_widescreen_track
+    int map_owns = 0;           // nocturne_automap_owns_controls
+    std::vector<Track> tracked; // nocturne_widescreen_track
 
     void reset();
 };

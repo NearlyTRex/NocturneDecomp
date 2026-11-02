@@ -177,8 +177,8 @@ int g_UseDirect3D = 0;
 int g_UseExternalRenderer = 1;
 CDemonRenderer *g_CDemonRendererPtr2 = nullptr;
 
-void __cdecl engine_drender_cpp_CDemonRenderer_pushViewport_FUN_0048c890(CDemonRenderer *, int,
-                                                                         int, int width, int) {
+void __cdecl engine_drender_cpp_CDemonRenderer_pushViewport_FUN_0048c890(CDemonRenderer *, int, int,
+                                                                         int width, int) {
     stand.viewports.push_back(width);
 }
 

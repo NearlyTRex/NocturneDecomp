@@ -95,8 +95,7 @@ extern "C" const char *nocturne_widescreen_name(int mode) {
 }
 
 extern "C" void nocturne_widescreen_track(int width, int height, int camera, int focus_visible,
-                                          float focus_y, int cinematic, float look,
-                                          float seconds) {
+                                          float focus_y, int cinematic, float look, float seconds) {
     if (!reframes(width, height))
         return;
     const float rows = visible_rows(width, height);
@@ -168,8 +167,8 @@ extern "C" void nocturne_widescreen_picture(int width, int height, int *left, in
     *right = *left + column;
 }
 
-extern "C" void nocturne_widescreen_scene_to_screen(int width, int height, int scene_x,
-                                                    int scene_y, int *out_x, int *out_y) {
+extern "C" void nocturne_widescreen_scene_to_screen(int width, int height, int scene_x, int scene_y,
+                                                    int *out_x, int *out_y) {
     const int mode = nocturne_widescreen_get();
     if (mode == NOCTURNE_WIDESCREEN_STRETCH || !reframes(width, height)) {
         // The renderer's own stretch.
@@ -211,8 +210,8 @@ extern "C" void nocturne_widescreen_picture(int width, int, int *left, int *righ
     *left = 0;
     *right = width;
 }
-extern "C" void nocturne_widescreen_scene_to_screen(int width, int height, int scene_x,
-                                                    int scene_y, int *out_x, int *out_y) {
+extern "C" void nocturne_widescreen_scene_to_screen(int width, int height, int scene_x, int scene_y,
+                                                    int *out_x, int *out_y) {
     *out_x = (scene_x * width) / NOCTURNE_SCENE_WIDTH;
     *out_y = (scene_y * height) / NOCTURNE_SCENE_HEIGHT;
 }

@@ -9,11 +9,11 @@
 #if NOCTURNE_GL_PRESENT
 
 #include "core/debug_log.h"
+#include "gl/antialias.h"
+#include "gl/antialias_shaders.h"
 #include "gl/gl_api.h"
 #include "gl/gl_blit.h"
 #include "gl/gl_program.h"
-#include "gl/antialias.h"
-#include "gl/antialias_shaders.h"
 #include "gl/upscale_shaders.h"
 #include "gl/upscaler.h"
 

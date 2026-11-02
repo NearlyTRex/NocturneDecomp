@@ -522,8 +522,8 @@ UiCoverage ui_cover(const CBitFont *font, const uchar *glyph, int stride, int bi
     for (int j = (int)y0; j < glyph_h && (float)j < y1; j++) {
         const float share_y = ui_minf(y1, (float)(j + 1)) - ui_maxf(y0, (float)j);
         for (int i = (int)x0; i < glyph_w && (float)i < x1; i++) {
-            const float share = (ui_minf(x1, (float)(i + 1)) - ui_maxf(x0, (float)i)) * share_y /
-                                area;
+            const float share =
+                (ui_minf(x1, (float)(i + 1)) - ui_maxf(x0, (float)i)) * share_y / area;
             const uchar index = glyph[(ptrdiff_t)j * stride + i];
             const uint color = font->palettes_display[bitmap_index][index];
             if (font->is_initialized == 0) {
@@ -605,8 +605,7 @@ void ui_plot(void *line, int x, const UiCoverage &c, const CBitFont *font, int c
 // One glyph at `scale`, its top-left at (x, y). Returns the advance.
 float ui_draw_char_f(CBitFont *font, int character_code, float x, float y, int color_mode,
                      int color_value, float scale) {
-    const float advance =
-        (float)(font->char_widths[character_code] + font->char_spacing) * scale;
+    const float advance = (float)(font->char_widths[character_code] + font->char_spacing) * scale;
     const uchar *glyph = font->char_positions[character_code];
     if (glyph == 0)
         return advance;
@@ -686,8 +685,8 @@ int nocturne_ui_draw_text_f(struct CBitFont *bit_font, char *text, int x, int y,
             pen = (float)x;
             continue;
         }
-        pen += ui_draw_char_f(font, (int)character_code, pen, line_y, color_mode, color_value,
-                              scale);
+        pen +=
+            ui_draw_char_f(font, (int)character_code, pen, line_y, color_mode, color_value, scale);
     }
     return (int)std::lround(pen - (float)x);
 }

@@ -705,8 +705,8 @@ int __cdecl shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3
 
 CDemonRenderer *g_CDemonRendererPtr2 = nullptr;
 
-void __cdecl engine_drender_cpp_CDemonRenderer_pushViewport_FUN_0048c890(CDemonRenderer *, int,
-                                                                         int, int, int) {}
+void __cdecl engine_drender_cpp_CDemonRenderer_pushViewport_FUN_0048c890(CDemonRenderer *, int, int,
+                                                                         int, int) {}
 void __cdecl engine_drender_cpp_CDemonRenderer_popViewport_FUN_0048c8c0(CDemonRenderer *) {}
 extern "C" int nocturne_trigl_device_begin_overlay(float, float, float, float) {
     return 0;
