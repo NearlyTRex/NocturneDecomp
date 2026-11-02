@@ -41,7 +41,7 @@ void __cdecl engine_drender_cpp_renderTriangleTextured_FUN_00457a00(int *vertex_
     _DAT_01b4cd30 = 0;
     _DAT_01b4d1b8 = 0;
     local_24 = 0;
-    _DAT_01b4d1b4 = 0x4b0;
+    _DAT_01b4d1b4 = GAME_SCREEN_MAX_HEIGHT;
     if (0 < vertex_count) {
       local_28 = vertex_indices;
       do {

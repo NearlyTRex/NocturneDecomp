@@ -2,6 +2,14 @@
 // fix the type in Ghidra or the generator, or the next export overwrites the change.
 #pragma once
 
-// No equates defined in Ghidra
-// Add equates in Ghidra (Window -> Equates) to populate this file
+// Equates / Constants
+
+// GAME Constants
+// OVERRIDDEN (EQUATE_VALUE_OVERRIDES in headers.py): the binary's value is 1600 (0x640)
+#define GAME_RECIPROCAL_TABLE_SIZE                3842  // 0xF02
+// OVERRIDDEN (EQUATE_VALUE_OVERRIDES in headers.py): the binary's value is 1200 (0x4B0)
+#define GAME_SCREEN_MAX_HEIGHT                    2160  // 0x870
+
+// Total equates: 2
+// Total references: 11
 

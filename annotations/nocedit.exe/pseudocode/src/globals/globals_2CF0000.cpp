@@ -102,12 +102,12 @@ int g_MouseY = {};
 // uchar[32768]
 uchar g_ColorCubeLookup[32768] = {};
 
-// uint*[1200]
-uint* g_ZBufferScanlineArray[1200] = {};
+// uint*[GAME_SCREEN_MAX_HEIGHT]
+uint* g_ZBufferScanlineArray[GAME_SCREEN_MAX_HEIGHT] = {};
 
 // void*
 void* g_ActiveControl = {};
 
-// void*[1200]
-void* g_ScreenBufferArray[1200] = {};
+// void*[GAME_SCREEN_MAX_HEIGHT]
+void* g_ScreenBufferArray[GAME_SCREEN_MAX_HEIGHT] = {};
 

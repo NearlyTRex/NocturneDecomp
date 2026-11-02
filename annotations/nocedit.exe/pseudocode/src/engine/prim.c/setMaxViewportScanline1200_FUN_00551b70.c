@@ -9,6 +9,6 @@
 void __cdecl engine_prim_c_setMaxViewportScanline1200_FUN_00551b70(void)
 
 {
-  g_MaxViewportScanline = 0x4b0;
+  g_MaxViewportScanline = GAME_SCREEN_MAX_HEIGHT;
   return;
 }

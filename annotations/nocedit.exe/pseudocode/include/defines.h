@@ -17,6 +17,10 @@
 #define GAME_COLOR_MAGENTA_TRANSPARENT            0xFF00FF  // 16711935
 #define GAME_CONSOLE_ROW_STRIDE                   80  // 0x50
 #define GAME_DEADBEEF                             0xDEADBEEF  // -559038737
+// OVERRIDDEN (EQUATE_VALUE_OVERRIDES in headers.py): the binary's value is 1600 (0x640)
+#define GAME_RECIPROCAL_TABLE_SIZE                3842  // 0xF02
+// OVERRIDDEN (EQUATE_VALUE_OVERRIDES in headers.py): the binary's value is 1200 (0x4B0)
+#define GAME_SCREEN_MAX_HEIGHT                    2160  // 0x870
 #define GAME_SMEMHEAD_AND_BACKGUARD_SIZE          44  // 0x2C
 #define GAME_WINDOW_RESOLUTION_480                480  // 0x1E0
 #define GAME_WINDOW_RESOLUTION_640                640  // 0x280
@@ -46,6 +50,6 @@
 #define SYSTEM_IO_ERROR                           5
 #define SYSTEM_WINDOWS_NT_4_0                     0x8000  // 32768
 
-// Total equates: 32
-// Total references: 167
+// Total equates: 34
+// Total references: 178
 

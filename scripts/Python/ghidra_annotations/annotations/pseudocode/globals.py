@@ -45,6 +45,18 @@ GLOBAL_TYPE_OVERRIDES = {
     # ASan can't see it). Widen each slot to 614400 (same element count, 8-byte
     # element) so the depth grid fits; 32-bit just leaves the upper half unused.
     'g_LightBufferPool': 'char[24][614400]',
+
+    # The screen ceilings (research/18, "The two ceilings"). The binary sizes
+    # one scanline pointer per line at 1200 and the software span rasteriser's
+    # reciprocal table at 1600. Sized by the equates the code bounds them with,
+    # so they follow those names' EQUATE_VALUE_OVERRIDES in headers.py; a bucket
+    # header holding one includes defines.h.
+    'g_ScreenBufferArray': 'void*[GAME_SCREEN_MAX_HEIGHT]',
+    'g_ZBufferScanlineArray': 'uint*[GAME_SCREEN_MAX_HEIGHT]',
+    'g_ZBufferScanlineArrayBackup': 'uint*[GAME_SCREEN_MAX_HEIGHT]',
+    'g_SavedScreenBufferArray': 'void*[GAME_SCREEN_MAX_HEIGHT]',
+    'g_BackgroundSavedScreenBufferArray': 'void*[GAME_SCREEN_MAX_HEIGHT]',
+    'g_ReciprocalLookupTable': 'uint[GAME_RECIPROCAL_TABLE_SIZE]',
 }
 
 
@@ -1257,8 +1269,9 @@ def format_variable_declaration(type_name, var_name):
         Tuple of (base_type, full_var_name) where full_var_name includes array dims
     """
     # Match array dimensions at the end of type
-    # Handles char[80], int[10][20], etc.
-    array_pattern = re.compile(r'^(.+?)(\[[\d\][\[]+)$')
+    # Handles char[80], int[10][20], and a dimension named by a define
+    # (void*[GAME_SCREEN_MAX_HEIGHT]), which GLOBAL_TYPE_OVERRIDES can emit.
+    array_pattern = re.compile(r'^(.+?)(\[[\w\][\[]+)$')
     match = array_pattern.match(type_name)
 
     if match:
@@ -2292,9 +2305,14 @@ def generate_globals_header_file(globals_list, range_key="", type_to_path_map=No
     needed_includes = set()
     needed_includes.add("system/basetypes.h")  # Always include basetypes
 
-    if type_to_path_map:
-        for global_var in globals_list:
-            type_name = extract_base_type_name(_apply_type_override(global_var))
+    for global_var in globals_list:
+        emitted_type = _apply_type_override(global_var)
+        # An array dimension named by an equate (GLOBAL_TYPE_OVERRIDES) needs
+        # its #define in scope; each bucket header must compile on its own.
+        if re.search(r'\[[A-Za-z_]', emitted_type):
+            needed_includes.add("defines.h")
+        if type_to_path_map:
+            type_name = extract_base_type_name(emitted_type)
             if type_name in type_to_path_map:
                 needed_includes.add(type_to_path_map[type_name])
 

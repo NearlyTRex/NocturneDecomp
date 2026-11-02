@@ -20,8 +20,8 @@ int g_VDCameraSortIndices[250] = {};
 // uchar
 uchar g_ThumbnailScrollBarInitFlag = {};
 
-// uint*[1200]
-uint* g_ZBufferScanlineArrayBackup[1200] = {};
+// uint*[GAME_SCREEN_MAX_HEIGHT]
+uint* g_ZBufferScanlineArrayBackup[GAME_SCREEN_MAX_HEIGHT] = {};
 
 // uint[1000]
 uint g_S3DTextureGroundTypes[1000] = {};

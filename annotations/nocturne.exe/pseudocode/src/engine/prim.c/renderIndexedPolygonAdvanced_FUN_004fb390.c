@@ -131,7 +131,7 @@ void __cdecl engine_prim_c_renderIndexedPolygonAdvanced_FUN_004fb390(int *vertex
     _DAT_01e53384 = 0;
     _DAT_01e52efc = 0;
     local_1c = 0;
-    _DAT_01e53380 = 0x4b0;
+    _DAT_01e53380 = GAME_SCREEN_MAX_HEIGHT;
     if (0 < vertex_count) {
       local_24 = vertex_indices;
       do {

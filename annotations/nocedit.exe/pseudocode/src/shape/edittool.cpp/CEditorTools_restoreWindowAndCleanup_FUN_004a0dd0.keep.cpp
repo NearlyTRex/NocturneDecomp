@@ -15,7 +15,7 @@ void __cdecl shape_edittool_cpp_CEditorTools_restoreWindowAndCleanup_FUN_004a0dd
   int iVar4;
   uint *puVar5;
   uint *puVar6;
-  void *auStack_12c4 [1200];
+  void *auStack_12c4 [GAME_SCREEN_MAX_HEIGHT];
   byte bVar7;
 
   bVar7 = 0;

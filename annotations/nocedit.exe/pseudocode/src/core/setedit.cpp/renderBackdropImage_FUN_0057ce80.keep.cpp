@@ -18,8 +18,8 @@ void __cdecl core_setedit_cpp_renderBackdropImage_FUN_0057ce80(CVector3i *positi
   int iVar6;
   int iVar5;
   int iVar7;
-  void *auStack_266c [1200];
-  uint *auStack_13b0 [1200];
+  void *auStack_266c [GAME_SCREEN_MAX_HEIGHT];
+  uint *auStack_13b0 [GAME_SCREEN_MAX_HEIGHT];
   char local_f0 [80];
   char local_a0 [80];
   CMatrix3x3f local_50;

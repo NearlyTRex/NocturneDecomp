@@ -34,6 +34,6 @@ int g_BackgroundSavedBlueBitPosition = {};
 int g_ScanlineSpanLeft[256] = {};
 int g_ScanlineSpanRight[256] = {};
 
-// void*[1200]
-void* g_BackgroundSavedScreenBufferArray[1200] = {};
+// void*[GAME_SCREEN_MAX_HEIGHT]
+void* g_BackgroundSavedScreenBufferArray[GAME_SCREEN_MAX_HEIGHT] = {};
 

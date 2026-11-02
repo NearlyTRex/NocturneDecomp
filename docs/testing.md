@@ -69,15 +69,18 @@ macros and a runner. This is those two things.
 |---|---|
 | `shims_core` | ASCII case handling, file search, host memory, FNV-1a, the clock, the debug log |
 | `shims_game` | Walk turning |
+| `shims_game_view` | Camera movement and the widescreen crop's look at the focus actor, over a stand-in camera, projection and stick |
+| `shims_game_hud` | The in-game HUD: each element's box, text, scale and clip, the inventory panels' overlay pass, the letterbox and subtitles, over stand-in fonts, bitmaps and inventory |
+| `shims_core_hud_layout` | The HUD's frame, the camera's space on its corner, anchoring and the letterbox proportion |
 | `shims_watcom` | The Watcom C library and its iostream stand-ins, path resolution, the C++ runtime's array helpers |
 | `shims_win32` | `kernel32`, `advapi32`, Winsock on loopback, window messages and the built-in DLL registry |
 | `shims_win32_sdl` | `user32`, `wingdi`, `mmsystem`, MCI movies and `shim_init`, on SDL's dummy video and audio drivers; the movies are written by the tests with FFmpeg, and what no movie makes fail, `ffmpeg_faults.h` does |
 | `shims_directx` | DirectDraw's display mode, flip chain, Lock and Flip, through GL and through an SDL renderer, on SDL's dummy video driver; DirectSound's mixing, read back from SDL's disk audio driver |
 | `shims_debug` | The focus trace, the frame-rate overlay and the sound-error report, over a stand-in for the game state they read |
 | `shims_debug_dump` | The gdb dump tools, each writing into a temporary directory, over a stand-in for the engine state and calls they reach |
-| `shims_gl` | Shader program building, the present quad and the pixel-format helpers, against the recorder; the window mode and the resolution list, on SDL's dummy video driver, with the shim settings in `nocturne.ini` through a stand-in for the engine's CIni |
+| `shims_gl` | Shader program building, the present quad and the pixel-format helpers, against the recorder; the window mode, the resolution list and the widescreen crop, on SDL's dummy video driver, with the shim settings in `nocturne.ini` through a stand-in for the engine's CIni |
 | `shims_gl_api` | Loading the GL entry points, from a stand-in for `SDL_GL_GetProcAddress` |
-| `shims_gl_present` | The presenter: context, scene target, letterboxed presents and the mouse mapping, its GL calls to the recorder and SDL's GL calls to a stand-in |
+| `shims_gl_present` | The presenter: context, scene target, the scene's reframe, letterboxed presents and the mouse mapping, its GL calls to the recorder and SDL's GL calls to a stand-in |
 | `shims_renderer` | `trigl` batching, state, texture, vertex handling, the built-in DLL registry, and the mirror pass's field of view |
 | `shims_renderer_gl` | `trigl` GL call sequences, the device and golden traces (`test_*_sequence.cpp`) |
 

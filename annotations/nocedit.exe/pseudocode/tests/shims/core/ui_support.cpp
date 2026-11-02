@@ -39,7 +39,7 @@ void Stand::reset() {
 void screen(int width, int height, int bits) {
     s_width = width;
     s_pixels.assign((size_t)width * (size_t)height, 0u);
-    for (int y = 0; y < 1200; y++) {
+    for (int y = 0; y < GAME_SCREEN_MAX_HEIGHT; y++) {
         g_ScreenBufferArray[y] = (y < height) ? (void *)&s_pixels[(size_t)y * width] : nullptr;
     }
     g_WindowWidth = width;
@@ -69,7 +69,7 @@ using ui_support::stand;
 int g_WindowWidth = 640;
 int g_WindowHeight = 480;
 int g_BitsPerPixel = 32;
-void *g_ScreenBufferArray[1200] = {};
+void *g_ScreenBufferArray[GAME_SCREEN_MAX_HEIGHT] = {};
 SFontGlyph g_FontTable[224] = {};
 int g_ClipLeft = 0;
 int g_ClipTop = 0;

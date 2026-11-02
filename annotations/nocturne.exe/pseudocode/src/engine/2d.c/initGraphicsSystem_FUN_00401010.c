@@ -76,7 +76,7 @@ void __cdecl engine_2d_c_initGraphicsSystem_FUN_00401010(void)
     uVar6 = uVar6 + 1;
     *(int *)((int)g_ReciprocalLookupTable + iVar3) = (int)(0xffffffff / uVar2);
     iVar3 = iVar3 + 4;
-  } while (uVar6 < 0x640);
+  } while (uVar6 < GAME_RECIPROCAL_TABLE_SIZE);
   p_Var4 = engine_dosio_cpp_getFile_FUN_00456a60
                      ("art","default.act","rb");
   if (p_Var4 == (_FILE *)0x0) {

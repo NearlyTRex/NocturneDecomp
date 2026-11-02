@@ -67,7 +67,7 @@ void __cdecl engine_drender_cpp_renderTriangleSimple_FUN_00458080(CVector3i *ver
     _DAT_01b4cd30 = 0;
     _DAT_01b4d1b8 = 0;
     local_2c = 0;
-    _DAT_01b4d1b4 = 0x4b0;
+    _DAT_01b4d1b4 = GAME_SCREEN_MAX_HEIGHT;
     if (0 < vertex_count) {
       local_30 = vertex_indices;
       do {

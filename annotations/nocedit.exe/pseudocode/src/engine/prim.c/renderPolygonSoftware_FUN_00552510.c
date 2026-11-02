@@ -106,7 +106,7 @@ void __cdecl engine_prim_c_renderPolygonSoftware_FUN_00552510(SRenderVertex *ver
   g_SoftwareMaxScanline = 0;
   g_SoftwareEdgeCount = 0;
   local_1c = 0;
-  g_SoftwareMinScanline = 0x4b0;
+  g_SoftwareMinScanline = GAME_SCREEN_MAX_HEIGHT;
   if (0 < vertex_count) {
     do {
       iVar10 = g_SoftwareEdgeCount;

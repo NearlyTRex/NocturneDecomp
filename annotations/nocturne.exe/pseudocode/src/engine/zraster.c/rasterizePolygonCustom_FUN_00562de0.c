@@ -71,7 +71,7 @@ void __cdecl engine_zraster_c_rasterizePolygonCustom_FUN_00562de0(SRenderVertex 
   _DAT_02de497c = 0;
   _DAT_02de4e04 = 0;
   local_18 = 0;
-  _DAT_02de4e00 = 0x4b0;
+  _DAT_02de4e00 = GAME_SCREEN_MAX_HEIGHT;
   if (0 < vertex_count) {
     do {
       iVar10 = local_18 + 1;

@@ -1557,6 +1557,10 @@ def generate_equates_header(currentProgram, equates_list):
             else:
                 if eq_value >= 10:
                     define_line += "  // 0x%X" % eq_value
+            binary_value = equate.get('binary_value', eq_value)
+            if binary_value != eq_value:
+                content.append("// OVERRIDDEN (EQUATE_VALUE_OVERRIDES in headers.py): the binary's"
+                               " value is %d (0x%X)" % (binary_value, binary_value))
             content.append(define_line)
         content.append("")
 
@@ -1601,6 +1605,24 @@ def is_valid_define_name(name):
     return True
 
 
+# Equates whose emitted value differs from the binary's. Ghidra holds the
+# binary's value and names it at each instruction site, so the decompiled code
+# and the keeps read the name; defines.h then emits the value here instead,
+# with the binary's beside it. Globals sized by these names follow
+# (GLOBAL_TYPE_OVERRIDES in globals.py).
+EQUATE_VALUE_OVERRIDES = {
+    # The screen ceilings (research/18, "The two ceilings"). The binary holds
+    # 1200 lines: one pointer per scanline in g_ScreenBufferArray and its four
+    # sibling tables, the row the rasterisers start a polygon's lowest scanline
+    # above, and the software clip's last line. Raised for 3840x2160.
+    'GAME_SCREEN_MAX_HEIGHT': 2160,
+
+    # g_ReciprocalLookupTable, read at a span's pixel width plus one: 1600 in
+    # the binary, so spans to ~1598 pixels. 3840 + 2 for a 3840-wide screen.
+    'GAME_RECIPROCAL_TABLE_SIZE': 3842,
+}
+
+
 def organize_equates_by_category(currentProgram):
     """Organize equates into categories.
 
@@ -1635,12 +1657,15 @@ def organize_equates_by_category(currentProgram):
                 'opIndex': ref.getOpIndex()
             })
 
-        # Build equate data
+        # Build equate data; an EQUATE_VALUE_OVERRIDES entry replaces the
+        # emitted value and keeps the binary's for the comment.
+        value = EQUATE_VALUE_OVERRIDES.get(eq_name, eq_value)
         equate_data = {
             'name': eq_name,
-            'value': eq_value,
+            'value': value,
+            'binary_value': eq_value,
             'refs': refs,
-            'formatted_value': format_equate_value(eq_value)
+            'formatted_value': format_equate_value(value)
         }
         all_equates.append(equate_data)
 

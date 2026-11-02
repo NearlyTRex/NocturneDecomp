@@ -50,12 +50,14 @@ void __edi_esi_ebx engine_special_cpp_renderMMXPerspectiveScanline16_FUN_005b482
     return;
   }
 
-  // Clamp reciprocal-table index to the last filled entry (1599). The original
-  // binary's Watcom `[ECX + base+4]` pattern lets `pixel_count + 1` reach 1600+
-  // at the 1600-pixel max resolution, spilling into adjacent globals and
+  // Clamp reciprocal-table index to the last filled entry. The original
+  // binary's Watcom `[ECX + base+4]` pattern lets `pixel_count + 1` reach the
+  // table's size on a screen as wide as it, spilling into adjacent globals and
   // producing garbage interpolation deltas. Clamping uses the last valid
   // reciprocal instead.
-  int recip_idx = (pixel_count + 1 < 1600) ? pixel_count + 1 : 1599;
+  int recip_idx = (pixel_count + 1 < GAME_RECIPROCAL_TABLE_SIZE)
+                      ? pixel_count + 1
+                      : GAME_RECIPROCAL_TABLE_SIZE - 1;
 
   screen_ptr = (ushort *)g_ScreenBufferArray[scanline_y] + left_x;
   zbuf_ptr   = (int *)g_ZBufferScanlineArray[scanline_y] + left_x;

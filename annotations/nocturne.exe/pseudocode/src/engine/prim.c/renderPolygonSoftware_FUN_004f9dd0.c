@@ -98,7 +98,7 @@ void __cdecl engine_prim_c_renderPolygonSoftware_FUN_004f9dd0(SRenderVertex *ver
   _DAT_01e52ef0 = 0;
   _DAT_01e52a68 = 0;
   local_1c = 0;
-  _DAT_01e52eec = 0x4b0;
+  _DAT_01e52eec = GAME_SCREEN_MAX_HEIGHT;
   if (0 < vertex_count) {
     do {
       iVar8 = local_1c + 1;

@@ -4,6 +4,7 @@
 
 // Type dependencies
 #include "system/basetypes.h"
+#include "defines.h"
 #include "system/winnt.h"
 #include "types/classes/CDemonActorType.h"
 #include "types/classes/CFireEffect.h"
@@ -96,11 +97,11 @@ extern uchar* g_CurrentTextureOpacityData;
 extern uchar g_SourcePaletteData[768];
 extern uchar g_DefaultPalette[768];
 
-// uint[1600]
-extern uint g_ReciprocalLookupTable[1600];
-
 // uint[256]
 extern uint g_Hardware32BitPalette[256];
+
+// uint[GAME_RECIPROCAL_TABLE_SIZE]
+extern uint g_ReciprocalLookupTable[GAME_RECIPROCAL_TABLE_SIZE];
 
 // ulong
 extern ulong g_SolidColorMode;
