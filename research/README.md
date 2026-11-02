@@ -544,7 +544,7 @@ is a content problem rather than a code one.
 
 | File | Description |
 |------|-------------|
-| `README.md` | The two ceilings, the two coordinate spaces, text inside a box, the resolution list, aspect-ratio options |
+| `README.md` | The two ceilings, the two coordinate spaces, text inside a box, the resolution list, aspect ratio and how the scene is reframed |
 | `camera_geometry_probe.gdb` | what geometry the camera derives for a mode, and which height conditionals fire |
 | `present_filter_probe.gdb` | whether the window is the same size as what is rendered into it |
 | `fog_plane_probe.gdb` | the fog plane against the camera grid |
@@ -561,9 +561,10 @@ is a content problem rather than a code one.
 - **`g_ResolutionTable[9]` is not the Options list** — its only reader is `initGraphicsSystem`,
   for the 8bpp startup mode. The menu was a hardcoded `game_pixy` chain, which is why 1600x1200
   was unreachable and 400x300 could be labelled and stepped away from but never selected.
-- **Two unguarded ceilings remain:** `g_ScreenBufferArray[1200]` and friends cap height at 1200
-  lines; `g_ReciprocalLookupTable[1600]`, indexed by *pixel span*, caps software spans at ~1598.
-  1920x1080 clears the first and fails the second — in software only.
+- **Two unguarded ceilings, raised to 3840x2160:** in the binary `g_ScreenBufferArray[1200]` and
+  friends cap height at 1200 lines, and `g_ReciprocalLookupTable[1600]`, indexed by *pixel span*,
+  caps software spans at ~1598. The port sizes both by equates the generator emits at 2160 and
+  3842.
 - **Above 480 lines two coordinate spaces coexist** (native, and the camera's 640x480 virtual
   space that the renderer stretches). Elements that must line up have to share one. Getting this
   wrong put the inventory description text up to 104 px off its panel, correct at 640x480 and
@@ -575,8 +576,10 @@ is a content problem rather than a code one.
   leaves the panel or the letterbox bar. Verified over all 94 item descriptions and all 1082
   subtitle lines at 10 modes.
 - **True widescreen is not available from the shipped backdrops** — they are fixed 640x480 8-bit
-  images and the pixels for a wider view do not exist. Pillarboxing is a contained change in the
-  presenter we own; re-rendering backdrops is a content project with an unverified premise.
+  images and the pixels for a wider view do not exist. A wider screen gets the scene reframed
+  instead: pillarboxed, or panned and scanned after the focus actor, at the frame lock where the
+  target holds the scene and none of the 2D. Re-rendering backdrops is a content project with an
+  unverified premise.
 
 ---
 
@@ -880,9 +883,10 @@ Ghidra source location: `~/Repositories/Ghidra/`
   lighting grid and the screen with one shared index, so the per-pixel lighting — which *is* the
   software path's lighting — would cover only a corner. The acceleration gate is kept
   unconditionally and documented as a correctness requirement rather than an authenticity choice
-- **Two unguarded ceilings documented:** height 1200 (`g_ScreenBufferArray` and two siblings,
-  filled straight off `g_WindowHeight`) and software span ~1598 (`g_ReciprocalLookupTable`,
-  indexed by pixel span). 1920x1080 clears the first and fails the second, in software only.
+- **Two unguarded ceilings, raised to 3840x2160:** height 1200 (`g_ScreenBufferArray` and four
+  siblings, filled straight off `g_WindowHeight`, plus five stack copies) and software span ~1598
+  (`g_ReciprocalLookupTable`, indexed by pixel span), sized in the port by equates the generator
+  emits at 2160 and 3842.
 - **The two coordinate spaces above 480 lines written up**, after they caused a second
   misalignment: `NOCTURNE_AUTHENTIC_HUD_ICON_SPACE` had moved the inventory icon panel into
   camera space and left its description text in native space, so the text sat up to 104 px off

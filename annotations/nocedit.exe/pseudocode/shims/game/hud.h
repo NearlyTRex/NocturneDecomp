@@ -27,7 +27,8 @@
 //     so they sit on the panels at any size, and a reframed scene neither
 //     crops nor resamples them.
 //   - The letterbox bars are measured over the 4:3 picture, so they keep the
-//     shipped proportion on a wider screen and the subtitles fit in them.
+//     shipped proportion on a wider screen, and are never too short for three
+//     subtitle lines with half a line of room above and below.
 //   - Text and bitmaps scale with the screen (core/ui_scale.h): HUD art by the
 //     HUD scale, text in a box by the box's stretch, truncated.
 //   - The pickup help sits under the top letterbox, clear of the message line;

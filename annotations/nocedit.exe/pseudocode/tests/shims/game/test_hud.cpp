@@ -519,18 +519,46 @@ NOCTURNE_TEST(the_letterbox_slides_and_keeps_its_proportion) {
 }
 
 // Panned and scanned, a bar is what is left of the shipped one past the crop —
-// 14 pixels at 720 — but never less than two subtitle lines and half a line.
+// 14 pixels at 720 — but never less than three subtitle lines and half a line
+// above and below them.
 NOCTURNE_TEST(a_panned_letterbox_is_what_the_crop_leaves) {
     fresh();
     stand.shown_rows = 360;
     g_ScriptTimeScale = 1.0f;
-    CHECK_EQ(nocturne_hud_letterbox_height(), 50); // 20-pixel lines at the text scale
-    hud_support::medium_font.max_char_height = 2;
+    CHECK_EQ(nocturne_hud_letterbox_height(), 80); // 20-pixel lines at the text scale
+    hud_support::medium_font.max_char_height = 1;
     CHECK_EQ(nocturne_hud_letterbox_height(), 14);
 }
 
+// Three lines fill a bar of the least height with half a line of room on each
+// side, clipped to it; a fourth rises over the shot, still half a line off the
+// screen's bottom, with the screen.
+NOCTURNE_TEST(three_subtitle_lines_fit_the_bar) {
+    fresh();
+    stand.shown_rows = 360;
+    g_CGamePtr->letterbox_mode = 1;
+    g_CGamePtr->subtitle_mode = 1;
+    stand.delta = 1.0f;
+    std::snprintf(hud_support::script->current_message, 1024, "%s", "a\nb\nc");
+    nocturne_hud_subtitles(hud_support::script.get());
+    CHECK_EQ(stand.clips[0].top, 720 - 80);
+    CHECK_EQ(only("a").y, 720 - 80 + 10);
+    CHECK_EQ(only("c").y + 20, 720 - 10);
+
+    fresh();
+    stand.shown_rows = 360;
+    g_CGamePtr->letterbox_mode = 1;
+    g_CGamePtr->subtitle_mode = 1;
+    stand.delta = 1.0f;
+    std::snprintf(hud_support::script->current_message, 1024, "%s", "a\nb\nc\nd");
+    nocturne_hud_subtitles(hud_support::script.get());
+    CHECK_EQ(stand.clips[0].top, 0);
+    CHECK_EQ(only("d").y + 20, 720 - 10);
+}
+
 // A subtitle is centred in the frame in the lower bar, clipped to it while it
-// fits a full bar; one too tall for it, or with no bar, has the screen.
+// fits a full bar; one too tall for it, or with no bar, has the screen, and
+// stays half a line off its bottom.
 NOCTURNE_TEST(a_subtitle_is_written_in_the_bar) {
     fresh();
     g_CGamePtr->letterbox_mode = 1;
@@ -553,7 +581,7 @@ NOCTURNE_TEST(a_subtitle_is_written_in_the_bar) {
     std::snprintf(hud_support::script->current_message, 1024, "%s", "a\nb");
     nocturne_hud_subtitles(hud_support::script.get());
     CHECK_EQ(stand.clips[0].top, 0);
-    CHECK_EQ(only("b").y, 720 - 20);
+    CHECK_EQ(only("b").y, 720 - 20 - 10);
 
     fresh();
     g_CGamePtr->letterbox_mode = 1;

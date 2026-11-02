@@ -620,7 +620,9 @@
 //      frame's corner, and their text, ammo and counts are placed in the same
 //      boxes. The pickup help moves under the top letterbox; the death banner
 //      moves a quarter of the way down, clear of both; the letterbox is
-//      measured over the 4:3 picture. Bitmaps and text scale as
+//      measured over the 4:3 picture and holds three subtitle lines with half
+//      a line of room above and below, which also keeps the subtitles off the
+//      screen's bottom edge. Bitmaps and text scale as
 //      NOCTURNE_AUTHENTIC_HUD_SCALE=0 describes, and that flag's own sites in
 //      these routines are this one's.
 //

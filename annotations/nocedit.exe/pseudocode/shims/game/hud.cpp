@@ -367,13 +367,22 @@ CBitFont *subtitle_font(int height) {
     return height < kShortScreen ? g_TinyFont : g_MediumFont;
 }
 
-// A bar at full extension, never too short for two subtitle lines and half a
-// line of room.
+// The subtitle lines a full bar holds, with half a line of room above and below
+// them.
+const int kBarLines = 3;
+
+// The subtitles' line pitch on this screen.
+int subtitle_pitch(int height) {
+    return nocturne_ui_char_height_f(subtitle_font(height), kMeasureGlyph,
+                                     nocturne_ui_text_scale(height));
+}
+
+// A bar at full extension, never too short for kBarLines subtitle lines and
+// their room.
 int full_bar() {
     const int height = g_WindowHeight;
-    const int pitch = nocturne_ui_char_height_f(subtitle_font(height), kMeasureGlyph,
-                                                nocturne_ui_text_scale(height));
-    return nocturne_hud::letterbox_bar(g_WindowWidth, height, pitch * 2 + pitch / 2);
+    return nocturne_hud::letterbox_bar(g_WindowWidth, height,
+                                       subtitle_pitch(height) * (kBarLines + 1));
 }
 
 // --- the overlay --------------------------------------------------------------
@@ -566,16 +575,18 @@ extern "C" void nocturne_hud_subtitles(CScript *script) {
         const int count =
             nocturne_ui_wrap_to_width_f(font, script->current_message, g_ScriptSubtitleLines[0],
                                         kMaxLines, 0x400, s.frame.width() * 9 / 10, scale, &pitch);
-        // Clipped to the bar while the block fits in a full one; a bar too
-        // small to hold it, or still sliding in, leaves it the screen.
+        // Centred in the bar, and never nearer the screen's bottom than half a
+        // line. Clipped to the bar while the block and that room fit a full
+        // one; a longer block rises over the shot instead, with the screen.
         const int block = pitch * count;
-        if (bar > 0 && block <= full_bar())
+        const int room = pitch / 2;
+        if (bar > 0 && block + room * 2 <= full_bar())
             nocturne_ui_push_clip(0, height - bar, width - 1, height - 1);
         else
             nocturne_ui_push_clip(0, 0, width - 1, height - 1);
         int y = (height * 2 - bar - block) / 2;
-        if (y > height - block)
-            y = height - block;
+        if (y > height - room - block)
+            y = height - room - block;
         engine_3d_c_setRenderAlpha_FUN_00406d80(kOpaque);
         for (int i = 0; i < count; i++) {
             const int line_width =
