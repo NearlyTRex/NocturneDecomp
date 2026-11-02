@@ -26,6 +26,6 @@ int g_DirtySpanEnds[256] = {};
 // uint
 uint g_ShadowRestoreAllocator = {};
 
-// void*[1200]
-void* g_SavedScreenBufferArray[1200] = {};
+// void*[GAME_SCREEN_MAX_HEIGHT]
+void* g_SavedScreenBufferArray[GAME_SCREEN_MAX_HEIGHT] = {};
 

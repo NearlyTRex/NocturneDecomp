@@ -72,7 +72,7 @@ void __cdecl engine_prim_c_renderIndexedPolygonSoftware_FUN_00552a40(int *vertex
     g_SoftwareEdgeCount = 0;
     local_1c = 0;
     g_RenderedTriangleCount = g_RenderedTriangleCount + 1;
-    g_SoftwareMinScanline = 0x4b0;
+    g_SoftwareMinScanline = GAME_SCREEN_MAX_HEIGHT;
     if (0 < vertex_count) {
       local_20 = vertex_indices;
       do {

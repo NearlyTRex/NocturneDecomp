@@ -165,6 +165,39 @@ nocturne_test_suite(shims_game_front
         front_support.cpp
 )
 
+# Camera movement and the widescreen crop's look at the focus, against the
+# camera, the projection, the stick, the map and the crop view_support.cpp
+# stands in for. The movement scheme goes through a stand-in for the engine's
+# CIni.
+nocturne_test_suite(shims_game_view
+    TESTS test_movement.cpp test_widescreen_focus.cpp
+    SUBJECTS
+        shims/game/movement.cpp
+        shims/game/widescreen_focus.cpp
+        shims/core/ini_setting.cpp
+        shims/watcom/path.cpp
+        shims/core/file_search.cpp
+    SUPPORT
+        view_support.cpp
+        hero_support.cpp
+        class_support.cpp
+        ../gl/ini_support.cpp
+)
+
+# The in-game HUD and the boxes it is laid out in, against the fonts, bitmaps,
+# inventory lookups, UI scaling and overlay pass hud_support.cpp stands in for,
+# and the party hero_support.cpp builds.
+nocturne_test_suite(shims_game_hud
+    TESTS test_hud.cpp
+    SUBJECTS
+        shims/game/hud.cpp
+        shims/core/hud_layout.cpp
+    SUPPORT
+        hud_support.cpp
+        hero_support.cpp
+        class_support.cpp
+)
+
 # A pushed box's scrape, against a box whose sound calls the test answers.
 nocturne_test_suite(shims_game_box_push
     TESTS test_box_push.cpp

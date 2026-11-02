@@ -12,29 +12,30 @@ writes its scanlines straight into `g_ScreenBufferArray[scanline_y]` at the nati
 Neither is a limit on the picture. What does limit software is two renderer-owned pieces past
 480 lines — see *What actually caps software*. Software above 640x480 is not viable.
 
-**The resolution list is one table.** Gated by `NOCTURNE_AUTHENTIC_MENU` (formerly `NOCTURNE_AUTHENTIC_RESOLUTION_LIST`);
+**The resolution list is one table.** Gated by `NOCTURNE_AUTHENTIC_MENU`;
 `shims/gl/resolution.{h,cpp}` drives both the label and the stepping so they cannot disagree.
-Eight modes, including 1600x1200 and a reachable 400x300. Accelerated only: the acceleration
-gate is a correctness requirement and is **not** part of that flag.
+Seventeen modes by width then height: the shipped six, 1600x1200, a reachable 400x300, the 16:9
+modes 1280x720, 1600x900, 1920x1080, 2560x1440 and 3840x2160, which the label marks "(wide)",
+and 1200x900, 1440x1080, 1920x1440 and 2880x2160, the 4:3 modes at the 16:9 heights. Accelerated only: the
+acceleration gate is a correctness requirement and is
+**not** part of that flag.
 
 **The HUD and the goggles scale with the framebuffer.** `nocturne_ui_scale()` and the goggles'
 own per-axis scale, gated by `NOCTURNE_AUTHENTIC_HUD_SCALE`. Text inside a box — the inventory
 description, the subtitles — takes its box's stretch truncated to a whole number instead, and is
 clipped to the box; see *The two coordinate spaces → text inside a box*.
 
-**OPEN — anything above 1200 lines or 1598 pixels wide overruns a fixed array.** Two of them,
-both unguarded. Neither is hit by any mode currently offered. See *The two ceilings*.
+**The scanline and span ceilings are raised to 3840x2160.** The binary overruns a fixed array
+above 1200 lines or 1598 pixels wide; the port sizes them by equates emitted at 2160 and 3842.
+See *The two ceilings*.
 
-**OPEN — widescreen.** Pillarboxing is a contained change in the presenter we own. True
-widescreen is not possible from the shipped backdrops; see *Aspect ratio*.
+**Widescreen is a reframe of the scene, not wider backdrops.** 16:9 modes are in the table; a Graphic Options line picks Stretch, Pillarbox or Pan & scan (`shims/gl/widescreen.h`,
+gated by `NOCTURNE_AUTHENTIC_MENU`). True widescreen is still not possible from the shipped
+backdrops; see *Aspect ratio*.
 
 ### Pick up here
 
-1. **Pillarbox at present time** — the highest value per unit of risk, and it needs no engine
-   change. See *Aspect ratio → what pillarboxing would touch*.
-2. **Raise the two ceilings** if 1920-wide is wanted — mechanical, but the arrays are
-   Ghidra-side data and want a spec before anyone edits generated globals.
-3. **Lift the lighting-grid clamp** if per-pixel lighting at native resolution is wanted. This
+1. **Lift the lighting-grid clamp** if per-pixel lighting at native resolution is wanted. This
    is the one with ripple: the same 640x480 virtual space is what the inventory panel and
    `buildTLVertex` key off.
 
@@ -53,15 +54,16 @@ widescreen is not possible from the shipped backdrops; see *Aspect ratio*.
   "The rasteriser is native" is true and is not sufficient: without the gate, 1600x1200 in
   software quits on `lockHoldBuffer` at `dcamera.cpp:3639`, and removing that fatal still leaves
   the lighting in a 640x480 corner.
-- **Text in a box takes the box's stretch, not the HUD scale, and truncates it.** Both halves
-  matter and they are separate bugs: a position mapped through the HUD scale lands off the
-  panel, and a size rounded up grows the block out of it. See *The two coordinate spaces → text
-  inside a box*.
+- **Text in a box takes the box's exact stretch, not the whole HUD scale.** A position mapped
+  through the HUD scale lands off the panel, and a size rounded up grows the block out of it.
+  See *The two coordinate spaces → text inside a box*.
 - **The font ladder does not close the 1x gap at 800x600 and 1024x768.** Matching the container
   with a larger engine font at a whole scale was measured and works arithmetically, but it
   changes typeface between resolutions and looks worse than the smaller text.
-- **Fractional glyph scaling is not an option.** Two of the five fonts are 1-bit, and resampling
-  them at a ratio just above 1 takes stems off letters. Whole scales only.
+- **Fractional glyph scaling by pixel repetition is not an option; area filtering is.** Two of
+  the five fonts are 1-bit, and repeating their pixels at a ratio just above 1 takes stems off
+  letters. `nocturne_ui_draw_text_f` blends each screen pixel by the glyph area under it
+  instead.
 - **400x300 is not a missing label.** It has a label and a step case in both directions in the
   shipped chain; what it never has is anything assigning `game_pixy = 300`.
 
@@ -79,6 +81,34 @@ Both are fixed-size globals with no bound check at the fill site.
 | Span width | `g_ReciprocalLookupTable[1600]` | ~1598 px | software span rasterisers |
 
 All five height tables are `[1200]`, so they move together — raising one alone buys nothing.
+
+**The port raises both to 3840x2160.** Ghidra equates name the bounds at their instruction
+sites — `GAME_SCREEN_MAX_HEIGHT` (`0x4b0`) and `GAME_RECIPROCAL_TABLE_SIZE` (`0x640`) — at the
+binary's 1200 and 1600. The generator emits them at 2160 and 3842 (`EQUATE_VALUE_OVERRIDES`,
+`pseudocode/headers.py`), marked in `defines.h` with the binary's value, and sizes the six tables
+by those names (`GLOBAL_TYPE_OVERRIDES`, `pseudocode/globals.py`).
+`tests/shims/core/test_screen_limits.cpp` holds the tables to the bounds. The sites:
+
+| Site | Use of `0x4b0` / `0x640` |
+|---|---|
+| `mapFrameBuffer` | the "ySize too big!" fatal |
+| `setMaxViewportScanline1200` | the software clip's last scanline |
+| `rasterizeTriangle`, `rasterizePolygonCustom` | `g_RasterizerMinY` starts above every row |
+| `renderScanlinePolygon`, `renderIndexedPolygonAdvanced` | `g_MinScanline`, the same |
+| `renderPolygonSoftware`, `renderIndexedPolygonSoftware` | `g_SoftwareMinScanline`, the same |
+| `renderTriangleTextured`, `renderTriangleSimple` | `g_RenderTriangleMinScanlineY`, the same |
+| `initGraphicsSystem` | the reciprocal fill's bound (`0x640`) |
+
+Five stack arrays carry the same height with no equate to hold it — the bound is the frame size
+alone (`SUB ESP,0x12c0`, 1200 pointers) — so their keeps size them by `GAME_SCREEN_MAX_HEIGHT`:
+`CEditorTools::backupScreen`, `restoreScreen` and `restoreWindowAndCleanup` each copy
+`g_WindowHeight` scanline pointers into one, and `renderBackdropImage` saves both scanline
+tables into two. `renderMMXPerspectiveScanline16` clamps its reciprocal index to the table's last
+entry, by the same name.
+
+The rasterisers' edge arrays (`g_RasterizerEdgeArray`, `g_SoftwareEdgeTable`,
+`g_SoftwareEdgeBuffer`, `g_EdgeInterpolationArray`) are `[16]`, one slot per polygon edge, not
+per scanline, and no global or keep sizes a row buffer to a screen width.
 
 `setScreenResolution` fills the scanline tables straight off `g_WindowHeight` with nothing
 comparing against 1200:
@@ -106,10 +136,7 @@ so a triangle covering the full width of a 1920-wide screen reads index 1921. It
 init by `initGraphicsSystem` (`for i in 1..0x640: table[i] = 0xffffffff / i`), so raising it is
 a resize plus the matching fill bound.
 
-**For 1920x1080 specifically:** the height is fine (1080 < 1200); the width is not. And the
-reciprocal table lives only in `core/dstrender.cpp`, the software span renderers — the
-accelerated path never touches it, so 1920-wide may already work under acceleration and break
-only in software.
+Its readers are the software span renderers in `core/dstrender.cpp` and `engine/special.cpp`.
 
 ## What actually caps software
 
@@ -185,9 +212,10 @@ So above 480 lines there are two spaces at once:
 
 Geometry in the virtual space is stretched to the screen by the renderer. Anything drawn by the
 CPU is not. **Two elements that must line up have to be in the same space**, and the inventory
-panel is where that bites: `NOCTURNE_AUTHENTIC_HUD_ICON_SPACE` puts the icon panel in camera
-space so it does not land off-screen above 640x480, while the description text on it is
-`CBitFont` output and therefore native.
+panel is where that bites: the shipped panel is positioned in window pixels and lands off-screen
+above 640x480, and the description text on it is `CBitFont` output and therefore native.
+`NOCTURNE_AUTHENTIC_HUD = 0` draws the panel in camera space laid onto the HUD's frame and
+places the text in the same box (*Aspect ratio → how the scene is reframed*).
 
 ### Text inside a box
 
@@ -199,52 +227,57 @@ only places where the integer HUD scale is the wrong number:
 | inventory description | the icon panel, camera-space geometry | `g_WindowWidth / framebuffer_width` |
 | subtitles | the letterbox bar | `(g_WindowHeight - g_WindowWidth * 100 / 185) / 2`, i.e. `0.1396 * H` at 4:3 |
 
-**Position takes the container's exact stretch; size takes its floor.** Those are different
-numbers and both are needed. A position mapped through anything but the panel's own stretch
-lands off the panel — offsetting by `g_InventoryWidth * nocturne_ui_scale()` against a panel
-scaled by `W / framebuffer_width` agrees only where the stretch is a whole number. A *size*
-cannot be fractional at all: `CBitFont` draws glyph bitmaps, and resampling them at a ratio just
-above 1 duplicates some rows and columns and not others, which on `fnte_pfd` — 1-bit art, no
-coverage ramp — reads as stems of uneven thickness rather than as scaling.
+**Position and size both take the container's exact stretch.** A position mapped through
+anything but the panel's own stretch lands off the panel — offsetting by
+`g_InventoryWidth * nocturne_ui_scale()` against a panel scaled by `W / framebuffer_width` agrees
+only where the stretch is a whole number. The size is `H / 480` (`nocturne_ui_text_scale`), the
+same factor the HUD frame lays the camera's space on with, so the block keeps its 640x480
+proportion to the box and wraps to the same lines at every mode.
 
-Truncating the size is what keeps the block in its box. At a scale no larger than the
-container's stretch, the block is no larger *relative to the box* than it was at 640x480, where
-it fits; so it fits everywhere. Rounding to nearest does not: it returns 2 at 1024x768 (stretch
-1.6) and 3 at 1600x1200 (2.5), and the inflated scale also divides the wrap width, so the block
-gains lines as it gains height.
+That size is fractional, and `CBitFont` draws glyph bitmaps. Repeating glyph pixels at a ratio
+just above 1 duplicates some rows and columns and not others, which on `fnte_pfd` and `micro` —
+1-bit art, no coverage ramp — reads as stems of uneven thickness. `nocturne_ui_draw_text_f`
+area-filters instead: each screen pixel takes the glyph pixels under it weighted by the area
+each covers and is blended by that coverage, so the 1-bit fonts gain an even anti-aliased edge
+and the ramped ones keep their ramp. A whole scale goes to the repetition path, so 640x480 and
+its multiples are pixel-identical to before.
 
 Measured with `g_InventoryWidth = 240`, `g_InventoryHeight = 96` (`DATA/INVSIZE.TXT`, which
 overrides the compiled-in `0xD0 x 0x60`):
 
-| Mode | panel, screen px | panel stretch | text scale |
+| Mode | panel, screen px | panel scale | text scale |
 |---|---|---|---|
-| 320x240 | 240x96 | 1.00 | 1 |
-| 512x384 | 240x96 | 1.00 | 1 |
-| 640x480 | 240x96 | 1.00 | 1 |
+| 320x240 | 240x96 | 1 | 1 |
+| 512x384 | 240x96 | 1 | 1 |
+| 640x480 | 240x96 | 1 | 1 |
 | 800x600 | 300x120 | 1.25 | 1 |
-| 1024x768 | 384x153 | 1.60 | 1 |
-| 1280x1024 | 480x204 | 2.00 | 2 |
-| 1600x1200 | 600x240 | 2.50 | 2 |
+| 1024x768 | 384x154 | 1.60 | 1.60 |
+| 1280x720 | 360x144 | 1.50 | 1.50 |
+| 1280x1024 | 512x205 | 2.13 | 2.13 |
+| 1600x1200 | 600x240 | 2.50 | 2.50 |
 
-Below 480 lines the camera framebuffer is not clamped, so the panel and the screen share one
-space and the stretch is 1.
+800x600 is the one exception: at 1.25 the filter softens `fnte_pfd` and `micro` more than the
+extra size is worth, and side by side the whole-pixel 1x reads better. Text scales under 1.5
+stay whole; the block is then smaller than its panel, which it fits by the truncation argument.
 
-Replayed over the shipped text — all 94 rows of `ITEMLIST.TXT` and all 1082 subtitle lines in
-`ENGLISH.POD`'s `WORLD/*.TXT` — no block leaves its box at any of those modes, and the line
-count is the same at every one, because the layout is the 640x480 layout scaled.
+The panel is laid on at the frame's height over 480 (`corner_space`), not at the renderer's
+`W / framebuffer_width`, which is why 1280x1024 and the wide modes match the text. Below 480
+lines the camera framebuffer is not clamped, so the panel and the screen share one space; the
+game takes smaller fonts there instead, and the scale stays 1.
 
-The cost is that 800x600 and 1024x768 draw at 1x, the size the game ships at, rather than
-filling the larger panel. The engine's five bitmap fonts were measured as a way to close that
-(`micro`/`fnte_pfd` 1-bit, `nocsmall`/`nocfont`/`menufont` with a coverage ramp, pitches 7/11/
-13/16/20 px) — every resolution can be matched to within 10% by some font at a whole scale, but
-the typeface then changes between resolutions and the result reads worse than the smaller text.
-**Do not re-chase the font ladder.**
+The whole-number answer this replaced truncated the size to the stretch's floor, which kept the
+block in its box but drew 800x600 and 1024x768 at 1x. The engine's five bitmap fonts were
+measured as a way to close that (`micro`/`fnte_pfd` 1-bit, `nocsmall`/`nocfont`/`menufont` with
+a coverage ramp, pitches 7/11/13/16/20 px) — every resolution can be matched to within 10% by
+some font at a whole scale, but the typeface then changes between resolutions and the result
+reads worse than the smaller text. **Do not re-chase the font ladder.**
 
 Both blocks are also clipped to their box. The clip never fires on the layouts above; it is
 there for a box that shrinks under the text, which the letterbox bar does every time it animates
-in or out. Where the bar is too small to hold the block at all — 16:9, where the 1.85:1 target
-leaves a strip 14–21 px tall — the clip falls back to the screen, since there is no box to stay
-inside. `CScript::renderSubtitles` reads `g_ClipTop` into a stack slot at `0x00559bf2` and
+in or out. A full bar is never shorter than three subtitle lines with half a line of room above
+and below them, and the block is never nearer the screen's bottom than that half line; a block
+of four lines or more rises over the shot and the clip falls back to the screen, since there is
+no box to stay inside. `CScript::renderSubtitles` reads `g_ClipTop` into a stack slot at `0x00559bf2` and
 writes it back at `0x00559d34` without ever modifying it, so the shipped build clipped here too
 and lost the body of it.
 
@@ -273,16 +306,23 @@ list a two-entry loop. Both shipped binaries do this — in `nocedit.exe` it is 
 ordered table in `shims/gl/resolution.cpp`:
 
 ```
-320x240  400x300  512x384  640x480  800x600  1024x768  1280x1024  1600x1200
+320x240  400x300  512x384  640x480  800x600  1024x768  1200x900  1280x720  1280x1024
+1440x1080  1600x900  1600x1200  1920x1080  1920x1440  2560x1440  2880x2160  3840x2160
 ```
 
-Every mode the shipped labels already knew about, plus 1600x1200. `g_ResolutionTable`'s 320x200
-and 320x400 are deliberately **not** carried over: `CDemonCamera::init` derives its width as
-`height * 4 / 3` regardless of the screen, so a non-4:3 mode renders with a camera whose aspect
-disagrees with the framebuffer. 1280x1024 is 5:4 and gets away with it because it is close
-enough that nobody noticed in 1999.
+Every mode the shipped labels already knew about, plus 1600x1200, plus the common 16:9 modes up
+to the port's raised ceilings (*The two ceilings*: 3840 px, 2160 lines), in width then height
+order. Past 1024 pixels wide each 16:9 height has a 4:3 mode too; 1280x720's would be 960x720,
+under that. Every width is a multiple of 16, which `clearScreen`'s 32-byte rows need.
+16:10 and uncommon sizes (1280x800, 1024x576, 1152x864, 1360x768) are deliberately left out: they
+crowd the selector for no one. `g_ResolutionTable`'s 320x200 and 320x400 are deliberately **not** carried over:
+`CDemonCamera::init` derives its width as `height * 4 / 3` regardless of the screen, so a non-4:3
+mode renders with a camera whose aspect disagrees with the framebuffer. Above 480 lines the
+widescreen reframe corrects that for a wider screen (*Aspect ratio*); below it nothing does, so
+those two stay out. 1280x1024 is 5:4 and gets away with it because it is close enough that
+nobody noticed in 1999.
 
-An off-table current mode snaps to the nearest by height rather than collapsing to the smallest,
+An off-table current mode snaps to the nearest by height, then width, rather than collapsing to the smallest,
 which is what the shipped default case does.
 
 The list is what the selector can *offer*; the acceleration gate still decides what is reachable
@@ -332,34 +372,92 @@ the GL layer we own**. That is the useful part: pillarboxing needs no engine cha
 
 | Option | Cost | Result |
 |---|---|---|
-| **Pillarbox** | small, presenter-only | correct framing, bars at the sides |
-| **Vertical crop (Hor+)** | small, presenter-only | fills the screen, loses a third of a deliberately composed shot |
-| **Stretch** | none — this is today's behaviour at 16:9 | distorted |
+| **Stretch** | none — the renderer's own fill | distorted |
+| **Pillarbox** | a reframe of the scene target | correct framing, bars at the sides |
+| **Pan & scan** (Vert−) | the same reframe, and a crop that moves | fills the screen; at 16:9 a quarter of the shot's height is out of view at any moment |
 | **Re-render backdrops wider** | content project | true widescreen |
 
-The fourth is the only real widescreen. The rooms do exist as 3D geometry — `renderSceneGeometry`
-uses it for collision, lighting and mirrors — and nocedit carries a backdrop pipeline
-(`CDemonCamera::saveBackdrop`, the camera editor, `CDemonSet::importS3D`). So regenerating
-backdrops at a wider FOV is conceivable. **UNVERIFIED:** whether the shipped PODs contain the
-room geometry at backdrop quality. Confirm that before anyone plans around it.
+The first three are the Widescreen line on Graphic Options. The fourth is the only real
+widescreen. The rooms do exist as 3D geometry — `renderSceneGeometry` uses it for collision,
+lighting and mirrors — and nocedit carries a backdrop pipeline (`CDemonCamera::saveBackdrop`, the
+camera editor, `CDemonSet::importS3D`). So regenerating backdrops at a wider FOV is conceivable.
+**UNVERIFIED:** whether the shipped PODs contain the room geometry at backdrop quality. Confirm
+that before anyone plans around it.
 
-### What pillarboxing would touch
+### How the scene is reframed
 
-- The presenter, which is ours.
-- `CDemonCamera::init`'s `g_CameraScreenWidth = (screen_height * 4) / 3` would have to stop
-  assuming 4:3.
-- **The actor projection must stay locked to the backdrop's camera.** That alignment is the
-  whole illusion of the fixed-camera presentation and is the thing to be most careful with — a
-  wider FOV for the 3D without matching backdrops puts actors in the wrong place on the
-  background, which is worse than bars.
+**At the frame lock, in the scene target.** The order `research/20-overlay_accumulation`
+measured — hold-buffer upload, every geometry flush, then the lock, then all 2D — means the
+target holds the finished scene and none of the 2D at the moment the lock reads it back. On a
+frame that uploaded the hold buffer, `nocturne_trigl_device_lock_frame` redraws a region of the
+target over itself (`nocturne_gl_scene_reframe`, two framebuffer blits through a same-size copy)
+before the read-back — or earlier, when the HUD's overlay pass opens first (below). Backdrop,
+actors and effects move together because they are already one image; the HUD, subtitles and
+menus are drawn afterwards and stay put. Nothing in the engine's projection changes, so the
+actors stay locked to the backdrop's camera.
+
+**The crop follows the script's focus actor** — the one the virtual director frames. Once a
+scene, before `lockAndRenderToBuffer`, `CDemonSet::renderScene` projects the middle of its
+bounding box as the iris fade does. A camera change snaps the crop to it; while the camera holds,
+the crop eases toward it past a 16-row dead band; while the letterbox is up the crop centres, so
+a cutscene keeps the middle of its shot, the band it was composed around. The player's look (the
+right stick under camera movement) is ignored there too, and a look held as the letterbox comes
+up eases back to that centre.
+
+**The letterbox is measured over the 4:3 picture.** The shipped bars are
+`(H - W * 100 / 185) / 2`; at 1280x720 that is 14 pixels, too thin for a subtitle, which then
+runs out over the shot. `NOCTURNE_AUTHENTIC_HUD = 0` takes the width as the picture's,
+`min(W, H * 4 / 3)`, which is the shipped figure at 4:3 and 5:4 and keeps the shipped proportion
+of the screen on a wider one: 101 pixels at 720. The bars then cover more of a panned shot than
+the 1.85:1 band, in exchange for subtitles that fit. Neither that nor the band panning leaves is
+allowed under four subtitle lines — three and half a line of room on each side.
+
+**The HUD is laid out in the picture, and its 3D is drawn after the crop.** `game/hud`'s frame is
+the scene's picture — the 4:3 column when pillarboxed, the screen otherwise — and every element
+is a box placed in it (`core/hud_layout`). The inventory panels are camera-space geometry, so
+`nocturne_hud_inventory_panels` opens an overlay pass (`nocturne_trigl_device_begin_overlay`):
+the scene is reframed at that moment if it has not been, its depth is set aside behind a cleared
+buffer, and the panels are drawn at their shipped camera-space coordinates with that space laid
+onto the frame's bottom-right corner at one scale. They are never cropped or resampled by the
+reframe, so a moving crop does not make them shimmer, and the text, ammo and counts are placed
+in the same boxes, so they sit on them at any size. The pass puts the depth back when it closes,
+so the engine's own depth restore next frame finds what it left.
+
+**The front end is widened, not reframed.** It runs in its own mode — `initializeGameSystems`
+sets 640x480 at startup and `CGame::setScreenResolutionAndDisplayFangs` sets it again for
+Options from the pause menu and at a session's end — and the presenter fits that 4:3 frame into
+the window, so no in-game setting reaches it. Under `NOCTURNE_AUTHENTIC_MENU = 0` both set the
+picked resolution's aspect at 480 lines instead (`nocturne_menu_width`: 848x480 for 1600x900),
+with acceleration, since the widening below needs the renderer. The width is rounded to 16
+pixels: `clearScreen` fills a row 32 bytes at a time, every shipped mode is a multiple of 16
+pixels, and an 852-pixel row overruns into the next and, on the last, off the buffer. The 640-wide layout — logo,
+lists, trademark, the fangs — is centred (`nocturne_menu_left`); the copyright keeps to the
+screen's corner; the cloud layer runs the full width. The moon and bats are real 3D, so they get
+a wider view rather than a stretch: `CMoon::render` projects them into a 640x480 viewport with
+the field of view widened by the screen's ratio, inside an overlay pass that stretches the 640
+columns back across the screen. `buildRotationMatrix` already scales the vertical by
+`(hh / hw) * 3W / (4H)` using the window's width, which at a 640x480 viewport on an 848-wide
+window is the ratio the field of view was widened by, so the two cancel and the scene keeps
+its proportions.
+
+The iris fade's centre is projected in scene space and mapped to the screen, and
+`calculateIrisFadeCenter` maps it through the crop (`nocturne_widescreen_scene_to_screen`).
+`CGame::beginFadeOut` keeps its own inline copy of that centre with the plain 640x480 mapping;
+the closing iris recomputes the centre every frame through `calculateIrisFadeCenter`, so the copy
+lasts one frame at most.
+
+Nothing is reframed at 480 lines or fewer, where the scene and the screen are one space, or at
+4:3 and narrower, so 1280x1024 is unchanged. `CDemonCamera::init`'s
+`g_CameraScreenWidth = (screen_height * 4) / 3` is untouched: under
+`NOCTURNE_AUTHENTIC_WINDOWS = 0` its only reader takes the camera framebuffer instead.
 
 ## Flags
 
 | Flag | 0 (default) | 1 (shipped) |
 |---|---|---|
-| `NOCTURNE_AUTHENTIC_MENU` | one table, 8 modes, and left from 1280x1024 steps to 1024x768; a picked resolution resizes the window at once | hardcoded chain, 6 modes, and left from 1280x1024 snaps to 320x240; the selector only edits `game_pixx`/`game_pixy`, and nothing applies them until a mission loads |
+| `NOCTURNE_AUTHENTIC_MENU` | one table, 17 modes by width, and left from 1280x1024 steps to 1280x720; a picked resolution resizes the window at once; a scene on a screen wider than 4:3 is stretched, pillarboxed or panned and scanned as the Widescreen line says | hardcoded chain, 6 modes, and left from 1280x1024 snaps to 320x240; the selector only edits `game_pixx`/`game_pixy`, and nothing applies them until a mission loads |
 | `NOCTURNE_AUTHENTIC_HUD_SCALE` | HUD and goggles scale with the framebuffer; boxed text takes its box's stretch and is clipped to it | one screen pixel per art pixel |
-| `NOCTURNE_AUTHENTIC_HUD_ICON_SPACE` | icon panel *and its text* in camera space | both in native pixels; icons invisible above 640x480 |
+| `NOCTURNE_AUTHENTIC_HUD` | the HUD laid out in the scene's picture; the panels drawn after the reframe in camera space on the frame's corner, their text in the same boxes; the letterbox measured over the 4:3 picture | the shipped routines; panels in native pixels, invisible above 640x480; the letterbox measured over the window |
 
 The shipped left-step gap is part of `NOCTURNE_AUTHENTIC_MENU`; it does not have a
 flag of its own.

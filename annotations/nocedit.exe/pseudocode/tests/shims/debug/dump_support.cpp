@@ -67,7 +67,7 @@ _MMX_INTEGER g_VertexRedDelta = {};
 _MMX_INTEGER g_VertexRedStart = {};
 int g_WindowHeight = 0;
 int g_WindowWidth = 0;
-uint *g_ZBufferScanlineArray[1200] = {};
+uint *g_ZBufferScanlineArray[GAME_SCREEN_MAX_HEIGHT] = {};
 
 namespace dump_support {
 

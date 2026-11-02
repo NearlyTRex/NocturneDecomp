@@ -24,7 +24,16 @@ using front_support::stand;
 
 // Where each line sits: the mouse's invert, or the gamepad's tuning lines,
 // follow the sensitivities, and the gamepad's Calibrate comes last.
-enum { TYPE, KEYS, X_SENS, Y_SENS, INVERT_Y, PAD_FIRST = INVERT_Y, CALIBRATE = PAD_FIRST + 4 };
+enum {
+    TYPE,
+    MOVEMENT,
+    KEYS,
+    X_SENS,
+    Y_SENS,
+    INVERT_Y,
+    PAD_FIRST = INVERT_Y,
+    CALIBRATE = PAD_FIRST + 4
+};
 
 const char kControl[] = "Control Options";
 
@@ -50,8 +59,8 @@ NOCTURNE_TEST(each_type_lists_its_lines) {
     game->x_mouse_sensitivity = 0x10000;
     game->y_mouse_sensitivity = 0x18000;
     control({});
-    const std::vector<std::string> keyboard = {"Control : Keyboard", "Customize Keys",
-                                               "X-axis sensitivity :  1.00",
+    const std::vector<std::string> keyboard = {"Control : Keyboard", "Movement : Tank",
+                                               "Customize Keys", "X-axis sensitivity :  1.00",
                                                "Y-axis sensitivity :  1.50"};
     CHECK(lines_of(kControl) == keyboard);
 
@@ -60,7 +69,7 @@ NOCTURNE_TEST(each_type_lists_its_lines) {
     game->invert_mouse_y_axis = 1;
     control({});
     const std::vector<std::string> mouse = lines_of(kControl);
-    CHECK_EQ(mouse.size(), (size_t)5);
+    CHECK_EQ(mouse.size(), (size_t)6);
     CHECK_EQ(mouse[0], std::string("Control : Keyboard/Mouse"));
     CHECK_EQ(mouse[INVERT_Y], std::string("Invert Y Axis : ON"));
 
@@ -69,7 +78,7 @@ NOCTURNE_TEST(each_type_lists_its_lines) {
     game->x_center = 1;
     control({});
     const std::vector<std::string> pad = lines_of(kControl);
-    CHECK_EQ(pad.size(), (size_t)9);
+    CHECK_EQ(pad.size(), (size_t)10);
     CHECK_EQ(pad[0], std::string("Control : Gamepad"));
     CHECK_EQ(pad[PAD_FIRST], std::string("Stick deadzone : 0%"));
     CHECK_EQ(pad[PAD_FIRST + 1], std::string("Stick turn speed : 10"));
@@ -100,6 +109,13 @@ NOCTURNE_TEST(the_pad_lines_step_their_settings) {
     game->game_control = CONTROL_MODE_MOUSE;
     control({});
     CHECK_EQ(lines_of(kControl)[INVERT_Y], std::string("Invert Y Axis : OFF"));
+}
+
+// The movement line steps the scheme either way.
+NOCTURNE_TEST(the_movement_line_steps_the_scheme) {
+    stand.reset();
+    control({pick(MOVEMENT), pick(MOVEMENT, true)});
+    CHECK(stand.in_order({"movementCycle 1", "movementCycle -1"}));
 }
 
 // The type steps either way, wrapping, and brings its defaults.

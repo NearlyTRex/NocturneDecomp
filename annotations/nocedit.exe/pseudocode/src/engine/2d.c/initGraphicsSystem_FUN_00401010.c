@@ -33,7 +33,7 @@ void __cdecl engine_2d_c_initGraphicsSystem_FUN_00401010(void)
     uVar3 = uVar3 + 1;
     *(int *)((int)g_ReciprocalLookupTable + iVar2) = (int)(0xffffffff / uVar1);
     iVar2 = iVar2 + 4;
-  } while (uVar3 < 0x640);
+  } while (uVar3 < GAME_RECIPROCAL_TABLE_SIZE);
   file = engine_dosio_cpp_getFile_FUN_00481a50("art","default.act","rb");
   if (file == (_FILE *)0x0) {
     return;

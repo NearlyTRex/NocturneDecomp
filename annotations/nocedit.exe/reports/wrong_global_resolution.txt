@@ -13,29 +13,29 @@ SUMMARY
 
   Functions checked: 6911
   Functions with suspicious globals: 95
-  Total suspicious global references: 152
+  Total suspicious global references: 151
 
   Most commonly misresolved globals:
     g_SfxOptions                                       13 functions
     g_KeyboardState                                    9 functions
+    g_WindowWidth                                      7 functions
     g_CKeysPtr                                         6 functions
     g_WindowHeight                                     5 functions
-    g_WindowWidth                                      5 functions
     g_RenderVertexBuffer                               5 functions
     g_ColorCubeLookup                                  4 functions
-    g_CDemonCameraInstance                             4 functions
     g_UseDirect3D                                      4 functions
     g_HeroCount                                        3 functions
     g_ModalDialogActive                                3 functions
     g_CNetGamePtr                                      3 functions
     g_GetLastErrorFunc                                 3 functions
     g_MirrorCullCameraState                            2 functions
-    g_CScriptPtr                                       2 functions
+    g_CDemonCameraInstance                             2 functions
     g_SimFrameCount                                    2 functions
     g_CGamePtr                                         2 functions
     g_CMoonInstance                                    2 functions
     g_VisibleCoronaGlobeCount                          2 functions
     g_CommandTemplates                                 2 functions
+    g_MirrorSceneCameraState                           2 functions
 
   .keep files with issues: 62 (these need manual review)
   Raw .cpp files with issues: 33
@@ -145,19 +145,19 @@ core_game.cpp_calculateIrisFadeCenter_FUN_004e09a0  [.keep]  (5 suspicious globa
     NOT found in function reference list
 
   g_IrisFadeCenterX
-    Used at lines: 46, 49, 49
+    Used at lines: 46, 50, 50, 54, 55
     NOT found in function reference list
 
   g_IrisFadeCenterY
-    Used at lines: 47, 50, 50
+    Used at lines: 47, 51, 51, 54, 55
     NOT found in function reference list
 
   g_WindowHeight
-    Used at lines: 48, 50
+    Used at lines: 48, 51, 54
     NOT found in function reference list
 
   g_WindowWidth
-    Used at lines: 49
+    Used at lines: 50, 54
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
@@ -197,7 +197,7 @@ core_game.cpp_CGame_processFrame_FUN_004da100  [.keep]  (2 suspicious globals)
   File: core/game.cpp
 
   g_ColorCubeLookup
-    Used at lines: 408, 414
+    Used at lines: 401
     NOT found in function reference list
 
   g_ModalDialogActive
@@ -214,18 +214,6 @@ core_game.cpp_CGame_runGameSession_FUN_004daf80  [.keep]  (2 suspicious globals)
 
   g_SimFrameCount
     Used at lines: 178
-    NOT found in function reference list
-
-----------------------------------------------------------------------------------------------------
-core_inv.cpp_CInventory_renderAllItems_FUN_00500690  [.keep]  (2 suspicious globals)
-  File: core/inv.cpp
-
-  g_CDemonCameraInstance
-    Used at lines: 61, 99, 100, 101, 102, ...
-    NOT found in function reference list
-
-  g_CScriptPtr
-    Used at lines: 460, 470
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
@@ -413,6 +401,14 @@ core_game.cpp_CGame_saveGame_FUN_004e0cd0  [.keep]  (1 suspicious globals)
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
+core_game.cpp_CGame_setScreenResolutionAndDisplayFangs_FUN_004daed0  [.keep]  (1 suspicious globals)
+  File: core/game.cpp
+
+  g_WindowWidth
+    Used at lines: 23
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
 core_game.cpp_CGame_showFullscreenBitmap_FUN_004e2910  [.keep]  (1 suspicious globals)
   File: core/game.cpp
 
@@ -437,14 +433,6 @@ core_inivar.cpp_writeIniData_FUN_004fc510  [.keep]  (1 suspicious globals)
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
-core_inv.cpp_CInventory_renderSelectedItems_FUN_00500370  [.keep]  (1 suspicious globals)
-  File: core/inv.cpp
-
-  g_CDemonCameraInstance
-    Used at lines: 34, 35
-    NOT found in function reference list
-
-----------------------------------------------------------------------------------------------------
 core_mirror.cpp_CMirror_reflectAndClipPrimitive_FUN_00522310  [.keep]  (1 suspicious globals)
   File: core/mirror.cpp
 
@@ -458,6 +446,14 @@ core_mission.cpp_CDemonMission_clearMissionData_FUN_00522d30  [.keep]  (1 suspic
 
   g_VisibleCoronaGlobeCount
     Used at lines: 15
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
+core_moon.cpp_CMoon_render_FUN_00529ed0  [.keep]  (1 suspicious globals)
+  File: core/moon.cpp
+
+  g_WindowWidth
+    Used at lines: 49
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
@@ -481,7 +477,7 @@ core_script.cpp_CScript_renderSubtitles_FUN_00559b20  [.keep]  (1 suspicious glo
   File: core/script.cpp
 
   g_ModalDialogActive
-    Used at lines: 51, 60, 68, 125
+    Used at lines: 51, 60, 68, 102
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------

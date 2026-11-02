@@ -35,7 +35,7 @@ int __cdecl engine_2d_c_mapFrameBuffer_FUN_00403430(void *frame_buffer,int width
     g_CurrentLineNumber = 2468;
     core_main_c_displayErrorAndQuit_FUN_00506f10("mapFrameBuffer - invalid size");
   }
-  if (0x4b0 < height) {
+  if (GAME_SCREEN_MAX_HEIGHT < height) {
     g_CurrentFilename = "..\\engine\\2d.c";
     g_CurrentLineNumber = 2469;
     core_main_c_displayErrorAndQuit_FUN_00506f10("mapFrameBuffer - ySize too big!");

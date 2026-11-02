@@ -134,6 +134,7 @@ void step_halo(int step) {
 enum GraphicLine {
     GRAPHIC_RESOLUTION,
     GRAPHIC_WINDOW,
+    GRAPHIC_WIDESCREEN,
     GRAPHIC_HALO,
     GRAPHIC_ACCELERATION,
     GRAPHIC_API,
@@ -141,6 +142,7 @@ enum GraphicLine {
     GRAPHIC_BITS,
     GRAPHIC_UPSCALER,
     GRAPHIC_SHARPNESS,
+    GRAPHIC_ANTIALIAS,
     GRAPHIC_CALIBRATION
 };
 
@@ -160,6 +162,8 @@ public:
         if (g_nocturne_fixed_display == 0)
             lines.add(GRAPHIC_WINDOW, "Window : %s",
                       nocturne_window_mode_name(nocturne_window_mode_get()));
+        lines.add(GRAPHIC_WIDESCREEN, "Widescreen : %s",
+                  nocturne_widescreen_name(nocturne_widescreen_get()));
         lines.add_localized(GRAPHIC_HALO, halo_label(g_CGamePtr->halo_mode));
         lines.add_localized(GRAPHIC_ACCELERATION,
                             g_UseDirect3D != 0 ? "Acceleration : On" : "Acceleration : Off");
@@ -177,6 +181,10 @@ public:
                   nocturne_upscaler_name(nocturne_upscaler_get()));
         if (nocturne_upscaler_sharpens(nocturne_upscaler_get()))
             lines.add(GRAPHIC_SHARPNESS, "Sharpness : %d%%", nocturne_upscaler_sharpness_get());
+        // The pass runs over the renderer's scene, which software has none of.
+        if (g_UseDirect3D != 0)
+            lines.add(GRAPHIC_ANTIALIAS, "Anti-aliasing : %s",
+                      nocturne_antialias_name(nocturne_antialias_get()));
         lines.add_localized(GRAPHIC_CALIBRATION, "Monitor calibration");
     }
 
@@ -198,6 +206,9 @@ public:
             break;
         case GRAPHIC_WINDOW:
             nocturne_window_mode_cycle(step);
+            break;
+        case GRAPHIC_WIDESCREEN:
+            nocturne_widescreen_cycle(step);
             break;
         case GRAPHIC_HALO:
             step_halo(step);
@@ -235,6 +246,9 @@ public:
             break;
         case GRAPHIC_SHARPNESS:
             nocturne_upscaler_sharpness_cycle(step);
+            break;
+        case GRAPHIC_ANTIALIAS:
+            nocturne_antialias_cycle(step);
             break;
         default: // GRAPHIC_CALIBRATION
             core_menu_cpp_showCalibrationTest_FUN_00510ba0();

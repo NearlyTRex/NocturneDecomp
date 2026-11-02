@@ -23,7 +23,18 @@ using front_support::Press;
 using front_support::stand;
 
 enum { OPT_GAMEPLAY, OPT_GRAPHIC, OPT_SOUND, OPT_CONTROL, OPT_CHEATS, OPT_CREDITS };
-enum { G_RESOLUTION, G_WINDOW, G_HALO, G_ACCEL, G_API, G_CARD, G_BITS, G_UPSCALER, G_NEXT };
+enum {
+    G_RESOLUTION,
+    G_WINDOW,
+    G_WIDESCREEN,
+    G_HALO,
+    G_ACCEL,
+    G_API,
+    G_CARD,
+    G_BITS,
+    G_UPSCALER,
+    G_NEXT
+};
 enum { P_ALWAYS_RUN, P_AIMING, P_AUTO_HEALTH, P_SUBTITLES, P_FONT, P_MENU_FONT, P_RATING };
 
 const char kGraphic[] = "Graphic Options";
@@ -153,10 +164,11 @@ NOCTURNE_TEST(graphic_options_reads_the_display) {
     graphics({});
     CHECK_EQ(g_CurrentGraphicsBoard, 0); // past the cards listed
     CHECK(stand.in_order({"saveClockTime", "buildCardList", "swap"}));
-    const std::vector<std::string> lines = {
-        "Resolution : 640x480", "Window : Windowed",   "Flashlight halo : Off",
-        "Acceleration : Off",   "3D API : None",       "No 3D Hardware detected",
-        "Bits per pixel : 16",  "Upscaler : Standard", "Monitor calibration"};
+    const std::vector<std::string> lines = {"Resolution : 640x480",    "Window : Windowed",
+                                            "Widescreen : Pan & scan", "Flashlight halo : Off",
+                                            "Acceleration : Off",      "3D API : None",
+                                            "No 3D Hardware detected", "Bits per pixel : 16",
+                                            "Upscaler : Standard",     "Monitor calibration"};
     CHECK(lines_of(kGraphic) == lines);
     CHECK_EQ(last().y, NOCTURNE_MENU_TITLE_Y);
 
@@ -168,12 +180,13 @@ NOCTURNE_TEST(graphic_options_reads_the_display) {
     game->game_bpp = 32;
     cards({"Riva"}, {0x10de}, {0x20});
     graphics({});
-    CHECK_EQ(graphic_line(1), std::string("Flashlight halo : Simple"));
-    CHECK_EQ(graphic_line(4), std::string("3D Card : Riva (0)"));
-    CHECK_EQ(graphic_line(5), std::string("Bits per pixel : 32"));
-    CHECK_EQ(graphic_line(6), std::string("Upscaler : FSR"));
-    CHECK_EQ(graphic_line(7), std::string("Sharpness : 50%"));
-    CHECK_EQ(lines_of(kGraphic).size(), (size_t)9);
+    CHECK_EQ(graphic_line(1), std::string("Widescreen : Pan & scan"));
+    CHECK_EQ(graphic_line(2), std::string("Flashlight halo : Simple"));
+    CHECK_EQ(graphic_line(5), std::string("3D Card : Riva (0)"));
+    CHECK_EQ(graphic_line(6), std::string("Bits per pixel : 32"));
+    CHECK_EQ(graphic_line(7), std::string("Upscaler : FSR"));
+    CHECK_EQ(graphic_line(8), std::string("Sharpness : 50%"));
+    CHECK_EQ(lines_of(kGraphic).size(), (size_t)10);
 
     stand.reset();
     game->halo_mode = 2;
@@ -327,10 +340,11 @@ NOCTURNE_TEST(the_card_line_steps_the_card) {
 
 NOCTURNE_TEST(the_other_graphic_lines) {
     stand.reset();
-    graphics({pick(G_BITS), pick(G_WINDOW, true), pick(G_UPSCALER)});
+    graphics({pick(G_BITS), pick(G_WINDOW, true), pick(G_UPSCALER), pick(G_WIDESCREEN, true)});
     CHECK_EQ(game->game_bpp, 32);
     CHECK_EQ(stand.count("windowCycle -1"), 1);
     CHECK_EQ(stand.count("upscalerCycle 1"), 1);
+    CHECK_EQ(stand.count("widescreenCycle -1"), 1);
 
     stand.reset();
     game->game_bpp = 32;
@@ -343,6 +357,24 @@ NOCTURNE_TEST(the_other_graphic_lines) {
     stand.reset();
     graphics({pick(G_NEXT)});
     CHECK_EQ(stand.count("calibration"), 1);
+}
+
+// Anti-aliasing is listed while the renderer is up, after the upscaler, and
+// steps both ways; software, which it does nothing for, has no such line.
+NOCTURNE_TEST(anti_aliasing_is_a_line_with_acceleration) {
+    stand.reset();
+    accelerate("trigl.dll");
+    graphics({pick(G_NEXT), pick(G_NEXT, true)});
+    CHECK_EQ(stand.count("antialiasCycle 1"), 1);
+    CHECK_EQ(stand.count("antialiasCycle -1"), 1);
+    CHECK_EQ(graphic_line(G_NEXT), std::string("Anti-aliasing : Off"));
+
+    stand.reset();
+    accelerate("trigl.dll");
+    stand.antialias = NOCTURNE_ANTIALIAS_FXAA;
+    graphics({});
+    CHECK_EQ(graphic_line(G_NEXT), std::string("Anti-aliasing : FXAA"));
+    CHECK_EQ(graphic_line(G_NEXT + 1), std::string("Monitor calibration"));
 }
 
 // The cards the shipped screen pinned: early 3dfx parts to tri3dfx.dll at

@@ -31,6 +31,7 @@ void __cdecl core_game_cpp_CGame_finishAct_FUN_004e3b90(CGame *this_ptr)
   char local_54c [1024];
   char local_14c [256];
   CAlphaBitmap local_4c;
+  int left;
   float fVar2;
 
 
@@ -59,7 +60,11 @@ void __cdecl core_game_cpp_CGame_finishAct_FUN_004e3b90(CGame *this_ptr)
   engine_alphabit_cpp_CAlphaBitmap_ctor_FUN_00410520(&local_4c);
   engine_alphabit_cpp_CAlphaBitmap_load_FUN_004105d0(&local_4c,"stats",0x280,0x1e0);
   engine_special_cpp_clearScreen_FUN_005b3e70();
-  engine_alphabit_cpp_CAlphaBitmap_display_FUN_00410950(&local_4c,0,0,0xffff);
+  left = 0;
+#if !NOCTURNE_AUTHENTIC_MENU
+  left = nocturne_menu_left();
+#endif
+  engine_alphabit_cpp_CAlphaBitmap_display_FUN_00410950(&local_4c,left,0,0xffff);
   iVar8 = (int)ROUND(ROUND(this_ptr->total_game_time * (float)0.00027777777777777799));
   fVar2 = this_ptr->total_game_time - (float)iVar8 * (float)3600;
   this_ptr->total_game_time = fVar2;
@@ -99,7 +104,7 @@ void __cdecl core_game_cpp_CGame_finishAct_FUN_004e3b90(CGame *this_ptr)
     do {
       iVar11 = iVar11 + 1;
       engine_font_cpp_CBitFont_drawTextCenterInBounds_FUN_004cdee0
-                (this_ptr_00,0x1c0,0x27f,y,0xf8,0,pcVar9);
+                (this_ptr_00,left + 0x1c0,left + 0x27f,y,0xf8,0,pcVar9);
       pcVar9 = pcVar9 + 0x100;
       y = y + iVar7;
     } while (iVar11 < iVar8);

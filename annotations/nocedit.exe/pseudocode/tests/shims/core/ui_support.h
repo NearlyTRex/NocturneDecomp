@@ -34,11 +34,14 @@ struct Stand {
     int palettes = 0;                   // CAlphaBitmap::initPalette
     int wraps = 0;                      // CBitFont::wrapText, and the width it was given
     int wrap_width = 0;
-    int char_height = 10;   // getCharHeight; text width is 8 a character
-    int updates = 0;        // CGame::updateDT
-    int moon_frames = 0;    // CMoon::update and render, each
-    std::vector<int> wheel; // nocturne_mouse_wheel_take, front first; 0 after
-    std::set<int> pressed;  // keys read once by getAndClearKeyState
+    int char_height = 10;        // getCharHeight; text width is 8 a character
+    int updates = 0;             // CGame::updateDT
+    int moon_frames = 0;         // CMoon::update and render, each
+    std::vector<int> wheel;      // nocturne_mouse_wheel_take, front first; 0 after
+    std::vector<int> viewports;  // pushViewport's width, or -1 for a pop, in order
+    std::vector<float> overlays; // begin_overlay's horizontal scale; 0 for an end
+    int overlay_opens = 1;       // what begin_overlay answers
+    std::set<int> pressed;       // keys read once by getAndClearKeyState
 
     void reset();
 };

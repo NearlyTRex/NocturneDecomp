@@ -4,6 +4,7 @@
 
 // Type dependencies
 #include "system/basetypes.h"
+#include "defines.h"
 #include "types/classes/CKeyFramedModel.h"
 #include "types/classes/CVector3f.h"
 
@@ -33,6 +34,6 @@ extern int g_DirtySpanEnds[256];
 // uint
 extern uint g_ShadowRestoreAllocator;
 
-// void*[1200]
-extern void* g_SavedScreenBufferArray[1200];
+// void*[GAME_SCREEN_MAX_HEIGHT]
+extern void* g_SavedScreenBufferArray[GAME_SCREEN_MAX_HEIGHT];
 

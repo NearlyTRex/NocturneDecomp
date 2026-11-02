@@ -45,7 +45,7 @@ void __cdecl engine_drender_cpp_renderTriangleTextured_FUN_00483370(int *vertex_
     iVar14 = 0;
     g_RenderTriangleMaxScanlineY = 0;
     local_24 = 0;
-    g_RenderTriangleMinScanlineY = 0x4b0;
+    g_RenderTriangleMinScanlineY = GAME_SCREEN_MAX_HEIGHT;
     g_RenderTriangleEdgeCount = iVar14;
     if (0 < vertex_count) {
       local_28 = vertex_indices;

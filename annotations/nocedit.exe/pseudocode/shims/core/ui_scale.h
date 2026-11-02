@@ -85,35 +85,36 @@ int nocturne_ui_char_height(struct CBitFont *font, int character_code, int scale
 int nocturne_ui_text_scale_supported(void);
 
 // =============================================================================
-// Text that has to sit inside a box
+// Text at a fractional scale
 // =============================================================================
 //
-// nocturne_ui_scale suits elements the layout places against a screen edge, but
-// two text blocks live inside a container that grows by a FRACTIONAL factor:
-// the inventory description sits on a camera-space panel the renderer stretches
-// by g_WindowWidth / framebuffer_width, and the subtitles sit in the letterbox
-// bar, which is (g_WindowHeight - g_WindowWidth * 100 / 185) / 2. Rounding to
-// nearest overshoots both at 1024x768 (stretch 1.6) and 1600x1200 (2.5), and
-// the inflated scale also narrows the wrap width, so the block gains lines as
-// it gains height and runs out of its box.
+// For text that should keep the same share of the screen at every resolution
+// rather than step between whole sizes — the HUD's, whose boxes grow by
+// H / 480. A whole scale is the whole-number path's, so 640x480 and its
+// multiples draw as they always have. Between whole scales each screen pixel
+// takes the glyph pixels under it weighted by the area each covers, and is
+// blended by that coverage: the blended fonts keep their own ramp, and the
+// 1-bit ones (fnte_pfd, micro) gain an anti-aliased edge rather than repeating
+// some pixels and not others, which shows as stems of uneven thickness. Text is
+// softer than a whole scale, and evenly so. Where the bit depth has no scaled
+// glyph path the scale is 1.
 //
-// Truncating instead is what keeps it in. A scale at or under the container's
-// stretch leaves the block no taller, relative to the box, than it was at
-// 640x480 — where it fits — so it fits at every mode. Glyphs stay whole pixels:
-// these fonts are small, and two of the five (fnte_pfd, micro) are 1-bit, so a
-// fractional scale shows as stems of uneven thickness rather than as resampling.
+// The wrap measures the box in unscaled glyphs and writes the line advance in
+// screen pixels to *line_pitch, so the wrap width and the metrics cannot drift
+// apart from the text.
+int nocturne_ui_draw_text_f(struct CBitFont *font, char *text, int x, int y, int color_mode,
+                            int color_value, float scale);
+int nocturne_ui_text_width_f(struct CBitFont *font, char *text, float scale);
+int nocturne_ui_char_height_f(struct CBitFont *font, int character_code, float scale);
+int nocturne_ui_wrap_to_width_f(struct CBitFont *font, char *text, char *lines, int max_lines,
+                                int line_stride, int box_width, float scale, int *line_pitch);
 
-// The largest whole scale that does not exceed a container stretched num/den,
-// clamped to [1, UI_MAX_SCALE] and to 1 where the bit depth has no scaled glyph
-// path. Pass it to the drawing and metric calls above.
-int nocturne_ui_box_scale(int num, int den);
-
-// CBitFont::wrapText against a box `box_width` screen pixels wide, for text that
-// will be drawn at `scale`. Wraps in glyph units, and returns the line count
-// with the line advance in screen pixels written to *line_pitch, so the wrap
-// width and the metrics cannot drift apart from the text.
-int nocturne_ui_wrap_to_width(struct CBitFont *font, char *text, char *lines, int max_lines,
-                              int line_stride, int box_width, int scale, int *line_pitch);
+// The HUD's text scale on a screen `height` lines tall: its share of 480,
+// unrounded, so text is the same part of the screen at every resolution. 1
+// below 720 lines — at 480 and fewer the game takes smaller fonts instead, and
+// at 1.25 (800x600) filtering softens the 1-bit fonts more than the size is
+// worth — and under NOCTURNE_AUTHENTIC_HUD_SCALE=1.
+float nocturne_ui_text_scale(int height);
 
 // The 2D clip rectangle (g_ClipLeft/Top/Right/Bottom), intersected with what is
 // already set and restored by the matching pop. Text drawn between the two

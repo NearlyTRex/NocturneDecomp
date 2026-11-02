@@ -1078,4 +1078,23 @@ NOCTURNE_TEST(the_draw_trace_is_per_frame_and_bounded) {
     api<VoidFn>("APIDLLkill")();
 }
 
+// Inside the HUD's overlay pass a vertex is placed by the pass's own scale and
+// offset, not by the hold buffer's stretch; after it, the stretch is back.
+NOCTURNE_TEST(an_overlay_places_its_vertices_itself) {
+    Quad quad;
+    Engine engine;
+    restart(&engine.bridge, 1280, 720, 32);
+    CHECK_EQ(nocturne_trigl_device_begin_overlay(1.5f, 1.25f, 320.0f, -10.0f), 1);
+    CHECK_EQ(api<DrawPolyListFn>("APIDLLdrawPolyList")(quad.vertices, quad.list, 1, kOpaque), 1);
+    const NocturneTriglBatch *batch = nocturne_trigl_device_batch();
+    CHECK_EQ(batch->vertices[0].x, 100.0f * 1.5f + 320.0f);
+    CHECK_EQ(batch->vertices[0].y, 100.0f * 1.25f - 10.0f);
+    nocturne_trigl_device_end_overlay();
+
+    CHECK_EQ(api<DrawPolyListFn>("APIDLLdrawPolyList")(quad.vertices, quad.list, 1, kOpaque), 1);
+    CHECK_EQ(batch->vertices[0].x, 100.0f * 2.0f);
+    CHECK_EQ(batch->vertices[0].y, 100.0f * 1.5f);
+    api<VoidFn>("APIDLLkill")();
+}
+
 NOCTURNE_TEST_MAIN()

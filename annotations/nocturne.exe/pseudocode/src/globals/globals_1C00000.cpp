@@ -82,11 +82,11 @@ uchar* g_CurrentTextureOpacityData = {};
 uchar g_SourcePaletteData[768] = {};
 uchar g_DefaultPalette[768] = {};
 
-// uint[1600]
-uint g_ReciprocalLookupTable[1600] = {};
-
 // uint[256]
 uint g_Hardware32BitPalette[256] = {};
+
+// uint[GAME_RECIPROCAL_TABLE_SIZE]
+uint g_ReciprocalLookupTable[GAME_RECIPROCAL_TABLE_SIZE] = {};
 
 // ulong
 ulong g_SolidColorMode = {};

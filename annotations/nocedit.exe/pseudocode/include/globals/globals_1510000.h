@@ -4,6 +4,7 @@
 
 // Type dependencies
 #include "system/basetypes.h"
+#include "defines.h"
 #include "types/classes/CVector3i.h"
 #include "types/structs/SCameraViewportState.h"
 #include "types/structs/SFogGrid.h"
@@ -42,6 +43,6 @@ extern int g_BackgroundSavedBlueBitPosition;
 extern int g_ScanlineSpanLeft[256];
 extern int g_ScanlineSpanRight[256];
 
-// void*[1200]
-extern void* g_BackgroundSavedScreenBufferArray[1200];
+// void*[GAME_SCREEN_MAX_HEIGHT]
+extern void* g_BackgroundSavedScreenBufferArray[GAME_SCREEN_MAX_HEIGHT];
 

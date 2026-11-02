@@ -76,7 +76,11 @@ void __cdecl core_main_c_initializeGameSystems_FUN_00507a60(int argc,char **argv
 #if NOCTURNE_AUTHENTIC_D3D_OPTIONS
   g_UseDirect3D = 0;
 #endif
+#if NOCTURNE_AUTHENTIC_MENU
   iVar9 = wincore_wddvmem_cpp_setScreenResolution_FUN_005ecef0(0x280,0x1e0,0x20);
+#else
+  iVar9 = wincore_wddvmem_cpp_setScreenResolution_FUN_005ecef0(nocturne_menu_width(),0x1e0,0x20);
+#endif
   if (iVar9 == 0) {
     g_CurrentFilename = "..\\core\\main.c";
     g_CurrentLineNumber = 1027;
@@ -147,7 +151,12 @@ void __cdecl core_main_c_initializeGameSystems_FUN_00507a60(int argc,char **argv
   engine_font_cpp_CBitFont_getCharHeight_FUN_004d01d0(g_ThemeFont,0x58);
   engine_alphabit_cpp_CAlphaBitmap_ctor_FUN_00410520(&loading_bitmap);
   engine_alphabit_cpp_CAlphaBitmap_load_FUN_004105d0(&loading_bitmap,"fangs",0x280,0x1e0);
+#if NOCTURNE_AUTHENTIC_MENU
   engine_alphabit_cpp_CAlphaBitmap_display_FUN_00410950(&loading_bitmap,0,0,0x8000);
+#else
+  engine_alphabit_cpp_CAlphaBitmap_display_FUN_00410950(&loading_bitmap,nocturne_menu_left(),0,
+                                                        0x8000);
+#endif
   wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();
   engine_alphabit_cpp_CAlphaBitmap_dtor_FUN_00410540(&loading_bitmap,0);
   core_sound_cpp_CSound_findAllSoundFiles_FUN_005b2d00(g_CSoundPtr);

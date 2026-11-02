@@ -28,7 +28,14 @@ void __cdecl core_game_cpp_CGame_rollCredits_FUN_004e4010(CGame *this_ptr)
   int local_14;
   int local_10;
   CBitFont *this_ptr_00;
-  
+  int right;
+
+  right = 0x27f;
+#if !NOCTURNE_AUTHENTIC_MENU
+  if (right < g_WindowWidth - 1) {
+    right = g_WindowWidth - 1;
+  }
+#endif
   local_14 = 0;
   local_18 = 480.0;
   engine_2d_c_clearInputAndWait_FUN_00403260();
@@ -93,7 +100,7 @@ void __cdecl core_game_cpp_CGame_rollCredits_FUN_004e4010(CGame *this_ptr)
           }
           if ((-1 < local_10) && (local_10 < 0x1df - iVar2)) {
             engine_font_cpp_CBitFont_drawTextCenterInBounds_FUN_004cdee0
-                      (this_ptr_00,0x19e,0x27f,local_10,color_mode,0,pcVar4);
+                      (this_ptr_00,0x19e,right,local_10,color_mode,0,pcVar4);
           }
           local_10 = local_10 + iVar2;
           iVar8 = iVar8 + 1;
@@ -118,8 +125,8 @@ LAB_004e43c1:
         engine_alphabit_cpp_CAlphaBitmap_dtor_FUN_00410540(&local_34,0);
         return;
       }
-      engine_2d_c_fillRectColor_FUN_00403170(0x19e,0,0x27f,0x1e,0);
-      engine_2d_c_fillRectColor_FUN_00403170(0x19e,0x1b7,0x27f,0x1df,0);
+      engine_2d_c_fillRectColor_FUN_00403170(0x19e,0,right,0x1e,0);
+      engine_2d_c_fillRectColor_FUN_00403170(0x19e,0x1b7,right,0x1df,0);
       local_1c = iVar5;
     }
     wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();

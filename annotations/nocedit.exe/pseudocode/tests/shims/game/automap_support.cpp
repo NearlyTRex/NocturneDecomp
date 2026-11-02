@@ -35,7 +35,7 @@ int g_WindowWidth = 0;
 int g_WindowHeight = 0;
 uint g_ColorTable32[448] = {};
 ushort g_ColorTable16[256] = {};
-void *g_ScreenBufferArray[1200] = {};
+void *g_ScreenBufferArray[GAME_SCREEN_MAX_HEIGHT] = {};
 CDemonActorType g_CBodyPartClassInfo = {};
 CDemonActorType g_CCharacterClassInfo = {};
 CDemonActorType g_CDoorClassInfo = {};
@@ -148,7 +148,7 @@ void Stand::reset() {
 
     // A screen of rows, the black fill's to clear.
     s_screen.assign((size_t)640 * 480 * 4, 0xff);
-    for (int y = 0; y < 1200; y++) {
+    for (int y = 0; y < GAME_SCREEN_MAX_HEIGHT; y++) {
         g_ScreenBufferArray[y] = (y < 480) ? &s_screen[(size_t)y * 640 * 4] : nullptr;
     }
 

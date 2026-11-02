@@ -70,7 +70,7 @@ void __cdecl engine_prim_c_renderIndexedPolygonSoftware_FUN_004fa2e0(int *vertex
     _DAT_01e52ef0 = 0;
     _DAT_01e52a68 = 0;
     local_1c = 0;
-    _DAT_01e52eec = 0x4b0;
+    _DAT_01e52eec = GAME_SCREEN_MAX_HEIGHT;
     if (0 < vertex_count) {
       local_20 = vertex_indices;
       do {

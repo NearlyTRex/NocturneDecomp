@@ -23,7 +23,7 @@ void __cdecl core_game_cpp_CGame_showChapterSelect_FUN_004e1cb0(CGame *this_ptr,
   CPickList local_6ec;
   CIniFile local_344;
   char local_144 [260];
-  char *local_40 [4];
+  char *local_40 [5];
   int local_2c;
   int local_28;
   int local_24;
@@ -82,7 +82,7 @@ void __cdecl core_game_cpp_CGame_showChapterSelect_FUN_004e1cb0(CGame *this_ptr,
   local_40[3] = support_newmsg_cpp_getLocalizedString_FUN_005441f0
                           ("'The House on the Edge of Hell'");
   iVar3 = -1;
-  support_newmsg_cpp_getLocalizedString_FUN_005441f0("'Epilogue'");
+  local_40[4] = support_newmsg_cpp_getLocalizedString_FUN_005441f0("'Epilogue'");
   iVar6 = -1;
 #if NOCTURNE_AUTHENTIC_CHAPTER_SELECT
   if (bVar8 || p_Var3 != (_FILE *)0x0) {

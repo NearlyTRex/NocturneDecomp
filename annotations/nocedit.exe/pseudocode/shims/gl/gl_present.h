@@ -90,6 +90,20 @@ void nocturne_gl_present_scene(void);
 // upload/readback round-trip is the identity. No-op when there is no scene FBO.
 void nocturne_gl_scene_upload(const void *pixels, int width, int height, int pitch, int bpp);
 
+// Redraw part of the SCENE target's colour over a part of itself, scaled, with
+// black wherever the destination does not reach. Rectangles are in the
+// target's pixels counted from its top-left. Depth is untouched. Returns 0, and
+// changes nothing, when there is no scene target or no copy of it can be made.
+int nocturne_gl_scene_reframe(int src_x, int src_y, int src_w, int src_h, int dst_x, int dst_y,
+                              int dst_w, int dst_h);
+
+// Run the SCENE target's colour through the anti-aliasing pass the
+// [Graphics] antialias setting picks (gl/antialias.h), in place, through the
+// reframe's copy. Depth is untouched, and the pipeline state it changes is put
+// back. Returns 0, and changes nothing, when the setting is Off, there is no
+// scene target or copy of it, or the pass's program is unavailable.
+int nocturne_gl_scene_antialias(void);
+
 // Read the presented frame back as tightly packed RGB24 at window resolution.
 // Caller frees *out_rgb with free(). Returns 0 on success. Backs
 // nocturne_dump_frontbuffer once the SDL_Renderer readback is gone.

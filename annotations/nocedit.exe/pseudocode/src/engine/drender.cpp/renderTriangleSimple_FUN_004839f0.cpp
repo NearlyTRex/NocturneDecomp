@@ -72,7 +72,7 @@ void __cdecl engine_drender_cpp_renderTriangleSimple_FUN_004839f0(CVector3i *ver
     g_RenderTriangleEdgeCount = 0;
     g_RenderTriangleMaxScanlineY = 0;
     local_2c = 0;
-    g_RenderTriangleMinScanlineY = 0x4b0;
+    g_RenderTriangleMinScanlineY = GAME_SCREEN_MAX_HEIGHT;
     if (0 < vertex_count) {
       local_30 = vertex_indices;
       iVar7 = g_RenderTriangleEdgeCount;

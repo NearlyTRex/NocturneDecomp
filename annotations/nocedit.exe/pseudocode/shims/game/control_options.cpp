@@ -43,6 +43,7 @@ bool calibrated() {
 
 enum ControlLine {
     CONTROL_TYPE,
+    CONTROL_MOVEMENT,
     CONTROL_KEYS,
     CONTROL_X_SENSITIVITY,
     CONTROL_Y_SENSITIVITY,
@@ -105,6 +106,8 @@ public:
     void build(Lines &lines) override {
         CGame *game = g_CGamePtr;
         lines.add_localized(CONTROL_TYPE, type_label(game));
+        lines.add(CONTROL_MOVEMENT, "Movement : %s",
+                  nocturne_movement_name(nocturne_movement_get()));
         lines.add_localized(CONTROL_KEYS, "Customize Keys");
         lines.add(CONTROL_X_SENSITIVITY, "%s%5.2f", localized("X-axis sensitivity : "),
                   game->x_mouse_sensitivity / kFixedOne);
@@ -125,6 +128,9 @@ public:
         switch (id) {
         case CONTROL_TYPE:
             step_type(step);
+            break;
+        case CONTROL_MOVEMENT:
+            nocturne_movement_cycle(step);
             break;
         case CONTROL_KEYS:
             nocturne_key_bindings_menu();

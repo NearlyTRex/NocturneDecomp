@@ -26,7 +26,7 @@ void __cdecl engine_2d_c_initGraphicsSystem_FUN_00401010(void)
   engine_2d_c_loadOrBuildColorMap_FUN_00402930("vga.map");
   wincore_wddvmem_cpp_setupColorPalette_FUN_005ed8f0();
   g_ReciprocalLookupTable[0] = 0xffffffff;
-  for (uVar3 = 1; uVar3 < 0x640; uVar3 = uVar3 + 1) {
+  for (uVar3 = 1; uVar3 < GAME_RECIPROCAL_TABLE_SIZE; uVar3 = uVar3 + 1) {
     g_ReciprocalLookupTable[uVar3] = (uint)(0xffffffff / (ulonglong)uVar3);
   }
   file = engine_dosio_cpp_getFile_FUN_00481a50("art","default.act","rb");

@@ -122,7 +122,6 @@ shipped", but it is not a bug in the retail game.
 | `MENU_LIGHTING` | the menu's moon puts back the lighting it found |
 | `MENU_BAT_WRAP` | a menu bat does not flash across the moon as its path wraps |
 | `CAMERA_SHAKE_TRACE` | the shake trace prints its value and a newline |
-| `HUD_ICON_SPACE` | inventory icons stay on screen above 640x480 |
 | `FOG_PLANE_SCALE` | fog covers the view at modes whose camera grid is not 320 wide |
 | `BACKDROP_FILTER` | a backdrop rescaled to the camera framebuffer keeps its own brightness |
 | `FLASHLIGHT_DRAW` | in the HQ missions neither the draw nor the flashlight key brings the weapon out; elsewhere the flashlight key draws it as shipped |
@@ -151,8 +150,6 @@ shipped", but it is not a bug in the retail game.
 | `LIGHT_FILTER_LOAD` | the HQ projector keeps the briefing slides its script added when a save is loaded, instead of showing one image throughout |
 | `HELPER_DEATH` | when a companion the mission needs dies, the hero is held still through the death sequence and the game ends on the Game Over menu instead of dropping to the main menu |
 | `INPUT_REPEAT` | holding fire on an empty weapon clicks at a rate rather than every frame |
-| `ITEM_HELP_POSITION` | the pickup help text does not sit on top of the pickup name |
-| `DEATH_MESSAGE_POSITION` | the death banner is centred, clear of the message line |
 | `TEXT_RENDER_ALPHA` | 2D text blends at its own alpha, not the last pass's leftover |
 | `BOTTOMLESS_FALL` | a fall out of the world kills at once, rather than on whatever geometry it happens to strike |
 | `FILE_TIME` | a file written while daylight saving is in force is dated with its own hour |
@@ -183,9 +180,10 @@ shipped", but it is not a bug in the retail game.
 | `TEXT_PROMPTS` | a text prompt brings up the platform's own keyboard, where it has one |
 | `CHEAT_MENU` | a CHEATS entry on Options, and WARPS on the pause menu |
 | `HUD_SCALE` | HUD bitmaps, text and the goggles scale with the framebuffer |
+| `HUD` | the in-game HUD is shim code laid out in boxes inside the scene's picture: the inventory panels drawn over the finished scene with their text on them at any size, the pickup help under the top letterbox, the death banner clear of the message line and the Game Over dialog, and letterbox bars that keep their proportion on a wider screen |
 | `STATUS_BAR_WIDTH` | another player's or a companion's status bar is as long as its maximum health, 100 being the shipped width |
 | `PUSH_SOUND` | a pushed box scrapes on every shove of a long push, not only the first |
-| `MENU` | the front end's screens are shim pages carrying every menu addition: titles below the logo, a Gameplay page beside Graphic Options, PLAY and MULTIPLAYER, window mode, the resolution table applied at once, a choice of upscaling filters (FSR, Lanczos, GSR, NIS, xBR), system text, Movie Vol, the gamepad's tuning, bindings that follow the control type, and the build's version in the corner |
+| `MENU` | the front end's screens are shim pages carrying every menu addition: titles below the logo, a Gameplay page beside Graphic Options, PLAY and MULTIPLAYER, window mode, the resolution table applied at once with 16:9 modes and a 4:3 mode at each of their heights up to 3840x2160, widescreen pillarbox or pan-and-scan, a choice of upscaling filters (FSR, Lanczos, GSR, NIS, xBR), FXAA anti-aliasing, system text, Movie Vol, the gamepad's tuning, tank or camera movement, bindings that follow the control type, and the build's version in the corner |
 | `CONSOLE` | the console fills the window and keeps scrollback |
 | `ATTRACT_MOVIES` | the menu cycles NOC1..NOC4 after its splash music |
 | `ENVMAP_SHADING` | reflections are shaded per pixel rather than flat per facet |

@@ -88,3 +88,7 @@ unsigned int nocturne_rng_fx(void) {
 const char *nocturne_version_short(void) {
     return "v1.2.3";
 }
+
+int nocturne_menu_left(void) {
+    return stand.menu_left;
+}

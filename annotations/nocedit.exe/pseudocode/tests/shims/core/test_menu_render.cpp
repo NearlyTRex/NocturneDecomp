@@ -102,6 +102,27 @@ NOCTURNE_TEST(the_corners) {
     render(&selected, 250, nullptr);
     CHECK_EQ(stand.of(plain).size(), (size_t)0);
     CHECK_EQ(stand.of(os).size(), (size_t)1);
+    g_UseOSFonts = 0;
+}
+
+// On a wider front end the list, its shimmer and the trademark move with the
+// centred 640-wide layout; the copyright keeps to the screen's corner and the
+// version to its left edge.
+NOCTURNE_TEST(a_wide_front_end_centres_the_layout) {
+    const std::string plain = "Nocturne 1999 Terminal Reality Inc.  Patent Pending.";
+    stand.reset();
+    stand.menu_left = 106;
+    stand.first_half = 1;
+    int selected = 0;
+    render(&selected, 250, (char *)"Title");
+    CHECK_EQ(stand.of("Title")[0].x, 0xa0 + 106);
+    int shimmers = 0;
+    for (const menu_render_support::Drawn &d : stand.drawn)
+        shimmers += d.x == 0x9e + 106 ? 1 : 0;
+    CHECK_EQ(shimmers, 5);
+    CHECK(stand.of(plain)[0].x == 0x27f + 212 - (int)plain.size() * 8);
+    CHECK_EQ(stand.of(g_MenuTrademarkGlyph)[0].x, 0x206 + 106);
+    CHECK_EQ(stand.of("v1.2.3")[0].x, 4);
 }
 
 // Up and down move the cursor, wrapping, and say input happened.

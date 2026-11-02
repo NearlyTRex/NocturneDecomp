@@ -78,7 +78,7 @@ void __cdecl engine_zraster_c_rasterizeTriangle_FUN_005fcfc0(SRenderVertex *vert
   g_RasterizerEdgeCount = 0;
   iVar10 = 0;
   g_RasterizerMaxY = 0;
-  g_RasterizerMinY = 0x4b0;
+  g_RasterizerMinY = GAME_SCREEN_MAX_HEIGHT;
   iVar6 = g_RasterizerEdgeCount;
   if (0 < vertex_count) {
     do {

@@ -12,6 +12,7 @@
 // that a click on the window means the same point in the game. SDL and the
 // driver are stood in for (sdl_gl_support.h, the renderer's gl_recorder.h).
 
+#include "gl/antialias.h"
 #include "gl/gl_api.h"
 #include "gl/gl_present.h"
 #include "gl/gl_version.h"
@@ -90,6 +91,28 @@ void present(int width, int height, int bpp = 32) {
 
 GLenum APIENTRY incomplete(GLenum) {
     return GL_FRAMEBUFFER_UNSUPPORTED;
+}
+
+// Every blit's rectangles and filter, which the recorder does not keep.
+struct Blit {
+    GLint src[4];
+    GLint dst[4];
+    GLenum filter;
+};
+std::vector<Blit> s_blits;
+void APIENTRY capture_blit(GLint sx0, GLint sy0, GLint sx1, GLint sy1, GLint dx0, GLint dy0,
+                           GLint dx1, GLint dy1, GLbitfield, GLenum filter) {
+    s_blits.push_back(Blit{{sx0, sy0, sx1, sy1}, {dx0, dy0, dx1, dy1}, filter});
+}
+
+// Up with a scene target of `width` x `height`, blits captured from here.
+gl_recorder::State &up_with_target(int width, int height) {
+    gl_recorder::State &s = up();
+    CHECK_EQ(nocturne_gl_scene_target_bind(width, height), 1);
+    s_blits.clear();
+    gl.BlitFramebuffer = capture_blit;
+    s.calls.clear();
+    return s;
 }
 void APIENTRY no_texture(GLsizei n, GLuint *out) {
     for (GLsizei i = 0; i < n; ++i)
@@ -433,6 +456,96 @@ NOCTURNE_TEST(a_seed_that_cannot_be_made_is_not) {
 }
 
 // -----------------------------------------------------------------------------
+// Reframing the scene
+// -----------------------------------------------------------------------------
+
+// Without a context or a scene target there is nothing to reframe.
+NOCTURNE_TEST(a_reframe_needs_a_scene_target) {
+    fresh();
+    CHECK_EQ(nocturne_gl_scene_reframe(0, 0, 4, 4, 0, 0, 4, 4), 0);
+    gl_recorder::State &s = up();
+    CHECK_EQ(nocturne_gl_scene_reframe(0, 0, 4, 4, 0, 0, 4, 4), 0);
+    CHECK_EQ(s.count("BlitFramebuffer"), 0);
+}
+
+// The target is copied whole, cleared to black, and the region drawn back
+// over the destination, both counted from the top as the target's rows run
+// from the bottom; the scene target is bound after.
+NOCTURNE_TEST(a_reframe_copies_clears_and_draws_the_region_back) {
+    gl_recorder::State &s = up_with_target(1280, 720);
+    const unsigned fbo = nocturne_gl_scene_fbo();
+    CHECK_EQ(nocturne_gl_scene_reframe(0, 180, 1280, 540, 0, 0, 1280, 720), 1);
+    CHECK_EQ(s.count("GenFramebuffers"), 1);
+    CHECK_EQ(s.count("Clear"), 1);
+    CHECK_EQ((int)s_blits.size(), 2);
+    const Blit &copy = s_blits[0];
+    CHECK_EQ(copy.src[2], 1280);
+    CHECK_EQ(copy.src[3], 720);
+    CHECK_EQ(copy.dst[3], 720);
+    CHECK_EQ(copy.filter, (GLenum)GL_NEAREST);
+    const Blit &back = s_blits[1];
+    CHECK_EQ(back.src[1], 0);
+    CHECK_EQ(back.src[3], 540);
+    CHECK_EQ(back.dst[1], 0);
+    CHECK_EQ(back.dst[3], 720);
+    CHECK_EQ(back.filter, (GLenum)GL_LINEAR);
+    CHECK_EQ(s.calls.back().name, std::string("BindFramebuffer"));
+    CHECK_EQ(s.calls.back().a, fbo);
+    CHECK_EQ(s.scissor, 0);
+
+    // A column to the side.
+    s_blits.clear();
+    CHECK_EQ(nocturne_gl_scene_reframe(0, 0, 1280, 720, 160, 0, 960, 720), 1);
+    CHECK_EQ(s_blits[1].dst[0], 160);
+    CHECK_EQ(s_blits[1].dst[2], 1120);
+    CHECK_EQ(s.count("GenFramebuffers"), 1); // the copy is kept
+}
+
+// A scissor left on is off for the blits, which it would clip, and on again
+// after.
+NOCTURNE_TEST(a_reframe_puts_the_scissor_back) {
+    gl_recorder::State &s = up_with_target(1280, 720);
+    gl.Enable(GL_SCISSOR_TEST);
+    s.calls.clear();
+    CHECK_EQ(nocturne_gl_scene_reframe(0, 0, 1280, 720, 0, 0, 1280, 720), 1);
+    CHECK_EQ(s.calls[(size_t)s.index_of_last("Disable")].a, (unsigned)GL_SCISSOR_TEST);
+    CHECK(s.index_of_last("Disable") < s.index_of_last("Clear"));
+    CHECK_EQ(s.calls.back().name, std::string("Enable"));
+    CHECK_EQ(s.scissor, 1);
+}
+
+// The copy follows the scene target's size.
+NOCTURNE_TEST(a_reframe_copy_follows_the_target) {
+    gl_recorder::State &s = up_with_target(1280, 720);
+    nocturne_gl_scene_reframe(0, 0, 1280, 720, 0, 0, 1280, 720);
+    nocturne_gl_scene_target_bind(1600, 900);
+    s.calls.clear();
+    CHECK_EQ(nocturne_gl_scene_reframe(0, 0, 1600, 900, 0, 0, 1600, 900), 1);
+    CHECK_EQ(s.count("DeleteFramebuffers"), 1);
+    CHECK_EQ(s.count("GenFramebuffers"), 1);
+    CHECK_EQ(s_blits.back().dst[3], 900);
+
+    // The height alone.
+    nocturne_gl_scene_target_bind(1600, 1000);
+    s.calls.clear();
+    CHECK_EQ(nocturne_gl_scene_reframe(0, 0, 1600, 1000, 0, 0, 1600, 1000), 1);
+    CHECK_EQ(s.count("GenFramebuffers"), 1);
+}
+
+// A copy the driver will not complete is let go, nothing is drawn, and the
+// scene target is bound as it was.
+NOCTURNE_TEST(a_reframe_without_a_copy_changes_nothing) {
+    gl_recorder::State &s = up_with_target(1280, 720);
+    const unsigned fbo = nocturne_gl_scene_fbo();
+    gl.CheckFramebufferStatus = incomplete;
+    CHECK_EQ(nocturne_gl_scene_reframe(0, 0, 1280, 720, 0, 0, 1280, 720), 0);
+    CHECK_EQ((int)s_blits.size(), 0);
+    CHECK_EQ(s.count("Clear"), 0);
+    CHECK_EQ(s.count("DeleteFramebuffers"), 1);
+    CHECK_EQ(s.calls.back().a, fbo);
+}
+
+// -----------------------------------------------------------------------------
 // Reading back, and the mouse
 // -----------------------------------------------------------------------------
 
@@ -589,6 +702,86 @@ NOCTURNE_TEST(without_its_upscaler_a_frame_takes_the_standard_path) {
     CHECK_EQ(s.count("DrawArrays"), 1);
     CHECK_EQ(last_min_filter(s), (unsigned)GL_NEAREST);
     CHECK_EQ(nocturne_upscaler_cycle(1), NOCTURNE_UPSCALER_STANDARD);
+}
+
+// -----------------------------------------------------------------------------
+// Anti-aliasing the scene
+// -----------------------------------------------------------------------------
+//
+// Last, as the upscaler is, since the choice is read once and kept.
+
+// Off, as the ini names nothing, the scene is left as it is; FXAA with no
+// context or no scene target leaves nothing to work on.
+NOCTURNE_TEST(a_scene_is_antialiased_only_when_asked_and_there_is_one) {
+    fresh();
+    CHECK_EQ(nocturne_gl_scene_antialias(), 0);
+    gl_recorder::State &s = up_with_target(1280, 720);
+    CHECK_EQ(nocturne_gl_scene_antialias(), 0);
+    CHECK_EQ((int)s_blits.size(), 0);
+    CHECK_EQ(s.count("DrawArrays"), 0);
+
+    CHECK_EQ(nocturne_antialias_cycle(1), NOCTURNE_ANTIALIAS_FXAA);
+    up();
+    CHECK_EQ(nocturne_gl_scene_antialias(), 0);
+    CHECK_EQ(s.count("DrawArrays"), 0);
+}
+
+// Under FXAA the scene is copied whole and drawn back over its target through
+// the pass, bottom-up and bilinear at the target's size, with nothing the
+// renderer had on in the way; what it had is put back after, the target bound.
+NOCTURNE_TEST(fxaa_copies_the_scene_and_draws_it_back_through_its_pass) {
+    gl_recorder::State &s = up_with_target(1280, 720);
+    const unsigned fbo = nocturne_gl_scene_fbo();
+    gl.Enable(GL_SCISSOR_TEST);
+    gl.Enable(GL_DEPTH_TEST);
+    gl.Enable(GL_BLEND);
+    gl.Enable(GL_CULL_FACE);
+    gl.DepthMask(GL_FALSE);
+    gl.Viewport(10, 20, 30, 40);
+    s.calls.clear();
+    CHECK_EQ(nocturne_gl_scene_antialias(), 1);
+    CHECK_EQ(s.calls[(size_t)s.index_of_last("DepthMask")].a, (unsigned)GL_FALSE);
+    CHECK_EQ((int)s_blits.size(), 1);
+    CHECK_EQ(s_blits[0].src[2], 1280);
+    CHECK_EQ(s_blits[0].dst[3], 720);
+    CHECK_EQ(s_blits[0].filter, (GLenum)GL_NEAREST);
+    CHECK_EQ(s.count("DrawArrays"), 1);
+    const gl_recorder::Call &draw = s.calls[(size_t)s.index_of_last("DrawArrays")];
+    CHECK_EQ(draw.b, 4u); // bottom-up
+    CHECK_EQ(draw.depth_test, 0);
+    CHECK_EQ(draw.blend, 0);
+    CHECK_EQ(last_min_filter(s), (unsigned)GL_LINEAR);
+    CHECK_EQ(s.calls[(size_t)s.index_of_last("Uniform2f")].b, 1280u);
+    CHECK_EQ(s.calls[(size_t)s.index_of_last("Uniform2f")].c, 720u);
+    const Viewport pass = quad_viewport(s);
+    CHECK_EQ(pass.w, 1280u);
+    CHECK_EQ(pass.h, 720u);
+    const Viewport after = last_viewport(s);
+    CHECK_EQ(after.w, 30u);
+    CHECK_EQ(after.x, 10u);
+    CHECK_EQ(s.scissor, 1);
+    CHECK_EQ(s.depth_test, 1);
+    CHECK_EQ(s.blend, 1);
+    CHECK_EQ(s.cull, 1);
+    CHECK_EQ(s.calls[(size_t)s.index_of_last("BindFramebuffer")].a, fbo);
+}
+
+// A copy the driver will not complete, or a pass that cannot be built, leaves
+// the scene as it was, the target bound.
+NOCTURNE_TEST(fxaa_without_a_copy_or_its_pass_changes_nothing) {
+    gl_recorder::State &s = up_with_target(1280, 720);
+    const unsigned fbo = nocturne_gl_scene_fbo();
+    gl.CheckFramebufferStatus = incomplete;
+    CHECK_EQ(nocturne_gl_scene_antialias(), 0);
+    CHECK_EQ((int)s_blits.size(), 0);
+    CHECK_EQ(s.count("DrawArrays"), 0);
+    CHECK_EQ(s.calls[(size_t)s.index_of_last("BindFramebuffer")].a, fbo);
+
+    gl_recorder::State &t = up_with_target(1280, 720);
+    gl.Uniform2f = nullptr;
+    CHECK_EQ(nocturne_gl_scene_antialias(), 0);
+    CHECK_EQ(t.count("DrawArrays"), 0);
+    CHECK_EQ(t.calls[(size_t)t.index_of_last("BindFramebuffer")].a, nocturne_gl_scene_fbo());
 }
 
 NOCTURNE_TEST_MAIN()

@@ -526,15 +526,18 @@ struct MasterDepth {
 
 MasterDepth g_master_depth[kMasterDepthSlots];
 
-MasterDepth *ensure_master_depth(int slot, int width, int height) {
-    if (slot < 0 || slot >= kMasterDepthSlots)
-        return nullptr;
+// The scene's depth set aside across the HUD's overlay pass: not one of the
+// engine's slots, so nothing the engine saves or restores can reach it.
+MasterDepth g_held_depth;
+
+// `m` made, or remade, at width x height; `slot` names it in the log, -1 for
+// the held copy.
+MasterDepth *ensure_depth_copy(MasterDepth &m, int slot, int width, int height) {
     if (gl.GenFramebuffers == nullptr || gl.BindFramebuffer == nullptr ||
         gl.GenRenderbuffers == nullptr || gl.RenderbufferStorage == nullptr ||
         gl.FramebufferRenderbuffer == nullptr || gl.BlitFramebuffer == nullptr) {
         return nullptr;
     }
-    MasterDepth &m = g_master_depth[slot];
     if (m.fbo != 0 && m.width == width && m.height == height)
         return &m;
 
@@ -560,7 +563,7 @@ MasterDepth *ensure_master_depth(int slot, int width, int height) {
                               : (GLenum)GL_FRAMEBUFFER_COMPLETE;
     gl.BindFramebuffer(GL_FRAMEBUFFER, (GLuint)nocturne_gl_scene_fbo());
     if (status != GL_FRAMEBUFFER_COMPLETE) {
-        DLOG("render", "trigl_gl: master depth slot %d incomplete at %dx%d", slot, width, height);
+        DLOG("render", "trigl_gl: depth copy %d incomplete at %dx%d", slot, width, height);
         gl.DeleteFramebuffers(1, &m.fbo);
         gl.DeleteRenderbuffers(1, &m.depth);
         m.fbo = m.depth = 0;
@@ -569,6 +572,21 @@ MasterDepth *ensure_master_depth(int slot, int width, int height) {
     m.width = width;
     m.height = height;
     return &m;
+}
+
+MasterDepth *ensure_master_depth(int slot, int width, int height) {
+    if (slot < 0 || slot >= kMasterDepthSlots)
+        return nullptr;
+    return ensure_depth_copy(g_master_depth[slot], slot, width, height);
+}
+
+void release_depth_copy(MasterDepth &m) {
+    if (m.fbo != 0 && gl.DeleteFramebuffers != nullptr)
+        gl.DeleteFramebuffers(1, &m.fbo);
+    if (m.depth != 0 && gl.DeleteRenderbuffers != nullptr)
+        gl.DeleteRenderbuffers(1, &m.depth);
+    m.fbo = m.depth = 0;
+    m.width = m.height = 0;
 }
 
 } // namespace
@@ -1049,15 +1067,38 @@ int nocturne_trigl_gl_restore_depth(int slot, int left, int top, int right, int 
 }
 
 void nocturne_trigl_gl_release_depth(void) {
-    for (int i = 0; i < kMasterDepthSlots; ++i) {
-        MasterDepth &m = g_master_depth[i];
-        if (m.fbo != 0 && gl.DeleteFramebuffers != nullptr)
-            gl.DeleteFramebuffers(1, &m.fbo);
-        if (m.depth != 0 && gl.DeleteRenderbuffers != nullptr)
-            gl.DeleteRenderbuffers(1, &m.depth);
-        m.fbo = m.depth = 0;
-        m.width = m.height = 0;
-    }
+    for (int i = 0; i < kMasterDepthSlots; ++i)
+        release_depth_copy(g_master_depth[i]);
+    release_depth_copy(g_held_depth);
+}
+
+int nocturne_trigl_gl_hold_depth(int width, int height) {
+    if (!g_ready)
+        return 0;
+    const GLuint scene = (GLuint)nocturne_gl_scene_fbo();
+    if (scene == 0)
+        return 0;
+    MasterDepth *m = ensure_depth_copy(g_held_depth, -1, width, height);
+    if (m == nullptr)
+        return 0;
+    gl.BindFramebuffer(GL_READ_FRAMEBUFFER, scene);
+    gl.BindFramebuffer(GL_DRAW_FRAMEBUFFER, m->fbo);
+    gl.BlitFramebuffer(0, 0, width, height, 0, 0, width, height, GL_DEPTH_BUFFER_BIT, GL_NEAREST);
+    gl.BindFramebuffer(GL_FRAMEBUFFER, scene);
+    return 1;
+}
+
+int nocturne_trigl_gl_return_depth(int width, int height) {
+    if (!g_ready)
+        return 0;
+    const GLuint scene = (GLuint)nocturne_gl_scene_fbo();
+    if (scene == 0 || g_held_depth.fbo == 0)
+        return 0;
+    gl.BindFramebuffer(GL_READ_FRAMEBUFFER, g_held_depth.fbo);
+    gl.BindFramebuffer(GL_DRAW_FRAMEBUFFER, scene);
+    gl.BlitFramebuffer(0, 0, width, height, 0, 0, width, height, GL_DEPTH_BUFFER_BIT, GL_NEAREST);
+    gl.BindFramebuffer(GL_FRAMEBUFFER, scene);
+    return 1;
 }
 
 void nocturne_trigl_gl_draw_batch(const NocturneTriglBatch *batch) {
@@ -1187,6 +1228,12 @@ int nocturne_trigl_gl_restore_depth(int, int, int, int, int, int, int) {
     return 0;
 }
 void nocturne_trigl_gl_release_depth(void) {}
+int nocturne_trigl_gl_hold_depth(int, int) {
+    return 0;
+}
+int nocturne_trigl_gl_return_depth(int, int) {
+    return 0;
+}
 void nocturne_trigl_gl_draw_batch(const NocturneTriglBatch *) {}
 
 #endif // NOCTURNE_GL_PRESENT

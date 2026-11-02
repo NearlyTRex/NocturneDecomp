@@ -4,6 +4,7 @@
 
 // Type dependencies
 #include "system/basetypes.h"
+#include "defines.h"
 #include "types/classes/CEdScrollBar.h"
 
 // =============================================================================
@@ -26,8 +27,8 @@ extern int g_VDCameraSortIndices[250];
 // uchar
 extern uchar g_ThumbnailScrollBarInitFlag;
 
-// uint*[1200]
-extern uint* g_ZBufferScanlineArrayBackup[1200];
+// uint*[GAME_SCREEN_MAX_HEIGHT]
+extern uint* g_ZBufferScanlineArrayBackup[GAME_SCREEN_MAX_HEIGHT];
 
 // uint[1000]
 extern uint g_S3DTextureGroundTypes[1000];

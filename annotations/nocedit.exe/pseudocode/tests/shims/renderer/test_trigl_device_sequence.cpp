@@ -321,6 +321,125 @@ NOCTURNE_TEST(a_tall_mode_lends_the_hold_buffer_its_first_480_rows) {
     CHECK_EQ(nocturne_trigl_device_unlock_hold_buffer(), 1);
 }
 
+// A camera's scene — the hold buffer put on the target — is reframed at the
+// lock, before the read-back the 2D is drawn over, and the state record is
+// dropped since the blits rebind what they like. Only that frame: geometry on a
+// screen with no scene, the next frame's, is read back as drawn.
+NOCTURNE_TEST(a_scene_is_reframed_at_its_lock_and_only_then) {
+    gl_recorder::State &s = start();
+    Opened device(64, 600, 16);
+    presenter.widescreen = 1;
+    const int rect[8] = {0, 75, 64, 450, 0, 0, 64, 600};
+    for (int i = 0; i < 8; ++i)
+        presenter.widescreen_rect[i] = rect[i];
+    nocturne_trigl_device_lock_hold_buffer();
+    nocturne_trigl_device_unlock_hold_buffer();
+    const unsigned epoch = nocturne_trigl_gl_state_epoch();
+    s.calls.clear();
+    CHECK_EQ(nocturne_trigl_device_lock_frame(), 1);
+    CHECK_EQ(presenter.reframes, 1);
+    for (int i = 0; i < 8; ++i)
+        CHECK_EQ_AT(presenter.reframe_rect[i], rect[i], std::to_string(i));
+    CHECK(s.index_of_last("Disable") < s.index_of_last("ReadPixels"));
+    CHECK(nocturne_trigl_gl_state_epoch() != epoch);
+
+    nocturne_trigl_device_unlock_frame();
+    nocturne_trigl_device_begin_scene();
+    queue_triangle();
+    CHECK_EQ(nocturne_trigl_device_lock_frame(), 1);
+    CHECK_EQ(presenter.reframes, 1);
+    CHECK_EQ(s.count("ReadPixels"), 2);
+}
+
+// The HUD's overlay pass needs a device with a mode. Begun, it lands what is
+// queued, reframes a composited scene there and then — so the lock does not
+// again — and sets the scene's depth aside behind a cleared buffer; ended, it
+// lands the overlay and puts the depth back. Its placement is asked for only
+// while it is open, and ending one that is not open does nothing.
+NOCTURNE_TEST(an_overlay_pass_is_drawn_over_the_reframed_scene) {
+    gl_recorder::State &s = start();
+    float scale = 0.0f, scale_y = 0.0f, x = 0.0f, y = 0.0f;
+    CHECK_EQ(nocturne_trigl_device_begin_overlay(1.5f, 1.5f, 320.0f, 0.0f), 0);
+    CHECK_EQ(nocturne_trigl_device_open(), 1);
+    CHECK_EQ(nocturne_trigl_device_begin_overlay(1.5f, 1.5f, 320.0f, 0.0f), 0); // no mode yet
+    nocturne_trigl_device_close();
+    Opened device(64, 600, 16);
+    s.scene_fbo = 7;
+    presenter.widescreen = 1;
+    nocturne_trigl_device_lock_hold_buffer();
+    nocturne_trigl_device_unlock_hold_buffer();
+    nocturne_trigl_device_begin_scene();
+    queue_triangle();
+    s.calls.clear();
+    CHECK_EQ(nocturne_trigl_device_overlay(&scale, &scale_y, &x, &y), 0);
+    CHECK_EQ(nocturne_trigl_device_begin_overlay(1.5f, 1.25f, 320.0f, -4.0f), 1);
+    CHECK_EQ(presenter.reframes, 1);
+    CHECK(s.index_of_last("DrawElements") >= 0);
+    CHECK(s.index_of_last("DrawElements") < s.index_of_last("BlitFramebuffer"));
+    CHECK(s.index_of_last("BlitFramebuffer") < s.index_of_last("Clear"));
+    CHECK_EQ(nocturne_trigl_device_overlay(&scale, &scale_y, &x, &y), 1);
+    CHECK_EQ(scale, 1.5f);
+    CHECK_EQ(scale_y, 1.25f);
+    CHECK_EQ(x, 320.0f);
+    CHECK_EQ(y, -4.0f);
+
+    queue_triangle();
+    const int blits = s.count("BlitFramebuffer");
+    nocturne_trigl_device_end_overlay();
+    CHECK_EQ(s.count("DrawElements"), 2);
+    CHECK_EQ(s.count("BlitFramebuffer"), blits + 1);
+    CHECK_EQ(nocturne_trigl_device_overlay(&scale, &scale_y, &x, &y), 0);
+    nocturne_trigl_device_end_overlay();
+    CHECK_EQ(s.count("BlitFramebuffer"), blits + 1);
+
+    CHECK_EQ(nocturne_trigl_device_lock_frame(), 1);
+    CHECK_EQ(presenter.reframes, 1);
+}
+
+// A camera's scene is anti-aliased at its lock, before it is reframed, and the
+// state record is dropped after a pass that drew; not again for geometry on a
+// screen with no scene. A pass that did not draw keeps the record.
+NOCTURNE_TEST(a_scene_is_antialiased_before_it_is_reframed) {
+    gl_recorder::State &s = start();
+    Opened device(64, 600, 16);
+    presenter.antialias = 1;
+    presenter.widescreen = 1;
+    nocturne_trigl_device_lock_hold_buffer();
+    nocturne_trigl_device_unlock_hold_buffer();
+    CHECK_EQ(nocturne_trigl_device_lock_frame(), 1);
+    CHECK_EQ(presenter.antialiased, 1);
+    CHECK_EQ(presenter.reframes_before_antialias, 0);
+    CHECK_EQ(presenter.reframes, 1);
+
+    nocturne_trigl_device_unlock_frame();
+    nocturne_trigl_device_begin_scene();
+    queue_triangle();
+    CHECK_EQ(nocturne_trigl_device_lock_frame(), 1);
+    CHECK_EQ(presenter.antialiased, 1);
+    CHECK_EQ(s.count("ReadPixels"), 2);
+
+    nocturne_trigl_device_unlock_frame();
+    presenter.antialias = 0;
+    presenter.widescreen = 0;
+    nocturne_trigl_device_lock_hold_buffer();
+    nocturne_trigl_device_unlock_hold_buffer();
+    const unsigned epoch = nocturne_trigl_gl_state_epoch();
+    CHECK_EQ(nocturne_trigl_device_lock_frame(), 1);
+    CHECK_EQ(presenter.antialiased, 2);
+    CHECK_EQ(nocturne_trigl_gl_state_epoch(), epoch);
+}
+
+// A scene the setting leaves as drawn is read back as drawn.
+NOCTURNE_TEST(a_scene_not_reframed_is_read_back_as_drawn) {
+    gl_recorder::State &s = start();
+    Opened device(64, 600, 16);
+    nocturne_trigl_device_lock_hold_buffer();
+    nocturne_trigl_device_unlock_hold_buffer();
+    CHECK_EQ(nocturne_trigl_device_lock_frame(), 1);
+    CHECK_EQ(presenter.reframes, 0);
+    CHECK_EQ(s.count("ReadPixels"), 1);
+}
+
 NOCTURNE_TEST(a_hold_buffer_without_the_engines_rows_cannot_be_locked) {
     start();
     CHECK_EQ(nocturne_trigl_device_open(), 1);

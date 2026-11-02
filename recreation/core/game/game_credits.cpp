@@ -29,6 +29,8 @@ constexpr int kImageWidth = 640;
 constexpr int kImageHeight = 480;
 constexpr int kFullAlpha = 0xffff;
 // The credits roll up the right of the image, between black strips over its top and bottom.
+// deferred: the column and its strips running on to a wider screen's right edge, the image kept
+// at the left, with the front end's width
 constexpr int kColumnLeft = 414;
 constexpr int kColumnRight = kImageWidth - 1;
 constexpr int kTopStripBottom = 30;

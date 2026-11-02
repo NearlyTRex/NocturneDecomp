@@ -62,8 +62,8 @@ void nocturne_trigl_convert_vertex(const NocturneTriglVertexContext *ctx,
                                    NocturneTriglScreenVertex *out) {
     const unsigned flags = ctx->render_flags;
 
-    out->x = (float)in->screen_x * kScreenScale * ctx->screen_scale_x;
-    out->y = (float)in->screen_y * kScreenScale * ctx->screen_scale_y;
+    out->x = (float)in->screen_x * kScreenScale * ctx->screen_scale_x + ctx->screen_offset_x;
+    out->y = (float)in->screen_y * kScreenScale * ctx->screen_scale_y + ctx->screen_offset_y;
 
     const float eye_z = (float)in->transformed_z;
     out->rhw = ctx->rhw_scale / eye_z;

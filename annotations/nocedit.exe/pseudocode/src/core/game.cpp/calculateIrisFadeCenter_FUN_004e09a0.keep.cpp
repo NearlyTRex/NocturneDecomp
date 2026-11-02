@@ -46,8 +46,14 @@ void __cdecl core_game_cpp_calculateIrisFadeCenter_FUN_004e09a0(void)
       g_IrisFadeCenterX = iStack_30 / 0x10000;
       g_IrisFadeCenterY = aiStack_2c[0] / 0x10000;
       if (0x1e0 < g_WindowHeight) {
+#if NOCTURNE_AUTHENTIC_MENU
         g_IrisFadeCenterX = (g_IrisFadeCenterX * g_WindowWidth) / 0x280;
         g_IrisFadeCenterY = (g_IrisFadeCenterY * g_WindowHeight) / 0x1e0;
+#else
+        nocturne_widescreen_scene_to_screen
+                  (g_WindowWidth,g_WindowHeight,g_IrisFadeCenterX,g_IrisFadeCenterY,
+                   &g_IrisFadeCenterX,&g_IrisFadeCenterY);
+#endif
         return;
       }
     }
