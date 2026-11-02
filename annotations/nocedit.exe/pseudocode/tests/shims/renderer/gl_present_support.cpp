@@ -91,6 +91,15 @@ int nocturne_gl_scene_reframe(int src_x, int src_y, int src_w, int src_h, int ds
     return 1;
 }
 
+int nocturne_gl_scene_antialias(void) {
+    ++presenter.antialiased;
+    presenter.reframes_before_antialias = presenter.reframes;
+    // The pass draws a quad of its own, as the seed does.
+    if (presenter.antialias)
+        gl.Disable(GL_SCISSOR_TEST);
+    return presenter.antialias;
+}
+
 void nocturne_gl_scene_upload(const void *pixels, int width, int height, int, int) {
     ++presenter.uploads;
     presenter.upload_pixels = pixels;

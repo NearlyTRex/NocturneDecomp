@@ -2397,8 +2397,11 @@
 //          width, and the moon and its bats across it too - drawn there by the
 //          software rasteriser, or by the renderer projected wider into a 640
 //          viewport an overlay pass stretches across the screen. The 640x480
-//          pictures it shows - loading, stats, credits, promo - are centred
-//          with what they place over them.
+//          pictures it shows - loading, stats, promo, monitor calibration -
+//          are centred with what they place over them, as are the gamepad
+//          calibration prompts; the credits picture keeps to the left, and its
+//          text column, over the picture's black right side, runs on to the
+//          screen's right edge.
 //        - Main menu (game/main_menu). PLAY opens Start, Load and, with
 //          autosave, Continue; MULTIPLAYER is listed with netplay; attract
 //          movies play at the end of the menu music. Where the platform ends
@@ -2415,7 +2418,9 @@
 //          that enlarges the picture - Standard, FSR, Lanczos, GSR, NIS or xBR
 //          - and Sharpness tunes the three that sharpen (shims/gl/upscaler.h,
 //          shims/gl/upscale_shaders.h; their licences are in
-//          THIRD_PARTY_NOTICES.txt).
+//          THIRD_PARTY_NOTICES.txt). With acceleration, Anti-aliasing picks
+//          Off or FXAA, one pass over the renderer's scene before the 2D is
+//          drawn over it (shims/gl/antialias.h, shims/gl/antialias_shaders.h).
 //        - Gameplay, first on Options. Always run, aiming, auto health,
 //          subtitles and the rating, with Text font picking bitmap or system
 //          text from the next launch (shims/core/os_font.h) and Menu text the

@@ -50,6 +50,7 @@ struct Stand {
     bool continue_found = true;  // nocturne_save_continue_target
     int muted = 0;               // isSoundMuted
     int upscaler = NOCTURNE_UPSCALER_STANDARD;
+    int antialias = NOCTURNE_ANTIALIAS_OFF;
     const char *gl_version = "";
 
     // What the renderer does when it is loaded: g_UseDirect3D after.

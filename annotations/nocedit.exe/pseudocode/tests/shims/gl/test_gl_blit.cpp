@@ -8,6 +8,7 @@
 // draws after it find their program and vertex array where they left them; and
 // that a context which cannot build it says so, once, rather than half drawing.
 
+#include "gl/antialias.h"
 #include "gl/gl_blit.h"
 #include "gl/upscaler.h"
 #include "nocturne_test.h"
@@ -272,6 +273,45 @@ NOCTURNE_TEST(shutting_down_lets_the_upscalers_go_too) {
     CHECK_EQ(s.count("DeleteProgram"), 3);
     CHECK_EQ(nocturne_gl_blit_quad_upscaled(NOCTURNE_UPSCALER_FSR, 1, 0, 640, 480, 0.5f), 1);
     CHECK_EQ(s.count("CreateProgram"), 5);
+}
+
+// FXAA draws through a program of its own, kept apart from the upscalers',
+// told the source size; the pipeline before is put back.
+NOCTURNE_TEST(fxaa_draws_through_its_own_program) {
+    gl_recorder::State &s = start();
+    gl.UseProgram(42);
+    gl.BindVertexArray(7);
+    CHECK_EQ(nocturne_gl_blit_quad_antialiased(NOCTURNE_ANTIALIAS_FXAA, 5, 1, 1280, 720), 1);
+    CHECK_EQ(s.count("CreateProgram"), 2);
+    CHECK_EQ(last(s, "DrawArrays").a, 5u);
+    CHECK_EQ(drawn_first(s), 4u);
+    CHECK_EQ(last(s, "Uniform2f").b, 1280u);
+    CHECK_EQ(last(s, "Uniform2f").c, 720u);
+    CHECK_EQ(s.bound_program, 42u);
+    CHECK_EQ(s.bound_vao, 7u);
+
+    // The first upscaler is a program of its own beside it.
+    CHECK_EQ(nocturne_gl_blit_quad_upscaled(NOCTURNE_UPSCALER_FSR, 1, 0, 640, 480, 0.5f), 1);
+    CHECK_EQ(nocturne_gl_blit_quad_antialiased(NOCTURNE_ANTIALIAS_FXAA, 5, 1, 1280, 720), 1);
+    CHECK_EQ(s.count("CreateProgram"), 3);
+}
+
+// Off has no program, and nor has a mode that does not exist.
+NOCTURNE_TEST(off_and_unknown_modes_are_no_antialiasing) {
+    gl_recorder::State &s = start();
+    const int modes[] = {NOCTURNE_ANTIALIAS_OFF, NOCTURNE_ANTIALIAS_COUNT, -1};
+    for (int mode : modes)
+        CHECK_EQ_AT(nocturne_gl_blit_quad_antialiased(mode, 1, 1, 640, 480), 0,
+                    std::to_string(mode));
+    CHECK_EQ(s.count("DrawArrays"), 0);
+}
+
+// FXAA's program goes with the quad too.
+NOCTURNE_TEST(shutting_down_lets_fxaa_go_too) {
+    gl_recorder::State &s = start();
+    CHECK_EQ(nocturne_gl_blit_quad_antialiased(NOCTURNE_ANTIALIAS_FXAA, 1, 1, 640, 480), 1);
+    nocturne_gl_blit_shutdown();
+    CHECK_EQ(s.count("DeleteProgram"), 2);
 }
 
 NOCTURNE_TEST_MAIN()

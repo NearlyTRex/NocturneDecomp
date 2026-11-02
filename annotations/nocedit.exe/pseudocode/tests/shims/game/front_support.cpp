@@ -477,6 +477,21 @@ int nocturne_upscaler_sharpness_get(void) {
     return 50;
 }
 
+const char *nocturne_antialias_name(int mode) {
+    return mode == NOCTURNE_ANTIALIAS_FXAA ? "FXAA" : "Off";
+}
+
+int nocturne_antialias_get(void) {
+    return stand.antialias;
+}
+
+int nocturne_antialias_cycle(int step) {
+    front_support::log("antialiasCycle " + std::to_string(step));
+    stand.antialias = stand.antialias == NOCTURNE_ANTIALIAS_FXAA ? NOCTURNE_ANTIALIAS_OFF
+                                                                 : NOCTURNE_ANTIALIAS_FXAA;
+    return stand.antialias;
+}
+
 const char *nocturne_widescreen_name(int mode) {
     return mode == NOCTURNE_WIDESCREEN_PAN ? "Pan & scan" : "Stretch";
 }

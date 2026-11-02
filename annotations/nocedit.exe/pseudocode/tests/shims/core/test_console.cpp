@@ -179,7 +179,7 @@ NOCTURNE_TEST(a_glyph_is_drawn_whole_or_not_at_all) {
     nocturne_console_draw_char('A', 63, 0, 5, 1);
     nocturne_console_draw_char('A', 0, 60, 5, 1);
     g_ClipBottom = 5000;
-    nocturne_console_draw_char('A', 0, 1195, 5, 1);
+    nocturne_console_draw_char('A', 0, GAME_SCREEN_MAX_HEIGHT - 5, 5, 1);
     for (int y = 0; y < 64; y++) {
         for (int x = 0; x < 64; x++)
             CHECK_EQ(ui_support::pixel32(x, y), 0u);

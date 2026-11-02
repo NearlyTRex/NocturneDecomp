@@ -32,6 +32,13 @@ struct Presenter {
     int reframes = 0;
     int reframe_rect[8] = {0, 0, 0, 0, 0, 0, 0, 0};
 
+    // What nocturne_gl_scene_antialias answers — whether the pass ran — how
+    // many times it was asked, and how many reframes there had been when it
+    // last was.
+    int antialias = 0;
+    int antialiased = 0;
+    int reframes_before_antialias = -1;
+
     void reset() {
         *this = Presenter();
     }

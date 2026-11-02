@@ -396,6 +396,39 @@ NOCTURNE_TEST(an_overlay_pass_is_drawn_over_the_reframed_scene) {
     CHECK_EQ(presenter.reframes, 1);
 }
 
+// A camera's scene is anti-aliased at its lock, before it is reframed, and the
+// state record is dropped after a pass that drew; not again for geometry on a
+// screen with no scene. A pass that did not draw keeps the record.
+NOCTURNE_TEST(a_scene_is_antialiased_before_it_is_reframed) {
+    gl_recorder::State &s = start();
+    Opened device(64, 600, 16);
+    presenter.antialias = 1;
+    presenter.widescreen = 1;
+    nocturne_trigl_device_lock_hold_buffer();
+    nocturne_trigl_device_unlock_hold_buffer();
+    CHECK_EQ(nocturne_trigl_device_lock_frame(), 1);
+    CHECK_EQ(presenter.antialiased, 1);
+    CHECK_EQ(presenter.reframes_before_antialias, 0);
+    CHECK_EQ(presenter.reframes, 1);
+
+    nocturne_trigl_device_unlock_frame();
+    nocturne_trigl_device_begin_scene();
+    queue_triangle();
+    CHECK_EQ(nocturne_trigl_device_lock_frame(), 1);
+    CHECK_EQ(presenter.antialiased, 1);
+    CHECK_EQ(s.count("ReadPixels"), 2);
+
+    nocturne_trigl_device_unlock_frame();
+    presenter.antialias = 0;
+    presenter.widescreen = 0;
+    nocturne_trigl_device_lock_hold_buffer();
+    nocturne_trigl_device_unlock_hold_buffer();
+    const unsigned epoch = nocturne_trigl_gl_state_epoch();
+    CHECK_EQ(nocturne_trigl_device_lock_frame(), 1);
+    CHECK_EQ(presenter.antialiased, 2);
+    CHECK_EQ(nocturne_trigl_gl_state_epoch(), epoch);
+}
+
 // A scene the setting leaves as drawn is read back as drawn.
 NOCTURNE_TEST(a_scene_not_reframed_is_read_back_as_drawn) {
     gl_recorder::State &s = start();

@@ -100,11 +100,14 @@ void release(std::vector<T> &storage) {
     std::vector<T>().swap(storage);
 }
 
-// The scene composited since the last lock, reframed for a wider screen if the
-// setting asks; once only.
+// The scene composited since the last lock, anti-aliased and reframed for a
+// wider screen as the settings ask; once only. Anti-aliasing comes first, at
+// the scene's own pixels, before a reframe scales them.
 void reframe_scene() {
     const bool scene = g_dev.scene_composited;
     g_dev.scene_composited = false;
+    if (scene && nocturne_gl_scene_antialias())
+        nocturne_trigl_gl_invalidate_state();
     NocturneReframe reframe;
     if (scene && nocturne_widescreen_reframe(g_dev.width, g_dev.height, &reframe)) {
         nocturne_gl_scene_reframe(reframe.src_x, reframe.src_y, reframe.src_w, reframe.src_h,

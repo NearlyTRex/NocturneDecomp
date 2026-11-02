@@ -58,6 +58,14 @@ int nocturne_gl_blit_quad_flipped(unsigned int texture);
 int nocturne_gl_blit_quad_upscaled(int mode, unsigned int texture, int flipped, int src_w,
                                    int src_h, float sharpness);
 
+// The same quad through anti-aliasing `mode` (NOCTURNE_ANTIALIAS_*,
+// gl/antialias.h): that mode's fragment program (gl/antialias_shaders.h)
+// reading the `src_w` x `src_h` texture,
+// which the caller sets to bilinear. Built and kept as the upscalers' are; Off,
+// a mode with no program, or one that cannot be built returns 0.
+int nocturne_gl_blit_quad_antialiased(int mode, unsigned int texture, int flipped, int src_w,
+                                      int src_h);
+
 // Drop the program, buffer and vertex array, e.g. on context teardown.
 void nocturne_gl_blit_shutdown(void);
 

@@ -142,6 +142,7 @@ enum GraphicLine {
     GRAPHIC_BITS,
     GRAPHIC_UPSCALER,
     GRAPHIC_SHARPNESS,
+    GRAPHIC_ANTIALIAS,
     GRAPHIC_CALIBRATION
 };
 
@@ -180,6 +181,10 @@ public:
                   nocturne_upscaler_name(nocturne_upscaler_get()));
         if (nocturne_upscaler_sharpens(nocturne_upscaler_get()))
             lines.add(GRAPHIC_SHARPNESS, "Sharpness : %d%%", nocturne_upscaler_sharpness_get());
+        // The pass runs over the renderer's scene, which software has none of.
+        if (g_UseDirect3D != 0)
+            lines.add(GRAPHIC_ANTIALIAS, "Anti-aliasing : %s",
+                      nocturne_antialias_name(nocturne_antialias_get()));
         lines.add_localized(GRAPHIC_CALIBRATION, "Monitor calibration");
     }
 
@@ -241,6 +246,9 @@ public:
             break;
         case GRAPHIC_SHARPNESS:
             nocturne_upscaler_sharpness_cycle(step);
+            break;
+        case GRAPHIC_ANTIALIAS:
+            nocturne_antialias_cycle(step);
             break;
         default: // GRAPHIC_CALIBRATION
             core_menu_cpp_showCalibrationTest_FUN_00510ba0();

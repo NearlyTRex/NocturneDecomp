@@ -8,9 +8,11 @@ nocturne_test_suite(shims_gl
         shims/gl/gl_program.cpp
         shims/gl/gl_blit.cpp
         shims/gl/upscale_shaders.cpp
+        shims/gl/antialias_shaders.cpp
         shims/gl/resolution.cpp
         shims/gl/window_mode.cpp
         shims/gl/upscaler.cpp
+        shims/gl/antialias.cpp
         shims/gl/widescreen.cpp
         shims/core/ini_setting.cpp
         shims/watcom/path.cpp
@@ -62,7 +64,9 @@ nocturne_test_suite(shims_gl_present
         shims/gl/gl_blit.cpp
         shims/gl/gl_program.cpp
         shims/gl/upscale_shaders.cpp
+        shims/gl/antialias_shaders.cpp
         shims/gl/upscaler.cpp
+        shims/gl/antialias.cpp
         shims/core/ini_setting.cpp
         shims/watcom/path.cpp
         shims/core/file_search.cpp

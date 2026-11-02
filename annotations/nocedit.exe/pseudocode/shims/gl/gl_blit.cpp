@@ -12,6 +12,8 @@
 #include "gl/gl_api.h"
 #include "gl/gl_blit.h"
 #include "gl/gl_program.h"
+#include "gl/antialias.h"
+#include "gl/antialias_shaders.h"
 #include "gl/upscale_shaders.h"
 #include "gl/upscaler.h"
 
@@ -70,9 +72,10 @@ const GLfloat kQuad[32] = {
 const int kQuadTopDown = 0;
 const int kQuadBottomUp = 4;
 
-// One upscaler's program, built from gl/upscale_shaders.h on its first use
-// over the plain quad's vertex shader, so it reads the same vertex array.
-struct UpscaleProgram {
+// One filter's program — an upscaler from gl/upscale_shaders.h, or an
+// anti-aliasing pass from gl/antialias.h — built on its first use over the plain
+// quad's vertex shader, so it reads the same vertex array.
+struct FilterProgram {
     bool tried; // as g_tried, for this filter
     GLuint program;
     GLint loc_tex;
@@ -80,7 +83,22 @@ struct UpscaleProgram {
     GLint loc_sharp; // -1 where the filter does not read it, which GL ignores
 };
 
-UpscaleProgram g_upscale[NOCTURNE_UPSCALER_COUNT];
+// A kind of filter: its programs by mode, where their sources come from, and
+// its name in the log.
+struct FilterTable {
+    FilterProgram *programs;
+    int count;
+    const char *(*source)(int mode);
+    const char *label;
+};
+
+FilterProgram g_upscale[NOCTURNE_UPSCALER_COUNT];
+FilterProgram g_antialias[NOCTURNE_ANTIALIAS_COUNT];
+
+const FilterTable kUpscalers = {g_upscale, NOCTURNE_UPSCALER_COUNT,
+                                nocturne_upscale_fragment_source, "upscaler"};
+const FilterTable kAntialias = {g_antialias, NOCTURNE_ANTIALIAS_COUNT,
+                                nocturne_antialias_fragment_source, "anti-aliasing"};
 
 bool have_entry_points() {
     return gl.CreateShader != nullptr && gl.ShaderSource != nullptr &&
@@ -199,24 +217,24 @@ int blit_quad(unsigned int texture, int first) {
     return 1;
 }
 
-// An upscaler's program reads the plain quad's vertex array, which recorded
-// a_uv at the plain program's location. Only the position is pinned, so the
-// linker could put a_uv elsewhere here; drawing then would read the wrong
-// attribute, so such a program is refused rather than used.
-bool build_upscale_program(int mode, UpscaleProgram *out) {
-    const char *fragment = nocturne_upscale_fragment_source(mode);
+// A filter's program reads the plain quad's vertex array, which recorded a_uv
+// at the plain program's location. Only the position is pinned, so the linker
+// could put a_uv elsewhere here; drawing then would read the wrong attribute,
+// so such a program is refused rather than used.
+bool build_filter_program(const FilterTable &table, int mode, FilterProgram *out) {
+    const char *fragment = table.source(mode);
     if (fragment == nullptr)
         return false;
     if (gl.Uniform1f == nullptr || gl.Uniform2f == nullptr) {
-        DLOG("render", "gl_blit: no Uniform1f/Uniform2f — upscaler %d unavailable", mode);
+        DLOG("render", "gl_blit: no Uniform1f/Uniform2f — %s %d unavailable", table.label, mode);
         return false;
     }
-    GLuint program = nocturne_gl_build_program(kVertexSource, fragment, "gl_blit_upscale");
+    GLuint program = nocturne_gl_build_program(kVertexSource, fragment, "gl_blit_filter");
     if (program == 0) {
         return false;
     }
     if (gl.GetAttribLocation(program, "a_uv") != g_attr_uv) {
-        DLOG("render", "gl_blit: upscaler %d put a_uv elsewhere — unavailable", mode);
+        DLOG("render", "gl_blit: %s %d put a_uv elsewhere — unavailable", table.label, mode);
         gl.DeleteProgram(program);
         return false;
     }
@@ -224,31 +242,53 @@ bool build_upscale_program(int mode, UpscaleProgram *out) {
     out->loc_src = gl.GetUniformLocation(program, "u_src");
     out->loc_sharp = gl.GetUniformLocation(program, "u_sharp");
     out->program = program;
-    DLOG("render", "gl_blit: upscaler %d linked (id=%u)", mode, (unsigned)program);
+    DLOG("render", "gl_blit: %s %d linked (id=%u)", table.label, mode, (unsigned)program);
     return true;
 }
 
-UpscaleProgram *ensure_upscale(int mode) {
-    if (mode < 0 || mode >= NOCTURNE_UPSCALER_COUNT)
+FilterProgram *ensure_filter(const FilterTable &table, int mode) {
+    if (mode < 0 || mode >= table.count)
         return nullptr;
-    UpscaleProgram *up = &g_upscale[mode];
-    if (up->program != 0)
-        return up;
-    if (up->tried)
+    FilterProgram *filter = &table.programs[mode];
+    if (filter->program != 0)
+        return filter;
+    if (filter->tried)
         return nullptr;
-    up->tried = true;
-    return build_upscale_program(mode, up) ? up : nullptr;
+    filter->tried = true;
+    return build_filter_program(table, mode, filter) ? filter : nullptr;
 }
 
-struct UpscaleUniforms {
-    const UpscaleProgram *program;
+struct FilterUniforms {
+    const FilterProgram *program;
     GLfloat src_w, src_h, sharp;
 };
 
-void set_upscale_uniforms(const void *uniforms) {
-    const UpscaleUniforms *u = (const UpscaleUniforms *)uniforms;
+void set_filter_uniforms(const void *uniforms) {
+    const FilterUniforms *u = (const FilterUniforms *)uniforms;
     gl.Uniform2f(u->program->loc_src, u->src_w, u->src_h);
     gl.Uniform1f(u->program->loc_sharp, u->sharp);
+}
+
+// The plain quad first: its buffer and vertex array are the ones drawn.
+int blit_filtered(const FilterTable &table, int mode, unsigned int texture, int flipped, int src_w,
+                  int src_h, float sharpness) {
+    if (!ensure_quad())
+        return 0;
+    const FilterProgram *filter = ensure_filter(table, mode);
+    if (filter == nullptr)
+        return 0;
+    const FilterUniforms uniforms = {filter, (GLfloat)src_w, (GLfloat)src_h, sharpness};
+    draw_quad(filter->program, filter->loc_tex, texture, flipped ? kQuadBottomUp : kQuadTopDown,
+              set_filter_uniforms, &uniforms);
+    return 1;
+}
+
+void drop_filters(FilterProgram *programs, int count) {
+    for (int mode = 0; mode < count; mode++) {
+        if (programs[mode].program != 0)
+            gl.DeleteProgram(programs[mode].program);
+        programs[mode] = FilterProgram();
+    }
 }
 
 } // namespace
@@ -261,27 +301,20 @@ extern "C" int nocturne_gl_blit_quad_flipped(unsigned int texture) {
     return blit_quad(texture, kQuadBottomUp);
 }
 
-// The plain quad first: its buffer and vertex array are the ones drawn.
 extern "C" int nocturne_gl_blit_quad_upscaled(int mode, unsigned int texture, int flipped,
                                               int src_w, int src_h, float sharpness) {
-    if (!ensure_quad())
-        return 0;
-    const UpscaleProgram *up = ensure_upscale(mode);
-    if (up == nullptr)
-        return 0;
-    const UpscaleUniforms uniforms = {up, (GLfloat)src_w, (GLfloat)src_h, sharpness};
-    draw_quad(up->program, up->loc_tex, texture, flipped ? kQuadBottomUp : kQuadTopDown,
-              set_upscale_uniforms, &uniforms);
-    return 1;
+    return blit_filtered(kUpscalers, mode, texture, flipped, src_w, src_h, sharpness);
+}
+
+extern "C" int nocturne_gl_blit_quad_antialiased(int mode, unsigned int texture, int flipped,
+                                                 int src_w, int src_h) {
+    return blit_filtered(kAntialias, mode, texture, flipped, src_w, src_h, 0.0f);
 }
 
 // Only a built program has anything to delete; a failed build leaves nothing.
 extern "C" void nocturne_gl_blit_shutdown(void) {
-    for (UpscaleProgram &up : g_upscale) {
-        if (up.program != 0)
-            gl.DeleteProgram(up.program);
-        up = UpscaleProgram();
-    }
+    drop_filters(g_upscale, NOCTURNE_UPSCALER_COUNT);
+    drop_filters(g_antialias, NOCTURNE_ANTIALIAS_COUNT);
     if (g_program != 0) {
         gl.DeleteProgram(g_program);
         gl.DeleteBuffers(1, &g_vbo);
@@ -313,6 +346,15 @@ extern "C" int nocturne_gl_blit_quad_upscaled(int mode, unsigned int t, int flip
     (void)w;
     (void)h;
     (void)s;
+    return 0;
+}
+extern "C" int nocturne_gl_blit_quad_antialiased(int mode, unsigned int t, int flipped, int w,
+                                                 int h) {
+    (void)mode;
+    (void)t;
+    (void)flipped;
+    (void)w;
+    (void)h;
     return 0;
 }
 extern "C" void nocturne_gl_blit_shutdown(void) {}

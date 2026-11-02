@@ -15,6 +15,7 @@
 
 #if NOCTURNE_GL_PRESENT
 
+#include "gl/antialias.h"
 #include "gl/gl_api.h"
 #include "gl/gl_blit.h"
 #include "gl/gl_pixels.h"
@@ -412,6 +413,60 @@ extern "C" int nocturne_gl_scene_reframe(int src_x, int src_y, int src_w, int sr
     return copied ? 1 : 0;
 }
 
+extern "C" int nocturne_gl_scene_antialias(void) {
+    const int mode = nocturne_antialias_get();
+    if (!g_gl.active || g_gl.scene_fbo == 0 || mode == NOCTURNE_ANTIALIAS_OFF)
+        return 0;
+    // Mid-frame, as the seed is: anything left changed lands on the renderer's
+    // next draw, so what this changes is read first and put back.
+    GLint prev_depth_test = 0, prev_depth_mask = 0, prev_blend = 0;
+    GLint prev_cull = 0, prev_scissor = 0, prev_texture = 0;
+    GLint prev_viewport[4] = {0, 0, 0, 0};
+    gl.GetIntegerv(GL_DEPTH_TEST, &prev_depth_test);
+    gl.GetIntegerv(GL_DEPTH_WRITEMASK, &prev_depth_mask);
+    gl.GetIntegerv(GL_BLEND, &prev_blend);
+    gl.GetIntegerv(GL_CULL_FACE, &prev_cull);
+    gl.GetIntegerv(GL_SCISSOR_TEST, &prev_scissor);
+    gl.GetIntegerv(GL_TEXTURE_BINDING_2D, &prev_texture);
+    gl.GetIntegerv(GL_VIEWPORT, prev_viewport);
+    gl.Disable(GL_SCISSOR_TEST);
+
+    const int width = g_gl.scene_width;
+    const int height = g_gl.scene_height;
+    int drawn = 0;
+    if (ensure_scratch()) {
+        // The pass reads the scene from the copy and writes it back over the
+        // target, both render targets, so the quad samples bottom-up.
+        gl.BindFramebuffer(GL_READ_FRAMEBUFFER, g_gl.scene_fbo);
+        gl.BindFramebuffer(GL_DRAW_FRAMEBUFFER, g_gl.scratch_fbo);
+        gl.BlitFramebuffer(0, 0, width, height, 0, 0, width, height, GL_COLOR_BUFFER_BIT,
+                           GL_NEAREST);
+        gl.BindFramebuffer(GL_FRAMEBUFFER, g_gl.scene_fbo);
+        gl.Viewport(0, 0, width, height);
+        gl.Disable(GL_DEPTH_TEST);
+        gl.DepthMask(GL_FALSE);
+        gl.Disable(GL_BLEND);
+        gl.Disable(GL_CULL_FACE);
+        set_sampling(g_gl.scratch_color, GL_LINEAR);
+        // A pass that cannot be built is logged once, by gl_blit, and draws
+        // nothing; the copy only read the scene, so it is left as it was.
+        drawn = nocturne_gl_blit_quad_antialiased(mode, g_gl.scratch_color, 1, width, height);
+        if (prev_depth_test)
+            gl.Enable(GL_DEPTH_TEST);
+        if (prev_blend)
+            gl.Enable(GL_BLEND);
+        if (prev_cull)
+            gl.Enable(GL_CULL_FACE);
+        gl.DepthMask(prev_depth_mask ? GL_TRUE : GL_FALSE);
+    }
+    gl.BindFramebuffer(GL_FRAMEBUFFER, g_gl.scene_fbo);
+    gl.BindTexture(GL_TEXTURE_2D, (GLuint)prev_texture);
+    gl.Viewport(prev_viewport[0], prev_viewport[1], prev_viewport[2], prev_viewport[3]);
+    if (prev_scissor)
+        gl.Enable(GL_SCISSOR_TEST);
+    return drawn;
+}
+
 extern "C" unsigned int nocturne_gl_scene_fbo(void) {
     return (g_gl.active) ? (unsigned int)g_gl.scene_fbo : 0u;
 }
@@ -763,6 +818,9 @@ extern "C" int nocturne_gl_ensure_active(void) {
 extern "C" void nocturne_gl_present_scene(void) {}
 extern "C" void nocturne_gl_scene_upload(const void *, int, int, int, int) {}
 extern "C" int nocturne_gl_scene_reframe(int, int, int, int, int, int, int, int) {
+    return 0;
+}
+extern "C" int nocturne_gl_scene_antialias(void) {
     return 0;
 }
 extern "C" void nocturne_gl_set_logical_size(int w, int h) {

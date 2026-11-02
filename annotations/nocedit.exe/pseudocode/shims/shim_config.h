@@ -69,6 +69,11 @@
 // NOCTURNE_AUTHENTIC_MENU=1.
 #include "gl/upscaler.h"
 
+// Anti-aliasing of the scene (nocturne_antialias_*), run by the presenter for
+// the renderer and set from the Graphic Options page. Inert under
+// NOCTURNE_AUTHENTIC_MENU=1.
+#include "gl/antialias.h"
+
 // How a 4:3 scene fills a wider screen (nocturne_widescreen_*), set from the
 // Graphic Options page; the HUD asks it where the picture is, and the iris
 // fade where a scene point lands. Inert under NOCTURNE_AUTHENTIC_MENU=1.

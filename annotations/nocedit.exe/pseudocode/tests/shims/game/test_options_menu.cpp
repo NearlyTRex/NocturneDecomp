@@ -364,6 +364,24 @@ NOCTURNE_TEST(the_other_graphic_lines) {
     CHECK_EQ(stand.count("calibration"), 1);
 }
 
+// Anti-aliasing is listed while the renderer is up, after the upscaler, and
+// steps both ways; software, which it does nothing for, has no such line.
+NOCTURNE_TEST(anti_aliasing_is_a_line_with_acceleration) {
+    stand.reset();
+    accelerate("trigl.dll");
+    graphics({pick(G_NEXT), pick(G_NEXT, true)});
+    CHECK_EQ(stand.count("antialiasCycle 1"), 1);
+    CHECK_EQ(stand.count("antialiasCycle -1"), 1);
+    CHECK_EQ(graphic_line(G_NEXT), std::string("Anti-aliasing : Off"));
+
+    stand.reset();
+    accelerate("trigl.dll");
+    stand.antialias = NOCTURNE_ANTIALIAS_FXAA;
+    graphics({});
+    CHECK_EQ(graphic_line(G_NEXT), std::string("Anti-aliasing : FXAA"));
+    CHECK_EQ(graphic_line(G_NEXT + 1), std::string("Monitor calibration"));
+}
+
 // The cards the shipped screen pinned: early 3dfx parts to tri3dfx.dll at
 // 640x480x16, any other card away from it, and the i740 and the Riva 128s to
 // 640x480x16.
