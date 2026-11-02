@@ -619,7 +619,9 @@
 //      drawn over the finished scene in the camera's space laid onto the
 //      frame's corner, and their text, ammo and counts are placed in the same
 //      boxes. The pickup help moves under the top letterbox; the death banner
-//      moves a quarter of the way down, clear of both; the letterbox is
+//      moves a quarter of the way down, clear of both; the companions' health
+//      bars start right of the battery gauge, which they overlap as shipped,
+//      and stay there with the light off; the letterbox is
 //      measured over the 4:3 picture and holds three subtitle lines with half
 //      a line of room above and below, which also keeps the subtitles off the
 //      screen's bottom edge. Bitmaps and text scale as

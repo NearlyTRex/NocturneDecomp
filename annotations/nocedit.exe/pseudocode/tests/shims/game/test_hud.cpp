@@ -441,9 +441,9 @@ NOCTURNE_TEST(the_chapter_title_sits_bottom_left) {
     }
 }
 
-// The status bars stack up from the frame's bottom-left, a quarter of it wide,
-// coloured by health, each as long as STATUS_BAR_WIDTH lets it be; none under
-// the letterbox.
+// The status bars stack up from the frame's bottom-left, clear of the
+// battery's column, a quarter of the frame wide, coloured by health, each as
+// long as STATUS_BAR_WIDTH lets it be; none under the letterbox.
 NOCTURNE_TEST(the_status_bars_stack_from_the_bottom_left) {
     fresh();
     g_CGamePtr->status_display_count = 3;
@@ -454,9 +454,9 @@ NOCTURNE_TEST(the_status_bars_stack_from_the_bottom_left) {
     stand.status_right_cut = 20;
     nocturne_hud_overlay(g_CGamePtr);
     CHECK(stand.fills[0].bordered);
-    CHECK_EQ(stand.fills[0].x1, 16);
+    CHECK_EQ(stand.fills[0].x1, 40); // the gauge's 0x10 at the HUD scale, and 4 more
     CHECK_EQ(stand.fills[0].y1, 711 - 18);
-    CHECK_EQ(stand.fills[0].x2, 336 - 20);
+    CHECK_EQ(stand.fills[0].x2, 360 - 20);
     CHECK_EQ(stand.fills[0].y2, 711);
     CHECK_EQ(stand.fills[1].color, 2);
     CHECK_EQ(stand.fills[3].color, 0xfb);
@@ -483,6 +483,27 @@ NOCTURNE_TEST(the_status_bars_stack_from_the_bottom_left) {
     g_CGamePtr->letterbox_mode = 1;
     nocturne_hud_overlay(g_CGamePtr);
     CHECK_EQ((int)stand.fills.size(), 0);
+}
+
+// The battery's column is its icon where that is wider than the gauge, and the
+// bars keep clear of it with no light on; a frame wide enough to start them
+// past it already leaves them where they were.
+NOCTURNE_TEST(the_status_bars_keep_clear_of_the_battery) {
+    fresh();
+    g_BatteryIconBitmap.width = 30;
+    g_CGamePtr->status_display_count = 1;
+    g_CGamePtr->status_bar_values[0] = 1.0f;
+    nocturne_hud_overlay(g_CGamePtr);
+    CHECK_EQ(g_CGamePtr->flashlight_active, 0);
+    CHECK_EQ(stand.fills[0].x1, (4 + 30) * 2 + 8);
+
+    fresh();
+    g_BatteryIconBitmap.width = 0;
+    g_WindowWidth = 3840;
+    g_WindowHeight = 2160;
+    g_CGamePtr->status_display_count = 1;
+    nocturne_hud_overlay(g_CGamePtr);
+    CHECK_EQ(stand.fills[0].x1, 3840 / 80);
 }
 
 // --- the letterbox and the subtitles ---------------------------------------------

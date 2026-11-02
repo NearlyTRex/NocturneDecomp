@@ -285,6 +285,13 @@ void item_text(CInventory *inventory, const Screen &s, const Space &space, CBitF
                      (int)std::lround((float)p.wrap_margin * space.scale), s.text);
 }
 
+// The right edge of the battery's column in the frame's bottom-left corner:
+// its icon, drawn 4 in, or the gauge it frames where that is wider.
+int battery_right(const Screen &s) {
+    const int icon = 4 + g_BatteryIconBitmap.width;
+    return s.frame.left + (icon > 0x10 ? icon : 0x10) * s.ui;
+}
+
 // The battery gauge in the frame's bottom-left corner while a light is on.
 void battery(const CInventory *inventory, const Screen &s) {
     if (g_CGamePtr->flashlight_active == 0 && g_CGamePtr->goggles_active == 0)
@@ -431,7 +438,11 @@ void chapter_title(const Screen &s) {
                             kTextColor, 0, s.text);
 }
 
-// The characters' health bars, stacked up from the frame's bottom-left.
+// The characters' health bars, stacked up from the frame's bottom-left. The
+// shipped bars start where the battery's icon is drawn, so with a light on and
+// a companion's bar showing the two overlap; these start clear of the
+// battery's column whether a light is on or not, so they hold still as one
+// comes on.
 void status_bars(CGame *game, const Screen &s) {
     if (game->letterbox_mode != 0 || game->status_display_count <= 0)
         return;
@@ -446,7 +457,10 @@ void status_bars(CGame *game, const Screen &s) {
     const int glyph = engine_font_cpp_CBitFont_getCharHeight_FUN_004d01d0(font, kMeasureGlyph);
     if (bar_height < glyph)
         bar_height = glyph;
-    const int left = s.frame.left + width / 0x50;
+    int left = s.frame.left + width / 0x50;
+    const int clear = battery_right(s) + 4 * s.ui;
+    if (left < clear)
+        left = clear;
     const int right = left + width / 4;
     int bottom = s.frame.bottom - height / 0x50;
     for (int i = 0; i < game->status_display_count; i++) {
