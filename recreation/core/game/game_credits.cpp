@@ -29,10 +29,7 @@ constexpr int kImageWidth = 640;
 constexpr int kImageHeight = 480;
 constexpr int kFullAlpha = 0xffff;
 // The credits roll up the right of the image, between black strips over its top and bottom.
-// deferred: the column and its strips running on to a wider screen's right edge, the image kept
-// at the left, with the front end's width
 constexpr int kColumnLeft = 414;
-constexpr int kColumnRight = kImageWidth - 1;
 constexpr int kTopStripBottom = 30;
 constexpr int kBottomStripTop = 439;
 constexpr int kImageBottom = kImageHeight - 1;
@@ -51,8 +48,10 @@ constexpr std::string_view kMusic = "faded-remix.mp3";
 constexpr char kMarker = '\\';
 constexpr char kHeadingMarker = 'b';
 
-// The credits with their first line at `top`, those on the image and above its foot.
-void drawCredits(engine::CBitFont &font, std::span<const std::string_view> lines, int top) {
+// The credits with their first line at `top`, those on the image and above its foot, centred
+// between the column's left and `right`.
+void drawCredits(engine::CBitFont &font, std::span<const std::string_view> lines, int top,
+                 int right) {
     const int line_height = font.getCharHeight(kLineHeightChar);
     int y = top;
     for (std::string_view line : lines) {
@@ -64,7 +63,7 @@ void drawCredits(engine::CBitFont &font, std::span<const std::string_view> lines
             line.remove_prefix(std::min<std::size_t>(2, line.size()));
         }
         if (y >= 0 && y < kImageBottom - line_height) {
-            font.drawTextCenterInBounds(kColumnLeft, kColumnRight, y, color, kShadowColor, line);
+            font.drawTextCenterInBounds(kColumnLeft, right, y, color, kShadowColor, line);
         }
         y += line_height;
     }
@@ -73,9 +72,11 @@ void drawCredits(engine::CBitFont &font, std::span<const std::string_view> lines
 } // namespace
 
 // The original kept at most 1024 lines of 254 characters, and ended on Escape held rather than
-// on Cancel.
+// on Cancel. On a front end wider than the image, the image keeps to the left and the column
+// and its strips run on over the black to the screen's right edge.
 // nocedit 0x004e4010
 void CGame::rollCredits() {
+    const int right = std::max(kImageWidth, owners_.screen.getWindowWidth()) - 1;
     owners_.two_d.clearInputAndWait();
     engine::CAlphaBitmap image(owners_.dosio, owners_.screen, owners_.special);
     image.load("stats", kImageWidth, kImageHeight);
@@ -109,12 +110,12 @@ void CGame::rollCredits() {
         if (top != drawn_top) {
             owners_.special.clearScreen();
             image.display(0, 0, kFullAlpha);
-            drawCredits(font, lines, top);
+            drawCredits(font, lines, top, right);
             if (music != 0 && !sound_main.isSfxPlaying(music)) {
                 break;
             }
-            owners_.two_d.fillRectColor(kColumnLeft, 0, kColumnRight, kTopStripBottom, kStripColor);
-            owners_.two_d.fillRectColor(kColumnLeft, kBottomStripTop, kColumnRight, kImageBottom,
+            owners_.two_d.fillRectColor(kColumnLeft, 0, right, kTopStripBottom, kStripColor);
+            owners_.two_d.fillRectColor(kColumnLeft, kBottomStripTop, right, kImageBottom,
                                         kStripColor);
             drawn_top = top;
         }

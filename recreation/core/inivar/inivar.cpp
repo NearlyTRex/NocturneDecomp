@@ -1,11 +1,13 @@
 #include "core/inivar/inivar.h"
 
 #include "common/error/error.h"
+#include "common/video/widescreen.h"
 #include "core/dfont/dfont.h"
 #include "core/game/game.h"
 #include "engine/console/console.h"
 #include "engine/ini/inifile.h"
 #include "engine/special/special.h"
+#include "platform/antialias.h"
 #include "platform/display.h"
 #include "platform/filesystem.h"
 #include "platform/upscaler.h"
@@ -75,6 +77,12 @@ void readGraphics(const engine::CIniFile &file, const SIniDataOwners &owners) {
     owners.display.setUpscalerSharpness(sharpness < 0 || sharpness > platform::kUpscalerSharpnessMax
                                             ? platform::kUpscalerSharpnessDefault
                                             : sharpness);
+    owners.display.setAntialias(static_cast<platform::EAntialias>(
+        readEnumValue(file, "antialias", static_cast<int>(owners.display.getAntialias()),
+                      platform::kAntialiasCount - 1)));
+    owners.display.setWidescreen(static_cast<common::EWidescreen>(
+        readEnumValue(file, "widescreen", static_cast<int>(owners.display.getWidescreen()),
+                      common::kWidescreenCount - 1)));
 }
 
 // The defaults for the control mode come first, then whatever the file binds over them.
@@ -131,6 +139,8 @@ void writeGraphics(engine::CIniFile &file, const SIniDataOwners &owners) {
     file.setInteger("windowMode", static_cast<int>(owners.display.getWindowMode()));
     file.setInteger("upscaler", static_cast<int>(owners.display.getUpscaler()));
     file.setInteger("upscalerSharpness", owners.display.getUpscalerSharpness());
+    file.setInteger("antialias", static_cast<int>(owners.display.getAntialias()));
+    file.setInteger("widescreen", static_cast<int>(owners.display.getWidescreen()));
 }
 
 void writeControls(engine::CIniFile &file, const CGame &game) {

@@ -67,6 +67,8 @@ public:
     MOCK_METHOD(int, flushLineList, (), (override));
     MOCK_METHOD(void, beginReflectionPass, (), (override));
     MOCK_METHOD(void, endReflectionPass, (), (override));
+    MOCK_METHOD(bool, beginOverlay, (const SOverlayPlacement &placement), (override));
+    MOCK_METHOD(void, endOverlay, (), (override));
 };
 
 } // namespace nocturne::platform

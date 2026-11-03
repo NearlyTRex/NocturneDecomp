@@ -172,6 +172,26 @@ int CSdlDisplay::getUpscalerSharpness() const {
     return upscaler_sharpness_;
 }
 
+void CSdlDisplay::setAntialias(EAntialias antialias) {
+    antialias_ = antialias;
+}
+
+EAntialias CSdlDisplay::getAntialias() const {
+    return antialias_;
+}
+
+void CSdlDisplay::setWidescreen(common::EWidescreen widescreen) {
+    widescreen_ = widescreen;
+}
+
+common::EWidescreen CSdlDisplay::getWidescreen() const {
+    return widescreen_;
+}
+
+std::optional<common::SSceneReframe> CSdlDisplay::getSceneReframe(int width, int height) const {
+    return common::getSceneReframe(widescreen_, {.width = width, .height = height});
+}
+
 void CSdlDisplay::setWindowSize(int width, int height) {
     window_size_ = {.width = width, .height = height};
     if (window_mode_ == EWindowMode::Windowed) {

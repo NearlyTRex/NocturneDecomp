@@ -35,6 +35,20 @@ TEST(IDisplay, PublicInterface) {
         std::is_same_v<decltype(&IDisplay::setUpscalerSharpness), void (IDisplay::*)(int)>);
     static_assert(
         std::is_same_v<decltype(&IDisplay::getUpscalerSharpness), int (IDisplay::*)() const>);
+    static_assert(
+        std::is_same_v<decltype(&IDisplay::setAntialias), void (IDisplay::*)(EAntialias)>);
+    static_assert(
+        std::is_same_v<decltype(&IDisplay::getAntialias), EAntialias (IDisplay::*)() const>);
+    static_assert(std::is_same_v<decltype(&IDisplay::setWidescreen),
+                                 void (IDisplay::*)(common::EWidescreen)>);
+    static_assert(std::is_same_v<decltype(&IDisplay::getWidescreen),
+                                 common::EWidescreen (IDisplay::*)() const>);
+}
+
+TEST(EAntialias, KeepsThePersistedValues) {
+    static_assert(static_cast<int>(EAntialias::Off) == 0);
+    static_assert(static_cast<int>(EAntialias::Fxaa) == 1);
+    static_assert(kAntialiasCount == 2);
 }
 
 TEST(EUpscaler, KeepsThePersistedValues) {

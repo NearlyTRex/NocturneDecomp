@@ -29,6 +29,8 @@ SVertexContext baseContext(std::uint32_t flags) {
             .rhw_scale = 65536.0F,
             .screen_scale_x = 1.0F,
             .screen_scale_y = 1.0F,
+            .screen_offset_x = 0.0F,
+            .screen_offset_y = 0.0F,
             .current_alpha = 0x80,
             .palette_index = 0x21,
             .palette = kPalette,
@@ -209,6 +211,27 @@ TEST(ScreenVertex, HoldBufferScaleStretchesTo640x480Space) {
     const SScreenVertex out = convertVertex(ctx, in);
     EXPECT_EQ(out.x, 640.0F);
     EXPECT_EQ(out.y, 480.0F);
+}
+
+// An overlay pass's placement: scaled first, then moved.
+TEST(ScreenVertex, TheOffsetsMoveTheScaledPosition) {
+    SVertexContext ctx = baseContext(0);
+    ctx.screen_scale_x = 1.325F;
+    ctx.screen_scale_y = 1.0F;
+    ctx.screen_offset_x = 104.0F;
+    ctx.screen_offset_y = -8.0F;
+    const SVertexInput in{.screen_x = 320 << 16,
+                          .screen_y = 240 << 16,
+                          .transformed_z = 1,
+                          .u = 0,
+                          .v = 0,
+                          .r = 0,
+                          .g = 0,
+                          .b = 0,
+                          .a = 0};
+    const SScreenVertex out = convertVertex(ctx, in);
+    EXPECT_EQ(out.x, (320.0F * 1.325F) + 104.0F);
+    EXPECT_EQ(out.y, 232.0F);
 }
 
 TEST(ScreenVertex, UntexturedWithoutAPaletteIsBlack) {

@@ -36,13 +36,15 @@ class CMoonFixture : public engine::CDemonRendererFixture {
 protected:
     static constexpr int kWidth = 640;
     static constexpr int kHeight = 480;
+    // Rows have room for a front end as wide as 16:9 makes it.
+    static constexpr int kWideWidth = 848;
 
     CMoonFixture() {
         using ::testing::_;
         using ::testing::Return;
         for (std::size_t y = 0; y < rows_.size(); ++y) {
-            rows_[y] = &pixels_[y * kWidth];
-            z_rows_[y] = &depths_[y * kWidth];
+            rows_[y] = &pixels_[y * kWideWidth];
+            z_rows_[y] = &depths_[y * kWideWidth];
         }
         two_d_.setupViewportAndClipping(0, 0, kWidth - 1, kHeight - 1);
         channels_ = {.red = common::getChannelLayout(0xff0000U),
@@ -77,15 +79,23 @@ protected:
     }
 
     std::uint32_t pixel(int x, int y) const {
-        return pixels_[(static_cast<std::size_t>(y) * kWidth) + static_cast<std::size_t>(x)];
+        return pixels_[(static_cast<std::size_t>(y) * kWideWidth) + static_cast<std::size_t>(x)];
+    }
+
+    // The screen as the front end runs it at 16:9.
+    void givenWideScreen() {
+        ON_CALL(screen_, getWindowWidth()).WillByDefault(::testing::Return(kWideWidth));
+        two_d_.setupViewportAndClipping(0, 0, kWideWidth - 1, kHeight - 1);
     }
 
     GivenFile given_file_ = [this](const std::string &name, const std::string &contents) {
         givenFile(name, contents);
     };
     int bits_per_pixel_ = 32;
-    std::vector<std::uint32_t> pixels_ = std::vector<std::uint32_t>(std::size_t{kWidth} * kHeight);
-    std::vector<std::uint32_t> depths_ = std::vector<std::uint32_t>(std::size_t{kWidth} * kHeight);
+    std::vector<std::uint32_t> pixels_ =
+        std::vector<std::uint32_t>(std::size_t{kWideWidth} * kHeight);
+    std::vector<std::uint32_t> depths_ =
+        std::vector<std::uint32_t>(std::size_t{kWideWidth} * kHeight);
     std::array<void *, kHeight> rows_{};
     std::array<std::uint32_t *, kHeight> z_rows_{};
     std::array<std::uint32_t, 256> palette_{};

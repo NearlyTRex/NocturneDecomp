@@ -1,6 +1,7 @@
 #include "common/math/fixed.h"
 #include "common/math/vector3i.h"
 #include "core/color3i.h"
+#include "core/frontend.h"
 #include "core/moon/moon.h"
 #include "core/moon/moon_functions.h"
 #include "core/set/demonset.h"
@@ -8,11 +9,13 @@
 #include "engine/drender/demonrenderer.h"
 #include "engine/screendevice.h"
 #include "engine/special/special.h"
+#include "platform/renderer.h"
 
 #include <algorithm>
 #include <bit>
 #include <cstddef>
 #include <cstdint>
+#include <optional>
 #include <span>
 #include <utility>
 
@@ -30,9 +33,6 @@ constexpr common::CVector3i kBatLight{.x = -0x4844, .y = -0x4844, .z = 0x4844};
 constexpr int kBatAmbient = 0x2000;
 // A quarter turn, as the original stores it.
 constexpr float kBatYawOffset = std::bit_cast<float>(0x3fc90fdbU);
-// The cloud layers cover the menu's 640x480.
-constexpr int kCloudWidth = 640;
-constexpr int kCloudHeight = 480;
 constexpr int kTrueColorDepth = 32;
 constexpr std::uint32_t kTexelMask = 0xff;
 constexpr std::uint32_t kCloudRowShift = 8;
@@ -72,8 +72,12 @@ void CMoon::render() {
     const CColor3i flat_color = set.getFlatColor();
     owners_.special.clearScreen();
     owners_.special.clearZBufferNative();
-    renderMoon();
+    const std::optional<float> widened = beginWideScene();
+    renderMoon(kProjectionScale * widened.value_or(1.0F));
     renderBats();
+    if (widened) {
+        endWideScene();
+    }
     renderClouds();
     owners_.three_d.setBlendMode(1);
     // The timer runs to 60 over 30 frames; the second half holds the first frame.
@@ -81,17 +85,41 @@ void CMoon::render() {
     if (frame < 0 || std::cmp_greater_equal(frame, kAnimationFrameCount)) {
         frame = 0;
     }
-    animation_textures_[static_cast<std::size_t>(frame)].display(0, 0, kAnimationAlpha);
+    animation_textures_[static_cast<std::size_t>(frame)].display(
+        getFrontEndLeft(owners_.screen.getWindowWidth()), 0, kAnimationAlpha);
     owners_.three_d.setBlendMode(0);
     set.setLightDirection(light_direction);
     set.setAmbientBaseQuick(ambient);
     set.setFlatColor(flat_color.r, flat_color.g, flat_color.b);
 }
 
-void CMoon::renderMoon() {
+// The renderer stretches a 640x480 viewport across a wider front end, so the view widens by as
+// much and the sky keeps its proportions; the rotation matrix already corrects the vertical.
+// Software draws at the screen's width already.
+std::optional<float> CMoon::beginWideScene() {
+    const int width = owners_.screen.getWindowWidth();
+    if (width <= kFrontEndLayoutWidth || !owners_.special.getUseExternalRenderer()) {
+        return std::nullopt;
+    }
+    const float widen = static_cast<float>(width) / static_cast<float>(kFrontEndLayoutWidth);
+    owners_.renderer.pushViewport(0, 0, kFrontEndLayoutWidth, kFrontEndHeight);
+    if (!owners_.special.beginOverlay(
+            {.scale_x = widen, .scale_y = 1.0F, .offset_x = 0.0F, .offset_y = 0.0F})) {
+        owners_.renderer.popViewport();
+        return std::nullopt;
+    }
+    return widen;
+}
+
+void CMoon::endWideScene() {
+    owners_.special.endOverlay();
+    owners_.renderer.popViewport();
+}
+
+void CMoon::renderMoon(float projection_scale) {
     engine::CDemonRenderer &renderer = owners_.renderer;
     renderer.setCameraOriginFromScaledPoint({});
-    renderer.setProjectionScale(kProjectionScale);
+    renderer.setProjectionScale(projection_scale);
     renderer.setupSceneRendering({});
     const auto swing =
         static_cast<float>((static_cast<double>(rotation_phase_) - 0.5) * kMoonSwing);
@@ -143,8 +171,8 @@ void CMoon::renderBat(const SBat &bat) {
 }
 
 // Two layers of the cloud texture added over the frame, the nearer at twice the scale of the
-// farther. The original drew them over 640x480 whatever the mode; they cover what of that the
-// screen has, and only at 32 bits.
+// farther. The original drew them over 640x480 whatever the mode; they cover the front end's
+// whole width and what of 480 rows the screen has, and only at 32 bits.
 void CMoon::renderClouds() {
     cloud_texture_.initPalette();
     engine::IScreenDevice &screen = owners_.screen;
@@ -156,9 +184,9 @@ void CMoon::renderClouds() {
     const std::span<void *> rows = screen.getScreenRows();
     const std::int32_t scroll_x = cloud_scroll_x_ >> 16;
     const std::int32_t scroll_y = cloud_scroll_y_ >> 16;
-    const auto width = static_cast<std::uint32_t>(std::min(kCloudWidth, screen.getWindowWidth()));
+    const auto width = static_cast<std::uint32_t>(screen.getWindowWidth());
     const auto height =
-        static_cast<std::uint32_t>(std::min(kCloudHeight, screen.getWindowHeight()));
+        static_cast<std::uint32_t>(std::min(kFrontEndHeight, screen.getWindowHeight()));
     for (std::uint32_t y = 0; y < height; ++y) {
         const std::span<std::uint32_t> row(static_cast<std::uint32_t *>(rows[y]), width);
         for (std::uint32_t x = 0; x < width; ++x) {

@@ -1,8 +1,10 @@
 #include "core/level/levelloader.h"
 
 #include "common/random/watcomrandom.h"
+#include "core/frontend.h"
 #include "engine/alphabit/alphabitmap.h"
 #include "engine/drender/demonrenderer.h"
+#include "engine/screendevice.h"
 #include "engine/special/special.h"
 
 #include <array>
@@ -39,12 +41,14 @@ void CLevelLoader::show(int total_frames, bool use_custom_viewport, int image_va
         {.name = "load3", .x = 159, .y = 1, .color = {.r = 0x9e00, .g = 0xe100, .b = 0xff00}},
         {.name = "load4", .x = 379, .y = 68, .color = {.r = 0x6b00, .g = 0x9a00, .b = 0xff00}},
     }};
+    // The 640x480 layout, centred on a wider screen.
+    const int left = getFrontEndLeft(owners_.screen.getWindowWidth());
     enabled_ = true;
     current_frame_ = 0;
     total_frames_ = total_frames;
     use_custom_viewport_ = use_custom_viewport;
     if (use_custom_viewport) {
-        viewport_x_ = kCornerX;
+        viewport_x_ = left + kCornerX;
         viewport_y_ = 0;
         viewport_width_ = kCornerSize;
         viewport_height_ = kCornerSize;
@@ -63,9 +67,9 @@ void CLevelLoader::show(int total_frames, bool use_custom_viewport, int image_va
     const SPicture &picture = kPictures[static_cast<std::size_t>(image_variant)];
     engine::CAlphaBitmap bitmap(owners_.dosio, owners_.screen, owners_.special);
     bitmap.load(picture.name, kPictureWidth, kPictureHeight);
-    bitmap.display(0, 0, kOpaque);
+    bitmap.display(left, 0, kOpaque);
     use_custom_viewport_ = true;
-    viewport_x_ = picture.x;
+    viewport_x_ = left + picture.x;
     viewport_y_ = picture.y;
     viewport_width_ = kPictureWindowSize;
     viewport_height_ = kPictureWindowSize;

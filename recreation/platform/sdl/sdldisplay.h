@@ -12,6 +12,7 @@
 #include "platform/upscaler.h"
 
 #include <memory>
+#include <optional>
 
 struct SDL_GLContextState;
 
@@ -40,7 +41,13 @@ public:
     [[nodiscard]] EUpscaler getUpscaler() const override;
     void setUpscalerSharpness(int percent) override;
     [[nodiscard]] int getUpscalerSharpness() const override;
+    void setAntialias(EAntialias antialias) override;
+    [[nodiscard]] EAntialias getAntialias() const override;
+    void setWidescreen(common::EWidescreen widescreen) override;
+    [[nodiscard]] common::EWidescreen getWidescreen() const override;
     void presentScene(GLuint texture, int width, int height) override;
+    [[nodiscard]] std::optional<common::SSceneReframe> getSceneReframe(int width,
+                                                                       int height) const override;
 
     // The context's GL, for the hardware renderer to draw with.
     [[nodiscard]] const gl::SGlApi &getGlApi() const;
@@ -70,6 +77,8 @@ private:
     EWindowMode window_mode_ = EWindowMode::Windowed;
     EUpscaler upscaler_mode_ = EUpscaler::Standard;
     int upscaler_sharpness_ = kUpscalerSharpnessDefault;
+    EAntialias antialias_ = EAntialias::Off;
+    common::EWidescreen widescreen_ = common::EWidescreen::PanAndScan;
 };
 
 } // namespace nocturne::platform::sdl

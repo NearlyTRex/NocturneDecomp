@@ -127,9 +127,10 @@ TEST_F(CWddVMemTest, ARefusedModeLeavesTheScreenAsItWas) {
     EXPECT_EQ(wddvmem_.getScreenRows()[0], first_row);
 }
 
-TEST_F(CWddVMemTest, AModeWithNoRowsOrMoreThanTheTallestIsRefused) {
+TEST_F(CWddVMemTest, AModeWithNoRowsOrMoreThanTheLargestIsRefused) {
     EXPECT_CALL(display_, setDisplayMode).Times(0);
-    EXPECT_FALSE(wddvmem_.setScreenResolution(1600, 1201, 32));
+    EXPECT_FALSE(wddvmem_.setScreenResolution(3840, 2161, 32));
+    EXPECT_FALSE(wddvmem_.setScreenResolution(3841, 2160, 32));
     EXPECT_FALSE(wddvmem_.setScreenResolution(0, 480, 32));
     EXPECT_FALSE(wddvmem_.setScreenResolution(640, 0, 32));
 }

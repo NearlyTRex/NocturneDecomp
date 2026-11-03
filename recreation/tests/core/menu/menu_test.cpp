@@ -96,16 +96,20 @@ constexpr int kHeight = 480;
 // Palette entry 1 of the brightness image.
 constexpr std::uint32_t kImage = 0x112233;
 
-// The menus on a 640x480 screen, their fonts from sheets of block glyphs '!' to 0x99, with every
-// message translated to a run of X's: calibration step n to n of them, the prompt to one and the
-// title to seven.
-class CMenuTest : public sound::CSndMainFixture {
+// The menus on a screen 480 lines tall, their fonts from sheets of block glyphs '!' to 0x99, with
+// every message translated to a run of X's: calibration step n to n of them, the prompt to one
+// and the title to seven.
+template <int ScreenWidth>
+class CMenuFixture : public sound::CSndMainFixture {
 protected:
-    CMenuTest() {
+    // Where the 640-wide layout starts.
+    static constexpr int kLeft = (ScreenWidth - kWidth) / 2;
+
+    CMenuFixture() {
         givenMenuFontFiles([this](const std::string &name, const std::string &contents) {
             givenFile(name, contents);
         });
-        two_d_.setupViewportAndClipping(0, 0, kWidth - 1, kHeight - 1);
+        two_d_.setupViewportAndClipping(0, 0, ScreenWidth - 1, kHeight - 1);
         givenFile("art\\brightness.raw", std::string(std::size_t{kWidth} * kHeight, '\x01'));
         givenFile("art\\brightness.act", engine::makePalette({0, 0, 0, 0x11, 0x22, 0x33}));
         givenFile("msglist.txt", "; version\n0\n; use OS fonts\n0\n; font\n\"Arial\"\n"
@@ -142,12 +146,12 @@ protected:
 
     // Where text of that many X's starts, centred on the image.
     [[nodiscard]] int centredLeft(int count) const {
-        return (kWidth / 2) - (smallFont().getTextWidth(std::string(count, 'X')) / 2);
+        return kLeft + (kWidth / 2) - (smallFont().getTextWidth(std::string(count, 'X')) / 2);
     }
 
     // The first pixel along row y that the text covers rather than the image.
     [[nodiscard]] int firstTextPixel(int y) const {
-        for (int x = 0; x < kWidth; ++x) {
+        for (int x = kLeft; x < kLeft + kWidth; ++x) {
             if (screen_.pixel(x, y) != kImage) {
                 return x;
             }
@@ -162,7 +166,7 @@ protected:
 
     // The first pixel drawn along row y, or -1.
     [[nodiscard]] int firstLit(int y) const {
-        for (int x = 0; x < kWidth; ++x) {
+        for (int x = 0; x < ScreenWidth; ++x) {
             if (lit(x, y)) {
                 return x;
             }
@@ -180,7 +184,7 @@ protected:
     }
 
     std::array<std::uint8_t, engine::IRawInput::kInputCodeCount> keyboard_{};
-    engine::CMemoryScreen screen_{kWidth, kHeight, 32};
+    engine::CMemoryScreen screen_{ScreenWidth, kHeight, 32};
     NiceMock<engine::MockRawInput> raw_input_;
     engine::C2d two_d_{dosio_, screen_, raw_input_};
     engine::CLight light_;
@@ -276,6 +280,11 @@ protected:
                  .play_movie = {},
                  .show_chapter_select = {}}};
 };
+
+using CMenuTest = CMenuFixture<kWidth>;
+// The front end at 16:9.
+constexpr int kWideWidth = 848;
+using CWideMenuTest = CMenuFixture<kWideWidth>;
 
 TEST_F(CMenuTest, CalibrationShowsEachStepWithThePromptOverTheImageUntilAKey) {
     std::vector<int> prompt_lefts;
@@ -422,6 +431,49 @@ TEST_F(CMenuTest, TheFooterCarriesTheCopyrightTheTrademarkAndTheBuild) {
     EXPECT_EQ(firstLit(letterRow(bottom)), 4);
     EXPECT_TRUE(lit(518, 99));
     EXPECT_TRUE(lit(kWidth - 1 - smallFont().getTextWidth(copyright), letterRow(bottom)));
+}
+
+// The image and its text centred together, black either side.
+TEST_F(CWideMenuTest, CalibrationIsCentredOnAWideFrontEnd) {
+    // Across the middle row at the image's edges, and where the title starts, at each step.
+    std::vector<std::vector<std::uint32_t>> edges;
+    std::vector<int> title_lefts;
+    EXPECT_CALL(raw_input_, getNextKeypress(_)).Times(5).WillRepeatedly([&](auto &) {
+        const int row = kHeight / 2;
+        edges.push_back({screen_.pixel(kLeft - 1, row), screen_.pixel(kLeft, row),
+                         screen_.pixel(kLeft + kWidth - 1, row),
+                         screen_.pixel(kLeft + kWidth, row)});
+        title_lefts.push_back(firstTextPixel(letterRow(2 * lineHeight())));
+        return 'a';
+    });
+    menu_.showCalibrationTest();
+    EXPECT_THAT(edges, ::testing::Each(std::vector<std::uint32_t>{0U, kImage, kImage, 0U}));
+    EXPECT_THAT(title_lefts, ::testing::Each(centredLeft(7)));
+}
+
+TEST_F(CWideMenuTest, TheItemsAndTheTrademarkMoveWithTheLayout) {
+    int selected = 2;
+    choose({"XX", "XX", "XX"}, selected, "XXX");
+    EXPECT_EQ(firstLit(letterRow(100)), kLeft + 160);
+    EXPECT_EQ(firstLit(letterRow(100 + (2 * lineHeight()))), kLeft + 160);
+    EXPECT_TRUE(lit(kLeft + 518, 99));
+    EXPECT_FALSE(lit(518, 99));
+}
+
+// The copyright keeps to the screen's corner and the build's line to the left edge.
+TEST_F(CWideMenuTest, TheFooterKeepsToTheScreensCorners) {
+    int selected = 0;
+    choose({"XX"}, selected);
+    constexpr std::string_view copyright = "Nocturne 1999 Terminal Reality Inc.  Patent Pending.";
+    const int bottom = kHeight - 1 - smallFont().getTextHeight(copyright);
+    EXPECT_EQ(firstLit(letterRow(bottom)), 4);
+    EXPECT_TRUE(lit(kWideWidth - 1 - smallFont().getTextWidth(copyright), letterRow(bottom)));
+}
+
+TEST_F(CWideMenuTest, TheGlowMovesWithTheItem) {
+    int selected = 0;
+    choose({"XX"}, selected);
+    EXPECT_TRUE(lit(kLeft + 158, letterRow(98)));
 }
 
 // The OS fonts measure any text as 30 by 9 here; only their copyright carries the (c).

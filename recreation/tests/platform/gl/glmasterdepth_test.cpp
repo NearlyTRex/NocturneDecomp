@@ -140,16 +140,70 @@ TEST(CGlMasterDepth, AnEmptyRectangleSucceedsWithoutACopy) {
     EXPECT_TRUE(gl.getCalls().empty());
 }
 
-TEST(CGlMasterDepth, DestroyingDeletesEverySlot) {
+TEST(CGlMasterDepth, DestroyingDeletesEverySlotAndTheHeldCopy) {
     CGlRecorder gl;
     CNullLog log;
     std::optional<CGlMasterDepth> depth(std::in_place, gl.getApi(), log);
     ASSERT_TRUE(depth->save(0, kScene, 4, 4));
     gl.clear();
     depth.reset();
-    EXPECT_EQ(gl.count("DeleteFramebuffers"), static_cast<std::size_t>(CGlMasterDepth::kSlots));
+    EXPECT_EQ(gl.count("DeleteFramebuffers"), static_cast<std::size_t>(CGlMasterDepth::kSlots) + 1);
     EXPECT_EQ(gl.getCalls()[0], glCall("DeleteFramebuffers", 1, kSlotFramebuffer));
     EXPECT_EQ(gl.getCalls()[1], glCall("DeleteRenderbuffers", 1, kSlotDepth));
+}
+
+TEST(CGlMasterDepth, HoldingCopiesTheWholeDepthAsideAndGivingBackReturnsIt) {
+    CGlRecorder gl;
+    CNullLog log;
+    CGlMasterDepth depth(gl.getApi(), log);
+    EXPECT_TRUE(depth.hold(kScene, 640, 480));
+    EXPECT_THAT(lastCalls(gl, 4),
+                ElementsAre(glCall("BindFramebuffer", GL_READ_FRAMEBUFFER, kScene),
+                            glCall("BindFramebuffer", GL_DRAW_FRAMEBUFFER, kSlotFramebuffer),
+                            glCall("BlitFramebuffer", 0, 0, 640, 480, 0, 0, 640, 480,
+                                   GL_DEPTH_BUFFER_BIT, GL_NEAREST),
+                            glCall("BindFramebuffer", GL_FRAMEBUFFER, kScene)));
+    gl.clear();
+    EXPECT_TRUE(depth.giveBack(kScene, 640, 480));
+    EXPECT_THAT(gl.getCalls(),
+                ElementsAre(glCall("BindFramebuffer", GL_READ_FRAMEBUFFER, kSlotFramebuffer),
+                            glCall("BindFramebuffer", GL_DRAW_FRAMEBUFFER, kScene),
+                            glCall("BlitFramebuffer", 0, 0, 640, 480, 0, 0, 640, 480,
+                                   GL_DEPTH_BUFFER_BIT, GL_NEAREST),
+                            glCall("BindFramebuffer", GL_FRAMEBUFFER, kScene)));
+}
+
+// The engine's slots and the held copy never share a framebuffer.
+TEST(CGlMasterDepth, TheHeldCopyIsNoSlot) {
+    CGlRecorder gl;
+    CNullLog log;
+    CGlMasterDepth depth(gl.getApi(), log);
+    ASSERT_TRUE(depth.save(0, kScene, 640, 480));
+    ASSERT_TRUE(depth.hold(kScene, 640, 480));
+    EXPECT_EQ(gl.count("GenFramebuffers"), 2U);
+    gl.clear();
+    ASSERT_TRUE(depth.hold(kScene, 640, 480));
+    EXPECT_EQ(gl.count("GenFramebuffers"), 0U);
+}
+
+TEST(CGlMasterDepth, NothingHeldHasNothingToGiveBack) {
+    const CGlRecorder gl;
+    CNullLog log;
+    CGlMasterDepth depth(gl.getApi(), log);
+    EXPECT_FALSE(depth.giveBack(kScene, 640, 480));
+    EXPECT_TRUE(gl.getCalls().empty());
+}
+
+TEST(CGlMasterDepth, AnIncompleteHeldCopyIsLoggedAndNothingIsCopied) {
+    CGlRecorder gl;
+    gl.framebuffer_status = GL_FRAMEBUFFER_INCOMPLETE_ATTACHMENT;
+    ::testing::StrictMock<MockLog> log;
+    CGlMasterDepth depth(gl.getApi(), log);
+    EXPECT_CALL(
+        log, write(ELogSubsystem::Render, ::testing::EndsWith("] held depth incomplete at 8x4")));
+    EXPECT_FALSE(depth.hold(kScene, 8, 4));
+    EXPECT_EQ(gl.count("BlitFramebuffer"), 0U);
+    EXPECT_FALSE(depth.giveBack(kScene, 8, 4));
 }
 
 } // namespace

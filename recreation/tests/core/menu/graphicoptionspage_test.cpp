@@ -28,14 +28,16 @@ using ::testing::Return;
 // The lines' ids, in the order they are listed.
 constexpr int kResolution = 0;
 constexpr int kWindow = 1;
-constexpr int kHalo = 2;
-constexpr int kAcceleration = 3;
-constexpr int kApi = 4;
-constexpr int kCard = 5;
-constexpr int kBits = 6;
-constexpr int kUpscaler = 7;
-constexpr int kSharpness = 8;
-constexpr int kCalibration = 9;
+constexpr int kWidescreen = 2;
+constexpr int kHalo = 3;
+constexpr int kAcceleration = 4;
+constexpr int kApi = 5;
+constexpr int kCard = 6;
+constexpr int kBits = 7;
+constexpr int kUpscaler = 8;
+constexpr int kSharpness = 9;
+constexpr int kAntialias = 10;
+constexpr int kCalibration = 11;
 
 TEST(CGraphicOptionsPage, PublicInterface) {
     static_assert(std::is_base_of_v<CMenuPage, CGraphicOptionsPage>);
@@ -100,11 +102,11 @@ TEST_F(CGraphicOptionsPageTest, TheTitleIsGraphicOptions) {
 
 TEST_F(CGraphicOptionsPageTest, WithoutAccelerationThereIsNoApiOrCard) {
     CGraphicOptionsPage page(menu_, menu_owners_);
-    EXPECT_EQ(texts(page), (std::vector<std::string>{"Resolution : 640x480", "Window : Windowed",
-                                                     "Flashlight halo : Off", "Acceleration : Off",
-                                                     "3D API : None", "No 3D Hardware detected",
-                                                     "Bits per pixel : 32", "Upscaler : Standard",
-                                                     "Monitor calibration"}));
+    EXPECT_EQ(texts(page), (std::vector<std::string>{
+                               "Resolution : 640x480", "Window : Windowed", "Widescreen : Stretch",
+                               "Flashlight halo : Off", "Acceleration : Off", "3D API : None",
+                               "No 3D Hardware detected", "Bits per pixel : 32",
+                               "Upscaler : Standard", "Monitor calibration"}));
 }
 
 TEST_F(CGraphicOptionsPageTest, TheRenderersCardsAndApiAreListed) {
@@ -113,6 +115,50 @@ TEST_F(CGraphicOptionsPageTest, TheRenderersCardsAndApiAreListed) {
     EXPECT_EQ(text(page, kAcceleration), "Acceleration : On");
     EXPECT_EQ(text(page, kApi), "3D API : OpenGL 3.3");
     EXPECT_EQ(text(page, kCard), "3D Card : First (0)");
+}
+
+TEST_F(CGraphicOptionsPageTest, TheWidescreenFramingIsNamed) {
+    CGraphicOptionsPage page(menu_, menu_owners_);
+    ON_CALL(display_, getWidescreen()).WillByDefault(Return(common::EWidescreen::Pillarbox));
+    EXPECT_EQ(text(page, kWidescreen), "Widescreen : Pillarbox");
+    ON_CALL(display_, getWidescreen()).WillByDefault(Return(common::EWidescreen::PanAndScan));
+    EXPECT_EQ(text(page, kWidescreen), "Widescreen : Pan & scan");
+}
+
+TEST_F(CGraphicOptionsPageTest, TheWidescreenFramingStepsBothWaysAndWraps) {
+    CGraphicOptionsPage page(menu_, menu_owners_);
+    EXPECT_CALL(display_, setWidescreen(common::EWidescreen::Pillarbox));
+    EXPECT_EQ(page.choose(kWidescreen, EMenuStep::On), EMenuOutcome::Stay);
+    EXPECT_CALL(display_, setWidescreen(common::EWidescreen::PanAndScan));
+    EXPECT_EQ(page.choose(kWidescreen, EMenuStep::Back), EMenuOutcome::Stay);
+    ON_CALL(display_, getWidescreen()).WillByDefault(Return(common::EWidescreen::PanAndScan));
+    EXPECT_CALL(display_, setWidescreen(common::EWidescreen::Stretch));
+    EXPECT_EQ(page.choose(kWidescreen, EMenuStep::On), EMenuOutcome::Stay);
+}
+
+// Above the calibration, and only while accelerated: the pass runs over the renderer's scene.
+TEST_F(CGraphicOptionsPageTest, AntialiasingIsListedWhileAccelerated) {
+    loadRenderer();
+    CGraphicOptionsPage page(menu_, menu_owners_);
+    std::vector<std::string> lines = texts(page);
+    EXPECT_EQ(lines.at(lines.size() - 2), "Anti-aliasing : Off");
+    ON_CALL(display_, getAntialias()).WillByDefault(Return(platform::EAntialias::Fxaa));
+    lines = texts(page);
+    EXPECT_EQ(lines.at(lines.size() - 2), "Anti-aliasing : FXAA");
+    special_.setUseDirect3D(false);
+    lines = texts(page);
+    EXPECT_EQ(lines.at(lines.size() - 2), "Upscaler : Standard");
+}
+
+TEST_F(CGraphicOptionsPageTest, AntialiasingStepsBothWaysAndWraps) {
+    loadRenderer();
+    CGraphicOptionsPage page(menu_, menu_owners_);
+    EXPECT_CALL(display_, setAntialias(platform::EAntialias::Fxaa)).Times(2);
+    EXPECT_EQ(page.choose(kAntialias, EMenuStep::On), EMenuOutcome::Stay);
+    EXPECT_EQ(page.choose(kAntialias, EMenuStep::Back), EMenuOutcome::Stay);
+    ON_CALL(display_, getAntialias()).WillByDefault(Return(platform::EAntialias::Fxaa));
+    EXPECT_CALL(display_, setAntialias(platform::EAntialias::Off));
+    EXPECT_EQ(page.choose(kAntialias, EMenuStep::On), EMenuOutcome::Stay);
 }
 
 TEST_F(CGraphicOptionsPageTest, ACardTheInisNoLongerListsGoesBackToTheFirst) {
@@ -167,14 +213,41 @@ TEST_F(CGraphicOptionsPageTest, WithoutAccelerationTheResolutionWrapsAt640x480) 
     EXPECT_EQ(resolution(), "512x384");
 }
 
-TEST_F(CGraphicOptionsPageTest, WithAccelerationTheResolutionGoesTo1600x1200) {
+TEST_F(CGraphicOptionsPageTest, WithAccelerationTheResolutionStepsByWidthThenHeightTo3840x2160) {
     loadRenderer();
-    setResolution(1280, 1024);
+    setResolution(1024, 768);
+    CGraphicOptionsPage page(menu_, menu_owners_);
+    std::vector<std::string> stepped;
+    for (int i = 0; i < 12; ++i) {
+        EXPECT_EQ(page.choose(kResolution, EMenuStep::On), EMenuOutcome::Stay);
+        stepped.push_back(resolution());
+    }
+    EXPECT_EQ(stepped,
+              (std::vector<std::string>{"1200x900", "1280x720", "1280x1024", "1440x1080",
+                                        "1600x900", "1600x1200", "1920x1080", "1920x1440",
+                                        "2560x1440", "2880x2160", "3840x2160", "320x240"}));
+    EXPECT_EQ(page.choose(kResolution, EMenuStep::Back), EMenuOutcome::Stay);
+    EXPECT_EQ(resolution(), "3840x2160");
+}
+
+TEST_F(CGraphicOptionsPageTest, AResolutionWiderThanFourByThreeIsMarkedWide) {
+    loadRenderer();
+    setResolution(1920, 1080);
+    CGraphicOptionsPage page(menu_, menu_owners_);
+    EXPECT_EQ(text(page, kResolution), "Resolution : 1920x1080 (wide)");
+    setResolution(1440, 1080);
+    EXPECT_EQ(text(page, kResolution), "Resolution : 1440x1080");
+}
+
+TEST_F(CGraphicOptionsPageTest, AnUnlistedResolutionGoesToTheNearestByHeightThenWidth) {
+    loadRenderer();
+    setResolution(1900, 1070);
     CGraphicOptionsPage page(menu_, menu_owners_);
     EXPECT_EQ(page.choose(kResolution, EMenuStep::On), EMenuOutcome::Stay);
-    EXPECT_EQ(resolution(), "1600x1200");
+    EXPECT_EQ(resolution(), "1920x1080");
+    setResolution(1500, 1070);
     EXPECT_EQ(page.choose(kResolution, EMenuStep::On), EMenuOutcome::Stay);
-    EXPECT_EQ(resolution(), "320x240");
+    EXPECT_EQ(resolution(), "1440x1080");
 }
 
 // As an old INI can leave it.

@@ -261,6 +261,18 @@ void CGlRenderer::endReflectionPass() {
     record_.reset();
 }
 
+bool CGlRenderer::beginOverlay(const SOverlayPlacement &placement) {
+    record_.reset();
+    return hasDevice() && device_->beginOverlay(placement);
+}
+
+void CGlRenderer::endOverlay() {
+    if (hasDevice()) {
+        device_->endOverlay();
+    }
+    record_.reset();
+}
+
 int CGlRenderer::readBridge(const int *CExternalRendererBridge::*member, int fallback) const {
     if (!bridge_ || (*bridge_).*member == nullptr) {
         return fallback;

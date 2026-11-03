@@ -300,6 +300,26 @@ TEST_F(CLevelLoaderTest, EachPictureHasItsOwnWindowAndColour) {
     }
 }
 
+// The 640x480 picture and its window centred together, 104 columns in at 16:9.
+TEST_F(CLevelLoaderTest, OnAWideScreenThePictureAndItsWindowAreCentred) {
+    givenWideScreen();
+    std::ranges::fill(pixels_, kBackground);
+    loader_.show(4, true, 0);
+    EXPECT_EQ(pixel(103, 0), kBackground);
+    EXPECT_EQ(pixel(104, 0), kPicture);
+    loader_.update("", false);
+    ASSERT_EQ(moons_.size(), 1U);
+    EXPECT_EQ(moons_[0].clip, (SClipRect{.left = 224, .top = 130, .right = 314, .bottom = 220}));
+}
+
+TEST_F(CLevelLoaderTest, OnAWideScreenTheCornerWindowMovesWithTheLayout) {
+    givenWideScreen();
+    loader_.show(4, true, CLevelLoader::kRandomImage);
+    loader_.update("X", false);
+    ASSERT_EQ(moons_.size(), 1U);
+    EXPECT_EQ(moons_[0].clip, (SClipRect{.left = 551, .top = 0, .right = 743, .bottom = 192}));
+}
+
 // The text is centred in the box, its middle at x 320 and the box's middle row.
 TEST_F(CLevelLoaderTest, TheStatusIsCentredInABlackBoxNearTheBottom) {
     loader_.show(4, false, 99);

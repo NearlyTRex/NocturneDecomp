@@ -2742,6 +2742,7 @@ functions don't count as done. Sizes are in instructions.
   - [~] `configureCustomKeys` 0x00511890 (375)
     - deferred: the gamepad's deadzone, turn and look speeds and look inversion lines, before Calibrate (the decomp's pad_tuning.h), with the gamepad layer
     - deferred: calibrating the gamepad from Calibrate, or on Cancel for one nobody has centred, with calibrateGamepad
+    - deferred: the Movement line after the control type, stepping Tank or Camera and saved as [Control] movement (the decomp's movement.h), with CGame::playerControls
   - [x] `renderAudioSpectrumBar` 0x0050fe70 (116)
   - [x] `configureSoundOptions` 0x00511e50 (1124)
   - [~] `showOptionsScreen` 0x00512d30 (138)

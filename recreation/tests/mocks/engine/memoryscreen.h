@@ -61,7 +61,9 @@ public:
     int initializeGraphicsSystem(int, int) override {
         return 1;
     }
-    bool setScreenResolution(int, int, int) override {
+    bool setScreenResolution(int width, int height, int) override {
+        requested_width = width;
+        requested_height = height;
         return !refuse_modes;
     }
     void resetGraphicsSystem() override {}
@@ -145,6 +147,9 @@ public:
     std::function<void()> on_swap;
     // Every mode change is refused while set.
     bool refuse_modes = false;
+    // The last mode asked for; the rows stay as made.
+    int requested_width = 0;
+    int requested_height = 0;
 
 private:
     int width_;

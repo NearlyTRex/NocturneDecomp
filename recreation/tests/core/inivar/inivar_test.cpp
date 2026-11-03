@@ -213,6 +213,40 @@ TEST_F(CInivarTest, TheUpscalerIsWritten) {
     EXPECT_THAT(text_, HasSubstr("upscalerSharpness=25\r\n"));
 }
 
+TEST_F(CInivarTest, TheAntialiasingIsReadUnlessItIsOutOfRange) {
+    text_ = "[Graphics]\r\nantialias=1\r\n";
+    EXPECT_CALL(display_, setAntialias(platform::EAntialias::Fxaa));
+    read();
+    ::testing::Mock::VerifyAndClearExpectations(&display_);
+    ON_CALL(display_, getAntialias()).WillByDefault(Return(platform::EAntialias::Fxaa));
+    text_ = "[Graphics]\r\nantialias=2\r\n";
+    EXPECT_CALL(display_, setAntialias(platform::EAntialias::Fxaa));
+    read();
+}
+
+TEST_F(CInivarTest, TheAntialiasingIsWritten) {
+    ON_CALL(display_, getAntialias()).WillByDefault(Return(platform::EAntialias::Fxaa));
+    writeIniData(ini_, owners_);
+    EXPECT_THAT(text_, HasSubstr("antialias=1\r\n"));
+}
+
+TEST_F(CInivarTest, TheWidescreenFramingIsReadUnlessItIsOutOfRange) {
+    text_ = "[Graphics]\r\nwidescreen=1\r\n";
+    EXPECT_CALL(display_, setWidescreen(common::EWidescreen::Pillarbox));
+    read();
+    ::testing::Mock::VerifyAndClearExpectations(&display_);
+    ON_CALL(display_, getWidescreen()).WillByDefault(Return(common::EWidescreen::PanAndScan));
+    text_ = "[Graphics]\r\nwidescreen=3\r\n";
+    EXPECT_CALL(display_, setWidescreen(common::EWidescreen::PanAndScan));
+    read();
+}
+
+TEST_F(CInivarTest, TheWidescreenFramingIsWritten) {
+    ON_CALL(display_, getWidescreen()).WillByDefault(Return(common::EWidescreen::Stretch));
+    writeIniData(ini_, owners_);
+    EXPECT_THAT(text_, HasSubstr("widescreen=0\r\n"));
+}
+
 TEST_F(CInivarTest, TheWindowModeIsWritten) {
     ON_CALL(display_, getWindowMode()).WillByDefault(Return(platform::EWindowMode::Fullscreen));
     writeIniData(ini_, owners_);

@@ -100,10 +100,11 @@ std::pair<std::string, std::string> greyImage(int width, int height, std::uint8_
             engine::makePalette(levels)};
 }
 
-// Startup over a disk holding every file it reads, on a 640x480 memory screen.
-class CInitializeGameSystemsTest : public sound::CSndMainFixture {
+// Startup over a disk holding every file it reads, on a memory screen 480 lines tall.
+template <int ScreenWidth>
+class CInitializeGameSystemsFixture : public sound::CSndMainFixture {
 protected:
-    CInitializeGameSystemsTest() {
+    CInitializeGameSystemsFixture() {
         ON_CALL(file_system_, readFile(kIni)).WillByDefault([this](std::string_view) {
             return std::optional(ini_text_);
         });
@@ -148,7 +149,7 @@ protected:
 
     std::string ini_text_ = "[Graphics]\r\ngamePIXX=800\r\ngamePIXY=600\r\nuseDirect3D=1\r\n"
                             "[Sound]\r\n[Control]\r\n[Debug]\r\n";
-    engine::CMemoryScreen screen_{kWidth, kHeight, 32};
+    engine::CMemoryScreen screen_{ScreenWidth, kHeight, 32};
     NiceMock<engine::MockRawInput> raw_input_;
     NiceMock<platform::MockDisplay> display_;
     NiceMock<platform::MockRenderer> renderer_;
@@ -312,6 +313,41 @@ protected:
                               .menu = menu_,
                               .attract_movies = attract_movies_};
 };
+
+using CInitializeGameSystemsTest = CInitializeGameSystemsFixture<kWidth>;
+// The front end at 16:9.
+constexpr int kWideWidth = 848;
+using CWideInitializeGameSystemsTest = CInitializeGameSystemsFixture<kWideWidth>;
+
+// 800x600 is 4:3, which is the layout's own width at 480 lines.
+TEST_F(CInitializeGameSystemsTest, TheFrontEndStartsAt640x480) {
+    start();
+    EXPECT_EQ(screen_.requested_width, kWidth);
+    EXPECT_EQ(screen_.requested_height, kHeight);
+}
+
+TEST_F(CInitializeGameSystemsTest, AWidePickStartsTheFrontEndAtItsAspect) {
+    ini_text_ = "[Graphics]\r\ngamePIXX=1920\r\ngamePIXY=1080\r\nuseDirect3D=1\r\n";
+    start();
+    EXPECT_EQ(screen_.requested_width, kWideWidth);
+    EXPECT_EQ(screen_.requested_height, kHeight);
+}
+
+// Only the hardware renderer widens the menu's moon.
+TEST_F(CInitializeGameSystemsTest, AWidePickWithoutAccelerationStartsTheFrontEndAt640) {
+    ini_text_ = "[Graphics]\r\ngamePIXX=1920\r\ngamePIXY=1080\r\nuseDirect3D=0\r\n";
+    start();
+    EXPECT_EQ(screen_.requested_width, kWidth);
+}
+
+// The fangs centred, black either side.
+TEST_F(CWideInitializeGameSystemsTest, TheLoadingScreenIsCentred) {
+    start();
+    EXPECT_EQ(screen_.pixel(103, kHeight - 1), 0U);
+    EXPECT_EQ(screen_.pixel(104, kHeight - 1), 0x636363U);
+    EXPECT_EQ(screen_.pixel(743, kHeight - 1), 0x636363U);
+    EXPECT_EQ(screen_.pixel(744, kHeight - 1), 0U);
+}
 
 TEST_F(CInitializeGameSystemsTest, ReadsTheIniAndKeepsItsModeAfterTheFirstRun) {
     EXPECT_CALL(display_, setWindowSize(800, 600));

@@ -81,7 +81,9 @@ bool CWddVMem::setScreenResolution(int width, int height, int bits_per_pixel) {
     if (bits_per_pixel != 8 && bits_per_pixel != 16 && bits_per_pixel != 32) {
         return false;
     }
-    if (width <= 0 || height <= 0 || std::cmp_greater(height, kMaxScanlines) ||
+    // A wider mode would overrun the span table, which the original never checked.
+    if (width <= 0 || height <= 0 || width > engine::kMaxScreenWidth ||
+        std::cmp_greater(height, kMaxScanlines) ||
         !display_.setDisplayMode(width, height, bits_per_pixel)) {
         return false;
     }

@@ -2,6 +2,7 @@
 
 #include "core/dfilter/demonfilter.h"
 #include "core/dfont/dfont.h"
+#include "core/frontend.h"
 #include "core/game/game.h"
 #include "core/inivar/inivar.h"
 #include "core/menu/attractmovies.h"
@@ -51,7 +52,7 @@ void showLoadingScreen(const SGameSystemOwners &owners) {
     owners.special.clearScreen();
     engine::CAlphaBitmap loading(owners.dosio, owners.screen, owners.special);
     loading.load("fangs", kWidth, kHeight);
-    loading.display(0, 0, kLoadingAlpha);
+    loading.display(getFrontEndLeft(owners.screen.getWindowWidth()), 0, kLoadingAlpha);
     owners.screen.swapBuffers();
 }
 
@@ -93,7 +94,10 @@ void initializeGameSystems(const SGameSystemOwners &owners) {
     // The retail build's dismount cleared the texture cache.
     owners.pod.setDismountHandler([&texture = owners.texture] { texture.clearTextureCache(); });
     owners.two_d.initGraphicsSystem();
-    if (!owners.screen.setScreenResolution(kWidth, kHeight, kBitsPerPixel)) {
+    const CGame &game = owners.ini_owners.game;
+    const int front_end_width =
+        getFrontEndWidth(game.game_pixx, game.game_pixy, owners.special.getUseDirect3D());
+    if (!owners.screen.setScreenResolution(front_end_width, kFrontEndHeight, kBitsPerPixel)) {
         displayErrorAndQuit("Unable to set 640x480x32bpp.  Please make sure that you have a video "
                             "card with a minimum of 2MB of RAM, and the latest DirectDraw video "
                             "drivers.");

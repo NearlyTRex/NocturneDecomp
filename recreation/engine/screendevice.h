@@ -7,6 +7,11 @@
 
 namespace nocturne::engine {
 
+// The largest mode the resolution list offers, which the scanline and span tables are sized for.
+// The original's held 1200 rows and spans of 1598 pixels.
+inline constexpr int kMaxScreenWidth = 3840;
+inline constexpr int kMaxScreenHeight = 2160;
+
 // How each channel of the current mode packs an 8-bit level; the hardware renderer rewrites them
 // for its own format through the bridge.
 struct SColorChannels {

@@ -143,7 +143,9 @@ private:
     [[nodiscard]] int fitMenuTop(int top, int rows) const;
     void showCalibrationTestPattern(engine::CAlphaBitmap &bitmap, std::string_view message_text);
     // The selected item: five faint copies jittered about it, then the item over them.
-    void drawGlowingItem(engine::CBitFont &font, std::string_view item, int y);
+    // Where the 640-wide layout starts, centred on a wider front end.
+    [[nodiscard]] int getLayoutLeft() const;
+    void drawGlowingItem(engine::CBitFont &font, std::string_view item, int left, int y);
     void drawFooter();
     // The choice the menu actions make this frame, or -1.
     int readMenuActions(std::span<const std::string> items, int &selected_index);

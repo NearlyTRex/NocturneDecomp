@@ -19,6 +19,10 @@ public:
     MOCK_METHOD(EUpscaler, getUpscaler, (), (const, override));
     MOCK_METHOD(void, setUpscalerSharpness, (int percent), (override));
     MOCK_METHOD(int, getUpscalerSharpness, (), (const, override));
+    MOCK_METHOD(void, setAntialias, (EAntialias antialias), (override));
+    MOCK_METHOD(EAntialias, getAntialias, (), (const, override));
+    MOCK_METHOD(void, setWidescreen, (common::EWidescreen widescreen), (override));
+    MOCK_METHOD(common::EWidescreen, getWidescreen, (), (const, override));
 };
 
 } // namespace nocturne::platform

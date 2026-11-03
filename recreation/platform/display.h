@@ -1,6 +1,8 @@
 #pragma once
 
 #include "common/video/framebuffer.h"
+#include "common/video/widescreen.h"
+#include "platform/antialias.h"
 #include "platform/upscaler.h"
 
 #include <cstddef>
@@ -42,6 +44,12 @@ public:
     // 0 to 100, for the filters that sharpen.
     virtual void setUpscalerSharpness(int percent) = 0;
     [[nodiscard]] virtual int getUpscalerSharpness() const = 0;
+    // How the hardware renderer's scene is smoothed, from the next frame.
+    virtual void setAntialias(EAntialias antialias) = 0;
+    [[nodiscard]] virtual EAntialias getAntialias() const = 0;
+    // How a camera's scene fills a screen wider than 4:3, from the next frame.
+    virtual void setWidescreen(common::EWidescreen widescreen) = 0;
+    [[nodiscard]] virtual common::EWidescreen getWidescreen() const = 0;
 };
 
 } // namespace nocturne::platform

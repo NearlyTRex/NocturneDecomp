@@ -145,11 +145,11 @@ TEST_F(CPrimRasterTest, AnEdgeEndingPartWayIsReplacedByTheNext) {
 }
 
 TEST_F(CPrimRasterTest, NoRowIsDrawnAtOrPastTheScanlineLimit) {
-    std::vector<SRenderVertex> tall{at(10, 1195), at(10, 1210), at(14, 1210)};
+    std::vector<SRenderVertex> tall{at(10, 2155), at(10, 2170), at(14, 2170)};
     prim_.renderPolygonSoftware(tall, state_);
     ASSERT_FALSE(rows_.empty());
-    EXPECT_EQ(rows_.front().y, 1195);
-    EXPECT_EQ(rows_.back().y, 1199);
+    EXPECT_EQ(rows_.front().y, 2155);
+    EXPECT_EQ(rows_.back().y, 2159);
 }
 
 TEST_F(CPrimRasterTest, CullingDropsATriangleFacingAway) {

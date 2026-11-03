@@ -329,4 +329,14 @@ int CSpecial::buildCardList(int *out_card_count, char **out_driver_names, char *
                                    out_device_ids);
 }
 
+bool CSpecial::beginOverlay(const platform::SOverlayPlacement &placement) {
+    return use_external_renderer_ && renderer_.beginOverlay(placement);
+}
+
+void CSpecial::endOverlay() {
+    if (use_external_renderer_) {
+        renderer_.endOverlay();
+    }
+}
+
 } // namespace nocturne::engine

@@ -31,9 +31,12 @@ struct SVertexContext {
     // Numerator of the reciprocal w the draw submits with.
     float rhw_scale = 1.0F;
     // Above 480 lines the engine submits in the 640x480 hold buffer's space, stretched to the
-    // target by these; both 1 otherwise.
+    // target by these; both 1 otherwise. An overlay pass sets its own placement instead, and
+    // only it moves the offsets.
     float screen_scale_x = 1.0F;
     float screen_scale_y = 1.0F;
+    float screen_offset_x = 0.0F;
+    float screen_offset_y = 0.0F;
     // 0..255; the alpha of a draw without per-vertex alpha.
     int current_alpha = 0xff;
     // Indexes the palette for a flat untextured draw; a smooth one indexes by the vertex's u.

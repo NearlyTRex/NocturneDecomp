@@ -15,6 +15,7 @@ namespace nocturne::platform::gl {
 namespace {
 
 using ::testing::ElementsAre;
+using ::testing::Return;
 using ::testing::StrictMock;
 
 constexpr GLuint kSceneFramebuffer = 15;
@@ -186,8 +187,157 @@ TEST(CGlDeviceFrame, AStretchedHoldBufferIsReadBackAtTheNextLock) {
     ASSERT_TRUE(f.device.unlockHoldBuffer());
     f.gl.read_pixels.assign(std::size_t{1024} * 2 * 768, std::byte{0});
     f.gl.clear();
+    EXPECT_CALL(f.presenter, getAntialias()).WillOnce(Return(EAntialias::Off));
+    EXPECT_CALL(f.presenter, getSceneReframe(1024, 768)).WillOnce(Return(std::nullopt));
     ASSERT_TRUE(f.device.lockFrame());
     EXPECT_EQ(f.gl.count("ReadPixels"), 1U);
+    EXPECT_EQ(f.gl.count("DrawArrays"), 0U);
+    EXPECT_EQ(f.gl.count("BlitFramebuffer"), 0U);
+}
+
+// After the smoothing, at the scene's own pixels, and before the 2D is read back.
+TEST(CGlDeviceFrame, AStretchedSceneIsReframedForAWideScreen) {
+    SHoldFixture f;
+    ASSERT_TRUE(f.device.lockHoldBuffer());
+    ASSERT_TRUE(f.device.unlockHoldBuffer());
+    f.gl.read_pixels.assign(std::size_t{1024} * 2 * 768, std::byte{0});
+    const std::uint32_t epoch = f.device.getPipeline().getEpoch();
+    f.gl.clear();
+    const ::testing::InSequence in_order;
+    EXPECT_CALL(f.presenter, getAntialias()).WillOnce(Return(EAntialias::Fxaa));
+    EXPECT_CALL(f.presenter, getSceneReframe(1024, 768))
+        .WillOnce(Return(
+            common::SSceneReframe{.source = {.x = 0, .y = 0, .width = 1024, .height = 768},
+                                  .destination = {.x = 0, .y = 0, .width = 512, .height = 768}}));
+    ASSERT_TRUE(f.device.lockFrame());
+    const std::vector<std::string> names = callNames(f.gl);
+    const auto smoothed = std::ranges::find(names, "DrawArrays");
+    const auto reframed = std::ranges::find(names.rbegin(), names.rend(), "BlitFramebuffer");
+    ASSERT_NE(reframed, names.rend());
+    EXPECT_LT(smoothed, reframed.base());
+    EXPECT_LT(reframed.base(), std::ranges::find(names, "ReadPixels"));
+    EXPECT_EQ(
+        f.gl.getCalls("BlitFramebuffer").back(),
+        glCall("BlitFramebuffer", 0, 0, 1024, 768, 0, 0, 512, 768, GL_COLOR_BUFFER_BIT, GL_LINEAR));
+    EXPECT_NE(f.device.getPipeline().getEpoch(), epoch);
+}
+
+// A camera's scene is smoothed before the 2D drawn over it is read back, and once only.
+TEST(CGlDeviceFrame, AStretchedSceneIsAntialiasedOnceBeforeItIsReadBack) {
+    SHoldFixture f;
+    ASSERT_TRUE(f.device.lockHoldBuffer());
+    ASSERT_TRUE(f.device.unlockHoldBuffer());
+    f.gl.read_pixels.assign(std::size_t{1024} * 2 * 768, std::byte{0});
+    const std::uint32_t epoch = f.device.getPipeline().getEpoch();
+    f.gl.clear();
+    EXPECT_CALL(f.presenter, getAntialias()).WillOnce(Return(EAntialias::Fxaa));
+    EXPECT_CALL(f.presenter, getSceneReframe(1024, 768)).WillOnce(Return(std::nullopt));
+    ASSERT_TRUE(f.device.lockFrame());
+    const std::vector<std::string> names = callNames(f.gl);
+    const auto drawn = std::ranges::find(names, "DrawArrays");
+    ASSERT_NE(drawn, names.end());
+    EXPECT_LT(drawn, std::ranges::find(names, "ReadPixels"));
+    EXPECT_NE(f.device.getPipeline().getEpoch(), epoch);
+    ASSERT_TRUE(f.device.unlockFrame());
+    f.gl.clear();
+    ASSERT_TRUE(f.device.lockFrame());
+    EXPECT_EQ(f.gl.count("DrawArrays"), 0U);
+}
+
+// Without a copy of the scene there is nothing to redraw it from, so it stays as drawn.
+TEST(CGlDeviceFrame, AReframeThatCannotCopyTheSceneLeavesIt) {
+    SHoldFixture f;
+    ASSERT_TRUE(f.device.lockHoldBuffer());
+    ASSERT_TRUE(f.device.unlockHoldBuffer());
+    f.gl.read_pixels.assign(std::size_t{1024} * 2 * 768, std::byte{0});
+    f.gl.framebuffer_status = GL_FRAMEBUFFER_UNSUPPORTED;
+    const std::uint32_t epoch = f.device.getPipeline().getEpoch();
+    f.gl.clear();
+    EXPECT_CALL(f.presenter, getAntialias()).WillOnce(Return(EAntialias::Off));
+    EXPECT_CALL(f.presenter, getSceneReframe(1024, 768))
+        .WillOnce(Return(
+            common::SSceneReframe{.source = {.x = 0, .y = 0, .width = 1024, .height = 768},
+                                  .destination = {.x = 0, .y = 0, .width = 512, .height = 768}}));
+    ASSERT_TRUE(f.device.lockFrame());
+    EXPECT_EQ(f.gl.count("BlitFramebuffer"), 0U);
+    EXPECT_EQ(f.device.getPipeline().getEpoch(), epoch);
+}
+
+// The engine's own 2D screens never go through the hold buffer.
+TEST(CGlDeviceFrame, GeometryDrawnStraightToTheFrameIsNotAntialiased) {
+    SFixture f;
+    f.drawTriangle();
+    f.gl.clear();
+    ASSERT_TRUE(f.device.lockFrame());
+    EXPECT_EQ(f.gl.count("ReadPixels"), 1U);
+    EXPECT_EQ(f.gl.count("DrawArrays"), 0U);
+}
+
+TEST(CGlDeviceFrame, AnOverlayNeedsAMode) {
+    CGlRecorder gl;
+    StrictMock<MockGlFramePresenter> presenter;
+    CNullLog log;
+    CGlDevice device(gl.getApi(), presenter, log);
+    gl.clear();
+    EXPECT_FALSE(device.beginOverlay({.scale_x = 2.0F}));
+    EXPECT_FALSE(device.getOverlay().has_value());
+    device.endOverlay();
+    EXPECT_TRUE(gl.getCalls().empty());
+}
+
+// What was queued lands in the scene's space; the overlay draws over a cleared depth, and the
+// scene's comes back after it.
+TEST(CGlDeviceFrame, AnOverlayHasDepthOfItsOwnAndPutsTheScenesBack) {
+    SFixture f;
+    f.drawTriangle();
+    f.gl.clear();
+    const SOverlayPlacement placement{
+        .scale_x = 1.5F, .scale_y = 1.0F, .offset_x = 4.0F, .offset_y = 0.0F};
+    ASSERT_TRUE(f.device.beginOverlay(placement));
+    EXPECT_EQ(f.device.getOverlay(), placement);
+    const std::vector<std::string> names = callNames(f.gl);
+    const auto drawn = std::ranges::find(names, "DrawElements");
+    const auto held = std::ranges::find(names, "BlitFramebuffer");
+    const auto cleared = std::ranges::find(names, "Clear");
+    ASSERT_NE(cleared, names.end());
+    EXPECT_LT(drawn, held);
+    EXPECT_LT(held, cleared);
+    EXPECT_EQ(f.gl.getCalls("Clear")[0], glCall("Clear", GL_DEPTH_BUFFER_BIT));
+    EXPECT_EQ(f.device.getBatch().addPolygon(3).size(), 3U);
+    f.gl.clear();
+    f.device.endOverlay();
+    EXPECT_FALSE(f.device.getOverlay().has_value());
+    EXPECT_EQ(f.gl.count("DrawElements"), 1U);
+    EXPECT_EQ(f.gl.getCalls("BlitFramebuffer"),
+              (std::vector{glCall("BlitFramebuffer", 0, 0, kWidth, kHeight, 0, 0, kWidth, kHeight,
+                                  GL_DEPTH_BUFFER_BIT, GL_NEAREST)}));
+    f.gl.clear();
+    f.device.endOverlay();
+    EXPECT_TRUE(f.gl.getCalls().empty());
+}
+
+// So the overlay is drawn over the smoothed scene, not smoothed with it.
+TEST(CGlDeviceFrame, AnOverlayAntialiasesTheStretchedSceneFirst) {
+    SHoldFixture f;
+    ASSERT_TRUE(f.device.lockHoldBuffer());
+    ASSERT_TRUE(f.device.unlockHoldBuffer());
+    f.gl.clear();
+    EXPECT_CALL(f.presenter, getAntialias()).WillOnce(Return(EAntialias::Fxaa));
+    EXPECT_CALL(f.presenter, getSceneReframe(1024, 768)).WillOnce(Return(std::nullopt));
+    ASSERT_TRUE(f.device.beginOverlay({}));
+    EXPECT_EQ(f.gl.count("DrawArrays"), 1U);
+    f.device.endOverlay();
+}
+
+TEST(CGlDeviceFrame, ANewModeEndsAnOverlay) {
+    SFixture f;
+    ASSERT_TRUE(f.device.beginOverlay({}));
+    ASSERT_TRUE(f.device.setMode(kWidth, kHeight, 32, f.scanlines));
+    EXPECT_FALSE(f.device.getOverlay().has_value());
+    ASSERT_TRUE(f.device.beginOverlay({}));
+    f.gl.framebuffer_status = GL_FRAMEBUFFER_UNSUPPORTED;
+    EXPECT_FALSE(f.device.setMode(kWidth * 2, kHeight, 32, f.scanlines));
+    EXPECT_FALSE(f.device.getOverlay().has_value());
 }
 
 TEST(CGlDeviceFrame, ClearingColourDrawsWhatIsPendingThenClearsTheTarget) {

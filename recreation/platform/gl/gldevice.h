@@ -7,10 +7,13 @@
 #include "platform/gl/glmasterdepth.h"
 #include "platform/gl/glpipeline.h"
 #include "platform/gl/glquad.h"
+#include "platform/gl/glscenefilter.h"
 #include "platform/gl/glscenetarget.h"
 #include "platform/gl/gltexturecache.h"
+#include "platform/renderer.h"
 
 #include <cstddef>
+#include <optional>
 #include <span>
 #include <vector>
 
@@ -64,9 +67,17 @@ public:
     [[nodiscard]] bool unlockFrame();
     [[nodiscard]] bool isFrameLocked() const;
     // Points the engine's rows at the hold buffer, and back at the frame on unlock, which
-    // stretches the hold buffer over the target.
+    // stretches the hold buffer over the target. That stretch is a camera's scene: the next
+    // lock or overlay runs the presenter's anti-aliasing and widescreen framing over it first,
+    // before any 2D lands.
     [[nodiscard]] bool lockHoldBuffer();
     [[nodiscard]] bool unlockHoldBuffer();
+
+    // Lands what is queued and sets the scene's depth aside behind a cleared buffer; the draws
+    // that follow are placed by the placement. Ending lands them and puts the depth back.
+    [[nodiscard]] bool beginOverlay(const SOverlayPlacement &placement);
+    void endOverlay();
+    [[nodiscard]] const std::optional<SOverlayPlacement> &getOverlay() const;
 
     // Colour only; the engine often keeps depth across a colour clear.
     void clearColor();
@@ -79,6 +90,8 @@ public:
 
 private:
     void finishScene();
+    // The scene stretched since the last lock, once.
+    void filterScene();
     // After the device itself drew with GL: neither the pipeline nor the texture binding is
     // what the caches say.
     void invalidate();
@@ -93,6 +106,7 @@ private:
     CGlTextureCache textures_;
     CGlSceneTarget scene_;
     CGlMasterDepth depth_;
+    CGlSceneFilter filter_;
     common::CPolygonBatch batch_;
     common::EPixelLayout layout_ = common::EPixelLayout::Bgra8888;
     int width_ = 0;
@@ -109,6 +123,9 @@ private:
     // 2D the engine drew into the image since the last unlock, and a screen with no 3D, the
     // pause menu among them, would never appear.
     bool target_ahead_ = false;
+    // The hold buffer was stretched over the target since the last lock.
+    bool scene_stretched_ = false;
+    std::optional<SOverlayPlacement> overlay_;
     int reflection_depth_ = 0;
 };
 

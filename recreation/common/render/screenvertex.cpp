@@ -85,8 +85,10 @@ SScreenVertex convertVertex(const SVertexContext &context, const SVertexInput &i
     const std::uint32_t flags = context.render_flags;
     const auto eye_z = static_cast<float>(input.transformed_z);
     SScreenVertex out{
-        .x = static_cast<float>(input.screen_x) * kScreenScale * context.screen_scale_x,
-        .y = static_cast<float>(input.screen_y) * kScreenScale * context.screen_scale_y,
+        .x = (static_cast<float>(input.screen_x) * kScreenScale * context.screen_scale_x) +
+             context.screen_offset_x,
+        .y = (static_cast<float>(input.screen_y) * kScreenScale * context.screen_scale_y) +
+             context.screen_offset_y,
         .z = getVertexDepth(context, eye_z),
         .rhw = context.rhw_scale / eye_z,
         .diffuse = 0,

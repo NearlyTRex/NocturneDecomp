@@ -11,6 +11,7 @@
 #include <array>
 #include <cstddef>
 #include <cstdint>
+#include <optional>
 #include <vector>
 
 namespace nocturne::core {
@@ -62,7 +63,11 @@ private:
     void load();
     void scatterBat(SBat &bat);
     void advanceBat(SBat &bat, const common::CExtendedFloat &step);
-    void renderMoon();
+    // How much wider than 640 the 3D is projected, once the pass that stretches it is begun;
+    // nothing when the scene keeps the screen's own viewport.
+    [[nodiscard]] std::optional<float> beginWideScene();
+    void endWideScene();
+    void renderMoon(float projection_scale);
     void renderBats();
     void renderBat(const SBat &bat);
     void renderClouds();

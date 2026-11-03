@@ -59,18 +59,19 @@ constexpr int kBandBottom = 438;
 constexpr int kQuarterSecond = 18 * 0x4000;
 constexpr int kRowsPerFrame = 8;
 
-// The credits on a 640x480 screen, over a one-colour stats image, the menus' block fonts drawing
-// them and the clock stepping a quarter second each time it is read.
-class CCreditsTest : public sound::CSndMainFixture {
+// The credits on a screen 480 lines tall, over a one-colour stats image, the menus' block fonts
+// drawing them and the clock stepping a quarter second each time it is read.
+template <int ScreenWidth>
+class CCreditsFixture : public sound::CSndMainFixture {
 protected:
-    CCreditsTest() {
+    CCreditsFixture() {
         givenMenuFontFiles([this](const std::string &name, const std::string &contents) {
             givenFile(name, contents);
         });
         givenFile("msglist.txt", "; version\n0\n; use OS fonts\n0\n; font\n\"Arial\"\n");
         messages_.readMessageFile("msglist.txt");
         fonts_.initFonts();
-        two_d_.setupViewportAndClipping(0, 0, kWidth - 1, kHeight - 1);
+        two_d_.setupViewportAndClipping(0, 0, ScreenWidth - 1, kHeight - 1);
         givenFile("art\\stats.raw", std::string(std::size_t{kWidth} * kHeight, '\x01'));
         givenFile("art\\stats.act", engine::makePalette({0, 0, 0, 0x11, 0x22, 0x33}));
         ON_CALL(raw_input_, getKeyboardState()).WillByDefault([this] {
@@ -108,7 +109,7 @@ protected:
     // The first row of the column where the predicate holds for a pixel, or -1.
     [[nodiscard]] int firstRowWhere(const std::function<bool(std::uint32_t)> &is_wanted) const {
         for (int y = 0; y < kHeight; ++y) {
-            for (int x = kColumnLeft; x < kWidth; ++x) {
+            for (int x = kColumnLeft; x < ScreenWidth; ++x) {
                 if (is_wanted(screen_.pixel(x, y))) {
                     return y;
                 }
@@ -145,7 +146,7 @@ protected:
     }
 
     std::array<std::uint8_t, engine::IRawInput::kInputCodeCount> keyboard_{};
-    engine::CMemoryScreen screen_{kWidth, kHeight, 32};
+    engine::CMemoryScreen screen_{ScreenWidth, kHeight, 32};
     NiceMock<engine::MockRawInput> raw_input_;
     engine::C2d two_d_{dosio_, screen_, raw_input_};
     engine::CLight light_;
@@ -187,6 +188,11 @@ protected:
     int ticks_ = 0;
     std::function<void(int)> on_tick_;
 };
+
+using CCreditsTest = CCreditsFixture<kWidth>;
+// The front end at 16:9.
+constexpr int kWideWidth = 848;
+using CWideCreditsTest = CCreditsFixture<kWideWidth>;
 
 TEST_F(CCreditsTest, WithoutTheCreditsFileNothingRolls) {
     EXPECT_CALL(raw_input_, clearInput()).Times(1);
@@ -267,6 +273,37 @@ TEST_F(CCreditsTest, BlackStripsCoverTheColumnsTopAndBottom) {
     EXPECT_EQ(screen_.pixel(kColumnLeft, kBandBottom + 1), 0U);
     EXPECT_EQ(screen_.pixel(kWidth - 1, kHeight - 1), 0U);
     EXPECT_EQ(screen_.pixel(kColumnLeft - 1, 0), kImage);
+}
+
+// The image keeps to the left; the column and its strips run on over the black to the right.
+TEST_F(CWideCreditsTest, TheColumnRunsOnToTheScreensRightEdge) {
+    givenCredits("end\n");
+    cancelAfterFrames(1);
+    game_.rollCredits();
+    EXPECT_EQ(screen_.pixel(0, kBandTop), kImage);
+    EXPECT_EQ(screen_.pixel(kWidth - 1, kBandTop), kImage);
+    EXPECT_EQ(screen_.pixel(kWidth, kBandTop), 0U);
+    EXPECT_EQ(screen_.pixel(kWideWidth - 1, kBandTop - 1), 0U);
+    EXPECT_EQ(screen_.pixel(kWideWidth - 1, kHeight - 1), 0U);
+}
+
+// Centred between the column's left and the screen's right edge, so it starts further right.
+TEST_F(CWideCreditsTest, ALineIsCentredOnTheWiderColumn) {
+    givenCredits("XX\r\nend\r\n");
+    constexpr int kFrames = 12;
+    cancelAfterFrames(kFrames);
+    game_.rollCredits();
+    const int row = letterRow(topAfterFrames(kFrames));
+    int first = -1;
+    for (int x = kColumnLeft; x < kWideWidth && first < 0; ++x) {
+        if (screen_.pixel(x, row) == kTextPixel) {
+            first = x;
+        }
+    }
+    const int width = fonts_.getThemeFont()->getTextWidth("XX");
+    const int text_left = (kColumnLeft + kWideWidth - width) / 2;
+    EXPECT_GE(first, text_left);
+    EXPECT_LT(first, text_left + width);
 }
 
 // A backslash and the character after it are dropped; "\b" makes the line a heading.

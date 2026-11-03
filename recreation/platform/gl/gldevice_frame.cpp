@@ -1,6 +1,8 @@
 #include "platform/gl/gldevice.h"
+#include "platform/gl/glframepresenter.h"
 
 #include <algorithm>
+#include <utility>
 
 namespace nocturne::platform::gl {
 
@@ -10,9 +12,11 @@ bool CGlDevice::lockFrame() {
     }
     finishScene();
     if (target_ahead_) {
+        filterScene();
         scene_.readBack(image_, layout_, pitch_);
         target_ahead_ = false;
     }
+    scene_stretched_ = false;
     frame_locked_ = true;
     return true;
 }
@@ -52,7 +56,50 @@ bool CGlDevice::unlockHoldBuffer() {
     invalidate();
     // The stretched composite is in the target and not in the frame image.
     target_ahead_ = true;
+    scene_stretched_ = true;
     return true;
+}
+
+bool CGlDevice::beginOverlay(const SOverlayPlacement &placement) {
+    if (!hasMode()) {
+        return false;
+    }
+    flush();
+    filterScene();
+    static_cast<void>(depth_.hold(scene_.getFramebuffer(), width_, height_));
+    clearDepth();
+    overlay_ = placement;
+    return true;
+}
+
+void CGlDevice::endOverlay() {
+    if (!overlay_) {
+        return;
+    }
+    flush();
+    static_cast<void>(depth_.giveBack(scene_.getFramebuffer(), width_, height_));
+    overlay_.reset();
+}
+
+const std::optional<SOverlayPlacement> &CGlDevice::getOverlay() const {
+    return overlay_;
+}
+
+// Smoothed at the scene's own pixels, then reframed for a wide screen, before anything is drawn
+// over it.
+void CGlDevice::filterScene() {
+    if (!std::exchange(scene_stretched_, false)) {
+        return;
+    }
+    const GLuint scene = scene_.getFramebuffer();
+    if (filter_.antialias(scene, width_, height_, presenter_.getAntialias())) {
+        invalidate();
+    }
+    const std::optional<common::SSceneReframe> reframe =
+        presenter_.getSceneReframe(width_, height_);
+    if (reframe && filter_.reframe(scene, width_, height_, *reframe)) {
+        invalidate();
+    }
 }
 
 void CGlDevice::clearColor() {

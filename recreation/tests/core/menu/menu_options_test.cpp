@@ -124,10 +124,10 @@ TEST_F(COptionsScreenTest, GameplayOpensItsPage) {
 
 // The halo is the Graphic page's third line.
 TEST_F(COptionsScreenTest, GraphicOpensItsPage) {
-    pressEachFrame({kDown, kReturn, kDown, kDown, kReturn, kEscape, kEscape});
+    pressEachFrame({kDown, kReturn, kDown, kDown, kDown, kReturn, kEscape, kEscape});
     menu_.showOptionsScreen(0);
     EXPECT_EQ(game_.halo_mode, 1);
-    EXPECT_EQ(frames_, 7);
+    EXPECT_EQ(frames_, 8);
 }
 
 TEST_F(COptionsScreenTest, TheCheatsQuitUntilTheyArePorted) {

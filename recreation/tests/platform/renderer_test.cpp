@@ -76,5 +76,11 @@ TEST(IRenderer, ReflectionPassInterface) {
     static_assert(std::is_same_v<decltype(&IRenderer::endReflectionPass), void (IRenderer::*)()>);
 }
 
+TEST(IRenderer, OverlayInterface) {
+    static_assert(std::is_same_v<decltype(&IRenderer::beginOverlay),
+                                 bool (IRenderer::*)(const SOverlayPlacement &)>);
+    static_assert(std::is_same_v<decltype(&IRenderer::endOverlay), void (IRenderer::*)()>);
+}
+
 } // namespace
 } // namespace nocturne::platform
