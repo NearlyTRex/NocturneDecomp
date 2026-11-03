@@ -606,6 +606,9 @@ functions don't count as done. Sizes are in instructions.
     - deferred: refusing the draw and flashlight requests in a mission whose name starts "HQ-", before netplay sends the input (the decomp's hq_weapon.h, FLASHLIGHT_DRAW), with CGame::playerControls
     - deferred: withholding the hero's input while the script camera is on a dead character who is not a player hero (the decomp's helper_death.h nocturne_helper_death_hold_hero), with CGame::playerControls
     - deferred: a session the script ended with "end" closing on the Game Over menu, as a helper's death ends it, where the original drops to the main menu (the decomp's helper_death.h), with CGame::runGameSession
+    - deferred: the message line, chapter title and status bars laid out in boxes in the scene's picture at the HUD's text scale, the companions' bars starting right of the battery gauge (the decomp's hud.h, HUD), with CGame::renderOverlay
+    - deferred: the death banner a quarter of the way down, clear of the message line and the Game Over dialog (the decomp's hud.h, HUD), with CGame::processFrame
+    - deferred: the iris fade centred where its scene point lands in a pillarboxed or panned picture (the decomp's widescreen.h nocturne_widescreen_scene_to_screen), with calculateIrisFadeCenter
 
 ## Step 7: `CMoon::update`, `CMoon::render`
 
@@ -1485,6 +1488,7 @@ functions don't count as done. Sizes are in instructions.
     - deferred: destroying the ammo counter, with CAmmo
   - [~] `initialize` 0x004fd190 (41)
     - deferred: making and setting up the ammo counter, with CAmmo
+    - deferred: the item panels drawn over the finished scene in the camera's space laid onto the picture's corner, their text, ammo and counts in the same boxes at the HUD's text scale, and the pickup help under the top letterbox (the decomp's hud.h, HUD), with CInventory::renderSelectedItems and renderAllItems
   - [ ] `updateSelectedWeaponAmmoDisplay` 0x004ffe10 (28)
   - [ ] `isWeaponInCategory` 0x004ffe70 (114)
   - [ ] `resetWeaponSwitchTimers` 0x004fffa0 (16)
@@ -2016,6 +2020,7 @@ functions don't count as done. Sizes are in instructions.
     - deferred: clearing the speaker and the focus lock, with setFocusActor and setSpeaker
     - deferred: letting the heroes be damaged and the enemies attack, and clearing the letterbox, with CGame's readers of them
     - deferred: clearing the script's time scale, with process
+    - deferred: the letterbox measured over the 4:3 picture and three subtitle lines high with half a line spare each side, the subtitles in it at the HUD's text scale (the decomp's hud.h, HUD), with CScript::getLetterboxHeight and renderSubtitles
   - [~] `startDialogLine` 0x0055ff00 (148)
     - deferred: the line's length: the number the sound is, the sound's own, or two hundredths of a second a character and 0.4 more for a missing sound, which the script's pick list notes, with CSound::getSoundDuration and the script editor
     - deferred: the speaker, the focus actor unless it is locked, the caption, the speaker's speech timer and the sound, while running, with renderSubtitles and the scene camera
@@ -2188,6 +2193,7 @@ functions don't count as done. Sizes are in instructions.
     - deferred: forgetting the dynamic lights and the mirror glass actors, with addDynamicLight and buildMirrorList
     - deferred: drawing the set into each master light's shadow map, its edges cleared for a circular shadow, with renderSceneGeometry and CDemonLight's beginScene, clearCircularShadowMapEdges and endScene
     - deferred: no spot, omni or corona lights gathered, with renderScene
+    - deferred: the pan-and-scan crop following the script's focus actor: its height in the shot, the camera, the letterbox and the player's look handed over each scene, without which the crop sits at the shot's middle (the decomp's widescreen_focus.h), with renderScene
 
 ## Step 13: `CFireEffect::init`, `CDemonSet::loadMasterLightStates`, `CDemonSet::setGamma`, `CGame::clearOverlay`, `CGame::loadAssets`
 

@@ -40,6 +40,9 @@ constexpr std::size_t kMaxMasterLights = 96;
 //   shadow, with renderSceneGeometry and CDemonLight's beginScene, clearCircularShadowMapEdges
 //   and endScene
 // deferred: no spot, omni or corona lights gathered, with renderScene
+// deferred: the pan-and-scan crop following the script's focus actor: its height in the shot,
+//   the camera, the letterbox and the player's look handed over each scene, without which the
+//   crop sits at the shot's middle (the decomp's widescreen_focus.h), with renderScene
 // nocedit 0x0056aa10
 void CDemonSet::initScene() {
     owners_.loading_screen.update(owners_.messages.getLocalizedString("Initializing scene"), false);
