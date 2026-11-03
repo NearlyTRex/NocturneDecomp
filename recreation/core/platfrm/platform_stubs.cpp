@@ -27,10 +27,6 @@ void CPlatform::renderBackground(int /*layer_flag*/) {
     notPorted("renderBackground");
 }
 
-CBoundingBox3D *CPlatform::getBoundingBox(CBoundingBox3D * /*out_box*/) {
-    notPorted("getBoundingBox");
-}
-
 ECollisionType CPlatform::getCollisionType(SCollisionInfo * /*collision_info*/) {
     notPorted("getCollisionType");
 }

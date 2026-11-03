@@ -5,6 +5,8 @@
 #include "core/actor/actorarchive.h"
 #include "core/actor/collisiontype.h"
 #include "core/actor/demonactortype.h"
+#include "core/box/boundingbox3d.h"
+#include "core/dmodel/keyframedmodel.h"
 #include "core/dmodel/keyframedmodelinstance.h"
 #include "core/event/rulelist.h"
 
@@ -98,6 +100,12 @@ void CLever::archive(CActorArchive &actor_archive) {
 // nocedit 0x00505060
 ECollisionType CLever::getCollisionType(SCollisionInfo * /*collision_info*/) {
     return collision_enabled_ ? ECollisionType::kMesh : ECollisionType::kNone;
+}
+
+// nocedit 0x00504d80
+CBoundingBox3D *CLever::getBoundingBox(CBoundingBox3D *out_box) {
+    *out_box = model_.getModelPtr().getFrameBounds().front();
+    return out_box;
 }
 
 const CKeyFramedModelInstance &CLever::getModel() const {

@@ -6,7 +6,9 @@
 #include "core/actor/actor.h"
 #include "core/actor/actorarchive.h"
 #include "core/actor/demonactortype.h"
+#include "core/box/boundingbox3d.h"
 #include "core/course/course.h"
+#include "core/dmodel/keyframedmodel.h"
 #include "core/dmodel/keyframedmodelinstance.h"
 #include "core/location.h"
 #include "core/xform/xform.h"
@@ -202,6 +204,12 @@ EGroundType CPlatform::getGroundType() {
 // nocedit 0x0054e1d0
 int CPlatform::getBlockVirtualDirectorFlag() {
     return block_virtual_director_ ? 1 : 0;
+}
+
+// nocedit 0x0054db70
+CBoundingBox3D *CPlatform::getBoundingBox(CBoundingBox3D *out_box) {
+    *out_box = model_.getModelPtr().getFrameBounds().front();
+    return out_box;
 }
 
 const CKeyFramedModelInstance &CPlatform::getModel() const {

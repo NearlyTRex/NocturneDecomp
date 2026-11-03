@@ -1,9 +1,13 @@
 #include "core/actor/demonactortype.h"
 #include "core/actor/groundtype.h"
 #include "core/backgnd/backgroundactor.h"
+#include "core/box/boundingbox3d.h"
+#include "core/dmodel/keyframedmodel.h"
 #include "tests/mocks/core/notportedcalls.h"
+#include "tests/mocks/core/oneframemodel.h"
 #include "tests/mocks/core/testclasses.h"
 #include "tests/mocks/core/testfieldsarchive.h"
+#include "tests/mocks/engine/podfixture.h"
 
 #include <gmock/gmock.h>
 #include <gtest/gtest.h>
@@ -106,10 +110,22 @@ TEST(CBackgroundActor, TheFunctionsNotPortedYetQuit) {
     const NotPortedCalls calls = {
         {"renderOpaque", [&] { static_cast<void>(scenery.renderOpaque()); }},
         {"renderBackground", [&] { scenery.renderBackground(0); }},
-        {"getBoundingBox", [&] { static_cast<void>(scenery.getBoundingBox(nullptr)); }},
         {"getCollisionType", [&] { static_cast<void>(scenery.getCollisionType(nullptr)); }},
     };
     expectEachQuitsNotPorted("CBackgroundActor", calls);
+}
+
+class CBackgroundActorBoundsTest : public engine::CPodFixture {};
+
+TEST_F(CBackgroundActorBoundsTest, ItsBoxIsItsModelsFirstFrames) {
+    givenFile("models\\candle.kfm", oneFrameModel());
+    CTestClasses classes{dosio_};
+    classes.getKeyFramedModel().load("candle.kfm");
+    CBackgroundActor scenery{classes.get()};
+    scenery.setup();
+    CBoundingBox3D box;
+    EXPECT_EQ(scenery.getBoundingBox(&box), &box);
+    expectOneFrameBounds(box);
 }
 
 TEST(CBackgroundActor, SettingUpFindsItsModel) {

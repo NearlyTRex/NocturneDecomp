@@ -36,17 +36,17 @@ functions don't count as done. Sizes are in instructions.
 | 20 | Not reached from startup: `support/` | 2 | 24 | 593 | 3 | 1 | 12.5% |
 | 21 | Not reached from startup: `cockpit/` | 4 | 178 | 11527 | 0 | 0 | 0.0% |
 | 22 | Not reached from startup: `shape/` | 2 | 42 | 3178 | 4 | 2 | 9.5% |
-| 23 | Not reached from startup: `core/` (part 1 of 9) | 18 | 292 | 16011 | 65 | 13 | 22.2% |
+| 23 | Not reached from startup: `core/` (part 1 of 9) | 18 | 292 | 16011 | 66 | 13 | 22.6% |
 | 24 | Not reached from startup: `core/` (part 2 of 9) | 11 | 277 | 24965 | 35 | 7 | 12.6% |
 | 25 | Not reached from startup: `core/` (part 3 of 9) | 24 | 278 | 24134 | 47 | 8 | 16.9% |
 | 26 | Not reached from startup: `core/` (part 4 of 9) | 18 | 300 | 20148 | 51 | 7 | 17.0% |
-| 27 | Not reached from startup: `core/` (part 5 of 9) | 21 | 294 | 20910 | 60 | 11 | 20.4% |
-| 28 | Not reached from startup: `core/` (part 6 of 9) | 18 | 282 | 21809 | 53 | 12 | 18.7% |
+| 27 | Not reached from startup: `core/` (part 5 of 9) | 21 | 294 | 20910 | 63 | 11 | 21.4% |
+| 28 | Not reached from startup: `core/` (part 6 of 9) | 18 | 282 | 21809 | 54 | 12 | 19.1% |
 | 29 | Not reached from startup: `core/` (part 7 of 9) | 18 | 263 | 22721 | 68 | 9 | 25.8% |
 | 30 | Not reached from startup: `core/` (part 8 of 9) | 20 | 300 | 31826 | 41 | 8 | 13.6% |
 | 31 | Not reached from startup: `core/` (part 9 of 9) | 5 | 111 | 10905 | 26 | 7 | 23.4% |
 | 32 | Not reached from startup: `wincore/` | 2 | 11 | 482 | 4 | 0 | 36.3% |
-| | **All** | | **4479** | **402407** | **1155** | **216** | **25.7%** |
+| | **All** | | **4479** | **402407** | **1160** | **216** | **25.8%** |
 
 ## Step 0: Math value types
 
@@ -3673,14 +3673,14 @@ functions don't count as done. Sizes are in instructions.
 - class `CEnemy`
   - [x] `dtor` 0x004125c0 (62)
 
-### `core/backgnd.cpp` (13 functions, 248 instructions, 9 done, 0 partial)
+### `core/backgnd.cpp` (13 functions, 248 instructions, 10 done, 0 partial)
 - class `CBackgroundActor`
   - [x] `ctor` 0x004127b0 (21)
   - [x] `getActorType` 0x004127a0 (2)
   - [x] `process` 0x00412850 (1)
   - [ ] `renderBackground` 0x00412860 (37)
   - [ ] `renderOpaque` 0x004128d0 (40)
-  - [ ] `getBoundingBox` 0x00412940 (28)
+  - [x] `getBoundingBox` 0x00412940 (28)
   - [x] `archive` 0x00412990 (27)
   - [ ] `getCollisionType` 0x004129f0 (20)
   - [x] `getGroundType` 0x00412a30 (3)
@@ -5161,13 +5161,13 @@ functions don't count as done. Sizes are in instructions.
   - [x] `factoryFuncHaystack` 0x004f0bd0 (12)
   - [x] `staticInit` 0x004f0ba0 (9)
 
-### `core/health.cpp` (14 functions, 221 instructions, 8 done, 0 partial)
+### `core/health.cpp` (14 functions, 221 instructions, 9 done, 0 partial)
 - class `CHealthItem`
   - [x] `ctor` 0x004f1dd0 (21)
   - [x] `getActorType` 0x004f1dc0 (2)
   - [x] `process` 0x004f1e50 (1)
   - [ ] `renderOpaque` 0x004f1e60 (41)
-  - [ ] `getBoundingBox` 0x004f1ed0 (28)
+  - [x] `getBoundingBox` 0x004f1ed0 (28)
   - [x] `archive` 0x004f1f20 (35)
   - [ ] `getCollisionType` 0x004f1fa0 (2)
   - [ ] `canPickup` 0x004f1fb0 (9)
@@ -5409,7 +5409,7 @@ functions don't count as done. Sizes are in instructions.
 - free functions
   - [x] `staticInit` 0x00503d80 (10)
 
-### `core/lever.cpp` (14 functions, 639 instructions, 8 done, 0 partial)
+### `core/lever.cpp` (14 functions, 639 instructions, 9 done, 0 partial)
 - class `CLever`
   - [ ] `isAccessibleFrom` 0x00505080 (56)
   - [ ] `activate` 0x00504c90 (34)
@@ -5417,7 +5417,7 @@ functions don't count as done. Sizes are in instructions.
   - [x] `getActorType` 0x005047c0 (2)
   - [ ] `process` 0x00504920 (136)
   - [ ] `renderOpaque` 0x00504cf0 (57)
-  - [ ] `getBoundingBox` 0x00504d80 (28)
+  - [x] `getBoundingBox` 0x00504d80 (28)
   - [x] `archive` 0x00504e80 (131)
   - [x] `getCollisionType` 0x00505060 (5)
   - [x] `dtor` 0x00505430 (31)
@@ -5447,14 +5447,14 @@ functions don't count as done. Sizes are in instructions.
   - [x] `factoryFuncLightGun` 0x005058c0 (12)
   - [x] `staticInit` 0x00505890 (9)
 
-### `core/litecone.cpp` (11 functions, 243 instructions, 6 done, 1 partial)
+### `core/litecone.cpp` (11 functions, 243 instructions, 7 done, 1 partial)
 - class `CLightCone`
   - [~] `ctor` 0x00506b10 (44)
     - deferred: drawing the cone transparent, with the set's renderable lists
   - [x] `getActorType` 0x00506b00 (2)
   - [ ] `process` 0x00506bc0 (32)
   - [ ] `renderTransparent` 0x00506c20 (50)
-  - [ ] `getBoundingBox` 0x00506cb0 (19)
+  - [x] `getBoundingBox` 0x00506cb0 (19)
   - [x] `archive` 0x00506d00 (37)
   - [ ] `getCollisionType` 0x00506d90 (2)
   - [x] `dtor` 0x00506e30 (31)
@@ -5882,7 +5882,7 @@ functions don't count as done. Sizes are in instructions.
   - [x] `staticInit` 0x00549320 (9)
   - [ ] `didPhaseCross` 0x00549aa0 (73)
 
-### `core/platfrm.cpp` (18 functions, 1935 instructions, 9 done, 1 partial)
+### `core/platfrm.cpp` (18 functions, 1935 instructions, 10 done, 1 partial)
 - class `CPlatform`
   - [~] `ctor` 0x0054c850 (115)
     - deferred: the slew mode the editor sets, being drawn in the background, the health of 50 and the attached actors' places, with CPlatform::process
@@ -5894,7 +5894,7 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `process` 0x0054cc30 (709)
   - [ ] `renderOpaque` 0x0054d720 (202)
   - [ ] `renderBackground` 0x0054d9b0 (129)
-  - [ ] `getBoundingBox` 0x0054db70 (28)
+  - [x] `getBoundingBox` 0x0054db70 (28)
   - [ ] `getCollisionType` 0x0054e180 (15)
   - [x] `allowBulletHoles` 0x0054e1a0 (2)
   - [x] `getGroundType` 0x0054e1c0 (3)

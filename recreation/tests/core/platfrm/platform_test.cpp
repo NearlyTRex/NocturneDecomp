@@ -2,9 +2,12 @@
 #include "common/math/quaternion4f.h"
 #include "core/actor/demonactortype.h"
 #include "core/actor/groundtype.h"
+#include "core/box/boundingbox3d.h"
+#include "core/dmodel/keyframedmodel.h"
 #include "core/platfrm/platform.h"
 #include "core/platfrm/platformstate.h"
 #include "tests/mocks/core/notportedcalls.h"
+#include "tests/mocks/core/oneframemodel.h"
 #include "tests/mocks/core/testactor.h"
 #include "tests/mocks/core/testclasses.h"
 #include "tests/mocks/core/testfieldsarchive.h"
@@ -239,10 +242,22 @@ TEST(CPlatform, TheFunctionsNotPortedYetQuit) {
         {"process", [&] { platform.process(0.0F); }},
         {"renderOpaque", [&] { static_cast<void>(platform.renderOpaque()); }},
         {"renderBackground", [&] { platform.renderBackground(0); }},
-        {"getBoundingBox", [&] { static_cast<void>(platform.getBoundingBox(nullptr)); }},
         {"getCollisionType", [&] { static_cast<void>(platform.getCollisionType(nullptr)); }},
     };
     expectEachQuitsNotPorted("CPlatform", calls);
+}
+
+class CPlatformBoundsTest : public engine::CPodFixture {};
+
+TEST_F(CPlatformBoundsTest, ItsBoxIsItsModelsFirstFrames) {
+    givenFile("models\\slider1.kfm", oneFrameModel());
+    CTestClasses classes{dosio_};
+    classes.getKeyFramedModel().load("slider1.kfm");
+    CPlatform platform{classes.get()};
+    platform.setup();
+    CBoundingBox3D box;
+    EXPECT_EQ(platform.getBoundingBox(&box), &box);
+    expectOneFrameBounds(box);
 }
 
 TEST(CPlatform, HasVirtualDestructor) {

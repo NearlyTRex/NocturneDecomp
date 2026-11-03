@@ -1,4 +1,5 @@
 #include "core/actor/demonactortype.h"
+#include "core/box/boundingbox3d.h"
 #include "core/litecone/lightcone.h"
 #include "tests/mocks/core/notportedcalls.h"
 #include "tests/mocks/core/testclasses.h"
@@ -91,10 +92,24 @@ TEST(CLightCone, TheFunctionsNotPortedYetQuit) {
     const NotPortedCalls calls = {
         {"process", [&] { cone.process(0.0F); }},
         {"renderTransparent", [&] { static_cast<void>(cone.renderTransparent()); }},
-        {"getBoundingBox", [&] { static_cast<void>(cone.getBoundingBox(nullptr)); }},
         {"getCollisionType", [&] { static_cast<void>(cone.getCollisionType(nullptr)); }},
     };
     expectEachQuitsNotPorted("CLightCone", calls);
+}
+
+// The default cone, 56 degrees and 6 long, is 18 / 56 * 6 = 1.928571... either side, rounded
+// to a float once at the end.
+TEST(CLightCone, ItsBoxRunsAlongZAsFarAsItsFalloffAndAsWideAsItsSpread) {
+    CLightCone cone;
+    CBoundingBox3D box;
+    EXPECT_EQ(cone.getBoundingBox(&box), &box);
+    const auto half_width = static_cast<float>(18.0 / 56.0 * 6.0);
+    EXPECT_EQ(box.min.x, -half_width);
+    EXPECT_EQ(box.min.y, -half_width);
+    EXPECT_EQ(box.min.z, 0.0F);
+    EXPECT_EQ(box.max.x, half_width);
+    EXPECT_EQ(box.max.y, half_width);
+    EXPECT_EQ(box.max.z, 6.0F);
 }
 
 TEST(CLightCone, SettingUpBringsItsAnglesToWithinPi) {

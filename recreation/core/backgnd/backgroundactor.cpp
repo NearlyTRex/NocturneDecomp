@@ -3,6 +3,8 @@
 #include "core/actor/actor.h"
 #include "core/actor/actorarchive.h"
 #include "core/actor/demonactortype.h"
+#include "core/box/boundingbox3d.h"
+#include "core/dmodel/keyframedmodel.h"
 #include "core/dmodel/keyframedmodelinstance.h"
 
 #include <memory>
@@ -64,6 +66,12 @@ void CBackgroundActor::process(float /*delta_time*/) {}
 // nocedit 0x00412a30
 EGroundType CBackgroundActor::getGroundType() {
     return ground_type_;
+}
+
+// nocedit 0x00412940
+CBoundingBox3D *CBackgroundActor::getBoundingBox(CBoundingBox3D *out_box) {
+    *out_box = model_.getModelPtr().getFrameBounds().front();
+    return out_box;
 }
 
 const CKeyFramedModelInstance &CBackgroundActor::getModel() const {

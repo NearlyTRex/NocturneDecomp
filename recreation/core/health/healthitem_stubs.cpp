@@ -19,10 +19,6 @@ int CHealthItem::renderOpaque() {
     notPorted("renderOpaque");
 }
 
-CBoundingBox3D *CHealthItem::getBoundingBox(CBoundingBox3D * /*out_box*/) {
-    notPorted("getBoundingBox");
-}
-
 ECollisionType CHealthItem::getCollisionType(SCollisionInfo * /*collision_info*/) {
     notPorted("getCollisionType");
 }

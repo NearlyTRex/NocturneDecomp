@@ -23,10 +23,6 @@ int CLightCone::renderTransparent() {
     notPorted("renderTransparent");
 }
 
-CBoundingBox3D *CLightCone::getBoundingBox(CBoundingBox3D * /*out_box*/) {
-    notPorted("getBoundingBox");
-}
-
 ECollisionType CLightCone::getCollisionType(SCollisionInfo * /*collision_info*/) {
     notPorted("getCollisionType");
 }

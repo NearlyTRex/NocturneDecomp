@@ -1,12 +1,16 @@
 #include "core/actor/collisiontype.h"
 #include "core/actor/demonactortype.h"
+#include "core/box/boundingbox3d.h"
+#include "core/dmodel/keyframedmodel.h"
 #include "core/event/rulelist.h"
 #include "core/lever/lever.h"
 #include "core/lever/levertype.h"
 #include "tests/mocks/core/notportedcalls.h"
+#include "tests/mocks/core/oneframemodel.h"
 #include "tests/mocks/core/testactor.h"
 #include "tests/mocks/core/testclasses.h"
 #include "tests/mocks/core/testfieldsarchive.h"
+#include "tests/mocks/engine/podfixture.h"
 
 #include <gmock/gmock.h>
 #include <gtest/gtest.h>
@@ -156,9 +160,21 @@ TEST(CLever, TheFunctionsNotPortedYetQuit) {
     const NotPortedCalls calls = {
         {"process", [&] { lever.process(0.0F); }},
         {"renderOpaque", [&] { static_cast<void>(lever.renderOpaque()); }},
-        {"getBoundingBox", [&] { static_cast<void>(lever.getBoundingBox(nullptr)); }},
     };
     expectEachQuitsNotPorted("CLever", calls);
+}
+
+class CLeverBoundsTest : public engine::CPodFixture {};
+
+TEST_F(CLeverBoundsTest, ItsBoxIsItsModelsFirstFrames) {
+    givenFile("models\\glever.kfm", oneFrameModel());
+    CTestClasses classes{dosio_};
+    classes.getKeyFramedModel().load("glever.kfm");
+    CLever lever{classes.get()};
+    lever.setup();
+    CBoundingBox3D box;
+    EXPECT_EQ(lever.getBoundingBox(&box), &box);
+    expectOneFrameBounds(box);
 }
 
 } // namespace

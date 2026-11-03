@@ -1,7 +1,9 @@
 #include "core/litecone/lightcone.h"
 
+#include "common/math/extendedfloat.h"
 #include "core/actor/actorarchive.h"
 #include "core/actor/demonactortype.h"
+#include "core/box/boundingbox3d.h"
 
 #include <memory>
 #include <string>
@@ -14,6 +16,8 @@ namespace {
 constexpr int kVersion = 2;
 // The version that first held the cone's state and its events.
 constexpr int kEventVersion = 2;
+// Over the cone's angle, its box's half-width for each unit of its length.
+constexpr double kSpreadDegrees = 18.0;
 
 } // namespace
 
@@ -41,6 +45,18 @@ std::unique_ptr<CDemonActor> CLightCone::create(CActor & /*classes*/) {
 // nocedit 0x00506bb0
 void CLightCone::setup() {
     CDemonActor::setup();
+}
+
+// The cone points along z from its apex, as long as its falloff and as wide across as the
+// spread over its angle, at the x87's precision.
+// nocedit 0x00506cb0
+CBoundingBox3D *CLightCone::getBoundingBox(CBoundingBox3D *out_box) {
+    const float half_width = (common::CExtendedFloat(kSpreadDegrees) /
+                              common::CExtendedFloat(fov_) * common::CExtendedFloat(falloff_))
+                                 .toFloat();
+    *out_box = {.min = {.x = -half_width, .y = -half_width, .z = 0.0F},
+                .max = {.x = half_width, .y = half_width, .z = falloff_}};
+    return out_box;
 }
 
 // nocedit 0x00506d00

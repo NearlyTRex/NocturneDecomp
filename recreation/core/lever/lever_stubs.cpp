@@ -23,8 +23,4 @@ int CLever::renderOpaque() {
     notPorted("renderOpaque");
 }
 
-CBoundingBox3D *CLever::getBoundingBox(CBoundingBox3D * /*out_box*/) {
-    notPorted("getBoundingBox");
-}
-
 } // namespace nocturne::core
