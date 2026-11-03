@@ -7,6 +7,8 @@
 #include "core/fwd.h"
 #include "engine/fwd.h"
 
+#include <cstdint>
+#include <span>
 #include <string_view>
 #include <vector>
 
@@ -39,11 +41,16 @@ public:
     float cylinderGroundCheck(common::CVector3f *pos, float radius, int *hit_flag,
                               common::CVector3f *normal_out);
     void testCylinderCollision(SIntersectXZCylinder *cylinder);
-    void renderFrustumCubes(float fov_or_radius, int render_mode);
-    // deferred: the 20000 PVS cube positions, with this
-    // nocedit 0x004941e0
-    void setPVS(int visible_cube_count, int *visible_cube_indices);
-    void savePVS(int *output_count, int **input_indices_array);
+    // Draws the cubes in the view reach_distance out from the camera into the depth, nearest
+    // first, each a cube past the first two slabs tested against the depth so far before it is
+    // drawn; the cubes drawn become the PVS. With use_pvs, a PVS already set is drawn instead.
+    void renderFrustumCubes(float reach_distance, bool use_pvs, const SCubeDrawOwners &owners);
+    // The cubes a camera saved as the ones it sees, as indices into the grid. An empty list
+    // leaves no PVS set.
+    void setPVS(std::span<const int> cube_indices);
+    // The cubes the last frustum draw drew, for the camera to keep. Fatal unless one has run and
+    // drawn a cube.
+    [[nodiscard]] std::vector<int> savePVS() const;
     float getVoxelHeightAtPosition(common::CVector3f *world_position);
     int voxelRaycast3D(common::CVector3f *start_position, common::CVector3f *end_position);
     // The voxel the position is in, counted from the grid's corner; outside the grid, a voxel
@@ -71,6 +78,14 @@ public:
     [[nodiscard]] const common::CVector3f &getAdjustedSize() const;
 
 private:
+    void renderPVSCubes(const SCubeDrawOwners &owners) const;
+    // distance counts the cube's slab out from the camera's along the view's main axis.
+    void renderCubeForPVS(const common::CVector3i &cell, std::int64_t distance,
+                          const SCubeDrawOwners &owners);
+    // Whether any face of the cube whose corners are in the renderer's buffer's first eight
+    // would show in front of the depth.
+    [[nodiscard]] bool isCubeFaceVisible(const common::CVector3i &cell,
+                                         engine::CDemonRenderer &renderer) const;
     void loadBinary(common::CBinaryReader &reader);
     // The cube the position is in; outside the grid, a cube outside it.
     [[nodiscard]] common::CVector3i
@@ -87,6 +102,9 @@ private:
     common::CVector3f adjusted_size_;
     common::CVector3i grid_coord_;
     std::vector<CDemonCube> cube_data_;
+    // Indices into cube_data_.
+    std::vector<int> pvs_cubes_;
+    bool pvs_ready_ = false;
 };
 
 } // namespace nocturne::core

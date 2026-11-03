@@ -7,6 +7,7 @@
 #include "core/setutil/3dscamera.h"
 #include "core/xform/xform.h"
 #include "engine/drender/demonrenderer.h"
+#include "tests/mocks/core/geofile.h"
 #include "tests/mocks/core/setfilefixture.h"
 #include "tests/mocks/core/setparts.h"
 #include "tests/mocks/core/testfieldsarchive.h"
@@ -31,7 +32,7 @@ using ::testing::Return;
 using ::testing::StrEq;
 using ::testing::ThrowsMessage;
 
-constexpr std::string_view kSceneNotPorted = "CDemonSet::renderSceneGeometry is not ported yet";
+constexpr std::string_view kSceneNotPorted = "CDemonCamera::saveZBufferScanlines is not ported yet";
 
 // An unturned camera at the position, with its box.
 std::string cameraAt(std::string_view name, std::string_view position, std::string_view box) {
@@ -67,8 +68,12 @@ protected:
     std::array<std::uint32_t, 64> depth_row_{};
     std::array<std::uint32_t *, kFrameHeight> depth_rows_{};
 
-    void load(const SSetFile &file) {
+    // With one cube of geometry, which each camera's saved PVS names, so a camera shown draws no
+    // more of it.
+    void load(const SSetFile &file, const SGeoCube &cube = {}) {
         givenFile("models\\test.set", file.text());
+        givenFile("data\\pier.geo",
+                  geoFile(CDemonRaytrace::kGeoFileFormatVersion, {.x = 1, .y = 1, .z = 1}, {cube}));
         set_.load("test.set");
     }
 
@@ -83,7 +88,7 @@ protected:
     void givenCameras(const std::string &cameras, int count) {
         std::string pvs;
         for (int i = 0; i < count; ++i) {
-            pvs += "0\n";
+            pvs += "1\n\t0\n";
         }
         load({.cameras = std::to_string(count) + "\n" + cameras, .pvs = pvs});
         for (C3DSCamera &camera : set_.getCameras()) {
@@ -133,8 +138,8 @@ protected:
     CSetParts set_parts_{dosio_};
     // Clipping as the game does, so faces partly out of view are drawn.
     engine::CDemonRenderer clipping_renderer_{
-        matrix_,  two_d_,    three_d_, vertex_buffer_,           special_, prim_, zraster_,
-        texture_, textures_, screen_,  &transformAndClipGeometry};
+        matrix_, light_,   two_d_,   three_d_,  vertex_buffer_, special_,
+        prim_,   zraster_, texture_, textures_, screen_,        &transformAndClipGeometry};
     CDemonSet set_{
         set_parts_.owners(clipping_renderer_, matrix_, special_, two_d_, screen_, raw_input_)};
     CBarrier focus_;
@@ -149,6 +154,19 @@ TEST_F(CDemonSetDirectorTest, WithNoActorTheFirstCameraIsShown) {
     EXPECT_EQ(set_.getPreviousBestCameraIndex(), -1);
     EXPECT_EQ(set_.getPreviousBestCameraTimer(), 3.0F);
     EXPECT_EQ(set_.evaluateVirtualDirector(nullptr, 0), 1);
+}
+
+// A camera saved without a PVS keeps the cubes its view reached, here the one cube.
+TEST_F(CDemonSetDirectorTest, ACameraWithoutAPVSKeepsTheCubesItsViewReaches) {
+    SGeoCube cube;
+    cube.vertex_count = 3;
+    cube.vertices = {{}, {}, {}};
+    cube.triangle_count = 1;
+    cube.triangles.resize(1);
+    load({.cameras = "1\n" + cameraAt("first", "4,8,-10", kWideBox), .pvs = "0\n"}, cube);
+    set_.getCameras()[0].setVdirZone(-1);
+    chooseTheFirstCamera();
+    EXPECT_THAT(set_.getCameras()[0].getPVSList(), ElementsAre(0));
 }
 
 TEST_F(CDemonSetDirectorTest, AnIndexBeyondTheCamerasIsFatal) {

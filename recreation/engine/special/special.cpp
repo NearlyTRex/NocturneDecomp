@@ -246,6 +246,14 @@ int CSpecial::clearZBuffer() {
     return renderer_.clearZBuffer();
 }
 
+// nocedit 0x005b7bc0
+int CSpecial::sync() {
+    if (!use_external_renderer_) {
+        return 0;
+    }
+    return renderer_.sync();
+}
+
 // nocedit 0x005b72a0
 int CSpecial::endScene() {
     if (!use_external_renderer_) {

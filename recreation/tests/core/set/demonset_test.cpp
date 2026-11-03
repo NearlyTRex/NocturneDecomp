@@ -80,8 +80,9 @@ TEST(CDemonSet, PublicInterface) {
                        void (CDemonSet::*)(std::span<const platform::SMRGLPrimitiveQuad>, int)>);
     static_assert(std::is_same_v<decltype(&CDemonSet::renderFaceListOrEnvMap),
                                  void (CDemonSet::*)(platform::SInputFace *, int, int)>);
-    static_assert(std::is_same_v<decltype(&CDemonSet::renderPrimitiveList),
-                                 void (CDemonSet::*)(platform::SMRGLHeaderPrimitive *, int)>);
+    static_assert(
+        std::is_same_v<decltype(&CDemonSet::renderPrimitiveList),
+                       void (CDemonSet::*)(std::span<const platform::SMRGLHeaderPrimitive>)>);
     static_assert(std::is_same_v<decltype(&CDemonSet::renderTexturedPrimitiveListVariant),
                                  void (CDemonSet::*)(platform::SMRGLHeaderPrimitive *, int)>);
     static_assert(

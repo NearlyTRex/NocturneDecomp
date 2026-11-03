@@ -71,6 +71,7 @@ protected:
     CTexture textures_{texture_owners_};
     CDemonRenderer demon_renderer_{
         matrix_,
+        light_,
         two_d_,
         three_d_,
         vertex_buffer_,

@@ -24,7 +24,7 @@ functions don't count as done. Sizes are in instructions.
 | 8 | `renderMenuAndGetChoice`, `CMoon::free`, `CSound::reset`, `CEditorTools::showFileSelectionDialog` | 8 | 63 | 5314 | 60 | 3 | 95.2% |
 | 9 | `CPickList::enableItem`, `CEventList::resetGameFlags`, `CLevelLoader::show`, `CDemonMission::load` | 15 | 56 | 3298 | 37 | 9 | 66.0% |
 | 10 | `CDemonMission::createHeros`, `CDemonMission::prepareAllActors`, `CEventList::reset`, `CDemonMission::loadSet` | 15 | 42 | 5112 | 33 | 8 | 78.5% |
-| 11 | `CScript::loadScript` | 63 | 579 | 67400 | 103 | 42 | 17.7% |
+| 11 | `CScript::loadScript` | 63 | 579 | 67400 | 111 | 50 | 19.1% |
 | 12 | `CDemonMission::loadScript`, `CScript::executeInitSection`, `CDemonMission::startMission`, `CDemonMission::buildActiveSetActorList`, `CConsole::reset`, `CEditorTools::displayMemoryDiagnostics`, `CGame::setGameRes`, `CDemonLight::init`, `CDemonSet::initScene` | 12 | 26 | 1658 | 16 | 9 | 61.5% |
 | 13 | `CFireEffect::init`, `CDemonSet::loadMasterLightStates`, `CDemonSet::setGamma`, `CGame::clearOverlay`, `CGame::loadAssets` | 7 | 27 | 735 | 16 | 1 | 59.2% |
 | 14 | `CNetGame::syncPlayers`, `CNetGame::processServerFrame`, `CLevelLoader::cleanup`, `CKeys::toggleInputMask`, `CGame::processHotkeys` | 17 | 51 | 5302 | 4 | 0 | 7.8% |
@@ -38,7 +38,7 @@ functions don't count as done. Sizes are in instructions.
 | 22 | Not reached from startup: `shape/` | 2 | 42 | 3178 | 4 | 2 | 9.5% |
 | 23 | Not reached from startup: `core/` (part 1 of 9) | 18 | 292 | 16011 | 65 | 13 | 22.2% |
 | 24 | Not reached from startup: `core/` (part 2 of 9) | 11 | 277 | 24965 | 35 | 7 | 12.6% |
-| 25 | Not reached from startup: `core/` (part 3 of 9) | 24 | 278 | 24134 | 46 | 9 | 16.5% |
+| 25 | Not reached from startup: `core/` (part 3 of 9) | 24 | 278 | 24134 | 47 | 8 | 16.9% |
 | 26 | Not reached from startup: `core/` (part 4 of 9) | 18 | 300 | 20148 | 51 | 7 | 17.0% |
 | 27 | Not reached from startup: `core/` (part 5 of 9) | 21 | 294 | 20910 | 60 | 11 | 20.4% |
 | 28 | Not reached from startup: `core/` (part 6 of 9) | 18 | 282 | 21809 | 53 | 12 | 18.7% |
@@ -46,7 +46,7 @@ functions don't count as done. Sizes are in instructions.
 | 30 | Not reached from startup: `core/` (part 8 of 9) | 20 | 300 | 31826 | 41 | 8 | 13.6% |
 | 31 | Not reached from startup: `core/` (part 9 of 9) | 5 | 111 | 10905 | 26 | 7 | 23.4% |
 | 32 | Not reached from startup: `wincore/` | 2 | 11 | 482 | 4 | 0 | 36.3% |
-| | **All** | | **4479** | **402407** | **1146** | **209** | **25.5%** |
+| | **All** | | **4479** | **402407** | **1155** | **216** | **25.7%** |
 
 ## Step 0: Math value types
 
@@ -1623,19 +1623,20 @@ functions don't count as done. Sizes are in instructions.
   - [x] `projectTransformedPoint` 0x0050cdc0 (66)
   - [ ] `projectCachedPoint` 0x0050cda0 (9)
 
-### `core/dcube.cpp` (7 functions, 1140 instructions, 0 done, 0 partial)
+### `core/dcube.cpp` (7 functions, 1140 instructions, 1 done, 1 partial)
 - class `CDemonCubeTriangle`
   - [ ] `rayTriangleIntersection` 0x00455460 (205)
 - class `CDemonCube`
   - [ ] `rayIntersectTriangles` 0x004578f0 (137)
   - [ ] `testCylinderGroundCollision` 0x00457b60 (108)
-  - [ ] `rotateVertices` 0x00457650 (206)
+  - [~] `rotateVertices` 0x00457650 (206)
+    - deferred: keeping every corner clipped while advanced culling is on, with enableAdvancedCulling's callers
 - free functions
   - [ ] `intersectVerticalCylinderSegment` 0x00455ed0 (138)
   - [ ] `triangleCylinderCollision` 0x00456040 (307)
-  - [ ] `buildAndRenderTrianglePrimitive` 0x004566e0 (39)
+  - [x] `buildAndRenderTrianglePrimitive` 0x004566e0 (39)
 
-### `engine/special.cpp` (7 functions, 258 instructions, 5 done, 0 partial)
+### `engine/special.cpp` (7 functions, 258 instructions, 6 done, 0 partial)
 - free functions
   - [ ] `transformPoint` 0x005b5a25 (205)
   - [x] `beginScene` 0x005b7280 (6)
@@ -1643,9 +1644,9 @@ functions don't count as done. Sizes are in instructions.
   - [x] `endScene` 0x005b72a0 (6)
   - [x] `masterZBuffer` 0x005b7d00 (9)
   - [x] `setFogColor` 0x005b7b80 (20)
-  - [ ] `sync` 0x005b7bc0 (6)
+  - [x] `sync` 0x005b7bc0 (6)
 
-### `core/dtrace.cpp` (11 functions, 2901 instructions, 3 done, 0 partial)
+### `core/dtrace.cpp` (11 functions, 2901 instructions, 6 done, 2 partial)
 - class `CDemonRaytrace`
   - [ ] `getGroundHeight` 0x004966f0 (179)
   - [ ] `cylinderGroundCheck` 0x00496950 (186)
@@ -1653,11 +1654,16 @@ functions don't count as done. Sizes are in instructions.
   - [x] `worldPositionToVoxelCoords` 0x00499880 (59)
   - [x] `getBBoxMin` 0x00499b40 (15)
   - [x] `getBBoxMax` 0x00499b70 (15)
-  - [ ] `renderCubeForPVS` 0x00497500 (599)
-  - [ ] `renderPVSCubes` 0x004990f0 (39)
-  - [ ] `renderFrustumCubes` 0x00497e50 (1146)
-  - [ ] `setPVS` 0x00498e50 (99)
-  - [ ] `savePVS` 0x00498fb0 (93)
+  - [~] `renderCubeForPVS` 0x00497500 (599)
+    - deferred: counting the cubes tested, holding voxels, in view and drawn, with CGame's frame stats display
+    - unverified: the corners' and the faces' planes' rounding against the original's code, by running both over cubes at fractional cell sizes
+  - [x] `renderPVSCubes` 0x004990f0 (39)
+  - [~] `renderFrustumCubes` 0x00497e50 (1146)
+    - deferred: counting the cubes tested, holding voxels, in view and drawn, and the triangles drawn, with CGame's frame stats display
+    - deferred: taking the debug cube's base point through processCameraRelativePoint, for the point it stores, with CBoundingBox3D::isVisible
+    - unverified: the walk's order and bounds against the original's code, by running both over a grid and comparing the cubes each draws
+  - [x] `setPVS` 0x00498e50 (99)
+  - [x] `savePVS` 0x00498fb0 (93)
 
 ### `core/glass.cpp` (4 functions, 1321 instructions, 0 done, 0 partial)
 - class `CGlass`
@@ -1712,11 +1718,11 @@ functions don't count as done. Sizes are in instructions.
 - class `CTerrain`
   - [ ] `render` 0x005e1f50 (86)
 
-### `core/dstrender.cpp` (7 functions, 558 instructions, 0 done, 0 partial)
+### `core/dstrender.cpp` (7 functions, 558 instructions, 2 done, 0 partial)
 - free functions
   - [ ] `memcpyMMX` 0x00492001 (32)
-  - [ ] `renderSolidColorDepth16xUnrolled` 0x00490a58 (186)
-  - [ ] `renderDepthInterlacedProfiled` 0x00490c37 (50)
+  - [x] `renderSolidColorDepth16xUnrolled` 0x00490a58 (186)
+  - [x] `renderDepthInterlacedProfiled` 0x00490c37 (50)
   - [ ] `renderScreenDepthTestInterlacedProfiled` 0x00490cb5 (51)
   - [ ] `renderDepth16BitConditional` 0x0049077d (35)
   - [ ] `renderZBufferFill16xUnrolled` 0x00490902 (131)
@@ -1746,7 +1752,7 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `resetRestoreMemoryAllocator` 0x004729c0 (3)
   - [ ] `getRestoreMemory` 0x00472950 (31)
 
-### `engine/drender.cpp` (28 functions, 1059 instructions, 1 done, 0 partial)
+### `engine/drender.cpp` (28 functions, 1059 instructions, 2 done, 3 partial)
 - class `CDemonRenderer`
   - [ ] `renderVertexAlphaDirect` 0x0048bad0 (64)
   - [ ] `applyDirectTransform` 0x0048c4a0 (42)
@@ -1758,12 +1764,18 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `updateTexture` 0x0048dc30 (7)
   - [ ] `setShadowPass` 0x0048cac0 (5)
   - [ ] `setLightIntensity` 0x0048c690 (11)
-  - [ ] `setLightDirection` 0x0048c6c0 (12)
+  - [x] `setLightDirection` 0x0048c6c0 (12)
   - [ ] `copyAndTransform3DPoint` 0x0048c420 (14)
-  - [ ] `setRGBAColor` 0x0048c970 (41)
-  - [ ] `renderSolidColorDepthDirect` 0x0048a820 (41)
+  - [~] `setRGBAColor` 0x0048c970 (41)
+    - deferred: the mirror pass's alpha mask in the colour's top byte while drawing in software, with setupMirrorRendering
+  - [~] `renderSolidColorDepthDirect` 0x0048a820 (41)
+    - deferred: the shadow pass's depth-only draw, with setShadowPass's callers
   - [ ] `setCurrentPolygonColor` 0x0048c960 (3)
-  - [ ] `renderDepthProfiledDirect` 0x0048ab50 (70)
+  - [~] `renderDepthProfiledDirect` 0x0048ab50 (70)
+    - deferred: leaving the rendered triangle count as it was across the draw, with CGame's frame stats display
+    - deferred: the shadow pass's screen-depth test, with setShadowPass's callers
+    - deferred: drawing through the shadow pass while the hardware renderer is on, with setShadowPass's callers
+    - deferred: a budget other than one pixel, with CWater::calculateVisibleTiles
   - [ ] `renderSolidTexturedPoly` 0x0048b550 (77)
   - [ ] `renderZPrepassPoly` 0x0048a950 (80)
   - [x] `getCameraOriginWorld` 0x0048c780 (31)
@@ -1921,7 +1933,7 @@ functions don't count as done. Sizes are in instructions.
   - [x] `setWeatherType` 0x005ef8c0 (30)
   - [ ] `setOriginAndRotation` 0x005ef940 (154)
 
-### `core/set.cpp` (27 functions, 2403 instructions, 5 done, 2 partial)
+### `core/set.cpp` (27 functions, 2403 instructions, 5 done, 4 partial)
 - class `CDemonSet`
   - [ ] `getReverbPresetAtPosition` 0x0056fac0 (77)
   - [ ] `addCoronaGlobe` 0x0056d110 (12)
@@ -1934,12 +1946,18 @@ functions don't count as done. Sizes are in instructions.
   - [x] `findCameraByName` 0x0056b790 (34)
   - [ ] `setCameraAmbientValue` 0x00570e20 (16)
   - [ ] `setCameraAmbientValueByGroup` 0x00570e60 (29)
-  - [ ] `renderPrimitiveList` 0x005708e0 (51)
+  - [~] `renderPrimitiveList` 0x005708e0 (51)
+    - deferred: drawing nothing while the game suppresses set geometry, with CGame's cheats and game session
+    - deferred: each primitive reflected through the active mirror while advanced culling is on, with enableAdvancedCulling's callers and CMirror::clipAndRenderReflectedPrimitive
   - [ ] `setupMirrorRendering` 0x005709e0 (78)
   - [ ] `restoreCameraAfterMirror` 0x00570af0 (34)
   - [ ] `buildMirrorList` 0x00570b70 (66)
   - [ ] `computeVertexOmniLighting` 0x0056e3e0 (137)
-  - [ ] `renderSceneGeometry` 0x0056a190 (204)
+  - [~] `renderSceneGeometry` 0x0056a190 (204)
+    - deferred: the ambient light at a quarter, with CLight::calculateLighting's callers
+    - deferred: drawing in software the mirror list, the environment model, the sky dome, the water and, on the train, the terrain, with buildMirrorList, the enviro model's prepareForRender, renderSkyDome, CWater::calculateVisibleTiles and render, and CTerrain::render
+    - deferred: each mirror's depth, its broken glass, and the geometry reflected in it, with setupMirrorRendering, restoreCameraAfterMirror, CMirror::renderMirrorQuadDepth and CGlass::renderBrokenGlass
+    - deferred: the shadow pass drawing only the mirrors, while mirrors are on, with setShadowPass's callers
   - [ ] `renderBackgroundActors` 0x0056aca0 (101)
   - [x] `snapshotActorTransformState` 0x0056ade0 (30)
   - [ ] `isCameraPanning` 0x00571320 (21)
@@ -1953,8 +1971,7 @@ functions don't count as done. Sizes are in instructions.
   - [~] `setCameraView` 0x0056ae50 (639)
     - deferred: restoring the dynamic lights' and spotlights' dirty regions, freeing the spotlights' master z-buffers and resetting their restore memory, with restoreDirtyRegions, freeMasterZBuffer and resetRestoreMemoryAllocator
     - deferred: the full lighting mode and the directional light ratio while the background draws, and no spot, omni or corona lights gathered yet, the coronas kept for the same camera (the decomp's windowed reswitch fix), with renderScene
-    - deferred: the raytrace geometry drawn in its plain mode, with renderFrustumCubes
-    - deferred: drawing the camera's background, its shadows and lights, its reverb and weather, then the scene's static lights, and noting each actor as drawn again, with renderSceneGeometry and what follows it
+    - deferred: drawing the camera's background over the geometry's depth, its shadows and lights, its reverb and weather, then the scene's static lights, and noting each actor as drawn again, with CDemonCamera::saveZBufferScanlines and what follows it
   - [x] `setCameraEnabled` 0x00570ea0 (5)
   - [x] `setCameraEnabledByGroup` 0x00570ec0 (30)
 - free functions
@@ -4535,7 +4552,7 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `blendLightmapShared4U64toU64pBB12Px4MMX` 0x004924a9 (84)
   - [ ] `blendLightmapShared4U64toU64pAmbientPx4MMX` 0x004925c5 (84)
 
-### `core/dtrace.cpp` (18 functions, 2180 instructions, 4 done, 2 partial)
+### `core/dtrace.cpp` (18 functions, 2180 instructions, 5 done, 1 partial)
 - class `CDemonRaytrace`
   - [ ] `getVoxelHeightAtVoxelCoords` 0x00499a50 (95)
   - [ ] `voxelRaycast3D` 0x00499330 (379)
@@ -4556,8 +4573,7 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `testVoxelAtCoords` 0x00499970 (82)
 - free functions
   - [ ] `initIntersectionCylinder` 0x00496b90 (74)
-  - [~] `staticInit` 0x004941e0 (6)
-    - deferred: the 20000 PVS cube positions, with this
+  - [x] `staticInit` 0x004941e0 (6)
 
 ### `core/dtri.cpp` (21 functions, 2594 instructions, 0 done, 1 partial)
 - free functions

@@ -82,6 +82,15 @@ public:
     // models\filename, a .SET file of any version. Fatal when it can't be opened. The raytrace
     // geometry and path maps are reloaded only when the geometry file differs from the last set's.
     void load(std::string_view filename);
+    // renderSceneGeometry's modes: draw what the view reaches; draw the selected camera's saved
+    // PVS, or what the view reaches, saving it, when the camera has none; or always draw what
+    // the view reaches and save it.
+    static constexpr int kDrawReachedGeometry = 0;
+    static constexpr int kDrawCameraPVS = 1;
+    static constexpr int kRecordCameraPVS = 2;
+
+    // The raytrace geometry into the depth, out to frustum_param from the camera, lit from
+    // above and in front.
     void renderSceneGeometry(float frustum_param, int render_mode);
     // Sets the scene up for play: the camera's tables and fog, a master light for each
     // spotlight, each camera's virtual director group, and the weather.
@@ -126,7 +135,8 @@ public:
     void renderPrimitiveBatch(std::span<const platform::SMRGLPrimitiveQuad> primitives,
                               int render_flags);
     void renderFaceListOrEnvMap(platform::SInputFace *faces, int count, int flags);
-    void renderPrimitiveList(platform::SMRGLHeaderPrimitive *primitive_array, int primitive_count);
+    // Each primitive filled in the active render colour into the depth.
+    void renderPrimitiveList(std::span<const platform::SMRGLHeaderPrimitive> primitives);
     void renderTexturedPrimitiveListVariant(platform::SMRGLHeaderPrimitive *prim, int count);
     void markMirrorCameraDirty();
     void setFlatColor(int light_scale, int color_scale, int fog_scale);

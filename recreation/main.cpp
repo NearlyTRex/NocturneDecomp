@@ -256,17 +256,10 @@ private:
     engine::CPrim prim_{special_, two_d_, three_d_, current_texture_};
     engine::CZRaster zraster_{special_, two_d_, three_d_, current_texture_};
     // nocedit 0x0048a6b0
-    engine::CDemonRenderer demon_renderer_{matrix_,
-                                           two_d_,
-                                           three_d_,
-                                           vertex_buffer_,
-                                           special_,
-                                           prim_,
-                                           zraster_,
-                                           current_texture_,
-                                           texture_,
-                                           screen_,
-                                           &core::transformAndClipGeometry};
+    engine::CDemonRenderer demon_renderer_{
+        matrix_,          light_,   two_d_,  three_d_,
+        vertex_buffer_,   special_, prim_,   zraster_,
+        current_texture_, texture_, screen_, &core::transformAndClipGeometry};
     core::CDemonRaytrace raytrace_{dosio_};
     // nocedit 0x004eeb90
     core::CGround ground_{dosio_, kGroundSize, kGroundSize};

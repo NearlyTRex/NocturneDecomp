@@ -5,8 +5,10 @@ set(_profiles "${BINARY_DIR}/coverage")
 file(REMOVE_RECURSE "${_profiles}")
 file(MAKE_DIRECTORY "${_profiles}")
 
+# Each test process writes its own profile, so they can run in parallel.
 set(ENV{LLVM_PROFILE_FILE} "${_profiles}/%p.profraw")
-execute_process(COMMAND ctest --output-on-failure WORKING_DIRECTORY "${BINARY_DIR}"
+cmake_host_system_information(RESULT _cores QUERY NUMBER_OF_LOGICAL_CORES)
+execute_process(COMMAND ctest -j ${_cores} --output-on-failure WORKING_DIRECTORY "${BINARY_DIR}"
                 RESULT_VARIABLE _ctest)
 if(_ctest)
     message(FATAL_ERROR "tests failed")

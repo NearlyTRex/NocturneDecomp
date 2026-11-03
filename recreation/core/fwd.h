@@ -268,6 +268,7 @@ struct SCollisionInfo;
 struct SCollisionReturnInfo;
 struct SCorona;
 struct SCoronaLightEntry;
+struct SCubeDrawOwners;
 struct SCurtainVertex;
 struct SDamageInfo;
 struct SDeformableModelOwners;

@@ -32,6 +32,8 @@ constexpr int kCamerasScoredPerSecond = 10;
 constexpr int kFewestCamerasScored = 3;
 // The actors' dirty flags the camera's background display list is built from.
 constexpr std::uint32_t kBackgroundDisplayListFlags = 0x10;
+// How far out from the camera the background's geometry is drawn: everything.
+constexpr float kBackgroundReach = 9999.9F;
 // How long a camera switched away from is held back from being chosen again.
 constexpr float kPreviousBestHold = 3.0F;
 // The actor's sphere: its box's largest bound, half as much again, and one more.
@@ -321,10 +323,10 @@ float CDemonSet::calculateActorVisibility(std::size_t camera_index, const CDemon
 // deferred: the full lighting mode and the directional light ratio while the background draws,
 //   and no spot, omni or corona lights gathered yet, the coronas kept for the same camera (the
 //   decomp's windowed reswitch fix), with renderScene
-// deferred: the raytrace geometry drawn in its plain mode, with renderFrustumCubes
-// deferred: drawing the camera's background, its shadows and lights, its reverb and weather, then
-//   the scene's static lights, and noting each actor as drawn again, with renderSceneGeometry and
-//   what follows it
+// The original also reset the raytrace's drawing mode, which only the editor changes.
+// deferred: drawing the camera's background over the geometry's depth, its shadows and lights,
+//   its reverb and weather, then the scene's static lights, and noting each actor as drawn again,
+//   with CDemonCamera::saveZBufferScanlines and what follows it
 // nocedit 0x0056ae50
 void CDemonSet::setCameraView(int index) {
     if (static_cast<std::size_t>(index) >= cameras_.size()) {
@@ -346,7 +348,8 @@ void CDemonSet::setCameraView(int index) {
     owners_.camera.beginScene(0);
     owners_.camera.beginBackgroundScene();
     buildDisplayList(kBackgroundDisplayListFlags);
-    quitNotPorted("CDemonSet", "renderSceneGeometry");
+    renderSceneGeometry(kBackgroundReach, kDrawCameraPVS);
+    quitNotPorted("CDemonCamera", "saveZBufferScanlines");
 }
 
 // nocedit 0x00575b00

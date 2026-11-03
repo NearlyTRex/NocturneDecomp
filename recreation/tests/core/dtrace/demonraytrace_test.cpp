@@ -39,11 +39,11 @@ TEST(CDemonRaytrace, PublicInterface) {
     static_assert(std::is_same_v<decltype(&CDemonRaytrace::testCylinderCollision),
                                  void (CDemonRaytrace::*)(SIntersectXZCylinder *)>);
     static_assert(std::is_same_v<decltype(&CDemonRaytrace::renderFrustumCubes),
-                                 void (CDemonRaytrace::*)(float, int)>);
-    static_assert(
-        std::is_same_v<decltype(&CDemonRaytrace::setPVS), void (CDemonRaytrace::*)(int, int *)>);
+                                 void (CDemonRaytrace::*)(float, bool, const SCubeDrawOwners &)>);
+    static_assert(std::is_same_v<decltype(&CDemonRaytrace::setPVS),
+                                 void (CDemonRaytrace::*)(std::span<const int>)>);
     static_assert(std::is_same_v<decltype(&CDemonRaytrace::savePVS),
-                                 void (CDemonRaytrace::*)(int *, int **)>);
+                                 std::vector<int> (CDemonRaytrace::*)() const>);
     static_assert(std::is_same_v<decltype(&CDemonRaytrace::getVoxelHeightAtPosition),
                                  float (CDemonRaytrace::*)(common::CVector3f *)>);
     static_assert(

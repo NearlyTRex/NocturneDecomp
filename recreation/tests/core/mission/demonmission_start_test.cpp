@@ -13,6 +13,7 @@
 #include "core/mission/demonmission.h"
 #include "core/set/demonset.h"
 #include "core/setutil/3dscamera.h"
+#include "tests/mocks/core/geofile.h"
 #include "tests/mocks/core/missionfixture.h"
 #include "tests/mocks/core/setfilefixture.h"
 #include "tests/mocks/core/testactor.h"
@@ -49,8 +50,11 @@ protected:
                                      "second.set\n; types\n0\n; actors\n0\n; carried\n0\n");
         mission_.readMissionFile(scanner, true);
         givenFile("models\\first.set", SSetFile{}.text());
+        // The camera's saved PVS is the geometry's one cube, so showing it draws no more.
         givenFile("models\\second.set",
-                  SSetFile{.cameras = "1\n" + cameraText("cam"), .pvs = "0\n"}.text());
+                  SSetFile{.cameras = "1\n" + cameraText("cam"), .pvs = "1\n\t0\n"}.text());
+        givenFile("data\\pier.geo", geoFile(CDemonRaytrace::kGeoFileFormatVersion,
+                                            {.x = 1, .y = 1, .z = 1}, {SGeoCube{}}));
         ON_CALL(raw_input_, getNextKeypress(_)).WillByDefault(Return('x'));
         auto door = std::make_unique<CTestActor>(kTestBaseType);
         door->setActorName("Door");
@@ -168,7 +172,7 @@ protected:
         givenSessionAssets();
         EXPECT_THAT([this] { mission_.run(game_, session_); },
                     ThrowsMessage<common::CFatalError>(
-                        StrEq("CDemonSet::renderSceneGeometry is not ported yet")));
+                        StrEq("CDemonCamera::saveZBufferScanlines is not ported yet")));
         EXPECT_EQ(set_.getSelectedCameraIndex(), 0);
     }
 };

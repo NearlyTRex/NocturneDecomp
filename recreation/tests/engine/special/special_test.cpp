@@ -266,6 +266,15 @@ TEST_F(CSpecialTest, WithoutTheRendererThereIsNoOverlay) {
     special_.endOverlay();
 }
 
+TEST_F(CSpecialTest, SyncingWaitsForTheRendererOnlyWhileItDraws) {
+    EXPECT_CALL(renderer_, sync()).Times(0);
+    EXPECT_EQ(special_.sync(), 0);
+    ::testing::Mock::VerifyAndClearExpectations(&renderer_);
+    startRenderer();
+    EXPECT_CALL(renderer_, sync()).WillOnce(Return(3));
+    EXPECT_EQ(special_.sync(), 3);
+}
+
 TEST_F(CSpecialTest, WithTheRendererTheOverlayGoesThroughIt) {
     startRenderer();
     const platform::SOverlayPlacement placement{

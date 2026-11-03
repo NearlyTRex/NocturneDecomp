@@ -223,8 +223,8 @@ protected:
     engine::CPrim prim_{special_, two_d_, three_d_, current_texture_};
     engine::CZRaster zraster_{special_, two_d_, three_d_, current_texture_};
     engine::CDemonRenderer demon_renderer_{
-        matrix_,          two_d_,   three_d_, vertex_buffer_,           special_, prim_, zraster_,
-        current_texture_, texture_, screen_,  &transformAndClipGeometry};
+        matrix_, light_,   two_d_,           three_d_, vertex_buffer_, special_,
+        prim_,   zraster_, current_texture_, texture_, screen_,        &transformAndClipGeometry};
     CSetParts set_parts_{dosio_};
     CDemonSet set_{
         set_parts_.owners(demon_renderer_, matrix_, special_, two_d_, screen_, raw_input_)};
