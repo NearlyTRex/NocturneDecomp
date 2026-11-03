@@ -242,14 +242,29 @@ void CDemonCamera::endScene(int skip_zbuffer_copy) {
         if (special.getUseExternalRenderer()) {
             static_cast<void>(special.masterZBuffer(0));
         }
-        const std::span<std::uint32_t *> depth_rows = owners_.screen.getZBufferRows();
-        const auto width = static_cast<std::size_t>(framebuffer_width_);
-        for (std::size_t row = 0; std::cmp_less(row, framebuffer_height_); ++row) {
-            std::copy_n(depth_rows[row], width,
-                        zbuffer_.begin() + static_cast<std::ptrdiff_t>(row * width));
-        }
+        saveZBufferScanlines();
     }
     owners_.renderer.popViewport();
+}
+
+// nocedit 0x00454450
+void CDemonCamera::saveZBufferScanlines() {
+    const std::span<std::uint32_t *> depth_rows = owners_.screen.getZBufferRows();
+    const auto width = static_cast<std::size_t>(framebuffer_width_);
+    for (std::size_t row = 0; std::cmp_less(row, framebuffer_height_); ++row) {
+        std::copy_n(depth_rows[row], width,
+                    zbuffer_.begin() + static_cast<std::ptrdiff_t>(row * width));
+    }
+}
+
+// nocedit 0x004544a0
+void CDemonCamera::restoreZBufferScanlines() {
+    const std::span<std::uint32_t *> depth_rows = owners_.screen.getZBufferRows();
+    const auto width = static_cast<std::size_t>(framebuffer_width_);
+    for (std::size_t row = 0; std::cmp_less(row, framebuffer_height_); ++row) {
+        std::copy_n(zbuffer_.begin() + static_cast<std::ptrdiff_t>(row * width), width,
+                    depth_rows[row]);
+    }
 }
 
 // The screen's rows are kept as many as it has, where the original kept the window's height of

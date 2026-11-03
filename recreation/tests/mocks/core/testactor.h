@@ -8,8 +8,8 @@
 
 namespace nocturne::core {
 
-// An actor of whatever class record the test gives it, whose archive() does what the test says,
-// and which counts how often it is set up and its collision data updated.
+// An actor of whatever class record the test gives it, whose archive() and renderBackground() do
+// what the test says, and which counts how often it is set up and its collision data updated.
 class CTestActor : public CDemonActor {
 public:
     explicit CTestActor(const CDemonActorType &type) : type_(type) {}
@@ -44,9 +44,23 @@ public:
         on_archive_ = std::move(on_archive);
     }
 
+    // Without one, the actor draws its background as every actor does.
+    void renderBackground(int layer_flag) override {
+        if (on_render_background_) {
+            on_render_background_(layer_flag);
+            return;
+        }
+        CDemonActor::renderBackground(layer_flag);
+    }
+
+    void onRenderBackground(std::function<void(int)> on_render_background) {
+        on_render_background_ = std::move(on_render_background);
+    }
+
 private:
     const CDemonActorType &type_;
     std::function<void(CActorArchive &)> on_archive_;
+    std::function<void(int)> on_render_background_;
     int setup_count_ = 0;
     int collision_updates_ = 0;
 };

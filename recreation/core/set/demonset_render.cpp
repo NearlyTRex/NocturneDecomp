@@ -1,4 +1,5 @@
 #include "common/math/vector3i.h"
+#include "core/actor/demonactor.h"
 #include "core/dcube/cubedrawowners.h"
 #include "core/dtrace/demonraytrace.h"
 #include "core/set/demonset.h"
@@ -15,8 +16,27 @@ namespace {
 
 // The scene's light, from above and in front, in 16.16.
 constexpr common::CVector3i kSceneLightDirection{.x = 0, .y = -46333, .z = 46333};
+constexpr int kOpaqueRenderAlpha = 0xffff;
+// 16.16: the flat colour that leaves a colour as it is.
+constexpr int kUntinted = 0x10000;
 
 } // namespace
+
+// The game is never in the editor, where the original drew every actor's background as though
+// not asked for its own layer.
+// deferred: each actor's place, turn and box for the spatial lights, with setLightingParameters
+//   and calculateSpatialLighting
+// nocedit 0x0056aca0
+void CDemonSet::renderBackgroundActors(int layer_flag) {
+    for (CDemonActor *actor : sorted_render_actors_) {
+        const common::CVector3i &scale = actor->getScale();
+        setFlatColor(scale.x, scale.y, scale.z);
+        static_cast<void>(owners_.renderer.setRenderAlpha(kOpaqueRenderAlpha));
+        actor->renderBackground(layer_flag);
+        setFlatColor(kUntinted, kUntinted, kUntinted);
+        owners_.renderer.enableFaceCapture(true);
+    }
+}
 
 // A camera that has no PVS saves the one the walk draws. A selected camera may be none, which
 // draws a PVS already set, whichever camera set it.

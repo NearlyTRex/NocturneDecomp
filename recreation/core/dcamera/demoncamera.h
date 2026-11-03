@@ -98,6 +98,7 @@ public:
     void initCameraShake(float peak_intensity, float attack_time, float sustain_duration,
                          float decay_time);
     common::CVector3f *computeVisibleFrustumBounds(common::CVector3f *output_bounds);
+    // The screen's depths into the camera's, and back.
     void saveZBufferScanlines();
     void restoreZBufferScanlines();
 

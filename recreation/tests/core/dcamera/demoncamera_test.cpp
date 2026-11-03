@@ -431,6 +431,18 @@ TEST_F(CDemonCameraSceneTest, ABackgroundSceneDrawsIntoTheCamerasFrame) {
     EXPECT_TRUE(special_.getUseExternalRenderer());
 }
 
+// The camera keeps a copy of the screen's depths that drawing over them leaves alone, and puts it
+// back.
+TEST_F(CDemonCameraSceneTest, TheScreensDepthsAreSavedAndRestored) {
+    camera_.saveZBufferScanlines();
+    depth_row_.fill(9);
+    EXPECT_EQ(camera_.getZBuffer()[0], 7U);
+    EXPECT_EQ(camera_.getZBuffer()[(64 * 48) - 1], 7U);
+    camera_.restoreZBufferScanlines();
+    EXPECT_EQ(depth_row_[0], 7U);
+    EXPECT_EQ(depth_row_[63], 7U);
+}
+
 TEST_F(CDemonCameraSceneTest, ABackgroundSceneNeedsTheSceneOpen) {
     EXPECT_THAT([this] { camera_.beginBackgroundScene(); },
                 ::testing::ThrowsMessage<common::CFatalError>(

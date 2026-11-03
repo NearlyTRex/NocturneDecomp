@@ -276,6 +276,8 @@ public:
 private:
     void lightVertexColor(const common::CVector3i &surface_normal,
                           platform::SRenderVertex &vertex) const;
+    // Each actor of the display list draws its background, opaque and tinted by its scale.
+    void renderBackgroundActors(int layer_flag);
     // Frees the enviro model and the terrain.
     void clear();
     std::string loadHeader(common::CTextScanner &scanner);

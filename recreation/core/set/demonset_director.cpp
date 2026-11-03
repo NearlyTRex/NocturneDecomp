@@ -323,10 +323,21 @@ float CDemonSet::calculateActorVisibility(std::size_t camera_index, const CDemon
 // deferred: the full lighting mode and the directional light ratio while the background draws,
 //   and no spot, omni or corona lights gathered yet, the coronas kept for the same camera (the
 //   decomp's windowed reswitch fix), with renderScene
+// deferred: the actors' backgrounds lit without the quality modes while the depths are taken
+//   (g_InMirrorRenderPass), with lightVerticies' quality modes
 // The original also reset the raytrace's drawing mode, which only the editor changes.
-// deferred: drawing the camera's background over the geometry's depth, its shadows and lights,
-//   its reverb and weather, then the scene's static lights, and noting each actor as drawn again,
-//   with CDemonCamera::saveZBufferScanlines and what follows it
+// deferred: the backdrop's normals and depths taken from the depth drawn, the geometry's depth
+//   put back, the camera's backdrop image and fog loaded and the actors' backgrounds drawn over
+//   it, then in hardware the geometry, still water and backgrounds again, with
+//   CDemonCamera::precomputeNormals, loadImage and CWater::render
+// deferred: the spotlights' and omni lights' shadow maps, with CDemonSet::process and the
+//   CDemonLight scene functions
+// deferred: the sky, decals, still water and actors' backgrounds in the camera's lit frame, the
+//   scene's static lights, the reverb and the weather's origin, then noting each actor as drawn
+//   again, with renderSkyDome, CGore::renderDecals, CFireEffect::renderDecals,
+//   renderStaticLights, CSound::setReverbPreset and CWeather::setOriginAndRotation
+// The original also worked out each renderable actor's box corners in 24.8 into a local nothing
+// reads.
 // nocedit 0x0056ae50
 void CDemonSet::setCameraView(int index) {
     if (static_cast<std::size_t>(index) >= cameras_.size()) {
@@ -349,7 +360,9 @@ void CDemonSet::setCameraView(int index) {
     owners_.camera.beginBackgroundScene();
     buildDisplayList(kBackgroundDisplayListFlags);
     renderSceneGeometry(kBackgroundReach, kDrawCameraPVS);
-    quitNotPorted("CDemonCamera", "saveZBufferScanlines");
+    owners_.camera.saveZBufferScanlines();
+    renderBackgroundActors(1);
+    quitNotPorted("CDemonCamera", "precomputeNormals");
 }
 
 // nocedit 0x00575b00

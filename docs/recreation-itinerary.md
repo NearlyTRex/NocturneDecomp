@@ -24,7 +24,7 @@ functions don't count as done. Sizes are in instructions.
 | 8 | `renderMenuAndGetChoice`, `CMoon::free`, `CSound::reset`, `CEditorTools::showFileSelectionDialog` | 8 | 63 | 5314 | 60 | 3 | 95.2% |
 | 9 | `CPickList::enableItem`, `CEventList::resetGameFlags`, `CLevelLoader::show`, `CDemonMission::load` | 15 | 56 | 3298 | 37 | 9 | 66.0% |
 | 10 | `CDemonMission::createHeros`, `CDemonMission::prepareAllActors`, `CEventList::reset`, `CDemonMission::loadSet` | 15 | 42 | 5112 | 33 | 8 | 78.5% |
-| 11 | `CScript::loadScript` | 63 | 579 | 67400 | 111 | 50 | 19.1% |
+| 11 | `CScript::loadScript` | 63 | 579 | 67400 | 114 | 51 | 19.6% |
 | 12 | `CDemonMission::loadScript`, `CScript::executeInitSection`, `CDemonMission::startMission`, `CDemonMission::buildActiveSetActorList`, `CConsole::reset`, `CEditorTools::displayMemoryDiagnostics`, `CGame::setGameRes`, `CDemonLight::init`, `CDemonSet::initScene` | 12 | 26 | 1658 | 16 | 9 | 61.5% |
 | 13 | `CFireEffect::init`, `CDemonSet::loadMasterLightStates`, `CDemonSet::setGamma`, `CGame::clearOverlay`, `CGame::loadAssets` | 7 | 27 | 735 | 16 | 1 | 59.2% |
 | 14 | `CNetGame::syncPlayers`, `CNetGame::processServerFrame`, `CLevelLoader::cleanup`, `CKeys::toggleInputMask`, `CGame::processHotkeys` | 17 | 51 | 5302 | 4 | 0 | 7.8% |
@@ -46,7 +46,7 @@ functions don't count as done. Sizes are in instructions.
 | 30 | Not reached from startup: `core/` (part 8 of 9) | 20 | 300 | 31826 | 41 | 8 | 13.6% |
 | 31 | Not reached from startup: `core/` (part 9 of 9) | 5 | 111 | 10905 | 26 | 7 | 23.4% |
 | 32 | Not reached from startup: `wincore/` | 2 | 11 | 482 | 4 | 0 | 36.3% |
-| | **All** | | **4479** | **402407** | **1160** | **216** | **25.8%** |
+| | **All** | | **4479** | **402407** | **1163** | **217** | **25.9%** |
 
 ## Step 0: Math value types
 
@@ -1240,7 +1240,7 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `archive` 0x005dab30 (17)
   - [ ] `dtor` 0x005dae50 (31)
 
-### `core/actor.cpp` (66 functions, 3653 instructions, 9 done, 10 partial)
+### `core/actor.cpp` (66 functions, 3653 instructions, 10 done, 10 partial)
 - free functions
   - [ ] `copyVector` 0x00410360 (12)
   - [ ] `rayCylinderIntersect` 0x00408340 (354)
@@ -1275,7 +1275,7 @@ functions don't count as done. Sizes are in instructions.
   - [x] `dtor` 0x00408a30 (28)
   - [ ] `process` 0x00408a80 (7)
   - [ ] `renderTransparent` 0x00408ac0 (8)
-  - [ ] `renderBackground` 0x00408ae0 (7)
+  - [x] `renderBackground` 0x00408ae0 (7)
   - [x] `getActorType` 0x00408b50 (17)
   - [x] `getBoundingBox` 0x00408c70 (8)
   - [ ] `getCollisionType` 0x00408ca0 (8)
@@ -1570,7 +1570,7 @@ functions don't count as done. Sizes are in instructions.
 - free functions
   - [ ] `loadAndUpdateTexture` 0x005dd930 (13)
 
-### `core/dcamera.cpp` (26 functions, 3719 instructions, 3 done, 4 partial)
+### `core/dcamera.cpp` (26 functions, 3719 instructions, 5 done, 4 partial)
 - class `CDemonCamera`
   - [ ] `setupPerspectiveAndFog` 0x004537d0 (73)
   - [ ] `initCameraShake` 0x00453fc0 (43)
@@ -1600,8 +1600,8 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `precomputeNormals` 0x0044e360 (330)
   - [ ] `loadImage` 0x0044f3e0 (921)
   - [x] `initCameraFog` 0x00453640 (55)
-  - [ ] `saveZBufferScanlines` 0x00454450 (28)
-  - [ ] `restoreZBufferScanlines` 0x004544a0 (28)
+  - [x] `saveZBufferScanlines` 0x00454450 (28)
+  - [x] `restoreZBufferScanlines` 0x004544a0 (28)
 - free functions
   - [x] `resetFogSamplingOffset` 0x0044bb70 (5)
   - [ ] `sampleFogAlongRay` 0x0044bdd0 (161)
@@ -1933,7 +1933,7 @@ functions don't count as done. Sizes are in instructions.
   - [x] `setWeatherType` 0x005ef8c0 (30)
   - [ ] `setOriginAndRotation` 0x005ef940 (154)
 
-### `core/set.cpp` (27 functions, 2403 instructions, 5 done, 4 partial)
+### `core/set.cpp` (27 functions, 2403 instructions, 5 done, 5 partial)
 - class `CDemonSet`
   - [ ] `getReverbPresetAtPosition` 0x0056fac0 (77)
   - [ ] `addCoronaGlobe` 0x0056d110 (12)
@@ -1958,7 +1958,8 @@ functions don't count as done. Sizes are in instructions.
     - deferred: drawing in software the mirror list, the environment model, the sky dome, the water and, on the train, the terrain, with buildMirrorList, the enviro model's prepareForRender, renderSkyDome, CWater::calculateVisibleTiles and render, and CTerrain::render
     - deferred: each mirror's depth, its broken glass, and the geometry reflected in it, with setupMirrorRendering, restoreCameraAfterMirror, CMirror::renderMirrorQuadDepth and CGlass::renderBrokenGlass
     - deferred: the shadow pass drawing only the mirrors, while mirrors are on, with setShadowPass's callers
-  - [ ] `renderBackgroundActors` 0x0056aca0 (101)
+  - [~] `renderBackgroundActors` 0x0056aca0 (101)
+    - deferred: each actor's place, turn and box for the spatial lights, with setLightingParameters and calculateSpatialLighting
   - [x] `snapshotActorTransformState` 0x0056ade0 (30)
   - [ ] `isCameraPanning` 0x00571320 (21)
   - [~] `buildDisplayList` 0x0056fbd0 (291)
@@ -1971,7 +1972,10 @@ functions don't count as done. Sizes are in instructions.
   - [~] `setCameraView` 0x0056ae50 (639)
     - deferred: restoring the dynamic lights' and spotlights' dirty regions, freeing the spotlights' master z-buffers and resetting their restore memory, with restoreDirtyRegions, freeMasterZBuffer and resetRestoreMemoryAllocator
     - deferred: the full lighting mode and the directional light ratio while the background draws, and no spot, omni or corona lights gathered yet, the coronas kept for the same camera (the decomp's windowed reswitch fix), with renderScene
-    - deferred: drawing the camera's background over the geometry's depth, its shadows and lights, its reverb and weather, then the scene's static lights, and noting each actor as drawn again, with CDemonCamera::saveZBufferScanlines and what follows it
+    - deferred: the actors' backgrounds lit without the quality modes while the depths are taken (g_InMirrorRenderPass), with lightVerticies' quality modes
+    - deferred: the backdrop's normals and depths taken from the depth drawn, the geometry's depth put back, the camera's backdrop image and fog loaded and the actors' backgrounds drawn over it, then in hardware the geometry, still water and backgrounds again, with CDemonCamera::precomputeNormals, loadImage and CWater::render
+    - deferred: the spotlights' and omni lights' shadow maps, with CDemonSet::process and the CDemonLight scene functions
+    - deferred: the sky, decals, still water and actors' backgrounds in the camera's lit frame, the scene's static lights, the reverb and the weather's origin, then noting each actor as drawn again, with renderSkyDome, CGore::renderDecals, CFireEffect::renderDecals, renderStaticLights, CSound::setReverbPreset and CWeather::setOriginAndRotation
   - [x] `setCameraEnabled` 0x00570ea0 (5)
   - [x] `setCameraEnabledByGroup` 0x00570ec0 (30)
 - free functions
