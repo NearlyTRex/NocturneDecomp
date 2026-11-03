@@ -467,6 +467,30 @@ NOCTURNE_TEST(each_melee_line_grants_its_own_weapon) {
     }
 }
 
+// A granted melee weapon was never in the world, so it is not left queued to
+// leave it, where the inventory could free it first; whatever else is queued
+// stays, in order.
+NOCTURNE_TEST(a_granted_melee_weapon_is_not_queued_to_leave_the_world) {
+    fresh();
+    place_heroes(1);
+    CDemonActor first = {};
+    CDemonActor second = {};
+    g_CDemonMissionPtr->delete_queue_actors[0] = &first;
+    g_CDemonMissionPtr->delete_queue_flags[0] = 1;
+    g_CDemonMissionPtr->delete_queue_count = 1;
+    step(NOCTURNE_CHEAT_MELEE_AXE);
+    g_CDemonMissionPtr->delete_queue_actors[1] = &second;
+    g_CDemonMissionPtr->delete_queue_flags[1] = 0;
+    g_CDemonMissionPtr->delete_queue_count = 2;
+    step(NOCTURNE_CHEAT_MELEE_SHOVEL);
+    CHECK_EQ(heroes[0]->inventory.item_count, 2);
+    CHECK_EQ(g_CDemonMissionPtr->delete_queue_count, 2);
+    CHECK(g_CDemonMissionPtr->delete_queue_actors[0] == &first);
+    CHECK_EQ(g_CDemonMissionPtr->delete_queue_flags[0], 1u);
+    CHECK(g_CDemonMissionPtr->delete_queue_actors[1] == &second);
+    CHECK_EQ(g_CDemonMissionPtr->delete_queue_flags[1], 0u);
+}
+
 // Each health line grants its own kind at its own tuning.
 NOCTURNE_TEST(each_health_line_grants_its_own_kind) {
     struct Case {

@@ -406,6 +406,24 @@ const MeleeDef *meleeDefFor(int cheat) {
     return &kMeleeWeapons[i];
 }
 
+// Takes an actor off the mission's delete queue, for one that was never in the
+// world: the queue would otherwise outlive it if its owner frees it first.
+// Every other entry keeps its place.
+void unqueueRemoval(CDemonActor *actor) {
+    CDemonMission *mission = g_CDemonMissionPtr;
+    int kept = 0;
+    int i;
+
+    for (i = 0; i < mission->delete_queue_count; i++) {
+        if (mission->delete_queue_actors[i] != actor) {
+            mission->delete_queue_actors[kept] = mission->delete_queue_actors[i];
+            mission->delete_queue_flags[kept] = mission->delete_queue_flags[i];
+            kept++;
+        }
+    }
+    mission->delete_queue_count = kept;
+}
+
 // giveWeaponTo for a weapon that has no class of its own — see the melee note
 // in cheats.h. The shape of it is the same, with the set-file properties
 // written in between: they have to land before setup(), which is what builds
@@ -449,6 +467,7 @@ void giveMeleeTo(CHero *hero, const MeleeDef *def) {
     (*((actor->vtable)._ub)->setup)(actor);
     (*((actor->vtable)._ub)->pickup)(actor, (CDemonActor *)hero);
     core_inv_cpp_CInventory_addItem_FUN_004fd600(&hero->inventory, actor, 0);
+    unqueueRemoval(actor);
 }
 
 // hasItemOfClass is too coarse for ammo — every round in the inventory is a
