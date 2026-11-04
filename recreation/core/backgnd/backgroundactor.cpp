@@ -2,6 +2,7 @@
 
 #include "core/actor/actor.h"
 #include "core/actor/actorarchive.h"
+#include "core/actor/actorrenderowners.h"
 #include "core/actor/demonactortype.h"
 #include "core/box/boundingbox3d.h"
 #include "core/dmodel/keyframedmodel.h"
@@ -47,6 +48,17 @@ void CBackgroundActor::setup() {
     model_.preCache();
     CDemonActor::setup();
     setCollisionDisabled(!collide_with_me_);
+}
+
+// The game is never in the editor, where the original drew none of these.
+// nocedit 0x00412860
+void CBackgroundActor::renderBackground(int layer_flag, const SActorRenderOwners &owners) {
+    if (layer_flag == 0) {
+        return;
+    }
+    renderIfBoxVisible(owners, [this, &owners] {
+        model_.prepareForRendering(0.0F, -1, owners.renderer, owners.set);
+    });
 }
 
 // nocedit 0x00412990

@@ -24,10 +24,6 @@ int CCharacter::renderTransparent() {
     notPorted("renderTransparent");
 }
 
-void CCharacter::renderBackground(int /*layer_flag*/, const SActorRenderOwners & /*owners*/) {
-    notPorted("renderBackground");
-}
-
 ECollisionType CCharacter::getCollisionType(SCollisionInfo * /*collision_info*/) {
     notPorted("getCollisionType");
 }

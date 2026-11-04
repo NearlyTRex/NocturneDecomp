@@ -23,10 +23,6 @@ int CDoor::renderOpaque() {
     notPorted("renderOpaque");
 }
 
-void CDoor::renderBackground(int /*layer_flag*/, const SActorRenderOwners & /*owners*/) {
-    notPorted("renderBackground");
-}
-
 ECollisionType CDoor::getCollisionType(SCollisionInfo * /*collision_info*/) {
     notPorted("getCollisionType");
 }

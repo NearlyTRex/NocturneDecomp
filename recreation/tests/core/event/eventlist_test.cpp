@@ -12,6 +12,10 @@ TEST(CEventList, IsConcrete) {
     static_assert(!std::is_abstract_v<CEventList>);
 }
 
+TEST(CEventList, AnswersTheActorsConditions) {
+    static_assert(std::is_base_of_v<IEventConditions, CEventList>);
+}
+
 TEST(CEventList, Constructors) {
     static_assert(std::is_constructible_v<CEventList, const SEventListOwners &>);
 }

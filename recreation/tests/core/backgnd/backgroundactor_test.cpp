@@ -3,7 +3,7 @@
 #include "core/backgnd/backgroundactor.h"
 #include "core/box/boundingbox3d.h"
 #include "core/dmodel/keyframedmodel.h"
-#include "tests/mocks/core/actorrenderfixture.h"
+#include "tests/mocks/core/keyframedactorfixture.h"
 #include "tests/mocks/core/notportedcalls.h"
 #include "tests/mocks/core/oneframemodel.h"
 #include "tests/mocks/core/testclasses.h"
@@ -105,14 +105,11 @@ TEST(CBackgroundActor, ProcessingLeavesSceneryAsItIs) {
     EXPECT_EQ(scenery.getModel().getModelName(), "candle.kfm");
 }
 
-class CBackgroundActorNotPorted : public CActorRenderFixture {};
-
-TEST_F(CBackgroundActorNotPorted, TheFunctionsNotPortedYetQuit) {
+TEST(CBackgroundActor, TheFunctionsNotPortedYetQuit) {
     CTestClasses classes;
     CBackgroundActor scenery{classes.get()};
     const NotPortedCalls calls = {
         {"renderOpaque", [&] { static_cast<void>(scenery.renderOpaque()); }},
-        {"renderBackground", [&] { scenery.renderBackground(0, render_owners_); }},
         {"getCollisionType", [&] { static_cast<void>(scenery.getCollisionType(nullptr)); }},
     };
     expectEachQuitsNotPorted("CBackgroundActor", calls);
@@ -149,6 +146,32 @@ TEST(CBackgroundActor, ItCollidesOnlyWhenItsFileSaysTo) {
         scenery.setup();
         EXPECT_EQ(scenery.isCollisionDisabled(), !collide_with_me);
     }
+}
+
+class CBackgroundActorDrawTest : public CKeyFramedActorFixture {
+protected:
+    CBackgroundActorDrawTest() {
+        ready(scenery_);
+    }
+
+    CBackgroundActor scenery_{classes_.get()};
+};
+
+// Scenery is drawn into the backdrop in its layer, while its box is visible.
+TEST_F(CBackgroundActorDrawTest, SceneryIsDrawnIntoTheBackdropInItsLayer) {
+    scenery_.renderBackground(1, render_owners_);
+    EXPECT_TRUE(drawn());
+}
+
+TEST_F(CBackgroundActorDrawTest, OutsideItsLayerSceneryIsLeftOut) {
+    scenery_.renderBackground(0, render_owners_);
+    EXPECT_FALSE(drawn());
+}
+
+TEST_F(CBackgroundActorDrawTest, HiddenSceneryIsNotDrawn) {
+    hideEverything();
+    scenery_.renderBackground(1, render_owners_);
+    EXPECT_FALSE(drawn());
 }
 
 } // namespace

@@ -205,17 +205,41 @@ TEST(CFlame, SettingUpDrawsItsFlipFromTheCosmeticStream) {
     EXPECT_LT(flame.getOrientation().y, 3.2F);
 }
 
-class CFlameNotPorted : public CActorRenderFixture {};
-
-TEST_F(CFlameNotPorted, TheFunctionsNotPortedYetQuit) {
+TEST(CFlame, TheFunctionsNotPortedYetQuit) {
     CTestClasses classes;
     CFlame flame(classes.get());
     const NotPortedCalls calls = {
         {"process", [&] { flame.process(0.0F); }},
         {"renderTransparent", [&] { static_cast<void>(flame.renderTransparent()); }},
-        {"renderBackground", [&] { flame.renderBackground(0, render_owners_); }},
     };
     expectEachQuitsNotPorted("CFlame", calls);
+}
+
+// A flame two units ahead, its box wholly in view.
+class CFlameBackgroundTest : public CActorRenderFixture {
+protected:
+    CFlameBackgroundTest() {
+        flame_.setLocation({.position = {.x = 0.0F, .y = -1.5F, .z = 2.2F}, .area_id = 0});
+    }
+
+    CTestClasses classes_;
+    CFlame flame_{classes_.get()};
+};
+
+// In its layer, the flame learns whether its box is visible.
+TEST_F(CFlameBackgroundTest, AFlameLearnsWhetherItIsVisibleInItsLayer) {
+    hideEverything();
+    flame_.renderBackground(1, render_owners_);
+    EXPECT_FALSE(flame_.isVisible());
+    depths_.fill(kFarthest);
+    flame_.renderBackground(1, render_owners_);
+    EXPECT_TRUE(flame_.isVisible());
+}
+
+TEST_F(CFlameBackgroundTest, OutsideItsLayerTheFlameKeepsWhatItKnew) {
+    hideEverything();
+    flame_.renderBackground(0, render_owners_);
+    EXPECT_TRUE(flame_.isVisible());
 }
 
 } // namespace

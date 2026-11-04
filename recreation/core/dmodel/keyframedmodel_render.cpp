@@ -32,7 +32,8 @@ void CKeyFramedModel::rotateAndLightVertices(int frame_index, CDemonSet &set) co
 
 // The original read the first texture of a model that has none. A model with no frames still
 // culls by winding when the box free left behind has a diagonal past 250.
-// deferred: skipping the parts an instance hides, with CKeyFramedModelInstance
+// deferred: skipping the parts an instance hides, with the writers of its part flags,
+//   CVehicle::archive and CLightActor
 // deferred: batching each part whole without a texture in the shadow pass, with
 //   setShadowPass's callers
 // unverified: the diagonal's float roundings at the 250 threshold, by running the test against
@@ -86,7 +87,8 @@ void CKeyFramedModel::submitTextureRuns(std::size_t first, std::size_t end, int 
 }
 
 // The original's two helpers each checked for polygons again.
-// deferred: the instance parameter that hides parts, with CKeyFramedModelInstance
+// deferred: the instance whose hidden parts are left out, with the writers of its part flags,
+//   CVehicle::archive and CLightActor
 // nocedit 0x00477850
 void CKeyFramedModel::prepareForRender(int frame_index, int render_flags,
                                        engine::CDemonRenderer &renderer, CDemonSet &set) {

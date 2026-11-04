@@ -71,6 +71,8 @@ struct SDemonSetOwners {
     // Whose frame time the virtual director counts its holds down by.
     const CGame &game;
     CSkyDome &sky_dome;
+    // What its actors ask of the events as they draw.
+    IEventConditions &events;
 };
 
 class CDemonSet {

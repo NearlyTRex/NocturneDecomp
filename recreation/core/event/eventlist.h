@@ -1,5 +1,6 @@
 #pragma once
 
+#include "core/event/eventconditions.h"
 #include "core/fwd.h"
 #include "engine/fwd.h"
 
@@ -23,7 +24,7 @@ struct SEventListOwners {
     engine::CConsole &console;
 };
 
-class CEventList {
+class CEventList : public IEventConditions {
 public:
     // A check of a condition or of commands: nothing, or why they are wrong.
     using CheckResult = std::expected<void, std::string>;
@@ -37,9 +38,8 @@ public:
     void reset();
     void process();
     int executeCommands(char *commands);
-    // False for no condition, for "none", and for one that can't be evaluated, which the console
-    // says why.
-    [[nodiscard]] bool evaluateCondition(std::string_view condition_expression);
+    // The console says why a condition can't be evaluated.
+    [[nodiscard]] bool evaluateCondition(std::string_view condition_expression) override;
     // A condition's syntax, the actors it names and the spotlights it asks about. It is evaluated
     // as it is checked, so a randBool draws its chance.
     [[nodiscard]] CheckResult validateCondition(std::string_view expression);

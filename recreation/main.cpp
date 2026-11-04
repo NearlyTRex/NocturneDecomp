@@ -310,7 +310,8 @@ private:
                           .light_owners = light_owners_,
                           .weather = weather_,
                           .game = game_,
-                          .sky_dome = sky_dome_}};
+                          .sky_dome = sky_dome_,
+                          .events = events_}};
     nocturne::shape::CEdControls controls_{{.two_d = two_d_,
                                             .screen = screen_,
                                             .raw_input = winrun_,

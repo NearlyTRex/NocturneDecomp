@@ -23,10 +23,6 @@ int CPlatform::renderOpaque() {
     notPorted("renderOpaque");
 }
 
-void CPlatform::renderBackground(int /*layer_flag*/, const SActorRenderOwners & /*owners*/) {
-    notPorted("renderBackground");
-}
-
 ECollisionType CPlatform::getCollisionType(SCollisionInfo * /*collision_info*/) {
     notPorted("getCollisionType");
 }

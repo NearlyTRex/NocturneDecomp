@@ -4,6 +4,7 @@
 #include "core/actor/actor.h"
 #include "core/actor/actorarchive.h"
 #include "core/actor/demonactortype.h"
+#include "core/actor/notported.h"
 #include "core/charactr/healthbarmode.h"
 #include "core/cloth/clothlist.h"
 
@@ -132,6 +133,19 @@ void CCharacter::clearGrabbedType() {
 
 void CCharacter::setHealthBarMode(EHealthBarMode health_bar_mode) {
     health_bar_mode_ = health_bar_mode;
+}
+
+void CCharacter::setRenderActive(bool render_active) {
+    render_active_ = render_active;
+}
+
+// deferred: drawing the character while its box is visible, with renderCharacter
+// nocedit 0x0042a390
+void CCharacter::renderBackground(int /*layer_flag*/, const SActorRenderOwners &owners) {
+    if (!render_active_) {
+        return;
+    }
+    renderIfBoxVisible(owners, [] { quitNotPorted("CCharacter", "renderCharacter"); });
 }
 
 // nocedit 0x0042bf80

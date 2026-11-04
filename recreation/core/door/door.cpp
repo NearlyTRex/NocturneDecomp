@@ -5,12 +5,14 @@
 #include "common/math/vector3f.h"
 #include "core/actor/actor.h"
 #include "core/actor/actorarchive.h"
+#include "core/actor/actorrenderowners.h"
 #include "core/actor/demonactortype.h"
 #include "core/box/boundingbox3d.h"
 #include "core/dmodel/keyframedmodel.h"
 #include "core/dmodel/keyframedmodelinstance.h"
 #include "core/event/rulelist.h"
 #include "core/location.h"
+#include "core/oneshotstate.h"
 #include "core/set/demonset.h"
 
 #include <cmath>
@@ -137,6 +139,18 @@ void CDoor::reposition() {
     }
 }
 
+// A one-shot door that has moved is drawn into the backdrop from then on.
+// nocedit 0x004809e0
+void CDoor::renderBackground(int layer_flag, const SActorRenderOwners &owners) {
+    if (layer_flag == 0 || one_shot_ < EOneShotState::kDone) {
+        return;
+    }
+    one_shot_ = EOneShotState::kDoneInBackground;
+    renderIfBoxVisible(owners, [this, &owners] {
+        model_.prepareForRendering(0.0F, -1, owners.renderer, owners.set);
+    });
+}
+
 // nocedit 0x00480a50
 CBoundingBox3D *CDoor::getBoundingBox(CBoundingBox3D *out_box) {
     *out_box = model_.getModelPtr().getFrameBounds().front();
@@ -195,7 +209,7 @@ void CDoor::archive(CActorArchive &actor_archive) {
         actor_archive.archiveString(event_when_closed_, "eventToTriggerWhenClosed");
     }
     if (version >= kOneShotVersion) {
-        actor_archive.archiveFlag(one_shot_, "oneShot");
+        actor_archive.archiveEnum(one_shot_, "oneShot");
     }
     if (version >= kOpenRulesVersion) {
         actor_archive.archiveRules(open_rules_, "openRules");
@@ -321,7 +335,7 @@ const std::string &CDoor::getEventWhenClosed() const {
     return event_when_closed_;
 }
 
-bool CDoor::isOneShot() const {
+EOneShotState CDoor::getOneShotState() const {
     return one_shot_;
 }
 

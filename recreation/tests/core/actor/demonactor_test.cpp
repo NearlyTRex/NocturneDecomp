@@ -146,10 +146,10 @@ TEST(CDemonActor, PublicInterface) {
                                  const CDemonActorType &(CDemonActor::*)() const>);
     static_assert(
         std::is_same_v<decltype(&CDemonActor::archive), void (CDemonActor::*)(CActorArchive &)>);
-    static_assert(
-        std::is_same_v<decltype(&CDemonActor::setupRenderState), void (CDemonActor::*)()>);
-    static_assert(
-        std::is_same_v<decltype(&CDemonActor::restoreRenderState), void (CDemonActor::*)()>);
+    static_assert(std::is_same_v<decltype(&CDemonActor::setupRenderState),
+                                 void (CDemonActor::*)(engine::CDemonRenderer &) const>);
+    static_assert(std::is_same_v<decltype(&CDemonActor::restoreRenderState),
+                                 void (*)(engine::CDemonRenderer &)>);
     static_assert(std::is_same_v<decltype(&CDemonActor::getActorClassName),
                                  std::string_view (CDemonActor::*)() const>);
     static_assert(std::is_same_v<decltype(&CDemonActor::getActorName),

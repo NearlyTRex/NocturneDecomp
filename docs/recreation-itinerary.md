@@ -24,7 +24,7 @@ functions don't count as done. Sizes are in instructions.
 | 8 | `renderMenuAndGetChoice`, `CMoon::free`, `CSound::reset`, `CEditorTools::showFileSelectionDialog` | 8 | 63 | 5314 | 60 | 3 | 95.2% |
 | 9 | `CPickList::enableItem`, `CEventList::resetGameFlags`, `CLevelLoader::show`, `CDemonMission::load` | 15 | 56 | 3298 | 37 | 9 | 66.0% |
 | 10 | `CDemonMission::createHeros`, `CDemonMission::prepareAllActors`, `CEventList::reset`, `CDemonMission::loadSet` | 15 | 42 | 5112 | 33 | 8 | 78.5% |
-| 11 | `CScript::loadScript` | 63 | 579 | 67400 | 129 | 56 | 22.2% |
+| 11 | `CScript::loadScript` | 63 | 579 | 67400 | 131 | 58 | 22.6% |
 | 12 | `CDemonMission::loadScript`, `CScript::executeInitSection`, `CDemonMission::startMission`, `CDemonMission::buildActiveSetActorList`, `CConsole::reset`, `CEditorTools::displayMemoryDiagnostics`, `CGame::setGameRes`, `CDemonLight::init`, `CDemonSet::initScene` | 12 | 26 | 1658 | 16 | 9 | 61.5% |
 | 13 | `CFireEffect::init`, `CDemonSet::loadMasterLightStates`, `CDemonSet::setGamma`, `CGame::clearOverlay`, `CGame::loadAssets` | 7 | 27 | 735 | 16 | 1 | 59.2% |
 | 14 | `CNetGame::syncPlayers`, `CNetGame::processServerFrame`, `CLevelLoader::cleanup`, `CKeys::toggleInputMask`, `CGame::processHotkeys` | 17 | 51 | 5302 | 4 | 0 | 7.8% |
@@ -36,17 +36,17 @@ functions don't count as done. Sizes are in instructions.
 | 20 | Not reached from startup: `support/` | 2 | 24 | 593 | 3 | 1 | 12.5% |
 | 21 | Not reached from startup: `cockpit/` | 4 | 178 | 11527 | 0 | 0 | 0.0% |
 | 22 | Not reached from startup: `shape/` | 2 | 42 | 3178 | 4 | 2 | 9.5% |
-| 23 | Not reached from startup: `core/` (part 1 of 9) | 18 | 292 | 16011 | 66 | 13 | 22.6% |
-| 24 | Not reached from startup: `core/` (part 2 of 9) | 11 | 277 | 24965 | 35 | 7 | 12.6% |
-| 25 | Not reached from startup: `core/` (part 3 of 9) | 24 | 278 | 24134 | 51 | 7 | 18.3% |
-| 26 | Not reached from startup: `core/` (part 4 of 9) | 18 | 300 | 20148 | 51 | 7 | 17.0% |
+| 23 | Not reached from startup: `core/` (part 1 of 9) | 18 | 292 | 16011 | 67 | 13 | 22.9% |
+| 24 | Not reached from startup: `core/` (part 2 of 9) | 11 | 277 | 24965 | 35 | 8 | 12.6% |
+| 25 | Not reached from startup: `core/` (part 3 of 9) | 24 | 278 | 24134 | 53 | 7 | 19.0% |
+| 26 | Not reached from startup: `core/` (part 4 of 9) | 18 | 300 | 20148 | 52 | 7 | 17.3% |
 | 27 | Not reached from startup: `core/` (part 5 of 9) | 21 | 294 | 20910 | 63 | 11 | 21.4% |
-| 28 | Not reached from startup: `core/` (part 6 of 9) | 18 | 282 | 21809 | 54 | 12 | 19.1% |
+| 28 | Not reached from startup: `core/` (part 6 of 9) | 18 | 282 | 21809 | 55 | 13 | 19.5% |
 | 29 | Not reached from startup: `core/` (part 7 of 9) | 18 | 263 | 22721 | 68 | 10 | 25.8% |
 | 30 | Not reached from startup: `core/` (part 8 of 9) | 20 | 300 | 31826 | 41 | 8 | 13.6% |
 | 31 | Not reached from startup: `core/` (part 9 of 9) | 5 | 111 | 10905 | 26 | 7 | 23.4% |
 | 32 | Not reached from startup: `wincore/` | 2 | 11 | 482 | 4 | 0 | 36.3% |
-| | **All** | | **4479** | **402407** | **1184** | **221** | **26.4%** |
+| | **All** | | **4479** | **402407** | **1191** | **225** | **26.5%** |
 
 ## Step 0: Math value types
 
@@ -716,11 +716,11 @@ functions don't count as done. Sizes are in instructions.
   - [x] `getFrameVertices` 0x00477890 (18)
   - [x] `rotateAndLightVertices` 0x004778d0 (64)
   - [~] `submitToRenderer` 0x00477980 (179)
-    - deferred: skipping the parts an instance hides, with CKeyFramedModelInstance
+    - deferred: skipping the parts an instance hides, with the writers of its part flags, CVehicle::archive and CLightActor
     - deferred: batching each part whole without a texture in the shadow pass, with setShadowPass's callers
     - unverified: the diagonal's float roundings at the 250 threshold, by running the test against nocedit's own code with boxes either side of it
   - [~] `prepareForRender` 0x00477850 (29)
-    - deferred: the instance parameter that hides parts, with CKeyFramedModelInstance
+    - deferred: the instance whose hidden parts are left out, with the writers of its part flags, CVehicle::archive and CLightActor
 
 ### `engine/matrix.c` (8 functions, 853 instructions, 8 done, 0 partial)
 - free functions
@@ -1203,7 +1203,7 @@ functions don't count as done. Sizes are in instructions.
 - free functions
   - [x] `convertDirectionVectorToEulerAngles` 0x005e7830 (58)
 
-### `core/dmodel.cpp` (9 functions, 549 instructions, 6 done, 0 partial)
+### `core/dmodel.cpp` (9 functions, 549 instructions, 6 done, 1 partial)
 - class `CKeyFramedModel`
   - [x] `captureTextures` 0x00478190 (25)
   - [ ] `getFloorHeight` 0x00478740 (81)
@@ -1215,7 +1215,8 @@ functions don't count as done. Sizes are in instructions.
   - [x] `init` 0x00478d00 (8)
   - [x] `setModelName` 0x00478dd0 (24)
   - [x] `getModelPtr` 0x00478d80 (21)
-  - [ ] `prepareForRendering` 0x00478d20 (18)
+  - [~] `prepareForRendering` 0x00478d20 (18)
+    - deferred: its hidden parts left out of the draw, with the writers of its part flags, CVehicle::archive and CLightActor
 
 ### `core/trigger.cpp` (2 functions, 53 instructions, 0 done, 0 partial)
 - class `CTrigger`
@@ -1239,7 +1240,7 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `archive` 0x005dab30 (17)
   - [ ] `dtor` 0x005dae50 (31)
 
-### `core/actor.cpp` (66 functions, 3653 instructions, 10 done, 10 partial)
+### `core/actor.cpp` (66 functions, 3653 instructions, 12 done, 10 partial)
 - free functions
   - [ ] `copyVector` 0x00410360 (12)
   - [ ] `rayCylinderIntersect` 0x00408340 (354)
@@ -1314,8 +1315,8 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `processFootstep` 0x0040c830 (67)
   - [ ] `processFootstepAtOffset` 0x0040c8f0 (92)
   - [ ] `handleFootstep` 0x0040ca10 (118)
-  - [ ] `setupRenderState` 0x00408b00 (16)
-  - [ ] `restoreRenderState` 0x00408b40 (5)
+  - [x] `setupRenderState` 0x00408b00 (16)
+  - [x] `restoreRenderState` 0x00408b40 (5)
   - [~] `setup` 0x00408bb0 (27)
     - deferred: clearing the blood effect timer, with handleFootstep
     - deferred: bringing the path map up to the actor's position, with CPathMap::findPathWithRetry
@@ -1330,13 +1331,15 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `precomputeAttenuation` 0x00471360 (48)
   - [ ] `renderCoronaTextured` 0x004715e0 (103)
 
-### `core/flame.cpp` (9 functions, 1240 instructions, 4 done, 1 partial)
+### `core/flame.cpp` (9 functions, 1240 instructions, 4 done, 2 partial)
 - class `CFlame`
   - [x] `getActorType` 0x004c9a90 (2)
   - [ ] `updateGlobe` 0x004cad90 (69)
   - [ ] `process` 0x004c9c00 (313)
   - [ ] `renderTransparent` 0x004ca110 (597)
-  - [ ] `renderBackground` 0x004caa80 (127)
+  - [~] `renderBackground` 0x004caa80 (127)
+    - deferred: whether a lit torch of more than unit size draws its corona, unless a flame within 5 already does, and clearing that and the visibility check first, with renderTransparent
+    - deferred: nothing tested in the shadow pass, with setShadowPass's callers
   - [x] `getBoundingBox` 0x004cac00 (22)
   - [x] `archive` 0x004cac60 (73)
   - [x] `getCollisionType` 0x004cad80 (2)
@@ -3684,12 +3687,12 @@ functions don't count as done. Sizes are in instructions.
 - class `CEnemy`
   - [x] `dtor` 0x004125c0 (62)
 
-### `core/backgnd.cpp` (13 functions, 248 instructions, 10 done, 0 partial)
+### `core/backgnd.cpp` (13 functions, 248 instructions, 11 done, 0 partial)
 - class `CBackgroundActor`
   - [x] `ctor` 0x004127b0 (21)
   - [x] `getActorType` 0x004127a0 (2)
   - [x] `process` 0x00412850 (1)
-  - [ ] `renderBackground` 0x00412860 (37)
+  - [x] `renderBackground` 0x00412860 (37)
   - [ ] `renderOpaque` 0x004128d0 (40)
   - [x] `getBoundingBox` 0x00412940 (28)
   - [x] `archive` 0x00412990 (27)
@@ -4028,7 +4031,7 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `getBugState` 0x00427b60 (3)
   - [ ] `swapIntegers` 0x00427b80 (8)
 
-### `core/charactr.cpp` (91 functions, 8559 instructions, 7 done, 2 partial)
+### `core/charactr.cpp` (91 functions, 8559 instructions, 7 done, 3 partial)
 - class `CCharacter`
   - [~] `ctor` 0x00427e20 (125)
     - deferred: the collision points, fires and flames, and the defaults the constructor gives the movement, walking, looking, carrying bones, smoking fields and the layer action fields other than the current action and its time, with the steps that read them
@@ -4089,7 +4092,8 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `calculateChecksum` 0x0042dde0 (43)
   - [ ] `canLookAt` 0x0042de50 (46)
   - [ ] `spawnFlies` 0x0042df90 (11)
-  - [ ] `renderBackground` 0x0042a390 (31)
+  - [~] `renderBackground` 0x0042a390 (31)
+    - deferred: drawing the character while its box is visible, with renderCharacter
   - [ ] `releaseVictim` 0x0042bf70 (1)
   - [ ] `buildLayerActionTransitionCosts` 0x0042e670 (134)
   - [x] `dtor` 0x0042f9f0 (62)
@@ -4456,7 +4460,7 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `factoryFuncZombieDog` 0x0047f010 (12)
   - [x] `staticInit` 0x0047efe0 (9)
 
-### `core/door.cpp` (23 functions, 1740 instructions, 14 done, 0 partial)
+### `core/door.cpp` (23 functions, 1740 instructions, 15 done, 0 partial)
 - class `CDoor`
   - [ ] `getOpenStandPos` 0x00480e20 (177)
   - [ ] `onOpened` 0x0047fcf0 (8)
@@ -4467,7 +4471,7 @@ functions don't count as done. Sizes are in instructions.
   - [x] `reposition` 0x0047fd20 (241)
   - [ ] `process` 0x004800c0 (472)
   - [ ] `renderOpaque` 0x004807d0 (166)
-  - [ ] `renderBackground` 0x004809e0 (37)
+  - [x] `renderBackground` 0x004809e0 (37)
   - [x] `getBoundingBox` 0x00480a50 (28)
   - [x] `archive` 0x00480aa0 (193)
   - [ ] `getCollisionType` 0x00480d90 (16)
@@ -4658,7 +4662,7 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `factoryFuncEmitter` 0x004a7c60 (12)
   - [x] `staticInit` 0x004a7c30 (9)
 
-### `core/enemy.cpp` (16 functions, 931 instructions, 3 done, 1 partial)
+### `core/enemy.cpp` (16 functions, 931 instructions, 4 done, 1 partial)
 - class `CEnemy`
   - [~] `ctor` 0x004a9500 (68)
     - deferred: the special form, the victim search's timer and radius, being in combat, the attack cooldown, finding paths to new targets and the enemy's footsteps, with CEnemy::updateVictim and CCharacter::process
@@ -4670,7 +4674,7 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `getTargetPoint` 0x004a99d0 (43)
   - [ ] `canSeeTarget` 0x004a9a50 (65)
   - [ ] `updateVictim` 0x004a9b00 (275)
-  - [ ] `renderBackground` 0x004a9fa0 (12)
+  - [x] `renderBackground` 0x004a9fa0 (12)
   - [ ] `releaseVictim` 0x004aa030 (42)
   - [ ] `onVictimLost` 0x004aa0c0 (10)
   - [x] `setup` 0x004a9650 (5)
@@ -5042,7 +5046,7 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `dtor` 0x004e5f40 (31)
   - [ ] `setup` 0x004e5d50 (10)
 
-### `core/ghoul.cpp` (15 functions, 3297 instructions, 5 done, 2 partial)
+### `core/ghoul.cpp` (15 functions, 3297 instructions, 6 done, 2 partial)
 - class `CGhoul`
   - [~] `ctor` 0x004e6030 (56)
     - deferred: the collision cylinder, the detection range, the eating state, flinching, the stun, heal and stuck timers, the dark waypoint and going berserk, with CGhoul::process
@@ -5052,7 +5056,7 @@ functions don't count as done. Sizes are in instructions.
   - [x] `getActorType` 0x004e6020 (2)
   - [ ] `findDarkWayPoint` 0x004e63d0 (129)
   - [ ] `process` 0x004e6600 (1937)
-  - [ ] `renderBackground` 0x004e8190 (14)
+  - [x] `renderBackground` 0x004e8190 (14)
   - [x] `archive` 0x004e81c0 (69)
   - [ ] `canBeAttracted` 0x004e82d0 (142)
   - [ ] `getTargetPoint` 0x004e84a0 (66)
@@ -5816,7 +5820,7 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `copyPlayerInput` 0x00543db0 (25)
   - [ ] `copyNetAddr` 0x00543e00 (7)
 
-### `core/npc.cpp` (13 functions, 589 instructions, 6 done, 2 partial)
+### `core/npc.cpp` (13 functions, 589 instructions, 7 done, 2 partial)
 - class `CNPC`
   - [~] `ctor` 0x005447e0 (26)
     - deferred: the path map, the collision cylinder and catching fire from a gun's flame, with CCharacter::process
@@ -5824,7 +5828,7 @@ functions don't count as done. Sizes are in instructions.
   - [x] `dtor` 0x004f4700 (67)
   - [ ] `process` 0x005448b0 (220)
   - [x] `getActorType` 0x005447d0 (2)
-  - [ ] `renderBackground` 0x00544b70 (12)
+  - [x] `renderBackground` 0x00544b70 (12)
   - [ ] `setRandomMotionVariant` 0x00544c50 (86)
   - [ ] `processDamage` 0x00544d30 (75)
   - [x] `isInvulnerable` 0x00544e10 (5)
@@ -5891,7 +5895,7 @@ functions don't count as done. Sizes are in instructions.
   - [x] `staticInit` 0x00549320 (9)
   - [ ] `didPhaseCross` 0x00549aa0 (73)
 
-### `core/platfrm.cpp` (18 functions, 1935 instructions, 10 done, 1 partial)
+### `core/platfrm.cpp` (18 functions, 1935 instructions, 10 done, 2 partial)
 - class `CPlatform`
   - [~] `ctor` 0x0054c850 (115)
     - deferred: the slew mode the editor sets, being drawn in the background, the health of 50 and the attached actors' places, with CPlatform::process
@@ -5902,7 +5906,10 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `updateAttachedActors` 0x0054e320 (91)
   - [ ] `process` 0x0054cc30 (709)
   - [ ] `renderOpaque` 0x0054d720 (202)
-  - [ ] `renderBackground` 0x0054d9b0 (129)
+  - [~] `renderBackground` 0x0054d9b0 (129)
+    - deferred: nothing drawn in the shadow pass, with setShadowPass's callers
+    - deferred: marking a resting platform drawn into the backdrop, with renderOpaque and process
+    - deferred: the draw lit per pixel with the fog sampled at its place, while recomputeFog is set, with getFogValueAtPosition and the set's per-pixel lighting
   - [x] `getBoundingBox` 0x0054db70 (28)
   - [ ] `getCollisionType` 0x0054e180 (15)
   - [x] `allowBulletHoles` 0x0054e1a0 (2)

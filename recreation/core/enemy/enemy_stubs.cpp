@@ -15,10 +15,6 @@ namespace {
 
 } // namespace
 
-void CEnemy::renderBackground(int /*layer_flag*/, const SActorRenderOwners & /*owners*/) {
-    notPorted("renderBackground");
-}
-
 int CEnemy::getTargetPoints(common::CVector3f * /*out_points_array*/) {
     notPorted("getTargetPoints");
 }

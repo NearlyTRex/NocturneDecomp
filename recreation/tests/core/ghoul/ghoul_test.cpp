@@ -10,6 +10,7 @@
 
 #include <gtest/gtest.h>
 
+#include <format>
 #include <memory>
 #include <string>
 #include <string_view>
@@ -133,20 +134,54 @@ TEST_F(CGhoulArchiveTest, AVersionOneGhoulHasItsSpeedAndModel) {
     EXPECT_EQ(ghoul_.getLivesLeft(), lives);
 }
 
-class CGhoulNotPorted : public CActorRenderFixture {};
-
-TEST_F(CGhoulNotPorted, TheFunctionsNotPortedYetQuit) {
+TEST(CGhoul, TheFunctionsNotPortedYetQuit) {
     CTestClasses classes;
     CGhoul ghoul(classes.get());
     const NotPortedCalls calls = {
         {"process", [&] { ghoul.process(0.0F); }},
-        {"renderBackground", [&] { ghoul.renderBackground(0, render_owners_); }},
         {"getTargetPoints", [&] { static_cast<void>(ghoul.getTargetPoints(nullptr)); }},
         {"processDamage", [&] { ghoul.processDamage(nullptr); }},
         {"canBeAttracted", [&] { static_cast<void>(ghoul.canBeAttracted(nullptr)); }},
         {"getTargetPoint", [&] { static_cast<void>(ghoul.getTargetPoint(nullptr)); }},
     };
     expectEachQuitsNotPorted("CGhoul", calls);
+}
+
+// A ghoul from a version 7 file that left its body, in view, whose box is tested only once it is
+// drawn.
+class CGhoulBackgroundTest : public CActorRenderFixture {
+protected:
+    void readGhoul(int spasm_count, int lives_left) {
+        CTestFieldsArchive archive(
+            ghoul_, CGhoul::kType, 7,
+            std::format(
+                "100\n1.1\n1\n\t\"GUUL.DFM\"    // modelName\n\t3    // livesLeft\n"
+                "\t{{ // motion state\n\t\t\"sleep\",0\n\t}}\n\t{{ // partStatus\n\t\t0\n\t}}\n"
+                "\t{}    // spasmCount\n\t{}    // livesLeft\n\t0    // ariseTimer\n",
+                spasm_count, lives_left));
+        archive.getClasses().setSavedVersion(CEnemy::kType, 4);
+        ghoul_.archive(archive.get());
+        placeInView(ghoul_);
+        markBoxUntested();
+    }
+
+    CTestClasses classes_;
+    CGhoul ghoul_{classes_.get()};
+};
+
+TEST_F(CGhoulBackgroundTest, AGhoulDownForGoodIsDrawnIntoTheBackdrop) {
+    readGhoul(0, 0);
+    ghoul_.renderBackground(1, render_owners_);
+    EXPECT_TRUE(boxTested());
+}
+
+TEST_F(CGhoulBackgroundTest, AGhoulWithASpasmOrALifeLeftIsLeftOut) {
+    readGhoul(1, 0);
+    ghoul_.renderBackground(1, render_owners_);
+    EXPECT_FALSE(boxTested());
+    readGhoul(0, 1);
+    ghoul_.renderBackground(1, render_owners_);
+    EXPECT_FALSE(boxTested());
 }
 
 } // namespace

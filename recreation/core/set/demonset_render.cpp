@@ -33,7 +33,8 @@ void CDemonSet::renderBackgroundActors(int layer_flag) {
                                            .three_d = owners_.three_d,
                                            .special = owners_.special,
                                            .set = *this,
-                                           .camera_tables = owners_.light_owners.camera.tables};
+                                           .camera_tables = owners_.light_owners.camera.tables,
+                                           .events = owners_.events};
     for (CDemonActor *actor : sorted_render_actors_) {
         const common::CVector3i &scale = actor->getScale();
         setFlatColor(scale.x, scale.y, scale.z);

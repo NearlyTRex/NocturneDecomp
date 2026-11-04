@@ -23,14 +23,6 @@ namespace {
 
 using ::testing::ElementsAre;
 using ::testing::IsEmpty;
-using ::testing::Return;
-
-constexpr int kOne = 0x10000;
-constexpr int kPixels = 8;
-constexpr auto kSize = static_cast<std::size_t>(kPixels);
-// Depths every polygon is level with or in front of, and one in front of every polygon.
-constexpr std::uint32_t kFarthest = 0;
-constexpr std::uint32_t kNearest = 0x7fffffff;
 
 // A camera that records what it is asked to fog and leaves the fog it is given.
 class CFogCamera : public CDemonCamera {
@@ -53,25 +45,9 @@ private:
     int reciprocal_;
 };
 
-// An 8 by 8 view down z from the origin, unturned, over an 8 by 8 depth buffer; the box sits a
-// little in front, wholly in view.
+// The box sits a little in front of the eye, wholly in view.
 class CBoundingBox3DVisibilityTest : public CActorRenderFixture {
 protected:
-    CBoundingBox3DVisibilityTest() {
-        two_d_.setupViewportAndClipping(0, 0, kPixels - 1, kPixels - 1);
-        common::CMatrix3x3i unturned;
-        unturned.m = {{{.x = kOne}, {.y = kOne}, {.z = kOne}}};
-        matrix_.setTransformMatrix(unturned);
-        for (std::size_t row = 0; row < kSize; ++row) {
-            pixel_rows_.at(row) = pixels_.data() + (row * kSize);
-            depth_rows_.at(row) = depths_.data() + (row * kSize);
-        }
-        ON_CALL(screen_, getScreenRows()).WillByDefault(Return(std::span<void *>(pixel_rows_)));
-        ON_CALL(screen_, getZBufferRows())
-            .WillByDefault(Return(std::span<std::uint32_t *>(depth_rows_)));
-        depths_.fill(kFarthest);
-    }
-
     [[nodiscard]] SDemonCameraOwners cameraOwners() {
         return set_parts_.light_parts.owners(screen_, special_, demon_renderer_, dosio_).camera;
     }
@@ -88,10 +64,6 @@ protected:
     // Wide enough that its near face covers pixels the profiled depth test samples.
     CBoundingBox3D box_{.min = {.x = -3.0F, .y = -3.0F, .z = 4.0F},
                         .max = {.x = 3.0F, .y = 3.0F, .z = 6.0F}};
-    std::array<std::uint32_t, kSize * kSize> pixels_{};
-    std::array<std::uint32_t, kSize * kSize> depths_{};
-    std::array<void *, kSize> pixel_rows_{};
-    std::array<std::uint32_t *, kSize> depth_rows_{};
 };
 
 TEST_F(CBoundingBox3DVisibilityTest, ABoxWhoseNearFacePassesTheDepthsIsVisible) {
@@ -99,7 +71,7 @@ TEST_F(CBoundingBox3DVisibilityTest, ABoxWhoseNearFacePassesTheDepthsIsVisible) 
 }
 
 TEST_F(CBoundingBox3DVisibilityTest, ABoxBehindTheDepthsIsHidden) {
-    depths_.fill(kNearest);
+    hideEverything();
     EXPECT_FALSE(box_.isVisible(render_owners_));
 }
 
@@ -146,7 +118,7 @@ TEST_F(CBoundingBox3DVisibilityTest, FaceCaptureAndPlaneCullingAreOnAfterTheTest
 
 // With the eye inside, no face is toward it, and the box is visible whatever the depths.
 TEST_F(CBoundingBox3DVisibilityTest, ABoxAroundTheEyeIsVisible) {
-    depths_.fill(kNearest);
+    hideEverything();
     const CBoundingBox3D around{.min = {.x = -1.0F, .y = -1.0F, .z = -1.0F},
                                 .max = {.x = 1.0F, .y = 1.0F, .z = 1.0F}};
     EXPECT_TRUE(around.isVisible(render_owners_));

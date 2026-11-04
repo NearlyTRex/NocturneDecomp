@@ -360,15 +360,12 @@ TEST_F(CCharacterArchiveTest, AHandPastTheTwoIsFatal) {
     }
 }
 
-class CCharacterNotPorted : public CActorRenderFixture {};
-
-TEST_F(CCharacterNotPorted, TheFunctionsNotPortedYetQuit) {
+TEST(CCharacter, TheFunctionsNotPortedYetQuit) {
     CTestClasses classes;
     CTestCharacter character(classes.get());
     const NotPortedCalls calls = {
         {"renderOpaque", [&] { static_cast<void>(character.renderOpaque()); }},
         {"renderTransparent", [&] { static_cast<void>(character.renderTransparent()); }},
-        {"renderBackground", [&] { character.renderBackground(0, render_owners_); }},
         {"getCollisionType", [&] { static_cast<void>(character.getCollisionType(nullptr)); }},
         {"canLookAt", [&] { static_cast<void>(character.canLookAt()); }},
         {"setPositionAndOrientation",
@@ -406,8 +403,48 @@ TEST_F(CCharacterNotPorted, TheFunctionsNotPortedYetQuit) {
         {"setWalkTimeout", [&] { character.setWalkTimeout(0.0F); }},
         {"isWalkComplete", [&] { static_cast<void>(character.isWalkComplete()); }},
     };
-    EXPECT_EQ(calls.size(), 34U);
+    EXPECT_EQ(calls.size(), 33U);
     expectEachQuitsNotPorted("CCharacter", calls);
+}
+
+// A character with a unit box from its place, which the test can mark as drawn into the backdrop.
+class CBackdropCharacter : public CTestCharacter {
+public:
+    using CCharacter::setRenderActive;
+    using CTestCharacter::CTestCharacter;
+
+    CBoundingBox3D *getBoundingBox(CBoundingBox3D *out_box) override {
+        *out_box = {.min = {}, .max = {.x = 1.0F, .y = 1.0F, .z = 1.0F}};
+        return out_box;
+    }
+};
+
+class CCharacterBackgroundTest : public CActorRenderFixture {
+protected:
+    CCharacterBackgroundTest() {
+        placeInView(character_);
+        markBoxUntested();
+    }
+
+    CTestClasses classes_;
+    CBackdropCharacter character_{classes_.get()};
+};
+
+TEST_F(CCharacterBackgroundTest, ACharacterNotInTheBackdropIsLeftOut) {
+    character_.renderBackground(1, render_owners_);
+    EXPECT_FALSE(boxTested());
+}
+
+// Its draw isn't ported, so a body seen in the backdrop quits there.
+TEST_F(CCharacterBackgroundTest, ACharacterInTheBackdropIsDrawnWhileItsBoxIsVisible) {
+    character_.setRenderActive(true);
+    hideEverything();
+    character_.renderBackground(0, render_owners_);
+    EXPECT_TRUE(boxTested());
+    depths_.fill(kFarthest);
+    EXPECT_THAT([this] { character_.renderBackground(0, render_owners_); },
+                ::testing::ThrowsMessage<common::CFatalError>(
+                    ::testing::StrEq("CCharacter::renderCharacter is not ported yet")));
 }
 
 } // namespace

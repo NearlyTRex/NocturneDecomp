@@ -14,6 +14,7 @@
 #include "core/weather/weather.h"
 #include "support/newmsg/newmsg.h"
 #include "tests/mocks/core/lightparts.h"
+#include "tests/mocks/core/mockeventconditions.h"
 #include "tests/mocks/core/mockloadingscreen.h"
 #include "tests/mocks/core/testclasses.h"
 
@@ -70,7 +71,8 @@ public:
                 .light_owners = light_owners,
                 .weather = weather,
                 .game = classes.getGame(),
-                .sky_dome = *sky_dome};
+                .sky_dome = *sky_dome,
+                .events = events};
     }
 
     ::testing::NiceMock<MockLoadingScreen> loading_screen;
@@ -88,6 +90,7 @@ public:
     CFilterCache filter_cache;
     CTestClasses classes;
     CWeather weather{classes.get()};
+    ::testing::NiceMock<MockEventConditions> events;
 
 private:
     const engine::CDosIo &dosio_;

@@ -204,8 +204,8 @@ TEST_F(CDemonSetBackgroundTest, EachActorDrawsItsBackgroundOpaqueAndTintedByItsS
     EXPECT_EQ(set_.getFlatColor(), (CColor3i{.r = 0x10000, .g = 0x10000, .b = 0x10000}));
 }
 
-// Each actor draws with the set's renderer, polygon state, special and camera tables, and the set
-// itself.
+// Each actor draws with the set's renderer, polygon state, special, camera tables and events, and
+// the set itself.
 TEST_F(CDemonSetBackgroundTest, EachActorDrawsWithTheSetsOwners) {
     showTheCamera();
     const std::optional<SActorRenderOwners> &owners = far_.getRenderOwners();
@@ -215,6 +215,7 @@ TEST_F(CDemonSetBackgroundTest, EachActorDrawsWithTheSetsOwners) {
     EXPECT_EQ(&owners->special, &special_);
     EXPECT_EQ(&owners->set, &set_);
     EXPECT_EQ(&owners->camera_tables, &set_parts_.tables);
+    EXPECT_EQ(&owners->events, &set_parts_.events);
 }
 
 // An actor that turns face capture off leaves it on for the next.

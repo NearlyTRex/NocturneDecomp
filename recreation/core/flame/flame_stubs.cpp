@@ -23,8 +23,4 @@ int CFlame::renderTransparent() {
     notPorted("renderTransparent");
 }
 
-void CFlame::renderBackground(int /*layer_flag*/, const SActorRenderOwners & /*owners*/) {
-    notPorted("renderBackground");
-}
-
 } // namespace nocturne::core

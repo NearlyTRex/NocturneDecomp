@@ -6,9 +6,11 @@
 #include "common/math/vector3i.h"
 #include "core/fwd.h"
 #include "core/location.h"
+#include "engine/fwd.h"
 
 #include <cstdint>
 #include <cstdio>
+#include <functional>
 #include <string>
 #include <string_view>
 
@@ -113,8 +115,9 @@ public:
     // Reads the class's own fields, between the tags load reads, after its parent's.
     virtual void archive(CActorArchive &actor_archive);
 
-    void setupRenderState();
-    void restoreRenderState();
+    // The renderer moved to the actor's place and turned by its orientation, until the restore.
+    void setupRenderState(engine::CDemonRenderer &renderer) const;
+    static void restoreRenderState(engine::CDemonRenderer &renderer);
     [[nodiscard]] std::string_view getActorClassName() const;
     [[nodiscard]] const std::string &getActorName() const;
     void setActorName(std::string_view actor_name);
@@ -168,6 +171,10 @@ public:
 
     // A scale of 1 in 16.16.
     static constexpr int kUnitScale = 0x10000;
+
+protected:
+    // In the actor's place and turn, draws only while its box is visible; whether it was.
+    bool renderIfBoxVisible(const SActorRenderOwners &owners, const std::function<void()> &draw);
 
 private:
     std::string actor_name_;
