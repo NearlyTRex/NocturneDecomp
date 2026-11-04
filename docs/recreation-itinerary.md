@@ -24,13 +24,13 @@ functions don't count as done. Sizes are in instructions.
 | 8 | `renderMenuAndGetChoice`, `CMoon::free`, `CSound::reset`, `CEditorTools::showFileSelectionDialog` | 8 | 63 | 5314 | 60 | 3 | 95.2% |
 | 9 | `CPickList::enableItem`, `CEventList::resetGameFlags`, `CLevelLoader::show`, `CDemonMission::load` | 15 | 56 | 3298 | 37 | 9 | 66.0% |
 | 10 | `CDemonMission::createHeros`, `CDemonMission::prepareAllActors`, `CEventList::reset`, `CDemonMission::loadSet` | 15 | 42 | 5112 | 33 | 8 | 78.5% |
-| 11 | `CScript::loadScript` | 63 | 579 | 67400 | 114 | 51 | 19.6% |
+| 11 | `CScript::loadScript` | 63 | 579 | 67400 | 125 | 53 | 21.5% |
 | 12 | `CDemonMission::loadScript`, `CScript::executeInitSection`, `CDemonMission::startMission`, `CDemonMission::buildActiveSetActorList`, `CConsole::reset`, `CEditorTools::displayMemoryDiagnostics`, `CGame::setGameRes`, `CDemonLight::init`, `CDemonSet::initScene` | 12 | 26 | 1658 | 16 | 9 | 61.5% |
 | 13 | `CFireEffect::init`, `CDemonSet::loadMasterLightStates`, `CDemonSet::setGamma`, `CGame::clearOverlay`, `CGame::loadAssets` | 7 | 27 | 735 | 16 | 1 | 59.2% |
 | 14 | `CNetGame::syncPlayers`, `CNetGame::processServerFrame`, `CLevelLoader::cleanup`, `CKeys::toggleInputMask`, `CGame::processHotkeys` | 17 | 51 | 5302 | 4 | 0 | 7.8% |
 | 15 | `CGame::updateStatusDisplays`, `CGame::processFudge`, `CGame::playerControls`, `CGame::processFrame` | 43 | 189 | 28837 | 8 | 0 | 4.2% |
 | 16 | `CGame::setScreenResolutionAndDisplayFangs`, `showOptionsScreen`, `CScript::skipCinematic`, `CGame::showFullscreenBitmap`, `CDemonMission::countDamageableEnemies`, `freeInventory`, `CGame::runGameSession`, `CGame::displayActStats` | 10 | 25 | 6938 | 9 | 4 | 36.0% |
-| 17 | `CGame::finishAct`, `CDemonMission::run`, `CGame::loadGame`, `CGame::showChapterSelect`, `showDeveloperToolsMenu` | 12 | 26 | 3707 | 5 | 2 | 19.2% |
+| 17 | `CGame::finishAct`, `CDemonMission::run`, `CGame::loadGame`, `CGame::showChapterSelect`, `showDeveloperToolsMenu` | 12 | 26 | 3707 | 6 | 2 | 23.0% |
 | 18 | `enterMainGameMenu`, `finalizeGameSystems` | 11 | 13 | 539 | 3 | 0 | 23.0% |
 | 19 | Not reached from startup: `engine/` | 23 | 279 | 19702 | 25 | 2 | 8.9% |
 | 20 | Not reached from startup: `support/` | 2 | 24 | 593 | 3 | 1 | 12.5% |
@@ -38,7 +38,7 @@ functions don't count as done. Sizes are in instructions.
 | 22 | Not reached from startup: `shape/` | 2 | 42 | 3178 | 4 | 2 | 9.5% |
 | 23 | Not reached from startup: `core/` (part 1 of 9) | 18 | 292 | 16011 | 66 | 13 | 22.6% |
 | 24 | Not reached from startup: `core/` (part 2 of 9) | 11 | 277 | 24965 | 35 | 7 | 12.6% |
-| 25 | Not reached from startup: `core/` (part 3 of 9) | 24 | 278 | 24134 | 47 | 8 | 16.9% |
+| 25 | Not reached from startup: `core/` (part 3 of 9) | 24 | 278 | 24134 | 49 | 8 | 17.6% |
 | 26 | Not reached from startup: `core/` (part 4 of 9) | 18 | 300 | 20148 | 51 | 7 | 17.0% |
 | 27 | Not reached from startup: `core/` (part 5 of 9) | 21 | 294 | 20910 | 63 | 11 | 21.4% |
 | 28 | Not reached from startup: `core/` (part 6 of 9) | 18 | 282 | 21809 | 54 | 12 | 19.1% |
@@ -46,7 +46,7 @@ functions don't count as done. Sizes are in instructions.
 | 30 | Not reached from startup: `core/` (part 8 of 9) | 20 | 300 | 31826 | 41 | 8 | 13.6% |
 | 31 | Not reached from startup: `core/` (part 9 of 9) | 5 | 111 | 10905 | 26 | 7 | 23.4% |
 | 32 | Not reached from startup: `wincore/` | 2 | 11 | 482 | 4 | 0 | 36.3% |
-| | **All** | | **4479** | **402407** | **1163** | **217** | **25.9%** |
+| | **All** | | **4479** | **402407** | **1177** | **219** | **26.2%** |
 
 ## Step 0: Math value types
 
@@ -1531,7 +1531,7 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `findClosestBone` 0x005a1160 (214)
   - [ ] `dismemberPart` 0x005a1040 (58)
 
-### `support/codec.cpp` (28 functions, 1141 instructions, 0 done, 0 partial)
+### `support/codec.cpp` (28 functions, 1141 instructions, 9 done, 1 partial)
 - class `CCodec`
   - [ ] `init` 0x0043e9d0 (1)
   - [ ] `finalize` 0x0043ea00 (2)
@@ -1546,31 +1546,32 @@ functions don't count as done. Sizes are in instructions.
 - class `CLZWDictionary`
   - [ ] `free` 0x0043ee10 (21)
   - [ ] `dtor` 0x0043edf0 (8)
-  - [ ] `ctor` 0x0043edd0 (6)
-  - [ ] `initTable` 0x0043eef0 (29)
-  - [ ] `init` 0x0043ee60 (46)
+  - [x] `ctor` 0x0043edd0 (6)
+  - [x] `initTable` 0x0043eef0 (29)
+  - [x] `init` 0x0043ee60 (46)
   - [ ] `writeCodeBits` 0x0043f170 (66)
-  - [ ] `addNode` 0x0043ef90 (57)
-  - [ ] `readCodeFromBuffer` 0x0043f0d0 (76)
-  - [ ] `decodeCodeToBuffer` 0x0043f270 (42)
+  - [~] `addNode` 0x0043ef90 (57)
+    - deferred: each code's first longer string and the next of its parent's, with findCode
+  - [x] `readCodeFromBuffer` 0x0043f0d0 (76)
+  - [x] `decodeCodeToBuffer` 0x0043f270 (42)
 - class `CLZWCompress`
   - [ ] `ctor` 0x0043f2d0 (21)
   - [ ] `init` 0x0043f320 (20)
   - [ ] `finalize` 0x0043f440 (27)
 - free functions
-  - [ ] `resetBitBuffer` 0x0043e510 (4)
+  - [x] `resetBitBuffer` 0x0043e510 (4)
   - [ ] `flushBitBuffer` 0x0043e7e0 (39)
   - [ ] `writeBitsToStream` 0x0043e6c0 (104)
-  - [ ] `extractBitsFromBuffer` 0x0043e840 (130)
+  - [x] `extractBitsFromBuffer` 0x0043e840 (130)
 - class `CLZWDecompress`
-  - [ ] `init` 0x0043f4d0 (20)
-  - [ ] `processBuffer` 0x0043f5d0 (78)
+  - [x] `init` 0x0043f4d0 (20)
+  - [x] `processBuffer` 0x0043f5d0 (78)
 
-### `engine/texture.cpp` (1 functions, 13 instructions, 0 done, 0 partial)
+### `engine/texture.cpp` (1 functions, 13 instructions, 1 done, 0 partial)
 - free functions
-  - [ ] `loadAndUpdateTexture` 0x005dd930 (13)
+  - [x] `loadAndUpdateTexture` 0x005dd930 (13)
 
-### `core/dcamera.cpp` (26 functions, 3719 instructions, 5 done, 4 partial)
+### `core/dcamera.cpp` (26 functions, 3719 instructions, 5 done, 5 partial)
 - class `CDemonCamera`
   - [ ] `setupPerspectiveAndFog` 0x004537d0 (73)
   - [ ] `initCameraShake` 0x00453fc0 (43)
@@ -1598,7 +1599,8 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `saveBackdrop` 0x004529b0 (363)
   - [ ] `restoreAlphaTransform` 0x00453a70 (109)
   - [ ] `precomputeNormals` 0x0044e360 (330)
-  - [ ] `loadImage` 0x0044f3e0 (921)
+  - [~] `loadImage` 0x0044f3e0 (921)
+    - deferred: clearing the coronas' blurred light, with compositeLightmapToFramebuffer
   - [x] `initCameraFog` 0x00453640 (55)
   - [x] `saveZBufferScanlines` 0x00454450 (28)
   - [x] `restoreZBufferScanlines` 0x004544a0 (28)
@@ -1752,7 +1754,7 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `resetRestoreMemoryAllocator` 0x004729c0 (3)
   - [ ] `getRestoreMemory` 0x00472950 (31)
 
-### `engine/drender.cpp` (28 functions, 1059 instructions, 2 done, 3 partial)
+### `engine/drender.cpp` (28 functions, 1059 instructions, 3 done, 3 partial)
 - class `CDemonRenderer`
   - [ ] `renderVertexAlphaDirect` 0x0048bad0 (64)
   - [ ] `applyDirectTransform` 0x0048c4a0 (42)
@@ -1761,7 +1763,7 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `getCameraRotationFixed` 0x0048c7e0 (23)
   - [ ] `getCameraRotationRadians` 0x0048c800 (36)
   - [ ] `getAlphaMask` 0x0048ce00 (4)
-  - [ ] `updateTexture` 0x0048dc30 (7)
+  - [x] `updateTexture` 0x0048dc30 (7)
   - [ ] `setShadowPass` 0x0048cac0 (5)
   - [ ] `setLightIntensity` 0x0048c690 (11)
   - [x] `setLightDirection` 0x0048c6c0 (12)
@@ -1973,7 +1975,8 @@ functions don't count as done. Sizes are in instructions.
     - deferred: restoring the dynamic lights' and spotlights' dirty regions, freeing the spotlights' master z-buffers and resetting their restore memory, with restoreDirtyRegions, freeMasterZBuffer and resetRestoreMemoryAllocator
     - deferred: the full lighting mode and the directional light ratio while the background draws, and no spot, omni or corona lights gathered yet, the coronas kept for the same camera (the decomp's windowed reswitch fix), with renderScene
     - deferred: the actors' backgrounds lit without the quality modes while the depths are taken (g_InMirrorRenderPass), with lightVerticies' quality modes
-    - deferred: the backdrop's normals and depths taken from the depth drawn, the geometry's depth put back, the camera's backdrop image and fog loaded and the actors' backgrounds drawn over it, then in hardware the geometry, still water and backgrounds again, with CDemonCamera::precomputeNormals, loadImage and CWater::render
+    - deferred: the backdrop's world positions, normals and depths taken from what was drawn, with CDemonCamera::precomputeNormals' reader precomputeLight
+    - deferred: in hardware, the still water drawn after the geometry, with CWater::render
     - deferred: the spotlights' and omni lights' shadow maps, with CDemonSet::process and the CDemonLight scene functions
     - deferred: the sky, decals, still water and actors' backgrounds in the camera's lit frame, the scene's static lights, the reverb and the weather's origin, then noting each actor as drawn again, with renderSkyDome, CGore::renderDecals, CFireEffect::renderDecals, renderStaticLights, CSound::setReverbPreset and CWeather::setOriginAndRotation
   - [x] `setCameraEnabled` 0x00570ea0 (5)
@@ -2815,9 +2818,9 @@ functions don't count as done. Sizes are in instructions.
     - deferred: after the session, taking the hero off the list and resetting it, clearing the mission, and going on to the mission the session asked for, with its act's stats, a loading screen and a key to continue away from headquarters, or finishing the act, with the play loop, CDemonMission::removeActorFromList, CHero::reset, displayActStats and finishAct
     - deferred: netplay agreeing on the next mission and skipping the key to continue (the decomp's nocturne_net_mission_*), with CNetGame's sessions
 
-### `support/codec.cpp` (6 functions, 345 instructions, 0 done, 0 partial)
+### `support/codec.cpp` (6 functions, 345 instructions, 1 done, 0 partial)
 - class `CLZWDecompress`
-  - [ ] `ctor` 0x0043f490 (15)
+  - [x] `ctor` 0x0043f490 (15)
   - [ ] `process` 0x0043f510 (46)
   - [ ] `finalize` 0x0043f590 (19)
 - free functions
@@ -4312,7 +4315,7 @@ functions don't count as done. Sizes are in instructions.
 
 ## Step 25: Not reached from startup: `core/` (part 3 of 9)
 
-### `core/dcamera.cpp` (27 functions, 2549 instructions, 1 done, 1 partial)
+### `core/dcamera.cpp` (27 functions, 2549 instructions, 3 done, 1 partial)
 - class `CDemonCamera`
   - [ ] `isSphereVisible` 0x00452730 (144)
   - [ ] `getFogValueAtPosition` 0x00453700 (69)
@@ -4326,8 +4329,8 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `allocLight` 0x0044dde0 (14)
   - [ ] `saveCameraTransform` 0x0044ef30 (182)
   - [ ] `restoreTransform` 0x0044f1e0 (42)
-  - [ ] `convertPaletteToDisplayFormat` 0x0044f290 (39)
-  - [ ] `uploadBackdropTexture` 0x0044f310 (69)
+  - [x] `convertPaletteToDisplayFormat` 0x0044f290 (39)
+  - [x] `uploadBackdropTexture` 0x0044f310 (69)
   - [ ] `isCoronaSufficientlyVisible` 0x00450fc0 (69)
   - [ ] `computeLightExtentBounds` 0x00451090 (60)
   - [ ] `screenToWorldRay` 0x00452900 (69)
@@ -4336,7 +4339,6 @@ functions don't count as done. Sizes are in instructions.
 - free functions
   - [~] `staticInit` 0x0044bb10 (14)
     - deferred: the precomputed surface normals, with precomputeNormals
-    - deferred: the image decompressor, 0x10000 bytes from 6 bits, with loadImage
   - [ ] `renderCoronaProjectedTextureScanline` 0x004507a0 (162)
   - [ ] `log2Custom` 0x00450a90 (11)
   - [ ] `testCoronaVisibility` 0x00451250 (77)

@@ -26,7 +26,10 @@ public:
     void ensureTextureLoaded(platform::SMRGLTextureBasic &texture);
     SMRGLHeaderExtended *loadTextureAndGetData(platform::SMRGLTextureBasic *texture_info);
     void clearTextureCache();
-    void loadAndUpdateTexture(platform::SMRGLTextureBasic *texture, SRGBColorPalette *palette);
+    // As ensureTextureLoaded, then the hardware renderer is handed it with this palette as just
+    // loaded.
+    void loadAndUpdateTexture(platform::SMRGLTextureBasic &texture,
+                              std::span<std::uint8_t> palette);
     void getTextureCacheStats(char *output_buffer);
     platform::SMRGLTextureBasic *getCurrentTexture();
 

@@ -129,7 +129,11 @@ public:
     void processCapturedFaces();
     // Makes the texture current for the polygons that follow.
     void captureTexture(platform::SMRGLTextureBasic &texture);
-    void updateTexture(platform::SMRGLTextureBasic *texture, SRGBColorPalette *palette);
+    // The texture made current last: its texels and palette are the cache's own.
+    [[nodiscard]] const SCurrentTexture &getSelectedTexture() const;
+    // Makes the texture current again and hands the hardware renderer it with this palette, as
+    // just loaded.
+    void updateTexture(platform::SMRGLTextureBasic &texture, std::span<std::uint8_t> palette);
     int depthTest(platform::SRenderVertex *vertex_ptr);
 
 private:

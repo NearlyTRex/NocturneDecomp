@@ -3,6 +3,7 @@
 #include "core/color3i.h"
 #include "core/dcamera/foggrid.h"
 #include "engine/screendevice.h"
+#include "platform/mrgltexturebasic.h"
 
 #include <array>
 #include <cstddef>
@@ -23,6 +24,10 @@ struct SBackgroundSave {
 struct SCameraTables {
     static constexpr std::size_t kLookupSize = 64;
     static constexpr int kDefaultFogColorIndex = 0x40;
+    static constexpr std::size_t kFogPlaneWidth = 320;
+    static constexpr std::size_t kFogPlaneHeight = 240;
+    static constexpr std::size_t kFogPlaneSize = kFogPlaneWidth * kFogPlaneHeight;
+    static constexpr std::size_t kMaxFogPlanes = 16;
 
     // The screen the scene camera was last set up for: four thirds of its height wide.
     int screen_width = 0;
@@ -32,6 +37,12 @@ struct SCameraTables {
     // [a][b] is a times b over 64.
     std::array<std::uint8_t, kLookupSize * kLookupSize> lookup_table{};
     SFogGrid fog_grid;
+    // The camera's fog over its view, a plane per step of its drift, row by row.
+    std::vector<std::uint8_t> fog_planes = std::vector<std::uint8_t>(kFogPlaneSize * kMaxFogPlanes);
+    // 16 for a fog that drifts, 1 for one that doesn't.
+    int fog_plane_count = 0;
+    // The texture the backdrop's image is copied into for the hardware renderer.
+    platform::SMRGLTextureBasic backdrop_texture{.texture_name = "BACKGND.RAW"};
     // Each light-map level after gamma, the level repeated in all four bytes.
     std::array<std::uint32_t, 256> lightmap_palette{};
     // The palette levels the fog's colour is made of.

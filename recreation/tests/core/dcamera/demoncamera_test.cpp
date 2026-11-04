@@ -86,8 +86,6 @@ TEST(CDemonCamera, PublicInterface) {
     static_assert(std::is_same_v<decltype(&CDemonCamera::calculateAttenuatedDirectionalLight),
                                  int (CDemonCamera::*)(common::CVector3i *, CDemonLight *,
                                                        common::CVector3i *)>);
-    static_assert(
-        std::is_same_v<decltype(&CDemonCamera::loadImage), void (CDemonCamera::*)(char *)>);
     static_assert(std::is_same_v<decltype(&CDemonCamera::renderLightCoronas),
                                  void (CDemonCamera::*)(CDemonLight *)>);
     static_assert(std::is_same_v<decltype(&CDemonCamera::addLightmapToCorona),
@@ -144,7 +142,8 @@ protected:
                           .screen = screen_,
                           .special = special_,
                           .crt_random = crt_,
-                          .renderer = demon_renderer_}};
+                          .renderer = demon_renderer_,
+                          .dosio = dosio_}};
 };
 
 TEST_F(CDemonCameraTest, ACameraStartsWithNoBuffersAndItsLens) {
@@ -348,7 +347,8 @@ TEST_F(CDemonCameraTest, ASceneClearsTheHardwareRendererUnlessToldNotTo) {
                            .screen = screen_,
                            .special = special_,
                            .crt_random = crt_,
-                           .renderer = demon_renderer_}};
+                           .renderer = demon_renderer_,
+                           .dosio = dosio_}};
     skipping.init(48);
     EXPECT_CALL(renderer_, beginScene()).Times(0);
     EXPECT_CALL(renderer_, clear()).Times(0);

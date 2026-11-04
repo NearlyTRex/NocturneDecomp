@@ -326,10 +326,9 @@ float CDemonSet::calculateActorVisibility(std::size_t camera_index, const CDemon
 // deferred: the actors' backgrounds lit without the quality modes while the depths are taken
 //   (g_InMirrorRenderPass), with lightVerticies' quality modes
 // The original also reset the raytrace's drawing mode, which only the editor changes.
-// deferred: the backdrop's normals and depths taken from the depth drawn, the geometry's depth
-//   put back, the camera's backdrop image and fog loaded and the actors' backgrounds drawn over
-//   it, then in hardware the geometry, still water and backgrounds again, with
-//   CDemonCamera::precomputeNormals, loadImage and CWater::render
+// deferred: the backdrop's world positions, normals and depths taken from what was drawn, with
+//   CDemonCamera::precomputeNormals' reader precomputeLight
+// deferred: in hardware, the still water drawn after the geometry, with CWater::render
 // deferred: the spotlights' and omni lights' shadow maps, with CDemonSet::process and the
 //   CDemonLight scene functions
 // deferred: the sky, decals, still water and actors' backgrounds in the camera's lit frame, the
@@ -362,7 +361,16 @@ void CDemonSet::setCameraView(int index) {
     renderSceneGeometry(kBackgroundReach, kDrawCameraPVS);
     owners_.camera.saveZBufferScanlines();
     renderBackgroundActors(1);
-    quitNotPorted("CDemonCamera", "precomputeNormals");
+    owners_.camera.restoreZBufferScanlines();
+    owners_.camera.loadImage(camera.getName() + ".raw");
+    renderBackgroundActors(1);
+    owners_.camera.endBackgroundScene(0);
+    if (owners_.special.getUseExternalRenderer()) {
+        renderSceneGeometry(kBackgroundReach, kDrawReachedGeometry);
+        renderBackgroundActors(1);
+    }
+    owners_.camera.endScene(0);
+    quitNotPorted("CDemonSet", "setCameraView's shadow maps");
 }
 
 // nocedit 0x00575b00

@@ -95,6 +95,16 @@ void CDemonRenderer::captureTexture(platform::SMRGLTextureBasic &texture) {
     textures_.ensureTextureLoaded(texture);
 }
 
+const SCurrentTexture &CDemonRenderer::getSelectedTexture() const {
+    return texture_;
+}
+
+// nocedit 0x0048dc30
+void CDemonRenderer::updateTexture(platform::SMRGLTextureBasic &texture,
+                                   std::span<std::uint8_t> palette) {
+    textures_.loadAndUpdateTexture(texture, palette);
+}
+
 // deferred: setting the vertex-processing flag, with 3d.c's dispatchMRGLBlockChain and
 //   transformAndBufferVertices, which read it
 // nocedit 0x0048caa0

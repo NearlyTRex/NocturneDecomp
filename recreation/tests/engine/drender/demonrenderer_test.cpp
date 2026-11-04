@@ -4,6 +4,7 @@
 #include "platform/mrgltexturebasic.h"
 #include "tests/mocks/engine/demonrendererfixture.h"
 
+#include <gmock/gmock.h>
 #include <gtest/gtest.h>
 
 #include <array>
@@ -15,6 +16,9 @@
 
 namespace nocturne::engine {
 namespace {
+
+using ::testing::_;
+using ::testing::Return;
 
 TEST(CDemonRenderer, IsConcrete) {
     static_assert(!std::is_abstract_v<CDemonRenderer>);
@@ -146,9 +150,6 @@ TEST(CDemonRenderer, PublicInterface) {
                                  void (CDemonRenderer::*)()>);
     static_assert(std::is_same_v<decltype(&CDemonRenderer::captureTexture),
                                  void (CDemonRenderer::*)(platform::SMRGLTextureBasic &)>);
-    static_assert(std::is_same_v<decltype(&CDemonRenderer::updateTexture),
-                                 void (CDemonRenderer::*)(platform::SMRGLTextureBasic *,
-                                                          SRGBColorPalette *)>);
     static_assert(std::is_same_v<decltype(&CDemonRenderer::depthTest),
                                  int (CDemonRenderer::*)(platform::SRenderVertex *)>);
 }
@@ -203,6 +204,17 @@ TEST_F(CDemonRendererStateTest, ACapturedTextureIsLoadedAndMadeCurrent) {
     EXPECT_EQ(texture.cache_index, 0);
     EXPECT_EQ(texture_.dimension, 32);
     EXPECT_EQ(texture_.data.front(), 5);
+}
+
+TEST_F(CDemonRendererStateTest, AnUpdatedTextureGoesToTheHardwareRendererWithItsPalette) {
+    startRenderer();
+    givenFile("art\\a.raw", std::string(std::size_t{32} * 32, '\x05'));
+    platform::SMRGLTextureBasic texture{.texture_name = "a.raw", .cache_index = 0};
+    demon_renderer_.captureTexture(texture);
+    std::array<std::uint8_t, 768> palette{};
+    EXPECT_CALL(renderer_, updateTexture(&texture, 32, _, palette.data(), nullptr))
+        .WillOnce(Return(1));
+    demon_renderer_.updateTexture(texture, palette);
 }
 
 TEST_F(CDemonRendererStateTest, BlendModeAndAlphaGoToThe3dState) {

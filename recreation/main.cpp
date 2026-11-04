@@ -277,7 +277,8 @@ private:
                                                      .screen = screen_,
                                                      .special = special_,
                                                      .crt_random = crt_random_,
-                                                     .renderer = demon_renderer_},
+                                                     .renderer = demon_renderer_,
+                                                     .dosio = dosio_},
                                           .global_filters = global_filters_,
                                           .player_filters = player_filters_,
                                           .glow = light_glow_};

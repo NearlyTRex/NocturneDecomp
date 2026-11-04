@@ -32,7 +32,8 @@ using ::testing::Return;
 using ::testing::StrEq;
 using ::testing::ThrowsMessage;
 
-constexpr std::string_view kSceneNotPorted = "CDemonCamera::precomputeNormals is not ported yet";
+constexpr std::string_view kSceneNotPorted =
+    "CDemonSet::setCameraView's shadow maps is not ported yet";
 
 // An unturned camera at the position, with its box.
 std::string cameraAt(std::string_view name, std::string_view position, std::string_view box) {
@@ -119,20 +120,12 @@ protected:
             static_cast<void>(set_.evaluateVirtualDirector(&focus_, force_evaluation_mode));
         };
         EXPECT_THAT(evaluate, ThrowsMessage<common::CFatalError>(StrEq(kSceneNotPorted)));
-        closeTheScene();
     }
 
     // The first camera, chosen with no actor to show.
     void chooseTheFirstCamera() {
         EXPECT_THAT([this] { static_cast<void>(set_.evaluateVirtualDirector(nullptr, 0)); },
                     ThrowsMessage<common::CFatalError>(StrEq(kSceneNotPorted)));
-        closeTheScene();
-    }
-
-    // What the rest of setCameraView would close once the camera's background is drawn.
-    void closeTheScene() const {
-        set_parts_.camera->endBackgroundScene(0);
-        set_parts_.camera->endScene(1);
     }
 
     CSetParts set_parts_{dosio_};
