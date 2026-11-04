@@ -1,8 +1,9 @@
-#include "common/error/fatalerror.h"
 #include "common/math/vector3i.h"
 #include "common/render/renderstate.h"
+#include "core/actor/demonactor.h"
 #include "core/color3i.h"
 #include "core/dcamera/demoncamera.h"
+#include "core/dskybox/dskybox.h"
 #include "core/dtrace/demonraytrace.h"
 #include "core/set/demonset.h"
 #include "platform/mrglheaderprimitive.h"
@@ -35,8 +36,6 @@ using ::testing::_;
 using ::testing::Each;
 using ::testing::ElementsAre;
 using ::testing::Return;
-using ::testing::StrEq;
-using ::testing::ThrowsMessage;
 
 SRenderVertex at(int x, int y) {
     SRenderVertex vertex;
@@ -115,6 +114,11 @@ protected:
         ON_CALL(screen_, getScreenRows()).WillByDefault(Return(std::span<void *>(frame_rows_)));
         ON_CALL(screen_, getZBufferRows())
             .WillByDefault(Return(std::span<std::uint32_t *>(depth_rows_)));
+        ON_CALL(screen_, getHardwarePalette16())
+            .WillByDefault(Return(std::span<std::uint16_t, 256>(hardware_palette16_)));
+        ON_CALL(screen_, getHardwarePalette32())
+            .WillByDefault(Return(std::span<std::uint32_t, 256>(hardware_palette32_)));
+        ON_CALL(screen_, getColorMasks()).WillByDefault(::testing::ReturnRef(masks_));
         near_.setRenderable(true);
         near_.setScale({.x = 1, .y = 2, .z = 3});
         far_.setRenderable(true);
@@ -124,9 +128,7 @@ protected:
     }
 
     void showTheCamera() {
-        EXPECT_THAT([this] { set_.setCameraView(0); },
-                    ThrowsMessage<common::CFatalError>(
-                        StrEq("CDemonSet::setCameraView's shadow maps is not ported yet")));
+        set_.setCameraView(0);
     }
 
     // Untextured, a polygon goes to the geometry clip only with face capture on.
@@ -142,12 +144,15 @@ protected:
     std::array<void *, kFrameHeight> frame_rows_{};
     std::array<std::uint32_t, 64> depth_row_{};
     std::array<std::uint32_t *, kFrameHeight> depth_rows_{};
+    std::array<std::uint16_t, 256> hardware_palette16_{};
+    std::array<std::uint32_t, 256> hardware_palette32_{};
+    engine::SColorMasks masks_;
     CTestActor near_{kTestLeafType};
     CTestActor far_{kTestLeafType};
 };
 
 // Nearest first, each draws its background layer opaque, tinted by its scale, and leaves the
-// flat colour untinted: once for the depths, then over the backdrop.
+// flat colour untinted: for the depths, over the backdrop, then in the lit frame.
 TEST_F(CDemonSetBackgroundTest, EachActorDrawsItsBackgroundOpaqueAndTintedByItsScale) {
     std::vector<std::string> drawn;
     const auto record = [this, &drawn](std::string_view name) {
@@ -162,6 +167,7 @@ TEST_F(CDemonSetBackgroundTest, EachActorDrawsItsBackgroundOpaqueAndTintedByItsS
     static_cast<void>(demon_renderer_.setRenderAlpha(0x8000));
     showTheCamera();
     EXPECT_THAT(drawn, ElementsAre("near 1 1,2,3 0xff", "far 1 65536,65536,65536 0xff",
+                                   "near 1 1,2,3 0xff", "far 1 65536,65536,65536 0xff",
                                    "near 1 1,2,3 0xff", "far 1 65536,65536,65536 0xff"));
     EXPECT_EQ(set_.getFlatColor(), (CColor3i{.r = 0x10000, .g = 0x10000, .b = 0x10000}));
 }
@@ -176,18 +182,41 @@ TEST_F(CDemonSetBackgroundTest, EachActorsBackgroundStartsWithFaceCaptureOn) {
 }
 
 // The geometry's depths are put back before the actors draw over the backdrop, and the camera
-// keeps the depths they leave.
-TEST_F(CDemonSetBackgroundTest, TheActorsDrawOverTheGeometrysDepthsEachTime) {
+// keeps the depths they leave, which the lit frame draws over in turn.
+TEST_F(CDemonSetBackgroundTest, TheActorsDrawOverTheGeometrysDepthsThenTheirOwn) {
     std::vector<std::uint32_t> under_actors;
     near_.onRenderBackground([this, &under_actors](int) {
         under_actors.push_back(depth_row_[0]);
         depth_row_.fill(9);
     });
     showTheCamera();
-    ASSERT_EQ(under_actors.size(), 2U);
+    ASSERT_EQ(under_actors.size(), 3U);
     EXPECT_NE(under_actors[0], 9U);
     EXPECT_EQ(under_actors[1], under_actors[0]);
+    EXPECT_EQ(under_actors[2], 9U);
     EXPECT_EQ(set_parts_.camera->getZBuffer()[0], 9U);
+}
+
+// A set with a sky has it drawn into the lit frame, about its geometry.
+TEST_F(CDemonSetBackgroundTest, TheSkyIsDrawnIntoTheLitFrame) {
+    givenFile("models\\test.set",
+              SSetFile{.cameras = "1\n" + cameraText("cam"), .pvs = "1\n\t0\n", .sky = "1"}.text());
+    givenFile("art\\stars.raw", std::string(std::size_t{256} * 256, '\0'));
+    givenFile("art\\stars.act", std::string(768, '\0'));
+    set_.load("test.set");
+    set_.setActors({&near_, &far_});
+    showTheCamera();
+    const CSkyDome &sky = *set_parts_.sky_dome;
+    EXPECT_EQ(sky.getTexture().texture_name, "stars.raw");
+    EXPECT_EQ(vertex_buffer_[0].r, 200);
+    EXPECT_GT(sky.getVertexScale(), 0.0F);
+}
+
+// What an actor's drawing changed of the transform it was drawn at is noted afresh.
+TEST_F(CDemonSetBackgroundTest, EachActorIsNotedAsDrawnAgainAfterwards) {
+    near_.onRenderBackground([this](int) { near_.setDrawnTransform({}); });
+    showTheCamera();
+    EXPECT_EQ(near_.getDrawnTransform().dirty_flags, SDrawnTransform::kEveryPass);
 }
 
 // An actor with no background of its own draws nothing into the camera's frame, and with no
@@ -202,12 +231,6 @@ TEST_F(CDemonSetBackgroundTest, TheCamerasBackdropIsDrawnBeforeTheActorsDrawOver
     givenFile("backdrop\\cam.raw", std::string(std::size_t{640} * 480, '\0'));
     givenFile("art\\BACKGND.RAW", std::string(std::size_t{256} * 256, '\0'));
     givenFile("art\\BACKGND.act", std::string(768, '\0'));
-    std::array<std::uint16_t, 256> hardware_palette16{};
-    std::array<std::uint32_t, 256> hardware_palette32{};
-    ON_CALL(screen_, getHardwarePalette16())
-        .WillByDefault(Return(std::span<std::uint16_t, 256>(hardware_palette16)));
-    ON_CALL(screen_, getHardwarePalette32())
-        .WillByDefault(Return(std::span<std::uint32_t, 256>(hardware_palette32)));
     std::uint32_t under_actors = 0;
     near_.onRenderBackground(
         [this, &under_actors](int) { under_actors = set_parts_.camera->getFramebuffer()[0]; });
@@ -215,7 +238,7 @@ TEST_F(CDemonSetBackgroundTest, TheCamerasBackdropIsDrawnBeforeTheActorsDrawOver
     EXPECT_EQ(under_actors, 0x101010U);
 }
 
-// With the hardware renderer the geometry is drawn again, then the actors a third time; the
+// With the hardware renderer the geometry and actors are drawn again before the lit frame; the
 // camera's scene is closed either way.
 TEST_F(CDemonSetBackgroundTest, InHardwareTheGeometryAndActorsAreDrawnAgain) {
     startRenderer();
@@ -223,7 +246,7 @@ TEST_F(CDemonSetBackgroundTest, InHardwareTheGeometryAndActorsAreDrawnAgain) {
     int drawn = 0;
     near_.onRenderBackground([&drawn](int) { ++drawn; });
     showTheCamera();
-    EXPECT_EQ(drawn, 3);
+    EXPECT_EQ(drawn, 4);
     EXPECT_FALSE(set_parts_.camera->isSceneOpen());
 }
 

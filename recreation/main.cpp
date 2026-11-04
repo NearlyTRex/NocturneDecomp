@@ -13,6 +13,7 @@
 #include "core/dlight/lightglow.h"
 #include "core/dmodel/keyframedmodel.h"
 #include "core/dmodel/keyframedmodelmanager.h"
+#include "core/dskybox/dskybox.h"
 #include "core/dtrace/demonraytrace.h"
 #include "core/event/eventlist.h"
 #include "core/fire/fireeffect.h"
@@ -286,6 +287,7 @@ private:
     core::CDemonLight flashlight_{light_owners_, kFlashlightSize, kFlashlightSize};
     core::CFilterCache filter_cache_{dosio_};
     core::CWeather weather_{actor_};
+    core::CSkyDome sky_dome_{demon_renderer_, special_, raytrace_};
     // deferred: the 4000 face normals, with lightVerticies' face lists
     // nocedit 0x00569040
     core::CDemonSet set_{{.renderer = demon_renderer_,
@@ -306,7 +308,8 @@ private:
                           .filter_cache = filter_cache_,
                           .light_owners = light_owners_,
                           .weather = weather_,
-                          .game = game_}};
+                          .game = game_,
+                          .sky_dome = sky_dome_}};
     nocturne::shape::CEdControls controls_{{.two_d = two_d_,
                                             .screen = screen_,
                                             .raw_input = winrun_,

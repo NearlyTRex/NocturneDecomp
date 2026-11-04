@@ -5,6 +5,7 @@
 #include "core/dfilter/filtercache.h"
 #include "core/dlight/demonlight.h"
 #include "core/dmodel/keyframedmodel.h"
+#include "core/dskybox/dskybox.h"
 #include "core/dtrace/demonraytrace.h"
 #include "core/ground/ground.h"
 #include "core/set/demonset.h"
@@ -46,6 +47,7 @@ public:
             camera = std::make_unique<CDemonCamera>(light_owners.camera);
             flashlight =
                 std::make_unique<CDemonLight>(light_owners, kFlashlightSize, kFlashlightSize);
+            sky_dome = std::make_unique<CSkyDome>(renderer, special, raytrace);
         }
         return {.renderer = renderer,
                 .matrix = matrix,
@@ -65,7 +67,8 @@ public:
                 .filter_cache = filter_cache,
                 .light_owners = light_owners,
                 .weather = weather,
-                .game = classes.getGame()};
+                .game = classes.getGame(),
+                .sky_dome = *sky_dome};
     }
 
     ::testing::NiceMock<MockLoadingScreen> loading_screen;
@@ -79,6 +82,7 @@ public:
     SCameraTables &tables = light_parts.tables;
     std::unique_ptr<CDemonCamera> camera;
     std::unique_ptr<CDemonLight> flashlight;
+    std::unique_ptr<CSkyDome> sky_dome;
     CFilterCache filter_cache;
     CTestClasses classes;
     CWeather weather{classes.get()};

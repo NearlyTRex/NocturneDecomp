@@ -32,9 +32,6 @@ using ::testing::Return;
 using ::testing::StrEq;
 using ::testing::ThrowsMessage;
 
-constexpr std::string_view kSceneNotPorted =
-    "CDemonSet::setCameraView's shadow maps is not ported yet";
-
 // An unturned camera at the position, with its box.
 std::string cameraAt(std::string_view name, std::string_view position, std::string_view box) {
     return std::format("label\n{}\npos\n{}\norient\n0,0,0\nfov\n30\nvmat\n1,0,0\n0,1,0\n0,0,1\n1\n"
@@ -116,16 +113,12 @@ protected:
     }
 
     void expectSwitch(int force_evaluation_mode) {
-        const auto evaluate = [this, force_evaluation_mode] {
-            static_cast<void>(set_.evaluateVirtualDirector(&focus_, force_evaluation_mode));
-        };
-        EXPECT_THAT(evaluate, ThrowsMessage<common::CFatalError>(StrEq(kSceneNotPorted)));
+        EXPECT_EQ(set_.evaluateVirtualDirector(&focus_, force_evaluation_mode), 1);
     }
 
     // The first camera, chosen with no actor to show.
     void chooseTheFirstCamera() {
-        EXPECT_THAT([this] { static_cast<void>(set_.evaluateVirtualDirector(nullptr, 0)); },
-                    ThrowsMessage<common::CFatalError>(StrEq(kSceneNotPorted)));
+        EXPECT_EQ(set_.evaluateVirtualDirector(nullptr, 0), 1);
     }
 
     CSetParts set_parts_{dosio_};

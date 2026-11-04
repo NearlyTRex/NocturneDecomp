@@ -19,6 +19,7 @@
 #include <gtest/gtest.h>
 
 #include <array>
+#include <cstddef>
 #include <cstdint>
 #include <span>
 #include <vector>
@@ -48,7 +49,10 @@ protected:
         ASSERT_EQ(special_.setResolutionAndColorTable(4, 1, 32), 1);
     }
 
-    std::vector<platform::SRenderVertex> vertex_buffer_ = std::vector<platform::SRenderVertex>(8);
+    // As many corners as the sky dome takes.
+    static constexpr std::size_t kVertexCount = 68;
+    std::vector<platform::SRenderVertex> vertex_buffer_ =
+        std::vector<platform::SRenderVertex>(kVertexCount);
     std::vector<std::vector<int>> geometry_clips_;
     std::vector<platform::SRenderVertex> clipped_;
     std::array<std::uint32_t, 4> screen_row_{};

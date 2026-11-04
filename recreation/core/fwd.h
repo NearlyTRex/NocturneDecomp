@@ -176,6 +176,7 @@ class CShotgun;
 class CShovel;
 class CSimBox;
 class CSkeleton;
+class CSkyDome;
 class CSlew;
 class CSmiley;
 class CSmokeParticle;

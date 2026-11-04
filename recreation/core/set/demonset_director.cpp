@@ -4,8 +4,8 @@
 #include "common/math/vector3f.h"
 #include "common/math/vector3i.h"
 #include "core/actor/demonactor.h"
-#include "core/actor/notported.h"
 #include "core/box/boundingbox3d.h"
+#include "core/dskybox/dskybox.h"
 #include "core/game/game.h"
 #include "core/location.h"
 #include "core/set/demonset.h"
@@ -327,14 +327,21 @@ float CDemonSet::calculateActorVisibility(std::size_t camera_index, const CDemon
 //   (g_InMirrorRenderPass), with lightVerticies' quality modes
 // The original also reset the raytrace's drawing mode, which only the editor changes.
 // deferred: the backdrop's world positions, normals and depths taken from what was drawn, with
-//   CDemonCamera::precomputeNormals' reader precomputeLight
-// deferred: in hardware, the still water drawn after the geometry, with CWater::render
-// deferred: the spotlights' and omni lights' shadow maps, with CDemonSet::process and the
-//   CDemonLight scene functions
-// deferred: the sky, decals, still water and actors' backgrounds in the camera's lit frame, the
-//   scene's static lights, the reverb and the weather's origin, then noting each actor as drawn
-//   again, with renderSkyDome, CGore::renderDecals, CFireEffect::renderDecals,
-//   renderStaticLights, CSound::setReverbPreset and CWeather::setOriginAndRotation
+//   CDemonCamera::precomputeNormals' reader renderScene
+// deferred: the still water, in hardware after the geometry and in the lit frame, with
+//   CWater::render
+// deferred: the spot and omni lights the camera sees, the lights' switches, the spotlights'
+//   shadow maps and their light over the backdrop, then the scene's static lights' shadow maps,
+//   with their reader renderScene, CDemonSet::process, the CDemonLight scene functions,
+//   CDemonCamera::precomputeLight and renderStaticLights
+// deferred: the normal lighting mode, no perspective reciprocal and the directional light ratio
+//   off for the lit frame, with lightVerticies' quality modes and renderScene
+// deferred: the gore and fire decals in the lit frame, with CGore::renderDecals,
+//   CFireEffect::renderDecals and their decal pools' writers
+// deferred: checking the camera's or the set's reverb preset, with CSound::setReverbPreset (the
+//   preset's listener vector went only to DirectSound)
+// deferred: the weather's origin and turn at the camera, with CWeather::setOriginAndRotation's
+//   readers
 // The original also worked out each renderable actor's box corners in 24.8 into a local nothing
 // reads.
 // nocedit 0x0056ae50
@@ -370,7 +377,17 @@ void CDemonSet::setCameraView(int index) {
         renderBackgroundActors(1);
     }
     owners_.camera.endScene(0);
-    quitNotPorted("CDemonSet", "setCameraView's shadow maps");
+    owners_.camera.beginScene(1);
+    owners_.camera.beginBackgroundScene();
+    if (has_sky_) {
+        owners_.sky_dome.renderSkyDome(sky_texture_name_, sky_brightness_);
+    }
+    renderBackgroundActors(1);
+    owners_.camera.endBackgroundScene(0);
+    owners_.camera.endScene(0);
+    for (CDemonActor *actor : actors_) {
+        snapshotActorTransformState(*actor);
+    }
 }
 
 // nocedit 0x00575b00

@@ -69,6 +69,7 @@ struct SDemonSetOwners {
     CWeather &weather;
     // Whose frame time the virtual director counts its holds down by.
     const CGame &game;
+    CSkyDome &sky_dome;
 };
 
 class CDemonSet {

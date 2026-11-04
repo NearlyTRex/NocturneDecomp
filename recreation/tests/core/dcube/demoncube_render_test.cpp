@@ -16,6 +16,7 @@
 #include <gtest/gtest.h>
 
 #include <cstddef>
+#include <format>
 #include <vector>
 
 namespace nocturne::core {
@@ -113,13 +114,14 @@ TEST_F(CDemonCubeRenderTest, WithACornerOutOfViewEachTriangleIsClipped) {
     EXPECT_THAT(geometry_clips_, ElementsAre(std::vector{0, 2, 1}, std::vector{0, 3, 2}));
 }
 
-// The fixture's buffer holds eight.
 TEST_F(CDemonCubeRenderTest, MoreVerticesThanTheBufferHoldsIsFatal) {
-    givenCube(std::vector<common::CVector3f>(9));
+    const std::size_t held = vertex_buffer_.size();
+    givenCube(std::vector<common::CVector3f>(held + 1));
     EXPECT_THAT([this] { draw(); },
-                ThrowsMessage<common::CFatalError>(
-                    StrEq("CDemonCube::rotateVerticies - tried to rotate 9 vertices, but "
-                          "GLOBAL_VERTEX_COUNT = 8")));
+                ThrowsMessage<common::CFatalError>(StrEq(
+                    std::format("CDemonCube::rotateVerticies - tried to rotate {} vertices, but "
+                                "GLOBAL_VERTEX_COUNT = {}",
+                                held + 1, held))));
 }
 
 } // namespace

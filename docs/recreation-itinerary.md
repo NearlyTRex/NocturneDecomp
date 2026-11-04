@@ -24,7 +24,7 @@ functions don't count as done. Sizes are in instructions.
 | 8 | `renderMenuAndGetChoice`, `CMoon::free`, `CSound::reset`, `CEditorTools::showFileSelectionDialog` | 8 | 63 | 5314 | 60 | 3 | 95.2% |
 | 9 | `CPickList::enableItem`, `CEventList::resetGameFlags`, `CLevelLoader::show`, `CDemonMission::load` | 15 | 56 | 3298 | 37 | 9 | 66.0% |
 | 10 | `CDemonMission::createHeros`, `CDemonMission::prepareAllActors`, `CEventList::reset`, `CDemonMission::loadSet` | 15 | 42 | 5112 | 33 | 8 | 78.5% |
-| 11 | `CScript::loadScript` | 63 | 579 | 67400 | 125 | 53 | 21.5% |
+| 11 | `CScript::loadScript` | 63 | 579 | 67400 | 127 | 53 | 21.9% |
 | 12 | `CDemonMission::loadScript`, `CScript::executeInitSection`, `CDemonMission::startMission`, `CDemonMission::buildActiveSetActorList`, `CConsole::reset`, `CEditorTools::displayMemoryDiagnostics`, `CGame::setGameRes`, `CDemonLight::init`, `CDemonSet::initScene` | 12 | 26 | 1658 | 16 | 9 | 61.5% |
 | 13 | `CFireEffect::init`, `CDemonSet::loadMasterLightStates`, `CDemonSet::setGamma`, `CGame::clearOverlay`, `CGame::loadAssets` | 7 | 27 | 735 | 16 | 1 | 59.2% |
 | 14 | `CNetGame::syncPlayers`, `CNetGame::processServerFrame`, `CLevelLoader::cleanup`, `CKeys::toggleInputMask`, `CGame::processHotkeys` | 17 | 51 | 5302 | 4 | 0 | 7.8% |
@@ -38,7 +38,7 @@ functions don't count as done. Sizes are in instructions.
 | 22 | Not reached from startup: `shape/` | 2 | 42 | 3178 | 4 | 2 | 9.5% |
 | 23 | Not reached from startup: `core/` (part 1 of 9) | 18 | 292 | 16011 | 66 | 13 | 22.6% |
 | 24 | Not reached from startup: `core/` (part 2 of 9) | 11 | 277 | 24965 | 35 | 7 | 12.6% |
-| 25 | Not reached from startup: `core/` (part 3 of 9) | 24 | 278 | 24134 | 49 | 8 | 17.6% |
+| 25 | Not reached from startup: `core/` (part 3 of 9) | 24 | 278 | 24134 | 51 | 7 | 18.3% |
 | 26 | Not reached from startup: `core/` (part 4 of 9) | 18 | 300 | 20148 | 51 | 7 | 17.0% |
 | 27 | Not reached from startup: `core/` (part 5 of 9) | 21 | 294 | 20910 | 63 | 11 | 21.4% |
 | 28 | Not reached from startup: `core/` (part 6 of 9) | 18 | 282 | 21809 | 54 | 12 | 19.1% |
@@ -46,7 +46,7 @@ functions don't count as done. Sizes are in instructions.
 | 30 | Not reached from startup: `core/` (part 8 of 9) | 20 | 300 | 31826 | 41 | 8 | 13.6% |
 | 31 | Not reached from startup: `core/` (part 9 of 9) | 5 | 111 | 10905 | 26 | 7 | 23.4% |
 | 32 | Not reached from startup: `wincore/` | 2 | 11 | 482 | 4 | 0 | 36.3% |
-| | **All** | | **4479** | **402407** | **1177** | **219** | **26.2%** |
+| | **All** | | **4479** | **402407** | **1181** | **218** | **26.3%** |
 
 ## Step 0: Math value types
 
@@ -1609,10 +1609,10 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `sampleFogAlongRay` 0x0044bdd0 (161)
   - [ ] `updateFogScrollOffset` 0x0044bfb0 (41)
 
-### `core/dskybox.cpp` (2 functions, 428 instructions, 0 done, 0 partial)
+### `core/dskybox.cpp` (2 functions, 428 instructions, 2 done, 0 partial)
 - free functions
-  - [ ] `generateSkyDomeVertex` 0x004900b0 (100)
-  - [ ] `renderSkyDome` 0x004901f0 (328)
+  - [x] `generateSkyDomeVertex` 0x004900b0 (100)
+  - [x] `renderSkyDome` 0x004901f0 (328)
 
 ### `engine/light.cpp` (2 functions, 21 instructions, 1 done, 0 partial)
 - free functions
@@ -1975,10 +1975,13 @@ functions don't count as done. Sizes are in instructions.
     - deferred: restoring the dynamic lights' and spotlights' dirty regions, freeing the spotlights' master z-buffers and resetting their restore memory, with restoreDirtyRegions, freeMasterZBuffer and resetRestoreMemoryAllocator
     - deferred: the full lighting mode and the directional light ratio while the background draws, and no spot, omni or corona lights gathered yet, the coronas kept for the same camera (the decomp's windowed reswitch fix), with renderScene
     - deferred: the actors' backgrounds lit without the quality modes while the depths are taken (g_InMirrorRenderPass), with lightVerticies' quality modes
-    - deferred: the backdrop's world positions, normals and depths taken from what was drawn, with CDemonCamera::precomputeNormals' reader precomputeLight
-    - deferred: in hardware, the still water drawn after the geometry, with CWater::render
-    - deferred: the spotlights' and omni lights' shadow maps, with CDemonSet::process and the CDemonLight scene functions
-    - deferred: the sky, decals, still water and actors' backgrounds in the camera's lit frame, the scene's static lights, the reverb and the weather's origin, then noting each actor as drawn again, with renderSkyDome, CGore::renderDecals, CFireEffect::renderDecals, renderStaticLights, CSound::setReverbPreset and CWeather::setOriginAndRotation
+    - deferred: the backdrop's world positions, normals and depths taken from what was drawn, with CDemonCamera::precomputeNormals' reader renderScene
+    - deferred: the still water, in hardware after the geometry and in the lit frame, with CWater::render
+    - deferred: the spot and omni lights the camera sees, the lights' switches, the spotlights' shadow maps and their light over the backdrop, then the scene's static lights' shadow maps, with their reader renderScene, CDemonSet::process, the CDemonLight scene functions, CDemonCamera::precomputeLight and renderStaticLights
+    - deferred: the normal lighting mode, no perspective reciprocal and the directional light ratio off for the lit frame, with lightVerticies' quality modes and renderScene
+    - deferred: the gore and fire decals in the lit frame, with CGore::renderDecals, CFireEffect::renderDecals and their decal pools' writers
+    - deferred: checking the camera's or the set's reverb preset, with CSound::setReverbPreset (the preset's listener vector went only to DirectSound)
+    - deferred: the weather's origin and turn at the camera, with CWeather::setOriginAndRotation's readers
   - [x] `setCameraEnabled` 0x00570ea0 (5)
   - [x] `setCameraEnabledByGroup` 0x00570ec0 (30)
 - free functions
@@ -4543,11 +4546,10 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `factoryFuncDrone` 0x0048eb10 (12)
   - [x] `staticInit` 0x0048eae0 (9)
 
-### `core/dskybox.cpp` (2 functions, 30 instructions, 0 done, 1 partial)
+### `core/dskybox.cpp` (2 functions, 30 instructions, 2 done, 0 partial)
 - free functions
-  - [ ] `initializeSkyboxTexture` 0x00490070 (22)
-  - [~] `staticInit` 0x00490040 (8)
-    - deferred: the sky texture named NITESKY.RAW and the dome centred at the origin, with this
+  - [x] `initializeSkyboxTexture` 0x00490070 (22)
+  - [x] `staticInit` 0x00490040 (8)
 
 ### `core/dstrender.cpp` (6 functions, 916 instructions, 1 done, 0 partial)
 - free functions
