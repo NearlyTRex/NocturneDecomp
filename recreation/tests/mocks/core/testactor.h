@@ -1,9 +1,11 @@
 #pragma once
 
+#include "core/actor/actorrenderowners.h"
 #include "core/actor/demonactor.h"
 #include "core/actor/demonactortype.h"
 
 #include <functional>
+#include <optional>
 #include <utility>
 
 namespace nocturne::core {
@@ -45,12 +47,18 @@ public:
     }
 
     // Without one, the actor draws its background as every actor does.
-    void renderBackground(int layer_flag) override {
+    void renderBackground(int layer_flag, const SActorRenderOwners &owners) override {
+        render_owners_.emplace(owners);
         if (on_render_background_) {
             on_render_background_(layer_flag);
             return;
         }
-        CDemonActor::renderBackground(layer_flag);
+        CDemonActor::renderBackground(layer_flag, owners);
+    }
+
+    // What its background was last drawn with; none before the first.
+    [[nodiscard]] const std::optional<SActorRenderOwners> &getRenderOwners() const {
+        return render_owners_;
     }
 
     void onRenderBackground(std::function<void(int)> on_render_background) {
@@ -61,6 +69,7 @@ private:
     const CDemonActorType &type_;
     std::function<void(CActorArchive &)> on_archive_;
     std::function<void(int)> on_render_background_;
+    std::optional<SActorRenderOwners> render_owners_;
     int setup_count_ = 0;
     int collision_updates_ = 0;
 };

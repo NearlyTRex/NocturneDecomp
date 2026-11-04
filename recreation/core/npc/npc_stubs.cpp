@@ -19,7 +19,7 @@ void CNPC::process(float /*delta_time*/) {
     notPorted("process");
 }
 
-void CNPC::renderBackground(int /*layer_flag*/) {
+void CNPC::renderBackground(int /*layer_flag*/, const SActorRenderOwners & /*owners*/) {
     notPorted("renderBackground");
 }
 

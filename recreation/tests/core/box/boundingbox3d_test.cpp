@@ -20,7 +20,8 @@ TEST(CBoundingBox3D, PublicInterface) {
                                  void (CBoundingBox3D::*)(const common::CVector3f &)>);
     static_assert(std::is_same_v<decltype(&CBoundingBox3D::getCorner),
                                  common::CVector3f (CBoundingBox3D::*)(std::uint32_t) const>);
-    static_assert(std::is_same_v<decltype(&CBoundingBox3D::isVisible), int (CBoundingBox3D::*)()>);
+    static_assert(std::is_same_v<decltype(&CBoundingBox3D::isVisible),
+                                 bool (CBoundingBox3D::*)(const SActorRenderOwners &) const>);
     static_assert(std::is_same_v<decltype(&CBoundingBox3D::getBoundingBoxScreenSize),
                                  float (CBoundingBox3D::*)()>);
     static_assert(std::is_same_v<decltype(&CBoundingBox3D::doesRayIntersect),

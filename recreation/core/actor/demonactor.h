@@ -50,7 +50,7 @@ public:
     virtual void process(float delta_time);
     virtual int renderOpaque();
     virtual int renderTransparent();
-    virtual void renderBackground(int layer_flag);
+    virtual void renderBackground(int layer_flag, const SActorRenderOwners &owners);
     virtual CBoundingBox3D *getBoundingBox(CBoundingBox3D *out_box);
     virtual std::uint32_t processFootstep(float volume);
     virtual std::uint32_t processFootstepAtOffset(common::CVector3f *location, float volume);

@@ -5,6 +5,7 @@
 #include "core/box/boundingbox3d.h"
 #include "core/flame/flame.h"
 #include "core/flame/flametype.h"
+#include "tests/mocks/core/actorrenderfixture.h"
 #include "tests/mocks/core/notportedcalls.h"
 #include "tests/mocks/core/testclasses.h"
 #include "tests/mocks/core/testfieldsarchive.h"
@@ -38,7 +39,8 @@ TEST(CFlame, PublicInterface) {
     static_assert(std::is_same_v<decltype(&CFlame::setup), void (CFlame::*)()>);
     static_assert(std::is_same_v<decltype(&CFlame::process), void (CFlame::*)(float)>);
     static_assert(std::is_same_v<decltype(&CFlame::renderTransparent), int (CFlame::*)()>);
-    static_assert(std::is_same_v<decltype(&CFlame::renderBackground), void (CFlame::*)(int)>);
+    static_assert(std::is_same_v<decltype(&CFlame::renderBackground),
+                                 void (CFlame::*)(int, const SActorRenderOwners &)>);
     static_assert(std::is_same_v<decltype(&CFlame::getBoundingBox),
                                  CBoundingBox3D *(CFlame::*)(CBoundingBox3D *)>);
     static_assert(std::is_same_v<decltype(&CFlame::getCollisionType),
@@ -203,13 +205,15 @@ TEST(CFlame, SettingUpDrawsItsFlipFromTheCosmeticStream) {
     EXPECT_LT(flame.getOrientation().y, 3.2F);
 }
 
-TEST(CFlame, TheFunctionsNotPortedYetQuit) {
+class CFlameNotPorted : public CActorRenderFixture {};
+
+TEST_F(CFlameNotPorted, TheFunctionsNotPortedYetQuit) {
     CTestClasses classes;
     CFlame flame(classes.get());
     const NotPortedCalls calls = {
         {"process", [&] { flame.process(0.0F); }},
         {"renderTransparent", [&] { static_cast<void>(flame.renderTransparent()); }},
-        {"renderBackground", [&] { flame.renderBackground(0); }},
+        {"renderBackground", [&] { flame.renderBackground(0, render_owners_); }},
     };
     expectEachQuitsNotPorted("CFlame", calls);
 }

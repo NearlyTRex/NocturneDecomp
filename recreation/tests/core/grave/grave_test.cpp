@@ -28,7 +28,8 @@ TEST(CGrave, PublicInterface) {
     static_assert(std::is_same_v<decltype(&CGrave::setup), void (CGrave::*)()>);
     static_assert(std::is_same_v<decltype(&CGrave::process), void (CGrave::*)(float)>);
     static_assert(std::is_same_v<decltype(&CGrave::renderOpaque), int (CGrave::*)()>);
-    static_assert(std::is_same_v<decltype(&CGrave::renderBackground), void (CGrave::*)(int)>);
+    static_assert(std::is_same_v<decltype(&CGrave::renderBackground),
+                                 void (CGrave::*)(int, const SActorRenderOwners &)>);
     static_assert(std::is_same_v<decltype(&CGrave::getBoundingBox),
                                  CBoundingBox3D *(CGrave::*)(CBoundingBox3D *)>);
     static_assert(std::is_same_v<decltype(&CGrave::getCollisionType),

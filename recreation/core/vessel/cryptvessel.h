@@ -17,7 +17,7 @@ public:
     void process(float delta_time) override;
     int renderOpaque() override;
     int renderTransparent() override;
-    void renderBackground(int layer_flag) override;
+    void renderBackground(int layer_flag, const SActorRenderOwners &owners) override;
     CBoundingBox3D *getBoundingBox(CBoundingBox3D *out_box) override;
     ECollisionType getCollisionType(SCollisionInfo *collision_info) override;
     int canPickup(CDemonActor *picker) override;

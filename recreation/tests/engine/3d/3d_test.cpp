@@ -166,6 +166,8 @@ TEST(C3d, PublicInterface) {
     static_assert(
         std::is_same_v<decltype(&C3d::getCurrentRenderColor), std::uint32_t (C3d::*)() const>);
     static_assert(std::is_same_v<decltype(&C3d::getBlendMode), const int &(C3d::*)() const>);
+    static_assert(
+        std::is_same_v<decltype(&C3d::getStoredPoint), const CVector3i &(C3d::*)() const>);
 }
 
 class C3dTest : public C2dFixture {
@@ -204,6 +206,7 @@ TEST_F(C3dTest, TheRelativeOriginIsTheCameraOriginLessThePoint) {
     three_d_.processCameraRelativePoint({.x = 1, .y = -2, .z = 3});
     EXPECT_EQ(matrix_.getRelativeOrigin(), (CVector3i{.x = 99, .y = 202, .z = 297}));
     EXPECT_EQ(matrix_.getCameraOrigin(), (CVector3i{.x = 100, .y = 200, .z = 300}));
+    EXPECT_EQ(three_d_.getStoredPoint(), (CVector3i{.x = 1, .y = -2, .z = 3}));
 }
 
 TEST_F(C3dTest, TheRelativeOriginWrapsAtThirtyTwoBits) {

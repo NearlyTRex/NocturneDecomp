@@ -3,6 +3,7 @@
 #include "core/backgnd/backgroundactor.h"
 #include "core/box/boundingbox3d.h"
 #include "core/dmodel/keyframedmodel.h"
+#include "tests/mocks/core/actorrenderfixture.h"
 #include "tests/mocks/core/notportedcalls.h"
 #include "tests/mocks/core/oneframemodel.h"
 #include "tests/mocks/core/testclasses.h"
@@ -42,7 +43,7 @@ TEST(CBackgroundActor, PublicInterface) {
     static_assert(
         std::is_same_v<decltype(&CBackgroundActor::renderOpaque), int (CBackgroundActor::*)()>);
     static_assert(std::is_same_v<decltype(&CBackgroundActor::renderBackground),
-                                 void (CBackgroundActor::*)(int)>);
+                                 void (CBackgroundActor::*)(int, const SActorRenderOwners &)>);
     static_assert(std::is_same_v<decltype(&CBackgroundActor::getBoundingBox),
                                  CBoundingBox3D *(CBackgroundActor::*)(CBoundingBox3D *)>);
     static_assert(std::is_same_v<decltype(&CBackgroundActor::getCollisionType),
@@ -104,12 +105,14 @@ TEST(CBackgroundActor, ProcessingLeavesSceneryAsItIs) {
     EXPECT_EQ(scenery.getModel().getModelName(), "candle.kfm");
 }
 
-TEST(CBackgroundActor, TheFunctionsNotPortedYetQuit) {
+class CBackgroundActorNotPorted : public CActorRenderFixture {};
+
+TEST_F(CBackgroundActorNotPorted, TheFunctionsNotPortedYetQuit) {
     CTestClasses classes;
     CBackgroundActor scenery{classes.get()};
     const NotPortedCalls calls = {
         {"renderOpaque", [&] { static_cast<void>(scenery.renderOpaque()); }},
-        {"renderBackground", [&] { scenery.renderBackground(0); }},
+        {"renderBackground", [&] { scenery.renderBackground(0, render_owners_); }},
         {"getCollisionType", [&] { static_cast<void>(scenery.getCollisionType(nullptr)); }},
     };
     expectEachQuitsNotPorted("CBackgroundActor", calls);

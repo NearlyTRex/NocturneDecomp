@@ -35,7 +35,7 @@ public:
     void setup() override;
     int renderOpaque() override;
     int renderTransparent() override;
-    void renderBackground(int layer_flag) override;
+    void renderBackground(int layer_flag, const SActorRenderOwners &owners) override;
     // The box computeBoundingBox last took.
     CBoundingBox3D *getBoundingBox(CBoundingBox3D *out_box) override;
     ECollisionType getCollisionType(SCollisionInfo *collision_info) override;

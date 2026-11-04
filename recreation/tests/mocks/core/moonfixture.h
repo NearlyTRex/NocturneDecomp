@@ -110,8 +110,8 @@ protected:
     ::testing::NiceMock<MockKeyFramedModels> keyframed_models_;
     CActor actor_{game_, crt_random_, models_, keyframed_models_};
     CSetParts set_parts_{dosio_};
-    CDemonSet set_{
-        set_parts_.owners(demon_renderer_, matrix_, special_, two_d_, screen_, raw_input_)};
+    CDemonSet set_{set_parts_.owners(demon_renderer_, three_d_, matrix_, special_, two_d_, screen_,
+                                     raw_input_)};
     CMoon moon_{SMoonOwners{.dosio = dosio_,
                             .screen = screen_,
                             .special = special_,

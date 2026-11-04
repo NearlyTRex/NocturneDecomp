@@ -1,6 +1,7 @@
 #pragma once
 
 #include "common/fwd.h"
+#include "common/math/vector3i.h"
 #include "engine/fwd.h"
 #include "platform/fwd.h"
 
@@ -118,9 +119,12 @@ public:
     // That byte in each of the three colour bytes.
     [[nodiscard]] std::uint32_t getCurrentRenderColor() const;
     [[nodiscard]] const int &getBlendMode() const;
+    // The point processCameraRelativePoint was last given.
+    [[nodiscard]] const common::CVector3i &getStoredPoint() const;
 
 private:
     CMatrix &matrix_;
+    common::CVector3i stored_point_;
     int culling_mode_ = 0;
     int current_alpha_value_ = kOpaqueAlpha;
     int blend_mode_ = 0;

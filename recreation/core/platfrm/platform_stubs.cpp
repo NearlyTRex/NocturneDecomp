@@ -23,7 +23,7 @@ int CPlatform::renderOpaque() {
     notPorted("renderOpaque");
 }
 
-void CPlatform::renderBackground(int /*layer_flag*/) {
+void CPlatform::renderBackground(int /*layer_flag*/, const SActorRenderOwners & /*owners*/) {
     notPorted("renderBackground");
 }
 

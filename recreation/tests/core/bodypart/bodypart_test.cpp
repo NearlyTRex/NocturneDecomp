@@ -29,7 +29,8 @@ TEST(CBodyPart, PublicInterface) {
     static_assert(std::is_same_v<decltype(&CBodyPart::process), void (CBodyPart::*)(float)>);
     static_assert(std::is_same_v<decltype(&CBodyPart::renderOpaque), int (CBodyPart::*)()>);
     static_assert(std::is_same_v<decltype(&CBodyPart::renderTransparent), int (CBodyPart::*)()>);
-    static_assert(std::is_same_v<decltype(&CBodyPart::renderBackground), void (CBodyPart::*)(int)>);
+    static_assert(std::is_same_v<decltype(&CBodyPart::renderBackground),
+                                 void (CBodyPart::*)(int, const SActorRenderOwners &)>);
     static_assert(std::is_same_v<decltype(&CBodyPart::getBoundingBox),
                                  CBoundingBox3D *(CBodyPart::*)(CBoundingBox3D *)>);
     static_assert(std::is_same_v<decltype(&CBodyPart::getCollisionType),

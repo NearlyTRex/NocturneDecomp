@@ -19,7 +19,7 @@ void CGhoul::process(float /*delta_time*/) {
     notPorted("process");
 }
 
-void CGhoul::renderBackground(int /*layer_flag*/) {
+void CGhoul::renderBackground(int /*layer_flag*/, const SActorRenderOwners & /*owners*/) {
     notPorted("renderBackground");
 }
 

@@ -3,6 +3,7 @@
 #include "core/door/door.h"
 #include "core/door/doortype.h"
 #include "core/event/rulelist.h"
+#include "tests/mocks/core/actorrenderfixture.h"
 #include "tests/mocks/core/notportedcalls.h"
 #include "tests/mocks/core/testclasses.h"
 #include "tests/mocks/core/testfieldsarchive.h"
@@ -200,13 +201,15 @@ TEST(CDoor, AnOldDoorWithoutAScriptEventHasNoRules) {
     EXPECT_TRUE(archive.isFinished());
 }
 
-TEST(CDoor, TheFunctionsNotPortedYetQuit) {
+class CDoorNotPorted : public CActorRenderFixture {};
+
+TEST_F(CDoorNotPorted, TheFunctionsNotPortedYetQuit) {
     CTestClasses classes;
     CDoor door{classes.get()};
     const NotPortedCalls calls = {
         {"process", [&] { door.process(0.0F); }},
         {"renderOpaque", [&] { static_cast<void>(door.renderOpaque()); }},
-        {"renderBackground", [&] { door.renderBackground(0); }},
+        {"renderBackground", [&] { door.renderBackground(0, render_owners_); }},
         {"getCollisionType", [&] { static_cast<void>(door.getCollisionType(nullptr)); }},
     };
     expectEachQuitsNotPorted("CDoor", calls);
@@ -228,7 +231,8 @@ TEST(CDoor, PublicInterface) {
     static_assert(std::is_same_v<decltype(&CDoor::setup), void (CDoor::*)()>);
     static_assert(std::is_same_v<decltype(&CDoor::process), void (CDoor::*)(float)>);
     static_assert(std::is_same_v<decltype(&CDoor::renderOpaque), int (CDoor::*)()>);
-    static_assert(std::is_same_v<decltype(&CDoor::renderBackground), void (CDoor::*)(int)>);
+    static_assert(std::is_same_v<decltype(&CDoor::renderBackground),
+                                 void (CDoor::*)(int, const SActorRenderOwners &)>);
     static_assert(std::is_same_v<decltype(&CDoor::getBoundingBox),
                                  CBoundingBox3D *(CDoor::*)(CBoundingBox3D *)>);
     static_assert(std::is_same_v<decltype(&CDoor::getCollisionType),

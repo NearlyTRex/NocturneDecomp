@@ -17,9 +17,9 @@ constexpr std::uint32_t kWhite = 0xffffff;
 
 C3d::C3d(CMatrix &matrix) : matrix_(matrix) {}
 
-// deferred: keeping the point, with CBoundingBox3D::isVisible, its only reader
 // nocedit 0x004037e0
 void C3d::processCameraRelativePoint(const common::CVector3i &point) {
+    stored_point_ = point;
     const common::CVector3i origin = matrix_.getCameraOrigin();
     matrix_.setRelativeOrigin({.x = common::wrappingSubtract(origin.x, point.x),
                                .y = common::wrappingSubtract(origin.y, point.y),
@@ -66,6 +66,10 @@ void C3d::setBlendMode(int blend_mode) {
 
 const int &C3d::getBlendMode() const {
     return blend_mode_;
+}
+
+const common::CVector3i &C3d::getStoredPoint() const {
+    return stored_point_;
 }
 
 const int &C3d::getCurrentAlphaValue() const {

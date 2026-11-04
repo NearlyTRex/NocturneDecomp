@@ -16,7 +16,7 @@ public:
     void setup() override;
     void process(float delta_time) override;
     int renderOpaque() override;
-    void renderBackground(int layer_flag) override;
+    void renderBackground(int layer_flag, const SActorRenderOwners &owners) override;
     CBoundingBox3D *getBoundingBox(CBoundingBox3D *out_box) override;
     ECollisionType getCollisionType(SCollisionInfo *collision_info) override;
     int getTargetPoints(common::CVector3f *out_points_array) override;

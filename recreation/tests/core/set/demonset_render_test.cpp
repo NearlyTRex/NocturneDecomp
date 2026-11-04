@@ -1,5 +1,6 @@
 #include "common/math/vector3i.h"
 #include "common/render/renderstate.h"
+#include "core/actor/actorrenderowners.h"
 #include "core/actor/demonactor.h"
 #include "core/color3i.h"
 #include "core/dcamera/demoncamera.h"
@@ -22,6 +23,7 @@
 #include <cstddef>
 #include <cstdint>
 #include <format>
+#include <optional>
 #include <span>
 #include <string>
 #include <string_view>
@@ -47,8 +49,8 @@ SRenderVertex at(int x, int y) {
 class CDemonSetRenderTest : public engine::CDemonRendererFixture {
 protected:
     CSetParts set_parts_{dosio_};
-    CDemonSet set_{
-        set_parts_.owners(demon_renderer_, matrix_, special_, two_d_, screen_, raw_input_)};
+    CDemonSet set_{set_parts_.owners(demon_renderer_, three_d_, matrix_, special_, two_d_, screen_,
+                                     raw_input_)};
 };
 
 // Each polygon reaches the hardware renderer through the quad batch, -1 taking its default.
@@ -66,6 +68,36 @@ TEST_F(CDemonSetRenderTest, APrimitiveBatchIsDrawnAsTheRenderersQuadBatch) {
         .Times(2);
     set_.renderPrimitiveBatch(polys, -1);
     EXPECT_EQ(vertex_buffer_[1].u, 9);
+}
+
+// Through the renderer's depth test: a corner's reciprocal depth is its depth, and a nearer depth
+// in the buffer hides it.
+TEST_F(CDemonSetRenderTest, ASinglePrimitiveShowsWhetherAnyOfItPassesTheDepths) {
+    constexpr int kPixels = 8;
+    constexpr auto kSize = static_cast<std::size_t>(kPixels);
+    std::array<std::uint32_t, kSize * kSize> depths{};
+    std::array<std::uint32_t *, kSize> depth_rows{};
+    for (std::size_t row = 0; row < kSize; ++row) {
+        depth_rows.at(row) = depths.data() + (row * kSize);
+    }
+    ON_CALL(screen_, getZBufferRows())
+        .WillByDefault(Return(std::span<std::uint32_t *>(depth_rows)));
+    two_d_.setupViewportAndClipping(0, 0, kPixels - 1, kPixels - 1);
+    demon_renderer_.enableFaceCapture(false);
+    const auto corner = [](int x, int y) {
+        SRenderVertex vertex = at(x, y);
+        vertex.projected_vertex.transformed_z = 0x1000;
+        vertex.projected_vertex.inv_z = 0x1200;
+        return vertex;
+    };
+    vertex_buffer_[1] = corner(0, 0);
+    vertex_buffer_[2] = corner(kPixels, 0);
+    vertex_buffer_[3] = corner(0, kPixels);
+    const platform::SMRGLHeaderPrimitive prim{.surface_normal = {}, .vertex_indices = {1, 2, 3}};
+    depths.fill(0x1200);
+    EXPECT_TRUE(set_.renderSinglePrimitive(prim));
+    depths.fill(0x1201);
+    EXPECT_FALSE(set_.renderSinglePrimitive(prim));
 }
 
 // With face capture on, each reaches the geometry clip in turn.
@@ -170,6 +202,19 @@ TEST_F(CDemonSetBackgroundTest, EachActorDrawsItsBackgroundOpaqueAndTintedByItsS
                                    "near 1 1,2,3 0xff", "far 1 65536,65536,65536 0xff",
                                    "near 1 1,2,3 0xff", "far 1 65536,65536,65536 0xff"));
     EXPECT_EQ(set_.getFlatColor(), (CColor3i{.r = 0x10000, .g = 0x10000, .b = 0x10000}));
+}
+
+// Each actor draws with the set's renderer, polygon state, special and camera tables, and the set
+// itself.
+TEST_F(CDemonSetBackgroundTest, EachActorDrawsWithTheSetsOwners) {
+    showTheCamera();
+    const std::optional<SActorRenderOwners> &owners = far_.getRenderOwners();
+    ASSERT_TRUE(owners.has_value());
+    EXPECT_EQ(&owners->renderer, &demon_renderer_);
+    EXPECT_EQ(&owners->three_d, &three_d_);
+    EXPECT_EQ(&owners->special, &special_);
+    EXPECT_EQ(&owners->set, &set_);
+    EXPECT_EQ(&owners->camera_tables, &set_parts_.tables);
 }
 
 // An actor that turns face capture off leaves it on for the next.

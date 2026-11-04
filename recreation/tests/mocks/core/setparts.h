@@ -38,8 +38,9 @@ public:
     // The camera and flashlight are made with the first owners, over the special and screen they
     // name.
     [[nodiscard]] SDemonSetOwners owners(engine::CDemonRenderer &renderer,
-                                         const engine::CMatrix &matrix, engine::CSpecial &special,
-                                         engine::C2d &two_d, engine::IScreenDevice &screen,
+                                         const engine::C3d &three_d, const engine::CMatrix &matrix,
+                                         engine::CSpecial &special, engine::C2d &two_d,
+                                         engine::IScreenDevice &screen,
                                          engine::IRawInput &raw_input) {
         const SDemonLightOwners light_owners =
             light_parts.owners(screen, special, renderer, dosio_);
@@ -50,6 +51,7 @@ public:
             sky_dome = std::make_unique<CSkyDome>(renderer, special, raytrace);
         }
         return {.renderer = renderer,
+                .three_d = three_d,
                 .matrix = matrix,
                 .special = special,
                 .dosio = dosio_,

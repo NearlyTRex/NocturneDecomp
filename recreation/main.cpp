@@ -291,6 +291,7 @@ private:
     // deferred: the 4000 face normals, with lightVerticies' face lists
     // nocedit 0x00569040
     core::CDemonSet set_{{.renderer = demon_renderer_,
+                          .three_d = three_d_,
                           .matrix = matrix_,
                           .special = special_,
                           .dosio = dosio_,

@@ -6,6 +6,7 @@
 #include "core/dmodel/keyframedmodel.h"
 #include "core/platfrm/platform.h"
 #include "core/platfrm/platformstate.h"
+#include "tests/mocks/core/actorrenderfixture.h"
 #include "tests/mocks/core/notportedcalls.h"
 #include "tests/mocks/core/oneframemodel.h"
 #include "tests/mocks/core/testactor.h"
@@ -235,13 +236,15 @@ TEST(CPlatform, AnActorIsAttachedOnceAndNoneIsPassedOver) {
                 ThrowsMessage<common::CFatalError>(StrEq("CPlatform::attachActor - too many!")));
 }
 
-TEST(CPlatform, TheFunctionsNotPortedYetQuit) {
+class CPlatformNotPorted : public CActorRenderFixture {};
+
+TEST_F(CPlatformNotPorted, TheFunctionsNotPortedYetQuit) {
     CTestClasses classes;
     CPlatform platform{classes.get()};
     const NotPortedCalls calls = {
         {"process", [&] { platform.process(0.0F); }},
         {"renderOpaque", [&] { static_cast<void>(platform.renderOpaque()); }},
-        {"renderBackground", [&] { platform.renderBackground(0); }},
+        {"renderBackground", [&] { platform.renderBackground(0, render_owners_); }},
         {"getCollisionType", [&] { static_cast<void>(platform.getCollisionType(nullptr)); }},
     };
     expectEachQuitsNotPorted("CPlatform", calls);
@@ -276,7 +279,8 @@ TEST(CPlatform, PublicInterface) {
     static_assert(std::is_same_v<decltype(&CPlatform::setup), void (CPlatform::*)()>);
     static_assert(std::is_same_v<decltype(&CPlatform::process), void (CPlatform::*)(float)>);
     static_assert(std::is_same_v<decltype(&CPlatform::renderOpaque), int (CPlatform::*)()>);
-    static_assert(std::is_same_v<decltype(&CPlatform::renderBackground), void (CPlatform::*)(int)>);
+    static_assert(std::is_same_v<decltype(&CPlatform::renderBackground),
+                                 void (CPlatform::*)(int, const SActorRenderOwners &)>);
     static_assert(std::is_same_v<decltype(&CPlatform::getBoundingBox),
                                  CBoundingBox3D *(CPlatform::*)(CBoundingBox3D *)>);
     static_assert(std::is_same_v<decltype(&CPlatform::getCollisionType),

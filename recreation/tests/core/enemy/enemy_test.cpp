@@ -2,6 +2,7 @@
 #include "core/actor/demonactortype.h"
 #include "core/charactr/character.h"
 #include "core/enemy/enemy.h"
+#include "tests/mocks/core/actorrenderfixture.h"
 #include "tests/mocks/core/notportedcalls.h"
 #include "tests/mocks/core/testactor.h"
 #include "tests/mocks/core/testclasses.h"
@@ -37,7 +38,8 @@ TEST(CEnemy, IsAbstract) {
 
 TEST(CEnemy, PublicInterface) {
     static_assert(std::is_same_v<decltype(&CEnemy::setup), void (CEnemy::*)()>);
-    static_assert(std::is_same_v<decltype(&CEnemy::renderBackground), void (CEnemy::*)(int)>);
+    static_assert(std::is_same_v<decltype(&CEnemy::renderBackground),
+                                 void (CEnemy::*)(int, const SActorRenderOwners &)>);
     static_assert(
         std::is_same_v<decltype(&CEnemy::getTargetPoints), int (CEnemy::*)(common::CVector3f *)>);
     static_assert(std::is_same_v<decltype(&CEnemy::archive), void (CEnemy::*)(CActorArchive &)>);
@@ -154,11 +156,13 @@ TEST_F(CEnemyArchiveTest, AVersionOneEnemyHasOnlyCDemonActorsFields) {
     EXPECT_EQ(enemy_.getHitPoints(), 100.0F);
 }
 
-TEST(CEnemy, TheFunctionsNotPortedYetQuit) {
+class CEnemyNotPorted : public CActorRenderFixture {};
+
+TEST_F(CEnemyNotPorted, TheFunctionsNotPortedYetQuit) {
     CTestClasses classes;
     CTestEnemy enemy(classes.get());
     const NotPortedCalls calls = {
-        {"renderBackground", [&] { enemy.renderBackground(0); }},
+        {"renderBackground", [&] { enemy.renderBackground(0, render_owners_); }},
         {"getTargetPoints", [&] { static_cast<void>(enemy.getTargetPoints(nullptr)); }},
         {"releaseVictim", [&] { enemy.releaseVictim(); }},
         {"onVictimLost", [&] { enemy.onVictimLost(nullptr); }},

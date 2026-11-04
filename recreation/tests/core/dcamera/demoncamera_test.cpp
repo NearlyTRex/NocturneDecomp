@@ -304,12 +304,38 @@ TEST_F(CDemonCameraTest, ANameAndRangeCanBeGiven) {
 
 TEST_F(CDemonCameraTest, TheOverridesNotPortedYetQuit) {
     const NotPortedCalls calls = {
-        {"setupPerspectiveAndFog", [&] { camera_.setupPerspectiveAndFog(nullptr, nullptr); }},
         {"getFogValueAtPosition",
          [&] { static_cast<void>(camera_.getFogValueAtPosition(nullptr, nullptr)); }},
         {"saveAlphaTransform", [&] { camera_.saveAlphaTransform(0); }},
     };
     expectEachQuitsNotPorted("CDemonCamera", calls);
+}
+
+// With no place, or in a background scene, nothing is fogged; anywhere else the fog is sampled
+// at the place.
+TEST_F(CDemonCameraTest, ThePerspectiveFogIsNoneWithoutAPlaceOrInABackgroundScene) {
+    common::CVector3f place{.x = 1.0F, .y = 2.0F, .z = 3.0F};
+    tables_.perspective_reciprocal = 9;
+    camera_.setupPerspectiveAndFog(nullptr, nullptr);
+    EXPECT_EQ(tables_.perspective_reciprocal, 0);
+    tables_.perspective_reciprocal = 9;
+    tables_.background_scene_depth = 1;
+    camera_.setupPerspectiveAndFog(&place, nullptr);
+    EXPECT_EQ(tables_.perspective_reciprocal, 0);
+    tables_.background_scene_depth = 0;
+    EXPECT_THAT([&] { camera_.setupPerspectiveAndFog(&place, nullptr); },
+                ::testing::ThrowsMessage<common::CFatalError>(
+                    ::testing::StrEq("CDemonCamera::getFogValueAtPosition is not ported yet")));
+}
+
+// A scene's camera is the scene camera until the scene ends.
+TEST_F(CDemonCameraTest, AnOpenScenesCameraIsTheSceneCamera) {
+    camera_.init(48);
+    EXPECT_EQ(tables_.scene_camera, nullptr);
+    camera_.beginScene(1);
+    EXPECT_EQ(tables_.scene_camera, &camera_);
+    camera_.endScene(1);
+    EXPECT_EQ(tables_.scene_camera, nullptr);
 }
 
 // The renderer takes the camera's place in 24.8 and its lens, 18 being the unit scale; a second

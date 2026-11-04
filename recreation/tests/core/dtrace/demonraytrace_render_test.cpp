@@ -92,8 +92,8 @@ protected:
     engine::CDemonRenderer clipping_renderer_{
         matrix_, light_,   two_d_,   three_d_,  vertex_buffer_, special_,
         prim_,   zraster_, texture_, textures_, screen_,        &transformAndClipGeometry};
-    CDemonSet set_{
-        set_parts_.owners(clipping_renderer_, matrix_, special_, two_d_, screen_, raw_input_)};
+    CDemonSet set_{set_parts_.owners(clipping_renderer_, three_d_, matrix_, special_, two_d_,
+                                     screen_, raw_input_)};
 };
 
 // Looking along z from cube (1, 0, -1): slab by slab out along z, and within each out along x,

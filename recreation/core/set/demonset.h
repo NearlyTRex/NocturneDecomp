@@ -48,6 +48,7 @@ struct SSpotlight {
 // What a set loads with and into, and draws with.
 struct SDemonSetOwners {
     engine::CDemonRenderer &renderer;
+    const engine::C3d &three_d;
     const engine::CMatrix &matrix;
     engine::CSpecial &special;
     const engine::CDosIo &dosio;
@@ -138,6 +139,8 @@ public:
     void renderFaceListOrEnvMap(platform::SInputFace *faces, int count, int flags);
     // Each primitive filled in the active render colour into the depth.
     void renderPrimitiveList(std::span<const platform::SMRGLHeaderPrimitive> primitives);
+    // Whether any pixel of the primitive passes the depth test.
+    [[nodiscard]] bool renderSinglePrimitive(const platform::SMRGLHeaderPrimitive &prim);
     void renderTexturedPrimitiveListVariant(platform::SMRGLHeaderPrimitive *prim, int count);
     void markMirrorCameraDirty();
     void setFlatColor(int light_scale, int color_scale, int fog_scale);

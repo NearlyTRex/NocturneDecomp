@@ -133,7 +133,7 @@ void CDemonActor::updateCollisionData(CDemonSet & /*set*/) {}
 
 // Most actors have no background. Retail's is empty; nocedit's checked the actor's pointers.
 // nocedit 0x00408ae0
-void CDemonActor::renderBackground(int /*layer_flag*/) {}
+void CDemonActor::renderBackground(int /*layer_flag*/, const SActorRenderOwners & /*owners*/) {}
 
 // nocedit 0x00408ec0
 common::CVector3f *CDemonActor::localToWorldPoint(common::CVector3f *output_world_point,

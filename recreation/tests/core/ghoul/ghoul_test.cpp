@@ -3,6 +3,7 @@
 #include "core/ghoul/ghoul.h"
 #include "core/skeleton/deformablemodelinstance.h"
 #include "core/skeleton/partvisibility.h"
+#include "tests/mocks/core/actorrenderfixture.h"
 #include "tests/mocks/core/notportedcalls.h"
 #include "tests/mocks/core/testclasses.h"
 #include "tests/mocks/core/testfieldsarchive.h"
@@ -36,7 +37,8 @@ TEST(CGhoul, Constructors) {
 TEST(CGhoul, PublicInterface) {
     static_assert(std::is_same_v<decltype(&CGhoul::setup), void (CGhoul::*)()>);
     static_assert(std::is_same_v<decltype(&CGhoul::process), void (CGhoul::*)(float)>);
-    static_assert(std::is_same_v<decltype(&CGhoul::renderBackground), void (CGhoul::*)(int)>);
+    static_assert(std::is_same_v<decltype(&CGhoul::renderBackground),
+                                 void (CGhoul::*)(int, const SActorRenderOwners &)>);
     static_assert(
         std::is_same_v<decltype(&CGhoul::getTargetPoints), int (CGhoul::*)(common::CVector3f *)>);
     static_assert(std::is_same_v<decltype(&CGhoul::getActorType),
@@ -131,12 +133,14 @@ TEST_F(CGhoulArchiveTest, AVersionOneGhoulHasItsSpeedAndModel) {
     EXPECT_EQ(ghoul_.getLivesLeft(), lives);
 }
 
-TEST(CGhoul, TheFunctionsNotPortedYetQuit) {
+class CGhoulNotPorted : public CActorRenderFixture {};
+
+TEST_F(CGhoulNotPorted, TheFunctionsNotPortedYetQuit) {
     CTestClasses classes;
     CGhoul ghoul(classes.get());
     const NotPortedCalls calls = {
         {"process", [&] { ghoul.process(0.0F); }},
-        {"renderBackground", [&] { ghoul.renderBackground(0); }},
+        {"renderBackground", [&] { ghoul.renderBackground(0, render_owners_); }},
         {"getTargetPoints", [&] { static_cast<void>(ghoul.getTargetPoints(nullptr)); }},
         {"processDamage", [&] { ghoul.processDamage(nullptr); }},
         {"canBeAttracted", [&] { static_cast<void>(ghoul.canBeAttracted(nullptr)); }},

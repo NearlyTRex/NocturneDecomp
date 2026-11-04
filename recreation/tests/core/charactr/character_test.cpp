@@ -9,6 +9,7 @@
 #include "core/charactr/healthbarmode.h"
 #include "core/cloth/clothlist.h"
 #include "core/game/game.h"
+#include "tests/mocks/core/actorrenderfixture.h"
 #include "tests/mocks/core/gameparts.h"
 #include "tests/mocks/core/mockactorlookup.h"
 #include "tests/mocks/core/mockdeformablemodels.h"
@@ -49,8 +50,8 @@ TEST(CCharacter, PublicInterface) {
     static_assert(std::is_same_v<decltype(&CCharacter::setup), void (CCharacter::*)()>);
     static_assert(std::is_same_v<decltype(&CCharacter::renderOpaque), int (CCharacter::*)()>);
     static_assert(std::is_same_v<decltype(&CCharacter::renderTransparent), int (CCharacter::*)()>);
-    static_assert(
-        std::is_same_v<decltype(&CCharacter::renderBackground), void (CCharacter::*)(int)>);
+    static_assert(std::is_same_v<decltype(&CCharacter::renderBackground),
+                                 void (CCharacter::*)(int, const SActorRenderOwners &)>);
     static_assert(std::is_same_v<decltype(&CCharacter::getBoundingBox),
                                  CBoundingBox3D *(CCharacter::*)(CBoundingBox3D *)>);
     static_assert(std::is_same_v<decltype(&CCharacter::getCollisionType),
@@ -359,13 +360,15 @@ TEST_F(CCharacterArchiveTest, AHandPastTheTwoIsFatal) {
     }
 }
 
-TEST(CCharacter, TheFunctionsNotPortedYetQuit) {
+class CCharacterNotPorted : public CActorRenderFixture {};
+
+TEST_F(CCharacterNotPorted, TheFunctionsNotPortedYetQuit) {
     CTestClasses classes;
     CTestCharacter character(classes.get());
     const NotPortedCalls calls = {
         {"renderOpaque", [&] { static_cast<void>(character.renderOpaque()); }},
         {"renderTransparent", [&] { static_cast<void>(character.renderTransparent()); }},
-        {"renderBackground", [&] { character.renderBackground(0); }},
+        {"renderBackground", [&] { character.renderBackground(0, render_owners_); }},
         {"getCollisionType", [&] { static_cast<void>(character.getCollisionType(nullptr)); }},
         {"canLookAt", [&] { static_cast<void>(character.canLookAt()); }},
         {"setPositionAndOrientation",

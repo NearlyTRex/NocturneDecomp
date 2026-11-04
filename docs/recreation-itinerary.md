@@ -20,11 +20,11 @@ functions don't count as done. Sizes are in instructions.
 | 4 | `initFonts`, `CEditorTools::showWarning` | 11 | 46 | 4804 | 45 | 1 | 97.8% |
 | 5 | `showCalibrationTest`, `playMovie`, `CAlphaBitmap::ctor`, `CAlphaBitmap::dtor`, `CSound::findAllSoundFiles`, `CDemonMission::reset`, `CDemonFilter::init`, `CMouse::load`, `CNetGame::init` | 14 | 50 | 4789 | 31 | 3 | 62.0% |
 | 6 | `initializeGameSystems`, `CAlphaBitmap::scale`, `clearTextureCache`, `CMoon::init`, `CGame::saveClockTime`, `CGame::updateDT` | 11 | 25 | 2988 | 20 | 5 | 80.0% |
-| 7 | `CMoon::update`, `CMoon::render` | 17 | 120 | 17616 | 68 | 31 | 56.6% |
+| 7 | `CMoon::update`, `CMoon::render` | 17 | 120 | 17616 | 69 | 30 | 57.5% |
 | 8 | `renderMenuAndGetChoice`, `CMoon::free`, `CSound::reset`, `CEditorTools::showFileSelectionDialog` | 8 | 63 | 5314 | 60 | 3 | 95.2% |
 | 9 | `CPickList::enableItem`, `CEventList::resetGameFlags`, `CLevelLoader::show`, `CDemonMission::load` | 15 | 56 | 3298 | 37 | 9 | 66.0% |
 | 10 | `CDemonMission::createHeros`, `CDemonMission::prepareAllActors`, `CEventList::reset`, `CDemonMission::loadSet` | 15 | 42 | 5112 | 33 | 8 | 78.5% |
-| 11 | `CScript::loadScript` | 63 | 579 | 67400 | 127 | 53 | 21.9% |
+| 11 | `CScript::loadScript` | 63 | 579 | 67400 | 129 | 56 | 22.2% |
 | 12 | `CDemonMission::loadScript`, `CScript::executeInitSection`, `CDemonMission::startMission`, `CDemonMission::buildActiveSetActorList`, `CConsole::reset`, `CEditorTools::displayMemoryDiagnostics`, `CGame::setGameRes`, `CDemonLight::init`, `CDemonSet::initScene` | 12 | 26 | 1658 | 16 | 9 | 61.5% |
 | 13 | `CFireEffect::init`, `CDemonSet::loadMasterLightStates`, `CDemonSet::setGamma`, `CGame::clearOverlay`, `CGame::loadAssets` | 7 | 27 | 735 | 16 | 1 | 59.2% |
 | 14 | `CNetGame::syncPlayers`, `CNetGame::processServerFrame`, `CLevelLoader::cleanup`, `CKeys::toggleInputMask`, `CGame::processHotkeys` | 17 | 51 | 5302 | 4 | 0 | 7.8% |
@@ -42,11 +42,11 @@ functions don't count as done. Sizes are in instructions.
 | 26 | Not reached from startup: `core/` (part 4 of 9) | 18 | 300 | 20148 | 51 | 7 | 17.0% |
 | 27 | Not reached from startup: `core/` (part 5 of 9) | 21 | 294 | 20910 | 63 | 11 | 21.4% |
 | 28 | Not reached from startup: `core/` (part 6 of 9) | 18 | 282 | 21809 | 54 | 12 | 19.1% |
-| 29 | Not reached from startup: `core/` (part 7 of 9) | 18 | 263 | 22721 | 68 | 9 | 25.8% |
+| 29 | Not reached from startup: `core/` (part 7 of 9) | 18 | 263 | 22721 | 68 | 10 | 25.8% |
 | 30 | Not reached from startup: `core/` (part 8 of 9) | 20 | 300 | 31826 | 41 | 8 | 13.6% |
 | 31 | Not reached from startup: `core/` (part 9 of 9) | 5 | 111 | 10905 | 26 | 7 | 23.4% |
 | 32 | Not reached from startup: `wincore/` | 2 | 11 | 482 | 4 | 0 | 36.3% |
-| | **All** | | **4479** | **402407** | **1181** | **218** | **26.3%** |
+| | **All** | | **4479** | **402407** | **1184** | **221** | **26.4%** |
 
 ## Step 0: Math value types
 
@@ -733,12 +733,11 @@ functions don't count as done. Sizes are in instructions.
   - [x] `setCameraOrigin` 0x0050e270 (7)
   - [x] `invertTransformMatrix` 0x0050c640 (200)
 
-### `engine/3d.c` (3 functions, 64 instructions, 2 done, 1 partial)
+### `engine/3d.c` (3 functions, 64 instructions, 3 done, 0 partial)
 - free functions
   - [x] `setBlendMode` 0x00406dd0 (3)
   - [x] `isVisiblePlane` 0x00403950 (36)
-  - [~] `processCameraRelativePoint` 0x004037e0 (25)
-    - deferred: keeping the point, with CBoundingBox3D::isVisible, its only reader
+  - [x] `processCameraRelativePoint` 0x004037e0 (25)
 
 ### `engine/drender.cpp` (27 functions, 2214 instructions, 12 done, 11 partial)
 - class `CDemonRenderer`
@@ -1571,23 +1570,24 @@ functions don't count as done. Sizes are in instructions.
 - free functions
   - [x] `loadAndUpdateTexture` 0x005dd930 (13)
 
-### `core/dcamera.cpp` (26 functions, 3719 instructions, 5 done, 5 partial)
+### `core/dcamera.cpp` (26 functions, 3719 instructions, 6 done, 7 partial)
 - class `CDemonCamera`
-  - [ ] `setupPerspectiveAndFog` 0x004537d0 (73)
+  - [~] `setupPerspectiveAndFog` 0x004537d0 (73)
+    - deferred: the fog's colour from the lightmap palette as the solid colour, with getFogValueAtPosition
   - [ ] `initCameraShake` 0x00453fc0 (43)
   - [x] `setEffectIntensity` 0x004528e0 (6)
   - [ ] `worldToScreenWithFrustumCull` 0x0044d7d0 (243)
-  - [ ] `setSceneCamera` 0x0044c3e0 (10)
+  - [~] `setSceneCamera` 0x0044c3e0 (10)
+    - deferred: the camera whose buffers are kept while skip_clear_buffers is set, with pushScreenBoundsToCamera
   - [ ] `calculateInverseTransform` 0x0044cf20 (186)
   - [ ] `updateTransformMatrices` 0x0044d1c0 (56)
   - [~] `beginScene` 0x0044c430 (196)
     - deferred: the camera shake's attack, sustain and decay and the screen's jitter, which stay still until a shake starts, with initCameraShake
-    - deferred: becoming the scene camera, and the one whose buffers are kept, with setSceneCamera's readers
     - deferred: the dirty rectangles and the viewport rectangle, with pushRect and restoreZBufferRectArray
     - deferred: the camera's copies of the transform, origin and projection and their inverse, with updateTransformMatrices' readers
-  - [ ] `resetSceneCamera` 0x0044c410 (4)
-  - [~] `endScene` 0x0044cb80 (62)
-    - deferred: no longer the scene camera, with setSceneCamera's readers
+  - [~] `resetSceneCamera` 0x0044c410 (4)
+    - deferred: no camera's buffers kept, with pushScreenBoundsToCamera
+  - [x] `endScene` 0x0044cb80 (62)
   - [~] `beginBackgroundScene` 0x0044cc70 (99)
     - deferred: the projection as the background scene sets it, and the renderer's camera and viewport, with testVisibility
   - [~] `endBackgroundScene` 0x0044cdf0 (87)
@@ -1987,7 +1987,7 @@ functions don't count as done. Sizes are in instructions.
 - free functions
   - [ ] `qsortByDisplayListEntry` 0x0056fba0 (18)
 
-### `core/box.cpp` (11 functions, 944 instructions, 2 done, 3 partial)
+### `core/box.cpp` (11 functions, 944 instructions, 3 done, 4 partial)
 - class `CBox`
   - [~] `ctor` 0x0041dc50 (45)
     - deferred: the eight scrape points, the mass and the world velocity, with CBox::processPhysics
@@ -2001,8 +2001,9 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `clampPoint` 0x00421550 (66)
   - [ ] `doesSphereIntersect` 0x004215f0 (35)
   - [ ] `isVisibleWithShadow` 0x00420320 (147)
-  - [ ] `isVisibleWithCamera` 0x00420680 (136)
-  - [ ] `isVisible` 0x004204f0 (128)
+  - [x] `isVisibleWithCamera` 0x00420680 (136)
+  - [~] `isVisible` 0x004204f0 (128)
+    - deferred: the light's shadow-map test in place of the fog test while the renderer draws the shadow pass, with setShadowPass's callers and isVisibleWithShadow
   - [x] `getMaximumBound` 0x00421060 (29)
 
 ### `core/setdir.cpp` (5 functions, 729 instructions, 4 done, 1 partial)
@@ -5972,7 +5973,7 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `factoryFuncSentinel` 0x00567d70 (12)
   - [x] `staticInit` 0x00567d40 (9)
 
-### `core/set.cpp` (15 functions, 1251 instructions, 2 done, 1 partial)
+### `core/set.cpp` (15 functions, 1251 instructions, 2 done, 2 partial)
 - class `CDemonSet`
   - [ ] `renderEnvMapTriangles` 0x005702b0 (289)
   - [ ] `renderFaceListOrEnvMap` 0x00570870 (42)
@@ -5983,7 +5984,8 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `precomputeLightVisibility` 0x0056a470 (338)
   - [ ] `renderEnvMapBatchTri` 0x0056ffe0 (16)
   - [ ] `renderFaceBatchOrEnvMap` 0x00570700 (42)
-  - [ ] `renderSinglePrimitive` 0x00570df0 (17)
+  - [~] `renderSinglePrimitive` 0x00570df0 (17)
+    - deferred: testing through the active mirror's reflection while the renderer's advanced culling is on, with setupMirrorRendering and CMirror::renderReflectedPrimitive
 - free functions
   - [~] `staticInit` 0x00569040 (30)
     - deferred: the 4000 face normals, with lightVerticies' face lists

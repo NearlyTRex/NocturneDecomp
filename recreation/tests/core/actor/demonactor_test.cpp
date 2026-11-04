@@ -51,8 +51,8 @@ TEST(CDemonActor, PublicInterface) {
     static_assert(std::is_same_v<decltype(&CDemonActor::renderOpaque), int (CDemonActor::*)()>);
     static_assert(
         std::is_same_v<decltype(&CDemonActor::renderTransparent), int (CDemonActor::*)()>);
-    static_assert(
-        std::is_same_v<decltype(&CDemonActor::renderBackground), void (CDemonActor::*)(int)>);
+    static_assert(std::is_same_v<decltype(&CDemonActor::renderBackground),
+                                 void (CDemonActor::*)(int, const SActorRenderOwners &)>);
     static_assert(std::is_same_v<decltype(&CDemonActor::getBoundingBox),
                                  CBoundingBox3D *(CDemonActor::*)(CBoundingBox3D *)>);
     static_assert(std::is_same_v<decltype(&CDemonActor::processFootstep),

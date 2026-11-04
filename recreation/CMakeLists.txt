@@ -20,6 +20,28 @@ option(NOCTURNE_RECREATION_COVERAGE "Instrument for clang source-based coverage"
 option(NOCTURNE_RECREATION_GAME "Build the SDL adapters and the nocturne executable" OFF)
 option(NOCTURNE_RECREATION_SANITIZE "Build with AddressSanitizer and UBSan" OFF)
 
+# tidy, coverage and a build each fan out to every core, and together they exhaust a desktop's
+# memory. A host-wide lock, shared by compiles and links and exclusive for tidy and coverage,
+# makes each wait for the others across build directories and checkouts; CI jobs run alone.
+find_program(FLOCK flock)
+if(DEFINED ENV{CI} OR NOT FLOCK)
+    set(_host_lock_default "")
+elseif(DEFINED ENV{XDG_RUNTIME_DIR})
+    set(_host_lock_default "$ENV{XDG_RUNTIME_DIR}/nocturne-recreation.lock")
+else()
+    set(_host_lock_default "/tmp/nocturne-recreation-$ENV{USER}.lock")
+endif()
+set(NOCTURNE_RECREATION_HOST_LOCK "${_host_lock_default}"
+    CACHE FILEPATH "Lock file that serialises builds, tidy and coverage on this host; empty disables it")
+set(NOCTURNE_RECREATION_EXCLUSIVE "")
+if(NOCTURNE_RECREATION_HOST_LOCK)
+    foreach(_launcher IN ITEMS C_COMPILER CXX_COMPILER C_LINKER CXX_LINKER)
+        set(CMAKE_${_launcher}_LAUNCHER
+            "${FLOCK}" --shared "${NOCTURNE_RECREATION_HOST_LOCK}" ${CMAKE_${_launcher}_LAUNCHER})
+    endforeach()
+    set(NOCTURNE_RECREATION_EXCLUSIVE "${FLOCK}" --exclusive "${NOCTURNE_RECREATION_HOST_LOCK}")
+endif()
+
 # Modules are the directories that carry a fwd.h.
 file(GLOB _fwd_headers RELATIVE "${CMAKE_CURRENT_SOURCE_DIR}" CONFIGURE_DEPENDS
      "${CMAKE_CURRENT_SOURCE_DIR}/*/fwd.h")
@@ -249,7 +271,7 @@ if(NOCTURNE_RECREATION_COVERAGE)
     find_program(LLVM_COV NAMES llvm-cov-${NOCTURNE_LLVM_MAJOR} llvm-cov
                  HINTS "${NOCTURNE_LLVM_BIN}" REQUIRED)
     add_custom_target(coverage
-        COMMAND ${CMAKE_COMMAND}
+        COMMAND ${NOCTURNE_RECREATION_EXCLUSIVE} ${CMAKE_COMMAND}
             -DBINARY_DIR=${CMAKE_CURRENT_BINARY_DIR}
             -DSOURCE_DIR=${CMAKE_CURRENT_SOURCE_DIR}
             -DLLVM_PROFDATA=${LLVM_PROFDATA}
@@ -273,7 +295,7 @@ if(CLANG_TIDY AND Python3_FOUND)
         set(_tidy_cache "--cache-dir=${NOCTURNE_RECREATION_TIDY_CACHE}")
     endif()
     add_custom_target(tidy
-        COMMAND ${Python3_EXECUTABLE} ${CMAKE_CURRENT_SOURCE_DIR}/cmake/tidy.py
+        COMMAND ${NOCTURNE_RECREATION_EXCLUSIVE} ${Python3_EXECUTABLE} ${CMAKE_CURRENT_SOURCE_DIR}/cmake/tidy.py
                 --clang-tidy ${CLANG_TIDY}
                 --source-dir ${CMAKE_CURRENT_SOURCE_DIR}
                 --build-dir ${CMAKE_CURRENT_BINARY_DIR}

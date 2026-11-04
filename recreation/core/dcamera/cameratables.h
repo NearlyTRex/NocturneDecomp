@@ -2,6 +2,7 @@
 
 #include "core/color3i.h"
 #include "core/dcamera/foggrid.h"
+#include "core/fwd.h"
 #include "engine/screendevice.h"
 #include "platform/mrgltexturebasic.h"
 
@@ -51,6 +52,10 @@ struct SCameraTables {
     // How many background scenes are open, any camera's or light's, and what the first saved.
     int background_scene_depth = 0;
     SBackgroundSave background_save;
+    // The camera or light whose scene is open; none between scenes.
+    CDemonCamera *scene_camera = nullptr;
+    // The fog in front of what is drawn next, 0 to 0xffff; none in a background scene.
+    int perspective_reciprocal = 0;
 };
 
 } // namespace nocturne::core

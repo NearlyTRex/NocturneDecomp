@@ -35,7 +35,7 @@ public:
     void setup() override;
     void process(float delta_time) override;
     int renderOpaque() override;
-    void renderBackground(int layer_flag) override;
+    void renderBackground(int layer_flag, const SActorRenderOwners &owners) override;
     // Its model's first frame's box.
     CBoundingBox3D *getBoundingBox(CBoundingBox3D *out_box) override;
     ECollisionType getCollisionType(SCollisionInfo *collision_info) override;

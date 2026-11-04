@@ -28,7 +28,8 @@ TEST(CConveyor, PublicInterface) {
     static_assert(std::is_same_v<decltype(&CConveyor::setup), void (CConveyor::*)()>);
     static_assert(std::is_same_v<decltype(&CConveyor::process), void (CConveyor::*)(float)>);
     static_assert(std::is_same_v<decltype(&CConveyor::renderOpaque), int (CConveyor::*)()>);
-    static_assert(std::is_same_v<decltype(&CConveyor::renderBackground), void (CConveyor::*)(int)>);
+    static_assert(std::is_same_v<decltype(&CConveyor::renderBackground),
+                                 void (CConveyor::*)(int, const SActorRenderOwners &)>);
     static_assert(std::is_same_v<decltype(&CConveyor::getBoundingBox),
                                  CBoundingBox3D *(CConveyor::*)(CBoundingBox3D *)>);
     static_assert(std::is_same_v<decltype(&CConveyor::getCollisionType),

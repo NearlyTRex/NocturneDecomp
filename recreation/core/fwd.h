@@ -259,6 +259,7 @@ enum class EWeatherType : std::uint8_t;
 enum class EWerewolfType : std::uint8_t;
 struct SActorArchiveOwners;
 struct SActorRayHit;
+struct SActorRenderOwners;
 struct SBone;
 struct SBug;
 struct SCPUInfo;

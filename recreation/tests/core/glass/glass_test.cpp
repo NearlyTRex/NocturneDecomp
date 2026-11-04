@@ -29,7 +29,8 @@ TEST(CGlass, PublicInterface) {
     static_assert(std::is_same_v<decltype(&CGlass::process), void (CGlass::*)(float)>);
     static_assert(std::is_same_v<decltype(&CGlass::renderOpaque), int (CGlass::*)()>);
     static_assert(std::is_same_v<decltype(&CGlass::renderTransparent), int (CGlass::*)()>);
-    static_assert(std::is_same_v<decltype(&CGlass::renderBackground), void (CGlass::*)(int)>);
+    static_assert(std::is_same_v<decltype(&CGlass::renderBackground),
+                                 void (CGlass::*)(int, const SActorRenderOwners &)>);
     static_assert(std::is_same_v<decltype(&CGlass::getBoundingBox),
                                  CBoundingBox3D *(CGlass::*)(CBoundingBox3D *)>);
     static_assert(std::is_same_v<decltype(&CGlass::getCollisionType),

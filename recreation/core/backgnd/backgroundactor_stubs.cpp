@@ -19,7 +19,7 @@ int CBackgroundActor::renderOpaque() {
     notPorted("renderOpaque");
 }
 
-void CBackgroundActor::renderBackground(int /*layer_flag*/) {
+void CBackgroundActor::renderBackground(int /*layer_flag*/, const SActorRenderOwners & /*owners*/) {
     notPorted("renderBackground");
 }
 

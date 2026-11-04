@@ -1,6 +1,7 @@
 #include "core/actor/demonactortype.h"
 #include "core/npc/npc.h"
 #include "core/skeleton/deformablemodelinstance.h"
+#include "tests/mocks/core/actorrenderfixture.h"
 #include "tests/mocks/core/notportedcalls.h"
 #include "tests/mocks/core/testclasses.h"
 #include "tests/mocks/core/testfieldsarchive.h"
@@ -32,7 +33,8 @@ TEST(CNPC, Constructors) {
 TEST(CNPC, PublicInterface) {
     static_assert(std::is_same_v<decltype(&CNPC::setup), void (CNPC::*)()>);
     static_assert(std::is_same_v<decltype(&CNPC::process), void (CNPC::*)(float)>);
-    static_assert(std::is_same_v<decltype(&CNPC::renderBackground), void (CNPC::*)(int)>);
+    static_assert(std::is_same_v<decltype(&CNPC::renderBackground),
+                                 void (CNPC::*)(int, const SActorRenderOwners &)>);
     static_assert(std::is_same_v<decltype(&CNPC::getPathMap), CPathMap *(CNPC::*)()>);
     static_assert(
         std::is_same_v<decltype(&CNPC::getActorType), const CDemonActorType &(CNPC::*)() const>);
@@ -110,12 +112,14 @@ TEST(CNPC, AVersionOneNPCHasOnlyItsHitPoints) {
     EXPECT_TRUE(archive.isFinished());
 }
 
-TEST(CNPC, TheFunctionsNotPortedYetQuit) {
+class CNPCNotPorted : public CActorRenderFixture {};
+
+TEST_F(CNPCNotPorted, TheFunctionsNotPortedYetQuit) {
     CTestClasses classes;
     CNPC npc(classes.get());
     const NotPortedCalls calls = {
         {"process", [&] { npc.process(0.0F); }},
-        {"renderBackground", [&] { npc.renderBackground(0); }},
+        {"renderBackground", [&] { npc.renderBackground(0, render_owners_); }},
         {"getPathMap", [&] { static_cast<void>(npc.getPathMap()); }},
         {"processDamage", [&] { npc.processDamage(nullptr); }},
     };

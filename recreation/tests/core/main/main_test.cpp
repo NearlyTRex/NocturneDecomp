@@ -213,8 +213,8 @@ protected:
         matrix_, light_,   two_d_,           three_d_, vertex_buffer_, special_,
         prim_,   zraster_, current_texture_, texture_, screen_,        &transformAndClipGeometry};
     CSetParts set_parts_{dosio_};
-    CDemonSet set_{
-        set_parts_.owners(demon_renderer_, matrix_, special_, two_d_, screen_, raw_input_)};
+    CDemonSet set_{set_parts_.owners(demon_renderer_, three_d_, matrix_, special_, two_d_, screen_,
+                                     raw_input_)};
     common::CWatcomRandom crt_random_;
     CDeformableModelManager deformable_models_{dosio_, demon_renderer_};
     CKeyFramedModelManager keyframed_models_{dosio_, demon_renderer_};

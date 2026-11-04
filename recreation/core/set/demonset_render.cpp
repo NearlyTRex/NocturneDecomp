@@ -1,4 +1,5 @@
 #include "common/math/vector3i.h"
+#include "core/actor/actorrenderowners.h"
 #include "core/actor/demonactor.h"
 #include "core/dcube/cubedrawowners.h"
 #include "core/dtrace/demonraytrace.h"
@@ -28,14 +29,26 @@ constexpr int kUntinted = 0x10000;
 //   and calculateSpatialLighting
 // nocedit 0x0056aca0
 void CDemonSet::renderBackgroundActors(int layer_flag) {
+    const SActorRenderOwners render_owners{.renderer = owners_.renderer,
+                                           .three_d = owners_.three_d,
+                                           .special = owners_.special,
+                                           .set = *this,
+                                           .camera_tables = owners_.light_owners.camera.tables};
     for (CDemonActor *actor : sorted_render_actors_) {
         const common::CVector3i &scale = actor->getScale();
         setFlatColor(scale.x, scale.y, scale.z);
         static_cast<void>(owners_.renderer.setRenderAlpha(kOpaqueRenderAlpha));
-        actor->renderBackground(layer_flag);
+        actor->renderBackground(layer_flag, render_owners);
         setFlatColor(kUntinted, kUntinted, kUntinted);
         owners_.renderer.enableFaceCapture(true);
     }
+}
+
+// deferred: testing through the active mirror's reflection while the renderer's advanced
+//   culling is on, with setupMirrorRendering and CMirror::renderReflectedPrimitive
+// nocedit 0x00570df0
+bool CDemonSet::renderSinglePrimitive(const platform::SMRGLHeaderPrimitive &prim) {
+    return owners_.renderer.renderDepthProfiledDirect(prim);
 }
 
 // A camera that has no PVS saves the one the walk draws. A selected camera may be none, which

@@ -24,7 +24,7 @@ int CCharacter::renderTransparent() {
     notPorted("renderTransparent");
 }
 
-void CCharacter::renderBackground(int /*layer_flag*/) {
+void CCharacter::renderBackground(int /*layer_flag*/, const SActorRenderOwners & /*owners*/) {
     notPorted("renderBackground");
 }
 

@@ -28,7 +28,8 @@ TEST(CCrate, PublicInterface) {
     static_assert(std::is_same_v<decltype(&CCrate::setup), void (CCrate::*)()>);
     static_assert(std::is_same_v<decltype(&CCrate::process), void (CCrate::*)(float)>);
     static_assert(std::is_same_v<decltype(&CCrate::renderOpaque), int (CCrate::*)()>);
-    static_assert(std::is_same_v<decltype(&CCrate::renderBackground), void (CCrate::*)(int)>);
+    static_assert(std::is_same_v<decltype(&CCrate::renderBackground),
+                                 void (CCrate::*)(int, const SActorRenderOwners &)>);
     static_assert(std::is_same_v<decltype(&CCrate::getBoundingBox),
                                  CBoundingBox3D *(CCrate::*)(CBoundingBox3D *)>);
     static_assert(std::is_same_v<decltype(&CCrate::getCollisionType),

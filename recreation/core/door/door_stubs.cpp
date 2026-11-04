@@ -23,7 +23,7 @@ int CDoor::renderOpaque() {
     notPorted("renderOpaque");
 }
 
-void CDoor::renderBackground(int /*layer_flag*/) {
+void CDoor::renderBackground(int /*layer_flag*/, const SActorRenderOwners & /*owners*/) {
     notPorted("renderBackground");
 }
 

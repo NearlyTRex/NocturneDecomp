@@ -25,7 +25,7 @@ public:
     CEnemy &operator=(CEnemy &&) = delete;
 
     void setup() override;
-    void renderBackground(int layer_flag) override;
+    void renderBackground(int layer_flag, const SActorRenderOwners &owners) override;
     int getTargetPoints(common::CVector3f *out_points_array) override;
     void archive(CActorArchive &actor_archive) override;
     void releaseVictim() override;
