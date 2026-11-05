@@ -127,6 +127,11 @@ const SMotion &CMotionController::getCurrentMotion() const {
     return motion_list_->getMotions()[static_cast<std::size_t>(current_motion_index_)];
 }
 
+// nocedit 0x0052dcf0
+std::string_view CMotionController::getCurrentStateName() const {
+    return motion_list_->getStateNames()[static_cast<std::size_t>(getCurrentMotion().state_index)];
+}
+
 // nocedit 0x0052db00
 void CMotionController::setDesiredState(int desired_state_index, bool force_immediate) {
     if (desired_state_index < 0) {

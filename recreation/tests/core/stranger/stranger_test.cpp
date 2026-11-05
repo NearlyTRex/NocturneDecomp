@@ -1,13 +1,18 @@
+#include "core/actor/demonactor.h"
 #include "core/actor/demonactortype.h"
+#include "core/charactr/deathstate.h"
 #include "core/stranger/stranger.h"
+#include "tests/mocks/core/mockeventconditions.h"
 #include "tests/mocks/core/notportedcalls.h"
 #include "tests/mocks/core/testactor.h"
 #include "tests/mocks/core/testclasses.h"
 #include "tests/mocks/core/testheroarchive.h"
 
+#include <gmock/gmock.h>
 #include <gtest/gtest.h>
 
 #include <memory>
+#include <string_view>
 #include <type_traits>
 
 namespace nocturne::core {
@@ -150,6 +155,22 @@ TEST_F(CStrangerArchiveTest, AVersionOneStrangerHasOnlyAHerosFields) {
     EXPECT_EQ(hero_.getLadderToDescend(), nullptr);
 }
 
+TEST(CStranger, HeDiesAsACharacterDoes) {
+    CTestClasses classes;
+    CStranger hero(classes.get());
+    hero.setLifecycleState(EActorLifecycleState::kDestroyed);
+    EXPECT_EQ(hero.getDeathState(), EDeathState::DEATH_STATE_DEAD);
+}
+
+TEST(CStranger, WhileStrangerCannotDieHoldsHeLivesThroughAnything) {
+    CTestClasses classes;
+    CStranger hero(classes.get());
+    hero.setLifecycleState(EActorLifecycleState::kDestroyed);
+    EXPECT_CALL(classes.getEvents(), evaluateCondition(std::string_view("strangerCannotDie")))
+        .WillOnce(::testing::Return(true));
+    EXPECT_EQ(hero.getDeathState(), EDeathState::DEATH_STATE_ALIVE);
+}
+
 TEST(CStranger, TheFunctionsNotPortedYetQuit) {
     CTestClasses classes;
     CStranger hero(classes.get());
@@ -161,7 +182,6 @@ TEST(CStranger, TheFunctionsNotPortedYetQuit) {
         {"drop", [&] { hero.drop(nullptr, nullptr); }},
         {"getGrabbed", [&] { static_cast<void>(hero.getGrabbed(nullptr, 0)); }},
         {"processDamage", [&] { hero.processDamage(nullptr); }},
-        {"getDeathState", [&] { static_cast<void>(hero.getDeathState()); }},
         {"dropCarriedObject", [&] { hero.dropCarriedObject(0, nullptr); }},
         {"getCarryObjToBodyXForm",
          [&] { static_cast<void>(hero.getCarryObjToBodyXForm(0, nullptr)); }},
@@ -169,7 +189,7 @@ TEST(CStranger, TheFunctionsNotPortedYetQuit) {
         {"isWeaponDrawn", [&] { static_cast<void>(hero.isWeaponDrawn()); }},
         {"reset", [&] { hero.reset(); }},
     };
-    EXPECT_EQ(calls.size(), 13U);
+    EXPECT_EQ(calls.size(), 12U);
     expectEachQuitsNotPorted("CStranger", calls);
 }
 

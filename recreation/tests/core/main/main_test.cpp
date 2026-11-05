@@ -187,7 +187,9 @@ protected:
                  .three_d = three_d_,
                  .menu_input = menu_input_,
                  .fonts = fonts_,
-                 .sound_main = sound_}};
+                 .sound_main = sound_,
+                 .keys = keys_,
+                 .raw_input = raw_input_}};
     engine::CIni ini_{file_system_};
     SIniDataOwners ini_owners_{.game = game_,
                                .sound_main = sound_,
@@ -210,7 +212,8 @@ protected:
                         .clock = game_clock_,
                         .two_d = two_d_,
                         .crt_random = crt_random_,
-                        .actor = actor_}};
+                        .actor = actor_,
+                        .mission = mission_}};
     std::vector<platform::SRenderVertex> vertex_buffer_ = std::vector<platform::SRenderVertex>(8);
     engine::CPrim prim_{special_, two_d_, three_d_, current_texture_};
     engine::CZRaster zraster_{special_, two_d_, three_d_, current_texture_};
@@ -223,7 +226,7 @@ protected:
     common::CWatcomRandom crt_random_;
     CDeformableModelManager deformable_models_{dosio_, demon_renderer_};
     CKeyFramedModelManager keyframed_models_{dosio_, demon_renderer_};
-    CActor actor_{game_, crt_random_, deformable_models_, keyframed_models_};
+    CActor actor_{game_, crt_random_, deformable_models_, keyframed_models_, events_};
     shape::CEdControls controls_{{.two_d = two_d_,
                                   .screen = screen_,
                                   .raw_input = raw_input_,

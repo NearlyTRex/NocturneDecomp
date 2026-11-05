@@ -1,22 +1,19 @@
 #include "common/error/fatalerror.h"
 #include "common/random/watcomrandom.h"
 #include "core/actor/actor.h"
+#include "core/hero/hero.h"
+#include "core/hero/heroplaceholder.h"
+#include "core/location.h"
 #include "core/netgame/netgame.h"
-#include "engine/2d/2d.h"
-#include "engine/dosio/dosio.h"
-#include "tests/mocks/core/gameparts.h"
-#include "tests/mocks/core/mockdeformablemodels.h"
-#include "tests/mocks/core/mockkeyframedmodels.h"
-#include "tests/mocks/engine/mockgameclock.h"
-#include "tests/mocks/engine/mockrawinput.h"
-#include "tests/mocks/engine/mockscreendevice.h"
-#include "tests/mocks/platform/mockenvironment.h"
-#include "tests/mocks/platform/mockfilesystem.h"
+#include "core/playerinput.h"
+#include "tests/mocks/core/missionfixture.h"
+#include "tests/mocks/core/testhero.h"
 
 #include <gmock/gmock.h>
 #include <gtest/gtest.h>
 
 #include <cstdint>
+#include <memory>
 #include <optional>
 #include <string>
 #include <type_traits>
@@ -24,7 +21,6 @@
 namespace nocturne::core {
 namespace {
 
-using ::testing::NiceMock;
 using ::testing::Return;
 using ::testing::StrEq;
 using ::testing::ThrowsMessage;
@@ -49,41 +45,32 @@ TEST(CNetGame, PublicInterface) {
     static_assert(std::is_same_v<decltype(&CNetGame::processServerFrame), void (CNetGame::*)()>);
     static_assert(std::is_same_v<decltype(&CNetGame::processClientFrame), void (CNetGame::*)()>);
     static_assert(
-        std::is_same_v<decltype(&CNetGame::getMyControls), SPlayerInput *(CNetGame::*)()>);
+        std::is_same_v<decltype(&CNetGame::getMyControls), SPlayerInput &(CNetGame::*)()>);
 }
 
-class CNetGameTest : public ::testing::Test {
+// The mission's network game, with no network game started.
+class CNetGameTest : public CMissionFixture {
 protected:
-    NiceMock<platform::MockFileSystem> file_system_;
-    NiceMock<platform::MockEnvironment> environment_;
-    NiceMock<engine::MockGameClock> clock_;
-    engine::CDosIo dosio_{file_system_};
-    NiceMock<engine::MockScreenDevice> screen_;
-    NiceMock<engine::MockRawInput> raw_input_;
-    engine::C2d two_d_{dosio_, screen_, raw_input_};
-    CGameParts game_parts_{clock_};
-    common::CWatcomRandom crt_random_;
-    NiceMock<MockDeformableModels> models_;
-    NiceMock<MockKeyFramedModels> keyframed_models_;
-    CActor actor_{game_parts_.getGame(), crt_random_, models_, keyframed_models_};
-    CNetGame net_game_{{.file_system = file_system_,
-                        .environment = environment_,
-                        .clock = clock_,
-                        .two_d = two_d_,
-                        .crt_random = crt_random_,
-                        .actor = actor_}};
-
     // The network clock started with the game clock at the given 16.16 second.
     void startAt(int time) {
-        ON_CALL(clock_, getTime()).WillByDefault(Return(time * kTicksPerUnit));
+        time_ = time * kTicksPerUnit;
         net_game_.init();
     }
 
     void serveFrameAt(int time) {
-        ON_CALL(clock_, getTime()).WillByDefault(Return(time * kTicksPerUnit));
+        time_ = time * kTicksPerUnit;
         net_game_.processServerFrame();
     }
 };
+
+// Without a network game they are the local hero's own.
+TEST_F(CNetGameTest, MyControlsAreTheLocalHeros) {
+    auto placeholder = std::make_unique<CHeroPlaceholder>();
+    placeholder->setLocation({.position = {}, .area_id = 0});
+    mission_.addActorToList(std::move(placeholder));
+    ASSERT_TRUE(mission_.createHeros(std::make_unique<CTestHero>(actor_)));
+    EXPECT_EQ(&net_game_.getMyControls(), &mission_.getLocalHero()->getPlayerInput());
+}
 
 // With no network game every player is there already; the input is dropped all the same.
 TEST_F(CNetGameTest, WithoutANetworkGameSyncingIsDoneAtOnce) {
@@ -117,10 +104,10 @@ TEST_F(CNetGameTest, TheNetworkClockStepsAtMostTwoSecondsAndNeverBack) {
 // Without a network game the frame's seed is the CRT's next draw.
 TEST_F(CNetGameTest, AServerFrameSeedsTheSimStreamFromTheCrt) {
     common::CWatcomRandom expected_crt;
-    CActor expected{game_parts_.getGame(), expected_crt, models_, keyframed_models_};
+    CActor expected{game_, expected_crt, models_, keyframed_models_, events_};
     expected.setRandomSeed(static_cast<std::uint32_t>(expected_crt.rand()));
     net_game_.processServerFrame();
-    game_parts_.getGame().is_processing = 1;
+    game_.is_processing = 1;
     EXPECT_EQ(actor_.getRandomInt(0, 1000000), expected.getRandomInt(0, 1000000));
     EXPECT_EQ(crt_random_.rand(), expected_crt.rand());
 }

@@ -38,8 +38,8 @@ using ::testing::StrEq;
 using ::testing::ThrowsMessage;
 
 // A session on a screen already at 640x480x32 that takes any mode, with a hero for the script to
-// focus on in a set with no cameras to switch to and no network game, which stops at the play
-// loop's hotkeys.
+// focus on in a set with no cameras to switch to and no network game, which stops at the first
+// frame's processing.
 class CGameSessionTest : public CMissionFixture {
 protected:
     CGameSessionTest() {
@@ -63,7 +63,7 @@ protected:
     void play() {
         EXPECT_THAT(
             [this] { static_cast<void>(game_.runGameSession(session_)); },
-            ThrowsMessage<common::CFatalError>(StrEq("CGame::processHotkeys is not ported yet")));
+            ThrowsMessage<common::CFatalError>(StrEq("CGame::processFrame is not ported yet")));
     }
 
     ::testing::NiceMock<engine::MockScreenDevice> &game_screen_ = game_parts_.getScreen();

@@ -69,9 +69,9 @@ void CGame::setGameRes(const SGameSessionOwners &session) {
 //   and CEditorTools::displayMemoryDiagnostics
 // deferred: clearing the camera view, pause, debug, cheat, subtitle, console, render mode,
 //   overlay bitmap, cinematic skip, control block, goggles and flashlight flags, and the modal
-//   dialog, with processHotkeys, processFrame and playerControls
+//   dialog, with processHotkeys, processFrame and CScript::step's allowHeroControls
 // deferred: forgetting each hero's own light, the Baron's state and a helper's death (the decomp's
-//   hero_light, baron and helper_death resets), with CHero, CBaron and playerControls
+//   hero_light, baron and helper_death resets), with CHero, CBaron and the helper's death hold
 // deferred: starting the session's autosave (the decomp's nocturne_autosave_session_start), with
 //   the autosave poll in the play loop
 // deferred: developer mode when VELOCITY is set, with processHotkeys
@@ -88,18 +88,21 @@ void CGame::setGameRes(const SGameSessionOwners &session) {
 // deferred: ending the session when a player gives up syncing, with CNetGame::syncPlayers' waits
 //   and the session's end
 // deferred: the network game's mode set to playing, with CNetGame::initializeNetworkToHost
-// deferred: forgetting the input and centring the cursor, with playerControls
 // deferred: the local hero aiming as the options say, with CStranger::processFrame,
 //   CGabriella::updateAimTracking and CScat::updateAiming
 // deferred: the act not yet complete, with finishAct
 // deferred: the input masked while paused or a modal dialog is up, with processHotkeys and the
 //   pause menu
-// deferred: each frame's hotkeys, autosave poll (the decomp's nocturne_autosave_poll), status
-//   displays, fudge and player controls, with processHotkeys, updateStatusDisplays, processFudge
-//   and playerControls
-// deferred: the virtual director's camera for the script's focus each frame, saving the clock on
-//   a switch, while active, not skipping a cinematic, with no sim frame pending and without
-//   goggles, with processFrame
+// deferred: each frame's hotkeys, with processHotkeys
+// deferred: each frame's autosave poll (the decomp's nocturne_autosave_poll), with the autosave
+// deferred: each frame's message and status display timers, with updateStatusDisplays and
+//   renderOverlay
+// deferred: each frame's nudge of the fudge target, with processFudge and
+//   CMansionPuzzleCircle::process
+// deferred: the director left alone while the game isn't active, a cinematic skips, a sim frame
+//   is pending or the goggles are on, with processHotkeys, processFrame and the goggles
+// deferred: the director made to choose again when the script changed its focus, with
+//   CScript::step's focus commands
 // deferred: the camera held while the goggles are on (the decomp's goggles_camera_hold), with
 //   processHotkeys' goggles
 // deferred: each frame processed, with processFrame
@@ -150,10 +153,15 @@ int CGame::runGameSession(const SGameSessionOwners &session) {
     static_cast<void>(session.net_game.syncPlayers(kSyncLoaded));
     static_cast<void>(session.net_game.syncPlayers(kSyncStarting));
     saveClockTime();
+    resetInputAndCenterCursor(session);
     session.net_game.processServerFrame();
     session.level_loader.cleanup();
     session.keys.toggleInputMask(true);
-    quitNotPorted("CGame", "processHotkeys");
+    playerControls(session);
+    if (session.set.evaluateVirtualDirector(session.script.getFocusActor(), 0) != 0) {
+        saveClockTime();
+    }
+    quitNotPorted("CGame", "processFrame");
 }
 
 // nocedit 0x004e07a0

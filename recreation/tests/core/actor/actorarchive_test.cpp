@@ -16,6 +16,7 @@
 #include "tests/mocks/core/gameparts.h"
 #include "tests/mocks/core/mockactorlookup.h"
 #include "tests/mocks/core/mockdeformablemodels.h"
+#include "tests/mocks/core/mockeventconditions.h"
 #include "tests/mocks/core/mockkeyframedmodels.h"
 #include "tests/mocks/core/testactor.h"
 #include "tests/mocks/engine/mockgameclock.h"
@@ -68,7 +69,8 @@ protected:
     common::CWatcomRandom crt_;
     ::testing::NiceMock<MockDeformableModels> models_;
     ::testing::NiceMock<MockKeyFramedModels> keyframed_models_;
-    CActor classes_{game_, crt_, models_, keyframed_models_};
+    ::testing::NiceMock<MockEventConditions> actor_events_;
+    CActor classes_{game_, crt_, models_, keyframed_models_, actor_events_};
     ::testing::StrictMock<MockActorLookup> actors_;
     const SActorArchiveOwners owners_{
         .actor_classes = classes_, .actors = actors_, .crt_random = crt_};

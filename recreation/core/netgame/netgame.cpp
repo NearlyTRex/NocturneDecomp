@@ -4,6 +4,8 @@
 #include "common/math/fixed.h"
 #include "common/random/watcomrandom.h"
 #include "core/actor/actor.h"
+#include "core/hero/hero.h"
+#include "core/mission/demonmission.h"
 #include "engine/2d/2d.h"
 #include "engine/gameclock.h"
 #include "platform/environment.h"
@@ -77,6 +79,13 @@ int CNetGame::syncPlayers(int sync_stage) {
 void CNetGame::processServerFrame() {
     advanceGameTime();
     owners_.actor.setRandomSeed(static_cast<std::uint32_t>(owners_.crt_random.rand()));
+}
+
+// deferred: a network player's controls, held for the frame it sends, and the error when this
+//   machine isn't in the player list, with CNetGame::addPlayer
+// nocedit 0x005438c0
+SPlayerInput &CNetGame::getMyControls() {
+    return owners_.mission.getLocalHero()->getPlayerInput();
 }
 
 void CNetGame::advanceGameTime() {

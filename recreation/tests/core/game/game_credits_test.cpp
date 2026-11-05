@@ -182,7 +182,9 @@ protected:
                  .three_d = three_d_,
                  .menu_input = menu_input_,
                  .fonts = fonts_,
-                 .sound_main = sound_}};
+                 .sound_main = sound_,
+                 .keys = keys_,
+                 .raw_input = raw_input_}};
     int now_ = 0;
     int step_ = kQuarterSecond;
     int ticks_ = 0;

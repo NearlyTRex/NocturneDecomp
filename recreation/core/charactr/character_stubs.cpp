@@ -100,10 +100,6 @@ void CCharacter::processDamage(SDamageInfo * /*damage_info*/) {
     notPorted("processDamage");
 }
 
-EDeathState CCharacter::getDeathState() {
-    notPorted("getDeathState");
-}
-
 int CCharacter::attractActorToward(CDemonActor * /*actor*/,
                                    common::CVector3f * /*target_local_point*/) {
     notPorted("attractActorToward");

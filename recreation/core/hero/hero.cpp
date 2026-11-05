@@ -171,6 +171,10 @@ const CInventory &CHero::getInventory() const {
     return inventory_;
 }
 
+SPlayerInput &CHero::getPlayerInput() {
+    return player_input_;
+}
+
 EHeroControlType CHero::getControlType() const {
     return control_type_;
 }

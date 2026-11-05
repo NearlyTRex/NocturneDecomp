@@ -24,11 +24,11 @@ functions don't count as done. Sizes are in instructions.
 | 8 | `renderMenuAndGetChoice`, `CMoon::free`, `CSound::reset`, `CEditorTools::showFileSelectionDialog` | 8 | 63 | 5314 | 60 | 3 | 95.2% |
 | 9 | `CPickList::enableItem`, `CEventList::resetGameFlags`, `CLevelLoader::show`, `CDemonMission::load` | 15 | 56 | 3298 | 37 | 9 | 66.0% |
 | 10 | `CDemonMission::createHeros`, `CDemonMission::prepareAllActors`, `CEventList::reset`, `CDemonMission::loadSet` | 15 | 42 | 5112 | 33 | 8 | 78.5% |
-| 11 | `CScript::loadScript` | 63 | 579 | 67400 | 131 | 58 | 22.6% |
+| 11 | `CScript::loadScript` | 63 | 579 | 67400 | 131 | 60 | 22.6% |
 | 12 | `CDemonMission::loadScript`, `CScript::executeInitSection`, `CDemonMission::startMission`, `CDemonMission::buildActiveSetActorList`, `CConsole::reset`, `CEditorTools::displayMemoryDiagnostics`, `CGame::setGameRes`, `CDemonLight::init`, `CDemonSet::initScene` | 12 | 26 | 1658 | 16 | 9 | 61.5% |
 | 13 | `CFireEffect::init`, `CDemonSet::loadMasterLightStates`, `CDemonSet::setGamma`, `CGame::clearOverlay`, `CGame::loadAssets` | 7 | 27 | 735 | 16 | 1 | 59.2% |
 | 14 | `CNetGame::syncPlayers`, `CNetGame::processServerFrame`, `CLevelLoader::cleanup`, `CKeys::toggleInputMask`, `CGame::processHotkeys` | 17 | 51 | 5302 | 5 | 2 | 9.8% |
-| 15 | `CGame::updateStatusDisplays`, `CGame::processFudge`, `CGame::playerControls`, `CGame::processFrame` | 43 | 189 | 28837 | 8 | 0 | 4.2% |
+| 15 | `CGame::updateStatusDisplays`, `CGame::processFudge`, `CGame::playerControls`, `CGame::processFrame` | 43 | 189 | 28837 | 8 | 3 | 4.2% |
 | 16 | `CGame::setScreenResolutionAndDisplayFangs`, `showOptionsScreen`, `CScript::skipCinematic`, `CGame::showFullscreenBitmap`, `CDemonMission::countDamageableEnemies`, `freeInventory`, `CGame::runGameSession`, `CGame::displayActStats` | 10 | 25 | 6938 | 9 | 4 | 36.0% |
 | 17 | `CGame::finishAct`, `CDemonMission::run`, `CGame::loadGame`, `CGame::showChapterSelect`, `showDeveloperToolsMenu` | 12 | 26 | 3707 | 6 | 2 | 23.0% |
 | 18 | `enterMainGameMenu`, `finalizeGameSystems` | 11 | 13 | 539 | 3 | 0 | 23.0% |
@@ -37,16 +37,16 @@ functions don't count as done. Sizes are in instructions.
 | 21 | Not reached from startup: `cockpit/` | 4 | 178 | 11527 | 0 | 0 | 0.0% |
 | 22 | Not reached from startup: `shape/` | 2 | 42 | 3178 | 4 | 2 | 9.5% |
 | 23 | Not reached from startup: `core/` (part 1 of 9) | 18 | 292 | 16011 | 67 | 13 | 22.9% |
-| 24 | Not reached from startup: `core/` (part 2 of 9) | 11 | 277 | 24965 | 35 | 8 | 12.6% |
+| 24 | Not reached from startup: `core/` (part 2 of 9) | 11 | 277 | 24965 | 36 | 8 | 12.9% |
 | 25 | Not reached from startup: `core/` (part 3 of 9) | 24 | 278 | 24134 | 53 | 7 | 19.0% |
 | 26 | Not reached from startup: `core/` (part 4 of 9) | 18 | 300 | 20148 | 52 | 7 | 17.3% |
 | 27 | Not reached from startup: `core/` (part 5 of 9) | 21 | 294 | 20910 | 63 | 11 | 21.4% |
-| 28 | Not reached from startup: `core/` (part 6 of 9) | 18 | 282 | 21809 | 55 | 13 | 19.5% |
+| 28 | Not reached from startup: `core/` (part 6 of 9) | 18 | 282 | 21809 | 56 | 13 | 19.8% |
 | 29 | Not reached from startup: `core/` (part 7 of 9) | 18 | 263 | 22721 | 68 | 10 | 25.8% |
-| 30 | Not reached from startup: `core/` (part 8 of 9) | 20 | 300 | 31826 | 41 | 8 | 13.6% |
+| 30 | Not reached from startup: `core/` (part 8 of 9) | 20 | 300 | 31826 | 42 | 8 | 14.0% |
 | 31 | Not reached from startup: `core/` (part 9 of 9) | 5 | 111 | 10905 | 26 | 7 | 23.4% |
 | 32 | Not reached from startup: `wincore/` | 2 | 11 | 482 | 4 | 0 | 36.3% |
-| | **All** | | **4479** | **402407** | **1192** | **227** | **26.6%** |
+| | **All** | | **4479** | **402407** | **1195** | **232** | **26.6%** |
 
 ## Step 0: Math value types
 
@@ -603,8 +603,6 @@ functions don't count as done. Sizes are in instructions.
   - [x] `saveClockTime` 0x004d7d80 (4)
   - [~] `updateDT` 0x004d7d90 (44)
     - deferred: the fixed thirtieth of a second, scaled, while a debug movie records, with setupMovieRecording
-    - deferred: refusing the draw and flashlight requests in a mission whose name starts "HQ-", before netplay sends the input (the decomp's hq_weapon.h, FLASHLIGHT_DRAW), with CGame::playerControls
-    - deferred: withholding the hero's input while the script camera is on a dead character who is not a player hero (the decomp's helper_death.h nocturne_helper_death_hold_hero), with CGame::playerControls
     - deferred: a session the script ended with "end" closing on the Game Over menu, as a helper's death ends it, where the original drops to the main menu (the decomp's helper_death.h), with CGame::runGameSession
     - deferred: the message line, chapter title and status bars laid out in boxes in the scene's picture at the HUD's text scale, the companions' bars starting right of the battery gauge (the decomp's hud.h, HUD), with CGame::renderOverlay
     - deferred: the death banner a quarter of the way down, clear of the message line and the Game Over dialog (the decomp's hud.h, HUD), with CGame::processFrame
@@ -1440,16 +1438,18 @@ functions don't count as done. Sizes are in instructions.
 - free functions
   - [ ] `getSelectedWeapon` 0x004d7650 (3)
 
-### `core/netgame.cpp` (1 functions, 34 instructions, 0 done, 0 partial)
+### `core/netgame.cpp` (1 functions, 34 instructions, 0 done, 1 partial)
 - class `CNetGame`
-  - [ ] `getMyControls` 0x005438c0 (34)
+  - [~] `getMyControls` 0x005438c0 (34)
+    - deferred: a network player's controls, held for the frame it sends, and the error when this machine isn't in the player list, with CNetGame::addPlayer
 
-### `core/game.cpp` (7 functions, 254 instructions, 0 done, 0 partial)
+### `core/game.cpp` (7 functions, 254 instructions, 0 done, 1 partial)
 - class `CGame`
   - [ ] `slamDT` 0x004e3080 (26)
   - [ ] `fadeIn` 0x004e0b90 (9)
   - [ ] `displayBitmap` 0x004e2890 (39)
-  - [ ] `resetInputAndCenterCursor` 0x004dce70 (34)
+  - [~] `resetInputAndCenterCursor` 0x004dce70 (34)
+    - deferred: leaving the cursor where it is while a modal dialog is up (the decomp's UI_CURSOR_WARP), with the pause menu's network dialogs
   - [ ] `beginFadeIn` 0x004e0920 (117)
   - [ ] `beginFadeOut` 0x004e0960 (16)
 - free functions
@@ -2724,15 +2724,28 @@ functions don't count as done. Sizes are in instructions.
 - free functions
   - [ ] `getTextureCacheStats` 0x005dd970 (7)
 
-### `core/game.cpp` (18 functions, 8127 instructions, 0 done, 0 partial)
+### `core/game.cpp` (18 functions, 8127 instructions, 0 done, 3 partial)
 - class `CGame`
   - [ ] `updateStatusDisplays` 0x004d85a0 (117)
   - [ ] `processFudge` 0x004d8750 (111)
   - [ ] `resetKeyState` 0x004dbe60 (249)
-  - [ ] `processKeyboardControls` 0x004dc3e0 (617)
+  - [~] `processKeyboardControls` 0x004dc3e0 (617)
+    - deferred: no controls while the automap has them (the decomp's AUTOMAP), with the automap
+    - deferred: the weapon, item and ammo keys choosing for the hero, by way of the network game's requests (the decomp's net_weapon.h), with CHero's weapon selection
+    - deferred: the item description key, with CInventory::toggleDetailView
+    - deferred: the infrared key turning the goggles on or off, refused to a dead hero and to an unplaced client, the look reset (the decomp's GOGGLE_LOOK) and the camera chosen again, with CDemonSet::renderGogglesView
+    - unverified: the strafe, turn and look steps, not run against nocedit's own code
   - [ ] `processJoystickControls` 0x004dc230 (16)
-  - [ ] `processMouseControls` 0x004dccc0 (149)
-  - [ ] `playerControls` 0x004dbd80 (73)
+  - [~] `processMouseControls` 0x004dccc0 (149)
+    - unverified: the mouse's turn and look products, not run against nocedit's own code
+  - [~] `playerControls` 0x004dbd80 (73)
+    - deferred: no controls while a modal dialog is up, the input forgotten, with the pause menu's network dialogs
+    - deferred: no controls while the script camera is on a dead character who is not a player hero (the decomp's helper_death.h nocturne_helper_death_hold_hero), with CHero's death
+    - deferred: no controls while paused or while the script has them off, with processHotkeys' pause and CScript::step's allowHeroControls
+    - deferred: the pad's controls, with processJoystickControls
+    - deferred: camera-relative movement (the decomp's movement.h, MENU), with the Control Options page's movement scheme
+    - deferred: noting a frame of play for the pad's menu repeat (the decomp's GAMEPAD), with processJoystickControls
+    - deferred: noting the local input for the network game (the decomp's NETPLAY), with CNetGame::initializeNetworkToHost
   - [ ] `drawScreenBorder` 0x004d7e50 (75)
   - [ ] `renderOverlay` 0x004d8040 (344)
   - [ ] `showCustomizableKeys` 0x004d89d0 (1621)
@@ -2783,7 +2796,7 @@ functions don't count as done. Sizes are in instructions.
   - [~] `configureCustomKeys` 0x00511890 (375)
     - deferred: the gamepad's deadzone, turn and look speeds and look inversion lines, before Calibrate (the decomp's pad_tuning.h), with the gamepad layer
     - deferred: calibrating the gamepad from Calibrate, or on Cancel for one nobody has centred, with calibrateGamepad
-    - deferred: the Movement line after the control type, stepping Tank or Camera and saved as [Control] movement (the decomp's movement.h), with CGame::playerControls
+    - deferred: the Movement line after the control type, stepping Tank or Camera and saved as [Control] movement (the decomp's movement.h), with CGame::playerControls' camera-relative movement
   - [x] `renderAudioSpectrumBar` 0x0050fe70 (116)
   - [x] `configureSoundOptions` 0x00511e50 (1124)
   - [~] `showOptionsScreen` 0x00512d30 (138)
@@ -2808,8 +2821,8 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `showFullscreenBitmap` 0x004e2910 (387)
   - [~] `runGameSession` 0x004daf80 (791)
     - deferred: the console's system memory, swap file and heap lines, with a platform memory report and CEditorTools::displayMemoryDiagnostics
-    - deferred: clearing the camera view, pause, debug, cheat, subtitle, console, render mode, overlay bitmap, cinematic skip, control block, goggles and flashlight flags, and the modal dialog, with processHotkeys, processFrame and playerControls
-    - deferred: forgetting each hero's own light, the Baron's state and a helper's death (the decomp's hero_light, baron and helper_death resets), with CHero, CBaron and playerControls
+    - deferred: clearing the camera view, pause, debug, cheat, subtitle, console, render mode, overlay bitmap, cinematic skip, control block, goggles and flashlight flags, and the modal dialog, with processHotkeys, processFrame and CScript::step's allowHeroControls
+    - deferred: forgetting each hero's own light, the Baron's state and a helper's death (the decomp's hero_light, baron and helper_death resets), with CHero, CBaron and the helper's death hold
     - deferred: starting the session's autosave (the decomp's nocturne_autosave_session_start), with the autosave poll in the play loop
     - deferred: developer mode when VELOCITY is set, with processHotkeys
     - deferred: starting the fire effects, or the master lights' saved states after a load, with CFireEffect::init and CDemonSet::loadMasterLightStates
@@ -2818,12 +2831,15 @@ functions don't count as done. Sizes are in instructions.
     - deferred: the cheats the menu turned on (the decomp's nocturne_cheats_apply), with showCheatsMenu
     - deferred: ending the session when a player gives up syncing, with CNetGame::syncPlayers' waits and the session's end
     - deferred: the network game's mode set to playing, with CNetGame::initializeNetworkToHost
-    - deferred: forgetting the input and centring the cursor, with playerControls
     - deferred: the local hero aiming as the options say, with CStranger::processFrame, CGabriella::updateAimTracking and CScat::updateAiming
     - deferred: the act not yet complete, with finishAct
     - deferred: the input masked while paused or a modal dialog is up, with processHotkeys and the pause menu
-    - deferred: each frame's hotkeys, autosave poll (the decomp's nocturne_autosave_poll), status displays, fudge and player controls, with processHotkeys, updateStatusDisplays, processFudge and playerControls
-    - deferred: the virtual director's camera for the script's focus each frame, saving the clock on a switch, while active, not skipping a cinematic, with no sim frame pending and without goggles, with processFrame
+    - deferred: each frame's hotkeys, with processHotkeys
+    - deferred: each frame's autosave poll (the decomp's nocturne_autosave_poll), with the autosave
+    - deferred: each frame's message and status display timers, with updateStatusDisplays and renderOverlay
+    - deferred: each frame's nudge of the fudge target, with processFudge and CMansionPuzzleCircle::process
+    - deferred: the director left alone while the game isn't active, a cinematic skips, a sim frame is pending or the goggles are on, with processHotkeys, processFrame and the goggles
+    - deferred: the director made to choose again when the script changed its focus, with CScript::step's focus commands
     - deferred: the camera held while the goggles are on (the decomp's goggles_camera_hold), with processHotkeys' goggles
     - deferred: each frame processed, with processFrame
     - deferred: a client leaving a game whose host stopped answering or ended it (the decomp's NETPLAY), with CNetGame::initializeNetworkToJoin
@@ -4055,7 +4071,7 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `getBugState` 0x00427b60 (3)
   - [ ] `swapIntegers` 0x00427b80 (8)
 
-### `core/charactr.cpp` (91 functions, 8559 instructions, 7 done, 3 partial)
+### `core/charactr.cpp` (91 functions, 8559 instructions, 8 done, 3 partial)
 - class `CCharacter`
   - [~] `ctor` 0x00427e20 (125)
     - deferred: the collision points, fires and flames, and the defaults the constructor gives the movement, walking, looking, carrying bones, smoking fields and the layer action fields other than the current action and its time, with the steps that read them
@@ -4102,7 +4118,7 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `attractActorToward` 0x0042c010 (98)
   - [ ] `checkCylinderCollisionWorld` 0x0042c110 (35)
   - [ ] `testDamageLine` 0x0042c180 (193)
-  - [ ] `getDeathState` 0x0042c580 (37)
+  - [x] `getDeathState` 0x0042c580 (37)
   - [ ] `setWalkTarget` 0x0042c920 (46)
   - [ ] `setWalkTargetImmediate` 0x0042c9d0 (12)
   - [ ] `setWalkTimeout` 0x0042ca20 (4)
@@ -5773,7 +5789,7 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `countTrianglesFromPolygons` 0x0052a490 (19)
   - [ ] `addInts` 0x0052cc40 (3)
 
-### `core/motion.cpp` (23 functions, 1941 instructions, 14 done, 0 partial)
+### `core/motion.cpp` (23 functions, 1941 instructions, 15 done, 0 partial)
 - class `CMotionController`
   - [x] `load` 0x0052e5d0 (50)
   - [ ] `save` 0x0052e670 (50)
@@ -5787,7 +5803,7 @@ functions don't count as done. Sizes are in instructions.
   - [x] `findPatchToFrame` 0x0052dc80 (9)
   - [x] `accumulateScaledRootMotion` 0x0052e570 (1)
   - [x] `dtor` 0x0052d5a0 (27)
-  - [ ] `getCurrentStateName` 0x0052dcf0 (14)
+  - [x] `getCurrentStateName` 0x0052dcf0 (14)
   - [ ] `render` 0x0052e700 (155)
   - [ ] `setDesiredStateByName` 0x0052db90 (20)
   - [ ] `getStateBlendWeight` 0x0052dd20 (45)
@@ -6304,7 +6320,7 @@ functions don't count as done. Sizes are in instructions.
 
 ## Step 30: Not reached from startup: `core/` (part 8 of 9)
 
-### `core/stranger.cpp` (57 functions, 13459 instructions, 5 done, 2 partial)
+### `core/stranger.cpp` (57 functions, 13459 instructions, 6 done, 2 partial)
 - class `CStranger`
   - [~] `ctor` 0x005bb120 (207)
     - deferred: naming the gun's model gat.kfm, with the weapon classes
@@ -6348,7 +6364,7 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `drawWeapon` 0x005c6660 (16)
   - [ ] `getGrabbed` 0x005c66a0 (52)
   - [ ] `reset` 0x005c6750 (23)
-  - [ ] `getDeathState` 0x005c67c0 (14)
+  - [x] `getDeathState` 0x005c67c0 (14)
   - [ ] `dropCarriedObject` 0x005c67f0 (27)
   - [ ] `drop` 0x005c6850 (23)
   - [x] `dtor` 0x005c69c0 (31)

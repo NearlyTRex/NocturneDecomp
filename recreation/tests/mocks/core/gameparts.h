@@ -7,10 +7,12 @@
 #include "engine/console/console.h"
 #include "engine/dosio/dosio.h"
 #include "engine/font/font.h"
+#include "engine/keys/inputcodetype.h"
 #include "engine/keys/keys.h"
 #include "engine/light/light.h"
 #include "engine/matrix/matrix.h"
 #include "engine/menuinput.h"
+#include "engine/rawinput.h"
 #include "engine/special/special.h"
 #include "engine/texture/currenttexture.h"
 #include "shape/edittool/editortools.h"
@@ -28,7 +30,11 @@
 
 #include <gmock/gmock.h>
 
+#include <array>
+#include <cstddef>
+#include <cstdint>
 #include <ctime>
+#include <span>
 
 namespace nocturne::core {
 
@@ -38,10 +44,23 @@ class CGameParts {
 public:
     explicit CGameParts(engine::IGameClock &clock) : CGameParts(clock, own_dosio_) {}
     CGameParts(engine::IGameClock &clock, const engine::CDosIo &dosio)
-        : clock_(clock), dosio_(dosio) {}
+        : clock_(clock), dosio_(dosio) {
+        ON_CALL(raw_input_, getKeyboardState()).WillByDefault([this] {
+            return std::span<std::uint8_t, engine::IRawInput::kInputCodeCount>(keyboard_);
+        });
+    }
 
     CGame &getGame() {
         return game_;
+    }
+
+    // The keys and buttons the game reads as held, by input code, and its mouse.
+    void hold(engine::EInputCodeType code, bool held) {
+        keyboard_.at(static_cast<std::size_t>(code)) = held ? 1 : 0;
+    }
+
+    ::testing::NiceMock<engine::MockRawInput> &getRawInput() {
+        return raw_input_;
     }
 
     [[nodiscard]] const engine::CDosIo &getDosIo() const {
@@ -74,6 +93,7 @@ private:
     const engine::CDosIo &dosio_;
     ::testing::NiceMock<engine::MockScreenDevice> screen_;
     ::testing::NiceMock<engine::MockRawInput> raw_input_;
+    std::array<std::uint8_t, engine::IRawInput::kInputCodeCount> keyboard_{};
     engine::C2d two_d_{dosio_, screen_, raw_input_};
     engine::CLight light_;
     engine::CMatrix matrix_{two_d_, light_};
@@ -111,7 +131,9 @@ private:
                  .three_d = three_d_,
                  .menu_input = menu_input_,
                  .fonts = fonts_,
-                 .sound_main = sound_main_}};
+                 .sound_main = sound_main_,
+                 .keys = keys_,
+                 .raw_input = raw_input_}};
 };
 
 } // namespace nocturne::core

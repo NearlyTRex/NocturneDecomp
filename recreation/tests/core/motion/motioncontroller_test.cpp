@@ -48,7 +48,7 @@ TEST(CMotionController, PublicInterface) {
     static_assert(std::is_same_v<decltype(&CMotionController::getMotionList),
                                  const CMotionList *(CMotionController::*)() const>);
     static_assert(std::is_same_v<decltype(&CMotionController::getCurrentStateName),
-                                 char *(CMotionController::*)()>);
+                                 std::string_view (CMotionController::*)() const>);
     static_assert(std::is_same_v<decltype(&CMotionController::getStateBlendWeight),
                                  float (CMotionController::*)(int)>);
     static_assert(std::is_same_v<decltype(&CMotionController::jumpToMotionByName),
@@ -302,6 +302,13 @@ protected:
 TEST_F(CMotionControllerStateTest, TheCurrentMotionComesFromTheList) {
     controller_.jumpToMotion(kRun, 0.0F);
     EXPECT_EQ(&controller_.getCurrentMotion(), &list_.getMotions()[2]);
+}
+
+TEST_F(CMotionControllerStateTest, TheCurrentStateIsTheCurrentMotions) {
+    controller_.jumpToMotion(kRun, 0.0F);
+    EXPECT_EQ(controller_.getCurrentStateName(), "RUN");
+    controller_.jumpToMotion(kWalk, 0.0F);
+    EXPECT_EQ(controller_.getCurrentStateName(), "WALK");
 }
 
 TEST_F(CMotionControllerStateTest, AStateBelowZeroWantsNone) {

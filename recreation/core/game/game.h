@@ -11,13 +11,15 @@
 #include "sound/fwd.h"
 #include "support/fwd.h"
 
+#include <array>
 #include <cstdint>
 #include <string>
 #include <string_view>
 
 namespace nocturne::core {
 
-// What the game times its frames by, and draws and plays its own screens with.
+// What the game times its frames by, draws and plays its own screens with, and reads the player's
+// keys and mouse from.
 struct SGameOwners {
     engine::IGameClock &clock;
     const engine::CDosIo &dosio;
@@ -28,13 +30,15 @@ struct SGameOwners {
     engine::CMenuInput &menu_input;
     const CDFont &fonts;
     sound::CSndMain &sound_main;
+    engine::CKeys &keys;
+    engine::IRawInput &raw_input;
 };
 
 // What a session plays with besides the game's own: the console it reports to, the scene camera,
 // the flashlight, the set it shows, the editor tools whose font follows the screen's size, the
 // version the console names, the fire effects, gore and inventory whose assets it loads, the
 // script whose focus the first camera shows, the network game it syncs and serves frames through,
-// the loading screen it puts away, and the keys it masks.
+// the loading screen it puts away, the keys it masks, and the mission whose local hero it plays.
 struct SGameSessionOwners {
     engine::CConsole &console;
     CDemonCamera &camera;
@@ -49,6 +53,7 @@ struct SGameSessionOwners {
     CNetGame &net_game;
     CLevelLoader &level_loader;
     engine::CKeys &keys;
+    const CDemonMission &mission;
 };
 
 // What chapter select reads the stories' unlock codes from, offers its lists with, and loads the
@@ -81,7 +86,12 @@ public:
     int runGameSession(const SGameSessionOwners &session);
     void restoreDefaultControls();
     void resetKeyState();
-    void resetInputAndCenterCursor();
+    // The local player's controls and the keys' last state forgotten, and the cursor back at the
+    // screen's centre, which mouse look measures from.
+    void resetInputAndCenterCursor(const SGameSessionOwners &session);
+    // The local player's controls for the frame, from the keyboard and the mouse. The play loop is
+    // its one caller in the game; it is public so a frame can follow a frame.
+    void playerControls(const SGameSessionOwners &session);
     void beginFadeIn();
     void beginFadeOut();
     std::uint32_t fadeIn();
@@ -153,6 +163,14 @@ private:
     void setGameRes(const SGameSessionOwners &session);
     // The set's, the fire effects', the gore's and the inventory's textures, models and pictures.
     static void loadAssets(const SGameSessionOwners &session);
+    void processKeyboardControls(const SGameSessionOwners &session, SPlayerInput &input);
+    // The keyboard's controls, then the mouse's movement from the screen's centre, where the
+    // cursor is put back, turning or strafing and looking where it beats the keys.
+    void processMouseControls(const SGameSessionOwners &session, SPlayerInput &input);
+    // Any of its bindings held.
+    [[nodiscard]] bool isActionHeld(EGameAction action) const;
+    // Held now and not on the last frame playerControls read, or the other way round.
+    [[nodiscard]] bool hasActionChanged(EGameAction action) const;
 
     SGameOwners owners_;
     // In the game clock's ticks.
@@ -160,6 +178,10 @@ private:
     int delta_time_int_ = 0;
     float delta_time_float_ = 0.0F;
     std::string current_save_file_;
+    // Each action held as playerControls last read it.
+    std::array<bool, kGameActionCount> previous_held_{};
+    // The camera the mouse was last measured under; a cut drops that frame's mouse look.
+    int stored_camera_index_ = 0;
 };
 
 } // namespace nocturne::core

@@ -37,7 +37,10 @@ TEST(CGame, PublicInterface) {
                                  int (CGame::*)(const SGameSessionOwners &)>);
     static_assert(std::is_same_v<decltype(&CGame::restoreDefaultControls), void (CGame::*)()>);
     static_assert(std::is_same_v<decltype(&CGame::resetKeyState), void (CGame::*)()>);
-    static_assert(std::is_same_v<decltype(&CGame::resetInputAndCenterCursor), void (CGame::*)()>);
+    static_assert(std::is_same_v<decltype(&CGame::resetInputAndCenterCursor),
+                                 void (CGame::*)(const SGameSessionOwners &)>);
+    static_assert(std::is_same_v<decltype(&CGame::playerControls),
+                                 void (CGame::*)(const SGameSessionOwners &)>);
     static_assert(std::is_same_v<decltype(&CGame::beginFadeIn), void (CGame::*)()>);
     static_assert(std::is_same_v<decltype(&CGame::beginFadeOut), void (CGame::*)()>);
     static_assert(std::is_same_v<decltype(&CGame::fadeIn), std::uint32_t (CGame::*)()>);

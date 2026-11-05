@@ -214,7 +214,9 @@ private:
                        .three_d = three_d_,
                        .menu_input = menu_input_,
                        .fonts = fonts_,
-                       .sound_main = sound_main_}};
+                       .sound_main = sound_main_,
+                       .keys = keys_,
+                       .raw_input = winrun_}};
     engine::CIni ini_{file_system_};
     core::SIniDataOwners ini_owners_{.game = game_,
                                      .sound_main = sound_main_,
@@ -247,7 +249,8 @@ private:
                               .clock = winrun_,
                               .two_d = two_d_,
                               .crt_random = crt_random_,
-                              .actor = actor_}};
+                              .actor = actor_,
+                              .mission = mission_}};
     wincore::SMovieOwners movie_owners_{.file_system = file_system_,
                                         .movies = movies_,
                                         .window = window_,
@@ -276,7 +279,7 @@ private:
     nocturne::common::CWatcomRandom crt_random_;
     core::CDeformableModelManager deformable_models_{dosio_, demon_renderer_};
     core::CKeyFramedModelManager keyframed_models_{dosio_, demon_renderer_};
-    core::CActor actor_{game_, crt_random_, deformable_models_, keyframed_models_};
+    core::CActor actor_{game_, crt_random_, deformable_models_, keyframed_models_, events_};
     core::SCameraTables camera_tables_;
     core::SLightGlowTextures light_glow_;
     core::SDemonLightOwners light_owners_{.camera = {.tables = camera_tables_,
@@ -412,7 +415,8 @@ private:
                                              .inventory_assets = inventory_assets_,
                                              .net_game = net_game_,
                                              .level_loader = level_loader_,
-                                             .keys = keys_};
+                                             .keys = keys_,
+                                             .mission = mission_};
     core::SChapterSelectOwners chapter_select_owners_{.messages = messages_,
                                                       .editor_tools = editor_tools_,
                                                       .pick_list = pick_list_owners_,

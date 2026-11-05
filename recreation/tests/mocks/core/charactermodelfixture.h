@@ -4,6 +4,7 @@
 #include "core/actor/actor.h"
 #include "tests/mocks/core/deformablemodelfixture.h"
 #include "tests/mocks/core/gameparts.h"
+#include "tests/mocks/core/mockeventconditions.h"
 #include "tests/mocks/core/mockkeyframedmodels.h"
 #include "tests/mocks/engine/mockgameclock.h"
 
@@ -45,22 +46,26 @@ protected:
                 ++bone_count;
             }
         }
+        // State 0 is S; each motion after it is in a state of its own name.
         std::string motion_lines;
+        std::string state_lines = "S\n";
         int motion_count = 0;
         for (const std::string_view motion : motions) {
             if (motion != missing) {
-                motion_lines += std::format(
-                    "// m\n\"{}\",30,0,0,1\n// exit\n1,0,0\n// cmd\n1,0,0\n// back\n0,0\n"
-                    "// transitions\n0\n// signals\n0\n// markers\n0\n",
-                    motion);
                 ++motion_count;
+                motion_lines += std::format(
+                    "// m\n\"{}\",30,{},0,1\n// exit\n1,0,0\n// cmd\n1,0,0\n// back\n0,0\n"
+                    "// transitions\n0\n// signals\n0\n// markers\n0\n",
+                    motion, motion_count);
+                state_lines += std::format("{}\n", motion);
             }
         }
         givenFile("data\\CHAR.SKL",
                   std::format("// v\n3\n// counts\n{},1\n// bones\n{}// angles\n{}// roots\n0,0,0\n"
-                              "// canceled\n0,0,0\n// motion list version\n2\n// states\n1\nS\n"
+                              "// canceled\n0,0,0\n// motion list version\n2\n// states\n{}\n{}"
                               "// motions\n{}\n{}// origins\n{}",
-                              bone_count, bone_lines, angles, motion_count, motion_lines, origins));
+                              bone_count, bone_lines, angles, motion_count + 1, state_lines,
+                              motion_count, motion_lines, origins));
         std::string part_lines;
         int part_count = 0;
         for (const std::string_view part : parts) {
@@ -93,7 +98,8 @@ protected:
     CGameParts game_parts_{clock_, dosio_};
     common::CWatcomRandom crt_;
     ::testing::NiceMock<MockKeyFramedModels> keyframed_models_;
-    CActor classes_{game_parts_.getGame(), crt_, models_, keyframed_models_};
+    ::testing::NiceMock<MockEventConditions> actor_events_;
+    CActor classes_{game_parts_.getGame(), crt_, models_, keyframed_models_, actor_events_};
 };
 
 } // namespace nocturne::core

@@ -6,13 +6,18 @@
 #include "core/actor/demonactor.h"
 #include "core/actor/demonactortype.h"
 #include "core/charactr/character.h"
+#include "core/charactr/deathstate.h"
 #include "core/charactr/healthbarmode.h"
 #include "core/cloth/clothlist.h"
 #include "core/game/game.h"
+#include "core/npc/npc.h"
+#include "core/skeleton/deformablemodelinstance.h"
 #include "tests/mocks/core/actorrenderfixture.h"
+#include "tests/mocks/core/charactermodelfixture.h"
 #include "tests/mocks/core/gameparts.h"
 #include "tests/mocks/core/mockactorlookup.h"
 #include "tests/mocks/core/mockdeformablemodels.h"
+#include "tests/mocks/core/mockeventconditions.h"
 #include "tests/mocks/core/mockkeyframedmodels.h"
 #include "tests/mocks/core/notportedcalls.h"
 #include "tests/mocks/core/testactor.h"
@@ -22,6 +27,7 @@
 #include <gmock/gmock.h>
 #include <gtest/gtest.h>
 
+#include <array>
 #include <format>
 #include <string>
 #include <string_view>
@@ -266,7 +272,8 @@ protected:
     common::CWatcomRandom crt_;
     ::testing::NiceMock<MockDeformableModels> models_;
     ::testing::NiceMock<MockKeyFramedModels> keyframed_models_;
-    CActor classes_{game_, crt_, models_, keyframed_models_};
+    ::testing::NiceMock<MockEventConditions> actor_events_;
+    CActor classes_{game_, crt_, models_, keyframed_models_, actor_events_};
     ::testing::NiceMock<MockActorLookup> actors_;
     CTestCharacter character_{classes_};
     CCarriable crate_{kTestBaseType};
@@ -387,7 +394,6 @@ TEST(CCharacter, TheFunctionsNotPortedYetQuit) {
         {"testDamageLine",
          [&] { static_cast<void>(character.testDamageLine(nullptr, nullptr, nullptr, nullptr)); }},
         {"processDamage", [&] { character.processDamage(nullptr); }},
-        {"getDeathState", [&] { static_cast<void>(character.getDeathState()); }},
         {"attractActorToward",
          [&] { static_cast<void>(character.attractActorToward(nullptr, nullptr)); }},
         {"canBeAttracted", [&] { static_cast<void>(character.canBeAttracted(nullptr)); }},
@@ -403,8 +409,43 @@ TEST(CCharacter, TheFunctionsNotPortedYetQuit) {
         {"setWalkTimeout", [&] { character.setWalkTimeout(0.0F); }},
         {"isWalkComplete", [&] { static_cast<void>(character.isWalkComplete()); }},
     };
-    EXPECT_EQ(calls.size(), 33U);
+    EXPECT_EQ(calls.size(), 32U);
     expectEachQuitsNotPorted("CCharacter", calls);
+}
+
+// A character's motions, one state each, with a dying one, a dead one and their look-alikes.
+class CCharacterDeathStateTest : public CCharacterModelFixture {
+protected:
+    static constexpr auto kMotions =
+        std::to_array<std::string_view>({"stand", "die_front", "Dead", "deadly", "undie"});
+
+    static constexpr std::array<std::string_view, 1> kHead = {"Bip01 Head"};
+
+    CCharacterDeathStateTest() {
+        givenCharacterModel("priest.dfm", kHead, kOnePart, "", kMotions);
+        character_.setup();
+    }
+
+    EDeathState deathStateIn(int motion_index) {
+        character_.getModel().jumpToMotion(motion_index, 0.0F);
+        return character_.getDeathState();
+    }
+
+    CNPC character_{classes_};
+};
+
+// A state starting DIE is dying, and only DEAD itself is dead, in either case.
+TEST_F(CCharacterDeathStateTest, TheMotionsStateSaysHowFarThroughDyingItIs) {
+    EXPECT_EQ(deathStateIn(0), EDeathState::DEATH_STATE_ALIVE);
+    EXPECT_EQ(deathStateIn(1), EDeathState::DEATH_STATE_DYING);
+    EXPECT_EQ(deathStateIn(2), EDeathState::DEATH_STATE_DEAD);
+    EXPECT_EQ(deathStateIn(3), EDeathState::DEATH_STATE_ALIVE);
+    EXPECT_EQ(deathStateIn(4), EDeathState::DEATH_STATE_ALIVE);
+}
+
+TEST_F(CCharacterDeathStateTest, ADestroyedCharacterIsDeadWhateverItsMotion) {
+    character_.setLifecycleState(EActorLifecycleState::kDestroyed);
+    EXPECT_EQ(deathStateIn(0), EDeathState::DEATH_STATE_DEAD);
 }
 
 // A character with a unit box from its place, which the test can mark as drawn into the backdrop.

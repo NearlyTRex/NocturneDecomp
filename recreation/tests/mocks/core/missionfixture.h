@@ -66,7 +66,7 @@ protected:
     common::CWatcomRandom crt_random_;
     ::testing::NiceMock<MockDeformableModels> models_;
     ::testing::NiceMock<MockKeyFramedModels> keyframed_models_;
-    CActor actor_{game_, crt_random_, models_, keyframed_models_};
+    CActor actor_{game_, crt_random_, models_, keyframed_models_, events_};
     engine::CTexture textures_{{.dosio = dosio_,
                                 .two_d = two_d_,
                                 .screen = screen_,
@@ -135,7 +135,8 @@ protected:
                         .clock = game_clock_,
                         .two_d = two_d_,
                         .crt_random = crt_random_,
-                        .actor = actor_}};
+                        .actor = actor_,
+                        .mission = mission_}};
     SGameSessionOwners session_{.console = console_,
                                 .camera = *set_parts_.camera,
                                 .flashlight = *set_parts_.flashlight,
@@ -148,7 +149,8 @@ protected:
                                 .inventory_assets = inventory_assets_,
                                 .net_game = net_game_,
                                 .level_loader = level_loader_,
-                                .keys = keys_};
+                                .keys = keys_,
+                                .mission = mission_};
 
     // Every texture and picture the session loads on disk, 32 by 32, and every model it finds
     // the one model.

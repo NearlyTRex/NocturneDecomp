@@ -13,7 +13,7 @@
 namespace nocturne::core {
 
 // What a network game names its player after, times itself by, clears the input with while the
-// players sync, and seeds the game's sim stream from.
+// players sync, seeds the game's sim stream from, and finds the local hero's controls in.
 struct SNetGameOwners {
     platform::IFileSystem &file_system;
     platform::IEnvironment &environment;
@@ -21,6 +21,7 @@ struct SNetGameOwners {
     engine::C2d &two_d;
     common::CWatcomRandom &crt_random;
     CActor &actor;
+    const CDemonMission &mission;
 };
 
 // A two-player network game over UDP, kept in lockstep: the host hands out each frame's seed,
@@ -46,7 +47,8 @@ public:
     // Advances the network clock and seeds the coming frame's sim stream.
     void processServerFrame();
     void processClientFrame();
-    SPlayerInput *getMyControls();
+    // This machine's player's controls, which its hero acts on.
+    SPlayerInput &getMyControls();
 
     [[nodiscard]] EConnectionType getConnectionType() const;
     [[nodiscard]] ENetworkMode getNetworkMode() const;

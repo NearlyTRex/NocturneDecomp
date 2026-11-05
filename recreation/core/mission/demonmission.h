@@ -122,6 +122,8 @@ public:
     [[nodiscard]] int getHeroCount() const;
     // The hero of that number, the first being 0; null when it hasn't been made.
     [[nodiscard]] CHero *getHero(std::size_t index) const;
+    // The hero this machine plays; null when it hasn't been made.
+    [[nodiscard]] CHero *getLocalHero() const;
     // The sets the mission file names, the first being 0.
     [[nodiscard]] std::span<const std::string> getSetNames() const;
     // The set loaded, or -1 when none is since the mission was read.

@@ -33,6 +33,7 @@
 #include "tests/mocks/core/gameparts.h"
 #include "tests/mocks/core/menufontfiles.h"
 #include "tests/mocks/core/mockdeformablemodels.h"
+#include "tests/mocks/core/mockeventconditions.h"
 #include "tests/mocks/core/mockkeyframedmodels.h"
 #include "tests/mocks/core/setparts.h"
 #include "tests/mocks/engine/fontsheet.h"
@@ -231,7 +232,8 @@ protected:
     common::CWatcomRandom crt_random_;
     ::testing::NiceMock<MockDeformableModels> models_;
     ::testing::NiceMock<MockKeyFramedModels> keyframed_models_;
-    CActor actor_{game_, crt_random_, models_, keyframed_models_};
+    ::testing::NiceMock<MockEventConditions> actor_events_;
+    CActor actor_{game_, crt_random_, models_, keyframed_models_, actor_events_};
     engine::CMenuInput menu_input_{keys_};
     engine::CPod pod_{file_system_, dosio_};
     CSound game_sound_{sound_, pod_, file_system_};

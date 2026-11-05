@@ -228,7 +228,7 @@ enum class EChapterSelectMode : std::uint8_t;
 enum class ECollisionType : std::uint8_t;
 enum class EConnectionType : std::uint8_t;
 enum class EControlMode : std::uint8_t;
-enum class EDeathState : std::int32_t;
+enum class EDeathState : std::uint8_t;
 enum class EDoorOpenSides : std::uint8_t;
 enum class EDoorSide : std::uint8_t;
 enum class EDoorState : std::uint8_t;

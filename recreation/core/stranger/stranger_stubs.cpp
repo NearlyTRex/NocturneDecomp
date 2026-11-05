@@ -44,10 +44,6 @@ void CStranger::processDamage(SDamageInfo * /*damage_info*/) {
     notPorted("processDamage");
 }
 
-EDeathState CStranger::getDeathState() {
-    notPorted("getDeathState");
-}
-
 void CStranger::dropCarriedObject(int /*hand_index*/, common::CVector3f * /*drop_direction*/) {
     notPorted("dropCarriedObject");
 }

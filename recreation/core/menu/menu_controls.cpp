@@ -51,7 +51,8 @@ int toSliderOffset(int sensitivity, int span) {
 // deferred: calibrating the gamepad from Calibrate, or on Cancel for one nobody has centred,
 //   with calibrateGamepad
 // deferred: the Movement line after the control type, stepping Tank or Camera and saved as
-//   [Control] movement (the decomp's movement.h), with CGame::playerControls
+//   [Control] movement (the decomp's movement.h), with CGame::playerControls' camera-relative
+//   movement
 // nocedit 0x00511890
 void CMenu::configureCustomKeys() {
     owners_.game.saveClockTime();
