@@ -27,7 +27,7 @@ functions don't count as done. Sizes are in instructions.
 | 11 | `CScript::loadScript` | 63 | 579 | 67400 | 131 | 58 | 22.6% |
 | 12 | `CDemonMission::loadScript`, `CScript::executeInitSection`, `CDemonMission::startMission`, `CDemonMission::buildActiveSetActorList`, `CConsole::reset`, `CEditorTools::displayMemoryDiagnostics`, `CGame::setGameRes`, `CDemonLight::init`, `CDemonSet::initScene` | 12 | 26 | 1658 | 16 | 9 | 61.5% |
 | 13 | `CFireEffect::init`, `CDemonSet::loadMasterLightStates`, `CDemonSet::setGamma`, `CGame::clearOverlay`, `CGame::loadAssets` | 7 | 27 | 735 | 16 | 1 | 59.2% |
-| 14 | `CNetGame::syncPlayers`, `CNetGame::processServerFrame`, `CLevelLoader::cleanup`, `CKeys::toggleInputMask`, `CGame::processHotkeys` | 17 | 51 | 5302 | 4 | 0 | 7.8% |
+| 14 | `CNetGame::syncPlayers`, `CNetGame::processServerFrame`, `CLevelLoader::cleanup`, `CKeys::toggleInputMask`, `CGame::processHotkeys` | 17 | 51 | 5302 | 5 | 2 | 9.8% |
 | 15 | `CGame::updateStatusDisplays`, `CGame::processFudge`, `CGame::playerControls`, `CGame::processFrame` | 43 | 189 | 28837 | 8 | 0 | 4.2% |
 | 16 | `CGame::setScreenResolutionAndDisplayFangs`, `showOptionsScreen`, `CScript::skipCinematic`, `CGame::showFullscreenBitmap`, `CDemonMission::countDamageableEnemies`, `freeInventory`, `CGame::runGameSession`, `CGame::displayActStats` | 10 | 25 | 6938 | 9 | 4 | 36.0% |
 | 17 | `CGame::finishAct`, `CDemonMission::run`, `CGame::loadGame`, `CGame::showChapterSelect`, `showDeveloperToolsMenu` | 12 | 26 | 3707 | 6 | 2 | 23.0% |
@@ -46,7 +46,7 @@ functions don't count as done. Sizes are in instructions.
 | 30 | Not reached from startup: `core/` (part 8 of 9) | 20 | 300 | 31826 | 41 | 8 | 13.6% |
 | 31 | Not reached from startup: `core/` (part 9 of 9) | 5 | 111 | 10905 | 26 | 7 | 23.4% |
 | 32 | Not reached from startup: `wincore/` | 2 | 11 | 482 | 4 | 0 | 36.3% |
-| | **All** | | **4479** | **402407** | **1191** | **225** | **26.5%** |
+| | **All** | | **4479** | **402407** | **1192** | **227** | **26.6%** |
 
 ## Step 0: Math value types
 
@@ -2287,16 +2287,20 @@ functions don't count as done. Sizes are in instructions.
 
 ## Step 14: `CNetGame::syncPlayers`, `CNetGame::processServerFrame`, `CLevelLoader::cleanup`, `CKeys::toggleInputMask`, `CGame::processHotkeys`
 
-### `core/netgame.cpp` (4 functions, 851 instructions, 0 done, 0 partial)
+### `core/netgame.cpp` (4 functions, 851 instructions, 0 done, 2 partial)
 - class `CNetGame`
   - [ ] `updatePing` 0x00541c80 (139)
-  - [ ] `syncPlayers` 0x005401e0 (258)
+  - [~] `syncPlayers` 0x005401e0 (258)
+    - deferred: the host's wait for every player to report the stage, listing who it waits on and asking them again every tenth of a second, given up with Escape, with CNetGame::initializeNetworkToHost
+    - deferred: the client's wait for the host's code for the stage, up to stage 3, given up with Escape, with CNetGame::initializeNetworkToJoin
   - [ ] `applySimFrameHistory` 0x00543800 (83)
-  - [ ] `processServerFrame` 0x00543150 (371)
+  - [~] `processServerFrame` 0x00543150 (371)
+    - deferred: the host's frame: pinging and hearing from the players, dropping one who stopped answering, trimming the sim history to the slowest player, recording this frame's seed, time step and inputs, and sending each client up to five frames it lacks, with CNetGame::initializeNetworkToHost
+    - deferred: keeping the seed for the sim frame to start from, with CGame::process
 
-### `core/level.cpp` (1 functions, 13 instructions, 0 done, 0 partial)
+### `core/level.cpp` (1 functions, 13 instructions, 1 done, 0 partial)
 - class `CLevelLoader`
-  - [ ] `cleanup` 0x00504720 (13)
+  - [x] `cleanup` 0x00504720 (13)
 
 ### `engine/keys.cpp` (1 functions, 8 instructions, 1 done, 0 partial)
 - class `CKeys`
@@ -2812,8 +2816,28 @@ functions don't count as done. Sizes are in instructions.
     - deferred: clearing the overlay's status lines and message timer, with clearOverlay and updateStatusDisplays
     - deferred: opening the iris on the focus actor, with beginFadeIn and renderIrisFade
     - deferred: the cheats the menu turned on (the decomp's nocturne_cheats_apply), with showCheatsMenu
-    - deferred: waiting for every player and starting the server's frames, with CNetGame::syncPlayers and processServerFrame
-    - deferred: saving the clock, centring the input, freeing the loading screen, the hero's aim mode and the act not yet complete, then the play loop, with the play loop
+    - deferred: ending the session when a player gives up syncing, with CNetGame::syncPlayers' waits and the session's end
+    - deferred: the network game's mode set to playing, with CNetGame::initializeNetworkToHost
+    - deferred: forgetting the input and centring the cursor, with playerControls
+    - deferred: the local hero aiming as the options say, with CStranger::processFrame, CGabriella::updateAimTracking and CScat::updateAiming
+    - deferred: the act not yet complete, with finishAct
+    - deferred: the input masked while paused or a modal dialog is up, with processHotkeys and the pause menu
+    - deferred: each frame's hotkeys, autosave poll (the decomp's nocturne_autosave_poll), status displays, fudge and player controls, with processHotkeys, updateStatusDisplays, processFudge and playerControls
+    - deferred: the virtual director's camera for the script's focus each frame, saving the clock on a switch, while active, not skipping a cinematic, with no sim frame pending and without goggles, with processFrame
+    - deferred: the camera held while the goggles are on (the decomp's goggles_camera_hold), with processHotkeys' goggles
+    - deferred: each frame processed, with processFrame
+    - deferred: a client leaving a game whose host stopped answering or ended it (the decomp's NETPLAY), with CNetGame::initializeNetworkToJoin
+    - deferred: the pause menu on Escape: Return, Options (redrawing the scene after, the decomp's OPTIONS_RESUMES_GAME, with its menu font), Load game, Save game, Warps (the decomp's CHEAT_MENU), Quit with a confirm, and Skip cinematic in a letterboxed cinematic, the sound stopped while it shows, with showOptionsScreen, promptLoadGame, saveGame and skipCinematic
+    - deferred: Escape closing the automap first, and ignored while the hero dies (the decomp's AUTOMAP and DEATH_FADE_SKIP), with the automap and getDeathState
+    - deferred: the host's abort and the client's leave dialogs, with respawn and skip votes (the decomp's NETPLAY), with CNetGame::initializeNetworkToHost and initializeNetworkToJoin
+    - deferred: each frame presented and counted, or only the window's messages while a cinematic skips or a sim frame is pending, with processFrame
+    - deferred: the camera shown again when the window has its focus back, keeping the director's previous best camera (the decomp's WINDOWS), with processFrame
+    - deferred: a dead hero's wait: Enter, or four seconds then the fade out, ends the session, and a dead or unplaced client watching the host's hero (the decomp's NETPLAY), with getDeathState and fadeIn
+    - deferred: the session ending when the script ends the mission, a network mission is pending or a chapter reload is asked, with CScript::step's end and showFullscreenBitmap
+    - deferred: the fullscreen bitmap and its wait for a key, with showFullscreenBitmap
+    - deferred: the sound started after the first frame, with CSound::init
+    - deferred: the Game Over menu after a death, with Load game and Quit, and the host's disconnect, with promptLoadGame
+    - deferred: the session's end: the damageable enemies counted, the input unmasked, the sound stopped, the menu's resolution and fangs back, the key presses, lights, time scale, pick list and inventory cleared, and 1 returned when the mission ended, with countDamageableEnemies, setScreenResolutionAndDisplayFangs, CDemonSet::clearLights and freeInventory
   - [ ] `displayActStats` 0x004e3800 (272)
 
 ## Step 17: `CGame::finishAct`, `CDemonMission::run`, `CGame::loadGame`, `CGame::showChapterSelect`, `showDeveloperToolsMenu`

@@ -12,7 +12,7 @@
 
 namespace nocturne::core {
 
-// What the loading screen loads from and draws with.
+// What the loading screen loads from, draws with, and reports its update count to.
 struct SLevelLoaderOwners {
     const engine::CDosIo &dosio;
     engine::IScreenDevice &screen;
@@ -23,6 +23,7 @@ struct SLevelLoaderOwners {
     CDemonSet &set;
     const CDFont &fonts;
     common::CWatcomRandom &crt_random;
+    engine::CConsole &console;
 };
 
 // The loading screen: the moon, lit by a light that swings round it as loading goes on, behind
@@ -43,6 +44,7 @@ public:
     void show(int total_frames, bool use_custom_viewport, int image_variant) override;
     // Without a window the step's text is centred in a black box near the bottom.
     void update(std::string_view text, bool clear_screen) override;
+    // Stops the screen drawing and frees the moon, telling the console how many updates it had.
     void cleanup();
 
 private:

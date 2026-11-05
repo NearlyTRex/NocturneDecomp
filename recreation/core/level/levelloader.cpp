@@ -3,12 +3,14 @@
 #include "common/random/watcomrandom.h"
 #include "core/frontend.h"
 #include "engine/alphabit/alphabitmap.h"
+#include "engine/console/console.h"
 #include "engine/drender/demonrenderer.h"
 #include "engine/screendevice.h"
 #include "engine/special/special.h"
 
 #include <array>
 #include <cstddef>
+#include <format>
 #include <utility>
 
 namespace nocturne::core {
@@ -74,6 +76,13 @@ void CLevelLoader::show(int total_frames, bool use_custom_viewport, int image_va
     viewport_width_ = kPictureWindowSize;
     viewport_height_ = kPictureWindowSize;
     color_ = picture.color;
+}
+
+// nocedit 0x00504720
+void CLevelLoader::cleanup() {
+    enabled_ = false;
+    owners_.console.printf(std::format("gLevelIndicator: Used {} calls\n", current_frame_));
+    moon_.free();
 }
 
 } // namespace nocturne::core

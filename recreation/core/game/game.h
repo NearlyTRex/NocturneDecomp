@@ -32,8 +32,9 @@ struct SGameOwners {
 
 // What a session plays with besides the game's own: the console it reports to, the scene camera,
 // the flashlight, the set it shows, the editor tools whose font follows the screen's size, the
-// version the console names, the fire effects, gore and inventory whose assets it loads, and the
-// script whose focus the first camera shows.
+// version the console names, the fire effects, gore and inventory whose assets it loads, the
+// script whose focus the first camera shows, the network game it syncs and serves frames through,
+// the loading screen it puts away, and the keys it masks.
 struct SGameSessionOwners {
     engine::CConsole &console;
     CDemonCamera &camera;
@@ -45,6 +46,9 @@ struct SGameSessionOwners {
     CFireEffect &fire;
     CGore &gore;
     CInventoryAssets &inventory_assets;
+    CNetGame &net_game;
+    CLevelLoader &level_loader;
+    engine::CKeys &keys;
 };
 
 // What chapter select reads the stories' unlock codes from, offers its lists with, and loads the

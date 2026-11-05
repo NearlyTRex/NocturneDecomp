@@ -3,6 +3,7 @@
 #include "core/dfont/dfont.h"
 #include "core/level/levelloader.h"
 #include "engine/2d/2d.h"
+#include "engine/console/console.h"
 #include "engine/font/bitfont.h"
 #include "engine/font/font.h"
 #include "engine/keys/keys.h"
@@ -159,6 +160,7 @@ protected:
     NiceMock<platform::MockOsFontFactory> os_fonts_;
     support::CNewMsg messages_{dosio_};
     CDFont fonts_{dosio_, screen_, two_d_, three_d_, colors_, os_fonts_, messages_, editor_tools_};
+    engine::CConsole console_{file_system_, 80, 50, 0, 0};
     CLevelLoader loader_{{.dosio = dosio_,
                           .screen = screen_,
                           .special = special_,
@@ -167,8 +169,21 @@ protected:
                           .renderer = demon_renderer_,
                           .set = set_,
                           .fonts = fonts_,
-                          .crt_random = crt_random_}};
+                          .crt_random = crt_random_,
+                          .console = console_}};
 };
+
+TEST_F(CLevelLoaderTest, CleanupStopsTheScreenAndReportsItsUpdates) {
+    loader_.show(4, false, 99);
+    loader_.update("", false);
+    loader_.update("", false);
+    moons_.clear();
+    loader_.cleanup();
+    EXPECT_EQ(console_.getRow(0), "gLevelIndicator: Used 2 calls");
+    EXPECT_CALL(screen_, swapBuffers()).Times(0);
+    loader_.update("", false);
+    EXPECT_TRUE(moons_.empty());
+}
 
 TEST_F(CLevelLoaderTest, NothingIsDrawnBeforeItIsShown) {
     EXPECT_CALL(screen_, swapBuffers()).Times(0);

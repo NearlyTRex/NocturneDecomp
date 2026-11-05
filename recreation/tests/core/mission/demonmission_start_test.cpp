@@ -167,12 +167,12 @@ protected:
     }
 
     // Runs the mission, which, with no script started to give the cameras a focus, shows the first
-    // camera and stops at the play loop.
+    // camera and stops at the play loop's hotkeys.
     void run() {
         givenSessionAssets();
-        EXPECT_THAT([this] { mission_.run(game_, session_); },
-                    ThrowsMessage<common::CFatalError>(
-                        StrEq("CGame::runGameSession's play loop is not ported yet")));
+        EXPECT_THAT(
+            [this] { mission_.run(game_, session_); },
+            ThrowsMessage<common::CFatalError>(StrEq("CGame::processHotkeys is not ported yet")));
         EXPECT_EQ(set_.getSelectedCameraIndex(), 0);
     }
 };

@@ -12,6 +12,7 @@
 #include "core/inv/inventoryassets.h"
 #include "core/level/levelloader.h"
 #include "core/mission/demonmission.h"
+#include "core/netgame/netgame.h"
 #include "core/script/script.h"
 #include "core/set/demonset.h"
 #include "core/sound/sound.h"
@@ -32,6 +33,7 @@
 #include "tests/mocks/core/mockkeyframedmodels.h"
 #include "tests/mocks/core/setparts.h"
 #include "tests/mocks/platform/mockaudiodevice.h"
+#include "tests/mocks/platform/mockenvironment.h"
 #include "tests/mocks/platform/mockosfontfactory.h"
 #include "tests/mocks/shape/picklistfixture.h"
 
@@ -48,7 +50,8 @@
 namespace nocturne::core {
 
 // A mission over the pick list fixture, with the actor classes ported so far, a loading screen
-// that hasn't been shown, files on disk under world, and the script and events it starts.
+// that hasn't been shown, files on disk under world, the script and events it starts, and no
+// network game.
 class CMissionFixture : public shape::CPickListFixture {
 protected:
     // The game's screen is as tall as the one the set draws on, so the scene camera's frame fits
@@ -89,7 +92,8 @@ protected:
                                 .renderer = demon_renderer_,
                                 .set = set_,
                                 .fonts = fonts_,
-                                .crt_random = crt_random_}};
+                                .crt_random = crt_random_,
+                                .console = console_}};
     shape::SPickListOwners pick_list_owners_{.controls = controls_,
                                              .keys = keys_,
                                              .menu_input = menu_input_,
@@ -125,6 +129,13 @@ protected:
     CGore gore_{demon_renderer_};
     CInventoryAssets inventory_assets_{
         {.dosio = dosio_, .screen = screen_, .special = special_, .game = game_}};
+    ::testing::NiceMock<platform::MockEnvironment> environment_;
+    CNetGame net_game_{{.file_system = file_system_,
+                        .environment = environment_,
+                        .clock = game_clock_,
+                        .two_d = two_d_,
+                        .crt_random = crt_random_,
+                        .actor = actor_}};
     SGameSessionOwners session_{.console = console_,
                                 .camera = *set_parts_.camera,
                                 .flashlight = *set_parts_.flashlight,
@@ -134,7 +145,10 @@ protected:
                                 .build_version = "1.2.3 (test)",
                                 .fire = fire_,
                                 .gore = gore_,
-                                .inventory_assets = inventory_assets_};
+                                .inventory_assets = inventory_assets_,
+                                .net_game = net_game_,
+                                .level_loader = level_loader_,
+                                .keys = keys_};
 
     // Every texture and picture the session loads on disk, 32 by 32, and every model it finds
     // the one model.

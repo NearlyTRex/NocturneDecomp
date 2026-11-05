@@ -242,7 +242,12 @@ private:
     // deferred: the receive packet's header, size 0x405 and PACKET_NONE, with
     //   CNetGame::receivePackets
     // nocedit 0x0053f310
-    core::CNetGame net_game_{file_system_, environment_, winrun_};
+    core::CNetGame net_game_{{.file_system = file_system_,
+                              .environment = environment_,
+                              .clock = winrun_,
+                              .two_d = two_d_,
+                              .crt_random = crt_random_,
+                              .actor = actor_}};
     wincore::SMovieOwners movie_owners_{.file_system = file_system_,
                                         .movies = movies_,
                                         .window = window_,
@@ -362,7 +367,8 @@ private:
                                       .renderer = demon_renderer_,
                                       .set = set_,
                                       .fonts = fonts_,
-                                      .crt_random = crt_random_}};
+                                      .crt_random = crt_random_,
+                                      .console = console_}};
     core::CDemonMission mission_{{.dosio = dosio_,
                                   .messages = messages_,
                                   .game = game_,
@@ -403,7 +409,10 @@ private:
                                              .build_version = nocturne::kBuildVersion,
                                              .fire = fire_effect_,
                                              .gore = gore_,
-                                             .inventory_assets = inventory_assets_};
+                                             .inventory_assets = inventory_assets_,
+                                             .net_game = net_game_,
+                                             .level_loader = level_loader_,
+                                             .keys = keys_};
     core::SChapterSelectOwners chapter_select_owners_{.messages = messages_,
                                                       .editor_tools = editor_tools_,
                                                       .pick_list = pick_list_owners_,

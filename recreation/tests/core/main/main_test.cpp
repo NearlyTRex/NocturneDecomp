@@ -205,7 +205,12 @@ protected:
     std::array<CDemonFilter, 8> global_filters_;
     std::array<CDemonFilter, 4> player_filters_;
     engine::CMouse mouse_{dosio_, screen_, special_};
-    CNetGame net_game_{file_system_, environment_, game_clock_};
+    CNetGame net_game_{{.file_system = file_system_,
+                        .environment = environment_,
+                        .clock = game_clock_,
+                        .two_d = two_d_,
+                        .crt_random = crt_random_,
+                        .actor = actor_}};
     std::vector<platform::SRenderVertex> vertex_buffer_ = std::vector<platform::SRenderVertex>(8);
     engine::CPrim prim_{special_, two_d_, three_d_, current_texture_};
     engine::CZRaster zraster_{special_, two_d_, three_d_, current_texture_};
@@ -266,7 +271,8 @@ protected:
                                 .renderer = demon_renderer_,
                                 .set = set_,
                                 .fonts = fonts_,
-                                .crt_random = crt_random_}};
+                                .crt_random = crt_random_,
+                                .console = console_}};
     CDemonMission mission_{{.dosio = dosio_,
                             .messages = messages_,
                             .game = game_,
