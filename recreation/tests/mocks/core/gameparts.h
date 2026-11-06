@@ -64,6 +64,11 @@ public:
         return raw_input_;
     }
 
+    // The game's own, which its mute hotkey turns off and on.
+    sound::CSndMain &getSoundMain() {
+        return sound_main_;
+    }
+
     // The pad layer the game reads its sticks from, over a pad unplugged unless the test says.
     engine::SGamepadInputParts &getGamepad() {
         return gamepad_;

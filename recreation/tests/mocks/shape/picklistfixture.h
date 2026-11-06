@@ -29,7 +29,10 @@ protected:
     static constexpr int kRowHeight = 3;
     static constexpr int kCharWidth = 4;
 
-    CPickListFixture() : CEdControlsFixture(kWidth, kHeight) {
+    CPickListFixture() : CPickListFixture(kWidth, kHeight) {}
+
+    CPickListFixture(int screen_width, int screen_height)
+        : CEdControlsFixture(screen_width, screen_height) {
         using ::testing::_;
         font_.setCharYOffsetRange(2, 'j', 'j');
         for (int c = '0'; c <= 'Z'; ++c) {

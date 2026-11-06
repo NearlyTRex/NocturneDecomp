@@ -48,6 +48,9 @@ inline constexpr std::array<SChordModifier, 3> kChordModifiers{{
 // Either key of the modifier.
 [[nodiscard]] const SChordModifier *findChordModifier(engine::EInputCodeType code);
 [[nodiscard]] bool isChordHeld(const SKeyChord &chord, engine::CKeys &keys);
+// Whether wide is narrow's key with every modifier narrow has and more, as Ctrl+Shift+C is to
+// Shift+C.
+[[nodiscard]] bool outranks(const SKeyChord &wide, const SKeyChord &narrow);
 // The INI form: each modifier's left key, then the code, in decimal and joined by '+', so a
 // chord of no modifiers is its code alone, as the original wrote it.
 [[nodiscard]] std::string formatChord(const SKeyChord &chord);

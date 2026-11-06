@@ -104,7 +104,8 @@ public:
     void setCameraView(int index);
     // The camera of that name, compared ignoring case.
     [[nodiscard]] std::optional<std::size_t> findCameraByName(std::string_view name) const;
-    void reinitCamera(int clear_enabled, int is_clearing, int screen_height);
+    // The camera sized for that many lines, and the camera shown again.
+    void reinitCamera(int screen_height);
     void processActors();
     void renderStaticLights();
     void renderScene(int skip_prerender);
@@ -149,6 +150,7 @@ public:
     void cacheMirrorLighting(common::CVector3f *position);
     // 16.16. Builds the camera's light-map palette and the set's intensity table for it.
     void setGamma(int gamma);
+    // The camera's ambient light, which the scene takes at once while that camera shows it.
     void setCameraAmbientValue(int index, float value);
     void setCameraAmbientValueByGroup(int group_id, float value);
     void setCameraEnabled(std::size_t camera_index, bool enabled);

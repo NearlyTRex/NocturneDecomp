@@ -56,9 +56,12 @@ class CMissionFixture : public shape::CPickListFixture {
 protected:
     // The game's screen is as tall as the one the set draws on, so the scene camera's frame fits
     // it.
-    CMissionFixture() {
+    CMissionFixture() : CMissionFixture(kWidth, kHeight) {}
+
+    CMissionFixture(int screen_width, int screen_height)
+        : CPickListFixture(screen_width, screen_height) {
         ON_CALL(game_parts_.getScreen(), getWindowHeight())
-            .WillByDefault(::testing::Return(kHeight));
+            .WillByDefault(::testing::Return(screen_height));
     }
 
     CGameParts game_parts_{game_clock_};
@@ -151,7 +154,8 @@ protected:
                                 .level_loader = level_loader_,
                                 .keys = keys_,
                                 .mission = mission_,
-                                .environment = environment_};
+                                .environment = environment_,
+                                .sound = sound_};
 
     // Every texture and picture the session loads on disk, 32 by 32, and every model it finds
     // the one model.

@@ -24,10 +24,10 @@ functions don't count as done. Sizes are in instructions.
 | 8 | `renderMenuAndGetChoice`, `CMoon::free`, `CSound::reset`, `CEditorTools::showFileSelectionDialog` | 8 | 63 | 5314 | 60 | 3 | 95.2% |
 | 9 | `CPickList::enableItem`, `CEventList::resetGameFlags`, `CLevelLoader::show`, `CDemonMission::load` | 15 | 56 | 3298 | 37 | 9 | 66.0% |
 | 10 | `CDemonMission::createHeros`, `CDemonMission::prepareAllActors`, `CEventList::reset`, `CDemonMission::loadSet` | 15 | 42 | 5112 | 33 | 8 | 78.5% |
-| 11 | `CScript::loadScript` | 63 | 579 | 67400 | 132 | 59 | 22.7% |
+| 11 | `CScript::loadScript` | 63 | 579 | 67400 | 133 | 59 | 22.9% |
 | 12 | `CDemonMission::loadScript`, `CScript::executeInitSection`, `CDemonMission::startMission`, `CDemonMission::buildActiveSetActorList`, `CConsole::reset`, `CEditorTools::displayMemoryDiagnostics`, `CGame::setGameRes`, `CDemonLight::init`, `CDemonSet::initScene` | 12 | 26 | 1658 | 16 | 9 | 61.5% |
 | 13 | `CFireEffect::init`, `CDemonSet::loadMasterLightStates`, `CDemonSet::setGamma`, `CGame::clearOverlay`, `CGame::loadAssets` | 7 | 27 | 735 | 16 | 1 | 59.2% |
-| 14 | `CNetGame::syncPlayers`, `CNetGame::processServerFrame`, `CLevelLoader::cleanup`, `CKeys::toggleInputMask`, `CGame::processHotkeys` | 17 | 51 | 5302 | 5 | 2 | 9.8% |
+| 14 | `CNetGame::syncPlayers`, `CNetGame::processServerFrame`, `CLevelLoader::cleanup`, `CKeys::toggleInputMask`, `CGame::processHotkeys` | 17 | 51 | 5302 | 6 | 3 | 11.7% |
 | 15 | `CGame::updateStatusDisplays`, `CGame::processFudge`, `CGame::playerControls`, `CGame::processFrame` | 43 | 189 | 28837 | 9 | 4 | 4.7% |
 | 16 | `CGame::setScreenResolutionAndDisplayFangs`, `showOptionsScreen`, `CScript::skipCinematic`, `CGame::showFullscreenBitmap`, `CDemonMission::countDamageableEnemies`, `freeInventory`, `CGame::runGameSession`, `CGame::displayActStats` | 10 | 25 | 6938 | 10 | 3 | 40.0% |
 | 17 | `CGame::finishAct`, `CDemonMission::run`, `CGame::loadGame`, `CGame::showChapterSelect`, `showDeveloperToolsMenu` | 12 | 26 | 3707 | 6 | 2 | 23.0% |
@@ -46,7 +46,7 @@ functions don't count as done. Sizes are in instructions.
 | 30 | Not reached from startup: `core/` (part 8 of 9) | 20 | 300 | 31826 | 42 | 8 | 14.0% |
 | 31 | Not reached from startup: `core/` (part 9 of 9) | 5 | 111 | 10905 | 26 | 7 | 23.4% |
 | 32 | Not reached from startup: `wincore/` | 2 | 11 | 482 | 4 | 0 | 36.3% |
-| | **All** | | **4479** | **402407** | **1198** | **231** | **26.7%** |
+| | **All** | | **4479** | **402407** | **1200** | **232** | **26.7%** |
 
 ## Step 0: Math value types
 
@@ -1937,7 +1937,7 @@ functions don't count as done. Sizes are in instructions.
   - [x] `setWeatherType` 0x005ef8c0 (30)
   - [ ] `setOriginAndRotation` 0x005ef940 (154)
 
-### `core/set.cpp` (27 functions, 2403 instructions, 5 done, 5 partial)
+### `core/set.cpp` (27 functions, 2403 instructions, 6 done, 5 partial)
 - class `CDemonSet`
   - [ ] `getReverbPresetAtPosition` 0x0056fac0 (77)
   - [ ] `addCoronaGlobe` 0x0056d110 (12)
@@ -1948,7 +1948,7 @@ functions don't count as done. Sizes are in instructions.
   - [x] `addLightFilter` 0x00570f10 (54)
   - [ ] `addQueuedCoronaGlobe` 0x0056d140 (22)
   - [x] `findCameraByName` 0x0056b790 (34)
-  - [ ] `setCameraAmbientValue` 0x00570e20 (16)
+  - [x] `setCameraAmbientValue` 0x00570e20 (16)
   - [ ] `setCameraAmbientValueByGroup` 0x00570e60 (29)
   - [~] `renderPrimitiveList` 0x005708e0 (51)
     - deferred: drawing nothing while the game suppresses set geometry, with CGame's cheats and game session
@@ -2372,11 +2372,11 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `saveState` 0x00560b50 (173)
   - [ ] `resetDialogState` 0x005602b0 (11)
 
-### `core/set.cpp` (3 functions, 77 instructions, 0 done, 0 partial)
+### `core/set.cpp` (3 functions, 77 instructions, 1 done, 0 partial)
 - class `CDemonSet`
   - [ ] `saveMasterLightStates` 0x00571170 (20)
   - [ ] `saveStateInfo` 0x005711b0 (45)
-  - [ ] `reinitCamera` 0x0056b7e0 (12)
+  - [x] `reinitCamera` 0x0056b7e0 (12)
 
 ### `core/event.cpp` (2 functions, 277 instructions, 0 done, 0 partial)
 - class `CEventList`
@@ -2394,11 +2394,25 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `init` 0x005b2dd0 (110)
   - [ ] `shutdown` 0x005b2f70 (24)
 
-### `core/game.cpp` (3 functions, 1222 instructions, 0 done, 0 partial)
+### `core/game.cpp` (3 functions, 1222 instructions, 0 done, 1 partial)
 - class `CGame`
   - [ ] `saveGame` 0x004e0cd0 (441)
   - [ ] `promptLoadGame` 0x004e36f0 (86)
-  - [ ] `processHotkeys` 0x004dcee0 (695)
+  - [~] `processHotkeys` 0x004dcee0 (695)
+    - deferred: nothing while a modal dialog is up, with the pause menu's network dialogs
+    - deferred: edit mode and its cameras left alone while a cinematic skips, and the agreed skip polled (the decomp's net_skip.h nocturne_net_skip_poll), with processFrame's cinematic skip
+    - deferred: the script's change of focus forgotten as edit mode ends, with CDemonMission::process's
+    - deferred: pausing, the sound shut down and started again, with CSound::shutdown, CSound::init and the paused frame
+    - deferred: the camera debug, also with SPOOKHOUSE set, with processFrame's
+    - deferred: the motion debug drawing, with the renderOpaque of Biggs, the Succubus and the Dracula brides
+    - deferred: F5 muting and quick load only outside script debug, with processCheatCodes' script debug
+    - deferred: the debug display, not while a movie records, with processFrame's
+    - deferred: saving, loading, quick saving with its "Quick Save" message, and quick loading after asking, not while letterboxed or loading in a network game, with CGame::saveGame and promptLoadGame
+    - deferred: the keys help, with renderOverlay's key list
+    - deferred: the console, also with SPOOKHOUSE set, with processFrame's console
+    - deferred: the script debug keys while not paused: running or stopping the script in the script view, resuming it, and resetting its dialog, with CScript's script state and resetDialogState
+    - deferred: the camera on or off, with CDemonSet's camera flag's reader
+    - deferred: "Gamma : " and the new gamma shown for a second, with displayMessage and renderOverlay
 
 ## Step 15: `CGame::updateStatusDisplays`, `CGame::processFudge`, `CGame::playerControls`, `CGame::processFrame`
 
@@ -2828,7 +2842,6 @@ functions don't count as done. Sizes are in instructions.
     - deferred: the local hero aiming as the options say, with CStranger::processFrame, CGabriella::updateAimTracking and CScat::updateAiming
     - deferred: the act not yet complete, with finishAct
     - deferred: the input masked while paused or a modal dialog is up, with processHotkeys and the pause menu
-    - deferred: each frame's hotkeys, with processHotkeys
     - deferred: each frame's autosave poll (the decomp's nocturne_autosave_poll), with the autosave
     - deferred: each frame's message and status display timers, with updateStatusDisplays and renderOverlay
     - deferred: each frame's nudge of the fudge target, with processFudge and CMansionPuzzleCircle::process

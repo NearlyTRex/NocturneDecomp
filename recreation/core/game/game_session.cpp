@@ -32,9 +32,6 @@ constexpr int kFallbackWidth = 640;
 constexpr int kFallbackHeight = 480;
 // Below this many lines the editor's text is drawn in its small font.
 constexpr int kSmallFontHeight = 384;
-// The gamma a session plays at is held between a half and one, 16.16.
-constexpr int kMinGamma = 0x8000;
-constexpr int kMaxGamma = 0x10000;
 constexpr float kFlashlightRange = 64.0F;
 // The sync stages a session waits on: every player loaded, then every player starting.
 constexpr int kSyncLoaded = 3;
@@ -84,8 +81,8 @@ void CGame::setGameRes(const SGameSessionOwners &session) {
 // The original also cleared its one pick list; here each dialog makes its own.
 // deferred: clearing the overlay's status lines and message timer, with clearOverlay and
 //   updateStatusDisplays
-// The game is always active as a session starts, so the virtual director chooses the first camera
-// for the script's focus; the camera view the game keeps is for when it isn't.
+// The game is made active as a session starts, edit mode left, so the virtual director chooses the
+// first camera for the script's focus; the camera view the game keeps is for when it isn't.
 // deferred: opening the iris on the focus actor, with beginFadeIn and renderIrisFade
 // deferred: the cheats the menu turned on (the decomp's nocturne_cheats_apply), with
 //   showCheatsMenu
@@ -97,7 +94,6 @@ void CGame::setGameRes(const SGameSessionOwners &session) {
 // deferred: the act not yet complete, with finishAct
 // deferred: the input masked while paused or a modal dialog is up, with processHotkeys and the
 //   pause menu
-// deferred: each frame's hotkeys, with processHotkeys
 // deferred: each frame's autosave poll (the decomp's nocturne_autosave_poll), with the autosave
 // deferred: each frame's message and status display timers, with updateStatusDisplays and
 //   renderOverlay
@@ -144,6 +140,7 @@ int CGame::runGameSession(const SGameSessionOwners &session) {
     session.console.printf(std::format("{}\n\n", session.build_version));
     is_processing = 0;
     time_scale_factor = 1.0F;
+    game_active = true;
     setGameRes(session);
     developer_mode = session.environment.getVariable(kDeveloperVariable).has_value();
     session.flashlight.init();
@@ -162,6 +159,7 @@ int CGame::runGameSession(const SGameSessionOwners &session) {
     session.net_game.processServerFrame();
     session.level_loader.cleanup();
     session.keys.toggleInputMask(true);
+    processHotkeys(session);
     playerControls(session);
     if (session.set.evaluateVirtualDirector(session.script.getFocusActor(), 0) != 0) {
         saveClockTime();

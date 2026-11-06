@@ -422,7 +422,8 @@ private:
                                              .level_loader = level_loader_,
                                              .keys = keys_,
                                              .mission = mission_,
-                                             .environment = environment_};
+                                             .environment = environment_,
+                                             .sound = sound_};
     core::SChapterSelectOwners chapter_select_owners_{.messages = messages_,
                                                       .editor_tools = editor_tools_,
                                                       .pick_list = pick_list_owners_,

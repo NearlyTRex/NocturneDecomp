@@ -431,4 +431,19 @@ bool CDemonSet::wasLastSwitchAreaInvalid() const {
     return last_switch_area_invalid_;
 }
 
+// The original also took two flags it never read.
+// nocedit 0x0056b7e0
+void CDemonSet::reinitCamera(int screen_height) {
+    owners_.camera.init(screen_height);
+    setCameraView(selected_camera_index_);
+}
+
+// nocedit 0x00570e20
+void CDemonSet::setCameraAmbientValue(int index, float value) {
+    cameras_.at(static_cast<std::size_t>(index)).setAmbientValue(value);
+    if (index == selected_camera_index_) {
+        owners_.camera.setEffectIntensity(value);
+    }
+}
+
 } // namespace nocturne::core

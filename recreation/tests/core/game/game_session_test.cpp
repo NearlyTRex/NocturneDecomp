@@ -159,6 +159,15 @@ TEST_F(CGameSessionTest, DeveloperModeFollowsVelocity) {
     EXPECT_FALSE(game_.developer_mode);
 }
 
+// The frame's hotkeys come before its controls; Gamma up held raises the gamma the session began
+// at.
+TEST_F(CGameSessionTest, EachFrameReadsTheHotkeys) {
+    game_.gamma = 0x8000;
+    game_parts_.hold(engine::EInputCodeType::DIK_F12, true);
+    play();
+    EXPECT_EQ(game_.gamma, 0x8400);
+}
+
 // The flashlight is set up off, as "Flashlight", reaching 64 units.
 TEST_F(CGameSessionTest, TheFlashlightIsSetUpOffAndShort) {
     play();

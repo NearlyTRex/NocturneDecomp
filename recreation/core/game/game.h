@@ -58,6 +58,8 @@ struct SGameSessionOwners {
     const CDemonMission &mission;
     // Where developer mode is asked for.
     platform::IEnvironment &environment;
+    // What the mute hotkey stops and starts.
+    CSound &sound;
 };
 
 // What chapter select reads the stories' unlock codes from, offers its lists with, and loads the
@@ -98,6 +100,8 @@ public:
     // The local player's controls for the frame, from the keyboard and the mouse. The play loop is
     // its one caller in the game; it is public so a frame can follow a frame.
     void playerControls(const SGameSessionOwners &session);
+    // The frame's hotkeys, the developers' in developer mode alone. Public as playerControls is.
+    void processHotkeys(const SGameSessionOwners &session);
     void beginFadeIn();
     void beginFadeOut();
     std::uint32_t fadeIn();
@@ -164,8 +168,23 @@ public:
     bool is_loading = false;
     // The developers' hotkeys work, and Customize Keys lists them.
     bool developer_mode = false;
+    // Off in edit mode, where the camera is the one picked rather than the director's.
+    bool game_active = true;
+    // The set's camera edit mode shows.
+    int camera_view_index = 0;
+    // The scene shown in the screen's top 240 lines, the script below it.
+    bool script_view = false;
+
+    // The gamma a session plays at is held between a half and one, 16.16.
+    static constexpr int kMinGamma = 0x8000;
+    static constexpr int kMaxGamma = 0x10000;
 
 private:
+    // A press of the action taken, unless another action of its context binds the same key with
+    // more of the modifiers held, as Alt+Shift+A is ambient light down's and not up's too.
+    [[nodiscard]] bool takeAction(EGameAction action);
+    [[nodiscard]] bool isOutranked(const SKeyChord &chord, EGameAction action) const;
+    void stepGamma(const SGameSessionOwners &session, int step);
     void seedCalibration();
     // The screen at the game's resolution, falling back to 640x480, its camera sized for it.
     void setGameRes(const SGameSessionOwners &session);

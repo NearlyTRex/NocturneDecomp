@@ -40,6 +40,13 @@ bool isChordHeld(const SKeyChord &chord, engine::CKeys &keys) {
     });
 }
 
+bool outranks(const SKeyChord &wide, const SKeyChord &narrow) {
+    return wide.code == narrow.code && wide != narrow &&
+           std::ranges::all_of(kChordModifiers, [&](const SChordModifier &mod) {
+               return !(narrow.*mod.flag) || wide.*mod.flag;
+           });
+}
+
 std::string formatChord(const SKeyChord &chord) {
     std::string text;
     for (const SChordModifier &mod : kChordModifiers) {
