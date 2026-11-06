@@ -14,6 +14,7 @@
 #include "engine/rawinput.h"
 #include "platform/gamepad.h"
 #include "tests/mocks/core/geofile.h"
+#include "tests/mocks/core/keychords.h"
 #include "tests/mocks/core/missionfixture.h"
 #include "tests/mocks/core/setfilefixture.h"
 #include "tests/mocks/core/testhero.h"
@@ -62,7 +63,7 @@ protected:
     }
 
     void hold(EGameAction action, bool held = true) {
-        game_parts_.hold(game_.controls.getBindings(action).front(), held);
+        game_parts_.hold(game_.controls.getBindings(action).front().code, held);
     }
 
     // A frame of the given time, in 65536ths of a second, read by the controls.
@@ -292,11 +293,26 @@ TEST_F(CGameInputTest, AfterAResetAKeyStillDownIsPressedAgain) {
 
 // Any of an action's bindings holds it.
 TEST_F(CGameInputTest, AnyBindingHoldsTheAction) {
-    game_.controls.setBindings(EGameAction::Run,
-                               {engine::EInputCodeType::DIK_Q, engine::EInputCodeType::DIK_W});
+    game_.controls.setBindings(
+        EGameAction::Run, chords({engine::EInputCodeType::DIK_Q, engine::EInputCodeType::DIK_W}));
     game_parts_.hold(engine::EInputCodeType::DIK_W, true);
     frame(kFrame);
     EXPECT_TRUE(input().action_state.run);
+}
+
+// A chord holds its action only with its modifiers, by either key; other keys held don't matter.
+TEST_F(CGameInputTest, AChordNeedsItsModifiersHeld) {
+    game_.controls.setBindings(
+        EGameAction::Jump,
+        {{.code = engine::EInputCodeType::DIK_J, .control = true, .shift = true}});
+    game_parts_.hold(engine::EInputCodeType::DIK_J, true);
+    game_parts_.hold(engine::EInputCodeType::DIK_RCONTROL, true);
+    frame(kFrame);
+    EXPECT_FALSE(input().action_state.jump);
+    game_parts_.hold(engine::EInputCodeType::DIK_LSHIFT, true);
+    game_parts_.hold(engine::EInputCodeType::DIK_LMENU, true);
+    frame(kFrame);
+    EXPECT_TRUE(input().action_state.jump);
 }
 
 // An HQ mission's script holsters any weapon drawn, so the draw and the flashlight are refused.

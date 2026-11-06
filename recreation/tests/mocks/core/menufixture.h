@@ -26,6 +26,7 @@
 #include "tests/mocks/platform/mockclock.h"
 #include "tests/mocks/platform/mockdisplay.h"
 #include "tests/mocks/platform/mockosfontfactory.h"
+#include "tests/mocks/runawayguard.h"
 #include "tests/mocks/sound/wavfile.h"
 
 #include <gmock/gmock.h>
@@ -47,8 +48,8 @@
 namespace nocturne::core {
 
 // The menus over the moon fixture, the main menu's music on disk and the sound output running.
-// Each test presses keys as a frame is shown, for the next to read; past a limit of frames it
-// presses Cancel and fails.
+// Each test presses keys as a frame is shown, for the next to read; past a limit of frames the
+// test's process ends.
 class CMenuFixture : public CMoonFixture {
 protected:
     static constexpr int kFrameLimit = 20;
@@ -65,11 +66,9 @@ protected:
             return std::span<std::uint8_t, engine::IRawInput::kInputCodeCount>(keyboard_);
         });
         ON_CALL(screen_, swapBuffers()).WillByDefault([this] {
+            runaway_.countFrame();
             ++frames_;
-            if (frames_ > kFrameLimit) {
-                ADD_FAILURE() << "the menu didn't leave";
-                press(engine::EInputCodeType::DIK_ESCAPE);
-            } else if (on_frame_) {
+            if (on_frame_) {
                 on_frame_(frames_);
             }
         });
@@ -113,6 +112,7 @@ protected:
         return table;
     }();
     int frames_ = 0;
+    CRunawayGuard runaway_{kFrameLimit, "the menu didn't leave"};
     std::function<void(int)> on_frame_;
     engine::CKeys keys_{raw_input_, screen_};
     ::testing::NiceMock<platform::MockClock> wall_clock_;

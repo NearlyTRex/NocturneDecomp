@@ -103,6 +103,7 @@ constexpr std::array<SDeviceName, 20> kDeviceNames{{
 constexpr std::string_view kInvalidBindings =
     "One or more keys not valid.  Restoring default controls.";
 constexpr std::string_view kNameSeparator = ", ";
+constexpr auto kFirstCode = static_cast<std::size_t>(EInputCodeType::DIK_ESCAPE);
 
 [[nodiscard]] bool isMouseCode(EInputCodeType code) {
     return (code >= EInputCodeType::DIM_LBUTTON && code <= EInputCodeType::DIM_RBUTTON) ||
@@ -155,6 +156,16 @@ std::string CMenu::getKeyDisplayName(EInputCodeType key_code) const {
     return std::string(engine::getKeyName(key_code));
 }
 
+std::string CMenu::getChordDisplayName(const SKeyChord &chord) const {
+    std::string name;
+    for (const SChordModifier &modifier : kChordModifiers) {
+        if (chord.*modifier.flag) {
+            name += std::format("{}+", modifier.label);
+        }
+    }
+    return name + getKeyDisplayName(chord.code);
+}
+
 // The original answered the other way round, 1 for a code that doesn't suit, and took a
 // description it never read. The gamepad's own codes are the enhanced game's, and suit every
 // type.
@@ -195,9 +206,9 @@ void CMenu::configureCustomKeyBindings() {
             const bool walks = row.action == EGameAction::Run && game.always_run != 0;
             labels.push_back(owners_.messages.getLocalizedString(walks ? "Walk" : row.label));
             std::string names;
-            for (const EInputCodeType code : game.controls.getBindings(row.action)) {
+            for (const SKeyChord &chord : game.controls.getBindings(row.action)) {
                 names += names.empty() ? "" : kNameSeparator;
-                names += getKeyDisplayName(code);
+                names += getChordDisplayName(chord);
             }
             if (names.empty()) {
                 names = getKeyDisplayName(EInputCodeType::INPUT_NONE);
@@ -222,17 +233,17 @@ void CMenu::configureCustomKeyBindings() {
 }
 
 // The enhanced game's: the original's pick went straight to capturing the action's one code. A
-// code taken is this action's alone, given up by any other action holding it and by this
+// chord taken is this action's alone, given up by any other action holding it and by this
 // action's other slots.
 void CMenu::editActionBindings(EGameAction action, std::string_view label) {
     CControlBindings &controls = owners_.game.controls;
     int cursor = 0;
     while (true) {
-        std::vector<EInputCodeType> codes(std::from_range, controls.getBindings(action));
+        std::vector<SKeyChord> codes(std::from_range, controls.getBindings(action));
         CBindingList list(owners_.pick_list);
         list.setForcedColumnCount(true);
-        for (const EInputCodeType code : codes) {
-            list.add(getKeyDisplayName(code));
+        for (const SKeyChord &chord : codes) {
+            list.add(getChordDisplayName(chord));
         }
         list.add(owners_.messages.getLocalizedString("Add binding"));
         const int choice = list.displayChoicesAndWaitForInput(label, cursor);
@@ -248,7 +259,7 @@ void CMenu::editActionBindings(EGameAction action, std::string_view label) {
             return;
         }
         cursor = choice;
-        const std::optional<EInputCodeType> captured = captureKeyCode(label);
+        const std::optional<SKeyChord> captured = captureChord(label);
         if (!captured) {
             continue;
         }
@@ -260,7 +271,7 @@ void CMenu::editActionBindings(EGameAction action, std::string_view label) {
         slot = std::min(slot, codes.size());
         codes.insert(codes.begin() + static_cast<std::ptrdiff_t>(slot), *captured);
         for (const SBindingRow &row : kBindingRows) {
-            std::vector<EInputCodeType> others(std::from_range, controls.getBindings(row.action));
+            std::vector<SKeyChord> others(std::from_range, controls.getBindings(row.action));
             if (row.action != action && std::erase(others, *captured) != 0) {
                 controls.setBindings(row.action, std::move(others));
             }
@@ -269,14 +280,17 @@ void CMenu::editActionBindings(EGameAction action, std::string_view label) {
     }
 }
 
-// A closing window cancels, as it ends every wait for input.
-std::optional<EInputCodeType> CMenu::captureKeyCode(std::string_view label) {
+// The original took the one code first held. A key that isn't a modifier is taken as it goes
+// down, with the modifiers held then; a modifier pressed alone is taken as it is let go, so it
+// can still become a chord's. A closing window cancels while nothing is taken, as it ends every
+// wait for input.
+std::optional<SKeyChord> CMenu::captureChord(std::string_view label) {
     engine::CKeys &keys = owners_.pick_list.keys;
     const engine::IRawInput &input = owners_.raw_input;
     shape::CEditorTools &tools = owners_.editor_tools;
     const std::string_view release =
         owners_.messages.getLocalizedString("OK - you can release the key now...");
-    while (getHeldKeyCode() != kNoCodeHeld) {
+    while (readHeldKeys().any) {
         tools.displayCenteredStatusMessage(release);
         if (keys.getKeyState(EInputCodeType::DIK_ESCAPE) != 0 || input.getInputDisabled()) {
             owners_.two_d.clearInputAndWait();
@@ -287,35 +301,61 @@ std::optional<EInputCodeType> CMenu::captureKeyCode(std::string_view label) {
     tools.displayCenteredStatusMessage(std::format(
         "{}{}", owners_.messages.getLocalizedString("Press new key or button for "), label));
     keys.toggleInputMask(true);
-    int code = kNoCodeHeld;
-    while (code < 0) {
+    std::optional<SKeyChord> captured;
+    std::optional<SKeyChord> modifier_alone;
+    while (!captured) {
         owners_.screen.swapBuffers();
         if (input.getInputDisabled()) {
             keys.toggleInputMask(false);
             return std::nullopt;
         }
-        code = getHeldKeyCode();
+        const SHeldKeys held = readHeldKeys();
+        if (held.chord && findChordModifier(held.chord->code) == nullptr) {
+            captured = held.chord;
+        } else if (held.chord) {
+            modifier_alone = modifier_alone.value_or(*held.chord);
+        } else if (!held.any && modifier_alone) {
+            keys.toggleInputMask(false);
+            return modifier_alone;
+        }
     }
     tools.displayCenteredStatusMessage(release);
-    while (getHeldKeyCode() != kNoCodeHeld && !input.getInputDisabled()) {
+    while (readHeldKeys().any && !input.getInputDisabled()) {
         owners_.screen.swapBuffers();
     }
     keys.toggleInputMask(false);
-    return static_cast<EInputCodeType>(code);
+    return captured;
 }
 
 // The original asked the keys of each code in turn.
-int CMenu::getHeldKeyCode() const {
+CMenu::SHeldKeys CMenu::readHeldKeys() const {
     const std::span<const std::uint8_t> state = owners_.raw_input.getKeyboardState();
-    int held = kNoCodeHeld;
-    for (std::size_t code = 0; code < state.size(); ++code) {
-        if (state[code] == 0) {
+    SHeldKeys held;
+    SKeyChord keyed;
+    int key_count = 0;
+    SKeyChord modifier_alone;
+    int modifier_count = 0;
+    // Slot 0 is no code; they start at Escape.
+    for (std::size_t index = kFirstCode; index < state.size(); ++index) {
+        if (state[index] == 0) {
             continue;
         }
-        if (held != kNoCodeHeld) {
-            return kSeveralCodesHeld;
+        held.any = true;
+        const auto code = static_cast<EInputCodeType>(index);
+        const SChordModifier *modifier = findChordModifier(code);
+        if (modifier == nullptr) {
+            keyed.code = code;
+            ++key_count;
+            continue;
         }
-        held = static_cast<int>(code);
+        keyed.*modifier->flag = true;
+        modifier_alone.code = code;
+        ++modifier_count;
+    }
+    if (key_count == 1) {
+        held.chord = keyed;
+    } else if (key_count == 0 && modifier_count == 1) {
+        held.chord = modifier_alone;
     }
     return held;
 }
@@ -325,7 +365,7 @@ void CMenu::validateBindings() {
     const bool valid = std::ranges::all_of(kBindingRows, [this](const SBindingRow &row) {
         return std::ranges::all_of(
             owners_.game.controls.getBindings(row.action),
-            [this](EInputCodeType code) { return isKeyCodeValidForMode(code); });
+            [this](const SKeyChord &chord) { return isKeyCodeValidForMode(chord.code); });
     });
     if (valid) {
         return;

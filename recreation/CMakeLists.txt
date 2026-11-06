@@ -261,7 +261,9 @@ foreach(_module IN LISTS NOCTURNE_RECREATION_MODULES)
         target_link_libraries(${_target} PRIVATE nocturne_recreation)
     endif()
     target_link_libraries(${_target} PRIVATE GTest::gtest_main GTest::gmock)
-    gtest_discover_tests(${_target} DISCOVERY_MODE PRE_TEST)
+    # A test runs in well under a second; one stuck in a loop is ended before ctest, which holds
+    # each test's output, fills the memory with it.
+    gtest_discover_tests(${_target} DISCOVERY_MODE PRE_TEST PROPERTIES TIMEOUT 20)
     list(APPEND NOCTURNE_RECREATION_TEST_BINARIES $<TARGET_FILE:${_target}>)
 endforeach()
 

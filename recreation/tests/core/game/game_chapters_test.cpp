@@ -13,6 +13,7 @@
 #include "tests/mocks/core/missionfixture.h"
 #include "tests/mocks/core/mockloadingscreen.h"
 #include "tests/mocks/core/setfilefixture.h"
+#include "tests/mocks/runawayguard.h"
 
 #include <gmock/gmock.h>
 #include <gtest/gtest.h>
@@ -83,10 +84,7 @@ protected:
                 keys_to_press_.pop_front();
                 return;
             }
-            if (++idle_frames_ > kIdleFrameLimit) {
-                ADD_FAILURE() << "a list was still open after the keys ran out";
-                press(kEscape);
-            }
+            idle_.countFrame();
         };
     }
 
@@ -110,7 +108,7 @@ protected:
     // Opens START's lists in that mode, pressing the keys one a frame.
     void choose(EChapterSelectMode mode, std::initializer_list<EInputCodeType> keys) {
         keys_to_press_.assign(keys);
-        idle_frames_ = 0;
+        idle_.reset();
         press(keys_to_press_.front());
         keys_to_press_.pop_front();
         chapter_game_.showChapterSelect(owners_, mode);
@@ -127,11 +125,11 @@ protected:
         return {};
     }
 
-    // Frames a list may stay open once the keys are pressed, before the test presses Cancel.
+    // Frames a list may stay open once the keys are pressed, before the test ends.
     static constexpr int kIdleFrameLimit = 6;
 
     std::deque<EInputCodeType> keys_to_press_;
-    int idle_frames_ = 0;
+    CRunawayGuard idle_{kIdleFrameLimit, "a list was still open after the keys ran out"};
     std::string ini_text_ = "[Game]\r\n";
     // Reading the fixture's files, where the mission's own game doesn't.
     CGameParts chapter_game_parts_{game_clock_, dosio_};
@@ -153,6 +151,21 @@ protected:
                                  .mission = mission_,
                                  .session = session_};
 };
+
+// A list that never closes ends the test's process, rather than printing a failure a frame for as
+// long as it runs.
+using CChapterSelectDeathTest = CChapterSelectTest;
+
+TEST_F(CChapterSelectDeathTest, AListThatNeverClosesEndsTheTest) {
+    GTEST_FLAG_SET(death_test_style, "threadsafe");
+    EXPECT_DEATH(
+        {
+            while (true) {
+                screen_.swapBuffers();
+            }
+        },
+        "runaway loop: a list was still open after the keys ran out after 6 frames");
+}
 
 // The loading screen shows the story's picture as its mission loads.
 TEST_F(CChapterSelectTest, AStoryStartsAtItsFirstChapter) {

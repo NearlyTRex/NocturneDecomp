@@ -95,7 +95,7 @@ TEST_F(CGameTest, StartsWithTheOriginalDefaults) {
 
 TEST_F(CGameTest, StartsWithTheKeyboardControls) {
     EXPECT_THAT(game_.controls.getBindings(EGameAction::Fire),
-                ::testing::ElementsAre(engine::EInputCodeType::DIK_SPACE));
+                ::testing::ElementsAre(SKeyChord{.code = engine::EInputCodeType::DIK_SPACE}));
 }
 
 // 18 clock ticks are one 16.16 unit: a tenth of a second is 117964 ticks.

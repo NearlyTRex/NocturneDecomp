@@ -113,8 +113,8 @@ void takeFaster(float &speed, float mouse_speed) {
 } // namespace
 
 bool CGame::isActionHeld(EGameAction action) const {
-    return std::ranges::any_of(controls.getBindings(action), [this](engine::EInputCodeType code) {
-        return owners_.keys.getKeyState(code) != 0;
+    return std::ranges::any_of(controls.getBindings(action), [this](const SKeyChord &chord) {
+        return isChordHeld(chord, owners_.keys);
     });
 }
 
@@ -143,8 +143,8 @@ void CGame::resetInputAndCenterCursor(const SGameSessionOwners &session) {
 //   (the decomp's helper_death.h nocturne_helper_death_hold_hero), with CHero's death
 // deferred: no controls while paused or while the script has them off, with processHotkeys' pause
 //   and CScript::step's allowHeroControls
-// deferred: camera-relative movement (the decomp's movement.h, MENU), with the Control Options
-//   page's movement scheme
+// deferred: camera-relative movement (the decomp's movement.h, MENU), with the hero's turn rate
+//   from its frame and CDemonCamera::updateTransformMatrices
 // deferred: noting the local input for the network game (the decomp's NETPLAY), with
 //   CNetGame::initializeNetworkToHost
 // nocedit 0x004dbd80

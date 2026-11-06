@@ -23,7 +23,7 @@ void CGame::restoreDefaultControls() {
         } else if (game_control == EControlMode::CONTROL_MODE_GAMEPAD) {
             code = info.gamepad.value_or(code);
         }
-        controls.setBindings(action, {code});
+        controls.setBindings(action, {{.code = code}});
     }
     invert_mouse_y_axis = 0;
     always_run = 0;

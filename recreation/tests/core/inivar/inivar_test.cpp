@@ -17,6 +17,7 @@
 #include "shape/edittool/editortools.h"
 #include "support/newmsg/newmsg.h"
 #include "tests/mocks/core/gameparts.h"
+#include "tests/mocks/core/keychords.h"
 #include "tests/mocks/engine/mockgameclock.h"
 #include "tests/mocks/engine/mockrawinput.h"
 #include "tests/mocks/engine/mockscreendevice.h"
@@ -333,8 +334,8 @@ TEST_F(CInivarTest, WritesEverySettingBackToItsSection) {
     special_.setUseDirect3D(true);
     special_.setCurrentGraphicsBoard(1);
     sound_.setAudioSampleRate(44100);
-    game_.controls.setBindings(EGameAction::Map,
-                               {engine::EInputCodeType::DIK_M, engine::EInputCodeType::DIK_TAB});
+    game_.controls.setBindings(
+        EGameAction::Map, chords({engine::EInputCodeType::DIK_M, engine::EInputCodeType::DIK_TAB}));
     game_.aim_mode = EAimMode::AIM_MODE_MANUAL;
     game_.first_time_flag = 1;
     console_.file_logging_enabled = 1;

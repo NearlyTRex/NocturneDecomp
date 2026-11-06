@@ -2,6 +2,7 @@
 
 #include "common/fwd.h"
 #include "core/fwd.h"
+#include "core/game/keychord.h"
 #include "core/moon/moon.h"
 #include "engine/fwd.h"
 #include "platform/fwd.h"
@@ -74,6 +75,8 @@ public:
     // The name a binding shows: the mouse's and the joystick's by what they are, the keys by
     // getKeyName.
     [[nodiscard]] std::string getKeyDisplayName(engine::EInputCodeType key_code) const;
+    // Its modifiers, then its code's name: Ctrl+M.
+    [[nodiscard]] std::string getChordDisplayName(const SKeyChord &chord) const;
     // Whether the game's control type has the device behind the code: the keyboard alone, or
     // with the mouse, or with the joystick.
     [[nodiscard]] bool isKeyCodeValidForMode(engine::EInputCodeType key_code) const;
@@ -110,8 +113,11 @@ private:
     class CSubmenuPage;
     class COptionsPage;
 
-    static constexpr int kNoCodeHeld = -1;
-    static constexpr int kSeveralCodesHeld = -2;
+    // What the keys held make: nothing held, keys held that make no chord, or a chord.
+    struct SHeldKeys {
+        bool any = false;
+        std::optional<SKeyChord> chord;
+    };
 
     void showGameplayOptions();
     void configureGraphicsOptions();
@@ -119,11 +125,12 @@ private:
     void configureCustomKeys();
     // The codes of one action, as a list with Add binding after them, until Cancel.
     void editActionBindings(EGameAction action, std::string_view label);
-    // The one code next pressed, after any held are let go; nothing for Escape while they are
-    // held, or for the window closing.
-    [[nodiscard]] std::optional<engine::EInputCodeType> captureKeyCode(std::string_view label);
-    // The one code held, kNoCodeHeld for none and kSeveralCodesHeld for more.
-    [[nodiscard]] int getHeldKeyCode() const;
+    // The chord next pressed, taken as every key is let go, after any held are let go first;
+    // nothing for Escape while they are, or for the window closing.
+    [[nodiscard]] std::optional<SKeyChord> captureChord(std::string_view label);
+    // One key that isn't a modifier makes a chord with the modifiers held with it; with none, a
+    // modifier key held alone is a chord by itself. Two keys that aren't modifiers make none.
+    [[nodiscard]] SHeldKeys readHeldKeys() const;
     // The defaults back, with an error, if any code doesn't suit the control type.
     void validateBindings();
     // 32 pixels wide on x_center, rising from y_top to twice height_half above it.

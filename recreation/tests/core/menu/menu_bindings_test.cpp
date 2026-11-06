@@ -5,6 +5,7 @@
 #include "core/menu/menu.h"
 #include "engine/keys/inputcodetype.h"
 #include "platform/gamepad.h"
+#include "tests/mocks/core/keychords.h"
 #include "tests/mocks/core/menufixture.h"
 
 #include <gmock/gmock.h>
@@ -53,8 +54,8 @@ protected:
         return [this, code] { keyboard_[static_cast<std::size_t>(code)] = 0; };
     }
 
-    [[nodiscard]] std::span<const EInputCodeType> bindings(EGameAction action) const {
-        return game_.controls.getBindings(action);
+    [[nodiscard]] std::vector<EInputCodeType> bindings(EGameAction action) const {
+        return codesOf(game_.controls.getBindings(action));
     }
 
     // The first frame clears the screen; Forward is picked on the fourth, and its own list reads
@@ -81,6 +82,23 @@ protected:
     }
 };
 
+// A screen that never leaves, even with Escape held, as a capture that takes Escape as a binding
+// wouldn't, ends the test's process, rather than printing a failure a frame for as long as it
+// runs.
+using CMenuFixtureDeathTest = CKeyBindingsTest;
+
+TEST_F(CMenuFixtureDeathTest, AScreenThatNeverLeavesEndsTheTest) {
+    GTEST_FLAG_SET(death_test_style, "threadsafe");
+    EXPECT_DEATH(
+        {
+            press(EInputCodeType::DIK_ESCAPE);
+            while (true) {
+                screen_.swapBuffers();
+            }
+        },
+        "runaway loop: the menu didn't leave after 20 frames");
+}
+
 TEST_F(CKeyBindingsTest, CancelLeavesTheBindingsAsTheyAre) {
     run({tap(EInputCodeType::DIK_ESCAPE)});
     EXPECT_THAT(bindings(EGameAction::Walk), ElementsAre(EInputCodeType::DIK_UP));
@@ -88,7 +106,7 @@ TEST_F(CKeyBindingsTest, CancelLeavesTheBindingsAsTheyAre) {
 }
 
 TEST_F(CKeyBindingsTest, RestoreDefaultsPutsThemBackAndLeaves) {
-    game_.controls.setBindings(EGameAction::Fire, {EInputCodeType::DIK_Q});
+    game_.controls.setBindings(EGameAction::Fire, chords({EInputCodeType::DIK_Q}));
     run({tap(EInputCodeType::DIK_RETURN)});
     EXPECT_THAT(bindings(EGameAction::Fire), ElementsAre(EInputCodeType::DIK_SPACE));
     EXPECT_EQ(frames_, 3);
@@ -115,7 +133,7 @@ TEST_F(CKeyBindingsTest, AddBindingAddsOneAfterTheRest) {
 
 // Back's default is the down arrow.
 TEST_F(CKeyBindingsTest, ACodeTakenIsGivenUpByTheActionHoldingIt) {
-    game_.controls.setBindings(EGameAction::Backup, {EInputCodeType::DIK_Q});
+    game_.controls.setBindings(EGameAction::Backup, chords({EInputCodeType::DIK_Q}));
     std::vector<EStep> steps = openForward();
     steps.push_back(tap(EInputCodeType::DIK_DOWN));
     bindQ(steps);
@@ -125,7 +143,8 @@ TEST_F(CKeyBindingsTest, ACodeTakenIsGivenUpByTheActionHoldingIt) {
 }
 
 TEST_F(CKeyBindingsTest, ACodeTakenIsHeldInOneSlot) {
-    game_.controls.setBindings(EGameAction::Walk, {EInputCodeType::DIK_UP, EInputCodeType::DIK_Q});
+    game_.controls.setBindings(EGameAction::Walk,
+                               chords({EInputCodeType::DIK_UP, EInputCodeType::DIK_Q}));
     std::vector<EStep> steps = openForward();
     bindQ(steps);
     leave(steps);
@@ -197,6 +216,73 @@ TEST_F(CKeyBindingsTest, AKeyLetGoIsWaitedFor) {
     EXPECT_THAT(bindings(EGameAction::Walk), ElementsAre(EInputCodeType::DIK_Q));
 }
 
+// The modifiers held as the key goes down are its chord's.
+TEST_F(CKeyBindingsTest, AKeyWithAModifierHeldIsTakenAsAChord) {
+    std::vector<EStep> steps = openForward();
+    steps.insert(steps.end(), {tap(EInputCodeType::DIK_RETURN),
+                               {},
+                               {},
+                               tap(EInputCodeType::DIK_RCONTROL),
+                               tap(EInputCodeType::DIK_Q),
+                               release(EInputCodeType::DIK_Q),
+                               release(EInputCodeType::DIK_RCONTROL)});
+    leave(steps);
+    run(std::move(steps));
+    EXPECT_THAT(game_.controls.getBindings(EGameAction::Walk),
+                ElementsAre(SKeyChord{.code = EInputCodeType::DIK_Q, .control = true}));
+}
+
+// Frames with nothing pressed are waited through.
+TEST_F(CKeyBindingsTest, NothingPressedIsWaitedThrough) {
+    std::vector<EStep> steps = openForward();
+    steps.insert(steps.end(), {tap(EInputCodeType::DIK_RETURN),
+                               {},
+                               {},
+                               {},
+                               {},
+                               tap(EInputCodeType::DIK_Q),
+                               {},
+                               release(EInputCodeType::DIK_Q)});
+    leave(steps);
+    run(std::move(steps));
+    EXPECT_THAT(bindings(EGameAction::Walk), ElementsAre(EInputCodeType::DIK_Q));
+}
+
+// Let go with no key pressed, a modifier is bound by itself.
+TEST_F(CKeyBindingsTest, AModifierPressedAloneIsTakenAsItIsLetGo) {
+    std::vector<EStep> steps = openForward();
+    steps.insert(steps.end(), {tap(EInputCodeType::DIK_RETURN),
+                               {},
+                               {},
+                               tap(EInputCodeType::DIK_LSHIFT),
+                               {},
+                               release(EInputCodeType::DIK_LSHIFT)});
+    leave(steps);
+    run(std::move(steps));
+    EXPECT_THAT(game_.controls.getBindings(EGameAction::Walk),
+                ElementsAre(SKeyChord{.code = EInputCodeType::DIK_LSHIFT}));
+}
+
+// Two modifiers held together with no key make no chord; the first held alone is bound.
+TEST_F(CKeyBindingsTest, TheFirstModifierAloneIsKeptWhenTwoAreLetGo) {
+    std::vector<EStep> steps = openForward();
+    steps.insert(steps.end(),
+                 {tap(EInputCodeType::DIK_RETURN),
+                  {},
+                  {},
+                  tap(EInputCodeType::DIK_LMENU),
+                  {},
+                  tap(EInputCodeType::DIK_LSHIFT),
+                  [this] {
+                      keyboard_.at(static_cast<std::size_t>(EInputCodeType::DIK_LMENU)) = 0;
+                      keyboard_.at(static_cast<std::size_t>(EInputCodeType::DIK_LSHIFT)) = 0;
+                  }});
+    leave(steps);
+    run(std::move(steps));
+    EXPECT_THAT(game_.controls.getBindings(EGameAction::Walk),
+                ElementsAre(SKeyChord{.code = EInputCodeType::DIK_LMENU}));
+}
+
 TEST_F(CKeyBindingsTest, ClosingTheWindowWhileWaitingForACodeLeaves) {
     std::vector<EStep> steps = openForward();
     steps.insert(steps.end(),
@@ -229,7 +315,7 @@ TEST_F(CKeyBindingsTest, ClosingTheWindowBeforeTheCodeIsLetGoKeepsIt) {
 }
 
 TEST_F(CKeyBindingsTest, LeavingWithACodeTheTypeLacksRestoresTheDefaults) {
-    game_.controls.setBindings(EGameAction::Fire, {EInputCodeType::DIM_LBUTTON});
+    game_.controls.setBindings(EGameAction::Fire, chords({EInputCodeType::DIM_LBUTTON}));
     run({tap(EInputCodeType::DIK_ESCAPE)});
     EXPECT_THAT(bindings(EGameAction::Fire), ElementsAre(EInputCodeType::DIK_SPACE));
 }
@@ -272,6 +358,13 @@ TEST_F(CKeyDisplayNameTest, TheMouseAndTheJoystickAreNamedForWhatTheyAre) {
 
 TEST_F(CKeyDisplayNameTest, KeysAreNamedByTheirNames) {
     EXPECT_EQ(menu_.getKeyDisplayName(EInputCodeType::DIK_SPACE), "Space");
+}
+
+TEST_F(CKeyDisplayNameTest, AChordNamesItsModifiersFirst) {
+    EXPECT_EQ(menu_.getChordDisplayName({.code = EInputCodeType::DIK_SPACE}), "Space");
+    EXPECT_EQ(menu_.getChordDisplayName(
+                  {.code = EInputCodeType::DIK_SPACE, .control = true, .alt = true, .shift = true}),
+              "Ctrl+Alt+Shift+Space");
 }
 
 // As the pad plugged in labels them.

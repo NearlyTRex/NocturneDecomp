@@ -2742,7 +2742,7 @@ functions don't count as done. Sizes are in instructions.
     - deferred: no controls while a modal dialog is up, the input forgotten, with the pause menu's network dialogs
     - deferred: no controls while the script camera is on a dead character who is not a player hero (the decomp's helper_death.h nocturne_helper_death_hold_hero), with CHero's death
     - deferred: no controls while paused or while the script has them off, with processHotkeys' pause and CScript::step's allowHeroControls
-    - deferred: camera-relative movement (the decomp's movement.h, MENU), with the Control Options page's movement scheme
+    - deferred: camera-relative movement (the decomp's movement.h, MENU), with the hero's turn rate from its frame and CDemonCamera::updateTransformMatrices
     - deferred: noting the local input for the network game (the decomp's NETPLAY), with CNetGame::initializeNetworkToHost
   - [ ] `drawScreenBorder` 0x004d7e50 (75)
   - [ ] `renderOverlay` 0x004d8040 (344)
@@ -2791,7 +2791,7 @@ functions don't count as done. Sizes are in instructions.
   - [x] `configureCustomKeyBindings` 0x005138e0 (1634)
   - [~] `configureCustomKeys` 0x00511890 (375)
     - deferred: calibrating the gamepad from Calibrate, or on Cancel for one nobody has centred, with calibrateGamepad
-    - deferred: the Movement line after the control type, stepping Tank or Camera and saved as [Control] movement (the decomp's movement.h), with CGame::playerControls' camera-relative movement
+    - deferred: the Movement line after the control type, stepping Tank or Camera and saved as [Control] movement (the decomp's movement.h), with the hero's turn rate from its frame and CDemonCamera::updateTransformMatrices
   - [x] `renderAudioSpectrumBar` 0x0050fe70 (116)
   - [x] `configureSoundOptions` 0x00511e50 (1124)
   - [~] `showOptionsScreen` 0x00512d30 (138)
