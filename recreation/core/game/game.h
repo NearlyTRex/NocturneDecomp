@@ -19,7 +19,7 @@
 namespace nocturne::core {
 
 // What the game times its frames by, draws and plays its own screens with, and reads the player's
-// keys and mouse from.
+// keys, mouse and pad from.
 struct SGameOwners {
     engine::IGameClock &clock;
     const engine::CDosIo &dosio;
@@ -32,6 +32,7 @@ struct SGameOwners {
     sound::CSndMain &sound_main;
     engine::CKeys &keys;
     engine::IRawInput &raw_input;
+    const engine::CGamepadInput &gamepad;
 };
 
 // What a session plays with besides the game's own: the console it reports to, the scene camera,
@@ -85,6 +86,8 @@ public:
     // plays until the session ends.
     int runGameSession(const SGameSessionOwners &session);
     void restoreDefaultControls();
+    // The pad's calibration seeded if it has none; the pad itself is read once a frame by the
+    // input pump.
     void resetKeyState();
     // The local player's controls and the keys' last state forgotten, and the cursor back at the
     // screen's centre, which mouse look measures from.
@@ -167,6 +170,11 @@ private:
     // The keyboard's controls, then the mouse's movement from the screen's centre, where the
     // cursor is put back, turning or strafing and looking where it beats the keys.
     void processMouseControls(const SGameSessionOwners &session, SPlayerInput &input);
+    // The pad's buttons through the bindings, as the keys are, then its sticks.
+    void processJoystickControls(const SGameSessionOwners &session, SPlayerInput &input);
+    // Each stick axis away from centre overrides what the bindings gave its speed, and the left
+    // stick's deflection picks walking or running.
+    void applyGamepadSticks(SPlayerInput &input) const;
     // Any of its bindings held.
     [[nodiscard]] bool isActionHeld(EGameAction action) const;
     // Held now and not on the last frame playerControls read, or the other way round.

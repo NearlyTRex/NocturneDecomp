@@ -243,7 +243,8 @@ protected:
                                .console = console_,
                                .special = special_,
                                .display = display_,
-                               .fonts = fonts_};
+                               .fonts = fonts_,
+                               .gamepad = game_parts_.getGamepad().input};
     shape::CEdControls controls_{{.two_d = two_d_,
                                   .screen = screen_,
                                   .raw_input = raw_input_,

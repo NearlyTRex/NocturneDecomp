@@ -18,6 +18,7 @@
 #include "shape/edittool/editortools.h"
 #include "sound/sndmain/sndmain.h"
 #include "support/newmsg/newmsg.h"
+#include "tests/mocks/engine/gamepadinputparts.h"
 #include "tests/mocks/engine/mockgameclock.h"
 #include "tests/mocks/engine/mockrawinput.h"
 #include "tests/mocks/engine/mockscreendevice.h"
@@ -61,6 +62,11 @@ public:
 
     ::testing::NiceMock<engine::MockRawInput> &getRawInput() {
         return raw_input_;
+    }
+
+    // The pad layer the game reads its sticks from, over a pad unplugged unless the test says.
+    engine::SGamepadInputParts &getGamepad() {
+        return gamepad_;
     }
 
     [[nodiscard]] const engine::CDosIo &getDosIo() const {
@@ -123,6 +129,7 @@ private:
     engine::CConsole console_{file_system_, 80, 50, 0, 0};
     sound::CSndMain sound_main_{dosio_, file_system_, audio_device_, console_,
                                 [] { return std::tm{}; }};
+    engine::SGamepadInputParts gamepad_;
     CGame game_{{.clock = clock_,
                  .dosio = dosio_,
                  .screen = screen_,
@@ -133,7 +140,8 @@ private:
                  .fonts = fonts_,
                  .sound_main = sound_main_,
                  .keys = keys_,
-                 .raw_input = raw_input_}};
+                 .raw_input = raw_input_,
+                 .gamepad = gamepad_.input}};
 };
 
 } // namespace nocturne::core

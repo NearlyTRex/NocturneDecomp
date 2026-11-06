@@ -1,6 +1,5 @@
 #include "common/math/extendedfloat.h"
 #include "common/text/ascii.h"
-#include "core/actor/notported.h"
 #include "core/charactr/deathstate.h"
 #include "core/game/game.h"
 #include "core/hero/hero.h"
@@ -8,6 +7,7 @@
 #include "core/netgame/netgame.h"
 #include "core/playerinput.h"
 #include "core/set/demonset.h"
+#include "engine/gamepadinput.h"
 #include "engine/keys/keys.h"
 #include "engine/rawinput.h"
 #include "engine/screendevice.h"
@@ -37,6 +37,18 @@ constexpr double kKeyTurnSensitivity = 0.3;
 constexpr double kKeyLookSensitivity = 0.2;
 constexpr double kMouseTurnScale = 0.75;
 constexpr float kMaxMouseSpeed = 1.0F;
+// The left stick moves the hero past four tenths, and runs past 0.65.
+constexpr float kStickMoveThreshold = 0.40F;
+constexpr float kStickRunThreshold = 0.65F;
+
+float percentOf(int percent) {
+    return static_cast<float>(percent) / 100.0F;
+}
+
+// A 16.16 sensitivity, 1 at 0x10000.
+float unitSensitivity(int sensitivity) {
+    return static_cast<float>(sensitivity) * static_cast<float>(kSensitivityUnit);
+}
 
 CExtendedFloat extend(float value) {
     return CExtendedFloat(static_cast<double>(value));
@@ -130,20 +142,19 @@ void CGame::resetInputAndCenterCursor(const SGameSessionOwners &session) {
 //   (the decomp's helper_death.h nocturne_helper_death_hold_hero), with CHero's death
 // deferred: no controls while paused or while the script has them off, with processHotkeys' pause
 //   and CScript::step's allowHeroControls
-// deferred: the pad's controls, with processJoystickControls
 // deferred: camera-relative movement (the decomp's movement.h, MENU), with the Control Options
 //   page's movement scheme
-// deferred: noting a frame of play for the pad's menu repeat (the decomp's GAMEPAD), with
-//   processJoystickControls
+// deferred: noting a frame of play, so a pad button does its binding and doesn't also act on a
+//   menu (the decomp's gamepad.h nocturne_gamepad_note_gameplay_frame), with the pad's menu
+//   navigation
 // deferred: noting the local input for the network game (the decomp's NETPLAY), with
 //   CNetGame::initializeNetworkToHost
 // nocedit 0x004dbd80
 void CGame::playerControls(const SGameSessionOwners &session) {
     SPlayerInput &input = session.net_game.getMyControls();
     if (game_control == EControlMode::CONTROL_MODE_GAMEPAD) {
-        quitNotPorted("CGame", "processJoystickControls");
-    }
-    if (game_control == EControlMode::CONTROL_MODE_MOUSE) {
+        processJoystickControls(session, input);
+    } else if (game_control == EControlMode::CONTROL_MODE_MOUSE) {
         processMouseControls(session, input);
     } else {
         processKeyboardControls(session, input);
@@ -264,6 +275,51 @@ void CGame::processMouseControls(const SGameSessionOwners &session, SPlayerInput
     }
     takeFaster(isActionHeld(EGameAction::Strafe) ? input.strafe_speed : input.turn_speed, turn);
     takeFaster(input.look_up_down_speed, look);
+}
+
+// The original polled the joystick here and turned it into codes; the input pump reads the pad
+// once a frame instead, for the menus as well as play.
+// nocedit 0x004dbe60
+void CGame::resetKeyState() {
+    seedCalibration();
+}
+
+// The pad's sticks drive the hero as well as its bindings (the decomp's gamepad.h
+// nocturne_gamepad_apply_analog).
+// deferred: the sticks left alone while the automap has the controls (the decomp's AUTOMAP),
+//   with the automap
+// nocedit 0x004dc230
+void CGame::processJoystickControls(const SGameSessionOwners &session, SPlayerInput &input) {
+    resetKeyState();
+    processKeyboardControls(session, input);
+    applyGamepadSticks(input);
+}
+
+void CGame::applyGamepadSticks(SPlayerInput &input) const {
+    const engine::CGamepadInput &gamepad = owners_.gamepad;
+    if (!gamepad.isPresent()) {
+        return;
+    }
+    const engine::SGamepadAxes &axes = gamepad.getAxes();
+    const engine::SGamepadTuning &tuning = gamepad.tuning;
+    if (axes.move_x != 0.0F) {
+        input.strafe_speed = axes.move_x;
+    }
+    if (axes.look_x != 0.0F) {
+        input.turn_speed =
+            axes.look_x * percentOf(tuning.turn_rate) * unitSensitivity(x_mouse_sensitivity);
+    }
+    if (axes.look_y != 0.0F) {
+        const float look = tuning.invert_look ? -axes.look_y : axes.look_y;
+        input.look_up_down_speed =
+            look * percentOf(tuning.look_rate) * unitSensitivity(y_mouse_sensitivity);
+    }
+    // The heroes have only a walk and a run, so how far the stick is pushed picks one, and the
+    // run binding held picks the other.
+    const float forward = std::fabs(axes.move_y);
+    if (forward >= kStickMoveThreshold) {
+        input.action_state.run = (forward >= kStickRunThreshold) != isActionHeld(EGameAction::Run);
+    }
 }
 
 } // namespace nocturne::core

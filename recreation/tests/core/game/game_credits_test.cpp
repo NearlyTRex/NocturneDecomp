@@ -16,6 +16,7 @@
 #include "support/newmsg/newmsg.h"
 #include "tests/mocks/core/menufontfiles.h"
 #include "tests/mocks/engine/fontsheet.h"
+#include "tests/mocks/engine/gamepadinputparts.h"
 #include "tests/mocks/engine/memoryscreen.h"
 #include "tests/mocks/engine/mockfont.h"
 #include "tests/mocks/engine/mockgameclock.h"
@@ -174,6 +175,7 @@ protected:
     NiceMock<platform::MockOsFontFactory> os_fonts_;
     support::CNewMsg messages_{dosio_};
     CDFont fonts_{dosio_, screen_, two_d_, three_d_, colors_, os_fonts_, messages_, editor_tools_};
+    engine::SGamepadInputParts gamepad_;
     CGame game_{{.clock = game_clock_,
                  .dosio = dosio_,
                  .screen = screen_,
@@ -184,7 +186,8 @@ protected:
                  .fonts = fonts_,
                  .sound_main = sound_,
                  .keys = keys_,
-                 .raw_input = raw_input_}};
+                 .raw_input = raw_input_,
+                 .gamepad = gamepad_.input}};
     int now_ = 0;
     int step_ = kQuarterSecond;
     int ticks_ = 0;

@@ -5,6 +5,7 @@
 #include "core/dfont/dfont.h"
 #include "core/game/game.h"
 #include "engine/console/console.h"
+#include "engine/gamepadinput.h"
 #include "engine/ini/inifile.h"
 #include "engine/special/special.h"
 #include "platform/antialias.h"
@@ -13,6 +14,7 @@
 #include "platform/upscaler.h"
 #include "sound/sndmain/sndmain.h"
 
+#include <algorithm>
 #include <cstddef>
 #include <string_view>
 
@@ -114,6 +116,26 @@ void readControls(const engine::CIniFile &file, CGame &game) {
     readFlag(file, "autoUseHealth", game.auto_use_health);
 }
 
+// A hand-edited value out of range is held to it, so the pad can't be left unusable.
+void readGamepadTuning(const engine::CIniFile &file, engine::SGamepadTuning &tuning) {
+    using Tuning = engine::SGamepadTuning;
+    tuning.deadzone = std::clamp(file.getInteger("padDeadzone", tuning.deadzone),
+                                 Tuning::kMinDeadzone, Tuning::kMaxDeadzone);
+    tuning.turn_rate = std::clamp(file.getInteger("padTurnRate", tuning.turn_rate),
+                                  Tuning::kMinRate, Tuning::kMaxRate);
+    tuning.look_rate = std::clamp(file.getInteger("padLookRate", tuning.look_rate),
+                                  Tuning::kMinRate, Tuning::kMaxRate);
+    tuning.invert_look =
+        file.getInteger("invertPadYAxis", static_cast<int>(tuning.invert_look)) != 0;
+}
+
+void writeGamepadTuning(engine::CIniFile &file, const engine::SGamepadTuning &tuning) {
+    file.setInteger("padDeadzone", tuning.deadzone);
+    file.setInteger("padTurnRate", tuning.turn_rate);
+    file.setInteger("padLookRate", tuning.look_rate);
+    file.setInteger("invertPadYAxis", static_cast<int>(tuning.invert_look));
+}
+
 // Shadows are only written for a game that isn't censored, as the original had it.
 void writeGraphics(engine::CIniFile &file, const SIniDataOwners &owners) {
     const CGame &game = owners.game;
@@ -169,7 +191,8 @@ void writeControls(engine::CIniFile &file, const CGame &game) {
 // The renderer DLL and AGP texturing the original also read have no reader in the game now, so
 // their lines are left as they are; retail has no Editor section. The window
 // opens at the resolution the game will run at, as the decomp's menu resolution change has it,
-// in the enhanced game's window mode and upscaler.
+// in the enhanced game's window mode and upscaler. The pad's tuning is read after the controls
+// (the decomp's pad_tuning.h).
 // nocedit 0x004fbd90
 void readIniData(engine::CIni &ini, platform::IFileSystem &file_system,
                  const SIniDataOwners &owners) {
@@ -183,6 +206,7 @@ void readIniData(engine::CIni &ini, platform::IFileSystem &file_system,
     owners.sound_main.readIni(file);
     file.readIniHeader("Control");
     readControls(file, owners.game);
+    readGamepadTuning(file, owners.gamepad.tuning);
     file.readIniHeader("Debug");
     readFlag(file, "logConsoleFlag", owners.console.file_logging_enabled);
     readFlag(file, "headOfHorrorCheat", owners.game.head_of_horror_cheat);
@@ -197,6 +221,7 @@ void writeIniData(engine::CIni &ini, const SIniDataOwners &owners) {
     owners.sound_main.writeIni(file);
     file.readIniHeader("Control");
     writeControls(file, owners.game);
+    writeGamepadTuning(file, owners.gamepad.tuning);
     file.readIniHeader("Debug");
     file.setInteger("logConsoleFlag", owners.console.file_logging_enabled);
     file.setInteger("headOfHorrorCheat", owners.game.head_of_horror_cheat);

@@ -1,4 +1,3 @@
-#include "common/error/fatalerror.h"
 #include "common/text/textscanner.h"
 #include "core/charactr/deathstate.h"
 #include "core/dtrace/demonraytrace.h"
@@ -9,7 +8,10 @@
 #include "core/mission/demonmission.h"
 #include "core/playerinput.h"
 #include "core/set/demonset.h"
+#include "engine/gamepadinput.h"
 #include "engine/keys/inputcodetype.h"
+#include "engine/rawinput.h"
+#include "platform/gamepad.h"
 #include "tests/mocks/core/geofile.h"
 #include "tests/mocks/core/missionfixture.h"
 #include "tests/mocks/core/setfilefixture.h"
@@ -18,14 +20,16 @@
 #include <gmock/gmock.h>
 #include <gtest/gtest.h>
 
+#include <array>
+#include <cmath>
+#include <cstddef>
+#include <cstdint>
 #include <memory>
 
 namespace nocturne::core {
 namespace {
 
 using ::testing::Return;
-using ::testing::StrEq;
-using ::testing::ThrowsMessage;
 
 // The game clock's ticks in a 65536th of a second.
 constexpr int kTicksPerUnit = 18;
@@ -309,11 +313,107 @@ TEST_F(CGameInputTest, InAnHQMissionTheDrawAndTheLightAreRefused) {
     EXPECT_TRUE(input().action_state.jump);
 }
 
-TEST_F(CGameInputTest, ThePadsControlsArentPortedYet) {
-    game_.game_control = EControlMode::CONTROL_MODE_GAMEPAD;
-    EXPECT_THAT([this] { frame(kFrame); },
-                ThrowsMessage<common::CFatalError>(
-                    StrEq("CGame::processJoystickControls is not ported yet")));
+// The pad's defaults, and its sticks read once a frame by the pump, as the game's window has it.
+class CGamePadTest : public CGameInputTest {
+protected:
+    CGamePadTest() {
+        game_.game_control = EControlMode::CONTROL_MODE_GAMEPAD;
+        game_.restoreDefaultControls();
+        engine::SGamepadInputParts &pad = game_parts_.getGamepad();
+        ON_CALL(pad.gamepad, updateGamepad()).WillByDefault(Return(true));
+        ON_CALL(pad.gamepad, getGamepadAxis).WillByDefault([this](platform::EGamepadAxis axis) {
+            return axes_[static_cast<std::size_t>(axis)];
+        });
+    }
+
+    // The sticks at these fractions of full deflection, the pump having read them.
+    void sticksAt(float move_x, float move_y, float look_x, float look_y) {
+        const auto raw = [](float fraction) {
+            return static_cast<std::int16_t>(std::lround(fraction * 32767.0F));
+        };
+        axes_ = {raw(move_x), raw(move_y), raw(look_x), raw(look_y), 0, 0};
+        std::array<std::uint8_t, engine::IRawInput::kInputCodeCount> codes{};
+        game_parts_.getGamepad().input.pump(codes, true);
+    }
+
+    std::array<std::int16_t, 6> axes_{};
+};
+
+// Fully over, the left stick strafes fully and the right turns and looks a quarter, the
+// keyboard's top speed, at the default tuning and sensitivity.
+TEST_F(CGamePadTest, TheSticksStrafeTurnAndLook) {
+    sticksAt(1.0F, 0.0F, 1.0F, 0.0F);
+    frame(kFrame);
+    EXPECT_EQ(input().strafe_speed, 1.0F);
+    EXPECT_FLOAT_EQ(input().turn_speed, 0.25F);
+    sticksAt(0.0F, 0.0F, 0.0F, 1.0F);
+    frame(kFrame);
+    EXPECT_FLOAT_EQ(input().look_up_down_speed, 0.25F);
+}
+
+// The tuning's rates and the mouse sensitivities scale them; the look can be inverted.
+TEST_F(CGamePadTest, TheTuningAndSensitivityScaleTheSticks) {
+    engine::SGamepadTuning &tuning = game_parts_.getGamepad().input.tuning;
+    tuning.turn_rate = 50;
+    tuning.look_rate = 10;
+    tuning.invert_look = true;
+    game_.x_mouse_sensitivity = 0x20000;
+    sticksAt(0.0F, 0.0F, -1.0F, 0.0F);
+    frame(kFrame);
+    EXPECT_FLOAT_EQ(input().turn_speed, -1.0F);
+    sticksAt(0.0F, 0.0F, 0.0F, 1.0F);
+    frame(kFrame);
+    EXPECT_FLOAT_EQ(input().look_up_down_speed, -0.1F);
+}
+
+// A centred stick leaves the speeds to the bindings, as the d-pad drives them.
+TEST_F(CGamePadTest, ACentredStickLeavesTheBindingsSpeeds) {
+    hold(EGameAction::StrafeLeft);
+    sticksAt(0.0F, 0.0F, 0.0F, 0.0F);
+    input().turn_speed = 0.0F;
+    frame(kFrame);
+    EXPECT_EQ(input().strafe_speed, -1.0F);
+    EXPECT_EQ(input().turn_speed, 0.0F);
+}
+
+// Pushed past four tenths the hero walks, past 0.65 runs; Run held picks the other.
+TEST_F(CGamePadTest, HowFarTheStickIsPushedPicksWalkingOrRunning) {
+    sticksAt(0.0F, -0.6F, 0.0F, 0.0F);
+    frame(kFrame);
+    EXPECT_FALSE(input().action_state.run);
+    sticksAt(0.0F, 1.0F, 0.0F, 0.0F);
+    frame(kFrame);
+    EXPECT_TRUE(input().action_state.run);
+    hold(EGameAction::Run);
+    frame(kFrame);
+    EXPECT_FALSE(input().action_state.run);
+    sticksAt(0.0F, 0.6F, 0.0F, 0.0F);
+    frame(kFrame);
+    EXPECT_TRUE(input().action_state.run);
+}
+
+// Barely pushed, the run is the binding's.
+TEST_F(CGamePadTest, ALightPushLeavesTheRunToItsBinding) {
+    hold(EGameAction::Run);
+    sticksAt(0.0F, 0.3F, 0.0F, 0.0F);
+    frame(kFrame);
+    EXPECT_TRUE(input().action_state.run);
+}
+
+TEST_F(CGamePadTest, WithoutAPadOnlyTheBindingsMove) {
+    sticksAt(1.0F, 0.0F, 0.0F, 0.0F);
+    ON_CALL(game_parts_.getGamepad().gamepad, updateGamepad()).WillByDefault(Return(false));
+    sticksAt(1.0F, 0.0F, 0.0F, 0.0F);
+    frame(kFrame);
+    EXPECT_EQ(input().strafe_speed, 0.0F);
+}
+
+// The pad arrives normalised, so it needs no calibration of its own.
+TEST_F(CGamePadTest, ResettingTheKeysSeedsAnUncalibratedPad) {
+    game_.x_center = 0;
+    game_.resetKeyState();
+    EXPECT_EQ(game_.x_center, 0x8000);
+    EXPECT_EQ(game_.y_stick_max, 0xffff);
 }
 
 class CGameMouseTest : public CGameInputTest {

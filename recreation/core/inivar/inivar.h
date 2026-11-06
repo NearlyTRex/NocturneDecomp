@@ -19,6 +19,7 @@ struct SIniDataOwners {
     engine::CSpecial &special;
     platform::IDisplay &display;
     CDFont &fonts;
+    engine::CGamepadInput &gamepad;
 };
 
 // A nocturne.ini that can't be made writable is fatal: the game was run from the CD.

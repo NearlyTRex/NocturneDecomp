@@ -1,4 +1,5 @@
 #include "common/error/fatalerror.h"
+#include "tests/mocks/engine/gamepadinputparts.h"
 #include "tests/mocks/platform/mockclock.h"
 #include "tests/mocks/platform/mockwindow.h"
 #include "wincore/winrun/winrun.h"
@@ -46,7 +47,8 @@ protected:
 
     platform::MockWindow window_;
     platform::MockClock clock_;
-    CWinRun winrun_{window_, prime(clock_)};
+    engine::SGamepadInputParts gamepad_;
+    CWinRun winrun_{window_, prime(clock_), gamepad_.input};
 };
 
 TEST_F(CWinRunTest, TheMessageBoxNamesTheFileAndLine) {

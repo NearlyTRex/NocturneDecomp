@@ -5,6 +5,7 @@
 #include "engine/2d/2d.h"
 #include "engine/3d/3d.h"
 #include "engine/font/font.h"
+#include "engine/gamepadinput.h"
 #include "engine/ini/ini.h"
 #include "engine/keys/keys.h"
 #include "engine/light/light.h"
@@ -108,7 +109,8 @@ protected:
                            .console = console_,
                            .special = special_,
                            .display = display_,
-                           .fonts = fonts_};
+                           .fonts = fonts_,
+                           .gamepad = game_parts_.getGamepad().input};
 };
 
 TEST_F(CInivarTest, ReadsTheGraphicsSettings) {
@@ -363,6 +365,8 @@ TEST_F(CInivarTest, WhatIsWrittenReadsBackTheSame) {
     game_.restoreDefaultControls();
     game_.map_zoom = 150;
     game_.y_stick_max = 40000;
+    game_parts_.getGamepad().input.tuning = {
+        .deadzone = 30, .turn_rate = 60, .look_rate = 15, .invert_look = true};
     writeIniData(ini_, owners_);
     CGameParts copy_parts(game_clock_);
     CGame &copy = copy_parts.getGame();
@@ -371,13 +375,43 @@ TEST_F(CInivarTest, WhatIsWrittenReadsBackTheSame) {
                                 .console = console_,
                                 .special = special_,
                                 .display = display_,
-                                .fonts = fonts_};
+                                .fonts = fonts_,
+                                .gamepad = copy_parts.getGamepad().input};
     readIniData(ini_, file_system_, reread);
     EXPECT_EQ(copy.game_control, EControlMode::CONTROL_MODE_GAMEPAD);
     EXPECT_EQ(copy.controls.formatBindings(EGameAction::Fire),
               game_.controls.formatBindings(EGameAction::Fire));
     EXPECT_EQ(copy.map_zoom, 150);
     EXPECT_EQ(copy.y_stick_max, 40000);
+    const engine::SGamepadTuning &tuning = copy_parts.getGamepad().input.tuning;
+    EXPECT_EQ(tuning.deadzone, 30);
+    EXPECT_EQ(tuning.turn_rate, 60);
+    EXPECT_EQ(tuning.look_rate, 15);
+    EXPECT_TRUE(tuning.invert_look);
+}
+
+// The pad's tuning is beside the controls (the decomp's pad_tuning.h).
+TEST_F(CInivarTest, ThePadsTuningIsReadFromTheControlSection) {
+    text_ = "[Control]\r\npadDeadzone=10\r\npadTurnRate=40\r\npadLookRate=35\r\n"
+            "invertPadYAxis=1\r\n";
+    read();
+    const engine::SGamepadTuning &tuning = game_parts_.getGamepad().input.tuning;
+    EXPECT_EQ(tuning.deadzone, 10);
+    EXPECT_EQ(tuning.turn_rate, 40);
+    EXPECT_EQ(tuning.look_rate, 35);
+    EXPECT_TRUE(tuning.invert_look);
+}
+
+// A hand-edited value out of range is held to it, so the pad can't be left unusable; a missing
+// one is the default.
+TEST_F(CInivarTest, ThePadsTuningIsHeldToItsRange) {
+    text_ = "[Control]\r\npadDeadzone=90\r\npadTurnRate=0\r\n";
+    read();
+    const engine::SGamepadTuning &tuning = game_parts_.getGamepad().input.tuning;
+    EXPECT_EQ(tuning.deadzone, 40);
+    EXPECT_EQ(tuning.turn_rate, 5);
+    EXPECT_EQ(tuning.look_rate, 25);
+    EXPECT_FALSE(tuning.invert_look);
 }
 
 } // namespace

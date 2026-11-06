@@ -14,6 +14,7 @@ class CDosIo;
 class CFileFinder;
 class CFont;
 class CFontColors;
+class CGamepadInput;
 class CIni;
 class CIniFile;
 class CKeys;

@@ -42,6 +42,7 @@
 #include "support/newmsg/newmsg.h"
 #include "tests/mocks/core/setparts.h"
 #include "tests/mocks/engine/fontsheet.h"
+#include "tests/mocks/engine/gamepadinputparts.h"
 #include "tests/mocks/engine/memoryscreen.h"
 #include "tests/mocks/engine/mockgameclock.h"
 #include "tests/mocks/engine/mockrawinput.h"
@@ -179,6 +180,7 @@ protected:
     support::CNewMsg messages_{dosio_};
     CDFont fonts_{dosio_, screen_, two_d_, three_d_, colors_, os_fonts_, messages_, editor_tools_};
     engine::CMenuInput menu_input_{keys_};
+    engine::SGamepadInputParts gamepad_;
     CGame game_{{.clock = game_clock_,
                  .dosio = dosio_,
                  .screen = screen_,
@@ -189,14 +191,16 @@ protected:
                  .fonts = fonts_,
                  .sound_main = sound_,
                  .keys = keys_,
-                 .raw_input = raw_input_}};
+                 .raw_input = raw_input_,
+                 .gamepad = gamepad_.input}};
     engine::CIni ini_{file_system_};
     SIniDataOwners ini_owners_{.game = game_,
                                .sound_main = sound_,
                                .console = console_,
                                .special = special_,
                                .display = display_,
-                               .fonts = fonts_};
+                               .fonts = fonts_,
+                               .gamepad = gamepad_.input};
     engine::CPod pod_{file_system_, dosio_};
     engine::CTexture texture_{{.dosio = dosio_,
                                .two_d = two_d_,

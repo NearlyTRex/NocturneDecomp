@@ -28,7 +28,7 @@ functions don't count as done. Sizes are in instructions.
 | 12 | `CDemonMission::loadScript`, `CScript::executeInitSection`, `CDemonMission::startMission`, `CDemonMission::buildActiveSetActorList`, `CConsole::reset`, `CEditorTools::displayMemoryDiagnostics`, `CGame::setGameRes`, `CDemonLight::init`, `CDemonSet::initScene` | 12 | 26 | 1658 | 16 | 9 | 61.5% |
 | 13 | `CFireEffect::init`, `CDemonSet::loadMasterLightStates`, `CDemonSet::setGamma`, `CGame::clearOverlay`, `CGame::loadAssets` | 7 | 27 | 735 | 16 | 1 | 59.2% |
 | 14 | `CNetGame::syncPlayers`, `CNetGame::processServerFrame`, `CLevelLoader::cleanup`, `CKeys::toggleInputMask`, `CGame::processHotkeys` | 17 | 51 | 5302 | 5 | 2 | 9.8% |
-| 15 | `CGame::updateStatusDisplays`, `CGame::processFudge`, `CGame::playerControls`, `CGame::processFrame` | 43 | 189 | 28837 | 8 | 3 | 4.2% |
+| 15 | `CGame::updateStatusDisplays`, `CGame::processFudge`, `CGame::playerControls`, `CGame::processFrame` | 43 | 189 | 28837 | 9 | 4 | 4.7% |
 | 16 | `CGame::setScreenResolutionAndDisplayFangs`, `showOptionsScreen`, `CScript::skipCinematic`, `CGame::showFullscreenBitmap`, `CDemonMission::countDamageableEnemies`, `freeInventory`, `CGame::runGameSession`, `CGame::displayActStats` | 10 | 25 | 6938 | 9 | 4 | 36.0% |
 | 17 | `CGame::finishAct`, `CDemonMission::run`, `CGame::loadGame`, `CGame::showChapterSelect`, `showDeveloperToolsMenu` | 12 | 26 | 3707 | 6 | 2 | 23.0% |
 | 18 | `enterMainGameMenu`, `finalizeGameSystems` | 11 | 13 | 539 | 3 | 0 | 23.0% |
@@ -46,7 +46,7 @@ functions don't count as done. Sizes are in instructions.
 | 30 | Not reached from startup: `core/` (part 8 of 9) | 20 | 300 | 31826 | 42 | 8 | 14.0% |
 | 31 | Not reached from startup: `core/` (part 9 of 9) | 5 | 111 | 10905 | 26 | 7 | 23.4% |
 | 32 | Not reached from startup: `wincore/` | 2 | 11 | 482 | 4 | 0 | 36.3% |
-| | **All** | | **4479** | **402407** | **1195** | **232** | **26.6%** |
+| | **All** | | **4479** | **402407** | **1196** | **233** | **26.7%** |
 
 ## Step 0: Math value types
 
@@ -2724,27 +2724,27 @@ functions don't count as done. Sizes are in instructions.
 - free functions
   - [ ] `getTextureCacheStats` 0x005dd970 (7)
 
-### `core/game.cpp` (18 functions, 8127 instructions, 0 done, 3 partial)
+### `core/game.cpp` (18 functions, 8127 instructions, 1 done, 4 partial)
 - class `CGame`
   - [ ] `updateStatusDisplays` 0x004d85a0 (117)
   - [ ] `processFudge` 0x004d8750 (111)
-  - [ ] `resetKeyState` 0x004dbe60 (249)
+  - [x] `resetKeyState` 0x004dbe60 (249)
   - [~] `processKeyboardControls` 0x004dc3e0 (617)
     - deferred: no controls while the automap has them (the decomp's AUTOMAP), with the automap
     - deferred: the weapon, item and ammo keys choosing for the hero, by way of the network game's requests (the decomp's net_weapon.h), with CHero's weapon selection
     - deferred: the item description key, with CInventory::toggleDetailView
     - deferred: the infrared key turning the goggles on or off, refused to a dead hero and to an unplaced client, the look reset (the decomp's GOGGLE_LOOK) and the camera chosen again, with CDemonSet::renderGogglesView
     - unverified: the strafe, turn and look steps, not run against nocedit's own code
-  - [ ] `processJoystickControls` 0x004dc230 (16)
+  - [~] `processJoystickControls` 0x004dc230 (16)
+    - deferred: the sticks left alone while the automap has the controls (the decomp's AUTOMAP), with the automap
   - [~] `processMouseControls` 0x004dccc0 (149)
     - unverified: the mouse's turn and look products, not run against nocedit's own code
   - [~] `playerControls` 0x004dbd80 (73)
     - deferred: no controls while a modal dialog is up, the input forgotten, with the pause menu's network dialogs
     - deferred: no controls while the script camera is on a dead character who is not a player hero (the decomp's helper_death.h nocturne_helper_death_hold_hero), with CHero's death
     - deferred: no controls while paused or while the script has them off, with processHotkeys' pause and CScript::step's allowHeroControls
-    - deferred: the pad's controls, with processJoystickControls
     - deferred: camera-relative movement (the decomp's movement.h, MENU), with the Control Options page's movement scheme
-    - deferred: noting a frame of play for the pad's menu repeat (the decomp's GAMEPAD), with processJoystickControls
+    - deferred: noting a frame of play, so a pad button does its binding and doesn't also act on a menu (the decomp's gamepad.h nocturne_gamepad_note_gameplay_frame), with the pad's menu navigation
     - deferred: noting the local input for the network game (the decomp's NETPLAY), with CNetGame::initializeNetworkToHost
   - [ ] `drawScreenBorder` 0x004d7e50 (75)
   - [ ] `renderOverlay` 0x004d8040 (344)

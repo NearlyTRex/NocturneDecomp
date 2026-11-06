@@ -1,3 +1,4 @@
+#include "engine/gamepadinput.h"
 #include "engine/screendevice.h"
 #include "platform/window.h"
 #include "wincore/winrun/winrun.h"
@@ -52,6 +53,7 @@ void CWinRun::processWindowMessages() {
     while (window_.pollEvent(event)) {
         mainWindowProc(event);
     }
+    gamepad_.pump(keyboard_state_, window_active_ == 1);
 }
 
 // The hidden cursor, Alt+F4 closing the game and the screensaver are the adapter's. A

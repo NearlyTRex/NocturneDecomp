@@ -20,7 +20,7 @@ public:
     // The retail build's title; the editor's is "Nocturne Editor".
     static constexpr std::string_view kApplicationTitle = "Nocturne";
 
-    CWinRun(platform::IWindow &window, platform::IClock &clock);
+    CWinRun(platform::IWindow &window, platform::IClock &clock, engine::CGamepadInput &gamepad);
 
     // Game ticks, 65536 * 18 a second, wrapping as the original's int did.
     int getTime() override;
@@ -31,7 +31,8 @@ public:
     void enqueueInput(int input_value);
     void clearMouseClicks();
     void setCursorPosition(int x, int y) override;
-    // Releases the keys let go during the last pump, then handles every waiting event.
+    // Releases the keys let go during the last pump, handles every waiting event, then reads the
+    // pad, so every loop in the game, menus included, sees it once a frame.
     void processWindowMessages();
     void displayMessageBoxAndQuit(const common::CFatalError &error);
     // The window was closed: waits for input give up, and menus take it as a cancel.
@@ -62,6 +63,7 @@ private:
 
     platform::IWindow &window_;
     platform::IClock &clock_;
+    engine::CGamepadInput &gamepad_;
     double timer_calibration_;
     std::uint64_t performance_counter_;
     std::uint32_t accumulated_game_time_ = 0;

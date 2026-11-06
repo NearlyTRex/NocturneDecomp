@@ -43,6 +43,7 @@
 #include "engine/dosio/dosio.h"
 #include "engine/drender/demonrenderer.h"
 #include "engine/font/font.h"
+#include "engine/gamepadinput.h"
 #include "engine/ini/ini.h"
 #include "engine/keys/keys.h"
 #include "engine/light/light.h"
@@ -121,8 +122,9 @@ std::tm getLocalTime() {
 class CGameSystems {
 public:
     CGameSystems(sdl::CSdlWindow &window, sdl::CSdlFileSystem &file_system, sdl::CSdlClock &clock,
-                 wincore::CWinRun &winrun)
-        : window_(window), file_system_(file_system), clock_(clock), winrun_(winrun) {
+                 wincore::CWinRun &winrun, engine::CGamepadInput &gamepad)
+        : window_(window), file_system_(file_system), clock_(clock), winrun_(winrun),
+          gamepad_(gamepad) {
         sound_.setMusicHandler(
             [this](float seconds) { attract_movies_.setMusicDuration(seconds); });
     }
@@ -164,12 +166,12 @@ private:
     sdl::CSdlFileSystem &file_system_;
     sdl::CSdlClock &clock_;
     wincore::CWinRun &winrun_;
+    engine::CGamepadInput &gamepad_;
     nocturne::platform::CFileLog log_{file_system_};
     sdl::CSdlDisplay display_{window_, log_};
     // Declared after the display, so it is gone before the context it draws in. The engine calls
     // init, with its bridge, only when the INI turns acceleration on.
     nocturne::platform::gl::CGlRenderer renderer_{display_.getGlApi(), display_, log_};
-    sdl::CSdlGamepad gamepad_;
     sdl::CSdlClipboard clipboard_;
     sdl::CSdlNetwork network_;
     sdl::CSdlAudioDevice audio_;
@@ -216,14 +218,16 @@ private:
                        .fonts = fonts_,
                        .sound_main = sound_main_,
                        .keys = keys_,
-                       .raw_input = winrun_}};
+                       .raw_input = winrun_,
+                       .gamepad = gamepad_}};
     engine::CIni ini_{file_system_};
     core::SIniDataOwners ini_owners_{.game = game_,
                                      .sound_main = sound_main_,
                                      .console = console_,
                                      .special = special_,
                                      .display = display_,
-                                     .fonts = fonts_};
+                                     .fonts = fonts_,
+                                     .gamepad = gamepad_};
     engine::CTexture texture_{{.dosio = dosio_,
                                .two_d = two_d_,
                                .screen = screen_,
@@ -431,9 +435,9 @@ private:
 // and graphics before showing the box. The original quit "Out of memory" wherever an allocation
 // failed; a failed allocation here becomes that fatal error.
 int runGame(sdl::CSdlWindow &window, sdl::CSdlFileSystem &file_system, sdl::CSdlClock &clock,
-            wincore::CWinRun &winrun) {
+            wincore::CWinRun &winrun, engine::CGamepadInput &gamepad) {
     try {
-        CGameSystems systems(window, file_system, clock, winrun);
+        CGameSystems systems(window, file_system, clock, winrun, gamepad);
         systems.initializeGameSystems();
         systems.run();
         return 0;
@@ -448,9 +452,11 @@ int run() {
     sdl::CSdlWindow window(wincore::CWinRun::kApplicationTitle, kWidth, kHeight);
     sdl::CSdlFileSystem file_system;
     sdl::CSdlClock clock;
-    wincore::CWinRun winrun(window, clock);
+    sdl::CSdlGamepad gamepad;
+    engine::CGamepadInput gamepad_input(gamepad, file_system);
+    wincore::CWinRun winrun(window, clock, gamepad_input);
     try {
-        return runGame(window, file_system, clock, winrun);
+        return runGame(window, file_system, clock, winrun, gamepad_input);
     } catch (const nocturne::common::CFatalError &error) {
         // Retail writes no gtfo.txt; nocedit's log is kept so a fatal error outlives its box.
         file_system.appendFile("gtfo.txt", error.getLogEntry(getLocalTime()));
