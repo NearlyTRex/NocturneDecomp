@@ -28,6 +28,8 @@ struct SMenuOwners {
     engine::C3d &three_d;
     engine::IRawInput &raw_input;
     engine::CMenuInput &menu_input;
+    // For its buttons' labels and its tuning.
+    engine::CGamepadInput &gamepad;
     CDFont &fonts;
     const support::CNewMsg &messages;
     engine::CDemonRenderer &renderer;

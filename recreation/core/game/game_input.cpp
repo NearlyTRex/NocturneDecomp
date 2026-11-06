@@ -135,7 +135,8 @@ void CGame::resetInputAndCenterCursor(const SGameSessionOwners &session) {
 }
 
 // The original also quit on a control type other than the three, which the INI's read can't
-// give, and copied the mouse buttons where nothing reads them.
+// give, and copied the mouse buttons where nothing reads them. A frame of play keeps the pad's
+// presses off the menus for a few frames, so a button does its binding and nothing else.
 // deferred: no controls while a modal dialog is up, the input forgotten, with the pause menu's
 //   network dialogs
 // deferred: no controls while the script camera is on a dead character who is not a player hero
@@ -144,9 +145,6 @@ void CGame::resetInputAndCenterCursor(const SGameSessionOwners &session) {
 //   and CScript::step's allowHeroControls
 // deferred: camera-relative movement (the decomp's movement.h, MENU), with the Control Options
 //   page's movement scheme
-// deferred: noting a frame of play, so a pad button does its binding and doesn't also act on a
-//   menu (the decomp's gamepad.h nocturne_gamepad_note_gameplay_frame), with the pad's menu
-//   navigation
 // deferred: noting the local input for the network game (the decomp's NETPLAY), with
 //   CNetGame::initializeNetworkToHost
 // nocedit 0x004dbd80
@@ -165,6 +163,7 @@ void CGame::playerControls(const SGameSessionOwners &session) {
         input.action_state.draw = false;
         input.action_state.light = false;
     }
+    owners_.gamepad.noteGameplayFrame();
     for (const std::size_t index : std::views::iota(std::size_t{0}, kGameActionCount)) {
         previous_held_.at(index) = isActionHeld(static_cast<EGameAction>(index));
     }

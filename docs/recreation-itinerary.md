@@ -24,12 +24,12 @@ functions don't count as done. Sizes are in instructions.
 | 8 | `renderMenuAndGetChoice`, `CMoon::free`, `CSound::reset`, `CEditorTools::showFileSelectionDialog` | 8 | 63 | 5314 | 60 | 3 | 95.2% |
 | 9 | `CPickList::enableItem`, `CEventList::resetGameFlags`, `CLevelLoader::show`, `CDemonMission::load` | 15 | 56 | 3298 | 37 | 9 | 66.0% |
 | 10 | `CDemonMission::createHeros`, `CDemonMission::prepareAllActors`, `CEventList::reset`, `CDemonMission::loadSet` | 15 | 42 | 5112 | 33 | 8 | 78.5% |
-| 11 | `CScript::loadScript` | 63 | 579 | 67400 | 131 | 60 | 22.6% |
+| 11 | `CScript::loadScript` | 63 | 579 | 67400 | 132 | 59 | 22.7% |
 | 12 | `CDemonMission::loadScript`, `CScript::executeInitSection`, `CDemonMission::startMission`, `CDemonMission::buildActiveSetActorList`, `CConsole::reset`, `CEditorTools::displayMemoryDiagnostics`, `CGame::setGameRes`, `CDemonLight::init`, `CDemonSet::initScene` | 12 | 26 | 1658 | 16 | 9 | 61.5% |
 | 13 | `CFireEffect::init`, `CDemonSet::loadMasterLightStates`, `CDemonSet::setGamma`, `CGame::clearOverlay`, `CGame::loadAssets` | 7 | 27 | 735 | 16 | 1 | 59.2% |
 | 14 | `CNetGame::syncPlayers`, `CNetGame::processServerFrame`, `CLevelLoader::cleanup`, `CKeys::toggleInputMask`, `CGame::processHotkeys` | 17 | 51 | 5302 | 5 | 2 | 9.8% |
 | 15 | `CGame::updateStatusDisplays`, `CGame::processFudge`, `CGame::playerControls`, `CGame::processFrame` | 43 | 189 | 28837 | 9 | 4 | 4.7% |
-| 16 | `CGame::setScreenResolutionAndDisplayFangs`, `showOptionsScreen`, `CScript::skipCinematic`, `CGame::showFullscreenBitmap`, `CDemonMission::countDamageableEnemies`, `freeInventory`, `CGame::runGameSession`, `CGame::displayActStats` | 10 | 25 | 6938 | 9 | 4 | 36.0% |
+| 16 | `CGame::setScreenResolutionAndDisplayFangs`, `showOptionsScreen`, `CScript::skipCinematic`, `CGame::showFullscreenBitmap`, `CDemonMission::countDamageableEnemies`, `freeInventory`, `CGame::runGameSession`, `CGame::displayActStats` | 10 | 25 | 6938 | 10 | 3 | 40.0% |
 | 17 | `CGame::finishAct`, `CDemonMission::run`, `CGame::loadGame`, `CGame::showChapterSelect`, `showDeveloperToolsMenu` | 12 | 26 | 3707 | 6 | 2 | 23.0% |
 | 18 | `enterMainGameMenu`, `finalizeGameSystems` | 11 | 13 | 539 | 3 | 0 | 23.0% |
 | 19 | Not reached from startup: `engine/` | 23 | 279 | 19702 | 25 | 2 | 8.9% |
@@ -46,7 +46,7 @@ functions don't count as done. Sizes are in instructions.
 | 30 | Not reached from startup: `core/` (part 8 of 9) | 20 | 300 | 31826 | 42 | 8 | 14.0% |
 | 31 | Not reached from startup: `core/` (part 9 of 9) | 5 | 111 | 10905 | 26 | 7 | 23.4% |
 | 32 | Not reached from startup: `wincore/` | 2 | 11 | 482 | 4 | 0 | 36.3% |
-| | **All** | | **4479** | **402407** | **1196** | **233** | **26.7%** |
+| | **All** | | **4479** | **402407** | **1198** | **231** | **26.7%** |
 
 ## Step 0: Math value types
 
@@ -1474,10 +1474,9 @@ functions don't count as done. Sizes are in instructions.
 - free functions
   - [x] `getKeyName` 0x005f3980 (520)
 
-### `core/menu.cpp` (1 functions, 161 instructions, 0 done, 1 partial)
+### `core/menu.cpp` (1 functions, 161 instructions, 1 done, 0 partial)
 - free functions
-  - [~] `getKeyDisplayName` 0x005134e0 (161)
-    - deferred: the gamepad's buttons, named for the pad plugged in (the decomp's gamepad.h nocturne_gamepad_code_name), with the gamepad layer
+  - [x] `getKeyDisplayName` 0x005134e0 (161)
 
 ### `core/inv.cpp` (15 functions, 2404 instructions, 0 done, 2 partial)
 - class `CInventory`
@@ -2744,7 +2743,6 @@ functions don't count as done. Sizes are in instructions.
     - deferred: no controls while the script camera is on a dead character who is not a player hero (the decomp's helper_death.h nocturne_helper_death_hold_hero), with CHero's death
     - deferred: no controls while paused or while the script has them off, with processHotkeys' pause and CScript::step's allowHeroControls
     - deferred: camera-relative movement (the decomp's movement.h, MENU), with the Control Options page's movement scheme
-    - deferred: noting a frame of play, so a pad button does its binding and doesn't also act on a menu (the decomp's gamepad.h nocturne_gamepad_note_gameplay_frame), with the pad's menu navigation
     - deferred: noting the local input for the network game (the decomp's NETPLAY), with CNetGame::initializeNetworkToHost
   - [ ] `drawScreenBorder` 0x004d7e50 (75)
   - [ ] `renderOverlay` 0x004d8040 (344)
@@ -2784,17 +2782,14 @@ functions don't count as done. Sizes are in instructions.
 - class `CSound`
   - [x] `configure` 0x005b3830 (112)
 
-### `core/menu.cpp` (9 functions, 4659 instructions, 5 done, 3 partial)
+### `core/menu.cpp` (9 functions, 4659 instructions, 6 done, 2 partial)
 - free functions
   - [x] `configureGraphicsOptions` 0x00510c80 (770)
   - [ ] `calibrateGamepad` 0x005104d0 (215)
   - [x] `adjustMouseSensitivity` 0x005107c0 (200)
   - [x] `isKeyCodeValidForMode` 0x00513720 (87)
-  - [~] `configureCustomKeyBindings` 0x005138e0 (1634)
-    - deferred: polling the gamepad while a code is waited for, with resetKeyState
-    - deferred: keeping the gamepad off the menus while a code is waited for (the decomp's gamepad.h nocturne_gamepad_suppress_nav), with the gamepad layer
+  - [x] `configureCustomKeyBindings` 0x005138e0 (1634)
   - [~] `configureCustomKeys` 0x00511890 (375)
-    - deferred: the gamepad's deadzone, turn and look speeds and look inversion lines, before Calibrate (the decomp's pad_tuning.h), with the gamepad layer
     - deferred: calibrating the gamepad from Calibrate, or on Cancel for one nobody has centred, with calibrateGamepad
     - deferred: the Movement line after the control type, stepping Tank or Camera and saved as [Control] movement (the decomp's movement.h), with CGame::playerControls' camera-relative movement
   - [x] `renderAudioSpectrumBar` 0x0050fe70 (116)

@@ -5,6 +5,7 @@
 #include "core/game/gameaction.h"
 #include "core/menu/menu.h"
 #include "engine/2d/2d.h"
+#include "engine/gamepadinput.h"
 #include "engine/keys/inputcodetype.h"
 #include "engine/keys/keyname.h"
 #include "engine/keys/keys.h"
@@ -139,11 +140,14 @@ private:
 
 } // namespace
 
-// The original copied the name into the next of ten shared buffers.
-// deferred: the gamepad's buttons, named for the pad plugged in (the decomp's gamepad.h
-//   nocturne_gamepad_code_name), with the gamepad layer
+// The original copied the name into the next of ten shared buffers. The pad's own codes are
+// named as the pad plugged in labels them.
 // nocedit 0x005134e0
 std::string CMenu::getKeyDisplayName(EInputCodeType key_code) const {
+    const std::optional<std::string_view> pad_name = owners_.gamepad.getCodeName(key_code);
+    if (pad_name) {
+        return std::string(*pad_name);
+    }
     const auto *found = std::ranges::find(kDeviceNames, key_code, &SDeviceName::code);
     if (found != kDeviceNames.end()) {
         return std::string(owners_.messages.getLocalizedString(found->name));
@@ -169,10 +173,9 @@ bool CMenu::isKeyCodeValidForMode(EInputCodeType key_code) const {
 // The original bound one code to each action, which a pick replaced, and kept the joystick's
 // and the mouse's directions from being moved; the enhanced game can move any binding, and lists
 // the map's after the rest. Restore defaults goes back once it is done. Both lists keep to one
-// column, as the original forced its own, whatever the names' widths.
-// deferred: polling the gamepad while a code is waited for, with resetKeyState
-// deferred: keeping the gamepad off the menus while a code is waited for (the decomp's
-//   gamepad.h nocturne_gamepad_suppress_nav), with the gamepad layer
+// column, as the original forced its own, whatever the names' widths. The pad is read with
+// each present while a code is waited for, and its menu presses aren't codes, so a button counts
+// once.
 // nocedit 0x005138e0
 void CMenu::configureCustomKeyBindings() {
     const CGame &game = owners_.game;

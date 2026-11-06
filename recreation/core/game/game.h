@@ -32,7 +32,7 @@ struct SGameOwners {
     sound::CSndMain &sound_main;
     engine::CKeys &keys;
     engine::IRawInput &raw_input;
-    const engine::CGamepadInput &gamepad;
+    engine::CGamepadInput &gamepad;
 };
 
 // What a session plays with besides the game's own: the console it reports to, the scene camera,

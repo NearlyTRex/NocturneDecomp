@@ -4,6 +4,7 @@
 #include "core/game/gameaction.h"
 #include "core/menu/menu.h"
 #include "engine/keys/inputcodetype.h"
+#include "platform/gamepad.h"
 #include "tests/mocks/core/menufixture.h"
 
 #include <gmock/gmock.h>
@@ -271,7 +272,14 @@ TEST_F(CKeyDisplayNameTest, TheMouseAndTheJoystickAreNamedForWhatTheyAre) {
 
 TEST_F(CKeyDisplayNameTest, KeysAreNamedByTheirNames) {
     EXPECT_EQ(menu_.getKeyDisplayName(EInputCodeType::DIK_SPACE), "Space");
-    EXPECT_EQ(menu_.getKeyDisplayName(EInputCodeType::PAD_A), "(invalid key)");
+}
+
+// As the pad plugged in labels them.
+TEST_F(CKeyDisplayNameTest, ThePadsOwnCodesAreNamedForThePad) {
+    EXPECT_EQ(menu_.getKeyDisplayName(EInputCodeType::PAD_A), "A");
+    ON_CALL(game_parts_.getGamepad().gamepad, getGamepadType())
+        .WillByDefault(Return(platform::EGamepadType::PS4));
+    EXPECT_EQ(menu_.getKeyDisplayName(EInputCodeType::PAD_A), "Cross");
 }
 
 struct SModeCase {

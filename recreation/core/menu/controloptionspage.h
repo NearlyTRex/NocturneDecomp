@@ -11,8 +11,8 @@
 namespace nocturne::core {
 
 // Control Options as the enhanced game has it: the control type, the key bindings, the mouse's
-// sensitivity and inversion, and for a gamepad its calibration. Always run, aiming and auto
-// health moved to the Gameplay options.
+// sensitivity and inversion, and for a gamepad its sticks' tuning and its calibration. Always
+// run, aiming and auto health moved to the Gameplay options.
 class CControlOptionsPage final : public CMenuPage {
 public:
     CControlOptionsPage(CMenu &menu, const SMenuOwners &owners);

@@ -4,6 +4,7 @@
 #include "engine/menuinput.h"
 #include "engine/rawinput.h"
 #include "shape/edittool/picklist.h"
+#include "tests/mocks/engine/gamepadinputparts.h"
 #include "tests/mocks/shape/edcontrolsfixture.h"
 
 #include <gmock/gmock.h>
@@ -79,7 +80,8 @@ protected:
     std::array<std::uint8_t, engine::IRawInput::kInputCodeCount> keyboard_{};
     std::deque<int> typed_;
     int key_mask_ = 0x1ff;
-    engine::CMenuInput menu_input_{keys_};
+    engine::SGamepadInputParts gamepad_;
+    engine::CMenuInput menu_input_{keys_, gamepad_.input};
     CPickList list_{{.controls = controls_,
                      .keys = keys_,
                      .menu_input = menu_input_,

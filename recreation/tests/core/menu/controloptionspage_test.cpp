@@ -4,6 +4,7 @@
 #include "core/game/game.h"
 #include "core/menu/controloptionspage.h"
 #include "core/menu/menupage.h"
+#include "engine/gamepadinput.h"
 #include "engine/keys/inputcodetype.h"
 #include "tests/mocks/core/menufixture.h"
 
@@ -28,7 +29,11 @@ constexpr int kKeys = 1;
 constexpr int kXSensitivity = 2;
 constexpr int kYSensitivity = 3;
 constexpr int kInvertY = 4;
-constexpr int kCalibrate = 5;
+constexpr int kPadDeadzone = 5;
+constexpr int kPadTurnRate = 6;
+constexpr int kPadLookRate = 7;
+constexpr int kPadInvertLook = 8;
+constexpr int kCalibrate = 9;
 
 TEST(CControlOptionsPage, PublicInterface) {
     static_assert(std::is_base_of_v<CMenuPage, CControlOptionsPage>);
@@ -82,9 +87,42 @@ TEST_F(CControlOptionsPageTest, TheGamepadAddsCalibrate) {
     setControlMode(EControlMode::CONTROL_MODE_GAMEPAD);
     EXPECT_EQ(texts().front(), "Control : Gamepad");
     EXPECT_EQ(texts().back(), "Calibrate");
+    EXPECT_EQ(texts().size(), 9U);
     EXPECT_THAT(
         [this] { static_cast<void>(page_.choose(kCalibrate, EMenuStep::On)); },
         ThrowsMessage<common::CFatalError>(StrEq("CMenu::calibrateGamepad is not ported yet")));
+}
+
+// Before Calibrate, as nocturne.ini holds them.
+TEST_F(CControlOptionsPageTest, TheGamepadShowsItsSticksTuning) {
+    setControlMode(EControlMode::CONTROL_MODE_GAMEPAD);
+    const std::vector<std::string> lines = texts();
+    EXPECT_EQ(std::vector<std::string>(lines.begin() + 4, lines.end() - 1),
+              (std::vector<std::string>{"Stick deadzone : 20%", "Stick turn speed : 25",
+                                        "Stick look speed : 25", "Invert stick look : OFF"}));
+}
+
+// By five either way, wrapping at the ends of the range; the inversion flips.
+TEST_F(CControlOptionsPageTest, TheTuningLinesStepAndWrap) {
+    setControlMode(EControlMode::CONTROL_MODE_GAMEPAD);
+    engine::SGamepadTuning &tuning = game_parts_.getGamepad().input.tuning;
+    EXPECT_EQ(page_.choose(kPadDeadzone, EMenuStep::On), EMenuOutcome::Stay);
+    EXPECT_EQ(tuning.deadzone, 25);
+    tuning.deadzone = 40;
+    static_cast<void>(page_.choose(kPadDeadzone, EMenuStep::On));
+    EXPECT_EQ(tuning.deadzone, 5);
+    static_cast<void>(page_.choose(kPadDeadzone, EMenuStep::Back));
+    EXPECT_EQ(tuning.deadzone, 40);
+    static_cast<void>(page_.choose(kPadTurnRate, EMenuStep::Back));
+    EXPECT_EQ(tuning.turn_rate, 20);
+    tuning.look_rate = 100;
+    static_cast<void>(page_.choose(kPadLookRate, EMenuStep::On));
+    EXPECT_EQ(tuning.look_rate, 5);
+    static_cast<void>(page_.choose(kPadInvertLook, EMenuStep::On));
+    EXPECT_TRUE(tuning.invert_look);
+    EXPECT_EQ(texts().at(7), "Invert stick look : ON");
+    static_cast<void>(page_.choose(kPadInvertLook, EMenuStep::Back));
+    EXPECT_FALSE(tuning.invert_look);
 }
 
 // Each type comes with its own defaults: the mouse aims by hand, the gamepad is calibrated.

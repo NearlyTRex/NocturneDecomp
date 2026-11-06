@@ -54,6 +54,9 @@ void CWinRun::processWindowMessages() {
         mainWindowProc(event);
     }
     gamepad_.pump(keyboard_state_, window_active_ == 1);
+    for (const int character : gamepad_.getTypedCharacters()) {
+        enqueueInput(character);
+    }
 }
 
 // The hidden cursor, Alt+F4 closing the game and the screensaver are the adapter's. A
@@ -201,6 +204,7 @@ void CWinRun::clearInput() {
     clearKeypresses();
     clearMouseClicks();
     keyboard_state_.fill(0);
+    gamepad_.clearMenuActions();
 }
 
 bool CWinRun::getInputDisabled() const {

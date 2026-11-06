@@ -108,7 +108,8 @@ private:
     engine::SCurrentTexture current_texture_;
     engine::CSpecial special_{renderer_, screen_, two_d_, matrix_, three_d_, current_texture_};
     engine::CKeys keys_{raw_input_, screen_};
-    engine::CMenuInput menu_input_{keys_};
+    engine::SGamepadInputParts gamepad_;
+    engine::CMenuInput menu_input_{keys_, gamepad_.input};
     ::testing::NiceMock<platform::MockClock> wall_clock_;
     ::testing::NiceMock<platform::MockClipboard> clipboard_;
     shape::CEditorTools editor_tools_{{.two_d = two_d_,
@@ -129,7 +130,6 @@ private:
     engine::CConsole console_{file_system_, 80, 50, 0, 0};
     sound::CSndMain sound_main_{dosio_, file_system_, audio_device_, console_,
                                 [] { return std::tm{}; }};
-    engine::SGamepadInputParts gamepad_;
     CGame game_{{.clock = clock_,
                  .dosio = dosio_,
                  .screen = screen_,

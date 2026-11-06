@@ -10,6 +10,7 @@
 #include "core/set/demonset.h"
 #include "engine/gamepadinput.h"
 #include "engine/keys/inputcodetype.h"
+#include "engine/menuinput.h"
 #include "engine/rawinput.h"
 #include "platform/gamepad.h"
 #include "tests/mocks/core/geofile.h"
@@ -311,6 +312,18 @@ TEST_F(CGameInputTest, InAnHQMissionTheDrawAndTheLightAreRefused) {
     EXPECT_FALSE(input().action_state.draw);
     EXPECT_FALSE(input().action_state.light);
     EXPECT_TRUE(input().action_state.jump);
+}
+
+// A button pressed in play does its binding and doesn't also act on a menu opening under it.
+TEST_F(CGameInputTest, AFrameOfPlayKeepsThePadOffTheMenus) {
+    makeTheHero();
+    engine::SGamepadInputParts &pad = game_parts_.getGamepad();
+    ON_CALL(pad.gamepad, updateGamepad()).WillByDefault(Return(true));
+    ON_CALL(pad.gamepad, getGamepadButton(platform::EGamepadButton::A)).WillByDefault(Return(true));
+    frame(kFrame);
+    std::array<std::uint8_t, engine::IRawInput::kInputCodeCount> codes{};
+    pad.input.pump(codes, true);
+    EXPECT_FALSE(pad.input.takeMenuAction(engine::EMenuAction::Confirm));
 }
 
 // The pad's defaults, and its sticks read once a frame by the pump, as the game's window has it.

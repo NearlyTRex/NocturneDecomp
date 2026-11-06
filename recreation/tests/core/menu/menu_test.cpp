@@ -234,7 +234,7 @@ protected:
     ::testing::NiceMock<MockKeyFramedModels> keyframed_models_;
     ::testing::NiceMock<MockEventConditions> actor_events_;
     CActor actor_{game_, crt_random_, models_, keyframed_models_, actor_events_};
-    engine::CMenuInput menu_input_{keys_};
+    engine::CMenuInput menu_input_{keys_, game_parts_.getGamepad().input};
     engine::CPod pod_{file_system_, dosio_};
     CSound game_sound_{sound_, pod_, file_system_};
     engine::CIni ini_{file_system_};
@@ -263,6 +263,7 @@ protected:
                  .three_d = three_d_,
                  .raw_input = raw_input_,
                  .menu_input = menu_input_,
+                 .gamepad = game_parts_.getGamepad().input,
                  .fonts = fonts_,
                  .messages = messages_,
                  .renderer = demon_renderer_,
@@ -330,7 +331,7 @@ TEST_F(CMenuTest, UpMovesTheSelectionAndWrapsAtTheTop) {
     EXPECT_EQ(choose({"A", "B", "C"}, selected), -1);
     EXPECT_EQ(selected, 0);
     EXPECT_TRUE(menu_.getMenuInputHappened());
-    press(EInputCodeType::PAD_DPAD_UP);
+    press(EInputCodeType::DIK_UP);
     choose({"A", "B", "C"}, selected);
     EXPECT_EQ(selected, 2);
 }

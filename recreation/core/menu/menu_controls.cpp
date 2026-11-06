@@ -45,9 +45,8 @@ int toSliderOffset(int sensitivity, int span) {
 } // namespace
 
 // The original's lines were the control type, the bindings, always run, aiming, auto health, the
-// sensitivities, and the mouse's inversion or the gamepad's calibration.
-// deferred: the gamepad's deadzone, turn and look speeds and look inversion lines, before
-//   Calibrate (the decomp's pad_tuning.h), with the gamepad layer
+// sensitivities, and the mouse's inversion or the gamepad's calibration. The enhanced game adds
+// the gamepad's deadzone, turn and look speeds and look inversion before Calibrate.
 // deferred: calibrating the gamepad from Calibrate, or on Cancel for one nobody has centred,
 //   with calibrateGamepad
 // deferred: the Movement line after the control type, stepping Tank or Camera and saved as

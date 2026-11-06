@@ -179,8 +179,8 @@ protected:
     engine::CFontColors colors_;
     support::CNewMsg messages_{dosio_};
     CDFont fonts_{dosio_, screen_, two_d_, three_d_, colors_, os_fonts_, messages_, editor_tools_};
-    engine::CMenuInput menu_input_{keys_};
     engine::SGamepadInputParts gamepad_;
+    engine::CMenuInput menu_input_{keys_, gamepad_.input};
     CGame game_{{.clock = game_clock_,
                  .dosio = dosio_,
                  .screen = screen_,
@@ -251,6 +251,7 @@ protected:
                  .three_d = three_d_,
                  .raw_input = raw_input_,
                  .menu_input = menu_input_,
+                 .gamepad = gamepad_.input,
                  .fonts = fonts_,
                  .messages = messages_,
                  .renderer = demon_renderer_,

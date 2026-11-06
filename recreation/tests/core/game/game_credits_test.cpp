@@ -157,7 +157,8 @@ protected:
     engine::SCurrentTexture current_texture_;
     engine::CSpecial special_{renderer_, screen_, two_d_, matrix_, three_d_, current_texture_};
     engine::CKeys keys_{raw_input_, screen_};
-    engine::CMenuInput menu_input_{keys_};
+    engine::SGamepadInputParts gamepad_;
+    engine::CMenuInput menu_input_{keys_, gamepad_.input};
     NiceMock<engine::MockGameClock> game_clock_;
     NiceMock<platform::MockClock> clock_;
     NiceMock<platform::MockClipboard> clipboard_;
@@ -175,7 +176,6 @@ protected:
     NiceMock<platform::MockOsFontFactory> os_fonts_;
     support::CNewMsg messages_{dosio_};
     CDFont fonts_{dosio_, screen_, two_d_, three_d_, colors_, os_fonts_, messages_, editor_tools_};
-    engine::SGamepadInputParts gamepad_;
     CGame game_{{.clock = game_clock_,
                  .dosio = dosio_,
                  .screen = screen_,

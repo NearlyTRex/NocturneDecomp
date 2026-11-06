@@ -206,7 +206,7 @@ private:
     engine::CConsole console_{file_system_, engine::CConsole::kMaxColumns,
                               engine::CConsole::kMaxRows, 1, 1};
     nocturne::sound::CSndMain sound_main_{dosio_, file_system_, audio_, console_, &getLocalTime};
-    engine::CMenuInput menu_input_{keys_};
+    engine::CMenuInput menu_input_{keys_, gamepad_};
     // nocedit 0x004d76d0
     core::CGame game_{{.clock = winrun_,
                        .dosio = dosio_,
@@ -341,6 +341,7 @@ private:
                        .three_d = three_d_,
                        .raw_input = winrun_,
                        .menu_input = menu_input_,
+                       .gamepad = gamepad_,
                        .fonts = fonts_,
                        .messages = messages_,
                        .renderer = demon_renderer_,
@@ -453,7 +454,7 @@ int run() {
     sdl::CSdlFileSystem file_system;
     sdl::CSdlClock clock;
     sdl::CSdlGamepad gamepad;
-    engine::CGamepadInput gamepad_input(gamepad, file_system);
+    engine::CGamepadInput gamepad_input(gamepad, file_system, clock);
     wincore::CWinRun winrun(window, clock, gamepad_input);
     try {
         return runGame(window, file_system, clock, winrun, gamepad_input);

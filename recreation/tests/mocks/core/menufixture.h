@@ -132,7 +132,7 @@ protected:
     ::testing::NiceMock<platform::MockOsFontFactory> os_fonts_;
     support::CNewMsg messages_{dosio_};
     CDFont fonts_{dosio_, screen_, two_d_, three_d_, colors_, os_fonts_, messages_, editor_tools_};
-    engine::CMenuInput menu_input_{keys_};
+    engine::CMenuInput menu_input_{keys_, game_parts_.getGamepad().input};
     ::testing::NiceMock<platform::MockAudioDevice> audio_device_;
     engine::CConsole console_{file_system_, 80, 50, 0, 0};
     sound::CSndMain sound_main_{dosio_, file_system_, audio_device_, console_,
@@ -175,6 +175,7 @@ protected:
                              .three_d = three_d_,
                              .raw_input = raw_input_,
                              .menu_input = menu_input_,
+                             .gamepad = game_parts_.getGamepad().input,
                              .fonts = fonts_,
                              .messages = messages_,
                              .renderer = demon_renderer_,

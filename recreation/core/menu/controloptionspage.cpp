@@ -4,6 +4,7 @@
 #include "core/game/controlmode.h"
 #include "core/game/game.h"
 #include "core/menu/menu.h"
+#include "engine/gamepadinput.h"
 #include "support/newmsg/newmsg.h"
 
 #include <array>
@@ -24,8 +25,23 @@ enum class EControlLine : std::uint8_t {
     XSensitivity,
     YSensitivity,
     InvertY,
+    PadDeadzone,
+    PadTurnRate,
+    PadLookRate,
+    PadInvertLook,
     Calibrate,
 };
+
+// A tuning line moves by this much, wrapping at the ends of its range.
+constexpr int kTuningStep = 5;
+
+int stepTuning(int value, EMenuStep step, int least, int most) {
+    const int stepped = value + (std::to_underlying(step) * kTuningStep);
+    if (stepped > most) {
+        return least;
+    }
+    return stepped < least ? most : stepped;
+}
 
 // By EControlMode.
 constexpr std::array<std::string_view, 3> kTypeLabels{
@@ -62,12 +78,24 @@ void CControlOptionsPage::build(std::vector<SMenuLine> &lines) {
             localize(game.invert_mouse_y_axis != 0 ? "Invert Y Axis : ON" : "Invert Y Axis : OFF"));
     }
     if (game.game_control == EControlMode::CONTROL_MODE_GAMEPAD) {
+        const engine::SGamepadTuning &tuning = owners_.gamepad.tuning;
+        addLine(lines, EControlLine::PadDeadzone,
+                std::format("{}{}%", localize("Stick deadzone : "), tuning.deadzone));
+        addLine(lines, EControlLine::PadTurnRate,
+                std::format("{}{}", localize("Stick turn speed : "), tuning.turn_rate));
+        addLine(lines, EControlLine::PadLookRate,
+                std::format("{}{}", localize("Stick look speed : "), tuning.look_rate));
+        addLine(
+            lines, EControlLine::PadInvertLook,
+            localize(tuning.invert_look ? "Invert stick look : ON" : "Invert stick look : OFF"));
         addLine(lines, EControlLine::Calibrate, localize("Calibrate"));
     }
 }
 
 EMenuOutcome CControlOptionsPage::choose(int id, EMenuStep step) {
     CGame &game = owners_.game;
+    engine::SGamepadTuning &tuning = owners_.gamepad.tuning;
+    using Tuning = engine::SGamepadTuning;
     switch (static_cast<EControlLine>(id)) {
     case EControlLine::Type:
         stepControlType(step);
@@ -85,6 +113,19 @@ EMenuOutcome CControlOptionsPage::choose(int id, EMenuStep step) {
         break;
     case EControlLine::InvertY:
         game.invert_mouse_y_axis = game.invert_mouse_y_axis == 0 ? 1 : 0;
+        break;
+    case EControlLine::PadDeadzone:
+        tuning.deadzone =
+            stepTuning(tuning.deadzone, step, Tuning::kMinDeadzone, Tuning::kMaxDeadzone);
+        break;
+    case EControlLine::PadTurnRate:
+        tuning.turn_rate = stepTuning(tuning.turn_rate, step, Tuning::kMinRate, Tuning::kMaxRate);
+        break;
+    case EControlLine::PadLookRate:
+        tuning.look_rate = stepTuning(tuning.look_rate, step, Tuning::kMinRate, Tuning::kMaxRate);
+        break;
+    case EControlLine::PadInvertLook:
+        tuning.invert_look = !tuning.invert_look;
         break;
     default:
         quitNotPorted("CMenu", "calibrateGamepad");

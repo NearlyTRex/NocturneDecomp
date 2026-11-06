@@ -1,5 +1,6 @@
 #include "engine/menuinput.h"
 
+#include "engine/gamepadinput.h"
 #include "engine/keys/inputcodetype.h"
 #include "engine/keys/keys.h"
 
@@ -11,37 +12,22 @@
 namespace nocturne::engine {
 namespace {
 
-// The keyboard's first are the codes the original's menus read; the arrows and the editing keys
-// fold onto them under the default key mask and keep their own codes under the wide one. Then
-// the pad's: the d-pad and the left stick, which keeps the original joystick's codes, and the
-// buttons the enhanced game confirms and cancels with.
-constexpr std::array<std::array<EInputCodeType, 4>, 13> kBindings{{
-    {EInputCodeType::DIK_NUMPAD8, EInputCodeType::DIK_UP, EInputCodeType::PAD_DPAD_UP,
-     EInputCodeType::DIJ_UP},
-    {EInputCodeType::DIK_NUMPAD2, EInputCodeType::DIK_DOWN, EInputCodeType::PAD_DPAD_DOWN,
-     EInputCodeType::DIJ_DOWN},
-    {EInputCodeType::DIK_NUMPAD4, EInputCodeType::DIK_LEFT, EInputCodeType::PAD_DPAD_LEFT,
-     EInputCodeType::DIJ_LEFT},
-    {EInputCodeType::DIK_NUMPAD6, EInputCodeType::DIK_RIGHT, EInputCodeType::PAD_DPAD_RIGHT,
-     EInputCodeType::DIJ_RIGHT},
-    {EInputCodeType::DIK_RETURN, EInputCodeType::PAD_A, EInputCodeType::INPUT_NONE,
-     EInputCodeType::INPUT_NONE},
-    {EInputCodeType::DIK_ESCAPE, EInputCodeType::PAD_B, EInputCodeType::PAD_START,
-     EInputCodeType::INPUT_NONE},
-    {EInputCodeType::DIK_NUMPAD7, EInputCodeType::DIK_HOME, EInputCodeType::INPUT_NONE,
-     EInputCodeType::INPUT_NONE},
-    {EInputCodeType::DIK_NUMPAD1, EInputCodeType::DIK_END, EInputCodeType::INPUT_NONE,
-     EInputCodeType::INPUT_NONE},
-    {EInputCodeType::DIK_NUMPAD9, EInputCodeType::DIK_PRIOR, EInputCodeType::INPUT_NONE,
-     EInputCodeType::INPUT_NONE},
-    {EInputCodeType::DIK_NUMPAD3, EInputCodeType::DIK_NEXT, EInputCodeType::INPUT_NONE,
-     EInputCodeType::INPUT_NONE},
-    {EInputCodeType::DIK_DECIMAL, EInputCodeType::DIK_DELETE, EInputCodeType::PAD_X,
-     EInputCodeType::INPUT_NONE},
-    {EInputCodeType::DIK_NUMPAD0, EInputCodeType::DIK_INSERT, EInputCodeType::DIK_C,
-     EInputCodeType::INPUT_NONE},
-    {EInputCodeType::DIK_M, EInputCodeType::INPUT_NONE, EInputCodeType::INPUT_NONE,
-     EInputCodeType::INPUT_NONE},
+// The first are the codes the original's menus read; the arrows and the editing keys fold onto
+// them under the default key mask and keep their own codes under the wide one.
+constexpr std::array<std::array<EInputCodeType, 3>, 13> kBindings{{
+    {EInputCodeType::DIK_NUMPAD8, EInputCodeType::DIK_UP, EInputCodeType::INPUT_NONE},
+    {EInputCodeType::DIK_NUMPAD2, EInputCodeType::DIK_DOWN, EInputCodeType::INPUT_NONE},
+    {EInputCodeType::DIK_NUMPAD4, EInputCodeType::DIK_LEFT, EInputCodeType::INPUT_NONE},
+    {EInputCodeType::DIK_NUMPAD6, EInputCodeType::DIK_RIGHT, EInputCodeType::INPUT_NONE},
+    {EInputCodeType::DIK_RETURN, EInputCodeType::INPUT_NONE, EInputCodeType::INPUT_NONE},
+    {EInputCodeType::DIK_ESCAPE, EInputCodeType::INPUT_NONE, EInputCodeType::INPUT_NONE},
+    {EInputCodeType::DIK_NUMPAD7, EInputCodeType::DIK_HOME, EInputCodeType::INPUT_NONE},
+    {EInputCodeType::DIK_NUMPAD1, EInputCodeType::DIK_END, EInputCodeType::INPUT_NONE},
+    {EInputCodeType::DIK_NUMPAD9, EInputCodeType::DIK_PRIOR, EInputCodeType::INPUT_NONE},
+    {EInputCodeType::DIK_NUMPAD3, EInputCodeType::DIK_NEXT, EInputCodeType::INPUT_NONE},
+    {EInputCodeType::DIK_DECIMAL, EInputCodeType::DIK_DELETE, EInputCodeType::INPUT_NONE},
+    {EInputCodeType::DIK_NUMPAD0, EInputCodeType::DIK_INSERT, EInputCodeType::DIK_C},
+    {EInputCodeType::DIK_M, EInputCodeType::INPUT_NONE, EInputCodeType::INPUT_NONE},
 }};
 
 // The right control key folds onto the left under the default mask.
@@ -52,14 +38,14 @@ constexpr std::array<EInputCodeType, 1> kShiftKeys{EInputCodeType::DIK_LSHIFT};
 
 } // namespace
 
-CMenuInput::CMenuInput(CKeys &keys) : keys_(keys) {}
+CMenuInput::CMenuInput(CKeys &keys, CGamepadInput &gamepad) : keys_(keys), gamepad_(gamepad) {}
 
 bool CMenuInput::takeMenuAction(EMenuAction action) {
     if ((action == EMenuAction::Copy || action == EMenuAction::ToggleMute) &&
         !isModifierHeld(EMenuModifier::Control)) {
         return false;
     }
-    bool pressed = false;
+    bool pressed = gamepad_.takeMenuAction(action);
     for (const EInputCodeType code : kBindings[static_cast<std::size_t>(action)]) {
         if (code != EInputCodeType::INPUT_NONE && keys_.getAndClearKeyState(code) != 0) {
             pressed = true;
