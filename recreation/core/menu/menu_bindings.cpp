@@ -22,7 +22,9 @@
 #include <cstddef>
 #include <cstdint>
 #include <format>
+#include <iterator>
 #include <optional>
+#include <ranges>
 #include <span>
 #include <string>
 #include <string_view>
@@ -40,7 +42,7 @@ struct SBindingRow {
 };
 
 // The original's list, in its order, and the map after it.
-constexpr std::array<SBindingRow, kGameActionCount> kBindingRows{{
+constexpr auto kBindingRows = std::to_array<SBindingRow>({
     {.action = EGameAction::Walk, .label = "Forward"},
     {.action = EGameAction::Backup, .label = "Back"},
     {.action = EGameAction::Run, .label = "Run"},
@@ -69,7 +71,35 @@ constexpr std::array<SBindingRow, kGameActionCount> kBindingRows{{
     {.action = EGameAction::ItemDesc, .label = "Item description"},
     {.action = EGameAction::NextAmmo, .label = "Next ammo"},
     {.action = EGameAction::Map, .label = "Map"},
-}};
+});
+
+// The original's hotkeys, its developers' after the rest.
+constexpr auto kHotkeyRows = std::to_array<SBindingRow>({
+    {.action = EGameAction::Mute, .label = "Mute sound"},
+    {.action = EGameAction::SaveGame, .label = "Save game"},
+    {.action = EGameAction::LoadGame, .label = "Load game"},
+    {.action = EGameAction::QuickSave, .label = "Quick save"},
+    {.action = EGameAction::QuickLoad, .label = "Quick load"},
+    {.action = EGameAction::KeysHelp, .label = "Keys help"},
+    {.action = EGameAction::GammaDown, .label = "Gamma down"},
+    {.action = EGameAction::GammaUp, .label = "Gamma up"},
+    {.action = EGameAction::MotionDebug, .label = "Motion debug"},
+    {.action = EGameAction::EditMode, .label = "Edit mode"},
+    {.action = EGameAction::Pause, .label = "Pause"},
+    {.action = EGameAction::CameraDebug, .label = "Camera debug"},
+    {.action = EGameAction::ScriptView, .label = "Script view"},
+    {.action = EGameAction::DebugDisplay, .label = "Debug display"},
+    {.action = EGameAction::Console, .label = "Console"},
+    {.action = EGameAction::CameraToggle, .label = "Camera on/off"},
+    {.action = EGameAction::AmbientUp, .label = "Ambient light up"},
+    {.action = EGameAction::AmbientDown, .label = "Ambient light down"},
+    {.action = EGameAction::NextCamera, .label = "Next camera (edit mode)"},
+    {.action = EGameAction::PrevCamera, .label = "Previous camera (edit mode)"},
+    {.action = EGameAction::ScriptRun, .label = "Run or stop script (script debug)"},
+    {.action = EGameAction::ScriptResume, .label = "Resume script (script debug)"},
+    {.action = EGameAction::ScriptResetDialog, .label = "Reset dialog (script debug)"},
+});
+static_assert(kBindingRows.size() + kHotkeyRows.size() == kGameActionCount);
 
 struct SDeviceName {
     EInputCodeType code;
@@ -183,10 +213,10 @@ bool CMenu::isKeyCodeValidForMode(EInputCodeType key_code) const {
 
 // The original bound one code to each action, which a pick replaced, and kept the joystick's
 // and the mouse's directions from being moved; the enhanced game can move any binding, and lists
-// the map's after the rest. Restore defaults goes back once it is done. Both lists keep to one
-// column, as the original forced its own, whatever the names' widths. The pad is read with
-// each present while a code is waited for, and its menu presses aren't codes, so a button counts
-// once.
+// the map's after the rest, then Hotkeys, which opens a list of its own. Restore defaults goes
+// back once it is done. The lists keep to one column, as the original forced its own, whatever
+// the names' widths. The pad is read with each present while a code is waited for, and its menu
+// presses aren't codes, so a button counts once.
 // nocedit 0x005138e0
 void CMenu::configureCustomKeyBindings() {
     const CGame &game = owners_.game;
@@ -205,18 +235,17 @@ void CMenu::configureCustomKeyBindings() {
         for (const SBindingRow &row : kBindingRows) {
             const bool walks = row.action == EGameAction::Run && game.always_run != 0;
             labels.push_back(owners_.messages.getLocalizedString(walks ? "Walk" : row.label));
-            std::string names;
-            for (const SKeyChord &chord : game.controls.getBindings(row.action)) {
-                names += names.empty() ? "" : kNameSeparator;
-                names += getChordDisplayName(chord);
-            }
-            if (names.empty()) {
-                names = getKeyDisplayName(EInputCodeType::INPUT_NONE);
-            }
-            list.add(std::format("{}\t{}", labels.back(), names));
+            list.add(std::format("{}\t{}", labels.back(), getBindingNames(row.action)));
         }
+        list.add(owners_.messages.getLocalizedString("Hotkeys"));
         const int choice = list.displayChoicesAndWaitForInput(
             owners_.messages.getLocalizedString("Edit key settings"), cursor);
+        const auto hotkeys = static_cast<int>(kBindingRows.size()) + 1;
+        if (choice == hotkeys) {
+            cursor = choice;
+            configureHotkeyBindings();
+            continue;
+        }
         if (choice > 0) {
             cursor = choice;
             const auto row = static_cast<std::size_t>(choice - 1);
@@ -232,9 +261,44 @@ void CMenu::configureCustomKeyBindings() {
     }
 }
 
+// The enhanced game's: the hotkeys the original read from fixed keys, the developers' only in
+// developer mode, though they are kept in nocturne.ini either way.
+void CMenu::configureHotkeyBindings() {
+    std::vector<SBindingRow> rows;
+    std::ranges::copy_if(kHotkeyRows, std::back_inserter(rows), [this](const SBindingRow &row) {
+        return owners_.game.developer_mode || !getGameActionInfo(row.action).developer;
+    });
+    int cursor = 0;
+    while (true) {
+        shape::CPickList list(owners_.pick_list);
+        list.setForcedColumnCount(true);
+        for (const SBindingRow &row : rows) {
+            list.add(std::format("{}\t{}", owners_.messages.getLocalizedString(row.label),
+                                 getBindingNames(row.action)));
+        }
+        const int choice = list.displayChoicesAndWaitForInput(
+            owners_.messages.getLocalizedString("Hotkeys"), cursor);
+        if (choice < 0) {
+            return;
+        }
+        cursor = choice;
+        const SBindingRow &row = rows.at(static_cast<std::size_t>(choice));
+        editActionBindings(row.action, owners_.messages.getLocalizedString(row.label));
+    }
+}
+
+std::string CMenu::getBindingNames(EGameAction action) const {
+    std::string names;
+    for (const SKeyChord &chord : owners_.game.controls.getBindings(action)) {
+        names += names.empty() ? "" : kNameSeparator;
+        names += getChordDisplayName(chord);
+    }
+    return names.empty() ? getKeyDisplayName(EInputCodeType::INPUT_NONE) : names;
+}
+
 // The enhanced game's: the original's pick went straight to capturing the action's one code. A
-// chord taken is this action's alone, given up by any other action holding it and by this
-// action's other slots.
+// chord taken is this action's alone, given up by this action's other slots and by any other
+// action of its context holding it.
 void CMenu::editActionBindings(EGameAction action, std::string_view label) {
     CControlBindings &controls = owners_.game.controls;
     int cursor = 0;
@@ -270,10 +334,15 @@ void CMenu::editActionBindings(EGameAction action, std::string_view label) {
         std::erase(codes, *captured);
         slot = std::min(slot, codes.size());
         codes.insert(codes.begin() + static_cast<std::ptrdiff_t>(slot), *captured);
-        for (const SBindingRow &row : kBindingRows) {
-            std::vector<SKeyChord> others(std::from_range, controls.getBindings(row.action));
-            if (row.action != action && std::erase(others, *captured) != 0) {
-                controls.setBindings(row.action, std::move(others));
+        const EActionContext context = getGameActionInfo(action).context;
+        for (std::size_t index = 0; index < kGameActionCount; ++index) {
+            const auto other = static_cast<EGameAction>(index);
+            if (other == action || getGameActionInfo(other).context != context) {
+                continue;
+            }
+            std::vector<SKeyChord> others(std::from_range, controls.getBindings(other));
+            if (std::erase(others, *captured) != 0) {
+                controls.setBindings(other, std::move(others));
             }
         }
         controls.setBindings(action, std::move(codes));
@@ -362,11 +431,12 @@ CMenu::SHeldKeys CMenu::readHeldKeys() const {
 
 // Every code of every action, where the original asked of each in turn.
 void CMenu::validateBindings() {
-    const bool valid = std::ranges::all_of(kBindingRows, [this](const SBindingRow &row) {
-        return std::ranges::all_of(
-            owners_.game.controls.getBindings(row.action),
-            [this](const SKeyChord &chord) { return isKeyCodeValidForMode(chord.code); });
-    });
+    const bool valid = std::ranges::all_of(
+        std::views::iota(std::size_t{0}, kGameActionCount), [this](std::size_t index) {
+            return std::ranges::all_of(
+                owners_.game.controls.getBindings(static_cast<EGameAction>(index)),
+                [this](const SKeyChord &chord) { return isKeyCodeValidForMode(chord.code); });
+        });
     if (valid) {
         return;
     }

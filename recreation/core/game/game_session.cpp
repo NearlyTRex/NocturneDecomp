@@ -16,14 +16,18 @@
 #include "engine/keys/keys.h"
 #include "engine/screendevice.h"
 #include "engine/special/special.h"
+#include "platform/environment.h"
 #include "shape/edittool/editortools.h"
 
 #include <algorithm>
 #include <format>
+#include <string_view>
 
 namespace nocturne::core {
 namespace {
 
+// Set, it turns developer mode on.
+constexpr std::string_view kDeveloperVariable = "VELOCITY";
 constexpr int kFallbackWidth = 640;
 constexpr int kFallbackHeight = 480;
 // Below this many lines the editor's text is drawn in its small font.
@@ -74,7 +78,7 @@ void CGame::setGameRes(const SGameSessionOwners &session) {
 //   hero_light, baron and helper_death resets), with CHero, CBaron and the helper's death hold
 // deferred: starting the session's autosave (the decomp's nocturne_autosave_session_start), with
 //   the autosave poll in the play loop
-// deferred: developer mode when VELOCITY is set, with processHotkeys
+// Developer mode is on for a session with VELOCITY set, and off for any other.
 // deferred: starting the fire effects, or the master lights' saved states after a load, with
 //   CFireEffect::init and CDemonSet::loadMasterLightStates
 // The original also cleared its one pick list; here each dialog makes its own.
@@ -141,6 +145,7 @@ int CGame::runGameSession(const SGameSessionOwners &session) {
     is_processing = 0;
     time_scale_factor = 1.0F;
     setGameRes(session);
+    developer_mode = session.environment.getVariable(kDeveloperVariable).has_value();
     session.flashlight.init();
     session.flashlight.setCameraName("Flashlight");
     session.flashlight.setLightEnabled(false);

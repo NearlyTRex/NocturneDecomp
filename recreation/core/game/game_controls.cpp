@@ -1,6 +1,8 @@
 #include "core/game/game.h"
 
 #include <cstddef>
+#include <optional>
+#include <vector>
 
 namespace nocturne::core {
 namespace {
@@ -17,13 +19,14 @@ void CGame::restoreDefaultControls() {
     for (std::size_t index = 0; index < kGameActionCount; ++index) {
         const auto action = static_cast<EGameAction>(index);
         const SGameActionInfo &info = getGameActionInfo(action);
-        engine::EInputCodeType code = info.keyboard;
+        std::optional<engine::EInputCodeType> replaced;
         if (game_control == EControlMode::CONTROL_MODE_MOUSE) {
-            code = info.mouse.value_or(code);
+            replaced = info.mouse;
         } else if (game_control == EControlMode::CONTROL_MODE_GAMEPAD) {
-            code = info.gamepad.value_or(code);
+            replaced = info.gamepad;
         }
-        controls.setBindings(action, {{.code = code}});
+        controls.setBindings(action, replaced ? std::vector<SKeyChord>{{.code = *replaced}}
+                                              : std::vector<SKeyChord>{info.keyboard, info.also});
     }
     invert_mouse_y_axis = 0;
     always_run = 0;

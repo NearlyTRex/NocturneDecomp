@@ -7,6 +7,7 @@
 #include "core/game/controlmode.h"
 #include "core/game/herotype.h"
 #include "engine/fwd.h"
+#include "platform/fwd.h"
 #include "shape/fwd.h"
 #include "sound/fwd.h"
 #include "support/fwd.h"
@@ -55,6 +56,8 @@ struct SGameSessionOwners {
     CLevelLoader &level_loader;
     engine::CKeys &keys;
     const CDemonMission &mission;
+    // Where developer mode is asked for.
+    platform::IEnvironment &environment;
 };
 
 // What chapter select reads the stories' unlock codes from, offers its lists with, and loads the
@@ -159,6 +162,8 @@ public:
     int is_processing = 0;
     // Set while a saved game loads, whose script is then not checked again.
     bool is_loading = false;
+    // The developers' hotkeys work, and Customize Keys lists them.
+    bool developer_mode = false;
 
 private:
     void seedCalibration();

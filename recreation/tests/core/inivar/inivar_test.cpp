@@ -282,6 +282,14 @@ TEST_F(CInivarTest, ReadsTheSoundSection) {
     EXPECT_TRUE(sound_.isSoundMuted());
 }
 
+// A hotkey's chords are read and written as the play actions' codes are.
+TEST_F(CInivarTest, HotkeysAreReadAndWrittenAsChords) {
+    text_ = "[Control]\r\nkeyMute=29+56+50\r\n";
+    read();
+    EXPECT_EQ(game_.controls.formatBindings(EGameAction::Mute), "29+56+50");
+    EXPECT_EQ(game_.controls.formatBindings(EGameAction::SaveGame), "29+31,60");
+}
+
 TEST_F(CInivarTest, TheControlModesDefaultsComeFirstThenTheFilesBindings) {
     text_ = "[Control]\r\ngameControl=1\r\nkeyFire=57,513\r\nmapZoom=200\r\ninvertMouseYAxis=1\r\n"
             "alwaysRun=1\r\nxMouseSensitivity=32768\r\nyMouseSensitivity=98304\r\nxCenter=1\r\n"

@@ -80,9 +80,9 @@ public:
     // Whether the game's control type has the device behind the code: the keyboard alone, or
     // with the mouse, or with the joystick.
     [[nodiscard]] bool isKeyCodeValidForMode(engine::EInputCodeType key_code) const;
-    // Each action with what it is bound to, Restore defaults first. An action opens a list of
-    // its codes and Add binding, where Delete removes one. Leaving puts the defaults back if any
-    // code doesn't suit the control type.
+    // Each action with what it is bound to, Restore defaults first and Hotkeys last. An action
+    // opens a list of its codes and Add binding, where Delete removes one. Leaving puts the
+    // defaults back if any code doesn't suit the control type.
     void configureCustomKeyBindings();
     // Draws the items down the left of the screen under the title, the selected one glowing,
     // with the copyright and the build's line, then moves the selection up and down. Confirm
@@ -123,6 +123,10 @@ private:
     void configureGraphicsOptions();
     void configureSoundOptions();
     void configureCustomKeys();
+    // The hotkeys as Customize Keys lists the play actions, the developers' in developer mode.
+    void configureHotkeyBindings();
+    // An action's chords' names, or (none).
+    [[nodiscard]] std::string getBindingNames(EGameAction action) const;
     // The codes of one action, as a list with Add binding after them, until Cancel.
     void editActionBindings(EGameAction action, std::string_view label);
     // The chord next pressed, taken as every key is let go, after any held are let go first;

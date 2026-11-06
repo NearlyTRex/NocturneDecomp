@@ -421,7 +421,8 @@ private:
                                              .net_game = net_game_,
                                              .level_loader = level_loader_,
                                              .keys = keys_,
-                                             .mission = mission_};
+                                             .mission = mission_,
+                                             .environment = environment_};
     core::SChapterSelectOwners chapter_select_owners_{.messages = messages_,
                                                       .editor_tools = editor_tools_,
                                                       .pick_list = pick_list_owners_,

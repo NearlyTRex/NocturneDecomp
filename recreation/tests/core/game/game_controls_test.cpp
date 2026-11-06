@@ -77,6 +77,20 @@ TEST_F(CGameRestoreDefaultControls, GamepadModeLeavesWeaponsOneToFourAndStrafeUn
     EXPECT_THAT(codesOf(game.controls.getBindings(EGameAction::Weapon4)), IsEmpty());
 }
 
+// A hotkey keeps its keys whatever the control type, both of them where it has two.
+TEST_F(CGameRestoreDefaultControls, TheHotkeysAreTheKeyboardsInEveryMode) {
+    for (const EControlMode mode :
+         {EControlMode::CONTROL_MODE_KEYBOARD, EControlMode::CONTROL_MODE_MOUSE,
+          EControlMode::CONTROL_MODE_GAMEPAD}) {
+        const CGame &game = gameWith(mode);
+        EXPECT_THAT(game.controls.getBindings(EGameAction::Mute),
+                    ElementsAre(SKeyChord{.code = EInputCodeType::DIK_F5},
+                                SKeyChord{.code = EInputCodeType::DIK_M, .control = true}));
+        EXPECT_THAT(game.controls.getBindings(EGameAction::Console),
+                    ElementsAre(SKeyChord{.code = EInputCodeType::DIK_TAB}));
+    }
+}
+
 TEST_F(CGameRestoreDefaultControls, GamepadModeSeedsAnUncalibratedStick) {
     const CGame &game = gameWith(EControlMode::CONTROL_MODE_GAMEPAD);
     EXPECT_EQ(game.x_center, 0x8000);

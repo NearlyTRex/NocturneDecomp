@@ -2819,7 +2819,6 @@ functions don't count as done. Sizes are in instructions.
     - deferred: clearing the camera view, pause, debug, cheat, subtitle, console, render mode, overlay bitmap, cinematic skip, control block, goggles and flashlight flags, and the modal dialog, with processHotkeys, processFrame and CScript::step's allowHeroControls
     - deferred: forgetting each hero's own light, the Baron's state and a helper's death (the decomp's hero_light, baron and helper_death resets), with CHero, CBaron and the helper's death hold
     - deferred: starting the session's autosave (the decomp's nocturne_autosave_session_start), with the autosave poll in the play loop
-    - deferred: developer mode when VELOCITY is set, with processHotkeys
     - deferred: starting the fire effects, or the master lights' saved states after a load, with CFireEffect::init and CDemonSet::loadMasterLightStates
     - deferred: clearing the overlay's status lines and message timer, with clearOverlay and updateStatusDisplays
     - deferred: opening the iris on the focus actor, with beginFadeIn and renderIrisFade

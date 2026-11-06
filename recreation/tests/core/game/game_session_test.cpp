@@ -27,7 +27,9 @@
 #include <gtest/gtest.h>
 
 #include <memory>
+#include <optional>
 #include <string>
+#include <string_view>
 
 namespace nocturne::core {
 namespace {
@@ -143,6 +145,18 @@ TEST_F(CGameSessionTest, ALowResolutionTakesTheSmallEditorFont) {
     game_.game_pixy = 240;
     play();
     EXPECT_EQ(editor_tools_.getEditorFont(), game_parts_.getFonts().getSmallEditorFont());
+}
+
+// VELOCITY set at all turns developer mode on for the session; unset, a session turns it off.
+TEST_F(CGameSessionTest, DeveloperModeFollowsVelocity) {
+    ON_CALL(environment_, getVariable(std::string_view("VELOCITY")))
+        .WillByDefault(Return(std::optional<std::string>("")));
+    play();
+    EXPECT_TRUE(game_.developer_mode);
+    ON_CALL(environment_, getVariable(std::string_view("VELOCITY")))
+        .WillByDefault(Return(std::nullopt));
+    play();
+    EXPECT_FALSE(game_.developer_mode);
 }
 
 // The flashlight is set up off, as "Flashlight", reaching 64 units.

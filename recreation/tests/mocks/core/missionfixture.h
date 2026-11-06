@@ -150,7 +150,8 @@ protected:
                                 .net_game = net_game_,
                                 .level_loader = level_loader_,
                                 .keys = keys_,
-                                .mission = mission_};
+                                .mission = mission_,
+                                .environment = environment_};
 
     // Every texture and picture the session loads on disk, 32 by 32, and every model it finds
     // the one model.

@@ -314,6 +314,73 @@ TEST_F(CKeyBindingsTest, ClosingTheWindowBeforeTheCodeIsLetGoKeepsIt) {
     EXPECT_THAT(bindings(EGameAction::Walk), ElementsAre(EInputCodeType::DIK_Q));
 }
 
+// Hotkeys is last in the list; the hotkeys' list opens on Mute.
+TEST_F(CKeyBindingsTest, HotkeysOpensTheHotkeysList) {
+    std::vector<EStep> steps = {tap(EInputCodeType::DIK_END),
+                                tap(EInputCodeType::DIK_RETURN),
+                                {},
+                                tap(EInputCodeType::DIK_RETURN),
+                                {}};
+    bindQ(steps);
+    leave(steps);
+    steps.push_back(tap(EInputCodeType::DIK_ESCAPE));
+    run(std::move(steps));
+    EXPECT_THAT(game_.controls.getBindings(EGameAction::Mute),
+                ElementsAre(SKeyChord{.code = EInputCodeType::DIK_Q},
+                            SKeyChord{.code = EInputCodeType::DIK_M, .control = true}));
+}
+
+// Outside developer mode the list ends at the hotkeys anyone has; in it, at the
+// developers'.
+TEST_F(CKeyBindingsTest, TheDevelopersHotkeysAreListedInDeveloperModeAlone) {
+    for (const bool developer : {false, true}) {
+        game_.restoreDefaultControls();
+        game_.developer_mode = developer;
+        frames_ = 0;
+        runaway_.reset();
+        std::vector<EStep> steps = {
+            tap(EInputCodeType::DIK_END), tap(EInputCodeType::DIK_RETURN), {},
+            tap(EInputCodeType::DIK_END), tap(EInputCodeType::DIK_RETURN), {}};
+        bindQ(steps);
+        leave(steps);
+        steps.push_back(tap(EInputCodeType::DIK_ESCAPE));
+        run(std::move(steps));
+        const EGameAction last = developer ? EGameAction::ScriptResetDialog : EGameAction::GammaUp;
+        EXPECT_THAT(bindings(last), ElementsAre(EInputCodeType::DIK_Q)) << developer;
+    }
+}
+
+// F9 is Quick load's and, in script debug, Reset dialog's; taken for Mute it is given up by Quick
+// load alone.
+TEST_F(CKeyBindingsTest, AKeyTakenIsGivenUpWithinItsContextAlone) {
+    std::vector<EStep> steps = {tap(EInputCodeType::DIK_END),
+                                tap(EInputCodeType::DIK_RETURN),
+                                {},
+                                tap(EInputCodeType::DIK_RETURN),
+                                {}};
+    steps.insert(steps.end(), {tap(EInputCodeType::DIK_RETURN),
+                               {},
+                               {},
+                               tap(EInputCodeType::DIK_F9),
+                               {},
+                               release(EInputCodeType::DIK_F9)});
+    leave(steps);
+    steps.push_back(tap(EInputCodeType::DIK_ESCAPE));
+    run(std::move(steps));
+    EXPECT_THAT(bindings(EGameAction::Mute),
+                ElementsAre(EInputCodeType::DIK_F9, EInputCodeType::DIK_M));
+    EXPECT_THAT(bindings(EGameAction::QuickLoad), IsEmpty());
+    EXPECT_THAT(bindings(EGameAction::ScriptResetDialog), ElementsAre(EInputCodeType::DIK_F9));
+}
+
+// A hotkey on a device the control type lacks puts the defaults back like any other binding.
+TEST_F(CKeyBindingsTest, AHotkeyTheTypeLacksRestoresTheDefaults) {
+    game_.controls.setBindings(EGameAction::Mute, chords({EInputCodeType::DIM_LBUTTON}));
+    run({tap(EInputCodeType::DIK_ESCAPE)});
+    EXPECT_THAT(bindings(EGameAction::Mute),
+                ElementsAre(EInputCodeType::DIK_F5, EInputCodeType::DIK_M));
+}
+
 TEST_F(CKeyBindingsTest, LeavingWithACodeTheTypeLacksRestoresTheDefaults) {
     game_.controls.setBindings(EGameAction::Fire, chords({EInputCodeType::DIM_LBUTTON}));
     run({tap(EInputCodeType::DIK_ESCAPE)});
