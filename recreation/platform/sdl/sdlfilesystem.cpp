@@ -123,6 +123,15 @@ std::optional<std::string> CSdlFileSystem::getFullPath(std::string_view path) {
     return full.lexically_normal().string();
 }
 
+std::optional<std::string> CSdlFileSystem::getRealPath(std::string_view path) {
+    std::error_code error;
+    const std::filesystem::path real = std::filesystem::canonical(resolve(path), error);
+    if (error) {
+        return std::nullopt;
+    }
+    return real.string();
+}
+
 std::optional<SFileInfo> CSdlFileSystem::getFileInfo(std::string_view path) {
     const std::filesystem::directory_entry entry(resolve(path));
     std::error_code error;

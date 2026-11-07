@@ -27,16 +27,17 @@ struct SPackage {
 };
 
 struct SPackageDiscovery {
-    // The base game's first, then the rest by folder, ignoring case.
+    // By folder, ignoring case, a base game's manifest the game wrote first.
     std::vector<SPackage> packages;
     // What wasn't loaded, or couldn't be written, and why.
     std::vector<std::string> notes;
 };
 
-// The base game's package, from the install folder's nocturne.toml or one written from the known
-// release the install matches; then every subfolder's. A folder holding a nocturne.toml is a
-// package and isn't searched further; one holding PODs without one is given one. A POD in the
-// install folder that the base game's manifest doesn't list isn't loaded.
+// Every folder's nocturne.toml, each a package rooted at its folder. Without one whose id is the
+// base game's, one is written from the known release the install matches, in the folder holding
+// its PODs; one the game wrote that has lost a POD it needs is written again. A subfolder's PODs
+// that no manifest names, links followed, are given a manifest; those of the install folder or
+// of a folder with a manifest are noted.
 [[nodiscard]] SPackageDiscovery discoverPackages(platform::IFileSystem &file_system,
                                                  std::span<const SRelease> releases);
 

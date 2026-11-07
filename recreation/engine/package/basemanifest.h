@@ -21,9 +21,11 @@ struct SBaseManifest {
 };
 
 // The install folder's manifest, from the known release whose PODs it has the most of: that
-// release's PODs in the order the retail build mounts them, each with what it is on disk now. A
-// POD the release didn't ship isn't the base game's. With no known release, fatal.
+// release's PODs in the order the retail build mounts them, each with what it is on disk now.
+// installed is the install's PODs, by path from the install folder, the first with a name taken.
+// A POD the release didn't ship isn't the base game's. With no known release, fatal.
 [[nodiscard]] SBaseManifest makeBaseManifest(platform::IFileSystem &file_system,
+                                             std::span<const std::string> installed,
                                              std::span<const SRelease> releases);
 
 } // namespace nocturne::engine

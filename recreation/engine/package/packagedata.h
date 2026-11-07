@@ -73,5 +73,7 @@ parsePackageManifest(std::string_view text);
 parseReleaseCatalog(std::string_view text);
 // data/releases.toml, compiled in.
 [[nodiscard]] std::string_view getReleaseCatalogText();
+// The catalogue's releases; what is wrong with it is fatal.
+[[nodiscard]] std::vector<SRelease> loadReleaseCatalog(std::string_view text);
 
 } // namespace nocturne::engine

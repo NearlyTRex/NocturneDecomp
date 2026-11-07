@@ -7,7 +7,10 @@
 #include <gmock/gmock.h>
 #include <gtest/gtest.h>
 
+#include <cstddef>
+#include <expected>
 #include <string>
+#include <string_view>
 #include <type_traits>
 #include <vector>
 
@@ -18,6 +21,9 @@ using ::testing::ElementsAre;
 
 TEST(CPod, HasVirtualDestructor) {
     static_assert(std::has_virtual_destructor_v<CPod>);
+    static_assert(
+        std::is_same_v<decltype(&CPod::mountIfValid),
+                       std::expected<const CPodFile *, std::string> (CPod::*)(std::string_view)>);
 }
 
 class CPodTest : public CPodFixture {
@@ -82,6 +88,18 @@ TEST_F(CPodTest, AHundredAndFirstPodIsFatal) {
     EXPECT_THAT([this] { pod_.mount("ACT1.POD"); },
                 ::testing::ThrowsMessage<common::CFatalError>(
                     ::testing::StrEq("Too many .POD files at once!")));
+}
+
+TEST_F(CPodTest, MountingIfValidGivesThePodOrWhyNot) {
+    const std::expected<const CPodFile *, std::string> act1 = pod_.mountIfValid("ACT1.POD");
+    ASSERT_TRUE(act1.has_value());
+    EXPECT_EQ(*act1, pod_.getPodFiles().front().get());
+    EXPECT_EQ(pod_.mountIfValid("GONE.POD").error(), "Can't mount GONE.POD");
+    for (std::size_t i = 1; i < CPod::kMaxPods; ++i) {
+        ASSERT_TRUE(pod_.mountIfValid("ACT1.POD").has_value());
+    }
+    EXPECT_EQ(pod_.mountIfValid("ACT1.POD").error(), "Too many .POD files at once!");
+    EXPECT_EQ(pod_.getPodFiles().size(), CPod::kMaxPods);
 }
 
 TEST_F(CPodTest, TheFirstPodHoldingANameAnswersForIt) {

@@ -1,5 +1,7 @@
 #include "engine/package/packagedata.h"
 
+#include "common/error/error.h"
+
 #include <algorithm>
 #include <cstddef>
 #include <cstdint>
@@ -410,6 +412,14 @@ std::expected<std::vector<SRelease>, std::string> parseReleaseCatalog(std::strin
         releases.push_back(std::move(*release));
     }
     return releases;
+}
+
+std::vector<SRelease> loadReleaseCatalog(std::string_view text) {
+    std::expected<std::vector<SRelease>, std::string> releases = parseReleaseCatalog(text);
+    if (!releases) {
+        common::displayErrorAndQuit(std::format("releases.toml: {}", releases.error()));
+    }
+    return std::move(*releases);
 }
 
 } // namespace nocturne::engine

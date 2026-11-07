@@ -17,6 +17,7 @@ public:
     MOCK_METHOD(std::unique_ptr<IFile>, openFile, (std::string_view path, EFileMode mode),
                 (override));
     MOCK_METHOD(std::optional<std::string>, getFullPath, (std::string_view path), (override));
+    MOCK_METHOD(std::optional<std::string>, getRealPath, (std::string_view path), (override));
     MOCK_METHOD(std::optional<SFileInfo>, getFileInfo, (std::string_view path), (override));
     MOCK_METHOD(bool, makeDirectory, (std::string_view path), (override));
     MOCK_METHOD(bool, setModifiedTime, (std::string_view path, std::time_t modified), (override));

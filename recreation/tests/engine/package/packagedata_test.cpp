@@ -1,3 +1,4 @@
+#include "common/error/fatalerror.h"
 #include "engine/package/packagedata.h"
 
 #include <gmock/gmock.h>
@@ -184,6 +185,13 @@ std::string releasePod(std::string_view rest) {
 
 std::string release(std::string_view rest) {
     return std::format("{}{}", kRelease, rest);
+}
+
+TEST(ReleaseCatalog, LoadingTheCatalogueGivesItsReleasesAndABrokenOneIsFatal) {
+    EXPECT_EQ(loadReleaseCatalog(getReleaseCatalogText()).size(), 1U);
+    EXPECT_THAT([] { static_cast<void>(loadReleaseCatalog("version = 1")); },
+                ::testing::ThrowsMessage<common::CFatalError>(
+                    ::testing::StrEq("releases.toml: version: not a key this file takes")));
 }
 
 TEST(ReleaseCatalog, AReleaseNeedsAPlainIdAndAName) {

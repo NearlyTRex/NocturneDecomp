@@ -8,7 +8,10 @@
 #include "engine/pod/podfile.h"
 
 #include <algorithm>
+#include <expected>
 #include <format>
+#include <memory>
+#include <string>
 #include <utility>
 
 namespace nocturne::engine {
@@ -39,14 +42,20 @@ bool CPod::findFile(SFoundFileInfo &found_file_info) {
 
 // nocedit 0x00550a10
 void CPod::mount(std::string_view pod_filename) {
+    if (const std::expected<const CPodFile *, std::string> pod = mountIfValid(pod_filename); !pod) {
+        common::displayErrorAndQuit(pod.error());
+    }
+}
+
+std::expected<const CPodFile *, std::string> CPod::mountIfValid(std::string_view pod_filename) {
     if (pod_files_.size() >= kMaxPods) {
-        common::displayErrorAndQuit("Too many .POD files at once!");
+        return std::unexpected("Too many .POD files at once!");
     }
     auto pod = std::make_unique<CPodFile>(file_system_, dosio_);
     if (!pod->mountFromFile(pod_filename)) {
-        common::displayErrorAndQuit(std::format("Can't mount {}", pod_filename));
+        return std::unexpected(std::format("Can't mount {}", pod_filename));
     }
-    pod_files_.push_back(std::move(pod));
+    return pod_files_.emplace_back(std::move(pod)).get();
 }
 
 // The retail build clears the texture cache here, whether or not a pod was mounted from the file,

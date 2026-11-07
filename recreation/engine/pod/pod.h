@@ -4,6 +4,7 @@
 #include "engine/fwd.h"
 #include "platform/fwd.h"
 
+#include <expected>
 #include <functional>
 #include <memory>
 #include <string>
@@ -34,6 +35,9 @@ public:
     virtual void load();
     virtual bool findFile(SFoundFileInfo &found_file_info);
     virtual void mount(std::string_view pod_filename);
+    // As mount, the pod mounted or why it couldn't be, rather than fatal.
+    [[nodiscard]] std::expected<const CPodFile *, std::string>
+    mountIfValid(std::string_view pod_filename);
     // Unmounts every pod mounted from the file, and tells the dismount handler.
     virtual void dismount(std::string_view filename);
     virtual void remount();

@@ -20,8 +20,15 @@ using ::testing::ThrowsMessage;
 // Two releases sharing A.POD: the English one with B.pod, the German one with C.POD.
 class CBaseManifestTest : public ::testing::Test {
 protected:
-    [[nodiscard]] SBaseManifest make() {
-        return makeBaseManifest(files_.file_system_, releases_);
+    // From the install folder's PODs, or those given.
+    [[nodiscard]] SBaseManifest make(std::optional<std::vector<std::string>> installed = {}) {
+        if (!installed) {
+            installed.emplace();
+            for (const platform::SFileInfo &file : files_.file_system_.findFiles("*.pod")) {
+                installed->push_back(file.name);
+            }
+        }
+        return makeBaseManifest(files_.file_system_, *installed, releases_);
     }
 
     static SPackagePod recorded(const std::string &path, std::string_view hash) {
@@ -63,6 +70,26 @@ TEST_F(CBaseManifestTest, TheReleasesPodsAreRecordedLastMountedFirst) {
     EXPECT_EQ(base.manifest.pods, (std::vector<SPackagePod>{recorded("b.POD", kHashOfPodTwo),
                                                             recorded("A.POD", kHashOfPodOne)}));
     EXPECT_TRUE(base.notes.empty());
+}
+
+// Each is taken where it is first found, required ones included.
+TEST_F(CBaseManifestTest, ThePodsCanBeInAnyFolder) {
+    files_.givenFile("pods/A.POD", "POD one");
+    files_.givenFile("pods/b.POD", "POD two");
+    files_.givenFile("more/A.POD", "POD one");
+    const SBaseManifest base =
+        make(std::vector<std::string>{"pods/A.POD", "more/A.POD", "pods/b.POD"});
+    EXPECT_EQ(base.manifest.pods,
+              (std::vector<SPackagePod>{recorded("pods/b.POD", kHashOfPodTwo),
+                                        recorded("pods/A.POD", kHashOfPodOne)}));
+    EXPECT_EQ(base.manifest.required, std::vector<std::string>{"pods/A.POD"});
+    EXPECT_TRUE(base.notes.empty());
+}
+
+// A required POD that isn't there keeps its name, so its absence is reported by it.
+TEST_F(CBaseManifestTest, AMissingRequiredPodKeepsItsName) {
+    files_.givenFile("B.pod", "POD two");
+    EXPECT_EQ(make().manifest.required, std::vector<std::string>{"A.POD"});
 }
 
 TEST_F(CBaseManifestTest, TheReleaseMatchedIsTheOneWithTheMostPodsThere) {

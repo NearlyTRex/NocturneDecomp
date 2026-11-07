@@ -44,6 +44,9 @@ public:
                                                           EFileMode mode) = 0;
     // As _fullpath gives it: absolute, whether or not the file exists.
     [[nodiscard]] virtual std::optional<std::string> getFullPath(std::string_view path) = 0;
+    // Absolute with every link followed, so two paths to one file give the same; nothing when it
+    // doesn't exist.
+    [[nodiscard]] virtual std::optional<std::string> getRealPath(std::string_view path) = 0;
     // As stat gives it, the name being the last component; nothing when the path doesn't exist.
     [[nodiscard]] virtual std::optional<SFileInfo> getFileInfo(std::string_view path) = 0;
     // False when it doesn't exist afterwards.

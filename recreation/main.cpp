@@ -50,6 +50,7 @@
 #include "engine/matrix/matrix.h"
 #include "engine/menuinput.h"
 #include "engine/ncursfx/mouse.h"
+#include "engine/package/packagedata.h"
 #include "engine/prim/prim.h"
 #include "engine/special/special.h"
 #include "engine/texture/currenttexture.h"
@@ -179,7 +180,9 @@ private:
     sdl::CSdlMoviePlayer movies_{display_, log_};
     sdl::CSdlEnvironment environment_;
     engine::CDosIo dosio_{file_system_};
-    core::CDemonPod pod_{file_system_, dosio_};
+    std::vector<engine::SRelease> releases_ =
+        engine::loadReleaseCatalog(engine::getReleaseCatalogText());
+    core::CDemonPod pod_{file_system_, dosio_, releases_, log_};
     wincore::CWddVMem screen_{display_, renderer_, winrun_, special_, two_d_, clock_, log_};
     engine::C2d two_d_{dosio_, screen_, winrun_};
     engine::CLight light_;

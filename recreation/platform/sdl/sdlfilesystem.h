@@ -14,6 +14,7 @@ public:
     bool removeFile(std::string_view path) override;
     [[nodiscard]] std::unique_ptr<IFile> openFile(std::string_view path, EFileMode mode) override;
     [[nodiscard]] std::optional<std::string> getFullPath(std::string_view path) override;
+    [[nodiscard]] std::optional<std::string> getRealPath(std::string_view path) override;
     [[nodiscard]] std::optional<SFileInfo> getFileInfo(std::string_view path) override;
     bool makeDirectory(std::string_view path) override;
     bool setModifiedTime(std::string_view path, std::time_t modified) override;
