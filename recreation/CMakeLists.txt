@@ -124,9 +124,38 @@ set(MINIAUDIO_INSTALL OFF CACHE BOOL "" FORCE)
 FetchContent_MakeAvailable(miniaudio)
 target_compile_definitions(miniaudio PUBLIC MA_NO_DEVICE_IO)
 
+# Package manifests and the known-release catalogue are TOML; the package layer hashes PODs
+# with xxHash's XXH3-128. Both are header-only and stay private to engine/package.
+FetchContent_Declare(tomlplusplus
+    GIT_REPOSITORY https://github.com/marzer/tomlplusplus.git
+    GIT_TAG        v3.4.0
+    GIT_SHALLOW    TRUE
+    SYSTEM)
+FetchContent_MakeAvailable(tomlplusplus)
+FetchContent_Declare(xxhash
+    GIT_REPOSITORY https://github.com/Cyan4973/xxHash.git
+    GIT_TAG        v0.8.3
+    GIT_SHALLOW    TRUE
+    SOURCE_SUBDIR  build/cmake/disabled
+    SYSTEM)
+FetchContent_MakeAvailable(xxhash)
+add_library(nocturne_xxhash INTERFACE)
+target_include_directories(nocturne_xxhash SYSTEM INTERFACE "${xxhash_SOURCE_DIR}")
+target_compile_definitions(nocturne_xxhash INTERFACE XXH_INLINE_ALL)
+
+# The catalogue of known releases is data in the repository, compiled in so an install needs no
+# extra file to be recognised.
+file(READ "${CMAKE_CURRENT_SOURCE_DIR}/data/releases.toml" NOCTURNE_RELEASE_CATALOG)
+set_property(DIRECTORY APPEND PROPERTY CMAKE_CONFIGURE_DEPENDS
+    "${CMAKE_CURRENT_SOURCE_DIR}/data/releases.toml")
+configure_file(cmake/releasecatalogtext.cpp.in
+    "${CMAKE_CURRENT_BINARY_DIR}/generated/engine/package/releasecatalogtext.cpp" @ONLY)
+list(APPEND _sources "${CMAKE_CURRENT_BINARY_DIR}/generated/engine/package/releasecatalogtext.cpp")
+
 if(_sources)
     add_library(nocturne_recreation STATIC ${_sources})
     target_link_libraries(nocturne_recreation PUBLIC nocturne_recreation_options miniaudio)
+    target_link_libraries(nocturne_recreation PRIVATE tomlplusplus::tomlplusplus nocturne_xxhash)
 else()
     add_library(nocturne_recreation INTERFACE)
     target_link_libraries(nocturne_recreation INTERFACE nocturne_recreation_options miniaudio)

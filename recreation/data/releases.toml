@@ -1,0 +1,216 @@
+# The releases of the game this build recognises, by the PODs each shipped: name, size in bytes
+# and XXH3-128 as canonical hex. Without a base manifest the game finds the release its install
+# matches best and writes one from it, recording the release's id. Each release is a [[release]]
+# with an id of its own, year and language first (1999-de, 2000-en-budget), never changed once
+# published. required names the PODs the game can't start without.
+# scripts/Python/catalog_release.py prints a new release's entry from its install folder.
+
+[[release]]
+id = "1999-en"
+name = "Nocturne (1999, English)"
+required = ["STARTUP.POD"]
+
+[[release.pod]]
+name = "ACT1.POD"
+size = 11550130
+xxh3 = "b8a086b973c62dd8e71eafb51015af35"
+
+[[release.pod]]
+name = "ACT1SND.POD"
+size = 11299886
+xxh3 = "9aad0924f80e4e13c398ac047a40e614"
+
+[[release.pod]]
+name = "ACT2.POD"
+size = 9054297
+xxh3 = "d9c1e477d69a977f7bbf9c49a5caecb2"
+
+[[release.pod]]
+name = "act2snd.pod"
+size = 13577936
+xxh3 = "f1de0061cfd4a86796e2a562477ec149"
+
+[[release.pod]]
+name = "ACT3.POD"
+size = 29336425
+xxh3 = "9a5f17a10676c6acd0053f9b74e6f876"
+
+[[release.pod]]
+name = "act3snd.pod"
+size = 26069450
+xxh3 = "a756680904be9ddd8abd5e356f295324"
+
+[[release.pod]]
+name = "ACT4.POD"
+size = 10197985
+xxh3 = "b696c74e40a62eb7a165d58649a7f4fa"
+
+[[release.pod]]
+name = "ACT4SND.POD"
+size = 6957369
+xxh3 = "d5c16584f27b3225221f40e1febc7f07"
+
+[[release.pod]]
+name = "ACT5.POD"
+size = 1274794
+xxh3 = "39174137b885b70ae30091b80aba000a"
+
+[[release.pod]]
+name = "ACT5SND.POD"
+size = 25441
+xxh3 = "6e0ec5c790b4114c84fcc416c706ca4f"
+
+[[release.pod]]
+name = "castle.pod"
+size = 66293695
+xxh3 = "1832e8436ee2cebcad9e20bf4a46f011"
+
+[[release.pod]]
+name = "chicago.pod"
+size = 102366326
+xxh3 = "1b0e0a45d1e69aefa3851761c5aec42e"
+
+[[release.pod]]
+name = "DUNGEON.POD"
+size = 37162349
+xxh3 = "b263a3398d3dc8a63757346abaf5aea4"
+
+[[release.pod]]
+name = "enemy.pod"
+size = 61331990
+xxh3 = "39c3af631309666316153f7304f68738"
+
+[[release.pod]]
+name = "ENGLISH.POD"
+size = 23246970
+xxh3 = "13cb4379c9d7a969dbced4e8326898d3"
+
+[[release.pod]]
+name = "FACTORY.POD"
+size = 20685575
+xxh3 = "eeedbbbfbd4a6a90fec0c5f7b0923117"
+
+[[release.pod]]
+name = "forest.pod"
+size = 71671112
+xxh3 = "ccd6284cb2d8cf3db8349aa1fa91c356"
+
+[[release.pod]]
+name = "GRAVE.POD"
+size = 57677842
+xxh3 = "59d0af9bc8991fb0164c79a41629fd3a"
+
+[[release.pod]]
+name = "GTOWN.POD"
+size = 47793179
+xxh3 = "4b830fb329798dca1e266ab218a733cb"
+
+[[release.pod]]
+name = "hero.pod"
+size = 35187958
+xxh3 = "1ec87305f22a700c4ac76b8483f7807a"
+
+[[release.pod]]
+name = "HQ.POD"
+size = 18446627
+xxh3 = "32cc3b106b36d97351f7685761f08858"
+
+[[release.pod]]
+name = "HQWRECK.POD"
+size = 18046985
+xxh3 = "9f3b0a6f8f59b17dae71250af9d406dd"
+
+[[release.pod]]
+name = "INTFACT.POD"
+size = 23710255
+xxh3 = "cac1579438fc4f81ac06934fad3d2a68"
+
+[[release.pod]]
+name = "MANSION.POD"
+size = 73765503
+xxh3 = "a318beeeb9f4a0112ea5e1eca17d48c1"
+
+[[release.pod]]
+name = "mine.pod"
+size = 40616719
+xxh3 = "cb4a1d4d0211181a0b9a966bdd92449f"
+
+[[release.pod]]
+name = "MOVIE3.POD"
+size = 9118503
+xxh3 = "81e91c6f66c12b238e034cd24173f41c"
+
+[[release.pod]]
+name = "MOVIE4.POD"
+size = 11609493
+xxh3 = "9d5319c0d13f02328ecf3932867a37d3"
+
+[[release.pod]]
+name = "MOVIE5.POD"
+size = 16589607
+xxh3 = "4cfcef79b3b88f1bcb93598366f3841e"
+
+[[release.pod]]
+name = "music.pod"
+size = 33296815
+xxh3 = "94f269d4e2252b69dc87589f179fa096"
+
+[[release.pod]]
+name = "npc.pod"
+size = 32097316
+xxh3 = "41a9360ad3393a3157abc971065dd062"
+
+[[release.pod]]
+name = "SOUND.POD"
+size = 81149498
+xxh3 = "5d33f558aa3660a42376d21fc9286582"
+
+[[release.pod]]
+name = "SPEAK.POD"
+size = 9116660
+xxh3 = "d80224f5e7215489aac1ba1703dcbcf6"
+
+[[release.pod]]
+name = "STARTUP.POD"
+size = 30025625
+xxh3 = "408d46be88e10bf5e93ea6aecc4ae673"
+
+[[release.pod]]
+name = "temple.pod"
+size = 38410752
+xxh3 = "a885903c4b22e5f4eb14b2ad301f5654"
+
+[[release.pod]]
+name = "tground.pod"
+size = 4315796
+xxh3 = "d851e1f8f8ee60e2d5415f08dc7b020d"
+
+[[release.pod]]
+name = "theater.pod"
+size = 44732475
+xxh3 = "6c8861040add84ff6154287d3cefc565"
+
+[[release.pod]]
+name = "town.pod"
+size = 47259097
+xxh3 = "601e9f8fba0544b731518424a32be9ba"
+
+[[release.pod]]
+name = "train.pod"
+size = 26546027
+xxh3 = "4090d56d1092e3f652d2bdfaf712a6b3"
+
+[[release.pod]]
+name = "TRANS.POD"
+size = 6915910
+xxh3 = "686b4c4bbd2754af55890b60e0a80773"
+
+[[release.pod]]
+name = "WARE2.POD"
+size = 36989845
+xxh3 = "c2b7cff399a61389b93d5ec869cf4ea1"
+
+[[release.pod]]
+name = "WWORKS.POD"
+size = 8357404
+xxh3 = "b6a2ed00c138473f49aa182f498d7a02"

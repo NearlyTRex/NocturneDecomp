@@ -1,0 +1,11 @@
+#include "engine/package/packagedata.h"
+
+#include <string_view>
+
+namespace nocturne::engine {
+
+std::string_view getReleaseCatalogText() {
+    return R"releases(@NOCTURNE_RELEASE_CATALOG@)releases";
+}
+
+} // namespace nocturne::engine
