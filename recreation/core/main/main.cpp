@@ -15,6 +15,7 @@
 #include "engine/dosio/dosio.h"
 #include "engine/dosio/foundfileinfo.h"
 #include "engine/ncursfx/mouse.h"
+#include "engine/package/gamecontent.h"
 #include "engine/pod/pod.h"
 #include "engine/screendevice.h"
 #include "engine/special/special.h"
@@ -22,6 +23,7 @@
 #include "support/newmsg/newmsg.h"
 
 #include <cstddef>
+#include <format>
 
 namespace nocturne::core {
 namespace {
@@ -54,6 +56,24 @@ void showLoadingScreen(const SGameSystemOwners &owners) {
     loading.load("fangs", kWidth, kHeight);
     loading.display(getFrontEndLeft(owners.screen.getWindowWidth()), 0, kLoadingAlpha);
     owners.screen.swapBuffers();
+}
+
+// The packages choose the game's menus and loading indicator.
+void checkFrontEnd(const engine::SGameContent &content) {
+    if (!content.front_end) {
+        displayErrorAndQuit("No package names the game's front end");
+    }
+    if (*content.front_end != kNocturneFrontEnd) {
+        displayErrorAndQuit(
+            std::format("The front end {} isn't in this build", *content.front_end));
+    }
+    if (!content.loading_indicator) {
+        displayErrorAndQuit("No package names the loading indicator");
+    }
+    if (*content.loading_indicator != kMoonLoadingIndicator) {
+        displayErrorAndQuit(std::format("The loading indicator {} isn't in this build",
+                                        *content.loading_indicator));
+    }
 }
 
 // Eight spots growing an eighth brighter each, and a larger one per player growing a quarter.
@@ -89,7 +109,12 @@ void initializeGameSystems(const SGameSystemOwners &owners) {
     owners.dosio.addGetFileInfoHook([&dosio = owners.dosio](engine::SFoundFileInfo &info) {
         return dosio.findFileNormally(info);
     });
+    checkFrontEnd(owners.content);
     owners.messages.readMessageFile("msglist.txt");
+    if (const auto translations = owners.content.translations.find(owners.messages.getLanguage());
+        translations != owners.content.translations.end()) {
+        owners.messages.addTranslations(translations->second);
+    }
     owners.texture.initTextureCache();
     // The retail build's dismount cleared the texture cache.
     owners.pod.setDismountHandler([&texture = owners.texture] { texture.clearTextureCache(); });

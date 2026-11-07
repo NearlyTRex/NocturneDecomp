@@ -137,6 +137,7 @@ public:
              .ini_owners = ini_owners_,
              .dosio = dosio_,
              .pod = pod_,
+             .content = pod_.getGameContent(),
              .messages = messages_,
              .texture = texture_,
              .two_d = two_d_,
@@ -181,7 +182,7 @@ private:
     sdl::CSdlEnvironment environment_;
     engine::CDosIo dosio_{file_system_};
     std::vector<engine::SRelease> releases_ =
-        engine::loadReleaseCatalog(engine::getReleaseCatalogText());
+        engine::loadReleaseCatalog(engine::getReleaseCatalogText(), engine::getEmbeddedGames());
     core::CDemonPod pod_{file_system_, dosio_, releases_, log_};
     wincore::CWddVMem screen_{display_, renderer_, winrun_, special_, two_d_, clock_, log_};
     engine::C2d two_d_{dosio_, screen_, winrun_};
@@ -222,7 +223,8 @@ private:
                        .sound_main = sound_main_,
                        .keys = keys_,
                        .raw_input = winrun_,
-                       .gamepad = gamepad_}};
+                       .gamepad = gamepad_,
+                       .content = pod_.getGameContent()}};
     engine::CIni ini_{file_system_};
     core::SIniDataOwners ini_owners_{.game = game_,
                                      .sound_main = sound_main_,
@@ -230,7 +232,8 @@ private:
                                      .special = special_,
                                      .display = display_,
                                      .fonts = fonts_,
-                                     .gamepad = gamepad_};
+                                     .gamepad = gamepad_,
+                                     .messages = messages_};
     engine::CTexture texture_{{.dosio = dosio_,
                                .two_d = two_d_,
                                .screen = screen_,
@@ -347,6 +350,7 @@ private:
                        .gamepad = gamepad_,
                        .fonts = fonts_,
                        .messages = messages_,
+                       .content = pod_.getGameContent(),
                        .renderer = demon_renderer_,
                        .set = set_,
                        .game = game_,
@@ -379,7 +383,8 @@ private:
                                       .set = set_,
                                       .fonts = fonts_,
                                       .crt_random = crt_random_,
-                                      .console = console_}};
+                                      .console = console_,
+                                      .content = pod_.getGameContent()}};
     core::CDemonMission mission_{{.dosio = dosio_,
                                   .messages = messages_,
                                   .game = game_,

@@ -1,6 +1,8 @@
 #include "engine/package/packagedata.h"
 
 #include "common/error/error.h"
+#include "engine/package/gamecontentfile.h"
+#include "engine/package/tomlfields.h"
 
 #include <algorithm>
 #include <cstddef>
@@ -8,9 +10,8 @@
 #include <ctime>
 #include <expected>
 #include <format>
-#include <initializer_list>
 #include <optional>
-#include <sstream>
+#include <span>
 #include <string>
 #include <string_view>
 #include <toml++/toml.hpp>
@@ -19,63 +20,11 @@
 namespace nocturne::engine {
 namespace {
 
-template <typename T>
-using Result = std::expected<T, std::string>;
-
 constexpr std::size_t kHashDigits = 32;
 
-// Any key the table has that isn't one of these.
-Result<void> rejectUnknownKeys(const toml::table &table, std::string_view where,
-                               std::initializer_list<std::string_view> known) {
-    for (const auto &[key, node] : table) {
-        if (std::ranges::find(known, key.str()) == known.end()) {
-            return std::unexpected(
-                std::format("{}{}: not a key this file takes", where, key.str()));
-        }
-    }
-    return {};
-}
-
-Result<std::optional<std::string>> readString(const toml::table &table, std::string_view where,
-                                              std::string_view key) {
-    const toml::node *node = table.get(key);
-    if (node == nullptr) {
-        return std::nullopt;
-    }
-    std::optional<std::string> value = node->value_exact<std::string>();
-    if (!value) {
-        return std::unexpected(std::format("{}{}: not a string", where, key));
-    }
-    return value;
-}
-
-Result<std::string> readRequiredString(const toml::table &table, std::string_view where,
-                                       std::string_view key) {
-    Result<std::optional<std::string>> value = readString(table, where, key);
-    if (!value) {
-        return std::unexpected(value.error());
-    }
-    if (!*value || (*value)->empty()) {
-        return std::unexpected(std::format("{}{}: missing", where, key));
-    }
-    return std::move(**value);
-}
-
-Result<std::optional<std::int64_t>> readInteger(const toml::table &table, std::string_view where,
-                                                std::string_view key) {
-    const toml::node *node = table.get(key);
-    if (node == nullptr) {
-        return std::nullopt;
-    }
-    const std::optional<std::int64_t> value = node->value_exact<std::int64_t>();
-    if (!value) {
-        return std::unexpected(std::format("{}{}: not a whole number", where, key));
-    }
-    return value;
-}
-
-Result<std::optional<std::uint64_t>> readSize(const toml::table &table, std::string_view where) {
-    const Result<std::optional<std::int64_t>> size = readInteger(table, where, "size");
+TomlResult<std::optional<std::uint64_t>> readSize(const toml::table &table,
+                                                  std::string_view where) {
+    const TomlResult<std::optional<std::int64_t>> size = readInteger(table, where, "size");
     if (!size) {
         return std::unexpected(size.error());
     }
@@ -86,50 +35,6 @@ Result<std::optional<std::uint64_t>> readSize(const toml::table &table, std::str
         return std::unexpected(std::format("{}size: below zero", where));
     }
     return static_cast<std::uint64_t>(**size);
-}
-
-Result<std::vector<std::string>> readStrings(const toml::table &table, std::string_view where,
-                                             std::string_view key) {
-    const toml::node *node = table.get(key);
-    if (node == nullptr) {
-        return std::vector<std::string>{};
-    }
-    const toml::array *array = node->as_array();
-    if (array == nullptr) {
-        return std::unexpected(std::format("{}{}: not a list", where, key));
-    }
-    std::vector<std::string> values;
-    for (const toml::node &element : *array) {
-        const std::optional<std::string> value = element.value_exact<std::string>();
-        if (!value || value->empty()) {
-            return std::unexpected(
-                std::format("{}{}: holds something that isn't a name", where, key));
-        }
-        values.push_back(*value);
-    }
-    return values;
-}
-
-// The tables of an array of tables, [[key]] in the file.
-Result<std::vector<const toml::table *>> readTables(const toml::table &table,
-                                                    std::string_view where, std::string_view key) {
-    const toml::node *node = table.get(key);
-    if (node == nullptr) {
-        return std::vector<const toml::table *>{};
-    }
-    const toml::array *array = node->as_array();
-    if (array == nullptr || !array->is_array_of_tables()) {
-        return std::unexpected(std::format("{}{}: not a list of [[{}]] tables", where, key, key));
-    }
-    std::vector<const toml::table *> tables;
-    for (const toml::node &element : *array) {
-        tables.push_back(element.as_table());
-    }
-    return tables;
-}
-
-bool isPackageId(std::string_view id) {
-    return std::ranges::all_of(id, isIdCharacter);
 }
 
 bool isHash(std::string_view hash) {
@@ -154,8 +59,8 @@ bool isPackagePath(std::string_view path) {
     return true;
 }
 
-Result<std::string> readHash(const toml::table &table, std::string_view where) {
-    Result<std::optional<std::string>> hash = readString(table, where, "xxh3");
+TomlResult<std::string> readHash(const toml::table &table, std::string_view where) {
+    TomlResult<std::optional<std::string>> hash = readString(table, where, "xxh3");
     if (!hash) {
         return std::unexpected(hash.error());
     }
@@ -165,13 +70,14 @@ Result<std::string> readHash(const toml::table &table, std::string_view where) {
     return std::move(**hash);
 }
 
-Result<SPackagePod> readPackagePod(const toml::table &table, std::string_view where) {
-    if (Result<void> keys = rejectUnknownKeys(table, where, {"path", "size", "modified", "xxh3"});
+TomlResult<SPackagePod> readPackagePod(const toml::table &table, std::string_view where) {
+    if (TomlResult<void> keys =
+            rejectUnknownKeys(table, where, {"path", "size", "modified", "xxh3"});
         !keys) {
         return std::unexpected(keys.error());
     }
     SPackagePod pod;
-    Result<std::string> path = readRequiredString(table, where, "path");
+    TomlResult<std::string> path = readRequiredString(table, where, "path");
     if (!path) {
         return std::unexpected(path.error());
     }
@@ -179,12 +85,12 @@ Result<SPackagePod> readPackagePod(const toml::table &table, std::string_view wh
         return std::unexpected(std::format("{}path: not a path inside the package", where));
     }
     pod.path = std::move(*path);
-    const Result<std::optional<std::uint64_t>> size = readSize(table, where);
+    const TomlResult<std::optional<std::uint64_t>> size = readSize(table, where);
     if (!size) {
         return std::unexpected(size.error());
     }
     pod.size = *size;
-    const Result<std::optional<std::int64_t>> modified = readInteger(table, where, "modified");
+    const TomlResult<std::optional<std::int64_t>> modified = readInteger(table, where, "modified");
     if (!modified) {
         return std::unexpected(modified.error());
     }
@@ -192,7 +98,7 @@ Result<SPackagePod> readPackagePod(const toml::table &table, std::string_view wh
         pod.modified = static_cast<std::time_t>(**modified);
     }
     if (table.contains("xxh3")) {
-        Result<std::string> hash = readHash(table, where);
+        TomlResult<std::string> hash = readHash(table, where);
         if (!hash) {
             return std::unexpected(hash.error());
         }
@@ -201,20 +107,12 @@ Result<SPackagePod> readPackagePod(const toml::table &table, std::string_view wh
     return pod;
 }
 
-Result<std::string> readId(const toml::table &table, std::string_view where) {
-    Result<std::string> id = readRequiredString(table, where, "id");
-    if (id && !isPackageId(*id)) {
-        return std::unexpected(std::format("{}id: only letters, digits, '.', '_' and '-'", where));
-    }
-    return id;
-}
-
 // The manifest's strings and lists of names, by key.
-Result<void> readManifestFields(const toml::table &table, SPackageManifest &manifest) {
+TomlResult<void> readManifestFields(const toml::table &table, SPackageManifest &manifest) {
     for (const auto &[key, field] :
          {std::pair{"name", &manifest.name}, std::pair{"version", &manifest.version},
           std::pair{"release", &manifest.release}}) {
-        Result<std::optional<std::string>> value = readString(table, "", key);
+        TomlResult<std::optional<std::string>> value = readString(table, "", key);
         if (!value) {
             return std::unexpected(value.error());
         }
@@ -222,7 +120,7 @@ Result<void> readManifestFields(const toml::table &table, SPackageManifest &mani
     }
     for (const auto &[key, field] : {std::pair{"requires", &manifest.dependencies},
                                      std::pair{"required", &manifest.required}}) {
-        Result<std::vector<std::string>> values = readStrings(table, "", key);
+        TomlResult<std::vector<std::string>> values = readStrings(table, "", key);
         if (!values) {
             return std::unexpected(values.error());
         }
@@ -232,87 +130,100 @@ Result<void> readManifestFields(const toml::table &table, SPackageManifest &mani
 }
 
 // A manifest without a name goes by its id.
-Result<SPackageManifest> readPackageManifest(const toml::table &table) {
-    if (Result<void> keys = rejectUnknownKeys(
-            table, "", {"id", "name", "version", "release", "requires", "required", "pod"});
+TomlResult<SPackageManifest> readPackageManifest(const toml::table &table) {
+    if (TomlResult<void> keys = rejectUnknownKeys(
+            table, "", {"id", "name", "version", "release", "requires", "required", "pod"},
+            kGameContentKeys);
         !keys) {
         return std::unexpected(keys.error());
     }
     SPackageManifest manifest;
-    Result<std::string> id = readId(table, "");
+    TomlResult<std::string> id = readId(table, "");
     if (!id) {
         return std::unexpected(id.error());
     }
     manifest.id = std::move(*id);
-    if (Result<void> fields = readManifestFields(table, manifest); !fields) {
+    if (TomlResult<void> fields = readManifestFields(table, manifest); !fields) {
         return std::unexpected(fields.error());
     }
     if (manifest.name.empty()) {
         manifest.name = manifest.id;
     }
-    const Result<std::vector<const toml::table *>> pods = readTables(table, "", "pod");
+    const TomlResult<std::vector<const toml::table *>> pods = readTables(table, "", "pod");
     if (!pods) {
         return std::unexpected(pods.error());
     }
     for (std::size_t i = 0; i < pods->size(); ++i) {
-        Result<SPackagePod> pod = readPackagePod(*(*pods)[i], std::format("pod {}: ", i + 1));
+        TomlResult<SPackagePod> pod = readPackagePod(*(*pods)[i], std::format("pod {}: ", i + 1));
         if (!pod) {
             return std::unexpected(pod.error());
         }
         manifest.pods.push_back(std::move(*pod));
     }
+    TomlResult<SGameContent> game = readGameContent(table);
+    if (!game) {
+        return std::unexpected(game.error());
+    }
+    manifest.game = std::move(*game);
     return manifest;
 }
 
-Result<SReleasePod> readReleasePod(const toml::table &table, std::string_view where) {
-    if (Result<void> keys = rejectUnknownKeys(table, where, {"name", "size", "xxh3"}); !keys) {
+TomlResult<SReleasePod> readReleasePod(const toml::table &table, std::string_view where) {
+    if (TomlResult<void> keys = rejectUnknownKeys(table, where, {"name", "size", "xxh3"}); !keys) {
         return std::unexpected(keys.error());
     }
-    Result<std::string> name = readRequiredString(table, where, "name");
+    TomlResult<std::string> name = readRequiredString(table, where, "name");
     if (!name) {
         return std::unexpected(name.error());
     }
-    const Result<std::optional<std::uint64_t>> size = readSize(table, where);
+    const TomlResult<std::optional<std::uint64_t>> size = readSize(table, where);
     if (!size) {
         return std::unexpected(size.error());
     }
     if (!*size) {
         return std::unexpected(std::format("{}size: missing", where));
     }
-    Result<std::string> hash = readHash(table, where);
+    TomlResult<std::string> hash = readHash(table, where);
     if (!hash) {
         return std::unexpected(hash.error());
     }
     return SReleasePod{.name = std::move(*name), .size = **size, .xxh3 = std::move(*hash)};
 }
 
-Result<SRelease> readRelease(const toml::table &table, std::string_view where) {
-    if (Result<void> keys = rejectUnknownKeys(table, where, {"id", "name", "required", "pod"});
+TomlResult<SRelease> readRelease(const toml::table &table, std::string_view where) {
+    if (TomlResult<void> keys =
+            rejectUnknownKeys(table, where, {"id", "name", "game", "required", "pod"});
         !keys) {
         return std::unexpected(keys.error());
     }
-    Result<std::string> id = readId(table, where);
+    TomlResult<std::string> id = readId(table, where);
     if (!id) {
         return std::unexpected(id.error());
     }
-    Result<std::string> name = readRequiredString(table, where, "name");
+    TomlResult<std::string> name = readRequiredString(table, where, "name");
     if (!name) {
         return std::unexpected(name.error());
     }
-    Result<std::vector<std::string>> required = readStrings(table, where, "required");
+    TomlResult<std::string> game = readRequiredString(table, where, "game");
+    if (!game) {
+        return std::unexpected(game.error());
+    }
+    TomlResult<std::vector<std::string>> required = readStrings(table, where, "required");
     if (!required) {
         return std::unexpected(required.error());
     }
-    const Result<std::vector<const toml::table *>> pods = readTables(table, where, "pod");
+    const TomlResult<std::vector<const toml::table *>> pods = readTables(table, where, "pod");
     if (!pods) {
         return std::unexpected(pods.error());
     }
     SRelease release{.id = std::move(*id),
                      .name = std::move(*name),
+                     .game = std::move(*game),
                      .required = std::move(*required),
-                     .pods = {}};
+                     .pods = {},
+                     .content = {}};
     for (std::size_t i = 0; i < pods->size(); ++i) {
-        Result<SReleasePod> pod =
+        TomlResult<SReleasePod> pod =
             readReleasePod(*(*pods)[i], std::format("{}pod {}: ", where, i + 1));
         if (!pod) {
             return std::unexpected(pod.error());
@@ -322,27 +233,22 @@ Result<SRelease> readRelease(const toml::table &table, std::string_view where) {
     return release;
 }
 
-Result<toml::table> parseToml(std::string_view text) {
-    try {
-        return toml::parse(text);
-    } catch (const toml::parse_error &error) {
-        return std::unexpected(
-            std::format("line {}: {}", error.source().begin.line, error.description()));
+// Each release's game content from the game it names.
+TomlResult<void> attachGameContent(std::vector<SRelease> &releases,
+                                   std::span<const SEmbeddedGame> games) {
+    for (SRelease &release : releases) {
+        const auto game = std::ranges::find(games, release.game, &SEmbeddedGame::id);
+        if (game == games.end()) {
+            return std::unexpected(
+                std::format("release {}: game: no data/games/{}.toml", release.id, release.game));
+        }
+        std::expected<SGameContent, std::string> content = parseGameContent(game->text);
+        if (!content) {
+            return std::unexpected(std::format("games/{}.toml: {}", game->id, content.error()));
+        }
+        release.content = std::move(*content);
     }
-}
-
-std::string quote(std::string_view text) {
-    std::ostringstream out;
-    out << toml::value<std::string>(std::string(text));
-    return std::move(out).str();
-}
-
-std::string formatList(const std::vector<std::string> &values) {
-    std::string list = "[";
-    for (std::size_t i = 0; i < values.size(); ++i) {
-        list += (i == 0 ? "" : ", ") + quote(values[i]);
-    }
-    return list + "]";
+    return {};
 }
 
 } // namespace
@@ -359,21 +265,22 @@ std::expected<SPackageManifest, std::string> parsePackageManifest(std::string_vi
 
 std::string formatPackageManifest(const SPackageManifest &manifest) {
     std::string text =
-        std::format("id = {}\nname = {}\n", quote(manifest.id), quote(manifest.name));
+        std::format("id = {}\nname = {}\n", quoteToml(manifest.id), quoteToml(manifest.name));
     if (!manifest.version.empty()) {
-        text += std::format("version = {}\n", quote(manifest.version));
+        text += std::format("version = {}\n", quoteToml(manifest.version));
     }
     if (!manifest.release.empty()) {
-        text += std::format("release = {}\n", quote(manifest.release));
+        text += std::format("release = {}\n", quoteToml(manifest.release));
     }
     if (!manifest.dependencies.empty()) {
-        text += std::format("requires = {}\n", formatList(manifest.dependencies));
+        text += std::format("requires = {}\n", formatTomlList(manifest.dependencies));
     }
     if (!manifest.required.empty()) {
-        text += std::format("required = {}\n", formatList(manifest.required));
+        text += std::format("required = {}\n", formatTomlList(manifest.required));
     }
+    text += formatGameContentKeys(manifest.game);
     for (const SPackagePod &pod : manifest.pods) {
-        text += std::format("\n[[pod]]\npath = {}\n", quote(pod.path));
+        text += std::format("\n[[pod]]\npath = {}\n", quoteToml(pod.path));
         if (pod.size) {
             text += std::format("size = {}\n", *pod.size);
         }
@@ -381,27 +288,28 @@ std::string formatPackageManifest(const SPackageManifest &manifest) {
             text += std::format("modified = {}\n", *pod.modified);
         }
         if (pod.xxh3) {
-            text += std::format("xxh3 = {}\n", quote(*pod.xxh3));
+            text += std::format("xxh3 = {}\n", quoteToml(*pod.xxh3));
         }
     }
-    return text;
+    return text + formatGameContentTables(manifest.game);
 }
 
 std::expected<std::vector<SRelease>, std::string> parseReleaseCatalog(std::string_view text) {
-    const Result<toml::table> table = parseToml(text);
+    const TomlResult<toml::table> table = parseToml(text);
     if (!table) {
         return std::unexpected(table.error());
     }
-    if (Result<void> keys = rejectUnknownKeys(*table, "", {"release"}); !keys) {
+    if (TomlResult<void> keys = rejectUnknownKeys(*table, "", {"release"}); !keys) {
         return std::unexpected(keys.error());
     }
-    const Result<std::vector<const toml::table *>> tables = readTables(*table, "", "release");
+    const TomlResult<std::vector<const toml::table *>> tables = readTables(*table, "", "release");
     if (!tables) {
         return std::unexpected(tables.error());
     }
     std::vector<SRelease> releases;
     for (std::size_t i = 0; i < tables->size(); ++i) {
-        Result<SRelease> release = readRelease(*(*tables)[i], std::format("release {}: ", i + 1));
+        TomlResult<SRelease> release =
+            readRelease(*(*tables)[i], std::format("release {}: ", i + 1));
         if (!release) {
             return std::unexpected(release.error());
         }
@@ -414,10 +322,14 @@ std::expected<std::vector<SRelease>, std::string> parseReleaseCatalog(std::strin
     return releases;
 }
 
-std::vector<SRelease> loadReleaseCatalog(std::string_view text) {
+std::vector<SRelease> loadReleaseCatalog(std::string_view text,
+                                         std::span<const SEmbeddedGame> games) {
     std::expected<std::vector<SRelease>, std::string> releases = parseReleaseCatalog(text);
     if (!releases) {
         common::displayErrorAndQuit(std::format("releases.toml: {}", releases.error()));
+    }
+    if (TomlResult<void> attached = attachGameContent(*releases, games); !attached) {
+        common::displayErrorAndQuit(attached.error());
     }
     return std::move(*releases);
 }

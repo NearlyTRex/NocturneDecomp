@@ -1,9 +1,12 @@
 #pragma once
 
+#include "engine/package/gamecontent.h"
+
 #include <cstdint>
 #include <ctime>
 #include <expected>
 #include <optional>
+#include <span>
 #include <string>
 #include <string_view>
 #include <vector>
@@ -36,6 +39,7 @@ struct SPackageManifest {
     std::vector<std::string> dependencies;
     std::vector<std::string> required;
     std::vector<SPackagePod> pods;
+    SGameContent game;
 
     bool operator==(const SPackageManifest &) const = default;
 };
@@ -54,10 +58,20 @@ struct SReleasePod {
 struct SRelease {
     std::string id;
     std::string name;
+    // The game it is a release of, by its data/games/ file.
+    std::string game;
     std::vector<std::string> required;
     std::vector<SReleasePod> pods;
+    // From the game's file, for the base manifest written from the release.
+    SGameContent content;
 
     bool operator==(const SRelease &) const = default;
+};
+
+// A game this build knows, as data/games/<id>.toml has it, compiled in.
+struct SEmbeddedGame {
+    std::string_view id;
+    std::string_view text;
 };
 
 // What a package's or release's id may hold: letters, digits, '.', '_' and '-'.
@@ -68,12 +82,15 @@ struct SRelease {
 parsePackageManifest(std::string_view text);
 // TOML that parsePackageManifest reads back as the same manifest.
 [[nodiscard]] std::string formatPackageManifest(const SPackageManifest &manifest);
-// The releases, or what is wrong with the catalogue, a release's id given twice included.
+// The releases, or what is wrong with the catalogue, a release's id given twice included. Their
+// content is the games' to give.
 [[nodiscard]] std::expected<std::vector<SRelease>, std::string>
 parseReleaseCatalog(std::string_view text);
 // data/releases.toml, compiled in.
 [[nodiscard]] std::string_view getReleaseCatalogText();
-// The catalogue's releases; what is wrong with it is fatal.
-[[nodiscard]] std::vector<SRelease> loadReleaseCatalog(std::string_view text);
+[[nodiscard]] std::span<const SEmbeddedGame> getEmbeddedGames();
+// The catalogue's releases, each with its game's content; what is wrong with either is fatal.
+[[nodiscard]] std::vector<SRelease> loadReleaseCatalog(std::string_view text,
+                                                       std::span<const SEmbeddedGame> games);
 
 } // namespace nocturne::engine

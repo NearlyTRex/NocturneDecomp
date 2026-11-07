@@ -33,6 +33,8 @@ struct SMenuOwners {
     engine::CGamepadInput &gamepad;
     CDFont &fonts;
     const support::CNewMsg &messages;
+    // The packages' content: where the lists go, and the copyright.
+    const engine::SGameContent &content;
     engine::CDemonRenderer &renderer;
     CDemonSet &set;
     CGame &game;
@@ -158,7 +160,10 @@ private:
     // The selected item: five faint copies jittered about it, then the item over them.
     // Where the 640-wide layout starts, centred on a wider front end.
     [[nodiscard]] int getLayoutLeft() const;
+    // The packages' layout; without one, fatal.
+    [[nodiscard]] const engine::SMenuLayout &getMenuLayout() const;
     void drawGlowingItem(engine::CBitFont &font, std::string_view item, int left, int y);
+    [[nodiscard]] std::string_view getCopyright() const;
     void drawFooter();
     // The choice the menu actions make this frame, or -1.
     int readMenuActions(std::span<const std::string> items, int &selected_index);

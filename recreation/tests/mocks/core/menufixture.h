@@ -148,7 +148,8 @@ protected:
                                .special = special_,
                                .display = display_,
                                .fonts = fonts_,
-                               .gamepad = game_parts_.getGamepad().input};
+                               .gamepad = game_parts_.getGamepad().input,
+                               .messages = messages_};
     shape::CEdControls controls_{{.two_d = two_d_,
                                   .screen = screen_,
                                   .raw_input = raw_input_,
@@ -178,6 +179,7 @@ protected:
                              .gamepad = game_parts_.getGamepad().input,
                              .fonts = fonts_,
                              .messages = messages_,
+                             .content = game_parts_.getContent(),
                              .renderer = demon_renderer_,
                              .set = set_,
                              .game = game_,

@@ -34,7 +34,8 @@ protected:
                                .pods = {{.path = "A.POD",
                                          .size = 7,
                                          .modified = CPackageFiles::kModified,
-                                         .xxh3 = std::string(kHashOfPodOne)}}};
+                                         .xxh3 = std::string(kHashOfPodOne)}},
+                               .game = {}};
 };
 
 TEST_F(CPodCheckTest, APodAsRecordedIsntHashedAgain) {

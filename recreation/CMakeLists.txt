@@ -148,6 +148,17 @@ target_compile_definitions(nocturne_xxhash INTERFACE XXH_INLINE_ALL)
 file(READ "${CMAKE_CURRENT_SOURCE_DIR}/data/releases.toml" NOCTURNE_RELEASE_CATALOG)
 set_property(DIRECTORY APPEND PROPERTY CMAKE_CONFIGURE_DEPENDS
     "${CMAKE_CURRENT_SOURCE_DIR}/data/releases.toml")
+# Each game's content, data/games/<id>.toml, which a base manifest written for its release copies.
+file(GLOB _game_files CONFIGURE_DEPENDS "${CMAKE_CURRENT_SOURCE_DIR}/data/games/*.toml")
+list(SORT _game_files)
+set(NOCTURNE_EMBEDDED_GAMES "")
+foreach(_game_file IN LISTS _game_files)
+    get_filename_component(_game_id "${_game_file}" NAME_WE)
+    file(READ "${_game_file}" _game_text)
+    string(APPEND NOCTURNE_EMBEDDED_GAMES
+        "        SEmbeddedGame{.id = \"${_game_id}\", .text = R\"game(${_game_text})game\"},\n")
+    set_property(DIRECTORY APPEND PROPERTY CMAKE_CONFIGURE_DEPENDS "${_game_file}")
+endforeach()
 configure_file(cmake/releasecatalogtext.cpp.in
     "${CMAKE_CURRENT_BINARY_DIR}/generated/engine/package/releasecatalogtext.cpp" @ONLY)
 list(APPEND _sources "${CMAKE_CURRENT_BINARY_DIR}/generated/engine/package/releasecatalogtext.cpp")
@@ -171,7 +182,7 @@ endforeach()
 if(_header_checks)
     add_library(nocturne_recreation_header_checks OBJECT ${_header_checks})
     target_link_libraries(nocturne_recreation_header_checks
-        PRIVATE nocturne_recreation_options miniaudio)
+        PRIVATE nocturne_recreation_options miniaudio tomlplusplus::tomlplusplus)
 endif()
 
 FetchContent_Declare(googletest
@@ -290,6 +301,10 @@ foreach(_module IN LISTS NOCTURNE_RECREATION_MODULES)
         target_link_libraries(${_target} PRIVATE nocturne_recreation)
     endif()
     target_link_libraries(${_target} PRIVATE GTest::gtest_main GTest::gmock)
+    if(_module STREQUAL "engine")
+        # The package layer's TOML readers take toml++ tables.
+        target_link_libraries(${_target} PRIVATE tomlplusplus::tomlplusplus)
+    endif()
     # A test runs in well under a second; one stuck in a loop is ended before ctest, which holds
     # each test's output, fills the memory with it.
     gtest_discover_tests(${_target} DISCOVERY_MODE PRE_TEST PROPERTIES TIMEOUT 20)

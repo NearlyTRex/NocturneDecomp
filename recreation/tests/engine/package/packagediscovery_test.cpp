@@ -47,9 +47,11 @@ protected:
     std::vector<SRelease> releases_{
         {.id = "1999-en",
          .name = "English",
+         .game = "nocturne",
          .required = {"STARTUP.POD"},
          .pods = {{.name = "STARTUP.POD", .size = 7, .xxh3 = std::string(kHashOfPodOne)},
-                  {.name = "A.POD", .size = 7, .xxh3 = std::string(kHashOfPodTwo)}}}};
+                  {.name = "A.POD", .size = 7, .xxh3 = std::string(kHashOfPodTwo)}},
+         .content = {}}};
 };
 
 // The release's PODs in the install folder.
@@ -100,6 +102,50 @@ TEST_F(CMovedInstallTest, TheBaseGamesManifestCanBeInAnyFolder) {
     const SPackageDiscovery found = discover();
     EXPECT_EQ(folders(found), std::vector<std::string>{"pods"});
     EXPECT_TRUE(found.notes.empty()) << found.notes.front();
+}
+
+TEST_F(CPackageDiscoveryTest, TheBaseManifestCarriesItsReleasesGameContent) {
+    releases_.front().content.front_end = "nocturne";
+    const SPackageDiscovery found = discover();
+    EXPECT_EQ(found.packages.front().manifest.game.front_end, "nocturne");
+    EXPECT_THAT(files_.bytes("nocturne.toml"), HasSubstr("front_end = 'nocturne'"));
+}
+
+// A build whose game content changed brings the manifests it wrote up to it.
+TEST_F(CPackageDiscoveryTest, AWrittenManifestWithOtherGameContentIsWrittenAgain) {
+    releases_.front().content.front_end = "nocturne";
+    files_.givenFile("nocturne.toml",
+                     std::format("{}\nid = \"nocturne\"\nrelease = \"1999-en\"\n"
+                                 "front_end = \"old\"\n[[pod]]\npath = \"STARTUP.POD\"\n",
+                                 kWrittenByGame));
+    const SPackageDiscovery found = discover();
+    EXPECT_EQ(found.packages.front().manifest.game.front_end, "nocturne");
+    EXPECT_THAT(found.notes,
+                ::testing::Contains("nocturne.toml is written again with English's game content"));
+    EXPECT_THAT(files_.bytes("nocturne.toml"), HasSubstr("front_end = 'nocturne'"));
+}
+
+TEST_F(CPackageDiscoveryTest, AWrittenManifestWithItsReleasesContentIsLeftAsItIs) {
+    files_.givenFile("nocturne.toml",
+                     std::format("{}\nid = \"nocturne\"\nrelease = \"1999-en\"\n"
+                                 "[[pod]]\npath = \"STARTUP.POD\"\n[[pod]]\npath = \"A.POD\"\n",
+                                 kWrittenByGame));
+    EXPECT_CALL(files_.file_system_, writeFile).Times(0);
+    EXPECT_TRUE(discover().notes.empty());
+}
+
+// The player's own manifest, or one of a release this build doesn't know, keeps its content.
+TEST_F(CPackageDiscoveryTest, OnlyAWrittenManifestOfAKnownReleaseTakesItsContent) {
+    releases_.front().content.front_end = "nocturne";
+    files_.givenFile("nocturne.toml", "id = \"nocturne\"\nrelease = \"1999-en\"\n"
+                                      "front_end = \"mine\"\n[[pod]]\npath = \"STARTUP.POD\"\n");
+    files_.givenFile("mods/old/nocturne.toml",
+                     std::format("{}\nid = \"old\"\nrelease = \"1998-xx\"\n", kWrittenByGame));
+    EXPECT_CALL(files_.file_system_, writeFile).Times(0);
+    const SPackageDiscovery found = discover();
+    ASSERT_EQ(found.packages.size(), 2U);
+    EXPECT_EQ(found.packages[0].manifest.game.front_end, "mine");
+    EXPECT_EQ(found.packages[1].manifest.game.front_end, std::nullopt);
 }
 
 TEST_F(CPackageDiscoveryTest, AManifestTheGameWroteIsMarkedAsItsOwn) {
@@ -365,7 +411,8 @@ TEST_F(CPackageDiscoveryTest, AManifestIsWrittenLedByTheGamesLine) {
                                         .release = {},
                                         .dependencies = {},
                                         .required = {},
-                                        .pods = {}},
+                                        .pods = {},
+                                        .game = {}},
                            .folder = "mods/extra",
                            .written_by_game = true};
     EXPECT_CALL(files_.file_system_,

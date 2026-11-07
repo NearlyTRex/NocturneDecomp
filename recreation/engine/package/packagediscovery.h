@@ -35,7 +35,8 @@ struct SPackageDiscovery {
 
 // Every folder's nocturne.toml, each a package rooted at its folder. Without one whose id is the
 // base game's, one is written from the known release the install matches, in the folder holding
-// its PODs; one the game wrote that has lost a POD it needs is written again. A subfolder's PODs
+// its PODs; one the game wrote that has lost a POD it needs is written again, as is one whose
+// game content isn't its release's as this build has it. A subfolder's PODs
 // that no manifest names, links followed, are given a manifest; those of the install folder or
 // of a folder with a manifest are noted.
 [[nodiscard]] SPackageDiscovery discoverPackages(platform::IFileSystem &file_system,

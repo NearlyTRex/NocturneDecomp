@@ -238,6 +238,27 @@ TEST_F(CMenuPageTest, ATitledPageStartsUnderTheLogo) {
     EXPECT_EQ(row, letterRow(225));
 }
 
+// Another game's menus sit where its packages put them, as Blair Witch's do in the top right.
+TEST_F(CMenuPageTest, APackagesLayoutPlacesBothKindsOfPage) {
+    std::optional<engine::SMenuLayout> &menu = game_parts_.getContent().menu;
+    ASSERT_TRUE(menu.has_value());
+    engine::SMenuLayout &layout = *menu;
+    layout.top = 40;
+    layout.titled_top = 20;
+    std::vector<int> rows;
+    page_.outcome = EMenuOutcome::Stay;
+    on_frame_ = [&](int frame) {
+        rows.push_back(firstTextRow());
+        if (frame == 1) {
+            page_.page_title = "XXX";
+        } else {
+            press(EInputCodeType::DIK_ESCAPE);
+        }
+    };
+    menu_.runPage(page_);
+    EXPECT_EQ(rows, (std::vector<int>{letterRow(40 + (2 * lineHeight())), letterRow(20)}));
+}
+
 // An untitled line takes two rows, and the list one more; a titled line takes one, and the title
 // four. Untitled, the second line is what shows first; titled, the title.
 TEST_F(CMenuPageTest, InAShortWindowThePageIsRaisedToFit) {

@@ -8,6 +8,7 @@
 #include "engine/dosio/dosio.h"
 #include "engine/font/bitfont.h"
 #include "engine/menuinput.h"
+#include "engine/package/gamecontent.h"
 #include "engine/screendevice.h"
 #include "engine/special/special.h"
 #include "sound/sndmain/sfxoptions.h"
@@ -43,7 +44,6 @@ constexpr int kLineHeightChar = 'X';
 constexpr float kScrollSpeed = 32.0F;
 constexpr float kStartTop = static_cast<float>(kImageHeight);
 constexpr std::string_view kEndLine = "end";
-constexpr std::string_view kMusic = "faded-remix.mp3";
 // A line starting with a backslash drops it and the character after; "\b" is a heading.
 constexpr char kMarker = '\\';
 constexpr char kHeadingMarker = 'b';
@@ -76,11 +76,16 @@ void drawCredits(engine::CBitFont &font, std::span<const std::string_view> lines
 // and its strips run on over the black to the screen's right edge.
 // nocedit 0x004e4010
 void CGame::rollCredits() {
+    const std::optional<engine::SGameCredits> &credits = owners_.content.credits;
+    // A game whose packages give no credits rolls none.
+    if (!credits) {
+        return;
+    }
     const int right = std::max(kImageWidth, owners_.screen.getWindowWidth()) - 1;
     owners_.two_d.clearInputAndWait();
     engine::CAlphaBitmap image(owners_.dosio, owners_.screen, owners_.special);
-    image.load("stats", kImageWidth, kImageHeight);
-    const std::optional<std::string> text = owners_.dosio.readFile("data", "credits.txt");
+    image.load(credits->image, kImageWidth, kImageHeight);
+    const std::optional<std::string> text = owners_.dosio.readFile("data", credits->text);
     if (!text) {
         return;
     }
@@ -90,11 +95,11 @@ void CGame::rollCredits() {
     sound_main.resetSoundDevice();
     static_cast<void>(sound_main.enableSoundSystem());
     std::uint32_t music = 0;
-    if (sound_main.isSfxChannelEnabled(CSound::kMusicChannel)) {
+    if (!credits->music.empty() && sound_main.isSfxChannelEnabled(CSound::kMusicChannel)) {
         sound_main.pushSfxOptions();
         sound_main.setNextSfxChannel(CSound::kMusicChannel);
         sound_main.setNextSfxFlags(sound::kSfxNonPositional);
-        music = sound_main.startSfx(kMusic);
+        music = sound_main.startSfx(credits->music);
         sound_main.popSfxOptions();
     }
     owners_.two_d.clearInputAndWait();

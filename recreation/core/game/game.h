@@ -35,6 +35,8 @@ struct SGameOwners {
     engine::CKeys &keys;
     engine::IRawInput &raw_input;
     engine::CGamepadInput &gamepad;
+    // The packages' content: the credits, and the stories to choose from.
+    const engine::SGameContent &content;
 };
 
 // What a session plays with besides the game's own: the console it reports to, the scene camera,

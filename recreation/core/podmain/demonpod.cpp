@@ -5,6 +5,7 @@
 #include "common/text/path.h"
 #include "engine/dosio/dosio.h"
 #include "engine/dosio/foundfileinfo.h"
+#include "engine/package/gamecontent.h"
 #include "engine/package/loadorder.h"
 #include "engine/package/packagediscovery.h"
 #include "engine/package/podcheck.h"
@@ -72,10 +73,19 @@ void CDemonPod::load() {
         report(note);
     }
     left_out_.clear();
+    std::vector<const engine::SGameContent *> content;
     for (engine::SPackage &package : order.packages | std::views::reverse) {
-        loadPackage(package);
+        if (loadPackage(package)) {
+            content.push_back(&package.manifest.game);
+        }
     }
     mounted_count_ = getPodFiles().size();
+    std::ranges::reverse(content);
+    engine::SMergedGameContent merged = engine::mergeGameContent(content);
+    for (const std::string &note : merged.notes) {
+        report(note);
+    }
+    game_content_ = std::move(merged.content);
     if (packages_.empty()) {
         // They were tried latest first.
         std::ranges::reverse(left_out_);
@@ -86,8 +96,12 @@ void CDemonPod::load() {
     }
 }
 
+const engine::SGameContent &CDemonPod::getGameContent() const {
+    return game_content_;
+}
+
 // A manifest the game wrote takes a POD's new time once its hash shows it unchanged.
-void CDemonPod::loadPackage(engine::SPackage &package) {
+bool CDemonPod::loadPackage(engine::SPackage &package) {
     const std::vector<engine::SPodCheck> checks =
         engine::checkPackagePods(getFileSystem(), package.folder, package.manifest);
     if (package.written_by_game &&
@@ -105,11 +119,12 @@ void CDemonPod::loadPackage(engine::SPackage &package) {
         }
     }
     if (!hasRequiredPods(package, checks)) {
-        return;
+        return false;
     }
     SLoadedPackage loaded{.folder = package.folder, .pods = {}, .mounted = {}};
     mountPods(package, checks, loaded);
     packages_.push_back(std::move(loaded));
+    return true;
 }
 
 // Without one, the package isn't loaded.

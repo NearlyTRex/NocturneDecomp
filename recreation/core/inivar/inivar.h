@@ -4,6 +4,7 @@
 #include "engine/fwd.h"
 #include "platform/fwd.h"
 #include "sound/fwd.h"
+#include "support/fwd.h"
 
 #include <string_view>
 
@@ -20,6 +21,7 @@ struct SIniDataOwners {
     platform::IDisplay &display;
     CDFont &fonts;
     engine::CGamepadInput &gamepad;
+    support::CNewMsg &messages;
 };
 
 // A nocturne.ini that can't be made writable is fatal: the game was run from the CD.

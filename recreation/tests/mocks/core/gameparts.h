@@ -12,6 +12,7 @@
 #include "engine/light/light.h"
 #include "engine/matrix/matrix.h"
 #include "engine/menuinput.h"
+#include "engine/package/gamecontent.h"
 #include "engine/rawinput.h"
 #include "engine/special/special.h"
 #include "engine/texture/currenttexture.h"
@@ -22,6 +23,7 @@
 #include "tests/mocks/engine/mockgameclock.h"
 #include "tests/mocks/engine/mockrawinput.h"
 #include "tests/mocks/engine/mockscreendevice.h"
+#include "tests/mocks/engine/shippedgamecontent.h"
 #include "tests/mocks/platform/mockaudiodevice.h"
 #include "tests/mocks/platform/mockclipboard.h"
 #include "tests/mocks/platform/mockclock.h"
@@ -53,6 +55,11 @@ public:
 
     CGame &getGame() {
         return game_;
+    }
+
+    // The packages' content the game reads, the shipped game's until a test changes it.
+    engine::SGameContent &getContent() {
+        return content_;
     }
 
     // The keys and buttons the game reads as held, by input code, and its mouse.
@@ -145,6 +152,8 @@ private:
     engine::CConsole console_{file_system_, 80, 50, 0, 0};
     sound::CSndMain sound_main_{dosio_, file_system_, audio_device_, console_,
                                 [] { return std::tm{}; }};
+    // The shipped game's, for a test to change before the game reads it.
+    engine::SGameContent content_ = engine::getShippedGameContent();
     CGame game_{{.clock = clock_,
                  .dosio = dosio_,
                  .screen = screen_,
@@ -156,7 +165,8 @@ private:
                  .sound_main = sound_main_,
                  .keys = keys_,
                  .raw_input = raw_input_,
-                 .gamepad = gamepad_.input}};
+                 .gamepad = gamepad_.input,
+                 .content = content_}};
 };
 
 } // namespace nocturne::core

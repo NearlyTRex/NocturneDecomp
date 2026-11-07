@@ -2,12 +2,14 @@
 # and XXH3-128 as canonical hex. Without a base manifest the game finds the release its install
 # matches best and writes one from it, recording the release's id. Each release is a [[release]]
 # with an id of its own, year and language first (1999-de, 2000-en-budget), never changed once
-# published. required names the PODs the game can't start without.
+# published. game names the data/games/ file whose content the manifest is written with, and
+# required the PODs the game can't start without.
 # scripts/Python/catalog_release.py prints a new release's entry from its install folder.
 
 [[release]]
 id = "1999-en"
 name = "Nocturne (1999, English)"
+game = "nocturne"
 required = ["STARTUP.POD"]
 
 [[release.pod]]

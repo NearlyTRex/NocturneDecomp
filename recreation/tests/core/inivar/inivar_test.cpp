@@ -111,7 +111,8 @@ protected:
                            .special = special_,
                            .display = display_,
                            .fonts = fonts_,
-                           .gamepad = game_parts_.getGamepad().input};
+                           .gamepad = game_parts_.getGamepad().input,
+                           .messages = messages_};
 };
 
 TEST_F(CInivarTest, ReadsTheGraphicsSettings) {
@@ -376,17 +377,21 @@ TEST_F(CInivarTest, WhatIsWrittenReadsBackTheSame) {
     game_.y_stick_max = 40000;
     game_parts_.getGamepad().input.tuning = {
         .deadzone = 30, .turn_rate = 60, .look_rate = 15, .invert_look = true};
+    messages_.setLanguage("de");
     writeIniData(ini_, owners_);
     CGameParts copy_parts(game_clock_);
     CGame &copy = copy_parts.getGame();
+    support::CNewMsg copy_messages(dosio_);
     const SIniDataOwners reread{.game = copy,
                                 .sound_main = sound_,
                                 .console = console_,
                                 .special = special_,
                                 .display = display_,
                                 .fonts = fonts_,
-                                .gamepad = copy_parts.getGamepad().input};
+                                .gamepad = copy_parts.getGamepad().input,
+                                .messages = copy_messages};
     readIniData(ini_, file_system_, reread);
+    EXPECT_EQ(copy_messages.getLanguage(), "de");
     EXPECT_EQ(copy.game_control, EControlMode::CONTROL_MODE_GAMEPAD);
     EXPECT_EQ(copy.controls.formatBindings(EGameAction::Fire),
               game_.controls.formatBindings(EGameAction::Fire));

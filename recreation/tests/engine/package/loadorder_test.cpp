@@ -31,7 +31,8 @@ protected:
                              .release = {},
                              .dependencies = needs,
                              .required = {},
-                             .pods = {}},
+                             .pods = {},
+                             .game = {}},
                 .folder = std::string(id),
                 .written_by_game = false};
     }

@@ -47,6 +47,7 @@
 #include "tests/mocks/engine/mockgameclock.h"
 #include "tests/mocks/engine/mockrawinput.h"
 #include "tests/mocks/engine/podimage.h"
+#include "tests/mocks/engine/shippedgamecontent.h"
 #include "tests/mocks/platform/mockclipboard.h"
 #include "tests/mocks/platform/mockclock.h"
 #include "tests/mocks/platform/mockdisplay.h"
@@ -181,6 +182,8 @@ protected:
     CDFont fonts_{dosio_, screen_, two_d_, three_d_, colors_, os_fonts_, messages_, editor_tools_};
     engine::SGamepadInputParts gamepad_;
     engine::CMenuInput menu_input_{keys_, gamepad_.input};
+    // What the packages give, the shipped game's until a test changes it.
+    engine::SGameContent content_ = engine::getShippedGameContent();
     CGame game_{{.clock = game_clock_,
                  .dosio = dosio_,
                  .screen = screen_,
@@ -192,7 +195,8 @@ protected:
                  .sound_main = sound_,
                  .keys = keys_,
                  .raw_input = raw_input_,
-                 .gamepad = gamepad_.input}};
+                 .gamepad = gamepad_.input,
+                 .content = content_}};
     engine::CIni ini_{file_system_};
     SIniDataOwners ini_owners_{.game = game_,
                                .sound_main = sound_,
@@ -200,7 +204,8 @@ protected:
                                .special = special_,
                                .display = display_,
                                .fonts = fonts_,
-                               .gamepad = gamepad_.input};
+                               .gamepad = gamepad_.input,
+                               .messages = messages_};
     engine::CPod pod_{file_system_, dosio_};
     engine::CTexture texture_{{.dosio = dosio_,
                                .two_d = two_d_,
@@ -254,6 +259,7 @@ protected:
                  .gamepad = gamepad_.input,
                  .fonts = fonts_,
                  .messages = messages_,
+                 .content = content_,
                  .renderer = demon_renderer_,
                  .set = set_,
                  .game = game_,
@@ -280,7 +286,8 @@ protected:
                                 .set = set_,
                                 .fonts = fonts_,
                                 .crt_random = crt_random_,
-                                .console = console_}};
+                                .console = console_,
+                                .content = content_}};
     CDemonMission mission_{{.dosio = dosio_,
                             .messages = messages_,
                             .game = game_,
@@ -307,6 +314,7 @@ protected:
                               .ini_owners = ini_owners_,
                               .dosio = dosio_,
                               .pod = pod_,
+                              .content = content_,
                               .messages = messages_,
                               .texture = texture_,
                               .two_d = two_d_,
@@ -466,6 +474,48 @@ TEST_F(CInitializeGameSystemsTest, AScreenThatRefusesTheModeIsFatal) {
     EXPECT_THROW(start(), common::CFatalError);
     EXPECT_TRUE(movies_.empty());
 }
+
+// The packages' translations for nocturne.ini's language go over msglist.txt's.
+TEST_F(CInitializeGameSystemsTest, TheLanguagesTranslationsAreAdded) {
+    ini_text_ = "[Graphics]\r\nlanguage=de\r\n[Sound]\r\n[Control]\r\n[Debug]\r\n";
+    content_.translations["de"] = {{"Loading...", "Laden..."}};
+    content_.translations["fr"] = {{"Yes", "Oui"}};
+    start();
+    EXPECT_EQ(messages_.getLocalizedString("Loading..."), "Laden...");
+    EXPECT_EQ(messages_.getLocalizedString("Yes"), "Yes");
+}
+
+TEST_F(CInitializeGameSystemsTest, ALanguageNoPackageTranslatesKeepsTheMessageFile) {
+    content_.translations["de"] = {{"Loading...", "Laden..."}};
+    start();
+    EXPECT_EQ(messages_.getLocalizedString("Loading..."), "Chargement...");
+}
+
+struct SFrontEndCase {
+    void (*change)(engine::SGameContent &content);
+    std::string_view error;
+};
+
+class CFrontEndCheckTest : public CInitializeGameSystemsTest,
+                           public ::testing::WithParamInterface<SFrontEndCase> {};
+
+TEST_P(CFrontEndCheckTest, WhatTheBuildCantRunIsFatalBeforeTheScreenIsSet) {
+    GetParam().change(content_);
+    EXPECT_THAT([this] { start(); },
+                ::testing::ThrowsMessage<common::CFatalError>(::testing::StrEq(GetParam().error)));
+    EXPECT_EQ(screen_.requested_width, 0);
+}
+
+INSTANTIATE_TEST_SUITE_P(
+    Content, CFrontEndCheckTest,
+    ::testing::Values(SFrontEndCase{[](engine::SGameContent &c) { c.front_end.reset(); },
+                                    "No package names the game's front end"},
+                      SFrontEndCase{[](engine::SGameContent &c) { c.front_end = "bw1"; },
+                                    "The front end bw1 isn't in this build"},
+                      SFrontEndCase{[](engine::SGameContent &c) { c.loading_indicator.reset(); },
+                                    "No package names the loading indicator"},
+                      SFrontEndCase{[](engine::SGameContent &c) { c.loading_indicator = "bar"; },
+                                    "The loading indicator bar isn't in this build"}));
 
 } // namespace
 } // namespace nocturne::core

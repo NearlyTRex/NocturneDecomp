@@ -47,14 +47,26 @@ protected:
     std::vector<SRelease> releases_{
         {.id = "1999-en",
          .name = "English",
+         .game = "nocturne",
          .required = {"A.POD"},
          .pods = {{.name = "A.POD", .size = 7, .xxh3 = std::string(kHashOfPodOne)},
-                  {.name = "B.pod", .size = 7, .xxh3 = std::string(kHashOfPodTwo)}}},
+                  {.name = "B.pod", .size = 7, .xxh3 = std::string(kHashOfPodTwo)}},
+         .content = {.front_end = "nocturne",
+                     .loading_indicator = {},
+                     .copyright = {},
+                     .copyright_os_font = {},
+                     .credits = {},
+                     .menu = {},
+                     .loading = {},
+                     .stories = {},
+                     .translations = {}}},
         {.id = "1999-de",
          .name = "German",
+         .game = "nocturne",
          .required = {},
          .pods = {{.name = "A.POD", .size = 7, .xxh3 = std::string(kHashOfPodOne)},
-                  {.name = "C.POD", .size = 7, .xxh3 = std::string(kHashOfPodTwo)}}}};
+                  {.name = "C.POD", .size = 7, .xxh3 = std::string(kHashOfPodTwo)}},
+         .content = {}}};
 };
 
 // The retail build mounts by name ignoring case, the first answering; the manifest's last

@@ -37,6 +37,8 @@ using ::testing::ThrowsMessage;
 
 TEST(CDemonPod, DerivesFromCPod) {
     static_assert(std::is_base_of_v<engine::CPod, CDemonPod>);
+    static_assert(std::is_same_v<decltype(&CDemonPod::getGameContent),
+                                 const engine::SGameContent &(CDemonPod::*)() const>);
 }
 
 // A release of STARTUP.POD and ACT1.POD, both holding data\shared.txt; the later, ACT1.POD,
@@ -56,8 +58,10 @@ protected:
                               {.name = "data\\shared.txt", .data = "act1"}});
         releases_ = {{.id = "1999-en",
                       .name = "English",
+                      .game = "nocturne",
                       .required = {"STARTUP.POD"},
-                      .pods = {shipped("STARTUP.POD"), shipped("ACT1.POD")}}};
+                      .pods = {shipped("STARTUP.POD"), shipped("ACT1.POD")},
+                      .content = {}}};
     }
 
     // Another start of the game, over the same install.
@@ -251,6 +255,31 @@ TEST_F(CDemonPodTest, ALoadOrderTurningNothingOnIsFatal) {
     files_.givenFile("loadorder.txt", "# nocturne\n");
     EXPECT_THAT([this] { load(); }, ThrowsMessage<common::CFatalError>(
                                         StrEq("loadorder.txt turns on no package to load")));
+}
+
+// The base game's content is its release's; a later mod's values win, and a mod left out
+// gives nothing.
+TEST_F(CDemonPodTest, TheLoadedPackagesContentIsMergedInLoadOrder) {
+    releases_.front().content.front_end = "nocturne";
+    releases_.front().content.copyright = "Base";
+    givenMod("mods/extra", "id = \"extra\"\ncopyright = \"Extra\"\n"
+                           "[[pod]]\npath = \"EXTRA.POD\"\n");
+    givenPod("mods/extra/EXTRA.POD", {{.name = "data\\x.txt", .data = "x"}});
+    givenMod("mods/broken", "id = \"broken\"\nfront_end = \"bw1\"\nrequired = [\"GONE.POD\"]\n");
+    load();
+    const engine::SGameContent &content = pod().getGameContent();
+    EXPECT_EQ(content.front_end, "nocturne");
+    EXPECT_EQ(content.copyright, "Extra");
+}
+
+TEST_F(CDemonPodTest, WhatTheMergedContentLacksIsNoted) {
+    givenMod("mods/extra", "id = \"extra\"\n[[story]]\nid = \"s\"\nname = \"S\"\ntitle = \"T\"\n"
+                           "loading = \"gone\"\n[[story.chapter]]\nname = \"C\"\n"
+                           "mission = \"c.msn\"\n");
+    load();
+    EXPECT_THAT(notes_, Contains(EndsWith("the story s names a loading picture gone no package "
+                                          "has")));
+    EXPECT_EQ(pod().getGameContent().stories.size(), 1U);
 }
 
 // Its files aren't found, and the base game's still are.

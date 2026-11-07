@@ -85,7 +85,8 @@ SBaseManifest makeBaseManifest(platform::IFileSystem &file_system,
                                     .release = release.id,
                                     .dependencies = {},
                                     .required = {},
-                                    .pods = {}},
+                                    .pods = {},
+                                    .game = release.content},
                        .notes = {}};
     for (const SReleasePod &pod : shipped) {
         base.manifest.pods.push_back(describePod(file_system, release, pod, installed, base.notes));

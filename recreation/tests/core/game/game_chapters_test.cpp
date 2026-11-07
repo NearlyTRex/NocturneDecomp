@@ -285,9 +285,57 @@ TEST_F(CChapterSelectTest, TheEpilogueIsListedOnlyOnceEveryActIsUnlocked) {
     chooseToStart(EChapterSelectMode::kStories, {kEnd, kReturn});
     EXPECT_EQ(mission_.getMissionName(), "hq-act4");
     givenUnlocked({"Act1Code=817", "Act2Code=972", "Act3Code=940", "Act4Code=214"});
-    EXPECT_CALL(loading_screen_, show(10, false, 4));
+    EXPECT_CALL(loading_screen_, show(10, false, CLevelLoader::kNoImage));
     chooseToStart(EChapterSelectMode::kStories, {kEnd, kReturn});
     EXPECT_EQ(mission_.getMissionName(), "hq-act5");
+}
+
+// A package's story goes after the shipped ones, with the loading picture it names.
+TEST_F(CChapterSelectTest, APackagesStoryIsListedAfterTheOthers) {
+    givenMission("extra1");
+    game_parts_.getContent().stories.push_back(
+        {.id = "extra",
+         .name = "Extra",
+         .title = "'Extra'",
+         .year = 1950,
+         .loading = "load2",
+         .unlock = {},
+         .required_stories = {},
+         .chapters = {{.name = "One", .mission = "extra1.msn", .needs_full_install = false}}});
+    EXPECT_CALL(loading_screen_, show(10, false, 1));
+    chooseToStart(EChapterSelectMode::kStories, {kEnd, kReturn});
+    EXPECT_EQ(mission_.getMissionName(), "extra1");
+}
+
+TEST_F(CChapterSelectTest, AStoryNamingAPictureNoPackageHasLoadsWithoutOne) {
+    game_parts_.getContent().stories.front().loading = "gone";
+    EXPECT_CALL(loading_screen_, show(10, false, CLevelLoader::kNoImage));
+    chooseToStart(EChapterSelectMode::kStories, {kReturn});
+    EXPECT_EQ(mission_.getMissionName(), "hq-act1");
+}
+
+TEST_F(CChapterSelectTest, AStoryNeedingOneNoPackageHasIsntListed) {
+    game_parts_.getContent().stories.push_back(
+        {.id = "extra",
+         .name = "Extra",
+         .title = "'Extra'",
+         .year = 0,
+         .loading = "none",
+         .unlock = {},
+         .required_stories = {"missing"},
+         .chapters = {{.name = "One", .mission = "train.msn", .needs_full_install = false}}});
+    chooseToStart(EChapterSelectMode::kStories, {kEnd, kReturn});
+    EXPECT_EQ(mission_.getMissionName(), "hq-act4");
+}
+
+// The original took a line of the list for the chapter, which picked the chapter it left out.
+TEST_F(CChapterSelectTest, APartInstallPicksTheChapterOnTheLineAfterOneLeftOut) {
+    ON_CALL(file_system_, getFileInfo(std::string_view("/game/enemy.pod")))
+        .WillByDefault(Return(std::nullopt));
+    std::vector<engine::SGameStory> &stories = game_parts_.getContent().stories;
+    stories.front().chapters.front().needs_full_install = true;
+    chooseToStart(EChapterSelectMode::kStories, {kReturn, kReturn});
+    EXPECT_EQ(mission_.getMissionName(), "gtown");
 }
 
 // Volume 2's code opens its chapters, under its title.

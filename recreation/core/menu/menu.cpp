@@ -1,5 +1,6 @@
 #include "core/menu/menu.h"
 
+#include "common/error/error.h"
 #include "common/random/watcomrandom.h"
 #include "core/dfont/dfont.h"
 #include "core/frontend.h"
@@ -8,6 +9,7 @@
 #include "engine/alphabit/alphabitmap.h"
 #include "engine/font/bitfont.h"
 #include "engine/menuinput.h"
+#include "engine/package/gamecontent.h"
 #include "engine/rawinput.h"
 #include "engine/screendevice.h"
 #include "engine/special/special.h"
@@ -31,7 +33,6 @@ constexpr int kFullAlpha = 0xffff;
 constexpr int kTextColor = 0xf8;
 // The character whose height spaces the text.
 constexpr int kLineHeightChar = 'X';
-constexpr int kItemLeft = 160;
 constexpr int kTitleColor = 7;
 constexpr int kTitleShadow = 0;
 constexpr int kGlowColor = 7;
@@ -42,13 +43,7 @@ constexpr int kFooterShadow = 0;
 constexpr int kTrademarkAlpha = 0x8000;
 // The trademark sign, in Windows-1252, beside the title art.
 constexpr std::string_view kTrademark = "\x99";
-constexpr int kTrademarkX = 518;
-constexpr int kTrademarkY = 99;
 constexpr int kVersionX = 4;
-// Only OS text carries the (c).
-constexpr std::string_view kCopyright = "Nocturne 1999 Terminal Reality Inc.  Patent Pending.";
-constexpr std::string_view kOsFontCopyright =
-    "Nocturne (c) 1999 Terminal Reality Inc.  Patent Pending.";
 
 constexpr std::array<std::string_view, 5> kCalibrationSteps{
     "1. Turn off all the lights in your room.",
@@ -132,7 +127,7 @@ void CMenu::showCalibrationTest() {
 int CMenu::renderMenuAndGetChoice(std::span<const std::string> items, int &selected_index,
                                   int y_position, std::optional<std::string_view> title) {
     engine::CBitFont &font = *owners_.fonts.getThemeFont();
-    const int item_left = getLayoutLeft() + kItemLeft;
+    const int item_left = getLayoutLeft() + getMenuLayout().left;
     if (title) {
         font.drawText(*title, item_left, y_position, kTitleColor, kTitleShadow);
         y_position += font.getCharHeight(kLineHeightChar) * 2;
@@ -170,19 +165,38 @@ void CMenu::drawGlowingItem(engine::CBitFont &font, std::string_view item, int l
     }
 }
 
-// The build's line is the enhanced game's, in the bottom left at the trademark's alpha. The
-// copyright keeps to the screen's corner and the trademark to the title art's.
+const engine::SMenuLayout &CMenu::getMenuLayout() const {
+    if (!owners_.content.menu) {
+        common::displayErrorAndQuit("No package gives the menus' layout");
+    }
+    return *owners_.content.menu;
+}
+
+// The OS fonts' copyright when the packages give one, else the bitmap fonts'.
+std::string_view CMenu::getCopyright() const {
+    const engine::SGameContent &content = owners_.content;
+    if (owners_.fonts.getUseOSFonts() && content.copyright_os_font) {
+        return *content.copyright_os_font;
+    }
+    return content.copyright ? std::string_view(*content.copyright) : std::string_view();
+}
+
+// The build's line is the enhanced game's, in the bottom left at the trademark's alpha, on the
+// copyright's row, or its own without one. The copyright keeps to the screen's corner and the
+// trademark to the title art's.
 void CMenu::drawFooter() {
     engine::CBitFont &font = *owners_.fonts.getSmallEditorFont();
-    const std::string_view copyright =
-        owners_.fonts.getUseOSFonts() ? kOsFontCopyright : kCopyright;
-    const int bottom = kImageHeight - 1 - font.getTextHeight(copyright);
+    const std::string_view copyright = getCopyright();
+    const int bottom = kImageHeight - 1 -
+                       font.getTextHeight(copyright.empty() ? owners_.build_version : copyright);
     const int right = std::max(kImageWidth, owners_.screen.getWindowWidth()) - 1;
     font.drawText(copyright, right - font.getTextWidth(copyright), bottom, kTextColor,
                   kFooterShadow);
     owners_.three_d.setRenderAlpha(kTrademarkAlpha);
-    font.drawText(kTrademark, getLayoutLeft() + kTrademarkX, kTrademarkY, kTextColor,
-                  kFooterShadow);
+    if (const std::optional<engine::SLayoutPoint> &trademark = getMenuLayout().trademark) {
+        font.drawText(kTrademark, getLayoutLeft() + trademark->x, trademark->y, kTextColor,
+                      kFooterShadow);
+    }
     font.drawText(owners_.build_version, kVersionX, bottom, kTextColor, kFooterShadow);
     owners_.three_d.setRenderAlpha(kFullAlpha);
 }

@@ -6,10 +6,12 @@ nothing added to the folder, and send the output to be added to the catalogue:
 each POD's name, size and XXH3-128, which is how the recreation recognises the
 install.
 
-    python3 scripts/Python/catalog_release.py --id 1999-de --name "Nocturne (1999, German)" /path/to/Nocturne
+    python3 scripts/Python/catalog_release.py --id 1999-de --name "Nocturne (1999, German)" --game nocturne /path/to/Nocturne
 
 The id is the release's year and language, with anything more after them
-(2000-en-budget). It needs the xxhash module: pip install xxhash
+(2000-en-budget). The game names the recreation/data/games/ file whose content
+the release's manifest is written with. It needs the xxhash module: pip install
+xxhash
 """
 
 import argparse
@@ -48,9 +50,10 @@ def quote(text):
     return '"' + text.replace("\\", "\\\\").replace('"', '\\"') + '"'
 
 
-def format_release(release_id, name, required, pods):
+def format_release(release_id, name, game, required, pods):
     """pods is (name, size, hash) for each."""
     lines = ["[[release]]", f"id = {quote(release_id)}", f"name = {quote(name)}",
+             f"game = {quote(game)}",
              "required = [" + ", ".join(quote(pod) for pod in required) + "]"]
     for pod_name, size, digest in pods:
         lines += ["", "[[release.pod]]", f"name = {quote(pod_name)}", f"size = {size}",
@@ -58,14 +61,14 @@ def format_release(release_id, name, required, pods):
     return "\n".join(lines) + "\n"
 
 
-def catalog(folder, release_id, name):
+def catalog(folder, release_id, name, game):
     pods = find_pods(folder)
     if not pods:
         raise ValueError(f"{folder}: no .pod files here")
     required = [pod for pod in pods if pod.upper() == STARTUP_POD]
     described = [(pod, os.path.getsize(os.path.join(folder, pod)),
                   hash_file(os.path.join(folder, pod))) for pod in pods]
-    return format_release(release_id, name, required, described)
+    return format_release(release_id, name, game, required, described)
 
 
 def main(argv=None):
@@ -74,13 +77,15 @@ def main(argv=None):
     parser.add_argument("folder", nargs="?", default=".", help="the install folder")
     parser.add_argument("--id", required=True, help="the release's id, as 1999-de")
     parser.add_argument("--name", required=True, help='as "Nocturne (1999, German)"')
+    parser.add_argument("--game", required=True,
+                        help="the game it is a release of, by its data/games/ file, as nocturne")
     args = parser.parse_args(argv)
     if xxhash is None:
         sys.exit("catalog_release.py: needs the xxhash module: pip install xxhash")
-    if not ID_PATTERN.fullmatch(args.id):
-        sys.exit("catalog_release.py: an id is only letters, digits, '.', '_' and '-'")
+    if not ID_PATTERN.fullmatch(args.id) or not ID_PATTERN.fullmatch(args.game):
+        sys.exit("catalog_release.py: an id or game is only letters, digits, '.', '_' and '-'")
     try:
-        sys.stdout.write(catalog(args.folder, args.id, args.name))
+        sys.stdout.write(catalog(args.folder, args.id, args.name, args.game))
     except (OSError, ValueError) as error:
         sys.exit(f"catalog_release.py: {error}")
 

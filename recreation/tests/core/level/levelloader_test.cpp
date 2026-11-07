@@ -14,6 +14,7 @@
 #include "tests/mocks/core/moonfixture.h"
 #include "tests/mocks/engine/fontsheet.h"
 #include "tests/mocks/engine/mockrawinput.h"
+#include "tests/mocks/engine/shippedgamecontent.h"
 #include "tests/mocks/platform/mockclipboard.h"
 #include "tests/mocks/platform/mockclock.h"
 #include "tests/mocks/platform/mockosfontfactory.h"
@@ -48,6 +49,7 @@ TEST(CLevelLoader, PublicInterface) {
     static_assert(std::is_same_v<decltype(&CLevelLoader::update),
                                  void (CLevelLoader::*)(std::string_view, bool)>);
     static_assert(std::is_same_v<decltype(&CLevelLoader::cleanup), void (CLevelLoader::*)()>);
+    static_assert(CLevelLoader::kRandomImage != CLevelLoader::kNoImage);
 }
 
 constexpr std::uint32_t kBackground = 0x555555;
@@ -161,6 +163,8 @@ protected:
     support::CNewMsg messages_{dosio_};
     CDFont fonts_{dosio_, screen_, two_d_, three_d_, colors_, os_fonts_, messages_, editor_tools_};
     engine::CConsole console_{file_system_, 80, 50, 0, 0};
+    // The shipped game's pictures, until a test changes them.
+    engine::SGameContent content_ = engine::getShippedGameContent();
     CLevelLoader loader_{{.dosio = dosio_,
                           .screen = screen_,
                           .special = special_,
@@ -170,7 +174,8 @@ protected:
                           .set = set_,
                           .fonts = fonts_,
                           .crt_random = crt_random_,
-                          .console = console_}};
+                          .console = console_,
+                          .content = content_}};
 };
 
 TEST_F(CLevelLoaderTest, CleanupStopsTheScreenAndReportsItsUpdates) {
@@ -277,8 +282,8 @@ TEST_F(CLevelLoaderTest, AWindowPutsTheMoonInTheTopRightCornerWithNoStatus) {
     EXPECT_EQ(pixel(kBoxLeft, kBoxTop), kBackground);
 }
 
-// The CRT's first draw from seed 1 is 16838, which picks the third picture.
-TEST_F(CLevelLoaderTest, ARandomPictureIsOneOfTheFirstThreeWithTheMoonInItsWindow) {
+// The CRT's first draw from seed 1 is 16838, which picks the third of the shipped game's three.
+TEST_F(CLevelLoaderTest, ARandomPictureIsOneMarkedRandomWithTheMoonInItsWindow) {
     loader_.show(4, false, CLevelLoader::kRandomImage);
     EXPECT_EQ(pixel(0, 0), kPicture);
     loader_.update("", false);
@@ -313,6 +318,42 @@ TEST_F(CLevelLoaderTest, EachPictureHasItsOwnWindowAndColour) {
         EXPECT_EQ(moons_[0].clip, expected[static_cast<std::size_t>(variant)].clip);
         EXPECT_EQ(set_.getFlatColor(), expected[static_cast<std::size_t>(variant)].color);
     }
+}
+
+TEST_F(CLevelLoaderTest, OnlyPicturesMarkedRandomArePickedAtRandom) {
+    for (engine::SLoadingPicture &picture : content_.loading) {
+        picture.random = picture.id == "load4";
+    }
+    loader_.show(4, false, CLevelLoader::kRandomImage);
+    loader_.update("", false);
+    ASSERT_EQ(moons_.size(), 1U);
+    EXPECT_EQ(moons_[0].clip, (SClipRect{.left = 379, .top = 68, .right = 469, .bottom = 158}));
+}
+
+TEST_F(CLevelLoaderTest, WithNoPictureMarkedRandomTheMoonHasTheClearedScreen) {
+    for (engine::SLoadingPicture &picture : content_.loading) {
+        picture.random = false;
+    }
+    loader_.show(4, false, CLevelLoader::kRandomImage);
+    EXPECT_NE(pixel(0, 0), kPicture);
+    loader_.update("", false);
+    ASSERT_EQ(moons_.size(), 1U);
+    EXPECT_EQ(moons_[0].clip, kFullScreen);
+}
+
+TEST_F(CLevelLoaderTest, APictureWithoutAMoonWindowLeavesTheMoonWhereItWas) {
+    content_.loading[0].moon.reset();
+    loader_.show(4, false, 0);
+    EXPECT_EQ(pixel(0, 0), kPicture);
+    loader_.update("", false);
+    ASSERT_EQ(moons_.size(), 1U);
+    EXPECT_EQ(moons_[0].clip, kFullScreen);
+    EXPECT_EQ(moons_[0].projection, kFullScreenProjection);
+}
+
+TEST_F(CLevelLoaderTest, NoImageDrawsNoPicture) {
+    loader_.show(4, false, CLevelLoader::kNoImage);
+    EXPECT_NE(pixel(0, 0), kPicture);
 }
 
 // The 640x480 picture and its window centred together, 104 columns in at 16:9.

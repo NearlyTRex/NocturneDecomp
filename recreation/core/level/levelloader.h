@@ -24,6 +24,8 @@ struct SLevelLoaderOwners {
     const CDFont &fonts;
     common::CWatcomRandom &crt_random;
     engine::CConsole &console;
+    // The packages' loading pictures.
+    const engine::SGameContent &content;
 };
 
 // The loading screen: the moon, lit by a light that swings round it as loading goes on, behind
@@ -31,16 +33,18 @@ struct SLevelLoaderOwners {
 // status text under it when it has the screen.
 class CLevelLoader : public ILoadingScreen {
 public:
-    // show's image_variant for one of the first three pictures, picked at random.
+    // show's image_variant for one of the pictures marked random, picked at random.
     static constexpr int kRandomImage = -1;
+    static constexpr int kNoImage = -2;
 
     explicit CLevelLoader(const SLevelLoaderOwners &owners);
 
     void reset();
     // Starts a loading screen that is done after total_frames updates. The moon has the cleared
     // screen to itself, or a window in the top-right corner when use_custom_viewport is set.
-    // image_variant 0 to 3 draws that picture instead and puts the moon in its window;
-    // kRandomImage picks one when the moon would have had the screen.
+    // image_variant, an index into the packages' pictures, draws that picture instead and puts
+    // the moon in its window where it has one; kRandomImage picks one when the moon would have
+    // had the screen.
     void show(int total_frames, bool use_custom_viewport, int image_variant) override;
     // Without a window the step's text is centred in a black box near the bottom.
     void update(std::string_view text, bool clear_screen) override;
@@ -48,14 +52,8 @@ public:
     void cleanup();
 
 private:
-    struct SPicture {
-        std::string_view name;
-        // Where the moon goes in it, and its colour.
-        int x = 0;
-        int y = 0;
-        CColor3i color;
-    };
-
+    // An index into the pictures, or kNoImage when none is marked random.
+    [[nodiscard]] int pickRandomPicture();
     void renderMoon();
     void renderGlow();
     void drawStatus(std::string_view text, int window_width, int window_height);

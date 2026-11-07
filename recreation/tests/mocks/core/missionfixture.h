@@ -32,6 +32,7 @@
 #include "tests/mocks/core/mockdeformablemodels.h"
 #include "tests/mocks/core/mockkeyframedmodels.h"
 #include "tests/mocks/core/setparts.h"
+#include "tests/mocks/engine/shippedgamecontent.h"
 #include "tests/mocks/platform/mockaudiodevice.h"
 #include "tests/mocks/platform/mockdisplay.h"
 #include "tests/mocks/platform/mockenvironment.h"
@@ -97,7 +98,8 @@ protected:
                                 .set = set_,
                                 .fonts = fonts_,
                                 .crt_random = crt_random_,
-                                .console = console_}};
+                                .console = console_,
+                                .content = engine::getShippedGameContent()}};
     shape::SPickListOwners pick_list_owners_{.controls = controls_,
                                              .keys = keys_,
                                              .menu_input = menu_input_,

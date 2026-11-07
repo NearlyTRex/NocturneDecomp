@@ -2,6 +2,7 @@
 
 #include "core/fwd.h"
 #include "engine/fwd.h"
+#include "engine/package/gamecontent.h"
 #include "engine/pod/pod.h"
 #include "platform/fwd.h"
 
@@ -29,6 +30,8 @@ public:
     // The base game's loose files are the disk's, which the lookup after this one finds.
     bool findFile(engine::SFoundFileInfo &found_file_info) override;
     void dismount(std::string_view filename) override;
+    // The loaded packages' game content, merged in load order once load has run.
+    [[nodiscard]] const engine::SGameContent &getGameContent() const;
 
 private:
     // A package as its files are looked up: its folder and the PODs it mounted, the one that
@@ -39,7 +42,8 @@ private:
         std::vector<const engine::CPodFile *> mounted;
     };
 
-    void loadPackage(engine::SPackage &package);
+    // False when the package is left out.
+    bool loadPackage(engine::SPackage &package);
     [[nodiscard]] bool hasRequiredPods(const engine::SPackage &package,
                                        std::span<const engine::SPodCheck> checks);
     void mountPods(const engine::SPackage &package, std::span<const engine::SPodCheck> checks,
@@ -60,6 +64,7 @@ private:
     // Why each package left out for a POD it needs was.
     std::vector<std::string> left_out_;
     std::size_t mounted_count_ = 0;
+    engine::SGameContent game_content_;
 };
 
 } // namespace nocturne::core

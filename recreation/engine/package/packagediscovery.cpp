@@ -160,9 +160,26 @@ private:
             return;
         }
         if (!isIdTaken(*read)) {
+            refreshGameContent(*read);
             claim(*read);
             found_.packages.push_back(std::move(*read));
         }
+    }
+
+    // A manifest the game wrote from a release carries the content this build has for its game.
+    void refreshGameContent(SPackage &package) {
+        if (!package.written_by_game) {
+            return;
+        }
+        const auto release = std::ranges::find(releases_, package.manifest.release, &SRelease::id);
+        if (release == releases_.end() || package.manifest.game == release->content) {
+            return;
+        }
+        package.manifest.game = release->content;
+        found_.notes.push_back(std::format("{} is written again with {}'s game content",
+                                           common::joinPath(package.folder, kManifestName),
+                                           release->name));
+        write(package);
     }
 
     // A base manifest the game wrote that has lost a POD it needs.
@@ -260,7 +277,8 @@ private:
                                       .release = {},
                                       .dependencies = {},
                                       .required = {},
-                                      .pods = {}},
+                                      .pods = {},
+                                      .game = {}},
                          .folder = folder.path,
                          .written_by_game = true};
         for (const std::string &pod : unlisted) {

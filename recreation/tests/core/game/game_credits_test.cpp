@@ -21,6 +21,7 @@
 #include "tests/mocks/engine/mockfont.h"
 #include "tests/mocks/engine/mockgameclock.h"
 #include "tests/mocks/engine/mockrawinput.h"
+#include "tests/mocks/engine/shippedgamecontent.h"
 #include "tests/mocks/platform/mockclipboard.h"
 #include "tests/mocks/platform/mockclock.h"
 #include "tests/mocks/platform/mockosfontfactory.h"
@@ -176,6 +177,7 @@ protected:
     NiceMock<platform::MockOsFontFactory> os_fonts_;
     support::CNewMsg messages_{dosio_};
     CDFont fonts_{dosio_, screen_, two_d_, three_d_, colors_, os_fonts_, messages_, editor_tools_};
+    engine::SGameContent content_ = engine::getShippedGameContent();
     CGame game_{{.clock = game_clock_,
                  .dosio = dosio_,
                  .screen = screen_,
@@ -187,7 +189,8 @@ protected:
                  .sound_main = sound_,
                  .keys = keys_,
                  .raw_input = raw_input_,
-                 .gamepad = gamepad_.input}};
+                 .gamepad = gamepad_.input,
+                 .content = content_}};
     int now_ = 0;
     int step_ = kQuarterSecond;
     int ticks_ = 0;
@@ -395,6 +398,42 @@ TEST_F(CCreditsTest, WithTheMusicChannelOffTheyRollSilentlyUntilCancel) {
     game_.rollCredits();
     EXPECT_EQ(playing, (std::vector<int>{0, 0, 0}));
     EXPECT_EQ(screen_.swaps, 3);
+}
+
+TEST_F(CCreditsTest, CreditsWithoutMusicRollSilentlyUntilCancel) {
+    givenCredits("end\n");
+    givenMusic(100);
+    ASSERT_TRUE(content_.credits.has_value());
+    content_.credits->music.clear();
+    std::vector<int> playing;
+    on_tick_ = [&](int tick) {
+        playing.push_back(sound_.countActiveSfx());
+        if (tick == 3) {
+            press(EInputCodeType::DIK_ESCAPE);
+        }
+    };
+    game_.rollCredits();
+    EXPECT_EQ(playing, (std::vector<int>{0, 0, 0}));
+}
+
+// The text, picture and music are the packages' choice.
+TEST_F(CCreditsTest, ThePackagesNameTheCreditsFile) {
+    givenCredits("XX\r\nend\r\n");
+    givenFile("data\\other.txt", "end\r\n");
+    ASSERT_TRUE(content_.credits.has_value());
+    content_.credits->text = "other.txt";
+    cancelAfterFrames(3);
+    game_.rollCredits();
+    EXPECT_EQ(firstTextRow(), -1);
+    EXPECT_EQ(screen_.swaps, 3);
+}
+
+TEST_F(CCreditsTest, AGameWithoutCreditsRollsNone) {
+    givenCredits("XX\r\nend\r\n");
+    content_.credits.reset();
+    EXPECT_CALL(raw_input_, clearInput()).Times(0);
+    game_.rollCredits();
+    EXPECT_EQ(screen_.swaps, 0);
 }
 
 TEST_F(CCreditsTest, TheInputIsClearedAtTheStartWithTheMusicAndAtTheEnd) {

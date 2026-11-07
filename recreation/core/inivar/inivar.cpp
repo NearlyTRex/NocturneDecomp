@@ -13,6 +13,7 @@
 #include "platform/filesystem.h"
 #include "platform/upscaler.h"
 #include "sound/sndmain/sndmain.h"
+#include "support/newmsg/newmsg.h"
 
 #include <algorithm>
 #include <cstddef>
@@ -23,6 +24,7 @@ namespace {
 
 // Room for a list of bindings; the original read each key as one number.
 constexpr std::size_t kBindingsBufferSize = 256;
+constexpr std::size_t kLanguageBufferSize = 64;
 
 // An enum setting's number; one outside 0..last keeps the setting as it was. The original stored
 // heroNumber, gameControl and aimMode unchecked.
@@ -49,6 +51,8 @@ void readGraphics(const engine::CIniFile &file, const SIniDataOwners &owners) {
     readFlag(file, "haloMode", game.halo_mode);
     readFlag(file, "firstTimeFlag", game.first_time_flag);
     readFlag(file, "subtitleMode", game.subtitle_mode);
+    owners.messages.setLanguage(
+        file.getString("language", owners.messages.getLanguage(), kLanguageBufferSize));
     readFlag(file, "bloodFlag", game.blood_flag);
     readFlag(file, "nudityFlag", game.nudity_flag);
     readFlag(file, "foulLanguageFlag", game.foul_language_flag);
@@ -148,6 +152,7 @@ void writeGraphics(engine::CIniFile &file, const SIniDataOwners &owners) {
     file.setInteger("haloMode", game.halo_mode);
     file.setInteger("firstTimeFlag", game.first_time_flag);
     file.setInteger("subtitleMode", game.subtitle_mode);
+    file.setString("language", owners.messages.getLanguage());
     file.setInteger("bloodFlag", game.blood_flag);
     if (game.quimby_flag == 0) {
         file.setInteger("nudityFlag", game.nudity_flag);
@@ -192,7 +197,8 @@ void writeControls(engine::CIniFile &file, const CGame &game) {
 // their lines are left as they are; retail has no Editor section. The window
 // opens at the resolution the game will run at, as the decomp's menu resolution change has it,
 // in the enhanced game's window mode and upscaler. The pad's tuning is read after the controls
-// (the decomp's pad_tuning.h).
+// (the decomp's pad_tuning.h). The language, which picks the packages' translations, is the
+// enhanced game's.
 // nocedit 0x004fbd90
 void readIniData(engine::CIni &ini, platform::IFileSystem &file_system,
                  const SIniDataOwners &owners) {

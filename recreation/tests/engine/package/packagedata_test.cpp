@@ -4,6 +4,7 @@
 #include <gmock/gmock.h>
 #include <gtest/gtest.h>
 
+#include <array>
 #include <expected>
 #include <format>
 #include <string>
@@ -44,7 +45,8 @@ SPackageManifest fullManifest() {
                       .size = 12,
                       .modified = 946627200,
                       .xxh3 = "fed9db5d545bd067ad07fcbefa9ebc16"},
-                     {.path = "MORE.POD", .size = {}, .modified = {}, .xxh3 = {}}}};
+                     {.path = "MORE.POD", .size = {}, .modified = {}, .xxh3 = {}}},
+            .game = {}};
 }
 
 std::string errorOf(std::string_view text) {
@@ -70,7 +72,8 @@ TEST(PackageManifest, OnlyTheIdIsNeededAndTheNameIsTheIdWithoutOne) {
                                                                        .release = {},
                                                                        .dependencies = {},
                                                                        .required = {},
-                                                                       .pods = {}}));
+                                                                       .pods = {},
+                                                                       .game = {}}));
 }
 
 TEST(PackageManifest, WritesWhatItReadsBack) {
@@ -80,16 +83,32 @@ TEST(PackageManifest, WritesWhatItReadsBack) {
     EXPECT_EQ(parsePackageManifest(formatPackageManifest(manifest)), manifest);
 }
 
+// The game's own keys come before the [[pod]] tables and its tables after them.
+TEST(PackageManifest, CarriesGameContentAroundItsPods) {
+    SPackageManifest manifest = fullManifest();
+    manifest.game.front_end = "nocturne";
+    manifest.game.credits = SGameCredits{.text = "c.txt", .image = "i", .music = {}};
+    const std::string text = formatPackageManifest(manifest);
+    EXPECT_LT(text.find("front_end"), text.find("[[pod]]"));
+    EXPECT_GT(text.find("[credits]"), text.find("[[pod]]"));
+    EXPECT_EQ(parsePackageManifest(text), manifest);
+}
+
+TEST(PackageManifest, ABrokenGameTableIsTheManifestsError) {
+    EXPECT_EQ(errorOf("id = \"a\"\n[credits]\ntext = 1"), "credits: text: not a string");
+}
+
 TEST(PackageManifest, WritesOnlyTheFieldsItHas) {
-    EXPECT_EQ(formatPackageManifest(
-                  {.id = "a",
-                   .name = "A",
-                   .version = {},
-                   .release = {},
-                   .dependencies = {},
-                   .required = {},
-                   .pods = {{.path = "A.POD", .size = {}, .modified = {}, .xxh3 = {}}}}),
-              "id = 'a'\nname = 'A'\n\n[[pod]]\npath = 'A.POD'\n");
+    EXPECT_EQ(
+        formatPackageManifest({.id = "a",
+                               .name = "A",
+                               .version = {},
+                               .release = {},
+                               .dependencies = {},
+                               .required = {},
+                               .pods = {{.path = "A.POD", .size = {}, .modified = {}, .xxh3 = {}}},
+                               .game = {}}),
+        "id = 'a'\nname = 'A'\n\n[[pod]]\npath = 'A.POD'\n");
 }
 
 TEST(PackageManifest, BadTomlNamesItsLine) {
@@ -174,7 +193,7 @@ TEST(ReleaseCatalog, TheCompiledInCatalogueKnowsTheEnglishRelease) {
 }
 
 // A release's head, then its PODs.
-constexpr std::string_view kRelease = "[[release]]\nid = \"1999-xx\"\nname = \"A\"\n";
+constexpr std::string_view kRelease = "[[release]]\nid = \"1999-xx\"\nname = \"A\"\ngame = \"g\"\n";
 constexpr std::string_view kReleasePodName = "[[release.pod]]\nname = \"A.POD\"\n";
 constexpr std::string_view kAnyHash = "xxh3 = \"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\"\n";
 
@@ -188,25 +207,58 @@ std::string release(std::string_view rest) {
 }
 
 TEST(ReleaseCatalog, LoadingTheCatalogueGivesItsReleasesAndABrokenOneIsFatal) {
-    EXPECT_EQ(loadReleaseCatalog(getReleaseCatalogText()).size(), 1U);
-    EXPECT_THAT([] { static_cast<void>(loadReleaseCatalog("version = 1")); },
+    const std::vector<SRelease> releases =
+        loadReleaseCatalog(getReleaseCatalogText(), getEmbeddedGames());
+    ASSERT_EQ(releases.size(), 1U);
+    EXPECT_EQ(releases.front().content.front_end, "nocturne");
+    EXPECT_THAT([] { static_cast<void>(loadReleaseCatalog("version = 1", {})); },
                 ::testing::ThrowsMessage<common::CFatalError>(
                     ::testing::StrEq("releases.toml: version: not a key this file takes")));
 }
 
-TEST(ReleaseCatalog, AReleaseNeedsAPlainIdAndAName) {
+TEST(ReleaseCatalog, EachReleaseTakesItsGamesContent) {
+    const std::array games{SEmbeddedGame{.id = "f", .text = "front_end = \"other\""},
+                           SEmbeddedGame{.id = "g", .text = "front_end = \"mine\""}};
+    const std::vector<SRelease> releases = loadReleaseCatalog(kRelease, games);
+    ASSERT_EQ(releases.size(), 1U);
+    EXPECT_EQ(releases.front().content.front_end, "mine");
+}
+
+TEST(ReleaseCatalog, AGameWithoutDataOrWithBrokenDataIsFatal) {
+    EXPECT_THAT([] { static_cast<void>(loadReleaseCatalog(kRelease, {})); },
+                ::testing::ThrowsMessage<common::CFatalError>(
+                    ::testing::StrEq("release 1999-xx: game: no data/games/g.toml")));
+    const std::array games{SEmbeddedGame{.id = "g", .text = "colour = 1"}};
+    EXPECT_THAT([&games] { static_cast<void>(loadReleaseCatalog(kRelease, games)); },
+                ::testing::ThrowsMessage<common::CFatalError>(
+                    ::testing::StrEq("games/g.toml: colour: not a key this file takes")));
+}
+
+TEST(ReleaseCatalog, AReleaseNeedsAPlainIdANameAndAGame) {
     EXPECT_EQ(catalogErrorOf("[[release]]\nname = \"A\""), "release 1: id: missing");
     EXPECT_EQ(catalogErrorOf("[[release]]\nid = \"1999 en\"\nname = \"A\""),
               "release 1: id: only letters, digits, '.', '_' and '-'");
     EXPECT_EQ(catalogErrorOf("[[release]]\nid = \"1999-en\"\nrequired = []"),
               "release 1: name: missing");
+    EXPECT_EQ(catalogErrorOf("[[release]]\nid = \"1999-en\"\nname = \"A\""),
+              "release 1: game: missing");
+    EXPECT_EQ(catalogErrorOf("[[release]]\nid = \"1999-en\"\nname = \"A\"\ngame = \"g\"\n"
+                             "required = 1"),
+              "release 1: required: not a list");
 }
 
 TEST(ReleaseCatalog, NoTwoReleasesShareAnId) {
     EXPECT_EQ(catalogErrorOf(release(kRelease)), "release 2: id: 1999-xx is another release's");
-    EXPECT_EQ(parseReleaseCatalog(release("[[release]]\nid = \"1999-yy\"\nname = \"B\"\n")),
-              (std::vector<SRelease>{{.id = "1999-xx", .name = "A", .required = {}, .pods = {}},
-                                     {.id = "1999-yy", .name = "B", .required = {}, .pods = {}}}));
+    EXPECT_EQ(
+        parseReleaseCatalog(release("[[release]]\nid = \"1999-yy\"\nname = \"B\"\ngame = \"h\"\n")),
+        (std::vector<SRelease>{
+            {.id = "1999-xx", .name = "A", .game = "g", .required = {}, .pods = {}, .content = {}},
+            {.id = "1999-yy",
+             .name = "B",
+             .game = "h",
+             .required = {},
+             .pods = {},
+             .content = {}}}));
 }
 
 TEST(ReleaseCatalog, EachPodNeedsItsNameSizeAndHash) {

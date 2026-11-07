@@ -2,6 +2,7 @@
 
 #include "common/fwd.h"
 #include "engine/fwd.h"
+#include "engine/package/gamecontent.h"
 
 #include <cstddef>
 #include <string>
@@ -20,11 +21,18 @@ struct SMessage {
 class CNewMsg {
 public:
     static constexpr std::size_t kMaxMessages = 500;
+    // The text every key is in.
+    static constexpr std::string_view kDefaultLanguage = "en";
 
     explicit CNewMsg(const engine::CDosIo &dosio);
 
     // A missing or empty file leaves the table as it is.
     void readMessageFile(std::string_view message_file);
+    // A package's translations, over any text the table has for the same key.
+    void addTranslations(const engine::TranslationTable &translations);
+    // The language code whose package translations are added; nocturne.ini keeps it.
+    [[nodiscard]] const std::string &getLanguage() const;
+    void setLanguage(std::string_view language);
     // The key's text, or the key itself when the table doesn't have it.
     [[nodiscard]] std::string_view getLocalizedString(std::string_view key) const;
     [[nodiscard]] bool getUseOSFonts() const;
@@ -43,6 +51,7 @@ private:
     std::vector<SMessage> messages_;
     bool use_os_fonts_ = false;
     std::string os_font_name_;
+    std::string language_{kDefaultLanguage};
 };
 
 } // namespace nocturne::support

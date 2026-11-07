@@ -1,11 +1,19 @@
 #include "engine/package/packagedata.h"
 
+#include <array>
+#include <span>
 #include <string_view>
 
 namespace nocturne::engine {
 
 std::string_view getReleaseCatalogText() {
     return R"releases(@NOCTURNE_RELEASE_CATALOG@)releases";
+}
+
+std::span<const SEmbeddedGame> getEmbeddedGames() {
+    static constexpr std::array kGames{
+@NOCTURNE_EMBEDDED_GAMES@    };
+    return kGames;
 }
 
 } // namespace nocturne::engine

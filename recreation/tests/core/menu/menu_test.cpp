@@ -1,3 +1,4 @@
+#include "common/error/fatalerror.h"
 #include "common/random/watcomrandom.h"
 #include "core/actor/actor.h"
 #include "core/dfont/dfont.h"
@@ -244,7 +245,8 @@ protected:
                                .special = special_,
                                .display = display_,
                                .fonts = fonts_,
-                               .gamepad = game_parts_.getGamepad().input};
+                               .gamepad = game_parts_.getGamepad().input,
+                               .messages = messages_};
     shape::CEdControls controls_{{.two_d = two_d_,
                                   .screen = screen_,
                                   .raw_input = raw_input_,
@@ -266,6 +268,7 @@ protected:
                  .gamepad = game_parts_.getGamepad().input,
                  .fonts = fonts_,
                  .messages = messages_,
+                 .content = game_parts_.getContent(),
                  .renderer = demon_renderer_,
                  .set = set_,
                  .game = game_,
@@ -499,6 +502,44 @@ TEST_F(CMenuTest, WithOsTextTheCopyrightCarriesTheCopyrightSign) {
     choose({"XX"}, selected);
     EXPECT_THAT(drawn, ::testing::Contains(std::string(
                            "Nocturne (c) 1999 Terminal Reality Inc.  Patent Pending.")));
+    drawn.clear();
+    game_parts_.getContent().copyright_os_font.reset();
+    choose({"XX"}, selected);
+    EXPECT_THAT(drawn, ::testing::Contains(
+                           std::string("Nocturne 1999 Terminal Reality Inc.  Patent Pending.")));
+}
+
+TEST_F(CMenuTest, MenusWithoutAPackagesLayoutAreFatal) {
+    game_parts_.getContent().menu.reset();
+    int selected = 0;
+    EXPECT_THAT([&] { static_cast<void>(choose({"XX"}, selected)); },
+                ::testing::ThrowsMessage<common::CFatalError>(
+                    ::testing::StrEq("No package gives the menus' layout")));
+}
+
+// A game's menus put their items where its packages say.
+TEST_F(CMenuTest, TheItemsStartAtThePackagesLeftEdge) {
+    std::optional<engine::SMenuLayout> &menu = game_parts_.getContent().menu;
+    ASSERT_TRUE(menu.has_value());
+    menu->left = 300;
+    int selected = 1;
+    choose({"XX", "XX"}, selected);
+    EXPECT_EQ(firstLit(letterRow(100)), 300);
+}
+
+TEST_F(CMenuTest, WithoutACopyrightOrTrademarkOnlyTheBuildIsInTheFooter) {
+    engine::SGameContent &content = game_parts_.getContent();
+    content.copyright.reset();
+    content.copyright_os_font.reset();
+    ASSERT_TRUE(content.menu.has_value());
+    content.menu->trademark.reset();
+    int selected = 0;
+    choose({"XX"}, selected);
+    EXPECT_FALSE(lit(518, 99));
+    // The build's line, "X", on its own row.
+    const int bottom = kHeight - 1 - smallFont().getTextHeight("X");
+    EXPECT_EQ(firstLit(letterRow(bottom)), 4);
+    EXPECT_FALSE(lit(kWidth - 2, letterRow(bottom)));
 }
 
 } // namespace
