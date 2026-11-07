@@ -30,7 +30,8 @@ TEST(CGame, PublicInterface) {
     static_assert(std::is_same_v<decltype(&CGame::updateDT), void (CGame::*)()>);
     static_assert(std::is_same_v<decltype(&CGame::getDeltaTimeInt), int (CGame::*)() const>);
     static_assert(std::is_same_v<decltype(&CGame::getDeltaTimeFloat), float (CGame::*)() const>);
-    static_assert(std::is_same_v<decltype(&CGame::displayMessage), void (CGame::*)(char *, float)>);
+    static_assert(
+        std::is_same_v<decltype(&CGame::displayMessage), void (CGame::*)(std::string_view, float)>);
     static_assert(std::is_same_v<decltype(&CGame::setFudgeTarget),
                                  void (CGame::*)(common::CVector3f *, float)>);
     static_assert(std::is_same_v<decltype(&CGame::runGameSession),
@@ -46,8 +47,11 @@ TEST(CGame, PublicInterface) {
     static_assert(std::is_same_v<decltype(&CGame::fadeIn), std::uint32_t (CGame::*)()>);
     static_assert(std::is_same_v<decltype(&CGame::resetWeaponSwitchTimers), void (CGame::*)()>);
     static_assert(std::is_same_v<decltype(&CGame::resetInventoryDisplayTimer), void (CGame::*)()>);
-    static_assert(
-        std::is_same_v<decltype(&CGame::setStatusDisplay), void (CGame::*)(char *, float, float)>);
+    static_assert(std::is_same_v<decltype(&CGame::setStatusDisplay),
+                                 void (CGame::*)(std::string_view, float, float)>);
+    static_assert(std::is_same_v<decltype(&CGame::updateStatusDisplays), void (CGame::*)()>);
+    static_assert(std::is_same_v<decltype(&CGame::renderOverlay),
+                                 void (CGame::*)(const SGameSessionOwners &)>);
     static_assert(std::is_same_v<decltype(&CGame::loadGame), void (CGame::*)(char *, int)>);
     static_assert(
         std::is_same_v<decltype(&CGame::showChapterSelect),

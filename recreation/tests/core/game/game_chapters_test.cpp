@@ -1,18 +1,22 @@
 #include "common/error/fatalerror.h"
+#include "core/dfont/dfont.h"
 #include "core/game/chapterselectmode.h"
 #include "core/game/game.h"
 #include "core/inivar/inivar.h"
 #include "core/level/levelloader.h"
+#include "engine/3d/3d.h"
+#include "engine/font/bitfont.h"
 #include "engine/ini/ini.h"
 #include "engine/keys/inputcodetype.h"
 #include "platform/filesystem.h"
 #include "platform/mrgltexturebasic.h"
 #include "shape/edittool/fileselection.h"
 #include "shape/edittool/strlist.h"
-#include "tests/mocks/core/gameparts.h"
 #include "tests/mocks/core/missionfixture.h"
 #include "tests/mocks/core/mockloadingscreen.h"
+#include "tests/mocks/core/overlayscreen.h"
 #include "tests/mocks/core/setfilefixture.h"
+#include "tests/mocks/engine/mockfont.h"
 #include "tests/mocks/runawayguard.h"
 
 #include <gmock/gmock.h>
@@ -35,6 +39,7 @@ namespace {
 
 using engine::EInputCodeType;
 using ::testing::_;
+using ::testing::NiceMock;
 using ::testing::Return;
 using ::testing::StrEq;
 using ::testing::ThrowsMessage;
@@ -111,7 +116,7 @@ protected:
         idle_.reset();
         press(keys_to_press_.front());
         keys_to_press_.pop_front();
-        chapter_game_.showChapterSelect(owners_, mode);
+        game_.showChapterSelect(owners_, mode);
     }
 
     // As choose, where the mission chosen is started, which stops as the hero's setup looks for
@@ -131,9 +136,6 @@ protected:
     std::deque<EInputCodeType> keys_to_press_;
     CRunawayGuard idle_{kIdleFrameLimit, "a list was still open after the keys ran out"};
     std::string ini_text_ = "[Game]\r\n";
-    // Reading the fixture's files, where the mission's own game doesn't.
-    CGameParts chapter_game_parts_{game_clock_, dosio_};
-    CGame &chapter_game_ = chapter_game_parts_.getGame();
     ::testing::NiceMock<MockLoadingScreen> loading_screen_;
     engine::CIni ini_{file_system_};
     shape::CStrList::LocalTime local_time_ = &localTime;
@@ -173,7 +175,7 @@ TEST_F(CChapterSelectTest, AStoryStartsAtItsFirstChapter) {
     chooseToStart(EChapterSelectMode::kStories, {kReturn});
     EXPECT_EQ(mission_.getMissionName(), "hq-act1");
     EXPECT_EQ(mission_.getHeroCount(), 1);
-    EXPECT_EQ(chapter_game_.getCurrentSaveFile(), "hq-act1.msn");
+    EXPECT_EQ(game_.getCurrentSaveFile(), "hq-act1.msn");
 }
 
 TEST_F(CChapterSelectTest, TheLaterStoriesStartAtTheirFirstChapters) {
@@ -182,11 +184,91 @@ TEST_F(CChapterSelectTest, TheLaterStoriesStartAtTheirFirstChapters) {
     EXPECT_EQ(mission_.getMissionName(), "hq-act4");
 }
 
+// The overlay's chapter title as the game draws it on a screen it is told is 480 lines tall, its
+// text going to the watched fonts rather than the fixture's smaller screen.
+class CChapterTitleTest : public CChapterSelectTest {
+protected:
+    void watchTitle() {
+        drawGameOnto(game_parts_, screen_,
+                     [this](const std::string &name, const std::string &contents) {
+                         givenFile(name, contents);
+                     });
+        ON_CALL(game_parts_.getScreen(), getWindowHeight()).WillByDefault(Return(480));
+        game_parts_.getFonts().getMediumFont()->setWinFont(medium_text_);
+        game_parts_.getFonts().getTinyFont()->setWinFont(tiny_text_);
+        game_parts_.getFonts().getSmallEditorFont()->setWinFont(small_text_);
+    }
+
+    void stepQuarterSeconds(int frames) {
+        for (int i = 0; i < frames; ++i) {
+            game_.saveClockTime();
+            time_ += kQuarterSecondTicks;
+            game_.updateDT();
+            game_.updateStatusDisplays();
+        }
+    }
+
+    static constexpr int kQuarterSecondTicks = 18 * 0x4000;
+
+    NiceMock<engine::MockFont> medium_text_;
+    NiceMock<engine::MockFont> tiny_text_;
+    NiceMock<engine::MockFont> small_text_;
+};
+
+// In the medium font at 480 lines, its 'X' 7 tall and 2 wide: two widths in, one up from the
+// foot.
+TEST_F(CChapterTitleTest, AStorysYearAndTitleShowForEightSeconds) {
+    chooseToStart(EChapterSelectMode::kStories, {kReturn});
+    watchTitle();
+    EXPECT_CALL(medium_text_, drawText(std::string_view("1927 - 'Dark Reign of the Vampire King'"),
+                                       4, 471, 0xf8, 0))
+        .Times(2);
+    game_.renderOverlay(session_);
+    EXPECT_EQ(game_parts_.getThreeD().getCurrentAlphaValue(), 0xff);
+    stepQuarterSeconds(31);
+    game_.renderOverlay(session_);
+    stepQuarterSeconds(1);
+    game_.renderOverlay(session_);
+}
+
+TEST_F(CChapterTitleTest, EachStoryHasItsYear) {
+    chooseToStart(EChapterSelectMode::kStories, {kDown, kDown, kDown, kReturn});
+    watchTitle();
+    EXPECT_CALL(medium_text_,
+                drawText(std::string_view("1935 - 'The House on the Edge of Hell'"), _, _, _, _));
+    game_.renderOverlay(session_);
+}
+
+// Below 480 lines the tiny font, 5 tall and 1 wide, and below 384 the small editor font, the same.
+TEST_F(CChapterTitleTest, ShorterScreensTakeSmallerFonts) {
+    chooseToStart(EChapterSelectMode::kStories, {kReturn});
+    watchTitle();
+    EXPECT_CALL(tiny_text_, drawText(_, 2, 394, _, _));
+    EXPECT_CALL(small_text_, drawText(_, 2, 377, _, _));
+    ON_CALL(game_parts_.getScreen(), getWindowHeight()).WillByDefault(Return(400));
+    game_.renderOverlay(session_);
+    ON_CALL(game_parts_.getScreen(), getWindowHeight()).WillByDefault(Return(383));
+    game_.renderOverlay(session_);
+}
+
+// The browser's mission has no story, and puts away the title of one played before.
+TEST_F(CChapterTitleTest, TheBrowserShowsNoTitle) {
+    ON_CALL(file_system_, findFiles(std::string_view("world\\*.msn")))
+        .WillByDefault(Return(
+            std::vector<platform::SFileInfo>{{.name = "hq-act1.msn", .size = 1, .modified = 0}}));
+    givenFile("world\\HQ-ACT1.MSN", heroMission("Act1"));
+    chooseToStart(EChapterSelectMode::kStories, {kReturn});
+    chooseToStart(EChapterSelectMode::kMissionBrowser, {kReturn});
+    watchTitle();
+    EXPECT_CALL(medium_text_, drawText).Times(0);
+    game_.renderOverlay(session_);
+}
+
 TEST_F(CChapterSelectTest, CancellingLoadsNothing) {
     EXPECT_CALL(loading_screen_, show).Times(0);
     choose(EChapterSelectMode::kStories, {kEscape});
     EXPECT_EQ(mission_.getMissionVersionNum(), -1);
-    EXPECT_EQ(chapter_game_.getCurrentSaveFile(), "");
+    EXPECT_EQ(game_.getCurrentSaveFile(), "");
 }
 
 // A story whose first mission is missing can't be chosen; the others still can.
@@ -275,7 +357,7 @@ TEST_F(CChapterSelectTest, StartingTheSameMissionAgainKeepsItsTextures) {
         .Times(::testing::AtLeast(1));
     chooseToStart(EChapterSelectMode::kStories, {kDown, kReturn});
     textures_.ensureTextureLoaded(texture);
-    EXPECT_EQ(chapter_game_.getCurrentSaveFile(), "train.msn");
+    EXPECT_EQ(game_.getCurrentSaveFile(), "train.msn");
 }
 
 // With nowhere for the first hero the mission says so and goes no further.
@@ -298,7 +380,7 @@ TEST_F(CChapterSelectTest, ControlBrowsesEveryMission) {
     EXPECT_CALL(loading_screen_, show(10, false, CLevelLoader::kRandomImage));
     chooseToStart(EChapterSelectMode::kMissionBrowser, {kDown, kReturn});
     EXPECT_EQ(mission_.getMissionName(), "Town");
-    EXPECT_EQ(chapter_game_.getCurrentSaveFile(), "TOWN.MSN");
+    EXPECT_EQ(game_.getCurrentSaveFile(), "TOWN.MSN");
 }
 
 // The browser's capitals name the same file the story did.
@@ -309,7 +391,7 @@ TEST_F(CChapterSelectTest, TheSameMissionInOtherCapitalsIsStillTheSameFile) {
     givenFile("world\\HQ-ACT1.MSN", heroMission("Act1"));
     chooseToStart(EChapterSelectMode::kStories, {kReturn});
     chooseToStart(EChapterSelectMode::kMissionBrowser, {kReturn});
-    EXPECT_EQ(chapter_game_.getCurrentSaveFile(), "hq-act1.msn");
+    EXPECT_EQ(game_.getCurrentSaveFile(), "hq-act1.msn");
 }
 
 TEST_F(CChapterSelectTest, CancellingTheBrowserLoadsNothing) {

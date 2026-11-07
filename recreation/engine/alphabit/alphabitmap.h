@@ -29,6 +29,7 @@ public:
     void initPalette();
     // The palette indices, a row at a time.
     [[nodiscard]] std::span<const std::uint8_t> getRaw() const;
+    [[nodiscard]] int getWidth() const;
 
 private:
     void loadPalette(std::string_view filename);

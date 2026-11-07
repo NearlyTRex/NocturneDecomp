@@ -4,11 +4,15 @@
 #include "core/game/gameaction.h"
 #include "core/set/demonset.h"
 #include "core/setutil/3dscamera.h"
+#include "engine/3d/3d.h"
+#include "engine/font/bitfont.h"
 #include "engine/keys/inputcodetype.h"
 #include "sound/sndmain/sndmain.h"
 #include "tests/mocks/core/geofile.h"
 #include "tests/mocks/core/missionfixture.h"
+#include "tests/mocks/core/overlayscreen.h"
 #include "tests/mocks/core/setfilefixture.h"
+#include "tests/mocks/engine/mockfont.h"
 
 #include <gmock/gmock.h>
 #include <gtest/gtest.h>
@@ -16,11 +20,13 @@
 #include <cstddef>
 #include <initializer_list>
 #include <string>
+#include <string_view>
 
 namespace nocturne::core {
 namespace {
 
 using engine::EInputCodeType;
+using ::testing::_;
 
 // A set of three cameras, the first shown, on a 640x480 screen, the keys at their keyboard
 // defaults.
@@ -86,6 +92,24 @@ TEST_F(CGameHotkeysTest, GammaStepsAndIsHeldInRange) {
     EXPECT_EQ(game_.gamma, 0x10000);
     press({EInputCodeType::DIK_F12});
     EXPECT_EQ(game_.gamma, 0x10000);
+}
+
+// The new gamma is shown for a second, in the theme font as the camera is 640 columns.
+TEST_F(CGameHotkeysTest, AGammaStepShowsTheNewGamma) {
+    drawGameOnto(game_parts_, screen_,
+                 [this](const std::string &name, const std::string &contents) {
+                     givenFile(name, contents);
+                 });
+    ::testing::NiceMock<engine::MockFont> theme_text;
+    game_parts_.getFonts().getThemeFont()->setWinFont(theme_text);
+    EXPECT_CALL(theme_text, drawText(std::string_view("Gamma : 0.500000"), _, _, _, _));
+    EXPECT_CALL(theme_text, drawText(std::string_view("Gamma : 0.515625"), _, _, _, _));
+    game_.gamma = 0x8400;
+    press({EInputCodeType::DIK_F11});
+    game_.renderOverlay(session_);
+    press({EInputCodeType::DIK_F12});
+    game_.renderOverlay(session_);
+    EXPECT_EQ(game_parts_.getThreeD().getCurrentAlphaValue(), 0xff);
 }
 
 // Outside developer mode the developers' keys do nothing.

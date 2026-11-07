@@ -18,7 +18,7 @@ functions don't count as done. Sizes are in instructions.
 | 2 | `doNothing`, `readMessageFile`, `getLocalizedString`, `initializeTrigTables`, `initTextureCache`, `initGraphicsSystem` | 8 | 30 | 2804 | 28 | 2 | 93.3% |
 | 3 | Sound system: `sndmain`, `CSound` lifetime, `readIniData` | 7 | 123 | 8346 | 122 | 1 | 99.1% |
 | 4 | `initFonts`, `CEditorTools::showWarning` | 11 | 46 | 4804 | 45 | 1 | 97.8% |
-| 5 | `showCalibrationTest`, `playMovie`, `CAlphaBitmap::ctor`, `CAlphaBitmap::dtor`, `CSound::findAllSoundFiles`, `CDemonMission::reset`, `CDemonFilter::init`, `CMouse::load`, `CNetGame::init` | 14 | 50 | 4789 | 31 | 3 | 62.0% |
+| 5 | `showCalibrationTest`, `playMovie`, `CAlphaBitmap::ctor`, `CAlphaBitmap::dtor`, `CSound::findAllSoundFiles`, `CDemonMission::reset`, `CDemonFilter::init`, `CMouse::load`, `CNetGame::init` | 14 | 50 | 4789 | 32 | 3 | 64.0% |
 | 6 | `initializeGameSystems`, `CAlphaBitmap::scale`, `clearTextureCache`, `CMoon::init`, `CGame::saveClockTime`, `CGame::updateDT` | 11 | 25 | 2988 | 20 | 5 | 80.0% |
 | 7 | `CMoon::update`, `CMoon::render` | 17 | 120 | 17616 | 69 | 30 | 57.5% |
 | 8 | `renderMenuAndGetChoice`, `CMoon::free`, `CSound::reset`, `CEditorTools::showFileSelectionDialog` | 8 | 63 | 5314 | 60 | 3 | 95.2% |
@@ -26,9 +26,9 @@ functions don't count as done. Sizes are in instructions.
 | 10 | `CDemonMission::createHeros`, `CDemonMission::prepareAllActors`, `CEventList::reset`, `CDemonMission::loadSet` | 15 | 42 | 5112 | 33 | 8 | 78.5% |
 | 11 | `CScript::loadScript` | 63 | 579 | 67400 | 133 | 59 | 22.9% |
 | 12 | `CDemonMission::loadScript`, `CScript::executeInitSection`, `CDemonMission::startMission`, `CDemonMission::buildActiveSetActorList`, `CConsole::reset`, `CEditorTools::displayMemoryDiagnostics`, `CGame::setGameRes`, `CDemonLight::init`, `CDemonSet::initScene` | 12 | 26 | 1658 | 16 | 9 | 61.5% |
-| 13 | `CFireEffect::init`, `CDemonSet::loadMasterLightStates`, `CDemonSet::setGamma`, `CGame::clearOverlay`, `CGame::loadAssets` | 7 | 27 | 735 | 16 | 1 | 59.2% |
+| 13 | `CFireEffect::init`, `CDemonSet::loadMasterLightStates`, `CDemonSet::setGamma`, `CGame::clearOverlay`, `CGame::loadAssets` | 7 | 27 | 735 | 17 | 1 | 62.9% |
 | 14 | `CNetGame::syncPlayers`, `CNetGame::processServerFrame`, `CLevelLoader::cleanup`, `CKeys::toggleInputMask`, `CGame::processHotkeys` | 17 | 51 | 5302 | 6 | 3 | 11.7% |
-| 15 | `CGame::updateStatusDisplays`, `CGame::processFudge`, `CGame::playerControls`, `CGame::processFrame` | 43 | 189 | 28837 | 9 | 4 | 4.7% |
+| 15 | `CGame::updateStatusDisplays`, `CGame::processFudge`, `CGame::playerControls`, `CGame::processFrame` | 43 | 189 | 28837 | 10 | 5 | 5.2% |
 | 16 | `CGame::setScreenResolutionAndDisplayFangs`, `showOptionsScreen`, `CScript::skipCinematic`, `CGame::showFullscreenBitmap`, `CDemonMission::countDamageableEnemies`, `freeInventory`, `CGame::runGameSession`, `CGame::displayActStats` | 10 | 25 | 6938 | 10 | 3 | 40.0% |
 | 17 | `CGame::finishAct`, `CDemonMission::run`, `CGame::loadGame`, `CGame::showChapterSelect`, `showDeveloperToolsMenu` | 12 | 26 | 3707 | 6 | 2 | 23.0% |
 | 18 | `enterMainGameMenu`, `finalizeGameSystems` | 11 | 13 | 539 | 3 | 0 | 23.0% |
@@ -39,14 +39,14 @@ functions don't count as done. Sizes are in instructions.
 | 23 | Not reached from startup: `core/` (part 1 of 9) | 18 | 292 | 16011 | 67 | 13 | 22.9% |
 | 24 | Not reached from startup: `core/` (part 2 of 9) | 11 | 277 | 24965 | 36 | 8 | 12.9% |
 | 25 | Not reached from startup: `core/` (part 3 of 9) | 24 | 278 | 24134 | 53 | 7 | 19.0% |
-| 26 | Not reached from startup: `core/` (part 4 of 9) | 18 | 300 | 20148 | 52 | 7 | 17.3% |
+| 26 | Not reached from startup: `core/` (part 4 of 9) | 18 | 300 | 20148 | 53 | 7 | 17.6% |
 | 27 | Not reached from startup: `core/` (part 5 of 9) | 21 | 294 | 20910 | 63 | 11 | 21.4% |
 | 28 | Not reached from startup: `core/` (part 6 of 9) | 18 | 282 | 21809 | 56 | 13 | 19.8% |
 | 29 | Not reached from startup: `core/` (part 7 of 9) | 18 | 263 | 22721 | 68 | 10 | 25.8% |
 | 30 | Not reached from startup: `core/` (part 8 of 9) | 20 | 300 | 31826 | 42 | 8 | 14.0% |
 | 31 | Not reached from startup: `core/` (part 9 of 9) | 5 | 111 | 10905 | 26 | 7 | 23.4% |
 | 32 | Not reached from startup: `wincore/` | 2 | 11 | 482 | 4 | 0 | 36.3% |
-| | **All** | | **4479** | **402407** | **1200** | **232** | **26.7%** |
+| | **All** | | **4479** | **402407** | **1204** | **233** | **26.8%** |
 
 ## Step 0: Math value types
 
@@ -504,9 +504,9 @@ functions don't count as done. Sizes are in instructions.
     - unverified: the percentage's rounding and the time-remaining estimate, by running updatePercentage against nocedit's own code with getSeconds stubbed
   - [x] `showCenteredProgressDialog` 0x004a0430 (79)
 
-### `core/game.cpp` (1 functions, 34 instructions, 0 done, 0 partial)
+### `core/game.cpp` (1 functions, 34 instructions, 1 done, 0 partial)
 - class `CGame`
-  - [ ] `displayMessage` 0x004d7f20 (34)
+  - [x] `displayMessage` 0x004d7f20 (34)
 
 ### `support/trisock.cpp` (4 functions, 140 instructions, 4 done, 0 partial)
 - class `CSocket`
@@ -604,7 +604,6 @@ functions don't count as done. Sizes are in instructions.
   - [~] `updateDT` 0x004d7d90 (44)
     - deferred: the fixed thirtieth of a second, scaled, while a debug movie records, with setupMovieRecording
     - deferred: a session the script ended with "end" closing on the Game Over menu, as a helper's death ends it, where the original drops to the main menu (the decomp's helper_death.h), with CGame::runGameSession
-    - deferred: the message line, chapter title and status bars laid out in boxes in the scene's picture at the HUD's text scale, the companions' bars starting right of the battery gauge (the decomp's hud.h, HUD), with CGame::renderOverlay
     - deferred: the death banner a quarter of the way down, clear of the message line and the Game Over dialog (the decomp's hud.h, HUD), with CGame::processFrame
     - deferred: the iris fade centred where its scene point lands in a pillarboxed or panned picture (the decomp's widescreen.h nocturne_widescreen_scene_to_screen), with calculateIrisFadeCenter
 
@@ -2279,9 +2278,9 @@ functions don't count as done. Sizes are in instructions.
   - [x] `setGamma` 0x00570d60 (41)
   - [x] `loadAssets` 0x0056fb80 (6)
 
-### `core/game.cpp` (2 functions, 20 instructions, 1 done, 0 partial)
+### `core/game.cpp` (2 functions, 20 instructions, 2 done, 0 partial)
 - class `CGame`
-  - [ ] `clearOverlay` 0x004d7f80 (4)
+  - [x] `clearOverlay` 0x004d7f80 (4)
   - [x] `loadAssets` 0x004e07a0 (16)
 
 ## Step 14: `CNetGame::syncPlayers`, `CNetGame::processServerFrame`, `CLevelLoader::cleanup`, `CKeys::toggleInputMask`, `CGame::processHotkeys`
@@ -2412,7 +2411,6 @@ functions don't count as done. Sizes are in instructions.
     - deferred: the console, also with SPOOKHOUSE set, with processFrame's console
     - deferred: the script debug keys while not paused: running or stopping the script in the script view, resuming it, and resetting its dialog, with CScript's script state and resetDialogState
     - deferred: the camera on or off, with CDemonSet's camera flag's reader
-    - deferred: "Gamma : " and the new gamma shown for a second, with displayMessage and renderOverlay
 
 ## Step 15: `CGame::updateStatusDisplays`, `CGame::processFudge`, `CGame::playerControls`, `CGame::processFrame`
 
@@ -2737,9 +2735,9 @@ functions don't count as done. Sizes are in instructions.
 - free functions
   - [ ] `getTextureCacheStats` 0x005dd970 (7)
 
-### `core/game.cpp` (18 functions, 8127 instructions, 1 done, 4 partial)
+### `core/game.cpp` (18 functions, 8127 instructions, 2 done, 5 partial)
 - class `CGame`
-  - [ ] `updateStatusDisplays` 0x004d85a0 (117)
+  - [x] `updateStatusDisplays` 0x004d85a0 (117)
   - [ ] `processFudge` 0x004d8750 (111)
   - [x] `resetKeyState` 0x004dbe60 (249)
   - [~] `processKeyboardControls` 0x004dc3e0 (617)
@@ -2759,7 +2757,9 @@ functions don't count as done. Sizes are in instructions.
     - deferred: camera-relative movement (the decomp's movement.h, MENU), with the hero's turn rate from its frame and CDemonCamera::updateTransformMatrices
     - deferred: noting the local input for the network game (the decomp's NETPLAY), with CNetGame::initializeNetworkToHost
   - [ ] `drawScreenBorder` 0x004d7e50 (75)
-  - [ ] `renderOverlay` 0x004d8040 (344)
+  - [~] `renderOverlay` 0x004d8040 (344)
+    - deferred: the message line and chapter title above the bottom letterbox bar, and the status bars hidden while it is up, with CScript::getLetterboxHeight and the script's letterbox
+    - deferred: a hero's bar as long as its health can go, max_hit_points / 100 of the width and clear of the screen's right edge (the decomp's status_bar.h, STATUS_BAR_WIDTH), with CCharacter::processCharacter and processDamage, which record it
   - [ ] `showCustomizableKeys` 0x004d89d0 (1621)
   - [ ] `renderIrisFade` 0x004e0aa0 (73)
   - [ ] `processCheatCodes` 0x004ddaf0 (3192)
@@ -2834,7 +2834,6 @@ functions don't count as done. Sizes are in instructions.
     - deferred: forgetting each hero's own light, the Baron's state and a helper's death (the decomp's hero_light, baron and helper_death resets), with CHero, CBaron and the helper's death hold
     - deferred: starting the session's autosave (the decomp's nocturne_autosave_session_start), with the autosave poll in the play loop
     - deferred: starting the fire effects, or the master lights' saved states after a load, with CFireEffect::init and CDemonSet::loadMasterLightStates
-    - deferred: clearing the overlay's status lines and message timer, with clearOverlay and updateStatusDisplays
     - deferred: opening the iris on the focus actor, with beginFadeIn and renderIrisFade
     - deferred: the cheats the menu turned on (the decomp's nocturne_cheats_apply), with showCheatsMenu
     - deferred: ending the session when a player gives up syncing, with CNetGame::syncPlayers' waits and the session's end
@@ -2843,7 +2842,6 @@ functions don't count as done. Sizes are in instructions.
     - deferred: the act not yet complete, with finishAct
     - deferred: the input masked while paused or a modal dialog is up, with processHotkeys and the pause menu
     - deferred: each frame's autosave poll (the decomp's nocturne_autosave_poll), with the autosave
-    - deferred: each frame's message and status display timers, with updateStatusDisplays and renderOverlay
     - deferred: each frame's nudge of the fudge target, with processFudge and CMansionPuzzleCircle::process
     - deferred: the director left alone while the game isn't active, a cinematic skips, a sim frame is pending or the goggles are on, with processHotkeys, processFrame and the goggles
     - deferred: the director made to choose again when the script changed its focus, with CScript::step's focus commands
@@ -2909,7 +2907,6 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `loadGame` 0x004e12b0 (645)
   - [~] `showChapterSelect` 0x004e1cb0 (845)
     - deferred: zeroing the act's enemy and kill counts and its game and play times, with CGame::displayActStats
-    - deferred: showing the story's year and title for eight seconds, or nothing after the browser, with CGame::renderOverlay and CGame::updateStatusDisplays
     - deferred: clearing the events' game flags, with CEventList::resetGameFlags
     - deferred: loading the save a run asks to reload, then the editor's font as it was, with CGame::loadGame and the play loop
 
@@ -5037,9 +5034,9 @@ functions don't count as done. Sizes are in instructions.
   - [ ] `flashlightBlendWeightCallback` 0x004d2a30 (28)
   - [ ] `aimRotationBlendWeightCallback` 0x004d2a80 (30)
 
-### `core/game.cpp` (19 functions, 959 instructions, 2 done, 0 partial)
+### `core/game.cpp` (19 functions, 959 instructions, 3 done, 0 partial)
 - class `CGame`
-  - [ ] `setStatusDisplay` 0x004e0bf0 (79)
+  - [x] `setStatusDisplay` 0x004e0bf0 (79)
   - [ ] `resetWeaponSwitchTimers` 0x004e0bb0 (8)
   - [ ] `resetInventoryDisplayTimer` 0x004e0bd0 (7)
   - [ ] `ctor` 0x004d7b40 (66)

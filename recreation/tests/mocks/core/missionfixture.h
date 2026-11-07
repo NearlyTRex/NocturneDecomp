@@ -33,6 +33,7 @@
 #include "tests/mocks/core/mockkeyframedmodels.h"
 #include "tests/mocks/core/setparts.h"
 #include "tests/mocks/platform/mockaudiodevice.h"
+#include "tests/mocks/platform/mockdisplay.h"
 #include "tests/mocks/platform/mockenvironment.h"
 #include "tests/mocks/platform/mockosfontfactory.h"
 #include "tests/mocks/shape/picklistfixture.h"
@@ -64,7 +65,7 @@ protected:
             .WillByDefault(::testing::Return(screen_height));
     }
 
-    CGameParts game_parts_{game_clock_};
+    CGameParts game_parts_{game_clock_, dosio_};
     CGame &game_ = game_parts_.getGame();
     common::CWatcomRandom crt_random_;
     ::testing::NiceMock<MockDeformableModels> models_;
@@ -133,6 +134,7 @@ protected:
     CInventoryAssets inventory_assets_{
         {.dosio = dosio_, .screen = screen_, .special = special_, .game = game_}};
     ::testing::NiceMock<platform::MockEnvironment> environment_;
+    ::testing::NiceMock<platform::MockDisplay> display_;
     CNetGame net_game_{{.file_system = file_system_,
                         .environment = environment_,
                         .clock = game_clock_,
@@ -155,7 +157,8 @@ protected:
                                 .keys = keys_,
                                 .mission = mission_,
                                 .environment = environment_,
-                                .sound = sound_};
+                                .sound = sound_,
+                                .display = display_};
 
     // Every texture and picture the session loads on disk, 32 by 32, and every model it finds
     // the one model.

@@ -20,6 +20,7 @@
 #include "engine/special/special.h"
 #include "shape/edittool/editortools.h"
 #include "tests/mocks/core/missionfixture.h"
+#include "tests/mocks/core/overlayscreen.h"
 #include "tests/mocks/core/testhero.h"
 #include "tests/mocks/platform/mockrenderer.h"
 
@@ -166,6 +167,24 @@ TEST_F(CGameSessionTest, EachFrameReadsTheHotkeys) {
     game_parts_.hold(engine::EInputCodeType::DIK_F12, true);
     play();
     EXPECT_EQ(game_.gamma, 0x8400);
+}
+
+// A message and a bar from before the session are gone once it starts.
+TEST_F(CGameSessionTest, TheOverlayIsClearedAsTheSessionStarts) {
+    game_.displayMessage("stale", 10.0F);
+    game_.setStatusDisplay("Doc", 1.0F, 10.0F);
+    play();
+    drawGameOnto(game_parts_, screen_,
+                 [this](const std::string &name, const std::string &contents) {
+                     givenFile(name, contents);
+                 });
+    screen_.fill(kBackground);
+    game_.renderOverlay(session_);
+    for (int y = 0; y < screen_.getWindowHeight(); ++y) {
+        for (int x = 0; x < screen_.getWindowWidth(); ++x) {
+            ASSERT_EQ(screen_.pixel(x, y), kBackground) << x << "," << y;
+        }
+    }
 }
 
 // The flashlight is set up off, as "Flashlight", reaching 64 units.

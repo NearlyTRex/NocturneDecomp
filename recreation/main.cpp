@@ -423,7 +423,8 @@ private:
                                              .keys = keys_,
                                              .mission = mission_,
                                              .environment = environment_,
-                                             .sound = sound_};
+                                             .sound = sound_,
+                                             .display = display_};
     core::SChapterSelectOwners chapter_select_owners_{.messages = messages_,
                                                       .editor_tools = editor_tools_,
                                                       .pick_list = pick_list_owners_,

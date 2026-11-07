@@ -29,9 +29,6 @@ void CGame::saveClockTime() {
 // deferred: a session the script ended with "end" closing on the Game Over menu, as a helper's
 //   death ends it, where the original drops to the main menu (the decomp's helper_death.h), with
 //   CGame::runGameSession
-// deferred: the message line, chapter title and status bars laid out in boxes in the scene's
-//   picture at the HUD's text scale, the companions' bars starting right of the battery gauge
-//   (the decomp's hud.h, HUD), with CGame::renderOverlay
 // deferred: the death banner a quarter of the way down, clear of the message line and the Game
 //   Over dialog (the decomp's hud.h, HUD), with CGame::processFrame
 // deferred: the iris fade centred where its scene point lands in a pillarboxed or panned picture

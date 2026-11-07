@@ -64,6 +64,10 @@ std::span<const std::uint8_t> CAlphaBitmap::getRaw() const {
     return raw_;
 }
 
+int CAlphaBitmap::getWidth() const {
+    return width_;
+}
+
 // nocedit 0x004105d0
 void CAlphaBitmap::load(std::string_view filename, int width, int height) {
     free();

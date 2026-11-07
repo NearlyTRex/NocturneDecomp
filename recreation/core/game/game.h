@@ -16,6 +16,7 @@
 #include <cstdint>
 #include <string>
 #include <string_view>
+#include <vector>
 
 namespace nocturne::core {
 
@@ -40,7 +41,8 @@ struct SGameOwners {
 // the flashlight, the set it shows, the editor tools whose font follows the screen's size, the
 // version the console names, the fire effects, gore and inventory whose assets it loads, the
 // script whose focus the first camera shows, the network game it syncs and serves frames through,
-// the loading screen it puts away, the keys it masks, and the mission whose local hero it plays.
+// the loading screen it puts away, the keys it masks, the mission whose local hero it plays, and
+// the display whose framing the HUD keeps to.
 struct SGameSessionOwners {
     engine::CConsole &console;
     CDemonCamera &camera;
@@ -60,6 +62,8 @@ struct SGameSessionOwners {
     platform::IEnvironment &environment;
     // What the mute hotkey stops and starts.
     CSound &sound;
+    // Whose widescreen framing the HUD keeps to.
+    const platform::IDisplay &display;
 };
 
 // What chapter select reads the stories' unlock codes from, offers its lists with, and loads the
@@ -85,7 +89,9 @@ public:
     // updateDT's time, in 16.16 seconds and in seconds.
     [[nodiscard]] int getDeltaTimeInt() const;
     [[nodiscard]] float getDeltaTimeFloat() const;
-    void displayMessage(char *message, float duration);
+    // A line centred above the bottom of the screen for duration seconds, fading in its last;
+    // empty text takes the line down.
+    void displayMessage(std::string_view message, float duration);
     void setFudgeTarget(common::CVector3f *fudge_target, float fudge_step);
     // Brings the game up for play at its resolution, with the scene and its lights set up, then
     // plays until the session ends.
@@ -107,7 +113,15 @@ public:
     std::uint32_t fadeIn();
     void resetWeaponSwitchTimers();
     void resetInventoryDisplayTimer();
-    void setStatusDisplay(char *name, float value, float duration);
+    // A bar filled to value, 0 to 1, named and shown for duration seconds, or the bar of that name,
+    // in any case, refilled and its time restarted. Five at most.
+    void setStatusDisplay(std::string_view name, float value, float duration);
+    // The message, chapter title and status bars counted down by the frame's time; a bar whose
+    // time is up goes. Public as playerControls is.
+    void updateStatusDisplays();
+    // The message, chapter title and status bars, in the scene's picture. Public as
+    // playerControls is.
+    void renderOverlay(const SGameSessionOwners &session);
     void loadGame(char *save_filename, int load_mode);
     // A story to play, or a chapter of one, then the mission it starts with is loaded and its
     // heroes made.
@@ -180,6 +194,18 @@ public:
     static constexpr int kMaxGamma = 0x10000;
 
 private:
+    struct SStatusLine {
+        std::string name;
+        float value = 0.0F;
+        // Seconds left.
+        float timer = 0.0F;
+    };
+
+    void clearOverlay();
+    // The frame is the scene's picture: its 4:3 column when pillarboxed, else the whole screen.
+    void renderMessageLine(const SGameSessionOwners &session, const common::SViewport &frame);
+    void renderChapterTitle(const common::SViewport &frame);
+    void renderStatusBars(const SGameSessionOwners &session, const common::SViewport &frame);
     // A press of the action taken, unless another action of its context binds the same key with
     // more of the modifiers held, as Alt+Shift+A is ambient light down's and not up's too.
     [[nodiscard]] bool takeAction(EGameAction action);
@@ -214,6 +240,14 @@ private:
     std::array<bool, kGameActionCount> previous_held_{};
     // The camera the mouse was last measured under; a cut drops that frame's mouse look.
     int stored_camera_index_ = 0;
+    std::string message_text_;
+    // Seconds left.
+    float message_timer_ = 0.0F;
+    // The story's year and title, shown at a session's start.
+    int chapter_year_ = 0;
+    std::string chapter_title_;
+    float chapter_title_timer_ = 0.0F;
+    std::vector<SStatusLine> status_lines_;
 };
 
 } // namespace nocturne::core

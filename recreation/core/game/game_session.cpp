@@ -79,8 +79,6 @@ void CGame::setGameRes(const SGameSessionOwners &session) {
 // deferred: starting the fire effects, or the master lights' saved states after a load, with
 //   CFireEffect::init and CDemonSet::loadMasterLightStates
 // The original also cleared its one pick list; here each dialog makes its own.
-// deferred: clearing the overlay's status lines and message timer, with clearOverlay and
-//   updateStatusDisplays
 // The game is made active as a session starts, edit mode left, so the virtual director chooses the
 // first camera for the script's focus; the camera view the game keeps is for when it isn't.
 // deferred: opening the iris on the focus actor, with beginFadeIn and renderIrisFade
@@ -95,8 +93,6 @@ void CGame::setGameRes(const SGameSessionOwners &session) {
 // deferred: the input masked while paused or a modal dialog is up, with processHotkeys and the
 //   pause menu
 // deferred: each frame's autosave poll (the decomp's nocturne_autosave_poll), with the autosave
-// deferred: each frame's message and status display timers, with updateStatusDisplays and
-//   renderOverlay
 // deferred: each frame's nudge of the fudge target, with processFudge and
 //   CMansionPuzzleCircle::process
 // deferred: the director left alone while the game isn't active, a cinematic skips, a sim frame
@@ -150,6 +146,7 @@ int CGame::runGameSession(const SGameSessionOwners &session) {
     session.set.initScene();
     gamma = std::clamp(gamma, kMinGamma, kMaxGamma);
     session.set.setGamma(gamma);
+    clearOverlay();
     static_cast<void>(session.set.evaluateVirtualDirector(session.script.getFocusActor(), 1));
     loadAssets(session);
     static_cast<void>(session.net_game.syncPlayers(kSyncLoaded));
@@ -160,6 +157,7 @@ int CGame::runGameSession(const SGameSessionOwners &session) {
     session.level_loader.cleanup();
     session.keys.toggleInputMask(true);
     processHotkeys(session);
+    updateStatusDisplays();
     playerControls(session);
     if (session.set.evaluateVirtualDirector(session.script.getFocusActor(), 0) != 0) {
         saveClockTime();

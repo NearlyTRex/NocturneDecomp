@@ -92,9 +92,19 @@ public:
         return renderer_;
     }
 
-    // The fonts the game takes its small editor font from.
-    const CDFont &getFonts() const {
+    // The fonts the game takes its small editor font from and draws its overlay in.
+    CDFont &getFonts() {
         return fonts_;
+    }
+
+    // The 2D the game fills its overlay's bars with, clipped as the test sets.
+    engine::C2d &getTwoD() {
+        return two_d_;
+    }
+
+    // The 3D whose render alpha the game's text fades by.
+    engine::C3d &getThreeD() {
+        return three_d_;
     }
 
 private:

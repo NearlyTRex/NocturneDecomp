@@ -13,6 +13,7 @@
 
 #include <algorithm>
 #include <cstddef>
+#include <format>
 #include <span>
 
 namespace nocturne::core {
@@ -21,6 +22,9 @@ namespace {
 using common::CExtendedFloat;
 
 constexpr int kGammaStep = 0x400;
+// 16.16 fixed point's one.
+constexpr double kGammaOne = 65536.0;
+constexpr float kGammaMessageSeconds = 1.0F;
 // The script view needs a screen this tall, whose top this many lines show the scene.
 constexpr int kScriptViewLeastHeight = 480;
 constexpr int kScriptViewHeight = 240;
@@ -70,8 +74,6 @@ void stepAmbientLight(const SGameSessionOwners &session, float step) {
 // deferred: the script debug keys while not paused: running or stopping the script in the script
 //   view, resuming it, and resetting its dialog, with CScript's script state and resetDialogState
 // deferred: the camera on or off, with CDemonSet's camera flag's reader
-// deferred: "Gamma : " and the new gamma shown for a second, with displayMessage and
-//   renderOverlay
 // nocedit 0x004dcee0
 void CGame::processHotkeys(const SGameSessionOwners &session) {
     if (developer_mode && takeAction(EGameAction::EditMode)) {
@@ -143,8 +145,11 @@ bool CGame::isOutranked(const SKeyChord &chord, EGameAction action) const {
     return false;
 }
 
+// The new gamma is shown for a second.
 void CGame::stepGamma(const SGameSessionOwners &session, int step) {
     gamma = std::clamp(gamma + step, kMinGamma, kMaxGamma);
+    displayMessage(std::format("Gamma : {:f}", static_cast<double>(gamma) / kGammaOne),
+                   kGammaMessageSeconds);
     session.set.setGamma(gamma);
 }
 

@@ -37,6 +37,8 @@ struct SChapter {
 struct SStory {
     std::string_view name;
     std::string_view title;
+    // Shown with the title as its session starts.
+    int year;
     std::string_view unlock_key;
     int unlock_code;
     std::span<const SChapter> chapters;
@@ -86,26 +88,31 @@ constexpr std::array<SChapter, 1> kVolume5{{
 constexpr std::array<SStory, 5> kStories{{
     {.name = "Volume 1 - 'Dark Reign of the Vampire King'",
      .title = "'Dark Reign of the Vampire King'",
+     .year = 1927,
      .unlock_key = "Act1Code",
      .unlock_code = 0x331,
      .chapters = kVolume1},
     {.name = "Volume 2 - 'Tomb of the Underground God'",
      .title = "'Tomb of the Underground God'",
+     .year = 1931,
      .unlock_key = "Act2Code",
      .unlock_code = 0x3cc,
      .chapters = kVolume2},
     {.name = "Volume 3 - 'Windy City Massacre'",
      .title = "'Windy City Massacre'",
+     .year = 1933,
      .unlock_key = "Act3Code",
      .unlock_code = 0x3ac,
      .chapters = kVolume3},
     {.name = "Volume 4 - 'The House on the Edge of Hell'",
      .title = "'The House on the Edge of Hell'",
+     .year = 1935,
      .unlock_key = "Act4Code",
      .unlock_code = 0xd6,
      .chapters = kVolume4},
     {.name = "Volume 5 - 'Epilogue'",
      .title = "'Epilogue'",
+     .year = 1942,
      .unlock_key = {},
      .unlock_code = 0,
      .chapters = kVolume5},
@@ -113,6 +120,7 @@ constexpr std::array<SStory, 5> kStories{{
 constexpr std::size_t kActStories = 4;
 constexpr std::string_view kIniSection = "Game";
 constexpr int kLoadingFrames = 10;
+constexpr float kChapterTitleSeconds = 8.0F;
 constexpr int kNoSelection = -1;
 
 struct SChoice {
@@ -212,8 +220,6 @@ private:
 // file again, which the lists' greying of every missing one makes unneeded.
 // deferred: zeroing the act's enemy and kill counts and its game and play times, with
 //   CGame::displayActStats
-// deferred: showing the story's year and title for eight seconds, or nothing after the browser,
-//   with CGame::renderOverlay and CGame::updateStatusDisplays
 // deferred: clearing the events' game flags, with CEventList::resetGameFlags
 // deferred: loading the save a run asks to reload, then the editor's font as it was, with
 //   CGame::loadGame and the play loop
@@ -233,6 +239,9 @@ void CGame::showChapterSelect(const SChapterSelectOwners &owners, EChapterSelect
                                                          filename, false)) {
             return;
         }
+        chapter_year_ = 0;
+        chapter_title_.clear();
+        chapter_title_timer_ = 0.0F;
     } else {
         CChapterChooser chooser(owners, owners_.dosio, full_install,
                                 select_mode != EChapterSelectMode::kStories || !full_install);
@@ -240,8 +249,12 @@ void CGame::showChapterSelect(const SChapterSelectOwners &owners, EChapterSelect
         if (!choice) {
             return;
         }
-        filename = kStories[choice->story].chapters[choice->chapter].mission;
+        const SStory &chosen = kStories[choice->story];
+        filename = chosen.chapters[choice->chapter].mission;
         story = static_cast<int>(choice->story);
+        chapter_year_ = chosen.year;
+        chapter_title_ = owners.messages.getLocalizedString(chosen.title);
+        chapter_title_timer_ = kChapterTitleSeconds;
     }
     const bool keep_assets = common::equalsIgnoringAsciiCase(current_save_file_, filename);
     if (!keep_assets) {
