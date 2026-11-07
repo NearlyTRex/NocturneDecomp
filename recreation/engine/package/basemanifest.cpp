@@ -3,7 +3,7 @@
 #include "common/error/error.h"
 #include "common/text/ascii.h"
 #include "engine/package/packagedata.h"
-#include "engine/package/podhash.h"
+#include "engine/package/podcheck.h"
 #include "platform/filesystem.h"
 
 #include <algorithm>
@@ -58,16 +58,13 @@ SPackagePod describePod(platform::IFileSystem &file_system, const SRelease &rele
         notes.push_back(std::format("{} is missing", shipped.name));
         return {.path = shipped.name, .size = {}, .modified = {}, .xxh3 = {}};
     }
-    const std::optional<platform::SFileInfo> info = file_system.getFileInfo(*name);
-    const std::optional<std::string> hash = hashFile(file_system, *name);
-    if (!info || !hash) {
+    SPackagePod pod = recordPod(file_system, "", *name);
+    if (!pod.xxh3) {
         notes.push_back(std::format("{} can't be read", *name));
-        return {.path = *name, .size = {}, .modified = {}, .xxh3 = {}};
-    }
-    if (info->size != shipped.size || *hash != shipped.xxh3) {
+    } else if (pod.size != shipped.size || pod.xxh3 != shipped.xxh3) {
         notes.push_back(std::format("{} isn't the copy {} shipped", *name, release.name));
     }
-    return {.path = *name, .size = info->size, .modified = info->modified, .xxh3 = *hash};
+    return pod;
 }
 
 } // namespace

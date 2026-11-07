@@ -1,5 +1,6 @@
 #include "engine/package/podcheck.h"
 
+#include "common/text/path.h"
 #include "engine/package/packagedata.h"
 #include "engine/package/podhash.h"
 #include "platform/filesystem.h"
@@ -7,20 +8,14 @@
 #include <optional>
 #include <string>
 #include <string_view>
+#include <utility>
 #include <vector>
 
 namespace nocturne::engine {
 namespace {
 
-std::string joinPath(std::string_view folder, std::string_view path) {
-    if (folder.empty()) {
-        return std::string(path);
-    }
-    return std::string(folder) + "/" + std::string(path);
-}
-
 EPodState checkPod(platform::IFileSystem &file_system, std::string_view folder, SPackagePod &pod) {
-    const std::string path = joinPath(folder, pod.path);
+    const std::string path = common::joinPath(folder, pod.path);
     const std::optional<platform::SFileInfo> info = file_system.getFileInfo(path);
     if (!info) {
         return EPodState::Missing;
@@ -41,6 +36,20 @@ EPodState checkPod(platform::IFileSystem &file_system, std::string_view folder, 
 }
 
 } // namespace
+
+SPackagePod recordPod(platform::IFileSystem &file_system, std::string_view folder,
+                      std::string_view path) {
+    const std::string full_path = common::joinPath(folder, path);
+    const std::optional<platform::SFileInfo> info = file_system.getFileInfo(full_path);
+    std::optional<std::string> hash = hashFile(file_system, full_path);
+    if (!info || !hash) {
+        return {.path = std::string(path), .size = {}, .modified = {}, .xxh3 = {}};
+    }
+    return {.path = std::string(path),
+            .size = info->size,
+            .modified = info->modified,
+            .xxh3 = std::move(hash)};
+}
 
 std::vector<SPodCheck> checkPackagePods(platform::IFileSystem &file_system, std::string_view folder,
                                         SPackageManifest &manifest) {

@@ -127,10 +127,7 @@ Result<std::vector<const toml::table *>> readTables(const toml::table &table,
 }
 
 bool isPackageId(std::string_view id) {
-    return std::ranges::all_of(id, [](char c) {
-        return (c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z') || (c >= '0' && c <= '9') ||
-               c == '.' || c == '_' || c == '-';
-    });
+    return std::ranges::all_of(id, isIdCharacter);
 }
 
 bool isHash(std::string_view hash) {
@@ -347,6 +344,11 @@ std::string formatList(const std::vector<std::string> &values) {
 }
 
 } // namespace
+
+bool isIdCharacter(char c) {
+    return (c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z') || (c >= '0' && c <= '9') || c == '.' ||
+           c == '_' || c == '-';
+}
 
 std::expected<SPackageManifest, std::string> parsePackageManifest(std::string_view text) {
     return parseToml(text).and_then(

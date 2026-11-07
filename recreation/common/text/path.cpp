@@ -43,6 +43,13 @@ std::string_view pathStem(std::string_view path) {
     return leaf.substr(0, leaf.size() - pathExtension(leaf).size());
 }
 
+std::string joinPath(std::string_view folder, std::string_view name) {
+    if (folder.empty()) {
+        return std::string(name);
+    }
+    return std::string(folder) + "/" + std::string(name);
+}
+
 std::string resolvePathIgnoringCase(std::string_view path, const SPathLookup &lookup) {
     std::string portable = toPortablePath(path);
     if (portable.empty() || lookup.exists(portable)) {

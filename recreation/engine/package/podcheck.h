@@ -28,6 +28,11 @@ struct SPodCheck {
     bool operator==(const SPodCheck &) const = default;
 };
 
+// The POD at path under folder as a manifest records it: its size, time and hash, or only its
+// path when it can't be read.
+[[nodiscard]] SPackagePod recordPod(platform::IFileSystem &file_system, std::string_view folder,
+                                    std::string_view path);
+
 // Each of the manifest's PODs, found under folder ("" for the install folder), against what it
 // recorded: a POD whose size or time isn't the recorded one is hashed again.
 [[nodiscard]] std::vector<SPodCheck> checkPackagePods(platform::IFileSystem &file_system,

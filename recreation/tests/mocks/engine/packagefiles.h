@@ -7,10 +7,12 @@
 
 #include <gmock/gmock.h>
 
+#include <cstddef>
 #include <ctime>
 #include <map>
 #include <memory>
 #include <optional>
+#include <set>
 #include <string>
 #include <string_view>
 #include <vector>
@@ -22,7 +24,7 @@ inline constexpr std::string_view kHashOfPodOne = "fed9db5d545bd067ad07fcbefa9eb
 inline constexpr std::string_view kHashOfPodTwo = "8c28a73ffb0dadc1028ba4c38e6ca219";
 
 // An install held in memory: files by exact path, each with a time, found by a wildcard in the
-// folder it names.
+// folder it names, with each folder a file is in listed too. A file written is read back.
 class CPackageFiles {
 public:
     CPackageFiles() {
@@ -36,8 +38,27 @@ public:
                     found.push_back(info(path, file));
                 }
             }
+            for (const std::string &folder : folders()) {
+                const common::SWildcardPath where = common::splitWildcardPath(folder);
+                if (where.directory == split.directory &&
+                    common::matchesWildcard(split.pattern, where.pattern)) {
+                    found.push_back({.name = where.pattern, .is_directory = true});
+                }
+            }
             return found;
         });
+        ON_CALL(file_system_, readFile).WillByDefault([this](std::string_view path) {
+            const auto found = files_.find(std::string(path));
+            return found == files_.end() || found->second.unreadable
+                       ? std::nullopt
+                       : std::optional(found->second.contents);
+        });
+        ON_CALL(file_system_, writeFile)
+            .WillByDefault([this](std::string_view path, std::string_view text) {
+                files_[std::string(path)] = {
+                    .contents = std::string(text), .modified = kModified, .unreadable = false};
+                return true;
+            });
         ON_CALL(file_system_, getFileInfo).WillByDefault([this](std::string_view path) {
             const auto found = files_.find(std::string(path));
             return found == files_.end() ? std::nullopt
@@ -65,6 +86,12 @@ public:
             .contents = std::string(size, '\0'), .modified = kModified, .unreadable = true};
     }
 
+    // A file's contents, or nothing when there is none.
+    [[nodiscard]] std::optional<std::string> contents(const std::string &path) const {
+        const auto found = files_.find(path);
+        return found == files_.end() ? std::nullopt : std::optional(found->second.contents);
+    }
+
     static constexpr std::time_t kModified = 946627200;
 
     ::testing::NiceMock<platform::MockFileSystem> file_system_;
@@ -80,6 +107,18 @@ private:
         return {.name = std::string(common::splitWildcardPath(path).pattern),
                 .size = file.contents.size(),
                 .modified = file.modified};
+    }
+
+    // Every folder a file is in, each once.
+    [[nodiscard]] std::set<std::string> folders() const {
+        std::set<std::string> found;
+        for (const auto &[path, file] : files_) {
+            for (std::size_t slash = path.find('/'); slash != std::string::npos;
+                 slash = path.find('/', slash + 1)) {
+                found.insert(path.substr(0, slash));
+            }
+        }
+        return found;
     }
 
     std::map<std::string, SFile> files_;

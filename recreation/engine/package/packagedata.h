@@ -60,6 +60,9 @@ struct SRelease {
     bool operator==(const SRelease &) const = default;
 };
 
+// What a package's or release's id may hold: letters, digits, '.', '_' and '-'.
+[[nodiscard]] bool isIdCharacter(char c);
+
 // The manifest, or what is wrong with it, naming the key.
 [[nodiscard]] std::expected<SPackageManifest, std::string>
 parsePackageManifest(std::string_view text);

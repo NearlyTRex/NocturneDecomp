@@ -84,5 +84,22 @@ TEST_F(CPodCheckTest, APackagesPodsAreFoundInItsFolder) {
     EXPECT_EQ(check("mods/extra"), EPodState::Unchanged);
 }
 
+TEST_F(CPodCheckTest, APodIsRecordedWithItsSizeTimeAndHash) {
+    files_.givenFile("mods/extra/A.POD", "POD one");
+    EXPECT_EQ(recordPod(files_.file_system_, "mods/extra", "A.POD"),
+              (SPackagePod{.path = "A.POD",
+                           .size = 7,
+                           .modified = CPackageFiles::kModified,
+                           .xxh3 = std::string(kHashOfPodOne)}));
+}
+
+TEST_F(CPodCheckTest, APodThatCantBeReadIsRecordedByItsPathAlone) {
+    files_.givenUnreadableFile("A.POD", 7);
+    const SPackagePod bare{.path = "A.POD", .size = {}, .modified = {}, .xxh3 = {}};
+    EXPECT_EQ(recordPod(files_.file_system_, "", "A.POD"), bare);
+    EXPECT_EQ(recordPod(files_.file_system_, "", "B.POD").path, "B.POD");
+    EXPECT_FALSE(recordPod(files_.file_system_, "", "B.POD").xxh3.has_value());
+}
+
 } // namespace
 } // namespace nocturne::engine

@@ -37,6 +37,11 @@ TEST(Path, TheStemIsTheLeafWithoutItsExtension) {
     EXPECT_EQ(pathStem("music.v2/theme"), "theme");
 }
 
+TEST(Path, ANameIsJoinedToItsFolderWithASlash) {
+    EXPECT_EQ(joinPath("mods/extra", "A.POD"), "mods/extra/A.POD");
+    EXPECT_EQ(joinPath("", "A.POD"), "A.POD");
+}
+
 // A small tree: directories map to their entries, and every listed path exists.
 class ResolvePathTest : public ::testing::Test {
 protected:
