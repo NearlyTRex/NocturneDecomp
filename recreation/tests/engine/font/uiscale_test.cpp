@@ -22,5 +22,14 @@ TEST(UiScale, IsHeldToOneToFour) {
     EXPECT_EQ(getUiScale(4320), 4);
 }
 
+TEST(UiScale, TextScaleIsTheUnroundedShareOfFourEightyLinesFromOneAndAHalf) {
+    EXPECT_FLOAT_EQ(getUiTextScale(240), 1.0F);
+    EXPECT_FLOAT_EQ(getUiTextScale(600), 1.0F);
+    EXPECT_FLOAT_EQ(getUiTextScale(719), 1.0F);
+    EXPECT_FLOAT_EQ(getUiTextScale(720), 1.5F);
+    EXPECT_FLOAT_EQ(getUiTextScale(1080), 2.25F);
+    EXPECT_FLOAT_EQ(getUiTextScale(4320), 9.0F);
+}
+
 } // namespace
 } // namespace nocturne::engine

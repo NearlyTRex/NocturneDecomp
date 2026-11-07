@@ -65,25 +65,15 @@ bool clipCharacter(int &left, int &top, int &right, int &bottom, const SClipRect
     return false;
 }
 
-// The MMX blend: each byte of a pixel's table colour, scaled by the render colour's, is how
-// much of the blend colour's byte goes over the screen's. Index 0 is left alone.
+// Each pixel's table colour is its coverage. Index 0 is left alone.
 // nocedit 0x004ce240
 void drawAlphaBlendedPixels(std::uint32_t *dest_buffer, std::span<const std::uint8_t> src_indices,
                             std::span<const std::uint32_t, 256> color_table,
                             std::uint32_t blend_color, std::uint32_t render_color) {
     for (const std::uint8_t index : src_indices) {
         if (index != 0) {
-            const std::uint32_t color = color_table[index];
-            std::uint32_t out = 0;
-            for (unsigned shift = 0; shift < 32U; shift += 8U) {
-                const std::uint32_t alpha =
-                    (((color >> shift) & kLevelMask) * ((render_color >> shift) & kLevelMask)) >>
-                    8U;
-                const std::uint32_t mixed = blendLevel((blend_color >> shift) & kLevelMask,
-                                                       (*dest_buffer >> shift) & kLevelMask, alpha);
-                out |= mixed << shift;
-            }
-            *dest_buffer = out;
+            *dest_buffer =
+                blendCoverage32(color_table[index], blend_color, *dest_buffer, render_color);
         }
         ++dest_buffer;
     }
@@ -400,8 +390,6 @@ void CBitFont::drawRow16(std::uint16_t *row, std::span<const std::uint8_t> indic
                          std::size_t bitmap, int color_mode) {
     const SSheet &sheet = sheets_[bitmap];
     const std::uint32_t solid = getSolidColor16(color_mode);
-    const SColorChannels &channels = screen_.getColorChannels();
-    const SColorMasks &masks = screen_.getColorMasks();
     const auto alpha_value = static_cast<std::uint32_t>(three_d_.getCurrentAlphaValue());
     for (const std::uint8_t index : indices) {
         const std::uint32_t color = color_mode == kSheetColors ? sheet.display[index] : solid;
@@ -412,13 +400,21 @@ void CBitFont::drawRow16(std::uint16_t *row, std::span<const std::uint8_t> indic
         } else if (const std::uint32_t alpha =
                        (alpha_value * sheet.palette[static_cast<std::size_t>(index) * 3]) / 256U;
                    alpha != 0) {
-            *row = static_cast<std::uint16_t>(
-                blendChannel(color, *row, masks.red_mask16, channels.red, alpha) |
-                blendChannel(color, *row, masks.green_mask16, channels.green, alpha) |
-                blendChannel(color, *row, masks.blue_mask16, channels.blue, alpha));
+            *row = blendPixel16(color, *row, alpha);
         }
         ++row;
     }
+}
+
+// Each channel as an 8-bit level, blended, and packed back to its width.
+std::uint16_t CBitFont::blendPixel16(std::uint32_t source, std::uint32_t screen,
+                                     std::uint32_t alpha) {
+    const SColorChannels &channels = screen_.getColorChannels();
+    const SColorMasks &masks = screen_.getColorMasks();
+    return static_cast<std::uint16_t>(
+        blendChannel(source, screen, masks.red_mask16, channels.red, alpha) |
+        blendChannel(source, screen, masks.green_mask16, channels.green, alpha) |
+        blendChannel(source, screen, masks.blue_mask16, channels.blue, alpha));
 }
 
 // A blended row blends toward one colour: the solid colour, or the sheet colour of its first
