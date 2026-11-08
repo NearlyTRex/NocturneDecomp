@@ -39,7 +39,7 @@ void __cdecl engine_drender_cpp_CDemonRenderer_renderFullEffectsDirect_FUN_0048b
       else {
         g_RenderStateFlags.dword = RENDER_TEX_ENABLE;
         g_VertexPreprocessMode = PREPROCESS_NONE;
-        g_ScanlineRenderFunc = (MainScanlineFunc *)core_dstrender_cpp_renderTexturedAlphaMMXScanline_FUN_004907e7;
+        g_ScanlineRenderFunc = (MainScanlineFunc *)core_dstrendr_cpp_renderTexturedAlphaMMXScanline_FUN_004907e7;
       }
       engine_drender_cpp_CDemonRenderer_clipAndFillPoly_FUN_0048a740
                 (this_ptr,(prim->base).count,(int *)(prim + 1));

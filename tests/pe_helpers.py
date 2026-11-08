@@ -187,3 +187,12 @@ def build_sectioned_pe(sections, image_base = 0x400000):
 
 def section_va(image_base, index):
     return image_base + SECTION_RVA * (index + 1)
+
+
+# x86 for code sections: `push imm32`, and `call rel32` placed at `at`
+def push_imm32(value):
+    return b"\x68" + struct.pack("<I", value)
+
+
+def call_rel32(at, target):
+    return b"\xe8" + struct.pack("<i", target - (at + 5))

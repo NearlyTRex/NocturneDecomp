@@ -469,7 +469,7 @@ def test_a_registered_class_takes_its_known_unit_or_a_core_guess_no_one_has():
     units = {"CAmmo": "core_ammo.cpp", "CZombieDog": "core_dog.cpp"}
     assert wsi.registered_units(regs, units) == {"1": "core_ammo.cpp", "2": "core_dog1.cpp", "3": "core_dog.cpp",
                                                 "4": "core_doghouse.cpp"}
-    assert wsi.factory_core("CAmmo") == "factoryFuncAmmo" and wsi.factory_core("buttonStruct") == "factoryFuncbuttonStruct"
+    assert wsi.factory_core("CAmmo") == "factoryFuncAmmo" and wsi.factory_core("CAmmo_Mana") == "factoryFuncAmmoMana"
 
 
 def test_registrations_name_the_units_the_registrar_and_the_factories(registration):

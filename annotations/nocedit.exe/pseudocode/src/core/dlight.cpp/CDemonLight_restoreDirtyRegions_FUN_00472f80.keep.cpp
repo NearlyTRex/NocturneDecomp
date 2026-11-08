@@ -121,7 +121,7 @@ LAB_004730f9:
           iVar1 = 0;
           do {
             iVar5 = local_18 * this_ptr->shadow_map_width + g_DirtySpanStarts[iVar1];
-            core_dstrender_cpp_memcpyMMX_FUN_00492001
+            core_dstrendr_cpp_memcpyMMX_FUN_00492001
                       (this_ptr->shadow_depth_buffer + iVar5,
                        (char *)this_ptr->master_zbuffer + iVar5 * 2,
                        (g_DirtySpanEnds[iVar1] - g_DirtySpanStarts[iVar1]) * 2 + 2);

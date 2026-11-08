@@ -33,7 +33,7 @@ foreach(_module IN LISTS NOCTURNE_MODULES)
         # otherwise miscompile. -g and ASan still apply.
         foreach(_src IN LISTS _sources)
             if(_src MATCHES "Scanline(16|32)_FUN_"
-               OR _src MATCHES "/src/core/dstrender\\.cpp/"
+               OR _src MATCHES "/src/core/dstrendr\\.cpp/"
                OR _src MATCHES "/src/engine/3d\\.c/"
                OR _src MATCHES "/src/core/door\\.cpp/CDoor_render"
                OR _src MATCHES "/src/core/flame\\.cpp/CFlame_(render|updateGlobe)"

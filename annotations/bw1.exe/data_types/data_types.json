@@ -1433,10 +1433,6 @@
       "type":"struct"
     },
     {
-      "name":"IpAddr",
-      "type":"struct"
-    },
-    {
       "name":"LONG",
       "type":"typedef"
     },
@@ -1813,14 +1809,6 @@
       "type":"union"
     },
     {
-      "name":"NotesMap",
-      "type":"struct"
-    },
-    {
-      "name":"NotesSection",
-      "type":"struct"
-    },
-    {
       "name":"PALETTEENTRY",
       "type":"struct"
     },
@@ -1855,26 +1843,6 @@
     {
       "name":"PVOID",
       "type":"typedef"
-    },
-    {
-      "name":"PageResource_Bitmap",
-      "type":"struct"
-    },
-    {
-      "name":"PageResource_Map",
-      "type":"struct"
-    },
-    {
-      "name":"PageResource_Text",
-      "type":"struct"
-    },
-    {
-      "name":"PageResource_TwanaCharacter",
-      "type":"struct"
-    },
-    {
-      "name":"PageResource_TwanaEntry",
-      "type":"struct"
     },
     {
       "name":"QSORT_COMPARATOR_FUNC",
@@ -1914,6 +1882,10 @@
     },
     {
       "name":"SBug",
+      "type":"struct"
+    },
+    {
+      "name":"SButtonStruct",
       "type":"struct"
     },
     {
@@ -2026,6 +1998,10 @@
     },
     {
       "name":"SInventoryItemInfo",
+      "type":"struct"
+    },
+    {
+      "name":"SIpAddr",
       "type":"struct"
     },
     {
@@ -2181,7 +2157,35 @@
       "type":"struct"
     },
     {
+      "name":"SNotesMap",
+      "type":"struct"
+    },
+    {
+      "name":"SNotesSection",
+      "type":"struct"
+    },
+    {
       "name":"SOCKADDR_IN",
+      "type":"struct"
+    },
+    {
+      "name":"SPageResourceBitmap",
+      "type":"struct"
+    },
+    {
+      "name":"SPageResourceMap",
+      "type":"struct"
+    },
+    {
+      "name":"SPageResourceText",
+      "type":"struct"
+    },
+    {
+      "name":"SPageResourceTwanaCharacter",
+      "type":"struct"
+    },
+    {
+      "name":"SPageResourceTwanaEntry",
       "type":"struct"
     },
     {
@@ -2261,6 +2265,10 @@
       "type":"struct"
     },
     {
+      "name":"SSocket",
+      "type":"struct"
+    },
+    {
       "name":"SSoftwareEdge",
       "type":"struct"
     },
@@ -2274,6 +2282,10 @@
     },
     {
       "name":"SStereoGains",
+      "type":"struct"
+    },
+    {
+      "name":"STextView",
       "type":"struct"
     },
     {
@@ -2317,10 +2329,6 @@
       "type":"struct"
     },
     {
-      "name":"Socket",
-      "type":"struct"
-    },
-    {
       "name":"StringFileInfo",
       "type":"struct"
     },
@@ -2330,10 +2338,6 @@
     },
     {
       "name":"StringTable",
-      "type":"struct"
-    },
-    {
-      "name":"TextView",
       "type":"struct"
     },
     {
@@ -2358,6 +2362,10 @@
     },
     {
       "name":"UINT_PTR",
+      "type":"typedef"
+    },
+    {
+      "name":"SOCKET",
       "type":"typedef"
     },
     {
@@ -2439,6 +2447,22 @@
     {
       "name":"WNDPROC",
       "type":"typedef"
+    },
+    {
+      "name":"WSAData",
+      "type":"struct"
+    },
+    {
+      "name":"WSADATA",
+      "type":"typedef"
+    },
+    {
+      "name":"LPWSADATA",
+      "type":"typedef"
+    },
+    {
+      "name":"WatcomDestructorCall",
+      "type":"struct"
     },
     {
       "name":"WatcomHeapInfo",
@@ -2563,6 +2587,14 @@
     {
       "name":"IDirectSound_Initialize",
       "type":"function_definition"
+    },
+    {
+      "name":"LPDSENUMCALLBACKA_FUNC",
+      "type":"function_definition"
+    },
+    {
+      "name":"LPDSENUMCALLBACKA",
+      "type":"typedef"
     },
     {
       "name":"_LIST_ENTRY",
@@ -2745,11 +2777,11 @@
       "type":"typedef"
     },
     {
-      "name":"buttonStruct",
+      "name":"dst_rule",
       "type":"struct"
     },
     {
-      "name":"dst_rule",
+      "name":"hostent",
       "type":"struct"
     },
     {
@@ -2931,6 +2963,30 @@
     {
       "name":"time_t",
       "type":"typedef"
+    },
+    {
+      "name":"timeval",
+      "type":"struct"
+    },
+    {
+      "name":"u_int",
+      "type":"typedef"
+    },
+    {
+      "name":"fd_set",
+      "type":"struct"
+    },
+    {
+      "name":"u_long",
+      "type":"typedef"
+    },
+    {
+      "name":"u_short",
+      "type":"typedef"
+    },
+    {
+      "name":"sockaddr",
+      "type":"struct"
     },
     {
       "name":"uint16_t",
@@ -5562,6 +5618,32 @@
       "type":"function_definition"
     },
     {
+      "calling_convention":"__stdcall",
+      "cat":"/Nocturne/FunctionDefinition/System/dsound.h",
+      "importable":true,
+      "name":"LPDSENUMCALLBACKA_FUNC",
+      "parameters":[
+        {
+          "name":"lpGuid",
+          "type":"LPGUID"
+        },
+        {
+          "name":"lpcstrDescription",
+          "type":"LPCSTR"
+        },
+        {
+          "name":"lpcstrModule",
+          "type":"LPCSTR"
+        },
+        {
+          "name":"lpContext",
+          "type":"LPVOID"
+        }
+      ],
+      "return_type":"BOOL",
+      "type":"function_definition"
+    },
+    {
       "calling_convention":"unknown",
       "cat":"/Nocturne/FunctionDefinition/System/wincon.h",
       "importable":true,
@@ -6895,17 +6977,6 @@
     },
     {
       "alig":1,
-      "cat":"/Nocturne/Struct/Game",
-      "desc":"Stub: size from Watcom RTTI, fields not yet recovered",
-      "fields":[],
-      "importable":true,
-      "len":44,
-      "name":"buttonStruct",
-      "pack":false,
-      "type":"struct"
-    },
-    {
-      "alig":1,
       "cat":"/Nocturne/Class/Game",
       "desc":"Stub: size from Watcom RTTI, fields not yet recovered",
       "fields":[],
@@ -7578,10 +7649,47 @@
     {
       "alig":1,
       "cat":"/Nocturne/Class/Game",
-      "desc":"Stub: no RTTI in this build, size and fields not yet recovered",
-      "fields":[],
+      "desc":"",
+      "fields":[
+        {
+          "len":40,
+          "name":"class_name",
+          "offset":0,
+          "type":"char[40]"
+        },
+        {
+          "len":4,
+          "name":"parent_type",
+          "offset":40,
+          "type":"CDemonActorType*"
+        },
+        {
+          "len":4,
+          "name":"factory_func",
+          "offset":44,
+          "type":"CDemonActor_FactoryFunc*"
+        },
+        {
+          "len":4,
+          "name":"archive_version",
+          "offset":48,
+          "type":"int*"
+        },
+        {
+          "len":4,
+          "name":"latest_version",
+          "offset":52,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"name_hash",
+          "offset":56,
+          "type":"uint"
+        }
+      ],
       "importable":true,
-      "len":1,
+      "len":60,
       "name":"CDemonActorType",
       "pack":false,
       "type":"struct"
@@ -10294,6 +10402,30 @@
       "type":"struct"
     },
     {
+      "alig":4,
+      "cat":"/winsock.h",
+      "desc":"",
+      "fields":[
+        {
+          "len":4,
+          "name":"fd_count",
+          "offset":0,
+          "type":"u_int"
+        },
+        {
+          "len":256,
+          "name":"fd_array",
+          "offset":4,
+          "type":"SOCKET[64]"
+        }
+      ],
+      "importable":true,
+      "len":260,
+      "name":"fd_set",
+      "pack":true,
+      "type":"struct"
+    },
+    {
       "alig":1,
       "cat":"/Nocturne/Struct/System/stdio.h",
       "desc":"Stub: no RTTI in this build, size and fields not yet recovered",
@@ -10478,6 +10610,48 @@
       "importable":true,
       "len":4,
       "name":"HMENU__",
+      "pack":true,
+      "type":"struct"
+    },
+    {
+      "alig":4,
+      "cat":"/winsock.h",
+      "desc":"",
+      "fields":[
+        {
+          "len":4,
+          "name":"h_name",
+          "offset":0,
+          "type":"char*"
+        },
+        {
+          "len":4,
+          "name":"h_aliases",
+          "offset":4,
+          "type":"char**"
+        },
+        {
+          "len":2,
+          "name":"h_addrtype",
+          "offset":8,
+          "type":"short"
+        },
+        {
+          "len":2,
+          "name":"h_length",
+          "offset":10,
+          "type":"short"
+        },
+        {
+          "len":4,
+          "name":"h_addr_list",
+          "offset":12,
+          "type":"char**"
+        }
+      ],
+      "importable":true,
+      "len":16,
+      "name":"hostent",
       "pack":true,
       "type":"struct"
     },
@@ -11961,17 +12135,6 @@
     },
     {
       "alig":1,
-      "cat":"/Nocturne/Struct/Game",
-      "desc":"Stub: size from Watcom RTTI, fields not yet recovered",
-      "fields":[],
-      "importable":true,
-      "len":4,
-      "name":"IpAddr",
-      "pack":false,
-      "type":"struct"
-    },
-    {
-      "alig":1,
       "cat":"/Nocturne/Struct/System/unknwn.h",
       "desc":"Stub: no RTTI in this build, size and fields not yet recovered",
       "fields":[],
@@ -12025,83 +12188,6 @@
       "importable":true,
       "len":1,
       "name":"MathErrorContext",
-      "pack":false,
-      "type":"struct"
-    },
-    {
-      "alig":1,
-      "cat":"/Nocturne/Struct/Game",
-      "desc":"Stub: size from Watcom RTTI, fields not yet recovered",
-      "fields":[],
-      "importable":true,
-      "len":2416,
-      "name":"NotesMap",
-      "pack":false,
-      "type":"struct"
-    },
-    {
-      "alig":1,
-      "cat":"/Nocturne/Struct/Game",
-      "desc":"Stub: size from Watcom RTTI, fields not yet recovered",
-      "fields":[],
-      "importable":true,
-      "len":740,
-      "name":"NotesSection",
-      "pack":false,
-      "type":"struct"
-    },
-    {
-      "alig":1,
-      "cat":"/Nocturne/Struct/Game",
-      "desc":"Stub: size from Watcom RTTI, fields not yet recovered",
-      "fields":[],
-      "importable":true,
-      "len":44,
-      "name":"PageResource_Bitmap",
-      "pack":false,
-      "type":"struct"
-    },
-    {
-      "alig":1,
-      "cat":"/Nocturne/Struct/Game",
-      "desc":"Stub: size from Watcom RTTI, fields not yet recovered",
-      "fields":[],
-      "importable":true,
-      "len":28,
-      "name":"PageResource_Map",
-      "pack":false,
-      "type":"struct"
-    },
-    {
-      "alig":1,
-      "cat":"/Nocturne/Struct/Game",
-      "desc":"Stub: size from Watcom RTTI, fields not yet recovered",
-      "fields":[],
-      "importable":true,
-      "len":288,
-      "name":"PageResource_Text",
-      "pack":false,
-      "type":"struct"
-    },
-    {
-      "alig":1,
-      "cat":"/Nocturne/Struct/Game",
-      "desc":"Stub: size from Watcom RTTI, fields not yet recovered",
-      "fields":[],
-      "importable":true,
-      "len":76,
-      "name":"PageResource_TwanaCharacter",
-      "pack":false,
-      "type":"struct"
-    },
-    {
-      "alig":1,
-      "cat":"/Nocturne/Struct/Game",
-      "desc":"Stub: size from Watcom RTTI, fields not yet recovered",
-      "fields":[],
-      "importable":true,
-      "len":280,
-      "name":"PageResource_TwanaEntry",
       "pack":false,
       "type":"struct"
     },
@@ -12223,6 +12309,17 @@
       "importable":true,
       "len":64,
       "name":"SBug",
+      "pack":false,
+      "type":"struct"
+    },
+    {
+      "alig":1,
+      "cat":"/Nocturne/Struct/Game",
+      "desc":"Stub: size from Watcom RTTI, fields not yet recovered",
+      "fields":[],
+      "importable":true,
+      "len":44,
+      "name":"SButtonStruct",
       "pack":false,
       "type":"struct"
     },
@@ -12551,6 +12648,17 @@
       "importable":true,
       "len":1,
       "name":"SInventoryItemInfo",
+      "pack":false,
+      "type":"struct"
+    },
+    {
+      "alig":1,
+      "cat":"/Nocturne/Struct/Game",
+      "desc":"Stub: size from Watcom RTTI, fields not yet recovered",
+      "fields":[],
+      "importable":true,
+      "len":4,
+      "name":"SIpAddr",
       "pack":false,
       "type":"struct"
     },
@@ -13179,6 +13287,52 @@
     },
     {
       "alig":1,
+      "cat":"/Nocturne/Struct/Game",
+      "desc":"Stub: size from Watcom RTTI, fields not yet recovered",
+      "fields":[],
+      "importable":true,
+      "len":2416,
+      "name":"SNotesMap",
+      "pack":false,
+      "type":"struct"
+    },
+    {
+      "alig":1,
+      "cat":"/Nocturne/Struct/Game",
+      "desc":"Stub: size from Watcom RTTI, fields not yet recovered",
+      "fields":[],
+      "importable":true,
+      "len":740,
+      "name":"SNotesSection",
+      "pack":false,
+      "type":"struct"
+    },
+    {
+      "alig":2,
+      "cat":"/winsock.h",
+      "desc":"",
+      "fields":[
+        {
+          "len":2,
+          "name":"sa_family",
+          "offset":0,
+          "type":"u_short"
+        },
+        {
+          "len":14,
+          "name":"sa_data",
+          "offset":2,
+          "type":"char[14]"
+        }
+      ],
+      "importable":true,
+      "len":16,
+      "name":"sockaddr",
+      "pack":true,
+      "type":"struct"
+    },
+    {
+      "alig":1,
       "cat":"/Nocturne/Struct/System/winsock.h",
       "desc":"Stub: no RTTI in this build, size and fields not yet recovered",
       "fields":[],
@@ -13194,8 +13348,52 @@
       "desc":"Stub: size from Watcom RTTI, fields not yet recovered",
       "fields":[],
       "importable":true,
-      "len":4,
-      "name":"Socket",
+      "len":44,
+      "name":"SPageResourceBitmap",
+      "pack":false,
+      "type":"struct"
+    },
+    {
+      "alig":1,
+      "cat":"/Nocturne/Struct/Game",
+      "desc":"Stub: size from Watcom RTTI, fields not yet recovered",
+      "fields":[],
+      "importable":true,
+      "len":28,
+      "name":"SPageResourceMap",
+      "pack":false,
+      "type":"struct"
+    },
+    {
+      "alig":1,
+      "cat":"/Nocturne/Struct/Game",
+      "desc":"Stub: size from Watcom RTTI, fields not yet recovered",
+      "fields":[],
+      "importable":true,
+      "len":288,
+      "name":"SPageResourceText",
+      "pack":false,
+      "type":"struct"
+    },
+    {
+      "alig":1,
+      "cat":"/Nocturne/Struct/Game",
+      "desc":"Stub: size from Watcom RTTI, fields not yet recovered",
+      "fields":[],
+      "importable":true,
+      "len":76,
+      "name":"SPageResourceTwanaCharacter",
+      "pack":false,
+      "type":"struct"
+    },
+    {
+      "alig":1,
+      "cat":"/Nocturne/Struct/Game",
+      "desc":"Stub: size from Watcom RTTI, fields not yet recovered",
+      "fields":[],
+      "importable":true,
+      "len":280,
+      "name":"SPageResourceTwanaEntry",
       "pack":false,
       "type":"struct"
     },
@@ -13389,6 +13587,17 @@
     {
       "alig":1,
       "cat":"/Nocturne/Struct/Game",
+      "desc":"Stub: size from Watcom RTTI, fields not yet recovered",
+      "fields":[],
+      "importable":true,
+      "len":4,
+      "name":"SSocket",
+      "pack":false,
+      "type":"struct"
+    },
+    {
+      "alig":1,
+      "cat":"/Nocturne/Struct/Game",
       "desc":"Stub: no RTTI in this build, size and fields not yet recovered",
       "fields":[],
       "importable":true,
@@ -13438,6 +13647,17 @@
       "importable":true,
       "len":1,
       "name":"STextureSet",
+      "pack":false,
+      "type":"struct"
+    },
+    {
+      "alig":1,
+      "cat":"/Nocturne/Struct/Game",
+      "desc":"Stub: size from Watcom RTTI, fields not yet recovered",
+      "fields":[],
+      "importable":true,
+      "len":584,
+      "name":"STextView",
       "pack":false,
       "type":"struct"
     },
@@ -14252,17 +14472,6 @@
     },
     {
       "alig":1,
-      "cat":"/Nocturne/Struct/Game",
-      "desc":"Stub: size from Watcom RTTI, fields not yet recovered",
-      "fields":[],
-      "importable":true,
-      "len":584,
-      "name":"TextView",
-      "pack":false,
-      "type":"struct"
-    },
-    {
-      "alig":1,
       "cat":"/Nocturne/Struct/System/watcom.h",
       "desc":"Stub: no RTTI in this build, size and fields not yet recovered",
       "fields":[],
@@ -14270,6 +14479,30 @@
       "len":1,
       "name":"ThreadData",
       "pack":false,
+      "type":"struct"
+    },
+    {
+      "alig":4,
+      "cat":"/winsock.h",
+      "desc":"",
+      "fields":[
+        {
+          "len":4,
+          "name":"tv_sec",
+          "offset":0,
+          "type":"long"
+        },
+        {
+          "len":4,
+          "name":"tv_usec",
+          "offset":4,
+          "type":"long"
+        }
+      ],
+      "importable":true,
+      "len":8,
+      "name":"timeval",
+      "pack":true,
       "type":"struct"
     },
     {
@@ -14500,6 +14733,36 @@
       "type":"struct"
     },
     {
+      "alig":4,
+      "cat":"/Nocturne/Struct/System/watcom.h",
+      "desc":"",
+      "fields":[
+        {
+          "len":4,
+          "name":"delete_flags",
+          "offset":0,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"destructor_func",
+          "offset":4,
+          "type":"void*"
+        },
+        {
+          "len":4,
+          "name":"object_instance",
+          "offset":8,
+          "type":"void*"
+        }
+      ],
+      "importable":true,
+      "len":12,
+      "name":"WatcomDestructorCall",
+      "pack":false,
+      "type":"struct"
+    },
+    {
       "alig":1,
       "cat":"/Nocturne/Struct/System/watcom.h",
       "desc":"Stub: no RTTI in this build, size and fields not yet recovered",
@@ -14659,6 +14922,60 @@
       "importable":true,
       "len":32,
       "name":"wavehdr_tag",
+      "pack":true,
+      "type":"struct"
+    },
+    {
+      "alig":4,
+      "cat":"/winsock.h",
+      "desc":"",
+      "fields":[
+        {
+          "len":2,
+          "name":"wVersion",
+          "offset":0,
+          "type":"WORD"
+        },
+        {
+          "len":2,
+          "name":"wHighVersion",
+          "offset":2,
+          "type":"WORD"
+        },
+        {
+          "len":257,
+          "name":"szDescription",
+          "offset":4,
+          "type":"char[257]"
+        },
+        {
+          "len":129,
+          "name":"szSystemStatus",
+          "offset":261,
+          "type":"char[129]"
+        },
+        {
+          "len":2,
+          "name":"iMaxSockets",
+          "offset":390,
+          "type":"ushort"
+        },
+        {
+          "len":2,
+          "name":"iMaxUdpDg",
+          "offset":392,
+          "type":"ushort"
+        },
+        {
+          "len":4,
+          "name":"lpVendorInfo",
+          "offset":396,
+          "type":"char*"
+        }
+      ],
+      "importable":true,
+      "len":400,
+      "name":"WSAData",
       "pack":true,
       "type":"struct"
     }
@@ -15079,6 +15396,14 @@
       "type":"typedef"
     },
     {
+      "base":"LPDSENUMCALLBACKA_FUNC*",
+      "cat":"/Nocturne/Typedef/System/dsound.h",
+      "function_definition":"LPDSENUMCALLBACKA_FUNC",
+      "importable":true,
+      "name":"LPDSENUMCALLBACKA",
+      "type":"typedef"
+    },
+    {
       "base":"DWORD*",
       "cat":"/Nocturne/Typedef/System/windef.h",
       "importable":true,
@@ -15272,6 +15597,13 @@
       "cat":"/Nocturne/Typedef/System/windef.h",
       "importable":true,
       "name":"LPWORD",
+      "type":"typedef"
+    },
+    {
+      "base":"WSADATA*",
+      "cat":"/winsock.h",
+      "importable":true,
+      "name":"LPWSADATA",
       "type":"typedef"
     },
     {
@@ -15489,6 +15821,13 @@
       "type":"typedef"
     },
     {
+      "base":"UINT_PTR",
+      "cat":"/winsock.h",
+      "importable":true,
+      "name":"SOCKET",
+      "type":"typedef"
+    },
+    {
       "base":"_SYSTEMTIME",
       "cat":"/Nocturne/Typedef/System/winbase.h",
       "importable":true,
@@ -15500,6 +15839,27 @@
       "cat":"/Nocturne/Typedef/System/time.h",
       "importable":true,
       "name":"time_t",
+      "type":"typedef"
+    },
+    {
+      "base":"uint",
+      "cat":"/winsock.h",
+      "importable":true,
+      "name":"u_int",
+      "type":"typedef"
+    },
+    {
+      "base":"ulong",
+      "cat":"/winsock.h",
+      "importable":true,
+      "name":"u_long",
+      "type":"typedef"
+    },
+    {
+      "base":"ushort",
+      "cat":"/winsock.h",
+      "importable":true,
+      "name":"u_short",
       "type":"typedef"
     },
     {
@@ -15592,6 +15952,13 @@
       "cat":"/Nocturne/Typedef/System/windef.h",
       "importable":true,
       "name":"WPARAM",
+      "type":"typedef"
+    },
+    {
+      "base":"WSAData",
+      "cat":"/winsock.h",
+      "importable":true,
+      "name":"WSADATA",
       "type":"typedef"
     }
   ],

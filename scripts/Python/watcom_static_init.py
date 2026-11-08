@@ -377,8 +377,8 @@ def registered_units(regs, units):
 
 
 def factory_core(cls):
-    """`CAmmo` -> `factoryFuncAmmo`, as nocedit names them."""
-    return "factoryFunc" + re.sub(r"^C(?=[A-Z])", "", cls)
+    """`CAmmo` -> `factoryFuncAmmo`, as nocedit names them; `CAmmo_Mana` -> `factoryFuncAmmoMana`."""
+    return "factoryFunc" + re.sub(r"^C(?=[A-Z])", "", wti.type_name(cls))
 
 
 def source_table_units(program):

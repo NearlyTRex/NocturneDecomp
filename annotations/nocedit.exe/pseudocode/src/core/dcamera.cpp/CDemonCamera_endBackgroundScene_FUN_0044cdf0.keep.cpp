@@ -26,7 +26,7 @@ void __cdecl core_dcamera_cpp_CDemonCamera_endBackgroundScene_FUN_0044cdf0(CDemo
       iVar3 = 0;
       if (0 < this_ptr->framebuffer_height) {
         do {
-          core_dstrender_cpp_memcpyMMX_FUN_00492001
+          core_dstrendr_cpp_memcpyMMX_FUN_00492001
                     ((uint *)this_ptr->zbuffer_aligned + this_ptr->framebuffer_width * iVar3,
                      g_ZBufferScanlineArray[iVar3] + this_ptr->framebuffer_width,
                      this_ptr->framebuffer_width * 4);

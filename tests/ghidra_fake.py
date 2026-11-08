@@ -77,8 +77,40 @@ class Address:
         return hash(self.offset)
 
 
+# Inclusive address ranges, as Ghidra's: AddressSet() is empty, AddressSet(a, b)
+# holds a..b
+class AddressRange:
+    def __init__(self, start, end):
+        self.start = start
+        self.end = end
+
+    def getMinAddress(self):
+        return self.start
+
+    def getMaxAddress(self):
+        return self.end
+
+
 class AddressSet(JavaObject):
-    pass
+    def __init__(self, start = None, end = None):
+        super().__init__(start, end)
+        self.ranges = [(start.getOffset(), end.getOffset())] if start is not None else []
+
+    def getRangeContaining(self, address):
+        offset = address.getOffset()
+        return next((AddressRange(Address(lo), Address(hi)) for lo, hi in self.ranges if lo <= offset <= hi), None)
+
+    def subtract(self, other):
+        out = AddressSet()
+        for lo, hi in self.ranges:
+            pieces = [(lo, hi)]
+            for cut_lo, cut_hi in other.ranges:
+                pieces = [p for a, b in pieces for p in ((a, min(b, cut_lo - 1)), (max(a, cut_hi + 1), b)) if p[0] <= p[1]]
+            out.ranges += pieces
+        return out
+
+    def contains(self, address):
+        return self.getRangeContaining(address) is not None
 
 
 # --- ghidra.program.model.data -----------------------------------------------------
@@ -438,6 +470,21 @@ class BuiltInDataTypeManager(JavaObject):
         return self.types[name]
 
 
+class IntegerDataType(BuiltInDataType):
+    pass
+
+
+IntegerDataType.dataType = IntegerDataType("int", 4)
+
+
+# --- ghidra.program.model.listing --------------------------------------------------
+
+# Only its update-type constants are reached for; the program's functions are ghidra_program.Function
+class Function(JavaObject):
+    class FunctionUpdateType(JavaObject):
+        pass
+
+
 # --- java.util ---------------------------------------------------------------------
 
 class ArrayList(list, metaclass = JavaClassMeta):
@@ -461,7 +508,8 @@ class CreateFunctionCmd(JavaObject):
         super().__init__(entry)
         self.entry = entry
 
-    def applyTo(self, program):
+    # Ghidra's two overloads: with or without a task monitor
+    def applyTo(self, program, _monitor = None):
         offset = self.entry.getOffset()
         program.getFunctionManager().add(f"FUN_{offset:08x}", offset)
         return True
@@ -480,9 +528,11 @@ MODELLED = {
         "FunctionDefinitionDataType": FunctionDefinitionDataType,
         "AbstractStringDataType": AbstractStringDataType,
         "BuiltInDataTypeManager": BuiltInDataTypeManager,
+        "IntegerDataType": IntegerDataType,
         **{string_class.__name__: string_class for string_class in STRING_TYPES},
     },
     "ghidra.program.model.mem": {"MemoryAccessException": MemoryAccessException},
+    "ghidra.program.model.listing": {"Function": Function},
     "ghidra.app.cmd.function": {"CreateFunctionCmd": CreateFunctionCmd},
     "java.lang": {"IllegalArgumentException": IllegalArgumentException},
     "java.util": {"ArrayList": ArrayList},

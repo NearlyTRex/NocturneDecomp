@@ -35,6 +35,10 @@ class Symbol:
     def getName(self):
         return self.name
 
+    def setName(self, name, source):
+        self.name = name
+        self.source = source
+
     def getAddress(self):
         return self.address
 
@@ -149,8 +153,10 @@ class Memory:
     def getBlocks(self):
         return list(self.blocks)
 
-    def contains(self, address):
-        return self.getBlock(address) is not None
+    # Ghidra's two forms: one address, or a whole range that must lie in one block
+    def contains(self, address, end = None):
+        block = self.getBlock(address)
+        return block is not None and (end is None or block.contains(end))
 
     def read(self, address, size):
         block = self.getBlock(address)
@@ -256,12 +262,24 @@ class Listing:
 # A function, its own symbol (getSymbol is the function itself here), and
 # optionally the function it is a thunk to
 class Function:
-    def __init__(self, name, entry):
+    def __init__(self, name, entry, size = 1):
         self.name = name
         self.entry = entry
         self.source = "DEFAULT"
         self.thunk_target = None
         self.external = False
+        self.body = ghidra_fake.AddressSet(entry, entry.add(size - 1))
+        self.prototype = None
+
+    def getBody(self):
+        return self.body
+
+    def setBody(self, body):
+        self.body = body
+
+    # The arguments of the last updateFunction, as (convention, return, [params])
+    def updateFunction(self, convention, ret, params, _update_type, _force, _source):
+        self.prototype = (convention, ret, list(params))
 
     def getName(self):
         return self.name
@@ -296,13 +314,16 @@ class FunctionManager:
     def __init__(self):
         self.functions = {}
 
-    def add(self, name, entry):
-        function = Function(name, Address(entry))
+    def add(self, name, entry, size = 1):
+        function = Function(name, Address(entry), size)
         self.functions[Address(entry)] = function
         return function
 
     def getFunctionAt(self, address):
         return self.functions.get(address)
+
+    def getFunctionContaining(self, address):
+        return next((f for f in self.functions.values() if f.body.contains(address)), None)
 
     def getFunctions(self, forward):
         return iter(sorted(self.functions.values(), key = lambda f: f.entry.getOffset(), reverse = not forward))

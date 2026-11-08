@@ -357,6 +357,7 @@ def get_rtti_type_aliases():
         "SfxSample": "CSfxSample",
         "SfxSlot": "CSfxSlot",
         "cIni": "CIni",
+        "__1hlg6hbuttonStruct": "SButtonStruct",
     }
 
 def resolve_ghidra_type_name(type_name, ghidra_struct_sizes, aliases):
@@ -366,7 +367,10 @@ def resolve_ghidra_type_name(type_name, ghidra_struct_sizes, aliases):
     alias = aliases.get(type_name)
     if alias and alias in ghidra_struct_sizes:
         return alias
-    return None
+    # The name watcom_type_info gives a type nocedit does not have (CAmmo_Mana -> CAmmoMana)
+    from watcom_type_info import type_name as game_type_name
+    named = game_type_name(type_name)
+    return named if named in ghidra_struct_sizes else None
 
 def extract_type_name_from_string(string_value):
 

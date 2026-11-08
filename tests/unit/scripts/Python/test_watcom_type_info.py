@@ -110,7 +110,7 @@ def test_each_class_is_found_once_with_its_scope_and_alias(annotations):
     assert [(r["class"], r["scope"], r["type"], r["size"]) for r in records] == [
         ("CDemonActor", [], "CDemonActor", 344), ("SFly", ["CFlies"], "SFly", 52),
         ("cIni", [], "CIni", 12), ("ios", [], "ios", 44), ("CNew", [], "CNew", 8),
-        ("NotesMap", [], "NotesMap", 16)]
+        ("NotesMap", [], "SNotesMap", 16)]
     first = records[0]
     assert (first["addr"], first["ctor"], first["copy"], first["dtor"], first["mangled"]) == (
         f"{record_addr(0):08x}", f"{CODE + 0x10:08x}", f"{STUB:08x}", f"{CODE + 0x30:08x}",
@@ -202,11 +202,11 @@ def test_applying_types_records_labels_them_and_stubs_missing_classes(report):
     program = program_for(report, StructureDataType("CDemonActor", length = 344),
                           StructureDataType("SFly", length = 50))
     done = wti.apply_to_program(program, report)
-    assert done == {"typed": 6, "labelled": 5, "stubbed": 3,
+    assert done == {"typed": 6, "labelled": 5, "stubbed": 3, "renamed": 0,
                     "mismatched": [("SFly", 50, 52)], "deferred": ["ios"]}
     stubs = {t.getName(): t for t in program.getDataTypeManager().getAllDataTypes()}
     assert [(stubs[n].getCategoryPath().getPath(), stubs[n].getLength(), stubs[n].getDescription())
-            for n in ("CIni", "CNew", "NotesMap")] == [
+            for n in ("CIni", "CNew", "SNotesMap")] == [
         ("/Nocturne/Class/Game", 12, wti.STUB_DESCRIPTION), ("/Nocturne/Class/Game", 8, wti.STUB_DESCRIPTION),
         ("/Nocturne/Struct/Game", 16, wti.STUB_DESCRIPTION)]
     rows = {r["class"]: r for r in report["records"]}
@@ -215,6 +215,33 @@ def test_applying_types_records_labels_them_and_stubs_missing_classes(report):
     assert symbols.getPrimarySymbol(Address(record_addr(0))).getName() == "g_CDemonActorTypeInfo"
     assert program.getListing().getDefinedDataAt(Address(record_addr(0))).getDataType() is INFO_TYPE
     assert program.transactions == [["Watcom type info", True]]
+
+
+@pytest.mark.parametrize("name, known, want", [
+    ("CAmmo_Mana", (), "CAmmoMana"), ("C3DS_Light", (), "C3DSLight"), ("CVector", (), "CVector3f"),
+    ("SFly_Swarm", (), "SFlySwarm"), ("PageResource_Text", (), "SPageResourceText"),
+    ("buttonStruct", (), "SButtonStruct"), ("PageResource_Text", ("PageResource_Text",), "PageResource_Text"),
+    ("ios", (), "ios"), ("__ra4hqpoint", (), "__ra4hqpoint"), ("__1hlg6hbuttonStruct", (), "SButtonStruct")])
+def test_a_game_type_is_c_or_s_prefixed_without_underscores(name, known, want):
+    assert wti.type_name(name, frozenset(known)) == want
+
+
+def test_an_underscore_stub_is_renamed_not_stubbed_again(report):
+    row = next(r for r in report["records"] if r["class"] == "CNew")
+    row["class"], row["type"] = "CNew_Mana", wti.type_name("CNew_Mana")
+    old = StructureDataType("CNew_Mana", length = 8)
+    program = program_for(report, old)
+    done = wti.apply_to_program(program, report)
+    named = [t for t in program.getDataTypeManager().getAllDataTypes() if t.getName() == "CNewMana"]
+    assert (done["renamed"], named) == (1, [old])
+
+
+def test_a_stub_with_only_its_underscores_dropped_takes_the_s_prefix(report):
+    row = next(r for r in report["records"] if r["class"] == "NotesMap")
+    row["class"], row["type"] = "Notes_Map", wti.type_name("Notes_Map")
+    old = StructureDataType("NotesMap", length = 16)
+    done = wti.apply_to_program(program_for(report, old), report)
+    assert (done["renamed"], old.getName()) == (1, "SNotesMap")
 
 
 def test_applying_needs_the_record_type():
@@ -255,7 +282,7 @@ def test_main_applies_to_a_project(monkeypatch, report, tmp_path, capsys):
 
 
 def test_main_with_nothing_to_report_prints_no_lists(monkeypatch, report, tmp_path, capsys):
-    report_classes = {"CDemonActor": 344, "SFly": 52, "CIni": 12, "ios": 44, "CNew": 8, "NotesMap": 16}
+    report_classes = {"CDemonActor": 344, "SFly": 52, "CIni": 12, "ios": 44, "CNew": 8, "SNotesMap": 16}
     module = FakePyghidra(program_for(report, *[StructureDataType(name, length = size)
                                                 for name, size in report_classes.items()]))
     monkeypatch.setitem(sys.modules, "pyghidra", module)

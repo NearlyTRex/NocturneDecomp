@@ -75,7 +75,38 @@ RTTI_TYPE_ALIASES = {
     "SfxSample": "CSfxSample",
     "SfxSlot": "CSfxSlot",
     "cIni": "CIni",
+    # bw2's local-scope name for bw1/bw3's buttonStruct
+    "__1hlg6hbuttonStruct": "SButtonStruct",
 }
+
+
+# Game classes start with C, other game structs with S, and neither has underscores
+GAME_CLASS = re.compile(r"^C[A-Z0-9]")
+GAME_STRUCT = re.compile(r"^S[A-Z]")
+# Watcom's iostream classes, which keep their library names
+LIBRARY_CLASSES = frozenset((
+    "ios", "istream", "ostream", "iostream", "streambuf", "filebuf", "stdiobuf", "fstreambase",
+    "ifstream", "ofstream", "fstream", "strstreambase", "strstreambuf", "istrstream", "ostrstream",
+    "strstream"))
+
+
+def type_name(cls, known=frozenset()):
+    """The type an RTTI class name stands for here.
+
+    An alias, a name in `known` (the sibling's types), a library class or a
+    `__`-scoped local name is kept. A game class loses its underscores
+    (bw3's CAmmo_Mana is CAmmoMana, as `<unit>_<Class>_<method>` cannot say
+    where such a name ends), and any other game struct is also `S`-prefixed
+    (PageResource_Text is SPageResourceText).
+    """
+    if cls in RTTI_TYPE_ALIASES:
+        return RTTI_TYPE_ALIASES[cls]
+    if cls in known or cls in LIBRARY_CLASSES or cls.startswith("__"):
+        return cls
+    plain = cls.replace("_", "")
+    if GAME_CLASS.match(cls) or GAME_STRUCT.match(cls):
+        return plain
+    return "S" + plain[:1].upper() + plain[1:]
 
 
 def read_cstring(image, va, limit=256):
@@ -121,7 +152,7 @@ def scan_type_info(image):
             if name in by_class:
                 continue
             by_class[name] = {"addr": "%08x" % va, "class": name, "scope": scope,
-                              "type": RTTI_TYPE_ALIASES.get(name, name),
+                              "type": type_name(name),
                               "flags": "%08x" % flags, "ctor": "%08x" % ctor,
                               "copy": "%08x" % copy, "dtor": "%08x" % dtor,
                               "size": size, "name_addr": "%08x" % name_ptr,
@@ -168,7 +199,7 @@ def default_category(name):
     nocedit keeps `C`-prefixed classes in Class/Game and the rest -- `SFly`,
     `SPlayer`, plain helper structs -- in Struct/Game, RTTI or not.
     """
-    return DEFAULT_CATEGORY if re.match(r"^C[A-Z]", name) else DEFAULT_STRUCT_CATEGORY
+    return DEFAULT_CATEGORY if GAME_CLASS.match(name) else DEFAULT_STRUCT_CATEGORY
 
 
 def sibling_categories(program):
@@ -217,6 +248,7 @@ def analyse(program, sibling):
     labels = sibling_labels(sibling, sib_list) if sibling else {}
     cats = sibling_categories(sibling) if sibling else {}
     for r in records:
+        r["type"] = type_name(r["class"], cats)
         s = sib_records.get(r["class"])
         r["label"] = labels.get(r["class"], "g_%sTypeInfo" % r["class"])
         r["sibling_size"] = s["size"] if s else None
@@ -270,7 +302,7 @@ def apply_to_program(program, report):
     listing = program.getListing()
     space = program.getAddressFactory().getDefaultAddressSpace()
     symbols = program.getSymbolTable()
-    done = {"typed": 0, "labelled": 0, "stubbed": 0, "mismatched": [], "deferred": []}
+    done = {"typed": 0, "labelled": 0, "stubbed": 0, "renamed": 0, "mismatched": [], "deferred": []}
     tx = program.startTransaction("Watcom type info")
     ok = False
     try:
@@ -289,6 +321,13 @@ def apply_to_program(program, report):
                 done["labelled"] += 1
 
             existing = find_type(program, r["type"])
+            # A stub made under the RTTI spelling, or with only its underscores dropped
+            earlier = [n for n in dict.fromkeys((r["class"], r["class"].replace("_", ""))) if n != r["type"]]
+            spelled = next((t for t in (find_type(program, n) for n in earlier) if t is not None), None)
+            if existing is None and spelled is not None:
+                spelled.setName(r["type"])
+                done["renamed"] += 1
+                existing = spelled
             if existing is not None:
                 if existing.getLength() != r["size"]:
                     done["mismatched"].append((r["type"], existing.getLength(), r["size"]))
@@ -312,8 +351,8 @@ def apply(report, project_dir, project_name):
     with pyghidra.program_context(project, "/" + report["program"]) as program:
         from ghidra.util.task import ConsoleTaskMonitor
         done = apply_to_program(program, report)
-        print("typed %d records, labelled %d, created %d class stubs"
-              % (done["typed"], done["labelled"], done["stubbed"]))
+        print("typed %d records, labelled %d, created %d class stubs, renamed %d"
+              % (done["typed"], done["labelled"], done["stubbed"], done["renamed"]))
         for name, have, want in done["mismatched"]:
             print("  existing %s is %d bytes, RTTI says %d" % (name, have, want))
         if done["deferred"]:
