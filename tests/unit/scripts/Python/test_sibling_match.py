@@ -39,7 +39,9 @@ def test_ghidras_placeholder_names_are_unnamed(name, unnamed):
 
 
 @pytest.mark.parametrize("unit, placeholder", [
-    ("crt_unknown.c", True), ("unknown_afterammo.cpp", True), ("crt_string.c", False),
+    ("crt_unknown.c", True), ("unknown_afterammo.cpp", True), ("unkclass_hag.cpp", True),
+    ("unkaddr_00401000.cpp", True), ("unkafter_2d.cpp", True), ("unkcore_hag.cpp", True),
+    ("core_hag.cpp", False), ("unkclass", False), ("crt_string.c", False),
     ("core_unknown.cpp", False), (None, False), ("", False)])
 def test_only_the_catch_all_and_virtual_units_are_placeholders(unit, placeholder):
     assert sm.is_placeholder_unit(unit) is placeholder

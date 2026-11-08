@@ -102,13 +102,22 @@ def is_unnamed(name):
 
 # Units that say where a function sits, not which file it came from: the CRT's
 # catch-all, and the virtual units assign_virtual_units.py gives the functions
-# between two different known units. Never evidence, and always replaceable.
+# no evidence names a file for. Never evidence, and always replaceable. A
+# virtual unit's folder says what kind of guess it is -- unkclass/ named for the
+# class it holds, unkafter/ for the known unit before it, unkaddr/ for its first
+# address -- and every part is 8.3, as the build's own names are. `unknown`
+# and `unkcore` are folders earlier runs used, still recognised so their names
+# are replaced.
 CRT_UNKNOWN_UNIT = "crt_unknown.c"
-VIRTUAL_UNIT_PREFIX = "unknown_"
+VIRTUAL_UNIT_DIRS = frozenset(("unkclass", "unkafter", "unkaddr", "unknown", "unkcore"))
+
+
+def is_virtual_unit(unit):
+    return bool(unit) and "_" in unit and unit.rsplit("_", 1)[0] in VIRTUAL_UNIT_DIRS
 
 
 def is_placeholder_unit(unit):
-    return bool(unit) and (unit == CRT_UNKNOWN_UNIT or unit.startswith(VIRTUAL_UNIT_PREFIX))
+    return bool(unit) and (unit == CRT_UNKNOWN_UNIT or is_virtual_unit(unit))
 
 
 def strip_addr_suffix(name):

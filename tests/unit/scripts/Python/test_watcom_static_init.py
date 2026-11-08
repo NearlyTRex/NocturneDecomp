@@ -136,6 +136,7 @@ def test_only_a_thunk_showing_its_targets_address_wears_its_name(func, wears):
     ({"name": "core_menu.cpp_FUN_0050cc90", "thunk": True, "thtarget": "0050cc90"}, True),
     ({"name": "core_a.cpp_FUN_00401000"}, False),
     ({"name": "unknown_afterammo.cpp_FUN_00401000"}, True),
+    ({"name": "unkafter_ammo.cpp_FUN_00401000"}, True),
     ({"name": "crt_unknown.c_FUN_00401000"}, True),
     ({"name": "crt_unknown.c_memcpy_FUN_00401000"}, False),
 ])

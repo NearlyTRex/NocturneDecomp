@@ -140,6 +140,13 @@ class CategoryPath(JavaObject):
     def getPath(self):
         return self.path
 
+    def getName(self):
+        return self.path.rstrip("/").rsplit("/", 1)[-1]
+
+    def getParent(self):
+        parent = self.path.rstrip("/").rsplit("/", 1)[0]
+        return CategoryPath(parent or "/")
+
 
 class BuiltInDataType(DataType):
     pass

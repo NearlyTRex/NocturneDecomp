@@ -157,7 +157,7 @@ def target_name(nocedit_name, nocturne_name, nocturne_addr):
     tu = sm.tu_of(nocturne_name)
     # A virtual unit only marks where the function sits; the sibling's real
     # unit replaces it.
-    if not tu or tu.startswith(sm.VIRTUAL_UNIT_PREFIX):
+    if not tu or sm.is_virtual_unit(tu):
         tu = sm.tu_of(nocedit_name)
     prefix = "%s_" % tu if tu else ""
     return "%s%s_FUN_%s" % (prefix, core, nocturne_addr.lower())

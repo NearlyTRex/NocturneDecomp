@@ -402,8 +402,12 @@ class DataTypeManager:
 
 # The program's file in the project, counting the times it is saved
 class DomainFile:
-    def __init__(self):
+    def __init__(self, name = "program.exe"):
         self.saves = 0
+        self.name = name
+
+    def getName(self):
+        return self.name
 
     def save(self, _monitor):
         self.saves += 1
