@@ -1,0 +1,361 @@
+{
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "other",
+        "column": 25,
+        "line": 28,
+        "message": "unknown type name 'HWND'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 187,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 189,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 28,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 35,
+        "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
+      },
+      {
+        "category": "other",
+        "column": 1,
+        "line": 41,
+        "message": "unknown type name 'MMRESULT'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 46,
+        "message": "unknown type name 'HWND'"
+      },
+      {
+        "category": "other",
+        "column": 56,
+        "line": 191,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 1,
+        "line": 373,
+        "message": "unknown type name 'LPCRITICAL_SECTION'"
+      },
+      {
+        "category": "other",
+        "column": 20,
+        "line": 386,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 415,
+        "message": "unknown type name 'FILETIME'"
+      },
+      {
+        "category": "other",
+        "column": 37,
+        "line": 415,
+        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
+      },
+      {
+        "category": "other",
+        "column": 52,
+        "line": 415,
+        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 35,
+        "line": 16,
+        "message": "use of undeclared identifier 'DAT_005e3130'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 35,
+        "line": 21,
+        "message": "use of undeclared identifier 'PTR_FUN_005e2fe4'"
+      },
+      {
+        "category": "incompatible_types",
+        "column": 11,
+        "line": 25,
+        "message": "no matching function for call to 'FUN_004fa8c0'"
+      },
+      {
+        "category": "incompatible_types",
+        "column": 11,
+        "line": 25,
+        "message": "assigning to 'int' from incompatible type 'void'"
+      },
+      {
+        "category": "incompatible_types",
+        "column": 11,
+        "line": 26,
+        "message": "no matching function for call to 'FUN_0050ad40'"
+      },
+      {
+        "category": "incompatible_types",
+        "column": 11,
+        "line": 27,
+        "message": "no matching function for call to 'FUN_00410370'"
+      }
+    ],
+    "success": false,
+    "warnings": []
+  },
+  "compile_source": "c",
+  "complexity": {
+    "assembly_lines": 85,
+    "complexity_score": 151,
+    "cross_reference_count": 0,
+    "function_call_count": 9,
+    "global_count": 2,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 26,
+    "suspect_count": 11,
+    "suspect_types": [
+      "undefined_data",
+      "unnamed_param",
+      "unresolved_funcptr"
+    ],
+    "total_lines": 111
+  },
+  "cross_references": [],
+  "function": {
+    "address": "0050a530",
+    "address_range": [
+      [
+        "0050a530",
+        "0050a602"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "FUN_0050a530",
+    "signature": "int FUN_0050a530(int param_1,byte param_2)"
+  },
+  "function_calls": [
+    {
+      "addr": "00408770",
+      "is_variadic": false,
+      "name": "FUN_00408770"
+    },
+    {
+      "addr": "00410370",
+      "is_variadic": false,
+      "name": "FUN_00410370"
+    },
+    {
+      "addr": "0043f900",
+      "is_variadic": false,
+      "name": "FUN_0043f900"
+    },
+    {
+      "addr": "004fa8c0",
+      "is_variadic": false,
+      "name": "FUN_004fa8c0"
+    },
+    {
+      "addr": "0050ad40",
+      "is_variadic": false,
+      "name": "FUN_0050ad40"
+    },
+    {
+      "addr": "0054bf80",
+      "is_variadic": false,
+      "name": "FUN_0054bf80"
+    },
+    {
+      "addr": "005a308f",
+      "is_variadic": false,
+      "name": "FUN_005a308f"
+    },
+    {
+      "addr": "005a30b6",
+      "is_variadic": false,
+      "name": "FUN_005a30b6"
+    },
+    {
+      "addr": "005a30c4",
+      "is_variadic": false,
+      "name": "FUN_005a30c4"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005e2fe4",
+      "name": "PTR_FUN_005e2fe4",
+      "type": "undefined1*",
+      "value": "0050a610"
+    },
+    {
+      "addr": "005e3130",
+      "name": "DAT_005e3130",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 0,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.455882352941177,
+    "instruction_count": 68,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 2,
+      "CALL": 9,
+      "CALLIND": 1,
+      "CBRANCH": 4,
+      "COPY": 43,
+      "INT_ADD": 25,
+      "INT_AND": 39,
+      "INT_CARRY": 11,
+      "INT_EQUAL": 36,
+      "INT_LESS": 4,
+      "INT_SBORROW": 4,
+      "INT_SCARRY": 11,
+      "INT_SLESS": 18,
+      "INT_SUB": 33,
+      "LOAD": 12,
+      "POPCOUNT": 18,
+      "RETURN": 3,
+      "STORE": 30
+    },
+    "pcode_op_count": 303
+  },
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "int FUN_0050a530(int param_1,byte param_2)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "int FUN_0050a530(int param_1,byte param_2)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 8,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "if ((param_2 & 4) != 0) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 9,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "uVar2 = FUN_005a308f(param_1,&DAT_005e3130);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 9,
+      "match": "DAT_005e3130",
+      "severity": "mild",
+      "text": "uVar2 = FUN_005a308f(param_1,&DAT_005e3130);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 11,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "return param_1;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 13,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "iVar1 = *(int *)(param_1 + 0x207d0);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 14,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "*(byte ***)(param_1 + 0x154) = &PTR_FUN_005e2fe4;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 16,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "(**(code **)(*(int *)(iVar1 + 0x154) + 0xd0))(iVar1,2);",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 18,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "iVar1 = FUN_004fa8c0(param_1 + 0x207d4,0);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 24,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "if ((param_2 & 2) != 0) {",
+      "type": "unnamed_param"
+    }
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "Unknown",
+        "offset": 8,
+        "vtable_addr": "005e3134"
+      },
+      {
+        "class_name": "Unknown",
+        "offset": 40,
+        "vtable_addr": "005e308c"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 2
+  }
+}

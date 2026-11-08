@@ -1,0 +1,536 @@
+{
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "other",
+        "column": 25,
+        "line": 28,
+        "message": "unknown type name 'HWND'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 187,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 189,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 28,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 35,
+        "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
+      },
+      {
+        "category": "other",
+        "column": 1,
+        "line": 41,
+        "message": "unknown type name 'MMRESULT'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 46,
+        "message": "unknown type name 'HWND'"
+      },
+      {
+        "category": "other",
+        "column": 56,
+        "line": 191,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 1,
+        "line": 373,
+        "message": "unknown type name 'LPCRITICAL_SECTION'"
+      },
+      {
+        "category": "other",
+        "column": 20,
+        "line": 386,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 415,
+        "message": "unknown type name 'FILETIME'"
+      },
+      {
+        "category": "other",
+        "column": 37,
+        "line": 415,
+        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
+      },
+      {
+        "category": "other",
+        "column": 52,
+        "line": 415,
+        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
+      },
+      {
+        "category": "incompatible_types",
+        "column": 22,
+        "line": 30,
+        "message": "no matching function for call to 'FUN_00434e80'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 33,
+        "line": 37,
+        "message": "use of undeclared identifier 'DAT_01c5faec'"
+      }
+    ],
+    "success": false,
+    "warnings": []
+  },
+  "compile_source": "c",
+  "complexity": {
+    "assembly_lines": 157,
+    "complexity_score": 456,
+    "cross_reference_count": 1,
+    "function_call_count": 1,
+    "global_count": 1,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 61,
+    "suspect_count": 37,
+    "suspect_types": [
+      "pointer_cast",
+      "pointer_truncation",
+      "undefined_data",
+      "unnamed_param",
+      "unresolved_funcptr"
+    ],
+    "total_lines": 218
+  },
+  "cross_references": [
+    {
+      "addr": "0050f5c0",
+      "from_addr": "0050f699",
+      "name": "FUN_0050f5c0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0050f440",
+    "address_range": [
+      [
+        "0050f440",
+        "0050f5b2"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "FUN_0050f440",
+    "signature": "void FUN_0050f440(int param_1,int param_2,int param_3,uint param_4,int param_5,int param_6,int param_7)"
+  },
+  "function_calls": [
+    {
+      "addr": "00434e80",
+      "is_variadic": false,
+      "name": "FUN_00434e80"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005fba20",
+      "name": "DAT_005fba20",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "pcode_summary": {
+    "avg_pcode_per_instr": 7.223076923076923,
+    "instruction_count": 130,
+    "opcode_distribution": {
+      "BOOL_AND": 2,
+      "BOOL_NEGATE": 50,
+      "BOOL_OR": 4,
+      "BOOL_XOR": 2,
+      "BRANCH": 5,
+      "CALL": 1,
+      "CALLIND": 2,
+      "CBRANCH": 10,
+      "COPY": 101,
+      "INT_ADD": 62,
+      "INT_AND": 197,
+      "INT_CARRY": 12,
+      "INT_EQUAL": 108,
+      "INT_LEFT": 10,
+      "INT_LESS": 21,
+      "INT_MULT": 5,
+      "INT_NOTEQUAL": 27,
+      "INT_OR": 41,
+      "INT_SBORROW": 23,
+      "INT_SCARRY": 12,
+      "INT_SEXT": 6,
+      "INT_SLESS": 58,
+      "INT_SRIGHT": 8,
+      "INT_SUB": 45,
+      "INT_XOR": 9,
+      "INT_ZEXT": 2,
+      "LOAD": 41,
+      "POPCOUNT": 48,
+      "RETURN": 1,
+      "STORE": 22,
+      "SUBPIECE": 4
+    },
+    "pcode_op_count": 939
+  },
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "static_analysis": {
+    "analyzed_file": "FUN_0050f440.c",
+    "cppcheck_quick": {
+      "diagnostic_count": 2,
+      "diagnostics": [
+        {
+          "check_id": "shiftTooManyBitsSigned",
+          "column": 19,
+          "line": 28,
+          "message": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
+          "severity": "error"
+        },
+        {
+          "check_id": "shiftTooManyBitsSigned",
+          "column": 50,
+          "line": 52,
+          "message": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
+          "severity": "error"
+        }
+      ],
+      "error": null
+    },
+    "file_variant": "raw"
+  },
+  "suspects": [
+    {
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "void FUN_0050f440(int param_1,int param_2,int param_3,uint param_4,int param_5,int param_6,int param_7)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "void FUN_0050f440(int param_1,int param_2,int param_3,uint param_4,int param_5,int param_6,int param_7)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_3",
+      "severity": "mild",
+      "text": "void FUN_0050f440(int param_1,int param_2,int param_3,uint param_4,int param_5,int param_6,int param_7)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_4",
+      "severity": "mild",
+      "text": "void FUN_0050f440(int param_1,int param_2,int param_3,uint param_4,int param_5,int param_6,int param_7)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_5",
+      "severity": "mild",
+      "text": "void FUN_0050f440(int param_1,int param_2,int param_3,uint param_4,int param_5,int param_6,int param_7)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_6",
+      "severity": "mild",
+      "text": "void FUN_0050f440(int param_1,int param_2,int param_3,uint param_4,int param_5,int param_6,int param_7)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_7",
+      "severity": "mild",
+      "text": "void FUN_0050f440(int param_1,int param_2,int param_3,uint param_4,int param_5,int param_6,int param_7)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 5,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "code *pcVar1;",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 19,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "if ((*(int *)(param_1 + 0x20) != 0) && (*(int *)(param_1 + 0x14) != 0)) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 19,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "if ((*(int *)(param_1 + 0x20) != 0) && (*(int *)(param_1 + 0x14) != 0)) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 20,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "iVar4 = (param_2 - param_4) * DAT_005fba20;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 20,
+      "match": "param_4",
+      "severity": "mild",
+      "text": "iVar4 = (param_2 - param_4) * DAT_005fba20;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 20,
+      "match": "DAT_005fba20",
+      "severity": "mild",
+      "text": "iVar4 = (param_2 - param_4) * DAT_005fba20;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 23,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "pcVar1 = (code *)FUN_00434e80(iVar4);",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 24,
+      "match": "param_3",
+      "severity": "mild",
+      "text": "iStack_24 = param_3 << 2;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 25,
+      "match": "param_5",
+      "severity": "mild",
+      "text": "iStack_20 = param_5 << 2;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 27,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "piVar6 = (int *)(*(int *)(param_1 + 0x20) + iStack_20);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 28,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "puVar9 = (ushort *)(*piVar6 + *(int *)(param_1 + 0x14));",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 29,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "puVar7 = (ushort *)(piVar6[1] + *(int *)(param_1 + 0x14));",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 30,
+      "match": "DAT_01c5faec",
+      "severity": "mild",
+      "text": "iVar5 = iVar4 + *(int *)(&DAT_01c5faec + iStack_24);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 35,
+      "match": "param_6",
+      "severity": "mild",
+      "text": "if (param_6 < (int)uVar2) goto LAB_0050f4f8;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 38,
+      "match": "(ushort *)((int)puVar10",
+      "severity": "moderate",
+      "text": "puVar9 = (ushort *)((int)puVar10 + (uVar3 + 3 & 0xfffffffc));",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 39,
+      "match": "param_4",
+      "severity": "mild",
+      "text": "} while (iVar11 < (int)param_4);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 40,
+      "match": "param_4",
+      "severity": "mild",
+      "text": "if ((int)uVar2 < (int)param_4) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 41,
+      "match": "(ushort *)((int)puVar10",
+      "severity": "moderate",
+      "text": "puVar10 = (ushort *)((int)puVar10 + (param_4 - uVar2));",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 41,
+      "match": "param_4",
+      "severity": "mild",
+      "text": "puVar10 = (ushort *)((int)puVar10 + (param_4 - uVar2));",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 42,
+      "match": "param_4",
+      "severity": "mild",
+      "text": "uVar3 = uVar3 - (param_4 - uVar2);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 43,
+      "match": "param_4",
+      "severity": "mild",
+      "text": "uVar2 = param_4;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 45,
+      "match": "DAT_005fba20",
+      "severity": "mild",
+      "text": "while (iVar8 = (int)(DAT_005fba20 * uVar2) >> 0x1f,",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 46,
+      "match": "DAT_005fba20",
+      "severity": "mild",
+      "text": "iVar8 = ((int)((DAT_005fba20 * uVar2 + iVar8 * -8) - (uint)(iVar8 << 2 < 0)) >> 3) +",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 47,
+      "match": "param_6",
+      "severity": "mild",
+      "text": "iVar5, iVar11 <= param_6) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 52,
+      "match": "param_6",
+      "severity": "mild",
+      "text": "if (param_6 < (int)uVar2) goto LAB_0050f4f8;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 57,
+      "match": "param_6",
+      "severity": "mild",
+      "text": "(*pcVar1)(iVar8,puVar10,uVar3 - (iVar11 - param_6));",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 61,
+      "match": "param_7",
+      "severity": "mild",
+      "text": "} while (iStack_20 <= param_7 << 2);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Pointer value `puVar10` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 38,
+      "match": "(int)puVar10",
+      "severity": "moderate",
+      "text": "puVar9 = (ushort *)((int)puVar10 + (uVar3 + 3 & 0xfffffffc));",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `puVar10` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 41,
+      "match": "(int)puVar10",
+      "severity": "moderate",
+      "text": "puVar10 = (ushort *)((int)puVar10 + (param_4 - uVar2));",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `puVar10` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 54,
+      "match": "(int)puVar10",
+      "severity": "moderate",
+      "text": "puVar9 = (ushort *)((uVar3 + 3 & 0xfffffffc) + (int)puVar10);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
+      "line": 28,
+      "match": "Cppcheck: signed shift by >= bit width (signed-div / branchless-abs idiom)",
+      "severity": "moderate",
+      "text": "iVar5 = iVar4 >> 0x1f;",
+      "type": "static_shift_too_many_bits"
+    },
+    {
+      "description": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
+      "line": 52,
+      "match": "Cppcheck: signed shift by >= bit width (signed-div / branchless-abs idiom)",
+      "severity": "moderate",
+      "text": "while (iVar8 = (int)(DAT_005fba20 * uVar2) >> 0x1f,",
+      "type": "static_shift_too_many_bits"
+    }
+  ]
+}

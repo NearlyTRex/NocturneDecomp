@@ -1,0 +1,23 @@
+// Name: FUN_005a3380
+// Address: 005a3380
+// Address Range: [[005a3380, 005a33ae]]
+// Convention: unknown
+// Signature: uint FUN_005a3380(undefined4 *param_1)
+
+#include "nocturne.h"
+
+uint FUN_005a3380(uint *param_1)
+
+{
+  byte *pbVar1;
+  int iVar2;
+  
+  iVar2 = FUN_005a33b0(param_1);
+  if (iVar2 == 0) {
+    return 0xffffffff;
+  }
+  pbVar1 = (byte *)*param_1;
+  param_1[1] = param_1[1] + -1;
+  *param_1 = pbVar1 + 1;
+  return (uint)*pbVar1;
+}

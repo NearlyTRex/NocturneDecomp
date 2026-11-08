@@ -1,0 +1,50 @@
+====================================================================================================
+STATIC ANALYSIS SUMMARY
+====================================================================================================
+
+Results from running static analysis tools on decompiled pseudocode.
+Only .cpp and .keep.cpp files are analyzed (not .mmx.cpp or .byval.cpp).
+
+----------------------------------------------------------------------------------------------------
+SUMMARY
+----------------------------------------------------------------------------------------------------
+
+  Functions with static analysis data: 805
+  Functions flagged by multiple tools: 4
+
+  Clang-Tidy (quick):
+    Files analyzed:      6
+    Files with findings: 6
+    Total diagnostics:   15
+
+  Cppcheck (quick):
+    Files analyzed:      803
+    Files with findings: 803
+    Total diagnostics:   6100
+
+====================================================================================================
+TOP FINDINGS - Clang-Tidy (quick)
+====================================================================================================
+
+  bugprone-integer-division                                  11  [likely decompiler artifact]
+  bugprone-swapped-arguments                                  4  [likely decompiler artifact]
+
+====================================================================================================
+TOP FINDINGS - Cppcheck (quick)
+====================================================================================================
+
+  uninitvar                                                3572  [likely decompiler artifact]
+  pointerOutOfBounds                                        927  [likely decompiler artifact]
+  objectIndex                                               513  [likely decompiler artifact]
+  arrayIndexOutOfBounds                                     414  [likely decompiler artifact]
+  legacyUninitvar                                           379
+  shiftTooManyBitsSigned                                    202
+  nullPointer                                                20
+  invalidPointerCast                                         18
+  identicalInnerCondition                                    15
+  nullPointerArithmetic                                      10
+  selfAssignment                                              7
+  oppositeInnerCondition                                      6
+  negativeIndex                                               4
+  shiftNegativeLHS                                            4
+  nullPointerRedundantCheck                                   3

@@ -1,0 +1,255 @@
+{
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "other",
+        "column": 25,
+        "line": 28,
+        "message": "unknown type name 'HWND'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 187,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 189,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 28,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 35,
+        "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
+      },
+      {
+        "category": "other",
+        "column": 1,
+        "line": 41,
+        "message": "unknown type name 'MMRESULT'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 46,
+        "message": "unknown type name 'HWND'"
+      },
+      {
+        "category": "other",
+        "column": 56,
+        "line": 191,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 1,
+        "line": 373,
+        "message": "unknown type name 'LPCRITICAL_SECTION'"
+      },
+      {
+        "category": "other",
+        "column": 20,
+        "line": 386,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 415,
+        "message": "unknown type name 'FILETIME'"
+      },
+      {
+        "category": "other",
+        "column": 37,
+        "line": 415,
+        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
+      },
+      {
+        "category": "other",
+        "column": 52,
+        "line": 415,
+        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 19,
+        "line": 18,
+        "message": "use of undeclared identifier 'DAT_02802f5c'"
+      },
+      {
+        "category": "incompatible_types",
+        "column": 7,
+        "line": 19,
+        "message": "no matching function for call to 'FUN_00548370'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 19,
+        "line": 27,
+        "message": "use of undeclared identifier 'DAT_02cd28bc'"
+      }
+    ],
+    "success": false,
+    "warnings": []
+  },
+  "compile_source": "c",
+  "complexity": {
+    "assembly_lines": 45,
+    "complexity_score": 74,
+    "cross_reference_count": 1,
+    "function_call_count": 2,
+    "global_count": 2,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 24,
+    "suspect_count": 4,
+    "suspect_types": [
+      "raw_address_constant",
+      "undefined_data"
+    ],
+    "total_lines": 69
+  },
+  "cross_references": [
+    {
+      "addr": "004f6a80",
+      "from_addr": "004f6bb9",
+      "name": "FUN_004f6a80",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "005503f0",
+    "address_range": [
+      [
+        "005503f0",
+        "0055044e"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "FUN_005503f0",
+    "signature": "void FUN_005503f0(void)"
+  },
+  "function_calls": [
+    {
+      "addr": "00547b90",
+      "is_variadic": false,
+      "name": "FUN_00547b90"
+    },
+    {
+      "addr": "00548370",
+      "is_variadic": false,
+      "name": "FUN_00548370"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "02802f5c",
+      "name": "DAT_02802f5c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02cd28bc",
+      "name": "DAT_02cd28bc",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "004f6bb9",
+        "call_type": "direct",
+        "caller": "FUN_004f6a80",
+        "estimated_params": 0,
+        "instructions_analyzed": 1,
+        "method": "push_count",
+        "reg_params": [],
+        "stack_bytes": 0,
+        "stack_params": 0
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 0,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.266666666666667,
+    "instruction_count": 30,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 2,
+      "BRANCH": 2,
+      "CALL": 2,
+      "CBRANCH": 4,
+      "COPY": 19,
+      "INT_ADD": 11,
+      "INT_AND": 24,
+      "INT_CARRY": 6,
+      "INT_EQUAL": 24,
+      "INT_LESS": 4,
+      "INT_SBORROW": 4,
+      "INT_SCARRY": 6,
+      "INT_SLESS": 12,
+      "INT_SUB": 11,
+      "INT_XOR": 2,
+      "LOAD": 5,
+      "POPCOUNT": 12,
+      "RETURN": 1,
+      "STORE": 7
+    },
+    "pcode_op_count": 158
+  },
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Undefined global data reference",
+      "line": 11,
+      "match": "DAT_02802f5c",
+      "severity": "mild",
+      "text": "if (*(int *)(&DAT_02802f5c + iVar1) == 0) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 20,
+      "match": "DAT_02cd28bc",
+      "severity": "mild",
+      "text": "if (*(int *)(&DAT_02cd28bc + iVar1) == 0) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Raw hex address 0x272af5c assigned to bare local `iVar2`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `iVar2` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
+      "line": 8,
+      "match": "0x272af5c",
+      "severity": "moderate",
+      "text": "iVar2 = 0x272af5c;",
+      "type": "raw_address_constant"
+    },
+    {
+      "description": "Raw hex address 0x280305c assigned to bare local `iVar2`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `iVar2` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
+      "line": 17,
+      "match": "0x280305c",
+      "severity": "moderate",
+      "text": "iVar2 = 0x280305c;",
+      "type": "raw_address_constant"
+    }
+  ]
+}

@@ -1,0 +1,1918 @@
+====================================================================================================
+PARAMETER COUNT MISMATCH ANALYSIS
+====================================================================================================
+
+This report identifies functions where the declared parameter count differs
+from the estimated count based on call site analysis.
+
+Mismatches may indicate:
+  - Incorrect function signature in Ghidra
+  - Calling convention misidentification
+  - Variadic functions
+  - Functions called with wrong number of arguments (bugs)
+
+SUMMARY
+--------------------------------------------------
+Functions with parameter estimates: 4607
+Functions with no callers: 1978
+Parameter mismatches detected: 2507
+Signature accuracy rate: 4.6%
+
+Mismatches by confidence:
+  High confidence:   179 (multiple call sites agree)
+  Medium confidence: 383 (some agreement)
+  Low confidence:    1945 (limited data)
+
+====================================================================================================
+HIGH CONFIDENCE MISMATCHES - Likely signature issues
+====================================================================================================
+
+  FUN_004852f0
+    Declared: 0 params (0 bytes), Estimated: 9 stack slots (24 bytes) [+9]
+    Call sites: 4, Confidence: high
+    File: .
+    Signature: void FUN_004852f0(int param_1,int param_2,int param_3,int param_4,int param_5,int param_6)
+    Sample call sites:
+      FUN_00485640 at 0048581f: 3 reg [EAX, ECX, EDX], 6 stack (24 bytes, via add_esp)
+      FUN_00485640 at 00485889: 3 reg [EAX, ECX, EDX], 6 stack (24 bytes, via add_esp)
+      FUN_00485640 at 00485952: 3 reg [EAX, ECX, EDX], 6 stack (24 bytes, via add_esp)
+
+  FUN_004a3a30
+    Declared: 0 params (0 bytes), Estimated: 9 stack slots (24 bytes) [+9]
+    Call sites: 4, Confidence: high
+    File: .
+    Signature: int FUN_004a3a30(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4,undefined4 param_5,undefined4 param_6)
+    Sample call sites:
+      FUN_004a39a0 at 004a39bd: 3 reg [EBX, ECX, EDX], 6 stack (24 bytes, via push_count)
+      FUN_004a39d0 at 004a39ed: 3 reg [EBX, ECX, EDX], 6 stack (24 bytes, via push_count)
+      FUN_004a3920 at 004a3955: 3 reg [EBX, ECX, EDX], 6 stack (24 bytes, via add_esp)
+
+  FUN_004b1310
+    Declared: 0 params (0 bytes), Estimated: 9 stack slots (20 bytes) [+9]
+    Call sites: 4, Confidence: high
+    File: .
+    Signature: void FUN_004b1310(undefined4 *param_1,byte *param_2,int param_3,int param_4,undefined4 param_5)
+    Sample call sites:
+      FUN_004b1460 at 004b2621: 4 reg [EAX, EBX, ECX, EDX], 5 stack (20 bytes, via add_esp)
+      FUN_004b1460 at 004b26d1: 4 reg [EAX, EBX, ECX, EDX], 5 stack (20 bytes, via add_esp)
+      FUN_004b1460 at 004b2883: 4 reg [EAX, EBX, ECX, EDX], 5 stack (20 bytes, via add_esp)
+
+  FUN_004fcb50
+    Declared: 0 params (0 bytes), Estimated: 9 stack slots (24 bytes) [+9]
+    Call sites: 3, Confidence: high
+    File: .
+    Signature: int FUN_004fcb50(int *param_1,int param_2,float param_3,int *param_4,int *param_5,float *param_6)
+    Sample call sites:
+      FUN_0054c1b0 at 0054c1ed: 3 reg [EAX, EBX, ECX], 6 stack (24 bytes, via add_esp)
+      FUN_0054cc90 at 0054ccd2: 3 reg [EAX, ECX, EDX], 6 stack (24 bytes, via add_esp)
+      FUN_0054edb0 at 0054ede6: 3 reg [EAX, EBX, ECX], 6 stack (24 bytes, via add_esp)
+
+  FUN_00557080
+    Declared: 0 params (0 bytes), Estimated: 9 stack slots (36 bytes) [+9]
+    Call sites: 3, Confidence: high
+    File: .
+    Signature: void FUN_00557080(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4,undefined4 param_5,undefined4 param_6,undefined4 param_7,undefined4 param_8,undefined4 param_9)
+    Sample call sites:
+      FUN_0055e8b0 at 0055eb18: 0 reg [], 9 stack (36 bytes, via add_esp)
+      FUN_005607d0 at 005608a5: 0 reg [], 9 stack (36 bytes, via add_esp)
+      FUN_00557f60 at 00557fda: 0 reg [], 9 stack (36 bytes, via add_esp)
+
+  FUN_0047e940
+    Declared: 0 params (0 bytes), Estimated: 8 stack slots (28 bytes) [+8]
+    Call sites: 3, Confidence: high
+    File: .
+    Signature: undefined4 FUN_0047e940(undefined4 param_1,undefined4 param_2,int *param_3,int param_4,int param_5,int param_6,byte param_7)
+    Sample call sites:
+      FUN_004bb100 at 004bb977: 1 reg [EDX], 7 stack (28 bytes, via add_esp)
+      FUN_004bb100 at 004bb99f: 1 reg [ECX], 7 stack (28 bytes, via add_esp)
+      FUN_004bb100 at 004bb9c7: 1 reg [EBX], 7 stack (28 bytes, via add_esp)
+
+  FUN_00555930
+    Declared: 0 params (0 bytes), Estimated: 8 stack slots (20 bytes) [+8]
+    Call sites: 4, Confidence: high
+    File: sound/sndmain.cpp
+    Signature: double FUN_00555930(int param_1,double param_2,uint param_3,uint param_4)
+    Sample call sites:
+      FUN_005567c0 at 00556810: 3 reg [EAX, ECX, EDX], 5 stack (20 bytes, via add_esp)
+      FUN_00555aa0 at 00555abd: 3 reg [EBX, ECX, EDX], 5 stack (20 bytes, via add_esp)
+      FUN_00555aa0 at 00555b1d: 3 reg [EAX, EBX, EDX], 5 stack (20 bytes, via add_esp)
+
+  FUN_0040aca0
+    Declared: 0 params (0 bytes), Estimated: 7 stack slots (16 bytes) [+7]
+    Call sites: 4, Confidence: high
+    File: .
+    Signature: undefined4 FUN_0040aca0(int param_1,undefined4 param_2,int param_3)
+    Sample call sites:
+      FUN_004d51d0 at 004d51ea: 3 reg [EBX, ECX, EDX], 4 stack (16 bytes, via add_esp)
+      FUN_004e72b0 at 004e72c9: 3 reg [EBX, ECX, EDX], 4 stack (16 bytes, via add_esp)
+      FUN_00416b80 at 00416b99: 3 reg [EBX, ECX, EDX], 4 stack (16 bytes, via add_esp)
+
+  FUN_0043fc00
+    Declared: 0 params (0 bytes), Estimated: 7 stack slots (24 bytes) [+7]
+    Call sites: 5, Confidence: high
+    File: .
+    Signature: void FUN_0043fc00(int *param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4,undefined4 param_5,undefined4 param_6)
+    Sample call sites:
+      FUN_00433350 at 004333cd: 1 reg [EAX], 6 stack (24 bytes, via push_count)
+      FUN_0042b0e0 at 0042b2aa: 1 reg [EAX], 6 stack (24 bytes, via add_esp)
+      FUN_005992f0 at 00599387: 1 reg [EAX], 6 stack (24 bytes, via add_esp)
+
+  FUN_00471271
+    Declared: 0 params (0 bytes), Estimated: 7 stack slots (12 bytes) [+7]
+    Call sites: 5, Confidence: high
+    File: .
+    Signature: undefined4 FUN_00471271(uint param_1,uint param_2,uint param_3)
+    Sample call sites:
+      FUN_00449a00 at 00449af2: 4 reg [EAX, EBX, ECX, EDX], 3 stack (12 bytes, via add_esp)
+      FUN_0045ca30 at 0045cc0c: 4 reg [EAX, EBX, ECX, EDX], 3 stack (12 bytes, via add_esp)
+      FUN_0045c720 at 0045c79f: 4 reg [EAX, EBX, ECX, EDX], 3 stack (12 bytes, via add_esp)
+
+  FUN_004bb090
+    Declared: 0 params (0 bytes), Estimated: 7 stack slots (16 bytes) [+7]
+    Call sites: 3, Confidence: high
+    File: .
+    Signature: void FUN_004bb090(int param_1,int param_2,float param_3,int param_4)
+    Sample call sites:
+      FUN_004bb100 at 004bd09c: 3 reg [EBX, ECX, EDX], 4 stack (16 bytes, via add_esp)
+      FUN_004bb100 at 004bd149: 3 reg [EBX, ECX, EDX], 4 stack (16 bytes, via add_esp)
+      FUN_004bb100 at 004bd1fa: 3 reg [EBX, ECX, EDX], 4 stack (16 bytes, via add_esp)
+
+  FUN_004feb90
+    Declared: 0 params (0 bytes), Estimated: 7 stack slots (16 bytes) [+7]
+    Call sites: 3, Confidence: high
+    File: .
+    Signature: int FUN_004feb90(int param_1,int param_2,int param_3,int param_4)
+    Sample call sites:
+      FUN_00502d60 at 00502f41: 3 reg [EAX, EBX, EDX], 4 stack (16 bytes, via add_esp)
+      FUN_00502d60 at 005031fc: 3 reg [EAX, ECX, EDX], 4 stack (16 bytes, via add_esp)
+      FUN_00502d60 at 005037c2: 3 reg [EAX, ECX, EDX], 4 stack (16 bytes, via add_esp)
+
+  FUN_0042fe90
+    Declared: 0 params (0 bytes), Estimated: 6 stack slots (16 bytes) [+6]
+    Call sites: 4, Confidence: high
+    File: .
+    Signature: void FUN_0042fe90(int param_1,int param_2,undefined4 param_3,undefined4 param_4)
+    Sample call sites:
+      FUN_00425da0 at 00426c11: 2 reg [EAX, EDX], 4 stack (16 bytes, via add_esp)
+      FUN_00455080 at 00455e28: 2 reg [EAX, EDX], 4 stack (16 bytes, via add_esp)
+      FUN_004c6eb0 at 004c8c3e: 2 reg [EAX, EDX], 4 stack (16 bytes, via add_esp)
+
+  FUN_00431470
+    Declared: 0 params (0 bytes), Estimated: 6 stack slots (16 bytes) [+6]
+    Call sites: 3, Confidence: high
+    File: .
+    Signature: void FUN_00431470(int param_1,int param_2,undefined4 param_3,undefined4 param_4)
+    Sample call sites:
+      FUN_00544fd0 at 00544ff4: 2 reg [ECX, EDX], 4 stack (16 bytes, via push_count)
+      FUN_0057edf0 at 0057ee1d: 2 reg [ECX, EDX], 4 stack (16 bytes, via push_count)
+      FUN_005956d0 at 005956fd: 2 reg [ECX, EDX], 4 stack (16 bytes, via push_count)
+
+  FUN_0043fbc0
+    Declared: 0 params (0 bytes), Estimated: 6 stack slots (16 bytes) [+6]
+    Call sites: 4, Confidence: high
+    File: .
+    Signature: void FUN_0043fbc0(int *param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4)
+    Sample call sites:
+      FUN_0042b0e0 at 0042b28d: 2 reg [EAX, EDX], 4 stack (16 bytes, via add_esp)
+      FUN_005992f0 at 0059935f: 2 reg [EAX, EDX], 4 stack (16 bytes, via add_esp)
+      FUN_0059a060 at 0059a0e3: 2 reg [EAX, EDX], 4 stack (16 bytes, via add_esp)
+
+  FUN_00452cb0
+    Declared: 0 params (0 bytes), Estimated: 6 stack slots (16 bytes) [+6]
+    Call sites: 3, Confidence: high
+    File: .
+    Signature: undefined4 FUN_00452cb0(float *param_1,float *param_2,float param_3,float *param_4)
+    Sample call sites:
+      FUN_00452e20 at 00452fdf: 2 reg [EAX, EDX], 4 stack (16 bytes, via add_esp)
+      FUN_00452e20 at 00452ffa: 2 reg [EAX, ECX], 4 stack (16 bytes, via add_esp)
+      FUN_00452e20 at 00453015: 2 reg [EAX, EDX], 4 stack (16 bytes, via add_esp)
+
+  FUN_00465380
+    Declared: 0 params (0 bytes), Estimated: 6 stack slots (12 bytes) [+6]
+    Call sites: 3, Confidence: high
+    File: core/door.cpp
+    Signature: undefined4 FUN_00465380(int param_1,int param_2,int param_3)
+    Sample call sites:
+      FUN_004c07b0 at 004c47d3: 3 reg [EAX, EBX, ECX], 3 stack (12 bytes, via add_esp)
+      FUN_004c07b0 at 004c4848: 3 reg [EAX, ECX, EDX], 3 stack (12 bytes, via add_esp)
+      FUN_004d3040 at 004d31af: 3 reg [EAX, ECX, EDX], 3 stack (12 bytes, via add_esp)
+
+  FUN_00479450
+    Declared: 0 params (0 bytes), Estimated: 6 stack slots (16 bytes) [+6]
+    Call sites: 3, Confidence: high
+    File: .
+    Signature: undefined4 FUN_00479450(float *param_1,float *param_2,float param_3,float *param_4)
+    Sample call sites:
+      FUN_004795c0 at 00479763: 2 reg [EAX, EDX], 4 stack (16 bytes, via add_esp)
+      FUN_004795c0 at 0047977e: 2 reg [EAX, ECX], 4 stack (16 bytes, via add_esp)
+      FUN_004795c0 at 00479799: 2 reg [EAX, EDX], 4 stack (16 bytes, via add_esp)
+
+  FUN_0047c8e0
+    Declared: 0 params (0 bytes), Estimated: 6 stack slots (12 bytes) [+6]
+    Call sites: 3, Confidence: high
+    File: shape/edittool.cpp
+    Signature: void FUN_0047c8e0(undefined4 param_1,undefined4 param_2,undefined4 param_3)
+    Sample call sites:
+      FUN_0047ce80 at 0047cecc: 3 reg [EAX, EBX, ECX], 3 stack (12 bytes, via add_esp)
+      FUN_0047cf40 at 0047cf8c: 3 reg [EAX, EBX, ECX], 3 stack (12 bytes, via add_esp)
+      FUN_0047cee0 at 0047cf2c: 3 reg [EAX, EBX, ECX], 3 stack (12 bytes, via add_esp)
+
+  FUN_004893f0
+    Declared: 0 params (0 bytes), Estimated: 6 stack slots (16 bytes) [+6]
+    Call sites: 46, Confidence: high
+    File: .
+    Signature: undefined4 FUN_004893f0(int param_1,undefined4 *param_2,undefined4 param_3,int param_4)
+    Sample call sites:
+      FUN_004179b0 at 004181ab: 2 reg [EAX, EDX], 4 stack (16 bytes, via add_esp)
+      FUN_004179b0 at 004182a5: 2 reg [EAX, EDX], 4 stack (16 bytes, via add_esp)
+      FUN_00419b40 at 0041a2ff: 2 reg [EAX, EDX], 4 stack (16 bytes, via add_esp)
+
+  FUN_00555c90
+    Declared: 0 params (0 bytes), Estimated: 6 stack slots (24 bytes) [+6]
+    Call sites: 3, Confidence: high
+    File: .
+    Signature: void FUN_00555c90(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4,undefined4 param_5,undefined4 param_6)
+    Sample call sites:
+      FUN_0055f020 at 0055f5f8: 0 reg [], 6 stack (24 bytes, via add_esp)
+      FUN_00499eb0 at 00499f49: 0 reg [], 6 stack (24 bytes, via add_esp)
+      FUN_00499eb0 at 00499fb9: 0 reg [], 6 stack (24 bytes, via add_esp)
+
+  FUN_00416c50
+    Declared: 0 params (0 bytes), Estimated: 5 stack slots (8 bytes) [+5]
+    Call sites: 8, Confidence: high
+    File: .
+    Signature: void FUN_00416c50(float *param_1,float *param_2)
+    Sample call sites:
+      FUN_00418930 at 00418b6a: 3 reg [EAX, ECX, EDX], 2 stack (8 bytes, via add_esp)
+      FUN_00427bc0 at 00427e90: 3 reg [EAX, ECX, EDX], 2 stack (8 bytes, via add_esp)
+      FUN_00427bc0 at 004280ea: 3 reg [EAX, ECX, EDX], 2 stack (8 bytes, via add_esp)
+
+  FUN_004337e0
+    Declared: 0 params (0 bytes), Estimated: 5 stack slots (20 bytes) [+5]
+    Call sites: 33, Confidence: high
+    File: core/charactr.cpp
+    Signature: void FUN_004337e0(int param_1,undefined4 param_2,undefined4 param_3,char *param_4,undefined4 param_5 )
+    Sample call sites:
+      FUN_00517f80 at 00518183: 2 reg [EAX, EDX], 5 stack (20 bytes, via add_esp)
+      FUN_00517f80 at 00518197: 0 reg [], 5 stack (20 bytes, via add_esp)
+      FUN_00517f80 at 005181ab: 0 reg [], 5 stack (20 bytes, via add_esp)
+
+  FUN_00437b80
+    Declared: 0 params (0 bytes), Estimated: 5 stack slots (12 bytes) [+5]
+    Call sites: 5, Confidence: high
+    File: .
+    Signature: void FUN_00437b80(int param_1,int param_2,int param_3)
+    Sample call sites:
+      FUN_00437250 at 004372d0: 2 reg [EAX, ECX], 3 stack (12 bytes, via add_esp)
+      FUN_00437250 at 0043734a: 2 reg [ECX, EDX], 3 stack (12 bytes, via add_esp)
+      FUN_00437250 at 00437363: 2 reg [ECX, EDX], 3 stack (12 bytes, via add_esp)
+
+  FUN_0048bc10
+    Declared: 0 params (0 bytes), Estimated: 5 stack slots (16 bytes) [+5]
+    Call sites: 7, Confidence: high
+    File: .
+    Signature: char * FUN_0048bc10(int *param_1,char *param_2,int param_3,int param_4)
+    Sample call sites:
+      FUN_0048c2e0 at 0048c6ab: 1 reg [EAX], 4 stack (16 bytes, via add_esp)
+      FUN_0048c2e0 at 0048cbbb: 1 reg [EAX], 4 stack (16 bytes, via add_esp)
+      FUN_0048c2e0 at 0048d39c: 1 reg [EAX], 4 stack (16 bytes, via add_esp)
+
+  FUN_004a9710
+    Declared: 0 params (0 bytes), Estimated: 5 stack slots (12 bytes) [+5]
+    Call sites: 4, Confidence: high
+    File: .
+    Signature: undefined4 FUN_004a9710(int param_1,int param_2,int param_3)
+    Sample call sites:
+      FUN_004a9330 at 004a9470: 2 reg [ECX, EDX], 3 stack (12 bytes, via add_esp)
+      FUN_004a9330 at 004a95c6: 2 reg [ECX, EDX], 3 stack (12 bytes, via add_esp)
+      FUN_004a9330 at 004a969f: 2 reg [EBX, EDX], 3 stack (12 bytes, via add_esp)
+
+  FUN_004aa810
+    Declared: 0 params (0 bytes), Estimated: 5 stack slots (12 bytes) [+5]
+    Call sites: 3, Confidence: high
+    File: core/fldnotes.cpp
+    Signature: undefined4 FUN_004aa810(char *param_1,char *param_2,char *param_3)
+    Sample call sites:
+      FUN_004ac900 at 004aca13: 2 reg [EAX, ECX], 3 stack (12 bytes, via add_esp)
+      FUN_00529a70 at 0052d61b: 2 reg [EAX, EDX], 3 stack (12 bytes, via add_esp)
+      FUN_00529a70 at 0052d640: 2 reg [EAX, ECX], 3 stack (12 bytes, via add_esp)
+
+  FUN_004b3150
+    Declared: 0 params (0 bytes), Estimated: 5 stack slots (16 bytes) [+5]
+    Call sites: 18, Confidence: high
+    File: .
+    Signature: undefined8 FUN_004b3150(int param_1,undefined4 param_2,int param_3,int param_4)
+    Sample call sites:
+      FUN_00459f50 at 00459fbb: 1 reg [EAX], 4 stack (16 bytes, via add_esp)
+      FUN_00459f50 at 00459fd6: 1 reg [EDX], 4 stack (16 bytes, via add_esp)
+      FUN_00459f50 at 0045a06e: 1 reg [EAX], 4 stack (16 bytes, via add_esp)
+
+  FUN_004fab90
+    Declared: 0 params (0 bytes), Estimated: 5 stack slots (16 bytes) [+5]
+    Call sites: 16, Confidence: high
+    File: .
+    Signature: void FUN_004fab90(int param_1,int param_2,undefined4 param_3,undefined4 param_4)
+    Sample call sites:
+      FUN_0050a9b0 at 0050aa50: 1 reg [EAX], 4 stack (16 bytes, via add_esp)
+      FUN_0050a9b0 at 0050aa69: 1 reg [EAX], 4 stack (16 bytes, via add_esp)
+      FUN_00527970 at 00527a10: 1 reg [EAX], 4 stack (16 bytes, via add_esp)
+
+  FUN_0056fb10
+    Declared: 0 params (0 bytes), Estimated: 5 stack slots (16 bytes) [+5]
+    Call sites: 4, Confidence: high
+    File: .
+    Signature: int FUN_0056fb10(undefined4 *param_1,undefined4 param_2,undefined1 *param_3,undefined4 *param_4)
+    Sample call sites:
+      FUN_00504c70 at 00504cdd: 1 reg [EAX], 4 stack (16 bytes, via add_esp)
+      FUN_00571d80 at 00571dd4: 1 reg [EAX], 4 stack (16 bytes, via add_esp)
+      FUN_00504c10 at 00504c4e: 1 reg [EBX], 4 stack (16 bytes, via add_esp)
+
+  FUN_0057fd50
+    Declared: 0 params (0 bytes), Estimated: 5 stack slots (20 bytes) [+5]
+    Call sites: 4, Confidence: high
+    File: .
+    Signature: int FUN_0057fd50(undefined4 param_1,LPCSTR param_2,int param_3,undefined4 param_4,undefined4 param_5 )
+    Sample call sites:
+      FUN_00459f50 at 0045a739: 0 reg [], 5 stack (20 bytes, via add_esp)
+      FUN_00459f50 at 0045a7a5: 0 reg [], 5 stack (20 bytes, via add_esp)
+      FUN_00459f50 at 0045a810: 0 reg [], 5 stack (20 bytes, via add_esp)
+
+  FUN_005a8dec
+    Declared: 0 params (0 bytes), Estimated: 5 stack slots (16 bytes) [+5]
+    Call sites: 5, Confidence: high
+    File: .
+    Signature: int FUN_005a8dec(int param_1,int *param_2,int param_3,int param_4)
+    Sample call sites:
+      FUN_005a82c0 at 005a844f: 1 reg [EAX], 4 stack (16 bytes, via add_esp)
+      FUN_005a82c0 at 005a8466: 1 reg [EAX], 4 stack (16 bytes, via add_esp)
+      FUN_005a82c0 at 005a847d: 1 reg [EAX], 4 stack (16 bytes, via add_esp)
+
+  FUN_00416bd0
+    Declared: 0 params (0 bytes), Estimated: 4 stack slots (8 bytes) [+4]
+    Call sites: 8, Confidence: high
+    File: .
+    Signature: void FUN_00416bd0(float *param_1,float *param_2)
+    Sample call sites:
+      FUN_00418930 at 00418b92: 2 reg [EAX, EDX], 2 stack (8 bytes, via add_esp)
+      FUN_00427bc0 at 00427eb8: 2 reg [EAX, EDX], 2 stack (8 bytes, via add_esp)
+      FUN_00427bc0 at 00428112: 2 reg [EAX, EDX], 2 stack (8 bytes, via add_esp)
+
+  FUN_0041daf0
+    Declared: 0 params (0 bytes), Estimated: 4 stack slots (8 bytes) [+4]
+    Call sites: 50, Confidence: high
+    File: .
+    Signature: undefined4 FUN_0041daf0(float *param_1,int param_2)
+    Sample call sites:
+      FUN_004ca940 at 004ca982: 2 reg [EAX, ECX], 2 stack (8 bytes, via add_esp)
+      FUN_00497dc0 at 00497e1a: 3 reg [EAX, ECX, EDX], 2 stack (8 bytes, via add_esp)
+      FUN_0053afa0 at 0053b02e: 2 reg [EAX, ECX], 2 stack (8 bytes, via add_esp)
+
+  FUN_00452490
+    Declared: 0 params (0 bytes), Estimated: 4 stack slots (4 bytes) [+4]
+    Call sites: 3, Confidence: high
+    File: .
+    Signature: undefined4 FUN_00452490(float *param_1)
+    Sample call sites:
+      FUN_00452810 at 00452ac6: 3 reg [EAX, ECX, EDX], 1 stack (4 bytes, via add_esp)
+      FUN_00452810 at 00452bc4: 3 reg [EAX, ECX, EDX], 1 stack (4 bytes, via add_esp)
+      FUN_00452770 at 00452799: 3 reg [EAX, EBX, EDX], 1 stack (4 bytes, via add_esp)
+
+  FUN_0047bb10
+    Declared: 0 params (0 bytes), Estimated: 4 stack slots (12 bytes) [+4]
+    Call sites: 3, Confidence: high
+    File: .
+    Signature: void FUN_0047bb10(int param_1,undefined1 param_2,int param_3)
+    Sample call sites:
+      FUN_0047e470 at 0047e8cb: 1 reg [EAX], 3 stack (12 bytes, via add_esp)
+      FUN_0047bcf0 at 0047bd33: 1 reg [EAX], 3 stack (12 bytes, via add_esp)
+      FUN_0047c2c0 at 0047c6a2: 1 reg [EAX], 3 stack (12 bytes, via add_esp)
+
+  FUN_004819e0
+    Declared: 0 params (0 bytes), Estimated: 4 stack slots (8 bytes) [+4]
+    Call sites: 3, Confidence: high
+    File: .
+    Signature: void FUN_004819e0(undefined4 param_1,char *param_2)
+    Sample call sites:
+      FUN_004e4400 at 004e449b: 2 reg [EAX, EDX], 2 stack (8 bytes, via add_esp)
+      FUN_004b7f90 at 004b8030: 2 reg [EAX, EDX], 2 stack (8 bytes, via add_esp)
+      FUN_004b6f30 at 004b789e: 2 reg [EAX, ECX], 2 stack (8 bytes, via add_esp)
+
+  FUN_0048a200
+    Declared: 0 params (0 bytes), Estimated: 4 stack slots (8 bytes) [+4]
+    Call sites: 3, Confidence: high
+    File: .
+    Signature: bool FUN_0048a200(undefined4 param_1,undefined4 param_2)
+    Sample call sites:
+      FUN_00428fc0 at 00428fe7: 2 reg [EBX, ECX], 2 stack (8 bytes, via push_count)
+      FUN_00458ec0 at 00458ee7: 2 reg [EBX, ECX], 2 stack (8 bytes, via push_count)
+      FUN_0058caf0 at 0058cb17: 2 reg [EBX, ECX], 2 stack (8 bytes, via push_count)
+
+  FUN_004a3ed0
+    Declared: 0 params (0 bytes), Estimated: 4 stack slots (12 bytes) [+4]
+    Call sites: 4, Confidence: high
+    File: .
+    Signature: void FUN_004a3ed0(undefined4 param_1,undefined4 param_2,undefined4 param_3)
+    Sample call sites:
+      FUN_00487eb0 at 004885e8: 1 reg [EDX], 3 stack (12 bytes, via add_esp)
+      FUN_00487eb0 at 004885fa: 1 reg [ECX], 3 stack (12 bytes, via add_esp)
+      FUN_00487eb0 at 0048860c: 1 reg [EDX], 3 stack (12 bytes, via add_esp)
+
+  FUN_004d8c30
+    Declared: 0 params (0 bytes), Estimated: 4 stack slots (12 bytes) [+4]
+    Call sites: 50, Confidence: high
+    File: .
+    Signature: void FUN_004d8c30(int param_1,undefined4 param_2,undefined4 *param_3)
+    Sample call sites:
+      FUN_004be8d0 at 004be9c2: 2 reg [EAX, ECX], 3 stack (12 bytes, via add_esp)
+      FUN_004d8e70 at 004d8ecb: 2 reg [EAX, EBX], 3 stack (12 bytes, via add_esp)
+      FUN_004d8e70 at 004d8ee6: 1 reg [EAX], 3 stack (12 bytes, via add_esp)
+
+  FUN_004db9e0
+    Declared: 0 params (0 bytes), Estimated: 4 stack slots (8 bytes) [+4]
+    Call sites: 4, Confidence: high
+    File: .
+    Signature: undefined4 FUN_004db9e0(int param_1,undefined4 param_2)
+    Sample call sites:
+      FUN_004dba80 at 004dba8a: 2 reg [ECX, EDX], 2 stack (8 bytes, via add_esp)
+      FUN_005220d0 at 005223b5: 2 reg [EAX, EDX], 2 stack (8 bytes, via add_esp)
+      FUN_005220d0 at 00522537: 2 reg [EAX, EDX], 2 stack (8 bytes, via add_esp)
+
+  FUN_004e0000
+    Declared: 0 params (0 bytes), Estimated: 4 stack slots (12 bytes) [+4]
+    Call sites: 10, Confidence: high
+    File: .
+    Signature: void FUN_004e0000(int *param_1,undefined4 param_2,int param_3)
+    Sample call sites:
+      FUN_004f5bc0 at 004f5bf7: 1 reg [EDX], 3 stack (12 bytes, via add_esp)
+      FUN_004f6a80 at 004f6a9e: 1 reg [EDX], 3 stack (12 bytes, via add_esp)
+      FUN_004f6a80 at 004f6b6c: 1 reg [EDX], 3 stack (12 bytes, via add_esp)
+
+  FUN_00515a10
+    Declared: 0 params (0 bytes), Estimated: 4 stack slots (8 bytes) [+4]
+    Call sites: 4, Confidence: high
+    File: .
+    Signature: void FUN_00515a10(int param_1,int param_2)
+    Sample call sites:
+      FUN_00516de0 at 00517111: 2 reg [ECX, EDX], 2 stack (8 bytes, via add_esp)
+      FUN_00517480 at 0051765e: 2 reg [EAX, EBX], 2 stack (8 bytes, via add_esp)
+      FUN_005a23c0 at 005a2679: 2 reg [EAX, EBX], 2 stack (8 bytes, via add_esp)
+
+  FUN_005288c0
+    Declared: 0 params (0 bytes), Estimated: 4 stack slots (12 bytes) [+4]
+    Call sites: 20, Confidence: high
+    File: .
+    Signature: char * FUN_005288c0(int *param_1,int param_2,int param_3)
+    Sample call sites:
+      FUN_00529a70 at 0052b8be: 1 reg [EAX], 3 stack (12 bytes, via add_esp)
+      FUN_00529a70 at 0052b9e5: 1 reg [EAX], 3 stack (12 bytes, via add_esp)
+      FUN_00529a70 at 0052c0bd: 1 reg [EAX], 3 stack (12 bytes, via add_esp)
+
+  FUN_00574b50
+    Declared: 0 params (0 bytes), Estimated: 4 stack slots (8 bytes) [+4]
+    Call sites: 6, Confidence: high
+    File: .
+    Signature: undefined4 * FUN_00574b50(undefined4 *param_1,byte param_2)
+    Sample call sites:
+      FUN_004408e0 at 0044093a: 2 reg [EAX, EDX], 2 stack (8 bytes, via add_esp)
+      FUN_00440b60 at 00440bb8: 2 reg [EAX, EBX], 2 stack (8 bytes, via add_esp)
+      FUN_00441c80 at 00441d15: 2 reg [EAX, EBX], 2 stack (8 bytes, via add_esp)
+
+  FUN_00577760
+    Declared: 0 params (0 bytes), Estimated: 4 stack slots (8 bytes) [+4]
+    Call sites: 5, Confidence: high
+    File: .
+    Signature: void FUN_00577760(int *param_1,int param_2)
+    Sample call sites:
+      FUN_00533b80 at 00533dc0: 2 reg [EAX, EDX], 2 stack (8 bytes, via add_esp)
+      FUN_00534890 at 00534fec: 2 reg [EAX, EBX], 2 stack (8 bytes, via add_esp)
+      FUN_00534890 at 00535305: 2 reg [EAX, EBX], 2 stack (8 bytes, via add_esp)
+
+  FUN_005aee30
+    Declared: 0 params (0 bytes), Estimated: 4 stack slots (12 bytes) [+4]
+    Call sites: 3, Confidence: high
+    File: .
+    Signature: void FUN_005aee30(FILETIME *param_1,LPWORD param_2,LPWORD param_3)
+    Sample call sites:
+      FUN_005aaed4 at 005ab088: 1 reg [EAX], 3 stack (12 bytes, via add_esp)
+      FUN_005aaed4 at 005ab0c6: 1 reg [EAX], 3 stack (12 bytes, via add_esp)
+      FUN_005aaed4 at 005ab12b: 1 reg [EAX], 3 stack (12 bytes, via add_esp)
+
+  FUN_005b121c
+    Declared: 0 params (0 bytes), Estimated: 4 stack slots (12 bytes) [+4]
+    Call sites: 3, Confidence: high
+    File: .
+    Signature: void FUN_005b121c(undefined4 param_1,undefined4 param_2,undefined4 param_3)
+    Sample call sites:
+      FUN_005b0a70 at 005b0ad8: 1 reg [EBX], 3 stack (12 bytes, via add_esp)
+      FUN_005b0a70 at 005b0b23: 1 reg [EBX], 3 stack (12 bytes, via add_esp)
+      FUN_005b0a70 at 005b0b6d: 1 reg [EBX], 3 stack (12 bytes, via add_esp)
+
+  FUN_00408770
+    Declared: 0 params (0 bytes), Estimated: 3 stack slots (8 bytes) [+3]
+    Call sites: 50, Confidence: high
+    File: .
+    Signature: int FUN_00408770(int param_1,uint param_2)
+    Sample call sites:
+      FUN_0040e510 at 0040e51f: 1 reg [EBX], 2 stack (8 bytes, via add_esp)
+      FUN_0040e4c0 at 0040e4cf: 1 reg [EBX], 2 stack (8 bytes, via add_esp)
+      FUN_0040e470 at 0040e47f: 1 reg [EBX], 2 stack (8 bytes, via add_esp)
+
+  FUN_00409d50
+    Declared: 0 params (0 bytes), Estimated: 3 stack slots (8 bytes) [+3]
+    Call sites: 4, Confidence: high
+    File: .
+    Signature: void FUN_00409d50(void)
+    Sample call sites:
+      FUN_0057b800 at 0057b80a: 1 reg [ECX], 2 stack (8 bytes, via push_count)
+      FUN_00420180 at 0042018a: 1 reg [ECX], 2 stack (8 bytes, via push_count)
+      FUN_004d2130 at 004d213a: 1 reg [ECX], 2 stack (8 bytes, via push_count)
+
+  FUN_0040b4a0
+    Declared: 0 params (0 bytes), Estimated: 3 stack slots (8 bytes) [+3]
+    Call sites: 5, Confidence: high
+    File: .
+    Signature: void FUN_0040b4a0(float *param_1,undefined4 param_2)
+    Sample call sites:
+      FUN_0040c280 at 0040c2a2: 1 reg [EAX], 2 stack (8 bytes, via add_esp)
+      FUN_0042b450 at 0042b7be: 1 reg [EAX], 2 stack (8 bytes, via add_esp)
+      FUN_0042b450 at 0042b896: 1 reg [EAX], 2 stack (8 bytes, via add_esp)
+
+  FUN_0040b7a0
+    Declared: 0 params (0 bytes), Estimated: 3 stack slots (8 bytes) [+3]
+    Call sites: 4, Confidence: high
+    File: .
+    Signature: void FUN_0040b7a0(undefined4 param_1,char *param_2)
+    Sample call sites:
+      FUN_0057b2a0 at 0057b333: 1 reg [EAX], 2 stack (8 bytes, via add_esp)
+      FUN_0042b450 at 0042b5ae: 1 reg [EAX], 2 stack (8 bytes, via add_esp)
+      FUN_004d1fe0 at 004d2059: 1 reg [EAX], 2 stack (8 bytes, via add_esp)
+
+  FUN_0041e9b0
+    Declared: 0 params (0 bytes), Estimated: 3 stack slots (4 bytes) [+3]
+    Call sites: 3, Confidence: high
+    File: .
+    Signature: void FUN_0041e9b0(float *param_1)
+    Sample call sites:
+      FUN_00464a60 at 00464afb: 2 reg [EAX, ECX], 1 stack (4 bytes, via add_esp)
+      FUN_005120b0 at 0051219f: 2 reg [EAX, ECX], 1 stack (4 bytes, via add_esp)
+      FUN_00448060 at 00448254: 2 reg [EAX, ECX], 1 stack (4 bytes, via add_esp)
+
+  FUN_00440810
+    Declared: 0 params (0 bytes), Estimated: 3 stack slots (8 bytes) [+3]
+    Call sites: 8, Confidence: high
+    File: .
+    Signature: undefined4 * FUN_00440810(undefined4 *param_1,uint param_2)
+    Sample call sites:
+      FUN_004bdfb0 at 004be3a3: 1 reg [EAX], 2 stack (8 bytes, via add_esp)
+      FUN_004bda10 at 004bde21: 1 reg [EAX], 2 stack (8 bytes, via add_esp)
+      FUN_0044f750 at 0044fd14: 1 reg [EAX], 2 stack (8 bytes, via add_esp)
+
+  FUN_00440bf0
+    Declared: 0 params (0 bytes), Estimated: 3 stack slots (8 bytes) [+3]
+    Call sites: 5, Confidence: high
+    File: .
+    Signature: undefined4 FUN_00440bf0(undefined4 param_1)
+    Sample call sites:
+      FUN_004bdfb0 at 004be391: 1 reg [EAX], 2 stack (8 bytes, via add_esp)
+      FUN_004bda10 at 004bde0f: 1 reg [EAX], 2 stack (8 bytes, via add_esp)
+      FUN_0044f750 at 0044fd02: 1 reg [EAX], 2 stack (8 bytes, via add_esp)
+
+  FUN_00465b80
+    Declared: 0 params (0 bytes), Estimated: 3 stack slots (8 bytes) [+3]
+    Call sites: 5, Confidence: high
+    File: .
+    Signature: undefined4 FUN_00465b80(undefined4 param_1)
+    Sample call sites:
+      FUN_00482a70 at 00482c2a: 1 reg [ECX], 2 stack (8 bytes, via add_esp)
+      FUN_00482c70 at 00482e29: 1 reg [EAX], 2 stack (8 bytes, via add_esp)
+      FUN_005152e0 at 00515371: 1 reg [EAX], 2 stack (8 bytes, via add_esp)
+
+  FUN_00465ba0
+    Declared: 0 params (0 bytes), Estimated: 3 stack slots (8 bytes) [+3]
+    Call sites: 5, Confidence: high
+    File: .
+    Signature: undefined4 FUN_00465ba0(int param_1,LPCSTR param_2)
+    Sample call sites:
+      FUN_00482a70 at 00482bc1: 1 reg [ECX], 2 stack (8 bytes, via add_esp)
+      FUN_00482c70 at 00482db4: 1 reg [EAX], 2 stack (8 bytes, via add_esp)
+      FUN_005152e0 at 00515322: 1 reg [EAX], 2 stack (8 bytes, via add_esp)
+
+  FUN_0046d090
+    Declared: 0 params (0 bytes), Estimated: 3 stack slots (8 bytes) [+3]
+    Call sites: 11, Confidence: high
+    File: .
+    Signature: void FUN_0046d090(undefined4 param_1,float param_2)
+    Sample call sites:
+      FUN_004f9670 at 004f9710: 1 reg [ECX], 2 stack (8 bytes, via add_esp)
+      FUN_0045c530 at 0045c5da: 1 reg [EDX], 2 stack (8 bytes, via add_esp)
+      FUN_00448ff0 at 004491e9: 1 reg [EBX], 2 stack (8 bytes, via add_esp)
+
+  FUN_00480200
+    Declared: 0 params (0 bytes), Estimated: 3 stack slots (8 bytes) [+3]
+    Call sites: 3, Confidence: high
+    File: shape/edittool.cpp
+    Signature: void FUN_00480200(undefined4 param_1,int param_2)
+    Sample call sites:
+      FUN_0047c8e0 at 0047cad2: 1 reg [EAX], 2 stack (8 bytes, via add_esp)
+      FUN_004843d0 at 004843f2: 1 reg [ECX], 2 stack (8 bytes, via add_esp)
+      FUN_0047c2c0 at 0047c49d: 1 reg [EDX], 2 stack (8 bytes, via add_esp)
+
+  FUN_00484d00
+    Declared: 0 params (0 bytes), Estimated: 3 stack slots (12 bytes) [+3]
+    Call sites: 5, Confidence: high
+    File: shape/edittool.cpp
+    Signature: void FUN_00484d00(int *param_1,int param_2,int param_3)
+    Sample call sites:
+      FUN_00484e30 at 00484e79: 0 reg [], 3 stack (12 bytes, via add_esp)
+      FUN_00484e30 at 00484e97: 0 reg [], 3 stack (12 bytes, via push_count)
+      FUN_00484eb0 at 00484f00: 0 reg [], 3 stack (12 bytes, via add_esp)
+
+  FUN_00486120
+    Declared: 0 params (0 bytes), Estimated: 3 stack slots (8 bytes) [+3]
+    Call sites: 6, Confidence: high
+    File: .
+    Signature: void FUN_00486120(int param_1,int param_2)
+    Sample call sites:
+      FUN_0047c8e0 at 0047cb49: 1 reg [EAX], 2 stack (8 bytes, via add_esp)
+      FUN_004843d0 at 00484612: 1 reg [EAX], 2 stack (8 bytes, via add_esp)
+      FUN_004843d0 at 00484647: 1 reg [EAX], 2 stack (8 bytes, via add_esp)
+
+  FUN_004a4340
+    Declared: 0 params (0 bytes), Estimated: 3 stack slots (8 bytes) [+3]
+    Call sites: 3, Confidence: high
+    File: .
+    Signature: void FUN_004a4340(undefined4 param_1,int param_2)
+    Sample call sites:
+      FUN_0040f900 at 0040f930: 1 reg [ECX], 2 stack (8 bytes, via push_count)
+      FUN_0045c0d0 at 0045c100: 1 reg [ECX], 2 stack (8 bytes, via push_count)
+      FUN_00568c10 at 00568c52: 1 reg [EBX], 2 stack (8 bytes, via push_count)
+
+  FUN_004a83a0
+    Declared: 0 params (0 bytes), Estimated: 3 stack slots (8 bytes) [+3]
+    Call sites: 4, Confidence: high
+    File: .
+    Signature: int FUN_004a83a0(int param_1)
+    Sample call sites:
+      FUN_004a8510 at 004a8526: 1 reg [EBX], 2 stack (8 bytes, via add_esp)
+      FUN_004a8710 at 004a8740: 1 reg [EBX], 2 stack (8 bytes, via add_esp)
+      FUN_004a8980 at 004a89bf: 1 reg [EBX], 2 stack (8 bytes, via add_esp)
+
+  FUN_004b31b0
+    Declared: 0 params (0 bytes), Estimated: 3 stack slots (8 bytes) [+3]
+    Call sites: 9, Confidence: high
+    File: .
+    Signature: void FUN_004b31b0(int param_1,undefined4 param_2)
+    Sample call sites:
+      FUN_00459f50 at 00459ffa: 1 reg [EAX], 2 stack (8 bytes, via add_esp)
+      FUN_00459f50 at 0045a092: 1 reg [EAX], 2 stack (8 bytes, via add_esp)
+      FUN_00459f50 at 0045a15f: 1 reg [EAX], 2 stack (8 bytes, via add_esp)
+
+  FUN_004d8a50
+    Declared: 0 params (0 bytes), Estimated: 3 stack slots (8 bytes) [+3]
+    Call sites: 5, Confidence: high
+    File: .
+    Signature: int FUN_004d8a50(int param_1,uint param_2)
+    Sample call sites:
+      FUN_004be8d0 at 004beb2c: 1 reg [EAX], 2 stack (8 bytes, via add_esp)
+      FUN_004d8e70 at 004d9583: 1 reg [EAX], 2 stack (8 bytes, via add_esp)
+      FUN_004d95c0 at 004d9c6f: 1 reg [EAX], 2 stack (8 bytes, via add_esp)
+
+  FUN_004d8ae0
+    Declared: 0 params (0 bytes), Estimated: 3 stack slots (8 bytes) [+3]
+    Call sites: 11, Confidence: high
+    File: .
+    Signature: void FUN_004d8ae0(int param_1,char *param_2)
+    Sample call sites:
+      FUN_004d8a20 at 004d8a43: 1 reg [ECX], 2 stack (8 bytes, via add_esp)
+      FUN_004d8e70 at 004d8eb2: 1 reg [EAX], 2 stack (8 bytes, via add_esp)
+      FUN_004d8e70 at 004d9070: 1 reg [EAX], 2 stack (8 bytes, via add_esp)
+
+  FUN_004dbc40
+    Declared: 0 params (0 bytes), Estimated: 3 stack slots (8 bytes) [+3]
+    Call sites: 4, Confidence: high
+    File: .
+    Signature: void FUN_004dbc40(int param_1,int param_2)
+    Sample call sites:
+      FUN_004b9960 at 004b9ceb: 1 reg [EAX], 2 stack (8 bytes, via add_esp)
+      FUN_004b9960 at 004b9d20: 1 reg [EAX], 2 stack (8 bytes, via add_esp)
+      FUN_004c07b0 at 004c0aa5: 1 reg [EAX], 2 stack (8 bytes, via add_esp)
+
+  FUN_004df5c0
+    Declared: 0 params (0 bytes), Estimated: 3 stack slots (8 bytes) [+3]
+    Call sites: 14, Confidence: high
+    File: .
+    Signature: void FUN_004df5c0(undefined4 param_1,int param_2)
+    Sample call sites:
+      FUN_004b93e0 at 004b9597: 1 reg [EDX], 2 stack (8 bytes, via add_esp)
+      FUN_004b93e0 at 004b95ab: 1 reg [EBX], 2 stack (8 bytes, via add_esp)
+      FUN_004b93e0 at 004b95be: 1 reg [EAX], 2 stack (8 bytes, via add_esp)
+
+  FUN_004eacb0
+    Declared: 0 params (0 bytes), Estimated: 3 stack slots (8 bytes) [+3]
+    Call sites: 28, Confidence: high
+    File: .
+    Signature: undefined4 FUN_004eacb0(uint *param_1)
+    Sample call sites:
+      FUN_004eae80 at 004ec30a: 1 reg [EAX], 2 stack (8 bytes, via add_esp)
+      FUN_004eae80 at 004ec32b: 1 reg [EAX], 2 stack (8 bytes, via add_esp)
+      FUN_004eae80 at 004ec34c: 1 reg [EAX], 2 stack (8 bytes, via add_esp)
+
+  FUN_004fcdc0
+    Declared: 0 params (0 bytes), Estimated: 3 stack slots (8 bytes) [+3]
+    Call sites: 9, Confidence: high
+    File: .
+    Signature: void FUN_004fcdc0(int param_1,int param_2)
+    Sample call sites:
+      FUN_0042e220 at 0042e2c5: 1 reg [EAX], 2 stack (8 bytes, via add_esp)
+      FUN_005095f0 at 00509772: 1 reg [ECX], 2 stack (8 bytes, via add_esp)
+      FUN_00545710 at 005458ae: 1 reg [EDX], 2 stack (8 bytes, via add_esp)
+
+  FUN_00528970
+    Declared: 0 params (0 bytes), Estimated: 3 stack slots (8 bytes) [+3]
+    Call sites: 6, Confidence: high
+    File: .
+    Signature: void FUN_00528970(undefined4 param_1,undefined4 param_2)
+    Sample call sites:
+      FUN_00529a70 at 0052b556: 1 reg [EAX], 2 stack (8 bytes, via add_esp)
+      FUN_00529a70 at 0052b5be: 1 reg [EAX], 2 stack (8 bytes, via add_esp)
+      FUN_00529a70 at 0052b634: 1 reg [EAX], 2 stack (8 bytes, via add_esp)
+
+  FUN_0054a310
+    Declared: 0 params (0 bytes), Estimated: 3 stack slots (12 bytes) [+3]
+    Call sites: 50, Confidence: high
+    File: core/skeleton.cpp
+    Signature: int FUN_0054a310(int param_1,undefined4 param_2,int param_3)
+    Sample call sites:
+      FUN_00528c20 at 00528c9a: 1 reg [EAX], 3 stack (12 bytes, via add_esp)
+      FUN_0042d500 at 0042d6ce: 0 reg [], 3 stack (12 bytes, via add_esp)
+      FUN_0042d500 at 0042d6ed: 0 reg [], 3 stack (12 bytes, via add_esp)
+
+  FUN_0054c180
+    Declared: 0 params (0 bytes), Estimated: 3 stack slots (12 bytes) [+3]
+    Call sites: 3, Confidence: high
+    File: .
+    Signature: void FUN_0054c180(undefined4 param_1,undefined4 param_2,undefined4 param_3)
+    Sample call sites:
+      FUN_0054e850 at 0054e88e: 0 reg [], 3 stack (12 bytes, via add_esp)
+      FUN_00518680 at 0051890f: 0 reg [], 3 stack (12 bytes, via add_esp)
+      FUN_0056c140 at 0056c554: 0 reg [], 3 stack (12 bytes, via add_esp)
+
+  FUN_00552f10
+    Declared: 0 params (0 bytes), Estimated: 3 stack slots (8 bytes) [+3]
+    Call sites: 10, Confidence: high
+    File: .
+    Signature: int FUN_00552f10(uint param_1,int param_2)
+    Sample call sites:
+      FUN_00556700 at 00556711: 1 reg [ECX], 2 stack (8 bytes, via add_esp)
+      FUN_00556700 at 00556730: 1 reg [EDX], 2 stack (8 bytes, via add_esp)
+      FUN_00556780 at 00556787: 1 reg [EDX], 2 stack (8 bytes, via add_esp)
+
+  FUN_00574850
+    Declared: 0 params (0 bytes), Estimated: 3 stack slots (8 bytes) [+3]
+    Call sites: 10, Confidence: high
+    File: .
+    Signature: undefined4 * FUN_00574850(undefined4 *param_1,byte param_2)
+    Sample call sites:
+      FUN_004bdfb0 at 004be3b5: 1 reg [EAX], 2 stack (8 bytes, via add_esp)
+      FUN_004bdfb0 at 004be4e3: 1 reg [EAX], 2 stack (8 bytes, via add_esp)
+      FUN_004bdfb0 at 004be52f: 1 reg [EAX], 2 stack (8 bytes, via add_esp)
+
+  FUN_0057aed0
+    Declared: 0 params (0 bytes), Estimated: 3 stack slots (8 bytes) [+3]
+    Call sites: 20, Confidence: high
+    File: .
+    Signature: int FUN_0057aed0(int param_1,byte param_2)
+    Sample call sites:
+      FUN_0040f940 at 0040f94f: 1 reg [EBX], 2 stack (8 bytes, via add_esp)
+      FUN_00411890 at 0041189f: 1 reg [EBX], 2 stack (8 bytes, via add_esp)
+      FUN_00425420 at 00425446: 1 reg [EBX], 2 stack (8 bytes, via add_esp)
+
+  FUN_0057b820
+    Declared: 0 params (0 bytes), Estimated: 3 stack slots (4 bytes) [+3]
+    Call sites: 3, Confidence: high
+    File: .
+    Signature: void FUN_0057b820(int param_1)
+    Sample call sites:
+      FUN_00411790 at 004117a4: 2 reg [EBX, EDX], 1 stack (4 bytes, via add_esp)
+      FUN_0048b5d0 at 0048b5e4: 2 reg [EBX, EDX], 1 stack (4 bytes, via add_esp)
+      FUN_004e3de0 at 004e3df4: 2 reg [EBX, EDX], 1 stack (4 bytes, via add_esp)
+
+  FUN_00585de0
+    Declared: 0 params (0 bytes), Estimated: 3 stack slots (4 bytes) [+3]
+    Call sites: 6, Confidence: high
+    File: .
+    Signature: float * FUN_00585de0(float *param_1)
+    Sample call sites:
+      FUN_00511340 at 0051146f: 2 reg [EAX, EDX], 1 stack (4 bytes, via add_esp)
+      FUN_0051e280 at 0051e2e5: 2 reg [EAX, EDX], 1 stack (4 bytes, via add_esp)
+      FUN_0042cd70 at 0042ce43: 2 reg [ECX, EDX], 1 stack (4 bytes, via add_esp)
+
+  FUN_005a3de6
+    Declared: 0 params (0 bytes), Estimated: 3 stack slots (8 bytes) [+3]
+    Call sites: 39, Confidence: high
+    File: .
+    Signature: undefined4 FUN_005a3de6(undefined4 param_1,undefined4 param_2,undefined4 param_3)
+    Sample call sites:
+      FUN_005a308f at 005a30aa: 3 reg [EBX, ECX, EDX], 3 stack (12 bytes, via add_esp)
+      FUN_004ad410 at 004ad41c: 1 reg [EDX], 2 stack (8 bytes, via push_count)
+      FUN_00410370 at 0041037c: 1 reg [EDX], 2 stack (8 bytes, via push_count)
+
+  FUN_005a3f90
+    Declared: 0 params (0 bytes), Estimated: 3 stack slots (12 bytes) [+3]
+    Call sites: 50, Confidence: high
+    File: .
+    Signature: int FUN_005a3f90(byte *param_1,undefined1 *param_2,int param_3)
+    Sample call sites:
+      FUN_004bdfb0 at 004be3f4: 1 reg [EAX], 3 stack (12 bytes, via add_esp)
+      FUN_0048c2e0 at 0048c538: 0 reg [], 3 stack (12 bytes, via add_esp)
+      FUN_0048c2e0 at 0048c855: 0 reg [], 3 stack (12 bytes, via add_esp)
+
+  FUN_005acb10
+    Declared: 0 params (0 bytes), Estimated: 3 stack slots (8 bytes) [+3]
+    Call sites: 3, Confidence: high
+    File: .
+    Signature: undefined4 * FUN_005acb10(undefined4 *param_1,uint param_2)
+    Sample call sites:
+      FUN_005aaed4 at 005aaf27: 1 reg [EAX], 2 stack (8 bytes, via add_esp)
+      FUN_005a53f0 at 005a5439: 1 reg [EBX], 2 stack (8 bytes, via add_esp)
+      FUN_005a9aec at 005a9b58: 1 reg [EDX], 2 stack (8 bytes, via add_esp)
+
+  FUN_005aef20
+    Declared: 0 params (0 bytes), Estimated: 3 stack slots (8 bytes) [+3]
+    Call sites: 3, Confidence: high
+    File: .
+    Signature: void FUN_005aef20(uint param_1,uint param_2)
+    Sample call sites:
+      FUN_005aaed4 at 005ab0a6: 1 reg [EAX], 2 stack (8 bytes, via add_esp)
+      FUN_005aaed4 at 005ab10b: 1 reg [EAX], 2 stack (8 bytes, via add_esp)
+      FUN_005aaed4 at 005ab170: 1 reg [EAX], 2 stack (8 bytes, via add_esp)
+
+  FUN_00408600
+    Declared: 0 params (0 bytes), Estimated: 2 stack slots (4 bytes) [+2]
+    Call sites: 43, Confidence: high
+    File: .
+    Signature: undefined1 * FUN_00408600(int param_1)
+    Sample call sites:
+      FUN_004d4ae0 at 004d4aec: 1 reg [EDX], 1 stack (4 bytes, via add_esp)
+      FUN_00414750 at 00414755: 1 reg [EAX], 1 stack (4 bytes, via add_esp)
+      FUN_0040de60 at 0040de68: 1 reg [EBX], 1 stack (4 bytes, via add_esp)
+
+  FUN_00414a60
+    Declared: 0 params (0 bytes), Estimated: 2 stack slots (8 bytes) [+2]
+    Call sites: 3, Confidence: high
+    File: .
+    Signature: void FUN_00414a60(int param_1,undefined4 param_2)
+    Sample call sites:
+      FUN_00414bd0 at 00414c6e: 0 reg [], 2 stack (8 bytes, via add_esp)
+      FUN_00414d40 at 00414e06: 0 reg [], 2 stack (8 bytes, via add_esp)
+      FUN_00414e90 at 00414ef9: 0 reg [], 2 stack (8 bytes, via add_esp)
+
+  FUN_00417400
+    Declared: 0 params (0 bytes), Estimated: 2 stack slots (4 bytes) [+2]
+    Call sites: 4, Confidence: high
+    File: .
+    Signature: void FUN_00417400(undefined4 param_1)
+    Sample call sites:
+      FUN_004198e0 at 004198e6: 1 reg [EDX], 1 stack (4 bytes, via add_esp)
+      FUN_00419980 at 00419986: 1 reg [EDX], 1 stack (4 bytes, via add_esp)
+      FUN_00419a20 at 00419a26: 1 reg [EDX], 1 stack (4 bytes, via add_esp)
+
+  FUN_0042ac20
+    Declared: 0 params (0 bytes), Estimated: 2 stack slots (4 bytes) [+2]
+    Call sites: 6, Confidence: high
+    File: .
+    Signature: int FUN_0042ac20(undefined4 param_1)
+    Sample call sites:
+      FUN_00488fd0 at 00488fdb: 1 reg [EBX], 1 stack (4 bytes, via add_esp)
+      FUN_0040f9f0 at 0040f9f9: 1 reg [EBX], 1 stack (4 bytes, via add_esp)
+      FUN_004f8b40 at 004f8b46: 1 reg [EDX], 1 stack (4 bytes, via add_esp)
+
+  FUN_00431000
+    Declared: 0 params (0 bytes), Estimated: 2 stack slots (4 bytes) [+2]
+    Call sites: 3, Confidence: high
+    File: .
+    Signature: undefined4 FUN_00431000(int param_1)
+    Sample call sites:
+      FUN_00419880 at 00419885: 1 reg [EDX], 1 stack (4 bytes, via add_esp)
+      FUN_004444f0 at 004444f5: 1 reg [EDX], 1 stack (4 bytes, via add_esp)
+      FUN_00526fc0 at 00526fe0: 1 reg [ECX], 1 stack (4 bytes, via push_count)
+
+  FUN_00433350
+    Declared: 0 params (0 bytes), Estimated: 2 stack slots (8 bytes) [+2]
+    Call sites: 44, Confidence: high
+    File: .
+    Signature: void FUN_00433350(int param_1,undefined4 param_2)
+    Sample call sites:
+      FUN_004179b0 at 00418023: 0 reg [], 2 stack (8 bytes, via add_esp)
+      FUN_00419b40 at 0041a175: 0 reg [], 2 stack (8 bytes, via add_esp)
+      FUN_00425da0 at 00426b41: 0 reg [], 2 stack (8 bytes, via add_esp)
+
+  FUN_00433fb0
+    Declared: 0 params (0 bytes), Estimated: 2 stack slots (8 bytes) [+2]
+    Call sites: 50, Confidence: high
+    File: .
+    Signature: void FUN_00433fb0(int param_1,uint param_2)
+    Sample call sites:
+      FUN_004c6eb0 at 004c7933: 0 reg [], 2 stack (8 bytes, via add_esp)
+      FUN_0051b550 at 0051c052: 0 reg [], 2 stack (8 bytes, via add_esp)
+      FUN_0051b550 at 0051c070: 0 reg [], 2 stack (8 bytes, via add_esp)
+
+  FUN_00434810
+    Declared: 0 params (0 bytes), Estimated: 2 stack slots (8 bytes) [+2]
+    Call sites: 8, Confidence: high
+    File: .
+    Signature: void FUN_00434810(int param_1,undefined4 param_2)
+    Sample call sites:
+      FUN_00428810 at 00428a29: 0 reg [], 2 stack (8 bytes, via add_esp)
+      FUN_00445730 at 004458b3: 0 reg [], 2 stack (8 bytes, via add_esp)
+      FUN_00458680 at 00458816: 0 reg [], 2 stack (8 bytes, via add_esp)
+
+  FUN_0043f900
+    Declared: 0 params (0 bytes), Estimated: 2 stack slots (8 bytes) [+2]
+    Call sites: 50, Confidence: high
+    File: .
+    Signature: undefined4 FUN_0043f900(undefined4 param_1)
+    Sample call sites:
+      FUN_004101f0 at 00410225: 0 reg [], 2 stack (8 bytes, via add_esp)
+      FUN_0041ab00 at 0041ab25: 0 reg [], 2 stack (8 bytes, via add_esp)
+      FUN_0041aa70 at 0041aa95: 0 reg [], 2 stack (8 bytes, via add_esp)
+
+  FUN_00440800
+    Declared: 0 params (0 bytes), Estimated: 2 stack slots (4 bytes) [+2]
+    Call sites: 4, Confidence: high
+    File: .
+    Signature: void FUN_00440800(undefined4 *param_1)
+    Sample call sites:
+      FUN_00441310 at 00441315: 1 reg [EAX], 1 stack (4 bytes, via add_esp)
+      FUN_004410f0 at 004410f5: 1 reg [EAX], 1 stack (4 bytes, via add_esp)
+      FUN_004414f0 at 004414f5: 1 reg [EDX], 1 stack (4 bytes, via add_esp)
+
+  FUN_0045c2a0
+    Declared: 0 params (0 bytes), Estimated: 2 stack slots (4 bytes) [+2]
+    Call sites: 3, Confidence: high
+    File: core/dlight.cpp
+    Signature: void FUN_0045c2a0(int param_1)
+    Sample call sites:
+      FUN_004b7f90 at 004b81de: 1 reg [EAX], 1 stack (4 bytes, via add_esp)
+      FUN_00542940 at 0054298e: 1 reg [EDX], 1 stack (4 bytes, via add_esp)
+      FUN_004203f0 at 0042040e: 1 reg [EAX], 1 stack (4 bytes, via push_count)
+
+  FUN_00462420
+    Declared: 0 params (0 bytes), Estimated: 2 stack slots (4 bytes) [+2]
+    Call sites: 5, Confidence: high
+    File: core/dmodel.cpp
+    Signature: int FUN_00462420(undefined4 param_1)
+    Sample call sites:
+      FUN_00462580 at 00462588: 1 reg [EAX], 1 stack (4 bytes, via add_esp)
+      FUN_00487560 at 00487644: 1 reg [EAX], 1 stack (4 bytes, via add_esp)
+      FUN_004d0fc0 at 004d13a0: 1 reg [EAX], 1 stack (4 bytes, via add_esp)
+
+  FUN_00462710
+    Declared: 0 params (0 bytes), Estimated: 2 stack slots (4 bytes) [+2]
+    Call sites: 3, Confidence: high
+    File: .
+    Signature: int FUN_00462710(undefined4 param_1)
+    Sample call sites:
+      FUN_00463680 at 00463686: 1 reg [EDX], 1 stack (4 bytes, via add_esp)
+      FUN_00463710 at 00463716: 1 reg [EDX], 1 stack (4 bytes, via add_esp)
+      FUN_004637b0 at 004637b6: 1 reg [EDX], 1 stack (4 bytes, via add_esp)
+
+  FUN_00465c20
+    Declared: 0 params (0 bytes), Estimated: 2 stack slots (4 bytes) [+2]
+    Call sites: 5, Confidence: high
+    File: engine/dosio.c
+    Signature: undefined4 FUN_00465c20(int param_1)
+    Sample call sites:
+      FUN_00482a70 at 00482bfe: 1 reg [ECX], 1 stack (4 bytes, via add_esp)
+      FUN_00482c70 at 00482dfd: 1 reg [EAX], 1 stack (4 bytes, via add_esp)
+      FUN_005152e0 at 00515351: 1 reg [EAX], 1 stack (4 bytes, via add_esp)
+
+  FUN_00465ca0
+    Declared: 0 params (0 bytes), Estimated: 2 stack slots (4 bytes) [+2]
+    Call sites: 7, Confidence: high
+    File: .
+    Signature: void FUN_00465ca0(int param_1)
+    Sample call sites:
+      FUN_00482a70 at 00482c18: 1 reg [ECX], 1 stack (4 bytes, via add_esp)
+      FUN_00465b80 at 00465b86: 1 reg [EBX], 1 stack (4 bytes, via add_esp)
+      FUN_00465ba0 at 00465baf: 1 reg [EBX], 1 stack (4 bytes, via add_esp)
+
+  FUN_00477db0
+    Declared: 0 params (0 bytes), Estimated: 2 stack slots (4 bytes) [+2]
+    Call sites: 3, Confidence: high
+    File: .
+    Signature: void FUN_00477db0(int param_1)
+    Sample call sites:
+      FUN_0046f480 at 0046f4e8: 1 reg [EDX], 1 stack (4 bytes, via add_esp)
+      FUN_00577290 at 00577314: 1 reg [EDX], 1 stack (4 bytes, via add_esp)
+      FUN_0057c2e0 at 0057c652: 1 reg [EDX], 1 stack (4 bytes, via add_esp)
+
+  FUN_00484dd0
+    Declared: 0 params (0 bytes), Estimated: 2 stack slots (8 bytes) [+2]
+    Call sites: 4, Confidence: high
+    File: shape/edittool.cpp
+    Signature: undefined4 FUN_00484dd0(int *param_1,int param_2)
+    Sample call sites:
+      FUN_00484e30 at 00484e6e: 0 reg [], 2 stack (8 bytes, via add_esp)
+      FUN_00484eb0 at 00484ef4: 0 reg [], 2 stack (8 bytes, via add_esp)
+      FUN_00485010 at 0048505d: 0 reg [], 2 stack (8 bytes, via add_esp)
+
+  FUN_004a1ad0
+    Declared: 0 params (0 bytes), Estimated: 2 stack slots (4 bytes) [+2]
+    Call sites: 6, Confidence: high
+    File: .
+    Signature: uint FUN_004a1ad0(void)
+    Sample call sites:
+      FUN_00535a80 at 00535c72: 1 reg [EDX], 1 stack (4 bytes, via add_esp)
+      FUN_00535a80 at 00535d1b: 1 reg [EBX], 1 stack (4 bytes, via add_esp)
+      FUN_00535da0 at 00536151: 1 reg [EAX], 1 stack (4 bytes, via add_esp)
+
+  FUN_004a8370
+    Declared: 0 params (0 bytes), Estimated: 2 stack slots (4 bytes) [+2]
+    Call sites: 5, Confidence: high
+    File: .
+    Signature: void FUN_004a8370(undefined4 *param_1)
+    Sample call sites:
+      FUN_004a8490 at 004a8498: 1 reg [EDX], 1 stack (4 bytes, via add_esp)
+      FUN_004a8680 at 004a8690: 1 reg [EBX], 1 stack (4 bytes, via add_esp)
+      FUN_004a8650 at 004a8655: 1 reg [EAX], 1 stack (4 bytes, via add_esp)
+
+  FUN_004cfc70
+    Declared: 0 params (0 bytes), Estimated: 2 stack slots (4 bytes) [+2]
+    Call sites: 3, Confidence: high
+    File: .
+    Signature: void FUN_004cfc70(int param_1)
+    Sample call sites:
+      FUN_004cfbd0 at 004cfbd6: 1 reg [EBX], 1 stack (4 bytes, via add_esp)
+      FUN_005723b0 at 005723b7: 1 reg [EDX], 1 stack (4 bytes, via add_esp)
+      FUN_004cfbb0 at 004cfbb6: 1 reg [EBX], 1 stack (4 bytes, via add_esp)
+
+  FUN_004d5430
+    Declared: 0 params (0 bytes), Estimated: 2 stack slots (4 bytes) [+2]
+    Call sites: 3, Confidence: high
+    File: .
+    Signature: int FUN_004d5430(undefined4 param_1)
+    Sample call sites:
+      FUN_004d6310 at 004d6316: 1 reg [EDX], 1 stack (4 bytes, via add_esp)
+      FUN_004d6390 at 004d6396: 1 reg [EDX], 1 stack (4 bytes, via add_esp)
+      FUN_004d6410 at 004d6416: 1 reg [EDX], 1 stack (4 bytes, via add_esp)
+
+  FUN_004da440
+    Declared: 0 params (0 bytes), Estimated: 2 stack slots (4 bytes) [+2]
+    Call sites: 3, Confidence: high
+    File: .
+    Signature: void FUN_004da440(int param_1)
+    Sample call sites:
+      FUN_004da4e0 at 004da4eb: 1 reg [EDX], 1 stack (4 bytes, via add_esp)
+      FUN_004da420 at 004da426: 1 reg [EBX], 1 stack (4 bytes, via add_esp)
+      FUN_004dc750 at 004dc762: 1 reg [EDX], 1 stack (4 bytes, via add_esp)
+
+  FUN_004df590
+    Declared: 0 params (0 bytes), Estimated: 2 stack slots (4 bytes) [+2]
+    Call sites: 3, Confidence: high
+    File: .
+    Signature: void FUN_004df590(void)
+    Sample call sites:
+      FUN_0047d230 at 0047d69e: 1 reg [EBX], 1 stack (4 bytes, via add_esp)
+      FUN_004bb100 at 004bb1c3: 1 reg [EBX], 1 stack (4 bytes, via add_esp)
+      FUN_00483550 at 00483674: 1 reg [EDX], 1 stack (4 bytes, via add_esp)
+
+  FUN_004f72a0
+    Declared: 0 params (0 bytes), Estimated: 2 stack slots (4 bytes) [+2]
+    Call sites: 3, Confidence: high
+    File: core/mission.cpp
+    Signature: void FUN_004f72a0(undefined4 param_1)
+    Sample call sites:
+      FUN_004be8d0 at 004beaf1: 1 reg [EAX], 1 stack (4 bytes, via add_esp)
+      FUN_004bdfb0 at 004be82b: 1 reg [EBX], 1 stack (4 bytes, via add_esp)
+      FUN_004bf2e0 at 004bf364: 1 reg [EBX], 1 stack (4 bytes, via add_esp)
+
+  FUN_004fb0e0
+    Declared: 0 params (0 bytes), Estimated: 2 stack slots (8 bytes) [+2]
+    Call sites: 8, Confidence: high
+    File: .
+    Signature: void FUN_004fb0e0(int param_1,float param_2)
+    Sample call sites:
+      FUN_0050a9b0 at 0050aa78: 0 reg [], 2 stack (8 bytes, via add_esp)
+      FUN_00527970 at 00527a38: 0 reg [], 2 stack (8 bytes, via add_esp)
+      FUN_00598e00 at 00598ec8: 0 reg [], 2 stack (8 bytes, via add_esp)
+
+  FUN_00508f40
+    Declared: 0 params (0 bytes), Estimated: 2 stack slots (4 bytes) [+2]
+    Call sites: 5, Confidence: high
+    File: .
+    Signature: int FUN_00508f40(undefined4 param_1)
+    Sample call sites:
+      FUN_0050a450 at 0050a458: 1 reg [EBX], 1 stack (4 bytes, via add_esp)
+      FUN_005273b0 at 005273b8: 1 reg [EBX], 1 stack (4 bytes, via add_esp)
+      FUN_00599f60 at 00599f6b: 1 reg [EBX], 1 stack (4 bytes, via add_esp)
+
+  FUN_00509020
+    Declared: 0 params (0 bytes), Estimated: 2 stack slots (4 bytes) [+2]
+    Call sites: 5, Confidence: high
+    File: .
+    Signature: void FUN_00509020(int param_1)
+    Sample call sites:
+      FUN_0050a610 at 0050a618: 1 reg [EBX], 1 stack (4 bytes, via add_esp)
+      FUN_005275c0 at 005275c8: 1 reg [EBX], 1 stack (4 bytes, via add_esp)
+      FUN_0059a060 at 0059a068: 1 reg [EBX], 1 stack (4 bytes, via add_esp)
+
+  FUN_00509800
+    Declared: 0 params (0 bytes), Estimated: 2 stack slots (4 bytes) [+2]
+    Call sites: 5, Confidence: high
+    File: .
+    Signature: void FUN_00509800(int param_1)
+    Sample call sites:
+      FUN_0050aaa0 at 0050aaa7: 1 reg [EBX], 1 stack (4 bytes, via add_esp)
+      FUN_00527a90 at 00527a97: 1 reg [EBX], 1 stack (4 bytes, via add_esp)
+      FUN_0059a8a0 at 0059a8a7: 1 reg [EBX], 1 stack (4 bytes, via add_esp)
+
+  FUN_00509900
+    Declared: 0 params (0 bytes), Estimated: 2 stack slots (8 bytes) [+2]
+    Call sites: 4, Confidence: high
+    File: .
+    Signature: undefined4 FUN_00509900(undefined4 param_1,char *param_2)
+    Sample call sites:
+      FUN_005099e0 at 00509a3b: 0 reg [], 2 stack (8 bytes, via add_esp)
+      FUN_005099e0 at 00509a4d: 0 reg [], 2 stack (8 bytes, via add_esp)
+      FUN_005099e0 at 00509a97: 0 reg [], 2 stack (8 bytes, via add_esp)
+
+  FUN_00509e10
+    Declared: 0 params (0 bytes), Estimated: 2 stack slots (4 bytes) [+2]
+    Call sites: 10, Confidence: high
+    File: .
+    Signature: void FUN_00509e10(int param_1)
+    Sample call sites:
+      FUN_004a4550 at 004a4555: 1 reg [EDX], 1 stack (4 bytes, via add_esp)
+      FUN_004a4580 at 004a4585: 1 reg [EDX], 1 stack (4 bytes, via add_esp)
+      FUN_004a45b0 at 004a45b5: 1 reg [EDX], 1 stack (4 bytes, via add_esp)
+
+  FUN_00509e30
+    Declared: 0 params (0 bytes), Estimated: 2 stack slots (4 bytes) [+2]
+    Call sites: 10, Confidence: high
+    File: .
+    Signature: void FUN_00509e30(int param_1)
+    Sample call sites:
+      FUN_004a4570 at 004a4577: 1 reg [EDX], 1 stack (4 bytes, via push_count)
+      FUN_004a45a0 at 004a45a7: 1 reg [EDX], 1 stack (4 bytes, via push_count)
+      FUN_004a45d0 at 004a45d7: 1 reg [EDX], 1 stack (4 bytes, via push_count)
+
+  FUN_00518cd0
+    Declared: 0 params (0 bytes), Estimated: 2 stack slots (8 bytes) [+2]
+    Call sites: 4, Confidence: high
+    File: .
+    Signature: void FUN_00518cd0(int param_1,float param_2)
+    Sample call sites:
+      FUN_00518ab0 at 00518c1d: 0 reg [], 2 stack (8 bytes, via add_esp)
+      FUN_00518ab0 at 00518c2a: 0 reg [], 2 stack (8 bytes, via add_esp)
+      FUN_00518ab0 at 00518c37: 0 reg [], 2 stack (8 bytes, via add_esp)
+
+  FUN_0051f360
+    Declared: 0 params (0 bytes), Estimated: 2 stack slots (8 bytes) [+2]
+    Call sites: 5, Confidence: high
+    File: .
+    Signature: void FUN_0051f360(int param_1,int param_2)
+    Sample call sites:
+      FUN_00518cd0 at 00519c68: 0 reg [], 2 stack (8 bytes, via add_esp)
+      FUN_00518cd0 at 00519e29: 0 reg [], 2 stack (8 bytes, via add_esp)
+      FUN_005263c0 at 00526746: 0 reg [], 2 stack (8 bytes, via add_esp)
+
+  FUN_00528d50
+    Declared: 0 params (0 bytes), Estimated: 2 stack slots (4 bytes) [+2]
+    Call sites: 3, Confidence: high
+    File: .
+    Signature: void FUN_00528d50(int param_1)
+    Sample call sites:
+      FUN_00529410 at 00529422: 1 reg [EDX], 1 stack (4 bytes, via add_esp)
+      FUN_00529410 at 005295c8: 1 reg [ECX], 1 stack (4 bytes, via add_esp)
+      FUN_00528d20 at 00528d26: 1 reg [EBX], 1 stack (4 bytes, via add_esp)
+
+  FUN_00541ac0
+    Declared: 0 params (0 bytes), Estimated: 2 stack slots (4 bytes) [+2]
+    Call sites: 3, Confidence: high
+    File: .
+    Signature: void FUN_00541ac0(int param_1)
+    Sample call sites:
+      FUN_00532b30 at 00532b4f: 1 reg [EBX], 1 stack (4 bytes, via add_esp)
+      FUN_00541b00 at 00541b06: 1 reg [EBX], 1 stack (4 bytes, via add_esp)
+      FUN_00541aa0 at 00541aa6: 1 reg [EBX], 1 stack (4 bytes, via add_esp)
+
+  FUN_00543500
+    Declared: 0 params (0 bytes), Estimated: 2 stack slots (4 bytes) [+2]
+    Call sites: 3, Confidence: high
+    File: .
+    Signature: int FUN_00543500(undefined4 param_1)
+    Sample call sites:
+      FUN_00545ea0 at 00545ea6: 1 reg [EDX], 1 stack (4 bytes, via add_esp)
+      FUN_00545f30 at 00545f36: 1 reg [EDX], 1 stack (4 bytes, via add_esp)
+      FUN_00545fc0 at 00545fc6: 1 reg [EDX], 1 stack (4 bytes, via add_esp)
+
+  FUN_0054bf80
+    Declared: 0 params (0 bytes), Estimated: 2 stack slots (8 bytes) [+2]
+    Call sites: 50, Confidence: high
+    File: .
+    Signature: int FUN_0054bf80(int param_1,byte param_2)
+    Sample call sites:
+      FUN_004101f0 at 00410235: 0 reg [], 2 stack (8 bytes, via add_esp)
+      FUN_0041ab00 at 0041ab35: 0 reg [], 2 stack (8 bytes, via add_esp)
+      FUN_0041aa70 at 0041aaa5: 0 reg [], 2 stack (8 bytes, via add_esp)
+
+  FUN_00555bf0
+    Declared: 0 params (0 bytes), Estimated: 2 stack slots (4 bytes) [+2]
+    Call sites: 3, Confidence: high
+    File: .
+    Signature: void FUN_00555bf0(undefined4 *param_1)
+    Sample call sites:
+      FUN_00556240 at 00556278: 1 reg [EAX], 1 stack (4 bytes, via add_esp)
+      FUN_0055a5d0 at 0055a5d6: 1 reg [EBX], 1 stack (4 bytes, via add_esp)
+      FUN_0055a600 at 0055a606: 1 reg [EBX], 1 stack (4 bytes, via add_esp)
+
+  FUN_0055fd30
+    Declared: 0 params (0 bytes), Estimated: 2 stack slots (4 bytes) [+2]
+    Call sites: 5, Confidence: high
+    File: .
+    Signature: void FUN_0055fd30(undefined4 param_1)
+    Sample call sites:
+      FUN_004b7f90 at 004b8b0b: 1 reg [ECX], 1 stack (4 bytes, via add_esp)
+      FUN_004b7f90 at 004b8d62: 1 reg [ECX], 1 stack (4 bytes, via add_esp)
+      FUN_004ba540 at 004ba69f: 1 reg [ECX], 1 stack (4 bytes, via add_esp)
+
+  FUN_005607d0
+    Declared: 0 params (0 bytes), Estimated: 2 stack slots (4 bytes) [+2]
+    Call sites: 14, Confidence: high
+    File: .
+    Signature: void FUN_005607d0(undefined4 param_1)
+    Sample call sites:
+      FUN_004ea4d0 at 004ea812: 1 reg [EAX], 1 stack (4 bytes, via add_esp)
+      FUN_004ea4d0 at 004ea884: 1 reg [ECX], 1 stack (4 bytes, via add_esp)
+      FUN_004ea4d0 at 004ea8c3: 1 reg [EDX], 1 stack (4 bytes, via add_esp)
+
+  FUN_005625a3
+    Declared: 0 params (0 bytes), Estimated: 2 stack slots (8 bytes) [+2]
+    Call sites: 2, Confidence: high
+    File: .
+    Signature: void FUN_005625a3(void)
+    Sample call sites:
+      FUN_004f1830 at 004f203b: 2 reg [EBX, EDX], 0 stack (0 bytes, via push_count)
+      FUN_004f2090 at 004f23e3: 2 reg [EBX, EDX], 0 stack (0 bytes, via push_count)
+
+  FUN_00562e69
+    Declared: 0 params (0 bytes), Estimated: 2 stack slots (8 bytes) [+2]
+    Call sites: 2, Confidence: high
+    File: .
+    Signature: int * FUN_00562e69(void)
+    Sample call sites:
+      FUN_004f1830 at 004f2078: 2 reg [EBX, EDX], 0 stack (0 bytes, via push_count)
+      FUN_004f2090 at 004f241f: 2 reg [EBX, EDX], 0 stack (0 bytes, via push_count)
+
+  FUN_0056ede0
+    Declared: 0 params (0 bytes), Estimated: 2 stack slots (8 bytes) [+2]
+    Call sites: 10, Confidence: high
+    File: .
+    Signature: undefined4 FUN_0056ede0(int param_1,int param_2)
+    Sample call sites:
+      FUN_00409f60 at 0040a42e: 0 reg [], 2 stack (8 bytes, via add_esp)
+      FUN_00409f60 at 0040abc4: 0 reg [], 2 stack (8 bytes, via add_esp)
+      FUN_00410490 at 00411175: 1 reg [EBX], 2 stack (8 bytes, via add_esp)
+
+  FUN_0056ee20
+    Declared: 0 params (0 bytes), Estimated: 2 stack slots (8 bytes) [+2]
+    Call sites: 11, Confidence: high
+    File: .
+    Signature: void FUN_0056ee20(int param_1,float param_2)
+    Sample call sites:
+      FUN_005353e0 at 005357e3: 0 reg [], 2 stack (8 bytes, via add_esp)
+      FUN_00409f60 at 0040a51c: 0 reg [], 2 stack (8 bytes, via add_esp)
+      FUN_00409f60 at 0040ac25: 0 reg [], 2 stack (8 bytes, via add_esp)
+
+  FUN_0056fc30
+    Declared: 0 params (0 bytes), Estimated: 2 stack slots (4 bytes) [+2]
+    Call sites: 5, Confidence: high
+    File: .
+    Signature: bool FUN_0056fc30(undefined4 *param_1)
+    Sample call sites:
+      FUN_00503ed0 at 00503ee9: 1 reg [EAX], 1 stack (4 bytes, via add_esp)
+      FUN_0056f900 at 0056f906: 1 reg [EBX], 1 stack (4 bytes, via add_esp)
+      FUN_00504270 at 00504292: 1 reg [EBX], 1 stack (4 bytes, via add_esp)
+
+  FUN_00572530
+    Declared: 0 params (0 bytes), Estimated: 2 stack slots (4 bytes) [+2]
+    Call sites: 7, Confidence: high
+    File: .
+    Signature: void FUN_00572530(undefined4 *param_1)
+    Sample call sites:
+      FUN_005738c0 at 005738c5: 1 reg [EDX], 1 stack (4 bytes, via add_esp)
+      FUN_00574150 at 00574157: 1 reg [EDX], 1 stack (4 bytes, via add_esp)
+      FUN_00573920 at 00573927: 1 reg [EDX], 1 stack (4 bytes, via add_esp)
+
+  FUN_00572540
+    Declared: 0 params (0 bytes), Estimated: 2 stack slots (8 bytes) [+2]
+    Call sites: 3, Confidence: high
+    File: .
+    Signature: void FUN_00572540(undefined4 *param_1)
+    Sample call sites:
+      FUN_00573a40 at 00573a5e: 0 reg [], 2 stack (8 bytes, via add_esp)
+      FUN_005741d0 at 005741ee: 0 reg [], 2 stack (8 bytes, via add_esp)
+      FUN_004418c0 at 004418de: 0 reg [], 2 stack (8 bytes, via add_esp)
+
+  FUN_00573aa0
+    Declared: 0 params (0 bytes), Estimated: 2 stack slots (4 bytes) [+2]
+    Call sites: 3, Confidence: high
+    File: .
+    Signature: int FUN_00573aa0(int param_1)
+    Sample call sites:
+      FUN_004af920 at 004afad6: 1 reg [EAX], 1 stack (4 bytes, via add_esp)
+      FUN_004af920 at 004afaf5: 1 reg [EAX], 1 stack (4 bytes, via add_esp)
+      FUN_004af920 at 004afb14: 1 reg [EAX], 1 stack (4 bytes, via add_esp)
+
+  FUN_00573db0
+    Declared: 0 params (0 bytes), Estimated: 2 stack slots (4 bytes) [+2]
+    Call sites: 19, Confidence: high
+    File: .
+    Signature: undefined4 FUN_00573db0(int param_1)
+    Sample call sites:
+      FUN_004bdfb0 at 004be32f: 1 reg [EAX], 1 stack (4 bytes, via add_esp)
+      FUN_00401010 at 004010fa: 1 reg [EAX], 1 stack (4 bytes, via add_esp)
+      FUN_00401590 at 004015d5: 1 reg [EAX], 1 stack (4 bytes, via add_esp)
+
+  FUN_005744a0
+    Declared: 0 params (0 bytes), Estimated: 2 stack slots (4 bytes) [+2]
+    Call sites: 10, Confidence: high
+    File: .
+    Signature: void FUN_005744a0(undefined4 *param_1)
+    Sample call sites:
+      FUN_005747c0 at 005747c5: 1 reg [EDX], 1 stack (4 bytes, via add_esp)
+      FUN_005747e0 at 005747e7: 1 reg [EDX], 1 stack (4 bytes, via add_esp)
+      FUN_00574850 at 0057486e: 0 reg [], 2 stack (8 bytes, via add_esp)
+
+  FUN_005747c0
+    Declared: 0 params (0 bytes), Estimated: 2 stack slots (4 bytes) [+2]
+    Call sites: 3, Confidence: high
+    File: .
+    Signature: void FUN_005747c0(undefined4 param_1)
+    Sample call sites:
+      FUN_004bdfb0 at 004be24b: 1 reg [EAX], 1 stack (4 bytes, via add_esp)
+      FUN_00402940 at 004029f6: 1 reg [EAX], 1 stack (4 bytes, via add_esp)
+      FUN_004bda10 at 004bdcf7: 1 reg [EAX], 1 stack (4 bytes, via add_esp)
+
+  FUN_00574980
+    Declared: 0 params (0 bytes), Estimated: 2 stack slots (4 bytes) [+2]
+    Call sites: 3, Confidence: high
+    File: .
+    Signature: bool FUN_00574980(int param_1)
+    Sample call sites:
+      FUN_0044f750 at 0044f825: 1 reg [EAX], 1 stack (4 bytes, via add_esp)
+      FUN_0044f750 at 0044fc8c: 1 reg [EAX], 1 stack (4 bytes, via add_esp)
+      FUN_00440a70 at 00440abb: 1 reg [EAX], 1 stack (4 bytes, via add_esp)
+
+  FUN_005749a0
+    Declared: 0 params (0 bytes), Estimated: 2 stack slots (4 bytes) [+2]
+    Call sites: 4, Confidence: high
+    File: .
+    Signature: undefined4 FUN_005749a0(int param_1)
+    Sample call sites:
+      FUN_004bdfb0 at 004be33f: 1 reg [EAX], 1 stack (4 bytes, via add_esp)
+      FUN_00402940 at 00402a65: 1 reg [EAX], 1 stack (4 bytes, via add_esp)
+      FUN_004bda10 at 004bddfd: 1 reg [EAX], 1 stack (4 bytes, via add_esp)
+
+  FUN_0057ad70
+    Declared: 0 params (0 bytes), Estimated: 2 stack slots (4 bytes) [+2]
+    Call sites: 20, Confidence: high
+    File: .
+    Signature: int FUN_0057ad70(undefined4 param_1)
+    Sample call sites:
+      FUN_0040f780 at 0040f786: 1 reg [EDX], 1 stack (4 bytes, via add_esp)
+      FUN_004103f0 at 004103f6: 1 reg [EDX], 1 stack (4 bytes, via add_esp)
+      FUN_00424430 at 00424436: 1 reg [EBX], 1 stack (4 bytes, via add_esp)
+
+  FUN_0057af40
+    Declared: 0 params (0 bytes), Estimated: 2 stack slots (4 bytes) [+2]
+    Call sites: 11, Confidence: high
+    File: .
+    Signature: void FUN_0057af40(int param_1)
+    Sample call sites:
+      FUN_0040f900 at 0040f905: 1 reg [EDX], 1 stack (4 bytes, via add_esp)
+      FUN_00411810 at 00411815: 1 reg [EDX], 1 stack (4 bytes, via add_esp)
+      FUN_004253d0 at 004253d5: 1 reg [EDX], 1 stack (4 bytes, via add_esp)
+
+  FUN_005888d0
+    Declared: 0 params (0 bytes), Estimated: 2 stack slots (4 bytes) [+2]
+    Call sites: 5, Confidence: high
+    File: .
+    Signature: int FUN_005888d0(undefined4 param_1)
+    Sample call sites:
+      FUN_0058ccc0 at 0058ccc6: 1 reg [EDX], 1 stack (4 bytes, via add_esp)
+      FUN_0058cd50 at 0058cd56: 1 reg [EDX], 1 stack (4 bytes, via add_esp)
+      FUN_0058cde0 at 0058cde6: 1 reg [EDX], 1 stack (4 bytes, via add_esp)
+
+  FUN_005a308f
+    Declared: 0 params (0 bytes), Estimated: 2 stack slots (8 bytes) [+2]
+    Call sites: 50, Confidence: high
+    File: .
+    Signature: undefined4 * FUN_005a308f(int param_1,undefined4 param_2)
+    Sample call sites:
+      FUN_004832b0 at 00483321: 0 reg [], 2 stack (8 bytes, via add_esp)
+      FUN_00481f40 at 00481f6d: 0 reg [], 2 stack (8 bytes, via add_esp)
+      FUN_00440810 at 00440837: 0 reg [], 2 stack (8 bytes, via add_esp)
+
+  FUN_00421c90
+    Declared: 0 params (0 bytes), Estimated: 1 stack slots (4 bytes) [+1]
+    Call sites: 4, Confidence: high
+    File: .
+    Signature: void FUN_00421c90(int param_1)
+    Sample call sites:
+      FUN_004221c0 at 00422278: 0 reg [], 1 stack (4 bytes, via add_esp)
+      FUN_004221c0 at 00422538: 0 reg [], 1 stack (4 bytes, via add_esp)
+      FUN_00422570 at 00422998: 0 reg [], 1 stack (4 bytes, via add_esp)
+
+  FUN_0042f280
+    Declared: 0 params (0 bytes), Estimated: 1 stack slots (4 bytes) [+1]
+    Call sites: 7, Confidence: high
+    File: .
+    Signature: void FUN_0042f280(int param_1)
+    Sample call sites:
+      FUN_0059e130 at 0059e16f: 0 reg [], 1 stack (4 bytes, via add_esp)
+      FUN_0059e130 at 0059e179: 0 reg [], 1 stack (4 bytes, via add_esp)
+      FUN_0059e130 at 0059e183: 0 reg [], 1 stack (4 bytes, via add_esp)
+
+  FUN_0042f310
+    Declared: 0 params (0 bytes), Estimated: 1 stack slots (4 bytes) [+1]
+    Call sites: 8, Confidence: high
+    File: .
+    Signature: void FUN_0042f310(int param_1)
+    Sample call sites:
+      FUN_0042d8e0 at 0042d98e: 0 reg [], 1 stack (4 bytes, via add_esp)
+      FUN_0042d8e0 at 0042d9a4: 0 reg [], 1 stack (4 bytes, via add_esp)
+      FUN_00418f90 at 00419055: 0 reg [], 1 stack (4 bytes, via add_esp)
+
+  FUN_0042fc90
+    Declared: 0 params (0 bytes), Estimated: 1 stack slots (4 bytes) [+1]
+    Call sites: 4, Confidence: high
+    File: .
+    Signature: void FUN_0042fc90(int param_1)
+    Sample call sites:
+      FUN_00425da0 at 00426c1a: 0 reg [], 1 stack (4 bytes, via add_esp)
+      FUN_00455080 at 00455e3e: 0 reg [], 1 stack (4 bytes, via add_esp)
+      FUN_004c6eb0 at 004c8c47: 0 reg [], 1 stack (4 bytes, via add_esp)
+
+  FUN_0042ff70
+    Declared: 0 params (0 bytes), Estimated: 1 stack slots (4 bytes) [+1]
+    Call sites: 3, Confidence: high
+    File: .
+    Signature: void FUN_0042ff70(int param_1)
+    Sample call sites:
+      FUN_00430d60 at 00430fd9: 0 reg [], 1 stack (4 bytes, via add_esp)
+      FUN_00489b80 at 00489c79: 0 reg [], 1 stack (4 bytes, via push_count)
+      FUN_004c9400 at 004c965a: 0 reg [], 1 stack (4 bytes, via add_esp)
+
+  FUN_0043f8c0
+    Declared: 0 params (0 bytes), Estimated: 1 stack slots (4 bytes) [+1]
+    Call sites: 4, Confidence: high
+    File: .
+    Signature: undefined4 * FUN_0043f8c0(undefined4 *param_1)
+    Sample call sites:
+      FUN_0042ac20 at 0042ac48: 0 reg [], 1 stack (4 bytes, via add_esp)
+      FUN_005991d0 at 005991f7: 0 reg [], 1 stack (4 bytes, via add_esp)
+      FUN_00599f60 at 00599f87: 0 reg [], 1 stack (4 bytes, via add_esp)
+
+  FUN_00441c80
+    Declared: 0 params (0 bytes), Estimated: 1 stack slots (4 bytes) [+1]
+    Call sites: 3, Confidence: high
+    File: .
+    Signature: undefined4 FUN_00441c80(int param_1)
+    Sample call sites:
+      FUN_00441920 at 00441956: 0 reg [], 1 stack (4 bytes, via add_esp)
+      FUN_004419a0 at 004419ce: 0 reg [], 1 stack (4 bytes, via add_esp)
+      FUN_004419e0 at 00441a68: 0 reg [], 1 stack (4 bytes, via add_esp)
+
+  FUN_004461c0
+    Declared: 0 params (0 bytes), Estimated: 1 stack slots (4 bytes) [+1]
+    Call sites: 6, Confidence: high
+    File: .
+    Signature: void FUN_004461c0(int param_1)
+    Sample call sites:
+      FUN_00409f60 at 0040ac63: 0 reg [], 1 stack (4 bytes, via add_esp)
+      FUN_00486d40 at 004874fe: 0 reg [], 1 stack (4 bytes, via add_esp)
+      FUN_0048b020 at 0048b579: 0 reg [], 1 stack (4 bytes, via add_esp)
+
+  FUN_00462500
+    Declared: 0 params (0 bytes), Estimated: 1 stack slots (4 bytes) [+1]
+    Call sites: 42, Confidence: high
+    File: .
+    Signature: int FUN_00462500(int param_1)
+    Sample call sites:
+      FUN_0040de60 at 0040de76: 0 reg [], 1 stack (4 bytes, via add_esp)
+      FUN_00488fd0 at 00488fe9: 0 reg [], 1 stack (4 bytes, via add_esp)
+      FUN_004a4340 at 004a4356: 2 reg [EAX, EBX], 1 stack (4 bytes, via add_esp)
+
+  FUN_0047bca0
+    Declared: 0 params (0 bytes), Estimated: 1 stack slots (4 bytes) [+1]
+    Call sites: 4, Confidence: high
+    File: .
+    Signature: void FUN_0047bca0(int param_1)
+    Sample call sites:
+      FUN_0047bd50 at 0047be2e: 0 reg [], 1 stack (4 bytes, via add_esp)
+      FUN_0047bd50 at 0047be54: 0 reg [], 1 stack (4 bytes, via add_esp)
+      FUN_0047bd50 at 0047be71: 0 reg [], 1 stack (4 bytes, via add_esp)
+
+  FUN_00489c90
+    Declared: 0 params (0 bytes), Estimated: 1 stack slots (4 bytes) [+1]
+    Call sites: 4, Confidence: high
+    File: .
+    Signature: void FUN_00489c90(int param_1)
+    Sample call sites:
+      FUN_004300e0 at 00430410: 0 reg [], 1 stack (4 bytes, via add_esp)
+      FUN_0042ff70 at 0042ffca: 0 reg [], 1 stack (4 bytes, via add_esp)
+      FUN_0048a220 at 0048a261: 0 reg [], 1 stack (4 bytes, via add_esp)
+
+  FUN_004af790
+    Declared: 0 params (0 bytes), Estimated: 1 stack slots (4 bytes) [+1]
+    Call sites: 9, Confidence: high
+    File: .
+    Signature: undefined4 FUN_004af790(undefined4 param_1)
+    Sample call sites:
+      FUN_00459f50 at 0045a014: 0 reg [], 1 stack (4 bytes, via add_esp)
+      FUN_00459f50 at 0045a0ac: 0 reg [], 1 stack (4 bytes, via add_esp)
+      FUN_00459f50 at 0045a179: 0 reg [], 1 stack (4 bytes, via add_esp)
+
+  FUN_004bafd0
+    Declared: 0 params (0 bytes), Estimated: 1 stack slots (4 bytes) [+1]
+    Call sites: 12, Confidence: high
+    File: core/game.cpp
+    Signature: void FUN_004bafd0(undefined4 param_1)
+    Sample call sites:
+      FUN_004bb100 at 004bbe21: 1 reg [EAX], 1 stack (4 bytes, via add_esp)
+      FUN_004bb100 at 004bbe2e: 0 reg [], 1 stack (4 bytes, via add_esp)
+      FUN_004bb100 at 004bbe3b: 0 reg [], 1 stack (4 bytes, via add_esp)
+
+  FUN_004c51a0
+    Declared: 0 params (0 bytes), Estimated: 1 stack slots (4 bytes) [+1]
+    Call sites: 3, Confidence: high
+    File: .
+    Signature: undefined4 FUN_004c51a0(int param_1)
+    Sample call sites:
+      FUN_004c5350 at 004c57b9: 0 reg [], 1 stack (4 bytes, via add_esp)
+      FUN_004c5350 at 004c584d: 0 reg [], 1 stack (4 bytes, via add_esp)
+      FUN_004c5350 at 004c5a58: 0 reg [], 1 stack (4 bytes, via add_esp)
+
+  FUN_004cc5d0
+    Declared: 0 params (0 bytes), Estimated: 1 stack slots (4 bytes) [+1]
+    Call sites: 11, Confidence: high
+    File: .
+    Signature: void FUN_004cc5d0(int param_1)
+    Sample call sites:
+      FUN_005353e0 at 00535771: 0 reg [], 1 stack (4 bytes, via add_esp)
+      FUN_00409f60 at 0040a640: 0 reg [], 1 stack (4 bytes, via add_esp)
+      FUN_00409f60 at 0040ab99: 0 reg [], 1 stack (4 bytes, via add_esp)
+
+  FUN_004d3250
+    Declared: 0 params (0 bytes), Estimated: 1 stack slots (4 bytes) [+1]
+    Call sites: 3, Confidence: high
+    File: .
+    Signature: undefined4 FUN_004d3250(int param_1)
+    Sample call sites:
+      FUN_004d4520 at 004d46d3: 0 reg [], 1 stack (4 bytes, via add_esp)
+      FUN_0051b550 at 0051c014: 0 reg [], 1 stack (4 bytes, via add_esp)
+      FUN_00525a20 at 00525c6b: 0 reg [], 1 stack (4 bytes, via add_esp)
+
+  FUN_004e8380
+    Declared: 0 params (0 bytes), Estimated: 1 stack slots (4 bytes) [+1]
+    Call sites: 5, Confidence: high
+    File: .
+    Signature: void FUN_004e8380(char *param_1)
+    Sample call sites:
+      FUN_004e84d0 at 004e850b: 0 reg [], 1 stack (4 bytes, via add_esp)
+      FUN_004e84d0 at 004e8521: 0 reg [], 1 stack (4 bytes, via add_esp)
+      FUN_004e84d0 at 004e8537: 0 reg [], 1 stack (4 bytes, via add_esp)
+
+  FUN_004edaf0
+    Declared: 0 params (0 bytes), Estimated: 1 stack slots (4 bytes) [+1]
+    Call sites: 9, Confidence: high
+    File: .
+    Signature: void FUN_004edaf0(float param_1)
+    Sample call sites:
+      FUN_0047c8e0 at 0047caec: 0 reg [], 1 stack (4 bytes, via add_esp)
+      FUN_0047fa80 at 0047fdbe: 0 reg [], 1 stack (4 bytes, via add_esp)
+      FUN_004843d0 at 0048489b: 0 reg [], 1 stack (4 bytes, via add_esp)
+
+  FUN_004f1810
+    Declared: 0 params (0 bytes), Estimated: 1 stack slots (4 bytes) [+1]
+    Call sites: 36, Confidence: high
+    File: .
+    Signature: int FUN_004f1810(float param_1)
+    Sample call sites:
+      FUN_004f1830 at 004f1b97: 0 reg [], 1 stack (4 bytes, via add_esp)
+      FUN_004f1830 at 004f1bb1: 0 reg [], 1 stack (4 bytes, via add_esp)
+      FUN_004f1830 at 004f1bcc: 0 reg [], 1 stack (4 bytes, via add_esp)
+
+  FUN_004f94a0
+    Declared: 0 params (0 bytes), Estimated: 1 stack slots (4 bytes) [+1]
+    Call sites: 5, Confidence: high
+    File: .
+    Signature: void FUN_004f94a0(int *param_1)
+    Sample call sites:
+      FUN_004ea4d0 at 004ea580: 0 reg [], 1 stack (4 bytes, via add_esp)
+      FUN_004ea4d0 at 004ea875: 0 reg [], 1 stack (4 bytes, via add_esp)
+      FUN_004ea280 at 004ea412: 0 reg [], 1 stack (4 bytes, via add_esp)
+
+  FUN_004fa8a0
+    Declared: 0 params (0 bytes), Estimated: 1 stack slots (4 bytes) [+1]
+    Call sites: 8, Confidence: high
+    File: .
+    Signature: void FUN_004fa8a0(undefined4 param_1)
+    Sample call sites:
+      FUN_0050a450 at 0050a46b: 0 reg [], 1 stack (4 bytes, via add_esp)
+      FUN_005273b0 at 005273cb: 0 reg [], 1 stack (4 bytes, via add_esp)
+      FUN_00598780 at 00598794: 0 reg [], 1 stack (4 bytes, via add_esp)
+
+  FUN_004fac10
+    Declared: 0 params (0 bytes), Estimated: 1 stack slots (4 bytes) [+1]
+    Call sites: 8, Confidence: high
+    File: core/morph.cpp
+    Signature: void FUN_004fac10(int param_1)
+    Sample call sites:
+      FUN_0050a610 at 0050a6a1: 0 reg [], 1 stack (4 bytes, via add_esp)
+      FUN_005275c0 at 0052774a: 0 reg [], 1 stack (4 bytes, via add_esp)
+      FUN_00598800 at 00598997: 0 reg [], 1 stack (4 bytes, via add_esp)
+
+  FUN_00502750
+    Declared: 0 params (0 bytes), Estimated: 1 stack slots (4 bytes) [+1]
+    Call sites: 3, Confidence: high
+    File: .
+    Signature: undefined1 * FUN_00502750(undefined1 *param_1)
+    Sample call sites:
+      FUN_00551d20 at 00551dba: 0 reg [], 1 stack (4 bytes, via add_esp)
+      FUN_00552350 at 00552436: 0 reg [], 1 stack (4 bytes, via add_esp)
+      FUN_00557570 at 00557746: 0 reg [], 1 stack (4 bytes, via add_esp)
+
+  FUN_0050acc0
+    Declared: 0 params (0 bytes), Estimated: 1 stack slots (4 bytes) [+1]
+    Call sites: 7, Confidence: high
+    File: core/path.cpp
+    Signature: int FUN_0050acc0(int param_1)
+    Sample call sites:
+      FUN_0040f9f0 at 0040fa07: 0 reg [], 1 stack (4 bytes, via add_esp)
+      FUN_00508f40 at 00508f57: 0 reg [], 1 stack (4 bytes, via add_esp)
+      FUN_004d24b0 at 004d24c4: 0 reg [], 1 stack (4 bytes, via add_esp)
+
+  FUN_005288a0
+    Declared: 0 params (0 bytes), Estimated: 1 stack slots (4 bytes) [+1]
+    Call sites: 50, Confidence: high
+    File: .
+    Signature: void FUN_005288a0(char *param_1)
+    Sample call sites:
+      FUN_00529a70 at 00529b86: 0 reg [], 1 stack (4 bytes, via add_esp)
+      FUN_00529a70 at 0052b2da: 0 reg [], 1 stack (4 bytes, via add_esp)
+      FUN_00529a70 at 0052b3fc: 0 reg [], 1 stack (4 bytes, via add_esp)
+
+  FUN_0053af20
+    Declared: 0 params (0 bytes), Estimated: 1 stack slots (4 bytes) [+1]
+    Call sites: 12, Confidence: high
+    File: .
+    Signature: void FUN_0053af20(int param_1)
+    Sample call sites:
+      FUN_00533b80 at 00533d2a: 0 reg [], 1 stack (4 bytes, via add_esp)
+      FUN_00533b80 at 00533e3d: 0 reg [], 1 stack (4 bytes, via add_esp)
+      FUN_00535a80 at 00535c24: 0 reg [], 1 stack (4 bytes, via add_esp)
+
+  FUN_00548750
+    Declared: 0 params (0 bytes), Estimated: 1 stack slots (4 bytes) [+1]
+    Call sites: 3, Confidence: high
+    File: .
+    Signature: void FUN_00548750(int param_1)
+    Sample call sites:
+      FUN_005500b0 at 0055013a: 0 reg [], 1 stack (4 bytes, via add_esp)
+      FUN_005500b0 at 0055015a: 0 reg [], 1 stack (4 bytes, via add_esp)
+      FUN_0054b5b0 at 0054b5f8: 0 reg [], 1 stack (4 bytes, via add_esp)
+
+  FUN_005533b0
+    Declared: 0 params (0 bytes), Estimated: 1 stack slots (4 bytes) [+1]
+    Call sites: 4, Confidence: high
+    File: .
+    Signature: undefined4 FUN_005533b0(undefined4 *param_1)
+    Sample call sites:
+      FUN_00551d20 at 00551f2c: 0 reg [], 1 stack (4 bytes, via add_esp)
+      FUN_00551d20 at 00552217: 0 reg [], 1 stack (4 bytes, via add_esp)
+      FUN_00552350 at 00552558: 0 reg [], 1 stack (4 bytes, via add_esp)
+
+  FUN_00555e90
+    Declared: 0 params (0 bytes), Estimated: 1 stack slots (4 bytes) [+1]
+    Call sites: 7, Confidence: high
+    File: sound/sndmain.cpp
+    Signature: void FUN_00555e90(int param_1)
+    Sample call sites:
+      FUN_0048c2e0 at 0048f244: 0 reg [], 1 stack (4 bytes, via add_esp)
+      FUN_004c4a60 at 004c4b09: 0 reg [], 1 stack (4 bytes, via add_esp)
+      FUN_00530150 at 005302b6: 0 reg [], 1 stack (4 bytes, via add_esp)
+
+  FUN_00555f20
+    Declared: 0 params (0 bytes), Estimated: 1 stack slots (4 bytes) [+1]
+    Call sites: 3, Confidence: high
+    File: .
+    Signature: void FUN_00555f20(uint param_1)
+    Sample call sites:
+      FUN_004c4a60 at 004c4b3f: 0 reg [], 1 stack (4 bytes, via add_esp)
+      FUN_004953d0 at 00495420: 0 reg [], 1 stack (4 bytes, via add_esp)
+      FUN_005607d0 at 005608d1: 0 reg [], 1 stack (4 bytes, via add_esp)
+
+  FUN_00556230
+    Declared: 0 params (0 bytes), Estimated: 1 stack slots (4 bytes) [+1]
+    Call sites: 50, Confidence: high
+    File: .
+    Signature: void FUN_00556230(undefined4 param_1)
+    Sample call sites:
+      FUN_00518680 at 00518a13: 0 reg [], 1 stack (4 bytes, via add_esp)
+      FUN_00518680 at 00518a20: 0 reg [], 1 stack (4 bytes, via add_esp)
+      FUN_00518680 at 00518a2d: 0 reg [], 1 stack (4 bytes, via add_esp)
+
+  FUN_0055a670
+    Declared: 0 params (0 bytes), Estimated: 1 stack slots (4 bytes) [+1]
+    Call sites: 44, Confidence: high
+    File: .
+    Signature: undefined8 FUN_0055a670(uint param_1)
+    Sample call sites:
+      FUN_0055d470 at 0055d4e7: 0 reg [], 1 stack (4 bytes, via add_esp)
+      FUN_0055d470 at 0055d5de: 0 reg [], 1 stack (4 bytes, via add_esp)
+      FUN_0055d470 at 0055d60e: 0 reg [], 1 stack (4 bytes, via add_esp)
+
+  FUN_00581930
+    Declared: 0 params (0 bytes), Estimated: 1 stack slots (4 bytes) [+1]
+    Call sites: 3, Confidence: high
+    File: .
+    Signature: bool FUN_00581930(HANDLE param_1)
+    Sample call sites:
+      FUN_00571f10 at 00571f46: 0 reg [], 1 stack (4 bytes, via add_esp)
+      FUN_00558e90 at 00558ed5: 0 reg [], 1 stack (4 bytes, via add_esp)
+      FUN_00570fb0 at 00571007: 0 reg [], 1 stack (4 bytes, via add_esp)
+
+  FUN_005a30c4
+    Declared: 0 params (0 bytes), Estimated: 1 stack slots (4 bytes) [+1]
+    Call sites: 50, Confidence: high
+    File: .
+    Signature: void FUN_005a30c4(int param_1)
+    Sample call sites:
+      FUN_004832b0 at 00483337: 0 reg [], 1 stack (4 bytes, via add_esp)
+      FUN_00481f40 at 00481f83: 0 reg [], 1 stack (4 bytes, via add_esp)
+      FUN_004a9bc0 at 004a9c1b: 0 reg [], 1 stack (4 bytes, via add_esp)
+
+  FUN_005a3e13
+    Declared: 0 params (0 bytes), Estimated: 1 stack slots (4 bytes) [+1]
+    Call sites: 50, Confidence: high
+    File: .
+    Signature: void FUN_005a3e13(undefined4 param_1)
+    Sample call sites:
+      FUN_00551d20 at 00551dc7: 0 reg [], 1 stack (4 bytes, via add_esp)
+      FUN_00557570 at 00557753: 0 reg [], 1 stack (4 bytes, via add_esp)
+      FUN_0050cd60 at 0050ce73: 0 reg [], 1 stack (4 bytes, via add_esp)
+
+  FUN_005a5ec0
+    Declared: 0 params (0 bytes), Estimated: 1 stack slots (4 bytes) [+1]
+    Call sites: 9, Confidence: high
+    File: .
+    Signature: int FUN_005a5ec0(char *param_1)
+    Sample call sites:
+      FUN_004b7f90 at 004b81c0: 0 reg [], 1 stack (4 bytes, via add_esp)
+      FUN_004b6f30 at 004b7adc: 0 reg [], 1 stack (4 bytes, via add_esp)
+      FUN_004ba540 at 004babc8: 0 reg [], 1 stack (4 bytes, via add_esp)
+
+  FUN_005a70dc
+    Declared: 0 params (0 bytes), Estimated: 1 stack slots (4 bytes) [+1]
+    Call sites: 3, Confidence: high
+    File: .
+    Signature: void FUN_005a70dc(char *param_1)
+    Sample call sites:
+      FUN_005a6a78 at 005a6eb9: 0 reg [], 1 stack (4 bytes, via add_esp)
+      FUN_005a6a78 at 005a6ef2: 0 reg [], 1 stack (4 bytes, via add_esp)
+      FUN_005a6a78 at 005a6fad: 0 reg [], 1 stack (4 bytes, via add_esp)
+
+  FUN_005aba00
+    Declared: 0 params (0 bytes), Estimated: 1 stack slots (4 bytes) [+1]
+    Call sites: 4, Confidence: high
+    File: .
+    Signature: int FUN_005aba00(int param_1)
+    Sample call sites:
+      FUN_005abb90 at 005abbaa: 0 reg [], 1 stack (4 bytes, via add_esp)
+      FUN_005abb90 at 005abbcc: 0 reg [], 1 stack (4 bytes, via add_esp)
+      FUN_005abb90 at 005abbee: 0 reg [], 1 stack (4 bytes, via push_count)
+
+  FUN_005ae4a0
+    Declared: 0 params (0 bytes), Estimated: 1 stack slots (4 bytes) [+1]
+    Call sites: 3, Confidence: high
+    File: .
+    Signature: void FUN_005ae4a0(void)
+    Sample call sites:
+      FUN_005ad1e0 at 005ad1ec: 1 reg [EAX], 0 stack (0 bytes, via push_count)
+      FUN_005a81b8 at 005a81f8: 1 reg [EAX], 0 stack (0 bytes, via push_count)
+      FUN_005a81b8 at 005a8208: 1 reg [EAX], 0 stack (0 bytes, via push_count)
+
+  FUN_005b1960
+    Declared: 0 params (0 bytes), Estimated: 1 stack slots (4 bytes) [+1]
+    Call sites: 2, Confidence: high
+    File: .
+    Signature: void FUN_005b1960(void)
+    Sample call sites:
+      FUN_005b024e at 005b0e54: 1 reg [EAX], 0 stack (0 bytes, via push_count)
+      FUN_005b0611 at 005b0e66: 1 reg [EAX], 0 stack (0 bytes, via push_count)
+
+====================================================================================================
+MEDIUM CONFIDENCE MISMATCHES
+====================================================================================================
+
+  FUN_004a2e20                                       declared:0 est:28 (+28) [2 calls]
+  FUN_0049b030                                       declared:0 est:15 (+15) [2 calls]
+  FUN_00554920                                       declared:0 est:15 (+15) [2 calls]
+  FUN_00461300                                       declared:0 est:10 (+10) [2 calls]
+  FUN_00469b40                                       declared:0 est:10 (+10) [2 calls]
+  FUN_004dbe70                                       declared:0 est:10 (+10) [2 calls]
+  FUN_00559d90                                       declared:0 est:10 (+10) [2 calls]
+  FUN_00401310                                       declared:0 est:9 (+9) [2 calls]
+  FUN_004091b0                                       declared:0 est:9 (+9) [2 calls]
+  FUN_0044ef20                                       declared:0 est:9 (+9) [2 calls]
+  FUN_0045af60                                       declared:0 est:9 (+9) [2 calls]
+  FUN_0047ea10                                       declared:0 est:9 (+9) [2 calls]
+  FUN_004a2090                                       declared:0 est:9 (+9) [8 calls]
+  FUN_004a2780                                       declared:0 est:9 (+9) [4 calls]
+  FUN_004b0ea0                                       declared:0 est:9 (+9) [4 calls]
+  FUN_004dd5b0                                       declared:0 est:9 (+9) [2 calls]
+  FUN_00500be0                                       declared:0 est:9 (+9) [4 calls]
+  FUN_00502190                                       declared:0 est:9 (+9) [2 calls]
+  FUN_0053de10                                       declared:0 est:9 (+9) [8 calls]
+  FUN_005630a3                                       declared:0 est:9 (+9) [2 calls]
+  FUN_0056313e                                       declared:0 est:9 (+9) [2 calls]
+  FUN_0047c2c0                                       declared:0 est:8 (+8) [2 calls]
+  FUN_004850a0                                       declared:0 est:8 (+8) [6 calls]
+  FUN_004a3790                                       declared:0 est:8 (+8) [4 calls]
+  FUN_004a3fd0                                       declared:0 est:8 (+8) [2 calls]
+  FUN_004fd9f0                                       declared:0 est:8 (+8) [2 calls]
+  FUN_00401280                                       declared:0 est:7 (+7) [2 calls]
+  FUN_0041ae00                                       declared:0 est:7 (+7) [7 calls]
+  FUN_00440c50                                       declared:0 est:7 (+7) [2 calls]
+  FUN_00473b60                                       declared:0 est:7 (+7) [12 calls]
+  FUN_004a2930                                       declared:0 est:7 (+7) [2 calls]
+  FUN_004a3e70                                       declared:0 est:7 (+7) [4 calls]
+  FUN_004ce9c0                                       declared:0 est:7 (+7) [26 calls]
+  FUN_004e6af0                                       declared:0 est:7 (+7) [2 calls]
+  FUN_0054edb0                                       declared:0 est:7 (+7) [2 calls]
+  FUN_005a29e8                                       declared:0 est:7 (+7) [4 calls]
+  FUN_005a82c0                                       declared:0 est:7 (+7) [2 calls]
+  FUN_00408100                                       declared:0 est:6 (+6) [2 calls]
+  FUN_0040d320                                       declared:0 est:6 (+6) [2 calls]
+  FUN_00422a00                                       declared:0 est:6 (+6) [2 calls]
+  FUN_004391c0                                       declared:0 est:6 (+6) [8 calls]
+  FUN_004392c0                                       declared:0 est:6 (+6) [8 calls]
+  FUN_00465e80                                       declared:0 est:6 (+6) [15 calls]
+  FUN_0047b5e0                                       declared:0 est:6 (+6) [2 calls]
+  FUN_0047c050                                       declared:0 est:6 (+6) [2 calls]
+  FUN_00480e30                                       declared:0 est:6 (+6) [2 calls]
+  FUN_004af8f0                                       declared:0 est:6 (+6) [9 calls]
+  FUN_004dd3f0                                       declared:0 est:6 (+6) [2 calls]
+  FUN_004e7860                                       declared:0 est:6 (+6) [5 calls]
+  FUN_004f1830                                       declared:0 est:6 (+6) [2 calls]
+
+  ... and 333 more
+
+====================================================================================================
+LOW CONFIDENCE MISMATCHES (limited data)
+====================================================================================================
+
+  1945 functions with low-confidence mismatches
+  Sample:
+    FUN_00401130                                  declared:0 est:2 (+2)
+    FUN_004011a0                                  declared:0 est:5 (+5)
+    FUN_00401450                                  declared:0 est:8 (+8)
+    FUN_00401590                                  declared:0 est:1 (+1)
+    FUN_00401620                                  declared:0 est:7 (+7)
+    FUN_00401810                                  declared:0 est:8 (+8)
+    FUN_004018b0                                  declared:0 est:3 (+3)
+    FUN_00401a20                                  declared:0 est:8 (+8)
+    FUN_00401d00                                  declared:0 est:6 (+6)
+    FUN_00401f50                                  declared:0 est:8 (+8)
+
+====================================================================================================
+MISMATCH DIRECTION ANALYSIS
+====================================================================================================
+
+Functions where declaration has MORE params than estimated: 0
+  (May indicate: extra params not being passed, or params in globals)
+
+Functions where declaration has FEWER params than estimated: 2507
+  (May indicate: missing params in signature, or calling convention issue)
+
+Distribution of differences (estimated - declared):
+  +1 params: 402 functions
+  +2 params: 604 functions
+  +3 params: 464 functions
+  +4 params: 357 functions
+  +5 params: 252 functions
+  +6 params: 173 functions
+  +7 params: 94 functions
+  +8 params: 74 functions
+  +9 params: 47 functions
+  +10 params: 18 functions
+  +11 params: 9 functions
+  +12 params: 6 functions
+  +13 params: 1 functions
+  +14 params: 1 functions
+  +15 params: 3 functions
+  +26 params: 1 functions
+  +28 params: 1 functions

@@ -1,0 +1,19 @@
+// Name: FUN_005743c0
+// Address: 005743c0
+// Address Range: [[005743c0, 005743e4]]
+// Convention: unknown
+// Signature: undefined4 FUN_005743c0(int param_1)
+
+#include "nocturne.h"
+
+uint FUN_005743c0(int param_1)
+
+{
+  if (*(int *)(param_1 + 4) == 0) {
+    return 0xffffffff;
+  }
+  if (*(int *)(param_1 + 8) <= *(int *)(param_1 + 0xc)) {
+    return 1;
+  }
+  return 0;
+}

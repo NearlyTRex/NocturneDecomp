@@ -1,0 +1,128 @@
+; *****************************************************************************
+;                               FUNCTION
+; *****************************************************************************
+; void FUN_00441ff0(int *param_1,undefined4 param_2)
+;
+; Local Variables:
+; undefined        Stack[-0x1014]:1  local_1014
+; undefined4       Stack[-0x14]:4  local_14
+;
+; XREF[82]:
+;   FUN_00409f60 at 0040a50f
+;   FUN_0040e6b0 at 0040e6d5
+;   FUN_0040fb40 at 0040fdfa
+;   FUN_00414d40 at 00414e64
+;   FUN_004179b0 at 0041866e
+;   FUN_00418930 at 00418c64
+;   FUN_00419b40 at 0041a7c9
+;   FUN_00423cd0 at 00423dd1
+;   FUN_00425da0 at 00426ea6
+;   FUN_00427bc0 at 00428055
+;   ... and 72 more
+;
+; Referenced Globals:
+;   undefined4 DAT_005b93df
+;   undefined4 DAT_005b93e2
+;   TerminatedCString s_console_txt_005f1698
+;
+; Called Functions:
+;   FUN_004420c0
+;   FUN_005a2898
+;   FUN_005a3140
+;   FUN_005a3a90
+;   FUN_005a43ec
+;
+; *****************************************************************************
+
+section .text
+
+    PUSH EBX                            ; 00441ff0
+        ;   Label: FUN_00441ff0
+    PUSH ESI                            ; 00441ff1
+    PUSH EDI                            ; 00441ff2
+    PUSH EBP                            ; 00441ff3
+    SUB ESP,0x1004                      ; 00441ff4
+    MOV EBP,dword ptr [ESP + 0x1018]    ; 00441ffa
+    LEA EAX,[ESP + 0x1020]              ; 00442001
+    MOV dword ptr [ESP + 0x1000],EAX    ; 00442008
+    LEA EAX,[ESP + 0x1000]              ; 0044200f
+    PUSH EAX                            ; 00442016
+    MOV EDX,dword ptr [ESP + 0x1020]    ; 00442017
+    PUSH EDX                            ; 0044201e
+    LEA EAX,[ESP + 0x8]                 ; 0044201f
+    PUSH EAX                            ; 00442023
+    LEA EDI,[ESP + 0xc]                 ; 00442024
+    CALL FUN_005a2898                   ; 00442028
+        ;   XREF to: 005a2898 (UNCONDITIONAL_CALL)  ; undefined FUN_005a2898()
+    ADD ESP,0xc                         ; 0044202d
+    XOR ECX,ECX                         ; 00442030
+    XOR EBX,EBX                         ; 00442032
+    MOV dword ptr [ESP + 0x1000],ECX    ; 00442034
+    SUB ECX,ECX                         ; 0044203b
+    DEC ECX                             ; 0044203d
+    XOR EAX,EAX                         ; 0044203e
+    SCASB.REPNE ES:EDI                  ; 00442040
+    NOT ECX                             ; 00442042
+    DEC ECX                             ; 00442044
+    MOV ESI,ECX                         ; 00442045
+    TEST ECX,ECX                        ; 00442047
+    JLE 0x00442060                      ; 00442049
+        ;   XREF to: 00442060 (CONDITIONAL_JUMP)  ; LAB_00442060
+    XOR EAX,EAX                         ; 0044204b
+        ;   Label: LAB_0044204b
+    MOV AL,byte ptr [ESP + EBX*0x1]     ; 0044204d
+    PUSH EAX                            ; 00442050
+    PUSH EBP                            ; 00442051
+    INC EBX                             ; 00442052
+    CALL FUN_004420c0                   ; 00442053
+        ;   XREF to: 004420c0 (UNCONDITIONAL_CALL)  ; undefined FUN_004420c0()
+    ADD ESP,0x8                         ; 00442058
+    CMP EBX,ESI                         ; 0044205b
+    JL 0x0044204b                       ; 0044205d
+        ;   XREF to: 0044204b (CONDITIONAL_JUMP)  ; LAB_0044204b
+    NOP                                 ; 0044205f
+    PUSH 0x0                            ; 00442060
+        ;   Label: LAB_00442060
+    PUSH EBP                            ; 00442062
+    CALL FUN_004420c0                   ; 00442063
+        ;   XREF to: 004420c0 (UNCONDITIONAL_CALL)  ; undefined FUN_004420c0()
+    MOV EBX,dword ptr [EBP]             ; 00442068
+    ADD ESP,0x8                         ; 0044206b
+    TEST EBX,EBX                        ; 0044206e
+    JNZ 0x0044207d                      ; 00442070
+        ;   XREF to: 0044207d (CONDITIONAL_JUMP)  ; LAB_0044207d
+    ADD ESP,0x1004                      ; 00442072
+        ;   Label: LAB_00442072
+    POP EBP                             ; 00442078
+    POP EDI                             ; 00442079
+    POP ESI                             ; 0044207a
+    POP EBX                             ; 0044207b
+    RET                                 ; 0044207c
+    PUSH 0x5b93df                       ; 0044207d | DAT_005b93df
+        ;   Label: LAB_0044207d
+    PUSH 0x5f1698                       ; 00442082 | = "console.txt"
+    CALL FUN_005a43ec                   ; 00442087
+        ;   XREF to: 005a43ec (UNCONDITIONAL_CALL)  ; undefined FUN_005a43ec()
+    MOV EBX,EAX                         ; 0044208c
+    ADD ESP,0x8                         ; 0044208e
+    TEST EAX,EAX                        ; 00442091
+    JZ 0x00442072                       ; 00442093
+        ;   XREF to: 00442072 (CONDITIONAL_JUMP)  ; LAB_00442072
+    MOV EAX,ESP                         ; 00442095
+    PUSH EAX                            ; 00442097
+    PUSH 0x5b93e2                       ; 00442098 | DAT_005b93e2
+    PUSH EBX                            ; 0044209d
+    CALL FUN_005a3140                   ; 0044209e
+        ;   XREF to: 005a3140 (UNCONDITIONAL_CALL)  ; undefined FUN_005a3140()
+    ADD ESP,0xc                         ; 004420a3
+    PUSH EBX                            ; 004420a6
+    CALL FUN_005a3a90                   ; 004420a7
+        ;   XREF to: 005a3a90 (UNCONDITIONAL_CALL)  ; undefined FUN_005a3a90()
+    ADD ESP,0x4                         ; 004420ac
+    ADD ESP,0x1004                      ; 004420af
+    POP EBP                             ; 004420b5
+    POP EDI                             ; 004420b6
+    POP ESI                             ; 004420b7
+    POP EBX                             ; 004420b8
+    RET                                 ; 004420b9
+

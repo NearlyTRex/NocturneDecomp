@@ -1,0 +1,474 @@
+====================================================================================================
+EASY WINS - PRIORITIZED ACTION LIST
+====================================================================================================
+
+This list shows the easiest paths to improving decompilation quality,
+sorted by effort required (lowest effort first).
+(CRT functions are excluded)
+
+====================================================================================================
+PRIORITY 1: Files with 1-2 functions remaining
+====================================================================================================
+
+  engine/3d.c (1 remaining of 1)
+    - FUN_004037b0
+      Suspects: warning_overlapping_globals, unnamed_param, unnamed_param
+
+  core/ammobox.cpp (1 remaining of 1)
+    - FUN_0040e720
+      Suspects: warning_overlapping_globals, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unresolved_funcptr, unnamed_param, unnamed_param, unrolled_strcpy, param_count_too_few
+
+  core/bmppuzzl.cpp (1 remaining of 1)
+    - FUN_00412320
+      Suspects: warning_overlapping_globals, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param
+
+  core/bugs.cpp (1 remaining of 1)
+    - FUN_00421be0
+      Suspects: warning_overlapping_globals, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, param_count_too_few
+
+  engine/clipper.c (1 remaining of 1)
+    - FUN_00439da0
+      Suspects: warning_unreachable, warning_type_propagation, warning_overlapping_globals, unnamed_param, unnamed_param, unnamed_param, unnamed_param, undefined_data, undefined_data, unnamed_param, unnamed_param, unnamed_param, undefined_data, undefined_data, unnamed_param, undefined_data, unnamed_param, undefined_data, unnamed_param, undefined_data, pointer_cast, unnamed_param, undefined_data, unnamed_param, undefined_data, pointer_cast, pointer_cast, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, raw_address_pointer_store, undefined_data, unnamed_param, undefined_data, unnamed_param, undefined_data, undefined_data, unnamed_param, undefined_data, undefined_data, unnamed_param, unnamed_param, undefined_data, unnamed_param, unnamed_param, unnamed_param, unnamed_param, undefined_data, unnamed_param, unnamed_param, undefined_data, unnamed_param, undefined_data, unnamed_param, unnamed_param, undefined_data, undefined_data, undefined_data, undefined_data, undefined_data, undefined_data, undefined_data, undefined_data, undefined_data, undefined_data, undefined_data, undefined_data, undefined_data, undefined_data, undefined_data, undefined_data, undefined_data, undefined_data, undefined_data, undefined_data, undefined_data, undefined_data, undefined_data, undefined_data, undefined_data, undefined_data, undefined_data, undefined_data, undefined_data, undefined_data, undefined_data, undefined_data, undefined_data, undefined_data, undefined_data, undefined_data, undefined_data, undefined_data, undefined_data, undefined_data, undefined_data, undefined_data, undefined_data, undefined_data, undefined_data, pointer_cast, pointer_cast, pointer_cast, pointer_cast, pointer_cast, undefined_data, undefined_data, undefined_data, undefined_data, undefined_data, undefined_data, undefined_data, undefined_data, undefined_data, undefined_data, pointer_cast, pointer_cast, undefined_data, undefined_data, undefined_data, undefined_data, undefined_data, undefined_data, undefined_data, undefined_data, undefined_data, undefined_data, pointer_cast, pointer_cast, pointer_cast, undefined_data, undefined_data, undefined_data, undefined_data, undefined_data, undefined_data, undefined_data, undefined_data, undefined_data, pointer_cast, pointer_cast, pointer_cast, undefined_data, undefined_data, undefined_data, undefined_data, undefined_data, undefined_data, undefined_data, undefined_data, undefined_data, undefined_data, pointer_truncation, pointer_truncation, pointer_truncation, pointer_truncation, pointer_truncation, pointer_truncation, pointer_truncation, pointer_truncation, pointer_truncation, pointer_truncation, pointer_truncation, pointer_truncation, pointer_truncation, pointer_truncation, pointer_truncation, pointer_truncation, pointer_truncation, pointer_truncation, pointer_truncation, pointer_truncation, pointer_truncation, pointer_truncation, pointer_truncation, pointer_truncation, pointer_truncation, pointer_truncation, pointer_truncation, pointer_truncation, pointer_truncation, pointer_truncation, pointer_truncation, pointer_cast, pointer_cast, pointer_cast, param_count_too_few
+
+  core/construc.cpp (1 remaining of 1)
+    - FUN_00444110
+      Suspects: warning_overlapping_globals, unnamed_param, stack_alignment_array, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, stack_ref, unnamed_param, unnamed_param, unnamed_param, unnamed_param, stack_ref, stack_ref, stack_ref, pointer_truncation, param_count_too_few
+
+  core/dfont.cpp (1 remaining of 1)
+    - FUN_00459f50
+      Suspects: warning_overlapping_globals, undefined_data, undefined_data, undefined_data, undefined_data
+
+  core/dirmat.cpp (1 remaining of 1)
+    - FUN_0045b640
+      Suspects: warning_overlapping_globals, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param
+
+  core/dpart.cpp (1 remaining of 1)
+    - FUN_004662b0
+      Suspects: warning_overlapping_globals, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, param_count_too_few
+
+  core/dtri.cpp (1 remaining of 1)
+    - FUN_00479970
+      Suspects: warning_overlapping_globals, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, bitcast_double_pair, unnamed_param, unnamed_param, unnamed_param, unnamed_param, bitcast_double_pair, unnamed_param, unnamed_param, unnamed_param, unnamed_param, bitcast_double_pair, sub84_truncation, unnamed_param, unnamed_param, unnamed_param, bitcast_double_pair, unnamed_param, unnamed_param, unnamed_param, bitcast_double_pair, unnamed_param, unnamed_param, unnamed_param, unnamed_param, bitcast_double_pair, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, bitcast_double_pair, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, bitcast_double_pair, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, bitcast_double_pair
+
+  core/filmreel.cpp (1 remaining of 1)
+    - FUN_00496560
+      Suspects: warning_overlapping_globals, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unresolved_funcptr, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unresolved_funcptr, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unresolved_funcptr, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param
+
+  core/ghoul.cpp (1 remaining of 1)
+    - FUN_004c6c80
+      Suspects: warning_overlapping_globals, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unresolved_funcptr, unnamed_param, unnamed_param, param_count_too_few
+
+  core/glass.cpp (1 remaining of 1)
+    - FUN_004c9ce0
+      Suspects: warning_type_propagation, warning_overlapping_globals, unnamed_param, extra_output, extra_output, extra_output, stack_alignment_array, unnamed_param, unnamed_param, undefined_data, unnamed_param, unnamed_param, stack_ref, unnamed_param, stack_ref, stack_ref, stack_ref, stack_ref, unnamed_param, unnamed_param, unnamed_param, stack_ref, stack_ref, stack_ref, stack_ref, stack_ref, stack_ref, stack_ref, unnamed_param, stack_ref, stack_ref, stack_ref, stack_ref, unnamed_param, unnamed_param, unnamed_param, stack_ref, stack_ref, stack_ref, stack_ref, stack_ref, stack_ref, unnamed_param, stack_ref, unnamed_param, stack_ref, stack_ref, stack_ref, stack_ref, unnamed_param, unnamed_param, unnamed_param, stack_ref, stack_ref, stack_ref, stack_ref, stack_ref, stack_ref, stack_ref, unnamed_param, stack_ref, stack_ref, stack_ref, stack_ref, unnamed_param, unnamed_param, unnamed_param, stack_ref, stack_ref, stack_ref, stack_ref, stack_ref, stack_ref, stack_ref, stack_ref, stack_ref, stack_ref, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, stack_ref, unnamed_param, extra_output, unnamed_param, unnamed_param, extra_output, extra_output, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, pointer_truncation, pointer_truncation, pointer_truncation, pointer_truncation, pointer_truncation, pointer_truncation, pointer_truncation, pointer_truncation, pointer_truncation, pointer_truncation, pointer_truncation, pointer_truncation, pointer_truncation, pointer_truncation, pointer_truncation, pointer_truncation, pointer_truncation, pointer_truncation, pointer_truncation, unrolled_strcpy, unrolled_strcpy, unrolled_strcpy, unrolled_strcpy, pointer_cast, pointer_cast, pointer_cast, pointer_cast, pointer_cast, pointer_cast, pointer_cast, pointer_cast, pointer_cast, pointer_cast, pointer_cast, pointer_cast, pointer_cast, pointer_cast, pointer_cast, pointer_cast, pointer_cast, pointer_cast, pointer_cast, static_uninitvar, static_uninitvar, static_uninitvar, static_uninitvar, static_uninitvar, static_uninitvar, static_uninitvar, static_uninitvar, static_uninitvar, static_uninitvar, static_uninitvar, static_uninitvar, static_uninitvar, static_uninitvar, static_uninitvar, static_uninitvar, static_uninitvar
+
+  core/gore.cpp (1 remaining of 1)
+    - FUN_004ced40
+      Suspects: warning_overlapping_globals, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unresolved_funcptr, param_count_too_few
+
+  core/inivar.cpp (1 remaining of 1)
+    - FUN_004d8e70
+      Suspects: warning_overlapping_globals, undefined_data, undefined_data, undefined_data, undefined_data, undefined_data
+
+  core/main.c (1 remaining of 1)
+    - FUN_004e44e0
+      Suspects: warning_overlapping_globals, undefined_data, undefined_data, undefined_data, undefined_data, undefined_data, undefined_data, undefined_data, undefined_data, undefined_data, undefined_data, undefined_data, undefined_data, undefined_data, undefined_data, undefined_data, undefined_data, pointer_truncation, pointer_truncation, pointer_truncation, pointer_truncation, raw_address_constant, unrolled_strcpy, unrolled_strcpy, unrolled_strcpy, unrolled_strcpy, unrolled_strcpy, unrolled_strcpy, unrolled_strcpy, unrolled_strcpy, unrolled_strcpy, unrolled_strcpy, unrolled_strcpy, unrolled_strcpy, unrolled_strcpy, unrolled_strcpy, unrolled_strcpy, unrolled_strcpy, unrolled_strcpy, unrolled_strcpy, unrolled_strcpy, pointer_cast, pointer_cast, pointer_cast, pointer_cast, unrolled_strlen, unrolled_strlen, unrolled_strlen, unrolled_strlen, unrolled_strlen, unrolled_strlen, unrolled_strlen, unrolled_strlen, unrolled_strlen, unrolled_strlen, unrolled_strlen, unrolled_strlen, unrolled_strlen, unrolled_strlen, unrolled_strlen, unrolled_strlen, unrolled_strcat, unrolled_strcat, unrolled_strcat, unrolled_strcat, unrolled_strcat, unrolled_strcat, unrolled_strcat, unrolled_strcat, unrolled_strcat, unrolled_strcat, unrolled_strcat, unrolled_strcat, unrolled_strcat, unrolled_strcat, unrolled_strcat, unrolled_strcat, param_count_too_few
+
+  core/melee.cpp (1 remaining of 1)
+    - FUN_004e7200
+      Suspects: warning_overlapping_globals
+
+  core/menu.cpp (1 remaining of 1)
+    - FUN_004eae80
+      Suspects: warning_overlapping_globals, undefined_data, undefined_data, undefined_data, undefined_data, undefined_data, undefined_data, undefined_data, undefined_data, undefined_data, undefined_data, undefined_data, undefined_data, undefined_data, undefined_data, undefined_data, undefined_data, undefined_data, undefined_data, undefined_data, undefined_data, undefined_data, undefined_data, undefined_data, undefined_data, undefined_data, undefined_data, undefined_data, undefined_data, undefined_data, undefined_data, undefined_data, undefined_data, undefined_data, undefined_data, undefined_data, undefined_data, unresolved_funcptr, unresolved_funcptr, unresolved_funcptr, unresolved_funcptr, undefined_data, undefined_data, undefined_data, undefined_data, undefined_data, undefined_data, undefined_data, unresolved_funcptr, undefined_data, undefined_data, undefined_data, raw_address_constant, unrolled_strcpy, unrolled_strcpy, unrolled_strcpy, unrolled_strcpy, unrolled_strcpy, unrolled_strcpy, unrolled_strcpy, unrolled_strcpy, unrolled_strcpy, unrolled_strcpy, unrolled_strcpy, unrolled_strcpy, unrolled_strcpy, unrolled_strcpy, unrolled_strcpy, unrolled_strcpy, unrolled_strcpy, unrolled_strcpy, unrolled_strcpy, unrolled_strcpy, unrolled_strcpy, unrolled_strcpy, unrolled_strcpy, unrolled_strcpy, unrolled_strcpy, unrolled_strcpy, unrolled_strcpy, unrolled_strcpy, unrolled_strcpy, unrolled_strcpy, unrolled_strcpy, unrolled_strcpy, unrolled_strcpy, unrolled_strcpy, unrolled_strcpy, unrolled_strlen, unrolled_strlen, unrolled_strlen, unrolled_strlen, unrolled_strcat, unrolled_strcat, unrolled_strcat, unrolled_strcat
+
+  core/mirror.cpp (1 remaining of 1)
+    - FUN_004f3d30
+      Suspects: warning_overlapping_globals, unnamed_param, unnamed_param, unnamed_param, unnamed_param, stack_alignment_array, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, stack_ref, stack_ref, stack_ref, stack_ref, stack_ref, stack_ref, stack_ref, stack_ref, unnamed_param, unnamed_param, unnamed_param, unnamed_param, stack_ref, stack_ref, stack_ref, stack_ref, stack_ref, unnamed_param, unnamed_param, unnamed_param, unnamed_param, pointer_truncation, pointer_truncation, pointer_truncation, pointer_truncation, pointer_truncation, pointer_truncation, pointer_truncation, pointer_truncation, pointer_truncation, pointer_truncation, pointer_truncation, pointer_truncation, pointer_cast, pointer_cast, pointer_cast, pointer_cast, pointer_cast, pointer_cast, pointer_cast, pointer_cast, pointer_cast, pointer_cast, pointer_cast, pointer_cast, param_count_too_few, static_uninitvar, static_uninitvar, static_uninitvar, static_uninitvar, static_uninitvar, static_uninitvar
+
+  core/particle.cpp (1 remaining of 1)
+    - FUN_0050a3b0
+      Suspects: warning_overlapping_globals
+
+  core/podmain.cpp (1 remaining of 1)
+    - FUN_005152e0
+      Suspects: warning_overlapping_globals, unnamed_param, undefined_data, unresolved_funcptr, unnamed_param, unnamed_param, undefined_data, undefined_data, unresolved_funcptr, unnamed_param, unnamed_param
+
+  core/setdir.cpp (1 remaining of 1)
+    - FUN_00540c40
+      Suspects: warning_overlapping_globals, unnamed_param, unnamed_param, unnamed_param, undefined_data, undefined_data, unnamed_param, unnamed_param, undefined_data, unnamed_param
+
+  core/texlist.cpp (1 remaining of 1)
+    - FUN_005690c0
+      Suspects: warning_overlapping_globals, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, undefined_data, undefined_data, undefined_data, unnamed_param, undefined_data, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, undefined_data, pointer_cast, pointer_cast, pointer_cast, pointer_cast, unnamed_param, pointer_cast, unnamed_param, unnamed_param, pointer_truncation, pointer_truncation, pointer_truncation, unrolled_strcpy, unrolled_strcpy, unrolled_strlen, unrolled_strchr, unrolled_strchr, param_count_too_few
+
+  core/trigger.cpp (1 remaining of 1)
+    - FUN_0056f080
+      Suspects: warning_type_propagation, warning_overlapping_globals, unnamed_param, unnamed_param, stack_alignment_array, unnamed_param, unresolved_funcptr, unnamed_param, unnamed_param, stack_ref, stack_ref, stack_ref, stack_ref, stack_ref, stack_ref, stack_ref, stack_ref, stack_ref, stack_ref, stack_ref, unnamed_param, stack_ref, stack_ref, stack_ref, stack_ref, unnamed_param, unnamed_param, undefined_data, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, stack_ref, unnamed_param, stack_ref, stack_ref, stack_ref, stack_ref, stack_ref, stack_ref, unnamed_param, unresolved_funcptr, unnamed_param, unnamed_param, stack_ref, stack_ref, unnamed_param, unnamed_param, unnamed_param, unresolved_funcptr, unnamed_param, unnamed_param, stack_ref, stack_ref, unnamed_param, unnamed_param, pointer_truncation, pointer_truncation, pointer_truncation, pointer_truncation, pointer_truncation, pointer_truncation, pointer_truncation, pointer_truncation, pointer_truncation, unrolled_memcpy, unrolled_memcpy, unrolled_memcpy, pointer_cast, pointer_cast, pointer_cast, pointer_cast, pointer_cast, pointer_cast, pointer_cast, pointer_cast, pointer_cast, static_uninitvar, static_uninitvar, static_uninitvar, static_uninitvar, static_uninitvar, static_uninitvar, static_uninitvar, static_uninitvar, static_uninitvar, static_uninitvar, static_uninitvar, static_uninitvar, static_uninitvar, static_uninitvar, static_uninitvar, static_uninitvar, static_uninitvar, static_uninitvar, static_uninitvar, static_uninitvar, static_uninitvar, static_uninitvar
+
+  core/tvbat.cpp (1 remaining of 1)
+    - FUN_00575380
+      Suspects: warning_overlapping_globals, unnamed_param, unnamed_param, stack_alignment_array, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, undefined_data, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unresolved_funcptr, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unresolved_funcptr, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unresolved_funcptr, unnamed_param, unnamed_param, unnamed_param, unrolled_memcpy, static_uninitvar, static_uninitvar, static_uninitvar, static_uninitvar, static_uninitvar, static_uninitvar, static_uninitvar, static_uninitvar, static_uninitvar, static_uninitvar, static_uninitvar, static_uninitvar, static_uninitvar, static_legacy_uninitvar, static_legacy_uninitvar, static_legacy_uninitvar
+
+  core/water.cpp (1 remaining of 1)
+    - FUN_00577290
+      Suspects: warning_overlapping_globals, unnamed_param, stack_alignment_array, unnamed_param, unnamed_param, unnamed_param, sign_compare_idiom, unnamed_param, unnamed_param, unnamed_param, undefined_data, undefined_data, unnamed_param, undefined_data, unnamed_param, undefined_data, undefined_data, undefined_data, undefined_data, undefined_data, undefined_data, undefined_data, undefined_data, undefined_data, undefined_data, unnamed_param, unnamed_param, unnamed_param, param_count_too_few, static_uninitvar, static_legacy_uninitvar, static_legacy_uninitvar
+
+  core/wateract.cpp (1 remaining of 1)
+    - FUN_00578670
+      Suspects: warning_overlapping_globals, unnamed_param, unnamed_param, extra_output, unnamed_param, extra_output, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, raw_address_constant, static_uninitvar
+
+  core/waypoint.cpp (1 remaining of 1)
+    - FUN_005792b0
+      Suspects: warning_overlapping_globals, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param
+
+  core/werewolf.cpp (1 remaining of 1)
+    - FUN_0057d720
+      Suspects: warning_overlapping_globals, unnamed_param, unnamed_param, stack_alignment_array, unresolved_funcptr, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unresolved_funcptr, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, undefined_data, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, undefined_data, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, undefined_data, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, undefined_data, unnamed_param, unnamed_param, unnamed_param, unresolved_funcptr, unnamed_param, unnamed_param, unresolved_funcptr, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unresolved_funcptr, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, undefined_data, unnamed_param, unnamed_param, unnamed_param, unresolved_funcptr, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, undefined_data, unnamed_param, unnamed_param, unnamed_param, undefined_data, unnamed_param, unnamed_param, unnamed_param, undefined_data, unnamed_param, unnamed_param, unnamed_param, unresolved_funcptr, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, undefined_data, unnamed_param, unnamed_param, unnamed_param, unresolved_funcptr, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unresolved_funcptr, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unresolved_funcptr, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unresolved_funcptr, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, raw_address_constant, static_legacy_uninitvar
+
+  core/xform.cpp (1 remaining of 1)
+    - FUN_00584560
+      Suspects: warning_overlapping_globals, unnamed_param, unaffected_reg, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unaffected_reg, unaffected_reg, unaffected_reg, unrolled_memcpy, unrolled_memcpy, param_count_too_few, static_uninitvar
+
+  core/zombiepriest.cpp (1 remaining of 1)
+    - FUN_0058e8d0
+      Suspects: warning_type_propagation, warning_overlapping_globals, unnamed_param, unnamed_param, stack_alignment_array, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, undefined_data, stack_ref, stack_ref, stack_ref, stack_ref, stack_ref, unnamed_param, stack_ref, stack_ref, stack_ref, stack_ref, unnamed_param, stack_ref, stack_ref, stack_ref, stack_ref, unnamed_param, stack_ref, stack_ref, stack_ref, stack_ref, stack_ref, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, stack_ref, stack_ref, stack_ref, stack_ref, stack_ref, stack_ref, unnamed_param, stack_ref, unnamed_param, stack_ref, stack_ref, stack_ref, stack_ref, stack_ref, stack_ref, stack_ref, unnamed_param, unnamed_param, pointer_truncation, pointer_truncation, pointer_truncation, pointer_truncation, pointer_truncation, pointer_truncation, pointer_truncation, pointer_truncation, pointer_truncation, pointer_truncation, pointer_truncation, pointer_truncation, pointer_truncation, pointer_cast, pointer_cast, pointer_cast, pointer_cast, pointer_cast, pointer_cast, pointer_cast, pointer_cast, pointer_cast, param_count_too_few, static_uninitvar, static_uninitvar, static_uninitvar, static_uninitvar, static_uninitvar, static_uninitvar, static_legacy_uninitvar
+
+  core/tawiscara.cpp (1 remaining of 1)
+    - FUN_00594000
+      Suspects: warning_overlapping_globals, unnamed_param, unnamed_param, stack_alignment_array, unresolved_funcptr, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unresolved_funcptr, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, undefined_data, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, undefined_data, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, undefined_data, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, undefined_data, unnamed_param, unnamed_param, unnamed_param, unresolved_funcptr, unnamed_param, unnamed_param, unresolved_funcptr, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unresolved_funcptr, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, undefined_data, unnamed_param, unnamed_param, unnamed_param, unresolved_funcptr, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, undefined_data, unnamed_param, unnamed_param, unnamed_param, undefined_data, unnamed_param, unnamed_param, unnamed_param, undefined_data, unnamed_param, unnamed_param, unnamed_param, unresolved_funcptr, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, undefined_data, unnamed_param, unnamed_param, unnamed_param, unresolved_funcptr, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unresolved_funcptr, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unresolved_funcptr, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unresolved_funcptr, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, raw_address_constant, static_legacy_uninitvar
+
+  engine/alphabit.cpp (2 remaining of 2)
+    - FUN_0040d320
+      Suspects: warning_overlapping_globals, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, param_count_too_few
+    - FUN_0040d460
+      Suspects: warning_overlapping_globals, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, undefined_data, undefined_data, unnamed_param, unnamed_param, unnamed_param, unnamed_param, undefined_data, undefined_data, undefined_data, undefined_data, undefined_data, undefined_data, unnamed_param, unnamed_param, undefined_data, undefined_data, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, param_count_too_few
+
+  core/boneguy.cpp (2 remaining of 2)
+    - FUN_00417630
+      Suspects: warning_overlapping_globals, unnamed_param, unnamed_param, undefined_data, undefined_data, undefined_data, undefined_data, undefined_data, undefined_data, undefined_data, undefined_data, undefined_data, undefined_data, undefined_data, undefined_data, unnamed_param, unnamed_param, undefined_data, unnamed_param, undefined_data, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param
+    - FUN_00419550
+      Suspects: warning_overlapping_globals, unnamed_param, stack_alignment_array, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, stack_ref, unnamed_param, unnamed_param, stack_ref, stack_ref, stack_ref, unresolved_funcptr, unnamed_param, unnamed_param, pointer_truncation, unrolled_memcpy, param_count_too_few
+
+  engine/boss.c (2 remaining of 2)
+    - FUN_0041ac30
+      Suspects: warning_overlapping_globals
+    - FUN_0041ac60
+      Suspects: warning_overlapping_globals, param_count_too_few
+
+  core/carved.cpp (2 remaining of 2)
+    - FUN_00425da0
+      Suspects: warning_overlapping_globals, unnamed_param, unnamed_param, stack_alignment_array, unresolved_funcptr, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unresolved_funcptr, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, pointer_cast, unresolved_funcptr, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unresolved_funcptr, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unresolved_funcptr, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unresolved_funcptr, unnamed_param, unnamed_param, unresolved_funcptr, unnamed_param, unnamed_param, unresolved_funcptr, unnamed_param, unnamed_param, unnamed_param, unresolved_funcptr, unnamed_param, unnamed_param, unnamed_param, unnamed_param, undefined_data, unnamed_param, unnamed_param, unresolved_funcptr, unnamed_param, unnamed_param, unresolved_funcptr, unnamed_param, unnamed_param, unnamed_param, undefined_data, unnamed_param, unnamed_param, unnamed_param, unresolved_funcptr, unresolved_funcptr, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unresolved_funcptr, unnamed_param, unnamed_param, unresolved_funcptr, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unresolved_funcptr, unnamed_param, unnamed_param, unnamed_param, unresolved_funcptr, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unresolved_funcptr, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unresolved_funcptr, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unresolved_funcptr, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unresolved_funcptr, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unresolved_funcptr, unnamed_param, unnamed_param, unnamed_param, unresolved_funcptr, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unresolved_funcptr, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unresolved_funcptr, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unresolved_funcptr, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unresolved_funcptr, unresolved_funcptr, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unresolved_funcptr, unnamed_param, unnamed_param, unresolved_funcptr, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unresolved_funcptr, unnamed_param, unnamed_param, unnamed_param, unresolved_funcptr, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unresolved_funcptr, unnamed_param, unnamed_param, unresolved_funcptr, unresolved_funcptr, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unresolved_funcptr, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unresolved_funcptr, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unresolved_funcptr, raw_address_constant, raw_address_constant, raw_address_constant, unrolled_strcpy, unrolled_memcpy, unrolled_memcpy, unrolled_memcpy, unrolled_memcpy, unrolled_memcpy, unrolled_memcpy, unrolled_memcpy, unrolled_memcpy, static_legacy_uninitvar
+    - FUN_00427bc0
+      Suspects: warning_overlapping_globals, unnamed_param, unnamed_param, stack_alignment_array, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unresolved_funcptr, unresolved_funcptr, unnamed_param, unresolved_funcptr, unnamed_param, unnamed_param, unnamed_param, pointer_cast, pointer_cast, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unresolved_funcptr, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unresolved_funcptr, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unresolved_funcptr, unnamed_param, unnamed_param, unresolved_funcptr, undefined_data, undefined_data, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unrolled_memcpy, unrolled_memcpy, unrolled_memcpy, param_count_too_few, static_uninitvar, static_uninitvar, static_uninitvar, static_uninitvar, static_legacy_uninitvar, static_legacy_uninitvar, static_legacy_uninitvar
+
+  core/course.cpp (2 remaining of 2)
+    - FUN_00444910
+      Suspects: warning_overlapping_globals, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, param_count_too_few
+    - FUN_00444970
+      Suspects: warning_overlapping_globals, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, param_count_too_few
+
+  core/demnfolk.cpp (2 remaining of 2)
+    - FUN_00455080
+      Suspects: warning_overlapping_globals, unnamed_param, unnamed_param, stack_alignment_array, unresolved_funcptr, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unresolved_funcptr, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, pointer_cast, unresolved_funcptr, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unresolved_funcptr, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unresolved_funcptr, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unresolved_funcptr, unnamed_param, unnamed_param, unresolved_funcptr, unnamed_param, unnamed_param, unresolved_funcptr, unnamed_param, unnamed_param, unnamed_param, unresolved_funcptr, unnamed_param, unnamed_param, unnamed_param, unnamed_param, undefined_data, unnamed_param, unnamed_param, unresolved_funcptr, unnamed_param, unnamed_param, unresolved_funcptr, unnamed_param, unnamed_param, unnamed_param, undefined_data, unnamed_param, unnamed_param, unnamed_param, unresolved_funcptr, unresolved_funcptr, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unresolved_funcptr, unnamed_param, unnamed_param, unresolved_funcptr, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unresolved_funcptr, unnamed_param, unnamed_param, unnamed_param, unresolved_funcptr, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unresolved_funcptr, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unresolved_funcptr, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unresolved_funcptr, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unresolved_funcptr, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unresolved_funcptr, unnamed_param, unnamed_param, unnamed_param, unresolved_funcptr, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unresolved_funcptr, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unresolved_funcptr, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unresolved_funcptr, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unresolved_funcptr, unresolved_funcptr, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unresolved_funcptr, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unresolved_funcptr, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unresolved_funcptr, unnamed_param, unnamed_param, unnamed_param, unresolved_funcptr, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unresolved_funcptr, unnamed_param, unnamed_param, unresolved_funcptr, unnamed_param, unresolved_funcptr, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unresolved_funcptr, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unresolved_funcptr, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unresolved_funcptr, unresolved_funcptr, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unresolved_funcptr, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unresolved_funcptr, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unresolved_funcptr, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, undefined_data, unresolved_funcptr, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unresolved_funcptr, raw_address_constant, unrolled_strcpy, unrolled_memcpy, unrolled_memcpy, unrolled_memcpy, unrolled_memcpy, unrolled_memcpy, fast_sqrt_inline, unrolled_memcpy, unrolled_memcpy, unrolled_memcpy, unrolled_memcpy, unrolled_memcpy, static_legacy_uninitvar
+    - FUN_00457740
+      Suspects: warning_overlapping_globals, unnamed_param, unnamed_param, stack_alignment_array, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unresolved_funcptr, unresolved_funcptr, unnamed_param, unresolved_funcptr, unnamed_param, unnamed_param, unnamed_param, pointer_cast, pointer_cast, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unresolved_funcptr, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unresolved_funcptr, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unresolved_funcptr, unnamed_param, unnamed_param, unresolved_funcptr, undefined_data, undefined_data, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unrolled_memcpy, unrolled_memcpy, unrolled_memcpy, param_count_too_few, static_uninitvar, static_uninitvar, static_uninitvar, static_uninitvar, static_uninitvar, static_uninitvar, static_uninitvar, static_legacy_uninitvar, static_legacy_uninitvar, static_legacy_uninitvar, static_legacy_uninitvar, static_legacy_uninitvar
+
+  core/ground.cpp (2 remaining of 2)
+    - FUN_004cfbd0
+      Suspects: warning_overlapping_globals, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, param_count_too_few
+    - FUN_004cfcd0
+      Suspects: warning_overlapping_globals, unnamed_param, unnamed_param, unnamed_param, undefined_data, undefined_data, undefined_data, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, undefined_data, undefined_data, unnamed_param, undefined_data, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, pointer_truncation, unrolled_strcpy, unrolled_strcpy, unrolled_strcpy, unrolled_strcpy, unrolled_strchr, unrolled_strchr, param_count_too_few, static_uninitvar
+
+  core/hero.cpp (2 remaining of 2)
+    - FUN_004d22c0
+      Suspects: warning_overlapping_globals, unnamed_param, unnamed_param, unnamed_param, unnamed_param, param_count_too_few
+    - FUN_004d4be0
+      Suspects: warning_overlapping_globals, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unrolled_memcpy, unrolled_memcpy, param_count_too_few
+
+  support/newmsg.cpp (2 remaining of 2)
+    - FUN_005084c0
+      Suspects: warning_overlapping_globals, unnamed_param, unnamed_param, undefined_data, unnamed_param, undefined_data, undefined_data, undefined_data, undefined_data, undefined_data, undefined_data, undefined_data, unnamed_param, unnamed_param, raw_address_pointer_store, raw_address_pointer_store, unrolled_strcpy, unrolled_strcpy, unrolled_strlen, unrolled_strlen, param_count_too_few
+    - FUN_005089e0
+      Suspects: warning_overlapping_globals, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, param_count_too_few
+
+  core/platfrm.cpp (2 remaining of 2)
+    - FUN_00512420
+      Suspects: warning_overlapping_globals, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, undefined_data, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param
+    - FUN_00512aa0
+      Suspects: warning_overlapping_globals, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unrolled_memcpy, unrolled_memcpy, param_count_too_few
+
+  core/sound.cpp (2 remaining of 2)
+    - FUN_0055f020
+      Suspects: warning_overlapping_globals, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, undefined_data, unnamed_param, undefined_data, undefined_data, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, undefined_data, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unrolled_strcpy, unrolled_memcpy, unrolled_strlen, unrolled_strcat, unrolled_strchr, unrolled_strchr, param_count_too_few, static_uninitvar, static_legacy_uninitvar
+    - FUN_00560c30
+      Suspects: warning_overlapping_globals, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, undefined_data, unnamed_param, unnamed_param, undefined_data, undefined_data, param_count_too_few
+
+  core/zombie.cpp (2 remaining of 2)
+    - FUN_00588ee0
+      Suspects: warning_overlapping_globals, unnamed_param, unnamed_param, stack_alignment_array, unnamed_param, unnamed_param, unresolved_funcptr, unnamed_param, unnamed_param, unresolved_funcptr, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, pointer_cast, unresolved_funcptr, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unresolved_funcptr, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unresolved_funcptr, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unresolved_funcptr, unnamed_param, unnamed_param, unresolved_funcptr, unnamed_param, unnamed_param, unresolved_funcptr, unnamed_param, unnamed_param, unnamed_param, unresolved_funcptr, unnamed_param, unnamed_param, unnamed_param, unnamed_param, undefined_data, unnamed_param, unnamed_param, unresolved_funcptr, unnamed_param, unnamed_param, unresolved_funcptr, unnamed_param, unnamed_param, unnamed_param, undefined_data, unnamed_param, unnamed_param, unnamed_param, unresolved_funcptr, unresolved_funcptr, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unresolved_funcptr, unnamed_param, unnamed_param, unresolved_funcptr, unnamed_param, unnamed_param, unnamed_param, unresolved_funcptr, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unresolved_funcptr, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unresolved_funcptr, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unresolved_funcptr, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unresolved_funcptr, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unresolved_funcptr, unnamed_param, unnamed_param, unnamed_param, unresolved_funcptr, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unresolved_funcptr, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unresolved_funcptr, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unresolved_funcptr, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unresolved_funcptr, unresolved_funcptr, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unresolved_funcptr, unnamed_param, unnamed_param, unnamed_param, unresolved_funcptr, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unresolved_funcptr, unnamed_param, unnamed_param, unnamed_param, unresolved_funcptr, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unresolved_funcptr, unnamed_param, unnamed_param, unresolved_funcptr, unnamed_param, unresolved_funcptr, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unresolved_funcptr, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unresolved_funcptr, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unresolved_funcptr, unresolved_funcptr, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unresolved_funcptr, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unresolved_funcptr, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unresolved_funcptr, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unresolved_funcptr, raw_address_constant, unrolled_strcpy, unrolled_memcpy, unrolled_memcpy, unrolled_memcpy, unrolled_memcpy, fast_sqrt_inline, fast_sqrt_inline, fast_sqrt_inline, unrolled_memcpy, unrolled_memcpy, unrolled_memcpy, unrolled_memcpy
+    - FUN_0058b3f0
+      Suspects: warning_overlapping_globals, unnamed_param, unnamed_param, stack_alignment_array, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unresolved_funcptr, unresolved_funcptr, unnamed_param, unresolved_funcptr, unnamed_param, unnamed_param, unnamed_param, pointer_cast, pointer_cast, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unresolved_funcptr, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unresolved_funcptr, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unresolved_funcptr, unnamed_param, unnamed_param, unresolved_funcptr, undefined_data, undefined_data, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unnamed_param, unrolled_memcpy, unrolled_memcpy, unrolled_memcpy, param_count_too_few, static_uninitvar, static_uninitvar, static_uninitvar, static_uninitvar, static_uninitvar, static_uninitvar, static_uninitvar, static_legacy_uninitvar, static_legacy_uninitvar, static_legacy_uninitvar, static_legacy_uninitvar, static_legacy_uninitvar
+
+====================================================================================================
+PRIORITY 2: Small functions with 1 suspect (<50 lines)
+====================================================================================================
+
+  [warning_overlapping_globals] - 83 functions
+    FUN_004ecf90                                                           (  5 lines)
+    FUN_00556750                                                           (  5 lines)
+    FUN_005586b0                                                           (  5 lines)
+    FUN_005586c0                                                           (  5 lines)
+    FUN_005586d0                                                           (  5 lines)
+    FUN_005586e0                                                           (  5 lines)
+    FUN_00558af0                                                           (  5 lines)
+    FUN_00580800                                                           (  5 lines)
+    FUN_005a7f3c                                                           (  5 lines)
+    FUN_0045c470                                                           (  6 lines)
+    FUN_004bd910                                                           (  6 lines)
+    FUN_004edc90                                                           (  6 lines)
+    FUN_004edca0                                                           (  6 lines)
+    FUN_004edcb0                                                           (  6 lines)
+    FUN_0055a660                                                           (  6 lines)
+    FUN_005809c0                                                           (  6 lines)
+    FUN_005b1960                                                           (  6 lines)
+    FUN_0055d6a0                                                           (  7 lines)
+    FUN_004089a0                                                           (  8 lines)
+    FUN_004089d0                                                           (  8 lines)
+    FUN_00408a00                                                           (  8 lines)
+    FUN_00409cd0                                                           (  8 lines)
+    FUN_0041ac30                                                           (  8 lines)
+    FUN_00441aa0                                                           (  8 lines)
+    FUN_00441ad0                                                           (  8 lines)
+    FUN_0045c160                                                           (  8 lines)
+    FUN_004ad490                                                           (  8 lines)
+    thunk_FUN_00580770                                                     (  8 lines)
+    FUN_004e7200                                                           (  8 lines)
+    FUN_004fc250                                                           (  8 lines)
+    FUN_0050a3b0                                                           (  8 lines)
+    FUN_005152b0                                                           (  8 lines)
+    FUN_0056ac20                                                           (  8 lines)
+    FUN_00574f70                                                           (  8 lines)
+    FUN_00574fa0                                                           (  8 lines)
+    FUN_00576230                                                           (  8 lines)
+    FUN_00580770                                                           (  8 lines)
+    FUN_0046f2d0                                                           (  9 lines)
+    FUN_0047b010                                                           (  9 lines)
+    FUN_004ec6f0                                                           (  9 lines)
+    FUN_004f3af0                                                           ( 10 lines)
+    FUN_00550980                                                           ( 10 lines)
+    FUN_005657f0                                                           ( 10 lines)
+    FUN_005658b0                                                           ( 10 lines)
+    FUN_005658d0                                                           ( 10 lines)
+    FUN_00566060                                                           ( 10 lines)
+    FUN_005661f0                                                           ( 10 lines)
+    FUN_00566210                                                           ( 10 lines)
+    FUN_005a9988                                                           ( 11 lines)
+    FUN_00556050                                                           ( 12 lines)
+    FUN_00558b00                                                           ( 12 lines)
+    FUN_00593d40                                                           ( 12 lines)
+    FUN_005aceb0                                                           ( 12 lines)
+    FUN_0049c620                                                           ( 13 lines)
+    FUN_005a8258                                                           ( 13 lines)
+    thunk_FUN_0056a9c0                                                     ( 15 lines)
+    FUN_00556fd0                                                           ( 15 lines)
+    FUN_00558010                                                           ( 15 lines)
+    FUN_0056a9c0                                                           ( 15 lines)
+    FUN_004ede40                                                           ( 16 lines)
+    FUN_004f2430                                                           ( 16 lines)
+    FUN_005ad838                                                           ( 16 lines)
+    FUN_005afcd4                                                           ( 16 lines)
+    thunk_FUN_005afcd4                                                     ( 16 lines)
+    FUN_00558e10                                                           ( 17 lines)
+    FUN_00571ea0                                                           ( 17 lines)
+    FUN_00571f10                                                           ( 17 lines)
+    FUN_005af64c                                                           ( 17 lines)
+    FUN_00532630                                                           ( 19 lines)
+    FUN_00558e90                                                           ( 21 lines)
+    FUN_00557f60                                                           ( 22 lines)
+    FUN_005ad864                                                           ( 22 lines)
+    FUN_0050cf60                                                           ( 23 lines)
+    FUN_0055df40                                                           ( 23 lines)
+    FUN_00580790                                                           ( 23 lines)
+    FUN_005ad794                                                           ( 23 lines)
+    FUN_00581c80                                                           ( 24 lines)
+    FUN_0055dc40                                                           ( 25 lines)
+    FUN_004e5ef0                                                           ( 26 lines)
+    thunk_FUN_004e5df0                                                     ( 27 lines)
+    FUN_004e5df0                                                           ( 27 lines)
+    FUN_0055d9f0                                                           ( 27 lines)
+    FUN_00552b30                                                           ( 32 lines)
+
+  [undefined_data] - 82 functions
+    FUN_00402800                                                           (  4 lines)
+    FUN_00402840                                                           (  4 lines)
+    FUN_0040de50                                                           (  4 lines)
+    FUN_0040e0e0                                                           (  4 lines)
+    FUN_0040e250                                                           (  4 lines)
+    FUN_0040e3c0                                                           (  4 lines)
+    FUN_0040e5b0                                                           (  4 lines)
+    FUN_0040eab0                                                           (  4 lines)
+    FUN_0040edd0                                                           (  4 lines)
+    FUN_0040f490                                                           (  4 lines)
+    FUN_0040f770                                                           (  4 lines)
+    FUN_0040f9e0                                                           (  4 lines)
+    FUN_004103e0                                                           (  4 lines)
+    FUN_00414450                                                           (  4 lines)
+    FUN_00414740                                                           (  4 lines)
+    FUN_00417070                                                           (  4 lines)
+    FUN_004198d0                                                           (  4 lines)
+    FUN_00419970                                                           (  4 lines)
+    FUN_00419a10                                                           (  4 lines)
+    FUN_00419ab0                                                           (  4 lines)
+    FUN_0041efd0                                                           (  4 lines)
+    FUN_00420350                                                           (  4 lines)
+    FUN_00420e90                                                           (  4 lines)
+    FUN_00424420                                                           (  4 lines)
+    FUN_00425950                                                           (  4 lines)
+    FUN_004292d0                                                           (  4 lines)
+    FUN_00442410                                                           (  4 lines)
+    FUN_00444540                                                           (  4 lines)
+    FUN_004445f0                                                           (  4 lines)
+    FUN_00444f50                                                           (  4 lines)
+    FUN_00445bc0                                                           (  4 lines)
+    FUN_00446340                                                           (  4 lines)
+    FUN_00485fd0                                                           (  4 lines)
+    FUN_00558840                                                           (  4 lines)
+    FUN_00558b10                                                           (  4 lines)
+    FUN_005591a0                                                           (  4 lines)
+    FUN_00408830                                                           (  5 lines)
+    FUN_0040f720                                                           (  5 lines)
+    FUN_00410390                                                           (  5 lines)
+    FUN_004243d0                                                           (  5 lines)
+    FUN_00425550                                                           (  5 lines)
+    FUN_00454750                                                           (  5 lines)
+    FUN_0046b0d0                                                           (  5 lines)
+    FUN_004a6ea0                                                           (  5 lines)
+    FUN_004c4d80                                                           (  5 lines)
+    FUN_004c65e0                                                           (  5 lines)
+    FUN_004cc660                                                           (  5 lines)
+    FUN_004e6f30                                                           (  5 lines)
+    FUN_004f8ae0                                                           (  5 lines)
+    FUN_0050a3f0                                                           (  5 lines)
+    FUN_00527350                                                           (  5 lines)
+    FUN_005310a0                                                           (  5 lines)
+    FUN_0053f0d0                                                           (  5 lines)
+    FUN_00566800                                                           (  5 lines)
+    FUN_00568350                                                           (  5 lines)
+    FUN_005688c0                                                           (  5 lines)
+    FUN_0056cca0                                                           (  5 lines)
+    FUN_0056d180                                                           (  5 lines)
+    FUN_00574fd0                                                           (  5 lines)
+    FUN_00579100                                                           (  5 lines)
+    FUN_0058d2c0                                                           (  5 lines)
+    FUN_0058fd10                                                           (  5 lines)
+    FUN_0059d6f0                                                           (  5 lines)
+    FUN_005afe50                                                           (  5 lines)
+    FUN_005afe5c                                                           (  5 lines)
+    FUN_00441f30                                                           (  6 lines)
+    FUN_0056f460                                                           (  6 lines)
+    FUN_005771c0                                                           (  6 lines)
+    FUN_00598700                                                           (  6 lines)
+    FUN_004486c0                                                           (  7 lines)
+    FUN_00462650                                                           (  8 lines)
+    FUN_005286b0                                                           (  8 lines)
+    FUN_00588410                                                           ( 10 lines)
+    FUN_005a9410                                                           ( 11 lines)
+    FUN_00459610                                                           ( 12 lines)
+    FUN_004f93a0                                                           ( 12 lines)
+    FUN_00556c60                                                           ( 12 lines)
+    FUN_00568290                                                           ( 12 lines)
+    FUN_004d9c90                                                           ( 14 lines)
+    FUN_00556f80                                                           ( 14 lines)
+    FUN_005afae0                                                           ( 14 lines)
+    FUN_004e7610                                                           ( 16 lines)
+
+  [param_count_too_few] - 16 functions
+    FUN_0045d560                                                           (  4 lines)
+    FUN_004dcda0                                                           (  4 lines)
+    FUN_004f7bf0                                                           (  4 lines)
+    FUN_00508c70                                                           (  4 lines)
+    FUN_0051c0f0                                                           (  4 lines)
+    FUN_00542b50                                                           (  4 lines)
+    FUN_005772e0                                                           (  4 lines)
+    FUN_005a9880                                                           (  4 lines)
+    FUN_0044f740                                                           (  5 lines)
+    FUN_004df580                                                           (  6 lines)
+    FUN_00539ee0                                                           (  6 lines)
+    FUN_00560930                                                           (  6 lines)
+    FUN_004df590                                                           (  7 lines)
+    FUN_004bd430                                                           (  8 lines)
+    FUN_004f76f0                                                           (  8 lines)
+    FUN_004803d0                                                           ( 25 lines)
+
+  [unresolved_funcptr] - 4 functions
+    FUN_005b0d88                                                           (  5 lines)
+    FUN_005a35c0                                                           (  6 lines)
+    FUN_005a5fb0                                                           (  6 lines)
+    FUN_005afa50                                                           (  6 lines)
+
+  [raw_address_constant] - 2 functions
+    FUN_00557800                                                           ( 13 lines)
+    FUN_0049a170                                                           ( 16 lines)
+
+  [warning_max_restarts] - 1 functions
+    FUN_005adf80                                                           ( 16 lines)
+
+====================================================================================================
+PRIORITY 3: Files at 90%+ (finish them off!)
+====================================================================================================
+
+====================================================================================================
+ALL REMAINING FILES
+====================================================================================================
+  .                                                              7.2%  (315/4381 clean, 4066 remaining)
+  engine/2d.c                                                    0.0%  (0/5 clean, 5 remaining)
+  core/actor.cpp                                                 0.0%  (0/11 clean, 11 remaining)
+  core/bodypart.cpp                                              0.0%  (0/3 clean, 3 remaining)
+  core/charactr.cpp                                              0.0%  (0/8 clean, 8 remaining)
+  cockpit/ckptutil.c                                             0.0%  (0/4 clean, 4 remaining)
+  core/cloth.cpp                                                 0.0%  (0/7 clean, 7 remaining)
+  support/codec.cpp                                              0.0%  (0/5 clean, 5 remaining)
+  core/dcamera.cpp                                               0.0%  (0/8 clean, 8 remaining)
+  core/dcube.cpp                                                 0.0%  (0/4 clean, 4 remaining)
+  core/dfilter.cpp                                               0.0%  (0/4 clean, 4 remaining)
+  core/dlight.cpp                                                0.0%  (0/9 clean, 9 remaining)
+  core/dmodel.cpp                                                0.0%  (0/10 clean, 10 remaining)
+  core/door.cpp                                                  0.0%  (0/3 clean, 3 remaining)
+  engine/dosio.c                                                 0.0%  (0/3 clean, 3 remaining)
+  cockpit/drawsurf.cpp                                           0.0%  (0/7 clean, 7 remaining)
+  engine/drender.cpp                                             0.0%  (0/6 clean, 6 remaining)
+  core/dtrace.cpp                                                0.0%  (0/7 clean, 7 remaining)
+  shape/edittool.cpp                                             0.0%  (0/36 clean, 36 remaining)
+  core/event.cpp                                                 0.0%  (0/9 clean, 9 remaining)
+  core/fire.cpp                                                  0.0%  (0/3 clean, 3 remaining)
+  core/fldnotes.cpp                                              0.0%  (0/13 clean, 13 remaining)
+  engine/font.cpp                                                0.0%  (0/3 clean, 3 remaining)
+  core/game.cpp                                                  0.0%  (0/8 clean, 8 remaining)
+  engine/ini.cpp                                                 0.0%  (0/4 clean, 4 remaining)
+  core/inv.cpp                                                   0.0%  (0/4 clean, 4 remaining)
+  engine/keyframe.c                                              0.0%  (0/3 clean, 3 remaining)
+  engine/matrix.c                                                0.0%  (0/5 clean, 5 remaining)
+  engine/mini3d.cpp                                              0.0%  (0/7 clean, 7 remaining)
+  core/mission.cpp                                               0.0%  (0/14 clean, 14 remaining)
+  engine/model.c                                                 0.0%  (0/3 clean, 3 remaining)
+  core/morph.cpp                                                 0.0%  (0/8 clean, 8 remaining)
+  core/motion.cpp                                                0.0%  (0/8 clean, 8 remaining)
+  sound/mp3.cpp                                                  0.0%  (0/11 clean, 11 remaining)
+  core/netgame.cpp                                               0.0%  (0/19 clean, 19 remaining)
+  core/path.cpp                                                  0.0%  (0/5 clean, 5 remaining)
+  engine/pcx.c                                                   0.0%  (0/3 clean, 3 remaining)
+  cockpit/pkbitmap.cpp                                           0.0%  (0/5 clean, 5 remaining)
+  engine/pod.cpp                                                 0.0%  (0/7 clean, 7 remaining)
+  core/prye.cpp                                                  0.0%  (0/4 clean, 4 remaining)
+  core/script.cpp                                                0.0%  (0/7 clean, 7 remaining)
+  core/set.cpp                                                   0.0%  (0/10 clean, 10 remaining)
+  core/setcolid.cpp                                              0.0%  (0/6 clean, 6 remaining)
+  core/setutil.cpp                                               0.0%  (0/9 clean, 9 remaining)
+  core/skeleton.cpp                                              0.0%  (0/23 clean, 23 remaining)
+  sound/sndmain.cpp                                              0.0%  (0/44 clean, 44 remaining)
+  sound/snddx.cpp                                                0.0%  (0/6 clean, 6 remaining)
+  engine/texture.cpp                                             0.0%  (0/4 clean, 4 remaining)
+  support/trisock.cpp                                            0.0%  (0/5 clean, 5 remaining)
+  support/trstream.cpp                                           0.0%  (0/4 clean, 4 remaining)
+  wincore/wddvmem.cpp                                            0.0%  (0/8 clean, 8 remaining)

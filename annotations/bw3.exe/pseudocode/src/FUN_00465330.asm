@@ -1,0 +1,48 @@
+; *****************************************************************************
+;                               FUNCTION
+; *****************************************************************************
+; void FUN_00465330(int param_1)
+;
+;
+; Referenced Globals:
+;   undefined4 DAT_00600530
+;   undefined4 DAT_00603b28
+;   undefined4 DAT_01d81080
+;   undefined4 DAT_01d82088
+;   undefined4 DAT_01ed78c8
+;
+; Called Functions:
+;   FUN_00463d80
+;   FUN_0053ee00
+;
+; *****************************************************************************
+
+section .text
+
+    PUSH EBX                            ; 00465330
+        ;   Label: FUN_00465330
+    MOV EBX,dword ptr [ESP + 0x8]       ; 00465331
+    MOV EAX,[0x00600530]                ; 00465335 | DAT_00600530 | DAT_01d81080
+    CMP dword ptr [EAX + 0x1008],0x0    ; 0046533a | DAT_01d82088
+    JNZ 0x0046534c                      ; 00465341
+        ;   XREF to: 0046534c (CONDITIONAL_JUMP)  ; LAB_0046534c
+    CMP dword ptr [EBX + 0x2e0],0x0     ; 00465343
+    JZ 0x0046534e                       ; 0046534a
+        ;   XREF to: 0046534e (CONDITIONAL_JUMP)  ; LAB_0046534e
+    POP EBX                             ; 0046534c
+        ;   Label: LAB_0046534c
+    RET                                 ; 0046534d
+    PUSH EBX                            ; 0046534e
+        ;   Label: LAB_0046534e
+    CALL FUN_00463d80                   ; 0046534f
+        ;   XREF to: 00463d80 (UNCONDITIONAL_CALL)  ; undefined FUN_00463d80()
+    ADD ESP,0x4                         ; 00465354
+    PUSH EBX                            ; 00465357
+    MOV EBX,dword ptr [0x00603b28]      ; 00465358 | DAT_00603b28
+    PUSH EBX                            ; 0046535e | DAT_01ed78c8
+    CALL FUN_0053ee00                   ; 0046535f
+        ;   XREF to: 0053ee00 (UNCONDITIONAL_CALL)  ; undefined FUN_0053ee00()
+    ADD ESP,0x8                         ; 00465364
+    POP EBX                             ; 00465367
+    RET                                 ; 00465368
+

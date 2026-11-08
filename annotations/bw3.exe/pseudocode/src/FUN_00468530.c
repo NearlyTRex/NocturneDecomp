@@ -1,0 +1,71 @@
+// Name: FUN_00468530
+// Address: 00468530
+// Address Range: [[00468530, 0046861e]]
+// Convention: unknown
+// Signature: void FUN_00468530(int param_1,int param_2,int param_3,int param_4,int param_5)
+
+#include "nocturne.h"
+
+void FUN_00468530(int param_1,int param_2,int param_3,int param_4,int param_5)
+
+{
+  int iVar1;
+  int iVar2;
+  int iVar3;
+  int iStack_20;
+  int iStack_1c;
+  int iStack_18;
+  
+  iStack_20 = 1;
+  param_2 = param_2 - *(int *)(param_1 + 8);
+  param_3 = param_3 - *(int *)(param_1 + 0xc);
+  param_5 = param_5 - *(int *)(param_1 + 0xc);
+  param_4 = param_4 - *(int *)(param_1 + 8);
+  iVar1 = param_3;
+  iVar2 = param_4;
+  if (param_5 < param_3) {
+    iVar1 = param_5;
+    iVar2 = param_2;
+    param_5 = param_3;
+    param_2 = param_4;
+  }
+  param_5 = param_5 - iVar1;
+  iVar2 = iVar2 - param_2;
+  if (iVar2 < 0) {
+    iVar2 = -iVar2;
+    iStack_20 = -1;
+  }
+  if (param_5 < iVar2) {
+    iStack_1c = 0;
+    iVar3 = param_5 * 2 - iVar2;
+    if (-1 < iVar2) {
+      do {
+        FUN_00467f30(param_1,param_2,iVar1);
+        if (0 < iVar3) {
+          iVar1 = iVar1 + 1;
+          iVar3 = iVar3 - iVar2;
+        }
+        iStack_1c = iStack_1c + 1;
+        param_2 = param_2 + iStack_20;
+        iVar3 = iVar3 + param_5;
+      } while (iStack_1c <= iVar2);
+    }
+  }
+  else {
+    iStack_18 = 0;
+    iVar3 = iVar2 * 2 - param_5;
+    if (-1 < param_5) {
+      do {
+        FUN_00467f30(param_1,param_2,iVar1);
+        if (0 < iVar3) {
+          iVar3 = iVar3 - param_5;
+          param_2 = param_2 + iStack_20;
+        }
+        iVar1 = iVar1 + 1;
+        iStack_18 = iStack_18 + 1;
+        iVar3 = iVar3 + iVar2;
+      } while (iStack_18 <= param_5);
+    }
+  }
+  return;
+}

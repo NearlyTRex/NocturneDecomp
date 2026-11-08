@@ -1,0 +1,1390 @@
+{
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "other",
+        "column": 25,
+        "line": 28,
+        "message": "unknown type name 'HWND'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 187,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 189,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 28,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 35,
+        "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
+      },
+      {
+        "category": "other",
+        "column": 1,
+        "line": 41,
+        "message": "unknown type name 'MMRESULT'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 46,
+        "message": "unknown type name 'HWND'"
+      },
+      {
+        "category": "other",
+        "column": 56,
+        "line": 191,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 1,
+        "line": 373,
+        "message": "unknown type name 'LPCRITICAL_SECTION'"
+      },
+      {
+        "category": "other",
+        "column": 20,
+        "line": 386,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 415,
+        "message": "unknown type name 'FILETIME'"
+      },
+      {
+        "category": "other",
+        "column": 37,
+        "line": 415,
+        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
+      },
+      {
+        "category": "other",
+        "column": 52,
+        "line": 415,
+        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
+      },
+      {
+        "category": "incompatible_types",
+        "column": 16,
+        "line": 110,
+        "message": "incompatible pointer types assigning to 'uint *' (aka 'unsigned int *') from 'float *'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 40,
+        "line": 124,
+        "message": "use of undeclared identifier '_DAT_005d8743'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 40,
+        "line": 125,
+        "message": "use of undeclared identifier '_DAT_005d8743'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 32,
+        "line": 126,
+        "message": "use of undeclared identifier '_DAT_005d8743'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 35,
+        "line": 127,
+        "message": "use of undeclared identifier '_DAT_005d8743'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 46,
+        "line": 146,
+        "message": "use of undeclared identifier 'DAT_005d873f'"
+      }
+    ],
+    "success": false,
+    "warnings": []
+  },
+  "compile_source": "c",
+  "complexity": {
+    "assembly_lines": 370,
+    "complexity_score": 1053,
+    "cross_reference_count": 0,
+    "function_call_count": 5,
+    "global_count": 4,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 253,
+    "suspect_count": 75,
+    "suspect_types": [
+      "pointer_cast",
+      "self_copy_guard",
+      "stack_alignment_array",
+      "unaffected_reg",
+      "undefined_data",
+      "unnamed_param",
+      "unresolved_funcptr",
+      "unrolled_memcpy",
+      "warning_overlapping_globals",
+      "warning_type_propagation"
+    ],
+    "total_lines": 623
+  },
+  "cross_references": [],
+  "function": {
+    "address": "0058af90",
+    "address_range": [
+      [
+        "0058af90",
+        "0058b3e9"
+      ]
+    ],
+    "convention": "unknown",
+    "is_ebp_frame": true,
+    "name": "FUN_0058af90",
+    "signature": "undefined4 * FUN_0058af90(int param_1,int param_2)"
+  },
+  "function_calls": [
+    {
+      "addr": "0040d220",
+      "is_variadic": false,
+      "name": "FUN_0040d220"
+    },
+    {
+      "addr": "00583260",
+      "is_variadic": false,
+      "name": "FUN_00583260"
+    },
+    {
+      "addr": "005833e0",
+      "is_variadic": false,
+      "name": "FUN_005833e0"
+    },
+    {
+      "addr": "00583940",
+      "is_variadic": false,
+      "name": "FUN_00583940"
+    },
+    {
+      "addr": "005a3f90",
+      "is_variadic": false,
+      "name": "FUN_005a3f90"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005d873f",
+      "name": "DAT_005d873f",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005d8743",
+      "name": "DAT_005d8743",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005d8747",
+      "name": "DAT_005d8747",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02cfd900",
+      "name": "DAT_02cfd900",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 0,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 6.231927710843373,
+    "instruction_count": 332,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 33,
+      "BOOL_OR": 1,
+      "BRANCH": 10,
+      "CALL": 8,
+      "CALLIND": 2,
+      "CBRANCH": 17,
+      "COPY": 765,
+      "FLOAT2FLOAT": 53,
+      "FLOAT_ADD": 10,
+      "FLOAT_MULT": 6,
+      "FLOAT_SUB": 3,
+      "INT_ADD": 247,
+      "INT_AND": 147,
+      "INT_CARRY": 14,
+      "INT_EQUAL": 91,
+      "INT_LEFT": 12,
+      "INT_LESS": 16,
+      "INT_MULT": 67,
+      "INT_NOTEQUAL": 12,
+      "INT_OR": 30,
+      "INT_SBORROW": 16,
+      "INT_SCARRY": 14,
+      "INT_SLESS": 52,
+      "INT_SUB": 122,
+      "INT_XOR": 9,
+      "INT_ZEXT": 64,
+      "LOAD": 100,
+      "POPCOUNT": 40,
+      "RETURN": 1,
+      "STORE": 107
+    },
+    "pcode_op_count": 2069
+  },
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "static_analysis": {
+    "analyzed_file": "FUN_0058af90.c",
+    "cppcheck_quick": {
+      "diagnostic_count": 32,
+      "diagnostics": [
+        {
+          "check_id": "uninitvar",
+          "column": 32,
+          "line": 116,
+          "message": "Uninitialized variable: fStack_140",
+          "severity": "error"
+        },
+        {
+          "check_id": "uninitvar",
+          "column": 23,
+          "line": 117,
+          "message": "Uninitialized variable: fStack_148",
+          "severity": "error"
+        },
+        {
+          "check_id": "uninitvar",
+          "column": 36,
+          "line": 117,
+          "message": "Uninitialized variable: fStack_13c",
+          "severity": "error"
+        },
+        {
+          "check_id": "uninitvar",
+          "column": 23,
+          "line": 118,
+          "message": "Uninitialized variable: fStack_144",
+          "severity": "error"
+        },
+        {
+          "check_id": "uninitvar",
+          "column": 36,
+          "line": 118,
+          "message": "Uninitialized variable: fStack_138",
+          "severity": "error"
+        },
+        {
+          "check_id": "uninitvar",
+          "column": 20,
+          "line": 126,
+          "message": "Uninitialized variable: fStack_54",
+          "severity": "error"
+        },
+        {
+          "check_id": "uninitvar",
+          "column": 19,
+          "line": 140,
+          "message": "Uninitialized variable: *puVar5",
+          "severity": "error"
+        },
+        {
+          "check_id": "uninitvar",
+          "column": 32,
+          "line": 168,
+          "message": "Uninitialized variable: fStack_170",
+          "severity": "error"
+        },
+        {
+          "check_id": "uninitvar",
+          "column": 23,
+          "line": 169,
+          "message": "Uninitialized variable: fStack_178",
+          "severity": "error"
+        },
+        {
+          "check_id": "uninitvar",
+          "column": 36,
+          "line": 169,
+          "message": "Uninitialized variable: fStack_16c",
+          "severity": "error"
+        },
+        {
+          "check_id": "uninitvar",
+          "column": 23,
+          "line": 170,
+          "message": "Uninitialized variable: fStack_174",
+          "severity": "error"
+        },
+        {
+          "check_id": "uninitvar",
+          "column": 36,
+          "line": 170,
+          "message": "Uninitialized variable: fStack_168",
+          "severity": "error"
+        },
+        {
+          "check_id": "uninitvar",
+          "column": 19,
+          "line": 179,
+          "message": "Uninitialized variable: fStack_84",
+          "severity": "error"
+        },
+        {
+          "check_id": "uninitvar",
+          "column": 21,
+          "line": 193,
+          "message": "Uninitialized variable: uStack_c4",
+          "severity": "error"
+        },
+        {
+          "check_id": "uninitvar",
+          "column": 21,
+          "line": 194,
+          "message": "Uninitialized variable: uStack_c0",
+          "severity": "error"
+        },
+        {
+          "check_id": "uninitvar",
+          "column": 17,
+          "line": 204,
+          "message": "Uninitialized variable: fStack_20",
+          "severity": "error"
+        },
+        {
+          "check_id": "uninitvar",
+          "column": 19,
+          "line": 211,
+          "message": "Uninitialized variable: fStack_ac",
+          "severity": "error"
+        },
+        {
+          "check_id": "uninitvar",
+          "column": 19,
+          "line": 212,
+          "message": "Uninitialized variable: fStack_a8",
+          "severity": "error"
+        },
+        {
+          "check_id": "uninitvar",
+          "column": 17,
+          "line": 220,
+          "message": "Uninitialized variable: fStack_11c",
+          "severity": "error"
+        },
+        {
+          "check_id": "uninitvar",
+          "column": 19,
+          "line": 227,
+          "message": "Uninitialized variable: fStack_b8",
+          "severity": "error"
+        },
+        {
+          "check_id": "uninitvar",
+          "column": 19,
+          "line": 228,
+          "message": "Uninitialized variable: fStack_b4",
+          "severity": "error"
+        },
+        {
+          "check_id": "uninitvar",
+          "column": 15,
+          "line": 240,
+          "message": "Uninitialized variable: fStack_68",
+          "severity": "error"
+        },
+        {
+          "check_id": "uninitvar",
+          "column": 27,
+          "line": 246,
+          "message": "Uninitialized variable: fStack_28",
+          "severity": "error"
+        },
+        {
+          "check_id": "uninitvar",
+          "column": 27,
+          "line": 247,
+          "message": "Uninitialized variable: fStack_24",
+          "severity": "error"
+        },
+        {
+          "check_id": "uninitvar",
+          "column": 16,
+          "line": 253,
+          "message": "Uninitialized variable: fStack_1d0",
+          "severity": "error"
+        },
+        {
+          "check_id": "uninitvar",
+          "column": 16,
+          "line": 254,
+          "message": "Uninitialized variable: fStack_1c0",
+          "severity": "error"
+        },
+        {
+          "check_id": "uninitvar",
+          "column": 29,
+          "line": 254,
+          "message": "Uninitialized variable: fStack_34",
+          "severity": "error"
+        },
+        {
+          "check_id": "uninitvar",
+          "column": 16,
+          "line": 255,
+          "message": "Uninitialized variable: fStack_1b0",
+          "severity": "error"
+        },
+        {
+          "check_id": "uninitvar",
+          "column": 29,
+          "line": 255,
+          "message": "Uninitialized variable: fStack_30",
+          "severity": "error"
+        },
+        {
+          "check_id": "uninitvar",
+          "column": 12,
+          "line": 257,
+          "message": "Uninitialized variable: unaff_ESI",
+          "severity": "error"
+        },
+        {
+          "check_id": "legacyUninitvar",
+          "column": 15,
+          "line": 246,
+          "message": "Uninitialized variable: fStack_a0",
+          "severity": "error"
+        },
+        {
+          "check_id": "legacyUninitvar",
+          "column": 15,
+          "line": 247,
+          "message": "Uninitialized variable: fStack_9c",
+          "severity": "error"
+        }
+      ],
+      "error": null
+    },
+    "file_variant": "raw"
+  },
+  "suspects": [
+    {
+      "description": "Type propagation did not converge",
+      "line": 2,
+      "match": "WARNING: Type propagation algorithm not settling",
+      "severity": "moderate",
+      "text": "/* WARNING: Type propagation algorithm not settling */",
+      "type": "warning_type_propagation"
+    },
+    {
+      "description": "Overlapping global symbols",
+      "line": 3,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 5,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "uint * FUN_0058af90(int param_1,int param_2)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 5,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "uint * FUN_0058af90(int param_1,int param_2)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 12,
+      "match": "unaff_ESI",
+      "severity": "moderate",
+      "text": "uint *unaff_ESI;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "StackY array variable (stack alignment artifact)",
+      "line": 16,
+      "match": "auStackY_1104",
+      "severity": "moderate",
+      "text": "uint auStackY_1104 [955];",
+      "type": "stack_alignment_array"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 92,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "iVar2 = param_2 * 0x78 + param_1;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 92,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "iVar2 = param_2 * 0x78 + param_1;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 94,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "iVar3 = param_2;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 95,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "if ((*(int *)(param_1 + 0xd140) != 4) && (param_2 != *(int *)(param_1 + 0xd0e8))) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 95,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "if ((*(int *)(param_1 + 0xd140) != 4) && (param_2 != *(int *)(param_1 + 0xd0e8))) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 95,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "if ((*(int *)(param_1 + 0xd140) != 4) && (param_2 != *(int *)(param_1 + 0xd0e8))) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 98,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "if (param_2 != *(int *)(param_1 + 0xd0e8)) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 98,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "if (param_2 != *(int *)(param_1 + 0xd0e8)) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 99,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "uVar1 = *(uint *)(param_1 + 0xd068);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 101,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "(**(code **)(*(int *)(iVar4 + 0x154) + 0x1c))(iVar4);",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 113,
+      "match": "(uint *)((int)afStack_64",
+      "severity": "moderate",
+      "text": "*(uint *)((int)afStack_64 + ((uint)bVar7 * -2 + 3) * 4) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 114,
+      "match": "(uint *)((int)afStack_f4",
+      "severity": "moderate",
+      "text": "*(uint *)((int)afStack_f4 + (uint)bVar7 * 0xfffffff8);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 115,
+      "match": "(uint *)((int)afStack_64",
+      "severity": "moderate",
+      "text": "*(uint *)((int)afStack_64 + ((uint)bVar7 * -2 + (uint)bVar7 * -2 + 4) * 4) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 116,
+      "match": "(uint *)((int)afStack_f4",
+      "severity": "moderate",
+      "text": "*(uint *)((int)afStack_f4 + ((uint)bVar7 * -2 + (uint)bVar7 * -2 + 1) * 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 121,
+      "match": "(float *)((int)afStack_94",
+      "severity": "moderate",
+      "text": "*(float *)((int)afStack_94 + (uint)bVar7 * 0xfffffff8) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 123,
+      "match": "(float *)((int)afStack_94",
+      "severity": "moderate",
+      "text": "*(float *)((int)afStack_94 + ((uint)bVar7 * -2 + (uint)bVar7 * -2 + 1) * 4) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 130,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "puVar5 = (uint *)(param_1 + 0x25b4 + param_2 * 0x78);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 130,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "puVar5 = (uint *)(param_1 + 0x25b4 + param_2 * 0x78);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 139,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "iVar2 = FUN_005a3f90(param_1 + 0x24a8,&DAT_005d873f,3);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 139,
+      "match": "DAT_005d873f",
+      "severity": "mild",
+      "text": "iVar2 = FUN_005a3f90(param_1 + 0x24a8,&DAT_005d873f,3);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 150,
+      "match": "DAT_02cfd900",
+      "severity": "mild",
+      "text": "FUN_00583940(auStack_20c,&DAT_02cfd900,&uStack_74);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 151,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "(**(code **)(*(int *)(iVar4 + 0x154) + 0x1c))(iVar4);",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 165,
+      "match": "(uint *)((int)afStack_94",
+      "severity": "moderate",
+      "text": "*(uint *)((int)afStack_94 + ((uint)bVar7 * -2 + 3) * 4) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 166,
+      "match": "(uint *)((int)afStack_d0",
+      "severity": "moderate",
+      "text": "*(uint *)((int)afStack_d0 + (uint)bVar7 * 0xfffffff8);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 167,
+      "match": "(uint *)((int)afStack_94",
+      "severity": "moderate",
+      "text": "*(uint *)((int)afStack_94 + ((uint)bVar7 * -2 + (uint)bVar7 * -2 + 4) * 4) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 168,
+      "match": "(uint *)((int)afStack_d0",
+      "severity": "moderate",
+      "text": "*(uint *)((int)afStack_d0 + ((uint)bVar7 * -2 + (uint)bVar7 * -2 + 1) * 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 174,
+      "match": "(uint *)((int)afStack_64",
+      "severity": "moderate",
+      "text": "*(uint *)((int)afStack_64 + ((uint)bVar7 * -2 + 6) * 4) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 175,
+      "match": "(uint *)((int)afStack_94",
+      "severity": "moderate",
+      "text": "*(uint *)((int)afStack_94 + ((uint)bVar7 * -2 + 6) * 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 176,
+      "match": "(uint *)((int)afStack_64",
+      "severity": "moderate",
+      "text": "*(uint *)((int)afStack_64 + ((uint)bVar7 * -2 + (uint)bVar7 * -2 + 7) * 4) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 177,
+      "match": "(uint *)((int)afStack_94",
+      "severity": "moderate",
+      "text": "*(uint *)((int)afStack_94 + ((uint)bVar7 * -2 + (uint)bVar7 * -2 + 7) * 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 180,
+      "match": "(uint *)((int)afStack_d0",
+      "severity": "moderate",
+      "text": "*(uint *)((int)afStack_d0 + ((uint)bVar7 * -2 + 3) * 4) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 181,
+      "match": "(uint *)((int)afStack_64",
+      "severity": "moderate",
+      "text": "*(uint *)((int)afStack_64 + ((uint)bVar7 * -2 + 6) * 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 182,
+      "match": "(uint *)((int)afStack_d0",
+      "severity": "moderate",
+      "text": "*(uint *)((int)afStack_d0 + ((uint)bVar7 * -2 + (uint)bVar7 * -2 + 4) * 4) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 183,
+      "match": "(uint *)((int)afStack_64",
+      "severity": "moderate",
+      "text": "*(uint *)((int)afStack_64 + ((uint)bVar7 * -2 + (uint)bVar7 * -2 + 7) * 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 191,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "iVar4 = iVar3 * 0x30 + param_1 + 0xfd8;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 192,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "if (iVar3 == *(int *)(param_1 + 0xd0ec)) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 198,
+      "match": "(uint *)((int)afStack_d0",
+      "severity": "moderate",
+      "text": "*(uint *)((int)afStack_d0 + ((uint)bVar7 * -2 + 9) * 4) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 199,
+      "match": "(uint *)((int)afStack_64",
+      "severity": "moderate",
+      "text": "*(uint *)((int)afStack_64 + ((uint)bVar7 * -2 + 0x12) * 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 200,
+      "match": "(uint *)((int)afStack_d0",
+      "severity": "moderate",
+      "text": "*(uint *)((int)afStack_d0 + ((uint)bVar7 * -2 + (uint)bVar7 * -2 + 10) * 4) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 201,
+      "match": "(uint *)((int)afStack_64",
+      "severity": "moderate",
+      "text": "*(uint *)((int)afStack_64 + ((uint)bVar7 * -2 + (uint)bVar7 * -2 + 0x13) * 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 214,
+      "match": "(uint *)((int)afStack_d0",
+      "severity": "moderate",
+      "text": "*(uint *)((int)afStack_d0 + ((uint)bVar7 * -2 + 6) * 4) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 215,
+      "match": "(uint *)((int)afStack_118",
+      "severity": "moderate",
+      "text": "*(uint *)((int)afStack_118 + (uint)bVar7 * 0xfffffff8);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 216,
+      "match": "(uint *)((int)afStack_d0",
+      "severity": "moderate",
+      "text": "*(uint *)((int)afStack_d0 + ((uint)bVar7 * -2 + (uint)bVar7 * -2 + 7) * 4) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 217,
+      "match": "(uint *)((int)afStack_f4",
+      "severity": "moderate",
+      "text": "*(uint *)((int)afStack_f4 + ((uint)bVar7 * -2 + (uint)bVar7 * -2 + -8) * 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 224,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "FUN_005833e0(auStack_20c,iVar3 * 0x30 + param_1 + 0xfd8);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 234,
+      "match": "(uint *)((int)afStack_64",
+      "severity": "moderate",
+      "text": "*(uint *)((int)afStack_64 + ((uint)bVar7 * -2 + 0xf) * 4) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 235,
+      "match": "(uint *)((int)afStack_64",
+      "severity": "moderate",
+      "text": "*(uint *)((int)afStack_64 + (uint)bVar7 * 0xfffffff8);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 236,
+      "match": "(uint *)((int)afStack_64",
+      "severity": "moderate",
+      "text": "*(uint *)((int)afStack_64 + ((uint)bVar7 * -2 + (uint)bVar7 * -2 + 0x10) * 4) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 237,
+      "match": "(uint *)((int)afStack_64",
+      "severity": "moderate",
+      "text": "*(uint *)((int)afStack_64 + ((uint)bVar7 * -2 + (uint)bVar7 * -2 + 1) * 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 242,
+      "match": "(uint *)((int)afStack_64",
+      "severity": "moderate",
+      "text": "*(uint *)((int)afStack_64 + ((uint)bVar7 * -2 + 0xc) * 4) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 243,
+      "match": "(uint *)((int)afStack_64",
+      "severity": "moderate",
+      "text": "*(uint *)((int)afStack_64 + ((uint)bVar7 * -2 + 9) * 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 244,
+      "match": "(uint *)((int)afStack_64",
+      "severity": "moderate",
+      "text": "*(uint *)((int)afStack_64 + ((uint)bVar7 * -2 + (uint)bVar7 * -2 + 0xd) * 4) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 245,
+      "match": "(uint *)((int)afStack_64",
+      "severity": "moderate",
+      "text": "*(uint *)((int)afStack_64 + ((uint)bVar7 * -2 + (uint)bVar7 * -2 + 10) * 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 250,
+      "match": "unaff_ESI",
+      "severity": "moderate",
+      "text": "puVar6 = unaff_ESI;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 256,
+      "match": "unaff_ESI",
+      "severity": "moderate",
+      "text": "return unaff_ESI;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
+      "line": 104,
+      "match": "for (...; != 0; ... + -1)",
+      "severity": "moderate",
+      "text": "for (iVar4 = 6; iVar4 != 0; iVar4 = iVar4 + -1) {",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
+      "line": 132,
+      "match": "for (...; != 0; ... + -1)",
+      "severity": "moderate",
+      "text": "for (iVar4 = 0xc; iVar4 != 0; iVar4 = iVar4 + -1) {",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
+      "line": 154,
+      "match": "for (...; != 0; ... + -1)",
+      "severity": "moderate",
+      "text": "for (iVar4 = 6; iVar4 != 0; iVar4 = iVar4 + -1) {",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
+      "line": 227,
+      "match": "for (...; != 0; ... + -1)",
+      "severity": "moderate",
+      "text": "for (iVar4 = 0xc; iVar4 != 0; iVar4 = iVar4 + -1) {",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
+      "line": 251,
+      "match": "for (...; != 0; ... + -1)",
+      "severity": "moderate",
+      "text": "for (iVar4 = 0xc; iVar4 != 0; iVar4 = iVar4 + -1) {",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom dead self-copy guard: `if (&fStack_ec != &fStack_98)` wraps an unconditional struct copy. Both addresses are stack locals \u2014 always different \u2014 so the guard never skips. Drop the if-wrapper in a .keep.",
+      "line": 125,
+      "match": "if (&NAME_A != &NAME_B) { NAME_A = NAME_B; ... }",
+      "severity": "moderate",
+      "text": "if (&fStack_ec != &fStack_98) {",
+      "type": "self_copy_guard"
+    },
+    {
+      "description": "Watcom dead self-copy guard: `if (&fStack_ec != &fStack_c8)` wraps an unconditional struct copy. Both addresses are stack locals \u2014 always different \u2014 so the guard never skips. Drop the if-wrapper in a .keep.",
+      "line": 184,
+      "match": "if (&NAME_A != &NAME_B) { NAME_A = NAME_B; ... }",
+      "severity": "moderate",
+      "text": "if (&fStack_ec != &fStack_c8) {",
+      "type": "self_copy_guard"
+    },
+    {
+      "description": "Watcom dead self-copy guard: `if (&fStack_a4 != &fStack_b0)` wraps an unconditional struct copy. Both addresses are stack locals \u2014 always different \u2014 so the guard never skips. Drop the if-wrapper in a .keep.",
+      "line": 202,
+      "match": "if (&NAME_A != &NAME_B) { NAME_A = NAME_B; ... }",
+      "severity": "moderate",
+      "text": "if (&fStack_a4 != &fStack_b0) {",
+      "type": "self_copy_guard"
+    },
+    {
+      "description": "Watcom dead self-copy guard: `if (&fStack_a4 != &fStack_bc)` wraps an unconditional struct copy. Both addresses are stack locals \u2014 always different \u2014 so the guard never skips. Drop the if-wrapper in a .keep.",
+      "line": 218,
+      "match": "if (&NAME_A != &NAME_B) { NAME_A = NAME_B; ... }",
+      "severity": "moderate",
+      "text": "if (&fStack_a4 != &fStack_bc) {",
+      "type": "self_copy_guard"
+    },
+    {
+      "description": "Watcom inline memcpy (REP MOVSD at 0058b02b, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
+      "line": 44,
+      "match": "MOVSD.REP",
+      "severity": "moderate",
+      "text": "// 0058b02b: MOVSD.REP ES:EDI,ESI",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom inline memcpy (REP MOVSD at 0058b0e0, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
+      "line": 102,
+      "match": "MOVSD.REP",
+      "severity": "moderate",
+      "text": "// 0058b0e0: MOVSD.REP ES:EDI,ESI",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom inline memcpy (REP MOVSD at 0058b194, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
+      "line": 163,
+      "match": "MOVSD.REP",
+      "severity": "moderate",
+      "text": "// 0058b194: MOVSD.REP ES:EDI,ESI",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom inline memcpy (REP MOVSD at 0058b220, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
+      "line": 211,
+      "match": "MOVSD.REP",
+      "severity": "moderate",
+      "text": "// 0058b220: MOVSD.REP ES:EDI,ESI",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom inline memcpy (REP MOVSD at 0058b2ad, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
+      "line": 258,
+      "match": "MOVSD.REP",
+      "severity": "moderate",
+      "text": "// 0058b2ad: MOVSD.REP ES:EDI,ESI",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Uninitialized variable: fStack_140",
+      "line": 116,
+      "match": "Cppcheck: uninitialized variable",
+      "severity": "major",
+      "text": "fStack_f8 = fStack_14c + fStack_140;",
+      "type": "static_uninitvar"
+    },
+    {
+      "description": "Uninitialized variable: fStack_148",
+      "line": 117,
+      "match": "Cppcheck: uninitialized variable",
+      "severity": "major",
+      "text": "afStack_f4[0] = fStack_148 + fStack_13c;",
+      "type": "static_uninitvar"
+    },
+    {
+      "description": "Uninitialized variable: fStack_13c",
+      "line": 117,
+      "match": "Cppcheck: uninitialized variable",
+      "severity": "major",
+      "text": "afStack_f4[0] = fStack_148 + fStack_13c;",
+      "type": "static_uninitvar"
+    },
+    {
+      "description": "Uninitialized variable: fStack_144",
+      "line": 118,
+      "match": "Cppcheck: uninitialized variable",
+      "severity": "major",
+      "text": "afStack_f4[1] = fStack_144 + fStack_138;",
+      "type": "static_uninitvar"
+    },
+    {
+      "description": "Uninitialized variable: fStack_138",
+      "line": 118,
+      "match": "Cppcheck: uninitialized variable",
+      "severity": "major",
+      "text": "afStack_f4[1] = fStack_144 + fStack_138;",
+      "type": "static_uninitvar"
+    },
+    {
+      "description": "Uninitialized variable: fStack_54",
+      "line": 126,
+      "match": "Cppcheck: uninitialized variable",
+      "severity": "major",
+      "text": "fStack_108 = fStack_54 * _DAT_005d8743;",
+      "type": "static_uninitvar"
+    },
+    {
+      "description": "Uninitialized variable: *puVar5",
+      "line": 140,
+      "match": "Cppcheck: uninitialized variable",
+      "severity": "major",
+      "text": "*puVar6 = *puVar5;",
+      "type": "static_uninitvar"
+    },
+    {
+      "description": "Uninitialized variable: fStack_170",
+      "line": 168,
+      "match": "Cppcheck: uninitialized variable",
+      "severity": "major",
+      "text": "fStack_d4 = fStack_17c + fStack_170;",
+      "type": "static_uninitvar"
+    },
+    {
+      "description": "Uninitialized variable: fStack_178",
+      "line": 169,
+      "match": "Cppcheck: uninitialized variable",
+      "severity": "major",
+      "text": "afStack_d0[0] = fStack_178 + fStack_16c;",
+      "type": "static_uninitvar"
+    },
+    {
+      "description": "Uninitialized variable: fStack_16c",
+      "line": 169,
+      "match": "Cppcheck: uninitialized variable",
+      "severity": "major",
+      "text": "afStack_d0[0] = fStack_178 + fStack_16c;",
+      "type": "static_uninitvar"
+    },
+    {
+      "description": "Uninitialized variable: fStack_174",
+      "line": 170,
+      "match": "Cppcheck: uninitialized variable",
+      "severity": "major",
+      "text": "afStack_d0[1] = fStack_174 + fStack_168;",
+      "type": "static_uninitvar"
+    },
+    {
+      "description": "Uninitialized variable: fStack_168",
+      "line": 170,
+      "match": "Cppcheck: uninitialized variable",
+      "severity": "major",
+      "text": "afStack_d0[1] = fStack_174 + fStack_168;",
+      "type": "static_uninitvar"
+    },
+    {
+      "description": "Uninitialized variable: fStack_84",
+      "line": 179,
+      "match": "Cppcheck: uninitialized variable",
+      "severity": "major",
+      "text": "fStack_78 = fStack_84 * _DAT_005d8743;",
+      "type": "static_uninitvar"
+    },
+    {
+      "description": "Uninitialized variable: uStack_c4",
+      "line": 193,
+      "match": "Cppcheck: uninitialized variable",
+      "severity": "major",
+      "text": "uStack_e8 = uStack_c4;",
+      "type": "static_uninitvar"
+    },
+    {
+      "description": "Uninitialized variable: uStack_c0",
+      "line": 194,
+      "match": "Cppcheck: uninitialized variable",
+      "severity": "major",
+      "text": "uStack_e4 = uStack_c0;",
+      "type": "static_uninitvar"
+    },
+    {
+      "description": "Uninitialized variable: fStack_20",
+      "line": 204,
+      "match": "Cppcheck: uninitialized variable",
+      "severity": "major",
+      "text": "fStack_b0 = fStack_20;",
+      "type": "static_uninitvar"
+    },
+    {
+      "description": "Uninitialized variable: fStack_ac",
+      "line": 211,
+      "match": "Cppcheck: uninitialized variable",
+      "severity": "major",
+      "text": "fStack_a0 = fStack_ac;",
+      "type": "static_uninitvar"
+    },
+    {
+      "description": "Uninitialized variable: fStack_a8",
+      "line": 212,
+      "match": "Cppcheck: uninitialized variable",
+      "severity": "major",
+      "text": "fStack_9c = fStack_a8;",
+      "type": "static_uninitvar"
+    },
+    {
+      "description": "Uninitialized variable: fStack_11c",
+      "line": 220,
+      "match": "Cppcheck: uninitialized variable",
+      "severity": "major",
+      "text": "fStack_bc = fStack_11c;",
+      "type": "static_uninitvar"
+    },
+    {
+      "description": "Uninitialized variable: fStack_b8",
+      "line": 227,
+      "match": "Cppcheck: uninitialized variable",
+      "severity": "major",
+      "text": "fStack_a0 = fStack_b8;",
+      "type": "static_uninitvar"
+    },
+    {
+      "description": "Uninitialized variable: fStack_b4",
+      "line": 228,
+      "match": "Cppcheck: uninitialized variable",
+      "severity": "major",
+      "text": "fStack_9c = fStack_b4;",
+      "type": "static_uninitvar"
+    },
+    {
+      "description": "Uninitialized variable: fStack_68",
+      "line": 240,
+      "match": "Cppcheck: uninitialized variable",
+      "severity": "major",
+      "text": "fStack_2c = fStack_68;",
+      "type": "static_uninitvar"
+    },
+    {
+      "description": "Uninitialized variable: fStack_28",
+      "line": 246,
+      "match": "Cppcheck: uninitialized variable",
+      "severity": "major",
+      "text": "fStack_40 = fStack_a0 - fStack_28;",
+      "type": "static_uninitvar"
+    },
+    {
+      "description": "Uninitialized variable: fStack_24",
+      "line": 247,
+      "match": "Cppcheck: uninitialized variable",
+      "severity": "major",
+      "text": "fStack_3c = fStack_9c - fStack_24;",
+      "type": "static_uninitvar"
+    },
+    {
+      "description": "Uninitialized variable: fStack_1d0",
+      "line": 253,
+      "match": "Cppcheck: uninitialized variable",
+      "severity": "major",
+      "text": "fStack_1d0 = fStack_1d0 + fStack_38;",
+      "type": "static_uninitvar"
+    },
+    {
+      "description": "Uninitialized variable: fStack_1c0",
+      "line": 254,
+      "match": "Cppcheck: uninitialized variable",
+      "severity": "major",
+      "text": "fStack_1c0 = fStack_1c0 + fStack_34;",
+      "type": "static_uninitvar"
+    },
+    {
+      "description": "Uninitialized variable: fStack_34",
+      "line": 254,
+      "match": "Cppcheck: uninitialized variable",
+      "severity": "major",
+      "text": "fStack_1c0 = fStack_1c0 + fStack_34;",
+      "type": "static_uninitvar"
+    },
+    {
+      "description": "Uninitialized variable: fStack_1b0",
+      "line": 255,
+      "match": "Cppcheck: uninitialized variable",
+      "severity": "major",
+      "text": "fStack_1b0 = fStack_1b0 + fStack_30;",
+      "type": "static_uninitvar"
+    },
+    {
+      "description": "Uninitialized variable: fStack_30",
+      "line": 255,
+      "match": "Cppcheck: uninitialized variable",
+      "severity": "major",
+      "text": "fStack_1b0 = fStack_1b0 + fStack_30;",
+      "type": "static_uninitvar"
+    },
+    {
+      "description": "Uninitialized variable: unaff_ESI",
+      "line": 257,
+      "match": "Cppcheck: uninitialized variable",
+      "severity": "major",
+      "text": "puVar6 = unaff_ESI;",
+      "type": "static_uninitvar"
+    },
+    {
+      "description": "Uninitialized variable: fStack_a0",
+      "line": 246,
+      "match": "Cppcheck: uninitialized variable (legacy detector)",
+      "severity": "major",
+      "text": "fStack_40 = fStack_a0 - fStack_28;",
+      "type": "static_legacy_uninitvar"
+    },
+    {
+      "description": "Uninitialized variable: fStack_9c",
+      "line": 247,
+      "match": "Cppcheck: uninitialized variable (legacy detector)",
+      "severity": "major",
+      "text": "fStack_3c = fStack_9c - fStack_24;",
+      "type": "static_legacy_uninitvar"
+    }
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "Unknown",
+        "offset": 100,
+        "vtable_addr": "005e6c4c"
+      },
+      {
+        "class_name": "Unknown",
+        "offset": 100,
+        "vtable_addr": "005e685c"
+      },
+      {
+        "class_name": "Unknown",
+        "offset": 100,
+        "vtable_addr": "005e6d9c"
+      },
+      {
+        "class_name": "Unknown",
+        "offset": 100,
+        "vtable_addr": "005e69ac"
+      },
+      {
+        "class_name": "Unknown",
+        "offset": 100,
+        "vtable_addr": "005e6eec"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 6
+  }
+}

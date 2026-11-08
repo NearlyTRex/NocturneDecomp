@@ -1,0 +1,89 @@
+; *****************************************************************************
+;                               FUNCTION
+; *****************************************************************************
+; void FUN_00547660(int param_1)
+;
+;
+; Referenced Globals:
+;   undefined4 s_modelName_005d15b5+1
+;   TerminatedCString s_weight_005d15c0
+;   TerminatedCString s_initialVelocity_005d15c7
+;   TerminatedCString s_initRotVel_005d15d7
+;   TerminatedCString s_triggerEvent_005d15e2
+;   undefined4 DAT_005d15ef
+;   undefined4 DAT_0060415c
+;
+; Called Functions:
+;   FUN_0040b400
+;   FUN_0040b680
+;   FUN_0040b830
+;   FUN_0040b8b0
+;   FUN_0040b9b0
+;   FUN_0040c280
+;
+; *****************************************************************************
+
+section .text
+
+    PUSH EBX                            ; 00547660
+        ;   Label: FUN_00547660
+    MOV EBX,dword ptr [ESP + 0x8]       ; 00547661
+    PUSH EBX                            ; 00547665
+    CALL FUN_0040c280                   ; 00547666
+        ;   XREF to: 0040c280 (UNCONDITIONAL_CALL)  ; undefined FUN_0040c280()
+    ADD ESP,0x4                         ; 0054766b
+    PUSH 0x5d15b6                       ; 0054766e | s_modelName_005d15b5+1
+    LEA EAX,[EBX + 0x158]               ; 00547673
+    PUSH EAX                            ; 00547679
+    CALL FUN_0040b9b0                   ; 0054767a
+        ;   XREF to: 0040b9b0 (UNCONDITIONAL_CALL)  ; undefined FUN_0040b9b0()
+    ADD ESP,0x8                         ; 0054767f
+    PUSH 0x5d15c0                       ; 00547682 | = "weight"
+    LEA EAX,[EBX + 0x2d8]               ; 00547687
+    PUSH EAX                            ; 0054768d
+    CALL FUN_0040b830                   ; 0054768e
+        ;   XREF to: 0040b830 (UNCONDITIONAL_CALL)  ; undefined FUN_0040b830()
+    MOV EDX,dword ptr [0x0060415c]      ; 00547693 | DAT_0060415c
+    ADD ESP,0x8                         ; 00547699
+    CMP EDX,0x2                         ; 0054769c
+    JGE 0x005476ac                      ; 0054769f
+        ;   XREF to: 005476ac (CONDITIONAL_JUMP)  ; LAB_005476ac
+    CMP dword ptr [0x0060415c],0x3      ; 005476a1 | DAT_0060415c
+    JGE 0x005476f3                      ; 005476a8
+        ;   XREF to: 005476f3 (CONDITIONAL_JUMP)  ; LAB_005476f3
+    POP EBX                             ; 005476aa
+    RET                                 ; 005476ab
+    PUSH 0x5d15c7                       ; 005476ac | = "initialVelocity"
+        ;   Label: LAB_005476ac
+    LEA EAX,[EBX + 0x340]               ; 005476b1
+    PUSH EAX                            ; 005476b7
+    CALL FUN_0040b400                   ; 005476b8
+        ;   XREF to: 0040b400 (UNCONDITIONAL_CALL)  ; undefined FUN_0040b400()
+    ADD ESP,0x8                         ; 005476bd
+    PUSH 0x5d15d7                       ; 005476c0 | = "initRotVel"
+    LEA EAX,[EBX + 0x34c]               ; 005476c5
+    PUSH EAX                            ; 005476cb
+    CALL FUN_0040b400                   ; 005476cc
+        ;   XREF to: 0040b400 (UNCONDITIONAL_CALL)  ; undefined FUN_0040b400()
+    ADD ESP,0x8                         ; 005476d1
+    PUSH 0x5d15e2                       ; 005476d4 | = "triggerEvent"
+    LEA EAX,[EBX + 0x2dc]               ; 005476d9
+    PUSH EAX                            ; 005476df
+    CALL FUN_0040b680                   ; 005476e0
+        ;   XREF to: 0040b680 (UNCONDITIONAL_CALL)  ; undefined FUN_0040b680()
+    ADD ESP,0x8                         ; 005476e5
+    CMP dword ptr [0x0060415c],0x3      ; 005476e8 | DAT_0060415c
+    JGE 0x005476f3                      ; 005476ef
+        ;   XREF to: 005476f3 (CONDITIONAL_JUMP)  ; LAB_005476f3
+    POP EBX                             ; 005476f1
+    RET                                 ; 005476f2
+    PUSH 0x5d15ef                       ; 005476f3 | DAT_005d15ef
+        ;   Label: LAB_005476f3
+    ADD EBX,0x2d4                       ; 005476f8
+    PUSH EBX                            ; 005476fe
+    CALL FUN_0040b8b0                   ; 005476ff
+        ;   XREF to: 0040b8b0 (UNCONDITIONAL_CALL)  ; undefined FUN_0040b8b0()
+    ADD ESP,0x8                         ; 00547704
+    POP EBX                             ; 00547707
+    RET                                 ; 00547708
+

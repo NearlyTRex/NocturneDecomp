@@ -1,0 +1,658 @@
+{
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "other",
+        "column": 0,
+        "line": 0,
+        "message": "Compilation timed out after 60s"
+      }
+    ],
+    "success": false,
+    "warnings": []
+  },
+  "compile_source": "c",
+  "complexity": {
+    "assembly_lines": 438,
+    "complexity_score": 313,
+    "cross_reference_count": 1,
+    "function_call_count": 23,
+    "global_count": 43,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 118,
+    "suspect_count": 17,
+    "suspect_types": [
+      "param_count_too_few",
+      "raw_address_constant",
+      "unaffected_reg",
+      "unnamed_param",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 556
+  },
+  "cross_references": [
+    {
+      "addr": "004b6f30",
+      "from_addr": "004b6f9c",
+      "name": "FUN_004b6f30",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004bf4b0",
+    "address_range": [
+      [
+        "004bf4b0",
+        "004bfa35"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "FUN_004bf4b0",
+    "signature": "void FUN_004bf4b0(int param_1)"
+  },
+  "function_calls": [
+    {
+      "addr": "004032b0",
+      "is_variadic": false,
+      "name": "FUN_004032b0"
+    },
+    {
+      "addr": "0040cdc0",
+      "is_variadic": false,
+      "name": "FUN_0040cdc0"
+    },
+    {
+      "addr": "00411a90",
+      "is_variadic": false,
+      "name": "FUN_00411a90"
+    },
+    {
+      "addr": "00441ff0",
+      "is_variadic": false,
+      "name": "FUN_00441ff0"
+    },
+    {
+      "addr": "00459e90",
+      "is_variadic": false,
+      "name": "FUN_00459e90"
+    },
+    {
+      "addr": "0048c020",
+      "is_variadic": false,
+      "name": "FUN_0048c020"
+    },
+    {
+      "addr": "004a1760",
+      "is_variadic": false,
+      "name": "FUN_004a1760"
+    },
+    {
+      "addr": "004ac6b0",
+      "is_variadic": false,
+      "name": "FUN_004ac6b0"
+    },
+    {
+      "addr": "004b4430",
+      "is_variadic": false,
+      "name": "FUN_004b4430"
+    },
+    {
+      "addr": "004bb100",
+      "is_variadic": false,
+      "name": "FUN_004bb100"
+    },
+    {
+      "addr": "004bd6d0",
+      "is_variadic": false,
+      "name": "FUN_004bd6d0"
+    },
+    {
+      "addr": "004ce7e0",
+      "is_variadic": false,
+      "name": "FUN_004ce7e0"
+    },
+    {
+      "addr": "004f70a0",
+      "is_variadic": false,
+      "name": "FUN_004f70a0"
+    },
+    {
+      "addr": "00528e00",
+      "is_variadic": false,
+      "name": "FUN_00528e00"
+    },
+    {
+      "addr": "005353e0",
+      "is_variadic": false,
+      "name": "FUN_005353e0"
+    },
+    {
+      "addr": "00539c50",
+      "is_variadic": false,
+      "name": "FUN_00539c50"
+    },
+    {
+      "addr": "0053f940",
+      "is_variadic": false,
+      "name": "FUN_0053f940"
+    },
+    {
+      "addr": "0055fd30",
+      "is_variadic": false,
+      "name": "FUN_0055fd30"
+    },
+    {
+      "addr": "005724e0",
+      "is_variadic": false,
+      "name": "FUN_005724e0"
+    },
+    {
+      "addr": "005772e0",
+      "is_variadic": false,
+      "name": "FUN_005772e0"
+    },
+    {
+      "addr": "0057bda0",
+      "is_variadic": false,
+      "name": "FUN_0057bda0"
+    },
+    {
+      "addr": "005806a0",
+      "is_variadic": false,
+      "name": "FUN_005806a0"
+    },
+    {
+      "addr": "005a35cc",
+      "is_variadic": false,
+      "name": "FUN_005a35cc"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005c39b0",
+      "name": "s_G_s_3_2f_ms_005c39af+1",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005c39d8",
+      "name": "s_gFilterFX_process_005c39d7+1",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005c39ed",
+      "name": "s_gScript_process_005c39ed",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005c3a00",
+      "name": "s_gSet_process_005c3a00",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005c3a10",
+      "name": "s_gGore_process_005c3a10",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005c3a21",
+      "name": "s_gFire_process_005c3a21",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005c3a32",
+      "name": "s_gEventList_process_005c3a32",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005c3a48",
+      "name": "s_gSit_process_005c3a48",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005c3a58",
+      "name": "s_simulate_3_2f_ms_005c3a58",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005c3a70",
+      "name": "DAT_005c3a70",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005c3a78",
+      "name": "DAT_005c3a78",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005c3a80",
+      "name": "DAT_005c3a80",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005f1690",
+      "name": "PTR_DAT_005f1690",
+      "type": "void*",
+      "value": "007f7ea4"
+    },
+    {
+      "addr": "005f1910",
+      "name": "DAT_005f1910",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005fba60",
+      "name": "DAT_005fba60",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005fc5a0",
+      "name": "DAT_005fc5a0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005fe4b0",
+      "name": "DAT_005fe4b0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005fe9dc",
+      "name": "DAT_005fe9dc",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005fed24",
+      "name": "DAT_005fed24",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00600530",
+      "name": "DAT_00600530",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00603450",
+      "name": "DAT_00603450",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "006039e0",
+      "name": "DAT_006039e0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00603b28",
+      "name": "DAT_00603b28",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "006045f8",
+      "name": "DAT_006045f8",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00606aa0",
+      "name": "DAT_00606aa0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00606b20",
+      "name": "DAT_00606b20",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "006071f0",
+      "name": "DAT_006071f0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "007f7ea4",
+      "name": "DAT_007f7ea4",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d1a05c",
+      "name": "DAT_01d1a05c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d1a09c",
+      "name": "DAT_01d1a09c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d2130c",
+      "name": "DAT_01d2130c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d2153c",
+      "name": "DAT_01d2153c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d21620",
+      "name": "DAT_01d21620",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d22c98",
+      "name": "DAT_01d22c98",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d81080",
+      "name": "DAT_01d81080",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01da62f0",
+      "name": "DAT_01da62f0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01da646c",
+      "name": "DAT_01da646c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01ed73e0",
+      "name": "DAT_01ed73e0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01ed73ec",
+      "name": "DAT_01ed73ec",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01ed73f0",
+      "name": "DAT_01ed73f0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01ed78c8",
+      "name": "DAT_01ed78c8",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02cfd950",
+      "name": "DAT_02cfd950",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02d0c1a0",
+      "name": "DAT_02d0c1a0",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 2,
+    "call_sites": [
+      {
+        "call_addr": "004b6f9c",
+        "call_type": "direct",
+        "caller": "FUN_004b6f30",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [
+          "EAX"
+        ],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "004b7a3e",
+        "call_type": "direct",
+        "caller": "FUN_004b6f30",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "low",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 2,
+    "matches_declared": false
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.623906705539358,
+    "instruction_count": 343,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 17,
+      "BRANCH": 5,
+      "CALL": 45,
+      "CBRANCH": 20,
+      "COPY": 529,
+      "FLOAT2FLOAT": 43,
+      "FLOAT_ADD": 1,
+      "FLOAT_DIV": 8,
+      "FLOAT_MULT": 24,
+      "INT2FLOAT": 8,
+      "INT_ADD": 85,
+      "INT_AND": 129,
+      "INT_CARRY": 27,
+      "INT_EQUAL": 128,
+      "INT_LESS": 36,
+      "INT_SBORROW": 36,
+      "INT_SCARRY": 27,
+      "INT_SLESS": 64,
+      "INT_SUB": 129,
+      "LOAD": 46,
+      "POPCOUNT": 64,
+      "RETURN": 1,
+      "STORE": 114
+    },
+    "pcode_op_count": 1586
+  },
+  "stack_frame": {
+    "frame_size": 40,
+    "local_size": 40,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_24",
+        "offset": -36,
+        "size": 8,
+        "type": "undefined8"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 4,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "void FUN_004bf4b0(int param_1)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 9,
+      "match": "unaff_ESI",
+      "severity": "moderate",
+      "text": "int unaff_ESI;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 11,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "if (*(int *)(param_1 + 0x230) != 0) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 12,
+      "match": "unaff_ESI",
+      "severity": "moderate",
+      "text": "unaff_ESI = FUN_005806a0();",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 15,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "*(uint *)(param_1 + 0x260) = 1;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 41,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "if (*(int *)(param_1 + 0xe8) != 0) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 42,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "if (*(int *)(param_1 + 0x24c) == 0) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 43,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "*(uint *)(param_1 + 0xe8) = 0;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 113,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "*(uint *)(param_1 + 0x260) = 0;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 117,
+      "match": "unaff_ESI",
+      "severity": "moderate",
+      "text": "((double)(iVar2 - unaff_ESI) * _DAT_005c3a70 * _DAT_005c3a78 * _DAT_005c3a80) /",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 120,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "*(float *)(param_1 + 0x278) = *(float *)(param_1 + 0x314) + *(float *)(param_1 + 0x278);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 120,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "*(float *)(param_1 + 0x278) = *(float *)(param_1 + 0x314) + *(float *)(param_1 + 0x278);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 120,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "*(float *)(param_1 + 0x278) = *(float *)(param_1 + 0x314) + *(float *)(param_1 + 0x278);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Raw hex address 0x1da62f0 assigned to bare local `piVar1`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `piVar1` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
+      "line": 14,
+      "match": "0x1da62f0",
+      "severity": "moderate",
+      "text": "piVar1 = 0x01DA62F0;",
+      "type": "raw_address_constant"
+    },
+    {
+      "description": "Raw hex address 0x1d2130c assigned to bare local `iVar2`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `iVar2` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
+      "line": 112,
+      "match": "0x1d2130c",
+      "severity": "moderate",
+      "text": "iVar2 = 0x01D2130C;",
+      "type": "raw_address_constant"
+    },
+    {
+      "call_site_count": 2,
+      "declared_params": 0,
+      "description": "Signature has too few params - likely missing this ptr or other params",
+      "estimated_params": 2,
+      "fix_type": "add_params",
+      "match": "declared:0 vs estimated:2",
+      "param_delta": 2,
+      "text": "Function declares 0 params but call sites push 2 (2 missing)",
+      "type": "param_count_too_few"
+    }
+  ]
+}

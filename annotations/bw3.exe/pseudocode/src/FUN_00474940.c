@@ -1,0 +1,108 @@
+// Name: FUN_00474940
+// Address: 00474940
+// Address Range: [[00474940, 00474b88]]
+// Convention: unknown
+// Signature: float FUN_00474940(int param_1,float *param_2,undefined4 *param_3,undefined4 *param_4)
+
+#include "nocturne.h"
+
+/* WARNING: Type propagation algorithm not settling */
+/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+
+float FUN_00474940(int param_1,float *param_2,uint *param_3,uint *param_4)
+
+{
+  int iVar1;
+  byte bVar2;
+  float10 fVar3;
+  float10 fVar4;
+  float10 fVar5;
+  float10 fVar6;
+  float afStackY_1034 [1006];
+  float local_68;
+  float local_64;
+  float local_60;
+  float local_5c;
+  float local_58;
+  float local_54;
+  float local_50;
+  float local_4c;
+  float local_48;
+  float local_40;
+  float local_3c;
+  float local_38;
+  uint local_34;
+  uint local_30;
+  uint local_2c;
+  int local_24;
+  int local_20;
+  int local_1c;
+  int local_18;
+  float local_14;
+  
+  bVar2 = 0;
+  local_64 = *param_2;
+  local_5c = param_2[2];
+  local_60 = param_2[1] + _DAT_005bca11;
+  local_58 = *param_2;
+  local_50 = param_2[2];
+  fVar3 = ((float10)local_64 - (float10)*(float *)(param_1 + 0x10)) /
+          (float10)*(float *)(param_1 + 0x28);
+  fVar4 = (float10)1 / (float10)*(float *)(param_1 + 0x2c);
+  fVar5 = ((float10)local_5c - (float10)*(float *)(param_1 + 0x18)) /
+          (float10)*(float *)(param_1 + 0x30);
+  local_54 = (float)((float10)param_2[1] + (float10)_DAT_005bca15);
+  fVar6 = ((float10)local_60 - (float10)*(float *)(param_1 + 0x14)) * fVar4;
+  fVar4 = (((float10)param_2[1] + (float10)_DAT_005bca15) - (float10)*(float *)(param_1 + 0x14)) *
+          fVar4;
+  local_40 = local_58 - local_64;
+  local_38 = local_50 - local_5c;
+  local_3c = local_54 - local_60;
+  FUN_005a3120();
+  FUN_005a3120();
+  local_24 = (int)ROUND(fVar3);
+  local_20 = (int)ROUND(fVar5);
+  FUN_005a3120();
+  FUN_005a3120();
+  local_18 = (int)ROUND(fVar6);
+  local_1c = (int)ROUND(fVar4);
+  local_4c = local_40;
+  (&stack0xffffffb8)[(uint)bVar2 * 0xfffffffe] =
+       (float)*(uint *)((int)&stack0xffffffc4 + (uint)bVar2 * -8);
+  *(uint *)(&stack0xffffffbc + (uint)bVar2 * -8 + (uint)bVar2 * -8) =
+       *(uint *)((int)&stack0xffffffc8 + (uint)bVar2 * -8 + (uint)bVar2 * -8);
+  if ((int)ROUND(fVar4) <= (int)ROUND(fVar6)) {
+    do {
+      iVar1 = FUN_00473b60(param_1,local_24,local_18,local_20);
+      if ((iVar1 != 0) &&
+         (local_68 = (float)FUN_00454360(iVar1,&stack0xffffff9c,&stack0xffffffb4,&stack0xffffffcc,
+                                         param_3), local_14 = local_68, local_68 <= 1.0)) {
+        if ((param_4 != (uint *)0x0) && (&stack0xffffffcc != param_4)) {
+          *param_4 = local_34;
+          param_4[1] = local_30;
+          param_4[2] = local_2c;
+        }
+        return local_68 * local_48 + local_60;
+      }
+      local_18 = local_18 + -1;
+    } while (local_1c <= local_18);
+  }
+  if (param_3 != (uint *)0x0) {
+    *param_3 = 1;
+  }
+  if (param_4 != (uint *)0x0) {
+    param_4[1] = 0x3f800000;
+    param_4[2] = 0;
+    *param_4 = 0;
+  }
+  _DAT_01548b74 = _DAT_02cfd904;
+  _DAT_01548b78 = _DAT_02cfd908;
+  _DAT_01548b70 = _DAT_02cfd900;
+  _DAT_01548b68 = _DAT_02cfd904;
+  _DAT_01548b6c = _DAT_02cfd908;
+  _DAT_01548b64 = _DAT_02cfd900;
+  _DAT_01548b5c = _DAT_02cfd904;
+  _DAT_01548b60 = _DAT_02cfd908;
+  _DAT_01548b58 = _DAT_02cfd900;
+  return local_54;
+}

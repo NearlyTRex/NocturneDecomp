@@ -1,0 +1,351 @@
+{
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "other",
+        "column": 25,
+        "line": 28,
+        "message": "unknown type name 'HWND'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 187,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 189,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 28,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 35,
+        "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
+      },
+      {
+        "category": "other",
+        "column": 1,
+        "line": 41,
+        "message": "unknown type name 'MMRESULT'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 46,
+        "message": "unknown type name 'HWND'"
+      },
+      {
+        "category": "other",
+        "column": 56,
+        "line": 191,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 1,
+        "line": 373,
+        "message": "unknown type name 'LPCRITICAL_SECTION'"
+      },
+      {
+        "category": "other",
+        "column": 20,
+        "line": 386,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 415,
+        "message": "unknown type name 'FILETIME'"
+      },
+      {
+        "category": "other",
+        "column": 37,
+        "line": 415,
+        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
+      },
+      {
+        "category": "other",
+        "column": 52,
+        "line": 415,
+        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
+      },
+      {
+        "category": "incompatible_types",
+        "column": 11,
+        "line": 17,
+        "message": "incompatible pointer to integer conversion assigning to 'int' from 'undefined1 *' (aka 'unsigned char *')"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 30,
+        "line": 19,
+        "message": "use of undeclared identifier 'PTR_FUN_005db134'"
+      },
+      {
+        "category": "other",
+        "column": 12,
+        "line": 21,
+        "message": "assigning to 'char *' from 'undefined1 *' (aka 'unsigned char *') converts between pointers to integer types where one is of the unique plain 'char' type and the other is not"
+      }
+    ],
+    "success": false,
+    "warnings": []
+  },
+  "compile_source": "c",
+  "complexity": {
+    "assembly_lines": 48,
+    "complexity_score": 81,
+    "cross_reference_count": 4,
+    "function_call_count": 3,
+    "global_count": 6,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 26,
+    "suspect_count": 4,
+    "suspect_types": [
+      "undefined_data",
+      "unnamed_param",
+      "unrolled_strcpy"
+    ],
+    "total_lines": 74
+  },
+  "cross_references": [
+    {
+      "addr": "0040e0f0",
+      "from_addr": "0040e0f6",
+      "name": "FUN_0040e0f0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0040e260",
+      "from_addr": "0040e266",
+      "name": "FUN_0040e260",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0040e3d0",
+      "from_addr": "0040e3d6",
+      "name": "FUN_0040e3d0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0040e720",
+      "from_addr": "0040e775",
+      "name": "FUN_0040e720",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0040de60",
+    "address_range": [
+      [
+        "0040de60",
+        "0040deea"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "FUN_0040de60",
+    "signature": "int FUN_0040de60(undefined4 param_1)"
+  },
+  "function_calls": [
+    {
+      "addr": "00408600",
+      "is_variadic": false,
+      "name": "FUN_00408600"
+    },
+    {
+      "addr": "00462500",
+      "is_variadic": false,
+      "name": "FUN_00462500"
+    },
+    {
+      "addr": "004625f0",
+      "is_variadic": false,
+      "name": "FUN_004625f0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005b60b7",
+      "name": "s_bullet_kfm_005b60b7",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005b60c2",
+      "name": "DAT_005b60c2",
+      "type": "undefined1",
+      "value": null
+    },
+    {
+      "addr": "005b60c3",
+      "name": "DAT_005b60c3",
+      "type": "undefined1",
+      "value": null
+    },
+    {
+      "addr": "005b60c4",
+      "name": "DAT_005b60c4",
+      "type": "undefined1",
+      "value": null
+    },
+    {
+      "addr": "005b60c5",
+      "name": "DAT_005b60c5",
+      "type": "undefined1",
+      "value": null
+    },
+    {
+      "addr": "005db134",
+      "name": "PTR_FUN_005db134",
+      "type": "void*",
+      "value": "0040def0"
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 4,
+    "call_sites": [
+      {
+        "call_addr": "0040e0f6",
+        "call_type": "direct",
+        "caller": "FUN_0040e0f0",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [
+          "EDX"
+        ],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "0040e266",
+        "call_type": "direct",
+        "caller": "FUN_0040e260",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [
+          "EDX"
+        ],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "0040e3d6",
+        "call_type": "direct",
+        "caller": "FUN_0040e3d0",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [
+          "EDX"
+        ],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "0040e775",
+        "call_type": "direct",
+        "caller": "FUN_0040e720",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 2,
+    "matches_declared": false
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.0,
+    "instruction_count": 40,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 1,
+      "CALL": 3,
+      "CBRANCH": 2,
+      "COPY": 30,
+      "INT_ADD": 21,
+      "INT_AND": 16,
+      "INT_CARRY": 6,
+      "INT_EQUAL": 16,
+      "INT_LESS": 2,
+      "INT_SBORROW": 2,
+      "INT_SCARRY": 6,
+      "INT_SLESS": 8,
+      "INT_SUB": 13,
+      "LOAD": 8,
+      "POPCOUNT": 8,
+      "RETURN": 1,
+      "STORE": 17
+    },
+    "pcode_op_count": 160
+  },
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "int FUN_0040de60(uint param_1)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 10,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "iVar2 = FUN_00408600(param_1);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 14,
+      "match": "DAT_005b60c2",
+      "severity": "mild",
+      "text": "pcVar3 = &DAT_005b60c2;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 16,
+      "match": "do {",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    }
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "Unknown",
+        "offset": 0,
+        "vtable_addr": "005db514"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

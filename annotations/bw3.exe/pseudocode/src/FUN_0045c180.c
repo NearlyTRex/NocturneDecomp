@@ -1,0 +1,33 @@
+// Name: FUN_0045c180
+// Address: 0045c180
+// Address Range: [[0045c180, 0045c234]]
+// Convention: unknown
+// Signature: void FUN_0045c180(undefined4 param_1,undefined4 param_2,undefined4 param_3)
+
+#include "nocturne.h"
+
+void FUN_0045c180(uint param_1,uint param_2,uint param_3)
+
+{
+  int iVar1;
+  
+  iVar1 = FUN_00448be0(param_1);
+  *(byte ***)(iVar1 + 0x3c) = &PTR_FUN_005de514;
+  *(uint *)(iVar1 + 0x1cb4) = 1;
+  *(uint *)(iVar1 + 0x1cb8) = 1;
+  *(uint *)(iVar1 + 0x2f94) = 0;
+  *(uint *)(iVar1 + 0x2f98) = 0;
+  *(uint *)(iVar1 + 0x2f9c) = 0;
+  *(uint *)(iVar1 + 0x164) = 0;
+  *(uint *)(iVar1 + 0x140) = 0x437f0000;
+  *(uint *)(iVar1 + 0x2fa0) = 0;
+  *(uint *)(iVar1 + 0x1c6c) = 0;
+  *(uint *)(iVar1 + 0x1c54) = 0;
+  *(uint *)(iVar1 + 0x2fa4) = 0x10000;
+  *(uint *)(iVar1 + 0x2fa8) = 0x3f800000;
+  *(uint *)(iVar1 + 0x1cbc) = 0;
+  *(uint *)(iVar1 + 0x1cd0) = 1;
+  *(uint *)(iVar1 + 0x1cc0) = param_2;
+  *(uint *)(iVar1 + 0x1cc4) = param_3;
+  return;
+}

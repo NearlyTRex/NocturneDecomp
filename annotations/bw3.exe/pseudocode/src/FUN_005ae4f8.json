@@ -1,0 +1,370 @@
+{
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "other",
+        "column": 25,
+        "line": 28,
+        "message": "unknown type name 'HWND'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 187,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 189,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 28,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 35,
+        "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
+      },
+      {
+        "category": "other",
+        "column": 1,
+        "line": 41,
+        "message": "unknown type name 'MMRESULT'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 46,
+        "message": "unknown type name 'HWND'"
+      },
+      {
+        "category": "other",
+        "column": 56,
+        "line": 191,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 1,
+        "line": 373,
+        "message": "unknown type name 'LPCRITICAL_SECTION'"
+      },
+      {
+        "category": "other",
+        "column": 20,
+        "line": 386,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 415,
+        "message": "unknown type name 'FILETIME'"
+      },
+      {
+        "category": "other",
+        "column": 37,
+        "line": 415,
+        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
+      },
+      {
+        "category": "other",
+        "column": 52,
+        "line": 415,
+        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
+      },
+      {
+        "category": "other",
+        "column": 14,
+        "line": 19,
+        "message": "assigning to 'char *' from 'undefined1 *' (aka 'unsigned char *') converts between pointers to integer types where one is of the unique plain 'char' type and the other is not"
+      },
+      {
+        "category": "other",
+        "column": 14,
+        "line": 20,
+        "message": "assigning to 'char *' from 'undefined1 *' (aka 'unsigned char *') converts between pointers to integer types where one is of the unique plain 'char' type and the other is not"
+      },
+      {
+        "category": "pointer_type",
+        "column": 21,
+        "line": 28,
+        "message": "comparison of distinct pointer types ('char *' and 'undefined1 *' (aka 'unsigned char *'))"
+      },
+      {
+        "category": "pointer_type",
+        "column": 16,
+        "line": 29,
+        "message": "comparison of distinct pointer types ('char *' and 'undefined1 *' (aka 'unsigned char *'))"
+      },
+      {
+        "category": "incompatible_types",
+        "column": 7,
+        "line": 31,
+        "message": "no matching function for call to 'FUN_005ae490'"
+      }
+    ],
+    "success": false,
+    "warnings": []
+  },
+  "compile_source": "c",
+  "complexity": {
+    "assembly_lines": 53,
+    "complexity_score": 116,
+    "cross_reference_count": 2,
+    "function_call_count": 1,
+    "global_count": 8,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 26,
+    "suspect_count": 8,
+    "suspect_types": [
+      "register_param",
+      "undefined_data"
+    ],
+    "total_lines": 79
+  },
+  "cross_references": [
+    {
+      "addr": "005a8210",
+      "from_addr": "005a8240",
+      "name": "FUN_005a8210",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005ad2c4",
+      "from_addr": "005ad2dd",
+      "name": "FUN_005ad2c4",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "005ae4f8",
+    "address_range": [
+      [
+        "005ae4f8",
+        "005ae55a"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "FUN_005ae4f8",
+    "signature": "void FUN_005ae4f8(void)"
+  },
+  "function_calls": [
+    {
+      "addr": "005ae490",
+      "is_variadic": false,
+      "name": "FUN_005ae490"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0060848c",
+      "name": "DAT_0060848c",
+      "type": "undefined1",
+      "value": null
+    },
+    {
+      "addr": "0060848d",
+      "name": "DAT_0060848d",
+      "type": "undefined1",
+      "value": null
+    },
+    {
+      "addr": "00608492",
+      "name": "DAT_00608492",
+      "type": "undefined1",
+      "value": null
+    },
+    {
+      "addr": "00608493",
+      "name": "DAT_00608493",
+      "type": "undefined1",
+      "value": null
+    },
+    {
+      "addr": "00608494",
+      "name": "PTR_FUN_00608494",
+      "type": "void*",
+      "value": "005a9e24"
+    },
+    {
+      "addr": "006084b6",
+      "name": "DAT_006084b6",
+      "type": "undefined1",
+      "value": null
+    },
+    {
+      "addr": "006084b7",
+      "name": "DAT_006084b7",
+      "type": "undefined1",
+      "value": null
+    },
+    {
+      "addr": "006084b8",
+      "name": "DAT_006084b8",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.184210526315789,
+    "instruction_count": 38,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 2,
+      "BOOL_OR": 3,
+      "BRANCH": 1,
+      "CALL": 1,
+      "CBRANCH": 6,
+      "COPY": 24,
+      "INT_ADD": 12,
+      "INT_AND": 20,
+      "INT_CARRY": 3,
+      "INT_EQUAL": 20,
+      "INT_LESS": 7,
+      "INT_SBORROW": 7,
+      "INT_SCARRY": 3,
+      "INT_SLESS": 10,
+      "INT_SUB": 12,
+      "LOAD": 9,
+      "POPCOUNT": 10,
+      "RETURN": 1,
+      "STORE": 8
+    },
+    "pcode_op_count": 159
+  },
+  "stack_frame": {
+    "frame_size": 24,
+    "local_size": 24,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_10",
+        "offset": -16,
+        "size": 1,
+        "type": "undefined1"
+      }
+    ]
+  },
+  "static_analysis": {
+    "analyzed_file": "FUN_005ae4f8.c",
+    "cppcheck_quick": {
+      "diagnostic_count": 2,
+      "diagnostics": [
+        {
+          "check_id": "uninitvar",
+          "column": 13,
+          "line": 21,
+          "message": "Uninitialized variable: in_AL",
+          "severity": "error"
+        },
+        {
+          "check_id": "uninitvar",
+          "column": 28,
+          "line": 30,
+          "message": "Uninitialized variable: in_DL",
+          "severity": "error"
+        }
+      ],
+      "error": null
+    },
+    "file_variant": "raw"
+  },
+  "suspects": [
+    {
+      "description": "Inferred register parameter",
+      "line": 5,
+      "match": "in_AL",
+      "severity": "mild",
+      "text": "byte in_AL;",
+      "type": "register_param"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 7,
+      "match": "in_DL",
+      "severity": "mild",
+      "text": "byte in_DL;",
+      "type": "register_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 12,
+      "match": "DAT_0060848c",
+      "severity": "mild",
+      "text": "pcVar1 = &DAT_0060848c;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 13,
+      "match": "DAT_006084b6",
+      "severity": "mild",
+      "text": "pcVar3 = &DAT_006084b6;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 14,
+      "match": "in_AL",
+      "severity": "mild",
+      "text": "bVar2 = in_AL;",
+      "type": "register_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 21,
+      "match": "DAT_006084b6",
+      "severity": "mild",
+      "text": "} while (pcVar1 < &DAT_006084b6);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 22,
+      "match": "DAT_006084b6",
+      "severity": "mild",
+      "text": "if (pcVar3 == &DAT_006084b6) break;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 23,
+      "match": "in_DL",
+      "severity": "mild",
+      "text": "if ((byte)pcVar3[1] <= in_DL) {",
+      "type": "register_param"
+    },
+    {
+      "description": "Uninitialized variable: in_AL",
+      "line": 21,
+      "match": "Cppcheck: uninitialized variable",
+      "severity": "major",
+      "text": "bVar2 = in_AL;",
+      "type": "static_uninitvar"
+    },
+    {
+      "description": "Uninitialized variable: in_DL",
+      "line": 30,
+      "match": "Cppcheck: uninitialized variable",
+      "severity": "major",
+      "text": "if ((byte)pcVar3[1] <= in_DL) {",
+      "type": "static_uninitvar"
+    }
+  ]
+}

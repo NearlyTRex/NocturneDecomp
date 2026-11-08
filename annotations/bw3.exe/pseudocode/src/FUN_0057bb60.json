@@ -1,0 +1,680 @@
+{
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "other",
+        "column": 25,
+        "line": 28,
+        "message": "unknown type name 'HWND'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 187,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 189,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 28,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 35,
+        "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
+      },
+      {
+        "category": "other",
+        "column": 1,
+        "line": 41,
+        "message": "unknown type name 'MMRESULT'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 46,
+        "message": "unknown type name 'HWND'"
+      },
+      {
+        "category": "other",
+        "column": 56,
+        "line": 191,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 1,
+        "line": 373,
+        "message": "unknown type name 'LPCRITICAL_SECTION'"
+      },
+      {
+        "category": "other",
+        "column": 20,
+        "line": 386,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 415,
+        "message": "unknown type name 'FILETIME'"
+      },
+      {
+        "category": "other",
+        "column": 37,
+        "line": 415,
+        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
+      },
+      {
+        "category": "other",
+        "column": 52,
+        "line": 415,
+        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
+      },
+      {
+        "category": "incompatible_types",
+        "column": 11,
+        "line": 41,
+        "message": "no matching function for call to 'FUN_004a2de0'"
+      },
+      {
+        "category": "incompatible_types",
+        "column": 11,
+        "line": 41,
+        "message": "assigning to 'int' from incompatible type 'void'"
+      },
+      {
+        "category": "incompatible_types",
+        "column": 13,
+        "line": 45,
+        "message": "no matching function for call to 'FUN_0046d540'"
+      },
+      {
+        "category": "incompatible_types",
+        "column": 7,
+        "line": 57,
+        "message": "no matching function for call to 'FUN_00408b80'"
+      },
+      {
+        "category": "incompatible_types",
+        "column": 7,
+        "line": 68,
+        "message": "no matching function for call to 'FUN_00408b00'"
+      },
+      {
+        "category": "incompatible_types",
+        "column": 7,
+        "line": 75,
+        "message": "no matching function for call to 'FUN_0053ebe0'"
+      }
+    ],
+    "success": false,
+    "warnings": []
+  },
+  "compile_source": "c",
+  "complexity": {
+    "assembly_lines": 152,
+    "complexity_score": 421,
+    "cross_reference_count": 1,
+    "function_call_count": 8,
+    "global_count": 8,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 106,
+    "suspect_count": 28,
+    "suspect_types": [
+      "raw_address_constant",
+      "stack_alignment_array",
+      "stack_ref",
+      "unnamed_param",
+      "unresolved_funcptr",
+      "unrolled_memcpy",
+      "warning_type_propagation"
+    ],
+    "total_lines": 258
+  },
+  "cross_references": [
+    {
+      "addr": "00528650",
+      "from_addr": "00528655",
+      "name": "FUN_00528650",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0057bb60",
+    "address_range": [
+      [
+        "0057bb60",
+        "0057bd1f"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "FUN_0057bb60",
+    "signature": "int FUN_0057bb60(int param_1)"
+  },
+  "function_calls": [
+    {
+      "addr": "00408b00",
+      "is_variadic": false,
+      "name": "FUN_00408b00"
+    },
+    {
+      "addr": "00408b80",
+      "is_variadic": false,
+      "name": "FUN_00408b80"
+    },
+    {
+      "addr": "0046d540",
+      "is_variadic": false,
+      "name": "FUN_0046d540"
+    },
+    {
+      "addr": "004a2de0",
+      "is_variadic": false,
+      "name": "FUN_004a2de0"
+    },
+    {
+      "addr": "004a2e20",
+      "is_variadic": false,
+      "name": "FUN_004a2e20"
+    },
+    {
+      "addr": "0053ebd0",
+      "is_variadic": false,
+      "name": "FUN_0053ebd0"
+    },
+    {
+      "addr": "0053ebe0",
+      "is_variadic": false,
+      "name": "FUN_0053ebe0"
+    },
+    {
+      "addr": "0053ec10",
+      "is_variadic": false,
+      "name": "FUN_0053ec10"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005f2afc",
+      "name": "DAT_005f2afc",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005fc5a0",
+      "name": "DAT_005fc5a0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005fe9dc",
+      "name": "DAT_005fe9dc",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00603b28",
+      "name": "DAT_00603b28",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01bdd7e4",
+      "name": "DAT_01bdd7e4",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d2130c",
+      "name": "DAT_01d2130c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d213f0",
+      "name": "DAT_01d213f0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01ed78c8",
+      "name": "DAT_01ed78c8",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "00528655",
+        "call_type": "direct",
+        "caller": "FUN_00528650",
+        "estimated_params": 1,
+        "instructions_analyzed": 2,
+        "method": "push_count",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "low",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 1,
+    "matches_declared": false
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.8062015503875966,
+    "instruction_count": 129,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 3,
+      "BOOL_OR": 1,
+      "BRANCH": 2,
+      "CALL": 10,
+      "CALLIND": 1,
+      "CBRANCH": 6,
+      "COPY": 143,
+      "FLOAT2FLOAT": 1,
+      "FLOAT_EQUAL": 1,
+      "FLOAT_LESS": 1,
+      "FLOAT_NAN": 2,
+      "INT2FLOAT": 1,
+      "INT_ADD": 78,
+      "INT_AND": 50,
+      "INT_CARRY": 13,
+      "INT_EQUAL": 43,
+      "INT_LEFT": 4,
+      "INT_LESS": 3,
+      "INT_MULT": 20,
+      "INT_NOTEQUAL": 5,
+      "INT_OR": 5,
+      "INT_SBORROW": 3,
+      "INT_SCARRY": 13,
+      "INT_SLESS": 21,
+      "INT_SUB": 57,
+      "INT_XOR": 2,
+      "INT_ZEXT": 24,
+      "LOAD": 30,
+      "POPCOUNT": 21,
+      "RETURN": 2,
+      "STORE": 54
+    },
+    "pcode_op_count": 620
+  },
+  "stack_frame": {
+    "frame_size": 100,
+    "local_size": 100,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_60",
+        "offset": -96,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 1,
+        "type": "undefined"
+      }
+    ]
+  },
+  "stack_patterns": {
+    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
+    "pattern_count": 1,
+    "pattern_types": [
+      "alt_frame_pointer"
+    ],
+    "patterns": [
+      {
+        "address": "0057bcd5",
+        "description": "Alternative frame pointer (EDI = ESP)",
+        "impact": "Using non-standard register as frame pointer. Ghidra may not track stack accesses through this register correctly.",
+        "instruction": "MOV EDI,ESP",
+        "pattern_id": "alt_frame_pointer"
+      }
+    ],
+    "severity": "medium"
+  },
+  "static_analysis": {
+    "analyzed_file": "FUN_0057bb60.c",
+    "cppcheck_quick": {
+      "diagnostic_count": 5,
+      "diagnostics": [
+        {
+          "check_id": "pointerOutOfBounds",
+          "column": 31,
+          "line": 63,
+          "message": "Undefined behaviour, pointer arithmetic 'auStack_5c+0xb' is out of bounds.",
+          "severity": "portability"
+        },
+        {
+          "check_id": "pointerOutOfBounds",
+          "column": 42,
+          "line": 109,
+          "message": "Undefined behaviour, pointer arithmetic 'auStack_5c+8' is out of bounds.",
+          "severity": "portability"
+        },
+        {
+          "check_id": "uninitvar",
+          "column": 23,
+          "line": 51,
+          "message": "Uninitialized variable: local_60",
+          "severity": "error"
+        },
+        {
+          "check_id": "uninitvar",
+          "column": 19,
+          "line": 70,
+          "message": "Uninitialized variable: uStack_48",
+          "severity": "error"
+        },
+        {
+          "check_id": "legacyUninitvar",
+          "column": 42,
+          "line": 52,
+          "message": "Uninitialized variable: auStack_5c",
+          "severity": "error"
+        }
+      ],
+      "error": null
+    },
+    "file_variant": "raw"
+  },
+  "suspects": [
+    {
+      "description": "Type propagation did not converge",
+      "line": 2,
+      "match": "WARNING: Type propagation algorithm not settling",
+      "severity": "moderate",
+      "text": "/* WARNING: Type propagation algorithm not settling */",
+      "type": "warning_type_propagation"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 4,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "int FUN_0057bb60(int param_1)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "StackY array variable (stack alignment artifact)",
+      "line": 11,
+      "match": "aiStackY_1048",
+      "severity": "moderate",
+      "text": "int aiStackY_1048 [971];",
+      "type": "stack_alignment_array"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 35,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "if ((*(int *)(param_1 + 0x57c) != 0) && (iVar1 = 0x01D2130C, *(int *)(0x01D2130C + 0xe4) != 0)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 40,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "puStack_bc = (uint *)param_1;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 42,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "(**(code **)(*(int *)(param_1 + 0x154) + 0xe0))();",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 42,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(**(code **)(*(int *)(param_1 + 0x154) + 0xe0))();",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 48,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "iStack_c0 = param_1;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 55,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "uStack_28 = *(uint *)(param_1 + 0x2e8);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 58,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "iStack_c0 = param_1;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 69,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "puStack_bc = (uint *)param_1;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 73,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "puStack_bc = *(uint **)(param_1 + 0x304);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 80,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "uStack_a8 = *(uint *)(param_1 + 0x2f4);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 81,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "uStack_a4 = *(uint *)(param_1 + 0x2f8);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 82,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "uStack_a0 = *(uint *)(param_1 + 0x2fc);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 84,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "if (*(float *)(param_1 + 0x300) <= 0.0) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 96,
+      "match": "&stack0xfffffef0",
+      "severity": "moderate",
+      "text": "puVar3 = (uint *)&stack0xfffffef0;",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Raw hex address 0x57bbcd assigned to bare local `iStack_c0`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `iStack_c0` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
+      "line": 41,
+      "match": "0x57bbcd",
+      "severity": "moderate",
+      "text": "iStack_c0 = 0x57bbcd;",
+      "type": "raw_address_constant"
+    },
+    {
+      "description": "Raw hex address 0x57bbf0 assigned to bare local `uStack_c4`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `uStack_c4` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
+      "line": 49,
+      "match": "0x57bbf0",
+      "severity": "moderate",
+      "text": "uStack_c4 = 0x57bbf0;",
+      "type": "raw_address_constant"
+    },
+    {
+      "description": "Raw hex address 0x57bc30 assigned to bare local `uStack_c4`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `uStack_c4` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
+      "line": 60,
+      "match": "0x57bc30",
+      "severity": "moderate",
+      "text": "uStack_c4 = 0x57bc30;",
+      "type": "raw_address_constant"
+    },
+    {
+      "description": "Raw hex address 0x57bc45 assigned to bare local `iStack_c0`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `iStack_c0` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
+      "line": 67,
+      "match": "0x57bc45",
+      "severity": "moderate",
+      "text": "iStack_c0 = 0x57bc45;",
+      "type": "raw_address_constant"
+    },
+    {
+      "description": "Raw hex address 0x1ed78c8 assigned to bare local `iStack_c0`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `iStack_c0` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
+      "line": 70,
+      "match": "0x1ed78c8",
+      "severity": "moderate",
+      "text": "iStack_c0 = 0x01ED78C8;",
+      "type": "raw_address_constant"
+    },
+    {
+      "description": "Raw hex address 0x57bc55 assigned to bare local `uStack_c4`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `uStack_c4` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
+      "line": 71,
+      "match": "0x57bc55",
+      "severity": "moderate",
+      "text": "uStack_c4 = 0x57bc55;",
+      "type": "raw_address_constant"
+    },
+    {
+      "description": "Raw hex address 0x1ed78c8 assigned to bare local `iStack_c0`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `iStack_c0` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
+      "line": 75,
+      "match": "0x1ed78c8",
+      "severity": "moderate",
+      "text": "iStack_c0 = 0x01ED78C8;",
+      "type": "raw_address_constant"
+    },
+    {
+      "description": "Raw hex address 0x57bc6f assigned to bare local `uStack_c4`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `uStack_c4` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
+      "line": 76,
+      "match": "0x57bc6f",
+      "severity": "moderate",
+      "text": "uStack_c4 = 0x57bc6f;",
+      "type": "raw_address_constant"
+    },
+    {
+      "description": "Raw hex address 0x57bcc8 assigned to bare local `iStack_c0`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `iStack_c0` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
+      "line": 92,
+      "match": "0x57bcc8",
+      "severity": "moderate",
+      "text": "iStack_c0 = 0x57bcc8;",
+      "type": "raw_address_constant"
+    },
+    {
+      "description": "Raw hex address 0x57bd08 assigned to bare local `iStack_c0`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `iStack_c0` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
+      "line": 104,
+      "match": "0x57bd08",
+      "severity": "moderate",
+      "text": "iStack_c0 = 0x57bd08;",
+      "type": "raw_address_constant"
+    },
+    {
+      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
+      "line": 97,
+      "match": "for (...; != 0; ... + -1)",
+      "severity": "moderate",
+      "text": "for (iVar1 = 0x15; iVar1 != 0; iVar1 = iVar1 + -1) {",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Uninitialized variable: local_60",
+      "line": 51,
+      "match": "Cppcheck: uninitialized variable",
+      "severity": "major",
+      "text": "auStack_20[2] = local_60;",
+      "type": "static_uninitvar"
+    },
+    {
+      "description": "Uninitialized variable: uStack_48",
+      "line": 70,
+      "match": "Cppcheck: uninitialized variable",
+      "severity": "major",
+      "text": "uStack_24 = uStack_48;",
+      "type": "static_uninitvar"
+    },
+    {
+      "description": "Uninitialized variable: auStack_5c",
+      "line": 52,
+      "match": "Cppcheck: uninitialized variable (legacy detector)",
+      "severity": "major",
+      "text": "auStack_20[(uint)bVar4 * -2 + 3] = auStack_5c[(uint)bVar4 * -2];",
+      "type": "static_legacy_uninitvar"
+    }
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "Unknown",
+        "offset": 20,
+        "vtable_addr": "005dfe10"
+      },
+      {
+        "class_name": "Unknown",
+        "offset": 20,
+        "vtable_addr": "005e6320"
+      },
+      {
+        "class_name": "Unknown",
+        "offset": 20,
+        "vtable_addr": "005e0640"
+      },
+      {
+        "class_name": "Unknown",
+        "offset": 20,
+        "vtable_addr": "005e1170"
+      },
+      {
+        "class_name": "Unknown",
+        "offset": 20,
+        "vtable_addr": "005dce90"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 14
+  }
+}

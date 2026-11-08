@@ -1,0 +1,139 @@
+{
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "other",
+        "column": 0,
+        "line": 0,
+        "message": "Compilation timed out after 60s"
+      }
+    ],
+    "success": false,
+    "warnings": []
+  },
+  "compile_source": "c",
+  "complexity": {
+    "assembly_lines": 30,
+    "complexity_score": 64,
+    "cross_reference_count": 0,
+    "function_call_count": 3,
+    "global_count": 0,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 9,
+    "suspect_count": 5,
+    "suspect_types": [
+      "undefined_data"
+    ],
+    "total_lines": 39
+  },
+  "cross_references": [],
+  "function": {
+    "address": "0041ef40",
+    "address_range": [
+      [
+        "0041ef40",
+        "0041efa7"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "FUN_0041ef40",
+    "signature": "void FUN_0041ef40(void)"
+  },
+  "function_calls": [
+    {
+      "addr": "0040c3a0",
+      "is_variadic": false,
+      "name": "FUN_0040c3a0"
+    },
+    {
+      "addr": "005a30d7",
+      "is_variadic": false,
+      "name": "FUN_005a30d7"
+    },
+    {
+      "addr": "005a3e13",
+      "is_variadic": false,
+      "name": "FUN_005a3e13"
+    }
+  ],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 0,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.96,
+    "instruction_count": 25,
+    "opcode_distribution": {
+      "CALL": 4,
+      "COPY": 16,
+      "INT_ADD": 5,
+      "INT_AND": 8,
+      "INT_CARRY": 4,
+      "INT_EQUAL": 8,
+      "INT_SCARRY": 4,
+      "INT_SLESS": 4,
+      "INT_SUB": 20,
+      "LOAD": 1,
+      "POPCOUNT": 4,
+      "RETURN": 1,
+      "STORE": 20
+    },
+    "pcode_op_count": 99
+  },
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Undefined global data reference",
+      "line": 5,
+      "match": "DAT_007e177c",
+      "severity": "mild",
+      "text": "FUN_0040c3a0(&DAT_007e177c,\"p?CBoxActor\" + 2,&UNK_0041efb0,&DAT_005f0e38,0x12,",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 5,
+      "match": "DAT_005f0e38",
+      "severity": "mild",
+      "text": "FUN_0040c3a0(&DAT_007e177c,\"p?CBoxActor\" + 2,&UNK_0041efb0,&DAT_005f0e38,0x12,",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 6,
+      "match": "DAT_007df978",
+      "severity": "mild",
+      "text": "&DAT_007df978);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 9,
+      "match": "DAT_007e1a18",
+      "severity": "mild",
+      "text": "FUN_0040c3a0(&DAT_007e1a18,\"CLightActor\",&UNK_00420330,0x5f0e3c,2,&DAT_007e177c);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 9,
+      "match": "DAT_007e177c",
+      "severity": "mild",
+      "text": "FUN_0040c3a0(&DAT_007e1a18,\"CLightActor\",&UNK_00420330,0x5f0e3c,2,&DAT_007e177c);",
+      "type": "undefined_data"
+    }
+  ]
+}

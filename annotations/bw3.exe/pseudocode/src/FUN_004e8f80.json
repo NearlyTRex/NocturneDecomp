@@ -1,0 +1,716 @@
+{
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "other",
+        "column": 25,
+        "line": 28,
+        "message": "unknown type name 'HWND'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 187,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 189,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 28,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 35,
+        "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
+      },
+      {
+        "category": "other",
+        "column": 1,
+        "line": 41,
+        "message": "unknown type name 'MMRESULT'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 46,
+        "message": "unknown type name 'HWND'"
+      },
+      {
+        "category": "other",
+        "column": 56,
+        "line": 191,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 1,
+        "line": 373,
+        "message": "unknown type name 'LPCRITICAL_SECTION'"
+      },
+      {
+        "category": "other",
+        "column": 20,
+        "line": 386,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 415,
+        "message": "unknown type name 'FILETIME'"
+      },
+      {
+        "category": "other",
+        "column": 37,
+        "line": 415,
+        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
+      },
+      {
+        "category": "other",
+        "column": 52,
+        "line": 415,
+        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
+      },
+      {
+        "category": "incompatible_types",
+        "column": 3,
+        "line": 31,
+        "message": "no matching function for call to 'FUN_004b4430'"
+      },
+      {
+        "category": "incompatible_types",
+        "column": 5,
+        "line": 41,
+        "message": "no matching function for call to 'FUN_004b4440'"
+      },
+      {
+        "category": "incompatible_types",
+        "column": 5,
+        "line": 44,
+        "message": "no matching function for call to 'FUN_0053b100'"
+      },
+      {
+        "category": "incompatible_types",
+        "column": 5,
+        "line": 46,
+        "message": "no matching function for call to 'FUN_004f9670'"
+      },
+      {
+        "category": "incompatible_types",
+        "column": 5,
+        "line": 61,
+        "message": "no matching function for call to 'FUN_00508960'"
+      },
+      {
+        "category": "incompatible_types",
+        "column": 5,
+        "line": 62,
+        "message": "no matching function for call to 'FUN_005a28c0'"
+      }
+    ],
+    "success": false,
+    "warnings": []
+  },
+  "compile_source": "c",
+  "complexity": {
+    "assembly_lines": 482,
+    "complexity_score": 416,
+    "cross_reference_count": 1,
+    "function_call_count": 11,
+    "global_count": 39,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 206,
+    "suspect_count": 17,
+    "suspect_types": [
+      "concat_reconstruction",
+      "raw_address_constant",
+      "raw_address_pointer_store",
+      "unresolved_funcptr",
+      "unrolled_strcat",
+      "unrolled_strcpy",
+      "unrolled_strlen",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 688
+  },
+  "cross_references": [
+    {
+      "addr": "004ea280",
+      "from_addr": "004ea445",
+      "name": "FUN_004ea280",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004e8f80",
+    "address_range": [
+      [
+        "004e8f80",
+        "004e94be"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "FUN_004e8f80",
+    "signature": "void FUN_004e8f80(void)"
+  },
+  "function_calls": [
+    {
+      "addr": "004b4430",
+      "is_variadic": false,
+      "name": "FUN_004b4430"
+    },
+    {
+      "addr": "004b4440",
+      "is_variadic": false,
+      "name": "FUN_004b4440"
+    },
+    {
+      "addr": "004e7860",
+      "is_variadic": false,
+      "name": "FUN_004e7860"
+    },
+    {
+      "addr": "004e7dc0",
+      "is_variadic": false,
+      "name": "FUN_004e7dc0"
+    },
+    {
+      "addr": "004e80f0",
+      "is_variadic": false,
+      "name": "FUN_004e80f0"
+    },
+    {
+      "addr": "004eae80",
+      "is_variadic": false,
+      "name": "FUN_004eae80"
+    },
+    {
+      "addr": "004f9670",
+      "is_variadic": false,
+      "name": "FUN_004f9670"
+    },
+    {
+      "addr": "00508960",
+      "is_variadic": false,
+      "name": "FUN_00508960"
+    },
+    {
+      "addr": "0053b100",
+      "is_variadic": false,
+      "name": "FUN_0053b100"
+    },
+    {
+      "addr": "0057a8a0",
+      "is_variadic": false,
+      "name": "FUN_0057a8a0"
+    },
+    {
+      "addr": "005a28c0",
+      "is_variadic": false,
+      "name": "FUN_005a28c0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "004e8f54",
+      "name": "switchdataD_004e8f54",
+      "type": "void*",
+      "value": "004e9037"
+    },
+    {
+      "addr": "004e8f64",
+      "name": "switchdataD_004e8f64",
+      "type": "void*",
+      "value": "004e927e"
+    },
+    {
+      "addr": "005c75e4",
+      "name": "s_Control_Keyboard_005c75e4",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005c75f7",
+      "name": "s_Control_Keyboard_Mouse_005c75f7",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005c7610",
+      "name": "s_Control_Gamepad_005c7610",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005c7622",
+      "name": "s_Control_Point_Click_005c7622",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005c763a",
+      "name": "s_Customize_Keys_005c763a",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005c7649",
+      "name": "s_Always_Run_On_005c7649",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005c7659",
+      "name": "s_Always_Run_Off_005c7659",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005c766a",
+      "name": "s_Aiming_Auto_005c766a",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005c7678",
+      "name": "s_Aiming_Kindof_auto_005c7678",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005c768d",
+      "name": "s_Aiming_Manual_005c768d",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005c769d",
+      "name": "s_X_Axis_Sensitivity_005c769d",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005c76b3",
+      "name": "s_s_5_2f_005c76b3",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005c76b9",
+      "name": "s_Y_Axis_Sensitivity_005c76b9",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005c76cf",
+      "name": "s_s_5_2f_005c76cf",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005c76d5",
+      "name": "s_Invert_Y_Axis_On_005c76d5",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005c76e8",
+      "name": "s_Invert_Y_Axis_Off_005c76e8",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005c76fc",
+      "name": "s_Calibrate_005c76fc",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005c7706",
+      "name": "s_Control_Options_005c7706",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005c7716",
+      "name": "s_Adjust_X_Axis_Sensitivit_005c7716",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005c7730",
+      "name": "s_Adjust_Y_Axis_Sensitivit_005c7730",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005c774e",
+      "name": "DAT_005c774e",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005fe9dc",
+      "name": "DAT_005fe9dc",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00600284",
+      "name": "DAT_00600284",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00603b28",
+      "name": "DAT_00603b28",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d213b8",
+      "name": "DAT_01d213b8",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d213bc",
+      "name": "DAT_01d213bc",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d213c0",
+      "name": "DAT_01d213c0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d213c4",
+      "name": "DAT_01d213c4",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d213c8",
+      "name": "DAT_01d213c8",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d213e0",
+      "name": "DAT_01d213e0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d213e8",
+      "name": "DAT_01d213e8",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d5ba14",
+      "name": "DAT_01d5ba14",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d70a78",
+      "name": "DAT_01d70a78",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d737d4",
+      "name": "DAT_01d737d4",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01ed78c8",
+      "name": "DAT_01ed78c8",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0203274c",
+      "name": "DAT_0203274c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0203275c",
+      "name": "DAT_0203275c",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "004ea445",
+        "call_type": "direct",
+        "caller": "FUN_004ea280",
+        "estimated_params": 1,
+        "instructions_analyzed": 4,
+        "method": "push_count",
+        "reg_params": [
+          "EAX"
+        ],
+        "stack_bytes": 0,
+        "stack_params": 0
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.271708683473389,
+    "instruction_count": 357,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 58,
+      "BOOL_OR": 4,
+      "BRANCH": 20,
+      "BRANCHIND": 2,
+      "CALL": 30,
+      "CALLIND": 1,
+      "CBRANCH": 34,
+      "COPY": 252,
+      "FLOAT2FLOAT": 4,
+      "FLOAT_MULT": 2,
+      "INT2FLOAT": 2,
+      "INT_ADD": 113,
+      "INT_AND": 317,
+      "INT_CARRY": 47,
+      "INT_EQUAL": 232,
+      "INT_LEFT": 16,
+      "INT_LESS": 34,
+      "INT_MULT": 4,
+      "INT_NOTEQUAL": 18,
+      "INT_OR": 40,
+      "INT_SBORROW": 39,
+      "INT_SCARRY": 54,
+      "INT_SLESS": 127,
+      "INT_SUB": 144,
+      "INT_XOR": 11,
+      "INT_ZEXT": 2,
+      "LOAD": 44,
+      "POPCOUNT": 111,
+      "RETURN": 1,
+      "STORE": 119
+    },
+    "pcode_op_count": 1882
+  },
+  "stack_frame": {
+    "frame_size": 288,
+    "local_size": 288,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_11c",
+        "offset": -284,
+        "size": 8,
+        "type": "undefined8"
+      },
+      {
+        "is_param": false,
+        "name": "local_114",
+        "offset": -276,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": false,
+        "name": "local_113",
+        "offset": -275,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      }
+    ]
+  },
+  "stack_patterns": {
+    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
+    "pattern_count": 2,
+    "pattern_types": [
+      "alt_frame_pointer"
+    ],
+    "patterns": [
+      {
+        "address": "004e9153",
+        "description": "Alternative frame pointer (ESI = ESP)",
+        "impact": "Using non-standard register as frame pointer. Ghidra may not track stack accesses through this register correctly.",
+        "instruction": "MOV ESI,ESP",
+        "pattern_id": "alt_frame_pointer"
+      },
+      {
+        "address": "004e91d5",
+        "description": "Alternative frame pointer (ESI = ESP)",
+        "impact": "Using non-standard register as frame pointer. Ghidra may not track stack accesses through this register correctly.",
+        "instruction": "MOV ESI,ESP",
+        "pattern_id": "alt_frame_pointer"
+      }
+    ],
+    "severity": "medium"
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
+      "line": 203,
+      "match": "*(code **)(*0x01D70A78",
+      "severity": "moderate",
+      "text": "iVar3 = (**(code **)(*0x01D70A78 + 4))(0x01D70A78);",
+      "type": "raw_address_pointer_store"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 203,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "iVar3 = (**(code **)(*0x01D70A78 + 4))(0x01D70A78);",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Raw hex address 0x1d74128 assigned to bare local `iVar6`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `iVar6` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
+      "line": 22,
+      "match": "0x1d74128",
+      "severity": "moderate",
+      "text": "iVar6 = 0x1d74128;",
+      "type": "raw_address_constant"
+    },
+    {
+      "description": "Raw hex address 0x1ed78c8 assigned to bare local `iVar3`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `iVar3` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
+      "line": 35,
+      "match": "0x1ed78c8",
+      "severity": "moderate",
+      "text": "iVar3 = 0x01ED78C8;",
+      "type": "raw_address_constant"
+    },
+    {
+      "description": "Raw hex address 0x1d2130c assigned to bare local `iVar3`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `iVar3` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
+      "line": 151,
+      "match": "0x1d2130c",
+      "severity": "moderate",
+      "text": "iVar3 = 0x01D2130C;",
+      "type": "raw_address_constant"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 80,
+      "match": "do {",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 101,
+      "match": "do {",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 112,
+      "match": "do {",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 134,
+      "match": "do {",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    },
+    {
+      "description": "Ghidra CONCAT44 reconstruction (stitches narrow values into a wider one) \u2014 a Watcom wide-value artifact, not real C. Reduce to the proper form (e.g. sign-extend `(longlong)(int)x`, 64-bit math, or a typed field) in a .keep.",
+      "line": 66,
+      "match": "CONCAT44",
+      "severity": "moderate",
+      "text": "uVar11 = CONCAT44(uVar4,0x1d74428);",
+      "type": "concat_reconstruction"
+    },
+    {
+      "description": "Ghidra CONCAT44 reconstruction (stitches narrow values into a wider one) \u2014 a Watcom wide-value artifact, not real C. Reduce to the proper form (e.g. sign-extend `(longlong)(int)x`, 64-bit math, or a typed field) in a .keep.",
+      "line": 70,
+      "match": "CONCAT44",
+      "severity": "moderate",
+      "text": "uVar11 = CONCAT44(uVar4,0x1d74428);",
+      "type": "concat_reconstruction"
+    },
+    {
+      "description": "Ghidra CONCAT44 reconstruction (stitches narrow values into a wider one) \u2014 a Watcom wide-value artifact, not real C. Reduce to the proper form (e.g. sign-extend `(longlong)(int)x`, 64-bit math, or a typed field) in a .keep.",
+      "line": 75,
+      "match": "CONCAT44",
+      "severity": "moderate",
+      "text": "uVar11 = CONCAT44(uVar4,0x1d74428);",
+      "type": "concat_reconstruction"
+    },
+    {
+      "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
+      "line": 92,
+      "match": "do { if (v==0) break; v=v-1; ... }",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strlen"
+    },
+    {
+      "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
+      "line": 125,
+      "match": "do { if (v==0) break; v=v-1; ... }",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strlen"
+    },
+    {
+      "description": "Watcom loop-unrolled strcat (strlen scan followed by `= <p> + -1` adjust and a 2-byte strcpy onto the null terminator). Replace the whole strlen + strcpy pair with strcat(dst, src) in a .keep.",
+      "line": 92,
+      "match": "strlen + <p> + -1 + strcpy",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcat"
+    },
+    {
+      "description": "Watcom loop-unrolled strcat (strlen scan followed by `= <p> + -1` adjust and a 2-byte strcpy onto the null terminator). Replace the whole strlen + strcpy pair with strcat(dst, src) in a .keep.",
+      "line": 125,
+      "match": "strlen + <p> + -1 + strcpy",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcat"
+    }
+  ]
+}

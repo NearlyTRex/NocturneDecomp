@@ -1,0 +1,799 @@
+================================================================================
+NOCTURNE DECOMPILATION ANALYSIS REPORT
+================================================================================
+
+(CRT and entry functions excluded)
+
+SUMMARY
+----------------------------------------
+Total functions: 4849
+Clean functions: 315 (6.5%)
+Functions with suspects: 4534 (93.5%)
+
+Total suspect patterns: 100084
+Average suspects per function: 20.64
+
+Virtual files: 95 total, 0 at 100%, 0 at 90%+
+
+Pseudocode lines:
+  Min: 4, Max: 3531, Average: 48.5
+
+Average complexity score: 258.7
+
+COMPILATION STATUS
+----------------------------------------
+Functions compiled: 4849
+Successful: 0 (0.0%)
+Failed: 4849
+
+SUSPECT PATTERN BREAKDOWN
+----------------------------------------
+  unnamed_param             63381
+  undefined_data            8703
+  stack_ref                 3853
+  static_uninitvar          3572
+  pointer_cast              2967
+  pointer_truncation        2366
+  unresolved_funcptr        2364
+  param_count_too_few       2170
+  warning_overlapping_globals 1744
+  unrolled_memcpy           1071
+  unaffected_reg            1064
+  concat_reconstruction     760
+  register_param            570
+  unrolled_strcpy           536
+  static_object_index       513
+  stack_alignment_array     486
+  extra_output              459
+  static_array_oob          414
+  raw_address_constant      383
+  static_legacy_uninitvar   379
+  unrolled_strlen           275
+  nonstandard_int           271
+  warning_type_propagation  205
+  static_shift_too_many_bits 202
+  raw_address_pointer_store 166
+  stack_param               145
+  carry_arith_idiom         142
+  unknown_field             110
+  unrolled_strcat           95
+  suspect_float             81
+  warning_unreachable       59
+  bitcast_double_pair       55
+  fpu_register_input        54
+  self_copy_guard           53
+  bit_int_float_compare     44
+  fast_sqrt_inline          37
+  unrolled_strchr           33
+  sign_compare_idiom        26
+  eflags_input              26
+  fnstsw_flag_artifact      23
+  static_null_pointer       20
+  unknown_type              20
+  static_invalid_pointer_cast 18
+  static_identical_inner_condition 15
+  nan_function_artifact     14
+  static_integer_division   11
+  static_null_pointer_arithmetic 10
+  warning_jumptable         10
+  warning_indirect_jump     10
+  undefined_ram             10
+  inline_exp_idiom          10
+  undefined_ptr_cast        9
+  displaced_global_access   7
+  fast_inv_sqrt_inline      7
+  static_self_assignment    7
+  warning_noreturn          7
+  sub84_truncation          6
+  undefined_type            5
+  static_swapped_arguments  4
+  warning_deadcode_restart  3
+  static_null_pointer_redundant_check 3
+  bitcast_double_numeric    3
+  tautological_addr_guard   2
+  dropped_self_copy         2
+  dropped_loop_counter      2
+  cpuid_intrinsic           2
+  unrolled_memset           2
+  bare_stack_ref            2
+  warning_spacebase         2
+  preinc_loop_idiom         1
+  dropped_fyl2x             1
+  warning_overlapping_instructions 1
+  warning_max_restarts      1
+
+EASIEST FUNCTIONS (Clean, Sorted by Size)
+----------------------------------------
+  00403dd0: FUN_00403dd0 (4 lines)
+  004087d0: FUN_004087d0 (4 lines)
+  004088d0: FUN_004088d0 (4 lines)
+  00409cc0: FUN_00409cc0 (4 lines)
+  00409d50: FUN_00409d50 (4 lines)
+  0040c7e0: FUN_0040c7e0 (4 lines)
+  0040eb40: FUN_0040eb40 (4 lines)
+  0040f680: FUN_0040f680 (4 lines)
+  00414440: FUN_00414440 (4 lines)
+  004156d0: FUN_004156d0 (4 lines)
+  004192c0: FUN_004192c0 (4 lines)
+  00421aa0: FUN_00421aa0 (4 lines)
+  004252f0: FUN_004252f0 (4 lines)
+  00425520: FUN_00425520 (4 lines)
+  00425530: FUN_00425530 (4 lines)
+  0042ab00: FUN_0042ab00 (4 lines)
+  004307b0: FUN_004307b0 (4 lines)
+  004408d0: FUN_004408d0 (4 lines)
+  00454b50: FUN_00454b50 (4 lines)
+  00459130: FUN_00459130 (4 lines)
+  00459400: FUN_00459400 (4 lines)
+  0045bf70: FUN_0045bf70 (4 lines)
+  00462700: FUN_00462700 (4 lines)
+  00463670: FUN_00463670 (4 lines)
+  00463700: FUN_00463700 (4 lines)
+  004637a0: FUN_004637a0 (4 lines)
+  00463aa0: FUN_00463aa0 (4 lines)
+  0046ea40: FUN_0046ea40 (4 lines)
+  0046f270: FUN_0046f270 (4 lines)
+  0047b070: FUN_0047b070 (4 lines)
+  00486b90: FUN_00486b90 (4 lines)
+  004879d0: FUN_004879d0 (4 lines)
+  00488e90: FUN_00488e90 (4 lines)
+  0048a300: FUN_0048a300 (4 lines)
+  00496160: FUN_00496160 (4 lines)
+  00496450: FUN_00496450 (4 lines)
+  004988a0: FUN_004988a0 (4 lines)
+  0049a000: FUN_0049a000 (4 lines)
+  0049a380: FUN_0049a380 (4 lines)
+  0049ac90: FUN_0049ac90 (4 lines)
+  004a4ac0: FUN_004a4ac0 (4 lines)
+  004a59a0: FUN_004a59a0 (4 lines)
+  004a6dc0: FUN_004a6dc0 (4 lines)
+  004a6ef0: FUN_004a6ef0 (4 lines)
+  004a7430: FUN_004a7430 (4 lines)
+  004a7540: FUN_004a7540 (4 lines)
+  004a75d0: FUN_004a75d0 (4 lines)
+  004a75f0: FUN_004a75f0 (4 lines)
+  004ad4c0: FUN_004ad4c0 (4 lines)
+  004ad7a0: FUN_004ad7a0 (4 lines)
+  ... and 265 more
+
+MOST COMPLEX FUNCTIONS (Highest Complexity Score)
+----------------------------------------
+  0048c2e0: FUN_0048c2e0 (score: 9686, suspects: 609, lines: 3531)
+  00529a70: FUN_00529a70 (score: 8172, suspects: 492, lines: 3187)
+  00518cd0: FUN_00518cd0 (score: 6053, suspects: 471, lines: 1293)
+  00455080: FUN_00455080 (score: 5810, suspects: 447, lines: 1290)
+  00588ee0: FUN_00588ee0 (score: 5659, suspects: 440, lines: 1209)
+  00591f30: FUN_00591f30 (score: 5581, suspects: 465, lines: 876)
+  00491f40: FUN_00491f40 (score: 5439, suspects: 364, lines: 1734)
+  004c6eb0: FUN_004c6eb0 (score: 5235, suspects: 416, lines: 1025)
+  0059e600: FUN_0059e600 (score: 4922, suspects: 386, lines: 1017)
+  0041b470: FUN_0041b470 (score: 4629, suspects: 350, lines: 1084)
+  00425da0: FUN_00425da0 (score: 4516, suspects: 352, lines: 951)
+  004c07b0: FUN_004c07b0 (score: 4242, suspects: 229, lines: 1897)
+  004b1460: FUN_004b1460 (score: 3623, suspects: 309, lines: 513)
+  004bb100: FUN_004bb100 (score: 3619, suspects: 207, lines: 1499)
+  00590010: FUN_00590010 (score: 3579, suspects: 272, lines: 824)
+  0057d720: FUN_0057d720 (score: 3554, suspects: 270, lines: 824)
+  00594000: FUN_00594000 (score: 3554, suspects: 270, lines: 824)
+  00538dd0: FUN_00538dd0 (score: 3485, suspects: 284, lines: 590)
+  005438d0: FUN_005438d0 (score: 3417, suspects: 265, lines: 732)
+  004caeb0: FUN_004caeb0 (score: 3303, suspects: 266, lines: 618)
+  0059b960: FUN_0059b960 (score: 3293, suspects: 248, lines: 778)
+  005a0be0: FUN_005a0be0 (score: 3149, suspects: 272, lines: 364)
+  0058d960: FUN_0058d960 (score: 3031, suspects: 246, lines: 541)
+  0043bac0: FUN_0043bac0 (score: 2925, suspects: 247, lines: 420)
+  004a4dc0: FUN_004a4dc0 (score: 2904, suspects: 246, lines: 399)
+  005a6a78: FUN_005a6a78 (score: 2800, suspects: 239, lines: 360)
+  00524940: FUN_00524940 (score: 2797, suspects: 218, lines: 567)
+  00442a20: FUN_00442a20 (score: 2796, suspects: 214, lines: 626)
+  0051c1c0: FUN_0051c1c0 (score: 2719, suspects: 145, lines: 1229)
+  004d6a90: FUN_004d6a90 (score: 2713, suspects: 213, lines: 553)
+
+FUNCTIONS BY SUSPECT TYPE
+----------------------------------------
+
+  unnamed_param (3990 functions):
+    00401130: FUN_00401130
+    004011a0: FUN_004011a0
+    00401280: FUN_00401280
+    00401310: FUN_00401310
+    00401450: FUN_00401450
+    00401590: FUN_00401590
+    00401620: FUN_00401620
+    00401810: FUN_00401810
+    004018b0: FUN_004018b0
+    00401a20: FUN_00401a20
+    ... and 3980 more
+
+  undefined_data (1580 functions):
+    00401010: FUN_00401010
+    00401120: thunk_FUN_00579a60
+    00401130: FUN_00401130
+    00401280: FUN_00401280
+    00401450: FUN_00401450
+    00401590: FUN_00401590
+    00401620: FUN_00401620
+    004018b0: FUN_004018b0
+    00401a20: FUN_00401a20
+    00401d00: FUN_00401d00
+    ... and 1570 more
+
+  stack_ref (357 functions):
+    00407b30: FUN_00407b30
+    00407e30: FUN_00407e30
+    00408b00: FUN_00408b00
+    00408b40: FUN_00408b40
+    00408b80: FUN_00408b80
+    00408bf0: FUN_00408bf0
+    00408da0: FUN_00408da0
+    00408f00: FUN_00408f00
+    004091b0: FUN_004091b0
+    00409db0: FUN_00409db0
+    ... and 347 more
+
+  static_uninitvar (0 functions):
+
+  pointer_cast (512 functions):
+    00401450: FUN_00401450
+    00402880: FUN_00402880
+    00403840: FUN_00403840
+    00403e70: FUN_00403e70
+    00404120: FUN_00404120
+    004046e0: FUN_004046e0
+    00404fc0: FUN_00404fc0
+    004060e0: FUN_004060e0
+    004066d0: FUN_004066d0
+    00406890: FUN_00406890
+    ... and 502 more
+
+  pointer_truncation (458 functions):
+    00401450: FUN_00401450
+    00402880: FUN_00402880
+    00403840: FUN_00403840
+    00403e70: FUN_00403e70
+    00404120: FUN_00404120
+    004046e0: FUN_004046e0
+    00404fc0: FUN_00404fc0
+    004060e0: FUN_004060e0
+    004066d0: FUN_004066d0
+    00406890: FUN_00406890
+    ... and 448 more
+
+  unresolved_funcptr (789 functions):
+    00401120: thunk_FUN_00579a60
+    00402ac0: thunk_FUN_0057a0e0
+    00402ad0: thunk_FUN_0057a2f0
+    00403aa0: FUN_00403aa0
+    00403b70: FUN_00403b70
+    00403c90: FUN_00403c90
+    00403d30: FUN_00403d30
+    00403e70: FUN_00403e70
+    00404070: FUN_00404070
+    00404120: FUN_00404120
+    ... and 779 more
+
+  param_count_too_few (2170 functions):
+    00401130: FUN_00401130
+    004011a0: FUN_004011a0
+    00401280: FUN_00401280
+    00401310: FUN_00401310
+    00401450: FUN_00401450
+    00401590: FUN_00401590
+    00401620: FUN_00401620
+    00401810: FUN_00401810
+    004018b0: FUN_004018b0
+    00401a20: FUN_00401a20
+    ... and 2160 more
+
+  warning_overlapping_globals (1744 functions):
+    00401010: FUN_00401010
+    00401120: thunk_FUN_00579a60
+    00401130: FUN_00401130
+    00401280: FUN_00401280
+    00401450: FUN_00401450
+    00401590: FUN_00401590
+    00401620: FUN_00401620
+    00401810: FUN_00401810
+    00401a20: FUN_00401a20
+    00401fe0: FUN_00401fe0
+    ... and 1734 more
+
+  unrolled_memcpy (433 functions):
+    00404440: FUN_00404440
+    00407100: FUN_00407100
+    00407300: FUN_00407300
+    00407b30: FUN_00407b30
+    00407e30: FUN_00407e30
+    00408950: FUN_00408950
+    00408f00: FUN_00408f00
+    004091b0: FUN_004091b0
+    00409db0: FUN_00409db0
+    00409f60: FUN_00409f60
+    ... and 423 more
+
+  unaffected_reg (183 functions):
+    00401450: FUN_00401450
+    00408950: FUN_00408950
+    00408b00: FUN_00408b00
+    00408b40: FUN_00408b40
+    00408b80: FUN_00408b80
+    00408bf0: FUN_00408bf0
+    00408f00: FUN_00408f00
+    0040dfc0: FUN_0040dfc0
+    0040e8b0: FUN_0040e8b0
+    0040eb50: FUN_0040eb50
+    ... and 173 more
+
+  concat_reconstruction (101 functions):
+    00401450: FUN_00401450
+    00403040: FUN_00403040
+    004096c0: FUN_004096c0
+    00409f60: FUN_00409f60
+    0040afa0: FUN_0040afa0
+    0040d1c0: FUN_0040d1c0
+    0040d8a0: FUN_0040d8a0
+    004129f0: FUN_004129f0
+    00423cd0: FUN_00423cd0
+    00434f90: FUN_00434f90
+    ... and 91 more
+
+  register_param (69 functions):
+    0040afa0: FUN_0040afa0
+    0040d1c0: FUN_0040d1c0
+    004307c0: FUN_004307c0
+    00468870: FUN_00468870
+    00471271: FUN_00471271
+    00495ec0: FUN_00495ec0
+    00495f30: FUN_00495f30
+    00495f38: FUN_00495f38
+    00495f48: FUN_00495f48
+    00495f54: FUN_00495f54
+    ... and 59 more
+
+  unrolled_strcpy (222 functions):
+    00402940: FUN_00402940
+    00404f10: FUN_00404f10
+    00408600: FUN_00408600
+    0040b110: FUN_0040b110
+    0040b7a0: FUN_0040b7a0
+    0040b9b0: FUN_0040b9b0
+    0040ba30: FUN_0040ba30
+    0040c3a0: FUN_0040c3a0
+    0040de60: FUN_0040de60
+    0040e5c0: FUN_0040e5c0
+    ... and 212 more
+
+  static_object_index (0 functions):
+
+  stack_alignment_array (460 functions):
+    00408b00: FUN_00408b00
+    00408b40: FUN_00408b40
+    00408b80: FUN_00408b80
+    00408bf0: FUN_00408bf0
+    00408da0: FUN_00408da0
+    00408f00: FUN_00408f00
+    004091b0: FUN_004091b0
+    00409db0: FUN_00409db0
+    00409f60: FUN_00409f60
+    0040c990: FUN_0040c990
+    ... and 450 more
+
+  extra_output (67 functions):
+    004157c0: FUN_004157c0
+    00415e30: FUN_00415e30
+    0042f010: FUN_0042f010
+    004378b0: FUN_004378b0
+    0044af70: FUN_0044af70
+    004504b0: FUN_004504b0
+    00450980: FUN_00450980
+    00450d70: FUN_00450d70
+    00459980: FUN_00459980
+    00459b80: FUN_00459b80
+    ... and 57 more
+
+  static_array_oob (0 functions):
+
+  raw_address_constant (194 functions):
+    00404440: FUN_00404440
+    00408a40: FUN_00408a40
+    0040fb40: FUN_0040fb40
+    00410490: FUN_00410490
+    00412c50: FUN_00412c50
+    00413e30: FUN_00413e30
+    00420420: FUN_00420420
+    004208d0: FUN_004208d0
+    00421300: FUN_00421300
+    00424550: FUN_00424550
+    ... and 184 more
+
+  static_legacy_uninitvar (0 functions):
+
+  unrolled_strlen (88 functions):
+    004018b0: FUN_004018b0
+    00401c70: FUN_00401c70
+    00401d00: FUN_00401d00
+    00401ec0: FUN_00401ec0
+    00401f50: FUN_00401f50
+    00402090: FUN_00402090
+    0040afa0: FUN_0040afa0
+    00412ee0: FUN_00412ee0
+    0042c230: FUN_0042c230
+    00441ff0: FUN_00441ff0
+    ... and 78 more
+
+  nonstandard_int (26 functions):
+    0044e590: FUN_0044e590
+    00470a2c: FUN_00470a2c
+    00470f0a: FUN_00470f0a
+    00471200: FUN_00471200
+    0047166f: FUN_0047166f
+    00471719: FUN_00471719
+    00471835: FUN_00471835
+    00471951: FUN_00471951
+    00471e45: FUN_00471e45
+    004720fa: FUN_004720fa
+    ... and 16 more
+
+  warning_type_propagation (205 functions):
+    00408bf0: FUN_00408bf0
+    00408da0: FUN_00408da0
+    00408f00: FUN_00408f00
+    004091b0: FUN_004091b0
+    0040c990: FUN_0040c990
+    0040e140: FUN_0040e140
+    0040e2b0: FUN_0040e2b0
+    0040fb40: FUN_0040fb40
+    00411790: FUN_00411790
+    00412c50: FUN_00412c50
+    ... and 195 more
+
+  static_shift_too_many_bits (0 functions):
+
+  raw_address_pointer_store (50 functions):
+    00412530: FUN_00412530
+    00413e30: FUN_00413e30
+    00439da0: FUN_00439da0
+    0043bac0: FUN_0043bac0
+    0044e690: FUN_0044e690
+    004656d0: FUN_004656d0
+    0046e4e0: FUN_0046e4e0
+    00475720: FUN_00475720
+    0047bd50: FUN_0047bd50
+    0047c2c0: FUN_0047c2c0
+    ... and 40 more
+
+  stack_param (15 functions):
+    00407b30: FUN_00407b30
+    00407e30: FUN_00407e30
+    00412c30: FUN_00412c30
+    00414420: FUN_00414420
+    00502190: FUN_00502190
+    00554920: FUN_00554920
+    0055b7f0: FUN_0055b7f0
+    005af4b0: FUN_005af4b0
+    005af4bb: FUN_005af4bb
+    005af4c8: FUN_005af4c8
+    ... and 5 more
+
+  carry_arith_idiom (24 functions):
+    004390c0: FUN_004390c0
+    004391c0: FUN_004391c0
+    004392c0: FUN_004392c0
+    004393c0: FUN_004393c0
+    004394c0: FUN_004394c0
+    0043a8c0: FUN_0043a8c0
+    0043a9f0: FUN_0043a9f0
+    0043ab20: FUN_0043ab20
+    0043ac50: FUN_0043ac50
+    00553090: FUN_00553090
+    ... and 14 more
+
+  unknown_field (27 functions):
+    00444b70: FUN_00444b70
+    0046f480: FUN_0046f480
+    004712b2: FUN_004712b2
+    004713f5: FUN_004713f5
+    00471538: FUN_00471538
+    004f7c6c: FUN_004f7c6c
+    004ff790: FUN_004ff790
+    00553090: FUN_00553090
+    005531d0: FUN_005531d0
+    00554920: FUN_00554920
+    ... and 17 more
+
+  unrolled_strcat (21 functions):
+    00412ee0: FUN_00412ee0
+    00466040: FUN_00466040
+    0047e470: FUN_0047e470
+    004a8b90: FUN_004a8b90
+    004aa810: FUN_004aa810
+    004bec20: FUN_004bec20
+    004bfb50: FUN_004bfb50
+    004bfee0: FUN_004bfee0
+    004da880: FUN_004da880
+    004dcb40: FUN_004dcb40
+    ... and 11 more
+
+  suspect_float (21 functions):
+    0041b1d0: FUN_0041b1d0
+    0043d9b0: FUN_0043d9b0
+    00478900: FUN_00478900
+    00478ac0: FUN_00478ac0
+    00497290: FUN_00497290
+    00497610: FUN_00497610
+    004980b0: FUN_004980b0
+    00498b40: FUN_00498b40
+    00499690: FUN_00499690
+    00499eb0: FUN_00499eb0
+    ... and 11 more
+
+  warning_unreachable (27 functions):
+    00403790: thunk_FUN_0056a960
+    0041e220: FUN_0041e220
+    00439da0: FUN_00439da0
+    004425f0: FUN_004425f0
+    00467a70: FUN_00467a70
+    00467c80: FUN_00467c80
+    0047c050: FUN_0047c050
+    0047ee50: FUN_0047ee50
+    004843d0: FUN_004843d0
+    004ab8f0: FUN_004ab8f0
+    ... and 17 more
+
+  bitcast_double_pair (14 functions):
+    00444b70: FUN_00444b70
+    004515b0: FUN_004515b0
+    00479970: FUN_00479970
+    0047eb10: FUN_0047eb10
+    00529a70: FUN_00529a70
+    00553090: FUN_00553090
+    005531d0: FUN_005531d0
+    00555530: FUN_00555530
+    005ad0f2: FUN_005ad0f2
+    005aec4d: FUN_005aec4d
+    ... and 4 more
+
+  fpu_register_input (8 functions):
+    00495f30: FUN_00495f30
+    005a4764: FUN_005a4764
+    005a4b74: FUN_005a4b74
+    005a5cc1: FUN_005a5cc1
+    005aa486: FUN_005aa486
+    005aa490: FUN_005aa490
+    005aad76: FUN_005aad76
+    005af350: FUN_005af350
+
+  self_copy_guard (35 functions):
+    00416330: FUN_00416330
+    0041daf0: FUN_0041daf0
+    004201a0: FUN_004201a0
+    004215f0: FUN_004215f0
+    00427780: FUN_00427780
+    0042cd70: FUN_0042cd70
+    0042f510: FUN_0042f510
+    00452e20: FUN_00452e20
+    00457300: FUN_00457300
+    0045abd0: FUN_0045abd0
+    ... and 25 more
+
+  bit_int_float_compare (24 functions):
+    00418930: FUN_00418930
+    00432330: FUN_00432330
+    0048c2e0: FUN_0048c2e0
+    00496e00: FUN_00496e00
+    004bd7d0: FUN_004bd7d0
+    004c07b0: FUN_004c07b0
+    004d32d0: FUN_004d32d0
+    004e04b0: FUN_004e04b0
+    004e1070: FUN_004e1070
+    004f13a0: FUN_004f13a0
+    ... and 14 more
+
+  fast_sqrt_inline (19 functions):
+    004179b0: FUN_004179b0
+    00419b40: FUN_00419b40
+    00429660: FUN_00429660
+    0043d9b0: FUN_0043d9b0
+    00455080: FUN_00455080
+    004628b0: FUN_004628b0
+    004c6eb0: FUN_004c6eb0
+    005376e0: FUN_005376e0
+    005386d0: FUN_005386d0
+    00545710: FUN_00545710
+    ... and 9 more
+
+  unrolled_strchr (24 functions):
+    00402940: FUN_00402940
+    004350a0: FUN_004350a0
+    0044c130: FUN_0044c130
+    0047d230: FUN_0047d230
+    0047e470: FUN_0047e470
+    0048c2e0: FUN_0048c2e0
+    004b2a80: FUN_004b2a80
+    004b2b30: FUN_004b2b30
+    004cfcd0: FUN_004cfcd0
+    004d8290: FUN_004d8290
+    ... and 14 more
+
+  sign_compare_idiom (14 functions):
+    00403920: FUN_00403920
+    0044d800: FUN_0044d800
+    0044e690: FUN_0044e690
+    00476070: FUN_00476070
+    004aa200: FUN_004aa200
+    004b51e0: FUN_004b51e0
+    00512fb0: FUN_00512fb0
+    00515ac0: FUN_00515ac0
+    00515b80: FUN_00515b80
+    00515d60: FUN_00515d60
+    ... and 4 more
+
+  eflags_input (1 functions):
+    004f7c6c: FUN_004f7c6c
+
+  fnstsw_flag_artifact (10 functions):
+    0040afa0: FUN_0040afa0
+    004fcb50: FUN_004fcb50
+    005353e0: FUN_005353e0
+    00561fdc: FUN_00561fdc
+    005625a3: FUN_005625a3
+    005a6a78: FUN_005a6a78
+    005ad52f: FUN_005ad52f
+    005b024e: FUN_005b024e
+    005b0454: FUN_005b0454
+    005b0611: FUN_005b0611
+
+  static_null_pointer (0 functions):
+
+  unknown_type (6 functions):
+    0045ed70: FUN_0045ed70
+    0045f5a0: FUN_0045f5a0
+    005a5cc1: FUN_005a5cc1
+    005a73c8: FUN_005a73c8
+    005aa50c: FUN_005aa50c
+    005af350: FUN_005af350
+
+  static_invalid_pointer_cast (0 functions):
+
+  static_identical_inner_condition (0 functions):
+
+  nan_function_artifact (10 functions):
+    00461e00: FUN_00461e00
+    0049d090: FUN_0049d090
+    0049d500: FUN_0049d500
+    0049f520: FUN_0049f520
+    0049fdf0: FUN_0049fdf0
+    004a1ad0: FUN_004a1ad0
+    004fcb50: FUN_004fcb50
+    005353e0: FUN_005353e0
+    00554250: FUN_00554250
+    005ad760: FUN_005ad760
+
+  static_integer_division (0 functions):
+
+  static_null_pointer_arithmetic (0 functions):
+
+  warning_jumptable (6 functions):
+    004540c0: FUN_004540c0
+    00495ec0: FUN_00495ec0
+    00495f68: FUN_00495f68
+    00563257: FUN_00563257
+    005aa623: FUN_005aa623
+    005af350: FUN_005af350
+
+  warning_indirect_jump (6 functions):
+    004540c0: FUN_004540c0
+    00495ec0: FUN_00495ec0
+    00495f68: FUN_00495f68
+    00563257: FUN_00563257
+    005aa623: FUN_005aa623
+    005af350: FUN_005af350
+
+  undefined_ram (4 functions):
+    004b7f90: FUN_004b7f90
+    004f0460: FUN_004f0460
+    00561fdc: FUN_00561fdc
+    005625a3: FUN_005625a3
+
+  inline_exp_idiom (4 functions):
+    0050e700: FUN_0050e700
+    0050ed00: FUN_0050ed00
+    005aa486: FUN_005aa486
+    005aa490: FUN_005aa490
+
+  undefined_ptr_cast (7 functions):
+    005a6190: FUN_005a6190
+    005a86c4: FUN_005a86c4
+    005a87bc: FUN_005a87bc
+    005a8920: FUN_005a8920
+    005a89d4: FUN_005a89d4
+    005a8ae8: FUN_005a8ae8
+    005a8dec: FUN_005a8dec
+
+  displaced_global_access (7 functions):
+    0040c3a0: FUN_0040c3a0
+    00411960: FUN_00411960
+    00423cd0: FUN_00423cd0
+    0042e8c0: FUN_0042e8c0
+    0042f010: FUN_0042f010
+    0050cd60: FUN_0050cd60
+    005373e0: FUN_005373e0
+
+  fast_inv_sqrt_inline (4 functions):
+    0043d9b0: FUN_0043d9b0
+    0044bb00: FUN_0044bb00
+    0045b070: FUN_0045b070
+    00538dd0: FUN_00538dd0
+
+  static_self_assignment (0 functions):
+
+  warning_noreturn (6 functions):
+    00581010: FUN_00581010
+    00581080: FUN_00581080
+    00581300: FUN_00581300
+    005a7f6c: FUN_005a7f6c
+    005a8210: FUN_005a8210
+    005b1938: FUN_005b1938
+
+  sub84_truncation (5 functions):
+    004515b0: FUN_004515b0
+    00479970: FUN_00479970
+    004e61c0: FUN_004e61c0
+    005019f0: FUN_005019f0
+    0055c0f0: FUN_0055c0f0
+
+  undefined_type (4 functions):
+    00561fdc: FUN_00561fdc
+    005625a3: FUN_005625a3
+    0056313e: FUN_0056313e
+    005a7100: FUN_005a7100
+
+  static_swapped_arguments (0 functions):
+
+  warning_deadcode_restart (3 functions):
+    0044db70: FUN_0044db70
+    00553090: FUN_00553090
+    005531d0: FUN_005531d0
+
+  static_null_pointer_redundant_check (0 functions):
+
+  bitcast_double_numeric (3 functions):
+    005b024e: FUN_005b024e
+    005b0454: FUN_005b0454
+    005b0611: FUN_005b0611
+
+  tautological_addr_guard (2 functions):
+    0042c230: FUN_0042c230
+    0045af60: FUN_0045af60
+
+  dropped_self_copy (1 functions):
+    004d7970: FUN_004d7970
+
+  dropped_loop_counter (2 functions):
+    004e85a0: FUN_004e85a0
+    005a29e8: FUN_005a29e8
+
+  cpuid_intrinsic (1 functions):
+    004f7c6c: FUN_004f7c6c
+
+  unrolled_memset (1 functions):
+    00560e37: FUN_00560e37
+
+  bare_stack_ref (1 functions):
+    005a73c8: FUN_005a73c8
+
+  warning_spacebase (2 functions):
+    005ad1e0: FUN_005ad1e0
+    005b17a0: FUN_005b17a0
+
+  preinc_loop_idiom (1 functions):
+    004d8640: FUN_004d8640
+
+  dropped_fyl2x (1 functions):
+    0055ab20: FUN_0055ab20
+
+  warning_overlapping_instructions (1 functions):
+    005a4010: FUN_005a4010
+
+  warning_max_restarts (1 functions):
+    005adf80: FUN_005adf80

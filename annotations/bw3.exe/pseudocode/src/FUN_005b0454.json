@@ -1,0 +1,731 @@
+{
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "other",
+        "column": 25,
+        "line": 28,
+        "message": "unknown type name 'HWND'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 187,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 189,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 28,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 35,
+        "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
+      },
+      {
+        "category": "other",
+        "column": 1,
+        "line": 41,
+        "message": "unknown type name 'MMRESULT'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 46,
+        "message": "unknown type name 'HWND'"
+      },
+      {
+        "category": "other",
+        "column": 56,
+        "line": 191,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 1,
+        "line": 373,
+        "message": "unknown type name 'LPCRITICAL_SECTION'"
+      },
+      {
+        "category": "other",
+        "column": 20,
+        "line": 386,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 415,
+        "message": "unknown type name 'FILETIME'"
+      },
+      {
+        "category": "other",
+        "column": 37,
+        "line": 415,
+        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
+      },
+      {
+        "category": "other",
+        "column": 52,
+        "line": 415,
+        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 7,
+        "line": 49,
+        "message": "use of undeclared identifier 'DAT_006075c1'"
+      }
+    ],
+    "success": false,
+    "warnings": []
+  },
+  "compile_source": "c",
+  "complexity": {
+    "assembly_lines": 229,
+    "complexity_score": 736,
+    "cross_reference_count": 1,
+    "function_call_count": 0,
+    "global_count": 1,
+    "max_suspect_severity": "severe",
+    "pseudocode_lines": 166,
+    "suspect_count": 53,
+    "suspect_types": [
+      "bitcast_double_numeric",
+      "bitcast_double_pair",
+      "carry_arith_idiom",
+      "concat_reconstruction",
+      "fnstsw_flag_artifact",
+      "register_param",
+      "unaffected_reg",
+      "undefined_data"
+    ],
+    "total_lines": 395
+  },
+  "cross_references": [
+    {
+      "addr": "005aeba0",
+      "from_addr": "005aebf8",
+      "name": "FUN_005aeba0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "005b0454",
+    "address_range": [
+      [
+        "005b0454",
+        "005b0610"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "FUN_005b0454",
+    "signature": "double FUN_005b0454(void)"
+  },
+  "function_calls": [],
+  "globals": [
+    {
+      "addr": "006075c1",
+      "name": "DAT_006075c1",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "005aebf8",
+        "call_type": "direct",
+        "caller": "FUN_005aeba0",
+        "estimated_params": 4,
+        "instructions_analyzed": 5,
+        "method": "push_count",
+        "reg_params": [
+          "EAX",
+          "EBX",
+          "ECX",
+          "EDX"
+        ],
+        "stack_bytes": 0,
+        "stack_params": 0
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 4,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 7.882022471910112,
+    "instruction_count": 178,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 52,
+      "BOOL_OR": 12,
+      "BOOL_XOR": 11,
+      "BRANCH": 2,
+      "CBRANCH": 25,
+      "COPY": 167,
+      "FLOAT2FLOAT": 3,
+      "FLOAT_ADD": 1,
+      "INT_2COMP": 5,
+      "INT_ADD": 52,
+      "INT_AND": 294,
+      "INT_CARRY": 29,
+      "INT_EQUAL": 181,
+      "INT_LEFT": 21,
+      "INT_LESS": 19,
+      "INT_NOTEQUAL": 46,
+      "INT_OR": 71,
+      "INT_RIGHT": 26,
+      "INT_SBORROW": 25,
+      "INT_SCARRY": 31,
+      "INT_SLESS": 120,
+      "INT_SRIGHT": 4,
+      "INT_SUB": 42,
+      "INT_XOR": 22,
+      "INT_ZEXT": 21,
+      "LOAD": 22,
+      "POPCOUNT": 85,
+      "RETURN": 5,
+      "STORE": 9
+    },
+    "pcode_op_count": 1403
+  },
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "static_analysis": {
+    "analyzed_file": "FUN_005b0454.c",
+    "cppcheck_quick": {
+      "diagnostic_count": 6,
+      "diagnostics": [
+        {
+          "check_id": "shiftTooManyBits",
+          "column": 43,
+          "line": 108,
+          "message": "Shifting 32-bit value by 32 bits is undefined behaviour. See condition at line 101.",
+          "severity": "warning"
+        },
+        {
+          "check_id": "uninitvar",
+          "column": 11,
+          "line": 33,
+          "message": "Uninitialized variable: in_ECX",
+          "severity": "error"
+        },
+        {
+          "check_id": "uninitvar",
+          "column": 7,
+          "line": 34,
+          "message": "Uninitialized variable: unaff_EBX",
+          "severity": "error"
+        },
+        {
+          "check_id": "uninitvar",
+          "column": 13,
+          "line": 36,
+          "message": "Uninitialized variable: in_EAX",
+          "severity": "error"
+        },
+        {
+          "check_id": "uninitvar",
+          "column": 13,
+          "line": 37,
+          "message": "Uninitialized variable: in_EDX",
+          "severity": "error"
+        },
+        {
+          "check_id": "legacyUninitvar",
+          "column": 7,
+          "line": 41,
+          "message": "Uninitialized variable: in_EAX",
+          "severity": "error"
+        }
+      ],
+      "error": null
+    },
+    "file_variant": "raw"
+  },
+  "suspects": [
+    {
+      "description": "Inferred register parameter",
+      "line": 6,
+      "match": "in_EAX",
+      "severity": "mild",
+      "text": "uint in_EAX;",
+      "type": "register_param"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 11,
+      "match": "in_ECX",
+      "severity": "mild",
+      "text": "uint in_ECX;",
+      "type": "register_param"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 14,
+      "match": "in_EDX",
+      "severity": "mild",
+      "text": "uint in_EDX;",
+      "type": "register_param"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 18,
+      "match": "unaff_EBX",
+      "severity": "moderate",
+      "text": "uint unaff_EBX;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 26,
+      "match": "in_ECX",
+      "severity": "mild",
+      "text": "uVar6 = in_ECX ^ 0x80000000;",
+      "type": "register_param"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 27,
+      "match": "unaff_EBX",
+      "severity": "moderate",
+      "text": "if (unaff_EBX == 0) {",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Carry term in 64-bit arithmetic (multiply-high `(int)(L>>0x1f)` or add-carry `(a+b)<a`), not a comparison; reduce in a .keep.",
+      "line": 28,
+      "match": "CARRY4(uVar6,uVar6)",
+      "severity": "moderate",
+      "text": "bVar16 = CARRY4(uVar6,uVar6);",
+      "type": "carry_arith_idiom"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 29,
+      "match": "in_EAX",
+      "severity": "mild",
+      "text": "uVar7 = in_EAX;",
+      "type": "register_param"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 30,
+      "match": "in_EDX",
+      "severity": "mild",
+      "text": "uVar6 = in_EDX;",
+      "type": "register_param"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 31,
+      "match": "in_ECX",
+      "severity": "mild",
+      "text": "if ((in_ECX & 0x7fffffff) == 0) goto LAB_005b0470;",
+      "type": "register_param"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 32,
+      "match": "in_ECX",
+      "severity": "mild",
+      "text": "uVar6 = in_ECX & 0x7fffffff | (uint)bVar16 << 0x1f;",
+      "type": "register_param"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 34,
+      "match": "in_EAX",
+      "severity": "mild",
+      "text": "if (in_EAX == 0) {",
+      "type": "register_param"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 35,
+      "match": "unaff_EBX",
+      "severity": "moderate",
+      "text": "uVar7 = unaff_EBX;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 36,
+      "match": "in_EDX",
+      "severity": "mild",
+      "text": "if ((in_EDX & 0x7fffffff) == 0) {",
+      "type": "register_param"
+    },
+    {
+      "description": "Two uint locals reconstructed as a double via __BITCAST_DOUBLE(CONCAT44(...)) \u2014 fixable by merging into a single double local",
+      "line": 38,
+      "match": "__BITCAST_DOUBLE(CONCAT44(",
+      "severity": "moderate",
+      "text": "return __BITCAST_DOUBLE(CONCAT44(uVar6,uVar7));",
+      "type": "bitcast_double_pair"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 40,
+      "match": "in_EDX",
+      "severity": "mild",
+      "text": "in_EDX = in_EDX & 0x7fffffff | (uint)CARRY4(in_EDX,in_EDX) << 0x1f;",
+      "type": "register_param"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 40,
+      "match": "in_EDX",
+      "severity": "mild",
+      "text": "in_EDX = in_EDX & 0x7fffffff | (uint)CARRY4(in_EDX,in_EDX) << 0x1f;",
+      "type": "register_param"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 40,
+      "match": "in_EDX",
+      "severity": "mild",
+      "text": "in_EDX = in_EDX & 0x7fffffff | (uint)CARRY4(in_EDX,in_EDX) << 0x1f;",
+      "type": "register_param"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 40,
+      "match": "in_EDX",
+      "severity": "mild",
+      "text": "in_EDX = in_EDX & 0x7fffffff | (uint)CARRY4(in_EDX,in_EDX) << 0x1f;",
+      "type": "register_param"
+    },
+    {
+      "description": "Carry term in 64-bit arithmetic (multiply-high `(int)(L>>0x1f)` or add-carry `(a+b)<a`), not a comparison; reduce in a .keep.",
+      "line": 40,
+      "match": "CARRY4(in_EDX,in_EDX)",
+      "severity": "moderate",
+      "text": "in_EDX = in_EDX & 0x7fffffff | (uint)CARRY4(in_EDX,in_EDX) << 0x1f;",
+      "type": "carry_arith_idiom"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 42,
+      "match": "DAT_006075c1",
+      "severity": "mild",
+      "text": "if (DAT_006075c1 != '\\0') {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 43,
+      "match": "in_EDX",
+      "severity": "mild",
+      "text": "dVar1 = __BITCAST_DOUBLE(CONCAT44(in_EDX,in_EAX)) + __BITCAST_DOUBLE(CONCAT44(uVar6,unaff_EBX));",
+      "type": "register_param"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 43,
+      "match": "in_EAX",
+      "severity": "mild",
+      "text": "dVar1 = __BITCAST_DOUBLE(CONCAT44(in_EDX,in_EAX)) + __BITCAST_DOUBLE(CONCAT44(uVar6,unaff_EBX));",
+      "type": "register_param"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 43,
+      "match": "unaff_EBX",
+      "severity": "moderate",
+      "text": "dVar1 = __BITCAST_DOUBLE(CONCAT44(in_EDX,in_EAX)) + __BITCAST_DOUBLE(CONCAT44(uVar6,unaff_EBX));",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Two uint locals reconstructed as a double via __BITCAST_DOUBLE(CONCAT44(...)) \u2014 fixable by merging into a single double local",
+      "line": 43,
+      "match": "__BITCAST_DOUBLE(CONCAT44(",
+      "severity": "moderate",
+      "text": "dVar1 = __BITCAST_DOUBLE(CONCAT44(in_EDX,in_EAX)) + __BITCAST_DOUBLE(CONCAT44(uVar6,unaff_EBX));",
+      "type": "bitcast_double_pair"
+    },
+    {
+      "description": "Two uint locals reconstructed as a double via __BITCAST_DOUBLE(CONCAT44(...)) \u2014 fixable by merging into a single double local",
+      "line": 43,
+      "match": "__BITCAST_DOUBLE(CONCAT44(",
+      "severity": "moderate",
+      "text": "dVar1 = __BITCAST_DOUBLE(CONCAT44(in_EDX,in_EAX)) + __BITCAST_DOUBLE(CONCAT44(uVar6,unaff_EBX));",
+      "type": "bitcast_double_pair"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 49,
+      "match": "in_EDX",
+      "severity": "mild",
+      "text": "sVar5 = (short)(in_EDX >> 0x10);",
+      "type": "register_param"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 54,
+      "match": "in_EDX",
+      "severity": "mild",
+      "text": "uVar9 = in_EDX & 0xfffff;",
+      "type": "register_param"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 62,
+      "match": "in_EAX",
+      "severity": "mild",
+      "text": "uVar15 = in_EAX * 2;",
+      "type": "register_param"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 63,
+      "match": "in_EAX",
+      "severity": "mild",
+      "text": "uVar10 = uVar9 * 2 + (uint)CARRY4(in_EAX,in_EAX);",
+      "type": "register_param"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 63,
+      "match": "in_EAX",
+      "severity": "mild",
+      "text": "uVar10 = uVar9 * 2 + (uint)CARRY4(in_EAX,in_EAX);",
+      "type": "register_param"
+    },
+    {
+      "description": "Carry term in 64-bit arithmetic (multiply-high `(int)(L>>0x1f)` or add-carry `(a+b)<a`), not a comparison; reduce in a .keep.",
+      "line": 63,
+      "match": "CARRY4(in_EAX,in_EAX)",
+      "severity": "moderate",
+      "text": "uVar10 = uVar9 * 2 + (uint)CARRY4(in_EAX,in_EAX);",
+      "type": "carry_arith_idiom"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 64,
+      "match": "unaff_EBX",
+      "severity": "moderate",
+      "text": "uVar9 = unaff_EBX * 2;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 65,
+      "match": "unaff_EBX",
+      "severity": "moderate",
+      "text": "uVar13 = uVar6 * 2 + (uint)CARRY4(unaff_EBX,unaff_EBX);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 65,
+      "match": "unaff_EBX",
+      "severity": "moderate",
+      "text": "uVar13 = uVar6 * 2 + (uint)CARRY4(unaff_EBX,unaff_EBX);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Carry term in 64-bit arithmetic (multiply-high `(int)(L>>0x1f)` or add-carry `(a+b)<a`), not a comparison; reduce in a .keep.",
+      "line": 65,
+      "match": "CARRY4(unaff_EBX,unaff_EBX)",
+      "severity": "moderate",
+      "text": "uVar13 = uVar6 * 2 + (uint)CARRY4(unaff_EBX,unaff_EBX);",
+      "type": "carry_arith_idiom"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 76,
+      "match": "in_EDX",
+      "severity": "mild",
+      "text": "uVar7 = (int)in_EDX >> 0x14 & 0x800007ff;",
+      "type": "register_param"
+    },
+    {
+      "description": "Two uint locals reconstructed as a double via __BITCAST_DOUBLE(CONCAT44(...)) \u2014 fixable by merging into a single double local",
+      "line": 80,
+      "match": "__BITCAST_DOUBLE(CONCAT44(",
+      "severity": "moderate",
+      "text": "return __BITCAST_DOUBLE(CONCAT44(uVar13 >> 1 & 0x800fffff | (uint)CARRY4(uVar7,uVar7) << 0x1f |",
+      "type": "bitcast_double_pair"
+    },
+    {
+      "description": "Carry term in 64-bit arithmetic (multiply-high `(int)(L>>0x1f)` or add-carry `(a+b)<a`), not a comparison; reduce in a .keep.",
+      "line": 80,
+      "match": "CARRY4(uVar7,uVar7)",
+      "severity": "moderate",
+      "text": "return __BITCAST_DOUBLE(CONCAT44(uVar13 >> 1 & 0x800fffff | (uint)CARRY4(uVar7,uVar7) << 0x1f |",
+      "type": "carry_arith_idiom"
+    },
+    {
+      "description": "Carry term in 64-bit arithmetic (multiply-high `(int)(L>>0x1f)` or add-carry `(a+b)<a`), not a comparison; reduce in a .keep.",
+      "line": 104,
+      "match": "CARRY4(uVar6,uVar9)",
+      "severity": "moderate",
+      "text": "uVar6 = uVar11 + uVar13 + (uint)CARRY4(uVar6,uVar9);",
+      "type": "carry_arith_idiom"
+    },
+    {
+      "description": "Carry term in 64-bit arithmetic (multiply-high `(int)(L>>0x1f)` or add-carry `(a+b)<a`), not a comparison; reduce in a .keep.",
+      "line": 108,
+      "match": "CARRY4(uVar10,uVar9)",
+      "severity": "moderate",
+      "text": "bVar16 = CARRY4(uVar10,uVar9);",
+      "type": "carry_arith_idiom"
+    },
+    {
+      "description": "Two uint locals reconstructed as a double via __BITCAST_DOUBLE(CONCAT44(...)) \u2014 fixable by merging into a single double local",
+      "line": 120,
+      "match": "__BITCAST_DOUBLE(CONCAT44(",
+      "severity": "moderate",
+      "text": "return __BITCAST_DOUBLE(CONCAT44(uVar6 >> 1 | (uint)CARRY4(uVar7,uVar7) << 0x1f,",
+      "type": "bitcast_double_pair"
+    },
+    {
+      "description": "Carry term in 64-bit arithmetic (multiply-high `(int)(L>>0x1f)` or add-carry `(a+b)<a`), not a comparison; reduce in a .keep.",
+      "line": 120,
+      "match": "CARRY4(uVar7,uVar7)",
+      "severity": "moderate",
+      "text": "return __BITCAST_DOUBLE(CONCAT44(uVar6 >> 1 | (uint)CARRY4(uVar7,uVar7) << 0x1f,",
+      "type": "carry_arith_idiom"
+    },
+    {
+      "description": "Carry term in 64-bit arithmetic (multiply-high `(int)(L>>0x1f)` or add-carry `(a+b)<a`), not a comparison; reduce in a .keep.",
+      "line": 129,
+      "match": "CARRY4(uVar10,uVar10)",
+      "severity": "moderate",
+      "text": "bVar16 = CARRY4(uVar10,uVar10);",
+      "type": "carry_arith_idiom"
+    },
+    {
+      "description": "Carry term in 64-bit arithmetic (multiply-high `(int)(L>>0x1f)` or add-carry `(a+b)<a`), not a comparison; reduce in a .keep.",
+      "line": 149,
+      "match": "CARRY4(uVar10,uVar6)",
+      "severity": "moderate",
+      "text": "bVar16 = CARRY4(uVar10,uVar6);",
+      "type": "carry_arith_idiom"
+    },
+    {
+      "description": "FNSTSW flag reconstruction (floating-point comparison artifact)",
+      "line": 157,
+      "match": "CONCAT22((short)(uVar7 >> 0x10",
+      "severity": "severe",
+      "text": "uVar7 = CONCAT22((short)(uVar7 >> 0x10),sVar5);",
+      "type": "fnstsw_flag_artifact"
+    },
+    {
+      "description": "Numeric (double) cast of `(ulonglong)X << 0x20` \u2014 Ghidra mis-rendered a bit-cast (double from high dword X, low 0) as a numeric conversion; produces a garbage ~10^18 value at runtime. Decode X<<0x20 as the IEEE-754 double in a .keep (0x3ff00000->1.0, 0xbff00000->-1.0).",
+      "line": 162,
+      "match": "(double)((ulonglong)(uVar7 & 0x80000000) << 0x20",
+      "severity": "moderate",
+      "text": "return (double)((ulonglong)(uVar7 & 0x80000000) << 0x20 | 0x7ff0000000000000);",
+      "type": "bitcast_double_numeric"
+    },
+    {
+      "description": "Carry term in 64-bit arithmetic (multiply-high `(int)(L>>0x1f)` or add-carry `(a+b)<a`), not a comparison; reduce in a .keep.",
+      "line": 166,
+      "match": "CARRY4(uVar7,uVar7)",
+      "severity": "moderate",
+      "text": "uVar6 = uVar13 & 0xfffff | (uVar7 & 0x7ff) << 0x14 | (uint)CARRY4(uVar7,uVar7) << 0x1f;",
+      "type": "carry_arith_idiom"
+    },
+    {
+      "description": "Two uint locals reconstructed as a double via __BITCAST_DOUBLE(CONCAT44(...)) \u2014 fixable by merging into a single double local",
+      "line": 168,
+      "match": "__BITCAST_DOUBLE(CONCAT44(",
+      "severity": "moderate",
+      "text": "return __BITCAST_DOUBLE(CONCAT44(uVar6,uVar10));",
+      "type": "bitcast_double_pair"
+    },
+    {
+      "description": "Ghidra CONCAT22 reconstruction (stitches narrow values into a wider one) \u2014 a Watcom wide-value artifact, not real C. Reduce to the proper form (e.g. sign-extend `(longlong)(int)x`, 64-bit math, or a typed field) in a .keep.",
+      "line": 67,
+      "match": "CONCAT22",
+      "severity": "moderate",
+      "text": "iVar8 = CONCAT22(sVar3,sVar5);",
+      "type": "concat_reconstruction"
+    },
+    {
+      "description": "Ghidra CONCAT22 reconstruction (stitches narrow values into a wider one) \u2014 a Watcom wide-value artifact, not real C. Reduce to the proper form (e.g. sign-extend `(longlong)(int)x`, 64-bit math, or a typed field) in a .keep.",
+      "line": 72,
+      "match": "CONCAT22",
+      "severity": "moderate",
+      "text": "iVar8 = CONCAT22(sVar3,-sVar5);",
+      "type": "concat_reconstruction"
+    },
+    {
+      "description": "Ghidra CONCAT22 reconstruction (stitches narrow values into a wider one) \u2014 a Watcom wide-value artifact, not real C. Reduce to the proper form (e.g. sign-extend `(longlong)(int)x`, 64-bit math, or a typed field) in a .keep.",
+      "line": 127,
+      "match": "CONCAT22",
+      "severity": "moderate",
+      "text": "uVar7 = CONCAT22(uVar12,sVar5);",
+      "type": "concat_reconstruction"
+    },
+    {
+      "description": "Ghidra CONCAT22 reconstruction (stitches narrow values into a wider one) \u2014 a Watcom wide-value artifact, not real C. Reduce to the proper form (e.g. sign-extend `(longlong)(int)x`, 64-bit math, or a typed field) in a .keep.",
+      "line": 140,
+      "match": "CONCAT22",
+      "severity": "moderate",
+      "text": "uVar7 = CONCAT22(uVar12,sVar5);",
+      "type": "concat_reconstruction"
+    },
+    {
+      "description": "Uninitialized variable: in_ECX",
+      "line": 33,
+      "match": "Cppcheck: uninitialized variable",
+      "severity": "major",
+      "text": "uVar6 = in_ECX ^ 0x80000000;",
+      "type": "static_uninitvar"
+    },
+    {
+      "description": "Uninitialized variable: unaff_EBX",
+      "line": 34,
+      "match": "Cppcheck: uninitialized variable",
+      "severity": "major",
+      "text": "if (unaff_EBX == 0) {",
+      "type": "static_uninitvar"
+    },
+    {
+      "description": "Uninitialized variable: in_EAX",
+      "line": 36,
+      "match": "Cppcheck: uninitialized variable",
+      "severity": "major",
+      "text": "uVar7 = in_EAX;",
+      "type": "static_uninitvar"
+    },
+    {
+      "description": "Uninitialized variable: in_EDX",
+      "line": 37,
+      "match": "Cppcheck: uninitialized variable",
+      "severity": "major",
+      "text": "uVar6 = in_EDX;",
+      "type": "static_uninitvar"
+    },
+    {
+      "description": "Uninitialized variable: in_EAX",
+      "line": 41,
+      "match": "Cppcheck: uninitialized variable (legacy detector)",
+      "severity": "major",
+      "text": "if (in_EAX == 0) {",
+      "type": "static_legacy_uninitvar"
+    }
+  ]
+}

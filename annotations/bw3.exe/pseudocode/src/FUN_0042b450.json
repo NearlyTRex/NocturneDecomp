@@ -1,0 +1,984 @@
+{
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "other",
+        "column": 25,
+        "line": 28,
+        "message": "unknown type name 'HWND'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 187,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 189,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 28,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 35,
+        "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
+      },
+      {
+        "category": "other",
+        "column": 1,
+        "line": 41,
+        "message": "unknown type name 'MMRESULT'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 46,
+        "message": "unknown type name 'HWND'"
+      },
+      {
+        "category": "other",
+        "column": 56,
+        "line": 191,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 1,
+        "line": 373,
+        "message": "unknown type name 'LPCRITICAL_SECTION'"
+      },
+      {
+        "category": "other",
+        "column": 20,
+        "line": 386,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 415,
+        "message": "unknown type name 'FILETIME'"
+      },
+      {
+        "category": "other",
+        "column": 37,
+        "line": 415,
+        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
+      },
+      {
+        "category": "other",
+        "column": 52,
+        "line": 415,
+        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
+      },
+      {
+        "category": "incompatible_types",
+        "column": 3,
+        "line": 33,
+        "message": "no matching function for call to 'FUN_0040b830'"
+      },
+      {
+        "category": "incompatible_types",
+        "column": 7,
+        "line": 36,
+        "message": "no matching function for call to 'FUN_0040b8b0'"
+      },
+      {
+        "category": "incompatible_types",
+        "column": 11,
+        "line": 41,
+        "message": "no matching function for call to 'FUN_0040b8b0'"
+      },
+      {
+        "category": "incompatible_types",
+        "column": 11,
+        "line": 42,
+        "message": "no matching function for call to 'FUN_0040b930'"
+      },
+      {
+        "category": "incompatible_types",
+        "column": 11,
+        "line": 43,
+        "message": "no matching function for call to 'FUN_005835d0'"
+      },
+      {
+        "category": "incompatible_types",
+        "column": 13,
+        "line": 46,
+        "message": "no matching function for call to 'FUN_0040b400'"
+      }
+    ],
+    "success": false,
+    "warnings": []
+  },
+  "compile_source": "c",
+  "complexity": {
+    "assembly_lines": 394,
+    "complexity_score": 569,
+    "cross_reference_count": 6,
+    "function_call_count": 13,
+    "global_count": 35,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 134,
+    "suspect_count": 40,
+    "suspect_types": [
+      "pointer_cast",
+      "pointer_truncation",
+      "stack_alignment_array",
+      "stack_ref",
+      "undefined_data",
+      "unnamed_param",
+      "warning_type_propagation"
+    ],
+    "total_lines": 528
+  },
+  "cross_references": [
+    {
+      "addr": "0040ff80",
+      "from_addr": "0040ff8f",
+      "name": "FUN_0040ff80",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00489120",
+      "from_addr": "00489190",
+      "name": "FUN_00489120",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004d27b0",
+      "from_addr": "004d2843",
+      "name": "FUN_004d27b0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004f9010",
+      "from_addr": "004f9016",
+      "name": "FUN_004f9010",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00509800",
+      "from_addr": "00509814",
+      "name": "FUN_00509800",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00599bc0",
+      "from_addr": "00599c4d",
+      "name": "FUN_00599bc0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0042b450",
+    "address_range": [
+      [
+        "0042b450",
+        "0042b8cf"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "FUN_0042b450",
+    "signature": "void FUN_0042b450(int param_1)"
+  },
+  "function_calls": [
+    {
+      "addr": "0040b400",
+      "is_variadic": false,
+      "name": "FUN_0040b400"
+    },
+    {
+      "addr": "0040b4a0",
+      "is_variadic": false,
+      "name": "FUN_0040b4a0"
+    },
+    {
+      "addr": "0040b680",
+      "is_variadic": false,
+      "name": "FUN_0040b680"
+    },
+    {
+      "addr": "0040b7a0",
+      "is_variadic": false,
+      "name": "FUN_0040b7a0"
+    },
+    {
+      "addr": "0040b830",
+      "is_variadic": false,
+      "name": "FUN_0040b830"
+    },
+    {
+      "addr": "0040b8b0",
+      "is_variadic": false,
+      "name": "FUN_0040b8b0"
+    },
+    {
+      "addr": "0040b930",
+      "is_variadic": false,
+      "name": "FUN_0040b930"
+    },
+    {
+      "addr": "0040bf20",
+      "is_variadic": false,
+      "name": "FUN_0040bf20"
+    },
+    {
+      "addr": "0040c280",
+      "is_variadic": false,
+      "name": "FUN_0040c280"
+    },
+    {
+      "addr": "005835d0",
+      "is_variadic": false,
+      "name": "FUN_005835d0"
+    },
+    {
+      "addr": "00583940",
+      "is_variadic": false,
+      "name": "FUN_00583940"
+    },
+    {
+      "addr": "00583b10",
+      "is_variadic": false,
+      "name": "FUN_00583b10"
+    },
+    {
+      "addr": "00584450",
+      "is_variadic": false,
+      "name": "FUN_00584450"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005b8020",
+      "name": "s_hitPoints_005b8020",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005b802a",
+      "name": "s_numCarryHands_005b802a",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005b8038",
+      "name": "s_carry_hand_005b8038",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005b8043",
+      "name": "s_carry_actor_005b8043",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005b804f",
+      "name": "s_carry_pos_005b804f",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005b8059",
+      "name": "s_carry_orient_005b8059",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005b8066",
+      "name": "s_numCarryHands_005b8066",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005b8074",
+      "name": "s_carry_hand_005b8074",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005b807f",
+      "name": "s_carry_actor_005b807f",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005b808b",
+      "name": "s_carry_pos_005b808b",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005b8095",
+      "name": "s_carry_orient_005b8095",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005b80a2",
+      "name": "s_talkToMeEvent_005b80a2",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005b80b0",
+      "name": "s_grabbedBy_005b80b0",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005b80ba",
+      "name": "s_grabbedType_005b80ba",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005b80c6",
+      "name": "s_clothList_005b80c6",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005b80d0",
+      "name": "s_sizeScale_005b80d0",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005b80da",
+      "name": "s_healthBarMode_005b80da",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005b80e8",
+      "name": "s_descriptiveName_005b80e8",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005b80f8",
+      "name": "s_maxHitPoints_005b80f8",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005b8105",
+      "name": "s_spectralFlag_005b8105",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005b8112",
+      "name": "s_invulnerableFlag_005b8112",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005b8123",
+      "name": "s_etheralFlag_005b8123",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005b812f",
+      "name": "s_bind_time_005b812f",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005b8139",
+      "name": "s_on_fire_time_005b8139",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005b8146",
+      "name": "s_bind_type_005b8146",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005b8150",
+      "name": "s_additive_005b8150",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005b8159",
+      "name": "s_scriptWalkDest_005b8159",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005b8168",
+      "name": "s_scriptWalkDist_005b8168",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005b8177",
+      "name": "s_scriptRunDist_005b8177",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005b8185",
+      "name": "s_scriptWalkTimer_005b8185",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005b8195",
+      "name": "s_scriptWalkState_005b8195",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005b81a5",
+      "name": "s_scriptDoorToOpen_005b81a5",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005b81b6",
+      "name": "s_been_damaged_005b81b6",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005f0f48",
+      "name": "DAT_005f0f48",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "007df9b8",
+      "name": "DAT_007df9b8",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.863636363636363,
+    "instruction_count": 308,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 2,
+      "BOOL_OR": 1,
+      "BRANCH": 3,
+      "CALL": 38,
+      "CBRANCH": 22,
+      "COPY": 209,
+      "INT_ADD": 147,
+      "INT_AND": 167,
+      "INT_CARRY": 54,
+      "INT_EQUAL": 167,
+      "INT_LESS": 22,
+      "INT_MULT": 22,
+      "INT_NOTEQUAL": 25,
+      "INT_SBORROW": 22,
+      "INT_SCARRY": 57,
+      "INT_SEXT": 24,
+      "INT_SLESS": 83,
+      "INT_SUB": 149,
+      "INT_XOR": 3,
+      "INT_ZEXT": 12,
+      "LOAD": 37,
+      "POPCOUNT": 83,
+      "RETURN": 2,
+      "STORE": 131,
+      "SUBPIECE": 16
+    },
+    "pcode_op_count": 1498
+  },
+  "stack_frame": {
+    "frame_size": 108,
+    "local_size": 108,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_68",
+        "offset": -104,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": false,
+        "name": "local_5c",
+        "offset": -92,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": false,
+        "name": "local_50",
+        "offset": -80,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": false,
+        "name": "local_44",
+        "offset": -68,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": false,
+        "name": "local_38",
+        "offset": -56,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": false,
+        "name": "local_2c",
+        "offset": -44,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": false,
+        "name": "local_20",
+        "offset": -32,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      }
+    ]
+  },
+  "stack_patterns": {
+    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
+    "pattern_count": 1,
+    "pattern_types": [
+      "alt_frame_pointer"
+    ],
+    "patterns": [
+      {
+        "address": "0042b854",
+        "description": "Alternative frame pointer (EDI = ESP)",
+        "impact": "Using non-standard register as frame pointer. Ghidra may not track stack accesses through this register correctly.",
+        "instruction": "MOV EDI,ESP",
+        "pattern_id": "alt_frame_pointer"
+      }
+    ],
+    "severity": "medium"
+  },
+  "static_analysis": {
+    "analyzed_file": "FUN_0042b450.c",
+    "cppcheck_quick": {
+      "diagnostic_count": 4,
+      "diagnostics": [
+        {
+          "check_id": "pointerOutOfBounds",
+          "column": 35,
+          "line": 70,
+          "message": "Undefined behaviour, pointer arithmetic 'aiStack_28+5' is out of bounds.",
+          "severity": "portability"
+        },
+        {
+          "check_id": "uninitvar",
+          "column": 24,
+          "line": 75,
+          "message": "Uninitialized variable: local_5c",
+          "severity": "error"
+        },
+        {
+          "check_id": "uninitvar",
+          "column": 24,
+          "line": 82,
+          "message": "Uninitialized variable: local_2c",
+          "severity": "error"
+        },
+        {
+          "check_id": "legacyUninitvar",
+          "column": 18,
+          "line": 77,
+          "message": "Uninitialized variable: *(uint*)(local_38+(uint)bVar3*-8-0x20)",
+          "severity": "error"
+        }
+      ],
+      "error": null
+    },
+    "file_variant": "raw"
+  },
+  "suspects": [
+    {
+      "description": "Type propagation did not converge",
+      "line": 2,
+      "match": "WARNING: Type propagation algorithm not settling",
+      "severity": "moderate",
+      "text": "/* WARNING: Type propagation algorithm not settling */",
+      "type": "warning_type_propagation"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 4,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "void FUN_0042b450(int param_1)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "StackY array variable (stack alignment artifact)",
+      "line": 10,
+      "match": "aiStackY_1050",
+      "severity": "moderate",
+      "text": "int aiStackY_1050 [1015];",
+      "type": "stack_alignment_array"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 25,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "FUN_0040c280(param_1);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 26,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "FUN_0040b830(param_1 + 0x2538,\"hitPoints\");",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 28,
+      "match": "DAT_007df9b8",
+      "severity": "mild",
+      "text": "if (DAT_007df9b8 == 1) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 32,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "iVar1 = param_1 + 0x25a8;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 37,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "*(uint *)(param_1 + 0x25e8 + aiStack_28[3] * 0x78) = 0x3f800000;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 49,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "iVar1 = param_1;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 55,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "} while (iVar1 != param_1 + 0xf0);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 58,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "iVar1 = param_1 + 0x25a8;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 61,
+      "match": "&stack0xffffff98",
+      "severity": "moderate",
+      "text": "puVar4 = &stack0xffffff98;",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 62,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "if (*(int *)(param_1 + 0x25b0 + local_14 * 0x78) != 0) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 69,
+      "match": "&stack0xffffff9c",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&stack0xffffff9c + (uint)bVar3 * 0xfffffffe * 4) =",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 88,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "FUN_0040b680(param_1 + 0x2698,\"talkToMeEvent\");",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 91,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "FUN_0040b930(param_1 + 0x26fc,\"grabbedBy\");",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 92,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "FUN_0040b8b0(param_1 + 0x2700,\"grabbedType\");",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 93,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "FUN_0040bf20(param_1 + 0x2f08,\"clothList\");",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 96,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "FUN_0040b830(param_1 + 0x27b8,\"sizeScale\");",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 99,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "*(uint *)(param_1 + 0x253c) = *(uint *)(param_1 + 0x2538);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 99,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "*(uint *)(param_1 + 0x253c) = *(uint *)(param_1 + 0x2538);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 102,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "FUN_0040b8b0(param_1 + 0x2540,\"healthBarMode\");",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 103,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "FUN_0040b7a0(param_1 + 0x2544,\"descriptiveName\");",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 104,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "FUN_0040b830(param_1 + 0x253c,\"maxHitPoints\");",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 107,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "FUN_0040b8b0(param_1 + 0x27a8,\"spectralFlag\");",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 110,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "FUN_0040b8b0(param_1 + 0x27b0,\"invulnerableFlag\");",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 113,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "FUN_0040b8b0(param_1 + 0x27a4,\"etheralFlag\");",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 116,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "FUN_0040b830(param_1 + 0x3254,\"bind_time\");",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 117,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "FUN_0040b830(param_1 + 0x3260,\"on_fire_time\");",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 120,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "FUN_0040b8b0(param_1 + 0x3258,\"bind_type\");",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 123,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "FUN_0040b8b0(param_1 + 0xcdc4,\"additive\");",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 126,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "FUN_0040b930(param_1 + 0x2704,\"scriptWalkDest\");",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 127,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "FUN_0040b830(param_1 + 0x2708,\"scriptWalkDist\");",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 128,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "FUN_0040b830(param_1 + 0x270c,\"scriptRunDist\");",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 129,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "FUN_0040b830(param_1 + 10000,\"scriptWalkTimer\");",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 130,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "FUN_0040b8b0(param_1 + 0x273c,\"scriptWalkState\");",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 131,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "FUN_0040b930(param_1 + 0x2740,\"scriptDoorToOpen\");",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 134,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "FUN_0040b8b0(param_1 + 0x3268,\"been_damaged\");",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Pointer value `&stack0xffffff9c` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 69,
+      "match": "(int)&stack0xffffff9c",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&stack0xffffff9c + (uint)bVar3 * 0xfffffffe * 4) =",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 69,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&stack0xffffff9c + (uint)bVar3 * 0xfffffffe * 4) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Uninitialized variable: local_5c",
+      "line": 75,
+      "match": "Cppcheck: uninitialized variable",
+      "severity": "major",
+      "text": "local_68 = local_5c;",
+      "type": "static_uninitvar"
+    },
+    {
+      "description": "Uninitialized variable: local_2c",
+      "line": 82,
+      "match": "Cppcheck: uninitialized variable",
+      "severity": "major",
+      "text": "local_44 = local_2c;",
+      "type": "static_uninitvar"
+    },
+    {
+      "description": "Uninitialized variable: *(uint*)(local_38+(uint)bVar3*-8-0x20)",
+      "line": 77,
+      "match": "Cppcheck: uninitialized variable (legacy detector)",
+      "severity": "major",
+      "text": "*(uint *)(local_38 + (uint)bVar3 * -8 + -0x20);",
+      "type": "static_legacy_uninitvar"
+    }
+  ]
+}
