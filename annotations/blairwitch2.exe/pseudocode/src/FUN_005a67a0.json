@@ -1,0 +1,472 @@
+{
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "other",
+        "column": 25,
+        "line": 28,
+        "message": "unknown type name 'HWND'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 124,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 126,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 191,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 198,
+        "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
+      },
+      {
+        "category": "other",
+        "column": 1,
+        "line": 204,
+        "message": "unknown type name 'MMRESULT'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 16,
+        "message": "unknown type name 'HWND'"
+      },
+      {
+        "category": "other",
+        "column": 56,
+        "line": 237,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 1,
+        "line": 80,
+        "message": "unknown type name 'LPCRITICAL_SECTION'"
+      },
+      {
+        "category": "other",
+        "column": 20,
+        "line": 93,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 131,
+        "message": "unknown type name 'FILETIME'"
+      },
+      {
+        "category": "other",
+        "column": 37,
+        "line": 131,
+        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
+      },
+      {
+        "category": "other",
+        "column": 52,
+        "line": 131,
+        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
+      },
+      {
+        "category": "incompatible_types",
+        "column": 17,
+        "line": 32,
+        "message": "no matching function for call to 'FUN_005b8c30'"
+      },
+      {
+        "category": "incompatible_types",
+        "column": 7,
+        "line": 45,
+        "message": "no matching function for call to 'FUN_00591c10'"
+      },
+      {
+        "category": "incompatible_types",
+        "column": 7,
+        "line": 46,
+        "message": "no matching function for call to 'FUN_005916b0'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 25,
+        "line": 47,
+        "message": "use of undeclared identifier 'stack0xfffffee4'"
+      },
+      {
+        "category": "incompatible_types",
+        "column": 13,
+        "line": 50,
+        "message": "no matching function for call to 'FUN_005b8c30'"
+      },
+      {
+        "category": "incompatible_types",
+        "column": 7,
+        "line": 63,
+        "message": "no matching function for call to 'FUN_00591c10'"
+      }
+    ],
+    "success": false,
+    "warnings": []
+  },
+  "compile_source": "c",
+  "complexity": {
+    "assembly_lines": 156,
+    "complexity_score": 315,
+    "cross_reference_count": 0,
+    "function_call_count": 5,
+    "global_count": 3,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 75,
+    "suspect_count": 21,
+    "suspect_types": [
+      "stack_alignment_array",
+      "stack_ref",
+      "unaffected_reg",
+      "undefined_data",
+      "unnamed_param",
+      "unrolled_memcpy"
+    ],
+    "total_lines": 231
+  },
+  "cross_references": [],
+  "function": {
+    "address": "005a67a0",
+    "address_range": [
+      [
+        "005a67a0",
+        "005a6961"
+      ]
+    ],
+    "convention": "unknown",
+    "is_ebp_frame": true,
+    "name": "FUN_005a67a0",
+    "signature": "void FUN_005a67a0(int param_1,int param_2)"
+  },
+  "function_calls": [
+    {
+      "addr": "0040c8f0",
+      "is_variadic": false,
+      "name": "FUN_0040c8f0"
+    },
+    {
+      "addr": "00429120",
+      "is_variadic": false,
+      "name": "FUN_00429120"
+    },
+    {
+      "addr": "005916b0",
+      "is_variadic": false,
+      "name": "FUN_005916b0"
+    },
+    {
+      "addr": "00591c10",
+      "is_variadic": false,
+      "name": "FUN_00591c10"
+    },
+    {
+      "addr": "005b8c30",
+      "is_variadic": false,
+      "name": "FUN_005b8c30"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005f06be",
+      "name": "s_WOOD_BOWL_KFM_005f06be",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005f06cc",
+      "name": "s_DOLL_KFM_005f06cc",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "007bc9e8",
+      "name": "DAT_007bc9e8",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 0,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.913043478260869,
+    "instruction_count": 138,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 20,
+      "BRANCH": 4,
+      "CALL": 8,
+      "CBRANCH": 5,
+      "COPY": 135,
+      "INT_ADD": 80,
+      "INT_AND": 91,
+      "INT_CARRY": 8,
+      "INT_EQUAL": 50,
+      "INT_LEFT": 8,
+      "INT_LESS": 5,
+      "INT_MULT": 19,
+      "INT_NOTEQUAL": 8,
+      "INT_OR": 20,
+      "INT_SBORROW": 5,
+      "INT_SCARRY": 8,
+      "INT_SLESS": 30,
+      "INT_SUB": 56,
+      "INT_XOR": 6,
+      "INT_ZEXT": 16,
+      "LOAD": 22,
+      "POPCOUNT": 22,
+      "RETURN": 1,
+      "STORE": 51
+    },
+    "pcode_op_count": 678
+  },
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "static_analysis": {
+    "analyzed_file": "FUN_005a67a0.c",
+    "cppcheck_quick": {
+      "diagnostic_count": 2,
+      "diagnostics": [
+        {
+          "check_id": "arrayIndexOutOfBounds",
+          "column": 17,
+          "line": 40,
+          "message": "Array 'aiStack_58[14]' accessed at index 15, which is out of bounds.",
+          "severity": "error"
+        },
+        {
+          "check_id": "arrayIndexOutOfBounds",
+          "column": 17,
+          "line": 41,
+          "message": "Array 'aiStack_58[14]' accessed at index 16, which is out of bounds.",
+          "severity": "error"
+        }
+      ],
+      "error": null
+    },
+    "file_variant": "raw"
+  },
+  "suspects": [
+    {
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "void FUN_005a67a0(int param_1,int param_2)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "void FUN_005a67a0(int param_1,int param_2)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 6,
+      "match": "unaff_ESI",
+      "severity": "moderate",
+      "text": "uint *unaff_ESI;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "StackY array variable (stack alignment artifact)",
+      "line": 10,
+      "match": "aiStackY_1044",
+      "severity": "moderate",
+      "text": "int aiStackY_1044 [943];",
+      "type": "stack_alignment_array"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 22,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "iStack_10 = param_1 + param_2 * 0x78;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 22,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "iStack_10 = param_1 + param_2 * 0x78;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 23,
+      "match": "DAT_007bc9e8",
+      "severity": "mild",
+      "text": "iVar1 = FUN_0040c8f0(*(uint *)(iStack_10 + 0x2620),DAT_007bc9e8);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 26,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "iStack_14 = param_1 + 0x1134;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 40,
+      "match": "&stack0xfffffee4",
+      "severity": "moderate",
+      "text": "puVar2 = (uint *)&stack0xfffffee4;",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 62,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "FUN_00429120(param_1,param_2);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 62,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "FUN_00429120(param_1,param_2);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 63,
+      "match": "&stack0xfffffeb4",
+      "severity": "moderate",
+      "text": "puVar2 = (uint *)&stack0xfffffeb4;",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 65,
+      "match": "&stack0xfffffe84",
+      "severity": "moderate",
+      "text": "puVar3 = (uint *)&stack0xfffffe84;",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 71,
+      "match": "&stack0xfffffe84",
+      "severity": "moderate",
+      "text": "puVar2 = (uint *)&stack0xfffffe84;",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 73,
+      "match": "unaff_ESI",
+      "severity": "moderate",
+      "text": "*unaff_ESI = *puVar2;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 75,
+      "match": "unaff_ESI",
+      "severity": "moderate",
+      "text": "unaff_ESI = unaff_ESI + (uint)bVar4 * -2 + 1;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 75,
+      "match": "unaff_ESI",
+      "severity": "moderate",
+      "text": "unaff_ESI = unaff_ESI + (uint)bVar4 * -2 + 1;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
+      "line": 66,
+      "match": "for (...; != 0; ... + -1)",
+      "severity": "moderate",
+      "text": "for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
+      "line": 72,
+      "match": "for (...; != 0; ... + -1)",
+      "severity": "moderate",
+      "text": "for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom inline memcpy (REP MOVSD at 005a6844, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
+      "line": 58,
+      "match": "MOVSD.REP",
+      "severity": "moderate",
+      "text": "// 005a6844: MOVSD.REP ES:EDI,ESI",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom inline memcpy (REP MOVSD at 005a6853, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
+      "line": 62,
+      "match": "MOVSD.REP",
+      "severity": "moderate",
+      "text": "// 005a6853: MOVSD.REP ES:EDI,ESI",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Array 'aiStack_58[14]' accessed at index 15, which is out of bounds.",
+      "line": 40,
+      "match": "Cppcheck: array index out of bounds",
+      "severity": "major",
+      "text": "aiStack_58[(uint)bVar4 * -2 + 0xf] = aiStack_58[(uint)bVar4 * -2];",
+      "type": "static_array_oob"
+    },
+    {
+      "description": "Array 'aiStack_58[14]' accessed at index 16, which is out of bounds.",
+      "line": 41,
+      "match": "Cppcheck: array index out of bounds",
+      "severity": "major",
+      "text": "aiStack_58[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 0x10] =",
+      "type": "static_array_oob"
+    }
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "Unknown",
+        "offset": 72,
+        "vtable_addr": "005ffd90"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

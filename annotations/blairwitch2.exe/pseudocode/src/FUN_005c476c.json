@@ -1,0 +1,315 @@
+{
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "other",
+        "column": 25,
+        "line": 28,
+        "message": "unknown type name 'HWND'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 124,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 126,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 191,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 198,
+        "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
+      },
+      {
+        "category": "other",
+        "column": 1,
+        "line": 204,
+        "message": "unknown type name 'MMRESULT'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 16,
+        "message": "unknown type name 'HWND'"
+      },
+      {
+        "category": "other",
+        "column": 56,
+        "line": 237,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 1,
+        "line": 80,
+        "message": "unknown type name 'LPCRITICAL_SECTION'"
+      },
+      {
+        "category": "other",
+        "column": 20,
+        "line": 93,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 131,
+        "message": "unknown type name 'FILETIME'"
+      },
+      {
+        "category": "other",
+        "column": 37,
+        "line": 131,
+        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
+      },
+      {
+        "category": "other",
+        "column": 52,
+        "line": 131,
+        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
+      },
+      {
+        "category": "incompatible_types",
+        "column": 11,
+        "line": 18,
+        "message": "assigning to 'ulonglong' (aka 'unsigned long long') from incompatible type 'void'"
+      },
+      {
+        "category": "cast_error",
+        "column": 28,
+        "line": 20,
+        "message": "cast from pointer to smaller type 'short' loses information"
+      }
+    ],
+    "success": false,
+    "warnings": []
+  },
+  "compile_source": "c",
+  "complexity": {
+    "assembly_lines": 56,
+    "complexity_score": 112,
+    "cross_reference_count": 1,
+    "function_call_count": 1,
+    "global_count": 0,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 12,
+    "suspect_count": 9,
+    "suspect_types": [
+      "pointer_truncation",
+      "register_param"
+    ],
+    "total_lines": 68
+  },
+  "cross_references": [
+    {
+      "addr": "005c1d70",
+      "from_addr": "005c1ed0",
+      "name": "FUN_005c1d70",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "005c476c",
+    "address_range": [
+      [
+        "005c476c",
+        "005c47cd"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "FUN_005c476c",
+    "signature": "void FUN_005c476c(void)"
+  },
+  "function_calls": [
+    {
+      "addr": "005c47ce",
+      "is_variadic": false,
+      "name": "FUN_005c47ce"
+    }
+  ],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "005c1ed0",
+        "call_type": "direct",
+        "caller": "FUN_005c1d70",
+        "estimated_params": 2,
+        "instructions_analyzed": 5,
+        "method": "push_count",
+        "reg_params": [
+          "EAX",
+          "EDX"
+        ],
+        "stack_bytes": 0,
+        "stack_params": 0
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 2,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 6.68,
+    "instruction_count": 50,
+    "opcode_distribution": {
+      "BOOL_OR": 10,
+      "BOOL_XOR": 10,
+      "BRANCH": 1,
+      "CALL": 1,
+      "CBRANCH": 1,
+      "COPY": 31,
+      "INT_ADD": 35,
+      "INT_AND": 47,
+      "INT_CARRY": 25,
+      "INT_EQUAL": 46,
+      "INT_LESS": 6,
+      "INT_SBORROW": 6,
+      "INT_SCARRY": 26,
+      "INT_SLESS": 23,
+      "INT_SUB": 13,
+      "INT_ZEXT": 10,
+      "LOAD": 9,
+      "POPCOUNT": 23,
+      "RETURN": 1,
+      "STORE": 10
+    },
+    "pcode_op_count": 334
+  },
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "static_analysis": {
+    "analyzed_file": "FUN_005c476c.c",
+    "cppcheck_quick": {
+      "diagnostic_count": 2,
+      "diagnostics": [
+        {
+          "check_id": "uninitvar",
+          "column": 11,
+          "line": 16,
+          "message": "Uninitialized variable: in_EAX",
+          "severity": "error"
+        },
+        {
+          "check_id": "uninitvar",
+          "column": 4,
+          "line": 19,
+          "message": "Uninitialized variable: in_EDX",
+          "severity": "error"
+        }
+      ],
+      "error": null
+    },
+    "file_variant": "raw"
+  },
+  "suspects": [
+    {
+      "description": "Inferred register parameter",
+      "line": 5,
+      "match": "in_EAX",
+      "severity": "mild",
+      "text": "char *in_EAX;",
+      "type": "register_param"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 6,
+      "match": "in_EDX",
+      "severity": "mild",
+      "text": "ulonglong *in_EDX;",
+      "type": "register_param"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 9,
+      "match": "in_EAX",
+      "severity": "mild",
+      "text": "for (; *in_EAX != '\\0'; in_EAX = in_EAX + 1) {",
+      "type": "register_param"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 9,
+      "match": "in_EAX",
+      "severity": "mild",
+      "text": "for (; *in_EAX != '\\0'; in_EAX = in_EAX + 1) {",
+      "type": "register_param"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 9,
+      "match": "in_EAX",
+      "severity": "mild",
+      "text": "for (; *in_EAX != '\\0'; in_EAX = in_EAX + 1) {",
+      "type": "register_param"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 12,
+      "match": "in_EDX",
+      "severity": "mild",
+      "text": "*in_EDX = uVar1;",
+      "type": "register_param"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 13,
+      "match": "in_EDX",
+      "severity": "mild",
+      "text": "*(short *)(in_EDX + 1) = (short)in_EAX;",
+      "type": "register_param"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 13,
+      "match": "in_EAX",
+      "severity": "mild",
+      "text": "*(short *)(in_EDX + 1) = (short)in_EAX;",
+      "type": "register_param"
+    },
+    {
+      "description": "Pointer value `in_EAX` truncated by cast to `short` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 13,
+      "match": "(short)in_EAX",
+      "severity": "moderate",
+      "text": "*(short *)(in_EDX + 1) = (short)in_EAX;",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Uninitialized variable: in_EAX",
+      "line": 16,
+      "match": "Cppcheck: uninitialized variable",
+      "severity": "major",
+      "text": "for (; *in_EAX != '\\0'; in_EAX = in_EAX + 1) {",
+      "type": "static_uninitvar"
+    },
+    {
+      "description": "Uninitialized variable: in_EDX",
+      "line": 19,
+      "match": "Cppcheck: uninitialized variable",
+      "severity": "major",
+      "text": "*in_EDX = uVar1;",
+      "type": "static_uninitvar"
+    }
+  ]
+}

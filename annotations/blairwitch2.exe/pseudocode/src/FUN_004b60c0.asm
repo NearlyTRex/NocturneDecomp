@@ -1,0 +1,98 @@
+; *****************************************************************************
+;                               FUNCTION
+; *****************************************************************************
+; void FUN_004b60c0(int param_1)
+;
+; Local Variables:
+; undefined        Stack[-0x18]:1  local_18
+;
+; XREF[1]:
+;   FUN_004b6170 at 004b67ea
+;
+; Referenced Globals:
+;   TerminatedCString s_test_logo_005d76c1
+;   undefined4 DAT_006141bc
+;   undefined4 DAT_00618170
+;   undefined4 DAT_01511cc0
+;   undefined4 DAT_01c25590
+;   undefined4 DAT_01d192f8
+;
+; Called Functions:
+;   FUN_0040d420
+;   FUN_0040d440
+;   FUN_0040d5a0
+;   FUN_0040d900
+;   FUN_0055b1f0
+;   FUN_00588a50
+;   FUN_00589560
+;   thunk_FUN_00588ff0
+;
+; *****************************************************************************
+
+section .text
+
+    PUSH EBX                            ; 004b60c0
+        ;   Label: FUN_004b60c0
+    SUB ESP,0x14                        ; 004b60c1
+    CALL thunk_FUN_00588ff0             ; 004b60c4
+        ;   XREF to: 00402ad0 (UNCONDITIONAL_CALL)  ; undefined thunk_FUN_00588ff0()
+    CMP dword ptr [0x006141bc],0x1e0    ; 004b60c9 | DAT_006141bc
+    JNZ 0x004b60df                      ; 004b60d3
+        ;   XREF to: 004b60df (CONDITIONAL_JUMP)  ; LAB_004b60df
+    MOV EAX,dword ptr [ESP + 0x1c]      ; 004b60d5
+    CMP dword ptr [EAX + 0x8],0x20      ; 004b60d9
+    JZ 0x004b60f3                       ; 004b60dd
+        ;   XREF to: 004b60f3 (CONDITIONAL_JUMP)  ; LAB_004b60f3
+    PUSH 0x20                           ; 004b60df
+        ;   Label: LAB_004b60df
+    PUSH 0x1e0                          ; 004b60e1
+    PUSH 0x280                          ; 004b60e6
+    CALL FUN_00588a50                   ; 004b60eb
+        ;   XREF to: 00588a50 (UNCONDITIONAL_CALL)  ; undefined FUN_00588a50()
+    ADD ESP,0xc                         ; 004b60f0
+    MOV EAX,[0x00618170]                ; 004b60f3 | DAT_00618170
+        ;   Label: LAB_004b60f3
+    CMP dword ptr [EAX + 0x1008],0x0    ; 004b60f8 | DAT_01d192f8
+    JZ 0x004b615c                       ; 004b60ff
+        ;   XREF to: 004b615c (CONDITIONAL_JUMP)  ; LAB_004b615c
+    CALL FUN_0055b1f0                   ; 004b6101
+        ;   XREF to: 0055b1f0 (UNCONDITIONAL_CALL)  ; undefined FUN_0055b1f0()
+        ;   Label: LAB_004b6101
+    MOV EAX,ESP                         ; 004b6106
+    PUSH EAX                            ; 004b6108
+    CALL FUN_0040d420                   ; 004b6109
+        ;   XREF to: 0040d420 (UNCONDITIONAL_CALL)  ; undefined FUN_0040d420()
+    ADD ESP,0x4                         ; 004b610e
+    PUSH 0x1e0                          ; 004b6111
+    PUSH 0x280                          ; 004b6116
+    PUSH 0x5d76c1                       ; 004b611b | = "test_logo"
+    LEA EAX,[ESP + 0xc]                 ; 004b6120
+    PUSH EAX                            ; 004b6124
+    CALL FUN_0040d5a0                   ; 004b6125
+        ;   XREF to: 0040d5a0 (UNCONDITIONAL_CALL)  ; undefined FUN_0040d5a0()
+    ADD ESP,0x10                        ; 004b612a
+    PUSH 0x8000                         ; 004b612d
+    PUSH 0x0                            ; 004b6132
+    PUSH 0x0                            ; 004b6134
+    LEA EAX,[ESP + 0xc]                 ; 004b6136
+    PUSH EAX                            ; 004b613a
+    CALL FUN_0040d900                   ; 004b613b
+        ;   XREF to: 0040d900 (UNCONDITIONAL_CALL)  ; undefined FUN_0040d900()
+    ADD ESP,0x10                        ; 004b6140
+    CALL FUN_00589560                   ; 004b6143
+        ;   XREF to: 00589560 (UNCONDITIONAL_CALL)  ; undefined FUN_00589560()
+    PUSH 0x0                            ; 004b6148
+    LEA EAX,[ESP + 0x4]                 ; 004b614a
+    PUSH EAX                            ; 004b614e
+    CALL FUN_0040d440                   ; 004b614f
+        ;   XREF to: 0040d440 (UNCONDITIONAL_CALL)  ; undefined FUN_0040d440()
+    ADD ESP,0x8                         ; 004b6154
+    ADD ESP,0x14                        ; 004b6157
+    POP EBX                             ; 004b615a
+    RET                                 ; 004b615b
+    MOV EAX,[0x01511cc0]                ; 004b615c | DAT_01511cc0
+        ;   Label: LAB_004b615c
+    MOV [0x01c25590],EAX                ; 004b6161 | DAT_01c25590
+    JMP 0x004b6101                      ; 004b6166
+        ;   XREF to: 004b6101 (UNCONDITIONAL_JUMP)  ; LAB_004b6101
+

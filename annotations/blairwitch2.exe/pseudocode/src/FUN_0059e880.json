@@ -1,0 +1,367 @@
+{
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "other",
+        "column": 25,
+        "line": 28,
+        "message": "unknown type name 'HWND'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 124,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 126,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 191,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 198,
+        "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
+      },
+      {
+        "category": "other",
+        "column": 1,
+        "line": 204,
+        "message": "unknown type name 'MMRESULT'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 16,
+        "message": "unknown type name 'HWND'"
+      },
+      {
+        "category": "other",
+        "column": 56,
+        "line": 237,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 1,
+        "line": 80,
+        "message": "unknown type name 'LPCRITICAL_SECTION'"
+      },
+      {
+        "category": "other",
+        "column": 20,
+        "line": 93,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 131,
+        "message": "unknown type name 'FILETIME'"
+      },
+      {
+        "category": "other",
+        "column": 37,
+        "line": 131,
+        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
+      },
+      {
+        "category": "other",
+        "column": 52,
+        "line": 131,
+        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
+      },
+      {
+        "category": "incompatible_types",
+        "column": 5,
+        "line": 13,
+        "message": "no matching function for call to 'FUN_0055ae50'"
+      }
+    ],
+    "success": false,
+    "warnings": []
+  },
+  "compile_source": "c",
+  "complexity": {
+    "assembly_lines": 22,
+    "complexity_score": 83,
+    "cross_reference_count": 3,
+    "function_call_count": 1,
+    "global_count": 1,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 8,
+    "suspect_count": 7,
+    "suspect_types": [
+      "unnamed_param"
+    ],
+    "total_lines": 30
+  },
+  "cross_references": [
+    {
+      "addr": "005a1350",
+      "from_addr": "005a137b",
+      "name": "FUN_005a1350",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005a2e30",
+      "from_addr": "005a2e67",
+      "name": "FUN_005a2e30",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005a3420",
+      "from_addr": "005a345e",
+      "name": "FUN_005a3420",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0059e880",
+    "address_range": [
+      [
+        "0059e880",
+        "0059e8b3"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "FUN_0059e880",
+    "signature": "void FUN_0059e880(int param_1,int param_2)"
+  },
+  "function_calls": [
+    {
+      "addr": "0055ae50",
+      "is_variadic": false,
+      "name": "FUN_0055ae50"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0061c068",
+      "name": "DAT_0061c068",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 8,
+    "call_sites": [
+      {
+        "call_addr": "005a137b",
+        "call_type": "direct",
+        "caller": "FUN_005a1350",
+        "estimated_params": 3,
+        "instructions_analyzed": 5,
+        "method": "push_count",
+        "reg_params": [
+          "EDX"
+        ],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "005a13c7",
+        "call_type": "direct",
+        "caller": "FUN_005a1350",
+        "estimated_params": 3,
+        "instructions_analyzed": 6,
+        "method": "push_count",
+        "reg_params": [
+          "EDX"
+        ],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "005a1411",
+        "call_type": "direct",
+        "caller": "FUN_005a1350",
+        "estimated_params": 3,
+        "instructions_analyzed": 5,
+        "method": "push_count",
+        "reg_params": [
+          "EDX"
+        ],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "005a1450",
+        "call_type": "direct",
+        "caller": "FUN_005a1350",
+        "estimated_params": 3,
+        "instructions_analyzed": 5,
+        "method": "push_count",
+        "reg_params": [
+          "EDX"
+        ],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "005a147b",
+        "call_type": "direct",
+        "caller": "FUN_005a1350",
+        "estimated_params": 3,
+        "instructions_analyzed": 5,
+        "method": "push_count",
+        "reg_params": [
+          "EDX"
+        ],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "005a345e",
+        "call_type": "direct",
+        "caller": "FUN_005a3420",
+        "estimated_params": 3,
+        "instructions_analyzed": 5,
+        "method": "push_count",
+        "reg_params": [
+          "EDX"
+        ],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "005a349d",
+        "call_type": "direct",
+        "caller": "FUN_005a3420",
+        "estimated_params": 3,
+        "instructions_analyzed": 5,
+        "method": "push_count",
+        "reg_params": [
+          "EDX"
+        ],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "005a2e67",
+        "call_type": "direct",
+        "caller": "FUN_005a2e30",
+        "estimated_params": 2,
+        "instructions_analyzed": 4,
+        "method": "push_count",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 3,
+    "matches_declared": false
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.125,
+    "instruction_count": 16,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 2,
+      "CALL": 1,
+      "CBRANCH": 2,
+      "COPY": 10,
+      "INT_ADD": 8,
+      "INT_AND": 6,
+      "INT_CARRY": 1,
+      "INT_EQUAL": 6,
+      "INT_LESS": 2,
+      "INT_SBORROW": 2,
+      "INT_SCARRY": 1,
+      "INT_SLESS": 3,
+      "INT_SUB": 7,
+      "LOAD": 5,
+      "POPCOUNT": 3,
+      "RETURN": 2,
+      "STORE": 5
+    },
+    "pcode_op_count": 66
+  },
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "void FUN_0059e880(int param_1,int param_2)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "void FUN_0059e880(int param_1,int param_2)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 5,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "if ((param_2 == 7000) && (*(char *)(param_1 + 0x11642) != '\\0')) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 5,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "if ((param_2 == 7000) && (*(char *)(param_1 + 0x11642) != '\\0')) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 6,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "FUN_0055ae50(0x0264B290,param_1,param_1 + 0x11642,param_1 + 0x20);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 6,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "FUN_0055ae50(0x0264B290,param_1,param_1 + 0x11642,param_1 + 0x20);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 6,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "FUN_0055ae50(0x0264B290,param_1,param_1 + 0x11642,param_1 + 0x20);",
+      "type": "unnamed_param"
+    }
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "Unknown",
+        "offset": 16,
+        "vtable_addr": "005fed5c"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

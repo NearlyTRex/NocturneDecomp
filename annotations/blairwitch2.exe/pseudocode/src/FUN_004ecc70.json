@@ -1,0 +1,741 @@
+{
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "other",
+        "column": 25,
+        "line": 28,
+        "message": "unknown type name 'HWND'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 124,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 126,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 191,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 198,
+        "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
+      },
+      {
+        "category": "other",
+        "column": 1,
+        "line": 204,
+        "message": "unknown type name 'MMRESULT'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 16,
+        "message": "unknown type name 'HWND'"
+      },
+      {
+        "category": "other",
+        "column": 56,
+        "line": 237,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 1,
+        "line": 80,
+        "message": "unknown type name 'LPCRITICAL_SECTION'"
+      },
+      {
+        "category": "other",
+        "column": 20,
+        "line": 93,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 131,
+        "message": "unknown type name 'FILETIME'"
+      },
+      {
+        "category": "other",
+        "column": 37,
+        "line": 131,
+        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
+      },
+      {
+        "category": "other",
+        "column": 52,
+        "line": 131,
+        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
+      },
+      {
+        "category": "incompatible_types",
+        "column": 3,
+        "line": 31,
+        "message": "no matching function for call to 'FUN_004b3000'"
+      },
+      {
+        "category": "incompatible_types",
+        "column": 5,
+        "line": 41,
+        "message": "no matching function for call to 'FUN_004b3010'"
+      },
+      {
+        "category": "incompatible_types",
+        "column": 5,
+        "line": 44,
+        "message": "no matching function for call to 'FUN_005344c0'"
+      },
+      {
+        "category": "incompatible_types",
+        "column": 5,
+        "line": 46,
+        "message": "no matching function for call to 'FUN_005024a0'"
+      },
+      {
+        "category": "incompatible_types",
+        "column": 5,
+        "line": 63,
+        "message": "no matching function for call to 'FUN_0050fe80'"
+      },
+      {
+        "category": "incompatible_types",
+        "column": 5,
+        "line": 64,
+        "message": "no matching function for call to 'FUN_005b7790'"
+      }
+    ],
+    "success": false,
+    "warnings": []
+  },
+  "compile_source": "c",
+  "complexity": {
+    "assembly_lines": 510,
+    "complexity_score": 429,
+    "cross_reference_count": 1,
+    "function_call_count": 12,
+    "global_count": 41,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 209,
+    "suspect_count": 18,
+    "suspect_types": [
+      "concat_reconstruction",
+      "raw_address_constant",
+      "raw_address_pointer_store",
+      "unresolved_funcptr",
+      "unrolled_strcat",
+      "unrolled_strcpy",
+      "unrolled_strlen",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 719
+  },
+  "cross_references": [
+    {
+      "addr": "004ee1a0",
+      "from_addr": "004ee37a",
+      "name": "FUN_004ee1a0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004ecc70",
+    "address_range": [
+      [
+        "004ecc70",
+        "004ed207"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "FUN_004ecc70",
+    "signature": "void FUN_004ecc70(void)"
+  },
+  "function_calls": [
+    {
+      "addr": "004b3000",
+      "is_variadic": false,
+      "name": "FUN_004b3000"
+    },
+    {
+      "addr": "004b3010",
+      "is_variadic": false,
+      "name": "FUN_004b3010"
+    },
+    {
+      "addr": "004eb0e0",
+      "is_variadic": false,
+      "name": "FUN_004eb0e0"
+    },
+    {
+      "addr": "004eb490",
+      "is_variadic": false,
+      "name": "FUN_004eb490"
+    },
+    {
+      "addr": "004eb7c0",
+      "is_variadic": false,
+      "name": "FUN_004eb7c0"
+    },
+    {
+      "addr": "004eed60",
+      "is_variadic": false,
+      "name": "FUN_004eed60"
+    },
+    {
+      "addr": "005024a0",
+      "is_variadic": false,
+      "name": "FUN_005024a0"
+    },
+    {
+      "addr": "00502510",
+      "is_variadic": false,
+      "name": "FUN_00502510"
+    },
+    {
+      "addr": "0050fe80",
+      "is_variadic": false,
+      "name": "FUN_0050fe80"
+    },
+    {
+      "addr": "005344c0",
+      "is_variadic": false,
+      "name": "FUN_005344c0"
+    },
+    {
+      "addr": "00589560",
+      "is_variadic": false,
+      "name": "FUN_00589560"
+    },
+    {
+      "addr": "005b7790",
+      "is_variadic": false,
+      "name": "FUN_005b7790"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "004ecc34",
+      "name": "switchdataD_004ecc34",
+      "type": "void*",
+      "value": "004ecd46"
+    },
+    {
+      "addr": "004ecc44",
+      "name": "switchdataD_004ecc44",
+      "type": "void*",
+      "value": "004ecfc3"
+    },
+    {
+      "addr": "005dcf1d",
+      "name": "s_Control_Keyboard_005dcf1c+1",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005dcf30",
+      "name": "s_Control_Keyboard_Mouse_005dcf30",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005dcf49",
+      "name": "s_Control_Gamepad_005dcf49",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005dcf5b",
+      "name": "s_Control_Mouse_005dcf5b",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005dcf6b",
+      "name": "s_Customize_Keys_005dcf6b",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005dcf7a",
+      "name": "s_Always_run_ON_005dcf7a",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005dcf8a",
+      "name": "s_Always_run_OFF_005dcf8a",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005dcf9b",
+      "name": "s_Aiming_Auto_005dcf9b",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005dcfa9",
+      "name": "s_Aiming_Kindof_auto_005dcfa9",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005dcfbe",
+      "name": "s_Aiming_Manual_005dcfbe",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005dcfce",
+      "name": "s_Auto_use_health_On_005dcfce",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005dcfe3",
+      "name": "s_Auto_use_health_Off_005dcfe3",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005dcff9",
+      "name": "s_X_axis_sensitivity_005dcff9",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005dd00f",
+      "name": "s_s_5_2f_005dd00f",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005dd015",
+      "name": "s_Y_axis_sensitivity_005dd015",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005dd02b",
+      "name": "s_s_5_2f_005dd02b",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005dd031",
+      "name": "s_Invert_Y_Axis_ON_005dd031",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005dd044",
+      "name": "s_Invert_Y_Axis_OFF_005dd044",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005dd058",
+      "name": "s_Calibrate_005dd058",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005dd062",
+      "name": "s_Control_Options_005dd062",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005dd072",
+      "name": "s_Adjust_X_Axis_sensitivit_005dd072",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005dd08c",
+      "name": "s_Adjust_Y_Axis_sensitivit_005dd08c",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005dd0ad",
+      "name": "DAT_005dd0ad",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00616494",
+      "name": "DAT_00616494",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00617dd4",
+      "name": "DAT_00617dd4",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0061b5a8",
+      "name": "DAT_0061b5a8",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01cb69a8",
+      "name": "DAT_01cb69a8",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01cb69ac",
+      "name": "DAT_01cb69ac",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01cb69b0",
+      "name": "DAT_01cb69b0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01cb69b4",
+      "name": "DAT_01cb69b4",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01cb69b8",
+      "name": "DAT_01cb69b8",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01cb69d0",
+      "name": "DAT_01cb69d0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01cb69d8",
+      "name": "DAT_01cb69d8",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01cb69dc",
+      "name": "DAT_01cb69dc",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01cb6b84",
+      "name": "DAT_01cb6b84",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d02f84",
+      "name": "DAT_01d02f84",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d0612c",
+      "name": "DAT_01d0612c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01fc103c",
+      "name": "DAT_01fc103c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01fc104c",
+      "name": "DAT_01fc104c",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "004ee37a",
+        "call_type": "direct",
+        "caller": "FUN_004ee1a0",
+        "estimated_params": 1,
+        "instructions_analyzed": 3,
+        "method": "push_count",
+        "reg_params": [
+          "EBX"
+        ],
+        "stack_bytes": 0,
+        "stack_params": 0
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.221635883905013,
+    "instruction_count": 379,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 58,
+      "BOOL_OR": 4,
+      "BRANCH": 22,
+      "BRANCHIND": 2,
+      "CALL": 33,
+      "CALLIND": 1,
+      "CBRANCH": 33,
+      "COPY": 265,
+      "FLOAT2FLOAT": 4,
+      "FLOAT_MULT": 2,
+      "INT2FLOAT": 2,
+      "INT_ADD": 119,
+      "INT_AND": 332,
+      "INT_CARRY": 51,
+      "INT_EQUAL": 246,
+      "INT_LEFT": 16,
+      "INT_LESS": 36,
+      "INT_MULT": 4,
+      "INT_NOTEQUAL": 18,
+      "INT_OR": 40,
+      "INT_SBORROW": 40,
+      "INT_SCARRY": 59,
+      "INT_SLESS": 134,
+      "INT_SUB": 153,
+      "INT_XOR": 11,
+      "INT_ZEXT": 2,
+      "LOAD": 45,
+      "POPCOUNT": 118,
+      "RETURN": 1,
+      "STORE": 128
+    },
+    "pcode_op_count": 1979
+  },
+  "stack_frame": {
+    "frame_size": 288,
+    "local_size": 288,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_11c",
+        "offset": -284,
+        "size": 8,
+        "type": "undefined8"
+      },
+      {
+        "is_param": false,
+        "name": "local_114",
+        "offset": -276,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": false,
+        "name": "local_113",
+        "offset": -275,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      }
+    ]
+  },
+  "stack_patterns": {
+    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
+    "pattern_count": 2,
+    "pattern_types": [
+      "alt_frame_pointer"
+    ],
+    "patterns": [
+      {
+        "address": "004ece98",
+        "description": "Alternative frame pointer (ESI = ESP)",
+        "impact": "Using non-standard register as frame pointer. Ghidra may not track stack accesses through this register correctly.",
+        "instruction": "MOV ESI,ESP",
+        "pattern_id": "alt_frame_pointer"
+      },
+      {
+        "address": "004ecf1a",
+        "description": "Alternative frame pointer (ESI = ESP)",
+        "impact": "Using non-standard register as frame pointer. Ghidra may not track stack accesses through this register correctly.",
+        "instruction": "MOV ESI,ESP",
+        "pattern_id": "alt_frame_pointer"
+      }
+    ],
+    "severity": "medium"
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
+      "line": 206,
+      "match": "*(code **)(*0x01D02F84",
+      "severity": "moderate",
+      "text": "iVar3 = (**(code **)(*0x01D02F84 + 4))(0x01D02F84);",
+      "type": "raw_address_pointer_store"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 206,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "iVar3 = (**(code **)(*0x01D02F84 + 4))(0x01D02F84);",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Raw hex address 0x1d06b80 assigned to bare local `iVar6`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `iVar6` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
+      "line": 22,
+      "match": "0x1d06b80",
+      "severity": "moderate",
+      "text": "iVar6 = 0x1d06b80;",
+      "type": "raw_address_constant"
+    },
+    {
+      "description": "Raw hex address 0x1e661b8 assigned to bare local `iVar3`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `iVar3` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
+      "line": 35,
+      "match": "0x1e661b8",
+      "severity": "moderate",
+      "text": "iVar3 = 0x01E661B8;",
+      "type": "raw_address_constant"
+    },
+    {
+      "description": "Raw hex address 0x1cb6900 assigned to bare local `iVar3`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `iVar3` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
+      "line": 41,
+      "match": "0x1cb6900",
+      "severity": "moderate",
+      "text": "iVar3 = 0x01CB6900;",
+      "type": "raw_address_constant"
+    },
+    {
+      "description": "Raw hex address 0x1cb6900 assigned to bare local `iVar3`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `iVar3` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
+      "line": 155,
+      "match": "0x1cb6900",
+      "severity": "moderate",
+      "text": "iVar3 = 0x01CB6900;",
+      "type": "raw_address_constant"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 84,
+      "match": "do {",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 105,
+      "match": "do {",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 116,
+      "match": "do {",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 138,
+      "match": "do {",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    },
+    {
+      "description": "Ghidra CONCAT44 reconstruction (stitches narrow values into a wider one) \u2014 a Watcom wide-value artifact, not real C. Reduce to the proper form (e.g. sign-extend `(longlong)(int)x`, 64-bit math, or a typed field) in a .keep.",
+      "line": 68,
+      "match": "CONCAT44",
+      "severity": "moderate",
+      "text": "uVar11 = CONCAT44(uVar4,0x1d06e80);",
+      "type": "concat_reconstruction"
+    },
+    {
+      "description": "Ghidra CONCAT44 reconstruction (stitches narrow values into a wider one) \u2014 a Watcom wide-value artifact, not real C. Reduce to the proper form (e.g. sign-extend `(longlong)(int)x`, 64-bit math, or a typed field) in a .keep.",
+      "line": 72,
+      "match": "CONCAT44",
+      "severity": "moderate",
+      "text": "uVar11 = CONCAT44(uVar4,0x1d06e80);",
+      "type": "concat_reconstruction"
+    },
+    {
+      "description": "Ghidra CONCAT44 reconstruction (stitches narrow values into a wider one) \u2014 a Watcom wide-value artifact, not real C. Reduce to the proper form (e.g. sign-extend `(longlong)(int)x`, 64-bit math, or a typed field) in a .keep.",
+      "line": 77,
+      "match": "CONCAT44",
+      "severity": "moderate",
+      "text": "uVar11 = CONCAT44(uVar4,0x1d06e80);",
+      "type": "concat_reconstruction"
+    },
+    {
+      "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
+      "line": 96,
+      "match": "do { if (v==0) break; v=v-1; ... }",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strlen"
+    },
+    {
+      "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
+      "line": 129,
+      "match": "do { if (v==0) break; v=v-1; ... }",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strlen"
+    },
+    {
+      "description": "Watcom loop-unrolled strcat (strlen scan followed by `= <p> + -1` adjust and a 2-byte strcpy onto the null terminator). Replace the whole strlen + strcpy pair with strcat(dst, src) in a .keep.",
+      "line": 96,
+      "match": "strlen + <p> + -1 + strcpy",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcat"
+    },
+    {
+      "description": "Watcom loop-unrolled strcat (strlen scan followed by `= <p> + -1` adjust and a 2-byte strcpy onto the null terminator). Replace the whole strlen + strcpy pair with strcat(dst, src) in a .keep.",
+      "line": 129,
+      "match": "strlen + <p> + -1 + strcpy",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcat"
+    }
+  ]
+}

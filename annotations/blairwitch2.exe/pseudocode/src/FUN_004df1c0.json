@@ -1,0 +1,399 @@
+{
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "other",
+        "column": 25,
+        "line": 28,
+        "message": "unknown type name 'HWND'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 124,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 126,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 191,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 198,
+        "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
+      },
+      {
+        "category": "other",
+        "column": 1,
+        "line": 204,
+        "message": "unknown type name 'MMRESULT'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 16,
+        "message": "unknown type name 'HWND'"
+      },
+      {
+        "category": "other",
+        "column": 56,
+        "line": 237,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 1,
+        "line": 80,
+        "message": "unknown type name 'LPCRITICAL_SECTION'"
+      },
+      {
+        "category": "other",
+        "column": 20,
+        "line": 93,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 131,
+        "message": "unknown type name 'FILETIME'"
+      },
+      {
+        "category": "other",
+        "column": 37,
+        "line": 131,
+        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
+      },
+      {
+        "category": "other",
+        "column": 52,
+        "line": 131,
+        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 43,
+        "line": 21,
+        "message": "use of undeclared identifier '_DAT_005dbbba'"
+      },
+      {
+        "category": "incompatible_types",
+        "column": 3,
+        "line": 22,
+        "message": "no matching function for call to 'FUN_00448810'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 28,
+        "line": 24,
+        "message": "use of undeclared identifier '_DAT_005dbbbe'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 53,
+        "line": 24,
+        "message": "use of undeclared identifier '_DAT_005dbbc6'"
+      }
+    ],
+    "success": false,
+    "warnings": []
+  },
+  "compile_source": "c",
+  "complexity": {
+    "assembly_lines": 52,
+    "complexity_score": 171,
+    "cross_reference_count": 0,
+    "function_call_count": 4,
+    "global_count": 4,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 26,
+    "suspect_count": 13,
+    "suspect_types": [
+      "raw_address_constant",
+      "unnamed_param",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 78
+  },
+  "cross_references": [],
+  "function": {
+    "address": "004df1c0",
+    "address_range": [
+      [
+        "004df1c0",
+        "004df25b"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "FUN_004df1c0",
+    "signature": "void FUN_004df1c0(int param_1,float param_2)"
+  },
+  "function_calls": [
+    {
+      "addr": "00448810",
+      "is_variadic": false,
+      "name": "FUN_00448810"
+    },
+    {
+      "addr": "00448860",
+      "is_variadic": false,
+      "name": "FUN_00448860"
+    },
+    {
+      "addr": "005306b0",
+      "is_variadic": false,
+      "name": "FUN_005306b0"
+    },
+    {
+      "addr": "005b7ff0",
+      "is_variadic": false,
+      "name": "FUN_005b7ff0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005dbbba",
+      "name": "DAT_005dbbba",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005dbbbe",
+      "name": "DAT_005dbbbe",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005dbbc6",
+      "name": "DAT_005dbbc6",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0061b5a8",
+      "name": "DAT_0061b5a8",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 0,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 8.872340425531915,
+    "instruction_count": 47,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 30,
+      "BOOL_OR": 2,
+      "BOOL_XOR": 2,
+      "CALL": 4,
+      "CALLOTHER": 1,
+      "COPY": 69,
+      "FLOAT2FLOAT": 7,
+      "FLOAT_ADD": 2,
+      "FLOAT_MULT": 2,
+      "INT_ADD": 17,
+      "INT_AND": 92,
+      "INT_CARRY": 4,
+      "INT_EQUAL": 32,
+      "INT_LEFT": 4,
+      "INT_LESS": 5,
+      "INT_NOTEQUAL": 16,
+      "INT_OR": 26,
+      "INT_SBORROW": 5,
+      "INT_SCARRY": 4,
+      "INT_SLESS": 17,
+      "INT_SRIGHT": 8,
+      "INT_SUB": 23,
+      "INT_XOR": 2,
+      "INT_ZEXT": 2,
+      "LOAD": 8,
+      "POPCOUNT": 13,
+      "RETURN": 1,
+      "ROUND": 1,
+      "STORE": 17,
+      "TRUNC": 1
+    },
+    "pcode_op_count": 417
+  },
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "static_analysis": {
+    "analyzed_file": "FUN_004df1c0.c",
+    "cppcheck_quick": {
+      "diagnostic_count": 2,
+      "diagnostics": [
+        {
+          "check_id": "shiftTooManyBitsSigned",
+          "column": 27,
+          "line": 28,
+          "message": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
+          "severity": "error"
+        },
+        {
+          "check_id": "shiftTooManyBitsSigned",
+          "column": 17,
+          "line": 29,
+          "message": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
+          "severity": "error"
+        }
+      ],
+      "error": null
+    },
+    "file_variant": "raw"
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 4,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "void FUN_004df1c0(int param_1,float param_2)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 4,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "void FUN_004df1c0(int param_1,float param_2)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 13,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "iVar1 = param_1 + 0x438;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 14,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "*(float *)(param_1 + 0x434) = param_2 * _DAT_005dbbba + *(float *)(param_1 + 0x434);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 14,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "*(float *)(param_1 + 0x434) = param_2 * _DAT_005dbbba + *(float *)(param_1 + 0x434);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 14,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "*(float *)(param_1 + 0x434) = param_2 * _DAT_005dbbba + *(float *)(param_1 + 0x434);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 15,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "FUN_00448810(iVar1,param_1 + 0x20);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 16,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "fVar5 = (float10)fsin((float10)*(float *)(param_1 + 0x434));",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 20,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "*(int *)(param_1 + 0x474) = iVar3;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 23,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "*(char *)(param_1 + 0x454) =",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 27,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "*(uint *)(param_1 + 0x458) = 0;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Raw hex address 0x1e661b8 assigned to bare local `uVar2`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `uVar2` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
+      "line": 26,
+      "match": "0x1e661b8",
+      "severity": "moderate",
+      "text": "uVar2 = 0x01E661B8;",
+      "type": "raw_address_constant"
+    },
+    {
+      "description": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
+      "line": 28,
+      "match": "Cppcheck: signed shift by >= bit width (signed-div / branchless-abs idiom)",
+      "severity": "moderate",
+      "text": "iVar3 = (iVar3 + (iVar3 >> 0x1f) * -0x100) - (uint)((iVar3 >> 0x1f) << 7 < 0);",
+      "type": "static_shift_too_many_bits"
+    },
+    {
+      "description": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
+      "line": 29,
+      "match": "Cppcheck: signed shift by >= bit width (signed-div / branchless-abs idiom)",
+      "severity": "moderate",
+      "text": "iVar4 = iVar3 >> 0x1f;",
+      "type": "static_shift_too_many_bits"
+    }
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "Unknown",
+        "offset": 12,
+        "vtable_addr": "005f905c"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

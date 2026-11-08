@@ -1,0 +1,40 @@
+// Name: FUN_00551100
+// Address: 00551100
+// Address Range: [[00551100, 0055118e]]
+// Convention: unknown
+// Signature: void FUN_00551100(int param_1,undefined4 param_2)
+
+#include "nocturne.h"
+
+/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+
+void FUN_00551100(int param_1,uint param_2)
+
+{
+  int iVar1;
+  int *piVar2;
+  
+  if ((param_1 < 0) || (0x1f < param_1)) {
+    _DAT_01d046a0 = "..\\sound\\sndmain.cpp";
+    _DAT_01d046a4 = 0x110e;
+    FUN_004e4500("setSfxChannelVol - invalid channel index: %d",param_1);
+  }
+  iVar1 = _DAT_02648e80;
+  *(uint *)(param_1 * 4 + 0x26484c0) = param_2;
+  if (iVar1 != 0) {
+    iVar1 = FUN_00552b30();
+    if (0 < iVar1) {
+      FUN_005532f0();
+      piVar2 = (int *)0x263cf1c;
+      do {
+        if (((piVar2[0x19] != 0) && (piVar2[0x18] != 0)) && (param_1 == *piVar2)) {
+          *(byte *)(piVar2 + 0x46) = *(byte *)(piVar2 + 0x46) | 8;
+        }
+        piVar2 = piVar2 + 0x47;
+      } while (piVar2 != (int *)&DAT_0264161c);
+      FUN_00551440();
+      return;
+    }
+  }
+  return;
+}

@@ -1,0 +1,73 @@
+====================================================================================================
+PASS-BY-VALUE STRUCT ARGUMENTS REPORT
+====================================================================================================
+
+6 functions with pass-by-value parameters (727 MOVSD.REP scanned, 14 are pass-by-value)
+
+====================================================================================================
+
+FUN_0049db20
+  Params: arg1=?struct_84 (0x54)
+  Call sites (4):
+    FUN_0049db20                             @ 0x0049e0e1   1x ?struct_84 (0x54)
+    FUN_0049db20                             @ 0x0049e18f   1x ?struct_84 (0x54)
+    FUN_004e6f20                             @ 0x004e7197   1x ?struct_84 (0x54)
+    FUN_0058a440                             @ 0x0058a5c5   1x ?struct_84 (0x54)
+
+--------------------------------------------------------------------------------
+
+FUN_00407cc0
+  Params: arg1=SRenderVertex (0x30), arg2=SRenderVertex (0x30)
+  Call sites (2):
+    FUN_00404590                             @ 0x00404616   2x SRenderVertex
+    FUN_00407c40                             @ 0x00407ca5   2x SRenderVertex
+
+--------------------------------------------------------------------------------
+
+FUN_005096b0
+  Params: arg1=?struct_28 (0x1c)
+  Call sites (2):
+    FUN_0050a280                             @ 0x0050a84b   1x ?struct_28 (0x1c)
+    FUN_0050a280                             @ 0x0050a911   1x ?struct_28 (0x1c)
+
+--------------------------------------------------------------------------------
+
+FUN_0054edb0
+  Params: arg1=?struct_44 (0x2c)
+  Call sites (2):
+    FUN_0054d060                             @ 0x0054d1b0   1x ?struct_44 (0x2c)
+    FUN_005541f0                             @ 0x005543e2   1x ?struct_44 (0x2c)
+
+--------------------------------------------------------------------------------
+
+FUN_0040b730
+  Params: arg1=?struct_300 (0x12c)
+  Call sites (1):
+    FUN_0040b850                             @ 0x0040b8a5   1x ?struct_300 (0x12c)
+
+--------------------------------------------------------------------------------
+
+FUN_005b9690
+  Params: arg1=?struct_28 (0x1c)
+  Call sites (1):
+    FUN_00516e60                             @ 0x00516ebd   1x ?struct_28 (0x1c)
+
+--------------------------------------------------------------------------------
+
+====================================================================================================
+CALLER FRAME SIZE FIXES
+====================================================================================================
+
+These callers need their local frame size (SUB ESP) increased to cover
+the dynamic stack allocations for pass-by-value arguments.
+
+  FUN_0040b850                                       current: 0x12c  required: 0x258  (+0x12c for by-value args)
+  FUN_00404590                                       current: 0x60  required: 0xc0  (+0x60 for by-value args)
+  FUN_00407c40                                       current: 0x60  required: 0xc0  (+0x60 for by-value args)
+  FUN_0049db20                                       current: 0x164  required: 0x1b8  (+0x54 for by-value args)
+  FUN_004e6f20                                       current: 0xe8  required: 0x13c  (+0x54 for by-value args)
+  FUN_0058a440                                       current: 0xa8  required: 0xfc  (+0x54 for by-value args)
+  FUN_0054d060                                       current: 0x30  required: 0x5c  (+0x2c for by-value args)
+  FUN_005541f0                                       current: 0x5c  required: 0x88  (+0x2c for by-value args)
+  FUN_0050a280                                       current: 0x60a0  required: 0x60bc  (+0x1c for by-value args)
+  FUN_00516e60                                       current: 0x1c  required: 0x38  (+0x1c for by-value args)

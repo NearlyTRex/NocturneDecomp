@@ -1,0 +1,89 @@
+; *****************************************************************************
+;                               FUNCTION
+; *****************************************************************************
+; int FUN_005004f0(int param_1,byte param_2)
+;
+;
+; Referenced Globals:
+;   undefined4 DAT_005fa3a0
+;
+; Called Functions:
+;   FUN_00408930
+;   FUN_0040f2b0
+;   FUN_00544d50
+;   FUN_0059df70
+;   FUN_005b1480
+;   FUN_005b7fa7
+;   FUN_005b7fce
+;   FUN_005b7fdc
+;
+; *****************************************************************************
+
+section .text
+
+    PUSH EBX                            ; 005004f0
+        ;   Label: FUN_005004f0
+    MOV EBX,dword ptr [ESP + 0x8]       ; 005004f1
+    TEST byte ptr [ESP + 0xc],0x4       ; 005004f5
+    JNZ 0x0050055d                      ; 005004fa
+        ;   XREF to: 0050055d (CONDITIONAL_JUMP)  ; LAB_0050055d
+    PUSH 0x0                            ; 005004fc
+    ADD EBX,0x3a20                      ; 005004fe
+    PUSH EBX                            ; 00500504
+    CALL FUN_0040f2b0                   ; 00500505
+        ;   XREF to: 0040f2b0 (UNCONDITIONAL_CALL)  ; undefined FUN_0040f2b0()
+    ADD ESP,0x8                         ; 0050050a
+    PUSH 0x0                            ; 0050050d
+    SUB EAX,0x9c8                       ; 0050050f
+    PUSH EAX                            ; 00500514
+    CALL FUN_0059df70                   ; 00500515
+        ;   XREF to: 0059df70 (UNCONDITIONAL_CALL)  ; undefined FUN_0059df70()
+    ADD ESP,0x8                         ; 0050051a
+    PUSH 0x0                            ; 0050051d
+    SUB EAX,0x34c                       ; 0050051f
+    PUSH EAX                            ; 00500524
+    CALL FUN_005b1480                   ; 00500525
+        ;   XREF to: 005b1480 (UNCONDITIONAL_CALL)  ; undefined FUN_005b1480()
+    ADD ESP,0x8                         ; 0050052a
+    PUSH 0x0                            ; 0050052d
+    SUB EAX,0x2a58                      ; 0050052f
+    PUSH EAX                            ; 00500534
+    CALL FUN_00544d50                   ; 00500535
+        ;   XREF to: 00544d50 (UNCONDITIONAL_CALL)  ; undefined FUN_00544d50()
+    ADD ESP,0x8                         ; 0050053a
+    PUSH 0x1                            ; 0050053d
+    LEA EBX,[EAX + 0xfffffd4c]          ; 0050053f
+    PUSH EBX                            ; 00500545
+    CALL FUN_00408930                   ; 00500546
+        ;   XREF to: 00408930 (UNCONDITIONAL_CALL)  ; undefined FUN_00408930()
+    ADD ESP,0x8                         ; 0050054b
+    MOV DL,byte ptr [ESP + 0xc]         ; 0050054e
+    MOV EBX,EAX                         ; 00500552
+    TEST DL,0x2                         ; 00500554
+    JNZ 0x00500578                      ; 00500557
+        ;   XREF to: 00500578 (CONDITIONAL_JUMP)  ; LAB_00500578
+    MOV EAX,EBX                         ; 00500559
+    POP EBX                             ; 0050055b
+    RET                                 ; 0050055c
+    PUSH 0x5fa3a0                       ; 0050055d | DAT_005fa3a0
+        ;   Label: LAB_0050055d
+    PUSH EBX                            ; 00500562
+    CALL FUN_005b7fa7                   ; 00500563
+        ;   XREF to: 005b7fa7 (UNCONDITIONAL_CALL)  ; undefined FUN_005b7fa7()
+    ADD ESP,0x8                         ; 00500568
+    PUSH EAX                            ; 0050056b
+    CALL FUN_005b7fce                   ; 0050056c
+        ;   XREF to: 005b7fce (UNCONDITIONAL_CALL)  ; undefined FUN_005b7fce()
+    ADD ESP,0x4                         ; 00500571
+    MOV EAX,EBX                         ; 00500574
+    POP EBX                             ; 00500576
+    RET                                 ; 00500577
+    PUSH EAX                            ; 00500578
+        ;   Label: LAB_00500578
+    CALL FUN_005b7fdc                   ; 00500579
+        ;   XREF to: 005b7fdc (UNCONDITIONAL_CALL)  ; undefined FUN_005b7fdc()
+    ADD ESP,0x4                         ; 0050057e
+    MOV EAX,EBX                         ; 00500581
+    POP EBX                             ; 00500583
+    RET                                 ; 00500584
+

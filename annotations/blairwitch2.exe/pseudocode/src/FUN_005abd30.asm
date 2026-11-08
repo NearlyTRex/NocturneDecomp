@@ -1,0 +1,91 @@
+; *****************************************************************************
+;                               FUNCTION
+; *****************************************************************************
+; int FUN_005abd30(int param_1,byte param_2)
+;
+;
+; Referenced Globals:
+;   undefined4 DAT_00600c64
+;   undefined4 DAT_00600df0
+;
+; Called Functions:
+;   FUN_00408930
+;   FUN_0040f2b0
+;   FUN_00544d50
+;   FUN_0059df70
+;   FUN_005b1480
+;   FUN_005b7fa7
+;   FUN_005b7fce
+;   FUN_005b7fdc
+;
+; *****************************************************************************
+
+section .text
+
+    PUSH EBX                            ; 005abd30
+        ;   Label: FUN_005abd30
+    MOV EBX,dword ptr [ESP + 0x8]       ; 005abd31
+    TEST byte ptr [ESP + 0xc],0x4       ; 005abd35
+    JNZ 0x005abda7                      ; 005abd3a
+        ;   XREF to: 005abda7 (CONDITIONAL_JUMP)  ; LAB_005abda7
+    PUSH 0x0                            ; 005abd3c
+    ADD EBX,0x3a20                      ; 005abd3e
+    PUSH EBX                            ; 005abd44
+    MOV dword ptr [EBX + 0xffffc890],0x600c64 ; 005abd45 | DAT_00600c64
+    CALL FUN_0040f2b0                   ; 005abd4f
+        ;   XREF to: 0040f2b0 (UNCONDITIONAL_CALL)  ; undefined FUN_0040f2b0()
+    ADD ESP,0x8                         ; 005abd54
+    PUSH 0x0                            ; 005abd57
+    SUB EAX,0x9c8                       ; 005abd59
+    PUSH EAX                            ; 005abd5e
+    CALL FUN_0059df70                   ; 005abd5f
+        ;   XREF to: 0059df70 (UNCONDITIONAL_CALL)  ; undefined FUN_0059df70()
+    ADD ESP,0x8                         ; 005abd64
+    PUSH 0x0                            ; 005abd67
+    SUB EAX,0x34c                       ; 005abd69
+    PUSH EAX                            ; 005abd6e
+    CALL FUN_005b1480                   ; 005abd6f
+        ;   XREF to: 005b1480 (UNCONDITIONAL_CALL)  ; undefined FUN_005b1480()
+    ADD ESP,0x8                         ; 005abd74
+    PUSH 0x0                            ; 005abd77
+    SUB EAX,0x2a58                      ; 005abd79
+    PUSH EAX                            ; 005abd7e
+    CALL FUN_00544d50                   ; 005abd7f
+        ;   XREF to: 00544d50 (UNCONDITIONAL_CALL)  ; undefined FUN_00544d50()
+    ADD ESP,0x8                         ; 005abd84
+    PUSH 0x1                            ; 005abd87
+    LEA EBX,[EAX + 0xfffffd4c]          ; 005abd89
+    PUSH EBX                            ; 005abd8f
+    CALL FUN_00408930                   ; 005abd90
+        ;   XREF to: 00408930 (UNCONDITIONAL_CALL)  ; undefined FUN_00408930()
+    ADD ESP,0x8                         ; 005abd95
+    MOV DL,byte ptr [ESP + 0xc]         ; 005abd98
+    MOV EBX,EAX                         ; 005abd9c
+    TEST DL,0x2                         ; 005abd9e
+    JNZ 0x005abdc2                      ; 005abda1
+        ;   XREF to: 005abdc2 (CONDITIONAL_JUMP)  ; LAB_005abdc2
+    MOV EAX,EBX                         ; 005abda3
+    POP EBX                             ; 005abda5
+    RET                                 ; 005abda6
+    PUSH 0x600df0                       ; 005abda7 | DAT_00600df0
+        ;   Label: LAB_005abda7
+    PUSH EBX                            ; 005abdac
+    CALL FUN_005b7fa7                   ; 005abdad
+        ;   XREF to: 005b7fa7 (UNCONDITIONAL_CALL)  ; undefined FUN_005b7fa7()
+    ADD ESP,0x8                         ; 005abdb2
+    PUSH EAX                            ; 005abdb5
+    CALL FUN_005b7fce                   ; 005abdb6
+        ;   XREF to: 005b7fce (UNCONDITIONAL_CALL)  ; undefined FUN_005b7fce()
+    ADD ESP,0x4                         ; 005abdbb
+    MOV EAX,EBX                         ; 005abdbe
+    POP EBX                             ; 005abdc0
+    RET                                 ; 005abdc1
+    PUSH EAX                            ; 005abdc2
+        ;   Label: LAB_005abdc2
+    CALL FUN_005b7fdc                   ; 005abdc3
+        ;   XREF to: 005b7fdc (UNCONDITIONAL_CALL)  ; undefined FUN_005b7fdc()
+    ADD ESP,0x4                         ; 005abdc8
+    MOV EAX,EBX                         ; 005abdcb
+    POP EBX                             ; 005abdcd
+    RET                                 ; 005abdce
+

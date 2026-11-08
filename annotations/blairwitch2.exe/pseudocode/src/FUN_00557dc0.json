@@ -1,0 +1,218 @@
+{
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "other",
+        "column": 0,
+        "line": 0,
+        "message": "Compilation timed out after 60s"
+      }
+    ],
+    "success": false,
+    "warnings": []
+  },
+  "compile_source": "c",
+  "complexity": {
+    "assembly_lines": 77,
+    "complexity_score": 111,
+    "cross_reference_count": 0,
+    "function_call_count": 3,
+    "global_count": 6,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 31,
+    "suspect_count": 6,
+    "suspect_types": [
+      "raw_address_pointer_store",
+      "unnamed_param",
+      "unresolved_funcptr",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 108
+  },
+  "cross_references": [],
+  "function": {
+    "address": "00557dc0",
+    "address_range": [
+      [
+        "00557dc0",
+        "00557e86"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "FUN_00557dc0",
+    "signature": "undefined4 FUN_00557dc0(int *param_1)"
+  },
+  "function_calls": [
+    {
+      "addr": "005531d0",
+      "is_variadic": false,
+      "name": "FUN_005531d0"
+    },
+    {
+      "addr": "00557b90",
+      "is_variadic": false,
+      "name": "FUN_00557b90"
+    },
+    {
+      "addr": "005b77c0",
+      "is_variadic": false,
+      "name": "FUN_005b77c0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005ea575",
+      "name": "DAT_005ea575",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0264b0f4",
+      "name": "DAT_0264b0f4",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0264b0f8",
+      "name": "DAT_0264b0f8",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0264b0fc",
+      "name": "DAT_0264b0fc",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0264b100",
+      "name": "DAT_0264b100",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0264b104",
+      "name": "DAT_0264b104",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 0,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 6.348484848484849,
+    "instruction_count": 66,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 15,
+      "BOOL_OR": 2,
+      "BOOL_XOR": 1,
+      "CALL": 3,
+      "CALLIND": 1,
+      "CBRANCH": 4,
+      "COPY": 93,
+      "FLOAT2FLOAT": 2,
+      "FLOAT_DIV": 1,
+      "FLOAT_MULT": 1,
+      "INT2FLOAT": 2,
+      "INT_ADD": 24,
+      "INT_AND": 72,
+      "INT_CARRY": 5,
+      "INT_EQUAL": 39,
+      "INT_LEFT": 2,
+      "INT_LESS": 4,
+      "INT_MULT": 2,
+      "INT_NOTEQUAL": 12,
+      "INT_OR": 13,
+      "INT_SBORROW": 4,
+      "INT_SCARRY": 6,
+      "INT_SEXT": 6,
+      "INT_SLESS": 20,
+      "INT_SRIGHT": 4,
+      "INT_SUB": 19,
+      "INT_XOR": 4,
+      "INT_ZEXT": 1,
+      "LOAD": 17,
+      "POPCOUNT": 18,
+      "RETURN": 2,
+      "STORE": 16,
+      "SUBPIECE": 4
+    },
+    "pcode_op_count": 419
+  },
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 4,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "uint FUN_00557dc0(int *param_1)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
+      "line": 16,
+      "match": "*(uint **)(iVar2 + 0x264b094",
+      "severity": "moderate",
+      "text": "**(uint **)(iVar2 + 0x264b094) = *(uint *)(iVar2 + 0x264b0d4);",
+      "type": "raw_address_pointer_store"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 33,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "(**(code **)(*param_1 + 8))(param_1);",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 33,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(**(code **)(*param_1 + 8))(param_1);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 33,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(**(code **)(*param_1 + 8))(param_1);",
+      "type": "unnamed_param"
+    }
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "Unknown",
+        "offset": 4,
+        "vtable_addr": "005fbd30"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

@@ -1,0 +1,26 @@
+; *****************************************************************************
+;                               FUNCTION
+; *****************************************************************************
+; void FUN_00534d80(undefined4 param_1)
+;
+;
+; XREF[1]:
+;   FUN_0052c060 at 0052c074
+;
+; Called Functions:
+;   FUN_005b854f
+;
+; *****************************************************************************
+
+section .text
+
+    PUSH 0x5fb270                       ; 00534d80
+        ;   Label: FUN_00534d80
+    PUSH 0xfa                           ; 00534d85
+    MOV EDX,dword ptr [ESP + 0xc]       ; 00534d8a
+    PUSH EDX                            ; 00534d8e
+    CALL FUN_005b854f                   ; 00534d8f
+        ;   XREF to: 005b854f (UNCONDITIONAL_CALL)  ; undefined FUN_005b854f()
+    ADD ESP,0xc                         ; 00534d94
+    RET                                 ; 00534d97
+

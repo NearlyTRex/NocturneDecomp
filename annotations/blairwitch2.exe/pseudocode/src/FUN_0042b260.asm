@@ -1,0 +1,41 @@
+; *****************************************************************************
+;                               FUNCTION
+; *****************************************************************************
+; void FUN_0042b260(int param_1,undefined4 param_2)
+;
+;
+; XREF[9]:
+;   FUN_00412500 at 0041271e
+;   FUN_00413f40 at 004140db
+;   FUN_0041e8a0 at 0041e9c5
+;   FUN_004398b0 at 00439a33
+;   FUN_004c3e30 at 004c3fc6
+;   FUN_004d7ab0 at 004d7c4b
+;   FUN_004ffcc0 at 004ffec6
+;   FUN_0054a790 at 0054a945
+;   FUN_00599400 at 00599596
+;
+; *****************************************************************************
+
+section .text
+
+    MOV EDX,dword ptr [ESP + 0x4]       ; 0042b260
+        ;   Label: FUN_0042b260
+    FLD float ptr [EDX + 0x3050]        ; 0042b264
+    FLDZ                                ; 0042b26a
+    FCOMPP                              ; 0042b26c
+    FNSTSW AX                           ; 0042b26e
+    SAHF                                ; 0042b270
+    JNC 0x0042b274                      ; 0042b271
+        ;   XREF to: 0042b274 (CONDITIONAL_JUMP)  ; LAB_0042b274
+    RET                                 ; 0042b273
+    MOV ECX,dword ptr [ESP + 0x8]       ; 0042b274
+        ;   Label: LAB_0042b274
+    PUSH ECX                            ; 0042b278
+    MOV EAX,dword ptr [EDX + 0x2b0]     ; 0042b279
+    PUSH EDX                            ; 0042b27f
+    MOV dword ptr [EDX + 0x3050],0x3dcccccd ; 0042b280
+    CALL dword ptr [EAX + 0x34]         ; 0042b28a
+    ADD ESP,0x8                         ; 0042b28d
+    RET                                 ; 0042b290
+

@@ -1,0 +1,120 @@
+// Name: FUN_00591190
+// Address: 00591190
+// Address Range: [[00591190, 0059152f]]
+// Convention: unknown
+// Signature: undefined4 FUN_00591190(undefined4 param_1,undefined4 param_2)
+
+#include "nocturne.h"
+
+/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+
+uint FUN_00591190(uint param_1,uint param_2)
+
+{
+  byte *pbVar1;
+  byte bVar2;
+  int iVar3;
+  MCIERROR MVar4;
+  byte *pbVar5;
+  HANDLE hThread;
+  bool bVar6;
+  char *lpstrCommand;
+  HWND pHVar7;
+  CHAR local_1f8 [260];
+  byte local_f4;
+  byte local_f3 [127];
+  byte local_74 [80];
+  tagRECT local_24;
+  tagRECT local_14;
+  
+  FUN_005b7790(local_74,"%s\\%s",param_1,param_2);
+  iVar3 = FUN_005b910c(local_74,&DAT_005eecb3);
+  if (iVar3 == 0) {
+    return 0;
+  }
+  FUN_005b89c0(iVar3);
+  FUN_0055b1f0();
+  FUN_00589560();
+  pHVar7 = _DAT_02664628;
+  if (_DAT_02665a50 != 0) {
+    FUN_00590e40(_DAT_02664628);
+  }
+  FUN_005b7790(local_1f8,"open \"%s\" alias mov style child parent %d",local_74,pHVar7);
+  MVar4 = mciSendStringA(local_1f8,(LPSTR)0x0,0,(HWND)0x0);
+  if (MVar4 == 0) {
+    _DAT_02665a50 = 1;
+    MVar4 = mciSendStringA("status mov window handle",local_1f8,0x104,(HWND)0x0);
+    if (MVar4 == 0) {
+      _DAT_02665a48 = (HWND)FUN_005bad20(local_1f8);
+    }
+    else {
+      mciGetErrorStringA(MVar4,local_1f8,0x104);
+      MessageBoxA(pHVar7,local_1f8,(LPCSTR)0x0,0x30);
+    }
+    if ((_DAT_02665a58 == 0) && (_DAT_02665a50 != 0)) {
+      GetClientRect(pHVar7,&local_14);
+      mciSendStringA("where mov source",(LPSTR)&local_f4,0x80,(HWND)0x0);
+      SetRectEmpty(&local_24);
+      pbVar5 = &local_f4;
+      while (local_f4 == 0x20) {
+        pbVar1 = pbVar5 + 1;
+        pbVar5 = pbVar5 + 1;
+        local_f4 = *pbVar1;
+      }
+      for (; *pbVar5 != 0x20; pbVar5 = pbVar5 + 1) {
+      }
+      for (; *pbVar5 == 0x20; pbVar5 = pbVar5 + 1) {
+      }
+      for (; *pbVar5 != 0x20; pbVar5 = pbVar5 + 1) {
+      }
+      for (; *pbVar5 == 0x20; pbVar5 = pbVar5 + 1) {
+      }
+      for (; (0x2f < *pbVar5 && (*pbVar5 < 0x3a)); pbVar5 = pbVar5 + 1) {
+        local_24.right = local_24.right * 10 + (*pbVar5 - 0x30);
+      }
+      for (; *pbVar5 == 0x20; pbVar5 = pbVar5 + 1) {
+      }
+      for (; (bVar2 = *pbVar5, 0x2f < bVar2 && (bVar2 < 0x3a)); pbVar5 = pbVar5 + 1) {
+        local_24.bottom = local_24.bottom * 10 + (bVar2 - 0x30);
+      }
+      if ((400 < local_14.right) || (300 < local_14.bottom)) {
+        local_24.right = local_24.right * 2;
+        local_24.bottom = local_24.bottom * 2;
+      }
+      MoveWindow(_DAT_02665a48,local_14.right / 2 - local_24.right / 2,
+                 local_14.bottom / 2 - local_24.bottom / 2,local_24.right,local_24.bottom,1);
+    }
+  }
+  else {
+    MessageBoxA(pHVar7,"Unable to open .AVI!",(LPCSTR)0x0,0x30);
+    _DAT_02665a50 = 0;
+  }
+  bVar6 = _DAT_02665a4c == 0;
+  _DAT_02665a4c = (uint)bVar6;
+  if (bVar6) {
+    pHVar7 = _DAT_02664628;
+    if (_DAT_02665a58 == 0) {
+      lpstrCommand = "play mov window notify";
+    }
+    else {
+      lpstrCommand = "play mov fullscreen notify";
+    }
+  }
+  else {
+    pHVar7 = (HWND)0x0;
+    lpstrCommand = "pause mov";
+  }
+  mciSendStringA(lpstrCommand,(LPSTR)0x0,0,pHVar7);
+  hThread = GetCurrentProcess();
+  SetThreadPriority(hThread,-0xf);
+  while (((FUN_0058f270(), _DAT_02665a4c != 0 && (iVar3 = FUN_0058eb40(), iVar3 == 0)) &&
+         (_DAT_02665a50 != 0))) {
+    Sleep(0x14);
+  }
+  SetThreadPriority(hThread,1);
+  FUN_00590e40(_DAT_02664628);
+  FUN_0055b1f0();
+  FUN_00589560();
+  FUN_004032b0();
+  return 1;
+}

@@ -1,0 +1,498 @@
+{
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "other",
+        "column": 25,
+        "line": 28,
+        "message": "unknown type name 'HWND'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 124,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 126,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 191,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 198,
+        "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
+      },
+      {
+        "category": "other",
+        "column": 1,
+        "line": 204,
+        "message": "unknown type name 'MMRESULT'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 16,
+        "message": "unknown type name 'HWND'"
+      },
+      {
+        "category": "other",
+        "column": 56,
+        "line": 237,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 1,
+        "line": 80,
+        "message": "unknown type name 'LPCRITICAL_SECTION'"
+      },
+      {
+        "category": "other",
+        "column": 20,
+        "line": 93,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 131,
+        "message": "unknown type name 'FILETIME'"
+      },
+      {
+        "category": "other",
+        "column": 37,
+        "line": 131,
+        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
+      },
+      {
+        "category": "other",
+        "column": 52,
+        "line": 131,
+        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 12,
+        "line": 26,
+        "message": "use of undeclared identifier '_DAT_026807e4'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 7,
+        "line": 42,
+        "message": "use of undeclared identifier '_DAT_026807e4'; did you mean 'DAT_004807C4'?"
+      },
+      {
+        "category": "cast_error",
+        "column": 14,
+        "line": 46,
+        "message": "cannot cast from type 'void' to pointer type 'uint *' (aka 'unsigned int *')"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 5,
+        "line": 50,
+        "message": "use of undeclared identifier '_DAT_026807e0'; did you mean 'DAT_004807D0'?"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 5,
+        "line": 51,
+        "message": "use of undeclared identifier '_DAT_026807e4'; did you mean 'DAT_004807C4'?"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 11,
+        "line": 64,
+        "message": "use of undeclared identifier '_DAT_026807e0'; did you mean 'DAT_004807D0'?"
+      }
+    ],
+    "success": false,
+    "warnings": []
+  },
+  "compile_source": "c",
+  "complexity": {
+    "assembly_lines": 197,
+    "complexity_score": 376,
+    "cross_reference_count": 1,
+    "function_call_count": 5,
+    "global_count": 2,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 91,
+    "suspect_count": 25,
+    "suspect_types": [
+      "param_count_too_few",
+      "pointer_cast",
+      "pointer_truncation",
+      "register_param",
+      "unnamed_param",
+      "unrolled_memcpy",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 288
+  },
+  "cross_references": [
+    {
+      "addr": "005c6210",
+      "from_addr": "005c6346",
+      "name": "FUN_005c6210",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "005c63dc",
+    "address_range": [
+      [
+        "005c63dc",
+        "005c657e"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "FUN_005c63dc",
+    "signature": "undefined4 FUN_005c63dc(char *param_1)"
+  },
+  "function_calls": [
+    {
+      "addr": "005b77c0",
+      "is_variadic": false,
+      "name": "FUN_005b77c0"
+    },
+    {
+      "addr": "005b8580",
+      "is_variadic": false,
+      "name": "FUN_005b8580"
+    },
+    {
+      "addr": "005b8ce0",
+      "is_variadic": false,
+      "name": "FUN_005b8ce0"
+    },
+    {
+      "addr": "005ba1f0",
+      "is_variadic": false,
+      "name": "FUN_005ba1f0"
+    },
+    {
+      "addr": "005c6580",
+      "is_variadic": false,
+      "name": "FUN_005c6580"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "026807e0",
+      "name": "DAT_026807e0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "026807e4",
+      "name": "DAT_026807e4",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "005c6346",
+        "call_type": "direct",
+        "caller": "FUN_005c6210",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [
+          "EDX"
+        ],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "low",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 2,
+    "matches_declared": false
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.436708860759493,
+    "instruction_count": 158,
+    "opcode_distribution": {
+      "BOOL_AND": 1,
+      "BOOL_NEGATE": 16,
+      "BRANCH": 6,
+      "CALL": 6,
+      "CBRANCH": 16,
+      "COPY": 143,
+      "INT_2COMP": 1,
+      "INT_ADD": 67,
+      "INT_AND": 99,
+      "INT_CARRY": 16,
+      "INT_EQUAL": 80,
+      "INT_LESS": 6,
+      "INT_MULT": 8,
+      "INT_NOTEQUAL": 4,
+      "INT_OR": 5,
+      "INT_RIGHT": 2,
+      "INT_SBORROW": 7,
+      "INT_SCARRY": 18,
+      "INT_SLESS": 39,
+      "INT_SUB": 37,
+      "INT_XOR": 1,
+      "INT_ZEXT": 5,
+      "LOAD": 42,
+      "POPCOUNT": 38,
+      "RETURN": 5,
+      "STORE": 33
+    },
+    "pcode_op_count": 701
+  },
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "static_analysis": {
+    "analyzed_file": "FUN_005c63dc.c",
+    "cppcheck_quick": {
+      "diagnostic_count": 1,
+      "diagnostics": [
+        {
+          "check_id": "uninitvar",
+          "column": 8,
+          "line": 38,
+          "message": "Uninitialized variable: in_EAX",
+          "severity": "warning"
+        }
+      ],
+      "error": null
+    },
+    "file_variant": "raw"
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 4,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "uint FUN_005c63dc(char *param_1)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 8,
+      "match": "in_EAX",
+      "severity": "mild",
+      "text": "char *in_EAX;",
+      "type": "register_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 21,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "if (param_1 == (char *)0x0) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 24,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "if (*param_1 != '\\0') {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 25,
+      "match": "in_EAX",
+      "severity": "mild",
+      "text": "in_EAX = param_1 + 1;",
+      "type": "register_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 25,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "in_EAX = param_1 + 1;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 26,
+      "match": "in_EAX",
+      "severity": "mild",
+      "text": "cVar1 = *in_EAX;",
+      "type": "register_param"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 27,
+      "match": "in_EAX",
+      "severity": "mild",
+      "text": "for (; (cVar1 != '\\0' && (*in_EAX != '=')); in_EAX = in_EAX + 1) {",
+      "type": "register_param"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 27,
+      "match": "in_EAX",
+      "severity": "mild",
+      "text": "for (; (cVar1 != '\\0' && (*in_EAX != '=')); in_EAX = in_EAX + 1) {",
+      "type": "register_param"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 27,
+      "match": "in_EAX",
+      "severity": "mild",
+      "text": "for (; (cVar1 != '\\0' && (*in_EAX != '=')); in_EAX = in_EAX + 1) {",
+      "type": "register_param"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 28,
+      "match": "in_EAX",
+      "severity": "mild",
+      "text": "cVar1 = in_EAX[1];",
+      "type": "register_param"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 31,
+      "match": "in_EAX",
+      "severity": "mild",
+      "text": "if (*in_EAX == '\\0') {",
+      "type": "register_param"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 34,
+      "match": "in_EAX",
+      "severity": "mild",
+      "text": "bVar9 = in_EAX[1] == '\\0';",
+      "type": "register_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 50,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "iVar3 = FUN_005c6580(param_1,bVar9);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 71,
+      "match": "(uint *)((int)puVar7",
+      "severity": "moderate",
+      "text": "puVar7 = (uint *)((int)puVar7 + (uint)bVar10 * -2 + 1);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 72,
+      "match": "(uint *)((int)puVar8",
+      "severity": "moderate",
+      "text": "puVar8 = (uint *)((int)puVar8 + (uint)bVar10 * -2 + 1);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 92,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "puVar2[iVar4] = param_1;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 93,
+      "match": "(byte *)((int)_DAT_026807e0",
+      "severity": "moderate",
+      "text": "*(byte *)((int)_DAT_026807e0 + iVar4) = 0;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Pointer value `puVar7` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 71,
+      "match": "(int)puVar7",
+      "severity": "moderate",
+      "text": "puVar7 = (uint *)((int)puVar7 + (uint)bVar10 * -2 + 1);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `puVar8` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 72,
+      "match": "(int)puVar8",
+      "severity": "moderate",
+      "text": "puVar8 = (uint *)((int)puVar8 + (uint)bVar10 * -2 + 1);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
+      "line": 64,
+      "match": "for (...; != 0; ... + -1)",
+      "severity": "moderate",
+      "text": "for (uVar6 = (uint)(iVar3 * -4) >> 2; uVar6 != 0; uVar6 = uVar6 - 1) {",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
+      "line": 69,
+      "match": "for (...; != 0; ... + -1)",
+      "severity": "moderate",
+      "text": "for (iVar5 = 0; iVar5 != 0; iVar5 = iVar5 + -1) {",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom inline memcpy (REP MOVSD at 005c64e9, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
+      "line": 129,
+      "match": "MOVSD.REP",
+      "severity": "moderate",
+      "text": "// 005c64e9: MOVSD.REP ES:EDI,ESI",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "call_site_count": 1,
+      "declared_params": 0,
+      "description": "Signature has too few params - likely missing this ptr or other params",
+      "estimated_params": 2,
+      "fix_type": "add_params",
+      "match": "declared:0 vs estimated:2",
+      "param_delta": 2,
+      "text": "Function declares 0 params but call sites push 2 (2 missing)",
+      "type": "param_count_too_few"
+    },
+    {
+      "description": "Uninitialized variable: in_EAX",
+      "line": 38,
+      "match": "Cppcheck: uninitialized variable",
+      "severity": "major",
+      "text": "if (*in_EAX == '\\0') {",
+      "type": "static_uninitvar"
+    }
+  ]
+}

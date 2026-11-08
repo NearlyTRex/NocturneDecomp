@@ -1,0 +1,289 @@
+{
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "other",
+        "column": 25,
+        "line": 28,
+        "message": "unknown type name 'HWND'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 124,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 126,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 191,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 198,
+        "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
+      },
+      {
+        "category": "other",
+        "column": 1,
+        "line": 204,
+        "message": "unknown type name 'MMRESULT'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 16,
+        "message": "unknown type name 'HWND'"
+      },
+      {
+        "category": "other",
+        "column": 56,
+        "line": 237,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 1,
+        "line": 80,
+        "message": "unknown type name 'LPCRITICAL_SECTION'"
+      },
+      {
+        "category": "other",
+        "column": 20,
+        "line": 93,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 131,
+        "message": "unknown type name 'FILETIME'"
+      },
+      {
+        "category": "other",
+        "column": 37,
+        "line": 131,
+        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
+      },
+      {
+        "category": "other",
+        "column": 52,
+        "line": 131,
+        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
+      },
+      {
+        "category": "incompatible_types",
+        "column": 13,
+        "line": 23,
+        "message": "assigning to 'int' from incompatible type 'void'"
+      },
+      {
+        "category": "incompatible_types",
+        "column": 7,
+        "line": 26,
+        "message": "no matching function for call to 'FUN_005b7790'"
+      },
+      {
+        "category": "incompatible_types",
+        "column": 7,
+        "line": 28,
+        "message": "no matching function for call to 'FUN_005549c0'"
+      }
+    ],
+    "success": false,
+    "warnings": []
+  },
+  "compile_source": "c",
+  "complexity": {
+    "assembly_lines": 58,
+    "complexity_score": 91,
+    "cross_reference_count": 0,
+    "function_call_count": 3,
+    "global_count": 2,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 26,
+    "suspect_count": 5,
+    "suspect_types": [
+      "raw_address_pointer_store",
+      "unnamed_param",
+      "unresolved_funcptr"
+    ],
+    "total_lines": 84
+  },
+  "cross_references": [],
+  "function": {
+    "address": "00556ed0",
+    "address_range": [
+      [
+        "00556ed0",
+        "00556f71"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "FUN_00556ed0",
+    "signature": "undefined4 FUN_00556ed0(undefined4 param_1,int param_2)"
+  },
+  "function_calls": [
+    {
+      "addr": "005549c0",
+      "is_variadic": false,
+      "name": "FUN_005549c0"
+    },
+    {
+      "addr": "00554ad0",
+      "is_variadic": false,
+      "name": "FUN_00554ad0"
+    },
+    {
+      "addr": "005b7790",
+      "is_variadic": false,
+      "name": "FUN_005b7790"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005e9a3b",
+      "name": "s_DirectSux_Unable_to_s_s_005e9a3b",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005ea0a1",
+      "name": "s_Get_active_sfx_secondary_005ea0a0+1",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 0,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.043478260869565,
+    "instruction_count": 46,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 1,
+      "BOOL_OR": 1,
+      "CALL": 3,
+      "CALLIND": 1,
+      "CBRANCH": 5,
+      "COPY": 31,
+      "INT_ADD": 21,
+      "INT_AND": 35,
+      "INT_CARRY": 8,
+      "INT_EQUAL": 32,
+      "INT_LESS": 3,
+      "INT_MULT": 4,
+      "INT_NOTEQUAL": 2,
+      "INT_SBORROW": 3,
+      "INT_SCARRY": 8,
+      "INT_SLESS": 16,
+      "INT_SUB": 15,
+      "INT_XOR": 2,
+      "LOAD": 10,
+      "POPCOUNT": 16,
+      "RETURN": 3,
+      "STORE": 12
+    },
+    "pcode_op_count": 232
+  },
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "static_analysis": {
+    "analyzed_file": "FUN_00556ed0.c",
+    "cppcheck_quick": {
+      "diagnostic_count": 1,
+      "diagnostics": [
+        {
+          "check_id": "uninitvar",
+          "column": 10,
+          "line": 31,
+          "message": "Uninitialized variable: bStack_c",
+          "severity": "error"
+        }
+      ],
+      "error": null
+    },
+    "file_variant": "raw"
+  },
+  "suspects": [
+    {
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "uint FUN_00556ed0(uint param_1,int param_2)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "uint FUN_00556ed0(uint param_1,int param_2)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 12,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "iVar1 = *(int *)(param_2 + 0x60);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
+      "line": 15,
+      "match": "*(int **)(iVar1 * 0x24 + 0x264ac10",
+      "severity": "moderate",
+      "text": "piStack_19c = *(int **)(iVar1 * 0x24 + 0x264ac10);",
+      "type": "raw_address_pointer_store"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 16,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "iVar1 = (**(code **)(*piStack_19c + 0x24))();",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Uninitialized variable: bStack_c",
+      "line": 31,
+      "match": "Cppcheck: uninitialized variable",
+      "severity": "major",
+      "text": "if ((bStack_c & 1) != 0) {",
+      "type": "static_uninitvar"
+    }
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "Unknown",
+        "offset": 84,
+        "vtable_addr": "005fbcbc"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

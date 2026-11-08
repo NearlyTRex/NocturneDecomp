@@ -1,0 +1,23 @@
+// Name: FUN_00404470
+// Address: 00404470
+// Address Range: [[00404470, 004044b3]]
+// Convention: unknown
+// Signature: int FUN_00404470(int param_1)
+
+#include "nocturne.h"
+
+/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+
+int FUN_00404470(int param_1)
+
+{
+  longlong lVar1;
+  
+  lVar1 = (longlong)*(int *)(param_1 + 4) * (longlong)(int)_DAT_01c38b6c;
+  _DAT_01c38b6c = (uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10;
+  lVar1 = (longlong)*(int *)(param_1 + 4) * (longlong)(int)_DAT_01c38b70;
+  _DAT_01c38b70 = (uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10;
+  lVar1 = (longlong)*(int *)(param_1 + 4) * (longlong)(int)_DAT_01c38b74;
+  _DAT_01c38b74 = (uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10;
+  return param_1 + 8;
+}

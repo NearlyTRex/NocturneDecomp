@@ -1,0 +1,51 @@
+====================================================================================================
+STATIC ANALYSIS SUMMARY
+====================================================================================================
+
+Results from running static analysis tools on decompiled pseudocode.
+Only .cpp and .keep.cpp files are analyzed (not .mmx.cpp or .byval.cpp).
+
+----------------------------------------------------------------------------------------------------
+SUMMARY
+----------------------------------------------------------------------------------------------------
+
+  Functions with static analysis data: 927
+  Functions flagged by multiple tools: 2
+
+  Clang-Tidy (quick):
+    Files analyzed:      6
+    Files with findings: 6
+    Total diagnostics:   14
+
+  Cppcheck (quick):
+    Files analyzed:      923
+    Files with findings: 923
+    Total diagnostics:   6814
+
+====================================================================================================
+TOP FINDINGS - Clang-Tidy (quick)
+====================================================================================================
+
+  bugprone-integer-division                                   9  [likely decompiler artifact]
+  bugprone-swapped-arguments                                  4  [likely decompiler artifact]
+  cert-flp30-c                                                1
+
+====================================================================================================
+TOP FINDINGS - Cppcheck (quick)
+====================================================================================================
+
+  uninitvar                                                4079  [likely decompiler artifact]
+  pointerOutOfBounds                                        944  [likely decompiler artifact]
+  arrayIndexOutOfBounds                                     518  [likely decompiler artifact]
+  objectIndex                                               510  [likely decompiler artifact]
+  legacyUninitvar                                           467  [likely decompiler artifact]
+  shiftTooManyBitsSigned                                    202
+  nullPointer                                                20
+  invalidPointerCast                                         15
+  identicalInnerCondition                                    13
+  nullPointerArithmetic                                      10
+  selfAssignment                                              9
+  negativeIndex                                               6
+  shiftNegativeLHS                                            4
+  oppositeInnerCondition                                      4
+  identicalConditionAfterEarlyExit                            3

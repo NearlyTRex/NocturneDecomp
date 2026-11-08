@@ -1,0 +1,43 @@
+; *****************************************************************************
+;                               FUNCTION
+; *****************************************************************************
+; int FUN_004a1e90(int param_1)
+;
+;
+; XREF[4]:
+;   FUN_004a2000 at 004a2016
+;   FUN_004a2200 at 004a2230
+;   FUN_004a2470 at 004a24af
+;   FUN_004a66a0 at 004a66af
+;
+; Referenced Globals:
+;   void* PTR_FUN_005f6ec4 = 004a1e90
+;
+; Called Functions:
+;   FUN_005b86a0
+;
+; *****************************************************************************
+
+section .text
+
+    PUSH EBX                            ; 004a1e90
+        ;   Label: FUN_004a1e90
+    MOV EBX,dword ptr [ESP + 0x8]       ; 004a1e91
+    MOV EDX,dword ptr [EBX + 0x10]      ; 004a1e95
+    MOV dword ptr [EBX + 0x14],0x5f6ec4 ; 004a1e98 | PTR_FUN_005f6ec4
+    TEST EDX,EDX                        ; 004a1e9f
+    JNZ 0x004a1ea7                      ; 004a1ea1
+        ;   XREF to: 004a1ea7 (CONDITIONAL_JUMP)  ; LAB_004a1ea7
+    MOV EAX,EBX                         ; 004a1ea3
+    POP EBX                             ; 004a1ea5
+    RET                                 ; 004a1ea6
+    PUSH EDX                            ; 004a1ea7
+        ;   Label: LAB_004a1ea7
+    CALL FUN_005b86a0                   ; 004a1ea8
+        ;   XREF to: 005b86a0 (UNCONDITIONAL_CALL)  ; undefined FUN_005b86a0()
+    ADD ESP,0x4                         ; 004a1ead
+    MOV dword ptr [EBX + 0x10],0x0      ; 004a1eb0
+    MOV EAX,EBX                         ; 004a1eb7
+    POP EBX                             ; 004a1eb9
+    RET                                 ; 004a1eba
+

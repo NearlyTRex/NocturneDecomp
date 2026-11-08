@@ -1,0 +1,339 @@
+{
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "other",
+        "column": 25,
+        "line": 28,
+        "message": "unknown type name 'HWND'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 124,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 126,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 191,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 198,
+        "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
+      },
+      {
+        "category": "other",
+        "column": 1,
+        "line": 204,
+        "message": "unknown type name 'MMRESULT'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 16,
+        "message": "unknown type name 'HWND'"
+      },
+      {
+        "category": "other",
+        "column": 56,
+        "line": 237,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 1,
+        "line": 80,
+        "message": "unknown type name 'LPCRITICAL_SECTION'"
+      },
+      {
+        "category": "other",
+        "column": 20,
+        "line": 93,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 131,
+        "message": "unknown type name 'FILETIME'"
+      },
+      {
+        "category": "other",
+        "column": 37,
+        "line": 131,
+        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
+      },
+      {
+        "category": "other",
+        "column": 52,
+        "line": 131,
+        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 13,
+        "line": 16,
+        "message": "use of undeclared identifier 'PTR_FUN_0061f2c0'"
+      },
+      {
+        "category": "incompatible_types",
+        "column": 11,
+        "line": 17,
+        "message": "no matching function for call to 'FUN_005bed18'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 15,
+        "line": 19,
+        "message": "use of undeclared identifier 'PTR_FUN_0061f2c8'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 13,
+        "line": 22,
+        "message": "use of undeclared identifier 'PTR_FUN_0061f2c8'"
+      }
+    ],
+    "success": false,
+    "warnings": []
+  },
+  "compile_source": "c",
+  "complexity": {
+    "assembly_lines": 32,
+    "complexity_score": 144,
+    "cross_reference_count": 1,
+    "function_call_count": 2,
+    "global_count": 3,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 14,
+    "suspect_count": 11,
+    "suspect_types": [
+      "param_count_too_few",
+      "register_param",
+      "unnamed_param",
+      "unresolved_funcptr"
+    ],
+    "total_lines": 46
+  },
+  "cross_references": [
+    {
+      "addr": "005b8cf8",
+      "from_addr": "005b8d37",
+      "name": "FUN_005b8cf8",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "005beed4",
+    "address_range": [
+      [
+        "005beed4",
+        "005bef1d"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "FUN_005beed4",
+    "signature": "undefined4 FUN_005beed4(undefined4 param_1,undefined4 param_2)"
+  },
+  "function_calls": [
+    {
+      "addr": "005bce04",
+      "is_variadic": false,
+      "name": "FUN_005bce04"
+    },
+    {
+      "addr": "005bed18",
+      "is_variadic": false,
+      "name": "FUN_005bed18"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0061eea0",
+      "name": "DAT_0061eea0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0061f2c0",
+      "name": "PTR_FUN_0061f2c0",
+      "type": "void*",
+      "value": "005bce04"
+    },
+    {
+      "addr": "0061f2c8",
+      "name": "PTR_FUN_0061f2c8",
+      "type": "void*",
+      "value": "005bce04"
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 2,
+    "call_sites": [
+      {
+        "call_addr": "005b8d37",
+        "call_type": "direct",
+        "caller": "FUN_005b8cf8",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "005b8d7d",
+        "call_type": "direct",
+        "caller": "FUN_005b8cf8",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 2,
+    "matches_declared": false
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.285714285714286,
+    "instruction_count": 28,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 1,
+      "CALL": 1,
+      "CALLIND": 3,
+      "CBRANCH": 1,
+      "COPY": 25,
+      "INT_ADD": 9,
+      "INT_AND": 15,
+      "INT_CARRY": 3,
+      "INT_EQUAL": 14,
+      "INT_LESS": 1,
+      "INT_SBORROW": 1,
+      "INT_SCARRY": 3,
+      "INT_SLESS": 7,
+      "INT_SUB": 10,
+      "INT_XOR": 2,
+      "LOAD": 6,
+      "POPCOUNT": 7,
+      "RETURN": 2,
+      "STORE": 9
+    },
+    "pcode_op_count": 120
+  },
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "uint FUN_005beed4(uint param_1,uint param_2)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "uint FUN_005beed4(uint param_1,uint param_2)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 6,
+      "match": "in_DS",
+      "severity": "mild",
+      "text": "ushort in_DS;",
+      "type": "register_param"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 9,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "(*(code *)PTR_FUN_0061f2c0)();",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 10,
+      "match": "in_DS",
+      "severity": "mild",
+      "text": "iVar1 = FUN_005bed18(in_DS,param_1,param_2,auStack_8);",
+      "type": "register_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 10,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "iVar1 = FUN_005bed18(in_DS,param_1,param_2,auStack_8);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 10,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "iVar1 = FUN_005bed18(in_DS,param_1,param_2,auStack_8);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 12,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "(*(code *)PTR_FUN_0061f2c8)();",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 13,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "return param_1;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 15,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "(*(code *)PTR_FUN_0061f2c8)();",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "call_site_count": 2,
+      "declared_params": 0,
+      "description": "Signature has too few params - likely missing this ptr or other params",
+      "estimated_params": 2,
+      "fix_type": "add_params",
+      "match": "declared:0 vs estimated:2",
+      "param_delta": 2,
+      "text": "Function declares 0 params but call sites push 2 (2 missing)",
+      "type": "param_count_too_few"
+    }
+  ]
+}

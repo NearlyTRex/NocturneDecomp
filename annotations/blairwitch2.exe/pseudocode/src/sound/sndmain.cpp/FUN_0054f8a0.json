@@ -1,0 +1,251 @@
+{
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "other",
+        "column": 0,
+        "line": 0,
+        "message": "Compilation timed out after 60s"
+      }
+    ],
+    "success": false,
+    "warnings": []
+  },
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 56,
+    "complexity_score": 144,
+    "cross_reference_count": 1,
+    "function_call_count": 4,
+    "global_count": 6,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 24,
+    "suspect_count": 10,
+    "suspect_types": [
+      "param_count_too_few",
+      "unnamed_param",
+      "unresolved_funcptr",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 80
+  },
+  "cross_references": [
+    {
+      "addr": "00554510",
+      "from_addr": "0055457c",
+      "name": "FUN_00554510",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0054f8a0",
+    "address_range": [
+      [
+        "0054f8a0",
+        "0054f923"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "FUN_0054f8a0",
+    "signature": "void FUN_0054f8a0(int param_1)"
+  },
+  "function_calls": [
+    {
+      "addr": "004e4500",
+      "is_variadic": false,
+      "name": "FUN_004e4500"
+    },
+    {
+      "addr": "0054f700",
+      "is_variadic": false,
+      "name": "FUN_0054f700"
+    },
+    {
+      "addr": "00550010",
+      "is_variadic": false,
+      "name": "FUN_00550010"
+    },
+    {
+      "addr": "005549c0",
+      "is_variadic": false,
+      "name": "FUN_005549c0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005e886c",
+      "name": "s_sound_sndmain_cpp_005e886c",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e8881",
+      "name": "s_SfxSlot_pollHwHandle_no_005e8881",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e88a4",
+      "name": "s_Killing_looped_sfx_s_whi_005e88a4",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "01d046a0",
+      "name": "DAT_01d046a0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d046a4",
+      "name": "DAT_01d046a4",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02648e80",
+      "name": "DAT_02648e80",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "0055457c",
+        "call_type": "direct",
+        "caller": "FUN_00554510",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "low",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 1,
+    "matches_declared": false
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.255813953488372,
+    "instruction_count": 43,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 2,
+      "CALL": 4,
+      "CALLIND": 1,
+      "CBRANCH": 5,
+      "COPY": 33,
+      "INT_ADD": 15,
+      "INT_AND": 22,
+      "INT_CARRY": 5,
+      "INT_EQUAL": 20,
+      "INT_LESS": 3,
+      "INT_SBORROW": 3,
+      "INT_SCARRY": 5,
+      "INT_SLESS": 10,
+      "INT_SUB": 18,
+      "LOAD": 11,
+      "POPCOUNT": 10,
+      "RETURN": 1,
+      "STORE": 15
+    },
+    "pcode_op_count": 183
+  },
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 4,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "void FUN_0054f8a0(int param_1)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 9,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "if (*(int *)(param_1 + 0x60) != 0) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 11,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "if (*(int *)(param_1 + 0x68) == 0) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 16,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "iVar1 = (**(code **)(*_DAT_02648e80 + 0x54))(_DAT_02648e80,param_1);",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 16,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "iVar1 = (**(code **)(*_DAT_02648e80 + 0x54))(_DAT_02648e80,param_1);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 20,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "iVar1 = FUN_00550010(*(uint *)(param_1 + 0x68));",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 22,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "FUN_005549c0(\"Killing looped sfx %s, which died??\\n\",*(uint *)(param_1 + 0x68));",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 25,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "FUN_0054f700(param_1);",
+      "type": "unnamed_param"
+    },
+    {
+      "call_site_count": 1,
+      "declared_params": 0,
+      "description": "Signature has too few params - likely missing this ptr or other params",
+      "estimated_params": 1,
+      "fix_type": "add_params",
+      "match": "declared:0 vs estimated:1",
+      "param_delta": 1,
+      "text": "Function declares 0 params but call sites push 1 (1 missing)",
+      "type": "param_count_too_few"
+    }
+  ]
+}

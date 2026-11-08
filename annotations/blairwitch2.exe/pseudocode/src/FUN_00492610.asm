@@ -1,0 +1,26 @@
+; *****************************************************************************
+;                               FUNCTION
+; *****************************************************************************
+; void FUN_00492610(undefined4 *param_1,undefined4 *param_2)
+;
+;
+; XREF[1]:
+;   FUN_00522350 at 00526a5f
+;
+; *****************************************************************************
+
+section .text
+
+    MOV EAX,dword ptr [ESP + 0x4]       ; 00492610
+        ;   Label: FUN_00492610
+    MOV EDX,dword ptr [ESP + 0x8]       ; 00492614
+    MOV ECX,dword ptr [EDX]             ; 00492618
+    MOV dword ptr [EAX],ECX             ; 0049261a
+    MOV ECX,dword ptr [EDX + 0x4]       ; 0049261c
+    MOV dword ptr [EAX + 0x4],ECX       ; 0049261f
+    MOV ECX,dword ptr [EDX + 0x8]       ; 00492622
+    MOV dword ptr [EAX + 0x8],ECX       ; 00492625
+    MOV EDX,dword ptr [EDX + 0xc]       ; 00492628
+    MOV dword ptr [EAX + 0xc],EDX       ; 0049262b
+    RET                                 ; 0049262e
+

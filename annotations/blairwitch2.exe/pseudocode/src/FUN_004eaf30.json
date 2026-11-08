@@ -1,0 +1,430 @@
+{
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "other",
+        "column": 0,
+        "line": 0,
+        "message": "Compilation timed out after 60s"
+      }
+    ],
+    "success": false,
+    "warnings": []
+  },
+  "compile_source": "c",
+  "complexity": {
+    "assembly_lines": 133,
+    "complexity_score": 322,
+    "cross_reference_count": 1,
+    "function_call_count": 4,
+    "global_count": 4,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 62,
+    "suspect_count": 24,
+    "suspect_types": [
+      "param_count_too_few",
+      "undefined_data",
+      "unnamed_param",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 195
+  },
+  "cross_references": [
+    {
+      "addr": "004ed260",
+      "from_addr": "004eda9b",
+      "name": "FUN_004ed260",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004eaf30",
+    "address_range": [
+      [
+        "004eaf30",
+        "004eb0d2"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "FUN_004eaf30",
+    "signature": "void FUN_004eaf30(int param_1,int param_2,int param_3)"
+  },
+  "function_calls": [
+    {
+      "addr": "00469c60",
+      "is_variadic": false,
+      "name": "FUN_00469c60"
+    },
+    {
+      "addr": "0046b8d0",
+      "is_variadic": false,
+      "name": "FUN_0046b8d0"
+    },
+    {
+      "addr": "0046b8e0",
+      "is_variadic": false,
+      "name": "FUN_0046b8e0"
+    },
+    {
+      "addr": "0046ca00",
+      "is_variadic": false,
+      "name": "FUN_0046ca00"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0060b280",
+      "name": "DAT_0060b280",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00617fc8",
+      "name": "DAT_00617fc8",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01ba5c50",
+      "name": "DAT_01ba5c50",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d06134",
+      "name": "DAT_01d06134",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "004eda9b",
+        "call_type": "direct",
+        "caller": "FUN_004ed260",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      }
+    ],
+    "confidence": "low",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 3,
+    "matches_declared": false
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.80327868852459,
+    "instruction_count": 122,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 40,
+      "BOOL_OR": 3,
+      "BOOL_XOR": 1,
+      "CALL": 6,
+      "CBRANCH": 2,
+      "COPY": 105,
+      "INT_ADD": 48,
+      "INT_AND": 144,
+      "INT_CARRY": 9,
+      "INT_EQUAL": 62,
+      "INT_LEFT": 12,
+      "INT_LESS": 8,
+      "INT_MULT": 2,
+      "INT_NOTEQUAL": 20,
+      "INT_OR": 38,
+      "INT_SBORROW": 8,
+      "INT_SCARRY": 9,
+      "INT_SLESS": 39,
+      "INT_SRIGHT": 4,
+      "INT_SUB": 39,
+      "INT_XOR": 7,
+      "INT_ZEXT": 1,
+      "LOAD": 25,
+      "POPCOUNT": 27,
+      "RETURN": 1,
+      "STORE": 48
+    },
+    "pcode_op_count": 708
+  },
+  "stack_frame": {
+    "frame_size": 52,
+    "local_size": 52,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_30",
+        "offset": -48,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": false,
+        "name": "local_2c",
+        "offset": -44,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_28",
+        "offset": -40,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_24",
+        "offset": -36,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_20",
+        "offset": -32,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_10",
+        "offset": -16,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_c",
+        "offset": -12,
+        "size": 4,
+        "type": "undefined4"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 4,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "void FUN_004eaf30(int param_1,int param_2,int param_3)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 4,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "void FUN_004eaf30(int param_1,int param_2,int param_3)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 4,
+      "match": "param_3",
+      "severity": "mild",
+      "text": "void FUN_004eaf30(int param_1,int param_2,int param_3)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 21,
+      "match": "DAT_0060b280",
+      "severity": "mild",
+      "text": "piVar1 = DAT_0060b280;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 22,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "if (0x140 < param_1) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 23,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "param_1 = 0x280 - (param_1 + -0x140);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 23,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "param_1 = 0x280 - (param_1 + -0x140);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 25,
+      "match": "param_3",
+      "severity": "mild",
+      "text": "if (0 < param_3 * 2) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 26,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "iVar3 = (param_1 + -0x10) * 0x10000;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 27,
+      "match": "DAT_0060b280",
+      "severity": "mild",
+      "text": "*(int *)(*DAT_0060b280 + 0x10) = iVar3;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 28,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "*(int *)(*piVar1 + 0x14) = param_2 << 0x10;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 29,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "iVar2 = (param_1 + 0x10) * 0x10000;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 31,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "*(int *)(*piVar1 + 0x44) = param_2 << 0x10;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 33,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "iVar2 = (param_2 + param_3 * -2) * 0x10000;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 33,
+      "match": "param_3",
+      "severity": "mild",
+      "text": "iVar2 = (param_2 + param_3 * -2) * 0x10000;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 55,
+      "match": "DAT_0060b280",
+      "severity": "mild",
+      "text": "FUN_0046b8d0(DAT_0060b280,1);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 56,
+      "match": "DAT_0060b280",
+      "severity": "mild",
+      "text": "FUN_0046ca00(DAT_0060b280,",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 57,
+      "match": "DAT_00617fc8",
+      "severity": "mild",
+      "text": "&DAT_00617fc8 +",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 59,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(uint)((_DAT_01d06134 >> 0x1f) << 0xf < 0)) >> 0x10) + param_1 & 7U) * 0x18)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 61,
+      "match": "DAT_0060b280",
+      "severity": "mild",
+      "text": "FUN_00469c60(DAT_0060b280,local_30,0x23);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 62,
+      "match": "DAT_0060b280",
+      "severity": "mild",
+      "text": "FUN_0046b8d0(DAT_0060b280,0);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 63,
+      "match": "DAT_0060b280",
+      "severity": "mild",
+      "text": "FUN_0046b8e0(DAT_0060b280,0xffff);",
+      "type": "undefined_data"
+    },
+    {
+      "call_site_count": 1,
+      "declared_params": 0,
+      "description": "Signature has too few params - likely missing this ptr or other params",
+      "estimated_params": 3,
+      "fix_type": "add_params",
+      "match": "declared:0 vs estimated:3",
+      "param_delta": 3,
+      "text": "Function declares 0 params but call sites push 3 (3 missing)",
+      "type": "param_count_too_few"
+    }
+  ]
+}

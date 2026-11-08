@@ -1,0 +1,193 @@
+// Name: FUN_005156d0
+// Address: 005156d0
+// Address Range: [[005156d0, 00515cc7]]
+// Convention: unknown
+// Signature: void FUN_005156d0(int param_1,float param_2)
+
+#include "nocturne.h"
+
+/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+
+void FUN_005156d0(int param_1,float param_2)
+
+{
+  byte bVar1;
+  float10 fVar2;
+  float10 fVar3;
+  float10 fVar4;
+  float10 fVar5;
+  double dVar6;
+  float afStackY_1028 [1000];
+  float fStack_78;
+  float fStack_74;
+  float fStack_70;
+  float fStack_6c;
+  float fStack_68;
+  float fStack_64;
+  float fStack_60;
+  float fStack_5c;
+  float fStack_58;
+  uint uStack_54;
+  float fStack_50;
+  float fStack_4c;
+  uint uStack_48;
+  float fStack_44;
+  uint uStack_40;
+  uint uStack_3c;
+  uint uStack_38;
+  uint uStack_34;
+  double dStack_28;
+  double dStack_20;
+  float fStack_18;
+  
+  bVar1 = 0;
+  dStack_28 = (double)*(float *)(param_1 + 0x4fc);
+  dStack_20 = (double)FUN_005b84d0(dStack_28);
+  fStack_50 = (float)((float10)dStack_28 - (float10)dStack_20);
+  *(float *)(param_1 + 0x4fc) = param_2 / *(float *)(param_1 + 0x500) + *(float *)(param_1 + 0x4fc);
+  if ((*(int *)(param_1 + 0x598) != 0) && (1.0 < *(float *)(param_1 + 0x4fc))) {
+    *(float *)(param_1 + 0x4fc) = *(float *)(param_1 + 0x4fc) + _DAT_005e1a3e;
+  }
+  dVar6 = (double)FUN_005b84d0((double)*(float *)(param_1 + 0x4fc));
+  fVar2 = (float10)*(float *)(param_1 + 0x4fc) - (float10)dVar6;
+  *(float *)(param_1 + 0x4fc) = (float)fVar2;
+  fVar3 = (float10)fsin(fVar2 * (float10)_DAT_005e1a42 * (float10)_DAT_005e1a4a);
+  fVar4 = (float10)*(float *)(param_1 + 0x590) + (float10)param_2;
+  fVar5 = (float10)_DAT_005e1a52;
+  *(float *)(param_1 + 0x590) = (float)fVar4;
+  fVar2 = (float10)1;
+  fVar5 = (float10)1.4426950408889634 * fVar4 * (float10)*(float *)(param_1 + 0x58c) * fVar5;
+  fVar4 = (float10)f2xm1(fVar5 - (fVar5 / fVar2) * fVar2);
+  fVar2 = (float10)fscale(fVar4 + fVar2,fVar5);
+  *(float *)(param_1 + 0x38) = (float)(fVar2 * fVar3 * (float10)*(float *)(param_1 + 0x504));
+  dStack_20 = dVar6;
+  FUN_00408ae0();
+  FUN_00408d70(param_1,param_1 + 0x56c);
+  uStack_40 = uStack_34;
+  *(uint *)((int)&stack0xffffffc4 + (uint)bVar1 * -8) =
+       *(uint *)(&stack0xffffffd0 + (uint)bVar1 * -8);
+  *(uint *)((int)&stack0xffffffc8 + (uint)bVar1 * -8 + (uint)bVar1 * -8) =
+       *(uint *)(&stack0xffffffd4 + (uint)bVar1 * -8 + (uint)bVar1 * -8);
+  if ((uint *)(param_1 + 0x578) != &stack0xffffffc0) {
+    *(uint *)(param_1 + 0x578) = uStack_40;
+    *(uint *)(param_1 + 0x57c) = uStack_3c;
+    *(uint *)(param_1 + 0x580) = uStack_38;
+  }
+  fVar2 = (float10)1;
+  fVar5 = (float10)1.4426950408889634 *
+          (float10)*(float *)(param_1 + 0x58c) * (float10)_DAT_005e1a52 *
+          (float10)*(float *)(param_1 + 0x590);
+  fVar3 = (float10)f2xm1(fVar5 - (fVar5 / fVar2) * fVar2);
+  fVar2 = (float10)fscale(fVar3 + fVar2,fVar5);
+  fStack_64 = (float)fVar2;
+  if ((0.0 < param_2) && ((float)_DAT_005e1a5a < fStack_64)) {
+    fStack_60 = fStack_50;
+    fStack_70 = *(float *)(param_1 + 0x4fc);
+    uStack_54 = 0;
+    if (fStack_50 < (float)_DAT_005e1a62) {
+      fStack_60 = fStack_50 + 1.0;
+    }
+    if ((float)_DAT_005e1a6a + 0.0 < fStack_60) {
+      fStack_60 = fStack_60 + _DAT_005e1a72;
+    }
+    if (fStack_60 <= 0.0) {
+      if (fStack_70 < fStack_60) {
+        fStack_70 = fStack_70 + 1.0;
+      }
+      if (fStack_70 < fStack_60) {
+        fStack_70 = fStack_70 + 1.0;
+      }
+      if (fStack_60 + 1.0 < fStack_70) {
+        fStack_70 = fStack_70 + _DAT_005e1a72;
+      }
+      if (fStack_60 + 1.0 < fStack_70) {
+        fStack_70 = fStack_70 + _DAT_005e1a72;
+      }
+      if (0.0 < fStack_70) {
+        (**(code **)(*(int *)(param_1 + 0x2b0) + 0x34))(param_1,param_1 + 0x52c);
+      }
+    }
+    fStack_4c = *(float *)(param_1 + 0x528) + (float)_DAT_005e1a7a;
+    fStack_5c = fStack_50;
+    fStack_74 = *(float *)(param_1 + 0x4fc);
+    if (fStack_50 < fStack_4c + (float)_DAT_005e1a62) {
+      fStack_5c = fStack_50 + 1.0;
+    }
+    if (fStack_4c + (float)_DAT_005e1a6a < fStack_5c) {
+      fStack_5c = fStack_5c + _DAT_005e1a72;
+    }
+    fStack_18 = fStack_4c;
+    if (fStack_5c <= fStack_4c) {
+      if (fStack_74 < fStack_5c) {
+        fStack_74 = fStack_74 + 1.0;
+      }
+      if (fStack_74 < fStack_5c) {
+        fStack_74 = fStack_74 + 1.0;
+      }
+      if (fStack_5c + 1.0 < fStack_74) {
+        fStack_74 = fStack_74 + _DAT_005e1a72;
+      }
+      if (fStack_5c + 1.0 < fStack_74) {
+        fStack_74 = fStack_74 + _DAT_005e1a72;
+      }
+      if (fStack_4c < fStack_74) {
+        FUN_0055ae80(0x0264B290,param_1,param_1 + 0x508,param_1 + 0x578);
+      }
+    }
+    fStack_58 = fStack_50;
+    fStack_78 = *(float *)(param_1 + 0x4fc);
+    uStack_48 = 0x3f000000;
+    if (fStack_50 < 0.0) {
+      fStack_58 = fStack_50 + 1.0;
+    }
+    if ((float)_DAT_005e1a6a + 0.5 < fStack_58) {
+      fStack_58 = fStack_58 + _DAT_005e1a72;
+    }
+    if (fStack_58 <= 0.5) {
+      if (fStack_78 < fStack_58) {
+        fStack_78 = fStack_78 + 1.0;
+      }
+      if (fStack_78 < fStack_58) {
+        fStack_78 = fStack_78 + 1.0;
+      }
+      if (fStack_58 + 1.0 < fStack_78) {
+        fStack_78 = fStack_78 + _DAT_005e1a72;
+      }
+      if (fStack_58 + 1.0 < fStack_78) {
+        fStack_78 = fStack_78 + _DAT_005e1a72;
+      }
+      if (0.5 < fStack_78) {
+        (**(code **)(*(int *)(param_1 + 0x2b0) + 0x34))(param_1,param_1 + 0x54c);
+      }
+    }
+    fStack_68 = *(float *)(param_1 + 0x528) + (float)_DAT_005e1a82;
+    fStack_44 = fStack_50;
+    fStack_6c = *(float *)(param_1 + 0x4fc);
+    if (fStack_50 < fStack_68 + (float)_DAT_005e1a62) {
+      fStack_44 = fStack_50 + 1.0;
+    }
+    if (fStack_68 + (float)_DAT_005e1a6a < fStack_44) {
+      fStack_44 = fStack_44 + _DAT_005e1a72;
+    }
+    if (fStack_44 <= fStack_68) {
+      if (fStack_6c < fStack_44) {
+        fStack_6c = fStack_6c + 1.0;
+      }
+      if (fStack_6c < fStack_44) {
+        fStack_6c = fStack_6c + 1.0;
+      }
+      if (fStack_44 + 1.0 < fStack_6c) {
+        fStack_6c = fStack_6c + _DAT_005e1a72;
+      }
+      if (fStack_44 + 1.0 < fStack_6c) {
+        fStack_6c = fStack_6c + _DAT_005e1a72;
+      }
+      if (fStack_68 < fStack_6c) {
+        fStack_18 = fStack_68;
+        FUN_0055ae80(0x0264B290,param_1,param_1 + 0x508,param_1 + 0x578);
+        return;
+      }
+    }
+  }
+  return;
+}

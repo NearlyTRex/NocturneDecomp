@@ -1,0 +1,354 @@
+{
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "other",
+        "column": 25,
+        "line": 28,
+        "message": "unknown type name 'HWND'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 124,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 126,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 191,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 198,
+        "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
+      },
+      {
+        "category": "other",
+        "column": 1,
+        "line": 204,
+        "message": "unknown type name 'MMRESULT'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 16,
+        "message": "unknown type name 'HWND'"
+      },
+      {
+        "category": "other",
+        "column": 56,
+        "line": 237,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 1,
+        "line": 80,
+        "message": "unknown type name 'LPCRITICAL_SECTION'"
+      },
+      {
+        "category": "other",
+        "column": 20,
+        "line": 93,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 131,
+        "message": "unknown type name 'FILETIME'"
+      },
+      {
+        "category": "other",
+        "column": 37,
+        "line": 131,
+        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
+      },
+      {
+        "category": "other",
+        "column": 52,
+        "line": 131,
+        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 5,
+        "line": 18,
+        "message": "use of undeclared identifier '_DAT_0264900c'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 26,
+        "line": 19,
+        "message": "use of undeclared identifier '_DAT_005e919e'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 7,
+        "line": 20,
+        "message": "use of undeclared identifier '_DAT_0264900c'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 5,
+        "line": 22,
+        "message": "use of undeclared identifier '_DAT_02649010'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 5,
+        "line": 23,
+        "message": "use of undeclared identifier '_DAT_02649014'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 27,
+        "line": 24,
+        "message": "use of undeclared identifier 'LAB_00553180'"
+      }
+    ],
+    "success": false,
+    "warnings": []
+  },
+  "compile_source": "c",
+  "complexity": {
+    "assembly_lines": 72,
+    "complexity_score": 92,
+    "cross_reference_count": 2,
+    "function_call_count": 4,
+    "global_count": 4,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 27,
+    "suspect_count": 5,
+    "suspect_types": [
+      "param_count_too_few",
+      "unnamed_param",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 99
+  },
+  "cross_references": [
+    {
+      "addr": "00555130",
+      "from_addr": "005551b9",
+      "name": "FUN_00555130",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00557dc0",
+      "from_addr": "00557e5b",
+      "name": "FUN_00557dc0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "005531d0",
+    "address_range": [
+      [
+        "005531d0",
+        "0055326d"
+      ]
+    ],
+    "convention": "unknown",
+    "is_ebp_frame": true,
+    "name": "FUN_005531d0",
+    "signature": "int FUN_005531d0(float param_1)"
+  },
+  "function_calls": [
+    {
+      "addr": "00553270",
+      "is_variadic": false,
+      "name": "FUN_00553270"
+    },
+    {
+      "addr": "0058fd20",
+      "is_variadic": false,
+      "name": "FUN_0058fd20"
+    },
+    {
+      "addr": "0058fd50",
+      "is_variadic": false,
+      "name": "FUN_0058fd50"
+    },
+    {
+      "addr": "0058fd90",
+      "is_variadic": false,
+      "name": "FUN_0058fd90"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005e919e",
+      "name": "DAT_005e919e",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0264900c",
+      "name": "DAT_0264900c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02649010",
+      "name": "DAT_02649010",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02649014",
+      "name": "DAT_02649014",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 2,
+    "call_sites": [
+      {
+        "call_addr": "005551b9",
+        "call_type": "direct",
+        "caller": "FUN_00555130",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [
+          "EBX"
+        ],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "00557e5b",
+        "call_type": "direct",
+        "caller": "FUN_00557dc0",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [
+          "ECX"
+        ],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 2,
+    "matches_declared": false
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.763636363636364,
+    "instruction_count": 55,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 3,
+      "BOOL_OR": 1,
+      "CALL": 4,
+      "CBRANCH": 7,
+      "COPY": 67,
+      "FLOAT2FLOAT": 2,
+      "FLOAT_EQUAL": 1,
+      "FLOAT_LESS": 1,
+      "FLOAT_NAN": 2,
+      "INT_ADD": 14,
+      "INT_AND": 36,
+      "INT_CARRY": 3,
+      "INT_EQUAL": 27,
+      "INT_LEFT": 4,
+      "INT_LESS": 2,
+      "INT_NOTEQUAL": 5,
+      "INT_OR": 5,
+      "INT_SBORROW": 2,
+      "INT_SCARRY": 4,
+      "INT_SLESS": 13,
+      "INT_SUB": 15,
+      "INT_XOR": 2,
+      "INT_ZEXT": 4,
+      "LOAD": 10,
+      "POPCOUNT": 13,
+      "RETURN": 2,
+      "STORE": 13
+    },
+    "pcode_op_count": 262
+  },
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "stack_patterns": {
+    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
+    "pattern_count": 1,
+    "pattern_types": [
+      "stack_alignment"
+    ],
+    "patterns": [
+      {
+        "address": "005531d5",
+        "description": "Stack alignment (AND ESP, 0xfffffff8)",
+        "impact": "Causes ESP-relative offsets to become runtime-dependent. All stack variables accessed via ESP after this point will appear as separate \"in_stack_XXXX\" parameters.",
+        "instruction": "AND ESP,0xfffffff8",
+        "pattern_id": "stack_alignment"
+      }
+    ],
+    "severity": "medium"
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 4,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "int FUN_005531d0(float param_1)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 11,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "_DAT_0264900c = param_1;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 12,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "if (param_1 < (float)_DAT_005e919e) {",
+      "type": "unnamed_param"
+    },
+    {
+      "call_site_count": 2,
+      "declared_params": 0,
+      "description": "Signature has too few params - likely missing this ptr or other params",
+      "estimated_params": 2,
+      "fix_type": "add_params",
+      "match": "declared:0 vs estimated:2",
+      "param_delta": 2,
+      "text": "Function declares 0 params but call sites push 2 (2 missing)",
+      "type": "param_count_too_few"
+    }
+  ]
+}

@@ -1,0 +1,71 @@
+// Name: FUN_00402940
+// Address: 00402940
+// Address Range: [[00402940, 00402ab5]]
+// Convention: unknown
+// Signature: void FUN_00402940(char *param_1)
+
+#include "nocturne.h"
+
+/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+
+void FUN_00402940(char *param_1)
+
+{
+  char cVar1;
+  int iVar2;
+  char *pcVar3;
+  char *pcVar4;
+  char local_88 [80];
+  byte local_38 [40];
+  byte local_10 [8];
+  
+  FUN_0057cd50(local_38);
+  pcVar4 = local_88;
+  do {
+    cVar1 = *param_1;
+    *pcVar4 = cVar1;
+    pcVar3 = local_88;
+    if (cVar1 == '\0') break;
+    cVar1 = param_1[1];
+    param_1 = param_1 + 2;
+    pcVar4[1] = cVar1;
+    pcVar4 = pcVar4 + 2;
+    pcVar3 = local_88;
+  } while (cVar1 != '\0');
+  do {
+    pcVar4 = pcVar3;
+    if (*pcVar3 == '.') goto LAB_00402994;
+    if (*pcVar3 == '\0') break;
+    pcVar4 = pcVar3 + 1;
+    if (*pcVar4 == '.') goto LAB_00402994;
+    pcVar3 = pcVar3 + 2;
+  } while (*pcVar4 != '\0');
+  pcVar4 = (char *)0x0;
+LAB_00402994:
+  if (pcVar4 == (char *)0x0) {
+    _DAT_01d046a0 = "..\\engine\\2d.c";
+    _DAT_01d046a4 = 0x74f;
+    FUN_004e4500("hose!");
+  }
+  FUN_005b7790(pcVar4,&DAT_005ca0a9);
+  iVar2 = FUN_0057d390(local_38,&DAT_005ca0ae,local_88);
+  if (iVar2 == 0) {
+    FUN_00402880();
+    FUN_0057db80(local_10);
+    iVar2 = FUN_0057ddd0(local_10,&DAT_005ca0b5,local_88,&DAT_005ca0b2);
+    if (iVar2 == 0) {
+      _DAT_01d046a0 = "..\\engine\\2d.c";
+      _DAT_01d046a4 = 0x756;
+      FUN_004e4500("Unable to write quick map!");
+    }
+    FUN_0057dca0(local_10,&DAT_01c2c910,0x8000);
+    FUN_0057dd60(local_10);
+    FUN_0057dc10(local_10,0);
+  }
+  else {
+    FUN_0057cfe0(local_38,&DAT_01c2c910,0x8000);
+    FUN_0057d180(local_38);
+  }
+  FUN_0057cec0(local_38,0);
+  return;
+}

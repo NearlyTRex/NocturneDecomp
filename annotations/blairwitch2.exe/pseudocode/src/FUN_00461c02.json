@@ -1,0 +1,833 @@
+{
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "other",
+        "column": 25,
+        "line": 28,
+        "message": "unknown type name 'HWND'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 124,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 126,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 191,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 198,
+        "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
+      },
+      {
+        "category": "other",
+        "column": 1,
+        "line": 204,
+        "message": "unknown type name 'MMRESULT'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 16,
+        "message": "unknown type name 'HWND'"
+      },
+      {
+        "category": "other",
+        "column": 56,
+        "line": 237,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 1,
+        "line": 80,
+        "message": "unknown type name 'LPCRITICAL_SECTION'"
+      },
+      {
+        "category": "other",
+        "column": 20,
+        "line": 93,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 131,
+        "message": "unknown type name 'FILETIME'"
+      },
+      {
+        "category": "other",
+        "column": 37,
+        "line": 131,
+        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
+      },
+      {
+        "category": "other",
+        "column": 52,
+        "line": 131,
+        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 5,
+        "line": 27,
+        "message": "use of undeclared identifier '_DAT_01ba56cc'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 7,
+        "line": 29,
+        "message": "use of undeclared identifier '_DAT_01ba56d0'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 5,
+        "line": 30,
+        "message": "use of undeclared identifier '_DAT_01ba56d0'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 8,
+        "line": 87,
+        "message": "use of undeclared identifier 'DAT_01c38b55'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 3,
+        "line": 103,
+        "message": "use of undeclared identifier '_DAT_01ba51c8'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 19,
+        "line": 103,
+        "message": "use of undeclared identifier '_DAT_01ba51c8'"
+      }
+    ],
+    "success": false,
+    "warnings": []
+  },
+  "compile_source": "c",
+  "complexity": {
+    "assembly_lines": 197,
+    "complexity_score": 724,
+    "cross_reference_count": 0,
+    "function_call_count": 0,
+    "global_count": 5,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 94,
+    "suspect_count": 61,
+    "suspect_types": [
+      "register_param",
+      "unaffected_reg",
+      "undefined_data",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 291
+  },
+  "cross_references": [],
+  "function": {
+    "address": "00461c02",
+    "address_range": [
+      [
+        "00461c02",
+        "00461c0e"
+      ],
+      [
+        "00461c10",
+        "00461e03"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "FUN_00461c02",
+    "signature": "void FUN_00461c02(void)"
+  },
+  "function_calls": [],
+  "globals": [
+    {
+      "addr": "0070ca74",
+      "name": "DAT_0070ca74",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01ba51c8",
+      "name": "DAT_01ba51c8",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01ba56cc",
+      "name": "DAT_01ba56cc",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01ba56d0",
+      "name": "DAT_01ba56d0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c38b55",
+      "name": "DAT_01c38b55",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 0,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 7.7967032967032965,
+    "instruction_count": 182,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 91,
+      "BOOL_OR": 1,
+      "BRANCH": 2,
+      "CBRANCH": 5,
+      "COPY": 162,
+      "INT_ADD": 62,
+      "INT_AND": 312,
+      "INT_CARRY": 9,
+      "INT_DIV": 1,
+      "INT_EQUAL": 113,
+      "INT_LEFT": 19,
+      "INT_LESS": 14,
+      "INT_MULT": 18,
+      "INT_NOTEQUAL": 73,
+      "INT_OR": 109,
+      "INT_REM": 1,
+      "INT_RIGHT": 36,
+      "INT_SBORROW": 14,
+      "INT_SCARRY": 10,
+      "INT_SEXT": 54,
+      "INT_SLESS": 83,
+      "INT_SUB": 51,
+      "INT_XOR": 21,
+      "INT_ZEXT": 3,
+      "LOAD": 43,
+      "POPCOUNT": 47,
+      "RETURN": 1,
+      "STORE": 26,
+      "SUBPIECE": 38
+    },
+    "pcode_op_count": 1419
+  },
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "static_analysis": {
+    "analyzed_file": "FUN_00461c02.c",
+    "cppcheck_quick": {
+      "diagnostic_count": 6,
+      "diagnostics": [
+        {
+          "check_id": "uninitvar",
+          "column": 7,
+          "line": 26,
+          "message": "Uninitialized variable: unaff_EDI",
+          "severity": "error"
+        },
+        {
+          "check_id": "uninitvar",
+          "column": 19,
+          "line": 26,
+          "message": "Uninitialized variable: in_EAX",
+          "severity": "error"
+        },
+        {
+          "check_id": "uninitvar",
+          "column": 23,
+          "line": 29,
+          "message": "Uninitialized variable: unaff_EBX",
+          "severity": "error"
+        },
+        {
+          "check_id": "uninitvar",
+          "column": 20,
+          "line": 32,
+          "message": "Uninitialized variable: unaff_EBP",
+          "severity": "error"
+        },
+        {
+          "check_id": "uninitvar",
+          "column": 49,
+          "line": 32,
+          "message": "Uninitialized variable: unaff_ESI",
+          "severity": "error"
+        },
+        {
+          "check_id": "uninitvar",
+          "column": 13,
+          "line": 42,
+          "message": "Uninitialized variable: in_ECX",
+          "severity": "error"
+        }
+      ],
+      "error": null
+    },
+    "file_variant": "raw"
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 8,
+      "match": "in_EAX",
+      "severity": "mild",
+      "text": "int in_EAX;",
+      "type": "register_param"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 10,
+      "match": "in_ECX",
+      "severity": "mild",
+      "text": "int in_ECX;",
+      "type": "register_param"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 11,
+      "match": "unaff_EBX",
+      "severity": "moderate",
+      "text": "int unaff_EBX;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 14,
+      "match": "unaff_EBP",
+      "severity": "moderate",
+      "text": "int unaff_EBP;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 15,
+      "match": "unaff_ESI",
+      "severity": "moderate",
+      "text": "int unaff_ESI;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 16,
+      "match": "unaff_EDI",
+      "severity": "moderate",
+      "text": "int unaff_EDI;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 19,
+      "match": "in_EAX",
+      "severity": "mild",
+      "text": "if (unaff_EDI < in_EAX) {",
+      "type": "register_param"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 19,
+      "match": "unaff_EDI",
+      "severity": "moderate",
+      "text": "if (unaff_EDI < in_EAX) {",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 20,
+      "match": "unaff_EDI",
+      "severity": "moderate",
+      "text": "_DAT_01ba56cc = unaff_EDI;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 22,
+      "match": "unaff_EBX",
+      "severity": "moderate",
+      "text": "if (_DAT_01ba56d0 < unaff_EBX) {",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 23,
+      "match": "unaff_EBX",
+      "severity": "moderate",
+      "text": "_DAT_01ba56d0 = unaff_EBX;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 25,
+      "match": "unaff_EBP",
+      "severity": "moderate",
+      "text": "uVar3 = *(int *)(unaff_EBP + 0x14) - *(int *)(unaff_ESI + 0x14);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 25,
+      "match": "unaff_ESI",
+      "severity": "moderate",
+      "text": "uVar3 = *(int *)(unaff_EBP + 0x14) - *(int *)(unaff_ESI + 0x14);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 32,
+      "match": "unaff_ESI",
+      "severity": "moderate",
+      "text": "uVar5 = (uint)(ushort)((ushort)*(uint *)(unaff_ESI + 0x14) ^ 0xffff);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 33,
+      "match": "unaff_EBP",
+      "severity": "moderate",
+      "text": "lVar1 = (longlong)iVar4 * (longlong)(*(int *)(unaff_EBP + 0x10) - *(int *)(unaff_ESI + 0x10));",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 33,
+      "match": "unaff_ESI",
+      "severity": "moderate",
+      "text": "lVar1 = (longlong)iVar4 * (longlong)(*(int *)(unaff_EBP + 0x10) - *(int *)(unaff_ESI + 0x10));",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 35,
+      "match": "in_ECX",
+      "severity": "mild",
+      "text": "*(uint *)(in_ECX + 0xc) = uVar3;",
+      "type": "register_param"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 37,
+      "match": "in_ECX",
+      "severity": "mild",
+      "text": "*(uint *)(in_ECX + 8) =",
+      "type": "register_param"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 38,
+      "match": "unaff_ESI",
+      "severity": "moderate",
+      "text": "*(int *)(unaff_ESI + 0x10) + ((uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 39,
+      "match": "unaff_EBP",
+      "severity": "moderate",
+      "text": "lVar1 = (longlong)iVar4 * (longlong)(*(int *)(unaff_EBP + 0x18) - *(int *)(unaff_ESI + 0x18));",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 39,
+      "match": "unaff_ESI",
+      "severity": "moderate",
+      "text": "lVar1 = (longlong)iVar4 * (longlong)(*(int *)(unaff_EBP + 0x18) - *(int *)(unaff_ESI + 0x18));",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 41,
+      "match": "in_ECX",
+      "severity": "mild",
+      "text": "*(uint *)(in_ECX + 0x1c) = uVar3;",
+      "type": "register_param"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 43,
+      "match": "in_ECX",
+      "severity": "mild",
+      "text": "*(uint *)(in_ECX + 0x18) =",
+      "type": "register_param"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 44,
+      "match": "unaff_ESI",
+      "severity": "moderate",
+      "text": "*(int *)(unaff_ESI + 0x18) + ((uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 45,
+      "match": "unaff_EBP",
+      "severity": "moderate",
+      "text": "lVar1 = (longlong)iVar4 * (longlong)(*(int *)(unaff_EBP + 0x1c) - *(int *)(unaff_ESI + 0x1c));",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 45,
+      "match": "unaff_ESI",
+      "severity": "moderate",
+      "text": "lVar1 = (longlong)iVar4 * (longlong)(*(int *)(unaff_EBP + 0x1c) - *(int *)(unaff_ESI + 0x1c));",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 47,
+      "match": "in_ECX",
+      "severity": "mild",
+      "text": "*(uint *)(in_ECX + 0x24) = uVar3;",
+      "type": "register_param"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 49,
+      "match": "in_ECX",
+      "severity": "mild",
+      "text": "*(uint *)(in_ECX + 0x20) =",
+      "type": "register_param"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 50,
+      "match": "unaff_ESI",
+      "severity": "moderate",
+      "text": "*(int *)(unaff_ESI + 0x1c) + ((uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 51,
+      "match": "unaff_EBP",
+      "severity": "moderate",
+      "text": "lVar1 = (longlong)iVar4 * (longlong)(*(int *)(unaff_EBP + 0x20) - *(int *)(unaff_ESI + 0x20));",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 51,
+      "match": "unaff_ESI",
+      "severity": "moderate",
+      "text": "lVar1 = (longlong)iVar4 * (longlong)(*(int *)(unaff_EBP + 0x20) - *(int *)(unaff_ESI + 0x20));",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 53,
+      "match": "in_ECX",
+      "severity": "mild",
+      "text": "*(uint *)(in_ECX + 0x14) = uVar3;",
+      "type": "register_param"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 55,
+      "match": "in_ECX",
+      "severity": "mild",
+      "text": "*(uint *)(in_ECX + 0x10) =",
+      "type": "register_param"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 56,
+      "match": "unaff_ESI",
+      "severity": "moderate",
+      "text": "*(int *)(unaff_ESI + 0x20) + ((uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 57,
+      "match": "unaff_EBP",
+      "severity": "moderate",
+      "text": "lVar1 = (longlong)iVar4 * (longlong)(*(int *)(unaff_EBP + 0x2c) - *(int *)(unaff_ESI + 0x2c));",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 57,
+      "match": "unaff_ESI",
+      "severity": "moderate",
+      "text": "lVar1 = (longlong)iVar4 * (longlong)(*(int *)(unaff_EBP + 0x2c) - *(int *)(unaff_ESI + 0x2c));",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 59,
+      "match": "in_ECX",
+      "severity": "mild",
+      "text": "*(uint *)(in_ECX + 0x34) = uVar3;",
+      "type": "register_param"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 61,
+      "match": "in_ECX",
+      "severity": "mild",
+      "text": "*(uint *)(in_ECX + 0x30) =",
+      "type": "register_param"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 62,
+      "match": "unaff_ESI",
+      "severity": "moderate",
+      "text": "*(int *)(unaff_ESI + 0x2c) + ((uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 63,
+      "match": "DAT_0070ca74",
+      "severity": "mild",
+      "text": "if (DAT_0070ca74 == 0) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 64,
+      "match": "unaff_EBP",
+      "severity": "moderate",
+      "text": "lVar1 = (longlong)iVar4 * (longlong)(*(int *)(unaff_EBP + 0xc) - *(int *)(unaff_ESI + 0xc));",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 64,
+      "match": "unaff_ESI",
+      "severity": "moderate",
+      "text": "lVar1 = (longlong)iVar4 * (longlong)(*(int *)(unaff_EBP + 0xc) - *(int *)(unaff_ESI + 0xc));",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 66,
+      "match": "in_ECX",
+      "severity": "mild",
+      "text": "*(uint *)(in_ECX + 0x2c) = uVar3;",
+      "type": "register_param"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 69,
+      "match": "unaff_ESI",
+      "severity": "moderate",
+      "text": "iVar2 = *(int *)(unaff_ESI + 0xc);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 72,
+      "match": "unaff_EBP",
+      "severity": "moderate",
+      "text": "lVar1 = (longlong)iVar4 * (longlong)(*(int *)(unaff_EBP + 8) - *(int *)(unaff_ESI + 8));",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 72,
+      "match": "unaff_ESI",
+      "severity": "moderate",
+      "text": "lVar1 = (longlong)iVar4 * (longlong)(*(int *)(unaff_EBP + 8) - *(int *)(unaff_ESI + 8));",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 74,
+      "match": "in_ECX",
+      "severity": "mild",
+      "text": "*(uint *)(in_ECX + 0x2c) = uVar3;",
+      "type": "register_param"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 77,
+      "match": "unaff_ESI",
+      "severity": "moderate",
+      "text": "iVar2 = *(int *)(unaff_ESI + 8);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 79,
+      "match": "in_ECX",
+      "severity": "mild",
+      "text": "*(uint *)(in_ECX + 0x28) = iVar2 + uVar3;",
+      "type": "register_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 80,
+      "match": "DAT_01c38b55",
+      "severity": "mild",
+      "text": "if ((DAT_01c38b55 & 2) != 0) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 81,
+      "match": "unaff_EBP",
+      "severity": "moderate",
+      "text": "lVar1 = (longlong)iVar4 * (longlong)(*(int *)(unaff_EBP + 0x24) - *(int *)(unaff_ESI + 0x24));",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 81,
+      "match": "unaff_ESI",
+      "severity": "moderate",
+      "text": "lVar1 = (longlong)iVar4 * (longlong)(*(int *)(unaff_EBP + 0x24) - *(int *)(unaff_ESI + 0x24));",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 83,
+      "match": "in_ECX",
+      "severity": "mild",
+      "text": "*(uint *)(in_ECX + 0x3c) = uVar3;",
+      "type": "register_param"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 85,
+      "match": "in_ECX",
+      "severity": "mild",
+      "text": "*(uint *)(in_ECX + 0x38) =",
+      "type": "register_param"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 86,
+      "match": "unaff_ESI",
+      "severity": "moderate",
+      "text": "*(int *)(unaff_ESI + 0x24) +",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 88,
+      "match": "unaff_EBP",
+      "severity": "moderate",
+      "text": "lVar1 = (longlong)iVar4 * (longlong)(*(int *)(unaff_EBP + 0x28) - *(int *)(unaff_ESI + 0x28));",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 88,
+      "match": "unaff_ESI",
+      "severity": "moderate",
+      "text": "lVar1 = (longlong)iVar4 * (longlong)(*(int *)(unaff_EBP + 0x28) - *(int *)(unaff_ESI + 0x28));",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 90,
+      "match": "in_ECX",
+      "severity": "mild",
+      "text": "*(uint *)(in_ECX + 0x44) = uVar3;",
+      "type": "register_param"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 92,
+      "match": "in_ECX",
+      "severity": "mild",
+      "text": "*(uint *)(in_ECX + 0x40) =",
+      "type": "register_param"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 93,
+      "match": "unaff_ESI",
+      "severity": "moderate",
+      "text": "*(int *)(unaff_ESI + 0x28) +",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Uninitialized variable: unaff_EDI",
+      "line": 26,
+      "match": "Cppcheck: uninitialized variable",
+      "severity": "major",
+      "text": "if (unaff_EDI < in_EAX) {",
+      "type": "static_uninitvar"
+    },
+    {
+      "description": "Uninitialized variable: in_EAX",
+      "line": 26,
+      "match": "Cppcheck: uninitialized variable",
+      "severity": "major",
+      "text": "if (unaff_EDI < in_EAX) {",
+      "type": "static_uninitvar"
+    },
+    {
+      "description": "Uninitialized variable: unaff_EBX",
+      "line": 29,
+      "match": "Cppcheck: uninitialized variable",
+      "severity": "major",
+      "text": "if (_DAT_01ba56d0 < unaff_EBX) {",
+      "type": "static_uninitvar"
+    },
+    {
+      "description": "Uninitialized variable: unaff_EBP",
+      "line": 32,
+      "match": "Cppcheck: uninitialized variable",
+      "severity": "major",
+      "text": "uVar3 = *(int *)(unaff_EBP + 0x14) - *(int *)(unaff_ESI + 0x14);",
+      "type": "static_uninitvar"
+    },
+    {
+      "description": "Uninitialized variable: unaff_ESI",
+      "line": 32,
+      "match": "Cppcheck: uninitialized variable",
+      "severity": "major",
+      "text": "uVar3 = *(int *)(unaff_EBP + 0x14) - *(int *)(unaff_ESI + 0x14);",
+      "type": "static_uninitvar"
+    },
+    {
+      "description": "Uninitialized variable: in_ECX",
+      "line": 42,
+      "match": "Cppcheck: uninitialized variable",
+      "severity": "major",
+      "text": "*(uint *)(in_ECX + 0xc) = uVar3;",
+      "type": "static_uninitvar"
+    }
+  ]
+}

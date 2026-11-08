@@ -1,0 +1,475 @@
+{
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "other",
+        "column": 25,
+        "line": 28,
+        "message": "unknown type name 'HWND'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 124,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 126,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 191,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 198,
+        "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
+      },
+      {
+        "category": "other",
+        "column": 1,
+        "line": 204,
+        "message": "unknown type name 'MMRESULT'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 16,
+        "message": "unknown type name 'HWND'"
+      },
+      {
+        "category": "other",
+        "column": 56,
+        "line": 237,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 1,
+        "line": 80,
+        "message": "unknown type name 'LPCRITICAL_SECTION'"
+      },
+      {
+        "category": "other",
+        "column": 20,
+        "line": 93,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 131,
+        "message": "unknown type name 'FILETIME'"
+      },
+      {
+        "category": "other",
+        "column": 37,
+        "line": 131,
+        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
+      },
+      {
+        "category": "other",
+        "column": 52,
+        "line": 131,
+        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
+      },
+      {
+        "category": "incompatible_types",
+        "column": 11,
+        "line": 14,
+        "message": "no matching function for call to 'FUN_004ce100'"
+      },
+      {
+        "category": "incompatible_types",
+        "column": 5,
+        "line": 52,
+        "message": "no matching function for call to 'FUN_00449280'"
+      },
+      {
+        "category": "incompatible_types",
+        "column": 5,
+        "line": 53,
+        "message": "no matching function for call to 'FUN_00449280'"
+      }
+    ],
+    "success": false,
+    "warnings": []
+  },
+  "compile_source": "c",
+  "complexity": {
+    "assembly_lines": 123,
+    "complexity_score": 347,
+    "cross_reference_count": 0,
+    "function_call_count": 9,
+    "global_count": 1,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 47,
+    "suspect_count": 29,
+    "suspect_types": [
+      "unnamed_param",
+      "unrolled_memcpy"
+    ],
+    "total_lines": 170
+  },
+  "cross_references": [],
+  "function": {
+    "address": "004e57f0",
+    "address_range": [
+      [
+        "004e57f0",
+        "004e58fd"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "FUN_004e57f0",
+    "signature": "void FUN_004e57f0(int param_1,undefined4 param_2)"
+  },
+  "function_calls": [
+    {
+      "addr": "00449280",
+      "is_variadic": false,
+      "name": "FUN_00449280"
+    },
+    {
+      "addr": "004b39b0",
+      "is_variadic": false,
+      "name": "FUN_004b39b0"
+    },
+    {
+      "addr": "004ce100",
+      "is_variadic": false,
+      "name": "FUN_004ce100"
+    },
+    {
+      "addr": "004e6240",
+      "is_variadic": false,
+      "name": "FUN_004e6240"
+    },
+    {
+      "addr": "004e68c0",
+      "is_variadic": false,
+      "name": "FUN_004e68c0"
+    },
+    {
+      "addr": "004e6c40",
+      "is_variadic": false,
+      "name": "FUN_004e6c40"
+    },
+    {
+      "addr": "004e6f20",
+      "is_variadic": false,
+      "name": "FUN_004e6f20"
+    },
+    {
+      "addr": "004e7580",
+      "is_variadic": false,
+      "name": "FUN_004e7580"
+    },
+    {
+      "addr": "004e7600",
+      "is_variadic": false,
+      "name": "FUN_004e7600"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00616494",
+      "name": "DAT_00616494",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 0,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.90625,
+    "instruction_count": 96,
+    "opcode_distribution": {
+      "CALL": 10,
+      "CBRANCH": 8,
+      "COPY": 70,
+      "INT_ADD": 37,
+      "INT_AND": 65,
+      "INT_CARRY": 11,
+      "INT_EQUAL": 64,
+      "INT_LESS": 7,
+      "INT_NOTEQUAL": 6,
+      "INT_SBORROW": 7,
+      "INT_SCARRY": 17,
+      "INT_SLESS": 32,
+      "INT_SUB": 44,
+      "INT_XOR": 7,
+      "LOAD": 12,
+      "POPCOUNT": 32,
+      "RETURN": 1,
+      "STORE": 41
+    },
+    "pcode_op_count": 471
+  },
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "void FUN_004e57f0(int param_1,uint param_2)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "void FUN_004e57f0(int param_1,uint param_2)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 7,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "iVar1 = FUN_004ce100(param_1 + 0x20,0x41f00000);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 11,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "FUN_004e68c0(param_1,iVar1,param_2);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 11,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "FUN_004e68c0(param_1,iVar1,param_2);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 16,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "FUN_004e7580(param_1,iVar1,param_2);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 16,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "FUN_004e7580(param_1,iVar1,param_2);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 21,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "FUN_004e6f20(param_1,iVar1,param_2);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 21,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "FUN_004e6f20(param_1,iVar1,param_2);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 26,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "FUN_004e6c40(param_1,iVar1,param_2);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 26,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "FUN_004e6c40(param_1,iVar1,param_2);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 31,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "FUN_004e6240(param_1,iVar1);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 36,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "FUN_004e7600(param_1,iVar1);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 39,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "if ((uint *)(param_1 + 0x1524) != (uint *)(param_1 + 0x14c4)) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 39,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "if ((uint *)(param_1 + 0x1524) != (uint *)(param_1 + 0x14c4)) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 40,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "*(uint *)(param_1 + 0x1524) = *(uint *)(param_1 + 0x14c4);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 40,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "*(uint *)(param_1 + 0x1524) = *(uint *)(param_1 + 0x14c4);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 41,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "*(uint *)(param_1 + 0x1528) = *(uint *)(param_1 + 0x14c8);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 41,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "*(uint *)(param_1 + 0x1528) = *(uint *)(param_1 + 0x14c8);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 42,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "*(uint *)(param_1 + 0x152c) = *(uint *)(param_1 + 0x14cc);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 42,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "*(uint *)(param_1 + 0x152c) = *(uint *)(param_1 + 0x14cc);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 44,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "*(byte *)(param_1 + 0x152b) = *(byte *)(param_1 + 0x152b) ^ 0x80;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 44,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "*(byte *)(param_1 + 0x152b) = *(byte *)(param_1 + 0x152b) ^ 0x80;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 45,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "FUN_00449280(param_1 + 0x14d0,param_1 + 0x14c4);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 45,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "FUN_00449280(param_1 + 0x14d0,param_1 + 0x14c4);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 46,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "FUN_00449280(param_1 + 0x1530,param_1 + 0x1524);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 46,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "FUN_00449280(param_1 + 0x1530,param_1 + 0x1524);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 47,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "FUN_004b39b0(0x01CB6900,param_1 + 0x14c4,0x3c8efa35);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Watcom raw-offset struct copy (3 consecutive `*(T *)(base + 0xNN) = *(T *)(base + 0xNN);` lines copying a contiguous block). Ghidra lost the struct type; replace the run with a struct assignment or `memcpy(...)` in a .keep (find/create the matching struct type for the block).",
+      "line": 40,
+      "match": "raw-offset struct copy",
+      "severity": "moderate",
+      "text": "*(uint *)(param_1 + 0x1524) = *(uint *)(param_1 + 0x14c4);",
+      "type": "unrolled_memcpy"
+    }
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "Unknown",
+        "offset": 12,
+        "vtable_addr": "005f98dc"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}
