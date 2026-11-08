@@ -1,0 +1,16 @@
+Missing string references: bw1.exe
+mode: APPLY
+immediate-loads-a-string sites scanned : 6245
+sites with NO reference                : 1
+  ADD=1
+distinct functions affected            : 1
+
+== mnemonic histogram (ADD rows) ==
+  MOV      1
+
+== affected functions, worst first ==
+  FUN_00443830                                             1 site(s)
+
+== ADD (1) ==
+  00443844  op1  MOV BL,byte ptr [EAX + 0x610d70]   -> 00610d70  '!()*+0123456789ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrst'
+

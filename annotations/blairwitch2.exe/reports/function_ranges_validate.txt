@@ -1,0 +1,72 @@
+Fragmented Function Report
+============================================================
+Program: blairwitch2.exe
+Fragmented functions: 21
+  with HIGH (flows into undefined bytes): 5
+  MEDIUM only (orphan code / interior gap): 16
+Mode: FIXED
+
+00435610    HIGH    FUN_00435610  (1 issue)
+      FLOW_UNDEFINED from 0043563b   -> 0043563c    PUSH -> undefined
+004500d0    HIGH    FUN_004500d0  (1 issue)
+      FLOW_UNDEFINED from 00450195   -> 0045019f    MOV -> undefined
+004cc760    HIGH    FUN_004cc760  (1 issue)
+      FLOW_UNDEFINED from 004cc78b   -> 004cc78c    PUSH -> undefined
+004d4990    HIGH    FUN_004d4990  (1 issue)
+      FLOW_UNDEFINED from 004d49bb   -> 004d49bc    PUSH -> undefined
+005627f0    HIGH    FUN_005627f0  (1 issue)
+      FLOW_UNDEFINED from 005628a7   -> 005628b1    MOV -> undefined
+0042c410    MEDIUM  FUN_0042c410  (2 issues)
+      BODY_HOLE      from 0042c410   -> 0042c426    interior gap 0042c426-0042c42f
+      BODY_HOLE      from 0042c410   -> 0042c445    interior gap 0042c445-0042c44f
+0046f9bc    MEDIUM  FUN_0046f9bc  (1 issue)
+      BODY_HOLE      from 0046f9bc   -> 0046fdf6    interior gap 0046fdf6-0046fdff
+0046fe9a    MEDIUM  FUN_0046fe9a  (1 issue)
+      BODY_HOLE      from 0046fe9a   -> 004700d1    interior gap 004700d1-004700df
+00471103    MEDIUM  FUN_00471103  (1 issue)
+      BODY_HOLE      from 00471103   -> 0047153d    interior gap 0047153d-0047153f
+00471650    MEDIUM  FUN_00471650  (1 issue)
+      BODY_HOLE      from 00471650   -> 00471887    interior gap 00471887-0047188f
+004722e9    MEDIUM  FUN_004722e9  (1 issue)
+      BODY_HOLE      from 004722e9   -> 004723c3    interior gap 004723c3-004723cf
+00492670    MEDIUM  FUN_00492670  (2 issues)
+      BODY_HOLE      from 00492670   -> 004926ca    interior gap 004926ca-004926cb
+      BODY_HOLE      from 00492670   -> 004926d7    interior gap 004926d7-004926d7
+00492718    MEDIUM  FUN_00492718  (4 issues)
+      BODY_HOLE      from 00492718   -> 00492736    interior gap 00492736-00492737
+      BODY_HOLE      from 00492718   -> 00492753    interior gap 00492753-00492753
+      BODY_HOLE      from 00492718   -> 00492772    interior gap 00492772-00492773
+      BODY_HOLE      from 00492718   -> 0049278a    interior gap 0049278a-0049278b
+004927fc    MEDIUM  FUN_004927fc  (3 issues)
+      BODY_HOLE      from 004927fc   -> 0049286d    interior gap 0049286d-0049286f
+      BODY_HOLE      from 004927fc   -> 0049287f    interior gap 0049287f-0049287f
+      BODY_HOLE      from 004927fc   -> 0049288a    interior gap 0049288a-0049288b
+0049cd50    MEDIUM  FUN_0049cd50  (1 issue)
+      BODY_HOLE      from 0049cd50   -> 0049cebb    interior gap 0049cebb-0049cebf
+00551440    MEDIUM  FUN_00551440  (1 issue)
+      BODY_HOLE      from 00551440   -> 0055147b    interior gap 0055147b-00553540
+0055c45c    MEDIUM  FUN_0055c45c  (8 issues)
+      BODY_HOLE      from 0055c45c   -> 0055c52a    interior gap 0055c52a-0055c52f
+      BODY_HOLE      from 0055c45c   -> 0055c7a6    interior gap 0055c7a6-0055c7af
+      BODY_HOLE      from 0055c45c   -> 0055c7b9    interior gap 0055c7b9-0055c7bf
+      BODY_HOLE      from 0055c45c   -> 0055c7c8    interior gap 0055c7c8-0055c7cf
+      BODY_HOLE      from 0055c45c   -> 0055c84e    interior gap 0055c84e-0055c84f
+      BODY_HOLE      from 0055c45c   -> 0055c9a7    interior gap 0055c9a7-0055c9b5
+      BODY_HOLE      from 0055c45c   -> 0055c9ce    interior gap 0055c9ce-0055c9cf
+      BODY_HOLE      from 0055c45c   -> 0055c9dc    interior gap 0055c9dc-0055c9df
+0055ca23    MEDIUM  FUN_0055ca23  (8 issues)
+      BODY_HOLE      from 0055ca23   -> 0055caf1    interior gap 0055caf1-0055caff
+      BODY_HOLE      from 0055ca23   -> 0055cdb1    interior gap 0055cdb1-0055cdbf
+      BODY_HOLE      from 0055ca23   -> 0055cdc9    interior gap 0055cdc9-0055cdcf
+      BODY_HOLE      from 0055ca23   -> 0055cdd8    interior gap 0055cdd8-0055cddf
+      BODY_HOLE      from 0055ca23   -> 0055ce99    interior gap 0055ce99-0055ce9f
+      BODY_HOLE      from 0055ca23   -> 0055d032    interior gap 0055d032-0055d045
+      BODY_HOLE      from 0055ca23   -> 0055d05e    interior gap 0055d05e-0055d05f
+      BODY_HOLE      from 0055ca23   -> 0055d06c    interior gap 0055d06c-0055d06f
+0058f310    MEDIUM  FUN_0058f310  (2 issues)
+      BODY_HOLE      from 0058f310   -> 0058f3e2    interior gap 0058f3e2-0058f3e6
+      BODY_HOLE      from 0058f310   -> 0058f5a5    interior gap 0058f5a5-0058f5b0
+005c2120    MEDIUM  FUN_005c2120  (1 issue)
+      BODY_HOLE      from 005c2120   -> 005c2137    interior gap 005c2137-005c2147
+005c5581    MEDIUM  FUN_005c5581  (1 issue)
+      BODY_HOLE      from 005c5581   -> 005c5db3    interior gap 005c5db3-005c5dca

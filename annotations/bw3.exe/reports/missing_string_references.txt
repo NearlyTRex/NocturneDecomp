@@ -1,0 +1,16 @@
+Missing string references: bw3.exe
+mode: APPLY
+immediate-loads-a-string sites scanned : 5502
+sites with NO reference                : 1
+  ADD=1
+distinct functions affected            : 1
+
+== mnemonic histogram (ADD rows) ==
+  MOV      1
+
+== affected functions, worst first ==
+  FUN_00441490                                             1 site(s)
+
+== ADD (1) ==
+  004414a4  op1  MOV BL,byte ptr [EAX + 0x5f1320]   -> 005f1320  '!()*+0123456789ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrst'
+

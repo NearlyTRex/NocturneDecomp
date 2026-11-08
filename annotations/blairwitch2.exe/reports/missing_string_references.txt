@@ -1,0 +1,16 @@
+Missing string references: blairwitch2.exe
+mode: APPLY
+immediate-loads-a-string sites scanned : 5952
+sites with NO reference                : 1
+  ADD=1
+distinct functions affected            : 1
+
+== mnemonic histogram (ADD rows) ==
+  MOV      1
+
+== affected functions, worst first ==
+  FUN_00434b10                                             1 site(s)
+
+== ADD (1) ==
+  00434b24  op1  MOV BL,byte ptr [EAX + 0x609b40]   -> 00609b40  '!()*+0123456789ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrst'
+
