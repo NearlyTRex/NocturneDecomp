@@ -38,7 +38,8 @@ struct SPackageDiscovery {
 // its PODs; one the game wrote that has lost a POD it needs is written again, as is one whose
 // game content isn't its release's as this build has it. A subfolder's PODs
 // that no manifest names, links followed, are given a manifest; those of the install folder or
-// of a folder with a manifest are noted.
+// of a folder with a manifest are noted. A ZIP or 7z is searched as a folder where it lies, once
+// unpacked into the archive cache, and the cache's folders for archives no longer there go.
 [[nodiscard]] SPackageDiscovery discoverPackages(platform::IFileSystem &file_system,
                                                  std::span<const SRelease> releases);
 

@@ -142,6 +142,7 @@ FetchContent_MakeAvailable(xxhash)
 add_library(nocturne_xxhash INTERFACE)
 target_include_directories(nocturne_xxhash SYSTEM INTERFACE "${xxhash_SOURCE_DIR}")
 target_compile_definitions(nocturne_xxhash INTERFACE XXH_INLINE_ALL)
+include(cmake/libarchive.cmake)
 
 # The catalogue of known releases is data in the repository, compiled in so an install needs no
 # extra file to be recognised.
@@ -166,7 +167,8 @@ list(APPEND _sources "${CMAKE_CURRENT_BINARY_DIR}/generated/engine/package/relea
 if(_sources)
     add_library(nocturne_recreation STATIC ${_sources})
     target_link_libraries(nocturne_recreation PUBLIC nocturne_recreation_options miniaudio)
-    target_link_libraries(nocturne_recreation PRIVATE tomlplusplus::tomlplusplus nocturne_xxhash)
+    target_link_libraries(nocturne_recreation
+        PRIVATE tomlplusplus::tomlplusplus nocturne_xxhash nocturne_libarchive)
 else()
     add_library(nocturne_recreation INTERFACE)
     target_link_libraries(nocturne_recreation INTERFACE nocturne_recreation_options miniaudio)
@@ -207,7 +209,7 @@ endforeach()
 if(_mock_checks)
     add_library(nocturne_recreation_mock_checks OBJECT ${_mock_checks})
     target_link_libraries(nocturne_recreation_mock_checks
-        PRIVATE nocturne_recreation_options GTest::gmock)
+        PRIVATE nocturne_recreation_options GTest::gmock nocturne_libarchive)
 endif()
 
 if(NOCTURNE_RECREATION_GAME)
@@ -302,8 +304,9 @@ foreach(_module IN LISTS NOCTURNE_RECREATION_MODULES)
     endif()
     target_link_libraries(${_target} PRIVATE GTest::gtest_main GTest::gmock)
     if(_module STREQUAL "engine")
-        # The package layer's TOML readers take toml++ tables.
-        target_link_libraries(${_target} PRIVATE tomlplusplus::tomlplusplus)
+        # The package layer's TOML readers take toml++ tables, and its archive tests make
+        # archives with libarchive.
+        target_link_libraries(${_target} PRIVATE tomlplusplus::tomlplusplus nocturne_libarchive)
     endif()
     # A test runs in well under a second; one stuck in a loop is ended before ctest, which holds
     # each test's output, fills the memory with it.

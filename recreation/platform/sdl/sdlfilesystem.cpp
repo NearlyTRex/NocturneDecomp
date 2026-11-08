@@ -105,6 +105,13 @@ bool CSdlFileSystem::removeFile(std::string_view path) {
     return std::filesystem::remove(resolve(path), error);
 }
 
+bool CSdlFileSystem::removeDirectory(std::string_view path) {
+    const std::string resolved = resolve(path);
+    std::error_code error;
+    std::filesystem::remove_all(resolved, error);
+    return !std::filesystem::exists(std::filesystem::symlink_status(resolved, error));
+}
+
 std::unique_ptr<IFile> CSdlFileSystem::openFile(std::string_view path, EFileMode mode) {
     static constexpr std::array<const char *, 4> kModes = {"rb", "wb", "ab", "r+b"};
     std::FILE *file = std::fopen(resolve(path).c_str(), kModes.at(static_cast<std::size_t>(mode)));

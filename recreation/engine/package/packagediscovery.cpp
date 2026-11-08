@@ -2,6 +2,8 @@
 
 #include "common/text/ascii.h"
 #include "common/text/path.h"
+#include "engine/package/archive.h"
+#include "engine/package/archivecache.h"
 #include "engine/package/basemanifest.h"
 #include "engine/package/packagedata.h"
 #include "engine/package/podcheck.h"
@@ -105,15 +107,44 @@ std::optional<std::expected<SPackage, std::string>> readPackage(platform::IFileS
                     .written_by_game = text->starts_with(kWrittenByGame)};
 }
 
-// A folder of the install, the install folder ("") among them, and its PODs. A folder with a
-// manifest is its package's, and the base game's isn't looked for in it; one whose manifest is
-// broken is left for its author to mend: no manifest is written over it.
+// A folder of the install, the install folder ("") among them, or of an archive, and its PODs.
+// A folder with a manifest is its package's, and the base game's isn't looked for in it; one
+// whose manifest is broken is left for its author to mend: no manifest is written over it.
 struct SFolder {
     std::string path;
+    // Its path in the install, or in the archive it came in; "" for their own folders.
+    std::string inner;
+    // The archive it came in, "" for the install's.
+    std::string archive;
     std::vector<std::string> pods;
     bool has_manifest = false;
     bool has_broken_manifest = false;
+
+    // As the player knows it: by its archive.
+    [[nodiscard]] std::string name() const {
+        if (archive.empty()) {
+            return path;
+        }
+        return inner.empty() ? archive : common::joinPath(archive, inner);
+    }
+
+    // A package made for its PODs is named by its path in the install or its archive; the
+    // install folder's PODs are given none, and an archive's own folder's are named by the
+    // archive.
+    [[nodiscard]] std::optional<std::string> generatedId() const {
+        if (!inner.empty()) {
+            return idFromFolder(inner);
+        }
+        if (archive.empty()) {
+            return std::nullopt;
+        }
+        return idFromFolder(common::pathStem(archive));
+    }
 };
+
+bool isPod(std::string_view name) {
+    return common::equalsIgnoringAsciiCase(common::pathExtension(name), ".pod");
+}
 
 class CDiscovery {
 public:
@@ -121,7 +152,8 @@ public:
         : file_system_(file_system), releases_(releases) {}
 
     SPackageDiscovery run() && {
-        searchFolder("");
+        searchFolder("", "", "");
+        pruneArchiveCache(file_system_, unpacked_);
         if (!hasPackage(kBasePackageId)) {
             addBasePackage();
         }
@@ -132,11 +164,16 @@ public:
     }
 
 private:
-    // Each folder before those in it. Hidden folders, .git's among them, hold no packages.
-    void searchFolder(const std::string &folder) {
+    // Each folder before those in it, an archive searched where it lies, as the folder it is
+    // unpacked in. Hidden files and folders, .git's and the archive cache among them, hold no
+    // packages.
+    void searchFolder(const std::string &folder, const std::string &inner,
+                      const std::string &archive) {
         std::optional<std::expected<SPackage, std::string>> read =
             readPackage(file_system_, folder);
         folders_.push_back({.path = folder,
+                            .inner = inner,
+                            .archive = archive,
                             .pods = findPods(file_system_, folder),
                             .has_manifest = read && *read,
                             .has_broken_manifest = read && !*read});
@@ -144,10 +181,28 @@ private:
             addManifestPackage(std::move(*read));
         }
         for (const platform::SFileInfo &entry : listByName(file_system_, folder, "*")) {
-            if (entry.is_directory && !entry.is_hidden && !entry.name.starts_with('.')) {
-                searchFolder(common::joinPath(folder, entry.name));
+            if (entry.is_hidden || entry.name.starts_with('.')) {
+                continue;
+            }
+            const std::string path = common::joinPath(folder, entry.name);
+            if (entry.is_directory) {
+                searchFolder(path, common::joinPath(inner, entry.name), archive);
+            } else if (!isPod(entry.name) &&
+                       !common::equalsIgnoringAsciiCase(entry.name, kManifestName) &&
+                       isArchive(file_system_, path)) {
+                searchArchive(path);
             }
         }
+    }
+
+    void searchArchive(const std::string &path) {
+        const std::expected<std::string, std::string> unpacked = unpackToCache(file_system_, path);
+        if (!unpacked) {
+            found_.notes.push_back(std::format("{}, so it isn't loaded", unpacked.error()));
+            return;
+        }
+        unpacked_.push_back(*unpacked);
+        searchFolder(*unpacked, "", path);
     }
 
     void addManifestPackage(std::expected<SPackage, std::string> read) {
@@ -263,16 +318,17 @@ private:
         if (unlisted.empty()) {
             return;
         }
-        if (folder.path.empty() || folder.has_manifest || folder.has_broken_manifest) {
+        const std::optional<std::string> id = folder.generatedId();
+        if (!id || folder.has_manifest || folder.has_broken_manifest) {
             for (const std::string &pod : unlisted) {
                 found_.notes.push_back(
                     std::format("{} isn't in a package's manifest, so it isn't loaded",
-                                common::joinPath(folder.path, pod)));
+                                common::joinPath(folder.name(), pod)));
             }
             return;
         }
-        SPackage package{.manifest = {.id = idFromFolder(folder.path),
-                                      .name = folder.path,
+        SPackage package{.manifest = {.id = *id,
+                                      .name = folder.name(),
                                       .version = {},
                                       .release = {},
                                       .dependencies = {},
@@ -337,6 +393,8 @@ private:
     platform::IFileSystem &file_system_;
     std::span<const SRelease> releases_;
     std::vector<SFolder> folders_;
+    // The cache folders of the archives found.
+    std::vector<std::string> unpacked_;
     // The real paths of the PODs the manifests found so far list.
     std::set<std::string> claimed_;
     SPackageDiscovery found_;

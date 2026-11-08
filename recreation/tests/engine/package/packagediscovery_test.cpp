@@ -1,6 +1,7 @@
 #include "engine/package/packagedata.h"
 #include "engine/package/packagediscovery.h"
 #include "tests/mocks/engine/packagefiles.h"
+#include "tests/mocks/engine/testarchive.h"
 
 #include <gmock/gmock.h>
 #include <gtest/gtest.h>
@@ -17,6 +18,7 @@ namespace {
 
 using ::testing::_;
 using ::testing::HasSubstr;
+using ::testing::MatchesRegex;
 using ::testing::Return;
 using ::testing::StartsWith;
 
@@ -402,6 +404,66 @@ TEST_F(CPackageDiscoveryTest, AFolderOfPodsWhoseIdIsTakenIsntLoaded) {
     EXPECT_EQ(found.notes, std::vector<std::string>{"b/c/nocturne.toml: the id b.c is "
                                                     "a/nocturne.toml's too, so it isn't loaded"});
     EXPECT_EQ(files_.contents("b/c/nocturne.toml"), std::nullopt);
+}
+
+// Found where it lies, by what it holds rather than what it is called, and read from the cache.
+TEST_F(CPackageDiscoveryTest, AnArchiveWithAManifestIsItsPackage) {
+    files_.givenFile(
+        "mods/hell.dat",
+        makeTestArchive(ETestArchiveFormat::SevenZip,
+                        {{.path = "hell/nocturne.toml",
+                          .contents = manifestText("hell") + "[[pod]]\npath = \"HELL.POD\"\n"},
+                         {.path = "hell/HELL.POD", .contents = "POD one"},
+                         {.path = "hell/EXTRA.POD", .contents = "POD two"}}));
+    const SPackageDiscovery found = discover();
+    ASSERT_EQ(found.packages.size(), 2U);
+    const SPackage &hell = found.packages[1];
+    EXPECT_EQ(hell.manifest.id, "hell");
+    EXPECT_THAT(hell.folder, MatchesRegex(R"(\.packages/hell\.dat-[0-9a-f]{16}/hell)"));
+    EXPECT_EQ(files_.bytes(hell.folder + "/HELL.POD"), "POD one");
+    EXPECT_EQ(found.notes, std::vector<std::string>{"mods/hell.dat/hell/EXTRA.POD isn't in a "
+                                                    "package's manifest, so it isn't loaded"});
+}
+
+// Each folder of PODs in it by its path inside, and those at its top by the archive's name.
+TEST_F(CPackageDiscoveryTest, AnArchivesPodsWithoutAManifestAreNamedByWhatItHolds) {
+    files_.givenFile("mods/Hell Mod.zip",
+                     makeTestArchive(ETestArchiveFormat::Zip,
+                                     {{.path = "TOP.POD", .contents = "POD one"},
+                                      {.path = "inner/levels/LEVEL.POD", .contents = "POD two"}}));
+    const SPackageDiscovery found = discover();
+    ASSERT_EQ(found.packages.size(), 3U);
+    EXPECT_EQ(found.packages[1].manifest.id, "Hell_Mod");
+    EXPECT_EQ(found.packages[1].manifest.name, "mods/Hell Mod.zip");
+    EXPECT_EQ(found.packages[2].manifest.id, "inner.levels");
+    EXPECT_EQ(found.packages[2].manifest.name, "mods/Hell Mod.zip/inner/levels");
+    EXPECT_TRUE(files_.contents(found.packages[2].folder + "/nocturne.toml").has_value());
+}
+
+TEST_F(CPackageDiscoveryTest, AnArchiveThatIsntAPackageIsNoted) {
+    files_.givenFile("saves.zip", makeTestArchive(ETestArchiveFormat::Zip,
+                                                  {{.path = "a.sav", .contents = "x"}}));
+    files_.givenFile("readme.txt", "not an archive");
+    EXPECT_EQ(discover().notes, std::vector<std::string>{"saves.zip holds no nocturne.toml and no "
+                                                         "POD, so it isn't loaded"});
+}
+
+// A POD or a manifest beginning as an archive does isn't one.
+TEST_F(CPackageDiscoveryTest, OnlyOtherFilesAreLookedAtAsArchives) {
+    files_.givenFile("readme.txt", "not an archive");
+    EXPECT_CALL(files_.file_system_, openFile(_, _)).Times(::testing::AnyNumber());
+    EXPECT_CALL(files_.file_system_, openFile(std::string_view("readme.txt"), _));
+    EXPECT_CALL(files_.file_system_, openFile(std::string_view("nocturne.toml"), _)).Times(0);
+    static_cast<void>(discover());
+}
+
+TEST_F(CPackageDiscoveryTest, TheCacheKeepsOnlyTheArchivesFound) {
+    files_.givenFile("hell.zip", makeTestArchive(ETestArchiveFormat::Zip,
+                                                 {{.path = "HELL.POD", .contents = "POD one"}}));
+    files_.givenFile(".packages/gone.zip-0123456789abcdef.unpacked", "gone.zip");
+    const std::string kept = discover().packages[1].folder;
+    EXPECT_FALSE(files_.contents(".packages/gone.zip-0123456789abcdef.unpacked").has_value());
+    EXPECT_TRUE(files_.contents(kept + ".unpacked").has_value());
 }
 
 TEST_F(CPackageDiscoveryTest, AManifestIsWrittenLedByTheGamesLine) {

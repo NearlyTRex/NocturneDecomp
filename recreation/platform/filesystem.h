@@ -39,6 +39,9 @@ public:
     virtual bool writeFile(std::string_view path, std::string_view text) = 0;
     // False when there was nothing to remove or it couldn't be removed.
     virtual bool removeFile(std::string_view path) = 0;
+    // The folder and everything in it, links removed rather than followed. False when it is
+    // still there afterwards.
+    virtual bool removeDirectory(std::string_view path) = 0;
     // Null when the file can't be opened in that mode.
     [[nodiscard]] virtual std::unique_ptr<IFile> openFile(std::string_view path,
                                                           EFileMode mode) = 0;

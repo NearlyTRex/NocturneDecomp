@@ -15,6 +15,7 @@
 #include <set>
 #include <string>
 #include <string_view>
+#include <utility>
 #include <vector>
 
 namespace nocturne::engine {
@@ -80,9 +81,19 @@ public:
             return found == files_.end() ? std::nullopt
                                          : std::optional(info(std::string(path), found->second));
         });
+        ON_CALL(file_system_, removeDirectory).WillByDefault([this](std::string_view path) {
+            const std::string prefix = std::string(path) + "/";
+            std::erase_if(files_,
+                          [&prefix](const auto &file) { return file.first.starts_with(prefix); });
+            return true;
+        });
+        ON_CALL(file_system_, makeDirectory).WillByDefault(::testing::Return(true));
         ON_CALL(file_system_, openFile)
             .WillByDefault([this](std::string_view path,
-                                  platform::EFileMode) -> std::unique_ptr<platform::IFile> {
+                                  platform::EFileMode mode) -> std::unique_ptr<platform::IFile> {
+                if (mode == platform::EFileMode::Write) {
+                    return std::make_unique<CWrittenFile>(*this, std::string(path));
+                }
                 const auto found = files_.find(follow(path));
                 if (found == files_.end() || found->second.unreadable) {
                     return nullptr;
@@ -127,6 +138,22 @@ private:
         std::string contents;
         std::time_t modified = 0;
         bool unreadable = false;
+    };
+
+    // Opened to be written: in the install once it is closed.
+    class CWrittenFile final : public platform::CMemoryFile {
+    public:
+        CWrittenFile(CPackageFiles &files, std::string path)
+            : files_(files), path_(std::move(path)) {}
+        CWrittenFile(const CWrittenFile &) = delete;
+        CWrittenFile &operator=(const CWrittenFile &) = delete;
+        ~CWrittenFile() override {
+            files_.givenFile(path_, contents());
+        }
+
+    private:
+        CPackageFiles &files_;
+        std::string path_;
     };
 
     static platform::SFileInfo info(const std::string &path, const SFile &file) {

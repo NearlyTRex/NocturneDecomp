@@ -24,6 +24,8 @@ TEST(IFileSystem, PublicInterface) {
                                  bool (IFileSystem::*)(std::string_view, std::string_view)>);
     static_assert(std::is_same_v<decltype(&IFileSystem::removeFile),
                                  bool (IFileSystem::*)(std::string_view)>);
+    static_assert(std::is_same_v<decltype(&IFileSystem::removeDirectory),
+                                 bool (IFileSystem::*)(std::string_view)>);
     static_assert(
         std::is_same_v<decltype(&IFileSystem::openFile),
                        std::unique_ptr<IFile> (IFileSystem::*)(std::string_view, EFileMode)>);
