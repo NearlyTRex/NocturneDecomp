@@ -31,6 +31,7 @@ std::string errorOf(std::string_view text) {
 
 SGameContent fullContent() {
     SGameContent content;
+    content.title = "Game 2.0_final-cut";
     content.front_end = "nocturne";
     content.loading_indicator = "moon";
     content.copyright = "Game \"1999\"";
@@ -113,6 +114,13 @@ INSTANTIATE_TEST_SUITE_P(
     ::testing::Values(SBadCase{"id = \"a\"", "id: not a key this file takes"},
                       SBadCase{"front_end = 1", "front_end: not a string"},
                       SBadCase{"front_end = \"\"", "front_end: missing"},
+                      SBadCase{"title = 1", "title: not a string"},
+                      SBadCase{"title = \"\"", "title: not a name a folder can have"},
+                      SBadCase{"title = \".game\"", "title: not a name a folder can have"},
+                      SBadCase{"title = \"game.\"", "title: not a name a folder can have"},
+                      SBadCase{"title = \"game \"", "title: not a name a folder can have"},
+                      SBadCase{"title = \"a/b\"", "title: not a name a folder can have"},
+                      SBadCase{"title = \"a:b\"", "title: not a name a folder can have"},
                       SBadCase{"loading_indicator = \"\"", "loading_indicator: missing"},
                       SBadCase{"credits = 1", "credits: not a [credits] table"},
                       SBadCase{"menu = 1", "menu: not a [menu] table"},

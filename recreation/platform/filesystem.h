@@ -54,6 +54,10 @@ public:
     [[nodiscard]] virtual std::optional<SFileInfo> getFileInfo(std::string_view path) = 0;
     // False when it doesn't exist afterwards.
     virtual bool makeDirectory(std::string_view path) = 0;
+    // The titled game's own folder in the user's cache, for files it can make again, absolute and
+    // spelled as the host's own folders are; nothing when the host names none. It needn't exist
+    // yet.
+    [[nodiscard]] virtual std::optional<std::string> getCacheFolder(std::string_view title) = 0;
     virtual bool setModifiedTime(std::string_view path, std::time_t modified) = 0;
     virtual bool setReadOnly(std::string_view path, bool read_only) = 0;
 };

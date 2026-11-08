@@ -36,25 +36,42 @@ bool holdsPackage(std::span<const SArchiveEntry> entries) {
     });
 }
 
+// The text's leaf and a hash of the text, so like-named things don't share a name.
+std::string hashedName(std::string_view leaf, std::string_view text) {
+    return std::format("{}-{:016x}", leaf, XXH3_64bits(text.data(), text.size()));
+}
+
 // The archive's folder in the cache, unpacked or not; nothing when the archive is missing.
-std::optional<std::string> cacheFolderOf(platform::IFileSystem &file_system,
+std::optional<std::string> cacheFolderOf(platform::IFileSystem &file_system, std::string_view cache,
                                          std::string_view archive_path) {
     const std::optional<platform::SFileInfo> info = file_system.getFileInfo(archive_path);
     if (!info) {
         return std::nullopt;
     }
-    const std::string identity =
-        std::format("{}\n{}\n{}", archive_path, info->size, info->modified);
-    return common::joinPath(kArchiveCacheName,
-                            std::format("{}-{:016x}", common::pathLeaf(archive_path),
-                                        XXH3_64bits(identity.data(), identity.size())));
+    return common::joinPath(
+        cache, hashedName(common::pathLeaf(archive_path),
+                          std::format("{}\n{}\n{}", archive_path, info->size, info->modified)));
 }
 
 } // namespace
 
-std::optional<std::string> findUnpacked(platform::IFileSystem &file_system,
+std::string findArchiveCache(platform::IFileSystem &file_system,
+                             const std::optional<std::string> &title) {
+    if (!title) {
+        return std::string(kArchiveCacheName);
+    }
+    const std::optional<std::string> user_cache = file_system.getCacheFolder(*title);
+    const std::optional<std::string> install = file_system.getRealPath(".");
+    if (!user_cache || !install) {
+        return std::string(kArchiveCacheName);
+    }
+    return common::joinPath(common::joinPath(*user_cache, kUserArchiveCacheName),
+                            hashedName(common::pathLeaf(*install), *install));
+}
+
+std::optional<std::string> findUnpacked(platform::IFileSystem &file_system, std::string_view cache,
                                         std::string_view archive_path) {
-    std::optional<std::string> folder = cacheFolderOf(file_system, archive_path);
+    std::optional<std::string> folder = cacheFolderOf(file_system, cache, archive_path);
     if (!folder || !file_system.getFileInfo(recordOf(*folder))) {
         return std::nullopt;
     }
@@ -76,8 +93,9 @@ std::expected<void, std::string> checkUnpackable(platform::IFileSystem &file_sys
 }
 
 std::expected<std::string, std::string> unpackToCache(platform::IFileSystem &file_system,
+                                                      std::string_view cache,
                                                       std::string_view archive_path) {
-    if (std::optional<std::string> unpacked = findUnpacked(file_system, archive_path)) {
+    if (std::optional<std::string> unpacked = findUnpacked(file_system, cache, archive_path)) {
         return std::move(*unpacked);
     }
     if (std::expected<void, std::string> checked = checkUnpackable(file_system, archive_path);
@@ -85,7 +103,7 @@ std::expected<std::string, std::string> unpackToCache(platform::IFileSystem &fil
         return std::unexpected(std::move(checked.error()));
     }
     // It was listed, so it is there to be named.
-    std::string folder = cacheFolderOf(file_system, archive_path).value_or("");
+    std::string folder = cacheFolderOf(file_system, cache, archive_path).value_or("");
     static_cast<void>(file_system.removeDirectory(folder));
     std::expected<void, std::string> unpacked = unpackArchive(file_system, archive_path, folder);
     if (unpacked && !file_system.writeFile(recordOf(folder), archive_path)) {
@@ -98,10 +116,13 @@ std::expected<std::string, std::string> unpackToCache(platform::IFileSystem &fil
     return folder;
 }
 
-void pruneArchiveCache(platform::IFileSystem &file_system, std::span<const std::string> kept) {
-    for (const platform::SFileInfo &entry :
-         file_system.findFiles(common::joinPath(kArchiveCacheName, "*"))) {
-        const std::string path = common::joinPath(kArchiveCacheName, entry.name);
+void pruneArchiveCache(platform::IFileSystem &file_system, std::string_view cache,
+                       std::span<const std::string> kept) {
+    if (cache != kArchiveCacheName) {
+        static_cast<void>(file_system.removeDirectory(kArchiveCacheName));
+    }
+    for (const platform::SFileInfo &entry : file_system.findFiles(common::joinPath(cache, "*"))) {
+        const std::string path = common::joinPath(cache, entry.name);
         if (std::ranges::any_of(kept, [&path](const std::string &folder) {
                 return path == folder || path == recordOf(folder);
             })) {

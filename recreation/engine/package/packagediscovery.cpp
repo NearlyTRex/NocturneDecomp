@@ -152,11 +152,24 @@ public:
                EArchiveUnpacking unpacking)
         : file_system_(file_system), releases_(releases), unpacking_(unpacking) {}
 
+    // The install's folders give the base game, whose title names the cache its archives are
+    // unpacked in; an archive may hold the base game itself, so its PODs not being found waits.
     SPackageDiscovery run() && {
         searchFolder("", "", "");
-        pruneArchiveCache(file_system_, unpacked_);
+        std::optional<std::string> no_base;
         if (!hasPackage(kBasePackageId)) {
-            addBasePackage();
+            no_base = addBasePackage();
+        }
+        cache_ = findArchiveCache(file_system_, findBaseTitle());
+        // Those an archive holds are searched after the ones found with it.
+        while (!archives_.empty()) {
+            for (const std::string &archive : std::exchange(archives_, {})) {
+                searchArchive(archive);
+            }
+        }
+        pruneArchiveCache(file_system_, cache_, unpacked_);
+        if (no_base && !hasPackage(kBasePackageId)) {
+            found_.notes.push_back(std::move(*no_base));
         }
         for (const SFolder &folder : folders_) {
             addFolderPackage(folder);
@@ -165,7 +178,22 @@ public:
     }
 
 private:
-    // Each folder before those in it, an archive searched where it lies, as the folder it is
+    // The base game's, or failing that its release's.
+    [[nodiscard]] std::optional<std::string> findBaseTitle() const {
+        const auto base = std::ranges::find(
+            found_.packages, kBasePackageId,
+            [](const SPackage &package) -> const std::string & { return package.manifest.id; });
+        if (base == found_.packages.end()) {
+            return std::nullopt;
+        }
+        if (base->manifest.game.title) {
+            return base->manifest.game.title;
+        }
+        const auto release = std::ranges::find(releases_, base->manifest.release, &SRelease::id);
+        return release == releases_.end() ? std::nullopt : release->content.title;
+    }
+
+    // Each folder before those in it, an archive left to be searched after, as the folder it is
     // unpacked in. Hidden files and folders, .git's and the archive cache among them, hold no
     // packages.
     void searchFolder(const std::string &folder, const std::string &inner,
@@ -191,13 +219,13 @@ private:
             } else if (!isPod(entry.name) &&
                        !common::equalsIgnoringAsciiCase(entry.name, kManifestName) &&
                        isArchive(file_system_, path)) {
-                searchArchive(path);
+                archives_.push_back(path);
             }
         }
     }
 
     void searchArchive(const std::string &path) {
-        if (unpacking_ == EArchiveUnpacking::Later && !findUnpacked(file_system_, path)) {
+        if (unpacking_ == EArchiveUnpacking::Later && !findUnpacked(file_system_, cache_, path)) {
             // Only one that would be unpacked is left; listing it takes no time.
             if (const std::expected<void, std::string> checked =
                     checkUnpackable(file_system_, path);
@@ -208,7 +236,8 @@ private:
             }
             return;
         }
-        const std::expected<std::string, std::string> unpacked = unpackToCache(file_system_, path);
+        const std::expected<std::string, std::string> unpacked =
+            unpackToCache(file_system_, cache_, path);
         if (!unpacked) {
             found_.notes.push_back(std::format("{}, so it isn't loaded", unpacked.error()));
             return;
@@ -269,7 +298,8 @@ private:
 
     // In the folder holding the release's PODs, from the PODs no manifest has; not written
     // without the PODs the release needs.
-    void addBasePackage() {
+    // Why there is none, when its PODs weren't found.
+    std::optional<std::string> addBasePackage() {
         std::vector<std::string> unlisted;
         for (const SFolder &folder : folders_) {
             if (folder.has_manifest) {
@@ -285,9 +315,8 @@ private:
         if (!std::ranges::all_of(base.manifest.required, [&](const std::string &pod) {
                 return std::ranges::contains(unlisted, pod);
             })) {
-            found_.notes.push_back(std::format(
-                "{}'s PODs weren't found, so the base game has no manifest", base.manifest.name));
-            return;
+            return std::format("{}'s PODs weren't found, so the base game has no manifest",
+                               base.manifest.name);
         }
         found_.notes.insert(found_.notes.end(), base.notes.begin(), base.notes.end());
         std::vector<std::string> present;
@@ -316,6 +345,7 @@ private:
         }
         claim(package);
         found_.packages.insert(found_.packages.begin(), std::move(package));
+        return std::nullopt;
     }
 
     // A subfolder's PODs that no manifest has are given one naming them, its id its path; those
@@ -405,6 +435,9 @@ private:
     platform::IFileSystem &file_system_;
     std::span<const SRelease> releases_;
     EArchiveUnpacking unpacking_;
+    std::string cache_;
+    // In the order found, those in archives after.
+    std::vector<std::string> archives_;
     std::vector<SFolder> folders_;
     // The cache folders of the archives found.
     std::vector<std::string> unpacked_;

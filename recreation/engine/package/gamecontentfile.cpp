@@ -1,5 +1,6 @@
 #include "engine/package/gamecontentfile.h"
 
+#include "common/text/ascii.h"
 #include "engine/package/gamecontent.h"
 #include "engine/package/packagedata.h"
 #include "engine/package/tomlfields.h"
@@ -26,6 +27,15 @@ constexpr int kMaxPictureY = 479;
 constexpr int kMaxTint = 0xff00;
 constexpr int kMaxYear = 9999;
 constexpr int kMaxCode = std::numeric_limits<int>::max();
+
+// Letters, digits, spaces, '-', '_' and '.', as every host's folders take, beginning with a
+// letter or digit; Windows drops a trailing space or dot.
+bool isFolderName(std::string_view name) {
+    return !name.empty() && common::isAsciiAlnum(name.front()) && !name.ends_with(' ') &&
+           !name.ends_with('.') && std::ranges::all_of(name, [](char c) {
+               return common::isAsciiAlnum(c) || c == ' ' || c == '-' || c == '_' || c == '.';
+           });
+}
 
 TomlResult<std::string> readOptionalString(const toml::table &table, std::string_view where,
                                            std::string_view key) {
@@ -383,7 +393,8 @@ TomlResult<void> readTranslations(const toml::table &table, SGameContent &conten
 
 // The content's own strings, by key.
 auto getGameStrings(auto &content) {
-    return std::array{std::pair{"front_end", &content.front_end},
+    return std::array{std::pair{"title", &content.title},
+                      std::pair{"front_end", &content.front_end},
                       std::pair{"loading_indicator", &content.loading_indicator},
                       std::pair{"copyright", &content.copyright},
                       std::pair{"copyright_os_font", &content.copyright_os_font}};
@@ -403,6 +414,9 @@ TomlResult<void> readGameStrings(const toml::table &table, SGameContent &content
         if (*field && (*field)->empty()) {
             return std::unexpected(std::format("{}: missing", key));
         }
+    }
+    if (content.title && !isFolderName(*content.title)) {
+        return std::unexpected("title: not a name a folder can have");
     }
     return {};
 }

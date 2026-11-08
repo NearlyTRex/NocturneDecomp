@@ -12,9 +12,9 @@
 namespace nocturne::engine {
 
 // The keys a manifest takes for its game content, beside its own.
-inline constexpr std::array<std::string_view, 9> kGameContentKeys{
-    "front_end", "loading_indicator", "copyright", "copyright_os_font", "credits",
-    "menu",      "loading",           "story",     "translation"};
+inline constexpr std::array<std::string_view, 10> kGameContentKeys{
+    "title",   "front_end", "loading_indicator", "copyright", "copyright_os_font",
+    "credits", "menu",      "loading",           "story",     "translation"};
 
 // The game content among the table's keys, the others left alone.
 [[nodiscard]] TomlResult<SGameContent> readGameContent(const toml::table &table);

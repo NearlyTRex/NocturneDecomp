@@ -21,6 +21,7 @@ public:
     MOCK_METHOD(std::optional<std::string>, getRealPath, (std::string_view path), (override));
     MOCK_METHOD(std::optional<SFileInfo>, getFileInfo, (std::string_view path), (override));
     MOCK_METHOD(bool, makeDirectory, (std::string_view path), (override));
+    MOCK_METHOD(std::optional<std::string>, getCacheFolder, (std::string_view title), (override));
     MOCK_METHOD(bool, setModifiedTime, (std::string_view path, std::time_t modified), (override));
     MOCK_METHOD(bool, setReadOnly, (std::string_view path, bool read_only), (override));
 };

@@ -38,6 +38,7 @@ TEST(GameContent, NothingMergedIsEmpty) {
 
 TEST(GameContent, ALaterPackagesValuesWinAndUnsetOnesLeaveTheEarlier) {
     SGameContent base;
+    base.title = "Base";
     base.front_end = "nocturne";
     base.loading_indicator = "moon";
     base.copyright = "Base";
@@ -45,9 +46,11 @@ TEST(GameContent, ALaterPackagesValuesWinAndUnsetOnesLeaveTheEarlier) {
     base.credits = SGameCredits{.text = "a.txt", .image = "a", .music = "a.mp3"};
     base.menu = SMenuLayout{.left = 1, .top = 2, .titled_top = 3, .trademark = {}};
     SGameContent mod;
+    mod.title = "Mod";
     mod.copyright = "Mod";
     mod.menu = SMenuLayout{.left = 4, .top = 5, .titled_top = 6, .trademark = {}};
     const SGameContent merged = merge({&base, &mod}).content;
+    EXPECT_EQ(merged.title, "Mod");
     EXPECT_EQ(merged.front_end, "nocturne");
     EXPECT_EQ(merged.loading_indicator, "moon");
     EXPECT_EQ(merged.copyright, "Mod");

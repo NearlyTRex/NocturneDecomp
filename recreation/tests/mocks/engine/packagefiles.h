@@ -168,13 +168,18 @@ private:
         return link == links_.end() ? std::string(path) : link->second;
     }
 
-    // Every folder a file or link is in, each once.
+    // Every folder a file or link is in, each once. An absolute path's are outside the install,
+    // so its first isn't listed in the install folder, nor is the root as a folder named "".
     [[nodiscard]] std::set<std::string> folders() const {
         std::set<std::string> found;
         const auto add = [&found](const std::string &path) {
             for (std::size_t slash = path.find('/'); slash != std::string::npos;
                  slash = path.find('/', slash + 1)) {
-                found.insert(path.substr(0, slash));
+                std::string folder = path.substr(0, slash);
+                if (!folder.empty() &&
+                    (!folder.starts_with('/') || folder.find('/', 1) != std::string::npos)) {
+                    found.insert(std::move(folder));
+                }
             }
         };
         for (const auto &[path, file] : files_) {

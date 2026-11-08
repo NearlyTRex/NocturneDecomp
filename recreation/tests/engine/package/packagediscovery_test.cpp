@@ -466,6 +466,71 @@ TEST_F(CPackageDiscoveryTest, TheCacheKeepsOnlyTheArchivesFound) {
     EXPECT_TRUE(files_.contents(kept + ".unpacked").has_value());
 }
 
+// In the folder the base game's title names, its release's here; its notes still name the
+// archive where it lies.
+TEST_F(CPackageDiscoveryTest, AnArchiveIsUnpackedInTheUsersCacheWhereThereIsOne) {
+    releases_.front().content.title = "Nocturne";
+    ON_CALL(files_.file_system_, getCacheFolder(std::string_view("Nocturne")))
+        .WillByDefault(Return(std::optional<std::string>("/home/u/.cache/nocturne")));
+    ON_CALL(files_.file_system_, getRealPath(std::string_view(".")))
+        .WillByDefault(Return(std::optional<std::string>("/games/Nocturne")));
+    files_.givenFile("hell.zip", makeTestArchive(ETestArchiveFormat::Zip,
+                                                 {{.path = "HELL.POD", .contents = "POD one"},
+                                                  {.path = "STRAY.POD", .contents = "POD two"},
+                                                  {.path = "nocturne.toml",
+                                                   .contents = manifestText("hell") +
+                                                               "[[pod]]\npath = \"HELL.POD\"\n"}}));
+    const SPackageDiscovery found = discover();
+    ASSERT_EQ(found.packages.size(), 2U);
+    EXPECT_THAT(found.packages[1].folder,
+                MatchesRegex(R"(/home/u/\.cache/nocturne/packages/Nocturne-[0-9a-f]{16}/)"
+                             R"(hell\.zip-[0-9a-f]{16})"));
+    EXPECT_EQ(files_.bytes(found.packages[1].folder + "/HELL.POD"), "POD one");
+    EXPECT_EQ(found.notes, std::vector<std::string>{"hell.zip/STRAY.POD isn't in a package's "
+                                                    "manifest, so it isn't loaded"});
+}
+
+// A base manifest of its own may name it, and wins over its release's.
+TEST_F(CPackageDiscoveryTest, TheBaseGamesOwnTitleNamesTheCache) {
+    releases_.front().content.title = "Nocturne";
+    files_.givenFile("nocturne.toml",
+                     "id = \"nocturne\"\nrelease = \"1999-en\"\n"
+                     "title = \"Nocturne Redux\"\n[[pod]]\npath = \"STARTUP.POD\"\n"
+                     "[[pod]]\npath = \"A.POD\"\n");
+    ON_CALL(files_.file_system_, getCacheFolder(std::string_view("Nocturne Redux")))
+        .WillByDefault(Return(std::optional<std::string>("/cache/nocturne-redux")));
+    ON_CALL(files_.file_system_, getRealPath(std::string_view(".")))
+        .WillByDefault(Return(std::optional<std::string>("/games/Nocturne")));
+    files_.givenFile("hell.zip", makeTestArchive(ETestArchiveFormat::Zip,
+                                                 {{.path = "HELL.POD", .contents = "POD"}}));
+    EXPECT_THAT(discover().packages.back().folder, StartsWith("/cache/nocturne-redux/packages/"));
+}
+
+// Without a title, as one only its release gives, archives stay in the install.
+TEST_F(CPackageDiscoveryTest, AnUntitledBaseGamesArchivesAreUnpackedInTheInstall) {
+    files_.givenFile("nocturne.toml",
+                     "id = \"nocturne\"\nrelease = \"1999-xx\"\n"
+                     "[[pod]]\npath = \"STARTUP.POD\"\n[[pod]]\npath = \"A.POD\"\n");
+    ON_CALL(files_.file_system_, getCacheFolder)
+        .WillByDefault(Return(std::optional<std::string>("/cache/game")));
+    ON_CALL(files_.file_system_, getRealPath(std::string_view(".")))
+        .WillByDefault(Return(std::optional<std::string>("/games/Nocturne")));
+    files_.givenFile("hell.zip", makeTestArchive(ETestArchiveFormat::Zip,
+                                                 {{.path = "HELL.POD", .contents = "POD"}}));
+    EXPECT_THAT(discover().packages.back().folder, StartsWith(".packages/hell.zip-"));
+}
+
+// Its PODs not being in the install isn't noted when an archive holds it.
+TEST_F(CMovedInstallTest, TheBaseGameMayBeInAnArchive) {
+    files_.givenFile("game.zip", makeTestArchive(ETestArchiveFormat::Zip,
+                                                 {{.path = "nocturne.toml",
+                                                   .contents = manifestText("nocturne")}}));
+    const SPackageDiscovery found = discover();
+    ASSERT_EQ(found.packages.size(), 1U);
+    EXPECT_THAT(found.packages[0].folder, StartsWith(".packages/game.zip-"));
+    EXPECT_TRUE(found.notes.empty()) << found.notes.front();
+}
+
 TEST_F(CPackageDiscoveryTest, AnArchiveNotYetUnpackedCanBeLeftForLater) {
     files_.givenFile("hell.zip", makeTestArchive(ETestArchiveFormat::Zip,
                                                  {{.path = "HELL.POD", .contents = "POD one"}}));

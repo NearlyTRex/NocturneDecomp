@@ -35,14 +35,14 @@ protected:
 
     [[nodiscard]] std::string unpack() {
         const std::expected<std::string, std::string> folder =
-            unpackToCache(files_.file_system_, "mods/hell.zip");
+            unpackToCache(files_.file_system_, kArchiveCacheName, "mods/hell.zip");
         EXPECT_TRUE(folder.has_value()) << folder.error();
         return folder.value_or("");
     }
 
     [[nodiscard]] std::string failure() {
         const std::expected<std::string, std::string> folder =
-            unpackToCache(files_.file_system_, "mods/hell.zip");
+            unpackToCache(files_.file_system_, kArchiveCacheName, "mods/hell.zip");
         EXPECT_FALSE(folder.has_value());
         return folder ? std::string() : folder.error();
     }
@@ -95,7 +95,7 @@ TEST_F(CArchiveCacheTest, AnArchiveWithoutAPackageIsntUnpacked) {
 }
 
 TEST_F(CArchiveCacheTest, AMissingOrBrokenArchiveIsntUnpacked) {
-    EXPECT_EQ(unpackToCache(files_.file_system_, "mods/gone.zip").error(),
+    EXPECT_EQ(unpackToCache(files_.file_system_, kArchiveCacheName, "mods/gone.zip").error(),
               "mods/gone.zip is missing");
     files_.givenFile("mods/hell.zip", "PK\3\4 and no more");
     EXPECT_THAT(failure(), ::testing::StartsWith("mods/hell.zip: "));
@@ -117,13 +117,13 @@ TEST_F(CArchiveCacheTest, WithoutItsRecordTheUnpackingIsUndone) {
 }
 
 TEST_F(CArchiveCacheTest, AnArchiveIsFoundUnpackedOnlyOnceItIsWholeAndUnchanged) {
-    EXPECT_EQ(findUnpacked(files_.file_system_, "mods/hell.zip"), std::nullopt);
+    EXPECT_EQ(findUnpacked(files_.file_system_, kArchiveCacheName, "mods/hell.zip"), std::nullopt);
     const std::string folder = unpack();
-    EXPECT_EQ(findUnpacked(files_.file_system_, "mods/hell.zip"), folder);
+    EXPECT_EQ(findUnpacked(files_.file_system_, kArchiveCacheName, "mods/hell.zip"), folder);
     givenMod({{.path = "nocturne.toml", .contents = std::string(kManifest)}},
              CPackageFiles::kModified + 1);
-    EXPECT_EQ(findUnpacked(files_.file_system_, "mods/hell.zip"), std::nullopt);
-    EXPECT_EQ(findUnpacked(files_.file_system_, "mods/gone.zip"), std::nullopt);
+    EXPECT_EQ(findUnpacked(files_.file_system_, kArchiveCacheName, "mods/hell.zip"), std::nullopt);
+    EXPECT_EQ(findUnpacked(files_.file_system_, kArchiveCacheName, "mods/gone.zip"), std::nullopt);
 }
 
 TEST_F(CArchiveCacheTest, AnArchiveIsCheckedWithoutUnpackingIt) {
@@ -142,7 +142,49 @@ TEST_F(CArchiveCacheTest, PruningRemovesWhatIsntKept) {
     EXPECT_CALL(files_.file_system_, removeFile(".packages/gone.zip-0123456789abcdef.unpacked"));
     EXPECT_CALL(files_.file_system_, removeDirectory(kept)).Times(0);
     EXPECT_CALL(files_.file_system_, removeFile(kept + ".unpacked")).Times(0);
-    pruneArchiveCache(files_.file_system_, std::vector{kept});
+    EXPECT_CALL(files_.file_system_, removeDirectory(kArchiveCacheName)).Times(0);
+    pruneArchiveCache(files_.file_system_, kArchiveCacheName, std::vector{kept});
+}
+
+// It was the cache before the user's was used, or a host without one put it there.
+TEST_F(CArchiveCacheTest, PruningTheUsersCacheRemovesTheInstallsOwn) {
+    files_.givenFile(".packages/gone.zip-0123456789abcdef.unpacked", "gone.zip");
+    files_.givenFile("/cache/old.zip-0123456789abcdef.unpacked", "old.zip");
+    EXPECT_CALL(files_.file_system_, removeDirectory(kArchiveCacheName));
+    EXPECT_CALL(files_.file_system_, removeFile("/cache/old.zip-0123456789abcdef.unpacked"));
+    pruneArchiveCache(files_.file_system_, "/cache", {});
+}
+
+TEST_F(CArchiveCacheTest, WithoutAUserCacheArchivesAreUnpackedInTheInstall) {
+    const std::optional<std::string> title = "Hell";
+    EXPECT_EQ(findArchiveCache(files_.file_system_, title), kArchiveCacheName);
+    ON_CALL(files_.file_system_, getCacheFolder(std::string_view("Hell")))
+        .WillByDefault(Return(std::optional<std::string>("/home/u/.cache/hell")));
+    // Its real path can't be had.
+    EXPECT_EQ(findArchiveCache(files_.file_system_, title), kArchiveCacheName);
+    ON_CALL(files_.file_system_, getRealPath(std::string_view(".")))
+        .WillByDefault(Return(std::optional<std::string>("/games/Hell")));
+    // Nothing names the game.
+    EXPECT_EQ(findArchiveCache(files_.file_system_, std::nullopt), kArchiveCacheName);
+}
+
+// In the titled game's folder, one for each install, named after it.
+TEST_F(CArchiveCacheTest, ArchivesAreUnpackedInTheUsersCache) {
+    const std::optional<std::string> title = "Hell";
+    ON_CALL(files_.file_system_, getCacheFolder(std::string_view("Hell")))
+        .WillByDefault(Return(std::optional<std::string>("/home/u/.cache/hell")));
+    ON_CALL(files_.file_system_, getRealPath(std::string_view(".")))
+        .WillByDefault(Return(std::optional<std::string>("/games/Hell")));
+    const std::string cache = findArchiveCache(files_.file_system_, title);
+    EXPECT_THAT(cache, MatchesRegex(R"(/home/u/\.cache/hell/packages/Hell-[0-9a-f]{16})"));
+    ON_CALL(files_.file_system_, getRealPath(std::string_view(".")))
+        .WillByDefault(Return(std::optional<std::string>("/other/Hell")));
+    EXPECT_NE(findArchiveCache(files_.file_system_, title), cache);
+    const std::expected<std::string, std::string> folder =
+        unpackToCache(files_.file_system_, cache, "mods/hell.zip");
+    ASSERT_TRUE(folder.has_value()) << folder.error();
+    EXPECT_THAT(*folder, ::testing::StartsWith(cache + "/hell.zip-"));
+    EXPECT_EQ(files_.bytes(*folder + "/nocturne.toml"), kManifest);
 }
 
 } // namespace

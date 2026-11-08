@@ -103,6 +103,8 @@ using TranslationTable = std::map<std::string, std::string, std::less<>>;
 // What the shipped binary hard-coded about its own game, as a package gives it. Whatever a
 // package leaves unset an earlier one's gives.
 struct SGameContent {
+    // The game's name as its own folders spell it, such as the one in the user's cache.
+    std::optional<std::string> title;
     // The menus the game runs.
     std::optional<std::string> front_end;
     // What shows a level loading.
