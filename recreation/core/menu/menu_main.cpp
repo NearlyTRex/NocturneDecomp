@@ -8,6 +8,7 @@
 #include "core/menu/menupage.h"
 #include "core/sound/sound.h"
 #include "engine/2d/2d.h"
+#include "engine/gamepadinput.h"
 #include "engine/menuinput.h"
 #include "engine/rawinput.h"
 #include "engine/screendevice.h"
@@ -111,8 +112,10 @@ public:
         return EMenuOutcome::Stay;
     }
 
-    // The music starts once the first frame is up.
+    // The music starts once the first frame is up. The pad's cancel quits nothing here, as B or
+    // Start would quit the game with no question asked.
     EMenuOutcome endFrame() override {
+        owners_.gamepad.withdrawMenuAction(engine::EMenuAction::Cancel);
         if (getMenu().takeMenuCancel()) {
             quit_ = true;
         }

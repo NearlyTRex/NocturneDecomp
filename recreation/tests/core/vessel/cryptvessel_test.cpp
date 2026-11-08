@@ -30,8 +30,8 @@ TEST(CCryptVessel, PublicInterface) {
     static_assert(std::is_same_v<decltype(&CCryptVessel::renderOpaque), int (CCryptVessel::*)()>);
     static_assert(
         std::is_same_v<decltype(&CCryptVessel::renderTransparent), int (CCryptVessel::*)()>);
-    static_assert(
-        std::is_same_v<decltype(&CCryptVessel::renderBackground), void (CCryptVessel::*)(int)>);
+    static_assert(std::is_same_v<decltype(&CCryptVessel::renderBackground),
+                                 void (CCryptVessel::*)(int, const SActorRenderOwners &)>);
     static_assert(std::is_same_v<decltype(&CCryptVessel::getBoundingBox),
                                  CBoundingBox3D *(CCryptVessel::*)(CBoundingBox3D *)>);
     static_assert(std::is_same_v<decltype(&CCryptVessel::getCollisionType),

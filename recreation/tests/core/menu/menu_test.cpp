@@ -1,3 +1,4 @@
+#include "common/error/fatalerror.h"
 #include "common/random/watcomrandom.h"
 #include "core/actor/actor.h"
 #include "core/dfont/dfont.h"
@@ -33,6 +34,7 @@
 #include "tests/mocks/core/gameparts.h"
 #include "tests/mocks/core/menufontfiles.h"
 #include "tests/mocks/core/mockdeformablemodels.h"
+#include "tests/mocks/core/mockeventconditions.h"
 #include "tests/mocks/core/mockkeyframedmodels.h"
 #include "tests/mocks/core/setparts.h"
 #include "tests/mocks/engine/fontsheet.h"
@@ -96,16 +98,20 @@ constexpr int kHeight = 480;
 // Palette entry 1 of the brightness image.
 constexpr std::uint32_t kImage = 0x112233;
 
-// The menus on a 640x480 screen, their fonts from sheets of block glyphs '!' to 0x99, with every
-// message translated to a run of X's: calibration step n to n of them, the prompt to one and the
-// title to seven.
-class CMenuTest : public sound::CSndMainFixture {
+// The menus on a screen 480 lines tall, their fonts from sheets of block glyphs '!' to 0x99, with
+// every message translated to a run of X's: calibration step n to n of them, the prompt to one
+// and the title to seven.
+template <int ScreenWidth>
+class CMenuFixture : public sound::CSndMainFixture {
 protected:
-    CMenuTest() {
+    // Where the 640-wide layout starts.
+    static constexpr int kLeft = (ScreenWidth - kWidth) / 2;
+
+    CMenuFixture() {
         givenMenuFontFiles([this](const std::string &name, const std::string &contents) {
             givenFile(name, contents);
         });
-        two_d_.setupViewportAndClipping(0, 0, kWidth - 1, kHeight - 1);
+        two_d_.setupViewportAndClipping(0, 0, ScreenWidth - 1, kHeight - 1);
         givenFile("art\\brightness.raw", std::string(std::size_t{kWidth} * kHeight, '\x01'));
         givenFile("art\\brightness.act", engine::makePalette({0, 0, 0, 0x11, 0x22, 0x33}));
         givenFile("msglist.txt", "; version\n0\n; use OS fonts\n0\n; font\n\"Arial\"\n"
@@ -142,12 +148,12 @@ protected:
 
     // Where text of that many X's starts, centred on the image.
     [[nodiscard]] int centredLeft(int count) const {
-        return (kWidth / 2) - (smallFont().getTextWidth(std::string(count, 'X')) / 2);
+        return kLeft + (kWidth / 2) - (smallFont().getTextWidth(std::string(count, 'X')) / 2);
     }
 
     // The first pixel along row y that the text covers rather than the image.
     [[nodiscard]] int firstTextPixel(int y) const {
-        for (int x = 0; x < kWidth; ++x) {
+        for (int x = kLeft; x < kLeft + kWidth; ++x) {
             if (screen_.pixel(x, y) != kImage) {
                 return x;
             }
@@ -162,7 +168,7 @@ protected:
 
     // The first pixel drawn along row y, or -1.
     [[nodiscard]] int firstLit(int y) const {
-        for (int x = 0; x < kWidth; ++x) {
+        for (int x = 0; x < ScreenWidth; ++x) {
             if (lit(x, y)) {
                 return x;
             }
@@ -180,7 +186,7 @@ protected:
     }
 
     std::array<std::uint8_t, engine::IRawInput::kInputCodeCount> keyboard_{};
-    engine::CMemoryScreen screen_{kWidth, kHeight, 32};
+    engine::CMemoryScreen screen_{ScreenWidth, kHeight, 32};
     NiceMock<engine::MockRawInput> raw_input_;
     engine::C2d two_d_{dosio_, screen_, raw_input_};
     engine::CLight light_;
@@ -219,16 +225,17 @@ protected:
     engine::CPrim prim_{special_, two_d_, three_d_, current_texture_};
     engine::CZRaster zraster_{special_, two_d_, three_d_, current_texture_};
     engine::CDemonRenderer demon_renderer_{
-        matrix_,          two_d_,   three_d_, vertex_buffer_,           special_, prim_, zraster_,
-        current_texture_, texture_, screen_,  &transformAndClipGeometry};
+        matrix_, light_,   two_d_,           three_d_, vertex_buffer_, special_,
+        prim_,   zraster_, current_texture_, texture_, screen_,        &transformAndClipGeometry};
     CSetParts set_parts_{dosio_};
-    CDemonSet set_{
-        set_parts_.owners(demon_renderer_, matrix_, special_, two_d_, screen_, raw_input_)};
+    CDemonSet set_{set_parts_.owners(demon_renderer_, three_d_, matrix_, special_, two_d_, screen_,
+                                     raw_input_)};
     common::CWatcomRandom crt_random_;
     ::testing::NiceMock<MockDeformableModels> models_;
     ::testing::NiceMock<MockKeyFramedModels> keyframed_models_;
-    CActor actor_{game_, crt_random_, models_, keyframed_models_};
-    engine::CMenuInput menu_input_{keys_};
+    ::testing::NiceMock<MockEventConditions> actor_events_;
+    CActor actor_{game_, crt_random_, models_, keyframed_models_, actor_events_};
+    engine::CMenuInput menu_input_{keys_, game_parts_.getGamepad().input};
     engine::CPod pod_{file_system_, dosio_};
     CSound game_sound_{sound_, pod_, file_system_};
     engine::CIni ini_{file_system_};
@@ -237,7 +244,9 @@ protected:
                                .console = console_,
                                .special = special_,
                                .display = display_,
-                               .fonts = fonts_};
+                               .fonts = fonts_,
+                               .gamepad = game_parts_.getGamepad().input,
+                               .messages = messages_};
     shape::CEdControls controls_{{.two_d = two_d_,
                                   .screen = screen_,
                                   .raw_input = raw_input_,
@@ -256,8 +265,10 @@ protected:
                  .three_d = three_d_,
                  .raw_input = raw_input_,
                  .menu_input = menu_input_,
+                 .gamepad = game_parts_.getGamepad().input,
                  .fonts = fonts_,
                  .messages = messages_,
+                 .content = game_parts_.getContent(),
                  .renderer = demon_renderer_,
                  .set = set_,
                  .game = game_,
@@ -276,6 +287,11 @@ protected:
                  .play_movie = {},
                  .show_chapter_select = {}}};
 };
+
+using CMenuTest = CMenuFixture<kWidth>;
+// The front end at 16:9.
+constexpr int kWideWidth = 848;
+using CWideMenuTest = CMenuFixture<kWideWidth>;
 
 TEST_F(CMenuTest, CalibrationShowsEachStepWithThePromptOverTheImageUntilAKey) {
     std::vector<int> prompt_lefts;
@@ -318,7 +334,7 @@ TEST_F(CMenuTest, UpMovesTheSelectionAndWrapsAtTheTop) {
     EXPECT_EQ(choose({"A", "B", "C"}, selected), -1);
     EXPECT_EQ(selected, 0);
     EXPECT_TRUE(menu_.getMenuInputHappened());
-    press(EInputCodeType::PAD_DPAD_UP);
+    press(EInputCodeType::DIK_UP);
     choose({"A", "B", "C"}, selected);
     EXPECT_EQ(selected, 2);
 }
@@ -424,6 +440,49 @@ TEST_F(CMenuTest, TheFooterCarriesTheCopyrightTheTrademarkAndTheBuild) {
     EXPECT_TRUE(lit(kWidth - 1 - smallFont().getTextWidth(copyright), letterRow(bottom)));
 }
 
+// The image and its text centred together, black either side.
+TEST_F(CWideMenuTest, CalibrationIsCentredOnAWideFrontEnd) {
+    // Across the middle row at the image's edges, and where the title starts, at each step.
+    std::vector<std::vector<std::uint32_t>> edges;
+    std::vector<int> title_lefts;
+    EXPECT_CALL(raw_input_, getNextKeypress(_)).Times(5).WillRepeatedly([&](auto &) {
+        const int row = kHeight / 2;
+        edges.push_back({screen_.pixel(kLeft - 1, row), screen_.pixel(kLeft, row),
+                         screen_.pixel(kLeft + kWidth - 1, row),
+                         screen_.pixel(kLeft + kWidth, row)});
+        title_lefts.push_back(firstTextPixel(letterRow(2 * lineHeight())));
+        return 'a';
+    });
+    menu_.showCalibrationTest();
+    EXPECT_THAT(edges, ::testing::Each(std::vector<std::uint32_t>{0U, kImage, kImage, 0U}));
+    EXPECT_THAT(title_lefts, ::testing::Each(centredLeft(7)));
+}
+
+TEST_F(CWideMenuTest, TheItemsAndTheTrademarkMoveWithTheLayout) {
+    int selected = 2;
+    choose({"XX", "XX", "XX"}, selected, "XXX");
+    EXPECT_EQ(firstLit(letterRow(100)), kLeft + 160);
+    EXPECT_EQ(firstLit(letterRow(100 + (2 * lineHeight()))), kLeft + 160);
+    EXPECT_TRUE(lit(kLeft + 518, 99));
+    EXPECT_FALSE(lit(518, 99));
+}
+
+// The copyright keeps to the screen's corner and the build's line to the left edge.
+TEST_F(CWideMenuTest, TheFooterKeepsToTheScreensCorners) {
+    int selected = 0;
+    choose({"XX"}, selected);
+    constexpr std::string_view copyright = "Nocturne 1999 Terminal Reality Inc.  Patent Pending.";
+    const int bottom = kHeight - 1 - smallFont().getTextHeight(copyright);
+    EXPECT_EQ(firstLit(letterRow(bottom)), 4);
+    EXPECT_TRUE(lit(kWideWidth - 1 - smallFont().getTextWidth(copyright), letterRow(bottom)));
+}
+
+TEST_F(CWideMenuTest, TheGlowMovesWithTheItem) {
+    int selected = 0;
+    choose({"XX"}, selected);
+    EXPECT_TRUE(lit(kLeft + 158, letterRow(98)));
+}
+
 // The OS fonts measure any text as 30 by 9 here; only their copyright carries the (c).
 TEST_F(CMenuTest, WithOsTextTheCopyrightCarriesTheCopyrightSign) {
     std::vector<std::string> drawn;
@@ -443,6 +502,44 @@ TEST_F(CMenuTest, WithOsTextTheCopyrightCarriesTheCopyrightSign) {
     choose({"XX"}, selected);
     EXPECT_THAT(drawn, ::testing::Contains(std::string(
                            "Nocturne (c) 1999 Terminal Reality Inc.  Patent Pending.")));
+    drawn.clear();
+    game_parts_.getContent().copyright_os_font.reset();
+    choose({"XX"}, selected);
+    EXPECT_THAT(drawn, ::testing::Contains(
+                           std::string("Nocturne 1999 Terminal Reality Inc.  Patent Pending.")));
+}
+
+TEST_F(CMenuTest, MenusWithoutAPackagesLayoutAreFatal) {
+    game_parts_.getContent().menu.reset();
+    int selected = 0;
+    EXPECT_THAT([&] { static_cast<void>(choose({"XX"}, selected)); },
+                ::testing::ThrowsMessage<common::CFatalError>(
+                    ::testing::StrEq("No package gives the menus' layout")));
+}
+
+// A game's menus put their items where its packages say.
+TEST_F(CMenuTest, TheItemsStartAtThePackagesLeftEdge) {
+    std::optional<engine::SMenuLayout> &menu = game_parts_.getContent().menu;
+    ASSERT_TRUE(menu.has_value());
+    menu->left = 300;
+    int selected = 1;
+    choose({"XX", "XX"}, selected);
+    EXPECT_EQ(firstLit(letterRow(100)), 300);
+}
+
+TEST_F(CMenuTest, WithoutACopyrightOrTrademarkOnlyTheBuildIsInTheFooter) {
+    engine::SGameContent &content = game_parts_.getContent();
+    content.copyright.reset();
+    content.copyright_os_font.reset();
+    ASSERT_TRUE(content.menu.has_value());
+    content.menu->trademark.reset();
+    int selected = 0;
+    choose({"XX"}, selected);
+    EXPECT_FALSE(lit(518, 99));
+    // The build's line, "X", on its own row.
+    const int bottom = kHeight - 1 - smallFont().getTextHeight("X");
+    EXPECT_EQ(firstLit(letterRow(bottom)), 4);
+    EXPECT_FALSE(lit(kWidth - 2, letterRow(bottom)));
 }
 
 } // namespace

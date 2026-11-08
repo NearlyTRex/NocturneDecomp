@@ -11,8 +11,8 @@
 namespace nocturne::wincore {
 
 // The counter is read as calibrateCPUSpeed read it; the speed it then measured was never used.
-CWinRun::CWinRun(platform::IWindow &window, platform::IClock &clock)
-    : window_(window), clock_(clock),
+CWinRun::CWinRun(platform::IWindow &window, platform::IClock &clock, engine::CGamepadInput &gamepad)
+    : window_(window), clock_(clock), gamepad_(gamepad),
       timer_calibration_(static_cast<double>(clock.getCounterFrequency())),
       performance_counter_(clock.getCounter()) {}
 

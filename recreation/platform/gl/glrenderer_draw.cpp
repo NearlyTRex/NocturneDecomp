@@ -66,11 +66,17 @@ common::SVertexContext CGlRenderer::gatherVertexContext(std::uint32_t effective_
     common::SVertexContext context;
     context.render_flags = effective_flags;
     context.rhw_scale = static_cast<float>(rhw_scale);
-    // Above 480 lines the engine submits geometry in the hold buffer's space. It picks the
-    // hold buffer by the height alone, so the height alone decides the scale too.
+    // An overlay pass places its own space. Otherwise, above 480 lines the engine submits
+    // geometry in the hold buffer's space; it picks the hold buffer by the height alone, so
+    // the height alone decides the scale too.
     const int width = device_->getWidth();
     const int height = device_->getHeight();
-    if (height > kHoldHeight) {
+    if (const std::optional<SOverlayPlacement> &overlay = device_->getOverlay()) {
+        context.screen_scale_x = overlay->scale_x;
+        context.screen_scale_y = overlay->scale_y;
+        context.screen_offset_x = overlay->offset_x;
+        context.screen_offset_y = overlay->offset_y;
+    } else if (height > kHoldHeight) {
         context.screen_scale_x = static_cast<float>(width) / CGlDevice::kHoldWidth;
         context.screen_scale_y = static_cast<float>(height) / kHoldHeight;
     }

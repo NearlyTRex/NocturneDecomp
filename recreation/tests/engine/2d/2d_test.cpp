@@ -109,6 +109,8 @@ TEST_F(C2dTest, StartupFillsTheReciprocalTable) {
     EXPECT_EQ(table[2], 2147483647U);
     EXPECT_EQ(table[3], 1431655765U);
     EXPECT_EQ(table[1599], 2686033U);
+    EXPECT_EQ(table.size(), 3842U);
+    EXPECT_EQ(table[3841], 1118189U);
 }
 
 TEST_F(C2dTest, WithoutADefaultPaletteItStaysBlack) {

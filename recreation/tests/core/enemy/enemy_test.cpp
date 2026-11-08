@@ -2,6 +2,7 @@
 #include "core/actor/demonactortype.h"
 #include "core/charactr/character.h"
 #include "core/enemy/enemy.h"
+#include "tests/mocks/core/actorrenderfixture.h"
 #include "tests/mocks/core/notportedcalls.h"
 #include "tests/mocks/core/testactor.h"
 #include "tests/mocks/core/testclasses.h"
@@ -9,6 +10,7 @@
 
 #include <gtest/gtest.h>
 
+#include <format>
 #include <string_view>
 #include <type_traits>
 
@@ -37,7 +39,8 @@ TEST(CEnemy, IsAbstract) {
 
 TEST(CEnemy, PublicInterface) {
     static_assert(std::is_same_v<decltype(&CEnemy::setup), void (CEnemy::*)()>);
-    static_assert(std::is_same_v<decltype(&CEnemy::renderBackground), void (CEnemy::*)(int)>);
+    static_assert(std::is_same_v<decltype(&CEnemy::renderBackground),
+                                 void (CEnemy::*)(int, const SActorRenderOwners &)>);
     static_assert(
         std::is_same_v<decltype(&CEnemy::getTargetPoints), int (CEnemy::*)(common::CVector3f *)>);
     static_assert(std::is_same_v<decltype(&CEnemy::archive), void (CEnemy::*)(CActorArchive &)>);
@@ -158,7 +161,6 @@ TEST(CEnemy, TheFunctionsNotPortedYetQuit) {
     CTestClasses classes;
     CTestEnemy enemy(classes.get());
     const NotPortedCalls calls = {
-        {"renderBackground", [&] { enemy.renderBackground(0); }},
         {"getTargetPoints", [&] { static_cast<void>(enemy.getTargetPoints(nullptr)); }},
         {"releaseVictim", [&] { enemy.releaseVictim(); }},
         {"onVictimLost", [&] { enemy.onVictimLost(nullptr); }},
@@ -167,6 +169,41 @@ TEST(CEnemy, TheFunctionsNotPortedYetQuit) {
         {"updateVictim", [&] { enemy.updateVictim(0.0F); }},
     };
     expectEachQuitsNotPorted("CEnemy", calls);
+}
+
+// An enemy from a version 3 file, in view, whose box is tested only once it is drawn.
+class CEnemyBackgroundTest : public CActorRenderFixture {
+protected:
+    void readEnemy(bool left_blood_pool) {
+        CTestFieldsArchive archive(
+            enemy_, kTestEnemyType, 1,
+            std::format("1.05 // speed\n30 // hitPoints\n{} // poolMe\n", left_blood_pool ? 1 : 0));
+        archive.getClasses().setSavedVersion(CEnemy::kType, 3);
+        enemy_.archive(archive.get());
+        placeInView(enemy_);
+        markBoxUntested();
+    }
+
+    CTestClasses classes_;
+    CTestEnemy enemy_{classes_.get()};
+};
+
+// From its first time in the layer on, the body it left is drawn into the backdrop.
+TEST_F(CEnemyBackgroundTest, ABodyLeftLyingIsDrawnFromItsLayerOn) {
+    readEnemy(true);
+    enemy_.renderBackground(0, render_owners_);
+    EXPECT_FALSE(boxTested());
+    enemy_.renderBackground(1, render_owners_);
+    EXPECT_TRUE(boxTested());
+    markBoxUntested();
+    enemy_.renderBackground(0, render_owners_);
+    EXPECT_TRUE(boxTested());
+}
+
+TEST_F(CEnemyBackgroundTest, AnEnemyThatLeftNoBodyIsLeftOut) {
+    readEnemy(false);
+    enemy_.renderBackground(1, render_owners_);
+    EXPECT_FALSE(boxTested());
 }
 
 } // namespace

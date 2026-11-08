@@ -4,6 +4,7 @@
 #include "platform/mrgltexturebasic.h"
 #include "tests/mocks/engine/demonrendererfixture.h"
 
+#include <gmock/gmock.h>
 #include <gtest/gtest.h>
 
 #include <array>
@@ -16,27 +17,30 @@
 namespace nocturne::engine {
 namespace {
 
+using ::testing::_;
+using ::testing::Return;
+
 TEST(CDemonRenderer, IsConcrete) {
     static_assert(!std::is_abstract_v<CDemonRenderer>);
 }
 
 TEST(CDemonRenderer, Constructors) {
-    static_assert(std::is_constructible_v<CDemonRenderer, CMatrix &, const C2d &, C3d &,
+    static_assert(std::is_constructible_v<CDemonRenderer, CMatrix &, CLight &, C2d &, C3d &,
                                           std::span<platform::SRenderVertex>, CSpecial &, CPrim &,
                                           CZRaster &, const SCurrentTexture &, CTexture &,
-                                          const IScreenDevice &, GeometryClipper>);
+                                          IScreenDevice &, GeometryClipper>);
     static_assert(!std::is_default_constructible_v<CDemonRenderer>);
 }
 
 TEST(CDemonRenderer, PublicInterface) {
     static_assert(std::is_same_v<decltype(&CDemonRenderer::renderSolidColorDepthDirect),
-                                 void (CDemonRenderer::*)(platform::SMRGLHeaderPrimitive *)>);
+                                 void (CDemonRenderer::*)(const platform::SMRGLHeaderPrimitive &)>);
     static_assert(std::is_same_v<decltype(&CDemonRenderer::renderSolidColorPoly),
                                  void (CDemonRenderer::*)(SMRGLPrimitivePoly *)>);
     static_assert(std::is_same_v<decltype(&CDemonRenderer::renderZPrepassPoly),
                                  void (CDemonRenderer::*)(SMRGLPrimitivePoly *)>);
     static_assert(std::is_same_v<decltype(&CDemonRenderer::renderDepthProfiledDirect),
-                                 int (CDemonRenderer::*)(platform::SMRGLHeaderPrimitive *)>);
+                                 bool (CDemonRenderer::*)(const platform::SMRGLHeaderPrimitive &)>);
     static_assert(
         std::is_same_v<decltype(&CDemonRenderer::renderTexturedDirect),
                        void (CDemonRenderer::*)(const platform::SMRGLHeaderPrimitive &, int)>);
@@ -87,7 +91,7 @@ TEST(CDemonRenderer, PublicInterface) {
     static_assert(std::is_same_v<decltype(&CDemonRenderer::setLightIntensity),
                                  void (CDemonRenderer::*)(float)>);
     static_assert(std::is_same_v<decltype(&CDemonRenderer::setLightDirection),
-                                 void (CDemonRenderer::*)(common::CVector3i *)>);
+                                 void (CDemonRenderer::*)(const common::CVector3i &)>);
     static_assert(std::is_same_v<decltype(&CDemonRenderer::getCameraOriginFixed),
                                  common::CVector3i (CDemonRenderer::*)() const>);
     static_assert(std::is_same_v<decltype(&CDemonRenderer::getCameraOriginWorld),
@@ -146,9 +150,6 @@ TEST(CDemonRenderer, PublicInterface) {
                                  void (CDemonRenderer::*)()>);
     static_assert(std::is_same_v<decltype(&CDemonRenderer::captureTexture),
                                  void (CDemonRenderer::*)(platform::SMRGLTextureBasic &)>);
-    static_assert(std::is_same_v<decltype(&CDemonRenderer::updateTexture),
-                                 void (CDemonRenderer::*)(platform::SMRGLTextureBasic *,
-                                                          SRGBColorPalette *)>);
     static_assert(std::is_same_v<decltype(&CDemonRenderer::depthTest),
                                  int (CDemonRenderer::*)(platform::SRenderVertex *)>);
 }
@@ -205,11 +206,45 @@ TEST_F(CDemonRendererStateTest, ACapturedTextureIsLoadedAndMadeCurrent) {
     EXPECT_EQ(texture_.data.front(), 5);
 }
 
+TEST_F(CDemonRendererStateTest, AnUpdatedTextureGoesToTheHardwareRendererWithItsPalette) {
+    startRenderer();
+    givenFile("art\\a.raw", std::string(std::size_t{32} * 32, '\x05'));
+    platform::SMRGLTextureBasic texture{.texture_name = "a.raw", .cache_index = 0};
+    demon_renderer_.captureTexture(texture);
+    std::array<std::uint8_t, 768> palette{};
+    EXPECT_CALL(renderer_, updateTexture(&texture, 32, _, palette.data(), nullptr))
+        .WillOnce(Return(1));
+    demon_renderer_.updateTexture(texture, palette);
+}
+
 TEST_F(CDemonRendererStateTest, BlendModeAndAlphaGoToThe3dState) {
     demon_renderer_.setBlendMode(C3d::kAdditiveBlend);
     EXPECT_EQ(three_d_.getBlendMode(), C3d::kAdditiveBlend);
     EXPECT_EQ(demon_renderer_.setRenderAlpha(0x8000), three_d_.setRenderAlpha(0x8000));
     EXPECT_EQ(three_d_.getCurrentAlphaValue(), 0x80);
+}
+
+// At 32 bits each level goes to its channel's bit, here blue lowest and red at 20; SHL takes
+// the bit position's low five bits.
+TEST_F(CDemonRendererStateTest, At32BitsAColourIsPackedIntoTheScreensChannels) {
+    ON_CALL(screen_, getBitsPerPixel()).WillByDefault(::testing::Return(32));
+    channels_.red.bit_position = 20;
+    channels_.green.bit_position = 8 + 32;
+    channels_.blue.bit_position = 0;
+    demon_renderer_.setRGBAColor(0x12, 0x34, 0x56);
+    EXPECT_EQ(two_d_.getActiveRenderColor(), (0x12 << 20) | (0x34 << 8) | 0x56);
+}
+
+TEST_F(CDemonRendererStateTest, BelowThirtyTwoBitsAColourIsEightEightEight) {
+    ON_CALL(screen_, getBitsPerPixel()).WillByDefault(::testing::Return(16));
+    channels_.red.bit_position = 11;
+    demon_renderer_.setRGBAColor(0x12, 0x34, 0x56);
+    EXPECT_EQ(two_d_.getActiveRenderColor(), 0x123456);
+}
+
+TEST_F(CDemonRendererStateTest, TheLightDirectionIsTheLightsDirection) {
+    demon_renderer_.setLightDirection({.x = 1, .y = -2, .z = 3});
+    EXPECT_EQ(light_.getLightDirection(), (common::CVector3i{.x = 1, .y = -2, .z = 3}));
 }
 
 } // namespace

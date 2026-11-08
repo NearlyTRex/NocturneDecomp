@@ -47,6 +47,9 @@ FormatStyle: file
 CheckOptions:
   - key: readability-function-cognitive-complexity.Threshold
     value: 25
+  # A test's EXPECT_DEATH expands to a function's worth of branches of its own.
+  - key: readability-function-cognitive-complexity.IgnoreMacros
+    value: true
   - key: cppcoreguidelines-special-member-functions.AllowSoleDefaultDtor
     value: true
   # Copying classes follow the rule of three; moves fall back to copies until

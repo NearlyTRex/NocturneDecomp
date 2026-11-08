@@ -6,6 +6,7 @@
 #include "engine/fwd.h"
 #include "platform/fwd.h"
 
+#include <array>
 #include <cstdint>
 #include <span>
 #include <string>
@@ -23,6 +24,8 @@ struct SDemonCameraOwners {
     common::CWatcomRandom &crt_random;
     // What a scene the camera begins is drawn through.
     engine::CDemonRenderer &renderer;
+    // Where the backdrops are read from.
+    const engine::CDosIo &dosio;
 };
 
 // The software renderer's camera: a frame and depth buffer at most 480 lines tall, and the
@@ -30,7 +33,7 @@ struct SDemonCameraOwners {
 class CDemonCamera : public CCameraView {
 public:
     // deferred: the precomputed surface normals, with precomputeNormals
-    // deferred: the image decompressor, 0x10000 bytes from 6 bits, with loadImage
+    // The original's image decompressor is made where a fog is loaded.
     // nocedit 0x0044bb10
     explicit CDemonCamera(const SDemonCameraOwners &owners);
     ~CDemonCamera() override;
@@ -76,7 +79,10 @@ public:
     void precomputeNormals();
     int calculateAttenuatedDirectionalLight(common::CVector3i *world_pos, CDemonLight *light_source,
                                             common::CVector3i *light_direction);
-    void loadImage(char *filename);
+    // A backdrop's .ACT palette, from backdrop or art, then its .fog and its image: the fog's
+    // density grid and planes, the image scaled into the frame and shrunk into the backdrop
+    // texture. Nothing without the palette; the fog or image missing is skipped.
+    void loadImage(std::string_view filename);
     void renderLightCoronas(CDemonLight *light_source);
     void addLightmapToCorona(CDemonLight *light_source);
     int isCoronaSufficientlyVisible(CDemonLight *light_source);
@@ -98,6 +104,7 @@ public:
     void initCameraShake(float peak_intensity, float attack_time, float sustain_duration,
                          float decay_time);
     common::CVector3f *computeVisibleFrustumBounds(common::CVector3f *output_bounds);
+    // The screen's depths into the camera's, and back.
     void saveZBufferScanlines();
     void restoreZBufferScanlines();
 
@@ -123,6 +130,16 @@ private:
 
     // Fills the camera tables' fog grid afresh from the CRT stream.
     void generateFogGrid();
+    // The .fog's grid, and its planes, for a camera whose fog has a density.
+    void loadFog(std::string_view filename);
+    // Each colour as the screen's pixels have it.
+    [[nodiscard]] std::array<std::uint32_t, 256>
+    convertPaletteToDisplayFormat(std::span<const std::uint8_t> palette) const;
+    // The 640 by 480 image into the frame, at whichever of 240 lines, 480, or between it is.
+    void scaleImageToFramebuffer(std::span<const std::uint8_t> image,
+                                 const std::array<std::uint32_t, 256> &colors);
+    void uploadBackdropTexture(std::span<const std::uint8_t> image,
+                               std::span<std::uint8_t> palette);
 
     SDemonCameraOwners owners_;
     std::string camera_name_;

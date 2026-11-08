@@ -48,6 +48,13 @@ void CTexture::ensureTextureLoaded(platform::SMRGLTextureBasic &texture) {
     }
 }
 
+// nocedit 0x005dd930
+void CTexture::loadAndUpdateTexture(platform::SMRGLTextureBasic &texture,
+                                    std::span<std::uint8_t> palette) {
+    ensureTextureLoaded(texture);
+    static_cast<void>(owners_.special.updateTextureFromPalette(texture, palette));
+}
+
 // nocedit 0x005dd8e0
 void CTexture::clearTextureCache() {
     texture_cache_instance_->freeTextures();

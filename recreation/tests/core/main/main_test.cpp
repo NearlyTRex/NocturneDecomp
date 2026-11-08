@@ -22,6 +22,7 @@
 #include "engine/3d/3d.h"
 #include "engine/dosio/foundfileinfo.h"
 #include "engine/drender/demonrenderer.h"
+#include "engine/font/bitfont.h"
 #include "engine/font/font.h"
 #include "engine/ini/ini.h"
 #include "engine/keys/keys.h"
@@ -40,12 +41,15 @@
 #include "shape/edittool/editortools.h"
 #include "shape/edittool/picklist.h"
 #include "support/newmsg/newmsg.h"
+#include "tests/mocks/core/menufontfiles.h"
 #include "tests/mocks/core/setparts.h"
 #include "tests/mocks/engine/fontsheet.h"
+#include "tests/mocks/engine/gamepadinputparts.h"
 #include "tests/mocks/engine/memoryscreen.h"
 #include "tests/mocks/engine/mockgameclock.h"
 #include "tests/mocks/engine/mockrawinput.h"
 #include "tests/mocks/engine/podimage.h"
+#include "tests/mocks/engine/shippedgamecontent.h"
 #include "tests/mocks/platform/mockclipboard.h"
 #include "tests/mocks/platform/mockclock.h"
 #include "tests/mocks/platform/mockdisplay.h"
@@ -57,9 +61,13 @@
 #include <gmock/gmock.h>
 #include <gtest/gtest.h>
 
+#include <algorithm>
 #include <array>
 #include <cstddef>
+#include <cstdint>
 #include <format>
+#include <functional>
+#include <optional>
 #include <string>
 #include <string_view>
 #include <type_traits>
@@ -100,10 +108,28 @@ std::pair<std::string, std::string> greyImage(int width, int height, std::uint8_
             engine::makePalette(levels)};
 }
 
-// Startup over a disk holding every file it reads, on a 640x480 memory screen.
-class CInitializeGameSystemsTest : public sound::CSndMainFixture {
+// Archives left to unpack when a test says so; unpacking them runs the test's step.
+class CArchivesPod : public engine::CPod {
+public:
+    using CPod::CPod;
+    [[nodiscard]] bool hasArchivesToUnpack() const override {
+        return archives_left;
+    }
+    void unpackArchives() override {
+        archives_left = false;
+        ++unpackings;
+        on_unpack();
+    }
+    bool archives_left = false;
+    int unpackings = 0;
+    std::function<void()> on_unpack = [] {};
+};
+
+// Startup over a disk holding every file it reads, on a memory screen 480 lines tall.
+template <int ScreenWidth>
+class CInitializeGameSystemsFixture : public sound::CSndMainFixture {
 protected:
-    CInitializeGameSystemsTest() {
+    CInitializeGameSystemsFixture() {
         ON_CALL(file_system_, readFile(kIni)).WillByDefault([this](std::string_view) {
             return std::optional(ini_text_);
         });
@@ -148,7 +174,7 @@ protected:
 
     std::string ini_text_ = "[Graphics]\r\ngamePIXX=800\r\ngamePIXY=600\r\nuseDirect3D=1\r\n"
                             "[Sound]\r\n[Control]\r\n[Debug]\r\n";
-    engine::CMemoryScreen screen_{kWidth, kHeight, 32};
+    engine::CMemoryScreen screen_{ScreenWidth, kHeight, 32};
     NiceMock<engine::MockRawInput> raw_input_;
     NiceMock<platform::MockDisplay> display_;
     NiceMock<platform::MockRenderer> renderer_;
@@ -177,7 +203,10 @@ protected:
     engine::CFontColors colors_;
     support::CNewMsg messages_{dosio_};
     CDFont fonts_{dosio_, screen_, two_d_, three_d_, colors_, os_fonts_, messages_, editor_tools_};
-    engine::CMenuInput menu_input_{keys_};
+    engine::SGamepadInputParts gamepad_;
+    engine::CMenuInput menu_input_{keys_, gamepad_.input};
+    // What the packages give, the shipped game's until a test changes it.
+    engine::SGameContent content_ = engine::getShippedGameContent();
     CGame game_{{.clock = game_clock_,
                  .dosio = dosio_,
                  .screen = screen_,
@@ -186,15 +215,21 @@ protected:
                  .three_d = three_d_,
                  .menu_input = menu_input_,
                  .fonts = fonts_,
-                 .sound_main = sound_}};
+                 .sound_main = sound_,
+                 .keys = keys_,
+                 .raw_input = raw_input_,
+                 .gamepad = gamepad_.input,
+                 .content = content_}};
     engine::CIni ini_{file_system_};
     SIniDataOwners ini_owners_{.game = game_,
                                .sound_main = sound_,
                                .console = console_,
                                .special = special_,
                                .display = display_,
-                               .fonts = fonts_};
-    engine::CPod pod_{file_system_, dosio_};
+                               .fonts = fonts_,
+                               .gamepad = gamepad_.input,
+                               .messages = messages_};
+    CArchivesPod pod_{file_system_, dosio_};
     engine::CTexture texture_{{.dosio = dosio_,
                                .two_d = two_d_,
                                .screen = screen_,
@@ -204,20 +239,26 @@ protected:
     std::array<CDemonFilter, 8> global_filters_;
     std::array<CDemonFilter, 4> player_filters_;
     engine::CMouse mouse_{dosio_, screen_, special_};
-    CNetGame net_game_{file_system_, environment_, game_clock_};
+    CNetGame net_game_{{.file_system = file_system_,
+                        .environment = environment_,
+                        .clock = game_clock_,
+                        .two_d = two_d_,
+                        .crt_random = crt_random_,
+                        .actor = actor_,
+                        .mission = mission_}};
     std::vector<platform::SRenderVertex> vertex_buffer_ = std::vector<platform::SRenderVertex>(8);
     engine::CPrim prim_{special_, two_d_, three_d_, current_texture_};
     engine::CZRaster zraster_{special_, two_d_, three_d_, current_texture_};
     engine::CDemonRenderer demon_renderer_{
-        matrix_,          two_d_,   three_d_, vertex_buffer_,           special_, prim_, zraster_,
-        current_texture_, texture_, screen_,  &transformAndClipGeometry};
+        matrix_, light_,   two_d_,           three_d_, vertex_buffer_, special_,
+        prim_,   zraster_, current_texture_, texture_, screen_,        &transformAndClipGeometry};
     CSetParts set_parts_{dosio_};
-    CDemonSet set_{
-        set_parts_.owners(demon_renderer_, matrix_, special_, two_d_, screen_, raw_input_)};
+    CDemonSet set_{set_parts_.owners(demon_renderer_, three_d_, matrix_, special_, two_d_, screen_,
+                                     raw_input_)};
     common::CWatcomRandom crt_random_;
     CDeformableModelManager deformable_models_{dosio_, demon_renderer_};
     CKeyFramedModelManager keyframed_models_{dosio_, demon_renderer_};
-    CActor actor_{game_, crt_random_, deformable_models_, keyframed_models_};
+    CActor actor_{game_, crt_random_, deformable_models_, keyframed_models_, events_};
     shape::CEdControls controls_{{.two_d = two_d_,
                                   .screen = screen_,
                                   .raw_input = raw_input_,
@@ -238,8 +279,10 @@ protected:
                  .three_d = three_d_,
                  .raw_input = raw_input_,
                  .menu_input = menu_input_,
+                 .gamepad = gamepad_.input,
                  .fonts = fonts_,
                  .messages = messages_,
+                 .content = content_,
                  .renderer = demon_renderer_,
                  .set = set_,
                  .game = game_,
@@ -265,7 +308,9 @@ protected:
                                 .renderer = demon_renderer_,
                                 .set = set_,
                                 .fonts = fonts_,
-                                .crt_random = crt_random_}};
+                                .crt_random = crt_random_,
+                                .console = console_,
+                                .content = content_}};
     CDemonMission mission_{{.dosio = dosio_,
                             .messages = messages_,
                             .game = game_,
@@ -292,6 +337,7 @@ protected:
                               .ini_owners = ini_owners_,
                               .dosio = dosio_,
                               .pod = pod_,
+                              .content = content_,
                               .messages = messages_,
                               .texture = texture_,
                               .two_d = two_d_,
@@ -312,6 +358,41 @@ protected:
                               .menu = menu_,
                               .attract_movies = attract_movies_};
 };
+
+using CInitializeGameSystemsTest = CInitializeGameSystemsFixture<kWidth>;
+// The front end at 16:9.
+constexpr int kWideWidth = 848;
+using CWideInitializeGameSystemsTest = CInitializeGameSystemsFixture<kWideWidth>;
+
+// 800x600 is 4:3, which is the layout's own width at 480 lines.
+TEST_F(CInitializeGameSystemsTest, TheFrontEndStartsAt640x480) {
+    start();
+    EXPECT_EQ(screen_.requested_width, kWidth);
+    EXPECT_EQ(screen_.requested_height, kHeight);
+}
+
+TEST_F(CInitializeGameSystemsTest, AWidePickStartsTheFrontEndAtItsAspect) {
+    ini_text_ = "[Graphics]\r\ngamePIXX=1920\r\ngamePIXY=1080\r\nuseDirect3D=1\r\n";
+    start();
+    EXPECT_EQ(screen_.requested_width, kWideWidth);
+    EXPECT_EQ(screen_.requested_height, kHeight);
+}
+
+// Only the hardware renderer widens the menu's moon.
+TEST_F(CInitializeGameSystemsTest, AWidePickWithoutAccelerationStartsTheFrontEndAt640) {
+    ini_text_ = "[Graphics]\r\ngamePIXX=1920\r\ngamePIXY=1080\r\nuseDirect3D=0\r\n";
+    start();
+    EXPECT_EQ(screen_.requested_width, kWidth);
+}
+
+// The fangs centred, black either side.
+TEST_F(CWideInitializeGameSystemsTest, TheLoadingScreenIsCentred) {
+    start();
+    EXPECT_EQ(screen_.pixel(103, kHeight - 1), 0U);
+    EXPECT_EQ(screen_.pixel(104, kHeight - 1), 0x636363U);
+    EXPECT_EQ(screen_.pixel(743, kHeight - 1), 0x636363U);
+    EXPECT_EQ(screen_.pixel(744, kHeight - 1), 0U);
+}
 
 TEST_F(CInitializeGameSystemsTest, ReadsTheIniAndKeepsItsModeAfterTheFirstRun) {
     EXPECT_CALL(display_, setWindowSize(800, 600));
@@ -368,6 +449,82 @@ TEST_F(CInitializeGameSystemsTest, PlaysTheOpeningMovieThenShowsTheLoadingScreen
     EXPECT_EQ(screen_.swaps, 1);
 }
 
+// In the theme font, centred in a band an X tall; this sheet's characters are solid.
+TEST_F(CInitializeGameSystemsTest, TheLoadingScreenSaysLoadingInTheMiddle) {
+    givenMenuFontFiles([this](const std::string &name, const std::string &contents) {
+        givenFile(name, contents);
+    });
+    // As a real screen's mode sets it.
+    two_d_.setupViewportAndClipping(0, 0, kWidth - 1, kHeight - 1);
+    start();
+    // Where the screen isn't the fangs' grey.
+    int left = kWidth;
+    int right = -1;
+    int top = kHeight;
+    int bottom = -1;
+    for (int y = 0; y < kHeight; ++y) {
+        for (int x = 0; x < kWidth; ++x) {
+            if (screen_.pixel(x, y) != 0x636363U) {
+                left = std::min(left, x);
+                right = std::max(right, x);
+                top = std::min(top, y);
+                bottom = std::max(bottom, y);
+            }
+        }
+    }
+    const engine::CBitFont &font = *fonts_.getThemeFont();
+    const int width = font.getTextWidth("Chargement...");
+    const int height = font.getCharHeight('X');
+    EXPECT_EQ(left, (kWidth - width) / 2);
+    EXPECT_EQ(right, left + width - 1);
+    EXPECT_GE(top, (kHeight - height) / 2);
+    EXPECT_LT(bottom, ((kHeight - height) / 2) + height);
+}
+
+TEST_F(CInitializeGameSystemsTest, WithNoArchiveLeftNothingIsUnpacked) {
+    start();
+    EXPECT_EQ(pod_.unpackings, 0);
+}
+
+// Before the packages' content is read, which the archives may change.
+TEST_F(CInitializeGameSystemsTest, ArchivesLeftAreUnpackedWithTheFangsUp) {
+    pod_.archives_left = true;
+    std::optional<std::uint32_t> shown;
+    pod_.on_unpack = [this, &shown] {
+        shown = screen_.pixel(kWidth - 1, kHeight - 1);
+        EXPECT_EQ(screen_.requested_width, kWidth);
+        content_.translations["en"] = {{"Loading...", "Unpacked..."}};
+    };
+    start();
+    EXPECT_EQ(pod_.unpackings, 1);
+    EXPECT_EQ(shown, 0x636363U);
+    EXPECT_EQ(messages_.getLocalizedString("Loading..."), "Unpacked...");
+}
+
+// The fangs may be in an archive left to unpack.
+TEST_F(CInitializeGameSystemsTest, WithoutTheFangsArchivesAreUnpackedOnABlackScreen) {
+    pod_.archives_left = true;
+    ON_CALL(file_system_, getFileInfo(std::string_view("/game/art\\fangs.raw")))
+        .WillByDefault(Return(std::nullopt));
+    std::optional<std::uint32_t> shown;
+    pod_.on_unpack = [this, &shown] {
+        shown = screen_.pixel(kWidth - 1, kHeight - 1);
+        givenImage("fangs", greyImage(kWidth, kHeight, 1, 200));
+    };
+    start();
+    EXPECT_EQ(shown, 0U);
+    EXPECT_EQ(screen_.pixel(kWidth - 1, kHeight - 1), 0x636363U);
+}
+
+// Setting it again finds the refusal fatal.
+TEST_F(CInitializeGameSystemsTest, ARefusedModeLeavesTheArchivesUnpackedWithoutTheFangs) {
+    pod_.archives_left = true;
+    screen_.refuse_modes = true;
+    EXPECT_THROW(start(), common::CFatalError);
+    EXPECT_EQ(pod_.unpackings, 1);
+    EXPECT_EQ(screen_.swaps, 0);
+}
+
 TEST_F(CInitializeGameSystemsTest, TheOpeningPlayingLetsTheAttractMoviesFollow) {
     start();
     attract_movies_.setMusicDuration(0.1F);
@@ -416,6 +573,48 @@ TEST_F(CInitializeGameSystemsTest, AScreenThatRefusesTheModeIsFatal) {
     EXPECT_THROW(start(), common::CFatalError);
     EXPECT_TRUE(movies_.empty());
 }
+
+// The packages' translations for nocturne.ini's language go over msglist.txt's.
+TEST_F(CInitializeGameSystemsTest, TheLanguagesTranslationsAreAdded) {
+    ini_text_ = "[Graphics]\r\nlanguage=de\r\n[Sound]\r\n[Control]\r\n[Debug]\r\n";
+    content_.translations["de"] = {{"Loading...", "Laden..."}};
+    content_.translations["fr"] = {{"Yes", "Oui"}};
+    start();
+    EXPECT_EQ(messages_.getLocalizedString("Loading..."), "Laden...");
+    EXPECT_EQ(messages_.getLocalizedString("Yes"), "Yes");
+}
+
+TEST_F(CInitializeGameSystemsTest, ALanguageNoPackageTranslatesKeepsTheMessageFile) {
+    content_.translations["de"] = {{"Loading...", "Laden..."}};
+    start();
+    EXPECT_EQ(messages_.getLocalizedString("Loading..."), "Chargement...");
+}
+
+struct SFrontEndCase {
+    void (*change)(engine::SGameContent &content);
+    std::string_view error;
+};
+
+class CFrontEndCheckTest : public CInitializeGameSystemsTest,
+                           public ::testing::WithParamInterface<SFrontEndCase> {};
+
+TEST_P(CFrontEndCheckTest, WhatTheBuildCantRunIsFatalBeforeTheScreenIsSet) {
+    GetParam().change(content_);
+    EXPECT_THAT([this] { start(); },
+                ::testing::ThrowsMessage<common::CFatalError>(::testing::StrEq(GetParam().error)));
+    EXPECT_EQ(screen_.requested_width, 0);
+}
+
+INSTANTIATE_TEST_SUITE_P(
+    Content, CFrontEndCheckTest,
+    ::testing::Values(SFrontEndCase{[](engine::SGameContent &c) { c.front_end.reset(); },
+                                    "No package names the game's front end"},
+                      SFrontEndCase{[](engine::SGameContent &c) { c.front_end = "bw1"; },
+                                    "The front end bw1 isn't in this build"},
+                      SFrontEndCase{[](engine::SGameContent &c) { c.loading_indicator.reset(); },
+                                    "No package names the loading indicator"},
+                      SFrontEndCase{[](engine::SGameContent &c) { c.loading_indicator = "bar"; },
+                                    "The loading indicator bar isn't in this build"}));
 
 } // namespace
 } // namespace nocturne::core

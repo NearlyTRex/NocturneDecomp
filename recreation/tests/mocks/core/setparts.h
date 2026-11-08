@@ -5,6 +5,7 @@
 #include "core/dfilter/filtercache.h"
 #include "core/dlight/demonlight.h"
 #include "core/dmodel/keyframedmodel.h"
+#include "core/dskybox/dskybox.h"
 #include "core/dtrace/demonraytrace.h"
 #include "core/ground/ground.h"
 #include "core/set/demonset.h"
@@ -13,6 +14,7 @@
 #include "core/weather/weather.h"
 #include "support/newmsg/newmsg.h"
 #include "tests/mocks/core/lightparts.h"
+#include "tests/mocks/core/mockeventconditions.h"
 #include "tests/mocks/core/mockloadingscreen.h"
 #include "tests/mocks/core/testclasses.h"
 
@@ -37,16 +39,20 @@ public:
     // The camera and flashlight are made with the first owners, over the special and screen they
     // name.
     [[nodiscard]] SDemonSetOwners owners(engine::CDemonRenderer &renderer,
-                                         const engine::CMatrix &matrix, engine::CSpecial &special,
-                                         engine::C2d &two_d, engine::IScreenDevice &screen,
+                                         const engine::C3d &three_d, const engine::CMatrix &matrix,
+                                         engine::CSpecial &special, engine::C2d &two_d,
+                                         engine::IScreenDevice &screen,
                                          engine::IRawInput &raw_input) {
-        const SDemonLightOwners light_owners = light_parts.owners(screen, special, renderer);
+        const SDemonLightOwners light_owners =
+            light_parts.owners(screen, special, renderer, dosio_);
         if (!camera) {
             camera = std::make_unique<CDemonCamera>(light_owners.camera);
             flashlight =
                 std::make_unique<CDemonLight>(light_owners, kFlashlightSize, kFlashlightSize);
+            sky_dome = std::make_unique<CSkyDome>(renderer, special, raytrace);
         }
         return {.renderer = renderer,
+                .three_d = three_d,
                 .matrix = matrix,
                 .special = special,
                 .dosio = dosio_,
@@ -64,7 +70,9 @@ public:
                 .filter_cache = filter_cache,
                 .light_owners = light_owners,
                 .weather = weather,
-                .game = classes.getGame()};
+                .game = classes.getGame(),
+                .sky_dome = *sky_dome,
+                .events = events};
     }
 
     ::testing::NiceMock<MockLoadingScreen> loading_screen;
@@ -78,9 +86,11 @@ public:
     SCameraTables &tables = light_parts.tables;
     std::unique_ptr<CDemonCamera> camera;
     std::unique_ptr<CDemonLight> flashlight;
+    std::unique_ptr<CSkyDome> sky_dome;
     CFilterCache filter_cache;
     CTestClasses classes;
     CWeather weather{classes.get()};
+    ::testing::NiceMock<MockEventConditions> events;
 
 private:
     const engine::CDosIo &dosio_;

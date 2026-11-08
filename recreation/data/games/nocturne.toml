@@ -1,0 +1,192 @@
+# What Nocturne's binary hard-coded about its own game. A base manifest written for one of its
+# releases copies this, so the game reads it from the install like any package's.
+
+title = "Nocturne"
+front_end = "nocturne"
+loading_indicator = "moon"
+copyright = "Nocturne 1999 Terminal Reality Inc.  Patent Pending."
+copyright_os_font = "Nocturne (c) 1999 Terminal Reality Inc.  Patent Pending."
+
+[credits]
+text = "credits.txt"
+image = "stats"
+music = "faded-remix.mp3"
+
+# The main menu's top, and the highest title any shipped screen draws, Sound Options', which
+# clears the logo.
+[menu]
+left = 160
+top = 250
+titled_top = 225
+trademark = { x = 518, y = 99 }
+
+[[loading]]
+id = "load1"
+moon = { x = 120, y = 130, tint = [0x8200, 0xc800, 0xf400] }
+random = true
+
+[[loading]]
+id = "load2"
+moon = { x = 484, y = 66, tint = [0x8200, 0xbd00, 0xff00] }
+random = true
+
+[[loading]]
+id = "load3"
+moon = { x = 159, y = 1, tint = [0x9e00, 0xe100, 0xff00] }
+random = true
+
+[[loading]]
+id = "load4"
+moon = { x = 379, y = 68, tint = [0x6b00, 0x9a00, 0xff00] }
+
+[[story]]
+id = "volume1"
+name = "Volume 1 - 'Dark Reign of the Vampire King'"
+title = "'Dark Reign of the Vampire King'"
+year = 1927
+loading = "load1"
+unlock = { key = "Act1Code", code = 0x331 }
+
+[[story.chapter]]
+name = "Chapter 1 - 'Your New Partner'"
+mission = "hq-act1.msn"
+
+[[story.chapter]]
+name = "Chapter 2 - 'Sentinels'"
+mission = "gtown.msn"
+
+[[story.chapter]]
+name = "Chapter 3 - 'Werewolf Forest'"
+mission = "forest.msn"
+
+[[story.chapter]]
+name = "Chapter 4 - 'Castle Gaustadt'"
+mission = "castle1.msn"
+
+[[story.chapter]]
+name = "Chapter 5 - 'Dungeon'"
+mission = "dungeon.msn"
+
+[[story]]
+id = "volume2"
+name = "Volume 2 - 'Tomb of the Underground God'"
+title = "'Tomb of the Underground God'"
+year = 1931
+loading = "load2"
+unlock = { key = "Act2Code", code = 0x3cc }
+
+[[story.chapter]]
+name = "Chapter 1 - 'Train to Redeye'"
+mission = "train.msn"
+
+[[story.chapter]]
+name = "Chapter 2 - 'Zombie Town'"
+mission = "town.msn"
+
+[[story.chapter]]
+name = "Chapter 3 - 'Underground Mine'"
+mission = "mine.msn"
+
+[[story.chapter]]
+name = "Chapter 4 - 'Hidden Entrance'"
+mission = "trans.msn"
+
+[[story.chapter]]
+name = "Chapter 5 - 'Temple of the God'"
+mission = "temple.msn"
+
+[[story.chapter]]
+name = "Chapter 6 - 'Epilogue'"
+mission = "town2.msn"
+
+[[story.chapter]]
+name = "Chapter X - 'Failure'"
+mission = "hq-act2b.msn"
+needs_full_install = true
+
+[[story]]
+id = "volume3"
+name = "Volume 3 - 'Windy City Massacre'"
+title = "'Windy City Massacre'"
+year = 1933
+loading = "load3"
+unlock = { key = "Act3Code", code = 0x3ac }
+
+[[story.chapter]]
+name = "Chapter 1 - 'Headquarters'"
+mission = "hq-act3.msn"
+
+[[story.chapter]]
+name = "Chapter 2 - 'Chicago River'"
+mission = "chicago1.msn"
+
+[[story.chapter]]
+name = "Chapter 3 - 'The Vendome'"
+mission = "speak.msn"
+
+[[story.chapter]]
+name = "Chapter 4 - 'Night on the Town'"
+mission = "chicago2.msn"
+
+[[story.chapter]]
+name = "Chapter 5 - 'Water Works'"
+mission = "wworks.msn"
+
+[[story.chapter]]
+name = "Chapter 6 - 'Windy City'"
+mission = "chicago3.msn"
+
+[[story.chapter]]
+name = "Chapter 7 - 'Crescent Theater'"
+mission = "theater.msn"
+
+[[story.chapter]]
+name = "Chapter 8 - 'Rooftop to Rooftop'"
+mission = "chicago4.msn"
+
+[[story.chapter]]
+name = "Chapter 9 - 'Warehouse of Hell'"
+mission = "ware2.msn"
+
+[[story.chapter]]
+name = "Chapter 10 - 'Mobster Factory'"
+mission = "factory.msn"
+
+[[story.chapter]]
+name = "Chapter 11 - 'Not You Again'"
+mission = "intfact.msn"
+
+[[story]]
+id = "volume4"
+name = "Volume 4 - 'The House on the Edge of Hell'"
+title = "'The House on the Edge of Hell'"
+year = 1935
+loading = "load4"
+unlock = { key = "Act4Code", code = 0xd6 }
+
+[[story.chapter]]
+name = "Chapter 1 - 'Headquarters'"
+mission = "hq-act4.msn"
+
+[[story.chapter]]
+name = "Chapter 2 - 'Graveyard'"
+mission = "grave.msn"
+
+[[story.chapter]]
+name = "Chapter 3 - 'House of Hell'"
+mission = "mansion.msn"
+
+[[story.chapter]]
+name = "Chapter 4 - 'Back from Hell'"
+mission = "hq-act4b.msn"
+
+[[story]]
+id = "epilogue"
+name = "Volume 5 - 'Epilogue'"
+title = "'Epilogue'"
+year = 1942
+requires = ["volume1", "volume2", "volume3", "volume4"]
+
+[[story.chapter]]
+name = "Chapter 1 - 'Headquarters'"
+mission = "hq-act5.msn"

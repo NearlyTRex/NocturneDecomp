@@ -26,6 +26,7 @@
 #include "tests/mocks/platform/mockclock.h"
 #include "tests/mocks/platform/mockdisplay.h"
 #include "tests/mocks/platform/mockosfontfactory.h"
+#include "tests/mocks/runawayguard.h"
 #include "tests/mocks/sound/wavfile.h"
 
 #include <gmock/gmock.h>
@@ -47,8 +48,8 @@
 namespace nocturne::core {
 
 // The menus over the moon fixture, the main menu's music on disk and the sound output running.
-// Each test presses keys as a frame is shown, for the next to read; past a limit of frames it
-// presses Cancel and fails.
+// Each test presses keys as a frame is shown, for the next to read; past a limit of frames the
+// test's process ends.
 class CMenuFixture : public CMoonFixture {
 protected:
     static constexpr int kFrameLimit = 20;
@@ -65,11 +66,9 @@ protected:
             return std::span<std::uint8_t, engine::IRawInput::kInputCodeCount>(keyboard_);
         });
         ON_CALL(screen_, swapBuffers()).WillByDefault([this] {
+            runaway_.countFrame();
             ++frames_;
-            if (frames_ > kFrameLimit) {
-                ADD_FAILURE() << "the menu didn't leave";
-                press(engine::EInputCodeType::DIK_ESCAPE);
-            } else if (on_frame_) {
+            if (on_frame_) {
                 on_frame_(frames_);
             }
         });
@@ -113,6 +112,7 @@ protected:
         return table;
     }();
     int frames_ = 0;
+    CRunawayGuard runaway_{kFrameLimit, "the menu didn't leave"};
     std::function<void(int)> on_frame_;
     engine::CKeys keys_{raw_input_, screen_};
     ::testing::NiceMock<platform::MockClock> wall_clock_;
@@ -132,7 +132,7 @@ protected:
     ::testing::NiceMock<platform::MockOsFontFactory> os_fonts_;
     support::CNewMsg messages_{dosio_};
     CDFont fonts_{dosio_, screen_, two_d_, three_d_, colors_, os_fonts_, messages_, editor_tools_};
-    engine::CMenuInput menu_input_{keys_};
+    engine::CMenuInput menu_input_{keys_, game_parts_.getGamepad().input};
     ::testing::NiceMock<platform::MockAudioDevice> audio_device_;
     engine::CConsole console_{file_system_, 80, 50, 0, 0};
     sound::CSndMain sound_main_{dosio_, file_system_, audio_device_, console_,
@@ -147,7 +147,9 @@ protected:
                                .console = console_,
                                .special = special_,
                                .display = display_,
-                               .fonts = fonts_};
+                               .fonts = fonts_,
+                               .gamepad = game_parts_.getGamepad().input,
+                               .messages = messages_};
     shape::CEdControls controls_{{.two_d = two_d_,
                                   .screen = screen_,
                                   .raw_input = raw_input_,
@@ -174,8 +176,10 @@ protected:
                              .three_d = three_d_,
                              .raw_input = raw_input_,
                              .menu_input = menu_input_,
+                             .gamepad = game_parts_.getGamepad().input,
                              .fonts = fonts_,
                              .messages = messages_,
+                             .content = game_parts_.getContent(),
                              .renderer = demon_renderer_,
                              .set = set_,
                              .game = game_,

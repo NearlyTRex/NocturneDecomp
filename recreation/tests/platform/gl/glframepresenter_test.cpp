@@ -15,6 +15,11 @@ TEST(IGlFramePresenter, IsAbstractWithVirtualDestructor) {
 TEST(IGlFramePresenter, PublicInterface) {
     static_assert(std::is_same_v<decltype(&IGlFramePresenter::presentScene),
                                  void (IGlFramePresenter::*)(GLuint, int, int)>);
+    static_assert(std::is_same_v<decltype(&IGlFramePresenter::getAntialias),
+                                 EAntialias (IGlFramePresenter::*)() const>);
+    static_assert(std::is_same_v<decltype(&IGlFramePresenter::getSceneReframe),
+                                 std::optional<common::SSceneReframe> (IGlFramePresenter::*)(
+                                     int, int) const>);
 }
 
 } // namespace

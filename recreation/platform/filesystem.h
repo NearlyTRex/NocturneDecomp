@@ -39,15 +39,25 @@ public:
     virtual bool writeFile(std::string_view path, std::string_view text) = 0;
     // False when there was nothing to remove or it couldn't be removed.
     virtual bool removeFile(std::string_view path) = 0;
+    // The folder and everything in it, links removed rather than followed. False when it is
+    // still there afterwards.
+    virtual bool removeDirectory(std::string_view path) = 0;
     // Null when the file can't be opened in that mode.
     [[nodiscard]] virtual std::unique_ptr<IFile> openFile(std::string_view path,
                                                           EFileMode mode) = 0;
     // As _fullpath gives it: absolute, whether or not the file exists.
     [[nodiscard]] virtual std::optional<std::string> getFullPath(std::string_view path) = 0;
+    // Absolute with every link followed, so two paths to one file give the same; nothing when it
+    // doesn't exist.
+    [[nodiscard]] virtual std::optional<std::string> getRealPath(std::string_view path) = 0;
     // As stat gives it, the name being the last component; nothing when the path doesn't exist.
     [[nodiscard]] virtual std::optional<SFileInfo> getFileInfo(std::string_view path) = 0;
     // False when it doesn't exist afterwards.
     virtual bool makeDirectory(std::string_view path) = 0;
+    // The titled game's own folder in the user's cache, for files it can make again, absolute and
+    // spelled as the host's own folders are; nothing when the host names none. It needn't exist
+    // yet.
+    [[nodiscard]] virtual std::optional<std::string> getCacheFolder(std::string_view title) = 0;
     virtual bool setModifiedTime(std::string_view path, std::time_t modified) = 0;
     virtual bool setReadOnly(std::string_view path, bool read_only) = 0;
 };

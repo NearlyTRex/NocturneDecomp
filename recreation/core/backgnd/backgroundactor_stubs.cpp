@@ -19,14 +19,6 @@ int CBackgroundActor::renderOpaque() {
     notPorted("renderOpaque");
 }
 
-void CBackgroundActor::renderBackground(int /*layer_flag*/) {
-    notPorted("renderBackground");
-}
-
-CBoundingBox3D *CBackgroundActor::getBoundingBox(CBoundingBox3D * /*out_box*/) {
-    notPorted("getBoundingBox");
-}
-
 ECollisionType CBackgroundActor::getCollisionType(SCollisionInfo * /*collision_info*/) {
     notPorted("getCollisionType");
 }

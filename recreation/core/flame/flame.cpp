@@ -105,6 +105,17 @@ void CFlame::archive(CActorArchive &actor_archive) {
     }
 }
 
+// deferred: whether a lit torch of more than unit size draws its corona, unless a flame within 5
+//   already does, and clearing that and the visibility check first, with renderTransparent
+// deferred: nothing tested in the shadow pass, with setShadowPass's callers
+// nocedit 0x004caa80
+void CFlame::renderBackground(int layer_flag, const SActorRenderOwners &owners) {
+    if (layer_flag == 0) {
+        return;
+    }
+    is_visible_ = renderIfBoxVisible(owners, [] {});
+}
+
 // nocedit 0x004cac00
 CBoundingBox3D *CFlame::getBoundingBox(CBoundingBox3D *out_box) {
     out_box->min = {.x = -flame_size_.x * kHalf, .y = kBoxFloor, .z = -flame_size_.z * kHalf};

@@ -8,6 +8,7 @@
 #include "core/course/course.h"
 #include "core/dmodel/keyframedmodelinstance.h"
 #include "core/fwd.h"
+#include "core/oneshotstate.h"
 #include "core/platfrm/platformstate.h"
 
 #include <cstddef>
@@ -37,7 +38,7 @@ public:
     void setup() override;
     void process(float delta_time) override;
     int renderOpaque() override;
-    void renderBackground(int layer_flag) override;
+    void renderBackground(int layer_flag, const SActorRenderOwners &owners) override;
     CBoundingBox3D *getBoundingBox(CBoundingBox3D *out_box) override;
     ECollisionType getCollisionType(SCollisionInfo *collision_info) override;
     EGroundType getGroundType() override;
@@ -70,8 +71,8 @@ public:
     [[nodiscard]] float getParam() const;
     [[nodiscard]] float getTravelTimeToStart() const;
     [[nodiscard]] float getTravelTimeToEnd() const;
-    // Whether the platform moves only once.
-    [[nodiscard]] bool isOneShot() const;
+    // Whether the platform moves only once, and how far it has got.
+    [[nodiscard]] EOneShotState getOneShotState() const;
     [[nodiscard]] bool isRenderedInBackgroundWhenNotMoving() const;
     // The camera shown while the platform moves, if any.
     [[nodiscard]] const std::string &getCameraWhileMoving() const;
@@ -113,7 +114,7 @@ private:
     float travel_time_to_start_ = kDefaultTravelTime;
     float travel_time_to_end_ = kDefaultTravelTime;
     EGroundType ground_type_ = EGroundType::kDefault;
-    bool one_shot_ = false;
+    EOneShotState one_shot_ = EOneShotState::kNo;
     bool block_virtual_director_ = false;
     bool render_in_background_when_not_moving_ = false;
     std::string camera_while_moving_;

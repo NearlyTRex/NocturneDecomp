@@ -20,8 +20,8 @@ TEST(CDemonCube, PublicInterface) {
     static_assert(std::is_same_v<decltype(&CDemonCube::allocVoxelMemory), void (CDemonCube::*)()>);
     static_assert(
         std::is_same_v<decltype(&CDemonCube::load), void (CDemonCube::*)(common::CBinaryReader &)>);
-    static_assert(
-        std::is_same_v<decltype(&CDemonCube::rotateVertices), void (CDemonCube::*)(std::uint32_t)>);
+    static_assert(std::is_same_v<decltype(&CDemonCube::rotateVertices),
+                                 void (CDemonCube::*)(const SCubeDrawOwners &) const>);
     static_assert(std::is_same_v<decltype(&CDemonCube::rayIntersectTriangles),
                                  float (CDemonCube::*)(common::CVector3f *, common::CVector3f *,
                                                        common::CVector3f *, std::uint32_t *)>);

@@ -46,6 +46,8 @@ std::int32_t cubeCount(const common::CVector3i &grid) {
 
 } // namespace
 
+// What staticInit constructed, the PVS's cube positions, is the members' PVS.
+// nocedit 0x004941e0
 // nocedit 0x00494200
 CDemonRaytrace::CDemonRaytrace(const engine::CDosIo &dosio) : dosio_(dosio) {}
 

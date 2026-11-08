@@ -19,10 +19,6 @@ void CGhoul::process(float /*delta_time*/) {
     notPorted("process");
 }
 
-void CGhoul::renderBackground(int /*layer_flag*/) {
-    notPorted("renderBackground");
-}
-
 int CGhoul::getTargetPoints(common::CVector3f * /*out_points_array*/) {
     notPorted("getTargetPoints");
 }

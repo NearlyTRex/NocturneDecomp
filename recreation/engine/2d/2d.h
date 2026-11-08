@@ -1,6 +1,7 @@
 #pragma once
 
 #include "engine/fwd.h"
+#include "engine/screendevice.h"
 
 #include <array>
 #include <cstddef>
@@ -47,7 +48,8 @@ public:
     // 32 levels to a channel, red outermost.
     static constexpr std::size_t kColorCubeSize = 0x8000;
     static constexpr std::size_t kLightLevels = 32;
-    static constexpr std::size_t kReciprocalCount = 1600;
+    // A span runs one past the screen's width, and the table starts at 0.
+    static constexpr std::size_t kReciprocalCount = kMaxScreenWidth + 2;
 
     using Palette = std::array<std::uint8_t, kPaletteBytes>;
     using LightRow = std::array<std::uint8_t, 256>;
@@ -105,7 +107,7 @@ public:
     // brighten it to white. Rows 0 and 33 repeat the ends, so a lookup one level out of range
     // stays in the table.
     [[nodiscard]] std::span<const LightRow, kLightLevels + 2> getLightTable() const;
-    // 0xffffffff / i, and 0xffffffff for 0: a software span is at most 1599 pixels.
+    // 0xffffffff / i, and 0xffffffff for 0.
     [[nodiscard]] std::span<const std::uint32_t, kReciprocalCount> getReciprocalLookupTable() const;
     [[nodiscard]] int getClipLeft() const;
     [[nodiscard]] int getClipTop() const;

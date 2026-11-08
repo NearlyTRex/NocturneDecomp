@@ -13,6 +13,7 @@
 #include "core/dlight/lightglow.h"
 #include "core/dmodel/keyframedmodel.h"
 #include "core/dmodel/keyframedmodelmanager.h"
+#include "core/dskybox/dskybox.h"
 #include "core/dtrace/demonraytrace.h"
 #include "core/event/eventlist.h"
 #include "core/fire/fireeffect.h"
@@ -42,12 +43,14 @@
 #include "engine/dosio/dosio.h"
 #include "engine/drender/demonrenderer.h"
 #include "engine/font/font.h"
+#include "engine/gamepadinput.h"
 #include "engine/ini/ini.h"
 #include "engine/keys/keys.h"
 #include "engine/light/light.h"
 #include "engine/matrix/matrix.h"
 #include "engine/menuinput.h"
 #include "engine/ncursfx/mouse.h"
+#include "engine/package/packagedata.h"
 #include "engine/prim/prim.h"
 #include "engine/special/special.h"
 #include "engine/texture/currenttexture.h"
@@ -120,8 +123,9 @@ std::tm getLocalTime() {
 class CGameSystems {
 public:
     CGameSystems(sdl::CSdlWindow &window, sdl::CSdlFileSystem &file_system, sdl::CSdlClock &clock,
-                 wincore::CWinRun &winrun)
-        : window_(window), file_system_(file_system), clock_(clock), winrun_(winrun) {
+                 wincore::CWinRun &winrun, engine::CGamepadInput &gamepad)
+        : window_(window), file_system_(file_system), clock_(clock), winrun_(winrun),
+          gamepad_(gamepad) {
         sound_.setMusicHandler(
             [this](float seconds) { attract_movies_.setMusicDuration(seconds); });
     }
@@ -133,6 +137,7 @@ public:
              .ini_owners = ini_owners_,
              .dosio = dosio_,
              .pod = pod_,
+             .content = pod_.getGameContent(),
              .messages = messages_,
              .texture = texture_,
              .two_d = two_d_,
@@ -163,12 +168,12 @@ private:
     sdl::CSdlFileSystem &file_system_;
     sdl::CSdlClock &clock_;
     wincore::CWinRun &winrun_;
+    engine::CGamepadInput &gamepad_;
     nocturne::platform::CFileLog log_{file_system_};
     sdl::CSdlDisplay display_{window_, log_};
     // Declared after the display, so it is gone before the context it draws in. The engine calls
     // init, with its bridge, only when the INI turns acceleration on.
     nocturne::platform::gl::CGlRenderer renderer_{display_.getGlApi(), display_, log_};
-    sdl::CSdlGamepad gamepad_;
     sdl::CSdlClipboard clipboard_;
     sdl::CSdlNetwork network_;
     sdl::CSdlAudioDevice audio_;
@@ -176,7 +181,9 @@ private:
     sdl::CSdlMoviePlayer movies_{display_, log_};
     sdl::CSdlEnvironment environment_;
     engine::CDosIo dosio_{file_system_};
-    core::CDemonPod pod_{file_system_, dosio_};
+    std::vector<engine::SRelease> releases_ =
+        engine::loadReleaseCatalog(engine::getReleaseCatalogText(), engine::getEmbeddedGames());
+    core::CDemonPod pod_{file_system_, dosio_, releases_, log_};
     wincore::CWddVMem screen_{display_, renderer_, winrun_, special_, two_d_, clock_, log_};
     engine::C2d two_d_{dosio_, screen_, winrun_};
     engine::CLight light_;
@@ -203,7 +210,7 @@ private:
     engine::CConsole console_{file_system_, engine::CConsole::kMaxColumns,
                               engine::CConsole::kMaxRows, 1, 1};
     nocturne::sound::CSndMain sound_main_{dosio_, file_system_, audio_, console_, &getLocalTime};
-    engine::CMenuInput menu_input_{keys_};
+    engine::CMenuInput menu_input_{keys_, gamepad_};
     // nocedit 0x004d76d0
     core::CGame game_{{.clock = winrun_,
                        .dosio = dosio_,
@@ -213,14 +220,20 @@ private:
                        .three_d = three_d_,
                        .menu_input = menu_input_,
                        .fonts = fonts_,
-                       .sound_main = sound_main_}};
+                       .sound_main = sound_main_,
+                       .keys = keys_,
+                       .raw_input = winrun_,
+                       .gamepad = gamepad_,
+                       .content = pod_.getGameContent()}};
     engine::CIni ini_{file_system_};
     core::SIniDataOwners ini_owners_{.game = game_,
                                      .sound_main = sound_main_,
                                      .console = console_,
                                      .special = special_,
                                      .display = display_,
-                                     .fonts = fonts_};
+                                     .fonts = fonts_,
+                                     .gamepad = gamepad_,
+                                     .messages = messages_};
     engine::CTexture texture_{{.dosio = dosio_,
                                .two_d = two_d_,
                                .screen = screen_,
@@ -241,7 +254,13 @@ private:
     // deferred: the receive packet's header, size 0x405 and PACKET_NONE, with
     //   CNetGame::receivePackets
     // nocedit 0x0053f310
-    core::CNetGame net_game_{file_system_, environment_, winrun_};
+    core::CNetGame net_game_{{.file_system = file_system_,
+                              .environment = environment_,
+                              .clock = winrun_,
+                              .two_d = two_d_,
+                              .crt_random = crt_random_,
+                              .actor = actor_,
+                              .mission = mission_}};
     wincore::SMovieOwners movie_owners_{.file_system = file_system_,
                                         .movies = movies_,
                                         .window = window_,
@@ -256,17 +275,10 @@ private:
     engine::CPrim prim_{special_, two_d_, three_d_, current_texture_};
     engine::CZRaster zraster_{special_, two_d_, three_d_, current_texture_};
     // nocedit 0x0048a6b0
-    engine::CDemonRenderer demon_renderer_{matrix_,
-                                           two_d_,
-                                           three_d_,
-                                           vertex_buffer_,
-                                           special_,
-                                           prim_,
-                                           zraster_,
-                                           current_texture_,
-                                           texture_,
-                                           screen_,
-                                           &core::transformAndClipGeometry};
+    engine::CDemonRenderer demon_renderer_{
+        matrix_,          light_,   two_d_,  three_d_,
+        vertex_buffer_,   special_, prim_,   zraster_,
+        current_texture_, texture_, screen_, &core::transformAndClipGeometry};
     core::CDemonRaytrace raytrace_{dosio_};
     // nocedit 0x004eeb90
     core::CGround ground_{dosio_, kGroundSize, kGroundSize};
@@ -277,14 +289,15 @@ private:
     nocturne::common::CWatcomRandom crt_random_;
     core::CDeformableModelManager deformable_models_{dosio_, demon_renderer_};
     core::CKeyFramedModelManager keyframed_models_{dosio_, demon_renderer_};
-    core::CActor actor_{game_, crt_random_, deformable_models_, keyframed_models_};
+    core::CActor actor_{game_, crt_random_, deformable_models_, keyframed_models_, events_};
     core::SCameraTables camera_tables_;
     core::SLightGlowTextures light_glow_;
     core::SDemonLightOwners light_owners_{.camera = {.tables = camera_tables_,
                                                      .screen = screen_,
                                                      .special = special_,
                                                      .crt_random = crt_random_,
-                                                     .renderer = demon_renderer_},
+                                                     .renderer = demon_renderer_,
+                                                     .dosio = dosio_},
                                           .global_filters = global_filters_,
                                           .player_filters = player_filters_,
                                           .glow = light_glow_};
@@ -292,9 +305,11 @@ private:
     core::CDemonLight flashlight_{light_owners_, kFlashlightSize, kFlashlightSize};
     core::CFilterCache filter_cache_{dosio_};
     core::CWeather weather_{actor_};
+    core::CSkyDome sky_dome_{demon_renderer_, special_, raytrace_};
     // deferred: the 4000 face normals, with lightVerticies' face lists
     // nocedit 0x00569040
     core::CDemonSet set_{{.renderer = demon_renderer_,
+                          .three_d = three_d_,
                           .matrix = matrix_,
                           .special = special_,
                           .dosio = dosio_,
@@ -312,7 +327,9 @@ private:
                           .filter_cache = filter_cache_,
                           .light_owners = light_owners_,
                           .weather = weather_,
-                          .game = game_}};
+                          .game = game_,
+                          .sky_dome = sky_dome_,
+                          .events = events_}};
     nocturne::shape::CEdControls controls_{{.two_d = two_d_,
                                             .screen = screen_,
                                             .raw_input = winrun_,
@@ -330,8 +347,10 @@ private:
                        .three_d = three_d_,
                        .raw_input = winrun_,
                        .menu_input = menu_input_,
+                       .gamepad = gamepad_,
                        .fonts = fonts_,
                        .messages = messages_,
+                       .content = pod_.getGameContent(),
                        .renderer = demon_renderer_,
                        .set = set_,
                        .game = game_,
@@ -363,7 +382,9 @@ private:
                                       .renderer = demon_renderer_,
                                       .set = set_,
                                       .fonts = fonts_,
-                                      .crt_random = crt_random_}};
+                                      .crt_random = crt_random_,
+                                      .console = console_,
+                                      .content = pod_.getGameContent()}};
     core::CDemonMission mission_{{.dosio = dosio_,
                                   .messages = messages_,
                                   .game = game_,
@@ -404,7 +425,14 @@ private:
                                              .build_version = nocturne::kBuildVersion,
                                              .fire = fire_effect_,
                                              .gore = gore_,
-                                             .inventory_assets = inventory_assets_};
+                                             .inventory_assets = inventory_assets_,
+                                             .net_game = net_game_,
+                                             .level_loader = level_loader_,
+                                             .keys = keys_,
+                                             .mission = mission_,
+                                             .environment = environment_,
+                                             .sound = sound_,
+                                             .display = display_};
     core::SChapterSelectOwners chapter_select_owners_{.messages = messages_,
                                                       .editor_tools = editor_tools_,
                                                       .pick_list = pick_list_owners_,
@@ -419,9 +447,9 @@ private:
 // and graphics before showing the box. The original quit "Out of memory" wherever an allocation
 // failed; a failed allocation here becomes that fatal error.
 int runGame(sdl::CSdlWindow &window, sdl::CSdlFileSystem &file_system, sdl::CSdlClock &clock,
-            wincore::CWinRun &winrun) {
+            wincore::CWinRun &winrun, engine::CGamepadInput &gamepad) {
     try {
-        CGameSystems systems(window, file_system, clock, winrun);
+        CGameSystems systems(window, file_system, clock, winrun, gamepad);
         systems.initializeGameSystems();
         systems.run();
         return 0;
@@ -436,9 +464,11 @@ int run() {
     sdl::CSdlWindow window(wincore::CWinRun::kApplicationTitle, kWidth, kHeight);
     sdl::CSdlFileSystem file_system;
     sdl::CSdlClock clock;
-    wincore::CWinRun winrun(window, clock);
+    sdl::CSdlGamepad gamepad;
+    engine::CGamepadInput gamepad_input(gamepad, file_system, clock);
+    wincore::CWinRun winrun(window, clock, gamepad_input);
     try {
-        return runGame(window, file_system, clock, winrun);
+        return runGame(window, file_system, clock, winrun, gamepad_input);
     } catch (const nocturne::common::CFatalError &error) {
         // Retail writes no gtfo.txt; nocedit's log is kept so a fatal error outlives its box.
         file_system.appendFile("gtfo.txt", error.getLogEntry(getLocalTime()));

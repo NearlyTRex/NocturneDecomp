@@ -105,6 +105,9 @@ void CScript::executeInitSection() {
 // deferred: letting the heroes be damaged and the enemies attack, and clearing the letterbox,
 //   with CGame's readers of them
 // deferred: clearing the script's time scale, with process
+// deferred: the letterbox measured over the 4:3 picture and three subtitle lines high with half
+//   a line spare each side, the subtitles in it at the HUD's text scale (the decomp's hud.h,
+//   HUD), with CScript::getLetterboxHeight and renderSubtitles
 // The set's ambient sound is its geometry's stem as a .wav, the mill's and the town's quieter.
 // nocedit 0x0055a540
 void CScript::initRuntime() {

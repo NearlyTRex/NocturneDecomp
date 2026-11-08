@@ -15,6 +15,8 @@ namespace nocturne::common {
 [[nodiscard]] std::string_view pathExtension(std::string_view path);
 // _splitpath's file name: the last component without its extension.
 [[nodiscard]] std::string_view pathStem(std::string_view path);
+// name in folder, joined with '/'; name alone when folder is "".
+[[nodiscard]] std::string joinPath(std::string_view folder, std::string_view name);
 
 // What path resolution asks of a file system: whether a path exists, and a directory's entries
 // ("" is the working directory; nothing when it can't be listed).

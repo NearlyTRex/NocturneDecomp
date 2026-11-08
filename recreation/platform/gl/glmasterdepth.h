@@ -34,6 +34,11 @@ public:
     // rect is nothing to do, which the engine asks for when nothing moved. Leaves the scene
     // bound.
     [[nodiscard]] bool restore(int slot, GLuint scene, const SDepthRect &rect, int scene_height);
+    // The scene's whole depth set aside across an overlay pass, and put back after it. Kept
+    // apart from the slots, so nothing the engine saves or restores reaches it. Each leaves the
+    // scene bound.
+    [[nodiscard]] bool hold(GLuint scene, int width, int height);
+    [[nodiscard]] bool giveBack(GLuint scene, int width, int height);
 
 private:
     struct SSlot {
@@ -43,12 +48,16 @@ private:
         int height = 0;
     };
 
-    [[nodiscard]] SSlot *prepare(int slot, GLuint scene, int width, int height);
+    // Made, or remade at a new size. False when GL cannot complete it.
+    [[nodiscard]] bool prepare(SSlot &saved, GLuint scene, int width, int height);
+    // The whole depth from one framebuffer to the other, then the scene bound.
+    void copy(GLuint from, GLuint to, GLuint scene, int width, int height) const;
     void destroy(SSlot &slot) const;
 
     const SGlApi &gl_;
     ILog &log_;
     std::array<SSlot, kSlots> slots_{};
+    SSlot held_;
 };
 
 } // namespace nocturne::platform::gl

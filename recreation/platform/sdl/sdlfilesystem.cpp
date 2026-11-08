@@ -4,8 +4,10 @@
 #include "common/text/wildcard.h"
 #include "platform/sdl/sdlfile.h"
 
+#include <SDL3/SDL.h>
 #include <algorithm>
 #include <array>
+#include <cctype>
 #include <chrono>
 #include <cstdio>
 #include <filesystem>
@@ -105,6 +107,13 @@ bool CSdlFileSystem::removeFile(std::string_view path) {
     return std::filesystem::remove(resolve(path), error);
 }
 
+bool CSdlFileSystem::removeDirectory(std::string_view path) {
+    const std::string resolved = resolve(path);
+    std::error_code error;
+    std::filesystem::remove_all(resolved, error);
+    return !std::filesystem::exists(std::filesystem::symlink_status(resolved, error));
+}
+
 std::unique_ptr<IFile> CSdlFileSystem::openFile(std::string_view path, EFileMode mode) {
     static constexpr std::array<const char *, 4> kModes = {"rb", "wb", "ab", "r+b"};
     std::FILE *file = std::fopen(resolve(path).c_str(), kModes.at(static_cast<std::size_t>(mode)));
@@ -123,6 +132,15 @@ std::optional<std::string> CSdlFileSystem::getFullPath(std::string_view path) {
     return full.lexically_normal().string();
 }
 
+std::optional<std::string> CSdlFileSystem::getRealPath(std::string_view path) {
+    std::error_code error;
+    const std::filesystem::path real = std::filesystem::canonical(resolve(path), error);
+    if (error) {
+        return std::nullopt;
+    }
+    return real.string();
+}
+
 std::optional<SFileInfo> CSdlFileSystem::getFileInfo(std::string_view path) {
     const std::filesystem::directory_entry entry(resolve(path));
     std::error_code error;
@@ -137,6 +155,41 @@ bool CSdlFileSystem::makeDirectory(std::string_view path) {
     std::error_code error;
     std::filesystem::create_directories(resolved, error);
     return std::filesystem::is_directory(resolved, error);
+}
+
+// LocalAppData rather than Temp, which the system's cleanup empties; XDG's base directories,
+// whose variable counts only when absolute, with the title lower-cased and its spaces dashes as
+// Linux's folders are.
+std::optional<std::string> CSdlFileSystem::getCacheFolder(std::string_view title) {
+    const auto variable = [](const char *name) -> std::optional<std::filesystem::path> {
+        const char *value = SDL_getenv(name);
+        if (value == nullptr || std::filesystem::path(value).is_relative()) {
+            return std::nullopt;
+        }
+        return std::filesystem::path(value);
+    };
+#if defined(_WIN32)
+    const std::optional<std::filesystem::path> base = variable("LOCALAPPDATA");
+    const std::filesystem::path own = std::filesystem::path(title) / "Cache";
+#elif defined(__APPLE__)
+    const std::optional<std::filesystem::path> home = variable("HOME");
+    const std::optional<std::filesystem::path> base =
+        home ? std::optional(*home / "Library" / "Caches") : std::nullopt;
+    const std::filesystem::path own = title;
+#else
+    std::optional<std::filesystem::path> base = variable("XDG_CACHE_HOME");
+    if (const std::optional<std::filesystem::path> home = variable("HOME"); !base && home) {
+        base = *home / ".cache";
+    }
+    std::string own(title);
+    std::ranges::transform(own, own.begin(), [](char c) {
+        return c == ' ' ? '-' : static_cast<char>(std::tolower(static_cast<unsigned char>(c)));
+    });
+#endif
+    if (!base) {
+        return std::nullopt;
+    }
+    return (*base / own).string();
 }
 
 bool CSdlFileSystem::setModifiedTime(std::string_view path, std::time_t modified) {

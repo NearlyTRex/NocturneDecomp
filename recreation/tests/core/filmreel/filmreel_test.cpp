@@ -28,7 +28,8 @@ TEST(CFilmReel, PublicInterface) {
     static_assert(std::is_same_v<decltype(&CFilmReel::setup), void (CFilmReel::*)()>);
     static_assert(std::is_same_v<decltype(&CFilmReel::process), void (CFilmReel::*)(float)>);
     static_assert(std::is_same_v<decltype(&CFilmReel::renderOpaque), int (CFilmReel::*)()>);
-    static_assert(std::is_same_v<decltype(&CFilmReel::renderBackground), void (CFilmReel::*)(int)>);
+    static_assert(std::is_same_v<decltype(&CFilmReel::renderBackground),
+                                 void (CFilmReel::*)(int, const SActorRenderOwners &)>);
     static_assert(std::is_same_v<decltype(&CFilmReel::getBoundingBox),
                                  CBoundingBox3D *(CFilmReel::*)(CBoundingBox3D *)>);
     static_assert(std::is_same_v<decltype(&CFilmReel::getCollisionType),

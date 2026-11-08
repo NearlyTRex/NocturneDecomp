@@ -16,7 +16,7 @@ public:
     void setup() override;
     void process(float delta_time) override;
     int renderOpaque() override;
-    void renderBackground(int layer_flag) override;
+    void renderBackground(int layer_flag, const SActorRenderOwners &owners) override;
     [[nodiscard]] const CDemonActorType &getActorType() const override;
     void archive(CActorArchive &actor_archive) override;
     int isGrabbable(CDemonActor *grabber) override;

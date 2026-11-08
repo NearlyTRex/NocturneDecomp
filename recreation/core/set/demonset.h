@@ -48,6 +48,7 @@ struct SSpotlight {
 // What a set loads with and into, and draws with.
 struct SDemonSetOwners {
     engine::CDemonRenderer &renderer;
+    const engine::C3d &three_d;
     const engine::CMatrix &matrix;
     engine::CSpecial &special;
     const engine::CDosIo &dosio;
@@ -69,6 +70,9 @@ struct SDemonSetOwners {
     CWeather &weather;
     // Whose frame time the virtual director counts its holds down by.
     const CGame &game;
+    CSkyDome &sky_dome;
+    // What its actors ask of the events as they draw.
+    IEventConditions &events;
 };
 
 class CDemonSet {
@@ -82,6 +86,15 @@ public:
     // models\filename, a .SET file of any version. Fatal when it can't be opened. The raytrace
     // geometry and path maps are reloaded only when the geometry file differs from the last set's.
     void load(std::string_view filename);
+    // renderSceneGeometry's modes: draw what the view reaches; draw the selected camera's saved
+    // PVS, or what the view reaches, saving it, when the camera has none; or always draw what
+    // the view reaches and save it.
+    static constexpr int kDrawReachedGeometry = 0;
+    static constexpr int kDrawCameraPVS = 1;
+    static constexpr int kRecordCameraPVS = 2;
+
+    // The raytrace geometry into the depth, out to frustum_param from the camera, lit from
+    // above and in front.
     void renderSceneGeometry(float frustum_param, int render_mode);
     // Sets the scene up for play: the camera's tables and fog, a master light for each
     // spotlight, each camera's virtual director group, and the weather.
@@ -91,7 +104,8 @@ public:
     void setCameraView(int index);
     // The camera of that name, compared ignoring case.
     [[nodiscard]] std::optional<std::size_t> findCameraByName(std::string_view name) const;
-    void reinitCamera(int clear_enabled, int is_clearing, int screen_height);
+    // The camera sized for that many lines, and the camera shown again.
+    void reinitCamera(int screen_height);
     void processActors();
     void renderStaticLights();
     void renderScene(int skip_prerender);
@@ -126,13 +140,17 @@ public:
     void renderPrimitiveBatch(std::span<const platform::SMRGLPrimitiveQuad> primitives,
                               int render_flags);
     void renderFaceListOrEnvMap(platform::SInputFace *faces, int count, int flags);
-    void renderPrimitiveList(platform::SMRGLHeaderPrimitive *primitive_array, int primitive_count);
+    // Each primitive filled in the active render colour into the depth.
+    void renderPrimitiveList(std::span<const platform::SMRGLHeaderPrimitive> primitives);
+    // Whether any pixel of the primitive passes the depth test.
+    [[nodiscard]] bool renderSinglePrimitive(const platform::SMRGLHeaderPrimitive &prim);
     void renderTexturedPrimitiveListVariant(platform::SMRGLHeaderPrimitive *prim, int count);
     void markMirrorCameraDirty();
     void setFlatColor(int light_scale, int color_scale, int fog_scale);
     void cacheMirrorLighting(common::CVector3f *position);
     // 16.16. Builds the camera's light-map palette and the set's intensity table for it.
     void setGamma(int gamma);
+    // The camera's ambient light, which the scene takes at once while that camera shows it.
     void setCameraAmbientValue(int index, float value);
     void setCameraAmbientValueByGroup(int group_id, float value);
     void setCameraEnabled(std::size_t camera_index, bool enabled);
@@ -266,6 +284,8 @@ public:
 private:
     void lightVertexColor(const common::CVector3i &surface_normal,
                           platform::SRenderVertex &vertex) const;
+    // Each actor of the display list draws its background, opaque and tinted by its scale.
+    void renderBackgroundActors(int layer_flag);
     // Frees the enviro model and the terrain.
     void clear();
     std::string loadHeader(common::CTextScanner &scanner);

@@ -5,10 +5,16 @@
 #include "common/math/vector3f.h"
 #include "core/actor/actor.h"
 #include "core/actor/actorarchive.h"
+#include "core/actor/actorrenderowners.h"
 #include "core/actor/demonactortype.h"
+#include "core/actor/notported.h"
+#include "core/box/boundingbox3d.h"
 #include "core/course/course.h"
+#include "core/dmodel/keyframedmodel.h"
 #include "core/dmodel/keyframedmodelinstance.h"
+#include "core/event/eventconditions.h"
 #include "core/location.h"
+#include "core/oneshotstate.h"
 #include "core/xform/xform.h"
 
 #include <algorithm>
@@ -120,6 +126,37 @@ std::unique_ptr<CDemonActor> CPlatform::create(CActor &classes) {
 }
 
 // A platform on a course has no ends of its own to read.
+// A platform that rests between moves is drawn into the backdrop while it rests and no move is
+// raised; any other only once its one move is done, and from then on.
+// deferred: nothing drawn in the shadow pass, with setShadowPass's callers
+// deferred: marking a resting platform drawn into the backdrop, with renderOpaque and process
+// deferred: the draw lit per pixel with the fog sampled at its place, while recomputeFog is set,
+//   with getFogValueAtPosition and the set's per-pixel lighting
+// nocedit 0x0054d9b0
+void CPlatform::renderBackground(int layer_flag, const SActorRenderOwners &owners) {
+    if (layer_flag == 0) {
+        return;
+    }
+    if (render_in_background_when_not_moving_) {
+        if (state_ == EPlatformState::kMovingToEnd || state_ == EPlatformState::kMovingToStart ||
+            owners.events.evaluateCondition(to_end_event_) ||
+            owners.events.evaluateCondition(to_start_event_)) {
+            return;
+        }
+    } else {
+        if (one_shot_ < EOneShotState::kDone) {
+            return;
+        }
+        one_shot_ = EOneShotState::kDoneInBackground;
+    }
+    renderIfBoxVisible(owners, [this, &owners] {
+        if (fog_recomputed_) {
+            quitNotPorted("CPlatform", "renderBackground's per-pixel lit draw");
+        }
+        model_.prepareForRendering(0.0F, -1, owners.renderer, owners.set);
+    });
+}
+
 // nocedit 0x0054dbc0
 void CPlatform::archive(CActorArchive &actor_archive) {
     CDemonActor::archive(actor_archive);
@@ -148,7 +185,7 @@ void CPlatform::archive(CActorArchive &actor_archive) {
     }
     actor_archive.archiveEnum(ground_type_, "groundType");
     if (version >= kOneShotVersion) {
-        actor_archive.archiveFlag(one_shot_, "oneShot");
+        actor_archive.archiveEnum(one_shot_, "oneShot");
     }
     if (version >= kBlockDirectorVersion) {
         actor_archive.archiveFlag(block_virtual_director_, "blockVirtualDirectorFlag");
@@ -202,6 +239,12 @@ EGroundType CPlatform::getGroundType() {
 // nocedit 0x0054e1d0
 int CPlatform::getBlockVirtualDirectorFlag() {
     return block_virtual_director_ ? 1 : 0;
+}
+
+// nocedit 0x0054db70
+CBoundingBox3D *CPlatform::getBoundingBox(CBoundingBox3D *out_box) {
+    *out_box = model_.getModelPtr().getFrameBounds().front();
+    return out_box;
 }
 
 const CKeyFramedModelInstance &CPlatform::getModel() const {
@@ -268,7 +311,7 @@ float CPlatform::getTravelTimeToEnd() const {
     return travel_time_to_end_;
 }
 
-bool CPlatform::isOneShot() const {
+EOneShotState CPlatform::getOneShotState() const {
     return one_shot_;
 }
 

@@ -7,6 +7,7 @@
 #include "engine/polygonstate.h"
 #include "engine/scanlinespan.h"
 #include "engine/softwareedge.h"
+#include "engine/special/scanlinemode.h"
 #include "platform/mrglprimitivequad.h"
 #include "platform/projectedvertex.h"
 #include "platform/rendervertex.h"
@@ -19,8 +20,6 @@
 namespace nocturne::engine {
 namespace {
 
-// The preprocessing that gives each corner its reciprocal depth as its depth.
-constexpr int kReplaceWWithDepth = 6;
 constexpr double kUnitScale = 65536.0;
 // A corner's clip flags: past a side when the sign bit is set, and which sides below it.
 constexpr std::uint32_t kClipped = 0x80000000U;
@@ -79,7 +78,7 @@ int CDemonRenderer::countVisiblePixelsPoly(const platform::SMRGLPrimitiveQuad &p
     int counter = 0;
     SPolygonState state;
     state.mode.render_flags = common::kRenderDepthTest | common::kRenderDepthWrite;
-    state.mode.vertex_preprocess_mode = kReplaceWWithDepth;
+    state.mode.vertex_preprocess_mode = SScanlineMode::kReplaceWithDepth;
     state.vertex_processing = face_capture_enabled_;
     state.draw_scanline = [&counter, depth_rows, reciprocals = two_d_.getReciprocalLookupTable()](
                               const SSoftwareEdge &left, const SSoftwareEdge &right, int y) {

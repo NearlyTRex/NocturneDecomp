@@ -6,6 +6,7 @@
 
 #include <cstdio>
 #include <string>
+#include <string_view>
 
 namespace nocturne::core {
 
@@ -51,7 +52,8 @@ public:
     void setMotionList(const CMotionList &motion_list);
     // Null until setMotionList.
     [[nodiscard]] const CMotionList *getMotionList() const;
-    char *getCurrentStateName();
+    // The current motion's state, from the motion list.
+    [[nodiscard]] std::string_view getCurrentStateName() const;
     float getStateBlendWeight(int desired_state_index);
     void jumpToMotionByName(char *motion_name, float frame_number);
     // Starts the motion at the frame, or at the frame findPatchToFrame gives for kPatchFrame,

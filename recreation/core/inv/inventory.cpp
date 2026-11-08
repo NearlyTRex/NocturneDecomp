@@ -52,6 +52,10 @@ void CInventory::clear() {
 
 // Each angle is a draw from the C library's generator, so a hundred are drawn.
 // deferred: making and setting up the ammo counter, with CAmmo
+// deferred: the item panels drawn over the finished scene in the camera's space laid onto the
+//   picture's corner, their text, ammo and counts in the same boxes at the HUD's text scale, and
+//   the pickup help under the top letterbox (the decomp's hud.h, HUD), with
+//   CInventory::renderSelectedItems and renderAllItems
 // nocedit 0x004fd190
 void CInventory::initialize(common::CWatcomRandom &crt_random) {
     clear();

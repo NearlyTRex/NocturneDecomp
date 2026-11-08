@@ -31,8 +31,7 @@ TEST(CDemonSet, PublicInterface) {
     static_assert(
         std::is_same_v<decltype(&CDemonSet::snapshotActorTransformState), void (*)(CDemonActor &)>);
     static_assert(std::is_same_v<decltype(&CDemonSet::setCameraView), void (CDemonSet::*)(int)>);
-    static_assert(
-        std::is_same_v<decltype(&CDemonSet::reinitCamera), void (CDemonSet::*)(int, int, int)>);
+    static_assert(std::is_same_v<decltype(&CDemonSet::reinitCamera), void (CDemonSet::*)(int)>);
     static_assert(std::is_same_v<decltype(&CDemonSet::processActors), void (CDemonSet::*)()>);
     static_assert(std::is_same_v<decltype(&CDemonSet::renderStaticLights), void (CDemonSet::*)()>);
     static_assert(std::is_same_v<decltype(&CDemonSet::renderScene), void (CDemonSet::*)(int)>);
@@ -80,8 +79,9 @@ TEST(CDemonSet, PublicInterface) {
                        void (CDemonSet::*)(std::span<const platform::SMRGLPrimitiveQuad>, int)>);
     static_assert(std::is_same_v<decltype(&CDemonSet::renderFaceListOrEnvMap),
                                  void (CDemonSet::*)(platform::SInputFace *, int, int)>);
-    static_assert(std::is_same_v<decltype(&CDemonSet::renderPrimitiveList),
-                                 void (CDemonSet::*)(platform::SMRGLHeaderPrimitive *, int)>);
+    static_assert(
+        std::is_same_v<decltype(&CDemonSet::renderPrimitiveList),
+                       void (CDemonSet::*)(std::span<const platform::SMRGLHeaderPrimitive>)>);
     static_assert(std::is_same_v<decltype(&CDemonSet::renderTexturedPrimitiveListVariant),
                                  void (CDemonSet::*)(platform::SMRGLHeaderPrimitive *, int)>);
     static_assert(
@@ -171,8 +171,8 @@ protected:
     }
 
     CSetParts set_parts_{dosio_};
-    CDemonSet set_{
-        set_parts_.owners(demon_renderer_, matrix_, special_, two_d_, screen_, raw_input_)};
+    CDemonSet set_{set_parts_.owners(demon_renderer_, three_d_, matrix_, special_, two_d_, screen_,
+                                     raw_input_)};
 };
 
 // The light travels 37000 along +z, and the ambient is 0x280: a normal facing -z has 37640, in

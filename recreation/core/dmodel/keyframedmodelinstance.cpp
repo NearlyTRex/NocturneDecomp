@@ -1,9 +1,11 @@
 #include "core/dmodel/keyframedmodelinstance.h"
 
 #include "common/error/error.h"
+#include "core/dmodel/keyframedmodel.h"
 #include "core/dmodel/keyframedmodels.h"
 #include "core/skeleton/partvisibility.h"
 
+#include <cmath>
 #include <cstddef>
 #include <format>
 #include <string>
@@ -19,6 +21,16 @@ CKeyFramedModelInstance::CKeyFramedModelInstance(IKeyFramedModels &models) : mod
 // nocedit 0x00478d00
 void CKeyFramedModelInstance::init() {
     part_visibility_.fill(EPartVisibility::kShown);
+}
+
+// deferred: its hidden parts left out of the draw, with the writers of its part flags,
+//   CVehicle::archive and CLightActor
+// nocedit 0x00478d20
+void CKeyFramedModelInstance::prepareForRendering(float animation_frame, int render_flags,
+                                                  engine::CDemonRenderer &renderer,
+                                                  CDemonSet &set) {
+    getModelPtr().prepareForRender(static_cast<int>(std::nearbyint(animation_frame)), render_flags,
+                                   renderer, set);
 }
 
 // nocedit 0x00478d60

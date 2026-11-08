@@ -3,6 +3,8 @@
 #include "core/door/door.h"
 #include "core/door/doortype.h"
 #include "core/event/rulelist.h"
+#include "core/oneshotstate.h"
+#include "tests/mocks/core/keyframedactorfixture.h"
 #include "tests/mocks/core/notportedcalls.h"
 #include "tests/mocks/core/testclasses.h"
 #include "tests/mocks/core/testfieldsarchive.h"
@@ -10,6 +12,7 @@
 #include <gmock/gmock.h>
 #include <gtest/gtest.h>
 
+#include <format>
 #include <memory>
 #include <string>
 #include <string_view>
@@ -54,7 +57,7 @@ TEST(CDoor, ADoorIsAClosedChurchDoorThatSwingsFromItsRightOnTheDefaultEvents) {
     EXPECT_EQ(door.getOpenSpeed(), 1.0F);
     EXPECT_EQ(door.getCloseSpeed(), 1.0F);
     EXPECT_EQ(door.getGroundType(), EGroundType::kDefault);
-    EXPECT_FALSE(door.isOneShot());
+    EXPECT_EQ(door.getOneShotState(), EOneShotState::kNo);
     EXPECT_THAT(door.getOpenRules().getRules(), IsEmpty());
     EXPECT_EQ(door.getBlockVirtualDirectorFlag(), 1);
     EXPECT_FALSE(door.isPlottedAsBoxInShadow());
@@ -147,7 +150,7 @@ TEST(CDoor, ADoorIsReadWithItsRulesAndLockedSound) {
     EXPECT_EQ(door.getGroundType(), EGroundType::kWood);
     EXPECT_EQ(door.getEventWhenOpen(), "Opened");
     EXPECT_EQ(door.getEventWhenClosed(), "Closed");
-    EXPECT_TRUE(door.isOneShot());
+    EXPECT_EQ(door.getOneShotState(), EOneShotState::kYes);
     EXPECT_THAT(door.getOpenRules().getRules(),
                 ElementsAre(SRule{.condition = "@unlocked", .event = "OpenIt"}));
     EXPECT_EQ(door.getBlockVirtualDirectorFlag(), 0);
@@ -156,6 +159,73 @@ TEST(CDoor, ADoorIsReadWithItsRulesAndLockedSound) {
     EXPECT_EQ(door.allowBulletHoles(), 0);
     EXPECT_EQ(door.getLockedSound(), "rattle.wav");
     EXPECT_TRUE(archive.isFinished());
+}
+
+// A saved door that has opened keeps how far it has got, not only that it opens once.
+TEST(CDoor, ADoneOneShotIsReadBackDone) {
+    CTestClasses classes;
+    CDoor door{classes.get()};
+    std::string saved{kLatestDoor};
+    const std::string_view read_once = "\t1    // oneShot\n";
+    saved.replace(saved.find(read_once), read_once.size(), "\t2    // oneShot\n");
+    CTestFieldsArchive archive(door, CDoor::kType, 11, saved);
+    door.archive(archive.get());
+    EXPECT_EQ(door.getOneShotState(), EOneShotState::kDone);
+}
+
+// A door read as saved with its one-shot state.
+class CDoorBackgroundTest : public CKeyFramedActorFixture {
+protected:
+    void readDoor(EOneShotState one_shot) {
+        std::string saved{kLatestDoor};
+        const std::string_view read_once = "\t1    // oneShot\n";
+        saved.replace(saved.find(read_once), read_once.size(),
+                      std::format("\t{}    // oneShot\n", static_cast<int>(one_shot)));
+        CTestFieldsArchive archive(door_, CDoor::kType, 11, saved);
+        door_.archive(archive.get());
+        ready(door_);
+    }
+
+    CDoor door_{classes_.get()};
+};
+
+// Only a one-shot door that has moved is drawn into the backdrop, and only in its layer.
+TEST_F(CDoorBackgroundTest, AOneShotDoorThatHasMovedIsDrawnIntoTheBackdrop) {
+    readDoor(EOneShotState::kDone);
+    door_.renderBackground(1, render_owners_);
+    EXPECT_TRUE(drawn());
+    EXPECT_EQ(door_.getOneShotState(), EOneShotState::kDoneInBackground);
+}
+
+TEST_F(CDoorBackgroundTest, ADoorDrawnIntoTheBackdropIsDrawnAgain) {
+    readDoor(EOneShotState::kDoneInBackground);
+    door_.renderBackground(1, render_owners_);
+    EXPECT_TRUE(drawn());
+}
+
+TEST_F(CDoorBackgroundTest, ADoorThatHasNotMovedIsLeftOut) {
+    for (const EOneShotState one_shot : {EOneShotState::kNo, EOneShotState::kYes}) {
+        readDoor(one_shot);
+        door_.renderBackground(1, render_owners_);
+        EXPECT_FALSE(drawn());
+        EXPECT_EQ(door_.getOneShotState(), one_shot);
+    }
+}
+
+TEST_F(CDoorBackgroundTest, OutsideItsLayerADoorIsLeftOut) {
+    readDoor(EOneShotState::kDone);
+    door_.renderBackground(0, render_owners_);
+    EXPECT_FALSE(drawn());
+    EXPECT_EQ(door_.getOneShotState(), EOneShotState::kDone);
+}
+
+// Marked done in the backdrop even when its box is hidden.
+TEST_F(CDoorBackgroundTest, AHiddenDoorIsNotDrawn) {
+    readDoor(EOneShotState::kDone);
+    hideEverything();
+    door_.renderBackground(1, render_owners_);
+    EXPECT_FALSE(drawn());
+    EXPECT_EQ(door_.getOneShotState(), EOneShotState::kDoneInBackground);
 }
 
 // The fields every version has, up to the speeds.
@@ -206,7 +276,6 @@ TEST(CDoor, TheFunctionsNotPortedYetQuit) {
     const NotPortedCalls calls = {
         {"process", [&] { door.process(0.0F); }},
         {"renderOpaque", [&] { static_cast<void>(door.renderOpaque()); }},
-        {"renderBackground", [&] { door.renderBackground(0); }},
         {"getCollisionType", [&] { static_cast<void>(door.getCollisionType(nullptr)); }},
     };
     expectEachQuitsNotPorted("CDoor", calls);
@@ -228,7 +297,8 @@ TEST(CDoor, PublicInterface) {
     static_assert(std::is_same_v<decltype(&CDoor::setup), void (CDoor::*)()>);
     static_assert(std::is_same_v<decltype(&CDoor::process), void (CDoor::*)(float)>);
     static_assert(std::is_same_v<decltype(&CDoor::renderOpaque), int (CDoor::*)()>);
-    static_assert(std::is_same_v<decltype(&CDoor::renderBackground), void (CDoor::*)(int)>);
+    static_assert(std::is_same_v<decltype(&CDoor::renderBackground),
+                                 void (CDoor::*)(int, const SActorRenderOwners &)>);
     static_assert(std::is_same_v<decltype(&CDoor::getBoundingBox),
                                  CBoundingBox3D *(CDoor::*)(CBoundingBox3D *)>);
     static_assert(std::is_same_v<decltype(&CDoor::getCollisionType),

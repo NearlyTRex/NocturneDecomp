@@ -1,8 +1,5 @@
 #include "core/game/controlbindings.h"
 
-#include "common/text/scan.h"
-
-#include <algorithm>
 #include <cstddef>
 #include <optional>
 #include <utility>
@@ -12,59 +9,59 @@ namespace {
 
 using engine::EInputCodeType;
 
+constexpr char kSeparator = ',';
+
 std::size_t indexOf(EGameAction action) {
     return static_cast<std::size_t>(action);
 }
 
-// The next entry's code, or nothing when it isn't a number inside the code space.
-std::optional<EInputCodeType> nextCode(std::string_view &text) {
-    const std::size_t comma = text.find(',');
-    const std::optional<int> value = common::scanInteger(text.substr(0, comma));
+// The next entry's chord, the entry taken off the text either way.
+std::optional<SKeyChord> nextChord(std::string_view &text) {
+    const std::size_t comma = text.find(kSeparator);
+    const std::optional<SKeyChord> chord = parseChord(text.substr(0, comma));
     text.remove_prefix(comma == std::string_view::npos ? text.size() : comma + 1);
-    if (!value || *value < 0 || *value > static_cast<int>(EInputCodeType::INPUT_NONE)) {
-        return std::nullopt;
-    }
-    return static_cast<EInputCodeType>(*value);
+    return chord;
 }
 
 } // namespace
 
-std::span<const EInputCodeType> CControlBindings::getBindings(EGameAction action) const {
+std::span<const SKeyChord> CControlBindings::getBindings(EGameAction action) const {
     return bindings_.at(indexOf(action));
 }
 
-void CControlBindings::setBindings(EGameAction action, std::vector<EInputCodeType> codes) {
-    std::erase(codes, EInputCodeType::INPUT_NONE);
-    bindings_.at(indexOf(action)) = std::move(codes);
+void CControlBindings::setBindings(EGameAction action, std::vector<SKeyChord> chords) {
+    std::erase_if(chords,
+                  [](const SKeyChord &chord) { return chord.code == EInputCodeType::INPUT_NONE; });
+    bindings_.at(indexOf(action)) = std::move(chords);
 }
 
 std::string CControlBindings::formatBindings(EGameAction action) const {
-    const std::vector<EInputCodeType> &codes = bindings_.at(indexOf(action));
-    if (codes.empty()) {
+    const std::vector<SKeyChord> &chords = bindings_.at(indexOf(action));
+    if (chords.empty()) {
         return std::to_string(static_cast<int>(EInputCodeType::INPUT_NONE));
     }
     std::string text;
-    for (const EInputCodeType code : codes) {
+    for (const SKeyChord &chord : chords) {
         if (!text.empty()) {
-            text += ',';
+            text += kSeparator;
         }
-        text += std::to_string(static_cast<int>(code));
+        text += formatChord(chord);
     }
     return text;
 }
 
 void CControlBindings::parseBindings(EGameAction action, std::string_view text) {
-    const std::optional<EInputCodeType> primary = nextCode(text);
+    const std::optional<SKeyChord> primary = nextChord(text);
     if (!primary) {
         return;
     }
-    std::vector<EInputCodeType> codes{*primary};
+    std::vector<SKeyChord> chords{*primary};
     while (!text.empty()) {
-        if (const std::optional<EInputCodeType> code = nextCode(text)) {
-            codes.push_back(*code);
+        if (const std::optional<SKeyChord> chord = nextChord(text)) {
+            chords.push_back(*chord);
         }
     }
-    setBindings(action, std::move(codes));
+    setBindings(action, std::move(chords));
 }
 
 } // namespace nocturne::core

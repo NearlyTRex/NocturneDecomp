@@ -105,6 +105,14 @@ std::unique_ptr<CDemonActor> CGhoul::create(CActor &classes) {
 }
 
 // From version 6 the lives are saved twice, the later read winning.
+// Only a ghoul down for good, with no lives or spasms left, lies in the backdrop.
+// nocedit 0x004e8190
+void CGhoul::renderBackground(int layer_flag, const SActorRenderOwners &owners) {
+    if (spasm_count_ == 0 && lives_left_ < 1) {
+        CEnemy::renderBackground(layer_flag, owners);
+    }
+}
+
 // nocedit 0x004e81c0
 void CGhoul::archive(CActorArchive &actor_archive) {
     CEnemy::archive(actor_archive);

@@ -8,6 +8,8 @@ namespace nocturne::engine {
 struct SScanlineMode {
     // The vertex preprocessing that leaves texture coordinates over depth, to divide back out.
     static constexpr int kPerspectiveTexture = 5;
+    // The vertex preprocessing that gives each corner its reciprocal depth as its depth.
+    static constexpr int kReplaceWithDepth = 6;
 
     // common::kRender* bits.
     std::uint32_t render_flags = 0;

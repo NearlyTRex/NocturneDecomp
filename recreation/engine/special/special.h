@@ -94,6 +94,9 @@ public:
                       int *out_vendor_ids, int *out_device_ids);
     int lockHoldBuffer();
     int unlockHoldBuffer();
+    // The hardware renderer's overlay pass; false, with nothing begun, while it isn't drawing.
+    [[nodiscard]] bool beginOverlay(const platform::SOverlayPlacement &placement);
+    void endOverlay();
 
 private:
     using TextureEntry = int (platform::IRenderer::*)(platform::SMRGLTextureBasic *, int,

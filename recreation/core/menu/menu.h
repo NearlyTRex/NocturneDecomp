@@ -2,6 +2,7 @@
 
 #include "common/fwd.h"
 #include "core/fwd.h"
+#include "core/game/keychord.h"
 #include "core/moon/moon.h"
 #include "engine/fwd.h"
 #include "platform/fwd.h"
@@ -28,8 +29,12 @@ struct SMenuOwners {
     engine::C3d &three_d;
     engine::IRawInput &raw_input;
     engine::CMenuInput &menu_input;
+    // For its buttons' labels and its tuning.
+    engine::CGamepadInput &gamepad;
     CDFont &fonts;
     const support::CNewMsg &messages;
+    // The packages' content: where the lists go, and the copyright.
+    const engine::SGameContent &content;
     engine::CDemonRenderer &renderer;
     CDemonSet &set;
     CGame &game;
@@ -72,12 +77,14 @@ public:
     // The name a binding shows: the mouse's and the joystick's by what they are, the keys by
     // getKeyName.
     [[nodiscard]] std::string getKeyDisplayName(engine::EInputCodeType key_code) const;
+    // Its modifiers, then its code's name: Ctrl+M.
+    [[nodiscard]] std::string getChordDisplayName(const SKeyChord &chord) const;
     // Whether the game's control type has the device behind the code: the keyboard alone, or
     // with the mouse, or with the joystick.
     [[nodiscard]] bool isKeyCodeValidForMode(engine::EInputCodeType key_code) const;
-    // Each action with what it is bound to, Restore defaults first. An action opens a list of
-    // its codes and Add binding, where Delete removes one. Leaving puts the defaults back if any
-    // code doesn't suit the control type.
+    // Each action with what it is bound to, Restore defaults first and Hotkeys last. An action
+    // opens a list of its codes and Add binding, where Delete removes one. Leaving puts the
+    // defaults back if any code doesn't suit the control type.
     void configureCustomKeyBindings();
     // Draws the items down the left of the screen under the title, the selected one glowing,
     // with the copyright and the build's line, then moves the selection up and down. Confirm
@@ -108,20 +115,28 @@ private:
     class CSubmenuPage;
     class COptionsPage;
 
-    static constexpr int kNoCodeHeld = -1;
-    static constexpr int kSeveralCodesHeld = -2;
+    // What the keys held make: nothing held, keys held that make no chord, or a chord.
+    struct SHeldKeys {
+        bool any = false;
+        std::optional<SKeyChord> chord;
+    };
 
     void showGameplayOptions();
     void configureGraphicsOptions();
     void configureSoundOptions();
     void configureCustomKeys();
+    // The hotkeys as Customize Keys lists the play actions, the developers' in developer mode.
+    void configureHotkeyBindings();
+    // An action's chords' names, or (none).
+    [[nodiscard]] std::string getBindingNames(EGameAction action) const;
     // The codes of one action, as a list with Add binding after them, until Cancel.
     void editActionBindings(EGameAction action, std::string_view label);
-    // The one code next pressed, after any held are let go; nothing for Escape while they are
-    // held, or for the window closing.
-    [[nodiscard]] std::optional<engine::EInputCodeType> captureKeyCode(std::string_view label);
-    // The one code held, kNoCodeHeld for none and kSeveralCodesHeld for more.
-    [[nodiscard]] int getHeldKeyCode() const;
+    // The chord next pressed, taken as every key is let go, after any held are let go first;
+    // nothing for Escape while they are, or for the window closing.
+    [[nodiscard]] std::optional<SKeyChord> captureChord(std::string_view label);
+    // One key that isn't a modifier makes a chord with the modifiers held with it; with none, a
+    // modifier key held alone is a chord by itself. Two keys that aren't modifiers make none.
+    [[nodiscard]] SHeldKeys readHeldKeys() const;
     // The defaults back, with an error, if any code doesn't suit the control type.
     void validateBindings();
     // 32 pixels wide on x_center, rising from y_top to twice height_half above it.
@@ -143,7 +158,12 @@ private:
     [[nodiscard]] int fitMenuTop(int top, int rows) const;
     void showCalibrationTestPattern(engine::CAlphaBitmap &bitmap, std::string_view message_text);
     // The selected item: five faint copies jittered about it, then the item over them.
-    void drawGlowingItem(engine::CBitFont &font, std::string_view item, int y);
+    // Where the 640-wide layout starts, centred on a wider front end.
+    [[nodiscard]] int getLayoutLeft() const;
+    // The packages' layout; without one, fatal.
+    [[nodiscard]] const engine::SMenuLayout &getMenuLayout() const;
+    void drawGlowingItem(engine::CBitFont &font, std::string_view item, int left, int y);
+    [[nodiscard]] std::string_view getCopyright() const;
     void drawFooter();
     // The choice the menu actions make this frame, or -1.
     int readMenuActions(std::span<const std::string> items, int &selected_index);

@@ -47,6 +47,7 @@ public:
     [[nodiscard]] const CBoundingBox3D &getBox() const;
     // The raytrace cubes the camera can see.
     [[nodiscard]] std::span<const int> getPVSList() const;
+    void setPVSList(std::vector<int> pvs_list);
     // The scene's ambient light while this camera shows it, the group scripts switch it with,
     // and whether it may be switched to.
     void setAmbientValue(float ambient_value);

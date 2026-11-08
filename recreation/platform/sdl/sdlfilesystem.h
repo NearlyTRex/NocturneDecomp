@@ -12,10 +12,13 @@ public:
     bool appendFile(std::string_view path, std::string_view text) override;
     bool writeFile(std::string_view path, std::string_view text) override;
     bool removeFile(std::string_view path) override;
+    bool removeDirectory(std::string_view path) override;
     [[nodiscard]] std::unique_ptr<IFile> openFile(std::string_view path, EFileMode mode) override;
     [[nodiscard]] std::optional<std::string> getFullPath(std::string_view path) override;
+    [[nodiscard]] std::optional<std::string> getRealPath(std::string_view path) override;
     [[nodiscard]] std::optional<SFileInfo> getFileInfo(std::string_view path) override;
     bool makeDirectory(std::string_view path) override;
+    [[nodiscard]] std::optional<std::string> getCacheFolder(std::string_view title) override;
     bool setModifiedTime(std::string_view path, std::time_t modified) override;
     bool setReadOnly(std::string_view path, bool read_only) override;
 };

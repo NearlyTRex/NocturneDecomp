@@ -39,7 +39,15 @@ TEST(CGlRenderer, NothingNeedingTheDeviceRunsBeforeInit) {
     EXPECT_EQ(f.renderer.drawPolygon(&vertex, 1, 0), 0);
     f.renderer.beginReflectionPass();
     f.renderer.endReflectionPass();
+    EXPECT_FALSE(f.renderer.beginOverlay({}));
+    f.renderer.endOverlay();
     EXPECT_TRUE(f.gl.getCalls().empty());
+}
+
+TEST(CGlRenderer, AnOverlayNeedsAModeAsWellAsTheDevice) {
+    SRendererFixture f;
+    ASSERT_EQ(f.renderer.init(nullptr), 1);
+    EXPECT_FALSE(f.renderer.beginOverlay({}));
 }
 
 TEST(CGlRenderer, InitOpensTheDeviceOnce) {

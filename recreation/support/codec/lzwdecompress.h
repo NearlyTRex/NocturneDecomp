@@ -1,23 +1,34 @@
 #pragma once
 
-#include "support/codec/codec.h"
-#include "support/fwd.h"
+#include "support/codec/bitbuffer.h"
+#include "support/codec/lzwdictionary.h"
 
-#include <istream>
-#include <ostream>
+#include <cstddef>
+#include <cstdint>
+#include <span>
+#include <vector>
 
 namespace nocturne::support {
 
-class CLZWDecompress : public CCodec {
+// Turns an LZW stream back into its values, a buffer at a time. Only buffers are decoded, so
+// the original's stream half and the codec base it shared with the compressor are left out.
+class CLZWDecompress {
 public:
+    // The dictionary's size, and how many bits its single values take.
     CLZWDecompress(int buffer_size, int initial_bits);
-    ~CLZWDecompress() override;
 
-    void init() override;
-    int process(std::istream *istream, int *byte_count, std::ostream *ostream) override;
-    int finalize(std::ostream *ostream) override;
-    int processBuffer(char *input, int *input_length, char *output, int *output_length,
-                      int enable_callback) override;
+    // Ready for a new stream.
+    void init();
+    // Appends the values of every whole code in the input.
+    void processBuffer(std::span<const std::byte> input, std::vector<std::uint8_t> &output);
+
+private:
+    CLZWDictionary lzw_dict_;
+    SBitBuffer bit_state_;
+    int buffer_size_ = 0;
+    int num_bits_ = 0;
+    int current_code_ = -1;
+    int previous_code_ = -1;
 };
 
 } // namespace nocturne::support

@@ -7,6 +7,7 @@
 #include "engine/special/special.h"
 #include "engine/texture/currenttexture.h"
 #include "sound/sndmain/sndmain.h"
+#include "tests/mocks/engine/gamepadinputparts.h"
 #include "tests/mocks/engine/memoryscreen.h"
 #include "tests/mocks/platform/memoryfile.h"
 #include "tests/mocks/platform/mockaudiodevice.h"
@@ -69,7 +70,8 @@ protected:
     NiceMock<platform::MockWindow> window_;
     NiceMock<platform::MockClock> clock_;
     NiceMock<platform::MockRenderer> renderer_;
-    CWinRun winrun_{window_, clock_};
+    engine::SGamepadInputParts gamepad_;
+    CWinRun winrun_{window_, clock_, gamepad_.input};
     engine::CDosIo dosio_{file_system_};
     engine::CMemoryScreen screen_{4, 2, 16};
     engine::C2d two_d_{dosio_, screen_, winrun_};

@@ -13,6 +13,7 @@
 #include "tests/mocks/core/gameparts.h"
 #include "tests/mocks/core/mockactorlookup.h"
 #include "tests/mocks/core/mockdeformablemodels.h"
+#include "tests/mocks/core/mockeventconditions.h"
 #include "tests/mocks/core/mockkeyframedmodels.h"
 #include "tests/mocks/core/testactor.h"
 #include "tests/mocks/engine/mockgameclock.h"
@@ -51,8 +52,8 @@ TEST(CDemonActor, PublicInterface) {
     static_assert(std::is_same_v<decltype(&CDemonActor::renderOpaque), int (CDemonActor::*)()>);
     static_assert(
         std::is_same_v<decltype(&CDemonActor::renderTransparent), int (CDemonActor::*)()>);
-    static_assert(
-        std::is_same_v<decltype(&CDemonActor::renderBackground), void (CDemonActor::*)(int)>);
+    static_assert(std::is_same_v<decltype(&CDemonActor::renderBackground),
+                                 void (CDemonActor::*)(int, const SActorRenderOwners &)>);
     static_assert(std::is_same_v<decltype(&CDemonActor::getBoundingBox),
                                  CBoundingBox3D *(CDemonActor::*)(CBoundingBox3D *)>);
     static_assert(std::is_same_v<decltype(&CDemonActor::processFootstep),
@@ -146,10 +147,10 @@ TEST(CDemonActor, PublicInterface) {
                                  const CDemonActorType &(CDemonActor::*)() const>);
     static_assert(
         std::is_same_v<decltype(&CDemonActor::archive), void (CDemonActor::*)(CActorArchive &)>);
-    static_assert(
-        std::is_same_v<decltype(&CDemonActor::setupRenderState), void (CDemonActor::*)()>);
-    static_assert(
-        std::is_same_v<decltype(&CDemonActor::restoreRenderState), void (CDemonActor::*)()>);
+    static_assert(std::is_same_v<decltype(&CDemonActor::setupRenderState),
+                                 void (CDemonActor::*)(engine::CDemonRenderer &) const>);
+    static_assert(std::is_same_v<decltype(&CDemonActor::restoreRenderState),
+                                 void (*)(engine::CDemonRenderer &)>);
     static_assert(std::is_same_v<decltype(&CDemonActor::getActorClassName),
                                  std::string_view (CDemonActor::*)() const>);
     static_assert(std::is_same_v<decltype(&CDemonActor::getActorName),
@@ -221,7 +222,8 @@ protected:
     common::CWatcomRandom crt_;
     ::testing::NiceMock<MockDeformableModels> models_;
     ::testing::NiceMock<MockKeyFramedModels> keyframed_models_;
-    CActor classes_{game_, crt_, models_, keyframed_models_};
+    ::testing::NiceMock<MockEventConditions> actor_events_;
+    CActor classes_{game_, crt_, models_, keyframed_models_, actor_events_};
     ::testing::NiceMock<MockActorLookup> actors_;
     const SActorArchiveOwners owners_{
         .actor_classes = classes_, .actors = actors_, .crt_random = crt_};
@@ -325,7 +327,6 @@ TEST(CDemonActor, TheFunctionsNotPortedYetQuit) {
         {"process", [&] { actor.process(0.0F); }},
         {"renderOpaque", [&] { static_cast<void>(actor.renderOpaque()); }},
         {"renderTransparent", [&] { static_cast<void>(actor.renderTransparent()); }},
-        {"renderBackground", [&] { actor.renderBackground(0); }},
         {"processFootstep", [&] { static_cast<void>(actor.processFootstep(0.0F)); }},
         {"processFootstepAtOffset",
          [&] { static_cast<void>(actor.processFootstepAtOffset(nullptr, 0.0F)); }},
@@ -381,7 +382,7 @@ TEST(CDemonActor, TheFunctionsNotPortedYetQuit) {
         {"getPathMap", [&] { static_cast<void>(actor.getPathMap()); }},
         {"calculateChecksum", [&] { actor.calculateChecksum(nullptr); }},
     };
-    EXPECT_EQ(calls.size(), 46U);
+    EXPECT_EQ(calls.size(), 45U);
     for (const auto &[name, call] : calls) {
         EXPECT_THAT(call, ThrowsMessage<common::CFatalError>(
                               StrEq("CDemonActor::" + std::string(name) + " is not ported yet")));

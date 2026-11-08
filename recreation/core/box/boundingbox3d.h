@@ -18,7 +18,10 @@ public:
     // One of the eight corners: each of the index's lowest three bits takes the max for its axis,
     // x, y and z from the lowest up, and the min when clear.
     [[nodiscard]] common::CVector3f getCorner(std::uint32_t corner_index) const;
-    int isVisible();
+    // Whether some of the box, in the renderer's current space, is in view of the camera it is
+    // drawn for, passes its depths and is not lost in its fog. Its corners take the vertex
+    // buffer's first eight entries.
+    [[nodiscard]] bool isVisible(const SActorRenderOwners &owners) const;
     float getBoundingBoxScreenSize();
     // Where the segment from ray_origin to ray_origin + ray_direction enters the box, as a fraction
     // of ray_direction: -1 when it misses, 0 when it starts inside. out_normal, when given, takes
@@ -37,6 +40,8 @@ public:
     static constexpr std::uint32_t kCorners = 8;
 
 private:
+    [[nodiscard]] bool isVisibleWithCamera(const SActorRenderOwners &owners) const;
+
     static constexpr std::uint32_t kCornerMaxX = 1;
     static constexpr std::uint32_t kCornerMaxY = 2;
     static constexpr std::uint32_t kCornerMaxZ = 4;

@@ -41,7 +41,10 @@ public:
     // last three only when the cube has triangles. A negative count where memory is needed is
     // fatal, as the allocation it asked for failed.
     void load(common::CBinaryReader &reader);
-    void rotateVertices(std::uint32_t rendering_mode);
+    // The cube's triangles drawn in solid colour into the depth, each coloured by its normal:
+    // the corners projected into the renderer's buffer, and clipped only when one is off the
+    // screen.
+    void rotateVertices(const SCubeDrawOwners &owners) const;
     float rayIntersectTriangles(common::CVector3f *ray_origin, common::CVector3f *ray_direction,
                                 common::CVector3f *hit_normal, std::uint32_t *hit_material);
     void testCylinderCollision(SIntersectXZCylinder *cylinder);

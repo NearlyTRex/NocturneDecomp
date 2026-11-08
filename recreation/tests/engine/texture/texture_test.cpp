@@ -30,9 +30,6 @@ TEST(CTexture, PublicInterface) {
                        SMRGLHeaderExtended *(CTexture::*)(platform::SMRGLTextureBasic *)>);
     static_assert(std::is_same_v<decltype(&CTexture::clearTextureCache), void (CTexture::*)()>);
     static_assert(
-        std::is_same_v<decltype(&CTexture::loadAndUpdateTexture),
-                       void (CTexture::*)(platform::SMRGLTextureBasic *, SRGBColorPalette *)>);
-    static_assert(
         std::is_same_v<decltype(&CTexture::getTextureCacheStats), void (CTexture::*)(char *)>);
     static_assert(std::is_same_v<decltype(&CTexture::getCurrentTexture),
                                  platform::SMRGLTextureBasic *(CTexture::*)()>);
@@ -93,6 +90,22 @@ TEST_F(CTextureTest, TheRendererIsToldOfANewTextureThenSelectsItAfter) {
     texture_.ensureTextureLoaded(texture);
     EXPECT_CALL(renderer_, selectTexture(&texture, 32, _, _, nullptr)).WillOnce(Return(1));
     texture_.ensureTextureLoaded(texture);
+}
+
+// The texels changed in the cache, the renderer takes them again with the palette given.
+TEST_F(CTextureTest, ATextureCanBeHandedOverAgainAsJustLoaded) {
+    startRenderer();
+    givenTexels("a", 32, 0);
+    platform::SMRGLTextureBasic texture{.texture_name = "a.raw", .cache_index = 0};
+    texture_.ensureTextureLoaded(texture);
+    std::array<std::uint8_t, 768> palette{};
+    {
+        const ::testing::InSequence order;
+        EXPECT_CALL(renderer_, selectTexture(&texture, 32, _, _, nullptr)).WillOnce(Return(1));
+        EXPECT_CALL(renderer_, updateTexture(&texture, 32, _, palette.data(), nullptr))
+            .WillOnce(Return(1));
+    }
+    texture_.loadAndUpdateTexture(texture, palette);
 }
 
 TEST_F(CTextureTest, ClearingTheCacheForgetsEveryTexture) {

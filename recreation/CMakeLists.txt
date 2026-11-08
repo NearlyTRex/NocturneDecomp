@@ -20,6 +20,28 @@ option(NOCTURNE_RECREATION_COVERAGE "Instrument for clang source-based coverage"
 option(NOCTURNE_RECREATION_GAME "Build the SDL adapters and the nocturne executable" OFF)
 option(NOCTURNE_RECREATION_SANITIZE "Build with AddressSanitizer and UBSan" OFF)
 
+# tidy, coverage and a build each fan out to every core, and together they exhaust a desktop's
+# memory. A host-wide lock, shared by compiles and links and exclusive for tidy and coverage,
+# makes each wait for the others across build directories and checkouts; CI jobs run alone.
+find_program(FLOCK flock)
+if(DEFINED ENV{CI} OR NOT FLOCK)
+    set(_host_lock_default "")
+elseif(DEFINED ENV{XDG_RUNTIME_DIR})
+    set(_host_lock_default "$ENV{XDG_RUNTIME_DIR}/nocturne-recreation.lock")
+else()
+    set(_host_lock_default "/tmp/nocturne-recreation-$ENV{USER}.lock")
+endif()
+set(NOCTURNE_RECREATION_HOST_LOCK "${_host_lock_default}"
+    CACHE FILEPATH "Lock file that serialises builds, tidy and coverage on this host; empty disables it")
+set(NOCTURNE_RECREATION_EXCLUSIVE "")
+if(NOCTURNE_RECREATION_HOST_LOCK)
+    foreach(_launcher IN ITEMS C_COMPILER CXX_COMPILER C_LINKER CXX_LINKER)
+        set(CMAKE_${_launcher}_LAUNCHER
+            "${FLOCK}" --shared "${NOCTURNE_RECREATION_HOST_LOCK}" ${CMAKE_${_launcher}_LAUNCHER})
+    endforeach()
+    set(NOCTURNE_RECREATION_EXCLUSIVE "${FLOCK}" --exclusive "${NOCTURNE_RECREATION_HOST_LOCK}")
+endif()
+
 # Modules are the directories that carry a fwd.h.
 file(GLOB _fwd_headers RELATIVE "${CMAKE_CURRENT_SOURCE_DIR}" CONFIGURE_DEPENDS
      "${CMAKE_CURRENT_SOURCE_DIR}/*/fwd.h")
@@ -102,9 +124,51 @@ set(MINIAUDIO_INSTALL OFF CACHE BOOL "" FORCE)
 FetchContent_MakeAvailable(miniaudio)
 target_compile_definitions(miniaudio PUBLIC MA_NO_DEVICE_IO)
 
+# Package manifests and the known-release catalogue are TOML; the package layer hashes PODs
+# with xxHash's XXH3-128. Both are header-only and stay private to engine/package.
+FetchContent_Declare(tomlplusplus
+    GIT_REPOSITORY https://github.com/marzer/tomlplusplus.git
+    GIT_TAG        v3.4.0
+    GIT_SHALLOW    TRUE
+    SYSTEM)
+FetchContent_MakeAvailable(tomlplusplus)
+FetchContent_Declare(xxhash
+    GIT_REPOSITORY https://github.com/Cyan4973/xxHash.git
+    GIT_TAG        v0.8.3
+    GIT_SHALLOW    TRUE
+    SOURCE_SUBDIR  build/cmake/disabled
+    SYSTEM)
+FetchContent_MakeAvailable(xxhash)
+add_library(nocturne_xxhash INTERFACE)
+target_include_directories(nocturne_xxhash SYSTEM INTERFACE "${xxhash_SOURCE_DIR}")
+target_compile_definitions(nocturne_xxhash INTERFACE XXH_INLINE_ALL)
+include(cmake/libarchive.cmake)
+
+# The catalogue of known releases is data in the repository, compiled in so an install needs no
+# extra file to be recognised.
+file(READ "${CMAKE_CURRENT_SOURCE_DIR}/data/releases.toml" NOCTURNE_RELEASE_CATALOG)
+set_property(DIRECTORY APPEND PROPERTY CMAKE_CONFIGURE_DEPENDS
+    "${CMAKE_CURRENT_SOURCE_DIR}/data/releases.toml")
+# Each game's content, data/games/<id>.toml, which a base manifest written for its release copies.
+file(GLOB _game_files CONFIGURE_DEPENDS "${CMAKE_CURRENT_SOURCE_DIR}/data/games/*.toml")
+list(SORT _game_files)
+set(NOCTURNE_EMBEDDED_GAMES "")
+foreach(_game_file IN LISTS _game_files)
+    get_filename_component(_game_id "${_game_file}" NAME_WE)
+    file(READ "${_game_file}" _game_text)
+    string(APPEND NOCTURNE_EMBEDDED_GAMES
+        "        SEmbeddedGame{.id = \"${_game_id}\", .text = R\"game(${_game_text})game\"},\n")
+    set_property(DIRECTORY APPEND PROPERTY CMAKE_CONFIGURE_DEPENDS "${_game_file}")
+endforeach()
+configure_file(cmake/releasecatalogtext.cpp.in
+    "${CMAKE_CURRENT_BINARY_DIR}/generated/engine/package/releasecatalogtext.cpp" @ONLY)
+list(APPEND _sources "${CMAKE_CURRENT_BINARY_DIR}/generated/engine/package/releasecatalogtext.cpp")
+
 if(_sources)
     add_library(nocturne_recreation STATIC ${_sources})
     target_link_libraries(nocturne_recreation PUBLIC nocturne_recreation_options miniaudio)
+    target_link_libraries(nocturne_recreation
+        PRIVATE tomlplusplus::tomlplusplus nocturne_xxhash nocturne_libarchive)
 else()
     add_library(nocturne_recreation INTERFACE)
     target_link_libraries(nocturne_recreation INTERFACE nocturne_recreation_options miniaudio)
@@ -120,7 +184,7 @@ endforeach()
 if(_header_checks)
     add_library(nocturne_recreation_header_checks OBJECT ${_header_checks})
     target_link_libraries(nocturne_recreation_header_checks
-        PRIVATE nocturne_recreation_options miniaudio)
+        PRIVATE nocturne_recreation_options miniaudio tomlplusplus::tomlplusplus)
 endif()
 
 FetchContent_Declare(googletest
@@ -145,7 +209,7 @@ endforeach()
 if(_mock_checks)
     add_library(nocturne_recreation_mock_checks OBJECT ${_mock_checks})
     target_link_libraries(nocturne_recreation_mock_checks
-        PRIVATE nocturne_recreation_options GTest::gmock)
+        PRIVATE nocturne_recreation_options GTest::gmock nocturne_libarchive)
 endif()
 
 if(NOCTURNE_RECREATION_GAME)
@@ -239,7 +303,14 @@ foreach(_module IN LISTS NOCTURNE_RECREATION_MODULES)
         target_link_libraries(${_target} PRIVATE nocturne_recreation)
     endif()
     target_link_libraries(${_target} PRIVATE GTest::gtest_main GTest::gmock)
-    gtest_discover_tests(${_target} DISCOVERY_MODE PRE_TEST)
+    if(_module STREQUAL "engine")
+        # The package layer's TOML readers take toml++ tables, and its archive tests make
+        # archives with libarchive.
+        target_link_libraries(${_target} PRIVATE tomlplusplus::tomlplusplus nocturne_libarchive)
+    endif()
+    # A test runs in well under a second; one stuck in a loop is ended before ctest, which holds
+    # each test's output, fills the memory with it.
+    gtest_discover_tests(${_target} DISCOVERY_MODE PRE_TEST PROPERTIES TIMEOUT 20)
     list(APPEND NOCTURNE_RECREATION_TEST_BINARIES $<TARGET_FILE:${_target}>)
 endforeach()
 
@@ -249,7 +320,7 @@ if(NOCTURNE_RECREATION_COVERAGE)
     find_program(LLVM_COV NAMES llvm-cov-${NOCTURNE_LLVM_MAJOR} llvm-cov
                  HINTS "${NOCTURNE_LLVM_BIN}" REQUIRED)
     add_custom_target(coverage
-        COMMAND ${CMAKE_COMMAND}
+        COMMAND ${NOCTURNE_RECREATION_EXCLUSIVE} ${CMAKE_COMMAND}
             -DBINARY_DIR=${CMAKE_CURRENT_BINARY_DIR}
             -DSOURCE_DIR=${CMAKE_CURRENT_SOURCE_DIR}
             -DLLVM_PROFDATA=${LLVM_PROFDATA}
@@ -273,7 +344,7 @@ if(CLANG_TIDY AND Python3_FOUND)
         set(_tidy_cache "--cache-dir=${NOCTURNE_RECREATION_TIDY_CACHE}")
     endif()
     add_custom_target(tidy
-        COMMAND ${Python3_EXECUTABLE} ${CMAKE_CURRENT_SOURCE_DIR}/cmake/tidy.py
+        COMMAND ${NOCTURNE_RECREATION_EXCLUSIVE} ${Python3_EXECUTABLE} ${CMAKE_CURRENT_SOURCE_DIR}/cmake/tidy.py
                 --clang-tidy ${CLANG_TIDY}
                 --source-dir ${CMAKE_CURRENT_SOURCE_DIR}
                 --build-dir ${CMAKE_CURRENT_BINARY_DIR}

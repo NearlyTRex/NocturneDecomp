@@ -5,6 +5,7 @@
 #include "core/box/boundingbox3d.h"
 #include "core/flame/flame.h"
 #include "core/flame/flametype.h"
+#include "tests/mocks/core/actorrenderfixture.h"
 #include "tests/mocks/core/notportedcalls.h"
 #include "tests/mocks/core/testclasses.h"
 #include "tests/mocks/core/testfieldsarchive.h"
@@ -38,7 +39,8 @@ TEST(CFlame, PublicInterface) {
     static_assert(std::is_same_v<decltype(&CFlame::setup), void (CFlame::*)()>);
     static_assert(std::is_same_v<decltype(&CFlame::process), void (CFlame::*)(float)>);
     static_assert(std::is_same_v<decltype(&CFlame::renderTransparent), int (CFlame::*)()>);
-    static_assert(std::is_same_v<decltype(&CFlame::renderBackground), void (CFlame::*)(int)>);
+    static_assert(std::is_same_v<decltype(&CFlame::renderBackground),
+                                 void (CFlame::*)(int, const SActorRenderOwners &)>);
     static_assert(std::is_same_v<decltype(&CFlame::getBoundingBox),
                                  CBoundingBox3D *(CFlame::*)(CBoundingBox3D *)>);
     static_assert(std::is_same_v<decltype(&CFlame::getCollisionType),
@@ -209,9 +211,35 @@ TEST(CFlame, TheFunctionsNotPortedYetQuit) {
     const NotPortedCalls calls = {
         {"process", [&] { flame.process(0.0F); }},
         {"renderTransparent", [&] { static_cast<void>(flame.renderTransparent()); }},
-        {"renderBackground", [&] { flame.renderBackground(0); }},
     };
     expectEachQuitsNotPorted("CFlame", calls);
+}
+
+// A flame two units ahead, its box wholly in view.
+class CFlameBackgroundTest : public CActorRenderFixture {
+protected:
+    CFlameBackgroundTest() {
+        flame_.setLocation({.position = {.x = 0.0F, .y = -1.5F, .z = 2.2F}, .area_id = 0});
+    }
+
+    CTestClasses classes_;
+    CFlame flame_{classes_.get()};
+};
+
+// In its layer, the flame learns whether its box is visible.
+TEST_F(CFlameBackgroundTest, AFlameLearnsWhetherItIsVisibleInItsLayer) {
+    hideEverything();
+    flame_.renderBackground(1, render_owners_);
+    EXPECT_FALSE(flame_.isVisible());
+    depths_.fill(kFarthest);
+    flame_.renderBackground(1, render_owners_);
+    EXPECT_TRUE(flame_.isVisible());
+}
+
+TEST_F(CFlameBackgroundTest, OutsideItsLayerTheFlameKeepsWhatItKnew) {
+    hideEverything();
+    flame_.renderBackground(0, render_owners_);
+    EXPECT_TRUE(flame_.isVisible());
 }
 
 } // namespace

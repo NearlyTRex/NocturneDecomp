@@ -2,6 +2,7 @@
 
 #include "core/fwd.h"
 #include "core/skeleton/partvisibility.h"
+#include "engine/fwd.h"
 
 #include <array>
 #include <cstddef>
@@ -20,7 +21,9 @@ public:
     // Its model is found among the models given.
     explicit CKeyFramedModelInstance(IKeyFramedModels &models);
 
-    void prepareForRendering(float animation_frame, int render_flags);
+    // Draws its model at the frame nearest the animation's.
+    void prepareForRendering(float animation_frame, int render_flags,
+                             engine::CDemonRenderer &renderer, CDemonSet &set);
     // Finds the model named, loading it the first time.
     CKeyFramedModel &preCache();
     // Fatal before preCache.

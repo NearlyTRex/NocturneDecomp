@@ -2,6 +2,8 @@
 #include "engine/keys/keys.h"
 #include "engine/menuinput.h"
 #include "engine/rawinput.h"
+#include "platform/gamepad.h"
+#include "tests/mocks/engine/gamepadinputparts.h"
 #include "tests/mocks/engine/mockrawinput.h"
 #include "tests/mocks/engine/mockscreendevice.h"
 
@@ -20,7 +22,7 @@ namespace {
 using ::testing::Return;
 
 TEST(CMenuInput, PublicInterface) {
-    static_assert(std::is_constructible_v<CMenuInput, CKeys &>);
+    static_assert(std::is_constructible_v<CMenuInput, CKeys &, CGamepadInput &>);
     static_assert(
         std::is_same_v<decltype(&CMenuInput::takeMenuAction), bool (CMenuInput::*)(EMenuAction)>);
     static_assert(std::is_same_v<decltype(&CMenuInput::isModifierHeld),
@@ -42,11 +44,22 @@ protected:
         return keyboard_[static_cast<std::size_t>(code)] != 0;
     }
 
+    // Pressed on the next pump, the pad plugged in.
+    void hold(platform::EGamepadButton button) {
+        ON_CALL(pad_.gamepad, updateGamepad()).WillByDefault(Return(true));
+        ON_CALL(pad_.gamepad, getGamepadButton(button)).WillByDefault(Return(true));
+    }
+
+    void pump() {
+        pad_.input.pump(keyboard_, true);
+    }
+
     std::array<std::uint8_t, IRawInput::kInputCodeCount> keyboard_{};
     ::testing::NiceMock<MockRawInput> raw_input_;
     ::testing::NiceMock<MockScreenDevice> screen_;
     CKeys keys_{raw_input_, screen_};
-    CMenuInput input_{keys_};
+    SGamepadInputParts pad_;
+    CMenuInput input_{keys_, pad_.input};
 };
 
 TEST_F(CMenuInputTest, NothingPressedTakesNothing) {
@@ -93,15 +106,21 @@ TEST_F(CMenuInputTest, TheArrowsOwnCodesDriveThemUnderTheWideMask) {
     EXPECT_TRUE(input_.takeMenuAction(EMenuAction::PageDown));
 }
 
-TEST_F(CMenuInputTest, ThePadDrivesThemWhateverTheControlMode) {
-    press(EInputCodeType::PAD_DPAD_DOWN);
-    press(EInputCodeType::DIJ_LEFT);
-    press(EInputCodeType::PAD_A);
-    press(EInputCodeType::PAD_B);
+TEST_F(CMenuInputTest, ThePadsPressesDriveThemWhateverTheControlMode) {
+    hold(platform::EGamepadButton::DpadDown);
+    hold(platform::EGamepadButton::A);
+    pump();
     EXPECT_TRUE(input_.takeMenuAction(EMenuAction::Down));
-    EXPECT_TRUE(input_.takeMenuAction(EMenuAction::Left));
     EXPECT_TRUE(input_.takeMenuAction(EMenuAction::Confirm));
-    EXPECT_TRUE(input_.takeMenuAction(EMenuAction::Cancel));
+    EXPECT_FALSE(input_.takeMenuAction(EMenuAction::Confirm));
+}
+
+// The pad's codes alone are play's, not the menus'.
+TEST_F(CMenuInputTest, ThePadsCodesDontDriveThem) {
+    press(EInputCodeType::PAD_A);
+    press(EInputCodeType::DIJ_LEFT);
+    EXPECT_FALSE(input_.takeMenuAction(EMenuAction::Confirm));
+    EXPECT_FALSE(input_.takeMenuAction(EMenuAction::Left));
 }
 
 // Delete folds onto the keypad's point under the default mask.
@@ -110,22 +129,18 @@ TEST_F(CMenuInputTest, DeleteIsDeleteOrThePadsX) {
     EXPECT_TRUE(input_.takeMenuAction(EMenuAction::Delete));
     press(EInputCodeType::DIK_DELETE);
     EXPECT_TRUE(input_.takeMenuAction(EMenuAction::Delete));
-    press(EInputCodeType::PAD_X);
+    hold(platform::EGamepadButton::X);
+    pump();
     EXPECT_TRUE(input_.takeMenuAction(EMenuAction::Delete));
     EXPECT_FALSE(input_.takeMenuAction(EMenuAction::Delete));
 }
 
-TEST_F(CMenuInputTest, StartCancelsToo) {
-    press(EInputCodeType::PAD_START);
-    EXPECT_TRUE(input_.takeMenuAction(EMenuAction::Cancel));
-}
-
 TEST_F(CMenuInputTest, TakingAnActionTakesEveryInputBoundToIt) {
+    hold(platform::EGamepadButton::DpadUp);
+    pump();
     press(EInputCodeType::DIK_NUMPAD8);
-    press(EInputCodeType::PAD_DPAD_UP);
     EXPECT_TRUE(input_.takeMenuAction(EMenuAction::Up));
     EXPECT_FALSE(held(EInputCodeType::DIK_NUMPAD8));
-    EXPECT_FALSE(held(EInputCodeType::PAD_DPAD_UP));
     EXPECT_FALSE(input_.takeMenuAction(EMenuAction::Up));
 }
 

@@ -9,6 +9,7 @@
 #include "tests/mocks/core/gameparts.h"
 #include "tests/mocks/core/mockactorlookup.h"
 #include "tests/mocks/core/mockdeformablemodels.h"
+#include "tests/mocks/core/mockeventconditions.h"
 #include "tests/mocks/core/mockkeyframedmodels.h"
 #include "tests/mocks/core/testclasses.h"
 #include "tests/mocks/engine/mockgameclock.h"
@@ -66,7 +67,8 @@ TEST(CHeroPlaceholder, ItsFileSaysWhichHeroItIsFor) {
     common::CWatcomRandom crt;
     ::testing::NiceMock<MockDeformableModels> models;
     ::testing::NiceMock<MockKeyFramedModels> keyframed_models;
-    CActor classes{game, crt, models, keyframed_models};
+    ::testing::NiceMock<MockEventConditions> events;
+    CActor classes{game, crt, models, keyframed_models, events};
     ::testing::NiceMock<MockActorLookup> actors;
     CHeroPlaceholder placeholder;
     common::CTextScanner scanner("{ CHeroPlaceholder \"Spot\"\n2,1,2,3\n0,0,0\n0\n1 // index\n"

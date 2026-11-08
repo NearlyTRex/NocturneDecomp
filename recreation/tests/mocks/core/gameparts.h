@@ -7,18 +7,23 @@
 #include "engine/console/console.h"
 #include "engine/dosio/dosio.h"
 #include "engine/font/font.h"
+#include "engine/keys/inputcodetype.h"
 #include "engine/keys/keys.h"
 #include "engine/light/light.h"
 #include "engine/matrix/matrix.h"
 #include "engine/menuinput.h"
+#include "engine/package/gamecontent.h"
+#include "engine/rawinput.h"
 #include "engine/special/special.h"
 #include "engine/texture/currenttexture.h"
 #include "shape/edittool/editortools.h"
 #include "sound/sndmain/sndmain.h"
 #include "support/newmsg/newmsg.h"
+#include "tests/mocks/engine/gamepadinputparts.h"
 #include "tests/mocks/engine/mockgameclock.h"
 #include "tests/mocks/engine/mockrawinput.h"
 #include "tests/mocks/engine/mockscreendevice.h"
+#include "tests/mocks/engine/shippedgamecontent.h"
 #include "tests/mocks/platform/mockaudiodevice.h"
 #include "tests/mocks/platform/mockclipboard.h"
 #include "tests/mocks/platform/mockclock.h"
@@ -28,7 +33,11 @@
 
 #include <gmock/gmock.h>
 
+#include <array>
+#include <cstddef>
+#include <cstdint>
 #include <ctime>
+#include <span>
 
 namespace nocturne::core {
 
@@ -38,10 +47,38 @@ class CGameParts {
 public:
     explicit CGameParts(engine::IGameClock &clock) : CGameParts(clock, own_dosio_) {}
     CGameParts(engine::IGameClock &clock, const engine::CDosIo &dosio)
-        : clock_(clock), dosio_(dosio) {}
+        : clock_(clock), dosio_(dosio) {
+        ON_CALL(raw_input_, getKeyboardState()).WillByDefault([this] {
+            return std::span<std::uint8_t, engine::IRawInput::kInputCodeCount>(keyboard_);
+        });
+    }
 
     CGame &getGame() {
         return game_;
+    }
+
+    // The packages' content the game reads, the shipped game's until a test changes it.
+    engine::SGameContent &getContent() {
+        return content_;
+    }
+
+    // The keys and buttons the game reads as held, by input code, and its mouse.
+    void hold(engine::EInputCodeType code, bool held) {
+        keyboard_.at(static_cast<std::size_t>(code)) = held ? 1 : 0;
+    }
+
+    ::testing::NiceMock<engine::MockRawInput> &getRawInput() {
+        return raw_input_;
+    }
+
+    // The game's own, which its mute hotkey turns off and on.
+    sound::CSndMain &getSoundMain() {
+        return sound_main_;
+    }
+
+    // The pad layer the game reads its sticks from, over a pad unplugged unless the test says.
+    engine::SGamepadInputParts &getGamepad() {
+        return gamepad_;
     }
 
     [[nodiscard]] const engine::CDosIo &getDosIo() const {
@@ -62,9 +99,19 @@ public:
         return renderer_;
     }
 
-    // The fonts the game takes its small editor font from.
-    const CDFont &getFonts() const {
+    // The fonts the game takes its small editor font from and draws its overlay in.
+    CDFont &getFonts() {
         return fonts_;
+    }
+
+    // The 2D the game fills its overlay's bars with, clipped as the test sets.
+    engine::C2d &getTwoD() {
+        return two_d_;
+    }
+
+    // The 3D whose render alpha the game's text fades by.
+    engine::C3d &getThreeD() {
+        return three_d_;
     }
 
 private:
@@ -74,6 +121,7 @@ private:
     const engine::CDosIo &dosio_;
     ::testing::NiceMock<engine::MockScreenDevice> screen_;
     ::testing::NiceMock<engine::MockRawInput> raw_input_;
+    std::array<std::uint8_t, engine::IRawInput::kInputCodeCount> keyboard_{};
     engine::C2d two_d_{dosio_, screen_, raw_input_};
     engine::CLight light_;
     engine::CMatrix matrix_{two_d_, light_};
@@ -82,7 +130,8 @@ private:
     engine::SCurrentTexture current_texture_;
     engine::CSpecial special_{renderer_, screen_, two_d_, matrix_, three_d_, current_texture_};
     engine::CKeys keys_{raw_input_, screen_};
-    engine::CMenuInput menu_input_{keys_};
+    engine::SGamepadInputParts gamepad_;
+    engine::CMenuInput menu_input_{keys_, gamepad_.input};
     ::testing::NiceMock<platform::MockClock> wall_clock_;
     ::testing::NiceMock<platform::MockClipboard> clipboard_;
     shape::CEditorTools editor_tools_{{.two_d = two_d_,
@@ -103,6 +152,8 @@ private:
     engine::CConsole console_{file_system_, 80, 50, 0, 0};
     sound::CSndMain sound_main_{dosio_, file_system_, audio_device_, console_,
                                 [] { return std::tm{}; }};
+    // The shipped game's, for a test to change before the game reads it.
+    engine::SGameContent content_ = engine::getShippedGameContent();
     CGame game_{{.clock = clock_,
                  .dosio = dosio_,
                  .screen = screen_,
@@ -111,7 +162,11 @@ private:
                  .three_d = three_d_,
                  .menu_input = menu_input_,
                  .fonts = fonts_,
-                 .sound_main = sound_main_}};
+                 .sound_main = sound_main_,
+                 .keys = keys_,
+                 .raw_input = raw_input_,
+                 .gamepad = gamepad_.input,
+                 .content = content_}};
 };
 
 } // namespace nocturne::core

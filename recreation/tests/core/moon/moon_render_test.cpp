@@ -8,6 +8,7 @@
 
 #include <algorithm>
 #include <cstdint>
+#include <span>
 #include <string>
 
 namespace nocturne::core {
@@ -106,7 +107,9 @@ TEST_F(CMoonRenderTest, TheDepthBufferIsClearedFirst) {
     startRenderer();
     std::ranges::fill(depths_, 0xffffffffU);
     moon_.render();
-    EXPECT_THAT(depths_, Each(0U));
+    for (std::uint32_t *const row : z_rows_) {
+        EXPECT_THAT(std::span(row, kWidth), Each(0U));
+    }
 }
 
 TEST_F(CMoonRenderTest, TwoLayersOfCloudAreAddedOverTheClearedFrame) {
@@ -152,6 +155,67 @@ TEST_F(CMoonRenderTest, TheSecondHalfHoldsTheFirstFrame) {
     moon_.update(3.75F);
     moon_.render();
     EXPECT_EQ(pixel(10, 10), cloudGrey(10, 0));
+}
+
+TEST_F(CMoonRenderTest, OnAWideFrontEndTheCloudsCoverTheWholeWidth) {
+    givenWideScreen();
+    std::ranges::fill(pixels_, 0xffffffffU);
+    moon_.render();
+    EXPECT_EQ(pixel(847, 300), cloudGrey(300, 0));
+}
+
+// The 640-wide title, centred: 104 columns of cloud either side at 848.
+TEST_F(CMoonRenderTest, OnAWideFrontEndTheTitleIsCentred) {
+    givenWideScreen();
+    moon_.update(1.5F);
+    moon_.render();
+    EXPECT_EQ(pixel(10, 10), cloudGrey(10, 0));
+    EXPECT_NE(pixel(114, 10), cloudGrey(10, 0));
+}
+
+// 848 over 640 wider, and drawn in a 640x480 viewport the renderer stretches back out.
+TEST_F(CMoonRenderTest, OnAWideFrontEndTheRendererStretchesAWiderView) {
+    startRenderer();
+    givenWideScreen();
+    const float widen = 848.0F / 640.0F;
+    int widened = 0;
+    {
+        const ::testing::InSequence in_order;
+        EXPECT_CALL(renderer_,
+                    beginOverlay(platform::SOverlayPlacement{
+                        .scale_x = widen, .scale_y = 1.0F, .offset_x = 0.0F, .offset_y = 0.0F}))
+            .WillOnce(Return(true));
+        EXPECT_CALL(renderer_, endOverlay()).WillOnce([&] {
+            widened = matrix_.getProjectionScale();
+        });
+    }
+    moon_.render();
+    demon_renderer_.setProjectionScale(112.0F * widen);
+    EXPECT_EQ(widened, matrix_.getProjectionScale());
+    demon_renderer_.setProjectionScale(112.0F);
+    EXPECT_NE(widened, matrix_.getProjectionScale());
+}
+
+// The renderer couldn't begin the pass, so the scene keeps the screen's viewport, stretched.
+TEST_F(CMoonRenderTest, WithoutTheRenderersPassTheViewIsNotWidened) {
+    startRenderer();
+    givenWideScreen();
+    EXPECT_CALL(renderer_, beginOverlay(::testing::_)).WillOnce(Return(false));
+    EXPECT_CALL(renderer_, endOverlay()).Times(0);
+    moon_.render();
+    const int drawn = matrix_.getProjectionScale();
+    demon_renderer_.setProjectionScale(112.0F);
+    EXPECT_EQ(drawn, matrix_.getProjectionScale());
+}
+
+// The software rasteriser draws at the screen's width already; 640 needs no widening.
+TEST_F(CMoonRenderTest, SoftwareOrAt640TheSceneIsNotOverlaid) {
+    givenWideScreen();
+    EXPECT_CALL(renderer_, beginOverlay(::testing::_)).Times(0);
+    moon_.render();
+    startRenderer();
+    ON_CALL(screen_, getWindowWidth()).WillByDefault(Return(kWidth));
+    moon_.render();
 }
 
 // The timer can only run negative on a negative step; it shows the first frame too.

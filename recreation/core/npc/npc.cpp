@@ -51,6 +51,18 @@ std::unique_ptr<CDemonActor> CNPC::create(CActor &classes) {
     return std::make_unique<CNPC>(classes);
 }
 
+// A body left lying where it fell is drawn into the camera's backdrop.
+// nocedit 0x00544b70
+void CNPC::renderBackground(int layer_flag, const SActorRenderOwners &owners) {
+    if (!left_blood_pool_) {
+        return;
+    }
+    if (layer_flag != 0) {
+        setRenderActive(true);
+    }
+    CCharacter::renderBackground(layer_flag, owners);
+}
+
 // nocedit 0x00544ba0
 void CNPC::archive(CActorArchive &actor_archive) {
     const int version = actor_archive.getSavedVersion(kType);

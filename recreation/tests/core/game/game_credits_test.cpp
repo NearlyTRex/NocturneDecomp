@@ -16,10 +16,12 @@
 #include "support/newmsg/newmsg.h"
 #include "tests/mocks/core/menufontfiles.h"
 #include "tests/mocks/engine/fontsheet.h"
+#include "tests/mocks/engine/gamepadinputparts.h"
 #include "tests/mocks/engine/memoryscreen.h"
 #include "tests/mocks/engine/mockfont.h"
 #include "tests/mocks/engine/mockgameclock.h"
 #include "tests/mocks/engine/mockrawinput.h"
+#include "tests/mocks/engine/shippedgamecontent.h"
 #include "tests/mocks/platform/mockclipboard.h"
 #include "tests/mocks/platform/mockclock.h"
 #include "tests/mocks/platform/mockosfontfactory.h"
@@ -59,18 +61,19 @@ constexpr int kBandBottom = 438;
 constexpr int kQuarterSecond = 18 * 0x4000;
 constexpr int kRowsPerFrame = 8;
 
-// The credits on a 640x480 screen, over a one-colour stats image, the menus' block fonts drawing
-// them and the clock stepping a quarter second each time it is read.
-class CCreditsTest : public sound::CSndMainFixture {
+// The credits on a screen 480 lines tall, over a one-colour stats image, the menus' block fonts
+// drawing them and the clock stepping a quarter second each time it is read.
+template <int ScreenWidth>
+class CCreditsFixture : public sound::CSndMainFixture {
 protected:
-    CCreditsTest() {
+    CCreditsFixture() {
         givenMenuFontFiles([this](const std::string &name, const std::string &contents) {
             givenFile(name, contents);
         });
         givenFile("msglist.txt", "; version\n0\n; use OS fonts\n0\n; font\n\"Arial\"\n");
         messages_.readMessageFile("msglist.txt");
         fonts_.initFonts();
-        two_d_.setupViewportAndClipping(0, 0, kWidth - 1, kHeight - 1);
+        two_d_.setupViewportAndClipping(0, 0, ScreenWidth - 1, kHeight - 1);
         givenFile("art\\stats.raw", std::string(std::size_t{kWidth} * kHeight, '\x01'));
         givenFile("art\\stats.act", engine::makePalette({0, 0, 0, 0x11, 0x22, 0x33}));
         ON_CALL(raw_input_, getKeyboardState()).WillByDefault([this] {
@@ -108,7 +111,7 @@ protected:
     // The first row of the column where the predicate holds for a pixel, or -1.
     [[nodiscard]] int firstRowWhere(const std::function<bool(std::uint32_t)> &is_wanted) const {
         for (int y = 0; y < kHeight; ++y) {
-            for (int x = kColumnLeft; x < kWidth; ++x) {
+            for (int x = kColumnLeft; x < ScreenWidth; ++x) {
                 if (is_wanted(screen_.pixel(x, y))) {
                     return y;
                 }
@@ -145,7 +148,7 @@ protected:
     }
 
     std::array<std::uint8_t, engine::IRawInput::kInputCodeCount> keyboard_{};
-    engine::CMemoryScreen screen_{kWidth, kHeight, 32};
+    engine::CMemoryScreen screen_{ScreenWidth, kHeight, 32};
     NiceMock<engine::MockRawInput> raw_input_;
     engine::C2d two_d_{dosio_, screen_, raw_input_};
     engine::CLight light_;
@@ -155,7 +158,8 @@ protected:
     engine::SCurrentTexture current_texture_;
     engine::CSpecial special_{renderer_, screen_, two_d_, matrix_, three_d_, current_texture_};
     engine::CKeys keys_{raw_input_, screen_};
-    engine::CMenuInput menu_input_{keys_};
+    engine::SGamepadInputParts gamepad_;
+    engine::CMenuInput menu_input_{keys_, gamepad_.input};
     NiceMock<engine::MockGameClock> game_clock_;
     NiceMock<platform::MockClock> clock_;
     NiceMock<platform::MockClipboard> clipboard_;
@@ -173,6 +177,7 @@ protected:
     NiceMock<platform::MockOsFontFactory> os_fonts_;
     support::CNewMsg messages_{dosio_};
     CDFont fonts_{dosio_, screen_, two_d_, three_d_, colors_, os_fonts_, messages_, editor_tools_};
+    engine::SGameContent content_ = engine::getShippedGameContent();
     CGame game_{{.clock = game_clock_,
                  .dosio = dosio_,
                  .screen = screen_,
@@ -181,12 +186,21 @@ protected:
                  .three_d = three_d_,
                  .menu_input = menu_input_,
                  .fonts = fonts_,
-                 .sound_main = sound_}};
+                 .sound_main = sound_,
+                 .keys = keys_,
+                 .raw_input = raw_input_,
+                 .gamepad = gamepad_.input,
+                 .content = content_}};
     int now_ = 0;
     int step_ = kQuarterSecond;
     int ticks_ = 0;
     std::function<void(int)> on_tick_;
 };
+
+using CCreditsTest = CCreditsFixture<kWidth>;
+// The front end at 16:9.
+constexpr int kWideWidth = 848;
+using CWideCreditsTest = CCreditsFixture<kWideWidth>;
 
 TEST_F(CCreditsTest, WithoutTheCreditsFileNothingRolls) {
     EXPECT_CALL(raw_input_, clearInput()).Times(1);
@@ -267,6 +281,37 @@ TEST_F(CCreditsTest, BlackStripsCoverTheColumnsTopAndBottom) {
     EXPECT_EQ(screen_.pixel(kColumnLeft, kBandBottom + 1), 0U);
     EXPECT_EQ(screen_.pixel(kWidth - 1, kHeight - 1), 0U);
     EXPECT_EQ(screen_.pixel(kColumnLeft - 1, 0), kImage);
+}
+
+// The image keeps to the left; the column and its strips run on over the black to the right.
+TEST_F(CWideCreditsTest, TheColumnRunsOnToTheScreensRightEdge) {
+    givenCredits("end\n");
+    cancelAfterFrames(1);
+    game_.rollCredits();
+    EXPECT_EQ(screen_.pixel(0, kBandTop), kImage);
+    EXPECT_EQ(screen_.pixel(kWidth - 1, kBandTop), kImage);
+    EXPECT_EQ(screen_.pixel(kWidth, kBandTop), 0U);
+    EXPECT_EQ(screen_.pixel(kWideWidth - 1, kBandTop - 1), 0U);
+    EXPECT_EQ(screen_.pixel(kWideWidth - 1, kHeight - 1), 0U);
+}
+
+// Centred between the column's left and the screen's right edge, so it starts further right.
+TEST_F(CWideCreditsTest, ALineIsCentredOnTheWiderColumn) {
+    givenCredits("XX\r\nend\r\n");
+    constexpr int kFrames = 12;
+    cancelAfterFrames(kFrames);
+    game_.rollCredits();
+    const int row = letterRow(topAfterFrames(kFrames));
+    int first = -1;
+    for (int x = kColumnLeft; x < kWideWidth && first < 0; ++x) {
+        if (screen_.pixel(x, row) == kTextPixel) {
+            first = x;
+        }
+    }
+    const int width = fonts_.getThemeFont()->getTextWidth("XX");
+    const int text_left = (kColumnLeft + kWideWidth - width) / 2;
+    EXPECT_GE(first, text_left);
+    EXPECT_LT(first, text_left + width);
 }
 
 // A backslash and the character after it are dropped; "\b" makes the line a heading.
@@ -353,6 +398,42 @@ TEST_F(CCreditsTest, WithTheMusicChannelOffTheyRollSilentlyUntilCancel) {
     game_.rollCredits();
     EXPECT_EQ(playing, (std::vector<int>{0, 0, 0}));
     EXPECT_EQ(screen_.swaps, 3);
+}
+
+TEST_F(CCreditsTest, CreditsWithoutMusicRollSilentlyUntilCancel) {
+    givenCredits("end\n");
+    givenMusic(100);
+    ASSERT_TRUE(content_.credits.has_value());
+    content_.credits->music.clear();
+    std::vector<int> playing;
+    on_tick_ = [&](int tick) {
+        playing.push_back(sound_.countActiveSfx());
+        if (tick == 3) {
+            press(EInputCodeType::DIK_ESCAPE);
+        }
+    };
+    game_.rollCredits();
+    EXPECT_EQ(playing, (std::vector<int>{0, 0, 0}));
+}
+
+// The text, picture and music are the packages' choice.
+TEST_F(CCreditsTest, ThePackagesNameTheCreditsFile) {
+    givenCredits("XX\r\nend\r\n");
+    givenFile("data\\other.txt", "end\r\n");
+    ASSERT_TRUE(content_.credits.has_value());
+    content_.credits->text = "other.txt";
+    cancelAfterFrames(3);
+    game_.rollCredits();
+    EXPECT_EQ(firstTextRow(), -1);
+    EXPECT_EQ(screen_.swaps, 3);
+}
+
+TEST_F(CCreditsTest, AGameWithoutCreditsRollsNone) {
+    givenCredits("XX\r\nend\r\n");
+    content_.credits.reset();
+    EXPECT_CALL(raw_input_, clearInput()).Times(0);
+    game_.rollCredits();
+    EXPECT_EQ(screen_.swaps, 0);
 }
 
 TEST_F(CCreditsTest, TheInputIsClearedAtTheStartWithTheMusicAndAtTheEnd) {

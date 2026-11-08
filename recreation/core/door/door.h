@@ -8,6 +8,7 @@
 #include "core/door/doortype.h"
 #include "core/event/rulelist.h"
 #include "core/fwd.h"
+#include "core/oneshotstate.h"
 
 #include <cstdint>
 #include <memory>
@@ -35,7 +36,7 @@ public:
     void setup() override;
     void process(float delta_time) override;
     int renderOpaque() override;
-    void renderBackground(int layer_flag) override;
+    void renderBackground(int layer_flag, const SActorRenderOwners &owners) override;
     // Its model's first frame's box.
     CBoundingBox3D *getBoundingBox(CBoundingBox3D *out_box) override;
     ECollisionType getCollisionType(SCollisionInfo *collision_info) override;
@@ -78,8 +79,8 @@ public:
     // The events the door raises once open and once closed.
     [[nodiscard]] const std::string &getEventWhenOpen() const;
     [[nodiscard]] const std::string &getEventWhenClosed() const;
-    // Whether the door opens only once.
-    [[nodiscard]] bool isOneShot() const;
+    // Whether the door opens only once, and how far it has got.
+    [[nodiscard]] EOneShotState getOneShotState() const;
     // What the door runs as it is asked to open.
     [[nodiscard]] const CRuleList &getOpenRules() const;
     [[nodiscard]] bool isPlottedAsBoxInShadow() const;
@@ -121,7 +122,7 @@ private:
     EGroundType ground_type_ = EGroundType::kDefault;
     std::string event_when_open_;
     std::string event_when_closed_;
-    bool one_shot_ = false;
+    EOneShotState one_shot_ = EOneShotState::kNo;
     CRuleList open_rules_;
     bool block_virtual_director_ = true;
     bool plot_as_box_in_shadow_ = false;

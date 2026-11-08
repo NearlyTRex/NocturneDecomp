@@ -1,8 +1,11 @@
 #include "core/menu/graphicoptionspage.h"
 
+#include "common/video/widescreen.h"
 #include "core/game/game.h"
 #include "core/menu/menu.h"
+#include "engine/screendevice.h"
 #include "engine/special/special.h"
+#include "platform/antialias.h"
 #include "platform/display.h"
 #include "platform/upscaler.h"
 #include "support/newmsg/newmsg.h"
@@ -14,6 +17,7 @@
 #include <cstdlib>
 #include <format>
 #include <optional>
+#include <ranges>
 #include <string>
 #include <string_view>
 #include <utility>
@@ -25,6 +29,7 @@ namespace {
 enum class EGraphicLine : std::uint8_t {
     Resolution,
     Window,
+    Widescreen,
     Halo,
     Acceleration,
     Api,
@@ -32,6 +37,7 @@ enum class EGraphicLine : std::uint8_t {
     Bits,
     Upscaler,
     Sharpness,
+    Antialias,
     Calibration,
 };
 
@@ -40,18 +46,33 @@ struct SResolution {
     int height;
 };
 
-// By height. Every mode the original's labels knew, with 400x300 and 1600x1200, which they
-// named but its stepping never reached.
-constexpr std::array<SResolution, 8> kResolutions{{
+// By width, then height. Every mode the original's labels knew, with 400x300 and 1600x1200,
+// which they named but its stepping never reached, and the wider modes the presenter frames the
+// scene for, each past 1024 wide with a 4:3 mode at its height. Every width is a multiple of 16,
+// as clearScreen's rows need.
+constexpr std::array<SResolution, 17> kResolutions{{
     {.width = 320, .height = 240},
     {.width = 400, .height = 300},
     {.width = 512, .height = 384},
     {.width = 640, .height = 480},
     {.width = 800, .height = 600},
     {.width = 1024, .height = 768},
+    {.width = 1200, .height = 900},
+    {.width = 1280, .height = 720},
     {.width = 1280, .height = 1024},
+    {.width = 1440, .height = 1080},
+    {.width = 1600, .height = 900},
     {.width = 1600, .height = 1200},
+    {.width = 1920, .height = 1080},
+    {.width = 1920, .height = 1440},
+    {.width = 2560, .height = 1440},
+    {.width = 2880, .height = 2160},
+    {.width = 3840, .height = 2160},
 }};
+static_assert(std::ranges::all_of(kResolutions, [](const SResolution &mode) {
+    return mode.width <= engine::kMaxScreenWidth && mode.height <= engine::kMaxScreenHeight;
+}));
+constexpr int kTallest = std::ranges::max(kResolutions, {}, &SResolution::height).height;
 
 // The software renderer's largest.
 constexpr SResolution kSoftwareMaximum{.width = 640, .height = 480};
@@ -59,6 +80,10 @@ constexpr SResolution kSoftwareMaximum{.width = 640, .height = 480};
 // By EWindowMode.
 constexpr std::array<std::string_view, 3> kWindowModeNames{"Windowed", "Fullscreen", "Borderless"};
 constexpr int kWindowModeCount = static_cast<int>(kWindowModeNames.size());
+
+// By EWidescreen.
+constexpr std::array<std::string_view, common::kWidescreenCount> kWidescreenNames{
+    "Stretch", "Pillarbox", "Pan & scan"};
 
 // By halo mode.
 constexpr std::array<std::string_view, 3> kHaloLabels{
@@ -71,30 +96,34 @@ constexpr int kHighBitDepth = 32;
 // By EUpscaler.
 constexpr std::array<std::string_view, platform::kUpscalerCount> kUpscalerNames{
     "Standard", "FSR", "Lanczos", "GSR", "NIS", "xBR"};
+// By EAntialias.
+constexpr std::array<std::string_view, platform::kAntialiasCount> kAntialiasNames{"Off", "FXAA"};
 constexpr int kSharpnessSteps =
     (platform::kUpscalerSharpnessMax / platform::kUpscalerSharpnessStep) + 1;
 // The most cards a renderer lists.
 constexpr std::size_t kMaxCards = 16;
 
 // One step on or back through those that fit under max_height, wrapping. A resolution not in
-// the list, or above the cap, goes to the nearest by height instead.
+// the list, or above the cap, goes to the nearest by height, then width, instead.
 SResolution getNextResolution(SResolution current, EMenuStep step, int max_height) {
-    const auto fits = std::ranges::count_if(
-        kResolutions, [max_height](const SResolution &mode) { return mode.height <= max_height; });
-    const int last = std::max(static_cast<int>(fits), 1) - 1;
-    const auto *found = std::ranges::find_if(kResolutions, [current](const SResolution &mode) {
-        return mode.width == current.width && mode.height == current.height;
+    const auto fits = [max_height](const SResolution &mode) { return mode.height <= max_height; };
+    const auto *found = std::ranges::find_if(kResolutions, [&](const SResolution &mode) {
+        return mode.width == current.width && mode.height == current.height && fits(mode);
     });
-    const auto index = static_cast<int>(found - kResolutions.begin());
-    if (found == kResolutions.end() || index > last) {
-        const auto *nearest = std::ranges::min_element(
-            kResolutions.begin(), kResolutions.begin() + last + 1, {},
-            [current](const SResolution &mode) { return std::abs(mode.height - current.height); });
-        return *nearest;
+    if (found == kResolutions.end()) {
+        auto allowed = kResolutions | std::views::filter(fits);
+        return *std::ranges::min_element(allowed, {}, [current](const SResolution &mode) {
+            return std::pair(std::abs(mode.height - current.height),
+                             std::abs(mode.width - current.width));
+        });
     }
-    const int count = last + 1;
-    return kResolutions.at(
-        static_cast<std::size_t>((index + std::to_underlying(step) + count) % count));
+    const auto count = static_cast<int>(kResolutions.size());
+    auto index = static_cast<int>(found - kResolutions.begin());
+    // The current mode fits, so the walk always ends.
+    do {
+        index = (index + std::to_underlying(step) + count) % count;
+    } while (!fits(kResolutions.at(static_cast<std::size_t>(index))));
+    return kResolutions.at(static_cast<std::size_t>(index));
 }
 
 // A name the renderer left unset is blank.
@@ -121,10 +150,16 @@ void CGraphicOptionsPage::build(std::vector<SMenuLine> &lines) {
     const CGame &game = owners_.game;
     width_ = game.game_pixx;
     height_ = game.game_pixy;
-    addLine(lines, EGraphicLine::Resolution, std::format("Resolution : {}x{}", width_, height_));
+    addLine(
+        lines, EGraphicLine::Resolution,
+        std::format("Resolution : {}x{}{}", width_, height_,
+                    common::getScreenWide({.width = width_, .height = height_}) ? " (wide)" : ""));
     addLine(lines, EGraphicLine::Window,
             std::format("Window : {}", kWindowModeNames.at(static_cast<std::size_t>(
                                            owners_.display.getWindowMode()))));
+    addLine(lines, EGraphicLine::Widescreen,
+            std::format("Widescreen : {}", kWidescreenNames.at(static_cast<std::size_t>(
+                                               owners_.display.getWidescreen()))));
     addLine(lines, EGraphicLine::Halo,
             localize(kHaloLabels.at(
                 static_cast<std::size_t>(std::clamp(game.halo_mode, 0, kHaloModeCount - 1)))));
@@ -141,6 +176,12 @@ void CGraphicOptionsPage::build(std::vector<SMenuLine> &lines) {
     if (platform::getUpscalerSharpens(upscaler)) {
         addLine(lines, EGraphicLine::Sharpness,
                 std::format("Sharpness : {}%", owners_.display.getUpscalerSharpness()));
+    }
+    // The pass runs over the hardware renderer's scene, which software has none of.
+    if (owners_.special.getUseDirect3D()) {
+        addLine(lines, EGraphicLine::Antialias,
+                std::format("Anti-aliasing : {}", kAntialiasNames.at(static_cast<std::size_t>(
+                                                      owners_.display.getAntialias()))));
     }
     addLine(lines, EGraphicLine::Calibration, localize("Monitor calibration"));
 }
@@ -165,6 +206,9 @@ EMenuOutcome CGraphicOptionsPage::choose(int id, EMenuStep step) {
     case EGraphicLine::Window:
         stepWindowMode(step);
         break;
+    case EGraphicLine::Widescreen:
+        stepWidescreen(step);
+        break;
     case EGraphicLine::Halo:
         stepHalo(step);
         break;
@@ -184,6 +228,9 @@ EMenuOutcome CGraphicOptionsPage::choose(int id, EMenuStep step) {
         break;
     case EGraphicLine::Sharpness:
         stepSharpness(step);
+        break;
+    case EGraphicLine::Antialias:
+        stepAntialias(step);
         break;
     default:
         getMenu().showCalibrationTest();
@@ -250,8 +297,7 @@ void CGraphicOptionsPage::listCards() {
 
 void CGraphicOptionsPage::stepResolution(EMenuStep step) {
     CGame &game = owners_.game;
-    const int max_height =
-        getHighResolutionAllowed() ? kResolutions.back().height : kSoftwareMaximum.height;
+    const int max_height = getHighResolutionAllowed() ? kTallest : kSoftwareMaximum.height;
     const SResolution next =
         getNextResolution({.width = game.game_pixx, .height = game.game_pixy}, step, max_height);
     game.game_pixx = next.width;
@@ -263,6 +309,14 @@ void CGraphicOptionsPage::stepWindowMode(EMenuStep step) {
     const int mode = static_cast<int>(owners_.display.getWindowMode());
     owners_.display.setWindowMode(static_cast<platform::EWindowMode>(
         (mode + std::to_underlying(step) + kWindowModeCount) % kWindowModeCount));
+}
+
+// The enhanced game's: the original had no mode wider than 4:3.
+void CGraphicOptionsPage::stepWidescreen(EMenuStep step) {
+    const int widescreen = static_cast<int>(owners_.display.getWidescreen());
+    owners_.display.setWidescreen(static_cast<common::EWidescreen>(
+        (widescreen + std::to_underlying(step) + common::kWidescreenCount) %
+        common::kWidescreenCount));
 }
 
 // A mode past Complex steps as Complex.
@@ -298,6 +352,14 @@ void CGraphicOptionsPage::stepSharpness(EMenuStep step) {
     owners_.display.setUpscalerSharpness(
         ((index + std::to_underlying(step) + kSharpnessSteps) % kSharpnessSteps) *
         platform::kUpscalerSharpnessStep);
+}
+
+// The enhanced game's: the original drew its edges unsmoothed.
+void CGraphicOptionsPage::stepAntialias(EMenuStep step) {
+    const int antialias = static_cast<int>(owners_.display.getAntialias());
+    owners_.display.setAntialias(static_cast<platform::EAntialias>(
+        (antialias + std::to_underlying(step) + platform::kAntialiasCount) %
+        platform::kAntialiasCount));
 }
 
 // Always on, whichever way.

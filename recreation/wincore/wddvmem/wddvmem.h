@@ -20,8 +20,7 @@ namespace nocturne::wincore {
 // every depth it is given, so the original's fall-back to 24 bits is gone.
 class CWddVMem : public engine::IScreenDevice {
 public:
-    // The tallest mode the resolution list offers.
-    static constexpr std::size_t kMaxScanlines = 1200;
+    static constexpr std::size_t kMaxScanlines = engine::kMaxScreenHeight;
 
     // The clock times the frames for the render log's frame rate.
     CWddVMem(platform::IDisplay &display, platform::IRenderer &renderer, CWinRun &winrun,

@@ -7,6 +7,7 @@
 #include "engine/dosio/dosio.h"
 #include "tests/mocks/core/gameparts.h"
 #include "tests/mocks/core/mockdeformablemodels.h"
+#include "tests/mocks/core/mockeventconditions.h"
 #include "tests/mocks/core/mockkeyframedmodels.h"
 #include "tests/mocks/engine/mockgameclock.h"
 
@@ -53,6 +54,11 @@ public:
         return keyframed_model_;
     }
 
+    // What the actors ask about the events; every condition is false unless a test says.
+    [[nodiscard]] MockEventConditions &getEvents() {
+        return actor_events_;
+    }
+
 private:
     void returnTheOneModel() {
         ON_CALL(keyframed_models_, loadModel(::testing::_))
@@ -65,7 +71,8 @@ private:
     ::testing::NiceMock<MockDeformableModels> models_;
     ::testing::NiceMock<MockKeyFramedModels> keyframed_models_;
     CKeyFramedModel keyframed_model_{game_parts_.getDosIo()};
-    CActor classes_{game_parts_.getGame(), crt_, models_, keyframed_models_};
+    ::testing::NiceMock<MockEventConditions> actor_events_;
+    CActor classes_{game_parts_.getGame(), crt_, models_, keyframed_models_, actor_events_};
 };
 
 } // namespace nocturne::core

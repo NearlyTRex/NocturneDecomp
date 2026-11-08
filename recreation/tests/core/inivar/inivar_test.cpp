@@ -5,6 +5,7 @@
 #include "engine/2d/2d.h"
 #include "engine/3d/3d.h"
 #include "engine/font/font.h"
+#include "engine/gamepadinput.h"
 #include "engine/ini/ini.h"
 #include "engine/keys/keys.h"
 #include "engine/light/light.h"
@@ -16,6 +17,7 @@
 #include "shape/edittool/editortools.h"
 #include "support/newmsg/newmsg.h"
 #include "tests/mocks/core/gameparts.h"
+#include "tests/mocks/core/keychords.h"
 #include "tests/mocks/engine/mockgameclock.h"
 #include "tests/mocks/engine/mockrawinput.h"
 #include "tests/mocks/engine/mockscreendevice.h"
@@ -108,7 +110,9 @@ protected:
                            .console = console_,
                            .special = special_,
                            .display = display_,
-                           .fonts = fonts_};
+                           .fonts = fonts_,
+                           .gamepad = game_parts_.getGamepad().input,
+                           .messages = messages_};
 };
 
 TEST_F(CInivarTest, ReadsTheGraphicsSettings) {
@@ -213,6 +217,40 @@ TEST_F(CInivarTest, TheUpscalerIsWritten) {
     EXPECT_THAT(text_, HasSubstr("upscalerSharpness=25\r\n"));
 }
 
+TEST_F(CInivarTest, TheAntialiasingIsReadUnlessItIsOutOfRange) {
+    text_ = "[Graphics]\r\nantialias=1\r\n";
+    EXPECT_CALL(display_, setAntialias(platform::EAntialias::Fxaa));
+    read();
+    ::testing::Mock::VerifyAndClearExpectations(&display_);
+    ON_CALL(display_, getAntialias()).WillByDefault(Return(platform::EAntialias::Fxaa));
+    text_ = "[Graphics]\r\nantialias=2\r\n";
+    EXPECT_CALL(display_, setAntialias(platform::EAntialias::Fxaa));
+    read();
+}
+
+TEST_F(CInivarTest, TheAntialiasingIsWritten) {
+    ON_CALL(display_, getAntialias()).WillByDefault(Return(platform::EAntialias::Fxaa));
+    writeIniData(ini_, owners_);
+    EXPECT_THAT(text_, HasSubstr("antialias=1\r\n"));
+}
+
+TEST_F(CInivarTest, TheWidescreenFramingIsReadUnlessItIsOutOfRange) {
+    text_ = "[Graphics]\r\nwidescreen=1\r\n";
+    EXPECT_CALL(display_, setWidescreen(common::EWidescreen::Pillarbox));
+    read();
+    ::testing::Mock::VerifyAndClearExpectations(&display_);
+    ON_CALL(display_, getWidescreen()).WillByDefault(Return(common::EWidescreen::PanAndScan));
+    text_ = "[Graphics]\r\nwidescreen=3\r\n";
+    EXPECT_CALL(display_, setWidescreen(common::EWidescreen::PanAndScan));
+    read();
+}
+
+TEST_F(CInivarTest, TheWidescreenFramingIsWritten) {
+    ON_CALL(display_, getWidescreen()).WillByDefault(Return(common::EWidescreen::Stretch));
+    writeIniData(ini_, owners_);
+    EXPECT_THAT(text_, HasSubstr("widescreen=0\r\n"));
+}
+
 TEST_F(CInivarTest, TheWindowModeIsWritten) {
     ON_CALL(display_, getWindowMode()).WillByDefault(Return(platform::EWindowMode::Fullscreen));
     writeIniData(ini_, owners_);
@@ -243,6 +281,14 @@ TEST_F(CInivarTest, ReadsTheSoundSection) {
     read();
     EXPECT_EQ(sound_.getAudioSampleRate(), 44100);
     EXPECT_TRUE(sound_.isSoundMuted());
+}
+
+// A hotkey's chords are read and written as the play actions' codes are.
+TEST_F(CInivarTest, HotkeysAreReadAndWrittenAsChords) {
+    text_ = "[Control]\r\nkeyMute=29+56+50\r\n";
+    read();
+    EXPECT_EQ(game_.controls.formatBindings(EGameAction::Mute), "29+56+50");
+    EXPECT_EQ(game_.controls.formatBindings(EGameAction::SaveGame), "29+31,60");
 }
 
 TEST_F(CInivarTest, TheControlModesDefaultsComeFirstThenTheFilesBindings) {
@@ -297,8 +343,8 @@ TEST_F(CInivarTest, WritesEverySettingBackToItsSection) {
     special_.setUseDirect3D(true);
     special_.setCurrentGraphicsBoard(1);
     sound_.setAudioSampleRate(44100);
-    game_.controls.setBindings(EGameAction::Map,
-                               {engine::EInputCodeType::DIK_M, engine::EInputCodeType::DIK_TAB});
+    game_.controls.setBindings(
+        EGameAction::Map, chords({engine::EInputCodeType::DIK_M, engine::EInputCodeType::DIK_TAB}));
     game_.aim_mode = EAimMode::AIM_MODE_MANUAL;
     game_.first_time_flag = 1;
     console_.file_logging_enabled = 1;
@@ -329,21 +375,57 @@ TEST_F(CInivarTest, WhatIsWrittenReadsBackTheSame) {
     game_.restoreDefaultControls();
     game_.map_zoom = 150;
     game_.y_stick_max = 40000;
+    game_parts_.getGamepad().input.tuning = {
+        .deadzone = 30, .turn_rate = 60, .look_rate = 15, .invert_look = true};
+    messages_.setLanguage("de");
     writeIniData(ini_, owners_);
     CGameParts copy_parts(game_clock_);
     CGame &copy = copy_parts.getGame();
+    support::CNewMsg copy_messages(dosio_);
     const SIniDataOwners reread{.game = copy,
                                 .sound_main = sound_,
                                 .console = console_,
                                 .special = special_,
                                 .display = display_,
-                                .fonts = fonts_};
+                                .fonts = fonts_,
+                                .gamepad = copy_parts.getGamepad().input,
+                                .messages = copy_messages};
     readIniData(ini_, file_system_, reread);
+    EXPECT_EQ(copy_messages.getLanguage(), "de");
     EXPECT_EQ(copy.game_control, EControlMode::CONTROL_MODE_GAMEPAD);
     EXPECT_EQ(copy.controls.formatBindings(EGameAction::Fire),
               game_.controls.formatBindings(EGameAction::Fire));
     EXPECT_EQ(copy.map_zoom, 150);
     EXPECT_EQ(copy.y_stick_max, 40000);
+    const engine::SGamepadTuning &tuning = copy_parts.getGamepad().input.tuning;
+    EXPECT_EQ(tuning.deadzone, 30);
+    EXPECT_EQ(tuning.turn_rate, 60);
+    EXPECT_EQ(tuning.look_rate, 15);
+    EXPECT_TRUE(tuning.invert_look);
+}
+
+// The pad's tuning is beside the controls (the decomp's pad_tuning.h).
+TEST_F(CInivarTest, ThePadsTuningIsReadFromTheControlSection) {
+    text_ = "[Control]\r\npadDeadzone=10\r\npadTurnRate=40\r\npadLookRate=35\r\n"
+            "invertPadYAxis=1\r\n";
+    read();
+    const engine::SGamepadTuning &tuning = game_parts_.getGamepad().input.tuning;
+    EXPECT_EQ(tuning.deadzone, 10);
+    EXPECT_EQ(tuning.turn_rate, 40);
+    EXPECT_EQ(tuning.look_rate, 35);
+    EXPECT_TRUE(tuning.invert_look);
+}
+
+// A hand-edited value out of range is held to it, so the pad can't be left unusable; a missing
+// one is the default.
+TEST_F(CInivarTest, ThePadsTuningIsHeldToItsRange) {
+    text_ = "[Control]\r\npadDeadzone=90\r\npadTurnRate=0\r\n";
+    read();
+    const engine::SGamepadTuning &tuning = game_parts_.getGamepad().input.tuning;
+    EXPECT_EQ(tuning.deadzone, 40);
+    EXPECT_EQ(tuning.turn_rate, 5);
+    EXPECT_EQ(tuning.look_rate, 25);
+    EXPECT_FALSE(tuning.invert_look);
 }
 
 } // namespace

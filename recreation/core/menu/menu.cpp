@@ -1,17 +1,21 @@
 #include "core/menu/menu.h"
 
+#include "common/error/error.h"
 #include "common/random/watcomrandom.h"
 #include "core/dfont/dfont.h"
+#include "core/frontend.h"
 #include "engine/2d/2d.h"
 #include "engine/3d/3d.h"
 #include "engine/alphabit/alphabitmap.h"
 #include "engine/font/bitfont.h"
 #include "engine/menuinput.h"
+#include "engine/package/gamecontent.h"
 #include "engine/rawinput.h"
 #include "engine/screendevice.h"
 #include "engine/special/special.h"
 #include "support/newmsg/newmsg.h"
 
+#include <algorithm>
 #include <array>
 #include <cstddef>
 #include <cstdint>
@@ -29,7 +33,6 @@ constexpr int kFullAlpha = 0xffff;
 constexpr int kTextColor = 0xf8;
 // The character whose height spaces the text.
 constexpr int kLineHeightChar = 'X';
-constexpr int kItemLeft = 160;
 constexpr int kTitleColor = 7;
 constexpr int kTitleShadow = 0;
 constexpr int kGlowColor = 7;
@@ -40,13 +43,7 @@ constexpr int kFooterShadow = 0;
 constexpr int kTrademarkAlpha = 0x8000;
 // The trademark sign, in Windows-1252, beside the title art.
 constexpr std::string_view kTrademark = "\x99";
-constexpr int kTrademarkX = 518;
-constexpr int kTrademarkY = 99;
 constexpr int kVersionX = 4;
-// Only OS text carries the (c).
-constexpr std::string_view kCopyright = "Nocturne 1999 Terminal Reality Inc.  Patent Pending.";
-constexpr std::string_view kOsFontCopyright =
-    "Nocturne (c) 1999 Terminal Reality Inc.  Patent Pending.";
 
 constexpr std::array<std::string_view, 5> kCalibrationSteps{
     "1. Turn off all the lights in your room.",
@@ -56,8 +53,9 @@ constexpr std::array<std::string_view, 5> kCalibrationSteps{
     "You're done with calibration.",
 };
 
-void drawCentred(engine::CBitFont &font, std::string_view text, int y) {
-    font.drawText(text, (kImageWidth / 2) - (font.getTextWidth(text) / 2), y, kTextColor,
+// Centred on the image, which starts at left.
+void drawCentred(engine::CBitFont &font, std::string_view text, int left, int y) {
+    font.drawText(text, left + (kImageWidth / 2) - (font.getTextWidth(text) / 2), y, kTextColor,
                   engine::CBitFont::kNoShadow);
 }
 
@@ -81,6 +79,10 @@ CMoon &CMenu::getMoon() {
     return moon_;
 }
 
+int CMenu::getLayoutLeft() const {
+    return getFrontEndLeft(owners_.screen.getWindowWidth());
+}
+
 bool CMenu::getMenuInputHappened() const {
     return menu_input_happened_;
 }
@@ -98,10 +100,12 @@ void CMenu::showCalibrationTestPattern(engine::CAlphaBitmap &bitmap,
         std::string(message_text) +
         std::string(owners_.messages.getLocalizedString("  Press any key to continue."));
     const int line_height = font.getCharHeight(kLineHeightChar);
+    const int left = getLayoutLeft();
     owners_.special.clearScreen();
-    bitmap.display(0, 0, kFullAlpha);
-    drawCentred(font, prompt, kImageHeight - (3 * line_height));
-    drawCentred(font, owners_.messages.getLocalizedString("Monitor calibration"), 2 * line_height);
+    bitmap.display(left, 0, kFullAlpha);
+    drawCentred(font, prompt, left, kImageHeight - (3 * line_height));
+    drawCentred(font, owners_.messages.getLocalizedString("Monitor calibration"), left,
+                2 * line_height);
     owners_.screen.swapBuffers();
     owners_.two_d.clearInputAndWait();
     owners_.raw_input.getNextKeypress(owners_.screen);
@@ -123,8 +127,9 @@ void CMenu::showCalibrationTest() {
 int CMenu::renderMenuAndGetChoice(std::span<const std::string> items, int &selected_index,
                                   int y_position, std::optional<std::string_view> title) {
     engine::CBitFont &font = *owners_.fonts.getThemeFont();
+    const int item_left = getLayoutLeft() + getMenuLayout().left;
     if (title) {
-        font.drawText(*title, kItemLeft, y_position, kTitleColor, kTitleShadow);
+        font.drawText(*title, item_left, y_position, kTitleColor, kTitleShadow);
         y_position += font.getCharHeight(kLineHeightChar) * 2;
     }
     for (std::size_t i = 0; i < items.size(); ++i) {
@@ -133,14 +138,14 @@ int CMenu::renderMenuAndGetChoice(std::span<const std::string> items, int &selec
         if (std::cmp_equal(i, selected_index)) {
             // The glow pulses with the title animation, steady in its second half.
             if (moon_.isAnimationFirstHalf() != 0) {
-                drawGlowingItem(font, items[i], y_position);
+                drawGlowingItem(font, items[i], item_left, y_position);
                 color = kGlowColor;
             } else {
                 color = kSelectedColor;
             }
         }
         owners_.three_d.setRenderAlpha(kItemAlpha);
-        font.drawText(items[i], kItemLeft, y_position, color, engine::CBitFont::kNoShadow);
+        font.drawText(items[i], item_left, y_position, color, engine::CBitFont::kNoShadow);
         y_position += title ? line_height : 2 * line_height;
     }
     owners_.three_d.setRenderAlpha(kFullAlpha);
@@ -149,27 +154,49 @@ int CMenu::renderMenuAndGetChoice(std::span<const std::string> items, int &selec
 }
 
 // Each copy is up to two pixels off in x and y, at a random part of the item's alpha.
-void CMenu::drawGlowingItem(engine::CBitFont &font, std::string_view item, int y) {
+void CMenu::drawGlowingItem(engine::CBitFont &font, std::string_view item, int left, int y) {
     for (int i = 0; i < kGlowCopies; ++i) {
         const int x_jitter = owners_.crt_random.rand() & 3;
         const int y_jitter = (owners_.crt_random.rand() & 3) - 2;
         const int alpha = (owners_.crt_random.rand() * kItemAlpha) >> 16;
         owners_.three_d.setRenderAlpha(alpha);
-        font.drawText(item, kItemLeft - 2 + x_jitter, y + y_jitter, kGlowColor,
+        font.drawText(item, left - 2 + x_jitter, y + y_jitter, kGlowColor,
                       engine::CBitFont::kNoShadow);
     }
 }
 
-// The build's line is the enhanced game's, in the bottom left at the trademark's alpha.
+const engine::SMenuLayout &CMenu::getMenuLayout() const {
+    if (!owners_.content.menu) {
+        common::displayErrorAndQuit("No package gives the menus' layout");
+    }
+    return *owners_.content.menu;
+}
+
+// The OS fonts' copyright when the packages give one, else the bitmap fonts'.
+std::string_view CMenu::getCopyright() const {
+    const engine::SGameContent &content = owners_.content;
+    if (owners_.fonts.getUseOSFonts() && content.copyright_os_font) {
+        return *content.copyright_os_font;
+    }
+    return content.copyright ? std::string_view(*content.copyright) : std::string_view();
+}
+
+// The build's line is the enhanced game's, in the bottom left at the trademark's alpha, on the
+// copyright's row, or its own without one. The copyright keeps to the screen's corner and the
+// trademark to the title art's.
 void CMenu::drawFooter() {
     engine::CBitFont &font = *owners_.fonts.getSmallEditorFont();
-    const std::string_view copyright =
-        owners_.fonts.getUseOSFonts() ? kOsFontCopyright : kCopyright;
-    const int bottom = kImageHeight - 1 - font.getTextHeight(copyright);
-    font.drawText(copyright, kImageWidth - 1 - font.getTextWidth(copyright), bottom, kTextColor,
+    const std::string_view copyright = getCopyright();
+    const int bottom = kImageHeight - 1 -
+                       font.getTextHeight(copyright.empty() ? owners_.build_version : copyright);
+    const int right = std::max(kImageWidth, owners_.screen.getWindowWidth()) - 1;
+    font.drawText(copyright, right - font.getTextWidth(copyright), bottom, kTextColor,
                   kFooterShadow);
     owners_.three_d.setRenderAlpha(kTrademarkAlpha);
-    font.drawText(kTrademark, kTrademarkX, kTrademarkY, kTextColor, kFooterShadow);
+    if (const std::optional<engine::SLayoutPoint> &trademark = getMenuLayout().trademark) {
+        font.drawText(kTrademark, getLayoutLeft() + trademark->x, trademark->y, kTextColor,
+                      kFooterShadow);
+    }
     font.drawText(owners_.build_version, kVersionX, bottom, kTextColor, kFooterShadow);
     owners_.three_d.setRenderAlpha(kFullAlpha);
 }

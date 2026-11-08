@@ -3,6 +3,8 @@
 #include "core/actor/actor.h"
 #include "core/actor/actorarchive.h"
 #include "core/actor/demonactortype.h"
+#include "core/box/boundingbox3d.h"
+#include "core/dmodel/keyframedmodel.h"
 #include "core/dmodel/keyframedmodelinstance.h"
 
 #include <memory>
@@ -62,6 +64,12 @@ void CHealthItem::archive(CActorArchive &actor_archive) {
 
 // nocedit 0x004f1e50
 void CHealthItem::process(float /*delta_time*/) {}
+
+// nocedit 0x004f1ed0
+CBoundingBox3D *CHealthItem::getBoundingBox(CBoundingBox3D *out_box) {
+    *out_box = model_.getModelPtr().getFrameBounds().front();
+    return out_box;
+}
 
 const CKeyFramedModelInstance &CHealthItem::getModel() const {
     return model_;

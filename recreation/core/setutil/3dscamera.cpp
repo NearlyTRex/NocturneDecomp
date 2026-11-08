@@ -11,6 +11,8 @@
 #include <algorithm>
 #include <cstddef>
 #include <format>
+#include <utility>
+#include <vector>
 
 namespace nocturne::core {
 namespace {
@@ -183,6 +185,10 @@ const CBoundingBox3D &C3DSCamera::getBox() const {
 
 std::span<const int> C3DSCamera::getPVSList() const {
     return pvs_list_;
+}
+
+void C3DSCamera::setPVSList(std::vector<int> pvs_list) {
+    pvs_list_ = std::move(pvs_list);
 }
 
 void C3DSCamera::setAmbientValue(float ambient_value) {

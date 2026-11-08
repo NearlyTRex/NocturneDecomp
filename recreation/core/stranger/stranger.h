@@ -71,6 +71,7 @@ public:
 private:
     static std::unique_ptr<CDemonActor> create(CActor &classes);
 
+    IEventConditions &events_;
     SStrangerBones bones_;
     common::CVector3f pickup_right_hand_position_;
     common::CVector3f pickup_right_upper_arm_position_;

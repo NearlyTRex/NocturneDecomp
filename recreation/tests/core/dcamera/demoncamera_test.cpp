@@ -86,8 +86,6 @@ TEST(CDemonCamera, PublicInterface) {
     static_assert(std::is_same_v<decltype(&CDemonCamera::calculateAttenuatedDirectionalLight),
                                  int (CDemonCamera::*)(common::CVector3i *, CDemonLight *,
                                                        common::CVector3i *)>);
-    static_assert(
-        std::is_same_v<decltype(&CDemonCamera::loadImage), void (CDemonCamera::*)(char *)>);
     static_assert(std::is_same_v<decltype(&CDemonCamera::renderLightCoronas),
                                  void (CDemonCamera::*)(CDemonLight *)>);
     static_assert(std::is_same_v<decltype(&CDemonCamera::addLightmapToCorona),
@@ -144,7 +142,8 @@ protected:
                           .screen = screen_,
                           .special = special_,
                           .crt_random = crt_,
-                          .renderer = demon_renderer_}};
+                          .renderer = demon_renderer_,
+                          .dosio = dosio_}};
 };
 
 TEST_F(CDemonCameraTest, ACameraStartsWithNoBuffersAndItsLens) {
@@ -305,12 +304,38 @@ TEST_F(CDemonCameraTest, ANameAndRangeCanBeGiven) {
 
 TEST_F(CDemonCameraTest, TheOverridesNotPortedYetQuit) {
     const NotPortedCalls calls = {
-        {"setupPerspectiveAndFog", [&] { camera_.setupPerspectiveAndFog(nullptr, nullptr); }},
         {"getFogValueAtPosition",
          [&] { static_cast<void>(camera_.getFogValueAtPosition(nullptr, nullptr)); }},
         {"saveAlphaTransform", [&] { camera_.saveAlphaTransform(0); }},
     };
     expectEachQuitsNotPorted("CDemonCamera", calls);
+}
+
+// With no place, or in a background scene, nothing is fogged; anywhere else the fog is sampled
+// at the place.
+TEST_F(CDemonCameraTest, ThePerspectiveFogIsNoneWithoutAPlaceOrInABackgroundScene) {
+    common::CVector3f place{.x = 1.0F, .y = 2.0F, .z = 3.0F};
+    tables_.perspective_reciprocal = 9;
+    camera_.setupPerspectiveAndFog(nullptr, nullptr);
+    EXPECT_EQ(tables_.perspective_reciprocal, 0);
+    tables_.perspective_reciprocal = 9;
+    tables_.background_scene_depth = 1;
+    camera_.setupPerspectiveAndFog(&place, nullptr);
+    EXPECT_EQ(tables_.perspective_reciprocal, 0);
+    tables_.background_scene_depth = 0;
+    EXPECT_THAT([&] { camera_.setupPerspectiveAndFog(&place, nullptr); },
+                ::testing::ThrowsMessage<common::CFatalError>(
+                    ::testing::StrEq("CDemonCamera::getFogValueAtPosition is not ported yet")));
+}
+
+// A scene's camera is the scene camera until the scene ends.
+TEST_F(CDemonCameraTest, AnOpenScenesCameraIsTheSceneCamera) {
+    camera_.init(48);
+    EXPECT_EQ(tables_.scene_camera, nullptr);
+    camera_.beginScene(1);
+    EXPECT_EQ(tables_.scene_camera, &camera_);
+    camera_.endScene(1);
+    EXPECT_EQ(tables_.scene_camera, nullptr);
 }
 
 // The renderer takes the camera's place in 24.8 and its lens, 18 being the unit scale; a second
@@ -348,7 +373,8 @@ TEST_F(CDemonCameraTest, ASceneClearsTheHardwareRendererUnlessToldNotTo) {
                            .screen = screen_,
                            .special = special_,
                            .crt_random = crt_,
-                           .renderer = demon_renderer_}};
+                           .renderer = demon_renderer_,
+                           .dosio = dosio_}};
     skipping.init(48);
     EXPECT_CALL(renderer_, beginScene()).Times(0);
     EXPECT_CALL(renderer_, clear()).Times(0);
@@ -429,6 +455,18 @@ TEST_F(CDemonCameraSceneTest, ABackgroundSceneDrawsIntoTheCamerasFrame) {
     EXPECT_EQ(rows_[0], first_row);
     EXPECT_EQ(channels_.red.bit_position, 11);
     EXPECT_TRUE(special_.getUseExternalRenderer());
+}
+
+// The camera keeps a copy of the screen's depths that drawing over them leaves alone, and puts it
+// back.
+TEST_F(CDemonCameraSceneTest, TheScreensDepthsAreSavedAndRestored) {
+    camera_.saveZBufferScanlines();
+    depth_row_.fill(9);
+    EXPECT_EQ(camera_.getZBuffer()[0], 7U);
+    EXPECT_EQ(camera_.getZBuffer()[(64 * 48) - 1], 7U);
+    camera_.restoreZBufferScanlines();
+    EXPECT_EQ(depth_row_[0], 7U);
+    EXPECT_EQ(depth_row_[63], 7U);
 }
 
 TEST_F(CDemonCameraSceneTest, ABackgroundSceneNeedsTheSceneOpen) {

@@ -8,6 +8,7 @@
 #include "core/mission/demonmission.h"
 #include "engine/dosio/dosio.h"
 #include "engine/ini/inifile.h"
+#include "engine/package/gamecontent.h"
 #include "platform/file.h"
 #include "platform/filesystem.h"
 #include "shape/edittool/editortools.h"
@@ -21,98 +22,14 @@
 #include <span>
 #include <string>
 #include <string_view>
+#include <vector>
 
 namespace nocturne::core {
 namespace {
 
-struct SChapter {
-    std::string_view name;
-    std::string_view mission;
-    // Listed only when the whole game is installed.
-    bool needs_full_install = false;
-};
-
-// A story: its line in the list of them, its title over its chapters, and nocturne.ini's key
-// and value that open its chapters, where it has one.
-struct SStory {
-    std::string_view name;
-    std::string_view title;
-    std::string_view unlock_key;
-    int unlock_code;
-    std::span<const SChapter> chapters;
-};
-
-constexpr std::array<SChapter, 5> kVolume1{{
-    {.name = "Chapter 1 - 'Your New Partner'", .mission = "hq-act1.msn"},
-    {.name = "Chapter 2 - 'Sentinels'", .mission = "gtown.msn"},
-    {.name = "Chapter 3 - 'Werewolf Forest'", .mission = "forest.msn"},
-    {.name = "Chapter 4 - 'Castle Gaustadt'", .mission = "castle1.msn"},
-    {.name = "Chapter 5 - 'Dungeon'", .mission = "dungeon.msn"},
-}};
-constexpr std::array<SChapter, 7> kVolume2{{
-    {.name = "Chapter 1 - 'Train to Redeye'", .mission = "train.msn"},
-    {.name = "Chapter 2 - 'Zombie Town'", .mission = "town.msn"},
-    {.name = "Chapter 3 - 'Underground Mine'", .mission = "mine.msn"},
-    {.name = "Chapter 4 - 'Hidden Entrance'", .mission = "trans.msn"},
-    {.name = "Chapter 5 - 'Temple of the God'", .mission = "temple.msn"},
-    {.name = "Chapter 6 - 'Epilogue'", .mission = "town2.msn"},
-    {.name = "Chapter X - 'Failure'", .mission = "hq-act2b.msn", .needs_full_install = true},
-}};
-constexpr std::array<SChapter, 11> kVolume3{{
-    {.name = "Chapter 1 - 'Headquarters'", .mission = "hq-act3.msn"},
-    {.name = "Chapter 2 - 'Chicago River'", .mission = "chicago1.msn"},
-    {.name = "Chapter 3 - 'The Vendome'", .mission = "speak.msn"},
-    {.name = "Chapter 4 - 'Night on the Town'", .mission = "chicago2.msn"},
-    {.name = "Chapter 5 - 'Water Works'", .mission = "wworks.msn"},
-    {.name = "Chapter 6 - 'Windy City'", .mission = "chicago3.msn"},
-    {.name = "Chapter 7 - 'Crescent Theater'", .mission = "theater.msn"},
-    {.name = "Chapter 8 - 'Rooftop to Rooftop'", .mission = "chicago4.msn"},
-    {.name = "Chapter 9 - 'Warehouse of Hell'", .mission = "ware2.msn"},
-    {.name = "Chapter 10 - 'Mobster Factory'", .mission = "factory.msn"},
-    {.name = "Chapter 11 - 'Not You Again'", .mission = "intfact.msn"},
-}};
-constexpr std::array<SChapter, 4> kVolume4{{
-    {.name = "Chapter 1 - 'Headquarters'", .mission = "hq-act4.msn"},
-    {.name = "Chapter 2 - 'Graveyard'", .mission = "grave.msn"},
-    {.name = "Chapter 3 - 'House of Hell'", .mission = "mansion.msn"},
-    {.name = "Chapter 4 - 'Back from Hell'", .mission = "hq-act4b.msn"},
-}};
-constexpr std::array<SChapter, 1> kVolume5{{
-    {.name = "Chapter 1 - 'Headquarters'", .mission = "hq-act5.msn"},
-}};
-
-// The first four open with their act's code; the epilogue has none, and is listed once all four
-// do.
-constexpr std::array<SStory, 5> kStories{{
-    {.name = "Volume 1 - 'Dark Reign of the Vampire King'",
-     .title = "'Dark Reign of the Vampire King'",
-     .unlock_key = "Act1Code",
-     .unlock_code = 0x331,
-     .chapters = kVolume1},
-    {.name = "Volume 2 - 'Tomb of the Underground God'",
-     .title = "'Tomb of the Underground God'",
-     .unlock_key = "Act2Code",
-     .unlock_code = 0x3cc,
-     .chapters = kVolume2},
-    {.name = "Volume 3 - 'Windy City Massacre'",
-     .title = "'Windy City Massacre'",
-     .unlock_key = "Act3Code",
-     .unlock_code = 0x3ac,
-     .chapters = kVolume3},
-    {.name = "Volume 4 - 'The House on the Edge of Hell'",
-     .title = "'The House on the Edge of Hell'",
-     .unlock_key = "Act4Code",
-     .unlock_code = 0xd6,
-     .chapters = kVolume4},
-    {.name = "Volume 5 - 'Epilogue'",
-     .title = "'Epilogue'",
-     .unlock_key = {},
-     .unlock_code = 0,
-     .chapters = kVolume5},
-}};
-constexpr std::size_t kActStories = 4;
 constexpr std::string_view kIniSection = "Game";
 constexpr int kLoadingFrames = 10;
+constexpr float kChapterTitleSeconds = 8.0F;
 constexpr int kNoSelection = -1;
 
 struct SChoice {
@@ -120,16 +37,27 @@ struct SChoice {
     std::size_t chapter;
 };
 
+// A story is open when nocturne.ini holds its code.
+bool isUnlocked(const engine::CIniFile &file, const engine::SGameStory &story) {
+    return story.unlock && file.getInteger(story.unlock->key, 0) == story.unlock->code;
+}
+
 // What choosing a story and chapter reads, offers its lists with and remembers between them.
 class CChapterChooser {
 public:
     CChapterChooser(const SChapterSelectOwners &owners, const engine::CDosIo &dosio,
-                    bool full_install, bool show_chapters)
-        : owners_(owners), dosio_(dosio), full_install_(full_install),
+                    std::span<const engine::SGameStory> stories, bool full_install,
+                    bool show_chapters)
+        : owners_(owners), dosio_(dosio), stories_(stories), full_install_(full_install),
           show_chapters_(show_chapters) {
         const engine::CIniFile file(owners.ini, kIniFilename, kIniSection);
-        for (std::size_t i = 0; i < kActStories; ++i) {
-            unlocked_[i] = file.getInteger(kStories[i].unlock_key, 0) == kStories[i].unlock_code;
+        for (const engine::SGameStory &story : stories) {
+            unlocked_.push_back(isUnlocked(file, story));
+        }
+        for (std::size_t i = 0; i < stories.size(); ++i) {
+            if (isListed(stories[i])) {
+                listed_.push_back(i);
+            }
         }
     }
 
@@ -137,19 +65,19 @@ public:
     [[nodiscard]] std::optional<SChoice> choose() {
         for (;;) {
             shape::CPickList list(owners_.pick_list);
-            const int story = pickStory(list);
-            if (story < 0) {
+            const int line = pickStory(list);
+            if (line < 0) {
                 return std::nullopt;
             }
-            const auto index = static_cast<std::size_t>(story);
+            const std::size_t index = listed_[static_cast<std::size_t>(line)];
             // Once opened, every story offers its chapters until START is left.
-            if (index < kActStories && unlocked_[index]) {
+            if (unlocked_[index]) {
                 show_chapters_ = true;
             }
             if (!show_chapters_) {
                 return SChoice{.story = index, .chapter = 0};
             }
-            const int chapter = pickChapter(list, kStories[index]);
+            const int chapter = pickChapter(list, stories_[index]);
             if (chapter >= 0) {
                 return SChoice{.story = index, .chapter = static_cast<std::size_t>(chapter)};
             }
@@ -157,6 +85,15 @@ public:
     }
 
 private:
+    // Once every story it requires is open.
+    [[nodiscard]] bool isListed(const engine::SGameStory &story) const {
+        return std::ranges::all_of(story.required_stories, [this](const std::string &id) {
+            const auto found = std::ranges::find(stories_, id, &engine::SGameStory::id);
+            return found != stories_.end() &&
+                   unlocked_[static_cast<std::size_t>(found - stories_.begin())];
+        });
+    }
+
     [[nodiscard]] bool isMissionPresent(std::string_view mission) const {
         return dosio_.getFile("world", mission, platform::EFileMode::Read) != nullptr;
     }
@@ -167,53 +104,67 @@ private:
 
     // A story whose first mission is missing is greyed out only in a whole install.
     int pickStory(shape::CPickList &list) const {
-        const bool epilogue_unlocked =
-            std::ranges::all_of(unlocked_, [](bool open) { return open; });
-        const std::size_t count = epilogue_unlocked ? kStories.size() : kActStories;
-        for (std::size_t i = 0; i < count; ++i) {
-            add(list, kStories[i].name);
+        for (const std::size_t index : listed_) {
+            add(list, stories_[index].name);
         }
-        for (std::size_t i = 0; full_install_ && i < count; ++i) {
-            if (!isMissionPresent(kStories[i].chapters.front().mission)) {
-                list.enableItem(static_cast<int>(i), false);
+        for (std::size_t line = 0; full_install_ && line < listed_.size(); ++line) {
+            if (!isMissionPresent(stories_[listed_[line]].chapters.front().mission)) {
+                list.enableItem(static_cast<int>(line), false);
             }
         }
         return list.displayChoicesAndWaitForInput(
             owners_.messages.getLocalizedString("Choose a story to play"), kNoSelection);
     }
 
-    int pickChapter(shape::CPickList &list, const SStory &story) const {
+    // The chapter's index in the story, or -1. The original took the line for the index, which
+    // held only while the one chapter a partial install leaves out was the last.
+    int pickChapter(shape::CPickList &list, const engine::SGameStory &story) const {
         list.clear();
-        for (const SChapter &chapter : story.chapters) {
-            if (full_install_ || !chapter.needs_full_install) {
-                add(list, chapter.name);
+        std::vector<std::size_t> offered;
+        for (std::size_t i = 0; i < story.chapters.size(); ++i) {
+            if (full_install_ || !story.chapters[i].needs_full_install) {
+                add(list, story.chapters[i].name);
+                offered.push_back(i);
             }
         }
-        for (int i = 0; i < list.getItemCount(); ++i) {
-            if (!isMissionPresent(story.chapters[static_cast<std::size_t>(i)].mission)) {
-                list.enableItem(i, false);
+        for (std::size_t line = 0; line < offered.size(); ++line) {
+            if (!isMissionPresent(story.chapters[offered[line]].mission)) {
+                list.enableItem(static_cast<int>(line), false);
             }
         }
-        return list.displayChoicesAndWaitForInput(owners_.messages.getLocalizedString(story.title),
-                                                  kNoSelection);
+        const int line = list.displayChoicesAndWaitForInput(
+            owners_.messages.getLocalizedString(story.title), kNoSelection);
+        return line < 0 ? line : static_cast<int>(offered[static_cast<std::size_t>(line)]);
     }
 
     const SChapterSelectOwners &owners_;
     const engine::CDosIo &dosio_;
+    std::span<const engine::SGameStory> stories_;
     bool full_install_;
     bool show_chapters_;
-    std::array<bool, kActStories> unlocked_{};
+    std::vector<bool> unlocked_;
+    // The stories the list offers, by index.
+    std::vector<std::size_t> listed_;
 };
+
+// The picture's index among the packages', or none.
+int findLoadingPicture(const engine::SGameContent &content, std::string_view id) {
+    const auto found = std::ranges::find(content.loading, id, &engine::SLoadingPicture::id);
+    if (id.empty() || found == content.loading.end()) {
+        return CLevelLoader::kNoImage;
+    }
+    return static_cast<int>(found - content.loading.begin());
+}
 
 } // namespace
 
-// The original also sent START to the browser when pod.ini was there, put its lists in the menu
-// font, which the main menu that calls it has them in already, and checked the chosen mission's
-// file again, which the lists' greying of every missing one makes unneeded.
+// The stories are the packages'; the original's table had four acts, each opened by its code,
+// and an epilogue listed once all four were. The original also sent START to the browser when
+// pod.ini was there, put its lists in the menu font, which the main menu that calls it has them
+// in already, and checked the chosen mission's file again, which the lists' greying of every
+// missing one makes unneeded.
 // deferred: zeroing the act's enemy and kill counts and its game and play times, with
 //   CGame::displayActStats
-// deferred: showing the story's year and title for eight seconds, or nothing after the browser,
-//   with CGame::renderOverlay and CGame::updateStatusDisplays
 // deferred: clearing the events' game flags, with CEventList::resetGameFlags
 // deferred: loading the save a run asks to reload, then the editor's font as it was, with
 //   CGame::loadGame and the play loop
@@ -221,33 +172,42 @@ private:
 void CGame::showChapterSelect(const SChapterSelectOwners &owners, EChapterSelectMode select_mode) {
     is_loading = false;
     // Without enemy.pod the install is partial: every story offers its chapters, the stories
-    // aren't greyed for a missing first mission, and Volume 2 has no 'Failure'.
+    // aren't greyed for a missing first mission, and chapters needing a full install aren't
+    // listed.
     const bool full_install =
         owners_.dosio.getFile("", "enemy.pod", platform::EFileMode::Read) != nullptr;
     std::string filename;
     // The browser's mission has no story, and the loading screen picks a picture for it.
-    int story = CLevelLoader::kRandomImage;
+    int picture = CLevelLoader::kRandomImage;
     if (select_mode == EChapterSelectMode::kMissionBrowser) {
         if (!owners.editor_tools.showFileSelectionDialog(owners.file_selection,
                                                          "Select mission to play", "world", "*.msn",
                                                          filename, false)) {
             return;
         }
+        chapter_year_ = 0;
+        chapter_title_.clear();
+        chapter_title_timer_ = 0.0F;
     } else {
-        CChapterChooser chooser(owners, owners_.dosio, full_install,
+        const engine::SGameContent &content = owners_.content;
+        CChapterChooser chooser(owners, owners_.dosio, content.stories, full_install,
                                 select_mode != EChapterSelectMode::kStories || !full_install);
         const std::optional<SChoice> choice = chooser.choose();
         if (!choice) {
             return;
         }
-        filename = kStories[choice->story].chapters[choice->chapter].mission;
-        story = static_cast<int>(choice->story);
+        const engine::SGameStory &chosen = content.stories[choice->story];
+        filename = chosen.chapters[choice->chapter].mission;
+        picture = findLoadingPicture(content, chosen.loading);
+        chapter_year_ = chosen.year;
+        chapter_title_ = owners.messages.getLocalizedString(chosen.title);
+        chapter_title_timer_ = kChapterTitleSeconds;
     }
     const bool keep_assets = common::equalsIgnoringAsciiCase(current_save_file_, filename);
     if (!keep_assets) {
         current_save_file_ = filename;
     }
-    owners.loading_screen.show(kLoadingFrames, false, story);
+    owners.loading_screen.show(kLoadingFrames, false, picture);
     owners.mission.load(filename, keep_assets);
     if (!owners.mission.createHeros(nullptr)) {
         return;

@@ -28,10 +28,6 @@ int CDemonActor::renderTransparent() {
     notPorted("renderTransparent");
 }
 
-void CDemonActor::renderBackground(int /*layer_flag*/) {
-    notPorted("renderBackground");
-}
-
 std::uint32_t CDemonActor::processFootstep(float /*volume*/) {
     notPorted("processFootstep");
 }

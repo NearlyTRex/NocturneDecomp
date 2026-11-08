@@ -5,6 +5,7 @@
 #include "common/text/textscanner.h"
 #include "engine/dosio/dosio.h"
 
+#include <algorithm>
 #include <cstddef>
 #include <format>
 #include <optional>
@@ -94,6 +95,27 @@ void CNewMsg::readMessages(common::CTextScanner &scanner, std::string_view messa
         messages_.push_back(std::move(*message));
     }
     sortMessages();
+}
+
+// They aren't held to kMaxMessages, which bounded the original's message file alone.
+void CNewMsg::addTranslations(const engine::TranslationTable &translations) {
+    for (const auto &[key, text] : translations) {
+        const auto found = std::ranges::find(messages_, key, &SMessage::key);
+        if (found != messages_.end()) {
+            found->text = text;
+        } else {
+            messages_.push_back({.key = key, .text = text});
+        }
+    }
+    sortMessages();
+}
+
+const std::string &CNewMsg::getLanguage() const {
+    return language_;
+}
+
+void CNewMsg::setLanguage(std::string_view language) {
+    language_ = language;
 }
 
 // The original's exchange sort: each place takes any later key that sorts before it. It isn't

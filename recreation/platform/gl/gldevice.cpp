@@ -21,7 +21,8 @@ std::vector<void *> makeRows(std::vector<std::byte> &pixels, int pitch, int heig
 
 CGlDevice::CGlDevice(const SGlApi &gl, IGlFramePresenter &presenter, ILog &log)
     : gl_(gl), presenter_(presenter), log_(log), quad_(gl), pipeline_(gl), textures_(gl, log),
-      scene_(gl, quad_), depth_(gl, log), batch_(kBatchVertices, kBatchIndices) {}
+      scene_(gl, quad_), depth_(gl, log), filter_(gl, quad_, log),
+      batch_(kBatchVertices, kBatchIndices) {}
 
 bool CGlDevice::setMode(int width, int height, int bits_per_pixel, std::span<void *> scanlines) {
     const std::optional<common::EPixelLayout> layout = common::layoutForDepth(bits_per_pixel);
@@ -35,6 +36,7 @@ bool CGlDevice::setMode(int width, int height, int bits_per_pixel, std::span<voi
         // engine's rows still point into it.
         in_scene_ = false;
         frame_locked_ = false;
+        overlay_.reset();
         batch_.reset();
         log_.print(ELogSubsystem::Render, "no scene target at {}x{}", width, height);
         return false;
@@ -57,6 +59,8 @@ bool CGlDevice::setMode(int width, int height, int bits_per_pixel, std::span<voi
     pointEngineAt(rows_);
     frame_locked_ = false;
     target_ahead_ = false;
+    scene_stretched_ = false;
+    overlay_.reset();
     pipeline_.setTargetSize(width, height);
     // The engine reloads its assets around a resolution change, so a name can come back
     // naming different pixels at the same dimension. A mode re-asserted unchanged keeps them.

@@ -4,6 +4,7 @@
 #include "core/menu/menupage.h"
 #include "engine/font/bitfont.h"
 #include "engine/menuinput.h"
+#include "engine/package/gamecontent.h"
 #include "engine/rawinput.h"
 #include "engine/screendevice.h"
 
@@ -19,10 +20,6 @@
 namespace nocturne::core {
 namespace {
 
-// The main menu's top, and the highest title any shipped screen draws, Sound Options', which
-// clears the logo.
-constexpr int kUntitledTop = 250;
-constexpr int kTitledTop = 225;
 // The character whose height spaces the lines.
 constexpr int kLineHeightChar = 'X';
 
@@ -65,8 +62,9 @@ void CMenu::runPage(CMenuPage &page) {
         const auto count = static_cast<int>(lines.size());
         selected_index = std::min(selected_index, count - 1);
         const std::optional<std::string> title = page.title();
-        const int top = title ? fitMenuTop(kTitledTop, getTitledRows(count))
-                              : fitMenuTop(kUntitledTop, getUntitledRows(count));
+        const engine::SMenuLayout &layout = getMenuLayout();
+        const int top = title ? fitMenuTop(layout.titled_top, getTitledRows(count))
+                              : fitMenuTop(layout.top, getUntitledRows(count));
         const std::vector<std::string> texts =
             lines | std::views::transform(&SMenuLine::text) | std::ranges::to<std::vector>();
         const int choice =

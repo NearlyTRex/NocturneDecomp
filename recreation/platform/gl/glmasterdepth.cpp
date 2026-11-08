@@ -19,17 +19,37 @@ CGlMasterDepth::~CGlMasterDepth() {
     for (SSlot &slot : slots_) {
         destroy(slot);
     }
+    destroy(held_);
 }
 
 bool CGlMasterDepth::save(int slot, GLuint scene, int width, int height) {
-    const SSlot *const saved = prepare(slot, scene, width, height);
-    if (saved == nullptr) {
+    if (!isSlot(slot)) {
         return false;
     }
-    gl_.BindFramebuffer(GL_READ_FRAMEBUFFER, scene);
-    gl_.BindFramebuffer(GL_DRAW_FRAMEBUFFER, saved->framebuffer);
-    gl_.BlitFramebuffer(0, 0, width, height, 0, 0, width, height, GL_DEPTH_BUFFER_BIT, GL_NEAREST);
-    gl_.BindFramebuffer(GL_FRAMEBUFFER, scene);
+    SSlot &saved = slots_.at(static_cast<std::size_t>(slot));
+    if (!prepare(saved, scene, width, height)) {
+        log_.print(ELogSubsystem::Render, "master depth slot {} incomplete at {}x{}", slot, width,
+                   height);
+        return false;
+    }
+    copy(scene, saved.framebuffer, scene, width, height);
+    return true;
+}
+
+bool CGlMasterDepth::hold(GLuint scene, int width, int height) {
+    if (!prepare(held_, scene, width, height)) {
+        log_.print(ELogSubsystem::Render, "held depth incomplete at {}x{}", width, height);
+        return false;
+    }
+    copy(scene, held_.framebuffer, scene, width, height);
+    return true;
+}
+
+bool CGlMasterDepth::giveBack(GLuint scene, int width, int height) {
+    if (held_.framebuffer == 0) {
+        return false;
+    }
+    copy(held_.framebuffer, scene, scene, width, height);
     return true;
 }
 
@@ -54,13 +74,9 @@ bool CGlMasterDepth::restore(int slot, GLuint scene, const SDepthRect &rect, int
     return true;
 }
 
-CGlMasterDepth::SSlot *CGlMasterDepth::prepare(int slot, GLuint scene, int width, int height) {
-    if (!isSlot(slot)) {
-        return nullptr;
-    }
-    SSlot &saved = slots_.at(static_cast<std::size_t>(slot));
+bool CGlMasterDepth::prepare(SSlot &saved, GLuint scene, int width, int height) {
     if (saved.framebuffer != 0 && saved.width == width && saved.height == height) {
-        return &saved;
+        return true;
     }
     destroy(saved);
     gl_.GenRenderbuffers(1, &saved.depth);
@@ -78,13 +94,18 @@ CGlMasterDepth::SSlot *CGlMasterDepth::prepare(int slot, GLuint scene, int width
     gl_.BindFramebuffer(GL_FRAMEBUFFER, scene);
     if (!complete) {
         destroy(saved);
-        log_.print(ELogSubsystem::Render, "master depth slot {} incomplete at {}x{}", slot, width,
-                   height);
-        return nullptr;
+        return false;
     }
     saved.width = width;
     saved.height = height;
-    return &saved;
+    return true;
+}
+
+void CGlMasterDepth::copy(GLuint from, GLuint to, GLuint scene, int width, int height) const {
+    gl_.BindFramebuffer(GL_READ_FRAMEBUFFER, from);
+    gl_.BindFramebuffer(GL_DRAW_FRAMEBUFFER, to);
+    gl_.BlitFramebuffer(0, 0, width, height, 0, 0, width, height, GL_DEPTH_BUFFER_BIT, GL_NEAREST);
+    gl_.BindFramebuffer(GL_FRAMEBUFFER, scene);
 }
 
 void CGlMasterDepth::destroy(SSlot &slot) const {

@@ -3,6 +3,8 @@
 #include "core/actor/actor.h"
 #include "core/actor/actorarchive.h"
 #include "core/actor/demonactortype.h"
+#include "core/charactr/deathstate.h"
+#include "core/event/eventconditions.h"
 #include "core/motion/motionlist.h"
 #include "core/skeleton/deformablemodel.h"
 #include "core/skeleton/deformablemodelinstance.h"
@@ -72,12 +74,22 @@ constinit const CDemonActorType CStranger::kType =
 // deferred: the defaults the constructor gives the Stranger's aiming, recoil, melee, turning,
 //   carried object and airborne fields, with the steps that read them
 // nocedit 0x005bb120
-CStranger::CStranger(CActor &classes) : CHero(classes), hat_(classes.getKeyFramedModels()) {
+CStranger::CStranger(CActor &classes)
+    : CHero(classes), events_(classes.getEvents()), hat_(classes.getKeyFramedModels()) {
     getModel().init("stranger.dfm");
 }
 
 // nocedit 0x005c69c0
 CStranger::~CStranger() = default;
+
+// A mission keeps him alive through anything while strangerCannotDie holds.
+// nocedit 0x005c67c0
+EDeathState CStranger::getDeathState() {
+    if (events_.evaluateCondition("strangerCannotDie")) {
+        return EDeathState::DEATH_STATE_ALIVE;
+    }
+    return CCharacter::getDeathState();
+}
 
 // The original keeps the bones and motions for every Stranger in one global; here each keeps his
 // own. Each bone, motion and part is fatal when his model hasn't it. He is left in the pickup pose

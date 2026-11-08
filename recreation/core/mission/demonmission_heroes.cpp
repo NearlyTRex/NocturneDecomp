@@ -91,4 +91,8 @@ CHero *CDemonMission::getHero(std::size_t index) const {
     return heroes_.at(index);
 }
 
+CHero *CDemonMission::getLocalHero() const {
+    return heroes_.front();
+}
+
 } // namespace nocturne::core

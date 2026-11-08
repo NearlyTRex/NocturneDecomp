@@ -186,6 +186,12 @@ TEST(C3DSCameraPVS, AMissingCountKeepsTheListItHad) {
     EXPECT_THAT(reloaded.getPVSList(), ElementsAre(5, 6));
 }
 
+TEST(C3DSCameraPVS, ASetListReplacesTheLoadedOne) {
+    C3DSCamera camera = withPVS("1\n\t5\n");
+    camera.setPVSList({7, 8});
+    EXPECT_THAT(camera.getPVSList(), ElementsAre(7, 8));
+}
+
 TEST(C3DSCameraPVS, FreeEmptiesTheList) {
     C3DSCamera freed = withPVS("1\n\t5\n");
     freed.free();

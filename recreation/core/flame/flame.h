@@ -25,7 +25,7 @@ public:
     void setup() override;
     void process(float delta_time) override;
     int renderTransparent() override;
-    void renderBackground(int layer_flag) override;
+    void renderBackground(int layer_flag, const SActorRenderOwners &owners) override;
     // From the flame's base, a tenth of a unit below it to a tenth above its height.
     CBoundingBox3D *getBoundingBox(CBoundingBox3D *out_box) override;
     ECollisionType getCollisionType(SCollisionInfo *collision_info) override;

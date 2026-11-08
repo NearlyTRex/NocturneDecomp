@@ -15,11 +15,6 @@ namespace {
 
 } // namespace
 
-void CDemonCamera::setupPerspectiveAndFog(common::CVector3f * /*position*/,
-                                          platform::SProjectedVertex * /*projected_vertex*/) {
-    notPorted("setupPerspectiveAndFog");
-}
-
 int CDemonCamera::getFogValueAtPosition(common::CVector3i * /*world_position*/,
                                         platform::SProjectedVertex * /*projected_vertex*/) {
     notPorted("getFogValueAtPosition");

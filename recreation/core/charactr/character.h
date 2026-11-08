@@ -35,7 +35,7 @@ public:
     void setup() override;
     int renderOpaque() override;
     int renderTransparent() override;
-    void renderBackground(int layer_flag) override;
+    void renderBackground(int layer_flag, const SActorRenderOwners &owners) override;
     // The box computeBoundingBox last took.
     CBoundingBox3D *getBoundingBox(CBoundingBox3D *out_box) override;
     ECollisionType getCollisionType(SCollisionInfo *collision_info) override;
@@ -157,6 +157,8 @@ protected:
     void archiveLayerAction(CActorArchive &actor_archive);
     void clearGrabbedType();
     void setHealthBarMode(EHealthBarMode health_bar_mode);
+    // Drawn into the camera's backdrop: a body left lying where it fell.
+    void setRenderActive(bool render_active);
 
 private:
     static constexpr float kFullHitPoints = 100.0F;
@@ -166,6 +168,7 @@ private:
     static constexpr common::CVector3f kNoWind{};
 
     CDeformableModelInstance model_;
+    bool render_active_ = false;
     float hit_points_ = kFullHitPoints;
     float max_hit_points_ = kFullHitPoints;
     std::array<CDemonActor *, kCarryHands> carried_actors_{};

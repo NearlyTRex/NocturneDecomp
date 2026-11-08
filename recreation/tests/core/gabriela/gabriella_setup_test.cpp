@@ -4,6 +4,7 @@
 #include "core/gabriela/gabriella.h"
 #include "tests/mocks/core/deformablemodelfixture.h"
 #include "tests/mocks/core/gameparts.h"
+#include "tests/mocks/core/mockeventconditions.h"
 #include "tests/mocks/core/mockkeyframedmodels.h"
 #include "tests/mocks/engine/mockgameclock.h"
 
@@ -110,7 +111,8 @@ protected:
     CGameParts game_parts_{clock_, dosio_};
     common::CWatcomRandom crt_;
     ::testing::NiceMock<MockKeyFramedModels> keyframed_models_;
-    CActor classes_{game_parts_.getGame(), crt_, models_, keyframed_models_};
+    ::testing::NiceMock<MockEventConditions> actor_events_;
+    CActor classes_{game_parts_.getGame(), crt_, models_, keyframed_models_, actor_events_};
     CGabriella gabriella_{classes_};
 };
 

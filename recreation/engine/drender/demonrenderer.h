@@ -28,18 +28,24 @@ public:
     static constexpr int kDefaultTexturedFlags = 0x2cd;
 
     // The polygons are drawn from vertex_buffer's corners.
-    CDemonRenderer(CMatrix &matrix, const C2d &two_d, C3d &three_d,
+    CDemonRenderer(CMatrix &matrix, CLight &light, C2d &two_d, C3d &three_d,
                    std::span<platform::SRenderVertex> vertex_buffer, CSpecial &special, CPrim &prim,
                    CZRaster &zraster, const SCurrentTexture &texture, CTexture &textures,
-                   const IScreenDevice &screen, GeometryClipper clip_geometry);
+                   IScreenDevice &screen, GeometryClipper clip_geometry);
 
     // The buffer the polygons' corners index.
     [[nodiscard]] std::span<platform::SRenderVertex> getVertexBuffer() const;
 
-    void renderSolidColorDepthDirect(platform::SMRGLHeaderPrimitive *prim);
+    // The buffer's corners filled in the active render colour where they are nearer than the
+    // depth already there, writing their depth; nothing for a polygon facing away while plane
+    // culling is on.
+    void renderSolidColorDepthDirect(const platform::SMRGLHeaderPrimitive &prim);
     void renderSolidColorPoly(SMRGLPrimitivePoly *poly);
     void renderZPrepassPoly(SMRGLPrimitivePoly *poly);
-    int renderDepthProfiledDirect(platform::SMRGLHeaderPrimitive *prim);
+    // Whether any of the polygon would show in front of the depth already there, testing every
+    // other pixel of every other row and writing nothing; false for a polygon facing away while
+    // plane culling is on.
+    [[nodiscard]] bool renderDepthProfiledDirect(const platform::SMRGLHeaderPrimitive &prim);
     // Skips a polygon facing away while plane culling is on, and draws the buffer's corners
     // through the perspective scanline; -1 takes kDefaultTexturedFlags.
     void renderTexturedDirect(const platform::SMRGLHeaderPrimitive &prim, int render_flags);
@@ -81,7 +87,7 @@ public:
     [[nodiscard]] int countVisiblePixelsPoly(const platform::SMRGLPrimitiveQuad &poly,
                                              std::span<std::uint32_t *const> depth_rows);
     void setLightIntensity(float intensity);
-    void setLightDirection(common::CVector3i *direction);
+    void setLightDirection(const common::CVector3i &direction);
     [[nodiscard]] common::CVector3i getCameraOriginFixed() const;
     common::CVector3f *getCameraOriginWorld(common::CVector3f *output);
     common::CVector3i *getCameraRotationFixed(common::CVector3i *output);
@@ -93,6 +99,8 @@ public:
     void renderCustomScanline(platform::SMRGLHeaderPrimitive *prim,
                               CustomScanlineFunc *scanline_renderer);
     void setCurrentPolygonColor(int color);
+    // The active render colour from 8-bit levels: packed into the screen's channels at 32 bits,
+    // 8-8-8 otherwise.
     void setRGBAColor(int red_component, int green_component, int blue_component);
     void setPlaneCullingEnabled(bool enabled);
     // Culling on tests each polygon's winding instead of its plane, keeping clockwise faces.
@@ -121,7 +129,11 @@ public:
     void processCapturedFaces();
     // Makes the texture current for the polygons that follow.
     void captureTexture(platform::SMRGLTextureBasic &texture);
-    void updateTexture(platform::SMRGLTextureBasic *texture, SRGBColorPalette *palette);
+    // The texture made current last: its texels and palette are the cache's own.
+    [[nodiscard]] const SCurrentTexture &getSelectedTexture() const;
+    // Makes the texture current again and hands the hardware renderer it with this palette, as
+    // just loaded.
+    void updateTexture(platform::SMRGLTextureBasic &texture, std::span<std::uint8_t> palette);
     int depthTest(platform::SRenderVertex *vertex_ptr);
 
 private:
@@ -134,7 +146,8 @@ private:
                          int render_flags);
 
     CMatrix &matrix_;
-    const C2d &two_d_;
+    CLight &light_;
+    C2d &two_d_;
     C3d &three_d_;
     std::span<platform::SRenderVertex> vertex_buffer_;
     CSpecial &special_;
@@ -142,7 +155,7 @@ private:
     CZRaster &zraster_;
     const SCurrentTexture &texture_;
     CTexture &textures_;
-    const IScreenDevice &screen_;
+    IScreenDevice &screen_;
     GeometryClipper clip_geometry_;
     bool plane_culling_enabled_ = true;
     // Ghidra's name; whether corners may come in eye space, as the vertex processing flag says.

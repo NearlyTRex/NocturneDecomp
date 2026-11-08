@@ -3,6 +3,7 @@
 #include "common/math/fixed.h"
 #include "engine/polygonstate.h"
 #include "engine/prim/prim.h"
+#include "engine/screendevice.h"
 #include "engine/softwareedge.h"
 #include "platform/rendervertex.h"
 
@@ -16,7 +17,7 @@
 namespace nocturne::engine::raster {
 
 // The first row starts here before any edge lowers it.
-inline constexpr int kFirstRowCeiling = 1200;
+inline constexpr int kFirstRowCeiling = kMaxScreenHeight;
 
 [[nodiscard]] inline int getRow(const platform::SRenderVertex &vertex) {
     return vertex.projected_vertex.screen_y >> 16;

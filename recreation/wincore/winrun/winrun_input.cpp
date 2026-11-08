@@ -1,3 +1,4 @@
+#include "engine/gamepadinput.h"
 #include "engine/screendevice.h"
 #include "platform/window.h"
 #include "wincore/winrun/winrun.h"
@@ -51,6 +52,10 @@ void CWinRun::processWindowMessages() {
     platform::SWindowEvent event;
     while (window_.pollEvent(event)) {
         mainWindowProc(event);
+    }
+    gamepad_.pump(keyboard_state_, window_active_ == 1);
+    for (const int character : gamepad_.getTypedCharacters()) {
+        enqueueInput(character);
     }
 }
 
@@ -199,6 +204,7 @@ void CWinRun::clearInput() {
     clearKeypresses();
     clearMouseClicks();
     keyboard_state_.fill(0);
+    gamepad_.clearMenuActions();
 }
 
 bool CWinRun::getInputDisabled() const {

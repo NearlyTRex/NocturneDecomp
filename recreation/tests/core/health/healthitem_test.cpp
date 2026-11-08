@@ -1,8 +1,12 @@
 #include "core/actor/demonactortype.h"
+#include "core/box/boundingbox3d.h"
+#include "core/dmodel/keyframedmodel.h"
 #include "core/health/healthitem.h"
 #include "tests/mocks/core/notportedcalls.h"
+#include "tests/mocks/core/oneframemodel.h"
 #include "tests/mocks/core/testclasses.h"
 #include "tests/mocks/core/testfieldsarchive.h"
+#include "tests/mocks/engine/podfixture.h"
 
 #include <gmock/gmock.h>
 #include <gtest/gtest.h>
@@ -104,12 +108,24 @@ TEST(CHealthItem, TheFunctionsNotPortedYetQuit) {
     CHealthItem item{classes.get()};
     const NotPortedCalls calls = {
         {"renderOpaque", [&] { static_cast<void>(item.renderOpaque()); }},
-        {"getBoundingBox", [&] { static_cast<void>(item.getBoundingBox(nullptr)); }},
         {"getCollisionType", [&] { static_cast<void>(item.getCollisionType(nullptr)); }},
         {"onPickup", [&] { item.onPickup(nullptr); }},
         {"canPickup", [&] { static_cast<void>(item.canPickup(nullptr)); }},
     };
     expectEachQuitsNotPorted("CHealthItem", calls);
+}
+
+class CHealthItemBoundsTest : public engine::CPodFixture {};
+
+TEST_F(CHealthItemBoundsTest, ItsBoxIsItsModelsFirstFrames) {
+    givenFile("models\\bullet.kfm", oneFrameModel());
+    CTestClasses classes{dosio_};
+    classes.getKeyFramedModel().load("bullet.kfm");
+    CHealthItem item{classes.get()};
+    item.setup();
+    CBoundingBox3D box;
+    EXPECT_EQ(item.getBoundingBox(&box), &box);
+    expectOneFrameBounds(box);
 }
 
 TEST(CHealthItem, SettingUpFindsItsModel) {

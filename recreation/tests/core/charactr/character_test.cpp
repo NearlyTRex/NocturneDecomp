@@ -6,12 +6,18 @@
 #include "core/actor/demonactor.h"
 #include "core/actor/demonactortype.h"
 #include "core/charactr/character.h"
+#include "core/charactr/deathstate.h"
 #include "core/charactr/healthbarmode.h"
 #include "core/cloth/clothlist.h"
 #include "core/game/game.h"
+#include "core/npc/npc.h"
+#include "core/skeleton/deformablemodelinstance.h"
+#include "tests/mocks/core/actorrenderfixture.h"
+#include "tests/mocks/core/charactermodelfixture.h"
 #include "tests/mocks/core/gameparts.h"
 #include "tests/mocks/core/mockactorlookup.h"
 #include "tests/mocks/core/mockdeformablemodels.h"
+#include "tests/mocks/core/mockeventconditions.h"
 #include "tests/mocks/core/mockkeyframedmodels.h"
 #include "tests/mocks/core/notportedcalls.h"
 #include "tests/mocks/core/testactor.h"
@@ -21,6 +27,7 @@
 #include <gmock/gmock.h>
 #include <gtest/gtest.h>
 
+#include <array>
 #include <format>
 #include <string>
 #include <string_view>
@@ -49,8 +56,8 @@ TEST(CCharacter, PublicInterface) {
     static_assert(std::is_same_v<decltype(&CCharacter::setup), void (CCharacter::*)()>);
     static_assert(std::is_same_v<decltype(&CCharacter::renderOpaque), int (CCharacter::*)()>);
     static_assert(std::is_same_v<decltype(&CCharacter::renderTransparent), int (CCharacter::*)()>);
-    static_assert(
-        std::is_same_v<decltype(&CCharacter::renderBackground), void (CCharacter::*)(int)>);
+    static_assert(std::is_same_v<decltype(&CCharacter::renderBackground),
+                                 void (CCharacter::*)(int, const SActorRenderOwners &)>);
     static_assert(std::is_same_v<decltype(&CCharacter::getBoundingBox),
                                  CBoundingBox3D *(CCharacter::*)(CBoundingBox3D *)>);
     static_assert(std::is_same_v<decltype(&CCharacter::getCollisionType),
@@ -265,7 +272,8 @@ protected:
     common::CWatcomRandom crt_;
     ::testing::NiceMock<MockDeformableModels> models_;
     ::testing::NiceMock<MockKeyFramedModels> keyframed_models_;
-    CActor classes_{game_, crt_, models_, keyframed_models_};
+    ::testing::NiceMock<MockEventConditions> actor_events_;
+    CActor classes_{game_, crt_, models_, keyframed_models_, actor_events_};
     ::testing::NiceMock<MockActorLookup> actors_;
     CTestCharacter character_{classes_};
     CCarriable crate_{kTestBaseType};
@@ -365,7 +373,6 @@ TEST(CCharacter, TheFunctionsNotPortedYetQuit) {
     const NotPortedCalls calls = {
         {"renderOpaque", [&] { static_cast<void>(character.renderOpaque()); }},
         {"renderTransparent", [&] { static_cast<void>(character.renderTransparent()); }},
-        {"renderBackground", [&] { character.renderBackground(0); }},
         {"getCollisionType", [&] { static_cast<void>(character.getCollisionType(nullptr)); }},
         {"canLookAt", [&] { static_cast<void>(character.canLookAt()); }},
         {"setPositionAndOrientation",
@@ -387,7 +394,6 @@ TEST(CCharacter, TheFunctionsNotPortedYetQuit) {
         {"testDamageLine",
          [&] { static_cast<void>(character.testDamageLine(nullptr, nullptr, nullptr, nullptr)); }},
         {"processDamage", [&] { character.processDamage(nullptr); }},
-        {"getDeathState", [&] { static_cast<void>(character.getDeathState()); }},
         {"attractActorToward",
          [&] { static_cast<void>(character.attractActorToward(nullptr, nullptr)); }},
         {"canBeAttracted", [&] { static_cast<void>(character.canBeAttracted(nullptr)); }},
@@ -403,8 +409,83 @@ TEST(CCharacter, TheFunctionsNotPortedYetQuit) {
         {"setWalkTimeout", [&] { character.setWalkTimeout(0.0F); }},
         {"isWalkComplete", [&] { static_cast<void>(character.isWalkComplete()); }},
     };
-    EXPECT_EQ(calls.size(), 34U);
+    EXPECT_EQ(calls.size(), 32U);
     expectEachQuitsNotPorted("CCharacter", calls);
+}
+
+// A character's motions, one state each, with a dying one, a dead one and their look-alikes.
+class CCharacterDeathStateTest : public CCharacterModelFixture {
+protected:
+    static constexpr auto kMotions =
+        std::to_array<std::string_view>({"stand", "die_front", "Dead", "deadly", "undie"});
+
+    static constexpr std::array<std::string_view, 1> kHead = {"Bip01 Head"};
+
+    CCharacterDeathStateTest() {
+        givenCharacterModel("priest.dfm", kHead, kOnePart, "", kMotions);
+        character_.setup();
+    }
+
+    EDeathState deathStateIn(int motion_index) {
+        character_.getModel().jumpToMotion(motion_index, 0.0F);
+        return character_.getDeathState();
+    }
+
+    CNPC character_{classes_};
+};
+
+// A state starting DIE is dying, and only DEAD itself is dead, in either case.
+TEST_F(CCharacterDeathStateTest, TheMotionsStateSaysHowFarThroughDyingItIs) {
+    EXPECT_EQ(deathStateIn(0), EDeathState::DEATH_STATE_ALIVE);
+    EXPECT_EQ(deathStateIn(1), EDeathState::DEATH_STATE_DYING);
+    EXPECT_EQ(deathStateIn(2), EDeathState::DEATH_STATE_DEAD);
+    EXPECT_EQ(deathStateIn(3), EDeathState::DEATH_STATE_ALIVE);
+    EXPECT_EQ(deathStateIn(4), EDeathState::DEATH_STATE_ALIVE);
+}
+
+TEST_F(CCharacterDeathStateTest, ADestroyedCharacterIsDeadWhateverItsMotion) {
+    character_.setLifecycleState(EActorLifecycleState::kDestroyed);
+    EXPECT_EQ(deathStateIn(0), EDeathState::DEATH_STATE_DEAD);
+}
+
+// A character with a unit box from its place, which the test can mark as drawn into the backdrop.
+class CBackdropCharacter : public CTestCharacter {
+public:
+    using CCharacter::setRenderActive;
+    using CTestCharacter::CTestCharacter;
+
+    CBoundingBox3D *getBoundingBox(CBoundingBox3D *out_box) override {
+        *out_box = {.min = {}, .max = {.x = 1.0F, .y = 1.0F, .z = 1.0F}};
+        return out_box;
+    }
+};
+
+class CCharacterBackgroundTest : public CActorRenderFixture {
+protected:
+    CCharacterBackgroundTest() {
+        placeInView(character_);
+        markBoxUntested();
+    }
+
+    CTestClasses classes_;
+    CBackdropCharacter character_{classes_.get()};
+};
+
+TEST_F(CCharacterBackgroundTest, ACharacterNotInTheBackdropIsLeftOut) {
+    character_.renderBackground(1, render_owners_);
+    EXPECT_FALSE(boxTested());
+}
+
+// Its draw isn't ported, so a body seen in the backdrop quits there.
+TEST_F(CCharacterBackgroundTest, ACharacterInTheBackdropIsDrawnWhileItsBoxIsVisible) {
+    character_.setRenderActive(true);
+    hideEverything();
+    character_.renderBackground(0, render_owners_);
+    EXPECT_TRUE(boxTested());
+    depths_.fill(kFarthest);
+    EXPECT_THAT([this] { character_.renderBackground(0, render_owners_); },
+                ::testing::ThrowsMessage<common::CFatalError>(
+                    ::testing::StrEq("CCharacter::renderCharacter is not ported yet")));
 }
 
 } // namespace

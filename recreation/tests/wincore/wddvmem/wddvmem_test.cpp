@@ -5,6 +5,7 @@
 #include "engine/matrix/matrix.h"
 #include "engine/special/special.h"
 #include "engine/texture/currenttexture.h"
+#include "tests/mocks/engine/gamepadinputparts.h"
 #include "tests/mocks/engine/podfixture.h"
 #include "tests/mocks/platform/mockclock.h"
 #include "tests/mocks/platform/mockdisplay.h"
@@ -86,7 +87,8 @@ protected:
     NiceMock<platform::MockWindow> window_;
     NiceMock<platform::MockClock> clock_;
     NiceMock<platform::MockLog> log_;
-    CWinRun winrun_{window_, clock_};
+    engine::SGamepadInputParts gamepad_;
+    CWinRun winrun_{window_, clock_, gamepad_.input};
     CWddVMem wddvmem_{display_, renderer_, winrun_, special_, two_d_, clock_, log_};
     engine::C2d two_d_{dosio_, wddvmem_, winrun_};
     engine::CLight light_;
@@ -127,9 +129,10 @@ TEST_F(CWddVMemTest, ARefusedModeLeavesTheScreenAsItWas) {
     EXPECT_EQ(wddvmem_.getScreenRows()[0], first_row);
 }
 
-TEST_F(CWddVMemTest, AModeWithNoRowsOrMoreThanTheTallestIsRefused) {
+TEST_F(CWddVMemTest, AModeWithNoRowsOrMoreThanTheLargestIsRefused) {
     EXPECT_CALL(display_, setDisplayMode).Times(0);
-    EXPECT_FALSE(wddvmem_.setScreenResolution(1600, 1201, 32));
+    EXPECT_FALSE(wddvmem_.setScreenResolution(3840, 2161, 32));
+    EXPECT_FALSE(wddvmem_.setScreenResolution(3841, 2160, 32));
     EXPECT_FALSE(wddvmem_.setScreenResolution(0, 480, 32));
     EXPECT_FALSE(wddvmem_.setScreenResolution(640, 0, 32));
 }

@@ -35,6 +35,24 @@ TEST_F(CNewMsgTest, WithNoTableEveryKeyIsItsOwnText) {
     EXPECT_FALSE(messages_.getUseOSFonts());
 }
 
+TEST_F(CNewMsgTest, TheLanguageIsEnglishUntilSet) {
+    EXPECT_EQ(messages_.getLanguage(), "en");
+    messages_.setLanguage("de");
+    EXPECT_EQ(messages_.getLanguage(), "de");
+}
+
+// A package's text for a key replaces the message file's; a key the file hasn't is added.
+TEST_F(CNewMsgTest, TranslationsGoOverTheMessageFile) {
+    givenMessages("\"No\", \"Non\"\r\n\"Yes\", \"Oui\"\r\n");
+    messages_.readMessageFile("msglist.txt");
+    messages_.addTranslations({{"Yes", "Ja"}, {"Back", "Zurück"}, {"Abort", "Abbruch"}});
+    EXPECT_EQ(messages_.getLocalizedString("Yes"), "Ja");
+    EXPECT_EQ(messages_.getLocalizedString("No"), "Non");
+    EXPECT_EQ(messages_.getLocalizedString("Back"), "Zurück");
+    EXPECT_EQ(messages_.getLocalizedString("Abort"), "Abbruch");
+    EXPECT_EQ(messages_.getLocalizedString("Other"), "Other");
+}
+
 TEST_F(CNewMsgTest, AMissingOrEmptyFileLoadsNothing) {
     messages_.readMessageFile("msglist.txt");
     givenFile("empty.txt", "");

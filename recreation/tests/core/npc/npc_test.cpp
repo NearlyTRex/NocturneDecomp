@@ -1,12 +1,14 @@
 #include "core/actor/demonactortype.h"
 #include "core/npc/npc.h"
 #include "core/skeleton/deformablemodelinstance.h"
+#include "tests/mocks/core/actorrenderfixture.h"
 #include "tests/mocks/core/notportedcalls.h"
 #include "tests/mocks/core/testclasses.h"
 #include "tests/mocks/core/testfieldsarchive.h"
 
 #include <gtest/gtest.h>
 
+#include <format>
 #include <memory>
 #include <type_traits>
 
@@ -32,7 +34,8 @@ TEST(CNPC, Constructors) {
 TEST(CNPC, PublicInterface) {
     static_assert(std::is_same_v<decltype(&CNPC::setup), void (CNPC::*)()>);
     static_assert(std::is_same_v<decltype(&CNPC::process), void (CNPC::*)(float)>);
-    static_assert(std::is_same_v<decltype(&CNPC::renderBackground), void (CNPC::*)(int)>);
+    static_assert(std::is_same_v<decltype(&CNPC::renderBackground),
+                                 void (CNPC::*)(int, const SActorRenderOwners &)>);
     static_assert(std::is_same_v<decltype(&CNPC::getPathMap), CPathMap *(CNPC::*)()>);
     static_assert(
         std::is_same_v<decltype(&CNPC::getActorType), const CDemonActorType &(CNPC::*)() const>);
@@ -115,11 +118,44 @@ TEST(CNPC, TheFunctionsNotPortedYetQuit) {
     CNPC npc(classes.get());
     const NotPortedCalls calls = {
         {"process", [&] { npc.process(0.0F); }},
-        {"renderBackground", [&] { npc.renderBackground(0); }},
         {"getPathMap", [&] { static_cast<void>(npc.getPathMap()); }},
         {"processDamage", [&] { npc.processDamage(nullptr); }},
     };
     expectEachQuitsNotPorted("CNPC", calls);
+}
+
+// An NPC from a version 5 file, in view, whose box is tested only once it is drawn.
+class CNPCBackgroundTest : public CActorRenderFixture {
+protected:
+    void readNPC(bool left_blood_pool) {
+        CTestFieldsArchive archive(
+            npc_, CNPC::kType, 5,
+            std::format("75\n\"p.dfm\"\n{{\n0,0\n}}\n0\n{} // poolMe\n", left_blood_pool ? 1 : 0));
+        npc_.archive(archive.get());
+        placeInView(npc_);
+        markBoxUntested();
+    }
+
+    CTestClasses classes_;
+    CNPC npc_{classes_.get()};
+};
+
+// From its first time in the layer on, the body it left is drawn into the backdrop.
+TEST_F(CNPCBackgroundTest, ABodyLeftLyingIsDrawnFromItsLayerOn) {
+    readNPC(true);
+    npc_.renderBackground(0, render_owners_);
+    EXPECT_FALSE(boxTested());
+    npc_.renderBackground(1, render_owners_);
+    EXPECT_TRUE(boxTested());
+    markBoxUntested();
+    npc_.renderBackground(0, render_owners_);
+    EXPECT_TRUE(boxTested());
+}
+
+TEST_F(CNPCBackgroundTest, AnNPCThatLeftNoBodyIsLeftOut) {
+    readNPC(false);
+    npc_.renderBackground(1, render_owners_);
+    EXPECT_FALSE(boxTested());
 }
 
 } // namespace

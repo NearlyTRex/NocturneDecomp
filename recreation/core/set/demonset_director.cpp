@@ -4,8 +4,8 @@
 #include "common/math/vector3f.h"
 #include "common/math/vector3i.h"
 #include "core/actor/demonactor.h"
-#include "core/actor/notported.h"
 #include "core/box/boundingbox3d.h"
+#include "core/dskybox/dskybox.h"
 #include "core/game/game.h"
 #include "core/location.h"
 #include "core/set/demonset.h"
@@ -32,6 +32,8 @@ constexpr int kCamerasScoredPerSecond = 10;
 constexpr int kFewestCamerasScored = 3;
 // The actors' dirty flags the camera's background display list is built from.
 constexpr std::uint32_t kBackgroundDisplayListFlags = 0x10;
+// How far out from the camera the background's geometry is drawn: everything.
+constexpr float kBackgroundReach = 9999.9F;
 // How long a camera switched away from is held back from being chosen again.
 constexpr float kPreviousBestHold = 3.0F;
 // The actor's sphere: its box's largest bound, half as much again, and one more.
@@ -321,10 +323,27 @@ float CDemonSet::calculateActorVisibility(std::size_t camera_index, const CDemon
 // deferred: the full lighting mode and the directional light ratio while the background draws,
 //   and no spot, omni or corona lights gathered yet, the coronas kept for the same camera (the
 //   decomp's windowed reswitch fix), with renderScene
-// deferred: the raytrace geometry drawn in its plain mode, with renderFrustumCubes
-// deferred: drawing the camera's background, its shadows and lights, its reverb and weather, then
-//   the scene's static lights, and noting each actor as drawn again, with renderSceneGeometry and
-//   what follows it
+// deferred: the actors' backgrounds lit without the quality modes while the depths are taken
+//   (g_InMirrorRenderPass), with lightVerticies' quality modes
+// The original also reset the raytrace's drawing mode, which only the editor changes.
+// deferred: the backdrop's world positions, normals and depths taken from what was drawn, with
+//   CDemonCamera::precomputeNormals' reader renderScene
+// deferred: the still water, in hardware after the geometry and in the lit frame, with
+//   CWater::render
+// deferred: the spot and omni lights the camera sees, the lights' switches, the spotlights'
+//   shadow maps and their light over the backdrop, then the scene's static lights' shadow maps,
+//   with their reader renderScene, CDemonSet::process, the CDemonLight scene functions,
+//   CDemonCamera::precomputeLight and renderStaticLights
+// deferred: the normal lighting mode, no perspective reciprocal and the directional light ratio
+//   off for the lit frame, with lightVerticies' quality modes and renderScene
+// deferred: the gore and fire decals in the lit frame, with CGore::renderDecals,
+//   CFireEffect::renderDecals and their decal pools' writers
+// deferred: checking the camera's or the set's reverb preset, with CSound::setReverbPreset (the
+//   preset's listener vector went only to DirectSound)
+// deferred: the weather's origin and turn at the camera, with CWeather::setOriginAndRotation's
+//   readers
+// The original also worked out each renderable actor's box corners in 24.8 into a local nothing
+// reads.
 // nocedit 0x0056ae50
 void CDemonSet::setCameraView(int index) {
     if (static_cast<std::size_t>(index) >= cameras_.size()) {
@@ -346,7 +365,29 @@ void CDemonSet::setCameraView(int index) {
     owners_.camera.beginScene(0);
     owners_.camera.beginBackgroundScene();
     buildDisplayList(kBackgroundDisplayListFlags);
-    quitNotPorted("CDemonSet", "renderSceneGeometry");
+    renderSceneGeometry(kBackgroundReach, kDrawCameraPVS);
+    owners_.camera.saveZBufferScanlines();
+    renderBackgroundActors(1);
+    owners_.camera.restoreZBufferScanlines();
+    owners_.camera.loadImage(camera.getName() + ".raw");
+    renderBackgroundActors(1);
+    owners_.camera.endBackgroundScene(0);
+    if (owners_.special.getUseExternalRenderer()) {
+        renderSceneGeometry(kBackgroundReach, kDrawReachedGeometry);
+        renderBackgroundActors(1);
+    }
+    owners_.camera.endScene(0);
+    owners_.camera.beginScene(1);
+    owners_.camera.beginBackgroundScene();
+    if (has_sky_) {
+        owners_.sky_dome.renderSkyDome(sky_texture_name_, sky_brightness_);
+    }
+    renderBackgroundActors(1);
+    owners_.camera.endBackgroundScene(0);
+    owners_.camera.endScene(0);
+    for (CDemonActor *actor : actors_) {
+        snapshotActorTransformState(*actor);
+    }
 }
 
 // nocedit 0x00575b00
@@ -388,6 +429,21 @@ std::span<const float> CDemonSet::getCameraScores() const {
 
 bool CDemonSet::wasLastSwitchAreaInvalid() const {
     return last_switch_area_invalid_;
+}
+
+// The original also took two flags it never read.
+// nocedit 0x0056b7e0
+void CDemonSet::reinitCamera(int screen_height) {
+    owners_.camera.init(screen_height);
+    setCameraView(selected_camera_index_);
+}
+
+// nocedit 0x00570e20
+void CDemonSet::setCameraAmbientValue(int index, float value) {
+    cameras_.at(static_cast<std::size_t>(index)).setAmbientValue(value);
+    if (index == selected_camera_index_) {
+        owners_.camera.setEffectIntensity(value);
+    }
 }
 
 } // namespace nocturne::core

@@ -29,7 +29,8 @@ TEST(CMimic, PublicInterface) {
     static_assert(std::is_same_v<decltype(&CMimic::process), void (CMimic::*)(float)>);
     static_assert(std::is_same_v<decltype(&CMimic::renderOpaque), int (CMimic::*)()>);
     static_assert(std::is_same_v<decltype(&CMimic::renderTransparent), int (CMimic::*)()>);
-    static_assert(std::is_same_v<decltype(&CMimic::renderBackground), void (CMimic::*)(int)>);
+    static_assert(std::is_same_v<decltype(&CMimic::renderBackground),
+                                 void (CMimic::*)(int, const SActorRenderOwners &)>);
     static_assert(std::is_same_v<decltype(&CMimic::getCollisionType),
                                  ECollisionType (CMimic::*)(SCollisionInfo *)>);
     static_assert(std::is_same_v<decltype(&CMimic::getActorType),

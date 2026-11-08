@@ -3,14 +3,19 @@
 #include "core/main/main.h"
 #include "core/menu/menu.h"
 #include "engine/keys/inputcodetype.h"
+#include "engine/rawinput.h"
+#include "platform/gamepad.h"
 #include "shape/edittool/editortools.h"
 #include "tests/mocks/core/menufixture.h"
+#include "tests/mocks/engine/gamepadinputparts.h"
 #include "tests/mocks/sound/wavfile.h"
 
 #include <gmock/gmock.h>
 #include <gtest/gtest.h>
 
+#include <array>
 #include <chrono>
+#include <cstdint>
 #include <functional>
 #include <string>
 #include <utility>
@@ -44,6 +49,23 @@ TEST_F(CMainMenuTest, EachFrameShowsTheMoonAndItemsUntilCancel) {
     };
     EXPECT_EQ(enterMainGameMenu(menu_), 99);
     EXPECT_EQ(drawn, (std::vector<bool>{false, true, true}));
+}
+
+// B or Start would quit the game with no question asked; Escape still does.
+TEST_F(CMainMenuTest, ThePadsCancelQuitsNothing) {
+    engine::SGamepadInputParts &pad = game_parts_.getGamepad();
+    ON_CALL(pad.gamepad, updateGamepad()).WillByDefault(Return(true));
+    std::array<std::uint8_t, engine::IRawInput::kInputCodeCount> pad_state{};
+    on_frame_ = [&](int frame) {
+        ON_CALL(pad.gamepad, getGamepadButton(platform::EGamepadButton::B))
+            .WillByDefault(Return(frame == 2));
+        pad.input.pump(pad_state, true);
+        if (frame == 4) {
+            press(EInputCodeType::DIK_ESCAPE);
+        }
+    };
+    EXPECT_EQ(menu_.showMainGameMenu(), 99);
+    EXPECT_EQ(frames_, 4);
 }
 
 // The music starts after the first frame and stops as the menu goes.

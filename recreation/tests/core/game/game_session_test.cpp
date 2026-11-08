@@ -10,14 +10,17 @@
 #include "core/hero/heroplaceholder.h"
 #include "core/inv/inventoryassets.h"
 #include "core/location.h"
+#include "core/netgame/netgame.h"
 #include "core/script/script.h"
 #include "core/set/demonset.h"
 #include "engine/console/console.h"
 #include "engine/font/font.h"
+#include "engine/keys/keys.h"
 #include "engine/screendevice.h"
 #include "engine/special/special.h"
 #include "shape/edittool/editortools.h"
 #include "tests/mocks/core/missionfixture.h"
+#include "tests/mocks/core/overlayscreen.h"
 #include "tests/mocks/core/testhero.h"
 #include "tests/mocks/platform/mockrenderer.h"
 
@@ -25,7 +28,9 @@
 #include <gtest/gtest.h>
 
 #include <memory>
+#include <optional>
 #include <string>
+#include <string_view>
 
 namespace nocturne::core {
 namespace {
@@ -36,7 +41,8 @@ using ::testing::StrEq;
 using ::testing::ThrowsMessage;
 
 // A session on a screen already at 640x480x32 that takes any mode, with a hero for the script to
-// focus on in a set with no cameras to switch to, which stops where the play loop would start.
+// focus on in a set with no cameras to switch to and no network game, which stops at the first
+// frame's processing.
 class CGameSessionTest : public CMissionFixture {
 protected:
     CGameSessionTest() {
@@ -58,9 +64,9 @@ protected:
     }
 
     void play() {
-        EXPECT_THAT([this] { static_cast<void>(game_.runGameSession(session_)); },
-                    ThrowsMessage<common::CFatalError>(
-                        StrEq("CGame::runGameSession's play loop is not ported yet")));
+        EXPECT_THAT(
+            [this] { static_cast<void>(game_.runGameSession(session_)); },
+            ThrowsMessage<common::CFatalError>(StrEq("CGame::processFrame is not ported yet")));
     }
 
     ::testing::NiceMock<engine::MockScreenDevice> &game_screen_ = game_parts_.getScreen();
@@ -142,6 +148,45 @@ TEST_F(CGameSessionTest, ALowResolutionTakesTheSmallEditorFont) {
     EXPECT_EQ(editor_tools_.getEditorFont(), game_parts_.getFonts().getSmallEditorFont());
 }
 
+// VELOCITY set at all turns developer mode on for the session; unset, a session turns it off.
+TEST_F(CGameSessionTest, DeveloperModeFollowsVelocity) {
+    ON_CALL(environment_, getVariable(std::string_view("VELOCITY")))
+        .WillByDefault(Return(std::optional<std::string>("")));
+    play();
+    EXPECT_TRUE(game_.developer_mode);
+    ON_CALL(environment_, getVariable(std::string_view("VELOCITY")))
+        .WillByDefault(Return(std::nullopt));
+    play();
+    EXPECT_FALSE(game_.developer_mode);
+}
+
+// The frame's hotkeys come before its controls; Gamma up held raises the gamma the session began
+// at.
+TEST_F(CGameSessionTest, EachFrameReadsTheHotkeys) {
+    game_.gamma = 0x8000;
+    game_parts_.hold(engine::EInputCodeType::DIK_F12, true);
+    play();
+    EXPECT_EQ(game_.gamma, 0x8400);
+}
+
+// A message and a bar from before the session are gone once it starts.
+TEST_F(CGameSessionTest, TheOverlayIsClearedAsTheSessionStarts) {
+    game_.displayMessage("stale", 10.0F);
+    game_.setStatusDisplay("Doc", 1.0F, 10.0F);
+    play();
+    drawGameOnto(game_parts_, screen_,
+                 [this](const std::string &name, const std::string &contents) {
+                     givenFile(name, contents);
+                 });
+    screen_.fill(kBackground);
+    game_.renderOverlay(session_);
+    for (int y = 0; y < screen_.getWindowHeight(); ++y) {
+        for (int x = 0; x < screen_.getWindowWidth(); ++x) {
+            ASSERT_EQ(screen_.pixel(x, y), kBackground) << x << "," << y;
+        }
+    }
+}
+
 // The flashlight is set up off, as "Flashlight", reaching 64 units.
 TEST_F(CGameSessionTest, TheFlashlightIsSetUpOffAndShort) {
     play();
@@ -177,6 +222,32 @@ TEST_F(CGameSessionTest, TheSessionsAssetsAreLoaded) {
     EXPECT_EQ(gore_.getBloodParticleTexture().cache_index, 53);
     EXPECT_EQ(inventory_assets_.getWidth(), CInventoryAssets::kDefaultWidth);
     EXPECT_EQ(inventory_assets_.getScreenHeight(), screen_.getWindowHeight());
+}
+
+// Serving the first frame moves the network clock on to now.
+TEST_F(CGameSessionTest, TheNetworkClockIsBroughtUpToDateAsPlayBegins) {
+    net_game_.init();
+    time_ = 0x10000 * 18;
+    play();
+    EXPECT_EQ(net_game_.getCurrentGameTime(), 1U + 0x10000U);
+}
+
+TEST_F(CGameSessionTest, TheLoadingScreenIsPutAwayAndReportsItsUpdates) {
+    play();
+    bool reported = false;
+    for (int row = 0; row < engine::CConsole::kMaxRows; ++row) {
+        reported = reported || console_.getRow(row) == "gLevelIndicator: Used 0 calls";
+    }
+    EXPECT_TRUE(reported);
+}
+
+// Play reads the extended keys, which the menus fold away.
+TEST_F(CGameSessionTest, PlayKeepsTheExtendedKeys) {
+    int mask = 0;
+    ON_CALL(raw_input_, setInputKeyMask(_)).WillByDefault([&](int value) { mask = value; });
+    keys_.toggleInputMask(false);
+    play();
+    EXPECT_EQ(mask, 0x1ff);
 }
 
 } // namespace

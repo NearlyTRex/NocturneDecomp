@@ -1,16 +1,21 @@
 #include "core/inivar/inivar.h"
 
 #include "common/error/error.h"
+#include "common/video/widescreen.h"
 #include "core/dfont/dfont.h"
 #include "core/game/game.h"
 #include "engine/console/console.h"
+#include "engine/gamepadinput.h"
 #include "engine/ini/inifile.h"
 #include "engine/special/special.h"
+#include "platform/antialias.h"
 #include "platform/display.h"
 #include "platform/filesystem.h"
 #include "platform/upscaler.h"
 #include "sound/sndmain/sndmain.h"
+#include "support/newmsg/newmsg.h"
 
+#include <algorithm>
 #include <cstddef>
 #include <string_view>
 
@@ -19,6 +24,7 @@ namespace {
 
 // Room for a list of bindings; the original read each key as one number.
 constexpr std::size_t kBindingsBufferSize = 256;
+constexpr std::size_t kLanguageBufferSize = 64;
 
 // An enum setting's number; one outside 0..last keeps the setting as it was. The original stored
 // heroNumber, gameControl and aimMode unchecked.
@@ -45,6 +51,8 @@ void readGraphics(const engine::CIniFile &file, const SIniDataOwners &owners) {
     readFlag(file, "haloMode", game.halo_mode);
     readFlag(file, "firstTimeFlag", game.first_time_flag);
     readFlag(file, "subtitleMode", game.subtitle_mode);
+    owners.messages.setLanguage(
+        file.getString("language", owners.messages.getLanguage(), kLanguageBufferSize));
     readFlag(file, "bloodFlag", game.blood_flag);
     readFlag(file, "nudityFlag", game.nudity_flag);
     readFlag(file, "foulLanguageFlag", game.foul_language_flag);
@@ -75,6 +83,12 @@ void readGraphics(const engine::CIniFile &file, const SIniDataOwners &owners) {
     owners.display.setUpscalerSharpness(sharpness < 0 || sharpness > platform::kUpscalerSharpnessMax
                                             ? platform::kUpscalerSharpnessDefault
                                             : sharpness);
+    owners.display.setAntialias(static_cast<platform::EAntialias>(
+        readEnumValue(file, "antialias", static_cast<int>(owners.display.getAntialias()),
+                      platform::kAntialiasCount - 1)));
+    owners.display.setWidescreen(static_cast<common::EWidescreen>(
+        readEnumValue(file, "widescreen", static_cast<int>(owners.display.getWidescreen()),
+                      common::kWidescreenCount - 1)));
 }
 
 // The defaults for the control mode come first, then whatever the file binds over them.
@@ -106,6 +120,26 @@ void readControls(const engine::CIniFile &file, CGame &game) {
     readFlag(file, "autoUseHealth", game.auto_use_health);
 }
 
+// A hand-edited value out of range is held to it, so the pad can't be left unusable.
+void readGamepadTuning(const engine::CIniFile &file, engine::SGamepadTuning &tuning) {
+    using Tuning = engine::SGamepadTuning;
+    tuning.deadzone = std::clamp(file.getInteger("padDeadzone", tuning.deadzone),
+                                 Tuning::kMinDeadzone, Tuning::kMaxDeadzone);
+    tuning.turn_rate = std::clamp(file.getInteger("padTurnRate", tuning.turn_rate),
+                                  Tuning::kMinRate, Tuning::kMaxRate);
+    tuning.look_rate = std::clamp(file.getInteger("padLookRate", tuning.look_rate),
+                                  Tuning::kMinRate, Tuning::kMaxRate);
+    tuning.invert_look =
+        file.getInteger("invertPadYAxis", static_cast<int>(tuning.invert_look)) != 0;
+}
+
+void writeGamepadTuning(engine::CIniFile &file, const engine::SGamepadTuning &tuning) {
+    file.setInteger("padDeadzone", tuning.deadzone);
+    file.setInteger("padTurnRate", tuning.turn_rate);
+    file.setInteger("padLookRate", tuning.look_rate);
+    file.setInteger("invertPadYAxis", static_cast<int>(tuning.invert_look));
+}
+
 // Shadows are only written for a game that isn't censored, as the original had it.
 void writeGraphics(engine::CIniFile &file, const SIniDataOwners &owners) {
     const CGame &game = owners.game;
@@ -118,6 +152,7 @@ void writeGraphics(engine::CIniFile &file, const SIniDataOwners &owners) {
     file.setInteger("haloMode", game.halo_mode);
     file.setInteger("firstTimeFlag", game.first_time_flag);
     file.setInteger("subtitleMode", game.subtitle_mode);
+    file.setString("language", owners.messages.getLanguage());
     file.setInteger("bloodFlag", game.blood_flag);
     if (game.quimby_flag == 0) {
         file.setInteger("nudityFlag", game.nudity_flag);
@@ -131,6 +166,8 @@ void writeGraphics(engine::CIniFile &file, const SIniDataOwners &owners) {
     file.setInteger("windowMode", static_cast<int>(owners.display.getWindowMode()));
     file.setInteger("upscaler", static_cast<int>(owners.display.getUpscaler()));
     file.setInteger("upscalerSharpness", owners.display.getUpscalerSharpness());
+    file.setInteger("antialias", static_cast<int>(owners.display.getAntialias()));
+    file.setInteger("widescreen", static_cast<int>(owners.display.getWidescreen()));
 }
 
 void writeControls(engine::CIniFile &file, const CGame &game) {
@@ -159,7 +196,9 @@ void writeControls(engine::CIniFile &file, const CGame &game) {
 // The renderer DLL and AGP texturing the original also read have no reader in the game now, so
 // their lines are left as they are; retail has no Editor section. The window
 // opens at the resolution the game will run at, as the decomp's menu resolution change has it,
-// in the enhanced game's window mode and upscaler.
+// in the enhanced game's window mode and upscaler. The pad's tuning is read after the controls
+// (the decomp's pad_tuning.h). The language, which picks the packages' translations, is the
+// enhanced game's.
 // nocedit 0x004fbd90
 void readIniData(engine::CIni &ini, platform::IFileSystem &file_system,
                  const SIniDataOwners &owners) {
@@ -173,6 +212,7 @@ void readIniData(engine::CIni &ini, platform::IFileSystem &file_system,
     owners.sound_main.readIni(file);
     file.readIniHeader("Control");
     readControls(file, owners.game);
+    readGamepadTuning(file, owners.gamepad.tuning);
     file.readIniHeader("Debug");
     readFlag(file, "logConsoleFlag", owners.console.file_logging_enabled);
     readFlag(file, "headOfHorrorCheat", owners.game.head_of_horror_cheat);
@@ -187,6 +227,7 @@ void writeIniData(engine::CIni &ini, const SIniDataOwners &owners) {
     owners.sound_main.writeIni(file);
     file.readIniHeader("Control");
     writeControls(file, owners.game);
+    writeGamepadTuning(file, owners.gamepad.tuning);
     file.readIniHeader("Debug");
     file.setInteger("logConsoleFlag", owners.console.file_logging_enabled);
     file.setInteger("headOfHorrorCheat", owners.game.head_of_horror_cheat);

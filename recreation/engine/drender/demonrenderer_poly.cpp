@@ -33,8 +33,6 @@ constexpr std::uint32_t kDestReadBlendFlags = common::kRenderTextured | common::
                                               common::kRenderSmooth | common::kRenderSourceAlpha |
                                               common::kRenderDepthTest | common::kRenderDepthWrite |
                                               common::kRenderVertexColor;
-// The preprocessing that gives each corner its reciprocal depth as its depth.
-constexpr int kReplaceWWithDepth = 6;
 
 } // namespace
 
@@ -57,7 +55,7 @@ std::vector<int> CDemonRenderer::takeCorners(const SMRGLPrimitiveQuad &poly) {
 SPolygonState CDemonRenderer::getPerspectiveState(std::uint32_t render_flags) const {
     SPolygonState state;
     state.mode.render_flags = render_flags;
-    state.mode.vertex_preprocess_mode = kReplaceWWithDepth;
+    state.mode.vertex_preprocess_mode = SScanlineMode::kReplaceWithDepth;
     state.vertex_processing = face_capture_enabled_;
     const bool thirty_two_bit = screen_.getBitsPerPixel() == 32;
     state.draw_scanline = [this, mode = state.mode, thirty_two_bit](

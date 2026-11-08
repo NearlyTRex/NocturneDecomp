@@ -6,8 +6,8 @@
 
 namespace nocturne::engine {
 
-// What the menus and pick lists answer to. Each is bound to the keyboard and, where the pad has
-// a button for it, the pad at once, whatever the control mode the player picked for the game.
+// What the menus and pick lists answer to. Each is bound to the keyboard and, where the pad makes
+// a press of it, the pad at once, whatever the control mode the player picked for the game.
 enum class EMenuAction : std::uint8_t {
     Up,
     Down,
@@ -32,10 +32,10 @@ enum class EMenuModifier : std::uint8_t {
     Shift,
 };
 
-// The menu actions, read off the keys.
+// The menu actions, read off the keys and taken from the pad's menu presses.
 class CMenuInput {
 public:
-    explicit CMenuInput(CKeys &keys);
+    CMenuInput(CKeys &keys, CGamepadInput &gamepad);
 
     // Whether an input bound to the action was pressed since it was last taken; takes every one,
     // so a press on two of them at once counts once.
@@ -44,6 +44,7 @@ public:
 
 private:
     CKeys &keys_;
+    CGamepadInput &gamepad_;
 };
 
 } // namespace nocturne::engine

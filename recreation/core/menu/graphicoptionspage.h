@@ -10,10 +10,9 @@
 
 namespace nocturne::core {
 
-// Graphic Options: the resolution, the enhanced game's window mode, the flashlight's halo,
-// acceleration with the API and card behind it, the depth, the enhanced game's upscaler with
-// its sharpness for the filters that sharpen, and the monitor calibration. A resolution changed
-// here resizes the window at once; the upscaler applies from the next frame.
+// Graphic Options: the original's resolution, halo, acceleration, card, depth and calibration,
+// with the enhanced game's window mode, widescreen framing, upscaler and anti-aliasing. A new
+// resolution resizes the window at once; the picture settings apply from the next frame.
 class CGraphicOptionsPage final : public CMenuPage {
 public:
     CGraphicOptionsPage(CMenu &menu, const SMenuOwners &owners);
@@ -35,11 +34,13 @@ private:
     void listCards();
     void stepResolution(EMenuStep step);
     void stepWindowMode(EMenuStep step);
+    void stepWidescreen(EMenuStep step);
     void stepHalo(EMenuStep step);
     void toggleAcceleration();
     void stepCard();
     void stepUpscaler(EMenuStep step);
     void stepSharpness(EMenuStep step);
+    void stepAntialias(EMenuStep step);
 
     const SMenuOwners &owners_;
     std::vector<std::string> driver_names_;

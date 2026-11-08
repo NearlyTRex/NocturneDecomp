@@ -6,6 +6,17 @@
 
 namespace nocturne::platform {
 
+// Where an overlay pass lays its space on the target: each vertex lands at its position times
+// the scales plus the offsets, in target pixels.
+struct SOverlayPlacement {
+    float scale_x = 1.0F;
+    float scale_y = 1.0F;
+    float offset_x = 0.0F;
+    float offset_y = 0.0F;
+
+    bool operator==(const SOverlayPlacement &) const = default;
+};
+
 // The hardware renderer the original loaded as a DLL. Methods are its entry
 // points; engine/special keeps the wrappers that gate them.
 class IRenderer {
@@ -62,6 +73,11 @@ public:
     // directions; the original's renderer took them as plain coordinates. Passes nest.
     virtual void beginReflectionPass() = 0;
     virtual void endReflectionPass() = 0;
+    // Brackets 3D drawn in a space of its own over what the target already holds, such as the
+    // menu's moon across a front end wider than 640. The pass has depth of its own, and the
+    // scene's depth is put back after. False, and nothing changed, without a mode.
+    [[nodiscard]] virtual bool beginOverlay(const SOverlayPlacement &placement) = 0;
+    virtual void endOverlay() = 0;
 };
 
 } // namespace nocturne::platform

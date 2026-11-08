@@ -87,6 +87,24 @@ public:
                                         std::make_format_args(args...));
     }
 
+    struct SWrappedText {
+        std::vector<std::string> lines;
+        // The line advance in screen pixels.
+        int line_pitch = 0;
+    };
+
+    // Text at a fractional scale, for HUD text that keeps its share of the screen: each screen
+    // pixel takes the sheet pixels under it, weighted by the area each covers, and is blended by
+    // that coverage. A whole scale draws as drawText does. An OS font, 8 bits and a scale that
+    // isn't positive draw at 1.
+    int drawTextScaled(std::string_view text, int x, int y, int color_mode, int color_value,
+                       float scale);
+    [[nodiscard]] int getTextWidthScaled(std::string_view text, float scale) const;
+    [[nodiscard]] int getCharHeightScaled(int char_code, float scale) const;
+    // Wraps in unscaled glyphs to box_width screen pixels, so the wrap and the drawn text agree.
+    [[nodiscard]] SWrappedText wrapTextScaled(std::string_view source_text, int max_lines,
+                                              int line_width, int box_width, float scale) const;
+
 private:
     int drawTextCenterInBoundsFV(int left_x, int right_x, int y, int color_mode, int color_value,
                                  std::string_view format, std::format_args args);
@@ -108,6 +126,31 @@ private:
         int bottom = 0;
     };
 
+    // What the sheet pixels under one screen pixel come to.
+    struct SCoverage {
+        // A blended font's sheet colour, per byte.
+        std::array<float, 4> channel{};
+        // A keyed font's share covered, or a blended one's coverage level.
+        float amount = 0.0F;
+        // The sheet colour of the pixel covering most of it, and that pixel's share.
+        std::uint32_t color = 0;
+        float largest_share = 0.0F;
+    };
+
+    // A glyph's first pixel in its sheet.
+    struct SGlyphSource {
+        const SSheet *sheet = nullptr;
+        std::size_t position = 0;
+    };
+
+    // A rectangle of a glyph in fractional sheet pixels.
+    struct SSheetArea {
+        float left = 0.0F;
+        float top = 0.0F;
+        float right = 0.0F;
+        float bottom = 0.0F;
+    };
+
     [[nodiscard]] int calculateCharacterHeight(std::span<const std::uint8_t> char_bitmap,
                                                int char_width, int char_height,
                                                int bitmap_stride) const;
@@ -127,6 +170,16 @@ private:
                    int color_mode);
     void drawRow32(std::uint32_t *row, std::span<const std::uint8_t> indices, std::size_t bitmap,
                    int color_mode);
+    [[nodiscard]] std::uint16_t blendPixel16(std::uint32_t source, std::uint32_t screen,
+                                             std::uint32_t alpha);
+    [[nodiscard]] float getUsableScale(float scale) const;
+    float drawCharacterScaled(std::size_t char_code, float x, float y, int color_mode,
+                              int color_value, float scale);
+    [[nodiscard]] SCoverage measureCoverage(const SGlyphSource &glyph,
+                                            const SSheetArea &area) const;
+    void addCoverage(SCoverage &coverage, const SSheet &sheet, std::uint8_t index,
+                     float share) const;
+    void plotCoverage(void *row, int x, const SCoverage &coverage, std::uint32_t color);
     [[nodiscard]] std::uint32_t getSolidColor16(int color_mode);
     [[nodiscard]] std::uint32_t getSolidColor32(int color_mode) const;
     [[nodiscard]] int drawWithWinFont(std::string_view text, int x, int y, int color_mode,

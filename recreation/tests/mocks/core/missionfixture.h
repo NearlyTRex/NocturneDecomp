@@ -12,6 +12,7 @@
 #include "core/inv/inventoryassets.h"
 #include "core/level/levelloader.h"
 #include "core/mission/demonmission.h"
+#include "core/netgame/netgame.h"
 #include "core/script/script.h"
 #include "core/set/demonset.h"
 #include "core/sound/sound.h"
@@ -31,7 +32,10 @@
 #include "tests/mocks/core/mockdeformablemodels.h"
 #include "tests/mocks/core/mockkeyframedmodels.h"
 #include "tests/mocks/core/setparts.h"
+#include "tests/mocks/engine/shippedgamecontent.h"
 #include "tests/mocks/platform/mockaudiodevice.h"
+#include "tests/mocks/platform/mockdisplay.h"
+#include "tests/mocks/platform/mockenvironment.h"
 #include "tests/mocks/platform/mockosfontfactory.h"
 #include "tests/mocks/shape/picklistfixture.h"
 
@@ -48,22 +52,26 @@
 namespace nocturne::core {
 
 // A mission over the pick list fixture, with the actor classes ported so far, a loading screen
-// that hasn't been shown, files on disk under world, and the script and events it starts.
+// that hasn't been shown, files on disk under world, the script and events it starts, and no
+// network game.
 class CMissionFixture : public shape::CPickListFixture {
 protected:
     // The game's screen is as tall as the one the set draws on, so the scene camera's frame fits
     // it.
-    CMissionFixture() {
+    CMissionFixture() : CMissionFixture(kWidth, kHeight) {}
+
+    CMissionFixture(int screen_width, int screen_height)
+        : CPickListFixture(screen_width, screen_height) {
         ON_CALL(game_parts_.getScreen(), getWindowHeight())
-            .WillByDefault(::testing::Return(kHeight));
+            .WillByDefault(::testing::Return(screen_height));
     }
 
-    CGameParts game_parts_{game_clock_};
+    CGameParts game_parts_{game_clock_, dosio_};
     CGame &game_ = game_parts_.getGame();
     common::CWatcomRandom crt_random_;
     ::testing::NiceMock<MockDeformableModels> models_;
     ::testing::NiceMock<MockKeyFramedModels> keyframed_models_;
-    CActor actor_{game_, crt_random_, models_, keyframed_models_};
+    CActor actor_{game_, crt_random_, models_, keyframed_models_, events_};
     engine::CTexture textures_{{.dosio = dosio_,
                                 .two_d = two_d_,
                                 .screen = screen_,
@@ -73,11 +81,11 @@ protected:
     engine::CPrim prim_{special_, two_d_, three_d_, current_texture_};
     engine::CZRaster zraster_{special_, two_d_, three_d_, current_texture_};
     engine::CDemonRenderer demon_renderer_{
-        matrix_,          two_d_,    three_d_, vertex_buffer_,           special_, prim_, zraster_,
-        current_texture_, textures_, screen_,  &transformAndClipGeometry};
+        matrix_, light_,   two_d_,           three_d_,  vertex_buffer_, special_,
+        prim_,   zraster_, current_texture_, textures_, screen_,        &transformAndClipGeometry};
     CSetParts set_parts_{dosio_};
-    CDemonSet set_{
-        set_parts_.owners(demon_renderer_, matrix_, special_, two_d_, screen_, raw_input_)};
+    CDemonSet set_{set_parts_.owners(demon_renderer_, three_d_, matrix_, special_, two_d_, screen_,
+                                     raw_input_)};
     ::testing::NiceMock<platform::MockOsFontFactory> os_fonts_;
     support::CNewMsg messages_{dosio_};
     CDFont fonts_{dosio_, screen_, two_d_, three_d_, colors_, os_fonts_, messages_, editor_tools_};
@@ -89,7 +97,9 @@ protected:
                                 .renderer = demon_renderer_,
                                 .set = set_,
                                 .fonts = fonts_,
-                                .crt_random = crt_random_}};
+                                .crt_random = crt_random_,
+                                .console = console_,
+                                .content = engine::getShippedGameContent()}};
     shape::SPickListOwners pick_list_owners_{.controls = controls_,
                                              .keys = keys_,
                                              .menu_input = menu_input_,
@@ -125,6 +135,15 @@ protected:
     CGore gore_{demon_renderer_};
     CInventoryAssets inventory_assets_{
         {.dosio = dosio_, .screen = screen_, .special = special_, .game = game_}};
+    ::testing::NiceMock<platform::MockEnvironment> environment_;
+    ::testing::NiceMock<platform::MockDisplay> display_;
+    CNetGame net_game_{{.file_system = file_system_,
+                        .environment = environment_,
+                        .clock = game_clock_,
+                        .two_d = two_d_,
+                        .crt_random = crt_random_,
+                        .actor = actor_,
+                        .mission = mission_}};
     SGameSessionOwners session_{.console = console_,
                                 .camera = *set_parts_.camera,
                                 .flashlight = *set_parts_.flashlight,
@@ -134,7 +153,14 @@ protected:
                                 .build_version = "1.2.3 (test)",
                                 .fire = fire_,
                                 .gore = gore_,
-                                .inventory_assets = inventory_assets_};
+                                .inventory_assets = inventory_assets_,
+                                .net_game = net_game_,
+                                .level_loader = level_loader_,
+                                .keys = keys_,
+                                .mission = mission_,
+                                .environment = environment_,
+                                .sound = sound_,
+                                .display = display_};
 
     // Every texture and picture the session loads on disk, 32 by 32, and every model it finds
     // the one model.

@@ -26,6 +26,8 @@ struct SSetFile {
     std::string vdir_boxes = "0\n";
     // Versions 4 to 9.
     std::string old_directors = "1\n\"director\", 2\nline\nline\n";
+    // Versions 6 on: whether the set has a sky, which from 12 on is stars.raw at 200.
+    std::string sky = "0";
 
     [[nodiscard]] std::string text() const {
         const std::string label = version >= 11 ? "label\n" : "";
@@ -38,7 +40,7 @@ struct SSetFile {
                     : std::string("fog\n1,2,3\nfog\n4,5,6\n7,8\n") + (version >= 26 ? "9\n" : "");
         file += "water\n10.5,16\nenviro\n" + enviro + "\n";
         file += version >= 5 ? "wave\n1\n" : "";
-        file += version >= 6 ? "sky\n0\n" : "";
+        file += version >= 6 ? "sky\n" + sky + "\n" : "";
         file += version >= 12 ? "200,stars.raw\n" : "";
         file += version >= 13 ? "world\n1,city.geo\n" : "";
         file += version >= 25 ? "weather\n" + weather + "\n" : "";
@@ -79,8 +81,8 @@ protected:
     }
 
     CSetParts set_parts_{dosio_};
-    CDemonSet set_{
-        set_parts_.owners(demon_renderer_, matrix_, special_, two_d_, screen_, raw_input_)};
+    CDemonSet set_{set_parts_.owners(demon_renderer_, three_d_, matrix_, special_, two_d_, screen_,
+                                     raw_input_)};
 };
 
 } // namespace nocturne::core

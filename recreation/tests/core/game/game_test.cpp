@@ -30,21 +30,28 @@ TEST(CGame, PublicInterface) {
     static_assert(std::is_same_v<decltype(&CGame::updateDT), void (CGame::*)()>);
     static_assert(std::is_same_v<decltype(&CGame::getDeltaTimeInt), int (CGame::*)() const>);
     static_assert(std::is_same_v<decltype(&CGame::getDeltaTimeFloat), float (CGame::*)() const>);
-    static_assert(std::is_same_v<decltype(&CGame::displayMessage), void (CGame::*)(char *, float)>);
+    static_assert(
+        std::is_same_v<decltype(&CGame::displayMessage), void (CGame::*)(std::string_view, float)>);
     static_assert(std::is_same_v<decltype(&CGame::setFudgeTarget),
                                  void (CGame::*)(common::CVector3f *, float)>);
     static_assert(std::is_same_v<decltype(&CGame::runGameSession),
                                  int (CGame::*)(const SGameSessionOwners &)>);
     static_assert(std::is_same_v<decltype(&CGame::restoreDefaultControls), void (CGame::*)()>);
     static_assert(std::is_same_v<decltype(&CGame::resetKeyState), void (CGame::*)()>);
-    static_assert(std::is_same_v<decltype(&CGame::resetInputAndCenterCursor), void (CGame::*)()>);
+    static_assert(std::is_same_v<decltype(&CGame::resetInputAndCenterCursor),
+                                 void (CGame::*)(const SGameSessionOwners &)>);
+    static_assert(std::is_same_v<decltype(&CGame::playerControls),
+                                 void (CGame::*)(const SGameSessionOwners &)>);
     static_assert(std::is_same_v<decltype(&CGame::beginFadeIn), void (CGame::*)()>);
     static_assert(std::is_same_v<decltype(&CGame::beginFadeOut), void (CGame::*)()>);
     static_assert(std::is_same_v<decltype(&CGame::fadeIn), std::uint32_t (CGame::*)()>);
     static_assert(std::is_same_v<decltype(&CGame::resetWeaponSwitchTimers), void (CGame::*)()>);
     static_assert(std::is_same_v<decltype(&CGame::resetInventoryDisplayTimer), void (CGame::*)()>);
-    static_assert(
-        std::is_same_v<decltype(&CGame::setStatusDisplay), void (CGame::*)(char *, float, float)>);
+    static_assert(std::is_same_v<decltype(&CGame::setStatusDisplay),
+                                 void (CGame::*)(std::string_view, float, float)>);
+    static_assert(std::is_same_v<decltype(&CGame::updateStatusDisplays), void (CGame::*)()>);
+    static_assert(std::is_same_v<decltype(&CGame::renderOverlay),
+                                 void (CGame::*)(const SGameSessionOwners &)>);
     static_assert(std::is_same_v<decltype(&CGame::loadGame), void (CGame::*)(char *, int)>);
     static_assert(
         std::is_same_v<decltype(&CGame::showChapterSelect),
@@ -92,7 +99,7 @@ TEST_F(CGameTest, StartsWithTheOriginalDefaults) {
 
 TEST_F(CGameTest, StartsWithTheKeyboardControls) {
     EXPECT_THAT(game_.controls.getBindings(EGameAction::Fire),
-                ::testing::ElementsAre(engine::EInputCodeType::DIK_SPACE));
+                ::testing::ElementsAre(SKeyChord{.code = engine::EInputCodeType::DIK_SPACE}));
 }
 
 // 18 clock ticks are one 16.16 unit: a tenth of a second is 117964 ticks.

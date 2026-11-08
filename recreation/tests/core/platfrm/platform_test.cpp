@@ -2,9 +2,14 @@
 #include "common/math/quaternion4f.h"
 #include "core/actor/demonactortype.h"
 #include "core/actor/groundtype.h"
+#include "core/box/boundingbox3d.h"
+#include "core/dmodel/keyframedmodel.h"
+#include "core/oneshotstate.h"
 #include "core/platfrm/platform.h"
 #include "core/platfrm/platformstate.h"
+#include "tests/mocks/core/keyframedactorfixture.h"
 #include "tests/mocks/core/notportedcalls.h"
+#include "tests/mocks/core/oneframemodel.h"
 #include "tests/mocks/core/testactor.h"
 #include "tests/mocks/core/testclasses.h"
 #include "tests/mocks/core/testfieldsarchive.h"
@@ -14,6 +19,7 @@
 #include <gtest/gtest.h>
 
 #include <cstddef>
+#include <format>
 #include <memory>
 #include <string>
 #include <string_view>
@@ -25,6 +31,7 @@ namespace nocturne::core {
 namespace {
 
 using ::testing::ElementsAre;
+using ::testing::Return;
 using ::testing::StrEq;
 using ::testing::ThrowsMessage;
 
@@ -61,7 +68,7 @@ TEST(CPlatform, APlatformIsASliderAtItsStartWithBothEndsAtTheOriginUnturned) {
     EXPECT_EQ(platform.getTravelTimeToStart(), 2.0F);
     EXPECT_EQ(platform.getTravelTimeToEnd(), 2.0F);
     EXPECT_EQ(platform.getGroundType(), EGroundType::kDefault);
-    EXPECT_FALSE(platform.isOneShot());
+    EXPECT_EQ(platform.getOneShotState(), EOneShotState::kNo);
     EXPECT_EQ(platform.getBlockVirtualDirectorFlag(), 0);
     EXPECT_FALSE(platform.isRenderedInBackgroundWhenNotMoving());
     EXPECT_EQ(platform.getCameraWhileMoving(), "");
@@ -124,7 +131,7 @@ TEST_F(CPlatformArchiveTest, APlatformIsReadWithItsEndsAndWhatItCarries) {
     EXPECT_EQ(platform_.getParam(), 0.5F);
     EXPECT_EQ(platform_.getTravelTimeToEnd(), 3.0F);
     EXPECT_EQ(platform_.getGroundType(), EGroundType::kWood);
-    EXPECT_TRUE(platform_.isOneShot());
+    EXPECT_EQ(platform_.getOneShotState(), EOneShotState::kYes);
     EXPECT_EQ(platform_.getBlockVirtualDirectorFlag(), 1);
     EXPECT_TRUE(platform_.isRenderedInBackgroundWhenNotMoving());
     EXPECT_EQ(platform_.getCameraWhileMoving(), "shhq0007");
@@ -238,11 +245,22 @@ TEST(CPlatform, TheFunctionsNotPortedYetQuit) {
     const NotPortedCalls calls = {
         {"process", [&] { platform.process(0.0F); }},
         {"renderOpaque", [&] { static_cast<void>(platform.renderOpaque()); }},
-        {"renderBackground", [&] { platform.renderBackground(0); }},
-        {"getBoundingBox", [&] { static_cast<void>(platform.getBoundingBox(nullptr)); }},
         {"getCollisionType", [&] { static_cast<void>(platform.getCollisionType(nullptr)); }},
     };
     expectEachQuitsNotPorted("CPlatform", calls);
+}
+
+class CPlatformBoundsTest : public engine::CPodFixture {};
+
+TEST_F(CPlatformBoundsTest, ItsBoxIsItsModelsFirstFrames) {
+    givenFile("models\\slider1.kfm", oneFrameModel());
+    CTestClasses classes{dosio_};
+    classes.getKeyFramedModel().load("slider1.kfm");
+    CPlatform platform{classes.get()};
+    platform.setup();
+    CBoundingBox3D box;
+    EXPECT_EQ(platform.getBoundingBox(&box), &box);
+    expectOneFrameBounds(box);
 }
 
 TEST(CPlatform, HasVirtualDestructor) {
@@ -261,7 +279,8 @@ TEST(CPlatform, PublicInterface) {
     static_assert(std::is_same_v<decltype(&CPlatform::setup), void (CPlatform::*)()>);
     static_assert(std::is_same_v<decltype(&CPlatform::process), void (CPlatform::*)(float)>);
     static_assert(std::is_same_v<decltype(&CPlatform::renderOpaque), int (CPlatform::*)()>);
-    static_assert(std::is_same_v<decltype(&CPlatform::renderBackground), void (CPlatform::*)(int)>);
+    static_assert(std::is_same_v<decltype(&CPlatform::renderBackground),
+                                 void (CPlatform::*)(int, const SActorRenderOwners &)>);
     static_assert(std::is_same_v<decltype(&CPlatform::getBoundingBox),
                                  CBoundingBox3D *(CPlatform::*)(CBoundingBox3D *)>);
     static_assert(std::is_same_v<decltype(&CPlatform::getCollisionType),
@@ -279,6 +298,112 @@ TEST(CPlatform, PublicInterface) {
         std::is_same_v<decltype(&CPlatform::startMovement), void (CPlatform::*)(float, float)>);
     static_assert(
         std::is_same_v<decltype(&CPlatform::attachActor), void (CPlatform::*)(CDemonActor *)>);
+}
+
+// How a platform is saved: where it is between its ends, its one-shot state, whether it rests in
+// the backdrop between moves, and whether its fog is sampled at its place.
+struct SSavedPlatform {
+    EPlatformState state = EPlatformState::kAtStart;
+    EOneShotState one_shot = EOneShotState::kNo;
+    bool rests_in_backdrop = false;
+    bool recomputes_fog = false;
+};
+
+class CPlatformBackgroundTest : public CKeyFramedActorFixture {
+protected:
+    void readPlatform(const SSavedPlatform &saved) {
+        CTestFieldsArchive archive(
+            platform_, CPlatform::kType, 11,
+            std::format(
+                "\t\"PANEL.KFM\"    // modelName\n\t\"CloseSecretPanel\"    // toStartEvent\n"
+                "\t\"OpenSecretPanel\"    // toEndEvent\n\t\"\"    // stopEvent\n"
+                "\t\"\"    // startSound\n\t\"\"    // stopSound\n"
+                "\t\"\"    // activeSound\n\t\"\"    // courseFilename\n"
+                "\t0,0,0    // startPos\n\t1,0,0,0    // origOrient\n"
+                "\t0,0,0    // endPos\n\t1,0,0,0    // endOrient\n"
+                "\t{}    // state\n\t0    // param\n\t2    // travelTimeToStart\n"
+                "\t2    // travelTimeToEnd\n\t0    // groundType\n\t{}    // oneShot\n"
+                "\t0    // blockVirtualDirectorFlag\n"
+                "\t{}    // renderInBackgroundWhenNotMovingFlag\n"
+                "\t\"\"    // cameraWhileMoving\n\t0    // plotAsBoxInShadow\n"
+                "\t0    // goalParam\n\t0    // currentMovementRate\n\t0    // attachCount\n"
+                "\t0    // pushFlag\n\t{}    // recomputeFog\n\t0    // plotInShadowFlag\n",
+                static_cast<int>(saved.state), static_cast<int>(saved.one_shot),
+                saved.rests_in_backdrop ? 1 : 0, saved.recomputes_fog ? 1 : 0));
+        platform_.archive(archive.get());
+        ready(platform_);
+    }
+
+    void raise(std::string_view event) {
+        ON_CALL(set_parts_.events, evaluateCondition(StrEq(event))).WillByDefault(Return(true));
+    }
+
+    CPlatform platform_{classes_.get()};
+};
+
+// One that rests in the backdrop is drawn there while it stands at an end and no move is raised,
+// whatever its one-shot state.
+TEST_F(CPlatformBackgroundTest, ARestingPlatformIsDrawnIntoTheBackdrop) {
+    readPlatform({.rests_in_backdrop = true});
+    platform_.renderBackground(1, render_owners_);
+    EXPECT_TRUE(drawn());
+    EXPECT_EQ(platform_.getOneShotState(), EOneShotState::kNo);
+}
+
+TEST_F(CPlatformBackgroundTest, APlatformMovingEitherWayIsLeftOut) {
+    for (const EPlatformState state :
+         {EPlatformState::kMovingToEnd, EPlatformState::kMovingToStart}) {
+        readPlatform({.state = state, .rests_in_backdrop = true});
+        platform_.renderBackground(1, render_owners_);
+        EXPECT_FALSE(drawn());
+    }
+}
+
+TEST_F(CPlatformBackgroundTest, APlatformAskedToMoveEitherWayIsLeftOut) {
+    for (const std::string_view event : {"OpenSecretPanel", "CloseSecretPanel"}) {
+        ::testing::Mock::VerifyAndClear(&set_parts_.events);
+        raise(event);
+        readPlatform({.state = EPlatformState::kAtEnd, .rests_in_backdrop = true});
+        platform_.renderBackground(1, render_owners_);
+        EXPECT_FALSE(drawn());
+    }
+}
+
+// Any other is drawn there only once its one move is done, and from then on.
+TEST_F(CPlatformBackgroundTest, AOneShotPlatformThatHasMovedIsDrawnIntoTheBackdrop) {
+    for (const EOneShotState one_shot : {EOneShotState::kDone, EOneShotState::kDoneInBackground}) {
+        readPlatform({.one_shot = one_shot});
+        platform_.renderBackground(1, render_owners_);
+        EXPECT_TRUE(drawn());
+        EXPECT_EQ(platform_.getOneShotState(), EOneShotState::kDoneInBackground);
+    }
+}
+
+TEST_F(CPlatformBackgroundTest, APlatformThatHasNotMovedIsLeftOut) {
+    for (const EOneShotState one_shot : {EOneShotState::kNo, EOneShotState::kYes}) {
+        readPlatform({.one_shot = one_shot});
+        platform_.renderBackground(1, render_owners_);
+        EXPECT_FALSE(drawn());
+        EXPECT_EQ(platform_.getOneShotState(), one_shot);
+    }
+}
+
+TEST_F(CPlatformBackgroundTest, OutsideItsLayerAPlatformIsLeftOut) {
+    readPlatform({.rests_in_backdrop = true});
+    platform_.renderBackground(0, render_owners_);
+    EXPECT_FALSE(drawn());
+}
+
+// Its draw lit per pixel through the fog at its place is not ported; hidden, it isn't reached.
+TEST_F(CPlatformBackgroundTest, APlatformWhoseFogIsSampledQuitsWhenSeen) {
+    readPlatform({.rests_in_backdrop = true, .recomputes_fog = true});
+    hideEverything();
+    platform_.renderBackground(1, render_owners_);
+    EXPECT_FALSE(drawn());
+    depths_.fill(kFarthest);
+    EXPECT_THAT([this] { platform_.renderBackground(1, render_owners_); },
+                ThrowsMessage<common::CFatalError>(
+                    StrEq("CPlatform::renderBackground's per-pixel lit draw is not ported yet")));
 }
 
 } // namespace

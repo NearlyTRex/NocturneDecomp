@@ -80,6 +80,8 @@ public:
     int flushLineList() override;
     void beginReflectionPass() override;
     void endReflectionPass() override;
+    [[nodiscard]] bool beginOverlay(const SOverlayPlacement &placement) override;
+    void endOverlay() override;
 
 private:
     // The pipeline state and texture the batch is being drawn with, and the pipeline's epoch

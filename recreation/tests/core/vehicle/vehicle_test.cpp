@@ -29,7 +29,8 @@ TEST(CVehicle, PublicInterface) {
     static_assert(std::is_same_v<decltype(&CVehicle::process), void (CVehicle::*)(float)>);
     static_assert(std::is_same_v<decltype(&CVehicle::renderOpaque), int (CVehicle::*)()>);
     static_assert(std::is_same_v<decltype(&CVehicle::renderTransparent), int (CVehicle::*)()>);
-    static_assert(std::is_same_v<decltype(&CVehicle::renderBackground), void (CVehicle::*)(int)>);
+    static_assert(std::is_same_v<decltype(&CVehicle::renderBackground),
+                                 void (CVehicle::*)(int, const SActorRenderOwners &)>);
     static_assert(std::is_same_v<decltype(&CVehicle::getBoundingBox),
                                  CBoundingBox3D *(CVehicle::*)(CBoundingBox3D *)>);
     static_assert(std::is_same_v<decltype(&CVehicle::getCollisionType),

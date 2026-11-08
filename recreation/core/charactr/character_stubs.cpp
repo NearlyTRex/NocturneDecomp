@@ -24,10 +24,6 @@ int CCharacter::renderTransparent() {
     notPorted("renderTransparent");
 }
 
-void CCharacter::renderBackground(int /*layer_flag*/) {
-    notPorted("renderBackground");
-}
-
 ECollisionType CCharacter::getCollisionType(SCollisionInfo * /*collision_info*/) {
     notPorted("getCollisionType");
 }
@@ -102,10 +98,6 @@ int CCharacter::testDamageLine(common::CVector3f * /*start*/, common::CVector3f 
 
 void CCharacter::processDamage(SDamageInfo * /*damage_info*/) {
     notPorted("processDamage");
-}
-
-EDeathState CCharacter::getDeathState() {
-    notPorted("getDeathState");
 }
 
 int CCharacter::attractActorToward(CDemonActor * /*actor*/,

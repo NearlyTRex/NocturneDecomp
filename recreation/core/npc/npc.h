@@ -22,7 +22,7 @@ public:
 
     void setup() override;
     void process(float delta_time) override;
-    void renderBackground(int layer_flag) override;
+    void renderBackground(int layer_flag, const SActorRenderOwners &owners) override;
     CPathMap *getPathMap() override;
     [[nodiscard]] const CDemonActorType &getActorType() const override;
     void archive(CActorArchive &actor_archive) override;

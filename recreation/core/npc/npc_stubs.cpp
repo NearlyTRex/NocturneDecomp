@@ -19,10 +19,6 @@ void CNPC::process(float /*delta_time*/) {
     notPorted("process");
 }
 
-void CNPC::renderBackground(int /*layer_flag*/) {
-    notPorted("renderBackground");
-}
-
 CPathMap *CNPC::getPathMap() {
     notPorted("getPathMap");
 }

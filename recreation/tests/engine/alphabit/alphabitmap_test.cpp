@@ -34,6 +34,7 @@ TEST(CAlphaBitmap, PublicInterface) {
                                  void (CAlphaBitmap::*)(int, int, int, int, int, int, int)>);
     static_assert(std::is_same_v<decltype(&CAlphaBitmap::scale), void (CAlphaBitmap::*)(int, int)>);
     static_assert(std::is_same_v<decltype(&CAlphaBitmap::initPalette), void (CAlphaBitmap::*)()>);
+    static_assert(std::is_same_v<decltype(&CAlphaBitmap::getWidth), int (CAlphaBitmap::*)() const>);
 }
 
 using CAlphaBitmapTest = CAlphaBitmapFixture;
@@ -134,6 +135,17 @@ TEST_F(CAlphaBitmapTest, ScalingKeepsEveryNthPixelOfEveryNthRowWithItsOpacity) {
     EXPECT_EQ(screen_.pixel(1, 0), 0U);
     EXPECT_EQ(screen_.pixel(2, 0), 0U);
     EXPECT_EQ(screen_.pixel(0, 1), 0U);
+}
+
+TEST_F(CAlphaBitmapTest, TheWidthIsTheLoadedOneScaledAndNoneOnceFreed) {
+    givenImage("pic", "\x01\x02\x03\x04");
+    EXPECT_EQ(bitmap_.getWidth(), 0);
+    bitmap_.load("pic", 4, 1);
+    EXPECT_EQ(bitmap_.getWidth(), 4);
+    bitmap_.scale(2, 1);
+    EXPECT_EQ(bitmap_.getWidth(), 2);
+    bitmap_.free();
+    EXPECT_EQ(bitmap_.getWidth(), 0);
 }
 
 TEST_F(CAlphaBitmapTest, AFactorBelowOneLeavesTheImageAlone) {

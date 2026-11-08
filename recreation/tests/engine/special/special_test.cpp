@@ -259,6 +259,33 @@ TEST_F(CSpecialTest, WithoutTheRendererNoPolygonIsDrawn) {
     EXPECT_EQ(special_.drawPolyList(vertices.data(), polygons, 1), 0);
 }
 
+TEST_F(CSpecialTest, WithoutTheRendererThereIsNoOverlay) {
+    EXPECT_CALL(renderer_, beginOverlay(_)).Times(0);
+    EXPECT_CALL(renderer_, endOverlay()).Times(0);
+    EXPECT_FALSE(special_.beginOverlay({}));
+    special_.endOverlay();
+}
+
+TEST_F(CSpecialTest, SyncingWaitsForTheRendererOnlyWhileItDraws) {
+    EXPECT_CALL(renderer_, sync()).Times(0);
+    EXPECT_EQ(special_.sync(), 0);
+    ::testing::Mock::VerifyAndClearExpectations(&renderer_);
+    startRenderer();
+    EXPECT_CALL(renderer_, sync()).WillOnce(Return(3));
+    EXPECT_EQ(special_.sync(), 3);
+}
+
+TEST_F(CSpecialTest, WithTheRendererTheOverlayGoesThroughIt) {
+    startRenderer();
+    const platform::SOverlayPlacement placement{
+        .scale_x = 1.325F, .scale_y = 1.0F, .offset_x = 0.0F, .offset_y = 0.0F};
+    EXPECT_CALL(renderer_, beginOverlay(placement)).WillOnce(Return(true)).WillOnce(Return(false));
+    EXPECT_CALL(renderer_, endOverlay());
+    EXPECT_TRUE(special_.beginOverlay(placement));
+    special_.endOverlay();
+    EXPECT_FALSE(special_.beginOverlay(placement));
+}
+
 TEST_F(CSpecialTest, WithTheRendererPolygonsGoThroughIt) {
     startRenderer();
     std::array<platform::SRenderVertex, 3> vertices{};

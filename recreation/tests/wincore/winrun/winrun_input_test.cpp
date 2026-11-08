@@ -1,4 +1,8 @@
+#include "engine/keys/inputcodetype.h"
+#include "engine/menuinput.h"
+#include "platform/gamepad.h"
 #include "platform/window.h"
+#include "tests/mocks/engine/gamepadinputparts.h"
 #include "tests/mocks/engine/mockscreendevice.h"
 #include "tests/mocks/platform/mockclock.h"
 #include "tests/mocks/platform/mockwindow.h"
@@ -64,8 +68,34 @@ protected:
     NiceMock<platform::MockWindow> window_;
     std::uint64_t counter_ = 0;
     NiceMock<platform::MockClock> clock_;
-    CWinRun winrun_{window_, primed(clock_)};
+    engine::SGamepadInputParts gamepad_;
+    CWinRun winrun_{window_, primed(clock_), gamepad_.input};
 };
+
+// The pad is read after the window's events, and only while the window has the focus.
+TEST_F(CWinRunInputTest, EachPumpReadsThePadWhileTheWindowHasTheFocus) {
+    ON_CALL(gamepad_.gamepad, updateGamepad()).WillByDefault(Return(true));
+    ON_CALL(gamepad_.gamepad, getGamepadButton(platform::EGamepadButton::A))
+        .WillByDefault(Return(true));
+    const auto a_code = static_cast<std::size_t>(engine::EInputCodeType::PAD_A);
+    pump({});
+    EXPECT_EQ(state(a_code), 0);
+    pump({{.type = EWindowEventType::Activate}});
+    EXPECT_EQ(state(a_code), 1);
+}
+
+// A confirms by typing Return too, for the screens that wait for any key; clearing the input
+// drops the press the menus hadn't taken.
+TEST_F(CWinRunInputTest, ThePadsTypingIsQueuedAndClearingDropsItsPresses) {
+    ON_CALL(gamepad_.gamepad, updateGamepad()).WillByDefault(Return(true));
+    ON_CALL(gamepad_.gamepad, getGamepadButton(platform::EGamepadButton::A))
+        .WillByDefault(Return(true));
+    pump({{.type = EWindowEventType::Activate}});
+    EXPECT_EQ(winrun_.wasKeyPressed(), 1);
+    winrun_.clearInput();
+    EXPECT_EQ(winrun_.wasKeyPressed(), 0);
+    EXPECT_FALSE(gamepad_.input.takeMenuAction(engine::EMenuAction::Confirm));
+}
 
 TEST_F(CWinRunInputTest, AHeldKeyStaysDownUntilAPumpAfterItsRelease) {
     pump({key(EWindowEventType::KeyDown, kSpace)});

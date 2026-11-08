@@ -227,6 +227,31 @@ TEST(CGlRenderer, AboveFourHundredEightyLinesGeometryIsStretched) {
     EXPECT_EQ(uploadedVertices(f.gl), expected(context, points));
 }
 
+// The overlay's placement replaces the hold buffer's stretch, and lasts until it ends.
+TEST(CGlRenderer, AnOverlayPlacesItsGeometry) {
+    SRendererFixture f;
+    f.openScene(1024, 768);
+    ASSERT_TRUE(f.renderer.beginOverlay(
+        {.scale_x = 1.25F, .scale_y = 1.5F, .offset_x = 32.0F, .offset_y = 16.0F}));
+    auto points = triangle();
+    ASSERT_EQ(f.renderer.drawPolygon(points.data(), 3, 0), 1);
+    ASSERT_EQ(f.renderer.sync(), 1);
+    common::SVertexContext context = plainContext(0, 150);
+    context.screen_scale_x = 1.25F;
+    context.screen_scale_y = 1.5F;
+    context.screen_offset_x = 32.0F;
+    context.screen_offset_y = 16.0F;
+    EXPECT_EQ(uploadedVertices(f.gl), expected(context, points));
+    f.renderer.endOverlay();
+    f.gl.clear();
+    ASSERT_EQ(f.renderer.drawPolygon(points.data(), 3, 0), 1);
+    ASSERT_EQ(f.renderer.sync(), 1);
+    context = plainContext(0, 150);
+    context.screen_scale_x = 1024.0F / 640.0F;
+    context.screen_scale_y = 768.0F / 480.0F;
+    EXPECT_EQ(uploadedVertices(f.gl), expected(context, points));
+}
+
 TEST(CGlRenderer, DrawsSharingAStateAreOneGlDraw) {
     SRendererFixture f;
     f.openScene();

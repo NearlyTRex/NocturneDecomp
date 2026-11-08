@@ -246,6 +246,14 @@ int CSpecial::clearZBuffer() {
     return renderer_.clearZBuffer();
 }
 
+// nocedit 0x005b7bc0
+int CSpecial::sync() {
+    if (!use_external_renderer_) {
+        return 0;
+    }
+    return renderer_.sync();
+}
+
 // nocedit 0x005b72a0
 int CSpecial::endScene() {
     if (!use_external_renderer_) {
@@ -327,6 +335,16 @@ int CSpecial::buildCardList(int *out_card_count, char **out_driver_names, char *
     }
     return renderer_.buildCardList(out_card_count, out_driver_names, out_card_names, out_vendor_ids,
                                    out_device_ids);
+}
+
+bool CSpecial::beginOverlay(const platform::SOverlayPlacement &placement) {
+    return use_external_renderer_ && renderer_.beginOverlay(placement);
+}
+
+void CSpecial::endOverlay() {
+    if (use_external_renderer_) {
+        renderer_.endOverlay();
+    }
 }
 
 } // namespace nocturne::engine

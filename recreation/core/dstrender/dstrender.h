@@ -21,10 +21,6 @@ void renderTexturedAlphaMMXScanline(const engine::SSoftwareEdge &left_edge,
                                     const engine::SCurrentTexture &texture);
 void renderZBufferFill16xUnrolled(engine::SSoftwareEdge *left_edge,
                                   engine::SSoftwareEdge *right_edge, int scanline_y);
-void renderSolidColorDepth16xUnrolled(engine::SSoftwareEdge *left_edge,
-                                      engine::SSoftwareEdge *right_edge, int scanline_y);
-void renderDepthInterlacedProfiled(engine::SSoftwareEdge *left_edge,
-                                   engine::SSoftwareEdge *right_edge, int scanline_y);
 void renderScreenDepthTestInterlacedProfiled(engine::SSoftwareEdge *left_edge,
                                              engine::SSoftwareEdge *right_edge, int scanline_y);
 void renderPerspectiveCorrectTextured16xCached(engine::SSoftwareEdge *left_edge,

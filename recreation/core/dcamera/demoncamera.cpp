@@ -190,8 +190,6 @@ const std::string &CDemonCamera::getCameraName() const {
 // screen's size.
 // deferred: the camera shake's attack, sustain and decay and the screen's jitter, which stay
 //   still until a shake starts, with initCameraShake
-// deferred: becoming the scene camera, and the one whose buffers are kept, with setSceneCamera's
-//   readers
 // deferred: the dirty rectangles and the viewport rectangle, with pushRect and
 //   restoreZBufferRectArray
 // deferred: the camera's copies of the transform, origin and projection and their inverse, with
@@ -202,6 +200,7 @@ void CDemonCamera::beginScene(int skip_clear_buffers) {
         common::displayErrorAndQuit("CDemonCamera::beginScene - Scene already open!");
     }
     scene_open_ = true;
+    setSceneCamera(skip_clear_buffers);
     skip_clear_buffers_ = skip_clear_buffers != 0;
     engine::CDemonRenderer &renderer = owners_.renderer;
     renderer.pushViewport(0, 0, framebuffer_width_ - 1, framebuffer_height_ - 1);
@@ -227,7 +226,6 @@ bool CDemonCamera::isSceneOpen() const {
     return scene_open_;
 }
 
-// deferred: no longer the scene camera, with setSceneCamera's readers
 // nocedit 0x0044cb80
 void CDemonCamera::endScene(int skip_zbuffer_copy) {
     if (!scene_open_) {
@@ -242,14 +240,57 @@ void CDemonCamera::endScene(int skip_zbuffer_copy) {
         if (special.getUseExternalRenderer()) {
             static_cast<void>(special.masterZBuffer(0));
         }
-        const std::span<std::uint32_t *> depth_rows = owners_.screen.getZBufferRows();
-        const auto width = static_cast<std::size_t>(framebuffer_width_);
-        for (std::size_t row = 0; std::cmp_less(row, framebuffer_height_); ++row) {
-            std::copy_n(depth_rows[row], width,
-                        zbuffer_.begin() + static_cast<std::ptrdiff_t>(row * width));
-        }
+        saveZBufferScanlines();
     }
     owners_.renderer.popViewport();
+    resetSceneCamera();
+}
+
+// deferred: the camera whose buffers are kept while skip_clear_buffers is set, with
+//   pushScreenBoundsToCamera
+// nocedit 0x0044c3e0
+void CDemonCamera::setSceneCamera(int /*skip_clear_buffers*/) {
+    owners_.tables.scene_camera = this;
+}
+
+// deferred: the fog's colour from the lightmap palette as the solid colour, with
+//   getFogValueAtPosition
+// nocedit 0x004537d0
+void CDemonCamera::setupPerspectiveAndFog(common::CVector3f *position,
+                                          platform::SProjectedVertex *projected_vertex) {
+    SCameraTables &tables = owners_.tables;
+    if (position == nullptr || tables.background_scene_depth != 0) {
+        tables.perspective_reciprocal = 0;
+        return;
+    }
+    common::CVector3i world_position = position->toFixed8();
+    tables.perspective_reciprocal = getFogValueAtPosition(&world_position, projected_vertex);
+}
+
+// deferred: no camera's buffers kept, with pushScreenBoundsToCamera
+// nocedit 0x0044c410
+void CDemonCamera::resetSceneCamera() {
+    owners_.tables.scene_camera = nullptr;
+}
+
+// nocedit 0x00454450
+void CDemonCamera::saveZBufferScanlines() {
+    const std::span<std::uint32_t *> depth_rows = owners_.screen.getZBufferRows();
+    const auto width = static_cast<std::size_t>(framebuffer_width_);
+    for (std::size_t row = 0; std::cmp_less(row, framebuffer_height_); ++row) {
+        std::copy_n(depth_rows[row], width,
+                    zbuffer_.begin() + static_cast<std::ptrdiff_t>(row * width));
+    }
+}
+
+// nocedit 0x004544a0
+void CDemonCamera::restoreZBufferScanlines() {
+    const std::span<std::uint32_t *> depth_rows = owners_.screen.getZBufferRows();
+    const auto width = static_cast<std::size_t>(framebuffer_width_);
+    for (std::size_t row = 0; std::cmp_less(row, framebuffer_height_); ++row) {
+        std::copy_n(zbuffer_.begin() + static_cast<std::ptrdiff_t>(row * width), width,
+                    depth_rows[row]);
+    }
 }
 
 // The screen's rows are kept as many as it has, where the original kept the window's height of
