@@ -1,14 +1,14 @@
-// Name: core_game.cpp_CGame_FUN_004a4b50
+// Name: core_game.cpp_CGame_showChapterSelect_FUN_004a4b50
 // Address: 004a4b50
 // Address Range: [[004a4b50, 004a573a]]
 // Convention: __cdecl
-// Signature: void __cdecl core_game_cpp_CGame_FUN_004a4b50(CGame *this_ptr,int select_mode)
+// Signature: void __cdecl core_game_cpp_CGame_showChapterSelect_FUN_004a4b50(CGame *this_ptr,int select_mode)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-void __cdecl core_game_cpp_CGame_FUN_004a4b50(CGame *this_ptr,int select_mode)
+void __cdecl core_game_cpp_CGame_showChapterSelect_FUN_004a4b50(CGame *this_ptr,int select_mode)
 
 {
   char cVar1;
@@ -22,8 +22,7 @@ void __cdecl core_game_cpp_CGame_FUN_004a4b50(CGame *this_ptr,int select_mode)
   CIniFile local_4b4;
   CPickList local_2b4;
   char local_144 [260];
-  char *local_40 [4];
-  char *local_30;
+  char *local_40 [5];
   int local_2c;
   int local_28;
   int local_24;
@@ -75,7 +74,7 @@ void __cdecl core_game_cpp_CGame_FUN_004a4b50(CGame *this_ptr,int select_mode)
   local_40[3] = support_newmsg_cpp_getLocalizedString_FUN_004ee370
                           ("'The House on the Edge of Hell'");
   iVar3 = -1;
-  local_30 = support_newmsg_cpp_getLocalizedString_FUN_004ee370("'Epilogue'");
+  local_40[4] = support_newmsg_cpp_getLocalizedString_FUN_004ee370("'Epilogue'");
   iVar6 = -1;
   if (bVar8 || p_Var2 != (_FILE *)0x0) {
     iVar6 = shape_edittool_cpp_CEditorTools_showFileSelectionDialog_FUN_00470550

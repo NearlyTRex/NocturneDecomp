@@ -268,7 +268,7 @@ C. SIGNATURE DIVERGENCE ON MATCHED PAIRS
   pairs compared        : 5267
   never transferred     : 6   (nocturne side has no signature at all -- transfer work, not drift)
   genuine divergence    : 53   (both sides typed, and they disagree -- investigate)
-  name core differs     : 62   (mapped as the same function under two different names)
+  name core differs     : 61   (mapped as the same function under two different names)
 
   -- genuine divergence, highest confidence first --
   by kind: {'ret': 28, 'param': 13, 'param2': 8, 'param0': 7, 'param3': 5, 'param1': 4, 'param5': 2, 'param6': 1, 'param4': 1, 'conv': 1}
@@ -451,7 +451,7 @@ C. SIGNATURE DIVERGENCE ON MATCHED PAIRS
         ret CPathMap* -> int
 
   -- same pair, different name core --
-  {'unnamed on one side': 50, 'renamed': 5, 'MAPPING SUSPECT': 4, 'stubbed in nocturne': 3}
+  {'unnamed on one side': 49, 'renamed': 5, 'MAPPING SUSPECT': 4, 'stubbed in nocturne': 3}
     MAPPING SUSPECT     the two names claim different CLASSES, so the
                         pair is probably wrong, not the names
     case-only spelling  same name, different capitalisation -- one build
@@ -624,9 +624,6 @@ C. SIGNATURE DIVERGENCE ON MATCHED PAIRS
       nocturne CGame
     [unnamed on one side] 004e12b0 -> 004a4170  conf 0.75  shape similar_size
       nocedit  CGame_loadGame
-      nocturne CGame
-    [unnamed on one side] 004e1cb0 -> 004a4b50  conf 0.75  shape similar_size
-      nocedit  CGame_showChapterSelect
       nocturne CGame
     [unnamed on one side] 004e2910 -> 004a57c0  conf 0.75  shape similar_size
       nocedit  CGame_showFullscreenBitmap

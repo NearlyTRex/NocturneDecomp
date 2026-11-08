@@ -35,7 +35,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[2]:
-;   core_game.cpp_CGame_FUN_004a4b50 at 004a4efd
+;   core_game.cpp_CGame_showChapterSelect_FUN_004a4b50 at 004a4efd
 ;   core_menu.cpp_showMainGameMenu_FUN_004d23d0 at 004d2815
 ;
 ; Referenced Globals:

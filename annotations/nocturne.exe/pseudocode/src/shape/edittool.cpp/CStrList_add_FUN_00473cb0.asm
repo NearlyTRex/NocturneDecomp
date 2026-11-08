@@ -8,8 +8,8 @@
 ; char *           Stack[0x8]:4   string_data
 ;
 ; XREF[17]:
-;   core_game.cpp_CGame_FUN_004a4b50 at 004a4f59
 ;   core_game.cpp_CGame_runGameSession_FUN_0049da10 at 0049df1a
+;   core_game.cpp_CGame_showChapterSelect_FUN_004a4b50 at 004a4f59
 ;   core_menu.cpp_configureCustomKeyBindings_FUN_004d2d00 at 004d3b17
 ;   core_menu.cpp_configureSoundOptions_FUN_004d12e0 at 004d210b
 ;   core_mission.cpp_CDemonMission_ensureHeroPlaceholder_FUN_004d9c20 at 004d9c5d

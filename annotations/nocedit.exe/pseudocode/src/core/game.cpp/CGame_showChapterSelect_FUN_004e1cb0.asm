@@ -10,8 +10,7 @@
 ; CPickList        Stack[-0x6ec]:936  local_6ec
 ; CIniFile         Stack[-0x344]:512  local_344
 ; char[260]        Stack[-0x144]:260  local_144
-; char *[4]        Stack[-0x40]:16  local_40
-; char *           Stack[-0x30]:4  local_30
+; char *[5]        Stack[-0x40]:20  local_40
 ; int              Stack[-0x2c]:4  local_2c
 ; int              Stack[-0x28]:4  local_28
 ; int              Stack[-0x24]:4  local_24

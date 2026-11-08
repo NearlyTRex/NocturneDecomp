@@ -52,7 +52,7 @@ void __cdecl core_game_cpp_CGame_resetInventoryDisplayTimer_FUN_004a3a90(CGame *
 void __cdecl core_game_cpp_CGame_setStatusDisplay_FUN_004a3ab0(CGame *this_ptr,char *name,float value,float duration);
 void __cdecl core_game_cpp_CGame_FUN_004a3b90(CGame *this_ptr,char *save_filename);
 void __cdecl core_game_cpp_CGame_FUN_004a4170(CGame *this_ptr,char *save_filename,int load_mode);
-void __cdecl core_game_cpp_CGame_FUN_004a4b50(CGame *this_ptr,int select_mode);
+void __cdecl core_game_cpp_CGame_showChapterSelect_FUN_004a4b50(CGame *this_ptr,int select_mode);
 void __cdecl core_game_cpp_CGame_displayBitmap_FUN_004a5740(CGame *this_ptr,char *filename,int width,int height);
 void __cdecl core_game_cpp_CGame_FUN_004a57c0(CGame *this_ptr);
 void __cdecl core_game_cpp_joinNetworkGame_FUN_004a5e40(void);

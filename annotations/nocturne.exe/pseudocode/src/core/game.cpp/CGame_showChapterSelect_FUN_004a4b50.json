@@ -4,85 +4,85 @@
       {
         "category": "undeclared_identifier",
         "column": 14,
-        "line": 46,
+        "line": 45,
         "message": "use of undeclared identifier '_DAT_01bcd070'; did you mean 'DAT_005c5070'?"
       },
       {
         "category": "undeclared_identifier",
         "column": 3,
-        "line": 47,
+        "line": 46,
         "message": "use of undeclared identifier '_DAT_01bcd070'; did you mean 'DAT_005c5070'?"
       },
       {
         "category": "incompatible_types",
         "column": 19,
-        "line": 47,
+        "line": 46,
         "message": "incompatible pointer to integer conversion assigning to 'undefined4' (aka 'unsigned int') from 'CBitFont *'"
       },
       {
         "category": "undeclared_identifier",
         "column": 5,
-        "line": 87,
+        "line": 86,
         "message": "use of undeclared identifier '_DAT_01c78ac0'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 5,
+        "line": 87,
+        "message": "use of undeclared identifier '_DAT_01c78ac4'"
       },
       {
         "category": "undeclared_identifier",
         "column": 5,
         "line": 88,
-        "message": "use of undeclared identifier '_DAT_01c78ac4'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 5,
-        "line": 89,
         "message": "use of undeclared identifier 'DAT_01c789c0'"
       },
       {
         "category": "undeclared_identifier",
         "column": 15,
-        "line": 361,
+        "line": 360,
         "message": "use of undeclared identifier 'DAT_01c789c0'"
       },
       {
         "category": "undeclared_identifier",
         "column": 5,
-        "line": 363,
+        "line": 362,
         "message": "use of undeclared identifier '_DAT_01c78ac0'"
       },
       {
         "category": "undeclared_identifier",
         "column": 5,
-        "line": 374,
+        "line": 373,
         "message": "use of undeclared identifier '_DAT_01c78ac4'"
       },
       {
         "category": "incompatible_types",
         "column": 3,
-        "line": 376,
+        "line": 375,
         "message": "no matching function for call to 'core_event_cpp_CEventList_resetGameFlags_FUN_00480410'"
       },
       {
         "category": "undeclared_identifier",
         "column": 21,
-        "line": 378,
+        "line": 377,
         "message": "use of undeclared identifier 'DAT_01c78598'"
       },
       {
         "category": "undeclared_identifier",
         "column": 15,
-        "line": 381,
+        "line": 380,
         "message": "use of undeclared identifier 'DAT_01c78598'"
       },
       {
         "category": "undeclared_identifier",
         "column": 3,
-        "line": 405,
+        "line": 404,
         "message": "use of undeclared identifier '_DAT_01bcd070'; did you mean 'DAT_005c5070'?"
       },
       {
         "category": "incompatible_types",
         "column": 19,
-        "line": 405,
+        "line": 404,
         "message": "incompatible pointer to integer conversion assigning to 'undefined4' (aka 'unsigned int') from 'CBitFont *'"
       }
     ],
@@ -92,12 +92,12 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 1066,
-    "complexity_score": 556,
+    "complexity_score": 555,
     "cross_reference_count": 2,
     "function_call_count": 21,
     "global_count": 86,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 396,
+    "pseudocode_lines": 395,
     "suspect_count": 14,
     "suspect_types": [
       "pointer_cast",
@@ -105,7 +105,7 @@
       "unrolled_strcpy",
       "warning_overlapping_globals"
     ],
-    "total_lines": 1462
+    "total_lines": 1461
   },
   "cross_references": [
     {
@@ -130,8 +130,8 @@
       ]
     ],
     "convention": "__cdecl",
-    "name": "core_game.cpp_CGame_FUN_004a4b50",
-    "signature": "void __cdecl core_game_cpp_CGame_FUN_004a4b50(CGame *this_ptr,int select_mode)"
+    "name": "core_game.cpp_CGame_showChapterSelect_FUN_004a4b50",
+    "signature": "void __cdecl core_game_cpp_CGame_showChapterSelect_FUN_004a4b50(CGame *this_ptr,int select_mode)"
   },
   "function_calls": [
     {
@@ -862,36 +862,8 @@
         "is_param": false,
         "name": "local_40",
         "offset": -64,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_3c",
-        "offset": -60,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_38",
-        "offset": -56,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_34",
-        "offset": -52,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_30",
-        "offset": -48,
-        "size": 4,
-        "type": "undefined4"
+        "size": 20,
+        "type": "char *[5]"
       },
       {
         "is_param": false,
@@ -969,7 +941,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 82,
+      "line": 81,
       "match": "DAT_01c789c0",
       "severity": "mild",
       "text": "DAT_01c789c0 = 0;",
@@ -977,7 +949,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 109,
+      "line": 108,
       "match": "(char **)((int)g_ChapterMissionFiles",
       "severity": "moderate",
       "text": "(\"world\",*(char **)((int)g_ChapterMissionFiles[0] + iVar3),",
@@ -985,7 +957,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 163,
+      "line": 162,
       "match": "(char **)((int)g_ChapterMissionFiles",
       "severity": "moderate",
       "text": "(\"world\",*(char **)((int)g_ChapterMissionFiles[0] + iVar5),",
@@ -993,7 +965,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 209,
+      "line": 208,
       "match": "(char **)((int)g_ChapterMissionFiles",
       "severity": "moderate",
       "text": "(\"world\",*(char **)((int)g_ChapterMissionFiles[0] + iVar5),",
@@ -1001,7 +973,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 262,
+      "line": 261,
       "match": "(char **)((int)g_ChapterMissionFiles",
       "severity": "moderate",
       "text": "(\"world\",*(char **)((int)g_ChapterMissionFiles[0] + iVar5),",
@@ -1009,7 +981,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 294,
+      "line": 293,
       "match": "(char **)((int)g_ChapterMissionFiles",
       "severity": "moderate",
       "text": "(\"world\",*(char **)((int)g_ChapterMissionFiles[0] + iVar5),",
@@ -1017,7 +989,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 317,
+      "line": 316,
       "match": "(char **)((int)g_ChapterMissionFiles",
       "severity": "moderate",
       "text": "(\"world\",*(char **)((int)g_ChapterMissionFiles[0] + iVar5),",
@@ -1025,7 +997,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 354,
+      "line": 353,
       "match": "DAT_01c789c0",
       "severity": "mild",
       "text": "pcVar4 = &DAT_01c789c0;",
@@ -1033,7 +1005,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 371,
+      "line": 370,
       "match": "DAT_01c78598",
       "severity": "mild",
       "text": "iVar6 = _stricmp(&DAT_01c78598,local_144);",
@@ -1041,7 +1013,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 374,
+      "line": 373,
       "match": "DAT_01c78598",
       "severity": "mild",
       "text": "pcVar4 = &DAT_01c78598;",
@@ -1049,7 +1021,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 341,
+      "line": 340,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -1057,7 +1029,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 358,
+      "line": 357,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -1065,7 +1037,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 375,
+      "line": 374,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",

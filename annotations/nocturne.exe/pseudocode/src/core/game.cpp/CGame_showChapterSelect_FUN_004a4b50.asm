@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_game_cpp_CGame_FUN_004a4b50(CGame *this_ptr,int select_mode)
+; void __cdecl core_game_cpp_CGame_showChapterSelect_FUN_004a4b50(CGame *this_ptr,int select_mode)
 ;
 ; Parameters:
 ; CGame *          Stack[0x4]:4   this_ptr
@@ -11,11 +11,7 @@
 ; undefined4       Stack[-0x2b4]:4  local_2b4
 ; undefined        Stack[-0x144]:1  local_144
 ; undefined1       Stack[-0x143]:1  local_143
-; undefined4       Stack[-0x40]:4  local_40
-; undefined4       Stack[-0x3c]:4  local_3c
-; undefined4       Stack[-0x38]:4  local_38
-; undefined4       Stack[-0x34]:4  local_34
-; undefined4       Stack[-0x30]:4  local_30
+; char *[5]        Stack[-0x40]:20  local_40
 ; undefined4       Stack[-0x2c]:4  local_2c
 ; undefined4       Stack[-0x28]:4  local_28
 ; undefined4       Stack[-0x24]:4  local_24
@@ -69,7 +65,7 @@
 section .text
 
     PUSH EBX                            ; 004a4b50
-        ;   Label: core_game.cpp_CGame_FUN_004a4b50
+        ;   Label: core_game.cpp_CGame_showChapterSelect_FUN_004a4b50
     PUSH ESI                            ; 004a4b51
     PUSH EDI                            ; 004a4b52
     PUSH EBP                            ; 004a4b53

@@ -131,7 +131,7 @@ int __cdecl core_main_c_enterMainGameMenu_FUN_004c85e0(void)
       else {
         iVar4 = 2;
       }
-      core_game_cpp_CGame_FUN_004a4b50(g_CGame_PTR_005b9354,iVar4);
+      core_game_cpp_CGame_showChapterSelect_FUN_004a4b50(g_CGame_PTR_005b9354,iVar4);
       engine_2d_c_clearInputAndWait_FUN_00403f50();
       engine_texture_cpp_clearTextureCache_FUN_005459f0();
       core_moon_cpp_CMoon_init_FUN_004de860(&g_CMoon_01cc5780);

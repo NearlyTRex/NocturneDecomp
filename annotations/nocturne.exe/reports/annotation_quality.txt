@@ -12,7 +12,7 @@ SUMMARY STATISTICS
 ====================================================================================================
 
   Total functions analyzed:          4,923
-  Unnamed functions (FUN_):          71 ( 1.4%)
+  Unnamed functions (FUN_):          70 ( 1.4%)
   Functions with unnamed params:     15 ( 0.3%)
   Functions with type issues:        1,664 (33.8%)
   (Name/address mismatches and duplicate names are reported at the end)
@@ -79,10 +79,9 @@ Sorted by caller count (most-referenced first = highest priority to name).
     0x004703f0  unknown       0 callers
     0x00477680  __cdecl       0 callers
 
-  core/game.cpp (4 unnamed)
+  core/game.cpp (3 unnamed)
     0x004a3b90  __cdecl       2 callers
     0x004a4170  __cdecl       2 callers
-    0x004a4b50  __cdecl       2 callers
     0x004a57c0  __cdecl       1 callers
 
   core/script.cpp (2 unnamed)
@@ -2399,11 +2398,6 @@ Undefined types in variables (1604)
     Locals:  local_60 (undefined), local_54 (undefined4), local_50 (undefined4), local_4c (undefined4), local_40 (undefined4), local_3c (undefined4), local_38 (undefined4), local_34 (undefined4), local_30 (undefined4), local_2c (undefined4), local_28 (undefined4), local_24 (undefined4), local_20 (undefined4), local_1c (undefined4), local_18 (undefined4), local_14 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
-  CGame
-    Address: 0x004a4b50  File: core/game.cpp
-    Locals:  local_4b4 (undefined), local_2b4 (undefined4), local_144 (undefined), local_143 (undefined1), local_40 (undefined4), local_3c (undefined4), local_38 (undefined4), local_34 (undefined4), local_30 (undefined4), local_2c (undefined4), local_28 (undefined4), local_24 (undefined4), local_20 (undefined4), local_1c (undefined4), local_18 (undefined4), local_14 (undefined4)
-    Suggested: Resolve undefined types to concrete types
-
   CBloodPool_render
     Address: 0x004af340  File: core/gore.cpp
     Locals:  local_50 (undefined4), local_4c (undefined4), local_48 (undefined4), local_44 (undefined4), local_40 (undefined4), local_3c (undefined4), local_38 (undefined4), local_34 (undefined4), local_30 (undefined4), local_2c (undefined4), local_28 (undefined4), local_24 (undefined4), local_20 (undefined4), local_1c (undefined4), local_18 (undefined4), local_14 (undefined4)
@@ -3013,6 +3007,11 @@ Undefined types in variables (1604)
   CGame
     Address: 0x004a57c0  File: core/game.cpp
     Locals:  local_630 (undefined), local_130 (undefined), local_12f (undefined1), local_30 (undefined4), local_2c (undefined4), local_28 (undefined4), local_24 (undefined4), local_20 (undefined4), local_1c (undefined4), local_18 (undefined4), local_14 (undefined4)
+    Suggested: Resolve undefined types to concrete types
+
+  CGame_showChapterSelect
+    Address: 0x004a4b50  File: core/game.cpp
+    Locals:  local_4b4 (undefined), local_2b4 (undefined4), local_144 (undefined), local_143 (undefined1), local_2c (undefined4), local_28 (undefined4), local_24 (undefined4), local_20 (undefined4), local_1c (undefined4), local_18 (undefined4), local_14 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
   CGhoul_getTargetPoints
@@ -9205,10 +9204,9 @@ Some are legitimate overloads, others may need disambiguating names.
     0x00481960  (void)
     0x00481970  (void)
 
-  core_game.cpp_CGame  (4 functions)
+  core_game.cpp_CGame  (3 functions)
     0x004a3b90  (CGame *this_ptr,char *save_filename)
     0x004a4170  (CGame *this_ptr,char *save_filename,int load_mode)
-    0x004a4b50  (CGame *this_ptr,int select_mode)
     0x004a57c0  (CGame *this_ptr)
 
   core_manpuz.cpp_CMansionPuzzleCircle  (2 functions)

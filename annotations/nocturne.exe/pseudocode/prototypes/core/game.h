@@ -213,9 +213,9 @@ void __cdecl CGame(CGame *this_ptr,char *save_filename);
 // Address: 004a4170
 void __cdecl CGame(CGame *this_ptr,char *save_filename,int load_mode);
 
-// Original: core_game.cpp_CGame_FUN_004a4b50
+// Original: core_game.cpp_CGame_showChapterSelect_FUN_004a4b50
 // Address: 004a4b50
-void __cdecl CGame(CGame *this_ptr,int select_mode);
+void __cdecl CGame::showChapterSelect(CGame *this_ptr,int select_mode);
 
 // Original: core_game.cpp_CGame_displayBitmap_FUN_004a5740
 // Address: 004a5740

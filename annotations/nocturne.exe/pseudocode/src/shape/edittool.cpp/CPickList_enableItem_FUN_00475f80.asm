@@ -9,8 +9,8 @@
 ; int              Stack[0xc]:4   enable_flag
 ;
 ; XREF[2]:
-;   core_game.cpp_CGame_FUN_004a4b50 at 004a5026
 ;   core_game.cpp_CGame_runGameSession_FUN_0049da10 at 0049e2ba
+;   core_game.cpp_CGame_showChapterSelect_FUN_004a4b50 at 004a5026
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_shape_edittool_cpp_0057ee5b

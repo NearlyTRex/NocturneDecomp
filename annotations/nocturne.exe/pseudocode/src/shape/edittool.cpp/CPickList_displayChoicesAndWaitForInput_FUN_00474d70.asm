@@ -11,8 +11,8 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[12]:
-;   core_game.cpp_CGame_FUN_004a4b50 at 004a5055
 ;   core_game.cpp_CGame_runGameSession_FUN_0049da10 at 0049df56
+;   core_game.cpp_CGame_showChapterSelect_FUN_004a4b50 at 004a5055
 ;   core_menu.cpp_configureCustomKeyBindings_FUN_004d2d00 at 004d3baa
 ;   core_menu.cpp_configureSoundOptions_FUN_004d12e0 at 004d2125
 ;   core_mission.cpp_CDemonMission_ensureHeroPlaceholder_FUN_004d9c20 at 004d9c9d
