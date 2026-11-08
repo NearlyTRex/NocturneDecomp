@@ -154,7 +154,11 @@ def target_name(nocedit_name, nocturne_name, nocturne_addr):
     _, core = sm.split_qualified_name(nocedit_name)
     if not core:
         return None
-    tu = sm.tu_of(nocturne_name) or sm.tu_of(nocedit_name)
+    tu = sm.tu_of(nocturne_name)
+    # A virtual unit only marks where the function sits; the sibling's real
+    # unit replaces it.
+    if not tu or tu.startswith(sm.VIRTUAL_UNIT_PREFIX):
+        tu = sm.tu_of(nocedit_name)
     prefix = "%s_" % tu if tu else ""
     return "%s%s_FUN_%s" % (prefix, core, nocturne_addr.lower())
 
@@ -229,6 +233,8 @@ def plan(mapping, crt_wall, min_confidence, want_signatures, current_names,
                "sig_detail": p.get("sig_detail", ""),
                "evidence": p.get("evidence", []),
                "tu": cur_tu, "tu_from": edit_tu,
+               # The name asserts a receiver only the signature can supply.
+               "receiver_from_signature": needs_receiver and not has_receiver,
                "detail": ""}
 
         # nocturne's CRT was never subdivided -- every runtime function carries
@@ -236,7 +242,7 @@ def plan(mapping, crt_wall, min_confidence, want_signatures, current_names,
         # crt_*.c would reject the whole runtime for a disagreement that is
         # only a difference in labelling granularity.
         tu_conflict = (require_tu_match and cur_tu and edit_tu
-                       and cur_tu != edit_tu and cur_tu != "crt_unknown.c")
+                       and cur_tu != edit_tu and not sm.is_placeholder_unit(cur_tu))
 
         # Evaluated up front because it is independent of everything the name
         # gate below decides -- including the confidence test that the name
@@ -297,7 +303,7 @@ def plan(mapping, crt_wall, min_confidence, want_signatures, current_names,
             row["detail"] = ("name claims class %s but the target's parameter 0 "
                              "is %s, and no signature is being applied to "
                              "correct it" % (claimed_cls, recv_type))
-        elif needs_receiver and not has_receiver:
+        elif needs_receiver and not has_receiver and not sig_ok:
             # `<tu>_<Class>_<method>_FUN_<addr>` ASSERTS that parameter 0 is
             # `<Class> *this_ptr`. Applying such a name to a function with no
             # parameters makes an assertion the program cannot satisfy, and the
@@ -306,8 +312,9 @@ def plan(mapping, crt_wall, min_confidence, want_signatures, current_names,
             # A name-only transfer onto an UNSIGNATURED target hits this every
             # time -- 24 of them blocked an export before this gate existed.
             # The prototype is the missing half, and it is not ours to invent:
-            # these pairs measure `unverifiable`, so the signature gate refuses
-            # them too. Leave the function anonymous until it has a receiver.
+            # without a supported signature, leave the function anonymous until
+            # it has a receiver. With one, the signature brings the receiver,
+            # and apply_row names the function only if that signature lands.
             row["action"] = "SKIP_NO_RECEIVER"
             row["detail"] = ("name claims class %s but the target declares no "
                              "parameters; needs a signature first" % claimed_cls)
@@ -333,6 +340,94 @@ def plan(mapping, crt_wall, min_confidence, want_signatures, current_names,
 
     rows.sort(key=lambda r: r["b"])
     return rows
+
+
+def plan_thunk_names(thunks, final_names, source_names):
+    """Own names for thunks that would otherwise wear their target's.
+
+    A thunk with no symbol of its own is displayed under its target's name,
+    address suffix included, so naming a target makes every unnamed thunk to it
+    claim the target's address -- the export refuses that, and the pseudocode
+    tree would put both in one file. The thunk is a function of its own, so it
+    gets a name of its own: the target's core with the thunk's address, which is
+    how nocedit names its thunks. The unit comes from the paired source thunk
+    when that one agrees on the core, since a thunk is emitted in its caller's
+    object file, not its target's; otherwise from the target.
+
+    A target with no core yet -- unnamed, or known only by its unit -- gives the
+    thunk nothing to be called, so it gets the unit-only placeholder
+    `<unit>_FUN_<addr>` instead, as nocturne does. Ghidra will not keep a plain
+    `FUN_<addr>` as a name, and the user wants `thunk_` gone where the unit is
+    known. That unit is the paired source thunk's, or failing that the one its
+    nearest labelled neighbours share on both sides (a unit is one unbroken run
+    of code); with neither, the thunk is left as it is and reported.
+
+    `thunks` maps a thunk with a derived name to its final target, `final_names`
+    is every function's name once this run's names land, and `source_names` the
+    mapped source name per thunk address.
+    """
+    ordered = sorted(final_names, key=lambda a: int(a, 16))
+    rows = []
+    for b, target in sorted(thunks.items()):
+        target_tu, core = sm.split_qualified_name(final_names.get(target))
+        source_tu, source_core = sm.split_qualified_name(source_names.get(b))
+        if core is not None:
+            tu = source_tu if source_core == core and source_tu else target_tu
+            prefix = "%s_" % tu if tu else ""
+            rows.append({"b": b, "target": target,
+                         "want": "%s%s_FUN_%s" % (prefix, core, b)})
+            continue
+        tu = source_tu or position_unit(b, ordered, final_names, thunks)
+        # With no unit either, the thunk is unidentified, and says so in
+        # Ghidra's own words rather than wearing the target's name.
+        want = "%s_FUN_%s" % (tu, b) if tu else placeholder_thunk_name(target)
+        if want != final_names.get(b):
+            rows.append({"b": b, "target": target, "want": want,
+                         "unidentified": not tu})
+    return rows
+
+
+def placeholder_thunk_name(target):
+    return "thunk_FUN_%s" % target
+
+
+def position_unit(addr, ordered, final_names, thunks):
+    """The unit both nearest labelled neighbours of `addr` agree on, or None."""
+    i = ordered.index(addr)
+
+    def nearest(step):
+        j = i + step
+        while 0 <= j < len(ordered):
+            a = ordered[j]
+            tu = sm.tu_of(final_names.get(a)) if a not in thunks else None
+            if tu:
+                return tu
+            j += step
+        return None
+
+    before, after = nearest(-1), nearest(1)
+    return before if before and before == after else None
+
+
+def derived_name_thunks(funcs):
+    """addr -> final target addr, for in-program thunks with no name of their own.
+
+    That includes a thunk set to the placeholder by an earlier run, so it is
+    picked up again once its target is identified.
+    """
+    from ghidra.program.model.symbol import SourceType
+    out = {}
+    for addr, f in funcs.items():
+        if not f.isThunk():
+            continue
+        target = f.getThunkedFunction(True)
+        if target is None or target.isExternal():
+            continue
+        target_addr = "%08x" % target.getEntryPoint().getOffset()
+        if (f.getSymbol().getSource() == SourceType.DEFAULT
+                or f.getName() == placeholder_thunk_name(target_addr)):
+            out[addr] = target_addr
+    return out
 
 
 _ARRAY_RE = re.compile(r"^(.*?)\s*\[(\d+)\]$")
@@ -473,18 +568,25 @@ def apply_row(program, func, row, want_signatures, dtm=None, cache=None):
     # A SIG_ONLY row is here *because* the pairing was not confident enough to
     # name. Renaming is the one thing it must not do.
     sig_only = row["action"] == "SIG_ONLY"
+    spec = row.get("sig")
+    built = None
+    if want_signatures and row["action"] in ("NAME_SIG", "SIG_ONLY") \
+            and not needs_custom_storage(row.get("conv"), spec):
+        built = (build_signature(dtm, func, spec, cache if cache is not None else {})
+                 if (spec and dtm is not None) else None)
+    if row.get("receiver_from_signature") and not sig_only and built is None:
+        # The name claims a `this_ptr` that only this signature would supply,
+        # and it cannot be built: naming the function now would plant the
+        # very defect the receiver gate exists to keep out.
+        return "skipped (no receiver)"
     if not sig_only:
         func.setName(row["want"], SourceType.USER_DEFINED)
     if not (want_signatures and row["action"] in ("NAME_SIG", "SIG_ONLY")):
         return "name"
 
-    spec = row.get("sig")
     if needs_custom_storage(row.get("conv"), spec):
         # Left to transfer_custom_storage.py; see FPU_CONV_PREFIX.
         return "skipped (custom storage)" if sig_only else "name (custom storage)"
-
-    built = (build_signature(dtm, func, spec, cache if cache is not None else {})
-             if (spec and dtm is not None) else None)
     if built is None:
         # SIG_ONLY exists only to carry a prototype. With no prototype to carry
         # there is nothing left worth doing -- pinning a calling convention
@@ -509,6 +611,7 @@ def apply_row(program, func, row, want_signatures, dtm=None, cache=None):
         # storage can land half-assigned and only fail for later readers.
         if not signature_readable(func):
             ok = make_readable(func)
+            undo_receiver_name(func, row)
             return ("unreadable, reset" if ok else "UNREADABLE")
         return "signature" if sig_only else "name+signature"
     except Exception:
@@ -521,7 +624,18 @@ def apply_row(program, func, row, want_signatures, dtm=None, cache=None):
         ok = make_readable(func)
         if not ok:
             return "UNREADABLE"
+        if undo_receiver_name(func, row):
+            return "skipped (prototype rejected, no receiver)"
         return "prototype rejected" if sig_only else "name (prototype rejected)"
+
+
+def undo_receiver_name(func, row):
+    """Put back the old name when the signature that was to carry its receiver failed."""
+    from ghidra.program.model.symbol import SourceType
+    if not row.get("receiver_from_signature") or row["action"] == "SIG_ONLY":
+        return False
+    func.setName(row["current"], SourceType.USER_DEFINED)
+    return True
 
 
 def main():
@@ -681,7 +795,26 @@ def main():
                                                                 "SIG_ONLY"))
                 to_apply = to_apply[:args.limit]
                 print("[limit] applying only %d row(s)" % len(to_apply))
-            if args.apply and to_apply:
+
+            final_names = dict(current)
+            for r in to_apply:
+                if r["action"] != "SIG_ONLY":
+                    final_names[r["b"]] = r["want"]
+            planned = plan_thunk_names(
+                derived_name_thunks(funcs), final_names,
+                {p["b"].lower(): p["name"] for p in mapping["pairs"]})
+            thunk_rows = planned
+            with open(out_path, "a") as fh:
+                fh.write("== THUNK (%d) ==\n" % len(thunk_rows))
+                for t in thunk_rows:
+                    fh.write("  %s -> %s  %s%s\n" % (
+                        t["b"], t["target"], t["want"],
+                        "  <- no unit found" if t["unidentified"] else ""))
+            print("  %-11s %d (%d with no unit found)"
+                  % ("THUNK", len(thunk_rows),
+                     sum(1 for t in thunk_rows if t["unidentified"])))
+
+            if args.apply and (to_apply or thunk_rows):
                 print("\n[apply] %d function(s)..." % len(to_apply))
                 tx = program.startTransaction("Apply sibling annotations")
                 ok, done = True, 0
@@ -703,6 +836,11 @@ def main():
                             outcomes["FAILED"] += 1
                             failures.append((r["b"], r.get("conv"),
                                              str(e).split("\n")[0][:90]))
+                    from ghidra.program.model.symbol import SourceType
+                    for t in thunk_rows:
+                        funcs[t["b"]].setName(t["want"], SourceType.USER_DEFINED)
+                        outcomes["thunk name"] += 1
+                        done += 1
                 except Exception as e:
                     ok = False
                     print("ERROR: %s" % e)

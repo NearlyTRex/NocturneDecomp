@@ -156,3 +156,34 @@ def build_pe(imports = None, exports = None, resources = None, pe32_plus = True,
 def write_pe(path, **kwargs):
     path.write_bytes(build_pe(**kwargs))
     return path
+
+
+SECTION_EXECUTE = 0x20000000
+
+
+# A PE32 image of the given (name, bytes, characteristics[, virtual size])
+# sections, mapped one page apart from image_base + 0x1000, with no directories.
+# Section i's bytes are at section_va(image_base, i); a virtual size beyond the
+# bytes is mapped but has nothing in the file, as .bss does.
+def build_sectioned_pe(sections, image_base = 0x400000):
+    optional = bytearray(96 + 16 * 8)
+    struct.pack_into("<H", optional, 0, 0x10b)
+    struct.pack_into("<I", optional, 28, image_base)
+    struct.pack_into("<I", optional, 92, 16)
+    coff = struct.pack("<HHIIIHH", 0x14c, len(sections), 0, 0, 0, len(optional), 0x102)
+    headers, raw, raw_offset = b"", b"", SECTION_RAW
+    for index, (name, data, flags, *vsize) in enumerate(sections):
+        headers += struct.pack("<8sIIIIIIHHI", name.encode("ascii"), vsize[0] if vsize else len(data),
+                               SECTION_RVA * (index + 1), len(data), raw_offset, 0, 0, 0, 0, flags)
+        raw += data
+        raw_offset += len(data)
+    image = bytearray(SECTION_RAW)
+    image[0:2] = b"MZ"
+    struct.pack_into("<I", image, 0x3c, PE_OFFSET)
+    header = b"PE\0\0" + coff + bytes(optional) + headers
+    image[PE_OFFSET:PE_OFFSET + len(header)] = header
+    return bytes(image) + raw
+
+
+def section_va(image_base, index):
+    return image_base + SECTION_RVA * (index + 1)

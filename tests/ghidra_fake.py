@@ -118,6 +118,16 @@ class DataType(JavaObject):
     def getPathName(self):
         return f"{self.category.rstrip('/')}/{self.name}"
 
+    def setName(self, name):
+        self.name = name
+
+    def setCategoryPath(self, path):
+        self.category = path.getPath()
+
+    # Ghidra compares layouts; here, the same kind of type of the same size
+    def isEquivalent(self, other):
+        return type(self) is type(other) and self.length == other.length
+
     def __str__(self):
         return self.name
 
@@ -241,14 +251,28 @@ class DataTypeComponent(JavaObject):
 
 # Its components laid end to end; a (data type, field name) pair names the field
 class StructureDataType(Structure):
-    def __init__(self, name, components = (), **kwargs):
+    # Also Ghidra's own StructureDataType(CategoryPath, name, length, dtm): that
+    # many undefined bytes, filed under the category
+    def __init__(self, name, components = (), length = None, data_type_manager = None, **kwargs):
+        if isinstance(name, CategoryPath):
+            kwargs["category"] = name.getPath()
+            name, components = components, ()
+        if length is not None:
+            kwargs["length"] = length
         super().__init__(name, **kwargs)
         self.components = []
+        self.description = ""
         offset = 0
         for component in components:
             data_type, field_name = component if isinstance(component, tuple) else (component, None)
             self.components.append(DataTypeComponent(data_type, field_name, offset))
             offset += data_type.getLength()
+
+    def getDescription(self):
+        return self.description
+
+    def setDescription(self, description):
+        self.description = description
 
     def getComponents(self):
         return self.components
@@ -291,9 +315,6 @@ class EnumDataType(Enum):
 
     def remove(self, name):
         del self.values[name]
-
-    def setName(self, name):
-        self.name = name
 
 
 class UnionDataType(Union):
@@ -410,6 +431,35 @@ class BuiltInDataTypeManager(JavaObject):
         return self.types[name]
 
 
+# --- java.util ---------------------------------------------------------------------
+
+class ArrayList(list, metaclass = JavaClassMeta):
+    def isEmpty(self):
+        return not self
+
+    def get(self, index):
+        return self[index]
+
+    def add(self, item):
+        self.append(item)
+        return True
+
+
+# --- ghidra.app.cmd.function -------------------------------------------------------
+
+# Creates a placeholder-named function at its address, as Ghidra's does once the
+# analysis it runs finds a body there
+class CreateFunctionCmd(JavaObject):
+    def __init__(self, entry):
+        super().__init__(entry)
+        self.entry = entry
+
+    def applyTo(self, program):
+        offset = self.entry.getOffset()
+        program.getFunctionManager().add(f"FUN_{offset:08x}", offset)
+        return True
+
+
 MODELLED = {
     "ghidra.program.model.address": {"Address": Address, "AddressSet": AddressSet},
     "ghidra.program.model.data": {
@@ -426,7 +476,9 @@ MODELLED = {
         **{string_class.__name__: string_class for string_class in STRING_TYPES},
     },
     "ghidra.program.model.mem": {"MemoryAccessException": MemoryAccessException},
+    "ghidra.app.cmd.function": {"CreateFunctionCmd": CreateFunctionCmd},
     "java.lang": {"IllegalArgumentException": IllegalArgumentException},
+    "java.util": {"ArrayList": ArrayList},
 }
 
 

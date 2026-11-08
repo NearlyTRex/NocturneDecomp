@@ -99,6 +99,21 @@ def base_type_name(text):
 
 KINDS = ("funcdef", "struct", "union", "enum", "typedef", "other")
 
+STUB_DESCRIPTION = "Stub: no RTTI in this build, size and fields not yet recovered"
+
+
+def empty_stub(sdt, dtm):
+    """A struct named and filed as `sdt`, asserting nothing about its layout.
+
+    Enough for `T *` to resolve in a signature. With no RTTI record there is no
+    size to give it, and the source's would be a guess across the build
+    boundary, which is exactly the layout drift a stub exists to avoid.
+    """
+    from ghidra.program.model.data import StructureDataType
+    stub = StructureDataType(sdt.getCategoryPath(), sdt.getName(), 0, dtm)
+    stub.setDescription(STUB_DESCRIPTION)
+    return stub
+
 
 def kind_of(dt):
     """Coarse category for a Ghidra data type, matching --kind values.
@@ -271,6 +286,10 @@ def main():
                          "data (funcdefs are only reachable that way)")
     ap.add_argument("--prune-conflicts", action="store_true",
                     help="delete any .conflict types this run introduces")
+    ap.add_argument("--stub-structs", action="store_true",
+                    help="create each missing struct as an empty placeholder "
+                         "at the source's category instead of copying its "
+                         "layout, for a build whose layouts are not known")
     ap.add_argument("--apply", action="store_true")
     args = ap.parse_args()
 
@@ -358,7 +377,22 @@ def main():
                     tx = dst.startTransaction("Import sibling data types")
                     ok = True
                     try:
+                        # Stubs first, so a type imported after them that
+                        # mentions one resolves to the stub rather than
+                        # dragging the source's layout in as a dependency.
+                        stubbed = []
+                        if args.stub_structs:
+                            stubbed = [(n, s) for n, s in have
+                                       if kind_of(s) == "struct"]
+                            for name, sdt in stubbed:
+                                dst_dtm.addDataType(
+                                    empty_stub(sdt, dst_dtm),
+                                    DataTypeConflictHandler.KEEP_HANDLER)
+                            print("\nstubbed %d struct(s) as empty placeholders"
+                                  % len(stubbed))
                         for name, sdt in have:
+                            if (name, sdt) in stubbed:
+                                continue
                             # KEEP_HANDLER: dependencies the target already has
                             # are its own, corrected copies -- do not replace
                             # them with the source's.

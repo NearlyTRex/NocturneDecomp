@@ -100,6 +100,17 @@ def is_unnamed(name):
     return bool(UNNAMED_RE.match(name or ""))
 
 
+# Units that say where a function sits, not which file it came from: the CRT's
+# catch-all, and the virtual units assign_virtual_units.py gives the functions
+# between two different known units. Never evidence, and always replaceable.
+CRT_UNKNOWN_UNIT = "crt_unknown.c"
+VIRTUAL_UNIT_PREFIX = "unknown_"
+
+
+def is_placeholder_unit(unit):
+    return bool(unit) and (unit == CRT_UNKNOWN_UNIT or unit.startswith(VIRTUAL_UNIT_PREFIX))
+
+
 def strip_addr_suffix(name):
     """core_box.cpp_CBoundingBox3D_expand_FUN_00420240 -> ..._expand"""
     return ADDR_SUFFIX_RE.sub("", name or "")

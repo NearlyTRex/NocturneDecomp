@@ -30,6 +30,7 @@ class Symbol:
         self.namespace = namespace
         self.source = source
         self.dynamic = dynamic
+        self.table = None
 
     def getName(self):
         return self.name
@@ -45,6 +46,12 @@ class Symbol:
 
     def isDynamic(self):
         return self.dynamic
+
+    # Ghidra's primary symbol is the one an address shows; here, the first
+    def setPrimary(self):
+        self.table.symbols.remove(self)
+        self.table.symbols.insert(0, self)
+        return True
 
 
 class SymbolTable:
@@ -62,8 +69,12 @@ class SymbolTable:
         self.namespaces[(name, parent)] = namespace
         return namespace
 
-    def createLabel(self, address, name, namespace, source):
+    # Ghidra's two overloads: (address, name, source) files it in the global namespace
+    def createLabel(self, address, name, *namespace_and_source):
+        namespace = namespace_and_source[0] if len(namespace_and_source) == 2 else self.global_namespace
+        source = namespace_and_source[-1]
         symbol = Symbol(name, address, namespace, source)
+        symbol.table = self
         self.symbols.append(symbol)
         return symbol
 
@@ -235,14 +246,25 @@ class Listing:
     def clearCodeUnits(self, start, end, clear_context):
         self.cleared.append((start, end, clear_context))
 
+    def createData(self, address, data_type):
+        length = data_type.getLength() if hasattr(data_type, "getLength") else 1
+        data = Data(address, data_type, length = length)
+        self.data[address] = data
+        return data
+
 
 class Function:
     def __init__(self, name, entry):
         self.name = name
         self.entry = entry
+        self.source = "DEFAULT"
 
     def getName(self):
         return self.name
+
+    def setName(self, name, source):
+        self.name = name
+        self.source = source
 
     def getEntryPoint(self):
         return self.entry
@@ -339,6 +361,8 @@ class Language:
 class DataTypeManager:
     def __init__(self, types = ()):
         self.types = list(types)
+        self.replaced = []
+        self.categories = []
 
     def add(self, *data_types):
         self.types.extend(data_types)
@@ -354,6 +378,26 @@ class DataTypeManager:
 
     def getAllDataTypes(self):
         return iter(self.types)
+
+    # Ghidra fills the list it is handed, whatever category the types are in
+    def findDataTypes(self, name, found):
+        for data_type in self.types:
+            if data_type.getName() == name:
+                found.add(data_type)
+
+    def addDataType(self, data_type, _handler):
+        self.types.append(data_type)
+        return data_type
+
+    # Every use of `old` now refers to `new`, and `old` is gone
+    def replaceDataType(self, old, new, _update_category_path):
+        self.types.remove(old)
+        self.replaced.append((old, new))
+        return new
+
+    def createCategory(self, path):
+        self.categories.append(path.getPath())
+        return path
 
 
 # The program's file in the project, counting the times it is saved
