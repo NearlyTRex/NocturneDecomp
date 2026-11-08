@@ -3,6 +3,7 @@
 #include "engine/package/packagedata.h"
 #include "platform/fwd.h"
 
+#include <cstdint>
 #include <span>
 #include <string>
 #include <string_view>
@@ -31,7 +32,13 @@ struct SPackageDiscovery {
     std::vector<SPackage> packages;
     // What wasn't loaded, or couldn't be written, and why.
     std::vector<std::string> notes;
+    // The archives left to be unpacked, whose packages aren't among those found.
+    std::vector<std::string> archives_left;
 };
+
+// Unpacking a large archive takes long enough to want a loading screen, which needs the packages
+// already unpacked to draw it.
+enum class EArchiveUnpacking : std::uint8_t { Now, Later };
 
 // Every folder's nocturne.toml, each a package rooted at its folder. Without one whose id is the
 // base game's, one is written from the known release the install matches, in the folder holding
@@ -39,9 +46,11 @@ struct SPackageDiscovery {
 // game content isn't its release's as this build has it. A subfolder's PODs
 // that no manifest names, links followed, are given a manifest; those of the install folder or
 // of a folder with a manifest are noted. A ZIP or 7z is searched as a folder where it lies, once
-// unpacked into the archive cache, and the cache's folders for archives no longer there go.
-[[nodiscard]] SPackageDiscovery discoverPackages(platform::IFileSystem &file_system,
-                                                 std::span<const SRelease> releases);
+// unpacked into the archive cache, and the cache's folders for archives no longer there go; one
+// not yet unpacked is left for later when asked.
+[[nodiscard]] SPackageDiscovery
+discoverPackages(platform::IFileSystem &file_system, std::span<const SRelease> releases,
+                 EArchiveUnpacking unpacking = EArchiveUnpacking::Now);
 
 // The package's nocturne.toml, led by kWrittenByGame. False when it can't be written.
 bool writeManifest(platform::IFileSystem &file_system, const SPackage &package);

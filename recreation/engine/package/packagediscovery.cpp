@@ -148,8 +148,9 @@ bool isPod(std::string_view name) {
 
 class CDiscovery {
 public:
-    CDiscovery(platform::IFileSystem &file_system, std::span<const SRelease> releases)
-        : file_system_(file_system), releases_(releases) {}
+    CDiscovery(platform::IFileSystem &file_system, std::span<const SRelease> releases,
+               EArchiveUnpacking unpacking)
+        : file_system_(file_system), releases_(releases), unpacking_(unpacking) {}
 
     SPackageDiscovery run() && {
         searchFolder("", "", "");
@@ -196,6 +197,17 @@ private:
     }
 
     void searchArchive(const std::string &path) {
+        if (unpacking_ == EArchiveUnpacking::Later && !findUnpacked(file_system_, path)) {
+            // Only one that would be unpacked is left; listing it takes no time.
+            if (const std::expected<void, std::string> checked =
+                    checkUnpackable(file_system_, path);
+                !checked) {
+                found_.notes.push_back(std::format("{}, so it isn't loaded", checked.error()));
+            } else {
+                found_.archives_left.push_back(path);
+            }
+            return;
+        }
         const std::expected<std::string, std::string> unpacked = unpackToCache(file_system_, path);
         if (!unpacked) {
             found_.notes.push_back(std::format("{}, so it isn't loaded", unpacked.error()));
@@ -392,6 +404,7 @@ private:
 
     platform::IFileSystem &file_system_;
     std::span<const SRelease> releases_;
+    EArchiveUnpacking unpacking_;
     std::vector<SFolder> folders_;
     // The cache folders of the archives found.
     std::vector<std::string> unpacked_;
@@ -403,8 +416,9 @@ private:
 } // namespace
 
 SPackageDiscovery discoverPackages(platform::IFileSystem &file_system,
-                                   std::span<const SRelease> releases) {
-    return CDiscovery(file_system, releases).run();
+                                   std::span<const SRelease> releases,
+                                   EArchiveUnpacking unpacking) {
+    return CDiscovery(file_system, releases, unpacking).run();
 }
 
 bool writeManifest(platform::IFileSystem &file_system, const SPackage &package) {

@@ -33,6 +33,10 @@ public:
 
     // Mounts the game's pods; the base has none.
     virtual void load();
+    // Archives load left to unpack once a loading screen is up; the base has none.
+    [[nodiscard]] virtual bool hasArchivesToUnpack() const;
+    // Unpacks them and loads again with what they hold.
+    virtual void unpackArchives();
     virtual bool findFile(SFoundFileInfo &found_file_info);
     virtual void mount(std::string_view pod_filename);
     // As mount, the pod mounted or why it couldn't be, rather than fatal.

@@ -40,9 +40,9 @@ struct SGameSystemOwners {
 };
 
 using common::displayErrorAndQuit;
-// Reads the INI, mounts the pods and brings up graphics at 640x480x32, then fonts, the first
-// run's calibration, the opening movie, a loading screen, sound, the light filters, the mouse
-// and the network. The attract movies wait for the opening to have played. Packages that name
+// Reads the INI, mounts the pods, unpacking archives behind the fangs where any are left, and
+// brings up graphics at 640x480x32, then fonts, the first run's calibration, the opening movie, a
+// loading screen, sound, the light filters, the mouse and the network. The attract movies wait for the opening to have played. Packages that name
 // no front end this build has are fatal.
 void initializeGameSystems(const SGameSystemOwners &owners);
 // The main menu, until it quits; showMainGameMenu's result.

@@ -466,6 +466,38 @@ TEST_F(CPackageDiscoveryTest, TheCacheKeepsOnlyTheArchivesFound) {
     EXPECT_TRUE(files_.contents(kept + ".unpacked").has_value());
 }
 
+TEST_F(CPackageDiscoveryTest, AnArchiveNotYetUnpackedCanBeLeftForLater) {
+    files_.givenFile("hell.zip", makeTestArchive(ETestArchiveFormat::Zip,
+                                                 {{.path = "HELL.POD", .contents = "POD one"}}));
+    EXPECT_CALL(files_.file_system_, makeDirectory).Times(0);
+    const SPackageDiscovery found =
+        discoverPackages(files_.file_system_, releases_, EArchiveUnpacking::Later);
+    EXPECT_EQ(folders(found), std::vector<std::string>{""});
+    EXPECT_EQ(found.archives_left, std::vector<std::string>{"hell.zip"});
+    EXPECT_TRUE(found.notes.empty()) << found.notes.front();
+}
+
+TEST_F(CPackageDiscoveryTest, AnArchiveUnpackedAlreadyIsntLeftForLater) {
+    files_.givenFile("hell.zip", makeTestArchive(ETestArchiveFormat::Zip,
+                                                 {{.path = "HELL.POD", .contents = "POD one"}}));
+    const std::string unpacked = discover().packages[1].folder;
+    const SPackageDiscovery found =
+        discoverPackages(files_.file_system_, releases_, EArchiveUnpacking::Later);
+    EXPECT_EQ(folders(found), (std::vector<std::string>{"", unpacked}));
+    EXPECT_TRUE(found.archives_left.empty());
+}
+
+// It would never be unpacked, so there is nothing to wait for.
+TEST_F(CPackageDiscoveryTest, AnArchiveThatIsntAPackageIsntLeftForLater) {
+    files_.givenFile("saves.zip", makeTestArchive(ETestArchiveFormat::Zip,
+                                                  {{.path = "a.sav", .contents = "x"}}));
+    const SPackageDiscovery found =
+        discoverPackages(files_.file_system_, releases_, EArchiveUnpacking::Later);
+    EXPECT_TRUE(found.archives_left.empty());
+    EXPECT_EQ(found.notes, std::vector<std::string>{"saves.zip holds no nocturne.toml and no "
+                                                    "POD, so it isn't loaded"});
+}
+
 TEST_F(CPackageDiscoveryTest, AManifestIsWrittenLedByTheGamesLine) {
     const SPackage package{.manifest = {.id = "extra",
                                         .name = "extra",

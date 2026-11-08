@@ -9,6 +9,7 @@
 #include "platform/log.h"
 #include "tests/mocks/engine/packagefiles.h"
 #include "tests/mocks/engine/podimage.h"
+#include "tests/mocks/engine/testarchive.h"
 #include "tests/mocks/platform/mocklog.h"
 
 #include <gmock/gmock.h>
@@ -332,6 +333,50 @@ TEST_F(CDemonPodTest, AManifestThatCantBeWrittenAgainIsNoted) {
     CDemonPod again = restart();
     again.load();
     EXPECT_THAT(notes_, Contains(EndsWith("nocturne.toml couldn't be written")));
+}
+
+// The first load leaves an archive not yet unpacked, and says nothing the load after it would.
+TEST_F(CDemonPodTest, AnArchiveIsUnpackedOnlyWhenAsked) {
+    files_.givenFile("STRAY.POD", "stray");
+    files_.givenFile(
+        "mods/hell.zip",
+        engine::makeTestArchive(
+            engine::ETestArchiveFormat::Zip,
+            {{.path = "nocturne.toml", .contents = "id = \"hell\"\n[[pod]]\npath = \"HELL.POD\"\n"},
+             {.path = "HELL.POD",
+              .contents = makePod2("", {{.name = "data\\shared.txt", .data = "hell"}})}}));
+    turned_on_ += "hell\n";
+    load();
+    EXPECT_TRUE(pod().hasArchivesToUnpack());
+    EXPECT_EQ(answer("data\\shared.txt"), "ACT1.POD");
+    EXPECT_TRUE(notes_.empty()) << notes_.front();
+    pod().unpackArchives();
+    EXPECT_FALSE(pod().hasArchivesToUnpack());
+    EXPECT_THAT(answer("data\\shared.txt"), ::testing::Optional(EndsWith("/HELL.POD")));
+    EXPECT_EQ(pod().getPodFiles().size(), 3U);
+    EXPECT_THAT(notes_, Contains(EndsWith("STRAY.POD isn't in a package's manifest, so it isn't "
+                                          "loaded")));
+}
+
+// What the archive holds may be all there is to load.
+TEST_F(CDemonPodTest, NothingToLoadIsFatalOnlyOnceTheArchivesAreUnpacked) {
+    files_.givenFile("STARTUP.POD", "not a pod");
+    files_.givenFile("game.zip", engine::makeTestArchive(engine::ETestArchiveFormat::Zip,
+                                                         {{.path = "readme.txt", .contents = ""},
+                                                          {.path = "GAME.POD", .contents = ""}}));
+    load();
+    EXPECT_TRUE(pod().getPodFiles().empty());
+    EXPECT_THAT(
+        [this] { pod().unpackArchives(); },
+        ThrowsMessage<common::CFatalError>(::testing::StartsWith("Nothing could be loaded")));
+}
+
+TEST_F(CDemonPodTest, WithNoArchiveLeftUnpackingLoadsNothingAgain) {
+    load();
+    EXPECT_FALSE(pod().hasArchivesToUnpack());
+    const engine::CPodFile *first = pod().getPodFiles().front().get();
+    pod().unpackArchives();
+    EXPECT_EQ(pod().getPodFiles().front().get(), first);
 }
 
 // What is unmounted is no longer answered for, whichever way it went.

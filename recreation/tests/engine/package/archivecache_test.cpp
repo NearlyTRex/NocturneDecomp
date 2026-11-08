@@ -6,6 +6,7 @@
 #include <gtest/gtest.h>
 
 #include <expected>
+#include <optional>
 #include <string>
 #include <string_view>
 #include <vector>
@@ -113,6 +114,24 @@ TEST_F(CArchiveCacheTest, WithoutItsRecordTheUnpackingIsUndone) {
     EXPECT_THAT(error,
                 MatchesRegex(R"(\.packages/hell\.zip-[0-9a-f]{16}\.unpacked couldn't be written)"));
     EXPECT_FALSE(files_.contents(error.substr(0, error.find(".unpacked")) + "/nocturne.toml"));
+}
+
+TEST_F(CArchiveCacheTest, AnArchiveIsFoundUnpackedOnlyOnceItIsWholeAndUnchanged) {
+    EXPECT_EQ(findUnpacked(files_.file_system_, "mods/hell.zip"), std::nullopt);
+    const std::string folder = unpack();
+    EXPECT_EQ(findUnpacked(files_.file_system_, "mods/hell.zip"), folder);
+    givenMod({{.path = "nocturne.toml", .contents = std::string(kManifest)}},
+             CPackageFiles::kModified + 1);
+    EXPECT_EQ(findUnpacked(files_.file_system_, "mods/hell.zip"), std::nullopt);
+    EXPECT_EQ(findUnpacked(files_.file_system_, "mods/gone.zip"), std::nullopt);
+}
+
+TEST_F(CArchiveCacheTest, AnArchiveIsCheckedWithoutUnpackingIt) {
+    EXPECT_CALL(files_.file_system_, makeDirectory).Times(0);
+    EXPECT_TRUE(checkUnpackable(files_.file_system_, "mods/hell.zip").has_value());
+    givenMod({{.path = "readme.txt", .contents = "hi"}});
+    EXPECT_EQ(checkUnpackable(files_.file_system_, "mods/hell.zip").error(),
+              "mods/hell.zip holds no nocturne.toml and no POD");
 }
 
 TEST_F(CArchiveCacheTest, PruningRemovesWhatIsntKept) {

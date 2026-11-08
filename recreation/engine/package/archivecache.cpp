@@ -36,22 +36,33 @@ bool holdsPackage(std::span<const SArchiveEntry> entries) {
     });
 }
 
-} // namespace
-
-std::expected<std::string, std::string> unpackToCache(platform::IFileSystem &file_system,
-                                                      std::string_view archive_path) {
+// The archive's folder in the cache, unpacked or not; nothing when the archive is missing.
+std::optional<std::string> cacheFolderOf(platform::IFileSystem &file_system,
+                                         std::string_view archive_path) {
     const std::optional<platform::SFileInfo> info = file_system.getFileInfo(archive_path);
     if (!info) {
-        return std::unexpected(std::format("{} is missing", archive_path));
+        return std::nullopt;
     }
     const std::string identity =
         std::format("{}\n{}\n{}", archive_path, info->size, info->modified);
-    std::string folder = common::joinPath(
-        kArchiveCacheName, std::format("{}-{:016x}", common::pathLeaf(archive_path),
-                                       XXH3_64bits(identity.data(), identity.size())));
-    if (file_system.getFileInfo(recordOf(folder))) {
-        return folder;
+    return common::joinPath(kArchiveCacheName,
+                            std::format("{}-{:016x}", common::pathLeaf(archive_path),
+                                        XXH3_64bits(identity.data(), identity.size())));
+}
+
+} // namespace
+
+std::optional<std::string> findUnpacked(platform::IFileSystem &file_system,
+                                        std::string_view archive_path) {
+    std::optional<std::string> folder = cacheFolderOf(file_system, archive_path);
+    if (!folder || !file_system.getFileInfo(recordOf(*folder))) {
+        return std::nullopt;
     }
+    return folder;
+}
+
+std::expected<void, std::string> checkUnpackable(platform::IFileSystem &file_system,
+                                                 std::string_view archive_path) {
     const std::expected<std::vector<SArchiveEntry>, std::string> entries =
         listArchive(file_system, archive_path);
     if (!entries) {
@@ -61,6 +72,20 @@ std::expected<std::string, std::string> unpackToCache(platform::IFileSystem &fil
         return std::unexpected(
             std::format("{} holds no {} and no POD", archive_path, kManifestName));
     }
+    return {};
+}
+
+std::expected<std::string, std::string> unpackToCache(platform::IFileSystem &file_system,
+                                                      std::string_view archive_path) {
+    if (std::optional<std::string> unpacked = findUnpacked(file_system, archive_path)) {
+        return std::move(*unpacked);
+    }
+    if (std::expected<void, std::string> checked = checkUnpackable(file_system, archive_path);
+        !checked) {
+        return std::unexpected(std::move(checked.error()));
+    }
+    // It was listed, so it is there to be named.
+    std::string folder = cacheFolderOf(file_system, archive_path).value_or("");
     static_cast<void>(file_system.removeDirectory(folder));
     std::expected<void, std::string> unpacked = unpackArchive(file_system, archive_path, folder);
     if (unpacked && !file_system.writeFile(recordOf(folder), archive_path)) {

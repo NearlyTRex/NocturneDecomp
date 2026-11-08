@@ -14,6 +14,7 @@
 #include "engine/alphabit/alphabitmap.h"
 #include "engine/dosio/dosio.h"
 #include "engine/dosio/foundfileinfo.h"
+#include "engine/font/bitfont.h"
 #include "engine/ncursfx/mouse.h"
 #include "engine/package/gamecontent.h"
 #include "engine/pod/pod.h"
@@ -24,6 +25,7 @@
 
 #include <cstddef>
 #include <format>
+#include <string_view>
 
 namespace nocturne::core {
 namespace {
@@ -33,6 +35,16 @@ constexpr int kHeight = 480;
 constexpr int kBitsPerPixel = 32;
 constexpr int kLoadingAlpha = 0x8000;
 constexpr int kPlayerFilterSize = 0x100;
+constexpr std::string_view kLoadingScreenArt = "fangs";
+constexpr std::string_view kLoadingText = "Loading...";
+// The original measured the text's height by this character's.
+constexpr int kLoadingHeightChar = 'X';
+constexpr int kLoadingTextColor = 0xf8;
+
+int getStartingFrontEndWidth(const SGameSystemOwners &owners) {
+    const CGame &game = owners.ini_owners.game;
+    return getFrontEndWidth(game.game_pixx, game.game_pixy, owners.special.getUseDirect3D());
+}
 
 // The first run starts in 640x480 without acceleration and shows the calibration screens once,
 // in the small editor font initFonts has just loaded.
@@ -49,13 +61,41 @@ void showFirstRunCalibration(const SGameSystemOwners &owners) {
     owners.menu.showCalibrationTest();
 }
 
-// The original also measured a "Loading..." it never drew.
-void showLoadingScreen(const SGameSystemOwners &owners) {
+void showFangs(const SGameSystemOwners &owners) {
     owners.special.clearScreen();
     engine::CAlphaBitmap loading(owners.dosio, owners.screen, owners.special);
-    loading.load("fangs", kWidth, kHeight);
+    loading.load(kLoadingScreenArt, kWidth, kHeight);
     loading.display(getFrontEndLeft(owners.screen.getWindowWidth()), 0, kLoadingAlpha);
+}
+
+// The original measured its "Loading..." to centre it, then never drew it.
+void showLoadingScreen(const SGameSystemOwners &owners) {
+    showFangs(owners);
+    const std::string_view text = owners.messages.getLocalizedString(kLoadingText);
+    engine::CBitFont &font = *owners.ini_owners.fonts.getThemeFont();
+    font.drawText(text,
+                  getFrontEndLeft(owners.screen.getWindowWidth()) +
+                      ((kWidth - font.getTextWidth(text)) / 2),
+                  (kHeight - font.getCharHeight(kLoadingHeightChar)) / 2, kLoadingTextColor,
+                  engine::CBitFont::kNoShadow);
     owners.screen.swapBuffers();
+}
+
+// Unpacking a large archive takes a while, so the fangs are up first, drawn from the packages
+// already unpacked; without them among those, the screen is left black. The words wait: the
+// palette and fonts they need are read from the packages once all are unpacked. A refused mode
+// is found fatal when startup sets it again.
+void unpackArchives(const SGameSystemOwners &owners) {
+    if (!owners.pod.hasArchivesToUnpack()) {
+        return;
+    }
+    if (owners.screen.setScreenResolution(getStartingFrontEndWidth(owners), kFrontEndHeight,
+                                          kBitsPerPixel) &&
+        owners.dosio.readFile("art", std::format("{}.raw", kLoadingScreenArt))) {
+        showFangs(owners);
+        owners.screen.swapBuffers();
+    }
+    owners.pod.unpackArchives();
 }
 
 // The packages choose the game's menus and loading indicator.
@@ -109,6 +149,7 @@ void initializeGameSystems(const SGameSystemOwners &owners) {
     owners.dosio.addGetFileInfoHook([&dosio = owners.dosio](engine::SFoundFileInfo &info) {
         return dosio.findFileNormally(info);
     });
+    unpackArchives(owners);
     checkFrontEnd(owners.content);
     owners.messages.readMessageFile("msglist.txt");
     if (const auto translations = owners.content.translations.find(owners.messages.getLanguage());
@@ -119,10 +160,8 @@ void initializeGameSystems(const SGameSystemOwners &owners) {
     // The retail build's dismount cleared the texture cache.
     owners.pod.setDismountHandler([&texture = owners.texture] { texture.clearTextureCache(); });
     owners.two_d.initGraphicsSystem();
-    const CGame &game = owners.ini_owners.game;
-    const int front_end_width =
-        getFrontEndWidth(game.game_pixx, game.game_pixy, owners.special.getUseDirect3D());
-    if (!owners.screen.setScreenResolution(front_end_width, kFrontEndHeight, kBitsPerPixel)) {
+    if (!owners.screen.setScreenResolution(getStartingFrontEndWidth(owners), kFrontEndHeight,
+                                           kBitsPerPixel)) {
         displayErrorAndQuit("Unable to set 640x480x32bpp.  Please make sure that you have a video "
                             "card with a minimum of 2MB of RAM, and the latest DirectDraw video "
                             "drivers.");

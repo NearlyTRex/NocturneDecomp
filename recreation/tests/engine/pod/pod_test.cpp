@@ -59,6 +59,9 @@ public:
 TEST_F(CPodTest, TheBaseLoadsNothing) {
     pod_.init();
     EXPECT_TRUE(pod_.getPodFiles().empty());
+    EXPECT_FALSE(pod_.hasArchivesToUnpack());
+    pod_.unpackArchives();
+    EXPECT_TRUE(pod_.getPodFiles().empty());
 }
 
 TEST_F(CPodTest, InitLoadsOnlyWhileNothingIsMounted) {

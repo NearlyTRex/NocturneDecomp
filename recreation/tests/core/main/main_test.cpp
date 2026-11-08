@@ -22,6 +22,7 @@
 #include "engine/3d/3d.h"
 #include "engine/dosio/foundfileinfo.h"
 #include "engine/drender/demonrenderer.h"
+#include "engine/font/bitfont.h"
 #include "engine/font/font.h"
 #include "engine/ini/ini.h"
 #include "engine/keys/keys.h"
@@ -40,6 +41,7 @@
 #include "shape/edittool/editortools.h"
 #include "shape/edittool/picklist.h"
 #include "support/newmsg/newmsg.h"
+#include "tests/mocks/core/menufontfiles.h"
 #include "tests/mocks/core/setparts.h"
 #include "tests/mocks/engine/fontsheet.h"
 #include "tests/mocks/engine/gamepadinputparts.h"
@@ -59,9 +61,13 @@
 #include <gmock/gmock.h>
 #include <gtest/gtest.h>
 
+#include <algorithm>
 #include <array>
 #include <cstddef>
+#include <cstdint>
 #include <format>
+#include <functional>
+#include <optional>
 #include <string>
 #include <string_view>
 #include <type_traits>
@@ -101,6 +107,23 @@ std::pair<std::string, std::string> greyImage(int width, int height, std::uint8_
                         static_cast<char>(index)),
             engine::makePalette(levels)};
 }
+
+// Archives left to unpack when a test says so; unpacking them runs the test's step.
+class CArchivesPod : public engine::CPod {
+public:
+    using CPod::CPod;
+    [[nodiscard]] bool hasArchivesToUnpack() const override {
+        return archives_left;
+    }
+    void unpackArchives() override {
+        archives_left = false;
+        ++unpackings;
+        on_unpack();
+    }
+    bool archives_left = false;
+    int unpackings = 0;
+    std::function<void()> on_unpack = [] {};
+};
 
 // Startup over a disk holding every file it reads, on a memory screen 480 lines tall.
 template <int ScreenWidth>
@@ -206,7 +229,7 @@ protected:
                                .fonts = fonts_,
                                .gamepad = gamepad_.input,
                                .messages = messages_};
-    engine::CPod pod_{file_system_, dosio_};
+    CArchivesPod pod_{file_system_, dosio_};
     engine::CTexture texture_{{.dosio = dosio_,
                                .two_d = two_d_,
                                .screen = screen_,
@@ -424,6 +447,82 @@ TEST_F(CInitializeGameSystemsTest, PlaysTheOpeningMovieThenShowsTheLoadingScreen
     // The fangs' grey of 200 at half opacity over black.
     EXPECT_EQ(screen_.pixel(kWidth - 1, kHeight - 1), 0x636363U);
     EXPECT_EQ(screen_.swaps, 1);
+}
+
+// In the theme font, centred in a band an X tall; this sheet's characters are solid.
+TEST_F(CInitializeGameSystemsTest, TheLoadingScreenSaysLoadingInTheMiddle) {
+    givenMenuFontFiles([this](const std::string &name, const std::string &contents) {
+        givenFile(name, contents);
+    });
+    // As a real screen's mode sets it.
+    two_d_.setupViewportAndClipping(0, 0, kWidth - 1, kHeight - 1);
+    start();
+    // Where the screen isn't the fangs' grey.
+    int left = kWidth;
+    int right = -1;
+    int top = kHeight;
+    int bottom = -1;
+    for (int y = 0; y < kHeight; ++y) {
+        for (int x = 0; x < kWidth; ++x) {
+            if (screen_.pixel(x, y) != 0x636363U) {
+                left = std::min(left, x);
+                right = std::max(right, x);
+                top = std::min(top, y);
+                bottom = std::max(bottom, y);
+            }
+        }
+    }
+    const engine::CBitFont &font = *fonts_.getThemeFont();
+    const int width = font.getTextWidth("Chargement...");
+    const int height = font.getCharHeight('X');
+    EXPECT_EQ(left, (kWidth - width) / 2);
+    EXPECT_EQ(right, left + width - 1);
+    EXPECT_GE(top, (kHeight - height) / 2);
+    EXPECT_LT(bottom, ((kHeight - height) / 2) + height);
+}
+
+TEST_F(CInitializeGameSystemsTest, WithNoArchiveLeftNothingIsUnpacked) {
+    start();
+    EXPECT_EQ(pod_.unpackings, 0);
+}
+
+// Before the packages' content is read, which the archives may change.
+TEST_F(CInitializeGameSystemsTest, ArchivesLeftAreUnpackedWithTheFangsUp) {
+    pod_.archives_left = true;
+    std::optional<std::uint32_t> shown;
+    pod_.on_unpack = [this, &shown] {
+        shown = screen_.pixel(kWidth - 1, kHeight - 1);
+        EXPECT_EQ(screen_.requested_width, kWidth);
+        content_.translations["en"] = {{"Loading...", "Unpacked..."}};
+    };
+    start();
+    EXPECT_EQ(pod_.unpackings, 1);
+    EXPECT_EQ(shown, 0x636363U);
+    EXPECT_EQ(messages_.getLocalizedString("Loading..."), "Unpacked...");
+}
+
+// The fangs may be in an archive left to unpack.
+TEST_F(CInitializeGameSystemsTest, WithoutTheFangsArchivesAreUnpackedOnABlackScreen) {
+    pod_.archives_left = true;
+    ON_CALL(file_system_, getFileInfo(std::string_view("/game/art\\fangs.raw")))
+        .WillByDefault(Return(std::nullopt));
+    std::optional<std::uint32_t> shown;
+    pod_.on_unpack = [this, &shown] {
+        shown = screen_.pixel(kWidth - 1, kHeight - 1);
+        givenImage("fangs", greyImage(kWidth, kHeight, 1, 200));
+    };
+    start();
+    EXPECT_EQ(shown, 0U);
+    EXPECT_EQ(screen_.pixel(kWidth - 1, kHeight - 1), 0x636363U);
+}
+
+// Setting it again finds the refusal fatal.
+TEST_F(CInitializeGameSystemsTest, ARefusedModeLeavesTheArchivesUnpackedWithoutTheFangs) {
+    pod_.archives_left = true;
+    screen_.refuse_modes = true;
+    EXPECT_THROW(start(), common::CFatalError);
+    EXPECT_EQ(pod_.unpackings, 1);
+    EXPECT_EQ(screen_.swaps, 0);
 }
 
 TEST_F(CInitializeGameSystemsTest, TheOpeningPlayingLetsTheAttractMoviesFollow) {

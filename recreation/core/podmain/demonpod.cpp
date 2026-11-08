@@ -64,7 +64,30 @@ CDemonPod::~CDemonPod() = default;
 // ordering the packages. The latest loaded is mounted first, so a search finds its PODs first.
 // nocedit 0x005519c0
 void CDemonPod::load() {
-    engine::SPackageDiscovery found = engine::discoverPackages(getFileSystem(), releases_);
+    loadPackages(engine::EArchiveUnpacking::Later);
+}
+
+bool CDemonPod::hasArchivesToUnpack() const {
+    return !archives_left_.empty();
+}
+
+// What the first load mounted is mounted again in the new order.
+void CDemonPod::unpackArchives() {
+    if (archives_left_.empty()) {
+        return;
+    }
+    cleanup();
+    packages_.clear();
+    loadPackages(engine::EArchiveUnpacking::Now);
+}
+
+// With archives left, this load only brings up the loading screen, so what it would say or find
+// fatal waits for the load after them.
+void CDemonPod::loadPackages(engine::EArchiveUnpacking unpacking) {
+    engine::SPackageDiscovery found =
+        engine::discoverPackages(getFileSystem(), releases_, unpacking);
+    archives_left_ = std::move(found.archives_left);
+    reporting_ = archives_left_.empty();
     engine::SLoadOrder order = engine::orderPackages(getFileSystem(), std::move(found.packages));
     for (const std::string &note : found.notes) {
         report(note);
@@ -86,7 +109,7 @@ void CDemonPod::load() {
         report(note);
     }
     game_content_ = std::move(merged.content);
-    if (packages_.empty()) {
+    if (packages_.empty() && reporting_) {
         // They were tried latest first.
         std::ranges::reverse(left_out_);
         common::displayErrorAndQuit(
@@ -228,6 +251,9 @@ void CDemonPod::refreshMounted() {
 }
 
 void CDemonPod::report(std::string_view note) {
+    if (!reporting_) {
+        return;
+    }
     log_.print(platform::ELogSubsystem::FileIo, "{}", note);
 }
 

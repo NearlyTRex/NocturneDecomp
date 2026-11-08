@@ -26,6 +26,12 @@ CPod::~CPod() = default;
 // nocedit 0x005509e0
 void CPod::load() {}
 
+bool CPod::hasArchivesToUnpack() const {
+    return false;
+}
+
+void CPod::unpackArchives() {}
+
 // findFileInPod, the hook startup registered, forwarded here; startup registers this instead.
 // nocedit 0x00551380
 // nocedit 0x00551960

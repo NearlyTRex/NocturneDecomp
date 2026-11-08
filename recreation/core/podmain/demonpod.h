@@ -3,6 +3,7 @@
 #include "core/fwd.h"
 #include "engine/fwd.h"
 #include "engine/package/gamecontent.h"
+#include "engine/package/packagediscovery.h"
 #include "engine/pod/pod.h"
 #include "platform/fwd.h"
 
@@ -26,7 +27,10 @@ public:
     CDemonPod(const CDemonPod &) = delete;
     CDemonPod &operator=(const CDemonPod &) = delete;
 
+    // Archives not yet unpacked are left for unpackArchives.
     void load() override;
+    [[nodiscard]] bool hasArchivesToUnpack() const override;
+    void unpackArchives() override;
     // The base game's loose files are the disk's, which the lookup after this one finds.
     bool findFile(engine::SFoundFileInfo &found_file_info) override;
     void dismount(std::string_view filename) override;
@@ -42,6 +46,7 @@ private:
         std::vector<const engine::CPodFile *> mounted;
     };
 
+    void loadPackages(engine::EArchiveUnpacking unpacking);
     // False when the package is left out.
     bool loadPackage(engine::SPackage &package);
     [[nodiscard]] bool hasRequiredPods(const engine::SPackage &package,
@@ -64,6 +69,9 @@ private:
     // Why each package left out for a POD it needs was.
     std::vector<std::string> left_out_;
     std::size_t mounted_count_ = 0;
+    std::vector<std::string> archives_left_;
+    // Off while archives are left: the load after them says it all again.
+    bool reporting_ = true;
     engine::SGameContent game_content_;
 };
 
