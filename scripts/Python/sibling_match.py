@@ -39,6 +39,38 @@ from extract_line_pins import parse_pe
 THIS_DIR = os.path.dirname(os.path.abspath(__file__))
 REPO_ROOT = os.path.dirname(os.path.dirname(THIS_DIR))
 ANNOTATIONS = os.path.join(REPO_ROOT, "annotations")
+BINARIES = os.path.join(REPO_ROOT, "bin")
+
+
+def find_program_exe(program):
+    """The on-disk PE that Ghidra imported as `program`.
+
+    Matched by the MD5 the metadata export recorded, not by file name: the
+    project names a program however it likes (bw1.exe shipped as nocturne.exe),
+    and two releases of one game can share a file name while differing in every
+    address. Without an export the name is all there is to go on.
+    """
+    candidates = [os.path.join(REPO_ROOT, program)]
+    candidates += sorted(glob.glob(os.path.join(BINARIES, "**", "*"), recursive=True))
+    # Retail ships tridx6.dll and tridx7.dll byte-identical; the name breaks the tie.
+    candidates = sorted((path for path in candidates if os.path.isfile(path)),
+                        key=lambda path: os.path.basename(path).lower() != program.lower())
+    metadata = os.path.join(ANNOTATIONS, program, "metadata", "metadata.json")
+    if not os.path.exists(metadata):
+        for path in candidates:
+            if os.path.basename(path).lower() == program.lower():
+                return path
+        raise FileNotFoundError("no %s under %s" % (program, BINARIES))
+    with open(metadata) as fh:
+        expected = json.load(fh).get("md5", "").lower()
+    for path in candidates:
+        if not path.lower().endswith((".exe", ".dll")):
+            continue
+        with open(path, "rb") as fh:
+            if hashlib.md5(fh.read()).hexdigest() == expected:
+                return path
+    raise FileNotFoundError("no file under %s has %s's MD5 %s; put the copy Ghidra "
+                            "imported there" % (BINARIES, program, expected))
 
 # Ghidra's placeholder names -- a function carrying one of these is unnamed.
 UNNAMED_RE = re.compile(r"^(FUN_|thunk_FUN_|LAB_|SUB_|UndefinedFunction_)")
@@ -147,7 +179,7 @@ class Image:
 
     def __init__(self, program, exe_path=None, verbose=False):
         self.program = program
-        self.exe_path = exe_path or os.path.join(REPO_ROOT, program)
+        self.exe_path = exe_path or find_program_exe(program)
         with open(self.exe_path, "rb") as fh:
             self.data = fh.read()
         self.image_base, self.sections = parse_pe(self.data)

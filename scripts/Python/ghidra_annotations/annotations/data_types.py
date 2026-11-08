@@ -1057,6 +1057,21 @@ def export_data_types(currentProgram, path, allow_duplicates = False):
             }
             log_info("Stored original metadata for function definition: %s (category: %s)" % (dt_name, dt_cat_path))
 
+    # A fresh import names the function definition behind FARPROC, WNDPROC and the like
+    # exactly as the typedef that points at it, so the two would collide on one name.
+    # Renamed here, before either is visited, because which comes first is up to Ghidra.
+    for dt in list(currentProgram.getDataTypeManager().getAllDataTypes()):
+        if not isinstance(dt, TypeDef):
+            continue
+        base_type = dt.getDataType()
+        pointed_type = base_type.getDataType() if isinstance(base_type, Pointer) else base_type
+        if not is_function_definition_type(pointed_type):
+            continue
+        metadata = original_func_def_metadata.get(get_function_definition_id(pointed_type))
+        if metadata and metadata["name"] == dt.getName():
+            metadata["name"] = get_function_definition_name(pointed_type, dt.getName())
+            metadata["importable"] = existing_importable.get(metadata["name"], True)
+
     # Process all other data types
     log_info("Processing all data types")
     for dt in list(currentProgram.getDataTypeManager().getAllDataTypes()):
@@ -1418,7 +1433,7 @@ def export_data_types(currentProgram, path, allow_duplicates = False):
             "Delete the redundant copy in Ghidra (and re-point its dependents at "
             "the survivor -- deleting a typedef re-points them at its base type "
             "instead), or pass --allow-duplicate-data-types to export anyway.\n"
-            % (len(duplicates), currentProgram.getName())
+            % (len(duplicates), currentProgram.getDomainFile().getName())
             + "\n".join(duplicates))
 
 

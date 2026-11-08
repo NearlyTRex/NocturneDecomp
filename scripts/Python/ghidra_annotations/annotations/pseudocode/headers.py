@@ -2889,7 +2889,7 @@ def export_system_grouped_files(currentProgram, pseudocode_dir, system_grouped_t
                                               type_to_path_map, basetypes_types)
 
     # Program-gated per-header injections (resolved once for this program).
-    header_injections = get_header_injections(currentProgram.getName())
+    header_injections = get_header_injections(currentProgram.getDomainFile().getName())
 
     # Generate system headers
     for export_path, types in system_grouped_types.items():

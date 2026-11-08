@@ -44,14 +44,27 @@ def is_import_thunk(func_data):
     return str(func_data.get("thtarget") or "").upper().startswith("EXTERNAL")
 
 
+def is_default_thunk_name(func_data, claimed):
+    """A thunk still wearing the name Ghidra derives from its target.
+
+    Nobody applied `thunk_FUN_<target>`: Ghidra composes it from the target's
+    name until the thunk is given a label of its own, so the suffix is the
+    target's address by construction. A freshly analysed program is full of them.
+    """
+    if not func_data.get("thunk") or not (func_data.get("name") or "").startswith("thunk_"):
+        return False
+    return str(func_data.get("thtarget") or "").lower().lstrip("0") == claimed.lstrip("0")
+
+
 def find_name_address_mismatches(functions):
     """Functions whose _FUN_<addr> suffix does not match where they start.
 
     The suffix is redundant with `addr`, so a disagreement can only mean a name
     was applied to the wrong symbol -- typically when two candidates carried the
     same placeholder (two Ordinal_116 thunks, two FUN_ stubs) and a rename hit
-    the wrong one. It is never a difference of opinion, EXCEPT for thunks into a
-    DLL import, where Ghidra owns the name; see is_import_thunk.
+    the wrong one. It is never a difference of opinion, EXCEPT where Ghidra owns
+    the name: thunks into a DLL import (is_import_thunk) and thunks not yet
+    named (is_default_thunk_name).
 
     This is not cosmetic, which is why it fails the export rather than warning:
 
@@ -76,6 +89,8 @@ def find_name_address_mismatches(functions):
         if is_import_thunk(func_data):
             continue
         claimed = match.group(1).lower()
+        if is_default_thunk_name(func_data, claimed):
+            continue
         if claimed.lstrip("0") != addr.lstrip("0"):
             mismatches.append(
                 "%s starts at %s but its name claims %s" % (name, addr, claimed))
