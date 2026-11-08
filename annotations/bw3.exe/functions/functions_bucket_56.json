@@ -83,6 +83,130 @@
     }
   },
   {
+    "addr":"005b2256",
+    "body":[
+      {
+        "end":"005b225b",
+        "size":6,
+        "start":"005b2256"
+      }
+    ],
+    "conv":"__stdcall",
+    "importable":true,
+    "name":"crt_kernel32.c_ReleaseMutex",
+    "ret":"BOOL",
+    "thtarget":"EXTERNAL:0000008b",
+    "thunk":true,
+    "vars":{
+      "params":[
+        {
+          "name":"hMutex",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"HANDLE"
+        }
+      ],
+      "ret_storage":{
+        "reg":"EAX",
+        "size":4,
+        "varnodes":[
+          {
+            "addr":"register:00000000",
+            "size":4
+          }
+        ]
+      }
+    }
+  },
+  {
+    "addr":"005b23d6",
+    "body":[
+      {
+        "end":"005b23db",
+        "size":6,
+        "start":"005b23d6"
+      }
+    ],
+    "conv":"__stdcall",
+    "importable":true,
+    "name":"crt_winmm.c_waveInUnprepareHeader",
+    "ret":"MMRESULT",
+    "thtarget":"EXTERNAL:00000024",
+    "thunk":true,
+    "vars":{
+      "params":[
+        {
+          "name":"hwi",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"HWAVEIN"
+        },
+        {
+          "name":"pwh",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"LPWAVEHDR"
+        },
+        {
+          "name":"cbwh",
+          "storage":{
+            "offset":12,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0xc]",
+                "offset":12,
+                "size":4
+              }
+            ]
+          },
+          "type":"UINT"
+        }
+      ],
+      "ret_storage":{
+        "reg":"EAX",
+        "size":4,
+        "varnodes":[
+          {
+            "addr":"register:00000000",
+            "size":4
+          }
+        ]
+      }
+    }
+  },
+  {
     "addr":"005b2556",
     "body":[
       {
@@ -92,13 +216,38 @@
       }
     ],
     "importable":true,
-    "name":"Ordinal_52",
-    "ret":"undefined1",
+    "name":"crt_wsock32.c_gethostbyname",
+    "ret":"hostent*",
     "thtarget":"EXTERNAL:000000aa",
     "thunk":true,
     "vars":{
+      "params":[
+        {
+          "name":"name",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"char*"
+        }
+      ],
       "ret_storage":{
-        "invalid":true
+        "reg":"EAX",
+        "size":4,
+        "varnodes":[
+          {
+            "addr":"register:00000000",
+            "size":4
+          }
+        ]
       }
     }
   }

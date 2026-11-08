@@ -256,23 +256,6 @@ def test_hints_the_siblings_disagree_on_are_dropped():
     assert avu.merged_hints([]) == {}
 
 
-# What nocedit's authors named these classes' files, where a rule recovers it
-@pytest.mark.parametrize("cls, stem", [
-    ("CHag", "hag"), ("CBatCreature", "batcreat"), ("CDraculaBride", "dracbrid"), ("CCharacter", "charactr"),
-    ("CDemonLight", "dlight"), ("CClothList", "cloth"), ("CMP3Decoder", "mp3"), ("CVampireBoss", "vampboss"),
-    ("CConfederateZombie", "confzomb"), ("CSimpleParticleSystem", "simppart"), ("CGabriella", "gabriell"),
-    ("CListItem", "list"), ("CDemon", "demon"), ("C_", "c"), ("", "class")])
-def test_a_class_gets_a_file_stem_as_its_authors_wrote_them(cls, stem):
-    assert avu.era_stem(cls) == stem
-
-
-def test_class_names_split_into_words_acronyms_kept_whole():
-    assert avu.name_words("CMP3Decoder") == ["mp", "3", "decoder"]
-    assert avu.name_words("PageResource_TwanaEntry") == ["page", "resource", "twana", "entry"]
-    assert avu.drop_vowels("abcdefghijk", 8) == "abcdfghj"
-    assert avu.drop_vowels("bcdfghjklmn", 8) == "bcdfghjk"
-
-
 GAP = ["1", "2", "3", "4", "5", "6", "7", "8"]
 
 
@@ -379,3 +362,26 @@ def test_class_files_come_from_the_type_info_export(program, tmp_path):
     (folder / "type_info.json").write_text(json.dumps({"type_info": [
         {"name": "CMoon", "file": "..\\core\\moon.cpp"}, {"name": "CHag"}, {"name": "CX", "file": "x.cpp"}]}))
     assert avu.class_files(program) == {"CMoon": "core_moon.cpp"}
+
+
+@pytest.mark.parametrize("prev, nxt, nxt_addr, known, tail", [
+    ("core_armour.cpp", "core_backgnd.cpp", "9", {"armour", "backgnd"}, True),
+    ("core_armour.cpp", "core_backgnd.cpp", "8", set(), False),
+    ("core_armour.cpp", "core_backgnd.cpp", "9", {"ammo", "baron", "bat"}, True),
+    ("core_armour.cpp", "core_backgnd.cpp", "9", {"arrow"}, False),
+    ("crt_s.c", "core_backgnd.cpp", "9", set(), False),
+    ("core_armour.cpp", "crt_s.c", "9", set(), False),
+    (None, "core_backgnd.cpp", "9", set(), False),
+    ("core_zombie.cpp", "core_goggles.cpp", "9", set(), False),
+])
+def test_a_gap_is_the_previous_units_tail_only_when_nothing_else_fits(prev, nxt, nxt_addr, known, tail):
+    assert avu.is_tail(prev, nxt, nxt_addr, {"9"}, known) is tail
+
+
+def test_a_tail_gap_takes_the_unit_before_it():
+    ordered = ["1", "2", "3", "4"]
+    labels = {"1": "core_armour.cpp", "4": "core_backgnd.cpp"}
+    rows = avu.plan(ordered, labels, {"2", "3"}, unit_starts = {"4"}, known = {"armour", "backgnd"})[0]
+    assert rows == [("2", "core_armour.cpp", "tail"), ("3", "core_armour.cpp", "tail")]
+    rows = avu.plan(ordered, labels, {"2", "3"}, unit_starts = {"4"}, known = {"armour", "attack", "backgnd"})[0]
+    assert [why for _, _, why in rows] == ["between", "between"]

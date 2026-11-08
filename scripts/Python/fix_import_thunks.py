@@ -128,7 +128,9 @@ WSOCK32_ORDINALS = {
     13: "listen",     14: "ntohl",       15: "ntohs",       16: "recv",
     17: "recvfrom",   18: "select",      19: "send",        20: "sendto",
     21: "setsockopt", 22: "shutdown",    23: "socket",
-    115: "WSAStartup", 116: "WSACleanup",
+    51: "gethostbyaddr", 52: "gethostbyname", 57: "gethostname",
+    111: "WSAGetLastError", 115: "WSAStartup", 116: "WSACleanup",
+    151: "__WSAFDIsSet",
 }
 
 DSOUND_ORDINALS = {
@@ -167,6 +169,11 @@ ORDINAL_PROTOTYPES = {
     "socket":                ("int",     [("int", "af"), ("int", "type"), ("int", "protocol")]),
     "WSAStartup":            ("int",     [("WORD", "w_version_requested"), ("LPWSADATA", "lp_wsa_data")]),
     "WSACleanup":            ("int",     []),
+    "WSAGetLastError":       ("int",     []),
+    "gethostbyaddr":         ("hostent *", [("char *", "addr"), ("int", "len"), ("int", "type")]),
+    "gethostbyname":         ("hostent *", [("char *", "name")]),
+    "gethostname":           ("int",     [("char *", "name"), ("int", "namelen")]),
+    "__WSAFDIsSet":          ("int",     [("_SOCKET", "fd"), ("fd_set *", "set")]),
     "DirectSoundCreate":     ("HRESULT", [("LPGUID", "lp_guid"), ("LPDIRECTSOUND *", "pp_ds"),
                                           ("LPUNKNOWN", "p_unk_outer")]),
     "DirectSoundEnumerateA": ("HRESULT", [("LPDSENUMCALLBACKA", "lp_ds_enum_callback"), ("LPVOID", "lp_context")]),
@@ -650,8 +657,18 @@ def main():
     ap.add_argument("--no-snapshot", action="store_true")
     args = ap.parse_args()
 
-    pe_dir = args.pe_dir or os.path.abspath(
-        os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", ".."))
+    def pe_for(prog_name):
+        # The md5-matched copy under bin/ (sibling_match.find_program_exe), unless
+        # --pe-dir names a folder to take the file from by name.
+        if args.pe_dir:
+            return os.path.join(args.pe_dir, prog_name)
+        sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+        import sibling_match
+        try:
+            return sibling_match.find_program_exe(prog_name)
+        except FileNotFoundError as e:
+            print("!! %s" % e)
+            return ""
 
     if args.apply and not args.no_snapshot and not snapshot(args):
         print("Snapshot failed - refusing to mutate.")
@@ -674,7 +691,7 @@ def main():
     code = 0
     try:
         for prog_name in args.programs:
-            pe_path = os.path.join(pe_dir, prog_name)
+            pe_path = pe_for(prog_name)
             if not os.path.exists(pe_path):
                 print("!! no PE for %s at %s - skipped" % (prog_name, pe_path))
                 continue

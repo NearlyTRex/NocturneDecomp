@@ -3,6 +3,7 @@ import importlib
 import json
 import os
 import runpy
+import struct
 import sys
 
 # Third-party imports
@@ -14,7 +15,7 @@ from fake_pyghidra import FakePyghidra
 from ghidra_fake import Address, StructureDataType
 from ghidra_program import Program
 from pe_helpers import SECTION_EXECUTE, build_sectioned_pe, section_va
-from sibling_images import function, install_programs
+from sibling_images import function, install_programs, write_bucket
 import sibling_match
 import watcom_static_init as wsi
 
@@ -302,7 +303,7 @@ def test_applying_creates_types_labels_and_renames(report):
     program = program_for(report, ENTRY_TYPE)
     renames = wsi.plan_names(report)
     done = wsi.apply_to_program(program, report, renames)
-    assert done == {"created": 1, "typed": True, "renamed": len(renames) - 2}
+    assert done == {"created": 1, "typed": True, "renamed": len(renames) - 2, "thunks": 0}
     array = program.getListing().getDefinedDataAt(Address(TABLE)).getDataType()
     assert (array.getDataType(), array.getNumElements(), array.getLength()) == (
         ENTRY_TYPE, len(UNITS) + 2, 6 * (len(UNITS) + 2))
@@ -315,7 +316,7 @@ def test_applying_creates_types_labels_and_renames(report):
 def test_applying_without_the_type_still_labels_and_keeps_a_users_label(report):
     program = program_for(report, user_label = True)
     done = wsi.apply_to_program(program, report, [])
-    assert done == {"created": 1, "typed": False, "renamed": 0}
+    assert done == {"created": 1, "typed": False, "renamed": 0, "thunks": 0}
     assert program.getSymbolTable().getPrimarySymbol(Address(TABLE)).getName() == "g_MyTable"
 
 
@@ -363,3 +364,191 @@ def test_runs_as_a_script(monkeypatch, programs, capsys):
     monkeypatch.setattr(sys, "argv", ["watcom_static_init.py", "game.exe"])
     runpy.run_path(os.path.join(SCRIPTS_DIR, "watcom_static_init.py"), run_name = "__main__")
     assert f"game.exe: table at {TABLE:08x}" in capsys.readouterr().out
+
+
+# --- actor registrations --------------------------------------------------------------
+
+REGISTRAR = CODE + 0x800
+ARRINIT = CODE + 0x910
+OTHER = CODE + 0x900
+STRINGS = {"CAmmo": DATA + 0x100, "CHag": DATA + 0x110, "CDog": DATA + 0x118, "CZombieDog": DATA + 0x120}
+NOTES_INFO = DATA + 0x200
+PLAIN = [CODE + 0x700 + 0x10 * i for i in range(4)]
+
+
+# x86 for one body at `at`: ("push", imm32), ("call", target), ("push eax",), ("call eax",), ("ret",)
+def assemble(at, *parts):
+    out = bytearray()
+    for part in parts:
+        if part[0] == "push":
+            out += b"\x68" + struct.pack("<I", part[1])
+        elif part[0] == "call":
+            out += b"\xe8" + struct.pack("<i", part[1] - (at + len(out) + 5))
+        elif part[0] == "push eax":
+            out += b"\x50"
+        elif part[0] == "call eax":
+            out += b"\xff\xd0"
+        else:
+            out += b"\xc3"
+    return bytes(out)
+
+
+ENTRIES = {
+    0x000: [("push", CODE + 0x40), ("push", STRINGS["CAmmo"]), ("call", REGISTRAR), ("ret",)],
+    0x100: [("push", CODE + 0x140), ("push", STRINGS["CHag"]), ("call", REGISTRAR), ("ret",)],
+    0x200: [("push", STRINGS["CDog"]), ("call", REGISTRAR), ("ret",)],
+    0x300: [("push eax",), ("call eax",), ("push", STRINGS["CZombieDog"]), ("push", CODE + 0x340),
+            ("call", REGISTRAR), ("ret",)],
+    0x400: [("push", NOTES_INFO), ("push", 6), ("call", ARRINIT), ("ret",)],
+}
+
+
+def registration_pe():
+    code = bytearray(b"\xcc" * 0x1000)
+    for offset, parts in ENTRIES.items():
+        body = assemble(CODE + offset, *parts)
+        code[offset:offset + len(body)] = body
+    for at in [REGISTRAR, ARRINIT, OTHER] + PLAIN + [CODE + 0x40, CODE + 0x340]:
+        code[at - CODE] = 0xc3
+    table = table_bytes([(0, 64, CODE + o) for o in ENTRIES] + [(0, 64, p) for p in PLAIN] + [(0, 0, 0)])
+    data = bytearray(LEAD + table).ljust(0x300, b"\0")
+    for text, at in STRINGS.items():
+        data[at - DATA:at - DATA + len(text) + 1] = text.encode() + b"\0"
+    data[NOTES_INFO - DATA:NOTES_INFO - DATA + 24] = struct.pack("<6I", 0x20100, CODE + 0x600, 0, CODE + 0x610,
+                                                                 8, DATA + 0x220)
+    data[0x220:0x22a] = b"$CNotes$$\0"
+    return build_sectioned_pe([(".text", bytes(code), SECTION_EXECUTE), ("DGROUP", bytes(data), 0)], BASE)
+
+
+def registration_functions(names):
+    addrs = [CODE + o for o in ENTRIES] + PLAIN + [REGISTRAR, ARRINIT, OTHER, CODE + 0x40, CODE + 0x340]
+    return [function(a, names.get(a, f"FUN_{a:08x}"), size = 0x30 if a - CODE in ENTRIES else 1) for a in addrs]
+
+
+@pytest.fixture(name = "registration")
+def fixture_registration(monkeypatch, tmp_path):
+    sibling = {CODE: f"core_ammo.cpp_staticInit_FUN_{CODE:08x}",
+               CODE + 0x300: f"core_dog.cpp_staticInit_FUN_{CODE + 0x300:08x}",
+               REGISTRAR: f"core_actor.cpp_registerActorClass_FUN_{REGISTRAR:08x}",
+               ARRINIT: f"core_notes.cpp_CNotes_build_FUN_{ARRINIT:08x}"}
+    target = {REGISTRAR: f"core_actor.cpp_FUN_{REGISTRAR:08x}"}
+    functions_ = [f for f in registration_functions(target) if f["addr"] != f"{CODE + 0x140:08x}"]
+    annotations = install_programs(monkeypatch, tmp_path, {
+        "regsib.exe": (registration_pe(), registration_functions(sibling)),
+        "reg.exe": (registration_pe(), functions_)})
+    strings = [{"addr": f"{at:08x}", "value": text} for text, at in STRINGS.items() if text != "CHag"]
+    for program in ("regsib.exe", "reg.exe"):
+        write_bucket(annotations, program, "applied_strings", strings)
+    path = tmp_path / "regmap.json"
+    path.write_text(json.dumps({"from": "regsib.exe", "to": "reg.exe", "pairs": []}))
+    return path
+
+
+def test_each_call_is_paired_with_what_was_pushed_before_it(registration):
+    image = sibling_match.Image("reg.exe")
+    assert wsi.entry_calls(image, f"{CODE + 0x300:08x}") == [
+        ([], None), ([STRINGS["CZombieDog"], CODE + 0x340], f"{REGISTRAR:08x}")]
+    assert wsi.entry_calls(image, "00500000") == []
+    assert wsi.string_at(image, STRINGS["CHag"]) == "CHag"
+
+
+def test_the_registrar_is_what_most_entries_call_with_a_class_name(registration):
+    image = sibling_match.Image("reg.exe")
+    funcs = [f"{CODE + o:08x}" for o in ENTRIES]
+    registrar, regs = wsi.registrations(image, funcs)
+    assert registrar == f"{REGISTRAR:08x}"
+    assert {f: (r["class"], r["factory"]) for f, r in regs.items()} == {
+        f"{CODE:08x}": ("CAmmo", f"{CODE + 0x40:08x}"), f"{CODE + 0x100:08x}": ("CHag", f"{CODE + 0x140:08x}"),
+        f"{CODE + 0x200:08x}": ("CDog", None), f"{CODE + 0x300:08x}": ("CZombieDog", f"{CODE + 0x340:08x}")}
+    assert wsi.registrations(image, funcs[:2]) == (None, {})
+
+
+def test_a_registered_class_takes_its_known_unit_or_a_core_guess_no_one_has():
+    regs = {"1": {"class": "CAmmo"}, "2": {"class": "CDog"}, "3": {"class": "CZombieDog"},
+            "4": {"class": "CDogHouse"}}
+    units = {"CAmmo": "core_ammo.cpp", "CZombieDog": "core_dog.cpp"}
+    assert wsi.registered_units(regs, units) == {"1": "core_ammo.cpp", "2": "core_dog1.cpp", "3": "core_dog.cpp",
+                                                "4": "core_doghouse.cpp"}
+    assert wsi.factory_core("CAmmo") == "factoryFuncAmmo" and wsi.factory_core("buttonStruct") == "factoryFuncbuttonStruct"
+
+
+def test_registrations_name_the_units_the_registrar_and_the_factories(registration):
+    report = wsi.analyse("reg.exe", str(registration))
+    units = {int(r["func"], 16) - CODE: (r["unit"], r["status"]) for r in report["units"]}
+    assert units[0x000] == ("core_ammo.cpp", "registered")
+    assert units[0x100] == ("core_hag.cpp", "registered")
+    assert units[0x200] == ("core_dog1.cpp", "registered")
+    assert units[0x300] == ("core_dog.cpp", "registered")
+    assert units[0x400] == ("core_notes.cpp", "constructs")
+    assert report["registrar"] == {"addr": f"{REGISTRAR:08x}",
+                                   "want": f"core_actor.cpp_registerActorClass_FUN_{REGISTRAR:08x}"}
+    assert [(f["class"], f["exists"]) for f in report["factories"]] == [
+        ("CAmmo", True), ("CHag", False), ("CZombieDog", True)]
+    renames = dict((a, want) for a, _, want in wsi.plan_names(report))
+    assert renames[f"{CODE + 0x140:08x}"] == f"core_hag.cpp_factoryFuncHag_FUN_{CODE + 0x140:08x}"
+    assert renames[f"{REGISTRAR:08x}"] == f"core_actor.cpp_registerActorClass_FUN_{REGISTRAR:08x}"
+
+
+def test_the_report_shows_the_registrar_and_its_factories(registration, capsys):
+    report = wsi.analyse("reg.exe", str(registration))
+    wsi.print_report(report, wsi.plan_names(report), 0)
+    assert (f"registrar {REGISTRAR:08x} -> core_actor.cpp_registerActorClass_FUN_{REGISTRAR:08x}; "
+            "3 factories, 1 not yet functions") in capsys.readouterr().out
+    report["registrar"]["want"] = None
+    wsi.print_report(report, [], 0)
+    assert f"registrar {REGISTRAR:08x}; 3" in capsys.readouterr().out
+
+
+def test_applying_creates_a_missing_factory(registration):
+    report = wsi.analyse("reg.exe", str(registration))
+    program = Program()
+    program.getDataTypeManager().add(ENTRY_TYPE)
+    done = wsi.apply_to_program(program, report, wsi.plan_names(report))
+    factory = program.getFunctionManager().getFunctionAt(Address(CODE + 0x140))
+    assert factory.getName() == f"core_hag.cpp_factoryFuncHag_FUN_{CODE + 0x140:08x}"
+    assert done["created"] > 1
+
+
+MINE, THEIRS = "00401800", "0040c2e0"
+
+
+@pytest.mark.parametrize("current, theirs, want", [
+    (f"core_actor.cpp_registerActorClass_FUN_{MINE}", None, None),
+    (f"FUN_{MINE}", f"core_actor.cpp_registerActorClass_FUN_{THEIRS}", f"core_actor.cpp_registerActorClass_FUN_{MINE}"),
+    (f"unkaddr_{MINE}.cpp_FUN_{MINE}", f"core_actor.cpp_registerActorClass_FUN_{THEIRS}",
+     f"core_actor.cpp_registerActorClass_FUN_{MINE}"),
+    (f"FUN_{MINE}", "registerActorClass", f"registerActorClass_FUN_{MINE}"),
+    (f"FUN_{MINE}", f"FUN_{THEIRS}", None),
+])
+def test_the_registrar_takes_the_siblings_name_for_its_own(current, theirs, want):
+    class Sibling:
+        by_addr = {THEIRS: {"name": theirs}}
+    row = wsi.registrar_row(MINE, {MINE: current}, Sibling() if theirs else None, THEIRS if theirs else None)
+    assert row == {"addr": MINE, "want": want}
+    assert wsi.registrar_row(None, {}, None, None) is None
+
+
+def test_a_registration_out_of_the_siblings_order_stands_where_it_sorts():
+    rows = wsi.resolve_entries(entries("a", "b", "c", "d"), {},
+                               {"a": staticinit("core_a.cpp"), "c": staticinit("core_c.cpp"),
+                                "d": staticinit("core_e.cpp")},
+                               ["core_a.cpp", "core_c.cpp", "core_b.cpp", "core_e.cpp"],
+                               {"b": "core_b.cpp"})
+    assert [r["status"] for r in rows] == ["mapped", "registered", "mapped", "mapped"]
+    rows = wsi.resolve_entries(entries("a", "b", "c"), {}, {"a": staticinit("core_a.cpp"),
+                                                            "c": staticinit("core_c.cpp")},
+                               ["core_a.cpp", "core_c.cpp", "core_z.cpp"], {"b": "core_z.cpp"})
+    assert [r["status"] for r in rows] == ["mapped", "conflict", "mapped"]
+
+
+def test_an_entry_already_in_a_real_unit_is_resolved_by_it():
+    rows = wsi.resolve_entries(entries("a"), {"a": "core_a.cpp_FUN_1"}, {}, [])
+    assert (rows[0]["unit"], rows[0]["status"]) == ("core_a.cpp", "labelled")
+
+
+def test_a_factory_that_already_has_a_name_keeps_it():
+    report = {"units": [], "assign": [], "registrar": None,
+              "names": {"00401040": "core_ammo.cpp_factoryFuncAmmo_FUN_00401040", "00401140": "FUN_00401140"},
+              "factories": [{"addr": "00401040", "class": "CAmmo", "unit": "core_ammo.cpp", "exists": True},
+                            {"addr": "00401140", "class": "CHag", "unit": "core_hag.cpp", "exists": True}]}
+    assert wsi.plan_names(report) == [("00401140", "FUN_00401140", "core_hag.cpp_factoryFuncHag_FUN_00401140")]

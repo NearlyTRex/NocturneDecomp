@@ -207,7 +207,7 @@
       }
     ],
     "importable":true,
-    "name":"crt_unknown.c_FUN_005c4ff8",
+    "name":"unkafter_2d.cpp_FUN_005c4ff8",
     "ret":"undefined1",
     "vars":{
       "ret_storage":{
@@ -225,11 +225,147 @@
       }
     ],
     "importable":true,
-    "name":"crt_unknown.c_FUN_005c5cf8",
+    "name":"unkafter_2d.cpp_FUN_005c5cf8",
     "ret":"undefined1",
     "vars":{
       "ret_storage":{
         "invalid":true
+      }
+    }
+  },
+  {
+    "addr":"005c7178",
+    "body":[
+      {
+        "end":"005c717d",
+        "size":6,
+        "start":"005c7178"
+      }
+    ],
+    "conv":"__stdcall",
+    "importable":true,
+    "name":"crt_winmm.c_joyGetPos",
+    "ret":"MMRESULT",
+    "thtarget":"EXTERNAL:00000016",
+    "thunk":true,
+    "vars":{
+      "params":[
+        {
+          "name":"uJoyID",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"UINT"
+        },
+        {
+          "name":"pji",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"LPJOYINFO"
+        }
+      ],
+      "ret_storage":{
+        "reg":"EAX",
+        "size":4,
+        "varnodes":[
+          {
+            "addr":"register:00000000",
+            "size":4
+          }
+        ]
+      }
+    }
+  },
+  {
+    "addr":"005c72f8",
+    "body":[
+      {
+        "end":"005c72fd",
+        "size":6,
+        "start":"005c72f8"
+      }
+    ],
+    "conv":"__stdcall",
+    "importable":true,
+    "name":"crt_kernel32.c_FreeLibrary",
+    "ret":"BOOL",
+    "thtarget":"EXTERNAL:0000005d",
+    "thunk":true,
+    "vars":{
+      "params":[
+        {
+          "name":"hLibModule",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"HMODULE"
+        }
+      ],
+      "ret_storage":{
+        "reg":"EAX",
+        "size":4,
+        "varnodes":[
+          {
+            "addr":"register:00000000",
+            "size":4
+          }
+        ]
+      }
+    }
+  },
+  {
+    "addr":"005c7478",
+    "body":[
+      {
+        "end":"005c747d",
+        "size":6,
+        "start":"005c7478"
+      }
+    ],
+    "conv":"__stdcall",
+    "importable":true,
+    "name":"crt_kernel32.c_TlsAlloc",
+    "ret":"DWORD",
+    "thtarget":"EXTERNAL:0000009a",
+    "thunk":true,
+    "vars":{
+      "ret_storage":{
+        "reg":"EAX",
+        "size":4,
+        "varnodes":[
+          {
+            "addr":"register:00000000",
+            "size":4
+          }
+        ]
       }
     }
   }

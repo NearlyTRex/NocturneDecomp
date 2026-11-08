@@ -9,7 +9,25 @@
       }
     ],
     "importable":true,
-    "name":"unkafter_dpart.cpp_FUN_004663f2",
+    "name":"core_dpart.cpp_FUN_004663f2",
+    "ret":"undefined1",
+    "vars":{
+      "ret_storage":{
+        "invalid":true
+      }
+    }
+  },
+  {
+    "addr":"0046fb72",
+    "body":[
+      {
+        "end":"0046fcc7",
+        "size":342,
+        "start":"0046fb72"
+      }
+    ],
+    "importable":true,
+    "name":"core_dstrender.cpp_renderZBufferFill16xUnrolled_FUN_0046fb72",
     "ret":"undefined1",
     "vars":{
       "ret_storage":{
@@ -134,6 +152,151 @@
     }
   },
   {
+    "addr":"005b2172",
+    "body":[
+      {
+        "end":"005b2177",
+        "size":6,
+        "start":"005b2172"
+      }
+    ],
+    "conv":"__stdcall",
+    "importable":true,
+    "name":"crt_kernel32.c_GetStdHandle",
+    "ret":"HANDLE",
+    "thtarget":"EXTERNAL:00000077",
+    "thunk":true,
+    "vars":{
+      "params":[
+        {
+          "name":"nStdHandle",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"DWORD"
+        }
+      ],
+      "ret_storage":{
+        "reg":"EAX",
+        "size":4,
+        "varnodes":[
+          {
+            "addr":"register:00000000",
+            "size":4
+          }
+        ]
+      }
+    }
+  },
+  {
+    "addr":"005b22f2",
+    "body":[
+      {
+        "end":"005b22f7",
+        "size":6,
+        "start":"005b22f2"
+      }
+    ],
+    "conv":"__stdcall",
+    "importable":true,
+    "name":"crt_kernel32.c_SetThreadPriority",
+    "ret":"BOOL",
+    "thtarget":"EXTERNAL:00000098",
+    "thunk":true,
+    "vars":{
+      "params":[
+        {
+          "name":"hThread",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"HANDLE"
+        },
+        {
+          "name":"nPriority",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"int"
+        }
+      ],
+      "ret_storage":{
+        "reg":"EAX",
+        "size":4,
+        "varnodes":[
+          {
+            "addr":"register:00000000",
+            "size":4
+          }
+        ]
+      }
+    }
+  },
+  {
+    "addr":"005b2472",
+    "body":[
+      {
+        "end":"005b2477",
+        "size":6,
+        "start":"005b2472"
+      }
+    ],
+    "conv":"__stdcall",
+    "importable":true,
+    "name":"crt_kernel32.c_ExitThread",
+    "noreturn":true,
+    "ret":"void",
+    "thtarget":"EXTERNAL:00000055",
+    "thunk":true,
+    "vars":{
+      "params":[
+        {
+          "name":"dwExitCode",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"DWORD"
+        }
+      ]
+    }
+  },
+  {
     "addr":"005b25f2",
     "body":[
       {
@@ -143,13 +306,70 @@
       }
     ],
     "importable":true,
-    "name":"Ordinal_1",
-    "ret":"undefined1",
+    "name":"crt_dsound.c_DirectSoundCreate",
+    "ret":"HRESULT",
     "thtarget":"EXTERNAL:000000c4",
     "thunk":true,
     "vars":{
+      "params":[
+        {
+          "name":"lp_guid",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"LPGUID"
+        },
+        {
+          "name":"pp_ds",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"LPDIRECTSOUND*"
+        },
+        {
+          "name":"p_unk_outer",
+          "storage":{
+            "offset":12,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0xc]",
+                "offset":12,
+                "size":4
+              }
+            ]
+          },
+          "type":"LPUNKNOWN"
+        }
+      ],
       "ret_storage":{
-        "invalid":true
+        "reg":"EAX",
+        "size":4,
+        "varnodes":[
+          {
+            "addr":"register:00000000",
+            "size":4
+          }
+        ]
       }
     }
   }

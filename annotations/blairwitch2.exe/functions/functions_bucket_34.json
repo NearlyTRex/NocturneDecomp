@@ -118,7 +118,7 @@
       }
     ],
     "importable":true,
-    "name":"crt_unknown.c_FUN_005c23b4",
+    "name":"unkafter_morph.cpp_FUN_005c23b4",
     "ret":"undefined1",
     "vars":{
       "ret_storage":{
@@ -136,7 +136,7 @@
       }
     ],
     "importable":true,
-    "name":"crt_unknown.c_FUN_005c2a34",
+    "name":"unkafter_morph.cpp_FUN_005c2a34",
     "ret":"undefined1",
     "vars":{
       "ret_storage":{
@@ -154,11 +154,229 @@
       }
     ],
     "importable":true,
-    "name":"crt_unknown.c_FUN_005c2ab4",
+    "name":"unkafter_morph.cpp_FUN_005c2ab4",
     "ret":"undefined1",
     "vars":{
       "ret_storage":{
         "invalid":true
+      }
+    }
+  },
+  {
+    "addr":"005c71b4",
+    "body":[
+      {
+        "end":"005c71b9",
+        "size":6,
+        "start":"005c71b4"
+      }
+    ],
+    "conv":"__stdcall",
+    "importable":true,
+    "name":"crt_kernel32.c_GetComputerNameA",
+    "ret":"BOOL",
+    "thtarget":"EXTERNAL:00000062",
+    "thunk":true,
+    "vars":{
+      "params":[
+        {
+          "name":"lpBuffer",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"LPSTR"
+        },
+        {
+          "name":"nSize",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"LPDWORD"
+        }
+      ],
+      "ret_storage":{
+        "reg":"EAX",
+        "size":4,
+        "varnodes":[
+          {
+            "addr":"register:00000000",
+            "size":4
+          }
+        ]
+      }
+    }
+  },
+  {
+    "addr":"005c7334",
+    "body":[
+      {
+        "end":"005c7339",
+        "size":6,
+        "start":"005c7334"
+      }
+    ],
+    "conv":"__stdcall",
+    "importable":true,
+    "name":"crt_winmm.c_waveInGetDevCapsA",
+    "ret":"MMRESULT",
+    "thtarget":"EXTERNAL:0000001f",
+    "thunk":true,
+    "vars":{
+      "params":[
+        {
+          "name":"uDeviceID",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"UINT_PTR"
+        },
+        {
+          "name":"pwic",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"LPWAVEINCAPSA"
+        },
+        {
+          "name":"cbwic",
+          "storage":{
+            "offset":12,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0xc]",
+                "offset":12,
+                "size":4
+              }
+            ]
+          },
+          "type":"UINT"
+        }
+      ],
+      "ret_storage":{
+        "reg":"EAX",
+        "size":4,
+        "varnodes":[
+          {
+            "addr":"register:00000000",
+            "size":4
+          }
+        ]
+      }
+    }
+  },
+  {
+    "addr":"005c74b4",
+    "body":[
+      {
+        "end":"005c74b9",
+        "size":6,
+        "start":"005c74b4"
+      }
+    ],
+    "conv":"__stdcall",
+    "importable":true,
+    "name":"crt_wsock32.c_gethostbyaddr",
+    "ret":"hostent*",
+    "thtarget":"EXTERNAL:000000a7",
+    "thunk":true,
+    "vars":{
+      "params":[
+        {
+          "name":"addr",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"char*"
+        },
+        {
+          "name":"len",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"int"
+        },
+        {
+          "name":"type",
+          "storage":{
+            "offset":12,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0xc]",
+                "offset":12,
+                "size":4
+              }
+            ]
+          },
+          "type":"int"
+        }
+      ],
+      "ret_storage":{
+        "reg":"EAX",
+        "size":4,
+        "varnodes":[
+          {
+            "addr":"register:00000000",
+            "size":4
+          }
+        ]
       }
     }
   }

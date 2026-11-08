@@ -1,5 +1,28 @@
 [
   {
+    "addr":"00486e74",
+    "body":[
+      {
+        "end":"00486ec7",
+        "size":84,
+        "start":"00486e74"
+      },
+      {
+        "end":"00486ed6",
+        "size":7,
+        "start":"00486ed0"
+      }
+    ],
+    "importable":true,
+    "name":"core_dstrender.cpp_renderDepth16BitConditional_FUN_00486e74",
+    "ret":"undefined1",
+    "vars":{
+      "ret_storage":{
+        "invalid":true
+      }
+    }
+  },
+  {
     "addr":"005c16f4",
     "body":[
       {
@@ -111,7 +134,7 @@
       }
     ],
     "importable":true,
-    "name":"crt_unknown.c_FUN_005ca9f4",
+    "name":"unkafter_zombie.cpp_FUN_005ca9f4",
     "ret":"undefined1",
     "vars":{
       "ret_storage":{
@@ -129,7 +152,7 @@
       }
     ],
     "importable":true,
-    "name":"crt_unknown.c_FUN_005cb5f4",
+    "name":"unkafter_zombie.cpp_FUN_005cb5f4",
     "ret":"undefined1",
     "vars":{
       "ret_storage":{
@@ -147,11 +170,229 @@
       }
     ],
     "importable":true,
-    "name":"crt_unknown.c_FUN_005cd274",
+    "name":"unkafter_zombie.cpp_FUN_005cd274",
     "ret":"undefined1",
     "vars":{
       "ret_storage":{
         "invalid":true
+      }
+    }
+  },
+  {
+    "addr":"005cf3f4",
+    "body":[
+      {
+        "end":"005cf3f9",
+        "size":6,
+        "start":"005cf3f4"
+      }
+    ],
+    "conv":"__stdcall",
+    "importable":true,
+    "name":"crt_kernel32.c_LocalFileTimeToFileTime",
+    "ret":"BOOL",
+    "thtarget":"EXTERNAL:00000083",
+    "thunk":true,
+    "vars":{
+      "params":[
+        {
+          "name":"lpLocalFileTime",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"FILETIME*"
+        },
+        {
+          "name":"lpFileTime",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"LPFILETIME"
+        }
+      ],
+      "ret_storage":{
+        "reg":"EAX",
+        "size":4,
+        "varnodes":[
+          {
+            "addr":"register:00000000",
+            "size":4
+          }
+        ]
+      }
+    }
+  },
+  {
+    "addr":"005cf574",
+    "body":[
+      {
+        "end":"005cf579",
+        "size":6,
+        "start":"005cf574"
+      }
+    ],
+    "conv":"__stdcall",
+    "importable":true,
+    "name":"crt_user32.c_DefWindowProcA",
+    "ret":"LRESULT",
+    "thtarget":"EXTERNAL:00000030",
+    "thunk":true,
+    "vars":{
+      "params":[
+        {
+          "name":"hWnd",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"HWND"
+        },
+        {
+          "name":"Msg",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"UINT"
+        },
+        {
+          "name":"wParam",
+          "storage":{
+            "offset":12,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0xc]",
+                "offset":12,
+                "size":4
+              }
+            ]
+          },
+          "type":"WPARAM"
+        },
+        {
+          "name":"lParam",
+          "storage":{
+            "offset":16,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x10]",
+                "offset":16,
+                "size":4
+              }
+            ]
+          },
+          "type":"LPARAM"
+        }
+      ],
+      "ret_storage":{
+        "reg":"EAX",
+        "size":4,
+        "varnodes":[
+          {
+            "addr":"register:00000000",
+            "size":4
+          }
+        ]
+      }
+    }
+  },
+  {
+    "addr":"005cf6f4",
+    "body":[
+      {
+        "end":"005cf6f9",
+        "size":6,
+        "start":"005cf6f4"
+      }
+    ],
+    "conv":"__stdcall",
+    "importable":true,
+    "name":"crt_kernel32.c_SetEnvironmentVariableA",
+    "ret":"BOOL",
+    "thtarget":"EXTERNAL:00000090",
+    "thunk":true,
+    "vars":{
+      "params":[
+        {
+          "name":"lpName",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"LPCSTR"
+        },
+        {
+          "name":"lpValue",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"LPCSTR"
+        }
+      ],
+      "ret_storage":{
+        "reg":"EAX",
+        "size":4,
+        "varnodes":[
+          {
+            "addr":"register:00000000",
+            "size":4
+          }
+        ]
       }
     }
   }

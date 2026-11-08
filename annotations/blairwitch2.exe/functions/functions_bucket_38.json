@@ -572,7 +572,7 @@
       }
     ],
     "importable":true,
-    "name":"crt_unknown.c_FUN_005c3e38",
+    "name":"unkafter_morph.cpp_FUN_005c3e38",
     "ret":"undefined1",
     "vars":{
       "ret_storage":{
@@ -590,7 +590,7 @@
       }
     ],
     "importable":true,
-    "name":"crt_unknown.c_FUN_005c4fb8",
+    "name":"unkafter_2d.cpp_FUN_005c4fb8",
     "ret":"undefined1",
     "vars":{
       "ret_storage":{
@@ -608,11 +608,183 @@
       }
     ],
     "importable":true,
-    "name":"crt_unknown.c_FUN_005c50b8",
+    "name":"unkafter_2d.cpp_FUN_005c50b8",
     "ret":"undefined1",
     "vars":{
       "ret_storage":{
         "invalid":true
+      }
+    }
+  },
+  {
+    "addr":"005c5138",
+    "body":[
+      {
+        "end":"005c517b",
+        "size":68,
+        "start":"005c5138"
+      }
+    ],
+    "importable":true,
+    "name":"unkafter_2d.cpp_FUN_005c5138",
+    "ret":"undefined1",
+    "vars":{
+      "ret_storage":{
+        "invalid":true
+      }
+    }
+  },
+  {
+    "addr":"005c7238",
+    "body":[
+      {
+        "end":"005c723d",
+        "size":6,
+        "start":"005c7238"
+      }
+    ],
+    "conv":"__stdcall",
+    "importable":true,
+    "name":"crt_user32.c_FindWindowA",
+    "ret":"HWND",
+    "thtarget":"EXTERNAL:00000032",
+    "thunk":true,
+    "vars":{
+      "params":[
+        {
+          "name":"lpClassName",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"LPCSTR"
+        },
+        {
+          "name":"lpWindowName",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"LPCSTR"
+        }
+      ],
+      "ret_storage":{
+        "reg":"EAX",
+        "size":4,
+        "varnodes":[
+          {
+            "addr":"register:00000000",
+            "size":4
+          }
+        ]
+      }
+    }
+  },
+  {
+    "addr":"005c73b8",
+    "body":[
+      {
+        "end":"005c73bd",
+        "size":6,
+        "start":"005c73b8"
+      }
+    ],
+    "conv":"__stdcall",
+    "importable":true,
+    "name":"crt_kernel32.c_FindClose",
+    "ret":"BOOL",
+    "thtarget":"EXTERNAL:00000058",
+    "thunk":true,
+    "vars":{
+      "params":[
+        {
+          "name":"hFindFile",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"HANDLE"
+        }
+      ],
+      "ret_storage":{
+        "reg":"EAX",
+        "size":4,
+        "varnodes":[
+          {
+            "addr":"register:00000000",
+            "size":4
+          }
+        ]
+      }
+    }
+  },
+  {
+    "addr":"005c7538",
+    "body":[
+      {
+        "end":"005c753d",
+        "size":6,
+        "start":"005c7538"
+      }
+    ],
+    "conv":"__stdcall",
+    "importable":true,
+    "name":"crt_wsock32.c_htonl",
+    "ret":"u_long",
+    "thtarget":"EXTERNAL:000000bd",
+    "thunk":true,
+    "vars":{
+      "params":[
+        {
+          "name":"hostlong",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"u_long"
+        }
+      ],
+      "ret_storage":{
+        "reg":"EAX",
+        "size":4,
+        "varnodes":[
+          {
+            "addr":"register:00000000",
+            "size":4
+          }
+        ]
       }
     }
   }

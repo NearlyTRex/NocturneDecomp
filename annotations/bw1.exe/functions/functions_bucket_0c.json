@@ -1,5 +1,95 @@
 [
   {
+    "addr":"00437b8c",
+    "body":[
+      {
+        "end":"00437cf5",
+        "size":362,
+        "start":"00437b8c"
+      }
+    ],
+    "importable":true,
+    "name":"cockpit_ckptutil.c_FUN_00437b8c",
+    "ret":"undefined1",
+    "vars":{
+      "ret_storage":{
+        "invalid":true
+      }
+    }
+  },
+  {
+    "addr":"0043a00c",
+    "body":[
+      {
+        "end":"0043a00f",
+        "size":4,
+        "start":"0043a00c"
+      }
+    ],
+    "importable":true,
+    "name":"cockpit_ckptutil.c_FUN_0043a00c",
+    "ret":"undefined1",
+    "vars":{
+      "ret_storage":{
+        "invalid":true
+      }
+    }
+  },
+  {
+    "addr":"0045168c",
+    "body":[
+      {
+        "end":"004516b0",
+        "size":37,
+        "start":"0045168c"
+      }
+    ],
+    "importable":true,
+    "name":"core_dcamera.cpp_FUN_0045168c",
+    "ret":"undefined1",
+    "vars":{
+      "ret_storage":{
+        "invalid":true
+      }
+    }
+  },
+  {
+    "addr":"0047fe0c",
+    "body":[
+      {
+        "end":"0047fe19",
+        "size":14,
+        "start":"0047fe0c"
+      }
+    ],
+    "importable":true,
+    "name":"cockpit_drawsurf.cpp_FUN_0047fe0c",
+    "ret":"undefined1",
+    "vars":{
+      "ret_storage":{
+        "invalid":true
+      }
+    }
+  },
+  {
+    "addr":"0048c50c",
+    "body":[
+      {
+        "end":"0048c50f",
+        "size":4,
+        "start":"0048c50c"
+      }
+    ],
+    "importable":true,
+    "name":"core_dtrace.cpp_FUN_0048c50c",
+    "ret":"undefined1",
+    "vars":{
+      "ret_storage":{
+        "invalid":true
+      }
+    }
+  },
+  {
     "addr":"0051c48c",
     "body":[
       {
@@ -69,6 +159,42 @@
     }
   },
   {
+    "addr":"005cab0c",
+    "body":[
+      {
+        "end":"005cab24",
+        "size":25,
+        "start":"005cab0c"
+      }
+    ],
+    "importable":true,
+    "name":"unkafter_zombie.cpp_FUN_005cab0c",
+    "ret":"undefined1",
+    "vars":{
+      "ret_storage":{
+        "invalid":true
+      }
+    }
+  },
+  {
+    "addr":"005cab8c",
+    "body":[
+      {
+        "end":"005cab99",
+        "size":14,
+        "start":"005cab8c"
+      }
+    ],
+    "importable":true,
+    "name":"unkafter_zombie.cpp_FUN_005cab8c",
+    "ret":"undefined1",
+    "vars":{
+      "ret_storage":{
+        "invalid":true
+      }
+    }
+  },
+  {
     "addr":"005cba8c",
     "body":[
       {
@@ -78,7 +204,7 @@
       }
     ],
     "importable":true,
-    "name":"crt_unknown.c_FUN_005cba8c",
+    "name":"unkafter_zombie.cpp_FUN_005cba8c",
     "ret":"undefined1",
     "vars":{
       "ret_storage":{
@@ -96,11 +222,131 @@
       }
     ],
     "importable":true,
-    "name":"crt_unknown.c_FUN_005ce48c",
+    "name":"unkafter_2d.cpp_FUN_005ce48c",
     "ret":"undefined1",
     "vars":{
       "ret_storage":{
         "invalid":true
+      }
+    }
+  },
+  {
+    "addr":"005cf40c",
+    "body":[
+      {
+        "end":"005cf411",
+        "size":6,
+        "start":"005cf40c"
+      }
+    ],
+    "conv":"__stdcall",
+    "importable":true,
+    "name":"crt_kernel32.c_GetFileType",
+    "ret":"DWORD",
+    "thtarget":"EXTERNAL:0000006e",
+    "thunk":true,
+    "vars":{
+      "params":[
+        {
+          "name":"hFile",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"HANDLE"
+        }
+      ],
+      "ret_storage":{
+        "reg":"EAX",
+        "size":4,
+        "varnodes":[
+          {
+            "addr":"register:00000000",
+            "size":4
+          }
+        ]
+      }
+    }
+  },
+  {
+    "addr":"005cf58c",
+    "body":[
+      {
+        "end":"005cf591",
+        "size":6,
+        "start":"005cf58c"
+      }
+    ],
+    "conv":"__stdcall",
+    "importable":true,
+    "name":"crt_winmm.c_timeEndPeriod",
+    "ret":"MMRESULT",
+    "thtarget":"EXTERNAL:0000001b",
+    "thunk":true,
+    "vars":{
+      "params":[
+        {
+          "name":"uPeriod",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"UINT"
+        }
+      ],
+      "ret_storage":{
+        "reg":"EAX",
+        "size":4,
+        "varnodes":[
+          {
+            "addr":"register:00000000",
+            "size":4
+          }
+        ]
+      }
+    }
+  },
+  {
+    "addr":"005cf70c",
+    "body":[
+      {
+        "end":"005cf711",
+        "size":6,
+        "start":"005cf70c"
+      }
+    ],
+    "conv":"__stdcall",
+    "importable":true,
+    "name":"crt_kernel32.c_GetOEMCP",
+    "ret":"UINT",
+    "thtarget":"EXTERNAL:00000075",
+    "thunk":true,
+    "vars":{
+      "ret_storage":{
+        "reg":"EAX",
+        "size":4,
+        "varnodes":[
+          {
+            "addr":"register:00000000",
+            "size":4
+          }
+        ]
       }
     }
   }

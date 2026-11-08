@@ -59,7 +59,7 @@
       }
     ],
     "importable":true,
-    "name":"crt_unknown.c_FUN_005ca8a4",
+    "name":"unkafter_zombie.cpp_FUN_005ca8a4",
     "ret":"undefined1",
     "vars":{
       "ret_storage":{
@@ -77,7 +77,25 @@
       }
     ],
     "importable":true,
-    "name":"crt_unknown.c_FUN_005ca924",
+    "name":"unkafter_zombie.cpp_FUN_005ca924",
+    "ret":"undefined1",
+    "vars":{
+      "ret_storage":{
+        "invalid":true
+      }
+    }
+  },
+  {
+    "addr":"005cb1a4",
+    "body":[
+      {
+        "end":"005cb3ba",
+        "size":535,
+        "start":"005cb1a4"
+      }
+    ],
+    "importable":true,
+    "name":"unkafter_zombie.cpp_FUN_005cb1a4",
     "ret":"undefined1",
     "vars":{
       "ret_storage":{
@@ -95,11 +113,163 @@
       }
     ],
     "importable":true,
-    "name":"crt_unknown.c_FUN_005cd4a4",
+    "name":"unkafter_2d.cpp_FUN_005cd4a4",
     "ret":"undefined1",
     "vars":{
       "ret_storage":{
         "invalid":true
+      }
+    }
+  },
+  {
+    "addr":"005cf424",
+    "body":[
+      {
+        "end":"005cf429",
+        "size":6,
+        "start":"005cf424"
+      }
+    ],
+    "conv":"__stdcall",
+    "importable":true,
+    "name":"crt_kernel32.c_GetCommandLineW",
+    "ret":"LPWSTR",
+    "thtarget":"EXTERNAL:00000062",
+    "thunk":true,
+    "vars":{
+      "ret_storage":{
+        "reg":"EAX",
+        "size":4,
+        "varnodes":[
+          {
+            "addr":"register:00000000",
+            "size":4
+          }
+        ]
+      }
+    }
+  },
+  {
+    "addr":"005cf5a4",
+    "body":[
+      {
+        "end":"005cf5a9",
+        "size":6,
+        "start":"005cf5a4"
+      }
+    ],
+    "conv":"__stdcall",
+    "importable":true,
+    "name":"crt_kernel32.c_QueryPerformanceFrequency",
+    "ret":"BOOL",
+    "thtarget":"EXTERNAL:00000088",
+    "thunk":true,
+    "vars":{
+      "params":[
+        {
+          "name":"lpFrequency",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"LARGE_INTEGER*"
+        }
+      ],
+      "ret_storage":{
+        "reg":"EAX",
+        "size":4,
+        "varnodes":[
+          {
+            "addr":"register:00000000",
+            "size":4
+          }
+        ]
+      }
+    }
+  },
+  {
+    "addr":"005cf724",
+    "body":[
+      {
+        "end":"005cf729",
+        "size":6,
+        "start":"005cf724"
+      }
+    ],
+    "conv":"__stdcall",
+    "importable":true,
+    "name":"crt_kernel32.c_FileTimeToDosDateTime",
+    "ret":"BOOL",
+    "thtarget":"EXTERNAL:00000057",
+    "thunk":true,
+    "vars":{
+      "params":[
+        {
+          "name":"lpFileTime",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"FILETIME*"
+        },
+        {
+          "name":"lpFatDate",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"LPWORD"
+        },
+        {
+          "name":"lpFatTime",
+          "storage":{
+            "offset":12,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0xc]",
+                "offset":12,
+                "size":4
+              }
+            ]
+          },
+          "type":"LPWORD"
+        }
+      ],
+      "ret_storage":{
+        "reg":"EAX",
+        "size":4,
+        "varnodes":[
+          {
+            "addr":"register:00000000",
+            "size":4
+          }
+        ]
       }
     }
   }

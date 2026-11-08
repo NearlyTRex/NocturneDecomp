@@ -14,6 +14,9 @@ script writes that down for each placeholder function:
   bracket    the nearest evidence on both sides is the same unit
   crt        it lies past the CRT line, so it is runtime code
   crt island it lies between two pieces of CRT evidence, so it is runtime code
+  tail       the unit after it provably starts where the gap ends, and no known
+             unit sorts between the two either side, so the gap is the end of
+             the unit before it (is_tail)
   unit start it lies after an init-table entry whose unit is not known, with no
              evidence since: that entry began a unit (see watcom_static_init),
              so the run gets one virtual unit of its own (run_unit)
@@ -63,62 +66,11 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import sibling_match as sm
 import watcom_static_init as wsi
 import watcom_type_info as wti
-
-STEM_LIMIT = 8
-VOWELS = frozenset("aeiou")
-# A class named for what it serves lives in that thing's file: CClothList in
-# cloth.cpp, CLevelLoader in level.cpp, CBaronWeapon in baron.cpp.
-HELPER_WORDS = frozenset((
-    "list", "item", "loader", "model", "decoder", "cache", "dest", "weapon", "property",
-    "set", "controller", "manager", "effect", "placeholder", "instance", "entry", "info"))
-
+from thunk_names import name_thunks
+from unit_names import STEM_LIMIT, era_stem
 
 def is_crt(unit):
     return bool(unit) and unit.startswith("crt_")
-
-
-def name_words(cls):
-    """`CHighPriestOfGardath` -> ['high', 'priest', 'of', 'gardath']."""
-    bare = re.sub(r"^C(?=[A-Z])", "", cls)
-    return [w.lower() for w in re.findall(r"[A-Z]+(?![a-z])|[A-Z][a-z0-9]*|[a-z0-9]+", bare)]
-
-
-def drop_vowels(word, limit=STEM_LIMIT):
-    """Vowels out from the end, the first letter kept, until it fits: character -> charactr."""
-    chars, i = list(word), len(word) - 1
-    while len(chars) > limit and i > 0:
-        if chars[i] in VOWELS:
-            del chars[i]
-        i -= 1
-    return "".join(chars)[:limit]
-
-
-def era_stem(cls):
-    """An 8.3 file stem for class `cls`, as this codebase's authors made them.
-
-    Fitted to nocedit, where it gives the right file for 31 of the 51 classes
-    whose names are too long for 8.3 (and every shorter one is its own name):
-    `Demon` shortens to `d` (dlight), helper suffixes go to the class they
-    serve (cloth), a long single word loses late vowels (charactr), a name
-    whose first word leaves room is cut (batcreat), and otherwise the first
-    word gives up letters to the rest (dracbrid). The other 20 were
-    abbreviated by hand past what a rule recovers (inv, hpriest).
-    """
-    ws = name_words(cls) or ["class"]
-    if ws[0] == "demon" and len(ws) > 1:
-        ws = ["d"] + ws[1:]
-    while len(ws) > 1 and ws[-1] in HELPER_WORDS:
-        ws = ws[:-1]
-    joined = "".join(ws)
-    if len(joined) <= STEM_LIMIT:
-        return joined
-    if len(ws) == 1:
-        return drop_vowels(ws[0])
-    if len(ws[0]) + 3 <= STEM_LIMIT:
-        return joined[:STEM_LIMIT]
-    rest = "".join(ws[1:])
-    keep = min(len(ws[0]), max(4, STEM_LIMIT - len(rest)))
-    return (ws[0][:keep] + rest)[:STEM_LIMIT]
 
 
 def virtual_unit(prev, first):
@@ -202,8 +154,21 @@ def class_files(program):
     return out
 
 
+def is_tail(prev, nxt, nxt_addr, unit_starts, known):
+    """Is a gap between units `prev` and `nxt` all of `prev`?
+
+    Yes when `nxt` provably begins where the gap ends (its first function is
+    an init-table entry, which is always a unit's first function) and no known
+    unit sorts between the two, so nothing else can sit in the gap.
+    """
+    if not (prev and nxt and nxt_addr in unit_starts) or is_crt(prev) or is_crt(nxt):
+        return False
+    lo, hi = wsi.basename(prev), wsi.basename(nxt)
+    return lo < hi and not any(lo < k < hi for k in known)
+
+
 def plan(ordered, labels, placeholders, starts=frozenset(), classes=None, files=None,
-         actors=frozenset()):
+         actors=frozenset(), unit_starts=frozenset(), known=frozenset()):
     """(addr, unit, why) for every placeholder, in address order.
 
     `labels` is addr -> unit for every function carrying evidence, and
@@ -227,7 +192,7 @@ def plan(ordered, labels, placeholders, starts=frozenset(), classes=None, files=
             prev = labels[a]
             if not is_crt(prev):
                 prev_game = prev
-    out, nxt, runs, bounds = [], None, defaultdict(list), {}
+    out, nxt, nxt_addr, runs, bounds = [], None, None, defaultdict(list), {}
     for i in range(len(ordered) - 1, -1, -1):
         a = ordered[i]
         if a in starts:
@@ -245,11 +210,13 @@ def plan(ordered, labels, placeholders, starts=frozenset(), classes=None, files=
                 unit, why = (sm.CRT_UNKNOWN_UNIT, "crt island") if is_crt(prev) else (prev, "bracket")
             elif is_crt(prev) and is_crt(nxt):
                 unit, why = sm.CRT_UNKNOWN_UNIT, "crt island"
+            elif is_tail(prev, nxt, nxt_addr, unit_starts, known):
+                unit, why = prev, "tail"
             else:
                 unit, why = virtual_unit(prev_game, first), "between"
             out.append((a, unit, why))
         if a in labels:
-            nxt = labels[a]
+            nxt, nxt_addr = labels[a], a
     names = settle_names({s: run_unit(s, members, classes or {}, files or {}, bounds[s], actors)
                           for s, members in runs.items()}, set(labels.values()), bounds)
     return [(a, names.get(u, u) if why == "unit start" else u, why) for a, u, why in out[::-1]], line
@@ -462,8 +429,11 @@ def analyse(program, pins_path=None, mapping_paths=()):
     labels, grown = grow_labels(ordered, labels, placeholders, string_reads(image), hints)
     starts = {a for a in table_starts(image) if a not in labels}
     records = wti.scan_type_info(image)
+    known = {wsi.basename(u) for u in labels.values() if not is_crt(u)}
+    known |= {wsi.basename(u) for m in mappings for u in mapping_hints(m).values() if not is_crt(u)}
     rows, line = plan(ordered, labels, placeholders, starts, class_slots(image, records),
-                      class_files(program), actor_classes(image, records))
+                      class_files(program), actor_classes(image, records),
+                      table_starts(image), known)
     rows = [(a, u, grown.get(a, why)) for a, u, why in rows]
     names = {a: image.by_addr[a].get("name") for a in ordered}
     renames = [(a, names[a], "%s_FUN_%s" % (unit, a), why) for a, unit, why in rows
@@ -500,6 +470,7 @@ def apply_to_program(program, renames):
             if func is not None:
                 func.setName(want, SourceType.USER_DEFINED)
                 renamed += 1
+        renamed += len(name_thunks(program))
         ok = True
     finally:
         program.endTransaction(tx, ok)

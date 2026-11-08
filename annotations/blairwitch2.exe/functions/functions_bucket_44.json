@@ -46,7 +46,25 @@
       }
     ],
     "importable":true,
-    "name":"crt_unknown.c_FUN_005c27c4",
+    "name":"unkafter_morph.cpp_FUN_005c27c4",
+    "ret":"undefined1",
+    "vars":{
+      "ret_storage":{
+        "invalid":true
+      }
+    }
+  },
+  {
+    "addr":"005c2844",
+    "body":[
+      {
+        "end":"005c2851",
+        "size":14,
+        "start":"005c2844"
+      }
+    ],
+    "importable":true,
+    "name":"unkafter_morph.cpp_FUN_005c2844",
     "ret":"undefined1",
     "vars":{
       "ret_storage":{
@@ -64,7 +82,7 @@
       }
     ],
     "importable":true,
-    "name":"crt_unknown.c_FUN_005c4c44",
+    "name":"unkafter_morph.cpp_FUN_005c4c44",
     "ret":"undefined1",
     "vars":{
       "ret_storage":{
@@ -82,7 +100,7 @@
       }
     ],
     "importable":true,
-    "name":"crt_unknown.c_FUN_005c4e44",
+    "name":"unkafter_morph.cpp_FUN_005c4e44",
     "ret":"undefined1",
     "vars":{
       "ret_storage":{
@@ -100,7 +118,7 @@
       }
     ],
     "importable":true,
-    "name":"crt_unknown.c_FUN_005c53c4",
+    "name":"unkafter_2d.cpp_FUN_005c53c4",
     "ret":"undefined1",
     "vars":{
       "ret_storage":{
@@ -118,11 +136,119 @@
       }
     ],
     "importable":true,
-    "name":"crt_unknown.c_FUN_005c6b44",
+    "name":"unkafter_2d.cpp_FUN_005c6b44",
     "ret":"undefined1",
     "vars":{
       "ret_storage":{
         "invalid":true
+      }
+    }
+  },
+  {
+    "addr":"005c7244",
+    "body":[
+      {
+        "end":"005c7249",
+        "size":6,
+        "start":"005c7244"
+      }
+    ],
+    "conv":"__stdcall",
+    "importable":true,
+    "name":"crt_user32.c_DispatchMessageA",
+    "ret":"LRESULT",
+    "thtarget":"EXTERNAL:00000031",
+    "thunk":true,
+    "vars":{
+      "params":[
+        {
+          "name":"lpMsg",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"MSG*"
+        }
+      ],
+      "ret_storage":{
+        "reg":"EAX",
+        "size":4,
+        "varnodes":[
+          {
+            "addr":"register:00000000",
+            "size":4
+          }
+        ]
+      }
+    }
+  },
+  {
+    "addr":"005c73c4",
+    "body":[
+      {
+        "end":"005c73c9",
+        "size":6,
+        "start":"005c73c4"
+      }
+    ],
+    "conv":"__stdcall",
+    "importable":true,
+    "name":"crt_kernel32.c_FindFirstFileA",
+    "ret":"HANDLE",
+    "thtarget":"EXTERNAL:00000059",
+    "thunk":true,
+    "vars":{
+      "params":[
+        {
+          "name":"lpFileName",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"LPCSTR"
+        },
+        {
+          "name":"lpFindFileData",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"LPWIN32_FIND_DATAA"
+        }
+      ],
+      "ret_storage":{
+        "reg":"EAX",
+        "size":4,
+        "varnodes":[
+          {
+            "addr":"register:00000000",
+            "size":4
+          }
+        ]
       }
     }
   },
@@ -136,13 +262,20 @@
       }
     ],
     "importable":true,
-    "name":"Ordinal_111",
-    "ret":"undefined1",
+    "name":"crt_wsock32.c_WSAGetLastError",
+    "ret":"int",
     "thtarget":"EXTERNAL:000000bf",
     "thunk":true,
     "vars":{
       "ret_storage":{
-        "invalid":true
+        "reg":"EAX",
+        "size":4,
+        "varnodes":[
+          {
+            "addr":"register:00000000",
+            "size":4
+          }
+        ]
       }
     }
   }

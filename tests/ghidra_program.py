@@ -253,11 +253,15 @@ class Listing:
         return data
 
 
+# A function, its own symbol (getSymbol is the function itself here), and
+# optionally the function it is a thunk to
 class Function:
     def __init__(self, name, entry):
         self.name = name
         self.entry = entry
         self.source = "DEFAULT"
+        self.thunk_target = None
+        self.external = False
 
     def getName(self):
         return self.name
@@ -269,16 +273,39 @@ class Function:
     def getEntryPoint(self):
         return self.entry
 
+    def getSymbol(self):
+        return self
+
+    def getSource(self):
+        return self.source
+
+    def isThunk(self):
+        return self.thunk_target is not None
+
+    def isExternal(self):
+        return self.external
+
+    def getThunkedFunction(self, recursive):
+        target = self.thunk_target
+        while recursive and target is not None and target.thunk_target is not None:
+            target = target.thunk_target
+        return target
+
 
 class FunctionManager:
     def __init__(self):
         self.functions = {}
 
     def add(self, name, entry):
-        self.functions[Address(entry)] = Function(name, Address(entry))
+        function = Function(name, Address(entry))
+        self.functions[Address(entry)] = function
+        return function
 
     def getFunctionAt(self, address):
         return self.functions.get(address)
+
+    def getFunctions(self, forward):
+        return iter(sorted(self.functions.values(), key = lambda f: f.entry.getOffset(), reverse = not forward))
 
 
 class RefType:

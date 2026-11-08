@@ -251,7 +251,7 @@
       }
     ],
     "importable":true,
-    "name":"crt_unknown.c_FUN_005adc04",
+    "name":"unkafter_asgaya.cpp_FUN_005adc04",
     "ret":"undefined1",
     "vars":{
       "ret_storage":{
@@ -269,11 +269,171 @@
       }
     ],
     "importable":true,
-    "name":"crt_unknown.c_FUN_005b0004",
+    "name":"unkafter_asgaya.cpp_FUN_005b0004",
     "ret":"undefined1",
     "vars":{
       "ret_storage":{
         "invalid":true
+      }
+    }
+  },
+  {
+    "addr":"005b2184",
+    "body":[
+      {
+        "end":"005b2189",
+        "size":6,
+        "start":"005b2184"
+      }
+    ],
+    "conv":"__stdcall",
+    "importable":true,
+    "name":"crt_kernel32.c_LocalFileTimeToFileTime",
+    "ret":"BOOL",
+    "thtarget":"EXTERNAL:00000083",
+    "thunk":true,
+    "vars":{
+      "params":[
+        {
+          "name":"lpLocalFileTime",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"FILETIME*"
+        },
+        {
+          "name":"lpFileTime",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"LPFILETIME"
+        }
+      ],
+      "ret_storage":{
+        "reg":"EAX",
+        "size":4,
+        "varnodes":[
+          {
+            "addr":"register:00000000",
+            "size":4
+          }
+        ]
+      }
+    }
+  },
+  {
+    "addr":"005b2304",
+    "body":[
+      {
+        "end":"005b2309",
+        "size":6,
+        "start":"005b2304"
+      }
+    ],
+    "conv":"__stdcall",
+    "importable":true,
+    "name":"crt_user32.c_PostQuitMessage",
+    "ret":"void",
+    "thtarget":"EXTERNAL:0000003f",
+    "thunk":true,
+    "vars":{
+      "params":[
+        {
+          "name":"nExitCode",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"int"
+        }
+      ]
+    }
+  },
+  {
+    "addr":"005b2484",
+    "body":[
+      {
+        "end":"005b2489",
+        "size":6,
+        "start":"005b2484"
+      }
+    ],
+    "conv":"__stdcall",
+    "importable":true,
+    "name":"crt_user32.c_CharUpperBuffA",
+    "ret":"DWORD",
+    "thtarget":"EXTERNAL:0000002d",
+    "thunk":true,
+    "vars":{
+      "params":[
+        {
+          "name":"lpsz",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"LPSTR"
+        },
+        {
+          "name":"cchLength",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"DWORD"
+        }
+      ],
+      "ret_storage":{
+        "reg":"EAX",
+        "size":4,
+        "varnodes":[
+          {
+            "addr":"register:00000000",
+            "size":4
+          }
+        ]
       }
     }
   }

@@ -335,6 +335,321 @@
                 "0x00460e70",
                 "0x0052dd80"
             ]
+        },
+        {
+            "name": "thunk_to_real_function",
+            "program": "bw1.exe",
+            "description": "Convert JMP thunks to CALL+RET so the wrapper is a real function with its own parameters",
+            "patches": [
+                {
+                    "name": "engine_2d.c_FUN_00401120: JMP->CALL+RET for own signature",
+                    "address": "0x00401120",
+                    "original": "e98bb01a008d",
+                    "patched": "e88bb01a00c3",
+                    "description": "Convert JMP wincore_wddvmem.cpp_FUN_005ac1b0 to CALL + RET so the wrapper carries its own signature instead of sharing the target's"
+                },
+                {
+                    "name": "engine_2d.c_resetGraphicsSystem_FUN_00402ac0: JMP->CALL+RET for own signature",
+                    "address": "0x00402ac0",
+                    "original": "e96b9d1a008d",
+                    "patched": "e86b9d1a00c3",
+                    "description": "Convert JMP wincore_wddvmem.cpp_resetGraphicsSystem_FUN_005ac830 to CALL + RET so the wrapper carries its own signature instead of sharing the target's"
+                },
+                {
+                    "name": "engine_2d.c_reinitializeGraphicsSystem_FUN_00402ad0: JMP->CALL+RET for own signature",
+                    "address": "0x00402ad0",
+                    "original": "e96b9f1a008d",
+                    "patched": "e86b9f1a00c3",
+                    "description": "Convert JMP wincore_wddvmem.cpp_reinitializeGraphicsSystem_FUN_005aca40 to CALL + RET so the wrapper carries its own signature instead of sharing the target's"
+                },
+                {
+                    "name": "unkafter_2d.cpp_FUN_00403790: JMP->CALL+RET for own signature",
+                    "address": "0x00403790",
+                    "original": "e9db4119008d",
+                    "patched": "e8db411900c3",
+                    "description": "Convert JMP engine_texture.cpp_FUN_00597970 to CALL + RET so the wrapper carries its own signature instead of sharing the target's"
+                },
+                {
+                    "name": "unkafter_2d.cpp_FUN_004037a0: JMP->CALL+RET for own signature",
+                    "address": "0x004037a0",
+                    "original": "e92b4219008d",
+                    "patched": "e82b421900c3",
+                    "description": "Convert JMP engine_texture.cpp_FUN_005979d0 to CALL + RET so the wrapper carries its own signature instead of sharing the target's"
+                },
+                {
+                    "name": "engine_matrix.c_matrixPush_FUN_00483990: JMP->CALL+RET for own signature",
+                    "address": "0x00483990",
+                    "original": "e91b4a08008d",
+                    "patched": "e81b4a0800c3",
+                    "description": "Convert JMP engine_matrix.c_matrixPush_FUN_005083b0 to CALL + RET so the wrapper carries its own signature instead of sharing the target's"
+                },
+                {
+                    "name": "engine_matrix.c_pop_FUN_004839a0: JMP->CALL+RET for own signature",
+                    "address": "0x004839a0",
+                    "original": "e90b4b08008d",
+                    "patched": "e80b4b0800c3",
+                    "description": "Convert JMP engine_matrix.c_pop_FUN_005084b0 to CALL + RET so the wrapper carries its own signature instead of sharing the target's"
+                },
+                {
+                    "name": "engine_matrix.c_popViewport_FUN_00483c40: JMP->CALL+RET for own signature",
+                    "address": "0x00483c40",
+                    "original": "e9cb5508008d",
+                    "patched": "e8cb550800c3",
+                    "description": "Convert JMP engine_matrix.c_popViewport_FUN_00509210 to CALL + RET so the wrapper carries its own signature instead of sharing the target's"
+                },
+                {
+                    "name": "engine_keys.cpp_clearKeypresses_FUN_004fd250: JMP->CALL+RET for own signature",
+                    "address": "0x004fd250",
+                    "original": "e99b520b008d",
+                    "patched": "e89b520b00c3",
+                    "description": "Convert JMP wincore_winrun.cpp_clearKeypresses_FUN_005b24f0 to CALL + RET so the wrapper carries its own signature instead of sharing the target's"
+                },
+                {
+                    "name": "core_main.c_FUN_00503290: JMP->CALL+RET for own signature",
+                    "address": "0x00503290",
+                    "original": "e9fb9900008d",
+                    "patched": "e8fb990000c3",
+                    "description": "Convert JMP core_menu.cpp_FUN_0050cc90 to CALL + RET so the wrapper carries its own signature instead of sharing the target's"
+                },
+                {
+                    "name": "unkafter_minecar.cpp_FUN_00511160: JMP->CALL+RET for own signature",
+                    "address": "0x00511160",
+                    "original": "e9eb0d07008d",
+                    "patched": "e8eb0d0700c3",
+                    "description": "Convert JMP engine_special.cpp_FUN_00581f50 to CALL + RET so the wrapper carries its own signature instead of sharing the target's"
+                },
+                {
+                    "name": "sound_sndmain.cpp_shutdownSoundSystem_FUN_0057cb90: JMP->CALL+RET for own signature",
+                    "address": "0x0057cb90",
+                    "original": "e90b83ffff8d",
+                    "patched": "e80b83ffffc3",
+                    "description": "Convert JMP sound_sndmain.cpp_shutdownSoundSystem_FUN_00574ea0 to CALL + RET so the wrapper carries its own signature instead of sharing the target's"
+                }
+            ],
+            "clear_thunks": [
+                "0x00401120",
+                "0x00402ac0",
+                "0x00402ad0",
+                "0x00403790",
+                "0x004037a0",
+                "0x00483990",
+                "0x004839a0",
+                "0x00483c40",
+                "0x004fd250",
+                "0x00503290",
+                "0x00511160",
+                "0x0057cb90"
+            ]
+        },
+        {
+            "name": "thunk_to_real_function",
+            "program": "blairwitch2.exe",
+            "description": "Convert JMP thunks to CALL+RET so the wrapper is a real function with its own parameters",
+            "patches": [
+                {
+                    "name": "engine_2d.c_FUN_00401120: JMP->CALL+RET for own signature",
+                    "address": "0x00401120",
+                    "original": "e9db7718008d",
+                    "patched": "e8db771800c3",
+                    "description": "Convert JMP wincore_wddvmem.cpp_FUN_00588900 to CALL + RET so the wrapper carries its own signature instead of sharing the target's"
+                },
+                {
+                    "name": "engine_2d.c_resetGraphicsSystem_FUN_00402ac0: JMP->CALL+RET for own signature",
+                    "address": "0x00402ac0",
+                    "original": "e91b6318008d",
+                    "patched": "e81b631800c3",
+                    "description": "Convert JMP wincore_wddvmem.cpp_resetGraphicsSystem_FUN_00588de0 to CALL + RET so the wrapper carries its own signature instead of sharing the target's"
+                },
+                {
+                    "name": "engine_2d.c_reinitializeGraphicsSystem_FUN_00402ad0: JMP->CALL+RET for own signature",
+                    "address": "0x00402ad0",
+                    "original": "e91b6518008d",
+                    "patched": "e81b651800c3",
+                    "description": "Convert JMP wincore_wddvmem.cpp_reinitializeGraphicsSystem_FUN_00588ff0 to CALL + RET so the wrapper carries its own signature instead of sharing the target's"
+                },
+                {
+                    "name": "unkafter_2d.cpp_FUN_004037e0: JMP->CALL+RET for own signature",
+                    "address": "0x004037e0",
+                    "original": "e96b1517008d",
+                    "patched": "e86b151700c3",
+                    "description": "Convert JMP engine_texture.cpp_FUN_00574d50 to CALL + RET so the wrapper carries its own signature instead of sharing the target's"
+                },
+                {
+                    "name": "unkafter_2d.cpp_FUN_004037f0: JMP->CALL+RET for own signature",
+                    "address": "0x004037f0",
+                    "original": "e9bb1517008d",
+                    "patched": "e8bb151700c3",
+                    "description": "Convert JMP engine_texture.cpp_FUN_00574db0 to CALL + RET so the wrapper carries its own signature instead of sharing the target's"
+                },
+                {
+                    "name": "engine_matrix.c_matrixPush_FUN_0046b490: JMP->CALL+RET for own signature",
+                    "address": "0x0046b490",
+                    "original": "e97be207008d",
+                    "patched": "e87be20700c3",
+                    "description": "Convert JMP engine_matrix.c_matrixPush_FUN_004e9710 to CALL + RET so the wrapper carries its own signature instead of sharing the target's"
+                },
+                {
+                    "name": "engine_matrix.c_pop_FUN_0046b4a0: JMP->CALL+RET for own signature",
+                    "address": "0x0046b4a0",
+                    "original": "e96be307008d",
+                    "patched": "e86be30700c3",
+                    "description": "Convert JMP engine_matrix.c_pop_FUN_004e9810 to CALL + RET so the wrapper carries its own signature instead of sharing the target's"
+                },
+                {
+                    "name": "engine_matrix.c_popViewport_FUN_0046b740: JMP->CALL+RET for own signature",
+                    "address": "0x0046b740",
+                    "original": "e92bee07008d",
+                    "patched": "e82bee0700c3",
+                    "description": "Convert JMP engine_matrix.c_popViewport_FUN_004ea570 to CALL + RET so the wrapper carries its own signature instead of sharing the target's"
+                },
+                {
+                    "name": "engine_keys.cpp_clearKeypresses_FUN_004dfe80: JMP->CALL+RET for own signature",
+                    "address": "0x004dfe80",
+                    "original": "e92bec0a008d",
+                    "patched": "e82bec0a00c3",
+                    "description": "Convert JMP wincore_winrun.cpp_clearKeypresses_FUN_0058eab0 to CALL + RET so the wrapper carries its own signature instead of sharing the target's"
+                },
+                {
+                    "name": "core_main.c_FUN_004e46b0: JMP->CALL+RET for own signature",
+                    "address": "0x004e46b0",
+                    "original": "e93b9d00008d",
+                    "patched": "e83b9d0000c3",
+                    "description": "Convert JMP core_menu.cpp_FUN_004ee3f0 to CALL + RET so the wrapper carries its own signature instead of sharing the target's"
+                },
+                {
+                    "name": "unkafter_minecar.cpp_FUN_004f23d0: JMP->CALL+RET for own signature",
+                    "address": "0x004f23d0",
+                    "original": "e92bd106008d",
+                    "patched": "e82bd10600c3",
+                    "description": "Convert JMP engine_special.cpp_FUN_0055f500 to CALL + RET so the wrapper carries its own signature instead of sharing the target's"
+                },
+                {
+                    "name": "sound_sndmain.cpp_shutdownSoundSystem_FUN_0055a160: JMP->CALL+RET for own signature",
+                    "address": "0x0055a160",
+                    "original": "e90b83ffff8d",
+                    "patched": "e80b83ffffc3",
+                    "description": "Convert JMP sound_sndmain.cpp_shutdownSoundSystem_FUN_00552470 to CALL + RET so the wrapper carries its own signature instead of sharing the target's"
+                }
+            ],
+            "clear_thunks": [
+                "0x00401120",
+                "0x00402ac0",
+                "0x00402ad0",
+                "0x004037e0",
+                "0x004037f0",
+                "0x0046b490",
+                "0x0046b4a0",
+                "0x0046b740",
+                "0x004dfe80",
+                "0x004e46b0",
+                "0x004f23d0",
+                "0x0055a160"
+            ]
+        },
+        {
+            "name": "thunk_to_real_function",
+            "program": "bw3.exe",
+            "description": "Convert JMP thunks to CALL+RET so the wrapper is a real function with its own parameters",
+            "patches": [
+                {
+                    "name": "engine_2d.c_FUN_00401120: JMP->CALL+RET for own signature",
+                    "address": "0x00401120",
+                    "original": "e93b8917008d",
+                    "patched": "e83b891700c3",
+                    "description": "Convert JMP wincore_wddvmem.cpp_FUN_00579a60 to CALL + RET so the wrapper carries its own signature instead of sharing the target's"
+                },
+                {
+                    "name": "engine_2d.c_resetGraphicsSystem_FUN_00402ac0: JMP->CALL+RET for own signature",
+                    "address": "0x00402ac0",
+                    "original": "e91b7617008d",
+                    "patched": "e81b761700c3",
+                    "description": "Convert JMP wincore_wddvmem.cpp_resetGraphicsSystem_FUN_0057a0e0 to CALL + RET so the wrapper carries its own signature instead of sharing the target's"
+                },
+                {
+                    "name": "engine_2d.c_reinitializeGraphicsSystem_FUN_00402ad0: JMP->CALL+RET for own signature",
+                    "address": "0x00402ad0",
+                    "original": "e91b7817008d",
+                    "patched": "e81b781700c3",
+                    "description": "Convert JMP wincore_wddvmem.cpp_reinitializeGraphicsSystem_FUN_0057a2f0 to CALL + RET so the wrapper carries its own signature instead of sharing the target's"
+                },
+                {
+                    "name": "unkafter_2d.cpp_FUN_00403790: JMP->CALL+RET for own signature",
+                    "address": "0x00403790",
+                    "original": "e9cb7116008d",
+                    "patched": "e8cb711600c3",
+                    "description": "Convert JMP engine_texture.cpp_FUN_0056a960 to CALL + RET so the wrapper carries its own signature instead of sharing the target's"
+                },
+                {
+                    "name": "unkafter_2d.cpp_FUN_004037a0: JMP->CALL+RET for own signature",
+                    "address": "0x004037a0",
+                    "original": "e91b7216008d",
+                    "patched": "e81b721600c3",
+                    "description": "Convert JMP engine_texture.cpp_FUN_0056a9c0 to CALL + RET so the wrapper carries its own signature instead of sharing the target's"
+                },
+                {
+                    "name": "engine_matrix.c_matrixPush_FUN_0046d070: JMP->CALL+RET for own signature",
+                    "address": "0x0046d070",
+                    "original": "e97b8d07008d",
+                    "patched": "e87b8d0700c3",
+                    "description": "Convert JMP engine_matrix.c_matrixPush_FUN_004e5df0 to CALL + RET so the wrapper carries its own signature instead of sharing the target's"
+                },
+                {
+                    "name": "engine_matrix.c_pop_FUN_0046d080: JMP->CALL+RET for own signature",
+                    "address": "0x0046d080",
+                    "original": "e96b8e07008d",
+                    "patched": "e86b8e0700c3",
+                    "description": "Convert JMP engine_matrix.c_pop_FUN_004e5ef0 to CALL + RET so the wrapper carries its own signature instead of sharing the target's"
+                },
+                {
+                    "name": "engine_matrix.c_popViewport_FUN_0046d320: JMP->CALL+RET for own signature",
+                    "address": "0x0046d320",
+                    "original": "e92b9907008d",
+                    "patched": "e82b990700c3",
+                    "description": "Convert JMP engine_matrix.c_popViewport_FUN_004e6c50 to CALL + RET so the wrapper carries its own signature instead of sharing the target's"
+                },
+                {
+                    "name": "engine_keys.cpp_clearKeypresses_FUN_004df570: JMP->CALL+RET for own signature",
+                    "address": "0x004df570",
+                    "original": "e9fb110a008d",
+                    "patched": "e8fb110a00c3",
+                    "description": "Convert JMP wincore_winrun.cpp_clearKeypresses_FUN_00580770 to CALL + RET so the wrapper carries its own signature instead of sharing the target's"
+                },
+                {
+                    "name": "core_main.c_FUN_004e44d0: JMP->CALL+RET for own signature",
+                    "address": "0x004e44d0",
+                    "original": "e9fb5f00008d",
+                    "patched": "e8fb5f0000c3",
+                    "description": "Convert JMP core_menu.cpp_FUN_004ea4d0 to CALL + RET so the wrapper carries its own signature instead of sharing the target's"
+                },
+                {
+                    "name": "unkafter_minecar.cpp_FUN_004ec930: JMP->CALL+RET for own signature",
+                    "address": "0x004ec930",
+                    "original": "e9eb8e07008d",
+                    "patched": "e8eb8e0700c3",
+                    "description": "Convert JMP engine_special.cpp_FUN_00565820 to CALL + RET so the wrapper carries its own signature instead of sharing the target's"
+                },
+                {
+                    "name": "sound_sndmain.cpp_shutdownSoundSystem_FUN_0055fcc0: JMP->CALL+RET for own signature",
+                    "address": "0x0055fcc0",
+                    "original": "e94b83ffff8d",
+                    "patched": "e84b83ffffc3",
+                    "description": "Convert JMP sound_sndmain.cpp_shutdownSoundSystem_FUN_00558010 to CALL + RET so the wrapper carries its own signature instead of sharing the target's"
+                }
+            ],
+            "clear_thunks": [
+                "0x00401120",
+                "0x00402ac0",
+                "0x00402ad0",
+                "0x00403790",
+                "0x004037a0",
+                "0x0046d070",
+                "0x0046d080",
+                "0x0046d320",
+                "0x004df570",
+                "0x004e44d0",
+                "0x004ec930",
+                "0x0055fcc0"
+            ]
         }
     ]
 }

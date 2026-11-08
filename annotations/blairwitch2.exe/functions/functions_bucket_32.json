@@ -116,6 +116,80 @@
     }
   },
   {
+    "addr":"005c7232",
+    "body":[
+      {
+        "end":"005c7237",
+        "size":6,
+        "start":"005c7232"
+      }
+    ],
+    "conv":"__stdcall",
+    "importable":true,
+    "name":"crt_kernel32.c_GetCommandLineA",
+    "ret":"LPSTR",
+    "thtarget":"EXTERNAL:00000060",
+    "thunk":true,
+    "vars":{
+      "ret_storage":{
+        "reg":"EAX",
+        "size":4,
+        "varnodes":[
+          {
+            "addr":"register:00000000",
+            "size":4
+          }
+        ]
+      }
+    }
+  },
+  {
+    "addr":"005c73b2",
+    "body":[
+      {
+        "end":"005c73b7",
+        "size":6,
+        "start":"005c73b2"
+      }
+    ],
+    "conv":"__stdcall",
+    "importable":true,
+    "name":"crt_user32.c_OpenClipboard",
+    "ret":"BOOL",
+    "thtarget":"EXTERNAL:0000003d",
+    "thunk":true,
+    "vars":{
+      "params":[
+        {
+          "name":"hWndNewOwner",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"HWND"
+        }
+      ],
+      "ret_storage":{
+        "reg":"EAX",
+        "size":4,
+        "varnodes":[
+          {
+            "addr":"register:00000000",
+            "size":4
+          }
+        ]
+      }
+    }
+  },
+  {
     "addr":"005c7532",
     "body":[
       {
@@ -125,13 +199,38 @@
       }
     ],
     "importable":true,
-    "name":"Ordinal_15",
-    "ret":"undefined1",
+    "name":"crt_wsock32.c_ntohs",
+    "ret":"ushort",
     "thtarget":"EXTERNAL:000000bc",
     "thunk":true,
     "vars":{
+      "params":[
+        {
+          "name":"netshort",
+          "storage":{
+            "offset":4,
+            "size":2,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":2
+              }
+            ]
+          },
+          "type":"ushort"
+        }
+      ],
       "ret_storage":{
-        "invalid":true
+        "reg":"AX",
+        "size":2,
+        "varnodes":[
+          {
+            "addr":"register:00000000",
+            "size":2
+          }
+        ]
       }
     }
   }

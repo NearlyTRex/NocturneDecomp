@@ -1,5 +1,23 @@
 [
   {
+    "addr":"005a4e88",
+    "body":[
+      {
+        "end":"005a4ed6",
+        "size":79,
+        "start":"005a4e88"
+      }
+    ],
+    "importable":true,
+    "name":"crt_unknown.c_FUN_005a4e88",
+    "ret":"undefined1",
+    "vars":{
+      "ret_storage":{
+        "invalid":true
+      }
+    }
+  },
+  {
     "addr":"005a8688",
     "body":[
       {
@@ -149,7 +167,7 @@
       }
     ],
     "importable":true,
-    "name":"crt_unknown.c_FUN_005b0088",
+    "name":"unkafter_2d.cpp_FUN_005b0088",
     "ret":"undefined1",
     "vars":{
       "ret_storage":{
@@ -167,11 +185,165 @@
       }
     ],
     "importable":true,
-    "name":"crt_unknown.c_FUN_005b0d88",
+    "name":"unkafter_2d.cpp_FUN_005b0d88",
     "ret":"undefined1",
     "vars":{
       "ret_storage":{
         "invalid":true
+      }
+    }
+  },
+  {
+    "addr":"005b2208",
+    "body":[
+      {
+        "end":"005b220d",
+        "size":6,
+        "start":"005b2208"
+      }
+    ],
+    "conv":"__stdcall",
+    "importable":true,
+    "name":"crt_user32.c_GetClientRect",
+    "ret":"BOOL",
+    "thtarget":"EXTERNAL:00000034",
+    "thunk":true,
+    "vars":{
+      "params":[
+        {
+          "name":"hWnd",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"HWND"
+        },
+        {
+          "name":"lpRect",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"LPRECT"
+        }
+      ],
+      "ret_storage":{
+        "reg":"EAX",
+        "size":4,
+        "varnodes":[
+          {
+            "addr":"register:00000000",
+            "size":4
+          }
+        ]
+      }
+    }
+  },
+  {
+    "addr":"005b2388",
+    "body":[
+      {
+        "end":"005b238d",
+        "size":6,
+        "start":"005b2388"
+      }
+    ],
+    "conv":"__stdcall",
+    "importable":true,
+    "name":"crt_kernel32.c_LoadLibraryA",
+    "ret":"HMODULE",
+    "thtarget":"EXTERNAL:00000082",
+    "thunk":true,
+    "vars":{
+      "params":[
+        {
+          "name":"lpLibFileName",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"LPCSTR"
+        }
+      ],
+      "ret_storage":{
+        "reg":"EAX",
+        "size":4,
+        "varnodes":[
+          {
+            "addr":"register:00000000",
+            "size":4
+          }
+        ]
+      }
+    }
+  },
+  {
+    "addr":"005b2508",
+    "body":[
+      {
+        "end":"005b250d",
+        "size":6,
+        "start":"005b2508"
+      }
+    ],
+    "conv":"__stdcall",
+    "importable":true,
+    "name":"crt_kernel32.c_TlsFree",
+    "ret":"BOOL",
+    "thtarget":"EXTERNAL:0000009d",
+    "thunk":true,
+    "vars":{
+      "params":[
+        {
+          "name":"dwTlsIndex",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"DWORD"
+        }
+      ],
+      "ret_storage":{
+        "reg":"EAX",
+        "size":4,
+        "varnodes":[
+          {
+            "addr":"register:00000000",
+            "size":4
+          }
+        ]
       }
     }
   }
