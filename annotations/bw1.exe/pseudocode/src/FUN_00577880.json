@@ -1,0 +1,418 @@
+{
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "other",
+        "column": 25,
+        "line": 28,
+        "message": "unknown type name 'HWND'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 211,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 213,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 42,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 49,
+        "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
+      },
+      {
+        "category": "other",
+        "column": 1,
+        "line": 55,
+        "message": "unknown type name 'MMRESULT'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 60,
+        "message": "unknown type name 'HWND'"
+      },
+      {
+        "category": "other",
+        "column": 56,
+        "line": 155,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 1,
+        "line": 337,
+        "message": "unknown type name 'LPCRITICAL_SECTION'"
+      },
+      {
+        "category": "other",
+        "column": 20,
+        "line": 350,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 388,
+        "message": "unknown type name 'FILETIME'"
+      },
+      {
+        "category": "other",
+        "column": 37,
+        "line": 388,
+        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
+      },
+      {
+        "category": "other",
+        "column": 52,
+        "line": 388,
+        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
+      },
+      {
+        "category": "incompatible_types",
+        "column": 13,
+        "line": 25,
+        "message": "assigning to 'int' from incompatible type 'void'"
+      },
+      {
+        "category": "incompatible_types",
+        "column": 7,
+        "line": 28,
+        "message": "no matching function for call to 'FUN_005bfb40'"
+      },
+      {
+        "category": "incompatible_types",
+        "column": 7,
+        "line": 30,
+        "message": "no matching function for call to 'FUN_005773f0'"
+      }
+    ],
+    "success": false,
+    "warnings": []
+  },
+  "compile_source": "c",
+  "complexity": {
+    "assembly_lines": 113,
+    "complexity_score": 276,
+    "cross_reference_count": 3,
+    "function_call_count": 3,
+    "global_count": 2,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 51,
+    "suspect_count": 21,
+    "suspect_types": [
+      "raw_address_pointer_store",
+      "unnamed_param",
+      "unresolved_funcptr"
+    ],
+    "total_lines": 164
+  },
+  "cross_references": [
+    {
+      "addr": "00577cd0",
+      "from_addr": "00577cf8",
+      "name": "FUN_00577cd0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00578cc0",
+      "from_addr": "00578f03",
+      "name": "FUN_00578cc0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00579f30",
+      "from_addr": "00579f62",
+      "name": "FUN_00579f30",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00577880",
+    "address_range": [
+      [
+        "00577880",
+        "005779ae"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "FUN_00577880",
+    "signature": "bool FUN_00577880(int param_1)"
+  },
+  "function_calls": [
+    {
+      "addr": "005773f0",
+      "is_variadic": false,
+      "name": "FUN_005773f0"
+    },
+    {
+      "addr": "00577500",
+      "is_variadic": false,
+      "name": "FUN_00577500"
+    },
+    {
+      "addr": "005bfb40",
+      "is_variadic": false,
+      "name": "FUN_005bfb40"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005f4c35",
+      "name": "s_DirectSux_Unable_to_s_s_005f4c35",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005f4c82",
+      "name": "s_Stop_hardware_sfx_second_005f4c82",
+      "type": "TerminatedCString",
+      "value": null
+    }
+  ],
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.076923076923077,
+    "instruction_count": 91,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 18,
+      "BRANCH": 3,
+      "CALL": 3,
+      "CALLIND": 3,
+      "CBRANCH": 7,
+      "COPY": 77,
+      "INT_ADD": 38,
+      "INT_AND": 80,
+      "INT_CARRY": 8,
+      "INT_EQUAL": 45,
+      "INT_LEFT": 6,
+      "INT_LESS": 4,
+      "INT_MULT": 6,
+      "INT_NOTEQUAL": 6,
+      "INT_OR": 15,
+      "INT_SBORROW": 4,
+      "INT_SCARRY": 8,
+      "INT_SLESS": 27,
+      "INT_SUB": 26,
+      "INT_XOR": 4,
+      "LOAD": 24,
+      "POPCOUNT": 21,
+      "RETURN": 1,
+      "STORE": 28
+    },
+    "pcode_op_count": 462
+  },
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "static_analysis": {
+    "analyzed_file": "FUN_00577880.c",
+    "cppcheck_quick": {
+      "diagnostic_count": 1,
+      "diagnostics": [
+        {
+          "check_id": "uninitvar",
+          "column": 9,
+          "line": 43,
+          "message": "Uninitialized variable: unaff_retaddr",
+          "severity": "error"
+        }
+      ],
+      "error": null
+    },
+    "file_variant": "raw"
+  },
+  "suspects": [
+    {
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "bool FUN_00577880(int param_1)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 13,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "param_1 = param_1 * 0x24;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 13,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "param_1 = param_1 * 0x24;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 14,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "piVar4 = (int *)(param_1 + 0x2c823e0);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 18,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "iVar2 = (**(code **)(*apiStack_1a4[0] + 0x48))();",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
+      "line": 26,
+      "match": "*(int **)(param_1 + 0x2c823e4",
+      "severity": "moderate",
+      "text": "piVar1 = *(int **)(param_1 + 0x2c823e4);",
+      "type": "raw_address_pointer_store"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 26,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "piVar1 = *(int **)(param_1 + 0x2c823e4);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 28,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "(**(code **)(*piVar1 + 8))(piVar1);",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 29,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "*(int *)(param_1 + 0x2c823e4) = 0;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 31,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "iVar2 = *(int *)(param_1 + 0x2c823e8) * 0x18;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 32,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "if (*(int *)(param_1 + 0x2c823f0) != 0) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 33,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "*(uint *)(*(int *)(param_1 + 0x2c823f0) * 0x24 + 0x2c823ec) =",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 34,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "*(uint *)(param_1 + 0x2c823ec);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 37,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "*(uint *)(iVar2 + 0x2c81dc8) = *(uint *)(param_1 + 0x2c823f0);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 40,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "*(uint *)(*(int *)(param_1 + 0x2c823ec) * 0x24 + 0x2c823f0) =",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 41,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "*(uint *)(param_1 + 0x2c823f0);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
+      "line": 44,
+      "match": "*(int **)(iVar2 + 0x2c81dc4",
+      "severity": "moderate",
+      "text": "if ((piVar1 != *(int **)(iVar2 + 0x2c81dc4)) && (piVar1 != (int *)0x0)) {",
+      "type": "raw_address_pointer_store"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 45,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "(**(code **)(*piVar1 + 8))(piVar1);",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 50,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "*(uint *)(param_1 + 0x2c823f0) = 0;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 51,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "*(uint *)(param_1 + 0x2c823ec) = 0;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 52,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "*(uint *)(param_1 + 0x2c823e8) = 0;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Uninitialized variable: unaff_retaddr",
+      "line": 43,
+      "match": "Cppcheck: uninitialized variable",
+      "severity": "major",
+      "text": "if (unaff_retaddr == *(int *)(iVar2 + 0x2c81dc8)) {",
+      "type": "static_uninitvar"
+    }
+  ]
+}

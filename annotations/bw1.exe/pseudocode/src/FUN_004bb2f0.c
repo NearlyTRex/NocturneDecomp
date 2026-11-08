@@ -1,0 +1,92 @@
+// Name: FUN_004bb2f0
+// Address: 004bb2f0
+// Address Range: [[004bb2f0, 004bb50a]]
+// Convention: unknown
+// Signature: int FUN_004bb2f0(int param_1,char *param_2)
+
+#include "nocturne.h"
+
+int FUN_004bb2f0(int param_1,char *param_2)
+
+{
+  char cVar1;
+  int iVar2;
+  uint uVar3;
+  char *pcVar4;
+  char *pcVar5;
+  char *pcVar6;
+  bool bVar7;
+  char local_314 [512];
+  char local_114 [256];
+  int local_14;
+  
+  local_14 = *(int *)(param_1 + 0x10);
+  pcVar5 = param_2;
+  do {
+    do {
+      pcVar4 = pcVar5;
+      pcVar5 = pcVar4 + 1;
+    } while (((&DAT_00626114)[(byte)(*pcVar4 + 1)] & 2) != 0);
+    cVar1 = *pcVar4;
+    pcVar6 = pcVar4;
+    if (cVar1 == '\0') break;
+    if (cVar1 == '<') {
+      FUN_004bb570(param_1);
+      uVar3 = 0;
+      cVar1 = *pcVar5;
+      while (cVar1 != '>') {
+        if (*pcVar5 == '\0') {
+          FUN_005bfb40(&DAT_01cc4270,"Incomplete markup tag beginning with '%s'",param_2);
+          return -1;
+        }
+        if (0xfe < uVar3) {
+          FUN_005bfb40(&DAT_01cc4270,"Markup tag beginning with '%s' - tag text too long",param_2);
+          return -1;
+        }
+        cVar1 = *pcVar5;
+        pcVar5 = pcVar5 + 1;
+        local_114[uVar3] = cVar1;
+        uVar3 = uVar3 + 1;
+        cVar1 = *pcVar5;
+      }
+      local_114[uVar3] = '\0';
+      FUN_004b9c50(local_114);
+      iVar2 = FUN_004bb6f0(param_1,local_114);
+      if (iVar2 < 0) {
+        return -1;
+      }
+      pcVar6 = pcVar5 + 1;
+      if (iVar2 == 0) {
+        FUN_004bb6c0(param_1);
+        pcVar6 = pcVar4;
+      }
+    }
+    else {
+      if (cVar1 == '>') {
+        FUN_005bfb40(&DAT_01cc4270,"Unexpected '>' found near '%s'",param_2);
+        return -1;
+      }
+      bVar7 = *(char *)(param_1 + 0x48) != '\0';
+      if (bVar7) {
+        local_314[0] = ' ';
+      }
+      uVar3 = (uint)bVar7;
+      for (; (((((&DAT_00626114)[(byte)(*pcVar6 + 1)] & 2) == 0 && (cVar1 = *pcVar6, cVar1 != '\0'))
+              && (cVar1 != '<')) && (cVar1 != '>')); pcVar6 = pcVar6 + 1) {
+        local_314[uVar3] = cVar1;
+        uVar3 = uVar3 + 1;
+      }
+      local_314[uVar3] = '\0';
+      iVar2 = FUN_004bbb30(param_1,local_314);
+      if (iVar2 == 0) {
+        FUN_004bb630(param_1);
+        pcVar6 = pcVar4;
+      }
+      else {
+        FUN_004bbb90(param_1,local_314);
+      }
+    }
+    pcVar5 = pcVar6;
+  } while (local_14 == *(int *)(param_1 + 0x10));
+  return (int)pcVar6 - (int)param_2;
+}

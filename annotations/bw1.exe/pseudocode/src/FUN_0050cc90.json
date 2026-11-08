@@ -1,0 +1,865 @@
+{
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "other",
+        "column": 25,
+        "line": 28,
+        "message": "unknown type name 'HWND'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 211,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 213,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 42,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 49,
+        "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
+      },
+      {
+        "category": "other",
+        "column": 1,
+        "line": 55,
+        "message": "unknown type name 'MMRESULT'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 60,
+        "message": "unknown type name 'HWND'"
+      },
+      {
+        "category": "other",
+        "column": 56,
+        "line": 155,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 1,
+        "line": 337,
+        "message": "unknown type name 'LPCRITICAL_SECTION'"
+      },
+      {
+        "category": "other",
+        "column": 20,
+        "line": 350,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 388,
+        "message": "unknown type name 'FILETIME'"
+      },
+      {
+        "category": "other",
+        "column": 37,
+        "line": 388,
+        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
+      },
+      {
+        "category": "other",
+        "column": 52,
+        "line": 388,
+        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
+      },
+      {
+        "category": "incompatible_types",
+        "column": 12,
+        "line": 26,
+        "message": "incompatible integer to pointer conversion assigning to 'uint *' (aka 'unsigned int *') from 'int'"
+      },
+      {
+        "category": "other",
+        "column": 55,
+        "line": 30,
+        "message": "subscripted value is not an array, pointer, or vector"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 8,
+        "line": 30,
+        "message": "use of undeclared identifier '_DAT_02c83370'"
+      },
+      {
+        "category": "other",
+        "column": 15,
+        "line": 31,
+        "message": "subscripted value is not an array, pointer, or vector"
+      },
+      {
+        "category": "incompatible_types",
+        "column": 5,
+        "line": 37,
+        "message": "no matching function for call to 'FUN_0040d220'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 40,
+        "line": 37,
+        "message": "use of undeclared identifier 'PTR_s_f0100_0061f570'"
+      }
+    ],
+    "success": false,
+    "warnings": []
+  },
+  "compile_source": "c",
+  "complexity": {
+    "assembly_lines": 499,
+    "complexity_score": 552,
+    "cross_reference_count": 1,
+    "function_call_count": 23,
+    "global_count": 41,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 182,
+    "suspect_count": 33,
+    "suspect_types": [
+      "pointer_cast",
+      "pointer_truncation",
+      "raw_address_constant",
+      "raw_address_pointer_store",
+      "undefined_data",
+      "unresolved_funcptr",
+      "unrolled_strcpy",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 681
+  },
+  "cross_references": [
+    {
+      "addr": "00503290",
+      "from_addr": "00503290",
+      "name": "thunk_FUN_0050cc90",
+      "type": "UNCONDITIONAL_JUMP"
+    }
+  ],
+  "function": {
+    "address": "0050cc90",
+    "address_range": [
+      [
+        "0050cc90",
+        "0050d199"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "FUN_0050cc90",
+    "signature": "int FUN_0050cc90(void)"
+  },
+  "function_calls": [
+    {
+      "addr": "004032b0",
+      "is_variadic": false,
+      "name": "FUN_004032b0"
+    },
+    {
+      "addr": "0040d220",
+      "is_variadic": false,
+      "name": "FUN_0040d220"
+    },
+    {
+      "addr": "0040d840",
+      "is_variadic": false,
+      "name": "FUN_0040d840"
+    },
+    {
+      "addr": "004cbf10",
+      "is_variadic": false,
+      "name": "FUN_004cbf10"
+    },
+    {
+      "addr": "004cbf20",
+      "is_variadic": false,
+      "name": "FUN_004cbf20"
+    },
+    {
+      "addr": "004d6990",
+      "is_variadic": false,
+      "name": "FUN_004d6990"
+    },
+    {
+      "addr": "004d7250",
+      "is_variadic": false,
+      "name": "FUN_004d7250"
+    },
+    {
+      "addr": "005031c0",
+      "is_variadic": false,
+      "name": "FUN_005031c0"
+    },
+    {
+      "addr": "00509e20",
+      "is_variadic": false,
+      "name": "FUN_00509e20"
+    },
+    {
+      "addr": "0050c990",
+      "is_variadic": false,
+      "name": "FUN_0050c990"
+    },
+    {
+      "addr": "00521c50",
+      "is_variadic": false,
+      "name": "FUN_00521c50"
+    },
+    {
+      "addr": "00521d50",
+      "is_variadic": false,
+      "name": "FUN_00521d50"
+    },
+    {
+      "addr": "00521dd0",
+      "is_variadic": false,
+      "name": "FUN_00521dd0"
+    },
+    {
+      "addr": "00521e40",
+      "is_variadic": false,
+      "name": "FUN_00521e40"
+    },
+    {
+      "addr": "00531090",
+      "is_variadic": false,
+      "name": "FUN_00531090"
+    },
+    {
+      "addr": "00555770",
+      "is_variadic": false,
+      "name": "FUN_00555770"
+    },
+    {
+      "addr": "005735f0",
+      "is_variadic": false,
+      "name": "FUN_005735f0"
+    },
+    {
+      "addr": "00573600",
+      "is_variadic": false,
+      "name": "FUN_00573600"
+    },
+    {
+      "addr": "0057d6a0",
+      "is_variadic": false,
+      "name": "FUN_0057d6a0"
+    },
+    {
+      "addr": "0057d800",
+      "is_variadic": false,
+      "name": "FUN_0057d800"
+    },
+    {
+      "addr": "0057dc40",
+      "is_variadic": false,
+      "name": "FUN_0057dc40"
+    },
+    {
+      "addr": "00597c30",
+      "is_variadic": false,
+      "name": "FUN_00597c30"
+    },
+    {
+      "addr": "005acff0",
+      "is_variadic": false,
+      "name": "FUN_005acff0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0050cc78",
+      "name": "switchdataD_0050cc78",
+      "type": "void*",
+      "value": "0050cef0"
+    },
+    {
+      "addr": "005e8240",
+      "name": "s_fblurl_005e8240",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e8247",
+      "name": "s_fblurm_005e8247",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e824e",
+      "name": "s_fblurr_005e824e",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e8255",
+      "name": "s_S_T_A_R_T_005e8255",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e825f",
+      "name": "s_O_P_T_I_O_N_S_005e825f",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e826d",
+      "name": "s_L_O_A_D_005e826d",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e8275",
+      "name": "s_Q_U_I_T_005e8275",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e8798",
+      "name": "s_f0100_005e8798",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e879e",
+      "name": "s_f0300_005e879e",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0061b49c",
+      "name": "DAT_0061b49c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0061d95c",
+      "name": "DAT_0061d95c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0061f2a4",
+      "name": "DAT_0061f2a4",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0061f570",
+      "name": "PTR_s_f0100_0061f570",
+      "type": "void*",
+      "value": "005e8798"
+    },
+    {
+      "addr": "0061f574",
+      "name": "PTR_s_f0300_0061f574",
+      "type": "undefined1*",
+      "value": "005e879e"
+    },
+    {
+      "addr": "00622c18",
+      "name": "DAT_00622c18",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "006236b8",
+      "name": "DAT_006236b8",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01ccf390",
+      "name": "DAT_01ccf390",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01ccf394",
+      "name": "DAT_01ccf394",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01ccf624",
+      "name": "DAT_01ccf624",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d1bca0",
+      "name": "DAT_01d1bca0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d21048",
+      "name": "DAT_01d21048",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d21049",
+      "name": "DAT_01d21049",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d2104a",
+      "name": "DAT_01d2104a",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d2104b",
+      "name": "DAT_01d2104b",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d21148",
+      "name": "DAT_01d21148",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d21149",
+      "name": "DAT_01d21149",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d2114a",
+      "name": "DAT_01d2114a",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d2114b",
+      "name": "DAT_01d2114b",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d21248",
+      "name": "DAT_01d21248",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d21249",
+      "name": "DAT_01d21249",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d2124a",
+      "name": "DAT_01d2124a",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d2124b",
+      "name": "DAT_01d2124b",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d21348",
+      "name": "DAT_01d21348",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d21349",
+      "name": "DAT_01d21349",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d2134a",
+      "name": "DAT_01d2134a",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d2134b",
+      "name": "DAT_01d2134b",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01e82168",
+      "name": "DAT_01e82168",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01fdcfec",
+      "name": "DAT_01fdcfec",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01fdcffc",
+      "name": "DAT_01fdcffc",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02c83370",
+      "name": "DAT_02c83370",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 0,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.130548302872063,
+    "instruction_count": 383,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 8,
+      "BOOL_OR": 2,
+      "BRANCH": 7,
+      "BRANCHIND": 1,
+      "CALL": 48,
+      "CALLIND": 11,
+      "CBRANCH": 27,
+      "COPY": 257,
+      "INT_ADD": 100,
+      "INT_AND": 200,
+      "INT_CARRY": 59,
+      "INT_EQUAL": 186,
+      "INT_LESS": 16,
+      "INT_MULT": 1,
+      "INT_NOTEQUAL": 2,
+      "INT_SBORROW": 16,
+      "INT_SCARRY": 59,
+      "INT_SLESS": 93,
+      "INT_SUB": 170,
+      "INT_XOR": 4,
+      "LOAD": 48,
+      "POPCOUNT": 93,
+      "RETURN": 2,
+      "STORE": 172
+    },
+    "pcode_op_count": 1582
+  },
+  "stack_frame": {
+    "frame_size": 20,
+    "local_size": 20,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_10",
+        "offset": -16,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_c",
+        "offset": -12,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_8",
+        "offset": -8,
+        "size": 4,
+        "type": "undefined4"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 20,
+      "match": "DAT_0061b49c",
+      "severity": "mild",
+      "text": "if (DAT_0061b49c < 0x1e0) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 56,
+      "match": "DAT_01d21048",
+      "severity": "mild",
+      "text": "pcVar8 = &DAT_01d21048;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 67,
+      "match": "DAT_01d21148",
+      "severity": "mild",
+      "text": "pcVar8 = &DAT_01d21148;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 78,
+      "match": "DAT_01d21248",
+      "severity": "mild",
+      "text": "pcVar8 = &DAT_01d21248;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 88,
+      "match": "DAT_01d21348",
+      "severity": "mild",
+      "text": "pcVar8 = &DAT_01d21348;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 90,
+      "match": "DAT_01d21048",
+      "severity": "mild",
+      "text": "puVar5 = &DAT_01d21048;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
+      "line": 102,
+      "match": "*(byte **)(iVar7 + 0x1d21448",
+      "severity": "moderate",
+      "text": "*(byte **)(iVar7 + 0x1d21448) = puVar5;",
+      "type": "raw_address_pointer_store"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 115,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "iVar7 = (**(code **)*0x01D1BCA0)(0x01D1BCA0,0x2a);",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 116,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "if ((iVar7 == 0) || (iVar7 = (**(code **)*0x01D1BCA0)(0x01D1BCA0,0x1d), iVar7 == 0)) {",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 117,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "iVar7 = (**(code **)*0x01D1BCA0)(0x01D1BCA0,0x1d);",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
+      "line": 149,
+      "match": "*(code **)(*0x01D1BCA0",
+      "severity": "moderate",
+      "text": "iVar7 = (**(code **)(*0x01D1BCA0 + 4))(0x01D1BCA0,1);",
+      "type": "raw_address_pointer_store"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 149,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "iVar7 = (**(code **)(*0x01D1BCA0 + 4))(0x01D1BCA0,1);",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 153,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "iVar7 = (**(code **)*0x01D1BCA0)(0x01D1BCA0,0x1d);",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
+      "line": 154,
+      "match": "*(code **)(*0x01D1BCA0",
+      "severity": "moderate",
+      "text": "if ((iVar7 != 0) && (iVar7 = (**(code **)(*0x01D1BCA0 + 4))(0x01D1BCA0,0x32), iVar7 != 0)) {",
+      "type": "raw_address_pointer_store"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 154,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "if ((iVar7 != 0) && (iVar7 = (**(code **)(*0x01D1BCA0 + 4))(0x01D1BCA0,0x32), iVar7 != 0)) {",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 159,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "iVar7 = (**(code **)*0x01D1BCA0)(0x01D1BCA0,0x1d);",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
+      "line": 161,
+      "match": "*(code **)(*0x01D1BCA0",
+      "severity": "moderate",
+      "text": "((iVar7 = (**(code **)(*0x01D1BCA0 + 4))(0x01D1BCA0,0x20), iVar7 != 0 ||",
+      "type": "raw_address_pointer_store"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 161,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "((iVar7 = (**(code **)(*0x01D1BCA0 + 4))(0x01D1BCA0,0x20), iVar7 != 0 ||",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
+      "line": 162,
+      "match": "*(code **)(*0x01D1BCA0",
+      "severity": "moderate",
+      "text": "(iVar7 = (**(code **)(*0x01D1BCA0 + 4))(0x01D1BCA0,0x26), iVar7 != 0)))) {",
+      "type": "raw_address_pointer_store"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 162,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "(iVar7 = (**(code **)(*0x01D1BCA0 + 4))(0x01D1BCA0,0x26), iVar7 != 0)))) {",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 171,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "iVar7 = (**(code **)*0x01D1BCA0)(0x01D1BCA0,0x1d);",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
+      "line": 173,
+      "match": "*(code **)(*0x01D1BCA0",
+      "severity": "moderate",
+      "text": "(**(code **)(*0x01D1BCA0 + 4))(0x01D1BCA0,0x21);",
+      "type": "raw_address_pointer_store"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 173,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "(**(code **)(*0x01D1BCA0 + 4))(0x01D1BCA0,0x21);",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Pointer value `&PTR_s_f0100_0061f570` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 30,
+      "match": "(int)&PTR_s_f0100_0061f570",
+      "severity": "moderate",
+      "text": "FUN_0040d220(iVar7,*(uint *)((int)&PTR_s_f0100_0061f570 + iVar6),0x40,0x40);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Raw hex address 0x1ccf390 assigned to bare local `puVar2`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `puVar2` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
+      "line": 19,
+      "match": "0x1ccf390",
+      "severity": "moderate",
+      "text": "puVar2 = 0x01CCF390;",
+      "type": "raw_address_constant"
+    },
+    {
+      "description": "Raw hex address 0x1d1e2e0 assigned to bare local `iVar7`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `iVar7` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
+      "line": 27,
+      "match": "0x1d1e2e0",
+      "severity": "moderate",
+      "text": "iVar7 = 0x1d1e2e0;",
+      "type": "raw_address_constant"
+    },
+    {
+      "description": "Raw hex address 0x1e82168 assigned to bare local `iVar7`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `iVar7` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
+      "line": 47,
+      "match": "0x1e82168",
+      "severity": "moderate",
+      "text": "iVar7 = 0x01E82168;",
+      "type": "raw_address_constant"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 57,
+      "match": "do {",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 68,
+      "match": "do {",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 79,
+      "match": "do {",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 91,
+      "match": "do {",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 30,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "FUN_0040d220(iVar7,*(uint *)((int)&PTR_s_f0100_0061f570 + iVar6),0x40,0x40);",
+      "type": "pointer_cast"
+    }
+  ]
+}

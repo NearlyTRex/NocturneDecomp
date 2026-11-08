@@ -1,0 +1,27 @@
+# ============================================================================
+# Function P-code Export
+# ============================================================================
+#
+# Function:    FUN_005c50cc
+# Entry:       005c50cc
+# Signature:   undefined4 FUN_005c50cc(void)
+#
+# Format: @<address> [ESP:offset] # <assembly>
+#         [ESP:offset] = cumulative ESP delta from function entry
+#         Delta markers: (+n) ESP increased, (-n) ESP decreased
+#         Certainty:  no marker = known, ? = computed, ~ = cfg_resolved
+#                     !! = lost, !? = conflict, ?? = unreachable
+#                     ~! = ebp_frame_conflict (expected in EBP-frame functions)
+#                     ~> = frame_recovered (ESP recovered after frame reset)
+#
+# ============================================================================
+
+@005c50cc [ESP:+0]  # MOV EAX, [0x02c9f06c]
+COPY (register,0x0,4) /* EAX */ = (ram,0x2c9f06c,4)
+
+@005c50d1 [ESP:+0]  # LEA EAX, [EAX]
+COPY (register,0x0,4) /* EAX */ = (register,0x0,4) /* EAX */
+
+# ============================================================================
+# Summary: 2 instructions, 2 P-code ops
+# ============================================================================

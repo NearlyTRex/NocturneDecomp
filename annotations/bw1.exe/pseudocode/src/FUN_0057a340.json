@@ -1,0 +1,395 @@
+{
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "other",
+        "column": 0,
+        "line": 0,
+        "message": "Compilation timed out after 60s"
+      }
+    ],
+    "success": false,
+    "warnings": []
+  },
+  "compile_source": "c",
+  "complexity": {
+    "assembly_lines": 200,
+    "complexity_score": 308,
+    "cross_reference_count": 1,
+    "function_call_count": 8,
+    "global_count": 10,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 78,
+    "suspect_count": 20,
+    "suspect_types": [
+      "param_count_too_few",
+      "raw_address_constant",
+      "undefined_data",
+      "unnamed_param",
+      "unresolved_funcptr",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 278
+  },
+  "cross_references": [
+    {
+      "addr": "005755c0",
+      "from_addr": "0057563c",
+      "name": "FUN_005755c0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0057a340",
+    "address_range": [
+      [
+        "0057a340",
+        "0057a56b"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "FUN_0057a340",
+    "signature": "undefined1 * FUN_0057a340(int param_1)"
+  },
+  "function_calls": [
+    {
+      "addr": "00575570",
+      "is_variadic": false,
+      "name": "FUN_00575570"
+    },
+    {
+      "addr": "005773f0",
+      "is_variadic": false,
+      "name": "FUN_005773f0"
+    },
+    {
+      "addr": "00577500",
+      "is_variadic": false,
+      "name": "FUN_00577500"
+    },
+    {
+      "addr": "00577a90",
+      "is_variadic": false,
+      "name": "FUN_00577a90"
+    },
+    {
+      "addr": "0057a290",
+      "is_variadic": false,
+      "name": "FUN_0057a290"
+    },
+    {
+      "addr": "005bfb40",
+      "is_variadic": false,
+      "name": "FUN_005bfb40"
+    },
+    {
+      "addr": "005bfb70",
+      "is_variadic": false,
+      "name": "FUN_005bfb70"
+    },
+    {
+      "addr": "005cf862",
+      "is_variadic": false,
+      "name": "Ordinal_1"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005f4c35",
+      "name": "s_DirectSux_Unable_to_s_s_005f4c35",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005f56a3",
+      "name": "s_create_DirectSound_objec_005f56a3",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005f56bd",
+      "name": "s_Set_cooperative_level_005f56bd",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005f56d3",
+      "name": "s_Create_the_primary_buffe_005f56d3",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005f56ed",
+      "name": "s_Create_the_primary_buffe_005f56ed",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00627880",
+      "name": "DAT_00627880",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02c81d94",
+      "name": "DAT_02c81d94",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02c81d98",
+      "name": "DAT_02c81d98",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02c81da0",
+      "name": "DAT_02c81da0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02c9be68",
+      "name": "DAT_02c9be68",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "0057563c",
+        "call_type": "direct",
+        "caller": "FUN_005755c0",
+        "estimated_params": 4,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [
+          "EAX",
+          "EBX",
+          "EDX"
+        ],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "low",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 4,
+    "matches_declared": false
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.7607361963190185,
+    "instruction_count": 163,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 19,
+      "BRANCH": 2,
+      "CALL": 16,
+      "CALLIND": 4,
+      "CBRANCH": 9,
+      "COPY": 129,
+      "INT_ADD": 56,
+      "INT_AND": 117,
+      "INT_CARRY": 20,
+      "INT_EQUAL": 79,
+      "INT_LEFT": 6,
+      "INT_LESS": 5,
+      "INT_MULT": 3,
+      "INT_NOTEQUAL": 8,
+      "INT_OR": 15,
+      "INT_SBORROW": 5,
+      "INT_SCARRY": 20,
+      "INT_SLESS": 44,
+      "INT_SUB": 77,
+      "INT_XOR": 5,
+      "LOAD": 24,
+      "POPCOUNT": 38,
+      "RETURN": 3,
+      "STORE": 72
+    },
+    "pcode_op_count": 776
+  },
+  "stack_frame": {
+    "frame_size": 332,
+    "local_size": 332,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_148",
+        "offset": -328,
+        "size": 1,
+        "type": "undefined"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 4,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "byte * FUN_0057a340(int param_1)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 20,
+      "match": "DAT_02c8283c",
+      "severity": "mild",
+      "text": "puStack_78c = &DAT_02c8283c;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 25,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "puStack_790 = (byte *)param_1;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 30,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "if (*(int *)(param_1 * 0x11c + 0x2c81044) == 0) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 31,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "iStack_794 = param_1 * 0x11c + 0x2c81048;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 34,
+      "match": "DAT_02c81d94",
+      "severity": "mild",
+      "text": "puStack_790 = &DAT_02c81d94;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 37,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "iVar1 = (**(code **)(*_DAT_02c81d94 + 0x18))(_DAT_02c81d94,_DAT_02c9be68,2);",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 42,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "iVar1 = (**(code **)(*_DAT_02c81d94 + 0xc))(_DAT_02c81d94,&uStack_3c,&DAT_02c81d98,0);",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 42,
+      "match": "DAT_02c81d98",
+      "severity": "mild",
+      "text": "iVar1 = (**(code **)(*_DAT_02c81d94 + 0xc))(_DAT_02c81d94,&uStack_3c,&DAT_02c81d98,0);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 49,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "iVar1 = (**(code **)(*_DAT_02c81d94 + 0xc))(_DAT_02c81d94,&uStack_3c,&DAT_02c81d98,0);",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 49,
+      "match": "DAT_02c81d98",
+      "severity": "mild",
+      "text": "iVar1 = (**(code **)(*_DAT_02c81d94 + 0xc))(_DAT_02c81d94,&uStack_3c,&DAT_02c81d98,0);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 59,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "if ((1 < iVar1) && (1 < *(int *)(param_1 * 0x11c + 0x2c8115c))) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 60,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "(**(code **)*_DAT_02c81d98)(_DAT_02c81d98,&DAT_00627880,&DAT_02c81da0);",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 60,
+      "match": "DAT_00627880",
+      "severity": "mild",
+      "text": "(**(code **)*_DAT_02c81d98)(_DAT_02c81d98,&DAT_00627880,&DAT_02c81da0);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 60,
+      "match": "DAT_02c81da0",
+      "severity": "mild",
+      "text": "(**(code **)*_DAT_02c81d98)(_DAT_02c81d98,&DAT_00627880,&DAT_02c81da0);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 62,
+      "match": "DAT_02c8283c",
+      "severity": "mild",
+      "text": "return &DAT_02c8283c;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 77,
+      "match": "DAT_02c8283c",
+      "severity": "mild",
+      "text": "FUN_00577a90(&DAT_02c8283c);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Raw hex address 0x57a379 assigned to bare local `iStack_794`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `iStack_794` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
+      "line": 26,
+      "match": "0x57a379",
+      "severity": "moderate",
+      "text": "iStack_794 = 0x57a379;",
+      "type": "raw_address_constant"
+    },
+    {
+      "call_site_count": 1,
+      "declared_params": 0,
+      "description": "Signature has too few params - likely missing this ptr or other params",
+      "estimated_params": 4,
+      "fix_type": "add_params",
+      "match": "declared:0 vs estimated:4",
+      "param_delta": 4,
+      "text": "Function declares 0 params but call sites push 4 (4 missing)",
+      "type": "param_count_too_few"
+    }
+  ]
+}

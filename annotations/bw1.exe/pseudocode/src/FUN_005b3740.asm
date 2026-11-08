@@ -1,0 +1,27 @@
+; *****************************************************************************
+;                               FUNCTION
+; *****************************************************************************
+; void FUN_005b3740(void)
+;
+;
+; XREF[2]:
+;   FUN_00575d20 at 00575d2b
+;   FUN_0059eeb0 at 0059eee0
+;
+; Referenced Globals:
+;   void* PTR_CreateMutexA_005d052c = 001d0c9a
+;
+; Called Functions:
+;   CreateMutexA
+;
+; *****************************************************************************
+
+section .text
+
+    PUSH 0x0                            ; 005b3740
+        ;   Label: FUN_005b3740
+    PUSH 0x0                            ; 005b3742
+    PUSH 0x0                            ; 005b3744
+    CALL dword ptr CS:[0x5d052c]        ; 005b3746 | PTR_CreateMutexA_005d052c
+    RET                                 ; 005b374d
+

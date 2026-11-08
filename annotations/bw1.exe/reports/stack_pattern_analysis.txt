@@ -1,0 +1,259 @@
+====================================================================================================
+STACK PATTERN ANALYSIS
+====================================================================================================
+
+Functions with stack manipulation patterns that affect decompilation quality.
+These patterns cause Ghidra to hallucinate parameters or misidentify locals.
+
+SUMMARY
+--------------------------------------------------
+Functions with stack patterns: 638 / 5116
+
+Pattern type counts:
+  stack_alignment                  414
+  alt_frame_pointer                360
+  pushf                              3
+  dynamic_alloca                     3
+
+====================================================================================================
+HIGH SEVERITY - Severe decompilation impact
+====================================================================================================
+
+  FUN_005ca370
+    Address: 005ca370
+    Suspect count: 15
+    Note: Function contains stack manipulation that severely impacts decompilation quality.
+    - [dynamic_alloca] at 005ca38b: SUB ESP,EAX
+    - [dynamic_alloca] at 005ca3de: SUB ESP,EAX
+
+  FUN_005cea10
+    Address: 005cea10
+    Suspect count: 33
+    Note: Function contains stack manipulation that severely impacts decompilation quality.
+    - [dynamic_alloca] at 005cea3d: SUB ESP,EAX
+
+====================================================================================================
+MEDIUM SEVERITY - May cause decompiler artifacts
+====================================================================================================
+
+  FUN_00402940
+    File: engine/2d.c, Suspects: 15
+    - [alt_frame_pointer] at 0040295c: MOV EDI,ESP
+    - [alt_frame_pointer] at 0040297a: MOV ESI,ESP
+
+  FUN_00404440
+    File: ., Suspects: 12
+    - [alt_frame_pointer] at 00404490: MOV EDI,ESP
+    - [alt_frame_pointer] at 004044ab: MOV EDI,ESP
+    - [alt_frame_pointer] at 004044be: MOV EDI,ESP
+
+  FUN_004080c0
+    File: ., Suspects: 93
+    - [stack_alignment] at 004080cc: AND ESP,0xfffffff8
+
+  FUN_00408910
+    File: ., Suspects: 6
+    - [alt_frame_pointer] at 0040893c: MOV ESI,ESP
+
+  FUN_00408bb0
+    File: ., Suspects: 21
+    - [alt_frame_pointer] at 00408bca: MOV EDI,ESP
+
+  FUN_00408d60
+    File: ., Suspects: 31
+    - [stack_alignment] at 00408d6c: AND ESP,0xfffffff8
+
+  FUN_00408ec0
+    File: ., Suspects: 102
+    - [alt_frame_pointer] at 0040904a: MOV ESI,ESP
+
+  FUN_00409170
+    File: core/actor.cpp, Suspects: 100
+    - [stack_alignment] at 0040917c: AND ESP,0xfffffff8
+
+  FUN_00409940
+    File: ., Suspects: 25
+    - [alt_frame_pointer] at 00409982: MOV EDI,ESP
+
+  FUN_00409d70
+    File: ., Suspects: 21
+    - [stack_alignment] at 00409d79: AND ESP,0xfffffff8
+
+  FUN_00409f20
+    File: ., Suspects: 73
+    - [stack_alignment] at 00409f2c: AND ESP,0xfffffff8
+
+  FUN_0040b560
+    File: ., Suspects: 14
+    - [alt_frame_pointer] at 0040b574: MOV EDI,ESP
+    - [alt_frame_pointer] at 0040b586: MOV EDI,ESP
+    - [alt_frame_pointer] at 0040b5aa: MOV EDI,ESP
+    - [alt_frame_pointer] at 0040b5c6: MOV EDI,ESP
+
+  FUN_0040b770
+    File: ., Suspects: 9
+    - [alt_frame_pointer] at 0040b79d: MOV ESI,ESP
+    - [alt_frame_pointer] at 0040b7b5: MOV EDI,ESP
+
+  FUN_0040b7f0
+    File: ., Suspects: 9
+    - [alt_frame_pointer] at 0040b81d: MOV ESI,ESP
+    - [alt_frame_pointer] at 0040b838: MOV EDI,ESP
+
+  FUN_0040c6a0
+    File: ., Suspects: 11
+    - [alt_frame_pointer] at 0040c6ab: MOV EDI,ESP
+    - [alt_frame_pointer] at 0040c6b9: MOV ESI,ESP
+
+  FUN_0040c750
+    File: ., Suspects: 34
+    - [alt_frame_pointer] at 0040c783: MOV EDI,ESP
+
+  FUN_0040cc60
+    File: ., Suspects: 12
+    - [stack_alignment] at 0040cc68: AND ESP,0xfffffff8
+
+  FUN_0040dd00
+    File: ., Suspects: 9
+    - [alt_frame_pointer] at 0040dd2f: MOV ESI,ESP
+
+  FUN_0040e3c0
+    File: ., Suspects: 9
+    - [alt_frame_pointer] at 0040e3ef: MOV ESI,ESP
+
+  FUN_0040e8f0
+    File: ., Suspects: 9
+    - [alt_frame_pointer] at 0040e91f: MOV ESI,ESP
+
+  FUN_0040eaa0
+    File: ., Suspects: 34
+    - [stack_alignment] at 0040eaa9: AND ESP,0xfffffff8
+
+  FUN_0040f010
+    File: ., Suspects: 9
+    - [alt_frame_pointer] at 0040f03f: MOV ESI,ESP
+
+  FUN_00410110
+    File: ., Suspects: 10
+    - [stack_alignment] at 00410115: AND ESP,0xfffffff8
+
+  FUN_004101f0
+    File: ., Suspects: 28
+    - [stack_alignment] at 004101f9: AND ESP,0xfffffff8
+
+  FUN_004108c0
+    File: ., Suspects: 13
+    - [alt_frame_pointer] at 00410901: MOV ESI,ESP
+
+  FUN_00410d80
+    File: ., Suspects: 54
+    - [stack_alignment] at 00410d89: AND ESP,0xfffffff8
+
+  FUN_00411000
+    File: ., Suspects: 9
+    - [alt_frame_pointer] at 00411035: MOV EDI,ESP
+    - [alt_frame_pointer] at 00411050: MOV ESI,ESP
+
+  FUN_00411060
+    File: ., Suspects: 9
+    - [stack_alignment] at 00411067: AND ESP,0xfffffff8
+
+  FUN_00413970
+    File: ., Suspects: 31
+    - [stack_alignment] at 00413979: AND ESP,0xfffffff8
+
+  FUN_004141c0
+    File: ., Suspects: 54
+    - [alt_frame_pointer] at 00414243: MOV ESI,ESP
+
+  FUN_00414600
+    File: ., Suspects: 9
+    - [alt_frame_pointer] at 0041462f: MOV ESI,ESP
+
+  FUN_00414770
+    File: ., Suspects: 16
+    - [stack_alignment] at 00414778: AND ESP,0xfffffff8
+
+  FUN_00414b30
+    File: ., Suspects: 108
+    - [stack_alignment] at 00414b39: AND ESP,0xfffffff8
+
+  FUN_00415340
+    File: ., Suspects: 124
+    - [stack_alignment] at 0041534c: AND ESP,0xfffffff8
+
+  FUN_00415830
+    File: ., Suspects: 12
+    - [alt_frame_pointer] at 004158c8: MOV EDI,ESP
+
+  FUN_00416fa0
+    File: ., Suspects: 65
+    - [alt_frame_pointer] at 0041707a: MOV EDI,ESP
+
+  FUN_00417230
+    File: ., Suspects: 54
+    - [stack_alignment] at 0041723c: AND ESP,0xfffffff8
+
+  FUN_00419740
+    File: ., Suspects: 63
+    - [stack_alignment] at 00419749: AND ESP,0xfffffff8
+
+  FUN_00419940
+    File: ., Suspects: 27
+    - [stack_alignment] at 00419949: AND ESP,0xfffffff8
+
+  FUN_00419ab0
+    File: ., Suspects: 9
+    - [alt_frame_pointer] at 00419abf: MOV EDI,ESP
+    - [alt_frame_pointer] at 00419ace: MOV ESI,ESP
+
+  FUN_00419b90
+    File: ., Suspects: 78
+    - [stack_alignment] at 00419b9c: AND ESP,0xfffffff8
+
+  FUN_0041afa0
+    File: ., Suspects: 13
+    - [alt_frame_pointer] at 0041afbe: MOV ESI,ESP
+
+  FUN_0041afe0
+    File: ., Suspects: 13
+    - [alt_frame_pointer] at 0041aff8: MOV ESI,ESP
+
+  FUN_0041b020
+    File: ., Suspects: 13
+    - [alt_frame_pointer] at 0041b038: MOV ESI,ESP
+
+  FUN_0041b590
+    File: ., Suspects: 18
+    - [stack_alignment] at 0041b598: AND ESP,0xfffffff8
+
+  FUN_0041b750
+    File: ., Suspects: 17
+    - [alt_frame_pointer] at 0041b8d6: MOV EDI,ESP
+
+  FUN_0041c9a0
+    File: ., Suspects: 58
+    - [stack_alignment] at 0041c9ac: AND ESP,0xfffffff8
+
+  FUN_0041d540
+    File: core/boneguy.cpp, Suspects: 24
+    - [alt_frame_pointer] at 0041d6dd: MOV ESI,ESP
+
+  FUN_0041de90
+    File: ., Suspects: 112
+    - [alt_frame_pointer] at 0041e04b: MOV EDI,ESP
+
+  FUN_0041e0d0
+    File: ., Suspects: 11
+    - [stack_alignment] at 0041e0d7: AND ESP,0xfffffff8
+
+  ... and 585 more functions
+
+====================================================================================================
+CORRELATION: Stack patterns vs suspect counts
+====================================================================================================
+
+Functions with stack patterns tend to have more suspects:
+
+  With stack patterns:    avg 48.2 suspects/function
+  Without stack patterns: avg 16.0 suspects/function

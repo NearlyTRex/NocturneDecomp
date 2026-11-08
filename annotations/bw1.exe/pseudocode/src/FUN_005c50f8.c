@@ -1,0 +1,13 @@
+// Name: FUN_005c50f8
+// Address: 005c50f8
+// Address Range: [[005c50f8, 005c50f8]]
+// Convention: unknown
+// Signature: void FUN_005c50f8(void)
+
+#include "nocturne.h"
+
+void FUN_005c50f8(void)
+
+{
+  return;
+}

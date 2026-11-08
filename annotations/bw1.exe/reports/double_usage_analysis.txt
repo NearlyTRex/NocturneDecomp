@@ -1,0 +1,96 @@
+====================================================================================================
+DOUBLE USAGE ANALYSIS
+====================================================================================================
+
+Functions that return double or take double parameters (excluding CRT/entry).
+These use the Watcom EAX:EDX convention for 64-bit values, which can cause
+decompiler artifacts (SUB84/CONCAT44/._0_4_/._4_4_ splits).
+
+SUMMARY
+--------------------------------------------------
+Functions returning double:         13
+Functions with double parameter(s): 16
+
+====================================================================================================
+FUNCTIONS RETURNING DOUBLE (13)
+====================================================================================================
+
+  FUN_0056fb90
+    Address: 0056fb90  File: .
+  FUN_0056fcd0
+    Address: 0056fcd0  File: .
+  FUN_00572390
+    Address: 00572390  File: .
+  FUN_00572430
+    Address: 00572430  File: sound/sndmain.cpp
+  FUN_005799b0
+    Address: 005799b0  File: sound/snddx.cpp
+  FUN_005b6330
+    Address: 005b6330  File: .
+  FUN_005c0880
+    Address: 005c0880  File: .
+  FUN_005c3166
+    Address: 005c3166  File: .
+  FUN_005c31f7
+    Address: 005c31f7  File: .
+  FUN_005ca282
+    Address: 005ca282  File: .
+  FUN_005cd4be
+    Address: 005cd4be  File: .
+  FUN_005cd6c4
+    Address: 005cd6c4  File: .
+  FUN_005cd881
+    Address: 005cd881  File: .
+
+====================================================================================================
+FUNCTIONS WITH DOUBLE PARAMETER(S) (16)
+====================================================================================================
+
+  FUN_00455460
+    Address: 00455460  File: core/dcube.cpp [1 double-related suspects]
+    Double params: (from signature)
+  FUN_00490df0
+    Address: 00490df0  File: core/dtri.cpp [1 double-related suspects]
+    Double params: (from signature)
+  FUN_0045f770
+    Address: 0045f770  File: .
+    Double params: (from signature)
+  FUN_005292d0
+    Address: 005292d0  File: .
+    Double params: (from signature)
+  FUN_00572430
+    Address: 00572430  File: sound/sndmain.cpp
+    Double params: (from signature)
+  FUN_005725a0
+    Address: 005725a0  File: .
+    Double params: (from signature)
+  FUN_00574010
+    Address: 00574010  File: .
+    Double params: (from signature)
+  FUN_00574080
+    Address: 00574080  File: .
+    Double params: (from signature)
+  FUN_00578640
+    Address: 00578640  File: .
+    Double params: (from signature)
+  FUN_005b3770
+    Address: 005b3770  File: .
+    Double params: (from signature)
+  FUN_005b3860
+    Address: 005b3860  File: .
+    Double params: (from signature)
+  FUN_005c3166
+    Address: 005c3166  File: .
+    Double params: (from signature)
+  FUN_005c31f7
+    Address: 005c31f7  File: .
+    Double params: (from signature)
+  FUN_005c4385
+    Address: 005c4385  File: .
+    Double params: (from signature)
+  FUN_005c7570
+    Address: 005c7570  File: .
+    Double params: (from signature)
+  FUN_005cbedb
+    Address: 005cbedb  File: .
+    Double params: (from signature)

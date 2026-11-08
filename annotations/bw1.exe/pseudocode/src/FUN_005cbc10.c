@@ -1,0 +1,25 @@
+// Name: FUN_005cbc10
+// Address: 005cbc10
+// Address Range: [[005cbc10, 005cbc50]]
+// Convention: unknown
+// Signature: void FUN_005cbc10(int param_1,undefined4 *param_2,undefined4 *param_3)
+
+#include "nocturne.h"
+
+void FUN_005cbc10(int param_1,uint *param_2,uint *param_3)
+
+{
+  if (param_1 == 2) {
+    *param_2 = 0xc0000000;
+    *param_3 = 0x80;
+    return;
+  }
+  if (param_1 == 1) {
+    *param_2 = 0x40000000;
+    *param_3 = 0x80;
+    return;
+  }
+  *param_2 = 0x80000000;
+  *param_3 = 1;
+  return;
+}

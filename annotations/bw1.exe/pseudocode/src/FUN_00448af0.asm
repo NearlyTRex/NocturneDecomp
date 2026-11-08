@@ -1,0 +1,65 @@
+; *****************************************************************************
+;                               FUNCTION
+; *****************************************************************************
+; void FUN_00448af0(int param_1)
+;
+;
+; Referenced Globals:
+;   TerminatedCString s_speed_005d72c7
+;   TerminatedCString s_modelName_005d72cd
+;   TerminatedCString s_guardDistance_005d72d7
+;   TerminatedCString s_motion_state_005d72e5
+;   undefined4 DAT_0061118c
+;
+; Called Functions:
+;   FUN_0040b5f0
+;   FUN_0040b7f0
+;   FUN_0040b870
+;   FUN_004a0520
+;
+; *****************************************************************************
+
+section .text
+
+    PUSH EBX                            ; 00448af0
+        ;   Label: FUN_00448af0
+    MOV EBX,dword ptr [ESP + 0x8]       ; 00448af1
+    PUSH EBX                            ; 00448af5
+    CALL FUN_004a0520                   ; 00448af6
+        ;   XREF to: 004a0520 (UNCONDITIONAL_CALL)  ; undefined FUN_004a0520()
+    ADD ESP,0x4                         ; 00448afb
+    PUSH 0x5d72c7                       ; 00448afe | = "speed"
+    LEA EAX,[EBX + 0xc1d0]              ; 00448b03
+    PUSH EAX                            ; 00448b09
+    CALL FUN_0040b5f0                   ; 00448b0a
+        ;   XREF to: 0040b5f0 (UNCONDITIONAL_CALL)  ; undefined FUN_0040b5f0()
+    ADD ESP,0x8                         ; 00448b0f
+    PUSH 0x5d72cd                       ; 00448b12 | = "modelName"
+    LEA EAX,[EBX + 0x158]               ; 00448b17
+    PUSH EAX                            ; 00448b1d
+    CALL FUN_0040b7f0                   ; 00448b1e
+        ;   XREF to: 0040b7f0 (UNCONDITIONAL_CALL)  ; undefined FUN_0040b7f0()
+    MOV EDX,dword ptr [0x0061118c]      ; 00448b23 | DAT_0061118c
+    ADD ESP,0x8                         ; 00448b29
+    CMP EDX,0x2                         ; 00448b2c
+    JL 0x00448b47                       ; 00448b2f
+        ;   XREF to: 00448b47 (CONDITIONAL_JUMP)  ; LAB_00448b47
+    PUSH 0x5d72e5                       ; 00448b31 | = "motion state"
+        ;   Label: LAB_00448b31
+    ADD EBX,0x158                       ; 00448b36
+    PUSH EBX                            ; 00448b3c
+    CALL FUN_0040b870                   ; 00448b3d
+        ;   XREF to: 0040b870 (UNCONDITIONAL_CALL)  ; undefined FUN_0040b870()
+    ADD ESP,0x8                         ; 00448b42
+    POP EBX                             ; 00448b45
+    RET                                 ; 00448b46
+    PUSH 0x5d72d7                       ; 00448b47 | = "guardDistance"
+        ;   Label: LAB_00448b47
+    LEA EAX,[EBX + 0xc1e0]              ; 00448b4c
+    PUSH EAX                            ; 00448b52
+    CALL FUN_0040b5f0                   ; 00448b53
+        ;   XREF to: 0040b5f0 (UNCONDITIONAL_CALL)  ; undefined FUN_0040b5f0()
+    ADD ESP,0x8                         ; 00448b58
+    JMP 0x00448b31                      ; 00448b5b
+        ;   XREF to: 00448b31 (UNCONDITIONAL_JUMP)  ; LAB_00448b31
+

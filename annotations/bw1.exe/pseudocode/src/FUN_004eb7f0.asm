@@ -1,0 +1,95 @@
+; *****************************************************************************
+;                               FUNCTION
+; *****************************************************************************
+; undefined4 FUN_004eb7f0(int param_1)
+;
+;
+; XREF[7]:
+;   FUN_0046bde0 at 0046c83f
+;   FUN_004c65f0 at 004c7901
+;   FUN_004e9250 at 004e9727
+;   FUN_004ec640 at 004ec741
+;   FUN_004f0e50 at 004f144c
+;   FUN_005881d0 at 00588877
+;   FUN_00593150 at 00593711
+;
+; Referenced Globals:
+;   TerminatedCString s_CHero_toggleLeverNow_005e486d
+;   TerminatedCString s_current_motion_is_s_005e4884
+;   TerminatedCString s_toggling_lever_s_005e489c
+;   TerminatedCString s_but_no_lever_set_005e48b1
+;   void* PTR_DAT_00611100 = 007db5f0
+;   undefined4 DAT_007db5f0
+;
+; Called Functions:
+;   FUN_00445430
+;   FUN_004ff570
+;   FUN_00524770
+;
+; *****************************************************************************
+
+section .text
+
+    PUSH EBX                            ; 004eb7f0
+        ;   Label: FUN_004eb7f0
+    PUSH ESI                            ; 004eb7f1
+    PUSH EDI                            ; 004eb7f2
+    PUSH EBP                            ; 004eb7f3
+    MOV EBX,dword ptr [ESP + 0x14]      ; 004eb7f4
+    PUSH 0x5e486d                       ; 004eb7f8 | = "CHero::toggleLeverNow\n"
+    MOV EDX,dword ptr [0x00611100]      ; 004eb7fd | PTR_DAT_00611100
+    PUSH EDX                            ; 004eb803 | DAT_007db5f0
+    CALL FUN_00445430                   ; 004eb804
+        ;   XREF to: 00445430 (UNCONDITIONAL_CALL)  ; undefined FUN_00445430()
+    ADD ESP,0x8                         ; 004eb809
+    LEA EAX,[EBX + 0x158]               ; 004eb80c
+    PUSH EAX                            ; 004eb812
+    CALL FUN_00524770                   ; 004eb813
+        ;   XREF to: 00524770 (UNCONDITIONAL_CALL)  ; undefined FUN_00524770()
+    ADD ESP,0x4                         ; 004eb818
+    PUSH EAX                            ; 004eb81b
+    PUSH 0x5e4884                       ; 004eb81c | = "  current motion is %s\n"
+    MOV ECX,dword ptr [0x00611100]      ; 004eb821 | PTR_DAT_00611100
+    PUSH ECX                            ; 004eb827 | DAT_007db5f0
+    XOR ESI,ESI                         ; 004eb828
+    CALL FUN_00445430                   ; 004eb82a
+        ;   XREF to: 00445430 (UNCONDITIONAL_CALL)  ; undefined FUN_00445430()
+    MOV EDI,dword ptr [EBX + 0x1ff80]   ; 004eb82f
+    ADD ESP,0xc                         ; 004eb835
+    TEST EDI,EDI                        ; 004eb838
+    JZ 0x004eb872                       ; 004eb83a
+        ;   XREF to: 004eb872 (CONDITIONAL_JUMP)  ; LAB_004eb872
+    PUSH EDI                            ; 004eb83c
+    PUSH 0x5e489c                       ; 004eb83d | = "  toggling lever %s\n"
+    MOV EDX,dword ptr [0x00611100]      ; 004eb842 | PTR_DAT_00611100
+    PUSH EDX                            ; 004eb848 | DAT_007db5f0
+    CALL FUN_00445430                   ; 004eb849
+        ;   XREF to: 00445430 (UNCONDITIONAL_CALL)  ; undefined FUN_00445430()
+    ADD ESP,0xc                         ; 004eb84e
+    MOV ECX,dword ptr [EBX + 0x1ff80]   ; 004eb851
+    PUSH ECX                            ; 004eb857
+    CALL FUN_004ff570                   ; 004eb858
+        ;   XREF to: 004ff570 (UNCONDITIONAL_CALL)  ; undefined FUN_004ff570()
+    ADD ESP,0x4                         ; 004eb85d
+    MOV dword ptr [EBX + 0x1ff80],ESI   ; 004eb860
+    MOV ESI,0x1                         ; 004eb866
+    MOV EAX,ESI                         ; 004eb86b
+    POP EBP                             ; 004eb86d
+    POP EDI                             ; 004eb86e
+    POP ESI                             ; 004eb86f
+    POP EBX                             ; 004eb870
+    RET                                 ; 004eb871
+    PUSH 0x5e48b1                       ; 004eb872 | = "  but no lever set!\n"
+        ;   Label: LAB_004eb872
+    MOV EBP,dword ptr [0x00611100]      ; 004eb877 | PTR_DAT_00611100
+    PUSH EBP                            ; 004eb87d | DAT_007db5f0
+    CALL FUN_00445430                   ; 004eb87e
+        ;   XREF to: 00445430 (UNCONDITIONAL_CALL)  ; undefined FUN_00445430()
+    ADD ESP,0x8                         ; 004eb883
+    MOV EAX,ESI                         ; 004eb886
+    POP EBP                             ; 004eb888
+    POP EDI                             ; 004eb889
+    POP ESI                             ; 004eb88a
+    POP EBX                             ; 004eb88b
+    RET                                 ; 004eb88c
+

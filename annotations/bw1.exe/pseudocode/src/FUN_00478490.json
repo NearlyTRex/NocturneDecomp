@@ -1,0 +1,761 @@
+{
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "other",
+        "column": 25,
+        "line": 28,
+        "message": "unknown type name 'HWND'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 211,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 213,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 42,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 49,
+        "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
+      },
+      {
+        "category": "other",
+        "column": 1,
+        "line": 55,
+        "message": "unknown type name 'MMRESULT'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 60,
+        "message": "unknown type name 'HWND'"
+      },
+      {
+        "category": "other",
+        "column": 56,
+        "line": 155,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 1,
+        "line": 337,
+        "message": "unknown type name 'LPCRITICAL_SECTION'"
+      },
+      {
+        "category": "other",
+        "column": 20,
+        "line": 350,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 388,
+        "message": "unknown type name 'FILETIME'"
+      },
+      {
+        "category": "other",
+        "column": 37,
+        "line": 388,
+        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
+      },
+      {
+        "category": "other",
+        "column": 52,
+        "line": 388,
+        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
+      },
+      {
+        "category": "incompatible_types",
+        "column": 3,
+        "line": 17,
+        "message": "no matching function for call to 'FUN_0040b770'"
+      },
+      {
+        "category": "incompatible_types",
+        "column": 3,
+        "line": 18,
+        "message": "no matching function for call to 'FUN_0040b670'"
+      },
+      {
+        "category": "incompatible_types",
+        "column": 3,
+        "line": 19,
+        "message": "no matching function for call to 'FUN_0040b670'"
+      },
+      {
+        "category": "incompatible_types",
+        "column": 3,
+        "line": 20,
+        "message": "no matching function for call to 'FUN_0040b670'"
+      },
+      {
+        "category": "incompatible_types",
+        "column": 3,
+        "line": 21,
+        "message": "no matching function for call to 'FUN_0040b670'"
+      },
+      {
+        "category": "incompatible_types",
+        "column": 3,
+        "line": 22,
+        "message": "no matching function for call to 'FUN_0040b440'"
+      }
+    ],
+    "success": false,
+    "warnings": []
+  },
+  "compile_source": "c",
+  "complexity": {
+    "assembly_lines": 278,
+    "complexity_score": 477,
+    "cross_reference_count": 0,
+    "function_call_count": 7,
+    "global_count": 35,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 82,
+    "suspect_count": 38,
+    "suspect_types": [
+      "undefined_data",
+      "unnamed_param",
+      "unrolled_strcpy"
+    ],
+    "total_lines": 360
+  },
+  "cross_references": [],
+  "function": {
+    "address": "00478490",
+    "address_range": [
+      [
+        "00478490",
+        "004787cc"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "FUN_00478490",
+    "signature": "void FUN_00478490(int param_1)"
+  },
+  "function_calls": [
+    {
+      "addr": "0040b1c0",
+      "is_variadic": false,
+      "name": "FUN_0040b1c0"
+    },
+    {
+      "addr": "0040b440",
+      "is_variadic": false,
+      "name": "FUN_0040b440"
+    },
+    {
+      "addr": "0040b5f0",
+      "is_variadic": false,
+      "name": "FUN_0040b5f0"
+    },
+    {
+      "addr": "0040b670",
+      "is_variadic": false,
+      "name": "FUN_0040b670"
+    },
+    {
+      "addr": "0040b770",
+      "is_variadic": false,
+      "name": "FUN_0040b770"
+    },
+    {
+      "addr": "0040be80",
+      "is_variadic": false,
+      "name": "FUN_0040be80"
+    },
+    {
+      "addr": "0040c040",
+      "is_variadic": false,
+      "name": "FUN_0040c040"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005da81c",
+      "name": "s_modelName_005da81b+1",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005da826",
+      "name": "s_doorType_005da826",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005da82f",
+      "name": "s_doorSide_005da82f",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005da838",
+      "name": "s_doorState_005da838",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005da842",
+      "name": "s_doorSwing_005da842",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005da84c",
+      "name": "s_openEvent_005da84c",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005da856",
+      "name": "s_closeEvent_005da856",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005da861",
+      "name": "s_openSound_005da861",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005da86b",
+      "name": "s_closeSound_005da86b",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005da876",
+      "name": "s_keyMask_005da876",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005da87e",
+      "name": "s_origPos_005da87e",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005da886",
+      "name": "s_origOrient_005da886",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005da891",
+      "name": "s_param_005da891",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005da897",
+      "name": "s_maxParam_005da897",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005da8a0",
+      "name": "s_openSpeed_005da8a0",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005da8aa",
+      "name": "s_closeSpeed_005da8aa",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005da8b5",
+      "name": "s_groundType_005da8b5",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005da8c0",
+      "name": "s_eventToTriggerWhenOpen_005da8c0",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005da8d7",
+      "name": "s_eventToTriggerWhenClosed_005da8d7",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005da8f0",
+      "name": "s_oneShot_005da8f0",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005da8f8",
+      "name": "s_openRules_005da8f8",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005da902",
+      "name": "s_scriptOpenEvent_005da902",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005da912",
+      "name": "DAT_005da912",
+      "type": "undefined1",
+      "value": null
+    },
+    {
+      "addr": "005da913",
+      "name": "DAT_005da913",
+      "type": "undefined1",
+      "value": null
+    },
+    {
+      "addr": "005da914",
+      "name": "DAT_005da914",
+      "type": "undefined1",
+      "value": null
+    },
+    {
+      "addr": "005da915",
+      "name": "DAT_005da915",
+      "type": "undefined1",
+      "value": null
+    },
+    {
+      "addr": "005da917",
+      "name": "s_blockVirtualDirectorFlag_005da917",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005da930",
+      "name": "s_plotAsBoxInShadow_005da930",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005da942",
+      "name": "s_allowedSides_005da942",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005da94f",
+      "name": "s_allowBulletHoles_005da94f",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005da960",
+      "name": "s_lockedSound_005da960",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005da96c",
+      "name": "s_shakeMeEvent_005da96c",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005da979",
+      "name": "s_shakeMeStrength_005da979",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005da989",
+      "name": "s_handleVertexIndex_005da989",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "006124f4",
+      "name": "DAT_006124f4",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 0,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.188679245283019,
+    "instruction_count": 212,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 2,
+      "BRANCH": 3,
+      "CALL": 31,
+      "CBRANCH": 15,
+      "COPY": 132,
+      "INT_ADD": 78,
+      "INT_AND": 99,
+      "INT_CARRY": 34,
+      "INT_EQUAL": 100,
+      "INT_LESS": 14,
+      "INT_NOTEQUAL": 10,
+      "INT_SBORROW": 14,
+      "INT_SCARRY": 34,
+      "INT_SLESS": 49,
+      "INT_SUB": 110,
+      "LOAD": 12,
+      "POPCOUNT": 49,
+      "RETURN": 2,
+      "STORE": 100
+    },
+    "pcode_op_count": 888
+  },
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "void FUN_00478490(int param_1)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 9,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "FUN_0040c040(param_1);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 10,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "FUN_0040b770(param_1 + 0x158,\"?modelName\" + 1);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 11,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "FUN_0040b670(param_1 + 0x2d8,\"doorType\");",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 12,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "FUN_0040b670(param_1 + 0x2dc,\"doorSide\");",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 13,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "FUN_0040b670(param_1 + 0x2e0,\"doorState\");",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 14,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "FUN_0040b670(param_1 + 0x2e4,\"doorSwing\");",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 15,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "FUN_0040b440(param_1 + 0x2e8,\"openEvent\");",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 16,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "FUN_0040b440(param_1 + 0x34c,\"closeEvent\");",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 17,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "FUN_0040b440(param_1 + 0x864,\"openSound\");",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 18,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "FUN_0040b440(param_1 + 0x8c8,\"closeSound\");",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 19,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "FUN_0040b670(param_1 + 0x990,\"keyMask\");",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 20,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "FUN_0040b1c0(param_1 + 0x994,\"origPos\");",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 21,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "FUN_0040b1c0(param_1 + 0x9a0,\"origOrient\");",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 22,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "FUN_0040b5f0(param_1 + 0x9ac,\"param\");",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 23,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "FUN_0040b5f0(param_1 + 0x9b0,\"maxParam\");",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 24,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "FUN_0040b5f0(param_1 + 0x9b4,\"openSpeed\");",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 25,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "FUN_0040b5f0(param_1 + 0x9b8,\"closeSpeed\");",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 27,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "FUN_0040b670(param_1 + 0x2d4,\"groundType\");",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 30,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "FUN_0040b440(param_1 + 0x3b0,\"eventToTriggerWhenOpen\");",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 31,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "FUN_0040b440(param_1 + 0x414,\"eventToTriggerWhenClosed\");",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 34,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "FUN_0040b670(param_1 + 0x9c8,\"oneShot\");",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 38,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "FUN_0040b440(param_1 + 0x670,\"scriptOpenEvent\");",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 39,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "if (*(char *)(param_1 + 0x670) == '\\0') {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 40,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "*(uint *)(param_1 + 0x478) = 0;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 43,
+      "match": "DAT_005da912",
+      "severity": "mild",
+      "text": "pcVar2 = &DAT_005da912;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 44,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "pcVar3 = (char *)(param_1 + 0x47c);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 54,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "*(uint *)(param_1 + 0x478) = 1;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 59,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "FUN_0040be80(param_1 + 0x478,\"openRules\");",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 62,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "FUN_0040b670(param_1 + 0x9d0,\"blockVirtualDirectorFlag\");",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 65,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "FUN_0040b670(param_1 + 0x9d4,\"plotAsBoxInShadow\");",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 68,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "FUN_0040b670(param_1 + 0x9d8,\"allowedSides\");",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 71,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "FUN_0040b670(param_1 + 0x9dc,\"allowBulletHoles\");",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 74,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "FUN_0040b440(param_1 + 0x92c,\"lockedSound\");",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 77,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "FUN_0040b440(param_1 + 0x9e4,\"shakeMeEvent\");",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 78,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "FUN_0040b5f0(param_1 + 0x9e0,\"shakeMeStrength\");",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 83,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "FUN_0040b670(param_1 + 0xa48,\"handleVertexIndex\");",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 45,
+      "match": "do {",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    }
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "Unknown",
+        "offset": 12,
+        "vtable_addr": "005ff0fc"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

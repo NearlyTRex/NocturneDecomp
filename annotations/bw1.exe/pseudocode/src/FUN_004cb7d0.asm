@@ -1,0 +1,65 @@
+; *****************************************************************************
+;                               FUNCTION
+; *****************************************************************************
+; void FUN_004cb7d0(void)
+;
+;
+; Called Functions:
+;   FUN_0045d950
+;   FUN_00462470
+;   FUN_0049a620
+;   FUN_004cbc80
+;   FUN_005c0357
+;   FUN_005c1093
+;
+; *****************************************************************************
+
+section .text
+
+    PUSH 0x100                          ; 004cb7d0
+        ;   Label: FUN_004cb7d0
+    PUSH 0x100                          ; 004cb7d5
+    PUSH 0x1ccc3e4                      ; 004cb7da
+    CALL FUN_00462470                   ; 004cb7df
+        ;   XREF to: 00462470 (UNCONDITIONAL_CALL)  ; undefined FUN_00462470()
+    ADD ESP,0xc                         ; 004cb7e4
+    PUSH 0x61d8a0                       ; 004cb7e7
+    CALL FUN_005c1093                   ; 004cb7ec
+        ;   XREF to: 005c1093 (UNCONDITIONAL_CALL)  ; undefined FUN_005c1093()
+    ADD ESP,0x4                         ; 004cb7f1
+    PUSH 0x1ccf390                      ; 004cb7f4
+    CALL FUN_004cbc80                   ; 004cb7f9
+        ;   XREF to: 004cbc80 (UNCONDITIONAL_CALL)  ; undefined FUN_004cbc80()
+    ADD ESP,0x4                         ; 004cb7fe
+    PUSH 0x61d8b0                       ; 004cb801
+    CALL FUN_005c1093                   ; 004cb806
+        ;   XREF to: 005c1093 (UNCONDITIONAL_CALL)  ; undefined FUN_005c1093()
+    ADD ESP,0x4                         ; 004cb80b
+    PUSH 0x1cd01fc                      ; 004cb80e
+    CALL FUN_0049a620                   ; 004cb813
+        ;   XREF to: 0049a620 (UNCONDITIONAL_CALL)  ; undefined FUN_0049a620()
+    ADD ESP,0x4                         ; 004cb818
+    PUSH 0x61d8c0                       ; 004cb81b
+    CALL FUN_005c1093                   ; 004cb820
+        ;   XREF to: 005c1093 (UNCONDITIONAL_CALL)  ; undefined FUN_005c1093()
+    ADD ESP,0x4                         ; 004cb825
+    PUSH 0x1cd0af0                      ; 004cb828
+    CALL FUN_0045d950                   ; 004cb82d
+        ;   XREF to: 0045d950 (UNCONDITIONAL_CALL)  ; undefined FUN_0045d950()
+    ADD ESP,0x4                         ; 004cb832
+    PUSH 0x61d8d0                       ; 004cb835
+    CALL FUN_005c1093                   ; 004cb83a
+        ;   XREF to: 005c1093 (UNCONDITIONAL_CALL)  ; undefined FUN_005c1093()
+    ADD ESP,0x4                         ; 004cb83f
+    PUSH 0x5fca10                       ; 004cb842
+    PUSH 0x8                            ; 004cb847
+    PUSH 0x1cd0b44                      ; 004cb849
+    CALL FUN_005c0357                   ; 004cb84e
+        ;   XREF to: 005c0357 (UNCONDITIONAL_CALL)  ; undefined FUN_005c0357()
+    ADD ESP,0xc                         ; 004cb853
+    PUSH 0x61d8e0                       ; 004cb856
+    CALL FUN_005c1093                   ; 004cb85b
+        ;   XREF to: 005c1093 (UNCONDITIONAL_CALL)  ; undefined FUN_005c1093()
+    ADD ESP,0x4                         ; 004cb860
+    RET                                 ; 004cb863
+

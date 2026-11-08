@@ -1,0 +1,47 @@
+// Name: FUN_0053c3b0
+// Address: 0053c3b0
+// Address Range: [[0053c3b0, 0053c4bd]]
+// Convention: unknown
+// Signature: void FUN_0053c3b0(int param_1,int param_2)
+
+#include "nocturne.h"
+
+/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+
+void FUN_0053c3b0(int param_1,int param_2)
+
+{
+  int iVar1;
+  uint *unaff_ESI;
+  uint *puVar2;
+  byte bVar3;
+  uint auStack_114 [66];
+  
+  bVar3 = 0;
+  if ((param_2 < 0) || (*(int *)(param_1 + 0x424) <= param_2)) {
+    _DAT_01d1d400 = "..\\engine\\pod.cpp";
+    _DAT_01d1d404 = 0x3d8;
+    FUN_005030e0("CPodFile::getDependencyRecord - invalid index.  Pod not mounted?");
+  }
+  iVar1 = FUN_005c157c(param_1 + 4,0x5ed8d6);
+  if (iVar1 == 0) {
+    _DAT_01d1d400 = "..\\engine\\pod.cpp";
+    _DAT_01d1d404 = 0x3dd;
+    FUN_005030e0("CPodFile::getDependencyRecord - can't open %s",param_1 + 4);
+  }
+  FUN_005c170c(iVar1,param_2 * 0x108 + *(int *)(param_1 + 0x428),0);
+  FUN_005c0b10(auStack_114,0x108,1,iVar1);
+  if ((*(byte *)(iVar1 + 0xc) & 0x20) != 0) {
+    _DAT_01d1d400 = "..\\engine\\pod.cpp";
+    _DAT_01d1d404 = 0x3ee;
+    FUN_005030e0("CPodFile::getDependencyRecord - error reading %s",param_1 + 4);
+  }
+  FUN_005c0d10(iVar1);
+  puVar2 = auStack_114;
+  for (iVar1 = 0x42; iVar1 != 0; iVar1 = iVar1 + -1) {
+    *unaff_ESI = *puVar2;
+    puVar2 = puVar2 + (uint)bVar3 * -2 + 1;
+    unaff_ESI = unaff_ESI + (uint)bVar3 * -2 + 1;
+  }
+  return;
+}

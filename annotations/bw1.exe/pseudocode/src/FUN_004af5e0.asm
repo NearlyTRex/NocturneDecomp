@@ -1,0 +1,32 @@
+; *****************************************************************************
+;                               FUNCTION
+; *****************************************************************************
+; void FUN_004af5e0(void)
+;
+;
+; XREF[1]:
+;   FUN_004b5ac0 at 004b5b1b
+;
+; Referenced Globals:
+;   undefined4 s_gunflash_kfm_005df283+1
+;
+; Called Functions:
+;   FUN_004688e0
+;   FUN_00468950
+;
+; *****************************************************************************
+
+section .text
+
+    PUSH 0x5df284                       ; 004af5e0 | s_gunflash_kfm_005df283+1
+        ;   Label: FUN_004af5e0
+    PUSH 0x1c57c98                      ; 004af5e5
+    CALL FUN_00468950                   ; 004af5ea
+        ;   XREF to: 00468950 (UNCONDITIONAL_CALL)  ; undefined FUN_00468950()
+    ADD ESP,0x8                         ; 004af5ef
+    PUSH 0x1c57c98                      ; 004af5f2
+    CALL FUN_004688e0                   ; 004af5f7
+        ;   XREF to: 004688e0 (UNCONDITIONAL_CALL)  ; undefined FUN_004688e0()
+    ADD ESP,0x4                         ; 004af5fc
+    RET                                 ; 004af5ff
+

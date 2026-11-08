@@ -1,0 +1,844 @@
+{
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "other",
+        "column": 25,
+        "line": 28,
+        "message": "unknown type name 'HWND'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 211,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 213,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 42,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 49,
+        "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
+      },
+      {
+        "category": "other",
+        "column": 1,
+        "line": 55,
+        "message": "unknown type name 'MMRESULT'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 60,
+        "message": "unknown type name 'HWND'"
+      },
+      {
+        "category": "other",
+        "column": 56,
+        "line": 155,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 1,
+        "line": 337,
+        "message": "unknown type name 'LPCRITICAL_SECTION'"
+      },
+      {
+        "category": "other",
+        "column": 20,
+        "line": 350,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 388,
+        "message": "unknown type name 'FILETIME'"
+      },
+      {
+        "category": "other",
+        "column": 37,
+        "line": 388,
+        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
+      },
+      {
+        "category": "other",
+        "column": 52,
+        "line": 388,
+        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
+      },
+      {
+        "category": "incompatible_types",
+        "column": 3,
+        "line": 21,
+        "message": "no matching function for call to 'FUN_0040b770'"
+      },
+      {
+        "category": "incompatible_types",
+        "column": 3,
+        "line": 22,
+        "message": "no matching function for call to 'FUN_0040b440'"
+      },
+      {
+        "category": "incompatible_types",
+        "column": 3,
+        "line": 23,
+        "message": "no matching function for call to 'FUN_0040b440'"
+      },
+      {
+        "category": "incompatible_types",
+        "column": 3,
+        "line": 24,
+        "message": "no matching function for call to 'FUN_0040b440'"
+      },
+      {
+        "category": "incompatible_types",
+        "column": 3,
+        "line": 25,
+        "message": "no matching function for call to 'FUN_0040b440'"
+      },
+      {
+        "category": "incompatible_types",
+        "column": 3,
+        "line": 26,
+        "message": "no matching function for call to 'FUN_0040b440'"
+      }
+    ],
+    "success": false,
+    "warnings": []
+  },
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 327,
+    "complexity_score": 507,
+    "cross_reference_count": 1,
+    "function_call_count": 9,
+    "global_count": 37,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 102,
+    "suspect_count": 39,
+    "suspect_types": [
+      "undefined_data",
+      "unnamed_param",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 429
+  },
+  "cross_references": [
+    {
+      "addr": "00447a40",
+      "from_addr": "00447a46",
+      "name": "FUN_00447a40",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0053a740",
+    "address_range": [
+      [
+        "0053a740",
+        "0053aaf5"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "FUN_0053a740",
+    "signature": "void FUN_0053a740(int param_1)"
+  },
+  "function_calls": [
+    {
+      "addr": "0040b1c0",
+      "is_variadic": false,
+      "name": "FUN_0040b1c0"
+    },
+    {
+      "addr": "0040b3a0",
+      "is_variadic": false,
+      "name": "FUN_0040b3a0"
+    },
+    {
+      "addr": "0040b440",
+      "is_variadic": false,
+      "name": "FUN_0040b440"
+    },
+    {
+      "addr": "0040b5f0",
+      "is_variadic": false,
+      "name": "FUN_0040b5f0"
+    },
+    {
+      "addr": "0040b670",
+      "is_variadic": false,
+      "name": "FUN_0040b670"
+    },
+    {
+      "addr": "0040b6f0",
+      "is_variadic": false,
+      "name": "FUN_0040b6f0"
+    },
+    {
+      "addr": "0040b770",
+      "is_variadic": false,
+      "name": "FUN_0040b770"
+    },
+    {
+      "addr": "0040c040",
+      "is_variadic": false,
+      "name": "FUN_0040c040"
+    },
+    {
+      "addr": "005030e0",
+      "is_variadic": false,
+      "name": "FUN_005030e0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005ed43b",
+      "name": "s_modelName_005ed43b",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005ed445",
+      "name": "s_toStartEvent_005ed445",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005ed452",
+      "name": "s_toEndEvent_005ed452",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005ed45d",
+      "name": "s_stopEvent_005ed45d",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005ed467",
+      "name": "s_startSound_005ed467",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005ed472",
+      "name": "s_stopSound_005ed472",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005ed47c",
+      "name": "s_activeSound_005ed47c",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005ed488",
+      "name": "s_courseFilename_005ed488",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005ed497",
+      "name": "s_startPos_005ed497",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005ed4a0",
+      "name": "s_origOrient_005ed4a0",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005ed4ab",
+      "name": "s_endPos_005ed4ab",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005ed4b2",
+      "name": "s_endOrient_005ed4b2",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005ed4bc",
+      "name": "s_state_005ed4bc",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005ed4c2",
+      "name": "s_param_005ed4c2",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005ed4c8",
+      "name": "s_travelTimeToStart_005ed4c8",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005ed4da",
+      "name": "s_travelTimeToEnd_005ed4da",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005ed4ea",
+      "name": "s_groundType_005ed4ea",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005ed4f5",
+      "name": "s_oneShot_005ed4f5",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005ed4fd",
+      "name": "s_blockVirtualDirectorFlag_005ed4fd",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005ed516",
+      "name": "s_renderInBackgroundWhenNo_005ed516",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005ed53a",
+      "name": "s_cameraWhileMoving_005ed53a",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005ed54c",
+      "name": "s_plotAsBoxInShadow_005ed54c",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005ed55e",
+      "name": "s_goalParam_005ed55e",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005ed568",
+      "name": "s_currentMovementRate_005ed568",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005ed57c",
+      "name": "s_attachCount_005ed57c",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005ed588",
+      "name": "s_core_platfrm_cpp_005ed588",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005ed59c",
+      "name": "s_CPlatform_archive_too_ma_005ed59c",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005ed5cb",
+      "name": "s_attach_actor_005ed5cb",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005ed5d8",
+      "name": "s_attachCount_005ed5d8",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005ed5e4",
+      "name": "s_attach_actor_005ed5e4",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005ed5f1",
+      "name": "s_pushFlag_005ed5f1",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005ed5fa",
+      "name": "s_recomputeFog_005ed5fa",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005ed607",
+      "name": "s_plotInShadowFlag_005ed607",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0062283c",
+      "name": "DAT_0062283c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "007c3038",
+      "name": "DAT_007c3038",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d1d400",
+      "name": "DAT_01d1d400",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d1d404",
+      "name": "DAT_01d1d404",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "00447a46",
+        "call_type": "direct",
+        "caller": "FUN_00447a40",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [
+          "EBX"
+        ],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "low",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 2,
+    "matches_declared": false
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.402390438247012,
+    "instruction_count": 251,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 1,
+      "BOOL_OR": 2,
+      "BRANCH": 3,
+      "CALL": 33,
+      "CBRANCH": 19,
+      "COPY": 162,
+      "INT_ADD": 94,
+      "INT_AND": 134,
+      "INT_CARRY": 40,
+      "INT_EQUAL": 133,
+      "INT_LESS": 18,
+      "INT_MULT": 1,
+      "INT_NOTEQUAL": 14,
+      "INT_SBORROW": 18,
+      "INT_SCARRY": 43,
+      "INT_SEXT": 3,
+      "INT_SLESS": 66,
+      "INT_SUB": 119,
+      "INT_XOR": 3,
+      "LOAD": 24,
+      "POPCOUNT": 66,
+      "RETURN": 2,
+      "STORE": 105,
+      "SUBPIECE": 2
+    },
+    "pcode_op_count": 1105
+  },
+  "stack_frame": {
+    "frame_size": 32,
+    "local_size": 32,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 4,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "void FUN_0053a740(int param_1)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 13,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "FUN_0040c040(param_1);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 14,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "FUN_0040b770(param_1 + 0x158,\"modelName\");",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 15,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "FUN_0040b440(param_1 + 0x354,\"toStartEvent\");",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 16,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "FUN_0040b440(param_1 + 0x3b8,\"toEndEvent\");",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 17,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "FUN_0040b440(param_1 + 0x41c,\"stopEvent\");",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 18,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "FUN_0040b440(param_1 + 0x480,\"startSound\");",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 19,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "FUN_0040b440(param_1 + 0x494,\"stopSound\");",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 20,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "FUN_0040b440(param_1 + 0x4a8,\"activeSound\");",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 21,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "FUN_0040b440(param_1 + 0x2f0,\"courseFilename\");",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 22,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "if (*(char *)(param_1 + 0x2f0) == '\\0') {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 23,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "FUN_0040b1c0(param_1 + 0x31c,\"startPos\");",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 24,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "FUN_0040b3a0(param_1 + 0x334,\"origOrient\");",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 25,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "FUN_0040b1c0(param_1 + 0x328,\"endPos\");",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 26,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "FUN_0040b3a0(param_1 + 0x344,\"endOrient\");",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 28,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "FUN_0040b670(param_1 + 0x2d4,\"state\");",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 29,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "FUN_0040b5f0(param_1 + 0x2dc,\"param\");",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 30,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "FUN_0040b5f0(param_1 + 0x2ec,\"travelTimeToStart\");",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 32,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "*(uint *)(param_1 + 0x2e8) = *(uint *)(param_1 + 0x2ec);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 32,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "*(uint *)(param_1 + 0x2e8) = *(uint *)(param_1 + 0x2ec);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 35,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "FUN_0040b5f0(param_1 + 0x2e8,\"travelTimeToEnd\");",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 37,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "FUN_0040b670(param_1 + 0x2d8,\"groundType\");",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 39,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "FUN_0040b670(param_1 + 0x4c0,\"oneShot\");",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 42,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "FUN_0040b670(param_1 + 0x4c4,\"blockVirtualDirectorFlag\");",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 45,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "FUN_0040b670(param_1 + 0x4c8,\"renderInBackgroundWhenNotMovingFlag\");",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 48,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "FUN_0040b440(param_1 + 0x4cc,\"cameraWhileMoving\");",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 51,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "FUN_0040b670(param_1 + 0x50c,\"plotAsBoxInShadow\");",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 54,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "FUN_0040b5f0(param_1 + 0x2e0,\"goalParam\");",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 55,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "FUN_0040b5f0(param_1 + 0x2e4,\"currentMovementRate\");",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 56,
+      "match": "DAT_007c3038",
+      "severity": "mild",
+      "text": "if (DAT_007c3038 == 1) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 64,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "iVar1 = param_1;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 76,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "iVar1 = param_1;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 82,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "} while (iVar1 != param_1 + 0x208);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 85,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "iVar1 = param_1;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 88,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "FUN_0040b6f0(iVar2 * 0x34 + param_1 + 0x51c,\"attach actor\");",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 96,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "FUN_0040b670(param_1 + 0x510,\"pushFlag\");",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 99,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "FUN_0040b670(param_1 + 0x514,\"recomputeFog\");",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 102,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "FUN_0040b670(param_1 + 0x518,\"plotInShadowFlag\");",
+      "type": "unnamed_param"
+    }
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "Unknown",
+        "offset": 12,
+        "vtable_addr": "00603c3c"
+      },
+      {
+        "class_name": "Unknown",
+        "offset": 12,
+        "vtable_addr": "006049fc"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 2
+  }
+}

@@ -1,0 +1,274 @@
+{
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "other",
+        "column": 25,
+        "line": 28,
+        "message": "unknown type name 'HWND'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 211,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 213,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 42,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 49,
+        "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
+      },
+      {
+        "category": "other",
+        "column": 1,
+        "line": 55,
+        "message": "unknown type name 'MMRESULT'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 60,
+        "message": "unknown type name 'HWND'"
+      },
+      {
+        "category": "other",
+        "column": 56,
+        "line": 155,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 1,
+        "line": 337,
+        "message": "unknown type name 'LPCRITICAL_SECTION'"
+      },
+      {
+        "category": "other",
+        "column": 20,
+        "line": 350,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 388,
+        "message": "unknown type name 'FILETIME'"
+      },
+      {
+        "category": "other",
+        "column": 37,
+        "line": 388,
+        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
+      },
+      {
+        "category": "other",
+        "column": 52,
+        "line": 388,
+        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 13,
+        "line": 14,
+        "message": "use of undeclared identifier 'PTR_FUN_00626640'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 7,
+        "line": 16,
+        "message": "use of undeclared identifier '_DAT_02c9f060'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 3,
+        "line": 20,
+        "message": "use of undeclared identifier 'ExitThread'"
+      }
+    ],
+    "success": false,
+    "warnings": []
+  },
+  "compile_source": "c",
+  "complexity": {
+    "assembly_lines": 15,
+    "complexity_score": 56,
+    "cross_reference_count": 1,
+    "function_call_count": 4,
+    "global_count": 3,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 11,
+    "suspect_count": 3,
+    "suspect_types": [
+      "unresolved_funcptr",
+      "warning_noreturn",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 26
+  },
+  "cross_references": [
+    {
+      "addr": "005cdff8",
+      "from_addr": "005cdff8",
+      "name": "FUN_005cdff8",
+      "type": "COMPUTED_CALL"
+    }
+  ],
+  "function": {
+    "address": "005ceba8",
+    "address_range": [
+      [
+        "005ceba8",
+        "005cebcf"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "FUN_005ceba8",
+    "signature": "void FUN_005ceba8(void)"
+  },
+  "function_calls": [
+    {
+      "addr": "EXTERNAL:00000056",
+      "is_variadic": false,
+      "name": "ExitThread"
+    },
+    {
+      "addr": "005c50f8",
+      "is_variadic": false,
+      "name": "FUN_005c50f8"
+    },
+    {
+      "addr": "005cad34",
+      "is_variadic": false,
+      "name": "FUN_005cad34"
+    },
+    {
+      "addr": "005cb5f4",
+      "is_variadic": false,
+      "name": "FUN_005cb5f4"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005d0548",
+      "name": "PTR_ExitThread_005d0548",
+      "type": "void*",
+      "value": "001d0d1e"
+    },
+    {
+      "addr": "00626640",
+      "name": "PTR_FUN_00626640",
+      "type": "void*",
+      "value": "005c50f8"
+    },
+    {
+      "addr": "02c9f060",
+      "name": "DAT_02c9f060",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "005cdff8",
+        "call_type": "direct",
+        "caller": "FUN_005cdff8",
+        "estimated_params": 0,
+        "instructions_analyzed": 0,
+        "method": "push_count",
+        "reg_params": [],
+        "stack_bytes": 0,
+        "stack_params": 0
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 0,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.4,
+    "instruction_count": 10,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 1,
+      "CALL": 2,
+      "CALLIND": 2,
+      "CBRANCH": 1,
+      "COPY": 5,
+      "INT_ADD": 2,
+      "INT_AND": 4,
+      "INT_CARRY": 1,
+      "INT_EQUAL": 4,
+      "INT_LESS": 1,
+      "INT_SBORROW": 1,
+      "INT_SCARRY": 1,
+      "INT_SLESS": 2,
+      "INT_SUB": 7,
+      "LOAD": 1,
+      "POPCOUNT": 2,
+      "RETURN": 1,
+      "STORE": 6
+    },
+    "pcode_op_count": 44
+  },
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 7,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "(*(code *)PTR_FUN_00626640)();",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Subroutine marked as non-returning",
+      "line": 12,
+      "match": "WARNING: Subroutine does not return",
+      "severity": "mild",
+      "text": "/* WARNING: Subroutine does not return */",
+      "type": "warning_noreturn"
+    }
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "Unknown",
+        "offset": 8,
+        "vtable_addr": "00626b6c"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

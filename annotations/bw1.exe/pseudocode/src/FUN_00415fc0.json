@@ -1,0 +1,1175 @@
+{
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "other",
+        "column": 25,
+        "line": 28,
+        "message": "unknown type name 'HWND'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 211,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 213,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 42,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 49,
+        "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
+      },
+      {
+        "category": "other",
+        "column": 1,
+        "line": 55,
+        "message": "unknown type name 'MMRESULT'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 60,
+        "message": "unknown type name 'HWND'"
+      },
+      {
+        "category": "other",
+        "column": 56,
+        "line": 155,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 1,
+        "line": 337,
+        "message": "unknown type name 'LPCRITICAL_SECTION'"
+      },
+      {
+        "category": "other",
+        "column": 20,
+        "line": 350,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 388,
+        "message": "unknown type name 'FILETIME'"
+      },
+      {
+        "category": "other",
+        "column": 37,
+        "line": 388,
+        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
+      },
+      {
+        "category": "other",
+        "column": 52,
+        "line": 388,
+        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
+      },
+      {
+        "category": "incompatible_types",
+        "column": 5,
+        "line": 17,
+        "message": "no matching function for call to 'FUN_0040d1c0'"
+      },
+      {
+        "category": "incompatible_types",
+        "column": 5,
+        "line": 18,
+        "message": "no matching function for call to 'FUN_0040d1c0'"
+      },
+      {
+        "category": "incompatible_types",
+        "column": 5,
+        "line": 19,
+        "message": "no matching function for call to 'FUN_0040d1c0'"
+      },
+      {
+        "category": "incompatible_types",
+        "column": 5,
+        "line": 21,
+        "message": "no matching function for call to 'FUN_0040d1c0'"
+      },
+      {
+        "category": "incompatible_types",
+        "column": 3,
+        "line": 42,
+        "message": "no matching function for call to 'FUN_004688e0'"
+      },
+      {
+        "category": "incompatible_types",
+        "column": 3,
+        "line": 43,
+        "message": "no matching function for call to 'FUN_004688e0'"
+      }
+    ],
+    "success": false,
+    "warnings": []
+  },
+  "compile_source": "c",
+  "complexity": {
+    "assembly_lines": 484,
+    "complexity_score": 1278,
+    "cross_reference_count": 0,
+    "function_call_count": 5,
+    "global_count": 2,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 93,
+    "suspect_count": 117,
+    "suspect_types": [
+      "undefined_data",
+      "unnamed_param",
+      "unresolved_funcptr"
+    ],
+    "total_lines": 577
+  },
+  "cross_references": [],
+  "function": {
+    "address": "00415fc0",
+    "address_range": [
+      [
+        "00415fc0",
+        "0041656e"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "FUN_00415fc0",
+    "signature": "void FUN_00415fc0(int *param_1,int param_2)"
+  },
+  "function_calls": [
+    {
+      "addr": "0040d1c0",
+      "is_variadic": false,
+      "name": "FUN_0040d1c0"
+    },
+    {
+      "addr": "0040d220",
+      "is_variadic": false,
+      "name": "FUN_0040d220"
+    },
+    {
+      "addr": "004688e0",
+      "is_variadic": false,
+      "name": "FUN_004688e0"
+    },
+    {
+      "addr": "004a6c30",
+      "is_variadic": false,
+      "name": "FUN_004a6c30"
+    },
+    {
+      "addr": "00573b00",
+      "is_variadic": false,
+      "name": "FUN_00573b00"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0061b4d0",
+      "name": "DAT_0061b4d0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "007c397c",
+      "name": "DAT_007c397c",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 0,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.7549234135667398,
+    "instruction_count": 457,
+    "opcode_distribution": {
+      "BOOL_OR": 1,
+      "CALL": 16,
+      "CALLIND": 27,
+      "CBRANCH": 5,
+      "COPY": 406,
+      "INT_ADD": 119,
+      "INT_AND": 104,
+      "INT_CARRY": 43,
+      "INT_EQUAL": 100,
+      "INT_LESS": 1,
+      "INT_NOTEQUAL": 2,
+      "INT_SBORROW": 1,
+      "INT_SCARRY": 44,
+      "INT_SLESS": 50,
+      "INT_SUB": 323,
+      "INT_XOR": 1,
+      "LOAD": 73,
+      "POPCOUNT": 50,
+      "RETURN": 3,
+      "STORE": 347
+    },
+    "pcode_op_count": 1716
+  },
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "void FUN_00415fc0(int *param_1,int param_2)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "void FUN_00415fc0(int *param_1,int param_2)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 8,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "if (param_2 == 0) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 9,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "FUN_0040d1c0(param_1 + 1);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 15,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "if (0 < param_1[7]) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 16,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "piVar2 = param_1 + 0x18;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 21,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "} while (iVar1 < param_1[7]);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 23,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "param_1[7] = 0;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 25,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "param_1[6] = 0;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 26,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "param_1[0xc] = 0;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 27,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "param_1[9] = 0;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 28,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "param_1[10] = 0;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 29,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "param_1[0xb] = 0;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 30,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "param_1[0x17] = 0;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 31,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "param_1[0x30d] = 0;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 32,
+      "match": "DAT_007c397c",
+      "severity": "mild",
+      "text": "DAT_007c397c = 0xffffffff;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 35,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "FUN_004688e0(param_1 + 0x23e);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 36,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "FUN_004688e0(param_1 + 0x29d);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 37,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "param_1[0x13] = 1;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 38,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "param_1[0xd] = 1;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 39,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "param_1[7] = 0;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 40,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "FUN_0040d220(param_1 + 1,\"radioback\",0x280,0x1e0);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 45,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "(**(code **)(*param_1 + 0x28))(param_1,0,\"poweron\",0x3d,0x3a,1,0x1f9,0x195,0);",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 45,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(**(code **)(*param_1 + 0x28))(param_1,0,\"poweron\",0x3d,0x3a,1,0x1f9,0x195,0);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 45,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(**(code **)(*param_1 + 0x28))(param_1,0,\"poweron\",0x3d,0x3a,1,0x1f9,0x195,0);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 46,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "(**(code **)(*param_1 + 0x28))(param_1,1,\"poweroff\",0x3d,0x3a,1,0x1f9,0x195,0);",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 46,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(**(code **)(*param_1 + 0x28))(param_1,1,\"poweroff\",0x3d,0x3a,1,0x1f9,0x195,0);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 46,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(**(code **)(*param_1 + 0x28))(param_1,1,\"poweroff\",0x3d,0x3a,1,0x1f9,0x195,0);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 47,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "(**(code **)(*param_1 + 0x28))(param_1,2,\"playreverse\",0x2d,0x4c,2,0x128,0x8a,0);",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 47,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(**(code **)(*param_1 + 0x28))(param_1,2,\"playreverse\",0x2d,0x4c,2,0x128,0x8a,0);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 47,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(**(code **)(*param_1 + 0x28))(param_1,2,\"playreverse\",0x2d,0x4c,2,0x128,0x8a,0);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 48,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "(**(code **)(*param_1 + 0x28))(param_1,3,\"playstop\",0x2d,0x4c,2,0x128,0x8a,0);",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 48,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(**(code **)(*param_1 + 0x28))(param_1,3,\"playstop\",0x2d,0x4c,2,0x128,0x8a,0);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 48,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(**(code **)(*param_1 + 0x28))(param_1,3,\"playstop\",0x2d,0x4c,2,0x128,0x8a,0);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 49,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "(**(code **)(*param_1 + 0x28))(param_1,4,\"playforward\",0x2d,0x4c,2,0x128,0x8a,0);",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 49,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(**(code **)(*param_1 + 0x28))(param_1,4,\"playforward\",0x2d,0x4c,2,0x128,0x8a,0);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 49,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(**(code **)(*param_1 + 0x28))(param_1,4,\"playforward\",0x2d,0x4c,2,0x128,0x8a,0);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 50,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "(**(code **)(*param_1 + 0x28))(param_1,5,0x5d3e15,0x16,0x20,3,0x171,0x12e,0);",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 50,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(**(code **)(*param_1 + 0x28))(param_1,5,0x5d3e15,0x16,0x20,3,0x171,0x12e,0);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 50,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(**(code **)(*param_1 + 0x28))(param_1,5,0x5d3e15,0x16,0x20,3,0x171,0x12e,0);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 51,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "(**(code **)(*param_1 + 0x28))(param_1,6,0x5d3e1c,0x16,0x20,3,0x195,0x12e,0);",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 51,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(**(code **)(*param_1 + 0x28))(param_1,6,0x5d3e1c,0x16,0x20,3,0x195,0x12e,0);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 51,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(**(code **)(*param_1 + 0x28))(param_1,6,0x5d3e1c,0x16,0x20,3,0x195,0x12e,0);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 52,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "(**(code **)(*param_1 + 0x28))(param_1,7,0x5d3e23,0x16,0x20,3,0x1bd,0x12e,0);",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 52,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(**(code **)(*param_1 + 0x28))(param_1,7,0x5d3e23,0x16,0x20,3,0x1bd,0x12e,0);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 52,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(**(code **)(*param_1 + 0x28))(param_1,7,0x5d3e23,0x16,0x20,3,0x1bd,0x12e,0);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 53,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "(**(code **)(*param_1 + 0x28))(param_1,8,0x5d3e2a,0x16,0x20,3,0x1e3,0x12e,0);",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 53,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(**(code **)(*param_1 + 0x28))(param_1,8,0x5d3e2a,0x16,0x20,3,0x1e3,0x12e,0);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 53,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(**(code **)(*param_1 + 0x28))(param_1,8,0x5d3e2a,0x16,0x20,3,0x1e3,0x12e,0);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 54,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "(**(code **)(*param_1 + 0x28))(param_1,9,0x5d3e31,0x16,0x20,3,0x20a,0x12e,0);",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 54,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(**(code **)(*param_1 + 0x28))(param_1,9,0x5d3e31,0x16,0x20,3,0x20a,0x12e,0);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 54,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(**(code **)(*param_1 + 0x28))(param_1,9,0x5d3e31,0x16,0x20,3,0x20a,0x12e,0);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 55,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "(**(code **)(*param_1 + 0x28))(param_1,10,\"lighton\",0x14,0x15,0,0x135,0x62,0);",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 55,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(**(code **)(*param_1 + 0x28))(param_1,10,\"lighton\",0x14,0x15,0,0x135,0x62,0);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 55,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(**(code **)(*param_1 + 0x28))(param_1,10,\"lighton\",0x14,0x15,0,0x135,0x62,0);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 56,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "(**(code **)(*param_1 + 0x28))(param_1,0xb,\"lightoff\",0x14,0x15,0,0x135,0x62,0);",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 56,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(**(code **)(*param_1 + 0x28))(param_1,0xb,\"lightoff\",0x14,0x15,0,0x135,0x62,0);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 56,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(**(code **)(*param_1 + 0x28))(param_1,0xb,\"lightoff\",0x14,0x15,0,0x135,0x62,0);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 57,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "(**(code **)(*param_1 + 0x28))(param_1,0xc,\"knobArrow1\",0x27,0x27,2,0x4b,0x1a3,0);",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 57,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(**(code **)(*param_1 + 0x28))(param_1,0xc,\"knobArrow1\",0x27,0x27,2,0x4b,0x1a3,0);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 57,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(**(code **)(*param_1 + 0x28))(param_1,0xc,\"knobArrow1\",0x27,0x27,2,0x4b,0x1a3,0);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 58,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "(**(code **)(*param_1 + 0x28))(param_1,0xd,\"knobArrow2\",0x27,0x27,2,0x4b,0x1a3,0);",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 58,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(**(code **)(*param_1 + 0x28))(param_1,0xd,\"knobArrow2\",0x27,0x27,2,0x4b,0x1a3,0);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 58,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(**(code **)(*param_1 + 0x28))(param_1,0xd,\"knobArrow2\",0x27,0x27,2,0x4b,0x1a3,0);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 59,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "(**(code **)(*param_1 + 0x28))(param_1,0xe,\"knobArrow3\",0x27,0x27,2,0x4b,0x1a3,0);",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 59,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(**(code **)(*param_1 + 0x28))(param_1,0xe,\"knobArrow3\",0x27,0x27,2,0x4b,0x1a3,0);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 59,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(**(code **)(*param_1 + 0x28))(param_1,0xe,\"knobArrow3\",0x27,0x27,2,0x4b,0x1a3,0);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 60,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "(**(code **)(*param_1 + 0x28))(param_1,0xf,\"knobArrow4\",0x27,0x27,2,0x4b,0x1a3,0);",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 60,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(**(code **)(*param_1 + 0x28))(param_1,0xf,\"knobArrow4\",0x27,0x27,2,0x4b,0x1a3,0);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 60,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(**(code **)(*param_1 + 0x28))(param_1,0xf,\"knobArrow4\",0x27,0x27,2,0x4b,0x1a3,0);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 61,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "(**(code **)(*param_1 + 0x28))(param_1,0x10,\"knobArrow5\",0x27,0x27,2,0x4b,0x1a3,0);",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 61,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(**(code **)(*param_1 + 0x28))(param_1,0x10,\"knobArrow5\",0x27,0x27,2,0x4b,0x1a3,0);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 61,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(**(code **)(*param_1 + 0x28))(param_1,0x10,\"knobArrow5\",0x27,0x27,2,0x4b,0x1a3,0);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 62,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "(**(code **)(*param_1 + 0x28))(param_1,0x11,\"knobArrow1\",0x27,0x27,2,0xaf,0x1a3,0);",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 62,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(**(code **)(*param_1 + 0x28))(param_1,0x11,\"knobArrow1\",0x27,0x27,2,0xaf,0x1a3,0);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 62,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(**(code **)(*param_1 + 0x28))(param_1,0x11,\"knobArrow1\",0x27,0x27,2,0xaf,0x1a3,0);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 63,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "(**(code **)(*param_1 + 0x28))(param_1,0x12,\"knobArrow2\",0x27,0x27,2,0xaf,0x1a3,0);",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 63,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(**(code **)(*param_1 + 0x28))(param_1,0x12,\"knobArrow2\",0x27,0x27,2,0xaf,0x1a3,0);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 63,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(**(code **)(*param_1 + 0x28))(param_1,0x12,\"knobArrow2\",0x27,0x27,2,0xaf,0x1a3,0);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 64,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "(**(code **)(*param_1 + 0x28))(param_1,0x13,\"knobArrow3\",0x27,0x27,2,0xaf,0x1a3,0);",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 64,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(**(code **)(*param_1 + 0x28))(param_1,0x13,\"knobArrow3\",0x27,0x27,2,0xaf,0x1a3,0);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 64,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(**(code **)(*param_1 + 0x28))(param_1,0x13,\"knobArrow3\",0x27,0x27,2,0xaf,0x1a3,0);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 65,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "(**(code **)(*param_1 + 0x28))(param_1,0x14,\"knobArrow4\",0x27,0x27,2,0xaf,0x1a3,0);",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 65,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(**(code **)(*param_1 + 0x28))(param_1,0x14,\"knobArrow4\",0x27,0x27,2,0xaf,0x1a3,0);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 65,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(**(code **)(*param_1 + 0x28))(param_1,0x14,\"knobArrow4\",0x27,0x27,2,0xaf,0x1a3,0);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 66,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "(**(code **)(*param_1 + 0x28))(param_1,0x15,\"knobArrow5\",0x27,0x27,2,0xaf,0x1a3,0);",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 66,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(**(code **)(*param_1 + 0x28))(param_1,0x15,\"knobArrow5\",0x27,0x27,2,0xaf,0x1a3,0);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 66,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(**(code **)(*param_1 + 0x28))(param_1,0x15,\"knobArrow5\",0x27,0x27,2,0xaf,0x1a3,0);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 67,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "(**(code **)(*param_1 + 0x28))(param_1,0x16,\"knobArrow1\",0x27,0x27,2,0x111,0x1a3,0);",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 67,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(**(code **)(*param_1 + 0x28))(param_1,0x16,\"knobArrow1\",0x27,0x27,2,0x111,0x1a3,0);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 67,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(**(code **)(*param_1 + 0x28))(param_1,0x16,\"knobArrow1\",0x27,0x27,2,0x111,0x1a3,0);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 68,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "(**(code **)(*param_1 + 0x28))(param_1,0x17,\"knobArrow2\",0x27,0x27,2,0x111,0x1a3,0);",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 68,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(**(code **)(*param_1 + 0x28))(param_1,0x17,\"knobArrow2\",0x27,0x27,2,0x111,0x1a3,0);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 68,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(**(code **)(*param_1 + 0x28))(param_1,0x17,\"knobArrow2\",0x27,0x27,2,0x111,0x1a3,0);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 69,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "(**(code **)(*param_1 + 0x28))(param_1,0x18,\"knobArrow3\",0x27,0x27,2,0x111,0x1a3,0);",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 69,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(**(code **)(*param_1 + 0x28))(param_1,0x18,\"knobArrow3\",0x27,0x27,2,0x111,0x1a3,0);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 69,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(**(code **)(*param_1 + 0x28))(param_1,0x18,\"knobArrow3\",0x27,0x27,2,0x111,0x1a3,0);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 70,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "(**(code **)(*param_1 + 0x28))(param_1,0x19,\"knobArrow4\",0x27,0x27,2,0x111,0x1a3,0);",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 70,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(**(code **)(*param_1 + 0x28))(param_1,0x19,\"knobArrow4\",0x27,0x27,2,0x111,0x1a3,0);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 70,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(**(code **)(*param_1 + 0x28))(param_1,0x19,\"knobArrow4\",0x27,0x27,2,0x111,0x1a3,0);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 71,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "(**(code **)(*param_1 + 0x28))(param_1,0x1a,\"knobArrow5\",0x27,0x27,2,0x111,0x1a3,0);",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 71,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(**(code **)(*param_1 + 0x28))(param_1,0x1a,\"knobArrow5\",0x27,0x27,2,0x111,0x1a3,0);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 71,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(**(code **)(*param_1 + 0x28))(param_1,0x1a,\"knobArrow5\",0x27,0x27,2,0x111,0x1a3,0);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 76,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "param_1[0x309] = 1;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 77,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "param_1[0x30a] = 4;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 78,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "param_1[0x30b] = 1;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 79,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "param_1[0x30c] = 2;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 80,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "param_1[0x304] = 2;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 81,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "param_1[0x308] = 3;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 82,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "param_1[0x30d] = 0;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 87,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "param_1[0x309] = 4;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 88,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "param_1[0x30a] = 2;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 89,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "param_1[0x30b] = 3;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 90,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "param_1[0x30c] = 0;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 91,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "param_1[0x304] = 1;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 92,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "param_1[0x308] = 1;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 94,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "param_1[0x30d] = 0;",
+      "type": "unnamed_param"
+    }
+  ]
+}
