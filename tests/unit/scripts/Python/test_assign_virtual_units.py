@@ -41,6 +41,21 @@ def test_the_crt_line_is_the_first_crt_after_the_last_game_code(labels, line):
     assert avu.crt_line(["1", "2", "3", "4"], labels) == line
 
 
+def test_a_stray_game_name_inside_the_runtime_does_not_move_the_crt_line():
+    ordered = ["1", "2", "3", "4", "5", "6", "7"]
+    labels = {"1": "core_a.cpp", "2": "crt_s.c", "3": "crt_s.c", "4": "crt_m.c",
+              "5": "engine_2d.c", "7": "crt_k.c"}
+    line = avu.crt_line(ordered, labels)
+    assert line == 1
+    assert avu.crt_outliers(ordered, labels, line) == ["5"]
+    rows, _ = avu.plan(ordered, labels, {"6"})
+    assert rows == [("6", "crt_unknown.c", "crt")]
+
+
+def test_without_a_crt_line_nothing_is_an_outlier():
+    assert avu.crt_outliers(["1"], {"1": "core_a.cpp"}, None) == []
+
+
 def test_crt_islands_inside_the_game_are_runtime_code():
     ordered = ["1", "2", "3", "4", "5", "6", "7"]
     labels = {"1": "core_a.cpp", "2": "crt_s.c", "4": "crt_s.c", "6": "crt_m.c", "7": "core_b.cpp"}
@@ -113,6 +128,15 @@ def test_the_report_counts_reasons_and_virtual_units(program, capsys):
     assert "4 virtual units, largest: unkaddr_00401000.cpp (1)" in out
     assert "renames planned: 6" in out
     assert "00401000  between    FUN_00401000 -> unkaddr_00401000.cpp_FUN_00401000" in out
+    assert "past the CRT line" not in out
+
+
+def test_the_report_lists_game_names_past_the_crt_line(program, capsys):
+    report = dict(avu.analyse(program), crt_outliers = [("004010d0", "engine_2d.c_f_FUN_004010d0")])
+    avu.print_report(report, 0)
+    out = capsys.readouterr().out
+    assert "game names past the CRT line, to rename by hand: 1" in out
+    assert "004010d0  engine_2d.c_f_FUN_004010d0" in out
 
 
 def program_for(report):

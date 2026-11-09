@@ -26,7 +26,8 @@ from collections import Counter, defaultdict
 
 
 def load(path):
-    d = json.load(open(path))
+    with open(path) as fh:
+        d = json.load(fh)
     by_file = defaultdict(set)
     for p in d["pins"]:
         by_file[p["file"]].add(p["line"])
@@ -78,7 +79,7 @@ ORDER = ["identical", "subset(B<A)", "subset(A<B)", "SHIFTED", "diverged",
          "only-in-A", "only-in-B"]
 
 
-def main():
+def main(argv=None):
     ap = argparse.ArgumentParser(description=__doc__,
                                  formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("a_json")
@@ -86,7 +87,7 @@ def main():
     ap.add_argument("--json", help="write the full classification")
     ap.add_argument("--show", default="SHIFTED,diverged",
                     help="comma-separated verdicts to list in detail")
-    args = ap.parse_args()
+    args = ap.parse_args(argv)
 
     a_name, A = load(args.a_json)
     b_name, B = load(args.b_json)
@@ -128,7 +129,8 @@ def main():
             print("     Treat as sibling versions, not as one source + a flag.")
 
     if args.json:
-        json.dump({"a": a_name, "b": b_name, "files": results}, open(args.json, "w"), indent=1)
+        with open(args.json, "w") as fh:
+            json.dump({"a": a_name, "b": b_name, "files": results}, fh, indent=1)
         print(f"\nwrote {args.json}", file=sys.stderr)
 
 

@@ -41,7 +41,7 @@ import sys
 from collections import Counter
 from difflib import SequenceMatcher
 
-from capstone import Cs, CS_ARCH_X86, CS_MODE_32, CS_OP_REG, CS_OP_IMM, CS_OP_MEM
+from capstone import Cs, CS_ARCH_X86, CS_MODE_32, CS_OP_REG, CS_OP_IMM
 
 
 # ---------------------------------------------------------------- PE plumbing
@@ -99,12 +99,25 @@ class Image:
             p += block
         return out
 
+    def section_end(self, va):
+        """End VA of the raw data of the section holding `va`, or None."""
+        for base, _, raw_size, _ in self.secs:
+            if base <= va < base + raw_size:
+                return base + raw_size
+        return None
+
     def func_bytes(self, start, end):
-        """Raw bytes [start,end), reloc dwords zeroed, trailing padding trimmed."""
-        a, b = self.off(start), self.off(end)
-        if a is None or b is None or b <= a:
+        """Raw bytes [start,end), reloc dwords zeroed, trailing padding trimmed.
+
+        An end past the section, such as the guess for a program's last
+        function, stops at the section's last byte.
+        """
+        limit = self.section_end(start)
+        if limit is None or end <= start:
             return None
-        buf = bytearray(self.data[a:b])
+        end = min(end, limit)
+        a = self.off(start)
+        buf = bytearray(self.data[a:a + end - start])
         for va in range(start, end):
             if va in self.reloc:
                 i = va - start
@@ -140,13 +153,15 @@ def tokens(md, buf, va):
             kinds = []
             for o in ins.operands:
                 if o.type == CS_OP_REG:
-                    kinds.append("r"); regs.append(md.reg_name(o.reg))
+                    kinds.append("r")
+                    regs.append(md.reg_name(o.reg))
                 elif o.type == CS_OP_IMM:
                     kinds.append("i")
                     if not branch:          # mask relative branch targets
                         imms.append(o.imm)
-                elif o.type == CS_OP_MEM:
-                    kinds.append("m"); disps.append(o.mem.disp)
+                else:                       # x86 operands are register, immediate or memory
+                    kinds.append("m")
+                    disps.append(o.mem.disp)
             ops.append(f"{ins.mnemonic}:{''.join(kinds)}")
             last = ins.address - va + ins.size
         off = last + 1 if last > off else off + 1
@@ -169,10 +184,8 @@ def classify(a_buf, b_buf, md, va_a, va_b):
 
     if oa == ob:
         # opcode + operand-kind sequence identical: what actually moved?
-        why = []
-        if da != db: why.append("disp")
-        if ia != ib: why.append("imm")
-        if ra != rb: why.append("reg")
+        why = [part for part, differs in (("disp", da != db), ("imm", ia != ib), ("reg", ra != rb))
+               if differs]
         if why == ["disp"]:
             n = sum(1 for x, y in zip(da, db) if x != y)
             return "layout-drift", dist, f"{n}/{len(da)} displacements differ"
@@ -205,27 +218,31 @@ def cave_ranges(path):
     return [(int(c["start"], 16), int(c["start"], 16) + c["total_size"]) for c in caves]
 
 
-def main():
+def main(argv=None):
     ap = argparse.ArgumentParser(description=__doc__,
                                  formatter_class=argparse.RawDescriptionHelpFormatter)
-    ap.add_argument("exe_a"); ap.add_argument("exe_b"); ap.add_argument("anchors")
+    ap.add_argument("exe_a")
+    ap.add_argument("exe_b")
+    ap.add_argument("anchors")
     ap.add_argument("--funcs-a", required=True)
     ap.add_argument("--funcs-b", required=True)
     ap.add_argument("--caves", default="annotations/nocedit.exe/code_caves.json")
     ap.add_argument("--json", help="write per-function results")
     ap.add_argument("--show", default="logic-change")
-    args = ap.parse_args()
+    args = ap.parse_args(argv)
 
     A, B = Image(args.exe_a), Image(args.exe_b)
     print(f"{args.exe_a}: {len(A.reloc)} reloc dwords", file=sys.stderr)
     print(f"{args.exe_b}: {len(B.reloc)} reloc dwords", file=sys.stderr)
 
     FA, FB = load_funcs(args.funcs_a), load_funcs(args.funcs_b)
-    SA = [a for a, _ in FA]; SB = [a for a, _ in FB]
+    SA = [a for a, _ in FA]
+    SB = [a for a, _ in FB]
     nameA = {a: n for a, n in FA}
     caves = cave_ranges(args.caves)
 
-    md = Cs(CS_ARCH_X86, CS_MODE_32); md.detail = True
+    md = Cs(CS_ARCH_X86, CS_MODE_32)
+    md.detail = True
 
     def end_of(starts, va):
         i = bisect.bisect_right(starts, va)
@@ -262,7 +279,8 @@ def main():
                   f"{r['size_a']:5d}/{r['size_b']:<5d}B  {r['detail']}")
 
     if args.json:
-        json.dump(results, open(args.json, "w"), indent=1)
+        with open(args.json, "w") as fh:
+            json.dump(results, fh, indent=1)
         print(f"\nwrote {args.json}", file=sys.stderr)
 
 

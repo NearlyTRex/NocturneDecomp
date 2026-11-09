@@ -65,39 +65,50 @@ def neighbourhood_is_crt(mapped, addr, k=12, threshold=0.75):
     while len(picked) < k and (lo > 0 or hi < len(mapped)):
         left = mapped[lo - 1] if lo > 0 else None
         right = mapped[hi] if hi < len(mapped) else None
+        # The loop condition leaves at least one side to take.
         if left is not None and (right is None or
                                  addr - left[0] <= right[0] - addr):
             picked.append(left)
             lo -= 1
-        elif right is not None:
+        else:
             picked.append(right)
             hi += 1
-        else:
-            break
-    if not picked:
-        return False
     return sum(1 for _, c in picked if c) / len(picked) >= threshold
+
+
+def own_kind(name):
+    """What an unpaired function's own name says, or None when it says nothing.
+
+    An import thunk is `crt_<dll>.c_<Api>`, the one name with no `_FUN_<addr>`
+    suffix. Any other name carries its unit: a `crt_*` unit is runtime code, a
+    game unit is game code. A bare FUN_, a stray label, or a placeholder unit
+    (crt_unknown.c, unkafter_*) is only a position and leaves it to pass 2.
+    """
+    unit = sm.tu_of(name)
+    if not unit or sm.is_placeholder_unit(unit):
+        return None
+    if not sm.ADDR_SUFFIX_RE.search(name):
+        return ("import", name) if unit.startswith("crt_") else None
+    return ("crt_named", name) if unit.startswith("crt_") else ("game", None)
 
 
 def classify(b_img, mapping):
     """func_addr -> ('crt_named'|'crt_region'|'import'|'game', crt_name|None)"""
     by_b = {p["b"]: p for p in mapping["pairs"]}
 
-    # Pass 1: everything the mapping decides directly.
+    # Pass 1: everything the mapping or the function's own name decides.
     out = {}
     unmapped = []
     for f in b_img.functions:
         addr = f["addr"].lower()
         pair = by_b.get(addr)
-        name = f.get("name", "")
+        kind = own_kind(f.get("name", ""))
         if pair and pair["name"].startswith("crt_"):
             out[addr] = ("crt_named", pair["name"])
         elif pair:
             out[addr] = ("game", None)
-        elif not sm.is_unnamed(name):
-            # Ghidra already resolved it: PE import thunks (DirectDrawCreate,
-            # Ordinal_116, ...). Not CRT and not ours to name.
-            out[addr] = ("import", name)
+        elif kind:
+            out[addr] = kind
         else:
             unmapped.append(addr)
 
@@ -110,7 +121,7 @@ def classify(b_img, mapping):
     return out
 
 
-def main():
+def main(argv=None):
     ap = argparse.ArgumentParser(
         description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("mapping", help="output of map_sibling_functions.py")
@@ -119,7 +130,7 @@ def main():
                     help="print every boundary CRT function")
     ap.add_argument("--min-confidence", type=float, default=0.0,
                     help="ignore mapping pairs below this confidence")
-    args = ap.parse_args()
+    args = ap.parse_args(argv)
 
     with open(args.mapping) as fh:
         mapping = json.load(fh)
@@ -160,7 +171,7 @@ def main():
     named = {a: kinds[a][1] for a in boundary if kinds[a][0] == "crt_named"}
     unnamed = sorted(a for a in boundary if kinds[a][0] != "crt_named")
     print(f"\nof the {len(boundary)} boundary functions:")
-    print(f"  {len(named):4d} already carry a CRT name from {mapping['from']}")
+    print(f"  {len(named):4d} already carry a CRT name, from {mapping['from']} or their own")
     print(f"  {len(unnamed):4d} are unidentified   <- the actual manual worklist")
 
     if named:

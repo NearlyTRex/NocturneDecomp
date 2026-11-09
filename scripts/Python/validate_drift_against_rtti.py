@@ -23,14 +23,14 @@ import json
 import os
 import sys
 
-REPO = os.path.dirname(os.path.dirname(os.path.dirname(os.path.realpath(__file__))))
 sys.path.insert(0, os.path.dirname(os.path.realpath(__file__)))
 
 from compare_sibling_struct_sizes import (DeltaModel, load_layouts,
                                           load_type_info_sizes, resolve_layout_alias)
+from emit_struct_drift_spec import backbone
 
 
-def main():
+def main(argv=None):
     parser = argparse.ArgumentParser(description=__doc__,
                                      formatter_class=argparse.RawDescriptionHelpFormatter)
     parser.add_argument("drift")
@@ -38,7 +38,7 @@ def main():
     parser.add_argument("--to-program", default="nocturne.exe")
     parser.add_argument("--only-roots", action="store_true",
                         help="only classes whose own fields changed")
-    args = parser.parse_args()
+    args = parser.parse_args(argv)
 
     with open(args.drift) as handle:
         drift = json.load(handle)
@@ -64,8 +64,6 @@ def main():
     # size and keep only the monotonic backbone. A raw min() over segments picks
     # up whatever global the method also touched -- that is where CDemonActor's
     # "-1000" came from, observed at offsets past 1.3M.
-    from emit_struct_drift_spec import backbone
-
     measured = {}
     for cls, info in drift.get("drift", {}).items():
         size = layouts.get(cls, {}).get("len")     # annotation schema keys it "len"

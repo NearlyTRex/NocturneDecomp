@@ -40,10 +40,7 @@ import re
 import sys
 from collections import Counter, defaultdict
 
-try:
-    from capstone import Cs, CS_ARCH_X86, CS_MODE_32
-except ImportError:
-    sys.exit("capstone is required: pip install capstone")
+from capstone import Cs, CS_ARCH_X86, CS_MODE_32
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
@@ -59,6 +56,9 @@ _CLASS = re.compile(r"_(C[A-Z][A-Za-z0-9]*)_")
 # these; a bare immediate (`cmp eax, 5`) never is, and counting those was what
 # filled the first version's output with one-observation phantom segments.
 _MEMOP = re.compile(r"\[([^\]]*)\]")
+# One signed term of a memory operand: `eax`, `+ ecx*4`, `- 0x10`.
+_TERM = re.compile(r"([+-]?)\s*([^+-]+)")
+_NUMBER = re.compile(r"0x[0-9a-f]+|\d+")
 
 # Displacements plausibly inside an object. Above this and it is an absolute
 # address that happened to fall outside the image, not a field offset.
@@ -66,7 +66,10 @@ MAX_FIELD_OFFSET = 0x200000
 
 
 def _displacements(op_str):
-    """Numeric displacements appearing inside memory operands, in order.
+    """Signed numeric displacements inside memory operands, in order.
+
+    A term is read with its sign, so `[ecx - 0x10]` is -16 rather than +16, and
+    an index scale (`ecx*4`) is not a displacement at all.
 
     Stack-relative operands are excluded. Watcom addresses locals off esp with
     no frame pointer, so `[esp + 0x144]` is a stack slot, not a field -- yet it
@@ -80,7 +83,10 @@ def _displacements(op_str):
     for mem in _MEMOP.findall(op_str):
         if "esp" in mem or "ebp" in mem:
             continue
-        out.extend(_NUM.findall(mem))
+        for sign, term in _TERM.findall(mem):
+            term = term.strip()
+            if _NUMBER.fullmatch(term):
+                out.append(-int(term, 0) if sign == "-" else int(term, 0))
     return out
 
 
@@ -134,14 +140,11 @@ def observe(a_img, b_img, pairs, include_unshifted=False):
             # move" bound every boundary is open-ended on the low side.
             if o1 == o2 and not include_unshifted:
                 continue
-            # Same instruction shape, differing only in literals.
+            # Same instruction shape, differing only in literals -- which also
+            # means both operands hold their displacements in the same places.
             if _NUM.sub("#", o1) != _NUM.sub("#", o2):
                 continue
-            dx, dy = _displacements(o1), _displacements(o2)
-            if len(dx) != len(dy):
-                continue
-            for x, y in zip(dx, dy):
-                vx, vy = int(x, 0), int(y, 0)
+            for vx, vy in zip(_displacements(o1), _displacements(o2)):
                 if vx == vy and not include_unshifted:
                     continue
                 if a_img.is_mapped_va(vx) and b_img.is_mapped_va(vy):
@@ -196,7 +199,7 @@ def segment(counter, min_support=2):
     return segs, purity
 
 
-def main():
+def main(argv=None):
     ap = argparse.ArgumentParser(
         description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("mapping")
@@ -213,7 +216,7 @@ def main():
     ap.add_argument("--class", dest="only", help="detail one class")
     ap.add_argument("-v", "--verbose", action="store_true",
                     help="list every segment, not just the dominant drift")
-    args = ap.parse_args()
+    args = ap.parse_args(argv)
 
     with open(args.mapping) as fh:
         mapping = json.load(fh)

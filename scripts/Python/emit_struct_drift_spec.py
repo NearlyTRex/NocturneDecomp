@@ -60,22 +60,18 @@ def backbone(segments, min_support, size=None):
     floor = max(min_support, int(RELATIVE_SUPPORT * total))
     segs = [s for s in segments if s["support"] >= floor
             and (size is None or s["from_lo"] < size)]
-    if not segs:
-        return [], list(segments)
-    dom, _ = dominant(segs)
-    sign = -1 if dom < 0 else 1
-    segs.sort(key=lambda s: s["from_lo"])
-
-    kept, dropped, cur = [], [], 0
-    for s in segs:
-        d = s["delta"]
-        # Monotonic in the dominant direction, measured from no shift at all.
-        if (sign < 0 and d <= cur) or (sign > 0 and d >= cur):
-            kept.append(s)
-            cur = d
-        else:
-            dropped.append(s)
-    dropped += [s for s in segments if s["support"] < floor]
+    kept, cur = [], 0
+    if segs:
+        dom, _ = dominant(segs)
+        sign = -1 if dom < 0 else 1
+        for s in sorted(segs, key=lambda s: s["from_lo"]):
+            d = s["delta"]
+            # Monotonic in the dominant direction, measured from no shift at all.
+            if (sign < 0 and d <= cur) or (sign > 0 and d >= cur):
+                kept.append(s)
+                cur = d
+    # Everything not kept: reversed direction, too little support, or past the class's end.
+    dropped = [s for s in segments if not any(s is k for k in kept)]
     return kept, dropped
 
 
@@ -145,7 +141,7 @@ def fmt_field(c):
     return f"{c['name'] or '(unnamed)'} : {c['type']} @ {c['off']:#x}"
 
 
-def main():
+def main(argv=None):
     ap = argparse.ArgumentParser(
         description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("drift")
@@ -153,7 +149,7 @@ def main():
     ap.add_argument("-o", "--out", help="write the spec as markdown")
     ap.add_argument("--min-support", type=int, default=3,
                     help="ignore segments with less support (default: 3)")
-    args = ap.parse_args()
+    args = ap.parse_args(argv)
 
     with open(args.drift) as fh:
         drift = json.load(fh)
@@ -171,10 +167,10 @@ def main():
         groups[s["total_shift"]].append(cls)
 
     L = []
-    L.append("# nocturne.exe struct layout corrections")
+    L.append(f"# {drift['to']} struct layout corrections")
     L.append("")
     L.append(f"Derived from {drift['from']} -> {drift['to']} matched method pairs. "
-             "Offsets below are **nocedit's**; the edit makes nocturne's copy.")
+             f"Offsets below are **{drift['from']}'s**; the edit makes {drift['to']}'s copy.")
     L.append("")
     L.append("Boundaries are bracketed, not exact: an offset is only observed "
              "where matched code touched it, so each edit says *between* two "
@@ -202,7 +198,7 @@ def main():
         root = min(members, key=lambda c: specs[c]["nocedit_size"] or 1 << 30)
         s = specs[root]
         L.append(f"Representative: **{root}** "
-                 f"(nocedit {s['nocedit_size']} bytes -> nocturne "
+                 f"({drift['from']} {s['nocedit_size']} bytes -> {drift['to']} "
                  f"{(s['nocedit_size'] or 0) + shift} bytes), "
                  f"{s['observations']} observations over {s['methods']} methods, "
                  f"purity {s['purity']:.2f}.")
@@ -224,7 +220,7 @@ def main():
             L.append("")
             for c in sorted(members):
                 sz = specs[c]["nocedit_size"]
-                L.append(f"- `{c}` (nocedit {sz} bytes, "
+                L.append(f"- `{c}` ({drift['from']} {sz} bytes, "
                          f"{specs[c]['observations']} obs)")
             L.append("")
 

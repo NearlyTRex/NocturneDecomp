@@ -38,10 +38,11 @@ at the name:
                          evidence, by its first address
   unkafter/special.cpp   a gap after a known unit, by that unit
 
-The CRT line is the first CRT function after the last piece of game evidence.
+The CRT line is the CRT function that the fewest labels contradict (crt_line).
 Watcom links the runtime after every game object, so nothing past it is game
 code, and everything there that is still unnamed becomes `crt_unknown.c`, the
-catch-all nocturne already uses.
+catch-all nocturne already uses. A game name past the line is a misnamed
+runtime function: the report lists it for a rename by hand.
 
 Both kinds of placeholder unit are only positions. They are never evidence for
 any later analysis, and every tool that names functions replaces them freely
@@ -82,11 +83,39 @@ def virtual_unit(prev, first):
 
 
 def crt_line(ordered, labels):
-    """Index of the first CRT-labelled function after the last game one, or None."""
-    last_game = max((i for i, a in enumerate(ordered)
-                     if labels.get(a) and not is_crt(labels[a])), default=-1)
-    return next((i for i in range(last_game + 1, len(ordered))
-                 if is_crt(labels.get(ordered[i]))), None)
+    """Index of the CRT-labelled function where the runtime starts, or None.
+
+    The line is the CRT label that the fewest labels contradict: game labels
+    after it plus CRT labels before it. A stray game name deep in the runtime
+    (a short wrapper the sibling mapping matched on shape alone) then costs one
+    contradiction instead of moving the line past every CRT label before it.
+    A tie goes to the later line, which forces the fewest functions into the CRT.
+    The runtime ends the image, so when the last label is game code there is no
+    line, and CRT labels before it are islands.
+    """
+    last = next((labels[a] for a in reversed(ordered) if labels.get(a)), None)
+    if not is_crt(last):
+        return None
+    game_after = sum(1 for u in labels.values() if u and not is_crt(u))
+    best, best_cost, crt_before = None, None, 0
+    for i, a in enumerate(ordered):
+        unit = labels.get(a)
+        if not unit:
+            continue
+        if not is_crt(unit):
+            game_after -= 1
+            continue
+        if best_cost is None or game_after + crt_before <= best_cost:
+            best, best_cost = i, game_after + crt_before
+        crt_before += 1
+    return best
+
+
+def crt_outliers(ordered, labels, line):
+    """Functions past the CRT line that still carry a game unit: misnamed runtime code."""
+    if line is None:
+        return []
+    return [a for a in ordered[line:] if labels.get(a) and not is_crt(labels[a])]
 
 
 def run_unit(start, members, classes, files, bounds, actors):
@@ -440,6 +469,7 @@ def analyse(program, pins_path=None, mapping_paths=()):
                if "%s_FUN_%s" % (unit, a) != names[a]]
     return {"program": program, "functions": len(ordered),
             "crt_line": ordered[line] if line is not None else None,
+            "crt_outliers": [(a, names[a]) for a in crt_outliers(ordered, labels, line)],
             "rows": rows, "renames": renames}
 
 
@@ -451,6 +481,10 @@ def print_report(report, show):
     virtual = Counter(u for _, u, why in report["rows"] if why == "between")
     print("  %d virtual units, largest: %s" % (len(virtual), ", ".join(
         "%s (%d)" % kv for kv in virtual.most_common(5))))
+    if report["crt_outliers"]:
+        print("  game names past the CRT line, to rename by hand: %d" % len(report["crt_outliers"]))
+        for addr, name in report["crt_outliers"]:
+            print("    %s  %s" % (addr, name))
     print("  renames planned: %d" % len(report["renames"]))
     for addr, cur, want, why in report["renames"][:show]:
         print("    %s  %-10s %s -> %s" % (addr, why, cur, want))

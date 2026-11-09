@@ -21,6 +21,7 @@ Run from the repo root:
     python3 scripts/Python/check_stale_keeps.py
 """
 
+import argparse
 import os
 import re
 import sys
@@ -81,40 +82,36 @@ def find_keeps(keep_root):
 
 def check_keep(keep_path, rewrites):
     """Return list of stale rewrites detected in this keep file."""
-    with open(keep_path) as f:
+    with open(keep_path, encoding='utf-8', errors='replace') as f:
         body = f.read()
 
     matches = []
     for r in rewrites:
-        # Build a regex from the `Before:` text:
-        # - Tolerate whitespace differences (multiple spaces, leading/trailing)
-        # - The Before text is a `while (...)` condition — we look for the
-        #   sentinel-comparison shape rather than exact whitespace match.
-        sentinel = r['sentinel']
-        # Direct substring match for the bare sentinel address — covers the
-        # common case `... != (T *)&g_Sentinel)` and `... != &g_Sentinel)`.
-        if '&' + sentinel in body:
-            # Exclude a likely false positive: the .keep happens to mention
-            # the sentinel name in a comment. Require the match be inside
-            # a `while (...)` line.
-            for line in body.split('\n'):
-                if '&' + sentinel in line and 'while' in line:
-                    matches.append(r)
-                    break
+        # The sentinel's address taken in a `while (...)` condition: covers
+        # `... != (T *)&g_Sentinel)` and `... != &g_Sentinel)`. Whole word, so
+        # &g_Pool does not match &g_PoolCount; a mention in a comment is not a
+        # loop condition, so the line must hold a `while`.
+        address_of = re.compile(r'&\s*' + re.escape(r['sentinel']) + r'\b')
+        if any(address_of.search(line) and 'while' in line for line in body.split('\n')):
+            matches.append(r)
     return matches
 
 
-def main():
-    if not os.path.exists(REPORT):
-        print(f'No rewrites report at {REPORT}', file=sys.stderr)
+def main(argv=None):
+    ap = argparse.ArgumentParser(description='Find .keep files that still loop to an adjacency sentinel.')
+    ap.add_argument('--report', default=REPORT, help='adjacency_sentinel_rewrites.md (default: nocedit.exe)')
+    ap.add_argument('--keep-root', default=KEEP_ROOT, help='pseudocode tree to search (default: nocedit.exe)')
+    args = ap.parse_args(argv)
+    if not os.path.exists(args.report):
+        print(f'No rewrites report at {args.report}', file=sys.stderr)
         return 0
 
-    rewrites = parse_rewrites(REPORT)
+    rewrites = parse_rewrites(args.report)
     if not rewrites:
         print('No rewrites parsed from report — nothing to check.')
         return 0
 
-    keeps = find_keeps(KEEP_ROOT)
+    keeps = find_keeps(args.keep_root)
     print(f'Checking {len(keeps)} .keep files against {len(rewrites)} known rewrites...')
 
     stale = {}  # keep_path -> list of stale rewrites

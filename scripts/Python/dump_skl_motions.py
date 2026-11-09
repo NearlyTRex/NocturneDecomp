@@ -60,6 +60,10 @@ def parse(path):
         exit_from, exit_motion, exit_frame = numbers(take())
         exit_cmd, exit_tween, exit_keep = numbers(take())
         back_motion, back_frame = numbers(take())
+        # Version 3 (the Blair Witch engine; Nocturne's own lists are <= 2) stores
+        # each motion's frames at a resolution: one line, named by the file's own
+        # comment `frameResolution, storedFrameCount`.
+        frame_resolution, stored_frames = numbers(take()) if version >= 3 else (1, frame_count)
         transitions = []
         for _ in range(int(take())):
             desired, cmd, to_motion, to_frame, tween, keep = numbers(take())
@@ -76,6 +80,7 @@ def parse(path):
                             exit_frame=exit_frame, exit_cmd=exit_cmd,
                             exit_tween=exit_tween, exit_keep_state=exit_keep,
                             back_motion=back_motion, back_frame=back_frame,
+                            frame_resolution=frame_resolution, stored_frames=stored_frames,
                             transitions=transitions, signals=signals, markers=markers))
     return dict(file=path, version=version, states=states, motions=motions)
 
@@ -96,9 +101,11 @@ def dump(skl):
         out.append("  %3d 0x%02x %s" % (index, index, name))
     out += ["", "Motions:"]
     for m in skl["motions"]:
-        out.append('[%d] "%s" state %d %s, %d frames at %g fps (global %d)'
+        out.append('[%d] "%s" state %d %s, %d frames at %g fps (global %d)%s'
                    % (m["index"], m["name"], m["state"], state_name(skl, m["state"]),
-                      m["frame_count"], m["fps"], m["frame_start"]))
+                      m["frame_count"], m["fps"], m["frame_start"],
+                      "" if m["frame_resolution"] == 1 else ", stored every %d (%d kept)"
+                      % (m["frame_resolution"], m["stored_frames"])))
         out.append('    exit at f%d -> [%d] "%s" f%g, %s %gs%s'
                    % (m["exit_from"], m["exit_motion"], motion_name(skl, m["exit_motion"]),
                       m["exit_frame"], CMD_NAMES.get(m["exit_cmd"], "?"), m["exit_tween"],
@@ -133,13 +140,13 @@ def compact(skl):
     return "\n".join(out)
 
 
-def main():
+def main(argv=None):
     parser = argparse.ArgumentParser(description=__doc__.split("\n")[0])
     parser.add_argument("files", nargs="+", help=".SKL files")
     style = parser.add_mutually_exclusive_group()
     style.add_argument("--json", action="store_true", help="emit JSON")
     style.add_argument("--compact", action="store_true", help="one line per motion")
-    args = parser.parse_args()
+    args = parser.parse_args(argv)
 
     parsed = [parse(path) for path in args.files]
     if args.json:

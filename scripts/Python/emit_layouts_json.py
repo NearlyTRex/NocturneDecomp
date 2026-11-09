@@ -39,13 +39,13 @@ def build_layouts(program):
     return layouts
 
 
-def main():
+def main(argv=None):
     parser = argparse.ArgumentParser(description=__doc__,
                                      formatter_class=argparse.RawDescriptionHelpFormatter)
     parser.add_argument("--program", default="nocedit.exe",
                         help="program whose layouts to emit (default: nocedit.exe)")
     parser.add_argument("-o", "--out", required=True, help="output JSON path")
-    args = parser.parse_args()
+    args = parser.parse_args(argv)
 
     layouts = build_layouts(args.program)
     with open(args.out, "w") as handle:

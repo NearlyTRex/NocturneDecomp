@@ -194,23 +194,19 @@ def resolve(ev, mapping):
     maximum-weight matching would cost far more for the same answer.
     """
     scored = []
-    best_for_a = defaultdict(float)
-    best_for_b = defaultdict(float)
+    for_a, for_b = defaultdict(list), defaultdict(list)
     for (a, b), signals in ev.votes.items():
         if mapping.has_a(a) or mapping.has_b(b):
             continue
         s = fuse(signals)
         scored.append((s, a, b, signals))
-        best_for_a[a] = max(best_for_a[a], s)
-        best_for_b[b] = max(best_for_b[b], s)
+        for_a[a].append((s, b))
+        for_b[b].append((s, a))
 
-    # Track the runner-up on each side so ambiguity can be detected.
-    second_a, second_b = defaultdict(float), defaultdict(float)
-    for s, a, b, _ in scored:
-        if s < best_for_a[a]:
-            second_a[a] = max(second_a[a], s)
-        if s < best_for_b[b]:
-            second_b[b] = max(second_b[b], s)
+    def runner_up(candidates, partner):
+        """Best score among the other candidates. A tie with the winner is the
+        most ambiguous case of all, so it counts in full."""
+        return max((s for s, other in candidates if other != partner), default=0.0)
 
     scored.sort(key=lambda t: -t[0])
     added = 0
@@ -222,8 +218,8 @@ def resolve(ev, mapping):
         # exactly the situation a human resolved by hand; discounting for it
         # would penalise the pair for the reason it was recorded.
         manual = any(sig == "manual" for sig, _ in signals)
-        runner_up = 0.0 if manual else max(second_a[a], second_b[b])
-        ambiguous = runner_up >= AMBIGUITY_RATIO * s
+        rival = 0.0 if manual else max(runner_up(for_a[a], b), runner_up(for_b[b], a))
+        ambiguous = rival >= AMBIGUITY_RATIO * s
         conf = s * (AMBIGUITY_PENALTY if ambiguous else 1.0)
         mapping.add(a, b, conf,
                     [f"{sig}:{det}" if det else sig for sig, det in signals],
@@ -669,6 +665,11 @@ def prop_callsites(ev, a_img, b_img, mapping):
         if not la or not lb or len(la) != len(lb):
             continue
         # Require the already-known entries to agree before trusting the rest.
+        # Only the source side is checked: where the editor calls its debug
+        # allocator (shape_memdbg closeFile, debugFree) the game calls the CRT
+        # directly, so a target callee already matched to the real fclose is a
+        # substitution, not a misalignment. Vetoing on it drops whole aligned
+        # sequences -- 12 correct support_codec/core_dimage pairs in bw1.
         known = [(x, y) for x, y in zip(la, lb) if mapping.has_a(x)]
         if any(mapping.a2b[x] != y for x, y in known):
             continue
@@ -873,7 +874,7 @@ def build_mapping(a_img, b_img, max_rounds=12, verbose=True, use_order=True,
     return mapping, log, editor_only
 
 
-def main():
+def main(argv=None):
     ap = argparse.ArgumentParser(
         description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("--from", dest="a_prog", default="nocedit.exe",
@@ -895,7 +896,7 @@ def main():
     ap.add_argument("--no-ledger", action="store_true",
                     help="ignore the manual pair ledger (for A/B)")
     ap.add_argument("-q", "--quiet", action="store_true")
-    args = ap.parse_args()
+    args = ap.parse_args(argv)
 
     a_img = sm.Image(args.a_prog)
     b_img = sm.Image(args.b_prog)

@@ -20,9 +20,15 @@ Two things make the measurement conservative:
     pass recover it by the very signal being tested, which measures nothing.
     Only the relaxed tier and the forced-order fill are exercised.
 
+Every proposed pair is scored, so a held-out function proposed with two targets
+counts once right and once wrong, and each pair counts once under each distinct
+signal that proposed it.
+
 Usage:
     vtable_holdout_test.py mapping.json
+    vtable_holdout_test.py mapping.json --from nocedit.exe --to bw1.exe
 """
+import argparse
 import json
 import os
 import random
@@ -32,89 +38,91 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import sibling_match as sm
 import map_sibling_functions as msf
 
-if len(sys.argv) != 2:
-    sys.exit(__doc__.strip().splitlines()[-1].strip())
-doc = json.load(open(sys.argv[1]))
-
-truth = {}
-for p in doc["pairs"]:
-    if any(e.startswith("shape_strict") for e in p["evidence"]):
-        truth[p["a"]] = p["b"]
-print(f"exact (shape_strict) pairs available as ground truth: {len(truth)}")
-
-a_img = sm.Image("nocedit.exe")
-b_img = sm.Image("nocturne.exe")
-
-# Restrict the ground truth to functions that actually sit in a vtable slot --
-# the rest are unreachable for this pass and would only deflate recall.
-in_slot_a = {f for t in a_img.vtables for f in msf._vtable_slots(t) if f}
-in_slot_b = {f for t in b_img.vtables for f in msf._vtable_slots(t) if f}
-truth = {a: b for a, b in truth.items() if a in in_slot_a and b in in_slot_b}
-print(f"  of which sit in a vtable slot on both sides: {len(truth)}")
+FRACTIONS = (0.10, 0.20, 0.40)
+SEED = 20260728
 
 
-_real_shapes_for = sm.shapes_for
+def slot_truth(doc, a_img, b_img):
+    """The exact pairs whose two functions both sit in a vtable slot.
 
-# The source side with every strict hash made unique, so no pair can match on
-# the strict tier. Giving each one an unmatchable value rather than removing it
-# keeps the relaxed tier and the forced-order fill behaving exactly as they do
-# in a real run -- dropping the Shape entirely would also disable those.
-_POISONED_A = {a: sm.Shape(f"holdout-{a}", sh.relaxed, sh.consts,
-                           sh.nbytes, sh.ninsn)
-               for a, sh in _real_shapes_for(a_img).items()}
-
-
-def _shapes_without_strict(image, min_bytes=8):
-    if image is a_img:
-        return _POISONED_A
-    return _real_shapes_for(image, min_bytes)
+    The rest are unreachable for this pass and would only deflate recall.
+    """
+    in_slot_a = {f for t in a_img.vtables for f in msf._vtable_slots(t) if f}
+    in_slot_b = {f for t in b_img.vtables for f in msf._vtable_slots(t) if f}
+    return {p["a"]: p["b"] for p in doc["pairs"]
+            if any(e.startswith("shape_strict") for e in p["evidence"])
+            and p["a"] in in_slot_a and p["b"] in in_slot_b}
 
 
-for frac in (0.10, 0.20, 0.40):
-    rng = random.Random(20260728)
-    held = set(rng.sample(sorted(truth), int(len(truth) * frac)))
+def without_strict(a_img):
+    """shapes_for with the source side's strict hashes made unique.
 
+    Giving each one an unmatchable value rather than removing it keeps the
+    relaxed tier and the forced-order fill behaving exactly as they do in a
+    real run -- dropping the Shape entirely would also disable those.
+    """
+    real = sm.shapes_for
+    poisoned = {a: sm.Shape(f"holdout-{a}", sh.relaxed, sh.consts, sh.nbytes, sh.ninsn)
+                for a, sh in real(a_img).items()}
+    return lambda image, min_bytes=8: poisoned if image is a_img else real(image, min_bytes)
+
+
+def holdout(doc, a_img, b_img, truth, frac):
+    """(held, proposals) with `frac` of the slot truth hidden; proposals are (a, b, {signals})."""
+    held = set(random.Random(SEED).sample(sorted(truth), int(len(truth) * frac)))
     mapping = msf.Mapping()
     for p in doc["pairs"]:
-        if p["a"] in held:
-            continue
-        mapping.add(p["a"], p["b"], p["confidence"], p["evidence"])
-
+        if p["a"] not in held:
+            mapping.add(p["a"], p["b"], p["confidence"], p["evidence"])
     ev = msf.Evidence()
-    sm.shapes_for = _shapes_without_strict
+    real = sm.shapes_for
+    sm.shapes_for = without_strict(a_img)
     try:
         msf.prop_vtables(ev, a_img, b_img, mapping)
     finally:
-        sm.shapes_for = _real_shapes_for
+        sm.shapes_for = real
+    return held, [(a, b, {s for s, _ in signals}) for (a, b), signals in sorted(ev.votes.items())]
 
-    proposed = {}
-    for (a, b), signals in ev.votes.items():
-        proposed.setdefault(a, (b, signals))
 
-    hit = sum(1 for a, (b, _) in proposed.items() if a in held and truth[a] == b)
-    miss = sum(1 for a, (b, _) in proposed.items() if a in held and truth[a] != b)
-    unscored = len(proposed) - hit - miss
-    total = hit + miss
-
+def report(frac, held, proposals, truth):
+    scored = [(a, b, sigs, truth[a] == b) for a, b, sigs in proposals if a in held]
+    hit = sum(1 for *_, ok in scored if ok)
+    total = len(scored)
     print(f"\nheld out {frac:.0%} ({len(held)} pairs)")
-    print(f"  re-proposed by vtable matching : {total} "
-          f"({total / max(1, len(held)):.0%} recall)")
+    print(f"  re-proposed by vtable matching : {total} ({total / max(1, len(held)):.0%} recall)")
     print(f"  correct                        : {hit}")
-    print(f"  wrong                          : {miss}")
+    print(f"  wrong                          : {total - hit}")
     if total:
         print(f"  precision                      : {hit / total:.2%}")
-    print(f"  proposals outside the holdout   : {unscored}")
-
+    print(f"  proposals outside the holdout   : {len(proposals) - total}")
     by_sig = {}
-    for a, (b, signals) in proposed.items():
-        if a not in held:
-            continue
-        for s, _ in signals:
-            r = by_sig.setdefault(s, [0, 0])
-            r[truth[a] != b] += 1
+    for _, _, sigs, ok in scored:
+        for s in sigs:
+            by_sig.setdefault(s, [0, 0])[not ok] += 1
     for s, (ok, bad) in sorted(by_sig.items()):
         print(f"    {s:<14} correct {ok:4d}  wrong {bad:4d}")
-    for a, (b, signals) in sorted(proposed.items()):
-        if a in held and truth[a] != b:
-            print(f"    WRONG {a} -> {b} (truth {truth[a]}) "
-                  f"{[s for s, _ in signals]}")
+    for a, b, sigs, ok in scored:
+        if not ok:
+            print(f"    WRONG {a} -> {b} (truth {truth[a]}) {sorted(sigs)}")
+
+
+def main(argv=None):
+    ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
+    ap.add_argument("mapping", help="map_sibling_functions.py output")
+    ap.add_argument("--from", dest="a_prog", default="nocedit.exe")
+    ap.add_argument("--to", dest="b_prog", default="nocturne.exe")
+    args = ap.parse_args(argv)
+    with open(args.mapping) as fh:
+        doc = json.load(fh)
+    exact = sum(1 for p in doc["pairs"] if any(e.startswith("shape_strict") for e in p["evidence"]))
+    print(f"exact (shape_strict) pairs available as ground truth: {exact}")
+    a_img, b_img = sm.Image(args.a_prog), sm.Image(args.b_prog)
+    truth = slot_truth(doc, a_img, b_img)
+    print(f"  of which sit in a vtable slot on both sides: {len(truth)}")
+    for frac in FRACTIONS:
+        held, proposals = holdout(doc, a_img, b_img, truth, frac)
+        report(frac, held, proposals, truth)
+
+
+if __name__ == "__main__":
+    main()

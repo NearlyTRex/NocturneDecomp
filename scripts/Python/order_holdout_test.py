@@ -12,7 +12,9 @@ it would ever have in a real run.
 
 Usage:
     order_holdout_test.py mapping.json
+    order_holdout_test.py mapping.json --from nocedit.exe --to bw1.exe
 """
+import argparse
 import json
 import os
 import random
@@ -22,43 +24,51 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import sibling_match as sm
 import map_sibling_functions as msf
 
-if len(sys.argv) != 2:
-    sys.exit(__doc__.strip().splitlines()[-1].strip())
-doc = json.load(open(sys.argv[1]))
+FRACTIONS = (0.10, 0.20, 0.40)
+SEED = 20260727
 
-truth = {}
-for p in doc["pairs"]:
-    if any(e.startswith("shape_strict") for e in p["evidence"]):
-        truth[p["a"]] = p["b"]
-print(f"exact (shape_strict) pairs available as ground truth: {len(truth)}")
 
-a_img = sm.Image("nocedit.exe")
-b_img = sm.Image("nocturne.exe")
-
-for frac in (0.10, 0.20, 0.40):
-    rng = random.Random(20260727)
-    held = set(rng.sample(sorted(truth), int(len(truth) * frac)))
-
+def holdout(doc, a_img, b_img, frac):
+    """(held, hit, miss, unscored) when `frac` of the exact pairs are hidden from the order pass."""
+    truth = {p["a"]: p["b"] for p in doc["pairs"]
+             if any(e.startswith("shape_strict") for e in p["evidence"])}
+    held = set(random.Random(SEED).sample(sorted(truth), int(len(truth) * frac)))
     mapping = msf.Mapping()
     for p in doc["pairs"]:
-        if p["a"] in held:
-            continue
-        mapping.add(p["a"], p["b"], p["confidence"], p["evidence"])
-
+        if p["a"] not in held:
+            mapping.add(p["a"], p["b"], p["confidence"], p["evidence"])
     ev = msf.Evidence()
     msf.prop_order(ev, a_img, b_img, mapping)
-
-    proposed = {a: b for (a, b) in ev.votes}
-    hit = sum(1 for a, b in proposed.items() if a in held and truth[a] == b)
-    miss = sum(1 for a, b in proposed.items() if a in held and truth[a] != b)
+    proposed = dict(ev.votes)
+    hit = sum(1 for a, b in proposed if a in held and truth[a] == b)
+    miss = sum(1 for a, b in proposed if a in held and truth[a] != b)
     # Pairs proposed for functions that were never held out land outside the
     # ground-truth set entirely, so they are not scoreable either way.
-    unscored = len(proposed) - hit - miss
-    total = hit + miss
-    print(f"\nheld out {frac:.0%} ({len(held)} pairs)")
-    print(f"  re-proposed by order matching : {total} ({total / len(held):.0%} recall)")
-    print(f"  correct                       : {hit}")
-    print(f"  wrong                         : {miss}")
-    if total:
-        print(f"  precision                     : {hit / total:.2%}")
-    print(f"  proposals outside the holdout  : {unscored}")
+    return len(held), hit, miss, len(proposed) - hit - miss
+
+
+def main(argv=None):
+    ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
+    ap.add_argument("mapping", help="map_sibling_functions.py output")
+    ap.add_argument("--from", dest="a_prog", default="nocedit.exe")
+    ap.add_argument("--to", dest="b_prog", default="nocturne.exe")
+    args = ap.parse_args(argv)
+    with open(args.mapping) as fh:
+        doc = json.load(fh)
+    exact = sum(1 for p in doc["pairs"] if any(e.startswith("shape_strict") for e in p["evidence"]))
+    print(f"exact (shape_strict) pairs available as ground truth: {exact}")
+    a_img, b_img = sm.Image(args.a_prog), sm.Image(args.b_prog)
+    for frac in FRACTIONS:
+        held, hit, miss, unscored = holdout(doc, a_img, b_img, frac)
+        total = hit + miss
+        print(f"\nheld out {frac:.0%} ({held} pairs)")
+        print(f"  re-proposed by order matching : {total} ({total / held if held else 0:.0%} recall)")
+        print(f"  correct                       : {hit}")
+        print(f"  wrong                         : {miss}")
+        if total:
+            print(f"  precision                     : {hit / total:.2%}")
+        print(f"  proposals outside the holdout  : {unscored}")
+
+
+if __name__ == "__main__":
+    main()

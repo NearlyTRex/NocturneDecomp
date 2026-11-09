@@ -165,7 +165,8 @@ def merge_extra_pairs(base_path, vt_path, out_path):
         if not a or not b or b in seen_b or a in seen_a:
             continue
         base["pairs"].append(p)
-        seen_a.add(a); seen_b.add(b)
+        seen_a.add(a)
+        seen_b.add(b)
         added += 1
     base["pairs"].sort(key=lambda r: int(r["a"], 16))
 
@@ -182,12 +183,14 @@ def merge_extra_pairs(base_path, vt_path, out_path):
     return added
 
 
-def write_gap_report(b_prog, out_path, quiet):
+def write_gap_report(a_prog, b_prog, mapping_path, out_path, quiet):
     """Regenerate the leftovers report beside the mapping it complements.
 
     The mapping says what matched; this says what did not, and the two go stale
     together -- every newly named function shifts both. Kept here rather than in
-    export_annotations.py so a hand-run refresh refreshes it too.
+    export_annotations.py so a hand-run refresh refreshes it too. The report is
+    of the mapping this run wrote, for the programs it was written for, which an
+    --out or --from away from the defaults would otherwise not be.
 
     Read-only and derived, so a failure is reported and otherwise ignored: the
     mapping is the product of this run and must not be held back by a report.
@@ -195,7 +198,8 @@ def write_gap_report(b_prog, out_path, quiet):
     script = os.path.join(THIS_DIR, "report_sibling_gaps.py")
     if not os.path.exists(script):
         return
-    argv = [sys.executable, "-u", script, "--to", b_prog, "--show", "0"]
+    argv = [sys.executable, "-u", script, "--from", a_prog, "--to", b_prog,
+            "--mapping", mapping_path, "--show", "0"]
     try:
         p = subprocess.run(argv, capture_output=True, text=True,
                            env=dict(os.environ, PYTHONHASHSEED="0"))
@@ -267,7 +271,7 @@ def diff(old, new, show):
             print(f"    ... and {len(rows) - show} more (raise --show)")
 
 
-def main():
+def main(argv=None):
     ap = argparse.ArgumentParser(
         description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("--from", dest="a_prog", default="nocedit.exe")
@@ -300,7 +304,7 @@ def main():
                          "pairs in the actor hierarchy; for debugging only.")
     ap.add_argument("-q", "--quiet", action="store_true",
                     help="suppress stage output unless a stage fails")
-    args = ap.parse_args()
+    args = ap.parse_args(argv)
 
     out = os.path.abspath(args.out) if args.out else canonical_path(args.b_prog)
     os.makedirs(os.path.dirname(out), exist_ok=True)
@@ -386,7 +390,7 @@ def main():
 
         # After the canonical file, never before: the report reads it.
         if not args.no_gap_report:
-            write_gap_report(args.b_prog,
+            write_gap_report(args.a_prog, args.b_prog, out,
                              os.path.join(os.path.dirname(out), "sibling_gaps.txt"),
                              args.quiet)
 
