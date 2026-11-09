@@ -55,6 +55,7 @@ Presets, prerequisites and the Windows, macOS and Arm lanes are in
 | [Progress](docs/progress.md) | Decompilation and compilation charts for every binary |
 | [Ports](docs/ports.md) | Each platform's status, and how to report a test |
 | [Mod support](docs/mod-support.md) | Packages, manifests and the Blair Witch games |
+| [Checksums](docs/checksums.md) | Hashes of the executables, DLLs and PODs, to check your copy |
 | [Building](docs/building.md) | Presets, prerequisites, build commands |
 | [All docs](docs/README.md) | Workflow, ABI, shims, testing, debugging and the rest |
 | [Research](research/README.md) | The investigations: engine, formats, bug hunts and their findings |

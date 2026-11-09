@@ -61,7 +61,9 @@ Still to do:
   signatures per game.
 - Decompiling each game's own units and porting them into the recreation behind its
   `front_end`.
-- Release catalogue entries for each game's retail PODs.
+- Release catalogue entries for each game's retail PODs. Their hashes are already on the
+  [checksums page](checksums.md), but an entry also needs the game's `data/games/` file, front
+  end and loading indicator.
 
 Progress per binary is on the [progress page](progress.md).
 

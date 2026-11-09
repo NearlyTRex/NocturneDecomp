@@ -11,6 +11,7 @@ project is built and worked on.
 | [progress.md](progress.md) | Decompilation and compilation charts for every binary |
 | [ports.md](ports.md) | Each platform's status, and how to report a test |
 | [mod-support.md](mod-support.md) | Packages, manifests and the Blair Witch games |
+| [checksums.md](checksums.md) | Sizes and hashes of every executable, DLL and POD the project was made from |
 | [recreation-itinerary.md](recreation-itinerary.md) | The order the recreation is ported in, and how far it has got |
 | [building.md](building.md) | Presets, prerequisites, the multilib hazard, build commands |
 | [porting.md](porting.md) | Adding a platform: toolchain, platform and dependencies files, and where the shims meet the OS |
