@@ -57,11 +57,12 @@ protected:
                                  {.name = "data\\shared.txt", .data = "startup"}});
         givenPod("ACT1.POD", {{.name = "world\\a.msn", .data = "act1"},
                               {.name = "data\\shared.txt", .data = "act1"}});
-        releases_ = {{.id = "1999-en",
+        releases_ = {{.id = "1999-en-nocturne",
                       .name = "English",
                       .game = "nocturne",
                       .required = {"STARTUP.POD"},
                       .pods = {shipped("STARTUP.POD"), shipped("ACT1.POD")},
+                      .files = {},
                       .content = {}}};
     }
 
@@ -75,7 +76,7 @@ protected:
     }
 
     // As the install has it now.
-    engine::SReleasePod shipped(const std::string &name) {
+    engine::SReleaseFile shipped(const std::string &name) {
         return {.name = name,
                 .size = files_.bytes(name).size(),
                 .xxh3 = engine::hashFile(files_.file_system_, name).value_or("")};

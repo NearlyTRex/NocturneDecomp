@@ -54,6 +54,9 @@ Done so far:
   `carved`, plus `shadow` in Volume 2 and `prye`, `tawiscara` and `zombiepriest` in Volume 3.
 - Per-game differences found so far (menu placement and loading indicator) are already keys in
   the manifest rather than code.
+- Each game's retail install is in `recreation/data/releases.toml`: its PODs, and every loose
+  file and executable it shipped. Each has a `data/games/` file with its title. An install is
+  recognised, then startup stops because this build has no front end for it.
 
 Still to do:
 
@@ -61,9 +64,7 @@ Still to do:
   signatures per game.
 - Decompiling each game's own units and porting them into the recreation behind its
   `front_end`.
-- Release catalogue entries for each game's retail PODs. Their hashes are already on the
-  [checksums page](checksums.md), but an entry also needs the game's `data/games/` file, front
-  end and loading indicator.
+- Each game's front end, loading indicator, menu layout and stories in its `data/games/` file.
 
 Progress per binary is on the [progress page](progress.md).
 

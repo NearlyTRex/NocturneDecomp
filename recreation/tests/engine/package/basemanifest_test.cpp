@@ -45,12 +45,13 @@ protected:
     }
 
     std::vector<SRelease> releases_{
-        {.id = "1999-en",
+        {.id = "1999-en-nocturne",
          .name = "English",
          .game = "nocturne",
          .required = {"A.POD"},
          .pods = {{.name = "A.POD", .size = 7, .xxh3 = std::string(kHashOfPodOne)},
                   {.name = "B.pod", .size = 7, .xxh3 = std::string(kHashOfPodTwo)}},
+         .files = {},
          .content = {.title = {},
                      .front_end = "nocturne",
                      .loading_indicator = {},
@@ -61,12 +62,13 @@ protected:
                      .loading = {},
                      .stories = {},
                      .translations = {}}},
-        {.id = "1999-de",
+        {.id = "1999-de-nocturne",
          .name = "German",
          .game = "nocturne",
          .required = {},
          .pods = {{.name = "A.POD", .size = 7, .xxh3 = std::string(kHashOfPodOne)},
                   {.name = "C.POD", .size = 7, .xxh3 = std::string(kHashOfPodTwo)}},
+         .files = {},
          .content = {}}};
 };
 
@@ -78,7 +80,7 @@ TEST_F(CBaseManifestTest, TheReleasesPodsAreRecordedLastMountedFirst) {
     const SBaseManifest base = make();
     EXPECT_EQ(base.manifest.id, "nocturne");
     EXPECT_EQ(base.manifest.name, "English");
-    EXPECT_EQ(base.manifest.release, "1999-en");
+    EXPECT_EQ(base.manifest.release, "1999-en-nocturne");
     EXPECT_EQ(base.manifest.required, std::vector<std::string>{"A.POD"});
     EXPECT_EQ(base.manifest.pods, (std::vector<SPackagePod>{recorded("b.POD", kHashOfPodTwo),
                                                             recorded("A.POD", kHashOfPodOne)}));
@@ -109,6 +111,26 @@ TEST_F(CBaseManifestTest, TheReleaseMatchedIsTheOneWithTheMostPodsThere) {
     files_.givenFile("A.POD", "POD one");
     files_.givenFile("C.POD", "POD two");
     EXPECT_EQ(make().manifest.name, "German");
+}
+
+// Games on the engine share POD names; the one whose PODs are their shipped size is the match.
+TEST_F(CBaseManifestTest, PodsAtTheirShippedSizeOutweighPodsThatOnlyShareTheName) {
+    files_.givenFile("A.POD", "POD one");
+    files_.givenFile("B.pod", "odd");
+    files_.givenFile("C.POD", "POD two");
+    EXPECT_EQ(make().manifest.name, "German");
+}
+
+// A patched install, no POD its shipped size, is still recognised by its PODs' names.
+TEST_F(CBaseManifestTest, WithNoPodAtItsShippedSizeTheNamesDecide) {
+    files_.givenFile("A.POD", "patched");
+    files_.givenFile("C.POD", "x");
+    EXPECT_EQ(make().manifest.name, "German");
+}
+
+// A POD the file system can't describe counts by its name only.
+TEST_F(CBaseManifestTest, APodWithoutFileInfoCountsByName) {
+    EXPECT_EQ(make(std::vector<std::string>{"A.POD", "C.POD"}).manifest.name, "German");
 }
 
 TEST_F(CBaseManifestTest, ATieGoesToTheReleaseListedFirst) {

@@ -1,13 +1,14 @@
 # The releases of the game this build recognises, by the PODs each shipped: name, size in bytes
 # and XXH3-128 as canonical hex. Without a base manifest the game finds the release its install
 # matches best and writes one from it, recording the release's id. Each release is a [[release]]
-# with an id of its own, year and language first (1999-de, 2000-en-budget), never changed once
-# published. game names the data/games/ file whose content the manifest is written with, and
-# required the PODs the game can't start without.
+# with an id of its own: year, language and game, then anything more (1999-de-nocturne,
+# 2000-en-nocturne-budget), never changed once published. game names the data/games/ file whose content the manifest is written with, and
+# required the PODs the game can't start without. [[release.file]] lists everything else a fresh
+# install had (executable, DLLs, loose data) by its '/'-separated path.
 # scripts/Python/catalog_release.py prints a new release's entry from its install folder.
 
 [[release]]
-id = "1999-en"
+id = "1999-en-nocturne"
 name = "Nocturne (1999, English)"
 game = "nocturne"
 required = ["STARTUP.POD"]
@@ -216,3 +217,626 @@ xxh3 = "c2b7cff399a61389b93d5ec869cf4ea1"
 name = "WWORKS.POD"
 size = 8357404
 xxh3 = "b6a2ed00c138473f49aa182f498d7a02"
+
+[[release]]
+id = "2000-en-blairwitch1"
+name = "Blair Witch Volume I: Rustin Parr (2000, English)"
+game = "blairwitch1"
+required = ["STARTUP.POD"]
+
+[[release.pod]]
+name = "AZCABINSET.POD"
+size = 13693872
+xxh3 = "66ca40206bb2d8574434c932b3770b0d"
+
+[[release.pod]]
+name = "AZLOOPSET.POD"
+size = 29030739
+xxh3 = "ac97851c0968c52548cab352827cdbbe"
+
+[[release.pod]]
+name = "BLAIRENEMY.POD"
+size = 41867987
+xxh3 = "a837bd1d1850b0effebe7d777e6e9b9b"
+
+[[release.pod]]
+name = "BLAIRHERO.POD"
+size = 5066704
+xxh3 = "1b336b56554ca20c70e53c897c4c7b40"
+
+[[release.pod]]
+name = "BLAIRNPC.POD"
+size = 14058040
+xxh3 = "3e28dda9c97b962d01384ac14980b183"
+
+[[release.pod]]
+name = "BURKTOWNSET.POD"
+size = 52043097
+xxh3 = "fad735c97b6acccd2e8f7cc73c4a45c7"
+
+[[release.pod]]
+name = "BWBITMAP.POD"
+size = 12675131
+xxh3 = "caba99a39c22c1e9fcc497d6d7d776a4"
+
+[[release.pod]]
+name = "CHECKINROOMSET.POD"
+size = 6494336
+xxh3 = "0163ff105f40fc484f5dee46bcf42050"
+
+[[release.pod]]
+name = "CHINSIDESET.POD"
+size = 10880573
+xxh3 = "5f28833249c62ba6272bd701edb7e3e2"
+
+[[release.pod]]
+name = "CHOONLOOPSET.POD"
+size = 24737296
+xxh3 = "c25d5c51da2b7c1dc6ff29c33f85e5b1"
+
+[[release.pod]]
+name = "DKPLOOPSET.POD"
+size = 24711846
+xxh3 = "dc52999608f18394ffd74f14b1000dea"
+
+[[release.pod]]
+name = "DNINSIDESET.POD"
+size = 10634284
+xxh3 = "8454d8cfe98fa3cb32354e2d3ae12ad9"
+
+[[release.pod]]
+name = "ENG_DB.POD"
+size = 733034
+xxh3 = "0e1b6549b6fe96bf843508500021f6e8"
+
+[[release.pod]]
+name = "ENGLISH.POD"
+size = 36868965
+xxh3 = "ffccba29a8dd0ef0633986e05d127b7c"
+
+[[release.pod]]
+name = "EXECROOMSET.POD"
+size = 24498639
+xxh3 = "a3b76562a022900663c040c50a5533dc"
+
+[[release.pod]]
+name = "FIELDNOTES.POD"
+size = 9583571
+xxh3 = "2cc6f06c5226f96f75930b6238f983c2"
+
+[[release.pod]]
+name = "Forestmsn.pod"
+size = 5842746
+xxh3 = "b084f96cb46c6d5822122bf746170abf"
+
+[[release.pod]]
+name = "GEN2LOOPSET.POD"
+size = 16959337
+xxh3 = "595eb0bd3483495c56fdbbbbfc9c823a"
+
+[[release.pod]]
+name = "GEN3LOOPSET.POD"
+size = 17285801
+xxh3 = "06ff04771b59e6b069d5cdab427fcd37"
+
+[[release.pod]]
+name = "GENLOOPSET.POD"
+size = 23817716
+xxh3 = "667d6ddea8acec6fed46d8feb97f199b"
+
+[[release.pod]]
+name = "GSTRINSIDESET.POD"
+size = 7417235
+xxh3 = "6e9d7c0c1e30d84b8328012441aa4bbf"
+
+[[release.pod]]
+name = "Hqbwmsn.pod"
+size = 2842890
+xxh3 = "6be065d44020eaddf42b3d90ee37e976"
+
+[[release.pod]]
+name = "HQBWSET.POD"
+size = 25196299
+xxh3 = "8ef12560e955fa43e44d8c8bd7c6accb"
+
+[[release.pod]]
+name = "LIBINSIDESET.POD"
+size = 7593998
+xxh3 = "25f7d8891d3f1810fa813ee2cf9099d2"
+
+[[release.pod]]
+name = "M1INSIDESET.POD"
+size = 7185272
+xxh3 = "ecd265566618d519e751189b067dc9a0"
+
+[[release.pod]]
+name = "M2INSIDESET.POD"
+size = 11341454
+xxh3 = "203dead92046eb7429495cc70c0d9cbb"
+
+[[release.pod]]
+name = "music.pod"
+size = 89122629
+xxh3 = "670bcd9a2f8e56e8b8ed1f1ce4e3f549"
+
+[[release.pod]]
+name = "NEVLOOPSET.POD"
+size = 21565170
+xxh3 = "246044611373b1ab7ccd33d165618c31"
+
+[[release.pod]]
+name = "NEVURGIVNSET.POD"
+size = 21726443
+xxh3 = "7735d5975b3090bf19ef57befe76554f"
+
+[[release.pod]]
+name = "NPINSIDESET.POD"
+size = 9006126
+xxh3 = "c85376635bf305eefcc82f6c0acc511e"
+
+[[release.pod]]
+name = "PARRHOUSESET.POD"
+size = 12956021
+xxh3 = "ece950a3ce067defb071d329c4b8b28d"
+
+[[release.pod]]
+name = "PARRLOOPSET.POD"
+size = 25703972
+xxh3 = "10bafa01dce788a094536b4b31f3b992"
+
+[[release.pod]]
+name = "POINSIDESET.POD"
+size = 3424595
+xxh3 = "b5de64cbd148dde4cae651de0095036c"
+
+[[release.pod]]
+name = "RWHOUSESET.POD"
+size = 23542769
+xxh3 = "64fc0a138e64b8f8ff159f5bd0875815"
+
+[[release.pod]]
+name = "SCHINSIDESET.POD"
+size = 7852403
+xxh3 = "933e66eeb9e1e808ac6b4d07b325c2bd"
+
+[[release.pod]]
+name = "SKELETON.POD"
+size = 14408918
+xxh3 = "ef142da68abed49b96e73963924f4dc1"
+
+[[release.pod]]
+name = "SOUND.POD"
+size = 205137953
+xxh3 = "30e3ba122e1ff8bd7b670033fb36eb43"
+
+[[release.pod]]
+name = "STARTUP.POD"
+size = 42156958
+xxh3 = "2e688f8aab3fa9d0a920c1d17c540692"
+
+[[release.pod]]
+name = "THALLINSIDESET.POD"
+size = 13643555
+xxh3 = "50ff68ac1d56e5a6c6e3f75ed63155f8"
+
+[[release.pod]]
+name = "TOWNLOOPSET.POD"
+size = 26077332
+xxh3 = "f9cacd584389ae87f460e4598745ff9b"
+
+[[release.pod]]
+name = "Townmsn.pod"
+size = 11979163
+xxh3 = "ce6b94f6ff68896835ab4eac9df96beb"
+
+[[release.file]]
+path = "nocturne.exe"
+size = 2380288
+xxh3 = "ad901fa5759aa3347ebcacbd44cb6b93"
+
+[[release.file]]
+path = "README.TXT"
+size = 13705
+xxh3 = "2b6512eef16cd703c9f4e1688f1437f2"
+
+[[release.file]]
+path = "SYSTEM/nocturne.ini"
+size = 1420
+xxh3 = "944208c98590313f4a1d11758601effd"
+
+[[release.file]]
+path = "SYSTEM/RENDER.INI"
+size = 175
+xxh3 = "8c44a96bf17fc7496c4790529b0d7f14"
+
+[[release.file]]
+path = "tridx7.dll"
+size = 112128
+xxh3 = "43ee915d6526af6f99cc8b48e43bea0d"
+
+[[release]]
+id = "2000-en-blairwitch2"
+name = "Blair Witch Volume II: The Legend of Coffin Rock (2000, English)"
+game = "blairwitch2"
+required = ["HH_STARTUP.POD"]
+
+[[release.pod]]
+name = "AWAKENING.POD"
+size = 19531716
+xxh3 = "4c7f7739c676f4f5c03d5457583f96b4"
+
+[[release.pod]]
+name = "BURKTOWN.POD"
+size = 34647450
+xxh3 = "6ae2b250c0255643b6d5ee9fc073fb61"
+
+[[release.pod]]
+name = "BW2_EFFECTS.POD"
+size = 2585997
+xxh3 = "95058d0cf1aece1accbc9a4ed33726cc"
+
+[[release.pod]]
+name = "BW2_ENEMIES.POD"
+size = 19100123
+xxh3 = "7d7586ff1829c5d96f880b94d00bf4c4"
+
+[[release.pod]]
+name = "CAMP.POD"
+size = 24167531
+xxh3 = "401ab55963a0a49a23f6d297e8c9cf47"
+
+[[release.pod]]
+name = "CAVES.POD"
+size = 18963950
+xxh3 = "6a1c9b36fc84a4f3675f71baa8e6b404"
+
+[[release.pod]]
+name = "CEMETERY.POD"
+size = 45746716
+xxh3 = "4d9c5f0ec964e7fcf1c753480db6e896"
+
+[[release.pod]]
+name = "COFF_ROCK.POD"
+size = 48560243
+xxh3 = "7bd8fbf96fd0f1294bff9029b586690e"
+
+[[release.pod]]
+name = "D_TREE_ENEMIES.POD"
+size = 1574205
+xxh3 = "2d3e7702196acf6b02a60ff18e9bcd3b"
+
+[[release.pod]]
+name = "D_TREEMSN.POD"
+size = 1350411
+xxh3 = "2c9596f3e967ff01ab52f20665802716"
+
+[[release.pod]]
+name = "DEATH_TREE.POD"
+size = 22699243
+xxh3 = "d70ff6e346a76ce49df32075c306985c"
+
+[[release.pod]]
+name = "DIRT_ROAD.POD"
+size = 8531677
+xxh3 = "f1fd9236ea7154f4180163890d75c004"
+
+[[release.pod]]
+name = "ENGLISH.POD"
+size = 39327
+xxh3 = "5bf5f8ba14455519a0883db8fc888d8e"
+
+[[release.pod]]
+name = "HH_MUSIC.POD"
+size = 151869598
+xxh3 = "d05a5007e80ce9396754dcbd15e86393"
+
+[[release.pod]]
+name = "HH_SKELETON.POD"
+size = 34029994
+xxh3 = "c0563f36472e13536ea3be4e569cf322"
+
+[[release.pod]]
+name = "HH_SOUNDS.POD"
+size = 145271257
+xxh3 = "1737a981560752d5b10d42e94fb99a9e"
+
+[[release.pod]]
+name = "HH_STARTUP.POD"
+size = 29337266
+xxh3 = "9ccfc5d37a9452c8e807bba8f20eac46"
+
+[[release.pod]]
+name = "HH_VOICES.POD"
+size = 24594122
+xxh3 = "45c0d6b13bc0253de73f1ed8986319de"
+
+[[release.pod]]
+name = "LAZ00.POD"
+size = 395604
+xxh3 = "715015efa38149c5136ebb8b32ead50f"
+
+[[release.pod]]
+name = "Laz63.pod"
+size = 398680
+xxh3 = "de2af16389430503938b8f7ad63e7512"
+
+[[release.pod]]
+name = "LAZ86.POD"
+size = 449064
+xxh3 = "f25638ab4cf7b97f4655d721e0d966d8"
+
+[[release.pod]]
+name = "LAZGHOST.POD"
+size = 749823
+xxh3 = "5a4bd098228ee310eede4133a3e27bb0"
+
+[[release.pod]]
+name = "MAZE.POD"
+size = 70531489
+xxh3 = "182323c0229a16a93d2d946b1b4dfb02"
+
+[[release.pod]]
+name = "PATHS.POD"
+size = 49085721
+xxh3 = "e257ef137e55f7cb38e1fff4f536b418"
+
+[[release.pod]]
+name = "RAVINE.POD"
+size = 24747723
+xxh3 = "9d537ee58c52be226b84fdd43a72d932"
+
+[[release.pod]]
+name = "RR_XING.POD"
+size = 43461150
+xxh3 = "73dff85e41a4a89cd9c73b634bbd0e29"
+
+[[release.pod]]
+name = "Steubhouse.pod"
+size = 24979818
+xxh3 = "74265f4a727e1cd67566a4f50366e760"
+
+[[release.pod]]
+name = "WNDCRKCRSS.POD"
+size = 10442379
+xxh3 = "5a85e4c8a45ff24dcc9312ca46c7ecb5"
+
+[[release.pod]]
+name = "WVRFARM.POD"
+size = 60666702
+xxh3 = "e0b9ce786e4fdfed4556cd6ba3b85f3b"
+
+[[release.file]]
+path = "blairwitch2.exe"
+size = 2352128
+xxh3 = "679d7c9fa733a372ffb16c2cc3aa0687"
+
+[[release.file]]
+path = "credits.txt"
+size = 67
+xxh3 = "e6c1af56c674fb833bc5de6f6d137087"
+
+[[release.file]]
+path = "FFC10.dll"
+size = 126976
+xxh3 = "54e86a57ee3c00da6d27a7b96e1c1adb"
+
+[[release.file]]
+path = "level.lst"
+size = 193
+xxh3 = "4f5ba48a8195d1a899ab3bfbce87377c"
+
+[[release.file]]
+path = "pod.bak.ini"
+size = 411
+xxh3 = "3e0c58fa11c31f24d1d227cd8a75689d"
+
+[[release.file]]
+path = "readme.txt"
+size = 11968
+xxh3 = "d7d1ebb237e5711f5406b8172ff7052f"
+
+[[release.file]]
+path = "skeledit.ini"
+size = 91
+xxh3 = "2871b61c20daf6c540b2549140d7cb46"
+
+[[release.file]]
+path = "SYSTEM/nocturne.ini"
+size = 1629
+xxh3 = "091fc2fa8939422ebee6cb562c72b921"
+
+[[release.file]]
+path = "SYSTEM/RENDER.INI"
+size = 175
+xxh3 = "8c44a96bf17fc7496c4790529b0d7f14"
+
+[[release.file]]
+path = "TRID3D.DLL"
+size = 99328
+xxh3 = "34bc31efa4cbc657c4428a79fc672c32"
+
+[[release.file]]
+path = "tridx6.dll"
+size = 117760
+xxh3 = "2a32ecb107724a10a9dfbb77e96b7300"
+
+[[release.file]]
+path = "tridx7.dll"
+size = 112128
+xxh3 = "43ee915d6526af6f99cc8b48e43bea0d"
+
+[[release.file]]
+path = "TRIGL.DLL"
+size = 73728
+xxh3 = "1b1bbce3a7e3e9affa86d13a94f0172c"
+
+[[release.file]]
+path = "triglide.dll"
+size = 74752
+xxh3 = "da3222d80c1eb3f2fe8f12b5bbc41c1b"
+
+[[release.file]]
+path = "video/opening.avi"
+size = 24656598
+xxh3 = "b60abbd20ad2c2cd9e5f61ec14944037"
+
+[[release.file]]
+path = "WORLD/AWAKENING.TXT"
+size = 1082
+xxh3 = "d8b3a8292683deb77e6060cb22fd8bda"
+
+[[release.file]]
+path = "WORLD/BURKTOWN01.TXT"
+size = 14308
+xxh3 = "cbab4022a26113236441e2572a1ef476"
+
+[[release.file]]
+path = "WORLD/CAMP.TXT"
+size = 2140
+xxh3 = "78606651521a0259e7bb1a0eff1c5ac6"
+
+[[release.file]]
+path = "WORLD/camp2.txt"
+size = 2140
+xxh3 = "78606651521a0259e7bb1a0eff1c5ac6"
+
+[[release.file]]
+path = "WORLD/CEMETARY01.TXT"
+size = 2325
+xxh3 = "c90055e70495008ee92a85a63a5690a0"
+
+[[release.file]]
+path = "WORLD/COFF_ROCK.TXT"
+size = 4740
+xxh3 = "1c1958b42217ac6a914864ca546afe3c"
+
+[[release.file]]
+path = "WORLD/DIRT_ROAD.TXT"
+size = 91
+xxh3 = "a0c83d6dcf5e91100a051e14ef6d8a58"
+
+[[release.file]]
+path = "WORLD/END.TXT"
+size = 309
+xxh3 = "425cf8f77cc356e51ea026e879958ce7"
+
+[[release.file]]
+path = "WORLD/FIELDNOTES.TXT"
+size = 24644
+xxh3 = "a0dcfbfd0e7d08169163a95949de0a31"
+
+[[release.file]]
+path = "WORLD/MZCRKCRSS.TXT"
+size = 7092
+xxh3 = "6497888d97177742fcb4503610eacfd0"
+
+[[release.file]]
+path = "WORLD/PATH1.TXT"
+size = 51
+xxh3 = "0fd0e6563cd81fe9b421cda91994bd9a"
+
+[[release.file]]
+path = "WORLD/PATH2.TXT"
+size = 51
+xxh3 = "0fd0e6563cd81fe9b421cda91994bd9a"
+
+[[release.file]]
+path = "WORLD/RAVINE01.TXT"
+size = 991
+xxh3 = "e09ad8c9e329a4112593de40bc81363c"
+
+[[release.file]]
+path = "WORLD/RR_XING.TXT"
+size = 6097
+xxh3 = "ed12bc894d16fd71a197fc5e072ed6da"
+
+[[release.file]]
+path = "WORLD/STEUB_HOUSE01.TXT"
+size = 866
+xxh3 = "563171d72a291e18f9a6cce42628ce60"
+
+[[release.file]]
+path = "WORLD/TUTNOTES.TXT"
+size = 1153
+xxh3 = "16488d7c27aee95a344100e8ba29caa3"
+
+[[release.file]]
+path = "WORLD/WVRFARM.TXT"
+size = 12801
+xxh3 = "3b4876a67b5d76682ac452d2418250a2"
+
+[[release]]
+id = "2000-en-blairwitch3"
+name = "Blair Witch Volume III: The Elly Kedward Tale (2000, English)"
+game = "blairwitch3"
+required = ["STARTUP.POD"]
+
+[[release.pod]]
+name = "BWBITMAP.POD"
+size = 9226502
+xxh3 = "fce7062534d6cabdffa401c36697a314"
+
+[[release.pod]]
+name = "BWV3.POD"
+size = 875299135
+xxh3 = "1d9c5571fddd984dbb7d58bcf0a0e0c7"
+
+[[release.pod]]
+name = "English.pod"
+size = 25859256
+xxh3 = "68b563b8134e72065ffcf2484b4aa6d8"
+
+[[release.pod]]
+name = "FIELDNOTES.POD"
+size = 9645783
+xxh3 = "e3e42ca262caa1472e6ff44eddd694d9"
+
+[[release.pod]]
+name = "music.pod"
+size = 15639864
+xxh3 = "14b7a54a81a28df941710089c0e2fe94"
+
+[[release.pod]]
+name = "SOUND.POD"
+size = 52981921
+xxh3 = "79e72ea24cc46d0f2480cefd4b8a252b"
+
+[[release.pod]]
+name = "STARTUP.POD"
+size = 42166577
+xxh3 = "ca2273b92e4aee218b1d08340ff7d289"
+
+[[release.pod]]
+name = "WORLD.POD"
+size = 8073881
+xxh3 = "0da524ba5fab3bfacedd6e2e5ceeba79"
+
+[[release.file]]
+path = "bw3.exe"
+size = 2250240
+xxh3 = "7e707386879f4f9473bd4b899fae20eb"
+
+[[release.file]]
+path = "ITEMLIST.TXT"
+size = 2927
+xxh3 = "929c18a61c9b3b2c350e0cf91a3c23a3"
+
+[[release.file]]
+path = "README.doc"
+size = 47104
+xxh3 = "7ac1e4d81d5175568c41f441978cf054"
+
+[[release.file]]
+path = "SYSTEM/bw3.ini"
+size = 0
+xxh3 = "99aa06d3014798d86001c324468d497f"
+
+[[release.file]]
+path = "SYSTEM/render.ini"
+size = 174
+xxh3 = "f428af2b810259effc5a9dd5bbd00ccd"
+
+[[release.file]]
+path = "tridx7.dll"
+size = 112128
+xxh3 = "72a89ab105a117fa633149c4ffb1cd3b"

@@ -4,6 +4,7 @@
 #include <gmock/gmock.h>
 #include <gtest/gtest.h>
 
+#include <algorithm>
 #include <array>
 #include <expected>
 #include <format>
@@ -20,7 +21,7 @@ constexpr std::string_view kFullManifest = R"(
 id = "story.extra"
 name = "Extra Story"
 version = "1.2"
-release = "1999-en"
+release = "1999-en-nocturne"
 requires = ["nocturne"]
 required = ["EXTRA.POD"]
 
@@ -38,7 +39,7 @@ SPackageManifest fullManifest() {
     return {.id = "story.extra",
             .name = "Extra Story",
             .version = "1.2",
-            .release = "1999-en",
+            .release = "1999-en-nocturne",
             .dependencies = {"nocturne"},
             .required = {"EXTRA.POD"},
             .pods = {{.path = "data/EXTRA.POD",
@@ -180,16 +181,17 @@ TEST(ReleaseCatalog, TheCompiledInCatalogueKnowsTheEnglishRelease) {
     const std::expected<std::vector<SRelease>, std::string> catalog =
         parseReleaseCatalog(getReleaseCatalogText());
     ASSERT_TRUE(catalog.has_value()) << catalog.error();
-    ASSERT_EQ(catalog->size(), 1U);
+    // Nocturne first, so it wins a tie in recognising an install
+    ASSERT_FALSE(catalog->empty());
     const SRelease &english = catalog->front();
-    EXPECT_EQ(english.id, "1999-en");
+    EXPECT_EQ(english.id, "1999-en-nocturne");
     EXPECT_EQ(english.name, "Nocturne (1999, English)");
     EXPECT_EQ(english.required, std::vector<std::string>{"STARTUP.POD"});
     EXPECT_EQ(english.pods.size(), 41U);
     EXPECT_THAT(english.pods,
-                ::testing::Contains(SReleasePod{.name = "STARTUP.POD",
-                                                .size = 30025625,
-                                                .xxh3 = "408d46be88e10bf5e93ea6aecc4ae673"}));
+                ::testing::Contains(SReleaseFile{.name = "STARTUP.POD",
+                                                 .size = 30025625,
+                                                 .xxh3 = "408d46be88e10bf5e93ea6aecc4ae673"}));
 }
 
 // A release's head, then its PODs.
@@ -209,8 +211,16 @@ std::string release(std::string_view rest) {
 TEST(ReleaseCatalog, LoadingTheCatalogueGivesItsReleasesAndABrokenOneIsFatal) {
     const std::vector<SRelease> releases =
         loadReleaseCatalog(getReleaseCatalogText(), getEmbeddedGames());
-    ASSERT_EQ(releases.size(), 1U);
-    EXPECT_EQ(releases.front().content.front_end, "nocturne");
+    ASSERT_FALSE(releases.empty());
+    for (const SRelease &release : releases) {
+        EXPECT_EQ(release.content.front_end, release.game) << release.id;
+    }
+    const auto coffin_rock = std::ranges::find(releases, "2000-en-blairwitch2", &SRelease::id);
+    ASSERT_NE(coffin_rock, releases.end());
+    EXPECT_THAT(coffin_rock->files,
+                ::testing::Contains(SReleaseFile{.name = "credits.txt",
+                                                 .size = 67,
+                                                 .xxh3 = "e6c1af56c674fb833bc5de6f6d137087"}));
     EXPECT_THAT([] { static_cast<void>(loadReleaseCatalog("version = 1", {})); },
                 ::testing::ThrowsMessage<common::CFatalError>(
                     ::testing::StrEq("releases.toml: version: not a key this file takes")));
@@ -238,11 +248,11 @@ TEST(ReleaseCatalog, AReleaseNeedsAPlainIdANameAndAGame) {
     EXPECT_EQ(catalogErrorOf("[[release]]\nname = \"A\""), "release 1: id: missing");
     EXPECT_EQ(catalogErrorOf("[[release]]\nid = \"1999 en\"\nname = \"A\""),
               "release 1: id: only letters, digits, '.', '_' and '-'");
-    EXPECT_EQ(catalogErrorOf("[[release]]\nid = \"1999-en\"\nrequired = []"),
+    EXPECT_EQ(catalogErrorOf("[[release]]\nid = \"1999-en-nocturne\"\nrequired = []"),
               "release 1: name: missing");
-    EXPECT_EQ(catalogErrorOf("[[release]]\nid = \"1999-en\"\nname = \"A\""),
+    EXPECT_EQ(catalogErrorOf("[[release]]\nid = \"1999-en-nocturne\"\nname = \"A\""),
               "release 1: game: missing");
-    EXPECT_EQ(catalogErrorOf("[[release]]\nid = \"1999-en\"\nname = \"A\"\ngame = \"g\"\n"
+    EXPECT_EQ(catalogErrorOf("[[release]]\nid = \"1999-en-nocturne\"\nname = \"A\"\ngame = \"g\"\n"
                              "required = 1"),
               "release 1: required: not a list");
 }
@@ -251,14 +261,46 @@ TEST(ReleaseCatalog, NoTwoReleasesShareAnId) {
     EXPECT_EQ(catalogErrorOf(release(kRelease)), "release 2: id: 1999-xx is another release's");
     EXPECT_EQ(
         parseReleaseCatalog(release("[[release]]\nid = \"1999-yy\"\nname = \"B\"\ngame = \"h\"\n")),
-        (std::vector<SRelease>{
-            {.id = "1999-xx", .name = "A", .game = "g", .required = {}, .pods = {}, .content = {}},
-            {.id = "1999-yy",
-             .name = "B",
-             .game = "h",
-             .required = {},
-             .pods = {},
-             .content = {}}}));
+        (std::vector<SRelease>{{.id = "1999-xx",
+                                .name = "A",
+                                .game = "g",
+                                .required = {},
+                                .pods = {},
+                                .files = {},
+                                .content = {}},
+                               {.id = "1999-yy",
+                                .name = "B",
+                                .game = "h",
+                                .required = {},
+                                .pods = {},
+                                .files = {},
+                                .content = {}}}));
+}
+
+// A loose file is recorded by its path in the install, as a POD is by its name.
+TEST(ReleaseCatalog, ALooseFileIsRecordedByItsPath) {
+    const std::expected<std::vector<SRelease>, std::string> catalog =
+        parseReleaseCatalog(std::format(
+            "{}[[release.file]]\npath = \"WORLD/CAMP.TXT\"\nsize = 2140\n{}", kRelease, kAnyHash));
+    ASSERT_TRUE(catalog.has_value()) << catalog.error();
+    EXPECT_EQ(
+        catalog->front().files,
+        (std::vector<SReleaseFile>{
+            {.name = "WORLD/CAMP.TXT", .size = 2140, .xxh3 = "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"}}));
+}
+
+TEST(ReleaseCatalog, ALooseFilesPathStaysInsideTheInstall) {
+    for (const std::string_view path : {"/abs.txt", "C:/x.txt", "../up.txt", "a/../b", "a\\\\b"}) {
+        EXPECT_EQ(catalogErrorOf(std::format("{}[[release.file]]\npath = \"{}\"\nsize = 1\n{}",
+                                             kRelease, path, kAnyHash)),
+                  "release 1: file 1: path: not a '/'-separated path inside the install")
+            << path;
+    }
+    EXPECT_EQ(catalogErrorOf(std::format("{}[[release.file]]\nname = \"a\"\nsize = 1\n{}", kRelease,
+                                         kAnyHash)),
+              "release 1: file 1: name: not a key this file takes");
+    EXPECT_EQ(catalogErrorOf(release("file = 1")),
+              "release 1: file: not a list of [[file]] tables");
 }
 
 TEST(ReleaseCatalog, EachPodNeedsItsNameSizeAndHash) {
