@@ -10,18 +10,7 @@
 // Ghidra size: 0xc (12 bytes)
 #pragma pack(push, 1)
 typedef struct CFilterFX {
-    undefined1 field_0; // 0x0
-    undefined1 field_1; // 0x1
-    undefined1 field_2; // 0x2
-    undefined1 field_3; // 0x3
-    undefined1 field_4; // 0x4
-    undefined1 field_5; // 0x5
-    undefined1 field_6; // 0x6
-    undefined1 field_7; // 0x7
-    undefined1 field_8; // 0x8
-    undefined1 field_9; // 0x9
-    undefined1 field_10; // 0xa
-    undefined1 field_11; // 0xb
+    char field_0[12]; // 0x0
 } CFilterFX;
 #pragma pack(pop)
 

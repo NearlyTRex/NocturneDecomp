@@ -13,13 +13,7 @@
 typedef struct SGameSettingsPlayer {
     char name[20]; // 0x0
     SNetworkAddr addr; // 0x14
-    undefined1 field_21; // 0x15
-    undefined1 field_22; // 0x16
-    undefined1 field_23; // 0x17
-    undefined1 field_24; // 0x18
-    undefined1 field_25; // 0x19
-    undefined1 field_26; // 0x1a
-    undefined1 field_27; // 0x1b
+    char field_21[7]; // 0x15
     EHeroType hero_number; // 0x1c
     uint aim_mode; // 0x20
     int ready_flag; // 0x24

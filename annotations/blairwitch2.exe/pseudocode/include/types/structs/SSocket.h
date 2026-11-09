@@ -10,10 +10,7 @@
 // Ghidra size: 0x4 (4 bytes)
 #pragma pack(push, 1)
 typedef struct SSocket {
-    undefined1 field_0; // 0x0
-    undefined1 field_1; // 0x1
-    undefined1 field_2; // 0x2
-    undefined1 field_3; // 0x3
+    char field_0[4]; // 0x0
 } SSocket;
 #pragma pack(pop)
 

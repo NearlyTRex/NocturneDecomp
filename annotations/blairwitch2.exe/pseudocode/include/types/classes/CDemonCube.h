@@ -10,58 +10,7 @@
 // Ghidra size: 0x34 (52 bytes)
 #pragma pack(push, 1)
 typedef struct CDemonCube {
-    undefined1 field_0; // 0x0
-    undefined1 field_1; // 0x1
-    undefined1 field_2; // 0x2
-    undefined1 field_3; // 0x3
-    undefined1 field_4; // 0x4
-    undefined1 field_5; // 0x5
-    undefined1 field_6; // 0x6
-    undefined1 field_7; // 0x7
-    undefined1 field_8; // 0x8
-    undefined1 field_9; // 0x9
-    undefined1 field_10; // 0xa
-    undefined1 field_11; // 0xb
-    undefined1 field_12; // 0xc
-    undefined1 field_13; // 0xd
-    undefined1 field_14; // 0xe
-    undefined1 field_15; // 0xf
-    undefined1 field_16; // 0x10
-    undefined1 field_17; // 0x11
-    undefined1 field_18; // 0x12
-    undefined1 field_19; // 0x13
-    undefined1 field_20; // 0x14
-    undefined1 field_21; // 0x15
-    undefined1 field_22; // 0x16
-    undefined1 field_23; // 0x17
-    undefined1 field_24; // 0x18
-    undefined1 field_25; // 0x19
-    undefined1 field_26; // 0x1a
-    undefined1 field_27; // 0x1b
-    undefined1 field_28; // 0x1c
-    undefined1 field_29; // 0x1d
-    undefined1 field_30; // 0x1e
-    undefined1 field_31; // 0x1f
-    undefined1 field_32; // 0x20
-    undefined1 field_33; // 0x21
-    undefined1 field_34; // 0x22
-    undefined1 field_35; // 0x23
-    undefined1 field_36; // 0x24
-    undefined1 field_37; // 0x25
-    undefined1 field_38; // 0x26
-    undefined1 field_39; // 0x27
-    undefined1 field_40; // 0x28
-    undefined1 field_41; // 0x29
-    undefined1 field_42; // 0x2a
-    undefined1 field_43; // 0x2b
-    undefined1 field_44; // 0x2c
-    undefined1 field_45; // 0x2d
-    undefined1 field_46; // 0x2e
-    undefined1 field_47; // 0x2f
-    undefined1 field_48; // 0x30
-    undefined1 field_49; // 0x31
-    undefined1 field_50; // 0x32
-    undefined1 field_51; // 0x33
+    char field_0[52]; // 0x0
 } CDemonCube;
 #pragma pack(pop)
 

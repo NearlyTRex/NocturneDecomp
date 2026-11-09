@@ -10,30 +10,7 @@
 // Ghidra size: 0x18 (24 bytes)
 #pragma pack(push, 1)
 typedef struct COutStreamMemory {
-    undefined1 field_0; // 0x0
-    undefined1 field_1; // 0x1
-    undefined1 field_2; // 0x2
-    undefined1 field_3; // 0x3
-    undefined1 field_4; // 0x4
-    undefined1 field_5; // 0x5
-    undefined1 field_6; // 0x6
-    undefined1 field_7; // 0x7
-    undefined1 field_8; // 0x8
-    undefined1 field_9; // 0x9
-    undefined1 field_10; // 0xa
-    undefined1 field_11; // 0xb
-    undefined1 field_12; // 0xc
-    undefined1 field_13; // 0xd
-    undefined1 field_14; // 0xe
-    undefined1 field_15; // 0xf
-    undefined1 field_16; // 0x10
-    undefined1 field_17; // 0x11
-    undefined1 field_18; // 0x12
-    undefined1 field_19; // 0x13
-    undefined1 field_20; // 0x14
-    undefined1 field_21; // 0x15
-    undefined1 field_22; // 0x16
-    undefined1 field_23; // 0x17
+    char field_0[24]; // 0x0
 } COutStreamMemory;
 #pragma pack(pop)
 

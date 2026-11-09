@@ -10,22 +10,7 @@
 // Ghidra size: 0x10 (16 bytes)
 #pragma pack(push, 1)
 typedef struct STrainNoise {
-    undefined1 field_0; // 0x0
-    undefined1 field_1; // 0x1
-    undefined1 field_2; // 0x2
-    undefined1 field_3; // 0x3
-    undefined1 field_4; // 0x4
-    undefined1 field_5; // 0x5
-    undefined1 field_6; // 0x6
-    undefined1 field_7; // 0x7
-    undefined1 field_8; // 0x8
-    undefined1 field_9; // 0x9
-    undefined1 field_10; // 0xa
-    undefined1 field_11; // 0xb
-    undefined1 field_12; // 0xc
-    undefined1 field_13; // 0xd
-    undefined1 field_14; // 0xe
-    undefined1 field_15; // 0xf
+    char field_0[16]; // 0x0
 } STrainNoise;
 #pragma pack(pop)
 

@@ -10,7 +10,7 @@
 // Ghidra size: 0x1 (1 bytes)
 #pragma pack(push, 1)
 typedef struct CEditorTools {
-    undefined1 field_0; // 0x0
+    char field_0[1]; // 0x0
 } CEditorTools;
 #pragma pack(pop)
 

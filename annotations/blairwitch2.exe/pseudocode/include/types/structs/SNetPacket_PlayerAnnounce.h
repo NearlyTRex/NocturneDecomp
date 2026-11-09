@@ -13,18 +13,9 @@
 #pragma pack(push, 1)
 typedef struct SNetPacket_PlayerAnnounce {
     SNetPacketHeader header; // 0x0
-    undefined1 field_1; // 0x1
-    undefined1 field_2; // 0x2
-    undefined1 field_3; // 0x3
-    undefined1 field_4; // 0x4
+    char field_1[4]; // 0x1
     SNetworkAddr addr; // 0x5
-    undefined1 field_6; // 0x6
-    undefined1 field_7; // 0x7
-    undefined1 field_8; // 0x8
-    undefined1 field_9; // 0x9
-    undefined1 field_10; // 0xa
-    undefined1 field_11; // 0xb
-    undefined1 field_12; // 0xc
+    char field_6[7]; // 0x6
     char name[20]; // 0xd
     EHeroType hero_number; // 0x21
     int aim_mode; // 0x25
