@@ -168,20 +168,13 @@ TomlResult<SPackageManifest> readPackageManifest(const toml::table &table) {
     return manifest;
 }
 
-// A POD by its name, or with name_key "path" a loose file by its '/'-separated path in the install.
-TomlResult<SReleaseFile> readReleaseFile(const toml::table &table, std::string_view where,
-                                         std::string_view name_key) {
-    if (TomlResult<void> keys = rejectUnknownKeys(table, where, {name_key, "size", "xxh3"});
-        !keys) {
+TomlResult<SReleaseFile> readReleasePod(const toml::table &table, std::string_view where) {
+    if (TomlResult<void> keys = rejectUnknownKeys(table, where, {"name", "size", "xxh3"}); !keys) {
         return std::unexpected(keys.error());
     }
-    TomlResult<std::string> name = readRequiredString(table, where, name_key);
+    TomlResult<std::string> name = readRequiredString(table, where, "name");
     if (!name) {
         return std::unexpected(name.error());
-    }
-    if (name_key == "path" && (name->contains('\\') || !isPackagePath(*name))) {
-        return std::unexpected(
-            std::format("{}path: not a '/'-separated path inside the install", where));
     }
     const TomlResult<std::optional<std::uint64_t>> size = readSize(table, where);
     if (!size) {
@@ -197,19 +190,48 @@ TomlResult<SReleaseFile> readReleaseFile(const toml::table &table, std::string_v
     return SReleaseFile{.name = std::move(*name), .size = **size, .xxh3 = std::move(*hash)};
 }
 
-// The release's [[release.<kind>]] tables.
-TomlResult<std::vector<SReleaseFile>> readReleaseFiles(const toml::table &table,
-                                                       std::string_view where,
-                                                       std::string_view kind,
-                                                       std::string_view name_key) {
+// A size and a hash together, or neither for a file the game rewrites.
+TomlResult<SReleaseLooseFile> readLooseFile(const toml::table &table, std::string_view where) {
+    if (TomlResult<void> keys = rejectUnknownKeys(table, where, {"path", "size", "xxh3"}); !keys) {
+        return std::unexpected(keys.error());
+    }
+    TomlResult<std::string> path = readRequiredString(table, where, "path");
+    if (!path) {
+        return std::unexpected(path.error());
+    }
+    if (path->contains('\\') || !isPackagePath(*path)) {
+        return std::unexpected(
+            std::format("{}path: not a '/'-separated path inside the install", where));
+    }
+    const TomlResult<std::optional<std::uint64_t>> size = readSize(table, where);
+    if (!size) {
+        return std::unexpected(size.error());
+    }
+    if (!*size && !table.contains("xxh3")) {
+        return SReleaseLooseFile{.path = std::move(*path), .size = {}, .xxh3 = {}};
+    }
+    if (!*size) {
+        return std::unexpected(std::format("{}size: missing", where));
+    }
+    TomlResult<std::string> hash = readHash(table, where);
+    if (!hash) {
+        return std::unexpected(hash.error());
+    }
+    return SReleaseLooseFile{.path = std::move(*path), .size = *size, .xxh3 = std::move(*hash)};
+}
+
+// The release's [[release.<kind>]] tables, each read by read.
+template <typename T>
+TomlResult<std::vector<T>>
+readReleaseFiles(const toml::table &table, std::string_view where, std::string_view kind,
+                 TomlResult<T> (*read)(const toml::table &, std::string_view)) {
     const TomlResult<std::vector<const toml::table *>> tables = readTables(table, where, kind);
     if (!tables) {
         return std::unexpected(tables.error());
     }
-    std::vector<SReleaseFile> files;
+    std::vector<T> files;
     for (std::size_t i = 0; i < tables->size(); ++i) {
-        TomlResult<SReleaseFile> file =
-            readReleaseFile(*(*tables)[i], std::format("{}{} {}: ", where, kind, i + 1), name_key);
+        TomlResult<T> file = read(*(*tables)[i], std::format("{}{} {}: ", where, kind, i + 1));
         if (!file) {
             return std::unexpected(file.error());
         }
@@ -240,11 +262,13 @@ TomlResult<SRelease> readRelease(const toml::table &table, std::string_view wher
     if (!required) {
         return std::unexpected(required.error());
     }
-    TomlResult<std::vector<SReleaseFile>> pods = readReleaseFiles(table, where, "pod", "name");
+    TomlResult<std::vector<SReleaseFile>> pods =
+        readReleaseFiles(table, where, "pod", &readReleasePod);
     if (!pods) {
         return std::unexpected(pods.error());
     }
-    TomlResult<std::vector<SReleaseFile>> files = readReleaseFiles(table, where, "file", "path");
+    TomlResult<std::vector<SReleaseLooseFile>> files =
+        readReleaseFiles(table, where, "file", &readLooseFile);
     if (!files) {
         return std::unexpected(files.error());
     }

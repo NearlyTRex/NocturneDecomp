@@ -217,10 +217,12 @@ TEST(ReleaseCatalog, LoadingTheCatalogueGivesItsReleasesAndABrokenOneIsFatal) {
     }
     const auto coffin_rock = std::ranges::find(releases, "2000-en-blairwitch2", &SRelease::id);
     ASSERT_NE(coffin_rock, releases.end());
-    EXPECT_THAT(coffin_rock->files,
-                ::testing::Contains(SReleaseFile{.name = "credits.txt",
-                                                 .size = 67,
-                                                 .xxh3 = "e6c1af56c674fb833bc5de6f6d137087"}));
+    EXPECT_THAT(
+        coffin_rock->files,
+        ::testing::IsSupersetOf(
+            {SReleaseLooseFile{
+                 .path = "credits.txt", .size = 67, .xxh3 = "e6c1af56c674fb833bc5de6f6d137087"},
+             SReleaseLooseFile{.path = "SYSTEM/nocturne.ini", .size = {}, .xxh3 = {}}}));
     EXPECT_THAT([] { static_cast<void>(loadReleaseCatalog("version = 1", {})); },
                 ::testing::ThrowsMessage<common::CFatalError>(
                     ::testing::StrEq("releases.toml: version: not a key this file takes")));
@@ -285,8 +287,29 @@ TEST(ReleaseCatalog, ALooseFileIsRecordedByItsPath) {
     ASSERT_TRUE(catalog.has_value()) << catalog.error();
     EXPECT_EQ(
         catalog->front().files,
-        (std::vector<SReleaseFile>{
-            {.name = "WORLD/CAMP.TXT", .size = 2140, .xxh3 = "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"}}));
+        (std::vector<SReleaseLooseFile>{
+            {.path = "WORLD/CAMP.TXT", .size = 2140, .xxh3 = "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"}}));
+}
+
+// A file the game rewrites, such as its INI, is recorded by its path alone.
+TEST(ReleaseCatalog, ALooseFileMayHaveNeitherSizeNorHash) {
+    const std::expected<std::vector<SRelease>, std::string> catalog =
+        parseReleaseCatalog(release("[[release.file]]\npath = \"SYSTEM/nocturne.ini\"\n"));
+    ASSERT_TRUE(catalog.has_value()) << catalog.error();
+    EXPECT_EQ(
+        catalog->front().files,
+        (std::vector<SReleaseLooseFile>{{.path = "SYSTEM/nocturne.ini", .size = {}, .xxh3 = {}}}));
+}
+
+TEST(ReleaseCatalog, ALooseFilesSizeAndHashComeTogether) {
+    EXPECT_EQ(catalogErrorOf(release(std::format("[[release.file]]\npath = \"a\"\n{}", kAnyHash))),
+              "release 1: file 1: size: missing");
+    EXPECT_EQ(catalogErrorOf(release("[[release.file]]\npath = \"a\"\nsize = 1")),
+              "release 1: file 1: xxh3: not 32 lower-case hex digits");
+    EXPECT_EQ(catalogErrorOf(release("[[release.file]]\npath = \"a\"\nsize = -1")),
+              "release 1: file 1: size: below zero");
+    EXPECT_EQ(catalogErrorOf(release("[[release.file]]\nsize = 1")),
+              "release 1: file 1: path: missing");
 }
 
 TEST(ReleaseCatalog, ALooseFilesPathStaysInsideTheInstall) {
