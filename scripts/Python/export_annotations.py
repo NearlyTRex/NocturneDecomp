@@ -34,6 +34,7 @@
 #   all              - Export everything (default)
 #   data_types       - Data type definitions
 #   functions        - Function signatures
+#   call_overrides   - Per-call-site signature overrides
 #   comments         - Code comments
 #   bookmarks        - Bookmarks
 #   applied_arrays   - Applied array types
@@ -54,7 +55,9 @@
 #   metadata         - Program metadata
 #   type_info        - Type info
 #   vtables          - Virtual tables
-#   recreation       - Source-recreation input (needs vtables exported first)
+#   switch_tables    - Switch jump tables
+#   code_caves       - Code caves marked by CreateCodeCave.java
+#   recreation      - Source-recreation input (needs vtables exported first)
 #   pseudocode       - Decompiled pseudocode
 #
 #@author NearlyTRex
@@ -65,20 +68,18 @@ import sys
 import argparse
 import subprocess
 
-# Add library path
-this_dir = os.path.dirname(os.path.abspath(__file__))
-if this_dir not in sys.path:
-    sys.path.insert(0, this_dir)
-
-# Category names (for help text before PyGhidra starts)
+# Every category, in the order a full export runs them: recreation reads the
+# exported vtables, and pseudocode goes last. Known before PyGhidra starts, so a
+# mistyped category fails before the JVM is up.
 CATEGORY_NAMES = [
-    "data_types", "functions", "comments", "bookmarks",
+    "data_types", "functions", "call_overrides", "comments", "bookmarks",
     "applied_arrays", "applied_basic_types", "applied_enums",
     "applied_pointers", "applied_strings", "applied_structs",
     "applied_unions", "symbols_class", "symbols_label",
     "symbols_namespace", "equates", "external_imports",
     "cross_references", "entry_points", "memory_layout",
-    "metadata", "type_info", "vtables", "recreation", "pseudocode",
+    "metadata", "type_info", "vtables", "switch_tables", "code_caves",
+    "recreation", "pseudocode",
 ]
 
 SIBLING_PAIR = ("nocedit.exe", "nocturne.exe")
@@ -122,151 +123,99 @@ def maybe_refresh_sibling_mapping(exported_names, enabled):
               "scripts/Python/refresh_sibling_mapping.py before trusting it." % rc)
 
 
-def get_export_categories():
-    """Get export categories map - must be called after PyGhidra starts"""
-    from ghidra_annotations.annotations import (
-        export_data_types, export_functions, export_comments,
-        export_bookmarks, export_applied_arrays, export_applied_basic_types,
-        export_applied_enums, export_applied_pointers, export_applied_strings,
-        export_applied_structs, export_applied_unions, export_symbols_class,
-        export_symbols_label, export_symbols_namespace, export_equates,
-        export_external_imports, export_cross_references, export_entry_points,
-        export_memory_layout, export_metadata, export_type_info,
-        export_vtables, export_recreation, export_pseudocode
-    )
-    return {
-        "data_types": export_data_types,
-        "functions": export_functions,
-        "comments": export_comments,
-        "bookmarks": export_bookmarks,
-        "applied_arrays": export_applied_arrays,
-        "applied_basic_types": export_applied_basic_types,
-        "applied_enums": export_applied_enums,
-        "applied_pointers": export_applied_pointers,
-        "applied_strings": export_applied_strings,
-        "applied_structs": export_applied_structs,
-        "applied_unions": export_applied_unions,
-        "symbols_class": export_symbols_class,
-        "symbols_label": export_symbols_label,
-        "symbols_namespace": export_symbols_namespace,
-        "equates": export_equates,
-        "external_imports": export_external_imports,
-        "cross_references": export_cross_references,
-        "entry_points": export_entry_points,
-        "memory_layout": export_memory_layout,
-        "metadata": export_metadata,
-        "type_info": export_type_info,
-        "vtables": export_vtables,
-        "recreation": export_recreation,
-        "pseudocode": export_pseudocode,
-    }
+def parse_categories(text):
+    """The categories named in `text` ("all" or comma-separated), in export order.
 
-def export_selected_categories(currentProgram, folder, categories, export_categories,
-                               log_info, log_error, strict=False, deep_analysis=False,
-                               allow_size_mismatch=False,
-                               allow_name_address_mismatch=False,
-                               allow_this_ptr_mismatch=False,
-                               allow_duplicate_data_types=False):
-    for category in categories:
-        category = category.strip().lower()
-        if category in export_categories:
-            log_info("Exporting category: %s" % category)
-            # Pass strict and deep_analysis to pseudocode export
-            if category == "pseudocode":
-                export_categories[category](currentProgram, folder, strict=strict,
-                                           deep_analysis=deep_analysis)
-            elif category == "type_info":
-                export_categories[category](currentProgram, folder, strict=strict,
-                                           allow_size_mismatch=allow_size_mismatch)
-            elif category == "functions":
-                export_categories[category](
-                    currentProgram, folder,
-                    allow_name_address_mismatch=allow_name_address_mismatch,
-                    allow_this_ptr_mismatch=allow_this_ptr_mismatch)
-            elif category == "data_types":
-                export_categories[category](
-                    currentProgram, folder,
-                    allow_duplicates=allow_duplicate_data_types)
-            else:
-                export_categories[category](currentProgram, folder)
-        else:
-            log_error("Unknown category: %s" % category)
-            log_error("Available categories: %s" % ", ".join(sorted(export_categories.keys())))
-
-def run_export(currentProgram, output_folder, categories=None, strict=False,
-               deep_analysis=False, allow_size_mismatch=False,
-               allow_name_address_mismatch=False, allow_this_ptr_mismatch=False,
-               allow_duplicate_data_types=False):
-    """Main export function that takes currentProgram and args.
-
-    Args:
-        currentProgram: The Ghidra program
-        output_folder: Directory to export annotations to
-        categories: List of category names to export, or None for all
-        strict: If True, raise error on compilation failures
-        deep_analysis: If True, use deep static analysis mode
-        allow_size_mismatch: If True, downgrade a Watcom RTTI struct size
-            mismatch from a hard failure to a report
-        allow_name_address_mismatch: If True, downgrade a function whose
-            _FUN_<addr> suffix is not its entry point from a hard failure to
-            a report
-        allow_this_ptr_mismatch: If True, downgrade a class method whose
-            parameter 0 is not `this_ptr` of its own class from a hard
-            failure to a report
-        allow_duplicate_data_types: If True, downgrade two data types sharing
-            one name from a hard failure to a report
+    Raises ValueError naming any category that does not exist.
     """
+    if text.strip().lower() == "all":
+        return list(CATEGORY_NAMES)
+    named = [c.strip().lower() for c in text.split(",") if c.strip()]
+    unknown = [c for c in named if c not in CATEGORY_NAMES]
+    if unknown or not named:
+        raise ValueError("unknown categories: %s (available: %s)" % (
+            ", ".join(unknown) or repr(text), ", ".join(CATEGORY_NAMES)))
+    return named
 
-    # Import after PyGhidra started
-    from ghidra_annotations.annotations import export_annotations
-    from ghidra_annotations.util.log import setup_logging, log_info, log_error
 
-    # Setup logging
+def get_export_categories():
+    """{category: its export_<category> function} - call after PyGhidra starts"""
+    import ghidra_annotations.annotations as annotations
+    return {name: getattr(annotations, "export_" + name) for name in CATEGORY_NAMES}
+
+
+# The command-line options, with the defaults run_export takes when one is absent
+DEFAULT_OPTIONS = {
+    "strict": False,
+    "deep_analysis": False,
+    "allow_size_mismatch": False,
+    "allow_name_address_mismatch": False,
+    "allow_this_ptr_mismatch": False,
+    "allow_duplicate_data_types": False,
+    "pseudocode_options": {},
+}
+
+
+def category_arguments(category, options):
+    """The keyword arguments the category's export function takes from the options."""
+    if category == "pseudocode":
+        return dict(strict=options["strict"], deep_analysis=options["deep_analysis"],
+                    **options["pseudocode_options"])
+    if category == "type_info":
+        return dict(strict=options["strict"], allow_size_mismatch=options["allow_size_mismatch"])
+    if category == "functions":
+        return dict(allow_name_address_mismatch=options["allow_name_address_mismatch"],
+                    allow_this_ptr_mismatch=options["allow_this_ptr_mismatch"])
+    if category == "data_types":
+        return dict(allow_duplicates=options["allow_duplicate_data_types"])
+    return {}
+
+
+def run_export(currentProgram, output_folder, categories, options=None):
+    """Export the categories (from parse_categories) of one program to output_folder.
+
+    options overrides DEFAULT_OPTIONS:
+        strict: raise on pseudocode compilation failures and type_info mismatches
+        deep_analysis: deep static analysis mode
+        allow_size_mismatch: report a Watcom RTTI struct size mismatch, not fail
+        allow_name_address_mismatch: report a function whose _FUN_<addr> suffix
+            is not its entry point, not fail
+        allow_this_ptr_mismatch: report a class method whose parameter 0 is not
+            `this_ptr` of its own class, not fail
+        allow_duplicate_data_types: report two data types sharing a name, not fail
+        pseudocode_options: export_pseudocode's header_compile, function_compile
+            and static_analysis switches (all on if absent)
+    """
+    from ghidra_annotations.util.log import setup_logging, log_info
+    options = dict(DEFAULT_OPTIONS, **(options or {}))
+
     setup_logging(name="ghidra_export", filename="ghidra_export.log")
-
-    # Get export categories
     export_categories = get_export_categories()
 
-    # Ensure output folder exists
     if not os.path.exists(output_folder):
         os.makedirs(output_folder)
         log_info("Created output folder: %s" % output_folder)
 
-    # Log what is going to be exported
     log_info("=" * 60)
     log_info("EXPORT ANNOTATIONS")
     log_info("=" * 60)
     log_info("Output folder: %s" % output_folder)
     log_info("Program: %s" % currentProgram.getName())
-    if categories:
-        log_info("Categories: %s" % ", ".join(categories))
-    else:
-        log_info("Categories: all")
-    log_info("Strict mode: %s" % strict)
-    log_info("Allow struct size mismatch: %s" % allow_size_mismatch)
-    log_info("Allow name/address mismatch: %s" % allow_name_address_mismatch)
-    log_info("Allow this_ptr mismatch: %s" % allow_this_ptr_mismatch)
-    log_info("Allow duplicate data types: %s" % allow_duplicate_data_types)
+    log_info("Categories: %s" % ("all" if categories == CATEGORY_NAMES else ", ".join(categories)))
+    log_info("Strict mode: %s" % options["strict"])
+    log_info("Allow struct size mismatch: %s" % options["allow_size_mismatch"])
+    log_info("Allow name/address mismatch: %s" % options["allow_name_address_mismatch"])
+    log_info("Allow this_ptr mismatch: %s" % options["allow_this_ptr_mismatch"])
+    log_info("Allow duplicate data types: %s" % options["allow_duplicate_data_types"])
+    for option, enabled in sorted(options["pseudocode_options"].items()):
+        log_info("Pseudocode %s: %s" % (option.replace("_", " "), enabled))
     log_info("=" * 60)
 
-    # Export annotations
-    if categories:
-        export_selected_categories(currentProgram, output_folder, categories, export_categories,
-                                   log_info, log_error, strict=strict,
-                                   deep_analysis=deep_analysis,
-                                   allow_size_mismatch=allow_size_mismatch,
-                                   allow_name_address_mismatch=allow_name_address_mismatch,
-                                   allow_this_ptr_mismatch=allow_this_ptr_mismatch,
-                                   allow_duplicate_data_types=allow_duplicate_data_types)
-    else:
-        export_annotations(currentProgram, output_folder, strict=strict,
-                          deep_analysis=deep_analysis,
-                          allow_size_mismatch=allow_size_mismatch,
-                          allow_name_address_mismatch=allow_name_address_mismatch,
-                          allow_this_ptr_mismatch=allow_this_ptr_mismatch,
-                          allow_duplicate_data_types=allow_duplicate_data_types)
+    for category in categories:
+        log_info("Exporting category: %s" % category)
+        export_categories[category](currentProgram, output_folder,
+                                    **category_arguments(category, options))
 
-    # Export complete
     log_info("=" * 60)
     log_info("EXPORT COMPLETE")
     log_info("=" * 60)
@@ -297,8 +246,20 @@ def list_project_program_paths(project):
     return program_paths
 
 
-def main():
-    """Entry point for PyGhidra headless execution"""
+def pseudocode_options(args, program_name):
+    """The pseudocode compile and analysis passes to run for one program."""
+    checked = True
+    if args.checks_only_for is not None:
+        checked = program_name in {p.strip() for p in args.checks_only_for.split(",")}
+    return {
+        "header_compile": args.header_compile and checked,
+        "function_compile": args.function_compile and checked,
+        "static_analysis": args.static_analysis and checked,
+    }
+
+
+def build_parser():
+    """The command line."""
     parser = argparse.ArgumentParser(
         description="Export Ghidra annotations to JSON files",
         formatter_class=argparse.RawDescriptionHelpFormatter,
@@ -344,6 +305,20 @@ Available categories:
                              "name is the identity every downstream consumer keys "
                              "on, so one copy silently wins and re-importing the "
                              "file re-creates both)")
+    parser.add_argument("--header-compile", action=argparse.BooleanOptionalAction, default=True,
+                        help="compile the generated pseudocode headers, globals and "
+                             "shims (default: on)")
+    parser.add_argument("--function-compile", action=argparse.BooleanOptionalAction, default=True,
+                        help="compile each exported function's .cpp on its own "
+                             "(default: on)")
+    parser.add_argument("--static-analysis", action=argparse.BooleanOptionalAction, default=True,
+                        help="run clang-analyzer, cppcheck and clang-tidy on the "
+                             "exported functions (default: on)")
+    parser.add_argument("--checks-only-for", metavar="PROGRAMS", default=None,
+                        help="comma-separated programs the three passes above run "
+                             "for; every other program's export skips them (default: "
+                             "every program). For --all-programs, where only some "
+                             "programs' pseudocode is built.")
     parser.add_argument("--all-programs", action="store_true",
                         help="Export every program in the project. In this mode program_name is "
                              "ignored and output_folder is treated as a parent directory: each "
@@ -353,26 +328,24 @@ Available categories:
                              "the export. It is refreshed by default so it can never "
                              "be older than the annotations it describes; the refresh "
                              "needs no JVM and cannot affect the export's exit code.")
-    args = parser.parse_args()
+    return parser
 
-    # Import pyghidra
-    try:
-        import pyghidra
-    except ImportError:
-        print("ERROR: pyghidra is not installed.")
-        print("Install the PyGhidra package from your Ghidra installation.")
-        sys.exit(1)
 
-    # Start PyGhidra
-    print("Starting PyGhidra...")
-    pyghidra.start()
+def export_options(args, program_name):
+    """run_export's options for one program, from the command line."""
+    return {
+        "strict": args.strict,
+        "deep_analysis": args.deep_analysis,
+        "allow_size_mismatch": args.allow_struct_size_mismatch,
+        "allow_name_address_mismatch": args.allow_name_address_mismatch,
+        "allow_this_ptr_mismatch": args.allow_this_ptr_mismatch,
+        "allow_duplicate_data_types": args.allow_duplicate_data_types,
+        "pseudocode_options": pseudocode_options(args, program_name),
+    }
 
-    # Parse categories (shared across every exported program)
-    categories = None
-    if args.categories.lower() != "all":
-        categories = [c.strip() for c in args.categories.split(",")]
 
-    # Open the project
+def export_programs(pyghidra, args, categories):
+    """Export each program the arguments name. Returns (exit code, names exported)."""
     print("Opening project: %s/%s" % (args.project_path, args.project_name))
     exit_code = 0
     exported_ok = []
@@ -385,9 +358,10 @@ Available categories:
             program_paths = list_project_program_paths(project)
             if not program_paths:
                 print("ERROR: No programs found in project '%s'" % args.project_name)
-                os._exit(1)
-            print("Found %d program(s): %s" % (
-                len(program_paths), ", ".join(name for _, name in program_paths)))
+                exit_code = 1
+            else:
+                print("Found %d program(s): %s" % (
+                    len(program_paths), ", ".join(name for _, name in program_paths)))
         else:
             program_paths = [("/" + args.program_name, args.program_name)]
 
@@ -405,12 +379,7 @@ Available categories:
             print("Opening program: %s -> %s" % (pathname, out_folder))
             try:
                 with pyghidra.program_context(project, pathname) as currentProgram:
-                    run_export(currentProgram, out_folder, categories=categories,
-                               strict=args.strict, deep_analysis=args.deep_analysis,
-                               allow_size_mismatch=args.allow_struct_size_mismatch,
-                               allow_name_address_mismatch=args.allow_name_address_mismatch,
-                               allow_this_ptr_mismatch=args.allow_this_ptr_mismatch,
-                               allow_duplicate_data_types=args.allow_duplicate_data_types)
+                    run_export(currentProgram, out_folder, categories, export_options(args, name))
             except SystemExit as e:
                 # A library deep in the export (e.g. data-type dependency resolution)
                 # may call sys.exit() on a per-program problem. SystemExit is a
@@ -443,6 +412,28 @@ Available categories:
     finally:
         if project is not None:
             project.close()
+    return exit_code, exported_ok
+
+
+def main():
+    """Entry point for PyGhidra headless execution"""
+    parser = build_parser()
+    args = parser.parse_args()
+    try:
+        categories = parse_categories(args.categories)
+    except ValueError as error:
+        parser.error(str(error))
+
+    try:
+        import pyghidra
+    except ImportError:
+        print("ERROR: pyghidra is not installed.")
+        print("Install the PyGhidra package from your Ghidra installation.")
+        sys.exit(1)
+
+    print("Starting PyGhidra...")
+    pyghidra.start()
+    exit_code, exported_ok = export_programs(pyghidra, args, categories)
 
     # Derived artifacts, after the JVM is done with the project.
     maybe_refresh_sibling_mapping(exported_ok, not args.no_refresh_mapping)

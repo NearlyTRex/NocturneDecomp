@@ -284,7 +284,8 @@ def collect_typedef_deps(currentProgram, type_obj, seen = None, visited_ids = No
 
     # Structures / Unions
     elif isinstance(type_obj, (Structure, Union)):
-        for comp in type_obj.getComponents():
+        # Filler bytes are undefined and add no dependency
+        for comp in type_obj.getDefinedComponents():
             comp_dt = comp.getDataType()
             if isinstance(comp_dt, Pointer):
                 collect_typedef_deps(currentProgram, comp_dt.getDataType(), seen, visited_ids)
@@ -503,7 +504,8 @@ def collect_type_dependencies_with_context(currentProgram, type_obj, seen_direct
 
     # Structures / Unions
     elif isinstance(type_obj, Structure) or isinstance(type_obj, Union):
-        for comp in type_obj.getComponents():
+        # Filler bytes are undefined and add no dependency
+        for comp in type_obj.getDefinedComponents():
             comp_dt = comp.getDataType()
             if comp_dt:
                 comp_name = normalize_data_type_name(resolve_data_type_name(currentProgram, comp_dt))

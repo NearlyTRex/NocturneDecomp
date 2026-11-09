@@ -23,6 +23,28 @@ from ghidra_annotations.annotations.pseudocode.config_defines import (
 )
 
 
+def run_process_group(cmd, timeout):
+    """subprocess.run for a tool that starts workers of its own (cppcheck -j).
+
+    On a timeout subprocess.run kills only the tool, leaving its workers
+    running. Here the tool leads its own process group, and the whole group is
+    killed before TimeoutExpired is raised.
+    """
+    import signal
+    proc = subprocess.Popen(cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE,
+                            text=True, start_new_session=True)
+    try:
+        stdout, stderr = proc.communicate(timeout=timeout)
+    except BaseException:
+        try:
+            os.killpg(proc.pid, signal.SIGKILL)
+        except OSError:
+            pass
+        proc.communicate()
+        raise
+    return subprocess.CompletedProcess(cmd, proc.returncode, stdout, stderr)
+
+
 # =============================================================================
 # Constants
 # =============================================================================
@@ -457,8 +479,7 @@ def run_cppcheck_batch(cpp_paths, include_dir, num_threads=8, timeout=None,
         ]
         cmd += config_define_flags(os.path.dirname(include_dir))
 
-        proc = subprocess.run(cmd, capture_output=True, text=True,
-                              timeout=timeout)
+        proc = run_process_group(cmd, timeout)
 
         stderr = strip_ansi_codes(proc.stderr)
         if repo_dir:

@@ -316,6 +316,10 @@ class StructureDataType(Structure):
     def getComponents(self):
         return self.components
 
+    # No undefined filler bytes are modelled, so every component is defined
+    def getDefinedComponents(self):
+        return self.components
+
     # The component holding the byte, as Ghidra's does
     def getComponentAt(self, offset):
         for component in self.components:
@@ -362,6 +366,9 @@ class UnionDataType(Union):
         self.components = [DataTypeComponent(dt) for dt in components]
 
     def getComponents(self):
+        return self.components
+
+    def getDefinedComponents(self):
         return self.components
 
 

@@ -701,14 +701,18 @@ def format_pointer_initializer(currentProgram, int_val, type_name):
         return (initializer, comment_symbol)
 
 
-# Cache of {type_name -> Ghidra byte length}, keyed by program identity, so the
+# {type_name -> Ghidra byte length} for the program being exported, so the
 # WatcomTypeInfo sizeof() resolution doesn't rescan getAllDataTypes() per global.
+# One slot holding the program itself: keyed by id(), a closed program's id
+# can be reused by the next one, which would then get the wrong sizes.
 _STRUCT_SIZE_CACHE = {}
 
 
 def _struct_size_map(currentProgram):
-    key = id(currentProgram)
-    m = _STRUCT_SIZE_CACHE.get(key)
+    m = None
+    cached = _STRUCT_SIZE_CACHE.get("program")
+    if cached is not None and cached == currentProgram:
+        m = _STRUCT_SIZE_CACHE["sizes"]
     if m is None:
         m = {}
         dtm = currentProgram.getDataTypeManager()
@@ -720,7 +724,8 @@ def _struct_size_map(currentProgram):
                 continue
             if n and ln and ln > 0:
                 m[n] = ln
-        _STRUCT_SIZE_CACHE[key] = m
+        _STRUCT_SIZE_CACHE["program"] = currentProgram
+        _STRUCT_SIZE_CACHE["sizes"] = m
     return m
 
 

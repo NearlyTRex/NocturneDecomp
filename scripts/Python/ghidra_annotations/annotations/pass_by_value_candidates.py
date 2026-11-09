@@ -501,10 +501,15 @@ def export_pass_by_value_candidates(currentProgram, output_path, limit=None):
         limit: Optional limit on number of functions to analyze
     """
     log_info("Starting pass-by-value candidate analysis...")
-
-    # Initialize decompiler
     iface = get_decompiler_interface(currentProgram)
+    try:
+        return analyze_pass_by_value_candidates(iface, currentProgram, output_path, limit)
+    finally:
+        iface.dispose()
 
+
+def analyze_pass_by_value_candidates(iface, currentProgram, output_path, limit):
+    """export_pass_by_value_candidates with its decompiler open."""
     # Get all functions
     func_manager = currentProgram.getFunctionManager()
     functions = list(func_manager.getFunctions(True))
@@ -619,8 +624,5 @@ def export_pass_by_value_candidates(currentProgram, output_path, limit=None):
             c['function'], c['param_type'], c['param_name'], asm_status
         ))
         log_info("    reasons: %s" % ', '.join(c['reasons']))
-
-    # Close decompiler
-    iface.dispose()
 
     return output

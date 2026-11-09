@@ -519,10 +519,15 @@ def export_size_mismatches(currentProgram, output_path, limit=None):
         limit: Optional limit on number of functions to analyze
     """
     log_info("Starting size mismatch analysis...")
-
-    # Initialize decompiler
     iface = get_decompiler_interface(currentProgram)
+    try:
+        return analyze_size_mismatches(iface, currentProgram, output_path, limit)
+    finally:
+        iface.dispose()
 
+
+def analyze_size_mismatches(iface, currentProgram, output_path, limit):
+    """export_size_mismatches with its decompiler open."""
     # Get all functions
     func_manager = currentProgram.getFunctionManager()
     functions = list(func_manager.getFunctions(True))
@@ -672,8 +677,5 @@ def export_size_mismatches(currentProgram, output_path, limit=None):
     log_info("\nUnsafe reasons breakdown:")
     for reason, count in sorted(summary['unsafe_reasons'].items(), key=lambda x: -x[1]):
         log_info("  %s: %d" % (reason, count))
-
-    # Close decompiler
-    iface.dispose()
 
     return output

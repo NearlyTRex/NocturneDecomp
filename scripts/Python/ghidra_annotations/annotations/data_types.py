@@ -1262,7 +1262,8 @@ def export_data_types(currentProgram, path, allow_duplicates = False):
             # Get struct/union fields
             dt_fields = []
             struct_deps = set()
-            for comp in dt.getComponents():
+            # Filler bytes are skipped below anyway; walking them is a call per byte
+            for comp in dt.getDefinedComponents():
                 dt_field_type = comp.getDataType()
                 if dt_field_type is None:
                     continue

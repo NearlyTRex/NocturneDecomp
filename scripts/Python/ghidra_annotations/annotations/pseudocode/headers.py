@@ -179,6 +179,44 @@ def resolve_field_type_for_component(currentProgram, comp):
     return resolved
 
 
+def has_filler(struct):
+    """True if the struct has bytes no field covers.
+
+    Ghidra fills them with one undefined byte each, which getComponents()
+    returns, so a stub sized from RTTI is a million components. Only a
+    struct with fields at fixed offsets has filler.
+    """
+    return struct.getNumComponents() != struct.getNumDefinedComponents()
+
+
+def struct_components(struct):
+    """The struct's fields, without its filler bytes."""
+    return struct.getDefinedComponents() if has_filler(struct) else struct.getComponents()
+
+
+def struct_field_rows(currentProgram, struct):
+    """(type, name, offset, comment) for each field of a struct.
+
+    A run of filler bytes becomes one char array named for its offset,
+    rather than an undefined1 field per byte.
+    """
+    filler = has_filler(struct)
+    rows = []
+    end = 0
+    for comp in struct_components(struct):
+        offset = comp.getOffset()
+        if filler and offset > end:
+            rows.append(("char[%d]" % (offset - end), "field_%d" % end, end, None))
+        name = comp.getFieldName()
+        rows.append((resolve_field_type_for_component(currentProgram, comp),
+                     sanitize_c_identifier(name) if name else "field_%d" % offset,
+                     offset, comp.getComment()))
+        end = max(end, offset + comp.getLength())
+    if filler and struct.getLength() > end:
+        rows.append(("char[%d]" % (struct.getLength() - end), "field_%d" % end, end, None))
+    return rows
+
+
 def is_function_definition_type(data_type):
     """Check if a data type is a function definition type.
 
@@ -405,7 +443,8 @@ def type_uses_basetypes(currentProgram, data_type, visited=None):
     # Check structs/unions - check all component types
     if is_struct_or_union(data_type):
         if hasattr(data_type, 'getComponents'):
-            for comp in data_type.getComponents():
+            # Filler bytes are emitted as char, which needs no basetype
+            for comp in data_type.getDefinedComponents():
                 comp_dt = comp.getDataType()
                 if comp_dt:
                     # Check the component type name directly first
@@ -673,16 +712,11 @@ def generate_individual_struct_header(currentProgram, struct, type_to_path_map=N
     if pack_value is not None:
         content.append("#pragma pack(push, %d)" % pack_value)
     content.append("typedef struct %s {" % struct.getName())
-    for field_index, comp in enumerate(struct.getComponents()):
-        field_type = resolve_field_type_for_component(currentProgram, comp)
-        # Use Ghidra decompiler naming convention: field{index}_0x{offset_hex}
-        # This matches what the decompiler outputs for unnamed struct fields
-        field_name = sanitize_c_identifier(comp.getFieldName()) if comp.getFieldName() else ("field_%d" % comp.getOffset())
-        field_offset = comp.getOffset()
+    for field_type, field_name, field_offset, field_comment in struct_field_rows(currentProgram, struct):
         comment_parts = []
         comment_parts.append("0x%x" % field_offset)
-        if comp.getComment():
-            comment_parts.append(comp.getComment())
+        if field_comment:
+            comment_parts.append(field_comment)
         comment = " // %s" % ", ".join(comment_parts)
         field_decl = format_field_declaration(field_type, field_name)
         content.append("    %s;%s" % (field_decl, comment))
@@ -709,7 +743,8 @@ def _packing_and_alignment(dt):
     return _ghidra_packing_and_alignment(dt)
 
 
-# Program -> names of structs that must drop their packing at 64-bit.
+# The program being exported, and the names of its structs that must drop
+# their packing at 64-bit.
 _MISALIGNED_POINTER_STRUCTS = {}
 
 
@@ -727,10 +762,13 @@ def _misaligned_pointer_structs(dt):
         program = dt.getDataTypeManager().getProgram()
     except Exception:
         return frozenset()
-    key = id(program)
-    if key not in _MISALIGNED_POINTER_STRUCTS:
-        _MISALIGNED_POINTER_STRUCTS[key] = _find_misaligned_pointer_structs(program)
-    return _MISALIGNED_POINTER_STRUCTS[key]
+    # One slot holding the program itself: keyed by id(), a closed program's
+    # id can be reused by the next one in an --all-programs export
+    cached = _MISALIGNED_POINTER_STRUCTS.get("program")
+    if cached is None or cached != program:
+        _MISALIGNED_POINTER_STRUCTS["program"] = program
+        _MISALIGNED_POINTER_STRUCTS["structs"] = _find_misaligned_pointer_structs(program)
+    return _MISALIGNED_POINTER_STRUCTS["structs"]
 
 
 def _strip_typedefs(dt):
@@ -789,7 +827,11 @@ def _lp64_aggregate_layout(dt, memo):
     offset = size = 0
     max_align = 1
     placed = []
-    for comp in dt.getComponents():
+    # Filler bytes are char arrays in the header (struct_field_rows): a run
+    # takes its bytes at alignment 1
+    filler = isinstance(dt, Structure) and has_filler(dt)
+    end = 0
+    for comp in (struct_components(dt) if isinstance(dt, Structure) else dt.getComponents()):
         comp_size, comp_align = _lp64_size_and_alignment(comp.getDataType(), memo)
         if pack_value is not None:
             comp_align = min(comp_align, pack_value)
@@ -798,10 +840,15 @@ def _lp64_aggregate_layout(dt, memo):
             placed.append((comp, 0))
             size = max(size, comp_size)
             continue
+        if filler and comp.getOffset() > end:
+            offset += comp.getOffset() - end
         offset = (offset + comp_align - 1) // comp_align * comp_align
         placed.append((comp, offset))
         offset += comp_size
         size = offset
+        end = max(end, comp.getOffset() + comp.getLength())
+    if filler and dt.getLength() > end:
+        size = offset + dt.getLength() - end
     size = (size + max_align - 1) // max_align * max_align
     return size, max_align, placed
 
@@ -837,7 +884,7 @@ def _find_misaligned_pointer_structs(program):
         if name not in contains:
             contains[name] = False  # cycle guard
             contains[name] = bool(hazard_offsets(dt)) or any(
-                contains_hazard(c.getDataType()) for c in dt.getComponents())
+                contains_hazard(c.getDataType()) for c in dt.getDefinedComponents())
         return contains[name]
 
     memory = program.getMemory()
@@ -858,7 +905,7 @@ def _find_misaligned_pointer_structs(program):
                 if resolve_pointer_to_symbol(program, value)[0] is not None:
                     found.add(dt.getName())
                     break
-        for comp in dt.getComponents():
+        for comp in dt.getDefinedComponents():
             walk(comp.getDataType(), address.add(comp.getOffset()))
 
     for data in program.getListing().getDefinedData(True):
@@ -1352,11 +1399,8 @@ def generate_structs_header(currentProgram, structs):
         if pack_value is not None:
             content.append("#pragma pack(push, %d)" % pack_value)
         content.append("typedef struct %s {" % struct.getName())
-        for field_index, comp in enumerate(struct.getComponents()):
-            field_type = resolve_field_type_for_component(currentProgram, comp)
-            # Use Ghidra decompiler naming convention: field{index}_0x{offset_hex}
-            field_name = sanitize_c_identifier(comp.getFieldName()) if comp.getFieldName() else ("field_%d" % comp.getOffset())
-            comment = " // %s" % comp.getComment() if comp.getComment() else ""
+        for field_type, field_name, _, field_comment in struct_field_rows(currentProgram, struct):
+            comment = " // %s" % field_comment if field_comment else ""
             field_decl = format_field_declaration(field_type, field_name)
             content.append("    %s;%s" % (field_decl, comment))
         if align_attr is not None:
@@ -2026,11 +2070,8 @@ def generate_type_definition(currentProgram, dt):
         if pack_value is not None:
             lines.append("#pragma pack(push, %d)" % pack_value)
         lines.append("typedef struct %s {" % dt_name)
-        for field_index, comp in enumerate(dt.getComponents()):
-            field_type = resolve_field_type_for_component(currentProgram, comp)
-            # Use Ghidra decompiler naming convention: field{index}_0x{offset_hex}
-            field_name = sanitize_c_identifier(comp.getFieldName()) if comp.getFieldName() else ("field_%d" % comp.getOffset())
-            comment = " // %s" % comp.getComment() if comp.getComment() else ""
+        for field_type, field_name, _, field_comment in struct_field_rows(currentProgram, dt):
+            comment = " // %s" % field_comment if field_comment else ""
             field_decl = format_field_declaration(field_type, field_name)
             lines.append("    %s;%s" % (field_decl, comment))
         if align_attr is not None:

@@ -50,7 +50,8 @@ def delete_annotations(currentProgram, path):
 
 def export_annotations(currentProgram, folder, strict=False, deep_analysis=False,
                        allow_size_mismatch=False, allow_name_address_mismatch=False,
-                       allow_this_ptr_mismatch=False, allow_duplicate_data_types=False):
+                       allow_this_ptr_mismatch=False, allow_duplicate_data_types=False,
+                       pseudocode_options=None):
     export_data_types(currentProgram, folder, allow_duplicates=allow_duplicate_data_types)
     export_functions(currentProgram, folder,
                      allow_name_address_mismatch=allow_name_address_mismatch,
@@ -80,7 +81,8 @@ def export_annotations(currentProgram, folder, strict=False, deep_analysis=False
     export_switch_tables(currentProgram, folder)
     export_code_caves(currentProgram, folder)
     export_recreation(currentProgram, folder)
-    export_pseudocode(currentProgram, folder, strict=strict, deep_analysis=deep_analysis)
+    export_pseudocode(currentProgram, folder, strict=strict, deep_analysis=deep_analysis,
+                      **(pseudocode_options or {}))
 
 def import_annotations(currentProgram, folder):
     import_memory_layout(currentProgram, folder)

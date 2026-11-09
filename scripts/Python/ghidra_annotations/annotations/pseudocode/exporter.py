@@ -985,7 +985,8 @@ def process_python_only(result, pseudocode_src_dir, constants_map,
     }
 
 
-def export_pseudocode(currentProgram, path, strict=False, deep_analysis=False):
+def export_pseudocode(currentProgram, path, strict=False, deep_analysis=False,
+                      header_compile=True, function_compile=True, static_analysis=True):
     """Export pseudocode for all functions in the program.
 
     Args:
@@ -994,6 +995,10 @@ def export_pseudocode(currentProgram, path, strict=False, deep_analysis=False):
         strict: If True, raise RuntimeError when compilation fails.
                 If False (default), errors are logged to reports but export continues.
         deep_analysis: If True, use deep static analysis mode (longer timeouts).
+        header_compile: Compile the generated headers, globals and shims.
+        function_compile: Compile each function's .cpp on its own.
+        static_analysis: Run clang-analyzer, cppcheck and clang-tidy on the
+            functions, and promote their findings to suspects.
     """
     # Initialize profiling timer
     timer = PhaseTimer()
@@ -1444,37 +1449,40 @@ def export_pseudocode(currentProgram, path, strict=False, deep_analysis=False):
                 log_info("Failed to write %s: %s" % (range_filename, str(e)))
     timer.end_phase()
 
-    # Verify generated headers compile
-    timer.start_phase("Verify headers compile")
-    make_dirs(reports_dir)  # Ensure reports dir exists for compilation reports
-    headers_ok = verify_headers_after_export(
-        pseudocode_dir, max_workers=num_threads,
-        reports_dir=reports_dir, repo_dir=repo_dir)
-    timer.end_phase()
-    if not headers_ok:
-        log_info("ERROR: Header compilation failed")
-        if strict:
-            raise RuntimeError("Header compilation failed. See reports/header_compilation.txt for details.")
+    if header_compile:
+        # Verify generated headers compile
+        timer.start_phase("Verify headers compile")
+        make_dirs(reports_dir)  # Ensure reports dir exists for compilation reports
+        headers_ok = verify_headers_after_export(
+            pseudocode_dir, max_workers=num_threads,
+            reports_dir=reports_dir, repo_dir=repo_dir)
+        timer.end_phase()
+        if not headers_ok:
+            log_info("ERROR: Header compilation failed")
+            if strict:
+                raise RuntimeError("Header compilation failed. See reports/header_compilation.txt for details.")
 
-    # Verify globals cpp files compile
-    timer.start_phase("Verify globals compile")
-    globals_ok = verify_globals_after_export(
-        pseudocode_dir, max_workers=num_threads,
-        reports_dir=reports_dir, repo_dir=repo_dir)
-    timer.end_phase()
-    if not globals_ok:
-        log_info("ERROR: Globals compilation failed")
-        if strict:
-            raise RuntimeError("Globals compilation failed. See reports/globals_compilation.txt for details.")
+        # Verify globals cpp files compile
+        timer.start_phase("Verify globals compile")
+        globals_ok = verify_globals_after_export(
+            pseudocode_dir, max_workers=num_threads,
+            reports_dir=reports_dir, repo_dir=repo_dir)
+        timer.end_phase()
+        if not globals_ok:
+            log_info("ERROR: Globals compilation failed")
+            if strict:
+                raise RuntimeError("Globals compilation failed. See reports/globals_compilation.txt for details.")
 
-    # Verify shim source files compile
-    timer.start_phase("Verify shims compile")
-    shims_ok = verify_shims_after_export(
-        pseudocode_dir, max_workers=num_threads,
-        reports_dir=reports_dir, repo_dir=repo_dir)
-    timer.end_phase()
-    if not shims_ok:
-        log_info("WARNING: Shim compilation had failures (non-blocking)")
+        # Verify shim source files compile
+        timer.start_phase("Verify shims compile")
+        shims_ok = verify_shims_after_export(
+            pseudocode_dir, max_workers=num_threads,
+            reports_dir=reports_dir, repo_dir=repo_dir)
+        timer.end_phase()
+        if not shims_ok:
+            log_info("WARNING: Shim compilation had failures (non-blocking)")
+    else:
+        log_info("Skipping header, globals and shim compilation (--no-header-compile)")
 
     # =========================================================================
     # PHASE 2: Collect post-processing results from workers (no work here)
@@ -1669,69 +1677,75 @@ def export_pseudocode(currentProgram, path, strict=False, deep_analysis=False):
     timer.end_phase()
 
     # Compile functions and verify syntax
-    timer.start_phase("Function compilation verification")
-    compile_result = compile_functions_after_export(
-        pseudocode_dir,
-        compiler=DEFAULT_COMPILER,
-        num_threads=num_threads,
-        reports_dir=reports_dir,
-        repo_dir=repo_dir
-    )
-    if compile_result:
-        log_info("Function compilation: %d/%d successful (%.1f%%)" % (
-            compile_result['successful'],
-            compile_result['total'],
-            compile_result['success_rate']
-        ))
-    timer.end_phase()
+    if function_compile:
+        timer.start_phase("Function compilation verification")
+        compile_result = compile_functions_after_export(
+            pseudocode_dir,
+            compiler=DEFAULT_COMPILER,
+            num_threads=num_threads,
+            reports_dir=reports_dir,
+            repo_dir=repo_dir
+        )
+        if compile_result:
+            log_info("Function compilation: %d/%d successful (%.1f%%)" % (
+                compile_result['successful'],
+                compile_result['total'],
+                compile_result['success_rate']
+            ))
+        timer.end_phase()
+    else:
+        log_info("Skipping function compilation (--no-function-compile)")
 
     # Run static analysis (after compilation, before report generation)
-    timer.start_phase("Static analysis")
-    log_info("Running static analysis...")
-    # Static analysis is far more memory-hungry than decompilation/compilation:
-    # each worker runs clang-tidy + clang-analyzer + cppcheck, every invocation
-    # re-parsing the ~6MB header tree (hundreds of MB resident). Reusing the
-    # decompile thread count (12) OOM-killed the process on smaller machines, so
-    # cap concurrency by available RAM (~1.5GB budget per worker). Override with
-    # NOCTURNE_SA_THREADS=<n>.
-    sa_threads = num_threads
-    # sa_env = os.environ.get('NOCTURNE_SA_THREADS')
-    # if sa_env and sa_env.isdigit() and int(sa_env) > 0:
-    #     sa_threads = min(num_threads, int(sa_env))
-    # else:
-    #     try:
-    #         avail_kb = 0
-    #         with open('/proc/meminfo') as mf:
-    #             for line in mf:
-    #                 if line.startswith('MemAvailable:'):
-    #                     avail_kb = int(line.split()[1])
-    #                     break
-    #         if avail_kb:
-    #             mem_cap = max(1, int(avail_kb / 1024 / 1024 / 1.5))  # ~1.5GB/worker
-    #             sa_threads = min(num_threads, mem_cap)
-    #     except Exception:
-    #         pass  # fall back to num_threads if memory probing fails
-    # if sa_threads != num_threads:
-    #     log_info("Static analysis: capping to %d threads (from %d) to limit memory use" % (
-    #         sa_threads, num_threads))
-    sa_result = run_static_analysis_after_export(
-        pseudocode_dir,
-        num_threads=sa_threads,
-        reports_dir=reports_dir,
-        repo_dir=repo_dir,
-        deep=deep_analysis
-    )
-    if sa_result:
-        log_info("Static analysis: %d files analyzed, %d findings" % (
-            sa_result['total_files'],
-            sa_result['total_diagnostics']
-        ))
-    timer.end_phase()
+    if static_analysis:
+        timer.start_phase("Static analysis")
+        log_info("Running static analysis...")
+        # Static analysis is far more memory-hungry than decompilation/compilation:
+        # each worker runs clang-tidy + clang-analyzer + cppcheck, every invocation
+        # re-parsing the ~6MB header tree (hundreds of MB resident). Reusing the
+        # decompile thread count (12) OOM-killed the process on smaller machines, so
+        # cap concurrency by available RAM (~1.5GB budget per worker). Override with
+        # NOCTURNE_SA_THREADS=<n>.
+        sa_threads = num_threads
+        # sa_env = os.environ.get('NOCTURNE_SA_THREADS')
+        # if sa_env and sa_env.isdigit() and int(sa_env) > 0:
+        #     sa_threads = min(num_threads, int(sa_env))
+        # else:
+        #     try:
+        #         avail_kb = 0
+        #         with open('/proc/meminfo') as mf:
+        #             for line in mf:
+        #                 if line.startswith('MemAvailable:'):
+        #                     avail_kb = int(line.split()[1])
+        #                     break
+        #         if avail_kb:
+        #             mem_cap = max(1, int(avail_kb / 1024 / 1024 / 1.5))  # ~1.5GB/worker
+        #             sa_threads = min(num_threads, mem_cap)
+        #     except Exception:
+        #         pass  # fall back to num_threads if memory probing fails
+        # if sa_threads != num_threads:
+        #     log_info("Static analysis: capping to %d threads (from %d) to limit memory use" % (
+        #         sa_threads, num_threads))
+        sa_result = run_static_analysis_after_export(
+            pseudocode_dir,
+            num_threads=sa_threads,
+            reports_dir=reports_dir,
+            repo_dir=repo_dir,
+            deep=deep_analysis
+        )
+        if sa_result:
+            log_info("Static analysis: %d files analyzed, %d findings" % (
+                sa_result['total_files'],
+                sa_result['total_diagnostics']
+            ))
+        timer.end_phase()
 
-    # Promote whitelisted static-analysis findings into per-function suspects.
-    timer.start_phase("Static-analysis suspects")
-    run_static_analysis_suspects_pass(pseudocode_dir)
-    timer.end_phase()
+        # Promote whitelisted static-analysis findings into per-function suspects.
+        timer.start_phase("Static-analysis suspects")
+        run_static_analysis_suspects_pass(pseudocode_dir)
+        timer.end_phase()
+    else:
+        log_info("Skipping static analysis (--no-static-analysis)")
 
     # Generate analysis report (after compilation so it includes compilation status)
     timer.start_phase("Generate analysis report")
