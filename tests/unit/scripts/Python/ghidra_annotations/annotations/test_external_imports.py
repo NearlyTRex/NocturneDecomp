@@ -17,7 +17,6 @@ def program_with_imports():
     manager.add(WSOCK, "Ordinal_1", Address(0x80000001))
     manager.add(WSOCK, "Ordinal_3", Address(0x80000003))
     manager.add("KERNEL32.DLL", "ExitProcess", Address(0x212000))
-    manager.getExternalLocation(WSOCK, "accept").symbol.external = True
     program.getSymbolTable().createLabel(Address(0x401000), "not_external", "USER_DEFINED")
     return program
 
@@ -51,14 +50,17 @@ def test_import_adds_only_what_is_missing_and_leaves_existing_imports_alone(tmp_
     write(tmp_path, [
         {"name": "accept", "lib": WSOCK, "addr": "80000001", "importable": True},
         {"name": "Ordinal_1", "lib": WSOCK, "addr": "80000001", "importable": True},
-        {"name": "send", "lib": WSOCK, "importable": True},
+        {"name": "send", "lib": WSOCK, "type": "Function", "importable": True},
+        {"name": "g_data", "lib": WSOCK, "type": "Label", "importable": True},
         {"name": "recv", "lib": WSOCK, "importable": False},
         {"name": "no_library", "importable": True}])
     program = Program()
     existing = program.getExternalManager().add(WSOCK, "accept", Address(0x80000001))
     import_external_imports(program, str(tmp_path))
-    assert imports(program) == [(WSOCK, "accept"), (WSOCK, "send")]
-    assert program.getExternalManager().getExternalLocation(WSOCK, "accept") is existing
+    assert imports(program) == [(WSOCK, "accept"), (WSOCK, "g_data"), (WSOCK, "send")]
+    kinds = {loc.symbol.getName(): loc.symbol.symbol_type for loc in program.getExternalManager().locations}
+    assert (kinds["send"], kinds["g_data"]) == ("FUNCTION", "LABEL")
+    assert program.getExternalManager().getExternalLocations(WSOCK, "accept") == {existing}
 
 
 def test_without_a_previous_export_import_and_delete_do_nothing(tmp_path):
@@ -70,11 +72,10 @@ def test_without_a_previous_export_import_and_delete_do_nothing(tmp_path):
     assert program.transactions == [["Import External Imports", True]]
 
 
-def test_delete_removes_the_importable_imports_ghidra_still_has(tmp_path):
-    write(tmp_path, [
-        {"name": "Ordinal_3", "lib": WSOCK, "importable": True},
-        {"name": "gone", "lib": WSOCK, "importable": True},
-        {"name": "accept", "lib": WSOCK, "importable": False}])
+def test_delete_never_removes_an_import(tmp_path, capsys):
+    write(tmp_path, [{"name": "Ordinal_3", "lib": WSOCK, "importable": True}])
     program = program_with_imports()
+    before = imports(program)
     delete_external_imports(program, str(tmp_path))
-    assert imports(program) == [("KERNEL32.DLL", "ExitProcess"), (WSOCK, "Ordinal_1"), (WSOCK, "accept")]
+    assert imports(program) == before
+    assert "only added, never removed" in capsys.readouterr().out

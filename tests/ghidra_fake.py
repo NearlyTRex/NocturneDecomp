@@ -54,6 +54,16 @@ class Address:
     def __init__(self, offset, size = 8):
         self.offset = offset
         self.size = size
+        # False for an address in a space that is not memory: external, register, stack
+        self.memory = True
+        # An overlay block's addresses are in a space of its own
+        self.space_name = "ram"
+
+    def isMemoryAddress(self):
+        return self.memory
+
+    def getAddressSpace(self):
+        return self.space_name
 
     def getOffset(self):
         return self.offset
@@ -306,6 +316,9 @@ class StructureDataType(Structure):
             data_type, field_name = component if isinstance(component, tuple) else (component, None)
             self.components.append(DataTypeComponent(data_type, field_name, offset))
             offset += data_type.getLength()
+        # As long as its fields, as Ghidra's is, unless a length was given
+        if components and length is None:
+            self.length = offset
 
     def getDescription(self):
         return self.description
@@ -319,6 +332,12 @@ class StructureDataType(Structure):
     # No undefined filler bytes are modelled, so every component is defined
     def getDefinedComponents(self):
         return self.components
+
+    def getNumComponents(self):
+        return len(self.components)
+
+    def getComponent(self, index):
+        return self.components[index]
 
     # The component holding the byte, as Ghidra's does
     def getComponentAt(self, offset):
@@ -373,25 +392,67 @@ class UnionDataType(Union):
 
 
 class ParameterDefinition(JavaObject):
-    def __init__(self, data_type):
+    def __init__(self, data_type, name = ""):
         super().__init__(data_type)
         self.data_type = data_type
+        self.name = name
 
     def getDataType(self):
         return self.data_type
 
+    def getName(self):
+        return self.name
 
+
+# Ghidra's (name, type, comment) form
+class ParameterDefinitionImpl(ParameterDefinition):
+    def __init__(self, name, data_type, _comment):
+        super().__init__(data_type, name)
+
+
+# arguments: data types, or (type, name) pairs
 class FunctionDefinitionDataType(FunctionDefinition):
     def __init__(self, name, return_type = None, arguments = (), **kwargs):
         super().__init__(name, **kwargs)
         self.return_type = return_type
-        self.arguments = [ParameterDefinition(dt) for dt in arguments]
+        self.arguments = [ParameterDefinition(*a) if isinstance(a, tuple) else ParameterDefinition(a)
+                          for a in arguments]
+        self.convention = "unknown"
+        self.varargs = False
 
     def getReturnType(self):
         return self.return_type
 
+    def setReturnType(self, return_type):
+        self.return_type = return_type
+
     def getArguments(self):
         return self.arguments
+
+    def setArguments(self, arguments):
+        self.arguments = list(arguments)
+
+    def getCallingConventionName(self):
+        return self.convention
+
+    # Ghidra refuses a convention the program's compiler does not define
+    def setCallingConvention(self, name):
+        if name not in ("__cdecl", "__stdcall", "__thiscall", "__fastcall", "__watcall"):
+            raise InvalidInputException(name)
+        self.convention = name
+
+    def hasVarArgs(self):
+        return self.varargs
+
+    def setVarArgs(self, varargs):
+        self.varargs = varargs
+
+
+# Records each override where Ghidra's would write it: on the function, at the call
+class HighFunctionDBUtil(JavaObject):
+    @staticmethod
+    def writeOverride(function, call_address, definition):
+        function.overrides[call_address] = definition
 
 
 class AbstractStringDataType(BuiltInDataType):
@@ -449,6 +510,10 @@ STRING_TYPES = [StringDataType, StringUTF8DataType, TerminatedStringDataType, Te
 # --- ghidra.program.model.mem ------------------------------------------------------
 
 class MemoryAccessException(JavaException):
+    pass
+
+
+class InvalidInputException(JavaException):
     pass
 
 
@@ -549,9 +614,12 @@ MODELLED = {
         "AbstractStringDataType": AbstractStringDataType,
         "BuiltInDataTypeManager": BuiltInDataTypeManager,
         "IntegerDataType": IntegerDataType, "DataUtilities": DataUtilities,
+        "ParameterDefinitionImpl": ParameterDefinitionImpl,
         **{string_class.__name__: string_class for string_class in STRING_TYPES},
     },
     "ghidra.program.model.mem": {"MemoryAccessException": MemoryAccessException},
+    "ghidra.program.model.pcode": {"HighFunctionDBUtil": HighFunctionDBUtil},
+    "ghidra.util.exception": {"InvalidInputException": InvalidInputException},
     "ghidra.program.model.listing": {"Function": Function},
     "ghidra.app.cmd.function": {"CreateFunctionCmd": CreateFunctionCmd},
     "java.lang": {"IllegalArgumentException": IllegalArgumentException},

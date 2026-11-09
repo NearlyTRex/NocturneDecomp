@@ -18,7 +18,7 @@ from ghidra_annotations.util.log import log_info
 from ghidra_annotations.util.data_type import collect_type_dependencies_with_context, get_ghidra_primitive_types
 from ghidra_annotations.annotations.pseudocode.basetypes import get_types_needing_basetypes, get_all_basetypes, get_libc_provided_types
 from ghidra_annotations.annotations.pseudocode.intrinsics import write_intrinsics_header
-from ghidra_annotations.annotations import is_standard_ghidra_category, get_primitive_data_types
+from ghidra_annotations.util.data_type import get_primitive_data_types, is_standard_ghidra_category
 from ghidra_annotations.util.string import sanitize_c_identifier
 from ghidra_annotations.annotations.pseudocode.strings import sanitize_string
 

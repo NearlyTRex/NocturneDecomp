@@ -2489,7 +2489,7 @@ def extract_all_function_prototypes(currentProgram):
     Returns:
         List of function entries with name, address, signature, c_name, convention
     """
-    from ghidra_annotations.annotations import is_function_external
+    from ghidra_annotations.annotations.functions import is_function_external
 
     # Iterate through all the functions to build prototype list
     functions_list = []

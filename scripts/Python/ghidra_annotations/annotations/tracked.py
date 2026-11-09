@@ -26,7 +26,7 @@ class TrackedKind:
         self.key = key
         # (program, record) -> applies an importable record; returns False to skip it
         self.apply = apply
-        # (program, object) -> removes it from the program
+        # (program, object) -> removes it from the program; None for a kind the import replaces in place
         self.remove = remove
         # (record) -> the text the bucket is chosen by; the key by default
         self.bucket = bucket or key
@@ -38,7 +38,10 @@ def importable_keys(kind, path):
 
 
 def delete_tracked(kind, currentProgram, path):
-    """Remove the objects that importable records describe."""
+    """Remove the objects that importable records describe; a kind with no remove keeps them."""
+    if kind.remove is None:
+        log_info("The import replaces %s in place, so none are deleted" % kind.noun)
+        return
     importable = importable_keys(kind, path)
     log_info("Found %d importable %s to delete" % (len(importable), kind.noun))
     if not importable:
@@ -159,14 +162,20 @@ def applied_kind(noun, tracks, record, rebuild = None, after_create = None):
         if data_type is None:
             log_info("Could not apply the applied %s record at %s" % (noun, entry.get("addr")))
             return False
+        # Data the record already describes is left alone: re-creating it would drop the
+        # references Ghidra attached to it, an import table pointer's external one among them.
+        # It is compared as a record, since a record names its type but two types can share a name.
+        existing = program.getListing().getDefinedDataAt(address)
+        if existing is not None and tracks(existing.getDataType()):
+            current = full_record(program, existing)
+            if all(current[k] == entry.get(k) for k in current if k != "value"):
+                return True
         data = DataUtilities.createData(program, address, data_type, entry.get("len", 1), False,
             DataUtilities.ClearDataMode.CLEAR_ALL_CONFLICT_DATA)
         if after_create is not None:
             after_create(data, data_type, entry)
         return True
 
-    def remove(program, data):
-        program.getListing().clearCodeUnits(data.getMinAddress(), data.getMinAddress(), False)
-
+    # No remove: createData replaces what is there, so an import needs no delete first
     return TrackedKind("applied_" + noun.replace(" ", "_"), "applied " + noun, items, full_record,
-                       lambda entry: entry.get("addr"), apply, remove)
+                       lambda entry: entry.get("addr"), apply, None)

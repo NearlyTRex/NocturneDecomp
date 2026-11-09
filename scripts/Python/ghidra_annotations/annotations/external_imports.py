@@ -35,6 +35,11 @@ def external_locations(program):
     return found
 
 
+def find_location(manager, library, name):
+    """The program's import of `name` from `library`, or None."""
+    return next(iter(manager.getExternalLocations(library, name)), None)
+
+
 def drop_shadowed_ordinals(records):
     """An ordinal import of an address and library a named import also has is the same import."""
     named = {(r["addr"], r["lib"]) for r in records if not is_ordinal(r["name"])}
@@ -44,23 +49,13 @@ def drop_shadowed_ordinals(records):
 
 
 def delete_external_imports(currentProgram, path):
-    importable = {key(r) for r in load_records(path) if r.get("importable", False) and key(r)}
-    log_info("Found %d importable external imports to delete" % len(importable))
-    if not importable:
-        return
-    manager = currentProgram.getExternalManager()
-    tx_id = currentProgram.startTransaction("Delete External Imports")
-    try:
-        deleted = 0
-        for import_key in sorted(importable):
-            name, library = import_key.split("|", 1)
-            location = manager.getExternalLocation(library, name)
-            if location is not None:
-                manager.removeExternalLocation(location)
-                deleted += 1
-        log_info("Deleted %d external imports" % deleted)
-    finally:
-        currentProgram.endTransaction(tx_id, True)
+    """Removes nothing: the import only adds the imports a program lacks.
+
+    Removing an import loses the references to it, which an import cannot make
+    back, and deleting an external function's symbol leaves its location behind
+    as a label, so there is nothing a delete could do that the import needs.
+    """
+    log_info("External imports are only added, never removed")
 
 
 def import_external_imports(currentProgram, path):
@@ -76,10 +71,13 @@ def import_external_imports(currentProgram, path):
                 continue
             name, library = record["name"], record["lib"]
             if (is_ordinal(name) and (record.get("addr"), library) in named_at) or \
-                    manager.getExternalLocation(library, name) is not None:
+                    find_location(manager, library, name) is not None:
                 skipped += 1
                 continue
-            manager.addExtLocation(library, name, None, SourceType.USER_DEFINED)
+            if record.get("type") == "Function":
+                manager.addExtFunction(library, name, None, SourceType.USER_DEFINED)
+            else:
+                manager.addExtLocation(library, name, None, SourceType.USER_DEFINED)
             imported += 1
         log_info("Import summary: %d imported, %d skipped" % (imported, skipped))
     finally:

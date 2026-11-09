@@ -92,29 +92,36 @@ def test_only_importable_records_are_imported(tmp_path):
     assert program.transactions == [["Import Applied Structs", True]]
 
 
-def test_delete_clears_only_importable_records_of_its_kind(tmp_path):
-    program = program_with(POINT)
-    program.getListing().add_data(0x500040, POINT)
-    program.getListing().add_data(0x500080, NUMBER)
-    write_records(tmp_path, "applied_structs", [
-        {"addr": "00500000", "importable": True}, {"addr": "00500040", "importable": False},
-        {"addr": "00500080", "importable": True}])
-    applied_structs.delete_applied_structs(program, str(tmp_path))
-    assert sorted(str(a) for a in program.getListing().data) == ["00500040", "00500080"]
-    assert program.transactions == [["Delete Applied Structs", True]]
-
-
 @pytest.mark.parametrize("module, data_type, fields", KINDS, ids = [k[0].KIND.base for k in KINDS])
-def test_each_kind_deletes_what_it_exported(tmp_path, module, data_type, fields):
+def test_delete_leaves_applied_data_for_the_import_to_replace(tmp_path, capsys, module, data_type, fields):
     program = program_with(data_type)
     getattr(module, "export_" + name_of(module))(program, str(tmp_path))
     getattr(module, "delete_" + name_of(module))(program, str(tmp_path))
-    assert program.getListing().data == {}
+    assert list(program.getListing().data) == [program.space.getAddress(0x500000)]
+    assert program.transactions == []
+    assert "replaces applied " in capsys.readouterr().out
 
 
-def test_delete_with_nothing_importable_opens_no_transaction(tmp_path):
+def test_data_already_of_the_recorded_type_is_left_alone_and_other_data_replaced(tmp_path):
+    write_records(tmp_path, "applied_structs", [
+        {"addr": "00500000", "name": "SPoint", "len": 8, "importable": True},
+        {"addr": "00500040", "name": "SPoint", "len": 8, "importable": True},
+        {"addr": "00500060", "name": "SPoint", "len": 8, "importable": True}])
     program = program_with(POINT)
-    applied_structs.delete_applied_structs(program, str(tmp_path))
+    kept = program.getListing().getDefinedDataAt(program.space.getAddress(0x500000))
+    program.getListing().add_data(0x500040, NUMBER)
+    program.getListing().add_data(0x500060, StructureDataType("SOther", [INT, INT]))
+    applied_structs.import_applied_structs(program, str(tmp_path))
+    listing = program.getListing()
+    assert listing.getDefinedDataAt(program.space.getAddress(0x500000)) is kept
+    assert listing.getDefinedDataAt(program.space.getAddress(0x500040)).getDataType() is POINT
+    assert listing.getDefinedDataAt(program.space.getAddress(0x500060)).getDataType() is POINT
+
+
+def test_a_kind_with_nothing_importable_deletes_nothing(tmp_path):
+    program = Program()
+    program.getSymbolTable().createClass(program.getGlobalNamespace(), "CGame", "USER_DEFINED")
+    symbols_class.delete_symbols_class(program, str(tmp_path))
     assert program.transactions == []
 
 
@@ -169,7 +176,7 @@ def test_strings_record_and_restore_their_charset(tmp_path, monkeypatch):
     assert target.getListing().getDefinedDataAt(target.space.getAddress(0x500010)) is not None
 
     applied_strings.delete_applied_strings(program, str(tmp_path))
-    assert program.getListing().data == {}
+    assert program.getListing().getDefinedDataAt(program.space.getAddress(0x500000)) is not None
 
 
 # --- namespaces and classes -----------------------------------------------------------------------

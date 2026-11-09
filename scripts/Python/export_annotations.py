@@ -389,7 +389,7 @@ def export_programs(pyghidra, args, categories):
                 print("ERROR exporting '%s': export exited with code %s" % (name, code))
                 exit_code = code or 1
                 ok = False
-            except Exception as e:  # noqa: BLE001 - one bad program must not abort the batch
+            except Exception as e:  # one bad program must not abort the batch
                 print("ERROR exporting '%s': %s" % (name, str(e)))
                 import traceback
                 traceback.print_exc()

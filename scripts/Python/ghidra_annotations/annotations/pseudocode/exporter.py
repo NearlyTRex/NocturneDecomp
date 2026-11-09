@@ -14,7 +14,7 @@ from ghidra.app.decompiler import DecompileCallback
 from ghidra.program.model.pcode import HighFunction
 from ghidra_annotations.util import make_dirs
 from ghidra_annotations.util.log import log_info, log_warning
-from ghidra_annotations.annotations import is_function_external
+from ghidra_annotations.annotations.functions import is_function_external
 
 from ghidra_annotations.annotations.pseudocode.parallel import (
     DecompilerThreadLocal, DecompileWorker, DEFAULT_NUM_THREADS, PROCESS_BATCH_SIZE,

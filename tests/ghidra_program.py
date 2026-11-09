@@ -1,5 +1,6 @@
 # Imports
 import importlib
+import itertools
 import struct
 
 # Local imports
@@ -10,6 +11,7 @@ import ghidra_fake
 # do. Tests build one, run the code under test, then read the result back out.
 
 Address = ghidra_fake.Address
+SYMBOL_IDS = itertools.count(1)
 
 
 class Namespace:
@@ -37,6 +39,7 @@ class Symbol:
         self.symbol_type = symbol_type
         self.namespace_object = namespace_object
         self.external = False
+        self.symbol_id = next(SYMBOL_IDS)
 
     # The faked SymbolType's constant, the one the scripts compare against
     def getSymbolType(self):
@@ -44,6 +47,17 @@ class Symbol:
 
     def getObject(self):
         return self.namespace_object
+
+    # Ghidra's primary symbol is the one an address shows; here, the first at it
+    def isPrimary(self):
+        return self.table is not None and self.table.getPrimarySymbol(self.address) is self
+
+    # Unique, in the order symbols were made
+    def getID(self):
+        return self.symbol_id
+
+    def isGlobal(self):
+        return self.namespace is None or self.namespace.getParentNamespace() is None
 
     def isExternal(self):
         return self.external
@@ -153,9 +167,44 @@ class MemoryBlock:
         self.execute = execute
         # False for a block like .bss, whose bytes the file does not hold
         self.initialized = True
+        self.read_ok = True
+        self.write_ok = not execute
+        self.comment = None
+        self.overlay = False
+        self.block_type = "DEFAULT"
 
     def isInitialized(self):
         return self.initialized
+
+    def getSize(self):
+        return len(self.data)
+
+    def getType(self):
+        return self.block_type
+
+    def isRead(self):
+        return self.read_ok
+
+    def isWrite(self):
+        return self.write_ok
+
+    def getComment(self):
+        return self.comment
+
+    def isOverlay(self):
+        return self.overlay
+
+    def setRead(self, value):
+        self.read_ok = value
+
+    def setWrite(self, value):
+        self.write_ok = value
+
+    def setExecute(self, value):
+        self.execute = value
+
+    def setComment(self, comment):
+        self.comment = comment
 
     def getName(self):
         return self.name
@@ -182,11 +231,28 @@ class Memory:
         self.blocks.append(block)
         return block
 
-    def getBlock(self, address):
-        return next((block for block in self.blocks if block.contains(address)), None)
+    # Ghidra's overloads: the block holding an address, or the block of a name
+    def getBlock(self, address_or_name):
+        if isinstance(address_or_name, str):
+            return next((block for block in self.blocks if block.name == address_or_name), None)
+        return next((block for block in self.blocks if block.contains(address_or_name)), None)
 
     def getBlocks(self):
         return list(self.blocks)
+
+    def removeBlock(self, block, _monitor):
+        self.blocks.remove(block)
+
+    def createInitializedBlock(self, name, start, size, fill, _monitor, overlay):
+        block = self.add_block(name, start.getOffset(), bytes([fill]) * size)
+        block.overlay = overlay
+        return block
+
+    def createUninitializedBlock(self, name, start, size, overlay):
+        block = self.add_block(name, start.getOffset(), bytes(size))
+        block.initialized = False
+        block.overlay = overlay
+        return block
 
     # Ghidra's two forms: one address, or a whole range that must lie in one block
     def contains(self, address, end = None):
@@ -354,6 +420,22 @@ class Listing:
         return data
 
 
+class LocalVariable:
+    def __init__(self, name, data_type, first_use_offset):
+        self.name = name
+        self.data_type = data_type
+        self.first_use_offset = first_use_offset
+
+    def getName(self):
+        return self.name
+
+    def getDataType(self):
+        return self.data_type
+
+    def getFirstUseOffset(self):
+        return self.first_use_offset
+
+
 # A function, its own symbol (getSymbol is the function itself here), and
 # optionally the function it is a thunk to
 class Function:
@@ -367,6 +449,32 @@ class Function:
         self.prototype = None
         self.convention = "__cdecl"
         self.parameter_count = 0
+        self.local_variables = []
+        # {call address: FunctionDefinition}, as HighFunctionDBUtil.writeOverride writes them
+        self.overrides = {}
+        # Its signature: parameters with getName and getDataType, the return type, varargs
+        self.parameters = []
+        self.return_type = None
+        self.varargs = False
+        self.called = []
+
+    def getParameters(self):
+        return list(self.parameters)
+
+    def getReturnType(self):
+        return self.return_type
+
+    def hasVarArgs(self):
+        return self.varargs
+
+    def getCalledFunctions(self, _monitor):
+        return list(self.called)
+
+    def getLocalVariables(self):
+        return list(self.local_variables)
+
+    def removeVariable(self, variable):
+        self.local_variables.remove(variable)
 
     def getCallingConventionName(self):
         return self.convention
@@ -450,11 +558,14 @@ class RefType:
         return self.name
 
 
+# ref_type, when given, is the faked RefType constant a script passed to addMemoryReference
 class Reference:
-    def __init__(self, source, destination, call, kind = None):
+    def __init__(self, source, destination, call, kind = None, operand = 0, primary = True, ref_type = None):
         self.source = source
         self.destination = destination
-        self.ref_type = RefType(call, kind)
+        self.ref_type = ref_type if ref_type is not None else RefType(call, kind)
+        self.operand = operand
+        self.primary = primary
 
     def getFromAddress(self):
         return self.source
@@ -465,19 +576,48 @@ class Reference:
     def getReferenceType(self):
         return self.ref_type
 
+    def getOperandIndex(self):
+        return self.operand
+
+    def isPrimary(self):
+        return self.primary
+
 
 class ReferenceManager:
     def __init__(self):
         self.references = []
 
-    def add(self, source, destination, call = False, kind = None):
-        self.references.append(Reference(Address(source), Address(destination), call, kind))
+    def add(self, source, destination, call = False, kind = None, operand = 0, primary = True):
+        reference = Reference(Address(source), Address(destination), call, kind, operand, primary)
+        self.references.append(reference)
+        return reference
 
     def getReferencesTo(self, address):
         return [ref for ref in self.references if ref.destination == address]
 
-    def getReferencesFrom(self, address):
-        return [ref for ref in self.references if ref.source == address]
+    # Ghidra's overloads: (address), or (address, operand index)
+    def getReferencesFrom(self, address, operand = None):
+        return [ref for ref in self.references
+                if ref.source == address and (operand is None or ref.operand == operand)]
+
+    # The addresses in the set that references come from, in order
+    def getReferenceSourceIterator(self, address_set, forward):
+        sources = {ref.source for ref in self.references
+                   if any(lo <= ref.source.getOffset() <= hi for lo, hi in address_set.ranges)}
+        return iter(sorted(sources, key = lambda a: a.getOffset(), reverse = not forward))
+
+    # Primary when it is the first reference from the operand, as Ghidra's is
+    def addMemoryReference(self, source, destination, ref_type, _source_type, operand):
+        primary = not self.getReferencesFrom(source, operand)
+        reference = Reference(source, destination, False, operand = operand, primary = primary, ref_type = ref_type)
+        self.references.append(reference)
+        return reference
+
+    def setPrimary(self, reference, primary):
+        reference.primary = primary
+
+    def delete(self, reference):
+        self.references.remove(reference)
 
 
 class AddressSpace:
@@ -494,6 +634,13 @@ class AddressSpace:
     def getAddress(self, offset):
         return Address(offset)
 
+    # Ghidra's space type is a number; 1 is memory
+    def getType(self):
+        return 1
+
+    def getSize(self):
+        return self.pointer_size * 8
+
 
 # Parses addresses as Ghidra's does: hex, with or without 0x, optionally "space:"
 class AddressFactory:
@@ -503,14 +650,20 @@ class AddressFactory:
     def getDefaultAddressSpace(self):
         return self.space
 
+    def getAddressSpaces(self):
+        return [self.space]
+
+    # The default space's addresses, and EXTERNAL and register ones, which are not memory
     def getAddress(self, text):
         space, _, offset = text.rpartition(":")
-        if space and space != self.space.getName():
+        if space and space not in (self.space.getName(), "EXTERNAL", "register"):
             return None
         try:
-            return Address(int(offset, 16))
+            address = Address(int(offset, 16))
         except ValueError:
             return None
+        address.memory = space in ("", self.space.getName())
+        return address
 
 
 class Language:
@@ -594,17 +747,15 @@ class ExternalManager:
     def addExtLocation(self, library, name, address, _source):
         return self.add(library, name, address, "LABEL")
 
-    # Ghidra's overloads: (symbol), or (library name, label)
-    def getExternalLocation(self, symbol_or_library, name = None):
-        if name is None:
-            return next((loc for loc in self.locations if loc.symbol is symbol_or_library), None)
-        return next((loc for loc in self.locations
-                     if loc.library == symbol_or_library and loc.symbol.getName() == name), None)
+    def addExtFunction(self, library, name, address, _source):
+        return self.add(library, name, address, "FUNCTION")
 
-    def removeExternalLocation(self, location):
-        self.locations.remove(location)
-        self.symbol_table.symbols.remove(location.symbol)
-        return True
+    def getExternalLocation(self, symbol):
+        return next((loc for loc in self.locations if loc.symbol is symbol), None)
+
+    # The locations of a label in a library: Ghidra allows more than one
+    def getExternalLocations(self, library, name):
+        return {loc for loc in self.locations if loc.library == library and loc.symbol.getName() == name}
 
 
 class EquateReference:
@@ -736,6 +887,9 @@ class Program:
 
     def getImageBase(self):
         return self.image_base
+
+    def getName(self):
+        return self.domain_file.getName()
 
     def getBookmarkManager(self):
         return self.bookmark_manager
