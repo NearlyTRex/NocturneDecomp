@@ -506,6 +506,19 @@ class ArrayList(list, metaclass = JavaClassMeta):
         return True
 
 
+# Applies a type at an address through the program's listing, as Ghidra's does
+# once it has cleared what was there
+class DataUtilities(JavaObject):
+    class ClearDataMode(JavaObject):
+        pass
+
+    @staticmethod
+    def createData(program, address, data_type, length, _stack_pointers, _clear_mode):
+        data = program.getListing().createData(address, data_type)
+        data.length = length if length > 0 else data.length
+        return data
+
+
 # --- ghidra.app.cmd.function -------------------------------------------------------
 
 # Creates a placeholder-named function at its address, as Ghidra's does once the
@@ -535,7 +548,7 @@ MODELLED = {
         "FunctionDefinitionDataType": FunctionDefinitionDataType,
         "AbstractStringDataType": AbstractStringDataType,
         "BuiltInDataTypeManager": BuiltInDataTypeManager,
-        "IntegerDataType": IntegerDataType,
+        "IntegerDataType": IntegerDataType, "DataUtilities": DataUtilities,
         **{string_class.__name__: string_class for string_class in STRING_TYPES},
     },
     "ghidra.program.model.mem": {"MemoryAccessException": MemoryAccessException},

@@ -1,91 +1,77 @@
-import os
-from ghidra_annotations.util import *
+from ghidra_annotations.util import (
+    clean_data, get_function_name, get_pointer_size, is_function_address, log_info, read_pointer_at_address,
+    save_json_file, save_json_files)
 
-def scan_for_vtables(currentProgram, addr, max_scan = 100):
+# A run of function pointers this long is taken for a vtable
+MIN_VTABLE_SLOTS = 3
 
-    # Get pointer size
+
+def scan_for_vtables(currentProgram, addr):
+    """The function pointers in the run starting at addr: a vtable's slots, if it is one.
+
+    The run ends at the first pointer that is not to a function, or at the end of memory.
+    """
     pointer_size = get_pointer_size(currentProgram)
     function_manager = currentProgram.getFunctionManager()
-
-    # Find vtables
-    scan_addr = addr
-    functions = []
     memory = currentProgram.getMemory()
-    for i in range(max_scan):
-        if not memory.contains(scan_addr) or not memory.contains(scan_addr.add(pointer_size - 1)):
-            break
-
-        # Read potential function pointer
+    functions = []
+    scan_addr = addr
+    while memory.contains(scan_addr) and memory.contains(scan_addr.add(pointer_size - 1)):
         target_addr = read_pointer_at_address(currentProgram, scan_addr)
-        if target_addr and is_function_address(currentProgram, target_addr):
-            function_name = get_function_name(currentProgram, target_addr)
-
-            # Get calling convention
-            func = function_manager.getFunctionAt(target_addr)
-            convention = None
-            param_count = 0
-            if func:
-                convention = func.getCallingConventionName()
-                param_count = func.getParameterCount()
-
-            functions.append({
-                "offset": i * pointer_size,
-                "ptr_addr": str(scan_addr),
-                "func_addr": str(target_addr),
-                "func_name": function_name,
-                "convention": str(convention) if convention else None,
-                "param_count": param_count
-            })
-            scan_addr = scan_addr.add(pointer_size)
-        else:
+        if not target_addr or not is_function_address(currentProgram, target_addr):
             break
+        func = function_manager.getFunctionAt(target_addr)
+        convention = func.getCallingConventionName() if func else None
+        functions.append({
+            "offset": len(functions) * pointer_size,
+            "ptr_addr": str(scan_addr),
+            "func_addr": str(target_addr),
+            "func_name": get_function_name(currentProgram, target_addr),
+            "convention": str(convention) if convention else None,
+            "param_count": func.getParameterCount() if func else 0
+        })
+        scan_addr = scan_addr.add(pointer_size)
     return functions
 
-def export_vtables(currentProgram, path):
 
-    # Gather vtables
+def find_vtables(currentProgram):
+    """Each run of MIN_VTABLE_SLOTS or more aligned function pointers in initialized data."""
     vtables = []
     pointer_size = get_pointer_size(currentProgram)
     log_info("Gathering vtables (pointer_size=%d)" % pointer_size)
     for block in currentProgram.getMemory().getBlocks():
         if not block.isInitialized() or block.isExecute():
             continue
-
-        # Scan memory block
         log_info("Scanning block: %s" % block.getName())
-        current_addr = block.getStart()
-        addr_offset = current_addr.getOffset()
-        if addr_offset % pointer_size != 0:
-            current_addr = current_addr.add(pointer_size - (addr_offset % pointer_size))
+        start = block.getStart()
+        end = block.getEnd().getOffset()
+        offset = -start.getOffset() % pointer_size
+        while start.getOffset() + offset + pointer_size - 1 <= end:
+            current_addr = start.add(offset)
+            functions = scan_for_vtables(currentProgram, current_addr)
+            if len(functions) < MIN_VTABLE_SLOTS:
+                offset += pointer_size
+                continue
+            vtables.append({
+                "addr": str(current_addr),
+                "size": len(functions) * pointer_size,
+                "count": len(functions),
+                "functions": functions,
+                "block": block.getName(),
+                "method": "raw_scan"
+            })
+            log_info("Found vtable at %s with %d functions" % (current_addr, len(functions)))
+            offset += len(functions) * pointer_size
+    return vtables
 
-        # Look for functions in this memory
-        while current_addr and current_addr.compareTo(block.getEnd()) <= 0:
-            if current_addr.add(pointer_size - 1).compareTo(block.getEnd()) > 0:
-                break
 
-            # Determine if vtable seems likely
-            functions = scan_for_vtables(currentProgram, current_addr, 100)
-            if len(functions) >= 3:
-                vtable = {
-                    "addr": str(current_addr),
-                    "size": len(functions) * pointer_size,
-                    "count": len(functions),
-                    "functions": functions,
-                    "block": block.getName(),
-                    "method": "raw_scan"
-                }
-                vtables.append(vtable)
-                log_info("Found vtable at %s with %d functions" % (current_addr, len(functions)))
-                current_addr = current_addr.add(len(functions) * pointer_size)
-            else:
-                current_addr = current_addr.add(pointer_size)
-
-    # Analyze calling conventions across all vtables
+def convention_analysis(vtables):
+    """How many slots use each calling convention, and the slots that are not __cdecl."""
     convention_counts = {}
     non_cdecl_funcs = []
     for vt in vtables:
         for func in vt["functions"]:
-            conv = func.get("convention", "__cdecl") or "__cdecl"
+            conv = func["convention"] or "__cdecl"
             convention_counts[conv] = convention_counts.get(conv, 0) + 1
             if conv != "__cdecl":
                 non_cdecl_funcs.append({
@@ -94,35 +80,34 @@ def export_vtables(currentProgram, path):
                     "func_addr": func["func_addr"],
                     "func_name": func["func_name"],
                     "convention": conv,
-                    "param_count": func.get("param_count", 0)
+                    "param_count": func["param_count"]
                 })
-
-    # Create convention analysis file
-    convention_analysis = {
+    return {
         "convention_summary": convention_counts,
         "non_cdecl_count": len(non_cdecl_funcs),
         "non_cdecl_functions": non_cdecl_funcs
     }
 
-    # Export convention analysis
-    log_info("Exporting vtable convention analysis (%d non-cdecl functions)" % len(non_cdecl_funcs))
-    save_json_file(path, "vtable_conventions", clean_data(convention_analysis))
 
-    # Export vtables using bucketed files (creates vtables_buckets.json metadata)
-    # Shift address right by 4 to skip always-zero alignment bits and get better distribution
+def export_vtables(currentProgram, path):
+    vtables = find_vtables(currentProgram)
+    analysis = convention_analysis(vtables)
+    log_info("Exporting vtable convention analysis (%d non-cdecl functions)" % analysis["non_cdecl_count"])
+    save_json_file(path, "vtable_conventions", clean_data(analysis))
+
+    # Bucketed by the address shifted past its always-zero alignment bits, for a better spread
     log_info("Exporting %d vtables to bucketed files" % len(vtables))
     save_json_files(path, "vtables", vtables,
                     lambda vt: "%x" % (int(vt["addr"], 16) >> 4), bucket_bits=4)
     log_info("Export complete")
 
-    # Print summary
-    if vtables:
-        log_info("\nSUMMARY:")
-        for i, vt in enumerate(vtables):
-            log_info("VTable %d: %s (%d functions)" % (i+1, vt["addr"], vt["count"]))
-            for j, func in enumerate(vt["functions"][:5]):
-                log_info("  [%d] %s -> %s" % (j, func["ptr_addr"], func["func_name"]))
-            if len(vt["functions"]) > 5:
-                log_info("  ... and %d more functions" % (len(vt["functions"]) - 5))
-    else:
+    if not vtables:
         log_info("\nNo vtables found.")
+        return
+    log_info("\nSUMMARY:")
+    for i, vt in enumerate(vtables):
+        log_info("VTable %d: %s (%d functions)" % (i+1, vt["addr"], vt["count"]))
+        for j, func in enumerate(vt["functions"][:5]):
+            log_info("  [%d] %s -> %s" % (j, func["ptr_addr"], func["func_name"]))
+        if len(vt["functions"]) > 5:
+            log_info("  ... and %d more functions" % (len(vt["functions"]) - 5))

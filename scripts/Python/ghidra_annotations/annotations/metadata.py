@@ -1,5 +1,5 @@
-import os
-from ghidra_annotations.util import *
+from ghidra_annotations.util import clean_data, log_info, save_json_file
+
 
 def export_metadata(currentProgram, path):
 
